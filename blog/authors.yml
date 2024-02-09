@@ -1,0 +1,15 @@
+gufmar:
+  name: Markus Gufler
+  title: Maintainer
+  url: https://github.com/gufmar
+  image_url: https://github.com/gufmar.png
+
+katomm:
+  name: Tommy Kammerer
+  title: Maintainer
+  url: https://github.com/katomm
+  image_url: https://github.com/katomm.png
+
+# please only add regular authors, you can also add one-off authors in the news files directly.
+# todo: add authors for CF, IOG, Emurgo, Intersect and others. Would be nice to start with a
+# decent group of regular authors.
