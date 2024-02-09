@@ -1,0 +1,158 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* various banner setups, light and dark mode images */
+
+.heroBannerZoom {
+  padding: 4rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 75%;
+}
+
+html[data-theme=light] .heroBannerZoom {
+  background-image: url(/img/hero-header-zoom2.png);
+}
+
+html[data-theme=dark] .heroBannerZoom {
+  background-image: url(/img/hero-header-zoom2.png);
+}
+
+.heroBannerAda {
+  padding: 4rem 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 20%;
+}
+
+html[data-theme=light] .heroBannerAda {
+  background-image: url(/img/hero-header-ada.webp);
+  background-color: #0538AF;
+}
+
+html[data-theme=dark] .heroBannerAda {
+  background-image: url(/img/hero-header-ada.webp);  
+  background-color: #244eaf;
+}
+
+.heroBannerDots { /* fixme: this is actually a zoom variant */
+  padding: 4rem 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 35%;
+}
+
+html[data-theme=light] .heroBannerDots {
+  background-image: url(/img/hero-header-dots.webp);
+}
+
+html[data-theme=dark] .heroBannerDots {
+  background-image: url(/img/hero-header-dots.webp);
+}
+
+.heroBannerFluid {
+  padding: 4rem 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+html[data-theme=light] .heroBannerFluid {
+  background-image: url(/img/hero-header-fluid.png);
+  background-color: #5281F7;
+}
+
+html[data-theme=dark] .heroBannerFluid {
+  background-image: url(/img/hero-header-fluid.png);
+  background-color: #5281F7;
+}
+
+.heroBannerOverlap {
+  padding: 4rem 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+html[data-theme=light] .heroBannerOverlap {
+  background-image: url(/img/hero-header-overlap.png);
+  background-color: #5281F7;
+}
+
+html[data-theme=dark] .heroBannerOverlap {
+  background-image: url(/img/hero-header-overlap.png);
+  background-color: #5281F7;
+}
+
+
+
+/* screen size changes */
+
+@media screen and (max-width: 966px) {
+  .heroBannerZoom {
+    padding: 4rem;
+  }
+  .heroBannerAda {
+    padding: 2rem;
+  }
+  .heroBannerDots {
+    padding: 2rem;
+  }
+  .heroBannerFluid {
+    padding: 4rem;
+  }
+  .heroBannerOverlap {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroBannerZoom {
+    background-position: 34% 50%;
+  }
+  .heroBannerAda {
+    background-position: 50% 20%;
+  }
+  .heroBannerDots {
+    background-position: 50% 35%;
+  }
+  .heroBannerFluid {
+    background-position: 50% 50%;
+  }
+  .heroBannerOverlap {
+    background-position: 34% 50%;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .heroBannerZoom {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerAda {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerDots {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerFluid {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

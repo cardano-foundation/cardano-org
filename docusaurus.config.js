@@ -167,7 +167,7 @@ const config = {
               },
               {
                 label: 'IOG',
-                href: '/partners#iog',
+                href: '/partners#iog', /* fixme: last entry should be "more", then link to the partners page */
               },
             ],
           },
