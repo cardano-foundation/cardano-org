@@ -43,8 +43,11 @@ export default function Home() {
              achieved.',
             ]}
           solutions='Credential verification'
-          product='Atala PRISM (IOG)'  
+          product={[
+            'Atala SCAN (IOG)',
+          ]} 
           buttonLink='https://atalaprism.io'
+          imageName='education'
           isImageRight={false}
         />
 
@@ -67,10 +70,106 @@ export default function Home() {
              original.',
             ]}
           solutions='Product counterfeiting'
-          product='Atala SCAN (IOG)'  
+          product={[
+            'Atala SCAN (IOG)',
+          ]}  
           buttonLink='https://atalaprism.io'
+          imageName='retail'
           isImageRight={true}
         />
+
+        <UseCase
+          title='Agriculture'
+          description={[
+            'The pandemic has starkly shown that maintaining a solid and constant supply chain is a key pillar \
+            for the success and sustainability of any industry sector, and indeed for the safety and well-being \
+            of the population.',
+            <br key='line1'/>,
+            <br key='line2'/>,
+            'Agriculture is a source of food and sustenance whose supply chain must be kept going at all times, \
+            as livelihoods depend on it. Blockchain technology has emerged as a viable method to support all the \
+            stakeholders along the supply chain: Farmers, hauliers, and retailers can use blockchain for product \
+            certification and traceability, from farm to table, using systems like Atala Trace and EMURGO\'s \
+            proprietary traceability solution for transparency in the supply chain.',
+            ]}
+          solutions='Supply chain tracking'
+          product={[
+            'Atala TRACE (IOG)',
+            <br key='line1'/>,
+            '[EMURGO Solution](https://emurgo.io/industry-cases#supply-chain-and-traceability)',
+          ]}
+          buttonLink='https://atalaprism.io'
+          imageName='agriculture'
+          isImageRight={false}
+        />
+
+        <UseCase
+          title='Government'
+          description={[
+            'Current credentials issuance and verification systems are inherently flawed. Document and control \
+            remains with the issuer, rather than the individual, for example, which creates a strong dependency \
+            on third-party agencies to verify the document’s authenticity. This usually involves a manual, costly, \
+            and time-consuming process, depending on the location and response time of the issuing authority.',
+            <br key='line1'/>,
+            <br key='line2'/>,
+            'Atala PRISM addresses this flaw through the provision of a digital identity service. Leveraging blockchain \
+            technology, Atala PRISM enables users to have full control of their credentials, which they can share \
+            and instantly verify anytime, anywhere.',
+            ]}
+          solutions='Digital identity'
+          product={[
+            'Atala PRISM (IOG)',
+          ]}  
+          buttonLink='https://iohk.io/en/enterprise/#digital-identity'
+          imageName='government'
+          isImageRight={true}
+        />
+
+        <UseCase
+          title='Finance'
+          description={[
+            'Identity verification is a key step before accepting new clients into financial institutions or other \
+            agencies. Simply opening a new bank account in certain countries takes weeks, for example. Other \
+            administrative processes -passport applications, for instance-, even longer. The onboarding process \
+            is slow and resource-heavy, often involving multiple third-parties with their own fees, etc.',
+            <br key='line1'/>,
+            <br key='line2'/>,
+            'Atala PRISM can streamline and accelerate onboarding through the utilization of reusable verified \
+            credentials. Atala PRISM leverages blockchain technology to deliver a one-click user experience.',
+            ]}
+          solutions='Onboarding (KYC & AML)'
+          product={[
+            'Atala PRISM (IOG)',
+          ]}  
+          buttonLink='https://iohk.io/en/enterprise/#consultancy'
+          imageName='finance'
+          isImageRight={false}
+        />
+
+        <UseCase
+          title='Health Care'
+          description={[
+            'Counterfeit and substandard medications pose a significant risk to public health and inflict severe financial \
+            loss to legitimate manufacturers. Cost, peer pressure, and other reasons push many people to acquire \
+            medications in online pharmacies, which in many cases lack strict controls and regulations surrounding \
+            the manufacture and supply of therapeutic drugs. The World Health Organization (WHO) estimates that more \
+            than 50% of medications sold online can be categorized as fake or substandard.',
+            <br key='line1'/>,
+            <br key='line2'/>,
+            'This problem can be addressed through a blockchain solution. Atala SCAN can authenticate and verify the origin \
+            and supply chain of pharmaceutical products, guaranteeing the safety and well-being of patients worldwide.',
+            ]}
+          solutions='Counterfeit medicine'
+          product={[
+            'Atala SCAN (IOG)',
+            <br key='line1'/>,
+            '[EMURGO Solution](https://emurgo.io/industry-cases#healthcare-and-life-science)',
+          ]}  
+          buttonLink='https://iohk.io/en/enterprise/#consultancy'
+          imageName='healthcare'
+          isImageRight={true}
+        />
+
       </main>
     </Layout>
   );

@@ -306,7 +306,7 @@ ul, ol {
 
 a {
   outline-width: 0.5rem;
-  color: #0033ad;
+  color: var(--ifm-color-primary);
   -webkit-transition: color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out;
   -webkit-text-decoration: none;
@@ -327,7 +327,7 @@ img {
 }
 
 .blue-text {
-  color: rgb(0, 51, 173);
+  color: var(--ifm-color-primary);
 }
 
 .green-text {

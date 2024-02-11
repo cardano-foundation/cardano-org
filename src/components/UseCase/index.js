@@ -12,9 +12,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // shows a dotted image on the left, below solution and product
 // shows a header with some description on the right
 // can be inverted with isImageRight:true
+// please note that products expects an array even if there is only one product, because we want to
+// link to products soon and use the learn more button to dive deeper into content.
 
-function UseCase({ title, description, solutions, product, buttonLink, isImageRight }) {
+
+function UseCase({ title, description, solutions, product, buttonLink, imageName, isImageRight }) {
   
+  // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
+  const imageUrl = useBaseUrl(`/img/dotted-icons/${imageName}.svg`);
+  
+  // Swap columns based on isImageRight flag
   const imageColumnClass = clsx(
     'col col--4',
     styles.imageSection,
@@ -29,11 +36,11 @@ function UseCase({ title, description, solutions, product, buttonLink, isImageRi
   return (
     <div className={clsx('row', styles.container)}>
       <div className={imageColumnClass}>
-        <img src={useBaseUrl('/img/dotted-icons/education.svg')} alt="Use Case" />
+        <img src={imageUrl} alt={title} />
         <div className={styles.solutions}>Solutions</div>
         <div className={styles.solutionsContent}>{solutions}</div>
-        <div className={styles.product}>Product</div>
-        <div className={styles.productContent}>{product}</div>
+        <div className={styles.product}>Products</div>
+        <div className={styles.productContent}>{parseTextWithLinks(product)}</div>
       </div>
       <div className={textColumnClass}>
         <h2 className={styles.title}>{title}</h2>
@@ -50,7 +57,7 @@ UseCase.defaultProps = {
 
 export default UseCase;
 
-// Allow markdown to have links in text
+// Allow markdown to have links in text. (fixme: move to different file)
 function parseTextWithLinks(contentArray) {
   return contentArray.map((content, index) => {
     // If the content is a string, parse it for links
