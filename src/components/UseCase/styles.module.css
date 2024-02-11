@@ -1,0 +1,70 @@
+/* UseCaseTextRight.module.css */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.imageSection {
+  flex: 0.3;
+  max-width: 20rem;
+  padding: 50px;
+  order: 1; /* By default, image comes before text */
+}
+
+.textSection {
+  flex: 2;
+  padding: 30px;
+  order: 2; /* By default, text comes after image */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--ifm-color-primary);
+  /* Add responsive font sizing if necessary */
+}
+
+.description {
+  margin-bottom: 20px;
+  /* Style as needed */
+}
+
+.solutions,
+.product {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.solutionsContent,
+.productContent {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.buttonLink {
+  /* Style your button */
+}
+
+/* Mobile view: ensure image is always first, regardless of isImageRight flag */
+@media (max-width: 960px) { /* Adjust the max-width as necessary for your breakpoint */
+  .imageSection,
+  .textSection {
+    order: 1; /* Both will stack with the image on top */
+  }
+}
+
+/* Additional styles for when the image is on the right on large screens */
+@media (min-width: 961px) {
+  .imageRight {
+    order: 2; /* Image will be second if isImageRight is true */
+  }
+
+  .textRight {
+    order: 1; /* Text will be first if isImageRight is true */
+  }
+}
+ 

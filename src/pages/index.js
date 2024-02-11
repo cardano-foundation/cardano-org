@@ -14,7 +14,7 @@ export default function Home() {
       <SiteHero
         title={[
           'Making the world',
-          <br/>,
+          <br key='line1'/>,
           'Work Better For All',
         ]}
         description='Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
@@ -31,12 +31,16 @@ export default function Home() {
             research and developed through evidence-based methods. It combines pioneering technologies \
             to provide unparalleled security and sustainability to decentralized applications, systems, \
             and societies.',
-            <br/>,
-            <br/>,
+            <br key='line1'/>,
+            <br key='line2'/>,
             'With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
             structures to the margins – to individuals – and be an enabling force for positive change and progress.',
             ]}
-          quote='A History Of Impossible, Made Possible'
+          quote={[
+            'A History Of Impossible,',
+            <br key='line1'/>,
+            'Made Possible'
+            ]}
           buttonLabel='Use Cases'
           buttonLink='/enterprise'
         />
