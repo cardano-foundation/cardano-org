@@ -51,7 +51,7 @@ export default function Home() {
         <UseCase
           title='Retail'
           description={[
-            'In 2018, counterfeit goods inflicted a (US$)300bn blow to the global economy and the problem \
+            'In 2018, [counterfeit goods inflicted a (US$)300bn blow to the global economy](https://www.visualcapitalist.com/300-billion-counterfeit-goods-problem/) and the problem \
             is getting worse. If the trend is not reversed, markets will become flooded with fake products, \
             leading to substantial financial losses, damage to brand reputation, and marked reduction in \
             customer confidence.',
