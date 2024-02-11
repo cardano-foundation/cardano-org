@@ -324,20 +324,17 @@ img {
 
 .red-text {
   color: rgb(255, 118, 118);
-  font-family: Chivo, sans-serif;
 }
 
 .blue-text {
   color: rgb(0, 51, 173);
-  font-family: Chivo, sans-serif;
 }
 
 .green-text {
   color: rgb(59, 121, 130);
-  font-family: Chivo, sans-serif
 }
 
 .black-text {
-  color: rgb(29, 30, 33);
-  font-family: Chivo, sans-serif;
+  /*color: rgb(29, 30, 33);*/ /* bad example if you want to have dark mode */
+  color: var(--ifm-font-color-base); /* good example */
 }
