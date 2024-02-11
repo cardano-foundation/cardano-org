@@ -2,7 +2,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
-import UseCaseTextRight from '../components/UseCaseTextRight';
+import UseCase from '../components/UseCase';
 
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       />
       <main>
 
-      <UseCaseTextRight
+      <UseCase
           title='Education'
           description={[
             'The issuance of academic certifications is heavily centralized. If diplomas, degrees, \
@@ -45,9 +45,10 @@ export default function Home() {
           solutions='Credential verification'
           product='Atala PRISM (IOG)'  
           buttonLink='https://atalaprism.io'
+          isImageRight={false}
         />
 
-        <UseCaseTextRight
+        <UseCase
           title='Retail'
           description={[
             'In 2018, counterfeit goods inflicted a (US$)300bn blow to the global economy and the problem \
@@ -68,6 +69,7 @@ export default function Home() {
           solutions='Product counterfeiting'
           product='Atala SCAN (IOG)'  
           buttonLink='https://atalaprism.io'
+          isImageRight={true}
         />
 
         <HomepageFeatures />

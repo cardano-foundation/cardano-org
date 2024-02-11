@@ -11,31 +11,42 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // This component:
 // shows a dotted image on the left, below solution and product
 // shows a header with some description on the right
+// can be inverted with isImageRight:true
 
-function UseCaseTextRight({ title, description, solutions, product, buttonLink }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-
-  // const classes = useStyles();
+function UseCase({ title, description, solutions, product, buttonLink, isImageRight }) {
+  
+  const imageColumnClass = clsx(
+    'col col--4',
+    styles.imageSection,
+    { [styles.imageRight]: isImageRight }
+  );
+  const textColumnClass = clsx(
+    'col col--8',
+    styles.textSection,
+    { [styles.textRight]: isImageRight }
+  );
 
   return (
     <div className={clsx('row', styles.container)}>
-      
-      <div className={clsx('col col--4', styles.imageSection)}>
+      <div className={imageColumnClass}>
         <img src={useBaseUrl('/img/dotted-icons/education.svg')} alt="Use Case" />
         <div className={styles.solutions}>Solutions</div>
         <div className={styles.solutionsContent}>{solutions}</div>
         <div className={styles.product}>Product</div>
         <div className={styles.productContent}>{product}</div>
       </div>
-      
-      <div className={clsx('col col--8', styles.textSection)}>
+      <div className={textColumnClass}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
-        <a href={buttonLink} className={clsx('button button--primary button--lg', styles.buttonLink)}>Learn more</a>
+        <a href={buttonLink} className={clsx('button button--primary', styles.buttonLink)}>Learn more</a>
       </div>
     </div>
   );
+}
+
+UseCase.defaultProps = {
+  isImageRight: false, // Default layout will have the image on the left
 };
 
-export default UseCaseTextRight;
+
+export default UseCase;
