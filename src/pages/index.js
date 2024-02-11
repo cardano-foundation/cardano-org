@@ -41,7 +41,7 @@ export default function Home() {
             <br key='line1'/>,
             'Made Possible'
             ]}
-          buttonLabel='Show Use Cases'
+          buttonLabel='Use Cases'
           buttonLink='/enterprise'
         />
 

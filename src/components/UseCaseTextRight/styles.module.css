@@ -1,0 +1,48 @@
+/* UseCaseTextRight.module.css */
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.imageSection {
+   
+  /* Size the image section if necessary, or use a background image */
+  flex: 0.3;
+  max-width: 20rem;
+  padding: 30px;
+}
+
+.textSection {
+  flex: 2; /* Adjust flex ratio based on design requirements */
+  padding-left: 20px; /* Add space between the image and the text */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* Add responsive font sizing if necessary */
+}
+
+.description {
+  margin-bottom: 20px;
+  /* Style as needed */
+}
+
+.solutions,
+.product {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.solutionsContent,
+.productContent {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.buttonLink {
+  /* Style your button */
+}
