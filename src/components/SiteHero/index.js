@@ -1,14 +1,14 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./portalhero.module.css";
+import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-function PortalHero({ title, description, bannerType }) {
+function SiteHero({ title, description, bannerType }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
   // Use bannerType to dynamically change the class for the hero banner
-  // styles need to be defined in portalhero.module.css
+  // styles need to be defined in sitehero.module.css
   let heroClassName;
 
   switch (bannerType) {
@@ -38,4 +38,4 @@ function PortalHero({ title, description, bannerType }) {
   );
 }
 
-export default PortalHero;
+export default SiteHero;

@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import PortalHero from "./portalhero";
+import SiteHero from "@site/src/components/SiteHero";
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -9,7 +9,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <PortalHero
+      <SiteHero
         title='Staking Calculator'
         description='See how much rewards you can possibly earn by staking ada.'
         bannerType ='dots'

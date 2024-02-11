@@ -225,6 +225,16 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      head: [
+        // ...
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css?family=Chivo', // replace with your font URL
+          },
+        },
+      ],
     }),
 };
 
