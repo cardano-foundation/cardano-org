@@ -18,6 +18,7 @@
   --ifm-code-font-size: 95%;
   --ifm-footer-link-hover-color: #6684CE;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-link-color: #0538AF; /* navbar in light mode */ 
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -30,6 +31,23 @@
   --ifm-color-primary-lighter: #6684CE;
   --ifm-color-primary-lightest: #6684CE;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-link-color: var(--ifm-font-color-base); /* navbar in dark mode */ 
+}
+
+/* The navbar needs a little space so that the Cardano logo can breathe */
+
+.navbar {
+  height: 80px; 
+}
+
+.navbar__logo {
+  height: 35px;  
+  padding-left: 10px;
+}
+
+.navbar__item {
+  padding-top: 15px; 
+  padding-bottom: 15px;  
 }
 
 /* Font */
