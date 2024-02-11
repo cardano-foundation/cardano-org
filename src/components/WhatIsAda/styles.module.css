@@ -1,0 +1,85 @@
+
+/* Header.module.css */
+.header {
+  text-align: left;
+  padding: 20px;
+}
+
+.header h6 {
+   
+  font-weight: normal; /* Assuming you don't want bold */
+  margin-bottom: 10px; /* Space between title and bar */
+}
+
+.horizontalBar {
+  height: 1px; /* Thickness of the bar */
+  background-color: #000; /* Color of the bar */
+  width: 80%; /* Full width by default */
+  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+}
+
+/* Responsive styles */
+@media (max-width: 599px) {
+  .horizontalBar {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+     
+  }
+}
+
+.leftColumn {
+   
+}
+
+.rightColumn {
+  padding: 30px;  
+}
+
+.headingDot {
+  position: relative;
+}
+
+.headingDot::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0px;
+  width: 1rem;
+  height: 1rem;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: rgb(255, 118, 118);
+}
+
+
+.adaRoundWrap {
+  picture, img {
+    max-width: 20rem;
+  }
+}
+
+.mobile-no-viz {
+  display:flex;
+}
+
+.mobile-viz {
+display:none;
+}
+
+@media (max-width:599px) {
+  .mobileNoViz {
+    display:none;
+  }
+  .mobileViz {
+    display:flex;
+  }
+}
+
+/*
+.sub-heading {
+  max-width: 30rem;
+}
+
+
+*/
