@@ -20,13 +20,13 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
   return (
     <div className="container">
       <div className="row">
-        <div className={clsx('col col--6', styles.leftColumnBackground)}>
+        <div className={clsx('col col--6', styles.leftColumn)}>
           <h3 className="black-text">
             {title}
           </h3>
           
         </div>
-        <div className="col col--6">
+        <div className={clsx('col col--6', styles.rightColumn)}>
         <p className="black-text">
             {description}
           </p>

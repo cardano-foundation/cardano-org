@@ -12,8 +12,14 @@ export default function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <SiteHero
-        title='Cardano'
-        description='Making the world work better for all.'
+        title={[
+          'Making the world',
+          <br/>,
+          'Work Better For All',
+        ]}
+        description='Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
+        with the tools and technologies required to create possibility for the many, as well as the few, 
+        and bring about positive global change.'
         bannerType ='default'
       />
       <main>
