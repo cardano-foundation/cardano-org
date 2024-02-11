@@ -10,6 +10,7 @@ import Link from '@docusaurus/Link';
 // This component:
 // shows a header on the left, with with some text on the right,
 // a tagline below and a call to action button below the tagline
+// fixme: the background here was probably not clever, this should go in a parent component
 
 function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonLink }) {
   const context = useDocusaurusContext();
@@ -33,7 +34,7 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
           <h4 className="red-text">
             {quote}
           </h4>
-          <Link className="button button--primary" to={buttonLink}>
+          <Link className="button button--primary button--lg" to={buttonLink}>
             {buttonLabel}
           </Link>
         </div>

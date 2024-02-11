@@ -36,8 +36,12 @@ export default function Home() {
             'With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
             structures to the margins – to individuals – and be an enabling force for positive change and progress.',
             ]}
-          quote='A History Of Impossible, Made Possible'
-          buttonLabel='Use Cases'
+          quote={[
+            'A History Of Impossible,',
+            <br key='line1'/>,
+            'Made Possible'
+            ]}
+          buttonLabel='Show Use Cases'
           buttonLink='/enterprise'
         />
 
