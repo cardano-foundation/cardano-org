@@ -71,8 +71,6 @@ export default function Home() {
           buttonLink='https://atalaprism.io'
           isImageRight={true}
         />
-
-        <HomepageFeatures />
       </main>
     </Layout>
   );

@@ -50,16 +50,20 @@
 
 /* Mobile view: ensure image is always first, regardless of isImageRight flag */
 @media (max-width: 960px) { /* Adjust the max-width as necessary for your breakpoint */
-  .imageRight, .textRight {
-    flex-direction: column;
+  .imageSection,
+  .textSection {
+    order: 1; /* Both will stack with the image on top */
   }
 }
 
-/* Additional styles for when the image is on the right */
-.imageRight {
-  order: 3; /* Place image after text */
-}
+/* Additional styles for when the image is on the right on large screens */
+@media (min-width: 961px) {
+  .imageRight {
+    order: 2; /* Image will be second if isImageRight is true */
+  }
 
-.textRight {
-  order: 2; /* Place text before image */
+  .textRight {
+    order: 1; /* Text will be first if isImageRight is true */
+  }
 }
+ 
