@@ -67,11 +67,11 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Cardano',
+        //title: 'CARDANO',
         logo: {
           alt: "Cardano Logo",
-          src: "img/cardano-black.svg",
-          srcDark: "img/cardano-white.svg",
+          src: "img/cardano-logo-blue.svg",
+          srcDark: "img/cardano-logo-white.svg",
         },
         items: [
           {
