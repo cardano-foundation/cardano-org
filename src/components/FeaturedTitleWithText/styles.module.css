@@ -1,0 +1,6 @@
+.leftColumnBackground {
+  background-image: url(/img/hero-header-dots.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}

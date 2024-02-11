@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 //import styles from "./component-name.module.css"; // in case you need local css for this component
@@ -14,22 +15,29 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
-  //const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <div className="container">
-      <h2 className="black-text">
-      {title}
-      </h2>
-      <p className="black-text">
-      {description}
-      </p>
-      <h4 className="red-text">
-      {quote}
-      </h4>
-      <Link className="button button--primary" to={buttonLink}>
-      {buttonLabel}
-    </Link>
+      <div className="row">
+        <div className={clsx('col col--6', styles.leftColumnBackground)}>
+          <h3 className="black-text">
+            {title}
+          </h3>
+          
+        </div>
+        <div className="col col--6">
+        <p className="black-text">
+            {description}
+          </p>
+          <h4 className="red-text">
+            {quote}
+          </h4>
+          <Link className="button button--primary" to={buttonLink}>
+            {buttonLabel}
+          </Link>
+        </div>
+      </div> 
     </div> 
   );
 };

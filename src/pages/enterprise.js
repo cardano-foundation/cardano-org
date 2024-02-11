@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import SiteHero from "@site/src/components/Basic/sitehero";
+import SiteHero from "@site/src/components/SiteHero";
 
 
 export default function Home() {
