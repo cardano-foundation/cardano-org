@@ -7,6 +7,9 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+ 
+ 
+
 function HomepageHeader() {
   const {siteTitle} = "useDocusaurusContext()";
   return (
@@ -30,6 +33,8 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
+        
+            
         <HomepageFeatures />
       </main>
     </Layout>
