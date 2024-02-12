@@ -22,8 +22,11 @@ function SiteHero({ title, description, bannerType }) {
       heroClassName = styles.heroBannerFluid;
       break;
     case 'overlap':
-        heroClassName = styles.heroBannerOverlap;
-        break;
+      heroClassName = styles.heroBannerOverlap;
+      break;
+    case 'zoomRedWhite':
+      heroClassName = styles.heroBannerZoomRedWhite;
+      break;    
     default:
       heroClassName = styles.heroBannerZoom;
   }

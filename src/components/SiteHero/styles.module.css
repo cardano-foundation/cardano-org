@@ -24,6 +24,24 @@ html[data-theme=dark] .heroBannerZoom {
   background-image: url(/img/hero-header-zoom2.png);
 }
 
+.heroBannerZoomRedWhite {
+  padding: 4rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+html[data-theme=light] .heroBannerZoomRedWhite {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+html[data-theme=dark] .heroBannerZoomRedWhite {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
 .heroBannerAda {
   padding: 4rem 0;
   text-align: left;
@@ -106,6 +124,10 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerZoom {
     padding: 4rem;
   }
+  .heroBannerZoomRedWhite {
+    background-size: cover;
+    background-position: 50% 50%;
+  }
   .heroBannerAda {
     padding: 2rem;
   }
@@ -124,6 +146,11 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerZoom {
     background-position: 34% 50%;
   }
+  /*
+  .heroBannerZoomRedWhite {
+     
+  }
+  */
   .heroBannerAda {
     background-position: 50% 20%;
   }
@@ -142,6 +169,9 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerZoom {
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .heroBannerZoomRedWhite {
+    background-repeat: no-repeat;
   }
   .heroBannerAda {
     background-repeat: no-repeat;
