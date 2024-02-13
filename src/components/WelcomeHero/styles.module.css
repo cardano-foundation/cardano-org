@@ -12,15 +12,15 @@
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 35% 50%;
   height: 830px;
 }
 
 html[data-theme=light] .heroBanner {
-  /*background-image: url(/img/hero-header-zoom2.png);*/
-  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
+  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
 }
 
 html[data-theme=dark] .heroBanner {
@@ -42,7 +42,7 @@ html[data-theme=dark] .heroBanner {
 
 @media screen and (max-width: 1024px) {
   .heroBanner {
-    background-position: 34% 50%;
+    background-position: 35% 50%;
   }
 }
 
