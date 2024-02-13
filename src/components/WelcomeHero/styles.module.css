@@ -9,6 +9,7 @@
  .cta .button {
   margin-right: 1rem; /* space between buttons */
   width: 240px; /* force equal width */
+  font-weight: normal;
 }
 
  html[data-theme=light] .button {
@@ -47,6 +48,21 @@ html[data-theme=dark] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
+/* section caret */
+
+.sectionCaretInner {
+  height: 30px;
+  width: 2048px;
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  left: 50%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: -1000px;
+}
+
 /* screen size changes */
 
 @media screen and (max-width: 966px) {
@@ -73,5 +89,10 @@ html[data-theme=dark] .heroBanner {
   .heroBanner {
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .sectionCaretInner {
+    height: 45px;
+    width: 3000px;
+    margin-left: -1500px;
   }
 }
