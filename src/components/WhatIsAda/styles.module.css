@@ -59,27 +59,19 @@
   }
 }
 
-.mobile-no-viz {
+.mobileNotVisible {
   display:flex;
 }
 
-.mobile-viz {
+.mobileVisible {
 display:none;
 }
 
 @media (max-width:599px) {
-  .mobileNoViz {
+  .mobileNotVisible {
     display:none;
   }
-  .mobileViz {
+  .mobileVisible {
     display:flex;
   }
 }
-
-/*
-.sub-heading {
-  max-width: 30rem;
-}
-
-
-*/

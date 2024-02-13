@@ -25,10 +25,10 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
 
     <div className="row">
       <div className={clsx('col col--6', styles.leftColumn)}>
-      <div className={clsx(styles.adaRoundWrap, styles.mobileNoViz)}>
+      <div className={clsx(styles.adaRoundWrap, styles.mobileNotVisible)}>
         <img src={imageUrl} alt={title} />  
       </div>
-      <h4 className={clsx('red-text', styles.mobileNoViz)}>
+      <h4 className={clsx('red-text', styles.mobileNotVisible)}>
           {quote}
       </h4>
         

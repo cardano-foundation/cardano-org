@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { parseTextWithLinks } from '@site/src/utils/textUtils';
 //import styles from "./component-name.module.css"; // in case you need local css for this component
 //import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
 
@@ -57,20 +58,3 @@ UseCase.defaultProps = {
 
 export default UseCase;
 
-// Allow markdown to have links in text. (fixme: move to different file)
-function parseTextWithLinks(contentArray) {
-  return contentArray.map((content, index) => {
-    // If the content is a string, parse it for links
-    if (typeof content === 'string') {
-      // Split the string into parts and replace markdown-style links with <a> tags
-      const parts = content.split(/(\[.*?\]\(.*?\))/).map((part, partIndex) => {
-        const match = part.match(/\[(.*?)\]\((.*?)\)/);
-        return match ? <a href={match[2]} key={`link-${index}-${partIndex}`}>{match[1]}</a> : part;
-      });
-      return <React.Fragment key={`fragment-${index}`}>{parts}</React.Fragment>;
-    } else {
-      // If the content is not a string (e.g., a React element), return it directly
-      return React.cloneElement(content, { key: `element-${index}` });
-    }
-  });
-}
