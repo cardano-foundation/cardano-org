@@ -4,12 +4,14 @@ import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-//import styles from "./component-name.module.css"; // in case you need local css for this component
-//import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
+import Divider from '@site/src/components/Divider';
 
 //
 // This component:
-// fixme: tell what this component does
+// Divider with headline
+// Image of Ada Lovelace on wide screen
+// Title on the right with red dot
+// Below some text
 
 
 const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLink }) => {
@@ -18,10 +20,7 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
 
   return (
     <div className="container">
-      <div className={styles.header}>
-        <h6>{headline}</h6>
-        <div className={styles.horizontalBar}></div>
-      </div>
+      <Divider headline={headline} />
 
     <div className="row">
       <div className={clsx('col col--6', styles.leftColumn)}>

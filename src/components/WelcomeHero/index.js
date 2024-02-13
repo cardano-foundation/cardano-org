@@ -6,7 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
  
 
-function WelcomeHero({ title, description, bannerType }) {
+function WelcomeHero({ title, description }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
