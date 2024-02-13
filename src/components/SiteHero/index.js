@@ -34,8 +34,10 @@ function SiteHero({ title, description, bannerType }) {
   return (
     <header className={clsx("hero hero--primary", heroClassName)}>
       <div className="container">
-        <h1 className="hero__title">{title}</h1>
-        <p className="hero__subtitle">{description}</p>
+        <div className={styles.taglineContainer}>
+          <h1 className="hero__title">{title}</h1>
+          <p className="hero__subtitle">{description}</p>
+        </div>
       </div>
     </header>
   );
