@@ -45,6 +45,8 @@ html[data-theme=dark] .button {
   height: 830px;
 }
 
+
+
 html[data-theme=light] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
   /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
@@ -55,6 +57,20 @@ html[data-theme=dark] .heroBanner {
 }
 
 /* section caret */
+
+:root {
+  --section-caret-fill-color: #ffffff; /* white caret fill for light mode */
+}
+
+/* Override the fill color for dark mode */
+[data-theme='dark'] {
+  --section-caret-fill-color: #242526; /* black for dark mode */
+}
+
+/* Apply the variable to the polygon fill */
+.sectionCaretInner polygon {
+  fill: var(--section-caret-fill-color);
+}
 
 .sectionCaretInner {
   height: 30px;
