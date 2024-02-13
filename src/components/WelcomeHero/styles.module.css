@@ -22,12 +22,14 @@ html[data-theme=dark] .button {
   color: var(--ifm-button-color);
 }
 
+
 .cta .button:last-child {
   margin-right: 0; /* no extra margin to the right of the the last button right: */
 }
 
 .taglineContainer {
   width: 50%;
+  margin-bottom: 3rem;
 }
 
  /* Banner */ 
@@ -71,10 +73,7 @@ html[data-theme=dark] .heroBanner {
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 4rem;
-  }
-  .heroBanner {
-    padding: 4rem;
+    padding: 2rem;
     background-size: cover;
     background-position: 50% 50%;
   }
