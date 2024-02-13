@@ -26,6 +26,10 @@ html[data-theme=dark] .button {
   margin-right: 0; /* no extra margin to the right of the the last button right: */
 }
 
+.taglineContainer {
+  width: 50%;
+}
+
  /* Banner */ 
 
 .heroBanner {
@@ -76,6 +80,9 @@ html[data-theme=dark] .heroBanner {
   }
   .cta .button {
     margin-bottom: 1rem; 
+  }
+  .taglineContainer {
+    width: 100%;
   }
 }
 
