@@ -8,12 +8,13 @@
 /* various hero banner setups for subsites on cardano.org, light and dark mode images */
 
 .heroBannerZoom {
-  padding: 4rem;
+  padding: 4rem 2rem;;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: 50% 75%;
+  height: 410px;
 }
 
 html[data-theme=light] .heroBannerZoom {
@@ -25,13 +26,14 @@ html[data-theme=dark] .heroBannerZoom {
 }
 
 .heroBannerZoomRedWhite {
-  padding: 4rem;
+  padding: 4rem 2rem;;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+  height: 410px;
 }
 
 html[data-theme=light] .heroBannerZoomRedWhite {
@@ -43,13 +45,16 @@ html[data-theme=dark] .heroBannerZoomRedWhite {
 }
 
 .heroBannerAda {
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: cover;
-  background-position: 50% 20%;
+  background-size: 50%;  
+  background-position: top right;
+  background-repeat: no-repeat;  
+  height: 410px;
 }
+
 
 html[data-theme=light] .heroBannerAda {
   background-image: url(/img/hero-header-ada.webp);
@@ -62,12 +67,13 @@ html[data-theme=dark] .heroBannerAda {
 }
 
 .heroBannerDots { /* fixme: this is actually a zoom variant */
-  padding: 4rem 0;
+  padding: 4rem 2rem;;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: 50% 35%;
+  height: 410px;
 }
 
 html[data-theme=light] .heroBannerDots {
@@ -79,12 +85,13 @@ html[data-theme=dark] .heroBannerDots {
 }
 
 .heroBannerFluid {
-  padding: 4rem 0;
+  padding: 4rem 2rem;;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: 50% 50%;
+  height: 410px;
 }
 
 html[data-theme=light] .heroBannerFluid {
@@ -98,12 +105,14 @@ html[data-theme=dark] .heroBannerFluid {
 }
 
 .heroBannerOverlap {
-  padding: 4rem 0;
+  padding: 4rem 2rem;;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: 50% 50%;
+  height: 410px;
+   
 }
 
 html[data-theme=light] .heroBannerOverlap {
@@ -125,20 +134,23 @@ html[data-theme=dark] .heroBannerOverlap {
     padding: 4rem;
   }
   .heroBannerZoomRedWhite {
+    padding: 4rem;
     background-size: cover;
     background-position: 50% 50%;
   }
   .heroBannerAda {
-    padding: 2rem;
+    padding: 4rem;
+    background-size: 100%;  
+    background-position: top right;
   }
   .heroBannerDots {
-    padding: 2rem;
+    padding: 4rem;
   }
   .heroBannerFluid {
     padding: 4rem;
   }
   .heroBannerOverlap {
-    padding: 2rem;
+    padding: 4rem;
   }
 }
 
@@ -174,8 +186,8 @@ html[data-theme=dark] .heroBannerOverlap {
     background-repeat: no-repeat;
   }
   .heroBannerAda {
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 30%;  
+    background-position: top center;
   }
   .heroBannerDots {
     background-repeat: no-repeat;

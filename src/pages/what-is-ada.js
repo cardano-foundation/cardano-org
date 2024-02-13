@@ -12,7 +12,11 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <SiteHero
         title='What is ada?'
-        description='A new type of currency. A new means of transaction. Direct. Secure. From Anywhere. For Everyone.'
+        description={[
+          'A new type of currency. A new means of transaction.',
+          <br key="line1" />,
+          'Direct. Secure. From Anywhere. For Everyone.',
+          ]}
         bannerType ='ada'
       />
       <main>
