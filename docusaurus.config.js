@@ -162,10 +162,6 @@ const config = {
                 to: '/partners#emurgo',
               },
               {
-                label: 'Intersect',
-                href: '/partners#intersect',
-              },
-              {
                 label: 'IOG',
                 href: '/partners#iog', /* fixme: last entry should be "more", then link to the partners page */
               },
