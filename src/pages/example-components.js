@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
+import FollowCardano from "@site/src/components/FollowCardano";
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -62,6 +63,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+      <FollowCardano />
     </Layout>
   );
 }

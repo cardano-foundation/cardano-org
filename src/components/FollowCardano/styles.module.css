@@ -1,0 +1,77 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ .taglineContainer {
+  width: 70%;
+  
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-flex; /* Use inline-flex to center content */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  margin: 0 5px; /* Adjust the spacing between icons */
+  width: 50px; /* Circle size */
+  height: 50px; /* Circle size */
+  border-radius: 50%; /* Make it round */
+   
+  z-index: 0;
+  
+}
+
+html[data-theme=light] .iconWrapper {
+  color: #ffffff;
+}
+
+html[data-theme=dark] .iconWrapper {
+  color: #000000;
+}
+
+.iconWrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.5rem; /* Adjust size of the circle */
+  height: 2.5rem; /* Adjust size of the circle */
+  background-color: var(--ifm-navbar-link-color);
+  border-radius: 50%;
+  z-index: -1;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Adjust the size of the icons if necessary */
+.iconWrapper svg {
+  width: 1.5rem; /* Adjust icon size */
+  height: 1.5rem; /* Adjust icon size */
+  position: relative;
+  z-index: 1;
+}
+ 
+
+
+ 
+
+
+/* screen size changes */
+
+@media screen and (max-width: 966px) {
+  .taglineContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  
+}
+
+@media screen and (min-width: 1950px) {
+  
+}
