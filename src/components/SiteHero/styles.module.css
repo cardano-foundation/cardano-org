@@ -5,6 +5,10 @@
  * and scoped locally.
  */
 
+ .taglineContainer {
+  width: 70%;
+}
+
 /* various hero banner setups for subsites on cardano.org, light and dark mode images */
 
 .heroBannerZoom {
@@ -130,6 +134,9 @@ html[data-theme=dark] .heroBannerOverlap {
 /* screen size changes */
 
 @media screen and (max-width: 966px) {
+  .taglineContainer {
+    width: 100%;
+  }
   .heroBannerZoom {
     padding: 4rem;
   }

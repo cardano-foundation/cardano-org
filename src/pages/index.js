@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import SiteHero from "@site/src/components/SiteHero";
+import WelcomeHero from "@site/src/components/WelcomeHero";
 import TitleWithText from "@site/src/components/TitleWithText";
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 
@@ -11,7 +11,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
+      <WelcomeHero
         title={[
           'Making the world',
           <br key='line1'/>,
