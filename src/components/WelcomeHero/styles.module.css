@@ -5,7 +5,27 @@
  * and scoped locally.
  */
 
-/* various hero banner setups for subsites on cardano.org, light and dark mode images */
+ /* Buttons */
+ .cta .button {
+  margin-right: 1rem; /* space between buttons */
+  width: 240px; /* force equal width */
+}
+
+ html[data-theme=light] .button {
+  background-color: rgb(255, 255, 255);
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme=dark] .button {
+  background-color: var(--ifm-button-background-color);
+  color: var(--ifm-button-color);
+}
+
+.cta .button:last-child {
+  margin-right: 0; /* no extra margin to the right of the the last button right: */
+}
+
+ /* Banner */ 
 
 .heroBanner {
   padding: 4rem 2rem;;
@@ -24,7 +44,7 @@ html[data-theme=light] .heroBanner {
 }
 
 html[data-theme=dark] .heroBanner {
-  background-image: url(/img/hero-header-zoom2.png);
+  background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
 /* screen size changes */
@@ -37,6 +57,9 @@ html[data-theme=dark] .heroBanner {
     padding: 4rem;
     background-size: cover;
     background-position: 50% 50%;
+  }
+  .cta .button {
+    margin-bottom: 1rem; 
   }
 }
 

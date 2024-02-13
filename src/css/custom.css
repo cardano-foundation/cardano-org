@@ -34,6 +34,12 @@
   --ifm-navbar-link-color: var(--ifm-font-color-base); /* navbar in dark mode */ 
 }
 
+/* buttons */
+
+.button {
+  border-radius: 30px;
+}
+
 /* The navbar needs a little space so that the Cardano logo can breathe */
 
 .navbar {
