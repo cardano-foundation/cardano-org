@@ -74,6 +74,14 @@ export default function Home() {
         description='bannerType: zoom (default)'
         bannerType ='default'
       />
+      <hr />
+      <SiteHero
+        title={[
+          'SiteHero Component',
+        ]}
+        description='bannerType: waves'
+        bannerType ='waves'
+      />
 
       <main>
         <Divider headline='Various other components' />  

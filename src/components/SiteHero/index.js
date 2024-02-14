@@ -26,7 +26,10 @@ function SiteHero({ title, description, bannerType }) {
       break;
     case 'zoomRedWhite':
       heroClassName = styles.heroBannerZoomRedWhite;
-      break;    
+      break;  
+    case 'waves':
+      heroClassName = styles.heroBannerWaves;
+      break;   
     default:
       heroClassName = styles.heroBannerZoom;
   }
