@@ -1,11 +1,7 @@
 ---
 slug: announcing-the-first-round-of-speakers-for-cardano-summit-2023
 title: Speakers for Cardano Summit 2023
-authors:
-  name: Testuser
-  title: Chief Test Officer
-  url: https://cardanofoundation.org
-  image_url: https://github.com/cardano-foundation.png
+authors: [cf]
 tags: [summit, events]
 ---
 
