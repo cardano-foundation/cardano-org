@@ -129,6 +129,27 @@ html[data-theme=dark] .heroBannerOverlap {
   background-color: #5281F7;
 }
 
+.heroBannerWaves {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 65%;  
+  background-position: top right;
+  background-repeat: no-repeat;  
+  height: 410px;
+}
+
+
+html[data-theme=light] .heroBannerWaves {
+  background-image: url(/img/hero-header-waves.webp);
+  background-color: #0538AF;
+}
+
+html[data-theme=dark] .heroBannerWaves {
+  background-image: url(/img/hero-header-waves.webp);  
+  background-color: #244eaf;
+}
 
 
 /* screen size changes */
@@ -159,6 +180,11 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerOverlap {
     padding: 4rem;
   }
+  .heroBannerWaves {
+    padding: 4rem;
+    background-size: cover;  
+    background-position: top right;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -182,6 +208,9 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerOverlap {
     background-position: 34% 50%;
   }
+  .heroBannerWaves {
+    background-position: top right;
+  }
 }
 
 @media screen and (min-width: 1950px) {
@@ -203,5 +232,9 @@ html[data-theme=dark] .heroBannerOverlap {
   .heroBannerFluid {
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .heroBannerWaves {
+    background-size: 35%;  
+    background-position: top right;
   }
 }

@@ -20,7 +20,6 @@ export default function Home() {
         description='Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
         with the tools and technologies required to create possibility for the many, as well as the few, 
         and bring about positive global change.'
-        bannerType ='default'
       />
       <main>
         

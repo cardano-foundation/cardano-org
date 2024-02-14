@@ -47,8 +47,9 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           routeBasePath: 'news',
+          blogSidebarCount: 10,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -160,10 +161,6 @@ const config = {
               {
                 label: 'EMURGO',
                 to: '/partners#emurgo',
-              },
-              {
-                label: 'Intersect',
-                href: '/partners#intersect',
               },
               {
                 label: 'IOG',

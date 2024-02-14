@@ -1,3 +1,23 @@
+cf:
+  name: Cardano Foundation
+  url: https://cardanofoundation.org
+  image_url: https://github.com/cardano-foundation.png
+
+emurgo:
+  name: EMURGO
+  url: https://www.emurgo.io
+  image_url: https://github.com/emurgo.png
+
+iog:
+  name: Input Output Global
+  url: https://iohk.io
+  image_url: https://github.com/input-output-hk.png
+
+intersect:
+  name: Intersect
+  url: https://www.intersectmbo.org
+  image_url: https://github.com/intersectmbo.png
+
 gufmar:
   name: Markus Gufler
   title: Maintainer
