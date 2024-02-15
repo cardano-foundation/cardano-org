@@ -1,6 +1,18 @@
-.quoteBox {
-  display: flex;  
-  align-items: center;  
+.quoteBoxWrap {
+  width: 100%;
+  margin-top: 0px;
+  background-color: var(--ifm-background-color);
+  padding-top: 2rem;
+  padding-right: 7rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+.quoteBox { 
   background-color: #335CBE; 
   color: white;
   padding: 20px;
@@ -9,7 +21,12 @@
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 90%;
+  max-width: 70rem;
+}
+
+.textContainer {
+  display: flex;  
+  align-items: center; 
 }
 
 .imageWrap {
@@ -21,12 +38,13 @@
 
 .description {
   font-size: 18px;
-  margin-bottom: 15px;
+  max-width: 50rem;
+  padding-bottom: 30px;
 }
 
 .quote {
   font-size: 18px;
-  max-width: 76rem;
+  max-width: 50rem;
   margin: 30px 0px 30px 0px; 
   color: #FFDDDD; /* super slight red */
 }

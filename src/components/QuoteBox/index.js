@@ -20,16 +20,22 @@ function QuoteBox({ description, quote }) {
   const imageUrl = useBaseUrl(`/img/cardano-white.svg`);
 
   return (
-    <div className={styles.quoteBox}>
-      <div className={styles.imageWrap}>
-        <img src={imageUrl} alt="Cardano Logo" />
+    <div className={styles.quoteBoxWrap}>
+      <div className={styles.quoteBox}>
+        <div className={styles.textContainer}>
+          <div className={styles.imageWrap}>
+            <img src={imageUrl} alt="Cardano Logo" />
+          </div>
+          <div className={styles.description}>
+            {description}
+          </div>
+        </div>
+        <div className={styles.quote}>
+            {quote}
+        </div>
+        
       </div>
-      <div className={styles.textContainer}> 
-      <div className={styles.description}>{description}</div>
-      <div className={styles.quote}>"{quote}"</div>
-      </div>
-    </div>
-     
+  </div>   
   );
 };
 
