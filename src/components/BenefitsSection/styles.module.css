@@ -1,23 +1,30 @@
 /* styles.module.css */
 
-.section {
-    /* Adjust your section styling */
-  }
-  
   .tabs {
     /* Adjust your tabs styling */
+    padding-top: 3rem;
+  }
+
+  .rightColumn {
+    margin-top: -3rem; 
   }
   
   /* Style for the selected tab, this may vary depending on the final class names rendered */
   .tabs .tabs__item--active {
     color: var(--ifm-color-primary);
     border-left: 4px solid var(--ifm-color-primary);
-    /* Other styles to indicate an active tab */
+    
+  }
+
+  /* Remove default list style */
+  .react-tabs__tab-list {
+    list-style-type: none; /* Remove default list dots */
+    padding-left: 0; /* Remove default padding */
   }
 
   .tabCategory {
     color: gray;
-    
+    list-style-type: none; /* Remove default list dots */
   }
 
   .tabLabel {
@@ -30,5 +37,40 @@
   .tabIcon {
     margin-right: 8px; /* Add some space between the icon and the text */
     color: var(--ifm-color-primary); /* Adjust the color as needed */
+  }
+  
+  .buttonWrap {
+    margin-top: 2rem;
+  }
+
+  /* transition */
+  @keyframes swipeIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes swipeOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  .swipeIn {
+    animation: swipeIn 0.5s forwards;
+  }
+  
+  .swipeOut {
+    animation: swipeOut 0.5s forwards;
   }
   

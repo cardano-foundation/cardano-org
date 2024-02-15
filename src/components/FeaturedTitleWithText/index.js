@@ -22,18 +22,18 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
     <div className="container">
       <div className="row">
         <div className={clsx('col col--6', styles.leftColumn)}>
-          <h4 className={clsx('black-text', styles.headingDot)}>
+          <h1 className={clsx('black-text', styles.headingDot)}>
             {title}
-          </h4>
+          </h1>
           
         </div>
         <div className={clsx('col col--6', styles.rightColumn)}>
         <p className="black-text">
             {description}
           </p>
-          <h4 className="red-text">
+          <h2 className="red-text">
             {quote}
-          </h4>
+          </h2>
           <Link className="button button--primary button--lg" to={buttonLink}>
             {buttonLabel}
           </Link>
