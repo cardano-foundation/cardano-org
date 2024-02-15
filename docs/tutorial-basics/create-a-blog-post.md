@@ -2,9 +2,9 @@
 sidebar_position: 3
 ---
 
-# Create a Blog Post
+# Create a News
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+We are using Docusaurus blog features for the news on cardano.org. It creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
 
 ## Create your first Post
 
