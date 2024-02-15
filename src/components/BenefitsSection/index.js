@@ -101,7 +101,7 @@ const BenefitsSection = ({  }) => {
   };
 
   return (
-    
+    <div className={styles.benefitsBoxWrap}>
       <Tabs className={styles.tabs} onSelect={handleSelect} selectedIndex={selectedIndex}>
       <div className={clsx('row', styles.container)}> 
         <div className={clsx('col col--4', styles.leftColumn)}>
@@ -129,7 +129,7 @@ const BenefitsSection = ({  }) => {
         </div>
         </div>
       </Tabs>
-    
+    </div>
   );
 };
 

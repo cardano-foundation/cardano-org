@@ -1,4 +1,12 @@
 /* styles.module.css */
+.benefitsBoxWrap {
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 2rem;
+  padding-right: 7rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+}
 
   .tabs {
     /* Adjust your tabs styling */
@@ -13,14 +21,15 @@
   .tabs .tabs__item--active {
     color: var(--ifm-color-primary);
     border-left: 4px solid var(--ifm-color-primary);
-    
+     
   }
 
-  /* Remove default list style */
-  .react-tabs__tab-list {
-    list-style-type: none; /* Remove default list dots */
-    padding-left: 0; /* Remove default padding */
+   /* Remove default list style    */
+  ul {
+    list-style-type: none;  
+    padding-left: 0; 
   }
+
 
   .tabCategory {
     color: gray;
