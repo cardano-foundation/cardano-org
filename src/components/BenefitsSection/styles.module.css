@@ -1,0 +1,34 @@
+/* styles.module.css */
+
+.section {
+    /* Adjust your section styling */
+  }
+  
+  .tabs {
+    /* Adjust your tabs styling */
+  }
+  
+  /* Style for the selected tab, this may vary depending on the final class names rendered */
+  .tabs .tabs__item--active {
+    color: var(--ifm-color-primary);
+    border-left: 4px solid var(--ifm-color-primary);
+    /* Other styles to indicate an active tab */
+  }
+
+  .tabCategory {
+    color: gray;
+    
+  }
+
+  .tabLabel {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+  }
+
+  .tabIcon {
+    margin-right: 8px; /* Add some space between the icon and the text */
+    color: var(--ifm-color-primary); /* Adjust the color as needed */
+  }
+  
