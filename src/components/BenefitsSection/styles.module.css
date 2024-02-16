@@ -9,43 +9,54 @@
 }
 
   .tabs {
-    /* Adjust your tabs styling */
     padding-top: 3rem;
   }
 
   .rightColumn {
     margin-top: -3rem; 
   }
+
+  .tabList {
+    cursor: pointer;
+  }
   
-  /* Style for the selected tab, this may vary depending on the final class names rendered */
-  .tabs .tabs__item--active {
-    color: var(--ifm-color-primary);
-    border-left: 4px solid var(--ifm-color-primary);
-     
+  .tabSelected  {
+    background-color: var(--ifm-background-color) !important; /* no special background when selected */
+  } 
+
+  .tab:active {
+    background-color: #e0e0e0; /* temporary background color when clicking on item */
+    transition: background-color 0.3s ease; /* Smooth transition */
   }
 
-   /* Remove default list style    */
+  
   ul {
-    list-style-type: none;  
+    list-style-type: none;   /* Remove default list style */
     padding-left: 0; 
   }
 
 
   .tabCategory {
     color: gray;
-    list-style-type: none; /* Remove default list dots */
+
+  }
+
+  [data-theme='dark'] {
+    .tabCategory {
+      color: #e0e0e0;
+    }
   }
 
   .tabLabel {
     display: flex;
     align-items: center;
     font-weight: bold;
-    color: black;
+    color: var(--ifm-color-primary);
   }
 
   .tabIcon {
     margin-right: 8px; /* Add some space between the icon and the text */
-    color: var(--ifm-color-primary); /* Adjust the color as needed */
+    color: var(--ifm-color-primary); 
   }
   
   .buttonWrap {

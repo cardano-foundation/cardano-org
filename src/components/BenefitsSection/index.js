@@ -107,10 +107,13 @@ const BenefitsSection = ({  }) => {
         <div className={clsx('col col--4', styles.leftColumn)}>
           <TabList className={styles.tabList}>
             {benefitsData.benefits.benefits_items.map((benefit, index) => (
-              <Tab className={styles.tab} key={index}>
-                <TabLabel isSelected={index === selectedIndex}>{benefit.benefits_item_label}</TabLabel>
-                <p className={styles.tabCategory}>{benefit.benefits_item_category}</p>
-              </Tab>
+              <Tab 
+              className={clsx(styles.tab, { [styles.tabSelected]: index === selectedIndex })} 
+              key={index}
+            >
+              <TabLabel isSelected={index === selectedIndex}>{benefit.benefits_item_label}</TabLabel>
+              <p className={styles.tabCategory}>{benefit.benefits_item_category}</p>
+            </Tab>
             ))}
           </TabList>
         </div>
