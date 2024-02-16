@@ -2,12 +2,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import WelcomeHero from "@site/src/components/WelcomeHero";
-import TitleWithText from "@site/src/components/TitleWithText";
+
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 import Divider from "@site/src/components/Divider";
 import QuoteBox from "@site/src/components/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
 import VisionBox from '@site/src/components/VisionBox';
+import TitleBox from '@site/src/components/TitleBox';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -66,7 +67,7 @@ export default function Home() {
           />
 
         <Divider headline='Make the Change'/> 
-        <TitleWithText 
+        <TitleBox 
           title='Discover Cardano' 
           description={[
             'Cardano is the first blockchain platform to be built through peer-reviewed research, \
