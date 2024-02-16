@@ -9,7 +9,8 @@ import QuoteBox from "@site/src/components/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
 import VisionBox from '@site/src/components/VisionBox';
 import TitleBox from '@site/src/components/TitleBox';
-import DottedImageWithButton from '../components/DottedImageWithButton';
+
+import DiscoverSection from '@site/src/components/DiscoverSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -78,11 +79,7 @@ export default function Home() {
           titleType='black'
         />
 
-        <DottedImageWithButton
-          imageName='education'
-          buttonLabel='People'
-          buttonLink='discover-cardano#people'
-        />
+        <DiscoverSection />
 
       </main>
     </Layout>

@@ -10,7 +10,7 @@
   color: var(--ifm-color-base);
 }
 
-html[data-theme=dark] .heroBannerAda {
+html[data-theme=dark]  {
   .titleTypeGreen {
     color: rgb(78, 136, 145);
   }

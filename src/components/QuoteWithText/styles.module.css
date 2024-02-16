@@ -1,0 +1,33 @@
+ .textTypeRed {
+  color: rgb(255, 118, 118);
+}
+
+.textTypeGreen {
+  color: rgb(59, 121, 130);
+}
+
+.textTypeBlack {
+  color: var(--ifm-color-base);
+}
+
+html[data-theme=dark] {
+  .titleTypeGreen {
+    color: rgb(78, 136, 145);
+  }
+}
+
+.quote {
+  font-size: 18px;
+}
+
+.quote::before {
+  content: "“";
+  font-size: 5rem;
+  color: rgb(255, 85, 83);
+  line-height: 0;
+  position: absolute;
+  margin-top: 5px;
+  margin-right: -50px
+  }
+ 
+ 
