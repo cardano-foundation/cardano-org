@@ -58,11 +58,8 @@ export default function DiscoverSection() {
     </div> 
     <div className={styles.quoteWrap}>
       <QuoteWithText
-          text={[
-            'We have changed science. We have changed what it means to build global systems and \
-          sustainable models of exchange and governance.'
-        ]}
-          quoteType='black'
+          text='We have changed science. We have changed what it means to build global systems and sustainable models of exchange and governance.' 
+          quoteType='mixed'
       />   
     </div>
     </section>

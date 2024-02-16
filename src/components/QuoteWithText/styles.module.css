@@ -1,17 +1,17 @@
- .textTypeRed {
+ .quoteTypeRed {
   color: rgb(255, 118, 118);
 }
 
-.textTypeGreen {
+.quoteTypeGreen {
   color: rgb(59, 121, 130);
 }
 
-.textTypeBlack {
+.quoteTypeBlack {
   color: var(--ifm-color-base);
 }
 
 html[data-theme=dark] {
-  .titleTypeGreen {
+  .quoteTypeGreen {
     color: rgb(78, 136, 145);
   }
 }
@@ -23,7 +23,7 @@ html[data-theme=dark] {
 .quote::before {
   content: "“";
   font-size: 5rem;
-  color: rgb(255, 85, 83);
+  color: rgb(255, 85, 83); /* todo: we may want this in the same color as the text */
   line-height: 0;
   position: absolute;
   margin-top: 5px;
