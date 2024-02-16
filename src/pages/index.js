@@ -7,6 +7,7 @@ import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 import Divider from "@site/src/components/Divider";
 import QuoteBox from "@site/src/components/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
+import VisionBox from '@site/src/components/VisionBox';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -55,7 +56,15 @@ export default function Home() {
         />
 
         <BenefitsSection />
-          
+
+        <VisionBox
+          title={[
+            'Define Your Possible.',
+            <br key='line1'/>,
+            'Change Your World.',
+            ]}
+          />
+
       </main>
     </Layout>
   );
