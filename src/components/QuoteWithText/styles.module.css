@@ -16,6 +16,10 @@ html[data-theme=dark] {
   }
 }
 
+.noquote {
+  font-size: 18px;
+}
+
 .quote {
   font-size: 18px;
 }

@@ -7,15 +7,28 @@ import styles from "./styles.module.css";
 // This component shows a quote and you can select some colors via quoteType
 // Particularly worth mentioning here is quoteType = 'mixed' which puts the first
 // sentence in red and the rest of the quote in green as used in Cardano 2020 page
+// and quoteType = 'none' which can be used to add normal text without special formatting underneath
  
 function QuoteWithText({ text, quoteType }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
+  // We render differently if it's a none quote type
+  // TODO: at this point we need some refactoring
+  if (quoteType == 'none') {
+    return (
+      <div className={styles.quoteWrap}>
+        <p className={styles.noquote}>
+        {text}
+        </p>
+      </div> 
+    );
+  }
+
   // Split the text into sentences for textTypeMixed
   const sentences = text.match(/[^\.!\?]+[\.!\?]+/g) || [];
 
-  // We render differently if it's a mixed quote type and
+  // We alo render differently if it's a mixed quote type and
   // if we have different sentences at all
   if (quoteType == 'mixed' && sentences.length > 0 ) {
     const firstSentence = sentences.shift(); // The first sentence

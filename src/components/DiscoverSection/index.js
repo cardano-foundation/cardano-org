@@ -62,6 +62,12 @@ export default function DiscoverSection() {
           quoteType='mixed'
       />   
     </div>
+    <div className={styles.quoteWrap}>
+    <QuoteWithText
+          text='We, alongside our community and partners, are defining a new future: a decentralized future without intermediaries, in which power is returned to the individual.' 
+          quoteType='none'
+      />
+    </div>
     </section>
   );
 }
