@@ -186,7 +186,7 @@ h1 {
 
 h2 {
   font-family: Chivo, sans-serif;
-  font-size: 3.6rem;
+  /*font-size: 3.6rem;*/
   font-weight: 700;
   line-height: 1.2;
   -webkit-letter-spacing: 0.05rem;
@@ -207,19 +207,19 @@ h2 {
 
 @media (max-width: 960px) {
   h2 {
-      font-size: 3.748rem;
+      /*font-size: 3.748rem;*/
   }
 }/*!sc*/
 
 @media (max-width: 600px) {
   h2 {
-      font-size: 3.348rem;
+      /*font-size: 3.348rem;*/
   }
 }/*!sc*/
 
 h3 {
   font-family: Chivo, sans-serif;
-  font-size: 2.88rem;
+  /*font-size: 2.88rem;*/
   font-weight: 700;
   line-height: 1.2;
   -webkit-letter-spacing: 0.05rem;
@@ -240,19 +240,19 @@ h3 {
 
 @media (max-width: 960px) {
   h3 {
-      font-size: 3.056rem;
+      /*font-size: 3.056rem;*/
   }
 }/*!sc*/
 
 @media (max-width: 600px) {
   h3 {
-      font-size: 2.656rem;
+      /*font-size: 2.656rem;*/
   }
 }/*!sc*/
 
 h4 {
   font-family: Chivo, sans-serif;
-  font-size: 2.2rem;
+  /*font-size: 2.2rem;*/
   font-weight: 700;
   line-height: 1.2;
   -webkit-letter-spacing: 0.05rem;
@@ -273,13 +273,13 @@ h4 {
 
 @media (max-width: 960px) {
   h4 {
-      font-size: 2.48rem;
+      /*font-size: 2.48rem;*/
   }
 }/*!sc*/
 
 @media (max-width: 600px) {
   h4 {
-      font-size: 2.08rem;
+      /*font-size: 2.08rem;*/
   }
 }/*!sc*/
 
@@ -327,21 +327,23 @@ h6 {
   text-transform: uppercase;
 }/*!sc*/
 
+/*
 @media (max-width: 960px) {
   h6 {
       font-size: 1.6rem;
   }
-}/*!sc*/
+} 
 
 small {
   color: rgba(0, 0, 0, 0.54);
-}/*!sc*/
+}
 
 ul, ol {
   list-style-position: inside;
   margin-left: 0;
   padding: 0;
-}/*!sc*/
+} 
+*/
 
 a {
   outline-width: 0.5rem;
