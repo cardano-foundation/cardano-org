@@ -65,6 +65,17 @@ export default function Home() {
             ]}
           />
 
+        <Divider headline='Make the Change'/> 
+        <TitleWithText 
+          title='Discover Cardano' 
+          description={[
+            'Cardano is the first blockchain platform to be built through peer-reviewed research, \
+          to be secure enough to protect the data of billions, scalable enough to accommodate global systems, \
+          and robust enough to support foundational change.'
+          ]}
+          titleType='black'
+        />
+
       </main>
     </Layout>
   );
