@@ -5,9 +5,16 @@
  * and scoped locally.
  */
 
+.container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children vertically */
+  justify-content: center; /* Center children horizontally */
+  text-align: center; /* Center text for any inline children */
+  }
+
  .taglineContainer {
   width: 70%;
-  
 }
 
 .iconWrapper {
@@ -19,9 +26,7 @@
   width: 50px; /* Circle size */
   height: 50px; /* Circle size */
   border-radius: 50%; /* Make it round */
-   
   z-index: 0;
-  
 }
 
 html[data-theme=light] .iconWrapper {
@@ -55,13 +60,7 @@ html[data-theme=dark] .iconWrapper {
   z-index: 1;
 }
  
-
-
- 
-
-
 /* screen size changes */
-
 @media screen and (max-width: 966px) {
   .taglineContainer {
     width: 100%;

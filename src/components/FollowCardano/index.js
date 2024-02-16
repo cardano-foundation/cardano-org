@@ -16,9 +16,9 @@ const socialLinks = [
 
 function FollowCardano() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className={styles.taglineContainer}>
-        <h4 className="hero__title">follow us</h4>
+        <h1>Follow Cardano</h1>
         <p className="social__icons">
           {socialLinks.map((social, index) => (
             <Link key={index} href={social.url} aria-label={social.label}>
