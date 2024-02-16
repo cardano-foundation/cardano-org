@@ -6,6 +6,9 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+// GitHub Settings to setup repository and branch customFields
+const vars = require('./variables')
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cardano',
@@ -26,6 +29,10 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  customFields: {
+    repository: `${vars.repository}`,
+    branch: `${vars.branch}`,
+  },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -41,19 +48,13 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         blog: {
           showReadingTime: false,
           routeBasePath: 'news',
           blogSidebarCount: 10,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -128,13 +129,11 @@ const config = {
           },
           */
           {to: '/news', label: 'News', position: 'left'},
-          /*
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            href: `${vars.repository}`,
+            position: "right",
+            className: "header-github-link",
           },
-          */
         ],
       },
       footer: {
@@ -206,11 +205,7 @@ const config = {
                 to: '/News',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/cardano-foundation/www-cardano-org',
-              },
-              {
-                label: 'Responsible Disclosure',
+                label: 'Disclosure',
                 to: '/responsible-disclosure',
               },
             ],
