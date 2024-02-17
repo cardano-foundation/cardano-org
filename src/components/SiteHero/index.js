@@ -8,7 +8,6 @@ function SiteHero({ title, description, bannerType }) {
   const { siteConfig = {} } = context;
 
   // Use bannerType to dynamically change the class for the hero banner
-  // styles need to be defined in sitehero.module.css
   let heroClassName;
 
   switch (bannerType) {

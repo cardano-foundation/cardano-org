@@ -2,11 +2,12 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css"; 
+import TitleWithText from "@site/src/components/TitleWithText";
 
 //
-// This component shows a simple header with some text below
+// This component shows a simple header with some text below in a box
  
-function TitleWithText({ title, description, titleType }) {
+function TitleBox({ title, description, titleType }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -25,16 +26,16 @@ function TitleWithText({ title, description, titleType }) {
   }
 
   return (
-     
-    <div className="container">
-      <h1 className={(titleClassName)}>
-      {title}
-      </h1>
-      <p className="black-text">
-      {description}
-      </p>
-    </div> 
+    <div className={styles.titleBoxWrap}>
+      <div className={styles.titleBox}>
+        <TitleWithText
+          title = {title}
+          description = {description}
+          titleType = {titleType}
+        />  
+      </div>
+    </div>
   );
 };
 
-export default TitleWithText;
+export default TitleBox;

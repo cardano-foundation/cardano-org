@@ -2,11 +2,16 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import WelcomeHero from "@site/src/components/WelcomeHero";
-import TitleWithText from "@site/src/components/TitleWithText";
+
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 import Divider from "@site/src/components/Divider";
 import QuoteBox from "@site/src/components/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
+import VisionBox from '@site/src/components/VisionBox';
+import TitleBox from '@site/src/components/TitleBox';
+import FollowCardano from '@site/src/components/FollowCardano';
+import DiscoverSection from '@site/src/components/DiscoverSection';
+import PartnerSection from '../components/PartnersSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -55,7 +60,31 @@ export default function Home() {
         />
 
         <BenefitsSection />
-          
+
+        <VisionBox
+          title={[
+            'Define Your Possible.',
+            <br key='line1'/>,
+            'Change Your World.',
+            ]}
+          />
+
+        <Divider headline='Make the Change'/> 
+        <TitleBox 
+          title='Discover Cardano' 
+          description={[
+            'Cardano is the first blockchain platform to be built through peer-reviewed research, \
+          to be secure enough to protect the data of billions, scalable enough to accommodate global systems, \
+          and robust enough to support foundational change.'
+          ]}
+          titleType='black'
+        />
+
+        <DiscoverSection />
+
+        <PartnerSection />
+        {/*<FollowCardano />*/}
+
       </main>
     </Layout>
   );

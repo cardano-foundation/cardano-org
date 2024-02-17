@@ -1,0 +1,35 @@
+.discoverWrap {
+  display: flex;
+  width: 100%;
+}
+
+.discoverItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;  
+  padding: 2rem 0;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quoteWrap {
+  display: flex;
+  justify-content: center; 
+  max-width: 50rem;
+  padding-top: 2rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .quoteWrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+

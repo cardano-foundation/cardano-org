@@ -1,0 +1,19 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.imageWrap {
+  max-width: 10rem;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonWrap {
+  max-width: 10rem;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ 
