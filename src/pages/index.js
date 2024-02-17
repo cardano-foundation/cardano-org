@@ -11,6 +11,7 @@ import VisionBox from '@site/src/components/VisionBox';
 import TitleBox from '@site/src/components/TitleBox';
 import FollowCardano from '@site/src/components/FollowCardano';
 import DiscoverSection from '@site/src/components/DiscoverSection';
+import PartnerSection from '../components/PartnersSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -81,6 +82,7 @@ export default function Home() {
 
         <DiscoverSection />
 
+        <PartnerSection />
         {/*<FollowCardano />*/}
 
       </main>

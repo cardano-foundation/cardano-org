@@ -1,0 +1,36 @@
+.discoverWrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap items to the next line on smaller screens */
+  gap: 2rem; /* Space between logo containers */
+  
+}
+
+.discoverItems {
+  /* This container will be responsible for the layout of the logo items */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* This will vertically align items if they have different heights */
+  padding: 2rem 0;
+  max-width: 70rem;
+  
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .discoverItems {
+    /* Adjust styles for mobile */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoContainer {
+    /* Adjust the padding if needed */
+    padding: 10px;
+  }
+}
