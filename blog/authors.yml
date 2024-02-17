@@ -1,35 +1,47 @@
 cf:
   name: Cardano Foundation
   url: https://cardanofoundation.org
-  image_url: https://github.com/cardano-foundation.png
+  image_url: ../img/authors/cardano-foundation.png
 
 emurgo:
   name: EMURGO
   url: https://www.emurgo.io
-  image_url: https://github.com/emurgo.png
+  image_url: ../img/authors/emurgo.png
 
 iog:
   name: Input Output Global
   url: https://iohk.io
-  image_url: https://github.com/input-output-hk.png
+  image_url: ../img/authors/input-output-hk.png
 
 intersect:
   name: Intersect
   url: https://www.intersectmbo.org
-  image_url: https://github.com/intersectmbo.png
+  image_url: ../img/authors/intersectmbo.png
 
-gufmar:
-  name: Markus Gufler
-  title: Maintainer
-  url: https://github.com/gufmar
-  image_url: https://github.com/gufmar.png
+catalyst:
+  name: Project Catalyst
+  url: https://projectcatalyst.io
+  image_url: ../img/authors/project-catalyst.png
 
-katomm:
-  name: Tommy Kammerer
-  title: Maintainer
-  url: https://github.com/katomm
-  image_url: https://github.com/katomm.png
+taptools:
+  name: TapTools
+  url: https://taptools.io/
+  image_url: ../img/authors/thetaphouse.png
+
+builderfest:
+  name: Buidler Fest
+  url: https://buidl.2024.cardano.org
+  image_url: ../img/authors/builderfest.png
+
 
 # please only add regular authors, you can also add one-off authors in the news files directly.
-# todo: add authors for CF, IOG, Emurgo, Intersect and others. Would be nice to start with a
-# decent group of regular authors.
+# todo: Would be nice to start with a decent group of regular authors / entities 
+#
+# obv need some guidelines. Suggestions for content we will like and merge:
+# 1.) Call to action/participation
+# 2.) eli5 a topic (financial, regulation, legal, governance, infrastructure, operations, resilience, development, network)
+#     recap a physical (bigger) meetup, a workshop, a working group workstream, a vote/poll/survey/, governance actions
+# 3.) content we will not give visibility: sales, promotion, announcement of announcements, new tokens/platforms/apps/services
+#     promises, best/first/largest/fastest whatnot
+# 4.) TLDR: Focus on things that benefit the community rather than an individual/company, needs to link always back 
+#     to a blog/news article
