@@ -1,0 +1,41 @@
+
+.logoContainer {
+  padding: 20px;
+  text-align: left; /* Center the text within the logo container */
+  display: flex; /* Use flex to enable vertical centering */
+  flex-direction: column; /* Stack logo and text vertically */
+  align-items: left; /* Center items horizontally in the flex container */
+   
+}
+
+.imageWrap {
+  max-width: 15rem;
+  height: 100px;
+}
+
+.headingDot {
+  position: relative;
+}
+
+.headingDot::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0px;
+  width: 1rem;
+  height: 1rem;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: rgb(255, 118, 118);
+}
+
+.buttonWrap {
+  padding: 10px;
+}
+
+.buttonLink {
+  width: 12rem;
+}
+ 

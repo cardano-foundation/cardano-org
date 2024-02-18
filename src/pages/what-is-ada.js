@@ -5,6 +5,7 @@ import SiteHero from "@site/src/components/SiteHero";
 import WhatIsAda from '@site/src/components/WhatIsAda';
 import FeaturedTitleWithText from '@site/src/components/FeaturedTitleWithText';
 import HowToBuyAdaSection from '../components/HowToBuyAdaSection';
+import WalletSection from '../components/WalletSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -46,7 +47,7 @@ export default function Home() {
           
         />
         <HowToBuyAdaSection /> 
-           
+        <WalletSection />   
       </main>
     </Layout>
   );
