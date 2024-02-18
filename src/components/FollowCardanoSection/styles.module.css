@@ -34,6 +34,9 @@
 }
 
 [data-theme='dark'] {
+  .container {
+    background-image: linear-gradient(315deg, rgb(43, 89, 205), rgb(0, 24, 80));
+  }
   .header h6 {
     color: #ffffff;
   }
