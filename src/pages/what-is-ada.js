@@ -2,7 +2,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
-import WhatIsAda from '../components/WhatIsAda';
+import WhatIsAda from '@site/src/components/WhatIsAda';
+import FeaturedTitleWithText from '@site/src/components/FeaturedTitleWithText';
+import HowToBuyAdaSection from '../components/HowToBuyAdaSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -43,6 +45,8 @@ export default function Home() {
           quote='What can I do with ada?'
           
         />
+        <HowToBuyAdaSection /> 
+           
       </main>
     </Layout>
   );

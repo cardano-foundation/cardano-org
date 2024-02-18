@@ -34,9 +34,11 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
           <h2 className="red-text">
             {quote}
           </h2>
-          <Link className="button button--primary button--lg" to={buttonLink}>
-            {buttonLabel}
-          </Link>
+          {buttonLabel && buttonLink && (
+            <Link className="button button--primary button--lg" to={buttonLink}>
+              {buttonLabel}
+            </Link>
+          )}
         </div>
       </div> 
     </div> 
