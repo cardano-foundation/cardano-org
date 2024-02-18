@@ -1,11 +1,11 @@
-.discoverWrap {
+.walletWrap {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Wrap items to the next line on smaller screens */
   gap: 2rem; /* Space between logo containers */
 }
 
-.discoverItems {
+.walletItems {
   /* This container will be responsible for the layout of the logo items */
   display: flex;
   flex-direction: row;
@@ -18,14 +18,14 @@
 }
 
 /* Individual item styling to ensure they take up the right amount of space */
-.discoverItem { /* Assuming this class is applied to each WalletItem, adjust if the class name differs */
+.walletItem { /* Assuming this class is applied to each WalletItem, adjust if the class name differs */
   flex: 1 1 calc(50% - 20px); /* Adjust the calc() value based on your gap */
   max-width: calc(50% - 20px); /* Ensures items do not stretch beyond 50% width minus the gap */
 }
 
 /* Media query for smaller screens to stack items in a single column */
 @media (max-width: 768px) { /* Adjust breakpoint as necessary */
-  .discoverItem {
+  .walletItem {
     flex: 1 1 100%; /* Take full width on smaller screens */
     max-width: 100%;
   }

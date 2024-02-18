@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css"; 
+import { parseTextWithLinks } from '@site/src/utils/textUtils';
 
 //
 // This component shows a simple header with some text below
@@ -31,7 +32,7 @@ function TitleWithText({ title, description, titleType }) {
       {title}
       </h1>
       <p className="black-text">
-      {description}
+      {parseTextWithLinks(description)}
       </p>
     </div> 
   );

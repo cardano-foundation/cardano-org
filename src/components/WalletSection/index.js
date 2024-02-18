@@ -57,13 +57,13 @@ function WalletItem({title, imageName, text, subtext, label, link}) {
 
 export default function WalletSection() {
   return (
-    <section className={styles.partnerSection}>
+    <section className={styles.partnerSection} id="wallets">
       <Divider headline='Cardano Wallets' />
-      <div className={styles.discoverWrap}>
-        <div className={styles.discoverItems}>
+      <div className={styles.walletWrap}>
+        <div className={styles.walletItems}>
           
         {WalletItemList.map((props, idx) => (
-            <div className="discoverItem" key={idx}> {/* Wrapper div with class */}
+            <div className={styles.walletItem} key={idx}> {/* Wrapper div with class */}
               <WalletItem key={idx} {...props} />
             </div>
             ))}

@@ -5,7 +5,11 @@ import React from "react";
 // Quite useful if you just want to allow (trusted) links in text that is passed into 
 // components to avoid dangerouslySetInnerHTML.
 export function parseTextWithLinks(contentArray) {
-  return contentArray.map((content, index) => {
+
+  // Ensure contentArray is always treated as an array
+  const safeArray = Array.isArray(contentArray) ? contentArray : [contentArray];
+
+  return safeArray.map((content, index) => {
     // If the content is a string, parse it for links
     if (typeof content === 'string') {
       // Split the string into parts and replace markdown-style links with <a> tags

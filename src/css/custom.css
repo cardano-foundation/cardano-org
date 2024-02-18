@@ -357,3 +357,7 @@ img {
   /*color: rgb(29, 30, 33);*/ /* bad example if you want to have dark mode */
   color: var(--ifm-font-color-base); /* good example */
 }
+
+.slight-text {
+  color: rgb(187, 187, 187)
+}

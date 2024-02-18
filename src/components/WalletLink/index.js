@@ -3,6 +3,7 @@ import React from "react";
 import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
+import { parseTextWithLinks } from '@site/src/utils/textUtils';
 
 //
 // This component:
@@ -27,8 +28,8 @@ function WalletLink({ title, imageName, text, subtext, label, link }) {
             {title}
       </h1>
       <div className={styles.textWrap}>
-        <p className={styles.text}>{text}</p>
-        <p className={styles.subtext}>{subtext}</p>
+        <p className={styles.text}>{parseTextWithLinks(text)}</p>
+        <p className="slight-text">{subtext}</p>
       </div>
       <div className={styles.buttonWrap}>
         <a href={link} className={clsx('button button--primary button--lg', styles.buttonLink)}>{label}</a>
