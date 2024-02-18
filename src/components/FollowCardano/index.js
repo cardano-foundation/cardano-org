@@ -16,7 +16,7 @@ const socialLinks = [
   { icon: <FaLinkedin />, url: "https://www.linkedin.com/company/cardano-community", label: "Cardano on LinkedIn" },
 ];
 
-function FollowCardano({title}) {
+function FollowCardano({title, iconForegroundColor, iconBackgroundColor}) {
 
   return (
     <div className={styles.container}>
@@ -25,7 +25,12 @@ function FollowCardano({title}) {
         <p className="social__icons">
           {socialLinks.map((social, index) => (
             <Link key={index} href={social.url} aria-label={social.label}>
-              <span className={styles.iconWrapper}>{social.icon}</span>
+              <span className={styles.iconWrapper} style={{ 
+                '--icon-bg-color': iconBackgroundColor,
+                '--icon-fg-color': iconForegroundColor ? iconForegroundColor : '' 
+              }}>
+                {social.icon}
+              </span>
             </Link>
           ))}
         </p>

@@ -84,7 +84,7 @@ export default function Home() {
         <DiscoverSection />
         <PartnerSection />
         <FollowCardanoSection />
-
+         
       </main>
     </Layout>
   );
