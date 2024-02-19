@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import Divider from '@site/src/components/Divider';
 import WalletLink from '@site/src/components/WalletLink'; 
 import TitleBox from '../TitleBox';
+import DottedImageWithText from '../DottedImageWithText';
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
 // Don't send pull requests for wallets that are not listed for a longer time on https://developers.cardano.org/showcase?tags=wallet
@@ -73,9 +74,31 @@ export default function WalletSection() {
         title='More Wallets'
         description='Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet).'
         titleType='black'
-        headingDot={true}
+        headingDot={false}
         slightText='The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams.'
       />
+      <TitleBox
+        title='How Do I Store My Ada And Keep It Safe?'
+        description={[
+          'A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, \
+          monitor your balance, and interact with supported blockchains.',
+          <br key='line1'/>,
+          <br key='line2'/>,
+          'In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet.',
+        ]}
+        titleType='black'
+        headingDot={true}
+      />
+      <div className='box'>
+        <DottedImageWithText 
+            imageName='wallet-hot'
+            text = 'A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges.'
+        />
+        <DottedImageWithText 
+            imageName='wallet-cold'
+            text = 'A cold wallet is an offline wallet. It is not connected to the internet and is used for securing storing funds that do not have to be frequently accessed. Examples include hardware wallets - which is a secure hardware device that stores the wallet’s private keys - and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets.'
+        />
+      </div>
     </section>
   );
 }

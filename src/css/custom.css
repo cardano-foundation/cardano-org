@@ -383,3 +383,11 @@ img {
   border-bottom-left-radius: 100%;
   background-color: rgb(255, 118, 118);
 }
+
+.box {
+  width: 80%;
+  max-width: 100rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
