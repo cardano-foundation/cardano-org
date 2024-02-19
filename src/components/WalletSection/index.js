@@ -74,6 +74,7 @@ export default function WalletSection() {
         description='Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet).'
         titleType='black'
         headingDot={true}
+        slightText='The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams.'
       />
     </section>
   );
