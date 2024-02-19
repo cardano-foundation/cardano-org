@@ -51,6 +51,10 @@ html[data-theme='dark'] .header-github-link:before {
   opacity: 0.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* buttons */
 .button {
   border-radius: 30px;
@@ -356,4 +360,34 @@ img {
 .black-text {
   /*color: rgb(29, 30, 33);*/ /* bad example if you want to have dark mode */
   color: var(--ifm-font-color-base); /* good example */
+}
+
+.slight-text {
+  color: rgb(187, 187, 187)
+}
+
+.headingDot {
+  position: relative;
+}
+
+.headingDot::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 0px;
+  width: 1rem;
+  height: 1rem;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: rgb(255, 118, 118);
+}
+
+.box {
+  width: 80%;
+  max-width: 100rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

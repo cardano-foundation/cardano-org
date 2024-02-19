@@ -12,17 +12,15 @@ import Link from '@docusaurus/Link';
 // a tagline below and a call to action button below the tagline
 // fixme: the background here was probably not clever, this should go in a parent component
 
-function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonLink }) {
+function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonLink, headingDot }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
-
-  // const classes = useStyles();
 
   return (
     <div className="container">
       <div className="row">
         <div className={clsx('col col--6', styles.leftColumn)}>
-          <h1 className={clsx('black-text', styles.headingDot)}>
+          <h1 className={clsx({ "headingDot": headingDot })}>
             {title}
           </h1>
           
@@ -34,9 +32,11 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
           <h2 className="red-text">
             {quote}
           </h2>
-          <Link className="button button--primary button--lg" to={buttonLink}>
-            {buttonLabel}
-          </Link>
+          {buttonLabel && buttonLink && (
+            <Link className="button button--primary button--lg" to={buttonLink}>
+              {buttonLabel}
+            </Link>
+          )}
         </div>
       </div> 
     </div> 

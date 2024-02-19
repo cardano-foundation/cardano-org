@@ -7,7 +7,7 @@ import TitleWithText from "@site/src/components/TitleWithText";
 //
 // This component shows a simple header with some text below in a box
  
-function TitleBox({ title, description, titleType }) {
+function TitleBox({ title, description, titleType, headingDot, slightText }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -32,6 +32,8 @@ function TitleBox({ title, description, titleType }) {
           title = {title}
           description = {description}
           titleType = {titleType}
+          headingDot = {headingDot}
+          slightText = {slightText}
         />  
       </div>
     </div>

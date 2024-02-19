@@ -1,25 +1,25 @@
 import React from "react";
-import clsx from "clsx";
 import styles from './styles.module.css';
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { parseTextWithLinks } from '@site/src/utils/textUtils';
-
+import ThemedImage from '@theme/ThemedImage';
 
 //
 // This component:
-// shows a (svg) logo and a link below
+// shows a (svg) logo and a link below, it assumes that: 
+// for every log.svg there is also a logo-dark.svg
 
 function LogoWithLink({ imageName, label, link }) {
-  
-  // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
-  const imageUrl = useBaseUrl(`/img/logos/${imageName}.svg`);
   
   return (
     <div className={styles.logoContainer}>
       <div className={styles.imageWrap}>
-        <img src={imageUrl} alt={label} />
+      <ThemedImage
+        alt={label}
+        sources={{
+          light: useBaseUrl(`/img/logos/${imageName}.svg`),
+          dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
+        }}
+      />
       </div>
       <div className={styles.linkWrap}>
       <a href={link} className={styles.link}>{label}</a>

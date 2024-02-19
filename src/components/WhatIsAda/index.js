@@ -27,15 +27,15 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
       <div className={clsx(styles.adaRoundWrap, styles.mobileNotVisible)}>
         <img src={imageUrl} alt={title} />  
       </div>
-      <h4 className={clsx('red-text', styles.mobileNotVisible)}>
+      <h2 className={clsx('red-text', styles.mobileNotVisible)}>
           {quote}
-      </h4>
+      </h2>
         
       </div>
       <div className={clsx('col col--6', styles.rightColumn)}>
-        <h3 className={clsx('black-text', styles.headingDot)}>
+        <h1 className={clsx('black-text', 'headingDot')}>
           {title}
-        </h3>
+        </h1>
 
       <p className="black-text">
           {description}

@@ -81,6 +81,7 @@ const config = {
             position: 'left',
             items: [ // Define nested dropdown items here
               {to: '/what-is-ada', label: 'What is ada?'}, 
+              {to: '/what-is-ada#wallets', label: 'Cardano Wallets'}, 
               {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
             ],

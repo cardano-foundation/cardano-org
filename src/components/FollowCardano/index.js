@@ -2,27 +2,35 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
-import { FaTwitter, FaFacebookF, FaYoutube, FaRedditAlien, FaMeetup, FaTelegram, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter, FaRedditAlien, FaDiscourse, FaFacebookF, FaMeetup, FaTelegram, FaStackExchange, FaLinkedin } from 'react-icons/fa6';
 
+// Overview: https://react-icons.github.io/react-icons/, for consistency stick to font awesome 6 (fa6)
 const socialLinks = [
+  { icon: <FaXTwitter />, url: "https://twitter.com/Cardano", label: "Cardano on X" },
+  { icon: <FaRedditAlien />, url: "https://www.reddit.com/r/cardano/", label: "Cardano on Reddit" },
+  { icon: <FaDiscourse />, url: "https://forum.cardano.org", label: "Cardano Forum" },  
+  { icon: <FaFacebookF />, url: "https://www.facebook.com/groups/CardanoCommunity", label: "Cardano on Facebook" },
   { icon: <FaMeetup />, url: "https://www.meetup.com/pro/cardano/", label: "Cardano Meetup" },
   { icon: <FaTelegram />, url: "https://t.me/CardanoAnnouncements", label: "Cardano on Telegram" },
-  { icon: <FaFacebookF />, url: "https://www.facebook.com/groups/CardanoCommunity", label: "Cardano on Facebook" },
-  { icon: <FaTwitter />, url: "https://twitter.com/Cardano", label: "Cardano on Twitter" },
+  { icon: <FaStackExchange />, url: "https://cardano.stackexchange.com/", label: "Cardano StackExchange" },
   { icon: <FaLinkedin />, url: "https://www.linkedin.com/company/cardano-community", label: "Cardano on LinkedIn" },
-  { icon: <FaRedditAlien />, url: "https://www.reddit.com/r/cardano/", label: "Cardano on Reddit" },
-  { icon: <FaYoutube />, url: "https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg", label: "Cardano Foundation on YouTube" }, // fixme: check if needs to be removed
 ];
 
-function FollowCardano() {
+function FollowCardano({title, iconForegroundColor, iconBackgroundColor}) {
+
   return (
     <div className={styles.container}>
       <div className={styles.taglineContainer}>
-        <h1>Follow Cardano</h1>
+        <h1>{title}</h1>
         <p className="social__icons">
           {socialLinks.map((social, index) => (
             <Link key={index} href={social.url} aria-label={social.label}>
-              <span className={styles.iconWrapper}>{social.icon}</span>
+              <span className={styles.iconWrapper} style={{ 
+                '--icon-bg-color': iconBackgroundColor,
+                '--icon-fg-color': iconForegroundColor ? iconForegroundColor : '' 
+              }}>
+                {social.icon}
+              </span>
             </Link>
           ))}
         </p>

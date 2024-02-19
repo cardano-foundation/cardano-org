@@ -2,11 +2,14 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css"; 
+import { parseTextWithLinks } from '@site/src/utils/textUtils';
 
 //
-// This component shows a simple header with some text below
+// This component shows a simple header with some text below.
+// title, text, and slight text are optional
+
  
-function TitleWithText({ title, description, titleType }) {
+function TitleWithText({ title, description, titleType, headingDot, slightText }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -24,15 +27,26 @@ function TitleWithText({ title, description, titleType }) {
       titleClassName = styles.titleTypeBlack;
   }
 
+
+
+  // clsx allows for conditional className  inclusion based on the headingDot flag
   return (
-     
     <div className="container">
-      <h1 className={(titleClassName)}>
-      {title}
-      </h1>
-      <p className="black-text">
-      {description}
-      </p>
+       {title && (
+        <h1 className={clsx({ "headingDot": headingDot }, titleClassName)}>
+        {title}
+        </h1>
+        )}
+        {description && (
+        <p className="black-text">
+          {parseTextWithLinks(description)}
+        </p>
+        )}
+        {slightText && (
+        <p className="slight-text">
+          {parseTextWithLinks(slightText)}
+        </p>
+        )}
     </div> 
   );
 };

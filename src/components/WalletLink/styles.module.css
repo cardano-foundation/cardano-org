@@ -1,0 +1,23 @@
+
+.logoContainer {
+  padding: 20px;
+  text-align: left; /* Center the text within the logo container */
+  display: flex; /* Use flex to enable vertical centering */
+  flex-direction: column; /* Stack logo and text vertically */
+  align-items: left; /* Center items horizontally in the flex container */
+   
+}
+
+.imageWrap {
+  max-width: 15rem;
+  height: 100px;
+}
+
+.buttonWrap {
+  padding: 10px;
+}
+
+.buttonLink {
+  width: 12rem;
+}
+ 
