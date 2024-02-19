@@ -70,8 +70,10 @@ export default function WalletSection() {
         </div>
       </div> 
       <TitleBox
+        title='More Wallets'
         description='Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet).'
-        titleType='none'
+        titleType='black'
+        headingDot={true}
       />
     </section>
   );

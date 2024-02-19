@@ -51,6 +51,7 @@ export default function Home() {
             ]}
           buttonLabel='Use Cases'
           buttonLink='/enterprise'
+          headingDot = {true}
         />
 
       
@@ -79,6 +80,7 @@ export default function Home() {
           and robust enough to support foundational change.'
           ]}
           titleType='black'
+          headingDot={true}
         />
 
         <DiscoverSection />

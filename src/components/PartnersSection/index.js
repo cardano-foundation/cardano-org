@@ -40,6 +40,7 @@ export default function PartnerSection() {
       <TitleBox
         description='A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve.'
         titleType='none'
+        headingDot={false}
       />
       <div className={styles.discoverWrap}>
         <div className={styles.discoverItems}>
