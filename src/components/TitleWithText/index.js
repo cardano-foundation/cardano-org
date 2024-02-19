@@ -28,7 +28,7 @@ function TitleWithText({ title, description, titleType }) {
   return (
      
     <div className="container">
-      <h1 className={(titleClassName)}>
+      <h1 className={clsx("headingDot", titleClassName)}>
       {title}
       </h1>
       <p className="black-text">

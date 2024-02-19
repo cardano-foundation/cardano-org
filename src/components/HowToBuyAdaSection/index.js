@@ -12,7 +12,7 @@ function HowToBuyAdaSection() {
         <div className="container">
           <div className="row">
             <div className={clsx('col col--6', styles.leftColumn)}>
-              <h1 className={styles.headingDot}>
+              <h1 className='headingDot'>
               How Do I Buy/Sell Ada?
               </h1>
               

@@ -18,21 +18,4 @@
 .rightColumn {
   padding: 30px;  
 }
-
-.headingDot {
-  position: relative;
-}
-
-.headingDot::before {
-  content: "";
-  position: absolute;
-  top: -1.5rem;
-  left: 0px;
-  width: 1rem;
-  height: 1rem;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
-  background-color: rgb(255, 118, 118);
-}
+ 

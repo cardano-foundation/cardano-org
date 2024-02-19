@@ -24,7 +24,7 @@ function WalletLink({ title, imageName, text, subtext, label, link }) {
         }}
       />
       </div>
-      <h1 className={styles.headingDot}>
+      <h1 className='headingDot'>
             {title}
       </h1>
       <div className={styles.textWrap}>
