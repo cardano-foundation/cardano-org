@@ -1,12 +1,4 @@
-/*
-:root {
-  --background-image: url('/img/hero-header-dots.webp');  
-}
 
-[data-theme='dark'] {
-  --background-image: url('/img/hero-header-dots-dark.webp');  
-}
-*/
 
 .leftColumn {
   /*background-image: var(--background-image); */

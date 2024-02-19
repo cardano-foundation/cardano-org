@@ -3,25 +3,26 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import FollowCardano from '@site/src/components/FollowCardano';
 import Divider from '@site/src/components/Divider';
+import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
 
 function FollowCardanoSection() {
   return (
-    <section className={styles.container}>  
-
-    <div class="container">
-      <div className={styles.header}>
-        <h6>Social</h6>
-        <div className={styles.horizontalBar}></div>
+    <BackgroundWrapper backgroundType={'gradient'}>
+      <section className={styles.container}>  
+      <div class="container">
+        <div className={styles.header}>
+          <h6>Social</h6>
+          <div className={styles.horizontalBar}></div>
+        </div>
       </div>
-    </div>
 
-      <FollowCardano 
-        title ='Get Involved'
-        iconForegroundColor="#0136AE"
-        iconBackgroundColor="#ffffff" 
-      />
-      
-    </section>
+        <FollowCardano 
+          title ='Get Involved'
+          iconForegroundColor="#0136AE"
+          iconBackgroundColor="#ffffff" 
+        />
+      </section>
+    </BackgroundWrapper>
   );
 }
 

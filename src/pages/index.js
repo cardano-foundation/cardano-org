@@ -9,7 +9,7 @@ import QuoteBox from "@site/src/components/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
 import VisionBox from '@site/src/components/VisionBox';
 import TitleBox from '@site/src/components/TitleBox';
-import FollowCardano from '@site/src/components/FollowCardano';
+import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
 import DiscoverSection from '@site/src/components/DiscoverSection';
 import PartnerSection from '@site/src/components/PartnersSection';
 import FollowCardanoSection from '@site/src/components/FollowCardanoSection';
@@ -31,35 +31,36 @@ export default function Home() {
         and bring about positive global change.'
       />
       <main>
-        
-        <FeaturedTitleWithText
-          title='Our World Is Changing. Together, We Can Change It For The Better.'
-          description={[
-            'Cardano is a proof-of-stake blockchain platform: the first to be founded on peer-reviewed \
-            research and developed through evidence-based methods. It combines pioneering technologies \
-            to provide unparalleled security and sustainability to decentralized applications, systems, \
-            and societies.',
-            <br key='line1'/>,
-            <br key='line2'/>,
-            'With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
-            structures to the margins – to individuals – and be an enabling force for positive change and progress.',
-            ]}
-          quote={[
-            'A History Of Impossible,',
-            <br key='line1'/>,
-            'Made Possible'
-            ]}
-          buttonLabel='Use Cases'
-          buttonLink='/enterprise'
-          headingDot = {true}
-        />
+      <BackgroundWrapper backgroundType={'zoom'}>  
+          <FeaturedTitleWithText
+            title='Our World Is Changing. Together, We Can Change It For The Better.'
+            description={[
+              'Cardano is a proof-of-stake blockchain platform: the first to be founded on peer-reviewed \
+              research and developed through evidence-based methods. It combines pioneering technologies \
+              to provide unparalleled security and sustainability to decentralized applications, systems, \
+              and societies.',
+              <br key='line1'/>,
+              <br key='line2'/>,
+              'With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
+              structures to the margins – to individuals – and be an enabling force for positive change and progress.',
+              ]}
+            quote={[
+              'A History Of Impossible,',
+              <br key='line1'/>,
+              'Made Possible'
+              ]}
+            buttonLabel='Use Cases'
+            buttonLink='/enterprise'
+            headingDot = {true}
+          />
 
       
-      <Divider headline='Benefits'/>
-      <QuoteBox 
-        description='Cardano restores trust to global systems – creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow.'
-        quote = 'Cardano brings a new standard in technology – open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'
-        />
+          <Divider headline='Benefits'/>
+          <QuoteBox 
+            description='Cardano restores trust to global systems – creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow.'
+            quote = 'Cardano brings a new standard in technology – open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'
+            />
+      </BackgroundWrapper>
 
         <BenefitsSection />
 
@@ -84,7 +85,11 @@ export default function Home() {
         />
 
         <DiscoverSection />
-        <PartnerSection />
+
+        <BackgroundWrapper backgroundType={'solid'}>
+            <PartnerSection />
+        </BackgroundWrapper>
+
         <FollowCardanoSection />
          
       </main>
