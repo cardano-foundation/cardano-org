@@ -64,7 +64,7 @@ html[data-theme=dark] .heroBanner {
 
 /* Override the fill color for dark mode */
 [data-theme='dark'] {
-  --section-caret-fill-color: #242526; /* black for dark mode */
+  --section-caret-fill-color: #1B1B1D; /* black for dark mode */
 }
 
 /* Apply the variable to the polygon fill */

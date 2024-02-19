@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Divider from '@site/src/components/Divider';
+import ThemedImage from '@theme/ThemedImage';
 
 //
 // This component:
@@ -16,8 +17,6 @@ import Divider from '@site/src/components/Divider';
 
 const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLink }) => {
 
-  const imageUrl = useBaseUrl(`/img/ada-round.jpeg`);
-
   return (
     <div className="container">
       <Divider headline={headline} />
@@ -25,7 +24,13 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
     <div className="row">
       <div className={clsx('col col--6', styles.leftColumn)}>
       <div className={clsx(styles.adaRoundWrap, styles.mobileNotVisible)}>
-        <img src={imageUrl} alt={title} />  
+      <ThemedImage
+        alt='Ada Lovelace looking to the right'
+        sources={{
+          light: useBaseUrl(`/img/ada-round.webp`),
+          dark: useBaseUrl(`/img/ada-round-dark.webp`),
+        }}
+      />  
       </div>
       <h2 className={clsx('red-text', styles.mobileNotVisible)}>
           {quote}

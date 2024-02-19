@@ -16,7 +16,7 @@
 }
 
 .textWrap {
-  max-width: 40rem; /* Adjusted for more text, you can set it to fit your content */
+  max-width: 50rem; /* Adjusted for more text, you can set it to fit your content */
   text-align: left; /* Left align the text */
   margin-left: 40px; 
   margin-right: auto; 

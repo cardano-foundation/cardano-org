@@ -385,8 +385,9 @@ img {
 }
 
 .box {
-  width: 80%;
-  max-width: 100rem;
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

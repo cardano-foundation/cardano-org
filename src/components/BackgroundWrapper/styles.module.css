@@ -1,0 +1,47 @@
+
+
+/** backgroundSolid */
+
+.backgroundNone {
+  padding: 20px;
+}
+
+/** backgroundSolid */
+
+.backgroundSolid {
+  background-color: #F5F5F5; 
+  padding: 20px;
+}
+ 
+[data-theme='dark'] {
+  .backgroundSolid {
+    background-color: #242526; 
+  }
+}
+
+/** backgroundZoom */
+
+.backgroundZoom {
+  background-image: url('/img/hero-header-dots.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+[data-theme='dark'] {
+  .backgroundZoom {
+    background-image: url('/img/hero-header-dots-dark.webp');  
+  }
+}
+
+/** backgroundGradient */
+
+.backgroundGradient {
+  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
+}
+
+[data-theme='dark'] {
+  .backgroundGradient {
+    background-image: linear-gradient(315deg, rgb(43, 89, 205), rgb(0, 24, 80));
+  }
+}

@@ -9,7 +9,12 @@
   width: 70%;
 }
 
-/* various hero banner setups for subsites on cardano.org, light and dark mode images */
+/* 
+  various hero banner setups for subsites on cardano.org, light and dark mode images.
+  Try them out on: http://localhost:3000/example-components
+*/
+
+/** heroBannerZoom **/
 
 .heroBannerZoom {
   padding: 4rem 2rem;;
@@ -29,6 +34,8 @@ html[data-theme=dark] .heroBannerZoom {
   background-image: url(/img/hero-header-zoom2.png);
 }
 
+/** heroBannerZoomRedWhite **/
+
 .heroBannerZoomRedWhite {
   padding: 4rem 2rem;;
   text-align: left;
@@ -38,7 +45,15 @@ html[data-theme=dark] .heroBannerZoom {
   background-repeat: no-repeat;
   background-position: right;
   height: 410px;
+  background-color: #CCD6EE;
+  color: #0033AD;
 }
+
+
+.heroBannerZoomRedWhite .subtitle {
+  color: #1D1E21;
+}
+
 
 html[data-theme=light] .heroBannerZoomRedWhite {
   background-image: url(/img/hero-header-zoom-red-white.png);
@@ -47,6 +62,30 @@ html[data-theme=light] .heroBannerZoomRedWhite {
 html[data-theme=dark] .heroBannerZoomRedWhite {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
+
+/** heroBannerZoomRedWhiteDark **/
+
+.heroBannerZoomRedWhiteDark {
+  padding: 4rem 2rem;;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 410px;
+  background-color: #0538AF;
+}
+
+html[data-theme=light] .heroBannerZoomRedWhiteDark {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+html[data-theme=dark] .heroBannerZoomRedWhiteDark {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+/** heroBannerAda **/
 
 .heroBannerAda {
   padding: 4rem 2rem;
@@ -57,8 +96,9 @@ html[data-theme=dark] .heroBannerZoomRedWhite {
   background-position: top right;
   background-repeat: no-repeat;  
   height: 410px;
+  color: #F8F8F5;
 }
-
+ 
 
 html[data-theme=light] .heroBannerAda {
   background-image: url(/img/hero-header-ada.webp);
@@ -69,6 +109,8 @@ html[data-theme=dark] .heroBannerAda {
   background-image: url(/img/hero-header-ada.webp);  
   background-color: #244eaf;
 }
+
+/** heroBannerDots **/
 
 .heroBannerDots { /* fixme: this is actually a zoom variant */
   padding: 4rem 2rem;;
@@ -87,6 +129,8 @@ html[data-theme=light] .heroBannerDots {
 html[data-theme=dark] .heroBannerDots {
   background-image: url(/img/hero-header-dots.webp);
 }
+
+/** heroBannerFluid **/
 
 .heroBannerFluid {
   padding: 4rem 2rem;;
@@ -107,6 +151,8 @@ html[data-theme=dark] .heroBannerFluid {
   background-image: url(/img/hero-header-fluid.png);
   background-color: #5281F7;
 }
+
+/** heroBannerOverlap **/
 
 .heroBannerOverlap {
   padding: 4rem 2rem;;

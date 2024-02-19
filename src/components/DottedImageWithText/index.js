@@ -9,9 +9,9 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 
 //
 // This component:
-// shows a dotted image and some text to the right
+// shows a dotted image and some text to the right, title is optional
 
-function DottedImageWithText({ imageName, text }) {
+function DottedImageWithText({ imageName, title, text }) {
   
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/dotted-icons/${imageName}.svg`);
@@ -22,6 +22,9 @@ function DottedImageWithText({ imageName, text }) {
         <img src={imageUrl} alt={imageName} />
       </div>
       <div className={styles.textWrap}>
+        { title && (
+        <h2>{title}</h2>
+        )}
         <p>{text}</p>
       </div>
     </div>
