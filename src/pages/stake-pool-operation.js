@@ -6,6 +6,7 @@ import SiteHero from "@site/src/components/SiteHero";
 import Divider from '@site/src/components/Divider';
 import OneColumnBox from '@site/src/components/OneColumnBox';
 import TwoColumnBox from '@site/src/components/TwoColumnBox';
+import DottedImageWithText from '../components/DottedImageWithText';
 
 
 export default function Home() {
@@ -65,6 +66,36 @@ export default function Home() {
             participation, and rewards the investment of time, energy, and resources. The key technical parameters influencing stake \
             pools and the rewards received are:'
           ]}
+        />
+        <DottedImageWithText
+          imageName='pledging'
+          title='Pledging Mechanism'
+          text={[
+            'While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake \
+          to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will \
+          receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward.'
+        ]} 
+        />
+        <DottedImageWithText
+          imageName='desireability'
+          title='Desirability Index'
+          text={[
+            'The desirability of a pool is calculated by taking the pledged owner’s stake, costs, and margin, and combining them with \
+            an influence from saturation and pool performance. This number will be used to rank pools in wallets, and indicates how \
+            ‘desirable’ or ‘attractive’ the pool is to potential delegators.'
+        ]} 
+        />
+        <DottedImageWithText
+          imageName='saturation'
+          title='Saturation Parameter (K)'
+          text={[
+            'Saturation is a term used to indicate that a particular stake pool has more stake delegated to it than is ideal for the \
+            network, while k is the targeted number of desired pools. Once a pool reaches the point of saturation, it will offer \
+            diminishing rewards. The saturation mechanism was designed to prevent centralization by encouraging delegators to \
+            delegate to different stake pools, and to incentivize operators to set up alternative pools so that they can continue \
+            earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their \
+            stake and stake pool operators, and to prevent any single pool from becoming too large.'
+        ]} 
         />
       </main>
     </Layout>
