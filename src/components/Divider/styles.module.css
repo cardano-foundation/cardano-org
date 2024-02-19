@@ -28,10 +28,10 @@
 
 [data-theme='dark'] {
   .header h6 {
-    color: #ffffff;
+    color: #E3E3E3;
   }
   .horizontalBar {
-    background-color: #ffffff; /* Color of the bar */
+    background-color: #E3E3E3; /* Color of the bar */
   }
 }
 
