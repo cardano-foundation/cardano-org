@@ -25,6 +25,9 @@ function SiteHero({ title, description, bannerType }) {
       break;
     case 'zoomRedWhite':
       heroClassName = styles.heroBannerZoomRedWhite;
+      break; 
+    case 'zoomRedWhiteDark':
+      heroClassName = styles.heroBannerZoomRedWhiteDark;
       break;  
     case 'waves':
       heroClassName = styles.heroBannerWaves;
@@ -38,7 +41,7 @@ function SiteHero({ title, description, bannerType }) {
       <div className="container">
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
-          <p className="hero__subtitle">{description}</p>
+          <p className={clsx("hero__subtitle", styles.subtitle)}>{description}</p>
         </div>
       </div>
     </header>

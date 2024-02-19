@@ -71,6 +71,14 @@ export default function Home() {
         title={[
           'SiteHero Component',
         ]}
+        description='bannerType: zoomRedWhiteDark'
+        bannerType ='zoomRedWhiteDark'
+      />
+      <hr />
+      <SiteHero
+        title={[
+          'SiteHero Component',
+        ]}
         description='bannerType: zoom (default)'
         bannerType ='default'
       />
