@@ -6,9 +6,9 @@ import SiteHero from "@site/src/components/SiteHero";
 import Divider from '@site/src/components/Divider';
 import OneColumnBox from '@site/src/components/OneColumnBox';
 import TwoColumnBox from '@site/src/components/TwoColumnBox';
-import DottedImageWithText from '../components/DottedImageWithText';
 import BackgroundWrapper from '../components/BackgroundWrapper';
-import Cta from '../components/Cta';
+import CtaOneColumn from '../components/CtaOneColumn';
+import CtaTwoColumn from '../components/CtaTwoColumn';
 
  
 
@@ -66,11 +66,19 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={'solidBlue'}>
-            <Cta 
+            <CtaTwoColumn 
                 title='Cardano Wallets'
                 text='Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem.'
                 buttonLabel={'Discover Now'}
                 buttonLink={'/what-is-ada#wallets'}
+            />
+        </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={'ada'}>
+            <CtaOneColumn 
+                title='Try our staking calculator to see how much ada you could be rewarded for delegating to a stake pool.'
+                buttonLabel={'Try Out'}
+                buttonLink={'/calculator/?calculator=delegator'}
             />
         </BackgroundWrapper>
 

@@ -28,6 +28,9 @@ export default function BackgroundWrapper({ children, backgroundType }) {
     case 'gradient':
       wrapperClassName = styles.backgroundGradient;
       break;  
+    case 'ada':
+      wrapperClassName = styles.backgroundAda;
+      break;
     default:
       wrapperClassName = styles.backgroundNone;
   }
