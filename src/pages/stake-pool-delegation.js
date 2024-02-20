@@ -9,7 +9,7 @@ import TwoColumnBox from '@site/src/components/TwoColumnBox';
 import BackgroundWrapper from '../components/BackgroundWrapper';
 import CtaOneColumn from '../components/CtaOneColumn';
 import CtaTwoColumn from '../components/CtaTwoColumn';
-
+import FAQDelegationSection from '../components/FAQDelegationSection';
  
 
 export default function Home() {
@@ -82,6 +82,11 @@ export default function Home() {
             />
         </BackgroundWrapper>
 
+        <BackgroundWrapper backgroundType={'none'}>
+            <FAQDelegationSection />
+
+        </BackgroundWrapper>
+          
       </main>
     </Layout>
   );

@@ -71,6 +71,13 @@
   overflow: hidden; /* don't let the ada Logo bleed into other boxes, although the effect can be nice */
 }
 
+
+[data-theme='dark'] {
+  .backgroundZoom {
+    background-image: url('/img/hero-header-dots-dark.webp');  
+  }
+}
+
 .backgroundAda:before {
   content: '₳';  
   z-index: -1;
@@ -85,9 +92,3 @@
   color: #5281F7;
   }
   
-
-[data-theme='dark'] {
-  .backgroundZoom {
-    background-image: url('/img/hero-header-dots-dark.webp');  
-  }
-}
