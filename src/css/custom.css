@@ -446,3 +446,6 @@ img {
   background-color: #FDFDFB; /* even rows */
 }
 
+.hero {
+  background-color: transparent;
+}

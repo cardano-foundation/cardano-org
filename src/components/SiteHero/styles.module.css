@@ -175,6 +175,8 @@ html[data-theme=dark] .heroBannerOverlap {
   background-color: #5281F7;
 }
 
+/** heroBannerWaves **/
+
 .heroBannerWaves {
   padding: 4rem 2rem;
   text-align: left;
@@ -195,6 +197,31 @@ html[data-theme=light] .heroBannerWaves {
 html[data-theme=dark] .heroBannerWaves {
   background-image: url(/img/hero-header-waves.webp);  
   background-color: #244eaf;
+}
+
+/** heroBannerStarbust **/
+
+.heroBannerStarburst {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;  
+  background-position: top right;
+  background-repeat: no-repeat;  
+  background-image: url(/img/hero-header-starburst.svg);  
+  height: 410px;
+}
+
+.heroBannerStarburst::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg,  #305BBD, #0035AD);
+  z-index: -1; /* Ensure the gradient is behind the content */
 }
 
 

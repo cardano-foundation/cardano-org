@@ -32,13 +32,16 @@ function SiteHero({ title, description, bannerType }) {
     case 'waves':
       heroClassName = styles.heroBannerWaves;
       break;   
+    case 'starburst':
+        heroClassName = styles.heroBannerStarburst;
+        break; 
     default:
-      heroClassName = styles.heroBannerZoom;
+      heroClassName = styles.heroBannerStarburst;
   }
 
   return (
     <header className={clsx("hero hero--primary", heroClassName)}>
-      <div className="container">
+      <div className={clsx("container", styles.backgroundBox)}>
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
           <p className={clsx("hero__subtitle", styles.subtitle)}>{description}</p>

@@ -3,24 +3,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import SiteHero from '@site/src/components/SiteHero';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteTitle} = "useDocusaurusContext()";
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          Discover Cardano
-        </Heading>
-        <p className="hero__subtitle">Cardano is the nexus of five principles: People, purpose, technology, 
-        research, and opportunity. Explore and learn this new constellation of knowledge.</p>
-      </div>
-    </header>
-  );
-}
+ 
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -28,9 +16,14 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      <SiteHero
+        title='Discover Cardano'
+        description='Cardano is the nexus of five principles: People, purpose, technology, research, 
+        and opportunity. Explore and learn this new constellation of knowledge.'
+        bannerType ='starburst'
+      />
       <main>
-        <HomepageFeatures />
+         
       </main>
     </Layout>
   );
