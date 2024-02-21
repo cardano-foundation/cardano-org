@@ -13,11 +13,11 @@
 }
 
 :root {
-  --background-image: url('/img/hero-header-zoom2.png');  
+  --background-image: url('/img/hero-header-zoom-full.png');  
 }
 
 [data-theme='dark'] {
-  --background-image: url('/img/hero-header-zoom2.png');  
+  --background-image: url('/img/hero-header-zoom-full.png');  
 }
  
 .backgroundImageContainer {

@@ -27,11 +27,11 @@
 }
 
 html[data-theme=light] .heroBannerZoom {
-  background-image: url(/img/hero-header-zoom2.png);
+  background-image: url(/img/hero-header-zoom-full.png);
 }
 
 html[data-theme=dark] .heroBannerZoom {
-  background-image: url(/img/hero-header-zoom2.png);
+  background-image: url(/img/hero-header-zoom-full.png);
 }
 
 /** heroBannerZoomRedWhite **/

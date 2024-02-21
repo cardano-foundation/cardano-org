@@ -11,6 +11,7 @@
 .imageWrap {
   flex: 1; /* Allow the image to grow */
   max-width: 30rem; /* Maximum width of image */
+  padding-top: 20px;
 }
 
 .textWrap {
@@ -18,6 +19,13 @@
   max-width: 50rem; /* Maximum width of text */
   text-align: left; /* Left align the text */
   margin-left: 40px; 
+}
+
+.textWrap h2 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: none;
 }
 
 .flipOrder {

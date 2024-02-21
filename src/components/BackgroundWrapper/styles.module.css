@@ -47,14 +47,26 @@
   }
 }
 
-/** backgroundGradient */
+/** backgroundZoomMini */
 
-.backgroundGradient {
+.backgroundGradientDark {
+  background-image: linear-gradient(315deg, #0133AE, #335CBE);
+}
+
+[data-theme='dark'] {
+  .backgroundGradientDark {
+    background-image: linear-gradient(315deg, #0133AE, #0b1f4f);
+  }
+}
+
+/** backgroundGradientLight */
+
+.backgroundGradientLight {
   background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
 }
 
 [data-theme='dark'] {
-  .backgroundGradient {
+  .backgroundGradientLight {
     background-image: linear-gradient(315deg, rgb(43, 89, 205), rgb(0, 24, 80));
   }
 }

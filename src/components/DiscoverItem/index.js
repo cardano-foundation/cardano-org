@@ -14,7 +14,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 function DiscoverItem({ imageName, title, subtitle, text, isImageRight }) {
   
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
-  const imageUrl = useBaseUrl(`/img/discover/${imageName}.jpg`);
+  const imageUrl = useBaseUrl(`/img/discover/${imageName}.webp`);
   
   return (
     <div className="container" id={imageName}>
@@ -27,7 +27,7 @@ function DiscoverItem({ imageName, title, subtitle, text, isImageRight }) {
           <h1 class="headingDot">{title}</h1>
           )}
           { subtitle && (
-          <h3>{subtitle}</h3>
+          <h2>{subtitle}</h2>
           )}
           { text && (
           <p>{text}</p>
