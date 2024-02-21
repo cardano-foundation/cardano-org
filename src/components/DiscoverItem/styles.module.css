@@ -1,7 +1,7 @@
 /* Base styles for larger screens */
-.container {
+.discoverItemWrap {
   display: flex; /* Use flexbox layout */
-  align-items: center; /* Center items vertically */
+  align-items: top; /* Center items vertically */
   justify-content: start; /* Align content to the start */
   flex-wrap: wrap;
   padding: 20px;
@@ -20,9 +20,13 @@
   margin-left: 40px; 
 }
 
+.flipOrder {
+  flex-direction: row-reverse; /* This will place the image on the right */
+}
+
 /* Styles for smaller screens */
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
-  .container {
+  .discoverItemWrap, .container.flipOrder {
     flex-direction: column; /* Stack flex children vertically */
     align-items: stretch; /* Stretch children to full width */
   }

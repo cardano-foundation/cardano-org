@@ -393,6 +393,10 @@ img {
   flex-wrap: wrap;
 }
 
+.hero {
+  background-color: transparent;
+}
+
 /** Collapsible FAQ **/
 
 .Collapsible {
@@ -446,6 +450,3 @@ img {
   background-color: #FDFDFB; /* even rows */
 }
 
-.hero {
-  background-color: transparent;
-}

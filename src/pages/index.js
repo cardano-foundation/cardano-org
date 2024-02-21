@@ -1,6 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import WelcomeHero from "@site/src/components/WelcomeHero";
 
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
@@ -10,7 +9,7 @@ import BenefitsSection from '@site/src/components/BenefitsSection';
 import VisionBox from '@site/src/components/VisionBox';
 import TitleBox from '@site/src/components/TitleBox';
 import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
-import DiscoverSection from '@site/src/components/DiscoverSection';
+import HomeDiscoverSection from '@site/src/components/HomeDiscoverSection';
 import PartnerSection from '@site/src/components/PartnersSection';
 import FollowCardanoSection from '@site/src/components/FollowCardanoSection';
 
@@ -84,7 +83,7 @@ export default function Home() {
           headingDot={true}
         />
 
-        <DiscoverSection />
+        <HomeDiscoverSection />
 
         <BackgroundWrapper backgroundType={'solid'}>
             <PartnerSection />

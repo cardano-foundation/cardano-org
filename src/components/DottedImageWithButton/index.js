@@ -22,7 +22,7 @@ function DottedImageWithButton({ imageName, buttonLabel, buttonLink }) {
         <img src={imageUrl} alt={buttonLabel} />
       </div>
       <div className={styles.buttonWrap}>
-        <a href={buttonLink} className={clsx('button button--primary', styles.buttonLink)}>{buttonLabel}</a>
+        <Link to={buttonLink} className={clsx('button button--primary', styles.buttonLink)}>{buttonLabel}</Link>
       </div>
     </div>
   );
