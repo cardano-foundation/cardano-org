@@ -45,7 +45,7 @@ function DiscoverItem({imageName, buttonLabel, buttonLink}) {
   );
 }
 
-export default function DiscoverSection() {
+export default function HomeDiscoverSection() {
   return (
     <section className="container">
     <div className={styles.discoverWrap}>

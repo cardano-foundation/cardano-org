@@ -1,0 +1,33 @@
+.boxWrap {
+  width: 100%;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+  display: flex;  
+  align-items: center; 
+  color: #ffffff;
+}
+
+.rightColumn {
+  display: flex; /* Establish flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically within the container */
+  align-items: center; /* Center children horizontally, if needed */
+}
+
+  /* white style cta button */
+
+.buttonWhite {
+  background-color: #FDFDFB;
+  color: #1C1E21;
+  border: none;
+  font-weight: normal;
+}
+
+.buttonWhite:hover, buttonWhite:focus {
+  background-color: #cbcbc9;
+  color: #1C1E21;
+  border: none;
+  font-weight: normal;
+}

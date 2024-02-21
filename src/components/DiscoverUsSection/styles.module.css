@@ -1,0 +1,50 @@
+.logoWrap {
+  width: 220px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.boxWrap {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;  
+  align-items: left; 
+  color: #ffffff;
+  background-image: url('/img/hero-header-zoom-full.png');
+  background-size: 550px;
+  background-repeat: no-repeat;
+}
+
+.leftColumn {
+  flex-grow: 0;
+  flex-basis: 350px;
+  padding-top: 140px;
+  padding-left: 140px;
+}
+
+.leftColumn p {
+  font-size: 2rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.rightColumn {
+  flex-grow: 1;
+  flex-basis: 200px;
+  padding-top: 140px;
+}
+
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {  
+  .boxWrap  {
+    flex-direction: column; /* Stack flex children vertically */
+    align-items: stretch; /* Stretch children to full width */
+  }
+
+  .rightColumn {
+    padding-top: 0px; /* Remove padding */
+  }
+  
+}

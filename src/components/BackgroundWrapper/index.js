@@ -16,15 +16,24 @@ export default function BackgroundWrapper({ children, backgroundType }) {
   let wrapperClassName;
 
   switch (backgroundType) {
-    case 'solid':
-      wrapperClassName = styles.backgroundSolid;
+    case 'solidGrey':
+      wrapperClassName = styles.backgroundSolidGrey;
+      break;
+    case 'solidBlue':
+      wrapperClassName = styles.backgroundSolidBlue;
       break;
     case 'zoom':
       wrapperClassName = styles.backgroundZoom;
       break;
-    case 'gradient':
-      wrapperClassName = styles.backgroundGradient;
+    case 'gradientDark':
+      wrapperClassName = styles.backgroundGradientDark;
+      break;
+    case 'gradientLight':
+      wrapperClassName = styles.backgroundGradientLight;
       break;  
+    case 'ada':
+      wrapperClassName = styles.backgroundAda;
+      break;
     default:
       wrapperClassName = styles.backgroundNone;
   }

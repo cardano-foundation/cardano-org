@@ -10,6 +10,7 @@ export function parseTextWithLinks(contentArray) {
   const safeArray = Array.isArray(contentArray) ? contentArray : [contentArray];
 
   return safeArray.map((content, index) => {
+
     // If the content is a string, parse it for links
     if (typeof content === 'string') {
       // Split the string into parts and replace markdown-style links with <a> tags
@@ -20,6 +21,7 @@ export function parseTextWithLinks(contentArray) {
       return <React.Fragment key={`fragment-${index}`}>{parts}</React.Fragment>;
     } else {
       // If the content is not a string (e.g., a React element), return it directly
+      // console.warn('parseTextWithLinks expected a string but got:', typeof content);
       return React.cloneElement(content, { key: `element-${index}` });
     }
   });

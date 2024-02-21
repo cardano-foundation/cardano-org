@@ -26,7 +26,7 @@ export default function Home() {
         bannerType ='zoomRedWhite'
       />
       <main>
-        <BackgroundWrapper backgroundType={'solid'}>
+        <BackgroundWrapper backgroundType={'solidGrey'}>
           <Divider headline='What is staking?' />
           <TwoColumnBox
             leftText={[
