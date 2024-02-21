@@ -10,7 +10,9 @@ import Collapsible from 'react-collapsible';
 
 //
 // This component:
-// delegation faq
+// delegation faq. 
+// FIXME: some answers seem to be very outdated, also needs more links
+// FIXME: need to make clear that protocol distributes rewards and pools do not have custody
 
 const faqList = [
   {
@@ -46,7 +48,7 @@ const faqList = [
     )
   },
   {
-    question: "Can I delegate to multiple stake pools?", // fixme: different wallets have support for this
+    question: "Can I delegate to multiple stake pools?", // FIXME: different wallets have support for this
     answer: (
       <div>
         <p>
@@ -103,6 +105,88 @@ const faqList = [
       </div>
     )
   },
+  {
+    question: "What is stake pool desirability?", 
+    answer: (
+      <div>
+        <p>
+        Desirability measures how desirable a stake pool is to an ada holder seeking to delegate their stake. It is influenced 
+        by a number of factors – including a stake pool’s margin, fee, performance, the total reward available in the current 
+        epoch, and saturation percentage – and contributes to determining a stake pool’s ranking.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "How are stake pools ranked?", 
+    answer: (
+      <div>
+        <p>
+        Stake pools are ranked mainly through a combination of their desirability and performance, in addition to other factors. 
+        It is worth mentioning here that the wallet developers make this decision for their wallet.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "How should I choose a stake pool?", 
+    answer: (
+      <div>
+        <p>
+        Shelley Daedalus features a list of all participating stake pools directly via the UI, while Yoroi shows the same information 
+        via their Seiza blockchain explorer. These pools are ranked and color-coded to help stakeholders make the best decision 
+        about where to delegate their stake.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "How much will I earn in rewards?", 
+    answer: (
+      <div>
+        <p>
+        You can use the <Link href="/?calculator=delegator">rewards calculator</Link> to get an idea of how much you will earn in rewards. It’s important to note that the calculator 
+        produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. In the future, we will 
+        likely test different parameters that may affect reward margins. Amounts calculated are therefore subject to change, but represent 
+        a realistic and sensible level of return.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "What wallets are supported and where do I find them?", 
+    answer: (
+      <div>
+        <p>
+        There are various <Link to="/what-is-ada#wallets">Cardano wallets</Link> to choose from.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "Can I restore an ada balance from a hardware wallet?", 
+    answer: (
+      <div>
+        <p>
+        Yes. You can use <Link to="/what-is-ada#wallets">different Cardano wallets</Link> to restore an ada balance from a hardware wallet. 
+        However, we advise caution doing so. Entering your hardware wallet recovery phrase in software wallets can expose your hardware wallet 
+        private keys to additional security risks. The recommendation is not to continue using a hardware wallet once it has been restored.
+        </p>
+      </div>
+    )
+  },
+  {
+    question: "Will the ada rewards I earn be added to my delegated stake?", 
+    answer: (
+      <div>
+        <p>
+        Yes. Rewards earned accrue with your original stake. When rewards are received, the balance of your reward account increases 
+        – and, consequently, the delegated stake is increased. There is no need to claim rewards.
+        </p>
+      </div>
+    )
+  },
+  
 ];
 
 const FAQDelegationSection = ({ }) => {
