@@ -91,11 +91,13 @@ const config = {
             label: 'Community',
             position: 'left',
             items: [ // Define nested dropdown items here
-              {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
-              {to: '/ambassadors', label: 'Cardano Ambassadors'}, 
-              {to: '/newsletter', label: 'Newsletter'}, 
-              {to: '/social-channels', label: 'Social Channels'}, 
               {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
+              {to: '/ambassadors', label: 'Cardano Ambassadors'},
+              {to: '/newsletter', label: 'Newsletter'}, 
+              {to: '/#follow', label: 'Follow Cardano'},
+              {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
+              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
+              
             ],
           },
           {

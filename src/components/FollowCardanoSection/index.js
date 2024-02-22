@@ -8,7 +8,7 @@ import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
 function FollowCardanoSection() {
   return (
     <BackgroundWrapper backgroundType={'gradientLight'}>
-      <section className={styles.container}>  
+      <section className={styles.container} id="follow">  
       <div class="container">
         <div className={styles.header}>
           <h6>Social</h6>
