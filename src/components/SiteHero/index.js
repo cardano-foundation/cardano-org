@@ -33,8 +33,11 @@ function SiteHero({ title, description, bannerType }) {
       heroClassName = styles.heroBannerWaves;
       break;   
     case 'starburst':
-        heroClassName = styles.heroBannerStarburst;
-        break; 
+      heroClassName = styles.heroBannerStarburst;
+      break; 
+    case 'braidBlue':
+      heroClassName = styles.heroBannerBraidBlue;
+      break; 
     default:
       heroClassName = styles.heroBannerStarburst;
   }

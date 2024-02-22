@@ -224,6 +224,30 @@ html[data-theme=dark] .heroBannerWaves {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
+/** heroBannerBraidBlue **/
+
+.heroBannerBraidBlue {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;  
+  background-position: 0% 85%;
+  background-repeat: no-repeat;  
+  background-image: url(/img/hero-header-braid-blue.svg);  
+  height: 410px;
+}
+
+.heroBannerBraidBlue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg,  #597cd0, #0035AD);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
 
 /* screen size changes */
 
