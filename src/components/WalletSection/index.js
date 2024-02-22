@@ -58,8 +58,8 @@ function WalletItem({title, imageName, text, subtext, label, link}) {
 
 export default function WalletSection() {
   return (
-    <section className={styles.partnerSection} id="wallets">
-      <Divider headline='Cardano Wallets' />
+    <section className={styles.partnerSection}>
+      <Divider text='Cardano Wallets' id='wallets' />
       <div className={styles.walletWrap}>
         <div className={styles.walletItems}>
           

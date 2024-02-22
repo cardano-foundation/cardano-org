@@ -19,7 +19,7 @@ export default function WhatIsAda({ headline, title, description, quote, buttonL
 
   return (
     <div className="container">
-      <Divider headline={headline} />
+      <Divider text={headline} />
 
     <div className="row">
       <div className={clsx('col col--6', styles.leftColumn)}>

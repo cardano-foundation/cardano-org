@@ -36,7 +36,7 @@ function PartnerItem({imageName, label, link}) {
 export default function PartnerSection() {
   return (
     <section className={styles.partnerSection}>
-      <Divider headline='Partners' />
+      <Divider text='Partners' />
       <TitleBox
         description='A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve.'
         titleType='none'

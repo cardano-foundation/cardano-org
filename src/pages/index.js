@@ -61,7 +61,7 @@ export default function Home() {
           />
 
       
-          <Divider headline='Benefits'/>
+          <Divider text='Benefits'/>
           <QuoteBox 
             description='Cardano restores trust to global systems – creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow.'
             quote = 'Cardano brings a new standard in technology – open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'
@@ -78,7 +78,7 @@ export default function Home() {
             ]}
           />
 
-        <Divider headline='Make the Change'/> 
+        <Divider text='Make the Change'/> 
         <TitleBox 
           title='Discover Cardano' 
           description={[

@@ -33,7 +33,7 @@ export default function Home() {
       <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
-          <Divider headline='What is stake?' />
+          <Divider text='What is stake?' />
           <OneColumnBox
             text={[
               'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
@@ -52,7 +52,7 @@ export default function Home() {
         </BackgroundWrapper>
       
         <BackgroundWrapper backgroundType={'zoom'}>  
-          <Divider headline='What is stake delegation?' />
+          <Divider text='What is stake delegation?' />
           <TwoColumnBox
             leftText={[
               'Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It \
@@ -61,7 +61,7 @@ export default function Home() {
             ]}
           />
 
-        <Divider headline='Why incentives?' />
+        <Divider text='Why incentives?' />
           <TwoColumnBox
             leftText={[
               'Incentives are used to ensure the longevity and health of the Cardano network and ecosystem. The incentive mechanism \

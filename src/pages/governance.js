@@ -39,10 +39,10 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={'zoom'}>
-          <Divider headline='Governance Within Cardano' /> 
+          <Divider text='Governance Within Cardano' /> 
           <GovernanceWithinCardanoSection /> 
 
-          <Divider headline='Why Voltaire' /> 
+          <Divider text='Why Voltaire' /> 
           <GovernanceWhyVoltaireSection /> 
         </BackgroundWrapper>
 

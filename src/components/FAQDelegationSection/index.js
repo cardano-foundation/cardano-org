@@ -203,7 +203,7 @@ export default function FAQDelegationSection () {
 
   return (
     <div className="container">
-      <Divider headline='FAQ' />
+      <Divider text='FAQ' />
       {faqList.map((faq, index) => (
         <div 
           key={index} 

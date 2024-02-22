@@ -33,7 +33,7 @@ export default function Home() {
       <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
-          <Divider headline='What is staking?' />
+          <Divider text='What is staking?' />
           <TwoColumnBox
             leftText={[
               'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
@@ -55,7 +55,7 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={'zoom'}>
-          <Divider headline='What is stake pool?' />
+          <Divider text='What is stake pool?' />
           <OneColumnBox
             text={[
               'Stake pools may be either public or private. A public stake pool is a Cardano network node with a public address that \

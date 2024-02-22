@@ -15,7 +15,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <Divider headline='WelcomeHero Component' />   
+      <Divider text='WelcomeHero Component' />   
       <WelcomeHero
         title={[
           'Making the world',
@@ -26,7 +26,7 @@ export default function Home() {
         with the tools and technologies required to create possibility for the many, as well as the few, 
         and bring about positive global change.'
       />
-      <Divider headline='SiteHero Component Examples' />  
+      <Divider text='SiteHero Component Examples' />  
       <SiteHero
         title={[
           'SiteHero Component',
@@ -92,7 +92,7 @@ export default function Home() {
       />
 
       <main>
-        <Divider headline='Various other components' />  
+        <Divider text='Various other components' />  
         <FollowCardano />
         <hr />
         <FeaturedTitleWithText
