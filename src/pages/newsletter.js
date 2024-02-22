@@ -2,25 +2,18 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import SiteHero from "@site/src/components/SiteHero";
 
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteTitle} = "useDocusaurusContext()";
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          Governance - Built For The Community
-          By The Community
-        </Heading>
-        <p className="hero__subtitle">Cardano is developing the most secure and decentralized governance 
-        model in the world. A model to give everybody a voice, and control over the future development 
-        of the platform and the applications and services that emerge from it.</p>
-      </div>
-    </header>
+    <SiteHero
+        title='Stay Informed'
+        description='Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem.'
+        bannerType ='default'
+      />
   );
 }
 
@@ -32,7 +25,7 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+      FIXME: Ouroboros
       </main>
     </Layout>
   );

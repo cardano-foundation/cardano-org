@@ -1,7 +1,19 @@
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
+
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
+  return (
+    <SiteHero
+        title='Learn'
+        description='Empowering the digital architects of the future.'
+        bannerType ='default'
+      />
+  );
+}
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -9,13 +21,9 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
-        title='Learn'
-        description='Empowering the digital architects of the future.'
-        bannerType ='default'
-      />
+      <HomepageHeader/>
       <main>
-        <HomepageFeatures />
+        FIXME: Learn
       </main>
     </Layout>
   );

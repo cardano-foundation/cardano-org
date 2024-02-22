@@ -9,14 +9,10 @@ import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
 import DottedImageWithText from '@site/src/components/Layout/DottedImageWithText';
 import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
-
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <SiteHero
+    <SiteHero
         title={[
           'Designed For Mass Participation',
           <br key="line1"/>,
@@ -25,6 +21,16 @@ export default function Home() {
         description='Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network.'
         bannerType ='zoomRedWhite'
       />
+  );
+}
+
+export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
           <Divider headline='What is staking?' />

@@ -11,6 +11,18 @@ import CtaOneColumn from '@site/src/components/Layout/CtaOneColumn';
 import CtaTwoColumn from '@site/src/components/Layout/CtaTwoColumn';
 import FAQDelegationSection from '@site/src/components/FAQDelegationSection';
  
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
+  return (
+    <SiteHero
+        title={[
+          'Delegate Your Stake',
+        ]}
+        description='To build the network, earn rewards, and become part of the Cardano journey.'
+        bannerType ='overlap'
+      />
+  );
+}
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -18,13 +30,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
-        title={[
-          'Delegate Your Stake',
-        ]}
-        description='To build the network, earn rewards, and become part of the Cardano journey.'
-        bannerType ='overlap'
-      />
+      <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
           <Divider headline='What is stake?' />

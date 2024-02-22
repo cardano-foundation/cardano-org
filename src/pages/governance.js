@@ -9,14 +9,11 @@ import GovernanceBlueSection from '@site/src/components/GovernanceBlueSection';
 import GovernanceWithinCardanoSection from '@site/src/components/GovernanceWithinCardanoSection';
 import GovernanceWhyVoltaireSection from '@site/src/components/GovernanceWhyVoltaireSection';
 import GovernanceProposalsSection from '@site/src/components/GovernanceProposalsSection';
- 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <SiteHero
+    <SiteHero
         title={[
           'Built for the community',
           <br key="line1"/>,
@@ -25,6 +22,16 @@ export default function Home() {
         description='Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it.'
         bannerType ='braidBlue'
       />
+  );
+}
+
+export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader />
       <main>
         
         <BackgroundWrapper backgroundType={'solidBlue'}>

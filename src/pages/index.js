@@ -13,13 +13,10 @@ import HomeDiscoverSection from '@site/src/components/HomeDiscoverSection';
 import PartnerSection from '@site/src/components/PartnersSection';
 import FollowCardanoSection from '@site/src/components/FollowCardanoSection';
 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <WelcomeHero
+    <WelcomeHero
         title={[
           'Making the world',
           <br key='line1'/>,
@@ -29,6 +26,16 @@ export default function Home() {
         with the tools and technologies required to create possibility for the many, as well as the few, 
         and bring about positive global change.'
       />
+  );
+}
+
+export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader />
       <main>
       <BackgroundWrapper backgroundType={'zoom'}>  
           <FeaturedTitleWithText
