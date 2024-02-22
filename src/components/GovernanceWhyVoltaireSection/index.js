@@ -4,9 +4,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css"; 
 import { parseTextWithLinks } from '@site/src/utils/textUtils';
-import TitleBox from '@site/src/components/TitleBox';
-import QuoteWithText from '@site/src/components/QuoteWithText';
-import Divider from '@site/src/components/Divider';
+import TitleBox from '@site/src/components/Layout/TitleBox';
+import QuoteWithText from '@site/src/components/Layout/QuoteWithText';
+import Divider from '@site/src/components/Layout/Divider';
 
 //
 // This component shows a simple header with some text below.

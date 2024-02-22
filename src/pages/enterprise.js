@@ -2,7 +2,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
-import UseCase from '../components/UseCase';
+import UseCase from '@site/src/components/UseCase';
 
 
 export default function Home() {

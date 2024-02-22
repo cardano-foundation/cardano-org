@@ -4,8 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
-import FollowCardano from "@site/src/components/FollowCardano";
-import Divider from '@site/src/components/Divider';
+import FollowCardano from "@site/src/components/Layout/FollowCardano";
+import Divider from '@site/src/components/Layout/Divider';
 import WelcomeHero from '@site/src/components/WelcomeHero';
 import FeaturedTitleWithText from '@site/src/components/FeaturedTitleWithText';
 

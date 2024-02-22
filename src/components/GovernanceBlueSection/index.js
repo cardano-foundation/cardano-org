@@ -3,7 +3,7 @@ import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css"; 
 import { parseTextWithLinks } from '@site/src/utils/textUtils';
-import TitleBox from '@site/src/components/TitleBox';
+import TitleBox from '@site/src/components/Layout/TitleBox';
 
 //
 // This component shows a simple header with some text below.

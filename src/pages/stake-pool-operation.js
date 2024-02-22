@@ -3,11 +3,11 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
-import Divider from '@site/src/components/Divider';
-import OneColumnBox from '@site/src/components/OneColumnBox';
-import TwoColumnBox from '@site/src/components/TwoColumnBox';
-import DottedImageWithText from '../components/DottedImageWithText';
-import BackgroundWrapper from '../components/BackgroundWrapper';
+import Divider from '@site/src/components/Layout/Divider';
+import OneColumnBox from '@site/src/components/Layout/OneColumnBox';
+import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
+import DottedImageWithText from '@site/src/components/Layout/DottedImageWithText';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
 
 export default function Home() {

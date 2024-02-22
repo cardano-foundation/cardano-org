@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import Divider from '@site/src/components/Divider';
-import LogoWithLink from '@site/src/components/LogoWithLink'; 
-import TitleBox from '../TitleBox';
+import Divider from '@site/src/components/Layout/Divider';
+import LogoWithLink from '@site/src/components/Layout/LogoWithLink'; 
+import TitleBox from '@site/src/components/Layout/TitleBox';
 
 const PartnerItemList = [
   {

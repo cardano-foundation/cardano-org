@@ -7,9 +7,9 @@ import SiteHero from '@site/src/components/SiteHero';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
-import DiscoverItem from '../components/DiscoverItem';
-import DiscoverUsSection from '../components/DiscoverUsSection';
-import BackgroundWrapper from '../components/BackgroundWrapper';
+import DiscoverItem from '@site/src/components/DiscoverItem';
+import DiscoverUsSection from '@site/src/components/DiscoverUsSection';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
  
 

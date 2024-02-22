@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-import DottedImageWithButton from '@site/src/components/DottedImageWithButton';
-import QuoteWithText from '../QuoteWithText';
+import DottedImageWithButton from '@site/src/components/Layout/DottedImageWithButton';
+import QuoteWithText from '@site/src/components/Layout/QuoteWithText';
 
 const DiscoverItemList = [
   {

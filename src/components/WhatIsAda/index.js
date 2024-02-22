@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Divider from '@site/src/components/Divider';
+import Divider from '@site/src/components/Layout/Divider';
 import ThemedImage from '@theme/ThemedImage';
 
 //

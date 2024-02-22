@@ -3,12 +3,12 @@ import Layout from '@theme/Layout';
 import WelcomeHero from "@site/src/components/WelcomeHero";
 
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
-import Divider from "@site/src/components/Divider";
-import QuoteBox from "@site/src/components/QuoteBox";
+import Divider from "@site/src/components/Layout/Divider";
+import QuoteBox from "@site/src/components/Layout/QuoteBox";
 import BenefitsSection from '@site/src/components/BenefitsSection';
-import VisionBox from '@site/src/components/VisionBox';
-import TitleBox from '@site/src/components/TitleBox';
-import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
+import VisionBox from '@site/src/components/Layout/VisionBox';
+import TitleBox from '@site/src/components/Layout/TitleBox';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 import HomeDiscoverSection from '@site/src/components/HomeDiscoverSection';
 import PartnerSection from '@site/src/components/PartnersSection';
 import FollowCardanoSection from '@site/src/components/FollowCardanoSection';

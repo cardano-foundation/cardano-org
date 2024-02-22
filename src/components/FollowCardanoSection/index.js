@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import FollowCardano from '@site/src/components/FollowCardano';
-import Divider from '@site/src/components/Divider';
-import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
+import FollowCardano from '@site/src/components/Layout/FollowCardano';
+import Divider from '@site/src/components/Layout/Divider';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
 function FollowCardanoSection() {
   return (

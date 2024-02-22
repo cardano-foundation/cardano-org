@@ -3,13 +3,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
-import Divider from '@site/src/components/Divider';
-import OneColumnBox from '@site/src/components/OneColumnBox';
-import TwoColumnBox from '@site/src/components/TwoColumnBox';
-import BackgroundWrapper from '../components/BackgroundWrapper';
-import CtaOneColumn from '../components/CtaOneColumn';
-import CtaTwoColumn from '../components/CtaTwoColumn';
-import FAQDelegationSection from '../components/FAQDelegationSection';
+import Divider from '@site/src/components/Layout/Divider';
+import OneColumnBox from '@site/src/components/Layout/OneColumnBox';
+import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
+import CtaOneColumn from '@site/src/components/Layout/CtaOneColumn';
+import CtaTwoColumn from '@site/src/components/Layout/CtaTwoColumn';
+import FAQDelegationSection from '@site/src/components/FAQDelegationSection';
  
 
 export default function Home() {

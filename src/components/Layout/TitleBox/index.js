@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css"; 
-import TitleWithText from "@site/src/components/TitleWithText";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 //
 // This component shows a simple header with some text below in a box
