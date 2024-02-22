@@ -16,7 +16,7 @@ const socialLinks = [
   { icon: <FaLinkedin />, url: "https://www.linkedin.com/company/cardano-community", label: "Cardano on LinkedIn" },
 ];
 
-function FollowCardano({title, iconForegroundColor, iconBackgroundColor}) {
+export default function FollowCardano({title, iconForegroundColor, iconBackgroundColor}) {
 
   return (
     <div className={styles.container}>
@@ -38,5 +38,3 @@ function FollowCardano({title, iconForegroundColor, iconBackgroundColor}) {
     </div>
   );
 }
-
-export default FollowCardano;

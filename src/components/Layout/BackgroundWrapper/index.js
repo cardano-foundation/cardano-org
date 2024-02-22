@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // This component:
 // wrap components in a background wrapper
 
-
 export default function BackgroundWrapper({ children, backgroundType }) {
 
   // Use backgroundType to dynamically change the class for the background

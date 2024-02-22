@@ -10,7 +10,7 @@ import TitleBox from '@site/src/components/Layout/TitleBox';
 // title, text, and slight text are optional
 
  
-function GovernanceBlueSection({  }) {
+export default function GovernanceBlueSection({  }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
  
@@ -29,5 +29,3 @@ function GovernanceBlueSection({  }) {
     </div> 
   );
 };
-
-export default GovernanceBlueSection;

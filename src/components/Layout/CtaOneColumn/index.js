@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 // This component shows some text with a title (optional) 
 // and a call to action button below
  
-function CtaOneColumn({ title, text, buttonLabel, buttonLink }) {
+export default function CtaOneColumn({ title, text, buttonLabel, buttonLink }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -30,5 +30,3 @@ function CtaOneColumn({ title, text, buttonLabel, buttonLink }) {
     </div>
   );
 };
-
-export default CtaOneColumn;

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // below a quote symbol
 // and another text (aka quote)
 
-function QuoteBox({ description, quote }) {
+export default function QuoteBox({ description, quote }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -38,5 +38,3 @@ function QuoteBox({ description, quote }) {
   </div>   
   );
 };
-
-export default QuoteBox;

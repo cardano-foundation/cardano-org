@@ -13,7 +13,7 @@ import Divider from '@site/src/components/Layout/Divider';
 // title, text, and slight text are optional
 
  
-function GovernanceWhyVoltaireSection({  }) {
+export default function GovernanceWhyVoltaireSection({  }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
  
@@ -52,5 +52,3 @@ function GovernanceWhyVoltaireSection({  }) {
     </div> 
   );
 };
-
-export default GovernanceWhyVoltaireSection;

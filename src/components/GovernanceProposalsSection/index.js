@@ -14,7 +14,7 @@ import Divider from '@site/src/components/Layout/Divider';
 // FIXME: Funding Proposal seems to talk about Catalyst, consider in the future to talk about treasury withdraw proposal
 
  
-function GovernanceWithinCardanoSection({  }) {
+export default function GovernanceWithinCardanoSection({  }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
  
@@ -46,5 +46,3 @@ function GovernanceWithinCardanoSection({  }) {
     </div> 
   );
 };
-
-export default GovernanceWithinCardanoSection;

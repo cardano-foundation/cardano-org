@@ -9,7 +9,7 @@ import Link from "@docusaurus/Link";
 // shows a (svg) logo and a link below, it assumes that: 
 // for every log.svg there is also a logo-dark.svg
 
-function LogoWithLink({ imageName, label, link }) {
+export default function LogoWithLink({ imageName, label, link }) {
   
   return (
     <div className={styles.logoContainer}>
@@ -30,6 +30,4 @@ function LogoWithLink({ imageName, label, link }) {
     </div>
   );
 }
-
-export default LogoWithLink;
 

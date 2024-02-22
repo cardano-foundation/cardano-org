@@ -11,7 +11,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 // a button. The image assumes that: 
 // for every log.svg there is also a logo-dark.svg
 
-function WalletLink({ title, imageName, text, subtext, label, link }) {
+export default function WalletLink({ title, imageName, text, subtext, label, link }) {
   
   return (
     <div className={styles.logoContainer}>
@@ -38,6 +38,4 @@ function WalletLink({ title, imageName, text, subtext, label, link }) {
     </div>
   );
 }
-
-export default WalletLink;
 

@@ -13,7 +13,7 @@ import Divider from '@site/src/components/Layout/Divider';
 // title, text, and slight text are optional
 
  
-function GovernanceWithinCardanoSection({  }) {
+export default function GovernanceWithinCardanoSection({  }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
  
@@ -50,5 +50,3 @@ function GovernanceWithinCardanoSection({  }) {
     </div> 
   );
 };
-
-export default GovernanceWithinCardanoSection;

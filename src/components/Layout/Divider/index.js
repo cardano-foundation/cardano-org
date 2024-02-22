@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // adds a horizontal line divider with a text
 
 
-const Divider = ({ headline }) => {
+export default function Divider({ headline }) {
 
   return (
     <div className="container">
@@ -21,5 +21,3 @@ const Divider = ({ headline }) => {
   </div> 
   );
 };
-
-export default Divider;

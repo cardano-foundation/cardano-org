@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 // sentence in red and the rest of the quote in green as used in Cardano 2020 page
 // and quoteType = 'none' which can be used to add normal text without special formatting underneath
  
-function QuoteWithText({ text, quoteType }) {
+export default function QuoteWithText({ text, quoteType }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -65,5 +65,3 @@ function QuoteWithText({ text, quoteType }) {
     </div> 
   );
 };
-
-export default QuoteWithText;

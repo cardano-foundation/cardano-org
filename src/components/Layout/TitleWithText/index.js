@@ -9,7 +9,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 // title, text, and slight text are optional
 
  
-function TitleWithText({ title, description, titleType, headingDot, slightText }) {
+export default function TitleWithText({ title, description, titleType, headingDot, slightText }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -27,9 +27,7 @@ function TitleWithText({ title, description, titleType, headingDot, slightText }
       titleClassName = styles.titleTypeBlack;
   }
 
-
-
-  // clsx allows for conditional className  inclusion based on the headingDot flag
+  // clsx allows for conditional className inclusion based on the headingDot flag
   return (
     <div className="container">
        {title && (
@@ -50,5 +48,3 @@ function TitleWithText({ title, description, titleType, headingDot, slightText }
     </div> 
   );
 };
-
-export default TitleWithText;

@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 //
 // This component shows text in one column
  
-function OneColumnBox({ text }) {
+export default function OneColumnBox({ text }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -20,5 +20,3 @@ function OneColumnBox({ text }) {
     </div>
   );
 };
-
-export default OneColumnBox;

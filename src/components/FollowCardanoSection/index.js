@@ -5,7 +5,7 @@ import FollowCardano from '@site/src/components/Layout/FollowCardano';
 import Divider from '@site/src/components/Layout/Divider';
 import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
-function FollowCardanoSection() {
+export default function FollowCardanoSection() {
   return (
     <BackgroundWrapper backgroundType={'gradientLight'}>
       <section className={styles.container} id="follow">  
@@ -25,5 +25,3 @@ function FollowCardanoSection() {
     </BackgroundWrapper>
   );
 }
-
-export default FollowCardanoSection;

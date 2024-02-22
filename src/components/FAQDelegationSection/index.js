@@ -189,7 +189,7 @@ const faqList = [
   
 ];
 
-const FAQDelegationSection = ({ }) => {
+export default function FAQDelegationSection () {
 
   // to maintain the alternating background we need to 
   // manage the active state of each Collabsible on our own
@@ -218,5 +218,3 @@ const FAQDelegationSection = ({ }) => {
     </div> 
   );
 };
-
-export default FAQDelegationSection;

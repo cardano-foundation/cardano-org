@@ -19,8 +19,7 @@ function LogoLink({ imageName, to }) {
   );
 }
 
- 
-function DiscoverUsSection({ }) {
+export default function DiscoverUsSection({ }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -62,5 +61,3 @@ function DiscoverUsSection({ }) {
     </div>
   );
 };
-
-export default DiscoverUsSection;

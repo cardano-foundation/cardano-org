@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import FeaturedTitleWithText from '@site/src/components/FeaturedTitleWithText';
 
-function HowToBuyAdaSection() {
+export default function HowToBuyAdaSection() {
   return (
     <section className={styles.container}>  
       <div className={styles.backgroundImageContainer}>
@@ -31,5 +31,3 @@ function HowToBuyAdaSection() {
     </section>
   );
 }
-
-export default HowToBuyAdaSection;

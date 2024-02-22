@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 //
 // This component shows text in two columns, it collapses into one
  
-function TwoColumnBox({ leftText, rightText }) {
+export default function TwoColumnBox({ leftText, rightText }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -23,5 +23,3 @@ function TwoColumnBox({ leftText, rightText }) {
     </div>
   );
 };
-
-export default TwoColumnBox;

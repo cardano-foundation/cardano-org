@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 // just shows a huge text
 // TODO: make the color selectable
 
-function VisionBox({ title }) {
+export default function VisionBox({ title }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -22,5 +22,3 @@ function VisionBox({ title }) {
   </div>   
   );
 };
-
-export default VisionBox;

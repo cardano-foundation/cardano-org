@@ -11,7 +11,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 // This component:
 // shows a dotted image and some text to the right, title is optional
 
-function DottedImageWithText({ imageName, title, text }) {
+export default function DottedImageWithText({ imageName, title, text }) {
   
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/dotted-icons/${imageName}.svg`);
@@ -30,6 +30,4 @@ function DottedImageWithText({ imageName, title, text }) {
     </div>
   );
 }
-
-export default DottedImageWithText;
 

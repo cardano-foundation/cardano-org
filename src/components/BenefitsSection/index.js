@@ -88,7 +88,7 @@ const benefitsData = {
 };
 
 // Define your main component
-const BenefitsSection = ({  }) => {
+export default function BenefitsSection () {
  
   const [selectedIndex, setSelectedIndex] = useState(0); // Initialize state to track selected tab index
   const [animationDirection, setAnimationDirection] = useState('in'); // 'in' or 'out'
@@ -144,5 +144,3 @@ const TabLabel = ({ isSelected, children }) => (
     {children}
   </div>
 );
-
-export default BenefitsSection;

@@ -15,7 +15,7 @@ import ThemedImage from '@theme/ThemedImage';
 // Below some text
 
 
-const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLink }) => {
+export default function WhatIsAda({ headline, title, description, quote, buttonLabel, buttonLink }){
 
   return (
     <div className="container">
@@ -62,5 +62,3 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
   </div> 
   );
 };
-
-export default WhatIsAda;
