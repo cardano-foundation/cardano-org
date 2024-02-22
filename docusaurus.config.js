@@ -28,6 +28,7 @@ const config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   customFields: {
     repository: `${vars.repository}`,
@@ -119,9 +120,12 @@ const config = {
             label: 'Enterprise',
             position: 'left',
             items: [ // Define nested dropdown items here
-              {to: '/enterprise#solution1', label: 'Solution 1'}, // Nested item 1
-              {to: '/enterprise#solution2', label: 'Solution 2'}, // Nested item 2
-              {to: '/enterprise#solution3', label: 'Solution 3'}, // Nested item 3
+              {to: '/enterprise#education', label: 'Education'}, // Nested item 1
+              {to: '/enterprise#retail', label: 'Retail'}, // Nested item 2
+              {to: '/enterprise#agriculture', label: 'Agriculture'}, // Nested item 3
+              {to: '/enterprise#government', label: 'Government'}, // Nested item 3
+              {to: '/enterprise#finance', label: 'Finance'}, // Nested item 3
+              {to: '/enterprise#healthcare', label: 'Health Care'}, // Nested item 3
             ],
           },
           /*
@@ -216,7 +220,7 @@ const config = {
             items: [
               {
                 label: 'News',
-                to: '/News',
+                to: '/news',
               },
               {
                 label: 'Disclosure',

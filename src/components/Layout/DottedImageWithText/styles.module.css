@@ -1,7 +1,7 @@
 .container {
   display: flex; /* Use flexbox layout */
   align-items: center; /* Center items vertically */
-  justify-content: start; /* Align content to the start */
+  justify-content: flex-start; /* Align content to the start */
   padding: 20px;
   gap: 20px; /* Adjust the space between the image and the text */
 }

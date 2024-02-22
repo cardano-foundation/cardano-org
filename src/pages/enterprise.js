@@ -20,6 +20,7 @@ export default function Home() {
       />
       <main>
 
+      <div id="education" />
       <UseCase
           title='Education'
           description={[
@@ -51,6 +52,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="retail" />
         <UseCase
           title='Retail'
           description={[
@@ -78,6 +80,7 @@ export default function Home() {
           isImageRight={true}
         />
 
+        <div id="agriculture" />
         <UseCase
           title='Agriculture'
           description={[
@@ -103,6 +106,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="government" />
         <UseCase
           title='Government'
           description={[
@@ -125,6 +129,7 @@ export default function Home() {
           isImageRight={true}
         />
 
+        <div id="finance" />
         <UseCase
           title='Finance'
           description={[
@@ -146,6 +151,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="healthcare" />
         <UseCase
           title='Health Care'
           description={[

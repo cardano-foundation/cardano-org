@@ -1,6 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+ 
 import SiteHero from "@site/src/components/SiteHero";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         bannerType ='fluid'
       />
       <main>
-        <HomepageFeatures />
+         FIXME: Ambassador page
       </main>
     </Layout>
   );

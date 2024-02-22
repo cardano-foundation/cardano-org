@@ -21,7 +21,7 @@
 /** heroBannerZoom **/
 
 .heroBannerZoom {
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -41,7 +41,7 @@ html[data-theme=dark] .heroBannerZoom {
 /** heroBannerZoomRedWhite **/
 
 .heroBannerZoomRedWhite {
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -70,7 +70,7 @@ html[data-theme=dark] .heroBannerZoomRedWhite {
 /** heroBannerZoomRedWhiteDark **/
 
 .heroBannerZoomRedWhiteDark {
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -117,7 +117,7 @@ html[data-theme=dark] .heroBannerAda {
 /** heroBannerDots **/
 
 .heroBannerDots { /* fixme: this is actually a zoom variant */
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -148,7 +148,7 @@ html[data-theme=dark] .heroBannerDots {
 /** heroBannerFluid **/
 
 .heroBannerFluid {
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -170,7 +170,7 @@ html[data-theme=dark] .heroBannerFluid {
 /** heroBannerOverlap **/
 
 .heroBannerOverlap {
-  padding: 4rem 2rem;;
+  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
