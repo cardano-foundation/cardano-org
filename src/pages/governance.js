@@ -5,12 +5,11 @@ import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
+import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
+import OneColumnBox from '@site/src/components/BackgroundWrapper';
+import TitleBox from '../components/TitleBox';
+import GovernanceBlueSection from '../components/GovernanceBlueSection';
  
- 
-
- 
-
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -28,7 +27,9 @@ export default function Home() {
       />
       <main>
         
-            
+        <BackgroundWrapper backgroundType={'solidBlue'} >
+            <GovernanceBlueSection />
+        </BackgroundWrapper>
          
       </main>
     </Layout>
