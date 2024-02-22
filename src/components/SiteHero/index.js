@@ -33,8 +33,11 @@ function SiteHero({ title, description, bannerType }) {
       heroClassName = styles.heroBannerWaves;
       break;   
     case 'starburst':
-        heroClassName = styles.heroBannerStarburst;
-        break; 
+      heroClassName = styles.heroBannerStarburst;
+      break; 
+    case 'braidBlue':
+      heroClassName = styles.heroBannerBraidBlue;
+      break; 
     default:
       heroClassName = styles.heroBannerStarburst;
   }
@@ -46,6 +49,13 @@ function SiteHero({ title, description, bannerType }) {
           <h1 className="hero__title">{title}</h1>
           <p className={clsx("hero__subtitle", styles.subtitle)}>{description}</p>
         </div>
+
+        <div class="sectionCaret">
+            <svg x="0px" y="0px" viewBox="0 0 2000 30">
+              <polygon className="polygon-fill" points="1000,30 0,30 0,0 980,0 "></polygon>
+              <polygon className="polygon-fill" points="1000,30 2000,30 2000,0 1020,0 "></polygon>
+            </svg>
+          </div>
       </div>
     </header>
   );

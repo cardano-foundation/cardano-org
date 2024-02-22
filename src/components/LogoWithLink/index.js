@@ -2,6 +2,7 @@ import React from "react";
 import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
+import Link from "@docusaurus/Link";
 
 //
 // This component:
@@ -22,7 +23,7 @@ function LogoWithLink({ imageName, label, link }) {
       />
       </div>
       <div className={styles.linkWrap}>
-      <a href={link} className={styles.link}>{label}</a>
+      <Link to={link} className={styles.link}>{label}</Link>
       </div>
       
        

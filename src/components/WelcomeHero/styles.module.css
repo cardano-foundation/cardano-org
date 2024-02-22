@@ -56,35 +56,6 @@ html[data-theme=dark] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
-/* section caret */
-
-:root {
-  --section-caret-fill-color: #ffffff; /* white caret fill for light mode */
-}
-
-/* Override the fill color for dark mode */
-[data-theme='dark'] {
-  --section-caret-fill-color: #1B1B1D; /* black for dark mode */
-}
-
-/* Apply the variable to the polygon fill */
-.sectionCaretInner polygon {
-  fill: var(--section-caret-fill-color);
-}
-
-.sectionCaretInner {
-  height: 30px;
-  width: 2048px;
-  position: absolute;
-  bottom: 0px;
-  display: inline-block;
-  left: 50%;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: -1000px;
-}
-
 /* screen size changes */
 
 @media screen and (max-width: 966px) {
@@ -111,10 +82,5 @@ html[data-theme=dark] .heroBanner {
   .heroBanner {
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .sectionCaretInner {
-    height: 45px;
-    width: 3000px;
-    margin-left: -1500px;
   }
 }

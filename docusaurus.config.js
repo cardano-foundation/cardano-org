@@ -80,10 +80,11 @@ const config = {
             label: 'Learn',
             position: 'left',
             items: [ // Define nested dropdown items here
-              {to: '/what-is-ada', label: 'What is ada?'}, 
-              {to: '/what-is-ada#wallets', label: 'Cardano Wallets'}, 
-              {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
-              {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
+              {to: '/what-is-ada', label: 'What ada is'}, 
+              {to: '/what-is-ada#wallets', label: 'About Cardano wallets'}, 
+              {to: '/stake-pool-delegation', label: 'Delegating your stake'}, 
+              {to: '/stake-pool-operation', label: 'Operating a stake pool'}, 
+              {to: '/governance', label: 'Participating in governance'}, 
             ],
           },
           {
@@ -91,11 +92,13 @@ const config = {
             label: 'Community',
             position: 'left',
             items: [ // Define nested dropdown items here
-              {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
-              {to: '/ambassadors', label: 'Cardano Ambassadors'}, 
-              {to: '/newsletter', label: 'Newsletter'}, 
-              {to: '/social-channels', label: 'Social Channels'}, 
               {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
+              {to: '/ambassadors', label: 'Cardano Ambassadors'},
+              {to: '/newsletter', label: 'Newsletter'}, 
+              {to: '/#follow', label: 'Follow Cardano'},
+              {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
+              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
+              
             ],
           },
           {
@@ -164,7 +167,7 @@ const config = {
               },
               {
                 label: 'IOG',
-                href: '/partners#iog', /* fixme: last entry should be "more", then link to the partners page */
+                href: '/partners#iog', /* TODO: last entry should be "more", then link to the partners page */
               },
             ],
           },
@@ -186,6 +189,15 @@ const config = {
             items: [
               {
                 label: 'Terms',
+                href: 'https://cardanofoundation.org/en/terms-and-conditions',
+              },
+              {
+                label: 'Privacy Policy',
+                href: 'https://cardanofoundation.org/en/privacy',
+              },
+              /* FIXME: once we have these files, link locally not to the cf page 
+              {
+                label: 'Terms',
                 to: '/terms-and-conditions',
               },
               {
@@ -196,6 +208,7 @@ const config = {
                 label: 'Cookie Policy',
                 to: '/cookie-policy',
               },
+              */
             ],
           },
           {

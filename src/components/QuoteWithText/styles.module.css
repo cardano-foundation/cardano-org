@@ -21,7 +21,7 @@ html[data-theme=dark] {
 }
 
 .quote {
-  font-size: 18px;
+  /*font-size: 18px;*/
 }
 
 .quote::before {
