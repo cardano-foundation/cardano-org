@@ -450,3 +450,42 @@ img {
   background-color: #FDFDFB; /* even rows */
 }
 
+
+/* section caret */
+
+:root {
+  --section-caret-fill-color: #ffffff; /* white caret fill for light mode */
+}
+
+/* Override the fill color for dark mode */
+[data-theme='dark'] {
+  --section-caret-fill-color: #1B1B1D; /* black for dark mode */
+}
+
+/* Apply the variable to the polygon fill */
+.sectionCaret polygon {
+  fill: var(--section-caret-fill-color);
+}
+
+.sectionCaret {
+  height: 30px;
+  width: 2048px;
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  left: 50%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: -1000px;
+}
+
+
+@media screen and (min-width: 1950px) {
+  .sectionCaret {
+    height: 45px;
+    width: 3000px;
+    margin-left: -1500px;
+  }
+}
+

@@ -27,7 +27,7 @@ function WelcomeHero({ title, description }) {
           </Link>
         </div>
          
-          <div class={styles.sectionCaretInner}>
+          <div class="sectionCaret">
             <svg x="0px" y="0px" viewBox="0 0 2000 30">
               <polygon className="polygon-fill" points="1000,30 0,30 0,0 980,0 "></polygon>
               <polygon className="polygon-fill" points="1000,30 2000,30 2000,0 1020,0 "></polygon>
