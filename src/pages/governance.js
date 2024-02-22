@@ -3,12 +3,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
 import BackgroundWrapper from '@site/src/components/BackgroundWrapper';
-import OneColumnBox from '@site/src/components/BackgroundWrapper';
-import TitleBox from '../components/TitleBox';
-import GovernanceBlueSection from '../components/GovernanceBlueSection';
+import Divider from '@site/src/components/Divider';
+import GovernanceBlueSection from '@site/src/components/GovernanceBlueSection';
+import GovernanceWithinCardanoSection from '@site/src/components/GovernanceWithinCardanoSection';
+import GovernanceWhyVoltaireSection from '@site/src/components/GovernanceWhyVoltaireSection';
+import GovernanceProposalsSection from '@site/src/components/GovernanceProposalsSection';
  
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -27,10 +27,21 @@ export default function Home() {
       />
       <main>
         
-        <BackgroundWrapper backgroundType={'solidBlue'} >
-            <GovernanceBlueSection />
+        <BackgroundWrapper backgroundType={'solidBlue'}>
+          <GovernanceBlueSection />
         </BackgroundWrapper>
-         
+
+        <BackgroundWrapper backgroundType={'zoom'}>
+          <Divider headline='Governance Within Cardano' /> 
+          <GovernanceWithinCardanoSection /> 
+
+          <Divider headline='Why Voltaire' /> 
+          <GovernanceWhyVoltaireSection /> 
+        </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={'gradientLight'}>
+          <GovernanceProposalsSection />
+        </BackgroundWrapper>
       </main>
     </Layout>
   );

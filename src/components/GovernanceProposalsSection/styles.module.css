@@ -1,0 +1,73 @@
+.flexBox {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-bottom: 80px;
+    color: #ffffff;
+  }
+
+  .leftTextWrap {
+    flex-grow: 1;
+    flex-basis: 260px;
+    padding-left: 20px;
+  }
+
+  .rightTextWrap {
+    flex-grow: 1;
+    flex-basis: 260px;
+    padding-right: 20px;
+  }
+
+
+/* Media query for smaller screens to stack items in a single column */
+@media (max-width: 768px) { /* Adjust breakpoint as necessary */
+    .leftTextWrap {
+      flex: 1 1 100%; /* Take full width on smaller screens */
+      max-width: 100%;
+    }
+}
+
+
+/* Divider */
+.header {
+  text-align: left;
+  padding: 20px;
+}
+
+.header h6 {
+  font-weight: 700; 
+  margin-bottom: 10px; /* Space between title and horizontalBar */
+  font-size: 1.0rem;
+}
+
+.horizontalBar {
+  height: 1px; /* Thickness of the bar */
+  width: 80%; /* Full width by default */
+  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+}
+
+:root {
+  .header h6 {
+    color: #ffffff;
+  }
+  .horizontalBar {
+    background-color: #ffffff; /* Color of the bar */
+  }
+}
+
+[data-theme='dark'] {
+  .header h6 {
+    color: #ffffff;
+  }
+  .horizontalBar {
+    background-color: #ffffff; /* Color of the bar */
+  }
+}
+ 
+/* Responsive styles */
+@media (max-width: 599px) {
+  .horizontalBar {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+  }
+}

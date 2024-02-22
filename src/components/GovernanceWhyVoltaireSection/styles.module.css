@@ -1,0 +1,25 @@
+.flexBox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  .textWrap {
+    flex-grow: 2;
+    flex-basis: 260px;
+    max-width: 80%;
+  }
+
+  .buttonWrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+/* Media query for smaller screens to stack items in a single column */
+@media (max-width: 768px) { /* Adjust breakpoint as necessary */
+    .textWrap {
+      flex: 1 1 100%; /* Take full width on smaller screens */
+      max-width: 100%;
+    }
+}
