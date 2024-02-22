@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-function SiteHero({ title, description, bannerType }) {
+export default function SiteHero({ title, description, bannerType }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -60,5 +60,3 @@ function SiteHero({ title, description, bannerType }) {
     </header>
   );
 }
-
-export default SiteHero;

@@ -2,8 +2,20 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
-import UseCase from '../components/UseCase';
+import UseCase from '@site/src/components/UseCase';
 
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
+  return (
+    <SiteHero
+      title='Enterprise'
+      description='A developing platform, Cardano is being built to 
+      accommodate a broad range of use cases, solving problems across multiple 
+      industry verticals.'
+      bannerType ='fluid'
+    />
+  );
+}
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -11,15 +23,10 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
-        title='Enterprise'
-        description='A developing platform, Cardano is being built to 
-        accommodate a broad range of use cases, solving problems across multiple 
-        industry verticals.'
-        bannerType ='fluid'
-      />
+      <HomepageHeader/>
       <main>
 
+      <div id="education" />
       <UseCase
           title='Education'
           description={[
@@ -51,6 +58,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="retail" />
         <UseCase
           title='Retail'
           description={[
@@ -78,6 +86,7 @@ export default function Home() {
           isImageRight={true}
         />
 
+        <div id="agriculture" />
         <UseCase
           title='Agriculture'
           description={[
@@ -103,6 +112,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="government" />
         <UseCase
           title='Government'
           description={[
@@ -125,6 +135,7 @@ export default function Home() {
           isImageRight={true}
         />
 
+        <div id="finance" />
         <UseCase
           title='Finance'
           description={[
@@ -146,6 +157,7 @@ export default function Home() {
           isImageRight={false}
         />
 
+        <div id="healthcare" />
         <UseCase
           title='Health Care'
           description={[

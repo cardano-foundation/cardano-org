@@ -11,7 +11,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 // This component:
 // shows an image on the left and some text to the right, title, subtitle are optional
 
-function DiscoverItem({ imageName, title, subtitle, text, isImageRight }) {
+export default function DiscoverItem({ imageName, title, subtitle, text, isImageRight }) {
   
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/discover/${imageName}.webp`);
@@ -37,6 +37,3 @@ function DiscoverItem({ imageName, title, subtitle, text, isImageRight }) {
     </div>
   );
 }
-
-export default DiscoverItem;
-

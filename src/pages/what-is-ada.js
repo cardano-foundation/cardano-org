@@ -4,16 +4,13 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from "@site/src/components/SiteHero";
 import WhatIsAda from '@site/src/components/WhatIsAda';
 import FeaturedTitleWithText from '@site/src/components/FeaturedTitleWithText';
-import HowToBuyAdaSection from '../components/HowToBuyAdaSection';
-import WalletSection from '../components/WalletSection';
+import HowToBuyAdaSection from '@site/src/components/HowToBuyAdaSection';
+import WalletSection from '@site/src/components/WalletSection';
 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <SiteHero
+    <SiteHero
         title='What is ada?'
         description={[
           'A new type of currency. A new means of transaction.',
@@ -22,6 +19,16 @@ export default function Home() {
           ]}
         bannerType ='ada'
       />
+  );
+}
+
+export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader/>
       <main>
         <WhatIsAda 
           headline='What is ada?' 

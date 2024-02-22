@@ -3,22 +3,18 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import SiteHero from '@site/src/components/SiteHero';
 
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteTitle} = "useDocusaurusContext()";
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          Exchanges
-        </Heading>
-        <p className="hero__subtitle">Easy integration with Cardano. All of the upgrades. 
-        None of the maintenance.</p>
-      </div>
-    </header>
+    <SiteHero
+      title='Exchanges'
+      description='Easy integration with Cardano. All of the upgrades. None of the maintenance.'
+      bannerType ='fluid'
+    />
   );
 }
 

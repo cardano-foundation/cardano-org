@@ -3,14 +3,26 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
-import Divider from '@site/src/components/Divider';
-import OneColumnBox from '@site/src/components/OneColumnBox';
-import TwoColumnBox from '@site/src/components/TwoColumnBox';
-import BackgroundWrapper from '../components/BackgroundWrapper';
-import CtaOneColumn from '../components/CtaOneColumn';
-import CtaTwoColumn from '../components/CtaTwoColumn';
-import FAQDelegationSection from '../components/FAQDelegationSection';
+import Divider from '@site/src/components/Layout/Divider';
+import OneColumnBox from '@site/src/components/Layout/OneColumnBox';
+import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
+import CtaOneColumn from '@site/src/components/Layout/CtaOneColumn';
+import CtaTwoColumn from '@site/src/components/Layout/CtaTwoColumn';
+import FAQDelegationSection from '@site/src/components/FAQDelegationSection';
  
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
+  return (
+    <SiteHero
+        title={[
+          'Delegate Your Stake',
+        ]}
+        description='To build the network, earn rewards, and become part of the Cardano journey.'
+        bannerType ='overlap'
+      />
+  );
+}
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -18,16 +30,10 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
-        title={[
-          'Delegate Your Stake',
-        ]}
-        description='To build the network, earn rewards, and become part of the Cardano journey.'
-        bannerType ='overlap'
-      />
+      <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
-          <Divider headline='What is stake?' />
+          <Divider text='What is stake?' />
           <OneColumnBox
             text={[
               'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
@@ -46,7 +52,7 @@ export default function Home() {
         </BackgroundWrapper>
       
         <BackgroundWrapper backgroundType={'zoom'}>  
-          <Divider headline='What is stake delegation?' />
+          <Divider text='What is stake delegation?' />
           <TwoColumnBox
             leftText={[
               'Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It \
@@ -55,7 +61,7 @@ export default function Home() {
             ]}
           />
 
-        <Divider headline='Why incentives?' />
+        <Divider text='Why incentives?' />
           <TwoColumnBox
             leftText={[
               'Incentives are used to ensure the longevity and health of the Cardano network and ecosystem. The incentive mechanism \

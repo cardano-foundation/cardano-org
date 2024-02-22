@@ -3,22 +3,17 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import SiteHero from '@site/src/components/SiteHero';
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteTitle} = "useDocusaurusContext()";
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          Contact Cardano
-        </Heading>
-        <p className="hero__subtitle">Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect and others. Fill out the 
-        contact form below and we will put you in touch with the team best placed to assist you.</p>
-      </div>
-    </header>
+    <SiteHero
+        title='Staking Calculator'
+        description='See how much rewards you can possibly earn by staking ada.'
+        bannerType ='dots'
+      />
   );
 }
 

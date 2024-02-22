@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Divider from '@site/src/components/Divider';
+import Divider from '@site/src/components/Layout/Divider';
 import ThemedImage from '@theme/ThemedImage';
 import Collapsible from 'react-collapsible';
 
@@ -189,7 +189,7 @@ const faqList = [
   
 ];
 
-const FAQDelegationSection = ({ }) => {
+export default function FAQDelegationSection () {
 
   // to maintain the alternating background we need to 
   // manage the active state of each Collabsible on our own
@@ -203,7 +203,7 @@ const FAQDelegationSection = ({ }) => {
 
   return (
     <div className="container">
-      <Divider headline='FAQ' />
+      <Divider text='FAQ' />
       {faqList.map((faq, index) => (
         <div 
           key={index} 
@@ -218,5 +218,3 @@ const FAQDelegationSection = ({ }) => {
     </div> 
   );
 };
-
-export default FAQDelegationSection;

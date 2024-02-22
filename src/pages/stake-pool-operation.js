@@ -3,20 +3,16 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import SiteHero from "@site/src/components/SiteHero";
-import Divider from '@site/src/components/Divider';
-import OneColumnBox from '@site/src/components/OneColumnBox';
-import TwoColumnBox from '@site/src/components/TwoColumnBox';
-import DottedImageWithText from '../components/DottedImageWithText';
-import BackgroundWrapper from '../components/BackgroundWrapper';
+import Divider from '@site/src/components/Layout/Divider';
+import OneColumnBox from '@site/src/components/Layout/OneColumnBox';
+import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
+import DottedImageWithText from '@site/src/components/Layout/DottedImageWithText';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
-
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <SiteHero
+    <SiteHero
         title={[
           'Designed For Mass Participation',
           <br key="line1"/>,
@@ -25,9 +21,19 @@ export default function Home() {
         description='Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network.'
         bannerType ='zoomRedWhite'
       />
+  );
+}
+
+export default function Home() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <HomepageHeader/>
       <main>
         <BackgroundWrapper backgroundType={'solidGrey'}>
-          <Divider headline='What is staking?' />
+          <Divider text='What is staking?' />
           <TwoColumnBox
             leftText={[
               'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
@@ -49,7 +55,7 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={'zoom'}>
-          <Divider headline='What is stake pool?' />
+          <Divider text='What is stake pool?' />
           <OneColumnBox
             text={[
               'Stake pools may be either public or private. A public stake pool is a Cardano network node with a public address that \

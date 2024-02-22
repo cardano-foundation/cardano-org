@@ -22,22 +22,22 @@
 @media (max-width: 599px) {
   .horizontalBar {
     width: 50%; /* Adjust the width as needed for smaller screens */
-     
   }
-}
-
-.leftColumn {
-   
+  .mobileNotVisible {
+    display:none;
+  }
+  .mobileVisible {
+    display:flex;
+  }
 }
 
 .rightColumn {
   padding: 30px;  
 }
 
-.adaRoundWrap {
-  picture, img {
-    max-width: 20rem;
-  }
+.adaRoundWrap picture,
+.adaRoundWrap img {
+  max-width: 20rem;
 }
 
 .mobileNotVisible {
@@ -45,14 +45,5 @@
 }
 
 .mobileVisible {
-display:none;
-}
-
-@media (max-width:599px) {
-  .mobileNotVisible {
-    display:none;
-  }
-  .mobileVisible {
-    display:flex;
-  }
+  display:none;
 }

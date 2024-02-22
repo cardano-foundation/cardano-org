@@ -1,0 +1,99 @@
+
+
+/** backgroundNone */
+
+.backgroundNone {
+  padding: 20px;
+}
+
+/** backgroundSolidGrey */
+
+.backgroundSolidGrey {
+  background-color: #F5F5F5; 
+  padding: 20px;
+}
+ 
+[data-theme='dark'] {
+  .backgroundSolidGrey {
+    background-color: #242526; 
+  }
+}
+
+/** backgroundSolidBlue */
+
+.backgroundSolidBlue {
+  background-color: #5281F7; 
+  padding: 20px;
+}
+ 
+[data-theme='dark'] {
+  .backgroundSolidBlue {
+    background-color: #5281F7; /* fixme: darker */
+  }
+}
+
+/** backgroundZoom */
+
+.backgroundZoom {
+  background-image: url('/img/hero-header-dots.webp');
+  background-size: 500px;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+[data-theme='dark'] {
+  .backgroundZoom {
+    background-image: url('/img/hero-header-dots-dark.webp');  
+  }
+}
+
+/** backgroundZoomMini */
+
+.backgroundGradientDark {
+  background-image: linear-gradient(315deg, #0133AE, #335CBE);
+}
+
+[data-theme='dark'] {
+  .backgroundGradientDark {
+    background-image: linear-gradient(315deg, #0133AE, #0b1f4f);
+  }
+}
+
+/** backgroundGradientLight */
+
+.backgroundGradientLight {
+  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
+}
+
+[data-theme='dark'] {
+  .backgroundGradientLight {
+    background-image: linear-gradient(315deg, rgb(43, 89, 205), rgb(0, 24, 80));
+  }
+}
+
+/** backgroundAda */
+
+.backgroundAda {
+  position: relative;
+  background-image: linear-gradient(rgb(0, 51, 173) 0%, rgb(51, 92, 190) 100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+  z-index: 0;
+  overflow: hidden; /* don't let the ada Logo bleed into other boxes, although the effect can be nice */
+}
+
+.backgroundAda:before {
+  content: '₳';  
+  z-index: -1;
+  position: absolute;
+  top: -25rem;
+  right: 15vw;
+  opacity: 0.07;
+  font-size: 43rem; /* adjust size of the A */
+  padding-top: 0px;
+  margin-top: 0px;
+  transform: rotate(7deg);
+  color: #5281F7;
+  }
+  

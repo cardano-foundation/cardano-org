@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 // a tagline below and a call to action button below the tagline
 // fixme: the background here was probably not clever, this should go in a parent component
 
-function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonLink, headingDot }) {
+export default function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonLink, headingDot }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -42,5 +42,3 @@ function FeaturedTitleWithText({ title, description, quote, buttonLabel, buttonL
     </div> 
   );
 };
-
-export default FeaturedTitleWithText;

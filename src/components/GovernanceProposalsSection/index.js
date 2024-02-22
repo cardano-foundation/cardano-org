@@ -4,9 +4,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css"; 
 import { parseTextWithLinks } from '@site/src/utils/textUtils';
-import TitleBox from '@site/src/components/TitleBox';
-import QuoteWithText from '@site/src/components/QuoteWithText';
-import Divider from '@site/src/components/Divider';
+import TitleBox from '@site/src/components/Layout/TitleBox';
+import QuoteWithText from '@site/src/components/Layout/QuoteWithText';
+import Divider from '@site/src/components/Layout/Divider';
 
 //
 // Governance: Proposals
@@ -14,7 +14,7 @@ import Divider from '@site/src/components/Divider';
 // FIXME: Funding Proposal seems to talk about Catalyst, consider in the future to talk about treasury withdraw proposal
 
  
-function GovernanceWithinCardanoSection({  }) {
+export default function GovernanceWithinCardanoSection({  }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
  
@@ -46,5 +46,3 @@ function GovernanceWithinCardanoSection({  }) {
     </div> 
   );
 };
-
-export default GovernanceWithinCardanoSection;

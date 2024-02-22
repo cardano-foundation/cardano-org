@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import Divider from '@site/src/components/Divider';
-import LogoWithLink from '@site/src/components/LogoWithLink'; 
-import TitleBox from '../TitleBox';
+import Divider from '@site/src/components/Layout/Divider';
+import LogoWithLink from '@site/src/components/Layout/LogoWithLink'; 
+import TitleBox from '@site/src/components/Layout/TitleBox';
 
 const PartnerItemList = [
   {
@@ -36,7 +36,7 @@ function PartnerItem({imageName, label, link}) {
 export default function PartnerSection() {
   return (
     <section className={styles.partnerSection}>
-      <Divider headline='Partners' />
+      <Divider text='Partners' />
       <TitleBox
         description='A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve.'
         titleType='none'

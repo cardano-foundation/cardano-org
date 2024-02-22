@@ -6,12 +6,21 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from '@site/src/components/SiteHero';
 
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
-import DiscoverItem from '../components/DiscoverItem';
-import DiscoverUsSection from '../components/DiscoverUsSection';
-import BackgroundWrapper from '../components/BackgroundWrapper';
+import DiscoverItem from '@site/src/components/DiscoverItem';
+import DiscoverUsSection from '@site/src/components/DiscoverUsSection';
+import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
- 
+function HomepageHeader() {
+  const {siteTitle} = "useDocusaurusContext()";
+  return (
+      <SiteHero
+        title='Discover Cardano'
+        description='Cardano is the nexus of five principles: People, purpose, technology, research, 
+        and opportunity. Explore and learn this new constellation of knowledge.'
+        bannerType ='starburst'
+      />
+  );
+}
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -19,12 +28,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <SiteHero
-        title='Discover Cardano'
-        description='Cardano is the nexus of five principles: People, purpose, technology, research, 
-        and opportunity. Explore and learn this new constellation of knowledge.'
-        bannerType ='starburst'
-      />
+      <HomepageHeader />
       <main>
          <DiscoverItem
             imageName={'people'}

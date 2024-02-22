@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Divider from '@site/src/components/Divider';
+import Divider from '@site/src/components/Layout/Divider';
 import ThemedImage from '@theme/ThemedImage';
 
 //
@@ -15,11 +15,11 @@ import ThemedImage from '@theme/ThemedImage';
 // Below some text
 
 
-const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLink }) => {
+export default function WhatIsAda({ headline, title, description, quote, buttonLabel, buttonLink }){
 
   return (
     <div className="container">
-      <Divider headline={headline} />
+      <Divider text={headline} />
 
     <div className="row">
       <div className={clsx('col col--6', styles.leftColumn)}>
@@ -62,5 +62,3 @@ const WhatIsAda = ({ headline, title, description, quote, buttonLabel, buttonLin
   </div> 
   );
 };
-
-export default WhatIsAda;

@@ -17,7 +17,7 @@ import { parseTextWithLinks } from '@site/src/utils/textUtils';
 // link to products soon and use the learn more button to dive deeper into content.
 
 
-function UseCase({ title, description, solutions, product, buttonLink, imageName, isImageRight }) {
+export default function UseCase({ title, description, solutions, product, buttonLink, imageName, isImageRight }) {
   
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/dotted-icons/${imageName}.svg`);
@@ -55,6 +55,4 @@ function UseCase({ title, description, solutions, product, buttonLink, imageName
 UseCase.defaultProps = {
   isImageRight: false, // Default layout will have the image on the left
 };
-
-export default UseCase;
 

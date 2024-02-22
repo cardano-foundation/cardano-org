@@ -2,7 +2,7 @@
 .discoverItemWrap {
   display: flex; /* Use flexbox layout */
   align-items: top; /* Center items vertically */
-  justify-content: start; /* Align content to the start */
+  justify-content: flex-start; /* Align content to the start */
   flex-wrap: wrap;
   padding: 20px;
   gap: 20px; /* Adjust the space between the image and the text */

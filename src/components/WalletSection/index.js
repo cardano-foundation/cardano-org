@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import Divider from '@site/src/components/Divider';
+import Divider from '@site/src/components/Layout/Divider';
 import WalletLink from '@site/src/components/WalletLink'; 
-import TitleBox from '../TitleBox';
-import DottedImageWithText from '../DottedImageWithText';
+import TitleBox from '@site/src/components/Layout/TitleBox';
+import DottedImageWithText from '@site/src/components/Layout/DottedImageWithText';
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
 // Don't send pull requests for wallets that are not listed for a longer time on https://developers.cardano.org/showcase?tags=wallet
@@ -58,8 +58,8 @@ function WalletItem({title, imageName, text, subtext, label, link}) {
 
 export default function WalletSection() {
   return (
-    <section className={styles.partnerSection} id="wallets">
-      <Divider headline='Cardano Wallets' />
+    <section className={styles.partnerSection}>
+      <Divider text='Cardano Wallets' id='wallets' />
       <div className={styles.walletWrap}>
         <div className={styles.walletItems}>
           
