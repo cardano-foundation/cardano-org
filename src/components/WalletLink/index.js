@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
@@ -36,7 +37,7 @@ export default function WalletLink({
         <p className="slight-text">{subtext}</p>
       </div>
       <div className={styles.buttonWrap}>
-        <a
+        <Link
           href={link}
           className={clsx(
             "button button--primary button--lg",
@@ -44,7 +45,7 @@ export default function WalletLink({
           )}
         >
           {label}
-        </a>
+        </Link>
       </div>
     </div>
   );

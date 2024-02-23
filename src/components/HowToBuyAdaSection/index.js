@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 
@@ -17,7 +18,7 @@ export default function HowToBuyAdaSection() {
               <p>
                 You can buy or sell ada for fiat or other cryptocurrencies using
                 cryptocurrency exchanges. Visit{" "}
-                <a href="https://coinmarketcap.com/">coinmarketcap</a> to see
+                <Link href="https://coinmarketcap.com/">coinmarketcap</Link> to see
                 the list of exchanges that support ada.
               </p>
               <p>

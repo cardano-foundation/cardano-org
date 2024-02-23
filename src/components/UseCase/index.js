@@ -50,12 +50,12 @@ export default function UseCase({
       <div className={textColumnClass}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{parseTextWithLinks(description)}</p>
-        <a
+        <Link
           href={buttonLink}
           className={clsx("button button--primary", styles.buttonLink)}
         >
           Learn more
-        </a>
+        </Link>
       </div>
     </div>
   );
