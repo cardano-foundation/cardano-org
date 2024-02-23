@@ -1,4 +1,4 @@
- .titleTypeRed {
+.titleTypeRed {
   color: rgb(255, 118, 118);
 }
 
@@ -10,9 +10,8 @@
   color: var(--ifm-color-base);
 }
 
-html[data-theme=dark]  {
+html[data-theme="dark"] {
   .titleTypeGreen {
     color: rgb(78, 136, 145);
   }
 }
- 

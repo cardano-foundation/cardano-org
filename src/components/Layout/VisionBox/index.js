@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 //
 // This component:
@@ -17,8 +17,8 @@ export default function VisionBox({ title }) {
   return (
     <div className={styles.visionBoxWrap}>
       <div className={styles.visionBox}>
-           <h2>{title}</h2>
+        <h2>{title}</h2>
       </div>
-  </div>   
+    </div>
   );
-};
+}

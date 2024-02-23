@@ -1,11 +1,11 @@
 .visionBoxWrap {
   width: 100%;
   padding: 1rem;
-  display: flex;  
-  align-items: center; 
+  display: flex;
+  align-items: center;
 }
 
-.visionBox { 
+.visionBox {
   color: var(--ifm-color-primary);
   margin: 10px 0;
   margin-left: auto;
@@ -15,4 +15,3 @@
 .visionBox h2 {
   font-size: 3rem;
 }
- 

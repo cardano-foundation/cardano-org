@@ -1,5 +1,3 @@
-
-
 .leftColumn {
   /*background-image: var(--background-image); */
   background-size: cover;
@@ -8,6 +6,5 @@
 }
 
 .rightColumn {
-  padding: 30px;  
+  padding: 30px;
 }
- 

@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 //import styles from "./component-name.module.css"; // in case you need local css for this component
 //import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
 
@@ -26,15 +26,10 @@ export default function QuoteBox({ description, quote }) {
           <div className={styles.imageWrap}>
             <img src={imageUrl} alt="Cardano Logo" />
           </div>
-          <div className={styles.description}>
-            {description}
-          </div>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className={styles.quote}>
-            {quote}
-        </div>
-        
+        <div className={styles.quote}>{quote}</div>
       </div>
-  </div>   
+    </div>
   );
-};
+}

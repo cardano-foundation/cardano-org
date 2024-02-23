@@ -1,33 +1,32 @@
 .flexBox {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 60px;
-    margin-bottom: 80px;
-    color: #ffffff;
-  }
-
-  .leftTextWrap {
-    flex-grow: 1;
-    flex-basis: 260px;
-    padding-left: 20px;
-  }
-
-  .rightTextWrap {
-    flex-grow: 1;
-    flex-basis: 260px;
-    padding-right: 20px;
-  }
-
-
-/* Media query for smaller screens to stack items in a single column */
-@media (max-width: 768px) { /* Adjust breakpoint as necessary */
-    .leftTextWrap {
-      flex: 1 1 100%; /* Take full width on smaller screens */
-      max-width: 100%;
-    }
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 80px;
+  color: #ffffff;
 }
 
+.leftTextWrap {
+  flex-grow: 1;
+  flex-basis: 260px;
+  padding-left: 20px;
+}
+
+.rightTextWrap {
+  flex-grow: 1;
+  flex-basis: 260px;
+  padding-right: 20px;
+}
+
+/* Media query for smaller screens to stack items in a single column */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as necessary */
+  .leftTextWrap {
+    flex: 1 1 100%; /* Take full width on smaller screens */
+    max-width: 100%;
+  }
+}
 
 /* Divider */
 .header {
@@ -36,9 +35,9 @@
 }
 
 .header h6 {
-  font-weight: 700; 
+  font-weight: 700;
   margin-bottom: 10px; /* Space between title and horizontalBar */
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .horizontalBar {
@@ -56,7 +55,7 @@
   }
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   .header h6 {
     color: #ffffff;
   }
@@ -64,7 +63,7 @@
     background-color: #ffffff; /* Color of the bar */
   }
 }
- 
+
 /* Responsive styles */
 @media (max-width: 599px) {
   .horizontalBar {

@@ -11,9 +11,9 @@
   align-items: center; /* Center children vertically */
   justify-content: center; /* Center children horizontally */
   text-align: center; /* Center text for any inline children */
-  }
+}
 
- .taglineContainer {
+.taglineContainer {
   width: 70%;
 }
 
@@ -29,11 +29,11 @@
   z-index: 0;
 }
 
-html[data-theme=light] .iconWrapper {
+html[data-theme="light"] .iconWrapper {
   color: var(--icon-fg-color, #ffffff); /* Default light theme color */
 }
 
-html[data-theme=dark] .iconWrapper {
+html[data-theme="dark"] .iconWrapper {
   color: var(--icon-fg-color, #000000); /* Override for dark theme */
 }
 
@@ -58,7 +58,7 @@ html[data-theme=dark] .iconWrapper {
   position: relative;
   z-index: 1;
 }
- 
+
 /* screen size changes */
 @media screen and (max-width: 966px) {
   .taglineContainer {

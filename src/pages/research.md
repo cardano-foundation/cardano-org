@@ -132,4 +132,3 @@ future development of the blockchain.
 **Relevant specifications:**
 
 [CIP-1694: An On-Chain Decentralized Governance Mechanism for Voltaire](https://github.com/JaredCorduan/CIPs/blob/voltaire-v1/CIP-1694/README.md)
-

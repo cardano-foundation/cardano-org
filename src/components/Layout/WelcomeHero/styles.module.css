@@ -5,23 +5,22 @@
  * and scoped locally.
  */
 
- /* Buttons */
- .cta .button {
+/* Buttons */
+.cta .button {
   margin-right: 1rem; /* space between buttons */
   width: 240px; /* force equal width */
   font-weight: normal;
 }
 
- html[data-theme=light] .button {
+html[data-theme="light"] .button {
   background-color: rgb(255, 255, 255);
   color: var(--ifm-color-primary);
 }
 
-html[data-theme=dark] .button {
+html[data-theme="dark"] .button {
   background-color: var(--ifm-button-background-color);
   color: var(--ifm-button-color);
 }
-
 
 .cta .button:last-child {
   margin-right: 0; /* no extra margin to the right of the the last button right: */
@@ -32,7 +31,7 @@ html[data-theme=dark] .button {
   margin-bottom: 3rem;
 }
 
- /* Banner */ 
+/* Banner */
 
 .heroBanner {
   padding: 4rem 2rem;
@@ -45,14 +44,12 @@ html[data-theme=dark] .button {
   height: 830px;
 }
 
-
-
-html[data-theme=light] .heroBanner {
+html[data-theme="light"] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
   /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
 }
 
-html[data-theme=dark] .heroBanner {
+html[data-theme="dark"] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
@@ -65,7 +62,7 @@ html[data-theme=dark] .heroBanner {
     background-position: 50% 50%;
   }
   .cta .button {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
   }
   .taglineContainer {
     width: 100%;

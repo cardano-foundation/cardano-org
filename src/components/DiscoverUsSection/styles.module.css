@@ -8,10 +8,10 @@
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
-  display: flex;  
-  align-items: left; 
+  display: flex;
+  align-items: left;
   color: #ffffff;
-  background-image: url('/img/hero-header-zoom-full.png');
+  background-image: url("/img/hero-header-zoom-full.png");
   background-size: 550px;
   background-repeat: no-repeat;
 }
@@ -35,10 +35,9 @@
   padding-top: 140px;
 }
 
-
 /* Styles for smaller screens */
-@media (max-width: 768px) {  
-  .boxWrap  {
+@media (max-width: 768px) {
+  .boxWrap {
     flex-direction: column; /* Stack flex children vertically */
     align-items: stretch; /* Stretch children to full width */
   }
@@ -46,5 +45,4 @@
   .rightColumn {
     padding-top: 0px; /* Remove padding */
   }
-  
 }

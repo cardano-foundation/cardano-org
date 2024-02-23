@@ -1,56 +1,48 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
-import Divider from '@site/src/components/Layout/Divider';
-import LogoWithLink from '@site/src/components/Layout/LogoWithLink'; 
-import TitleBox from '@site/src/components/Layout/TitleBox';
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
+import Divider from "@site/src/components/Layout/Divider";
+import LogoWithLink from "@site/src/components/Layout/LogoWithLink";
+import TitleBox from "@site/src/components/Layout/TitleBox";
 
 const PartnerItemList = [
   {
-    imageName: 'cardanofoundation',
-    label: 'Explore the Cardano Foundation',
-    link: 'partners'
+    imageName: "cardanofoundation",
+    label: "Explore the Cardano Foundation",
+    link: "partners",
   },
   {
-    imageName: 'iog',
-    label: 'Find out Input Output Global',
-    link: 'partners'
+    imageName: "iog",
+    label: "Find out Input Output Global",
+    link: "partners",
   },
   {
-    imageName: 'emurgo',
-    label: 'Learn about EMURGO',
-    link: 'partners'
+    imageName: "emurgo",
+    label: "Learn about EMURGO",
+    link: "partners",
   },
 ];
 
-function PartnerItem({imageName, label, link}) {
-  return (
-        <LogoWithLink
-            imageName={imageName}
-            label={label}
-            link={link}
-        />
-  );
+function PartnerItem({ imageName, label, link }) {
+  return <LogoWithLink imageName={imageName} label={label} link={link} />;
 }
 
 export default function PartnerSection() {
   return (
     <section className={styles.partnerSection}>
-      <Divider text='Partners' />
+      <Divider text="Partners" />
       <TitleBox
-        description='A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve.'
-        titleType='none'
+        description="A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."
+        titleType="none"
         headingDot={false}
       />
       <div className={styles.discoverWrap}>
         <div className={styles.discoverItems}>
-          
-        {PartnerItemList.map((props, idx) => (
-              <PartnerItem key={idx} {...props} />
-            ))}
+          {PartnerItemList.map((props, idx) => (
+            <PartnerItem key={idx} {...props} />
+          ))}
         </div>
-      </div> 
-     
+      </div>
     </section>
   );
 }
