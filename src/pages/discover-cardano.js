@@ -6,7 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import SiteHero from '@site/src/components/SiteHero';
 
 import Heading from '@theme/Heading';
-import DiscoverItem from '@site/src/components/DiscoverItem';
+import ImageWithText from '@site/src/components/Layout/ImageWithText';
 import DiscoverUsSection from '@site/src/components/DiscoverUsSection';
 import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 
@@ -30,8 +30,8 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-         <DiscoverItem
-            imageName={'people'}
+         <ImageWithText
+            imageName={'discover/people.webp'}
             title={'People'}
             subtitle={'Working together, we achieve more for the many.'}
             text={[
@@ -53,8 +53,8 @@ export default function Home() {
             <DiscoverUsSection />
           </BackgroundWrapper>
 
-          <DiscoverItem
-            imageName={'purpose'}
+          <ImageWithText
+            imageName={'discover/purpose.webp'}
             title={'Purpose'}
             subtitle={'A platform built for a sustainable future, to help people work better together, trust one another, and build global solutions to global problems.'}
             text={[
@@ -72,8 +72,8 @@ export default function Home() {
             isImageRight={true}
          />
 
-          <DiscoverItem
-            imageName={'technology'}
+          <ImageWithText
+            imageName={'discover/technology.webp'}
             title={'Technology'}
             subtitle={'Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'}
             text={[
@@ -95,8 +95,8 @@ export default function Home() {
             isImageRight={false}
          />
 
-          <DiscoverItem
-            imageName={'research'}
+          <ImageWithText
+            imageName={'discover/research.webp'}
             title={'Research'}
             subtitle={'Pioneering tech begins with groundbreaking research.'}
             text={[
@@ -112,8 +112,8 @@ export default function Home() {
             isImageRight={true}
          />
 
-          <DiscoverItem
-            imageName={'opportunity'}
+          <ImageWithText
+            imageName={'discover/opportunity.webp'}
             title={'Opportunity'}
             subtitle={'The staging point for every new opportunity. Empower your business through Cardano, and discover the future of technology.'}
             text={[
