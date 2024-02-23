@@ -7,7 +7,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import FollowCardano from "@site/src/components/Layout/FollowCardano";
 import Divider from "@site/src/components/Layout/Divider";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
-import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
+import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
