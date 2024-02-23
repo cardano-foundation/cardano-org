@@ -37,8 +37,8 @@ export default function Home() {
           <FeaturedTitleWithText
             title="Our World Is Changing. Together, We Can Change It For The Better."
             description={[
-              "Cardano is a proof-of-stake blockchain platform: the first to be founded on peer-reviewed \
-              research and developed through evidence-based methods. It combines pioneering technologies \
+              "Cardano is a proof-of-stake blockchain platform: the first to be founded on [peer-reviewed research](/research) \
+              and developed through evidence-based methods. It combines pioneering technologies \
               to provide unparalleled security and sustainability to decentralized applications, systems, \
               and societies.",
               <br key="line1" />,
@@ -76,7 +76,7 @@ export default function Home() {
         <TitleBox
           title="Discover Cardano"
           description={[
-            "Cardano is the first blockchain platform to be built through peer-reviewed research, \
+            "Cardano is the first blockchain platform to be built through [peer-reviewed research](/research), \
           to be secure enough to protect the data of billions, scalable enough to accommodate global systems, \
           and robust enough to support foundational change.",
           ]}

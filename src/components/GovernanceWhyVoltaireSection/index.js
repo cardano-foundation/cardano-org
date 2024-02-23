@@ -49,7 +49,7 @@ export default function GovernanceWhyVoltaireSection({}) {
 
           <div className={styles.buttonWrap}>
             <Link
-              to="https://iohk.io/en/research/library/papers/a-treasury-system-for-cryptocurrenciesenabling-better-collaborative-intelligence/"
+              to="/research#voltaire"
               className={clsx(
                 "button button--primary button--lg",
                 styles.buttonLink

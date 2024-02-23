@@ -17,12 +17,13 @@ export default function ImageWithText({
   subtitle,
   text,
   isImageRight,
+  id,
 }) {
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/${imageName}`);
 
   return (
-    <div className="container" id={imageName}>
+    <div className="container" id={id}>
       <div
         className={clsx(styles.discoverItemWrap, {
           [styles.flipOrder]: isImageRight,
@@ -34,7 +35,7 @@ export default function ImageWithText({
         <div className={styles.textWrap}>
           {title && <h1 class="headingDot">{title}</h1>}
           {subtitle && <h2>{subtitle}</h2>}
-          {text && <p>{text}</p>}
+          {text && <p>{parseTextWithLinks(text)}</p>}
         </div>
       </div>
     </div>
