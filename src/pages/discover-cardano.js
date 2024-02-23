@@ -48,6 +48,7 @@ export default function Home() {
             the Cardano platform.",
           ]}
           isImageRight={false}
+          id={"people"}
         />
 
         <BackgroundWrapper backgroundType={"gradientDark"}>
@@ -73,6 +74,7 @@ export default function Home() {
             to pursue true democracy: self-governing, fair, and accountable. It is a world made possible by Cardano.",
           ]}
           isImageRight={true}
+          id={"purpose"}
         />
 
         <ImageWithText
@@ -91,13 +93,14 @@ export default function Home() {
               development, for unparalleled security and stability.",
             <br key="line3" />,
             <br key="line4" />,
-            "Our technology is underpinned by research. We have redefined what it means to create a global software platform through \
+            "Our technology is underpinned by [research](/research). We have redefined what it means to create a global software platform through \
               scientific methods. We have not compromised on our belief, or in our approach. To build a better future - secure, \
               sustainable, and governable by the many - we have taken the road less traveled. The result of our efforts is a blockchain \
               platform unparalleled in its capability and performance, and which is truly able to support global applications, systems, \
               and real-life business use cases.",
           ]}
           isImageRight={false}
+          id={"technology"}
         />
 
         <ImageWithText
@@ -105,16 +108,17 @@ export default function Home() {
           title={"Research"}
           subtitle={"Pioneering tech begins with groundbreaking research."}
           text={[
-            "Cardano began with and has grown through research. Before any technology we integrate is developed, it is specified. \
-              And before it is specified, it is researched. That research is peer-reviewed - a unique achievement for a blockchain \
+            "Cardano began with and has grown through [research](/research). Before any technology we integrate is developed, it is specified. \
+              And before it is specified, it is researched. That [research](/research) is peer-reviewed - a unique achievement for a blockchain \
               platform - so that our ideas may be challenged before they are validated.",
             <br key="line1" />,
             <br key="line2" />,
-            "Our research - led by leading academics - explores philosophy, sociology, behavior, and game theory. To achieve each \
+            "[Our research](/research) - led by leading academics - explores philosophy, sociology, behavior, and game theory. To achieve each \
             outcome, we consider the minutiae of possibilities: the variables that often go unconsidered, but which may ultimately \
             impact the integrity and sustainability of a global, decentralized platform. We take nothing for granted.",
           ]}
           isImageRight={true}
+          id={"research"}
         />
 
         <ImageWithText
@@ -141,6 +145,7 @@ export default function Home() {
               opportunity of Cardano is adaptable to your use case. It is an opportunity that creates other opportunities, continuously.",
           ]}
           isImageRight={false}
+          id={"opportunity"}
         />
       </main>
     </Layout>

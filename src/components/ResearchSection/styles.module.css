@@ -1,0 +1,89 @@
+/* UseCaseTextRight.module.css */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.imageSection {
+  flex: 0.3;
+  max-width: 20rem;
+  padding: 10px;
+  display: flex; /* Add this line if not present */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align the children */
+  order: 1;
+}
+
+.imageSection img {
+  border-radius: 30px; /* Round the edges of the image */
+}
+
+.imageSection img, .textSection h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.textSection {
+  flex: 2;
+  padding-top: 10px;
+  padding-left: 30px;
+  order: 2; /* By default, text comes after image */
+}
+
+.papers ul,
+.specifications ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 0; 
+}
+
+.papers li,
+.specifications li {
+  margin-bottom: 10px; /* Adds space between list items */
+  color: var(--ifm-font-color-base); /* Adjust text color as needed */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--ifm-color-primary);
+  /* Add responsive font sizing if necessary */
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center; /* Center the subtitle text */
+  width: 100%; /* Ensure it spans the full width of its container */
+}
+
+.description {
+  margin-bottom: 20px;
+  /* Style as needed */
+}
+
+/* Mobile view: ensure image is always first, regardless of isImageRight flag */
+@media (max-width: 960px) {
+  /* Adjust the max-width as necessary for your breakpoint */
+  .imageSection,
+  .textSection {
+    order: 1; /* Both will stack with the image on top */
+  }
+}
+
+/* Additional styles for when the image is on the right on large screens */
+@media (min-width: 961px) {
+  .imageRight {
+    order: 2; /* Image will be second if isImageRight is true */
+  }
+
+  .textRight {
+    order: 1; /* Text will be first if isImageRight is true */
+  }
+}
