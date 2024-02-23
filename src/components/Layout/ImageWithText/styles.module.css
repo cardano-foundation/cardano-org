@@ -18,7 +18,7 @@
   flex: 2; /* Allow the text to take up twice the space of the image */
   max-width: 50rem; /* Maximum width of text */
   text-align: left; /* Left align the text */
-  margin-left: 40px; 
+  margin-left: 40px;
 }
 
 .textWrap h2 {
@@ -33,8 +33,10 @@
 }
 
 /* Styles for smaller screens */
-@media (max-width: 768px) { /* Adjust the breakpoint as needed */
-  .discoverItemWrap, .container.flipOrder {
+@media (max-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .discoverItemWrap,
+  .container.flipOrder {
     flex-direction: column; /* Stack flex children vertically */
     align-items: stretch; /* Stretch children to full width */
   }
@@ -46,7 +48,7 @@
     max-width: 100%; /* Allow image and text to fill the container */
     text-align: left; /* Center text for smaller screens */
   }
-  
+
   .imageWrap {
     margin-bottom: 20px; /* Add space between the image and text */
   }

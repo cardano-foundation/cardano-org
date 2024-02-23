@@ -11,33 +11,33 @@ export default function SiteHero({ title, description, bannerType }) {
   let heroClassName;
 
   switch (bannerType) {
-    case 'ada':
+    case "ada":
       heroClassName = styles.heroBannerAda;
       break;
-    case 'dots':
+    case "dots":
       heroClassName = styles.heroBannerDots;
       break;
-    case 'fluid':
+    case "fluid":
       heroClassName = styles.heroBannerFluid;
       break;
-    case 'overlap':
+    case "overlap":
       heroClassName = styles.heroBannerOverlap;
       break;
-    case 'zoomRedWhite':
+    case "zoomRedWhite":
       heroClassName = styles.heroBannerZoomRedWhite;
-      break; 
-    case 'zoomRedWhiteDark':
+      break;
+    case "zoomRedWhiteDark":
       heroClassName = styles.heroBannerZoomRedWhiteDark;
-      break;  
-    case 'waves':
+      break;
+    case "waves":
       heroClassName = styles.heroBannerWaves;
-      break;   
-    case 'starburst':
+      break;
+    case "starburst":
       heroClassName = styles.heroBannerStarburst;
-      break; 
-    case 'braidBlue':
+      break;
+    case "braidBlue":
       heroClassName = styles.heroBannerBraidBlue;
-      break; 
+      break;
     default:
       heroClassName = styles.heroBannerStarburst;
   }
@@ -47,15 +47,23 @@ export default function SiteHero({ title, description, bannerType }) {
       <div className={clsx("container", styles.backgroundBox)}>
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
-          <p className={clsx("hero__subtitle", styles.subtitle)}>{description}</p>
+          <p className={clsx("hero__subtitle", styles.subtitle)}>
+            {description}
+          </p>
         </div>
 
         <div class="sectionCaret">
-            <svg x="0px" y="0px" viewBox="0 0 2000 30">
-              <polygon className="polygon-fill" points="1000,30 0,30 0,0 980,0 "></polygon>
-              <polygon className="polygon-fill" points="1000,30 2000,30 2000,0 1020,0 "></polygon>
-            </svg>
-          </div>
+          <svg x="0px" y="0px" viewBox="0 0 2000 30">
+            <polygon
+              className="polygon-fill"
+              points="1000,30 0,30 0,0 980,0 "
+            ></polygon>
+            <polygon
+              className="polygon-fill"
+              points="1000,30 2000,30 2000,0 1020,0 "
+            ></polygon>
+          </svg>
+        </div>
       </div>
     </header>
   );

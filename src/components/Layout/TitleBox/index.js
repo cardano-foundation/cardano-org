@@ -1,13 +1,19 @@
 import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import styles from "./styles.module.css"; 
+import styles from "./styles.module.css";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 //
 // This component shows a simple header with some text below in a box
- 
-export default function TitleBox({ title, description, titleType, headingDot, slightText }) {
+
+export default function TitleBox({
+  title,
+  description,
+  titleType,
+  headingDot,
+  slightText,
+}) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
@@ -15,10 +21,10 @@ export default function TitleBox({ title, description, titleType, headingDot, sl
   let titleClassName;
 
   switch (titleType) {
-    case 'red':
+    case "red":
       titleClassName = styles.titleTypeRed;
       break;
-    case 'green':
+    case "green":
       titleClassName = styles.titleTypeGreen;
       break;
     default:
@@ -29,13 +35,13 @@ export default function TitleBox({ title, description, titleType, headingDot, sl
     <div className={styles.titleBoxWrap}>
       <div className={styles.titleBox}>
         <TitleWithText
-          title = {title}
-          description = {description}
-          titleType = {titleType}
-          headingDot = {headingDot}
-          slightText = {slightText}
-        />  
+          title={title}
+          description={description}
+          titleType={titleType}
+          headingDot={headingDot}
+          slightText={slightText}
+        />
       </div>
     </div>
   );
-};
+}

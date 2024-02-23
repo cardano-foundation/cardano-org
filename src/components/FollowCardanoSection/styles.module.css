@@ -1,12 +1,10 @@
 .container {
   position: relative;
   width: 100%;
-   
+
   color: #ffffff;
   min-height: 23rem;
-  }
-
- 
+}
 
 /* Divider */
 .header {
@@ -15,9 +13,9 @@
 }
 
 .header h6 {
-  font-weight: 700; 
+  font-weight: 700;
   margin-bottom: 10px; /* Space between title and horizontalBar */
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .horizontalBar {
@@ -35,7 +33,7 @@
   }
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   .header h6 {
     color: #ffffff;
   }
@@ -43,7 +41,7 @@
     background-color: #ffffff; /* Color of the bar */
   }
 }
- 
+
 /* Responsive styles */
 @media (max-width: 599px) {
   .horizontalBar {

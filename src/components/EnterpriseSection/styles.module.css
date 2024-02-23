@@ -50,7 +50,8 @@
 }
 
 /* Mobile view: ensure image is always first, regardless of isImageRight flag */
-@media (max-width: 960px) { /* Adjust the max-width as necessary for your breakpoint */
+@media (max-width: 960px) {
+  /* Adjust the max-width as necessary for your breakpoint */
   .imageSection,
   .textSection {
     order: 1; /* Both will stack with the image on top */
@@ -67,4 +68,3 @@
     order: 1; /* Text will be first if isImageRight is true */
   }
 }
- 

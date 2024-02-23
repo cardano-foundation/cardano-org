@@ -13,18 +13,22 @@
   justify-content: space-around;
   align-items: center; /* This will vertically align items if they have different heights */
   gap: 20px;
-  
+
   max-width: 70rem;
 }
 
 /* Individual item styling to ensure they take up the right amount of space */
-.walletItem { /* Assuming this class is applied to each WalletItem, adjust if the class name differs */
+.walletItem {
+  /* Assuming this class is applied to each WalletItem, adjust if the class name differs */
   flex: 1 1 calc(50% - 20px); /* Adjust the calc() value based on your gap */
-  max-width: calc(50% - 20px); /* Ensures items do not stretch beyond 50% width minus the gap */
+  max-width: calc(
+    50% - 20px
+  ); /* Ensures items do not stretch beyond 50% width minus the gap */
 }
 
 /* Media query for smaller screens to stack items in a single column */
-@media (max-width: 768px) { /* Adjust breakpoint as necessary */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as necessary */
   .walletItem {
     flex: 1 1 100%; /* Take full width on smaller screens */
     max-width: 100%;

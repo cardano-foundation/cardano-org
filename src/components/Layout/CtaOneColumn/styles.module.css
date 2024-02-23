@@ -4,13 +4,14 @@
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;
-  display: flex;          
+  display: flex;
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center children vertically within the container */
   color: #ffffff;
 }
 
-.upperRow, .lowerRow  {
+.upperRow,
+.lowerRow {
   width: 100%; /* Ensure the row takes the full width of its container */
   display: flex;
   justify-content: center; /* Center children horizontally within the container */
@@ -19,15 +20,16 @@
 /* white style cta button */
 
 .buttonWhite {
-  background-color: #FDFDFB;
-  color: #1C1E21;
+  background-color: #fdfdfb;
+  color: #1c1e21;
   border: none;
   font-weight: normal;
 }
 
-.buttonWhite:hover, buttonWhite:focus {
+.buttonWhite:hover,
+buttonWhite:focus {
   background-color: #cbcbc9;
-  color: #1C1E21;
+  color: #1c1e21;
   border: none;
   font-weight: normal;
 }

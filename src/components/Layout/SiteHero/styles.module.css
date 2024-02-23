@@ -5,7 +5,7 @@
  * and scoped locally.
  */
 
- .taglineContainer {
+.taglineContainer {
   width: 70%;
 }
 
@@ -30,11 +30,11 @@
   height: 410px;
 }
 
-html[data-theme=light] .heroBannerZoom {
+html[data-theme="light"] .heroBannerZoom {
   background-image: url(/img/hero-header-zoom-full.png);
 }
 
-html[data-theme=dark] .heroBannerZoom {
+html[data-theme="dark"] .heroBannerZoom {
   background-image: url(/img/hero-header-zoom-full.png);
 }
 
@@ -49,21 +49,19 @@ html[data-theme=dark] .heroBannerZoom {
   background-repeat: no-repeat;
   background-position: right;
   height: 410px;
-  background-color: #CCD6EE;
-  color: #0033AD;
+  background-color: #ccd6ee;
+  color: #0033ad;
 }
-
 
 .heroBannerZoomRedWhite .subtitle {
-  color: #1D1E21;
+  color: #1d1e21;
 }
 
-
-html[data-theme=light] .heroBannerZoomRedWhite {
+html[data-theme="light"] .heroBannerZoomRedWhite {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
 
-html[data-theme=dark] .heroBannerZoomRedWhite {
+html[data-theme="dark"] .heroBannerZoomRedWhite {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
 
@@ -78,14 +76,14 @@ html[data-theme=dark] .heroBannerZoomRedWhite {
   background-repeat: no-repeat;
   background-position: right;
   height: 410px;
-  background-color: #0538AF;
+  background-color: #0538af;
 }
 
-html[data-theme=light] .heroBannerZoomRedWhiteDark {
+html[data-theme="light"] .heroBannerZoomRedWhiteDark {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
 
-html[data-theme=dark] .heroBannerZoomRedWhiteDark {
+html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
 
@@ -96,27 +94,27 @@ html[data-theme=dark] .heroBannerZoomRedWhiteDark {
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: 50%;  
+  background-size: 50%;
   background-position: top right;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   height: 410px;
-  color: #F8F8F5;
+  color: #f8f8f5;
 }
- 
 
-html[data-theme=light] .heroBannerAda {
+html[data-theme="light"] .heroBannerAda {
   background-image: url(/img/hero-header-ada.webp);
-  background-color: #0538AF;
+  background-color: #0538af;
 }
 
-html[data-theme=dark] .heroBannerAda {
-  background-image: url(/img/hero-header-ada.webp);  
+html[data-theme="dark"] .heroBannerAda {
+  background-image: url(/img/hero-header-ada.webp);
   background-color: #244eaf;
 }
 
 /** heroBannerDots **/
 
-.heroBannerDots { /* fixme: this is actually a zoom variant */
+.heroBannerDots {
+  /* fixme: this is actually a zoom variant */
   padding: 4rem 2rem;
   text-align: left;
   position: relative;
@@ -133,15 +131,15 @@ html[data-theme=dark] .heroBannerAda {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(315deg,  #305BBD, #0035AD);
+  background-image: linear-gradient(315deg, #305bbd, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
-html[data-theme=light] .heroBannerDots {
+html[data-theme="light"] .heroBannerDots {
   background-image: url(/img/hero-header-dots.webp);
 }
 
-html[data-theme=dark] .heroBannerDots {
+html[data-theme="dark"] .heroBannerDots {
   background-image: url(/img/hero-header-dots.webp);
 }
 
@@ -157,14 +155,14 @@ html[data-theme=dark] .heroBannerDots {
   height: 410px;
 }
 
-html[data-theme=light] .heroBannerFluid {
+html[data-theme="light"] .heroBannerFluid {
   background-image: url(/img/hero-header-fluid.png);
-  background-color: #5281F7;
+  background-color: #5281f7;
 }
 
-html[data-theme=dark] .heroBannerFluid {
+html[data-theme="dark"] .heroBannerFluid {
   background-image: url(/img/hero-header-fluid.png);
-  background-color: #5281F7;
+  background-color: #5281f7;
 }
 
 /** heroBannerOverlap **/
@@ -177,17 +175,16 @@ html[data-theme=dark] .heroBannerFluid {
   background-size: cover;
   background-position: 50% 50%;
   height: 410px;
-   
 }
 
-html[data-theme=light] .heroBannerOverlap {
+html[data-theme="light"] .heroBannerOverlap {
   background-image: url(/img/hero-header-overlap.png);
-  background-color: #5281F7;
+  background-color: #5281f7;
 }
 
-html[data-theme=dark] .heroBannerOverlap {
+html[data-theme="dark"] .heroBannerOverlap {
   background-image: url(/img/hero-header-overlap.png);
-  background-color: #5281F7;
+  background-color: #5281f7;
 }
 
 /** heroBannerWaves **/
@@ -197,20 +194,19 @@ html[data-theme=dark] .heroBannerOverlap {
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: 65%;  
+  background-size: 65%;
   background-position: top right;
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   height: 410px;
 }
 
-
-html[data-theme=light] .heroBannerWaves {
+html[data-theme="light"] .heroBannerWaves {
   background-image: url(/img/hero-header-waves.webp);
-  background-color: #0538AF;
+  background-color: #0538af;
 }
 
-html[data-theme=dark] .heroBannerWaves {
-  background-image: url(/img/hero-header-waves.webp);  
+html[data-theme="dark"] .heroBannerWaves {
+  background-image: url(/img/hero-header-waves.webp);
   background-color: #244eaf;
 }
 
@@ -221,10 +217,10 @@ html[data-theme=dark] .heroBannerWaves {
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: cover;  
+  background-size: cover;
   background-position: top right;
-  background-repeat: no-repeat;  
-  background-image: url(/img/hero-header-starburst.svg);  
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-starburst.svg);
   height: 410px;
 }
 
@@ -235,7 +231,7 @@ html[data-theme=dark] .heroBannerWaves {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(315deg,  #305BBD, #0035AD);
+  background-image: linear-gradient(315deg, #305bbd, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
@@ -246,10 +242,10 @@ html[data-theme=dark] .heroBannerWaves {
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: 1600px;  
+  background-size: 1600px;
   background-position: 0% 85%;
-  background-repeat: no-repeat;  
-  background-image: url(/img/hero-header-braid-blue.svg);  
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-blue.svg);
   height: 410px;
 }
 
@@ -260,7 +256,7 @@ html[data-theme=dark] .heroBannerWaves {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(315deg,  #597cd0, #0035AD);
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
@@ -280,7 +276,7 @@ html[data-theme=dark] .heroBannerWaves {
   }
   .heroBannerAda {
     padding: 4rem;
-    background-size: 100%;  
+    background-size: 100%;
     background-position: top right;
   }
   .heroBannerDots {
@@ -294,7 +290,7 @@ html[data-theme=dark] .heroBannerWaves {
   }
   .heroBannerWaves {
     padding: 4rem;
-    background-size: cover;  
+    background-size: cover;
     background-position: top right;
   }
 }
@@ -334,7 +330,7 @@ html[data-theme=dark] .heroBannerWaves {
     background-repeat: no-repeat;
   }
   .heroBannerAda {
-    background-size: 30%;  
+    background-size: 30%;
     background-position: top center;
   }
   .heroBannerDots {
@@ -346,7 +342,7 @@ html[data-theme=dark] .heroBannerWaves {
     background-size: cover;
   }
   .heroBannerWaves {
-    background-size: 35%;  
+    background-size: 35%;
     background-position: top right;
   }
 }

@@ -1,14 +1,13 @@
- 
- .sectionWrapper {
+.sectionWrapper {
   color: #ffffff;
- }
+}
 
- .title {
+.title {
   padding-top: 20px;
- }
+}
 
- .text {
+.text {
   width: 60%;
   text-align: left;
   padding-bottom: 20px;
- }
+}

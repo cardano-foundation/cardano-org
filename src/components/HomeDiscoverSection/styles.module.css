@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;  
+  justify-content: center;
   padding: 2rem 0;
   max-width: 70rem;
   margin-left: auto;
@@ -16,7 +16,7 @@
 
 .quoteWrap {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   max-width: 50rem;
   padding-top: 2rem;
   padding-left: 10rem;
@@ -32,4 +32,3 @@
     padding-right: 2rem;
   }
 }
-
