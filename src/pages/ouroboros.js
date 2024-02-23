@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import SiteHero from "@site/src/components/SiteHero";
+import SiteHero from "@site/src/components/Layout/SiteHero";
 
 function HomepageHeader() {
   const {siteTitle} = "useDocusaurusContext()";

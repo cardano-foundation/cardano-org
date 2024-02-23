@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import SiteHero from "@site/src/components/SiteHero";
+import SiteHero from "@site/src/components/Layout/SiteHero";
 import Divider from '@site/src/components/Layout/Divider';
 import OneColumnBox from '@site/src/components/Layout/OneColumnBox';
 import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';

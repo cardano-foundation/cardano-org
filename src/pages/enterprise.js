@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import SiteHero from "@site/src/components/SiteHero";
+import SiteHero from "@site/src/components/Layout/SiteHero";
 import UseCase from '@site/src/components/UseCase';
 
 function HomepageHeader() {

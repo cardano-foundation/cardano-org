@@ -1,7 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import WelcomeHero from "@site/src/components/WelcomeHero";
-
+import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
 import FeaturedTitleWithText from "@site/src/components/FeaturedTitleWithText";
 import Divider from "@site/src/components/Layout/Divider";
 import QuoteBox from "@site/src/components/Layout/QuoteBox";
