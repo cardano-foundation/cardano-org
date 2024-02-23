@@ -1,10 +1,35 @@
 import clsx from "clsx";
 import Heading from "@theme/Heading";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
+import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
-import LogoWithLink from "@site/src/components/Layout/LogoWithLink";
 import TitleBox from "@site/src/components/Layout/TitleBox";
 
+// shows a partner (svg) logo and a link below
+function LogoWithLink({ imageName, label, link }) {
+  return (
+    <div className={styles.logoContainer}>
+      <div className={styles.imageWrap}>
+        <ThemedImage
+          alt={label}
+          sources={{
+            light: useBaseUrl(`/img/logos/${imageName}.svg`),
+            dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
+          }}
+        />
+      </div>
+      <div className={styles.linkWrap}>
+        <Link to={link} className={styles.link}>
+          {label}
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+// the actual list of partners
 const PartnerItemList = [
   {
     imageName: "cardanofoundation",
@@ -27,6 +52,7 @@ function PartnerItem({ imageName, label, link }) {
   return <LogoWithLink imageName={imageName} label={label} link={link} />;
 }
 
+// FIXME: text feels outdated, today there are way more entitites, we should aim to increase this soon
 export default function PartnerSection() {
   return (
     <section className={styles.partnerSection}>
