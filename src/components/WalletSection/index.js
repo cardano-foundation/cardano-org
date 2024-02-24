@@ -73,18 +73,19 @@ export default function WalletSection() {
       </div>
       <TitleBox
         title="More Wallets"
-        description="Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet)."
+        description={["Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the \
+        [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet)."]}
         titleType="black"
         headingDot={false}
-        slightText="The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+        slightText={["The example applications are provided for informational purposes only and not endorsed or approved. \
+        Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."]}
       />
       <TitleBox
         title="How Do I Store My Ada And Keep It Safe?"
         description={[
           "A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, \
           monitor your balance, and interact with supported blockchains.",
-          <br key="line1" />,
-          <br key="line2" />,
+
           "In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet.",
         ]}
         titleType="black"

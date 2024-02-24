@@ -40,11 +40,23 @@ export default function TitleWithText({
           {title}
         </h1>
       )}
-      {description && (
-        <p className="black-text">{parseTextWithLinks(description)}</p>
+      {description && Array.isArray(description) && (
+        <div>
+          {description.map((paragraph, index) => (
+            <p key={index} className="black-text">
+              {parseTextWithLinks(paragraph)}
+            </p>
+          ))}
+        </div>
       )}
-      {slightText && (
-        <p className="slight-text">{parseTextWithLinks(slightText)}</p>
+      {slightText && Array.isArray(slightText) && (
+        <div>
+          {slightText.map((text, index) => (
+            <p key={index} className="slight-text">
+              {parseTextWithLinks(text)}
+            </p>
+          ))}
+        </div>
       )}
     </div>
   );

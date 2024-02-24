@@ -1,0 +1,64 @@
+/* Header.module.css */
+.header {
+  text-align: left;
+  padding: 20px;
+}
+
+.header h6 {
+  font-weight: normal; /* Assuming you don't want bold */
+  margin-bottom: 10px; /* Space between title and bar */
+}
+
+.horizontalBar {
+  height: 1px; /* Thickness of the bar */
+  background-color: #000; /* Color of the bar */
+  width: 80%; /* Full width by default */
+  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .horizontalBar {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+  }
+  .mobileNotVisible {
+    display: none;
+  }
+  .mobileVisible {
+    display: flex;
+  }
+}
+
+.rightColumn {
+  padding: 30px;
+}
+
+.rightColumn ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 0; 
+}
+
+.rightColumn li {
+  margin-bottom: 10px; /* Adds space between list items */
+  color: var(--ifm-font-color-base); /* Adjust text color as needed */
+}
+
+.ambassadorLogoWrap picture,
+.ambassadorLogo img {
+  padding-top: 2.5rem;
+  max-width: 25rem;
+  margin-left: 2rem;
+}
+
+.quote {
+  margin-left: 2rem;
+}
+
+.mobileNotVisible {
+  display: flex;
+}
+
+.mobileVisible {
+  display: none;
+}

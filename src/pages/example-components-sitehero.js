@@ -16,9 +16,11 @@ export default function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
+      <main>
+
       <Divider text="WelcomeHero Component" />
       <WelcomeHero
-        title={["Making the world", <br key="line1" />, "Work Better For All"]}
+        title={["Making the world", <br key="line1" />, "Work Better For All"]} /* FIXME: too hacky */
         description="Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
         with the tools and technologies required to create possibility for the many, as well as the few, 
         and bring about positive global change."
@@ -72,30 +74,6 @@ export default function Home() {
         bannerType="waves"
       />
 
-      <main>
-        <Divider text="Various other components" />
-        <FollowCardano />
-        <hr />
-        <FeaturedTitleWithText
-          title="Our World Is Changing. Together, We Can Change It For The Better."
-          description={[
-            "Cardano is a proof-of-stake blockchain platform: the first to be founded on peer-reviewed \
-            research and developed through evidence-based methods. It combines pioneering technologies \
-            to provide unparalleled security and sustainability to decentralized applications, systems, \
-            and societies.",
-            <br key="line1" />,
-            <br key="line2" />,
-            "With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
-            structures to the margins – to individuals – and be an enabling force for positive change and progress.",
-          ]}
-          quote={[
-            "A History Of Impossible,",
-            <br key="line1" />,
-            "Made Possible",
-          ]}
-          buttonLabel="Use Cases"
-          buttonLink="/enterprise"
-        />
       </main>
     </Layout>
   );

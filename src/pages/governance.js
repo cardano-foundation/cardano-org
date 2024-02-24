@@ -16,7 +16,7 @@ function HomepageHeader() {
     <SiteHero
       title={[
         "Built for the community",
-        <br key="line1" />,
+        <br key="line1" />, /*FIXME: too hacky */
         "by the community",
       ]}
       description="Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it."

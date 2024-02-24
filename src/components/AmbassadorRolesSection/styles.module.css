@@ -1,0 +1,18 @@
+
+.roleWrap {
+    margin-bottom: 2rem; 
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .roleTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .roleDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  

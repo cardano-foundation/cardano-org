@@ -13,9 +13,19 @@ export default function TwoColumnBox({ leftText, rightText }) {
   return (
     <div className={clsx("container", styles.boxWrap)}>
       <div className={clsx("row", styles.row)}>
-        <div className={clsx("col col--6", styles.leftColumn)}>{leftText}</div>
+        <div className={clsx("col col--6", styles.leftColumn)}>
+          {Array.isArray(leftText) ? (
+            leftText.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+          ) : (
+            <p>{leftText}</p>
+          )}
+        </div>
         <div className={clsx("col col--6", styles.rightColumn)}>
-          {rightText}
+          {Array.isArray(rightText) ? (
+            rightText.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+          ) : (
+            <p>{rightText}</p>
+          )}
         </div>
       </div>
     </div>

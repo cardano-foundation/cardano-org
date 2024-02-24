@@ -41,14 +41,13 @@ export default function Home() {
               and developed through evidence-based methods. It combines pioneering technologies \
               to provide unparalleled security and sustainability to decentralized applications, systems, \
               and societies.",
-              <br key="line1" />,
-              <br key="line2" />,
+
               "With a leading team of engineers, Cardano exists to redistribute power from unaccountable \
               structures to the margins – to individuals – and be an enabling force for positive change and progress.",
             ]}
             quote={[
               "A History Of Impossible,",
-              <br key="line1" />,
+              <br key="line1" />, /* FIXME: too hacky */
               "Made Possible",
             ]}
             buttonLabel="Use Cases"
@@ -67,7 +66,6 @@ export default function Home() {
         <VisionBox
           title={[
             "Define Your Possible.",
-            <br key="line1" />,
             "Change Your World.",
           ]}
         />

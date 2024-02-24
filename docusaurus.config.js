@@ -19,7 +19,7 @@ const config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/', 
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -107,12 +107,14 @@ const config = {
             label: 'Developers',
             position: 'left',
             items: [ // Define nested dropdown items here
+              {to: '/research', label: 'Cardano Research'},
               {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
               {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
               {href: 'https://cardanoupdates.com', label: 'Developer Updates'},  
-              {to: '/research', label: 'Cardano Research'},
+              {href: 'https://aiken-lang.org', label: 'Aiken'},  
+              {href: 'https://docs.marlowe.iohk.io/docs/introduction', label: 'Marlowe'},  
             ],
           },
           {
