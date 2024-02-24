@@ -107,12 +107,14 @@ const config = {
             label: 'Developers',
             position: 'left',
             items: [ // Define nested dropdown items here
+              {to: '/research', label: 'Cardano Research'},
               {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
               {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
               {href: 'https://cardanoupdates.com', label: 'Developer Updates'},  
-              {to: '/research', label: 'Cardano Research'},
+              {href: 'https://aiken-lang.org', label: 'Aiken'},  
+              {href: 'https://docs.marlowe.iohk.io/docs/introduction', label: 'Marlowe'},  
             ],
           },
           {
