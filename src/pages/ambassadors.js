@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import AmbassadorProgramSection from "@site/src/components/AmbassadorProgramSection";
 import AmbassadorRolesSection from "@site/src/components/AmbassadorRolesSection";
+import AmbassadorOverviewSection from "@site/src/components/AmbassadorOverviewSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -27,6 +28,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <AmbassadorProgramSection />
+        <AmbassadorOverviewSection />
         <AmbassadorRolesSection />
       </main>
     </Layout>

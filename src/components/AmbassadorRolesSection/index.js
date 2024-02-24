@@ -21,7 +21,7 @@ function Role({ title, description }) {
 
 const rolesData = [
   {
-    title: "CONTENT CREATOR",
+    title: "Content Creator",
     description: [
       "Content Creators drive adoption by educating the community and the wider public about the project through engaging, \
       informative and insightful content in the form of videos, blogs, graphic designs, podcasts, or any other form of artistic \
@@ -29,7 +29,7 @@ const rolesData = [
     ],
   },
   {
-    title: "MEETUP ORGANIZER",
+    title: "Meetup Organizer",
     description: [
       "Meetup Organizers drive adoption by hosting regular offline Cardano meetups, connect with local blockchain enthusiasts \
       to educate them about Cardano, create think-tanks and have open debates. Meetup Organizers take networking to the next \
@@ -38,7 +38,7 @@ const rolesData = [
     ],
   },
   {
-    title: "MODERATOR",
+    title: "Moderator",
     description: [
       "Moderators drive adoption by keeping our official online social media channels informative, productive and a pleasant \
       place for the community to come together in multiple languages across various platforms. All participants in the community \
@@ -47,7 +47,7 @@ const rolesData = [
     ],
   },
   {
-    title: "TRANSLATOR",
+    title: "Translator",
     description: [
       "Translators drive adoption by expanding the Cardano project to non-English speaking communities by translating and \
       sharing content in different languages. [Visit the Cardano Forum to see which languages are currently covered.](https://forum.cardano.org)",

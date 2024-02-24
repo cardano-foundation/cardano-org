@@ -1,0 +1,75 @@
+.ambassadorsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ambassadorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* desired spacing */
+}
+
+.ambassadorCard {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* desired width */
+  padding-top: 20px;
+  padding-bottom: 10px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  cursor: pointer; /* Changes the cursor to indicate the item is clickable */
+  min-height: 140px; /* Set a minimum height for consistency */
+}
+
+.backgroundIcon {
+  font-size: 8rem;
+  position: absolute;
+  bottom: -1.25rem;
+  right: 0;
+  opacity: 0.04;
+  z-index: 0; /* Ensure the icon is in the background */
+}
+
+.ambassadorCardLink, .ambassadorCardLink:hover {
+  text-decoration: none; /* Ensures no underline appears */
+  color: inherit; /* Text color remains unchanged */
+  display: block; /* Makes the entire area clickable */
+}
+
+.ambassadorCard:hover {
+  transform: scale(1.05); /* Slightly increase the size */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Make the shadow more pronounced */
+}
+
+.ambassadorName {
+  font-size: 18px;
+  text-align: center;  
+  margin-top: 15px;
+}
+
+.ambassadorName, .ambassadorRole {
+  margin-bottom: 5px; /* Reduce bottom margin to decrease card height */
+  word-wrap: break-word;
+}
+
+.flagImage {
+  width: 30px; /* desired flag size */
+  height: auto;
+  margin-bottom: 0px;
+}
+
+.ambassadorRole {
+  font-size: 16px;
+}
+
+.ambassadorLink {
+  color: #007bff;
+  text-decoration: none;
+}

@@ -10,8 +10,8 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Staking Calculator"
-      description="See how much rewards you can possibly earn by staking ada."
+      title="Community Code Of Conduct"
+      description="The Cardano community consists of people from all over the world, who have come together to grow and safeguard the spirit and the future of Cardano."
       bannerType="dots"
     />
   );
@@ -26,7 +26,7 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        FIXME: Code of Conduct
       </main>
     </Layout>
   );
