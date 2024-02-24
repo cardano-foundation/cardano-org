@@ -14,13 +14,11 @@ import ThemedImage from "@theme/ThemedImage";
 // Title on the right with red dot
 // Below some text
 
-export default function WhatIsAda({
+export default function WhatIsAdaSection({
   headline,
   title,
   description,
   quote,
-  buttonLabel,
-  buttonLink,
 }) {
   return (
     <div className="container">
@@ -42,7 +40,15 @@ export default function WhatIsAda({
         <div className={clsx("col col--6", styles.rightColumn)}>
           <h1 className={clsx("black-text", "headingDot")}>{title}</h1>
 
-          <p className="black-text">{description}</p>
+          {Array.isArray(description) ? (
+            description.map((paragraph, index) => (
+              <p key={index} className="black-text">
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <p className="black-text">{description}</p>
+          )}
 
           <p>
             <Link

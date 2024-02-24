@@ -35,7 +35,13 @@ export default function ImageWithText({
         <div className={styles.textWrap}>
           {title && <h1 class="headingDot">{title}</h1>}
           {subtitle && <h2>{subtitle}</h2>}
-          {text && <p>{parseTextWithLinks(text)}</p>}
+          {text && Array.isArray(text) ? (
+            text.map((paragraph, index) => (
+              <p key={index}>{parseTextWithLinks(paragraph)}</p>
+            ))
+          ) : (
+            <p>{parseTextWithLinks(text)}</p>
+          )}
         </div>
       </div>
     </div>

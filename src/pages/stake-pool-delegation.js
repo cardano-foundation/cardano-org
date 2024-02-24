@@ -37,13 +37,11 @@ export default function Home() {
             text={[
               "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
               the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works.",
-              <br key="line1" />,
-              <br key="line2" />,
+
               "There are two ways an ada holder can earn rewards: by delegating their stake to a stake pool run by someone else, \
               or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the Ouroboros \
               protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.",
-              <br key="line3" />,
-              <br key="line4" />,
+
               "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – \
               and the rewards are shared between everyone who delegated their stake to that stake pool.",
             ]}

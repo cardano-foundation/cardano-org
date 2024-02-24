@@ -3,6 +3,7 @@
   padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .visionBox {
@@ -14,4 +15,7 @@
 
 .visionBox h2 {
   font-size: 3rem;
+  line-height: 1.2; /* Adjust line-height to control space between lines */
+  margin-bottom: 0; /* Adjust bottom margin as needed */
+  text-align: center;
 }
