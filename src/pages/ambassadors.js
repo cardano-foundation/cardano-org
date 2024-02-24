@@ -1,7 +1,8 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-
 import SiteHero from "@site/src/components/Layout/SiteHero";
+import AmbassadorProgramSection from "@site/src/components/AmbassadorProgramSection";
+import AmbassadorRolesSection from "@site/src/components/AmbassadorRolesSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -11,7 +12,7 @@ function HomepageHeader() {
       description="The Cardano Foundation established its Ambassador Program in 2018. The program 
       is designed to promote awareness and educate the wider community to drive 
       the adoption of Cardano for better use cases."
-      bannerType="fluid"
+      bannerType="starburst"
     />
   );
 }
@@ -24,7 +25,10 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
-      <main>FIXME: Ambassador page</main>
+      <main>
+        <AmbassadorProgramSection />
+        <AmbassadorRolesSection />
+      </main>
     </Layout>
   );
 }

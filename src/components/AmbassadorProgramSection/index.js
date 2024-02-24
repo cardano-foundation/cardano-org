@@ -1,0 +1,38 @@
+import clsx from "clsx";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Link from "@docusaurus/Link";
+import styles from "./styles.module.css";
+import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import Divider from "@site/src/components/Layout/Divider"; 
+import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
+
+export default function AmbassadorProgramSection({}) {
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
+
+  return (
+    <div className="container">
+       <Divider text="Ambassador Program" id="program"/>
+        <TitleWithText
+          title="The Cardano Ambassador Program"
+          description={[
+              "The Cardano community is privileged to have committed members.",
+              
+              "These active individuals drive adoption by going above and beyond their duties by offering timely, \
+              consistent and beneficial contributions to the project. These special people are Cardano Ambassadors.",
+              "Currently, the program includes more than 50 ambassadors of all ages and professions from almost 30 countries \
+              across the globe, with more individuals qualifying during each review cycle. Cumulatively, existing ambassadors \
+              produce content in more than two dozen languages.",
+
+              "In a bid to further strengthen the transparency and decentralization of the Cardano ecosystem, the Cardano \
+              Foundation introduced Phase 2 (Rewards) of the program in 2020 to motivate and recognize ambassadors for adding \
+              value to the community and enhancing Cardano’s brand. Phase 2 (Rewards) includes both monetary and non-financial \
+              rewards. The newest phase of the program contributes towards driving the adoption of Cardano through various means."
+          ]}
+          titleType="black"
+          headingDot={true}
+        />
+    </div>
+  );
+}
