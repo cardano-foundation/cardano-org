@@ -12,12 +12,23 @@ export default function CtaTwoColumn({ title, text, buttonLabel, buttonLink }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
+   const renderText = (text) => {
+    // Check if text is an array
+    if (Array.isArray(text)) {
+      // Map each string in the array to a <p> tag
+      return text.map((line, index) => <p key={index}>{line}</p>);
+    } else {
+      // Render a single string inside a <p> tag
+      return <p>{text}</p>;
+    }
+  };
+
   return (
     <div className={clsx("container", styles.boxWrap)}>
       <div className={clsx("row", styles.row)}>
         <div className={clsx("col col--6", styles.leftColumn)}>
           {title && <h1>{title}</h1>}
-          {text && <p>{text}</p>}
+         {text && renderText(text)}
         </div>
         <div className={clsx("col col--6", styles.rightColumn)}>
           <Link
