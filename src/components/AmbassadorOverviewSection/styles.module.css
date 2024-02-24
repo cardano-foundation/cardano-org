@@ -73,3 +73,9 @@
   color: #007bff;
   text-decoration: none;
 }
+
+[data-theme="dark"] {
+  .ambassadorCard {
+    background-color: #323131;  
+  }
+}

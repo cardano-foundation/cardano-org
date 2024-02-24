@@ -26,11 +26,11 @@ export default function CtaTwoColumn({ title, text, buttonLabel, buttonLink }) {
   return (
     <div className={clsx("container", styles.boxWrap)}>
       <div className={clsx("row", styles.row)}>
-        <div className={clsx("col col--6", styles.leftColumn)}>
-          {title && <h1>{title}</h1>}
+        <div className={clsx("col col--7", styles.leftColumn)}>
+          {title && <h1 class="headingDot">{title}</h1>}
          {text && renderText(text)}
         </div>
-        <div className={clsx("col col--6", styles.rightColumn)}>
+        <div className={clsx("col col--5", styles.rightColumn)}>
           <Link
             className={clsx(
               "button button--primary button--lg",
