@@ -1,7 +1,8 @@
 /* Header.module.css */
 .header {
   text-align: left;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header h6 {

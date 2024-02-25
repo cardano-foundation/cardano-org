@@ -62,7 +62,7 @@ export default function AmbassadorRolesSection({}) {
   const rolesCount = rolesData.length; // the number of roles, to update text automatically if something is changed
 
   return (
-    <div className="container">
+    <div>
        <Divider text="Ambassador Roles"  id="roles"/>
         <TitleWithText
           title="Ambassador Roles"

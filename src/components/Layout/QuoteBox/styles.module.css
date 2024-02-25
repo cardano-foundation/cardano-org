@@ -1,11 +1,9 @@
 .quoteBoxWrap {
   width: 100%;
-  margin-top: 0px;
   background-color: var(--ifm-background-color);
   padding-top: 2rem;
-  padding-right: 7rem;
   padding-bottom: 2rem;
-  padding-left: 4rem;
+
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
@@ -63,9 +61,7 @@
 @media screen and (max-width: 576px) {
   .quoteBoxWrap {
     padding-top: 1rem;
-    padding-right: 2rem;
     padding-bottom: 1rem;
-    padding-left: 2rem;
   }
 
   .quoteBox {

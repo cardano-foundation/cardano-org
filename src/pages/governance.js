@@ -9,6 +9,7 @@ import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
 import GovernanceWithinCardanoSection from "@site/src/components/GovernanceWithinCardanoSection";
 import GovernanceWhyVoltaireSection from "@site/src/components/GovernanceWhyVoltaireSection";
 import GovernanceProposalsSection from "@site/src/components/GovernanceProposalsSection";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -35,20 +36,27 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidBlue"}>
-          <GovernanceBlueSection />
+          <BoundaryBox>
+            <GovernanceBlueSection />
+          </BoundaryBox>
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"zoom"}>
-          <Divider text="Governance Within Cardano" />
-          <GovernanceWithinCardanoSection />
-
-          <Divider text="Why Voltaire" />
-          <GovernanceWhyVoltaireSection />
+          <BoundaryBox>
+            <Divider text="Governance Within Cardano" />
+            <GovernanceWithinCardanoSection />
+            <Divider text="Why Voltaire" />
+            <GovernanceWhyVoltaireSection />
+          </BoundaryBox>
         </BackgroundWrapper>
 
+         
         <BackgroundWrapper backgroundType={"gradientLight"}>
-          <GovernanceProposalsSection />
+          <BoundaryBox>
+            <GovernanceProposalsSection />
+          </BoundaryBox>
         </BackgroundWrapper>
+        
       </main>
     </Layout>
   );

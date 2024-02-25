@@ -21,7 +21,7 @@ export default function WhatIsAdaSection({
   quote,
 }) {
   return (
-    <div className="container">
+    <div>
       <Divider text={headline} />
 
       <div className="row">

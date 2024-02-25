@@ -34,7 +34,7 @@ export default function TitleWithText({
 
   // clsx allows for conditional className inclusion based on the headingDot flag
   return (
-    <div className="container">
+    <div>
       {title && (
         <h1 className={clsx({ headingDot: headingDot }, titleClassName)}>
           {title}

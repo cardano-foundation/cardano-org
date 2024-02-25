@@ -10,13 +10,11 @@
 .leftTextWrap {
   flex-grow: 1;
   flex-basis: 260px;
-  padding-left: 20px;
 }
 
 .rightTextWrap {
   flex-grow: 1;
   flex-basis: 260px;
-  padding-right: 20px;
 }
 
 /* Media query for smaller screens to stack items in a single column */
@@ -31,7 +29,8 @@
 /* Divider */
 .header {
   text-align: left;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header h6 {

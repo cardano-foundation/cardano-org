@@ -22,7 +22,7 @@ export default function AmbassadorBenefitsSection({
   quote,
 }) {
   return (
-    <div className="container">
+    <div>
       <Divider text={headline} />
 
       <div className="row">

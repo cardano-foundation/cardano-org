@@ -17,7 +17,7 @@ export default function GovernanceWhyVoltaireSection({}) {
   const { siteConfig = {} } = context;
 
   return (
-    <div className={clsx("container", styles.sectionWrap)}>
+    <div className={styles.sectionWrap}>
       <div className={styles.flexBox}>
         <div className={styles.textWrap}>
           <p>

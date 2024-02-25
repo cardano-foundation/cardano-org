@@ -98,7 +98,7 @@ const benefitsData = {
 };
 
 // Define your main component
-export default function BenefitsSection() {
+export default function HomeBenefitsSection() {
   const [selectedIndex, setSelectedIndex] = useState(0); // Initialize state to track selected tab index
   const [animationDirection, setAnimationDirection] = useState("in"); // 'in' or 'out'
 
@@ -116,7 +116,7 @@ export default function BenefitsSection() {
         onSelect={handleSelect}
         selectedIndex={selectedIndex}
       >
-        <div className={clsx("row", styles.container)}>
+        <div className={clsx("row")}>
           <div className={clsx("col col--4", styles.leftColumn)}>
             <TabList className={styles.tabList}>
               {benefitsData.benefits.benefits_items.map((benefit, index) => (

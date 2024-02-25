@@ -2,6 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -24,7 +25,9 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+      <BoundaryBox>
+          FIXME: Partners
+        </BoundaryBox>
       </main>
     </Layout>
   );

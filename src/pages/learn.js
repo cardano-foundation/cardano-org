@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -23,7 +24,9 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
-      <main>FIXME: Learn</main>
+      <BoundaryBox>
+          FIXME: Learn
+        </BoundaryBox>
     </Layout>
   );
 }

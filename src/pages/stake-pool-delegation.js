@@ -10,6 +10,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import FAQDelegationSection from "@site/src/components/FAQDelegationSection";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -32,61 +33,69 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidGrey"}>
-          <Divider text="What is stake?" />
-          <OneColumnBox
-            text={[
-              "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
-              the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works.",
+          <BoundaryBox>
+            <Divider text="What is stake?" />
+            <OneColumnBox
+              text={[
+                "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to \
+                the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works.",
 
-              "There are two ways an ada holder can earn rewards: by delegating their stake to a stake pool run by someone else, \
-              or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the Ouroboros \
-              protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.",
+                "There are two ways an ada holder can earn rewards: by delegating their stake to a stake pool run by someone else, \
+                or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the Ouroboros \
+                protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.",
 
-              "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – \
-              and the rewards are shared between everyone who delegated their stake to that stake pool.",
-            ]}
-          />
+                "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – \
+                and the rewards are shared between everyone who delegated their stake to that stake pool.",
+              ]}
+            />
+          </BoundaryBox>
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"zoom"}>
-          <Divider text="What is stake delegation?" />
-          <TwoColumnBox
-            leftText={[
-              "Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It \
-              allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded \
-              in proportion to the amount of stake delegated.",
-            ]}
-          />
+          <BoundaryBox>
+            <Divider text="What is stake delegation?" />
+            <TwoColumnBox
+              leftText={[
+                "Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It \
+                allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded \
+                in proportion to the amount of stake delegated.",
+              ]}
+            />
 
-          <Divider text="Why incentives?" />
-          <TwoColumnBox
-            leftText={[
-              "Incentives are used to ensure the longevity and health of the Cardano network and ecosystem. The incentive mechanism \
-              is underpinned by scientific research that combines mathematics, economic theory, and game theory.",
-            ]}
-          />
+            <Divider text="Why incentives?" />
+            <TwoColumnBox
+              leftText={[
+                "Incentives are used to ensure the longevity and health of the Cardano network and ecosystem. The incentive mechanism \
+                is underpinned by scientific research that combines mathematics, economic theory, and game theory.",
+              ]}
+            />
+          </BoundaryBox>
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"solidBlue"}>
-          <CtaTwoColumn
-            title="Cardano Wallets"
-            text="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
-            buttonLabel={"Discover Now"}
-            buttonLink={"/what-is-ada#wallets"}
-          />
+          <BoundaryBox>
+            <CtaTwoColumn
+              title="Cardano Wallets"
+              text="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
+              buttonLabel={"Discover Now"}
+              buttonLink={"/what-is-ada#wallets"}
+            />
+          </BoundaryBox>
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"ada"}>
-          <CtaOneColumn
-            title="Try our staking calculator to see how much ada you could be rewarded for delegating to a stake pool."
-            buttonLabel={"Try Out"}
-            buttonLink={"/calculator/?calculator=delegator"}
-          />
+          <BoundaryBox>
+            <CtaOneColumn
+              title="Try our staking calculator to see how much ada you could be rewarded for delegating to a stake pool."
+              buttonLabel={"Try Out"}
+              buttonLink={"/calculator/?calculator=delegator"}
+            />
+          </BoundaryBox>
         </BackgroundWrapper>
 
-        <BackgroundWrapper backgroundType={"none"}>
+        <BoundaryBox>
           <FAQDelegationSection />
-        </BackgroundWrapper>
+        </BoundaryBox>
       </main>
     </Layout>
   );

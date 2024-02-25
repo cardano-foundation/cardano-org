@@ -241,8 +241,8 @@ export default function FAQDelegationSection() {
   };
 
   return (
-    <div className="container">
-      <Divider text="FAQ" />
+    <div>
+      <Divider text="FAQ" id="faq"/>
       {faqList.map((faq, index) => (
         <div
           key={index}

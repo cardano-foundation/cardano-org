@@ -346,6 +346,7 @@ img {
   background-color: rgb(255, 118, 118);
 }
 
+/* FIXME: no longer used */
 .box {
   width: 100%;
   padding-left: 4rem;

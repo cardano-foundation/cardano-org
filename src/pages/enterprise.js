@@ -2,6 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import EnterpriseSection from "@site/src/components/EnterpriseSection";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 
 function HomepageHeader() {
@@ -26,7 +27,9 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <EnterpriseSection />
+        <BoundaryBox>
+          <EnterpriseSection />
+        </BoundaryBox>
       </main>
     </Layout>
   );

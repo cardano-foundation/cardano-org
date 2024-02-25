@@ -11,7 +11,7 @@ export default function TwoColumnBox({ leftText, rightText }) {
   const { siteConfig = {} } = context;
 
   return (
-    <div className={clsx("container", styles.boxWrap)}>
+    <div className={styles.boxWrap}>
       <div className={clsx("row", styles.row)}>
         <div className={clsx("col col--6", styles.leftColumn)}>
           {Array.isArray(leftText) ? (

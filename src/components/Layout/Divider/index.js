@@ -15,12 +15,10 @@ export default function Divider({ text, id }) {
     <div>
       {id && <div id={id} />}
       <br />
-      <div className="container">
         <div className={styles.header}>
           <h6>{text}</h6>
           <div className={styles.horizontalBar}></div>
         </div>
-      </div>
     </div>
   );
 }

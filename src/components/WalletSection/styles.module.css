@@ -13,7 +13,6 @@
   justify-content: space-around;
   align-items: center; /* This will vertically align items if they have different heights */
   gap: 20px;
-
   max-width: 70rem;
 }
 
@@ -35,7 +34,6 @@
   }
 
   .logoContainer {
-    /* Adjust the padding if needed */
     padding: 10px;
   }
 }

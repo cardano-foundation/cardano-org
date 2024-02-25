@@ -45,7 +45,7 @@ function DiscoverItem({ imageName, buttonLabel, buttonLink }) {
 
 export default function HomeDiscoverSection() {
   return (
-    <section className="container">
+    <div>
       <div className={styles.discoverWrap}>
         <div className={styles.discoverItems}>
           {DiscoverItemList.map((props, idx) => (
@@ -65,6 +65,6 @@ export default function HomeDiscoverSection() {
           quoteType="none"
         />
       </div>
-    </section>
+    </div>
   );
 }
