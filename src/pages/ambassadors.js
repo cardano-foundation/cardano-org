@@ -57,7 +57,7 @@ export default function Home() {
               "Support and Resources: Ambassadors may receive support from the Cardano Foundation, IOG and EMURGO in terms of promotional \
               materials, information, and ways of funding for community events or initiatives.",
             ]}
-            quote="An Ambassadorship opens doors."
+            quote="Elevating communities, one block at a time."
         />
         <BackgroundWrapper backgroundType={"solidBlue"}>
           <CtaTwoColumn

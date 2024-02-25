@@ -16,18 +16,6 @@
   transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
 }
 
-/* Responsive styles */
-@media (max-width: 640px) {
-  .horizontalBar {
-    width: 50%; /* Adjust the width as needed for smaller screens */
-  }
-  .mobileNotVisible {
-    display: none;
-  }
-  .mobileVisible {
-    display: flex;
-  }
-}
 
 .rightColumn {
   padding: 30px;
@@ -46,7 +34,7 @@
 
 .ambassadorLogoWrap picture,
 .ambassadorLogo img {
-  padding-top: 2.5rem;
+  padding-top: 6rem;
   max-width: 25rem;
   margin-left: 2rem;
 }
@@ -61,4 +49,18 @@
 
 .mobileVisible {
   display: none;
+}
+
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .horizontalBar {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+  }
+  .mobileNotVisible {
+    display: none;
+  }
+  .mobileVisible {
+    display: flex;
+  }
 }
