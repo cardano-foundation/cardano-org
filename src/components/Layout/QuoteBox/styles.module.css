@@ -59,3 +59,40 @@
   margin-top: 5px;
   margin-right: -50px;
 }
+
+@media screen and (max-width: 576px) {
+  .quoteBoxWrap {
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  .quoteBox {
+    padding: 15px;
+    margin: 5px 0;
+  }
+
+  .textContainer {
+    flex-direction: column; /* Stack image and description vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+  }
+
+  .imageWrap img {
+    min-width: 3rem; /* Reduce image width */
+    margin-right: 15px; /* Reduce space between logo and text */
+    margin-bottom: 10px; /* Add space between logo and description when stacked */
+  }
+
+  .description, .quote {
+    font-size: 16px; /* Reduce font size */
+    max-width: 100%; /* Allow text to fill container */
+    padding-bottom: 15px; /* Reduce bottom padding */
+  }
+
+  .quote::before {
+    font-size: 4rem; /* Reduce size of quotation mark */
+    margin-right: -25px; /* Adjust position */
+    margin-top: -10px; /* Adjust top margin to align correctly */
+  }
+}
