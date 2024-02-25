@@ -44,7 +44,7 @@ export default function SiteHero({ title, description, bannerType }) {
 
   return (
     <header className={clsx("hero hero--primary", heroClassName)}>
-      <div className={clsx("container", styles.backgroundBox)}>
+      <div className={styles.backgroundBox}>
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
           <p className={clsx("hero__subtitle", styles.subtitle)}>

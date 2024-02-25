@@ -16,7 +16,7 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <WelcomeHero
-      title={["Making the world", <br key="line1" />, "Work Better For All"]}
+      title={["Making the world Work Better For All"]}
       description="Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
         with the tools and technologies required to create possibility for the many, as well as the few, 
         and bring about positive global change."
