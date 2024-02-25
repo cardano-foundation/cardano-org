@@ -6,6 +6,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 //
 // This component shows a simple header with some text below in a box
+// FIXME: this componet can be deleted
 
 export default function TitleBox({
   title,

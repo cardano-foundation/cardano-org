@@ -1,22 +1,21 @@
 /* UseCaseTextRight.module.css */
-.container {
+.enterpriseWrap {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 20px;
+  gap: 100px;
 }
 
 .imageSection {
-  flex: 0.3;
-  max-width: 20rem;
-  padding: 50px;
+  max-width: 15rem;
+  padding-top: 35px;
   order: 1; /* By default, image comes before text */
 }
 
 .textSection {
-  flex: 2;
-  padding: 30px;
+  width: 70%;
+  padding-bottom: 30px; 
   order: 2; /* By default, text comes after image */
 }
 
@@ -25,12 +24,10 @@
   font-weight: bold;
   margin-bottom: 10px;
   color: var(--ifm-color-primary);
-  /* Add responsive font sizing if necessary */
 }
 
 .description {
   margin-bottom: 20px;
-  /* Style as needed */
 }
 
 .solutions,
@@ -45,21 +42,29 @@
   margin-bottom: 15px;
 }
 
-.buttonLink {
-  /* Style your button */
-}
-
 /* Mobile view: ensure image is always first, regardless of isImageRight flag */
-@media (max-width: 960px) {
+/* FIXME: unsolved issue between 983 and 1107 where it does not collapse as expected */
+@media (max-width: 576px) {
   /* Adjust the max-width as necessary for your breakpoint */
-  .imageSection,
+  .imageSection{
+    order: 1; /* Both will stack with the image on top */
+    width: 100%;
+    margin-top: 40px;
+    padding: 0px;
+
+  }
   .textSection {
     order: 1; /* Both will stack with the image on top */
+    width: 100%;
+    padding: 0px;
+  }
+  .enterpriseWrap {
+    gap: 20px;
   }
 }
 
 /* Additional styles for when the image is on the right on large screens */
-@media (min-width: 961px) {
+@media (min-width: 577px) {
   .imageRight {
     order: 2; /* Image will be second if isImageRight is true */
   }
@@ -68,3 +73,6 @@
     order: 1; /* Text will be first if isImageRight is true */
   }
 }
+
+ 
+

@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import ResearchSection from "@site/src/components/ResearchSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
+import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -25,7 +26,9 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType="zoom">
-          <ResearchSection />
+          <BoundaryBox>
+            <ResearchSection />
+          </BoundaryBox>
         </BackgroundWrapper>
       </main>
     </Layout>

@@ -7,7 +7,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 //
 // This component:
-// wrap components in a background wrapper
+// wrap components in a background style that can be selected
+// most of the time you do not want to put a <BackgroundWrapper> as a child of <BoundaryBox>
+// while it is usually fine to have a <BoundaryBox as a child of a <BackgroundWrapper>
 
 export default function BackgroundWrapper({ children, backgroundType }) {
   // Use backgroundType to dynamically change the class for the background

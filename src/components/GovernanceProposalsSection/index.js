@@ -18,7 +18,8 @@ export default function GovernanceWithinCardanoSection({}) {
   const { siteConfig = {} } = context;
 
   return (
-    <div className={clsx("container", styles.sectionWrap)}>
+    <div className={styles.sectionWrap}>
+      {/* FIXME: should be replaced with <Divider></Divider>}*/}
       <div className={styles.header}>
         <h6>Proposals</h6>
         <div className={styles.horizontalBar}></div>

@@ -32,7 +32,7 @@ function UseCase({
   });
 
   return (
-    <div className={clsx("row", styles.container)}>
+    <div className={clsx("row", styles.enterpriseWrap)}>
       <div className={imageColumnClass}>
         <img src={imageUrl} alt={title} />
         <div className={styles.solutions}>Solutions</div>

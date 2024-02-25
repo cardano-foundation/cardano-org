@@ -12,7 +12,7 @@ export default function AmbassadorProgramSection({}) {
   const { siteConfig = {} } = context;
 
   return (
-    <div className="container">
+    <div>
        <Divider text="Ambassador Program" id="program"/>
         <TitleWithText
           title="The Cardano Ambassador Program"

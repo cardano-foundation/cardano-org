@@ -261,6 +261,18 @@ html[data-theme="dark"] .heroBannerWaves {
 }
 
 /* screen size changes */
+@media screen and (max-width: 576px) {
+  .taglineContainer {
+    width: 100%;
+  }
+  .heroBannerAda, .heroBannerZoom, .heroBannerZoomRedWhite, .heroBannerDots, .heroBannerFluid, .heroBannerOverlap, .heroBannerWaves, .heroBannerStarburst, .heroBannerBraidBlue {
+    padding: 2rem 1rem; /* Reduced padding */
+    height: auto; /* Adjust height dynamically */
+  }
+  .backgroundBox {
+    padding-bottom: 20px; /* Reduce space at the bottom */
+  }
+}
 
 @media screen and (max-width: 966px) {
   .taglineContainer {

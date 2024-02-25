@@ -334,7 +334,7 @@ export default function AmbassadorRolesSection() {
   const uniqueCountriesCount = Object.keys(countryCounts).length;
 
   return (
-    <div className="container">
+    <div>
       <div className={styles.ambassadorsContainer}>
         <TitleWithText
               title="Who are the Cardano Ambassadors?"

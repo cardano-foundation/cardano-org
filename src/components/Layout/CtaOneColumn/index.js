@@ -13,7 +13,7 @@ export default function CtaOneColumn({ title, text, buttonLabel, buttonLink }) {
   const { siteConfig = {} } = context;
 
   return (
-    <div className={clsx("container", styles.boxWrap)}>
+    <div className={styles.boxWrap}>
       <div className={styles.upperRow}>
         {title && <h1>{title}</h1>}
         {text && <p>{text}</p>}

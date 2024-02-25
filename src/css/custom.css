@@ -222,18 +222,6 @@ h2 {
   letter-spacing: 0.05;
 } /*!sc*/
 
-@media (max-width: 960px) {
-  h2 {
-    /*font-size: 3.748rem;*/
-  }
-} /*!sc*/
-
-@media (max-width: 600px) {
-  h2 {
-    /*font-size: 3.348rem;*/
-  }
-} /*!sc*/
-
 h3 {
   font-family: Chivo, sans-serif;
   /*font-size: 2.88rem;*/
@@ -255,36 +243,12 @@ h3 {
   letter-spacing: 0.05;
 } /*!sc*/
 
-@media (max-width: 960px) {
-  h3 {
-    /*font-size: 3.056rem;*/
-  }
-} /*!sc*/
-
-@media (max-width: 600px) {
-  h3 {
-    /*font-size: 2.656rem;*/
-  }
-} /*!sc*/
-
 h4 {
   font-family: Chivo, sans-serif;
   /*font-size: 2.2rem;*/
   font-weight: 700;
   line-height: 1.2;
   text-transform: capitalize;
-} /*!sc*/
-
-@media (max-width: 960px) {
-  h4 {
-    /*font-size: 2.48rem;*/
-  }
-} /*!sc*/
-
-@media (max-width: 600px) {
-  h4 {
-    /*font-size: 2.08rem;*/
-  }
 } /*!sc*/
 
 h5 {
@@ -308,12 +272,6 @@ h5 {
   letter-spacing: 0.15;
 } /*!sc*/
 
-@media (max-width: 960px) {
-  h5 {
-    /*font-size: 2rem;*/
-  }
-} /*!sc*/
-
 h6 {
   font-family: Chivo, sans-serif;
   font-size: 1.2rem;
@@ -330,24 +288,6 @@ h6 {
   margin: 2.75rem 0 1.05rem;
   text-transform: uppercase;
 } /*!sc*/
-
-/*
-@media (max-width: 960px) {
-  h6 {
-      font-size: 1.6rem;
-  }
-} 
-
-small {
-  color: rgba(0, 0, 0, 0.54);
-}
-
-ul, ol {
-  list-style-position: inside;
-  margin-left: 0;
-  padding: 0;
-} 
-*/
 
 a {
   outline-width: 0.5rem;
@@ -406,6 +346,7 @@ img {
   background-color: rgb(255, 118, 118);
 }
 
+/* FIXME: no longer used */
 .box {
   width: 100%;
   padding-left: 4rem;
@@ -501,7 +442,34 @@ img {
   margin-left: -1000px;
 }
 
+/* screen size changes */
+@media screen and (max-width: 576px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .hero__title {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hero__subtitle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media screen and (min-width: 1950px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero p {
+    font-size: 24px;
+  }
+
   .sectionCaret {
     height: 45px;
     width: 3000px;

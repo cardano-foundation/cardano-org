@@ -1,0 +1,35 @@
+:root {
+  /* configure the behavior of the boundary box */
+  --boundaryBox-margin: 60px;
+  --boundaryBox-margin-small: 30px;
+  --boundaryBox-max-width: 1200px; /* max width where it stops to grow */
+}
+
+.boundaryBox {
+  max-width: var(--boundaryBox-max-width);
+  width: calc(100% - 2*var(--boundaryBox-margin)); /* let it grow with the screen size until max-width */
+  margin-left: auto;        /* These two auto margins center the box */
+  margin-right: auto;
+
+  /* If you ever have problems with the spacing of your components, 
+  make <BoundaryBox> visible with the next line and make sure that the 
+  components go right up to the purple border.*/
+  /* background-color: blueviolet; */
+}
+
+/* med screen sizes */
+@media screen and (max-width: 1200px) {
+  .boundaryBox {
+    margin-left: var(--boundaryBox-margin);
+    margin-right: var(--boundaryBox-margin);
+  }
+}
+
+/* small screen sizes */
+@media screen and (max-width: 576px) {
+  .boundaryBox {
+    margin-left: var(--boundaryBox-margin-small);
+    margin-right: var(--boundaryBox-margin-small);
+    width: calc(100% - 2*var(--boundaryBox-margin--small));
+  }
+}

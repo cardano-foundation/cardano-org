@@ -23,7 +23,7 @@ export default function ImageWithText({
   const imageUrl = useBaseUrl(`/img/${imageName}`);
 
   return (
-    <div className="container" id={id}>
+    <div id={id}>
       <div
         className={clsx(styles.discoverItemWrap, {
           [styles.flipOrder]: isImageRight,

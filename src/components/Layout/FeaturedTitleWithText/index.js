@@ -25,7 +25,7 @@ export default function FeaturedTitleWithText({
   const { siteConfig = {} } = context;
 
   return (
-    <div className="container">
+    <div>
       <div className="row">
         <div className={clsx("col col--6", styles.leftColumn)}>
           <h1 className={clsx({ headingDot: headingDot })}>{title}</h1>
