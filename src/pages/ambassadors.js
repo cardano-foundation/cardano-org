@@ -71,7 +71,7 @@ export default function Home() {
             are already making waves before the title comes their way. So, let your actions speak, become an integral part \
             of our community, and you might just find the title of Cardano Ambassador waiting for you at the end of your \
             journey."]}
-            buttonLabel={"Join the Forum"}
+            buttonLabel={"Get Started"}
             buttonLink={"https://forum.cardano.org/t/welcome-understanding-trust-levels-on-the-cardano-forum/117680"}
           />
         </BackgroundWrapper>
