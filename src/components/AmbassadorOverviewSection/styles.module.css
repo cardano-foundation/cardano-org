@@ -79,3 +79,11 @@
     background-color: #323131;  
   }
 }
+
+/* screen size changes */
+@media screen and (max-width: 576px) {
+  .ambassadorCard {
+    width: 160px;
+    min-height: 160px;
+  }
+}
