@@ -1,4 +1,4 @@
-/* UseCaseTextRight.module.css */
+
 .container {
   display: flex;
   flex-direction: row;
@@ -24,6 +24,11 @@
 .imageSection img, .textSection h2 {
   margin-top: 0;
   padding-top: 0;
+}
+
+.imageFilter {
+  /* apply blue-ish filter */
+  filter: brightness(0.8) saturate(100%) contrast(90%) hue-rotate(220deg);
 }
 
 .textSection {

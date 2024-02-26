@@ -32,7 +32,7 @@ function Category({
   return (
     <div className={clsx("row", styles.container)}>
       <div className={imageColumnClass}>
-        <img src={imageUrl} alt={title} />
+        <img className={styles.imageFilter} src={imageUrl} alt={title} />
         <h2 className={clsx("slight-text", styles.subtitle)}>{subtitle}</h2>
       </div>
       <div className={textColumnClass}>
