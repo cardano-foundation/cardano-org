@@ -77,7 +77,7 @@ const config = {
         },
         items: [
           {
-            to: '/learn',  
+            /*to: '/learn', FIXME*/ 
             label: 'Learn',
             position: 'left',
             items: [  
@@ -90,7 +90,7 @@ const config = {
             ],
           },
           {
-            to: '/community',  
+            /*to: '/community', FIXME*/
             label: 'Community',
             position: 'left',
             items: [  
@@ -104,7 +104,7 @@ const config = {
             ],
           },
           {
-            to: '/developers',  
+            /* to: '/developers', FIXME*/
             label: 'Developers',
             position: 'left',
             items: [  
