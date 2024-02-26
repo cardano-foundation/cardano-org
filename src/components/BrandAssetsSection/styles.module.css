@@ -1,0 +1,38 @@
+ 
+
+.downloadIcon {
+  font-size: 3rem;
+  color: var(--ifm-link-color); 
+}
+
+.logoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;  
+  justify-content: center; /* Center the logos horizontally */
+  align-items: center; /* Center the logos vertically */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  flex: 1 1 auto; /* Flex grow, shrink, and basis */
+  max-width: calc(33.333% - 20px); /* Adjust the percentage based on the number of items per row */
+  margin-bottom: 20px; /* Spacing between rows */
+  
+  padding: 10px; /* Padding around the logos */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the logos for depth */
+}
+
+.white {
+  background-color: #f0f0f0; /* Background for white logo, adjust color as needed */
+}
+
+/* Responsive Design: Stack images on smaller screens */
+@media (max-width: 576px) {
+  .starburst {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+}
+
+ 

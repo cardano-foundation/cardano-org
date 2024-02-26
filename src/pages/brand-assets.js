@@ -3,6 +3,9 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import Divider from "@site/src/components/Layout/Divider";
+import Link from "@docusaurus/Link";
+import BrandAssetsSection from "../components/BrandAssetsSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -11,7 +14,7 @@ function HomepageHeader() {
       title="Brand Assets"
       description="Our brand is a reflection of everything that we create. Here are 
         some of the things that make up our brand and how you can use them."
-      bannerType="overlap"
+      bannerType="braidRedBlue"
     />
   );
 }
@@ -26,7 +29,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BoundaryBox>
-        FIXME: Brand assets
+          <BrandAssetsSection />
         </BoundaryBox>
       </main>
     </Layout>

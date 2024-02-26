@@ -260,12 +260,46 @@ html[data-theme="dark"] .heroBannerWaves {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
+/** heroBannerBraidBlue **/
+
+.heroBannerBraidRedBlue {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;
+  background-position: 0% 85%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-red-blue.svg);
+  height: 410px;
+}
+
+.heroBannerBraidRedBlue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
 /* screen size changes */
 @media screen and (max-width: 576px) {
   .taglineContainer {
     width: 100%;
   }
-  .heroBannerAda, .heroBannerZoom, .heroBannerZoomRedWhite, .heroBannerDots, .heroBannerFluid, .heroBannerOverlap, .heroBannerWaves, .heroBannerStarburst, .heroBannerBraidBlue {
+  .heroBannerAda,
+  .heroBannerZoom,
+  .heroBannerZoomRedWhite,
+  .heroBannerDots,
+  .heroBannerFluid,
+  .heroBannerOverlap,
+  .heroBannerWaves,
+  .heroBannerStarburst,
+  .heroBannerBraidBlue,
+  .heroBannerBraidRedBlue {
     padding: 2rem 1rem; /* Reduced padding */
     height: auto; /* Adjust height dynamically */
   }
