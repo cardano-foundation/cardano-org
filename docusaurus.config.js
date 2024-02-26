@@ -67,7 +67,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      // The project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         logo: {
@@ -77,22 +77,23 @@ const config = {
         },
         items: [
           {
-            to: '/learn', // This is the parent item
+            to: '/learn',  
             label: 'Learn',
             position: 'left',
-            items: [ // Define nested dropdown items here
-              {to: '/what-is-ada', label: 'What ada is'}, 
-              {to: '/what-is-ada#wallets', label: 'About Cardano wallets'}, 
-              {to: '/stake-pool-delegation', label: 'Delegating your stake'}, 
-              {to: '/stake-pool-operation', label: 'Operating a stake pool'}, 
-              {to: '/governance', label: 'Participating in governance'}, 
+            items: [  
+              {to: '/what-is-ada', label: 'Learn what ada is'}, 
+              {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
+              {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
+              {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
+              {to: '/governance', label: 'Participate in governance'}, 
+              {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],
           },
           {
-            to: '/community', // This is the parent item
+            to: '/community',  
             label: 'Community',
             position: 'left',
-            items: [ // Define nested dropdown items here
+            items: [  
               {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
@@ -103,10 +104,10 @@ const config = {
             ],
           },
           {
-            to: '/developers', // This is the parent item
+            to: '/developers',  
             label: 'Developers',
             position: 'left',
-            items: [ // Define nested dropdown items here
+            items: [  
               {to: '/research', label: 'Cardano Research'},
               {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
@@ -118,10 +119,10 @@ const config = {
             ],
           },
           {
-            to: '/enterprise', // This is the parent item
+            to: '/enterprise',  
             label: 'Enterprise',
             position: 'left',
-            items: [ // Define nested dropdown items here
+            items: [  
               {to: '/enterprise#education', label: 'Education'}, // Nested item 1
               {to: '/enterprise#retail', label: 'Retail'}, // Nested item 2
               {to: '/enterprise#agriculture', label: 'Agriculture'}, // Nested item 3
@@ -130,6 +131,7 @@ const config = {
               {to: '/enterprise#healthcare', label: 'Health Care'}, // Nested item 3
             ],
           },
+          /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
             type: 'docSidebar',
@@ -149,6 +151,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
             title: 'Docs',
