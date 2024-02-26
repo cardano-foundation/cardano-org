@@ -260,7 +260,7 @@ html[data-theme="dark"] .heroBannerWaves {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
-/** heroBannerBraidBlue **/
+/** heroBannerBraidRedBlue **/
 
 .heroBannerBraidRedBlue {
   padding: 4rem 2rem;
@@ -283,6 +283,41 @@ html[data-theme="dark"] .heroBannerWaves {
   bottom: 0;
   background-image: linear-gradient(315deg, #597cd0, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+/** heroBannerBraidBlack **/
+
+.heroBannerBraidBlack {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;
+  background-position: 0% 85%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-black.svg);
+  height: 410px;
+}
+
+.heroBannerBraidBlack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #011034);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+html[data-theme="dark"] .heroBannerBraidBlack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
 }
 
 /* screen size changes */
