@@ -18,6 +18,27 @@ export default function TitleWithText({
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
+  // Function to render description content
+  const renderDescriptionContent = (content) => {
+
+    // If it's a string, render it as a paragraph
+    if (typeof content === 'string') {
+      return <p className="black-text">{parseTextWithLinks(content)}</p>;
+    }
+
+    // If it's an object and has a 'list' key, render it as a list
+    if (content && typeof content === 'object' && content.list) {
+      return (
+        <ul className="black-text">
+          {content.list.map((item, index) => (
+            <li key={index}>{parseTextWithLinks(item)}</li>
+          ))}
+        </ul>
+      );
+    }
+  };
+
+
   // Use titleType to dynamically change the class for the title
   let titleClassName;
 
@@ -42,10 +63,10 @@ export default function TitleWithText({
       )}
       {description && Array.isArray(description) && (
         <div>
-          {description.map((paragraph, index) => (
-            <p key={index} className="black-text">
-              {parseTextWithLinks(paragraph)}
-            </p>
+          {description.map((content, index) => (
+            <React.Fragment key={index}>
+              {renderDescriptionContent(content)}
+            </React.Fragment>
           ))}
         </div>
       )}
