@@ -29,7 +29,8 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BoundaryBox>
-
+          <br />
+          <br />
         <TitleWithText  
             description={[
               "The Cardano community consists of people from all over the world, who have come together to grow and safeguard \
