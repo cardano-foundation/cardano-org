@@ -39,11 +39,12 @@
           user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  transition-property: color, background, border-color;
+  transition-property: color, background-color, border-color;
   transition-duration: var(--ifm-button-transition-duration);
   transition-timing-function: var(--ifm-transition-timing-default);
   min-width: 257px;
   --ifm-button-size-multiplier: 1.35;
+  border-radius: 30px; 
 }
 
 .hs-button:hover {
@@ -152,3 +153,45 @@ textarea {
    margin-top: 13px;
    font-family: Chivo Medium, sans-serif !important;
 }
+
+
+/* Select Fields */
+.selectField {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /*background-color: white;*/
+  /*color: #333;*/
+  min-width: 260px;
+  font-size: 16px;
+  /*width: 100%; */ /* You can set a width or make it full-width of the container */
+  -moz-appearance: none; /* Remove default styling for Firefox */
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  appearance: none; /* Remove default arrow from IE */
+}
+
+/* Style for the arrow icon */
+.selectFieldArrow {
+  position: relative;
+}
+
+.selectFieldArrow::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none; /* This prevents the arrow from being clickable */
+}
+
+/* Add more styles for hover, focus, etc. as needed */
+.selectField:hover {
+  border-color: #888;
+}
+
+.selectField:focus {
+  outline: none;
+  border-color: #555;
+}
+
