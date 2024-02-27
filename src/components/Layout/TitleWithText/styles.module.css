@@ -15,3 +15,9 @@ html[data-theme="dark"] {
     color: rgb(78, 136, 145);
   }
 }
+
+ ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 10px; 
+}

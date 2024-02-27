@@ -442,6 +442,7 @@ img {
   margin-left: -1000px;
 }
 
+
 /* screen size changes */
 @media screen and (max-width: 576px) {
   .hero h1 {
@@ -476,3 +477,4 @@ img {
     margin-left: -1500px;
   }
 }
+
