@@ -6,6 +6,10 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import Heading from "@theme/Heading";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import Divider from "@site/src/components/Layout/Divider";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import ContactFormHS from "@site/src/components/ContactFormHS";
+
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -28,8 +32,15 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BoundaryBox>
-          FIXME: contact
+          <Divider text="Here to help" />
+          <TitleWithText 
+            title="What Can We Help You With?" 
+            headingDot={true}
+          />
+          <ContactFormHS />
         </BoundaryBox>
+        <br />
+        <br />
       </main>
     </Layout>
   );
