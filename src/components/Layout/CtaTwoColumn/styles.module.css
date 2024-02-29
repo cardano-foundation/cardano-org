@@ -7,11 +7,18 @@
   color: #ffffff;
 }
 
+.leftColumn {
+  display: flex; /* Establish flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically within the container */
+  align-items: left; /* Center children horizontally */
+}
+
 .rightColumn {
   display: flex; /* Establish flex container */
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Center children vertically within the container */
-  align-items: center; /* Center children horizontally, if needed */
+  align-items: left; /* Center children horizontally */
 }
 
 /* white style cta button */
@@ -21,6 +28,7 @@
   color: #1c1e21;
   border: none;
   font-weight: normal;
+  max-width: fit-content;
 }
 
 .buttonWhite:hover,
@@ -29,4 +37,10 @@ buttonWhite:focus {
   color: #1c1e21;
   border: none;
   font-weight: normal;
+}
+
+.align-button-center {
+  margin: 0 auto; /* Center the button within its flex container */
+  display: flex; /* If not already flex */
+  justify-content: center; /* Center horizontally */
 }

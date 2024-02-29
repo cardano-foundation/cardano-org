@@ -14,11 +14,13 @@ export default function CtaTwoColumn({
   leftButtonLabel,
   leftButtonLink,
   leftHeadingDot,
+  leftButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
   rightTitle,
   rightText,
   rightButtonLabel,
   rightButtonLink,
   rightHeadingDot,
+  rightButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
 }) {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -34,11 +36,22 @@ export default function CtaTwoColumn({
     }
   };
 
+  // Determine if the right column has text content
+  const hasRightContent = rightTitle || rightText;
+
+  // Inline style for centering button
+  const centerButtonStyle = { margin: '0 auto', display: 'block' };
+
   return (
     <div className={styles.boxWrap}>
       <div className={clsx("row", styles.row)}>
-        <div className={clsx("col col--6", styles.leftColumn)}>
-          {leftTitle && <h1 className={clsx({ 'headingDot': leftHeadingDot })}>{leftTitle}</h1>}
+        {/* Adjust the col class based on whether the right column has content */}
+        <div className={clsx("col", hasRightContent ? "col--6" : "col--7", styles.leftColumn)}>
+          {leftTitle && (
+            <h1 className={clsx({ headingDot: leftHeadingDot })}>
+              {leftTitle}
+            </h1>
+          )}
           {leftText && renderText(leftText)}
           {leftButtonLabel && (
             <Link
@@ -47,13 +60,19 @@ export default function CtaTwoColumn({
                 styles.buttonWhite
               )}
               to={leftButtonLink}
+              style={leftButtonAlign === "center" ? centerButtonStyle : {}}
             >
               {leftButtonLabel}
             </Link>
           )}
         </div>
-        <div className={clsx("col col--6", styles.rightColumn)}>
-          {rightTitle && <h1 className={clsx({ 'headingDot': rightHeadingDot })}>{rightTitle}</h1>}
+       {/* Adjust the col class based on whether the right column has content */}
+       <div className={clsx("col", hasRightContent ? "col--6" : "col--5", styles.leftColumn)}>
+          {rightTitle && (
+            <h1 className={clsx({ headingDot: rightHeadingDot })}>
+              {rightTitle}
+            </h1>
+          )}
           {rightText && renderText(rightText)}
           {rightButtonLabel && (
             <Link
@@ -62,6 +81,7 @@ export default function CtaTwoColumn({
                 styles.buttonWhite
               )}
               to={rightButtonLink}
+              style={rightButtonAlign === "center" ? centerButtonStyle : {}}
             >
               {rightButtonLabel}
             </Link>

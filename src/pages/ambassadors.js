@@ -74,10 +74,12 @@ export default function Home() {
               
               "Each post, each interaction, and each contribution acts as a stepping stone towards ambassadorship. Remember, true ambassadors \
               are already making waves before the title comes their way. So, let your actions speak, become an integral part \
-              of our community, and you might just find the title of Cardano Ambassador waiting for you."]}
+              of our community, and you might just find the title of Cardano Ambassador waiting for you."
+              ]}
               leftHeadingDot={true}
               rightButtonLabel={"Get Started"}
               rightButtonLink={"https://forum.cardano.org/t/welcome-understanding-trust-levels-on-the-cardano-forum/117680"}
+              rightButtonAlign={"center"}
             />
             </BoundaryBox>
           </BackgroundWrapper>

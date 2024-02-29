@@ -80,6 +80,7 @@ export default function Home() {
               leftHeadingDot={true}
               rightButtonLabel={"Discover Now"}
               rightButtonLink={"/what-is-ada#wallets"}
+              rightButtonAlign={"center"}
             />
           </BoundaryBox>
         </BackgroundWrapper>
