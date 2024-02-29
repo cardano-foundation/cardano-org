@@ -51,13 +51,13 @@
     "question": "How should I choose a stake pool?",
     "answer": [
       "Choosing a stake pool involves several factors to consider to ensure you make a well-informed decision. So called [pool tools](https://developers.cardano.org/showcase?tags=pooltool) can help you choose a stake pool. Points to consider:",
-      "Performance: Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of the pool's reliability and effective operation.",
-      "Uptime: Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block.",
-      "Margin Fees: Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance.",
-      "Fixed Fees: There is often a minimum fixed fee (set by the protocol) that pools will charge. Check what fixed fee the pool charges.",
-      "Saturation Point: A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards, so it’s advisable to choose a pool below this threshold.",
-      "Community Engagement: Look for pools that actively engage with the Cardano community. This can be through educational content, community support, or contributions to the Cardano ecosystem.",
-      "Mission-Driven Pools: Some pools donate a portion of their fees to charitable causes or are dedicated to specific missions like environmental sustainability or education. If this aligns with your values, it might influence your choice."
+      "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of the pool's reliability and effective operation.",
+      "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block.",
+      "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance.",
+      "**Fixed Fees:** There is often a minimum fixed fee (set by the protocol) that pools will charge. Check what fixed fee the pool charges.",
+      "**Saturation Point:** A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards, so it’s advisable to choose a pool below this threshold.",
+      "**Community Engagement:** Look for pools that actively engage with the Cardano community. This can be through educational content, community support, or contributions to the Cardano ecosystem.",
+      "**Mission-Driven Pools:** Some pools donate a portion of their fees to charitable causes or are dedicated to specific missions like environmental sustainability or education. If this aligns with your values, it might influence your choice."
     ]
   },
   {
