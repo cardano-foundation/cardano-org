@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./hs.css"; // Importing the HubSpot CSS globally
+import HubSpotConfig from "@site/hubspot.config";
 
 const ContactFormHS = () => {
   useEffect(() => {
@@ -13,10 +14,10 @@ const ContactFormHS = () => {
       // Check if the HubSpot forms namespace exists
       if (window.hbspt) {
         window.hbspt.forms.create({
-          region: 'na1',
-          portalId: '7759219',
-          formId: '87e356e8-908d-4d11-93ba-ecdcd8227c4f',
-          target: '#hubspotForm'
+          region: HubSpotConfig.contactForm.region, 
+          portalId: HubSpotConfig.contactForm.portalId, 
+          formId: HubSpotConfig.contactForm.formId, 
+          target: HubSpotConfig.contactForm.target, 
         });
       }
     });

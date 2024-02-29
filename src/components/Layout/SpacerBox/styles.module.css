@@ -1,0 +1,11 @@
+.small {
+  margin-top: 2rem; /* Equivalent to <br /><br /> */
+}
+
+.medium {
+  margin-top: 4rem; /* Equivalent to <br /><br /><br /><br /> */
+}
+
+.large {
+  margin-top: 6rem; /* Equivalent to <br /><br /><br /><br /><br /><br /> */
+}

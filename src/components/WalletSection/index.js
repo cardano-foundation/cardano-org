@@ -5,6 +5,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import WalletLink from "@site/src/components/WalletLink";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
 // Don't send pull requests for wallets that are not listed for a longer time on https://developers.cardano.org/showcase?tags=wallet
@@ -80,8 +81,7 @@ export default function WalletSection() {
         slightText={["The example applications are provided for informational purposes only and not endorsed or approved. \
         Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."]}
       />
-      <br /> {/* <--- FIXME */}
-      <br />
+      <SpacerBox size="large" />
       <TitleWithText
         title="How Do I Store My Ada And Keep It Safe?"
         description={[

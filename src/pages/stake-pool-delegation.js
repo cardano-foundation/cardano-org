@@ -11,6 +11,7 @@ import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import FAQDelegationSection from "@site/src/components/FAQDelegationSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -75,10 +76,12 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"solidBlue"}>
           <BoundaryBox>
             <CtaTwoColumn
-              title="Cardano Wallets"
-              text="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
-              buttonLabel={"Discover Now"}
-              buttonLink={"/what-is-ada#wallets"}
+              leftTitle="Cardano Wallets"
+              leftText="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
+              leftHeadingDot={true}
+              rightButtonLabel={"Discover Now"}
+              rightButtonLink={"/what-is-ada#wallets"}
+              rightButtonAlign={"center"}
             />
           </BoundaryBox>
         </BackgroundWrapper>
@@ -95,6 +98,7 @@ export default function Home() {
 
         <BoundaryBox>
           <FAQDelegationSection />
+          <SpacerBox size="medium" />
         </BoundaryBox>
       </main>
     </Layout>

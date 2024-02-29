@@ -11,6 +11,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import ContactFormHS from "@site/src/components/ContactFormHS";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Hint: You can preselect a topic with http://localhost:3000/contact?topic=iog 
 // or http://localhost:3000/contact?topic=sponsor etc
@@ -144,8 +145,7 @@ export default function Home() {
             </option>
             <option value="different">another inquiry</option>
           </select>
-          <br />
-          <br />
+          <SpacerBox size="small" />
           {/* Conditional rendering based on user selection */}
           {selectedTopic === "iog" && <TechnicalIssueForm />}
           {selectedTopic === "partnership" && <PartnershipForm />}
@@ -153,8 +153,7 @@ export default function Home() {
           {selectedTopic === "different" && <ContactFormHS />}
           {/* ... */}
         </BoundaryBox>
-        <br />
-        <br />
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

@@ -109,6 +109,7 @@ const config = {
             position: 'left',
             items: [  
               {to: '/research', label: 'Cardano Research'},
+              {to: '/exchanges', label: 'Integrate Cardano'},
               {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
