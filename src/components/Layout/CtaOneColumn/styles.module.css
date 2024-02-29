@@ -18,6 +18,7 @@
 /* white style cta button */
 
 .buttonWhite {
+  margin-top: 20px;
   background-color: #fdfdfb;
   color: #1c1e21;
   border: none;
