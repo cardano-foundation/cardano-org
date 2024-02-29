@@ -11,6 +11,7 @@ import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import FAQDelegationSection from "@site/src/components/FAQDelegationSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -97,6 +98,7 @@ export default function Home() {
 
         <BoundaryBox>
           <FAQDelegationSection />
+          <SpacerBox size="medium" />
         </BoundaryBox>
       </main>
     </Layout>
