@@ -75,10 +75,11 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"solidBlue"}>
           <BoundaryBox>
             <CtaTwoColumn
-              title="Cardano Wallets"
-              text="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
-              buttonLabel={"Discover Now"}
-              buttonLink={"/what-is-ada#wallets"}
+              leftTitle="Cardano Wallets"
+              leftText="Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem."
+              leftHeadingDot={true}
+              rightButtonLabel={"Discover Now"}
+              rightButtonLink={"/what-is-ada#wallets"}
             />
           </BoundaryBox>
         </BackgroundWrapper>

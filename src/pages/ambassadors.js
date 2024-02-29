@@ -66,8 +66,8 @@ export default function Home() {
           <BackgroundWrapper backgroundType={"solidBlue"}>
             <BoundaryBox>
             <CtaTwoColumn
-              title="Become a Cardano Ambassador"
-              text={["Embark on your journey to becoming a Cardano Ambassador by diving into the Cardano Forum! It's \
+              leftTitle="Become a Cardano Ambassador"
+              leftText={["Embark on your journey to becoming a Cardano Ambassador by diving into the Cardano Forum! It's \
               not just about holding a title; it's about action, involvement, and dedication. Start by engaging with \
               fellow enthusiasts, sharing insights, and contributing to discussions. As you climb through different \
               trust levels, you unlock new realms of interaction and collaboration.",
@@ -75,8 +75,9 @@ export default function Home() {
               "Each post, each interaction, and each contribution acts as a stepping stone towards ambassadorship. Remember, true ambassadors \
               are already making waves before the title comes their way. So, let your actions speak, become an integral part \
               of our community, and you might just find the title of Cardano Ambassador waiting for you."]}
-              buttonLabel={"Get Started"}
-              buttonLink={"https://forum.cardano.org/t/welcome-understanding-trust-levels-on-the-cardano-forum/117680"}
+              leftHeadingDot={true}
+              rightButtonLabel={"Get Started"}
+              rightButtonLink={"https://forum.cardano.org/t/welcome-understanding-trust-levels-on-the-cardano-forum/117680"}
             />
             </BoundaryBox>
           </BackgroundWrapper>
