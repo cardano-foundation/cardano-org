@@ -9,6 +9,8 @@ import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import FAQSection from "@site/src/components/FAQSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -109,6 +111,11 @@ export default function Home() {
             />
           </BoundaryBox>
         </BackgroundWrapper>
+
+        <BoundaryBox>
+          <FAQSection jsonFileName="operationFAQ" />
+          <SpacerBox size="medium" />
+        </BoundaryBox>
       </main>
     </Layout>
   );
