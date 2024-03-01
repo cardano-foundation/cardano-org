@@ -87,6 +87,23 @@ html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
   background-image: url(/img/hero-header-zoom-red-white.png);
 }
 
+/** heroBannerZoomBlueRed **/
+
+.heroBannerZoomBlueRed {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 220px) center;  
+  height: 410px;
+  background-color: #0538af;
+  background-image: url(/img/hero-header-zoom-blue-red.svg);
+}
+
+
+
 /** heroBannerAda **/
 
 .heroBannerAda {
@@ -341,6 +358,10 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   .backgroundBox {
     padding-bottom: 20px; /* Reduce space at the bottom */
   }
+  .heroBannerZoomBlueRed {
+    background-position: left;  
+    background-size: 700px
+  }
 }
 
 @media screen and (max-width: 966px) {
@@ -373,6 +394,9 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
     padding: 4rem;
     background-size: cover;
     background-position: top right;
+  }
+  .heroBannerZoomBlueRed {
+    background-position: calc(100% + 100px) center;  
   }
 }
 

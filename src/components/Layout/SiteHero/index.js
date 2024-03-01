@@ -29,6 +29,9 @@ export default function SiteHero({ title, description, bannerType }) {
     case "zoomRedWhiteDark":
       heroClassName = styles.heroBannerZoomRedWhiteDark;
       break;
+    case "zoomBlueRed":
+      heroClassName = styles.heroBannerZoomBlueRed;
+      break;
     case "waves":
       heroClassName = styles.heroBannerWaves;
       break;

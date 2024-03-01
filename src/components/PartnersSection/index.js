@@ -33,17 +33,17 @@ function LogoWithLink({ imageName, label, link }) {
 const PartnerItemList = [
   {
     imageName: "cardanofoundation",
-    label: "Explore the Cardano Foundation",
+    label: "Explore the Foundation",
     link: "partners",
   },
   {
     imageName: "iog",
-    label: "Find out Input Output Global",
+    label: "Learn about Input Output Global",
     link: "partners",
   },
   {
     imageName: "emurgo",
-    label: "Learn about EMURGO",
+    label: "Find out about EMURGO",
     link: "partners",
   },
 ];

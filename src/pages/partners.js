@@ -11,7 +11,7 @@ function HomepageHeader() {
       title="Our Partners"
       description="A decentralized team works across many entities to 
         ensure that Cardano stays true to its purpose as we advance and evolve."
-      bannerType="dots"
+      bannerType="zoomBlueRed"
     />
   );
 }
