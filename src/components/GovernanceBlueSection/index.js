@@ -2,16 +2,13 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
-import TitleBox from "@site/src/components/Layout/TitleBox";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 //
 // This component shows a simple header with some text below.
 // title, text, and slight text are optional
 
 export default function GovernanceBlueSection({}) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div className={clsx("container", styles.sectionWrapper)}>

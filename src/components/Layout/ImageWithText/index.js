@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 //
 // This component:
@@ -37,10 +37,10 @@ export default function ImageWithText({
           {subtitle && <h2>{subtitle}</h2>}
           {text && Array.isArray(text) ? (
             text.map((paragraph, index) => (
-              <p key={index}>{parseTextWithLinks(paragraph)}</p>
+              <p key={index}>{parseMarkdownLikeText(paragraph)}</p>
             ))
           ) : (
-            <p>{parseTextWithLinks(text)}</p>
+            <p>{parseMarkdownLikeText(text)}</p>
           )}
         </div>
       </div>

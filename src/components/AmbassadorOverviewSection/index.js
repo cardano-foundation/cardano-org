@@ -3,7 +3,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider"; 
 import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
 import { BsFillPersonLinesFill } from 'react-icons/bs'

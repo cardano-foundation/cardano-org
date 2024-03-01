@@ -3,7 +3,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 // shows a image on the left
 // shows a header with some description on the right with bullet points of links below
@@ -37,7 +37,7 @@ function Category({
       </div>
       <div className={textColumnClass}>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{parseTextWithLinks(description)}</p>
+        <p className={styles.description}>{parseMarkdownLikeText(description)}</p>
         {/* Papers section */}
         {papers && papers.length > 0 && (
           <div className={styles.papers}>
@@ -76,8 +76,6 @@ Category.defaultProps = {
 };
 
 export default function EnterpriseSection({}) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div>

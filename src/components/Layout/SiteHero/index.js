@@ -1,11 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function SiteHero({ title, description, bannerType }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   // Use bannerType to dynamically change the class for the hero banner
   let heroClassName;
@@ -28,6 +25,9 @@ export default function SiteHero({ title, description, bannerType }) {
       break;
     case "zoomRedWhiteDark":
       heroClassName = styles.heroBannerZoomRedWhiteDark;
+      break;
+    case "zoomBlueRed":
+      heroClassName = styles.heroBannerZoomBlueRed;
       break;
     case "waves":
       heroClassName = styles.heroBannerWaves;

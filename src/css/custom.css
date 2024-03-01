@@ -368,7 +368,7 @@ img {
 
 .Collapsible__trigger {
   background: transparent;
-  /*color: #FFFFFF; /* Set the text color */
+  color: var(--ifm-base-color); /* Set the text color */
   font-size: 1rem; /* Set the text size */
   font-weight: bold; /* Bold text */
   text-align: left; /* Align text to the left */
@@ -411,6 +411,30 @@ img {
 
 .Collapsible.even {
   background-color: #fdfdfb; /* even rows */
+}
+
+[data-theme="dark"] {
+  .Collapsible.odd {
+    background-color: #f6f7f9; /* odd rows */
+  }
+  
+  .Collapsible.even {
+    background-color: #fdfdfb; /* even rows */
+  }
+}
+
+[data-theme="dark"] .Collapsible.odd {
+  background-color: #2d2d2d; /* dark gray for odd rows in dark mode */
+}
+
+[data-theme="dark"] .Collapsible.even {
+  background-color: #252525; /* slightly darker gray for even rows in dark mode */
+}
+
+.Collapsible ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 0; 
 }
 
 /* section caret */

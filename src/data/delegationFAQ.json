@@ -50,7 +50,7 @@
   {
     "question": "How should I choose a stake pool?",
     "answer": [
-      "Choosing a stake pool involves several factors to consider to ensure you make a well-informed decision. So called [pool tools](https://developers.cardano.org/showcase?tags=pooltool) can help you choose a stake pool. Points to consider:",
+      "Choosing a stake pool involves several factors to consider to ensure you make a well-informed decision. So-called [pool tools](https://developers.cardano.org/showcase?tags=pooltool) can help you choose a stake pool. Points to consider:",
       "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of the pool's reliability and effective operation.",
       "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block.",
       "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance.",

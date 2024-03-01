@@ -22,7 +22,6 @@ function LogoLink({ imageName, to }) {
 
 export default function DiscoverUsSection({}) {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div class="container">

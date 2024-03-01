@@ -1,6 +1,4 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import WhatIsAda from "@site/src/components/WhatIsAda";
 import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
@@ -23,11 +21,11 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+    title="Cardano - making the world work better for all"
+    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />
       <main>

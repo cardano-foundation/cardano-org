@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider"; 
 import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
 
@@ -13,7 +12,7 @@ function Role({ title, description }) {
     <div className={styles.roleWrap}>
       <h2 className={styles.roleTitle}>{title}</h2>
       {description.map((desc, index) => (
-        <p key={index} className={styles.roleDescription}>{parseTextWithLinks(desc)}</p>
+        <p key={index} className={styles.roleDescription}>{parseMarkdownLikeText(desc)}</p>
       ))}
     </div>
   );
@@ -57,8 +56,6 @@ const rolesData = [
 
 export default function AmbassadorRolesSection({}) {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-
   const rolesCount = rolesData.length; // the number of roles, to update text automatically if something is changed
 
   return (

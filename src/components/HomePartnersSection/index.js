@@ -5,7 +5,7 @@ import ThemedImage from "@theme/ThemedImage";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
-import TitleBox from "@site/src/components/Layout/TitleBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 // shows a partner (svg) logo and a link below
 function LogoWithLink({ imageName, label, link }) {
@@ -33,18 +33,18 @@ function LogoWithLink({ imageName, label, link }) {
 const PartnerItemList = [
   {
     imageName: "cardanofoundation",
-    label: "Explore the Cardano Foundation",
-    link: "partners",
+    label: "Explore the Foundation",
+    link: "/partners?tab=cardanofoundation",
   },
   {
     imageName: "iog",
-    label: "Find out Input Output Global",
-    link: "partners",
+    label: "Learn about Input Output Global",
+    link: "/partners?tab=iog",
   },
   {
     imageName: "emurgo",
-    label: "Learn about EMURGO",
-    link: "partners",
+    label: "Find out about EMURGO",
+    link: "/partners?tab=emurgo",
   },
 ];
 
@@ -53,11 +53,11 @@ function PartnerItem({ imageName, label, link }) {
 }
 
 // FIXME: text feels outdated, today there are way more entitites, we should aim to increase this soon
-export default function PartnerSection() {
+export default function HomePartnersSection() {
   return (
     <section className={styles.partnerSection}>
       <Divider text="Partners" />
-      <TitleBox
+      <TitleWithText
         description="A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."
         titleType="none"
         headingDot={false}

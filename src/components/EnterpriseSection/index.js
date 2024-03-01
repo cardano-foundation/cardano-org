@@ -3,7 +3,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 // shows a dotted image on the left, below solution and product
 // shows a header with some description on the right
@@ -42,11 +42,11 @@ function UseCase({
           {Array.isArray(product) ? (
             <ul>
               {product.map((item, index) => (
-                <li key={index}>{parseTextWithLinks(item)}</li>
+                <li key={index}>{parseMarkdownLikeText(item)}</li>
               ))}
             </ul>
           ) : (
-            parseTextWithLinks(product)
+            parseMarkdownLikeText(product)
           )}
         </div>
       </div>
@@ -55,12 +55,12 @@ function UseCase({
         {Array.isArray(description) ? (
           description.map((paragraph, index) => (
             <p key={index} className={styles.description}>
-              {parseTextWithLinks(paragraph)}
+              {parseMarkdownLikeText(paragraph)}
             </p>
           ))
         ) : (
           <p className={styles.description}>
-            {parseTextWithLinks(description)}
+            {parseMarkdownLikeText(description)}
           </p>
         )}
         <Link
@@ -80,7 +80,6 @@ UseCase.defaultProps = {
 
 export default function EnterpriseSection({}) {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div>

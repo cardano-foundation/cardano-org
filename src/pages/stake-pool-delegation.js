@@ -1,6 +1,4 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import Divider from "@site/src/components/Layout/Divider";
@@ -9,7 +7,7 @@ import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
-import FAQDelegationSection from "@site/src/components/FAQDelegationSection";
+import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
@@ -22,14 +20,14 @@ function HomepageHeader() {
       bannerType="overlap"
     />
   );
-}
+} 
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+    title="Cardano - making the world work better for all"
+    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />
       <main>
@@ -97,7 +95,7 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <FAQDelegationSection />
+          <FAQSection jsonFileName="delegationFAQ" />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>

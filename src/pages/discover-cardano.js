@@ -1,11 +1,5 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
-
-import Heading from "@theme/Heading";
 import ImageWithText from "@site/src/components/Layout/ImageWithText";
 import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -24,11 +18,11 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+    title="Cardano - making the world work better for all"
+    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />
       <main>

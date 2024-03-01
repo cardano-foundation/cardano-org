@@ -1,14 +1,15 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import Divider from "@site/src/components/Layout/Divider";
 import OneColumnBox from "@site/src/components/Layout/OneColumnBox";
 import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import FAQSection from "@site/src/components/FAQSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -26,11 +27,11 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+    title="Cardano - making the world work better for all"
+    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />
       <main>
@@ -109,6 +110,37 @@ export default function Home() {
             />
           </BoundaryBox>
         </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={"solidBlue"}>
+          <BoundaryBox>
+            <CtaTwoColumn
+              leftTitle="How do I set up a stake pool?"
+              leftText={[
+                "It’s important to remember the role of a stake pool operator: to ensure reliable, 24/7 operation of a network node. As a stake pool operator, you have a responsibility to the ada holders who delegate to you but also to the health of the network itself. This requires a stable and reliable network infrastructure and, ideally, system operation and server administration skills along with experience in development and operations.",
+                "Anybody can learn how to operate a stake pool, but a degree of technical familiarity and knowledge is required.",
+              ]}
+              leftHeadingDot={true}
+              rightButtonLabel={"Learn how"}
+              rightButtonLink={"https://developers.cardano.org/docs/operate-a-stake-pool/"}
+              rightButtonAlign={"center"}
+            />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={"ada"}>
+          <BoundaryBox>
+            <CtaOneColumn
+              title="Try our staking calculator to see how much ada you could receive by running a stake pool."
+              buttonLabel={"Try Out"}
+              buttonLink={"/calculator/?calculator=operator"}
+            />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BoundaryBox>
+          <FAQSection jsonFileName="operationFAQ" />
+          <SpacerBox size="medium" />
+        </BoundaryBox>
       </main>
     </Layout>
   );

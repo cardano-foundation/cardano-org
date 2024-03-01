@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 //
@@ -10,8 +9,6 @@ import styles from "./styles.module.css";
 // and quoteType = 'none' which can be used to add normal text without special formatting underneath
 
 export default function QuoteWithText({ text, quoteType }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   // We render differently if it's a none quote type
   // TODO: at this point we need some refactoring

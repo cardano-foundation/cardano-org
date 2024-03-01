@@ -1,4 +1,3 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
 import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
@@ -6,11 +5,10 @@ import Divider from "@site/src/components/Layout/Divider";
 import QuoteBox from "@site/src/components/Layout/QuoteBox";
 import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
 import VisionBox from "@site/src/components/Layout/VisionBox";
-import TitleBox from "@site/src/components/Layout/TitleBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
-import PartnerSection from "@site/src/components/PartnersSection";
+import HomePartnersSection from "@site/src/components/HomePartnersSection";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
@@ -27,11 +25,11 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title="Cardano - making the world work better for all"
+      description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />
       <main>
@@ -93,7 +91,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"solidGrey"}>
           <BoundaryBox>
-            <PartnerSection />
+            <HomePartnersSection />
           </BoundaryBox>
         </BackgroundWrapper>
 

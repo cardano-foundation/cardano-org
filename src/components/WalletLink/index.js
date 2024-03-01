@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 //
 // This component:
@@ -33,7 +33,7 @@ export default function WalletLink({
       </div>
       <h1 className="headingDot">{title}</h1>
       <div className={styles.textWrap}>
-        <p className={styles.text}>{parseTextWithLinks(text)}</p>
+        <p className={styles.text}>{parseMarkdownLikeText(text)}</p>
         <p className="slight-text">{subtext}</p>
       </div>
       <div className={styles.buttonWrap}>
