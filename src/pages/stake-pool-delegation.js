@@ -1,3 +1,4 @@
+
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -9,7 +10,7 @@ import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
-import FAQDelegationSection from "@site/src/components/FAQDelegationSection";
+import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
@@ -22,7 +23,7 @@ function HomepageHeader() {
       bannerType="overlap"
     />
   );
-}
+} 
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -97,7 +98,7 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <FAQDelegationSection />
+          <FAQSection jsonFileName="delegationFAQ" />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>

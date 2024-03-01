@@ -431,6 +431,12 @@ img {
   background-color: #252525; /* slightly darker gray for even rows in dark mode */
 }
 
+.Collapsible ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 0; 
+}
+
 /* section caret */
 
 :root {
