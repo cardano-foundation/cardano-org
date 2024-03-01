@@ -58,7 +58,7 @@ export default function HomePartnersSection() {
     <section className={styles.partnerSection}>
       <Divider text="Partners" />
       <TitleWithText
-        description={["A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."]}
+        description="A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."
         titleType="none"
         headingDot={false}
       />
