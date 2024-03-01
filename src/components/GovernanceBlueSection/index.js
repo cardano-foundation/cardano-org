@@ -9,8 +9,6 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 // title, text, and slight text are optional
 
 export default function GovernanceBlueSection({}) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div className={clsx("container", styles.sectionWrapper)}>

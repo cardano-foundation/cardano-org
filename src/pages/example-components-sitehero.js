@@ -1,15 +1,11 @@
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import FollowCardano from "@site/src/components/Layout/FollowCardano";
 import Divider from "@site/src/components/Layout/Divider";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
-import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
     title="Cardano - making the world work better for all"

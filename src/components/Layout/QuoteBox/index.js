@@ -1,8 +1,5 @@
 import React from "react";
-import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 //import styles from "./component-name.module.css"; // in case you need local css for this component
 //import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
@@ -14,8 +11,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 // and another text (aka quote)
 
 export default function QuoteBox({ description, quote }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   const imageUrl = useBaseUrl(`/img/cardano-white.svg`);
 

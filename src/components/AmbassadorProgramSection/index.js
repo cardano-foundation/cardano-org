@@ -1,15 +1,9 @@
-import clsx from "clsx";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
-import styles from "./styles.module.css";
-import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider"; 
 import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
 
 export default function AmbassadorProgramSection({}) {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div>

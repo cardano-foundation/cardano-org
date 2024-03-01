@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 //
@@ -9,8 +8,6 @@ import styles from "./styles.module.css";
 // and a call to action button below
 
 export default function CtaOneColumn({ title, text, buttonLabel, buttonLink }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div className={styles.boxWrap}>

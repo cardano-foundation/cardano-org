@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
@@ -14,8 +13,6 @@ export default function TitleWithText({
   headingDot,
   slightText,
 }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   // Function to render description content
   const renderDescriptionContent = (content) => {

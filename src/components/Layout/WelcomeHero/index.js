@@ -2,11 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function WelcomeHero({ title, description }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>

@@ -1,4 +1,3 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
 import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
@@ -26,7 +25,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
       title="Cardano - making the world work better for all"

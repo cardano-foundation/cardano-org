@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 //
@@ -22,8 +21,6 @@ export default function CtaTwoColumn({
   rightHeadingDot,
   rightButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
 }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   const renderText = (text) => {
     // Check if text is an array

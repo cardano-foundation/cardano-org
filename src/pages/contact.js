@@ -2,10 +2,8 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import Heading from "@theme/Heading";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
@@ -100,7 +98,7 @@ function SponsorshipForm() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+
   const location = useLocation(); // Use the useLocation hook to access the current location
   const [selectedTopic, setSelectedTopic] = useState(null); // State for the topic
 

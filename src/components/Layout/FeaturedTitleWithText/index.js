@@ -1,11 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
-//import styles from "./component-name.module.css"; // in case you need local css for this component
-//import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
 
 //
 // This component:
@@ -21,8 +18,6 @@ export default function FeaturedTitleWithText({
   buttonLink,
   headingDot,
 }) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div>

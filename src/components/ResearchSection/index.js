@@ -76,8 +76,6 @@ Category.defaultProps = {
 };
 
 export default function EnterpriseSection({}) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div>

@@ -1,11 +1,5 @@
 import React from "react";
-import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
-import QuoteWithText from "@site/src/components/Layout/QuoteWithText";
-import Divider from "@site/src/components/Layout/Divider";
 
 //
 // Governance: Proposals
@@ -13,8 +7,6 @@ import Divider from "@site/src/components/Layout/Divider";
 // FIXME: Funding Proposal seems to talk about Catalyst, consider in the future to talk about treasury withdraw proposal
 
 export default function GovernanceWithinCardanoSection({}) {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
 
   return (
     <div className={styles.sectionWrap}>
