@@ -54,7 +54,7 @@ const partnersData = {
         partners_item_label: "Input Output Global",
         partners_item_category: "Research and engineering company",
         partners_item_image: "iog",
-        partners_item_link: "https://emurgo.io",
+        partners_item_link: "https://iohk.io",
         partners_item_body:
           "IOG (former IOHK) is a research and engineering company that builds cryptocurrencies and blockchains for academic institutions, \
           enterprise, and government entities.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, IOHK is contracted to design, \
