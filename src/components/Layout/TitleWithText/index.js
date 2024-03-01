@@ -29,11 +29,13 @@ export default function TitleWithText({
     // If it's an object and has a 'list' key, render it as a list
     if (content && typeof content === 'object' && content.list) {
       return (
+        <div className={styles.titleWithTextWrap}>
         <ul className="black-text">
           {content.list.map((item, index) => (
             <li key={index}>{parseTextWithLinks(item)}</li>
           ))}
         </ul>
+        </div>
       );
     }
   };

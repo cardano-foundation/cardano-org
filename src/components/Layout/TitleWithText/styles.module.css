@@ -16,7 +16,7 @@ html[data-theme="dark"] {
   }
 }
 
- ul {
+.titleWithTextWrap ul {
   list-style-type: disc; /* This makes standard bullets */
   margin-left: 20px; /* Adjust indentation of the list */
   padding-left: 10px; 
