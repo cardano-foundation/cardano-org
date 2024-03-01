@@ -169,15 +169,15 @@ const config = {
             items: [
               {
                 label: 'Cardano Foundation',
-                to: '/partners#cf',
+                to: '/partners?tab=cardanofoundation',
               },
               {
                 label: 'EMURGO',
-                to: '/partners#emurgo',
+                to: '/partners?tab=emurgo',
               },
               {
                 label: 'IOG',
-                href: '/partners#iog', /* TODO: last entry should be "more", then link to the partners page */
+                href: '/partners?tab=iog', /* TODO: last entry should be "more", then link to the partners page */
               },
             ],
           },

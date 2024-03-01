@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import ThemedImage from "@theme/ThemedImage";
@@ -6,9 +6,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { FaArrowRight } from "react-icons/fa"; //
-import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css"; // Use default styling as a base
+import { useLocation } from "@docusaurus/router";
 
 //
 // This component:
@@ -71,22 +71,21 @@ const partnersData = {
   },
 };
 
-// shows a linked partner (svg) logo 
+// shows a linked partner (svg) logo
 function LogoWithLink({ imageName, label, link }) {
   return (
     <div className={styles.logoContainer}>
       <div className={styles.imageWrap}>
-      <Link to={link} className={styles.link}>
-        <ThemedImage
-          alt={label}
-          sources={{
-            light: useBaseUrl(`/img/logos/${imageName}.svg`),
-            dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
-          }}
-        />
-         </Link>
+        <Link to={link} className={styles.link}>
+          <ThemedImage
+            alt={label}
+            sources={{
+              light: useBaseUrl(`/img/logos/${imageName}.svg`),
+              dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
+            }}
+          />
+        </Link>
       </div>
-       
     </div>
   );
 }
@@ -95,6 +94,25 @@ function LogoWithLink({ imageName, label, link }) {
 export default function PartnersOverviewSection() {
   const [selectedIndex, setSelectedIndex] = useState(0); // Initialize state to track selected tab index
   const [animationDirection, setAnimationDirection] = useState("in"); // 'in' or 'out'
+
+  const location = useLocation(); // Use useLocation to access the location object
+
+  useEffect(() => {
+    // Function to parse the query string
+    const queryParams = new URLSearchParams(location.search);
+    const partner = queryParams.get("tab");
+
+    // Find the index of the partner in the data array (based on image name)
+    const partnerIndex = partnersData.partners.partners_items.findIndex(
+      (item) =>
+        item.partners_item_image.replace(/\s+/g, "-").toLowerCase() === partner
+    );
+
+    // If the partner exists, update the selectedIndex state
+    if (partnerIndex !== -1) {
+      setSelectedIndex(partnerIndex);
+    }
+  }, [location]);
 
   const handleSelect = (index) => {
     setSelectedIndex(index); // Update state when a new tab is selected
@@ -138,8 +156,8 @@ export default function PartnersOverviewSection() {
                   index === selectedIndex ? styles.swipeIn : styles.swipeOut
                 }`}
               >
-                <LogoWithLink 
-                  imageName={benefit.partners_item_image} 
+                <LogoWithLink
+                  imageName={benefit.partners_item_image}
                   label={benefit.partners_item_label}
                   link={benefit.partners_item_link}
                 />
@@ -148,7 +166,6 @@ export default function PartnersOverviewSection() {
                     __html: benefit.partners_item_body,
                   }}
                 />
-                
               </TabPanel>
             ))}
           </div>

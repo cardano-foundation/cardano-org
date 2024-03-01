@@ -34,17 +34,17 @@ const PartnerItemList = [
   {
     imageName: "cardanofoundation",
     label: "Explore the Foundation",
-    link: "partners",
+    link: "/partners?tab=cardanofoundation",
   },
   {
     imageName: "iog",
     label: "Learn about Input Output Global",
-    link: "partners",
+    link: "/partners?tab=iog",
   },
   {
     imageName: "emurgo",
     label: "Find out about EMURGO",
-    link: "partners",
+    link: "/partners?tab=emurgo",
   },
 ];
 
