@@ -16,15 +16,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://cardano.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/', 
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'cardano-foundation', // Usually your GitHub org/user name.
-  projectName: 'www-cardano-org', // Usually your repo name.
+  organizationName: 'cardano-foundation',  
+  projectName: 'www-cardano-org', 
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -68,7 +68,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // The project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/og-default.jpg',
       navbar: {
         logo: {
           alt: "Cardano Logo",
