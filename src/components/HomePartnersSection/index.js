@@ -5,7 +5,7 @@ import ThemedImage from "@theme/ThemedImage";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
-import TitleBox from "@site/src/components/Layout/TitleBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 // shows a partner (svg) logo and a link below
 function LogoWithLink({ imageName, label, link }) {
@@ -57,8 +57,8 @@ export default function HomePartnersSection() {
   return (
     <section className={styles.partnerSection}>
       <Divider text="Partners" />
-      <TitleBox
-        description="A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."
+      <TitleWithText
+        description={["A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."]}
         titleType="none"
         headingDot={false}
       />
