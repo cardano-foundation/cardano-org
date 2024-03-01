@@ -1,6 +1,5 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import WhatIsAda from "@site/src/components/WhatIsAda";
 import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
