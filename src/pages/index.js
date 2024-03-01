@@ -6,11 +6,10 @@ import Divider from "@site/src/components/Layout/Divider";
 import QuoteBox from "@site/src/components/Layout/QuoteBox";
 import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
 import VisionBox from "@site/src/components/Layout/VisionBox";
-import TitleBox from "@site/src/components/Layout/TitleBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
-import PartnerSection from "@site/src/components/PartnersSection";
+import HomePartnersSection from "@site/src/components/HomePartnersSection";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
@@ -93,7 +92,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"solidGrey"}>
           <BoundaryBox>
-            <PartnerSection />
+            <HomePartnersSection />
           </BoundaryBox>
         </BackgroundWrapper>
 

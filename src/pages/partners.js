@@ -3,6 +3,9 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import Divider from "@site/src/components/Layout/Divider";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import PartnersOverviewSection from "@site/src/components/PartnersOverviewSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -25,9 +28,11 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-      <BoundaryBox>
-          FIXME: Partners
+        <BoundaryBox>
+          <Divider text="Partners" />
+          <PartnersOverviewSection />
         </BoundaryBox>
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

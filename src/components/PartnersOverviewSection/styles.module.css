@@ -59,8 +59,10 @@ ul {
   color: var(--ifm-color-primary);
 }
 
-.buttonWrap {
+.imageWrap {
   margin-top: 2rem;
+  max-width: 22rem;
+  margin-bottom: 2rem;
 }
 
 /* transition */

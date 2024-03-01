@@ -53,7 +53,7 @@ function PartnerItem({ imageName, label, link }) {
 }
 
 // FIXME: text feels outdated, today there are way more entitites, we should aim to increase this soon
-export default function PartnerSection() {
+export default function HomePartnersSection() {
   return (
     <section className={styles.partnerSection}>
       <Divider text="Partners" />
