@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 //import styles from "./component-name.module.css"; // in case you need local css for this component
 //import { makeStyles, Typography, Box } from '@material-ui/core'; // in case you need some material-ui
 
@@ -34,11 +34,11 @@ export default function FeaturedTitleWithText({
           {Array.isArray(description) ? (
             description.map((paragraph, index) => (
               <p key={index} className="black-text">
-                {parseTextWithLinks(paragraph)}
+                {parseMarkdownLikeText(paragraph)}
               </p>
             ))
           ) : (
-            <p className="black-text">{parseTextWithLinks(description)}</p>
+            <p className="black-text">{parseMarkdownLikeText(description)}</p>
           )}
           <h2 className="red-text">{quote}</h2>
           {buttonLabel && buttonLink && (

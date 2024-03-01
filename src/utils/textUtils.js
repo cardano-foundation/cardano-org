@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 // Parse text and replace link markdown in actual html links
 // Supports also **text** to mark things bold
 
-export function parseTextWithLinks(contentArray) {
+export function parseMarkdownLikeText(contentArray) {
   // Ensure contentArray is always treated as an array
   const safeArray = Array.isArray(contentArray) ? contentArray : [contentArray];
 

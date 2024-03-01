@@ -8,7 +8,7 @@ import Divider from "@site/src/components/Layout/Divider";
 
 import ThemedImage from "@theme/ThemedImage";
 import Collapsible from "react-collapsible";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 //
 // This component:
@@ -49,7 +49,7 @@ export default function FAQSection({ jsonFileName = "delegationFAQ" }) {
     return (
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{parseTextWithLinks(item)}</li>
+          <li key={index}>{parseMarkdownLikeText(item)}</li>
         ))}
       </ul>
     );
@@ -71,7 +71,7 @@ function processAnswer(answerArray) {
         // Wrap parsed list items in <li> tags
         const listElements = currentList.map((item, itemIdx) => {
           // Ensure list items are parsed for links and bold text
-          const parsedListItem = parseTextWithLinks(item);
+          const parsedListItem = parseMarkdownLikeText(item);
           return <li key={`item-${itemIdx}`}>{parsedListItem}</li>;
         });
         // Add the whole list to content elements
@@ -79,7 +79,7 @@ function processAnswer(answerArray) {
         currentList = []; // Reset the list
       }
       // Parse normal text for links and bold, then add as a paragraph
-      const parsedText = parseTextWithLinks(text);
+      const parsedText = parseMarkdownLikeText(text);
       contentElements.push(<div key={`text-${idx}`}>{parsedText}</div>); // Wrap in div for consistent React element structure
     }
   });
@@ -88,7 +88,7 @@ function processAnswer(answerArray) {
   if (currentList.length > 0) {
     const listElements = currentList.map((item, itemIdx) => {
       // Parse each list item for links and bold text
-      const parsedListItem = parseTextWithLinks(item);
+      const parsedListItem = parseMarkdownLikeText(item);
       return <li key={`item-${itemIdx}`}>{parsedListItem}</li>;
     });
     contentElements.push(<ul key={`list-end`}>{listElements}</ul>);
@@ -110,7 +110,7 @@ const renderAnswer = (answerArray) => {
         // Check if the element is a string or already an HTML element (like <ul>)
         if (typeof element === 'string') {
           // Parse text for links and bold formatting
-          return parseTextWithLinks(element).map((parsedElement, parsedIdx) => (
+          return parseMarkdownLikeText(element).map((parsedElement, parsedIdx) => (
             <React.Fragment key={`fragment-${idx}-${parsedIdx}`}>{parsedElement}</React.Fragment>
           ));
         } else {

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import TitleBox from "@site/src/components/Layout/TitleBox";
 import QuoteWithText from "@site/src/components/Layout/QuoteWithText";
 import Divider from "@site/src/components/Layout/Divider";

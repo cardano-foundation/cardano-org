@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
-import { parseTextWithLinks } from "@site/src/utils/textUtils";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 //
 // This component shows a simple header with some text below.
@@ -23,7 +23,7 @@ export default function TitleWithText({
 
     // If it's a string, render it as a paragraph
     if (typeof content === 'string') {
-      return <p className="black-text">{parseTextWithLinks(content)}</p>;
+      return <p className="black-text">{parseMarkdownLikeText(content)}</p>;
     }
 
     // If it's an object and has a 'list' key, render it as a list
@@ -32,7 +32,7 @@ export default function TitleWithText({
         <div className={styles.titleWithTextWrap}>
         <ul className="black-text">
           {content.list.map((item, index) => (
-            <li key={index}>{parseTextWithLinks(item)}</li>
+            <li key={index}>{parseMarkdownLikeText(item)}</li>
           ))}
         </ul>
         </div>
@@ -76,7 +76,7 @@ export default function TitleWithText({
         <div>
           {slightText.map((text, index) => (
             <p key={index} className="slight-text">
-              {parseTextWithLinks(text)}
+              {parseMarkdownLikeText(text)}
             </p>
           ))}
         </div>
