@@ -6,6 +6,8 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import Divider from "@site/src/components/Layout/Divider";
 import OneColumnBox from "@site/src/components/Layout/OneColumnBox";
 import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -108,6 +110,32 @@ export default function Home() {
                 earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their \
                 stake and stake pool operators, and to prevent any single pool from becoming too large.",
               ]}
+            />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={"solidBlue"}>
+          <BoundaryBox>
+            <CtaTwoColumn
+              leftTitle="How do I set up a stake pool?"
+              leftText={[
+                "It’s important to remember the role of a stake pool operator: to ensure reliable, 24/7 operation of a network node. As a stake pool operator, you have a responsibility to the ada holders who delegate to you but also to the health of the network itself. This requires a stable and reliable network infrastructure and, ideally, system operation and server administration skills along with experience in development and operations.",
+                "Anybody can learn how to operate a stake pool, but a degree of technical familiarity and knowledge is required.",
+              ]}
+              leftHeadingDot={true}
+              rightButtonLabel={"Learn how"}
+              rightButtonLink={"https://developers.cardano.org/docs/operate-a-stake-pool/"}
+              rightButtonAlign={"center"}
+            />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={"ada"}>
+          <BoundaryBox>
+            <CtaOneColumn
+              title="Try our staking calculator to see how much ada you could receive by running a stake pool."
+              buttonLabel={"Try Out"}
+              buttonLink={"/calculator/?calculator=operator"}
             />
           </BoundaryBox>
         </BackgroundWrapper>
