@@ -100,20 +100,13 @@ h1 {
   /*font-size: 6.8rem;*/
   font-weight: 700;
   line-height: 1.1;
-  -webkit-letter-spacing: 0rem;
-  -moz-letter-spacing: 0rem;
-  -ms-letter-spacing: 0rem;
-  letter-spacing: 0rem;
-  text-transform: capitalize;
-  font-size: 3.4;
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 2.75rem 0 1.05rem;
-  text-transform: capitalize;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
+  text-transform: capitalize;
+  font-size: 3.4;
+  margin: 2.75rem 0 1.05rem;
 } /*!sc*/
 
 h2 {
@@ -127,14 +120,7 @@ h2 {
   letter-spacing: 0.05rem;
   text-transform: capitalize;
   font-size: 2.8;
-  font-weight: 700;
-  line-height: 1.2;
   margin: 2.75rem 0 1.05rem;
-  text-transform: capitalize;
-  -webkit-letter-spacing: 0.05;
-  -moz-letter-spacing: 0.05;
-  -ms-letter-spacing: 0.05;
-  letter-spacing: 0.05;
 } /*!sc*/
 
 h3 {
@@ -148,14 +134,7 @@ h3 {
   letter-spacing: 0.05rem;
   text-transform: capitalize;
   font-size: 1.44;
-  font-weight: 700;
-  line-height: 1.2;
   margin: 2.75rem 0 1.05rem;
-  text-transform: capitalize;
-  -webkit-letter-spacing: 0.05;
-  -moz-letter-spacing: 0.05;
-  -ms-letter-spacing: 0.05;
-  letter-spacing: 0.05;
 } /*!sc*/
 
 h4 {
@@ -177,14 +156,7 @@ h5 {
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   font-size: 0.7;
-  font-weight: 700;
-  line-height: 1.4;
   margin: 2.75rem 0 1.05rem;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.15;
-  -moz-letter-spacing: 0.15;
-  -ms-letter-spacing: 0.15;
-  letter-spacing: 0.15;
 } /*!sc*/
 
 h6 {
@@ -198,10 +170,7 @@ h6 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-size: 0.6;
-  font-weight: 700;
-  line-height: 1.4;
   margin: 2.75rem 0 1.05rem;
-  text-transform: uppercase;
 } /*!sc*/
 
 a {
@@ -251,7 +220,7 @@ img {
   content: "";
   position: absolute;
   top: -1.5rem;
-  left: 0px;
+  left: 0;
   width: 1rem;
   height: 1rem;
   border-top-left-radius: 100%;
@@ -328,15 +297,14 @@ img {
   background-color: #fdfdfb; /* even rows */
 }
 
-[data-theme="dark"] {
-  .Collapsible.odd {
-    background-color: #f6f7f9; /* odd rows */
-  }
-  
-  .Collapsible.even {
-    background-color: #fdfdfb; /* even rows */
-  }
+[data-theme="dark"] .Collapsible.odd {
+  background-color: #f6f7f9; /* odd rows */
 }
+
+[data-theme="dark"] .Collapsible.even {
+  background-color: #fdfdfb; /* even rows */
+}
+
 
 [data-theme="dark"] .Collapsible.odd {
   background-color: #2d2d2d; /* dark gray for odd rows in dark mode */
@@ -363,13 +331,10 @@ img {
   color: gray;
 }
 
-[data-theme="dark"] {
-  .tabCategory {
-    color: #e0e0e0;
-  }
+[data-theme="dark"] .tabCategory {
+  color: #e0e0e0;
 }
-
-
+  
 /* transition (tabs) */
 @keyframes swipeIn {
   from {
@@ -422,12 +387,12 @@ img {
   height: 30px;
   width: 2048px;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   display: inline-block;
   left: 50%;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
   margin-left: -1000px;
 }
 
@@ -459,7 +424,7 @@ img {
   .hero p {
     font-size: 24px;
   }
-
+  
   .sectionCaret {
     height: 45px;
     width: 3000px;
