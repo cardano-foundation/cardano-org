@@ -141,7 +141,7 @@ export default function HomeBenefitsSection() {
               <TabPanel
                 key={index}
                 className={`${styles.tabPanel} ${
-                  index === selectedIndex ? styles.swipeIn : styles.swipeOut
+                  index === selectedIndex ? "swipeIn" : "swipeOut"
                 }`}
               >
                 <h2>{benefit.benefits_item_title}</h2>

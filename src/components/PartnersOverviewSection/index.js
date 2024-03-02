@@ -7,7 +7,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { FaArrowRight } from "react-icons/fa"; //
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css"; // Use default styling as a base
+//import "react-tabs/style/react-tabs.css"; // Use default styling as a base
 import { useLocation } from "@docusaurus/router";
 
 //
@@ -153,7 +153,7 @@ export default function PartnersOverviewSection() {
               <TabPanel
                 key={index}
                 className={`${styles.tabPanel} ${
-                  index === selectedIndex ? styles.swipeIn : styles.swipeOut
+                  index === selectedIndex ? "swipeIn" : "swipeOut"
                 }`}
               >
                 <LogoWithLink

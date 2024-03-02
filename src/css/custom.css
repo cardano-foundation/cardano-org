@@ -352,6 +352,39 @@ img {
   padding-left: 0; 
 }
 
+
+/* transition (tabs) */
+@keyframes swipeIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swipeOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.swipeIn {
+  animation: swipeIn 0.5s forwards;
+}
+
+.swipeOut {
+  animation: swipeOut 0.5s forwards;
+}
+
+
 /* section caret */
 
 :root {

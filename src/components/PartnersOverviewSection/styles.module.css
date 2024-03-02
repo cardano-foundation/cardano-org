@@ -3,9 +3,7 @@
   width: 100%;
   margin-top: 0px;
   padding-top: 2rem;
-  /*padding-right: 7rem;*/
   padding-bottom: 2rem;
-  /*padding-left: 4rem;*/ /* Fixme: components should not handle this on their own*/
 }
 
 .tabs {
@@ -63,35 +61,4 @@ ul {
   margin-top: 2rem;
   max-width: 22rem;
   margin-bottom: 2rem;
-}
-
-/* transition */
-@keyframes swipeIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes swipeOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.swipeIn {
-  animation: swipeIn 0.5s forwards;
-}
-
-.swipeOut {
-  animation: swipeOut 0.5s forwards;
 }
