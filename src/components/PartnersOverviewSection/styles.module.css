@@ -30,7 +30,7 @@
   transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-ul {
+.tabs ul {
   list-style-type: none; /* Remove default list style */
   padding-left: 0;
 }
