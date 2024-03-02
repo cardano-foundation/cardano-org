@@ -352,6 +352,23 @@ img {
   padding-left: 0; 
 }
 
+/* tabs (like partners, benefits) */
+
+.tabIcon {
+  margin-right: 8px; /* Add some space between the icon and the text */
+  color: var(--ifm-color-primary);
+}
+
+.tabCategory {
+  color: gray;
+}
+
+[data-theme="dark"] {
+  .tabCategory {
+    color: #e0e0e0;
+  }
+}
+
 
 /* transition (tabs) */
 @keyframes swipeIn {

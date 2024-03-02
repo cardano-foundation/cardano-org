@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-
+import Divider from "@site/src/components/Layout/Divider";
 //
 // Governance: Proposals
 // FIXME: it's questionable if CIP was meant to be here

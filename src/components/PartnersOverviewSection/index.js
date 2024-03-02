@@ -141,7 +141,7 @@ export default function PartnersOverviewSection() {
                   <TabLabel isSelected={index === selectedIndex}>
                     {benefit.partners_item_label}
                   </TabLabel>
-                  <p className={styles.tabCategory}>
+                  <p className={"tabCategory"}>
                     {benefit.partners_item_category}
                   </p>
                 </Tab>
@@ -178,7 +178,7 @@ export default function PartnersOverviewSection() {
 // Custom component to render the tab label with the arrow for the selected tab
 const TabLabel = ({ isSelected, children }) => (
   <div className={styles.tabLabel}>
-    {isSelected && <FaArrowRight className={styles.tabIcon} />}
+    {isSelected && <FaArrowRight className="tabIcon" />}
     {children}
   </div>
 );

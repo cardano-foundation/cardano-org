@@ -37,25 +37,10 @@
   padding-left: 0;
 }
 
-.tabCategory {
-  color: gray;
-}
-
-[data-theme="dark"] {
-  .tabCategory {
-    color: #e0e0e0;
-  }
-}
-
 .tabLabel {
   display: flex;
   align-items: center;
   font-weight: bold;
-  color: var(--ifm-color-primary);
-}
-
-.tabIcon {
-  margin-right: 8px; /* Add some space between the icon and the text */
   color: var(--ifm-color-primary);
 }
 
