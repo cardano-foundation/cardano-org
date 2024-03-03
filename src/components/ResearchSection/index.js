@@ -4,6 +4,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import Divider from "@site/src/components/Layout/Divider";
 
 // shows a image on the left
 // shows a header with some description on the right with bullet points of links below
@@ -79,7 +80,7 @@ export default function EnterpriseSection({}) {
 
   return (
     <div>
-      <div id="byron" />
+      <Divider id="byron" />
       <Category
         title="Byron"
         imageName="byron"
@@ -121,7 +122,7 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-      <div id="shelley" />
+      <Divider id="shelley" />
       <Category
         title="Shelley"
         imageName="shelley"
@@ -179,7 +180,7 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-      <div id="goguen" />
+      <Divider id="goguen" />
       <Category
         title="Goguen"
         imageName="goguen"
@@ -248,7 +249,7 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-    <div id="basho" />
+    <Divider id="basho" />
       <Category
         title="Basho"
         imageName="basho"
@@ -300,7 +301,7 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-    <div id="voltaire" />
+    <Divider id="voltaire" />
       <Category
         title="Voltaire"
         imageName="voltaire"

@@ -1,7 +1,7 @@
 /* Header.module.css */
 .header {
   text-align: left;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   padding-bottom: 20px;
 }
 
@@ -33,6 +33,16 @@
   .horizontalBar {
     background-color: #e3e3e3; /* Color of the bar */
   }
+}
+
+/* White mode when used in darker BackgroundWrappers */
+
+.white h6 {
+  color: #ffffff !important;  
+}
+
+.white .horizontalBar {
+  background-color: #ffffff !important; 
 }
 
 /* Responsive styles */

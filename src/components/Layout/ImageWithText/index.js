@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
-
+import Divider from "@site/src/components/Layout/Divider";
 //
 // This component:
 // shows an image on one side and some text on the other side.
@@ -23,7 +23,8 @@ export default function ImageWithText({
   const imageUrl = useBaseUrl(`/img/${imageName}`);
 
   return (
-    <div id={id}>
+    <>
+      <Divider id={id} />
       <div
         className={clsx(styles.discoverItemWrap, {
           [styles.flipOrder]: isImageRight,
@@ -44,6 +45,6 @@ export default function ImageWithText({
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -4,13 +4,14 @@ import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 //
 // This component:
 // adds a horizontal line divider with a text
 // can use a id optional to link to a specific divider with /page#id
 
-export default function Divider({ text, id }) {
+export default function Divider({ text, id, white = false }) {
   // This effect runs once after the initial render
   useEffect(() => {
     // Check if the URL's hash matches this divider's ID
@@ -22,14 +23,25 @@ export default function Divider({ text, id }) {
     }
   }, [id]); // Effect dependencies, re-run if id changes
 
+  const headerClass = clsx(styles.header, { [styles.white]: white });
+
   return (
     <div>
-      {id && <div id={id} />}
-      <br />
-      <div className={styles.header}>
-        <h6>{text}</h6>
-        <div className={styles.horizontalBar}></div>
-      </div>
-    </div>
+    {id && (
+      <>
+        <div id={id} />
+        <SpacerBox size="small" />
+      </>
+    )}
+    {text && (
+      <>
+        <br />
+        <div className={headerClass}>
+          <h6>{text}</h6>
+          <div className={styles.horizontalBar}></div>
+        </div>
+      </>
+    )}
+  </div>
   );
 }

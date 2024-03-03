@@ -1,26 +1,7 @@
 /* Header.module.css */
-.header {
-  text-align: left;
-  padding: 20px;
-}
-
-.header h6 {
-  font-weight: normal; /* Assuming you don't want bold */
-  margin-bottom: 10px; /* Space between title and bar */
-}
-
-.horizontalBar {
-  height: 1px; /* Thickness of the bar */
-  background-color: #000; /* Color of the bar */
-  width: 80%; /* Full width by default */
-  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
-}
 
 /* Responsive styles */
 @media (max-width: 599px) {
-  .horizontalBar {
-    width: 50%; /* Adjust the width as needed for smaller screens */
-  }
   .mobileNotVisible {
     display: none;
   }
