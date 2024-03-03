@@ -6,6 +6,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import CommunityDigestForm from "@site/src/components/CommunityDigestFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -38,6 +39,8 @@ export default function Home() {
           <CommunityDigestForm />
         </BoundaryBox>
         <SpacerBox size="medium" />
+
+        <FollowCardanoSection />
     </Layout>
   );
 }
