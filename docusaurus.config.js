@@ -81,11 +81,13 @@ const config = {
             label: 'Learn',
             position: 'left',
             items: [  
+              {to: '/discover-cardano', label: 'Discover Cardano'}, 
               {to: '/what-is-ada', label: 'Learn what ada is'}, 
               {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
               {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
+              {to: '/ouroboros', label: 'What Ouroboros is'}, 
               {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],
           },
