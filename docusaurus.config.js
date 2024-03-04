@@ -77,7 +77,7 @@ const config = {
         },
         items: [
           {
-            /*to: '/learn', FIXME*/ 
+            /*to: '/learn', TODO*/ 
             label: 'Learn',
             position: 'left',
             items: [  
@@ -92,7 +92,7 @@ const config = {
             ],
           },
           {
-            /*to: '/community', FIXME*/
+            /*to: '/community', TODO*/
             label: 'Community',
             position: 'left',
             items: [  
@@ -106,7 +106,7 @@ const config = {
             ],
           },
           {
-            /* to: '/developers', FIXME*/
+            /* to: '/developers', TODO*/
             label: 'Developers',
             position: 'left',
             items: [  
@@ -126,12 +126,12 @@ const config = {
             label: 'Enterprise',
             position: 'left',
             items: [  
-              {to: '/enterprise#education', label: 'Education'}, // Nested item 1
-              {to: '/enterprise#retail', label: 'Retail'}, // Nested item 2
-              {to: '/enterprise#agriculture', label: 'Agriculture'}, // Nested item 3
-              {to: '/enterprise#government', label: 'Government'}, // Nested item 3
-              {to: '/enterprise#finance', label: 'Finance'}, // Nested item 3
-              {to: '/enterprise#healthcare', label: 'Health Care'}, // Nested item 3
+              {to: '/enterprise#education', label: 'Education'},  
+              {to: '/enterprise#retail', label: 'Retail'},  
+              {to: '/enterprise#agriculture', label: 'Agriculture'},  
+              {to: '/enterprise#government', label: 'Government'},  
+              {to: '/enterprise#finance', label: 'Finance'},  
+              {to: '/enterprise#healthcare', label: 'Health Care'},  
             ],
           },
           /* we may want to hide this, and link it only via localhost link in the read me */
@@ -207,7 +207,7 @@ const config = {
                 label: 'Privacy Policy',
                 href: 'https://cardanofoundation.org/en/privacy',
               },
-              /* FIXME: once we have these files, link locally not to the cf page 
+              /* TODO: once we have these files, link locally not to the cf page 
               {
                 label: 'Terms',
                 to: '/terms-and-conditions',

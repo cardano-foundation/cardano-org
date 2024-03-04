@@ -60,6 +60,7 @@ html {
 /* buttons */
 .button {
   border-radius: 30px;
+  font-weight: 400;
 }
 
 /* The navbar needs a little space so that the Cardano logo can breathe */
@@ -221,8 +222,8 @@ img {
   position: absolute;
   top: -1.5rem;
   left: 0;
-  width: 1rem;
-  height: 1rem;
+  width: 0.7rem;
+  height: 0.7rem;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
