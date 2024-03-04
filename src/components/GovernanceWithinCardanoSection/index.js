@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
+import QuoteWithText from "@site/src/components/Layout/QuoteWithText";
 
 //
 // This component shows a simple header with some text below.

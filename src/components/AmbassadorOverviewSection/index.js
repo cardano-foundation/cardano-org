@@ -10,7 +10,7 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 
 /* 
   Ambassador data, for flags please see: https://github.com/wiredmax/react-flags 
-  (FIXME, TODO Not everyone agreed to be listed here)
+  (TODO we still have Ambassadors who did not agree to be listed here)
 */
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
 

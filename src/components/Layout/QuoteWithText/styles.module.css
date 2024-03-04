@@ -10,18 +10,13 @@
   color: var(--ifm-color-base);
 }
 
-html[data-theme="dark"] {
-  .quoteTypeGreen {
+html[data-theme="dark"] .quoteTypeGreen {
     color: rgb(78, 136, 145);
   }
-}
+
 
 .noquote {
   font-size: 18px;
-}
-
-.quote {
-  /*font-size: 18px;*/
 }
 
 .quote::before {

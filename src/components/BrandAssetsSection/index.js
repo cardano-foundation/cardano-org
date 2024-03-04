@@ -1,9 +1,6 @@
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider"; 
 import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
 import { FaDownload } from "react-icons/fa6";

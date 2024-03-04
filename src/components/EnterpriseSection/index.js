@@ -4,6 +4,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import Divider from "@site/src/components/Layout/Divider";
+
 
 // shows a dotted image on the left, below solution and product
 // shows a header with some description on the right
@@ -83,7 +85,7 @@ export default function EnterpriseSection({}) {
 
   return (
     <div>
-      <div id="education" />
+      <Divider id="education" />
       <UseCase
         title="Education"
         description={[
@@ -111,7 +113,7 @@ export default function EnterpriseSection({}) {
         isImageRight={false}
       />
 
-      <div id="retail" />
+      <Divider id="retail" />
       <UseCase
         title="Retail"
         description={[
@@ -135,7 +137,7 @@ export default function EnterpriseSection({}) {
         isImageRight={true}
       />
 
-      <div id="agriculture" />
+      <Divider id="agriculture" />
       <UseCase
         title="Agriculture"
         description={[
@@ -159,7 +161,7 @@ export default function EnterpriseSection({}) {
         isImageRight={false}
       />
 
-      <div id="government" />
+      <Divider id="government" />
       <UseCase
         title="Government"
         description={[
@@ -179,7 +181,7 @@ export default function EnterpriseSection({}) {
         isImageRight={true}
       />
 
-      <div id="finance" />
+      <Divider id="finance" />
       <UseCase
         title="Finance"
         description={[
@@ -198,7 +200,7 @@ export default function EnterpriseSection({}) {
         isImageRight={false}
       />
 
-      <div id="healthcare" />
+      <Divider id="healthcare" />
       <UseCase
         title="Health Care"
         description={[

@@ -129,7 +129,7 @@ export default function HomeBenefitsSection() {
                   <TabLabel isSelected={index === selectedIndex}>
                     {benefit.benefits_item_label}
                   </TabLabel>
-                  <p className={styles.tabCategory}>
+                  <p className={"tabCategory"}>
                     {benefit.benefits_item_category}
                   </p>
                 </Tab>
@@ -141,7 +141,7 @@ export default function HomeBenefitsSection() {
               <TabPanel
                 key={index}
                 className={`${styles.tabPanel} ${
-                  index === selectedIndex ? styles.swipeIn : styles.swipeOut
+                  index === selectedIndex ? "swipeIn" : "swipeOut"
                 }`}
               >
                 <h2>{benefit.benefits_item_title}</h2>
@@ -170,7 +170,7 @@ export default function HomeBenefitsSection() {
 // Custom component to render the tab label with the arrow for the selected tab
 const TabLabel = ({ isSelected, children }) => (
   <div className={styles.tabLabel}>
-    {isSelected && <FaArrowRight className={styles.tabIcon} />}
+    {isSelected && <FaArrowRight className="tabIcon" />}
     {children}
   </div>
 );

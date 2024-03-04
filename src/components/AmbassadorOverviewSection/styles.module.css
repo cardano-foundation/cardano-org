@@ -48,6 +48,10 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Make the shadow more pronounced */
 }
 
+[data-theme="dark"] .ambassadorCard {
+  background-color: #323131;  
+}
+
 .ambassadorName {
   font-size: 18px;
   text-align: center;  
@@ -74,12 +78,8 @@
   text-decoration: none;
 }
 
-[data-theme="dark"] {
-  .ambassadorCard {
-    background-color: #323131;  
-  }
-}
 
+  
 /* screen size changes */
 @media screen and (max-width: 576px) {
   .ambassadorCard {

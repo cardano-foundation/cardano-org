@@ -7,8 +7,7 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 //
 // This component:
 // shows a header on the left, with with some text on the right,
-// a tagline below and a call to action button below the tagline
-// fixme: the background here was probably not clever, this should go in a parent component
+// a quote below and a call to action button below the tagline
 
 export default function FeaturedTitleWithText({
   title,
@@ -35,7 +34,7 @@ export default function FeaturedTitleWithText({
           ) : (
             <p className="black-text">{parseMarkdownLikeText(description)}</p>
           )}
-          <h2 className="red-text">{quote}</h2>
+          <h2 className={clsx("red-text", styles.quote)}>{quote}</h2>
           {buttonLabel && buttonLink && (
             <Link className="button button--primary button--lg" to={buttonLink}>
               {buttonLabel}

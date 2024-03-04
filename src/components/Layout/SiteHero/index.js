@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import OuroborosLogo from "@site/src/components/Layout/OuroborosLogo";
 
 export default function SiteHero({ title, description, bannerType }) {
 
@@ -44,6 +45,9 @@ export default function SiteHero({ title, description, bannerType }) {
     case "braidBlack":
       heroClassName = styles.heroBannerBraidBlack;
       break;
+    case "ouroboros":
+    heroClassName = styles.heroBannerOuroboros;
+      break;
     default:
       heroClassName = styles.heroBannerStarburst;
   }
@@ -52,7 +56,11 @@ export default function SiteHero({ title, description, bannerType }) {
     <header className={clsx("hero hero--primary", heroClassName)}>
       <div className={styles.backgroundBox}>
         <div className={styles.taglineContainer}>
-          <h1 className="hero__title">{title}</h1>
+        {
+            bannerType === "ouroboros"
+              ? <h1 className="hero__title"><OuroborosLogo className={styles.ouroborosLogo} /></h1>
+              : <h1 className="hero__title">{title}</h1>
+          }
           <p className={clsx("hero__subtitle", styles.subtitle)}>
             {description}
           </p>
