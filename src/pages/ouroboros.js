@@ -4,10 +4,13 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import QuoteBox from "@site/src/components/Layout/QuoteBox";
+import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
+import SpacerBox  from "@site/src/components/Layout/SpacerBox";
 import ProofOfStakeSection from "@site/src/components/ProofOfStakeSection";
+
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -106,6 +109,17 @@ export default function Home() {
       </BoundaryBox>
 
       <ProofOfStakeSection />
+
+      <BackgroundWrapper backgroundType={"gradientDark"}>
+          <BoundaryBox>
+            <CtaOneColumn
+              title="Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
+              buttonLabel={"Try Out"}
+              buttonLink={"https://ouroboros.iohk.io/ouroboros-game/"}
+            />
+            <SpacerBox size="small" />
+          </BoundaryBox>
+        </BackgroundWrapper>
     </Layout>
   );
 }
