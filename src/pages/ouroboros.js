@@ -114,7 +114,7 @@ export default function Home() {
           <BoundaryBox>
             <CtaOneColumn
               title="Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
-              buttonLabel={"Try Out"}
+              buttonLabel={"Play the game"}
               buttonLink={"https://ouroboros.iohk.io/ouroboros-game/"}
             />
             <SpacerBox size="small" />
