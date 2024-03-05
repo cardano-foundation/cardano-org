@@ -1,0 +1,22 @@
+.statsFrame {
+  width: 100%;
+  height: 3400px;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: Chivo, sans-serif;
+}
+
+.statsTable {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tableHeader {
+  background-color: rgb(31, 55, 166);
+  color: #ffffff;
+}
+ 
