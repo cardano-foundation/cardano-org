@@ -88,6 +88,7 @@ const config = {
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
               {to: '/ouroboros', label: 'What Ouroboros is'}, 
+              {to: '/genesis', label: 'About Genesis Distribution'}, 
               {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],
           },
@@ -229,10 +230,6 @@ const config = {
               {
                 label: 'News',
                 to: '/news',
-              },
-              {
-                label: 'Disclosure',
-                to: '/responsible-disclosure',
               },
             ],
           },

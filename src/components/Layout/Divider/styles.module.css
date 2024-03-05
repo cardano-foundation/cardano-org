@@ -20,6 +20,7 @@
 :root {
   .header h6 {
     color: #777778;
+    font-size: 12px;
   }
   .horizontalBar {
     background-color: #777778; /* Color of the bar */
