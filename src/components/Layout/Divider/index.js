@@ -12,17 +12,31 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 // can use a id optional to link to a specific divider with /page#id
 
 export default function Divider({ text, id, white = false }) {
-  // This effect runs once after the initial render
   useEffect(() => {
-    // Check if the URL's hash matches this divider's ID
-    if (window.location.hash === `#${id}`) {
-      // Use setTimeout to allow the page to render and layout changes to complete
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView();
-      }, 100);  
-    }
-  }, [id]); // Effect dependencies, re-run if id changes
+    const handleHashChange = () => {
+      if (window.location.hash === `#${id}`) {
+        // Using setTimeout to ensure the page layout has stabilized
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            const yOffset = -100; // Adjusting the scroll position
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            // Smooth scroll to the calculated position
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100); // A short delay can help ensure layout updates have taken place
+      }
+    };
 
+    // Execute handleHashChange initially and on hash changes
+    handleHashChange(); // For the initial load
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [id]); // Dependency array ensures effect re-runs if 'id' change
   const headerClass = clsx(styles.header, { [styles.white]: white });
 
   return (
