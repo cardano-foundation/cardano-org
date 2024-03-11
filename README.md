@@ -44,3 +44,9 @@ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service. Always build the site once before firing a pull request as many additional checks are carried out.
+
+## Network testing
+```
+yarn start --host 0.0.0.0   
+```
+With this command you are making it listen on all network interfaces (IP addresses) of your computer. This includes the local loopback interface (127.0.0.1 or localhost) and any other network interfaces that can connect your computer to a local network or the internet. Great for testing the site with different devices on your local network.
