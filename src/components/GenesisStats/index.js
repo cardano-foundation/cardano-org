@@ -29,7 +29,7 @@ export default function FollowCardanoSection() {
       <iframe
         className={styles.statsFrame}
         scrolling="no"
-        src="https://static.iohk.io/adasale/"
+        src="/archive/static.iohk.io/adasale/"
       ></iframe>
       <h3>Post-Commission Exodus Addresses</h3>
       <div class="exodusTable">

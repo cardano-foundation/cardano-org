@@ -1,0 +1,101 @@
+
+.entry-content img {
+	border: 0 solid #ebebeb;
+}
+
+
+@media(min-width:768px){
+.nodesktop{display: none}
+}
+@media(max-width:767px){
+.nomobile{display: none}
+}
+
+
+
+
+@media(max-width:991px){
+	.main h1{font-size: 28px;}
+	.main .btn-group {font-size:11px;}
+.not-page-builder .entry-content p, .not-page-builder .entry-content li {
+	font-size: 13px;
+}
+	.entry h2 {
+	font-size:20px;
+}	.entry h3 {
+	font-size:18px;
+}
+
+}
+@media(max-width:767px){
+.not-page-builder .entry-content p, .not-page-builder .entry-content li {
+	font-size: 11px;
+}
+}
+
+@media(max-width:600px){
+	.main .wrap{padding:0 10px}
+.entry-content  {padding:0 10px}
+
+}
+
+
+.main table th{text-transform:uppercase;opacity:0.5}
+.main table tr+tr td{border-top:1px solid rgba(200,200,200,0.1)}
+.main table th+th,
+.main table td+td{border-left:1px solid rgba(200,200,200,0.3)}
+
+.main table td{vertical-align: middle}
+.main table td,
+.main table th{padding:6px 10px}
+
+@media(max-width:640px){
+.main table th{font-size:50%;padding:5px}
+.main table td{font-size:70%;padding:5px}
+}
+@media(max-width:500px){
+.main table th{font-size:45%;padding:3px}
+.main table td{font-size:60%;padding:3px}
+}
+
+
+.weeklyreports .switches .collapse{display:none}
+.weeklyreports .switches .expand{display:inline}
+.weeklyreports.expanded .switches .collapse{display:inline}
+.weeklyreports.expanded .switches .expand{display:none}
+
+.weeklyreports .report .summary{display:none}
+
+.weeklyreports .report.open .summary{display:block}
+
+
+
+
+.inline-block{display: inline-block}
+.has-children .children{display: none;position:absolute;z-index: 99;background: rgba(0,0,0,0.5);margin:0 !important;min-width:122px;list-style-type: none !important;padding:0 !important}
+.has-children .children li{margin:0 !important}
+.has-children .children li+li{border-top:1px solid  rgba(200,200,200,0.1)}
+.has-children .children li a{padding:5px 8px;display:block;text-decoration:none;text-align:center}
+.has-children .children li a:hover{color:#fff}
+
+.report_dropdown a{font-size: 100%;color:#fff;}
+.report_dropdown a.dropdown_label{font-size:130%;color:#fff;padding:10px}
+
+.io_dropdown.dropped .children{display:block}
+.io_dropdown .disabled:hover,
+.io_dropdown .disabled{opacity:.2;color:#fff}
+
+
+.uppercase{text-transform: uppercase}
+
+
+
+
+#load-report .paging a{background: rgba(200,200,200,0.1);text-decoration: none}
+#load-report .paging .active{background: rgba(200,200,200,0.4)}
+
+
+/*  */
+
+
+/*  */
