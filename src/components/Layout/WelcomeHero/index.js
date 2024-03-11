@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link";
 function WelcomeHero({ title, description }) {
 
   return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}> 
       <div className="container">
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
