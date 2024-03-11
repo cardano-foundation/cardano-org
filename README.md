@@ -14,7 +14,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Clone the repo
 ```
-git clone https://github.com/katomm/www-cardano-revamp.git &&  && yarn install  
+git clone https://github.com/katomm/www-cardano-revamp.git
 ```
   
 ## Navigate into the folder
