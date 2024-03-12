@@ -90,7 +90,7 @@ function SponsorshipForm() {
         headingDot={false}
       />
       <br />
-      <Link className="button button--primary button--lg" href="#fixme">
+      <Link className="button button--primary button--lg" href="https://summit.cardano.org/sponsor/#become-a-sponsor">
         Sponsorship Request
       </Link>
     </div>
