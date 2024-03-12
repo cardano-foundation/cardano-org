@@ -16,21 +16,13 @@
   }
 }
 
-:root {
-  --background-image: url("/img/hero-header-zoom-full.png");
-}
-
-[data-theme="dark"] {
-  --background-image: url("/img/hero-header-zoom-full.png");
-}
-
 .backgroundImageContainer {
   display: flex; /* Enable Flexbox */
   flex-direction: column; /* Stack flex items vertically */
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally if you have a specific layout that requires it */
 
-  background-image: var(--background-image);
+  background-image: url("/img/hero-header-zoom-full.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
