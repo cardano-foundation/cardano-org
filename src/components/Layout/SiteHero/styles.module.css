@@ -211,19 +211,19 @@ html[data-theme="dark"] .heroBannerOverlap {
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: 65%;
-  background-position: top right;
+  background-size: 5600px;
+  background-position: 30% 15%;
   background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-blue.svg);
   height: 410px;
 }
 
 html[data-theme="light"] .heroBannerWaves {
-  background-image: url(/img/hero-header-waves.webp);
+
   background-color: #0538af;
 }
 
 html[data-theme="dark"] .heroBannerWaves {
-  background-image: url(/img/hero-header-waves.webp);
   background-color: #244eaf;
 }
 
@@ -421,8 +421,7 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   }
   .heroBannerWaves {
     padding: 4rem;
-    background-size: cover;
-    background-position: top right;
+     
   }
   .heroBannerZoomBlueRed {
     background-position: calc(100% + 100px) center;  
@@ -451,7 +450,8 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
     background-position: 34% 50%;
   }
   .heroBannerWaves {
-    background-position: top right;
+    padding: 4rem 2rem;
+    background-size: 4000px;
   }
 }
 
@@ -476,7 +476,6 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
     background-size: cover;
   }
   .heroBannerWaves {
-    background-size: 35%;
-    background-position: top right;
+    background-size: 6800px;
   }
 }
