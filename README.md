@@ -19,7 +19,7 @@ git clone https://github.com/cardano-foundation/cardano-org.git
   
 ## Navigate into the folder
 ```
-cd www-cardano-revamp
+cd cardano-org
 ```
 
 ## Install all dependencies
