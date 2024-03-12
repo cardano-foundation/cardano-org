@@ -26,43 +26,6 @@
   }
 }
 
-/* Divider */
-.header {
-  text-align: left;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.header h6 {
-  font-weight: 700;
-  margin-bottom: 10px; /* Space between title and horizontalBar */
-  font-size: 1rem;
-}
-
-.horizontalBar {
-  height: 1px; /* Thickness of the bar */
-  width: 80%; /* Full width by default */
-  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
-}
-
-:root {
-  .header h6 {
-    color: #ffffff;
-  }
-  .horizontalBar {
-    background-color: #ffffff; /* Color of the bar */
-  }
-}
-
-[data-theme="dark"] {
-  .header h6 {
-    color: #ffffff;
-  }
-  .horizontalBar {
-    background-color: #ffffff; /* Color of the bar */
-  }
-}
-
 /* Responsive styles */
 @media (max-width: 599px) {
   .horizontalBar {
