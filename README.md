@@ -35,7 +35,7 @@ yarn start
 
 This command starts a local development server and opens up a browser window to http://localhost:3000. Most changes are reflected live without having to restart the server.
 
-To browse the documentation visit http://localhost:3000/docs/intro.
+To browse the documentation visit http://localhost:3000/docs/.
 
 ## Build
 
