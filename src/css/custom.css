@@ -78,18 +78,22 @@ html {
   padding-bottom: 15px;
 }
 
-/* Chivo Font */
+/* Chivo Variable Font */
 @font-face {
   font-family: 'Chivo';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900; /* This range covers Thin to Black weights */
   font-display: swap;
-  src: local('Chivo'), url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap&subset=latin') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; /* for Latin */
+  src: url('/fonts/Chivo-VariableFont_wght.ttf') format('truetype-variations');
 }
 
-
- 
+@font-face {
+  font-family: 'Chivo';
+  font-style: italic;
+  font-weight: 100 900; /* This range covers Thin to Black weights */
+  font-display: swap;
+  src: url('/fonts/Chivo-Italic-VariableFont_wght.ttf') format('truetype-variations');
+}
 
 /* Cardano Brand */
 body {
