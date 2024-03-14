@@ -49,7 +49,7 @@ To make meaningful contributions you need to know how to build pages that look i
 
 Create a file at `src/pages/hello-world.js`:
 
-```jsx showLineNumbers title="src/pages/hello-world.js"
+```jsx title="src/pages/hello-world.js"
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -107,7 +107,7 @@ The `<SiteHero>` component allows you to easily switch the header design by chan
 
 Example overview of each bannerType is available at [http://localhost:3000/example-components-sitehero](http://localhost:3000/example-components-sitehero)
 
-```jsx {4} showLineNumbers
+```jsx {4}
 <SiteHero
       title="Hello World"
       description="This is just an example how easy it is to create pages."
@@ -120,7 +120,7 @@ Example overview of each bannerType is available at [http://localhost:3000/examp
 
 Add more text with another `<TitleWithText>` component. This time set headingDot to false.
 
-```jsx {8} showLineNumbers
+```jsx {8} 
 <TitleWithText 
       title="Title without the dot"
       description={[
@@ -136,7 +136,7 @@ Add more text with another `<TitleWithText>` component. This time set headingDot
 
 To add a little bit of space at the end of the content we add the `<SpacerBox>` and to change the background we will wrap everything in a `<BackgroundWrapper>`. Please apply the highlighted changes:
 
-```jsx {6-7,29,52-53} showLineNumbers title="src/pages/hello-world.js"
+```jsx {6-7,29,52-53} title="src/pages/hello-world.js"
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
