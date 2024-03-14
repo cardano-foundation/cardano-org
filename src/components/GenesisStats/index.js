@@ -32,7 +32,7 @@ export default function FollowCardanoSection() {
         src="/archive/static.iohk.io/adasale/"
       ></iframe>
       <h3>Post-Commission Exodus Addresses</h3>
-      <div class="exodusTable">
+      <div className="exodusTable">
         <table>
           <tbody>
             <tr>
@@ -165,7 +165,7 @@ export default function FollowCardanoSection() {
       <table className={styles.statsTable}>
         <tbody>
           <tr className={styles.tableHeader}>
-            <td class="left-align">Tranche</td>
+            <td className="left-align">Tranche</td>
             <td># of paid invoices</td>
             <td>Bitcoin Received (inc Yen)</td>
             <td>Amount paid (Yen)</td>
@@ -173,7 +173,7 @@ export default function FollowCardanoSection() {
             <td>Total # of ADA Sold</td>
           </tr>
           <tr>
-            <td class="left-align">T1</td>
+            <td className="left-align">T1</td>
             <td>277</td>
             <td>9080.1</td>
             <td>128,687,124</td>
@@ -181,7 +181,7 @@ export default function FollowCardanoSection() {
             <td>1,255,160,024</td>
           </tr>
           <tr>
-            <td class="left-align">T2</td>
+            <td className="left-align">T2</td>
             <td>4100</td>
             <td>40202.2</td>
             <td>1,222,041,982</td>
@@ -189,7 +189,7 @@ export default function FollowCardanoSection() {
             <td>7,729,842,852</td>
           </tr>
           <tr>
-            <td class="left-align">T3</td>
+            <td className="left-align">T3</td>
             <td>2903</td>
             <td>24278.9</td>
             <td>696,502,791</td>
@@ -197,7 +197,7 @@ export default function FollowCardanoSection() {
             <td>5,923,771,020</td>
           </tr>
           <tr>
-            <td class="left-align">T3.5</td>
+            <td className="left-align">T3.5</td>
             <td>301</td>
             <td>2462.6</td>
             <td>764,054</td>
@@ -205,7 +205,7 @@ export default function FollowCardanoSection() {
             <td>721,948,412</td>
           </tr>
           <tr>
-            <td class="left-align">T4</td>
+            <td className="left-align">T4</td>
             <td>6821</td>
             <td>32820.7</td>
             <td>1,015,304,038</td>
@@ -213,7 +213,7 @@ export default function FollowCardanoSection() {
             <td>10,296,348,230</td>
           </tr>
           <tr>
-            <td class="left-align">Total</td>
+            <td className="left-align">Total</td>
             <td>14402</td>
             <td>108844.5</td>
             <td>3,063,299,989</td>
@@ -239,7 +239,7 @@ export default function FollowCardanoSection() {
             <td></td>
           </tr>*/}
           <tr className={styles.tableHeader}>
-            <td class="left-align">Country</td>
+            <td className="left-align">Country</td>
             <td>T1</td>
             <td>T2</td>
             <td>T3</td>
@@ -249,7 +249,7 @@ export default function FollowCardanoSection() {
             <td>% Of Sale</td>
           </tr>
           <tr>
-            <td class="left-align">JP</td>
+            <td className="left-align">JP</td>
             <td>9080.1</td>
             <td>40189.3</td>
             <td>24278.9</td>
@@ -259,7 +259,7 @@ export default function FollowCardanoSection() {
             <td>94.45%</td>
           </tr>
           <tr>
-            <td class="left-align">KR</td>
+            <td className="left-align">KR</td>
             <td></td>
             <td>10.6</td>
             <td></td>
@@ -269,7 +269,7 @@ export default function FollowCardanoSection() {
             <td>2.56%</td>
           </tr>
           <tr>
-            <td class="left-align">CN</td>
+            <td className="left-align">CN</td>
             <td></td>
             <td></td>
             <td></td>
@@ -279,7 +279,7 @@ export default function FollowCardanoSection() {
             <td>2.39%</td>
           </tr>
           <tr>
-            <td class="left-align">TH</td>
+            <td className="left-align">TH</td>
             <td></td>
             <td></td>
             <td></td>
@@ -289,7 +289,7 @@ export default function FollowCardanoSection() {
             <td>0.42%</td>
           </tr>
           <tr>
-            <td class="left-align">MY</td>
+            <td className="left-align">MY</td>
             <td></td>
             <td>2.3</td>
             <td></td>
@@ -299,7 +299,7 @@ export default function FollowCardanoSection() {
             <td>0.10%</td>
           </tr>
           <tr>
-            <td class="left-align">PH</td>
+            <td className="left-align">PH</td>
             <td></td>
             <td></td>
             <td></td>
@@ -309,7 +309,7 @@ export default function FollowCardanoSection() {
             <td>0.01%</td>
           </tr>
           <tr>
-            <td class="left-align">TW</td>
+            <td className="left-align">TW</td>
             <td></td>
             <td></td>
             <td></td>
@@ -319,7 +319,7 @@ export default function FollowCardanoSection() {
             <td>0.01%</td>
           </tr>
           <tr>
-            <td class="left-align">VN</td>
+            <td className="left-align">VN</td>
             <td></td>
             <td></td>
             <td></td>
@@ -329,7 +329,7 @@ export default function FollowCardanoSection() {
             <td>0.07%</td>
           </tr>
           <tr>
-            <td class="left-align">Grand Total</td>
+            <td className="left-align">Grand Total</td>
             <td>9080.1</td>
             <td>40202.2</td>
             <td>24278.9</td>
@@ -357,7 +357,7 @@ export default function FollowCardanoSection() {
           </tr>
         */}
           <tr className={styles.tableHeader}>
-            <td class="left-align">Age Range</td>
+            <td className="left-align">Age Range</td>
             <td>T1</td>
             <td>T2</td>
             <td>T3</td>
@@ -366,7 +366,7 @@ export default function FollowCardanoSection() {
             <td>Grand Total</td>
           </tr>
           <tr>
-            <td class="left-align">under 25</td>
+            <td className="left-align">under 25</td>
             <td>$529,860</td>
             <td>$513,747</td>
             <td>$189,321</td>
@@ -375,7 +375,7 @@ export default function FollowCardanoSection() {
             <td>$1,764,391</td>
           </tr>
           <tr>
-            <td class="left-align">25 – 34</td>
+            <td className="left-align">25 – 34</td>
             <td>$338,785</td>
             <td>$2,819,273</td>
             <td>$2,080,465</td>
@@ -384,7 +384,7 @@ export default function FollowCardanoSection() {
             <td>$13,754,626</td>
           </tr>
           <tr>
-            <td class="left-align">35 – 44</td>
+            <td className="left-align">35 – 44</td>
             <td>$954,120</td>
             <td>$6,332,533</td>
             <td>$4,316,665</td>
@@ -393,7 +393,7 @@ export default function FollowCardanoSection() {
             <td>$20,432,392</td>
           </tr>
           <tr>
-            <td class="left-align">45 – 54</td>
+            <td className="left-align">45 – 54</td>
             <td>$197,589</td>
             <td>$3,660,939</td>
             <td>$3,534,050</td>
@@ -402,7 +402,7 @@ export default function FollowCardanoSection() {
             <td>$14,502,391</td>
           </tr>
           <tr>
-            <td class="left-align">55 – 64</td>
+            <td className="left-align">55 – 64</td>
             <td>$183,058</td>
             <td>$2,816,849</td>
             <td>$3,185,516</td>
@@ -411,7 +411,7 @@ export default function FollowCardanoSection() {
             <td>$8,986,116</td>
           </tr>
           <tr>
-            <td class="left-align">65+</td>
+            <td className="left-align">65+</td>
             <td>$315,480</td>
             <td>$1,061,187</td>
             <td>$1,059,494</td>
@@ -420,7 +420,7 @@ export default function FollowCardanoSection() {
             <td>$3,553,697</td>
           </tr>
           <tr>
-            <td class="left-align">Grand Total</td>
+            <td className="left-align">Grand Total</td>
             <td>$2,518,893</td>
             <td>$17,204,527</td>
             <td>$14,365,511</td>

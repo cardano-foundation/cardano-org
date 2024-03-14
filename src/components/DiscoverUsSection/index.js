@@ -24,7 +24,7 @@ export default function DiscoverUsSection({}) {
   const context = useDocusaurusContext();
 
   return (
-    <div class="container">
+    <div className="container">
       <div className={clsx("container", styles.boxWrap)}>
         <div className={styles.leftColumn}>
           <p>See Us</p>

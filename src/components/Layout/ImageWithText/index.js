@@ -34,7 +34,7 @@ export default function ImageWithText({
           {imageName && <img src={imageUrl} alt={imageName} />}
         </div>
         <div className={styles.textWrap}>
-          {title && <h1 class="headingDot">{title}</h1>}
+          {title && <h1 className="headingDot">{title}</h1>}
           {subtitle && <h2>{subtitle}</h2>}
           {text && Array.isArray(text) ? (
             text.map((paragraph, index) => (
