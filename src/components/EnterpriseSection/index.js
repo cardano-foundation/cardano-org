@@ -154,7 +154,7 @@ export default function EnterpriseSection({}) {
         solutions="Supply chain tracking"
         product={[
           "Atala TRACE (IOG)",
-          "[EMURGO Solution](https://emurgo.io/industry-cases#supply-chain-and-traceability)",
+          "[EMURGO Solution](https://www.emurgo.io/press-news/why-blockchain-can-change-the-healthcare-industry-part-1)",
         ]}
         buttonLink="https://atalaprism.io"
         imageName="agriculture"
@@ -216,7 +216,7 @@ export default function EnterpriseSection({}) {
         solutions="Counterfeit medicine"
         product={[
           "Atala SCAN (IOG)",
-          "[EMURGO Solution](https://emurgo.io/industry-cases#healthcare-and-life-science)",
+          "[EMURGO Solution](https://www.emurgo.io/press-news/why-blockchain-can-change-the-healthcare-industry-part-1)",
         ]}
         buttonLink="https://iohk.io/en/enterprise/#consultancy"
         imageName="healthcare"
