@@ -223,7 +223,7 @@ export default function Home() {
               title = "Powered by you"    
               description={[
                 "This community is operated by the community staff and you, the community. If you have any further questions about how things \
-                should work here, open a new topic in the [community feedback category](https://forum.cardano.org/c/community-feedback) of the forum and let's discuss! If there is ever a critical \
+                should work here, open a new topic in the [community feedback category](https://forum.cardano.org/c/english/community-feedback/16) of the forum and let's discuss! If there is ever a critical \
                 or urgent issue please contact us directly at community *at* cardano *dot* org.",
               ]}
               titleType="black"
