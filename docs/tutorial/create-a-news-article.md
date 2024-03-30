@@ -57,6 +57,11 @@ Feel free to play around and edit this post as much as you like.
 ![img](./banner.webp)
 ```
 
+:::tip
+
+Unfortunately you can not reference themend images(with dark and light mode) like this. Please put them in /img/news.
+:::
+
 The result should look like this:
 ![img](/img/docs/tutorial/news-step-2.jpg)
 
@@ -65,7 +70,7 @@ The result should look like this:
 
 Cardano.org serves as a hub rather than a primary platform for publishing articles. Consequently, articles should originate from an external source to which they can link back. It is advisable to post a concise summary of the article, approximately 50 to 60 words in length, accompanied by an appealing image. 
 
-Additionally, include a "Read more" link directing readers to the full article on its original website:
+Additionally, include a `Read more` link directing readers to the full article on its original website. If the article has an image, add the `Read more` link above it:
 
 ```md {10} title="blog/2024-04-14-hello-world.md.md"
 ---
@@ -77,13 +82,22 @@ tags: [greetings]
 
 Congratulations, you have made your first news article!
 
-Feel free to play around and edit this post as much as you like. [**Read more**](https://developers.cardano.org) 
+Feel free to play around and edit this post as much as you like. 
+
+<div style={{ textAlign: 'right' }}>
+[**Read more**](https://developers.cardano.org) 
+</div>
 
 ![img](./banner.webp)
 ```
 
+:::tip
 
-## Guidelines
+Do not use `<!-- truncate -->` marker in the news articles as it would add another `Read more` link.
+
+:::
+
+## Guidelines (work in progress)
 
 We need to agree on clear guidelines for the news. To provide an initial guide, here's what we seek and will approve for content:
 
