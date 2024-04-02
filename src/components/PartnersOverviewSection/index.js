@@ -51,21 +51,13 @@ const partnersData = {
           Bank of America, IBM, Dell, Boeing, GE, Target Corporation, Morgan Stanley, S&P and more.",
       },
       {
-        partners_item_label: "Input Output Global",
+        partners_item_label: "Input Output",
         partners_item_category: "Research and engineering company",
         partners_item_image: "iog",
         partners_item_link: "https://iohk.io",
         partners_item_body:
-          "IOG (former IOHK) is a research and engineering company that builds cryptocurrencies and blockchains for academic institutions, \
-          enterprise, and government entities.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, IOHK is contracted to design, \
-          build, and maintain the Cardano platform. A fully decentralized company, IOHK is comprised of dynamic, innovative teams – \
-          based all over the world, collectively committed to innovation through delivering the highest standards in software engineering \
-          based on rigorous peer-to-peer reviewed science.<br /><br />IOHK is a leader in building distributed computing systems and \
-          decentralized technology solutions. Currently, the company is studying new tools and paradigms in the field of cryptographic \
-          research and the architecture of cryptocurrencies. IOHK is committed to open-source principles, and ethical, purpose-driven \
-          business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain \
-          education is core to IOHK’s philosophy. IOHK Research is focused on promoting the academic study of blockchain, supported by a \
-          team of educators, academic partners, and specially developed courses.",
+          "Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, Input Output was one of the three pioneer entities behind Cardano,  originally contracted to design, build, and help maintain the Cardano platform. A fully decentralized company, Input Output is comprised of dynamic, innovative teams– based all over the world, collectively committed to innovation through delivering the highest standards in software engineering based on rigorous peer-to-peer reviewed science.<br /><br />Input Output is a leader in building distributed computing systems and decentralized technology solutions. The company continues to research and build new paradigms and products in the field of distributed ledger technology and the architecture of Web3. Input Output is committed to open-source principles, and ethical, purpose-driven business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain education is core to Input Output’s philosophy. IO Research is focused on promoting the academic study of blockchain, supported by a team of educators, academic partners, and specially developed courses.",
+          
       },
     ],
   },
