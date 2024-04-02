@@ -39,33 +39,16 @@ const partnersData = {
         partners_item_image: "emurgo",
         partners_item_link: "https://emurgo.io",
         partners_item_body:
-          "A founding member of the Cardano protocol, EMURGO develops, supports, and incubates commercial opportunities and \
-          helps integrate businesses into our blockchain system. Essentially the for-profit arm of Cardano, EMURGO endeavors \
-          to advance the platform and drive adoption through commercial ventures. With offices and live projects across Singapore, \
-          Japan, the USA, India, and Indonesia, EMURGO has extensive expertise in blockchain R&D, plus a global network of related \
-          blockchain and industry partners.<br /><br />EMURGO is geared to support high-impact ideas with the potential to bring \
-          positive change across a range of sectors, especially financial services, supply chain, retail, healthcare, the public \
-          sector, and IoT. As a complete blockchain solutions provider EMURGO is dedicated to facilitating blockchain education – \
-          offering courses and expertise to universities, professionals, enterprises, and blockchain beginners. India is now home \
-          to the EMURGO Academy, and EMURGO Education students come from some of the world’s most esteemed companies: Accenture, \
-          Bank of America, IBM, Dell, Boeing, GE, Target Corporation, Morgan Stanley, S&P and more.",
+          "EMURGO is a blockchain technology company and a founding entity of the Cardano blockchain that provides products and services to drive the adoption of Cardano’s Web3 ecosystem. Established in 2015 in Japan, EMURGO's mission is to facilitate commercial adoption through dynamic partnerships with existing ecosystem members and the seamless integration of new entrants.<br /><br />By prioritizing investments, delivering continuous education, and providing infrastructure services, EMURGO aims to unlock the full potential of the Cardano ecosystem.",
       },
       {
-        partners_item_label: "Input Output Global",
+        partners_item_label: "Input Output",
         partners_item_category: "Research and engineering company",
         partners_item_image: "iog",
         partners_item_link: "https://iohk.io",
         partners_item_body:
-          "IOG (former IOHK) is a research and engineering company that builds cryptocurrencies and blockchains for academic institutions, \
-          enterprise, and government entities.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, IOHK is contracted to design, \
-          build, and maintain the Cardano platform. A fully decentralized company, IOHK is comprised of dynamic, innovative teams – \
-          based all over the world, collectively committed to innovation through delivering the highest standards in software engineering \
-          based on rigorous peer-to-peer reviewed science.<br /><br />IOHK is a leader in building distributed computing systems and \
-          decentralized technology solutions. Currently, the company is studying new tools and paradigms in the field of cryptographic \
-          research and the architecture of cryptocurrencies. IOHK is committed to open-source principles, and ethical, purpose-driven \
-          business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain \
-          education is core to IOHK’s philosophy. IOHK Research is focused on promoting the academic study of blockchain, supported by a \
-          team of educators, academic partners, and specially developed courses.",
+          "Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, Input Output was one of the three pioneer entities behind Cardano,  originally contracted to design, build, and help maintain the Cardano platform. A fully decentralized company, Input Output is comprised of dynamic, innovative teams– based all over the world, collectively committed to innovation through delivering the highest standards in software engineering based on rigorous peer-to-peer reviewed science.<br /><br />Input Output is a leader in building distributed computing systems and decentralized technology solutions. The company continues to research and build new paradigms and products in the field of distributed ledger technology and the architecture of Web3. Input Output is committed to open-source principles, and ethical, purpose-driven business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain education is core to Input Output’s philosophy. IO Research is focused on promoting the academic study of blockchain, supported by a team of educators, academic partners, and specially developed courses.",
+          
       },
     ],
   },
