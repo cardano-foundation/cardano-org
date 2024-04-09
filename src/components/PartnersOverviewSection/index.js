@@ -26,12 +26,7 @@ const partnersData = {
         partners_item_image: "cardanofoundation",
         partners_item_link: "https://cardanofoundation.org",
         partners_item_body:
-          "The Cardano Foundation is an independent, Swiss-based not-for-profit organization. The Foundation is tasked with advancing \
-          the public digital infrastructure Cardano and works to anchor it as a utility for financial and social systems, thus empowering \
-          the digital architects of the future.<br /><br />The Foundation facilitates the worldwide advancement of Cardano in enterprise applications. It develops infrastructure \
-          tooling—including where there may not be an immediate commercial use case—plus strengthens operational resilience, and drives \
-          diversity of on-infrastructure use cases as well as the development of sound and representative governance.<br /><br />Another significant part of the Cardano Foundation’s mission is to engage with and support the Cardano community. The Foundation \
-          assists the development of tools the community can use to leverage Cardano to solve problems in new ways.",
+          "The Cardano Foundation is an independent, Swiss-based not-for-profit organization. The Foundation is tasked with advancing the public digital infrastructure Cardano and works to anchor it as a utility for financial and social systems, thus empowering the digital architects of the future.<br /><br />The Foundation facilitates the worldwide advancement of Cardano in enterprise applications. It develops infrastructure tooling—including where there may not be an immediate commercial use case—plus strengthens operational resilience, and drives diversity of on-infrastructure use cases as well as the development of sound and representative governance.<br /><br />Another significant part of the Cardano Foundation’s mission is to engage with and support the Cardano community. The Foundation assists the development of tools the community can use to leverage Cardano to solve problems in new ways.",
       },
       {
         partners_item_label: "EMURGO",
