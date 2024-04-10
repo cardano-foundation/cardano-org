@@ -1,9 +1,9 @@
 name: "Yarn Build"
 
 on:
-  push:
+  pull_request:
     branches:
-      - 'develop/**'
+      - 'staging'
 
 jobs:
   build:
