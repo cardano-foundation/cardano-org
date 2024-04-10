@@ -1,0 +1,8 @@
+# Netlify Header configuration
+
+# Prevents the site from being framed by other sites, protecting against clickjacking.
+# Activates the browser's built-in cross-site scripting (XSS) filter and blocks responses if an attack is detected.
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+
