@@ -14,7 +14,6 @@ import { useLocation } from "@docusaurus/router";
 // This component:
 // Shows a tab list on the left with some swapable content on the right.
 // FIXME: <br /><br /> are a bit hacky.
-// TODO: Intersect missing
 
 // Partners data
 const partnersData = {
@@ -43,6 +42,15 @@ const partnersData = {
         partners_item_link: "https://iohk.io",
         partners_item_body:
           "Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, Input Output was one of the three pioneer entities behind Cardano,  originally contracted to design, build, and help maintain the Cardano platform. A fully decentralized company, Input Output is comprised of dynamic, innovative teams– based all over the world, collectively committed to innovation through delivering the highest standards in software engineering based on rigorous peer-to-peer reviewed science.<br /><br />Input Output is a leader in building distributed computing systems and decentralized technology solutions. The company continues to research and build new paradigms and products in the field of distributed ledger technology and the architecture of Web3. Input Output is committed to open-source principles, and ethical, purpose-driven business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain education is core to Input Output’s philosophy. IO Research is focused on promoting the academic study of blockchain, supported by a team of educators, academic partners, and specially developed courses.",
+          
+      },
+      {
+        partners_item_label: "Intersect",
+        partners_item_category: "Member based organization",
+        partners_item_image: "intersect",
+        partners_item_link: "https://intersectmbo.org",
+        partners_item_body:
+          "Intersect is a not-for-profit member-based organization for the Cardano ecosystem. Intersect acts as a champion for distributed development and is committed to empowering the Cardano community to build together and drive the blockchain forward. Our mission is to ensure, through our members, the lasting continuity and progressive development of Cardano - fostering a self-sustaining ecosystem that’s fit-for-purpose, perpetually future-proof, resilient, secure, and transparent.<br /><br />Enablement is a key foundation of this work, providing the necessary inclusive contributory opportunities to allow every member of Intersect to have their voice heard. By providing additional governance processes and structure, from maintenance to development and testing to fundraising, Intersect enables the community to continue to advance the protocol",
           
       },
     ],

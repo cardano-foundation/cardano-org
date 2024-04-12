@@ -166,7 +166,7 @@ const config = {
           },
           */
           {
-            title: 'Partners',
+            title: 'Entities',
             items: [
               {
                 label: 'Cardano Foundation',
@@ -177,8 +177,12 @@ const config = {
                 to: '/partners?tab=emurgo',
               },
               {
-                label: 'IOG',
-                href: '/partners?tab=iog', /* TODO: last entry should be "more", then link to the partners page */
+                label: 'Input Output',
+                href: '/partners?tab=iog',  
+              },
+              {
+                label: 'Intersect',
+                href: '/partners?tab=intersect', /* TODO: last entry could be "more", then link to the partners page */
               },
             ],
           },

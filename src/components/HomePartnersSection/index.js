@@ -33,19 +33,25 @@ function LogoWithLink({ imageName, label, link }) {
 const PartnerItemList = [
   {
     imageName: "cardanofoundation",
-    label: "Explore the Foundation",
+    label: "About the Cardano Foundation",
     link: "/partners?tab=cardanofoundation",
   },
   {
+    imageName: "emurgo",
+    label: "About EMURGO",
+    link: "/partners?tab=emurgo",
+  },
+  {
     imageName: "iog",
-    label: "Learn about Input Output Global",
+    label: "About Input Output",
     link: "/partners?tab=iog",
   },
   {
-    imageName: "emurgo",
-    label: "Find out about EMURGO",
-    link: "/partners?tab=emurgo",
+    imageName: "intersect",
+    label: "About Intersect",
+    link: "/partners?tab=intersect",
   },
+  
 ];
 
 function PartnerItem({ imageName, label, link }) {
@@ -56,9 +62,9 @@ function PartnerItem({ imageName, label, link }) {
 export default function HomePartnersSection() {
   return (
     <section className={styles.partnerSection}>
-      <Divider text="Partners" />
+      <Divider text="Entities" />
       <TitleWithText
-        description="A decentralized team works across three independent entities to ensure that Cardano stays true to its purpose as we advance and evolve."
+        description="Multiple independent entities collaborate within a decentralized team framework to drive Cardano forward, ensuring that it remains aligned with its core mission as it progresses and develops. These are a few of them:"
         titleType="none"
         headingDot={false}
       />

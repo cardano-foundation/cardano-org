@@ -9,9 +9,8 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Our Partners"
-      description="A decentralized team works across many entities to 
-        ensure that Cardano stays true to its purpose as we advance and evolve."
+      title="Entities"
+      description="Several independent entities collaborate to advance Cardano, ensuring it stays true to its mission."
       bannerType="zoomBlueRed"
     />
   );
@@ -27,7 +26,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BoundaryBox>
-          <Divider text="Partners" />
+          <Divider text="Entities" />
           <PartnersOverviewSection />
         </BoundaryBox>
         <SpacerBox size="medium" />
