@@ -16,3 +16,9 @@
     Referrer-Policy = "no-referrer-when-downgrade"
     # Allows you to explicitly enable or disable various browser features and APIs for your site, enhancing security.
     Feature-Policy = "geolocation 'none'; microphone 'none';"
+
+# Specific header configuration for iframe exceptions
+[[headers]]
+  for = "/archive/static.iohk.io/adasale/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
