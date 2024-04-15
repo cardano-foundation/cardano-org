@@ -23,3 +23,5 @@
   for = "/archive/static.iohk.io/adasale/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
+    # This path has it's own content security policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com https://maxcdn.bootstrapcdn.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app data:; style-src 'self' 'unsafe-inline'; font-src 'self' https://maxcdn.bootstrapcdn.com;"
