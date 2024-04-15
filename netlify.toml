@@ -10,7 +10,6 @@
     X-XSS-Protection = "1; mode=block"
     # Ensures that only trusted content is executed and styled.
     Content-Security-Policy = "default-src 'self'; script-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app data: https://*.ytimg.com; style-src 'self'; frame-src 'self' https://www.youtube.com; media-src 'self' https://www.youtube.com"
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     # Enforces secure connections via HTTPS, protecting against certain types of man-in-the-middle attacks.
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     # Controls information provided as the HTTP Referer header when navigating from your site, enhancing privacy and security.
