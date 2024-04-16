@@ -2,7 +2,23 @@
 
 # Website
 
-Welcome to the cardano.org website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions. 
+Welcome to the cardano.org website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
+
+ **This is the initial launch of cardano.org as open source project.** To achieve this, the entire page was rewritten. 
+
+To achieve this, the entire site was rewritten, focusing on the technology stack rather than the content. We have maintained most of the original content for now to ensure it remains accessible. However, several significant day-one improvements compared to the old site should be highlighted:
+
+- Rewritten using the Docusaurus stack (the same as developers.cardano.org).
+- The staging branch deploys at https://new-cardano-org-staging.netlify.app/, and the main branch deploys at https://cardano.org/.
+- Documentation on adding content can be found at https://new-cardano-org-staging.netlify.app/docs/tutorial/create-a-page (work in progress).
+- Added Cardano-relevant research papers and specifications at https://new-cardano-org-staging.netlify.app/research.
+- Replaced the unclear and confusing black overlay menu according to feedback. Ensured that every page is accessible through the new menus above, addressing a previous navigation issue.
+- Improved the news section, increasing visibility for many entities, now with tags, an RSS feed, collaborative features for news articles, embedded videos, and other enhancements.
+- Created a dedicated page for the Cardano code of conduct at https://new-cardano-org-staging.netlify.app/community-code-of-conduct.
+- Reworked the Ambassador Program page at https://new-cardano-org-staging.netlify.app/ambassadors.
+- The Genesis page no longer relies on external sites and can be accessed at https://new-cardano-org-staging.netlify.app/genesis.
+- Added 'Intersect' the member based organisation.
+- Additionally, dark mode is now available.
 
 ## Requirements
 
