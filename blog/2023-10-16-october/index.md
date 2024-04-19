@@ -16,11 +16,11 @@ Here's an interesting insight. Were you aware that Lenfi enables depositors to o
  [**Read more**](https://developers.cardano.org/blog/2023-10-16-october) 
  </div>
 
- [<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="lenfi.io"
 sources={{
     light: useBaseUrl('/img/news/lenfi-light.svg'),
     dark: useBaseUrl('/img/news/lenfi-dark.svg'),
   }}
-/>](https://lenfi.io)
+/>

@@ -16,11 +16,11 @@ Some of AdaStat's unique features include a versatile Chart Maker for custom gra
  [**Read more**](https://developers.cardano.org/blog/2023-09-18-august) 
  </div>
 
-  [<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="Adastat.net"
 sources={{
     light: useBaseUrl('/img/news/adastat-light.svg'),
     dark: useBaseUrl('/img/news/adastat-dark.svg'),
   }}
-/>](https://adastat.net/)
+/>

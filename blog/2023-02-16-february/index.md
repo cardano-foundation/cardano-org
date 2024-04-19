@@ -14,11 +14,11 @@ We interviewed the NEWM team, a blockchain-based project aiming to create a musi
  [**Read more**](https://developers.cardano.org/blog/2023-02-16-february) 
 </div>
 
-[<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="NEWM"
 sources={{
     light: useBaseUrl('/img/news/newm.png'),
     dark: useBaseUrl('/img/news/newm.png'),
   }}
-/>](https://newm.io/)
+/>
