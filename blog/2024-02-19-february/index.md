@@ -18,12 +18,12 @@ The interview concludes with a look at the key partnerships contributing to Reju
  [**Read more**](https://developers.cardano.org/blog/2024-02-19-february) 
 </div>
 
- [<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="https://www.rejuve.ai"
 sources={{
     light: useBaseUrl('/img/news/rejuve-light.svg'),
     dark: useBaseUrl('/img/news/rejuve-dark.svg'),
   }}
-/>](https://www.rejuve.ai)
+/>
 

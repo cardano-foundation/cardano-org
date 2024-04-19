@@ -16,11 +16,11 @@ Mainstreet strategically positions itself among industry leaders like Paypal and
  [**Read more**](https://developers.cardano.org/blog/2023-11-27-november) 
  </div>
 
-  [<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="https://mstreet.app"
 sources={{
     light: useBaseUrl('/img/news/mainstreet-dark.svg'),
     dark: useBaseUrl('/img/news/mainstreet-light.svg'),
   }}
-/>](https://mstreet.app)
+/>

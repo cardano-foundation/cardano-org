@@ -14,11 +14,11 @@ Most stories today are not creating a positive global culture or envisioning a s
  [**Read more**](https://developers.cardano.org/blog/2023-06-15-june) 
  </div>
 
-[<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="Mesh"
 sources={{
     light: useBaseUrl('/img/news/mandala-light.png'),
     dark: useBaseUrl('/img/news/mandala-dark.png'),
   }}
-/>](https://enterthemandala.com/)
+/>

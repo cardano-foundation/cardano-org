@@ -18,11 +18,11 @@ Partnerships with organizations like 21ADA Stakepool, DexHunter, Uphold, DripDro
  [**Read more**](https://developers.cardano.org/blog/2024-01-22-january) 
 </div>
 
- [<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="https://vespr.xyz"
 sources={{
     light: useBaseUrl('/img/news/vespr-dark.svg'),
     dark: useBaseUrl('/img/news/vespr-light.svg'),
   }}
-/>](https://vespr.xyz)
+/>
