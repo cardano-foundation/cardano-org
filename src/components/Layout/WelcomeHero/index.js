@@ -21,7 +21,7 @@ function WelcomeHero({ title, description }) {
           </Link>
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
-            to="https://cardano.org/developer-portal"
+            to="/developers"
           >
             Start Building
           </Link>
