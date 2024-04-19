@@ -54,7 +54,7 @@ const config = {
         blog: {
           showReadingTime: false,
           routeBasePath: 'news',
-          blogSidebarCount: 10,
+          blogSidebarCount: 16,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
@@ -82,12 +82,12 @@ const config = {
             position: 'left',
             items: [  
               {to: '/discover-cardano', label: 'Discover Cardano'}, 
-              {to: '/what-is-ada', label: 'Learn what ada is'}, 
+              {to: '/what-is-ada', label: 'What is ada?'}, 
               {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
               {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
-              {to: '/ouroboros', label: 'What Ouroboros is'}, 
+              {to: '/ouroboros', label: 'What is Ouroboros?'}, 
               {to: '/genesis', label: 'About Genesis Distribution'}, 
               {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],
@@ -117,9 +117,7 @@ const config = {
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
               {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
-              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},  
-              {href: 'https://aiken-lang.org', label: 'Aiken'},  
-              {href: 'https://docs.marlowe.iohk.io/docs/introduction', label: 'Marlowe'},  
+              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},   
             ],
           },
           {
@@ -168,7 +166,7 @@ const config = {
           },
           */
           {
-            title: 'Partners',
+            title: 'Entities',
             items: [
               {
                 label: 'Cardano Foundation',
@@ -179,8 +177,12 @@ const config = {
                 to: '/partners?tab=emurgo',
               },
               {
-                label: 'IOG',
-                href: '/partners?tab=iog', /* TODO: last entry should be "more", then link to the partners page */
+                label: 'Input Output',
+                href: '/partners?tab=iog',  
+              },
+              {
+                label: 'Intersect',
+                href: '/partners?tab=intersect', /* TODO: last entry could be "more", then link to the partners page */
               },
             ],
           },

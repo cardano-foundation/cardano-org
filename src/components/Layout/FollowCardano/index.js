@@ -42,7 +42,7 @@ const socialLinks = [
   },
   {
     icon: <FaTelegram />,
-    url: "https://t.me/CardanoAnnouncements",
+    url: "https://t.me/Cardano",
     label: "Cardano on Telegram",
   },
   {

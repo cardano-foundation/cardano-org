@@ -1,13 +1,7 @@
-:root {
-  /* configure the behavior of the boundary box */
-  --boundaryBox-margin: 60px;
-  --boundaryBox-margin-small: 30px;
-  --boundaryBox-max-width: 1200px; /* max width where it stops to grow */
-}
 
 .boundaryBox {
-  max-width: var(--boundaryBox-max-width);
-  width: calc(100% - 2*var(--boundaryBox-margin)); /* let it grow with the screen size until max-width */
+  max-width: 1200px;
+  width: calc(100% - 2*60px); /* let it grow with the screen size until max-width */
   margin-left: auto;        /* These two auto margins center the box */
   margin-right: auto;
 
@@ -20,16 +14,16 @@
 /* med screen sizes */
 @media screen and (max-width: 1200px) {
   .boundaryBox {
-    margin-left: var(--boundaryBox-margin);
-    margin-right: var(--boundaryBox-margin);
+    margin-left: 60px;
+    margin-right: 60px
   }
 }
 
 /* small screen sizes */
 @media screen and (max-width: 576px) {
   .boundaryBox {
-    margin-left: var(--boundaryBox-margin-small);
-    margin-right: var(--boundaryBox-margin-small);
-    width: calc(100% - 2*var(--boundaryBox-margin--small));
+    margin-left: 30px;
+    margin-right: 30px;
+    width: calc(100% - 2*30px);
   }
 }

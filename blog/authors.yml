@@ -1,47 +1,49 @@
 cf:
   name: Cardano Foundation
   url: https://cardanofoundation.org
-  image_url: ../img/authors/cardano-foundation.png
+  image_url: /img/authors/cardano-foundation.png
 
 emurgo:
   name: EMURGO
   url: https://www.emurgo.io
-  image_url: ../img/authors/emurgo.png
+  image_url: /img/authors/emurgo.png
 
 iog:
   name: Input Output Global
   url: https://iohk.io
-  image_url: ../img/authors/input-output-hk.png
+  image_url: /img/authors/input-output-hk.png
 
 intersect:
   name: Intersect
   url: https://www.intersectmbo.org
-  image_url: ../img/authors/intersectmbo.png
+  image_url: /img/authors/intersectmbo.png
 
 catalyst:
   name: Project Catalyst
   url: https://projectcatalyst.io
-  image_url: ../img/authors/project-catalyst.png
+  image_url: /img/authors/project-catalyst.png
 
 taptools:
   name: TapTools
   url: https://taptools.io/
-  image_url: ../img/authors/thetaphouse.png
+  image_url: /img/authors/thetaphouse.png
 
 builderfest:
   name: Buidler Fest
   url: https://buidl.2024.cardano.org
-  image_url: ../img/authors/builderfest.png
+  image_url: /img/authors/builderfest.png
+
+devportal:
+  name: Developer Portal
+  url: https://developers.cardano.org
+  image_url: /img/authors/devportal.svg
 
 
-# please only add regular authors, you can also add one-off authors in the news files directly.
-# todo: Would be nice to start with a decent group of regular authors / entities 
+# note: don't use relative links here, as this data is built into different paths
+#       for example /news/tags/developers vs /news
 #
-# obv need some guidelines. Suggestions for content we will like and merge:
-# 1.) Call to action/participation
-# 2.) eli5 a topic (financial, regulation, legal, governance, infrastructure, operations, resilience, development, network)
-#     recap a physical (bigger) meetup, a workshop, a working group workstream, a vote/poll/survey/, governance actions
-# 3.) content we will not give visibility: sales, promotion, announcement of announcements, new tokens/platforms/apps/services
-#     promises, best/first/largest/fastest whatnot
-# 4.) TLDR: Focus on things that benefit the community rather than an individual/company, needs to link always back 
-#     to a blog/news article
+# todo: idea is to only add regular authors, you can also add one-off authors in
+#       the news files directly, but we need to agree whether the author list should be
+#       mandatory (instead of one-off authors, as one-off entries are difficult to maintain)
+#
+# todo: Would be nice to start with a decent group of regular authors / entities

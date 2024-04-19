@@ -16,16 +16,15 @@
   width: 80%; /* Full width by default */
   transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
 }
-
-:root {
-  .header h6 {
-    color: #777778;
-    font-size: 12px;
-  }
-  .horizontalBar {
-    background-color: #777778; /* Color of the bar */
-  }
+ 
+.header h6 {
+  color: #777778;
+  font-size: 12px;
 }
+.horizontalBar {
+  background-color: #777778; /* Color of the bar */
+}
+ 
 
 [data-theme="dark"] {
   .header h6 {

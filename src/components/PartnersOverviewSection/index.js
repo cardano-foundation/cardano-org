@@ -14,7 +14,6 @@ import { useLocation } from "@docusaurus/router";
 // This component:
 // Shows a tab list on the left with some swapable content on the right.
 // FIXME: <br /><br /> are a bit hacky.
-// TODO: Intersect missing
 
 // Partners data
 const partnersData = {
@@ -26,12 +25,7 @@ const partnersData = {
         partners_item_image: "cardanofoundation",
         partners_item_link: "https://cardanofoundation.org",
         partners_item_body:
-          "The Cardano Foundation is an independent, Swiss-based not-for-profit organization. The Foundation is tasked with advancing \
-          the public digital infrastructure Cardano and works to anchor it as a utility for financial and social systems, thus empowering \
-          the digital architects of the future.<br /><br />The Foundation facilitates the worldwide advancement of Cardano in enterprise applications. It develops infrastructure \
-          tooling—including where there may not be an immediate commercial use case—plus strengthens operational resilience, and drives \
-          diversity of on-infrastructure use cases as well as the development of sound and representative governance.<br /><br />Another significant part of the Cardano Foundation’s mission is to engage with and support the Cardano community. The Foundation \
-          assists the development of tools the community can use to leverage Cardano to solve problems in new ways.",
+          "The Cardano Foundation is an independent, Swiss-based not-for-profit organization. The Foundation is tasked with advancing the public digital infrastructure Cardano and works to anchor it as a utility for financial and social systems, thus empowering the digital architects of the future.<br /><br />The Foundation facilitates the worldwide advancement of Cardano in enterprise applications. It develops infrastructure tooling—including where there may not be an immediate commercial use case—plus strengthens operational resilience, and drives diversity of on-infrastructure use cases as well as the development of sound and representative governance.<br /><br />Another significant part of the Cardano Foundation’s mission is to engage with and support the Cardano community. The Foundation assists the development of tools the community can use to leverage Cardano to solve problems in new ways.",
       },
       {
         partners_item_label: "EMURGO",
@@ -39,33 +33,25 @@ const partnersData = {
         partners_item_image: "emurgo",
         partners_item_link: "https://emurgo.io",
         partners_item_body:
-          "A founding member of the Cardano protocol, EMURGO develops, supports, and incubates commercial opportunities and \
-          helps integrate businesses into our blockchain system. Essentially the for-profit arm of Cardano, EMURGO endeavors \
-          to advance the platform and drive adoption through commercial ventures. With offices and live projects across Singapore, \
-          Japan, the USA, India, and Indonesia, EMURGO has extensive expertise in blockchain R&D, plus a global network of related \
-          blockchain and industry partners.<br /><br />EMURGO is geared to support high-impact ideas with the potential to bring \
-          positive change across a range of sectors, especially financial services, supply chain, retail, healthcare, the public \
-          sector, and IoT. As a complete blockchain solutions provider EMURGO is dedicated to facilitating blockchain education – \
-          offering courses and expertise to universities, professionals, enterprises, and blockchain beginners. India is now home \
-          to the EMURGO Academy, and EMURGO Education students come from some of the world’s most esteemed companies: Accenture, \
-          Bank of America, IBM, Dell, Boeing, GE, Target Corporation, Morgan Stanley, S&P and more.",
+          "EMURGO is a blockchain technology company and a founding entity of the Cardano blockchain that provides products and services to drive the adoption of Cardano’s Web3 ecosystem. Established in 2015 in Japan, EMURGO's mission is to facilitate commercial adoption through dynamic partnerships with existing ecosystem members and the seamless integration of new entrants.<br /><br />By prioritizing investments, delivering continuous education, and providing infrastructure services, EMURGO aims to unlock the full potential of the Cardano ecosystem.",
       },
       {
-        partners_item_label: "Input Output Global",
+        partners_item_label: "Input Output",
         partners_item_category: "Research and engineering company",
         partners_item_image: "iog",
         partners_item_link: "https://iohk.io",
         partners_item_body:
-          "IOG (former IOHK) is a research and engineering company that builds cryptocurrencies and blockchains for academic institutions, \
-          enterprise, and government entities.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, IOHK is contracted to design, \
-          build, and maintain the Cardano platform. A fully decentralized company, IOHK is comprised of dynamic, innovative teams – \
-          based all over the world, collectively committed to innovation through delivering the highest standards in software engineering \
-          based on rigorous peer-to-peer reviewed science.<br /><br />IOHK is a leader in building distributed computing systems and \
-          decentralized technology solutions. Currently, the company is studying new tools and paradigms in the field of cryptographic \
-          research and the architecture of cryptocurrencies. IOHK is committed to open-source principles, and ethical, purpose-driven \
-          business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain \
-          education is core to IOHK’s philosophy. IOHK Research is focused on promoting the academic study of blockchain, supported by a \
-          team of educators, academic partners, and specially developed courses.",
+          "Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, Input Output was one of the three pioneer entities behind Cardano,  originally contracted to design, build, and help maintain the Cardano platform. A fully decentralized company, Input Output is comprised of dynamic, innovative teams– based all over the world, collectively committed to innovation through delivering the highest standards in software engineering based on rigorous peer-to-peer reviewed science.<br /><br />Input Output is a leader in building distributed computing systems and decentralized technology solutions. The company continues to research and build new paradigms and products in the field of distributed ledger technology and the architecture of Web3. Input Output is committed to open-source principles, and ethical, purpose-driven business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain education is core to Input Output’s philosophy. IO Research is focused on promoting the academic study of blockchain, supported by a team of educators, academic partners, and specially developed courses.",
+          
+      },
+      {
+        partners_item_label: "Intersect",
+        partners_item_category: "Member based organization",
+        partners_item_image: "intersect",
+        partners_item_link: "https://intersectmbo.org",
+        partners_item_body:
+          "Intersect is a not-for-profit member-based organization for the Cardano ecosystem. Intersect acts as a champion for distributed development and is committed to empowering the Cardano community to build together and drive the blockchain forward. Our mission is to ensure, through our members, the lasting continuity and progressive development of Cardano - fostering a self-sustaining ecosystem that’s fit-for-purpose, perpetually future-proof, resilient, secure, and transparent.<br /><br />Enablement is a key foundation of this work, providing the necessary inclusive contributory opportunities to allow every member of Intersect to have their voice heard. By providing additional governance processes and structure, from maintenance to development and testing to fundraising, Intersect enables the community to continue to advance the protocol",
+          
       },
     ],
   },

@@ -1,0 +1,19 @@
+name: "Yarn Build"
+
+on:
+  pull_request:
+    branches:
+      - 'staging'
+
+jobs:
+  build:
+    name: Build documentation
+#    runs-on: arc-runner-set
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+      - run: yarn install
+      - run: yarn build

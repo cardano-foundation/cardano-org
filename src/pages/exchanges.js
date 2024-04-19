@@ -36,7 +36,7 @@ export default function Home() {
           <SpacerBox size="small" />
           <TitleWithText   
               description={[
-                "There are various [ways to integrate Cardano](https:developers.cardano.org), one of which is Adrestia. The Adrestia team focuses on \
+                "There are various [ways to integrate Cardano](https://developers.cardano.org), one of which is Adrestia. The Adrestia team focuses on \
                 supporting exchange and developer integrations by providing a wallet SDK and set of APIs that make it \
                 easier for developers and exchanges to integrate and interact with Cardano across releases.",
               ]}
