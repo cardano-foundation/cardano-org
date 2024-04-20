@@ -6,6 +6,36 @@ sidebar_position: 3
 
 We are using the blog feature of Docusaurus for the news on cardano.org. It creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed.
 
+## Guidelines for creating a News Article
+
+All news articles on cardano.org are summaries that link to existing articles. Here's what we seek and will approve for content:
+
+- **Engagement Requests**: Content should encourage active participation or action from the community.
+- **Simplify Complex Topics**: Explain complex subjects (like finance, regulation, legal issues, governance, infrastructure, operations, resilience, or development) in simple terms. Summarize significant community events such as large meetups, workshops, working group activities, votes, polls, surveys, or governance actions.
+- **Non-Approved Content**: We will not promote content focused on sales, self-promotion, vague announcements, launching new tokens/platforms/apps/services, or unsubstantiated claims about being the best, first, largest, or fastest.
+- **Summary**: Content should primarily benefit the community, not just individuals or companies, and must link back to a detailed blog or news article for more information.
+
+### Purpose of the Summary
+- The summary of a news article aims to provide readers with a brief overview of the content and encourage them to read the full article.
+
+### Content of the Summary
+- Keep the summary concise (40-60 words) and informative, highlighting the key points of the article.
+- Avoid adding additional information or personal opinions not present in the article.
+
+### Use of Links
+- Do not include additional links to external sources or resources within the summary.
+Links within the summary should only direct to internal pages of the website offering relevant content.
+
+### Formatting and Structure
+- Write the summary in clear, understandable sentences.
+- Ensure proper formatting for readability.
+
+### Review and Approval
+- Before merging the pull request, the summary is reviewed for accuracy, relevance, and compliance with this guideline.
+
+### Why this guideline?
+This guideline ensures that readers receive a concise and informative preview of the article without being distracted by external sources. Additionally, it helps prevent the attraction of individuals posting articles solely for Search Engine Optimization (SEO) purposes, maintaining the integrity of the platform's content.
+
 ## Understanding the author file
 
 Every news article needs an author. You can find the authors file in `/blog/authors.yml`. An example entry looks like:
@@ -96,12 +126,3 @@ Feel free to play around and edit this post as much as you like.
 Do not use `<!-- truncate -->` marker in the news articles as it would add another `Read more` link.
 
 :::
-
-## Guidelines (work in progress)
-
-We need to agree on clear guidelines for the news. To provide an initial guide, here's what we seek and will approve for content:
-
-- **Engagement Requests**: Content should encourage active participation or action from the community.
-- **Simplify Complex Topics**: Explain complex subjects (like finance, regulation, legal issues, governance, infrastructure, operations, resilience, or development) in simple terms. Summarize significant community events such as large meetups, workshops, working group activities, votes, polls, surveys, or governance actions.
-- **Non-Approved Content**: We will not promote content focused on sales, self-promotion, vague announcements, launching new tokens/platforms/apps/services, or unsubstantiated claims about being the best, first, largest, or fastest.
-- **Summary**: Content should primarily benefit the community, not just individuals or companies, and must link back to a detailed blog or news article for more information.
