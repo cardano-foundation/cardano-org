@@ -10,13 +10,13 @@ To achieve this, the entire site was rewritten, focusing on the technology stack
 
 - Rewritten using the Docusaurus stack (the same as developers.cardano.org).
 - The staging branch deploys at https://new-cardano-org-staging.netlify.app/, and the main branch deploys at https://cardano.org/.
-- Documentation on adding content can be found at https://new-cardano-org-staging.netlify.app/docs/tutorial/create-a-page (work in progress).
-- Added Cardano-relevant research papers and specifications at https://new-cardano-org-staging.netlify.app/research.
+- Documentation on adding content can be found at https://cardano.org/docs/tutorial/create-a-page (work in progress).
+- Added Cardano-relevant research papers and specifications at https://cardano.org/research.
 - Replaced the unclear and confusing black overlay menu according to feedback. Ensured that every page is accessible through the new menus above, addressing a previous navigation issue.
 - Improved the news section, increasing visibility for many entities, now with tags, an RSS feed, collaborative features for news articles, embedded videos, and other enhancements.
-- Created a dedicated page for the Cardano code of conduct at https://new-cardano-org-staging.netlify.app/community-code-of-conduct.
-- Reworked the Ambassador Program page at https://new-cardano-org-staging.netlify.app/ambassadors.
-- The Genesis page no longer relies on external sites and can be accessed at https://new-cardano-org-staging.netlify.app/genesis.
+- Created a dedicated page for the Cardano code of conduct at https://cardano.org/community-code-of-conduct.
+- Reworked the Ambassador Program page at https://cardano.org/ambassadors. (not all have yet agreed to be listed there)
+- The Genesis page no longer relies on external sites and can be accessed at https://cardano.org/genesis.
 - Added 'Intersect' the member based organisation.
 - Additionally, dark mode is now available.
 
