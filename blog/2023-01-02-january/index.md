@@ -14,11 +14,11 @@ For the January edition of the Spotlight Article, we interviewed James Dunseith,
  [**Read more**](https://developers.cardano.org/blog/2023-01-02-january) 
 </div>
 
- [<ThemedImage
+ <ThemedImage
 style={{width: '500px'}}
 alt="GMBL"
 sources={{
     light: useBaseUrl('/img/news/gmbl-dark.png'),
     dark: useBaseUrl('/img/news/gmbl-light.png'),
   }}
-/>](https://gimbalabs.com/)
+/>

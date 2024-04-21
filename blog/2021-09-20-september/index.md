@@ -14,10 +14,10 @@ For the September edition of the Developer Spotlight article, we will interview 
 [**Read more**](https://developers.cardano.org/blog/2021-09-20-september) 
 </div>
 
- [<ThemedImage
+ <ThemedImage
 alt="title image"
 sources={{
     light: useBaseUrl('/img/news/nowpayments-white.png'),
     dark: useBaseUrl('/img/news/nowpayments-dark.png'),
   }}
-/>](https://nowpayments.io)
+/>

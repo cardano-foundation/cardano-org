@@ -14,11 +14,11 @@ W3:Ride revolutionizes cycling fitness through gamification, fostering an engagi
  [**Read more**](https://developers.cardano.org/blog/2023-08-21-august) 
  </div>
 
-[<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="W3Ride"
 sources={{
     light: useBaseUrl('/img/news/w3ride-light.png'),
     dark: useBaseUrl('/img/news/w3ride-dark.png'),
   }}
-/>](https://w3ride.io/)
+/>

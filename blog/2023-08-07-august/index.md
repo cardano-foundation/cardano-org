@@ -14,11 +14,11 @@ DEMU's vision is to establish a direct connection between fans and the artists t
  [**Read more**](https://developers.cardano.org/blog/2023-08-07-august) 
  </div>
 
-[<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="Demu"
 sources={{
     light: useBaseUrl('/img/news/demu.png'),
     dark: useBaseUrl('/img/news/demu.png'),
   }}
-/>](https://www.demu.pro)
+/>

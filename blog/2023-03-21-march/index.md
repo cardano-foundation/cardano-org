@@ -14,11 +14,11 @@ In this interview, Jingles, one of the co-founders of Mesh, talks about the proj
  [**Read more**](https://developers.cardano.org/blog/2023-03-21-march) 
  </div>
 
-[<ThemedImage
+ <ThemedImage
 style={{width: '300px'}}
 alt="Mesh"
 sources={{
     light: useBaseUrl('/img/news/mesh-dark.png'),
     dark: useBaseUrl('/img/news/mesh-light.png'),
   }}
-/>](https://meshjs.dev/)
+/>
