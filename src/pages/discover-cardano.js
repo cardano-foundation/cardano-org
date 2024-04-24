@@ -4,6 +4,7 @@ import ImageWithText from "@site/src/components/Layout/ImageWithText";
 import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "../components/Layout/BoundaryBox";
+import SpacerBox from "../components/Layout/SpacerBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -139,6 +140,8 @@ export default function Home() {
               id={"opportunity"}
             />
         </BoundaryBox>
+
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

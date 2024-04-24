@@ -186,8 +186,8 @@ const config = {
                 href: '/partners?tab=iog',  
               },
               {
-                label: 'Intersect',
-                href: '/partners?tab=intersect', /* TODO: last entry could be "more", then link to the partners page */
+                label: 'More entities',
+                href: '/partners?tab=intersect', 
               },
             ],
           },
