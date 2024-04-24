@@ -51,6 +51,11 @@ const PartnerItemList = [
     label: "About Intersect",
     link: "/partners?tab=intersect",
   },
+  {
+    imageName: "pragma",
+    label: "About PRAGMA",
+    link: "/partners?tab=pragma",
+  },
   
 ];
 
