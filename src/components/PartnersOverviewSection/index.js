@@ -53,6 +53,15 @@ const partnersData = {
           "Intersect is a not-for-profit member-based organization for the Cardano ecosystem. Intersect acts as a champion for distributed development and is committed to empowering the Cardano community to build together and drive the blockchain forward. Our mission is to ensure, through our members, the lasting continuity and progressive development of Cardano - fostering a self-sustaining ecosystem that’s fit-for-purpose, perpetually future-proof, resilient, secure, and transparent.<br /><br />Enablement is a key foundation of this work, providing the necessary inclusive contributory opportunities to allow every member of Intersect to have their voice heard. By providing additional governance processes and structure, from maintenance to development and testing to fundraising, Intersect enables the community to continue to advance the protocol",
           
       },
+      {
+        partners_item_label: "PRAGMA",
+        partners_item_category: "Not-for-profit Swiss Association",
+        partners_item_image: "pragma",
+        partners_item_link: "https://pragma.builders",
+        partners_item_body:
+          "PRAGMA is a member-based, not-for-profit open source Association for blockchain software projects. It aims to foster an alternative open-source ecosystem for Cardano and beyond. A team of passionate software engineers from various backgrounds who build open-source tools for developers aiming for mass adoption.<br /><br />By delivering solutions in small steps, PRAGMA intend to involve other builders to create strong open-source communities. Projects under PRAGMA are open to contributions and will onboard those who want to get involved.",
+          
+      },
     ],
   },
 };
