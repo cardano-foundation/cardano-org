@@ -122,7 +122,8 @@ const config = {
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
               {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
-              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},   
+              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},
+              {href: 'https://cardano.stackexchange.com/', label: 'Stack Exchange'},   
             ],
           },
           {
