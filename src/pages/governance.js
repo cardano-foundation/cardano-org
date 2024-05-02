@@ -7,6 +7,7 @@ import GovernanceWithinCardanoSection from "@site/src/components/GovernanceWithi
 import GovernanceWhyVoltaireSection from "@site/src/components/GovernanceWhyVoltaireSection";
 import GovernanceProposalsSection from "@site/src/components/GovernanceProposalsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -27,9 +28,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Governance | cardano.org"
+    description="Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it."
     >
+      <OpenGraphImage pageName="governance" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidBlue"}>

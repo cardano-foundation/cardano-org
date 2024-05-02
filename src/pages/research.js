@@ -3,6 +3,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import ResearchSection from "@site/src/components/ResearchSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -19,9 +20,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Cardano Research | cardano.org"
+    description="Cardano relevant research papers and specifications."
     >
+      <OpenGraphImage pageName="research" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType="zoom">

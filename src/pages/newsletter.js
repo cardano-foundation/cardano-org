@@ -7,6 +7,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import CommunityDigestForm from "@site/src/components/CommunityDigestFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -23,9 +24,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Cardano Community Digest | cardano.org"
+    description="Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem."
     >
+      <OpenGraphImage pageName="newsletter" />
       <HomepageHeader />
       <BoundaryBox>
           <Divider text="Stay informed" />

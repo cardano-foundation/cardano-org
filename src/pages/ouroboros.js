@@ -10,7 +10,7 @@ import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWith
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox  from "@site/src/components/Layout/SpacerBox";
 import ProofOfStakeSection from "@site/src/components/ProofOfStakeSection";
-
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -27,9 +27,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="What is Ouroboros? | cardano.org"
+    description="An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
     >
+      <OpenGraphImage pageName="ouroboros" />
       <HomepageHeader />
 
       <BackgroundWrapper backgroundType={"zoom"}>

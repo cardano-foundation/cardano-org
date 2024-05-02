@@ -5,6 +5,7 @@ import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "../components/Layout/BoundaryBox";
 import SpacerBox from "../components/Layout/SpacerBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -22,9 +23,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Discover Cardano | cardano.org"
+    description="Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
     >
+      <OpenGraphImage pageName="discover-cardano" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

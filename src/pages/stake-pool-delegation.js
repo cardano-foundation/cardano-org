@@ -10,6 +10,7 @@ import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -26,9 +27,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Delegate your stake | cardano.org"
+    description="Delegate your stake to build the network, earn rewards, and become part of the Cardano journey."
     >
+      <OpenGraphImage pageName="stake-pool-delegation" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidGrey"}>
