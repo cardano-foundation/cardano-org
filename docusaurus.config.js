@@ -259,6 +259,14 @@ const config = {
         },
       ],
     }),
+    
+    // Custom JavaScript that will be injected into the <head> section of every page
+    scripts: [
+      { 
+        src: '/scripts/deactivateServiceWorker.js', 
+        async: true 
+      }
+    ],
 };
 
 export default config;
