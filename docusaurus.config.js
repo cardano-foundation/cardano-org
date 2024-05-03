@@ -73,7 +73,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // The project's social card
-      image: 'img/og-default.jpg',
+      image: 'img/og/default.jpg',
       navbar: {
         logo: {
           alt: "Cardano Logo",

@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
+    title="Learn | cardano.org"
     description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
       <HomepageHeader />

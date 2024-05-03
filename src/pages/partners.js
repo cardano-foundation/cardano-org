@@ -4,6 +4,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import PartnersOverviewSection from "@site/src/components/PartnersOverviewSection";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -20,9 +21,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Entities | cardano.org"
+    description="Several independent entities collaborate to advance Cardano, ensuring it stays true to its mission."
     >
+      <OpenGraphImage pageName="entities" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

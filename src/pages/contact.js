@@ -9,6 +9,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import ContactFormHS from "@site/src/components/ContactFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 // Hint: You can preselect a topic with http://localhost:3000/contact?topic=iog 
 // or http://localhost:3000/contact?topic=sponsor etc
@@ -17,7 +18,7 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Contact Cardano"
+      title="Contact | cardano.org"
       description="Cardano is supported by the Cardano Foundation, IOHK, and EMURGO. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
       bannerType="fluid"
     />
@@ -120,6 +121,7 @@ export default function Home() {
     title="Cardano - making the world work better for all"
     description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
+      <OpenGraphImage pageName="contact" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

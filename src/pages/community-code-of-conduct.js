@@ -4,6 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -20,9 +21,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Community Code of Conduct | cardano.org"
+    description="The Cardano community consists of people from all over the world, who have come together to grow and safeguard the spirit and the future of Cardano."
     >
+      <OpenGraphImage pageName="community-code-of-conduct" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

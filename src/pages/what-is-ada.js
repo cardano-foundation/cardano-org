@@ -4,6 +4,7 @@ import WhatIsAda from "@site/src/components/WhatIsAda";
 import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
 import WalletSection from "@site/src/components/WalletSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -24,9 +25,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="What is ada? | cardano.org"
+    description="A new type of currency. A new means of transaction. Direct. Secure. From Anywhere. For Everyone."
     >
+      <OpenGraphImage pageName="what-is-ada" />
       <HomepageHeader />
       <main>
         <BoundaryBox>
