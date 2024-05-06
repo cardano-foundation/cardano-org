@@ -5,6 +5,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import GenesisStats from "@site/src/components/GenesisStats";
+import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -22,9 +23,10 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Genesis Distribution | cardano.org"
+    description="Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
     >
+      <OpenGraphImage pageName="genesis" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

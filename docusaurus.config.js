@@ -73,7 +73,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // The project's social card
-      image: 'img/og-default.jpg',
+      image: 'img/og/default.jpg',
       navbar: {
         logo: {
           alt: "Cardano Logo",
@@ -122,7 +122,8 @@ const config = {
               {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
               {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
               {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
-              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},   
+              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},
+              {href: 'https://cardano.stackexchange.com/', label: 'Stack Exchange'},   
             ],
           },
           {
@@ -258,6 +259,14 @@ const config = {
         },
       ],
     }),
+    
+    // Custom JavaScript that will be injected into the <head> section of every page
+    scripts: [
+      { 
+        src: '/scripts/deactivateServiceWorker.js', 
+        async: true 
+      }
+    ],
 };
 
 export default config;

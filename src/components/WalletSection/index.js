@@ -8,7 +8,7 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
-// Don't send pull requests for wallets that are not listed for a longer time on https://developers.cardano.org/showcase?tags=wallet
+// Don't send pull requests for wallets that are not listed for at least 6 months on https://developers.cardano.org/showcase?tags=wallet
 const WalletItemList = [
   {
     title: "Typhon Wallet",
@@ -41,6 +41,22 @@ const WalletItemList = [
     subtext: "Browser extension and app for iOS and Android",
     label: "Get Eternl",
     link: "https://eternl.io",
+  },
+  {
+    title: "VESPR Wallet",
+    imageName: "vespr-ada",
+    text: "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use.",
+    subtext: "App for iOS and Android",
+    label: "Get VESPR",
+    link: "https://vespr.xyz",
+  },
+  {
+    title: "Lace Wallet",
+    imageName: "lace-ada",
+    text: "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
+    subtext: "Browser extension for Chrome, Brave",
+    label: "Get Lace",
+    link: "https://www.lace.io",
   },
 ];
 
