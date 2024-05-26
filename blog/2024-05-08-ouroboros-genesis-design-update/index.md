@@ -11,5 +11,5 @@ Ouroboros Genesis, the latest enhancement to Cardano’s consensus protocol, add
  [**Read more**](https://iohk.io/en/blog/posts/2024/05/08/ouroboros-genesis-design-update/) 
 </div>
 
- ![weekly development report](./banner.webp)
+ ![Ouroboros Genesis](./banner.webp)
 
