@@ -54,7 +54,7 @@ const config = {
         blog: {
           showReadingTime: false,
           routeBasePath: 'news',
-          blogSidebarCount: 16,
+          blogSidebarCount: 17,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
@@ -148,7 +148,15 @@ const config = {
             label: 'Tutorial',
           },
           */
-          {to: '/news', label: 'News', position: 'left'},
+          {
+            to: '/news', label: 'News', position: 'left',
+            items: [  
+              {to: '/news', label: 'All Articles (Chronological)'},  
+              {to: '/news/tags/community-digest', label: 'Community Digest'},
+              {to: '/news/tags/development', label: 'Development'},
+              {to: '/news/tags', label: 'View Tags'},  
+          ],
+        },
           {
             href: `${vars.repository}`,
             position: "right",
