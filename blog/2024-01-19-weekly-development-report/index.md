@@ -2,7 +2,7 @@
 slug: 2024-01-19-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [development, weekly development report]
+tags: [weekly development report, development]
 ---
 
 Over the past few weeks, the ledger team added new features, improved transaction fee estimation, and fixed various bugs. The Marlowe team benchmarked contract lifecycles, added Merkleized contract examples, and updated the Marlowe Run web application. The Hydra team improved workflows, addressed schema consistency, and enhanced log schema tests. Mithril enabled direct certificate verification, supported Conway era, and upgraded infrastructure. Voltaire continued Conway era development and updated SanchoNet documentation. Project Catalyst concluded the moderation period for community review, with voting starting January 25. The education team planned activities and updated the Haskell Bootcamp course.
