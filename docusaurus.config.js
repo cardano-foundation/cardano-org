@@ -54,7 +54,7 @@ const config = {
         blog: {
           showReadingTime: false,
           routeBasePath: 'news',
-          blogSidebarCount: 16,
+          blogSidebarCount: 18,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
