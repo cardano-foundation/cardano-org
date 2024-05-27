@@ -126,3 +126,14 @@ Feel free to play around and edit this post as much as you like.
 Do not use `<!-- truncate -->` marker in the news articles as it would add another `Read more` link.
 
 :::
+
+## News Article Tags
+
+Tags are labels assigned to articles, allowing multiple tags per article and enabling flexible categorization and search. You should always use tags so that there are several hits per tag and they are not too specific. You can find an overview of all tags on https://cardano.org/news/tags
+
+:::tip
+
+When tagging go from specific to broad. Example: weekly development report, development. Not: development, weekly development report.
+
+:::
+
