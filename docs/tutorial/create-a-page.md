@@ -197,6 +197,8 @@ export default function Home() {
 
 ```
 
+## Result
+
 Your hello world page at [http://localhost:3000/hello-world](http://localhost:3000/hello-world) will now look like this:
 
 ![img](/img/docs/tutorial/tutorial-step-2.jpg)
