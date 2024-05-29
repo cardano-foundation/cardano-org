@@ -1,14 +1,14 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # FAQ component
 
-You can pass a JSON file to this component to create your own FAQs sections. This example is based on the [Hello World Page](/docs/tutorial/create-a-page#add-more-components) of the previous tutorial.
- 
+You can use this component to create your own FAQ sections by passing a JSON file. This example is based on the [Hello World Page](/docs/tutorial/create-a-page#add-more-components) from the previous tutorial.
+
 ## Prepare the JSON file
 
-Prepare the JSON file with your questions and answers and place it in `src/data/`. For this example we go with this pinapple on pizza FAQ:
+Create a JSON file with your questions and answers and place it in the `src/data/` directory. For this example, we'll use a pineapple on pizza FAQ:
 
 ```js title="src/data/pineappleFAQ.json"
 [
@@ -43,7 +43,7 @@ Prepare the JSON file with your questions and answers and place it in `src/data/
 
 ## Add the FAQ component
 
-Based on the Hello World example from the basic tutorial, we have imported the FAQ component here and passed it the file name of the JSON file as a parameter. Please see the highlighted changes:
+Based on the Hello World example from the basic tutorial, we have imported the FAQ component here and provided the JSON file name as a parameter. Please see the highlighted changes below:
 
 ```jsx {8,43} title="src/pages/pinapple-on-pizza.js"
 import Layout from "@theme/Layout";
@@ -101,6 +101,6 @@ export default function Home() {
 
 ## Result
 
-Your pineapple on pizza FAQ component at [http://localhost:3000/pineapple-on-pizza](http://localhost:3000/pineapple-on-pizza) will now look like this:
+Your pineapple on pizza FAQ component at [http://localhost:3000/pineapple-on-pizza](http://localhost:3000/pineapple-on-pizza) will now appear as follows:
 
 ![img](/img/docs/tutorial/tutorial-step-3.jpg)
