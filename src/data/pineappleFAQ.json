@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Is pineapple on pizza a popular choice?",
+    "answer": [
+      "Pineapple on pizza, often referred to as Hawaiian pizza, has a divided fan base. Some people love the sweet and savory combination, while others are staunchly opposed to it. Despite the controversy, it remains a popular choice in many pizzerias around the world."
+    ]
+  },
+  {
+    "question": "Who invented pineapple on pizza?",
+    "answer": [
+      "Pineapple on pizza was invented by Sam Panopoulos in 1962 in Canada. He decided to add canned pineapple to pizza as an experiment, and it surprisingly became a hit with customers."
+    ]
+  },
+  {
+    "question": "What are the arguments for and against pineapple on pizza?",
+    "answer": [
+      "Arguments for pineapple on pizza include:",
+      "- The sweet and savory flavor combination is appealing to many.",
+      "- It adds a unique taste and texture to the pizza.",
+      "- Pineapple provides a refreshing contrast to the richness of the cheese and other toppings.",
+      "Arguments against pineapple on pizza include:",
+      "- Traditional pizza purists believe fruit does not belong on pizza.",
+      "- The texture of cooked pineapple can be off-putting to some.",
+      "- The flavor combination may be too unconventional for some tastes."
+    ]
+  }
+]
