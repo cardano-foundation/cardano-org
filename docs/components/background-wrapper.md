@@ -2,11 +2,11 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 
 # Background Wrapper
 
-`<BackgroundWrapper>` applies a selectable background style to its child components. 
+[`<BackgroundWrapper>`](/docs/components/background-wrapper) applies a selectable background style to its child components. 
 
 :::info
 
-Most of the time you do not want to put a `<BackgroundWrapper>` inside a `<BoundaryBox>` because it would add a margin around it. However, it is common to place a `<BoundaryBox>` inside a `<BackgroundWrapper>`.
+Most of the time you do not want to put a [`<BackgroundWrapper>`](/docs/components/background-wrapper) inside a [`<BoundaryBox>`](/docs/components/boundary-box) because it would add a margin around it. However, it is common to place a [`<BoundaryBox>`](/docs/components/boundary-box) inside a [`<BackgroundWrapper>`](/docs/components/background-wrapper).
 
 :::
 
@@ -112,3 +112,8 @@ You can select between different background types by passing the backgroundType 
   looks like.
 </BackgroundWrapper>
  
+ :::info
+
+For the sake of simplicity, no other elements were used here as children of [`<BackgroundWrapper>`](/docs/components/background-wrapper). Get to know the [`<BoundaryBox>`](/docs/components/boundary-box) with which you could have made it look even better.
+
+:::
