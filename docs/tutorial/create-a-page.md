@@ -101,11 +101,7 @@ A new page is now available at [http://localhost:3000/hello-world](http://localh
 
 ### Select different Site Hero designs
 
-The `<SiteHero>` component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada` or any of these values:
-
-`ada`, `dots`, `fluid`, `overlap`, `zoomRedWhite`, `zoomRedWhiteDark`, `zoomBlueRed`, `waves`, `starburst`, `braidBlue`, `braidRedBlue`, `braidBlack`, `ouroboros`.
-
-Example overview of each bannerType is available at [http://localhost:3000/example-components-sitehero](http://localhost:3000/example-components-sitehero)
+The [`<SiteHero>`](/docs/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/components/site-hero).
 
 ```jsx {4}
 <SiteHero
