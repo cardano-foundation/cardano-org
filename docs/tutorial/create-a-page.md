@@ -130,7 +130,7 @@ Add more text with another `<TitleWithText>` component. This time set headingDot
 
 ### Add more components
 
-To add a little bit of space at the end of the content we add the `<SpacerBox>` and to change the background we will wrap everything in a `<BackgroundWrapper>`. Please apply the highlighted changes:
+To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/components/background-wrapper). Please apply the highlighted changes:
 
 ```jsx {6-7,29,52-53} title="src/pages/hello-world.js"
 import Layout from "@theme/Layout";
