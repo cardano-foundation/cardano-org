@@ -1,15 +1,93 @@
 [
   {
+    "name": "Andrew Kim",
+    "role": "Content Creator",
+    "country": "CA",
+    "link": "https://forum.cardano.org/u/kor-koreapool/summary"
+  },
+  {
+    "name": "Anthony Capriotti",
+    "role": "Content Creator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/anthony_cardano/summary"
+  },
+  {
+    "name": "BENJAMIN MARCO ARNAU",
+    "role": "Content Creator",
+    "country": "ES",
+    "link": "https://forum.cardano.org/u/cobenaru/summary"
+  },
+  {
+    "name": "Darlington Wleh",
+    "role": "Content Creator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/lidonation"
+  },
+  {
+    "name": "Dan Baruka",
+    "role": "Content Creator",
+    "country": "CD",
+    "link": "https://forum.cardano.org/u/uptodate_developers/"
+  },
+  {
+    "name": "Denis Kalinin",
+    "role": "Content Creator",
+    "country": "KZ",
+    "link": "https://forum.cardano.org/u/fell-x27/summary"
+  },
+  {
+    "name": "Diego Torres Borda",
+    "role": "Content Creator",
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/diegotowers/summary"
+  },
+  {
+    "name": "Efe Şafak Şengül",
+    "role": "Content Creator",
+    "country": "TR",
+    "link": "https://forum.cardano.org/u/hustle/summary"
+  },
+  {
     "name": "Felix Weber",
     "role": "Content Creator",
     "country": "FR",
-    "link": "https://forum.cardano.org/u/felix_weber"
+    "link": "https://forum.cardano.org/u/felix_weber/summary"
   },
   {
-    "name": "Marcus Vinicius",
+    "name": "Giannis Mitsios",
+    "role": "Content Creator",
+    "country": "GR",
+    "link": "https://forum.cardano.org/u/varavas/summary"
+  },
+  {
+    "name": "Guillermo Moratorio",
+    "role": "Content Creator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/woodland_pools/summary"
+  },
+  {
+    "name": "Hikaru Nomura",
+    "role": "Content Creator",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/hix_coffeepool/summary"
+  },
+  {
+    "name": "Julien Cisee",
+    "role": "Content Creator",
+    "country": "DE",
+    "link": "https://forum.cardano.org/u/skadea/summary"
+  },
+  {
+    "name": "Lloyd Duhon",
+    "role": "Content Creator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/lloydduhon/summary"
+  },
+  {
+    "name": "Marcus Vinicius de Araujo Roque",
     "role": "Content Creator",
     "country": "BR",
-    "link": "https://forum.cardano.org/u/marcusoregano"
+    "link": "https://forum.cardano.org/u/marcusoregano/summary"
   },
   {
     "name": "Martin Lang",
@@ -18,124 +96,244 @@
     "link": "https://forum.cardano.org/u/atada"
   },
   {
-    "name": "Quentin",
+    "name": "Mike Hornan",
     "role": "Content Creator",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/wnipos"
+    "link": "https://forum.cardano.org/u/hornan/summary"
   },
   {
-    "name": "Yuta Oishi",
+    "name": "Mauro Agustín Andreoli",
     "role": "Content Creator",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/yuta_oishi"
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/mauroandreoli/summary"
+  },
+  {
+    "name": "Patryk Karter",
+    "role": "Content Creator",
+    "country": "PT",
+    "link": "https://forum.cardano.org/u/patryk_karter/summary"
+  },
+  {
+    "name": "Prerak Malik",
+    "role": "Content Creator",
+    "country": "IN",
+    "link": "https://forum.cardano.org/u/icycranberry"
+  },
+  {
+    "name": "Quentin Kayila",
+    "role": "Content Creator",
+    "country": "CA",
+    "link": "https://forum.cardano.org/wnipos"
   },
   {
     "name": "Rena Oishi",
     "role": "Content Creator",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/myb_rena"
+    "link": "https://forum.cardano.org/u/myb_rena/summary"
   },
   {
-    "name": "Peter",
+    "name": "Stephanie King",
+    "role": "Content Creator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/stephanie_king/summary"
+  },
+  {
+    "name": "Will Huang",
+    "role": "Content Creator",
+    "country": "TW",
+    "link": "https://forum.cardano.org/u/willhuang0606/summary"
+  },
+  {
+    "name": "Peter Nhattruong Bui",
     "role": "Content Creator",
     "country": "AU",
-    "link": "https://forum.cardano.org/u/astroboysoup"
+    "link": "https://forum.cardano.org/u/astroboysoup/summary"
   },
   {
-    "name": "Efe Şafak Şengül",
+    "name": "Thiago da Silva Nunes",
     "role": "Content Creator",
-    "country": "TR",
-    "link": "https://forum.cardano.org/u/hustle"
+    "country": "BR",
+    "link": "https://forum.cardano.org/u/tsnnst/summary"
+  },
+  {
+    "name": "Yifu Huang",
+    "role": "Content Creator",
+    "country": "GB",
+    "link": "https://forum.cardano.org/u/bullishdumpling/summary"
+  },
+  {
+    "name": "Yuki Oishi",
+    "role": "Content Creator",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/yuta_oishi/summary"
   },
   {
     "name": "Martin Ungar",
     "role": "Content Creator",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/latinstakepools"
+    "link": "https://forum.cardano.org/u/latinstakepools/summary"
   },
   {
-    "name": "Hassan Michael",
-    "role": "Meetup Organizer",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/dapp360_mike"
+    "name": "Sebastián Aravena",
+    "role": "Content Creator",
+    "country": "CL",
+    "link": "https://forum.cardano.org/u/indi_gital/"
   },
   {
-    "name": "Hideki Takeshi",
-    "role": "Meetup Organizer",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/HidekiTakeshi"
-  },
-  {
-    "name": "Moto",
-    "role": "Meetup Organizer",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/mojira"
-  },
-  {
-    "name": "Nori",
-    "role": "Meetup Organizer",
+    "name": "Andrew Norimasa Nishigaya",
+    "role": "Meetup",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/xeeban"
+    "link": "https://forum.cardano.org/u/xeeban/summary"
   },
   {
-    "name": "Reng Lee",
-    "role": "Meetup Organizer",
-    "country": "CN",
-    "link": "https://forum.cardano.org/u/ninjis"
-  },
-  {
-    "name": "Lucas Macchiavelli",
-    "role": "Meetup Organizer",
-    "country": "AR",
-    "link": "https://forum.cardano.org/u/lucas_mac"
+    "name": "Beatrice Anihiri",
+    "role": "Meetup",
+    "country": "NO",
+    "link": "https://forum.cardano.org/u/bearicea/summary"
   },
   {
     "name": "Daniel David Lezu",
-    "role": "Meetup Organizer",
-    "country": "_scotland", 
+    "role": "Meetup",
+    "country": "_scotland",
     "link": "https://forum.cardano.org/u/ddlezu"
   },
   {
-    "name": "Agus",
-    "role": "Meetup Organizer",
-    "country": "AR",
-    "link": "https://forum.cardano.org/u/cardano_agus"
+    "name": "Enrique Guasp",
+    "role": "Meetup",
+    "country": "MX",
+    "link": "https://forum.cardano.org/c/espanol/126"
   },
   {
-    "name": "Fletcher",
-    "role": "Meetup Organizer",
+    "name": "Fanny Wijaya",
+    "role": "Meetup",
+    "country": "ID",
+    "link": "https://forum.cardano.org/u/fanny_wijaya/summary"
+  },
+  {
+    "name": "Hassan Michael",
+    "role": "Meetup",
     "country": "US",
-    "link": "https://forum.cardano.org/u/carpool"
+    "link": "https://forum.cardano.org/u/dapp360_mike/summary"
   },
   {
-    "name": "Θeodore",
-    "role": "Meetup Organizer",
-    "country": "CA",
-    "link": "https://forum.cardano.org/u/cardanochefpool"
+    "name": "Hideki Takeshi",
+    "role": "Meetup",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/HidekiTakeshi/"
+  },
+  {
+    "name": "Jeremiah Baani",
+    "role": "Meetup",
+    "country": "GH",
+    "link": "https://forum.cardano.org/u/jeremiah/"
   },
   {
     "name": "Mohammed Mustapha Yakubu",
-    "role": "Meetup Organizer",
+    "role": "Meetup",
     "country": "GH",
     "link": "https://forum.cardano.org/u/chosenfintech"
   },
   {
-    "name": "Christian",
-    "role": "Moderator",
-    "country": "DE",
-    "link": "https://forum.cardano.org/u/ChrisSTR8"
+    "name": "Mototsugu Oba",
+    "role": "Meetup",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/mojira/summary"
   },
   {
-    "name": "Daniel",
+    "name": "Nguyen Thi Ha",
+    "role": "Meetup",
+    "country": "VN",
+    "link": "https://forum.cardano.org/u/hakochan/summary"
+  },
+  {
+    "name": "Jungi Hong",
+    "role": "Meetup",
+    "country": "KR",
+    "link": "https://forum.cardano.org/u/oscar_west/summary"
+  },
+  {
+    "name": "Rengwei Lee",
+    "role": "Meetup",
+    "country": "CN",
+    "link": "https://forum.cardano.org/u/ninjis/summary"
+  },
+  {
+    "name": "Thomas Lindseth",
+    "role": "Meetup",
+    "country": "NO",
+    "link": "https://forum.cardano.org/u/thomaslindseth/summary"
+  },
+  {
+    "name": "Fletcher Watson",
+    "role": "Meetup",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/carpool/summary"
+  },
+  {
+    "name": "Jennifer Brito",
+    "role": "Meetup",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/jennycita/summary"
+  },
+  {
+    "name": "Lucas Macchiavelli",
+    "role": "Meetup",
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/lucas_mac"
+  },
+  {
+    "name": "Rodrigo Antonio Gomez",
+    "role": "Meetup",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/rodrigo_gomez/summary"
+  },
+  {
+    "name": "Simon Fleck",
+    "role": "Meetup",
+    "country": "AT",
+    "link": "https://forum.cardano.org/u/seomon_register"
+  },
+  {
+    "name": "Yoram Ben Zvi",
+    "role": "Meetup",
+    "country": "FR",
+    "link": "https://forum.cardano.org/u/yoram_ben-zvi/summary"
+  },
+  {
+    "name": "Agustin Franchella",
+    "role": "Meetup",
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/cardano_agus/summary"
+  },
+  {
+    "name": "Theodoros Morisis",
+    "role": "Meetup",
+    "country": "CA",
+    "link": "https://forum.cardano.org/u/cardanochefpool/summary"
+  },
+  {
+    "name": "Brett Cooper",
     "role": "Moderator",
     "country": "US",
-    "link": "https://forum.cardano.org/u/dominatingslash"
+    "link": "https://forum.cardano.org/u/glitch_04/summary"
   },
   {
-    "name": "Elton Nápoles Núñez",
+    "name": "Christian Kulas",
     "role": "Moderator",
-    "country": "CU",
-    "link": "https://forum.cardano.org/u/napoles"
+    "country": "DE",
+    "link": "https://forum.cardano.org/u/ChrisSTR8/"
+  },
+  {
+    "name": "Daniel Lynch",
+    "role": "Moderator",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/dominatingslash/"
+  },
+  {
+    "name": "Gean Carlos de Oliveira Brinker",
+    "role": "Moderator",
+    "country": "AU",
+    "link": "https://forum.cardano.org/u/mrbrinker/summary"
   },
   {
     "name": "Harm-Jan Smit",
@@ -144,117 +342,171 @@
     "link": "https://forum.cardano.org/u/Harm-Jan"
   },
   {
-    "name": "Josh Daviau",
+    "name": "Joshua Daviau",
     "role": "Moderator",
     "country": "CA",
     "link": "https://forum.cardano.org/u/southrye"
   },
   {
-    "name": "Paul KO",
+    "name": "Mie Tran",
     "role": "Moderator",
-    "country": "KR",
-    "link": "https://forum.cardano.org/u/haskellcoding/"
-  },
-  {
-    "name": "Yuta Uchino",
-    "role": "Moderator",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/yuta_uchino"
+    "country": "VN",
+    "link": "https://forum.cardano.org/u/mietran/summary"
   },
   {
     "name": "Tony Chan",
     "role": "Moderator",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/tonychan"
+    "link": "https://forum.cardano.org/u/gustavex/summary"
   },
   {
-    "name": "Edickson Aguilera",
+    "name": "Yuta Uchino",
+    "role": "Moderator",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/yuta_uchino/summary"
+  },
+  {
+    "name": "Alexandru Dragnescu",
+    "role": "Moderator",
+    "country": "RO",
+    "link": "https://forum.cardano.org/u/alexd1985/summary"
+  },
+  {
+    "name": "Edickson Rafael Aguilera Ramirez",
     "role": "Moderator",
     "country": "VE",
-    "link": "https://forum.cardano.org/u/edickson"
+    "link": "https://forum.cardano.org/u/edickson/summary"
   },
   {
-    "name": "Gean Brinker",
+    "name": "Elton Rafael Nápoles Núñez",
     "role": "Moderator",
-    "country": "AU",
-    "link": "https://forum.cardano.org/u/mrbrinker"
+    "country": "CU",
+    "link": "https://forum.cardano.org/u/napoles/summary"
   },
   {
-    "name": "Shaun Byres",
-    "role": "Moderator",
-    "country": "_scotland",  
-    "link": "https://forum.cardano.org/u/byres"
-  },
-  {
-    "name": "Alex",
+    "name": "Alex Ludden",
     "role": "Translator",
     "country": "US",
-    "link": "https://forum.cardano.org/u/cobblybear"
+    "link": "https://forum.cardano.org/u/cobblybear/summary"
   },
   {
-    "name": "Andreas Sosilo",
+    "name": "Eric Tsai",
     "role": "Translator",
-    "country": "ID",
-    "link": "https://forum.cardano.org/u/andreassosilo"
+    "country": "US",
+    "link": "https://forum.cardano.org/u/eric248550/summary"
   },
   {
-    "name": "Dmytro",
+    "name": "EVANS KISANGA",
     "role": "Translator",
-    "country": "PL",
-    "link": "https://forum.cardano.org/u/dmitry.stas"
+    "country": "TZ",
+    "link": "https://forum.cardano.org/u/babaelliot/summary"
   },
   {
-    "name": "Fabian",
+    "name": "Ilhun Chung",
     "role": "Translator",
-    "country": "CH",
-    "link": "https://forum.cardano.org/u/zyroxa"
+    "country": "KR",
+    "link": "https://forum.cardano.org/u/cryptoveri/summary"
   },
   {
-    "name": "Jonny",
+    "name": "Janice Gu",
+    "role": "Translator",
+    "country": "KR",
+    "link": "https://forum.cardano.org/u/janiceyamgu/summary"
+  },
+  {
+    "name": "Jonny Mai",
     "role": "Translator",
     "country": "DE",
-    "link": "https://forum.cardano.org/u/jonny22"
+    "link": "https://forum.cardano.org/u/jonny22/summary"
   },
   {
-    "name": "Kornel",
+    "name": "Kornel Gajewski",
     "role": "Translator",
     "country": "PL",
     "link": "https://forum.cardano.org/u/cornl"
   },
   {
-    "name": "Leo",
+    "name": "Martin Mužík",
     "role": "Translator",
-    "country": "CU",
-    "link": "https://forum.cardano.org/u/cubanleo"
+    "country": "SK",
+    "link": "https://forum.cardano.org/u/martin.m/summary"
   },
   {
-    "name": "Piero Zanetti",
+    "name": "Michael Dogali",
     "role": "Translator",
-    "country": "IT",
-    "link": "https://forum.cardano.org/u/lordwotton"
+    "country": "PT",
+    "link": "https://forum.cardano.org/u/redoracle/summary"
   },
   {
-    "name": "Wakuda",
+    "name": "Seira Yun",
     "role": "Translator",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/bakucham"
+    "link": "https://forum.cardano.org/u/seirayun/summary"
+  },
+  {
+    "name": "Shusuke Wakuda",
+    "role": "Translator",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/bakucham/summary"
+  },
+  {
+    "name": "Stephen Castermans",
+    "role": "Translator",
+    "country": "BE",
+    "link": "https://forum.cardano.org/u/robbyja7/summary"
+  },
+  {
+    "name": "Jaromír Tesař",
+    "role": "Translator",
+    "country": "CZ",
+    "link": "https://forum.cardano.org/u/jaromir/summary"
   },
   {
     "name": "Jay Hao",
     "role": "Translator",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/jayhao"
+    "link": "https://forum.cardano.org/u/jayhao/summary"
   },
   {
-    "name": "Seba",
+    "name": "Piero Zanetti",
+    "role": "Translator",
+    "country": "PA",
+    "link": "https://forum.cardano.org/u/lordwotton/summary"
+  },
+  {
+    "name": "Rami Hanania",
+    "role": "Translator",
+    "country": "LB",
+    "link": "https://forum.cardano.org/u/ramih/summary"
+  },
+  {
+    "name": "Andreas Sosilo",
+    "role": "Translator",
+    "country": "ID",
+    "link": "https://forum.cardano.org/u/andreassosilo/summary"
+  },
+  {
+    "name": "Dmytro Stashenko",
+    "role": "Translator",
+    "country": "PL",
+    "link": "https://forum.cardano.org/u/dmitry.stas"
+  },
+  {
+    "name": "Fabian von Bergen",
+    "role": "Translator",
+    "country": "CH",
+    "link": "https://forum.cardano.org/u/zyroxa"
+  },
+  {
+    "name": "Sebastián Videmato",
     "role": "Translator",
     "country": "AR",
     "link": "https://forum.cardano.org/u/cardanocastellano"
   },
   {
-    "name": "Janice Gu",
+    "name": "Metinee Boonrattanaamorn",
     "role": "Translator",
-    "country": "CN",
-    "link": "https://forum.cardano.org/u/janiceyamgu"
+    "country": "TH",
+    "link": "https://forum.cardano.org/u/metinee/"
   }
 ]
