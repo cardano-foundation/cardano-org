@@ -38,6 +38,11 @@ devportal:
   url: https://developers.cardano.org
   image_url: /img/authors/devportal.svg
 
+community:
+  name: Cardano Community
+  url: https://www.youtube.com/c/CardanoCommunity
+  image_url: /img/authors/cardano-community.jpg
+
 
 # note: don't use relative links here, as this data is built into different paths
 #       for example /news/tags/developers vs /news

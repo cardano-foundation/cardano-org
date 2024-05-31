@@ -247,6 +247,10 @@ const config = {
                 label: 'News',
                 to: '/news',
               },
+              {
+                label: 'Contribute',
+                to: '/docs/',
+              },
             ],
           },
         ],
