@@ -93,7 +93,7 @@ const config = {
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
               {to: '/ouroboros', label: 'What is Ouroboros?'}, 
-              {to: '/hardforks', label: 'Which hardforks are there?'}, 
+              {to: '/hardforks', label: 'Which hard forks were there?'}, 
               {to: '/genesis', label: 'About Genesis Distribution'}, 
               {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],

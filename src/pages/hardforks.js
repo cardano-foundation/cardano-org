@@ -1,3 +1,4 @@
+import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -7,11 +8,11 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
-import SpacerBox from "@site/src/components/Layout/SpacerBox"; 
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { Chrono } from "react-chrono";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 // Hard Fork List
-// TODO: timeline data should go into a JSON file
 const timelineItems = [
   {
     title: "Byron Era",
@@ -71,10 +72,10 @@ const timelineItems = [
   {
     title: "Alonzo Era",
     cardTitle: "October 22, 2021",
-    cardSubtitle: "Name: (Lobster)", //todo: confirm
+    cardSubtitle: "Name: (Lobster)", //TODO: confirm name
     cardDetailedText: [
-      // "-", // fixme
-      "Epoch 298", 
+      // "-", // FIXME: what changed?
+      "Epoch 298",
       "Protocol Version: 6.0",
       "Transaction ID: N/A (Specific transaction ID not provided)",
     ],
@@ -103,14 +104,8 @@ const timelineItems = [
   },
 ];
 
-function TestContent() {
-  return (
-    <Link href="https://google.de">Google</Link>
-  );
-}
-
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
+  const { siteTitle } = useDocusaurusContext();
   return (
     <SiteHero
       title="Hard forks"
@@ -126,7 +121,7 @@ export default function Home() {
       title="Which hard forks have occurred? | cardano.org"
       description="An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
     >
-      <OpenGraphImage pageName="hardforks" /> {/* fixme: does not exist */}
+      <OpenGraphImage pageName="hard-forks" />
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
@@ -137,36 +132,38 @@ export default function Home() {
           />
           <Divider text="Timeline" id="timeline"/>
 
-          <Chrono
-            items={timelineItems} 
-            mode="VERTICAL_ALTERNATING"
-            cardHeight={220}
-            activeItemIndex={7}
-            disableToolbar={true}
-            disableClickOnCircle={true}
-            disableInteraction={true}
-            disableTimelinePoint={false}
-            theme={{
-              primary: "#093DB0",
-              secondary: "#007FFF",
-              cardBgColor: "white",
-              titleColor: "#093DB0",
-              titleColorActive: "#FF7676",
-            }}
-          ></Chrono>
+          <BrowserOnly fallback={<div>Loading...</div>}>
+            {() => (
+              <Chrono
+                items={timelineItems}
+                mode="VERTICAL_ALTERNATING"
+                cardHeight={220}
+                activeItemIndex={7}
+                disableToolbar={true}
+                disableClickOnCircle={true}
+                disableInteraction={true}
+                disableTimelinePoint={false}
+                theme={{
+                  primary: "#093DB0",
+                  secondary: "#007FFF",
+                  cardBgColor: "white",
+                  titleColor: "#093DB0",
+                  titleColorActive: "#FF7676",
+                }}
+              />
+            )}
+          </BrowserOnly>
         </BoundaryBox>
       </BackgroundWrapper>
 
       <BackgroundWrapper backgroundType={"solidGrey"}>
         <BoundaryBox>
-
           <Divider text="hard fork transaction ids" />
           <TitleWithText
-                  description="Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks."
-                />
+            description="Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks."
+          />
           <SpacerBox size="medium"/>
         </BoundaryBox>
-        
       </BackgroundWrapper>
     </Layout>
   );
