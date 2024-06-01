@@ -14,8 +14,8 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.2.0",
-    "@docusaurus/preset-classic": "^3.2.0",
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^3.0.0",
@@ -28,7 +28,7 @@
     "react-tabs": "^6.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.2.0",
+    "@docusaurus/module-type-aliases": "^3.4.0",
     "@docusaurus/types": "^3.2.0"
   },
   "browserslist": {
