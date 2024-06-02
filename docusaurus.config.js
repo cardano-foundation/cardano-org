@@ -116,14 +116,9 @@ const config = {
             label: 'Developers',
             position: 'left',
             items: [  
+              {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
-              {to: '/exchanges', label: 'Integrate Cardano'},
-              {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
-              {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
-              {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
-              {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
-              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},
-              {href: 'https://cardano.stackexchange.com/', label: 'Stack Exchange'},   
+              {to: '/exchanges', label: 'Integrate Cardano'}, 
             ],
           },
           {
