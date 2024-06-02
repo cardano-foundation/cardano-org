@@ -1,15 +1,11 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
-import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
-import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox  from "@site/src/components/Layout/SpacerBox";
-import ProofOfStakeSection from "@site/src/components/ProofOfStakeSection";
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
