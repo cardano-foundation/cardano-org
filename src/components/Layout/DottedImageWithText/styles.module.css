@@ -1,7 +1,8 @@
 .container {
-  display: flex; /* Use flexbox layout */
-  align-items: center; /* Center items vertically */
-  justify-content: flex-start; /* Align content to the start */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 20px;
   gap: 20px; /* Adjust the space between the image and the text */
 }
@@ -11,8 +12,10 @@
   align-items: center; /* Center the image vertically */
   justify-content: center; /* Center the image horizontally */
   padding: 10px;
+  padding-top: 60px;
   width: 10rem;
   height: 8rem;
+  min-width: 8rem;
 }
 
 .textWrap {
@@ -20,4 +23,19 @@
   text-align: left; /* Left align the text */
   margin-left: 40px;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .textWrap {
+    margin-left: 0; /* Reset margin for better readability */ 
+  }
+
+  .imageWrap {
+    padding-top: 20px; /* Adjust padding for better spacing */
+  }
 }

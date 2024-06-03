@@ -36,10 +36,17 @@ export default function Home() {
                 imageName="education"
                 title="Documentation"
                 text={[
-                  "[Developer Portal](https://developers.cardano.org)",
-                  "[Cardano Docs](https://docs.cardano.org)",
-                  "[Integrate Cardano](/exchanges)",
-                  "[Core Development Updates](/news/tags/development)"
+                  
+                 "Access the essential resources and updates you need to build, integrate, and stay informed about the Cardano blockchain. Below you’ll find links to the developer portal, detailed documentation, integration guides, and the latest core development updates.",
+                  
+                  {
+                  list: [
+                    "[Developer Portal](https://developers.cardano.org)",
+                    "[Cardano Docs](https://docs.cardano.org)",
+                    "[Integrate Cardano](/exchanges)",
+                    "[Core Development Updates](/news/tags/development)",
+                  ],
+                },
 
                 ]}
                 headingDot={true}
@@ -49,10 +56,16 @@ export default function Home() {
                 imageName="proof-of-work"
                 title="Developer Tools"
                 text={[
+
+                  "Explore the tools, projects, and updates that are shaping the Cardano ecosystem. Below you’ll find links to builder tools, a showcase of projects built on Cardano, and a technical updates tracker that aggregates commits within the last 7 days from all branches of Cardano development-related repos.",
                   
-                  "[Builder Tools](https://developers.cardano.org/tools)",
-                  "[Project Showcase](https://developers.cardano.org/showcase)",
-                  "[Developer Updates](https://cardanoupdates.com)",
+                  {
+                    list: [
+                      "[Builder Tools](https://developers.cardano.org/tools)",
+                      "[Project Showcase](https://developers.cardano.org/showcase)",
+                      "[Technical Update Tracker](https://cardanoupdates.com)",
+                    ],
+                  },
 
                 ]}
                 headingDot={false}
@@ -62,10 +75,20 @@ export default function Home() {
                 imageName="research"
                 title="Support"
                 text={[
+
+                  "Join the vibrant Cardano developer community through various platforms. Below you’ll find links to the Cardano Stack Exchange, the Cardano Forum, and the official Telegram group. Connect with fellow developers, ask questions, and share insights in our decentralized ecosystem.",
                   
-                  "[Cardano Stack Exchange](https://cardano.stackexchange.com)",
-                  "[Cardano Forum](https://forum.cardano.org/c/developers/29)",
-                  "[Telegram](https://t.me/CardanoDevelopersOfficial)",
+                  {
+                    list: [
+                      "[Cardano Stack Exchange](https://cardano.stackexchange.com)",
+                      "[Cardano Forum](https://forum.cardano.org/c/developers/29)",
+                      "[Telegram](https://t.me/CardanoDevelopersOfficial)",
+                    ],
+                  },
+
+                  
+                  
+                  
 
                 ]}
                 headingDot={false}
