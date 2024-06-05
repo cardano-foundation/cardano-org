@@ -93,6 +93,7 @@ const config = {
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
               {to: '/ouroboros', label: 'What is Ouroboros?'}, 
+              {to: '/hardforks', label: 'Which hard forks were there?'}, 
               {to: '/genesis', label: 'About Genesis Distribution'}, 
               {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
             ],
@@ -108,7 +109,6 @@ const config = {
               {to: '/#follow', label: 'Follow Cardano'},
               {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
-              
             ],
           },
           {
@@ -116,14 +116,9 @@ const config = {
             label: 'Developers',
             position: 'left',
             items: [  
+              {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
-              {to: '/exchanges', label: 'Integrate Cardano'},
-              {href: 'https://developers.cardano.org', label: 'Developer Portal'},  
-              {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},  
-              {href: 'https://developers.cardano.org/showcase', label: 'Project Showcase'},  
-              {href: 'https://docs.cardano.org', label: 'Cardano Docs'}, 
-              {href: 'https://cardanoupdates.com', label: 'Developer Updates'},
-              {href: 'https://cardano.stackexchange.com/', label: 'Stack Exchange'},   
+              {to: '/exchanges', label: 'Integrate Cardano'}, 
             ],
           },
           {
