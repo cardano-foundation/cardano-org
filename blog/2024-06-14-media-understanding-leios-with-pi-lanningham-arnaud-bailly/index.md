@@ -5,7 +5,7 @@ authors: [community]
 tags: [media, development, Ouroboros]
 ---
 
-Introducing the Roundtable Talk series, featuring an in-depth discussion on `Ouroboros Leios`, a revolutionary scaling solution within the Ouroboros protocol family. This inaugural event marks our commitment to empowering the community with knowledge and fostering open dialogue about emerging technologies like `Leios`. We're excited to continue this journey of exploration and education. Stay tuned for upcoming Roundtable Talks on other fascinating topics within the ever-evolving blockchain ecosystem.
+The roundtable discussion features Pi Lanningham and Arnaud Bailly exploring the intricacies of `Ouroboros Leios`, a blockchain-based technology aimed at enhancing decentralized systems. They delve into `Leios`'s architecture, its potential applications in the tech industry, and the innovative solutions it offers for scalability and security. The conversation also covers the implications of `Ouroboros Leios` for developers and businesses, highlighting its unique approach to consensus and transaction processing. This insightful dialogue provides a comprehensive understanding of how `Leios` could revolutionize blockchain technology and its real-world applications.
 
 <div style={{ textAlign: 'right' }}>
 [**Watch now**](https://www.youtube.com/watch?v=vpXS9lgL6BA)
