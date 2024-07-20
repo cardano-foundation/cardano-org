@@ -10,8 +10,8 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 // shows a dotted image and some text to the right, title is optional
 
 export default function DottedImageWithText({ imageName, title, text, headingDot }) {
-  // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
-  const imageUrl = useBaseUrl(`/img/dotted-icons/${imageName}.svg`);
+  // Construct the image URL using the imageName prop (if there is one), we may want to handle image load errors in the future
+  const imageUrl = imageName ? useBaseUrl(`/img/dotted-icons/${imageName}.svg`) : null;
 
   // Function to render text content
   const renderTextContent = (content) => {
@@ -49,9 +49,11 @@ export default function DottedImageWithText({ imageName, title, text, headingDot
 
   return (
     <div className={styles.container}>
-      <div className={styles.imageWrap}>
-        <img src={imageUrl} alt={imageName} />
-      </div>
+      {imageUrl && (
+        <div className={styles.imageWrap}>
+          <img src={imageUrl} alt={imageName} />
+        </div>
+      )}
       <div className={styles.textWrap}>
         {title && <h2 className={clsx({ headingDot: headingDot }, styles.title)}>{title}</h2>}
         {renderTextContent(text)}
