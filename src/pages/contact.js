@@ -19,20 +19,19 @@ function HomepageHeader() {
   return (
     <SiteHero
       title="Contact | cardano.org"
-      description="Cardano is supported by the Cardano Foundation, IOHK, and EMURGO. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
+      description="Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
       bannerType="fluid"
     />
   );
 }
 
-function PartnershipForm() {
+function JoinIntersect() {
   return (
     <div>
       <TitleWithText
-        title="Connect With Our Partnership Team"
+        title="Intersect - one of the member-based organizations"
         description={[
-          "Have an exciting project you’d like to discuss with us? Looking for ways to unlock the potential of Cardano for a new venture? \
-          Fill in the form below and we’ll connect you with our partnership team.",
+          "Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development.",
         ]}
         titleType="black"
         headingDot={false}
@@ -40,9 +39,9 @@ function PartnershipForm() {
       <br />
       <Link
         className="button button--primary button--lg"
-        href="https://cardanocommunity.typeform.com/partnerships"
+        href="https://members.intersectmbo.org/de/registration"
       >
-        Partnership Form
+        Join Intersect
       </Link>
     </div>
   );
@@ -138,7 +137,7 @@ export default function Home() {
             <option value="iog">
               a technical issue with Daedalus, Nami or Lace
             </option>
-            <option value="partnership">a partnership request</option>
+            <option value="intersect">the intention to join Intersect</option>
             <option value="sponsor">
               the desire to sponsor the Cardano Summit
             </option>
@@ -147,7 +146,7 @@ export default function Home() {
           <SpacerBox size="small" />
           {/* Conditional rendering based on user selection */}
           {selectedTopic === "iog" && <TechnicalIssueForm />}
-          {selectedTopic === "partnership" && <PartnershipForm />}
+          {selectedTopic === "intersect" && <JoinIntersect />}
           {selectedTopic === "sponsor" && <SponsorshipForm />}
           {selectedTopic === "different" && <ContactFormHS />}
           {/* ... */}
