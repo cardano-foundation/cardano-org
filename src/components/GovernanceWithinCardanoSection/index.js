@@ -32,7 +32,7 @@ export default function GovernanceWithinCardanoSection({}) {
 
           <div className={styles.buttonWrap}>
             <Link
-              to="https://forum.cardano.org/c/governance/140"
+              to="https://developers.cardano.org/docs/governance/cardano-governance/governance-model"
               className={clsx(
                 "button button--primary button--lg",
                 styles.buttonLink
