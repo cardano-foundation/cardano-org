@@ -102,6 +102,16 @@ const timelineItems = [
       "Transaction ID: a83f479c5635e1e563a19f6e72a1be59fb082bbf31de90cc176850ee799b08ac",
     ],
   },
+  {
+    title: "Conway Era",
+    cardTitle: "August/September, depending on operators",
+    cardSubtitle: "Name: Chang 1",
+    cardDetailedText: [
+      "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations.",
+      "Protocol Version: 9.0",
+      "Transaction ID: not yet available",
+    ],
+  },
 ];
 
 function HomepageHeader() {

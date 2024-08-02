@@ -1,0 +1,64 @@
+{
+  "categories": {
+    "staking": [
+      {
+        "term": "Delegation",
+        "description": "Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded in proportion to the amount of stake delegated."
+      },
+      {
+        "term": "Stake Pool",
+        "description": "A network node with a public address that ada holders can delegate to for earning rewards."
+      },
+      {
+        "term": "Epoch",
+        "description": "A period of time in the Cardano network after which staking rewards are calculated and distributed. One epoch are 5 days."
+      },
+      {
+        "term": "Staking",
+        "description": "Staking refers to the entire process of both delegating and setting up a pool. It is often confused with `delegating`."
+      }
+    ],
+    "catalyst": [
+      {
+        "term": "Funding Proposal",
+        "description": "A formal request or proposal to build something that is not yet covered by the Cardano protocol."
+      },
+      {
+        "term": "Voting Power",
+        "description": "The influence an ada holder has in Project Catalyst, determined by the amount of ada they hold."
+      },
+      {
+        "term": "Evidence of milestone completion",
+        "description": "The evidence clearly and visibly shows that the milestone has been completed."
+      },
+      {
+        "term": "Statement of Milestones (SoM)",
+        "description": "A list of milestones in the project created by Funded Project in the Milestone Module with the schedule, deliverables, milestone achievement dates, milestone funding amounts, and the expected PoA."
+      }
+    ],
+    "governance": [
+      {
+        "term": "CIP-1694",
+        "description": "CIP-1694 introduces a new on-chain governance model for Cardano, aiming to give every ada holder a voice in governance. It proposes a tricameral system with three groups: stake pool operators (SPOs), Delegated Representatives (DReps), and a Constitutional Committee (CC), each with distinct roles."
+      },
+      {
+        "term": "Constitution",
+        "description": "A constitution establishes rules for creating, managing, and interpreting laws, defining government structure, and outlining the powers of different branches. Historically, constitutions have structured governments and reduced decision-making costs. For Cardano, a community-led ecosystem, enacting a constitution is crucial for its benefit and protection. It will guide collective decision-making, define participants' rights and principles, and provide a foundation to address the evolving needs of the ecosystem."
+      },
+      {
+        "term": "Governance Action",
+        "description": "A Governance Action is an on-chain proposal for voting, triggered by a transaction, with an expiration period after which it can’t be enacted. Any ada holder can submit a Governance Action, and voters then submit voting transactions. CIP-1694 describes seven types of Governance Actions: Motion of no-confidence, New constitutional committee or Quorum size, Updates to Constitution, Hard-Fork Initiation, Protocol Parameter Changes, Treasury Withdrawals, and Info."
+      }
+    ],
+    "cip": [
+      {
+        "term": "Cardano Improvement Proposal (CIP)",
+        "description": "CIPs are a way of formally proposing ideas in an agreed-upon fashion. However, they are often used for more than just finding standards. They are not binding in any way. CIPs are publicly visible to the community for discussion, and are located in the Cardano Foundation GitHub CIP repository."
+      },
+      {
+        "term": "CIP Editors",
+        "description": "CIP Editors safeguard the CIP process: they form a group enforcing the process described in this document and facilitating conversations between community actors. CIP editors should strive to keep up to date with general technical discussions and Cardano proposals."
+      }
+    ]
+  }
+}

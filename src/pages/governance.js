@@ -5,8 +5,9 @@ import Divider from "@site/src/components/Layout/Divider";
 import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
 import GovernanceWithinCardanoSection from "@site/src/components/GovernanceWithinCardanoSection";
 import GovernanceWhyVoltaireSection from "@site/src/components/GovernanceWhyVoltaireSection";
-import GovernanceProposalsSection from "@site/src/components/GovernanceProposalsSection";
+import TermExplainer from "@site/src/components/TermExplainer";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import SpacerBox from "@site/src/components/Layout/SpacerBox"; 
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 
 function HomepageHeader() {
@@ -34,25 +35,32 @@ export default function Home() {
       <OpenGraphImage pageName="governance" />
       <HomepageHeader />
       <main>
-        <BackgroundWrapper backgroundType={"solidBlue"}>
-          <BoundaryBox>
-            <GovernanceBlueSection />
-          </BoundaryBox>
-        </BackgroundWrapper>
-
+        
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <Divider text="Governance Within Cardano" />
             <GovernanceWithinCardanoSection />
-            <Divider text="Why Voltaire" />
-            <GovernanceWhyVoltaireSection />
           </BoundaryBox>
         </BackgroundWrapper>
+
+        <BackgroundWrapper backgroundType={"solidBlue"}>
+          <BoundaryBox>
+            <GovernanceBlueSection />
+          </BoundaryBox>
+      </BackgroundWrapper>
+
+
+      <BoundaryBox>
+        <Divider text="Why Voltaire" />
+        <GovernanceWhyVoltaireSection />
+         
+        <SpacerBox size="medium" />
+      </BoundaryBox>
 
          
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <GovernanceProposalsSection />
+            <TermExplainer category="governance" />
           </BoundaryBox>
         </BackgroundWrapper>
         
