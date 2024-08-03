@@ -28,7 +28,7 @@ export default function Home() {
     title="Get ada | cardano.org"
     description="There are many ways to obtain ada to use the Cardano blockchain."
     >
-      <OpenGraphImage pageName="what-is-ada" /> {/* FIXME */}
+      <OpenGraphImage pageName="where-to-get-ada" /> 
       <HomepageHeader />
       <main>
         
