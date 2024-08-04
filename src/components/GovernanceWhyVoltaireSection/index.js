@@ -25,8 +25,8 @@ export default function GovernanceWhyVoltaireSection({}) {
           <p>
             Voltaire adds the ability for the Cardano community to make
             impactful decisions about software updates, technical improvements
-            and funding decisions. Known as Cardano Improvement Proposals (CIPs)
-            and Funding Proposals (FP's) together, these allow the future of
+            and funding decisions. Known as <Link href="https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/">Governance Actions</Link>, 
+            these allow the future of
             Cardano to be determined by its community and funded from the
             platform's treasury.
           </p>
@@ -35,7 +35,7 @@ export default function GovernanceWhyVoltaireSection({}) {
             The era will also play host to a series of experiments, as we
             discuss topics such as decentralised governance, the dynamics of
             democracy and consent, evolving Voltaire from research to reality.
-            If Shelley is the foundation of a globally coordinated network
+            If Shelley was the foundation of a globally coordinated network
             without a central authority, then Voltaire will explore the
             apparatus for shared decision making: the language of
             decentralization.

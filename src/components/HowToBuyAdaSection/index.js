@@ -16,10 +16,8 @@ export default function HowToBuyAdaSection() {
             </div>
             <div className={clsx("col col--6", styles.rightColumn)}>
               <p>
-                You can buy or sell ada for fiat or other cryptocurrencies using
-                cryptocurrency exchanges. Visit{" "}
-                <Link href="https://coinmarketcap.com/">coinmarketcap</Link> to see
-                the list of exchanges that support ada.
+               There are many ways to obtain ada to use the Cardano blockchain. 
+                Find out on <Link to="where-to-get-ada">where to get ada?</Link>
               </p>
               <p>
                 As an ada holder, it is important to keep your funds secure, and
