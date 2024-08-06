@@ -17,7 +17,7 @@ function WelcomeHero({ title, description }) {
             className={clsx("button button--primary button--lg", styles.button)}
             to="/where-to-get-ada"
           >
-            Where to get Ada?
+            Where to get ada?
           </Link>
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
