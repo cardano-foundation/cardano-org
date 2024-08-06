@@ -11,4 +11,4 @@ The Cardano Foundation focuses on transparency, governance, and accountability i
 [**Read more**](https://cardanofoundation.org/en/news/cardano-foundation-core-focus-areas/)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/89d8t72C4Uk?si=dgiGOXAEtCnAP-66" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/89d8t72C4Uk?si=dgiGOXAEtCnAP-66" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

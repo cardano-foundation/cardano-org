@@ -11,4 +11,4 @@ Lloyd Duhon discusses the recent DDoS attack on Cardano. Despite the attack, the
 [**Watch now**](https://youtu.be/MYcnCRfl6AI)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MYcnCRfl6AI?si=TG9s2VjXqAr_aZrF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MYcnCRfl6AI?si=TG9s2VjXqAr_aZrF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
