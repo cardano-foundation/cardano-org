@@ -33,6 +33,22 @@ export default function Home() {
       <main>
         
       <BackgroundWrapper backgroundType={"zoom"}>
+      <BoundaryBox>
+            <Divider text="Receive ada from people around the world" id ="receive"/>
+            <DottedImageWithText
+                
+                title="Receive ada"
+                text={[
+                 
+                  "Before receiving or buying [ada](what-is-ada), you need to set up a [Cardano wallet](what-is-ada#wallets).", "Once you have a [Cardano wallet](what-is-ada#wallets), all you need to do is share your address to start sending and receiving [ada](what-is-ada) (and other native tokens) peer-to-peer.",
+                 "Some [wallets](what-is-ada#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+                 
+                ]}
+                headingDot={true}
+              />
+        </BoundaryBox>
+
+        
         <BoundaryBox>
             <Divider text="Buy ada using Exchanges" id="exchanges"/>
             <DottedImageWithText
@@ -107,23 +123,6 @@ export default function Home() {
                 text={[
                   
                  "Discover Cardano’s innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](what-is-ada) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal.",
-                 
-                ]}
-                headingDot={true}
-              />
-        </BoundaryBox>
-    
-
-     
-        <BoundaryBox>
-            <Divider text="Receive ada from people around the world" id ="receive"/>
-            <DottedImageWithText
-                
-                title="Receive ada"
-                text={[
-                  
-                 "Once you have a [Cardano wallet](what-is-ada#wallets), all you need to do is share your address to start sending and receiving [ada](what-is-ada) (and other native tokens) peer-to-peer.",
-                 "Some [wallets](what-is-ada#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
                  
                 ]}
                 headingDot={true}

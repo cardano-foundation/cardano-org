@@ -11,4 +11,4 @@ Video of the Governance Workshop held in San Diego, focusing on best practices a
 [**Watch now**](https://www.youtube.com/watch?v=-DGqW0KN0Bg)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-DGqW0KN0Bg?si=yrJYjW-ydNGne1Zn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-DGqW0KN0Bg?si=yrJYjW-ydNGne1Zn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
