@@ -43,6 +43,10 @@ community:
   url: https://www.youtube.com/c/CardanoCommunity
   image_url: /img/authors/cardano-community.jpg
 
+scaling:
+  name: Cardano Scaling
+  url: https://cardano-scaling.org/
+  image_url: /img/authors/cardano-scaling.png
 
 # note: don't use relative links here, as this data is built into different paths
 #       for example /news/tags/developers vs /news
