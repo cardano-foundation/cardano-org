@@ -5,6 +5,7 @@ import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
 import WalletSection from "@site/src/components/WalletSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -55,6 +56,7 @@ export default function Home() {
         <BoundaryBox>
           <WalletSection />
         </BoundaryBox>
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );
