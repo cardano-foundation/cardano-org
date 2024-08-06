@@ -11,4 +11,4 @@ The roundtable discussion features Pi Lanningham and Arnaud Bailly exploring the
 [**Watch now**](https://www.youtube.com/watch?v=vpXS9lgL6BA)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vpXS9lgL6BA?si=VjHBGaJbRZ4WkJSB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vpXS9lgL6BA?si=VjHBGaJbRZ4WkJSB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
