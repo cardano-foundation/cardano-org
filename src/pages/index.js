@@ -8,7 +8,7 @@ import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
-import HomePartnersSection from "@site/src/components/HomePartnersSection";
+import Logos from "@site/src/components/Layout/Logos";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
@@ -91,7 +91,13 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"solidGrey"}>
           <BoundaryBox>
-            <HomePartnersSection />
+            <Divider text="Entities" />
+            <TitleWithText
+              description="Multiple independent entities collaborate within a decentralized team framework to drive Cardano forward, ensuring that it remains aligned with its core mission as it progresses and develops. These are a few of them:"
+              titleType="none"
+              headingDot={false}
+            />
+            <Logos jsonFileName="logosEntities" /> 
           </BoundaryBox>
         </BackgroundWrapper>
 
