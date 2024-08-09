@@ -29,7 +29,7 @@
   .logoContainer {
     /* Adjust the padding if needed */
     padding: 10px;
-  }
+  }   
 }
 
 .logoContainer {
@@ -48,6 +48,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.imageWrap:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
 }
 
 .link {
@@ -56,9 +61,8 @@
 }
 
 .companyName {
-  margin-top: 0.9rem; /* Spacing between logo and optional companyName text in json */
+  margin-top: 0.5rem; /* Spacing between logo and optional companyName text in json */
   font-size: 0.9rem;
-  color: #555; /* Adjust color as needed */
 }
 
 /* Ensure logos have a minimum size */

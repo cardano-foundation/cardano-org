@@ -1,0 +1,56 @@
+[
+  {
+    "imageName": "blinklabs",
+    "label": "Blink Labs is building on Cardano",
+    "link": "https://blinklabs.io"
+  },
+  {
+    "imageName": "dcspark",
+    "label": "dcSpark is building on Cardano",
+    "link": "https://dcspark.io",
+    "companyName": "dcSpark"
+  },
+  {
+    "imageName": "iagon",
+    "label": "Iagon Labs is building on Cardano",
+    "link": "https://iagon.com"
+  },
+  {
+    "imageName": "DripDropz",
+    "label": "DripDropz is building on Cardano",
+    "link": "https://dripdropz.io/about-us",
+    "companyName": "DripDropz"
+  },
+  {
+    "imageName": "saib",
+    "label": "Saib is building on Cardano",
+    "link": "https://saib.dev"
+  },
+  {
+    "imageName": "strica",
+    "label": "Strica is building on Cardano",
+    "link": "https://strica.io",
+    "companyName": "Strica"
+  },
+  {
+    "imageName": "sundaelabs",
+    "label": "Sundae Labs is building on Cardano",
+    "link": "https://sundae.fi"
+  },
+  {
+    "imageName": "txpipe",
+    "label": "TxPipe is building on Cardano",
+    "link": "https://txpipe.io",
+    "companyName": "TxPipe"
+  },
+  {
+    "imageName": "worldmobile",
+    "label": "World Mobile is building on Cardano",
+    "link": "https://worldmobile.io"
+  },
+  {
+    "imageName": "jpgstore",
+    "label": "jpg.store is building on Cardano",
+    "link": "https://www.jpg.store/team"
+  }
+]

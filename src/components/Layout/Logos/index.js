@@ -5,7 +5,9 @@ import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 
-// shows a logo with a link, forces svg to ensure quality.
+// shows a logo with a link, forces svg to ensure quality
+// "companyName" in the json file is optional, therefore
+// if the logo consists of the company name leave the field out (example: Sundae Labs)
 function LogoWithLink({ imageName, label, link, companyName }) {
   return (
     <div className={styles.logoContainer}>
