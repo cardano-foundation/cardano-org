@@ -1,56 +1,86 @@
 [
   {
+    "companyName": "Blink Labs",
     "imageName": "blinklabs",
-    "label": "Blink Labs is building on Cardano",
-    "link": "https://blinklabs.io"
+    "knownFor": "gOuroboros",
+    "link": "https://blinklabs.io",
+    "showCompanyName": false
   },
   {
+    "companyName": "dcSpark",
     "imageName": "dcspark",
-    "label": "dcSpark is building on Cardano",
+    "knownFor": "Flint wallet",
     "link": "https://dcspark.io",
-    "companyName": "dcSpark"
+    "showCompanyName": true
   },
   {
+    "companyName": "Iagon",
     "imageName": "iagon",
-    "label": "Iagon Labs is building on Cardano",
-    "link": "https://iagon.com"
+    "link": "https://iagon.com",
+    "knownFor": "decentralized cloud storage",
+    "showCompanyName": false
   },
   {
+    "companyName": "DripDropz",
     "imageName": "DripDropz",
-    "label": "DripDropz is building on Cardano",
     "link": "https://dripdropz.io/about-us",
-    "companyName": "DripDropz"
+    "knownFor": "token distribution system",
+    "showCompanyName": true
   },
   {
+    "companyName": "Saib",
     "imageName": "saib",
-    "label": "Saib is building on Cardano",
-    "link": "https://saib.dev"
+    "link": "https://saib.dev",
+    "knownFor": "Argus (Cardano.Sync)",
+    "showCompanyName": false
   },
   {
+    "companyName": "Strica",
     "imageName": "strica",
-    "label": "Strica is building on Cardano",
     "link": "https://strica.io",
-    "companyName": "Strica"
+    "knownFor": "Cardanoscan, Typhon wallet",
+    "showCompanyName": true
   },
   {
+    "companyName": "Sundae Labs",
     "imageName": "sundaelabs",
-    "label": "Sundae Labs is building on Cardano",
-    "link": "https://sundae.fi"
+    "link": "https://sundae.fi",
+    "knownFor": "Sundae Swap",
+    "showCompanyName": false
   },
   {
+    "companyName": "TxPipe",
     "imageName": "txpipe",
-    "label": "TxPipe is building on Cardano",
     "link": "https://txpipe.io",
-    "companyName": "TxPipe"
+    "knownFor": "Scrolls, Oura, Pallas",
+    "showCompanyName": true
   },
   {
+    "companyName": "World Mobile",
     "imageName": "worldmobile",
-    "label": "World Mobile is building on Cardano",
-    "link": "https://worldmobile.io"
+    "link": "https://worldmobile.io",
+    "knownFor": " decentralized internet connectivity",
+    "showCompanyName": false
   },
   {
+    "companyName": "jpg.store",
     "imageName": "jpgstore",
-    "label": "jpg.store is building on Cardano",
-    "link": "https://www.jpg.store/team"
+    "link": "https://www.jpg.store/team",
+    "knownFor": "NFT market place",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "utxo AG",
+    "imageName": "utxoag",
+    "link": "https://utxoag.com",
+    "knownFor": "NMKR",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Tastenkunst GmbH",
+    "imageName": "tastenkunst",
+    "link": "https://www.tastenkunst.com",
+    "knownFor": "Eternl wallet",
+    "showCompanyName": true
   }
 ]
