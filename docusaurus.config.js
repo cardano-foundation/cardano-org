@@ -256,6 +256,19 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+
+    // Announcement Bar
+    // id: always change it when changing the announcement
+    // backgroundColor: use #1442B3 for announcements
+    announcementBar: {
+      id: "announcement_index1", // Any value that will identify this message + increment the number every time to be unique
+      content:
+        `<strong>Join the Cardano Summit 2024 in Dubai on 23-24 October. ⭐️<a target="_blank" rel="noopener noreferrer" href="https://summit.cardano.org?ref=corg">Get Tickets!</a></strong>`,
+      backgroundColor: "#1442B3",
+      textColor: "#FFFFFF", // Use #FFFFFF
+      isCloseable: true, // Use true
+    },
+
       head: [
         // ...
         {
