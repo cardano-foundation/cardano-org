@@ -1,0 +1,86 @@
+[
+  {
+    "companyName": "Blink Labs",
+    "imageName": "blinklabs",
+    "knownFor": "gOuroboros",
+    "link": "https://blinklabs.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "dcSpark",
+    "imageName": "dcspark",
+    "knownFor": "Flint wallet",
+    "link": "https://dcspark.io",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Iagon",
+    "imageName": "iagon",
+    "link": "https://iagon.com",
+    "knownFor": "decentralized cloud storage",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "DripDropz",
+    "imageName": "DripDropz",
+    "link": "https://dripdropz.io/about-us",
+    "knownFor": "token distribution system",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Saib",
+    "imageName": "saib",
+    "link": "https://saib.dev",
+    "knownFor": "Argus (Cardano.Sync)",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Strica",
+    "imageName": "strica",
+    "link": "https://strica.io",
+    "knownFor": "Cardanoscan, Typhon wallet",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Sundae Labs",
+    "imageName": "sundaelabs",
+    "link": "https://sundae.fi",
+    "knownFor": "Sundae Swap",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "TxPipe",
+    "imageName": "txpipe",
+    "link": "https://txpipe.io",
+    "knownFor": "Scrolls, Oura, Pallas",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "World Mobile",
+    "imageName": "worldmobile",
+    "link": "https://worldmobile.io",
+    "knownFor": " decentralized internet connectivity",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "jpg.store",
+    "imageName": "jpgstore",
+    "link": "https://www.jpg.store/team",
+    "knownFor": "NFT market place",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "utxo AG",
+    "imageName": "utxoag",
+    "link": "https://utxoag.com",
+    "knownFor": "NMKR",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Tastenkunst GmbH",
+    "imageName": "tastenkunst",
+    "link": "https://www.tastenkunst.com",
+    "knownFor": "Eternl wallet",
+    "showCompanyName": true
+  }
+]

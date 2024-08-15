@@ -1,11 +1,11 @@
-.discoverWrap {
+.logoGridContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Wrap items to the next line on smaller screens */
   gap: 2rem; /* Space between logo containers */
 }
 
-.discoverItems {
+.logoGrid {
   /* This container will be responsible for the layout of the logo items */
   display: flex;
   flex-direction: row;
@@ -14,14 +14,13 @@
   align-items: center; /* This will vertically align items if they have different heights */
   padding: 2rem 0;
   max-width: 70rem;
-
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .discoverItems {
+  .logoGrid {
     /* Adjust styles for mobile */
     justify-content: center;
     align-items: center;
@@ -30,11 +29,11 @@
   .logoContainer {
     /* Adjust the padding if needed */
     padding: 10px;
-  }
+  }   
 }
 
 .logoContainer {
-  padding: 20px;
+  padding: 30px;
   text-align: center; /* Center the text within the logo container */
   display: flex; /* Use flex to enable vertical centering */
   flex-direction: column; /* Stack logo and text vertically */
@@ -44,10 +43,32 @@
 
 .imageWrap {
   max-width: 15rem;
+  min-width: 10rem; /* Ensure a minimum width for the logo */
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.imageWrap:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
 }
 
 .link {
   text-transform: uppercase;
   font-size: 0.8rem;
+}
+
+.companyName {
+  margin-top: 0.5rem; /* Spacing between logo and optional companyName text in json */
+  font-size: 0.9rem;
+}
+
+/* Ensure logos have a minimum size */
+.imageWrap img {
+  max-height: 80px;
+  max-width: 100%;
+  min-height: 50px; /* Ensure a minimum height for the logos */
+  min-width: 50px; /* Ensure a minimum width for the logos */
 }

@@ -61,7 +61,7 @@ export default function HomeDiscoverSection() {
       </div>
       <div className={styles.quoteWrap}>
         <QuoteWithText
-          text="We, alongside our community and partners, are defining a new future: a decentralized future without intermediaries, in which power is returned to the individual."
+          text="Alongside the community, entities, and companies building on Cardano, a new future is being defined: a decentralized future without intermediaries, where power is returned to the individual"
           quoteType="none"
         />
       </div>
