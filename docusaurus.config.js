@@ -55,6 +55,7 @@ const config = {
           showReadingTime: false,
           routeBasePath: 'news',
           blogSidebarCount: 17,
+          onUntruncatedBlogPosts: 'ignore',
           editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
