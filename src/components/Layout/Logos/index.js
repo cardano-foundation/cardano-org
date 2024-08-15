@@ -10,24 +10,31 @@ import 'tippy.js/dist/tippy.css';  //Default Styling
 // "companyName" in the json file is optional, therefore
 // if the logo consists of the company name leave the field out (example: Sundae Labs)
 function LogoWithLink({ imageName, link, companyName, knownFor, showCompanyName }) {
+  const logoElement = (
+    <Link to={link}>
+      <ThemedImage
+        alt={`Company logo of ${companyName}`}
+        sources={{
+          light: useBaseUrl(`/img/logos/${imageName}.svg`),
+          dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
+        }}
+      />
+    </Link>
+  );
+
   return (
     <div className={styles.logoContainer}>
       <div className={styles.imageWrap}>
-      <Tippy content={`known for: ${knownFor}`} 
-              offset={[10, 20]}
-              trigger="mouseenter focusin click"
-              touch="hold" 
-      >
-        <Link to={link}>
-          <ThemedImage
-            alt={`Company logo of ${companyName}`}
-            sources={{
-              light: useBaseUrl(`/img/logos/${imageName}.svg`),
-              dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
-            }}
-          />
-        </Link>
-        </Tippy>
+        {knownFor ? (
+          <Tippy content={`Known for: ${knownFor}`} 
+                 offset={[10, 20]}
+                 trigger="mouseenter focusin click"
+                 touch="hold">
+            {logoElement}
+          </Tippy>
+        ) : (
+          logoElement
+        )}
       </div>
       {showCompanyName && companyName && (
         <div className={styles.companyName}>{companyName}</div>

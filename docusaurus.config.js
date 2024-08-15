@@ -180,19 +180,19 @@ const config = {
             items: [
               {
                 label: 'Cardano Foundation',
-                to: '/partners?tab=cardanofoundation',
+                to: '/entities?tab=cardanofoundation',
               },
               {
                 label: 'EMURGO',
-                to: '/partners?tab=emurgo',
+                to: '/entities?tab=emurgo',
               },
               {
                 label: 'Input Output',
-                href: '/partners?tab=iog',  
+                href: '/entities?tab=iog',  
               },
               {
                 label: 'More entities',
-                href: '/partners?tab=intersect', 
+                href: '/entities?tab=intersect', 
               },
             ],
           },

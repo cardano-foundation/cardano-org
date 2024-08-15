@@ -24,4 +24,9 @@
     X-Frame-Options = "SAMEORIGIN"
     # This path has its own content security policy
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com https://maxcdn.bootstrapcdn.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app data:; style-src 'self' 'unsafe-inline'; font-src 'self' https://maxcdn.bootstrapcdn.com"
-    
+
+# Redirects
+[[redirects]]
+  from = "/partners/"
+  to = "https://cardano.org/entities/"
+  status = 301

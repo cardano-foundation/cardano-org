@@ -2,26 +2,26 @@
   {
     "imageName": "cardanofoundation",
     "label": "About the Cardano Foundation",
-    "link": "/partners?tab=cardanofoundation"
+    "link": "/entities?tab=cardanofoundation"
   },
   {
     "imageName": "emurgo",
     "label": "About EMURGO",
-    "link": "/partners?tab=emurgo"
+    "link": "/entities?tab=emurgo"
   },
   {
     "imageName": "iog",
     "label": "About Input Output",
-    "link": "/partners?tab=iog"
+    "link": "/entities?tab=iog"
   },
   {
     "imageName": "intersect",
     "label": "About Intersect",
-    "link": "/partners?tab=intersect"
+    "link": "/entities?tab=intersect"
   },
   {
     "imageName": "pragma",
     "label": "About PRAGMA",
-    "link": "/partners?tab=pragma"
+    "link": "/entities?tab=pragma"
   }
 ]

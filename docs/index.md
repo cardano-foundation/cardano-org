@@ -76,8 +76,8 @@ cardano-org
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
   - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/.
-  - `/src/data/logosCompanies.json` - Company data for https://cardano.org/partners/.
-  - `/src/data/logosEntities.json` - Entitiy data for https://cardano.org.
+  - `/src/data/logosCompanies.json` - Company data for https://cardano.org/entities/.
+  - `/src/data/logosEntities.json` - Entitiy data for https://cardano.org/entities.
   - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
   - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/tutorial/faq-component).
   - `/src/data/termsForTermExplainer.json` - data for the TermExplainer component.
