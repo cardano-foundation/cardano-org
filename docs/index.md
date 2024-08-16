@@ -48,7 +48,11 @@ cardano-org
 │   ├── data
 │   │   ├── ambassadorsData.json
 │   │   ├── delegationFAQ.json
-│   │   └── operationFAQ.json
+│   │   ├── logosCompanies.json
+│   │   ├── logosEntities.json
+│   │   ├── operationFAQ.json
+│   │   ├── pineappleFAQ.json
+│   │   └── termsForTermExplainer.json
 │   └── pages
 │       ├── ambassadors.js
 │       ├── brand-assets.js
@@ -70,11 +74,18 @@ cardano-org
 - `/blog/` - Contains the Markdown files for the news section.
 - `/docs/` - Contains the Markdown files for the documentation of the components (like this page). Customize the order of the docs sidebar in `sidebars.js`.
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
-  - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/
-  - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/
-   - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/
+  - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
+  - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/.
+  - `/src/data/logosCompanies.json` - Company data for https://cardano.org/entities/.
+  - `/src/data/logosEntities.json` - Entitiy data for https://cardano.org/entities.
+  - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
+  - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/tutorial/faq-component).
+  - `/src/data/termsForTermExplainer.json` - data for the TermExplainer component.
   - `/src/pages` - Any files within this directory will be converted into a website page.
 - `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory.
+  - `/static/archive` - Genesis distribution content that we want to preserve. Data was downloaded from static.iohk.io.
+  - `/static/downloads` - Content that needs to be distributed, e.g. media packs.
+  - `/static/img` - All kinds of images. To highlight a few: `authors` are logos for `authors.yml`, `logos` are entity and company logos, `og` are open graph images.
 - `/docusaurus.config.js` - A config file containing the site configuration.
 - `/package.json` - A Docusaurus website is a React app. You can install and use any npm packages you like in them.
 - `/sidebar.js` - Used by the documentation to specify the order of documents in the sidebar.

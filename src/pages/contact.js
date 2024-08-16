@@ -75,6 +75,7 @@ function TechnicalIssueForm() {
 function SponsorshipForm() {
   return (
     <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LNXdLDhsQmA?si=1Q3HejtLiyfAoPY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <TitleWithText
         title="Cardano Summit Sponsorship"
         description={[

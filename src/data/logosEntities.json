@@ -1,0 +1,27 @@
+[
+  {
+    "imageName": "cardanofoundation",
+    "label": "About the Cardano Foundation",
+    "link": "/entities?tab=cardanofoundation"
+  },
+  {
+    "imageName": "emurgo",
+    "label": "About EMURGO",
+    "link": "/entities?tab=emurgo"
+  },
+  {
+    "imageName": "iog",
+    "label": "About Input Output",
+    "link": "/entities?tab=iog"
+  },
+  {
+    "imageName": "intersect",
+    "label": "About Intersect",
+    "link": "/entities?tab=intersect"
+  },
+  {
+    "imageName": "pragma",
+    "label": "About PRAGMA",
+    "link": "/entities?tab=pragma"
+  }
+]

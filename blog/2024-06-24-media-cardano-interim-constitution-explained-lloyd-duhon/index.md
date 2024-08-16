@@ -11,4 +11,4 @@ Lloyd Duhon breaks down the Cardano Blockchain Interim Constitution, covering it
 [**Watch now**](https://www.youtube.com/watch?v=4T44WB46wGU)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4T44WB46wGU?si=S2ubyhKCoEf5NjdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4T44WB46wGU?si=S2ubyhKCoEf5NjdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
