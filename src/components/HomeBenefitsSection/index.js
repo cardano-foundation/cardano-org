@@ -114,7 +114,8 @@ export default function HomeBenefitsSection() {
       <Tabs
         className={styles.tabs}
         onSelect={handleSelect}
-        selectedIndex={selectedIndex}>
+        selectedIndex={selectedIndex}
+      >
         <div className={clsx("row")}>
           <div className={clsx("col col--4", styles.leftColumn)}>
             <TabList className={styles.tabList}>
@@ -123,7 +124,8 @@ export default function HomeBenefitsSection() {
                   className={clsx(styles.tab, {
                     [styles.tabSelected]: index === selectedIndex,
                   })}
-                  key={index}>
+                  key={index}
+                >
                   <TabLabel isSelected={index === selectedIndex}>
                     {benefit.benefits_item_label}
                   </TabLabel>
@@ -140,7 +142,8 @@ export default function HomeBenefitsSection() {
                 key={index}
                 className={`${styles.tabPanel} ${
                   index === selectedIndex ? "swipeIn" : "swipeOut"
-                }`}>
+                }`}
+              >
                 <h2>{benefit.benefits_item_title}</h2>
                 <p
                   dangerouslySetInnerHTML={{
@@ -150,7 +153,8 @@ export default function HomeBenefitsSection() {
                 <p className={styles.buttonWrap}>
                   <Link
                     className="button button--primary button--lg"
-                    to={benefit.benefits_item_cta_link}>
+                    to={benefit.benefits_item_cta_link}
+                  >
                     {benefit.benefits_item_cta_title}
                   </Link>
                 </p>
