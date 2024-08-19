@@ -24,9 +24,9 @@ const benefitsData = {
           "Proof-Of-Stake And Ouroboros: The Most Environmentally Sustainable Blockchain Protocol",
         benefits_item_body:
           "Ouroboros is the first peer-reviewed, verifiably-secure blockchain protocol, and Cardano is the first blockchain \
-        to implement it. Ouroboros enables decentralization in the Cardano network, and allows it on sustainable scale for global requirements \
-        and crucially, without compromising security.<br /><br />The protocol is the culmination of tireless efforts, building on foundational \
-        research, and is propelled by a vision for more secure and transparent global payment systems, and to provide the means to equitably redistribute \
+        to implement it. Ouroboros enables decentralization in the Cardano network on a sustainable scale for global requirements \
+        and most crucially, without compromising security.<br /><br />The protocol is the result of tireless efforts, based on foundational \
+        research, propelled by a vision for more secure and transparent global payment systems, and provides the means to equitably redistribute \
         power and control.",
         benefits_item_cta_link: "/ouroboros",
         benefits_item_cta_title: "Learn about Ouroboros",
@@ -67,7 +67,7 @@ const benefitsData = {
           "With a committed community at its core, Cardano is an open-source project developed through open \
         participation. To ensure the longevity and health of the network, Cardano features an incentive mechanism that rewards \
         users - either as stake pool operators or stake delegators - for their participation. The platform is built and expanded \
-        through enhancement and improvement proposals. Cardano’s governance system gives everyone a democratic voice; ADA holders \
+        through enhancement and improvement proposals. Cardano’s governance system gives everyone a democratic voice; ada holders \
         can submit or vote on proposals to upgrade the platform or help determine the direction of development. The governance model \
         uniquely positions Cardano for future growth and development, and provides the means to introduce new capabilities tailored to \
         user needs. It ensures Cardano and its community can continuously fund and decide upon platform and ecosystem improvements.",
