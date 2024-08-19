@@ -14,6 +14,13 @@
     "showCompanyName": true
   },
   {
+    "companyName": "DripDropz",
+    "imageName": "DripDropz",
+    "link": "https://dripdropz.io/about-us",
+    "knownFor": "token distribution system",
+    "showCompanyName": true
+  },
+  {
     "companyName": "Iagon",
     "imageName": "iagon",
     "link": "https://iagon.com",
@@ -21,10 +28,17 @@
     "showCompanyName": false
   },
   {
-    "companyName": "DripDropz",
-    "imageName": "DripDropz",
-    "link": "https://dripdropz.io/about-us",
-    "knownFor": "token distribution system",
+    "companyName": "jpg.store",
+    "imageName": "jpgstore",
+    "link": "https://www.jpg.store/team",
+    "knownFor": "NFT market place",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "MeshJS",
+    "imageName": "mesh",
+    "link": "https://meshjs.dev/about",
+    "knownFor": "Mesh SDK",
     "showCompanyName": true
   },
   {
@@ -49,25 +63,18 @@
     "showCompanyName": false
   },
   {
+    "companyName": "Tastenkunst GmbH",
+    "imageName": "tastenkunst",
+    "link": "https://www.tastenkunst.com",
+    "knownFor": "Eternl wallet",
+    "showCompanyName": true
+  },
+  {
     "companyName": "TxPipe",
     "imageName": "txpipe",
     "link": "https://txpipe.io",
     "knownFor": "Scrolls, Oura, Pallas",
     "showCompanyName": true
-  },
-  {
-    "companyName": "World Mobile",
-    "imageName": "worldmobile",
-    "link": "https://worldmobile.io",
-    "knownFor": " decentralized internet connectivity",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "jpg.store",
-    "imageName": "jpgstore",
-    "link": "https://www.jpg.store/team",
-    "knownFor": "NFT market place",
-    "showCompanyName": false
   },
   {
     "companyName": "utxo AG",
@@ -77,10 +84,10 @@
     "showCompanyName": false
   },
   {
-    "companyName": "Tastenkunst GmbH",
-    "imageName": "tastenkunst",
-    "link": "https://www.tastenkunst.com",
-    "knownFor": "Eternl wallet",
-    "showCompanyName": true
+    "companyName": "World Mobile",
+    "imageName": "worldmobile",
+    "link": "https://worldmobile.io",
+    "knownFor": " decentralized internet connectivity",
+    "showCompanyName": false
   }
 ]
