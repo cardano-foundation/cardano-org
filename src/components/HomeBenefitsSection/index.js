@@ -23,10 +23,10 @@ const benefitsData = {
         benefits_item_title:
           "Proof-Of-Stake And Ouroboros: The Most Environmentally Sustainable Blockchain Protocol",
         benefits_item_body:
-          "Ouroboros is the first peer-reviewed, verifiably secure blockchain protocol, and Cardano is the first blockchain \
-        to implement it. Ouroboros enables the Cardano network’s decentralization, and allows it to sustainably scale to global requirements \
-        without, crucially, compromising security.<br /><br />The protocol is the culmination of tireless effort, building on foundational \
-        research, and is propelled by a vision for more secure and transparent global payment systems, and a means to redistribute, more fairly, \
+          "Ouroboros is the first peer-reviewed, verifiably-secure blockchain protocol, and Cardano is the first blockchain \
+        to implement it. Ouroboros enables decentralization in the Cardano network, and allows it on sustainable scale for global requirements \
+        and crucially, without compromising security.<br /><br />The protocol is the culmination of tireless efforts, building on foundational \
+        research, and is propelled by a vision for more secure and transparent global payment systems, and to provide the means to equitably redistribute \
         power and control.",
         benefits_item_cta_link: "/ouroboros",
         benefits_item_cta_title: "Learn about Ouroboros",
@@ -37,10 +37,10 @@ const benefitsData = {
         benefits_item_title:
           "The Highest Standards In Development, Rooted In Science",
         benefits_item_body:
-          "Cardano is developed using evidence-based methods: a novel combination of formal methods, which are normally \
-        found in critical high-stake applications, and an agile approach, which helps the project remain adaptable and responsive to emerging \
+          "Cardano is developed using evidence-based methods; a novel combination of formal methods, normally \
+        found in critical high-stakes applications, and an agile approach, which helps the project remain adaptable and responsive to emerging \
         requirements and new innovations. To support global applications, systems, and solutions, we believe security assurance is not a \
-        choice: it’s a requirement. Our protocol implementations and platform integrations are first researched, challenged, and mathematically \
+        choice: it is a requirement. Our protocol implementations and platform integrations are first researched, challenged, and mathematically \
         modeled and tested before they are specified. These specifications then inform development which, in turn, is independently audited. \
         The result is a codebase offering an unrivaled level of assurance.",
         benefits_item_cta_link: "/research",
@@ -52,8 +52,8 @@ const benefitsData = {
         benefits_item_title:
           "Unparalleled Security - And The Makings Of A Trustless World",
         benefits_item_body:
-          "Cardano makes it possible for any actors that do not know each other - and have no reason to trust one another \
-        - to interact and transact, securely. It’s a platform for building trust where none might naturally exist, opening up whole new markets \
+          "Cardano makes it possible for any actors who do not know each other - and have no reason to trust one another \
+        - to interact and transact, securely. It is a platform for building trust where none might naturally exist, opening up whole new markets \
         and opportunities. Through Ouroboros, Cardano is provably secure against bad actors and Sybil attacks. Every transaction, interaction, \
         and exchange is immutably and transparently recovered, and securely validated using multi-signature and a pioneering extended UTXO model.",
         benefits_item_cta_link: "https://roadmap.cardano.org/",
@@ -67,10 +67,10 @@ const benefitsData = {
           "With a committed community at its core, Cardano is an open-source project developed through open \
         participation. To ensure the longevity and health of the network, Cardano features an incentive mechanism that rewards \
         users - either as stake pool operators or stake delegators - for their participation. The platform is built and expanded \
-        through enhancement and improvement protocols. Cardano’s governance system gives everyone a democratic voice; ada holders \
+        through enhancement and improvement proposals. Cardano’s governance system gives everyone a democratic voice; ADA holders \
         can submit or vote on proposals to upgrade the platform or help determine the direction of development. The governance model \
-        uniquely positions Cardano for future growth and development, and allows it to introduce new capability tailored to its \
-        user’s needs. It ensures Cardano and its community can continuously fund and decide upon platform and ecosystem improvements.",
+        uniquely positions Cardano for future growth and development, and provides the means to introduce new capabilities tailored to \
+        user needs. It ensures Cardano and its community can continuously fund and decide upon platform and ecosystem improvements.",
         benefits_item_cta_link: "/governance",
         benefits_item_cta_title: "Learn about governance",
       },
@@ -80,15 +80,15 @@ const benefitsData = {
         benefits_item_title:
           "Extremely Scalable And Environmentally Sustainable",
         benefits_item_body:
-          "Ouroboros allows Cardano to scale to global requirements with minimal energy requirements. Unlike other \
-        blockchains, Cardano does not require exponentially more energy to increase performance and add blocks. The performance-sustainability \
-        balance is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction \
+          "Ouroboros allows Cardano to scale to global requirements with minimal energy consumption. Unlike other \
+        blockchains, Cardano does not require exponentially increasing energy to enhance performance and add blocks. \
+        The balance between performance and sustainability is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction \
         processing through multi-party state channels.<br /><br />The network proliferates as the number of stake pools increases, while \
         parameters are set and adjusted to measure the attractiveness of specific stake pools. This is a network that rewards participation \
         directly. Cardano is designed to ensure that those who act in the best interests of the network are also acting in their own best \
-        interests. This ensures the development of a healthy ecosystem, and, in turn, the endurance, health, and robustness of the network, \
+        interests. This ensures the development of a healthy ecosystem with a durable, healthy, and robust network, \
         now and into the future. The combination of sustainability and scalability allows Cardano to achieve the throughput required to meet \
-        the evolving demands of global systems: financial, logistics, identity, societal.",
+        the evolving demands of global systems— financial, logistical, identity-related, societal.",
         benefits_item_cta_link:
           "https://iohk.io/en/research/library/papers/hydrafast-isomorphic-state-channels/",
         benefits_item_cta_title: "Learn about Hydra",
@@ -114,8 +114,7 @@ export default function HomeBenefitsSection() {
       <Tabs
         className={styles.tabs}
         onSelect={handleSelect}
-        selectedIndex={selectedIndex}
-      >
+        selectedIndex={selectedIndex}>
         <div className={clsx("row")}>
           <div className={clsx("col col--4", styles.leftColumn)}>
             <TabList className={styles.tabList}>
@@ -124,8 +123,7 @@ export default function HomeBenefitsSection() {
                   className={clsx(styles.tab, {
                     [styles.tabSelected]: index === selectedIndex,
                   })}
-                  key={index}
-                >
+                  key={index}>
                   <TabLabel isSelected={index === selectedIndex}>
                     {benefit.benefits_item_label}
                   </TabLabel>
@@ -142,8 +140,7 @@ export default function HomeBenefitsSection() {
                 key={index}
                 className={`${styles.tabPanel} ${
                   index === selectedIndex ? "swipeIn" : "swipeOut"
-                }`}
-              >
+                }`}>
                 <h2>{benefit.benefits_item_title}</h2>
                 <p
                   dangerouslySetInnerHTML={{
@@ -153,8 +150,7 @@ export default function HomeBenefitsSection() {
                 <p className={styles.buttonWrap}>
                   <Link
                     className="button button--primary button--lg"
-                    to={benefit.benefits_item_cta_link}
-                  >
+                    to={benefit.benefits_item_cta_link}>
                     {benefit.benefits_item_cta_title}
                   </Link>
                 </p>
