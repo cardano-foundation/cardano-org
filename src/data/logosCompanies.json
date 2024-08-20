@@ -23,7 +23,7 @@
   {
     "companyName": "Guild Operators",
     "imageName": "guild",
-    "link": "https://cardano-community.github.io/guild-operators/",
+    "link": "https://cardano-community.github.io/guild-operators/contributors/",
     "knownFor": "CNTools, gLiveView, Topology Updater",
     "showCompanyName": true
   },
@@ -44,7 +44,7 @@
   {
     "companyName": "Koios API",
     "imageName": "koios",
-    "link": "https://koios.rest",
+    "link": "https://koios.rest/community.html#teams",
     "knownFor": "Decentralized OpenSource API",
     "showCompanyName": true
   },
