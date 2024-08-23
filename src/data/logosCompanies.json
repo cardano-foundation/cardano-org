@@ -21,6 +21,13 @@
     "showCompanyName": true
   },
   {
+    "companyName": "Guild Operators",
+    "imageName": "guild",
+    "link": "https://cardano-community.github.io/guild-operators/contributors/",
+    "knownFor": "CNTools, gLiveView, Topology Updater",
+    "showCompanyName": true
+  },
+  {
     "companyName": "Iagon",
     "imageName": "iagon",
     "link": "https://iagon.com",
@@ -33,6 +40,13 @@
     "link": "https://www.jpg.store/team",
     "knownFor": "NFT market place",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Koios API",
+    "imageName": "koios",
+    "link": "https://koios.rest/community.html#teams",
+    "knownFor": "Decentralized OpenSource API",
+    "showCompanyName": true
   },
   {
     "companyName": "MeshJS",
