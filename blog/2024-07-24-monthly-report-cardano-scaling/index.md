@@ -10,5 +10,3 @@ This monthly report on Cardano's Hydra and Mithril scaling projects provides an 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardano-scaling.org/monthly/2024-07) 
 </div>
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8gy2JV02TuY?si=5ph1gE5ISre328RP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
