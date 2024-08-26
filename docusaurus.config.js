@@ -240,13 +240,17 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'News',
+                label: 'Cardano News',
                 to: '/news',
               },
               {
                 label: 'Contribute',
                 to: '/docs/',
               },
+              {
+                label: 'Contributors',
+                href: 'https://github.com/cardano-foundation/cardano-org/graphs/contributors',
+              }
             ],
           },
         ],
