@@ -19,12 +19,12 @@ const WalletItemList = [
     link: "https://typhonwallet.io",
   },
   {
-    title: "Flint Wallet",
-    imageName: "flint-ada",
-    text: "Flint’s lightweight and user-friendly design lets you manage your crypto assets and access the world of DeFi with ease.",
-    subtext: "Browser extension and app for iOS and Android",
-    label: "Get Flint",
-    link: "https://flint-wallet.com",
+    title: "VESPR Wallet",
+    imageName: "vespr-ada",
+    text: "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use.",
+    subtext: "App for iOS and Android",
+    label: "Get VESPR",
+    link: "https://vespr.xyz",
   },
   {
     title: "Yoroi Wallet",
@@ -43,20 +43,20 @@ const WalletItemList = [
     link: "https://eternl.io",
   },
   {
-    title: "VESPR Wallet",
-    imageName: "vespr-ada",
-    text: "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use.",
-    subtext: "App for iOS and Android",
-    label: "Get VESPR",
-    link: "https://vespr.xyz",
-  },
-  {
     title: "Lace Wallet",
     imageName: "lace-ada",
     text: "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
     subtext: "Browser extension for Chrome, Brave",
     label: "Get Lace",
     link: "https://www.lace.io",
+  },
+  {
+    title: "Daedalus Wallet",
+    imageName: "daedalus-ada",
+    text: "The [open-source](https://github.com/input-output-hk/daedalus) full node wallet for Cardano. It offers enhanced control and security by maintaining a complete copy of the blockchain, but this comes at the cost of a more complex user experience. As a result, they are typically geared towards professional users who require these advanced features.",
+    subtext: "Only for powerful desktop PCs",
+    label: "Get Daedalus",
+    link: "https://daedaluswallet.io",
   },
 ];
 
