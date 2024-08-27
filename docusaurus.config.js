@@ -149,7 +149,10 @@ const config = {
             items: [  
               {to: '/news', label: 'All Articles (Chronological)'},  
               {to: '/news/tags/community-digest', label: 'Community Digest'},
+              {to: '/news/tags/education', label: 'Education'},
               {to: '/news/tags/development', label: 'Development'},
+              {to: '/news/tags/governance', label: 'Governance'},
+              {to: '/news/tags/scaling', label: 'Scaling'},
               {to: '/news/tags', label: 'View Tags'},  
           ],
         },
@@ -240,13 +243,17 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'News',
+                label: 'Cardano News',
                 to: '/news',
               },
               {
                 label: 'Contribute',
                 to: '/docs/',
               },
+              {
+                label: 'Contributors',
+                href: 'https://github.com/cardano-foundation/cardano-org/graphs/contributors',
+              }
             ],
           },
         ],
