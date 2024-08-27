@@ -1,21 +1,9 @@
 [
   {
-    "name": "Andrew Kim",
-    "role": "Content Creator",
-    "country": "CA",
-    "link": "https://forum.cardano.org/u/kor-koreapool/summary"
-  },
-  {
     "name": "Anthony Capriotti",
     "role": "Content Creator",
     "country": "US",
     "link": "https://forum.cardano.org/u/anthony_cardano/summary"
-  },
-  {
-    "name": "BENJAMIN MARCO ARNAU",
-    "role": "Content Creator",
-    "country": "ES",
-    "link": "https://forum.cardano.org/u/cobenaru/summary"
   },
   {
     "name": "Darlington Wleh",
@@ -70,12 +58,6 @@
     "role": "Content Creator",
     "country": "JP",
     "link": "https://forum.cardano.org/u/hix_coffeepool/summary"
-  },
-  {
-    "name": "Julien Cisee",
-    "role": "Content Creator",
-    "country": "DE",
-    "link": "https://forum.cardano.org/u/skadea/summary"
   },
   {
     "name": "Lloyd Duhon",
@@ -172,12 +154,6 @@
     "role": "Content Creator",
     "country": "AR",
     "link": "https://forum.cardano.org/u/latinstakepools/summary"
-  },
-  {
-    "name": "Sebastián Aravena",
-    "role": "Content Creator",
-    "country": "CL",
-    "link": "https://forum.cardano.org/u/indi_gital/"
   },
   {
     "name": "Andrew Norimasa Nishigaya",
@@ -352,12 +328,6 @@
     "role": "Moderator",
     "country": "CN",
     "link": "https://forum.cardano.org/u/gustavex/summary"
-  },
-  {
-    "name": "Yuta Uchino",
-    "role": "Moderator",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/yuta_uchino/summary"
   },
   {
     "name": "Alexandru Dragnescu",
