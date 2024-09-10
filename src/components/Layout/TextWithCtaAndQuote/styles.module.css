@@ -3,7 +3,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 10px;
 }
 
 .textWrap {
@@ -20,7 +20,7 @@
 
 .buttonWrap {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 /* Media query for smaller screens to stack items in a single column */

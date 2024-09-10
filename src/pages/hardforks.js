@@ -88,7 +88,7 @@ const timelineItems = [
       "Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member.",
       "Epoch 365",
       "Protocol Version: 7.0",
-      "Transaction ID: 8230f33cd7ad3f8601e94ea2b18abdc591187e190ea8ebecc25e20fc66200f13",
+      "Transaction IDs: 3abda97c78c71e8a21473529aca94d78d364dfa1a866ef8245885e18085b4e4c, 8230f33cd7ad3f8601e94ea2b18abdc591187e190ea8ebecc25e20fc66200f13",
     ],
   },
   {
@@ -99,17 +99,18 @@ const timelineItems = [
       "Introduced further improvements to Plutus smart contract functionality and overall network performance.",
       "Epoch 394",
       "Protocol Version: 8.0",
-      "Transaction ID: a83f479c5635e1e563a19f6e72a1be59fb082bbf31de90cc176850ee799b08ac",
+      "Transaction IDs: a83f479c5635e1e563a19f6e72a1be59fb082bbf31de90cc176850ee799b08ac, 62c3c13187423c47f629e6187f36fbd61a9ba1d05d101588340cfbfdf47b22d2",
     ],
   },
   {
     title: "Conway Era",
-    cardTitle: "August/September, depending on operators",
+    cardTitle: "September 1, 2024",
     cardSubtitle: "Name: Chang 1",
     cardDetailedText: [
       "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations.",
+      "Epoch 507",
       "Protocol Version: 9.0",
-      "Transaction ID: not yet available",
+      "Transaction IDs: 9ba6a580bceb8f94e65a683e8291c89382835f46e3cf928eb521f5581ade4820, 4e377ceb5c5721257a3d7960f3053468bbea45ed8ac22cd559c69e757da5e0ae",
     ],
   },
 ];
@@ -148,7 +149,7 @@ export default function Home() {
                 items={timelineItems}
                 mode="VERTICAL_ALTERNATING"
                 cardHeight={220}
-                activeItemIndex={7}
+                activeItemIndex={8}
                 disableToolbar={true}
                 disableClickOnCircle={true}
                 disableInteraction={true}
