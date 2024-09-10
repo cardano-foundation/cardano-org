@@ -1,20 +1,24 @@
 cf:
   name: Cardano Foundation
+  title: Not-for-profit organization
   url: https://cardanofoundation.org
   image_url: /img/authors/cardano-foundation.png
 
 emurgo:
   name: EMURGO
+  title: For-profit arm of Cardano
   url: https://www.emurgo.io
   image_url: /img/authors/emurgo.png
 
 iog:
   name: Input Output Global
+  title: Research and engineering company
   url: https://iohk.io
   image_url: /img/authors/input-output-hk.png
 
 intersect:
   name: Intersect
+  title: Member based organization
   url: https://www.intersectmbo.org
   image_url: /img/authors/intersectmbo.png
 
@@ -40,6 +44,7 @@ devportal:
 
 community:
   name: Cardano Community
+  title: Individuals interested in or actively supporting the Cardano blockchain
   url: https://www.youtube.com/c/CardanoCommunity
   image_url: /img/authors/cardano-community.jpg
 
@@ -56,5 +61,3 @@ scaling:
 #       mandatory (instead of one-off authors, as one-off entries are difficult to maintain)
 #
 # todo: Would be nice to start with a decent group of regular authors / entities
-#
-# todo: use good title: tags to explain authors/groups who are posting here
