@@ -54,7 +54,7 @@ const config = {
         blog: {
           showReadingTime: false,
           routeBasePath: 'news',
-          blogSidebarCount: 17,
+          blogSidebarCount: 50,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
         },
         theme: {
@@ -96,7 +96,7 @@ const config = {
               {to: '/ouroboros', label: 'What is Ouroboros?'}, 
               {to: '/hardforks', label: 'Which hard forks were there?'}, 
               {to: '/genesis', label: 'About Genesis Distribution'}, 
-              {href: 'https://beta.explorer.cardano.org', label: 'Explore the blockchain'},
+              {href: 'https://explorer.cardano.org', label: 'Explore the Cardano blockchain'},
             ],
           },
           {
