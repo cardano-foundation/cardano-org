@@ -194,8 +194,16 @@ const config = {
                 href: '/entities?tab=iog',  
               },
               {
-                label: 'More entities',
+                label: 'Intersect',
                 href: '/entities?tab=intersect', 
+              },
+              {
+                label: 'PRAGMA',
+                href: '/entities?tab=pragma', 
+              },
+              {
+                label: 'More entities',
+                href: '/entities/#companies', 
               },
             ],
           },
