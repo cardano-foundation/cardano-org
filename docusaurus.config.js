@@ -198,7 +198,7 @@ const config = {
                 href: '/entities?tab=intersect', 
               },
               {
-                label: 'Pragma',
+                label: 'PRAGMA',
                 href: '/entities?tab=pragma', 
               },
               {
