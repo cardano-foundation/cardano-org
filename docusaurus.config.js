@@ -202,7 +202,7 @@ const config = {
                 href: '/entities?tab=pragma', 
               },
               {
-                label: 'More entitiesx',
+                label: 'More entities',
                 href: '/entities/#companies', 
               },
             ],
