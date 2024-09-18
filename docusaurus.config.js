@@ -202,7 +202,7 @@ const config = {
                 href: '/entities?tab=pragma', 
               },
               {
-                label: 'Ecosystem builders',
+                label: 'More entitiesx',
                 href: '/entities/#companies', 
               },
             ],
