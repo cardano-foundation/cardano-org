@@ -6,6 +6,10 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+// Dotenv is a zero-dependency module that loads environment 
+// variables from a .env file into process.env
+import 'dotenv/config'; 
+
 // GitHub Settings to setup repository and branch customFields
 const vars = require('./variables')
 
@@ -33,6 +37,9 @@ const config = {
   customFields: {
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
+
+    // put your blockfrost id in your .env file 
+    REACT_APP_BLOCKFROST_APP_PROJECT_ID: process.env.REACT_APP_BLOCKFROST_APP_PROJECT_ID,
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
