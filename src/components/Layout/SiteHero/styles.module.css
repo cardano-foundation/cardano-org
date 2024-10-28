@@ -479,3 +479,10 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
     background-size: 6800px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .heroBannerAda {
+    background-position: right 50% bottom;
+  }
+}
+
