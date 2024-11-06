@@ -13,6 +13,7 @@ import 'dotenv/config';
 // GitHub Settings to setup repository and branch customFields
 const vars = require('./variables')
 
+// enable or disable the announcement header bar (see 'announcementBar' section below)
 const isAnnouncementActive = false;
 
 /** @type {import('@docusaurus/types').Config} */
