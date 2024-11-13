@@ -6,6 +6,12 @@
     "link": "https://forum.cardano.org/u/anthony_cardano/summary"
   },
   {
+    "name": "Caleb Montiel",
+    "role": "Content Creator",
+    "country": "PY",
+    "link": "https://forum.cardano.org/u/cardanocuration/summary"
+  },
+  {
     "name": "Darlington Wleh",
     "role": "Content Creator",
     "country": "US",
@@ -96,22 +102,22 @@
     "link": "https://forum.cardano.org/u/patryk_karter/summary"
   },
   {
-    "name": "Prerak Malik",
-    "role": "Content Creator",
-    "country": "IN",
-    "link": "https://forum.cardano.org/u/icycranberry"
-  },
-  {
     "name": "Quentin Kayila",
     "role": "Content Creator",
     "country": "CA",
-    "link": "https://forum.cardano.org/wnipos"
+    "link": "https://forum.cardano.org/u/wnipos/"
   },
   {
     "name": "Rena Oishi",
     "role": "Content Creator",
     "country": "JP",
     "link": "https://forum.cardano.org/u/myb_rena/summary"
+  },
+  {
+    "name": "Robin Meeuwis",
+    "role": "Content Creator",
+    "country": "NL",
+    "link": "https://forum.cardano.org/u/bitterbalpool/"
   },
   {
     "name": "Stephanie King",
@@ -174,12 +180,6 @@
     "link": "https://forum.cardano.org/u/ddlezu"
   },
   {
-    "name": "Enrique Guasp",
-    "role": "Meetup",
-    "country": "MX",
-    "link": "https://forum.cardano.org/c/espanol/126"
-  },
-  {
     "name": "Fanny Wijaya",
     "role": "Meetup",
     "country": "ID",
@@ -222,6 +222,12 @@
     "link": "https://forum.cardano.org/u/hakochan/summary"
   },
   {
+    "name": "Jose Iadicicco",
+    "role": "Meetup",
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/joseiadicicco/summary"
+  },
+  {
     "name": "Jungi Hong",
     "role": "Meetup",
     "country": "KR",
@@ -232,6 +238,12 @@
     "role": "Meetup",
     "country": "CN",
     "link": "https://forum.cardano.org/u/ninjis/summary"
+  },
+  {
+    "name": "Tim Brückmann",
+    "role": "Meetup",
+    "country": "DE",
+    "link": "https://forum.cardano.org/"
   },
   {
     "name": "Thomas Lindseth",
@@ -306,16 +318,16 @@
     "link": "https://forum.cardano.org/u/dominatingslash/"
   },
   {
-    "name": "Gean Carlos de Oliveira Brinker",
-    "role": "Moderator",
-    "country": "AU",
-    "link": "https://forum.cardano.org/u/mrbrinker/summary"
-  },
-  {
     "name": "Joshua Daviau",
     "role": "Moderator",
     "country": "CA",
     "link": "https://forum.cardano.org/u/southrye"
+  },
+  {
+    "name": "Kai Chappell",
+    "role": "Moderator",
+    "country": "GB",
+    "link": "https://forum.cardano.org/u/sl13pnir/summary"
   },
   {
     "name": "Mie Tran",
@@ -324,10 +336,22 @@
     "link": "https://forum.cardano.org/u/mietran/summary"
   },
   {
+    "name": "Shaun Byres",
+    "role": "Moderator",
+    "country": "_scotland",
+    "link": "https://forum.cardano.org/u/byres"
+  },
+  {
     "name": "Tony Chan",
     "role": "Moderator",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/gustavex/summary"
+    "link": "https://forum.cardano.org/u/tonychan/"
+  },
+  {
+    "name": "Youngsoo Goh",
+    "role": "Moderator",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/haskellcoding"
   },
   {
     "name": "Alexandru Dragnescu",
@@ -346,12 +370,6 @@
     "role": "Moderator",
     "country": "CU",
     "link": "https://forum.cardano.org/u/napoles/summary"
-  },
-  {
-    "name": "Alex Ludden",
-    "role": "Translator",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/cobblybear/summary"
   },
   {
     "name": "Eric Tsai",
@@ -378,12 +396,6 @@
     "link": "https://forum.cardano.org/u/janiceyamgu/summary"
   },
   {
-    "name": "Jonny Mai",
-    "role": "Translator",
-    "country": "DE",
-    "link": "https://forum.cardano.org/u/jonny22/summary"
-  },
-  {
     "name": "Kornel Gajewski",
     "role": "Translator",
     "country": "PL",
@@ -394,12 +406,6 @@
     "role": "Translator",
     "country": "SK",
     "link": "https://forum.cardano.org/u/martin.m/summary"
-  },
-  {
-    "name": "Michael Dogali",
-    "role": "Translator",
-    "country": "PT",
-    "link": "https://forum.cardano.org/u/redoracle/summary"
   },
   {
     "name": "Seira Yun",
@@ -447,7 +453,7 @@
     "name": "Andreas Sosilo",
     "role": "Translator",
     "country": "ID",
-    "link": "https://forum.cardano.org/u/andreassosilo/summary"
+    "link": "https://forum.cardano.org/u/andreassosilo"
   },
   {
     "name": "Dmytro Stashenko",
