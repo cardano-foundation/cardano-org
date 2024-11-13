@@ -13,6 +13,9 @@ import 'dotenv/config';
 // GitHub Settings to setup repository and branch customFields
 const vars = require('./variables')
 
+// enable or disable the announcement header bar (see 'announcementBar' section below)
+const isAnnouncementActive = false;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cardano',
@@ -282,14 +285,14 @@ const config = {
     // Announcement Bar
     // id: always change it when changing the announcement
     // backgroundColor: use #1442B3 for announcements
-    announcementBar: {
+    announcementBar: isAnnouncementActive ?{
       id: "announcement_index1", // Any value that will identify this message + increment the number every time to be unique
       content:
         `<strong>Join the Cardano Summit 2024 in Dubai on 23-24 October. ⭐️<a target="_blank" rel="noopener noreferrer" href="https://summit.cardano.org?ref=corg">Get Tickets!</a></strong>`,
       backgroundColor: "#1442B3",
       textColor: "#FFFFFF", // Use #FFFFFF
       isCloseable: true, // Use true
-    },
+    }: undefined,
 
       head: [
         // ...
