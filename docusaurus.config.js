@@ -133,16 +133,16 @@ const config = {
             ],
           },
           {
-            to: '/usecases',  
+            to: '/use-cases',  
             label: 'Use Cases',
             position: 'left',
             items: [  
-              {to: '/usecases#identity', label: 'Identity'},  
-              {to: '/usecases#finance', label: 'Finance'},  
-              {to: '/usecases#supply-chain', label: 'Supply Chain'},  
-              {to: '/usecases#social-impact', label: 'Social Impact'},  
-              {to: '/usecases#data-technology', label: 'Data & Technology'},  
-              {to: '/usecases#other', label: 'Other'},  
+              {to: '/use-cases#identity', label: 'Identity'},  
+              {to: '/use-cases#finance', label: 'Finance'},  
+              {to: '/use-cases#supply-chain', label: 'Supply Chain'},  
+              {to: '/use-cases#social-impact', label: 'Social Impact'},  
+              {to: '/use-cases#data-technology', label: 'Data & Technology'},  
+              {to: '/use-cases#diverse', label: 'Diverse Opportunities'},  
             ],
           },
           /* we may want to hide this, and link it only via localhost link in the read me */

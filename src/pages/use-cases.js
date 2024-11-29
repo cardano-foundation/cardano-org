@@ -12,10 +12,8 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Enterprise Use Cases"
-      description="A developing platform, Cardano is being built to 
-      accommodate a broad range of use cases, solving problems across multiple 
-      industry verticals."
+      title="Use Cases"
+      description="Cardano: A developing platform built to support enterprises and a wide range of use cases, solving challenges across multiple industries."
       bannerType="fluid"
     />
   );
@@ -32,31 +30,52 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+          <TitleWithText
+              description={[
+                "Cardano is a public, permissionless Layer 1 blockchain, perfect for enterprises seeking secure, scalable, and transparent solutions. Whether it’s streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage. Empower your business with a blockchain built for trust, collaboration, and global impact.",
+              ]} 
+            />
+
             <Divider text="Identity" id="identity" />
+            <TitleWithText
+              title="Education"
+              description={[
+                "The issuance of academic certifications is heavily centralized. If diplomas, degrees, or other credentials are damaged or lost, the re-issue process is often costly, and the issuing institution might no longer exist. Sharing these credentials is also difficult, as academic achievements are traditionally issued in physical form, which makes it almost impossible to share when and where needed.",
+
+                "Cardano’s blockchain-based identity and credentials solutions address these challenges by securing academic certifications within an immutable and tamper-proof ecosystem. These solutions empower students to take ownership of their achievements, enabling them to instantly share verifiable credentials with institutions or employers.",
+
+                "With this approach, students maintain full control of their academic records without relying on third-party intermediaries. Institutions can verify credentials instantly, eliminating delays and reducing costs. This creates a seamless and efficient way for students and job seekers to prove their qualifications and achievements with confidence.",
+
+              ]}
+              headingDot={true}
+            />
+
             <TitleWithText
               title="Digital Identity Management"
               description={[
                 "Identity systems today are often centralized, making them vulnerable to breaches and fraud. Individuals have limited control over their personal data, and verification processes can be slow and expensive.",
 
                 "Cardano’s blockchain allows individuals to own and control their digital identities. With tamper-proof and easily verifiable credentials on the blockchain, this solution reduces fraud, ensures privacy, and streamlines verification processes for governments and businesses alike.",
+
               ]}
-              headingDot={true}
+              headingDot={false}
             />
             <TitleWithText
               title="Finance"
               description={[
                 "Identity verification is a critical step in onboarding new clients for financial institutions and agencies. However, the process is often slow, resource-intensive, and reliant on multiple third parties.",
 
-                "Cardano’s blockchain provides a solution by enabling secure, reusable, and verifiable digital credentials. This streamlines onboarding processes by reducing dependency on intermediaries and allowing for instant, reliable identity verification.",
               ]}
               headingDot={false}
             />
+
             <TitleWithText
               title="Government"
               description={[
                 "Current systems for issuing and verifying credentials are inefficient and centralized. Control over important documents often remains with the issuing authority rather than the individual, creating a reliance on third-party agencies for verification.",
 
                 "Cardano’s blockchain technology offers a decentralized solution to this problem. By enabling secure, tamper-proof digital credentials, individuals can take full control of their documents. These credentials can be shared and verified instantly, eliminating delays and reducing administrative costs while improving accessibility and trust.",
+
               ]}
               headingDot={false}
             />
@@ -68,6 +87,8 @@ export default function Home() {
                 "Access to financial services remains limited for millions worldwide. Centralized institutions control financial systems, leading to inefficiencies, high fees, and restricted inclusivity.",
 
                 "Cardano’s DeFi ecosystem offers decentralized lending platforms, stablecoins, and decentralized exchanges. By leveraging smart contracts, Cardano provides secure, scalable, and inclusive financial services for users across the globe.",
+
+                "[Explore DeFi on Cardano in the showcase.](https://developers.cardano.org/showcase/?operator=OR&tags=lending&tags=dex)"
               ]}
               headingDot={true}
             />
@@ -77,6 +98,8 @@ export default function Home() {
                 "International payments often face high fees, long processing times, and dependency on intermediaries. These barriers make cross-border transactions inefficient and costly.",
 
                 "Cardano enables fast, low-cost, and secure payments using its native token, ada. By eliminating intermediaries, Cardano reduces transaction fees and settlement times, making it ideal for remittances and peer-to-peer transfers.",
+
+                "[Browse wallets, gateways and bridges in the showcase.](https://developers.cardano.org/showcase/?operator=OR&tags=gateway&tags=wallet&tags=bridge)"
               ]}
               headingDot={false}
             />
@@ -94,7 +117,7 @@ export default function Home() {
             <TitleWithText
               title="Retail"
               description={[
-                "Counterfeit goods pose a significant challenge to the global economy, causing financial losses, eroding brand reputation, and reducing customer trust.",
+                "[Counterfeit goods pose a significant challenge to the global economy](https://www.visualcapitalist.com/300-billion-counterfeit-goods-problem/), causing financial losses, eroding brand reputation, and reducing customer trust.",
 
                 "Cardano’s blockchain offers a tamper-proof solution to combat counterfeiting by providing secure, immutable systems for tracking product provenance and ensuring authenticity. Businesses can certify the originality of their products, enabling consumers to verify authenticity instantly and building confidence in the supply chain.",
               ]}
@@ -141,7 +164,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <Divider text="Other" id="other" />
+            <Divider text="Diverse Opportunities" id="diverse" />
             <TitleWithText
               title="Voting Systems"
               description={[

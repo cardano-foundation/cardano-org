@@ -52,7 +52,7 @@ export default function Home() {
                 "Made Possible",
               ]}
               buttonLabel="Use Cases"
-              buttonLink="/usecases"
+              buttonLink="/use-cases"
               headingDot={true}
             />
 
