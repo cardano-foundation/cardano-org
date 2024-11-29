@@ -2,9 +2,10 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import Link from "@docusaurus/Link"; // Import the Link component
 
 // This component shows a simple header with some text below.
-// title, text, and slight text are optional
+// title, text, slight text, and an optional button
 
 export default function TitleWithText({
   title,
@@ -12,8 +13,9 @@ export default function TitleWithText({
   titleType,
   headingDot,
   slightText,
+  buttonLabel,  
+  buttonLink,   
 }) {
-
   // Function to render description content
   const renderDescriptionContent = (content) => {
     // If it's a string, render it as a paragraph
@@ -82,6 +84,12 @@ export default function TitleWithText({
             </p>
           ))}
         </div>
+      )}
+      {/* Render the button if both buttonLabel and buttonLink are provided */}
+      {buttonLabel && buttonLink && (
+        <Link className="button button--primary button--lg" to={buttonLink}>
+          {buttonLabel}
+        </Link>
       )}
     </div>
   );
