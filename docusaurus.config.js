@@ -14,7 +14,7 @@ import 'dotenv/config';
 const vars = require('./variables')
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = false;
+const isAnnouncementActive = true;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -286,9 +286,9 @@ const config = {
     // id: always change it when changing the announcement
     // backgroundColor: use #1442B3 for announcements
     announcementBar: isAnnouncementActive ?{
-      id: "announcement_index1", // Any value that will identify this message + increment the number every time to be unique
+      id: "announcement_index2", // Any value that will identify this message + increment the number every time to be unique
       content:
-        `<strong>Join the Cardano Summit 2024 in Dubai on 23-24 October. ⭐️<a target="_blank" rel="noopener noreferrer" href="https://summit.cardano.org?ref=corg">Get Tickets!</a></strong>`,
+        `<strong>Calling all artists, designers, and creators to flex your creative muscles and reimagine the website header! ⭐️<a target="_blank" rel="noopener noreferrer" href="https://forum.cardano.org/t/call-for-artwork-design-the-new-cardano-org-header/139421?u=adatainment">$5,000 in prizes, sponsored by CF</a></strong>`,
       backgroundColor: "#1442B3",
       textColor: "#FFFFFF", // Use #FFFFFF
       isCloseable: true, // Use true
