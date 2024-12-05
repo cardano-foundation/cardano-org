@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The core technology teams, in collaboration with the Cardano Foundation, released components compatible with the latest Cardano node version, including Cardano DB Sync, Cardano GraphQL, Cardano Rosetta servers, and Cardano wallet. The ledger team extracted the ImpSpec testing framework for broader community use. The performance and tracing team enhanced governance action benchmarking and improved the locli analysis tool. The Mithril team updated the Protocol Insights dashboard and prepared for the Pythagoras Mithril era activation. The Hydra Doom tournament qualifiers begin on December 3. The upcoming Constitutional Convention, scheduled for December 3–6 in Buenos Aires and Nairobi, will focus on voting on the Cardano constitution. The community is considering renaming the Chang #2 hard fork to the Plomin hard fork in honor of the late Matthew Plomin. Catalyst's Fund13 voting registration closed on November 20.
+The core technology teams released components compatible with the latest Cardano node, including DB Sync and Cardano wallet updates. The ledger team shared the ImpSpec framework, while performance teams enhanced benchmarking and locli analysis. Mithril prepared for the Pythagoras era, and Hydra's Doom tournament qualifiers start December 3. The Constitutional Convention will vote on the Cardano constitution, and the community may rename Chang #2 to the Plomin hard fork.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2024-11-22) 

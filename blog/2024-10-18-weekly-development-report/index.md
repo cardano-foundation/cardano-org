@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The consensus team released updated packages, including diff-containers-1.3.0.0 and fingertree-rm-1.0.0.3, enhanced IOSim with MonadLabelledMVar, and reduced header clock skew to two seconds. The ledger team implemented protections against deposit loss, ensured DRep existence before delegation, updated SPO vote thresholds, and added Mempool and HardFork rules. The Plutus team enhanced the user guide's 'Working with Scripts' and 'Delve Deeper' sections. The Hydra team improved incremental commits, integrated Aiken as the commit validator, and progressed on Blockfrost integration. The Mithril team decentralized signature orchestration and prepared for the Pythagoras era. Intersect's committee and board elections are ongoing, with voting closing on October 20. Preparations for the Chang #2 upgrade continue, aiming to implement CIP-1694 fully. The education team held a meetup in Madrid and is supporting the Cardano Summit in Argentina.
+The consensus team released updated packages, improved IOSim, and reduced header clock skew. The ledger team added protections against deposit loss, updated delegation rules, and refined SPO vote thresholds. Plutus enhanced user guides, Hydra progressed incremental commits with Aiken integration, and Mithril prepared for the Pythagoras era. Intersect elections and Chang #2 upgrade planning continue. The education team held a Madrid meetup and preps for the Cardano Summit in Argentina.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2024-10-18) 
