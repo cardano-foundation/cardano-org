@@ -48,7 +48,6 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `DApp` | Note the capitalization: Decentralized Application. |
 | `Developer Portal` | An open source project on [developers.cardano.org](https://developers.cardano.org) that aims to collect the resources and updates you need to build, integrate, and stay informed about the Cardano blockchain as a developer. |
-| `dcSpark` | Creators of Flint Wallet and Milkomeda. Capitalized S, everything else lower case. |
 | `DRep` | Note the capitalization: Delegated Representative. `DRep` as an abbreviation for Delegated Representative follows standard practices for abbreviations in English: taking the first letter of each word. This makes it intuitive and clear in most contexts. It is also in line with the `DApp` abbreviation. In crypto, the lowercase “d“ is often used to signify “decentralized,” as in dApp (decentralized application) or dGov (decentralized governance). Using “dRep” might imply “decentralized representative”.|
 
 ### E 
@@ -114,8 +113,6 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | `stake pool` | Two words. |
 | `stablecoin` | One word. |
 | `staking`    | Try to avoid term `staking` without context as it is ambiguous. `staking` refers to the whole process of both delegating and setting up a pool but many people confuse this with the actual process of creating blocks. `delegating` means that people delegate their stake to a stake pool. |
-| `Strica` | Creators of Typhon Wallet, Cardanoscan and Flac Finance. Capitalized S, everything else lower case. |
-| `SundaeSwap` | First DEX on Cardano in January 2022. |
 
 ### T 
 |  Spelling/Term   | Comment                    |
