@@ -105,5 +105,5 @@ Various other questions and answers.
 Yes, please always do a `yarn build` before submitting a pull request. It will find many more issues than `yarn start`.
 
 ### Do we have editorial guidelines?
-We adhere to the [editorial guidelines](https://developers.cardano.org/docs/portal-style-guide#editorial-style-guide) of the Cardano Developer Portal.
+Yes, we adhere to these [editorial guidelines](/docs/glossary).
  

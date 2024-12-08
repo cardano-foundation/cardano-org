@@ -225,6 +225,10 @@ const config = {
                 to: '/brand-assets',
               },
               {
+                label: 'Glossary',
+                to: '/docs/glossary#cardano-glossary',
+              },
+              {
                 label: 'Contact',
                 to: '/contact',
               },
