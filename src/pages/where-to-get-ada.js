@@ -94,7 +94,7 @@ export default function Home() {
               {
               list: [
                 "[DexHunter](https://www.dexhunter.io)",
-                "[Minswap](https://app.minswap.org)",
+                "[Minswap](https://minswap.org)",
                 "[MuesliSwap](https://ada.muesliswap.com)",
                 "[SundaeSwap](https://app.sundae.fi)",
                 "[WingRiders](https://www.wingriders.com)",
