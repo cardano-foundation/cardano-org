@@ -29,7 +29,8 @@
     "react-collapsible": "^2.10.0",
     "react-dom": "^18.0.0",
     "react-icons": "^5.0.1",
-    "react-tabs": "^6.0.2"
+    "react-tabs": "^6.0.2",
+    "three": "^0.171.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.5.2",

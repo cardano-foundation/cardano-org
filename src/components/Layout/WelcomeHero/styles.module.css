@@ -18,66 +18,103 @@ html[data-theme="light"] .button {
 }
 
 html[data-theme="dark"] .button {
-  background-color: var(--ifm-button-background-color);
+  background-color: #0033AD;
   color: var(--ifm-button-color);
+  border:none;
 }
 
 .cta .button:last-child {
   margin-right: 0; /* no extra margin to the right of the the last button right: */
 }
 
+.mobileOverlay{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 1;
+}
+
+html[data-theme="light"] .mobileOverlay{
+  background:rgb(0, 51, 173, 0.5);
+}
+
+html[data-theme="dark"] .mobileOverlay{
+  background:rgba(0, 0, 0, 0.6);
+}
+
 .taglineContainer {
   width: 50%;
-  margin-bottom: 3rem;
+  /* background:rgb(255, 255, 255, 0.6); */
+  border-radius: 10px;
+  padding:2rem;
+  color: #ffffff
+}
+
+.taglineContainer h1{
+  margin-block-start: 0;
 }
 
 /* Banner */
 
 .heroBanner {
-  padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 35% 50%;
   height: 830px;
 }
 
+.ctaContainer{
+  z-index: 1;
+  color: var(--ifm-color-primary);
+}
+
+.webglContainer{
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index: 0;
+}
+
 html[data-theme="light"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
-  /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
+  background:linear-gradient(to bottom, #0033AD 30% ,#0048f0);
+  
 }
 
 html[data-theme="dark"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  background: #111111;
 }
 
 /* screen size changes */
 
 @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-    background-size: cover;
-    background-position: 50% 50%;
-  }
-  .cta .button {
-    margin-bottom: 1rem;
+  .mobileOverlay{
+    display: block;
   }
   .taglineContainer {
     width: 100%;
+    border-radius: 0px;
+
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .heroBanner {
-    background-position: 35% 50%;
+  .heroBanner{
+    height: 600px;
+
+  }
+}
+
+@media screen and (max-width: 1182px){
+  .cta .button{
+    margin-bottom: 1rem;
   }
 }
 
 @media screen and (min-width: 1950px) {
-  .heroBanner {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
 }

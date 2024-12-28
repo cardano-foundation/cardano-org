@@ -26,8 +26,8 @@ function WelcomeHeroArtworkContest({ title, description }) {
     >
       <div className="container">
         <div className={styles.taglineContainer}>
-          <h1 className="hero__title">{title}</h1>
-          <p className="hero__subtitle">{description}</p>
+          <h1 className="hero__title welcome_title">{title}</h1>
+          <p className="hero__subtitle welcome_subtitle">{description}</p>
         </div>
 
         <div className={styles.cta}>
