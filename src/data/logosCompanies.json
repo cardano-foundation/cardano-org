@@ -110,5 +110,12 @@
     "link": "https://worldmobile.io",
     "knownFor": " decentralized internet connectivity",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Minswap Labs LLC",
+    "imageName": "minswap",
+    "link": "https://minswap.org/about-us",
+    "knownFor": " Minswap DEX",
+    "showCompanyName": false
   }
 ]
