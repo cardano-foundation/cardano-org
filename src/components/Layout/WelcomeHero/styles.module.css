@@ -83,7 +83,63 @@ html[data-theme="dark"] .heroBanner {
 }
 
 
-.shootingStar {
+/* BELOW ADDED FOR ARTWORK CONTEST */
+
+.yepHeader {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #0033AD;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
+}
+
+@media (min-width: 640px) {
+  .yepHeader {
+    padding-top: 10rem;
+    padding-bottom: 12rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepHeader {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.yepImage {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+@media (min-width: 1024px) {
+  .yepImage {
+    width: auto;
+    height: auto;
+  }
+}
+
+.yepShootingStarGroup,
+.yepPulsingStarGroup {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .yepShootingStarGroup,
+  .yepPulsingStarGroup {
+    display: inline;
+  }
+}
+
+.yepShootingStar {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,49 +168,49 @@ html[data-theme="dark"] .heroBanner {
   }
 }
 
-.shootingStar:nth-child(1) {
+.yepShootingStar:nth-child(1) {
   animation-delay: 4s;
   top: 0%;
   left: 10%;
 }
 
-.shootingStar:nth-child(2) {
+.yepShootingStar:nth-child(2) {
   animation-delay: 8s;
   top: 10%;
   left: 20%;
 }
 
-.shootingStar:nth-child(3) {
+.yepShootingStar:nth-child(3) {
   animation-delay: 15s;
-  top: 20%;
+  top: 5%;
   left: 60%;
 }
 
-.shootingStar:nth-child(4) {
+.yepShootingStar:nth-child(4) {
   animation-delay: 25s;
   top: 0%;
   left: 50%;
 }
 
-.shootingStar:nth-child(5) {
+.yepShootingStar:nth-child(5) {
   animation-delay: 35s;
   top: 10%;
   left: 70%;
 }
 
-.shootingStar:nth-child(6) {
+.yepShootingStar:nth-child(6) {
   animation-delay: 45s;
   top: 0%;
   left: 50%;
 }
 
-.shootingStar:nth-child(7) {
+.yepShootingStar:nth-child(7) {
   animation-delay: 55s;
-  top: 20%;
+  top: 15%;
   left: 10%;
 }
 
-.pulsingPlanet {
+.yepPulsingStar {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -171,39 +227,124 @@ html[data-theme="dark"] .heroBanner {
   }
   30% {
     opacity: 1;
-    transform: scale(2);
+    transform: scale(3);
   }
   50% {
     opacity: 0;
   }
 }
 
-.pulsingPlanet:nth-child(2) {
+.yepPulsingStar:nth-child(2) {
   animation-delay: 5s;
   top: 10%;
   left: 80%;
 }
 
-.pulsingPlanet:nth-child(3) {
+.yepPulsingStar:nth-child(3) {
   animation-delay: 10s;
   top: 5%;
   left: 50%;
 }
 
-.pulsingPlanet:nth-child(4) {
+.yepPulsingStar:nth-child(4) {
   animation-delay: 15s;
   top: 25%;
   left: 10%;
 }
 
-.pulsingPlanet:nth-child(5) {
+.yepPulsingStar:nth-child(5) {
   animation-delay: 20s;
-  top: 15%;
+  top: 25%;
   left: 90%;
 }
 
-.pulsingPlanet:nth-child(6) {
+.yepPulsingStar:nth-child(6) {
   animation-delay: 25s;
   top: 20%;
   left: 30%;
+}
+
+.yepText {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  text-align: center;
+}
+
+.yepTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin:0;
+}
+
+@media (min-width: 640px) {
+  .yepTitle {
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+}
+
+.yepBlurb {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .yepBlurb {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepBlurb {
+    max-width: 36rem;
+  }
+}
+
+.yepButtons {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yepButtonPrimary {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #000000;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+
+.yepButtonPrimary:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000000;
+  text-decoration: none;
+}
+
+.yepButtonSecondary {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #FFFFFF;
+  text-decoration: none;
+}
+
+.yepButtonSecondary:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+  text-decoration: none;
 }

@@ -316,10 +316,6 @@ const config = {
       { 
         src: '/scripts/deactivateServiceWorker.js', 
         async: true 
-      },
-      { 
-        src: 'https://cdn.tailwindcss.com', 
-        async: true 
       }
     ],
 };
