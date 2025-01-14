@@ -10,16 +10,25 @@ function WelcomeHero({ title, description }) {
       <img
         alt=""
         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
-        className="absolute inset-0 -z-10 object-cover size-full lg:size-auto opacity-30"
+        className="absolute inset-0 -z-10 object-cover size-full lg:size-auto opacity-40"
       />
-      <div className="shooting-stars">
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
+      <div className="shootingStarGroup hidden lg:inline" aria-hidden="true">
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
+        <div className={styles.shootingStar}></div>
       </div>
-      
+      <div className="pulsingPlanetGroup hidden lg:inline" aria-hidden="true">
+        <div className={styles.pulsingPlanet}></div>
+        <div className={styles.pulsingPlanet}></div>
+        <div className={styles.pulsingPlanet}></div>
+        <div className={styles.pulsingPlanet}></div>
+        <div className={styles.pulsingPlanet}></div>
+        <div className={styles.pulsingPlanet}></div>
+      </div>
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-semibold text-white sm:text-5xl sm:leading-tight">
           Making The World Work Better For All
@@ -30,7 +39,7 @@ function WelcomeHero({ title, description }) {
         <div className="mt-10 flex items-center justify-center gap-x-6 mx-auto">
           <a
             href="/use-cases"
-            className="text-lg font-normal text-white py-2.5 px-5 rounded-full bg-[#FF5553] hover:bg-opacity-90 hover:text-white hover:no-underline"
+            className="text-lg font-normal text-black py-2.5 px-5 rounded-full bg-white hover:bg-opacity-80 hover:text-black hover:no-underline"
           >
             Where to get ada?
           </a>
