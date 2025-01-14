@@ -63,8 +63,6 @@ function WelcomeHero({ title, description }) {
             <img
               alt="Earth image"
               src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a"
-              // src="https://images.unsplash.com/photo-1626908013351-800ddd734b8a"
-              // src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
               width={4928}
               height={3280}
               className="object-cover object-center max-h-[600px] w-full rounded-3xl bg-white/5 shadow-2xl ring-1 ring-white/10 aspect-video lg:aspect-square" 
