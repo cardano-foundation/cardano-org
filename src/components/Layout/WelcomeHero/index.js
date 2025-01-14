@@ -12,12 +12,12 @@ function WelcomeHero({ title, description }) {
         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
         className="absolute inset-0 -z-10 object-cover size-full lg:size-auto opacity-30"
       />
-      <div class="shooting-stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+      <div className="shooting-stars">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
       </div>
       
       <div className="mx-auto max-w-2xl text-center">
