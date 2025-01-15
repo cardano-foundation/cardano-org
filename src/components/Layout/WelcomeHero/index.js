@@ -21,9 +21,8 @@ function WelcomeHero({ title, description }) {
         for (let i = 0; i < numParticles; i++) {
           let objectType = p.random(["node", "lightbulb", "leaf", "shape"]);
           let node = {
-            x: p.random(p.width),
-            y: p.random(p.height),
-            targetX: p.random(p.width),
+            x: p.random(p.width / 2, p.width),
+            targetX: p.random(p.width / 2, p.width),
             targetY: p.random(p.height),
             size: p.random(10, 30) * nodeSizeFactor,
             color: p.random() > 0.5 ? p.color("#FF5553") : p.color("#FFFFFF"),
@@ -67,7 +66,7 @@ function WelcomeHero({ title, description }) {
           node.x += node.speedX + forceX;
           node.y += node.speedY + forceY;
 
-          if (node.x > p.width || node.x < 0) node.speedX *= -1;
+          if (node.x > p.width || node.x < p.width / 2) node.speedX *= -1;
           if (node.y > p.height || node.y < 0) node.speedY *= -1;
 
           node.color = p.lerpColor(
@@ -181,19 +180,8 @@ function WelcomeHero({ title, description }) {
         <div className={styles.taglineContainer}>
           <h1 className="hero__title">{title}</h1>
           <p className="hero__subtitle">{description}</p>
-        </div>
-        <div className={styles.cta}>
-          <Link
-            className={clsx("button button--primary button--lg", styles.button)}
-            to="/where-to-get-ada"
-          >
-            Where to get ada?
-          </Link>
-          <Link
-            className={clsx("button button--primary button--lg", styles.button)}
-            to="/developers"
-          >
-            Start Building
+          <Link className="button button--secondary button--lg" to="/docs/intro">
+            Get Started
           </Link>
         </div>
 
