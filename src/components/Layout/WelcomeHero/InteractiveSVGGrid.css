@@ -1,0 +1,106 @@
+rect {
+  stroke-linecap: round;
+  stroke-width: 1px;
+  stroke: #00000075;
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: transform 0.6s, fill 0.6s;
+}
+
+text {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 900;
+  fill: rgb(255, 255, 255);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.rect-container {
+  opacity: 0.5;
+}
+
+.rect-container.flipped {
+  opacity: 1;
+}
+
+.rect-container.flipped rect {
+  transform: rotateX(180deg);
+  fill: rgb(0, 0, 0);
+}
+
+.rect-container.flipped text {
+  opacity: 1;
+}
+
+.EE1 {
+  fill: #395dbb;
+}
+
+.EE2 {
+  fill: #6785cb;
+}
+
+.EE3 {
+  fill: #99acdd;
+}
+
+.EE4 {
+  fill: #ccd5ee;
+}
+
+.EE5 {
+  fill: #f97c75;
+}
+
+.EE6 {
+  fill: #fa9a96;
+}
+
+.EE7 {
+  fill: #fcbbb9;
+}
+
+.EE8 {
+  fill: #fddddc;
+}
+
+.EE9 {
+  fill: #669199;
+}
+
+.EE0 {
+  fill: #8aabb2;
+}
+
+.EEA {
+  fill: #b0c7cc;
+}
+
+.EEB {
+  fill: #d7e3e5;
+}
+
+.EEC {
+  fill: #59595b;
+}
+
+.EED {
+  fill: #808183;
+}
+
+.EEE {
+  fill: #a5a8aa;
+}
+
+.EEF {
+  fill: #d0d1d3;
+}
+
+.EEG {
+  fill: #ccd5ee;
+}
+
+.EEX {
+  fill: #ff00d9;
+}

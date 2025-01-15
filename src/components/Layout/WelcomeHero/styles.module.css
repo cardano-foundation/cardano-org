@@ -1,19 +1,11 @@
-/* stylelint-disable docusaurus/copyright-header */
-
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-/* Buttons */
 .cta .button {
-  margin-right: 1rem; /* space between buttons */
-  width: 240px; /* force equal width */
+  margin-right: 1rem;
+  width: 240px;
   font-weight: normal;
 }
 
 html[data-theme="light"] .button {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   color: var(--ifm-color-primary);
 }
 
@@ -23,15 +15,13 @@ html[data-theme="dark"] .button {
 }
 
 .cta .button:last-child {
-  margin-right: 0; /* no extra margin to the right of the the last button right: */
+  margin-right: 0;
 }
 
 .taglineContainer {
   width: 50%;
   margin-bottom: 3rem;
 }
-
-/* Banner */
 
 .heroBanner {
   padding: 4rem 2rem;
@@ -44,21 +34,14 @@ html[data-theme="dark"] .button {
   height: 830px;
 }
 
-html[data-theme="light"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
-  /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
-}
-
+html[data-theme="light"] .heroBanner,
 html[data-theme="dark"] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
-/* screen size changes */
-
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
-    background-size: cover;
     background-position: 50% 50%;
   }
   .cta .button {
@@ -73,11 +56,35 @@ html[data-theme="dark"] .heroBanner {
   .heroBanner {
     background-position: 35% 50%;
   }
+  .heroContent {
+    display: block;
+  }
+  .gridContainer {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1950px) {
   .heroBanner {
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .heroBanner {
+    height: auto !important;
+    background: none !important;
+    overflow: visible;
+    padding: 0;
+  }
+  .heroContent {
+    display: none;
+  }
+  .gridContainer {
+    display: block;
+    width: 100%;
+    height: 550px;
+    margin: 0 auto;
   }
 }
