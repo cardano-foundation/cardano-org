@@ -81,3 +81,252 @@ html[data-theme="dark"] .heroBanner {
     background-size: cover;
   }
 }
+
+/* ADDED FOR ARTWORK CONTEST */
+
+.yepHeader {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #0033AD;
+  margin-bottom: 2.5rem;
+}
+
+.yepPattern {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  stroke: rgba(255, 255, 255, 0.1);
+  mask-image: radial-gradient(100% 100% at top right, white, transparent);
+}
+
+.yepGradientWrap {
+  position: absolute;
+  left: calc(50% - 4rem);
+  top: 2.5rem;
+  z-index: -10;
+  transform: translate3d(0, 0, 0);
+  filter: blur(3rem);
+}
+
+@media (min-width: 640px) {
+  .yepGradientWrap {
+    left: calc(50% - 18rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepGradientWrap {
+    left: 12rem;
+    top: calc(50% - 30rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .yepGradientWrap {
+    left: calc(50% - 24rem);
+  }
+}
+
+.yepGradient {
+  aspect-ratio: 1108 / 632;
+  width: 69.25rem;
+  background-image: linear-gradient(to right, #80caff, #4f46e5);
+  opacity: 0.3;
+}
+
+.yepTextWrap {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 84rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .yepTextWrap {
+    padding-top: 3.5rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepTextWrap {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    align-items: center;
+  }
+}
+
+.yepText {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .yepText {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 2rem;
+  }
+}
+
+.yepTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin:0;
+}
+
+@media (min-width: 640px) {
+  .yepTitle {
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepTitle {
+    font-size: 3rem;
+  }
+}
+
+.yepBlurb {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9EACDD;
+}
+
+@media (min-width: 768px) {
+  .yepBlurb {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepBlurb {
+    max-width: 36rem;
+  }
+}
+
+.yepButtons {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.yepButtonPrimary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #FF5553;
+  text-decoration: none;
+}
+
+.yepButtonPrimary:hover {
+  background-color: rgba(255, 85, 83, 0.9);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.yepButtonSecondary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.yepButtonSecondary:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.yepCol2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  display: flex;
+  max-width: 42rem;
+}
+
+@media (min-width: 640px) {
+  .yepCol2 {
+    margin-top: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .yepCol2 {
+    margin-left: 2.5rem;
+    margin-right: 0;
+    margin-top: 0;
+    max-width: none;
+    flex: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .yepCol2 {
+    margin-left: 8rem;
+  }
+}
+
+.yepImageWrap {
+}
+
+@media (min-width: 1024px) {
+  .yepImageWrap {
+    flex: none;
+    max-width: none;
+    position: relative;
+  }
+}
+
+.yepImage {
+  object-fit: cover;
+  object-position: center;
+  max-height: 600px;
+  width: 100%;
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 1024px) {
+  .yepImage {
+    aspect-ratio: 1;
+  }
+}
+
+.yepLogo {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  margin-bottom: -7rem;
+  margin-left: -7rem;
+  max-width: 32rem;
+}
+
+@media (min-width: 1024px) {
+  .yepLogo {
+    display: inline;
+  }
+}

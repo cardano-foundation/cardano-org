@@ -6,11 +6,11 @@ import Link from "@docusaurus/Link";
 function WelcomeHero({ title, description }) {
 
   return (
-    <div className="relative isolate overflow-hidden bg-[#0033AD] mb-10">
+    <div className={styles.yepHeader}>
     
       <svg
         aria-hidden="true"
-        className="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        className={styles.yepPattern}
       >
         <defs>
           <pattern
@@ -27,48 +27,48 @@ function WelcomeHero({ title, description }) {
       </svg>
       <div
         aria-hidden="true"
-        className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]">
+        className={styles.yepGradientWrap}>
         <div
           style={{
             clipPath:
               'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
           }}
-          className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-30" />
+          className={styles.yepGradient} />
       </div>
       
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:pt-16 lg:pb-24 lg:items-center">
-        <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
+      <div className={styles.yepTextWrap}>
+        <div className={styles.yepText}>
 
-          <h1 className="text-3xl font-semibold text-white sm:text-5xl sm:leading-tight">
+          <h1 className={styles.yepTitle}>
             Making The World Work Better For All
           </h1>
-          <p className="mt-8 text-lg font-regular text-[#9EACDD] md:text-xl lg:max-w-xl">
+          <p className={styles.yepBlurb}>
             Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change.
           </p>
-          <div className="mt-10 flex items-center gap-x-6">
+          <div className={styles.yepButtons}>
             <a
               href="/use-cases"
-              className="text-lg font-semibold text-white py-2.5 px-5 rounded-full bg-[#FF5553] hover:bg-opacity-90 hover:text-white hover:no-underline"
+              className={styles.yepButtonPrimary}
             >
               Where to get ada?
             </a>
-            <a href="/developers" className="text-md font-semibold text-white hover:text-white hover:underline-offset-4"
+            <a href="/developers" className={styles.yepButtonSecondary}
             >
               Start building <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="lg:flex-none lg:max-w-none lg:relative">
+        <div className={styles.yepCol2}>
+          <div className={styles.yepImageWrap}>
             <img
               alt="Earth image"
               src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a"
               width={4928}
               height={3280}
-              className="object-cover object-center max-h-[600px] w-full rounded-3xl bg-white/5 shadow-2xl ring-1 ring-white/10 aspect-video lg:aspect-square" 
+              className={styles.yepImage} 
               />
               
-              <svg viewBox="0 0 375 346.51" className="hidden lg:inline absolute bottom-0 left-0 opacity-10 -mb-28 -ml-28 max-w-lg">
+              <svg viewBox="0 0 375 346.51" className={styles.yepLogo}>
                 <g id="layer" data-name="layer">
                     <path
                       d="M102.76,172a25.31,25.31,0,0,0,23.78,26.65c.49,0,1,0,1.46,0A25.26,25.26,0,1,0,102.76,172Z"
