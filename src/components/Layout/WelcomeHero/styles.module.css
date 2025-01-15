@@ -110,6 +110,13 @@ html[data-theme="dark"] .heroBanner {
   }
 }
 
+@media (min-width: 1280px) {
+  .yepHeader {
+    padding-top: 12rem;
+    padding-bottom: 14rem;
+  }
+}
+
 .yepImage {
   position: absolute;
   inset: 0;
@@ -279,6 +286,13 @@ html[data-theme="dark"] .heroBanner {
 }
 
 @media (min-width: 640px) {
+  .yepTitle {
+    font-size: 2.5rem;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 1024px) {
   .yepTitle {
     font-size: 3rem;
     line-height: 1.25;
