@@ -14,7 +14,7 @@ import 'dotenv/config';
 const vars = require('./variables')
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = true;
+const isAnnouncementActive = false;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
