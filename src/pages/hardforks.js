@@ -160,7 +160,7 @@ export default function Home() {
                 items={timelineItems}
                 mode="VERTICAL_ALTERNATING"
                 cardHeight={220}
-                activeItemIndex={8}
+                activeItemIndex={9}
                 disableToolbar={true}
                 disableClickOnCircle={true}
                 disableInteraction={true}
