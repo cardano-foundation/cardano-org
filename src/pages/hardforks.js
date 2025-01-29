@@ -113,6 +113,17 @@ const timelineItems = [
       "Transaction IDs: 9ba6a580bceb8f94e65a683e8291c89382835f46e3cf928eb521f5581ade4820, 4e377ceb5c5721257a3d7960f3053468bbea45ed8ac22cd559c69e757da5e0ae",
     ],
   },
+  {
+    title: "Conway Era",
+    cardTitle: "January 29, 2025",
+    cardSubtitle: "Name: Plomin",
+    cardDetailedText: [
+      "Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role.",
+      "Epoch 537",
+      "Protocol Version: 10.0",
+      "Transaction IDs: 0b19476e40bbbb5e1e8ce153523762e2b6859e7ecacbaf06eae0ee6a447e79b9",
+    ],
+  },
 ];
 
 function HomepageHeader() {
