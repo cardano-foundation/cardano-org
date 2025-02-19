@@ -27,7 +27,7 @@
 
 # Exception for Reward Calculator iframe
 [[headers]]
-  for = "/reward-calculator/*"
+  for = "/crewardcalculator/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com https://js.hsforms.net https://forms.hsforms.com https://www.google.com https://www.gstatic.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app https://forms.hsforms.com https://forms-eu1.hsforms.com data: https://*.ytimg.com; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://*.hsforms.com https://cardano.org https://new-cardano-org-staging.netlify.app; media-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://api.koios.rest https://hey.cardano.org"
