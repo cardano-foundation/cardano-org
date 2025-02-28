@@ -10,7 +10,7 @@ const translations = {
     title: "Staking Calculator",
     description: "See how much you could potentially earn by staking ada and learn how rewards are calculated.",
     rewardTitle: "Reward Calculator",
-    rewardDescription: "This calculator is provided for guidance only.",
+    rewardDescription: "The Cardano Foundation is not responsible for any differences between estimated and actual rewards. This calculator is for guidance purposes only.",
   },
   jp: {
     title: "ステーキング計算機",
