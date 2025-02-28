@@ -42,3 +42,8 @@
 from = "/enterprise/"
 to = "https://cardano.org/use-cases/"
 status = 301
+
+[[redirects]]
+from = "/calculator_demo/"
+to = "https://cardano.org/calculator/"
+status = 301
