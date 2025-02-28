@@ -101,6 +101,7 @@ const config = {
               {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
               {to: '/where-to-get-ada', label: 'Where to get ada?'}, 
               {to: '/common-scams', label: 'How to protect your ada?'}, 
+              {to: '/calculator', label: 'How do staking rewards work?'}, 
               {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
               {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
               {to: '/governance', label: 'Participate in governance'}, 
