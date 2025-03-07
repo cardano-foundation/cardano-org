@@ -67,8 +67,8 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
             <CtaOneColumn
-              title="Focus On What Matters. Leave The Rest To Us"
-              buttonLabel={"Acess Adrestia"}
+              title="Focus On What Matters. Leave The Rest To Us."
+              buttonLabel={"Access Adrestia"}
               buttonLink={"https://input-output-hk.github.io/adrestia/"}
             />
           </BoundaryBox>
