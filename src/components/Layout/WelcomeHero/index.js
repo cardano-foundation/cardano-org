@@ -9,8 +9,8 @@ function WelcomeHero({ title, description }) {
     <header className={clsx("hero hero--primary", styles.heroBanner)}> 
       <div className="container">
         <div className={styles.taglineContainer}>
-          <h1 className="hero__title">{title}</h1>
-          <p className="hero__subtitle">{description}</p>
+          <h1 className={clsx("hero__title", styles.heroTitle)}>{title}</h1>
+          <p className={clsx("hero__subtitle", styles.heroSubtitle)}>{description}</p>  
         </div>
         <div className={styles.cta}>
           <Link
