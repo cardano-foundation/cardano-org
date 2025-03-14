@@ -44,6 +44,14 @@ html[data-theme="dark"] .button {
   height: 830px;
 }
 
+.heroTitle {
+  color: rgb(255, 255, 255);
+}
+
+.heroSubtitle {
+  color: rgb(255, 255, 255);
+}
+
 html[data-theme="light"] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
   /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
