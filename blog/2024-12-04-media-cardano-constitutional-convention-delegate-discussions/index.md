@@ -11,4 +11,4 @@ The Cardano Constitutional Convention began with global participants collaborati
 [**Watch now**](https://www.youtube.com/watch?v=sKLOfOUIuPg&t=1s)
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sKLOfOUIuPg?si=NUjBAOdJlH9nMcVr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sKLOfOUIuPg?si=NUjBAOdJlH9nMcVr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
