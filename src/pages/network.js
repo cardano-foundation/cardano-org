@@ -112,8 +112,8 @@ const DonutChart = ({ data }) => {
 
 const NetworkStats = () => {
   const { siteConfig: { customFields } } = useDocusaurusContext();
-  const API_URL = customFields.REACT_APP_API_URL;
-  const API_KEY = customFields.REACT_APP_API_KEY;
+  const API_URL = customFields.CARDANO_ORG_API_URL;
+  const API_KEY = customFields.CARDANO_ORG_API_KEY;
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -207,12 +207,12 @@ export default function Home() {
       <OpenGraphImage pageName="network" />
       <HomepageHeader />
       <main>
+      <BackgroundWrapper backgroundType="zoom">
         <BoundaryBox>
-          <BackgroundWrapper backgroundType="zoom">
             <NetworkStats />
             <SpacerBox size="medium" />
-          </BackgroundWrapper>
         </BoundaryBox>
+        </BackgroundWrapper>
       </main>
     </Layout>
   );
