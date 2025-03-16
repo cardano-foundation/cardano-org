@@ -41,8 +41,9 @@ const config = {
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
 
-    // put your blockfrost id in your .env file 
-    REACT_APP_BLOCKFROST_APP_PROJECT_ID: process.env.REACT_APP_BLOCKFROST_APP_PROJECT_ID,
+    // put your api url and key in your .env file 
+    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+    REACT_APP_API_KEY: process.env.REACT_APP_API_KEY,
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

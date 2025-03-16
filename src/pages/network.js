@@ -15,34 +15,62 @@ const convertLovelacesToAda = (lovelaces) => {
 };
 
 const NetworkStats = () => {
+  // API URL, see docusaurus.config.js for details
+  const { siteConfig: { customFields } } = useDocusaurusContext();
+  const API_URL = customFields.REACT_APP_API_URL;
+  const API_KEY = customFields.REACT_APP_API_KEY;
+
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  // Blockfrost id, see docusaurus.config.js for details
-  const { siteConfig: {customFields}} = useDocusaurusContext();
-  const PROJECT_ID = customFields.REACT_APP_BLOCKFROST_APP_PROJECT_ID;
-
   useEffect(() => {
-    // Make sure the environment variable is loaded
-    if (!PROJECT_ID) {
-      setError('Blockfrost API key is missing!');
+    // Make sure the environment variables are loaded
+    if (!API_URL || !API_KEY) {
+      setError('API URL or API Key is missing!');
       return;
     }
 
-    // API request to Blockfrost
-    axios.get('https://cardano-mainnet.blockfrost.io/api/v0/network', {
-      headers: {
-        'project_id': PROJECT_ID
+    const fetchSupplyData = async () => {
+      const response = await axios({
+        method: 'get',
+        url: '/totals',
+        baseURL: API_URL,
+        headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      });
+      return response.data[0];
+    };
+
+    const fetchEpoch = async () => {
+      const response = await axios({
+        method: 'get',
+        url: '/tip',
+        baseURL: API_URL,
+        headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      });
+      return response.data[0].epoch_no;
+    };
+
+    const fetchData = async () => {
+      try {
+        const [totals, epoch] = await Promise.all([
+          fetchSupplyData(),
+          fetchEpoch()
+        ]);
+        setData({ ...totals, epoch_no: epoch });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setError(error.message);
       }
-    })
-    .then((response) => {
-      setData(response.data);  // Set the data in state
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-      setError(error.message);  // Set the error message in case of failure
-    });
-  }, []);
+    };
+
+    fetchData();
+  }, [API_URL, API_KEY]);
 
   // Render the values in ada or an error message if available
   return (
@@ -51,25 +79,21 @@ const NetworkStats = () => {
         <p>Error: {error}</p>
       ) : data !== null ? (
         <div>
-          <TitleWithText title="Supply" 
+          <TitleWithText title={`Supply (Epoch ${data.epoch_no})`} 
             description={[
-              `**Max:** ${convertLovelacesToAda(data.supply.max)} ada`,
-              `**Total:** ${convertLovelacesToAda(data.supply.total)} ada`,
-              `**Circulating:** ${convertLovelacesToAda(data.supply.circulating)} ada`,      `**Locked:** ${convertLovelacesToAda(data.supply.locked)} ada`,
-              `**Treasury:** ${convertLovelacesToAda(data.supply.treasury)} ada`,
-              `**Reserves:** ${convertLovelacesToAda(data.supply.reserves)} ada`
+              `**Circulation:** ${convertLovelacesToAda(data.circulation)} ada`,
+              `**Treasury:** ${convertLovelacesToAda(data.treasury)} ada`,
+              `**Rewards:** ${convertLovelacesToAda(data.reward)} ada`,
+              `**Total Supply:** ${convertLovelacesToAda(data.supply)} ada`,
+              `**Reserves:** ${convertLovelacesToAda(data.reserves)} ada`,
+              `**Fees Pot:** ${convertLovelacesToAda(data.fees)} ada`,
+              `**Deposits Stake:** ${convertLovelacesToAda(data.deposits_stake)} ada`,
+              `**Deposits DRep:** ${convertLovelacesToAda(data.deposits_drep)} ada`,
+              `**Deposits Proposal:** ${convertLovelacesToAda(data.deposits_proposal)} ada`
             ]}
             headingDot={true} 
           /> 
 
-          <TitleWithText title="Stake" 
-            description={[
-              `**Live:** ${convertLovelacesToAda(data.stake.live)} ada`,
-              `**Active:** ${convertLovelacesToAda(data.stake.active)} ada`
-            ]}
-            headingDot={false} 
-          /> 
-          
         </div>
       ) : (
         <p>Loading...</p>
@@ -78,9 +102,7 @@ const NetworkStats = () => {
   );
 };
 
-
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()"; // Ensure this works as needed for Docusaurus
   return (
     <SiteHero
       title="Network Data"
@@ -91,7 +113,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-
   return (
     <Layout
       title="Cardano Network | cardano.org"
@@ -110,3 +131,4 @@ export default function Home() {
     </Layout>
   );
 }
+
