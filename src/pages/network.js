@@ -10,7 +10,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import axios from 'axios';
 import * as d3 from 'd3';
 
-// convert Lovelaces to ada and round to the nearest full ada
+// Convert Lovelaces to ada and round to nearest full ada
 const convertLovelacesToAda = (lovelaces) => {
   return Math.round(lovelaces / 1_000_000);
 };
@@ -37,7 +37,8 @@ const DonutChart = ({ data }) => {
       .range(d3.schemeCategory10);
 
     const pie = d3.pie()
-      .value(d => d.value);
+      .value(d => d.value)
+      .sort(null);
 
     const arc = d3.arc()
       .innerRadius(radius * 0.5)
@@ -48,35 +49,35 @@ const DonutChart = ({ data }) => {
       .enter()
       .append("g");
 
+    // Animate each segment (Grow & Sweep)
     arcs.append("path")
-      .attr("d", arc)
       .attr("fill", d => color(d.data.label))
-      .on("mouseover", function (event, d) {
-        d3.select(this).style("opacity", 0.7);
-        const tooltip = d3.select("#tooltip");
-        tooltip
-          .style("left", event.pageX + "px")
-          .style("top", event.pageY - 28 + "px")
-          .style("display", "inline-block")
-          .html(`<strong>${d.data.label}</strong><br/>${d.data.value.toLocaleString()} ada`);
-      })
-      .on("mouseout", function () {
-        d3.select(this).style("opacity", 1);
-        d3.select("#tooltip").style("display", "none");
+      .transition()
+      .duration(1000)
+      .attrTween("d", function (d) {
+        const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
+        return function (t) {
+          return arc(i(t));
+        };
       });
 
-    // Summe berechnen
+    // Calculate total ADA supply
     const total = data.reduce((sum, d) => sum + d.value, 0);
 
-    // Text in die Mitte
+    // Add total text to center of donut
     svg.append("text")
       .attr("text-anchor", "middle")
       .attr("dy", "0.35em")
       .style("font-size", "14px")
       .style("font-weight", "bold")
+      .style("opacity", 0)
+      .transition()
+      .delay(1000)
+      .duration(500)
+      .style("opacity", 1)
       .text(`${total.toLocaleString()} ada`);
 
-    // Legende
+    // Add legend below the chart
     const legend = d3.select(legendRef.current);
     legend.selectAll("*").remove();
     const items = legend.selectAll("legend-item")
@@ -111,6 +112,7 @@ const DonutChart = ({ data }) => {
 };
 
 const NetworkStats = () => {
+  // Read environment variables via Docusaurus customFields
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
@@ -124,6 +126,7 @@ const NetworkStats = () => {
       return;
     }
 
+    // Fetch supply totals
     const fetchSupplyData = async () => {
       const response = await axios({
         method: 'get',
@@ -137,6 +140,7 @@ const NetworkStats = () => {
       return response.data[0];
     };
 
+    // Fetch current epoch
     const fetchEpoch = async () => {
       const response = await axios({
         method: 'get',
@@ -150,6 +154,7 @@ const NetworkStats = () => {
       return response.data[0].epoch_no;
     };
 
+    // Execute both requests in parallel
     const fetchData = async () => {
       try {
         const [totals, epoch] = await Promise.all([
@@ -169,6 +174,7 @@ const NetworkStats = () => {
   if (error) return <p>Error: {error}</p>;
   if (!data) return <p>Loading...</p>;
 
+  // Prepare chart data
   const chartData = [
     { label: "Circulation", value: convertLovelacesToAda(data.circulation) },
     { label: "Treasury", value: convertLovelacesToAda(data.treasury) },
@@ -182,7 +188,11 @@ const NetworkStats = () => {
 
   return (
     <div>
-      <TitleWithText title={`Supply`}  description={[`This is how the supply is made up for **epoch ${data.epoch_no}**. Hover on segments for details.`]} headingDot={true} />
+      <TitleWithText 
+        title={`Cardano Supply Breakdown`}  
+        description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]} 
+        headingDot={true} 
+      />
       <DonutChart data={chartData} />
     </div>
   );
@@ -212,7 +222,7 @@ export default function Home() {
             <NetworkStats />
             <SpacerBox size="medium" />
         </BoundaryBox>
-        </BackgroundWrapper>
+      </BackgroundWrapper>
       </main>
     </Layout>
   );
