@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
@@ -8,79 +8,222 @@ import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import axios from 'axios';
+import * as d3 from 'd3';
 
-// convert Lovelaces to ada and round to the nearest full ada
+// Convert Lovelaces to ada and round to nearest full ada
 const convertLovelacesToAda = (lovelaces) => {
-  return Math.round(lovelaces / 1_000_000).toLocaleString();
+  return Math.round(lovelaces / 1_000_000);
 };
 
-const NetworkStats = () => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+// DonutChart component for visualizing ada supply breakdown
+const DonutChart = ({ data }) => {
+  const ref = useRef();
+  const legendRef = useRef();
 
-  // Blockfrost id, see docusaurus.config.js for details
-  const { siteConfig: {customFields}} = useDocusaurusContext();
-  const PROJECT_ID = customFields.REACT_APP_BLOCKFROST_APP_PROJECT_ID;
-
+  // Initialize chart when data is available
   useEffect(() => {
-    // Make sure the environment variable is loaded
-    if (!PROJECT_ID) {
-      setError('Blockfrost API key is missing!');
-      return;
-    }
+    if (!data) return;
 
-    // API request to Blockfrost
-    axios.get('https://cardano-mainnet.blockfrost.io/api/v0/network', {
-      headers: {
-        'project_id': PROJECT_ID
-      }
-    })
-    .then((response) => {
-      setData(response.data);  // Set the data in state
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-      setError(error.message);  // Set the error message in case of failure
-    });
-  }, []);
+    const width = 300;
+    const height = 300;
+    const radius = Math.min(width, height) / 2;
 
-  // Render the values in ada or an error message if available
+    // Setup SVG canvas
+    const svg = d3.select(ref.current)
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+    // Define color palette (based on brand guidelines)
+    const color = d3.scaleOrdinal()
+      .domain(data.map(d => d.label))
+      .range([
+        '#0033AD',
+        '#1B5E20',
+        '#f44336',
+        '#0288D1',
+        '#FFB300',
+        '#7B1FA2',
+        '#E64A19',
+        '#388E3C'
+      ]);
+
+    // Define pie chart generator
+    const pie = d3.pie()
+      .value(d => d.value)
+      .sort(null);
+
+    // Define arc generator
+    const arc = d3.arc()
+      .innerRadius(radius * 0.5)
+      .outerRadius(radius);
+
+    // Draw pie chart segments
+    const arcGroups = svg.selectAll("g")
+      .data(pie(data))
+      .enter()
+      .append("g")
+      .on("mouseover", function (event, d) {
+        d3.select(this)
+          .style("opacity", 0.7);
+        d3.select("#tooltip")
+          .style("left", event.pageX + "px")
+          .style("top", event.pageY - 28 + "px")
+          .style("display", "inline-block")
+          .html(`<strong>${d.data.label}</strong><br/>${d.data.value.toLocaleString()} ada`);
+      })
+      .on("mouseout", function () {
+        d3.select(this)
+          .style("opacity", 1);
+        d3.select("#tooltip").style("display", "none");
+      });
+
+    arcGroups.append("path")
+      .attr("fill", d => color(d.data.label))
+      .transition()
+      .duration(1000)
+      .attrTween("d", function (d) {
+        const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
+        return function (t) {
+          return arc(i(t));
+        };
+      });
+
+    // Calculate and display total ada supply in center
+    const total = data.reduce((sum, d) => sum + d.value, 0);
+
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .style("font-size", "14px")
+      .style("font-weight", "bold")
+      .style("opacity", 0)
+      .transition()
+      .delay(1000)
+      .duration(500)
+      .style("opacity", 1)
+      .text(`${total.toLocaleString()} ada`);
+
+    // Draw custom legend
+    const legend = d3.select(legendRef.current);
+    legend.selectAll("*").remove();
+    const items = legend.selectAll("legend-item")
+      .data(data)
+      .enter()
+      .append("div")
+      .style("display", "flex")
+      .style("align-items", "center")
+      .style("margin-bottom", "4px");
+
+    items.append("div")
+      .style("width", "12px")
+      .style("height", "12px")
+      .style("background-color", d => color(d.label))
+      .style("margin-right", "6px");
+
+    items.append("span")
+      .text(d => `${d.label}: ${d.value.toLocaleString()} ada`);
+
+    return () => {
+      d3.select(ref.current).selectAll("*").remove();
+    };
+  }, [data]);
+
   return (
     <div>
-      {error ? (
-        <p>Error: {error}</p>
-      ) : data !== null ? (
-        <div>
-          <TitleWithText title="Supply" 
-            description={[
-              `**Max:** ${convertLovelacesToAda(data.supply.max)} ada`,
-              `**Total:** ${convertLovelacesToAda(data.supply.total)} ada`,
-              `**Circulating:** ${convertLovelacesToAda(data.supply.circulating)} ada`,      `**Locked:** ${convertLovelacesToAda(data.supply.locked)} ada`,
-              `**Treasury:** ${convertLovelacesToAda(data.supply.treasury)} ada`,
-              `**Reserves:** ${convertLovelacesToAda(data.supply.reserves)} ada`
-            ]}
-            headingDot={true} 
-          /> 
-
-          <TitleWithText title="Stake" 
-            description={[
-              `**Live:** ${convertLovelacesToAda(data.stake.live)} ada`,
-              `**Active:** ${convertLovelacesToAda(data.stake.active)} ada`
-            ]}
-            headingDot={false} 
-          /> 
-          
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <svg ref={ref}></svg>
+      <div ref={legendRef} style={{ marginTop: "1rem" }}></div>
+      <div id="tooltip" style={{ position: 'absolute', display: 'none', backgroundColor: 'white', color: '#000', padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', pointerEvents: 'none', fontSize: '0.85rem' }}></div>
     </div>
   );
 };
 
+const NetworkStats = () => {
+
+  // Read environment variables via Docusaurus customFields
+  const { siteConfig: { customFields } } = useDocusaurusContext();
+  const API_URL = customFields.CARDANO_ORG_API_URL;
+  const API_KEY = customFields.CARDANO_ORG_API_KEY;
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!API_URL || !API_KEY) {
+      setError('API URL or API Key is missing!');
+      return;
+    }
+
+    const fetchSupplyData = async () => {
+      const response = await axios({
+        method: 'get',
+        url: '/totals',
+        baseURL: API_URL,
+        headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      });
+      return response.data[0];
+    };
+
+    const fetchEpoch = async () => {
+      const response = await axios({
+        method: 'get',
+        url: '/tip',
+        baseURL: API_URL,
+        headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      });
+      return response.data[0].epoch_no;
+    };
+
+    const fetchData = async () => {
+      try {
+        const [totals, epoch] = await Promise.all([
+          fetchSupplyData(),
+          fetchEpoch()
+        ]);
+        setData({ ...totals, epoch_no: epoch });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setError(error.message);
+      }
+    };
+
+    fetchData();
+  }, [API_URL, API_KEY]);
+
+  if (error) return <p>Error: {error}</p>;
+  if (!data) return <p>Loading...</p>;
+
+  const chartData = [
+    { label: "Circulation", value: convertLovelacesToAda(data.circulation) },
+    { label: "Treasury", value: convertLovelacesToAda(data.treasury) },
+    { label: "Rewards", value: convertLovelacesToAda(data.reward) },
+    { label: "Reserves", value: convertLovelacesToAda(data.reserves) },
+    { label: "Fees", value: convertLovelacesToAda(data.fees) },
+    { label: "Deposits Stake", value: convertLovelacesToAda(data.deposits_stake) },
+    { label: "Deposits DRep", value: convertLovelacesToAda(data.deposits_drep) },
+    { label: "Deposits Proposal", value: convertLovelacesToAda(data.deposits_proposal) }
+  ];
+
+  return (
+    <div>
+      <TitleWithText
+        title={`Cardano Supply Breakdown`}
+        description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]}
+        headingDot={true}
+      />
+      <DonutChart data={chartData} />
+    </div>
+  );
+};
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()"; // Ensure this works as needed for Docusaurus
   return (
     <SiteHero
       title="Network Data"
@@ -91,7 +234,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-
   return (
     <Layout
       title="Cardano Network | cardano.org"
@@ -100,12 +242,12 @@ export default function Home() {
       <OpenGraphImage pageName="network" />
       <HomepageHeader />
       <main>
-        <BoundaryBox>
-          <BackgroundWrapper backgroundType="zoom">
+        <BackgroundWrapper backgroundType="zoom">
+          <BoundaryBox>
             <NetworkStats />
             <SpacerBox size="medium" />
-          </BackgroundWrapper>
-        </BoundaryBox>
+          </BoundaryBox>
+        </BackgroundWrapper>
       </main>
     </Layout>
   );
