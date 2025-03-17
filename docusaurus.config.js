@@ -41,8 +41,11 @@ const config = {
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
 
-    // put your blockfrost id in your .env file 
-    REACT_APP_BLOCKFROST_APP_PROJECT_ID: process.env.REACT_APP_BLOCKFROST_APP_PROJECT_ID,
+    // 
+    // If you use the data.cardano.org endpoint and you want to run this locally you need to disable CORS
+    // Alternatively you can also replace it with a Koios endpoint and an Koios API Key.
+    CARDANO_ORG_API_URL: 'https://data.cardano.org/k/api/v1',
+    CARDANO_ORG_API_KEY: 'secret',
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
