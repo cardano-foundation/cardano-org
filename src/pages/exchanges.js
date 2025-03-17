@@ -19,7 +19,7 @@ function HomepageHeader() {
     <SiteHero
       title="Integrate Cardano"
       description="Easy integration with Cardano. All of the upgrades. None of the maintenance."
-      bannerType="fluid"
+      bannerType="fluidBlue"
     />
   );
 }

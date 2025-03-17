@@ -20,7 +20,7 @@ function HomepageHeader() {
     <SiteHero
       title="Contact | cardano.org"
       description="Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
-      bannerType="fluid"
+      bannerType="fluidBlue"
     />
   );
 }

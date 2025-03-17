@@ -14,7 +14,7 @@ function HomepageHeader() {
     <SiteHero
       title="Start Building on Cardano"
       description="A curated list of resources and entry points to help you get started with building on Cardano."
-      bannerType="fluid"
+      bannerType="fluidBlue"
     />
   );
 }

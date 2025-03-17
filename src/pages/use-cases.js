@@ -14,7 +14,7 @@ function HomepageHeader() {
     <SiteHero
       title="Use Cases"
       description="Cardano: A developing platform built to support enterprises and a wide range of use cases, solving challenges across multiple industries."
-      bannerType="fluid"
+      bannerType="fluidBlue"
     />
   );
 }
