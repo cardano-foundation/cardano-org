@@ -15,9 +15,12 @@ export default function SiteHero({ title, description, bannerType }) {
     case "dots":
       heroClassName = styles.heroBannerDots;
       break;
-    case "fluid":
-      heroClassName = styles.heroBannerFluid;
+    case "fluidBlue":
+      heroClassName = styles.heroBannerFluidBlue;
       break;
+    case "fluidRed":
+        heroClassName = styles.heroBannerFluidRed;
+        break;
     case "overlap":
       heroClassName = styles.heroBannerOverlap;
       break;

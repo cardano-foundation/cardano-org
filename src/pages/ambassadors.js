@@ -17,7 +17,7 @@ function HomepageHeader() {
       description="The Cardano Foundation established its Ambassador Program in 2018. The program 
       is designed to promote awareness and educate the wider community to drive 
       the adoption of Cardano for better use cases."
-      bannerType="starburst"
+      bannerType="fluidRed"
     />
   );
 }
