@@ -20,36 +20,51 @@ function Role({ title, description }) {
 
 const rolesData = [
   {
-    title: "Content Creator",
+    title: "Content Creation",
     description: [
-      "Content Creators drive adoption by educating the community and the wider public about the project through engaging, \
-      informative and insightful content in the form of videos, blogs, graphic designs, podcasts, or any other form of artistic \
-      production.",
+      "Producing engaging videos, insightful articles, informative threads, graphics, and podcasts that educate and inspire. [Check out the latest Cardano content here.](https://cardano.org/news)",
     ],
   },
   {
-    title: "Meetup Organizer",
+    title: "Meetups & Events",
     description: [
-      "Meetup Organizers drive adoption by hosting regular offline Cardano meetups, connect with local blockchain enthusiasts \
-      to educate them about Cardano, create think-tanks and have open debates. Meetup Organizers take networking to the next \
-      level by exploring new paradigms of social interaction through discussing the use of smart contracts and decentralized \
-      finances, trade and communication. [Maybe there is already a Cardano Meetup in your area?](https://www.meetup.com/pro/cardano/)",
+      "Organizing both in-person and virtual gatherings, workshops, and hackathons to unite local communities. [Find your local community Meetup.](https://www.meetup.com/pro/cardano/)",
     ],
   },
   {
-    title: "Moderator",
+    title: "Education & Advocacy",
     description: [
-      "Moderators drive adoption by keeping our official online social media channels informative, productive and a pleasant \
-      place for the community to come together in multiple languages across various platforms. All participants in the community \
-      are expected to act lawfully, honestly, ethically and in the best interest of the project \
-      [in the spirit of Community Code of Conduct](/community-code-of-conduct).",
+      "Hosting seminars, advocating for blockchain adoption, and supporting learning initiatives across institutions. [Explore Cardano’s research.](https://cardano.org/research)",
     ],
   },
   {
-    title: "Translator",
+    title: "Business Development",
     description: [
-      "Translators drive adoption by expanding the Cardano project to non-English speaking communities by translating and \
-      sharing content in different languages. [Visit the Cardano Forum to see which languages are currently covered.](https://forum.cardano.org)",
+      "Forging partnerships and leading community-driven projects to expand Cardano’s influence. [Explore use cases.](https://cardano.org/use-cases)",
+    ],
+  },
+  {
+    title: "Software Development",
+    description: [
+      "Contributing to open-source projects, drafting Cardano Improvement Proposals (CIPs), and creating tools to enhance the ecosystem. [Get started here.](https://cardano.org/developers)",
+    ],
+  },
+  {
+    title: "Translations",
+    description: [
+      "Extending Cardano’s reach by translating key content into multiple languages. [Visit the forum.](https://forum.cardano.org/)",
+    ],
+  },
+  {
+    title: "Moderation",
+    description: [
+      "Managing online discussions across 50 [channels](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 languages on 9 platforms, ensuring productive and welcoming digital environments in both official and community spaces. All community members must act lawfully, ethically, and in the project's best interest, following the [Community Code of Conduct.](https://cardano.org/community-code-of-conduct/)",
+    ],
+  },
+  {
+    title: "Innovative Contributions",
+    description: [
+      "From educational campaigns to groundbreaking community projects, every initiative makes a lasting impact.",
     ],
   },
 ];
@@ -60,11 +75,11 @@ export default function AmbassadorRolesSection({}) {
 
   return (
     <div>
-       <Divider text="Ambassador Roles"  id="roles"/>
+       <Divider text="Ambassadors Contributions"  id="roles"/>
         <TitleWithText
-          title="Ambassador Roles"
+          title="Ambassadors Contributions"
           description={[
-            `There are currently ${rolesCount} roles for a Cardano Ambassador. While ambassadors may engage in multiple roles, they typically identify a primary role that best represents their contribution to the community:`,  
+            `Cardano Ambassadors drive community growth through various initiatives, including:`,  
           ]}
           titleType="black"
           headingDot={true}

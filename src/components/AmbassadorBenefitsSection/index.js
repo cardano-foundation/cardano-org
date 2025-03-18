@@ -31,8 +31,8 @@ export default function AmbassadorBenefitsSection({
             <ThemedImage
               alt="Ambassador Logo"
               sources={{
-                light: useBaseUrl(`/img/logos/ambassadors.svg`),
-                dark: useBaseUrl(`/img/logos/ambassadors-dark.svg`),
+                light: useBaseUrl(`/img/logos/ambassadors-red.svg`),
+                dark: useBaseUrl(`/img/logos/ambassadors-red.svg`),
               }}
             />
           </div>
