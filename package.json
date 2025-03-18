@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build-authors": "node scripts/generate-authors-json.js",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build --no-minify",
+    "start": "yarn build-authors && docusaurus start",
+    "build": "yarn build-authors && docusaurus build --no-minify",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -34,7 +35,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.5.2",
-    "@docusaurus/types": "^3.5.2"
+    "@docusaurus/types": "^3.5.2",
+    "js-yaml": "^4.1.0"
   },
   "browserslist": {
     "production": [
