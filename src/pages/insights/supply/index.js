@@ -1,25 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
+import Head from '@docusaurus/Head';
 import axios from 'axios';
 import * as d3 from 'd3';
 import authors from '@site/src/data/authors.json';
+import { useLocation } from '@docusaurus/router';
 
-const formattedDate = new Date('2025-03-17').toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
-
-// Meta data for the page, including Open Graph info
+// static meta data
 const meta = {
   pageTitle: 'Cardano Network | cardano.org',
   pageDescription: 'Network Data',
   title: 'Cardano Supply Breakdown',
-  date: formattedDate,
+  date: '2025-03-17',
   author: authors?.['cf'],
   og: {
     pageName: 'network',
@@ -28,16 +25,18 @@ const meta = {
   }
 };
 
-const convertLovelacesToAda = (lovelaces) => {
-  return Math.round(lovelaces / 1_000_000);
-};
+// convert lovelaces to ada
+const convertLovelacesToAda = (lovelaces) => Math.round(lovelaces / 1_000_000);
 
-function DonutChart({ data }) {
+// minimum valid epoch (before epoch 209 everything is byron)
+const MIN_EPOCH = 209;
+
+function DonutChart({ data, rawData }) {
   const ref = useRef();
   const legendRef = useRef();
 
   useEffect(() => {
-    if (!data) return;
+    if (!data || !rawData) return;
     const width = 300;
     const height = 300;
     const radius = Math.min(width, height) / 2;
@@ -51,23 +50,11 @@ function DonutChart({ data }) {
     const color = d3.scaleOrdinal()
       .domain(data.map(d => d.label))
       .range([
-        '#0033AD',
-        '#1B5E20',
-        '#f44336',
-        '#0288D1',
-        '#FFB300',
-        '#7B1FA2',
-        '#E64A19',
-        '#388E3C'
+        '#0033AD', '#1B5E20', '#f44336', '#0288D1', '#FFB300', '#7B1FA2', '#E64A19', '#388E3C'
       ]);
 
-    const pie = d3.pie()
-      .value(d => d.value)
-      .sort(null);
-
-    const arc = d3.arc()
-      .innerRadius(radius * 0.5)
-      .outerRadius(radius);
+    const pie = d3.pie().value(d => d.value).sort(null);
+    const arc = d3.arc().innerRadius(radius * 0.5).outerRadius(radius);
 
     const arcGroups = svg.selectAll("g")
       .data(pie(data))
@@ -88,16 +75,13 @@ function DonutChart({ data }) {
 
     arcGroups.append("path")
       .attr("fill", d => color(d.data.label))
-      .transition()
-      .duration(1000)
+      .transition().duration(1000)
       .attrTween("d", function (d) {
         const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
-        return function (t) {
-          return arc(i(t));
-        };
+        return function (t) { return arc(i(t)); };
       });
 
-    const total = data.reduce((sum, d) => sum + d.value, 0);
+      const totalAda = Object.values(rawData).reduce((sum, v) => sum + convertLovelacesToAda(v), 0);
 
     svg.append("text")
       .attr("text-anchor", "middle")
@@ -105,11 +89,9 @@ function DonutChart({ data }) {
       .style("font-size", "14px")
       .style("font-weight", "bold")
       .style("opacity", 0)
-      .transition()
-      .delay(1000)
-      .duration(500)
+      .transition().delay(1000).duration(500)
       .style("opacity", 1)
-      .text(`${total.toLocaleString()} ada`);
+      .text(`${totalAda.toLocaleString()} ada`);
 
     const legend = d3.select(legendRef.current);
     legend.selectAll("*").remove();
@@ -141,10 +123,8 @@ function DonutChart({ data }) {
           .text(`${d.label}: ${d.value.toLocaleString()} ada`);
       });
 
-    return () => {
-      d3.select(ref.current).selectAll("*").remove();
-    };
-  }, [data]);
+    return () => { d3.select(ref.current).selectAll("*").remove(); };
+  }, [data, rawData]);
 
   return (
     <div>
@@ -157,51 +137,54 @@ function DonutChart({ data }) {
 
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
+  // great example how to get URL params
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const urlEpoch = queryParams.get('epoch');
+
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
+  // fetch the latest epoch from the tip endpoint
+  const fetchEpoch = async () => {
+    const response = await axios.get(`${API_URL}/tip`, {
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
+    });
+    return response.data[0].epoch_no;
+  };
+
+  // fetch ada supply breakdown from Koios
+  const fetchSupplyData = async (epoch_no) => {
+    const url = epoch_no ? `${API_URL}/totals?_epoch_no=${epoch_no}` : `${API_URL}/totals`;
+    const response = await axios.get(url, {
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
+    });
+    return response.data[0];
+  };
+
+  // decide on epoch (URL param or latest) and fetch supply data
   useEffect(() => {
     if (!API_URL || !API_KEY) {
       setError('API URL or API Key is missing!');
       return;
     }
 
-    const fetchSupplyData = async () => {
-      const response = await axios({
-        method: 'get',
-        url: '/totals',
-        baseURL: API_URL,
-        headers: {
-          'accept': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`
-        }
-      });
-      return response.data[0];
-    };
-
-    const fetchEpoch = async () => {
-      const response = await axios({
-        method: 'get',
-        url: '/tip',
-        baseURL: API_URL,
-        headers: {
-          'accept': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`
-        }
-      });
-      return response.data[0].epoch_no;
-    };
-
     const fetchData = async () => {
       try {
-        const [totals, epoch] = await Promise.all([
-          fetchSupplyData(),
-          fetchEpoch()
-        ]);
-        setData({ ...totals, epoch_no: epoch });
+        const parsedEpoch = parseInt(urlEpoch, 10);
+        const safeEpoch = urlEpoch && !isNaN(parsedEpoch) && parsedEpoch >= MIN_EPOCH ? parsedEpoch : null;
+
+        if (urlEpoch && (isNaN(parsedEpoch) || parsedEpoch < MIN_EPOCH)) {
+          setError(`Epoch must be a number and ${MIN_EPOCH} or higher.`);
+          return;
+        }
+
+        const epoch_no = safeEpoch || await fetchEpoch();
+        const totals = await fetchSupplyData(epoch_no);
+        setData({ ...totals, epoch_no: parseInt(epoch_no, 10) });
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error.message);
@@ -209,9 +192,22 @@ function PageContent() {
     };
 
     fetchData();
-  }, [API_URL, API_KEY]);
+  }, [API_URL, API_KEY, urlEpoch]);
 
-  if (error) return <p>Error: {error}</p>;
+  // if this produces an error, we want to let the user know, also set noindex meta tag
+  // basically a good advice if you create many pages based on parameters.
+  if (error) {
+    return (
+      <>
+        <Head><meta name="robots" content="noindex" /></Head>
+        <p>Error: {error}</p>
+        <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
+          Try appending <code>?epoch={MIN_EPOCH + 1}</code> to the URL for an example.
+        </p>
+      </>
+    );
+  }
+
   if (!data) return <p>Loading...</p>;
 
   const chartData = [
@@ -225,23 +221,30 @@ function PageContent() {
     { label: "Deposits Proposal", value: convertLovelacesToAda(data.deposits_proposal) }
   ];
 
-  // Example to generate text out of legend
   const legendDescription = `In epoch ${data.epoch_no}, ` + chartData
-  .map(d => `${d.label} is ${d.value.toLocaleString()} ada`)
-  .join(', ') + '.';
+    .map(d => `${d.label} is ${d.value.toLocaleString()} ada`)
+    .join(', ') + '.';
 
   return (
     <>
-      <TitleWithText
-        description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]}
-        headingDot={true}
-      />
-      <DonutChart data={chartData} />
+      <TitleWithText description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]} headingDot={true} />
 
-      <p style={{ marginTop: '1.5rem' }}>
-        {legendDescription}
-      </p>
+      <p>You don't need to use TitleWithText or similar components, you can use normal html here. But remember to use always the Link component. For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link></p>
 
+      <p>For external links use:<Link href="https://developers.cardano.org">developers.cardano.org</Link></p>
+
+      <DonutChart data={chartData} rawData={{
+        circulation: data.circulation,
+        treasury: data.treasury,
+        reward: data.reward,
+        reserves: data.reserves,
+        fees: data.fees,
+        deposits_stake: data.deposits_stake,
+        deposits_drep: data.deposits_drep,
+        deposits_proposal: data.deposits_proposal
+      }} />
+
+      <p style={{ marginTop: '1.5rem', fontSize: '0.95rem' }}>{legendDescription}</p>
       <InsightsFooter lastUpdated={meta.date} />
     </>
   );
@@ -259,3 +262,4 @@ export default function InsightsPage() {
     </InsightsLayout>
   );
 }
+ 

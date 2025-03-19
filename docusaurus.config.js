@@ -127,15 +127,16 @@ const config = {
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
             ],
           },
+          /* 
           {
-            /* to: '/insights', TODO*/
+            
             label: 'Insights',
             position: 'left',
             items: [  
-              {to: '/insights/demo/demo', label: 'Simple Demo'},
-              {to: '/insights/supply/supply', label: 'Supply'}, 
+              {to: '/insights/demo/', label: 'Simple Demo'},
+              {to: '/insights/supply/', label: 'Supply'}, 
             ],
-          },
+          },*/
           {
             /* to: '/developers', TODO*/
             label: 'Developers',
