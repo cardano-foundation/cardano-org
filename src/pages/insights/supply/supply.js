@@ -14,15 +14,16 @@ const formattedDate = new Date('2025-03-17').toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-// Meta data for the page, now includes Open Graph information
+// Meta data for the page, including Open Graph info
 const meta = {
   pageTitle: 'Cardano Network | cardano.org',
   pageDescription: 'Network Data',
   title: 'Cardano Supply Breakdown',
   date: formattedDate,
-  author: authors?.['iog'],
+  author: authors?.['cf'],
   og: {
     pageName: 'network',
+    title: 'Cardano Supply Breakdown | Cardano.org',
     description: 'Detailed ada supply breakdown across reserves, circulation, treasury, and more.'
   }
 };
@@ -31,7 +32,7 @@ const convertLovelacesToAda = (lovelaces) => {
   return Math.round(lovelaces / 1_000_000);
 };
 
-const DonutChart = ({ data }) => {
+function DonutChart({ data }) {
   const ref = useRef();
   const legendRef = useRef();
 
@@ -152,9 +153,9 @@ const DonutChart = ({ data }) => {
       <div id="tooltip" style={{ position: 'absolute', display: 'none', backgroundColor: 'white', color: '#000', padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', pointerEvents: 'none', fontSize: '0.85rem' }}></div>
     </div>
   );
-};
+}
 
-export default function SupplyPage() {
+function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
@@ -224,16 +225,37 @@ export default function SupplyPage() {
     { label: "Deposits Proposal", value: convertLovelacesToAda(data.deposits_proposal) }
   ];
 
+  // Example to generate text out of legend
+  const legendDescription = `In epoch ${data.epoch_no}, ` + chartData
+  .map(d => `${d.label} is ${d.value.toLocaleString()} ada`)
+  .join(', ') + '.';
+
   return (
-    <InsightsLayout meta={meta}>
-      {/* Open Graph for this page */}
-      <OpenGraphInfo pageName={meta.og.pageName} />
+    <>
       <TitleWithText
         description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]}
         headingDot={true}
       />
       <DonutChart data={chartData} />
+
+      <p style={{ marginTop: '1.5rem' }}>
+        {legendDescription}
+      </p>
+
       <InsightsFooter lastUpdated={meta.date} />
+    </>
+  );
+}
+
+export default function InsightsPage() {
+  return (
+    <InsightsLayout meta={meta}>
+      <OpenGraphInfo 
+        pageName={meta.og.pageName}
+        title={meta.og.title}
+        description={meta.og.description}
+      />
+      <PageContent />
     </InsightsLayout>
   );
 }
