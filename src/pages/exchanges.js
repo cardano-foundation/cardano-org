@@ -9,7 +9,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 /* FIXME: shouldn't this file be named "Cardano Integration"? */
 
@@ -31,7 +31,7 @@ export default function Home() {
     title="Integrate Cardano | cardano.org"
     description="Easy integration with Cardano. All of the upgrades. None of the maintenance."
     >
-      <OpenGraphImage pageName="integrate-cardano" />
+      <OpenGraphInfo pageName="integrate-cardano" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

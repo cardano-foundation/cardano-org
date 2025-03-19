@@ -7,7 +7,7 @@ import GovernanceWhyVoltaireSection from "@site/src/components/GovernanceWhyVolt
 import TermExplainer from "@site/src/components/TermExplainer";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox"; 
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TextSectionWithCtaAndQuote from "@site/src/components/Layout/TextWithCtaAndQuote";
 
 function HomepageHeader() {
@@ -32,7 +32,7 @@ export default function Home() {
     title="Governance | cardano.org"
     description="Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it."
     >
-      <OpenGraphImage pageName="governance" />
+      <OpenGraphInfo pageName="governance" />
       <HomepageHeader />
       <main>
         

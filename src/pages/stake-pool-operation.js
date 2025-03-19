@@ -10,7 +10,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FAQSection from "@site/src/components/FAQSection";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -34,7 +34,7 @@ export default function Home() {
     title="Operate a stake pool | cardano.org"
     description="Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network."
     >
-      <OpenGraphImage pageName="stake-pool-operation" />
+      <OpenGraphInfo pageName="stake-pool-operation" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidGrey"}>

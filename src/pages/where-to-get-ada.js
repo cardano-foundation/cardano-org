@@ -1,7 +1,7 @@
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
@@ -28,7 +28,7 @@ export default function Home() {
     title="Get ada | cardano.org"
     description="There are many ways to obtain ada to use the Cardano blockchain."
     >
-      <OpenGraphImage pageName="where-to-get-ada" /> 
+      <OpenGraphInfo pageName="where-to-get-ada" /> 
       <HomepageHeader />
       <main>
         

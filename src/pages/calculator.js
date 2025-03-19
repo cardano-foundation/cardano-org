@@ -2,8 +2,9 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import React, { useEffect, useRef } from "react";
+
 
 // Translation dictionary
 const translations = {
@@ -79,7 +80,7 @@ export default function Home() {
       title={`${t.title} | cardano.org`}
       description={t.description}
     >
-      <OpenGraphImage pageName="calculator" />
+      <OpenGraphInfo pageName="calculator" />
       <SiteHero
         title={t.title}
         description={t.description}

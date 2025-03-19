@@ -9,7 +9,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import ContactFormHS from "@site/src/components/ContactFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 // Hint: You can preselect a topic with http://localhost:3000/contact?topic=iog 
 // or http://localhost:3000/contact?topic=sponsor etc
@@ -121,7 +121,7 @@ export default function Home() {
     title="Cardano - making the world work better for all"
     description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
-      <OpenGraphImage pageName="contact" />
+      <OpenGraphInfo pageName="contact" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

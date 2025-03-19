@@ -10,7 +10,7 @@ import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWith
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox  from "@site/src/components/Layout/SpacerBox";
 import ProofOfStakeSection from "@site/src/components/ProofOfStakeSection";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -30,7 +30,7 @@ export default function Home() {
     title="What is Ouroboros? | cardano.org"
     description="An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
     >
-      <OpenGraphImage pageName="ouroboros" />
+      <OpenGraphInfo pageName="ouroboros" />
       <HomepageHeader />
 
       <BackgroundWrapper backgroundType={"zoom"}>
