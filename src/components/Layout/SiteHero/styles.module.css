@@ -160,9 +160,10 @@ html[data-theme="dark"] .heroBannerDots {
   background-image: url(/img/hero-header-dots.webp);
 }
 
-/** heroBannerFluid **/
+/** heroBannerFluidBlue and heroBannerFluidRed **/
 
-.heroBannerFluid {
+.heroBannerFluidBlue,
+.heroBannerFluidRed {
   padding: 4rem 2rem;
   text-align: left;
   position: relative;
@@ -172,14 +173,24 @@ html[data-theme="dark"] .heroBannerDots {
   height: 410px;
 }
 
-html[data-theme="light"] .heroBannerFluid {
-  background-image: url(/img/hero-header-fluid.png);
+html[data-theme="light"] .heroBannerFluidBlue {
+  background-image: url(/img/hero-header-fluid-blue.png);
   background-color: #5281f7;
 }
 
-html[data-theme="dark"] .heroBannerFluid {
-  background-image: url(/img/hero-header-fluid.png);
+html[data-theme="dark"] .heroBannerFluidBlue {
+  background-image: url(/img/hero-header-fluid-blue.png);
   background-color: #5281f7;
+}
+
+html[data-theme="light"] .heroBannerFluidRed {
+  background-image: url(/img/hero-header-fluid-red.svg);
+  background-color: #f24545;
+}
+
+html[data-theme="dark"] .heroBannerFluidRed {
+  background-image: url(/img/hero-header-fluid-red.svg);
+  background-color: #f24545;
 }
 
 /** heroBannerOverlap **/
@@ -375,7 +386,8 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   .heroBannerZoom,
   .heroBannerZoomRedWhite,
   .heroBannerDots,
-  .heroBannerFluid,
+  .heroBannerFluidBlue,
+  .heroBannerFluidRed,
   .heroBannerOverlap,
   .heroBannerWaves,
   .heroBannerStarburst,
@@ -413,7 +425,8 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   .heroBannerDots {
     padding: 4rem;
   }
-  .heroBannerFluid {
+  .heroBannerFluidBlue,
+  .heroBannerFluidRed {
     padding: 4rem;
   }
   .heroBannerOverlap {
@@ -443,7 +456,8 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   .heroBannerDots {
     background-position: 50% 35%;
   }
-  .heroBannerFluid {
+  .heroBannerFluidBlue,
+  .heroBannerFluidRed {
     background-position: 50% 50%;
   }
   .heroBannerOverlap {
@@ -471,7 +485,8 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .heroBannerFluid {
+  .heroBannerFluidBlue,
+  .heroBannerFluidRed {
     background-repeat: no-repeat;
     background-size: cover;
   }

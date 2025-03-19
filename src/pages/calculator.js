@@ -3,6 +3,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import React, { useEffect, useRef } from "react";
 
 // Translation dictionary
 const translations = {
@@ -32,6 +33,40 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+
+    function handleMessage(event) {
+
+      if (event.data.iframeHeight) {
+        if (iframeRef.current) {
+          iframeRef.current.style.height = `${event.data.iframeHeight}px`;
+        }
+      }
+
+      if (event.data.requestFullscreen) {
+        if (iframeRef.current) {
+          if (iframeRef.current.requestFullscreen) {
+            iframeRef.current.requestFullscreen();
+          } else if (iframeRef.current.mozRequestFullScreen) {
+            iframeRef.current.mozRequestFullScreen();
+          } else if (iframeRef.current.webkitRequestFullscreen) {
+            iframeRef.current.webkitRequestFullscreen();
+          } else if (iframeRef.current.msRequestFullscreen) {
+            iframeRef.current.msRequestFullscreen();
+          }
+        }
+      }
+    }
+
+    window.addEventListener("message", handleMessage);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
+  }, []);
+  
   // Get the 'lang' parameter from URL, default to 'en'
   const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const lang = urlParams.get("lang") === "jp" ? "jp" : "en"; // Only allow 'en' or 'jp'
@@ -61,6 +96,8 @@ export default function Home() {
         </BoundaryBox>
         {/* Pass the lang parameter dynamically */}
         <iframe 
+          ref={iframeRef}
+          id="myIframe"
           src={`/crewardcalculator?lang=${lang}`} 
           style={{ width: "100%", height: "100vh", border: "none" }} 
         ></iframe>

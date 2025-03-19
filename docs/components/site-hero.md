@@ -43,18 +43,32 @@ Different banner types than can be used with [`<SiteHero>`](/docs/components/sit
       bannerType="dots"
     />
 
-### fluid
+### fluidBlue
 ```
 <SiteHero
-  title="Hello Fluid"
+  title="Hello Fluid Blue"
   description="This is just an example how easy it is to change the site heros."
-  bannerType="fluid" />
+  bannerType="fluidBlue" />
 ```
 
 <SiteHero
-      title="Hello Fluid"
+      title="Hello Fluid Blue"
       description="This is just an example how easy it is to change the site heros."
-      bannerType="fluid"
+      bannerType="fluidBlue"
+    />
+
+### fluidRed
+```
+<SiteHero
+  title="Hello Fluid Red"
+  description="This is just an example how easy it is to change the site heros."
+  bannerType="fluidRed" />
+```
+
+<SiteHero
+      title="Hello Fluid Red"
+      description="This is just an example how easy it is to change the site heros."
+      bannerType="fluidRed"
     />
 
 ### overlap
