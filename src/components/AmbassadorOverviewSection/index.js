@@ -76,7 +76,7 @@ export default function AmbassadorRolesSection() {
         <TitleWithText
               title="Who are the Cardano Ambassadors?"
               description={[
-                `Explore the profiles of ${ambassadorsCount} Cardano Ambassadors from ${uniqueCountriesCount} different countries.`,
+                `Discover profiles of ${ambassadorsCount} Cardano Ambassadors representing ${uniqueCountriesCount} countries, each playing a vital part in spreading Cardano’s vision worldwide.`,
               ]}
               titleType="red"
               headingDot={false}

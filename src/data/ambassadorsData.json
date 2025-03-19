@@ -18,7 +18,7 @@
     "link": "https://forum.cardano.org/u/andreassosilo/summary"
   },
   {
-    "name": "Andrew Norimasa Nishigaya",
+    "name": "Nori Nishigaya",
     "role": "Canada",
     "country": "CA",
     "link": "https://forum.cardano.org/u/xeeban/summary"
@@ -36,7 +36,7 @@
     "link": "https://forum.cardano.org/u/bearicea/summary"
   },
   {
-    "name": "Brett Cooper",
+    "name": "Glitch",
     "role": "United States",
     "country": "US",
     "link": "https://forum.cardano.org/u/glitch_04/summary"
@@ -48,7 +48,7 @@
     "link": "https://forum.cardano.org/u/cardanocuration/summary"
   },
   {
-    "name": "Christian Kulas",
+    "name": "Chris Kulas, Christ STR8",
     "role": "Germany",
     "country": "DE",
     "link": "https://forum.cardano.org/u/ChrisSTR8/"
@@ -66,7 +66,7 @@
     "link": "https://forum.cardano.org/u/ddlezu"
   },
   {
-    "name": "Daniel Lynch",
+    "name": "Daniel Lynch (DominatingSlash)",
     "role": "United States",
     "country": "US",
     "link": "https://forum.cardano.org/u/dominatingslash/"
@@ -84,13 +84,13 @@
     "link": "https://forum.cardano.org/u/fell-x27/summary"
   },
   {
-    "name": "Diego Torres Borda",
+    "name": "Diego Torres Borda        ​",
     "role": "Argentina",
     "country": "AR",
     "link": "https://forum.cardano.org/u/diegotowers/summary"
   },
   {
-    "name": "Dmytro Stashenko",
+    "name": "Dmitry",
     "role": "Poland",
     "country": "PL",
     "link": "https://forum.cardano.org/u/dmitry.stas"
@@ -228,13 +228,13 @@
     "link": "https://forum.cardano.org/u/southrye"
   },
   {
-    "name": "Jungi Hong",
+    "name": "Oscar Hong",
     "role": "Korea, South",
     "country": "KR",
     "link": "https://forum.cardano.org/u/oscar_west/summary"
   },
   {
-    "name": "Kai Chappell",
+    "name": "Kai Chapell",
     "role": "United Kingdom",
     "country": "GB",
     "link": "https://forum.cardano.org/u/sl13pnir/summary"
@@ -258,7 +258,7 @@
     "link": "https://forum.cardano.org/u/lucas_mac"
   },
   {
-    "name": "Marcus Vinicius de Araujo Roque",
+    "name": "Marcus Vinicius",
     "role": "Brazil",
     "country": "BR",
     "link": "https://forum.cardano.org/u/marcusoregano/summary"
@@ -324,13 +324,13 @@
     "link": "https://forum.cardano.org/u/hakochan/summary"
   },
   {
-    "name": "Peter Nhattruong Bui",
+    "name": "Peter Bui",
     "role": "Australia",
     "country": "AU",
     "link": "https://forum.cardano.org/u/astroboysoup/summary"
   },
   {
-    "name": "Piero Zanetti",
+    "name": "Piero Zanetti LordWotton [RIOT] ",
     "role": "Panama",
     "country": "PA",
     "link": "https://forum.cardano.org/u/lordwotton/summary"
@@ -366,7 +366,13 @@
     "link": "https://forum.cardano.org/u/bitterbalpool/"
   },
   {
-    "name": "Rodrigo Antonio Gomez",
+    "name": "Rodrigo Oyarzun Acuña",
+    "role": "Chile",
+    "country": "CL",
+    "link": "https://forum.cardano.org/u/rodrigoi/summary"
+  },
+  {
+    "name": "Rodrigo Gomez",
     "role": "United States",
     "country": "US",
     "link": "https://forum.cardano.org/u/rodrigo_gomez/summary"
@@ -456,15 +462,9 @@
     "link": "https://forum.cardano.org/u/yoram_ben-zvi/summary"
   },
   {
-    "name": "Youngsoo Goh",
+    "name": "Paul Ko (youngsoo goh)",
     "role": "Japan",
     "country": "JP",
     "link": "https://forum.cardano.org/u/haskellcoding"
-  },
-  {
-    "name": "Yuki Oishi",
-    "role": "Japan",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/yuta_oishi/summary"
   }
 ]
