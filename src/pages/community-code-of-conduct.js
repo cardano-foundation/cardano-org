@@ -4,7 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -24,7 +24,7 @@ export default function Home() {
     title="Community Code of Conduct | cardano.org"
     description="The Cardano community consists of people from all over the world, who have come together to grow and safeguard the spirit and the future of Cardano."
     >
-      <OpenGraphImage pageName="community-code-of-conduct" />
+      <OpenGraphInfo pageName="community-code-of-conduct" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

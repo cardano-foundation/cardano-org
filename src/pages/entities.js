@@ -4,7 +4,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import PartnersOverviewSection from "@site/src/components/PartnersOverviewSection";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import Logos from "@site/src/components/Layout/Logos";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
@@ -27,7 +27,7 @@ export default function Home() {
     title="Entities building on Cardano | cardano.org"
     description="Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
     >
-      <OpenGraphImage pageName="entities" />
+      <OpenGraphInfo pageName="entities" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

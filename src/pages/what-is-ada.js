@@ -4,7 +4,7 @@ import WhatIsAda from "@site/src/components/WhatIsAda";
 import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
 import WalletSection from "@site/src/components/WalletSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 function HomepageHeader() {
@@ -29,7 +29,7 @@ export default function Home() {
     title="What is ada? | cardano.org"
     description="A new type of currency. A new means of transaction. Direct. Secure. From Anywhere. For Everyone."
     >
-      <OpenGraphImage pageName="what-is-ada" />
+      <OpenGraphInfo pageName="what-is-ada" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

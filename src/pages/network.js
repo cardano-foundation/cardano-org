@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import axios from 'axios';
@@ -239,7 +239,7 @@ export default function Home() {
       title="Cardano Network | cardano.org"
       description="Network Data"
     >
-      <OpenGraphImage pageName="network" />
+      <OpenGraphInfo pageName="network" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType="zoom">

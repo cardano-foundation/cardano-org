@@ -7,7 +7,7 @@ import AmbassadorRolesSection from "@site/src/components/AmbassadorRolesSection"
 import AmbassadorOverviewSection from "@site/src/components/AmbassadorOverviewSection";
 import AmbassadorBenefitsSection from "@site/src/components/AmbassadorBenefitsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -29,7 +29,7 @@ export default function Home() {
     title="Ambassador Program | cardano.org"
     description="The Ambassador Program is designed to promote awareness and educate the wider community to drive the adoption of Cardano for better use cases."
     >
-      <OpenGraphImage pageName="ambassadors" />
+      <OpenGraphInfo pageName="ambassadors" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

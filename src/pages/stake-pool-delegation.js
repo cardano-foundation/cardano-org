@@ -10,7 +10,7 @@ import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -30,7 +30,7 @@ export default function Home() {
     title="Delegate your stake | cardano.org"
     description="Delegate your stake to build the network, earn rewards, and become part of the Cardano journey."
     >
-      <OpenGraphImage pageName="stake-pool-delegation" />
+      <OpenGraphInfo pageName="stake-pool-delegation" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"solidGrey"}>

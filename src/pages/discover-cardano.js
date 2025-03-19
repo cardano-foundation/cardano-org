@@ -5,7 +5,7 @@ import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "../components/Layout/BoundaryBox";
 import SpacerBox from "../components/Layout/SpacerBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -26,7 +26,7 @@ export default function Home() {
     title="Discover Cardano | cardano.org"
     description="Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
     >
-      <OpenGraphImage pageName="discover-cardano" />
+      <OpenGraphInfo pageName="discover-cardano" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

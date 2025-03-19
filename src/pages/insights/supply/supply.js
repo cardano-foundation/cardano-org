@@ -1,17 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
-import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
+import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
+import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import axios from 'axios';
 import * as d3 from 'd3';
 import authors from '@site/src/data/authors.json';
-import InsightsHeader from '@site/src/components/Layout/InsightsHeader';
-
 
 const formattedDate = new Date('2025-03-17').toLocaleDateString('en-US', {
   year: 'numeric',
@@ -19,32 +14,39 @@ const formattedDate = new Date('2025-03-17').toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-// Convert Lovelaces to ada and round to nearest full ada
+// Meta data for the page, now includes Open Graph information
+const meta = {
+  pageTitle: 'Cardano Network | cardano.org',
+  pageDescription: 'Network Data',
+  title: 'Cardano Supply Breakdown',
+  date: formattedDate,
+  author: authors?.['iog'],
+  og: {
+    pageName: 'network',
+    description: 'Detailed ada supply breakdown across reserves, circulation, treasury, and more.'
+  }
+};
+
 const convertLovelacesToAda = (lovelaces) => {
   return Math.round(lovelaces / 1_000_000);
 };
 
-// DonutChart component for visualizing ada supply breakdown
 const DonutChart = ({ data }) => {
   const ref = useRef();
   const legendRef = useRef();
 
-  // Initialize chart when data is available
   useEffect(() => {
     if (!data) return;
-
     const width = 300;
     const height = 300;
     const radius = Math.min(width, height) / 2;
 
-    // Setup SVG canvas
     const svg = d3.select(ref.current)
       .attr("width", width)
       .attr("height", height)
       .append("g")
       .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    // Define color palette (based on brand guidelines)
     const color = d3.scaleOrdinal()
       .domain(data.map(d => d.label))
       .range([
@@ -58,24 +60,20 @@ const DonutChart = ({ data }) => {
         '#388E3C'
       ]);
 
-    // Define pie chart generator
     const pie = d3.pie()
       .value(d => d.value)
       .sort(null);
 
-    // Define arc generator
     const arc = d3.arc()
       .innerRadius(radius * 0.5)
       .outerRadius(radius);
 
-    // Draw pie chart segments
     const arcGroups = svg.selectAll("g")
       .data(pie(data))
       .enter()
       .append("g")
       .on("mouseover", function (event, d) {
-        d3.select(this)
-          .style("opacity", 0.7);
+        d3.select(this).style("opacity", 0.7);
         d3.select("#tooltip")
           .style("left", event.pageX + "px")
           .style("top", event.pageY - 28 + "px")
@@ -83,8 +81,7 @@ const DonutChart = ({ data }) => {
           .html(`<strong>${d.data.label}</strong><br/>${d.data.value.toLocaleString()} ada`);
       })
       .on("mouseout", function () {
-        d3.select(this)
-          .style("opacity", 1);
+        d3.select(this).style("opacity", 1);
         d3.select("#tooltip").style("display", "none");
       });
 
@@ -99,7 +96,6 @@ const DonutChart = ({ data }) => {
         };
       });
 
-    // Calculate and display total ada supply in center
     const total = data.reduce((sum, d) => sum + d.value, 0);
 
     svg.append("text")
@@ -114,7 +110,6 @@ const DonutChart = ({ data }) => {
       .style("opacity", 1)
       .text(`${total.toLocaleString()} ada`);
 
-    // Draw custom legend
     const legend = d3.select(legendRef.current);
     legend.selectAll("*").remove();
     const items = legend.selectAll("legend-item")
@@ -123,31 +118,27 @@ const DonutChart = ({ data }) => {
       .append("div")
       .style("display", "flex")
       .style("align-items", "center")
-      .style("justify-content", "flex-end") 
+      .style("justify-content", "flex-end")
       .style("margin-bottom", "4px");
 
-      items.append("div")
-  .style("display", "flex")
-  .style("align-items", "center")
-  .style("justify-content", "flex-start") // keep items left aligned initially
-  .style("gap", "0.5rem")
-  .style("width", "280px") // control how wide the full legend item is!
-  .each(function (d) {
-    const container = d3.select(this);
-
-    // Dot stays left
-    container.append("div")
-      .style("width", "12px")
-      .style("height", "12px")
-      .style("background-color", color(d.label))
-      .style("border-radius", "2px");
-
-    // Right-aligned text but inside the limited width block
-    container.append("span")
-      .style("flex", "1")
-      .style("text-align", "right")
-      .text(`${d.label}: ${d.value.toLocaleString()} ada`);
-  });
+    items.append("div")
+      .style("display", "flex")
+      .style("align-items", "center")
+      .style("justify-content", "flex-start")
+      .style("gap", "0.5rem")
+      .style("width", "280px")
+      .each(function (d) {
+        const container = d3.select(this);
+        container.append("div")
+          .style("width", "12px")
+          .style("height", "12px")
+          .style("background-color", color(d.label))
+          .style("border-radius", "2px");
+        container.append("span")
+          .style("flex", "1")
+          .style("text-align", "right")
+          .text(`${d.label}: ${d.value.toLocaleString()} ada`);
+      });
 
     return () => {
       d3.select(ref.current).selectAll("*").remove();
@@ -163,9 +154,7 @@ const DonutChart = ({ data }) => {
   );
 };
 
-const NetworkStats = () => {
-
-  // Read environment variables via Docusaurus customFields
+export default function SupplyPage() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
@@ -236,54 +225,15 @@ const NetworkStats = () => {
   ];
 
   return (
-    <div>
+    <InsightsLayout meta={meta}>
+      {/* Open Graph for this page */}
+      <OpenGraphInfo pageName={meta.og.pageName} />
       <TitleWithText
         description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]}
         headingDot={true}
       />
       <DonutChart data={chartData} />
-    </div>
-  );
-};
-
-function HomepageHeader() {
-  return (
-    <SiteHero
-      title="Data-Driven Insights"
-      description="Explore key metrics, trends, and deep analytics shaping the Cardano ecosystem."
-      bannerType="zoom"
-    />
-  );
-}
-
-export default function Home() {
-
-  // Set author as in author.yml
-  const author = authors?.['iog'];
-
-  return (
-    <Layout
-      title="Cardano Network | cardano.org"
-      description="Network Data"
-    >
-      <OpenGraphImage pageName="network" />
-      <HomepageHeader />
-      <main>
-        <BackgroundWrapper backgroundType="zoom">
-          <BoundaryBox>
-            {/* Blog Title */}
-          <InsightsHeader 
-          title="Cardano Supply Breakdown" 
-          date={formattedDate} 
-          author={author} 
-        />
-
-          {/* Blog content */}
-            <NetworkStats />
-            <SpacerBox size="medium" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-      </main>
-    </Layout>
+      <InsightsFooter lastUpdated={meta.date} />
+    </InsightsLayout>
   );
 }

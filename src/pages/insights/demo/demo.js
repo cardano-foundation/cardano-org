@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import * as d3 from 'd3';
@@ -51,7 +51,7 @@ export default function CustomBlogLikePage() {
   return (
     
     <Layout title="D3 Demo in Blog-Post Style" description="A blog-like layout with D3 in Docusaurus">
-      <OpenGraphImage pageName="network" />
+      <OpenGraphInfo pageName="network" />
       <HomepageHeader />
       <main className="container margin-vert--lg">
         <article className="padding--lg">

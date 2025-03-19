@@ -7,7 +7,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
  
@@ -29,7 +29,7 @@ export default function Home() {
       title="Common Cardano scams you should avoid | cardano.org"
       description="The cryptocurrency space is full of opportunities, but it’s also a playground for scammers."
     >
-      <OpenGraphImage pageName="common-scams" />
+      <OpenGraphInfo pageName="common-scams" />
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
