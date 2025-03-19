@@ -128,6 +128,15 @@ const config = {
             ],
           },
           {
+            /* to: '/insights', TODO*/
+            label: 'Insights',
+            position: 'left',
+            items: [  
+              {to: '/insights/demo/demo', label: 'Simple Demo'},
+              {to: '/insights/supply/supply', label: 'Supply'}, 
+            ],
+          },
+          {
             /* to: '/developers', TODO*/
             label: 'Developers',
             position: 'left',
