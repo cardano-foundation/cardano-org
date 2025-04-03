@@ -7,7 +7,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { Chrono } from "react-chrono";
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -143,7 +143,7 @@ export default function Home() {
       title="Which hard forks have occurred? | cardano.org"
       description="An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
     >
-      <OpenGraphImage pageName="hard-forks" />
+      <OpenGraphInfo pageName="hard-forks" />
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>

@@ -5,7 +5,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import GenesisStats from "@site/src/components/GenesisStats";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -26,7 +26,7 @@ export default function Home() {
     title="Genesis Distribution | cardano.org"
     description="Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
     >
-      <OpenGraphImage pageName="genesis" />
+      <OpenGraphInfo pageName="genesis" />
       <HomepageHeader />
       <main>
         <BoundaryBox>

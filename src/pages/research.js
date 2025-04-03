@@ -3,7 +3,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import ResearchSection from "@site/src/components/ResearchSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -23,7 +23,7 @@ export default function Home() {
     title="Cardano Research | cardano.org"
     description="Cardano relevant research papers and specifications."
     >
-      <OpenGraphImage pageName="research" />
+      <OpenGraphInfo pageName="research" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType="zoom">

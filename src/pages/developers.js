@@ -6,7 +6,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox  from "@site/src/components/Layout/SpacerBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -26,7 +26,7 @@ export default function Home() {
     title="Start Building on Cardano | cardano.org"
     description="A curated list of resources and entry points to help you get started with building on Cardano."
     >
-      <OpenGraphImage pageName="developers" />
+      <OpenGraphInfo pageName="developers" />
       <HomepageHeader />
 
       <BackgroundWrapper backgroundType={"zoom"}>

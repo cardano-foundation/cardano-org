@@ -7,7 +7,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import CommunityDigestForm from "@site/src/components/CommunityDigestFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -27,7 +27,7 @@ export default function Home() {
     title="Cardano Community Digest | cardano.org"
     description="Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem."
     >
-      <OpenGraphImage pageName="newsletter" />
+      <OpenGraphInfo pageName="newsletter" />
       <HomepageHeader />
       <BoundaryBox>
           <Divider text="Stay informed" />

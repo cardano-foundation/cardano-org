@@ -2,7 +2,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import EnterpriseSection from "@site/src/components/EnterpriseSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
@@ -25,7 +25,7 @@ export default function Home() {
       title="Use cases for enterprise | cardano.org"
       description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
     >
-      <OpenGraphImage pageName="use-cases-for-enterprise" />
+      <OpenGraphInfo pageName="use-cases-for-enterprise" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
