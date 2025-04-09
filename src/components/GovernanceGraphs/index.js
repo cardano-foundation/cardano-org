@@ -96,7 +96,7 @@ export default function FlowChart({
     const processedNodes = data.nodes.map((node) => {
       const updatedNode = {
         ...node,
-        draggable: true,
+        draggable: false,
         type: node.type || "default",
         style: { ...node.style },
       };
