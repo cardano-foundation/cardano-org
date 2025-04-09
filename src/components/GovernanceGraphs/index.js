@@ -175,7 +175,10 @@ export default function FlowChart({
     }
   }, [isDarkMode, graphData, setNodes, setEdges]);
 
-  // Function to download the current graph as a PNG image
+  // Update the downloadImage function:
+
+  // Update the downloadImage function:
+
   const downloadImage = useCallback(
     (e) => {
       e.stopPropagation();
@@ -184,14 +187,22 @@ export default function FlowChart({
         return;
       }
 
-      setDownloading(true);
-
       // Get the flow container element
       const flowElement = reactFlowRef.current.querySelector(".react-flow");
       if (!flowElement) {
         console.error("Flow element not found");
-        setDownloading(false);
         return;
+      }
+
+      // Find and completely hide the download button panel
+      const downloadPanel = reactFlowRef.current.querySelector(
+        ".react-flow__panel-top-right"
+      );
+      let panelOriginalDisplay = null;
+
+      if (downloadPanel) {
+        panelOriginalDisplay = downloadPanel.style.display;
+        downloadPanel.style.display = "none";
       }
 
       // Store current zoom/pan to restore later
@@ -202,12 +213,46 @@ export default function FlowChart({
 
       // Set a timeout to ensure the view transition is complete before capturing
       setTimeout(() => {
+        // Only modify the edge text backgrounds, not the text itself
+        // This preserves the dark mode styling
+        const edgeTextBgs = Array.from(
+          flowElement.querySelectorAll(".react-flow__edge-textbg")
+        );
+
+        // Store original background values
+        const originalBgFills = [];
+        const originalBgOpacities = [];
+
+        // Remove background fill for edge labels temporarily
+        edgeTextBgs.forEach((bg, index) => {
+          originalBgFills[index] = bg.style.fill;
+          originalBgOpacities[index] = bg.style.fillOpacity;
+
+          bg.style.fill = "transparent";
+          bg.style.fillOpacity = "0";
+        });
+
         toPng(flowElement, {
-          backgroundColor: isDarkMode ? "#1b1b1d" : "#fff", // Match with Docusaurus theme
+          backgroundColor: isDarkMode ? "#1b1b1d" : "#fff",
           pixelRatio: 2,
           quality: 1,
+          style: {
+            fontKerning: "normal",
+            textRendering: "optimizeLegibility",
+          },
+          filter: (node) => {
+            // Filter out problematic text backgrounds and any panels
+            return (
+              !node.classList ||
+              (!node.classList.contains("react-flow__edge-textbg") &&
+                !node.classList.contains("react-flow__panel"))
+            );
+          },
         })
           .then((dataUrl) => {
+            // Now we can set downloading state
+            setDownloading(true);
+
             // Create a download link
             const link = document.createElement("a");
             link.download = `${title.toLowerCase().replace(/\s+/g, "-")}${
@@ -218,17 +263,41 @@ export default function FlowChart({
             link.click();
             document.body.removeChild(link);
 
+            // Restore original background styles
+            edgeTextBgs.forEach((bg, index) => {
+              bg.style.fill = originalBgFills[index];
+              bg.style.fillOpacity = originalBgOpacities[index];
+            });
+
+            // Restore the download button
+            if (downloadPanel && panelOriginalDisplay !== null) {
+              downloadPanel.style.display = panelOriginalDisplay;
+            }
+
             reactFlowInstance.setViewport(currentTransform);
-            setDownloading(false);
+            setTimeout(() => setDownloading(false), 500);
           })
           .catch((error) => {
             console.error("Error generating image:", error);
+            setDownloading(true);
+
+            // Restore original styles even on error
+            edgeTextBgs.forEach((bg, index) => {
+              bg.style.fill = originalBgFills[index];
+              bg.style.fillOpacity = originalBgOpacities[index];
+            });
+
+            // Restore the download button even on error
+            if (downloadPanel && panelOriginalDisplay !== null) {
+              downloadPanel.style.display = panelOriginalDisplay;
+            }
+
             reactFlowInstance.setViewport(currentTransform);
-            setDownloading(false);
+            setTimeout(() => setDownloading(false), 500);
           });
       }, 500);
     },
-    [reactFlowInstance, downloading, title, isDarkMode]
+    [reactFlowInstance, title, isDarkMode]
   );
 
   // Function to initialize the ReactFlow instance
