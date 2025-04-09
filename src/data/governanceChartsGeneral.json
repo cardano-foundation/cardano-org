@@ -1,0 +1,1692 @@
+[
+  {
+    "title": "Hard-Fork Initiation",
+    "description": "Triggers a non-backwards compatible upgrade of the network; requires a prior software upgrade.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 400,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "4",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 60%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 400,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 50%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "7",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-4",
+          "source": "1",
+          "target": "4",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e4-7",
+          "source": "4",
+          "target": "7",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e7-8",
+          "source": "7",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Motion of No-Confidence",
+    "description": "A motion to create a state of no-confidence in the current constitutional committee.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 67%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 51%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Update Committee and/or threshold and/or term in a state of confidence",
+    "description": "Changes to the members of the constitutional committee and/or to its signature threshold and/or terms.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 67%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 51%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Update Committee and/or threshold and/or term in a state of no-confidence",
+    "description": "Changes to the members of the constitutional committee and/or to its signature threshold and/or terms .",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 60%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 51%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "New Constitution or Guardrails Script",
+    "description": "A modification to the Constitution or Guardrails Script, recorded as on-chain hashes.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 75%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Treasury Withdrawal",
+    "description": "Withdrawals from the treasury.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 67%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 400,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes Tallied"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 450
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 450
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  }
+]

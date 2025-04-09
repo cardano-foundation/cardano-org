@@ -1,5 +1,12 @@
 import React, { useCallback, useRef, useState } from "react";
-import * as ReactFlowPackage from "@xyflow/react";
+import {
+  ReactFlow,
+  Background,
+  Panel,
+  ReactFlowProvider,
+  useNodesState,
+  useEdgesState,
+} from "@xyflow/react";
 import { toPng } from "html-to-image";
 import "@xyflow/react/dist/style.css";
 import styles from "./styles.module.css";
@@ -19,33 +26,33 @@ export default function FlowChart({
   graphData,
   title = "cardano-governance-flow",
 }) {
-  // Create a reference to the flow container and instance
+  // Create a reference to the flow container
   const reactFlowRef = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [downloading, setDownloading] = useState(false);
 
-  // Use either the provided data or fallback
-  const data = graphData;
+  // Process nodes to ensure draggability
+  const processData = (data) => {
+    if (!data?.nodes || !data?.edges) return { nodes: [], edges: [] };
 
-  // If data is invalid or ReactFlow isn't available, render fallback
-  if (!data.nodes || !data.edges || !ReactFlowPackage.ReactFlow) {
-    return <FallbackComponent data={data} />;
-  }
+    return {
+      nodes: data.nodes.map((node) => ({
+        ...node,
+        draggable: true, // Explicitly enable dragging
+        type: node.type || "default",
+      })),
+      edges: data.edges,
+    };
+  };
 
-  const ReactFlow = ReactFlowPackage.ReactFlow;
-  const Controls = ReactFlowPackage.Controls;
-  const Background = ReactFlowPackage.Background;
-  const MiniMap = ReactFlowPackage.MiniMap;
-  const Panel = ReactFlowPackage.Panel;
-
-  if (!ReactFlow) {
-    return <FallbackComponent data={data} />;
-  }
+  const processedData = processData(graphData);
+  const [nodes, setNodes, onNodesChange] = useNodesState(processedData.nodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(processedData.edges);
 
   // Function to download the current graph as a PNG image
   const downloadImage = useCallback(
     (e) => {
-      // Prevent the click event from bubbling up and triggering parent handlers
+      // Prevent the click event from bubbling up
       e.stopPropagation();
 
       if (reactFlowRef.current === null || !reactFlowInstance || downloading) {
@@ -74,17 +81,6 @@ export default function FlowChart({
           backgroundColor: "#fff",
           pixelRatio: 2,
           quality: 1,
-          width: flowElement.offsetWidth,
-          height: flowElement.offsetHeight,
-          style: {
-            width: "100%",
-            height: "100%",
-          },
-          includeQueryParams: true,
-          skipAutoScale: true,
-          cacheBust: true,
-          canvasWidth: flowElement.offsetWidth * 2,
-          canvasHeight: flowElement.offsetHeight * 2,
         })
           .then((dataUrl) => {
             // Create a download link
@@ -110,18 +106,41 @@ export default function FlowChart({
 
   // Function to initialize the ReactFlow instance
   const onInit = useCallback((instance) => {
+    console.log("Flow initialized");
     setReactFlowInstance(instance);
   }, []);
+
+  if (!processedData.nodes || !processedData.edges) {
+    return <FallbackComponent data={graphData} />;
+  }
 
   try {
     return (
       <div className={styles.flowContainer} ref={reactFlowRef}>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          .react-flow__node {
+            cursor: grab !important;
+          }
+          .react-flow__node:active {
+            cursor: grabbing !important;
+          }
+          `,
+          }}
+        />
         <ReactFlow
-          nodes={data.nodes}
-          edges={data.edges}
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
           onInit={onInit}
           fitView
           fitViewOptions={{ padding: 0.2 }}
+          nodesDraggable={true}
+          elementsSelectable={true}
+          zoomOnScroll={true}
+          panOnDrag={true}
         >
           <Background />
           <Panel position="top-right">
@@ -138,6 +157,6 @@ export default function FlowChart({
     );
   } catch (error) {
     console.error("Error rendering ReactFlow:", error);
-    return <FallbackComponent data={data} />;
+    return <FallbackComponent data={graphData} />;
   }
 }

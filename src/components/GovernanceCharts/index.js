@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { ReactFlowProvider } from "@xyflow/react";
 import FlowChart from "../ReactFlow";
 import styles from "./styles.module.css";
-import governanceCharts from "@site/src/data/delegationFAQ2.json";
+// Import all category data
+import generalCharts from "@site/src/data/governanceChartsGeneral.json";
+import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
+import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
+import criticalParamCharts from "@site/src/data/governanceChartsCriticalParams.json";
 
 // Categories of governance actions
 const CATEGORIES = {
@@ -12,6 +16,14 @@ const CATEGORIES = {
   CRITICAL_PARAMETER_CHANGES: "Critical Parameter Changes",
 };
 
+// Map category names to their data files
+const CATEGORY_DATA = {
+  [CATEGORIES.GENERAL]: generalCharts,
+  [CATEGORIES.INFO_ACTIONS]: infoActionCharts,
+  [CATEGORIES.PROTOCOL_PARAMETER_CHANGES]: protocolParamCharts,
+  [CATEGORIES.CRITICAL_PARAMETER_CHANGES]: criticalParamCharts,
+};
+
 export default function GovernanceCharts() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
@@ -19,23 +31,16 @@ export default function GovernanceCharts() {
 
   // Organize charts by category on component mount
   useEffect(() => {
-    // Group charts by category
+    // Create a structured object for all categories
     const organizedData = {};
 
-    // Initialize empty arrays for each category
-    Object.values(CATEGORIES).forEach((category) => {
-      organizedData[category] = [];
-    });
-
-    // Sort charts into appropriate categories
-    governanceCharts.forEach((chart) => {
-      if (chart.category && organizedData[chart.category]) {
-        organizedData[chart.category].push({
-          title: chart.title,
-          description: chart.description,
-          graphData: chart.graphData,
-        });
-      }
+    // Process each category
+    Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
+      organizedData[category] = data.map((chart) => ({
+        title: chart.title,
+        description: chart.description,
+        graphData: chart.graphData,
+      }));
     });
 
     setGraphsData(organizedData);
