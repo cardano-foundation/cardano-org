@@ -1,0 +1,133 @@
+.flowContainer {
+  height: 600px;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.flowError {
+  padding: 20px;
+  color: #ff5252;
+  text-align: center;
+  font-style: italic;
+}
+
+:global(.react-flow__node) {
+  padding: 12px;
+  font-size: 14px;
+  min-width: 150px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+:global(.react-flow__node:hover) {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+:global(.react-flow__edge-text) {
+  font-size: 12px;
+  font-weight: 500;
+  fill: #666;
+  text-shadow: 0px 0px 3px white, 0px 0px 2px white;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 3px;
+  border-radius: 3px;
+}
+
+:global(.react-flow__edge-path) {
+  stroke-width: 2px;
+}
+
+:global(.react-flow__controls) {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+:global(.react-flow__controls-button) {
+  border-bottom: 1px solid #eee !important;
+  background: white !important;
+}
+
+:global(.react-flow__minimap) {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+:global(.react-flow__handle) {
+  width: 8px;
+  height: 8px;
+  background-color: #555;
+  border: 2px solid #fff;
+}
+
+:global(.react-flow__handle-left) {
+  left: -4px;
+}
+
+:global(.react-flow__handle-right) {
+  right: -4px;
+}
+
+:global(.react-flow__handle-top) {
+  top: -4px;
+}
+
+:global(.react-flow__handle-bottom) {
+  bottom: -4px;
+}
+
+
+.downloadButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #0c7cd5;
+  transform: translateY(-1px);
+}
+
+.downloadButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.downloadButton {
+  /* Override any specific properties while keeping the button class styles */
+  margin: 0;
+  font-family: Chivo, sans-serif;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.downloadButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}

@@ -1,0 +1,114 @@
+.governanceChartsContainer {
+  width: 100%;
+  font-family: Chivo, sans-serif;
+  margin-bottom: 40px;
+}
+
+.selectionTitle {
+  font-size: 1.2rem;
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.05rem;
+  margin-top: 10px;
+}
+
+.categorySelection {
+  margin-bottom: 30px;
+}
+
+.categoryButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.categoryButton {
+  margin-bottom: 8px;
+}
+
+.categoryButton.active {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.graphSelection {
+  position: relative;
+}
+
+.graphList {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.graphItem {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.graphTitle {
+  font-family: Chivo, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.graphContent {
+  margin-top: 15px;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.graphDescription {
+  margin: 0 0 20px 0;
+  color: var(--ifm-font-color-base);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-left: 3px solid var(--ifm-color-primary);
+  background-color: rgba(5, 56, 175, 0.05);
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+[data-theme="dark"] .graphDescription {
+  background-color: rgba(102, 132, 206, 0.1);
+}
+
+.graphContainer {
+  margin-top: 20px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.emptyState,
+.initialPrompt {
+  text-align: center;
+  padding: 40px;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  margin: 20px 0;
+}
+
+[data-theme="dark"] .emptyState,
+[data-theme="dark"] .initialPrompt {
+  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+@media (max-width: 768px) {
+  .categoryButtons {
+    flex-direction: column;
+  }
+
+  .categoryButton {
+    width: 100%;
+    margin-right: 0;
+  }
+}
