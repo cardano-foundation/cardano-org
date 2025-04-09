@@ -110,7 +110,6 @@
 }
 
 .downloadButton {
-  /* Override any specific properties while keeping the button class styles */
   margin: 0;
   font-family: Chivo, sans-serif;
   transition: all 0.3s ease;
@@ -150,7 +149,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Support for dark mode download button */
 .darkMode .downloadButton {
   background-color: var(--ifm-color-primary);
   color: white;

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ReactFlowProvider } from "@xyflow/react";
-import FlowChart from "../ReactFlow";
+import GovernanceGraphs from "@site/src/components/GovernanceGraphs";
 import styles from "./styles.module.css";
-// Import all category data
 import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
 import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
@@ -31,10 +30,8 @@ export default function GovernanceCharts() {
 
   // Organize charts by category on component mount
   useEffect(() => {
-    // Create a structured object for all categories
     const organizedData = {};
 
-    // Process each category
     Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
       organizedData[category] = data.map((chart) => ({
         title: chart.title,
@@ -63,7 +60,6 @@ export default function GovernanceCharts() {
 
   return (
     <div className={styles.governanceChartsContainer}>
-      {/* Category Selection */}
       <div className={styles.categorySelection}>
         <h3 className={styles.selectionTitle}>Select a category:</h3>
         <div className={styles.categoryButtons}>
@@ -108,7 +104,7 @@ export default function GovernanceCharts() {
                       </p>
                       <div className={styles.graphContainer}>
                         <ReactFlowProvider>
-                          <FlowChart
+                          <GovernanceGraphs
                             graphData={graph.graphData}
                             title={graph.title
                               .toLowerCase()
@@ -133,7 +129,7 @@ export default function GovernanceCharts() {
           </div>
         )}
 
-      {/* Initial state prompt */}
+      {/* //Initial state prompt */}
       {!activeCategory && (
         <div className={styles.initialPrompt}>
           <p>Please select a category to view available governance charts.</p>

@@ -11,7 +11,6 @@ import "@xyflow/react/dist/style.css";
 import styles from "./styles.module.css";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import { useColorMode } from "@docusaurus/theme-common";
-import { xml } from "d3";
 
 // Fallback component in case ReactFlow fails
 const FallbackComponent = ({ data }) => (
@@ -28,7 +27,6 @@ export default function FlowChart({
   graphData,
   title = "cardano-governance-flow",
 }) {
-  // Create a reference to the flow container
   const reactFlowRef = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [downloading, setDownloading] = useState(false);
