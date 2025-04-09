@@ -1,11 +1,11 @@
 .flowContainer {
   height: 600px;
   width: 100%;
-  border: 1px solid #eaeaea;
   border-radius: 6px;
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .flowError {
@@ -129,5 +129,39 @@
   background-color: #ccc;
   cursor: not-allowed;
   transform: none;
+  opacity: 0.7;
+}
+
+.darkMode {
+  background-color: #1b1b1d;
+}
+
+.darkMode :global(.react-flow__edge-text) {
+  fill: #ffffff;
+  text-shadow: 0px 0px 3px #000, 0px 0px 2px #000;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.darkMode :global(.react-flow__node) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode :global(.react-flow__node:hover) {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Support for dark mode download button */
+.darkMode .downloadButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.darkMode .downloadButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.darkMode .downloadButton:disabled {
+  background-color: #555;
   opacity: 0.7;
 }

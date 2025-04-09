@@ -1,15 +1,17 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState, useEffect } from "react";
 import {
   ReactFlow,
   Background,
   Panel,
-  ReactFlowProvider,
   useNodesState,
   useEdgesState,
 } from "@xyflow/react";
 import { toPng } from "html-to-image";
 import "@xyflow/react/dist/style.css";
 import styles from "./styles.module.css";
+import useIsBrowser from "@docusaurus/useIsBrowser";
+import { useColorMode } from "@docusaurus/theme-common";
+import { xml } from "d3";
 
 // Fallback component in case ReactFlow fails
 const FallbackComponent = ({ data }) => (
@@ -30,29 +32,154 @@ export default function FlowChart({
   const reactFlowRef = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [downloading, setDownloading] = useState(false);
+  const isBrowser = useIsBrowser();
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
 
-  // Process nodes to ensure draggability
-  const processData = (data) => {
+  const processData = (data, isDark) => {
     if (!data?.nodes || !data?.edges) return { nodes: [], edges: [] };
 
-    return {
-      nodes: data.nodes.map((node) => ({
+    const colorMap = {
+      light: {
+        background: "#fff",
+        text: "#000",
+        nodeColors: {
+          "#e6f7ff": "#e6f7ff",
+          "#f6ffed": "#f6ffed",
+          "#fff7e6": "#fff7e6",
+          "#f9f0ff": "#f9f0ff",
+          "#fff1f0": "#fff1f0",
+          "#d9f7be": "#d9f7be",
+        },
+        borderColors: {
+          "#1890ff": "#1890ff",
+          "#52c41a": "#52c41a",
+          "#fa8c16": "#fa8c16",
+          "#722ed1": "#722ed1",
+          "#f5222d": "#f5222d",
+        },
+        edgeColors: {
+          "#1890ff": "#1890ff",
+          "#52c41a": "#52c41a",
+          "#fa8c16": "#fa8c16",
+          "#722ed1": "#722ed1",
+          "#f5222d": "#f5222d",
+        },
+      },
+      dark: {
+        background: "#1b1b1d",
+        text: "#ffffff",
+        nodeColors: {
+          "#e6f7ff": "#173a59",
+          "#f6ffed": "#1e3320",
+          "#fff7e6": "#3d2e14",
+          "#f9f0ff": "#2d1a45",
+          "#fff1f0": "#3e1a18",
+          "#d9f7be": "#2d4016",
+        },
+        borderColors: {
+          "#1890ff": "#40a9ff",
+          "#52c41a": "#73d13d",
+          "#fa8c16": "#ffa940",
+          "#722ed1": "#9254de",
+          "#f5222d": "#ff4d4f",
+        },
+        edgeColors: {
+          "#1890ff": "#40a9ff",
+          "#52c41a": "#73d13d",
+          "#fa8c16": "#ffa940",
+          "#722ed1": "#9254de",
+          "#f5222d": "#ff4d4f",
+        },
+      },
+    };
+
+    // Process nodes with theme-specific styles
+    const processedNodes = data.nodes.map((node) => {
+      const updatedNode = {
         ...node,
-        draggable: true, // Explicitly enable dragging
+        draggable: true,
         type: node.type || "default",
-      })),
-      edges: data.edges,
+        style: { ...node.style },
+      };
+
+      if (isDark) {
+        // Update node style for dark mode
+        if (updatedNode.style.backgroundColor) {
+          updatedNode.style.backgroundColor =
+            colorMap.dark.nodeColors[updatedNode.style.backgroundColor] ||
+            updatedNode.style.backgroundColor;
+        }
+
+        if (updatedNode.style.border) {
+          // Process border, keeping the width and style but changing the color
+          updatedNode.style.border = updatedNode.style.border.replace(
+            /#[0-9a-f]{3,6}/i,
+            (match) => colorMap.dark.borderColors[match] || match
+          );
+        }
+
+        // Add text color for dark mode
+        updatedNode.style.color = colorMap.dark.text;
+      }
+
+      return updatedNode;
+    });
+
+    // Process edges with theme-specific styles
+    const processedEdges = data.edges.map((edge) => {
+      const updatedEdge = { ...edge };
+
+      if (isDark && updatedEdge.style && updatedEdge.style.stroke) {
+        updatedEdge.style = {
+          ...updatedEdge.style,
+          stroke:
+            colorMap.dark.edgeColors[updatedEdge.style.stroke] ||
+            updatedEdge.style.stroke,
+        };
+      }
+
+      // Update label styles for dark mode
+      if (isDark && edge.label) {
+        updatedEdge.labelStyle = {
+          ...(edge.labelStyle || {}),
+          fill: colorMap.dark.text,
+          fontWeight: "bold",
+        };
+
+        updatedEdge.labelBgStyle = {
+          ...(edge.labelBgStyle || {}),
+          fill: "#3a3a3c",
+          fillOpacity: 0.8,
+        };
+      }
+
+      return updatedEdge;
+    });
+
+    return {
+      nodes: processedNodes,
+      edges: processedEdges,
     };
   };
 
-  const processedData = processData(graphData);
+  // Process data with current theme
+  const processedData = processData(graphData, isDarkMode);
   const [nodes, setNodes, onNodesChange] = useNodesState(processedData.nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(processedData.edges);
+
+  // Update nodes and edges when theme changes
+  useEffect(() => {
+    if (graphData) {
+      const themeProcessedData = processData(graphData, isDarkMode);
+      setNodes(themeProcessedData.nodes);
+      setEdges(themeProcessedData.edges);
+    }
+  }, [isDarkMode, graphData, setNodes, setEdges]);
 
   // Function to download the current graph as a PNG image
   const downloadImage = useCallback(
     (e) => {
-      // Prevent the click event from bubbling up
       e.stopPropagation();
 
       if (reactFlowRef.current === null || !reactFlowInstance || downloading) {
@@ -78,14 +205,16 @@ export default function FlowChart({
       // Set a timeout to ensure the view transition is complete before capturing
       setTimeout(() => {
         toPng(flowElement, {
-          backgroundColor: "#fff",
+          backgroundColor: isDarkMode ? "#1b1b1d" : "#fff", // Match with Docusaurus theme
           pixelRatio: 2,
           quality: 1,
         })
           .then((dataUrl) => {
             // Create a download link
             const link = document.createElement("a");
-            link.download = `${title.toLowerCase().replace(/\s+/g, "-")}.png`;
+            link.download = `${title.toLowerCase().replace(/\s+/g, "-")}${
+              isDarkMode ? "-dark" : ""
+            }.png`;
             link.href = dataUrl;
             document.body.appendChild(link);
             link.click();
@@ -101,7 +230,7 @@ export default function FlowChart({
           });
       }, 500);
     },
-    [reactFlowInstance, downloading, title]
+    [reactFlowInstance, downloading, title, isDarkMode]
   );
 
   // Function to initialize the ReactFlow instance
@@ -116,19 +245,12 @@ export default function FlowChart({
 
   try {
     return (
-      <div className={styles.flowContainer} ref={reactFlowRef}>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-          .react-flow__node {
-            cursor: grab !important;
-          }
-          .react-flow__node:active {
-            cursor: grabbing !important;
-          }
-          `,
-          }}
-        />
+      <div
+        className={`${styles.flowContainer} ${
+          isDarkMode ? styles.darkMode : ""
+        }`}
+        ref={reactFlowRef}
+      >
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -142,7 +264,7 @@ export default function FlowChart({
           zoomOnScroll={true}
           panOnDrag={true}
         >
-          <Background />
+          <Background color={isDarkMode ? "#333" : "#aaa"} gap={16} />
           <Panel position="top-right">
             <button
               onClick={(e) => downloadImage(e)}
