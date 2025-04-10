@@ -193,7 +193,7 @@
     }
   },
   {
-    "title": "No Change Limit",
+    "title": "Net Change Limit",
     "description": "An action that has no effect on-chain, other than an on-chain record.",
     "graphData": {
       "nodes": [

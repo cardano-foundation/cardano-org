@@ -2,6 +2,7 @@
   {
     "title": "Network, Economic & Technical",
     "description": "Network, Economic & Technical.",
+    "parameterDetails": "## Critical Network Parameters\n- **Maximum block body size** (maxBlockBodySize): Defines the maximum size of a block's body in bytes\n- **Maximum transaction size** (maxTxSize): The maximum allowed size for a transaction\n- **Maximum block header size** (maxBlockHeaderSize): The maximum allowed size for a block header\n- **Maximum size of a serialized asset value** (maxValueSize): Maximum byte size of serialized values\n- **Maximum script execution/memory units in a single block** (maxBlockExecutionUnits[steps/memory]): Limits script execution\n- **Minimum fee coefficient** (txFeePerByte): The fee charged per byte of a transaction\n- **Minimum fee constant** (txFeeFixed): The fixed minimum fee for a transaction\n\n## Critical Economic Parameters\n- **Minimum fee per byte for reference scripts** (minFeeRefScriptCoinsPerByte): Fee for reference script bytes\n- **Minimum lovelace deposit per byte of serialized UTxO** (utxoCostPerByte): Cost of UTxO storage\n- **Governance action deposit** (govDeposit): Required deposit for submitting governance actions\n\n## Critical Governance Parameters\n- **Minimum fixed rewards cut for pools** (minPoolCost): Minimum fixed fee for stake pools\n- **DRep deposit amount** (dRepDeposit): Required deposit to register as a DRep\n- **Minimal Constitutional Committee size** (committeeMinSize): Minimum number of committee members required",
     "graphData": {
       "nodes": [
         {
@@ -275,6 +276,7 @@
   {
     "title": "Governance",
     "description": "Governance.",
+    "parameterDetails": "## Governance Parameters\n- **DRep Activity Period** (dRepActivity): The number of epochs after which an inactive DRep loses their delegation\n- **Governance Action Lifetime** (govActionLifetime): Maximum number of epochs a governance action can remain active\n\n## Voting Threshold Parameters\n### DRep Voting Thresholds\n- (dvtCommitteeNoConfidence): Threshold for no-confidence votes against committee members\n- (dvtCommitteeNormal): Threshold for normal committee-related actions\n- (dvtHardForkInitiation): Threshold required to initiate a hard fork\n- (dvtMotionNoConfidence): Threshold for motions of no confidence\n- (dvtPPEconomicGroup): Threshold for economic parameter changes\n- (dvtPPGovGroup): Threshold for governance parameter changes\n- (dvtPPNetworkGroup): Threshold for network parameter changes\n- (dvtPPTechnicalGroup): Threshold for technical parameter changes\n- (dvtTreasuryWithdrawal): Threshold for treasury withdrawal approvals\n- (dvtUpdateToConstitution): Threshold for constitution updates\n\n### SPO Voting Thresholds\n- (pvtCommitteeNoConfidence): Threshold for SPO no-confidence votes against committee\n- (pvtCommitteeNormal): Threshold for SPO votes on normal committee actions\n- (pvtHardForkInitiation): Threshold for SPO votes on hard fork initiation\n- (pvtMotionNoConfidence): Threshold for SPO votes on motions of no confidence\n- (pvtPPSecurityGroup): Threshold for SPO votes on security parameter changes",
     "graphData": {
       "nodes": [
         {

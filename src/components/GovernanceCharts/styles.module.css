@@ -112,3 +112,36 @@
     margin-right: 0;
   }
 }
+
+.parameterDetails {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.parameterDetails h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--ifm-color-primary);
+}
+
+.parameterDetails :global(.markdown) {
+  font-size: 0.95rem;
+}
+
+.parameterDetails :global(h2) {
+  font-size: 1.3rem;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.parameterDetails :global(ul) {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.parameterDetails :global(li) {
+  margin-bottom: 4px;
+}

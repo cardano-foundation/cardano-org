@@ -6,6 +6,24 @@ import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
 import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
 import criticalParamCharts from "@site/src/data/governanceChartsCriticalParams.json";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+// Markdown to HTML converter using regular expressions
+const markdownToHtml = (markdown) => {
+  if (!markdown) return "";
+
+  return markdown
+    .replace(/^### (.*$)/gm, "<h3>$1</h3>")
+    .replace(/^## (.*$)/gm, "<h2>$1</h2>")
+    .replace(/^# (.*$)/gm, "<h1>$1</h1>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.*?)\*/g, "<em>$1</em>")
+    .replace(/^\- (.*$)/gm, "<li>$1</li>")
+    .replace(/(<li>.*<\/li>\s*)+/gm, "<ul>$&</ul>")
+    .replace(/^(?!<\/?[a-z][^>]*>)(.+)$/gm, "<p>$1</p>")
+    .replace(/\n\s*\n/g, "</p><p>")
+    .replace(/<p><\/p>/g, "");
+};
 
 // Categories of governance actions
 const CATEGORIES = {
@@ -36,6 +54,7 @@ export default function GovernanceCharts() {
       organizedData[category] = data.map((chart) => ({
         title: chart.title,
         description: chart.description,
+        parameterDetails: chart.parameterDetails,
         graphData: chart.graphData,
       }));
     });
@@ -54,8 +73,18 @@ export default function GovernanceCharts() {
   };
 
   // Handle graph selection
-  const handleGraphSelect = (index) => {
-    setActiveGraphIndex(index === activeGraphIndex ? null : index);
+  const handleGraphSelect = (index, event) => {
+    if (
+      event.target.closest(".Collapsible__trigger") ||
+      event.target.closest(".graphTitle")
+    ) {
+      setActiveGraphIndex(index === activeGraphIndex ? null : index);
+    }
+  };
+
+  // Prevent clicks inside content from closing the dropdown
+  const handleContentClick = (event) => {
+    event.stopPropagation();
   };
 
   return (
@@ -90,7 +119,7 @@ export default function GovernanceCharts() {
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
                   } ${activeGraphIndex === index ? "active" : ""}`}
-                  onClick={() => handleGraphSelect(index)}
+                  onClick={(e) => handleGraphSelect(index, e)}
                 >
                   <div className="Collapsible__trigger">
                     <h4 className={styles.graphTitle}>{graph.title}</h4>
@@ -98,10 +127,22 @@ export default function GovernanceCharts() {
                   {activeGraphIndex === index && (
                     <div
                       className={`${styles.graphContent} Collapsible__contentInner`}
+                      onClick={handleContentClick}
                     >
                       <p className={styles.graphDescription}>
                         {graph.description}
                       </p>
+                      {graph.parameterDetails && (
+                        <div className={styles.parameterDetails}>
+                          <h4>Parameter Details</h4>
+                          <div
+                            className="markdown"
+                            dangerouslySetInnerHTML={{
+                              __html: markdownToHtml(graph.parameterDetails),
+                            }}
+                          />
+                        </div>
+                      )}
                       <div className={styles.graphContainer}>
                         <ReactFlowProvider>
                           <GovernanceGraphs
