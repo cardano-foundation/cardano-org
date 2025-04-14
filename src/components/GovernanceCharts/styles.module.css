@@ -4,6 +4,184 @@
   margin-bottom: 40px;
 }
 
+/* New search functionality styles */
+.searchContainer {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px rgba(5, 56, 107, 0.1);
+}
+
+[data-theme="dark"] .searchInput {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+}
+
+.parametersButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.parametersButton:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.parametersDropdown {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  margin-top: 5px;
+  z-index: 40;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .parametersDropdown {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-400);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdownTitle {
+  font-weight: bold;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-100);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.parametersList {
+  padding: 5px;
+}
+
+.parameterItem {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.parameterItem:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.parameterCheckbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.selectedTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.parameterTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--ifm-color-primary-lightest);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  color: var(--ifm-button-color);
+}
+
+[data-theme="dark"] .parameterTag {
+  background-color: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-white);
+}
+
+.removeTagButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  font-weight: bold;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.clearTagsButton {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  border: none;
+}
+
+.searchResults {
+  margin-bottom: 30px;
+}
+
+.graphCategory {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.noResults {
+  padding: 20px;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .noResults {
+  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
 .selectionTitle {
   font-size: 1.2rem;
   font-family: Chivo, sans-serif;
@@ -55,6 +233,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+}
+
+.graphTitle span {
+  flex: 1;
 }
 
 .graphContent {
@@ -110,6 +293,20 @@
   .categoryButton {
     width: 100%;
     margin-right: 0;
+  }
+  
+  .searchInputContainer {
+    flex-direction: column;
+  }
+  
+  .parametersButton {
+    width: 100%;
+  }
+  
+  .parametersDropdown {
+    width: 100%;
+    left: 0;
+    right: auto;
   }
 }
 

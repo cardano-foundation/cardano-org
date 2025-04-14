@@ -9,10 +9,9 @@ import {
 import { toPng } from "html-to-image";
 import "@xyflow/react/dist/style.css";
 import styles from "./styles.module.css";
-import useIsBrowser from "@docusaurus/useIsBrowser";
 import { useColorMode } from "@docusaurus/theme-common";
 
-// Fallback component in case ReactFlow fails
+// Fallback component for when ReactFlow fails
 const FallbackComponent = ({ data }) => (
   <div className={styles.flowError}>
     <p>Graph visualization unavailable</p>
@@ -30,10 +29,10 @@ export default function FlowChart({
   const reactFlowRef = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [downloading, setDownloading] = useState(false);
-  const isBrowser = useIsBrowser();
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
+  // Process graph data for light/dark theme compatibility
   const processData = (data, isDark) => {
     if (!data?.nodes || !data?.edges) return { nodes: [], edges: [] };
 
@@ -92,7 +91,6 @@ export default function FlowChart({
       },
     };
 
-    // Process nodes with theme-specific styles
     const processedNodes = data.nodes.map((node) => {
       const updatedNode = {
         ...node,
@@ -133,7 +131,6 @@ export default function FlowChart({
         };
       }
 
-      // Update label styles for dark mode
       if (isDark && edge.label) {
         updatedEdge.labelStyle = {
           ...(edge.labelStyle || {}),
@@ -157,7 +154,6 @@ export default function FlowChart({
     };
   };
 
-  // Process data with current theme
   const processedData = processData(graphData, isDarkMode);
   const [nodes, setNodes, onNodesChange] = useNodesState(processedData.nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(processedData.edges);
@@ -171,7 +167,7 @@ export default function FlowChart({
     }
   }, [isDarkMode, graphData, setNodes, setEdges]);
 
-  // Capture the current state of the graph and download it in a PNG
+  // Export the flow chart as PNG image
   const downloadImage = useCallback(
     (e) => {
       e.stopPropagation();
@@ -225,7 +221,6 @@ export default function FlowChart({
             textRendering: "optimizeLegibility",
           },
           filter: (node) => {
-            // Filter out problematic text backgrounds and any panels
             return (
               !node.classList ||
               (!node.classList.contains("react-flow__edge-textbg") &&
@@ -280,7 +275,6 @@ export default function FlowChart({
 
   // Initialize the ReactFlow instance
   const onInit = useCallback((instance) => {
-    console.log("Flow initialized");
     setReactFlowInstance(instance);
   }, []);
 

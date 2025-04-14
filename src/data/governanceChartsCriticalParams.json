@@ -37,7 +37,7 @@
         {
           "id": "3",
           "position": {
-            "x": 400,
+            "x": 415,
             "y": 150
           },
           "data": {
@@ -79,7 +79,7 @@
         {
           "id": "6",
           "position": {
-            "x": 400,
+            "x": 415,
             "y": 250
           },
           "data": {
@@ -107,22 +107,24 @@
         {
           "id": "8",
           "position": {
-            "x": 400,
-            "y": 350
+            "x": 340,
+            "y": 340
           },
           "data": {
-            "label": "Votes Tallied"
+            "label": "Votes for each voting group are counted separately per applicable threshold"
           },
           "style": {
             "backgroundColor": "#f9f0ff",
-            "border": "1px solid #722ed1"
+            "border": "1px solid #722ed1",
+            "height": 80,
+            "width": 300
           }
         },
         {
           "id": "9",
           "position": {
             "x": 150,
-            "y": 450
+            "y": 460
           },
           "data": {
             "label": "Some votes pass: Refused"
@@ -138,7 +140,7 @@
           "id": "10",
           "position": {
             "x": 650,
-            "y": 450
+            "y": 460
           },
           "data": {
             "label": "All votes pass: Approved"
@@ -601,22 +603,24 @@
         {
           "id": "8",
           "position": {
-            "x": 400,
-            "y": 350
+            "x": 330,
+            "y": 340
           },
           "data": {
-            "label": "Votes Tallied"
+            "label": "Votes for each voting group are counted separately per applicable threshold"
           },
           "style": {
             "backgroundColor": "#f9f0ff",
-            "border": "1px solid #722ed1"
+            "border": "1px solid #722ed1",
+            "height": 80,
+            "width": 300
           }
         },
         {
           "id": "9",
           "position": {
             "x": 150,
-            "y": 450
+            "y": 460
           },
           "data": {
             "label": "Some votes pass: Refused"
@@ -632,7 +636,7 @@
           "id": "10",
           "position": {
             "x": 650,
-            "y": 450
+            "y": 460
           },
           "data": {
             "label": "All votes pass: Approved"
