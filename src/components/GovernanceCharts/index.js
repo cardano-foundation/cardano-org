@@ -113,6 +113,7 @@ export default function GovernanceCharts() {
   const [searchResults, setSearchResults] = useState([]);
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
   const [selectedParameters, setSelectedParameters] = useState([]);
+  const [activeChartId, setActiveChartId] = useState(null); // Add a unique identifier for active chart
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
@@ -125,7 +126,11 @@ export default function GovernanceCharts() {
     Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
       const categoryGraphs = data.map((chart) => {
         const parameters = extractParameters(chart.parameterDetails);
+        // Create a unique ID for each chart based on category and title
+        const chartId = `${category}:${chart.title}`;
+
         return {
+          id: chartId,
           title: chart.title,
           description: chart.description,
           parameterDetails: chart.parameterDetails,
@@ -216,37 +221,36 @@ export default function GovernanceCharts() {
     setSearchTerm("");
   };
 
+  // Handle graph selection
   const handleGraphSelect = (index, category, event) => {
     if (
       event.target.closest(".Collapsible__trigger") ||
       event.target.closest(".graphTitle")
     ) {
-      if (
-        activeCategory === category &&
-        ((searchTerm &&
-          searchResults[index].title ===
-            graphsData[category][activeGraphIndex]?.title) ||
-          (!searchTerm && index === activeGraphIndex))
-      ) {
+      const selectedGraph =
+        searchTerm || selectedParameters.length > 0
+          ? searchResults[index]
+          : graphsData[category][index];
+
+      const isAlreadyActive = activeChartId === selectedGraph.id;
+
+      if (isAlreadyActive) {
+        setActiveChartId(null);
         setActiveGraphIndex(null);
         return;
       }
 
-      setActiveCategory(category);
+      if (!(selectedParameters.length > 0)) {
+        setActiveCategory(category);
+      }
 
-      if (category) {
-        const categoryGraphs = graphsData[category];
-        if (searchTerm) {
-          const selectedGraph = searchResults[index];
-          const categoryIndex = categoryGraphs.findIndex(
-            (graph) => graph.title === selectedGraph.title
-          );
-          setTimeout(() => {
-            setActiveGraphIndex(categoryIndex);
-          }, 0);
-        } else {
-          setActiveGraphIndex(index);
-        }
+      setActiveChartId(selectedGraph.id);
+
+      if (category && !(selectedParameters.length > 0)) {
+        const categoryIndex = graphsData[category].findIndex(
+          (graph) => graph.id === selectedGraph.id
+        );
+        setActiveGraphIndex(categoryIndex);
       }
     }
   };
@@ -385,14 +389,7 @@ export default function GovernanceCharts() {
                   key={index}
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
-                  } ${
-                    activeCategory === graph.category &&
-                    activeGraphIndex !== null &&
-                    graphsData[graph.category][activeGraphIndex]?.title ===
-                      graph.title
-                      ? "active"
-                      : ""
-                  }`}
+                  } ${activeChartId === graph.id ? "active" : ""}`}
                   onClick={(e) => handleGraphSelect(index, graph.category, e)}
                 >
                   <div className="Collapsible__trigger">
@@ -403,40 +400,37 @@ export default function GovernanceCharts() {
                       </div>
                     </h4>
                   </div>
-                  {activeCategory === graph.category &&
-                    activeGraphIndex !== null &&
-                    graphsData[graph.category][activeGraphIndex]?.title ===
-                      graph.title && (
-                      <div
-                        className={`${styles.graphContent} Collapsible__contentInner`}
-                        onClick={handleContentClick}
-                      >
-                        <p className={styles.graphDescription}>
-                          {graph.description}
-                        </p>
-                        {graph.parameterDetails && (
-                          <div className={styles.parameterDetails}>
-                            <h4>Parameter Details</h4>
-                            <div
-                              className="markdown"
-                              dangerouslySetInnerHTML={{
-                                __html: markdownToHtml(graph.parameterDetails),
-                              }}
-                            />
-                          </div>
-                        )}
-                        <div className={styles.graphContainer}>
-                          <ReactFlowProvider>
-                            <GovernanceGraphs
-                              graphData={graph.graphData}
-                              title={graph.title
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")}
-                            />
-                          </ReactFlowProvider>
+                  {activeChartId === graph.id && (
+                    <div
+                      className={`${styles.graphContent} Collapsible__contentInner`}
+                      onClick={handleContentClick}
+                    >
+                      <p className={styles.graphDescription}>
+                        {graph.description}
+                      </p>
+                      {graph.parameterDetails && (
+                        <div className={styles.parameterDetails}>
+                          <h4>Parameter Details</h4>
+                          <div
+                            className="markdown"
+                            dangerouslySetInnerHTML={{
+                              __html: markdownToHtml(graph.parameterDetails),
+                            }}
+                          />
                         </div>
+                      )}
+                      <div className={styles.graphContainer}>
+                        <ReactFlowProvider>
+                          <GovernanceGraphs
+                            graphData={graph.graphData}
+                            title={graph.title
+                              .toLowerCase()
+                              .replace(/\s+/g, "-")}
+                          />
+                        </ReactFlowProvider>
                       </div>
-                    )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -461,7 +455,7 @@ export default function GovernanceCharts() {
                 key={index}
                 className={`${styles.graphItem} Collapsible ${
                   index % 2 === 0 ? "even" : "odd"
-                } ${activeGraphIndex === index ? "active" : ""}`}
+                } ${activeChartId === graph.id ? "active" : ""}`}
                 onClick={(e) => handleGraphSelect(index, activeCategory, e)}
               >
                 <div className="Collapsible__trigger">
@@ -470,7 +464,7 @@ export default function GovernanceCharts() {
                     <div className={styles.graphCategory}>{graph.category}</div>
                   </h4>
                 </div>
-                {activeGraphIndex === index && (
+                {activeChartId === graph.id && (
                   <div
                     className={`${styles.graphContent} Collapsible__contentInner`}
                     onClick={handleContentClick}
