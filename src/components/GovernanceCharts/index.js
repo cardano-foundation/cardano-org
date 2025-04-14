@@ -270,6 +270,7 @@ export default function GovernanceCharts() {
   const clearAllTags = () => {
     setSelectedParameters([]);
     setSearchTerm("");
+    setActiveCategory(null); // Reset to initial state
   };
 
   const handleContentClick = (event) => {
@@ -289,7 +290,13 @@ export default function GovernanceCharts() {
             type="text"
             placeholder="Search for charts or parameters..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              const newValue = e.target.value;
+              setSearchTerm(newValue);
+              if (newValue === "") {
+                setActiveCategory(null);
+              }
+            }}
             className={styles.searchInput}
           />
           <button
