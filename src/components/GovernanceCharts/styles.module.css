@@ -26,6 +26,7 @@
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
   transition: border-color 0.2s;
+  width: 100%;
 }
 
 .searchInput:focus {
