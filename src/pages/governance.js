@@ -97,7 +97,7 @@ export default function Home() {
         </BoundaryBox>
 
         <BoundaryBox>
-          <Divider text="Governance Action Charts" />
+          <Divider text="Governance Action Charts" id="charts" />
           <GovernanceCharts />
           <SpacerBox size="medium" />
         </BoundaryBox>
