@@ -2,7 +2,7 @@
   {
     "title": "Network, Economic & Technical",
     "description": "Network, Economic & Technical.",
-    "parameterDetails": "## Non-critical protocol parameter changes\n\n### Economic Parameters\n- **UTxO cost per byte** (utxoCostPerByte): Cost of UTxO storage\n- **Stake address deposit** (stakeAddressDeposit): Required deposit for stake addresses\n- **Stake pool deposit** (stakePoolDeposit): Required deposit to register a stake pool\n- **Minimum Pool Cost** (minPoolCost): Minimum fixed cost a pool can declare\n- **Treasury Cut** (treasuryCut): Percentage of rewards going to the treasury\n- **Monetary Expansion Rate** (monetaryExpansion): Rate at which the supply of ADA grows\n- **Plutus Script Execution Prices** (executionUnitPrices[priceSteps/priceMemory]): Pricing for script execution steps and memory\n\n### Network Parameters\n- **Memory Unit Limits** (maxBlockExecutionUnits[memory], maxTxExecutionUnits[memory]): Memory limits for transactions and blocks\n\n### Technical Parameters\n- **Target Number of Stake Pools** (stakePoolTargetNum): Desired number of stake pools in the network\n- **Pledge Influence Factor** (poolPledgeInfluence): How much influence stake pool pledge has on rewards\n- **Pool Retirement Window** (poolRetireMaxEpoch): Maximum number of epochs for pool retirement\n- **Collateral Percentage** (collateralPercentage): Percentage of transaction value required as collateral\n- **Maximum number of collateral inputs** (maxCollateralInputs): Maximum number of collateral inputs in a transaction\n- **Maximum Value Size** (maxValueSize): Maximum byte size of serialized values\n- **Plutus Cost Models** (costModels): Models that determine execution costs for Plutus scripts",
+    "parameterDetails": "## Non-critical protocol parameter changes\n\n### Economic Parameters\n- **UTxO cost per byte** (utxoCostPerByte): Cost of UTxO storage\n- **Stake address deposit** (stakeAddressDeposit): Required deposit for stake addresses\n- **Stake pool deposit** (stakePoolDeposit): Required deposit to register a stake pool\n- **Minimum Pool Cost** (minPoolCost): Minimum fixed cost a pool can declare\n- **Treasury Cut** (treasuryCut): Percentage of rewards going to the treasury\n- **Monetary Expansion Rate** (monetaryExpansion): Rate at which the supply of ada grows\n- **Plutus Script Execution Prices** (executionUnitPrices[priceSteps/priceMemory]): Pricing for script execution steps and memory\n\n### Network Parameters\n- **Memory Unit Limits** (maxBlockExecutionUnits[memory], maxTxExecutionUnits[memory]): Memory limits for transactions and blocks\n\n### Technical Parameters\n- **Target Number of Stake Pools** (stakePoolTargetNum): Desired number of stake pools in the network\n- **Pledge Influence Factor** (poolPledgeInfluence): How much influence stake pool pledge has on rewards\n- **Pool Retirement Window** (poolRetireMaxEpoch): Maximum number of epochs for pool retirement\n- **Collateral Percentage** (collateralPercentage): Percentage of transaction value required as collateral\n- **Maximum number of collateral inputs** (maxCollateralInputs): Maximum number of collateral inputs in a transaction\n- **Maximum Value Size** (maxValueSize): Maximum byte size of serialized values\n- **Plutus Cost Models** (costModels): Models that determine execution costs for Plutus scripts",
     "graphData": {
       "nodes": [
         {
@@ -12,7 +12,7 @@
             "y": 40
           },
           "data": {
-            "label": "Cardano Mainnet"
+            "label": "Cardano mainnet"
           },
           "style": {
             "width": 180,
@@ -131,7 +131,7 @@
             "y": -35
           },
           "data": {
-            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
           },
           "style": {
             "width": 180,
@@ -288,7 +288,7 @@
             "y": 40
           },
           "data": {
-            "label": "Cardano Mainnet"
+            "label": "Cardano mainnet"
           },
           "style": {
             "width": 180,
@@ -407,7 +407,7 @@
             "y": -35
           },
           "data": {
-            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
           },
           "style": {
             "width": 180,
