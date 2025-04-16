@@ -256,15 +256,15 @@ img {
 
 .Collapsible__trigger {
   background: transparent;
-  color: var(--ifm-base-color); /* Set the text color */
-  font-size: 1rem; /* Set the text size */
-  font-weight: bold; /* Bold text */
-  text-align: left; /* Align text to the left */
-  padding: 1rem; /* Add padding */
-  display: flex; /* Use flexbox for positioning text and icon */
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Space between text and icon */
-  cursor: pointer; /* Cursor pointer to indicate it's clickable */
+  color: var(--ifm-base-color);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left; 
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer; 
 }
 
 .Collapsible__trigger:after {

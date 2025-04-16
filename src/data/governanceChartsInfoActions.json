@@ -1,0 +1,659 @@
+[
+  {
+    "title": "Generally",
+    "description": "An action that has no effect on-chain, other than an on-chain record.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 400,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "4",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "7",
+          "position": {
+            "x": 600,
+            "y": 300
+          },
+          "data": {
+            "label": "CC approval can be recorded, but it does not affect the passing of the action Info Action, unless the Info Action itself stipulates this"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 300,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes are recorded individually on Mainnet and can be queried with certain toolsRefused"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16",
+            "width": 180
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "left"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-4",
+          "source": "1",
+          "target": "4",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-9",
+          "source": "2",
+          "target": "9",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-9",
+          "source": "3",
+          "target": "9",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e4-7",
+          "source": "4",
+          "target": "7",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Net Change Limit",
+    "description": "An action that has no effect on-chain, other than an on-chain record.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "4",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 50%"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "7",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 550,
+            "y": 350
+          },
+          "data": {
+            "label": "CC approval can be recorded, but it does not affect the passing of the action Info Action, unless the Info Action itself stipulates this"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16",
+            "width": 250
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 185,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes are recorded individually on Mainnet and can be queried with certain tools"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16",
+            "width": 180
+          }
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 150,
+            "y": 550
+          },
+          "data": {
+            "label": "If the limit meets the approval thresholds, the limit will best set and Budget Proposal GAs can be submitted based on this Limit"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a",
+            "width": 250
+          }
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "left"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-4",
+          "source": "1",
+          "target": "4",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e4-7",
+          "source": "4",
+          "target": "7",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-9",
+          "source": "5",
+          "target": "9",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e7-8",
+          "source": "7",
+          "target": "8",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e9-10",
+          "source": "9",
+          "target": "10",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Budgets",
+    "description": "An action that has no effect on-chain, other than an on-chain record.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano Mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "4",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 50%"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "7",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 550,
+            "y": 350
+          },
+          "data": {
+            "label": "CC approval can be recorded, but it does not affect the passing of the action Info Action, unless the Info Action itself stipulates this"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16",
+            "width": 250
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 185,
+            "y": 350
+          },
+          "data": {
+            "label": "Votes are recorded individually on Mainnet and can be queried with certain tools"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16",
+            "width": 180
+          }
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 150,
+            "y": 550
+          },
+          "data": {
+            "label": "Budget is approved and treasury withdrawal GAs can be submitted based on this Budget"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a",
+            "width": 250
+          }
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ADA token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "left"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-4",
+          "source": "1",
+          "target": "4",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e4-7",
+          "source": "4",
+          "target": "7",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-9",
+          "source": "5",
+          "target": "9",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e7-8",
+          "source": "7",
+          "target": "8",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e9-10",
+          "source": "9",
+          "target": "10",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  }
+]
