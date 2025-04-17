@@ -24,16 +24,16 @@
     "link": "https://forum.cardano.org/u/xeeban/summary"
   },
   {
-    "name": "Anthony Capriotti",
-    "role": "United States",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/anthony_cardano/summary"
-  },
-  {
     "name": "Beatrice Anihiri",
     "role": "Norway",
     "country": "NO",
     "link": "https://forum.cardano.org/u/bearicea/summary"
+  },
+  {
+    "name": "Benjamin Baani ",
+    "role": "Ghana",
+    "country": "GH",
+    "link": "https://forum.cardano.org/u/benjamin1/summary"
   },
   {
     "name": "Glitch",
@@ -48,7 +48,7 @@
     "link": "https://forum.cardano.org/u/cardanocuration/summary"
   },
   {
-    "name": "Chris Kulas, Christ STR8",
+    "name": "Chris Kulas",
     "role": "Germany",
     "country": "DE",
     "link": "https://forum.cardano.org/u/ChrisSTR8/"
@@ -66,7 +66,7 @@
     "link": "https://forum.cardano.org/u/ddlezu"
   },
   {
-    "name": "Daniel Lynch (DominatingSlash)",
+    "name": "Daniel Lynch",
     "role": "United States",
     "country": "US",
     "link": "https://forum.cardano.org/u/dominatingslash/"
@@ -210,6 +210,12 @@
     "link": "https://forum.cardano.org/u/jeremiah/"
   },
   {
+    "name": "Jo Allum",
+    "role": "New Zealand",
+    "country": "NZ",
+    "link": "https://forum.cardano.org/u/yojoflo/summary"
+  },
+  {
     "name": "Jose Iadicicco",
     "role": "Argentina",
     "country": "AR",
@@ -264,12 +270,6 @@
     "link": "https://forum.cardano.org/u/atada"
   },
   {
-    "name": "Martin Mužík",
-    "role": "Slovakia",
-    "country": "SK",
-    "link": "https://forum.cardano.org/u/martin.m/summary"
-  },
-  {
     "name": "Martin Ungar",
     "role": "Argentina",
     "country": "AR",
@@ -306,12 +306,6 @@
     "link": "https://forum.cardano.org/u/chosenfintech"
   },
   {
-    "name": "Mototsugu Oba",
-    "role": "United States",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/mojira/summary"
-  },
-  {
     "name": "Nguyen Thi Ha",
     "role": "Vietnam",
     "country": "VN",
@@ -322,12 +316,6 @@
     "role": "Australia",
     "country": "AU",
     "link": "https://forum.cardano.org/u/astroboysoup/summary"
-  },
-  {
-    "name": "Piero Zanetti LordWotton [RIOT] ",
-    "role": "Panama",
-    "country": "PA",
-    "link": "https://forum.cardano.org/u/lordwotton/summary"
   },
   {
     "name": "Quentin Kayila",
@@ -406,6 +394,12 @@
     "role": "Belgium",
     "country": "BE",
     "link": "https://forum.cardano.org/u/robbyja7/summary"
+  },
+  {
+    "name": "Taichi Yokoyama",
+    "role": "Japan",
+    "country": "JP",
+    "link": "https://forum.cardano.org/u/taichiyokoyama/summary"
   },
   {
     "name": "Theodoros Morisis",
