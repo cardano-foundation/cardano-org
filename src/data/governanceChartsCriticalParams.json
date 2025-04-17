@@ -1,0 +1,802 @@
+[
+  {
+    "title": "Network, Economic & Technical",
+    "description": "Network, Economic & Technical.",
+    "parameterDetails": "## Critical Network Parameters\n- **Maximum block body size** (maxBlockBodySize): Defines the maximum size of a block's body in bytes\n- **Maximum transaction size** (maxTxSize): The maximum allowed size for a transaction\n- **Maximum block header size** (maxBlockHeaderSize): The maximum allowed size for a block header\n- **Maximum size of a serialized asset value** (maxValueSize): Maximum byte size of serialized values\n- **Maximum script execution/memory units in a single block** (maxBlockExecutionUnits[steps/memory]): Limits script execution\n- **Minimum fee coefficient** (txFeePerByte): The fee charged per byte of a transaction\n- **Minimum fee constant** (txFeeFixed): The fixed minimum fee for a transaction\n\n## Critical Economic Parameters\n- **Minimum fee per byte for reference scripts** (minFeeRefScriptCoinsPerByte): Fee for reference script bytes\n- **Minimum lovelace deposit per byte of serialized UTxO** (utxoCostPerByte): Cost of UTxO storage\n- **Governance action deposit** (govDeposit): Required deposit for submitting governance actions\n\n## Critical Governance Parameters\n- **Minimum fixed rewards cut for pools** (minPoolCost): Minimum fixed fee for stake pools\n- **DRep deposit amount** (dRepDeposit): Required deposit to register as a DRep\n- **Minimal Constitutional Committee size** (committeeMinSize): Minimum number of committee members required",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 415,
+            "y": 150
+          },
+          "data": {
+            "label": "SPOs"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "4",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 67%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 415,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 51%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "7",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 340,
+            "y": 340
+          },
+          "data": {
+            "label": "Votes for each voting group are counted separately per applicable threshold"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
+            "height": 80,
+            "width": 300
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 460
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 460
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-4",
+          "source": "1",
+          "target": "4",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e4-7",
+          "source": "4",
+          "target": "7",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e7-8",
+          "source": "7",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "committeeMaxTermLength",
+    "description": "committeeMaxTermLength.",
+    "parameterDetails": "## Committee Maximum Term Length\nThe **committeeMaxTermLength** parameter defines the maximum number of epochs that a Constitutional Committee member can serve before requiring reauthorization.\n\nThis is a critical parameter change requiring DRep approval with ≥ 67% threshold.",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 415,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 415,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 67%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 350
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 350
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-9",
+          "source": "5",
+          "target": "9",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e5-10",
+          "source": "5",
+          "target": "10",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "dRepDeposit, stakePoolDeposit, stakeAddressDeposit, minPoolCost and committeeMinSize",
+    "description": "dRepDeposit, stakePoolDeposit, stakeAddressDeposit, minPoolCost and committeeMinSize.",
+    "parameterDetails": "## Critical Parameters\n- **DRep deposit amount** (dRepDeposit): Required deposit to register as a DRep\n- **Stake pool deposit** (stakePoolDeposit): Required deposit to register a stake pool\n- **Stake address deposit** (stakeAddressDeposit): Required deposit for stake addresses\n- **Minimum pool cost** (minPoolCost): Minimum fixed cost a pool can declare\n- **Committee minimum size** (committeeMinSize): Minimum number of Constitutional Committee members\n\nThese parameters require approval by both DReps (≥ 75%) and Constitutional Committee (2/3 majority).",
+    "graphData": {
+      "nodes": [
+        {
+          "id": "1",
+          "position": {
+            "x": 400,
+            "y": 40
+          },
+          "data": {
+            "label": "Cardano mainnet"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#e6f7ff",
+            "border": "1px solid #1890ff"
+          }
+        },
+        {
+          "id": "2",
+          "position": {
+            "x": 200,
+            "y": 150
+          },
+          "data": {
+            "label": "DReps"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
+          "id": "5",
+          "position": {
+            "x": 200,
+            "y": 250
+          },
+          "data": {
+            "label": "≥ 75%"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 330,
+            "y": 340
+          },
+          "data": {
+            "label": "Votes for each voting group are counted separately per applicable threshold"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
+            "height": 80,
+            "width": 300
+          }
+        },
+        {
+          "id": "9",
+          "position": {
+            "x": 150,
+            "y": 460
+          },
+          "data": {
+            "label": "Some votes pass: Refused"
+          },
+          "style": {
+            "backgroundColor": "#fff1f0",
+            "border": "1px solid #f5222d"
+          },
+          "sourcePosition": "left",
+          "targetPosition": "top"
+        },
+        {
+          "id": "10",
+          "position": {
+            "x": 650,
+            "y": 460
+          },
+          "data": {
+            "label": "All votes pass: Approved"
+          },
+          "style": {
+            "backgroundColor": "#d9f7be",
+            "border": "1px solid #52c41a"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        },
+        {
+          "id": "11",
+          "position": {
+            "x": 150,
+            "y": -35
+          },
+          "data": {
+            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
+          },
+          "style": {
+            "width": 180,
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          },
+          "sourcePosition": "right",
+          "targetPosition": "top"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1-2",
+          "source": "1",
+          "target": "2",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
+          "id": "e2-5",
+          "source": "2",
+          "target": "5",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
+          "source": "5",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
+          "style": {
+            "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e10-1",
+          "source": "10",
+          "target": "1",
+          "label": "Implemented",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.7
+          }
+        },
+        {
+          "id": "e9-11",
+          "source": "9",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#f5222d",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.5
+          }
+        },
+        {
+          "id": "e10-11",
+          "source": "10",
+          "target": "11",
+          "label": "Deposit is repaid",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#52c41a",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 0.8
+          }
+        },
+        {
+          "id": "e11-1",
+          "source": "11",
+          "target": "1",
+          "type": "step",
+          "animated": true,
+          "style": {
+            "stroke": "#fa8c16",
+            "strokeWidth": 2
+          },
+          "data": {
+            "curvature": 1.0
+          }
+        }
+      ]
+    }
+  }
+]

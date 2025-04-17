@@ -11,6 +11,7 @@ import {
   FaTelegram,
   FaStackExchange,
   FaLinkedin,
+  FaDiscord,
 } from "react-icons/fa6";
 
 // Overview: https://react-icons.github.io/react-icons/, for consistency stick to font awesome 6 (fa6)
@@ -54,6 +55,11 @@ const socialLinks = [
     icon: <FaLinkedin />,
     url: "https://www.linkedin.com/company/cardano-community",
     label: "Cardano on LinkedIn",
+  },
+  {
+    icon: <FaDiscord />,
+    url: "https://discord.com/invite/3MTpDhMS3n",
+    label: "Cardano on Discord",
   },
 ];
 
