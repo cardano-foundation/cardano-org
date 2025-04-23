@@ -42,6 +42,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | `Cardano`      | Cardano is a public, permissionless Layer 1 blockchain. A collection of science-based, open-source, patent-free protocols for storing/managing value, identity, governance. |
 | `community`      | Always 'the' community, not 'our' community. |
 | `the Cardano Foundation`           | The Cardano Foundation is an independent, Swiss-based not-for-profit organization. Always use **the** Cardano Foundation. See the [Cardano Foundation](/entities?tab=cf) for details. |
+| `Carina`      | A community-created mascot representing transparency, traceability, and spirit within the Cardano ecosystem. |
 
 ### D 
 |  Spelling/Term   | Comment                    |
@@ -141,3 +142,5 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `white paper` | Two words. |
 | `working group` | Two words. A working group unites experts and dedicated community members to focus on a specific topic of discussion. |
+
+
