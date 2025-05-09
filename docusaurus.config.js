@@ -60,6 +60,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        strictMode: false,
         docs: {
           sidebarPath: './sidebars.js',
           editUrl: `${vars.repository}/edit/${vars.branch}`,

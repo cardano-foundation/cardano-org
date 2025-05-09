@@ -1,5 +1,6 @@
 import Layout from "@theme/Layout";
-import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Link from '@docusaurus/Link';
 import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 import Divider from "@site/src/components/Layout/Divider";
 import QuoteBox from "@site/src/components/Layout/QuoteBox";
@@ -11,21 +12,67 @@ import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
 import Logos from "@site/src/components/Layout/Logos";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
+  const title = "Making the world Work Better For All";
+  const description = "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change.";
+
   return (
-    <WelcomeHero
-      title={["Making the world Work Better For All"]}
-      description="Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
-        with the tools and technologies required to create possibility for the many, as well as the few, 
-        and bring about positive global change."
-    />
+    <div className="heroSectionWithAnimation">
+      <div className="animationCanvasContainer">
+        <BrowserOnly fallback={null}>
+          {() => {
+            const loadedModule = require('@newfound8ion/cardano-org-header');
+            let ComponentToRender = null;
+
+            if (loadedModule) {
+              if (typeof loadedModule.default === 'function') {
+                ComponentToRender = loadedModule.default;
+              } else if (typeof loadedModule.CardanoOrgHeader === 'function') {
+                ComponentToRender = loadedModule.CardanoOrgHeader;
+              } else if (typeof loadedModule === 'function') {
+                ComponentToRender = loadedModule;
+              } else if (loadedModule && typeof loadedModule === 'object' && Object.keys(loadedModule).length > 0) {
+                const potentialComponent = Object.values(loadedModule).find(
+                  val => typeof val === 'function'
+                );
+                if (potentialComponent) {
+                  ComponentToRender = potentialComponent;
+                }
+              }
+            }
+
+            if (!ComponentToRender) {
+              console.error("CardanoOrgHeader Komponente konnte nicht geladen werden.");
+              return <div>Animations-Komponente nicht gefunden.</div>;
+            }
+            return <ComponentToRender />;
+          }}
+        </BrowserOnly>
+      </div>
+
+      <div className="textContentOverlay">
+        <h1 className="heroTitle">{title}</h1>
+        <p className="heroDescription">{description}</p>
+                <div className="heroButtons">
+          <Link
+            className="button button--custom-white button--lg"
+            to="/where-to-get-ada">
+            Where to get ada?
+          </Link>
+          <Link
+            className="button button--custom-white button--lg"
+            to="/developers">
+            Start building
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
 export default function Home() {
-
   return (
     <Layout
       title="Home | cardano.org"
