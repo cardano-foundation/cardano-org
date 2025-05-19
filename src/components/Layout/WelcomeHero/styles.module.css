@@ -5,6 +5,47 @@
  * and scoped locally.
  */
 
+/* Medusa Header */
+#medusa-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: block;
+}
+
+#medusa-root > .medusa-container {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+#medusa-root canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100vh !important; 
+  display: block !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Buttons */
 .cta .button {
   margin-right: 1rem; /* space between buttons */
@@ -53,12 +94,13 @@ html[data-theme="dark"] .button {
 }
 
 html[data-theme="light"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
-  /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
+  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
+  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
 }
 
 html[data-theme="dark"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
+  background-image: linear-gradient(315deg, rgb(54, 75, 130), rgb(2, 29, 91));
 }
 
 /* screen size changes */
