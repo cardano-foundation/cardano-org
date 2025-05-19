@@ -436,3 +436,102 @@ img {
   }
 }
 
+.heroSectionWithAnimation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 560px;
+  padding: 60px 20px;
+  background-color: #0033ad;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroSectionWithAnimation .animationCanvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.heroSectionWithAnimation .animationCanvasContainer > div,
+.heroSectionWithAnimation .animationCanvasContainer canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.heroSectionWithAnimation .textContentOverlay {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: left;
+}
+
+.heroSectionWithAnimation .heroTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.heroSectionWithAnimation .heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.heroSectionWithAnimation .heroButtons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Stile für den "Where to get ada?" Button (button--primary) */
+.heroSectionWithAnimation .heroButtons .button--primary {
+  background-color: #0033ad; /* Cardano.org Blau */
+  color: white;
+  border: 1px solid #002b91; /* Cardano.org dunklerer Rand */
+  box-shadow: none;
+  text-shadow: none;
+}
+.heroSectionWithAnimation .heroButtons .button--primary:hover {
+  background-color: #002b91; /* Cardano.org Hover Blau */
+  border-color: #00237a;    /* Cardano.org Hover dunklerer Rand */
+  color: white;
+}
+
+/* Stile für den "Start building" Button (button--custom-white) */
+.heroSectionWithAnimation .heroButtons .button--custom-white {
+  background-color: white;
+  color: #0033ad; /* Cardano.org Blau für Text */
+  border: 1px solid white; /* Weißer Rand (wie auf cardano.org) */
+  box-shadow: none;
+  text-shadow: none;
+}
+.heroSectionWithAnimation .heroButtons .button--custom-white:hover {
+  background-color: #f0f0f0; /* Cardano.org Hover Hellgrau */
+  color: #002b91;            /* Cardano.org Hover dunkleres Blau für Text */
+  border-color: #d9d9d9;     /* Cardano.org Hover hellgrauer Rand */
+}
+
+@media (max-width: 768px) {
+  .heroSectionWithAnimation {
+    min-height: auto;
+    padding: 40px 20px;
+  }
+  .heroSectionWithAnimation .heroTitle {
+    font-size: 2.2rem;
+  }
+  .heroSectionWithAnimation .heroDescription {
+    font-size: 1rem;
+  }
+  .heroSectionWithAnimation .heroButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
