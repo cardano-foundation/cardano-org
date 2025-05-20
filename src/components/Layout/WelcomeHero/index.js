@@ -21,31 +21,34 @@ function WelcomeHero({ title, description }) {
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div id="medusa-root" ref={containerRef} className="medusa-container" />
+  <div className={styles.heroBackground}>
+    <div id="medusa-root" />
+  </div>
 
-      <div className="container">
-        <div className={styles.taglineContainer}>
-          <h1 className={clsx("hero__title", styles.heroTitle)}>{title}</h1>
-          <p className={clsx("hero__subtitle", styles.heroSubtitle)}>{description}</p>
-        </div>
-
-        <div className={styles.cta}>
-          <Link className={clsx("button button--primary button--lg", styles.button)} to="/where-to-get-ada">
-            Where to get ada?
-          </Link>
-          <Link className={clsx("button button--primary button--lg", styles.button)} to="/developers">
-            Start Building
-          </Link>
-        </div>
-
-        <div className="sectionCaret">
-          <svg x="0px" y="0px" viewBox="0 0 2000 30">
-            <polygon className="polygon-fill" points="1000,30 0,30 0,0 980,0" />
-            <polygon className="polygon-fill" points="1000,30 2000,30 2000,0 1020,0" />
-          </svg>
-        </div>
+  <div className={styles.heroForeground}>
+    <div className="container">
+      <div className={styles.taglineContainer}>
+        <h1 className={clsx("hero__title", styles.heroTitle)}>{title}</h1>
+        <p className={clsx("hero__subtitle", styles.heroSubtitle)}>{description}</p>
       </div>
-    </header>
+      <div className={styles.cta}>
+        <Link className="button button--primary button--lg" to="/where-to-get-ada">
+          Where to get ada?
+        </Link>
+        <Link className="button button--primary button--lg" to="/developers">
+          Start Building
+        </Link>
+      </div>
+    </div>
+  </div>
+
+  <div className="sectionCaret">
+    <svg x="0px" y="0px" viewBox="0 0 2000 30">
+      <polygon className="polygon-fill" points="1000,30 0,30 0,0 980,0" />
+      <polygon className="polygon-fill" points="1000,30 2000,30 2000,0 1020,0" />
+    </svg>
+  </div>
+</header>
   );
 }
 

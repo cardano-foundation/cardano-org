@@ -5,52 +5,93 @@
  * and scoped locally.
  */
 
-/* Medusa Header */
-#medusa-root {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
+ .heroBanner {
+  position: relative;
   overflow: hidden;
-  display: block;
+  z-index: 1;
+  text-align: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
+  height: 830px;
 }
 
-#medusa-root > .medusa-container {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Medusa */
+#medusa-root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
 #medusa-root canvas {
   position: absolute !important;
   top: 0;
   left: 0;
-  width: 100% !important;
-  height: 100vh !important; 
-  display: block !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  min-width: 1024 !important;
+}
+
+.medusaBackground {
+  position: absolute;
+  top: 0;
+  left: -10vw;
+  width: 120vw;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /*transform: translateX(50vw) translateY(-60vw);*/
+}
+
+#medusa-root canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 0 !important;
   pointer-events: none !important;
 }
 
-.container {
+.heroForeground {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Buttons */
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  color: white;
+}
+
+.heroSubtitle {
+  color: white;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .cta .button {
-  margin-right: 1rem; /* space between buttons */
-  width: 240px; /* force equal width */
+  margin-right: 1rem;
+  width: 240px;
   font-weight: normal;
+  z-index: 2;
 }
 
 html[data-theme="light"] .button {
@@ -64,7 +105,7 @@ html[data-theme="dark"] .button {
 }
 
 .cta .button:last-child {
-  margin-right: 0; /* no extra margin to the right of the the last button right: */
+  margin-right: 0;
 }
 
 .taglineContainer {
@@ -72,42 +113,8 @@ html[data-theme="dark"] .button {
   margin-bottom: 3rem;
 }
 
-/* Banner */
-
-.heroBanner {
-  padding: 4rem 2rem;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 35% 50%;
-  height: 830px;
-}
-
-.heroTitle {
-  color: rgb(255, 255, 255);
-}
-
-.heroSubtitle {
-  color: rgb(255, 255, 255);
-}
-
-html[data-theme="light"] .heroBanner {
-  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
-  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
-}
-
-html[data-theme="dark"] .heroBanner {
-  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
-  background-image: linear-gradient(315deg, rgb(54, 75, 130), rgb(2, 29, 91));
-}
-
-/* screen size changes */
-
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
     background-size: cover;
     background-position: 50% 50%;
   }
@@ -131,3 +138,16 @@ html[data-theme="dark"] .heroBanner {
     background-size: cover;
   }
 }
+
+html[data-theme="light"] .heroBanner {
+  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
+  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
+}
+
+html[data-theme="dark"] .heroBanner {
+  /*background-image: url(/img/hero-header-welcome-fallback.jpg);*/
+  background-image: linear-gradient(315deg, rgb(54, 75, 130), rgb(2, 29, 91));
+}
+
+ 
+ 
