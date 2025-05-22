@@ -28,10 +28,10 @@
     "dotenv": "^16.4.5",
     "html-to-image": "^1.11.13",
     "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
+    "react": "^18.3.1",
     "react-chrono": "^2.6.1",
     "react-collapsible": "^2.10.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.0.1",
     "react-tabs": "^6.0.2",
     "reactflow": "11.7.0"
