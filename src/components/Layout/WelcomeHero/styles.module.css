@@ -28,8 +28,10 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+   
 }
 
+/*
 #medusa-root canvas {
   position: absolute !important;
   top: 0;
@@ -38,29 +40,32 @@
   height: 100vh !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  min-width: 1024 !important;
+  min-width: 1024px !important;
 }
+  */
+
+
 
 .medusaBackground {
   position: absolute;
   top: 0;
-  left: -10vw;
-  width: 120vw;
+  /*
+  left: -10%;
+  width: 100%;
   height: 100%;
+  */
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  /*transform: translateX(50vw) translateY(-60vw);*/
+  
 }
 
-#medusa-root canvas {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.20);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .heroForeground {
@@ -94,10 +99,12 @@
   z-index: 2;
 }
 
-html[data-theme="light"] .button {
-  background-color: rgb(255, 255, 255);
-  color: var(--ifm-color-primary);
-}
+/*
+html[data-theme="light"] .cta .button--primary {
+  background-color: white !important;
+  color: var(--ifm-color-primary) !important;
+  border: 1px solid var(--ifm-color-primary) !important;
+}*/
 
 html[data-theme="dark"] .button {
   background-color: var(--ifm-button-background-color);
@@ -149,5 +156,26 @@ html[data-theme="dark"] .heroBanner {
   background-image: linear-gradient(315deg, rgb(54, 75, 130), rgb(2, 29, 91));
 }
 
- 
+/* CTA Buttons */
+
+.heroCtaButton {
+  background-color: white !important;
+  color: var(--ifm-color-primary) !important;
+  border: 1px solid var(--ifm-color-primary) !important;
+  transition: background-color 0.3s ease;
+}
+
+.heroCtaButton:hover {
+  background-color: #f2f2f2 !important;
+}
+
+html[data-theme='dark'] .heroCtaButton {
+  background-color: var(--ifm-button-background-color) !important;
+  color: var(--ifm-button-color) !important;
+  border: 1px solid var(--ifm-button-background-color) !important;
+}
+
+html[data-theme='dark'] .heroCtaButton:hover {
+  background-color: #1f1f1f !important;
+}
  
