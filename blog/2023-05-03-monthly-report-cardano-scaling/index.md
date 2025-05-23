@@ -1,5 +1,5 @@
 ---
-slug: 2023-05-30-monthly-report-cardano-scaling
+slug: 2023-05-03-monthly-report-cardano-scaling
 title: "Monthly Cardano Scaling Report"
 authors: [scaling]
 tags: [development, scaling]

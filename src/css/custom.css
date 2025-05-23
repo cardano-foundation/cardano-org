@@ -63,6 +63,7 @@ html {
   font-weight: 400;
 }
 
+
 /* The navbar needs a little space so that the Cardano logo can breathe */
 .navbar {
   height: 80px;
@@ -436,3 +437,7 @@ img {
   }
 }
 
+#medusa-stage {
+  transform: translateY(-100px);
+  /*background-color: transparent !important;*/
+}

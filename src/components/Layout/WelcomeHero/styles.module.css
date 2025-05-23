@@ -5,17 +5,96 @@
  * and scoped locally.
  */
 
-/* Buttons */
-.cta .button {
-  margin-right: 1rem; /* space between buttons */
-  width: 240px; /* force equal width */
-  font-weight: normal;
+ .heroBanner {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
+  height: 830px;
 }
 
-html[data-theme="light"] .button {
-  background-color: rgb(255, 255, 255);
-  color: var(--ifm-color-primary);
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
+
+/* Medusa */
+#medusa-root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+   
+}
+
+.medusaBackground {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fallbackBackground {
+  position: absolute;
+  inset: 0;
+  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  background-size: cover;  
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: 35% 50%; 
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.20);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heroForeground {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  color: white;
+}
+
+.heroSubtitle {
+  color: white;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cta .button {
+  margin-right: 1rem;
+  width: 240px;
+  font-weight: normal;
+  z-index: 2;
+}
+
+/*
+html[data-theme="light"] .cta .button--primary {
+  background-color: white !important;
+  color: var(--ifm-color-primary) !important;
+  border: 1px solid var(--ifm-color-primary) !important;
+}*/
 
 html[data-theme="dark"] .button {
   background-color: var(--ifm-button-background-color);
@@ -23,7 +102,7 @@ html[data-theme="dark"] .button {
 }
 
 .cta .button:last-child {
-  margin-right: 0; /* no extra margin to the right of the the last button right: */
+  margin-right: 0;
 }
 
 .taglineContainer {
@@ -31,43 +110,11 @@ html[data-theme="dark"] .button {
   margin-bottom: 3rem;
 }
 
-/* Banner */
-
-.heroBanner {
-  padding: 4rem 2rem;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 35% 50%;
-  height: 830px;
-}
-
-.heroTitle {
-  color: rgb(255, 255, 255);
-}
-
-.heroSubtitle {
-  color: rgb(255, 255, 255);
-}
-
-html[data-theme="light"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
-  /*background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));*/
-}
-
-html[data-theme="dark"] .heroBanner {
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
-}
-
-/* screen size changes */
-
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
     background-size: cover;
     background-position: 50% 50%;
+    height: 620px;
   }
   .cta .button {
     margin-bottom: 1rem;
@@ -89,3 +136,35 @@ html[data-theme="dark"] .heroBanner {
     background-size: cover;
   }
 }
+
+html[data-theme="light"] .heroBanner {
+  background-image: linear-gradient(315deg, rgb(91, 123, 202), rgb(10, 56, 166));
+}
+
+html[data-theme="dark"] .heroBanner {
+  background-image: linear-gradient(315deg, rgb(54, 75, 130), rgb(2, 29, 91));
+}
+
+/* CTA Buttons */
+
+.heroCtaButton {
+  background-color: white !important;
+  color: var(--ifm-color-primary) !important;
+  border: 1px solid var(--ifm-color-primary) !important;
+  transition: background-color 0.3s ease;
+}
+
+.heroCtaButton:hover {
+  background-color: #f2f2f2 !important;
+}
+
+html[data-theme='dark'] .heroCtaButton {
+  background-color: var(--ifm-button-background-color) !important;
+  color: var(--ifm-button-color) !important;
+  border: 1px solid var(--ifm-button-background-color) !important;
+}
+
+html[data-theme='dark'] .heroCtaButton:hover {
+  background-color: #1f1f1f !important;
+}
+ 
