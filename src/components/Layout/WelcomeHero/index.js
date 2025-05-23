@@ -10,15 +10,16 @@ function WelcomeHero({ title, description }) {
   useEffect(() => {
     const ua = navigator.userAgent || "";
   
-    // Fallback list: old Android devices (Android 1.x bis 7.x and old Chrome  versions)
-    // they deliver a webgl context but performance is bad
-    const isOldAndroid = /Android [1-7]\./.test(ua) || /Android.*Chrome\/\d{1,2}\./.test(ua);;
+    // Fallback list: 
+    // old Android devices (Android 1.x bis 7.x and old Chrome  versions) they deliver a webgl context but performance is bad
+    // const isOldAndroid = /Android [1-7]\./.test(ua) || /Android.*Chrome\/\d{1,2}\./.test(ua);;
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
   
     // webgl test
     const canvas = document.createElement("canvas");
     const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
   
-    if (isOldAndroid || !gl) {
+    if (isMobile || !gl) {
       setWebglSupported(false);
       return;
     }

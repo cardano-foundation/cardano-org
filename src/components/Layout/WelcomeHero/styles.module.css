@@ -31,44 +31,23 @@
    
 }
 
-/*
-#medusa-root canvas {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  min-width: 1024px !important;
-}
-  */
-
-
-
 .medusaBackground {
   position: absolute;
   top: 0;
-  /*
-  left: -10%;
-  width: 100%;
-  height: 100%;
-  */
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  
 }
 
 .fallbackBackground {
   position: absolute;
   inset: 0;
   background-image: url(/img/hero-header-welcome-fallback.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;  
   z-index: 0;
   pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: 35% 50%; 
 }
 
 .overlay {
@@ -135,6 +114,7 @@ html[data-theme="dark"] .button {
   .heroBanner {
     background-size: cover;
     background-position: 50% 50%;
+    height: 620px;
   }
   .cta .button {
     margin-bottom: 1rem;
