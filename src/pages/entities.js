@@ -8,6 +8,7 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import Logos from "@site/src/components/Layout/Logos";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import Link from "@docusaurus/Link";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -44,6 +45,9 @@ export default function Home() {
               headingDot={false}
             />
             <Logos jsonFileName="logosCompanies" /> 
+            <div className="centered-link">
+              <Link to="/docs/tutorial/add-company">add your company</Link>
+            </div>
           </BoundaryBox>
         </BackgroundWrapper>    
       </main>
