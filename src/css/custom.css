@@ -63,6 +63,10 @@ html {
   font-weight: 400;
 }
 
+.centered-link {
+  text-align: center;
+}
+
 
 /* The navbar needs a little space so that the Cardano logo can breathe */
 .navbar {
