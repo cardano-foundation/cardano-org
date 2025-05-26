@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import BlogSidebar from '@theme/BlogSidebar';
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import Link from '@docusaurus/Link';
 
 export default function BlogLayout(props) {
   const {sidebar, toc, children, ...layoutProps} = props;
@@ -27,6 +28,9 @@ export default function BlogLayout(props) {
             itemScope
             itemType="https://schema.org/Blog">
             {children}
+            <div className="add-news-link" style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <Link to="/docs/tutorial/create-a-news-article">add news article</Link>
+            </div>
           </main>
           {toc && <div className="col col--2">{toc}</div>}
         </div>
