@@ -10,6 +10,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TextSectionWithCtaAndQuote from "@site/src/components/Layout/TextWithCtaAndQuote";
 import GovernanceCharts from "@site/src/components/GovernanceCharts";
+import MauticForm  from "@site/src/components/MauticForm";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -80,6 +81,13 @@ export default function Home() {
               buttonText="Governance Actions"
               buttonLink="https://gov.tools/governance_actions"
             />
+
+<Divider
+              text="Learn more about Cardano Governance"
+              id="learn"
+            />  
+           
+          <MauticForm id="4" />
           </BoundaryBox>
         </BackgroundWrapper>
 
