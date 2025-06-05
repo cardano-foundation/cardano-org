@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -17,21 +18,21 @@ function HomepageHeader() {
   return (
     <SiteHero
       title={[
-        "Built for the community",
-        <br key="line1" /> /*FIXME: too hacky */,
-        "by the community",
+        "Governance on Cardano",
       ]}
-      description="Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it."
+      description="Cardano runs on a secure, decentralized system where ada holders shape the platform’s development and influence the ecosystem’s direction."
       bannerType="braidBlue"
     />
   );
 }
 
 export default function Home() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <Layout
-      title="Governance | cardano.org"
-      description="Cardano is developing the most secure and decentralized governance model in the world. A model to give everybody a voice, and control over the future development of the platform and the applications and services that emerge from it."
+      title="Governance on Cardano | cardano.org"
+      description="Cardano now runs on a secure, decentralized governance system that gives every ada holder a voice. The community collectively steers the platform’s development, influencing the direction of core upgrades, applications, and services built on Cardano."
     >
       <OpenGraphInfo pageName="governance" />
       <HomepageHeader />
@@ -47,6 +48,22 @@ export default function Home() {
               quoteText="Change begins with one voice. But is realized through the Combination of many."
               showButton={false}
             />
+            <div>
+              {!showForm && (
+                <button
+                  className="button button--primary button--lg"
+                  onClick={() => setShowForm(true)}
+                >
+                  Stay Informed
+                </button>
+              )}
+              <div
+                className={`slide-toggle ${showForm ? "open" : ""}`}
+                style={{ overflow: "hidden", transition: "max-height 0.6s ease" }}
+              >
+                {showForm && <MauticForm id="4" />}
+              </div>
+            </div>
 
             <Divider text="Delegate your voting power" id="finddrep" />
             <TextSectionWithCtaAndQuote
@@ -81,13 +98,7 @@ export default function Home() {
               buttonText="Governance Actions"
               buttonLink="https://gov.tools/governance_actions"
             />
-
-<Divider
-              text="Learn more about Cardano Governance"
-              id="learn"
-            />  
-           
-          <MauticForm id="4" />
+    
           </BoundaryBox>
         </BackgroundWrapper>
 
