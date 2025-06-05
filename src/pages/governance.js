@@ -54,7 +54,7 @@ export default function Home() {
                   className="button button--primary button--lg"
                   onClick={() => setShowForm(true)}
                 >
-                  Stay Informed
+                  Participate
                 </button>
               )}
               <div
@@ -72,7 +72,7 @@ export default function Home() {
               ]}
               showButton={true}
               buttonText="Find a DRep"
-              buttonLink="https://gov.tools/drep_directory"
+              buttonLink="https://tempo.vote/dreps"
             />
 
             <Divider text="Become a DRep on Cardano" id="becomedrep" />
@@ -96,7 +96,7 @@ export default function Home() {
               ]}
               showButton={true}
               buttonText="Governance Actions"
-              buttonLink="https://gov.tools/governance_actions"
+              buttonLink="https://adastat.net/governances"
             />
     
           </BoundaryBox>
