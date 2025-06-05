@@ -102,6 +102,7 @@ export default function Home() {
 
   const location = useLocation(); // Use the useLocation hook to access the current location
   const [selectedTopic, setSelectedTopic] = useState(null); // State for the topic
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     // Extract 'type' query parameter from URL
