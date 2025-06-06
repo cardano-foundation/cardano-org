@@ -74,16 +74,27 @@ html {
   font-weight: 400  !important;
 }
 
-#mautic-form-container-4 {
+.mautic-form-container {
   display: flex;
   justify-content: left; /* centers the form horizontally */
 }
 
-#mautic-form-container-4 .mauticform_wrapper {
-  
+.mautic-form-container .mauticform_wrapper {
   width: 100%;
   max-width: 400px;
   margin: 0; /* nicht auto */
+  box-sizing: border-box;
+}
+
+div[id^="mautic-form-container-"] {
+  display: flex;
+  justify-content: left;
+}
+
+div[id^="mautic-form-container-"] .mauticform_wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
   box-sizing: border-box;
 }
 
