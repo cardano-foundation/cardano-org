@@ -11,7 +11,6 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TextSectionWithCtaAndQuote from "@site/src/components/Layout/TextWithCtaAndQuote";
 import GovernanceCharts from "@site/src/components/GovernanceCharts";
-import MauticForm  from "@site/src/components/MauticForm";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -46,24 +45,10 @@ export default function Home() {
                 "This model and the pioneering technology that underpins it can be applied to any application, system, or even society. It is a blueprint for change that is decided by the many, as well as the few, and which will redistribute power, eliminating intermediaries, to improve the lives of all.",
               ]}
               quoteText="Change begins with one voice. But is realized through the Combination of many."
-              showButton={false}
+              showButton={true}
+              buttonText="Participate"
+              buttonLink="/signal?id=governance"
             />
-            <div>
-              {!showForm && (
-                <button
-                  className="button button--primary button--lg"
-                  onClick={() => setShowForm(true)}
-                >
-                  Participate
-                </button>
-              )}
-              <div
-                className={`slide-toggle ${showForm ? "open" : ""}`}
-                style={{ overflow: "hidden", transition: "max-height 0.6s ease" }}
-              >
-                {showForm && <MauticForm id="4" />}
-              </div>
-            </div>
 
             <Divider text="Delegate your voting power" id="finddrep" />
             <TextSectionWithCtaAndQuote
