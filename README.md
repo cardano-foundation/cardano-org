@@ -3,7 +3,7 @@
 # Website
 
 Welcome to the cardano.org website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
-
+Romeo Rosete
  **This is the initial launch of cardano.org as open source project.** 
 
 To achieve this, the entire site was rewritten, focusing on the technology stack rather than the content. We have maintained most of the original content for now to ensure it remains accessible. However, several significant day-one improvements compared to the old site should be highlighted:
