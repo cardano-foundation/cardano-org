@@ -20,6 +20,7 @@ export default function Home() {
       formId: 5,
       description: 'We’ll keep you updated on DReps, proposals and how to get involved.',
       bannerType: 'fluidBlue',
+      openGraph: 'signal-governance',
     },
   };
 
@@ -34,7 +35,7 @@ export default function Home() {
       title={siteTitle}
       description={content.description}
     >
-      <OpenGraphInfo pageName="singal" />
+      <OpenGraphInfo pageName={content.openGraph} />
       <SiteHero
         title={content.title}
         description={content.description}
