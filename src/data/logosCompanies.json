@@ -117,5 +117,12 @@
     "link": "https://minswap.org/about-us",
     "knownFor": " Minswap DEX",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Dano Foundation",
+    "imageName": "Danogo",
+    "link": "https://app.danogo.io/about-us",
+    "knownFor": " Danogo",
+    "showCompanyName": false
   }
 ]
