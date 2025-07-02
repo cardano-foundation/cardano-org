@@ -119,6 +119,7 @@ const config = {
             label: 'Community',
             position: 'left',
             items: [  
+              {to: '/events', label: 'Cardano Events'}, 
               {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
