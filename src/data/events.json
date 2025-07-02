@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Rare Dev & Governance Day 2025",
+    "description": "Get ready to kick off Rare Evo 2025 with Rare Dev & Governance Day — a full day dedicated to builders, developers, and innovators in the blockchain space.",
+    "startDate": "2025-08-06",
+    "endDate": "2025-08-07",
+    "location": "Las Vegas",
+    "link": "https://rareevo.io/dev-day",
+    "image": "raredev-2025.avif",
+    "organizer": "Rare Network"
+  },
+  {
+    "title": "Blockchain Rio",
+    "description": "Get ready to experience the ultimate immersion into the blockchain universe! Lectures by big names in the sector, high-level networking and unique experiences await you at Blockchain.Rio 2025.",
+    "startDate": "2025-08-05",
+    "endDate": "2025-08-07",
+    "location": "Rio de Janeiro",
+    "link": "https://blockchainrio.com.br/en/",
+    "image": "blockchainrio-2025.webp",
+    "organizer": "The Cardano Foundation"
+  },
+  {
+    "title": "TOKEN 2049",
+    "description": "A major annual crypto conference that brings together founders, investors, developers, policymakers, and industry leaders to discuss trends, products, and innovations in the blockchain space.",
+    "startDate": "2025-10-01",
+    "endDate": "2025-10-02",
+    "location": "Singapore",
+    "link": "https://www.token2049.com/",
+    "image": "token2049-2025.jpg",
+    "organizer": "EMURGO"
+  },
+  {
+    "title": "Cardano Summit 2025",
+    "description": "This November, the Cardano Summit arrives in Berlin, connecting the vibrant Cardano ecosystem with leading global enterprises.",
+    "startDate": "2025-11-10",
+    "endDate": "2025-11-13",
+    "location": "Berlin",
+    "link": "https://summit.cardano.org/",
+    "image": "cardanosummit2025.webp",
+    "organizer": "The Cardano Foundation"
+  },
+  {
+    "title": "India Blockchain Week Bangalore",
+    "description": "Regional Cardano event during India Blockchain Week. The India Blockchain Week (IBW) is India's premier series of blockchain and web3 events, held from December 1-7, 2025.",
+    "startDate": "2025-11-29",
+    "endDate": "2025-11-30",
+    "location": "Bangalore, India",
+    "link": "https://indiablockchainweek.com",
+    "image": "indiablockchainweek-2025.jpg",
+    "organizer": "EMURGO"
+  },
+  {
+    "title": "Eureka Conference",
+    "description": "The crypto conference for visionaries.",
+    "startDate": "2025-06-20",
+    "endDate": "",
+    "location": "Berlin",
+    "link": "https://eureka.events",
+    "image": "eureka-2025.jpg",
+    "organizer": "Local Cardano Community"
+  }
+]

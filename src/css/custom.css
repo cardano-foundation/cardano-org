@@ -476,3 +476,14 @@ img {
   transform: translateY(-100px);
   /*background-color: transparent !important;*/
 }
+ 
+.event-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .event-content {
+    flex-direction: column;
+  }
+}
