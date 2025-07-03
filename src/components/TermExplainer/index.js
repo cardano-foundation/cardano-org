@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
 import termsData from "@site/src/data/termsForTermExplainer.json"; // Import all the terms
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
@@ -21,7 +22,7 @@ export default function TermExplainer({ category }) {
         {terms.map((term, index) => (
           <div key={index} className={index % 2 === 0 ? styles.leftTextWrap : styles.rightTextWrap}>
             <h2>{term.term}</h2>
-            <p>{term.description}</p>
+            <p>{parseMarkdownLikeText(term.description)}</p>
           </div>
         ))}
       </div>
