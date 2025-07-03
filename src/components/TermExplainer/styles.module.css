@@ -32,3 +32,8 @@
     width: 50%; /* Adjust the width as needed for smaller screens */
   }
 }
+ 
+.flexBox a {
+  color: #ffffff;
+  text-decoration: underline;
+}

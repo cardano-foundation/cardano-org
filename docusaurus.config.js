@@ -120,6 +120,7 @@ const config = {
             position: 'left',
             items: [  
               {to: '/events', label: 'Cardano Events'}, 
+              {to: '/constitution', label: 'Cardano Constitution'}, 
               {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
