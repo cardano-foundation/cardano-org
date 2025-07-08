@@ -7,7 +7,8 @@
     "location": "Las Vegas",
     "link": "https://rareevo.io/dev-day",
     "image": "raredev-2025.avif",
-    "organizer": "Rare Network"
+    "organizer": "Rare Network",
+    "recapVideo": ""
   },
   {
     "title": "Blockchain Rio",
@@ -17,7 +18,8 @@
     "location": "Rio de Janeiro",
     "link": "https://blockchainrio.com.br/en/",
     "image": "blockchainrio-2025.webp",
-    "organizer": "The Cardano Foundation"
+    "organizer": "The Cardano Foundation",
+    "recapVideo": ""
   },
   {
     "title": "TOKEN 2049",
@@ -27,7 +29,8 @@
     "location": "Singapore",
     "link": "https://www.token2049.com/",
     "image": "token2049-2025.jpg",
-    "organizer": "EMURGO"
+    "organizer": "EMURGO",
+    "recapVideo": ""
   },
   {
     "title": "Cardano Summit 2025",
@@ -37,7 +40,8 @@
     "location": "Berlin",
     "link": "https://summit.cardano.org/",
     "image": "cardanosummit-2025.webp",
-    "organizer": "The Cardano Foundation"
+    "organizer": "The Cardano Foundation",
+    "recapVideo": ""
   },
   {
     "title": "India Blockchain Week Bangalore",
@@ -47,16 +51,29 @@
     "location": "Bangalore, India",
     "link": "https://indiablockchainweek.com",
     "image": "indiablockchainweek-2025.jpg",
-    "organizer": "EMURGO"
+    "organizer": "EMURGO",
+    "recapVideo": ""
   },
   {
-    "title": "Eureka Conference",
-    "description": "The crypto conference for visionaries.",
-    "startDate": "2025-06-20",
-    "endDate": "",
+    "title": "Azteca 2025 - Mexico Cardano Community Events",
+    "description": "Azteca 2025 brought together 400+ Cardano enthusiasts across two days, with talks, panels, workshops, and community activities—showcasing Latin America’s growing role in Cardano.",
+    "startDate": "2025-05-27",
+    "endDate": "2025-05-29",
+    "location": "Puebla & Tlaxcala, Mexico",
+    "link": "https://forum.cardano.org/t/recap-azteca-2025-cardano-community-events-in-mexico/146670",
+    "image": "",
+    "organizer": "Cardano Mexico and Latam Cardano Community",
+    "recapVideo": "KYmYswDjgWc"
+  },
+   {
+    "title": "Berlin Hackathon 2025",
+    "description": "Cardano Hackathon Berlin 2025, June 13–14, hosted by NMKR & Masumi at w3.hub, was a two-day mix of coding, collaboration & real talk, focused on building real tools for real users on Cardano.",
+    "startDate": "2025-06-13",
+    "endDate": "2025-06-14",
     "location": "Berlin",
-    "link": "https://eureka.events",
-    "image": "eureka-2025.jpg",
-    "organizer": "Local Cardano Community"
+    "link": "https://www.meetup.com/de-DE/cardano-berlin/",
+    "image": "",
+    "organizer": "NMKR and Masumi",
+    "recapVideo": "NelGwvlVzDc"
   }
 ]

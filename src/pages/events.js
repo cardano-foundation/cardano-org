@@ -117,7 +117,28 @@ export default function Home() {
                     />
                   </h3>
                   <div className="event-content">
-                    {event.image && (
+                    {event.recapVideo ? (
+                      <div style={{ marginTop: "1rem" }}>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${event.recapVideo}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          <img
+                            src={`https://img.youtube.com/vi/${event.recapVideo}/hqdefault.jpg`}
+                            alt={`Recap thumbnail for ${event.title}`}
+                            style={{
+                              width: "520px",
+                              maxWidth: "100%",
+                              height: "auto",
+                              borderRadius: "8px",
+                              boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+                            }}
+                          />
+                        </a>
+                      </div>
+                    ) : event.image && (
                       <img
                         src={`/img/events/${event.image}`}
                         alt={event.title}
@@ -131,6 +152,15 @@ export default function Home() {
                       />
                     )}
                     <div>
+                      {event.recapVideo && (
+                        <p>
+                          <strong>Recap available: </strong> <a
+                            href={`https://www.youtube.com/watch?v=${event.recapVideo}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Watch here</a>
+                        </p>
+                      )}
                       <p>{event.description}</p>
                       <p>
                         <span title="Event Location">📍 {event.location}</span><br />
