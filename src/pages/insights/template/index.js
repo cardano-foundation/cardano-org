@@ -7,7 +7,7 @@ import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import Head from '@docusaurus/Head';
 import axios from 'axios';
-import * as d3 from 'd3';
+import * as echarts from 'echarts';
 import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
 
