@@ -288,7 +288,15 @@ function PageContent() {
         
         <p><strong>Q: Were there withdrawals from the treasury in epoch {totalsCurr.epoch_no}?</strong></p>
         <p>
-        { totalTreasuryWithdrawals > 0 ? ( `A: There were ${withdrawalsCurrRes.length} treasury withdrawals totaling ${convertLovelacesToAda(totalTreasuryWithdrawals).toLocaleString()} ada.` ) : ( `A: There were no treasury withdrawals during this Epoch`  ) }
+        {withdrawalsCurrRes.length === 0 ? (
+            `A: There were no treasury withdrawals during this Epoch`
+          ) : withdrawalsCurrRes.length === 1 ? (
+            `A: There was 1 treasury withdrawal totaling ${convertLovelacesToAda(totalTreasuryWithdrawals).toLocaleString()} ada.`
+          ) : (
+            `A: There were ${withdrawalsCurrRes.length} treasury withdrawals totaling ${convertLovelacesToAda(
+              totalTreasuryWithdrawals
+            ).toLocaleString()} ada.`
+          )}
         </p>
        </div> 
 
