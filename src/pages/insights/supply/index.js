@@ -278,10 +278,10 @@ function PageContent() {
 
         <p><strong>Q: How much ada was added to the treasury ?</strong></p>
         <p>
-          A: From the Epoch {totalsCurr.epoch_no} reward distribution, <strong>{convertLovelacesToAda(deltaTreasury).toLocaleString()} ada</strong> were allocated to the treasury, representing a {percentOfTreasury} % increase compared to the last Epoch.
+          A: From the Epoch {totalsCurr.epoch_no} reward distribution, <strong>{convertLovelacesToAda(deltaTreasury).toLocaleString()} ada</strong> was allocated to the treasury, representing a {percentOfTreasury} % increase compared to the last Epoch.
         </p>
 
-        <p><strong>Q: How many fees where collected in Epoch {totalsCurr.epoch_no}?</strong></p>
+        <p><strong>Q: How many fees were collected in Epoch {totalsCurr.epoch_no}?</strong></p>
         <p>
           A: A total of <strong>{convertLovelacesToAda(epochInfo.fees).toLocaleString()} ada</strong> were paid across {epochInfo.tx_count} transactions at an average fee of {(averageTxFee / 1_000_000).toFixed(2)} ada, contributing {percentFeesOfDeltaReserves} % of the total rewards distributed in this Epoch. 
         </p>
