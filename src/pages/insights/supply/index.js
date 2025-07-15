@@ -1,265 +1,319 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
-import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import TitleWithText from '@site/src/components/Layout/TitleWithText';
 import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import Head from '@docusaurus/Head';
 import axios from 'axios';
-import * as d3 from 'd3';
+import * as echarts from 'echarts';
 import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
 
-// static meta data
+// ────────────────────────────────────────────────────────────────────────────
+//  Meta Setup
+// ────────────────────────────────────────────────────────────────────────────
 const meta = {
-  pageTitle: 'Cardano Network | cardano.org',
-  pageDescription: 'Network Data',
-  title: 'Cardano Supply Breakdown',
-  date: '2025-03-17',
+  pageTitle: 'Cardano Supply Overview | cardano.org',
+  pageDescription:
+    'Visual representation of ada supply distribution across key categories in the Cardano network.',
+  title: 'Cardano Supply Overview',
+  date: '', // set dynamically
   author: authors?.['cf'],
   og: {
-    pageName: 'network',
-    title: 'Cardano Supply Breakdown | Cardano.org',
-    description: 'Detailed ada supply breakdown across reserves, circulation, treasury, and more.'
+    pageName: 'supply',
+    title: 'Cardano Supply Distribution | cardano.org',
+    description: 'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'
   }
 };
 
-// convert lovelaces to ada
-const convertLovelacesToAda = (lovelaces) => Math.round(lovelaces / 1_000_000);
-
-// minimum valid epoch (before epoch 209 everything is byron)
+// ────────────────────────────────────────────────────────────────────────────
+//  Helper Functions & Constants
+// ────────────────────────────────────────────────────────────────────────────
 const MIN_EPOCH = 209;
 
-function DonutChart({ data, rawData }) {
-  const ref = useRef();
-  const legendRef = useRef();
+const convertLovelacesToAda = (lovelaces) => Math.round(lovelaces / 1_000_000);
 
-  useEffect(() => {
-    if (!data || !rawData) return;
-    const width = 300;
-    const height = 300;
-    const radius = Math.min(width, height) / 2;
-
-    const svg = d3.select(ref.current)
-      .attr("width", width)
-      .attr("height", height)
-      .append("g")
-      .attr("transform", `translate(${width / 2}, ${height / 2})`);
-
-    const color = d3.scaleOrdinal()
-      .domain(data.map(d => d.label))
-      .range([
-        '#0033AD', '#1B5E20', '#f44336', '#0288D1', '#FFB300', '#7B1FA2', '#E64A19', '#388E3C'
-      ]);
-
-    const pie = d3.pie().value(d => d.value).sort(null);
-    const arc = d3.arc().innerRadius(radius * 0.5).outerRadius(radius);
-
-    const arcGroups = svg.selectAll("g")
-      .data(pie(data))
-      .enter()
-      .append("g")
-      .on("mouseover", function (event, d) {
-        d3.select(this).style("opacity", 0.7);
-        d3.select("#tooltip")
-          .style("left", event.pageX + "px")
-          .style("top", event.pageY - 28 + "px")
-          .style("display", "inline-block")
-          .html(`<strong>${d.data.label}</strong><br/>${d.data.value.toLocaleString()} ada`);
-      })
-      .on("mouseout", function () {
-        d3.select(this).style("opacity", 1);
-        d3.select("#tooltip").style("display", "none");
-      });
-
-    arcGroups.append("path")
-      .attr("fill", d => color(d.data.label))
-      .transition().duration(1000)
-      .attrTween("d", function (d) {
-        const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
-        return function (t) { return arc(i(t)); };
-      });
-
-      const totalAda = Object.values(rawData).reduce((sum, v) => sum + convertLovelacesToAda(v), 0);
-
-    svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr("dy", "0.35em")
-      .style("font-size", "14px")
-      .style("font-weight", "bold")
-      .style("opacity", 0)
-      .transition().delay(1000).duration(500)
-      .style("opacity", 1)
-      .text(`${totalAda.toLocaleString()} ada`);
-
-    const legend = d3.select(legendRef.current);
-    legend.selectAll("*").remove();
-    const items = legend.selectAll("legend-item")
-      .data(data)
-      .enter()
-      .append("div")
-      .style("display", "flex")
-      .style("align-items", "center")
-      .style("justify-content", "flex-end")
-      .style("margin-bottom", "4px");
-
-    items.append("div")
-      .style("display", "flex")
-      .style("align-items", "center")
-      .style("justify-content", "flex-start")
-      .style("gap", "0.5rem")
-      .style("width", "280px")
-      .each(function (d) {
-        const container = d3.select(this);
-        container.append("div")
-          .style("width", "12px")
-          .style("height", "12px")
-          .style("background-color", color(d.label))
-          .style("border-radius", "2px");
-        container.append("span")
-          .style("flex", "1")
-          .style("text-align", "right")
-          .text(`${d.label}: ${d.value.toLocaleString()} ada`);
-      });
-
-    return () => { d3.select(ref.current).selectAll("*").remove(); };
-  }, [data, rawData]);
-
-  return (
-    <div>
-      <svg ref={ref}></svg>
-      <div ref={legendRef} style={{ marginTop: "1rem" }}></div>
-      <div id="tooltip" style={{ position: 'absolute', display: 'none', backgroundColor: 'white', color: '#000', padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', pointerEvents: 'none', fontSize: '0.85rem' }}></div>
-    </div>
-  );
+function getEpochDate(epoch) {
+  const startEpoch = MIN_EPOCH;
+  const startDate = new Date('2020-08-03T21:44:00Z');
+  const offsetEpochs = epoch - startEpoch;
+  const msPerEpoch = 5 * 24 * 60 * 60 * 1000;
+  return new Date(startDate.getTime() + offsetEpochs * msPerEpoch)
+    .toISOString()
+    .split('T')[0];
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+//  Donut Chart Component (ECharts)
+// ────────────────────────────────────────────────────────────────────────────
+function DonutChartEcharts({ chartData }) {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const chart = echarts.init(chartRef.current);
+    const seriesData = chartData.filter(d => d.show_in_donut) .map(d => ({ name:  d.label, value: convertLovelacesToAda(d.value), itemStyle: { color: d.color }, context_info: d.context_info }));
+    chart.setOption({
+      tooltip: { trigger: 'item', formatter: params => { const { name, value, percent, data } = params; return ` ${name}: ${value.toLocaleString()} ADA (${percent}%)<br/>` + `${data.context_info}`; } },
+      series: [
+        {
+          name: 'ada supply',
+          type: 'pie',
+          radius: ['45%', '70%'],
+          avoidLabelOverlap: true,
+          label: {
+            show: true,
+            position: 'outside',
+            formatter: ({ data }) => `${data.name}: ${data.value.toLocaleString()} ada`
+          },
+          emphasis: { label: { show: true, fontSize: 16, fontWeight: 'bold' } },
+          labelLine: { show: true },
+          data: seriesData
+        }
+      ]
+    });
+    return () => chart.dispose();
+  }, [chartData]);
+
+  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+//  Main Page Content
+// ────────────────────────────────────────────────────────────────────────────
 function PageContent() {
-  const { siteConfig: { customFields } } = useDocusaurusContext();
-  // great example how to get URL params
+  const {
+    siteConfig: { customFields }
+  } = useDocusaurusContext();
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const urlEpoch = queryParams.get('epoch');
+  const urlEpoch = new URLSearchParams(location.search).get('epoch');
 
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
 
-  const [data, setData] = useState(null);
+  const [totalsCurr, setTotalsCurr] = useState(null);
+  const [totalsPrev, setTotalsPrev] = useState(null);
+  const [withdrawalsCurrRes, setWithdrawalsCurr] = useState([]);
+  const [epochInfo, setEpochInfo] = useState(null);
   const [error, setError] = useState(null);
+  const [showDonut, setShowDonut] = useState(true);
 
-  // fetch the latest epoch from the tip endpoint
-  const fetchEpoch = async () => {
-    const response = await axios.get(`${API_URL}/tip`, {
-      headers: { 'Authorization': `Bearer ${API_KEY}` }
-    });
-    return response.data[0].epoch_no;
-  };
-
-  // fetch ada supply breakdown from Koios
-  const fetchSupplyData = async (epoch_no) => {
-    const url = epoch_no ? `${API_URL}/totals?_epoch_no=${epoch_no}` : `${API_URL}/totals`;
-    const response = await axios.get(url, {
-      headers: { 'Authorization': `Bearer ${API_KEY}` }
-    });
-    return response.data[0];
-  };
-
-  // decide on epoch (URL param or latest) and fetch supply data
   useEffect(() => {
     if (!API_URL || !API_KEY) {
       setError('API URL or API Key is missing!');
       return;
     }
-
-    const fetchData = async () => {
+    async function fetchData() {
       try {
+        // determine if page URL requests a specific and valid epoch
         const parsedEpoch = parseInt(urlEpoch, 10);
-        const safeEpoch = urlEpoch && !isNaN(parsedEpoch) && parsedEpoch >= MIN_EPOCH ? parsedEpoch : null;
-
+        const validEpoch = urlEpoch && !isNaN(parsedEpoch) && parsedEpoch >= MIN_EPOCH ? parsedEpoch : null;
         if (urlEpoch && (isNaN(parsedEpoch) || parsedEpoch < MIN_EPOCH)) {
-          setError(`Epoch must be a number and ${MIN_EPOCH} or higher.`);
+          setError(`Epoch must be ≥ ${MIN_EPOCH}.`);
           return;
         }
+        // set the subject epoch to either the URL requested one, or query the current epoch from the network
+        const epoch_no =
+          validEpoch ||
+          (await axios.get(`${API_URL}/tip`, { headers: { Authorization: `Bearer ${API_KEY}` } })).data[0]
+            .epoch_no;
+            // query epoch data from current/requested and preceeding epochs
 
-        const epoch_no = safeEpoch || await fetchEpoch();
-        const totals = await fetchSupplyData(epoch_no);
-        setData({ ...totals, epoch_no: parseInt(epoch_no, 10) });
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setError(error.message);
+            const totalsCurrRes = await axios.get(
+          `${API_URL}/totals${epoch_no ? `?_epoch_no=${epoch_no}` : ''}`,
+          { headers: { Authorization: `Bearer ${API_KEY}` } }
+        );
+        setTotalsCurr({ epoch_no, ...totalsCurrRes.data[0] });
+
+        const totalsPrevRes = await axios.get(
+          `${API_URL}/totals${epoch_no ? `?_epoch_no=${epoch_no - 1}` : ''}`,
+          { headers: { Authorization: `Bearer ${API_KEY}` } }
+        );
+        setTotalsPrev(totalsPrevRes.data[0]);
+
+        const epochInfoRes = await axios.get(
+          `${API_URL}/epoch_info?_epoch_no=${epoch_no - 2}`,
+          { headers: { Authorization: `Bearer ${API_KEY}` } }
+        );
+        setEpochInfo(epochInfoRes.data[0]);
+
+        let withdrawalsCurr = [];
+        let offset = 0;
+        let page;
+        do {
+          const resp = await axios.get(
+            `${API_URL}/treasury_withdrawals${epoch_no ? `?select=epoch_no,amount&epoch_no=eq.${epoch_no}&` : '?'}offset=${offset}`,
+            { headers: { Authorization: `Bearer ${API_KEY}` } }
+          );
+          page = resp.data;
+          withdrawalsCurr = withdrawalsCurr.concat(page);
+          offset += 1000;
+        } while (page.length > 0);
+        setWithdrawalsCurr(withdrawalsCurr);
+
+      } catch (err) {
+        setError(err.message);
       }
-    };
-
+    }
     fetchData();
   }, [API_URL, API_KEY, urlEpoch]);
 
-  // if this produces an error, we want to let the user know, also set noindex meta tag
-  // basically a good advice if you create many pages based on parameters.
+  // without epoch's data we can't proceed
   if (error) {
     return (
       <>
-        <Head><meta name="robots" content="noindex" /></Head>
+        <Head>
+          <meta name="robots" content="noindex" />
+        </Head>
         <p>Error: {error}</p>
         <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
-          Try appending <code>?epoch={MIN_EPOCH + 1}</code> to the URL for an example.
+          Try appending <code>?epoch={MIN_EPOCH + 1}</code> to the URL.
         </p>
       </>
     );
   }
+  if ( !totalsCurr || !totalsPrev || !epochInfo) return <p>Loading...</p>;
 
-  if (!data) return <p>Loading...</p>;
-
+  // Prepare chartData
   const chartData = [
-    { label: "Circulation", value: convertLovelacesToAda(data.circulation) },
-    { label: "Treasury", value: convertLovelacesToAda(data.treasury) },
-    { label: "Rewards", value: convertLovelacesToAda(data.reward) },
-    { label: "Reserves", value: convertLovelacesToAda(data.reserves) },
-    { label: "Fees", value: convertLovelacesToAda(data.fees) },
-    { label: "Deposits Stake", value: convertLovelacesToAda(data.deposits_stake) },
-    { label: "Deposits DRep", value: convertLovelacesToAda(data.deposits_drep) },
-    { label: "Deposits Proposal", value: convertLovelacesToAda(data.deposits_proposal) }
+    { label: 'Circulation', value: totalsCurr.circulation, color: '#5470c6', show_in_donut: true, context_info: 'Sum of all circulating UTxO`s' },
+    { label: 'Treasury', value: totalsCurr.treasury, color: '#91cc75', show_in_donut: true, context_info: 'All ada currently allocated to the treasury pot.' },
+    { label: 'Rewards', value: totalsCurr.reward, color: '#fac858', show_in_donut: true, context_info: 'All unclaimed Rewards' },
+    { label: 'Deposits Stake', value: totalsCurr.deposits_stake, color: '#ee6666', show_in_donut: true, context_info: 'Deposit pot for all currently registered Stake pools and all Staking Accounts.' },
+    { label: 'Deposits DRep', value: totalsCurr.deposits_drep, color: '#73c0de', show_in_donut: true, context_info: 'Deposit pot for all currently registered DRep`s' },
+    { label: 'Deposits Proposal', value: totalsCurr.deposits_proposal, color: '#3ba272', show_in_donut: true, context_info: 'Deposit pot for all currently active Governance actions.' },
+    { label: 'Fees', value: totalsCurr.fees, color: '#fc8452', show_in_donut: true, context_info: 'The amount of ada collected in the fee pot.' },
+    { label: 'Total Supply', value: totalsCurr.supply, color: '#999999', show_in_donut: false, context_info: 'All ada currently in circulation, unclaimed rewards, all deposits, fees and the treasury.' },
+    { label: 'Reserves', value: totalsCurr.reserves, color: '#9a60b4', show_in_donut: true, context_info: 'The remaining difference between maximum and total Supply' }
   ];
+  const maxSupply = chartData.filter((d) => d.show_in_donut).reduce((sum, d) => sum + parseInt(d.value), 0);
+  chartData.push({ label: 'Maximum supply', value: maxSupply, color: '#444444', show_in_donut: false, context_info: 'The maximum amount of ada that can ever exist, based on the genesis block definition.' });
 
-  const legendDescription = `In epoch ${data.epoch_no}, ` + chartData
-    .map(d => `${d.label} is ${d.value.toLocaleString()} ada`)
-    .join(', ') + '.';
+  const epochDate = getEpochDate(totalsCurr.epoch_no);
+
+  // total delta calculations
+  const deltaReserves = totalsPrev.reserves - totalsCurr.reserves;
+  let percentOfReserves = ((deltaReserves / totalsCurr.reserves) * 100).toFixed(2);
+  const deltaSupply = totalsCurr.supply - totalsPrev.supply;
+  let percentOfSupply = ((deltaSupply / totalsCurr.supply) * 100).toFixed(2);
+  const deltaTreasury = totalsCurr.treasury - totalsPrev.treasury;
+  let percentOfTreasury = ((deltaTreasury / totalsCurr.treasury) * 100).toFixed(2);
+  let percentFeesOfDeltaReserves = ((epochInfo.fees / deltaReserves) * 100).toFixed(2);
+  let averageTxFee = (epochInfo.fees / epochInfo.tx_count).toFixed(0) 
+  const totalTreasuryWithdrawals = withdrawalsCurrRes.reduce((sum, w) => sum + parseInt(w.amount, 10), 0 );
+
 
   return (
-    <>
-      <TitleWithText description={[`This chart visualizes the complete ada supply distribution for **epoch ${data.epoch_no}**. It shows how the total maximum supply of **45 billion ada** is currently allocated across circulation, reserves, treasury, staking deposits, and other components. Hover over each segment to explore individual values in detail.`]} headingDot={true} />
+    <>  
+      <Head>
+        <title>{`Cardano Supply – Epoch ${totalsCurr.epoch_no} (${epochDate})`}</title>
+        <meta property="og:title" content={`Cardano Supply – Epoch ${totalsCurr.epoch_no} (${epochDate})`} />
+        <meta
+          property="og:description"
+          content={`ada supply distribution for epoch ${totalsCurr.epoch_no}, started on ${epochDate}`} />
+      </Head>
 
-      <p>You don't need to use TitleWithText or similar components, you can use normal html here. But remember to use always the Link component. For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link></p>
+      <TitleWithText
+        description={[
+          /* description based on URL epoch parameter */
+          (urlEpoch ?
+            // For custom epochs, past data
+            `This Cardano insight page visualizes the complete ada supply distribution for **epoch ${totalsCurr.epoch_no}** which started on **${epochDate}**. It shows how the total supply was distributed across all categories at that time.` :
+            // Default for live data
+            `This Cardano insight page visualizes the complete ada supply distribution for **epoch ${totalsCurr.epoch_no}** which started on **${epochDate}**. It shows how the total supply is currently distributed across all categories.`
+          )
+        ]}
+        headingDot
+      />
 
-      <p>For external links use:<Link href="https://developers.cardano.org">developers.cardano.org</Link></p>
+      {/* donut/table Toggle Switch */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', margin: '1rem 0'  }}>
+        <span style={{ marginRight: '0.5rem', fontSize: '0.9rem' }}>Donut / Table view</span>
+        <label           style={{ position: 'relative', display: 'inline-block', width: '50px', height: '24px' }}>
+          <input type="checkbox" checked={!showDonut} onChange={() => setShowDonut(!showDonut)} style={{ opacity: 0, width: 0, height: 0 }} />
+          <span style={{ position: 'absolute', cursor: 'pointer', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: showDonut ? '#ccc' : '#2196F3', transition: '.4s', borderRadius: '24px' }} />
+          <span style={{ position: 'absolute', height: '18px', width: '18px', left: showDonut ? '4px' : '28px', bottom: '3px', backgroundColor: 'white', transition: '.4s', borderRadius: '50%'  }} />
+        </label>
+      </div>
 
-      <DonutChart data={chartData} rawData={{
-        circulation: data.circulation,
-        treasury: data.treasury,
-        reward: data.reward,
-        reserves: data.reserves,
-        fees: data.fees,
-        deposits_stake: data.deposits_stake,
-        deposits_drep: data.deposits_drep,
-        deposits_proposal: data.deposits_proposal
-      }} />
+      {/* Conditional Render donut or table */}
+      {showDonut ? (
+        <DonutChartEcharts chartData={chartData} />
+      ) : (
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
+          <table style={{ borderCollapse: 'collapse', margin: '0 auto', fontSize: '0.8em' }}>
+            <thead>
+              <tr>
+                <th style={{ padding: '8px', textAlign: 'right' }}>Category</th>
+                <th style={{ padding: '8px', textAlign: 'right' }}>ada</th>
+                <th style={{ padding: '8px', textAlign: 'right' }}>%</th>
+                <th style={{ padding: '8px', textAlign: 'left' }}>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {chartData.map((d) => {
+                const pct = ((d.value / maxSupply) * 100).toFixed(2);
+                const boldStyle = !d.show_in_donut ? { fontWeight: 'bold' } : {};
+                return (
+                  <tr key={d.label} style={{ borderBottom: '1px solid #dee2e6', ...boldStyle }}>
+                    <td style={{ padding: '8px', textAlign: 'left', ...boldStyle }}>{d.label}</td>
+                    <td style={{ padding: '8px', textAlign: 'right', ...boldStyle }}>{convertLovelacesToAda(d.value).toLocaleString()} ada</td>
+                    <td style={{ padding: '8px', textAlign: 'right', ...boldStyle }}>{pct}%</td>
+                    <td style={{ padding: '8px', textAlign: 'left', fontWeight: 'normal'}}>{d.context_info}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
 
-      <p style={{ marginTop: '1.5rem', fontSize: '0.95rem' }}>{legendDescription}</p>
-      <InsightsFooter lastUpdated={meta.date} />
+      <div style={{ marginTop: '2rem' }}>
+        <h3>FAQ</h3>
+        <p><strong>Q: How did the values change compared to the previous Epoch?</strong></p>
+        <p>
+          A: At the start of epoch {totalsCurr.epoch_no}, the Cardano Ouroboros protocol distributed the staking rewards for epoch {totalsCurr.epoch_no - 2} and all transaction fees collected in Epoch {totalsCurr.epoch_no - 1}. 
+          This transfered <strong>{convertLovelacesToAda(deltaReserves).toLocaleString()} ada</strong> from the reserves to the active supply, equivalent to a {percentOfReserves} % decrease in reserves and a {percentOfSupply} % increase in active supply compared to the last Epoch.
+        </p>
+
+        <p><strong>Q: How much ada was added to the treasury ?</strong></p>
+        <p>
+          A: From the Epoch {totalsCurr.epoch_no} reward distribution, <strong>{convertLovelacesToAda(deltaTreasury).toLocaleString()} ada</strong> were allocated to the treasury, representing a {percentOfTreasury} % increase compared to the last Epoch.
+        </p>
+
+        <p><strong>Q: How many fees where collected in Epoch {totalsCurr.epoch_no}?</strong></p>
+        <p>
+          A: A total of <strong>{convertLovelacesToAda(epochInfo.fees).toLocaleString()} ada</strong> were paid across {epochInfo.tx_count} transactions at an average fee of {(averageTxFee / 1_000_000).toFixed(2)} ada, contributing {percentFeesOfDeltaReserves} % of the total rewards distributed in this Epoch. 
+        </p>
+        
+        <p><strong>Q: Were there withdrawals from the treasury in epoch {totalsCurr.epoch_no}?</strong></p>
+        <p>
+        {withdrawalsCurrRes.length === 0 ? (
+            `A: There were no treasury withdrawals during this Epoch`
+          ) : withdrawalsCurrRes.length === 1 ? (
+            `A: There was 1 treasury withdrawal totaling ${convertLovelacesToAda(totalTreasuryWithdrawals).toLocaleString()} ada.`
+          ) : (
+            `A: There were ${withdrawalsCurrRes.length} treasury withdrawals totaling ${convertLovelacesToAda(
+              totalTreasuryWithdrawals
+            ).toLocaleString()} ada.`
+          )}
+        </p>
+       </div> 
+
+      {/* Footer inside PageContent */}
+      <InsightsFooter lastUpdated={`${epochDate} (epoch ${totalsCurr.epoch_no})`} epoch={totalsCurr.epoch_no} />
     </>
   );
 }
 
-export default function InsightsPage() {
+// ────────────────────────────────────────────────────────────────────────────
+//  Page Wrapper
+// ────────────────────────────────────────────────────────────────────────────
+export default function SupplyPage() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo 
-        pageName={meta.og.pageName}
-        title={meta.og.title}
-        description={meta.og.description}
-      />
+      <OpenGraphInfo {...meta.og} />
       <PageContent />
     </InsightsLayout>
   );
 }
- 
