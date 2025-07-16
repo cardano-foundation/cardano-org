@@ -9,7 +9,7 @@ description: Editorial style guide and glossary for Cardano.org.
 To make content consistent we should agree on spellings and terms here. 
 
 ## Principles
-- Use Amercian English. 
+- Use American English. 
 - Use Dateformat September 15, 2017 (MMMM DD, YYYY)
 - Use gender-inclusive pronouns they/their/them rathen then he/she.
 - Use Oxford comma.
