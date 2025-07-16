@@ -11,7 +11,7 @@ To make content consistent we should agree on spellings and terms here.
 ## Principles
 - Use American English. 
 - Use Dateformat September 15, 2017 (MMMM DD, YYYY)
-- Use gender-inclusive pronouns they/their/them rathen then he/she.
+- Use gender-inclusive pronouns they/their/them rather then he/she.
 - Use Oxford comma.
 - Spell out one to nine and use numerals for anything higher: 10, 11, 12.
 
