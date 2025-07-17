@@ -10,6 +10,7 @@ import axios from 'axios';
 import * as echarts from 'echarts';
 import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
+import { useColorMode } from '@docusaurus/theme-common';
 
 // ────────────────────────────────────────────────────────────────────────────
 //  Meta Setup
@@ -49,31 +50,61 @@ function getEpochDate(epoch) {
 //  Donut Chart Component (ECharts)
 // ────────────────────────────────────────────────────────────────────────────
 function DonutChartEcharts({ chartData }) {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+  const [isMobile, setIsMobile] = useState(false);
   const chartRef = useRef(null);
+  // Detect mobile viewport
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   useEffect(() => {
     const chart = echarts.init(chartRef.current);
     const seriesData = chartData.filter(d => d.show_in_donut) .map(d => ({ name:  d.label, value: convertLovelacesToAda(d.value), itemStyle: { color: d.color }, context_info: d.context_info }));
+    const totalValue = seriesData.reduce((sum, item) => sum + item.value, 0);
+    const legendConfig = isMobile
+    ? {
+        show: true,
+        orient: 'horizontal',
+        bottom: 10,
+        left: 'center',
+        textStyle: { color: isDark ? '#fff' : '#000' },
+        data: seriesData.map(item => item.name),
+        formatter: (name) => {
+          const item = seriesData.find(i => i.name === name);
+          const percent = ((item.value / totalValue) * 100).toFixed(2);
+          return `${name}: ${item.value.toLocaleString()} ADA (${percent}%)`;
+        },
+      }
+    : { show: false };
+  
     chart.setOption({
-      tooltip: { trigger: 'item', formatter: params => { const { name, value, percent, data } = params; return ` ${name}: ${value.toLocaleString()} ADA (${percent}%)<br/>` + `${data.context_info}`; } },
+      tooltip: { show: !isMobile, trigger: 'item', formatter: params => { const { name, value, percent, data } = params; return ` ${name}: ${value.toLocaleString()} ADA (${percent}%)<br/>` + `${data.context_info}`; } },
+      legend: legendConfig,
       series: [
         {
           name: 'ada supply',
           type: 'pie',
           radius: ['45%', '70%'],
+          center: isMobile ? ['50%', '30%'] : ['50%', '50%'],
           avoidLabelOverlap: true,
           label: {
-            show: true,
+            show: !isMobile,
             position: 'outside',
-            formatter: ({ data }) => `${data.name}: ${data.value.toLocaleString()} ada`
+            formatter: ({ data }) => `${data.name}: ${data.value.toLocaleString()} ada`,
+            textStyle: { color: isDark ? '#fff' : '#000', }
           },
-          emphasis: { label: { show: true, fontSize: 16, fontWeight: 'bold' } },
-          labelLine: { show: true },
+          emphasis: { label: { show: !isMobile, fontSize: 16, fontWeight: 'bold' } },
+          labelLine: { show: !isMobile },
           data: seriesData
         }
       ]
     });
     return () => chart.dispose();
-  }, [chartData]);
+  }, [chartData, isDark, isMobile]);
 
   return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
 }
@@ -278,10 +309,10 @@ function PageContent() {
 
         <p><strong>Q: How much ada was added to the treasury ?</strong></p>
         <p>
-          A: From the Epoch {totalsCurr.epoch_no} reward distribution, <strong>{convertLovelacesToAda(deltaTreasury).toLocaleString()} ada</strong> were allocated to the treasury, representing a {percentOfTreasury} % increase compared to the last Epoch.
+          A: From the Epoch {totalsCurr.epoch_no} reward distribution, <strong>{convertLovelacesToAda(deltaTreasury).toLocaleString()} ada</strong> was allocated to the treasury, representing a {percentOfTreasury} % increase compared to the last Epoch.
         </p>
 
-        <p><strong>Q: How many fees where collected in Epoch {totalsCurr.epoch_no}?</strong></p>
+        <p><strong>Q: How many fees were collected in Epoch {totalsCurr.epoch_no}?</strong></p>
         <p>
           A: A total of <strong>{convertLovelacesToAda(epochInfo.fees).toLocaleString()} ada</strong> were paid across {epochInfo.tx_count} transactions at an average fee of {(averageTxFee / 1_000_000).toFixed(2)} ada, contributing {percentFeesOfDeltaReserves} % of the total rewards distributed in this Epoch. 
         </p>

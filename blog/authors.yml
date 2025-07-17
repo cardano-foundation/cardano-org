@@ -12,7 +12,19 @@ emurgo:
 
 iog:
   name: Input Output Global
-  title: Research and engineering company
+  title: Global IO holding
+  url: https://iohk.io
+  image_url: /img/authors/input-output-hk.png
+
+ior: 
+  name: Input | Output Research
+  title: Research network
+  url: https://iohk.io/research
+  image_url: /img/authors/input-output-hk.png
+
+ioe: 
+  name: Input | Output Engineering
+  title: Engineering company
   url: https://iohk.io
   image_url: /img/authors/input-output-hk.png
 
