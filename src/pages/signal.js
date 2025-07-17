@@ -9,20 +9,12 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import MauticForm  from "@site/src/components/MauticForm";
 
-export default function Home() {
+// map interestIds to Mautic forms
+import contentMap from '../data/signal-contentmap.js';
+
+  export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const location = useLocation();
-
-  // map interestIds to Mautic forms
-  const contentMap = {
-    governance: {
-      title: 'Signal your interest in Governance',
-      formId: 5,
-      description: 'We’ll keep you updated on DReps, proposals and how to get involved.',
-      bannerType: 'fluidBlue',
-      openGraph: 'signal-governance',
-    },
-  };
 
   // use id parameter for the different forms, make sure to have a valid one
   const interestId = new URLSearchParams(location.search).get('id');
