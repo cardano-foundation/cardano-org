@@ -8,7 +8,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import events from "@site/src/data/events.json";
 
 function EventDateTitle({ startDate, endDate, title, link }) {
-  const options = { month: 'long', day: 'numeric' };
+  const options = { timeZone: 'UTC', month: 'long', day: 'numeric' };
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : null;
 
