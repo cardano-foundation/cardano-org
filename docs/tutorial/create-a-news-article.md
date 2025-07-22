@@ -88,7 +88,7 @@ Feel free to play around and edit this post as much as you like.
 ```
 For banners and other graphic media, please use the following file formats:
 
-Images: `.png`, `.jpg` (or `.jpeg`), `.gif`, and `.svg`.
+Images: `.png`, `.jpg` (or `.jpeg`), `.webp`, and `.svg`.
 
 :::tip
 
@@ -145,7 +145,7 @@ Embedding YouTube Videos (Privacy-Friendly):
 
 :::tip
 
-Always use the **`youtube-nocookie.com`** domain when embedding videos to ensure data privacy. Here's an example of an iframe:
+Always use the **`youtube-nocookie.com`** domain when embedding videos to ensure data privacy.
 
 :::
 
