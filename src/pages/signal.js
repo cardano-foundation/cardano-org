@@ -27,7 +27,7 @@ import contentMap from '../data/signal-contentmap.js';
       title={siteTitle}
       description={content.description}
     >
-      <OpenGraphInfo pageName={content.openGraph} />
+      <OpenGraphInfo pageName={content.openGraph} title={content.title} description={content.description} />
       <SiteHero
         title={content.title}
         description={content.description}
