@@ -9,7 +9,7 @@ export default {
   "delegation-survey-2025": {
     title: 'Delegation survey 2025',
     formId: 6,
-    description: 'TBD.',
+    description: 'Help us understand delegation preferences and improve the staking experience.',
     bannerType: 'fluidBlue',
     openGraph: 'signal-governance',
   },
