@@ -128,7 +128,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `use case` | Not use-case. See [Cardano use cases](/use-cases). |
 | `USDM` | Fiat-backed stablecoin on Cardano. |
-| `UTXO` | All caps: unspend transaction output, the accounting system used in Bitcoin and Cardano. |
+| `UTXO` | All caps: unspent transaction output, the accounting system used in Bitcoin and Cardano. |
 
 ### V 
 |  Spelling/Term   | Comment                    |
