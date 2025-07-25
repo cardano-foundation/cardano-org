@@ -119,7 +119,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `testnet`    | One word.  Capitalise when it's a particular testnet (e.g. Preview _testnet_) but not when it's an adjective (e.g. _testnet_ functionality) or referring to more than one (e.g. new iterations of the _testnets_). |
 | `third-generation blockchain`    | Spell out 'third' and hyphenate: Cardano is a third-generation blockchain. |
-| `TLA`    | Three-letter acrynom. There are too many, avoid them, don't invent new ones. |
+| `TLA`    | Three-letter acronym. There are too many, avoid them, don't invent new ones. |
 | `tps`    | Transactions per seconds. A flawed metric for blockchain speed like 'videos per second' would be to measure hard disk speeds. |
 
 
