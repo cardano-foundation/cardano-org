@@ -8,14 +8,15 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import events from "@site/src/data/events.json";
 
 function EventDateTitle({ startDate, endDate, title, link }) {
-  const options = { timeZone: 'UTC', month: 'long', day: 'numeric' };
+  const options = { timeZone: 'UTC', month: 'long' };
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : null;
-
-  const startStr = start.toLocaleDateString('en-US', options);
-  const endStr = end ? end.getDate() : null;
-
-  const range = end ? `${startStr.split(' ')[0]} ${start.getDate()}-${endStr}` : startStr;
+  const startMonthStr = start.toLocaleDateString('en-US', options);
+  const startDay = start.getUTCDate();
+  // Create a consistent date string like "August 6" or "August 6-7"
+  const range = end 
+    ? `${startMonthStr} ${startDay}-${end.getUTCDate()}` 
+    : `${startMonthStr} ${startDay}`;
 
   return (
     <>
@@ -45,6 +46,9 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const today = new Date();
+  // Create a new date object representing the start of today in UTC
+  const todayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
 
   return (
     <Layout
@@ -61,7 +65,7 @@ export default function Home() {
             <ul>
               {events
                 .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) >= new Date())
+                .filter(event => new Date(event.startDate) >= todayUTC)
                 .map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>
@@ -105,7 +109,7 @@ export default function Home() {
             <ul>
               {events
                 .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) < new Date())
+                .filter(event => new Date(event.startDate) < todayUTC)
                 .map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>
