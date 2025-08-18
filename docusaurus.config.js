@@ -307,9 +307,9 @@ const config = {
     // id: always change it when changing the announcement
     // backgroundColor: use #1442B3 for announcements
     announcementBar: isAnnouncementActive ?{
-      id: "announcement_index3", // Any value that will identify this message + increment the number every time to be unique
+      id: "announcement_index4", // Any value that will identify this message + increment the number every time to be unique
       content:
-        `<strong>Delegation Survey 2025 is live. We're collecting your valuable input. ➡️ <a target="_blank" rel="noopener noreferrer" href="https://cardanocommunity.typeform.com/to/uW96Sc3d">Start the survey</a></strong>`,
+        `<strong>Cardano Summit 2025 Berlin - Early Bird Tickets are live! 🎟️ Secure your discounted pass now ➡️ <a href="https://summit.cardano.org/page/5056323/tickets#section-6268783" style="color:white; font-weight:bold; text-decoration:underline;">Visit the ticket shop</a></strong>`,
       backgroundColor: "#1442B3",
       textColor: "#FFFFFF", // Use #FFFFFF
       isCloseable: true, // Use true
