@@ -1,14 +1,14 @@
 ---
-sidebar_position: 10
+UK Bhinbahadur 01
 ---
 
-# Add your Company
+# UKB Finance Development Pty Ltd cc pvt
 
-Thank you for considering adding your company, association or collaboration to [Entities Building on Cardano](https://cardano.org/entities#companies). 
+Practical Management Systems [Building the future today](https://cardano.org/entities#companies). 
 
-## Requirements
+## Missions Visionary Statements 
 
-Before making a pull request, please make sure that you fulfill all these requirements. 
+ 
 
 ### Requirements of your company, association or collaboration 
 - You can only add a registered company, an association, or a collaboration. By "collaboration" we mean open source collaborations such as the **Koios Team** or the **Guild Operators**. 
