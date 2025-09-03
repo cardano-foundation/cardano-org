@@ -30,10 +30,16 @@
     "link": "https://forum.cardano.org/u/bearicea/summary"
   },
   {
-    "name": "Benjamin Baani ",
+    "name": "Benjamin Baani",
     "role": "Ghana",
     "country": "GH",
     "link": "https://forum.cardano.org/u/benjamin1/summary"
+  },
+  {
+    "name": "Bernard Sibanda",
+    "role": "South Africa",
+    "country": "ZA",
+    "link": "https://forum.cardano.org/u/wimscardano/"
   },
   {
     "name": "Glitch",
@@ -46,6 +52,12 @@
     "role": "Germany",
     "country": "DE",
     "link": "https://forum.cardano.org/u/ChrisSTR8/"
+  },
+  {
+    "name": "Cristian Jair Rojas Velez",
+    "role": "Mexico",
+    "country": "MX",
+    "link": "https://forum.cardano.org/u/cristian_jair_rojas/summary"
   },
   {
     "name": "Dan Baruka",
@@ -114,7 +126,13 @@
     "link": "https://forum.cardano.org/u/eric248550/summary"
   },
   {
-    "name": "EVANS KISANGA",
+    "name": "Erick Valadez Hernandez",
+    "role": "Mexico",
+    "country": "MX",
+    "link": "https://forum.cardano.org/u/jericko/activity"
+  },
+  {
+    "name": "Evans Kisanga",
     "role": "Tanzania",
     "country": "TZ",
     "link": "https://forum.cardano.org/u/babaelliot/summary"
@@ -174,6 +192,12 @@
     "link": "https://forum.cardano.org/u/cryptoveri/summary"
   },
   {
+    "name": "Cardisa Latina ",
+    "role": "Colombia",
+    "country": "CO",
+    "link": "https://forum.cardano.org/u/cardisalatina/summary"
+  },
+  {
     "name": "Janice Gu",
     "role": "Korea, South",
     "country": "KR",
@@ -204,6 +228,12 @@
     "link": "https://forum.cardano.org/u/jeremiah/"
   },
   {
+    "name": "Le Xuan Linh",
+    "role": "Vietnam",
+    "country": "VN",
+    "link": "https://forum.cardano.org/u/jimmy_lee_vcoincheck/summary"
+  },
+  {
     "name": "Jo Allum",
     "role": "New Zealand",
     "country": "NZ",
@@ -232,6 +262,12 @@
     "role": "United Kingdom",
     "country": "GB",
     "link": "https://forum.cardano.org/u/sl13pnir/summary"
+  },
+  {
+    "name": "Cheung King Wang Kinson",
+    "role": "Hong Kong",
+    "country": "HK",
+    "link": "https://forum.cardano.org/u/kinson_cheung1/summary"
   },
   {
     "name": "Kornel Gajewski",
@@ -304,6 +340,12 @@
     "role": "Vietnam",
     "country": "VN",
     "link": "https://forum.cardano.org/u/hakochan/summary"
+  },
+  {
+    "name": "Otávio Lima",
+    "role": "Brazil",
+    "country": "BR",
+    "link": "https://forum.cardano.org/u/otaviolima/summary"
   },
   {
     "name": "Peter Bui",
@@ -432,13 +474,19 @@
     "link": "https://forum.cardano.org/u/willhuang0606/summary"
   },
   {
+    "name": "Hinson Wong",
+    "role": "Hong Kong",
+    "country": "HK",
+    "link": "https://forum.cardano.org/u/sidanwhatever/summary"
+  },
+  {
     "name": "Yoram Ben Zvi",
     "role": "France",
     "country": "FR",
     "link": "https://forum.cardano.org/u/yoram_ben-zvi/summary"
   },
   {
-    "name": "Paul Ko (youngsoo goh)",
+    "name": "Paul Ko",
     "role": "Japan",
     "country": "JP",
     "link": "https://forum.cardano.org/u/haskellcoding"
