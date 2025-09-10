@@ -145,7 +145,7 @@ export default function Home() {
             <ul>
               {events
                 .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) < todayUTC)
+                .filter(event => new Date(event.startDate) < todayUTC && event.recapVideo)
                 .map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>
