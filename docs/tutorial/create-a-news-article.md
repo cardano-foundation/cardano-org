@@ -246,3 +246,48 @@ Strict adherence to these instructions is mandatory at all times.
 
 Provide this prompt as an instruction to your favorite AI tool. Afterwards, you can simply provide links to articles (e.g., blog posts, video transcripts) in the chat. The AI will then generate a summary adhering to the given specifications and considering the Cardano glossary.
 :::
+## Sources and Selection Criteria
+
+To ensure your news summary is valuable to the community and meets our quality standards, please follow these guidelines for selecting sources and content.
+
+
+### Content Sources
+
+The goal is to provide concise summaries that direct readers to the original, full articles from trusted sources across the ecosystem. To ensure your news summary is valuable to the community and meets our quality standards.
+
+Your first step is to find a trustworthy and relevant news item. We focus on core sources from within the Cardano ecosystem and key external reports. Here are the primary sources to consult:
+
+* **Cardano Foundation:** Look for official announcements, research papers, financial and activity reports, and strategic partnerships.
+    * *Source:* [Cardano Foundation Blog](https://cardanofoundation.org/blog)
+* **Input Output Global:** A great source for weekly development reports and deep technical insights into Cardano's technology and development.
+    * *Source:* [Input Output Global Blog](https://iohk.io/en/blog/)
+* **Cardano Developer Portal:** Here you will find technical articles, tutorials, and quarterly development reports relevant to developers in the ecosystem.
+    * *Source:* [Cardano Developer Blog](https://developers.cardano.org/blog/)
+    * *Example:* [Quarterly Development Report Q2 2025](https://developers.cardano.org/blog/2025-06-30-quarterly-development-report/)
+* **Essential Cardano:** Provides community-driven weekly development reports with concise summaries of technical progress across the ecosystem.
+    * *Source:* [Essential Cardano Development Updates](https://www.essentialcardano.io/development-update)
+* **EMURGO:** Publishes news on commercial applications, partnerships, and products that expand the ecosystem. Explanatory articles, like the example provided, are a great fit.
+    * *Source:* [EMURGO Press & News](https://www.emurgo.io/press-news/)
+    * *Example:* [Explainer: The Plomin Hard Fork](https://www.emurgo.io/press-news/explainer-the-plomin-hard-fork-cardano/)
+* **Intersect:** Look here for updates on governance actions, committee elections, and member-driven initiatives.
+    * *Source:* [Intersect News](https://www.intersectmbo.org/news)
+    * *Example:* [Intersect Committee Election Results](https://www.intersectmbo.org/news/intersect-committee-election-results)
+* **Cardano Community Digest:** A valuable source for bi-weekly summaries of key topics, development updates, and community activities.
+    * *Example:* [Community Digest September 01, 2025](https://forum.cardano.org/t/digest-september-01-2025-recap-video-of-rare-evo-las-vegas-2025-cexplorer-io-article-benefits-of-liquid-staking-leios-a-major-milestone-in-cardanos-scalability-push-tony-thanh-s-on-chain-flappy-bird-demo/148995)
+* **Official Cardano Forums:** A direct line to important discussions, proposals, and updates from the community.
+    * *Source:* [Cardano Forum (Announcements)](https://forum.cardano.org/c/english/announcements/)
+* **External Press:** Articles from reputable media outlets about Cardano are also relevant. You can often find a selection in the [Cardano Foundation Newsroom](https://cardanofoundation.org/newsroom/).
+
+
+### Content Selection Criteria
+
+To ensure your contribution gets approved, verify that the article you choose meets the following criteria:
+
+* **Direct Relevance & Timeliness:** The content must be current and directly related to the Cardano ecosystem, its technology, or its community.
+* **Significant Community Value:** The article should provide clear value. This includes:
+    * *Major Updates & Milestones:* Announcements of significant technical upgrades, major partnerships, or key project developments.
+    * *Governance & Participation:* Information that encourages community action, such as details on upcoming votes, committee elections, workshops, or major community events.
+    * *Educational Content:* Articles that simplify complex topics (e.g., technical concepts, governance processes) and make them accessible to a broader audience.
+    * *Media Highlights:* Summaries of important official media like Summit keynotes, panel discussions, or key interviews.
+* **Objectivity and Credibility:** The source must be credible, and the content should be factual. Avoid articles based on speculation or unverified claims.
+* **What to Avoid:** Summaries of content focused on price speculation, token sales, pure marketing or self-promotion, or unsubstantiated claims (e.g., "the best," "the first") will not be approved.
