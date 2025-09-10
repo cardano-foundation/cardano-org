@@ -58,10 +58,46 @@ export default function Home() {
       <OpenGraphInfo pageName="events" /> 
       <HomepageHeader />
       <main>
-        
+      
+      <BoundaryBox>
+        <Divider text="Discover Cardano Events Worldwide" id ="worldwide"/>
+        <div className="event-platforms">
+          <a
+            className="platform-card"
+            href="https://luma.com/CardanoEvents"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Luma.com"
+          >
+            <figure>
+              <img
+                src={`/img/events/platform-luma.png`}
+                alt="Luma.com"
+              />
+              <figcaption>Events on Luma.com</figcaption>
+            </figure>
+          </a>
+          <a
+            className="platform-card"
+            href="https://www.meetup.com/pro/cardano"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Meetup.com"
+          >
+            <figure>
+              <img
+                src={`/img/events/platform-meetup.png`}
+                alt="Meetup.com"
+              />
+              <figcaption>Events on Meetup.com</figcaption>
+            </figure>
+          </a>
+        </div>
+      </BoundaryBox>
+
       <BackgroundWrapper backgroundType={"zoom"}>
       <BoundaryBox>
-            <Divider text="Upcoming events" id ="upcoming"/>
+            <Divider text="Upcoming highlighted Events" id ="upcoming"/>
             <ul>
               {events
                 .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
@@ -105,11 +141,11 @@ export default function Home() {
 
         
         <BoundaryBox>
-            <Divider text="Past Events" id="past"/>
+            <Divider text="Past Highlighted Events" id="past"/>
             <ul>
               {events
                 .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) < todayUTC)
+                .filter(event => new Date(event.startDate) < todayUTC && event.recapVideo)
                 .map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>

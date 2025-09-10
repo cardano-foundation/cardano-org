@@ -487,3 +487,49 @@ img {
     flex-direction: column;
   }
 }
+
+/* Events platform link cards */
+.event-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+.platform-card {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  width: 260px;
+}
+.platform-card figure {
+  margin: 0;
+}
+.platform-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+}
+.platform-card figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Interactive hover/focus states for platform cards */
+.platform-card img {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.platform-card:hover img,
+.platform-card:focus-visible img {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+.platform-card figcaption {
+  transition: color 0.15s ease;
+}
+.platform-card:hover figcaption,
+.platform-card:focus-visible figcaption {
+  color: var(--ifm-color-primary);
+}
