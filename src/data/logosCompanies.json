@@ -138,8 +138,8 @@
     "link": "https://tavernstudios.io",
     "knownFor": "Ale & Axes",
     "showCompanyName": false
- },
- {
+  },
+  {
     "companyName": "Andamio",
     "imageName": "andamio",
     "link": "https://www.andamio.io/about",
@@ -180,7 +180,7 @@
     "link": "https://tokeo.io/team/",
     "knownFor": "TokeoPay",
     "showCompanyName": true
-   },
+  },
   {
     "companyName": "VESPR",
     "imageName": "vespr",
@@ -354,6 +354,13 @@
     "imageName": "anvil",
     "link": "https://ada-anvil.io",
     "knownFor": "Anvil API",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "No Witness Labs",
+    "imageName": "nowitnesslabs",
+    "link": "https://nowitnesslabs.com/",
+    "knownFor": "No Witness Labs",
     "showCompanyName": false
   }
 ]
