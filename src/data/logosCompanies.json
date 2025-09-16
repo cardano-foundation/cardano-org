@@ -124,5 +124,12 @@
     "link": "https://app.danogo.io/about-us",
     "knownFor": " Danogo",
     "showCompanyName": false
+  },
+  {
+    "companyName": "FT Labs GmbH",
+    "imageName": "fluidtokens",
+    "link": "https://fluidtokens.com/team",
+    "knownFor": " FluidTokens",
+    "showCompanyName": false
   }
 ]
