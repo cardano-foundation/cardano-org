@@ -126,6 +126,20 @@
     "showCompanyName": false
   },
   {
+    "companyName": "Andamio",
+    "imageName": "andamio",
+    "link": "https://www.andamio.io/about",
+    "knownFor": "Andamio",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "FT Labs GmbH",
+    "imageName": "fluidtokens",
+    "link": "https://fluidtokens.com/team",
+    "knownFor": " FluidTokens",
+    "showCompanyName": false
+  },
+  {
     "companyName": "SIDAN Lab",
     "imageName": "sidanlab",
     "link": "https://sidan.io/",
