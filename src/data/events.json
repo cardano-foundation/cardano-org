@@ -75,5 +75,71 @@
     "image": "",
     "organizer": "NMKR and Masumi",
     "recapVideo": "NelGwvlVzDc"
+  },
+   {
+    "title": "Bangalore Tech Summit 2025",
+    "description": "Asia’s largest technology event, featuring 1,200 exhibitors, over 100,000 attendees, keynote sessions, and the theme “Futurise.” Focus areas include AI, DeepTech, Biotech, SpaceTech. Designed for global entrepreneurs, startups, investors, and policymakers.",
+    "startDate": "2025-11-18",
+    "endDate": "2025-11-20",
+    "location": "Bangalore International Exhibition Centre, Bengaluru, India",
+    "link": "https://www.bengalurutechsummit.com/",
+    "image": "bangalore-2025.png",
+    "organizer": "Department of Electronics, IT & Biotechnology, Government of Karnataka",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Africa Morocco 2026",
+    "description": "Africa’s biggest tech event with 1400+ exhibitors from 130+ countries. Focus on AI, fintech, smart cities, cybersecurity, health tech, and digital transformation.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-09",
+    "location": "Marrakech, Morocco",
+    "link": "https://gitexafrica.com",
+    "image": "gitex-2026.png",
+    "organizer": "KAOUN International / Digital Development Agency (ADD)",
+    "recapVideo": ""
+  },
+   {
+    "title": "Blockchain Life Dubai 2025",
+    "description": "One of the world’s largest Web3 and crypto forums, celebrating its 15th edition. 15,000+ participants, 200+ speakers, and a large expo zone for digital assets, mining, and blockchain leadership.",
+    "startDate": "2025-10-28",
+    "endDate": "2025-10-29",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://blockchain-life.com",
+    "image": "blockchain-life-2025.png",
+    "organizer": "Blockchain Life Forum",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Global Dubai 2025",
+    "description": "The world’s largest tech and startup event, 5000+ exhibitors from 170 countries. Key topics: AI, cloud, cybersecurity, IoT, and blockchain.",
+    "startDate": "2025-10-13",
+    "endDate": "2025-10-17",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://gitex.com",
+    "image": "gitex-2025.png",
+    "organizer": "Dubai World Trade Centre / KAOUN International",
+    "recapVideo": ""
+  },
+   {
+    "title": "Tech4Impact Summit 2025",
+    "description": "Event on technology for social and environmental impact. Attracts investors, startups, and purpose-driven organizations.",
+    "startDate": "2025-10-07",
+    "endDate": "",
+    "location": "Toranomon Hills Forum, Tokyo, Japan",
+    "link": "https://tech4impactsummit.com",
+    "image": "tech4impact-2025.png",
+    "organizer": "Tech4Impact Summit Organizing Team",
+    "recapVideo": ""
+  },
+   {
+    "title": "Philippines Blockchain Week 2025",
+    "description": "Week-long event themed “Decoded,” emphasizing FinTech, Healthcare, Gaming, Music, and Filipino Web3 innovation. Includes international speakers and cultural experiences.",
+    "startDate": "2025-06-10",
+    "endDate": "2025-06-11",
+    "location": "SMX Convention Center, Manila, Philippines",
+    "link": "https://pbw.ph",
+    "image": "pbw-2025.png",
+    "organizer": "PBW Organizing Committee",
+    "recapVideo": ""
   }
 ]
