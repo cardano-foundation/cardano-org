@@ -47,7 +47,7 @@ export default function Home() {
               quoteText="Change begins with one voice. But is realized through the Combination of many."
               showButton={true}
               buttonText="Stay up to date"
-              buttonLink="/signal?id=governance"
+              buttonLink="/signal-governance"
             />
 
             <Divider text="Delegate your voting power" id="finddrep" />
