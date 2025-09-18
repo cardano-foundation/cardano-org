@@ -38,7 +38,7 @@ This guideline ensures that readers receive a concise and informative preview of
 
 :::tip
 
-Have a relevant news article but not the technical know-how to create a pull request yourself? No problem! Just [fill out our form](https://cardanocommunity.typeform.com/to/u7hcc7Ix), and we will review your suggestion. Please note that we only accept submissions that comply with the guidelines mentioned on this page.
+Have a relevant news article, meetup recap, or blog post but not the technical know-how to create a pull request yourself? No problem! Just [fill out our form](https://cardanocommunity.typeform.com/news-submission), and we will review your suggestion. Please note that we only accept submissions that comply with the guidelines mentioned on this page.
 
 :::
 
