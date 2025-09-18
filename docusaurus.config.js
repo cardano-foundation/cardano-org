@@ -147,6 +147,7 @@ const config = {
               {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
               {to: '/exchanges', label: 'Integrate Cardano'}, 
+              {to: '/entities/#companies', label: 'Companies building on Cardano'}, 
             ],
           },
           {
