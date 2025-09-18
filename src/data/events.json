@@ -141,5 +141,27 @@
     "image": "pbw-2025.png",
     "organizer": "PBW Organizing Committee",
     "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Buenos Aires",
+    "description": "Get ready for an unforgettable Cardano Tech Summit in Buenos Aires! Hosted by Ada Solar, this event is a full day of inspiring talks, hands-on workshops, and networking with fellow Cardano enthusiasts. Pre-summit hackathons will take place at UBA. Whether you're a seasoned blockchain pro or just getting started, come and celebrate a vibrant community atmosphere.",
+    "startDate": "2025-11-15",
+    "endDate": "",
+    "location": "Buenos Aires, Argentina",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-buenos-aires-2025.png",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Rio de Janeiro",
+    "description": "The Cardano Tech Summit by Ada Solar, hosted at the iconic Museu do Amanhã, will feature keynote presentations from industry leaders, technical deep-dives, educational sessions, and discussions on finance, DeFi, and government regulation.Join this unparalleled opportunity for developers, entrepreneurs, and enthusiasts and explore how Cardano is transforming Latin America.",
+    "startDate": "2025-10-15",
+    "endDate": "",
+    "location": "Museu do Amanhã, Rio de Janeiro, Brazil",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-rio-2025.png",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
   }
 ]
