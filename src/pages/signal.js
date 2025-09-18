@@ -7,7 +7,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import MauticForm  from "@site/src/components/MauticForm";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 // map interestIds to Mautic forms
 import contentMap from '../data/signal-contentmap.js';
@@ -17,27 +17,33 @@ import contentMap from '../data/signal-contentmap.js';
   const location = useLocation();
 
   // use id parameter for the different forms, make sure to have a valid one
-  const interestId = new URLSearchParams(location.search).get('id');
-  const isValidInterest = Object.keys(contentMap).includes(interestId);
-  const content = isValidInterest ? contentMap[interestId] : contentMap["governance"];
-  const siteTitle = `${content.title} | ${siteConfig.title}`;
+  //const interestId = new URLSearchParams(location.search).get('id');
+  //const isValidInterest = Object.keys(contentMap).includes(interestId);
+  //const content = isValidInterest ? contentMap[interestId] : contentMap["governance"];
+  //const siteTitle = `${content.title} | ${siteConfig.title}`;
 
   return (
     <Layout
-      title={siteTitle}
-      description={content.description}
+      title="Signal your interest"
+      description="Get just the information you want"
     >
-      <OpenGraphInfo pageName={content.openGraph} title={content.title} description={content.description} />
+      <OpenGraphInfo pageName="Signal your interest" title="Signal your interest" description="Get just the information you want" />
       <SiteHero
-        title={content.title}
-        description={content.description}
-        bannerType={content.bannerType}
+        title="Signal your interest"
+        description="Look at the available topics and get just the information you want"
+        bannerType="starburst"
       />
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <Divider text={isValidInterest ? interestId : 'governance'} />
-          <MauticForm id={content.formId} />
+          <TitleWithText
+            title="Available Topics"
+            description={Object.values(contentMap).map(item => ({
+              list: [`**[${item.title}](${item.openGraph})** – ${item.description}`],
+            }))}
+            titleType="black"
+            headingDot={true}
+          />
         </BoundaryBox>
       </BackgroundWrapper>
 
