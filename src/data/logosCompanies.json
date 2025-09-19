@@ -138,5 +138,12 @@
     "link": "https://fluidtokens.com/team",
     "knownFor": " FluidTokens",
     "showCompanyName": false
+  },
+  {
+    "companyName": "SIDAN Lab",
+    "imageName": "sidanlab",
+    "link": "https://sidan.io/",
+    "knownFor": " Whisky",
+    "showCompanyName": false
   }
 ]

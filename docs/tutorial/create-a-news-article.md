@@ -36,6 +36,12 @@ Links within the summary should only direct to internal pages of the website off
 ### Why this guideline?
 This guideline ensures that readers receive a concise and informative preview of the article without being distracted by external sources. Additionally, it helps prevent the attraction of individuals posting articles solely for Search Engine Optimization (SEO) purposes, maintaining the integrity of the platform's content.
 
+:::tip
+
+Have a relevant news article, meetup recap, or blog post but not the technical know-how to create a pull request yourself? No problem! Just [fill out our form](https://cardanocommunity.typeform.com/news-submission), and we will review your suggestion. Please note that we only accept submissions that comply with the guidelines mentioned on this page.
+
+:::
+
 ## Understanding the author file
 
 Every news article needs an author. You can find the authors file in `/blog/authors.yml`. An example entry looks like:

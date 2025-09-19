@@ -83,8 +83,8 @@
     "endDate": "2025-11-20",
     "location": "Bangalore International Exhibition Centre, Bengaluru, India",
     "link": "https://www.bengalurutechsummit.com/",
-    "image": "bangalore-2025.png",
-    "organizer": "Department of Electronics, IT & Biotechnology, Government of Karnataka",
+    "image": "bangalore-2025.jpg",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   },
    {
@@ -94,7 +94,7 @@
     "endDate": "2026-04-09",
     "location": "Marrakech, Morocco",
     "link": "https://gitexafrica.com",
-    "image": "gitex-2026.png",
+    "image": "gitex-2026.jpg",
     "organizer": "KAOUN International / Digital Development Agency (ADD)",
     "recapVideo": ""
   },
@@ -105,8 +105,8 @@
     "endDate": "2025-10-29",
     "location": "Dubai Festival Arena, UAE",
     "link": "https://blockchain-life.com",
-    "image": "blockchain-life-2025.png",
-    "organizer": "Blockchain Life Forum",
+    "image": "blockchain-life-2025.jpg",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   },
    {
@@ -116,8 +116,8 @@
     "endDate": "2025-10-17",
     "location": "Dubai Festival Arena, UAE",
     "link": "https://gitex.com",
-    "image": "gitex-2025.png",
-    "organizer": "Dubai World Trade Centre / KAOUN International",
+    "image": "gitex-2025.jpg",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   },
    {
@@ -127,7 +127,7 @@
     "endDate": "",
     "location": "Toranomon Hills Forum, Tokyo, Japan",
     "link": "https://tech4impactsummit.com",
-    "image": "tech4impact-2025.png",
+    "image": "tech4impact-2025.jpg",
     "organizer": "Tech4Impact Summit Organizing Team",
     "recapVideo": ""
   },
@@ -140,6 +140,28 @@
     "link": "https://pbw.ph",
     "image": "pbw-2025.png",
     "organizer": "PBW Organizing Committee",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Buenos Aires",
+    "description": "Get ready for an unforgettable Cardano Tech Summit in Buenos Aires! Hosted by Ada Solar, this event is a full day of inspiring talks, hands-on workshops, and networking with fellow Cardano enthusiasts. Pre-summit hackathons will take place at UBA. Whether you're a seasoned blockchain pro or just getting started, come and celebrate a vibrant community atmosphere.",
+    "startDate": "2025-11-15",
+    "endDate": "",
+    "location": "Buenos Aires, Argentina",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-buenos-aires-2025.jpg",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Rio de Janeiro",
+    "description": "The Cardano Tech Summit by Ada Solar, hosted at the iconic Museu do Amanhã, will feature keynote presentations from industry leaders, technical deep-dives, educational sessions, and discussions on finance, DeFi, and government regulation.Join this unparalleled opportunity for developers, entrepreneurs, and enthusiasts and explore how Cardano is transforming Latin America.",
+    "startDate": "2025-10-15",
+    "endDate": "",
+    "location": "Museu do Amanhã, Rio de Janeiro, Brazil",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-rio-2025.jpg",
+    "organizer": "Ada Solar",
     "recapVideo": ""
   }
 ]
