@@ -125,6 +125,7 @@ const config = {
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
               {to: '/#follow', label: 'Follow Cardano'},
+              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'}, 
               {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
             ],
@@ -147,6 +148,7 @@ const config = {
               {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
               {to: '/exchanges', label: 'Integrate Cardano'}, 
+              {to: '/entities/#companies', label: 'Companies building on Cardano'}, 
             ],
           },
           {

@@ -75,5 +75,115 @@
     "image": "",
     "organizer": "NMKR and Masumi",
     "recapVideo": "NelGwvlVzDc"
+  },
+   {
+    "title": "Bangalore Tech Summit 2025",
+    "description": "Asia’s largest technology event, featuring 1,200 exhibitors, over 100,000 attendees, keynote sessions, and the theme “Futurise.” Focus areas include AI, DeepTech, Biotech, SpaceTech. Designed for global entrepreneurs, startups, investors, and policymakers.",
+    "startDate": "2025-11-18",
+    "endDate": "2025-11-20",
+    "location": "Bangalore International Exhibition Centre, Bengaluru, India",
+    "link": "https://www.bengalurutechsummit.com/",
+    "image": "bangalore-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Africa Morocco 2026",
+    "description": "Africa’s biggest tech event with 1400+ exhibitors from 130+ countries. Focus on AI, fintech, smart cities, cybersecurity, health tech, and digital transformation.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-09",
+    "location": "Marrakech, Morocco",
+    "link": "https://gitexafrica.com",
+    "image": "gitex-2026.jpg",
+    "organizer": "KAOUN International / Digital Development Agency (ADD)",
+    "recapVideo": ""
+  },
+   {
+    "title": "Blockchain Life Dubai 2025",
+    "description": "One of the world’s largest Web3 and crypto forums, celebrating its 15th edition. 15,000+ participants, 200+ speakers, and a large expo zone for digital assets, mining, and blockchain leadership.",
+    "startDate": "2025-10-28",
+    "endDate": "2025-10-29",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://blockchain-life.com",
+    "image": "blockchain-life-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Global Dubai 2025",
+    "description": "The world’s largest tech and startup event, 5000+ exhibitors from 170 countries. Key topics: AI, cloud, cybersecurity, IoT, and blockchain.",
+    "startDate": "2025-10-13",
+    "endDate": "2025-10-17",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://gitex.com",
+    "image": "gitex-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Tech4Impact Summit 2025",
+    "description": "Event on technology for social and environmental impact. Attracts investors, startups, and purpose-driven organizations.",
+    "startDate": "2025-10-07",
+    "endDate": "",
+    "location": "Toranomon Hills Forum, Tokyo, Japan",
+    "link": "https://tech4impactsummit.com",
+    "image": "tech4impact-2025.jpg",
+    "organizer": "Tech4Impact Summit Organizing Team",
+    "recapVideo": ""
+  },
+   {
+    "title": "Philippines Blockchain Week 2025",
+    "description": "Week-long event themed “Decoded,” emphasizing FinTech, Healthcare, Gaming, Music, and Filipino Web3 innovation. Includes international speakers and cultural experiences.",
+    "startDate": "2025-06-10",
+    "endDate": "2025-06-11",
+    "location": "SMX Convention Center, Manila, Philippines",
+    "link": "https://pbw.ph",
+    "image": "pbw-2025.png",
+    "organizer": "PBW Organizing Committee",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Buenos Aires",
+    "description": "Get ready for an unforgettable Cardano Tech Summit in Buenos Aires! Hosted by Ada Solar, this event is a full day of inspiring talks, hands-on workshops, and networking with fellow Cardano enthusiasts. Pre-summit hackathons will take place at UBA. Whether you're a seasoned blockchain pro or just getting started, come and celebrate a vibrant community atmosphere.",
+    "startDate": "2025-11-15",
+    "endDate": "",
+    "location": "Buenos Aires, Argentina",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-buenos-aires-2025.jpg",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Rio de Janeiro",
+    "description": "The Cardano Tech Summit by Ada Solar, hosted at the iconic Museu do Amanhã, will feature keynote presentations from industry leaders, technical deep-dives, educational sessions, and discussions on finance, DeFi, and government regulation.Join this unparalleled opportunity for developers, entrepreneurs, and enthusiasts and explore how Cardano is transforming Latin America.",
+    "startDate": "2025-10-15",
+    "endDate": "",
+    "location": "Museu do Amanhã, Rio de Janeiro, Brazil",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-rio-2025.jpg",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Hackathon Asia",
+    "description": "Cardano Hackathon Asia, hosted by EMURGO in Bangalore, is a two-day event focused on building and showcasing. Day one, the “Build Day,” is a hackathon that includes workshops, mentorship, and team collaboration.Day two, the “Showcase & Talks” day, will feature finalist demos, keynotes, panels, and awards, bringing together the best and brightest of the Indian blockchain community.",
+    "startDate": "2025-11-30",
+    "endDate": "2025-12-01",
+    "location": "Bangalore",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "hackathon-asia-2025.jpg",
+    "organizer": "EMURGO",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Africa Tech Summit Africa",
+    "description": "Scheduled for February 2026 in Nairobi, Kenya, and hosted by WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart, the Africa edition of the Cardano Summit will advance blockchain adoption and AI integration across the continent. With a sharp focus on real-world utility and community, the summit will serve as a convergence point for developers, startups, enterprises, and regulators. Pre-summit hackathons will also be held to cultivate use-case-driven development.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-13",
+    "location": "Nairobi, Kenya",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "afrika-tech-summit-2026.jpg",
+    "organizer": "WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart",
+    "recapVideo": ""
   }
 ]
