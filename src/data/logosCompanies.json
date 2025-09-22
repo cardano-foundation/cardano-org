@@ -126,6 +126,13 @@
     "showCompanyName": false
   },
   {
+    "companyName": "Tavern Studios LTD",
+    "imageName": "tavern-studios",
+    "link": "https://tavernstudios.io",
+    "knownFor": "Ale & Axes",
+    "showCompanyName": false
+ },
+ {
     "companyName": "Andamio",
     "imageName": "andamio",
     "link": "https://www.andamio.io/about",
