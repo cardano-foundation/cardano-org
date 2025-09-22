@@ -125,6 +125,7 @@ const config = {
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
               {to: '/#follow', label: 'Follow Cardano'},
+              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'}, 
               {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
             ],
