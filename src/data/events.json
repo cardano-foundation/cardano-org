@@ -163,5 +163,27 @@
     "image": "summit-rio-2025.jpg",
     "organizer": "Ada Solar",
     "recapVideo": ""
+  },
+   {
+    "title": "Cardano Hackathon Asia",
+    "description": "Cardano Hackathon Asia, hosted by EMURGO in Bangalore, is a two-day event focused on building and showcasing. Day one, the “Build Day,” is a hackathon that includes workshops, mentorship, and team collaboration.Day two, the “Showcase & Talks” day, will feature finalist demos, keynotes, panels, and awards, bringing together the best and brightest of the Indian blockchain community.",
+    "startDate": "2025-11-30",
+    "endDate": "2025-12-01",
+    "location": "Bangalore",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "hackathon-asia-2025.jpg",
+    "organizer": "EMURGO",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Africa Tech Summit Africa",
+    "description": "Scheduled for February 2026 in Nairobi, Kenya, and hosted by WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart, the Africa edition of the Cardano Summit will advance blockchain adoption and AI integration across the continent. With a sharp focus on real-world utility and community, the summit will serve as a convergence point for developers, startups, enterprises, and regulators. Pre-summit hackathons will also be held to cultivate use-case-driven development.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-13",
+    "location": "Nairobi, Kenya",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "afrika-tech-summit-2026.jpg",
+    "organizer": "WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart",
+    "recapVideo": ""
   }
 ]
