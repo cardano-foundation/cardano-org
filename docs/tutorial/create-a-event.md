@@ -8,7 +8,7 @@ sidebar_position: 4
 
 :::tip
 
-In case you’re not familiar with making pull requests, please submit your request through [this form](https://cardanocommunity.typeform.com/to/PmmRcAkO).
+In case you’re not familiar with making pull requests, please submit your request through [this form](https://cardanocommunity.typeform.com/submit-event).
 
 :::
 
@@ -51,7 +51,7 @@ For your event to be considered, the submission must contain the following:
 
 *   **Event Title:** A clear, concise title.
 *   **Event Description:** A brief description of the event, its purpose, and what attendees can expect. **(Max 400 characters)**.
-*   **Date:** The exact start and end date (if different than start date).
+*   **Date:** The exact start and end date (if different than start date). For single-day events, provide the startDate and leave the endDate field empty ("").
 *   **Location/Platform:** Venue, City and country.
 *   **Organizer(s):** The name of the organizing group or project.
 *   **Visual:** A compelling image in **.svg or .png** and ideally **square format**.
@@ -80,12 +80,12 @@ Important Note: The images should not exceed 150 KB per image and must be clearl
     "title": "Event Title",
     "description": "Event description",
     "startDate": "YYYY-MM-DD",
-    "endDate": "YYYY-MM-DD",
+    "endDate": "YYYY-MM-DD" // For single-day events leave the endDate field empty ("").,
     "location": "Event location",
-    "link": "Link to the event page",
+    "link": "Link to the event page" // Link to the event page on lu.ma/CardanoEvents.,
     "image": "image-filename.png",
     "organizer": "Organizer name",
-    "recapVideo": "YouTube video ID (optional)"
+    "recapVideo": "YouTube video ID (Optional)" // Only events with a video ID will be shown in the "Past Events" section.
   },
   
 ]
