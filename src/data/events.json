@@ -185,5 +185,83 @@
     "image": "afrika-tech-summit-2026.jpg",
     "organizer": "WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart",
     "recapVideo": ""
+  },
+   {
+    "title": "Digital Assets Forum (London)",
+    "description": "The Digital Assets Forum in London brings together policymakers, financial institutions, and innovators to discuss the integration of digital assets into global markets.",
+    "startDate": "2026-02-05",
+    "endDate": "2026-02-06",
+    "location": "London, United Kingdom",
+    "link": "https://eblockchainconvention.com/digital-assets-forum/",
+    "image": "digitalassetsforum.jpg",
+    "organizer": "Digital Assets Forum",
+    "recapVideo": ""
+  },
+   {
+    "title": "Consensus HK 2026",
+    "description": "Consensus HK 2026 is the Asia edition of the global blockchain and Web3 conference, showcasing industry leaders, developers, and enterprises driving the digital asset economy.",
+    "startDate": "2026-02-10",
+    "endDate": "2026-02-12",
+    "location": "Hong Kong, China",
+    "link": "https://consensus-hongkong.coindesk.com/",
+    "image": "consensushk2026.jpg",
+    "organizer": "CoinDesk",
+    "recapVideo": ""
+  },
+   {
+    "title": "Africa Tech Summit 2026",
+    "description": "Africa Tech Summit Nairobi connects African tech leaders, investors, and startups across fintech, Web3, AI, and digital transformation sectors.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-12",
+    "location": "Nairobi, Kenya",
+    "link": "https://www.africatechsummit.com/nairobi/",
+    "image": "africatechsummit.jpg",
+    "organizer": "Africa Tech Summit",
+    "recapVideo": ""
+  },
+   {
+    "title": "FutureProof Miami 2026",
+    "description": "Future Proof Miami is a large-scale event for wealth management, fintech, and digital innovation, attracting global investors and technology providers.",
+    "startDate": "2026-03-08",
+    "endDate": "2026-03-11",
+    "location": "Miami, Florida, United States",
+    "link": "https://futureproofhq.com/citywide/",
+    "image": "futureproofmiami.jpg",
+    "organizer": "Future Proof",
+    "recapVideo": ""
+  },
+   {
+    "title": "DC Blockchain Summit",
+    "description": "The DC Blockchain Summit is a policy-focused event in Washington DC that gathers regulators, industry leaders, and academics to shape the future of blockchain regulation and adoption.",
+    "startDate": "2026-03-17",
+    "endDate": "2026-03-18",
+    "location": "Washington, D.C., United States",
+    "link": "https://www.dcblockchainsummit.com/",
+    "image": "dcblockchainsummit.jpg",
+    "organizer": "Chamber of Digital Commerce",
+    "recapVideo": ""
+  },
+   {
+    "title": "TEAMZ Web3 & AI Summit",
+    "description": "TEAMZ Web3 & AI Summit in Tokyo highlights innovations in blockchain, artificial intelligence, and Web3 applications, bringing together global experts and enterprises.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-08",
+    "location": "Tokyo, Japan",
+    "link": "https://www.teamz.co.jp/en",
+    "image": "teamz.jpg",
+    "organizer": "TEAMZ Inc.",
+    "recapVideo": ""
+  }
+  ,
+   {
+    "title": "Paris Blockchain Week",
+    "description": "Paris Blockchain Week is one of Europe’s largest blockchain conferences, uniting executives, entrepreneurs, and developers across digital assets, DeFi, and Web3.",
+    "startDate": "2026-04-14",
+    "endDate": "2026-04-16",
+    "location": "Paris, France",
+    "link": "https://www.parisblockchainweek.com/",
+    "image": "parisblockchainweek.jpg",
+    "organizer": "Paris Blockchain Week",
+    "recapVideo": ""
   }
 ]
