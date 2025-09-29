@@ -152,5 +152,12 @@
     "link": "https://sidan.io/",
     "knownFor": " Whisky",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Surf Lending",
+    "imageName": "surflending",
+    "link": "https://surflending.org/",
+    "knownFor": " Surf Lending",
+    "showCompanyName": false
   }
 ]
