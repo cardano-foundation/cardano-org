@@ -152,5 +152,12 @@
     "link": "https://sidan.io/",
     "knownFor": " Whisky",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Liqwid Labs",
+    "imageName": "liqwid",
+    "link": "https://liqwid.finance/team",
+    "knownFor": "Liqwid Pooled Lending Protocol",
+    "showCompanyName": false
   }
 ]
