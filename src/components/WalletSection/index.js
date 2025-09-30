@@ -32,7 +32,7 @@ const WalletItemList = [
     text: "A user-friendly, [open-source](https://github.com/Emurgo/yoroi-frontend) Cardano wallet with a browser-based interface, providing a convenient way to manage ada holdings securely. Yoroi is also available as mobile app.",
     subtext: "Browser extension and app for iOS and Android",
     label: "Get Yoroi",
-    link: "https://yoroi-wallet.com/",
+    link: "https://yoroiwallet.com/",
   },
   {
     title: "Eternl Wallet",
