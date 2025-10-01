@@ -222,5 +222,12 @@
     "link": "https://www.taptools.io/",
     "knownFor": "Token distribution, comprehensive charts, NFT generation",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Kora Labs",
+    "imageName": "koralabs",
+    "link": "https://koralabs.io/",
+    "knownFor": "handle.me",
+    "showCompanyName": false
   }
 ]
