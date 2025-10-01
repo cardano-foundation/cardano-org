@@ -180,5 +180,12 @@
     "link": "https://spectrum.fi/overview",
     "knownFor": "Splash.trade",
     "showCompanyName": false
+  },
+  {
+    "companyName": "VESPR",
+    "imageName": "vespr",
+    "link": "https://vespr.xyz/about",
+    "knownFor": "VESPR Wallet",
+    "showCompanyName": false
   }
 ]
