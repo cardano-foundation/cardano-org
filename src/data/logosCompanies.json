@@ -159,5 +159,12 @@
     "link": "https://liqwid.finance/team",
     "knownFor": "Liqwid Pooled Lending Protocol",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Vellum Labs",
+    "imageName": "vellumlabs",
+    "link": "https://vellumlabs.cz",
+    "knownFor": "Cexplorer.io",
+    "showCompanyName": false
   }
 ]
