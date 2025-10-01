@@ -208,5 +208,12 @@
     "link": "https://www.zengate.global/",
     "knownFor": "Palmyra Platform",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Charli3",
+    "imageName": "charli3",
+    "link": "https://charli3.io/",
+    "knownFor": "Decentralized Oracle solutions",
+    "showCompanyName": false
   }
 ]
