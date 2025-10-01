@@ -229,5 +229,12 @@
     "link": "https://koralabs.io/",
     "knownFor": "handle.me",
     "showCompanyName": false
+  },
+  {
+    "companyName": "PoolTool",
+    "imageName": "pooltool",
+    "link": "https://pooltool.io/about",
+    "knownFor": "PoolTool for SPOs and stakeholders",
+    "showCompanyName": true
   }
 ]
