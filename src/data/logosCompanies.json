@@ -166,5 +166,12 @@
     "link": "https://vellumlabs.cz",
     "knownFor": "Cexplorer.io",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Tokeo Labs",
+    "imageName": "tokeo",
+    "link": "https://tokeo.io/team/",
+    "knownFor": "TokeoPay",
+    "showCompanyName": true
   }
 ]
