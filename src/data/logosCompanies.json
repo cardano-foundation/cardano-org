@@ -201,5 +201,12 @@
     "link": "https://www.bodegamarket.xyz/#about",
     "knownFor": "Bodega Market",
     "showCompanyName": true
+  },
+  {
+    "companyName": "zenGate",
+    "imageName": "zengate",
+    "link": "https://www.zengate.global/",
+    "knownFor": "Palmyra Platform",
+    "showCompanyName": false
   }
 ]
