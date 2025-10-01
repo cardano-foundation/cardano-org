@@ -215,5 +215,12 @@
     "link": "https://charli3.io/",
     "knownFor": "Decentralized Oracle solutions",
     "showCompanyName": false
+  },
+  {
+    "companyName": "TapTools",
+    "imageName": "taptools",
+    "link": "https://www.taptools.io/",
+    "knownFor": "Token distribution, comprehensive charts, NFT generation",
+    "showCompanyName": true
   }
 ]
