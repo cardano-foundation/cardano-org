@@ -194,5 +194,12 @@
     "link": "https://www.dexhunter.io/",
     "knownFor": "DexHunter DEX Aggregator",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Bodega Labs",
+    "imageName": "bodega",
+    "link": "https://www.bodegamarket.xyz/#about",
+    "knownFor": "Bodega Market",
+    "showCompanyName": true
   }
 ]
