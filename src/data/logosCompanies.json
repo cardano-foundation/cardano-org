@@ -187,5 +187,12 @@
     "link": "https://vespr.xyz/about",
     "knownFor": "VESPR Wallet",
     "showCompanyName": false
+  },
+  {
+    "companyName": "DexHunter",
+    "imageName": "dexhunter",
+    "link": "https://www.dexhunter.io/",
+    "knownFor": "DexHunter DEX Aggregator",
+    "showCompanyName": true
   }
 ]
