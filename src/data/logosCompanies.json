@@ -173,5 +173,12 @@
     "link": "https://tokeo.io/team/",
     "knownFor": "TokeoPay",
     "showCompanyName": true
+   },
+  {
+    "companyName": "Spectrum Finance",
+    "imageName": "spectrum-finance",
+    "link": "https://spectrum.fi/overview",
+    "knownFor": "Splash.trade",
+    "showCompanyName": false
   }
 ]
