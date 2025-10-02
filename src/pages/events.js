@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -6,6 +7,77 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import events from "@site/src/data/events.json";
+
+const EVENTS_PER_PAGE = 5;
+
+function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
+  if (totalPages <= 1) {
+    return null;
+  }
+
+  const go = (page) => {
+    const clamped = Math.max(1, Math.min(totalPages, page));
+    if (clamped === currentPage) return;
+    onPageChange(clamped);
+
+    if (typeof window !== 'undefined') {
+      const hash = anchorId ? `#${anchorId}` : '';
+      const el = anchorId ? document.getElementById(anchorId) : null;
+      if (el && el.scrollIntoView) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (history && history.replaceState) {
+          history.replaceState(null, '', hash);
+        } else if (hash) {
+          window.location.hash = hash;
+        }
+      } else if (hash) {
+        window.location.hash = hash;
+      }
+    }
+  };
+
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+  return (
+    <nav
+  className="events-pagination"
+  aria-label="Events pagination"
+>
+  <button
+    type="button"
+    onClick={() => go(currentPage - 1)}
+    disabled={currentPage === 1}
+    className="events-pagination__nav"
+  >
+    Previous
+  </button>
+
+  <ul className="events-pagination__list">
+    {pageNumbers.map((pageNumber) => (
+      <li key={pageNumber}>
+        <button
+          type="button"
+          onClick={() => go(pageNumber)}
+          className={`events-pagination__page ${pageNumber === currentPage ? 'is-active' : ''}`}
+          disabled={pageNumber === currentPage}
+        >
+          {pageNumber}
+        </button>
+      </li>
+    ))}
+  </ul>
+
+  <button
+    type="button"
+    onClick={() => go(currentPage + 1)}
+    disabled={currentPage === totalPages}
+    className="events-pagination__nav"
+  >
+    Next
+  </button>
+</nav>
+  );
+}
 
 function EventDateTitle({ startDate, endDate, title, link }) {
   const options = { timeZone: 'UTC', month: 'long' };
@@ -49,6 +121,63 @@ export default function Home() {
   const today = new Date();
   // Create a new date object representing the start of today in UTC
   const todayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  const todayTimestamp = todayUTC.getTime();
+
+  const [upcomingPage, setUpcomingPage] = useState(1);
+  const [pastPage, setPastPage] = useState(1);
+
+  const { upcomingEvents, pastEvents } = useMemo(() => {
+    const sortedEvents = [...events].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+
+    const upcoming = sortedEvents.filter((event) => new Date(event.startDate) >= todayUTC);
+    const past = sortedEvents
+      .filter((event) => new Date(event.startDate) < todayUTC && event.recapVideo)
+      .reverse();
+
+    return {
+      upcomingEvents: upcoming,
+      pastEvents: past,
+    };
+  }, [todayTimestamp]);
+
+  const upcomingTotalPages = Math.ceil(upcomingEvents.length / EVENTS_PER_PAGE);
+  const pastTotalPages = Math.ceil(pastEvents.length / EVENTS_PER_PAGE);
+
+  useEffect(() => {
+    if (upcomingTotalPages === 0) {
+      if (upcomingPage !== 1) {
+        setUpcomingPage(1);
+      }
+      return;
+    }
+
+    if (upcomingPage > upcomingTotalPages) {
+      setUpcomingPage(upcomingTotalPages);
+    }
+  }, [upcomingEvents, upcomingPage, upcomingTotalPages]);
+
+  useEffect(() => {
+    if (pastTotalPages === 0) {
+      if (pastPage !== 1) {
+        setPastPage(1);
+      }
+      return;
+    }
+
+    if (pastPage > pastTotalPages) {
+      setPastPage(pastTotalPages);
+    }
+  }, [pastEvents, pastPage, pastTotalPages]);
+
+  const paginatedUpcomingEvents = useMemo(() => {
+    const startIndex = (upcomingPage - 1) * EVENTS_PER_PAGE;
+    return upcomingEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
+  }, [upcomingEvents, upcomingPage]);
+
+  const paginatedPastEvents = useMemo(() => {
+    const startIndex = (pastPage - 1) * EVENTS_PER_PAGE;
+    return pastEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
+  }, [pastEvents, pastPage]);
 
   return (
     <Layout
@@ -99,10 +228,7 @@ export default function Home() {
       <BoundaryBox>
             <Divider text="Upcoming highlighted Events" id ="upcoming"/>
             <ul>
-              {events
-                .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) >= todayUTC)
-                .map(event => (
+              {paginatedUpcomingEvents.map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>
                     <EventDateTitle
@@ -137,16 +263,19 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <Pagination
+              currentPage={upcomingPage}
+              totalPages={upcomingTotalPages}
+              onPageChange={setUpcomingPage}
+              anchorId="upcoming"
+            />
         </BoundaryBox>
 
-        
+
         <BoundaryBox>
             <Divider text="Past Highlighted Events" id="past"/>
             <ul>
-              {events
-                .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-                .filter(event => new Date(event.startDate) < todayUTC && event.recapVideo)
-                .map(event => (
+              {paginatedPastEvents.map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
                   <h3>
                     <EventDateTitle
@@ -211,6 +340,12 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <Pagination
+              currentPage={pastPage}
+              totalPages={pastTotalPages}
+              onPageChange={setPastPage}
+              anchorId="past"
+            />
          </BoundaryBox>
       </BackgroundWrapper>
 
