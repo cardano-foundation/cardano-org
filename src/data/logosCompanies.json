@@ -250,5 +250,12 @@
     "link": "https://adastat.net/about",
     "knownFor": "AdaStat statistics and insights",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Butane",
+    "imageName": "butane",
+    "link": "https://butane.dev/company",
+    "knownFor": "Butane Plattform",
+    "showCompanyName": false
   }
 ]
