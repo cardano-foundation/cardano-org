@@ -40,66 +40,42 @@ function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
 
   return (
     <nav
-      className="events-pagination"
-      aria-label="Events pagination"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "1rem",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        marginTop: "1rem"
-      }}
-    >
-      <button
-        type="button"
-        onClick={() => go(currentPage - 1)}
-        disabled={currentPage === 1}
-        style={{
-          padding: "0.5rem 1rem",
-          borderRadius: "4px",
-          border: "1px solid #ccc",
-          backgroundColor: "white",
-          cursor: currentPage === 1 ? "not-allowed" : "pointer"
-        }}
-      >
-        Previous
-      </button>
-      <ul style={{ display: "flex", gap: "0.5rem", listStyle: "none", margin: 0, padding: 0 }}>
-        {pageNumbers.map((pageNumber) => (
-          <li key={pageNumber}>
-            <button
-              type="button"
-              onClick={() => go(pageNumber)}
-              style={{
-                padding: "0.5rem 0.85rem",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-                backgroundColor: pageNumber === currentPage ? "#0056D2" : "white",
-                color: pageNumber === currentPage ? "#fff" : "inherit",
-                cursor: pageNumber === currentPage ? "default" : "pointer"
-              }}
-            >
-              {pageNumber}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <button
-        type="button"
-        onClick={() => go(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        style={{
-          padding: "0.5rem 1rem",
-          borderRadius: "4px",
-          border: "1px solid #ccc",
-          backgroundColor: "white",
-          cursor: currentPage === totalPages ? "not-allowed" : "pointer"
-        }}
-      >
-        Next
-      </button>
-    </nav>
+  className="events-pagination"
+  aria-label="Events pagination"
+>
+  <button
+    type="button"
+    onClick={() => go(currentPage - 1)}
+    disabled={currentPage === 1}
+    className="events-pagination__nav"
+  >
+    Previous
+  </button>
+
+  <ul className="events-pagination__list">
+    {pageNumbers.map((pageNumber) => (
+      <li key={pageNumber}>
+        <button
+          type="button"
+          onClick={() => go(pageNumber)}
+          className={`events-pagination__page ${pageNumber === currentPage ? 'is-active' : ''}`}
+          disabled={pageNumber === currentPage}
+        >
+          {pageNumber}
+        </button>
+      </li>
+    ))}
+  </ul>
+
+  <button
+    type="button"
+    onClick={() => go(currentPage + 1)}
+    disabled={currentPage === totalPages}
+    className="events-pagination__nav"
+  >
+    Next
+  </button>
+</nav>
   );
 }
 
