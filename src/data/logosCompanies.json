@@ -257,5 +257,12 @@
     "link": "https://butane.dev/company",
     "knownFor": "Butane Plattform",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Anastasia Labs",
+    "imageName": "anastasialabs",
+    "link": "https://www.anastasialabs.com/",
+    "knownFor": "Lucid",
+    "showCompanyName": false
   }
 ]
