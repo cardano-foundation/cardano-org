@@ -236,5 +236,12 @@
     "link": "https://pooltool.io/about",
     "knownFor": "PoolTool for SPOs and stakeholders",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Genius Yield",
+    "imageName": "genius-yield",
+    "link": "https://www.geniusyield.co/",
+    "knownFor": "Genius Yield DEX",
+    "showCompanyName": false
   }
 ]
