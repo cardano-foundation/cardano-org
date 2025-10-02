@@ -10,10 +10,31 @@ import events from "@site/src/data/events.json";
 
 const EVENTS_PER_PAGE = 5;
 
-function Pagination({ currentPage, totalPages, onPageChange }) {
+function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
   if (totalPages <= 1) {
     return null;
   }
+
+  const go = (page) => {
+    const clamped = Math.max(1, Math.min(totalPages, page));
+    if (clamped === currentPage) return;
+    onPageChange(clamped);
+
+    if (typeof window !== 'undefined') {
+      const hash = anchorId ? `#${anchorId}` : '';
+      const el = anchorId ? document.getElementById(anchorId) : null;
+      if (el && el.scrollIntoView) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (history && history.replaceState) {
+          history.replaceState(null, '', hash);
+        } else if (hash) {
+          window.location.hash = hash;
+        }
+      } else if (hash) {
+        window.location.hash = hash;
+      }
+    }
+  };
 
   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
@@ -32,7 +53,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
     >
       <button
         type="button"
-        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+        onClick={() => go(currentPage - 1)}
         disabled={currentPage === 1}
         style={{
           padding: "0.5rem 1rem",
@@ -49,7 +70,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
           <li key={pageNumber}>
             <button
               type="button"
-              onClick={() => onPageChange(pageNumber)}
+              onClick={() => go(pageNumber)}
               style={{
                 padding: "0.5rem 0.85rem",
                 borderRadius: "4px",
@@ -66,7 +87,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
       </ul>
       <button
         type="button"
-        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+        onClick={() => go(currentPage + 1)}
         disabled={currentPage === totalPages}
         style={{
           padding: "0.5rem 1rem",
@@ -270,6 +291,7 @@ export default function Home() {
               currentPage={upcomingPage}
               totalPages={upcomingTotalPages}
               onPageChange={setUpcomingPage}
+              anchorId="upcoming"
             />
         </BoundaryBox>
 
@@ -346,6 +368,7 @@ export default function Home() {
               currentPage={pastPage}
               totalPages={pastTotalPages}
               onPageChange={setPastPage}
+              anchorId="past"
             />
          </BoundaryBox>
       </BackgroundWrapper>
