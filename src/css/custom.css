@@ -487,3 +487,21 @@ img {
     flex-direction: column;
   }
 }
+
+/* Insights Supply epoch prev/next navigation buttons */
+.epochNavSticky {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 60px) + 22px);
+  z-index: 20;
+}
+.epochNavSticky nav {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  .epochNavSticky { position: fixed; top: auto; right: 12px; bottom: 12px; }
+}
