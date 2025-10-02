@@ -243,5 +243,12 @@
     "link": "https://www.geniusyield.co/",
     "knownFor": "Genius Yield DEX",
     "showCompanyName": false
+  },
+  {
+    "companyName": "AdaStat",
+    "imageName": "adastat",
+    "link": "https://adastat.net/about",
+    "knownFor": "AdaStat statistics and insights",
+    "showCompanyName": false
   }
 ]
