@@ -1,0 +1,11 @@
+export const MIN_EPOCH = 209;
+
+export function getEpochDate(epoch) {
+  const startEpoch = MIN_EPOCH;
+  const startDate = new Date('2020-08-03T21:44:00Z');
+  const msPerEpoch = 5 * 24 * 60 * 60 * 1000;
+  const offsetEpochs = epoch - startEpoch;
+  return new Date(startDate.getTime() + offsetEpochs * msPerEpoch)
+    .toISOString()
+    .split('T')[0];
+}

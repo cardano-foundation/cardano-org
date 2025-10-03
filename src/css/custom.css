@@ -488,7 +488,7 @@ img {
   }
 }
 
-/* Insights Supply epoch prev/next navigation buttons */
+/* Start: Insights Supply epoch prev/next navigation buttons */
 .epochNavSticky {
   position: sticky;
   top: calc(var(--ifm-navbar-height, 60px) + 22px);
@@ -505,3 +505,111 @@ img {
 @media (max-width: 768px) {
   .epochNavSticky { position: fixed; top: auto; right: 12px; bottom: 12px; }
 }
+
+/* Container + main row */
+.epochNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.epochNavMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.epochNavLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Larger center label (desktop/tablet) */
+.epochNavLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  font-size: 1rem;
+}
+.epochNavLabel strong { font-size: 1.1rem; line-height: 1; }
+
+/* Desktop jump input aligned right */
+.epochJump--desktop {
+  margin-left: auto;
+  display: flex;            /* desktop default: visible */
+  align-items: center;
+}
+
+.epochJumpRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.epochJumpInput {
+  width: 8ch;               /* roomy for 4 digits */
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.epochJumpGo { padding-inline: 12px; }
+.epochJumpCancel { display: none; } /* never on desktop */
+
+.epochJumpHint { font-size: 11px; color: var(--ifm-color-emphasis-700); }
+.epochJumpHint.is-invalid { color: var(--ifm-color-danger); }
+
+/* Hide “Jump…” button on desktop */
+.epochJumpLink { display: none; }
+
+/* -------- Mobile behavior -------- */
+@media (max-width: 768px) {
+  .epochNav { gap: 0.5rem; }
+
+  /* Keep Prev/Next tap-friendly */
+  .epochNav .button { min-height: 36px; }
+
+  /* On mobile, hide desktop input by default */
+  .epochJump--desktop { display: none; }
+
+  /* Show “Jump…” trigger on the right */
+  .epochJumpLink {
+    display: inline-flex;
+    background: transparent;
+    border: 1px dashed var(--ifm-color-emphasis-300);
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+
+  /* Mobile jump block is hidden by default */
+  .epochJump--mobile { display: none; }
+
+  /* When jump mode is active, hide main row and show mobile jump */
+  .epochNav.is-jump .epochNavMain { display: none; }
+  .epochNav.is-jump .epochJump--mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .epochNav.is-jump .epochJumpInput {
+    width: 6ch;             /* compact but fits 4 digits */
+    padding: 4px 8px;
+    font-size: 0.95rem;
+  }
+  .epochNav.is-jump .epochJumpGo { padding: 4px 10px; }
+  .epochNav.is-jump .epochJumpCancel { display: inline-flex; }
+}
+/* end Insights page epoch navigation */

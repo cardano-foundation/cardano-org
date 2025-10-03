@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,6 +9,11 @@ import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 
+import { makeApiClient } from '@site/src/lib/insights/api';
+import { parseApiError } from '@site/src/lib/insights/errors';
+import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/lib/insights/numbers';
+import { MIN_EPOCH, getEpochDate } from '@site/src/lib/insights/epochs';
+
 // Layout components 
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
 import TitleWithText from '@site/src/components/Layout/TitleWithText';
@@ -18,7 +23,7 @@ import EpochNav from '@site/src/components/Layout/InsightsEpochNav';
 import authors from '@site/src/data/authors.json';
 
 // ────────────────────────────────────────────────────────────────────────────
-//  Meta
+//  Page Meta
 // ────────────────────────────────────────────────────────────────────────────
 const meta = {
   pageTitle: 'Cardano Supply Overview',
@@ -34,22 +39,6 @@ const meta = {
       'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'
   }
 };
-
-// ────────────────────────────────────────────────────────────────────────────
-//  Helpers & constants
-// ────────────────────────────────────────────────────────────────────────────
-const MIN_EPOCH = 209;
-const convertLovelacesToAda = (lovelaces) => Math.round(lovelaces / 1_000_000);
-
-function getEpochDate(epoch) {
-  const startEpoch = MIN_EPOCH; // Byron→Shelley transition (approx.)
-  const startDate = new Date('2020-08-03T21:44:00Z');
-  const msPerEpoch = 5 * 24 * 60 * 60 * 1000;
-  const offsetEpochs = epoch - startEpoch;
-  return new Date(startDate.getTime() + offsetEpochs * msPerEpoch)
-    .toISOString()
-    .split('T')[0];
-}
 
 // ────────────────────────────────────────────────────────────────────────────
 //  Donut chart (ECharts) — init once, update via setOption
@@ -152,137 +141,207 @@ function DonutChartEcharts({ chartData }) {
 
   return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
 }
-
 // ────────────────────────────────────────────────────────────────────────────
 //  Main page content
 // ────────────────────────────────────────────────────────────────────────────
 function PageContent() {
-  const history = useHistory();
-  
-  const handleGoEpoch = (nextEpoch) => {
-    const y = window.scrollY;                 // keep current scroll
-    history.push(`?epoch=${nextEpoch}`);      // update router location
-    requestAnimationFrame(() => window.scrollTo(0, y)); // restore scroll
-  };
-
-  const {
-    siteConfig: { customFields }
-  } = useDocusaurusContext();
-  const location = useLocation();
-  const urlEpoch = new URLSearchParams(location.search).get('epoch');
-
+  const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const API_KEY = customFields.CARDANO_ORG_API_KEY;
+  const apiRef = useRef(null);
+  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  
+  const location = useLocation();
+  const initialUrlEpoch = new URLSearchParams(location.search).get('epoch');
+  
+  //const history = useHistory();
 
+  // state
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorInfo, setErrorInfo] = useState(null);
+  // chain epoch data 
+  const [currentEpochNo, setCurrentEpochNo] = useState(null);
   const [totalsCurr, setTotalsCurr] = useState(null);
   const [totalsPrev, setTotalsPrev] = useState(null);
   const [withdrawalsCurrRes, setWithdrawalsCurr] = useState([]);
   const [withdrawalsPrevRes, setWithdrawalsPrev] = useState([]);
   const [epochInfoPrev1, setEpochInfoPrev1] = useState(null);
   const [epochInfoPrev2, setEpochInfoPrev2] = useState(null);
-  const [currentEpochNo, setCurrentEpochNo] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null);  
+  //const [withdrawalsCurr, setWithdrawalsCurr] = useState([]);
 
-  useEffect(() => {
-    if (!API_URL || !API_KEY) {
-      setError('API URL or API Key is missing!');
+  const isPrimed = Boolean(totalsCurr && totalsPrev && epochInfoPrev1 && epochInfoPrev2);
+
+  const lastScrollYRef = useRef(0);
+  
+  const fetchData = async () => {
+    if (!API_URL) {
+      setErrorInfo({ kind: 'config', title: 'Missing configuration', message: 'API URL is missing.' });
       return;
     }
-
-    async function fetchData() {
-      try {
-        // 1) fetch current tip epoch
-        const tipRes = await axios.get(`${API_URL}/tip`, {
-          headers: { Authorization: `Bearer ${API_KEY}` }
-        });
-        const tipEpoch = tipRes.data?.[0]?.epoch_no;
-        setCurrentEpochNo(tipEpoch);
-
-        // 2) parse URL epoch
-        const parsedEpoch = parseInt(urlEpoch, 10);
-        const validEpoch = urlEpoch && !isNaN(parsedEpoch) && parsedEpoch >= MIN_EPOCH ? parsedEpoch : null;
-        if (urlEpoch && (isNaN(parsedEpoch) || parsedEpoch < MIN_EPOCH)) {
-          setError(`Epoch must be ≥ ${MIN_EPOCH}.`);
-          return;
-        }
-
-        // 3) choose displayed epoch
-        const displayedEpoch = validEpoch ?? tipEpoch;
-
-        // 4) fetch data for displayed epoch
-        const totalsCurrRes = await axios.get(`${API_URL}/totals?_epoch_no=${displayedEpoch}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-        setTotalsCurr({ epoch_no: displayedEpoch, ...totalsCurrRes.data[0] });
-
-        const totalsPrevRes = await axios.get(`${API_URL}/totals?_epoch_no=${displayedEpoch - 1}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-        setTotalsPrev({ epoch_no: displayedEpoch-1, ...totalsPrevRes.data[0] });
-
-        const epochInfoPrev1Res = await axios.get(`${API_URL}/epoch_info?_epoch_no=${displayedEpoch - 1}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-        setEpochInfoPrev1(epochInfoPrev1Res.data[0]);
-
-        const epochInfoPrev2Res = await axios.get(`${API_URL}/epoch_info?_epoch_no=${displayedEpoch - 2}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-        setEpochInfoPrev2(epochInfoPrev2Res.data[0]);
-
-        // withdrawals (paginated) => FAQ 
-        let withdrawals = [];
-        let offset = 0;
-        let page;
-        do {
-          const resp = await axios.get(`${API_URL}/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch}&offset=${offset}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-          page = resp.data || [];
-          withdrawals = withdrawals.concat(page);
-          offset += 1000;
-        } while (page.length > 0);
-        setWithdrawalsCurr(withdrawals);
-		
-		// repeat for previous epoch to calculate the treasury growth or depletion 
-        withdrawals = [];
-        offset = 0;
-        do {
-          const resp = await axios.get(`${API_URL}/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch-1}&offset=${offset}`, { headers: { Authorization: `Bearer ${API_KEY}` } });
-          page = resp.data || [];
-          withdrawals = withdrawals.concat(page);
-          offset += 1000;
-        } while (page.length > 0);
-        setWithdrawalsPrev(withdrawals);
-		
-      } catch (e) {
-        setError(e.message);
+    setIsLoading(true);
+    setErrorInfo(null);
+    const api = apiRef.current ?? makeApiClient(API_URL);
+	
+    try {
+      // parse & validate current URL epoch
+      const tipRes = await api.get('/tip');
+      const tipEpoch = tipRes.data?.[0]?.epoch_no;
+      setCurrentEpochNo(tipEpoch);
+      const urlEpochNow = new URLSearchParams(window.location.search).get('epoch');
+      const parsed = parseInt(urlEpochNow, 10);
+      const validEpoch = urlEpochNow && !Number.isNaN(parsed) && parsed >= MIN_EPOCH ? parsed : null;
+      if (urlEpochNow && (Number.isNaN(parsed) || parsed < MIN_EPOCH)) {
+        setErrorInfo({ kind: 'input', title: 'Invalid epoch', message: `Epoch must be ≥ ${MIN_EPOCH}.` });
+        setIsLoading(false);
+        return;
       }
+      const displayedEpoch = validEpoch ?? tipEpoch;
+
+      // fetch epoch data in parallel (previous ones for delta calculations) 
+      const [totalsCurrRes, totalsPrevRes, epochInfoPrev1Res, epochInfoPrev2Res] = await Promise.all([
+        api.get(`/totals?_epoch_no=${displayedEpoch}`),
+        api.get(`/totals?_epoch_no=${displayedEpoch - 1}`),
+        api.get(`/epoch_info?_epoch_no=${displayedEpoch - 1}`),
+        api.get(`/epoch_info?_epoch_no=${displayedEpoch - 2}`),
+      ]);
+      setTotalsCurr({ epoch_no: displayedEpoch, ...totalsCurrRes.data[0] });
+      setTotalsPrev(totalsPrevRes.data[0]);
+      setEpochInfoPrev1(epochInfoPrev1Res.data[0]);
+      setEpochInfoPrev2(epochInfoPrev2Res.data[0]);
+
+      // fetch treasury withdrawals (paged. rare. for example epoch 374)
+      let withdrawals = [];
+      let offset = 0;
+      while (true) {
+        const r = await api.get(
+          `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch}&offset=${offset}`
+        );
+        const page = r.data || [];
+        withdrawals = withdrawals.concat(page);
+        if (!page.length) break;
+        offset += 1000;
+      }
+      setWithdrawalsCurr(withdrawals);
+      // repeat for previous epoch to calculate the treasury growth or depletion 
+      withdrawals = [];
+      offset = 0;
+      while (true) {
+        const r = await api.get(
+          `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch-1}&offset=${offset}`
+        );
+        const page = r.data || [];
+        withdrawals = withdrawals.concat(page);
+        if (!page.length) break;
+        offset += 1000;
+      }
+      setWithdrawalsPrev(withdrawals);
+		
+    } catch (err) {
+      setErrorInfo(parseApiError(err));
+    } finally {
+      setIsLoading(false);
     }
+  }
 
+  // first mount: load (uses initialUrlEpoch via window.location since we read inside fetchData)
+  useEffect(() => {
     fetchData();
-  }, [API_URL, API_KEY, urlEpoch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [API_URL, initialUrlEpoch]); // initialUrlEpoch just to fire once with router-provided query
 
-  if (error) {
+  // back/forward support (URL changes without router navigation)
+  useEffect(() => {
+    const onPop = () => fetchData();
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Restore scroll AFTER new epoch data is committed
+  useLayoutEffect(() => {
+    if (!isPrimed) return;
+    if (lastScrollYRef.current > 0) {
+      window.scrollTo(0, lastScrollYRef.current);
+      lastScrollYRef.current = 0;
+    }
+  }, [isPrimed, totalsCurr?.epoch_no]);
+
+  // epoch nav handler: URL only (no router nav) + fetch, keep scroll
+  const handleGoEpoch = (nextEpoch) => {
+    lastScrollYRef.current = window.scrollY;
+    window.history.pushState({}, '', `?epoch=${nextEpoch}`);
+    fetchData();
+  };
+
+  // Error UI (mainly for API failures, like timeouts, network disconnections, or API side rate limits. see src/lib/insights/errors) 
+  if (errorInfo && !isPrimed) {
     return (
       <>
         <Head>
           <meta name="robots" content="noindex" />
         </Head>
-        <p>Error: {error}</p>
-        <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
-          Try appending <code>?epoch={MIN_EPOCH + 1}</code> to the URL.
-        </p>
+        <div
+          role="alert"
+          style={{
+            border: '1px solid var(--ifm-color-emphasis-300)',
+            padding: '1rem',
+            borderRadius: 8,
+            background: 'var(--ifm-background-surface-color)',
+          }}
+        >
+          <h3 style={{ marginTop: 0 }}>{errorInfo.title}</h3>
+          <p style={{ marginBottom: 8 }}>{errorInfo.message}</p>
+          {errorInfo.extra && (
+            <p style={{ margin: 0, color: '#666' }}>
+              {errorInfo.extra}
+            </p>
+          )}
+          {errorInfo.kind === 'input' && (
+            <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', color: '#666' }}>
+              Try appending <code>?epoch={MIN_EPOCH + 1}</code> to the URL.
+            </p>
+          )}
+          <div style={{ marginTop: '0.75rem' }}>
+            <button
+              className="button button--primary button--sm"
+              onClick={fetchData}
+              disabled={isLoading}
+              aria-disabled={isLoading}
+            >
+              {isLoading ? 'Retrying…' : 'Retry'}
+            </button>
+          </div>
+        </div>
       </>
     );
   }
-  if (!totalsCurr || !totalsPrev || !epochInfoPrev1 || !epochInfoPrev2) return <p>Loading...</p>;
 
-  // chart/table data
+  // first load placeholder
+  if (!isPrimed) {
+    return <p>Loading…</p>;
+  }
+ 
+  // derived data (load only now, not earlier!)
+  const displayedEpoch = totalsCurr.epoch_no;
+  const epochDate = getEpochDate(displayedEpoch);
+  const isCurrentEpoch = currentEpochNo != null && displayedEpoch === currentEpochNo;
+
+  // donut chart data
   const chartData = [
-    { label: 'Circulation', value: totalsCurr.circulation, color: '#5470c6', show_in_donut: true, context_info: 'Sum of all circulating UTxO`s' },
-    { label: 'Treasury', value: totalsCurr.treasury, color: '#91cc75', show_in_donut: true, context_info: 'All ada currently allocated to the treasury pot.' },
-    { label: 'Rewards', value: totalsCurr.reward, color: '#fac858', show_in_donut: true, context_info: 'All unclaimed Rewards' },
-    { label: 'Deposits Stake', value: totalsCurr.deposits_stake, color: '#ee6666', show_in_donut: true, context_info: 'Deposit pot for all currently registered Stake pools and all Staking Accounts.' },
-    { label: 'Deposits DRep', value: totalsCurr.deposits_drep, color: '#73c0de', show_in_donut: true, context_info: 'Deposit pot for all currently registered DRep`s' },
-    { label: 'Deposits Proposal', value: totalsCurr.deposits_proposal, color: '#3ba272', show_in_donut: true, context_info: 'Deposit pot for all currently active Governance actions.' },
-    { label: 'Fees', value: totalsCurr.fees, color: '#fc8452', show_in_donut: true, context_info: 'The amount of ada collected in the fee pot.' },
-    { label: 'Total Supply', value: totalsCurr.supply, color: '#999999', show_in_donut: false, context_info: 'All ada currently in circulation, unclaimed rewards, all deposits, fees and the treasury.' },
-    { label: 'Reserves', value: totalsCurr.reserves, color: '#9a60b4', show_in_donut: true, context_info: 'The remaining difference between maximum and total Supply' }
+    { label: 'Circulation',        value: totalsCurr.circulation,      color: '#5470c6', show_in_donut: true,  context_info: 'Sum of all circulating UTxOs' },
+    { label: 'Treasury',           value: totalsCurr.treasury,         color: '#91cc75', show_in_donut: true,  context_info: 'All ada currently in the treasury pot' },
+    { label: 'Rewards',            value: totalsCurr.reward,           color: '#fac858', show_in_donut: true,  context_info: 'All unclaimed rewards' },
+    { label: 'Deposits Stake',     value: totalsCurr.deposits_stake,   color: '#ee6666', show_in_donut: true,  context_info: 'Deposit pot for registered stake pools and staking accounts' },
+    { label: 'Deposits DRep',      value: totalsCurr.deposits_drep,    color: '#73c0de', show_in_donut: true,  context_info: 'Deposit pot for registered DReps' },
+    { label: 'Deposits Proposal',  value: totalsCurr.deposits_proposal,color: '#3ba272', show_in_donut: true,  context_info: 'Deposit pot for active governance actions' },
+    { label: 'Fees',               value: totalsCurr.fees,             color: '#fc8452', show_in_donut: true,  context_info: 'Fees collected' },
+    { label: 'Total Supply',       value: totalsCurr.supply,           color: '#999999', show_in_donut: false, context_info: 'All ada in circulation + unclaimed rewards + deposits + fees + treasury' },
+    { label: 'Reserves',           value: totalsCurr.reserves,         color: '#9a60b4', show_in_donut: true,  context_info: 'Difference between maximum and total supply' },
   ];
   const maxSupply = chartData
     .filter((d) => d.show_in_donut)
-    .reduce((sum, d) => sum + parseInt(d.value, 10), 0);
+    .reduce((sum, d) => sum + Number(d.value || 0), 0);
+
   chartData.push({
     label: 'Maximum supply',
     value: maxSupply,
@@ -292,11 +351,7 @@ function PageContent() {
       'The maximum amount of ada that can ever exist, based on the genesis block definition.'
   });
 
-  const displayedEpoch = totalsCurr.epoch_no;
-  const epochDate = getEpochDate(displayedEpoch);
-  const isCurrentEpoch = currentEpochNo != null && displayedEpoch === currentEpochNo;
-
-  // deltas for FAQ
+  // delta calculations for FACT section
   const deltaReserves = totalsPrev.reserves - totalsCurr.reserves;
   const percentOfReserves = ((deltaReserves / totalsCurr.reserves) * 100).toFixed(2);
   const deltaSupply = totalsCurr.supply - totalsPrev.supply;
@@ -316,12 +371,12 @@ function PageContent() {
 
   const pageTitle = `Cardano Supply – Epoch ${displayedEpoch} (${epochDate})`;
   const pageDescription = `ADA supply distribution for epoch ${displayedEpoch}, started on ${epochDate}.`;
-  const canonicalUrl = `https://yourdomain.com/insights/supply${urlEpoch ? `?epoch=${displayedEpoch}` : ''}`;
+  const canonicalUrl = `https://yourdomain.com/insights/supply${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
 
   const navStickyClass = 'epochNavSticky'; // CSS is in custom.css
 
   return (
-    <>
+  <>
       <Head>
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
@@ -462,7 +517,7 @@ function PageContent() {
             ? (
               <>A: In the currently running epoch,&nbsp;
                 <strong>{convertLovelacesToAda(totalsCurr.fees).toLocaleString()} ada</strong> in transaction fees
-				have been <strong>paid</strong> so far.</>
+				have been <strong>paid</strong> so far. </>
             )
             : (
               <>A: In epoch {displayedEpoch}, a total of <strong>{convertLovelacesToAda(totalsCurr.fees).toLocaleString()} ada</strong> in transaction fees was collected for a distribution next epoch.&nbsp;</>
@@ -488,7 +543,7 @@ function PageContent() {
         
 		{/* #############################  */}
         <p>
-          <strong>Q: Where can I learn more about the Cardano Mainnet reward calculation??</strong>
+          <strong>Q: Where can I learn more about the Cardano Mainnet reward calculation?</strong>
         </p>
         <p>
             The reward calculation is based on the <Link href="https://github.com/IntersectMBO/cardano-ledger?tab=readme-ov-file#cardano-ledger">ledger specification</Link>. 
@@ -502,8 +557,16 @@ function PageContent() {
         
       </div>
 
+      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none',  background: 'transparent', }} aria-hidden="true" >
+        {/* subtle top-right spinner */}
+        <div style={{ position: 'fixed', top: 12, right: 12, padding: '6px 10px', borderRadius: 8, background: 'var(--ifm-background-surface-color)', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', fontSize: 12, opacity: 0.85 }}>
+          Loading…
+        </div>
+      </div>
+
       <InsightsFooter lastUpdated={`${epochDate} (epoch ${displayedEpoch})`} epoch={displayedEpoch} />
-    </>
+
+	</>
   );
 }
 
