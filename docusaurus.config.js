@@ -14,7 +14,7 @@ import 'dotenv/config';
 const vars = require('./variables')
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = false;
+const isAnnouncementActive = true;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -125,6 +125,7 @@ const config = {
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
               {to: '/newsletter', label: 'Newsletter'}, 
               {to: '/#follow', label: 'Follow Cardano'},
+              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'}, 
               {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
             ],
@@ -147,6 +148,7 @@ const config = {
               {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
               {to: '/exchanges', label: 'Integrate Cardano'}, 
+              {to: '/entities/#companies', label: 'Companies building on Cardano'}, 
             ],
           },
           {
@@ -307,9 +309,9 @@ const config = {
     // id: always change it when changing the announcement
     // backgroundColor: use #1442B3 for announcements
     announcementBar: isAnnouncementActive ?{
-      id: "announcement_index2", // Any value that will identify this message + increment the number every time to be unique
+      id: "announcement_index4", // Any value that will identify this message + increment the number every time to be unique
       content:
-        `<strong>Calling all artists, designers, and creators to flex your creative muscles and reimagine the website header! ⭐️<a target="_blank" rel="noopener noreferrer" href="https://forum.cardano.org/t/call-for-artwork-design-the-new-cardano-org-header/139421?u=adatainment">$5,000 in prizes, sponsored by CF</a></strong>`,
+        `<strong>Cardano Summit 2025 Berlin - Early Bird Tickets are live! 🎟️ Secure your discounted pass now ➡️ <a href="https://summit.cardano.org/page/5056323/tickets#section-6268783" style="color:white; font-weight:bold; text-decoration:underline;">Visit the ticket shop</a></strong>`,
       backgroundColor: "#1442B3",
       textColor: "#FFFFFF", // Use #FFFFFF
       isCloseable: true, // Use true

@@ -7,7 +7,8 @@
     "location": "Las Vegas",
     "link": "https://rareevo.io/dev-day",
     "image": "raredev-2025.avif",
-    "organizer": "Rare Network"
+    "organizer": "Rare Network",
+    "recapVideo": "vbWal8A6_lQ"
   },
   {
     "title": "Blockchain Rio",
@@ -17,7 +18,8 @@
     "location": "Rio de Janeiro",
     "link": "https://blockchainrio.com.br/en/",
     "image": "blockchainrio-2025.webp",
-    "organizer": "The Cardano Foundation"
+    "organizer": "The Cardano Foundation",
+    "recapVideo": ""
   },
   {
     "title": "TOKEN 2049",
@@ -27,7 +29,8 @@
     "location": "Singapore",
     "link": "https://www.token2049.com/",
     "image": "token2049-2025.jpg",
-    "organizer": "EMURGO"
+    "organizer": "EMURGO",
+    "recapVideo": ""
   },
   {
     "title": "Cardano Summit 2025",
@@ -37,26 +40,228 @@
     "location": "Berlin",
     "link": "https://summit.cardano.org/",
     "image": "cardanosummit-2025.webp",
-    "organizer": "The Cardano Foundation"
+    "organizer": "The Cardano Foundation",
+    "recapVideo": ""
   },
   {
-    "title": "India Blockchain Week Bangalore",
-    "description": "Regional Cardano event during India Blockchain Week. The India Blockchain Week (IBW) is India's premier series of blockchain and web3 events, held from December 1-7, 2025.",
-    "startDate": "2025-11-29",
-    "endDate": "2025-11-30",
+    "title": "IBW2025 Conference",
+    "description": "India’s flagship web3 conference. Learn from global influential leaders, connect with like-minded peers, and shape the future of the web3 industry.",
+    "startDate": "2025-12-02",
+    "endDate": "2025-12-03",
     "location": "Bangalore, India",
     "link": "https://indiablockchainweek.com",
     "image": "indiablockchainweek-2025.jpg",
-    "organizer": "EMURGO"
+    "organizer": "EMURGO",
+    "recapVideo": ""
   },
   {
-    "title": "Eureka Conference",
-    "description": "The crypto conference for visionaries.",
-    "startDate": "2025-06-20",
-    "endDate": "",
+    "title": "Azteca 2025 - Mexico Cardano Community Events",
+    "description": "Azteca 2025 brought together 400+ Cardano enthusiasts across two days, with talks, panels, workshops, and community activities—showcasing Latin America’s growing role in Cardano.",
+    "startDate": "2025-05-27",
+    "endDate": "2025-05-29",
+    "location": "Puebla & Tlaxcala, Mexico",
+    "link": "https://forum.cardano.org/t/recap-azteca-2025-cardano-community-events-in-mexico/146670",
+    "image": "",
+    "organizer": "Cardano Mexico and Latam Cardano Community",
+    "recapVideo": "KYmYswDjgWc"
+  },
+   {
+    "title": "Berlin Hackathon 2025",
+    "description": "Cardano Hackathon Berlin 2025, June 13–14, hosted by NMKR & Masumi at w3.hub, was a two-day mix of coding, collaboration & real talk, focused on building real tools for real users on Cardano.",
+    "startDate": "2025-06-13",
+    "endDate": "2025-06-14",
     "location": "Berlin",
-    "link": "https://eureka.events",
-    "image": "eureka-2025.jpg",
-    "organizer": "Local Cardano Community"
+    "link": "https://www.meetup.com/de-DE/cardano-berlin/",
+    "image": "",
+    "organizer": "NMKR and Masumi",
+    "recapVideo": "NelGwvlVzDc"
+  },
+   {
+    "title": "Bangalore Tech Summit 2025",
+    "description": "Asia’s largest technology event, featuring 1,200 exhibitors, over 100,000 attendees, keynote sessions, and the theme “Futurise.” Focus areas include AI, DeepTech, Biotech, SpaceTech. Designed for global entrepreneurs, startups, investors, and policymakers.",
+    "startDate": "2025-11-18",
+    "endDate": "2025-11-20",
+    "location": "Bangalore International Exhibition Centre, Bengaluru, India",
+    "link": "https://www.bengalurutechsummit.com/",
+    "image": "bangalore-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Africa Morocco 2026",
+    "description": "Africa’s biggest tech event with 1400+ exhibitors from 130+ countries. Focus on AI, fintech, smart cities, cybersecurity, health tech, and digital transformation.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-09",
+    "location": "Marrakech, Morocco",
+    "link": "https://gitexafrica.com",
+    "image": "gitex-2026.jpg",
+    "organizer": "KAOUN International / Digital Development Agency (ADD)",
+    "recapVideo": ""
+  },
+   {
+    "title": "Blockchain Life Dubai 2025",
+    "description": "One of the world’s largest Web3 and crypto forums, celebrating its 15th edition. 15,000+ participants, 200+ speakers, and a large expo zone for digital assets, mining, and blockchain leadership.",
+    "startDate": "2025-10-28",
+    "endDate": "2025-10-29",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://blockchain-life.com",
+    "image": "blockchain-life-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Global Dubai 2025",
+    "description": "The world’s largest tech and startup event, 5000+ exhibitors from 170 countries. Key topics: AI, cloud, cybersecurity, IoT, and blockchain.",
+    "startDate": "2025-10-13",
+    "endDate": "2025-10-17",
+    "location": "Dubai Festival Arena, UAE",
+    "link": "https://gitex.com",
+    "image": "gitex-2025.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Tech4Impact Summit 2025",
+    "description": "Event on technology for social and environmental impact. Attracts investors, startups, and purpose-driven organizations.",
+    "startDate": "2025-10-07",
+    "endDate": "",
+    "location": "Toranomon Hills Forum, Tokyo, Japan",
+    "link": "https://tech4impactsummit.com",
+    "image": "tech4impact-2025.jpg",
+    "organizer": "Tech4Impact Summit Organizing Team",
+    "recapVideo": ""
+  },
+   {
+    "title": "Philippines Blockchain Week 2025",
+    "description": "Week-long event themed “Decoded,” emphasizing FinTech, Healthcare, Gaming, Music, and Filipino Web3 innovation. Includes international speakers and cultural experiences.",
+    "startDate": "2025-06-10",
+    "endDate": "2025-06-11",
+    "location": "SMX Convention Center, Manila, Philippines",
+    "link": "https://pbw.ph",
+    "image": "pbw-2025.png",
+    "organizer": "PBW Organizing Committee",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Buenos Aires",
+    "description": "Get ready for an unforgettable Cardano Tech Summit in Buenos Aires! Hosted by Ada Solar, this event is a full day of inspiring talks, hands-on workshops, and networking with fellow Cardano enthusiasts. Pre-summit hackathons will take place at UBA. Whether you're a seasoned blockchain pro or just getting started, come and celebrate a vibrant community atmosphere.",
+    "startDate": "2025-11-15",
+    "endDate": "",
+    "location": "Buenos Aires, Argentina",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-buenos-aires-2025.jpg",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Tech Summit LATAM Rio de Janeiro",
+    "description": "The Cardano Tech Summit by Ada Solar, hosted at the iconic Museu do Amanhã, will feature keynote presentations from industry leaders, technical deep-dives, educational sessions, and discussions on finance, DeFi, and government regulation.Join this unparalleled opportunity for developers, entrepreneurs, and enthusiasts and explore how Cardano is transforming Latin America.",
+    "startDate": "2025-10-15",
+    "endDate": "",
+    "location": "Museu do Amanhã, Rio de Janeiro, Brazil",
+    "link": "https://techsummit.lat/#",
+    "image": "summit-rio-2025.jpg",
+    "organizer": "Ada Solar",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Hackathon Asia",
+    "description": "Cardano Hackathon Asia, hosted by EMURGO in Bangalore, is a two-day event focused on building and showcasing. Day one, the “Build Day,” is a hackathon that includes workshops, mentorship, and team collaboration.Day two, the “Showcase & Talks” day, will feature finalist demos, keynotes, panels, and awards, bringing together the best and brightest of the Indian blockchain community.",
+    "startDate": "2025-11-30",
+    "endDate": "2025-12-01",
+    "location": "Bangalore",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "hackathon-asia-2025.jpg",
+    "organizer": "EMURGO",
+    "recapVideo": ""
+  },
+   {
+    "title": "Cardano Africa Tech Summit Africa",
+    "description": "Scheduled for February 2026 in Nairobi, Kenya, and hosted by WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart, the Africa edition of the Cardano Summit will advance blockchain adoption and AI integration across the continent. With a sharp focus on real-world utility and community, the summit will serve as a convergence point for developers, startups, enterprises, and regulators. Pre-summit hackathons will also be held to cultivate use-case-driven development.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-13",
+    "location": "Nairobi, Kenya",
+    "link": "https://summit.cardano.org/page/5162919/regional-events",
+    "image": "afrika-tech-summit-2026.jpg",
+    "organizer": "WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart",
+    "recapVideo": ""
+  },
+   {
+    "title": "Digital Assets Forum (London)",
+    "description": "The Digital Assets Forum in London brings together policymakers, financial institutions, and innovators to discuss the integration of digital assets into global markets.",
+    "startDate": "2026-02-05",
+    "endDate": "2026-02-06",
+    "location": "London, United Kingdom",
+    "link": "https://eblockchainconvention.com/digital-assets-forum/",
+    "image": "digitalassetsforum.jpg",
+    "organizer": "Digital Assets Forum",
+    "recapVideo": ""
+  },
+   {
+    "title": "Consensus HK 2026",
+    "description": "Consensus HK 2026 is the Asia edition of the global blockchain and Web3 conference, showcasing industry leaders, developers, and enterprises driving the digital asset economy.",
+    "startDate": "2026-02-10",
+    "endDate": "2026-02-12",
+    "location": "Hong Kong, China",
+    "link": "https://consensus-hongkong.coindesk.com/",
+    "image": "consensushk2026.jpg",
+    "organizer": "CoinDesk",
+    "recapVideo": ""
+  },
+   {
+    "title": "Africa Tech Summit 2026",
+    "description": "Africa Tech Summit Nairobi connects African tech leaders, investors, and startups across fintech, Web3, AI, and digital transformation sectors.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-12",
+    "location": "Nairobi, Kenya",
+    "link": "https://www.africatechsummit.com/nairobi/",
+    "image": "africatechsummit.jpg",
+    "organizer": "Africa Tech Summit",
+    "recapVideo": ""
+  },
+   {
+    "title": "FutureProof Miami 2026",
+    "description": "Future Proof Miami is a large-scale event for wealth management, fintech, and digital innovation, attracting global investors and technology providers.",
+    "startDate": "2026-03-08",
+    "endDate": "2026-03-11",
+    "location": "Miami, Florida, United States",
+    "link": "https://futureproofhq.com/citywide/",
+    "image": "futureproofmiami.jpg",
+    "organizer": "Future Proof",
+    "recapVideo": ""
+  },
+   {
+    "title": "DC Blockchain Summit",
+    "description": "The DC Blockchain Summit is a policy-focused event in Washington DC that gathers regulators, industry leaders, and academics to shape the future of blockchain regulation and adoption.",
+    "startDate": "2026-03-17",
+    "endDate": "2026-03-18",
+    "location": "Washington, D.C., United States",
+    "link": "https://www.dcblockchainsummit.com/",
+    "image": "dcblockchainsummit.jpg",
+    "organizer": "Chamber of Digital Commerce",
+    "recapVideo": ""
+  },
+   {
+    "title": "TEAMZ Web3 & AI Summit",
+    "description": "TEAMZ Web3 & AI Summit in Tokyo highlights innovations in blockchain, artificial intelligence, and Web3 applications, bringing together global experts and enterprises.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-08",
+    "location": "Tokyo, Japan",
+    "link": "https://www.teamz.co.jp/en",
+    "image": "teamz.jpg",
+    "organizer": "TEAMZ Inc.",
+    "recapVideo": ""
+  }
+  ,
+   {
+    "title": "Paris Blockchain Week",
+    "description": "Paris Blockchain Week is one of Europe’s largest blockchain conferences, uniting executives, entrepreneurs, and developers across digital assets, DeFi, and Web3.",
+    "startDate": "2026-04-14",
+    "endDate": "2026-04-16",
+    "location": "Paris, France",
+    "link": "https://www.parisblockchainweek.com/",
+    "image": "parisblockchainweek.jpg",
+    "organizer": "Paris Blockchain Week",
+    "recapVideo": ""
   }
 ]

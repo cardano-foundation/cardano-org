@@ -124,5 +124,40 @@
     "link": "https://app.danogo.io/about-us",
     "knownFor": " Danogo",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Tavern Studios LTD",
+    "imageName": "tavern-studios",
+    "link": "https://tavernstudios.io",
+    "knownFor": "Ale & Axes",
+    "showCompanyName": false
+ },
+ {
+    "companyName": "Andamio",
+    "imageName": "andamio",
+    "link": "https://www.andamio.io/about",
+    "knownFor": "Andamio",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "FT Labs GmbH",
+    "imageName": "fluidtokens",
+    "link": "https://fluidtokens.com/team",
+    "knownFor": " FluidTokens",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "SIDAN Lab",
+    "imageName": "sidanlab",
+    "link": "https://sidan.io/",
+    "knownFor": " Whisky",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Liqwid Labs",
+    "imageName": "liqwid",
+    "link": "https://liqwid.finance/team",
+    "knownFor": "Liqwid Pooled Lending Protocol",
+    "showCompanyName": false
   }
 ]

@@ -6,11 +6,4 @@ export default {
     bannerType: 'fluidBlue',
     openGraph: 'signal-governance',
   },
-  "delegation-survey-2025": {
-    title: 'Delegation survey 2025',
-    formId: 6,
-    description: 'TBD.',
-    bannerType: 'fluidBlue',
-    openGraph: 'signal-governance',
-  },
 };

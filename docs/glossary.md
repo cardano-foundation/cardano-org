@@ -9,9 +9,9 @@ description: Editorial style guide and glossary for Cardano.org.
 To make content consistent we should agree on spellings and terms here. 
 
 ## Principles
-- Use Amercian English. 
+- Use American English. 
 - Use Dateformat September 15, 2017 (MMMM DD, YYYY)
-- Use gender-inclusive pronouns they/their/them rathen then he/she.
+- Use gender-inclusive pronouns they/their/them rather then he/she.
 - Use Oxford comma.
 - Spell out one to nine and use numerals for anything higher: 10, 11, 12.
 
@@ -119,7 +119,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `testnet`    | One word.  Capitalise when it's a particular testnet (e.g. Preview _testnet_) but not when it's an adjective (e.g. _testnet_ functionality) or referring to more than one (e.g. new iterations of the _testnets_). |
 | `third-generation blockchain`    | Spell out 'third' and hyphenate: Cardano is a third-generation blockchain. |
-| `TLA`    | Three-letter acrynom. There are too many, avoid them, don't invent new ones. |
+| `TLA`    | Three-letter acronym. There are too many, avoid them, don't invent new ones. |
 | `tps`    | Transactions per seconds. A flawed metric for blockchain speed like 'videos per second' would be to measure hard disk speeds. |
 
 
@@ -128,7 +128,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | ---------------- | -------------------------- |
 | `use case` | Not use-case. See [Cardano use cases](/use-cases). |
 | `USDM` | Fiat-backed stablecoin on Cardano. |
-| `UTXO` | All caps: unspend transaction output, the accounting system used in Bitcoin and Cardano. |
+| `UTXO` | All caps: unspent transaction output, the accounting system used in Bitcoin and Cardano. |
 
 ### V 
 |  Spelling/Term   | Comment                    |
