@@ -299,5 +299,12 @@
     "link": "https://dconecrypto.finance/",
     "knownFor": "DCOne Crypto Webhook",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Maestro Blockchain",
+    "imageName": "maestro",
+    "link": "https://www.gomaestro.org/",
+    "knownFor": "Maestro DApp Platform",
+    "showCompanyName": false
   }
 ]
