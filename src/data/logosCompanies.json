@@ -327,5 +327,12 @@
     "link": "https://orcfax.io/#about",
     "knownFor": "Orcfax Oracle",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Harmonic Labs",
+    "imageName": "harmonic",
+    "link": "https://www.harmoniclabs.tech/",
+    "knownFor": "plu-ts",
+    "showCompanyName": true
   }
 ]
