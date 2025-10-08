@@ -341,5 +341,12 @@
     "link": "https://www.bloxbean.com/",
     "knownFor": "Yaci DevKit",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Lantr.io",
+    "imageName": "lantr",
+    "link": "https://lantr.io/",
+    "knownFor": "Scalus",
+    "showCompanyName": true
   }
 ]
