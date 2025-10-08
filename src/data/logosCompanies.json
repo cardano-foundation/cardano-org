@@ -292,5 +292,12 @@
     "link": "https://www.xerberus.io/",
     "knownFor": "Xerberus RiskFi Protocol",
     "showCompanyName": false
+  },
+  {
+    "companyName": "DCOne Crypto",
+    "imageName": "dcone",
+    "link": "https://dconecrypto.finance/",
+    "knownFor": "DCOne Crypto Webhook",
+    "showCompanyName": false
   }
 ]
