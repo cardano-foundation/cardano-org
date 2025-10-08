@@ -264,5 +264,12 @@
     "link": "https://www.anastasialabs.com/",
     "knownFor": "Lucid",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Book.io",
+    "imageName": "book",
+    "link": "https://book.io/about-us/",
+    "knownFor": "Book.io",
+    "showCompanyName": false
   }
 ]
