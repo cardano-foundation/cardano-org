@@ -320,5 +320,12 @@
     "link": "https://opshin.dev/",
     "knownFor": "OpShin Toolchain",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Orcfax Ltd.",
+    "imageName": "orcfax",
+    "link": "https://orcfax.io/#about",
+    "knownFor": "Orcfax Oracle",
+    "showCompanyName": true
   }
 ]
