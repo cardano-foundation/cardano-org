@@ -334,5 +334,12 @@
     "link": "https://www.harmoniclabs.tech/",
     "knownFor": "plu-ts",
     "showCompanyName": true
+  },
+  {
+    "companyName": "BloxBean",
+    "imageName": "bloxbean",
+    "link": "https://www.bloxbean.com/",
+    "knownFor": "Yaci DevKit",
+    "showCompanyName": false
   }
 ]
