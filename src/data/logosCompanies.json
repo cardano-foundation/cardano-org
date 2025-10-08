@@ -285,5 +285,12 @@
     "link": "https://www.cswap.fi/",
     "knownFor": "CSWAP DEX",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Xerberus Labs",
+    "imageName": "xerberus",
+    "link": "https://www.xerberus.io/",
+    "knownFor": "Xerberus RiskFi Protocol",
+    "showCompanyName": false
   }
 ]
