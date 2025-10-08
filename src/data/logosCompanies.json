@@ -313,5 +313,12 @@
     "link": "https://nftcdn.io/about",
     "knownFor": "NFTCDN API",
     "showCompanyName": true
+  },
+  {
+    "companyName": "OpShin",
+    "imageName": "opshin",
+    "link": "https://opshin.dev/",
+    "knownFor": "OpShin Toolchain",
+    "showCompanyName": true
   }
 ]
