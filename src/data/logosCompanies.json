@@ -306,5 +306,12 @@
     "link": "https://www.gomaestro.org/",
     "knownFor": "Maestro DApp Platform",
     "showCompanyName": false
+  },
+  {
+    "companyName": "NFTCDN LTD",
+    "imageName": "nftcdn",
+    "link": "https://nftcdn.io/about",
+    "knownFor": "NFTCDN API",
+    "showCompanyName": true
   }
 ]
