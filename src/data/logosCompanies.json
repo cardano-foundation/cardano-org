@@ -271,5 +271,12 @@
     "link": "https://book.io/about-us/",
     "knownFor": "Book.io",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Optim",
+    "imageName": "optim",
+    "link": "https://www.optim.finance/",
+    "knownFor": "Optim Finance",
+    "showCompanyName": true
   }
 ]
