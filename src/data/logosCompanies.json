@@ -278,5 +278,12 @@
     "link": "https://www.optim.finance/",
     "knownFor": "Optim Finance",
     "showCompanyName": true
+  },
+  {
+    "companyName": "CSWAP Systems",
+    "imageName": "cswap",
+    "link": "https://www.cswap.fi/",
+    "knownFor": "CSWAP DEX",
+    "showCompanyName": true
   }
 ]
