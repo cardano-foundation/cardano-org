@@ -9,10 +9,10 @@ import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 
-import { makeApiClient } from '@site/src/lib/insights/api';
-import { parseApiError } from '@site/src/lib/insights/errors';
-import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/lib/insights/numbers';
-import { MIN_EPOCH, getEpochDate } from '@site/src/lib/insights/epochs';
+import { makeApiClient } from '@site/src/utils/insights/api';
+import { parseApiError } from '@site/src/utils/insights/errors';
+import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/utils/insights/numbers';
+import { MIN_EPOCH, getEpochDate } from '@site/src/utils/insights/epochs';
 
 // Layout components 
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
@@ -318,7 +318,7 @@ function PageContent() {
 
   // first load placeholder
   if (!isPrimed) {
-    return <p>Loading…</p>;
+    return <p>Preparing…</p>;
   }
  
   // derived data (load only now, not earlier!)
@@ -369,8 +369,9 @@ function PageContent() {
   const netTreasuryChangeAbs = Math.abs(netTreasuryChange);
   const percentTreasuryChangeAbs = Math.abs(parseFloat(percentOfTreasury)).toFixed(2);
 
-  const pageTitle = `Cardano Supply – Epoch ${displayedEpoch} (${epochDate})`;
-  const pageDescription = `ADA supply distribution for epoch ${displayedEpoch}, started on ${epochDate}.`;
+  const pageTitle = `Cardano ada Supply Distribution – Epoch ${displayedEpoch} (${epochDate})`;
+  const pageDescription = `Explore the complete Cardano ADA supply distribution for epoch ${displayedEpoch}. Understand how ADA is allocated across circulating supply, reserves, staking rewards, and the Cardano treasury at the end of each five-day epoch. `
+  const pageKeywords = `Cardano, ADA, supply distribution, staking rewards, Cardano treasury, Ouroboros protocol, Cardano blockchain, ADA rewards, Cardano supply insights`
   const canonicalUrl = `https://yourdomain.com/insights/supply${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
 
   const navStickyClass = 'epochNavSticky'; // CSS is in custom.css
@@ -381,7 +382,10 @@ function PageContent() {
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={pageKeywords} />
         <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/static/img/insights/supply_og.png" />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{`
         {
@@ -408,10 +412,10 @@ function PageContent() {
       <TitleWithText
         description={[
           (() => {
-            const base = `This insight page visualizes the complete Cardano ada supply distribution for **epoch ${displayedEpoch}** which started on **${epochDate}**. It shows how the total supply `;
+            const base = `**Explore the complete Cardano ADA supply distribution for epoch ${displayedEpoch}, which began on ${epochDate} `;
             const ending = isCurrentEpoch
-              ? 'is currently distributed across all categories.'
-              : 'was distributed across all categories at that time.';
+              ? 'and is still ongoing.**'
+              : 'and lasted five days.**';
             return base + ending;
           })()
         ]}
@@ -420,8 +424,14 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          `At the end of each 5-day epoch, the [Ouroboros protocol](/ouroboros), which has performed the corresponding matching calculations on all participating nodes, 
-		  executes the transfer of the resulting amounts. This includes the payment of [staking rewards](/calculator), part of which is diverted to fill the development treasury.`
+		  `This interactive insight helps you understand how the total ADA supply is allocated across key categories — from circulating supply and reserves to staking rewards and the treasury.`
+        ]}
+        headingDot
+      />
+      <TitleWithText
+        description={[
+		  `At the close of each 5-day epoch, the [Ouroboros protocol](/ouroboros) performs supply and reward calculations across all participating nodes. 
+		  The resulting transfers distribute [staking rewards](/calculator) and allocate a portion to the Cardano treasury, supporting ongoing development and ecosystem growth.`
         ]}
         headingDot
       />
@@ -465,9 +475,7 @@ function PageContent() {
 
 
 		{/* #############################  */}
-        <p>
-          <strong>Q: How did the values change compared to the previous Epoch?</strong>
-        </p>
+        <h3>Q: How did the values change compared to the previous Epoch?</h3>
         <p>
           A: At the start of epoch {displayedEpoch}, the Cardano Ouroboros protocol distributed the staking
           rewards for epoch {displayedEpoch - 2} and transaction fees collected in epoch {displayedEpoch - 1}.
@@ -477,9 +485,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <strong>Q: How much ada was added to the treasury?</strong>
-        </p>
+        <h3>Q: How much ada was added to the treasury?</h3>
         <p>
           {netTreasuryChange > 0 ? (
             <>
@@ -509,15 +515,13 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <strong>Q: How many fees were collected and distributed?</strong>
-        </p>
+        <h3>Q: How many fees were collected and distributed?</h3>
         <p>
           {isCurrentEpoch
             ? (
               <>A: In the currently running epoch,&nbsp;
                 <strong>{convertLovelacesToAda(totalsCurr.fees).toLocaleString()} ada</strong> in transaction fees
-				have been <strong>paid</strong> so far. </>
+				have been paid so far. </>
             )
             : (
               <>A: In epoch {displayedEpoch}, a total of <strong>{convertLovelacesToAda(totalsCurr.fees).toLocaleString()} ada</strong> in transaction fees was collected for a distribution next epoch.&nbsp;</>
@@ -528,9 +532,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <strong>Q: Were there withdrawals from the treasury in epoch {displayedEpoch}?</strong>
-        </p>
+        <h3>Q: Were there withdrawals from the treasury in epoch {displayedEpoch}?</h3>
         <p>
           {withdrawalsCurrRes.length === 0
             ? `A: There were no treasury withdrawals during this epoch.`
@@ -542,26 +544,18 @@ function PageContent() {
         </p>
         
 		{/* #############################  */}
-        <p>
-          <strong>Q: Where can I learn more about the Cardano Mainnet reward calculation?</strong>
-        </p>
+        <h3>Q: Where can I learn more about the Cardano Mainnet reward calculation?</h3>
         <p>
             The reward calculation is based on the <Link href="https://github.com/IntersectMBO/cardano-ledger?tab=readme-ov-file#cardano-ledger">ledger specification</Link>. 
             Further information can be found in the <Link href="https://cardano-scaling.github.io/cardano-blueprint/ledger/index.html">Cardano Blueprint</Link> documentation. 
 			
-            There is an independent <Link href="https://github.com/cardano-foundation/cf-java-rewards-calculation/blob/main/README.md">Java implementation</Link> with many explanations.
+            There is an independent <Link href="https://github.com/cardano-foundation/cf-java-rewards-calculation/blob/main/README.md">Java implementation</Link> with many explanations, 
+			as well as a <Link href="https://cardanofoundation.org/academy/course/staking-rewards-calculation">training course from Cardano Academy</Link> on calculating staking rewards.
             
             
         </p>
         
         
-      </div>
-
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none',  background: 'transparent', }} aria-hidden="true" >
-        {/* subtle top-right spinner */}
-        <div style={{ position: 'fixed', top: 12, right: 12, padding: '6px 10px', borderRadius: 8, background: 'var(--ifm-background-surface-color)', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', fontSize: 12, opacity: 0.85 }}>
-          Loading…
-        </div>
       </div>
 
       <InsightsFooter lastUpdated={`${epochDate} (epoch ${displayedEpoch})`} epoch={displayedEpoch} />
