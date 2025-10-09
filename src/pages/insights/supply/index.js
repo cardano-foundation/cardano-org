@@ -9,10 +9,10 @@ import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 
-import { makeApiClient } from '@site/src/lib/insights/api';
-import { parseApiError } from '@site/src/lib/insights/errors';
-import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/lib/insights/numbers';
-import { MIN_EPOCH, getEpochDate } from '@site/src/lib/insights/epochs';
+import { makeApiClient } from '@site/src/utils/insights/api';
+import { parseApiError } from '@site/src/utils/insights/errors';
+import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/utils/insights/numbers';
+import { MIN_EPOCH, getEpochDate } from '@site/src/utils/insights/epochs';
 
 // Layout components 
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
@@ -318,7 +318,7 @@ function PageContent() {
 
   // first load placeholder
   if (!isPrimed) {
-    return <p>Loading…</p>;
+    return <p>Preparing…</p>;
   }
  
   // derived data (load only now, not earlier!)
@@ -549,19 +549,13 @@ function PageContent() {
             The reward calculation is based on the <Link href="https://github.com/IntersectMBO/cardano-ledger?tab=readme-ov-file#cardano-ledger">ledger specification</Link>. 
             Further information can be found in the <Link href="https://cardano-scaling.github.io/cardano-blueprint/ledger/index.html">Cardano Blueprint</Link> documentation. 
 			
-            There is an independent <Link href="https://github.com/cardano-foundation/cf-java-rewards-calculation/blob/main/README.md">Java implementation</Link> with many explanations.
+            There is an independent <Link href="https://github.com/cardano-foundation/cf-java-rewards-calculation/blob/main/README.md">Java implementation</Link> with many explanations, 
+			as well as a <Link href="https://cardanofoundation.org/academy/course/staking-rewards-calculation">training course from Cardano Academy</Link> on calculating staking rewards.
             
             
         </p>
         
         
-      </div>
-
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none',  background: 'transparent', }} aria-hidden="true" >
-        {/* subtle top-right spinner */}
-        <div style={{ position: 'fixed', top: 12, right: 12, padding: '6px 10px', borderRadius: 8, background: 'var(--ifm-background-surface-color)', boxShadow: '0 6px 20px rgba(0,0,0,0.08)', fontSize: 12, opacity: 0.85 }}>
-          Loading…
-        </div>
       </div>
 
       <InsightsFooter lastUpdated={`${epochDate} (epoch ${displayedEpoch})`} epoch={displayedEpoch} />
