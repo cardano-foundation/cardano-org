@@ -475,9 +475,7 @@ function PageContent() {
 
 
 		{/* #############################  */}
-        <p>
-          <h3>Q: How did the values change compared to the previous Epoch?</h3>
-        </p>
+        <h3>Q: How did the values change compared to the previous Epoch?</h3>
         <p>
           A: At the start of epoch {displayedEpoch}, the Cardano Ouroboros protocol distributed the staking
           rewards for epoch {displayedEpoch - 2} and transaction fees collected in epoch {displayedEpoch - 1}.
@@ -487,9 +485,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <h3>Q: How much ada was added to the treasury?</h3>
-        </p>
+        <h3>Q: How much ada was added to the treasury?</h3>
         <p>
           {netTreasuryChange > 0 ? (
             <>
@@ -519,9 +515,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <h3>Q: How many fees were collected and distributed?</h3>
-        </p>
+        <h3>Q: How many fees were collected and distributed?</h3>
         <p>
           {isCurrentEpoch
             ? (
@@ -538,9 +532,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <p>
-          <h3>Q: Were there withdrawals from the treasury in epoch {displayedEpoch}?</h3>
-        </p>
+        <h3>Q: Were there withdrawals from the treasury in epoch {displayedEpoch}?</h3>
         <p>
           {withdrawalsCurrRes.length === 0
             ? `A: There were no treasury withdrawals during this epoch.`
@@ -552,9 +544,7 @@ function PageContent() {
         </p>
         
 		{/* #############################  */}
-        <p>
-          <h3>Q: Where can I learn more about the Cardano Mainnet reward calculation?</h3>
-        </p>
+        <h3>Q: Where can I learn more about the Cardano Mainnet reward calculation?</h3>
         <p>
             The reward calculation is based on the <Link href="https://github.com/IntersectMBO/cardano-ledger?tab=readme-ov-file#cardano-ledger">ledger specification</Link>. 
             Further information can be found in the <Link href="https://cardano-scaling.github.io/cardano-blueprint/ledger/index.html">Cardano Blueprint</Link> documentation. 
