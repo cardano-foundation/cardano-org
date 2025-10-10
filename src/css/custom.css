@@ -488,6 +488,131 @@ img {
   }
 }
 
+/* Start: Insights Supply epoch prev/next navigation buttons */
+.epochNavSticky {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 60px) + 22px);
+  z-index: 20;
+}
+.epochNavSticky nav {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  .epochNavSticky { position: fixed; top: auto; right: 12px; bottom: 12px; }
+}
+
+/* Container + main row */
+.epochNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.epochNavMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.epochNavLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Larger center label (desktop/tablet) */
+.epochNavLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  font-size: 1rem;
+}
+.epochNavLabel strong { font-size: 1.1rem; line-height: 1; }
+
+/* Desktop jump input aligned right */
+.epochJump--desktop {
+  margin-left: auto;
+  display: flex;            /* desktop default: visible */
+  align-items: center;
+}
+
+.epochJumpRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.epochJumpInput {
+  width: 8ch;               /* roomy for 4 digits */
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.epochJumpGo { padding-inline: 12px; }
+.epochJumpCancel { display: none; } /* never on desktop */
+
+.epochJumpHint { font-size: 11px; color: var(--ifm-color-emphasis-700); }
+.epochJumpHint.is-invalid { color: var(--ifm-color-danger); }
+
+/* Hide “Jump…” button on desktop */
+.epochJumpLink { display: none; }
+
+/* -------- Mobile behavior -------- */
+@media (max-width: 768px) {
+  .epochNav { gap: 0.5rem; }
+
+  /* Keep Prev/Next tap-friendly */
+  .epochNav .button { min-height: 36px; }
+
+  /* On mobile, hide desktop input by default */
+  .epochJump--desktop { display: none; }
+
+  /* Show “Jump…” trigger on the right */
+  .epochJumpLink {
+    display: inline-flex;
+    background: transparent;
+    border: 1px dashed var(--ifm-color-emphasis-300);
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+
+  /* Mobile jump block is hidden by default */
+  .epochJump--mobile { display: none; }
+
+  /* When jump mode is active, hide main row and show mobile jump */
+  .epochNav.is-jump .epochNavMain { display: none; }
+  .epochNav.is-jump .epochJump--mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .epochNav.is-jump .epochJumpInput {
+    width: 6ch;             /* compact but fits 4 digits */
+    padding: 4px 8px;
+    font-size: 0.95rem;
+  }
+  .epochNav.is-jump .epochJumpGo { padding: 4px 10px; }
+  .epochNav.is-jump .epochJumpCancel { display: inline-flex; }
+}
+/* end Insights page epoch navigation */
 /* Events platform link cards */
 .event-platforms {
   display: flex;
@@ -532,4 +657,73 @@ img {
 .platform-card:hover figcaption,
 .platform-card:focus-visible figcaption {
   color: var(--ifm-color-primary);
+}
+
+/* Event pagination */ 
+.events-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* List reset */
+.events-pagination__list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared button base – use theme tokens */
+.events-pagination__nav,
+.events-pagination__page {
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover/active/focus states */
+.events-pagination__nav:hover,
+.events-pagination__page:hover {
+  border-color: var(--ifm-color-emphasis-400);
+  transform: translateY(-1px);
+}
+.events-pagination__nav:active,
+.events-pagination__page:active {
+  transform: translateY(0);
+}
+.events-pagination__nav:focus-visible,
+.events-pagination__page:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Current page */
+.events-pagination__page.is-active {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-color: var(--ifm-color-primary);
+  cursor: default;
+}
+
+/* Disabled */
+.events-pagination__nav[disabled],
+.events-pagination__page[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Optional: slight dark-mode border tuning */
+[data-theme='dark'] .events-pagination__nav,
+[data-theme='dark'] .events-pagination__page {
+  border-color: var(--ifm-color-emphasis-200);
 }

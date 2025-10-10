@@ -11,11 +11,6 @@ export default function InsightsLayout({ meta, children }) {
   return (
     <Layout title={meta.pageTitle} description={meta.pageDescription}>
       <OpenGraphInfo pageName="network" />
-      <SiteHero
-        title="Data-Driven Insights"
-        description="Explore key metrics, trends, and deep analytics shaping the Cardano ecosystem."
-        bannerType="zoom"
-      />
       <main>
         <BackgroundWrapper backgroundType="zoom">
           <BoundaryBox>
