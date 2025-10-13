@@ -370,9 +370,9 @@ function PageContent() {
   const percentTreasuryChangeAbs = Math.abs(parseFloat(percentOfTreasury)).toFixed(2);
 
   const pageTitle = `Cardano ada Supply Distribution – Epoch ${displayedEpoch} (${epochDate})`;
-  const pageDescription = `Explore the complete Cardano ADA supply distribution for epoch ${displayedEpoch}. Understand how ADA is allocated across circulating supply, reserves, staking rewards, and the Cardano treasury at the end of each five-day epoch. `
+  const pageDescription = `Explore the Cardano ADA supply distribution for epoch ${displayedEpoch}. Understand how ADA is allocated across circulating supply, reserves, staking rewards, and the treasury. `
   const pageKeywords = `Cardano, ADA, supply distribution, staking rewards, Cardano treasury, Ouroboros protocol, Cardano blockchain, ADA rewards, Cardano supply insights`
-  const canonicalUrl = `https://yourdomain.com/insights/supply${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
+  const canonicalUrl = `https://www.cardano.org.com/insights/supply${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
 
   const navStickyClass = 'epochNavSticky'; // CSS is in custom.css
 
@@ -385,7 +385,7 @@ function PageContent() {
         <meta name="keywords" content={pageKeywords} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/static/img/insights/supply_og.png" />
+        <meta property="og:image" content="/img/insights/supply_og.png" />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{`
         {
@@ -393,9 +393,7 @@ function PageContent() {
           "@type": "Article",
           "headline": "${pageTitle}",
           "description": "${pageDescription}",
-          "url": "${canonicalUrl}",
-          "author": { "@type": "Organization", "name": "YourOrgName" },
-          "publisher": { "@type": "Organization", "name": "YourOrgName" }
+          "url": "${canonicalUrl}"
         }
         `}</script>
       </Head>
