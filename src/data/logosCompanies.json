@@ -159,5 +159,12 @@
     "link": "https://liqwid.finance/team",
     "knownFor": "Liqwid Pooled Lending Protocol",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Agrow Labs",
+    "imageName": "agrowlabs",
+    "link": "https://www.agrowlabs.xyz",
+    "knownFor": "Cardano Development",
+    "showCompanyName": false
   }
 ]
