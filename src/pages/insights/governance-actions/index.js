@@ -90,6 +90,7 @@ function PageContent() {
         <meta name="keywords" content={pageKeywords} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
+        <meta property="og:logo" content="img/cardano-logo-blue.svg" />
         <meta property="og:image" content="/img/insights/governancen-actions_og.png" />
         <meta property="og:url" content={`https://www.cardano.org/insights/governance-actions${location.search || ''}`} />
         <link rel="canonical" href="https://www.cardano.org/insights/governance-actions" />
