@@ -107,7 +107,9 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          `This interactive insight helps you understand the different Cardano governance action types, their flows, conditions, and relations. `
+          `**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle (submission → ratification → enactment), who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies; some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/).`,
+          `Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you’re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** ([constitution](../constitution)).`,
+          `For **Protocol Parameter Changes**, the charts separate routine updates (typically **DReps + CC**) from **security-critical parameters**, which also need **SPO approval**, i.e., all three bodies. Appendix I lists the critical parameters and their permitted ranges/scope.`
         ]}
         headingDot
       />
