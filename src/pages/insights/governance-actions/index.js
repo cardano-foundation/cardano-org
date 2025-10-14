@@ -26,7 +26,7 @@ const meta = {
   pageDescription:
     'Visual representation of Cardano Governance Action process flows.',
   title: 'Cardano Governance Actions',
-  date: '2025-06-01', 
+  date: '2025-04-09', 
   author: authors?.['cf'],
   og: {
     pageName: 'governance-actions',
