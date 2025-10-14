@@ -159,5 +159,194 @@
     "link": "https://liqwid.finance/team",
     "knownFor": "Liqwid Pooled Lending Protocol",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Vellum Labs",
+    "imageName": "vellumlabs",
+    "link": "https://vellumlabs.cz",
+    "knownFor": "Cexplorer.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Tokeo Labs",
+    "imageName": "tokeo",
+    "link": "https://tokeo.io/team/",
+    "knownFor": "TokeoPay",
+    "showCompanyName": true
+   },
+  {
+    "companyName": "Spectrum Finance",
+    "imageName": "spectrum-finance",
+    "link": "https://spectrum.fi/overview",
+    "knownFor": "Splash.trade",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "VESPR",
+    "imageName": "vespr",
+    "link": "https://vespr.xyz/about",
+    "knownFor": "VESPR Wallet",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "DexHunter",
+    "imageName": "dexhunter",
+    "link": "https://www.dexhunter.io/",
+    "knownFor": "DexHunter DEX Aggregator",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Bodega Labs",
+    "imageName": "bodega",
+    "link": "https://www.bodegamarket.xyz/#about",
+    "knownFor": "Bodega Market",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "zenGate",
+    "imageName": "zengate",
+    "link": "https://www.zengate.global/",
+    "knownFor": "Palmyra Platform",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Charli3",
+    "imageName": "charli3",
+    "link": "https://charli3.io/",
+    "knownFor": "Decentralized Oracle solutions",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "TapTools",
+    "imageName": "taptools",
+    "link": "https://www.taptools.io/",
+    "knownFor": "Token distribution, comprehensive charts, NFT generation",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Kora Labs",
+    "imageName": "koralabs",
+    "link": "https://koralabs.io/",
+    "knownFor": "handle.me",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "PoolTool",
+    "imageName": "pooltool",
+    "link": "https://pooltool.io/about",
+    "knownFor": "PoolTool for SPOs and stakeholders",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Genius Yield",
+    "imageName": "genius-yield",
+    "link": "https://www.geniusyield.co/",
+    "knownFor": "Genius Yield DEX",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "AdaStat",
+    "imageName": "adastat",
+    "link": "https://adastat.net/about",
+    "knownFor": "AdaStat statistics and insights",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Butane",
+    "imageName": "butane",
+    "link": "https://butane.dev/company",
+    "knownFor": "Butane Plattform",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Anastasia Labs",
+    "imageName": "anastasialabs",
+    "link": "https://www.anastasialabs.com/",
+    "knownFor": "Lucid",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Book.io",
+    "imageName": "book",
+    "link": "https://book.io/about-us/",
+    "knownFor": "Book.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Optim",
+    "imageName": "optim",
+    "link": "https://www.optim.finance/",
+    "knownFor": "Optim Finance",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "CSWAP Systems",
+    "imageName": "cswap",
+    "link": "https://www.cswap.fi/",
+    "knownFor": "CSWAP DEX",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Xerberus Labs",
+    "imageName": "xerberus",
+    "link": "https://www.xerberus.io/",
+    "knownFor": "Xerberus RiskFi Protocol",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "DCOne Crypto",
+    "imageName": "dcone",
+    "link": "https://dconecrypto.finance/",
+    "knownFor": "DCOne Crypto Webhook",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Maestro Blockchain",
+    "imageName": "maestro",
+    "link": "https://www.gomaestro.org/",
+    "knownFor": "Maestro DApp Platform",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "NFTCDN LTD",
+    "imageName": "nftcdn",
+    "link": "https://nftcdn.io/about",
+    "knownFor": "NFTCDN API",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "OpShin",
+    "imageName": "opshin",
+    "link": "https://opshin.dev/",
+    "knownFor": "OpShin Toolchain",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Orcfax Ltd.",
+    "imageName": "orcfax",
+    "link": "https://orcfax.io/#about",
+    "knownFor": "Orcfax Oracle",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Harmonic Labs",
+    "imageName": "harmonic",
+    "link": "https://www.harmoniclabs.tech/",
+    "knownFor": "plu-ts",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "BloxBean",
+    "imageName": "bloxbean",
+    "link": "https://www.bloxbean.com/",
+    "knownFor": "Yaci DevKit",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Lantr.io",
+    "imageName": "lantr",
+    "link": "https://lantr.io/",
+    "knownFor": "Scalus",
+    "showCompanyName": true
   }
 ]
