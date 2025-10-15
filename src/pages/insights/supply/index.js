@@ -25,19 +25,18 @@ import authors from '@site/src/data/authors.json';
 // ────────────────────────────────────────────────────────────────────────────
 //  Page Meta
 // ────────────────────────────────────────────────────────────────────────────
-const meta = {
+export const meta = {
+  pageName: 'supply',
   pageTitle: 'Cardano Supply Overview',
-  pageDescription:
-    'Visual representation of ada supply distribution across key categories in the Cardano network.',
+  pageDescription: 'Visual representation of ada supply distribution across key categories in the Cardano network.',
   title: 'Cardano Supply Overview',
   date: '', // set dynamically
-  author: authors?.['cf'],
   og: {
-    pageName: 'supply',
     title: 'Cardano Supply Distribution',
-    description:
-      'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'
-  }
+    description: 'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'
+  }, 
+  tags: ['economics', 'staking'],
+  indexed: true
 };
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -386,8 +385,13 @@ function PageContent() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:logo" content="img/cardano-logo-blue.svg" />
-        <meta property="og:image" content="/img/insights/supply_og.png" />
-        <meta property="og:url" content={`https://www.cardano.org/insights/governance-actions${location.search || ''}`} />
+        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
+        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{`
         {

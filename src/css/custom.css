@@ -609,7 +609,8 @@ img {
   .epochNav.is-jump .epochJumpCancel { display: inline-flex; }
 }
 /* end Insights page epoch navigation */
-/* Events platform link cards */
+
+/* Start Events platform link cards */
 .event-platforms {
   display: flex;
   flex-wrap: wrap;
@@ -723,3 +724,141 @@ img {
 [data-theme='dark'] .events-pagination__page {
   border-color: var(--ifm-color-emphasis-200);
 }
+/* End Events platform link cards */
+
+/* Start insights index list */
+.insights-list {
+  display: block;
+}
+
+/* Row layout: image left, text right, separator line */
+.insight-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+.insight-row:last-child {
+  border-bottom: 0;
+}
+
+/* Thumbnail */
+.insight-thumb {
+  flex: 0 0 240px;
+  max-width: 280px;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Text area */
+.insight-body { flex: 1 1 auto; min-width: 0; }
+.insight-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.insight-desc {
+  margin: 0.35rem 0 0.5rem;
+  opacity: 0.9;
+}
+
+/* Tags — pill style echoing epoch/buttons aesthetic */
+.insight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.15rem 0 0.3rem;
+}
+.insight-tag {
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  white-space: nowrap;
+}
+
+/* CTA link */
+.insight-cta { margin-top: 0.25rem; }
+.insight-link { font-weight: 600; }
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .insight-row { flex-direction: column; }
+  .insight-thumb { width: 100%; max-width: none; }
+}
+/* Grid layout enabling different orders per viewport */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "thumb title"
+    "thumb tags"
+    "thumb desc"
+    "thumb cta";
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: start;
+}
+
+/* Assign areas */
+.insight-thumb { grid-area: thumb; }
+.insight-title { grid-area: title; margin: 0; font-weight: 700; line-height: 1.25; }
+.insight-tags  { grid-area: tags; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.insight-desc  { grid-area: desc; margin: 0.25rem 0 0.25rem; opacity: 0.9; }
+.insight-cta   { grid-area: cta; margin-top: 0.1rem; }
+
+/* Keep your existing thumbnail and tag pill visuals */
+.insight-thumb {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Mobile: Title → Thumbnail → Description (then CTA), as requested */
+@media (max-width: 768px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "thumb"
+      "tags"
+      "desc"
+      "cta";
+  }
+}
+/* End insights index list */
