@@ -12,17 +12,19 @@ import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
 
 const meta = {
+  pageName: 'template',
   pageTitle: 'Insights Template | cardano.org',
   pageDescription: 'Insights Template',
   title: 'This is just a insights template',
   date: '2025-03-17',
-  author: authors?.['cf'],
   og: {
-    pageName: 'network',
     title: 'This is just a insights template | Cardano.org',
     description: 'Detailed description for open graph pages, and more.'
-  }
+  }, 
+  tags: ['governance'],
+  indexed: false 
 };
+
 
 export function ExampleDonutChart() {
   const ref = useRef();
@@ -85,6 +87,33 @@ function PageContent() {
 
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={pageKeywords} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:logo" content="img/cardano-logo-blue.svg" />
+        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
+        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
+        <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
+        <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "${pageTitle}",
+          "description": "${pageDescription}",
+          "url": "${canonicalUrl}"
+        }
+        `}</script>
+      </Head>
+
       <p>You don't need to use TitleWithText or similar components, you can use normal html here. But remember to use always the Link component. For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link></p>
 
       <p>For external links use: <Link href="https://developers.cardano.org">developers.cardano.org</Link></p>

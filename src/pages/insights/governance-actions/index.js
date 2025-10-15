@@ -21,19 +21,18 @@ import authors from '@site/src/data/authors.json';
 // ────────────────────────────────────────────────────────────────────────────
 //  Page Meta
 // ────────────────────────────────────────────────────────────────────────────
-const meta = {
+export const meta = {
+  pageName: 'governance-actions',
   pageTitle: 'Cardano Governance Action Charts',
-  pageDescription:
-    'Visual representation of Cardano Governance Action process flows.',
+  pageDescription: 'Visual representation of Cardano Governance Action process flows.',
   title: 'Cardano Governance Actions',
   date: '2025-04-09', 
-  author: authors?.['cf'],
   og: {
-    pageName: 'governance-actions',
     title: 'Cardano Governance Actions',
-    description:
-      'Explore the Cardano Governance Action flow logic.'
-  }
+    description: 'Explore the Cardano Governance Action flow logic.'
+  }, 
+  tags: ['governance'],
+  indexed: true 
 };
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -91,9 +90,14 @@ function PageContent() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:logo" content="img/cardano-logo-blue.svg" />
-        <meta property="og:image" content="/img/insights/governancen-actions_og.png" />
-        <meta property="og:url" content={`https://www.cardano.org/insights/governance-actions${location.search || ''}`} />
-        <link rel="canonical" href="https://www.cardano.org/insights/governance-actions" />
+        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
+        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
+        <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
         <script type="application/ld+json">{`
         {
           "@context": "https://schema.org",
@@ -108,7 +112,7 @@ function PageContent() {
       <TitleWithText
         description={[
           `**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle (submission → ratification → enactment), who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies; some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/).`,
-          `Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you’re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** ([constitution(/constitution)).`,
+          `Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you’re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** [constitution](/constitution).`,
           `For **Protocol Parameter Changes**, the charts separate routine updates (typically **DReps + CC**) from **security-critical parameters**, which also need **SPO approval**, i.e., all three bodies. Appendix I lists the critical parameters and their permitted ranges/scope.`
         ]}
         headingDot
