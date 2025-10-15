@@ -11,77 +11,64 @@ import * as echarts from 'echarts';
 import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
 
-const meta = {
+// 🔹 Export meta so the indexer (mod.meta) can read it, even though indexed=false
+export const meta = {
   pageName: 'template',
   pageTitle: 'Insights Template | cardano.org',
   pageDescription: 'Insights Template',
-  title: 'This is just a insights template',
+  title: 'This is just an insights template',
   date: '2025-03-17',
   og: {
-    title: 'This is just a insights template | Cardano.org',
+    title: 'This is just an insights template | Cardano.org',
     description: 'Detailed description for open graph pages, and more.'
-  }, 
+  },
   tags: ['governance'],
-  indexed: false 
+  indexed: false
 };
 
-
+// 🔹 Minimal ECharts (no d3 dependency)
 export function ExampleDonutChart() {
-  const ref = useRef();
-
+  const ref = useRef(null);
   useEffect(() => {
-    const width = 300;
-    const height = 300;
-    const radius = Math.min(width, height) / 2;
-
-    const data = [
-      { label: 'A', value: 30 },
-      { label: 'B', value: 70 }
-    ];
-
-    const svg = d3.select(ref.current)
-      .attr('width', width)
-      .attr('height', height)
-      .append('g')
-      .attr('transform', `translate(${width / 2}, ${height / 2})`);
-
-    const color = d3.scaleOrdinal()
-      .domain(data.map(d => d.label))
-      .range(['#1f77b4', '#ff7f0e']);
-
-    const pie = d3.pie().value(d => d.value);
-    const arc = d3.arc().innerRadius(radius * 0.5).outerRadius(radius);
-
-    svg.selectAll('path')
-      .data(pie(data))
-      .enter()
-      .append('path')
-      .attr('d', arc)
-      .attr('fill', d => color(d.data.label))
-      .style('stroke', 'white')
-      .style('stroke-width', '2px');
-
-    svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('dy', '0.35em')
-      .style('font-size', '16px')
-      .style('font-weight', 'bold')
-      .text('Donut Chart');
+    if (!ref.current) return;
+    const chart = echarts.init(ref.current);
+    chart.setOption({
+      tooltip: { trigger: 'item' },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        avoidLabelOverlap: false,
+        label: { show: false },
+        data: [
+          { name: 'A', value: 30 },
+          { name: 'B', value: 70 },
+        ],
+      }],
+    });
+    const onResize = () => chart.resize();
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      chart.dispose();
+    };
   }, []);
-
-  return <svg ref={ref}></svg>;
+  return <div style={{width: 300, height: 300}} ref={ref} />;
 }
 
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const urlEpoch = queryParams.get('epoch');
+  const search = location?.search ?? '';
 
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const API_KEY = customFields.CARDANO_ORG_API_KEY;
 
   const [error, setError] = useState(null);
+
+  const pageTitle = meta.pageTitle;
+  const pageDescription = meta.pageDescription;
+  const pageKeywords = 'Cardano, Insights, Template'; // define or remove
+  const canonicalUrl = `https://www.cardano.org/insights/${meta.pageName}`;
 
   // insert custom data fetching logic here (e.g., API calls, hooks, etc.)
 
@@ -96,27 +83,30 @@ function PageContent() {
         <meta property="og:type" content="website" />
         <meta property="og:logo" content="img/cardano-logo-blue.svg" />
         <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
-        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
-        <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
-        <script type="application/ld+json">{`
-        {
+        <meta property="og:url" content={`${canonicalUrl}${search}`} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "${pageTitle}",
-          "description": "${pageDescription}",
-          "url": "${canonicalUrl}"
-        }
-        `}</script>
+          "headline": pageTitle,
+          "description": pageDescription,
+          "url": canonicalUrl
+        })}</script>
       </Head>
 
-      <p>You don't need to use TitleWithText or similar components, you can use normal html here. But remember to use always the Link component. For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link></p>
+      <p>
+        You don't need to use TitleWithText or similar components—plain HTML is fine.
+        For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link>
+      </p>
 
-      <p>For external links use: <Link href="https://developers.cardano.org">developers.cardano.org</Link></p>
+      <p>
+        For external links use: <Link href="https://developers.cardano.org">developers.cardano.org</Link>
+      </p>
 
       <ExampleDonutChart />
 
@@ -128,8 +118,9 @@ function PageContent() {
 export default function InsightsTemplate() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo 
-        pageName={meta.og.pageName}
+      {/* 🔹 Correct prop — pageName lives at the top level of meta */}
+      <OpenGraphInfo
+        pageName={meta.pageName}
         title={meta.og.title}
         description={meta.og.description}
       />
