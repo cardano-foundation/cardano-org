@@ -175,13 +175,6 @@
     "showCompanyName": true
    },
   {
-    "companyName": "Spectrum Finance",
-    "imageName": "spectrum-finance",
-    "link": "https://spectrum.fi/overview",
-    "knownFor": "Splash.trade",
-    "showCompanyName": false
-  },
-  {
     "companyName": "VESPR",
     "imageName": "vespr",
     "link": "https://vespr.xyz/about",
