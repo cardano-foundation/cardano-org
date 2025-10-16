@@ -97,13 +97,22 @@ export default function Home() {
           <Divider text="Why Voltaire" />
           <GovernanceWhyVoltaireSection />
 
-          <SpacerBox size="medium" />
         </BoundaryBox>
 
         <BoundaryBox>
-          <Divider text="Governance Action Charts" id="charts" />
-          <GovernanceCharts />
-          <SpacerBox size="medium" />
+          <Divider
+            text="Governance Action Charts"
+            id="charts"
+          />
+          <TextSectionWithCtaAndQuote
+            texts={[
+              "Discover how Cardano governance works with an interactive set of charts that illuminate each governance action. Navigate processes, rules, and thresholds at a glance, with visual explanations that make exploration fast and practical.",
+            ]}
+            showButton={true}
+            buttonText="Governance Action Charts"
+            buttonLink="/insights/governance-actions"
+          />
+		  <SpacerBox size="large" />
         </BoundaryBox>
 
         <BackgroundWrapper backgroundType={"gradientLight"}>

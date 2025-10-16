@@ -93,30 +93,80 @@ const manualParametersList = [
 // Extract parameters from text
 const extractParameters = (parameterDetails) => {
   if (!parameterDetails) return [];
-
   const paramsList = [];
   for (const param of manualParametersList) {
     if (parameterDetails.toLowerCase().includes(param.toLowerCase())) {
       paramsList.push(param);
     }
   }
-
   return paramsList;
 };
 
-export default function GovernanceCharts() {
-  const [activeCategory, setActiveCategory] = useState(null);
+// shallow equality for arrays (order-insensitive)
+const sameSet = (a = [], b = []) => {
+  if (a.length !== b.length) return false;
+  const sa = new Set(a);
+  for (const x of b) if (!sa.has(x)) return false;
+  return true;
+};
+
+export default function GovernanceCharts({
+  initialCategory = null,
+  initialParameters = [],
+  onSelectionChange,
+  urlSignature = '',
+}) {
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
   const [graphsData, setGraphsData] = useState({});
   const [allGraphs, setAllGraphs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
-  const [selectedParameters, setSelectedParameters] = useState([]);
-  const [activeChartId, setActiveChartId] = useState(null); // Add a unique identifier for active chart
+  const [selectedParameters, setSelectedParameters] = useState(initialParameters);
+  // remember last selection
+  const lastReportedRef = useRef({ category: initialCategory || null, parameters: [...initialParameters].sort() });
+
+  const sameSelection = (a, b) => {
+    if ((a.category || null) !== (b.category || null)) return false;
+    const ap = [...(a.parameters || [])].sort();
+    const bp = [...(b.parameters || [])].sort();
+    if (ap.length !== bp.length) return false;
+    for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
+    return true;
+  };
+  const [activeChartId, setActiveChartId] = useState(null);
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
+
+  const lastUrlSigRef = useRef(urlSignature);
+
+  //useEffect(() => { console.log('PARAMS', selectedParameters) }, [selectedParameters]);
+
+  // React to external URL changes (back/forward or parent updates)
+  useEffect(() => {
+    // only if URL has realy changed
+    if (urlSignature !== lastUrlSigRef.current) {
+      if (initialCategory !== activeCategory) {
+        setActiveCategory(initialCategory || null);
+        setActiveGraphIndex(null);
+        setActiveChartId(null);
+      }
+      if (!sameSet(initialParameters, selectedParameters)) {
+        setSelectedParameters(initialParameters || []);
+        setActiveGraphIndex(null);
+        setActiveChartId(null);
+      }
+      lastUrlSigRef.current = urlSignature;
+      lastReportedRef.current = {
+        category: initialCategory || null,
+        parameters: [...(initialParameters || [])].sort(),
+      };
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlSignature, initialCategory, initialParameters]);
+
 
   // Initialize charts data
   useEffect(() => {
@@ -126,9 +176,7 @@ export default function GovernanceCharts() {
     Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
       const categoryGraphs = data.map((chart) => {
         const parameters = extractParameters(chart.parameterDetails);
-        // Create a unique ID for each chart based on category and title
         const chartId = `${category}:${chart.title}`;
-
         return {
           id: chartId,
           title: chart.title,
@@ -139,7 +187,6 @@ export default function GovernanceCharts() {
           parameters: parameters,
         };
       });
-
       organizedData[category] = categoryGraphs;
       allGraphsList = [...allGraphsList, ...categoryGraphs];
     });
@@ -166,13 +213,9 @@ export default function GovernanceCharts() {
           !searchTerm ||
           graph.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
           (graph.description &&
-            graph.description
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())) ||
+            graph.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (graph.parameterDetails &&
-            graph.parameterDetails
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())) ||
+            graph.parameterDetails.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (graph.parameters &&
             graph.parameters.some((param) =>
               param.toLowerCase().includes(searchTerm.toLowerCase())
@@ -181,9 +224,7 @@ export default function GovernanceCharts() {
         const paramMatch =
           selectedParameters.length === 0 ||
           (graph.parameters &&
-            selectedParameters.some((param) =>
-              graph.parameters.includes(param)
-            ));
+            selectedParameters.some((param) => graph.parameters.includes(param)));
 
         return textMatch && paramMatch;
       });
@@ -215,13 +256,23 @@ export default function GovernanceCharts() {
     };
   }, [parametersDropdownOpen]);
 
+  // ────────────────────────────────────────────────────────────────────────
+  // URL sync: report selection changes upward
+  // ────────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const current = { category: activeCategory || null, parameters: selectedParameters };
+    if (!sameSelection(current, lastReportedRef.current)) {
+      lastReportedRef.current = { category: current.category, parameters: [...current.parameters].sort() };
+      onSelectionChange?.(current);
+    }
+  }, [activeCategory, selectedParameters, onSelectionChange]);
+
   // Event handlers
   const handleCategorySelect = (category) => {
     setActiveCategory(category === activeCategory ? null : category);
     setSearchTerm("");
   };
 
-  // Handle graph selection
   const handleGraphSelect = (index, category, event) => {
     if (
       event.target.closest(".Collapsible__trigger") ||
@@ -255,12 +306,13 @@ export default function GovernanceCharts() {
     }
   };
 
-  const handleParameterSelect = (parameter) => {
-    if (selectedParameters.includes(parameter)) {
-      setSelectedParameters(selectedParameters.filter((p) => p !== parameter));
-    } else {
-      setSelectedParameters([...selectedParameters, parameter]);
-    }
+  const handleParameterSelect = (parameter, nextChecked) => {
+    setSelectedParameters((prev) => {
+      if (nextChecked) {
+        return prev.includes(parameter) ? prev : [...prev, parameter];
+      }
+      return prev.filter((p) => p !== parameter);
+    });
   };
 
   const removeParameterTag = (parameter) => {
@@ -270,7 +322,7 @@ export default function GovernanceCharts() {
   const clearAllTags = () => {
     setSelectedParameters([]);
     setSearchTerm("");
-    setActiveCategory(null); // Reset to initial state
+    setActiveCategory(null);
   };
 
   const handleContentClick = (event) => {
@@ -314,24 +366,31 @@ export default function GovernanceCharts() {
             ref={parametersDropdownRef}
           >
             <div className={styles.dropdownTitle}>Available Parameters:</div>
-            <div className={styles.parametersList}>
-              {manualParametersList.map((param, index) => (
-                <div
-                  key={index}
-                  className={styles.parameterItem}
-                  onClick={() => handleParameterSelect(param)}
-                >
-                  <input
-                    type="checkbox"
-                    className={styles.parameterCheckbox}
-                    checked={selectedParameters.includes(param)}
-                    onChange={() => {}}
-                  />
-                  {param}
-                </div>
-              ))}
+              <div className={styles.parametersList}>
+                {manualParametersList.map((param, index) => {
+                  const checked = selectedParameters.includes(param);
+                  return (
+                    <label key={param} className={styles.parameterItem}>
+                      <input
+                        type="checkbox"
+                        className={styles.parameterCheckbox}
+                        checked={checked}
+                        onChange={(e) => {
+                          const nextChecked = e.target.checked;
+                          setSelectedParameters((prev) => {
+                            if (nextChecked) {
+                              return prev.includes(param) ? prev : [...prev, param];
+                            }
+                            return prev.filter((p) => p !== param);
+                          });
+                        }}
+                      />
+                      <span className={styles.parameterLabel}>{param}</span>
+                    </label>
+                  );
+                })}
+              </div>
             </div>
-          </div>
         )}
 
         {/* Selected Parameter Tags */}
