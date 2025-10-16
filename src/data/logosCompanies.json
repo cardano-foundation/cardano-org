@@ -340,6 +340,6 @@
     "imageName": "lantr",
     "link": "https://lantr.io/",
     "knownFor": "Scalus",
-    "showCompanyName": true
+    "showCompanyName": false
   }
 ]
