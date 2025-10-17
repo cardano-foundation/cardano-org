@@ -63,6 +63,13 @@
     "showCompanyName": true
   },
   {
+    "companyName": "UTXOS",
+    "imageName": "utxos",
+    "link": "https://utxos.dev/",
+    "knownFor": "UTXOS Web3 Services",
+    "showCompanyName": true
+  },
+  {
     "companyName": "Saib",
     "imageName": "saib",
     "link": "https://saib.dev",
