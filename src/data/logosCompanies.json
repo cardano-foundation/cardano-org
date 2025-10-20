@@ -341,5 +341,12 @@
     "link": "https://lantr.io/",
     "knownFor": "Scalus",
     "showCompanyName": true
+  },
+  {
+    "companyName": "Mynth",
+    "imageName": "mynth",
+    "link": "https://mynth.ai",
+    "knownFor": "Mynth",
+    "showCompanyName": true
   }
 ]
