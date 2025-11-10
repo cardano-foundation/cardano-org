@@ -343,10 +343,10 @@
     "showCompanyName": true
   },
   {
-    "companyName": "Mynth",
+    "companyName": "Progressive IT s.r.o.",
     "imageName": "mynth",
     "link": "https://mynth.ai",
-    "knownFor": "Mynth protocol",
-    "showCompanyName": true
+    "knownFor": "Mynth Cardano cross-chain swaps",
+    "showCompanyName": false
   }
 ]
