@@ -4,31 +4,43 @@
 
 Welcome to the cardano.org website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
 
- **This is the initial launch of cardano.org as open source project.** 
+cardano.org follows an incremental evolution model. This repository avoids full rebuild projects, agency-led redesigns, or “start from scratch” initiatives unless there is a demonstrated, documented and reviewed technical need. Improvements should be made through small, reviewable, continuously shipped changes.
 
-To achieve this, the entire site was rewritten, focusing on the technology stack rather than the content. We have maintained most of the original content for now to ensure it remains accessible. However, several significant day-one improvements compared to the old site should be highlighted:
+## Contribution boundaries
 
-- Rewritten using the Docusaurus stack (the same as developers.cardano.org).
-- The staging branch deploys at https://new-cardano-org-staging.netlify.app/, and the main branch deploys at https://cardano.org/.
-- Documentation on adding content can be found at https://cardano.org/docs/tutorial/create-a-page (work in progress).
-- Added Cardano-relevant research papers and specifications at https://cardano.org/research.
-- Replaced the unclear and confusing black overlay menu according to feedback. Ensured that every page is accessible through the new menus above, addressing a previous navigation issue.
-- Improved the news section, increasing visibility for many entities, now with tags, an RSS feed, collaborative features for news articles, embedded videos, and other enhancements.
-- Created a dedicated page for the Cardano code of conduct at https://cardano.org/community-code-of-conduct.
-- Reworked the Ambassador Program page at https://cardano.org/ambassadors. (not all have yet agreed to be listed there)
-- The Genesis page no longer relies on external sites and can be accessed at https://cardano.org/genesis.
-- Added 'Intersect' the member based organisation.
-- Additionally, dark mode is now available.
+Suitable contributions include:  
+- Content fixes, clarity, translations (once established), link hygiene. 
+- UI/UX improvements that follow existing design tokens. 
+- Component or navigation improvements backed by discussion. 
+- Docs, accessibility, performance and “paper cut” improvements. 
+
+Not suitable (without prior discussion):
+- Visual redesigns, rebranding, theme changes
+- Moving to a new framework or build system
+- Agency-style proposals for large paid revamps
+- Large content reshuffles without information architecture discussion
+
+### Issue claim workflow
+1.	Comment “I’d like to work on this”
+2.	Wait for maintainer assignment
+3.	If inactive for 21 days, issue becomes unassigned
+
+### Start here
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [docs/](https://cardano.org/docs/) for content
+- [Dicussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
+
+
+# Installation
+
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator. This will get you up and running:
 
 ## Requirements
 
 [Node.js](https://nodejs.org/en/download/) version >= 18.0
 [Yarn](https://yarnpkg.com/en/) version >= 1.22  
 On macOS you also need Xcode and Command Line Tools.
-
-# Installation
-
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator. This will get you up and running:
 
 ## Clone the repo
 ```
