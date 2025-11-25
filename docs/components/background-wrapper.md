@@ -104,6 +104,25 @@ You can select between different background types by passing the backgroundType 
   Way more. 
 </BackgroundWrapper>
 
+### adaLight
+```
+<BackgroundWrapper backgroundType="adaLight">
+```
+
+#### Result
+<BackgroundWrapper backgroundType="adaLight">
+  This is how<br />
+  the selected<br />
+  background style<br />
+  looks like.<br />
+  <br />
+  This needs<br />
+  more space<br />
+  to breathe.<br />
+  <br />
+  Way more. 
+</BackgroundWrapper>
+
 ### none (default)
 <BackgroundWrapper>
   This is how<br />

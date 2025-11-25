@@ -82,6 +82,18 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -103,6 +115,7 @@ const config = {
               {to: '/what-is-ada', label: 'What is ada?'}, 
               {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
               {to: '/where-to-get-ada', label: 'Where to get ada?'}, 
+              {to: '/apps', label: 'Explore Cardano Applications'}, 
               {to: '/insights', label: 'Cardano Insights'}, 
               {to: '/common-scams', label: 'How to protect your ada?'}, 
               {to: '/calculator', label: 'How do staking rewards work?'}, 
@@ -305,6 +318,7 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      
 
     // Announcement Bar
     // id: always change it when changing the announcement
