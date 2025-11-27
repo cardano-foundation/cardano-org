@@ -994,7 +994,7 @@ export const Showcases = [
     title: "Nio",
     description:
       "Track and monitor all assets in any wallet or locked in Cardano DeFi smart contracts.",
-    preview: require("./app-images/Nio_app.png"),
+    preview: require("./app-images/nio_app.png"),
     website: "https://nioapp.io",
     source: null,
     tags: ["accounting"],
