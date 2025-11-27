@@ -12,7 +12,7 @@ import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
 import Tooltip from "../ShowcaseTooltip/index";
 import { useLocation } from "@docusaurus/router";
-import { Tags as ShowcaseTags } from "../../../data/showcases";
+import { Tags as ShowcaseTags } from "../../../data/apps";
 import Fav from "../../../svg/fav.svg";
 
 const TagComp = forwardRef(({ label, color, description }, ref) => (

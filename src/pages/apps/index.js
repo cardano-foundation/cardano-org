@@ -16,7 +16,7 @@ import ShowcaseLatestToggle, {
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { toggleListItem } from "../../utils/jsUtils";
-import { SortedShowcases, Tags, TagList, Showcases } from "../../data/showcases";
+import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
 import { useHistory, useLocation } from "@docusaurus/router";
 import _debounce from 'lodash/debounce';
 import styles from "./styles.module.css";
@@ -28,7 +28,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 const TITLE = "Cardano Applications";
 const DESCRIPTION = "Explore curated applications that run on Cardano mainnet today";
 const CTA = "₳dd your project";
-const FILENAME = "showcases.js";
+const FILENAME = "apps.js";
 
 export function prepareUserState() {
   if (ExecutionEnvironment.canUseDOM) {
