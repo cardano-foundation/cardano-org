@@ -6,4 +6,11 @@ export default {
     bannerType: 'fluidBlue',
     openGraph: 'signal-governance',
   },
+    "operator": {
+    title: 'Signal your interest in Stake Pool Operations',
+    formId: 8,
+    description: 'Stay informed about everything related to running a Stake Pool and technical updates.',
+    bannerType: 'fluidBlue',
+    openGraph: 'signal-operator-notification',
+  },
 };
