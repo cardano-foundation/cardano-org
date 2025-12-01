@@ -1,0 +1,140 @@
+# =============================================================================
+# .dockerignore - Exclude files from Docker build context
+# =============================================================================
+# This file significantly speeds up Docker builds by excluding unnecessary
+# files from the build context sent to the Docker daemon.
+# =============================================================================
+
+# Git
+.git
+.github
+.gitignore
+.gitattributes
+
+# Dependencies (will be installed in container)
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs (generated during build)
+build
+.docusaurus
+.cache-loader
+
+# Development files
+.DS_Store
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.editorconfig
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+
+# Environment files (use docker-compose environment instead)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+.nyc_output
+*.lcov
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# Documentation (keep for CI but may exclude for faster builds)
+# README.md
+# CONTRIBUTING.md
+# CODE_OF_CONDUCT.md
+# LICENSE
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+yarn-error.log
+
+# Optional: Exclude lock files if you want to regenerate them
+# yarn.lock
+# package-lock.json
+
+# Netlify
+.netlify
+netlify.toml
+
+# Docker files themselves
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+.circleci
+
+# Temporary files
+*.tmp
+*.temp
+.tmp
+.temp
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# IDE - IntelliJ
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+# Markdown lint
+.markdownlint.json
+
+# Keys and secrets
+**/keys**
+*.pem
+*.key
+*.cert
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z

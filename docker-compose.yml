@@ -1,0 +1,153 @@
+# =============================================================================
+# Docker Compose configuration for Cardano.org Developer Portal
+# =============================================================================
+# 
+# Services:
+#   - cardano-dev: Development environment with hot-reload
+#   - cardano-prod: Production build preview
+#   - cardano-test: Test environment for CI/CD
+#
+# Usage:
+#   Development: docker-compose up cardano-dev
+#   Production:  docker-compose up cardano-prod
+#   Test:        docker-compose up cardano-test
+# =============================================================================
+
+# Note: 'version' field is obsolete in Docker Compose v2+ and has been removed
+
+# Shared configuration using YAML anchors
+x-common-variables: &common-variables
+  NODE_ENV: development
+  # Uncomment and set if using data.cardano.org API
+  # CARDANO_ORG_API_URL: https://data.cardano.org/k/api/v1
+  # CARDANO_ORG_API_KEY: your-api-key-here
+
+services:
+  # ---------------------------------------------------------------------------
+  # Development Service - Hot reload enabled
+  # ---------------------------------------------------------------------------
+  cardano-dev:
+    container_name: cardano-org-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+      # Enable BuildKit for faster builds and better caching
+      cache_from:
+        - cardano-org-dev:latest
+    image: cardano-org-dev:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot-reload
+      # Note: node_modules is not mounted to avoid conflicts
+      - ./docs:/app/docs
+      - ./blog:/app/blog
+      - ./src:/app/src
+      - ./static:/app/static
+      - ./scripts:/app/scripts
+      - ./docusaurus.config.js:/app/docusaurus.config.js
+      - ./sidebars.js:/app/sidebars.js
+      - ./babel.config.js:/app/babel.config.js
+      - ./variables.js:/app/variables.js
+      - ./hubspot.config.js:/app/hubspot.config.js
+      # Exclude node_modules and build artifacts from host
+      - /app/node_modules
+      - /app/.docusaurus
+      - /app/build
+    environment:
+      <<: *common-variables
+      NODE_ENV: development
+      # Allow hot-reload to work properly
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+    restart: unless-stopped
+    networks:
+      - cardano-network
+    # Health check for development server
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ---------------------------------------------------------------------------
+  # Production Service - Optimized production build
+  # ---------------------------------------------------------------------------
+  cardano-prod:
+    container_name: cardano-org-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      cache_from:
+        - cardano-org-prod:latest
+    image: cardano-org-prod:latest
+    ports:
+      - "3001:3000"
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped
+    networks:
+      - cardano-network
+    # Health check for production server
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ---------------------------------------------------------------------------
+  # Test Service - For running builds and validations
+  # ---------------------------------------------------------------------------
+  cardano-test:
+    container_name: cardano-org-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+      cache_from:
+        - cardano-org-test:latest
+    image: cardano-org-test:latest
+    volumes:
+      # Mount source for testing
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: test
+    networks:
+      - cardano-network
+    # Override command for specific tests if needed
+    command: yarn build
+
+  # ---------------------------------------------------------------------------
+  # Builder Service - For creating production builds locally
+  # ---------------------------------------------------------------------------
+  cardano-builder:
+    container_name: cardano-org-builder
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+      cache_from:
+        - cardano-org-builder:latest
+    image: cardano-org-builder:latest
+    volumes:
+      # Mount build output to host
+      - ./build:/app/build
+    environment:
+      NODE_ENV: production
+    networks:
+      - cardano-network
+
+networks:
+  cardano-network:
+    driver: bridge
+    name: cardano-network
+
+# Optional: Add volumes for persistent caching
+# volumes:
+#   node_modules:
+#   yarn_cache:
