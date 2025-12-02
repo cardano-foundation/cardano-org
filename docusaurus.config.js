@@ -107,26 +107,40 @@ const config = {
         },
         items: [
           {
-            /*to: '/learn', TODO*/ 
             label: 'Learn',
+            type: 'dropdown',
             position: 'left',
-            items: [  
-              {to: '/discover-cardano', label: 'Discover Cardano'}, 
-              {to: '/what-is-ada', label: 'What is ada?'}, 
-              {to: '/what-is-ada#wallets', label: 'Find Cardano wallets'}, 
-              {to: '/where-to-get-ada', label: 'Where to get ada?'}, 
-              {to: '/apps', label: 'Explore Cardano Applications'}, 
-              {to: '/insights', label: 'Cardano Insights'}, 
-              {to: '/common-scams', label: 'How to protect your ada?'}, 
-              {to: '/calculator', label: 'How do staking rewards work?'}, 
-              {to: '/stake-pool-delegation', label: 'Delegate your stake'}, 
-              {to: '/stake-pool-operation', label: 'Operate a stake pool'}, 
-              {to: '/governance', label: 'Participate in governance'}, 
-              {to: '/ouroboros', label: 'What is Ouroboros?'}, 
-              {to: '/hardforks', label: 'Which hard forks were there?'}, 
-              {to: '/genesis', label: 'About Genesis Distribution'}, 
-              {href: 'https://explorer.cardano.org', label: 'Explore the Cardano blockchain'},
-            ],
+            items: [],
+            mega: true,
+            customProps: {
+              columns: [
+                {
+                  title: 'Get to know',
+                  items: [
+                    {to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'},
+                    {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token'},
+                    {to: '/what-is-ada#wallets', label: 'Cardano wallets', description: 'An app to store and use ada'},
+                    {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},
+                  ],
+                },
+                {
+                  title: 'Take part',
+                  items: [
+                    {to: '/stake-pool-delegation', label: 'Delegate your stake', description: 'Support the network and earn rewards'},
+                    {to: '/stake-pool-operation', label: 'Operate a stake pool', description: 'Run infrastructure for Cardano'},
+                    {to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future'},
+                  ],
+                },
+                {
+                  title: 'Build & create',
+                  items: [
+                    {to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling'},
+                    {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
+                    {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase', description: 'See what others have built'},
+                  ],
+                },
+              ],
+            },
           },
           {
             /*to: '/community', TODO*/
