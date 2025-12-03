@@ -107,10 +107,23 @@ const config = {
         },
         items: [
           {
+            // The collapsed mega menu for "Learn"
             label: 'Learn',
             type: 'dropdown',
             position: 'left',
-            items: [],
+            items: [
+              {to: '/discover-cardano', label: 'Discover Cardano'},
+              {to: '/what-is-ada', label: 'What is ada?'},
+              {to: '/what-is-ada#wallets', label: 'Cardano wallets'},
+              {to: '/common-scams', label: 'Protect your ada'},
+              {to: '/stake-pool-delegation', label: 'Delegate your stake'},
+              {to: '/stake-pool-operation', label: 'Operate a stake pool'},
+              {to: '/governance', label: 'Participate in governance'},
+              {to: '/developers', label: 'Start building on Cardano'},
+              {to: '/research', label: 'Cardano Research'},
+              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'},
+            ],
+            // The mega menu full version for "Learn"
             mega: true,
             customProps: {
               columns: [
@@ -143,20 +156,47 @@ const config = {
             },
           },
           {
-            /*to: '/community', TODO*/
-            label: 'Community',
+            label: 'Participate',
+            type: 'dropdown',
             position: 'left',
-            items: [  
-              {to: '/events', label: 'Cardano Events'}, 
-              {to: '/constitution', label: 'Cardano Constitution'}, 
-              {to: '/community-code-of-conduct', label: 'Code of Conduct'}, 
+            items: [
+              {to: '/events', label: 'Cardano Events'},
+              {to: '/constitution', label: 'Cardano Constitution'},
+              {to: '/community-code-of-conduct', label: 'Code of Conduct'},
               {to: '/ambassadors', label: 'Cardano Ambassadors'},
-              {to: '/newsletter', label: 'Newsletter'}, 
+              {to: '/newsletter', label: 'Newsletter'},
               {to: '/#follow', label: 'Follow Cardano'},
-              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'}, 
-              {href: 'https://forum.cardano.org', label: 'Cardano Forum'}, 
-              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'}, 
+              {href: 'https://forum.cardano.org', label: 'Cardano Forum'},
+              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'},
             ],
+            mega: true,
+            customProps: {
+              columns: [
+                {
+                  title: 'Connect',
+                  items: [
+                    {to: '/events', label: 'Cardano Events', description: 'Join Cardano community events'},
+                    {to: '/ambassadors', label: 'Cardano Ambassadors', description: 'Become a Cardano ambassador'},
+                    {to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news'},
+                  ],
+                },
+                {
+                  title: 'Engage',
+                  items: [
+                    {href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Join community discussions'},
+                    {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels', description: 'Find us on social media'},
+                    {to: '/#follow', label: 'Follow Cardano', description: 'Follow official channels'},
+                  ],
+                },
+                {
+                  title: 'Governance',
+                  items: [
+                    {to: '/constitution', label: 'Cardano Constitution', description: 'Learn about governance'},
+                    {to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values'},
+                  ],
+                },
+              ],
+            },
           },
           /* 
           {
@@ -169,15 +209,41 @@ const config = {
             ],
           },*/
           {
-            /* to: '/developers', TODO*/
-            label: 'Developers',
+            label: 'Build',
+            type: 'dropdown',
             position: 'left',
-            items: [  
+            items: [
               {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
-              {to: '/exchanges', label: 'Integrate Cardano'}, 
-              {to: '/entities/#companies', label: 'Companies building on Cardano'}, 
+              {to: '/exchanges', label: 'Integrate Cardano'},
+              {to: '/entities/#companies', label: 'Companies building on Cardano'},
             ],
+            mega: true,
+            customProps: {
+              columns: [
+                {
+                  title: 'Get started',
+                  items: [
+                    {to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling'},
+                    {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
+                  ],
+                },
+                {
+                  title: 'Integrate',
+                  items: [
+                    {to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides'},
+                    {to: '/entities/#companies', label: 'Companies building on Cardano', description: 'Companies, associations, and collaborations'},
+                  ],
+                },
+                {
+                  title: 'Tools',
+                  items: [
+                    {href: 'https://developers.cardano.org', label: 'Developer Portal', description: 'Cardano developer portal and docs'},
+                    {href: 'https://developers.cardano.org/tools', label: 'Builder Tools', description: 'Tools to build on Cardano'},
+                  ],
+                },
+              ],
+            },
           },
           {
             to: '/use-cases',  

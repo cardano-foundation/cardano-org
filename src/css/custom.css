@@ -487,6 +487,8 @@ img {
   padding: 6px 0;
 }
 
+/* (focus visible outlines intentionally omitted in original version) */
+
 .megaMenuItemLabel {
   font-weight: 500;
   display: block;
