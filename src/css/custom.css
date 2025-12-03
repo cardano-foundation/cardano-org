@@ -510,13 +510,15 @@ img {
 }
 
 .megaMenuItemLink {
-  display: block;
-  padding: 6px 8px;
-  margin: 0 -8px;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
+  margin: 0 -12px;
   border-radius: 4px;
   transition: background-color 0.15s ease;
   text-decoration: none;
   color: inherit;
+  gap: 12px;
 }
 
 .megaMenuItemLink:hover {
@@ -535,10 +537,42 @@ img {
   color: var(--ifm-color-primary);
 }
 
+.megaMenuItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .megaMenuItemDescription {
   font-size: 0.8rem;
   opacity: 0.8;
   display: block;
+}
+
+/* Replace default list bullets with Font Awesome icons */
+.megaMenuColumnList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.megaMenuItem {
+  display: block;
+}
+
+.megaMenuItemIcon {
+  display: flex-shrink;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 4px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+  filter: grayscale(5%) brightness(0) saturate(100%) invert(21%) sepia(78%) saturate(2273%) hue-rotate(222deg);
+}
+
+.megaMenuItemLink:hover .megaMenuItemIcon {
+  opacity: 0.95;
 }
 
 /* Strong reset for text orientation inside the mega menu to avoid

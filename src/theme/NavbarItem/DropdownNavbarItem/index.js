@@ -3,10 +3,14 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import OriginalDropdownNavbarItem from '@theme-original/NavbarItem/DropdownNavbarItem';
 import {useWindowSize} from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function DropdownNavbarItem({mobile = false, ...props}) {
   const windowSize = useWindowSize();
   const isMobile = mobile || windowSize === 'mobile';
+
+  const {siteConfig} = useDocusaurusContext();
+  const megaMenuIconsEnabled = siteConfig?.themeConfig?.megaMenuIcons !== false;
 
   const mega =
     props.mega &&
@@ -47,12 +51,22 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
                       className="megaMenuItemLink"
                       to={item.to}
                       href={item.href}>
-                      <span className="megaMenuItemLabel">{item.label}</span>
-                      {item.description && (
-                        <span className="megaMenuItemDescription">
-                          {item.description}
-                        </span>
+                      {megaMenuIconsEnabled && item.icon && (
+                        <img
+                          src={`/img/icons/${item.icon}.svg`}
+                          alt=""
+                          className="megaMenuItemIcon"
+                          aria-hidden="true"
+                        />
                       )}
+                      <div className="megaMenuItemContent">
+                        <span className="megaMenuItemLabel">{item.label}</span>
+                        {item.description && (
+                          <span className="megaMenuItemDescription">
+                            {item.description}
+                          </span>
+                        )}
+                      </div>
                     </Link>
                   </li>
                 ))}
