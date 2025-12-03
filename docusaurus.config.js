@@ -112,7 +112,7 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
-              {to: '/discover-cardano', label: 'Discover Cardano'},
+              //{to: '/discover-cardano', label: 'Discover Cardano'}, //TODO: needs revamp
               {to: '/what-is-ada', label: 'What is ada?'},
               {to: '/what-is-ada#wallets', label: 'Cardano wallets'},
               {to: '/common-scams', label: 'Protect your ada'},
@@ -130,32 +130,34 @@ const config = {
                 {
                   title: 'Get to know',
                   items: [
-                    {to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'},
+                    //{to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'}, //TODO: needs revamp
                     {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token'},
                     {to: '/what-is-ada#wallets', label: 'Cardano wallets', description: 'An app to store and use ada'},
+                    {to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use the Cardano'},
                     {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},
                   ],
                 },
                 {
                   title: 'Take part',
                   items: [
-                    {to: '/stake-pool-delegation', label: 'Delegate your stake', description: 'Support the network and earn rewards'},
-                    {to: '/stake-pool-operation', label: 'Operate a stake pool', description: 'Run infrastructure for Cardano'},
+                    {to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards'},
+                    {to: '/apps', label: 'Use Cardano Apps', description: 'Explore curated applications'},
                     {to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future'},
                   ],
                 },
                 {
-                  title: 'Build & create',
+                  title: 'Research',
                   items: [
-                    {to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling'},
                     {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
-                    {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase', description: 'See what others have built'},
+                    {to: '/hardforks', label: 'Hard Forks', description: 'Implemented Upgrades'},
+                    {href: '/insights', label: 'Cardano Insights', description: 'On‑chain or regularly refreshed data'},
                   ],
                 },
               ],
             },
           },
           {
+            // The collapsed mega menu for "Participate"
             label: 'Participate',
             type: 'dropdown',
             position: 'left',
@@ -169,6 +171,7 @@ const config = {
               {href: 'https://forum.cardano.org', label: 'Cardano Forum'},
               {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'},
             ],
+            // The mega menu full version for "Participate"
             mega: true,
             customProps: {
               columns: [
@@ -209,6 +212,7 @@ const config = {
             ],
           },*/
           {
+            // The collapsed mega menu for "Build"
             label: 'Build',
             type: 'dropdown',
             position: 'left',
@@ -218,21 +222,17 @@ const config = {
               {to: '/exchanges', label: 'Integrate Cardano'},
               {to: '/entities/#companies', label: 'Companies building on Cardano'},
             ],
+            // The mega menu full version for "Build"
             mega: true,
             customProps: {
+              columnCount: 2,
               columns: [
                 {
                   title: 'Get started',
                   items: [
                     {to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling'},
                     {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
-                  ],
-                },
-                {
-                  title: 'Integrate',
-                  items: [
                     {to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides'},
-                    {to: '/entities/#companies', label: 'Companies building on Cardano', description: 'Companies, associations, and collaborations'},
                   ],
                 },
                 {
@@ -240,6 +240,7 @@ const config = {
                   items: [
                     {href: 'https://developers.cardano.org', label: 'Developer Portal', description: 'Cardano developer portal and docs'},
                     {href: 'https://developers.cardano.org/tools', label: 'Builder Tools', description: 'Tools to build on Cardano'},
+                     {to: '/entities/#companies', label: 'Companies building on Cardano', description: 'Companies, associations, and collaborations'},
                   ],
                 },
               ],

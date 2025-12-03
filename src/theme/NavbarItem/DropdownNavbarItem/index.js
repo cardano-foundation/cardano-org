@@ -19,6 +19,7 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
   }
 
   const columns = props.customProps.columns;
+  const columnCount = props.customProps.columnCount || columns.length;
 
   return (
     <li
@@ -26,7 +27,8 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
         'navbar__item',
         'navbar__item--mega',
         props.className,
-      )}>
+      )}
+      data-column-count={columnCount}>
       {/* Top level trigger */}
       <button className="navbar__link megaMenuTrigger" type="button">
         {props.label}

@@ -442,11 +442,10 @@ img {
 
 .megaMenuPanel {
   position: absolute;
-  /* anchor to the navbar container (see .navbar { position: relative }) */
   top: var(--ifm-navbar-height);
-  left: 0;
-  right: 0;
-  margin: 4px auto 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 2px 0 0 0;
   padding: 16px 24px 24px;
   background: var(--ifm-background-surface-color);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
@@ -454,11 +453,18 @@ img {
   z-index: 1000;
   display: none;
   box-sizing: border-box;
-  /* keep the content readable on very wide screens */
-  max-width: 1200px;
-  width: calc(100% - 48px);
-  /* Make the panel noticeably wider on desktop (but still constrained) */
-  min-width: 720px;
+  /* Width is set by data-column-count variant rules below */
+}
+
+/* Invisible hover zone below panel to prevent closing when moving mouse down */
+.megaMenuPanel::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  height: 10px;
+  pointer-events: auto;
 }
 
 .navbar__item--mega:hover .megaMenuPanel,
@@ -474,6 +480,27 @@ img {
   gap: 24px;
 }
 
+/* Dynamic width based on column count */
+.navbar__item--mega[data-column-count="2"] .megaMenuPanel {
+  width: min(600px, calc(100vw - 48px));
+  max-width: 600px;
+  min-width: 640px;
+}
+
+.navbar__item--mega[data-column-count="2"] .megaMenuInner {
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+.navbar__item--mega[data-column-count="3"] .megaMenuPanel {
+  width: min(800px, calc(100vw - 48px));
+  max-width: 800px;
+  min-width: 720px;
+}
+
+.navbar__item--mega[data-column-count="3"] .megaMenuInner {
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+}
+
 .megaMenuColumnTitle {
   font-size: 0.75rem;
   font-weight: 600;
@@ -484,7 +511,17 @@ img {
 
 .megaMenuItemLink {
   display: block;
-  padding: 6px 0;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.megaMenuItemLink:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none;
 }
 
 /* (focus visible outlines intentionally omitted in original version) */
@@ -495,6 +532,7 @@ img {
   /* force horizontal text flow */
   writing-mode: horizontal-tb;
   white-space: normal;
+  color: var(--ifm-color-primary);
 }
 
 .megaMenuItemDescription {
