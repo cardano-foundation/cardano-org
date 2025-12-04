@@ -34,8 +34,8 @@ There are many ways to contribute, even if you are not a developer.
 ## What you should be aware of
 
 - [README](https://github.com/cardano-foundation/cardano-org/?tab=readme-ov-file)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [CONTRIBUTING.md](https://github.com/cardano-foundation/cardano-org/blob/staging/CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](https://github.com/cardano-foundation/cardano-org/blob/staging/CODE_OF_CONDUCT.md)
 - [/docs](/docs/) for content like this page
 - [Dicussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations.
 - [Issues](https://github.com/cardano-foundation/cardano-org/issues) to flesh out concrete plans and acts as a task manager.
