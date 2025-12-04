@@ -91,7 +91,7 @@ export default function WalletSection() {
       <TitleWithText
         title="More Wallets"
         description={["Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the \
-        [Wallet Showcase](https://developers.cardano.org/showcase?tags=wallet)."]}
+        [Wallet Showcase](/apps?tags=wallet)."]}
         titleType="black"
         headingDot={false}
         slightText={["The example applications are provided for informational purposes only and not endorsed or approved. \

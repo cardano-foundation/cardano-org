@@ -12,8 +12,8 @@ Before making a pull request, please make sure that you fulfill all these requir
 
 ### Requirements of your company, association or collaboration 
 - You can only add a registered company, an association, or a collaboration. By "collaboration" we mean open source collaborations such as the **Koios Team** or the **Guild Operators**. 
-- You cannot add a product, service or tool. These can be added to the [Cardano Showcase](https://developers.cardano.org/showcase). 
-- Ensure that your company/association/collaboration has a product, service or tool that is listed on either [Cardano Showcase](https://developers.cardano.org/showcase) or [Builder Tools](https://developers.cardano.org/tools).
+- You cannot add a product, service or tool. These can be added to the [Cardano Applications](/apps). 
+- Ensure that your company/association/collaboration has a product, service or tool that is listed on either [Cardano Applications](/apps) or [Builder Tools](https://developers.cardano.org/tools).
 - Your product, service, or tool needs to work today on Cardano mainnet, no coming soon, no preview, no promises, no token sales.
 
 ### Website Requirement

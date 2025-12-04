@@ -443,7 +443,7 @@ img {
 .megaMenuPanel {
   position: absolute;
   top: var(--ifm-navbar-height);
-  left: 50%;
+  left: 10%;
   transform: translateX(-50%);
   margin: 2px 0 0 0;
   padding: 16px 24px 24px;
@@ -502,11 +502,29 @@ img {
 }
 
 .megaMenuColumnTitle {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 8px;
   opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.megaMenuColumnIcon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: none;
+}
+
+/* Improve contrast for column icons in dark mode */
+[data-theme="dark"] .megaMenuColumnIcon {
+  /* invert black icons to light, then tone down to a soft grey */
+  filter: invert(1) brightness(1.05) contrast(0.9) saturate(0.6);
+  opacity: 0.85;
 }
 
 .megaMenuItemLink {
@@ -531,6 +549,7 @@ img {
 .megaMenuItemLabel {
   font-weight: 500;
   display: block;
+  font-size: 1.05rem;
   /* force horizontal text flow */
   writing-mode: horizontal-tb;
   white-space: normal;
@@ -544,8 +563,8 @@ img {
 }
 
 .megaMenuItemDescription {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  opacity: 0.85;
   display: block;
 }
 

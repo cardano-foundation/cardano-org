@@ -7,6 +7,7 @@ import React, {useMemo, useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
 const req = require.context('./', true, /\.(md|mdx|js|jsx|ts|tsx)$/);
@@ -216,6 +217,7 @@ export default function InsightsIndex() {
         {filtered.length === 0 && (
           <p className="opacity-70 mt-8">No insights matched your filters.</p>
         )}
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

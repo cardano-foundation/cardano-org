@@ -100,7 +100,9 @@ const config = {
       // The project's social card
       image: 'img/og/default.jpg',
       // Toggle display of icons in the mega menu. Icons need to be added to /static/img/icons/ as svg files
-      megaMenuIcons: true,
+      megaMenuIcons: false,
+      // Toggle display of icons in mega menu column titles. 
+      megaMenuColumnIcons: true,
       navbar: {
         logo: {
           alt: "Cardano Logo",
@@ -114,16 +116,15 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
-              //{to: '/discover-cardano', label: 'Discover Cardano'}, //TODO: needs revamp
               {to: '/what-is-ada', label: 'What is ada?'},
               {to: '/what-is-ada#wallets', label: 'Cardano wallets'},
+              {to: '/where-to-get-ada', label: 'Where to get ada?'},
               {to: '/common-scams', label: 'Protect your ada'},
-              {to: '/stake-pool-delegation', label: 'Delegate your stake'},
-              {to: '/stake-pool-operation', label: 'Operate a stake pool'},
-              {to: '/governance', label: 'Participate in governance'},
-              {to: '/developers', label: 'Start building on Cardano'},
+              {to: '/stake-pool-delegation', label: 'Delegate your ada'},
+              {to: '/apps', label: 'Use Cardano Apps'},
               {to: '/research', label: 'Cardano Research'},
-              {href: 'https://developers.cardano.org/showcase', label: 'Cardano Showcase'},
+              {href: '/insights', label: 'Cardano Insights'},
+              {to: '/hardforks', label: 'Hard Forks'},
             ],
             // The mega menu full version for "Learn"
             mega: true,
@@ -131,6 +132,7 @@ const config = {
               columns: [
                 {
                   title: 'Get to know',
+                  icon: 'book-solid',
                   items: [
                     //{to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'}, //TODO: needs revamp
                     {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada'},
@@ -141,18 +143,21 @@ const config = {
                 },
                 {
                   title: 'Take part',
+                  icon: 'shapes-solid',
                   items: [
                     {to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards', icon: 'handshake-solid'},
                     {to: '/apps', label: 'Use Cardano Apps', description: 'Explore curated applications', icon: 'shapes-solid'},
-                    {to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future', icon: 'scroll-solid'},
+                    {to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values', icon: 'heart-solid'},
+                    
                   ],
                 },
                 {
                   title: 'Research',
+                  icon: 'flask-vial-solid',
                   items: [
                     {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers', icon: 'flask-vial-solid'},
-                    {to: '/hardforks', label: 'Hard Forks', description: 'Implemented Upgrades', icon: 'code-branch-solid'},
                     {href: '/insights', label: 'Cardano Insights', description: 'On‑chain or regularly refreshed data', icon: 'chart-line-solid'},
+                    {to: '/hardforks', label: 'Hard Forks', description: 'Implemented Upgrades', icon: 'code-branch-solid'},
                   ],
                 },
               ],
@@ -164,14 +169,17 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
+              {to: '/#follow', label: 'Follow Cardano'},
+              {to: '/newsletter', label: 'Newsletter'},
+              {href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord'},
+              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Community Channels'},
               {to: '/events', label: 'Cardano Events'},
+              {href: 'https://forum.cardano.org', label: 'Cardano Forum'},
+              {to: '/docs', label: 'Get involved in cardano.org'},
+              {to: '/ambassadors', label: 'Cardano Ambassadors'},
+              {to: '/governance', label: 'Participate in governance'},
               {to: '/constitution', label: 'Cardano Constitution'},
               {to: '/community-code-of-conduct', label: 'Code of Conduct'},
-              {to: '/ambassadors', label: 'Cardano Ambassadors'},
-              {to: '/newsletter', label: 'Newsletter'},
-              {to: '/#follow', label: 'Follow Cardano'},
-              {href: 'https://forum.cardano.org', label: 'Cardano Forum'},
-              {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels'},
             ],
             // The mega menu full version for "Participate"
             mega: true,
@@ -179,25 +187,34 @@ const config = {
               columns: [
                 {
                   title: 'Connect',
+                  icon: 'link-solid',
                   items: [
-                    {to: '/events', label: 'Cardano Events', description: 'Join Cardano community events', icon: 'calendar-solid'},
-                    {to: '/ambassadors', label: 'Cardano Ambassadors', description: 'Become a Cardano ambassador', icon: 'people-group-solid'},
+                    {to: '/#follow', label: 'Follow Cardano', description: 'Stay Updated', icon: 'link-solid'},
                     {to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news', icon: 'envelope-solid'},
+                     {href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord', description: 'Real-time chat and quick discussions', icon: 'comments-solid'},
+                    {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Community Channels', description: 'Recommended Community Channels', icon: 'share-nodes-solid'},
                   ],
                 },
                 {
                   title: 'Engage',
+                  icon: 'comments-solid',
                   items: [
-                    {href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Join community discussions', icon: 'comments-solid'},
-                    {href: 'https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046', label: 'Social Channels', description: 'Find us on social media', icon: 'share-nodes-solid'},
-                    {to: '/#follow', label: 'Follow Cardano', description: 'Follow official channels', icon: 'link-solid'},
+                     {to: '/events', label: 'Cardano Events', description: 'Join Cardano community events', icon: 'calendar-solid'},
+                    {href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Structured long-format discussions', icon: 'comments-solid'},
+                    
+                     {to: '/docs', label: 'Get involved in cardano.org', description: 'If you’d like to participate, this will get you started', icon: 'shapes-solid'},
+                    {to: '/ambassadors', label: 'Cardano Ambassadors', description: 'Become a Cardano ambassador', icon: 'people-group-solid'},
+                    
+                    
                   ],
                 },
                 {
                   title: 'Governance',
+                  icon: 'users-solid',
                   items: [
-                    {to: '/constitution', label: 'Cardano Constitution', description: 'Learn about governance', icon: 'scroll-solid'},
-                    {to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values', icon: 'heart-solid'},
+                     {to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future', icon: 'scroll-solid'},
+                     {to: '/constitution', label: 'Cardano Constitution', description: 'Learn about governance', icon: 'scroll-solid'},
+                     {to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values', icon: 'heart-solid'},
                   ],
                 },
               ],
@@ -222,6 +239,8 @@ const config = {
               {to: '/developers', label: 'Start building on Cardano'},
               {to: '/research', label: 'Cardano Research'},
               {to: '/exchanges', label: 'Integrate Cardano'},
+              {href: 'https://developers.cardano.org', label: 'Developer Portal'},
+              {href: 'https://developers.cardano.org/tools', label: 'Builder Tools'},
               {to: '/entities/#companies', label: 'Companies building on Cardano'},
             ],
             // The mega menu full version for "Build"
@@ -231,6 +250,7 @@ const config = {
               columns: [
                 {
                   title: 'Get started',
+                  icon: 'code-solid',
                   items: [
                     {to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling', icon: 'code-solid'},
                     {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers', icon: 'flask-solid'},
@@ -239,6 +259,7 @@ const config = {
                 },
                 {
                   title: 'Tools',
+                  icon: 'wrench-solid',
                   items: [
                     {href: 'https://developers.cardano.org', label: 'Developer Portal', description: 'Cardano developer portal and docs', icon: 'book-solid'},
                     {href: 'https://developers.cardano.org/tools', label: 'Builder Tools', description: 'Tools to build on Cardano', icon: 'wrench-solid'},
@@ -248,6 +269,8 @@ const config = {
               ],
             },
           },
+          /*
+          // Needs revamp
           {
             to: '/use-cases',  
             label: 'Use Cases',
@@ -261,6 +284,7 @@ const config = {
               {to: '/use-cases#diverse', label: 'Diverse Opportunities'},  
             ],
           },
+          */
           /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
@@ -272,6 +296,7 @@ const config = {
           */
           {
             to: '/news', label: 'News', position: 'left',
+            /*
             items: [  
               {to: '/news', label: 'All Articles (Chronological)'},  
               {to: '/news/tags/community-digest', label: 'Community Digest'},
@@ -281,6 +306,7 @@ const config = {
               {to: '/news/tags/scaling', label: 'Scaling'},
               {to: '/news/tags', label: 'View Tags'},  
           ],
+          */
         },
           {
             href: `${vars.repository}`,
@@ -343,6 +369,14 @@ const config = {
               {
                 label: 'Glossary',
                 to: '/docs/glossary#cardano-glossary',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/2PNbVTr',
+              },
+              {
+                label: 'Newsletter',
+                to: '/newsletter',
               },
               {
                 label: 'Contact',

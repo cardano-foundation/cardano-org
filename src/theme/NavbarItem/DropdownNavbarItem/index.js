@@ -11,6 +11,7 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
 
   const {siteConfig} = useDocusaurusContext();
   const megaMenuIconsEnabled = siteConfig?.themeConfig?.megaMenuIcons !== false;
+  const megaMenuColumnIconsEnabled = siteConfig?.themeConfig?.megaMenuColumnIcons === true;
 
   const mega =
     props.mega &&
@@ -43,7 +44,17 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
         <div className="megaMenuInner">
           {columns.map((col) => (
             <div className="megaMenuColumn" key={col.title}>
-              <div className="megaMenuColumnTitle">{col.title}</div>
+              <div className="megaMenuColumnTitle">
+                {megaMenuColumnIconsEnabled && col.icon && (
+                  <img
+                    src={`/img/icons/${col.icon}.svg`}
+                    alt=""
+                    className="megaMenuColumnIcon"
+                    aria-hidden="true"
+                  />
+                )}
+                {col.title}
+              </div>
               <ul className="megaMenuColumnList">
                 {col.items.map((item) => (
                   <li className="megaMenuItem" key={item.label}>
