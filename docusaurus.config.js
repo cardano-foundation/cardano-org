@@ -137,7 +137,7 @@ const config = {
                     //{to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'}, //TODO: needs revamp
                     {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada'},
                     {to: '/what-is-ada#wallets', label: 'Cardano wallets', description: 'An app to store and use ada', icon: 'wallet-solid'},
-                    {to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use the Cardano', icon: 'coins-solid'},
+                    {to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid'},
                     {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams', icon: 'shield-solid'},
                   ],
                 },
