@@ -88,7 +88,7 @@ export default function Home() {
 
                 "Cardano’s DeFi ecosystem offers decentralized lending platforms, stablecoins, and decentralized exchanges. By leveraging smart contracts, Cardano provides secure, scalable, and inclusive financial services for users across the globe.",
 
-                "[Explore DeFi on Cardano in the showcase.](https://developers.cardano.org/showcase/?operator=OR&tags=lending&tags=dex)"
+                "[Explore DeFi on Cardano in the showcase.](/apps/?operator=OR&tags=lending&tags=dex)"
               ]}
               headingDot={true}
             />

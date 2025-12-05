@@ -66,7 +66,7 @@ The Cardano Glossary offers clear definitions of key terms and serves as a style
 | `GitHub` | Note the capitalized H. |
 | `Goguen` | The [third era of the Cardano development](/research#goguen) focused on smart contracts. Named in honour of Joseph Goguen, an US computer scientist. |
 | `Governance Action` | CIP-1694 introduces a comprehensive on-chain governance model for Cardano, that included various types of governance actions. See [Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions) for details. |
-| `Governance Tools` | Governance tools enable the community to register as DRep, delegate to DReps or vote on governance actions. See [Governance Tools](https://developers.cardano.org/showcase?tags=governance) for details. |
+| `Governance Tools` | Governance tools enable the community to register as DRep, delegate to DReps or vote on governance actions. See [Governance Tools](/apps?tags=governance) for details. |
 
 ### H 
 |  Spelling/Term   | Comment                    |

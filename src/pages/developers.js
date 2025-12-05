@@ -62,7 +62,7 @@ export default function Home() {
                   {
                     list: [
                       "[Builder Tools](https://developers.cardano.org/tools)",
-                      "[Project Showcase](https://developers.cardano.org/showcase)",
+                      "[Cardano Applications](/apps)",
                       "[Technical Update Tracker](https://cardanoupdates.com)",
                     ],
                   },
