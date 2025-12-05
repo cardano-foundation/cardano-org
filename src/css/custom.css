@@ -477,6 +477,10 @@ img {
   text-decoration: none;
 }
 
+.navbar__link {
+  font-weight: 600;
+}
+
 .megaMenuTrigger::after {
   content: '';
   display: inline-block;
