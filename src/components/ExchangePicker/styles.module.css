@@ -185,6 +185,57 @@
   font-size: 1.1rem;
 }
 
+/* Add Exchange Card - matches DEX grid style */
+.addExchangeCard {
+  background: var(--ifm-background-surface-color);
+  border: 2px dashed var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.addExchangeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+}
+
+.addExchangeContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.addExchangeIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.addExchangeTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin: 0;
+}
+
+.addExchangeDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
   .exchangeGrid {
     grid-template-columns: 1fr;

@@ -137,6 +137,22 @@ export default function ExchangePicker() {
               {exchanges.map((ex) => (
                 <ExchangeCard key={ex.name} exchange={ex} />
               ))}
+              <a 
+                href="https://github.com/cardano-foundation/cardano-org/issues/355" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.addExchangeCard}
+              >
+                <div className={styles.addExchangeContent}>
+                  <svg className={styles.addExchangeIcon} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                  </svg>
+                  <h4 className={styles.addExchangeTitle}>Add Your Exchange</h4>
+                  <p className={styles.addExchangeDescription}>
+                    Help us expand this list by contributing exchanges for {selected}
+                  </p>
+                </div>
+              </a>
             </div>
           )}
         </div>

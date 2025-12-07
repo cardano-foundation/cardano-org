@@ -71,7 +71,7 @@ export default function Home() {
 
             <TitleWithText 
               description={[
-                "Listing here does not imply endorsement. This data is crowd-sourced by the community. Help us expand this list - [read how to add your exchange](https://github.com/cardano-foundation/cardano-org/issues/355). Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](what-is-ada).",
+                "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](what-is-ada).",
               ]}
               titleType="black"
             />
@@ -94,7 +94,7 @@ export default function Home() {
 
             <TitleWithText 
               description={[
-                "DEXs are not suitable for beginners, as you must already have [ada](what-is-ada) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days. Visit the [Cardano Showcase](https://developers.cardano.org/showcase?tags=dex) to get a more complete list of available decentralized exchanges.",
+                "DEXs are not suitable for beginners, as you must already have [ada](what-is-ada) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days.",
               ]}
               titleType="black"
             />
