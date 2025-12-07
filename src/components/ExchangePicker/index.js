@@ -105,8 +105,11 @@ export default function ExchangePicker() {
   return (
     <div className={styles.container}>
       <div className={styles.selectContainer}>
-         
+        <label className={styles.selectLabel} htmlFor="country-select">
+          Select your country:
+        </label>
         <select
+          id="country-select"
           className={styles.countrySelect}
           value={selected}
           onChange={(e) => setSelected(e.target.value)}

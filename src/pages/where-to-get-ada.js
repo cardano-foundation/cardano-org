@@ -8,6 +8,7 @@ import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithTex
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import ExchangePicker from "@site/src/components/ExchangePicker";
+import DexGrid from "@site/src/components/DexGrid";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -84,23 +85,16 @@ export default function Home() {
               
             "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges.",
               
-              {
-              list: [
-                "[DexHunter](https://www.dexhunter.io)",
-                "[Minswap](https://minswap.org)",
-                "[MuesliSwap](https://ada.muesliswap.com)",
-                "[SundaeSwap](https://app.sundae.fi)",
-                "[WingRiders](https://www.wingriders.com)",
-              ],
-            },
-
             ]}
             headingDot={false}
             />
 
+            <DexGrid limit={4} />
+            <SpacerBox size="medium"/>
+
             <TitleWithText 
               description={[
-                "DEXs are not suitable for beginners, as you must already have [ada](what-is-ada) to use them. Listing here does not imply endorsement. Visit the [Cardano Showcase](https://developers.cardano.org/showcase?tags=dex) to get a more complete list of available decentralized exchanges.",
+                "DEXs are not suitable for beginners, as you must already have [ada](what-is-ada) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days. Visit the [Cardano Showcase](https://developers.cardano.org/showcase?tags=dex) to get a more complete list of available decentralized exchanges.",
               ]}
               titleType="black"
             />

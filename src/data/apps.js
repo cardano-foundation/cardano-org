@@ -234,6 +234,23 @@ export const Tags = {
 // Add your project to (THE END OF) this list.
 // Please don't add the "favorite"-tag yourself.
 // Provide pure NFT projects only get the tag NFT, not "tokens"
+// 
+// ICON FIELD (optional):
+// - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
+// - Icons should be stored in /static/img/app-icons/ and referenced as string URLs
+// - If no icon is provided, components will show the first letter as a fallback badge
+// - Example: icon: "/img/app-icons/minswap.svg"
+//
+// EXAMPLE APP ENTRY:
+// {
+//   title: "Example Dex",
+//   description: "A decentralized exchange on Cardano.",
+//   preview: require("./app-images/example.png"),
+//   icon: "/img/app-icons/example.svg",  // Optional - for logo display
+//   website: "https://example.com",
+//   source: "https://github.com/example/repo",  // or null if closed source
+//   tags: ["dex", "token"], // don't overdo it.
+// }
 export const Showcases = [
   {
     title: "Open DJED",
@@ -526,6 +543,7 @@ export const Showcases = [
     description:
       "MuesliSwap is a new decentralized exchange (DEX) operating on the Smart Bitcoin Cash blockchain and Cardano.",
     preview: require("./app-images/muesliswap.png"),
+    icon: "/img/app-icons/muesliswap.webp",
     website: "https://ada.muesliswap.com",
     source: null,
     tags: ["favorite", "dex", "token"],
@@ -571,6 +589,7 @@ export const Showcases = [
     description:
       "Minswap is a multi-pool decentralized exchange on Cardano.",
     preview: require("./app-images/minswap.png"),
+    icon: "/img/app-icons/minswap.svg",
     website: "https://minswap.org",
     source: null,
     tags: ["dex", "token"],
@@ -877,6 +896,7 @@ export const Showcases = [
     description:
       "DexHunter is a decentralized exchange aggregator with real-time alerts and an easy to use interface.",
     preview: require("./app-images/dexhunter.png"),
+    icon: "/img/app-icons/dexhunter.svg",
     website: "https://www.dexhunter.io/",
     source: null,
     tags: ["dex", "token"],
@@ -1394,6 +1414,7 @@ function ensureShowcaseValid(showcase) {
       "website",
       "source",
       "tags",
+      "icon",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {

@@ -1,0 +1,230 @@
+.container {
+  padding: 0;
+  width: 100%;
+}
+
+.dexGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dexCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.dexCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary-lighter);
+}
+
+.dexHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dexLogo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.dexLogoPlaceholder {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+
+.dexName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+  flex: 1;
+}
+
+.dexDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.statsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(0, 51, 173, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 51, 173, 0.1);
+}
+
+[data-theme="dark"] .statsContainer {
+  background: rgba(0, 102, 255, 0.08);
+  border-color: rgba(0, 102, 255, 0.15);
+}
+
+.statsIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.statsText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1;
+}
+
+.statsLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 600;
+}
+
+.statsValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.rankBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.5rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rankBadge.top3 {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.dexLink {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.dexLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+.dexLink::after {
+  content: " →";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.dexLink:hover::after {
+  transform: translateX(3px);
+}
+
+.noData {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1.1rem;
+}
+
+.moreDexCard {
+  background: var(--ifm-background-surface-color);
+  border: 2px dashed var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 200px;
+}
+
+.moreDexCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  background: rgba(0, 51, 173, 0.02);
+}
+
+[data-theme="dark"] .moreDexCard:hover {
+  background: rgba(0, 102, 255, 0.05);
+}
+
+.moreDexContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.moreDexIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--ifm-color-primary);
+  opacity: 0.8;
+}
+
+.moreDexTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin: 0;
+}
+
+.moreDexDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .dexGrid {
+    grid-template-columns: 1fr;
+  }
+}
