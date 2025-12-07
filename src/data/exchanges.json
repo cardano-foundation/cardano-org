@@ -8,6 +8,12 @@
         "cnt": true
       },
       {
+        "name": "Bitpanda",
+        "link": "https://www.bitpanda.com",
+        "ada": true,
+        "cnt": true
+      },
+      {
         "name": "NBX",
         "link": "https://nbx.com",
         "ada": true,

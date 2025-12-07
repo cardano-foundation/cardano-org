@@ -4,15 +4,16 @@ import styles from "./styles.module.css";
 
 const { regions, countries } = data;
 
-// Logo mapping für Exchanges (von CoinGecko und offiziellen Quellen)
+// Logo mapping for exchanges (from CoinGecko and official sources)
 const EXCHANGE_LOGOS = {
   "Kraken": "/img/exchanges/kraken.png",
-  "Bitpanda": "/img/exchanges/bitpanda.svg",
-  // NBX: Kein Logo verfügbar - verwendet Initial-Badge
-  "Binance": "/img/exchanges/binance.png",
+  "Bitpanda": "/img/exchanges/bitpanda.png",
+  "NBX": "/img/exchanges/nbx.png",
+  "Binance": "/img/exchanges/binance.svg",
+  "Binance US": "/img/exchanges/binance.svg",
   "Coinbase": "/img/exchanges/coinbase.png",
-  "Bitvavo": "/img/exchanges/bitvavo.png",
-  "Revolut": "/img/exchanges/revolut.png",
+  "Bitvavo": "/img/exchanges/bitvavo.svg",
+  // Revolut: No logo available - uses initial badge
   "LCX": "/img/exchanges/lcx.png",
 };
 
@@ -104,9 +105,7 @@ export default function ExchangePicker() {
   return (
     <div className={styles.container}>
       <div className={styles.selectContainer}>
-        <label className={styles.selectLabel}>
-          Select your country:
-        </label>
+         
         <select
           className={styles.countrySelect}
           value={selected}
@@ -124,7 +123,7 @@ export default function ExchangePicker() {
       {selected && (
         <div>
           <h3 className={styles.resultsHeader}>
-            Available exchanges in {selected}
+            {exchanges.length} {exchanges.length === 1 ? 'exchange' : 'exchanges'} in {selected}
           </h3>
           {exchanges.length === 0 ? (
             <p className={styles.noResults}>
