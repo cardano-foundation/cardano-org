@@ -8,7 +8,7 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
-// Don't send pull requests for wallets that are not listed for at least 6 months on https://cardano.org/apps?tags=wallet
+// Please only send pull requests for wallets that are listed on https://cardano.org/apps?tags=wallet. If in doubt, check the official Cardano apps page for wallet listings.
 const WalletItemList = [
   {
     title: "Typhon Wallet",
