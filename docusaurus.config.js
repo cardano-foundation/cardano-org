@@ -178,8 +178,8 @@ const config = {
               { to: '/docs', label: 'Get involved in cardano.org' },
               { to: '/ambassadors', label: 'Cardano Ambassadors' },
               { to: '/governance', label: 'Participate in governance' },
+              { to: '/apps?tags=governance', label: 'Governance Tools' },
               { to: '/constitution', label: 'Cardano Constitution' },
-              { to: '/community-code-of-conduct', label: 'Code of Conduct' },
             ],
             // The mega menu full version for "Participate"
             mega: true,
@@ -213,8 +213,8 @@ const config = {
                   icon: 'users-solid',
                   items: [
                     { to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future', icon: 'scroll-solid' },
+                    { to: '/apps?tags=governance', label: 'Governance Tools', description: 'Tools for transparent, community-driven decisions', icon: 'scroll-solid' },
                     { to: '/constitution', label: 'Cardano Constitution', description: 'Learn about governance', icon: 'scroll-solid' },
-                    { to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values', icon: 'heart-solid' },
                   ],
                 },
               ],

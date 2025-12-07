@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center; /* This will vertically align items if they have different heights */
+  justify-content: flex-start;
+  align-items: stretch; /* This will ensure items have equal height */
   gap: 20px;
   max-width: 70rem;
 }

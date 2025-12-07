@@ -8,7 +8,7 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Wallets ranked based on (but not exclusively) https://cardano-community.github.io/support-faq/Wallets/list/
-// Don't send pull requests for wallets that are not listed for at least 6 months on https://developers.cardano.org/showcase?tags=wallet
+// Please only send pull requests for wallets that are listed on https://cardano.org/apps?tags=wallet. If in doubt, check the official Cardano apps page for wallet listings.
 const WalletItemList = [
   {
     title: "Typhon Wallet",
@@ -58,6 +58,13 @@ const WalletItemList = [
     label: "Get Daedalus",
     link: "https://daedaluswallet.io",
   },
+  {
+    title: "Explore Apps",
+    text: "Discover a wide variety of wallets designed to facilitate your interaction.",
+    subtext: "",
+    label: "More Wallets",
+    link: "/apps?tags=wallet",
+  },
 ];
 
 function WalletItem({ title, imageName, text, subtext, label, link }) {
@@ -89,9 +96,7 @@ export default function WalletSection() {
         </div>
       </div>
       <TitleWithText
-        title="More Wallets"
-        description={["Discover a wide variety of wallets designed to facilitate your interaction with Cardano ecosystem in the \
-        [Wallet Showcase](/apps?tags=wallet)."]}
+        
         titleType="black"
         headingDot={false}
         slightText={["The example applications are provided for informational purposes only and not endorsed or approved. \

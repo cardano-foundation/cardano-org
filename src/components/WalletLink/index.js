@@ -22,15 +22,17 @@ export default function WalletLink({
 }) {
   return (
     <div className={styles.logoContainer}>
-      <div className={styles.imageWrap}>
-        <ThemedImage
-          alt={label}
-          sources={{
-            light: useBaseUrl(`/img/wallets/${imageName}.svg`),
-            dark: useBaseUrl(`/img/wallets/${imageName}.svg`), // fixme: there are no dark images available yet
-          }}
-        />
-      </div>
+      {imageName && (
+        <div className={styles.imageWrap}>
+          <ThemedImage
+            alt={label}
+            sources={{
+              light: useBaseUrl(`/img/wallets/${imageName}.svg`),
+              dark: useBaseUrl(`/img/wallets/${imageName}.svg`), // fixme: there are no dark images available yet
+            }}
+          />
+        </div>
+      )}
       <h1 className="headingDot">{title}</h1>
       <div className={styles.textWrap}>
         <p className={styles.text}>{parseMarkdownLikeText(text)}</p>
