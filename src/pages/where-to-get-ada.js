@@ -7,6 +7,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithText";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import ExchangePicker from "@site/src/components/ExchangePicker";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -58,28 +59,17 @@ export default function Home() {
                   
                  "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](what-is-ada)  and other native tokens until you send them to a [wallet](what-is-ada#wallets) that you control.",
                   
-                  {
-                  list: [
-                    "[Binance](https://www.binance.com)",
-                    "[Bybit](https://www.bybit.com)",
-                    "[HTX](https://www.huobi.com)",
-                    "[Coinbase](https://www.coinbase.com)",
-                    "[KuCoin](https://www.kucoin.com)",
-                    "[Kraken](https://www.kraken.com)",
-                    "[Binance US](https://www.binance.us)",
-                    "[Bitget](https://www.bitget.com)",
-                    "[Bitfinex](https://www.bitfinex.com)",
-                    "[NBX](https://nbx.com)",
-                  ],
-                },
-                 
                 ]}
                 headingDot={true}
               />
+              <ExchangePicker />
+
+            
+            <SpacerBox size="medium"/>
 
             <TitleWithText 
               description={[
-                "Listing here does not imply endorsement. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](what-is-ada).",
+                "Listing here does not imply endorsement. This data is crowd-sourced by the community. Help us expand this list - [read how to add your exchange](https://github.com/cardano-foundation/cardano-org/issues/355). Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](what-is-ada).",
               ]}
               titleType="black"
             />

@@ -2,6 +2,12 @@
   "regions": {
     "Europe": [
       {
+        "name": "Kraken",
+        "link": "https://www.kraken.com",
+        "ada": true,
+        "cnt": true
+      },
+      {
         "name": "NBX",
         "link": "https://nbx.com",
         "ada": true,
