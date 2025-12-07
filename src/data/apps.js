@@ -396,25 +396,6 @@ export const Showcases = [
     tags: ["pooltool", "analytics"],
   },
   {
-    title: "Cardano Blockchain Insights",
-    description:
-      "A Google Data Studio dashboard that visualizes many Cardano on-chain metrics.",
-    preview: require("./app-images/cardano-blockchain-insights.png"),
-    website:
-      "https://datastudio.google.com/u/0/reporting/3136c55b-635e-4f46-8e4b-b8ab54f2d460/page/k5r9B",
-    source: null,
-    tags: ["favorite", "analytics"],
-  },
-  {
-    title: "PoolTool Mobile",
-    description:
-      "Explore Cardano, track your rewards and get notified to take action on certain events.",
-    preview: require("./app-images/pooltoolmobile.png"),
-    website: "https://pooltool.io/mobile",
-    source: null,
-    tags: ["favorite", "pooltool", "analytics"],
-  },
-  {
     title: "NOWPayments",
     description:
       "Payment gateway provider to accept ada payments and ada donations.",
