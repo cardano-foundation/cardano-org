@@ -215,7 +215,6 @@ const config = {
                     { to: '/governance', label: 'Participate in governance', description: 'Shape Cardano\'s future', icon: 'scroll-solid' },
                     { to: '/apps?tags=governance', label: 'Governance Tools', description: 'Tools for transparent, community-driven decisions', icon: 'scroll-solid' },
                     { to: '/constitution', label: 'Cardano Constitution', description: 'Learn about governance', icon: 'scroll-solid' },
-                    
                   ],
                 },
               ],
