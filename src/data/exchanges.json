@@ -37,6 +37,18 @@
           "link": "https://www.bitpanda.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "BISON",
+          "link": "https://bisonapp.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Trade Republic",
+          "link": "https://traderepublic.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -77,12 +89,50 @@
       ]
     },
 
-    "Austria": { "regions": ["Europe"], "exchanges": [] },
+    "Austria": { 
+      "regions": ["Europe"], 
+      "exchanges": [
+        {
+          "name": "Bitpanda",
+          "link": "https://www.bitpanda.com",
+          "ada": true,
+          "cnt": true
+        }
+      ]
+    },
     "France": { "regions": ["Europe"], "exchanges": [] },
     "Spain": { "regions": ["Europe"], "exchanges": [] },
     "Italy": { "regions": ["Europe"], "exchanges": [] },
     "Portugal": { "regions": ["Europe"], "exchanges": [] },
-    "Netherlands": { "regions": ["Europe"], "exchanges": [] },
+    "Netherlands": { 
+      "regions": ["Europe"], 
+      "exchanges": [
+        {
+          "name": "Bitvavo",
+          "link": "https://bitvavo.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Finst",
+          "link": "https://finst.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Coinmerce",
+          "link": "https://coinmerce.io",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Bybit",
+          "link": "https://bybit.eu",
+          "ada": true,
+          "cnt": false
+        }
+      ]
+    },
     "Luxembourg": { "regions": ["Europe"], "exchanges": [] },
     "Ireland": { "regions": ["Europe"], "exchanges": [] },
     "Denmark": { "regions": ["Europe"], "exchanges": [] },
@@ -96,12 +146,50 @@
     "Croatia": { "regions": ["Europe"], "exchanges": [] },
     "Greece": { "regions": ["Europe"], "exchanges": [] },
     "Cyprus": { "regions": ["Europe"], "exchanges": [] },
-    "Estonia": { "regions": ["Europe"], "exchanges": [] },
+    "Estonia": { 
+      "regions": ["Europe"], 
+      "exchanges": [
+        {
+          "name": "CoinMetro",
+          "link": "https://coinmetro.com",
+          "ada": true,
+          "cnt": false
+        }
+      ]
+    },
     "Latvia": { "regions": ["Europe"], "exchanges": [] },
-    "Lithuania": { "regions": ["Europe"], "exchanges": [] },
+    "Lithuania": { 
+      "regions": ["Europe"], 
+      "exchanges": [
+        {
+          "name": "WhiteBIT",
+          "link": "https://whitebit.com",
+          "ada": true,
+          "cnt": false
+        }
+      ]
+    },
     "Malta": { "regions": ["Europe"], "exchanges": [] },
     "Bulgaria": { "regions": ["Europe"], "exchanges": [] },
     "Romania": { "regions": ["Europe"], "exchanges": [] },
+
+    "Switzerland": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "Kraken",
+          "link": "https://www.kraken.com",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "SwissBorg",
+          "link": "https://swissborg.com",
+          "ada": true,
+          "cnt": false
+        }
+      ]
+    },
 
     "UK": {
       "regions": ["Europe"],
