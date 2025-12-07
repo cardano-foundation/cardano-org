@@ -22,6 +22,7 @@
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  min-height: 280px;
 }
 
 .dexCard:hover {
@@ -34,6 +35,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .dexLogo {
@@ -73,6 +75,8 @@
   line-height: 1.5;
   margin: 0;
   opacity: 0.85;
+  flex: 1;
+  flex-shrink: 0;
 }
 
 .statsContainer {
@@ -83,6 +87,8 @@
   background: rgba(0, 51, 173, 0.05);
   border-radius: 8px;
   border: 1px solid rgba(0, 51, 173, 0.1);
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 [data-theme="dark"] .statsContainer {
@@ -139,12 +145,12 @@
 
 .dexLink {
   display: inline-block;
-  margin-top: 0.5rem;
   color: var(--ifm-color-primary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .dexLink:hover {
