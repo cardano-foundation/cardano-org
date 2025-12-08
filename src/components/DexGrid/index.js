@@ -13,12 +13,20 @@ function getAppStats(appTitle) {
   // Normalize app title to match label format
   const normalized = appTitle.toLowerCase()
     .replace(/\s+/g, '')
-    .replace('dex', '')
+    .replace(/dex$/i, '')  // Only remove 'dex' at the end
     .trim();
   
-  return appStats.appStats.find(stat => 
-    normalized.includes(stat.label) || stat.label.includes(normalized)
+  // Try exact match first
+  const exactMatch = appStats.appStats.find(stat => 
+    stat.label === normalized || normalized === stat.label
   );
+  if (exactMatch) return exactMatch;
+  
+  // Try if normalized starts with label or vice versa (minimum 4 chars to avoid false positives)
+  return appStats.appStats.find(stat => {
+    if (stat.label.length < 4 || normalized.length < 4) return false;
+    return normalized.startsWith(stat.label) || stat.label.startsWith(normalized);
+  });
 }
 
 function DexCard({ app, stats, dexRank }) {
