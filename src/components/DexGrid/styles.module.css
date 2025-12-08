@@ -3,6 +3,13 @@
   width: 100%;
 }
 
+.gridTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
 .dexGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

@@ -26,7 +26,8 @@ function getAppStats(app) {
 
 function DexCard({ app, stats, dexRank }) {
   const hasStats = stats && stats.txCount > 0;
-  const isTop3 = dexRank <= 3;
+  const showRank = dexRank !== null && dexRank !== undefined;
+  const isTop3 = showRank && dexRank <= 3;
 
   // Get the image source, handling both require() objects and string URLs
   const getIconSrc = () => {
@@ -82,9 +83,11 @@ function DexCard({ app, stats, dexRank }) {
             <span className={styles.statsLabel}>Last 30 days</span>
             <span className={styles.statsValue}>{formatNumber(stats.txCount)} tx</span>
           </div>
-          <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
-            #{dexRank}
-          </div>
+          {showRank && (
+            <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
+              #{dexRank}
+            </div>
+          )}
         </div>
       )}
 
@@ -100,7 +103,12 @@ function DexCard({ app, stats, dexRank }) {
   );
 }
 
-export default function DexGrid({ limit = null }) {
+export default function DexGrid({ 
+  limit = null,
+  showRank = true,
+  showStats = true,
+  gridTitle = null 
+}) {
   // Filter apps with 'dex' tag
   const dexApps = Showcases.filter(app => app.tags.includes('dex'));
   
@@ -140,9 +148,10 @@ export default function DexGrid({ limit = null }) {
 
   return (
     <div className={styles.container}>
+      {gridTitle && <h3 className={styles.gridTitle}>{gridTitle}</h3>}
       <div className={styles.dexGrid}>
         {displayedDexApps.map(({ app, stats, dexRank }) => {
-          return <DexCard key={app.title} app={app} stats={stats} dexRank={dexRank} />;
+          return <DexCard key={app.title} app={app} stats={showStats ? stats : null} dexRank={showRank ? dexRank : null} />;
         })}
         {hasMore && (
           <a href="/apps?tags=dex" className={styles.moreDexCard}>

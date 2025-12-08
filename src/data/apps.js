@@ -562,8 +562,6 @@ export const Showcases = [
     description:
       "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
     preview: require("./app-images/sundaeswap.png"),
-    icon: "/img/app-icons/surf.png",
-    statsLabel: "surf",
     website: "https://www.sundaeswap.finance",
     source: null,
     tags: ["favorite", "dex", "token"],
