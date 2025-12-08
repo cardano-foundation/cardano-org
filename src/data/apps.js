@@ -257,6 +257,7 @@ export const Showcases = [
     description:
       "Mint and burn DJED, Cardano's overcollateralized stablecoin, with our open-source platform. Transparent alternative to DJED.xyz - accessible 24/7 anywhere. Built by Artifex Labs for the Cardano community.",
     preview: require("./app-images/open-djed.png"),
+    icon: "/img/app-icons/djed.png",
     website: "https://djed.artifex.finance/",
     source: "https://github.com/artifex-labs/open-djed",
     tags: ["token", "opensource"],
@@ -553,6 +554,7 @@ export const Showcases = [
     description:
       "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
     preview: require("./app-images/sundaeswap.png"),
+    icon: "/img/app-icons/surf.png",
     website: "https://www.sundaeswap.finance",
     source: null,
     tags: ["favorite", "dex", "token"],
@@ -662,6 +664,7 @@ export const Showcases = [
     description:
       "The DEX on Cardano. Native and fast AMM decentralized exchange platform.",
     preview: require("./app-images/wingriders.jpg"),
+    icon: "/img/app-icons/wingriders.png",
     website: "https://www.wingriders.com",
     source: null,
     tags: ["dex", "token"],
@@ -869,6 +872,7 @@ export const Showcases = [
     description: 
       "Aada is a peer-to-peer lending and borrowing protocol on the Cardano blockchain.",
     preview: require("./app-images/aada-finance.png"),
+    icon: "/img/app-icons/aada.finance.png",
     website: "https://app.aada.finance",
     source: null,
     tags: ["lending", "marketplace", "nftsupport"],
@@ -906,6 +910,7 @@ export const Showcases = [
     description:
       "Liqwid is a non-custodial pooled lending protocol with liquid staking built on Cardano.",
     preview: require("./app-images/liqwid.webp"),
+    icon: "/img/app-icons/liquid.png",
     website: "https://liqwid.finance/",
     source: null,
     tags: ["lending", "token", "marketplace", "nftsupport"],
@@ -969,6 +974,7 @@ export const Showcases = [
     description:
       "Danogo is a yield aggregator that provides lending and borrowing, obtaining optimized rates by combining data from multiple Cardano protocols.",
     preview: require("./app-images/danogo.png"),
+    icon: "/img/app-icons/danogo.jpg",
     website: "https://danogo.io/",
     source: null,
     tags: ["lending", "marketplace", "dex", "token"],
@@ -1113,6 +1119,7 @@ export const Showcases = [
     description:
       "FluidTokens is the leading Cardano-Bitcoin DeFi ecosystem, presenting a diverse range of services like lending, borrowing, staking, sponsored transactions and an array of other inventive products including rental options, boosted stake features, and more.",
     preview: require("./app-images/fluidtokens.png"),
+    icon: "/img/app-icons/fluidtoken.png",
     website: "https://fluidtokens.com/",
     source: "https://github.com/fluidtokens",
     tags: ["lending", "marketplace", "opensource"],
@@ -1131,6 +1138,7 @@ export const Showcases = [
     description:
       "Iagon is an AI-driven shared storage and compute economy. Bridging decentralization with compliance to revolutionize cloud services.",
     preview: require("./app-images/iagon.png"),
+    icon: "/img/app-icons/iagon.png",
     website: "https://iagon.com",
     source: null,
     tags: ["marketplace"],
@@ -1158,6 +1166,7 @@ export const Showcases = [
     description:
       "Decentralized open-source protocol for efficient market-making and trading on Cardano.",
     preview: require("./app-images/splash.png"),
+    icon: "/img/app-icons/splash.svg",
     website: "https://www.splash.trade/",
     source: "https://github.com/splashprotocol/splash-core",
     tags: ["dex", "opensource"],
@@ -1212,6 +1221,7 @@ export const Showcases = [
     description:
       "DeFi derivatives protocol revolutionizing perpetual futures trading on the Cardano blockchain.",
     preview: require("./app-images/strike.png"),
+    icon: "/img/app-icons/strike.png",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
     tags: ["marketplace", "opensource"],
@@ -1248,6 +1258,7 @@ export const Showcases = [
     description:
       "Masumi is a decentralized protocol empowering AI agents to collaborate seamlessly and monetize their services efficiently.",
     preview: require("./app-images/masumi.png"),
+    icon: "/img/app-icons/masumi.png",
     website: "https://www.masumi.network",
     source: "https://github.com/masumi-network",
     tags: ["marketplace", "opensource"],
@@ -1284,6 +1295,7 @@ export const Showcases = [
     description:
       "As a prediction market, we provide a unique platform where you can speculate on the outcomes of real-world events, leveraging the security, scalability, and transparency that only Cardano can offer.",
     preview: require("./app-images/bodega.png"),
+    icon: "/img/app-icons/bodega.png",
     website: "https://www.bodegamarket.xyz/",
     source: "https://github.com/bodega-market/bodega-market-smart-contracts",
     tags: ["marketplace", "opensource"],
@@ -1320,6 +1332,7 @@ export const Showcases = [
     description:
       "USDM is a fully backed USD stablecoin on Cardano, designed for seamless transactions and DeFi applications.",
     preview: require("./app-images/usdm.png"),
+    icon: "/img/app-icons/usdm.jpeg",
     website: "https://moneta.global/",
     source: null,
     tags: ["ecosystem", "token"],
@@ -1365,6 +1378,7 @@ export const Showcases = [
     description:
       "Indigo is an autonomous synthetics protocol for on-chain price exposure to real-world assets, built on Cardano.",
     preview: require("./app-images/indigo.png"),
+    icon: "/img/app-icons/indy.png",
     website: "https://indigoprotocol.io/",
     source: "https://github.com/IndigoProtocol/indigo-smart-contracts",
     tags: ["marketplace", "opensource"],
