@@ -19,7 +19,7 @@ const EXCHANGE_LOGOS = {
 
 function getExchangesForCountry(countryName) {
   const country = countries[countryName];
-  if (!country) return [];
+  if (!country) return { exchanges: [], notice: null };
 
   const countryExchanges = country.exchanges || [];
 
@@ -35,7 +35,10 @@ function getExchangesForCountry(countryName) {
     return true;
   });
 
-  return merged;
+  return {
+    exchanges: merged,
+    notice: country.notice || null
+  };
 }
 
 function ExchangeCard({ exchange }) {
@@ -99,8 +102,11 @@ function ExchangeCard({ exchange }) {
 export default function ExchangePicker() {
   const [selected, setSelected] = useState("");
 
-  const countryNames = Object.keys(countries).sort();
-  const exchanges = selected ? getExchangesForCountry(selected) : [];
+  // Top 3 countries by analytics Sept, October, November 2025
+  const topCountries = ["USA", "Germany", "China"];
+  const allCountryNames = Object.keys(countries).sort();
+  
+  const { exchanges, notice } = selected ? getExchangesForCountry(selected) : { exchanges: [], notice: null };
 
   return (
     <div className={styles.container}>
@@ -115,16 +121,30 @@ export default function ExchangePicker() {
           onChange={(e) => setSelected(e.target.value)}
         >
           <option value="">-- Choose a country --</option>
-          {countryNames.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
+          <optgroup label="Popular">
+            {topCountries.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="All Countries">
+            {allCountryNames.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </optgroup>
         </select>
       </div>
 
       {selected && (
         <div>
+          {notice && (
+            <div className={styles.notice}>
+              {notice}
+            </div>
+          )}
           <h3 className={styles.resultsHeader}>
             {exchanges.length} {exchanges.length === 1 ? 'exchange' : 'exchanges'} in {selected}
           </h3>

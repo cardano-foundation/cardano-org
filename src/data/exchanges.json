@@ -333,6 +333,25 @@
           "cnt": false
         }
       ]
+    },
+
+    "China": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "Bitfinex",
+          "link": "https://www.bitfinex.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "HTX",
+          "link": "https://www.htx.com",
+          "ada": true,
+          "cnt": false
+        }
+      ],
+      "notice": "Regional Notice for Users in Mainland China: Access to cryptocurrency trading services is restricted in Mainland China. Local regulations prohibit the operation of cryptocurrency exchanges and related trading activities. This page is provided for general informational purposes only and should not be interpreted as an offer, solicitation or recommendation to access or use such services from within Mainland China."
     }
   }
 }

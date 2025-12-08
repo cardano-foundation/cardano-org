@@ -38,6 +38,17 @@
   box-shadow: 0 0 0 3px rgba(0, 51, 173, 0.1);
 }
 
+.notice {
+  background-color: var(--ifm-color-warning-contrast-background);
+  border-left: 4px solid var(--ifm-color-warning);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-base);
+}
+
 .resultsHeader {
   font-size: 1.5rem;
   font-weight: 700;
