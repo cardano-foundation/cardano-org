@@ -95,7 +95,7 @@
     "location": "Marrakech, Morocco",
     "link": "https://gitexafrica.com",
     "image": "gitex-2026.jpg",
-    "organizer": "KAOUN International / Digital Development Agency (ADD)",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   },
    {
@@ -194,7 +194,7 @@
     "location": "London, United Kingdom",
     "link": "https://eblockchainconvention.com/digital-assets-forum/",
     "image": "digitalassetsforum.jpg",
-    "organizer": "Digital Assets Forum",
+    "organizer": "Cardano Foundation",
     "recapVideo": ""
   },
    {
@@ -205,7 +205,7 @@
     "location": "Hong Kong, China",
     "link": "https://consensus-hongkong.coindesk.com/",
     "image": "consensushk2026.jpg",
-    "organizer": "CoinDesk",
+    "organizer": "EMURGO and Rare Network",
     "recapVideo": ""
   },
    {
@@ -216,7 +216,7 @@
     "location": "Nairobi, Kenya",
     "link": "https://www.africatechsummit.com/nairobi/",
     "image": "africatechsummit.jpg",
-    "organizer": "Africa Tech Summit",
+    "organizer": "Cardano Foundation and WADA",
     "recapVideo": ""
   },
    {
@@ -227,7 +227,7 @@
     "location": "Miami, Florida, United States",
     "link": "https://futureproofhq.com/citywide/",
     "image": "futureproofmiami.jpg",
-    "organizer": "Future Proof",
+    "organizer": "Rare Network",
     "recapVideo": ""
   },
    {
@@ -238,7 +238,7 @@
     "location": "Washington, D.C., United States",
     "link": "https://www.dcblockchainsummit.com/",
     "image": "dcblockchainsummit.jpg",
-    "organizer": "Chamber of Digital Commerce",
+    "organizer": "Rare Network",
     "recapVideo": ""
   },
    {
@@ -249,7 +249,7 @@
     "location": "Tokyo, Japan",
     "link": "https://www.teamz.co.jp/en",
     "image": "teamz.jpg",
-    "organizer": "TEAMZ Inc.",
+    "organizer": "EMURGO and Rare Network",
     "recapVideo": ""
   }
   ,
@@ -261,7 +261,18 @@
     "location": "Paris, France",
     "link": "https://www.parisblockchainweek.com/",
     "image": "parisblockchainweek.jpg",
-    "organizer": "Paris Blockchain Week",
+    "organizer": "Cardano Foundation and Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "TechEx Global",
+    "description": "TechEx Global brings together enterprise leaders, IT decision-makers and technology innovators to explore the technologies shaping the future of business.",
+    "startDate": "2026-02-04",
+    "endDate": "2026-02-05",
+    "location": "London, UK",
+    "link": "https://techexevent.com/",
+    "image": "techex.png",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   }
 ]
