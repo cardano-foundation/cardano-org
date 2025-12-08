@@ -9,24 +9,19 @@ function formatNumber(num) {
 }
 
 // Helper function to find app stats by label
-function getAppStats(appTitle) {
-  // Normalize app title to match label format
-  const normalized = appTitle.toLowerCase()
+function getAppStats(app) {
+  // Use explicit statsLabel if provided
+  if (app.statsLabel) {
+    return appStats.appStats.find(stat => stat.label === app.statsLabel);
+  }
+  
+  // Fallback: try exact match with normalized title
+  const normalized = app.title.toLowerCase()
     .replace(/\s+/g, '')
-    .replace(/dex$/i, '')  // Only remove 'dex' at the end
+    .replace(/dex$/i, '')
     .trim();
   
-  // Try exact match first
-  const exactMatch = appStats.appStats.find(stat => 
-    stat.label === normalized || normalized === stat.label
-  );
-  if (exactMatch) return exactMatch;
-  
-  // Try if normalized starts with label or vice versa (minimum 4 chars to avoid false positives)
-  return appStats.appStats.find(stat => {
-    if (stat.label.length < 4 || normalized.length < 4) return false;
-    return normalized.startsWith(stat.label) || stat.label.startsWith(normalized);
-  });
+  return appStats.appStats.find(stat => stat.label === normalized);
 }
 
 function DexCard({ app, stats, dexRank }) {
@@ -111,8 +106,8 @@ export default function DexGrid({ limit = null }) {
   
   // Sort by transaction count (highest first), then alphabetically
   const sortedDexApps = dexApps.sort((a, b) => {
-    const statsA = getAppStats(a.title);
-    const statsB = getAppStats(b.title);
+    const statsA = getAppStats(a);
+    const statsB = getAppStats(b);
     
     const txA = statsA?.txCount || 0;
     const txB = statsB?.txCount || 0;
@@ -127,7 +122,7 @@ export default function DexGrid({ limit = null }) {
   // Calculate DEX-specific ranks
   const dexAppsWithRank = sortedDexApps.map((app, index) => ({
     app,
-    stats: getAppStats(app.title),
+    stats: getAppStats(app),
     dexRank: index + 1 // DEX-specific rank (1-based)
   }));
 

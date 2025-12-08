@@ -241,12 +241,19 @@ export const Tags = {
 // - If no icon is provided, components will show the first letter as a fallback badge
 // - Example: icon: "/img/app-icons/minswap.svg"
 //
+// STATS LABEL FIELD (optional):
+// - Add a 'statsLabel' field to explicitly map your app to transaction statistics
+// - Must match a 'label' in /src/data/app-stats.json exactly
+// - If not provided, the system will try to match using the normalized app title
+// - Example: statsLabel: "minswap"
+//
 // EXAMPLE APP ENTRY:
 // {
 //   title: "Example Dex",
 //   description: "A decentralized exchange on Cardano.",
 //   preview: require("./app-images/example.png"),
 //   icon: "/img/app-icons/example.svg",  // Optional - for logo display
+//   statsLabel: "example",  // Optional - for transaction data mapping
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
 //   tags: ["dex", "token"], // don't overdo it.
@@ -545,6 +552,7 @@ export const Showcases = [
       "MuesliSwap is a new decentralized exchange (DEX) operating on the Smart Bitcoin Cash blockchain and Cardano.",
     preview: require("./app-images/muesliswap.png"),
     icon: "/img/app-icons/muesliswap.webp",
+    statsLabel: "muesliswap",
     website: "https://ada.muesliswap.com",
     source: null,
     tags: ["favorite", "dex", "token"],
@@ -555,6 +563,7 @@ export const Showcases = [
       "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
     preview: require("./app-images/sundaeswap.png"),
     icon: "/img/app-icons/surf.png",
+    statsLabel: "surf",
     website: "https://www.sundaeswap.finance",
     source: null,
     tags: ["favorite", "dex", "token"],
@@ -592,6 +601,7 @@ export const Showcases = [
       "Minswap is a multi-pool decentralized exchange on Cardano.",
     preview: require("./app-images/minswap.png"),
     icon: "/img/app-icons/minswap.svg",
+    statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
     tags: ["dex", "token"],
@@ -665,6 +675,7 @@ export const Showcases = [
       "The DEX on Cardano. Native and fast AMM decentralized exchange platform.",
     preview: require("./app-images/wingriders.jpg"),
     icon: "/img/app-icons/wingriders.png",
+    statsLabel: "wingriders",
     website: "https://www.wingriders.com",
     source: null,
     tags: ["dex", "token"],
@@ -891,6 +902,7 @@ export const Showcases = [
     description:
       "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use. Your private keys and assets always remain under your control.",
     preview: require("./app-images/vesprwallet.png"),
+    statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
     tags: ["wallet", "nftsupport"],
@@ -901,6 +913,7 @@ export const Showcases = [
       "DexHunter is a decentralized exchange aggregator with real-time alerts and an easy to use interface.",
     preview: require("./app-images/dexhunter.png"),
     icon: "/img/app-icons/dexhunter.svg",
+    statsLabel: "dexhunter",
     website: "https://www.dexhunter.io/",
     source: null,
     tags: ["dex", "token"],
@@ -975,6 +988,7 @@ export const Showcases = [
       "Danogo is a yield aggregator that provides lending and borrowing, obtaining optimized rates by combining data from multiple Cardano protocols.",
     preview: require("./app-images/danogo.png"),
     icon: "/img/app-icons/danogo.jpg",
+    statsLabel: "danogo",
     website: "https://danogo.io/",
     source: null,
     tags: ["lending", "marketplace", "dex", "token"],
@@ -1129,6 +1143,7 @@ export const Showcases = [
     description:
       "All-in-one platform, that combines an order book DEX with an automated yield optimizer.",
     preview: require("./app-images/genius-yield.png"),
+    statsLabel: "geniusyield",
     website: "https://www.geniusyield.co/",
     source: "https://github.com/geniusyield",
     tags: ["dex", "opensource"],
@@ -1259,6 +1274,7 @@ export const Showcases = [
       "Masumi is a decentralized protocol empowering AI agents to collaborate seamlessly and monetize their services efficiently.",
     preview: require("./app-images/masumi.png"),
     icon: "/img/app-icons/masumi.png",
+    statsLabel: "masumi",
     website: "https://www.masumi.network",
     source: "https://github.com/masumi-network",
     tags: ["marketplace", "opensource"],
@@ -1296,6 +1312,7 @@ export const Showcases = [
       "As a prediction market, we provide a unique platform where you can speculate on the outcomes of real-world events, leveraging the security, scalability, and transparency that only Cardano can offer.",
     preview: require("./app-images/bodega.png"),
     icon: "/img/app-icons/bodega.png",
+    statsLabel: "bodega",
     website: "https://www.bodegamarket.xyz/",
     source: "https://github.com/bodega-market/bodega-market-smart-contracts",
     tags: ["marketplace", "opensource"],
@@ -1379,6 +1396,7 @@ export const Showcases = [
       "Indigo is an autonomous synthetics protocol for on-chain price exposure to real-world assets, built on Cardano.",
     preview: require("./app-images/indigo.png"),
     icon: "/img/app-icons/indy.png",
+    statsLabel: "indigo",
     website: "https://indigoprotocol.io/",
     source: "https://github.com/IndigoProtocol/indigo-smart-contracts",
     tags: ["marketplace", "opensource"],
@@ -1429,6 +1447,7 @@ function ensureShowcaseValid(showcase) {
       "source",
       "tags",
       "icon",
+      "statsLabel",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {

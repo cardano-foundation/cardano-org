@@ -5,24 +5,19 @@ import appStats from "@site/src/data/app-stats.json";
 import styles from "./styles.module.css";
 
 // Helper function to find app stats by label
-function getAppStats(appTitle) {
-  // Normalize app title to match label format
-  const normalized = appTitle.toLowerCase()
+function getAppStats(app) {
+  // Use explicit statsLabel if provided
+  if (app.statsLabel) {
+    return appStats.appStats.find(stat => stat.label === app.statsLabel);
+  }
+  
+  // Fallback: try exact match with normalized title
+  const normalized = app.title.toLowerCase()
     .replace(/\s+/g, '')
-    .replace(/dex$/i, '')  // Only remove 'dex' at the end
+    .replace(/dex$/i, '')
     .trim();
   
-  // Try exact match first
-  const exactMatch = appStats.appStats.find(stat => 
-    stat.label === normalized || normalized === stat.label
-  );
-  if (exactMatch) return exactMatch;
-  
-  // Try if normalized starts with label or vice versa (minimum 4 chars to avoid false positives)
-  return appStats.appStats.find(stat => {
-    if (stat.label.length < 4 || normalized.length < 4) return false;
-    return normalized.startsWith(stat.label) || stat.label.startsWith(normalized);
-  });
+  return appStats.appStats.find(stat => stat.label === normalized);
 }
 
 // Helper function to format numbers with commas
@@ -94,8 +89,8 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
   // Attach stats and sort
   const appsWithStats = filteredApps.map(app => ({
     app,
-    stats: getAppStats(app.title),
-    hasTxData: !!getAppStats(app.title)?.txCount,
+    stats: getAppStats(app),
+    hasTxData: !!getAppStats(app)?.txCount,
     isFavorite: app.favorite || false
   }));
 
