@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mainContent {
+  min-width: 0; /* Prevents grid blowout */
+}
+
+.sidebar {
+  min-width: 0; /* Prevents grid blowout */
+}
+
+.sidebar.sticky {
+  position: sticky;
+}
+
+/* Mobile: Single column layout */
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .sidebar.sticky {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
