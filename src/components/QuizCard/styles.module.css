@@ -26,22 +26,22 @@
   height: 12px;
   background: #ef4444;
   border-radius: 50%;
-  bottom: 2.5rem;
-  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
   opacity: 0;
   pointer-events: none;
 }
 
 .dot1 {
-  animation: pulseFloat1 45s ease-in-out infinite;
+  animation: pulseFloat1 60s ease-in-out infinite;
 }
 
 .dot2 {
-  animation: pulseFloat2 45s ease-in-out infinite 15s;
+  animation: pulseFloat2 60s ease-in-out infinite 20s;
 }
 
 .dot3 {
-  animation: pulseFloat3 45s ease-in-out infinite 30s;
+  animation: pulseFloat3 60s ease-in-out infinite 40s;
 }
 
 @keyframes pulseFloat1 {
@@ -49,87 +49,99 @@
     opacity: 0;
     transform: translate(0, 0);
   }
-  3% {
+  1% {
+    opacity: 0.7;
+    transform: translate(5px, 8px);
+  }
+  6% {
     opacity: 0.9;
-    transform: translate(0, 0);
+    transform: translate(20px, -12px);
   }
-  9% {
-    opacity: 0.7;
-    transform: translate(-60px, -30px);
+  12% {
+    opacity: 0.85;
+    transform: translate(40px, 18px);
   }
-  15% {
+  18% {
     opacity: 0.8;
-    transform: translate(-90px, 15px);
+    transform: translate(60px, -15px);
   }
-  21% {
-    opacity: 0.6;
-    transform: translate(-45px, -25px);
+  24% {
+    opacity: 0.85;
+    transform: translate(80px, 10px);
   }
-  27% {
-    opacity: 0.7;
-    transform: translate(-75px, 20px);
+  29% {
+    opacity: 0.3;
+    transform: translate(95px, -8px);
   }
   30% {
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(100px, -5px);
   }
 }
 
 @keyframes pulseFloat2 {
   0%, 100% {
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(100px, -5px);
   }
-  3% {
+  1% {
+    opacity: 0.6;
+    transform: translate(95px, -10px);
+  }
+  6% {
     opacity: 0.85;
-    transform: translate(0, 0);
+    transform: translate(80px, 15px);
   }
-  9% {
-    opacity: 0.75;
-    transform: translate(-30px, -45px);
-  }
-  15% {
-    opacity: 0.7;
-    transform: translate(-80px, -20px);
-  }
-  21% {
+  12% {
     opacity: 0.8;
-    transform: translate(-50px, 25px);
+    transform: translate(60px, -18px);
   }
-  27% {
-    opacity: 0.65;
-    transform: translate(-25px, -15px);
+  18% {
+    opacity: 0.75;
+    transform: translate(40px, 12px);
+  }
+  24% {
+    opacity: 0.7;
+    transform: translate(20px, -14px);
+  }
+  29% {
+    opacity: 0.25;
+    transform: translate(5px, 8px);
   }
   30% {
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 5px);
   }
 }
 
 @keyframes pulseFloat3 {
   0%, 100% {
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 5px);
   }
-  3% {
-    opacity: 0.9;
-    transform: translate(0, 0);
-  }
-  9% {
+  1% {
     opacity: 0.65;
-    transform: translate(-85px, 10px);
+    transform: translate(8px, -10px);
   }
-  15% {
-    opacity: 0.8;
-    transform: translate(-40px, -35px);
+  6% {
+    opacity: 0.9;
+    transform: translate(25px, 16px);
   }
-  21% {
-    opacity: 0.7;
-    transform: translate(-70px, 18px);
+  12% {
+    opacity: 0.85;
+    transform: translate(45px, -20px);
   }
-  27% {
+  18% {
     opacity: 0.75;
-    transform: translate(-35px, -20px);
+    transform: translate(65px, 14px);
+  }
+  24% {
+    opacity: 0.8;
+    transform: translate(85px, -12px);
+  }
+  29% {
+    opacity: 0.2;
+    transform: translate(98px, 6px);
   }
   30% {
     opacity: 0;
