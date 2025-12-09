@@ -1,0 +1,145 @@
+.card {
+  background: var(--ifm-background-surface-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ef4444;
+  border-radius: 50%;
+  bottom: 2.5rem;
+  right: 1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dot1 {
+  animation: pulseFloat1 45s ease-in-out infinite;
+}
+
+.dot2 {
+  animation: pulseFloat2 45s ease-in-out infinite 15s;
+}
+
+.dot3 {
+  animation: pulseFloat3 45s ease-in-out infinite 30s;
+}
+
+@keyframes pulseFloat1 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  3% {
+    opacity: 0.9;
+    transform: translate(0, 0);
+  }
+  9% {
+    opacity: 0.7;
+    transform: translate(-60px, -30px);
+  }
+  15% {
+    opacity: 0.8;
+    transform: translate(-90px, 15px);
+  }
+  21% {
+    opacity: 0.6;
+    transform: translate(-45px, -25px);
+  }
+  27% {
+    opacity: 0.7;
+    transform: translate(-75px, 20px);
+  }
+  30% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes pulseFloat2 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  3% {
+    opacity: 0.85;
+    transform: translate(0, 0);
+  }
+  9% {
+    opacity: 0.75;
+    transform: translate(-30px, -45px);
+  }
+  15% {
+    opacity: 0.7;
+    transform: translate(-80px, -20px);
+  }
+  21% {
+    opacity: 0.8;
+    transform: translate(-50px, 25px);
+  }
+  27% {
+    opacity: 0.65;
+    transform: translate(-25px, -15px);
+  }
+  30% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes pulseFloat3 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  3% {
+    opacity: 0.9;
+    transform: translate(0, 0);
+  }
+  9% {
+    opacity: 0.65;
+    transform: translate(-85px, 10px);
+  }
+  15% {
+    opacity: 0.8;
+    transform: translate(-40px, -35px);
+  }
+  21% {
+    opacity: 0.7;
+    transform: translate(-70px, 18px);
+  }
+  27% {
+    opacity: 0.75;
+    transform: translate(-35px, -20px);
+  }
+  30% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+/* Hide dots on mobile */
+@media (max-width: 996px) {
+  .dot {
+    display: none;
+  }
+}

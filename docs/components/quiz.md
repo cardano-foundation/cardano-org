@@ -1,5 +1,5 @@
 
-# Quiz Component
+# Quiz
 
 The `Quiz` component displays an interactive quiz with multiple-choice questions. It supports random question selection, immediate feedback, explanations, and score tracking. Perfect for educational content and knowledge testing.
 
@@ -127,6 +127,10 @@ Disable the retry button for incorrect answers:
 <Quiz quizData={quizData} allowRetry={false} />
 ```
 
+<Quiz quizData={quizData} questionCount={3} allowRetry={false} />
+
+---
+
 ### Custom Passing Score
 
 Set a higher passing threshold (e.g., 80%):
@@ -134,6 +138,10 @@ Set a higher passing threshold (e.g., 80%):
 ```jsx
 <Quiz quizData={quizData} passingScore={80} />
 ```
+
+<Quiz quizData={quizData} questionCount={3} passingScore={80} />
+
+---
 
 ### Strict Quiz Mode
 
@@ -143,15 +151,23 @@ Combine no retry with a high passing score:
 <Quiz quizData={quizData} allowRetry={false} passingScore={80} />
 ```
 
-### Custom Quiz Data
+<Quiz quizData={quizData} questionCount={3} allowRetry={false} passingScore={80} />
 
-Create your own quiz JSON file:
+---
+
+### Scam Awareness Quiz
+
+Using the scam awareness quiz (10 questions):
 
 ```jsx
-import customQuiz from '@site/src/data/quiz-custom.json';
+import scamQuiz from '@site/src/data/quiz-scams.json';
 
-<Quiz quizData={customQuiz} questionCount={10} />
+<Quiz quizData={scamQuiz} questionCount={5} passingScore={80} />
 ```
+
+import scamQuiz from '@site/src/data/quiz-scams.json';
+
+<Quiz quizData={scamQuiz} questionCount={5} passingScore={80} />
 
 ---
 
@@ -192,64 +208,19 @@ import advancedQuiz from '@site/src/data/quiz-cardano-advanced.json';
 ```
 
 ---
-
-## User Flow
-
-1. **Start**: User sees first question with 4 options (A, B, C, D)
-2. **Select**: User clicks an option (highlights in purple)
-3. **Check**: User clicks "Check answer" button
-4. **Feedback**: 
-   - Correct answer highlights in green
-   - Wrong answer highlights in red
-   - Explanation appears below options
-5. **Continue**: 
-   - If incorrect: "Try again" button allows retry
-   - "Next question" button proceeds to next question
-6. **Complete**: After all questions, results screen shows final score
-7. **Retry**: "Try again" button restarts quiz with new random questions
-
----
  
 
 ## Integration Example
 
-Using the quiz component in a documentation page:
-
-```mdx
----
-title: Test Your Cardano Knowledge
----
-
+```jsx
 import Quiz from '@site/src/components/Quiz';
-import quizData from '@site/src/data/quiz-basic.json';
-
-# Cardano Basics Quiz
-
-After learning about Cardano fundamentals, test your knowledge with this quiz!
+import quizData from '@site/src/data/quiz-demo.json';
 
 <Quiz quizData={quizData} questionCount={5} />
-
-## Keep Learning
-
-- [Cardano Documentation](https://docs.cardano.org)
-- [Developer Portal](https://developers.cardano.org)
 ```
 
 ---
 
-## Accessibility
-
-The component includes accessibility features:
-
-- **Keyboard navigation**: Tab through options, Enter to select
-- **Screen reader support**: Proper ARIA labels and roles
-- **Color contrast**: Meets WCAG AA standards
-- **Focus indicators**: Clear visual focus states
-- **Disabled states**: Properly disabled buttons after answer selection
-
----
- 
- 
 
 ## Related Components
 
@@ -258,13 +229,9 @@ The component includes accessibility features:
 
 ---
 
-## Example Quiz Files
+## Available Quiz Files
 
-The repository includes:
+- **`quiz-demo.json`** - Cardano fundamentals (5 questions)
+- **`quiz-scams.json`** - Common scam awareness (10 questions)
 
-- **`quiz-basic.json`** - Cardano fundamentals  
-
-You can create additional quiz files for different topics:
-- `quiz-staking.json` - Staking concepts
-- `quiz-smart-contracts.json` - Plutus and smart contracts
-- `quiz-governance.json` - Cardano governance
+You can create additional quiz files for different topics.
