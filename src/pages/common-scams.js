@@ -9,6 +9,9 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import QuizCard from "@site/src/components/QuizCard";
+import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
+import scamsQuizData from "@site/src/data/quiz-scams.json";
 
  
 
@@ -33,15 +36,29 @@ export default function Home() {
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <TitleWithText
-            title="Protecting your ada from scammers"
-            description={["The cryptocurrency space is full of opportunities, but it’s also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn’t immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself.",
+          <TwoColumnLayout
+            sidebar={
+              <QuizCard
+                quizData={scamsQuizData}
+                title="Test Your Knowledge"
+                description="Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
+                buttonText="Start Quiz"
+                questionCount={5}
+                passingScore={80}
+                allowRetry={false}
+                showDot={true}
+              />
+            }
+          >
+            <TitleWithText
+              title="Protecting your ada from scammers"
+              description={["The cryptocurrency space is full of opportunities, but it's also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn't immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself.",
 
-            "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it’s gone forever, with no way to recover it.",
+              "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it.",
 
-            ]}
-            headingDot={true}
-          />
+              ]}
+              headingDot={true}
+            />
 
           <Divider text="Giveaway" id="giveaway"/>
           <TitleWithText
@@ -132,6 +149,7 @@ export default function Home() {
           ]}
             headingDot={false}
           />
+          </TwoColumnLayout>
 
          <SpacerBox size="large" /> 
         </BoundaryBox>

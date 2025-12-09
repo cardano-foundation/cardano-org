@@ -1,0 +1,126 @@
+{
+  "title": "Common Scams Awareness Quiz",
+  "description": "Test your knowledge about common scams in the blockchain space and how to protect yourself.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do if someone contacts you claiming to be official Cardano support?",
+      "options": [
+        "Ignore them and never share your recovery phrase or private keys",
+        "Share your recovery phrase so they can help fix your wallet",
+        "Send them ada to verify your wallet ownership",
+        "Trust them if they have a verified-looking profile picture"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Legitimate support staff will never contact you first in a private message and will never ask for your recovery phrase, passwords, or private keys. Anyone asking for this information is a scammer."
+    },
+    {
+      "id": 2,
+      "question": "A live stream promises to double your ada if you send it to a specific wallet. What is this?",
+      "options": [
+        "A legitimate giveaway from the Cardano Foundation",
+        "An ada giveaway scam",
+        "A special promotion you should participate in quickly",
+        "A normal way to earn more ada"
+      ],
+      "correctAnswer": 1,
+      "explanation": "This is the classic Ada Giveaway Scam. Legitimate giveaways never ask you to send money first. Even if the stream shows Charles Hoskinson or other well-known figures, it's fake. Once you send your ada, it's gone forever."
+    },
+    {
+      "id": 3,
+      "question": "What happens if someone gains access to your recovery phrase (seed words)?",
+      "options": [
+        "They can view your balance but cannot spend your ada",
+        "They can take full control of your wallet and steal all your ada",
+        "Your spending password will still protect your funds",
+        "You can easily recover your ada by contacting support"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If someone gets your recovery phrase, they have complete control over your wallet. No spending password can protect you, and once your ada is stolen, it's gone forever with no way to recover it. Never share your seed words with anyone."
+    },
+    {
+      "id": 4,
+      "question": "How can you protect yourself from phishing attacks targeting your wallet?",
+      "options": [
+        "Share your recovery phrase with support when asked",
+        "Click on any wallet links sent via email or messages",
+        "Double-check URLs and never share your recovery phrase",
+        "Trust any website that looks like your wallet interface"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Always verify URLs carefully to ensure they match the official wallet website. Never share your recovery phrase with anyone, not even with 'support staff'. Consider using hardware wallets and two-factor authentication for added security."
+    },
+    {
+      "id": 5,
+      "question": "What is a major red flag for a potential rug pull project?",
+      "options": [
+        "A project with a transparent, verified team and published audits",
+        "An anonymous team making unrealistic profit promises",
+        "A project with detailed documentation and roadmap",
+        "A team that engages openly with the community"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Rug pulls often involve anonymous teams making big promises without credible backing. Projects with unrealistic guarantees, no audits, and lack of transparency are high risk. Always research the team's credentials before investing."
+    },
+    {
+      "id": 6,
+      "question": "What should you be most skeptical about regarding investment opportunities?",
+      "options": [
+        "Projects that acknowledge risks and provide realistic expectations",
+        "Projects that promise guaranteed high returns with no risk",
+        "Projects that have been audited by third parties",
+        "Projects that provide detailed whitepapers and team information"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Legitimate projects never promise guaranteed returns. If an investment opportunity sounds too good to be true, it probably is. Be especially wary of unsolicited offers and always research thoroughly before investing."
+    },
+    {
+      "id": 7,
+      "question": "A moderator in a Cardano forum sends you a private message offering help with your wallet. What should you do?",
+      "options": [
+        "Share your recovery phrase so they can diagnose the problem",
+        "Never engage - legitimate moderators don't contact users first via private messages",
+        "Send them ada to verify your identity",
+        "Trust them because they have a moderator badge"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Scammers often copy the profiles of real moderators. Legitimate moderators will never contact you first in a private message and will never ask for your recovery phrase, passwords, or ada. This is always a scam."
+    },
+    {
+      "id": 8,
+      "question": "What is the best practice for keeping your ada safe?",
+      "options": [
+        "Share your seed words with a trusted friend for backup",
+        "Store your recovery phrase digitally in the cloud",
+        "Never share your recovery phrase and consider using a hardware wallet",
+        "Keep your recovery phrase in an email for easy access"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Your recovery phrase should never be shared with anyone or stored digitally where it can be hacked. Keep it offline in a secure location. Hardware wallets provide an additional layer of security for your funds."
+    },
+    {
+      "id": 9,
+      "question": "What should you do before investing in a new Cardano project?",
+      "options": [
+        "Invest immediately if the marketing looks professional",
+        "Research the team, check for audits, and verify their reputation",
+        "Trust the project if it has many followers on social media",
+        "Only look at the promised returns percentage"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Always do thorough research before investing. Check the team's credentials, look for third-party audits, read the documentation, and verify the project's reputation in the community. Social media followers and flashy marketing can be faked."
+    },
+    {
+      "id": 10,
+      "question": "Once you send ada to a scammer, what are your chances of recovery?",
+      "options": [
+        "High - you can contact Cardano support to reverse the transaction",
+        "Medium - the blockchain will automatically refund you",
+        "Zero - once sent, the ada is gone forever with no way to recover it",
+        "Good - if you report it quickly enough"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical - there is no safety net or customer service to help you."
+    }
+  ]
+}
