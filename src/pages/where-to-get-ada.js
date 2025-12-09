@@ -89,7 +89,7 @@ export default function Home() {
             headingDot={false}
             />
 
-            <DexGrid limit={4} />
+            <DexGrid limit={4} showRank={false} showStats={false} />
             <SpacerBox size="medium"/>
 
             <TitleWithText 
