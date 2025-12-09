@@ -7,7 +7,7 @@ The `Quiz` component displays an interactive quiz with multiple-choice questions
 
 ```jsx
 import Quiz from '@site/src/components/Quiz';
-import quizData from '@site/src/data/quiz-basic.json';
+import quizData from '@site/src/data/quiz-demo.json';
 
 <Quiz quizData={quizData} />
 ```
@@ -15,7 +15,7 @@ import quizData from '@site/src/data/quiz-basic.json';
 **Live Preview:**
 
 import Quiz from '@site/src/components/Quiz';
-import quizData from '@site/src/data/quiz-basic.json';
+import quizData from '@site/src/data/quiz-demo.json';
 
 <Quiz quizData={quizData} questionCount={5} allowRetry={false}/>
 

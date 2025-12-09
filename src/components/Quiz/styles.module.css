@@ -1,24 +1,36 @@
 .quizContainer {
   max-width: 720px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .quizHeader {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
 }
 
 .quizTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--ifm-heading-color);
 }
 
 .quizDescription {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+html[data-theme='light'] .quizHeader {
+  background: #f8f9fa;
+}
+
+html[data-theme='dark'] .quizHeader {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .questionCard {
@@ -109,7 +121,7 @@ html[data-theme='dark'] .questionCard.incorrect .statusMessage {
 .progressSegment {
   flex: 1;
   height: 4px;
-  background: var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-300);
   border-radius: 2px;
   transition: background 0.3s ease;
 }
@@ -421,8 +433,31 @@ html[data-theme='dark'] .resultCard.failure .scoreNumber {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+  .quizHeader {
+    display: none;
+  }
+
   .questionCard {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .statusMessage {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .statusIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .statusIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .progressBar {
+    margin-bottom: 1rem;
   }
 
   .quizTitle {
@@ -431,10 +466,49 @@ html[data-theme='dark'] .resultCard.failure .scoreNumber {
 
   .questionText {
     font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .optionsContainer {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .optionButton {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .optionLabel {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+
+  .explanation {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .explanationTitle {
+    font-size: 0.75rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .explanationText {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .actionButtons {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
   }
 
   .resultCard {
