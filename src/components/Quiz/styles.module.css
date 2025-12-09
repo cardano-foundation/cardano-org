@@ -114,8 +114,12 @@ html[data-theme='dark'] .questionCard.incorrect .statusMessage {
   transition: background 0.3s ease;
 }
 
-.progressSegment.completed {
+.progressSegment.correct {
   background: #4caf50;
+}
+
+.progressSegment.incorrect {
+  background: #f44336;
 }
 
 .progressSegment.active {

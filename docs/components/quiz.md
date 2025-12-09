@@ -1,6 +1,3 @@
----
-sidebar_position: 9
----
 
 # Quiz Component
 
@@ -20,7 +17,7 @@ import quizData from '@site/src/data/quiz-basic.json';
 import Quiz from '@site/src/components/Quiz';
 import quizData from '@site/src/data/quiz-basic.json';
 
-<Quiz quizData={quizData} questionCount={5} />
+<Quiz quizData={quizData} questionCount={5} allowRetry={false}/>
 
 ---
 
@@ -30,6 +27,8 @@ import quizData from '@site/src/data/quiz-basic.json';
 |------|------|---------|-------------|
 | `quizData` | `object` | *required* | Quiz data object containing questions and metadata |
 | `questionCount` | `number` | `5` | Number of questions to randomly select from the quiz |
+| `allowRetry` | `boolean` | `true` | Whether users can retry incorrect answers |
+| `passingScore` | `number` | `60` | Minimum percentage required to pass (0-100) |
 
 ---
 
@@ -82,12 +81,16 @@ The quiz component expects a JSON file with the following structure:
 - **Visual states**: Questions cards change color based on correct/incorrect answers
 - **Immediate feedback**: Shows whether answer is correct or incorrect
 - **Explanations**: Optional detailed explanations after each answer
-- **Try again**: Allows retry on incorrect answers before moving forward
+- **Try again**: Allows retry on incorrect answers (configurable via `allowRetry` prop)
 
 ### Progress Tracking
 - **Progress bar**: Visual indicator showing current question position
 - **Score tracking**: Calculates final score as percentage
-- **Results screen**: Shows final score with pass/fail indication (60% threshold)
+- **Results screen**: Shows final score with pass/fail indication (configurable via `passingScore` prop)
+
+### Answer Randomization
+- **Shuffled options**: Answer positions vary for each question to prevent pattern memorization
+- **Shuffled questions**: Random question selection from the pool each session
 
 ### Visual Design
 - **Color-coded states**:
@@ -114,6 +117,30 @@ To show all available questions, set `questionCount` to a high number:
 
 ```jsx
 <Quiz quizData={quizData} questionCount={100} />
+```
+
+### Quiz Without Retry Option
+
+Disable the retry button for incorrect answers:
+
+```jsx
+<Quiz quizData={quizData} allowRetry={false} />
+```
+
+### Custom Passing Score
+
+Set a higher passing threshold (e.g., 80%):
+
+```jsx
+<Quiz quizData={quizData} passingScore={80} />
+```
+
+### Strict Quiz Mode
+
+Combine no retry with a high passing score:
+
+```jsx
+<Quiz quizData={quizData} allowRetry={false} passingScore={80} />
 ```
 
 ### Custom Quiz Data

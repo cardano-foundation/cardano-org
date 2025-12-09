@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 
-const Quiz = ({ quizData, questionCount = 5 }) => {
+const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
+  const [answerResults, setAnswerResults] = useState([]);
 
-  // Select random questions if questionCount is less than total
+  // Select random questions and shuffle their answers
   const [questions] = useState(() => {
     if (!quizData || !quizData.questions) return [];
     const shuffled = [...quizData.questions].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(questionCount, quizData.questions.length));
+    const selected = shuffled.slice(0, Math.min(questionCount, quizData.questions.length));
+    
+    // Shuffle answers for each question and track the new correct index
+    return selected.map(question => {
+      const optionsWithIndex = question.options.map((option, index) => ({
+        text: option,
+        isCorrect: index === question.correctAnswer
+      }));
+      
+      // Shuffle the options
+      const shuffledOptions = [...optionsWithIndex].sort(() => Math.random() - 0.5);
+      
+      return {
+        ...question,
+        options: shuffledOptions.map(opt => opt.text),
+        correctAnswer: shuffledOptions.findIndex(opt => opt.isCorrect)
+      };
+    });
   });
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -27,10 +45,16 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
     
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     setIsAnswered(true);
-    if (selectedAnswer === currentQuestion.correctAnswer) {
+    if (isCorrect) {
       setScore(score + 1);
     }
+    
+    // Record the result for this question
+    const newResults = [...answerResults];
+    newResults[currentQuestionIndex] = isCorrect;
+    setAnswerResults(newResults);
   };
 
   const handleNextQuestion = () => {
@@ -46,6 +70,11 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
   const handleTryAgain = () => {
     setSelectedAnswer(null);
     setIsAnswered(false);
+    
+    // Clear the result for this question since we're retrying
+    const newResults = [...answerResults];
+    newResults[currentQuestionIndex] = undefined;
+    setAnswerResults(newResults);
   };
 
   const handleRestartQuiz = () => {
@@ -54,6 +83,7 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
     setIsAnswered(false);
     setScore(0);
     setIsQuizComplete(false);
+    setAnswerResults([]);
   };
 
   if (!quizData || questions.length === 0) {
@@ -66,7 +96,7 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
 
   if (isQuizComplete) {
     const percentage = Math.round((score / totalQuestions) * 100);
-    const isPassing = percentage >= 60;
+    const isPassing = percentage >= passingScore;
 
     return (
       <div className={styles.quizContainer}>
@@ -132,15 +162,22 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
 
         {/* Progress Bar */}
         <div className={styles.progressBar}>
-          {questions.map((_, index) => (
-            <div
-              key={index}
-              className={`${styles.progressSegment} ${
-                index < currentQuestionIndex ? styles.completed :
-                index === currentQuestionIndex ? styles.active : ''
-              }`}
-            />
-          ))}
+          {questions.map((_, index) => {
+            const isAnsweredQuestion = answerResults[index] !== undefined;
+            const wasCorrect = answerResults[index] === true;
+            const wasIncorrect = answerResults[index] === false;
+            
+            return (
+              <div
+                key={index}
+                className={`${styles.progressSegment} ${
+                  wasCorrect ? styles.correct :
+                  wasIncorrect ? styles.incorrect :
+                  index === currentQuestionIndex ? styles.active : ''
+                }`}
+              />
+            );
+          })}
         </div>
 
         {/* Question */}
@@ -199,7 +236,7 @@ const Quiz = ({ quizData, questionCount = 5 }) => {
             </button>
           ) : (
             <>
-              {isIncorrect && (
+              {isIncorrect && allowRetry && (
                 <button onClick={handleTryAgain} className={styles.secondaryButton}>
                   Try again
                 </button>
