@@ -1,0 +1,66 @@
+{
+  "title": "Cardano Basics Quiz",
+  "description": "Test your Cardano knowledge with this short quiz.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a \"dapp\"?",
+      "options": [
+        "A decentralized application running on a blockchain",
+        "A car company",
+        "A database error",
+        "A food delivery service"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A dapp (decentralized application) is an application that runs on a blockchain network rather than being controlled by a single entity. On Cardano, dapps leverage smart contracts to provide trustless services."
+    },
+    {
+      "id": 2,
+      "question": "What is an address on Cardano?",
+      "options": [
+        "Your home location",
+        "A string used to receive and send ada",
+        "A telephone number",
+        "A discord username"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Cardano address is a unique identifier that allows you to receive and send ada. It's derived from your wallet's cryptographic keys and can be safely shared with others."
+    },
+    {
+      "id": 3,
+      "question": "What does \"immutable ledger\" mean?",
+      "options": [
+        "Entries can be changed anytime",
+        "Past data cannot be altered",
+        "Files can be deleted",
+        "Blocks reset every day"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An immutable ledger means that once data is recorded on the blockchain, it cannot be changed or deleted. This creates a permanent, tamper-proof record of all transactions."
+    },
+    {
+      "id": 4,
+      "question": "What does \"wallet balance\" show?",
+      "options": [
+        "Total ada you control",
+        "The number of stake pools",
+        "CPU usage",
+        "Your internet speed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Your wallet balance displays the total amount of ada that you have control over through your private keys. This includes both available and staked ada."
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of metadata in a transaction?",
+      "options": [
+        "To add optional information to a transaction",
+        "To increase fees",
+        "To delete old blocks",
+        "To change epoch length"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Transaction metadata allows you to attach additional information to a Cardano transaction, such as messages, labels, or structured data. This is optional and doesn't affect the core transaction logic."
+    }
+  ]
+}

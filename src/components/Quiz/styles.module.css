@@ -1,0 +1,453 @@
+.quizContainer {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.quizHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quizTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.quizDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.questionCard {
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.questionCard.correct {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.questionCard.incorrect {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+html[data-theme='dark'] .questionCard.correct {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+html[data-theme='dark'] .questionCard.incorrect {
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.statusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  flex-shrink: 0;
+}
+
+.questionCard.correct .statusIcon {
+  background: #4caf50;
+  color: white;
+}
+
+.questionCard.incorrect .statusIcon {
+  background: #f44336;
+  color: white;
+}
+
+.statusIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.statusMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.questionCard.correct .statusMessage {
+  color: #2e7d32;
+}
+
+.questionCard.incorrect .statusMessage {
+  color: #c62828;
+}
+
+html[data-theme='dark'] .questionCard.correct .statusMessage {
+  color: #81c784;
+}
+
+html[data-theme='dark'] .questionCard.incorrect .statusMessage {
+  color: #e57373;
+}
+
+.progressBar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.progressSegment {
+  flex: 1;
+  height: 4px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.progressSegment.completed {
+  background: #4caf50;
+}
+
+.progressSegment.active {
+  background: var(--ifm-color-primary);
+}
+
+.questionText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+  line-height: 1.5;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--ifm-font-color-base);
+}
+
+.optionButton:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+html[data-theme='dark'] .optionButton:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.optionButton:disabled {
+  cursor: not-allowed;
+}
+
+.optionButton.selected {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+html[data-theme='dark'] .optionButton.selected {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.optionButton.correctOption {
+  border-color: #4caf50;
+  background: #e8f5e9;
+}
+
+html[data-theme='dark'] .optionButton.correctOption {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.optionButton.incorrectOption {
+  border-color: #f44336;
+  background: #ffebee;
+}
+
+html[data-theme='dark'] .optionButton.incorrectOption {
+  background: rgba(244, 67, 54, 0.2);
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.optionButton:hover:not(:disabled) .optionLabel {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.optionButton.selected .optionLabel {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.optionButton.correctOption .optionLabel {
+  background: #4caf50;
+  color: white;
+}
+
+.optionButton.incorrectOption .optionLabel {
+  background: #f44336;
+  color: white;
+}
+
+.optionText {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.explanation {
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+html[data-theme='dark'] .explanation {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.explanationTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.explanationText {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-800);
+  margin: 0;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.checkButton,
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkButton {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.checkButton:hover:not(:disabled) {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.checkButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primaryButton {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.primaryButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--ifm-color-emphasis-800);
+  border: 2px solid var(--ifm-color-emphasis-300);
+}
+
+.secondaryButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+/* Results */
+.resultCard {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 2px solid;
+}
+
+.resultCard.success {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.resultCard.failure {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+html[data-theme='dark'] .resultCard.success {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+html[data-theme='dark'] .resultCard.failure {
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.resultIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+}
+
+.resultCard.success .resultIcon {
+  background: #4caf50;
+  color: white;
+}
+
+.resultCard.failure .resultIcon {
+  background: #f44336;
+  color: white;
+}
+
+.resultIcon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.resultTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.scoreDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.scoreNumber {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.resultCard.success .scoreNumber {
+  color: #2e7d32;
+}
+
+.resultCard.failure .scoreNumber {
+  color: #c62828;
+}
+
+html[data-theme='dark'] .resultCard.success .scoreNumber {
+  color: #81c784;
+}
+
+html[data-theme='dark'] .resultCard.failure .scoreNumber {
+  color: #e57373;
+}
+
+.scoreText {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .questionCard {
+    padding: 1.5rem;
+  }
+
+  .quizTitle {
+    font-size: 1.5rem;
+  }
+
+  .questionText {
+    font-size: 1.125rem;
+  }
+
+  .optionButton {
+    padding: 0.875rem 1rem;
+  }
+
+  .resultCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .scoreNumber {
+    font-size: 2.5rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .checkButton,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}
