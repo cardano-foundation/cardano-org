@@ -28,7 +28,14 @@ Before making a pull request, please make sure that you fulfill all these requir
 2. **Add your image to the repository**
    - Place it in: `src/data/app-images/your-project-name.png`
 
-3. **Add your project entry**
+3. **(Optional) Add your project icon/logo**
+   - Icons are displayed in specialized components like the DEX grid and app lists
+   - Supported formats: SVG, PNG, WebP, JPEG
+   - Place it in: `static/img/app-icons/your-project-name.svg` (or .png, .webp, .jpg)
+   - Recommended size: Square aspect ratio, minimum 128x128px
+   - Use SVG when possible for best quality at all sizes
+
+4. **Add your project entry**
    - Edit: `src/data/apps.js`
    - Add your entry to the **END** of the Showcases array
    - Use this format:
@@ -38,25 +45,55 @@ Before making a pull request, please make sure that you fulfill all these requir
      title: "Your Project Name",
      description: "Brief description of what your project does (avoid 'best/first/only' claims)",
      preview: require("./app-images/your-project-name.png"),
+     icon: "/img/app-icons/your-project-name.svg", // OPTIONAL - for logo display in components
+     statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
      source: "https://github.com/your-org/your-project", // or null if not open-source
-     tags: ["relevant", "tags"], // see available tags in the file
+     tags: ["primary", "secondary"], // Use 1-2 tags maximum - see guidelines below
    }
    ```
 
-4. **Select appropriate tags**
+5. **Select appropriate tags** ⚠️ **Keep it minimal!**
 
    Available tags include: `wallet`, `dex`, `oracle`, `bridge`, `lending`, `governance`, `marketplace`, `game`, `nftproject`, `educational`, and more.
 
-   **Important:**
+   **Critical Guidelines:**
+   - **Use only 1-2 tags** that best describe your app's primary function
+   - Tags are used in the AppList component and other discovery features
+   - Too many tags dilute your app's discoverability
+   - Choose the most specific tag that fits (e.g., `dex` over generic `token`)
    - Do NOT add the `favorite` tag yourself
    - Check `src/data/apps.js` for the complete list of available tags
-   - If your project is open-source, include `opensource` tag AND provide the `source` URL
+   - If your project is open-source, include the `opensource` tag AND provide the `source` URL
 
-5. **Test your submission**
+   **Examples:**
+   - DEX: `["dex", "token"]` ✅
+   - Wallet: `["wallet", "nftsupport"]` ✅
+   - Marketplace: `["marketplace", "nftsupport"]` ✅
+   - Too many: `["dex", "token", "marketplace", "lending", "governance"]` ❌
+
+6. **Optional Fields Explained**
+
+   **icon field:**
+   - Path to your logo/icon for display in component grids
+   - Must be in `/static/img/app-icons/` directory
+   - Example: `icon: "/img/app-icons/minswap.svg"`
+   - If omitted, components will show a fallback badge with your app's first letter
+
+   **statsLabel field:**
+   - Used to map your app to transaction statistics data
+   - Only needed if your app has on-chain transaction metrics
+   - Must match the exact label in `/src/data/app-stats.json`
+   - See [Transaction Rankings Guide](/docs/tx-rankings) for details on getting your app tracked
+   - Example: `statsLabel: "minswap"`
+   - If omitted, the system will attempt normalized matching on your title
+
+7. **Test your submission**
    - Run `yarn build` (must complete without errors)
    - Check that your project displays correctly
+   - Verify your icon appears if you added one
+   - Ensure your tags are appropriate and minimal
 
-6. **Submit your pull request**
+8. **Submit your pull request**
    - Use the "Add Your App" GitHub PR template
    - Fill out the checklist in the template 

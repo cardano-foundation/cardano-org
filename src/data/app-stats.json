@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "generated": "2024-12-07",
+    "description": "App transaction counts for reporting period",
+    "reportingWindow": {
+      "start": "2025-11-01T00:00:00",
+      "end": "2025-12-01T00:00:00"
+    },
+    "epochs": "~6 epochs (30 days)",
+    "totalTxCount": 188344
+  },
+  "appStats": [
+    {
+      "label": "minswap",
+      "txCount": 120774,
+      "rank": 1
+    },
+    {
+      "label": "dexhunter",
+      "txCount": 39607,
+      "rank": 2
+    },
+    {
+      "label": "cardem",
+      "txCount": 7744,
+      "rank": 3
+    },
+    {
+      "label": "bodega",
+      "txCount": 6939,
+      "rank": 4
+    },
+    {
+      "label": "masumi",
+      "txCount": 4853,
+      "rank": 5
+    },
+    {
+      "label": "muesliswap",
+      "txCount": 2057,
+      "rank": 6
+    },
+    {
+      "label": "surf",
+      "txCount": 1063,
+      "rank": 7
+    },
+    {
+      "label": "danogo",
+      "txCount": 999,
+      "rank": 8
+    },
+    {
+      "label": "wingriders",
+      "txCount": 618,
+      "rank": 9
+    },
+    {
+      "label": "unfrackit",
+      "txCount": 546,
+      "rank": 10
+    },
+    {
+      "label": "cnft",
+      "txCount": 411,
+      "rank": 11
+    },
+    {
+      "label": "fetch",
+      "txCount": 288,
+      "rank": 12
+    },
+    {
+      "label": "indigo",
+      "txCount": 270,
+      "rank": 13
+    },
+    {
+      "label": "double",
+      "txCount": 188,
+      "rank": 14
+    },
+    {
+      "label": "uexapp",
+      "txCount": 175,
+      "rank": 15
+    },
+    {
+      "label": "cardexscan",
+      "txCount": 165,
+      "rank": 16
+    },
+    {
+      "label": "cancellation",
+      "txCount": 162,
+      "rank": 17
+    },
+    {
+      "label": "lenfi",
+      "txCount": 157,
+      "rank": 18
+    },
+    {
+      "label": "gracias",
+      "txCount": 155,
+      "rank": 19
+    },
+    {
+      "label": "staking",
+      "txCount": 143,
+      "rank": 20
+    },
+    {
+      "label": "pulse",
+      "txCount": 125,
+      "rank": 21
+    },
+    {
+      "label": "vespr",
+      "txCount": 124,
+      "rank": 22
+    },
+    {
+      "label": "swap",
+      "txCount": 123,
+      "rank": 23
+    },
+    {
+      "label": "toolheads",
+      "txCount": 115,
+      "rank": 24
+    },
+    {
+      "label": "geniusyield",
+      "txCount": 113,
+      "rank": 25
+    },
+    {
+      "label": "test",
+      "txCount": 109,
+      "rank": 26
+    }
+  ]
+}

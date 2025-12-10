@@ -113,7 +113,8 @@ function useFilteredProjects() {
     setOperator(readOperator(location.search));
     setLatest(readLatestOperator(location.search));
     setSearchName(readSearchName(location.search));
-    if (ExecutionEnvironment.canUseDOM && location.state) {
+    // Only restore scroll position if it's not a search action
+    if (ExecutionEnvironment.canUseDOM && location.state && !location.state.isSearch) {
       setTimeout(() => {
         restoreUserState(location.state);
       }, 0);
@@ -307,38 +308,47 @@ function SearchBar() {
   const history = useHistory();
   const location = useLocation();
   const [value, setValue] = useState(() => readSearchName(location.search) || '');
+  const inputRef = React.useRef(null);
 
   useEffect(() => {
-    setValue(readSearchName(location.search) || '');
-  }, [location.search]);
+    const newValue = readSearchName(location.search) || '';
+    setValue(newValue);
+    // Only restore focus if it was actually lost
+    if (location.state?.isSearch && inputRef.current && document.activeElement !== inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [location]);
 
   const debouncedHistoryPush = useCallback(
     _debounce((newSearchString) => {
       history.push({
         ...location,
         search: newSearchString,
-        state: prepareUserState(),
+        state: { isSearch: true },
       });
     }, 300),
-    [history, location] // Dependencies for useCallback
+    [history, location]
   );
+
+  const handleInput = (e) => {
+    const currentInputValue = e.currentTarget.value;
+    setValue(currentInputValue);
+    const newSearch = new URLSearchParams(location.search);
+    newSearch.delete(SearchNameQueryKey);
+    if (currentInputValue) {
+      newSearch.set(SearchNameQueryKey, currentInputValue);
+    }
+    debouncedHistoryPush(newSearch.toString());
+  };
 
   return (
     <div className={styles.searchContainer}>
       <input
+        ref={inputRef}
         id="searchbar"
         placeholder="Search apps..."
         value={value}
-        onInput={(e) => {
-          const currentInputValue = e.currentTarget.value;
-          setValue(currentInputValue);
-          const newSearch = new URLSearchParams(location.search);
-          newSearch.delete(SearchNameQueryKey);
-          if (currentInputValue) {
-            newSearch.set(SearchNameQueryKey, currentInputValue);
-          }
-          debouncedHistoryPush(newSearch.toString());
-        }}
+        onInput={handleInput}
       />
     </div>
   );

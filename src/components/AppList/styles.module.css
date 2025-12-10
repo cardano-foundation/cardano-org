@@ -1,0 +1,243 @@
+.appList {
+  width: 100%;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.categoryIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  color: var(--ifm-font-color-base);
+}
+
+.categoryIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.categoryTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  flex: 1;
+}
+
+.seeAllButton {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seeAllButton:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.appListItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  transition: background-color 0.2s ease;
+}
+
+.appListItem:last-child {
+  border-bottom: none;
+}
+
+.appListItem:hover {
+  background-color: var(--ifm-color-emphasis-50);
+  text-decoration: none;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--ifm-color-emphasis-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appInitial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  background: linear-gradient(135deg, var(--ifm-color-primary-light) 0%, var(--ifm-color-primary) 100%);
+  color: white;
+}
+
+.appContent {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.appTitle {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appDescription {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-700);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.8em;
+}
+
+.txCount {
+  flex-shrink: 0;
+  text-align: right;
+  padding-left: 1rem;
+}
+
+.txNumber {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  line-height: 1.2;
+}
+
+.txLabel {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .appList {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .categoryIcon {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .appListItem:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .appList {
+    border-radius: 8px;
+  }
+
+  .header {
+    padding: 0.875rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .categoryIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .categoryIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .categoryTitle {
+    font-size: 1.1rem;
+  }
+
+  .seeAllButton {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .appListItem {
+    padding: 0.875rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .iconContainer {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .appTitle {
+    font-size: 1rem;
+  }
+
+  .appDescription {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    max-height: 1.3em;
+  }
+
+  .txCount {
+    padding-left: 0.5rem;
+  }
+
+  .txNumber {
+    font-size: 1rem;
+  }
+
+  .txLabel {
+    font-size: 0.7rem;
+  }
+}
