@@ -3,23 +3,62 @@ sidebar_position: 5
 title: Create a Page
 ---
 
-## Create a Page
+## Create a new Page
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+There are two main ways to create pages on cardano.org:
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+## 1. Markdown Pages (Recommended)
 
-## Create your first React Page
+**The easiest way to contribute.** Markdown pages automatically get the site header and design, perfect for documentation and content pages.
 
-Create a file at `src/pages/my-react-page.js`:
+**Best for:**
+- Documentation pages
+- [News Articles](create-a-news-article.md)
+- Text-heavy content
+- Quick contributions
 
-```jsx title="src/pages/my-react-page.js"
+👉 [Learn how to create Markdown pages](/docs/get-involved/create-markdown-page)
+
+## 2. React Pages (Advanced)
+
+**Full control over layout and functionality.** Build custom pages with React components for interactive features and complex designs.
+
+**Best for:**
+- Interactive features
+- Custom layouts
+- Landing pages
+- Complex UI requirements
+
+👉 [Learn how to create React pages](/docs/get-involved/create-react-page)
+
+## Quick Start (Markdown)
+
+Create a file at `/docs/get-involved/my-page.md`:
+
+```markdown
+---
+title: My Page Title
+sidebar_position: 10
+---
+
+Your content starts here...
+
+## Section Heading
+
+More content...
+```
+
+That's it! Your page is ready at `http://localhost:3000/docs/get-involved/my-page`
+
+## Quick Start (React)
+
+Create a file at `src/pages/my-page.js`:
+
+```jsx title="src/pages/my-page.js"
 import React from 'react';
 import Layout from '@theme/Layout';
 
-export default function MyReactPage() {
+export default function MyPage() {
   return (
     <Layout>
       <h1>My React page</h1>
@@ -29,173 +68,29 @@ export default function MyReactPage() {
 }
 ```
 
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
+Your page is ready at `http://localhost:3000/my-page`
 
-## Create your first Markdown Page
+## Need Help?
 
-Create a file at `src/pages/my-markdown-page.md`:
+- **New to Markdown?** Start with the [Markdown page guide](/docs/get-involved/create-markdown-page)
+- **Need custom layouts?** Check out the [React page guide](/docs/get-involved/create-react-page)
+- **Looking for components?** Browse the [component library](/docs/get-involved/components/)
 
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
+## Page Types Overview
 
-This is a Markdown page
-```
+### Documentation Pages
+- Located in `/docs/` subdirectories
+- Appear in the sidebar
+- Best for structured content
+- Use Markdown for simplicity
 
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+### Standalone Pages
+- Located in `/docs/` root
+- No sidebar shown with `displayed_sidebar: null`
+- Examples: [Communities](../communities.md), [Glossary](../glossary.md)
 
-
-## Create a page using existing components
-
-To make meaningful contributions you need to know how to build pages that look in the design of cardano.org. We have built some standard components for you that you can use.
-
-Create a file at `src/pages/hello-world.js`:
-
-```jsx title="src/pages/hello-world.js"
-import Layout from "@theme/Layout";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import Divider from "@site/src/components/Layout/Divider";
-import TitleWithText from "@site/src/components/Layout/TitleWithText";
-
-function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
-  return (
-    <SiteHero
-      title="Hello World"
-      description="This is just an example how easy it is to create pages."
-      bannerType="starburst"
-    />
-  );
-}
-
-export default function Home() {
-
-  return (
-    <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
-    >
-      <HomepageHeader />
-      <main>
-        <BoundaryBox>
-          <Divider text="Hello" />
-          <TitleWithText 
-            title="Hello World"
-            description={[
-              "some line of text",
-              "Another line of text."
-            ]}
-            titleType="black"
-            headingDot={true}
-          />
-        </BoundaryBox>
-      </main>
-    </Layout>
-  );
-}
-
-```
-
-A new page is now available at [http://localhost:3000/hello-world](http://localhost:3000/hello-world) and it will look like this:
-
-![img](/img/docs/tutorial/tutorial-step-1.jpg)
-
-### Select different Site Hero designs
-
-The [`<SiteHero>`](/docs/get-involved/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/get-involved/components/site-hero).
-
-```jsx {4}
-<SiteHero
-      title="Hello World"
-      description="This is just an example how easy it is to create pages."
-      bannerType="ada"
-    />
-
-```
-
-### Add more text
-
-Add more text with another `<TitleWithText>` component. This time set headingDot to false.
-
-```jsx {8} 
-<TitleWithText 
-      title="Title without the dot"
-      description={[
-        "some line of text with some **styling** in bold.",
-        "Another line of text with an [link](https://developers.cardano.org)."
-      ]}
-      titleType="black"
-      headingDot={false}
-    />
-```
-
-### Add more components
-
-To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/get-involved/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/get-involved/components/background-wrapper). Please apply the highlighted changes:
-
-```jsx {6-7,29,52-53} title="src/pages/hello-world.js"
-import Layout from "@theme/Layout";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import Divider from "@site/src/components/Layout/Divider";
-import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-
-function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
-  return (
-    <SiteHero
-      title="Hello World"
-      description="This is just an example how easy it is to create pages."
-      bannerType="ada"
-    />
-  );
-}
-
-export default function Home() {
-
-  return (
-    <Layout
-    title="Cardano - making the world work better for all"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
-    >
-      <HomepageHeader />
-      <main>
-        <BackgroundWrapper backgroundType="zoom">
-          <BoundaryBox>
-            <Divider text="Hello" />
-            <TitleWithText 
-              title="Hello World"
-              description={[
-                "some line of text",
-                "Another line of text."
-              ]}
-              titleType="black"
-              headingDot={true}
-            />
-
-          <TitleWithText 
-                title="Title without the dot"
-                description={[
-                  "some line of text with some **styling** in bold.",
-                  "Another line of text with an [link](https://developers.cardano.org)."
-                ]}
-                titleType="black"
-                headingDot={false}
-              />
-          </BoundaryBox>
-          <SpacerBox size="medium" />
-        </BackgroundWrapper>
-      </main>
-    </Layout>
-  );
-}
-
-```
-
-## Result
-
-Your hello world page at [http://localhost:3000/hello-world](http://localhost:3000/hello-world) will now look like this:
-
-![img](/img/docs/tutorial/tutorial-step-2.jpg)
+### Custom Pages
+- Located in `/src/pages/`
+- Complete layout freedom
+- Use React components
+- Examples: Homepage, landing pages
