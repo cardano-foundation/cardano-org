@@ -1,13 +1,14 @@
+---
+title: Divider
+---
+
 import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
-# Divider
-
+## Divider
 
 The [`<Divider>`](/docs/get-involved/components/divider) component adds a horizontal line with spacing and optional text. You can assign an optional `id` to it for linking to a specific anchor, such as [`#hello`](#hello). It can also be used invisibly, serving solely as an anchor like [`#hidden`](#hidden).
-
-
 
 ## Simple Divider
 

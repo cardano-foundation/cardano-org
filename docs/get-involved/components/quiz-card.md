@@ -1,4 +1,8 @@
-# Quiz Card
+---
+title: Quiz Card
+---
+
+## Quiz Card
 
 The `QuizCard` component is a call-to-action card designed to promote quiz engagement. It displays a title, description, and a button to launch a quiz in a modal. Optionally, it can include a subtle animated attention dot to draw user focus.
 

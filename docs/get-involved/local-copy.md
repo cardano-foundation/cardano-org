@@ -1,8 +1,9 @@
 ---
 sidebar_position: 10
+title: Local copy
 ---
  
-# Local copy
+## Local copy
 
 Thank you for considering to contribute to cardano.org. To contribute, you must first install it locally. We have chosen Docusaurus, a modern static website generator, as the underlying software.
 

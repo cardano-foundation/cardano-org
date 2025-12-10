@@ -1,5 +1,8 @@
+---
+title: Quiz
+---
 
-# Quiz
+## Quiz
 
 The `Quiz` component displays an interactive quiz with multiple-choice questions. It supports random question selection, immediate feedback, explanations, and score tracking. Perfect for educational content and knowledge testing.
 

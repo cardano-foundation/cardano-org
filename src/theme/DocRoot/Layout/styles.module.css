@@ -7,3 +7,8 @@
   display: flex;
   flex: 1 0 auto;
 }
+
+/* Hide first h1 in doc content since hero shows the title */
+.docsWrapper h1:first-of-type {
+  display: none;
+}

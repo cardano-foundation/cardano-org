@@ -1,4 +1,8 @@
-# DexGrid
+---
+title: Dex Grid
+---
+
+## DexGrid
 
 The `DexGrid` component displays a responsive grid of decentralized exchanges (DEXs) on Cardano, with transaction statistics and rankings. It automatically filters apps tagged with `dex` and sorts them by transaction volume.
 

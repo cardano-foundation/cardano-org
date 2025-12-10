@@ -1,6 +1,10 @@
+---
+title: App List
+---
+
 import AppList from "@site/src/components/AppList";
 
-# App List
+## App List
 
 The [`<AppList>`](/docs/get-involved/components/app-list) component displays a compact, ranked list of Cardano apps filtered by category tags. Apps are sorted by transaction count (when available), then by favorites, and finally alphabetically.
 

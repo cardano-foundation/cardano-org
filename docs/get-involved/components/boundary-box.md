@@ -1,7 +1,10 @@
+---
+title: Boundary Box
+---
+
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
-# Boundary Box
-
+## Boundary Box
 
 [`<BoundaryBox>`](/docs/get-involved/components/boundary-box) ensures consistent boundaries of its children on all screen sizes. 
 

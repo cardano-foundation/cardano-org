@@ -1,8 +1,9 @@
 ---
 sidebar_position: 5
+title: Create a News Article
 ---
 
-# Create a News Article
+## Create a News Article
 
 We are using the blog feature of Docusaurus for the news on cardano.org. It creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed.
 

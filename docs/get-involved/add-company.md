@@ -1,8 +1,9 @@
 ---
 sidebar_position: 3
+title: Add your Company
 ---
 
-# Add your Company
+## Add your Company
 
 Thank you for considering adding your company, association or collaboration to [Entities Building on Cardano](https://cardano.org/entities#companies). 
 

@@ -1,9 +1,8 @@
 ---
+title: Online Communities
 displayed_sidebar: null
 description: Cardano Online Communities
 ---
-
-# Online Communities
 
 The Cardano community has many different social channels. They’re all different and unique in their own way. So here’s a list of all of our recommended community channels, join the ones you like and connect with fellow Cardano community members around the world!
 

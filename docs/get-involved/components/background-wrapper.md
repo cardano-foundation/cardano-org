@@ -1,6 +1,10 @@
+---
+title: Background Wrapper
+---
+
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 
-# Background Wrapper
+## Background Wrapper
 
 [`<BackgroundWrapper>`](/docs/get-involved/components/background-wrapper) applies a selectable background style to its child components. 
 

@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
+title: Get involved
 ---
-
-# Get involved
 
 Welcome to the [cardano.org](https://cardano.org) website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
 

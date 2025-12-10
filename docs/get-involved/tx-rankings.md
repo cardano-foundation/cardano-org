@@ -1,8 +1,9 @@
 ---
 sidebar_position: 5
+title: Transaction Rankings
 ---
  
-# Transaction Rankings
+## Transaction Rankings
 
 :::info Work in Progress
 This page is currently being developed. Complete documentation will be available soon.

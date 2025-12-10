@@ -1,8 +1,9 @@
 ---
 sidebar_position: 2
+title: Add your application
 ---
 
-# Add your application
+## Add your application
 
 The Cardano applications page is a curated list where users discover what can be built on Cardano. It should feature quality apps that demonstrate the ecosystem's capabilities.
 
