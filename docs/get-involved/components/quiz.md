@@ -224,7 +224,7 @@ import quizData from '@site/src/data/quiz-demo.json';
 
 ## Related Components
 
-- **[FAQ Component](/docs/tutorial/faq-component)** - For Q&A content without scoring
+- **[FAQ Component](/docs/get-involved/faq-component)** - For Q&A content without scoring
 - **Tutorial pages** - Educational content that can be reinforced with quizzes
 
 ---

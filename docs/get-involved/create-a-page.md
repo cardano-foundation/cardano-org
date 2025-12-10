@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 # Create a Page
@@ -101,7 +101,7 @@ A new page is now available at [http://localhost:3000/hello-world](http://localh
 
 ### Select different Site Hero designs
 
-The [`<SiteHero>`](/docs/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/components/site-hero).
+The [`<SiteHero>`](/docs/get-involved/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/get-involved/components/site-hero).
 
 ```jsx {4}
 <SiteHero
@@ -130,7 +130,7 @@ Add more text with another `<TitleWithText>` component. This time set headingDot
 
 ### Add more components
 
-To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/components/background-wrapper). Please apply the highlighted changes:
+To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/get-involved/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/get-involved/components/background-wrapper). Please apply the highlighted changes:
 
 ```jsx {6-7,29,52-53} title="src/pages/hello-world.js"
 import Layout from "@theme/Layout";

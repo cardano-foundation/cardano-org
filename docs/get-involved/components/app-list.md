@@ -2,7 +2,7 @@ import AppList from "@site/src/components/AppList";
 
 # App List
 
-The [`<AppList>`](/docs/components/app-list) component displays a compact, ranked list of Cardano apps filtered by category tags. Apps are sorted by transaction count (when available), then by favorites, and finally alphabetically.
+The [`<AppList>`](/docs/get-involved/components/app-list) component displays a compact, ranked list of Cardano apps filtered by category tags. Apps are sorted by transaction count (when available), then by favorites, and finally alphabetically.
 
 ## Basic Usage
 
@@ -165,7 +165,7 @@ Transaction counts are sourced from `/src/data/app-stats.json` and matched to ap
 
 :::info Want to see your app ranked by transactions?
 
-Learn how to make your app's transactions identifiable on-chain in our [Transaction Rankings Guide](/docs/tx-rankings). This helps us track and display accurate transaction counts for your app.
+Learn how to make your app's transactions identifiable on-chain in our [Transaction Rankings Guide](/docs/get-involved/tx-rankings). This helps us track and display accurate transaction counts for your app.
 
 :::
 

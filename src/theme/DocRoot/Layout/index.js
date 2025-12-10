@@ -13,7 +13,7 @@ export default function DocRootLayout({children}) {
   return (
     <>
       <SiteHero
-        title='Get involved'
+        title='Get Involved'
         description='Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano.'
         bannerType='braidBlack'
       />

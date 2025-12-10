@@ -24,11 +24,11 @@ These contributions require no technical skills - perfect for getting started:
 - [Join discussions](https://github.com/cardano-foundation/cardano-org/discussions) - participate in conversations about the website's direction
 
 #### Add Your Project to the Ecosystem
-- **[Add your application](/docs/tutorial/add-app)** - showcase your dApp, wallet, or tool running on Cardano
-- **[Add your company](/docs/tutorial/add-company)** - list your organization building on Cardano
+- **[Add your application](/docs/get-involved/add-app)** - showcase your dApp, wallet, or tool running on Cardano
+- **[Add your company](/docs/get-involved/add-company)** - list your organization building on Cardano
 - **[Add your exchange](https://github.com/cardano-foundation/cardano-org/issues/355)** - help crowdsource the exchange database
-- **[Create an event highlight](/docs/tutorial/create-a-event)** - promote your Cardano event
-- **[Create a news article](/docs/tutorial/create-a-news-article)** - share important ecosystem news
+- **[Create an event highlight](/docs/get-involved/create-a-event)** - promote your Cardano event
+- **[Create a news article](/docs/get-involved/create-a-news-article)** - share important ecosystem news
 
 :::tip Start Here
 Adding your project is the easiest way to contribute! It takes 5-10 minutes and requires no coding experience. Just follow our step-by-step guides.
@@ -48,8 +48,8 @@ Help improve the information and resources on cardano.org:
 
 ### How to Contribute Content
 1. **Simple edits**: Click the "Edit this page" link at the bottom of any page
-2. **Larger changes**: [Set up a local copy](/docs/local-copy) and make changes
-3. **New pages**: Follow our [page creation tutorial](/docs/tutorial/create-a-page)
+2. **Larger changes**: [Set up a local copy](/docs/get-involved/local-copy) and make changes
+3. **New pages**: Follow our [page creation tutorial](/docs/get-involved/create-a-page)
 
 :::info Pro Tip
 Before starting major content work, [discuss your idea](https://github.com/cardano-foundation/cardano-org/discussions) first to ensure it aligns with the website's goals.
@@ -82,13 +82,13 @@ Whether you want to contribute to **cardano.org** (this site) or **[developers.c
 
 ### Component Development
 We have a growing library of reusable components. Check out:
-- **[Component Documentation](/docs/components/)** - see all (documented) components
-- **[AppList Component](/docs/components/app-list)** - compact app listing
-- **[DexGrid Component](/docs/components/dex-grid)** - DEX showcase grid
-- **[FAQ Component](/docs/tutorial/faq-component)** - collapsible Q&A sections
+- **[Component Documentation](/docs/get-involved/components/)** - see all (documented) components
+- **[AppList Component](/docs/get-involved/components/app-list)** - compact app listing
+- **[DexGrid Component](/docs/get-involved/components/dex-grid)** - DEX showcase grid
+- **[FAQ Component](/docs/get-involved/faq-component)** - collapsible Q&A sections
 
 ### Getting Started as a Developer
-1. **[Install locally](/docs/local-copy)** - set up your development environment
+1. **[Install locally](/docs/get-involved/local-copy)** - set up your development environment
 2. **Explore the codebase** - familiarize yourself with the structure
 3. **Pick an issue** - choose from [open issues](https://github.com/cardano-foundation/cardano-org/issues)
 4. **Make your changes** - follow our coding standards
@@ -116,7 +116,7 @@ Design contributions can be shared as mockups, Figma files, or detailed descript
 
 Help maintain accurate data across the website:
 
-- **Update transaction statistics** - help maintain [transaction rankings](/docs/tx-rankings)
+- **Update transaction statistics** - help maintain [transaction rankings](/docs/get-involved/tx-rankings)
 - **Verify app information** - ensure listed apps are accurate and up-to-date
 - **Improve data quality** - identify and fix data inconsistencies
 - **Add missing data** - help fill gaps in our databases
@@ -151,7 +151,7 @@ Before contributing, familiarize yourself with these resources:
 
 ### Style & Quality
 - **[Editorial Guidelines](/docs/glossary)** - maintain consistency across content
-- **[Component Docs](/docs/components/)** - use existing components correctly
+- **[Component Docs](/docs/get-involved/components/)** - use existing components correctly
 - **[Style Guide](https://developers.cardano.org/docs/portal-style-guide/)** - follow writing conventions
 
 ---

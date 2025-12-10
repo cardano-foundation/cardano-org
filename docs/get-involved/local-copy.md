@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 10
 ---
  
 # Local copy
@@ -79,7 +79,7 @@ cardano-org
   - `/src/data/logosCompanies.json` - Company data for https://cardano.org/entities/.
   - `/src/data/logosEntities.json` - Entitiy data for https://cardano.org/entities.
   - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
-  - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/tutorial/faq-component).
+  - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/get-involved/faq-component).
   - `/src/data/termsForTermExplainer.json` - data for the TermExplainer component.
   - `/src/pages` - Any files within this directory will be converted into a website page.
 - `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory.

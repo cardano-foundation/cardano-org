@@ -172,7 +172,7 @@ const config = {
               { to: '/#follow', label: 'Follow Cardano' },
               { to: '/newsletter', label: 'Newsletter' },
               { href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord' },
-              { href: '/docs/communities/', label: 'Community Channels' },
+              { href: '/docs/communities/', label: 'Online Communities' },
               { to: '/events', label: 'Cardano Events' },
               { href: 'https://forum.cardano.org', label: 'Cardano Forum' },
               { to: '/docs/get-involved', label: 'Get involved in cardano.org' },
@@ -192,7 +192,7 @@ const config = {
                     { to: '/#follow', label: 'Follow Cardano', description: 'Stay Updated', icon: 'link-solid' },
                     { to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news', icon: 'envelope-solid' },
                     { href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord', description: 'Real-time chat and quick discussions', icon: 'comments-solid' },
-                    { href: '/docs/communities/', label: 'Community Channels', description: 'Recommended Community Channels', icon: 'share-nodes-solid' },
+                    { href: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels', icon: 'share-nodes-solid' },
                   ],
                 },
                 {

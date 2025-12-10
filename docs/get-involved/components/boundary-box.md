@@ -3,17 +3,17 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 # Boundary Box
 
 
-[`<BoundaryBox>`](/docs/components/boundary-box) ensures consistent boundaries of its children on all screen sizes. 
+[`<BoundaryBox>`](/docs/get-involved/components/boundary-box) ensures consistent boundaries of its children on all screen sizes. 
 
 :::info
 
-Usually you put everything inside a [`<BoundaryBox>`](/docs/components/boundary-box) except a [`<BackgroundWrapper>`](/docs/components/background-wrapper).
+Usually you put everything inside a [`<BoundaryBox>`](/docs/get-involved/components/boundary-box) except a [`<BackgroundWrapper>`](/docs/get-involved/components/background-wrapper).
 
 :::
 
 ## Example
 
-[`<BoundaryBox>`](/docs/components/boundary-box) is just a wrapper component. It is used to wrap other elements or components as shown:
+[`<BoundaryBox>`](/docs/get-involved/components/boundary-box) is just a wrapper component. It is used to wrap other elements or components as shown:
 
 ```
 <BoundaryBox>
