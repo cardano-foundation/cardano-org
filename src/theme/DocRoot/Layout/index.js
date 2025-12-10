@@ -16,7 +16,7 @@ export default function DocRootLayout({children}) {
   // Simple path-based hero configuration
   let heroTitle = 'Get Involved';
   let heroDescription = 'Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano.';
-  let heroBannerType = 'braidBlack';
+  let heroBannerType = 'docs';
   
   // Check path and set custom hero
   if (location.pathname.includes('/communities')) {
