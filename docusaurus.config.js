@@ -175,7 +175,7 @@ const config = {
               { href: '/docs/communities/', label: 'Community Channels' },
               { to: '/events', label: 'Cardano Events' },
               { href: 'https://forum.cardano.org', label: 'Cardano Forum' },
-              { to: '/docs', label: 'Get involved in cardano.org' },
+              { to: '/docs/get-involved', label: 'Get involved in cardano.org' },
               { to: '/ambassadors', label: 'Cardano Ambassadors' },
               { to: '/governance', label: 'Participate in governance' },
               { to: '/apps?tags=governance', label: 'Governance Tools' },
@@ -202,7 +202,7 @@ const config = {
                     { to: '/events', label: 'Cardano Events', description: 'Join Cardano community events', icon: 'calendar-solid' },
                     { href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Structured long-format discussions', icon: 'comments-solid' },
 
-                    { to: '/docs', label: 'Get involved in cardano.org', description: 'If you’d like to participate, this will get you started', icon: 'shapes-solid' },
+                    { to: '/docs/get-involved', label: 'Get involved in cardano.org', description: 'If you’d like to participate, this will get you started', icon: 'shapes-solid' },
                     { to: '/ambassadors', label: 'Cardano Ambassadors', description: 'Become a Cardano ambassador', icon: 'people-group-solid' },
 
 
@@ -425,8 +425,8 @@ const config = {
                 to: '/news',
               },
               {
-                label: 'Contribute',
-                to: '/docs/',
+                label: 'Get Involved',
+                to: '/docs/get-involved',
               },
               {
                 label: 'Contributors',
