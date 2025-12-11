@@ -1,0 +1,76 @@
+.walletConnectContainer {
+  padding: 1.5rem;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.walletConnectContainer h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.walletConnectContainer p {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.connectedInfo {
+  text-align: left;
+}
+
+.connectedInfo h3 {
+  color: var(--ifm-color-success);
+}
+
+.addressInfo {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+}
+
+.addressLabel {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.address {
+  display: block;
+  padding: 0.5rem;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  word-break: break-all;
+  color: var(--ifm-font-color-base);
+}
+
+.disconnectButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--ifm-color-danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.disconnectButton:hover {
+  background-color: var(--ifm-color-danger-dark);
+}
+
+[data-theme='dark'] .walletConnectContainer {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .addressInfo {
+  background-color: var(--ifm-color-emphasis-200);
+}

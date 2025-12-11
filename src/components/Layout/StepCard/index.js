@@ -19,10 +19,18 @@ function StepIndicator({ currentStep, totalSteps }) {
  * @param {Array} props.steps - Array of step objects with title, description, content, checkboxLabel, hideHeader, hideActions, and finalStep properties
  * @param {number} props.initialStep - Starting step number (default: 1)
  * @param {Function} props.onStepChange - Callback function called when step changes
+ * @param {boolean} props.walletConnected - External state to auto-check wallet connection step
  */
-export default function StepCard({ steps = [], initialStep = 1, onStepChange }) {
+export default function StepCard({ steps = [], initialStep = 1, onStepChange, walletConnected }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const [checked, setChecked] = useState(false);
+
+  // Auto-check the checkbox when wallet is connected on step 3
+  React.useEffect(() => {
+    if (currentStep === 3 && walletConnected) {
+      setChecked(true);
+    }
+  }, [currentStep, walletConnected]);
 
   const handleContinue = (isChecked, moveNext = false) => {
     setChecked(isChecked);
@@ -50,6 +58,7 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange }) 
           type="checkbox" 
           onChange={(e) => handleContinue(e.target.checked)}
           checked={checked}
+          disabled={currentStep === 3}
         />
         <span>{currentStepData.checkboxLabel}</span>
       </label>

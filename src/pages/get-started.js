@@ -8,6 +8,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import StepCard from "@site/src/components/Layout/StepCard";
 import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
 import AppList from "@site/src/components/AppList";
+import WalletConnect from "@site/src/components/WalletConnect";
 import styles from "./get-started.module.css";
 
 function HomepageHeader() {
@@ -20,7 +21,7 @@ function HomepageHeader() {
   );
 }
 
-const steps = [
+const steps = (onWalletConnect) => [
   {
     title: "Download a wallet",
     description: "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account.",
@@ -44,23 +45,47 @@ const steps = [
         </div>
       </TwoColumnLayout>
     ),
-    checkboxLabel: "I have a wallet.",
+    checkboxLabel: "I downloaded a wallet.",
+  },
+  {
+    title: "Set up your wallet",
+    description: "Complete the initial setup of your wallet by creating or restoring an account.",
+    content: (
+      <div className={styles.stepContent}>
+        <h3>Secure your wallet</h3>
+        <p>When you first open your wallet, you'll need to either create a new wallet or restore an existing one:</p>
+        <ul>
+          <li>
+            <strong>Recovery phrase (seed phrase):</strong> You'll receive a set of 12, 15, or 24 words. This is the master key to your wallet.
+            <ul>
+              <li>Write it down on paper and store it securely offline</li>
+              <li>Never share it with anyone or store it digitally</li>
+              <li>Anyone with your recovery phrase can access your funds</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Spending password:</strong> Create a strong password to protect everyday transactions. This is different from your recovery phrase.
+          </li>
+          <li>
+            <strong>Verify your backup:</strong> Most wallets will ask you to confirm your recovery phrase by selecting words in order.
+          </li>
+        </ul>
+        <p className={styles.warningNote}>
+          ⚠️ <strong>Important:</strong> Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism. Loss or disclosure of this phrase results in irreversible loss of access to your funds.
+        </p>
+      </div>
+    ),
+    checkboxLabel: "I've set up and secured my wallet.",
   },
   {
     title: "Connect your wallet",
-    description: "You can use your wallet to interact with Cardano.",
+    description: "Connect your Cardano wallet to interact with the blockchain.",
     content: (
       <div className={styles.stepContent}>
-        <p>Placeholder:</p>
-        <ul>
-          <li>Show wallet connector</li>
-          <li>Show wallet connector</li>
-          <li>Show wallet connector</li>
-        </ul>
-        <p>Show wallet connector.</p>
+        <WalletConnect onConnect={onWalletConnect} />
       </div>
     ),
-    checkboxLabel: "I have ada in my wallet.",
+    checkboxLabel: "I've connected my wallet.",
   },
   {
     title: "Explore the ecosystem",
@@ -81,6 +106,11 @@ const steps = [
 ];
 
 export default function Home() {
+  const [walletConnected, setWalletConnected] = React.useState(false);
+
+  const handleWalletConnect = () => {
+    setWalletConnected(true);
+  };
 
   return (
     <Layout
@@ -93,7 +123,7 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <SpacerBox size="small" />
-            <StepCard steps={steps} />
+            <StepCard steps={steps(handleWalletConnect)} walletConnected={walletConnected} />
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>
