@@ -35,7 +35,9 @@ const config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  onBrokenAnchors: 'warn',
+  // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
+  // Docusaurus can't detect these at build time
+  onBrokenAnchors: 'ignore',
 
   customFields: {
     repository: `${vars.repository}`,
