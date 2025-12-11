@@ -134,7 +134,6 @@ const config = {
                   title: 'Get to know',
                   icon: 'book-solid',
                   items: [
-                    //{to: '/discover-cardano', label: 'Discover Cardano', description: 'What makes Cardano unique'}, //TODO: needs revamp
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
                     { to: '/what-is-ada#wallets', label: 'Cardano wallets', description: 'An app to store and use ada', icon: 'wallet-solid' },
                     { to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid' },
@@ -171,12 +170,11 @@ const config = {
             items: [
               { to: '/#follow', label: 'Follow Cardano' },
               { to: '/newsletter', label: 'Newsletter' },
-              { href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord' },
-              { href: '/docs/communities/', label: 'Online Communities' },
+              { to: '/docs/communities/', label: 'Online Communities' },
+              { to: '/ambassadors', label: 'Cardano Ambassadors' },
               { to: '/events', label: 'Cardano Events' },
               { href: 'https://forum.cardano.org', label: 'Cardano Forum' },
               { to: '/docs/get-involved', label: 'Get involved in cardano.org' },
-              { to: '/ambassadors', label: 'Cardano Ambassadors' },
               { to: '/governance', label: 'Participate in governance' },
               { to: '/apps?tags=governance', label: 'Governance Tools' },
               { to: '/constitution', label: 'Cardano Constitution' },
@@ -191,8 +189,8 @@ const config = {
                   items: [
                     { to: '/#follow', label: 'Follow Cardano', description: 'Stay Updated', icon: 'link-solid' },
                     { to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news', icon: 'envelope-solid' },
-                    { href: 'https://discord.com/invite/2PNbVTr', label: 'Cardano Discord', description: 'Real-time chat and quick discussions', icon: 'comments-solid' },
-                    { href: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels', icon: 'share-nodes-solid' },
+                    { to: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels', icon: 'share-nodes-solid' },
+                    { to: '/ambassadors', label: 'Ambassador Program', description: 'Meet Cardano Ambassadors', icon: 'people-group-solid' },
                   ],
                 },
                 {
@@ -203,9 +201,6 @@ const config = {
                     { href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Structured long-format discussions', icon: 'comments-solid' },
 
                     { to: '/docs/get-involved', label: 'Get involved in cardano.org', description: 'If you’d like to participate, this will get you started', icon: 'shapes-solid' },
-                    { to: '/ambassadors', label: 'Cardano Ambassadors', description: 'Become a Cardano ambassador', icon: 'people-group-solid' },
-
-
                   ],
                 },
                 {
@@ -309,7 +304,7 @@ const config = {
           */
           },
           {
-            href: "https://discord.gg/2nPUa5d7DE",
+            to: "/docs/communities/#cardano-on-discord",
             position: "right",
             className: "header-discord-link",
             "aria-label": "Discord",
@@ -378,7 +373,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/2PNbVTr',
+                to: '/docs/communities/#cardano-on-discord',
               },
               {
                 label: 'Newsletter',

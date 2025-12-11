@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Add your application
+title: Add your Application
 ---
 
 ## Add your application

@@ -6,14 +6,6 @@ description: Cardano Online Communities
 
 The Cardano community has many different social channels. They’re all different and unique in their own way. So here’s a list of all of our recommended community channels, join the ones you like and connect with fellow Cardano community members around the world!
 
-**Requirements to be listed here:**  
-• The community must genuinely focus on Cardano and its ecosystem.  
-• The environment should be welcoming, respectful, and open to people from all backgrounds. 
-• The community should be active. (i.e. regular posts, discussions, or interactions)  
-• The community should be non commercial in nature and not primarily used for marketing or promotion.  
-• There should be reliable moderation, ideally covered by a team rather than a single individual, to keep the space healthy and safe.  
-
-
 ## Forums
 
 Enjoy structured long-format discussions.
@@ -22,6 +14,14 @@ Enjoy structured long-format discussions.
 - [forum.cardano.org](https://forum.cardano.org) - the Cardano Forum
 - [Cardano Stackexchange](https://cardano.stackexchange.com) - help for Cardano developers
 - [Facebook Group](https://www.facebook.com/groups/CardanoCommunity/) - the Cardano Facebook Group
+
+
+## Events and local gatherings
+
+Connect with the Cardano community at in-person or virtual events.
+
+- [Cardano on Meetup](https://www.meetup.com/pro/cardano) - Cardano Meetup Groups around the world.
+- [Cardano on Luma](https://luma.com/CardanoEvents) - Cardano Luma Events around the world.
 
 ## Cardano on Telegram
 
@@ -33,25 +33,12 @@ Real time chat and quick discussions.
 
 ## Cardano on Discord
 
-* **[Cardano Community Discord](https://discord.gg/2nPUa5d7DE)**
-* **[Cardano Foundation Engineering](https://discord.gg/MmeqpAzKbp)**
-* **[Cardano Improvement Proposals (CIP)](https://discord.gg/aAh6f5VMYz)**
-* **[IOG Technical Discord](https://discord.com/invite/w6TwW9bGA6)**
-* **[PRAGMA Discord](https://discord.gg/angpcra2qm)**
+Real-time chat and quick discussions.
 
+- [Cardano Foundation Discord](https://discord.gg/MmeqpAzKbp)
+- [Cardano Community Discord](https://discord.com/invite/2nPUa5d7DE)
+- [IOG Discord](https://discord.com/invite/w6TwW9bGA6)
 
-
-YouTube
-
-* Cardano Community https://www.youtube.com/c/cardanocommunity
-
- 
-## Meetup.com
-
-* Cardano Foundation: https://www.meetup.com/pro/cardano
-
- 
- 
 ## Language specific discussions
 
 - :vietnam: Cardano Vietnam: https://t.me/CardanoVNCommunity  
@@ -80,10 +67,10 @@ YouTube
 - 🇪🇸 Spain: https://t.me/CardanoEsp  
 - 🇹🇷 Turkey: https://t.me/CardanoTurk  
 - 🇺🇸 USA: https://t.me/CardanoAmerica  
-- :uk: Cardano UK: https://t.me/CardanoUK  
-- :vietnam: Vietnam Announcements: [Telegram: Contact @VietnamCardanoCvhannel](https://t.me/VietnamCardanochannel)  
-- Cardano Middle East and Northern Africa Community: [WhatsApp: Cardano MENA](https://chat.whatsapp.com/LqOl6DwBES5G3CcgSXlAPN)  
+- :uk: Cardano UK: https://t.me/CardanoUK
 
+## Add your community
 
- 
- 
+Want to see your community listed here? We'd love to include more great Cardano communities! 
+
+Please read the [Add your Community](/docs/get-involved/add-community) guide to learn about the requirements and how to submit your community through a pull request.
