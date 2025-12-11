@@ -9,7 +9,11 @@ You can use the component `<FAQSection>` to create your own FAQ sections by pass
 
 ## Prepare the JSON file
 
-Create a JSON file with your questions and answers and place it in the `src/data/` directory. For this example, we'll use a pineapple on pizza FAQ:
+Create a JSON file with your questions and answers and place it in the `src/data/` directory. For this example, we'll use a pineapple on pizza FAQ.
+
+:::note
+After creating your JSON file, you'll need to add a static import for it in the `FAQSection` component at `src/components/FAQSection/index.js`. See the [Register your JSON file](#register-your-json-file) section below.
+:::
 
 ```js title="src/data/pineappleFAQ.json"
 [
@@ -41,6 +45,27 @@ Create a JSON file with your questions and answers and place it in the `src/data
 ]
 
 ```
+
+## Register your JSON file
+
+Before you can use your new FAQ data, you need to add it to the `FAQSection` component. Open `src/components/FAQSection/index.js` and add an import for your JSON file:
+
+```js {6,11} title="src/components/FAQSection/index.js"
+import React, { useState } from "react";
+import Divider from "@site/src/components/Layout/Divider";
+import Collapsible from "react-collapsible";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import delegationFAQ from "@site/src/data/delegationFAQ.json";
+import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
+
+const faqData = {
+  delegationFAQ,
+  operationFAQ,
+  pineappleFAQ,
+};
+```
+
+This registers your JSON file so it can be referenced by name when using the component.
 
 ## Add the FAQ component
 
@@ -104,4 +129,6 @@ export default function Home() {
 
 Your pineapple on pizza FAQ component at [http://localhost:3000/pineapple-on-pizza](http://localhost:3000/pineapple-on-pizza) will now appear as follows:
 
-![img](/img/docs/tutorial/tutorial-step-3.jpg)
+import FAQSection from "@site/src/components/FAQSection";
+
+<FAQSection jsonFileName="pineappleFAQ" />

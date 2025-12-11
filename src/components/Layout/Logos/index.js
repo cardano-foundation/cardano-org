@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';  //Default Styling
+import logosCompanies from '@site/src/data/logosCompanies.json';
+import logosEntities from '@site/src/data/logosEntities.json';
+
+const logoData = {
+  logosCompanies,
+  logosEntities,
+};
 
 // shows a logo with a link, forces svg to ensure quality
 // "companyName" in the json file is optional, therefore
@@ -48,13 +55,7 @@ function PartnerItem({ imageName, label, link, companyName, knownFor, showCompan
 }
 
 export default function HomePartnersSection({ jsonFileName }) {
-  const [partnerItems, setPartnerItems] = useState([]);
-
-  useEffect(() => {
-    import(`@site/src/data/${jsonFileName}.json`)
-      .then((module) => setPartnerItems(module.default))
-      .catch((error) => console.error('Error loading partner items:', error));
-  }, [jsonFileName]);
+  const partnerItems = logoData[jsonFileName] || [];
 
   return (
       <div className={styles.logoGridContainer}>

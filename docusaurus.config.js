@@ -34,8 +34,17 @@ const config = {
   projectName: 'www-cardano-org',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  onBrokenAnchors: 'warn',
+  // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
+  // Docusaurus can't detect these at build time
+  onBrokenAnchors: 'ignore',
+
+  markdown: {
+    format: 'mdx',
+    mermaid: false,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   customFields: {
     repository: `${vars.repository}`,
@@ -69,6 +78,7 @@ const config = {
           routeBasePath: 'news',
           blogSidebarCount: 50,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
