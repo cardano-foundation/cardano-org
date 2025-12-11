@@ -78,6 +78,7 @@ const config = {
           routeBasePath: 'news',
           blogSidebarCount: 50,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
