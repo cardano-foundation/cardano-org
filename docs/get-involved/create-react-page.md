@@ -196,7 +196,6 @@ Your hello world page at [http://localhost:3000/hello-world](http://localhost:30
 Explore all available components to build rich pages:
 
 - [SiteHero](/docs/get-involved/components/site-hero) - Page headers with different banner designs
-- [TitleWithText](/docs/get-involved/components/title-with-text) - Headings with formatted text
 - [BoundaryBox](/docs/get-involved/components/boundary-box) - Content container with proper margins
 - [BackgroundWrapper](/docs/get-involved/components/background-wrapper) - Background patterns and colors
 - [Divider](/docs/get-involved/components/divider) - Section dividers with optional text
