@@ -364,6 +364,7 @@ export const Showcases = [
     description:
       "AdaLite was developed by vacuumlabs, they were also responsible for the Cardano Ledger app and won the crypto puzzle at the IOHK Summit 2019.",
     preview: require("./app-images/adalite.png"),
+    icon: "/img/app-icons/adalite.jpg",
     website: "https://adalite.io",
     source: null,
     tags: ["wallet"],
@@ -373,6 +374,7 @@ export const Showcases = [
     description:
       "Multi-cryptocurrency wallet that supports Cardano. During the integration they contributed code to the Cardano Rust library.",
     preview: require("./app-images/atomicwallet.png"),
+    icon: "/img/app-icons/atomic.jpg",
     website: "https://atomicwallet.io",
     source: null,
     tags: ["wallet"],
@@ -391,9 +393,10 @@ export const Showcases = [
     description:
       "Yoroi is a lightweight node and developed by EMURGO, one of the founding entities of Cardano.",
     preview: require("./app-images/yoroi.png"),
+    icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["wallet", "opensource"],
+    tags: ["favorite", "wallet", "opensource"],
   },
   {
     title: "Cardano Warriors",
@@ -452,6 +455,7 @@ export const Showcases = [
     description:
       "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community.",
     preview: require("./app-images/eternl.jpg"),
+    icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
     tags: ["favorite", "wallet", "nftsupport"],
@@ -511,10 +515,11 @@ export const Showcases = [
     tags: ["token", "nftproject"],
   },
   {
-    title: "Typhon Wallet",
+    title: "Typhon",
     description:
       "Light wallet from the creators of cardanoscan.io. It comes with features like NFT gallery, transaction metadata, vote registration, among other features.",
     preview: require("./app-images/typhonwallet.png"),
+    icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
     tags: ["favorite", "wallet", "nftsupport", "metadata"],
@@ -609,6 +614,7 @@ export const Showcases = [
     description:
       "The ultimate wallet experience for the Web, with native NFT and token features, powered by Cardano and third party applications.",
     preview: require("./app-images/gamechanger.png"),
+    icon: "/img/app-icons/gamechanger.jpg",
     website: "https://gamechanger.finance",
     source: null,
     tags: ["wallet"],
@@ -618,6 +624,7 @@ export const Showcases = [
     description:
       "Start exploring the possibilities of Cardano. Purchase, send, and receive ADA - the cryptocurrency for Cardano. Available as a browser extension.",
     preview: require("./app-images/gerowallet.png"),
+    icon: "/img/app-icons/gero.jpg",
     website: "https://gerowallet.io",
     source: null,
     tags: ["wallet"],
@@ -863,9 +870,10 @@ export const Showcases = [
     description: 
       "A new light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
     preview: require("./app-images/lace.png"),
+    icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["nftsupport", "wallet", "opensource"],
+    tags: ["favorite", "nftsupport", "wallet", "opensource"],
   },
   {
     title: "Do it with Lovelace",
@@ -896,14 +904,15 @@ export const Showcases = [
     tags: ["nftsupport", "token"],
   },
   {
-    title: "VESPR Wallet",
+    title: "VESPR",
     description:
       "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use. Your private keys and assets always remain under your control.",
     preview: require("./app-images/vesprwallet.png"),
+    icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["wallet", "nftsupport"],
+    tags: ["favorite", "wallet", "nftsupport"],
   },
   {
     title: "DexHunter",
@@ -1023,6 +1032,7 @@ export const Showcases = [
     description:
       "Begin Wallet a non-custodial light Cardano Wallet, available as an Extension and Mobile. We offer payment link compatibility with deep link support, Begin ID user name based on ENS protocol for Wallet Address. Hardware wallet support Ledger and Keystone. Based on our own open source cryptographic core.",
     preview: require("./app-images/begin.png"),
+    icon: "/img/app-icons/begin.jpg",
     website: "https://begin.is",
     source: null,
     tags: ["wallet", "nftsupport"],
@@ -1216,6 +1226,7 @@ export const Showcases = [
     description:
       "Tokeo is a feature-rich Bitcoin and Cardano wallet that lets you securely store, manage, and trade your BTC, ADA, Runes, Cardano Native Tokens, Ordinals and NFTs, while providing seamless access to the Bitcoin and Cardano blockchain ecosystem.",
     preview: require("./app-images/tokeo.png"),
+    icon: "/img/app-icons/tokeo.jpg",
     website: "https://tokeo.io/",
     source: null,
     tags: ["wallet"],
