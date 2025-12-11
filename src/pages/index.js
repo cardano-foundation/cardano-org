@@ -51,8 +51,8 @@ export default function Home() {
                 <br key="line1" />, /* FIXME: too hacky */
                 "Made Possible",
               ]}
-              buttonLabel="Use Cases"
-              buttonLink="/use-cases"
+              buttonLabel="Use Cardano Apps"
+              buttonLink="/apps"
               headingDot={true}
             />
 
