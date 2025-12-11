@@ -80,7 +80,7 @@ function AppListItem({ app, stats, showTxCount }) {
   );
 }
 
-export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false }) {
+export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false }) {
   // Filter apps by tags
   let filteredApps = Showcases.filter(app => 
     tags.length === 0 || tags.some(tag => app.tags.includes(tag))
@@ -91,16 +91,16 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
     app,
     stats: getAppStats(app),
     hasTxData: !!getAppStats(app)?.txCount,
-    isFavorite: app.favorite || false
+    isFavorite: app.tags?.includes('favorite') || false
   }));
 
-  // Sort: Apps with tx data first (by tx count desc), then favorites, then alphabetically
+  // Sort: Apps with tx data first (by count), then favorites, then alphabetically
   appsWithStats.sort((a, b) => {
     // First priority: apps with transaction data
     if (a.hasTxData && !b.hasTxData) return -1;
     if (!a.hasTxData && b.hasTxData) return 1;
     
-    // If both have tx data, sort by count
+    // If both have tx data, sort by count descending
     if (a.hasTxData && b.hasTxData) {
       return (b.stats?.txCount || 0) - (a.stats?.txCount || 0);
     }
@@ -128,17 +128,19 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
 
   return (
     <div className={styles.appList}>
-      <div className={styles.header}>
-        <div className={styles.categoryIcon}>
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-          </svg>
+      {!hideHeader && (
+        <div className={styles.header}>
+          <div className={styles.categoryIcon}>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+          </div>
+          <h3 className={styles.categoryTitle}>{categoryTitle}</h3>
+          <Link to={seeAllUrl} className={styles.seeAllButton}>
+            See all
+          </Link>
         </div>
-        <h3 className={styles.categoryTitle}>{categoryTitle}</h3>
-        <Link to={seeAllUrl} className={styles.seeAllButton}>
-          See all
-        </Link>
-      </div>
+      )}
       
       <div className={styles.listContainer}>
         {displayedApps.map(({ app, stats }) => (
