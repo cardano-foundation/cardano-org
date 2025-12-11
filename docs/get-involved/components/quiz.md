@@ -1,5 +1,8 @@
+---
+title: Quiz
+---
 
-# Quiz
+## Quiz
 
 The `Quiz` component displays an interactive quiz with multiple-choice questions. It supports random question selection, immediate feedback, explanations, and score tracking. Perfect for educational content and knowledge testing.
 
@@ -224,7 +227,7 @@ import quizData from '@site/src/data/quiz-demo.json';
 
 ## Related Components
 
-- **[FAQ Component](/docs/tutorial/faq-component)** - For Q&A content without scoring
+- **[FAQ Component](/docs/get-involved/faq-component)** - For Q&A content without scoring
 - **Tutorial pages** - Educational content that can be reinforced with quizzes
 
 ---

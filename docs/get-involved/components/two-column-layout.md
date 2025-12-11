@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+title: Two Column Layout
 ---
 
-# Two Column Layout
+## Two Column Layout
 
 The `TwoColumnLayout` component creates a responsive two-column grid layout with a main content area and a sidebar. The sidebar can optionally be sticky, staying visible as users scroll through long content.
 

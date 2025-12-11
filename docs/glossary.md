@@ -1,11 +1,10 @@
 ---
-id: glossary
-title: Editorial Style Guide and Glossary
 sidebar_label: Style Guide
 description: Editorial style guide and glossary for Cardano.org.
+title: Glossary
 ---
 
-# Editorial Style Guide
+## Glossary / Editorial Style Guide
 To make content consistent we should agree on spellings and terms here. 
 
 ## Principles

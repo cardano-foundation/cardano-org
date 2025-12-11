@@ -1,10 +1,11 @@
 ---
-sidebar_position: 2
+sidebar_position: 8
+title: Create a FAQ Section
 ---
 
-# Create a FAQ Section
+## Create a FAQ Section
 
-You can use the component `<FAQSection>` to create your own FAQ sections by passing a JSON file. This example is based on the [Hello World Page](/docs/tutorial/create-a-page#add-more-components) from the previous tutorial.
+You can use the component `<FAQSection>` to create your own FAQ sections by passing a JSON file. This example is based on the [Hello World Page](/docs/get-involved/create-a-page#add-more-components) from the previous tutorial.
 
 ## Prepare the JSON file
 

@@ -1,16 +1,21 @@
 ---
-sidebar_position: 1
+sidebar_position: 7
+title: Create a React Page
 ---
 
-# Create a Page
+## Create a React Page
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+For more complex layouts and interactive features, you can create pages using React components. This gives you full control over the design and behavior.
+
+## Where to create React pages
+
+Add React (`.js` or `.jsx`) files to `/src/pages/` to create standalone pages:
 
 - `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
+- `src/pages/foo.js` → `localhost:3000/foo`
 - `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
 
-## Create your first React Page
+## Create a simple React page
 
 Create a file at `src/pages/my-react-page.js`:
 
@@ -30,22 +35,9 @@ export default function MyReactPage() {
 
 A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
 
-## Create your first Markdown Page
+## Create a page using cardano.org components
 
-Create a file at `src/pages/my-markdown-page.md`:
-
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
-
-This is a Markdown page
-```
-
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
-
-
-## Create a page using existing components
-
-To make meaningful contributions you need to know how to build pages that look in the design of cardano.org. We have built some standard components for you that you can use.
+To create pages that match the cardano.org design, use our standard components:
 
 Create a file at `src/pages/hello-world.js`:
 
@@ -101,7 +93,7 @@ A new page is now available at [http://localhost:3000/hello-world](http://localh
 
 ### Select different Site Hero designs
 
-The [`<SiteHero>`](/docs/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/components/site-hero).
+The [`<SiteHero>`](/docs/get-involved/components/site-hero) component allows you to easily switch the header design by changing `bannerType=`. In our hello-world example try setting it to `ada`, `waves` or `starburst`. For a full list of banner types visit the [component documentation](/docs/get-involved/components/site-hero).
 
 ```jsx {4}
 <SiteHero
@@ -130,7 +122,7 @@ Add more text with another `<TitleWithText>` component. This time set headingDot
 
 ### Add more components
 
-To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/components/background-wrapper). Please apply the highlighted changes:
+To add a little bit of space at the end of the content we add the [`<SpacerBox>`](/docs/get-involved/components/spacer-box) and to change the background we will wrap everything in a [`<BackgroundWrapper>`](/docs/get-involved/components/background-wrapper). Please apply the highlighted changes:
 
 ```jsx {6-7,29,52-53} title="src/pages/hello-world.js"
 import Layout from "@theme/Layout";
@@ -198,3 +190,29 @@ export default function Home() {
 Your hello world page at [http://localhost:3000/hello-world](http://localhost:3000/hello-world) will now look like this:
 
 ![img](/img/docs/tutorial/tutorial-step-2.jpg)
+
+## Available components
+
+Explore all available components to build rich pages:
+
+- [SiteHero](/docs/get-involved/components/site-hero) - Page headers with different banner designs
+- [BoundaryBox](/docs/get-involved/components/boundary-box) - Content container with proper margins
+- [BackgroundWrapper](/docs/get-involved/components/background-wrapper) - Background patterns and colors
+- [Divider](/docs/get-involved/components/divider) - Section dividers with optional text
+- [SpacerBox](/docs/get-involved/components/spacer-box) - Vertical spacing
+- [And many more...](/docs/get-involved/components/)
+
+## When to use React vs Markdown
+
+**Use Markdown** when:
+- Creating documentation pages
+- Writing blog posts
+- Content is mostly text with simple formatting
+
+**Use React** when:
+- Building interactive features
+- Creating custom layouts
+- Need precise control over design
+- Integrating with APIs or external data
+
+For most documentation contributions, [Markdown pages](/docs/get-involved/create-markdown-page) are recommended for their simplicity.

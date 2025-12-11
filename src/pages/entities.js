@@ -46,7 +46,7 @@ export default function Home() {
             />
             <Logos jsonFileName="logosCompanies" /> 
             <div className="centered-link">
-              <Link to="/docs/tutorial/add-company">add your company</Link>
+              <Link to="/docs/get-involved/add-company">add your company</Link>
             </div>
           </BoundaryBox>
         </BackgroundWrapper>    

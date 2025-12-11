@@ -1,4 +1,8 @@
-# DexGrid
+---
+title: Dex Grid
+---
+
+## DexGrid
 
 The `DexGrid` component displays a responsive grid of decentralized exchanges (DEXs) on Cardano, with transaction statistics and rankings. It automatically filters apps tagged with `dex` and sorts them by transaction volume.
 
@@ -143,7 +147,7 @@ The component uses the `statsLabel` field from `apps.js` to match DEXs with thei
 }
 ```
 
-See the [Transaction Rankings Guide](/docs/tx-rankings) for details on how transaction data is collected and how to get your DEX tracked.
+See the [Transaction Rankings Guide](/docs/get-involved/tx-rankings) for details on how transaction data is collected and how to get your DEX tracked.
 
 ---
 
@@ -163,7 +167,7 @@ To display transaction statistics for your DEX:
 
 1. Add the `statsLabel` field to your app entry
 2. Ensure the label matches your entry in `/src/data/app-stats.json`
-3. See [Transaction Rankings Guide](/docs/tx-rankings)
+3. See [Transaction Rankings Guide](/docs/get-involved/tx-rankings)
 
 ---
 
@@ -215,7 +219,7 @@ Explore the growing ecosystem of DEXs on Cardano, ranked by real transaction vol
 
 ## Related Components
 
-- **[AppList](/docs/components/app-list)** - Compact list component for categorized apps
+- **[AppList](/docs/get-involved/components/app-list)** - Compact list component for categorized apps
 - **Apps Page** - Full app directory with filtering
 
 ---

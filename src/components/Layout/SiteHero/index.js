@@ -48,6 +48,9 @@ export default function SiteHero({ title, description, bannerType }) {
     case "braidBlack":
       heroClassName = styles.heroBannerBraidBlack;
       break;
+    case "docs":
+      heroClassName = styles.heroBannerDocs;
+      break;
     case "ouroboros":
     heroClassName = styles.heroBannerOuroboros;
       break;

@@ -1,11 +1,15 @@
+---
+title: Spacer Box
+---
+
 import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
-# SpacerBox
+## SpacerBox
 
-[`<SpacerBox>`](/docs/components/spacer-box) is one of the most simple components but still so helpful. It gives you the ability to add additional spacing between components. You can pass a size parameter or use the default which is `small`.
+[`<SpacerBox>`](/docs/get-involved/components/spacer-box) is one of the most simple components but still so helpful. It gives you the ability to add additional spacing between components. You can pass a size parameter or use the default which is `small`.
 
 ## Sizes
 `<SpacerBox size="small" />` equivalent to `<br /><br />`
@@ -18,7 +22,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 :::info
 
-[`<SpacerBox>`](/docs/components/spacer-box) is the same as `<SpacerBox size="small" />`.
+[`<SpacerBox>`](/docs/get-involved/components/spacer-box) is the same as `<SpacerBox size="small" />`.
 
 :::
  

@@ -1,10 +1,9 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
+title: Create an Event Highlight
 ---
 
-# Create a Event Highlight
-
-## Guidelines for Cardano.org Event Highlights Submission
+## Create a Event Highlight
 
 :::tip
 

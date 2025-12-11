@@ -1,18 +1,19 @@
+---
+title: Site Hero
+---
+
 import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 
+## Site Hero
 
-# Site Hero
-
-The [`<SiteHero>`](/docs/components/site-hero) component is used to define the header banner and title of each page. You can configure it by passing the following properties: a title, a description, and a banner type.
-
-
+The [`<SiteHero>`](/docs/get-involved/components/site-hero) component is used to define the header banner and title of each page. You can configure it by passing the following properties: a title, a description, and a banner type.
 
 ## Banner Types
 
-Different banner types than can be used with [`<SiteHero>`](/docs/components/site-hero) component:
+Different banner types than can be used with [`<SiteHero>`](/docs/get-involved/components/site-hero) component:
 
 
 ### ada
