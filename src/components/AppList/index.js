@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import { Showcases } from "@site/src/data/apps";
+import { Showcases, Tags } from "@site/src/data/apps";
 import appStats from "@site/src/data/app-stats.json";
 import styles from "./styles.module.css";
 
@@ -31,7 +31,7 @@ function formatTxCount(num) {
   return num.toLocaleString('en-US');
 }
 
-function AppListItem({ app, stats, showTxCount }) {
+function AppListItem({ app, stats, showTxCount, showTags }) {
   const hasTxData = stats && stats.txCount > 0;
 
   // Get the image source
@@ -51,6 +51,11 @@ function AppListItem({ app, stats, showTxCount }) {
   
   const iconSrc = getIconSrc();
   const initial = app.title.charAt(0).toUpperCase();
+  
+  // Filter out 'favorite' tag if showing tags
+  const visibleTags = showTags 
+    ? app.tags.filter(tag => tag !== 'favorite')
+    : [];
 
   return (
     <a 
@@ -69,6 +74,20 @@ function AppListItem({ app, stats, showTxCount }) {
       <div className={styles.appContent}>
         <h4 className={styles.appTitle}>{app.title}</h4>
         <p className={styles.appDescription}>{app.description}</p>
+        {showTags && visibleTags.length > 0 && (
+          <ul className={styles.tagList}>
+            {visibleTags.map((tag, index) => {
+              const tagInfo = Tags[tag];
+              if (!tagInfo) return null;
+              return (
+                <li key={index} className={styles.tag} title={tagInfo.description}>
+                  <span className={styles.textLabel}>{tagInfo.label.toLowerCase()}</span>
+                  <span className={styles.colorLabel} style={{ backgroundColor: tagInfo.color }} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
       {showTxCount && hasTxData && (
         <div className={styles.txCount}>
@@ -80,7 +99,7 @@ function AppListItem({ app, stats, showTxCount }) {
   );
 }
 
-export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false }) {
+export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false }) {
   // Filter apps by tags
   let filteredApps = Showcases.filter(app => 
     tags.length === 0 || tags.some(tag => app.tags.includes(tag))
@@ -144,7 +163,7 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
       
       <div className={styles.listContainer}>
         {displayedApps.map(({ app, stats }) => (
-          <AppListItem key={app.title} app={app} stats={stats} showTxCount={showTxCount} />
+          <AppListItem key={app.title} app={app} stats={stats} showTxCount={showTxCount} showTags={showTags} />
         ))}
       </div>
     </div>
