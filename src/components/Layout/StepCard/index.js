@@ -25,9 +25,9 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
   const [currentStep, setCurrentStep] = useState(initialStep);
   const [checked, setChecked] = useState(false);
 
-  // Auto-check the checkbox when wallet is connected on step 5
+  // Auto-check the checkbox when wallet is connected on step 4
   React.useEffect(() => {
-    if (currentStep === 5 && walletConnected) {
+    if (currentStep === 4 && walletConnected) {
       setChecked(true);
     }
   }, [currentStep, walletConnected]);
@@ -58,7 +58,7 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
           type="checkbox" 
           onChange={(e) => handleContinue(e.target.checked)}
           checked={checked}
-          disabled={currentStep === 5}
+          disabled={currentStep === 4}
         />
         <span>{currentStepData.checkboxLabel}</span>
       </label>

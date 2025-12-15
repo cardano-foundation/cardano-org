@@ -143,8 +143,31 @@
   border-radius: 8px;
 }
 
+@media (max-width: 768px) {
+  .recoveryPhraseImage {
+    display: none;
+  }
+}
+
 .centeredSidebar {
   display: flex;
   align-items: center;
   min-height: 400px;
+}
+
+.stepContent p.securityNote {
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.adaRoundWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adaRoundWrap img {
+  max-width: 20rem;
+  width: 100%;
+  height: auto;
 }

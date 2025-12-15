@@ -106,26 +106,26 @@ const config = {
       return {
         name: 'custom-webpack-config',
         configureWebpack(config, isServer) {
-          if (!isServer) {
-            return {
-              resolve: {
-                fallback: {
-                  process: require.resolve('process/browser.js'),
-                  crypto: require.resolve('crypto-browserify'),
-                  stream: require.resolve('stream-browserify'),
-                  vm: require.resolve('vm-browserify'),
-                },
-                fullySpecified: false,
+          return {
+            resolve: {
+              fallback: isServer ? {} : {
+                process: require.resolve('process/browser.js'),
+                crypto: require.resolve('crypto-browserify'),
+                stream: require.resolve('stream-browserify'),
+                vm: require.resolve('vm-browserify'),
               },
-              plugins: [
-                new (require('webpack')).ProvidePlugin({
-                  process: 'process/browser.js',
-                  Buffer: ['buffer', 'Buffer'],
-                }),
-              ],
-            };
-          }
-          return {};
+              fullySpecified: false,
+            },
+            plugins: isServer ? [] : [
+              new (require('webpack')).ProvidePlugin({
+                process: 'process/browser.js',
+                Buffer: ['buffer', 'Buffer'],
+              }),
+            ],
+            node: {
+              __dirname: true,
+            },
+          };
         },
       };
     },
