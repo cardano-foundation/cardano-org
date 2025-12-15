@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import delegationFAQ from "@site/src/data/delegationFAQ.json";
+import operationFAQ from "@site/src/data/operationFAQ.json";
+import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 //
 // This component:
@@ -11,23 +14,17 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 // FIXME: some answers seem to be very outdated, also needs more links
 // FIXME: need to make clear that protocol distributes rewards and pools do not have custody
 
+const faqData = {
+  delegationFAQ,
+  operationFAQ,
+  pineappleFAQ,
+};
+
 export default function FAQSection({ jsonFileName = "delegationFAQ" }) {
   // to maintain the alternating background we need to
   // manage the active state of each Collabsible on our own
   const [activeIndex, setActiveIndex] = useState(null);
-  const [faqList, setFaqList] = useState([]);
-
-  useEffect(() => {
-    // Dynamically import the JSON file based on the prop
-    import(`@site/src/data/${jsonFileName}.json`)
-      .then((module) => {
-        setFaqList(module.default);
-      })
-      .catch((error) => {
-        console.error(`Could not load JSON data from ${jsonFileName}:`, error);
-        setFaqList([]); // Set to empty array or handle as needed
-      });
-  }, [jsonFileName]); // This effect runs whenever the jsonFileName prop changes
+  const faqList = faqData[jsonFileName] || [];
 
 
   const handleClick = (index) => {
