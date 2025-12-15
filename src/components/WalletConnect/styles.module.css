@@ -17,6 +17,39 @@
   color: var(--ifm-color-emphasis-700);
 }
 
+.walletList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.walletButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.walletButton:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.walletIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
 .connectedInfo {
   text-align: left;
 }
