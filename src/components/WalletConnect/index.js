@@ -19,13 +19,11 @@ export default function WalletConnect({ onConnect }) {
     <div className={styles.walletConnectContainer}>
       {!isConnected ? (
         <>
-          <h3>Connect your wallet</h3>
-          <p>Click the button below to connect your Cardano wallet:</p>
-          <ConnectWalletButton />
+          <ConnectWalletButton label="Sign in with Cardano" />
         </>
       ) : (
         <div className={styles.connectedInfo}>
-          <h3>✅ Wallet connected!</h3>
+          <h3>Wallet connected!</h3>
           <p>You've successfully connected your <strong>{enabledWallet}</strong> wallet.</p>
           {usedAddresses && usedAddresses.length > 0 && (
             <div className={styles.addressInfo}>
@@ -36,7 +34,7 @@ export default function WalletConnect({ onConnect }) {
             </div>
           )}
           <button onClick={handleDisconnect} className={styles.disconnectButton}>
-            Disconnect
+            Sign Out
           </button>
         </div>
       )}

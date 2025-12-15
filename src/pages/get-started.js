@@ -10,6 +10,7 @@ import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
 import AppList from "@site/src/components/AppList";
 import WalletConnect from "@site/src/components/WalletConnect";
 import styles from "./get-started.module.css";
+import Link from "@docusaurus/Link";
 
 function HomepageHeader() {
   return (
@@ -41,6 +42,12 @@ const steps = (onWalletConnect) => [
           <p className={styles.stepDescription}>
             It lets you securely manage your ada, use dApps, and interact with the network. 
           </p>
+          <p>
+              Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism.
+            </p>
+            <p>
+              <strong>Loss or disclosure of this phrase results in irreversible loss of access to your funds.</strong>
+            </p>
           {actions}
         </div>
       </TwoColumnLayout>
@@ -48,42 +55,111 @@ const steps = (onWalletConnect) => [
     checkboxLabel: "I downloaded a wallet.",
   },
   {
-    title: "Set up your wallet",
-    description: "Complete the initial setup of your wallet by creating or restoring an account.",
+    title: "Backup your recovery phrase",
+    description: "Your recovery phrase is the master key to your wallet. Keep it safe!",
     content: (
-      <div className={styles.stepContent}>
-        <h3>Secure your wallet</h3>
-        <p>When you first open your wallet, you'll need to either create a new wallet or restore an existing one:</p>
-        <ul>
-          <li>
-            <strong>Recovery phrase (seed phrase):</strong> You'll receive a set of 12, 15, or 24 words. This is the master key to your wallet.
-            <ul>
-              <li>Write it down on paper and store it securely offline</li>
-              <li>Never share it with anyone or store it digitally</li>
-              <li>Anyone with your recovery phrase can access your funds</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Spending password:</strong> Create a strong password to protect everyday transactions. This is different from your recovery phrase.
-          </li>
-          <li>
-            <strong>Verify your backup:</strong> Most wallets will ask you to confirm your recovery phrase by selecting words in order.
-          </li>
-        </ul>
-        <p className={styles.warningNote}>
-          ⚠️ <strong>Important:</strong> Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism. Loss or disclosure of this phrase results in irreversible loss of access to your funds.
-        </p>
-      </div>
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src="/img/illustrations/recovery-phrase.png" alt="Example of a recovery phrase with 24 words" className={styles.recoveryPhraseImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+        centerVertically={true}
+      >
+        <div className={styles.stepContent}>
+          <h3>Save your recovery phrase</h3>
+          <p>When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase (also called a seed phrase).</p>
+          
+          <p><strong>What to do:</strong></p>
+          <ul>
+            <li>Write it down on paper and store it securely offline</li>
+            <li>Never share it with anyone or store it digitally</li>
+            <li>Anyone with your recovery phrase can access your funds</li>
+            <li>Keep multiple copies in different secure locations</li>
+          </ul>
+        </div>
+      </TwoColumnLayout>
     ),
-    checkboxLabel: "I've set up and secured my wallet.",
+    checkboxLabel: "I've backed up my recovery phrase.",
+  },
+  {
+    title: "Complete wallet setup",
+    description: "Finish setting up your wallet with a password and verification.",
+    content: (
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src="/img/illustrations/complete-wallet-setup.png" alt="Complete your wallet setup illustration" className={styles.recoveryPhraseImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+        centerVertically={true}
+      >
+        <div className={styles.stepContent}>
+          <h3>Final setup steps</h3>
+          <p>After backing up your recovery phrase, complete these two important steps:</p>
+          
+          <p><strong>Spending password:</strong> Create a strong password to protect everyday transactions. This is different from your recovery phrase and secures your wallet on this device.</p>
+          
+          <p><strong>Verify your backup:</strong> Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it.</p>
+          
+          <p>Once these steps are complete, your wallet is ready to use!</p>
+        </div>
+      </TwoColumnLayout>
+    ),
+    checkboxLabel: "I've completed the wallet setup.",
+  },
+  {
+    title: "Get ada",
+    description: "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain.",
+    content: (
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src="/img/illustrations/get-ada.png" alt="Get ada illustration" className={styles.recoveryPhraseImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+        centerVertically={true}
+      >
+        <div className={styles.stepContent}>
+          <h3>How to get ada</h3>
+          <p>To use the Cardano blockchain, you'll need ada. There are several ways to obtain it:</p>
+          
+          <p><strong>Cryptocurrency exchanges:</strong> Buy ada from popular exchanges using fiat currency or other cryptocurrencies.</p>
+          
+          <p><strong>Peer-to-peer platforms:</strong> Trade directly with other users through P2P marketplaces.</p>
+          
+          <p><strong>Receive from others:</strong> Someone can send ada directly to your wallet address.</p>
+          
+          <p><Link to="/where-to-get-ada" className="button button--primary">View all options →</Link></p>
+        </div>
+      </TwoColumnLayout>
+    ),
+    checkboxLabel: "I have ada in my wallet.",
   },
   {
     title: "Connect your wallet",
-    description: "Connect your Cardano wallet to interact with the blockchain.",
+    description: "Use your wallet as a single account for all apps and projects on Cardano. No separate accounts needed.",
     content: (
-      <div className={styles.stepContent}>
-        <WalletConnect onConnect={onWalletConnect} />
-      </div>
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src="/img/illustrations/connect-wallet.png" alt="Connect wallet illustration" className={styles.recoveryPhraseImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+        centerVertically={true}
+      >
+        <div className={styles.stepContent}>
+          <WalletConnect onConnect={onWalletConnect} />
+        </div>
+      </TwoColumnLayout>
     ),
     checkboxLabel: "I've connected my wallet.",
   },
@@ -91,15 +167,25 @@ const steps = (onWalletConnect) => [
     title: "Explore the ecosystem",
     description: "Now that you have a wallet and ada, you're ready to explore everything Cardano has to offer.",
     content: (
-      <div className={styles.stepContent}>
-        <h3>What's next?</h3>
-        <ul>
-          <li><strong>Delegate your ada:</strong> Help secure the network and earn rewards by delegating to a stake pool.</li>
-          <li><strong>Use dApps:</strong> Explore decentralized applications for DeFi, NFTs, gaming, and more.</li>
-          <li><strong>Join the community:</strong> Connect with other Cardano enthusiasts in forums and social channels.</li>
-          <li><strong>Learn more:</strong> Dive deeper into Cardano's technology and governance.</li>
-        </ul>
-      </div>
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src="/img/illustrations/explore-ecosystem.png" alt="Explore Cardano ecosystem" className={styles.recoveryPhraseImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+        centerVertically={true}
+      >
+        <div className={styles.stepContent}>
+          <h3>What's next?</h3>
+          <ul>
+            <li><strong><Link to="/stake-pool-delegation">Delegate your ada:</Link></strong> Help secure the network and earn rewards by delegating to a stake pool.</li>
+            <li><strong><Link to="/apps">Explore apps:</Link></strong> Explore decentralized applications for DeFi, NFTs, gaming, and more.</li>
+            <li><strong><Link to="/common-scams">Common scams:</Link></strong> Learn how to recognize and avoid common scams in the Cardano ecosystem.</li>
+          </ul>
+        </div>
+      </TwoColumnLayout>
     ),
     finalStep: true,
   },
