@@ -16,7 +16,7 @@ export const Operator = "OR" | "AND";
 export const OperatorQueryKey = "operator";
 
 export function readOperator(search) {
-  return new URLSearchParams(search).get(OperatorQueryKey) ?? "AND";
+  return new URLSearchParams(search).get(OperatorQueryKey) ?? "OR";
 }
 
 export default function ShowcaseFilterToggle() {
