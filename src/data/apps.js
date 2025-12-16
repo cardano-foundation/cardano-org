@@ -13,7 +13,8 @@ import { sortBy, difference } from "../utils/jsUtils";
 
 // List of available tags. The tag and the label should be in singular. (PLEASE DO NOT ADD NEW TAGS)
 export const Tags = {
-  // PLEASE DO NOT USE THIS TAG: we add the favorite project tag (process TBD)
+  // PLEASE DO NOT USE THIS TAG: maintainers add the favorite project tag  (process TBD)
+  // Favorite
   favorite: {
     label: "Favorite",
     description:
@@ -35,6 +36,15 @@ export const Tags = {
     description: "Tools that provide special insights related to Cardano.",
     icon: null,
     color: '#6A8EAE',  // Cool Steel Blue
+  },
+
+  // PLEASE DO NOT USE THIS TAG: maintainers add the good for beginners tag (process TBD)
+  // Beginner friendly, will be shown as suggest to explore the ecosystem in "get-started"
+  goodForBeginners: {
+    label: "Beginner friendly",
+    description:
+      "Cardano apps that are good for beginners to start with.",
+    color: '#228660ff',  // Vibrant Green
   },
 
   // Bridge 
@@ -542,7 +552,7 @@ export const Showcases = [
     statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
-    tags: ["dex"],
+    tags: ["dex", "goodForBeginners"],
   },
   {
     title: "GameChanger Wallet",
@@ -587,9 +597,10 @@ export const Showcases = [
     description:
       "Discover artwork, explore communities, and support artists on Cardano.",
     preview: require("./app-images/jpg.png"),
+    icon: "/img/app-icons/jpgstore.jpg",
     website: "https://www.jpg.store",
     source: null,
-    tags: ["marketplace", "nft"],
+    tags: ["marketplace", "nft", "goodForBeginners"],
   },
   {
     title: "Pavia",
@@ -823,7 +834,7 @@ export const Showcases = [
     icon: "/img/app-icons/liquid.png",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "marketplace", "nft"],
+    tags: ["lending", "marketplace", "goodForBeginners"],
   },
   {
     title: "Charli3",
@@ -1138,7 +1149,7 @@ export const Showcases = [
     icon: "/img/app-icons/strike.png",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
-    tags: ["marketplace", "opensource"],
+    tags: ["marketplace", "goodForBeginners", "opensource"],
   },
   {
     title: "Smart Places",
@@ -1214,7 +1225,7 @@ export const Showcases = [
     statsLabel: "bodega",
     website: "https://www.bodegamarket.xyz/",
     source: "https://github.com/bodega-market/bodega-market-smart-contracts",
-    tags: ["marketplace", "opensource"],
+    tags: ["marketplace", "goodForBeginners", "opensource"],
   },
   {
     title: "Cornucopias",
