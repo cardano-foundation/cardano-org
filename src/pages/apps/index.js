@@ -143,6 +143,11 @@ function useSelectedTags() {
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState([]);
 
+  // Sync tags from URL
+  useEffect(() => {
+    setSelectedTags(readSearchTags(location.search));
+  }, [location]);
+
   // Update the QS value
   const toggleTag = useCallback(
     (tag) => {
@@ -170,19 +175,42 @@ function ShowcaseHeader() {
 
 function ShowcaseFilters() {
   const filteredProjects = useFilteredProjects();
+  const { selectedTags, toggleTag } = useSelectedTags();
+  const location = useLocation();
+  const { push } = useHistory();
+
+  const clearAllFilters = useCallback(() => {
+    const newSearch = replaceSearchTags(location.search, []);
+    push({ ...location, search: newSearch });
+  }, [location, push]);
 
   return (
     <BackgroundWrapper backgroundType="adaLight">
     <div className="margin-top--l margin-bottom--md container">
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
         <div>
-          <h2>Filters</h2> 
+          <h2>
+            Filters
+            {selectedTags.length > 0 && (
+              <span className={styles.filterCount}> ({selectedTags.length})</span>
+            )}
+          </h2> 
           <span>{`${filteredProjects.length} project${
             filteredProjects.length === 1 ? "" : "s"
           }`}</span>
         </div>
-        <ShowcaseLatestToggle />
-        <ShowcaseFilterToggle />
+        <div className={styles.filterControls}>
+          {selectedTags.length > 0 && (
+            <button 
+              onClick={clearAllFilters}
+              className={styles.clearButton}
+            >
+              Clear all
+            </button>
+          )}
+          <ShowcaseLatestToggle />
+          <ShowcaseFilterToggle />
+        </div>
       </div>
       <div className={styles.checkboxList}>
         {TagList.map((tag, i) => {
