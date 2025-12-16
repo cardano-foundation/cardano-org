@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 const { regions, countries } = data;
 const STORAGE_KEY = 'cardano-selected-country';
 
-// Logo mapping for exchanges (from CoinGecko and official sources)
+// Logo mapping for exchanges 
 const EXCHANGE_LOGOS = {
   "Kraken": "/img/exchanges/kraken.png",
   "Bitpanda": "/img/exchanges/bitpanda.png",
@@ -14,8 +14,15 @@ const EXCHANGE_LOGOS = {
   "Binance US": "/img/exchanges/binance.svg",
   "Coinbase": "/img/exchanges/coinbase.png",
   "Bitvavo": "/img/exchanges/bitvavo.svg",
-  // Revolut: No logo available - uses initial badge
   "LCX": "/img/exchanges/lcx.png",
+  "Robinhood": "/img/exchanges/robinhood.png",
+  "Trade Republic": "/img/exchanges/traderepublic.jpg",
+  "BISON": "/img/exchanges/bison.svg",
+  "Bitfinex": "/img/exchanges/bitfinex.jpg",
+  "HTX": "/img/exchanges/htx.jpg",
+  "SwissBorg": "/img/exchanges/swissborg.jpg",
+  "Revolut": "/img/exchanges/revolut.jpg",
+  "Upbit": "/img/exchanges/upbit.png",
 };
 
 function getExchangesForCountry(countryName) {
