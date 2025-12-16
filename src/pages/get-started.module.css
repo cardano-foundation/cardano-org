@@ -135,7 +135,7 @@
   }
 }
 
-.recoveryPhraseImage {
+.sidebarImage {
   max-width: 100%;
   height: auto;
   display: block;
@@ -143,9 +143,27 @@
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-  .recoveryPhraseImage {
-    display: none;
+.centeredSidebar .sidebarImage {
+  max-width: none;
+  width: 250%;
+  margin: 0;
+  margin-left: -25%;
+}
+
+@media (max-width: 996px) {
+  .sidebarImage {
+    opacity: 0.15;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    max-width: 300px;
+    pointer-events: none;
+  }
+  
+  .centeredSidebar {
+    position: relative;
   }
 }
 
@@ -153,6 +171,10 @@
   display: flex;
   align-items: center;
   min-height: 400px;
+  overflow: hidden;
+  margin: -3rem;
+  margin-left: 0;
+  padding: 0;
 }
 
 .stepContent p.securityNote {

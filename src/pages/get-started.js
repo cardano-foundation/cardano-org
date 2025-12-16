@@ -61,7 +61,7 @@ const steps = (onWalletConnect) => [
        <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <img src="/img/hero-header-braid-black.svg" alt="Backup your recovery phrase" className={styles.recoveryPhraseImage} />
+            <img src="/img/hero-header-braid-black.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
         }
         sidebarSticky={false}
@@ -115,7 +115,7 @@ const steps = (onWalletConnect) => [
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <img src="/img/hero-header-braid-blue.svg" alt="Connect wallet illustration" className={styles.recoveryPhraseImage} />
+            <img src="/img/hero-header-braid-blue.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
         }
         sidebarSticky={false}
@@ -177,14 +177,7 @@ const steps = (onWalletConnect) => [
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            
- <ThemedImage
-alt="title image"
-sources={{
-    light: useBaseUrl('/img/cardano-black.svg'),
-    dark: useBaseUrl('/img/cardano-white.svg'),
-  }}
-/>
+            <img src="/img/hero-header-braid-red-blue.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
             
         }
