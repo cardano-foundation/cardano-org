@@ -145,9 +145,9 @@
 
 .centeredSidebar .sidebarImage {
   max-width: none;
-  width: 250%;
+  width: 200%;
   margin: 0;
-  margin-left: -25%;
+  margin-left: -5%;
 }
 
 @media (max-width: 996px) {
