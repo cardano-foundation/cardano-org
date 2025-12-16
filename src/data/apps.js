@@ -214,10 +214,10 @@ export const Tags = {
     color: '#4d6545',  // Custom: Olive (green-grey)
   },
 
-  // Native token projects
-  token: {
-    label: "Native Token",
-    description: "Native Tokens.",
+  // Stable Coins
+  stablecoin: {
+    label: "Stable Coins",
+    description: "Backed or algorithmic stable coins.",
     icon: null,
     color: '#FF1744',  // Bright Red
   },
@@ -255,7 +255,7 @@ export const Tags = {
 //   statsLabel: "example",  // Optional - for transaction data mapping
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
-//   tags: ["dex", "token"], // don't overdo it.
+//   tags: ["dex", "opensource"], // don't overdo it usually one or two tags are enough
 // }
 export const Showcases = [
   {
@@ -266,7 +266,7 @@ export const Showcases = [
     icon: "/img/app-icons/djed.png",
     website: "https://djed.artifex.finance/",
     source: "https://github.com/artifex-labs/open-djed",
-    tags: ["token", "opensource"],
+    tags: ["stablecoin", "opensource"],
   },
   {
     title: "Cardano Wall",
@@ -448,7 +448,7 @@ export const Showcases = [
     preview: require("./app-images/token-builder.png"),
     website: "https://cardano-native-token.com/",
     source: null,
-    tags: ["minting", "token", "nft"],
+    tags: ["minting", "nft"],
   },
   {
     title: "cardano-tools.io",
@@ -505,7 +505,7 @@ export const Showcases = [
     statsLabel: "muesliswap",
     website: "https://ada.muesliswap.com",
     source: null,
-    tags: ["favorite", "dex", "token"],
+    tags: ["favorite", "dex"],
   },
   {
     title: "SundaeSwap",
@@ -514,7 +514,7 @@ export const Showcases = [
     preview: require("./app-images/sundaeswap.png"),
     website: "https://www.sundaeswap.finance",
     source: null,
-    tags: ["favorite", "dex", "token"],
+    tags: ["favorite", "dex"],
   },
   {
     title: "DripDropz",
@@ -523,18 +523,8 @@ export const Showcases = [
     preview: require("./app-images/dripdropz.png"),
     website: "https://dripdropz.io",
     source: null,
-    tags: ["minting", "token"],
+    tags: ["minting"],
   },
-  {
-    title: "World Mobile Token",
-    description:
-      "Connecting everyone, everywhere. A mobile network owned by the people and built on blockchain.",
-    preview: require("./app-images/wmt.png"),
-    website: "https://worldmobile.io",
-    source: null,
-    tags: ["token"],
-  },
-
   {
     title: "ADAZOO MMORPG and Metaverse",
     description: "Start exploring ADAZOO, battle and capture CNFT's. Brag to your friends, show off your stats.",
@@ -552,7 +542,7 @@ export const Showcases = [
     statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex"],
   },
   {
     title: "GameChanger Wallet",
@@ -619,7 +609,7 @@ export const Showcases = [
     statsLabel: "wingriders",
     website: "https://www.wingriders.com",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex"],
   },
   {
     title: "Lido Nation",
@@ -646,7 +636,7 @@ export const Showcases = [
     preview: require("./app-images/vibrant.png"),
     website: "https://www.vibrantnet.io",
     source: "https://github.com/nilscodes/hazelnet",
-    tags: ["nft", "opensource", "token"],
+    tags: ["nft", "opensource"],
   },
   {
     title: "Book.io",
@@ -655,7 +645,7 @@ export const Showcases = [
     preview: require("./app-images/book-token.png"),
     website: "https://www.book.io",
     source: null,
-    tags: [ "marketplace", "nft", "token"],
+    tags: [ "marketplace", "nft"],
   },
   {
     title: "NuFi Wallet",
@@ -700,7 +690,7 @@ export const Showcases = [
     preview: require("./app-images/taptools.png"),
     website: "https://www.taptools.io",
     source: null,
-    tags: [ "favorite", "analytics", "token", "minting"],
+    tags: [ "favorite", "analytics", "minting"],
   },
   {
     title: "Chainport",
@@ -801,7 +791,7 @@ export const Showcases = [
     preview: require("./app-images/coto.png"),
     website: "https://continuity.to/",
     source: null,
-    tags: ["nft", "token"],
+    tags: ["nft"],
   },
   {
     title: "VESPR",
@@ -823,7 +813,7 @@ export const Showcases = [
     statsLabel: "dexhunter",
     website: "https://www.dexhunter.io/",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex"],
   },
   {
     title: "Liqwid",
@@ -833,7 +823,7 @@ export const Showcases = [
     icon: "/img/app-icons/liquid.png",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "token", "marketplace", "nft"],
+    tags: ["lending", "marketplace", "nft"],
   },
   {
     title: "Charli3",
@@ -898,7 +888,7 @@ export const Showcases = [
     statsLabel: "danogo",
     website: "https://danogo.io/",
     source: null,
-    tags: ["lending", "marketplace", "dex", "token"],
+    tags: ["lending", "marketplace", "dex"],
   },
   {
     title: "Multisig Platform",
@@ -944,7 +934,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "minting", "token", "nft"],
+    tags: ["favorite", "minting", "nft"],
   },
     {
     title: "Stuff.io",
@@ -1166,7 +1156,7 @@ export const Showcases = [
     preview: require("./app-images/snek-fun.png"),
     website: "https://snek.fun/",
     source: null,
-    tags: ["token", "marketplace"],
+    tags: ["marketplace"],
   },
   {
     title: "Xerberus",
@@ -1261,7 +1251,7 @@ export const Showcases = [
     icon: "/img/app-icons/usdm.jpeg",
     website: "https://moneta.global/",
     source: null,
-    tags: ["ecosystem", "token"],
+    tags: ["stablecoin"],
   },
   {
     title: "Asteria",
