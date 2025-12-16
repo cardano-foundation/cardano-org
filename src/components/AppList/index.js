@@ -31,7 +31,7 @@ function formatTxCount(num) {
   return num.toLocaleString('en-US');
 }
 
-function AppListItem({ app, stats, showTxCount, showTags }) {
+function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
 
   // Get the image source
@@ -73,7 +73,7 @@ function AppListItem({ app, stats, showTxCount, showTags }) {
       </div>
       <div className={styles.appContent}>
         <h4 className={styles.appTitle}>{app.title}</h4>
-        <p className={styles.appDescription}>{app.description}</p>
+        {showDescription && <p className={styles.appDescription}>{app.description}</p>}
         {showTags && visibleTags.length > 0 && (
           <ul className={styles.tagList}>
             {visibleTags.map((tag, index) => {
@@ -99,7 +99,7 @@ function AppListItem({ app, stats, showTxCount, showTags }) {
   );
 }
 
-export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false }) {
+export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
   // Filter apps by tags
   let filteredApps = Showcases.filter(app => 
     tags.length === 0 || tags.some(tag => app.tags.includes(tag))
@@ -163,7 +163,7 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
       
       <div className={styles.listContainer}>
         {displayedApps.map(({ app, stats }) => (
-          <AppListItem key={app.title} app={app} stats={stats} showTxCount={showTxCount} showTags={showTags} />
+          <AppListItem key={app.title} app={app} stats={stats} showTxCount={showTxCount} showTags={showTags} showDescription={showDescription} />
         ))}
       </div>
     </div>
