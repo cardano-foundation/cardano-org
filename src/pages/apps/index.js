@@ -178,11 +178,29 @@ function ShowcaseFilters() {
   const { selectedTags, toggleTag } = useSelectedTags();
   const location = useLocation();
   const { push } = useHistory();
+  const [showAllTags, setShowAllTags] = useState(false);
 
   const clearAllFilters = useCallback(() => {
     const newSearch = replaceSearchTags(location.search, []);
     push({ ...location, search: newSearch });
   }, [location, push]);
+
+  // Count apps per tag
+  const tagCounts = useMemo(() => {
+    const counts = {};
+    TagList.forEach(tag => {
+      counts[tag] = SortedShowcases.filter(showcase => showcase.tags.includes(tag)).length;
+    });
+    return counts;
+  }, []);
+
+  // Show only top tags initially (sorted by count)
+  const initialTagCount = 10;
+  const sortedTags = useMemo(() => {
+    return [...TagList].sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0));
+  }, [tagCounts]);
+  
+  const visibleTags = showAllTags ? sortedTags : sortedTags.slice(0, initialTagCount);
 
   return (
     <BackgroundWrapper backgroundType="adaLight">
@@ -205,7 +223,7 @@ function ShowcaseFilters() {
               onClick={clearAllFilters}
               className={styles.clearButton}
             >
-              Clear all
+              Clear filters
             </button>
           )}
           <ShowcaseLatestToggle />
@@ -213,9 +231,10 @@ function ShowcaseFilters() {
         </div>
       </div>
       <div className={styles.checkboxList}>
-        {TagList.map((tag, i) => {
+        {visibleTags.map((tag, i) => {
           const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
+          const count = tagCounts[tag] || 0;
           return (
               <div key={i} className={styles.checkboxListItem}>
                 <ShowcaseTooltip
@@ -226,7 +245,7 @@ function ShowcaseFilters() {
                   <ShowcaseTagSelect
                     tag={tag}
                     id={id}
-                    label={label}
+                    label={`${label} (${count})`}
                     icon={
                       label === "Favorite" ? (
                         <span
@@ -258,6 +277,16 @@ function ShowcaseFilters() {
           );
         })}
       </div>
+      {sortedTags.length > initialTagCount && (
+        <div className={styles.showMoreContainer}>
+          <button 
+            onClick={() => setShowAllTags(!showAllTags)}
+            className={styles.showMoreButton}
+          >
+            {showAllTags ? `Show less filters` : `Show ${sortedTags.length - initialTagCount} more filters`}
+          </button>
+        </div>
+      )}
     </div>
     </BackgroundWrapper>
   );
