@@ -171,7 +171,7 @@ export const Tags = {
     label: "Mobile",
     description: "Great mobile experience.",
     icon: null,
-    color: '#067710ff',  // Dark Green
+    color: '#3e09deff',  // Dark blue
   },
 
   // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
