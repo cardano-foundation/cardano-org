@@ -166,14 +166,6 @@ export const Tags = {
     color: '#42A5F5',  // Light Blue
   },
 
-  // NFT Project (example: Spacebudz, Cardano Kidz)
-  nftproject: {
-    label: "NFT Project",
-    description: "A project which main component is NFT.",
-    icon: null,
-    color: '#FFD700',  // Gold
-  },
-
   // NFT Support (example: a wallet or marketplace)
   nftsupport: {
     label: "NFT Support",
@@ -233,7 +225,6 @@ export const Tags = {
 
 // Add your project to (THE END OF) this list.
 // Please don't add the "favorite"-tag yourself.
-// Provide pure NFT projects only get the tag NFT, not "tokens"
 // 
 // ICON FIELD (optional):
 // - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
@@ -270,15 +261,6 @@ export const Showcases = [
     tags: ["token", "opensource"],
   },
   {
-    title: "Cardano Kidz",
-    description:
-      "Each of these unique Limited Edition designs is being minted on the Cardano Blockchain as a Non Fungible Token (NFT).",
-    preview: require("./app-images/cardanokidz.png"),
-    website: "https://www.cardanokidz.com",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
     title: "Cardano Wall",
     description:
       "Demonstrates several use cases for transaction metadata. You can sign messages and create proof of existence for files.",
@@ -295,15 +277,6 @@ export const Showcases = [
     website: "https://www.nmkr.io/",
     source: null,
     tags: ["favorite", "minting", "nftsupport"],
-  },
-  {
-    title: "SpaceBudz",
-    description:
-      "A collection of 10,000 unique little astronauts represented as NFTs on the Cardano blockchain. SpaceBudz offers a market place with contract based trades. CNFT of the year 2021.",
-    preview: require("./app-images/spacebudz.png"),
-    website: "https://spacebudz.io",
-    source: "https://github.com/Berry-Pool/spacebudz",
-    tags: ["favorite", "nftproject", "opensource"],
   },
   {
     title: "AdaStat",
@@ -404,7 +377,7 @@ export const Showcases = [
     preview: require("./app-images/cardanowarriors.png"),
     website: "https://cardanowarriors.io/",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "Cardano Updates",
@@ -461,33 +434,6 @@ export const Showcases = [
     tags: ["favorite", "wallet", "nftsupport"],
   },
   {
-    title: "Clay Mates",
-    description:
-      "Collectibles brought to life and re-homed on the Cardano blockchain. Winner of the CNFT Awards 2022 in the category \"best generative art\".",
-    preview: require("./app-images/clay-mates.png"),
-    website: "https://www.claymates.org",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "DEADPXLZ",
-    description:
-      "Interactive, web-based NFT collectibles.",
-    preview: require("./app-images/deadpxlz.png"),
-    website: "https://pxlz.org",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "JES-Art",
-    description:
-      "16 year old female fine art NFTs on the Cardano blockchain!",
-    preview: require("./app-images/jesart.png"),
-    website: "https://www.jes-art.com",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
     title: "Cardano Token and NFT Builder",
     description:
       "Create your own native tokens and NFT in a few clicks without any code.",
@@ -504,15 +450,6 @@ export const Showcases = [
     website: "https://cardano-tools.io",
     source: "https://github.com/wutzebaer/cardano-tools",
     tags: ["minting", "nftsupport", "opensource"],
-  },
-  {
-    title: "Veritree",
-    description:
-      "Veritree leverages blockchain technology to provide planting organizations with an integrated planting management platform.",
-    preview: require("./app-images/veritree.png"),
-    website: "https://veritree.com",
-    source: null,
-    tags: ["token", "nftproject"],
   },
   {
     title: "Typhon",
@@ -596,7 +533,7 @@ export const Showcases = [
     preview: require("./app-images/adazoo.png"),
     website: "https://adazoo.com",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "Minswap Dex",
@@ -663,16 +600,7 @@ export const Showcases = [
     preview: require("./app-images/pavia.png"),
     website: "https://www.pavia.io",
     source: null,
-    tags: ["game", "nftproject"],
-  },
-  {
-    title: "Turf",
-    description:
-      "Turf creates cartographic NFTs / wall art. Each Turf is a gorgeous 1/1 map based artwork of your favorite place on earth, preserved as interactive 3D NFTs.",
-    preview: require("./app-images/turf.png"),
-    website: "https://www.turfnft.com",
-    source: null,
-    tags: ["nftproject"],
+    tags: ["game"],
   },
   {
     title: "WingRiders",
@@ -737,7 +665,7 @@ export const Showcases = [
     preview: require("./app-images/cardastation.png"),
     website: "https://cardastation.com/",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "STAMPD",
@@ -821,40 +749,13 @@ export const Showcases = [
     tags: ["analytics", "pooltool"],
   },
   {
-    title: "Aeoniumsky",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"best digital art\".",
-    preview: require("./app-images/aeoniumsky.png"),
-    website: "https://www.aeoniumsky.io",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "Universe 25",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"Zeitgeist\".",
-    preview: require("./app-images/universe25.png"),
-    website: "https://www.universe25.io",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "Unsigned Algorithms",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"most innovative\".",
-    preview: require("./app-images/unsigs.png"),
-    website: "https://www.unsigs.com",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
     title: "Hosky",
     description: 
       "Meme coin. Winner of the CNFT Awards 2022 in the category \"most impactful\".",
     preview: require("./app-images/hosky.png"),
     website: "https://hosky.io",
     source: null,
-    tags: ["nftproject", "token"],
+    tags: ["token"],
   },
   {
     title: "adahandle",
@@ -863,7 +764,7 @@ export const Showcases = [
     preview: require("./app-images/adahandle.png"),
     website: "https://adahandle.com",
     source: null,
-    tags: ["nftproject"],
+    tags: ["identity"],
   },
   {
     title: "Lace",
@@ -873,7 +774,7 @@ export const Showcases = [
     icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["favorite", "nftsupport", "wallet", "opensource"],
+    tags: ["favorite", "wallet", "nftsupport", "opensource"],
   },
   {
     title: "Do it with Lovelace",
@@ -1379,7 +1280,7 @@ export const Showcases = [
     preview: require("./app-images/ale-axes.png"),
     website: "https://aleaxes.com/",
     source: null,
-    tags: ["game", "token", "nftproject"],
+    tags: ["game"],
   },
   {
     title: "Mynth",
