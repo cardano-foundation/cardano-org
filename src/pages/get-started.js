@@ -39,15 +39,15 @@ const steps = (onWalletConnect) => [
         <div className={styles.stepContent}>
           <h2>Download a wallet</h2>
           <p className={styles.stepDescription}>
-            A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. 
+            A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network. 
           </p>
           <p className={styles.stepDescription}>
-            It lets you securely manage your ada, use dApps, and interact with the network. 
+            You will create your wallet in the next steps. Downloading alone does not create one.
           </p>
           
           {actions}
           <p className={styles.securityNote}>
-              Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism.
+              Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism. <Link to="/common-scams">Be aware of the most common scams.</Link>
             </p>
         </div>
       </TwoColumnLayout>
@@ -126,7 +126,7 @@ const steps = (onWalletConnect) => [
           <WalletConnect onConnect={onWalletConnect} />
           {actions}
           <p className={styles.securityNote}>
-            When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing.
+            When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing. <Link to="/common-scams">Be aware of the most common scams.</Link>
           </p>
         </div>
       </TwoColumnLayout>
@@ -161,6 +161,10 @@ const steps = (onWalletConnect) => [
           <p>There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies.</p>
           
           <p><Link to="/where-to-get-ada" className="button button--primary">View all options →</Link></p>
+
+          <p className={styles.securityNote}>
+            The cryptocurrency space is full of opportunities, but it’s also a playground for scammers. <Link to="/common-scams">Be aware of the most common scams.</Link>
+          </p>
         </div>
       </TwoColumnLayout>
     ),
@@ -189,10 +193,11 @@ sources={{
         centerVertically={false}
       >
         <AppList 
-              tags={[]} 
+              tags={["goodForBeginners"]} 
               limit={5} 
+              showTags={true} 
               categoryTitle="Popular Apps" 
-              showTxCount={true}
+              showTxCount={false}
               showDescription={true}
             />
            
