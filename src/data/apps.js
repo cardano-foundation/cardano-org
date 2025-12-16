@@ -102,7 +102,7 @@ export const Tags = {
     color: '#004BA0',  // Rich Blue
   },
 
-  // Game
+  // Game, don't tag your game with nft 
   game: {
     label: "Game",
     description: "Games on the Cardano blockchain.",
@@ -166,10 +166,10 @@ export const Tags = {
     color: '#42A5F5',  // Light Blue
   },
 
-  // NFT Support (example: a wallet or marketplace)
-  nftsupport: {
-    label: "NFT Support",
-    description: "A project that supports NFT.",
+  // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
+  nft: {
+    label: "NFT",
+    description: "App that supports or uses NFTs.",
     icon: null,
     color: '#B8860B',  // Dark Gold
   },
@@ -276,7 +276,7 @@ export const Showcases = [
     preview: require("./app-images/nmkr.png"),
     website: "https://www.nmkr.io/",
     source: null,
-    tags: ["favorite", "minting", "nftsupport"],
+    tags: ["favorite", "minting", "nft"],
   },
   {
     title: "AdaStat",
@@ -369,7 +369,7 @@ export const Showcases = [
     icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["favorite", "wallet", "opensource"],
+    tags: ["favorite", "wallet", "nft", "opensource"],
   },
   {
     title: "Cardano Warriors",
@@ -431,7 +431,7 @@ export const Showcases = [
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
-    tags: ["favorite", "wallet", "nftsupport"],
+    tags: ["favorite", "wallet", "nft"],
   },
   {
     title: "Cardano Token and NFT Builder",
@@ -440,7 +440,7 @@ export const Showcases = [
     preview: require("./app-images/token-builder.png"),
     website: "https://cardano-native-token.com/",
     source: null,
-    tags: ["minting", "token", "nftsupport"],
+    tags: ["minting", "token", "nft"],
   },
   {
     title: "cardano-tools.io",
@@ -449,7 +449,7 @@ export const Showcases = [
     preview: require("./app-images/cardano-tools.io.png"),
     website: "https://cardano-tools.io",
     source: "https://github.com/wutzebaer/cardano-tools",
-    tags: ["minting", "nftsupport", "opensource"],
+    tags: ["minting", "nft", "opensource"],
   },
   {
     title: "Typhon",
@@ -459,7 +459,7 @@ export const Showcases = [
     icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
-    tags: ["favorite", "wallet", "nftsupport", "metadata"],
+    tags: ["favorite", "wallet", "nft"],
   },
   {
     title: "Staking Rewards Calculator",
@@ -477,7 +477,7 @@ export const Showcases = [
     preview: require("./app-images/cardahub.png"),
     website: "https://cardahub.io",
     source: null,
-    tags: ["marketplace", "minting", "nftsupport"],
+    tags: ["marketplace", "minting", "nft"],
   },
   {
     title: "ADAdice",
@@ -554,7 +554,7 @@ export const Showcases = [
     icon: "/img/app-icons/gamechanger.jpg",
     website: "https://gamechanger.finance",
     source: null,
-    tags: ["wallet"],
+    tags: ["wallet", "nft"],
   },
   {
     title: "GeroWallet",
@@ -591,7 +591,7 @@ export const Showcases = [
     preview: require("./app-images/jpg.png"),
     website: "https://www.jpg.store",
     source: null,
-    tags: ["marketplace", "nftsupport"],
+    tags: ["marketplace", "nft"],
   },
   {
     title: "Pavia",
@@ -638,7 +638,7 @@ export const Showcases = [
     preview: require("./app-images/vibrant.png"),
     website: "https://www.vibrantnet.io",
     source: "https://github.com/nilscodes/hazelnet",
-    tags: ["nftsupport", "opensource", "token"],
+    tags: ["nft", "opensource", "token"],
   },
   {
     title: "Book.io",
@@ -647,7 +647,7 @@ export const Showcases = [
     preview: require("./app-images/book-token.png"),
     website: "https://www.book.io",
     source: null,
-    tags: [ "marketplace", "nftsupport", "token"],
+    tags: [ "marketplace", "nft", "token"],
   },
   {
     title: "NuFi Wallet",
@@ -656,7 +656,7 @@ export const Showcases = [
     preview: require("./app-images/nufiwallet.png"),
     website: "https://nu.fi",
     source: null,
-    tags: [ "wallet", "dex", "nftsupport"],
+    tags: [ "wallet", "dex", "nft"],
   }, 
   {
     title: "Carda Station",
@@ -683,7 +683,7 @@ export const Showcases = [
     preview: require("./app-images/cnftlab-party.png"),
     website: "https://www.cnftlab.party/",
     source: null,
-    tags: ["minting", "nftsupport"],
+    tags: ["minting", "nft"],
   },
   {
     title: "TapTools",
@@ -719,7 +719,7 @@ export const Showcases = [
     preview: require("./app-images/cardano-studio.png"),
     website: "https://cardano-studio.app",
     source: null,
-    tags: ["minting", "nftsupport"],
+    tags: ["minting", "nft"],
   },
   {
     title: "Cardano Relay Map",
@@ -774,7 +774,7 @@ export const Showcases = [
     icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["favorite", "wallet", "nftsupport", "opensource"],
+    tags: ["favorite", "wallet", "nft", "opensource"],
   },
   {
     title: "Do it with Lovelace",
@@ -793,7 +793,7 @@ export const Showcases = [
     icon: "/img/app-icons/aada.finance.png",
     website: "https://app.aada.finance",
     source: null,
-    tags: ["lending", "marketplace", "nftsupport"],
+    tags: ["lending", "marketplace", "nft"],
   },
   {
     title: "Continuity Token",
@@ -802,7 +802,7 @@ export const Showcases = [
     preview: require("./app-images/coto.png"),
     website: "https://continuity.to/",
     source: null,
-    tags: ["nftsupport", "token"],
+    tags: ["nft", "token"],
   },
   {
     title: "VESPR",
@@ -813,7 +813,7 @@ export const Showcases = [
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["favorite", "wallet", "nftsupport"],
+    tags: ["favorite", "wallet", "nft"],
   },
   {
     title: "DexHunter",
@@ -834,7 +834,7 @@ export const Showcases = [
     icon: "/img/app-icons/liquid.png",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "token", "marketplace", "nftsupport"],
+    tags: ["lending", "token", "marketplace", "nft"],
   },
   {
     title: "Charli3",
@@ -936,7 +936,7 @@ export const Showcases = [
     icon: "/img/app-icons/begin.jpg",
     website: "https://begin.is",
     source: null,
-    tags: ["wallet", "nftsupport"],
+    tags: ["wallet", "nft"],
   },
   {
     title: "Onboard Ninja",
@@ -945,7 +945,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "minting", "token", "nftsupport"],
+    tags: ["favorite", "minting", "token", "nft"],
   },
     {
     title: "Stuff.io",
@@ -999,7 +999,7 @@ export const Showcases = [
     preview: require("./app-images/adam.png"),
     website: "https://androdevs.de",
     source: null,
-    tags: ["accounting", "nftsupport"],
+    tags: ["accounting", "nft"],
   },
   {
     title: "Cardano Governance Voting Tool",
@@ -1017,7 +1017,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "opensource", "marketplace", "ecosystem", "nftsupport"],
+    tags: ["favorite", "opensource", "marketplace", "ecosystem", "nft"],
   },
   {
     title: "Andamio",
