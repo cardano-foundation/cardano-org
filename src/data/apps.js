@@ -81,7 +81,7 @@ export const Tags = {
   // Ecosystem
   ecosystem: {
     label: "Ecosystem",
-    description: "The Cardano ecosystem projects.",
+    description: "Projects that map out the Cardano Ecosystem.",
     icon: null,
     color: '#9C27B0',  // Purple
   },
@@ -1006,7 +1006,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "opensource", "marketplace", "ecosystem", "nft"],
+    tags: ["favorite", "opensource", "marketplace", "nft"],
   },
   {
     title: "Andamio",
@@ -1109,7 +1109,7 @@ export const Showcases = [
     preview: require("./app-images/farmroll.png"),
     website: "https://farmroll.io/",
     source: null,
-    tags: ["ecosystem"],
+    tags: ["social"],
   },
   {
     title: "TokeoPay",
@@ -1316,7 +1316,7 @@ export const Showcases = [
     preview: require("./app-images/arpradio.png"),
     website: "https://arpradio.media",
     source: null,
-    tags: ["minting", "ecosystem", "metadata" ]
+    tags: ["minting", "metadata" ]
   }
 ];
 
