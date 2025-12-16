@@ -64,14 +64,6 @@ export const Tags = {
     color: '#2E3B4E',  // Deep Navy Blue
   },
 
-  // Catalyst
-  catalyst: {
-    label: "Catalyst",
-    description: "Projects that aid to Cardano's innovation fund. (Project Catalyst)",
-    icon: null,
-    color: '#3AA655',  // Vibrant Green
-  },
-
   // DAO Tool
   daotool: {
     label: "DAO Tool",
@@ -629,7 +621,7 @@ export const Showcases = [
     preview: require("./app-images/lidonation.png"),
     website: "https://www.lidonation.com/en/catalyst-explorer",
     source: null,
-    tags: ["catalyst", "analytics"],
+    tags: ["analytics"],
   },
   {
     title: "eUTxO",
