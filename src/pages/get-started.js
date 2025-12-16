@@ -11,6 +11,8 @@ import AppList from "@site/src/components/AppList";
 import WalletConnect from "@site/src/components/WalletConnect";
 import styles from "./get-started.module.css";
 import Link from "@docusaurus/Link";
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
   return (
@@ -30,7 +32,7 @@ const steps = (onWalletConnect) => [
     hideActions: true,
     content: (actions) => (
       <TwoColumnLayout
-        sidebar={<AppList tags={["wallet"]} limit={5} showTxCount={false} hideHeader={true} categoryTitle="Wallets" showTags={true} />}
+        sidebar={<AppList tags={["wallet"]} limit={5} showTxCount={false} hideHeader={true} categoryTitle="Wallets" showTags={true} showDescription={false} />}
         sidebarSticky={false}
         ratio="1:1"
       >
@@ -46,9 +48,6 @@ const steps = (onWalletConnect) => [
           {actions}
           <p className={styles.securityNote}>
               Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism.
-            </p>
-            <p className={styles.securityNote}>
-              <strong>Loss or disclosure of this phrase results in irreversible loss of access to your funds.</strong>
             </p>
         </div>
       </TwoColumnLayout>
@@ -142,7 +141,14 @@ const steps = (onWalletConnect) => [
         sidebar={
           <div className={styles.centeredSidebar}>
             <div className={styles.adaRoundWrap}>
-              <img src="/img/ada-round.webp" alt="Ada Lovelace" />
+              <ThemedImage
+                alt="Ada Lovelace looking to the right"
+                sources={{
+                    light: useBaseUrl('/img/ada-round.webp'),
+                    dark: useBaseUrl('/img/ada-round-dark.webp'),
+                  }}
+                />
+               
             </div>
           </div>
         }
@@ -162,31 +168,34 @@ const steps = (onWalletConnect) => [
   },
   {
     title: "Explore the ecosystem",
-    description: "Now that you have a wallet and ada, you're ready to explore everything Cardano has to offer.",
+    description: "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps.",
     content: (
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <AppList 
+            
+ <ThemedImage
+alt="title image"
+sources={{
+    light: useBaseUrl('/img/cardano-black.svg'),
+    dark: useBaseUrl('/img/cardano-white.svg'),
+  }}
+/>
+          </div>
+            
+        }
+        sidebarSticky={false}
+        ratio="3:2"
+        centerVertically={false}
+      >
+        <AppList 
               tags={[]} 
               limit={5} 
               categoryTitle="Popular Apps" 
               showTxCount={true}
+              showDescription={true}
             />
-          </div>
-        }
-        sidebarSticky={false}
-        ratio="1:1"
-        centerVertically={false}
-      >
-        <div className={styles.stepContent}>
-          <h3>What's next?</h3>
-          <ul>
-            <li><strong><Link to="/apps">Explore popular apps:</Link></strong> Explore decentralized applications for DeFi, NFTs, gaming, and more.</li>
-            <li><strong><Link to="/stake-pool-delegation">Delegate your ada:</Link></strong> Help secure the network and earn rewards by delegating to a stake pool.</li>
-            <li><strong><Link to="/common-scams">Common scams:</Link></strong> Learn how to recognize and avoid common scams in the Cardano ecosystem.</li>
-          </ul>
-        </div>
+           
       </TwoColumnLayout>
     ),
     finalStep: true,
