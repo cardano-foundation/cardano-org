@@ -100,7 +100,7 @@ const steps = (onWalletConnect) => [
           <p>Once these steps are complete, your wallet is ready to use!</p>
            {actions}
            <p className={styles.securityNote}>
-            If you forget your spending password, you can restore your wallet using your recovery phrase. <strong>However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password.</strong>
+            If you forget your spending password, you can restore your wallet using your recovery phrase. <strong>However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password.</strong> <Link to="/common-scams">Be aware of the most common scams.</Link>
            </p>
         </div>
        

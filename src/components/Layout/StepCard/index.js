@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+
+const STORAGE_KEY = 'cardano-get-started-step';
 
 /**
  * StepIndicator - Displays the current step number out of total steps
  */
-function StepIndicator({ currentStep, totalSteps }) {
+function StepIndicator({ currentStep, totalSteps, onReset }) {
   return (
-    <div className={styles.stepIndicator}>
-      {currentStep} / {totalSteps}
+    <div className={styles.stepIndicatorWrapper}>
+      <div className={styles.stepIndicator}>
+        {currentStep} / {totalSteps}
+      </div>
+      {currentStep > 1 && (
+        <button onClick={onReset} className={styles.resetButton} title="Start over">
+          Start over
+        </button>
+      )}
     </div>
   );
 }
@@ -22,8 +31,30 @@ function StepIndicator({ currentStep, totalSteps }) {
  * @param {boolean} props.walletConnected - External state to auto-check wallet connection step
  */
 export default function StepCard({ steps = [], initialStep = 1, onStepChange, walletConnected }) {
-  const [currentStep, setCurrentStep] = useState(initialStep);
+  // Load saved step from localStorage
+  const getSavedStep = () => {
+    if (typeof window === 'undefined') return initialStep;
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? parseInt(saved, 10) : initialStep;
+    } catch (e) {
+      return initialStep;
+    }
+  };
+
+  const [currentStep, setCurrentStep] = useState(getSavedStep);
   const [checked, setChecked] = useState(false);
+
+  // Save step to localStorage whenever it changes
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem(STORAGE_KEY, currentStep.toString());
+      } catch (e) {
+        console.error('Failed to save step to localStorage', e);
+      }
+    }
+  }, [currentStep]);
 
   // Auto-check the checkbox when wallet is connected on step 4
   React.useEffect(() => {
@@ -41,6 +72,21 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
       if (onStepChange) {
         onStepChange(nextStep);
       }
+    }
+  };
+
+  const handleReset = () => {
+    setCurrentStep(1);
+    setChecked(false);
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {
+        console.error('Failed to clear localStorage', e);
+      }
+    }
+    if (onStepChange) {
+      onStepChange(1);
     }
   };
 
@@ -74,7 +120,7 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
 
   return (
     <div className={styles.stepCard}>
-      <StepIndicator currentStep={currentStep} totalSteps={steps.length} />
+      <StepIndicator currentStep={currentStep} totalSteps={steps.length} onReset={handleReset} />
       {!currentStepData.hideHeader && (
         <>
           <h2>{currentStepData.title}</h2>
