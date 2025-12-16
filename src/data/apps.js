@@ -166,6 +166,14 @@ export const Tags = {
     color: '#42A5F5',  // Light Blue
   },
 
+  // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site) 
+  mobile: {
+    label: "Mobile",
+    description: "Great mobile experience.",
+    icon: null,
+    color: '#067710ff',  // Dark Green
+  },
+
   // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
   nft: {
     label: "NFT",
@@ -214,7 +222,7 @@ export const Tags = {
     color: '#FF1744',  // Bright Red
   },
 
-  // Wallets
+  // Wallets, don't forget to add the "mobile"-tag if you provide a mobile app as well.
   wallet: {
     label: "Wallet",
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
@@ -369,7 +377,7 @@ export const Showcases = [
     icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["favorite", "wallet", "nft", "opensource"],
+    tags: ["favorite", "wallet", "nft", "mobile", "opensource"],
   },
   {
     title: "Cardano Warriors",
@@ -431,7 +439,7 @@ export const Showcases = [
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
-    tags: ["favorite", "wallet", "nft"],
+    tags: ["favorite", "wallet", "nft", "mobile"],
   },
   {
     title: "Cardano Token and NFT Builder",
@@ -749,22 +757,13 @@ export const Showcases = [
     tags: ["analytics", "pooltool"],
   },
   {
-    title: "Hosky",
-    description: 
-      "Meme coin. Winner of the CNFT Awards 2022 in the category \"most impactful\".",
-    preview: require("./app-images/hosky.png"),
-    website: "https://hosky.io",
-    source: null,
-    tags: ["token"],
-  },
-  {
     title: "adahandle",
     description: 
       "A standardized NFT that developers and users can use to associate an address with a custom and human-readable address.",
     preview: require("./app-images/adahandle.png"),
     website: "https://adahandle.com",
     source: null,
-    tags: ["identity"],
+    tags: ["identity", "nft"],
   },
   {
     title: "Lace",
@@ -813,7 +812,7 @@ export const Showcases = [
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["favorite", "wallet", "nft"],
+    tags: ["favorite", "wallet", "nft", "mobile"],
   },
   {
     title: "DexHunter",
@@ -936,7 +935,7 @@ export const Showcases = [
     icon: "/img/app-icons/begin.jpg",
     website: "https://begin.is",
     source: null,
-    tags: ["wallet", "nft"],
+    tags: ["wallet", "nft", "mobile"],
   },
   {
     title: "Onboard Ninja",
@@ -1130,7 +1129,7 @@ export const Showcases = [
     icon: "/img/app-icons/tokeo.jpg",
     website: "https://tokeo.io/",
     source: null,
-    tags: ["wallet"],
+    tags: ["wallet", "mobile"],
   },
   {
     title: "Empowa",
