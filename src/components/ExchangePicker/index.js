@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "@site/src/data/exchanges.json";
 import styles from "./styles.module.css";
 
 const { regions, countries } = data;
+const STORAGE_KEY = 'cardano-selected-country';
 
 // Logo mapping for exchanges (from CoinGecko and official sources)
 const EXCHANGE_LOGOS = {
@@ -100,7 +101,30 @@ function ExchangeCard({ exchange }) {
 }
 
 export default function ExchangePicker() {
-  const [selected, setSelected] = useState("");
+  // Load saved country from localStorage
+  const getSavedCountry = () => {
+    if (typeof window === 'undefined') return "";
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      // Verify the saved country still exists in our data
+      return saved && countries[saved] ? saved : "";
+    } catch (e) {
+      return "";
+    }
+  };
+
+  const [selected, setSelected] = useState(getSavedCountry);
+
+  // Save country to localStorage whenever it changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && selected) {
+      try {
+        localStorage.setItem(STORAGE_KEY, selected);
+      } catch (e) {
+        console.error('Failed to save country to localStorage', e);
+      }
+    }
+  }, [selected]);
 
   // Top 3 countries by analytics Sept, October, November 2025
   const topCountries = ["USA", "Germany", "China"];
