@@ -176,6 +176,14 @@ export const Tags = {
     color: '#3e09deff',  // Dark blue
   },
 
+   // Music
+  music: {
+    label: "Music",
+    description: "Music-related projects on Cardano.",
+    icon: null,
+    color: '#7757d9ff',  // Vibrant Purple
+  },
+
   // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
   nft: {
     label: "NFT",
@@ -711,7 +719,7 @@ export const Showcases = [
     preview: require("./app-images/petregistry.png"),
     website: "https://savepet.org",
     source: null,
-    tags: ["metadata", "identity"],
+    tags: ["identity"],
   }, 
   {
     title: "Cardano Studio",
@@ -955,7 +963,7 @@ export const Showcases = [
     preview: require("./app-images/veridian2.png"),
     website: "https://www.veridian.id/",
     source: "https://github.com/cardano-foundation/veridian-wallet",
-    tags: ["metadata", "identity", "opensource"],
+    tags: ["identity", "opensource"],
   },
   {
     title: "Governance Space",
@@ -1009,7 +1017,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "opensource", "marketplace", "nft"],
+    tags: ["favorite", "music", "opensource"],
   },
   {
     title: "Andamio",
@@ -1319,7 +1327,7 @@ export const Showcases = [
     preview: require("./app-images/arpradio.png"),
     website: "https://arpradio.media",
     source: null,
-    tags: ["minting", "metadata" ]
+    tags: ["music"],
   }
 ];
 
