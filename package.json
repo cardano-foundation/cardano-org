@@ -6,7 +6,7 @@
     "build-authors": "node scripts/generate-authors-json.js",
     "docusaurus": "docusaurus",
     "start": "yarn build-authors && docusaurus start",
-    "build": "yarn build-authors && docusaurus build --no-minify",
+    "build": "yarn build-authors && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
