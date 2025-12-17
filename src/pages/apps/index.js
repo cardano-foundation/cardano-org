@@ -24,6 +24,7 @@ import styles from "./styles.module.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Fav from "../../svg/fav.svg";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 const TITLE = "Cardano Applications";
 const DESCRIPTION = "Explore curated applications that run on Cardano mainnet today";
@@ -411,15 +412,7 @@ function SearchBar() {
   );
 }
 
-// Add open graph image to showcase page
-function MetaData() {
-  return (
-    <Head>
-      <meta property="og:image" content="https://developers.cardano.org/img/og/og-showcase.png" />
-      <meta name="twitter:image" content="https://developers.cardano.org/img/og/og-showcase.png" />
-    </Head>
-  )
-}
+ 
 
 function Showcase() {
   const { selectedTags, toggleTag } = useSelectedTags();
@@ -427,7 +420,7 @@ function Showcase() {
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <MetaData />
+      <OpenGraphInfo pageName="apps" />
       <ShowcaseHeader />
       <ShowcaseFilters selectedTags={selectedTags} toggleTag={toggleTag} />
       <ShowcaseCards filteredProjects={filteredProjects} />
