@@ -15,7 +15,6 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@cardano-foundation/cardano-connect-with-wallet": "^0.2.15",
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/plugin-ideal-image": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
@@ -26,7 +25,7 @@
     "@popperjs/core": "^2.11.8",
     "@tippyjs/react": "^4.2.6",
     "@xyflow/react": "^12.5.5",
-    "axios": "^1.7.7",
+    "axios": "^1.13.2",
     "buffer": "^6.0.3",
     "clsx": "^2.0.0",
     "crypto-browserify": "^3.12.1",
