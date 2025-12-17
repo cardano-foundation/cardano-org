@@ -54,6 +54,9 @@
     "@types/react-dom": "^19.0.0",
     "js-yaml": "^4.1.0"
   },
+  "resolutions": {
+    "@babel/runtime": "^7.26.10"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
