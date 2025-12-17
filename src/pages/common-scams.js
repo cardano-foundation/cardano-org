@@ -118,11 +118,13 @@ export default function Home() {
           <TitleWithText
             title="Fake Tech Support"
             description= {[ "In this scam, fraudsters pose as “official“ Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to “help,” they’ll ask for your recovery phrase (seed words) or private keys.",
+            
+            "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support.",
 
             "How to protect yourself:",
             {
               list: [
-                "Legitimate people on forums and channels will **never** ask for your passwords, recovery phrases or private keys.",
+                "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys.",
                 "Never engage with unsolicited messages claiming to be from support.",
                 "Legitimate people on forums and channels will **never** contact you first in a private message.",
               ],

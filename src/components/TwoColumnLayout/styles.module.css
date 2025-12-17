@@ -10,6 +10,10 @@
   align-items: start;
 }
 
+.grid.centered {
+  align-items: center;
+}
+
 .mainContent {
   min-width: 0; /* Prevents grid blowout */
 }

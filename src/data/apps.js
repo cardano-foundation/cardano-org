@@ -13,7 +13,8 @@ import { sortBy, difference } from "../utils/jsUtils";
 
 // List of available tags. The tag and the label should be in singular. (PLEASE DO NOT ADD NEW TAGS)
 export const Tags = {
-  // PLEASE DO NOT USE THIS TAG: we add the favorite project tag (process TBD)
+  // PLEASE DO NOT USE THIS TAG: maintainers add the favorite project tag  (process TBD)
+  // Favorite
   favorite: {
     label: "Favorite",
     description:
@@ -37,6 +38,15 @@ export const Tags = {
     color: '#6A8EAE',  // Cool Steel Blue
   },
 
+  // PLEASE DO NOT USE THIS TAG: maintainers add the good for beginners tag (process TBD)
+  // Beginner friendly, will be shown as suggest to explore the ecosystem in "get-started"
+  goodForBeginners: {
+    label: "Beginner friendly",
+    description:
+      "Cardano apps that are good for beginners to start with.",
+    color: '#228660ff',  // Vibrant Green
+  },
+
   // Bridge 
   bridge: {
     label: "Bridge",
@@ -52,14 +62,6 @@ export const Tags = {
       "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
     icon: null,
     color: '#2E3B4E',  // Deep Navy Blue
-  },
-
-  // Catalyst
-  catalyst: {
-    label: "Catalyst",
-    description: "Projects that aid to Cardano's innovation fund. (Project Catalyst)",
-    icon: null,
-    color: '#3AA655',  // Vibrant Green
   },
 
   // DAO Tool
@@ -81,7 +83,7 @@ export const Tags = {
   // Ecosystem
   ecosystem: {
     label: "Ecosystem",
-    description: "The Cardano ecosystem projects.",
+    description: "Projects that map out the Cardano Ecosystem.",
     icon: null,
     color: '#9C27B0',  // Purple
   },
@@ -102,7 +104,7 @@ export const Tags = {
     color: '#004BA0',  // Rich Blue
   },
 
-  // Game
+  // Game, don't tag your game with nft 
   game: {
     label: "Game",
     description: "Games on the Cardano blockchain.",
@@ -166,18 +168,26 @@ export const Tags = {
     color: '#42A5F5',  // Light Blue
   },
 
-  // NFT Project (example: Spacebudz, Cardano Kidz)
-  nftproject: {
-    label: "NFT Project",
-    description: "A project which main component is NFT.",
+  // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site) 
+  mobile: {
+    label: "Mobile",
+    description: "Great mobile experience.",
     icon: null,
-    color: '#FFD700',  // Gold
+    color: '#3e09deff',  // Dark blue
   },
 
-  // NFT Support (example: a wallet or marketplace)
-  nftsupport: {
-    label: "NFT Support",
-    description: "A project that supports NFT.",
+   // Music
+  music: {
+    label: "Music",
+    description: "Music-related projects on Cardano.",
+    icon: null,
+    color: '#7757d9ff',  // Vibrant Purple
+  },
+
+  // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
+  nft: {
+    label: "NFT",
+    description: "App that supports or uses NFTs.",
     icon: null,
     color: '#B8860B',  // Dark Gold
   },
@@ -214,15 +224,15 @@ export const Tags = {
     color: '#4d6545',  // Custom: Olive (green-grey)
   },
 
-  // Native token projects
-  token: {
-    label: "Native Token",
-    description: "Native Tokens.",
+  // Stable Coins
+  stablecoin: {
+    label: "Stable Coins",
+    description: "Backed or algorithmic stable coins.",
     icon: null,
     color: '#FF1744',  // Bright Red
   },
 
-  // Wallets
+  // Wallets, don't forget to add the "mobile"-tag if you provide a mobile app as well.
   wallet: {
     label: "Wallet",
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
@@ -233,7 +243,6 @@ export const Tags = {
 
 // Add your project to (THE END OF) this list.
 // Please don't add the "favorite"-tag yourself.
-// Provide pure NFT projects only get the tag NFT, not "tokens"
 // 
 // ICON FIELD (optional):
 // - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
@@ -256,7 +265,7 @@ export const Tags = {
 //   statsLabel: "example",  // Optional - for transaction data mapping
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
-//   tags: ["dex", "token"], // don't overdo it.
+//   tags: ["dex", "opensource"], // don't overdo it usually one or two tags are enough
 // }
 export const Showcases = [
   {
@@ -267,16 +276,7 @@ export const Showcases = [
     icon: "/img/app-icons/djed.png",
     website: "https://djed.artifex.finance/",
     source: "https://github.com/artifex-labs/open-djed",
-    tags: ["token", "opensource"],
-  },
-  {
-    title: "Cardano Kidz",
-    description:
-      "Each of these unique Limited Edition designs is being minted on the Cardano Blockchain as a Non Fungible Token (NFT).",
-    preview: require("./app-images/cardanokidz.png"),
-    website: "https://www.cardanokidz.com",
-    source: null,
-    tags: ["nftproject"],
+    tags: ["stablecoin", "opensource"],
   },
   {
     title: "Cardano Wall",
@@ -294,16 +294,7 @@ export const Showcases = [
     preview: require("./app-images/nmkr.png"),
     website: "https://www.nmkr.io/",
     source: null,
-    tags: ["favorite", "minting", "nftsupport"],
-  },
-  {
-    title: "SpaceBudz",
-    description:
-      "A collection of 10,000 unique little astronauts represented as NFTs on the Cardano blockchain. SpaceBudz offers a market place with contract based trades. CNFT of the year 2021.",
-    preview: require("./app-images/spacebudz.png"),
-    website: "https://spacebudz.io",
-    source: "https://github.com/Berry-Pool/spacebudz",
-    tags: ["favorite", "nftproject", "opensource"],
+    tags: ["favorite", "minting", "nft"],
   },
   {
     title: "AdaStat",
@@ -364,6 +355,7 @@ export const Showcases = [
     description:
       "AdaLite was developed by vacuumlabs, they were also responsible for the Cardano Ledger app and won the crypto puzzle at the IOHK Summit 2019.",
     preview: require("./app-images/adalite.png"),
+    icon: "/img/app-icons/adalite.jpg",
     website: "https://adalite.io",
     source: null,
     tags: ["wallet"],
@@ -373,6 +365,7 @@ export const Showcases = [
     description:
       "Multi-cryptocurrency wallet that supports Cardano. During the integration they contributed code to the Cardano Rust library.",
     preview: require("./app-images/atomicwallet.png"),
+    icon: "/img/app-icons/atomic.jpg",
     website: "https://atomicwallet.io",
     source: null,
     tags: ["wallet"],
@@ -391,9 +384,10 @@ export const Showcases = [
     description:
       "Yoroi is a lightweight node and developed by EMURGO, one of the founding entities of Cardano.",
     preview: require("./app-images/yoroi.png"),
+    icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["wallet", "opensource"],
+    tags: ["favorite", "wallet", "nft", "mobile", "opensource"],
   },
   {
     title: "Cardano Warriors",
@@ -401,7 +395,7 @@ export const Showcases = [
     preview: require("./app-images/cardanowarriors.png"),
     website: "https://cardanowarriors.io/",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "Cardano Updates",
@@ -452,36 +446,10 @@ export const Showcases = [
     description:
       "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community.",
     preview: require("./app-images/eternl.jpg"),
+    icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
-    tags: ["favorite", "wallet", "nftsupport"],
-  },
-  {
-    title: "Clay Mates",
-    description:
-      "Collectibles brought to life and re-homed on the Cardano blockchain. Winner of the CNFT Awards 2022 in the category \"best generative art\".",
-    preview: require("./app-images/clay-mates.png"),
-    website: "https://www.claymates.org",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "DEADPXLZ",
-    description:
-      "Interactive, web-based NFT collectibles.",
-    preview: require("./app-images/deadpxlz.png"),
-    website: "https://pxlz.org",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "JES-Art",
-    description:
-      "16 year old female fine art NFTs on the Cardano blockchain!",
-    preview: require("./app-images/jesart.png"),
-    website: "https://www.jes-art.com",
-    source: null,
-    tags: ["nftproject"],
+    tags: ["favorite", "wallet", "nft", "mobile"],
   },
   {
     title: "Cardano Token and NFT Builder",
@@ -490,7 +458,7 @@ export const Showcases = [
     preview: require("./app-images/token-builder.png"),
     website: "https://cardano-native-token.com/",
     source: null,
-    tags: ["minting", "token", "nftsupport"],
+    tags: ["minting", "nft"],
   },
   {
     title: "cardano-tools.io",
@@ -499,25 +467,17 @@ export const Showcases = [
     preview: require("./app-images/cardano-tools.io.png"),
     website: "https://cardano-tools.io",
     source: "https://github.com/wutzebaer/cardano-tools",
-    tags: ["minting", "nftsupport", "opensource"],
+    tags: ["minting", "nft", "opensource"],
   },
   {
-    title: "Veritree",
-    description:
-      "Veritree leverages blockchain technology to provide planting organizations with an integrated planting management platform.",
-    preview: require("./app-images/veritree.png"),
-    website: "https://veritree.com",
-    source: null,
-    tags: ["token", "nftproject"],
-  },
-  {
-    title: "Typhon Wallet",
+    title: "Typhon",
     description:
       "Light wallet from the creators of cardanoscan.io. It comes with features like NFT gallery, transaction metadata, vote registration, among other features.",
     preview: require("./app-images/typhonwallet.png"),
+    icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
-    tags: ["favorite", "wallet", "nftsupport", "metadata"],
+    tags: ["favorite", "wallet", "nft"],
   },
   {
     title: "Staking Rewards Calculator",
@@ -535,7 +495,7 @@ export const Showcases = [
     preview: require("./app-images/cardahub.png"),
     website: "https://cardahub.io",
     source: null,
-    tags: ["marketplace", "minting", "nftsupport"],
+    tags: ["marketplace", "minting", "nft"],
   },
   {
     title: "ADAdice",
@@ -555,7 +515,7 @@ export const Showcases = [
     statsLabel: "muesliswap",
     website: "https://ada.muesliswap.com",
     source: null,
-    tags: ["favorite", "dex", "token"],
+    tags: ["favorite", "dex"],
   },
   {
     title: "SundaeSwap",
@@ -564,7 +524,7 @@ export const Showcases = [
     preview: require("./app-images/sundaeswap.png"),
     website: "https://www.sundaeswap.finance",
     source: null,
-    tags: ["favorite", "dex", "token"],
+    tags: ["favorite", "dex"],
   },
   {
     title: "DripDropz",
@@ -573,25 +533,15 @@ export const Showcases = [
     preview: require("./app-images/dripdropz.png"),
     website: "https://dripdropz.io",
     source: null,
-    tags: ["minting", "token"],
+    tags: ["minting"],
   },
-  {
-    title: "World Mobile Token",
-    description:
-      "Connecting everyone, everywhere. A mobile network owned by the people and built on blockchain.",
-    preview: require("./app-images/wmt.png"),
-    website: "https://worldmobile.io",
-    source: null,
-    tags: ["token"],
-  },
-
   {
     title: "ADAZOO MMORPG and Metaverse",
     description: "Start exploring ADAZOO, battle and capture CNFT's. Brag to your friends, show off your stats.",
     preview: require("./app-images/adazoo.png"),
     website: "https://adazoo.com",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "Minswap Dex",
@@ -602,22 +552,24 @@ export const Showcases = [
     statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex", "goodForBeginners"],
   },
   {
     title: "GameChanger Wallet",
     description:
       "The ultimate wallet experience for the Web, with native NFT and token features, powered by Cardano and third party applications.",
     preview: require("./app-images/gamechanger.png"),
+    icon: "/img/app-icons/gamechanger.jpg",
     website: "https://gamechanger.finance",
     source: null,
-    tags: ["wallet"],
+    tags: ["wallet", "nft"],
   },
   {
     title: "GeroWallet",
     description:
       "Start exploring the possibilities of Cardano. Purchase, send, and receive ADA - the cryptocurrency for Cardano. Available as a browser extension.",
     preview: require("./app-images/gerowallet.png"),
+    icon: "/img/app-icons/gero.jpg",
     website: "https://gerowallet.io",
     source: null,
     tags: ["wallet"],
@@ -645,9 +597,10 @@ export const Showcases = [
     description:
       "Discover artwork, explore communities, and support artists on Cardano.",
     preview: require("./app-images/jpg.png"),
+    icon: "/img/app-icons/jpgstore.jpg",
     website: "https://www.jpg.store",
     source: null,
-    tags: ["marketplace", "nftsupport"],
+    tags: ["marketplace", "nft", "goodForBeginners"],
   },
   {
     title: "Pavia",
@@ -656,16 +609,7 @@ export const Showcases = [
     preview: require("./app-images/pavia.png"),
     website: "https://www.pavia.io",
     source: null,
-    tags: ["game", "nftproject"],
-  },
-  {
-    title: "Turf",
-    description:
-      "Turf creates cartographic NFTs / wall art. Each Turf is a gorgeous 1/1 map based artwork of your favorite place on earth, preserved as interactive 3D NFTs.",
-    preview: require("./app-images/turf.png"),
-    website: "https://www.turfnft.com",
-    source: null,
-    tags: ["nftproject"],
+    tags: ["game"],
   },
   {
     title: "WingRiders",
@@ -676,7 +620,7 @@ export const Showcases = [
     statsLabel: "wingriders",
     website: "https://www.wingriders.com",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex"],
   },
   {
     title: "Lido Nation",
@@ -685,7 +629,7 @@ export const Showcases = [
     preview: require("./app-images/lidonation.png"),
     website: "https://www.lidonation.com/en/catalyst-explorer",
     source: null,
-    tags: ["catalyst", "analytics"],
+    tags: ["analytics"],
   },
   {
     title: "eUTxO",
@@ -703,7 +647,7 @@ export const Showcases = [
     preview: require("./app-images/vibrant.png"),
     website: "https://www.vibrantnet.io",
     source: "https://github.com/nilscodes/hazelnet",
-    tags: ["nftsupport", "opensource", "token"],
+    tags: ["nft", "opensource"],
   },
   {
     title: "Book.io",
@@ -712,7 +656,7 @@ export const Showcases = [
     preview: require("./app-images/book-token.png"),
     website: "https://www.book.io",
     source: null,
-    tags: [ "marketplace", "nftsupport", "token"],
+    tags: [ "marketplace", "nft"],
   },
   {
     title: "NuFi Wallet",
@@ -721,7 +665,7 @@ export const Showcases = [
     preview: require("./app-images/nufiwallet.png"),
     website: "https://nu.fi",
     source: null,
-    tags: [ "wallet", "dex", "nftsupport"],
+    tags: [ "wallet", "dex", "nft"],
   }, 
   {
     title: "Carda Station",
@@ -730,7 +674,7 @@ export const Showcases = [
     preview: require("./app-images/cardastation.png"),
     website: "https://cardastation.com/",
     source: null,
-    tags: ["nftproject", "game"],
+    tags: ["game"],
   },
   {
     title: "STAMPD",
@@ -748,7 +692,7 @@ export const Showcases = [
     preview: require("./app-images/cnftlab-party.png"),
     website: "https://www.cnftlab.party/",
     source: null,
-    tags: ["minting", "nftsupport"],
+    tags: ["minting", "nft"],
   },
   {
     title: "TapTools",
@@ -757,7 +701,7 @@ export const Showcases = [
     preview: require("./app-images/taptools.png"),
     website: "https://www.taptools.io",
     source: null,
-    tags: [ "favorite", "analytics", "token", "minting"],
+    tags: [ "favorite", "analytics", "minting"],
   },
   {
     title: "Chainport",
@@ -775,7 +719,7 @@ export const Showcases = [
     preview: require("./app-images/petregistry.png"),
     website: "https://savepet.org",
     source: null,
-    tags: ["metadata", "identity"],
+    tags: ["identity"],
   }, 
   {
     title: "Cardano Studio",
@@ -784,7 +728,7 @@ export const Showcases = [
     preview: require("./app-images/cardano-studio.png"),
     website: "https://cardano-studio.app",
     source: null,
-    tags: ["minting", "nftsupport"],
+    tags: ["minting", "nft"],
   },
   {
     title: "Cardano Relay Map",
@@ -814,58 +758,23 @@ export const Showcases = [
     tags: ["analytics", "pooltool"],
   },
   {
-    title: "Aeoniumsky",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"best digital art\".",
-    preview: require("./app-images/aeoniumsky.png"),
-    website: "https://www.aeoniumsky.io",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "Universe 25",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"Zeitgeist\".",
-    preview: require("./app-images/universe25.png"),
-    website: "https://www.universe25.io",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "Unsigned Algorithms",
-    description: 
-      "Winner of the CNFT Awards 2022 in the category \"most innovative\".",
-    preview: require("./app-images/unsigs.png"),
-    website: "https://www.unsigs.com",
-    source: null,
-    tags: ["nftproject"],
-  },
-  {
-    title: "Hosky",
-    description: 
-      "Meme coin. Winner of the CNFT Awards 2022 in the category \"most impactful\".",
-    preview: require("./app-images/hosky.png"),
-    website: "https://hosky.io",
-    source: null,
-    tags: ["nftproject", "token"],
-  },
-  {
     title: "adahandle",
     description: 
       "A standardized NFT that developers and users can use to associate an address with a custom and human-readable address.",
     preview: require("./app-images/adahandle.png"),
     website: "https://adahandle.com",
     source: null,
-    tags: ["nftproject"],
+    tags: ["identity", "nft"],
   },
   {
     title: "Lace",
     description: 
       "A new light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
     preview: require("./app-images/lace.png"),
+    icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["nftsupport", "wallet", "opensource"],
+    tags: ["favorite", "wallet", "nft", "opensource"],
   },
   {
     title: "Do it with Lovelace",
@@ -884,7 +793,7 @@ export const Showcases = [
     icon: "/img/app-icons/aada.finance.png",
     website: "https://app.aada.finance",
     source: null,
-    tags: ["lending", "marketplace", "nftsupport"],
+    tags: ["lending", "marketplace", "nft"],
   },
   {
     title: "Continuity Token",
@@ -893,17 +802,18 @@ export const Showcases = [
     preview: require("./app-images/coto.png"),
     website: "https://continuity.to/",
     source: null,
-    tags: ["nftsupport", "token"],
+    tags: ["nft"],
   },
   {
-    title: "VESPR Wallet",
+    title: "VESPR",
     description:
       "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use. Your private keys and assets always remain under your control.",
     preview: require("./app-images/vesprwallet.png"),
+    icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["wallet", "nftsupport"],
+    tags: ["favorite", "wallet", "nft", "mobile"],
   },
   {
     title: "DexHunter",
@@ -914,7 +824,7 @@ export const Showcases = [
     statsLabel: "dexhunter",
     website: "https://www.dexhunter.io/",
     source: null,
-    tags: ["dex", "token"],
+    tags: ["dex"],
   },
   {
     title: "Liqwid",
@@ -924,7 +834,7 @@ export const Showcases = [
     icon: "/img/app-icons/liquid.png",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "token", "marketplace", "nftsupport"],
+    tags: ["lending", "marketplace", "goodForBeginners"],
   },
   {
     title: "Charli3",
@@ -989,7 +899,7 @@ export const Showcases = [
     statsLabel: "danogo",
     website: "https://danogo.io/",
     source: null,
-    tags: ["lending", "marketplace", "dex", "token"],
+    tags: ["lending", "marketplace", "dex"],
   },
   {
     title: "Multisig Platform",
@@ -1023,9 +933,10 @@ export const Showcases = [
     description:
       "Begin Wallet a non-custodial light Cardano Wallet, available as an Extension and Mobile. We offer payment link compatibility with deep link support, Begin ID user name based on ENS protocol for Wallet Address. Hardware wallet support Ledger and Keystone. Based on our own open source cryptographic core.",
     preview: require("./app-images/begin.png"),
+    icon: "/img/app-icons/begin.jpg",
     website: "https://begin.is",
     source: null,
-    tags: ["wallet", "nftsupport"],
+    tags: ["wallet", "nft", "mobile"],
   },
   {
     title: "Onboard Ninja",
@@ -1034,7 +945,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "minting", "token", "nftsupport"],
+    tags: ["favorite", "minting", "nft"],
   },
     {
     title: "Stuff.io",
@@ -1052,7 +963,7 @@ export const Showcases = [
     preview: require("./app-images/veridian2.png"),
     website: "https://www.veridian.id/",
     source: "https://github.com/cardano-foundation/veridian-wallet",
-    tags: ["metadata", "identity", "opensource"],
+    tags: ["identity", "opensource"],
   },
   {
     title: "Governance Space",
@@ -1088,7 +999,7 @@ export const Showcases = [
     preview: require("./app-images/adam.png"),
     website: "https://androdevs.de",
     source: null,
-    tags: ["accounting", "nftsupport"],
+    tags: ["accounting", "nft"],
   },
   {
     title: "Cardano Governance Voting Tool",
@@ -1106,7 +1017,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "opensource", "marketplace", "ecosystem", "nftsupport"],
+    tags: ["favorite", "music", "opensource"],
   },
   {
     title: "Andamio",
@@ -1209,16 +1120,17 @@ export const Showcases = [
     preview: require("./app-images/farmroll.png"),
     website: "https://farmroll.io/",
     source: null,
-    tags: ["ecosystem"],
+    tags: ["social"],
   },
   {
     title: "TokeoPay",
     description:
       "Tokeo is a feature-rich Bitcoin and Cardano wallet that lets you securely store, manage, and trade your BTC, ADA, Runes, Cardano Native Tokens, Ordinals and NFTs, while providing seamless access to the Bitcoin and Cardano blockchain ecosystem.",
     preview: require("./app-images/tokeo.png"),
+    icon: "/img/app-icons/tokeo.jpg",
     website: "https://tokeo.io/",
     source: null,
-    tags: ["wallet"],
+    tags: ["wallet", "mobile"],
   },
   {
     title: "Empowa",
@@ -1237,7 +1149,7 @@ export const Showcases = [
     icon: "/img/app-icons/strike.png",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
-    tags: ["marketplace", "opensource"],
+    tags: ["marketplace", "goodForBeginners", "opensource"],
   },
   {
     title: "Smart Places",
@@ -1255,7 +1167,7 @@ export const Showcases = [
     preview: require("./app-images/snek-fun.png"),
     website: "https://snek.fun/",
     source: null,
-    tags: ["token", "marketplace"],
+    tags: ["marketplace"],
   },
   {
     title: "Xerberus",
@@ -1313,7 +1225,7 @@ export const Showcases = [
     statsLabel: "bodega",
     website: "https://www.bodegamarket.xyz/",
     source: "https://github.com/bodega-market/bodega-market-smart-contracts",
-    tags: ["marketplace", "opensource"],
+    tags: ["marketplace", "goodForBeginners", "opensource"],
   },
   {
     title: "Cornucopias",
@@ -1350,7 +1262,7 @@ export const Showcases = [
     icon: "/img/app-icons/usdm.jpeg",
     website: "https://moneta.global/",
     source: null,
-    tags: ["ecosystem", "token"],
+    tags: ["stablecoin"],
   },
   {
     title: "Asteria",
@@ -1368,7 +1280,7 @@ export const Showcases = [
     preview: require("./app-images/ale-axes.png"),
     website: "https://aleaxes.com/",
     source: null,
-    tags: ["game", "token", "nftproject"],
+    tags: ["game"],
   },
   {
     title: "Mynth",
@@ -1415,7 +1327,7 @@ export const Showcases = [
     preview: require("./app-images/arpradio.png"),
     website: "https://arpradio.media",
     source: null,
-    tags: ["minting", "ecosystem", "metadata" ]
+    tags: ["music"],
   }
 ];
 

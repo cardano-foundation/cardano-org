@@ -52,19 +52,19 @@ export default function WhatIsAdaSection({
 
           <p>
             <Link
-              className="button button--primary button--lg"
-              to="/stake-pool-delegation"
+              className={clsx("button button--primary button--lg", styles.actionButton)}
+              to="/get-started"
             >
-              Delegate your stake
+              Get started with Cardano
             </Link>
           </p>
 
           <p>
             <Link
-              className="button button--primary button--lg"
-              to="/stake-pool-operation"
+              className={clsx("button button--primary button--lg", styles.actionButton)}
+              to="/where-to-get-ada"
             >
-              Operate a stake pool
+              Where to get ada?
             </Link>
           </p>
         </div>

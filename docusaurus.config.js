@@ -102,6 +102,33 @@ const config = {
         steps: 2, // the max number of images generated between min and max (inclusive)
       },
     ],
+    function (context, options) {
+      return {
+        name: 'custom-webpack-config',
+        configureWebpack(config, isServer) {
+          return {
+            resolve: {
+              fallback: isServer ? {} : {
+                process: require.resolve('process/browser.js'),
+                crypto: require.resolve('crypto-browserify'),
+                stream: require.resolve('stream-browserify'),
+                vm: require.resolve('vm-browserify'),
+              },
+              fullySpecified: false,
+            },
+            plugins: isServer ? [] : [
+              new (require('webpack')).ProvidePlugin({
+                process: 'process/browser.js',
+                Buffer: ['buffer', 'Buffer'],
+              }),
+            ],
+            node: {
+              __dirname: true,
+            },
+          };
+        },
+      };
+    },
   ],
 
   themeConfig:
@@ -127,7 +154,7 @@ const config = {
             position: 'left',
             items: [
               { to: '/what-is-ada', label: 'What is ada?' },
-              { to: '/what-is-ada#wallets', label: 'Cardano wallets' },
+              { to: '/get-started', label: 'Get started with Cardano' },
               { to: '/where-to-get-ada', label: 'Where to get ada?' },
               { to: '/common-scams', label: 'Protect your ada' },
               { to: '/stake-pool-delegation', label: 'Delegate your ada' },
@@ -145,7 +172,7 @@ const config = {
                   icon: 'book-solid',
                   items: [
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
-                    { to: '/what-is-ada#wallets', label: 'Cardano wallets', description: 'An app to store and use ada', icon: 'wallet-solid' },
+                    { to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano', icon: 'wallet-solid' },
                     { to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid' },
                     { to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams', icon: 'shield-solid' },
                   ],

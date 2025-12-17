@@ -56,15 +56,15 @@ function WelcomeHero({ title, description }) {
           <div className={styles.cta}>
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
-              to="/where-to-get-ada"
+              to="/what-is-ada"
             >
-              Where to get ada?
+              What is ada?
             </Link>
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
-              to="/developers"
+              to="/get-started"
             >
-              Start Building
+              Get Started
             </Link>
           </div>
         </div>

@@ -35,22 +35,7 @@ export default function Home() {
       <main>
         
       <BackgroundWrapper backgroundType={"zoom"}>
-      <BoundaryBox>
-            <Divider text="Receive ada from people around the world" id ="receive"/>
-            <TitleWithText
-                
-                title="Receive ada"
-                description={[
-                 
-                  "Before receiving or buying [ada](what-is-ada), you need to set up a [Cardano wallet](what-is-ada#wallets).", "Once you have a [Cardano wallet](what-is-ada#wallets), all you need to do is share your address to start sending and receiving [ada](what-is-ada) (and other native tokens) peer-to-peer.",
-                 "Some [wallets](what-is-ada#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
-                 
-                ]}
-                headingDot={true}
-              />
-        </BoundaryBox>
-
-        
+              
         <BoundaryBox>
             <Divider text="Buy ada using Exchanges" id="exchanges"/>
             <TitleWithText
@@ -100,6 +85,21 @@ export default function Home() {
             />
          </BoundaryBox>
       </BackgroundWrapper>
+
+      <BoundaryBox>
+            <Divider text="Receive ada from people around the world" id ="receive"/>
+            <TitleWithText
+                
+                title="Receive ada"
+                description={[
+                 
+                  "Before receiving or buying [ada](what-is-ada), you need to set up a [Cardano wallet](what-is-ada#wallets).", "Once you have a [Cardano wallet](what-is-ada#wallets), all you need to do is share your address to start sending and receiving [ada](what-is-ada) (and other native tokens) peer-to-peer.",
+                 "Some [wallets](what-is-ada#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+                 
+                ]}
+                headingDot={true}
+              />
+        </BoundaryBox>
 
      
         <BoundaryBox>
