@@ -513,7 +513,7 @@ export const Showcases = [
     preview: require("./app-images/muesliswap.png"),
     icon: "/img/app-icons/muesliswap.webp",
     statsLabel: "muesliswap",
-    website: "https://ada.muesliswap.com",
+    website: "https://muesliswap.com/",
     source: null,
     tags: ["favorite", "dex"],
   },
@@ -522,7 +522,7 @@ export const Showcases = [
     description:
       "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
     preview: require("./app-images/sundaeswap.png"),
-    website: "https://www.sundaeswap.finance",
+    website: "https://app.sundae.fi",
     source: null,
     tags: ["favorite", "dex"],
   },
