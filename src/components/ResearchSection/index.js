@@ -159,7 +159,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Flexible Formality: Practical Experience with Agile Formal Methods",
-            url: "https://iohk.io/en/research/library/papers/flexible-formalitypractical-experience-with-agile-formal-methods/",
+            url: "https://www.iog.io/papers/flexible-formality-practical-experience-with-agile-formal-methods",
           },
           {
             title: "Coalition-Safe Equilibria with Virtual Payoffs",
@@ -197,7 +197,7 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "UTXOma: UTXO with Multi-Asset Support",
-            url: "https://iohk.io/en/research/library/papers/utxoma-utxo-with-multi-asset-support/",
+            url: "https://www.iog.io/papers/utxomautxo-with-multi-asset-support",
           },
           {
             title: "Native Custom Tokens in the Extended UTXO Model",
@@ -214,21 +214,21 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "Marlowe: financial contracts on blockchain",
-            url: "https://iohk.io/en/research/library/papers/marlowefinancial-contracts-on-blockchain/",
+            url: "https://www.iog.io/papers/marlowe-financial-contracts-on-blockchain/",
           },
           {
             title:
               "Marlowe: implementing and analysing financial contracts on blockchain",
-            url: "https://iohk.io/en/research/library/papers/marloweimplementing-and-analysing-financial-contracts-on-blockchain/",
+            url: "https://www.iog.io/papers/marlowe-implementing-and-analysing-financial-contracts-on-blockchain/",
           },
           {
             title:
               "Unraveling recursion: compiling an IR with recursion to System F",
-            url: "https://iohk.io/en/research/library/papers/unraveling-recursioncompiling-an-ir-with-recursion-to-system-f/",
+            url: "https://www.iog.io/papers/unraveling-recursion-compiling-an-ir-with-recursion-to-system-f/",
           },
           {
             title: "System F in Agda, for fun and profit",
-            url: "https://iohk.io/en/research/library/papers/system-f-in-agdafor-fun-and-profit/",
+            url: "https://www.iog.io/papers/system-f-in-agda-for-fun-and-profit/",
           },
           {
             title: "Translation Certification for Smart Contracts",
@@ -274,12 +274,12 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Interhead Hydra: Two Heads are Better than One",
-            url: "https://iohk.io/en/research/library/papers/interhead-hydratwo-heads-are-better-than-one/",
+            url: "https://www.iog.io/papers/interhead-hydra-two-heads-are-better-than-one/",
           },
           {
             title:
               "Mithril: Stake-based Threshold Multisignatures",
-            url: "https://iohk.io/en/research/library/papers/mithrilstake-based-threshold-multisignatures/",
+            url: "https://www.iog.io/papers/mithril-stake-based-threshold-multisignatures/",
           },
           {
             title:
@@ -289,7 +289,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Djed: A Formally Verified Crypto-Backed Pegged Algorithmic Stablecoin",
-            url: "https://iohk.io/en/research/library/papers/djeda-formally-verified-crypto-backed-pegged-algorithmic-stablecoin/",
+            url: "https://www.iog.io/papers/djed-a-formally-verified-crypto-backed-pegged-algorithmic-stablecoin/",
           },
         ]}
         specifications={[
@@ -326,7 +326,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "SoK: Blockchain Governance",
-            url: "https://iohk.io/en/research/library/papers/sokblockchain-governance/yyyy",
+            url: "https://www.iog.io/papers/sok-blockchain-governance",
           },
         ]}
         specifications={[
