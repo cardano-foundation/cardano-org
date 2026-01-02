@@ -352,6 +352,45 @@
         }
       ],
       "notice": "Regional Notice for Users in Mainland China: Access to cryptocurrency trading services is restricted in Mainland China. Local regulations prohibit the operation of cryptocurrency exchanges and related trading activities. This page is provided for general informational purposes only and should not be interpreted as an offer, solicitation or recommendation to access or use such services from within Mainland China."
+    },
+
+
+"Kenya": {
+  "regions": [],
+  "exchanges": [
+    {
+      "name": "Binance",
+      "link": "https://www.binance.com",
+      "ada": true,
+      "cnt": false
+    },
+    {
+      "name": "Yellow Card",
+      "link": "https://www.yellowcard.io",
+      "ada": true,
+      "cnt": false
+    },
+    {
+      "name": "Remitano",
+      "link": "https://www.remitano.com",
+      "ada": true,
+      "cnt": false
+    },
+    {
+      "name": "OKX",
+      "link": "https://www.okx.com",
+      "ada": true,
+      "cnt": false
+    },
+    {
+      "name": "BingX",
+      "link": "https://www.bingx.com",
+      "ada": true,
+      "cnt": false
     }
+
+  ]
+}
   }
+
 }
