@@ -28,7 +28,7 @@ const rolesData = [
   {
     title: "Meetups & Events",
     description: [
-      "Organizing both in-person and virtuanoal gatherings, workshops, and hackathons to unite local communities. [Find your local community events.](https://luma.com/CardanoEvents)",
+      "Organizing both in-person and virtual gatherings, workshops, and hackathons to unite local communities. [Find your local community events.](https://luma.com/CardanoEvents)",
     ],
   },
   {
