@@ -50,7 +50,10 @@ export default function Home() {
               "IOHK: **2,463,071,701 ada**",
               
               "The public sales distribution accounts for **25,927,070,538 ada**. The total amount of ada available at launch was therefore \
-              equal to **31,112,484,646 ada**."
+              equal to **31,112,484,646 ada**.",
+
+              "Since the Genesis Block, and especially since the Shelley phase with staking rewards, Cardano token distribution and supply \
+              have been continuously expanding. This can be tracked epoch by epoch on the [Supply Insight page](/insights/supply)."
             ]}
             titleType="black"
             headingDot={true}

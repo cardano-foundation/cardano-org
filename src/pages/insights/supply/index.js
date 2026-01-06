@@ -163,6 +163,8 @@ function PageContent() {
   const [totalsPrev, setTotalsPrev] = useState(null);
   const [withdrawalsCurrRes, setWithdrawalsCurr] = useState([]);
   const [withdrawalsPrevRes, setWithdrawalsPrev] = useState([]);
+  // For epochs >= 571, withdrawals include title from governance actions
+  const GOVERNANCE_EPOCH_THRESHOLD = 571;
   const [epochInfoPrev1, setEpochInfoPrev1] = useState(null);
   const [epochInfoPrev2, setEpochInfoPrev2] = useState(null);
   const [error, setError] = useState(null);  
@@ -208,32 +210,57 @@ function PageContent() {
       setEpochInfoPrev1(epochInfoPrev1Res.data[0]);
       setEpochInfoPrev2(epochInfoPrev2Res.data[0]);
 
-      // fetch treasury withdrawals (paged. rare. for example epoch 374)
-      let withdrawals = [];
-      let offset = 0;
-      while (true) {
-        const r = await api.get(
-          `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch}&offset=${offset}`
-        );
-        const page = r.data || [];
-        withdrawals = withdrawals.concat(page);
-        if (!page.length) break;
-        offset += 1000;
+      // fetch treasury withdrawals
+      // For epochs >= 571, use governance action proposals (Koios endpoint)
+      // For epochs < 571, use legacy treasury_withdrawals endpoint
+      let withdrawalsCurr = [];
+      let withdrawalsPrev = [];
+      
+      if (displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD) {
+        // Fetch governance action based treasury withdrawals for current epoch
+        // Note: For governance epochs, withdrawals are counted in the same epoch they are enacted
+        try {
+          const currRes = await api.get(
+            `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=eq.${displayedEpoch}&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal-%3Eamount`
+          );
+          withdrawalsCurr = (currRes.data || []).map(item => ({
+            amount: item.amount != null ? String(item.amount) : '0',
+            title: item.title || 'Untitled withdrawal',
+            proposal_id: item.proposal_id,
+            proposal_index: item.proposal_index
+          }));
+          // For governance epochs, withdrawals are in the same epoch, so set prev to empty
+          withdrawalsPrev = [];
+        } catch (err) {
+          console.warn('Failed to fetch governance withdrawals for current epoch:', err);
+        }
+      } else {
+        // Legacy endpoint for epochs < 571 (paged. rare. for example epoch 374)
+        let offset = 0;
+        while (true) {
+          const r = await api.get(
+            `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch}&offset=${offset}`
+          );
+          const page = r.data || [];
+          withdrawalsCurr = withdrawalsCurr.concat(page);
+          if (!page.length) break;
+          offset += 1000;
+        }
+        // repeat for previous epoch to calculate the treasury growth or depletion 
+        offset = 0;
+        while (true) {
+          const r = await api.get(
+            `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch-1}&offset=${offset}`
+          );
+          const page = r.data || [];
+          withdrawalsPrev = withdrawalsPrev.concat(page);
+          if (!page.length) break;
+          offset += 1000;
+        }
       }
-      setWithdrawalsCurr(withdrawals);
-      // repeat for previous epoch to calculate the treasury growth or depletion 
-      withdrawals = [];
-      offset = 0;
-      while (true) {
-        const r = await api.get(
-          `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch-1}&offset=${offset}`
-        );
-        const page = r.data || [];
-        withdrawals = withdrawals.concat(page);
-        if (!page.length) break;
-        offset += 1000;
-      }
-      setWithdrawalsPrev(withdrawals);
+      
+      setWithdrawalsCurr(withdrawalsCurr);
+      setWithdrawalsPrev(withdrawalsPrev);
 		
     } catch (err) {
       setErrorInfo(parseApiError(err));
@@ -360,11 +387,21 @@ function PageContent() {
   const percentOfDeltaReserves = ((deltaTreasury / deltaReserves) * 100).toFixed(2);
   const percentFeesOfDeltaReserves = ((totalsPrev.fees / deltaReserves) * 100).toFixed(2);
   const averageTxFee = (epochInfoPrev1.fees / epochInfoPrev1.tx_count).toFixed(0);
-  const totalTreasuryWithdrawalsCurr = withdrawalsCurrRes.reduce((sum, w) => sum + parseInt(w.amount, 10),0);
-  const totalTreasuryWithdrawalsPrev = withdrawalsPrevRes.reduce((sum, w) => sum + parseInt(w.amount, 10),0);
+  // Calculate totals - handle both legacy format (w.amount) and governance format (w.amount as string or number)
+  const totalTreasuryWithdrawalsCurr = withdrawalsCurrRes.reduce((sum, w) => {
+    const amount = typeof w.amount === 'string' ? parseInt(w.amount, 10) : (w.amount || 0);
+    return sum + (isNaN(amount) ? 0 : amount);
+  }, 0);
+  const totalTreasuryWithdrawalsPrev = withdrawalsPrevRes.reduce((sum, w) => {
+    const amount = typeof w.amount === 'string' ? parseInt(w.amount, 10) : (w.amount || 0);
+    return sum + (isNaN(amount) ? 0 : amount);
+  }, 0);
   
   const netTreasuryChange = deltaTreasury; // can be negative
-  const grossTreasuryAdded = totalTreasuryWithdrawalsPrev + deltaTreasury; // rewards+fees inflow
+  // For governance epochs (>= 571), withdrawals are in the same epoch, so calculate differently
+  const grossTreasuryAdded = displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD 
+    ? deltaTreasury + totalTreasuryWithdrawalsCurr  // For governance: additions = net change + withdrawals from current epoch
+    : totalTreasuryWithdrawalsPrev + deltaTreasury; // For legacy: additions = withdrawals from prev epoch + net change
   const netTreasuryChangeAbs = Math.abs(netTreasuryChange);
   const percentTreasuryChangeAbs = Math.abs(parseFloat(percentOfTreasury)).toFixed(2);
 
@@ -491,7 +528,28 @@ function PageContent() {
 		{/* #############################  */}
         <h3>Q: How much ada was added to the treasury?</h3>
         <p>
-          {netTreasuryChange > 0 ? (
+          {displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD && totalTreasuryWithdrawalsCurr > 0 ? (
+            // For governance epochs with withdrawals from current epoch, explain both additions and withdrawals
+            <>
+              A: In epoch {displayedEpoch}, rewards and fees contributed <strong>{convertLovelacesToAda(grossTreasuryAdded).toLocaleString()} ada</strong> to the treasury
+              {netTreasuryChange > 0 ? (
+                <>
+                  . After accounting for withdrawals of <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong> from this epoch,
+                  the treasury increased by <strong>{convertLovelacesToAda(netTreasuryChange).toLocaleString()} ada</strong> ({percentOfTreasury}%) compared to the previous epoch.
+                </>
+              ) : netTreasuryChange === 0 ? (
+                <>
+                  . Withdrawals of <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong> from this epoch exactly matched this amount,
+                  resulting in no net change to the treasury.
+                </>
+              ) : (
+                <>
+                  . However, withdrawals of <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong> from this epoch outweighed this amount,
+                  resulting in a net decrease of <strong>{convertLovelacesToAda(netTreasuryChangeAbs).toLocaleString()} ada</strong> (-{percentTreasuryChangeAbs}%) compared to the previous epoch.
+                </>
+              )}
+            </>
+          ) : netTreasuryChange > 0 ? (
             <>
               A: A total of <strong>{convertLovelacesToAda(netTreasuryChange).toLocaleString()} ada</strong>&nbsp; 
 			  — { percentOfDeltaReserves }% of the overal staking rewards — was allocated to the treasury, 
@@ -540,11 +598,44 @@ function PageContent() {
         <p>
           {withdrawalsCurrRes.length === 0
             ? `A: There were no treasury withdrawals during this epoch.`
-            : withdrawalsCurrRes.length === 1
-            ? `A: There was 1 treasury withdrawal totaling ${convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada.`
-            : `A: There were ${withdrawalsCurrRes.length} treasury withdrawals totaling ${convertLovelacesToAda(
-                totalTreasuryWithdrawalsCurr
-              ).toLocaleString()} ada.`}
+            : (
+              <>
+                A: {withdrawalsCurrRes.length === 1
+                  ? `There was 1 treasury withdrawal`
+                  : `There were ${withdrawalsCurrRes.length} treasury withdrawals`} totaling <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong>.
+                {displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD && withdrawalsCurrRes.length > 0 && (
+                  <ul style={{ marginTop: '0.5rem', marginBottom: 0 }}>
+                    {withdrawalsCurrRes.map((w, idx) => {
+                      // Parse amount - handle string, number, or null/undefined
+                      // Use Number() instead of parseInt() to handle large numbers correctly
+                      let amount = 0;
+                      if (w.amount != null && w.amount !== '') {
+                        const parsed = Number(w.amount);
+                        amount = isNaN(parsed) ? 0 : parsed;
+                      }
+                      // Convert from lovelace to ADA (divide by 1 million)
+                      const adaAmount = convertLovelacesToAda(amount);
+                      // Use index as unique key since proposal_id and proposal_index may not be unique
+                      const explorerUrl = w.proposal_id 
+                        ? `https://explorer.cardano.org/governance-action/${w.proposal_id}`
+                        : null;
+                      return (
+                        <li key={`withdrawal-${displayedEpoch}-${idx}`} style={{ marginBottom: '0.25rem' }}>
+                          <strong>{w.title || 'Untitled withdrawal'}</strong>: {adaAmount.toLocaleString()} ada
+                          {explorerUrl && (
+                            <> {' '}
+                              <Link href={explorerUrl} target="_blank" rel="noopener noreferrer">
+                                [read more]
+                              </Link>
+                            </>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </>
+            )}
         </p>
         
 		{/* #############################  */}
