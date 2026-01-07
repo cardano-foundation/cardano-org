@@ -402,6 +402,8 @@ function PageContent() {
   const grossTreasuryAdded = displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD 
     ? deltaTreasury + totalTreasuryWithdrawalsCurr  // For governance: additions = net change + withdrawals from current epoch
     : totalTreasuryWithdrawalsPrev + deltaTreasury; // For legacy: additions = withdrawals from prev epoch + net change
+  // Calculate percentage of overall staking rewards for gross treasury addition
+  const percentGrossTreasuryOfDeltaReserves = ((grossTreasuryAdded / deltaReserves) * 100).toFixed(2);
   const netTreasuryChangeAbs = Math.abs(netTreasuryChange);
   const percentTreasuryChangeAbs = Math.abs(parseFloat(percentOfTreasury)).toFixed(2);
 
@@ -531,7 +533,8 @@ function PageContent() {
           {displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD && totalTreasuryWithdrawalsCurr > 0 ? (
             // For governance epochs with withdrawals from current epoch, explain both additions and withdrawals
             <>
-              A: In epoch {displayedEpoch}, rewards and fees contributed <strong>{convertLovelacesToAda(grossTreasuryAdded).toLocaleString()} ada</strong> to the treasury
+              A: In epoch {displayedEpoch}, rewards and fees contributed <strong>{convertLovelacesToAda(grossTreasuryAdded).toLocaleString()} ada</strong>&nbsp;
+              — {percentGrossTreasuryOfDeltaReserves}% of the overall staking rewards — to the treasury
               {netTreasuryChange > 0 ? (
                 <>
                   . After accounting for withdrawals of <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong> from this epoch,
