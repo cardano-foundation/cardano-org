@@ -35,8 +35,8 @@ yarn-error.log*
 # intellij
 .idea
 
-# (only check in yarn.lock when deliberately establishing a software baseline)
-yarn.lock
-
 # Temporary files that sometimes get checked in by accident
 .yarn/**
+
+# Prevent folks from committing package-lock.json
+package-lock.json

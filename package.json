@@ -55,7 +55,8 @@
     "js-yaml": "^4.1.0"
   },
   "resolutions": {
-    "@babel/runtime": "^7.26.10"
+    "@babel/runtime": "^7.26.10",
+    "libsodium-wrappers-sumo": "0.7.15"
   },
   "browserslist": {
     "production": [
