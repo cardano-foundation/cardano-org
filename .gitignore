@@ -40,3 +40,6 @@ yarn.lock
 
 # Temporary files that sometimes get checked in by accident
 .yarn/**
+
+# Prevent folks from committing package-lock.json
+package-lock.json
