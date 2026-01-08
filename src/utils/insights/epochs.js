@@ -1,4 +1,5 @@
 export const MIN_EPOCH = 209;
+export const GOVERNANCE_EPOCH_THRESHOLD = 571;
 
 export function getEpochDate(epoch) {
   const startEpoch = MIN_EPOCH;
