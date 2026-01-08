@@ -18,6 +18,12 @@
         "link": "https://nbx.com",
         "ada": true,
         "cnt": true
+      },
+      {
+        "name": "MEXC",
+        "link": "https://www.mexc.com",
+        "ada": true,
+        "cnt": true
       }
     ]
   },
@@ -241,6 +247,12 @@
           "link": "https://coins.ph",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
@@ -251,6 +263,12 @@
         {
           "name": "Bitkub",
           "link": "https://www.bitkub.com",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
         }
@@ -277,6 +295,12 @@
           "link": "https://www.okx.com",
           "ada": true,
           "cnt": false
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
@@ -295,6 +319,12 @@
           "link": "https://foxbit.com.br",
           "ada": true,
           "cnt": false
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
@@ -307,6 +337,12 @@
           "link": "https://www.okcoin.jp",
           "ada": true,
           "cnt": false
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
@@ -319,6 +355,12 @@
           "link": "https://upbit.com",
           "ada": true,
           "cnt": false
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
@@ -331,6 +373,12 @@
           "link": "https://www.valr.com",
           "ada": true,
           "cnt": false
+        },
+        {
+          "name": "MEXC",
+          "link": "https://www.mexc.com",
+          "ada": true,
+          "cnt": true
         }
       ]
     },
