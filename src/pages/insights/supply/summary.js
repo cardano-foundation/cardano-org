@@ -48,7 +48,7 @@ import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 export const meta = {
   pageName: 'supply-summary',
   pageTitle: 'Cardano Supply Summary',
-  pageDescription: 'Historical analysis of Cardano ADA supply distribution across reserves, rewards, treasury, and deposits.',
+  pageDescription: 'Historical analysis of Cardano ada supply distribution across reserves, rewards, treasury, and deposits.',
   title: 'Cardano Supply Summary',
   date: '',
   og: {
@@ -62,7 +62,7 @@ export const meta = {
 // ────────────────────────────────────────────────────────────────────────────
 //  Line Chart Component (ECharts)
 // ────────────────────────────────────────────────────────────────────────────
-function LineChartEcharts({ chartData, title, yAxisName = 'ADA', hasSecondYAxis = false }) {
+function LineChartEcharts({ chartData, title, yAxisName = 'ada', hasSecondYAxis = false, yAxisMin, yAxisMax }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   const chartRef = useRef(null);
@@ -125,7 +125,9 @@ function LineChartEcharts({ chartData, title, yAxisName = 'ADA', hasSecondYAxis 
       axisLabel: { 
         color: leftAxisColor,
         formatter: (value) => value.toLocaleString()
-      }
+      },
+      ...(yAxisMin !== undefined && { min: yAxisMin }),
+      ...(yAxisMax !== undefined && { max: yAxisMax })
     }];
 
     return {
@@ -467,7 +469,7 @@ function PageContent() {
     // Calculate treasury amounts (all epochs)
     const treasuryAmounts = epochData.map(d => convertLovelacesToAda(d.totals?.treasury || 0));
     
-    // Calculate treasury withdrawals (all epochs, in ADA)
+    // Calculate treasury withdrawals (all epochs, in ada)
     const treasuryWithdrawals = epochData.map(d => {
       const withdrawals = withdrawalsData[d.epoch] || 0;
       return convertLovelacesToAda(withdrawals);
@@ -635,7 +637,7 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          `**Explore historical trends in Cardano ADA supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time.`
+          `**Explore historical trends in Cardano ada supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time.`
         ]}
         headingDot
       />
@@ -878,22 +880,22 @@ function PageContent() {
         <section id="reserves" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
           <Heading as="h2">Reserves Evolution</Heading>
           <p>
-            The Cardano reserves represent the difference between the maximum supply (45 billion ADA) and the total supply in circulation. 
+            The Cardano reserves represent the difference between the maximum supply (45 billion ada) and the total supply in circulation. 
             Reserves were originally defined in the <Link href="/genesis">genesis block</Link> and are gradually released through the reward mechanism, where a portion of each epoch's rewards comes from the reserves.
           </p>
           <p>
-            Over time, reserves decrease as ADA is distributed to stakeholders through staking rewards. This chart shows how the reserves 
+            Over time, reserves decrease as ada is distributed to stakeholders through staking rewards. This chart shows how the reserves 
             have evolved (degraded) across the selected epoch range.
           </p>
           {reservesChartData && <LineChartEcharts chartData={reservesChartData} title="Reserves" />}
           {reservesStats && epochData.length > 0 && (
             <div style={{ marginTop: '1rem' }}>
               <p>
-                <strong>Summary:</strong> Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}) 
-                Reserves {reservesStats.delta < 0 ? 'decreased' : 'increased'} from <strong>{convertLovelacesToAda(reservesStats.first).toLocaleString()} ADA</strong> 
-                to <strong>{convertLovelacesToAda(reservesStats.last).toLocaleString()} ADA</strong>, 
-                a change of <strong>{convertLovelacesToAda(Math.abs(reservesStats.delta)).toLocaleString()} ADA</strong> 
-                ({reservesStats.delta < 0 ? '-' : '+'}{reservesStats.percentChange}%).
+                <strong>Summary:</strong> Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}){' '}
+                Reserves {reservesStats.delta < 0 ? 'decreased' : 'increased'} from <strong>{convertLovelacesToAda(reservesStats.first).toLocaleString()} ada</strong>{' '}
+                to <strong>{convertLovelacesToAda(reservesStats.last).toLocaleString()} ada</strong>,{' '}
+                a change of <strong>{convertLovelacesToAda(Math.abs(reservesStats.delta)).toLocaleString()} ada</strong>{' '}
+                ({reservesStats.delta < 0 ? '-' : '+'}{Math.abs(parseFloat(reservesStats.percentChange))}%).
               </p>
               <p style={{ marginTop: '1rem' }}>
                 <strong>Epoch 606:</strong> In January 2026 the Cardano Mainnet has distributed 50% of the reserves.
@@ -908,16 +910,16 @@ function PageContent() {
         <section id="rewards" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
           <Heading as="h2">Distributed Rewards</Heading>
           <p>
-            Distributed rewards are composed of two sources: ADA taken from the reserves and transaction fees paid by users. 
+            Distributed rewards are composed of two sources: ada taken from the reserves and transaction fees paid by users. 
             These rewards are distributed to various participants in the Cardano ecosystem.
           </p>
           <p>The reward distribution includes:</p>
           <ul>
-            <li><strong>a)</strong> Staking rewards to users who delegate their ADA</li>
+            <li><strong>a)</strong> Staking rewards to users who delegate their ada</li>
             <li><strong>b)</strong> Margin and fixed fees to Stake Pool Operators (SPOs) for operating the network infrastructure</li>
             <li><strong>c)</strong> A taxation portion that goes to the common treasury to support ecosystem development</li>
           </ul>
-          {rewardsChartData && <LineChartEcharts chartData={rewardsChartData} title="Distributed Rewards" />}
+          {rewardsChartData && <LineChartEcharts chartData={rewardsChartData} title="Distributed Rewards" yAxisMin={0} yAxisMax={25000000} />}
           <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
             <em>Note: Detailed breakdown of rewards distribution to users, SPOs, and treasury requires additional data queries.</em>
           </p>
@@ -940,15 +942,15 @@ function PageContent() {
           {treasuryStats && epochData.length > 0 && (
             <div style={{ marginTop: '1rem' }}>
               <p>
-                <strong>Summary:</strong> Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}) 
-                Treasury {treasuryStats.delta < 0 ? 'decreased' : 'increased'} from <strong>{convertLovelacesToAda(treasuryStats.first).toLocaleString()} ADA</strong> 
-                to <strong>{convertLovelacesToAda(treasuryStats.last).toLocaleString()} ADA</strong>, 
-                a change of <strong>{convertLovelacesToAda(Math.abs(treasuryStats.delta)).toLocaleString()} ADA</strong> 
-                ({treasuryStats.delta < 0 ? '-' : '+'}{treasuryStats.percentChange}%).
+                <strong>Summary:</strong> Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}){' '}
+                Treasury {treasuryStats.delta < 0 ? 'decreased' : 'increased'} from <strong>{convertLovelacesToAda(treasuryStats.first).toLocaleString()} ada</strong>{' '}
+                to <strong>{convertLovelacesToAda(treasuryStats.last).toLocaleString()} ada</strong>,{' '}
+                a change of <strong>{convertLovelacesToAda(Math.abs(treasuryStats.delta)).toLocaleString()} ada</strong>{' '}
+                ({treasuryStats.delta < 0 ? '-' : '+'}{Math.abs(parseFloat(treasuryStats.percentChange))}%).
               </p>
               <p>
-                Total additions: <strong>{convertLovelacesToAda(treasuryStats.totalAdditions).toLocaleString()} ADA</strong> | 
-                Total withdrawals: <strong>{convertLovelacesToAda(treasuryStats.totalWithdrawals).toLocaleString()} ADA</strong>
+                Total additions: <strong>{convertLovelacesToAda(treasuryStats.totalAdditions).toLocaleString()} ada</strong> | 
+                Total withdrawals: <strong>{convertLovelacesToAda(treasuryStats.totalWithdrawals).toLocaleString()} ada</strong>
               </p>
             </div>
           )}
@@ -961,27 +963,27 @@ function PageContent() {
           <Heading as="h2">Deposits</Heading>
           <p>
             Cardano requires various types of deposits to ensure network security and governance participation. Users register 
-            their wallets with a staking key deposit (currently 2 ADA per key), Stake Pool Operators register pools with a 
-            500 ADA deposit, and DReps must also place a deposit to participate in governance.
+            their wallets with a staking key deposit (currently 2 ada per key), Stake Pool Operators register pools with a 
+            500 ada deposit, and DReps must also place a deposit to participate in governance.
           </p>
           <p>
-            Additionally, governance action deposits (currently 100,000 ADA per action) are required when submitting governance 
-            proposals. These deposits are returned when actions are ratified or rejected, but are forfeited if actions expire.
+            Additionally, governance action deposits (currently 100,000 ada per action) are required when submitting governance 
+            proposals. Deposits are also returned when the GA expires. At no point are GA deposits lost. The proposer always receives them back after the action expires or enacts.
           </p>
           <p>
-            Stake pool pledge is a separate mechanism where pool operators commit their own ADA to their pools. For detailed 
-            information about pledge, see the <Link href="/insights/pledge">dedicated pledge page</Link>.
+            Stake pool pledge is a separate mechanism where pool operators commit their own ada to their pools. For detailed 
+            information about pledge, see the dedicated pledge page (coming soon).
           </p>
           {depositsChartData && <LineChartEcharts chartData={depositsChartData} title="Deposits" />}
           {depositsStats && (
             <div style={{ marginTop: '1rem' }}>
               <p>
-                <strong>Current Total Deposits:</strong> <strong>{convertLovelacesToAda(depositsStats.total).toLocaleString()} ADA</strong>
+                <strong>Current Total Deposits:</strong> <strong>{convertLovelacesToAda(depositsStats.total).toLocaleString()} ada</strong>
               </p>
               <ul>
-                <li>Stake Deposits: {convertLovelacesToAda(depositsStats.stake).toLocaleString()} ADA</li>
-                <li>DRep Deposits: {convertLovelacesToAda(depositsStats.drep).toLocaleString()} ADA</li>
-                <li>Proposal Deposits: {convertLovelacesToAda(depositsStats.proposal).toLocaleString()} ADA</li>
+                <li>Stake Deposits: {convertLovelacesToAda(depositsStats.stake).toLocaleString()} ada</li>
+                <li>DRep Deposits: {convertLovelacesToAda(depositsStats.drep).toLocaleString()} ada</li>
+                <li>Proposal Deposits: {convertLovelacesToAda(depositsStats.proposal).toLocaleString()} ada</li>
               </ul>
             </div>
           )}
