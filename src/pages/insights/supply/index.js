@@ -12,7 +12,7 @@ import Heading from '@theme/Heading';
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
 import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/utils/insights/numbers';
-import { MIN_EPOCH, getEpochDate } from '@site/src/utils/insights/epochs';
+import { MIN_EPOCH, GOVERNANCE_EPOCH_THRESHOLD, getEpochDate } from '@site/src/utils/insights/epochs';
 
 // Layout components 
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
@@ -163,8 +163,6 @@ function PageContent() {
   const [totalsPrev, setTotalsPrev] = useState(null);
   const [withdrawalsCurrRes, setWithdrawalsCurr] = useState([]);
   const [withdrawalsPrevRes, setWithdrawalsPrev] = useState([]);
-  // For epochs >= 571, withdrawals include title from governance actions
-  const GOVERNANCE_EPOCH_THRESHOLD = 571;
   const [epochInfoPrev1, setEpochInfoPrev1] = useState(null);
   const [epochInfoPrev2, setEpochInfoPrev2] = useState(null);
   const [error, setError] = useState(null);  
@@ -235,27 +233,32 @@ function PageContent() {
           console.warn('Failed to fetch governance withdrawals for current epoch:', err);
         }
       } else {
-        // Legacy endpoint for epochs < 571 (paged. rare. for example epoch 374)
-        let offset = 0;
-        while (true) {
-          const r = await api.get(
-            `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch}&offset=${offset}`
-          );
-          const page = r.data || [];
-          withdrawalsCurr = withdrawalsCurr.concat(page);
-          if (!page.length) break;
-          offset += 1000;
-        }
-        // repeat for previous epoch to calculate the treasury growth or depletion 
-        offset = 0;
-        while (true) {
-          const r = await api.get(
-            `/treasury_withdrawals?select=epoch_no,amount&epoch_no=eq.${displayedEpoch-1}&offset=${offset}`
-          );
-          const page = r.data || [];
-          withdrawalsPrev = withdrawalsPrev.concat(page);
-          if (!page.length) break;
-          offset += 1000;
+        // Legacy withdrawals (epochs < 571) - load from static pre-generated file
+        try {
+          const legacyWithdrawalsRes = await fetch('https://data.cardano.org/static/treasury-withdrawals-legacy.json');
+          if (legacyWithdrawalsRes.ok) {
+            const legacyData = await legacyWithdrawalsRes.json();
+            
+            // Find withdrawals for current epoch
+            const currEpochData = legacyData.find(item => item.epoch_no === displayedEpoch);
+            if (currEpochData && currEpochData.totalAmount) {
+              withdrawalsCurr = [{
+                amount: String(currEpochData.totalAmount)
+              }];
+            }
+            
+            // Find withdrawals for previous epoch
+            const prevEpochData = legacyData.find(item => item.epoch_no === displayedEpoch - 1);
+            if (prevEpochData && prevEpochData.totalAmount) {
+              withdrawalsPrev = [{
+                amount: String(prevEpochData.totalAmount)
+              }];
+            }
+          } else {
+            console.warn('Failed to load legacy withdrawals static file');
+          }
+        } catch (err) {
+          console.warn('Error loading legacy withdrawals static file:', err);
         }
       }
       
