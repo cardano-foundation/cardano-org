@@ -6,6 +6,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import * as echarts from 'echarts';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
+import Divider from "@site/src/components/Layout/Divider";
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
@@ -877,8 +878,8 @@ function PageContent() {
 
       {/* Reserves Section */}
       {epochData.length > 0 && (
-        <section id="reserves" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
-          <Heading as="h2">Reserves Evolution</Heading>
+        <div style={{ marginTop: '3rem' }}>
+          <Divider text="Reserves Evolution" id="reserves" />
           <p>
             The Cardano reserves represent the difference between the maximum supply (45 billion ada) and the total supply in circulation. 
             Reserves were originally defined in the <Link href="/genesis">genesis block</Link> and are gradually released through the reward mechanism, where a portion of each epoch's rewards comes from the reserves.
@@ -902,13 +903,13 @@ function PageContent() {
               </p>
             </div>
           )}
-        </section>
+        </div>
       )}
 
       {/* Rewards Section */}
       {epochData.length > 0 && (
-        <section id="rewards" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
-          <Heading as="h2">Distributed Rewards</Heading>
+        <div style={{ marginTop: '3rem' }}>
+          <Divider text="Distributed Rewards" id="rewards" />
           <p>
             Distributed rewards are composed of two sources: ada taken from the reserves and transaction fees paid by users. 
             These rewards are distributed to various participants in the Cardano ecosystem.
@@ -923,13 +924,13 @@ function PageContent() {
           <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#666' }}>
             <em>Note: Detailed breakdown of rewards distribution to users, SPOs, and treasury requires additional data queries.</em>
           </p>
-        </section>
+        </div>
       )}
 
       {/* Treasury Section */}
       {epochData.length > 0 && (
-        <section id="treasury" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
-          <Heading as="h2">Treasury Evolution</Heading>
+        <div style={{ marginTop: '3rem' }}>
+          <Divider text="Treasury Evolution" id="treasury" />
           <p>
             The Cardano treasury grows from the taxation portion of each epoch's reward distribution. This cut ensures ongoing 
             funding for ecosystem development, research, and community initiatives.
@@ -954,13 +955,13 @@ function PageContent() {
               </p>
             </div>
           )}
-        </section>
+        </div>
       )}
 
       {/* Deposits Section */}
       {epochData.length > 0 && (
-        <section id="deposits" style={{ marginTop: '3rem', scrollMarginTop: '2rem' }}>
-          <Heading as="h2">Deposits</Heading>
+        <div style={{ marginTop: '3rem' }}>
+          <Divider text="Deposits" id="deposits" />
           <p>
             Cardano requires various types of deposits to ensure network security and governance participation. Users register 
             their wallets with a staking key deposit (currently 2 ada per key), Stake Pool Operators register pools with a 
@@ -987,7 +988,7 @@ function PageContent() {
               </ul>
             </div>
           )}
-        </section>
+        </div>
       )}
 
       <InsightsFooter lastUpdated="Dynamic" />
