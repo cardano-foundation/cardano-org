@@ -232,6 +232,7 @@ function PageContent() {
   const [epochData, setEpochData] = useState([]); // Filtered data for selected range
   const [allEpochData, setAllEpochData] = useState({}); // All loaded epoch data (cache)
   const [allWithdrawalsData, setAllWithdrawalsData] = useState({}); // All withdrawals (cache)
+  const [allWithdrawalsDetails, setAllWithdrawalsDetails] = useState([]); // Individual withdrawal records
   const [sliderStart, setSliderStart] = useState(0);
   const [sliderEnd, setSliderEnd] = useState(100);
   const startHandleRef = useRef(null);
@@ -351,20 +352,32 @@ function PageContent() {
       }
       
       // Governance withdrawals (epochs >= 571) - fetch all without epoch filter
-      // Use the same query structure as the working version in index.js
+      // Use the same query structure as the working version in index.js, but include title
+      const withdrawalDetails = [];
       try {
         const withdrawalsRes = await api.get(
-          `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,withdrawal-%3Eamount`
+          `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal-%3Eamount`
         );
         withdrawalsRes.data.forEach(item => {
           const epoch = item.enacted_epoch;
           if (epoch && epoch >= GOVERNANCE_EPOCH_THRESHOLD) {
+            // Aggregate per epoch (existing behavior)
             if (!allWithdrawals[epoch]) allWithdrawals[epoch] = 0;
             const amount = item.amount != null ? Number(item.amount) : 0;
             allWithdrawals[epoch] += isNaN(amount) ? 0 : amount;
+
+            // Store individual withdrawal details (new)
+            withdrawalDetails.push({
+              epoch: epoch,
+              amount: amount,
+              title: item.title || 'Untitled withdrawal',
+              proposal_id: item.proposal_id,
+              proposal_index: item.proposal_index
+            });
           }
         });
-        console.log('Fetched governance withdrawals');
+        setAllWithdrawalsDetails(withdrawalDetails);
+        console.log(`Fetched ${withdrawalDetails.length} governance withdrawals`);
       } catch (err) {
         console.warn('Error fetching governance withdrawals:', err);
       }
@@ -614,6 +627,14 @@ function PageContent() {
       total: stake + drep + proposal
     };
   }, [epochData]);
+
+  // Filter individual withdrawals for selected epoch range
+  const filteredWithdrawals = useMemo(() => {
+    if (!startEpoch || !endEpoch) return [];
+    return allWithdrawalsDetails
+      .filter(w => w.epoch >= startEpoch && w.epoch <= endEpoch)
+      .sort((a, b) => b.epoch - a.epoch || b.amount - a.amount); // Sort by epoch desc, then amount desc
+  }, [allWithdrawalsDetails, startEpoch, endEpoch]);
 
   if (errorInfo && !epochData.length) {
     return (
@@ -950,9 +971,53 @@ function PageContent() {
                 ({treasuryStats.delta < 0 ? '-' : '+'}{Math.abs(parseFloat(treasuryStats.percentChange))}%).
               </p>
               <p>
-                Total additions: <strong>{convertLovelacesToAda(treasuryStats.totalAdditions).toLocaleString()} ada</strong> | 
+                Total additions: <strong>{convertLovelacesToAda(treasuryStats.totalAdditions).toLocaleString()} ada</strong> |
                 Total withdrawals: <strong>{convertLovelacesToAda(treasuryStats.totalWithdrawals).toLocaleString()} ada</strong>
               </p>
+            </div>
+          )}
+
+          {/* Treasury Withdrawals List */}
+          {filteredWithdrawals.length > 0 && (
+            <div style={{ marginTop: '2rem' }}>
+              <Divider text="Treasury Withdrawals in Selected Range" id="treasury-withdrawals" />
+              <p style={{ marginBottom: '1rem' }}>
+                Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}),{' '}
+                <strong>{filteredWithdrawals.length}</strong> Treasury Withdrawal{filteredWithdrawals.length !== 1 ? 's were' : ' was'} enacted and{' '}
+                <strong>{convertLovelacesToAda(filteredWithdrawals.reduce((sum, w) => sum + w.amount, 0)).toLocaleString()} ada</strong> was withdrawn.
+              </p>
+              <div style={{ maxHeight: '400px', overflowY: 'auto', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', position: 'sticky', top: 0 }}>
+                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Epoch</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Title</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'right', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Amount (ada)</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'center', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Explorer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredWithdrawals.map((w, idx) => (
+                      <tr key={`${w.proposal_id}-${idx}`} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)' }}>
+                        <td style={{ padding: '0.75rem' }}>
+                          <Link to={`/insights/supply?epoch=${w.epoch}`}>{w.epoch}</Link>
+                        </td>
+                        <td style={{ padding: '0.75rem' }}>{w.title}</td>
+                        <td style={{ padding: '0.75rem', textAlign: 'right' }}>{convertLovelacesToAda(w.amount).toLocaleString()}</td>
+                        <td style={{ padding: '0.75rem', textAlign: 'center' }}>
+                          <a
+                            href={`https://explorer.cardano.org/governance-action/${w.proposal_id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            View
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>
