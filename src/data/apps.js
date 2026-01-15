@@ -864,15 +864,6 @@ export const Showcases = [
     tags: ["favorite", "governance"],
   },
   {
-    title: "Constitutional Committee Portal",
-    description:
-      "The Constitutional Committee Portal is your hub to read the Cardano Constitution, learn about the Committee, view member votes, and explore their rationales.",
-    preview: require("./app-images/ccportal.jpg"),
-    website: "https://constitution.gov.tools",
-    source: null,
-    tags: ["governance"],
-  },
-  {
     title: "Chang Watch",
     description:
       "Chang Watch provides various donut charts with insights on vote distribution and DReps.",
@@ -973,15 +964,6 @@ export const Showcases = [
     website: "https://governancespace.com/",
     source: null,
     tags: ["daotool", "governance"],
-  },
-  {
-    title: "Cardano Budget Proposals",
-    description:
-      "This is a budget proposal aggregator tool, designed to help DReps and ada holders easily track submitted proposals.",
-    preview: require("./app-images/cardano-budget-proposals.jpg"),
-    website: "https://cardanobudget.com",
-    source: null,
-    tags: ["governance"],
   },
   {
     title: "Adastack.io",
@@ -1337,6 +1319,51 @@ export const Showcases = [
     website: "https://www.hydralands.com",
     source: null,
     tags: ["game"],
+  },
+  {
+    title: "CGOV",
+    description:
+      "A governance monitoring dashboard to track and analyze on-chain governance actions, including active, ratified, and expired proposals on the Cardano blockchain.",
+    preview: require("./app-images/cgov.png"),
+    website: "https://app.cgov.io/",
+    source: "https://github.com/nomos-guild/cgov",
+    tags: ["governance", "analytics", "opensource"],
+  },
+  {
+    title: "Cardano Treasury Explorer",
+    description:
+      "A dashboard for exploring and analyzing Cardano's treasury data, providing insights into treasury balance, withdrawals, and funding allocations.",
+    preview: require("./app-images/cardano-treasury-explorer.png"),
+    website: "https://cardanotreasury.fi/",
+    source: null,
+    tags: ["governance", "analytics"],
+  },
+  {
+    title: "Sundae Treasury Dashboard",
+    description:
+      "A smart contract-based treasury management platform by Sundae Labs for transparent milestone-based fund disbursements from Cardano governance actions.",
+    preview: require("./app-images/sundae-treasury.png"),
+    website: "https://treasury.sundae.fi/",
+    source: "https://github.com/SundaeSwap-finance/treasury-contracts",
+    tags: ["governance", "opensource"],
+  },
+  {
+    title: "Cardano Supply Summary",
+    description:
+      "Explore historical trends in Cardano's ada supply distribution, including reserves, rewards, treasury, and deposits across epochs.",
+    preview: require("./app-images/cardano-supply-summary.png"),
+    website: "https://cardano.org/insights/supply/summary/",
+    source: null,
+    tags: ["governance", "analytics"],
+  },
+  {
+    title: "CardanoCube Governance Actions",
+    description:
+      "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
+    preview: require("./app-images/cardanocube-governance.png"),
+    website: "https://www.cardanocube.com/governance/gov_actions",
+    source: null,
+    tags: ["governance"],
   }
 ];
 
