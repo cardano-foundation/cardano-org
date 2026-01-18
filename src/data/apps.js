@@ -5,7 +5,7 @@
  * can come to see what can be done - it should not be seen as a database where 
  * every project is promoted.
  * 
- * HOW TO ADD YOUR APP: See docs/tutorial/add-app.md
+ * HOW TO ADD YOUR APP: See docs/get-involved/add-app.md
  */
 
 import React from "react";
