@@ -1335,7 +1335,7 @@ export const Showcases = [
     preview: require("./app-images/coincashew.png"),
     icon: "/img/app-icons/coincashew.svg",
     statsLabel: "coincashew",
-    website: "https://coincashew.io/spo",
+    website: "https://coincashew.io",
     source: "https://github.com/coincashew/coincashew",
     tags: ["educational", "opensource"],
   }
