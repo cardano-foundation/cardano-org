@@ -252,7 +252,7 @@ export const Tags = {
 //
 // STATS LABEL FIELD (optional):
 // - Add a 'statsLabel' field to explicitly map your app to transaction statistics
-// - Must match a 'label' in /src/data/app-stats.json exactly
+// - Must match a 'label' in /src/data/tx-stats.json exactly
 // - If not provided, the system will try to match using the normalized app title
 // - Example: statsLabel: "minswap"
 //

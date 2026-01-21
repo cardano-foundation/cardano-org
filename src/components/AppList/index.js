@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import { Showcases, Tags } from "@site/src/data/apps";
-import appStats from "@site/src/data/app-stats.json";
+import appStats from "@site/src/data/tx-stats.json";
 import styles from "./styles.module.css";
 
 // Helper function to find app stats by label
