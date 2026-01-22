@@ -262,7 +262,7 @@ export const Tags = {
 //   description: "A decentralized exchange on Cardano.",
 //   preview: require("./app-images/example.png"),
 //   icon: "/img/app-icons/example.svg",  // Optional - for logo display
-//   statsLabel: "example",  // Optional - for transaction data mapping
+//   statsLabel: "example",  // Optional - for transaction data mapping see https://cardano.org/docs/get-involved/tx-rankings/
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
 //   tags: ["dex", "opensource"], // don't overdo it usually one or two tags are enough
@@ -835,6 +835,7 @@ export const Showcases = [
       "Liqwid is a non-custodial pooled lending protocol with liquid staking built on Cardano.",
     preview: require("./app-images/liqwid.webp"),
     icon: "/img/app-icons/liquid.png",
+    statsLabel: "liqwid finance",
     website: "https://liqwid.finance/",
     source: null,
     tags: ["lending", "marketplace", "goodForBeginners"],
@@ -845,6 +846,7 @@ export const Showcases = [
       "Charli3 is a decentralized Oracle solution on Cardano, built natively for the chain, producing fully auditable data records on Cardano ledger.",
     preview: require("./app-images/charli3.jpg"),
     icon: "/img/app-icons/charli3.jpg",
+    statsLabel: "charli3",
     website: "https://charli3.io",
     source: null,
     tags: ["oracle", "metadata"],
@@ -885,7 +887,7 @@ export const Showcases = [
     source: null,
     tags: ["wallet"],
    },
-   {
+  {
     title: "Danogo",
     description:
       "Danogo is a yield aggregator that provides lending and borrowing, obtaining optimized rates by combining data from multiple Cardano protocols.",
@@ -1020,6 +1022,7 @@ export const Showcases = [
       "CSWAP Systems is a next-gen decentralized exchange (DEX) that bridges tokens, NFTs, and real-world assets in one seamless trading ecosystem. ",
     preview: require("./app-images/cswap.png"),
     icon: "/img/app-icons/cswap.jpg",
+    statsLabel: "cswap",
     website: "https://www.cswap.fi/",
     source: null,
     tags: ["dex"],
@@ -1069,6 +1072,7 @@ export const Showcases = [
       "VyFinance is Decentralized Finance protocol built on Cardano that includes features such as a decentralised exchange (DEx), redistributive mechanism (BAR), governance, lottery and token/NFT Vaults.",
     preview: require("./app-images/vyfi.png"),
     icon: "/img/app-icons/vyfinance.png",
+    statsLabel: "vyfinance",
     website: "https://app.vyfi.io/",
     source: null,
     tags: ["dex"],
@@ -1081,7 +1085,8 @@ export const Showcases = [
     icon: "/img/app-icons/splash.svg",
     website: "https://www.splash.trade/",
     source: "https://github.com/splashprotocol/splash-core",
-    tags: ["dex", "opensource"],
+      tags: ["dex", "opensource"],
+      statsLabel: "splash",
   },
   {
     title: "Palmyra",
@@ -1135,6 +1140,7 @@ export const Showcases = [
       "DeFi derivatives protocol revolutionizing perpetual futures trading on the Cardano blockchain.",
     preview: require("./app-images/strike.png"),
     icon: "/img/app-icons/strike.png",
+    statsLabel: "strike finance",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
     tags: ["marketplace", "goodForBeginners", "opensource"],
