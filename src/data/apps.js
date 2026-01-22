@@ -522,6 +522,7 @@ export const Showcases = [
     description:
       "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
     preview: require("./app-images/sundaeswap.png"),
+    icon: "/img/app-icons/sundaeswap.jpg",
     website: "https://app.sundae.fi",
     source: null,
     tags: ["favorite", "dex"],
@@ -531,6 +532,7 @@ export const Showcases = [
     description:
       "We provide token dispensing services to the Cardano community. An intuitive platform that offers projects a comprehensive selection of distribution parameters.",
     preview: require("./app-images/dripdropz.png"),
+    icon: "/img/app-icons/dripdropz.jpg",
     website: "https://dripdropz.io",
     source: null,
     tags: ["minting"],
@@ -657,6 +659,7 @@ export const Showcases = [
     website: "https://www.book.io",
     source: null,
     tags: [ "marketplace", "nft"],
+    icon: "/img/app-icons/bookio.jpg",
   },
   {
     title: "NuFi Wallet",
@@ -841,6 +844,7 @@ export const Showcases = [
     description:
       "Charli3 is a decentralized Oracle solution on Cardano, built natively for the chain, producing fully auditable data records on Cardano ledger.",
     preview: require("./app-images/charli3.jpg"),
+    icon: "/img/app-icons/charli3.jpg",
     website: "https://charli3.io",
     source: null,
     tags: ["oracle", "metadata"],
@@ -1015,6 +1019,7 @@ export const Showcases = [
     description:
       "CSWAP Systems is a next-gen decentralized exchange (DEX) that bridges tokens, NFTs, and real-world assets in one seamless trading ecosystem. ",
     preview: require("./app-images/cswap.png"),
+    icon: "/img/app-icons/cswap.jpg",
     website: "https://www.cswap.fi/",
     source: null,
     tags: ["dex"],
@@ -1063,6 +1068,7 @@ export const Showcases = [
     description:
       "VyFinance is Decentralized Finance protocol built on Cardano that includes features such as a decentralised exchange (DEx), redistributive mechanism (BAR), governance, lottery and token/NFT Vaults.",
     preview: require("./app-images/vyfi.png"),
+    icon: "/img/app-icons/vyfinance.png",
     website: "https://app.vyfi.io/",
     source: null,
     tags: ["dex"],
@@ -1194,6 +1200,7 @@ export const Showcases = [
     description:
       "Butane is a fast, powerful, and innovative decentralised synthetics platform built on the Cardano blockchain.",
     preview: require("./app-images/butane.png"),
+    icon: "/img/app-icons/butane.jpg",
     website: "https://butane.dev/",
     source: "https://github.com/butaneprotocol/butane-contracts",
     tags: ["opensource", "marketplace"],
