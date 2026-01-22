@@ -56,7 +56,7 @@ Before making a pull request, please make sure that you fulfill all these requir
 
 5. **Select appropriate tags** ⚠️ **Keep it minimal!**
 
-   Available tags include: `wallet`, `dex`, `oracle`, `bridge`, `lending`, `governance`, `marketplace`, `game`, `nftproject`, `educational`, and more.
+   Available tags include: `wallet`, `dex`, `oracle`, `bridge`, `lending`, `governance`, `marketplace`, `game`, `nft`, `educational`, and more.
 
    **Critical Guidelines:**
    - **Use only 1-2 tags** that best describe your app's primary function
@@ -68,10 +68,10 @@ Before making a pull request, please make sure that you fulfill all these requir
    - If your project is open-source, include the `opensource` tag AND provide the `source` URL
 
    **Examples:**
-   - DEX: `["dex", "token"]` ✅
-   - Wallet: `["wallet", "nftsupport"]` ✅
-   - Marketplace: `["marketplace", "nftsupport"]` ✅
-   - Too many: `["dex", "token", "marketplace", "lending", "governance"]` ❌
+   - DEX: `["dex"]` ✅
+   - Wallet: `["wallet", "nft"]` ✅
+   - Marketplace: `["marketplace", "nft"]` ✅
+   - Too many: `["dex", "marketplace", "lending", "governance", "nft"]` ❌
 
 6. **Optional Fields Explained**
 
