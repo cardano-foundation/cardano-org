@@ -23,6 +23,12 @@ const EXCHANGE_LOGOS = {
   "SwissBorg": "/img/exchanges/swissborg.jpg",
   "Revolut": "/img/exchanges/revolut.jpg",
   "Upbit": "/img/exchanges/upbit.png",
+  "PDAX": "/img/exchanges/pdax.jpg",
+  "coins.ph": "/img/exchanges/coinsph.jpg",
+  "MEXC": "/img/exchanges/mexc.png",
+  "VALR": "/img/exchanges/valr.jpg",
+  "LBank": "/img/exchanges/lbank.jpg",
+  "OKX": "/img/exchanges/okx.jpg",
 };
 
 function getExchangesForCountry(countryName) {

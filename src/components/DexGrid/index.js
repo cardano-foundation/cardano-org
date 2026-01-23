@@ -1,6 +1,6 @@
 import React from "react";
 import { Showcases } from "@site/src/data/apps";
-import appStats from "@site/src/data/app-stats.json";
+import appStats from "@site/src/data/tx-stats.json";
 import styles from "./styles.module.css";
 
 // Helper function to format numbers with commas
