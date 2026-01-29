@@ -1374,6 +1374,7 @@ export const Showcases = [
     description:
       "Decentralised cross-chain bridge infrastructure connecting Cardano with multiple EVM and non-EVM networks.",
     preview: require("./app-images/wanchain.png"),
+    icon: "/img/app-icons/wanchain.svg",
     website: "https://bridge.wanchain.org/AssetBridge",
     source: null,
     tags: ["bridge"],
