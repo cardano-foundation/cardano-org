@@ -348,5 +348,12 @@
     "link": "https://lantr.io/",
     "knownFor": "Scalus",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Anvil",
+    "imageName": "anvil",
+    "link": "https://ada-anvil.io",
+    "knownFor": "Anvil API",
+    "showCompanyName": false
   }
 ]
