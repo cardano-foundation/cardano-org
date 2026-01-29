@@ -1,142 +1,129 @@
 ---
-sidebar_label: Style Guide
-description: Editorial style guide and glossary for Cardano.org.
+sidebar_label: Glossary
 title: Glossary
+description: Definitions of key terms in the Cardano ecosystem.
 ---
 
-## Glossary / Editorial Style Guide
-To make content consistent we should agree on spellings and terms here. 
+# Cardano Glossary
 
-## Principles
-- Use American English. 
-- Use Dateformat September 15, 2017 (MMMM DD, YYYY)
-- Use gender-inclusive pronouns they/their/them rather then he/she.
-- Use Oxford comma.
-- Spell out one to nine and use numerals for anything higher: 10, 11, 12.
+Definitions of key terms and concepts in the Cardano ecosystem.
 
+:::tip For Contributors
+If you're writing content for cardano.org, see the [Editorial Style Guide](/docs/get-involved/style-guide) for spelling conventions and usage guidelines.
+:::
 
-## Cardano Glossary
+## A
 
-The Cardano Glossary offers clear definitions of key terms and serves as a style guide to ensure consistency in how we write and communicate about the Cardano ecosystem. It’s a resource for both understanding concepts and aligning on terminology.
+**ada** — The native cryptocurrency of the Cardano blockchain. Named after Ada Lovelace, the 19th-century mathematician often regarded as the first computer programmer.
 
+**Alonzo** — The [hard fork on September 12, 2021](/hardforks) that brought smart contract functionality to Cardano.
 
-### A 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `ada`            | When talking about the cryptocurrency, do not capitalize, unless at the beginning of a sentence. The idea behind this is to treat it like dollars or euros. If you are in doubt, in English, prefer ada over ADA. Capitalised ADA stands for the ticker symbol only. |
-| `ADA`           | The ticker symbol for ada, like EUR or USD. |
-| `tAda`          | Test ada is tAda, not tADA or TADA. See `ada`. |
-| `Alonzo`        | Name of the [September 12, 2021 hard fork](/hardforks).  |
+## B
 
+**Basho** — The [fourth era of Cardano development](/research#basho), focused on scaling and performance optimization. Named after Matsuo Basho, a Japanese poet and master of haiku.
 
-### B 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `Basho`           | The [fourth era of the Cardano development](/research#basho) focused on performance. Named after Matsuo Basho, a Japanese poet and the master of haiku. |
-| `Byron`           | The [first era in Cardano development](/research#byron). Named after the Romantic poet who was the father of Ada Lovelace. |
+**Byron** — The [first era of Cardano development](/research#byron), establishing the foundation of the network. Named after Lord Byron, the Romantic poet and father of Ada Lovelace.
 
-### C 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `Cardano`      | Cardano is a public, permissionless Layer 1 blockchain. A collection of science-based, open-source, patent-free protocols for storing/managing value, identity, governance. |
-| `community`      | Always 'the' community, not 'our' community. |
-| `the Cardano Foundation`           | The Cardano Foundation is an independent, Swiss-based not-for-profit organization. Always use **the** Cardano Foundation. See the [Cardano Foundation](/entities?tab=cf) for details. |
+## C
 
-### D 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `DApp` | Note the capitalization: Decentralized Application. |
-| `Developer Portal` | An open source project on [developers.cardano.org](https://developers.cardano.org) that aims to collect the resources and updates you need to build, integrate, and stay informed about the Cardano blockchain as a developer. |
-| `DRep` | Note the capitalization: Delegated Representative. `DRep` as an abbreviation for Delegated Representative follows standard practices for abbreviations in English: taking the first letter of each word. This makes it intuitive and clear in most contexts. It is also in line with the `DApp` abbreviation. In crypto, the lowercase “d“ is often used to signify “decentralized,” as in dApp (decentralized application) or dGov (decentralized governance). Using “dRep” might imply “decentralized representative”.|
+**Cardano** — A public, permissionless Layer 1 blockchain built on peer-reviewed research. A collection of open-source, patent-free protocols for value transfer, identity, and governance.
 
-### E 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `EMURGO` | All caps in line with EMURGO’s branding. See [EMURGO](/entities?tab=emurgo) for details.|
+**the Cardano Foundation** — An independent, Swiss-based not-for-profit organization responsible for the advancement of Cardano. See [Cardano Foundation](/entities?tab=cf) for details.
 
-### F 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `the Foundation` | Interchangeable with `the Cardano Foundation`, 'the' is not capitalized, but Foundation should be. |
+## D
 
-### G 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `GitHub` | Note the capitalized H. |
-| `Goguen` | The [third era of the Cardano development](/research#goguen) focused on smart contracts. Named in honour of Joseph Goguen, an US computer scientist. |
-| `Governance Action` | CIP-1694 introduces a comprehensive on-chain governance model for Cardano, that included various types of governance actions. See [Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions) for details. |
-| `Governance Tools` | Governance tools enable the community to register as DRep, delegate to DReps or vote on governance actions. See [Governance Tools](/apps?tags=governance) for details. |
+**DApp** — Decentralized Application. An application that runs on a blockchain network rather than centralized servers.
 
-### H 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `hard fork` | Two words. |
-| `Hydra` | a shorter term for the Hydra Head protocol, a layer 2 scaling solution for Cardano. Hydra is **not** a flavor of Ouroboros. |
+**Developer Portal** — An open source project at [developers.cardano.org](https://developers.cardano.org) providing resources for building on Cardano.
 
-### I 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `IOHK` | IOHK is now 'Input Output'. |
-| `IOG` | IOG is now 'Input Output'. |
-| `Input Output` | Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere. See [Input Output](/entities?tab=iog) for details.|
-| `Intersect` | Intersect is a not-for-profit member-based organization for the Cardano ecosystem. See [Intersect](/entities?tab=intersect) for details.|
+**DRep** — Delegated Representative. In Cardano's governance system, ada holders can delegate their voting power to DReps who vote on governance actions on their behalf.
 
-### M 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `Mainnet`    | One word.  Capitalise when it's a noun (the _Mainnet_) but not when it's an adjective (_mainnet_ functionality), qualified by another proper name (the Cardano _mainnet_), or used as a symbol (e.g. enable Marlowe on `mainnet`). |
+## E
 
-### O 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
- `Ouroboros`           | Ouroboros is a family of Cardano's consensus protocols. There are different flavors: Classic, Praos, Genesis, Chronos |
+**EMURGO** — A global blockchain solutions company and one of the founding entities of Cardano. See [EMURGO](/entities?tab=emurgo) for details.
 
-### P 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `proof of stake` | Lower case. Hyphenate when followed by a noun: proof-of-stake systems. |
-| `proof of work` | Lower case. Hyphenate when followed by a noun: proof-of-work systems. |
-| `PRAGMA` | PRAGMA is a member-based, not-for-profit open source Association for blockchain software projects. See [PRAGMA](/entities?tab=pragma) for details.  |
+## G
 
- ### S 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
- | `Shelley`           | The [second era in Cardano development](/research#shelley). Named after Percy Shelley (not Mary), one of the major English Romantic poets and a key figure in the Romantic movement. |
-| `settlement layer` | Cardano settlement layer or Cardano SL are outdated terms. Avoid them, use `layer 1`.  |
-| `scam` | A fraudulent scheme designed to steal your funds or personal information, often by exploiting trust or lack of knowledge. Common examples include fake giveaways and phishing attacks. See [common scams](/common-scams) for details.  |
-| `sidechains` | One word. |
-| `smart contracts` | Two words. Self-executing piece of code stored on a blockchain. It automatically enforces, verifies, or executes the terms of an agreement when predefined conditions are met, without the need for intermediaries. |
-| `spending password` | Password that is used by wallets to encrypt the private key. |
-| `SPO` | Abbreviation used for stake pools or stake pool operator. Avoid, instead use `stake pool` or `operator`.  |
-| `soft fork` | Two words. |
-| `stake pool` | Two words. |
-| `stablecoin` | One word. |
-| `staking`    | Try to avoid term `staking` without context as it is ambiguous. `staking` refers to the whole process of both delegating and setting up a pool but many people confuse this with the actual process of creating blocks. `delegating` means that people delegate their stake to a stake pool. |
+**Goguen** — The [third era of Cardano development](/research#goguen), introducing smart contracts and native tokens. Named after Joseph Goguen, an American computer scientist.
 
-### T 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `testnet`    | One word.  Capitalise when it's a particular testnet (e.g. Preview _testnet_) but not when it's an adjective (e.g. _testnet_ functionality) or referring to more than one (e.g. new iterations of the _testnets_). |
-| `third-generation blockchain`    | Spell out 'third' and hyphenate: Cardano is a third-generation blockchain. |
-| `TLA`    | Three-letter acronym. There are too many, avoid them, don't invent new ones. |
-| `tps`    | Transactions per seconds. A flawed metric for blockchain speed like 'videos per second' would be to measure hard disk speeds. |
+**Governance Action** — A formal proposal submitted on-chain for the Cardano community to vote on. Types include treasury withdrawals, protocol parameter changes, and constitutional amendments. See [Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions) for details.
 
+**Governance Tools** — Applications that enable the community to register as DReps, delegate voting power, or vote on governance actions. See [Governance Tools](/apps?tags=governance) for a list.
 
-### U 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `use case` | Not use-case. See [Cardano use cases](/use-cases). |
-| `USDM` | Fiat-backed stablecoin on Cardano. |
-| `UTXO` | All caps: unspent transaction output, the accounting system used in Bitcoin and Cardano. |
+## H
 
-### V 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `Voltaire` | The [fifth era of the Cardano development](/research#voltaire)  focused on governance and treasury. Named after the French philosopher who prized criticism and argued for the separation of church and state. |
-| `VRF` | Verifiable random function. |
+**hard fork** — A protocol upgrade that is not backward-compatible, requiring all nodes to update. Cardano uses a hard fork combinator to make these transitions smooth.
 
-### W 
-|  Spelling/Term   | Comment                    |
-| ---------------- | -------------------------- |
-| `white paper` | Two words. |
-| `working group` | Two words. A working group unites experts and dedicated community members to focus on a specific topic of discussion. |
+**Hydra** — A Layer 2 scaling solution for Cardano using state channels (Hydra Heads) to enable fast, low-cost transactions off the main chain.
+
+## I
+
+**Input Output** — A research and engineering company and one of the founding entities of Cardano. Formerly known as IOHK. See [Input Output](/entities?tab=iog) for details.
+
+**Intersect** — A not-for-profit, member-based organization for the Cardano ecosystem focused on governance and community coordination. See [Intersect](/entities?tab=intersect) for details.
+
+## L
+
+**Layer 1** — The base blockchain protocol. Cardano is a Layer 1 blockchain.
+
+**Layer 2** — Protocols built on top of a Layer 1 blockchain to improve scalability or add functionality. Hydra is Cardano's Layer 2 solution.
+
+## M
+
+**Mainnet** — The production Cardano network where real ada transactions occur, as opposed to testnets used for development and testing.
+
+## O
+
+**Ouroboros** — The family of proof-of-stake consensus protocols that power Cardano. Variants include Classic, Praos, Genesis, and Chronos.
+
+## P
+
+**PRAGMA** — A member-based, not-for-profit open source association for blockchain software projects. See [PRAGMA](/entities?tab=pragma) for details.
+
+**proof of stake** — A consensus mechanism where validators are selected to create blocks based on the amount of cryptocurrency they hold and "stake" as collateral. Cardano uses proof of stake via Ouroboros.
+
+**proof of work** — A consensus mechanism where miners compete to solve computational puzzles to create blocks. Bitcoin uses proof of work; Cardano does not.
+
+## S
+
+**scam** — A fraudulent scheme designed to steal funds or personal information, often exploiting trust or lack of knowledge. Common examples include fake giveaways and phishing attacks. See [common scams](/common-scams) for how to protect yourself.
+
+**Shelley** — The [second era of Cardano development](/research#shelley), introducing decentralization and stake pools. Named after Percy Bysshe Shelley, one of the major English Romantic poets.
+
+**sidechains** — Independent blockchains connected to the main Cardano blockchain, enabling interoperability and specialized functionality.
+
+**smart contract** — Self-executing code stored on a blockchain that automatically enforces and executes agreement terms when predefined conditions are met.
+
+**soft fork** — A protocol upgrade that is backward-compatible. Nodes that don't upgrade can still participate in the network.
+
+**spending password** — A password used by wallets to encrypt the private key, adding a layer of security.
+
+**stablecoin** — A cryptocurrency designed to maintain a stable value, typically pegged to a fiat currency like the US dollar. USDM is a stablecoin on Cardano.
+
+**stake pool** — A server node that participates in the Cardano network by validating transactions and producing blocks. Ada holders can delegate their stake to pools to earn rewards.
+
+**style guide** — The [Editorial Style Guide](/docs/get-involved/style-guide) defines writing conventions, spelling standards, and terminology usage for cardano.org content.
+
+## T
+
+**testnet** — A test network for developers to experiment without using real ada. Cardano testnets include Preview and Preprod.
+
+**tps** — Transactions per second. A common but limited metric for measuring blockchain throughput.
+
+## U
+
+**use case** — A specific application or scenario where Cardano technology solves a problem. See [Cardano use cases](/use-cases).
+
+**USDM** — A fiat-backed stablecoin on the Cardano blockchain.
+
+**UTXO** — Unspent Transaction Output. The accounting model used by Cardano (and Bitcoin) where transactions consume previous outputs and create new ones. Cardano extends this with the Extended UTXO (eUTXO) model.
+
+## V
+
+**Voltaire** — The [fifth era of Cardano development](/research#voltaire), focused on governance and treasury management. Named after the French Enlightenment philosopher.
+
+**VRF** — Verifiable Random Function. A cryptographic function used in Ouroboros to fairly select which stake pool creates each block.
+
+## W
+
+**working group** — A group uniting experts and community members to focus on a specific topic within the Cardano ecosystem.
