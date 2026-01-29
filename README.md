@@ -25,9 +25,11 @@ Not suitable (without prior discussion):
 2.	Wait for maintainer assignment
 3.	If inactive for 21 days, issue becomes unassigned
 
+
 ### Start here
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [AGENTS.md](AGENTS.md) – Onboarding & Guardrails for AI agents
 - [docs/](https://cardano.org/docs/) for content
 - [Dicussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
 
