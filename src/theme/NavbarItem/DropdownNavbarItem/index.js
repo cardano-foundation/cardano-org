@@ -33,7 +33,15 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
         'navbar__item--mega',
         props.className,
       )}
-      data-column-count={columnCount}>
+      data-column-count={columnCount}
+      onMouseEnter={(e) => {
+        const activeElement = document.activeElement;
+        if (activeElement && activeElement.classList.contains('megaMenuTrigger')) {
+          if (!e.currentTarget.contains(activeElement)) {
+            activeElement.blur();
+          }
+        }
+      }}>
       {/* Top level trigger */}
       <button className="navbar__link megaMenuTrigger" type="button">
         {props.label}
