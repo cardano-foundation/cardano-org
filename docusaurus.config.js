@@ -64,6 +64,16 @@ const config = {
     locales: ['en'],
   },
 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: '1E8DDBC2D1ADF529',
+      },
+    },
+  ],
+
   presets: [
     [
       'classic',
