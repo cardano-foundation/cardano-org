@@ -153,12 +153,12 @@ const config = {
       megaMenuColumnIcons: true,
 
       // Algolia Search
-      algolia: {
+      /*algolia: {
         appId: '2GOYNZM2J1',
         apiKey: 'b3ea5bee26e2b95a6c6446489bdc6adf',
         indexName: 'cardano_org_pages',
         contextualSearch: false,
-      },
+      }, */
 
       navbar: {
         logo: {
