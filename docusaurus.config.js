@@ -148,8 +148,17 @@ const config = {
       image: 'img/og/default.jpg',
       // Toggle display of icons in the mega menu. Icons need to be added to /static/img/icons/ as svg files
       megaMenuIcons: false,
-      // Toggle display of icons in mega menu column titles. 
+      // Toggle display of icons in mega menu column titles.
       megaMenuColumnIcons: true,
+
+      // Algolia Search
+      algolia: {
+        appId: '2GOYNZM2J1',
+        apiKey: 'b3ea5bee26e2b95a6c6446489bdc6adf',
+        indexName: 'cardano_org_pages',
+        contextualSearch: false,
+      },
+
       navbar: {
         logo: {
           alt: "Cardano Logo",
