@@ -33,6 +33,7 @@ const config = {
   organizationName: 'cardano-foundation',
   projectName: 'www-cardano-org',
 
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
   // Docusaurus can't detect these at build time
