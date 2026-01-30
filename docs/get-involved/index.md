@@ -149,9 +149,9 @@ Before contributing, familiarize yourself with these resources:
 - **[Cardano Discord](/docs/communities/#cardano-on-discord)** - for real-time chat and questions
 
 ### Style & Quality
-- **[Editorial Guidelines](/docs/glossary)** - maintain consistency across content
+- **[Style Guide](/docs/get-involved/style-guide)** - writing conventions and terminology standards
+- **[Glossary](/docs/glossary)** - definitions of Cardano terms
 - **[Component Docs](/docs/get-involved/components/)** - use existing components correctly
-- **[Style Guide](/docs/glossary/#cardano-glossary)** - follow writing conventions
 
 ---
 
