@@ -85,7 +85,7 @@ const config = {
         },
         gtag: {
           // don't be evil
-          trackingID: 'GTM-5BC4HH7',
+          trackingID: 'G-LGRGXBVYMC',
           anonymizeIP: true,
         },
       }),
