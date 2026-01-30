@@ -1368,7 +1368,17 @@ export const Showcases = [
     website: "https://www.cardanocube.com/governance/gov_actions",
     source: null,
     tags: ["governance"],
-  }
+  },
+  {
+    title: "Wanchain",
+    description:
+      "Decentralised cross-chain bridge infrastructure connecting Cardano with multiple EVM and non-EVM networks.",
+    preview: require("./app-images/wanchain.png"),
+    icon: "/img/app-icons/wanchain.svg",
+    website: "https://bridge.wanchain.org/AssetBridge",
+    source: null,
+    tags: ["bridge"],
+  },
 ];
 
 export const TagList = Object.keys(Tags);
