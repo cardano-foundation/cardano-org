@@ -32,8 +32,9 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'cardano-foundation',
   projectName: 'www-cardano-org',
-
-  onBrokenLinks: 'throw',
+  
+  trailingSlash: true,
+  onBrokenLinks: 'warn', // TODO: Change back to 'throw' once Docusaurus fixes pagination with trailingSlash
   // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
   // Docusaurus can't detect these at build time
   onBrokenAnchors: 'ignore',
@@ -148,8 +149,17 @@ const config = {
       image: 'img/og/default.jpg',
       // Toggle display of icons in the mega menu. Icons need to be added to /static/img/icons/ as svg files
       megaMenuIcons: false,
-      // Toggle display of icons in mega menu column titles. 
+      // Toggle display of icons in mega menu column titles.
       megaMenuColumnIcons: true,
+
+      // Algolia Search
+      /*algolia: {
+        appId: '2GOYNZM2J1',
+        apiKey: 'b3ea5bee26e2b95a6c6446489bdc6adf',
+        indexName: 'cardano_org_pages',
+        contextualSearch: false,
+      }, */
+
       navbar: {
         logo: {
           alt: "Cardano Logo",
