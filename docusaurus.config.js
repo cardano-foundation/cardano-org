@@ -32,9 +32,9 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'cardano-foundation',
   projectName: 'www-cardano-org',
-
+  
   trailingSlash: true,
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // TODO: Change back to 'throw' once Docusaurus fixes pagination with trailingSlash
   // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
   // Docusaurus can't detect these at build time
   onBrokenAnchors: 'ignore',

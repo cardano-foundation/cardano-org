@@ -81,7 +81,7 @@ export default function Home() {
           <Divider text="Phishing" id="phishing"/>
           <TitleWithText
             title="Phishing Attacks"
-            description= {[ "Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](what-is-ada#wallets).",
+            description= {[ "Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](/what-is-ada/#wallets).",
 
             "How to protect yourself:",
             {
