@@ -31,7 +31,7 @@ Not suitable (without prior discussion):
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [AGENTS.md](AGENTS.md) – Onboarding & Guardrails for AI agents
 - [docs/](https://cardano.org/docs/) for content
-- [Dicussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
+- [Discussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
 
 
 # Installation
@@ -40,9 +40,9 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Requirements
 
-[Node.js](https://nodejs.org/en/download/) version >= 18.0
-[Yarn](https://yarnpkg.com/en/) version >= 1.22  
-On macOS you also need Xcode and Command Line Tools.
+- [Node.js](https://nodejs.org/en/download/) version >= 20.19 (see `.nvmrc` for exact version)
+- [Yarn](https://yarnpkg.com/en/) version >= 1.22
+- On macOS you also need Xcode and Command Line Tools.
 
 ## Clone the repo
 ```
