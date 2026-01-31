@@ -1304,3 +1304,31 @@ img {
 .DocSearch-Logo {
   display: none !important;
 }
+
+/* Glossary term cards */
+.theme-doc-markdown h3 {
+  background: var(--ifm-color-emphasis-100);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.theme-doc-markdown h3:target {
+  border-left-color: var(--ifm-color-warning);
+  animation: highlight-pulse 1s ease;
+}
+
+@keyframes highlight-pulse {
+  0% { background: var(--ifm-color-warning-light); }
+  100% { background: var(--ifm-color-emphasis-100); }
+}
+
+/* Letter section headers */
+.theme-doc-markdown h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
