@@ -8,6 +8,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* DocSearch styling */
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-searchbox-background: var(--ifm-background-surface-color);
+  --docsearch-searchbox-focus-background: var(--ifm-background-surface-color);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, 0.4);
   --ifm-color-primary: #0538af;
   --ifm-color-primary-dark: #325cbd;
   --ifm-color-primary-darker: #325cbd;
@@ -1243,3 +1250,85 @@ img {
 }
 
 /* End insights index list */
+
+/* DocSearch button styling - rounded corners */
+.DocSearch-Button {
+  border-radius: 30px !important;
+  padding: 0 16px !important;
+  height: 36px !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  background: var(--ifm-background-surface-color) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.DocSearch-Button:hover {
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(5, 56, 175, 0.1) !important;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 0.9rem !important;
+}
+
+.DocSearch-Button-Keys {
+  min-width: auto !important;
+}
+
+.DocSearch-Button-Key {
+  border-radius: 4px !important;
+  padding: 0 4px !important;
+}
+
+/* DocSearch modal styling */
+.DocSearch-Modal {
+  border-radius: 12px !important;
+}
+
+.DocSearch-SearchBar {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Form {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Hit {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Hit a {
+  border-radius: 8px !important;
+}
+
+/* Hide Algolia attribution (paid plan without attribution requirement) */
+.DocSearch-Logo {
+  display: none !important;
+}
+
+/* Glossary term cards */
+.theme-doc-markdown h3 {
+  background: var(--ifm-color-emphasis-100);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.theme-doc-markdown h3:target {
+  border-left-color: var(--ifm-color-warning);
+  animation: highlight-pulse 1s ease;
+}
+
+@keyframes highlight-pulse {
+  0% { background: var(--ifm-color-warning-light); }
+  100% { background: var(--ifm-color-emphasis-100); }
+}
+
+/* Letter section headers */
+.theme-doc-markdown h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
