@@ -9,6 +9,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import {InsightsTags} from '@site/src/data/insights-tags';
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
 const req = require.context('./', true, /\.(md|mdx|js|jsx|ts|tsx)$/);
@@ -78,11 +79,17 @@ function InsightCard({item}) {
         </Link>
       )}
       {item.tags?.length > 0 && (
-        <div className="insight-tags">
-          {item.tags.map((t) => (
-            <span key={t} className="insight-tag">{t}</span>
-          ))}
-        </div>
+        <ul className="insight-tags">
+          {item.tags.map((t) => {
+            const tagInfo = InsightsTags[t] || {label: t, color: '#888'};
+            return (
+              <li key={t} className="insight-tag">
+                <span className="insight-tag-label">{tagInfo.label.toLowerCase()}</span>
+                <span className="insight-tag-dot" style={{backgroundColor: tagInfo.color}} />
+              </li>
+            );
+          })}
+        </ul>
       )}
       {item.description && <p className="insight-desc">{item.description}</p>}
       <div className="insight-cta">
@@ -143,43 +150,49 @@ export default function InsightsIndex() {
         bannerType="braidBlue"
       />
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div className="flex items-center gap-2">
-            <input
-              type="search"
-              placeholder="Search insights..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="border rounded-xl px-3 py-2 w-72 max-w-full"
-              aria-label="Search insights"
-            />
-          </div>
+        <div className="insights-search-container">
+          <input
+            type="search"
+            placeholder="Search or filter by tags below..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="insights-search-input"
+            aria-label="Search insights"
+          />
         </div>
 
         {allTags.length > 0 && (
-          <div className="mb-6 flex flex-wrap gap-2">
+          <>
+          <label className="insights-filter-label">Filter by topic</label>
+          <ul className="insights-filter-tags">
             {allTags.map((tag) => {
               const active = activeTags.has(tag);
+              const tagInfo = InsightsTags[tag] || {label: tag, color: '#888'};
               return (
-                <button
-                  key={tag}
-                  onClick={() => toggleTag(tag)}
-                  className={`px-3 py-1 rounded-full border text-sm transition ${active ? 'bg-gray-200' : 'bg-transparent'}`}
-                  aria-pressed={active}
-                >
-                  {tag}
-                </button>
+                <li key={tag}>
+                  <button
+                    onClick={() => toggleTag(tag)}
+                    className={`insight-filter-tag ${active ? 'is-active' : ''}`}
+                    aria-pressed={active}
+                  >
+                    <span className="insight-tag-label">{tagInfo.label.toLowerCase()}</span>
+                    <span className="insight-tag-dot" style={{backgroundColor: tagInfo.color}} />
+                  </button>
+                </li>
               );
             })}
             {activeTags.size > 0 && (
-              <button
-                onClick={() => setActiveTags(new Set())}
-                className="px-3 py-1 rounded-full border text-sm"
-              >
-                Clear
-              </button>
+              <li>
+                <button
+                  onClick={() => setActiveTags(new Set())}
+                  className="insight-filter-tag insight-filter-clear"
+                >
+                  Clear
+                </button>
+              </li>
             )}
-          </div>
+          </ul>
+          </>
         )}
 
         <div className="insights-list">
