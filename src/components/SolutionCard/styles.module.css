@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ifm-color-primary-lightest);
+  background: #f0f4ff;
   border-radius: 10px;
 }
 
