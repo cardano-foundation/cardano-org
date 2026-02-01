@@ -327,7 +327,6 @@ const config = {
                     { to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling', icon: 'code-solid' },
                     { to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers', icon: 'flask-solid' },
                     { to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides', icon: 'plug-solid' },
-                    { to: '/solutions', label: 'Enterprise Solutions', description: 'Proven blockchain deployments', icon: 'building-solid' },
                   ],
                 },
                 {
