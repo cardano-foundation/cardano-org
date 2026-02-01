@@ -263,6 +263,10 @@ html[data-theme="dark"] .heroBannerWaves {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
+html[data-theme="dark"] .heroBannerStarburst::before {
+  background-image: linear-gradient(315deg, #244eaf, #011034);
+}
+
 /** heroBannerBraidBlue **/
 
 .heroBannerBraidBlue {
@@ -334,18 +338,12 @@ html[data-theme="dark"] .heroBannerWaves {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(315deg, #597cd0, #011034);
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
 html[data-theme="dark"] .heroBannerBraidBlack::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+  background-image: linear-gradient(315deg, #597cd0, #011034);
 }
 
 /** heroBannerDocs - Same as BraidBlack but with z-index for docs pages **/
@@ -370,18 +368,12 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(315deg, #597cd0, #011034);
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
 html[data-theme="dark"] .heroBannerDocs::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+  background-image: linear-gradient(315deg, #597cd0, #011034);
 }
 
 /** heroBannerOuroboros **/
@@ -411,6 +403,64 @@ html[data-theme="dark"] .heroBannerDocs::before {
 .ouroborosLogo {
   color: #ffffff;
   max-width: 30rem;
+}
+
+/** Dark mode text color overrides for colored backgrounds **/
+
+html[data-theme="dark"] .heroBannerDots {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerFluidBlue {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerFluidRed {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerOverlap {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerWaves {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerStarburst {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerBraidBlue {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerBraidRedBlue {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerBraidBlack {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerDocs {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerOuroboros {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerZoom {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerZoomBlueRed {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
+  color: #ffffff;
 }
 
 /* screen size changes */
