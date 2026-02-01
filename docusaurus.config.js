@@ -327,6 +327,7 @@ const config = {
                     { to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling', icon: 'code-solid' },
                     { to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers', icon: 'flask-solid' },
                     { to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides', icon: 'plug-solid' },
+                    { to: '/solutions', label: 'Enterprise Solutions', description: 'Proven blockchain deployments', icon: 'building-solid' },
                   ],
                 },
                 {
@@ -341,22 +342,43 @@ const config = {
               ],
             },
           },
-          /*
-          // Needs revamp
           {
-            to: '/use-cases',  
-            label: 'Use Cases',
+            // The collapsed mega menu for "Solutions"
+            label: 'Solutions',
+            type: 'dropdown',
             position: 'left',
-            items: [  
-              {to: '/use-cases#identity', label: 'Identity'},  
-              {to: '/use-cases#finance', label: 'Finance'},  
-              {to: '/use-cases#supply-chain', label: 'Supply Chain'},  
-              {to: '/use-cases#social-impact', label: 'Social Impact'},  
-              {to: '/use-cases#data-technology', label: 'Data & Technology'},  
-              {to: '/use-cases#diverse', label: 'Diverse Opportunities'},  
+            items: [
+              { to: '/solutions', label: 'Enterprise Solutions' },
+              { to: '/use-cases', label: 'Use Cases' },
+              { to: '/use-cases#identity', label: 'Identity' },
+              { to: '/use-cases#finance', label: 'Finance' },
+              { to: '/use-cases#supply-chain', label: 'Supply Chain' },
             ],
+            // The mega menu full version for "Solutions"
+            mega: true,
+            customProps: {
+              columnCount: 2,
+              columns: [
+                {
+                  title: 'For Enterprise',
+                  icon: 'building-solid',
+                  items: [
+                    { to: '/solutions', label: 'Enterprise Solutions', description: 'Case studies and proven deployments', icon: 'building-solid' },
+                    { href: 'https://cardanofoundation.org/contact', label: 'Contact the Foundation', description: 'Partner with the Cardano Foundation', icon: 'envelope-solid' },
+                  ],
+                },
+                {
+                  title: 'Use Cases',
+                  icon: 'shapes-solid',
+                  items: [
+                    { to: '/use-cases', label: 'All Use Cases', description: 'Explore blockchain applications', icon: 'shapes-solid' },
+                    { to: '/use-cases#identity', label: 'Identity', description: 'Credentials & verification', icon: 'users-solid' },
+                    { to: '/use-cases#supply-chain', label: 'Supply Chain', description: 'Traceability & provenance', icon: 'route-solid' },
+                  ],
+                },
+              ],
+            },
           },
-          */
           /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
