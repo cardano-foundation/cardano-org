@@ -245,7 +245,7 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
-              { to: '/#follow', label: 'Follow Cardano' },
+              { to: '/news', label: 'News' },
               { to: '/newsletter', label: 'Newsletter' },
               { to: '/docs/communities/', label: 'Online Communities' },
               { to: '/ambassadors', label: 'Cardano Ambassadors' },
@@ -264,7 +264,7 @@ const config = {
                   title: 'Connect',
                   icon: 'link-solid',
                   items: [
-                    { to: '/#follow', label: 'Follow Cardano', description: 'Stay Updated', icon: 'link-solid' },
+                    { to: '/news', label: 'News', description: 'Latest Cardano news and updates', icon: 'newspaper-solid' },
                     { to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news', icon: 'envelope-solid' },
                     { to: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels', icon: 'share-nodes-solid' },
                     { to: '/ambassadors', label: 'Ambassador Program', description: 'Meet Cardano Ambassadors', icon: 'people-group-solid' },
@@ -388,20 +388,6 @@ const config = {
             label: 'Tutorial',
           },
           */
-          {
-            to: '/news', label: 'News', position: 'left',
-            /*
-            items: [  
-              {to: '/news', label: 'All Articles (Chronological)'},  
-              {to: '/news/tags/community-digest', label: 'Community Digest'},
-              {to: '/news/tags/education', label: 'Education'},
-              {to: '/news/tags/development', label: 'Development'},
-              {to: '/news/tags/governance', label: 'Governance'},
-              {to: '/news/tags/scaling', label: 'Scaling'},
-              {to: '/news/tags', label: 'View Tags'},  
-          ],
-          */
-          },
           {
             to: "/docs/communities/#cardano-on-discord",
             position: "right",
