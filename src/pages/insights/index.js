@@ -7,6 +7,7 @@ import React, {useMemo, useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
@@ -136,14 +137,13 @@ export default function InsightsIndex() {
       title="Insights"
       description="Explore interactive Cardano insights across governance, staking, consensus, economics, and more."
     >
+      <SiteHero
+        title="Insights"
+        description="Explore Cardano topics through on-chain data and visual charts."
+        bannerType="braidBlue"
+      />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight">Insights</h1>
-            <p className="text-base opacity-80">
-              Insight pages present specific Cardano topics neutrally, connect you to deeper resources, and are powered by on‑chain or regularly refreshed data. Each page explains the subject with clear sentences and visual charts—built for the wider Cardano community to understand a topic better.
-            </p>
-          </div>
           <div className="flex items-center gap-2">
             <input
               type="search"
