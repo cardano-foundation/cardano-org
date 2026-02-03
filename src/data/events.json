@@ -274,5 +274,82 @@
     "image": "techex.png",
     "organizer": "Discover Cardano",
     "recapVideo": ""
+  },
+   {
+    "title": "GITEX Dubai 2026",
+    "description": "The flagship platform where finance, tech and regulation converge - exploring how payments, tokenisation, DeFi, Web3 & digital-assets reshape the global economy, while connecting banks, startups, regulators & investors to build the next-gen financial system.",
+    "startDate": "2026-12-07",
+    "endDate": "2026-12-11",
+    "location": "Dubai, UAE",
+    "link": "https://www.gitex.com/home",
+    "image": "gitex-dubai-2026.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Blockchain Life 2026",
+    "description": "17th International Forum on Web3, Cryptocurrencies and Mining.",
+    "startDate": "2026-12-01",
+    "endDate": "2026-12-02",
+    "location": "Dubai, UAE",
+    "link": "https://blockchain-life.com/autumn2026/",
+    "image": "blockchain-life2026.png",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Bengaluru Tech Summit",
+    "description": "BTS 2026 will continue the mission to Futurise the world, shaping transformative opportunities across DeepTech, Digital Public Infrastructure, AI, SpaceTech, Semicon, Biotechnology, Mobility, FinTech, ClimateTech and beyond. ",
+    "startDate": "2026-11-17",
+    "endDate": "2026-11-19",
+    "location": "Bangalore, India",
+    "link": "https://www.bengalurutechsummit.com/",
+    "image": "bengaluru-2026.png",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Crypto Expo Dubai",
+    "description": "Crypto Expo Dubai is the essential event for anyone in the cryptocurrency and blockchain space. Recognized as a key gathering for industry leaders and enthusiasts, it’s the ultimate platform to explore, learn, and connect within the fast-paced world of crypto.",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-11",
+    "location": "Dubai, UAE",
+    "link": "https://cryptoexpodubai.com/dubai",
+    "image": "expodubai2026.svg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "WebX",
+    "description": "WebX is one of Asia’s largest global conferences planned and operated by CoinPost, Japan’s leading crypto asset and Web3 media platform.",
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-14",
+    "location": "Tokyo",
+    "link": "https://webx-asia.com/",
+    "image": "webx2026.svg",
+    "organizer": "EMURGO",
+    "recapVideo": ""
+  },
+   {
+    "title": "Consensus Miami 2026",
+    "description": "Consensus brings the largest crypto conference in the Americas to Miami’s electric epicenter of finance, technology, and culture.",
+    "startDate": "2026-05-05",
+    "endDate": "2026-05-07",
+    "location": "Miami, FL",
+    "link": "https://consensus.coindesk.com/",
+    "image": "consensus-2026-logo-v2.svg",
+    "organizer": "Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "TOKEN2049 Dubai",
+    "description": "TOKEN2049 will bring the global crypto ecosystem back to Dubai in 2026. The industry's decision-makers will gather to connect, exchange ideas, network, and shape the future.",
+    "startDate": "2026-04-29",
+    "endDate": "2026-04-30",
+    "location": "Dubai, UAE",
+    "link": "https://www.token2049.com/dubai",
+    "image": "token2049-2026.png",
+    "organizer": "EMURGO and Rare Network",
+    "recapVideo": ""
   }
 ]
