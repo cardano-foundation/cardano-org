@@ -4,9 +4,9 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import React, { useEffect, useRef } from "react";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-
-// Translation dictionary
+// Translation dictionary for calculator-specific content
 const translations = {
   en: {
     title: "Staking Calculator",
@@ -22,19 +22,14 @@ const translations = {
   }
 };
 
-function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
-  return (
-    <SiteHero
-      title="Staking Calculator"
-      description="See how much you could potentially earn by staking ada and learn how rewards are calculated."
-      bannerType="dots"
-    />
-  );
-}
-
 export default function Home() {
   const iframeRef = useRef(null);
+  const { i18n: { currentLocale } } = useDocusaurusContext();
+
+  // Map Docusaurus locale to calculator language
+  const langMap = { ja: 'jp', en: 'en' };
+  const lang = langMap[currentLocale] || 'en';
+  const t = translations[lang] || translations.en;
 
   useEffect(() => {
 
@@ -67,23 +62,19 @@ export default function Home() {
       window.removeEventListener("message", handleMessage);
     };
   }, []);
-  
-  // Get the 'lang' parameter from URL, default to 'en'
-  const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
-  const lang = urlParams.get("lang") === "jp" ? "jp" : "en"; // Only allow 'en' or 'jp'
-  
-  // Select translations based on language
-  const t = translations[lang];
+
+  const pageTitle = t.title;
+  const pageDescription = t.description;
 
   return (
     <Layout
-      title={`${t.title} | cardano.org`}
-      description={t.description}
+      title={`${pageTitle} | cardano.org`}
+      description={pageDescription}
     >
       <OpenGraphInfo pageName="calculator" />
       <SiteHero
-        title={t.title}
-        description={t.description}
+        title={pageTitle}
+        description={pageDescription}
         bannerType="dots"
       />
       <main>
@@ -96,11 +87,11 @@ export default function Home() {
           />
         </BoundaryBox>
         {/* Pass the lang parameter dynamically */}
-        <iframe 
+        <iframe
           ref={iframeRef}
           id="myIframe"
-          src={`/crewardcalculator?lang=${lang}`} 
-          style={{ width: "100%", height: "100vh", border: "none" }} 
+          src={`/crewardcalculator/?lang=${lang}`}
+          style={{ width: "100%", height: "100vh", border: "none" }}
         ></iframe>
       </main>
     </Layout>
