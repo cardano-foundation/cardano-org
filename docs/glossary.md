@@ -79,7 +79,7 @@ Cardano Improvement Proposal. A formal document describing proposed changes, fea
 The Cardano Improvement Proposal that defines Cardano's on-chain governance system, introducing DReps, the Constitutional Committee, and formal governance actions. See [governance](/governance/) for details.
 
 ### computation layer
-A deprecated term. Cardano originally used "settlement layer" and "computation layer" to describe its architecture, but this terminology was replaced with Layer 1 and Layer 2 respectively in 2019.
+An early conceptual term used in Cardano’s design to describe smart contract execution, alongside the "settlement layer". This framing was later replaced as smart contracts became integrated directly into transaction validation.
 
 ### constitution
 The foundational document defining Cardano's governance principles, rules, and guardrails. See the [Cardano Constitution](/constitution/).
@@ -206,7 +206,7 @@ The family of proof-of-stake consensus protocols that power Cardano. Variants in
 The point at which a stake pool has received more delegation than is optimal for rewards. Beyond saturation, additional delegation yields diminishing returns, encouraging stake distribution across multiple pools.
 
 ### Plutus Core
-The low-level smart contract language executed on the Cardano blockchain. Developers typically write contracts in higher-level languages like Haskell (using Plinth) or Aiken, which then compile down to Plutus Core. See [Plutus documentation](https://plutus.cardano.intersectmbo.org/docs/) and [smart contract languages](https://developers.cardano.org/docs/smart-contracts/#what-are-the-available-smart-contract-languages) on the Developer Portal.
+An umbrella term that may refer to either Untyped Plutus Core (UPLC) or Typed Plutus Core (TPLC), depending on context. Only Untyped Plutus Core is executed on-chain. See [smart contract languages](https://developers.cardano.org/docs/smart-contracts/#what-are-the-available-smart-contract-languages) on the Developer Portal.
 
 ### PRAGMA
 A member-based, not-for-profit open source association for blockchain software projects. See [PRAGMA](/entities/?tab=pragma) for details.
@@ -240,7 +240,7 @@ The [second era of Cardano development](/research/#shelley), introducing decentr
 Independent blockchains connected to the main Cardano blockchain, enabling interoperability and specialized functionality.
 
 ### slot
-The smallest time unit in the Cardano blockchain, lasting one second. Slots are grouped into epochs (432,000 slots per epoch). Not every slot produces a block—on average, a block is created approximately every 20 seconds.
+Each slot represents an opportunity for a block to be produced by an elected slot leader. Not every slot results in a block, on average, a block is produced approximately every 20 seconds.
 
 ### slot leader
 The stake pool selected by [Ouroboros](/ouroboros/) to produce a block in a given time slot. Selection is probabilistic, weighted by the pool's delegated stake.
@@ -281,6 +281,9 @@ An on-chain fund that accumulates a portion of transaction fees and monetary exp
 
 ### use case
 A specific application or scenario where Cardano technology solves a problem. See [Cardano use cases](/use-cases/).
+
+### Untyped Plutus Core (UPLC)
+The low-level “machine language” that is executed on-chain by Cardano nodes during transaction validation. Developers do not write UPLC directly. Instead, smart contracts are written in higher-level languages such as Plinth or Aiken, which are then compiled down to UPLC. Every smart contract language on Cardano ultimately targets UPLC as the common execution format.
 
 ### USDM
 A fiat-backed stablecoin on the Cardano blockchain.
