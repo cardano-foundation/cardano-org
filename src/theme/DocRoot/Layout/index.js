@@ -23,6 +23,10 @@ export default function DocRootLayout({children}) {
     heroTitle = 'Online Communities';
     heroDescription = 'Connect with fellow Cardano community members around the world through various social channels.';
     heroBannerType = 'braidBlue';
+  } else if (location.pathname.includes('/use-cases')) {
+    heroTitle = 'Cardano Use Cases';
+    heroDescription = 'Explore how Cardano blockchain technology solves real-world problems across industries.';
+    heroBannerType = 'docs';
   }
   
   return (

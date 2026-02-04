@@ -251,7 +251,7 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
-              { to: '/#follow', label: 'Follow Cardano' },
+              { to: '/news', label: 'News' },
               { to: '/newsletter', label: 'Newsletter' },
               { to: '/docs/communities/', label: 'Online Communities' },
               { to: '/ambassadors', label: 'Cardano Ambassadors' },
@@ -270,7 +270,7 @@ const config = {
                   title: 'Connect',
                   icon: 'link-solid',
                   items: [
-                    { to: '/#follow', label: 'Follow Cardano', description: 'Stay Updated', icon: 'link-solid' },
+                    { to: '/news', label: 'News', description: 'Latest Cardano news and updates', icon: 'newspaper-solid' },
                     { to: '/newsletter', label: 'Newsletter', description: 'Stay updated with Cardano news', icon: 'envelope-solid' },
                     { to: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels', icon: 'share-nodes-solid' },
                     { to: '/ambassadors', label: 'Ambassador Program', description: 'Meet Cardano Ambassadors', icon: 'people-group-solid' },
@@ -347,22 +347,43 @@ const config = {
               ],
             },
           },
-          /*
-          // Needs revamp
           {
-            to: '/use-cases',  
-            label: 'Use Cases',
+            // The collapsed mega menu for "Solutions"
+            label: 'Solutions',
+            type: 'dropdown',
             position: 'left',
-            items: [  
-              {to: '/use-cases#identity', label: 'Identity'},  
-              {to: '/use-cases#finance', label: 'Finance'},  
-              {to: '/use-cases#supply-chain', label: 'Supply Chain'},  
-              {to: '/use-cases#social-impact', label: 'Social Impact'},  
-              {to: '/use-cases#data-technology', label: 'Data & Technology'},  
-              {to: '/use-cases#diverse', label: 'Diverse Opportunities'},  
+            items: [
+              { to: '/solutions', label: 'Enterprise Solutions' },
+              { to: '/use-cases', label: 'Use Cases' },
+              { to: '/use-cases#identity', label: 'Identity' },
+              { to: '/use-cases#finance', label: 'Finance' },
+              { to: '/use-cases#supply-chain', label: 'Supply Chain' },
             ],
+            // The mega menu full version for "Solutions"
+            mega: true,
+            customProps: {
+              columnCount: 2,
+              columns: [
+                {
+                  title: 'For Enterprise',
+                  icon: 'building-solid',
+                  items: [
+                    { to: '/solutions', label: 'Enterprise Solutions', description: 'Case studies and proven deployments', icon: 'building-solid' },
+                    { href: 'https://cardanofoundation.org/contact', label: 'Contact the Foundation', description: 'Partner with the Cardano Foundation', icon: 'envelope-solid' },
+                  ],
+                },
+                {
+                  title: 'Use Cases',
+                  icon: 'shapes-solid',
+                  items: [
+                    { to: '/use-cases', label: 'All Use Cases', description: 'Explore blockchain applications', icon: 'shapes-solid' },
+                    { to: '/use-cases#identity', label: 'Identity', description: 'Credentials & verification', icon: 'users-solid' },
+                    { to: '/use-cases#supply-chain', label: 'Supply Chain', description: 'Traceability & provenance', icon: 'route-solid' },
+                  ],
+                },
+              ],
+            },
           },
-          */
           /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
@@ -372,20 +393,6 @@ const config = {
             label: 'Tutorial',
           },
           */
-          {
-            to: '/news', label: 'News', position: 'left',
-            /*
-            items: [  
-              {to: '/news', label: 'All Articles (Chronological)'},  
-              {to: '/news/tags/community-digest', label: 'Community Digest'},
-              {to: '/news/tags/education', label: 'Education'},
-              {to: '/news/tags/development', label: 'Development'},
-              {to: '/news/tags/governance', label: 'Governance'},
-              {to: '/news/tags/scaling', label: 'Scaling'},
-              {to: '/news/tags', label: 'View Tags'},  
-          ],
-          */
-          },
           {
             to: "/docs/communities/#cardano-on-discord",
             position: "right",
