@@ -7,6 +7,9 @@ import SiteHero from '@site/src/components/Layout/SiteHero';
 import enCode from '@site/i18n/en/code.json';
 import deCode from '@site/i18n/de/code.json';
 import jaCode from '@site/i18n/ja/code.json';
+import viCode from '@site/i18n/vi/code.json';
+import koCode from '@site/i18n/ko/code.json';
+import esCode from '@site/i18n/es/code.json';
 
 // Calculate translation stats for a locale
 function calculateStats(sourceMessages, targetMessages) {
@@ -48,7 +51,7 @@ function ProgressBar({ percentage }) {
     }}>
       <div style={{
         width: `${percentage}%`,
-        backgroundColor: percentage === 100 ? '#4caf50' : '#2196f3',
+        backgroundColor: percentage === 100 ? '#4caf50' : percentage < 15 ? '#9e9e9e' : '#2196f3',
         height: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -125,14 +128,20 @@ function LocaleCard({ locale, label, stats, showDetails }) {
 export default function TranslationsPage() {
   const deStats = calculateStats(enCode, deCode);
   const jaStats = calculateStats(enCode, jaCode);
+  const viStats = calculateStats(enCode, viCode);
+  const koStats = calculateStats(enCode, koCode);
+  const esStats = calculateStats(enCode, esCode);
 
   const locales = [
     { locale: 'de', label: 'Deutsch', stats: deStats },
     { locale: 'ja', label: '日本語', stats: jaStats },
+    { locale: 'vi', label: 'Tiếng Việt', stats: viStats },
+    { locale: 'ko', label: '한국어', stats: koStats },
+    { locale: 'es', label: 'Español', stats: esStats },
   ];
 
-  const overallTranslated = deStats.translated + jaStats.translated;
-  const overallTotal = deStats.total + jaStats.total;
+  const overallTranslated = deStats.translated + jaStats.translated + viStats.translated + koStats.translated + esStats.translated;
+  const overallTotal = deStats.total + jaStats.total + viStats.total + koStats.total + esStats.total;
   const overallPercentage = Math.round((overallTranslated / overallTotal) * 100);
 
   return (
@@ -261,8 +270,7 @@ export default function TranslationsPage() {
               borderRadius: '4px',
               borderLeft: '4px solid var(--ifm-color-primary)',
             }}>
-              <strong>Questions?</strong> Feel free to reach out on{' '}
-              <a href="https://discord.gg/cardano" target="_blank" rel="noopener noreferrer">Discord</a>{' '}
+              <strong>Questions?</strong> Feel free to reach out on GitHub
               or open a GitHub issue. We appreciate every contribution!
             </div>
           </div>

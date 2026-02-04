@@ -8,6 +8,9 @@ import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import enCode from '@site/i18n/en/code.json';
 import deCode from '@site/i18n/de/code.json';
 import jaCode from '@site/i18n/ja/code.json';
+import viCode from '@site/i18n/vi/code.json';
+import koCode from '@site/i18n/ko/code.json';
+import esCode from '@site/i18n/es/code.json';
 
 // Calculate translation percentage
 function calculatePercentage(sourceMessages, targetMessages) {
@@ -31,6 +34,9 @@ const translationStats = {
   en: 100,
   de: calculatePercentage(enCode, deCode),
   ja: calculatePercentage(enCode, jaCode),
+  vi: calculatePercentage(enCode, viCode),
+  ko: calculatePercentage(enCode, koCode),
+  es: calculatePercentage(enCode, esCode),
 };
 
 // Progress bar component
@@ -47,7 +53,7 @@ function MiniProgressBar({ percentage }) {
       <div style={{
         width: `${percentage}%`,
         height: '100%',
-        backgroundColor: percentage === 100 ? 'var(--ifm-color-success)' : 'var(--ifm-color-primary)',
+        backgroundColor: percentage === 100 ? 'var(--ifm-color-success)' : percentage < 15 ? 'var(--ifm-color-emphasis-400)' : 'var(--ifm-color-primary)',
         transition: 'width 0.3s ease',
       }} />
     </div>
