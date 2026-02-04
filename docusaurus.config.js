@@ -73,6 +73,12 @@ const config = {
         content: '1E8DDBC2D1ADF529',
       },
     },
+    {
+      // Stub gtag for dev mode to prevent "window.gtag is not a function" errors
+      tagName: 'script',
+      attributes: {},
+      innerHTML: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}',
+    },
   ],
 
   presets: [
