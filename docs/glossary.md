@@ -26,13 +26,28 @@ The [hard fork on December 16, 2020](/hardforks/) that added token locking capab
 ### Alonzo
 The [hard fork on September 12, 2021](/hardforks/) that brought smart contract functionality to Cardano through Plutus.
 
+### AMA
+Ask Me Anything. A live Q&A session where community members can ask questions directly to project leaders, developers, or other notable figures in the Cardano ecosystem.
+
 ### ambassador
 A community member who promotes Cardano education and adoption. See [Cardano Ambassadors](/ambassadors/) for the program.
 
+### API
+Application Programming Interface. A set of rules and protocols that allows different software applications to communicate with each other. In the Cardano ecosystem, APIs enable developers to interact with the blockchain, query data, and build applications. See [Builder Tools](https://developers.cardano.org/tools) on the Developer Portal for a list of APIs.
+
 ## B
+
+### Babel fees
+A mechanism that allows users to pay transaction fees using native tokens instead of ada. Stake pool operators act as liquidity providers, offering exchange rates for tokens they accept. The fees still settle in ada behind the scenes, keeping ada central to the ecosystem while enabling broader participation. Made possible by Cardano's eUTXO model. See [Native Tokens](https://developers.cardano.org/docs/native-tokens/) on the Developer Portal.
 
 ### Basho
 The [fourth era of Cardano development](/research/#basho), focused on scaling and performance optimization. Named after Matsuo Basho, a Japanese poet and master of haiku.
+
+### bech32
+An address encoding format used for Cardano addresses since the [Shelley hard fork](/hardforks/). Bech32 provides built-in error detection to protect against accidental misspellings or truncations. Cardano addresses use prefixes like `addr1` for payment addresses and `stake1` for stake addresses. See [CIP-5](https://cips.cardano.org/cip/CIP-5) for common bech32 prefixes and [CIP-19](https://cips.cardano.org/cip/CIP-19) for address structure details.
+
+### block
+A unit of data containing a batch of transactions that is added to the blockchain. Each block includes a cryptographic reference to the previous block, forming an immutable chain. On Cardano, blocks are produced by stake pools selected through the [Ouroboros](/ouroboros/) protocol. Block size has been increased over time to improve network capacity.
 
 ### bridge
 A protocol that connects Cardano to other blockchains, enabling assets to move between networks. See [bridge apps](/apps/?tags=bridge).
@@ -43,13 +58,28 @@ The [first era of Cardano development](/research/#byron), establishing the found
 ## C
 
 ### Cardano
-A public, permissionless Layer 1 blockchain built on peer-reviewed research. A collection of open-source, patent-free protocols for value transfer, identity, and governance.
+A public, permissionless Layer 1 blockchain built on [peer-reviewed research](/research/). A collection of open-source, patent-free protocols for value transfer, identity, and governance.
 
 ### the Cardano Foundation
 An independent, Swiss-based not-for-profit organization responsible for the advancement of Cardano. See [Cardano Foundation](/entities/?tab=cf) for details.
 
+### Cardano Summit
+The annual flagship event for the Cardano community, featuring announcements, technical presentations, and networking opportunities. The summit brings together developers, stake pool operators, partners, and community members from around the world.
+
+### CBDC
+Central Bank Digital Currency. A digital form of fiat currency issued and regulated by a central bank. Unlike decentralized cryptocurrencies, CBDCs are controlled by monetary authorities. Cardano's technology has been explored for CBDC implementations due to its scalability and security features.
+
+### CEX
+Centralized Exchange. A platform where cryptocurrencies are traded through an intermediary that manages order books, custody, and transactions. Unlike DEXs, CEXs hold custody of your funds until you withdraw to your own wallet. See [where to get ada](/where-to-get-ada/#exchanges).
+
+### CIP
+Cardano Improvement Proposal. A formal document describing proposed changes, features, or standards for the Cardano ecosystem. CIPs follow a structured process for community review and adoption. See all proposals at [cips.cardano.org](https://cips.cardano.org/).
+
 ### CIP-1694
 The Cardano Improvement Proposal that defines Cardano's on-chain governance system, introducing DReps, the Constitutional Committee, and formal governance actions. See [governance](/governance/) for details.
+
+### computation layer
+An early conceptual term used in Cardano’s design to describe smart contract execution, alongside the "settlement layer". This framing was later replaced as smart contracts became integrated directly into transaction validation.
 
 ### constitution
 The foundational document defining Cardano's governance principles, rules, and guardrails. See the [Cardano Constitution](/constitution/).
@@ -72,12 +102,27 @@ The process of assigning your stake to a stake pool without transferring your ad
 An open source project at [developers.cardano.org](https://developers.cardano.org) providing resources for building on Cardano.
 
 ### DEX
-Decentralized Exchange. A platform for trading tokens directly from your wallet without intermediaries. See [DEX apps](/apps/?tags=dex).
+Decentralized Exchange. A platform for trading tokens directly from your wallet without intermediaries. See [where to get ada](/where-to-get-ada/#exchanges).
+
+### DID
+Decentralized Identifier. A type of digital identity that is self-owned and independent of centralized registries. DIDs enable individuals to control their own identity data without relying on third parties.
+
+### Djed
+An algorithmic stablecoin protocol on Cardano. Djed uses a reserve of base coins (ada) and a reserve coin (SHEN) to maintain its peg to the US dollar, without relying on fiat-backed reserves.
 
 ### DRep
 Delegated Representative. In Cardano's governance system, ada holders can delegate their voting power to DReps who vote on governance actions on their behalf.
 
+### DYOR
+Do Your Own Research. A common phrase in the cryptocurrency community encouraging individuals to thoroughly investigate projects, teams, and claims before investing or participating. See [common scams](/common-scams/) to learn how to protect yourself.
+
 ## E
+
+### eclipse
+A network attack where a node is isolated from honest peers and connected only to attacker-controlled nodes. This prevents the node from seeing the legitimate chain, potentially causing it to accept invalid transactions or blocks.
+
+### Edinburgh Decentralisation Index (EDI)
+A research framework developed by Input Output and the University of Edinburgh to measure and compare decentralization across blockchain systems. The EDI evaluates multiple layers including consensus, tokenomics, hardware, software, network, and governance. See the [EDI dashboard](https://informatics.ed.ac.uk/blockchain/edi).
 
 ### EMURGO
 A global blockchain solutions company and one of the founding entities of Cardano. See [EMURGO](/entities/?tab=emurgo) for details.
@@ -109,11 +154,22 @@ A Layer 2 scaling solution for Cardano using state channels (Hydra Heads) to ena
 
 ## I
 
+### Icarus
+A reference implementation for a lightweight Cardano wallet, developed by Input Output. Icarus served as the foundation for the Yoroi wallet.
+
 ### Input Output
 A research and engineering company and one of the founding entities of Cardano. Formerly known as IOHK. See [Input Output](/entities/?tab=iog) for details.
 
 ### Intersect
 A not-for-profit, member-based organization for the Cardano ecosystem focused on governance and community coordination. See [Intersect](/entities/?tab=intersect) for details.
+
+### ISPO
+Initial Stake Pool Offering. A fundraising method where delegators support a project by staking their ada to a designated stake pool. Instead of receiving full staking rewards, delegators divert some or all rewards to the project in exchange for the project's tokens. Unlike traditional token sales, participants never lose custody of their ada.
+
+## J
+
+### Jörmungandr
+A node implementation written in Rust, originally developed for the Incentivized Testnet in late 2019. It ran a Praos-like consensus protocol. Later, Jörmungandr was used as a sidechain to power Project Catalyst voting. Named after the sea serpent from Norse mythology.
 
 ## L
 
@@ -149,6 +205,9 @@ The family of proof-of-stake consensus protocols that power Cardano. Variants in
 ### pool saturation
 The point at which a stake pool has received more delegation than is optimal for rewards. Beyond saturation, additional delegation yields diminishing returns, encouraging stake distribution across multiple pools.
 
+### Plutus Core
+An umbrella term that may refer to either Untyped Plutus Core (UPLC) or Typed Plutus Core (TPLC), depending on context. Only Untyped Plutus Core is executed on-chain. See [smart contract languages](https://developers.cardano.org/docs/smart-contracts/#what-are-the-available-smart-contract-languages) on the Developer Portal.
+
 ### PRAGMA
 A member-based, not-for-profit open source association for blockchain software projects. See [PRAGMA](/entities/?tab=pragma) for details.
 
@@ -168,6 +227,9 @@ Ada earned by delegators and stake pool operators for participating in the netwo
 
 ## S
 
+### SanchoNet
+A testnet for testing Cardano's governance features introduced by CIP-1694. On SanchoNet, stake pool operators, DReps, and developers can experiment with governance actions, voting mechanisms, and related tooling before mainnet deployment. See [sancho.network](https://sancho.network).
+
 ### scam
 A fraudulent scheme designed to steal funds or personal information, often exploiting trust or lack of knowledge. Common examples include fake giveaways and phishing attacks. See [common scams](/common-scams/) for how to protect yourself.
 
@@ -177,8 +239,14 @@ The [second era of Cardano development](/research/#shelley), introducing decentr
 ### sidechains
 Independent blockchains connected to the main Cardano blockchain, enabling interoperability and specialized functionality.
 
+### slot
+Each slot represents an opportunity for a block to be produced by an elected slot leader. Not every slot results in a block, on average, a block is produced approximately every 20 seconds.
+
 ### slot leader
 The stake pool selected by [Ouroboros](/ouroboros/) to produce a block in a given time slot. Selection is probabilistic, weighted by the pool's delegated stake.
+
+### SMASH
+Stakepool Metadata Aggregation Server. An off-chain service that collects and stores stake pool metadata such as name, ticker, and homepage. Wallets and explorers can choose which SMASH server to use for displaying pool information. Delisting a pool from a SMASH server only affects how it appears in applications using that server—it does not prevent the pool from participating in the network or producing blocks.
 
 ### smart contract
 Self-executing code stored on a blockchain that automatically enforces and executes agreement terms when predefined conditions are met.
@@ -213,6 +281,9 @@ An on-chain fund that accumulates a portion of transaction fees and monetary exp
 
 ### use case
 A specific application or scenario where Cardano technology solves a problem. See [Cardano use cases](/use-cases/).
+
+### Untyped Plutus Core (UPLC)
+The low-level “machine language” that is executed on-chain by Cardano nodes during transaction validation. Developers do not write UPLC directly. Instead, smart contracts are written in higher-level languages such as Plinth or Aiken, which are then compiled down to UPLC. Every smart contract language on Cardano ultimately targets UPLC as the common execution format.
 
 ### USDM
 A fiat-backed stablecoin on the Cardano blockchain.
