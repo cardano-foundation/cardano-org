@@ -62,7 +62,12 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja', 'de'],
+    localeConfigs: {
+      en: { label: 'English', htmlLang: 'en-US' },
+      ja: { label: '日本語', htmlLang: 'ja' },
+      de: { label: 'Deutsch', htmlLang: 'de' },
+    },
   },
 
   headTags: [
@@ -163,27 +168,9 @@ const config = {
         appId: '2GOYNZM2J1',
         apiKey: 'b3ea5bee26e2b95a6c6446489bdc6adf',
         indexName: 'cardano_org_pages',
-        contextualSearch: false,
-        placeholder: 'Search cardano.org',
-        translations: {
-          button: {
-            buttonText: 'Search',
-            buttonAriaLabel: 'Search',
-          },
-          modal: {
-            searchBox: {
-              resetButtonTitle: 'Clear',
-              resetButtonAriaLabel: 'Clear',
-              cancelButtonText: 'Cancel',
-              cancelButtonAriaLabel: 'Cancel',
-            },
-            footer: {
-              selectText: 'to select',
-              navigateText: 'to navigate',
-              closeText: 'to close',
-            },
-          },
-        },
+        contextualSearch: true,
+        searchPagePath: 'search',
+        // Search UI translations moved to i18n/*/docusaurus-theme-classic/theme.json
       },
 
       navbar: {
@@ -403,6 +390,10 @@ const config = {
             href: `${vars.repository}`,
             position: "right",
             className: "header-github-link",
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },

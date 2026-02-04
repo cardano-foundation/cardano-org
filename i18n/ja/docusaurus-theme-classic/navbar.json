@@ -1,0 +1,118 @@
+{
+  "logo.alt": {
+    "message": "Cardano Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Learn": {
+    "message": "Learn",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Participate": {
+    "message": "Participate",
+    "description": "Navbar item with label Participate"
+  },
+  "item.label.Build": {
+    "message": "Build",
+    "description": "Navbar item with label Build"
+  },
+  "item.label.News": {
+    "message": "News",
+    "description": "Navbar item with label News"
+  },
+  "item.label.What is ada?": {
+    "message": "What is ada?",
+    "description": "Navbar item with label What is ada?"
+  },
+  "item.label.Get started with Cardano": {
+    "message": "Get started with Cardano",
+    "description": "Navbar item with label Get started with Cardano"
+  },
+  "item.label.Where to get ada?": {
+    "message": "Where to get ada?",
+    "description": "Navbar item with label Where to get ada?"
+  },
+  "item.label.Protect your ada": {
+    "message": "Protect your ada",
+    "description": "Navbar item with label Protect your ada"
+  },
+  "item.label.Delegate your ada": {
+    "message": "Delegate your ada",
+    "description": "Navbar item with label Delegate your ada"
+  },
+  "item.label.Use Cardano Apps": {
+    "message": "Use Cardano Apps",
+    "description": "Navbar item with label Use Cardano Apps"
+  },
+  "item.label.Cardano Research": {
+    "message": "Cardano Research",
+    "description": "Navbar item with label Cardano Research"
+  },
+  "item.label.Cardano Insights": {
+    "message": "Cardano Insights",
+    "description": "Navbar item with label Cardano Insights"
+  },
+  "item.label.Hard Forks": {
+    "message": "Hard Forks",
+    "description": "Navbar item with label Hard Forks"
+  },
+  "item.label.Follow Cardano": {
+    "message": "Follow Cardano",
+    "description": "Navbar item with label Follow Cardano"
+  },
+  "item.label.Newsletter": {
+    "message": "Newsletter",
+    "description": "Navbar item with label Newsletter"
+  },
+  "item.label.Online Communities": {
+    "message": "Online Communities",
+    "description": "Navbar item with label Online Communities"
+  },
+  "item.label.Cardano Ambassadors": {
+    "message": "Cardano Ambassadors",
+    "description": "Navbar item with label Cardano Ambassadors"
+  },
+  "item.label.Cardano Events": {
+    "message": "Cardano Events",
+    "description": "Navbar item with label Cardano Events"
+  },
+  "item.label.Cardano Forum": {
+    "message": "Cardano Forum",
+    "description": "Navbar item with label Cardano Forum"
+  },
+  "item.label.Get involved in cardano.org": {
+    "message": "Get involved in cardano.org",
+    "description": "Navbar item with label Get involved in cardano.org"
+  },
+  "item.label.Participate in governance": {
+    "message": "Participate in governance",
+    "description": "Navbar item with label Participate in governance"
+  },
+  "item.label.Governance Tools": {
+    "message": "Governance Tools",
+    "description": "Navbar item with label Governance Tools"
+  },
+  "item.label.Cardano Constitution": {
+    "message": "Cardano Constitution",
+    "description": "Navbar item with label Cardano Constitution"
+  },
+  "item.label.Start building on Cardano": {
+    "message": "Start building on Cardano",
+    "description": "Navbar item with label Start building on Cardano"
+  },
+  "item.label.Integrate Cardano": {
+    "message": "Integrate Cardano",
+    "description": "Navbar item with label Integrate Cardano"
+  },
+  "item.label.Developer Portal": {
+    "message": "Developer Portal",
+    "description": "Navbar item with label Developer Portal"
+  },
+  "item.label.Builder Tools": {
+    "message": "Builder Tools",
+    "description": "Navbar item with label Builder Tools"
+  },
+  "item.label.Companies building on Cardano": {
+    "message": "Companies building on Cardano",
+    "description": "Navbar item with label Companies building on Cardano"
+  }
+}

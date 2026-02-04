@@ -1,0 +1,25 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+
+preserve_hierarchy: true
+
+files:
+  # Code strings (custom pages/components)
+  - source: /i18n/en/code.json
+    translation: /i18n/%two_letters_code%/code.json
+
+  # Theme translations (navbar, footer, etc)
+  - source: /i18n/en/docusaurus-theme-classic/*.json
+    translation: /i18n/%two_letters_code%/docusaurus-theme-classic/%original_file_name%
+
+  # Docs plugin translations
+  - source: /i18n/en/docusaurus-plugin-content-docs/**/*.json
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
+
+  # Documentation markdown
+  - source: /docs/**/*.md
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+
+  # Blog posts markdown
+  - source: /blog/**/*.md
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%

@@ -12,7 +12,9 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "crowdin:upload": "crowdin upload sources",
+    "crowdin:download": "crowdin download"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
