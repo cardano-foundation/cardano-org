@@ -16,11 +16,11 @@
     "description": "Navbar item with label Build"
   },
   "item.label.News": {
-    "message": "Neuigkeiten",
+    "message": "Neues",
     "description": "Navbar item with label News"
   },
   "item.label.What is ada?": {
-    "message": "Was ist ada?",
+    "message": "Was ist Ada?",
     "description": "Navbar item with label What is ada?"
   },
   "item.label.Get started with Cardano": {
@@ -28,15 +28,15 @@
     "description": "Navbar item with label Get started with Cardano"
   },
   "item.label.Where to get ada?": {
-    "message": "Wo bekommt man ada?",
+    "message": "Wo bekommt man Ada?",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "Schütze deine ada",
+    "message": "Schütze deine Ada",
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your ada": {
-    "message": "Delegiere deine ada",
+    "message": "Delegiere deine Ada",
     "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Use Cardano Apps": {
@@ -44,11 +44,11 @@
     "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
-    "message": "Cardano Forschung",
+    "message": "Cardano Research",
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Einblicke",
+    "message": "Cardano Insights",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
@@ -68,11 +68,11 @@
     "description": "Navbar item with label Online Communities"
   },
   "item.label.Cardano Ambassadors": {
-    "message": "Cardano Botschafter",
+    "message": "Cardano Ambassadors",
     "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
-    "message": "Cardano Veranstaltungen",
+    "message": "Cardano Events",
     "description": "Navbar item with label Cardano Events"
   },
   "item.label.Cardano Forum": {
@@ -80,7 +80,7 @@
     "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
-    "message": "Bei cardano.org mitwirken",
+    "message": "Bei cardano.org mitmachen",
     "description": "Navbar item with label Get involved in cardano.org"
   },
   "item.label.Participate in governance": {
@@ -92,11 +92,11 @@
     "description": "Navbar item with label Governance Tools"
   },
   "item.label.Cardano Constitution": {
-    "message": "Cardano Verfassung",
+    "message": "Cardano Constitution",
     "description": "Navbar item with label Cardano Constitution"
   },
   "item.label.Start building on Cardano": {
-    "message": "Auf Cardano entwickeln",
+    "message": "Mit Cardano entwickeln",
     "description": "Navbar item with label Start building on Cardano"
   },
   "item.label.Integrate Cardano": {
@@ -104,7 +104,7 @@
     "description": "Navbar item with label Integrate Cardano"
   },
   "item.label.Developer Portal": {
-    "message": "Entwicklerportal",
+    "message": "Developer Portal",
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
@@ -112,7 +112,7 @@
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
-    "message": "Unternehmen auf Cardano",
+    "message": "Unternehmen setzen auf Cardano",
     "description": "Navbar item with label Companies building on Cardano"
   }
 }

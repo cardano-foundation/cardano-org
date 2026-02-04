@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
+import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
@@ -27,14 +28,14 @@ import authors from '@site/src/data/authors.json';
 // ────────────────────────────────────────────────────────────────────────────
 export const meta = {
   pageName: 'supply',
-  pageTitle: 'Cardano Supply Overview',
-  pageDescription: 'Visual representation of ada supply distribution across key categories in the Cardano network.',
-  title: 'Cardano Supply Overview',
+  pageTitle: translate({id: 'insightsSupply.meta.pageTitle', message: 'Cardano Supply Overview'}),
+  pageDescription: translate({id: 'insightsSupply.meta.pageDescription', message: 'Visual representation of ada supply distribution across key categories in the Cardano network.'}),
+  title: translate({id: 'insightsSupply.meta.title', message: 'Cardano Supply Overview'}),
   date: '', // set dynamically
   og: {
-    title: 'Cardano Supply Distribution',
-    description: 'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'
-  }, 
+    title: translate({id: 'insightsSupply.og.title', message: 'Cardano Supply Distribution'}),
+    description: translate({id: 'insightsSupply.og.description', message: 'Explore how ada is distributed across reserves, circulation, treasury, and rewards.'})
+  },
   tags: ['economics', 'staking'],
   indexed: true
 };
@@ -174,7 +175,7 @@ function PageContent() {
   
   const fetchData = async () => {
     if (!API_URL) {
-      setErrorInfo({ kind: 'config', title: 'Missing configuration', message: 'API URL is missing.' });
+      setErrorInfo({ kind: 'config', title: translate({id: 'insightsSupply.error.configTitle', message: 'Missing configuration'}), message: translate({id: 'insightsSupply.error.configMessage', message: 'API URL is missing.'}) });
       return;
     }
     setIsLoading(true);
@@ -190,7 +191,7 @@ function PageContent() {
       const parsed = parseInt(urlEpochNow, 10);
       const validEpoch = urlEpochNow && !Number.isNaN(parsed) && parsed >= MIN_EPOCH ? parsed : null;
       if (urlEpochNow && (Number.isNaN(parsed) || parsed < MIN_EPOCH)) {
-        setErrorInfo({ kind: 'input', title: 'Invalid epoch', message: `Epoch must be ≥ ${MIN_EPOCH}.` });
+        setErrorInfo({ kind: 'input', title: translate({id: 'insightsSupply.error.invalidEpochTitle', message: 'Invalid epoch'}), message: translate({id: 'insightsSupply.error.invalidEpochMessage', message: 'Epoch must be ≥ {minEpoch}.'}, {minEpoch: MIN_EPOCH}) });
         setIsLoading(false);
         return;
       }
@@ -337,7 +338,7 @@ function PageContent() {
               disabled={isLoading}
               aria-disabled={isLoading}
             >
-              {isLoading ? 'Retrying…' : 'Retry'}
+              {isLoading ? translate({id: 'insightsSupply.error.retrying', message: 'Retrying…'}) : translate({id: 'insightsSupply.error.retry', message: 'Retry'})}
             </button>
           </div>
         </div>
@@ -347,7 +348,7 @@ function PageContent() {
 
   // first load placeholder
   if (!isPrimed) {
-    return <p>Preparing…</p>;
+    return <p>{translate({id: 'insightsSupply.loading.preparing', message: 'Preparing…'})}</p>;
   }
  
   // derived data (load only now, not earlier!)
@@ -357,27 +358,26 @@ function PageContent() {
 
   // donut chart data
   const chartData = [
-    { label: 'Circulation',        value: totalsCurr.circulation,      color: '#5470c6', show_in_donut: true,  context_info: 'Sum of all circulating UTxOs' },
-    { label: 'Treasury',           value: totalsCurr.treasury,         color: '#91cc75', show_in_donut: true,  context_info: 'All ada currently in the treasury pot' },
-    { label: 'Rewards',            value: totalsCurr.reward,           color: '#fac858', show_in_donut: true,  context_info: 'All unclaimed rewards' },
-    { label: 'Deposits Stake',     value: totalsCurr.deposits_stake,   color: '#ee6666', show_in_donut: true,  context_info: 'Deposit pot for registered stake pools and staking accounts' },
-    { label: 'Deposits DRep',      value: totalsCurr.deposits_drep,    color: '#73c0de', show_in_donut: true,  context_info: 'Deposit pot for registered DReps' },
-    { label: 'Deposits Proposal',  value: totalsCurr.deposits_proposal,color: '#3ba272', show_in_donut: true,  context_info: 'Deposit pot for active governance actions' },
-    { label: 'Fees',               value: totalsCurr.fees,             color: '#fc8452', show_in_donut: true,  context_info: 'Fees collected' },
-    { label: 'Total Supply',       value: totalsCurr.supply,           color: '#999999', show_in_donut: false, context_info: 'All ada in circulation + unclaimed rewards + deposits + fees + treasury' },
-    { label: 'Reserves',           value: totalsCurr.reserves,         color: '#9a60b4', show_in_donut: true,  context_info: 'Difference between maximum and total supply' },
+    { label: translate({id: 'insightsSupply.chart.circulation', message: 'Circulation'}),        value: totalsCurr.circulation,      color: '#5470c6', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.circulationInfo', message: 'Sum of all circulating UTxOs'}) },
+    { label: translate({id: 'insightsSupply.chart.treasury', message: 'Treasury'}),           value: totalsCurr.treasury,         color: '#91cc75', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.treasuryInfo', message: 'All ada currently in the treasury pot'}) },
+    { label: translate({id: 'insightsSupply.chart.rewards', message: 'Rewards'}),            value: totalsCurr.reward,           color: '#fac858', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.rewardsInfo', message: 'All unclaimed rewards'}) },
+    { label: translate({id: 'insightsSupply.chart.depositsStake', message: 'Deposits Stake'}),     value: totalsCurr.deposits_stake,   color: '#ee6666', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.depositsStakeInfo', message: 'Deposit pot for registered stake pools and staking accounts'}) },
+    { label: translate({id: 'insightsSupply.chart.depositsDRep', message: 'Deposits DRep'}),      value: totalsCurr.deposits_drep,    color: '#73c0de', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.depositsDRepInfo', message: 'Deposit pot for registered DReps'}) },
+    { label: translate({id: 'insightsSupply.chart.depositsProposal', message: 'Deposits Proposal'}),  value: totalsCurr.deposits_proposal,color: '#3ba272', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.depositsProposalInfo', message: 'Deposit pot for active governance actions'}) },
+    { label: translate({id: 'insightsSupply.chart.fees', message: 'Fees'}),               value: totalsCurr.fees,             color: '#fc8452', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.feesInfo', message: 'Fees collected'}) },
+    { label: translate({id: 'insightsSupply.chart.totalSupply', message: 'Total Supply'}),       value: totalsCurr.supply,           color: '#999999', show_in_donut: false, context_info: translate({id: 'insightsSupply.chart.totalSupplyInfo', message: 'All ada in circulation + unclaimed rewards + deposits + fees + treasury'}) },
+    { label: translate({id: 'insightsSupply.chart.reserves', message: 'Reserves'}),           value: totalsCurr.reserves,         color: '#9a60b4', show_in_donut: true,  context_info: translate({id: 'insightsSupply.chart.reservesInfo', message: 'Difference between maximum and total supply'}) },
   ];
   const maxSupply = chartData
     .filter((d) => d.show_in_donut)
     .reduce((sum, d) => sum + Number(d.value || 0), 0);
 
   chartData.push({
-    label: 'Maximum supply',
+    label: translate({id: 'insightsSupply.chart.maximumSupply', message: 'Maximum supply'}),
     value: maxSupply,
     color: '#444444',
     show_in_donut: false,
-    context_info:
-      'The maximum amount of ada that can ever exist, based on the genesis block definition.'
+    context_info: translate({id: 'insightsSupply.chart.maximumSupplyInfo', message: 'The maximum amount of ada that can ever exist, based on the genesis block definition.'})
   });
 
   // delta calculations for FACT section
@@ -490,10 +490,10 @@ function PageContent() {
         <table style={{ borderCollapse: 'collapse', margin: '0 auto', fontSize: '0.8em' }}>
           <thead>
             <tr>
-              <th style={{ padding: '8px', textAlign: 'right' }}>Category</th>
-              <th style={{ padding: '8px', textAlign: 'right' }}>ada</th>
+              <th style={{ padding: '8px', textAlign: 'right' }}>{translate({id: 'insightsSupply.table.category', message: 'Category'})}</th>
+              <th style={{ padding: '8px', textAlign: 'right' }}>{translate({id: 'insightsSupply.table.ada', message: 'ada'})}</th>
               <th style={{ padding: '8px', textAlign: 'right' }}>%</th>
-              <th style={{ padding: '8px', textAlign: 'left' }}>Description</th>
+              <th style={{ padding: '8px', textAlign: 'left' }}>{translate({id: 'insightsSupply.table.description', message: 'Description'})}</th>
             </tr>
           </thead>
           <tbody>
@@ -517,11 +517,11 @@ function PageContent() {
 
       {/* FAQ */}
       <div style={{ marginTop: '2rem' }}>
-		<Heading as="h2" id="facts">Epoch {displayedEpoch} facts:</Heading>
+		<Heading as="h2" id="facts">{translate({id: 'insightsSupply.faq.heading', message: 'Epoch {epoch} facts:'}, {epoch: displayedEpoch})}</Heading>
 
 
 		{/* #############################  */}
-        <h3>Q: How did the values change compared to the previous Epoch?</h3>
+        <h3>{translate({id: 'insightsSupply.faq.q1.question', message: 'Q: How did the values change compared to the previous Epoch?'})}</h3>
         <p>
           A: At the start of epoch {displayedEpoch}, the Cardano Ouroboros protocol distributed the staking
           rewards for epoch {displayedEpoch - 2} and transaction fees collected in epoch {displayedEpoch - 1}.
@@ -531,7 +531,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <h3>Q: How much ada was added to the treasury?</h3>
+        <h3>{translate({id: 'insightsSupply.faq.q2.question', message: 'Q: How much ada was added to the treasury?'})}</h3>
         <p>
           {displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD && totalTreasuryWithdrawalsCurr > 0 ? (
             // For governance epochs with withdrawals from current epoch, explain both additions and withdrawals
@@ -583,7 +583,7 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <h3>Q: How many fees were collected and distributed?</h3>
+        <h3>{translate({id: 'insightsSupply.faq.q3.question', message: 'Q: How many fees were collected and distributed?'})}</h3>
         <p>
           {isCurrentEpoch
             ? (
@@ -600,10 +600,10 @@ function PageContent() {
         </p>
 
 		{/* #############################  */}
-        <h3>Q: Were there withdrawals from the treasury in epoch {displayedEpoch}?</h3>
+        <h3>{translate({id: 'insightsSupply.faq.q4.question', message: 'Q: Were there withdrawals from the treasury in epoch {epoch}?'}, {epoch: displayedEpoch})}</h3>
         <p>
           {withdrawalsCurrRes.length === 0
-            ? `A: There were no treasury withdrawals during this epoch.`
+            ? translate({id: 'insightsSupply.faq.q4.noWithdrawals', message: 'A: There were no treasury withdrawals during this epoch.'})
             : (
               <>
                 A: {withdrawalsCurrRes.length === 1
@@ -645,7 +645,7 @@ function PageContent() {
         </p>
         
 		{/* #############################  */}
-        <h3>Q: Where can I learn more about the Cardano Mainnet reward calculation?</h3>
+        <h3>{translate({id: 'insightsSupply.faq.q5.question', message: 'Q: Where can I learn more about the Cardano Mainnet reward calculation?'})}</h3>
         <p>
             The reward calculation is based on the <Link href="https://github.com/IntersectMBO/cardano-ledger?tab=readme-ov-file#cardano-ledger">ledger specification</Link>. 
             Further information can be found in the <Link href="https://cardano-scaling.github.io/cardano-blueprint/ledger/index.html">Cardano Blueprint</Link> documentation. 

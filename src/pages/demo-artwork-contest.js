@@ -4,15 +4,14 @@ import WelcomeHeroArtworkContest from "@site/src/components/Layout/WelcomeHeroAr
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <WelcomeHeroArtworkContest
-      title={["Making the world Work Better For All"]}
-      description="Cardano is a blockchain platform for changemakers, innovators, and visionaries, 
-        with the tools and technologies required to create possibility for the many, as well as the few, 
-        and bring about positive global change."
+      title={[translate({id: 'artworkContest.hero.title', message: 'Making the world Work Better For All'})]}
+      description={translate({id: 'artworkContest.hero.description', message: 'Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change.'})}
     />
   );
 }
@@ -49,14 +48,14 @@ function FeaturedTitleWithText({ title, description, quote, headingDot }) {
           )}
           <h2 className="red-text">{quote}</h2>
 
-           
+
 
           {/* Display the uploaded image as a preview */}
           {imageSrc && (
             <div>
               <img
                 src={imageSrc}
-                alt="Preview"
+                alt={translate({id: 'artworkContest.imagePreview.alt', message: 'Preview'})}
                 style={{ maxWidth: "100%", marginTop: "20px" }}
               />
             </div>
@@ -70,30 +69,30 @@ function FeaturedTitleWithText({ title, description, quote, headingDot }) {
 export default function Home() {
   return (
     <Layout
-      title="Home | cardano.org"
-      description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+      title={translate({id: 'artworkContest.layout.title', message: 'Home | cardano.org'})}
+      description={translate({id: 'artworkContest.layout.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
     >
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <FeaturedTitleWithText
-              title="Artwork Contest Test Page"
+              title={translate({id: 'artworkContest.content.title', message: 'Artwork Contest Test Page'})}
               description={[
-                "Upload your image here to see how it would look like.",
-                "Toggle dark mode and resize the browser to see how it adapts.",
+                translate({id: 'artworkContest.content.description1', message: 'Upload your image here to see how it would look like.'}),
+                translate({id: 'artworkContest.content.description2', message: 'Toggle dark mode and resize the browser to see how it adapts.'}),
               ]}
               quote={[
-                "Image will not be submitted,",
+                translate({id: 'artworkContest.content.quote1', message: 'Image will not be submitted,'}),
                 <br key="line1" />, /* FIXME: too hacky */
-                "This happens on your machine only",
+                translate({id: 'artworkContest.content.quote2', message: 'This happens on your machine only'}),
               ]}
               headingDot={true}
             />
             <SpacerBox size="large" />
           </BoundaryBox>
         </BackgroundWrapper>
-        
+
       </main>
     </Layout>
   );

@@ -7,10 +7,11 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import events from "@site/src/data/events.json";
+import {translate} from '@docusaurus/Translate';
 
 const EVENTS_PER_PAGE = 5;
 
-function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
+function Pagination({ currentPage, totalPages, onPageChange, anchorId, previousLabel, nextLabel }) {
   if (totalPages <= 1) {
     return null;
   }
@@ -49,7 +50,7 @@ function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
     disabled={currentPage === 1}
     className="events-pagination__nav"
   >
-    Previous
+    {previousLabel}
   </button>
 
   <ul className="events-pagination__list">
@@ -73,7 +74,7 @@ function Pagination({ currentPage, totalPages, onPageChange, anchorId }) {
     disabled={currentPage === totalPages}
     className="events-pagination__nav"
   >
-    Next
+    {nextLabel}
   </button>
 </nav>
   );
@@ -105,12 +106,11 @@ function EventDateTitle({ startDate, endDate, title, link }) {
 }
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Cardano Events"
+      title={translate({id: 'events.hero.title', message: 'Cardano Events'})}
       description={[
-        "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
+        translate({id: 'events.hero.description', message: 'Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.'})
       ]}
       bannerType="dots"
     />
@@ -179,17 +179,20 @@ export default function Home() {
     return pastEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
   }, [pastEvents, pastPage]);
 
+  const previousLabel = translate({id: 'events.pagination.previous', message: 'Previous'});
+  const nextLabel = translate({id: 'events.pagination.next', message: 'Next'});
+
   return (
     <Layout
-    title="Cardano Events | cardano.org"
-    description="Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
+    title={translate({id: 'events.meta.title', message: 'Cardano Events | cardano.org'})}
+    description={translate({id: 'events.meta.description', message: 'Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.'})}
     >
       <OpenGraphInfo pageName="events" /> 
       <HomepageHeader />
       <main>
       
       <BoundaryBox>
-        <Divider text="Discover Cardano Events Worldwide" id ="worldwide"/>
+        <Divider text={translate({id: 'events.divider.discoverWorldwide', message: 'Discover Cardano Events Worldwide'})} id ="worldwide"/>
         <div className="event-platforms">
           <a
             className="platform-card"
@@ -203,7 +206,7 @@ export default function Home() {
                 src={`/img/events/platform-luma.png`}
                 alt="Luma.com"
               />
-              <figcaption>Events on Luma.com</figcaption>
+              <figcaption>{translate({id: 'events.platforms.luma', message: 'Events on Luma.com'})}</figcaption>
             </figure>
           </a>
           <a
@@ -218,7 +221,7 @@ export default function Home() {
                 src={`/img/events/platform-meetup.png`}
                 alt="Meetup.com"
               />
-              <figcaption>Events on Meetup.com</figcaption>
+              <figcaption>{translate({id: 'events.platforms.meetup', message: 'Events on Meetup.com'})}</figcaption>
             </figure>
           </a>
         </div>
@@ -226,7 +229,7 @@ export default function Home() {
 
       <BackgroundWrapper backgroundType={"zoom"}>
       <BoundaryBox>
-            <Divider text="Upcoming highlighted Events" id ="upcoming"/>
+            <Divider text={translate({id: 'events.divider.upcomingHighlighted', message: 'Upcoming highlighted Events'})} id ="upcoming"/>
             <ul>
               {paginatedUpcomingEvents.map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
@@ -268,12 +271,14 @@ export default function Home() {
               totalPages={upcomingTotalPages}
               onPageChange={setUpcomingPage}
               anchorId="upcoming"
+              previousLabel={previousLabel}
+              nextLabel={nextLabel}
             />
         </BoundaryBox>
 
 
         <BoundaryBox>
-            <Divider text="Past Highlighted Events" id="past"/>
+            <Divider text={translate({id: 'events.divider.pastHighlighted', message: 'Past Highlighted Events'})} id="past"/>
             <ul>
               {paginatedPastEvents.map(event => (
                 <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
@@ -323,11 +328,11 @@ export default function Home() {
                     <div>
                       {event.recapVideo && (
                         <p>
-                          <strong>Recap available: </strong> <a
+                          <strong>{translate({id: 'events.recapAvailable', message: 'Recap available:'})}</strong> <a
                             href={`https://www.youtube.com/watch?v=${event.recapVideo}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                          >Watch here</a>
+                          >{translate({id: 'events.watchHere', message: 'Watch here'})}</a>
                         </p>
                       )}
                       <p>{event.description}</p>
@@ -345,6 +350,8 @@ export default function Home() {
               totalPages={pastTotalPages}
               onPageChange={setPastPage}
               anchorId="past"
+              previousLabel={previousLabel}
+              nextLabel={nextLabel}
             />
          </BoundaryBox>
       </BackgroundWrapper>

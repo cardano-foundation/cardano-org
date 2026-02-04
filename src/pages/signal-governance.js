@@ -8,6 +8,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import MauticForm  from "@site/src/components/MauticForm";
+import {translate} from '@docusaurus/Translate';
 
 // map interestIds to Mautic forms
 import contentMap from '../data/signal-contentmap.js';
@@ -23,28 +24,28 @@ const interestId = "governance";
 
   const isValidInterest = Object.keys(contentMap).includes(interestId);
   const content = isValidInterest ? contentMap[interestId] : contentMap["governance"];
-  const siteTitle = `${content.title} | ${siteConfig.title}`;
+  const siteTitle = `${translate({id: 'signalGovernance.layout.title', message: 'Signal your interest in Governance'})} | ${siteConfig.title}`;
 
   return (
     <Layout
       title={siteTitle}
-      description={content.description}
+      description={translate({id: 'signalGovernance.layout.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})}
     >
-      <OpenGraphInfo pageName={content.openGraph} title={content.title} description={content.description} />
+      <OpenGraphInfo pageName={content.openGraph} title={translate({id: 'signalGovernance.openGraph.title', message: 'Signal your interest in Governance'})} description={translate({id: 'signalGovernance.openGraph.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})} />
       <SiteHero
-        title={content.title}
-        description={content.description}
+        title={translate({id: 'signalGovernance.hero.title', message: 'Signal your interest in Governance'})}
+        description={translate({id: 'signalGovernance.hero.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})}
         bannerType={content.bannerType}
       />
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <Divider text={isValidInterest ? interestId : 'governance'} />
+          <Divider text={translate({id: 'signalGovernance.divider.text', message: 'governance'})} />
           <MauticForm id={content.formId} />
         </BoundaryBox>
       </BackgroundWrapper>
 
-       
+
     </Layout>
   );
 }

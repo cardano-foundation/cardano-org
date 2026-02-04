@@ -11,6 +11,7 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { Chrono } from "react-chrono";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import {translate} from '@docusaurus/Translate';
 
 // Hard Fork List
 const timelineItems = [
@@ -127,11 +128,10 @@ const timelineItems = [
 ];
 
 function HomepageHeader() {
-  const { siteTitle } = useDocusaurusContext();
   return (
     <SiteHero
-      title="Hard forks"
-      description="What hard forks were implemented, and what functionalities did they introduce?"
+      title={translate({id: 'hardforks.hero.title', message: 'Hard forks'})}
+      description={translate({id: 'hardforks.hero.description', message: 'What hard forks were implemented, and what functionalities did they introduce?'})}
       bannerType="starburst"
     />
   );
@@ -140,21 +140,21 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title="Which hard forks have occurred? | cardano.org"
-      description="An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
+      title={translate({id: 'hardforks.layout.title', message: 'Which hard forks have occurred? | cardano.org'})}
+      description={translate({id: 'hardforks.layout.description', message: 'An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees.'})}
     >
       <OpenGraphInfo pageName="hard-forks" />
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
           <TitleWithText
-            title="Cardano Hard Forks"
-            description="Hard forks in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time (slot) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
+            title={translate({id: 'hardforks.content.title', message: 'Cardano Hard Forks'})}
+            description={translate({id: 'hardforks.content.description', message: 'Hard forks in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time (slot) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution.'})}
             headingDot={true}
           />
-          <Divider text="Timeline" id="timeline"/>
+          <Divider text={translate({id: 'hardforks.divider.timeline', message: 'Timeline'})} id="timeline"/>
 
-          <BrowserOnly fallback={<div>Loading...</div>}>
+          <BrowserOnly fallback={<div>{translate({id: 'hardforks.loading', message: 'Loading...'})}</div>}>
             {() => (
               <Chrono
                 items={timelineItems}
@@ -180,9 +180,9 @@ export default function Home() {
 
       <BackgroundWrapper backgroundType={"solidGrey"}>
         <BoundaryBox>
-          <Divider text="hard fork transaction ids" />
+          <Divider text={translate({id: 'hardforks.divider.transactionIds', message: 'hard fork transaction ids'})} />
           <TitleWithText
-            description="Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks."
+            description={translate({id: 'hardforks.transactionIds.description', message: 'Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks.'})}
           />
           <SpacerBox size="medium"/>
         </BoundaryBox>

@@ -7,6 +7,7 @@ import React, {useMemo, useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {translate} from '@docusaurus/Translate';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import {InsightsTags} from '@site/src/data/insights-tags';
@@ -93,7 +94,7 @@ function InsightCard({item}) {
       )}
       {item.description && <p className="insight-desc">{item.description}</p>}
       <div className="insight-cta">
-        <Link className="insight-link" to={item.permalinkPath}>Open insight →</Link>
+        <Link className="insight-link" to={item.permalinkPath}>{translate({id: 'insights.card.openInsight', message: 'Open insight'})}{' \u2192'}</Link>
       </div>
     </article>
   );
@@ -141,29 +142,29 @@ export default function InsightsIndex() {
 
   return (
     <Layout
-      title="Insights"
-      description="Explore interactive Cardano insights across governance, staking, consensus, economics, and more."
+      title={translate({id: 'insights.layout.title', message: 'Insights'})}
+      description={translate({id: 'insights.layout.description', message: 'Explore interactive Cardano insights across governance, staking, consensus, economics, and more.'})}
     >
       <SiteHero
-        title="Insights"
-        description="Explore Cardano topics through on-chain data and visual charts."
+        title={translate({id: 'insights.hero.title', message: 'Insights'})}
+        description={translate({id: 'insights.hero.description', message: 'Explore Cardano topics through on-chain data and visual charts.'})}
         bannerType="braidBlue"
       />
       <main className="container mx-auto px-4 py-8">
         <div className="insights-search-container">
           <input
             type="search"
-            placeholder="Search or filter by tags below..."
+            placeholder={translate({id: 'insights.search.placeholder', message: 'Search or filter by tags below...'})}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="insights-search-input"
-            aria-label="Search insights"
+            aria-label={translate({id: 'insights.search.ariaLabel', message: 'Search insights'})}
           />
         </div>
 
         {allTags.length > 0 && (
           <>
-          <label className="insights-filter-label">Filter by topic</label>
+          <label className="insights-filter-label">{translate({id: 'insights.filter.label', message: 'Filter by topic'})}</label>
           <ul className="insights-filter-tags">
             {allTags.map((tag) => {
               const active = activeTags.has(tag);
@@ -187,7 +188,7 @@ export default function InsightsIndex() {
                   onClick={() => setActiveTags(new Set())}
                   className="insight-filter-tag insight-filter-clear"
                 >
-                  Clear
+                  {translate({id: 'insights.filter.clear', message: 'Clear'})}
                 </button>
               </li>
             )}
@@ -208,27 +209,27 @@ export default function InsightsIndex() {
               onClick={() => setPage((p) => Math.max(0, p - 1))}
               className="px-3 py-1 rounded-full border text-sm"
               disabled={page === 0}
-              aria-label="Previous page"
+              aria-label={translate({id: 'insights.pagination.prevAriaLabel', message: 'Previous page'})}
             >
-              ← Prev
+              {'\u2190 '}{translate({id: 'insights.pagination.prev', message: 'Prev'})}
             </button>
             <div className="text-sm opacity-80">
-              Page {page + 1} of {totalPages}
+              {translate({id: 'insights.pagination.pageOf', message: 'Page {current} of {total}'}, {current: page + 1, total: totalPages})}
             </div>
             <button
               type="button"
               onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
               className="px-3 py-1 rounded-full border text-sm"
               disabled={page >= totalPages - 1}
-              aria-label="Next page"
+              aria-label={translate({id: 'insights.pagination.nextAriaLabel', message: 'Next page'})}
             >
-              Next →
+              {translate({id: 'insights.pagination.next', message: 'Next'})}{' \u2192'}
             </button>
           </div>
         )}
 
         {filtered.length === 0 && (
-          <p className="opacity-70 mt-8">No insights matched your filters.</p>
+          <p className="opacity-70 mt-8">{translate({id: 'insights.noResults', message: 'No insights matched your filters.'})}</p>
         )}
         <SpacerBox size="medium" />
       </main>

@@ -8,6 +8,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import {translate} from '@docusaurus/Translate';
 
 // map interestIds to Mautic forms
 import contentMap from '../data/signal-contentmap.js';
@@ -24,20 +25,20 @@ import contentMap from '../data/signal-contentmap.js';
 
   return (
     <Layout
-      title="Signal your interest"
-      description="Get just the information you want"
+      title={translate({id: 'signal.layout.title', message: 'Signal your interest'})}
+      description={translate({id: 'signal.layout.description', message: 'Get just the information you want'})}
     >
-      <OpenGraphInfo pageName="Signal your interest" title="Signal your interest" description="Get just the information you want" />
+      <OpenGraphInfo pageName="Signal your interest" title={translate({id: 'signal.openGraph.title', message: 'Signal your interest'})} description={translate({id: 'signal.openGraph.description', message: 'Get just the information you want'})} />
       <SiteHero
-        title="Signal your interest"
-        description="Look at the available topics and get just the information you want"
+        title={translate({id: 'signal.hero.title', message: 'Signal your interest'})}
+        description={translate({id: 'signal.hero.description', message: 'Look at the available topics and get just the information you want'})}
         bannerType="starburst"
       />
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
           <TitleWithText
-            title="Available Topics"
+            title={translate({id: 'signal.topics.title', message: 'Available Topics'})}
             description={Object.values(contentMap).map(item => ({
               list: [`**[${item.title}](${item.openGraph})** – ${item.description}`],
             }))}
@@ -47,7 +48,7 @@ import contentMap from '../data/signal-contentmap.js';
         </BoundaryBox>
       </BackgroundWrapper>
 
-       
+
     </Layout>
   );
 }
