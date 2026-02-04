@@ -79,6 +79,34 @@ This command generates static content into the `build` directory and can be serv
 
 ## Network testing
 ```
-yarn start --host 0.0.0.0   
+yarn start --host 0.0.0.0
 ```
 With this command you are making it listen on all network interfaces (IP addresses) of your computer. This includes the local loopback interface (127.0.0.1 or localhost) and any other network interfaces that can connect your computer to a local network or the internet. Great for testing the site with different devices on your local network.
+
+## Internationalization (i18n)
+
+The site supports multiple locales: English (default), Japanese (`ja`), and German (`de`).
+
+### Testing a specific locale in development
+
+The dev server only serves one locale at a time. To test a specific locale:
+
+```bash
+yarn start --locale ja   # Japanese
+yarn start --locale de   # German
+```
+
+This serves the locale at `http://localhost:3000/` (without a locale prefix).
+
+### Testing multi-locale URL structure
+
+The `/ja/` and `/de/` URL prefixes only work in production builds. To test the full structure:
+
+```bash
+yarn build && yarn serve
+```
+
+Then access:
+- `http://localhost:3000/` - English
+- `http://localhost:3000/ja/` - Japanese
+- `http://localhost:3000/de/` - German
