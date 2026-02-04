@@ -576,5 +576,515 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "whatIsAda.hero.title": {
+    "message": "Was ist ada?"
+  },
+  "whatIsAda.hero.description1": {
+    "message": "Eine neue Art von Währung. Ein neues Mittel für Transaktionen."
+  },
+  "whatIsAda.hero.description2": {
+    "message": "Direkt. Sicher. Von überall. Für jeden."
+  },
+  "whatIsAda.meta.title": {
+    "message": "Was ist ada? | cardano.org"
+  },
+  "whatIsAda.meta.description": {
+    "message": "Eine neue Art von Währung. Ein neues Mittel für Transaktionen. Direkt. Sicher. Von überall. Für jeden."
+  },
+  "whatIsAda.section.headline": {
+    "message": "Was ist ada?"
+  },
+  "whatIsAda.section.title": {
+    "message": "Ada ist der native Token von Cardano"
+  },
+  "whatIsAda.section.description1": {
+    "message": "Sie ist nach Ada Lovelace benannt: einer Mathematikerin des 19. Jahrhunderts, die als erste Computerprogrammiererin gilt und die Tochter des Dichters Lord Byron war."
+  },
+  "whatIsAda.section.description2": {
+    "message": "Ada ist eine digitale Währung. Jeder Nutzer, überall auf der Welt, kann ada als sicheres Tauschmittel verwenden – ohne dass ein Dritter den Austausch vermitteln muss. Jede Transaktion wird dauerhaft, sicher und transparent auf der Cardano-Blockchain aufgezeichnet."
+  },
+  "whatIsAda.section.description3": {
+    "message": "Jeder ada-Inhaber besitzt auch einen Anteil am Cardano-Netzwerk. In einer Wallet gespeicherte ada können an einen Stake-Pool delegiert werden, um Belohnungen zu verdienen – um am erfolgreichen Betrieb des Netzwerks teilzunehmen – oder Sie können Ihren eigenen Stake-Pool gründen und betreiben, um die Wahrscheinlichkeit zu erhöhen, Belohnungen zu erhalten. Mit der Zeit wird ada auch für verschiedene Anwendungen und Dienste auf der Cardano-Plattform nutzbar sein."
+  },
+  "whatIsAda.section.quote": {
+    "message": "Was kann ich mit ada machen?"
+  },
+  "howToBuyAda.title": {
+    "message": "Wie kaufe/verkaufe ich Ada?"
+  },
+  "howToBuyAda.description1": {
+    "message": "Es gibt viele Möglichkeiten, ada zu erhalten, um die Cardano-Blockchain zu nutzen. Erfahren Sie mehr unter {whereToGetAdaLink}"
+  },
+  "howToBuyAda.whereToGetAdaLink": {
+    "message": "Wo bekomme ich ada?"
+  },
+  "howToBuyAda.description2": {
+    "message": "Als ada-Inhaber ist es wichtig, Ihre Mittel sicher aufzubewahren, und das bedeutet, dass Sie Ihre privaten Schlüssel privat halten müssen. Es wird dringend empfohlen, Ihre Kryptowährung nicht länger als nötig auf einer Börse zu halten und stattdessen eine Kryptowährungs-Wallet zu verwenden."
+  },
+  "walletSection.typhon.title": {
+    "message": "Typhon Wallet"
+  },
+  "walletSection.typhon.text": {
+    "message": "Blazing fast, feature-rich, secure, beautiful web and extension Cardano wallet. Delegate to multiple pools of your choice with multi-accounts."
+  },
+  "walletSection.typhon.subtext": {
+    "message": "Browser extension for Chrome, Brave and Edge"
+  },
+  "walletSection.typhon.label": {
+    "message": "Get Typhon"
+  },
+  "walletSection.vespr.title": {
+    "message": "VESPR Wallet"
+  },
+  "walletSection.vespr.text": {
+    "message": "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use."
+  },
+  "walletSection.vespr.subtext": {
+    "message": "App for iOS and Android"
+  },
+  "walletSection.vespr.label": {
+    "message": "Get VESPR"
+  },
+  "walletSection.yoroi.title": {
+    "message": "Yoroi Wallet"
+  },
+  "walletSection.yoroi.text": {
+    "message": "A user-friendly, [open-source](https://github.com/Emurgo/yoroi-frontend) Cardano wallet with a browser-based interface, providing a convenient way to manage ada holdings securely. Yoroi is also available as mobile app."
+  },
+  "walletSection.yoroi.subtext": {
+    "message": "Browser extension and app for iOS and Android"
+  },
+  "walletSection.yoroi.label": {
+    "message": "Get Yoroi"
+  },
+  "walletSection.eternl.title": {
+    "message": "Eternl Wallet"
+  },
+  "walletSection.eternl.text": {
+    "message": "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community. Eternl is also available as mobile app."
+  },
+  "walletSection.eternl.subtext": {
+    "message": "Browser extension and app for iOS and Android"
+  },
+  "walletSection.eternl.label": {
+    "message": "Get Eternl"
+  },
+  "walletSection.lace.title": {
+    "message": "Lace Wallet"
+  },
+  "walletSection.lace.text": {
+    "message": "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3."
+  },
+  "walletSection.lace.subtext": {
+    "message": "Browser extension for Chrome, Brave"
+  },
+  "walletSection.lace.label": {
+    "message": "Get Lace"
+  },
+  "walletSection.daedalus.title": {
+    "message": "Daedalus Wallet"
+  },
+  "walletSection.daedalus.text": {
+    "message": "The [open-source](https://github.com/input-output-hk/daedalus) full node wallet for Cardano. It offers enhanced control and security by maintaining a complete copy of the blockchain, but this comes at the cost of a more complex user experience. As a result, they are typically geared towards professional users who require these advanced features."
+  },
+  "walletSection.daedalus.subtext": {
+    "message": "Only for powerful desktop PCs"
+  },
+  "walletSection.daedalus.label": {
+    "message": "Get Daedalus"
+  },
+  "walletSection.explore.title": {
+    "message": "Explore Apps"
+  },
+  "walletSection.explore.text": {
+    "message": "Discover a wide variety of wallets designed to facilitate your interaction."
+  },
+  "walletSection.explore.label": {
+    "message": "More Wallets"
+  },
+  "walletSection.divider": {
+    "message": "Cardano Wallets"
+  },
+  "walletSection.disclaimer": {
+    "message": "The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+  },
+  "walletSection.storageTitle": {
+    "message": "How Do I Store My Ada And Keep It Safe?"
+  },
+  "walletSection.storageDescription1": {
+    "message": "A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, monitor your balance, and interact with supported blockchains."
+  },
+  "walletSection.storageDescription2": {
+    "message": "In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet."
+  },
+  "walletSection.hotWalletText": {
+    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges."
+  },
+  "walletSection.coldWalletText": {
+    "message": "A cold wallet is an offline wallet. It is not connected to the internet and is used for securing storing funds that do not have to be frequently accessed. Examples include hardware wallets - which is a secure hardware device that stores the wallet's private keys - and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets."
+  },
+  "whatIsAda.button.getStarted": {
+    "message": "Get started with Cardano"
+  },
+  "whatIsAda.button.whereToGetAda": {
+    "message": "Where to get ada?"
+  },
+  "getStarted.hero.title": {
+    "message": "Get started with Cardano"
+  },
+  "getStarted.hero.description": {
+    "message": "Step into the new world yourself and learn all the basics in just few steps."
+  },
+  "getStarted.meta.title": {
+    "message": "Get started with Cardano | cardano.org"
+  },
+  "getStarted.meta.description": {
+    "message": "Step into the new world yourself and learn all the basics in just few steps."
+  },
+  "getStarted.step1.title": {
+    "message": "Download a wallet"
+  },
+  "getStarted.step1.description": {
+    "message": "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account."
+  },
+  "getStarted.step1.heading": {
+    "message": "Download a wallet"
+  },
+  "getStarted.step1.text1": {
+    "message": "A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network."
+  },
+  "getStarted.step1.text2": {
+    "message": "You will create your wallet in the next steps. Downloading alone does not create one."
+  },
+  "getStarted.step1.securityNote": {
+    "message": "Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism."
+  },
+  "getStarted.step1.checkbox": {
+    "message": "I downloaded a wallet."
+  },
+  "getStarted.common.scamLink": {
+    "message": "Be aware of the most common scams."
+  },
+  "getStarted.step2.title": {
+    "message": "Backup your recovery phrase"
+  },
+  "getStarted.step2.description": {
+    "message": "When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!"
+  },
+  "getStarted.step2.heading": {
+    "message": "Save your recovery phrase"
+  },
+  "getStarted.step2.whatToDo": {
+    "message": "What to do:"
+  },
+  "getStarted.step2.tip1": {
+    "message": "Write it down on paper and store it securely offline"
+  },
+  "getStarted.step2.tip2": {
+    "message": "Never share it with anyone or store it digitally"
+  },
+  "getStarted.step2.tip3": {
+    "message": "Anyone with your recovery phrase can access your funds"
+  },
+  "getStarted.step2.tip4": {
+    "message": "Keep multiple copies in different secure locations"
+  },
+  "getStarted.step2.checkbox": {
+    "message": "I've backed up my recovery phrase."
+  },
+  "getStarted.step3.title": {
+    "message": "Complete wallet setup"
+  },
+  "getStarted.step3.description": {
+    "message": "Finish setting up your wallet with a password and verification."
+  },
+  "getStarted.step3.heading": {
+    "message": "Final setup steps"
+  },
+  "getStarted.step3.intro": {
+    "message": "After backing up your recovery phrase, complete these two important steps:"
+  },
+  "getStarted.step3.passwordLabel": {
+    "message": "Spending password:"
+  },
+  "getStarted.step3.passwordText": {
+    "message": "Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device."
+  },
+  "getStarted.step3.verifyLabel": {
+    "message": "Verify your backup:"
+  },
+  "getStarted.step3.verifyText": {
+    "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
+  },
+  "getStarted.step3.ready": {
+    "message": "Once these steps are complete, your wallet is ready to use!"
+  },
+  "getStarted.step3.securityNote": {
+    "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
+  },
+  "getStarted.step3.securityWarning": {
+    "message": "However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password."
+  },
+  "getStarted.step3.checkbox": {
+    "message": "I've completed the wallet setup."
+  },
+  "getStarted.step4.title": {
+    "message": "Connect your wallet"
+  },
+  "getStarted.step4.description": {
+    "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
+  },
+  "getStarted.step4.securityNote": {
+    "message": "When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing."
+  },
+  "getStarted.step4.checkbox": {
+    "message": "I've connected my wallet."
+  },
+  "getStarted.step5.title": {
+    "message": "Get ada"
+  },
+  "getStarted.step5.description": {
+    "message": "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain."
+  },
+  "getStarted.step5.heading": {
+    "message": "Where to get ada"
+  },
+  "getStarted.step5.text": {
+    "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
+  },
+  "getStarted.step5.button": {
+    "message": "View all options →"
+  },
+  "getStarted.step5.securityNote": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "getStarted.step5.checkbox": {
+    "message": "I have ada in my wallet."
+  },
+  "getStarted.step6.title": {
+    "message": "Explore the ecosystem"
+  },
+  "getStarted.step6.description": {
+    "message": "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps."
+  },
+  "whereToGetAda.hero.title": {
+    "message": "Where to get ada?"
+  },
+  "whereToGetAda.hero.description": {
+    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+  },
+  "whereToGetAda.meta.title": {
+    "message": "Get ada | cardano.org"
+  },
+  "whereToGetAda.meta.description": {
+    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+  },
+  "whereToGetAda.divider.exchanges": {
+    "message": "Buy ada using Exchanges"
+  },
+  "whereToGetAda.cex.title": {
+    "message": "Centralized Exchanges"
+  },
+  "whereToGetAda.cex.description": {
+    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control."
+  },
+  "whereToGetAda.cex.disclaimer": {
+    "message": "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/)."
+  },
+  "whereToGetAda.dex.title": {
+    "message": "Decentralized Exchanges"
+  },
+  "whereToGetAda.dex.description": {
+    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges."
+  },
+  "whereToGetAda.dex.disclaimer": {
+    "message": "DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days."
+  },
+  "whereToGetAda.divider.receive": {
+    "message": "Receive ada from people around the world"
+  },
+  "whereToGetAda.receive.title": {
+    "message": "Receive ada"
+  },
+  "whereToGetAda.receive.description1": {
+    "message": "Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets)."
+  },
+  "whereToGetAda.receive.description2": {
+    "message": "Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer."
+  },
+  "whereToGetAda.receive.description3": {
+    "message": "Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+  },
+  "whereToGetAda.divider.funding": {
+    "message": "Get funded in ada"
+  },
+  "whereToGetAda.funding.title": {
+    "message": "Project Catalyst"
+  },
+  "whereToGetAda.funding.description": {
+    "message": "Discover Cardano's innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal."
+  },
+  "whereToGetAda.divider.rewards": {
+    "message": "Staking rewards"
+  },
+  "whereToGetAda.staking.title": {
+    "message": "Staking rewards"
+  },
+  "whereToGetAda.staking.description1": {
+    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+  },
+  "whereToGetAda.staking.description2": {
+    "message": "Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+  },
+  "commonScams.hero.title": {
+    "message": "Common Cardano scams"
+  },
+  "commonScams.hero.description": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "commonScams.meta.title": {
+    "message": "Common Cardano scams you should avoid | cardano.org"
+  },
+  "commonScams.meta.description": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "commonScams.quiz.title": {
+    "message": "Test Your Knowledge"
+  },
+  "commonScams.quiz.description": {
+    "message": "Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
+  },
+  "commonScams.quiz.buttonText": {
+    "message": "Start Quiz"
+  },
+  "commonScams.intro.title": {
+    "message": "Protecting your ada from scammers"
+  },
+  "commonScams.intro.description1": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn't immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself."
+  },
+  "commonScams.intro.description2": {
+    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
+  },
+  "commonScams.divider.giveaway": {
+    "message": "Giveaway"
+  },
+  "commonScams.giveaway.title": {
+    "message": "Ada Giveaway Scam"
+  },
+  "commonScams.giveaway.description1": {
+    "message": "One of the most well-known scams targeting the Cardano community is the **Ada Giveaway Scam.** Scammers promise to double your ada if you send them a certain amount first. These scams often feature fake live streams of Charles Hoskinson, or other well-known personalities, to appear legitimate. The streams may mimic genuine events and include a wallet address for you to send your ada."
+  },
+  "commonScams.giveaway.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.giveaway.tip1": {
+    "message": "Legitimate giveaways **never** ask for money upfront."
+  },
+  "commonScams.giveaway.tip2": {
+    "message": "Avoid clicking on links in unsolicited messages or live streams."
+  },
+  "commonScams.giveaway.tip3": {
+    "message": "Remember: Once sent, your ada is gone forever."
+  },
+  "commonScams.giveaway.tip4": {
+    "message": "Read reports and scam sightings from users in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "commonScams.divider.phishing": {
+    "message": "Phishing"
+  },
+  "commonScams.phishing.title": {
+    "message": "Phishing Attacks"
+  },
+  "commonScams.phishing.description": {
+    "message": "Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](/what-is-ada/#wallets)."
+  },
+  "commonScams.phishing.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.phishing.tip1": {
+    "message": "Double-check URLs to ensure they match actual wallet websites."
+  },
+  "commonScams.phishing.tip2": {
+    "message": "**Never** share your recovery phrase, **even** with \"support\" staff or \"moderators\"."
+  },
+  "commonScams.phishing.tip3": {
+    "message": "Consider using hardware wallets."
+  },
+  "commonScams.phishing.tip4": {
+    "message": "Use two-factor authentication where possible."
+  },
+  "commonScams.divider.investment": {
+    "message": "Fake Investment"
+  },
+  "commonScams.investment.title": {
+    "message": "Fake Investment Opportunities"
+  },
+  "commonScams.investment.description": {
+    "message": "Fraudulent investment schemes are another popular scam. Scammers promote fake projects, claiming they are \"Cardano-backed\" or \"ada-specific\" opportunities with guaranteed high returns. Victims are urged to send ada or other funds to a provided wallet address, with promises of earning exponential profits."
+  },
+  "commonScams.investment.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.investment.tip1": {
+    "message": "Legitimate projects **never** promise guaranteed returns."
+  },
+  "commonScams.investment.tip2": {
+    "message": "Be skeptical of unsolicited investment offers."
+  },
+  "commonScams.investment.tip3": {
+    "message": "Research projects thoroughly, checking for transparency and a credible team."
+  },
+  "commonScams.divider.support": {
+    "message": "Fake Support"
+  },
+  "commonScams.support.title": {
+    "message": "Fake Tech Support"
+  },
+  "commonScams.support.description1": {
+    "message": "In this scam, fraudsters pose as \"official\" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to \"help,\" they'll ask for your recovery phrase (seed words) or private keys."
+  },
+  "commonScams.support.description2": {
+    "message": "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
+  },
+  "commonScams.support.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.support.tip1": {
+    "message": "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys."
+  },
+  "commonScams.support.tip2": {
+    "message": "Never engage with unsolicited messages claiming to be from support."
+  },
+  "commonScams.support.tip3": {
+    "message": "Legitimate people on forums and channels will **never** contact you first in a private message."
+  },
+  "commonScams.divider.rug": {
+    "message": "Rug Pulls"
+  },
+  "commonScams.rug.title": {
+    "message": "Rug Pulls in Cardano Ecosystem"
+  },
+  "commonScams.rug.description": {
+    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a \"rug pull.\""
+  },
+  "commonScams.rug.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.rug.tip1": {
+    "message": "Research the project team's credentials and reputation."
+  },
+  "commonScams.rug.tip2": {
+    "message": "Check for audits or transparent documentation."
+  },
+  "commonScams.rug.tip3": {
+    "message": "Avoid projects with anonymous teams or unrealistic promises."
+  },
+  "commonScams.rug.tip4": {
+    "message": "Only get utility tokens when you need to use the utility."
+  },
+  "commonScams.rug.tip5": {
+    "message": "Find out what other people think about projects in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
   }
 }

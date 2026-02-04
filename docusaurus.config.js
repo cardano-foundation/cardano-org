@@ -394,6 +394,16 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 4px 0;">',
+              },
+              {
+                to: '/translations',
+                label: 'Help Translate',
+              },
+            ],
           },
         ],
       },

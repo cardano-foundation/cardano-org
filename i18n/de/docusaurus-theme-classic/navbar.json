@@ -4,51 +4,51 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.Learn": {
-    "message": "Learn",
+    "message": "Lernen",
     "description": "Navbar item with label Learn"
   },
   "item.label.Participate": {
-    "message": "Participate",
+    "message": "Mitmachen",
     "description": "Navbar item with label Participate"
   },
   "item.label.Build": {
-    "message": "Build",
+    "message": "Entwickeln",
     "description": "Navbar item with label Build"
   },
   "item.label.News": {
-    "message": "News",
+    "message": "Neuigkeiten",
     "description": "Navbar item with label News"
   },
   "item.label.What is ada?": {
-    "message": "What is ada?",
+    "message": "Was ist ada?",
     "description": "Navbar item with label What is ada?"
   },
   "item.label.Get started with Cardano": {
-    "message": "Get started with Cardano",
+    "message": "Erste Schritte mit Cardano",
     "description": "Navbar item with label Get started with Cardano"
   },
   "item.label.Where to get ada?": {
-    "message": "Where to get ada?",
+    "message": "Wo bekommt man ada?",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "Protect your ada",
+    "message": "Schütze deine ada",
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your ada": {
-    "message": "Delegate your ada",
+    "message": "Delegiere deine ada",
     "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Use Cardano Apps": {
-    "message": "Use Cardano Apps",
+    "message": "Cardano Apps nutzen",
     "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
-    "message": "Cardano Research",
+    "message": "Cardano Forschung",
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Insights",
+    "message": "Cardano Einblicke",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
@@ -56,7 +56,7 @@
     "description": "Navbar item with label Hard Forks"
   },
   "item.label.Follow Cardano": {
-    "message": "Follow Cardano",
+    "message": "Folge Cardano",
     "description": "Navbar item with label Follow Cardano"
   },
   "item.label.Newsletter": {
@@ -64,15 +64,15 @@
     "description": "Navbar item with label Newsletter"
   },
   "item.label.Online Communities": {
-    "message": "Online Communities",
+    "message": "Online-Communities",
     "description": "Navbar item with label Online Communities"
   },
   "item.label.Cardano Ambassadors": {
-    "message": "Cardano Ambassadors",
+    "message": "Cardano Botschafter",
     "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
-    "message": "Cardano Events",
+    "message": "Cardano Veranstaltungen",
     "description": "Navbar item with label Cardano Events"
   },
   "item.label.Cardano Forum": {
@@ -80,39 +80,39 @@
     "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
-    "message": "Get involved in cardano.org",
+    "message": "Bei cardano.org mitwirken",
     "description": "Navbar item with label Get involved in cardano.org"
   },
   "item.label.Participate in governance": {
-    "message": "Participate in governance",
+    "message": "An Governance teilnehmen",
     "description": "Navbar item with label Participate in governance"
   },
   "item.label.Governance Tools": {
-    "message": "Governance Tools",
+    "message": "Governance-Tools",
     "description": "Navbar item with label Governance Tools"
   },
   "item.label.Cardano Constitution": {
-    "message": "Cardano Constitution",
+    "message": "Cardano Verfassung",
     "description": "Navbar item with label Cardano Constitution"
   },
   "item.label.Start building on Cardano": {
-    "message": "Start building on Cardano",
+    "message": "Auf Cardano entwickeln",
     "description": "Navbar item with label Start building on Cardano"
   },
   "item.label.Integrate Cardano": {
-    "message": "Integrate Cardano",
+    "message": "Cardano integrieren",
     "description": "Navbar item with label Integrate Cardano"
   },
   "item.label.Developer Portal": {
-    "message": "Developer Portal",
+    "message": "Entwicklerportal",
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
-    "message": "Builder Tools",
+    "message": "Entwickler-Tools",
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
-    "message": "Companies building on Cardano",
+    "message": "Unternehmen auf Cardano",
     "description": "Navbar item with label Companies building on Cardano"
   }
 }

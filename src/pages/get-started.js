@@ -13,12 +13,13 @@ import styles from "./get-started.module.css";
 import Link from "@docusaurus/Link";
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
   return (
     <SiteHero
-      title="Get started with Cardano"
-      description="Step into the new world yourself and learn all the basics in just few steps."
+      title={translate({id: 'getStarted.hero.title', message: 'Get started with Cardano'})}
+      description={translate({id: 'getStarted.hero.description', message: 'Step into the new world yourself and learn all the basics in just few steps.'})}
       bannerType="fluidBlue"
     />
   );
@@ -26,8 +27,8 @@ function HomepageHeader() {
 
 const steps = (onWalletConnect) => [
   {
-    title: "Download a wallet",
-    description: "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account.",
+    title: translate({id: 'getStarted.step1.title', message: 'Download a wallet'}),
+    description: translate({id: 'getStarted.step1.description', message: 'A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account.'}),
     hideHeader: true,
     hideActions: true,
     content: (actions) => (
@@ -37,26 +38,26 @@ const steps = (onWalletConnect) => [
         ratio="1:1"
       >
         <div className={styles.stepContent}>
-          <h2>Download a wallet</h2>
+          <h2>{translate({id: 'getStarted.step1.heading', message: 'Download a wallet'})}</h2>
           <p className={styles.stepDescription}>
-            A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network. 
+            {translate({id: 'getStarted.step1.text1', message: 'A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network.'})}
           </p>
           <p className={styles.stepDescription}>
-            You will create your wallet in the next steps. Downloading alone does not create one.
+            {translate({id: 'getStarted.step1.text2', message: 'You will create your wallet in the next steps. Downloading alone does not create one.'})}
           </p>
-          
+
           {actions}
           <p className={styles.securityNote}>
-              Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism. <Link to="/common-scams">Be aware of the most common scams.</Link>
-            </p>
+            {translate({id: 'getStarted.step1.securityNote', message: 'Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism.'})} <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>
+          </p>
         </div>
       </TwoColumnLayout>
     ),
-    checkboxLabel: "I downloaded a wallet.",
+    checkboxLabel: translate({id: 'getStarted.step1.checkbox', message: 'I downloaded a wallet.'}),
   },
   {
-    title: "Backup your recovery phrase",
-    description: "When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!",
+    title: translate({id: 'getStarted.step2.title', message: 'Backup your recovery phrase'}),
+    description: translate({id: 'getStarted.step2.description', message: 'When you create a new wallet, you\'ll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!'}),
     content: (
        <TwoColumnLayout
         sidebar={
@@ -67,49 +68,49 @@ const steps = (onWalletConnect) => [
         sidebarSticky={false}
         ratio="1:1"
       >
-        
+
         <div className={styles.stepContent}>
-          <h3>Save your recovery phrase</h3>
-          
-          <p><strong>What to do:</strong></p>
+          <h3>{translate({id: 'getStarted.step2.heading', message: 'Save your recovery phrase'})}</h3>
+
+          <p><strong>{translate({id: 'getStarted.step2.whatToDo', message: 'What to do:'})}</strong></p>
           <ul>
-            <li>Write it down on paper and store it securely offline</li>
-            <li>Never share it with anyone or store it digitally</li>
-            <li>Anyone with your recovery phrase can access your funds</li>
-            <li>Keep multiple copies in different secure locations</li>
+            <li>{translate({id: 'getStarted.step2.tip1', message: 'Write it down on paper and store it securely offline'})}</li>
+            <li>{translate({id: 'getStarted.step2.tip2', message: 'Never share it with anyone or store it digitally'})}</li>
+            <li>{translate({id: 'getStarted.step2.tip3', message: 'Anyone with your recovery phrase can access your funds'})}</li>
+            <li>{translate({id: 'getStarted.step2.tip4', message: 'Keep multiple copies in different secure locations'})}</li>
           </ul>
         </div>
       </TwoColumnLayout>
     ),
-    checkboxLabel: "I've backed up my recovery phrase.",
+    checkboxLabel: translate({id: 'getStarted.step2.checkbox', message: 'I\'ve backed up my recovery phrase.'}),
   },
   {
-    title: "Complete wallet setup",
-    description: "Finish setting up your wallet with a password and verification.",
+    title: translate({id: 'getStarted.step3.title', message: 'Complete wallet setup'}),
+    description: translate({id: 'getStarted.step3.description', message: 'Finish setting up your wallet with a password and verification.'}),
     hideActions: true,
     content: (actions) => (
-       
+
         <div className={styles.stepContent}>
-          <h3>Final setup steps</h3>
-          <p>After backing up your recovery phrase, complete these two important steps:</p>
-          
-          <p><strong>Spending password:</strong> Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device.</p>
-          
-          <p><strong>Verify your backup:</strong> Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it.</p>
-          
-          <p>Once these steps are complete, your wallet is ready to use!</p>
+          <h3>{translate({id: 'getStarted.step3.heading', message: 'Final setup steps'})}</h3>
+          <p>{translate({id: 'getStarted.step3.intro', message: 'After backing up your recovery phrase, complete these two important steps:'})}</p>
+
+          <p><strong>{translate({id: 'getStarted.step3.passwordLabel', message: 'Spending password:'})}</strong> {translate({id: 'getStarted.step3.passwordText', message: 'Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device.'})}</p>
+
+          <p><strong>{translate({id: 'getStarted.step3.verifyLabel', message: 'Verify your backup:'})}</strong> {translate({id: 'getStarted.step3.verifyText', message: 'Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you\'ve correctly saved it.'})}</p>
+
+          <p>{translate({id: 'getStarted.step3.ready', message: 'Once these steps are complete, your wallet is ready to use!'})}</p>
            {actions}
            <p className={styles.securityNote}>
-            If you forget your spending password, you can restore your wallet using your recovery phrase. <strong>However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password.</strong> <Link to="/common-scams">Be aware of the most common scams.</Link>
+            {translate({id: 'getStarted.step3.securityNote', message: 'If you forget your spending password, you can restore your wallet using your recovery phrase.'})} <strong>{translate({id: 'getStarted.step3.securityWarning', message: 'However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password.'})}</strong> <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>
            </p>
         </div>
-       
+
     ),
-    checkboxLabel: "I've completed the wallet setup.",
+    checkboxLabel: translate({id: 'getStarted.step3.checkbox', message: 'I\'ve completed the wallet setup.'}),
   },
    {
-    title: "Connect your wallet",
-    description: "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords.",
+    title: translate({id: 'getStarted.step4.title', message: 'Connect your wallet'}),
+    description: translate({id: 'getStarted.step4.description', message: 'Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords.'}),
     hideActions: true,
     content: (actions) => (
       <TwoColumnLayout
@@ -122,20 +123,20 @@ const steps = (onWalletConnect) => [
         ratio="1:1"
       >
         <div className={styles.stepContent}>
-          
+
           <WalletConnect onConnect={onWalletConnect} />
           {actions}
           <p className={styles.securityNote}>
-            When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing. <Link to="/common-scams">Be aware of the most common scams.</Link>
+            {translate({id: 'getStarted.step4.securityNote', message: 'When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing.'})} <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>
           </p>
         </div>
       </TwoColumnLayout>
     ),
-    checkboxLabel: "I've connected my wallet.",
+    checkboxLabel: translate({id: 'getStarted.step4.checkbox', message: 'I\'ve connected my wallet.'}),
   },
   {
-    title: "Get ada",
-    description: "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain.",
+    title: translate({id: 'getStarted.step5.title', message: 'Get ada'}),
+    description: translate({id: 'getStarted.step5.description', message: 'Obtain ada, Cardano\'s native cryptocurrency, to start using the blockchain.'}),
     content: (
       <TwoColumnLayout
         sidebar={
@@ -148,7 +149,7 @@ const steps = (onWalletConnect) => [
                     dark: useBaseUrl('/img/ada-round-dark.webp'),
                   }}
                 />
-               
+
             </div>
           </div>
         }
@@ -157,43 +158,43 @@ const steps = (onWalletConnect) => [
         centerVertically={true}
       >
         <div className={styles.stepContent}>
-          <h3>Where to get ada</h3>
-          <p>There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies.</p>
-          
-          <p><Link to="/where-to-get-ada" className="button button--primary">View all options →</Link></p>
+          <h3>{translate({id: 'getStarted.step5.heading', message: 'Where to get ada'})}</h3>
+          <p>{translate({id: 'getStarted.step5.text', message: 'There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies.'})}</p>
+
+          <p><Link to="/where-to-get-ada" className="button button--primary">{translate({id: 'getStarted.step5.button', message: 'View all options →'})}</Link></p>
 
           <p className={styles.securityNote}>
-            The cryptocurrency space is full of opportunities, but it’s also a playground for scammers. <Link to="/common-scams">Be aware of the most common scams.</Link>
+            {translate({id: 'getStarted.step5.securityNote', message: 'The cryptocurrency space is full of opportunities, but it\'s also a playground for scammers.'})} <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>
           </p>
         </div>
       </TwoColumnLayout>
     ),
-    checkboxLabel: "I have ada in my wallet.",
+    checkboxLabel: translate({id: 'getStarted.step5.checkbox', message: 'I have ada in my wallet.'}),
   },
   {
-    title: "Explore the ecosystem",
-    description: "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps.",
+    title: translate({id: 'getStarted.step6.title', message: 'Explore the ecosystem'}),
+    description: translate({id: 'getStarted.step6.description', message: 'Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps.'}),
     content: (
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
             <img src="/img/hero-header-braid-red-blue.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
-            
+
         }
         sidebarSticky={false}
         ratio="3:2"
         centerVertically={false}
       >
-        <AppList 
-              tags={["goodForBeginners"]} 
-              limit={5} 
-              showTags={true} 
-              categoryTitle="Popular Apps" 
+        <AppList
+              tags={["goodForBeginners"]}
+              limit={5}
+              showTags={true}
+              categoryTitle="Popular Apps"
               showTxCount={false}
               showDescription={true}
             />
-           
+
       </TwoColumnLayout>
     ),
     finalStep: true,
@@ -209,8 +210,8 @@ export default function Home() {
 
   return (
     <Layout
-      title="Get started with Cardano | cardano.org"
-      description="Step into the new world yourself and learn all the basics in just few steps."
+      title={translate({id: 'getStarted.meta.title', message: 'Get started with Cardano | cardano.org'})}
+      description={translate({id: 'getStarted.meta.description', message: 'Step into the new world yourself and learn all the basics in just few steps.'})}
     >
       <OpenGraphInfo pageName="get-started" />
       <HomepageHeader />
