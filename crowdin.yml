@@ -16,10 +16,12 @@ files:
   - source: /i18n/en/docusaurus-plugin-content-docs/**/*.json
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
 
-  # Documentation markdown
+  # Documentation markdown (excluding contributor component docs)
   - source: /docs/**/*.md
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    ignore:
+      - /docs/get-involved/components/**/*
 
-  # Blog posts markdown
-  - source: /blog/**/*.md
-    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
+  # Blog posts excluded from translation to reduce hosted words
+  # - source: /blog/**/*.md
+  #   translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%

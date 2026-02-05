@@ -9,8 +9,6 @@ import enCode from '@site/i18n/en/code.json';
 import deCode from '@site/i18n/de/code.json';
 import jaCode from '@site/i18n/ja/code.json';
 import viCode from '@site/i18n/vi/code.json';
-import koCode from '@site/i18n/ko/code.json';
-import esCode from '@site/i18n/es/code.json';
 
 // Calculate translation percentage
 function calculatePercentage(sourceMessages, targetMessages) {
@@ -35,8 +33,6 @@ const translationStats = {
   de: calculatePercentage(enCode, deCode),
   ja: calculatePercentage(enCode, jaCode),
   vi: calculatePercentage(enCode, viCode),
-  ko: calculatePercentage(enCode, koCode),
-  es: calculatePercentage(enCode, esCode),
 };
 
 // Progress bar component

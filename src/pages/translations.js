@@ -8,8 +8,6 @@ import enCode from '@site/i18n/en/code.json';
 import deCode from '@site/i18n/de/code.json';
 import jaCode from '@site/i18n/ja/code.json';
 import viCode from '@site/i18n/vi/code.json';
-import koCode from '@site/i18n/ko/code.json';
-import esCode from '@site/i18n/es/code.json';
 
 // Calculate translation stats for a locale
 function calculateStats(sourceMessages, targetMessages) {
@@ -129,19 +127,15 @@ export default function TranslationsPage() {
   const deStats = calculateStats(enCode, deCode);
   const jaStats = calculateStats(enCode, jaCode);
   const viStats = calculateStats(enCode, viCode);
-  const koStats = calculateStats(enCode, koCode);
-  const esStats = calculateStats(enCode, esCode);
 
   const locales = [
     { locale: 'de', label: 'Deutsch', stats: deStats },
     { locale: 'ja', label: '日本語', stats: jaStats },
     { locale: 'vi', label: 'Tiếng Việt', stats: viStats },
-    { locale: 'ko', label: '한국어', stats: koStats },
-    { locale: 'es', label: 'Español', stats: esStats },
   ];
 
-  const overallTranslated = deStats.translated + jaStats.translated + viStats.translated + koStats.translated + esStats.translated;
-  const overallTotal = deStats.total + jaStats.total + viStats.total + koStats.total + esStats.total;
+  const overallTranslated = deStats.translated + jaStats.translated + viStats.translated;
+  const overallTotal = deStats.total + jaStats.total + viStats.total;
   const overallPercentage = Math.round((overallTranslated / overallTotal) * 100);
 
   return (
