@@ -337,7 +337,7 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
     'not-listed': ''
   };
 
-  const linkTag = tagMap[tagSlug] || tagSlug;
+  const linkTag = tagSlug in tagMap ? tagMap[tagSlug] : tagSlug;
 
   return (
     <div
@@ -528,7 +528,7 @@ export default function LeaderboardPage() {
             <Divider text="Hot Categories" id="categories" />
             <TitleWithText
               description={[
-                "Transaction distribution across app categories. DEX activity dominates, reflecting the ecosystem's active trading scene."
+                "Transaction distribution across app categories."
               ]}
               headingDot={false}
             />
@@ -606,12 +606,19 @@ export default function LeaderboardPage() {
                   If your app's transactions aren't being tracked, you may need to make them
                   identifiable on-chain. Learn how to set up tracking for your application.
                 </p>
+                <p>
+                  Once enabled, your app will appear on this leaderboard and gain visibility
+                  across the Cardano ecosystem. Tracking is open to all projects building on Cardano.
+                </p>
                 <Link
                   to="/docs/get-involved/tx-rankings/"
                   className="button button--primary button--lg"
                 >
                   Transaction Rankings Guide
                 </Link>
+                <p style={{ marginTop: '1rem' }}>
+                  You can also explore network-wide <Link to="/insights/transactions/">transaction trends</Link>.
+                </p>
               </div>
             </div>
           </BoundaryBox>
