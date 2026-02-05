@@ -1,10 +1,13 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
 import * as echarts from 'echarts';
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
+import { makeApiClient } from '@site/src/utils/insights/api';
+import { dateToEpoch } from '@site/src/utils/insights/epochs';
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
@@ -52,7 +55,7 @@ function getIconSrc(app) {
 
 // Map app labels to display-friendly category names
 function getCategoryForApp(app) {
-  if (!app) return 'Other';
+  if (!app) return 'Not Listed';
   const tags = app.tags || [];
   if (tags.includes('dex')) return 'DEX';
   if (tags.includes('lending')) return 'Lending';
@@ -79,7 +82,7 @@ const categoryColors = {
   'Governance': '#673AB7',
   'Bridge': '#FFC107',
   'Minting': '#42A5F5',
-  'Other': '#757575'
+  'Not Listed': '#757575'
 };
 
 // Horizontal Bar Chart Component for Top Apps
@@ -331,7 +334,7 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
     'governance': 'governance',
     'bridge': 'bridge',
     'minting': 'minting',
-    'other': ''
+    'not-listed': ''
   };
 
   const linkTag = tagMap[tagSlug] || tagSlug;
@@ -359,8 +362,14 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
 
 // Main Leaderboard Page
 export default function LeaderboardPage() {
+  const { siteConfig } = useDocusaurusContext();
+  const API_URL = siteConfig.customFields.CARDANO_ORG_API_URL;
+
   const appStatsData = appStats.appStats;
   const metadata = appStats.metadata;
+
+  const [coverageData, setCoverageData] = useState(null);
+  const [coverageLoading, setCoverageLoading] = useState(true);
 
   // Calculate totals and aggregations
   const totalTrackedTx = useMemo(() => {
@@ -409,6 +418,34 @@ export default function LeaderboardPage() {
     ? new Date(metadata.reportingWindow.end).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     : 'N/A';
 
+  // Fetch network coverage data
+  useEffect(() => {
+    const fetchCoverage = async () => {
+      try {
+        const startEpoch = dateToEpoch(metadata.reportingWindow.start);
+        const endEpoch = dateToEpoch(metadata.reportingWindow.end);
+
+        const api = makeApiClient(API_URL);
+        const response = await api.get('/epoch_info');
+
+        const totalNetworkTx = response.data
+          .filter(e => e.epoch_no >= startEpoch && e.epoch_no <= endEpoch)
+          .reduce((sum, e) => sum + Number(e.tx_count || 0), 0);
+
+        setCoverageData({
+          totalNetworkTx,
+          coveragePercent: (totalTrackedTx / totalNetworkTx) * 100
+        });
+      } catch (err) {
+        console.error('Failed to fetch network coverage:', err);
+      } finally {
+        setCoverageLoading(false);
+      }
+    };
+
+    fetchCoverage();
+  }, [API_URL, metadata.reportingWindow, totalTrackedTx]);
+
   return (
     <Layout
       title="App Leaderboard | cardano.org"
@@ -439,6 +476,18 @@ export default function LeaderboardPage() {
                 <span className={styles.statValue}>{categoryStats.length}</span>
                 <span className={styles.statLabel}>Categories</span>
                 <span className={styles.statPeriod}>Active on-chain</span>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>
+                  {coverageLoading ? '--' : coverageData ? `${coverageData.coveragePercent.toFixed(1)}%` : '--'}
+                </span>
+                <span className={styles.statLabel}>Network Coverage</span>
+                <span className={styles.statPeriod}>
+                  {coverageData
+                    ? `${formatNumber(totalTrackedTx)} of ${formatNumber(coverageData.totalNetworkTx)} tx`
+                    : coverageLoading ? 'Loading...' : 'Unable to load'
+                  }
+                </span>
               </div>
             </div>
 
@@ -531,14 +580,24 @@ export default function LeaderboardPage() {
             <div className={styles.coverageSection}>
               <div className={styles.coverageStats}>
                 <h3>Coverage Status</h3>
+                {coverageData && (
+                  <p>
+                    During this reporting period, the Cardano network processed{' '}
+                    <strong>{formatNumber(coverageData.totalNetworkTx)}</strong> total transactions.
+                    The {appStatsData.length} tracked apps account for{' '}
+                    <strong>{formatNumber(totalTrackedTx)}</strong> transactions
+                    ({coverageData.coveragePercent.toFixed(1)}% of network activity).
+                  </p>
+                )}
                 <p>
                   Currently <strong>{trackedAppsInAppsJs} of {totalAppsInAppsJs}</strong> apps listed
                   on cardano.org have transaction tracking enabled via <code>statsLabel</code>.
                 </p>
                 <p>
-                  Transaction data is sourced from on-chain activity and updated periodically.
-                  Not all transactions are attributed to specific apps - only those with
-                  identifiable on-chain patterns.
+                  This leaderboard only tracks transactions that are identifiable on-chain through
+                  known smart contract addresses or metadata patterns. Many network transactions
+                  (simple transfers, staking operations, untracked apps) are not attributed to
+                  specific applications.
                 </p>
               </div>
               <div className={styles.coverageCta}>
