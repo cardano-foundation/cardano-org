@@ -34,7 +34,7 @@ This approach aims to balance transparency, reproducibility, and practical usefu
 ## Current Implementation
 
 Transaction-based rankings are currently displayed on:
-- **[DexGrid Component](/docs/get-involved/components/dex-grid)** - on the [Where to get ada](/where-to-get-ada#exchanges) page
+- **[AppGrid Component](/docs/get-involved/components/app-grid)** - on the [Where to get ada](/where-to-get-ada#exchanges) page
 - **[AppList Component](/docs/get-involved/components/app-list#all-apps-no-filter)** 
 
 Apps with transaction data show:

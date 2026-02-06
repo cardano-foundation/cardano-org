@@ -83,7 +83,7 @@ Whether you want to contribute to **cardano.org** (this site) or **[developers.c
 We have a growing library of reusable components. Check out:
 - **[Component Documentation](/docs/get-involved/components/)** - see all (documented) components
 - **[AppList Component](/docs/get-involved/components/app-list)** - compact app listing
-- **[DexGrid Component](/docs/get-involved/components/dex-grid)** - DEX showcase grid
+- **[AppGrid Component](/docs/get-involved/components/app-grid)** - app showcase grid with transaction stats
 - **[FAQ Component](/docs/get-involved/faq-component)** - collapsible Q&A sections
 
 ### Getting Started as a Developer

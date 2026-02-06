@@ -8,7 +8,7 @@ import DottedImageWithText  from "@site/src/components/Layout/DottedImageWithTex
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import ExchangePicker from "@site/src/components/ExchangePicker";
-import DexGrid from "@site/src/components/DexGrid";
+import AppGrid from "@site/src/components/AppGrid";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -74,7 +74,7 @@ export default function Home() {
             headingDot={false}
             />
 
-            <DexGrid limit={5} showRank={false} showStats={true} />
+            <AppGrid tags={['dex']} limit={5} showRank={false} showStats={true} ctaText="Visit DEX" moreTitle="More DEXes" />
             <SpacerBox size="medium"/>
 
             <TitleWithText 

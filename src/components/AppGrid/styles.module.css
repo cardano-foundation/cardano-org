@@ -10,7 +10,7 @@
   color: var(--ifm-heading-color);
 }
 
-.dexGrid {
+.appGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -19,7 +19,7 @@
   max-width: 100%;
 }
 
-.dexCard {
+.appCard {
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
@@ -32,20 +32,20 @@
   min-height: 280px;
 }
 
-.dexCard:hover {
+.appCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary-lighter);
 }
 
-.dexHeader {
+.appHeader {
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
 }
 
-.dexLogo {
+.appLogo {
   width: 48px;
   height: 48px;
   object-fit: contain;
@@ -53,7 +53,7 @@
   border-radius: 8px;
 }
 
-.dexLogoPlaceholder {
+.appLogoPlaceholder {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
@@ -68,7 +68,7 @@
   text-transform: uppercase;
 }
 
-.dexName {
+.appName {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--ifm-font-color-base);
@@ -76,7 +76,7 @@
   flex: 1;
 }
 
-.dexDescription {
+.appDescription {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
   line-height: 1.5;
@@ -150,7 +150,7 @@
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
 }
 
-.dexLink {
+.appLink {
   display: inline-block;
   color: var(--ifm-color-primary);
   text-decoration: none;
@@ -160,18 +160,18 @@
   flex-shrink: 0;
 }
 
-.dexLink:hover {
+.appLink:hover {
   color: var(--ifm-color-primary-dark);
   text-decoration: underline;
 }
 
-.dexLink::after {
-  content: " →";
+.appLink::after {
+  content: " \2192";
   display: inline-block;
   transition: transform 0.2s ease;
 }
 
-.dexLink:hover::after {
+.appLink:hover::after {
   transform: translateX(3px);
 }
 
@@ -182,7 +182,7 @@
   font-size: 1.1rem;
 }
 
-.moreDexCard {
+.moreAppCard {
   background: var(--ifm-background-surface-color);
   border: 2px dashed var(--ifm-color-emphasis-300);
   border-radius: 12px;
@@ -197,17 +197,17 @@
   min-height: 200px;
 }
 
-.moreDexCard:hover {
+.moreAppCard:hover {
   transform: translateY(-2px);
   border-color: var(--ifm-color-primary);
   background: rgba(0, 51, 173, 0.02);
 }
 
-[data-theme="dark"] .moreDexCard:hover {
+[data-theme="dark"] .moreAppCard:hover {
   background: rgba(0, 102, 255, 0.05);
 }
 
-.moreDexContent {
+.moreAppContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,21 +215,21 @@
   text-align: center;
 }
 
-.moreDexIcon {
+.moreAppIcon {
   width: 48px;
   height: 48px;
   color: var(--ifm-color-primary);
   opacity: 0.8;
 }
 
-.moreDexTitle {
+.moreAppTitle {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--ifm-color-primary);
   margin: 0;
 }
 
-.moreDexDescription {
+.moreAppDescription {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
   margin: 0;
@@ -237,7 +237,7 @@
 }
 
 @media (max-width: 768px) {
-  .dexGrid {
+  .appGrid {
     grid-template-columns: 1fr;
   }
 }
