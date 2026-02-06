@@ -132,7 +132,7 @@ export default function TranslationsPage() {
     { locale: 'de', label: 'Deutsch', stats: deStats },
     { locale: 'ja', label: '日本語', stats: jaStats },
     { locale: 'vi', label: 'Tiếng Việt', stats: viStats },
-  ];
+  ].sort((a, b) => b.stats.percentage - a.stats.percentage);
 
   const overallTranslated = deStats.translated + jaStats.translated + viStats.translated;
   const overallTotal = deStats.total + jaStats.total + viStats.total;
