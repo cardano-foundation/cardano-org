@@ -9,32 +9,43 @@ import deCode from '@site/i18n/de/code.json';
 import jaCode from '@site/i18n/ja/code.json';
 import viCode from '@site/i18n/vi/code.json';
 
-// Calculate translation stats for a locale
+// Calculate translation stats for a locale, split by theme (Docusaurus) and custom (cardano.org)
 function calculateStats(sourceMessages, targetMessages) {
   const sourceKeys = Object.keys(sourceMessages);
-  const total = sourceKeys.length;
 
-  let translated = 0;
-  const untranslatedKeys = [];
+  const theme = { total: 0, translated: 0, untranslatedKeys: [] };
+  const custom = { total: 0, translated: 0, untranslatedKeys: [] };
 
   sourceKeys.forEach(key => {
     const sourceMsg = sourceMessages[key]?.message || sourceMessages[key];
     const targetMsg = targetMessages[key]?.message || targetMessages[key];
+    const bucket = key.startsWith('theme.') ? theme : custom;
 
-    // Consider translated if message differs from source
+    bucket.total++;
     if (targetMsg && targetMsg !== sourceMsg) {
-      translated++;
+      bucket.translated++;
     } else {
-      untranslatedKeys.push(key);
+      bucket.untranslatedKeys.push(key);
     }
   });
+
+  const finalize = (b) => ({
+    ...b,
+    untranslated: b.total - b.translated,
+    percentage: b.total > 0 ? Math.round((b.translated / b.total) * 100) : 0,
+  });
+
+  const total = sourceKeys.length;
+  const translated = theme.translated + custom.translated;
 
   return {
     total,
     translated,
     untranslated: total - translated,
-    percentage: Math.round((translated / total) * 100),
-    untranslatedKeys,
+    percentage: total > 0 ? Math.round((translated / total) * 100) : 0,
+    untranslatedKeys: [...theme.untranslatedKeys, ...custom.untranslatedKeys],
+    theme: finalize(theme),
+    custom: finalize(custom),
   };
 }
 
@@ -65,49 +76,40 @@ function ProgressBar({ percentage }) {
   );
 }
 
-function LocaleCard({ locale, label, stats, showDetails }) {
+function StatsRow({ label, stats }) {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div style={{
-      border: '1px solid #ddd',
-      borderRadius: '8px',
-      padding: '20px',
-      marginBottom: '20px',
-      backgroundColor: 'var(--ifm-card-background-color)',
-    }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-        <h3 style={{ margin: 0 }}>{label} ({locale})</h3>
-        <span style={{ fontSize: '14px', color: '#666' }}>
-          {stats.translated} / {stats.total} strings
+    <div style={{ marginBottom: '12px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+        <span style={{ fontSize: '14px' }}>{label}</span>
+        <span style={{ fontSize: '13px', color: '#666' }}>
+          {stats.translated} / {stats.total}
         </span>
       </div>
-
       <ProgressBar percentage={stats.percentage} />
-
-      {showDetails && stats.untranslatedKeys.length > 0 && (
-        <div style={{ marginTop: '16px' }}>
+      {stats.untranslatedKeys.length > 0 && (
+        <div style={{ marginTop: '6px' }}>
           <button
             onClick={() => setExpanded(!expanded)}
             style={{
               background: 'none',
               border: '1px solid #ddd',
               borderRadius: '4px',
-              padding: '8px 16px',
+              padding: '4px 10px',
               cursor: 'pointer',
-              fontSize: '14px',
+              fontSize: '12px',
             }}
           >
-            {expanded ? '▼' : '▶'} {stats.untranslated} untranslated strings
+            {expanded ? '▼' : '▶'} {stats.untranslated} untranslated
           </button>
-
           {expanded && (
             <div style={{
-              marginTop: '12px',
-              maxHeight: '300px',
+              marginTop: '8px',
+              maxHeight: '200px',
               overflow: 'auto',
               backgroundColor: 'var(--ifm-code-background)',
-              padding: '12px',
+              padding: '10px',
               borderRadius: '4px',
               fontSize: '12px',
               fontFamily: 'monospace',
@@ -123,6 +125,28 @@ function LocaleCard({ locale, label, stats, showDetails }) {
   );
 }
 
+function LocaleCard({ locale, label, stats }) {
+  return (
+    <div style={{
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      padding: '20px',
+      marginBottom: '20px',
+      backgroundColor: 'var(--ifm-card-background-color)',
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        <h3 style={{ margin: 0 }}>{label} ({locale})</h3>
+        <span style={{ fontSize: '14px', color: '#666' }}>
+          {stats.translated} / {stats.total} strings total ({stats.percentage}%)
+        </span>
+      </div>
+
+      <StatsRow label="Cardano.org content" stats={stats.custom} />
+      <StatsRow label="Docusaurus UI" stats={stats.theme} />
+    </div>
+  );
+}
+
 export default function TranslationsPage() {
   const deStats = calculateStats(enCode, deCode);
   const jaStats = calculateStats(enCode, jaCode);
@@ -132,7 +156,7 @@ export default function TranslationsPage() {
     { locale: 'de', label: 'Deutsch', stats: deStats },
     { locale: 'ja', label: '日本語', stats: jaStats },
     { locale: 'vi', label: 'Tiếng Việt', stats: viStats },
-  ].sort((a, b) => b.stats.percentage - a.stats.percentage);
+  ].sort((a, b) => b.stats.custom.percentage - a.stats.custom.percentage);
 
   const overallTranslated = deStats.translated + jaStats.translated + viStats.translated;
   const overallTotal = deStats.total + jaStats.total + viStats.total;
@@ -171,7 +195,6 @@ export default function TranslationsPage() {
               locale={locale}
               label={label}
               stats={stats}
-              showDetails={true}
             />
           ))}
 
