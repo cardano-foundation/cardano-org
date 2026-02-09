@@ -37,6 +37,22 @@
   border-left: none;
 }
 
+/* CIP-20 Toggle */
+.cip20Toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.cip20Toggle input[type="checkbox"] {
+  cursor: pointer;
+}
+
 /* Stats Summary */
 .statsSummary {
   display: grid;
