@@ -18,6 +18,7 @@ import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 
 import { Showcases, Tags } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
+import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
 import styles from "./leaderboard.module.css";
 
@@ -365,8 +366,10 @@ export default function LeaderboardPage() {
   const { siteConfig } = useDocusaurusContext();
   const API_URL = siteConfig.customFields.CARDANO_ORG_API_URL;
 
-  const appStatsData = appStats.appStats;
-  const metadata = appStats.metadata;
+  const [period, setPeriod] = useState('30d');
+  const activeStats = period === '30d' ? appStats : appStats73;
+  const appStatsData = activeStats.appStats;
+  const metadata = activeStats.metadata;
 
   const [coverageData, setCoverageData] = useState(null);
   const [coverageLoading, setCoverageLoading] = useState(true);
@@ -460,12 +463,27 @@ export default function LeaderboardPage() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <div className={styles.periodToggle}>
+              <button
+                className={`${styles.periodButton} ${period === '30d' ? styles.periodButtonActive : ''}`}
+                onClick={() => setPeriod('30d')}
+              >
+                30 Days
+              </button>
+              <button
+                className={`${styles.periodButton} ${period === '365d' ? styles.periodButtonActive : ''}`}
+                onClick={() => setPeriod('365d')}
+              >
+                1 Year
+              </button>
+            </div>
+
             {/* Stats Summary */}
             <div className={styles.statsSummary}>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{formatNumber(totalTrackedTx)}</span>
                 <span className={styles.statLabel}>Tracked Transactions</span>
-                <span className={styles.statPeriod}>Last 30 days</span>
+                <span className={styles.statPeriod}>{period === '30d' ? 'Last 30 days' : 'Last 1 year'}</span>
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{appStatsData.length}</span>
@@ -501,7 +519,7 @@ export default function LeaderboardPage() {
             <Divider text="Top Apps by Transaction Volume" id="top-apps" />
             <TitleWithText
               description={[
-                "The top 10 apps by transaction count over the last 30 days. Bars are colored by category."
+                `The top 10 apps by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. Bars are colored by category.`
               ]}
               headingDot={false}
             />

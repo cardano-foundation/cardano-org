@@ -1,3 +1,42 @@
+/* Period Toggle */
+.periodToggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.periodButton {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.periodButton:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.periodButton:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.periodButtonActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-color: var(--ifm-color-primary);
+}
+
+.periodButtonActive + .periodButton {
+  border-left: none;
+}
+
 /* Stats Summary */
 .statsSummary {
   display: grid;
