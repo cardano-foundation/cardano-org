@@ -120,7 +120,7 @@ function TopAppsChart({ data }) {
         axisPointer: { type: 'shadow' },
         formatter: (params) => {
           const idx = params[0].dataIndex;
-          const app = topApps[idx];
+          const app = topApps[topApps.length - 1 - idx];
           const appDetails = findAppDetails(app);
           const category = getCategoryForApp(appDetails);
           return `<strong>${app.displayName}</strong><br/>` +
