@@ -25,7 +25,7 @@ function HomepageHeader() {
   );
 }
 
-const steps = (onWalletConnect) => [
+const steps = (onWalletConnect, images) => [
   {
     title: translate({id: 'getStarted.step1.title', message: 'Download a wallet'}),
     description: translate({id: 'getStarted.step1.description', message: 'A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account.'}),
@@ -62,7 +62,7 @@ const steps = (onWalletConnect) => [
        <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <img src="/img/hero-header-braid-black.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
+            <img src={images.braidBlack} alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
         }
         sidebarSticky={false}
@@ -116,7 +116,7 @@ const steps = (onWalletConnect) => [
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <img src="/img/hero-header-braid-blue.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
+            <img src={images.braidBlue} alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
         }
         sidebarSticky={false}
@@ -145,8 +145,8 @@ const steps = (onWalletConnect) => [
               <ThemedImage
                 alt="Ada Lovelace looking to the right"
                 sources={{
-                    light: useBaseUrl('/img/ada-round.webp'),
-                    dark: useBaseUrl('/img/ada-round-dark.webp'),
+                    light: images.adaRound,
+                    dark: images.adaRoundDark,
                   }}
                 />
 
@@ -178,7 +178,7 @@ const steps = (onWalletConnect) => [
       <TwoColumnLayout
         sidebar={
           <div className={styles.centeredSidebar}>
-            <img src="/img/hero-header-braid-red-blue.svg" alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
+            <img src={images.braidRedBlue} alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
           </div>
 
         }
@@ -208,6 +208,14 @@ export default function Home() {
     setWalletConnected(true);
   };
 
+  const images = {
+    braidBlack: useBaseUrl('/img/hero-header-braid-black.svg'),
+    braidBlue: useBaseUrl('/img/hero-header-braid-blue.svg'),
+    braidRedBlue: useBaseUrl('/img/hero-header-braid-red-blue.svg'),
+    adaRound: useBaseUrl('/img/ada-round.webp'),
+    adaRoundDark: useBaseUrl('/img/ada-round-dark.webp'),
+  };
+
   return (
     <Layout
       title={translate({id: 'getStarted.meta.title', message: 'Get started with Cardano | cardano.org'})}
@@ -219,7 +227,7 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <SpacerBox size="small" />
-            <StepCard steps={steps(handleWalletConnect)} walletConnected={walletConnected} />
+            <StepCard steps={steps(handleWalletConnect, images)} walletConnected={walletConnected} />
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>

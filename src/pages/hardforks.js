@@ -14,118 +14,120 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import {translate} from '@docusaurus/Translate';
 
 // Hard Fork List
-const timelineItems = [
-  {
-    title: "Byron Era",
-    cardTitle: "September 29, 2017",
-    cardSubtitle: "Name: Byron",
-    cardDetailedText: [
-      "The launch of the Cardano mainnet and introduction of the ada cryptocurrency.",
-      "Epoch 0",
-      "Protocol Version: 1.0",
-      "Transaction ID: N/A (Genesis block)",
-    ],
-  },
-  {
-    title: "Shelley Era",
-    cardTitle: "July 29, 2020",
-    cardSubtitle: "Name: Shelley",
-    cardDetailedText: [
-      "Introduced staking and decentralization features, transitioning from a federated to a decentralized system.",
-      "Epoch 208",
-      "Protocol Version: 2.0",
-      "Transaction ID: N/A (Transitioned through several updates)",
-    ],
-  },
-  {
-    title: "Allegra Era",
-    cardTitle: "December 16, 2020",
-    cardSubtitle: "Name: Allegra",
-    cardDetailedText: [
-      "Added token locking capabilities, which was a prerequisite for the smart contract functionality.",
-      "Epoch 236",
-      "Protocol Version: 3.0",
-      "Transaction ID: 1fbd16c1d1b1933f2f97a313db8c749bdcf65a39d996515b0f5e5535baad68e8",
-    ],
-  },
-  {
-    title: "Mary Era",
-    cardTitle: "March 1, 2021",
-    cardSubtitle: "Name: Mary",
-    cardDetailedText: [
-      "Brought native token functionality to Cardano, allowing users to create and transact with custom tokens.",
-      "Epoch 251",
-      "Protocol Version: 4.0",
-      "Transaction ID: b7f5658a5aabced7f8599cf7bf7cb9d6f730b865a5a0430f2dc7488caf25752e",
-    ],
-  },
-  {
-    title: "Alonzo Era",
-    cardTitle: "September 12, 2021",
-    cardSubtitle: "Name: Alonzo",
-    cardDetailedText: [
-      "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps).",
-      "Epoch 290",
-      "Protocol Version: 5.0",
-      "Transaction ID: N/A (Specific transaction ID not provided)",
-    ],
-  },
-  {
-    title: "Alonzo Era",
-    cardTitle: "October 22, 2021",
-    cardSubtitle: "Name: (Lobster)", //TODO: confirm name
-    cardDetailedText: [
-      // "-", // FIXME: what changed?
-      "Epoch 298",
-      "Protocol Version: 6.0",
-      "Transaction ID: N/A (Specific transaction ID not provided)",
-    ],
-  },
-  {
-    title: "Babbage Era",
-    cardTitle: "September 22, 2022",
-    cardSubtitle: "Name: Vasil",
-    cardDetailedText: [
-      "Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member.",
-      "Epoch 365",
-      "Protocol Version: 7.0",
-      "Transaction IDs: 3abda97c78c71e8a21473529aca94d78d364dfa1a866ef8245885e18085b4e4c, 8230f33cd7ad3f8601e94ea2b18abdc591187e190ea8ebecc25e20fc66200f13",
-    ],
-  },
-  {
-    title: "Babbage Era",
-    cardTitle: "February 14, 2023",
-    cardSubtitle: "Name: Valentine",
-    cardDetailedText: [
-      "Introduced further improvements to Plutus smart contract functionality and overall network performance.",
-      "Epoch 394",
-      "Protocol Version: 8.0",
-      "Transaction IDs: a83f479c5635e1e563a19f6e72a1be59fb082bbf31de90cc176850ee799b08ac, 62c3c13187423c47f629e6187f36fbd61a9ba1d05d101588340cfbfdf47b22d2",
-    ],
-  },
-  {
-    title: "Conway Era",
-    cardTitle: "September 1, 2024",
-    cardSubtitle: "Name: Chang 1",
-    cardDetailedText: [
-      "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations.",
-      "Epoch 507",
-      "Protocol Version: 9.0",
-      "Transaction IDs: 9ba6a580bceb8f94e65a683e8291c89382835f46e3cf928eb521f5581ade4820, 4e377ceb5c5721257a3d7960f3053468bbea45ed8ac22cd559c69e757da5e0ae",
-    ],
-  },
-  {
-    title: "Conway Era",
-    cardTitle: "January 29, 2025",
-    cardSubtitle: "Name: Plomin",
-    cardDetailedText: [
-      "Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role.",
-      "Epoch 537",
-      "Protocol Version: 10.0",
-      "Transaction IDs: 0b19476e40bbbb5e1e8ce153523762e2b6859e7ecacbaf06eae0ee6a447e79b9",
-    ],
-  },
-];
+function getTimelineItems() {
+  return [
+    {
+      title: "Byron Era",
+      cardTitle: "September 29, 2017",
+      cardSubtitle: "Name: Byron",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.byron.description', message: 'The launch of the Cardano mainnet and introduction of the ada cryptocurrency.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 0",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 1.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": N/A (Genesis block)",
+      ],
+    },
+    {
+      title: "Shelley Era",
+      cardTitle: "July 29, 2020",
+      cardSubtitle: "Name: Shelley",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.shelley.description', message: 'Introduced staking and decentralization features, transitioning from a federated to a decentralized system.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 208",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 2.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": N/A (Transitioned through several updates)",
+      ],
+    },
+    {
+      title: "Allegra Era",
+      cardTitle: "December 16, 2020",
+      cardSubtitle: "Name: Allegra",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.allegra.description', message: 'Added token locking capabilities, which was a prerequisite for the smart contract functionality.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 236",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 3.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": 1fbd16c1d1b1933f2f97a313db8c749bdcf65a39d996515b0f5e5535baad68e8",
+      ],
+    },
+    {
+      title: "Mary Era",
+      cardTitle: "March 1, 2021",
+      cardSubtitle: "Name: Mary",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.mary.description', message: 'Brought native token functionality to Cardano, allowing users to create and transact with custom tokens.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 251",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 4.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": b7f5658a5aabced7f8599cf7bf7cb9d6f730b865a5a0430f2dc7488caf25752e",
+      ],
+    },
+    {
+      title: "Alonzo Era",
+      cardTitle: "September 12, 2021",
+      cardSubtitle: "Name: Alonzo",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.alonzo.description', message: 'Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps).'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 290",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 5.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": N/A (Specific transaction ID not provided)",
+      ],
+    },
+    {
+      title: "Alonzo Era",
+      cardTitle: "October 22, 2021",
+      cardSubtitle: "Name: (Lobster)", //TODO: confirm name
+      cardDetailedText: [
+        // "-", // FIXME: what changed?
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 298",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 6.0",
+        translate({id: 'hardforks.timeline.label.transactionId', message: 'Transaction ID'}) + ": N/A (Specific transaction ID not provided)",
+      ],
+    },
+    {
+      title: "Babbage Era",
+      cardTitle: "September 22, 2022",
+      cardSubtitle: "Name: Vasil",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.vasil.description', message: 'Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 365",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 7.0",
+        translate({id: 'hardforks.timeline.label.transactionIds', message: 'Transaction IDs'}) + ": 3abda97c78c71e8a21473529aca94d78d364dfa1a866ef8245885e18085b4e4c, 8230f33cd7ad3f8601e94ea2b18abdc591187e190ea8ebecc25e20fc66200f13",
+      ],
+    },
+    {
+      title: "Babbage Era",
+      cardTitle: "February 14, 2023",
+      cardSubtitle: "Name: Valentine",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.valentine.description', message: 'Introduced further improvements to Plutus smart contract functionality and overall network performance.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 394",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 8.0",
+        translate({id: 'hardforks.timeline.label.transactionIds', message: 'Transaction IDs'}) + ": a83f479c5635e1e563a19f6e72a1be59fb082bbf31de90cc176850ee799b08ac, 62c3c13187423c47f629e6187f36fbd61a9ba1d05d101588340cfbfdf47b22d2",
+      ],
+    },
+    {
+      title: "Conway Era",
+      cardTitle: "September 1, 2024",
+      cardSubtitle: "Name: Chang 1",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.chang1.description', message: 'Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 507",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 9.0",
+        translate({id: 'hardforks.timeline.label.transactionIds', message: 'Transaction IDs'}) + ": 9ba6a580bceb8f94e65a683e8291c89382835f46e3cf928eb521f5581ade4820, 4e377ceb5c5721257a3d7960f3053468bbea45ed8ac22cd559c69e757da5e0ae",
+      ],
+    },
+    {
+      title: "Conway Era",
+      cardTitle: "January 29, 2025",
+      cardSubtitle: "Name: Plomin",
+      cardDetailedText: [
+        translate({id: 'hardforks.timeline.plomin.description', message: 'Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role.'}),
+        translate({id: 'hardforks.timeline.label.epoch', message: 'Epoch'}) + " 537",
+        translate({id: 'hardforks.timeline.label.protocolVersion', message: 'Protocol Version'}) + ": 10.0",
+        translate({id: 'hardforks.timeline.label.transactionIds', message: 'Transaction IDs'}) + ": 0b19476e40bbbb5e1e8ce153523762e2b6859e7ecacbaf06eae0ee6a447e79b9",
+      ],
+    },
+  ];
+}
 
 function HomepageHeader() {
   return (
@@ -157,9 +159,9 @@ export default function Home() {
           <BrowserOnly fallback={<div>{translate({id: 'hardforks.loading', message: 'Loading...'})}</div>}>
             {() => (
               <Chrono
-                items={timelineItems}
+                items={getTimelineItems()}
                 mode="VERTICAL_ALTERNATING"
-                cardHeight={220}
+                cardHeight={280}
                 activeItemIndex={9}
                 disableToolbar={true}
                 disableClickOnCircle={true}

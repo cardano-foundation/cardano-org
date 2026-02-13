@@ -219,11 +219,11 @@
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.NotFound.p1": {
-    "message": "Wir konnten nicht finden, wonach Sie gesucht haben.",
+    "message": "Wir konnten nicht finden, wonach du gesucht hast.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Bitte kontaktieren Sie den Besitzer der Seite, die Sie mit der ursprünglichen URL verlinkt hat, und teilen Sie ihm mit, dass der Link nicht mehr funktioniert.",
+    "message": "Bitte kontaktiere den Betreiber der Seite, die dich hierher verlinkt hat – der Link funktioniert nicht mehr.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -290,7 +290,7 @@
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "Geben Sie hier Ihre Suche ein",
+    "message": "Suchbegriff eingeben",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
@@ -398,7 +398,7 @@
     "description": "The placeholder text for Ask AI input"
   },
   "theme.SearchModal.askAiScreen.disclaimerText": {
-    "message": "Antworten werden von KI generiert und können Fehler enthalten. Bitte überprüfen Sie die Antworten.",
+    "message": "Antworten werden von KI generiert und können Fehler enthalten. Bitte überprüfe die Antworten.",
     "description": "The disclaimer text for AI answers"
   },
   "theme.SearchModal.askAiScreen.relatedSourcesText": {
@@ -869,73 +869,73 @@
     "message": "Mit Wallet und Ada bist du startklar. Entdecke, was Cardano zu bieten hat – am besten mit den beliebtesten Apps."
   },
   "whereToGetAda.hero.title": {
-    "message": "Where to get ada?"
+    "message": "Wo bekommt man Ada?"
   },
   "whereToGetAda.hero.description": {
-    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+    "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen."
   },
   "whereToGetAda.meta.title": {
-    "message": "Get ada | cardano.org"
+    "message": "Ada bekommen | cardano.org"
   },
   "whereToGetAda.meta.description": {
-    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+    "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen."
   },
   "whereToGetAda.divider.exchanges": {
-    "message": "Buy ada using Exchanges"
+    "message": "Ada über Börsen kaufen"
   },
   "whereToGetAda.cex.title": {
-    "message": "Centralized Exchanges"
+    "message": "Zentralisierte Börsen"
   },
   "whereToGetAda.cex.description": {
-    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control."
+    "message": "Zentralisierte Börsen (CEXs) sind Plattformen, auf denen Kryptowährungen und andere digitale Assets gehandelt werden. Sie vermitteln zwischen Käufern und Verkäufern und bieten oft zusätzliche Dienste wie Verwahrung, Orderabwicklung und regulatorische Compliance. Wichtig: CEXs verwahren deine [Ada](/what-is-ada/) und andere native Token, bis du sie an eine eigene [Wallet](/what-is-ada/#wallets) sendest."
   },
   "whereToGetAda.cex.disclaimer": {
-    "message": "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/)."
+    "message": "Eine Auflistung hier bedeutet keine Empfehlung. Die Daten stammen aus der Community. Eine vollständige Liste der Börsen mit [Ada](/what-is-ada/)-Unterstützung findest du auf [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets)."
   },
   "whereToGetAda.dex.title": {
-    "message": "Decentralized Exchanges"
+    "message": "Dezentralisierte Börsen"
   },
   "whereToGetAda.dex.description": {
-    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges."
+    "message": "Dezentralisierte Börsen (DEXs) ermöglichen den Handel mit Kryptowährungen ohne zentrale Instanz. Nutzer handeln direkt miteinander (Peer-to-Peer) über automatisierte Smart Contracts. Das erhöht Sicherheit und Privatsphäre und reduziert Risiken wie Hacks oder den Verlust verwahrter Gelder."
   },
   "whereToGetAda.dex.disclaimer": {
-    "message": "DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days."
+    "message": "DEXs sind nichts für Anfänger – du brauchst bereits [Ada](/what-is-ada/), um sie zu nutzen. Die Auflistung ist keine Empfehlung. Transaktionsdaten basieren auf den letzten 30 Tagen."
   },
   "whereToGetAda.divider.receive": {
-    "message": "Receive ada from people around the world"
+    "message": "Ada von überall empfangen"
   },
   "whereToGetAda.receive.title": {
-    "message": "Receive ada"
+    "message": "Ada empfangen"
   },
   "whereToGetAda.receive.description1": {
-    "message": "Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets)."
+    "message": "Bevor du [Ada](/what-is-ada/) empfangen oder kaufen kannst, brauchst du eine [Cardano-Wallet](/what-is-ada/#wallets)."
   },
   "whereToGetAda.receive.description2": {
-    "message": "Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer."
+    "message": "Sobald du eine [Cardano-Wallet](/what-is-ada/#wallets) hast, teile einfach deine Adresse – und schon kannst du [Ada](/what-is-ada/) (und andere native Token) direkt senden und empfangen."
   },
   "whereToGetAda.receive.description3": {
-    "message": "Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+    "message": "Einige [Wallets](/what-is-ada/#wallets) ermöglichen den Kauf von Krypto per Debit-/Kreditkarte, Banküberweisung oder Apple Pay. Die Verfügbarkeit hängt von deinem Standort ab."
   },
   "whereToGetAda.divider.funding": {
-    "message": "Get funded in ada"
+    "message": "Finanzierung in Ada erhalten"
   },
   "whereToGetAda.funding.title": {
     "message": "Project Catalyst"
   },
   "whereToGetAda.funding.description": {
-    "message": "Discover Cardano's innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal."
+    "message": "Project Catalyst ist Cardanos Innovationsfonds für bahnbrechende Projekte und Ideen. Reiche einen Vorschlag ein und erhalte [Ada](/what-is-ada/)-Finanzierung für dein Vorhaben. Mehr dazu auf [Project Catalyst](https://projectcatalyst.io)."
   },
   "whereToGetAda.divider.rewards": {
-    "message": "Staking rewards"
+    "message": "Staking-Belohnungen"
   },
   "whereToGetAda.staking.title": {
-    "message": "Staking rewards"
+    "message": "Staking-Belohnungen"
   },
   "whereToGetAda.staking.description1": {
-    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+    "message": "Wer bereits [Ada](/what-is-ada/) besitzt, kann mehr verdienen – durch [Delegation an einen Stake-Pool](/stake-pool-delegation/). So nimmst du am Proof-of-Stake-System teil und erhältst Belohnungen. Alternativ kannst du einen [eigenen Stake-Pool betreiben](/stake-pool-operation/) – das erfordert mehr Aufwand und technisches Wissen, kann sich aber besonders lohnen."
   },
   "whereToGetAda.staking.description2": {
-    "message": "Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+    "message": "Cardano bietet beim Staking mehrere Vorteile: Es gibt keinen Mindestbetrag, kein Slashing-Risiko (kein Verlust deiner gestakten [Ada](/what-is-ada/)) und keine Sperrfrist. Deine delegierte [Ada](/what-is-ada/) bleibt jederzeit in deinem Besitz und zugänglich. Belohnungen werden direkt vom Protokoll verteilt – nicht von den Pools –, was für einen fairen und transparenten Prozess sorgt."
   },
   "commonScams.hero.title": {
     "message": "Common Cardano scams"
@@ -1257,6 +1257,102 @@
     "message": "Mach mit"
   },
 
+  "research.hero.title": {
+    "message": "Forschung"
+  },
+  "research.hero.description": {
+    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
+  },
+  "research.meta.title": {
+    "message": "Cardano Forschung | cardano.org"
+  },
+  "research.meta.description": {
+    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
+  },
+
+  "hardforks.hero.title": {
+    "message": "Hard Forks"
+  },
+  "hardforks.hero.description": {
+    "message": "Welche Hard Forks gab es bisher – und welche Neuerungen haben sie gebracht?"
+  },
+  "hardforks.layout.title": {
+    "message": "Bisherige Hard Forks | cardano.org"
+  },
+  "hardforks.layout.description": {
+    "message": "Ein umweltfreundliches, nachweislich sicheres Proof-of-Stake-Protokoll mit rigorosen Sicherheitsgarantien."
+  },
+  "hardforks.content.title": {
+    "message": "Cardano Hard Forks"
+  },
+  "hardforks.content.description": {
+    "message": "Hard Forks bedeuten bei Cardano keine Spaltung oder Meinungsverschiedenheiten innerhalb des Ökosystems. Im Gegenteil: Sie markieren einen exakten, gemeinschaftlich vereinbarten Zeitpunkt (Slot), an dem alle Nodes von der aktuellen Ära zur nächsten wechseln – mit neuen Funktionen, Validierungsregeln oder Parameterwerten. Alle Stake-Pool-Betreiber müssen das Upgrade installieren und haben dabei ein Mitspracherecht. Ein Hard Fork bei Cardano ist also keine Trennung, sondern eine präzise kollektive Weiterentwicklung."
+  },
+  "hardforks.divider.timeline": {
+    "message": "Zeitstrahl"
+  },
+  "hardforks.loading": {
+    "message": "Wird geladen..."
+  },
+  "hardforks.divider.transactionIds": {
+    "message": "Hard-Fork-Transaktions-IDs"
+  },
+  "hardforks.transactionIds.description": {
+    "message": "Einige Hard Forks – insbesondere Byron und Shelley – wurden durch eine Reihe von Updates umgesetzt und haben daher keine einzelne Transaktions-ID. Bei den übrigen entsprechen die angegebenen Transaktions-IDs den wesentlichen Parameteränderungen im Zuge der Hard Forks."
+  },
+
+  "stakePoolDelegation.hero.title": {
+    "message": "Stake delegieren"
+  },
+  "stakePoolDelegation.hero.description": {
+    "message": "Stärke das Netzwerk, verdiene Belohnungen und werde Teil der Cardano-Reise."
+  },
+  "stakePoolDelegation.meta.title": {
+    "message": "Stake delegieren | cardano.org"
+  },
+  "stakePoolDelegation.meta.description": {
+    "message": "Delegiere deinen Stake, um das Netzwerk zu stärken, Belohnungen zu verdienen und Teil der Cardano-Reise zu werden."
+  },
+  "stakePoolDelegation.whatIsStake.divider": {
+    "message": "Was ist Stake?"
+  },
+  "stakePoolDelegation.whatIsStake.text1": {
+    "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
+  },
+  "stakePoolDelegation.whatIsStake.text2": {
+    "message": "Ada-Inhaber können auf zwei Wegen Belohnungen verdienen: indem sie ihren Stake an einen Stake Pool delegieren, der von jemand anderem betrieben wird, oder indem sie einen eigenen Stake Pool betreiben. Die Menge des an einen Pool delegierten Stakes bestimmt maßgeblich, wen das Ouroboros-Protokoll auswählt, den nächsten Block zur Blockchain hinzuzufügen – und dafür eine Belohnung zu erhalten."
+  },
+  "stakePoolDelegation.whatIsStake.text3": {
+    "message": "Je mehr Stake an einen Pool delegiert wird (bis zu einem bestimmten Punkt), desto wahrscheinlicher erzeugt er den nächsten Block – und die Belohnungen werden unter allen aufgeteilt, die ihren Stake an diesen Pool delegiert haben."
+  },
+  "stakePoolDelegation.whatIsDelegation.divider": {
+    "message": "Was ist Stake-Delegation?"
+  },
+  "stakePoolDelegation.whatIsDelegation.text": {
+    "message": "Delegation ist der Vorgang, bei dem Ada-Inhaber den mit ihrer Ada verbundenen Stake an einen Stake Pool übertragen. So können auch Nutzer am Netzwerk teilnehmen und proportional zu ihrem delegierten Stake Belohnungen verdienen – ohne selbst einen Node betreiben zu müssen."
+  },
+  "stakePoolDelegation.whyIncentives.divider": {
+    "message": "Warum Anreize?"
+  },
+  "stakePoolDelegation.whyIncentives.text": {
+    "message": "Anreize sichern die Langlebigkeit und Gesundheit des Cardano-Netzwerks und -Ökosystems. Der Anreizmechanismus basiert auf wissenschaftlicher Forschung und vereint Mathematik, Wirtschaftstheorie und Spieltheorie."
+  },
+  "stakePoolDelegation.walletsCta.title": {
+    "message": "Cardano Wallets"
+  },
+  "stakePoolDelegation.walletsCta.text": {
+    "message": "Entdecke eine große Auswahl an Wallets, die dir den Zugang zum Cardano-Ökosystem erleichtern."
+  },
+  "stakePoolDelegation.walletsCta.buttonLabel": {
+    "message": "Jetzt entdecken"
+  },
+  "stakePoolDelegation.calculatorCta.title": {
+    "message": "Probiere unseren Staking-Rechner aus und sieh, wie viel Ada du durch Delegation an einen Stake Pool verdienen könntest."
+  },
+  "stakePoolDelegation.calculatorCta.buttonLabel": {
+    "message": "Ausprobieren"
+  },
+
   "navbar.mega.column.Get to know": {
     "message": "Kennenlernen",
     "description": "Mega menu column title"
@@ -1538,5 +1634,185 @@
   "navbar.mega.description.Supply Chain": {
     "message": "Rückverfolgbarkeit und Herkunftsnachweis",
     "description": "Mega menu item description"
+  },
+
+  "research.headings.papers": {
+    "message": "Papers"
+  },
+  "research.headings.specifications": {
+    "message": "Spezifikationen"
+  },
+  "research.byron.subtitle": {
+    "message": "Grundstein"
+  },
+  "research.byron.description": {
+    "message": "Eine Phase, in der ein föderiertes Netzwerk aufgebaut wurde, das den Kauf und Verkauf von Ada ermöglichte. Das Netzwerk lief mit dem Proof-of-Stake-Konsensprotokoll Ouroboros."
+  },
+  "research.shelley.subtitle": {
+    "message": "Dezentralisierung"
+  },
+  "research.shelley.description": {
+    "message": "Eine Phase des Wachstums mit Fokus auf Dezentralisierung. Mehr Sicherheit und ein robusteres Netzwerk – ermöglicht durch den Übergang zu einem System, in dem die Mehrheit der Nodes von Netzwerkteilnehmern betrieben wird."
+  },
+  "research.goguen.subtitle": {
+    "message": "Smart Contracts"
+  },
+  "research.goguen.description": {
+    "message": "Die Goguen-Ära brachte Smart-Contract-Funktionalität und ermöglichte dezentrale Anwendungen – mit Unterstützung für Multi-Asset-Token, fungible und nicht-fungible Token-Standards."
+  },
+  "research.basho.subtitle": {
+    "message": "Skalierung"
+  },
+  "research.basho.description": {
+    "message": "Eine Ära der Optimierung – mit Fokus auf Skalierbarkeit und Interoperabilität. Basho führt Sidechains ein: neue Blockchains, die mit der Cardano-Hauptchain interagieren und das Potenzial des Netzwerks erheblich erweitern."
+  },
+  "research.voltaire.subtitle": {
+    "message": "Governance"
+  },
+  "research.voltaire.description": {
+    "message": "Die aktuelle Entwicklungsphase macht Cardano zu einem sich selbst tragenden System. Voltaire führt ein Abstimmungs- und Treasury-System ein, mit dem Netzwerkteilnehmer ihren Stake und ihre Stimmrechte nutzen können, um die Zukunft der Blockchain mitzugestalten."
+  },
+
+  "hardforks.timeline.byron.description": {
+    "message": "Start des Cardano-Mainnets und Einführung der Kryptowährung Ada."
+  },
+  "hardforks.timeline.shelley.description": {
+    "message": "Einführung von Staking und Dezentralisierungsfunktionen – der Übergang von einem föderierten zu einem dezentralen System."
+  },
+  "hardforks.timeline.allegra.description": {
+    "message": "Token-Locking-Funktionen als Voraussetzung für die spätere Smart-Contract-Funktionalität."
+  },
+  "hardforks.timeline.mary.description": {
+    "message": "Native-Token-Funktionalität für Cardano – Nutzer können eigene Token erstellen und damit handeln."
+  },
+  "hardforks.timeline.alonzo.description": {
+    "message": "Smart-Contract-Fähigkeiten mit Plutus – und damit die Möglichkeit, dezentrale Anwendungen (dApps) zu erstellen."
+  },
+  "hardforks.timeline.vasil.description": {
+    "message": "Verbesserung der Skalierbarkeit und Performance des Netzwerks – benannt nach Vasil Dabov, einem Mitglied der Cardano-Community."
+  },
+  "hardforks.timeline.valentine.description": {
+    "message": "Weitere Verbesserungen der Plutus-Smart-Contract-Funktionalität und der Netzwerk-Performance."
+  },
+  "hardforks.timeline.chang1.description": {
+    "message": "Erste dezentrale Governance-Funktionen aus CIP-1694 – zunächst nur Parameteränderungen und Hard-Fork-Initiierungen."
+  },
+  "hardforks.timeline.plomin.description": {
+    "message": "Zweite Welle der dezentralen Governance-Funktionen aus CIP-1694 – mit dem vollständigen Set an Governance-Aktionen und der DRep-Rolle."
+  },
+  "hardforks.timeline.label.epoch": {
+    "message": "Epoch"
+  },
+  "hardforks.timeline.label.protocolVersion": {
+    "message": "Protokollversion"
+  },
+  "hardforks.timeline.label.transactionId": {
+    "message": "Transaktions-ID"
+  },
+  "hardforks.timeline.label.transactionIds": {
+    "message": "Transaktions-IDs"
+  },
+
+  "delegation.faq.q1": {
+    "message": "Was ist ein Stake Pool?"
+  },
+  "delegation.faq.a1.p1": {
+    "message": "Stake Pools werden von Stake-Pool-Betreibern geführt. Das sind Netzwerkteilnehmer mit dem Know-how, einen Node zuverlässig rund um die Uhr zu betreiben – entscheidend für das Ouroboros-Protokoll und das gesamte Cardano-Netzwerk."
+  },
+  "delegation.faq.a1.p2": {
+    "message": "Das Protokoll wählt per Zufallsverfahren einen Leader für jeden Slot, der den nächsten Block erzeugt. Je mehr Stake an einen Node delegiert ist, desto höher die Chance, ausgewählt zu werden. Für jeden erfolgreich erzeugten Block erhält der Pool eine Belohnung, die proportional zum delegierten Anteil aufgeteilt wird. Pool-Betreiber können ihre Betriebskosten und eine Gewinnmarge abziehen."
+  },
+  "delegation.faq.q2": {
+    "message": "Kann ich meinen Stake an einen anderen Pool übertragen?"
+  },
+  "delegation.faq.a2.p1": {
+    "message": "Ja. Du kannst deinen Stake jederzeit an einen anderen Pool delegieren. Der Stake bleibt bis zur übernächsten Epoch im bisherigen Pool, danach wird deine neue Delegation auf der Chain aktualisiert. Da Belohnungen am Ende jeder Epoch verteilt werden, erhältst du noch für zwei Epochen Belohnungen vom alten Pool."
+  },
+  "delegation.faq.q3": {
+    "message": "Kann ich an mehrere Stake Pools gleichzeitig delegieren?"
+  },
+  "delegation.faq.a3.p1": {
+    "message": "Einige Wallets bieten Lösungen, um gleichzeitig an verschiedene Stake Pools zu delegieren. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q4": {
+    "message": "Was ist Stake-Pool-Performance?"
+  },
+  "delegation.faq.a4.p1": {
+    "message": "Die Performance zeigt, wie zuverlässig ein Stake Pool arbeitet. Da die Slot-Leader-Wahl privat erfolgt, lässt sich nur schätzen, wie oft ein Pool gewählt werden sollte – basierend auf den tatsächlich erzeugten Blöcken. Produziert ein Pool z. B. nur die Hälfte der erwarteten Blöcke, liegt seine Performance bei 50 %. Das kann an einer schlechten Netzwerkverbindung oder daran liegen, dass der Betreiber den Pool abgeschaltet hat."
+  },
+  "delegation.faq.a4.p2": {
+    "message": "Performance-Werte werden über einen längeren Zeitraum aussagekräftiger. Wurde ein Pool in der aktuellen Epoch noch nicht ausgewählt, steht seine Performance bei 0 % – selbst wenn er später noch Blöcke erzeugen wird. Werte über 100 % sind möglich, wenn ein Pool mehr Blöcke produziert als erwartet."
+  },
+  "delegation.faq.q5": {
+    "message": "Was ist Stake-Pool-Sättigung?"
+  },
+  "delegation.faq.a5.p1": {
+    "message": "Sättigung bedeutet, dass ein Pool mehr Stake hat als für das Netzwerk ideal ist – ab diesem Punkt sinken die Belohnungen. Dieser Mechanismus soll Zentralisierung verhindern: Delegierende werden ermutigt, ihren Stake auf verschiedene Pools zu verteilen, und Betreiber, weitere Pools aufzusetzen."
+  },
+  "delegation.faq.a5.p2": {
+    "message": "Ziel ist es, einzelne Pools nicht zu groß werden zu lassen, damit die Belohnungen fair verteilt bleiben. Die Gesundheit des Netzwerks hängt von vielen aktiven Pools mit ausgewogenem Stake ab – je zahlreicher und geografisch vielfältiger, desto besser. Der Sättigungsgrad jedes Pools wird im Daedalus-Auswahlmenü angezeigt."
+  },
+  "delegation.faq.q6": {
+    "message": "Was ist die Attraktivität eines Stake Pools?"
+  },
+  "delegation.faq.a6.p1": {
+    "message": "Die Attraktivität misst, wie interessant ein Stake Pool für Delegierende ist. Sie wird von mehreren Faktoren beeinflusst – darunter die Marge des Pools, seine Gebühren, Performance, die verfügbare Gesamtbelohnung in der aktuellen Epoch und der Sättigungsgrad – und fließt in das Ranking ein."
+  },
+  "delegation.faq.q7": {
+    "message": "Wie werden Stake Pools gerankt?"
+  },
+  "delegation.faq.a7.p1": {
+    "message": "Stake Pools werden hauptsächlich nach Attraktivität und Performance gerankt, zusammen mit weiteren Faktoren. Wichtig: Die Wallet-Entwickler entscheiden, wie das Ranking in ihrer Wallet umgesetzt wird. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q8": {
+    "message": "Wie wähle ich den richtigen Stake Pool?"
+  },
+  "delegation.faq.a8.p1": {
+    "message": "Bei der Wahl eines Stake Pools spielen mehrere Faktoren eine Rolle. [Pool-Tools](/apps?tags=pooltool) können dir bei der Entscheidung helfen. Worauf du achten solltest:"
+  },
+  "delegation.faq.a8.p2": {
+    "message": "**Performance:** Achte auf die historische Performance – sie zeigt, wie zuverlässig der Pool Blöcke erzeugt. Konstant hohe Werte sprechen für einen gut betriebenen Pool."
+  },
+  "delegation.faq.a8.p3": {
+    "message": "**Verfügbarkeit:** Der Pool sollte möglichst unterbrechungsfrei laufen. Hohe Verfügbarkeit steigert die Chancen, für die Blockerzeugung ausgewählt zu werden."
+  },
+  "delegation.faq.a8.p4": {
+    "message": "**Marge:** Stake Pools erheben eine prozentuale Gebühr auf die Belohnungen. Niedrigere Gebühren bedeuten mehr Ertrag – aber achte auf das Verhältnis zu Performance und Zuverlässigkeit."
+  },
+  "delegation.faq.a8.p5": {
+    "message": "**Fixgebühr:** Es gibt eine vom Protokoll festgelegte Mindestgebühr. Prüfe, welche Fixgebühr der Pool erhebt."
+  },
+  "delegation.faq.a8.p6": {
+    "message": "**Sättigungspunkt:** Ein Pool ist gesättigt, wenn er mehr Stake hat als das Protokoll als optimal vorsieht. Bei einem gesättigten Pool sinken die Belohnungen – wähle besser einen Pool unter dieser Schwelle."
+  },
+  "delegation.faq.a8.p7": {
+    "message": "**Community-Engagement:** Pools, die sich aktiv in der Cardano-Community einbringen – durch Bildung, Support oder Beiträge zum Ökosystem – sind oft eine gute Wahl."
+  },
+  "delegation.faq.a8.p8": {
+    "message": "**Pools mit Mission:** Manche Pools spenden einen Teil ihrer Gebühren für wohltätige Zwecke oder setzen sich für Nachhaltigkeit oder Bildung ein. Wenn dir das wichtig ist, kann das deine Wahl beeinflussen."
+  },
+  "delegation.faq.q9": {
+    "message": "Wie viel verdiene ich an Belohnungen?"
+  },
+  "delegation.faq.a9.p1": {
+    "message": "Mit dem [Belohnungsrechner](/calculator) bekommst du eine Schätzung deiner möglichen Belohnungen. Wichtig: Die Ergebnisse sind nur Richtwerte und keine Garantie. In Zukunft können sich Parameter ändern, die die Belohnungen beeinflussen. Die berechneten Beträge sind aber realistisch und sinnvoll."
+  },
+  "delegation.faq.q10": {
+    "message": "Welche Wallets werden unterstützt und wo finde ich sie?"
+  },
+  "delegation.faq.a10.p1": {
+    "message": "Es gibt verschiedene Wallets zur Auswahl. Achte darauf, Wallets nur von vertrauenswürdigen Seiten herunterzuladen. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q11": {
+    "message": "Kann ich ein Ada-Guthaben von einer Hardware-Wallet wiederherstellen?"
+  },
+  "delegation.faq.a11.p1": {
+    "message": "Ja. Du kannst Daedalus nutzen, um ein Ada-Guthaben von einer Hardware-Wallet wiederherzustellen. Aber Vorsicht: Die Eingabe deiner Hardware-Wallet-Recovery-Phrase in Daedalus kann deine privaten Schlüssel zusätzlichen Sicherheitsrisiken aussetzen. Empfehlungen dazu findest du während des Wiederherstellungsprozesses in Daedalus."
+  },
+  "delegation.faq.q12": {
+    "message": "Werden meine Ada-Belohnungen dem delegierten Stake hinzugefügt?"
+  },
+  "delegation.faq.a12.p1": {
+    "message": "Ja. Belohnungen werden deinem bestehenden Stake zugerechnet. Sobald Belohnungen eingehen, steigt dein Guthaben – und damit auch dein delegierter Stake."
   }
 }
