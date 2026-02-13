@@ -581,7 +581,7 @@
     "message": "Was ist Ada?"
   },
   "whatIsAda.hero.description1": {
-    "message": "Eine neue Art von Währung. Ein neues Mittel für Transaktionen."
+    "message": "Neue Währung. Neuer Weg zu handeln."
   },
   "whatIsAda.hero.description2": {
     "message": "Direkt. Sicher. Von überall. Für jeden."
@@ -590,7 +590,7 @@
     "message": "Was ist Ada? | cardano.org"
   },
   "whatIsAda.meta.description": {
-    "message": "Eine neue Art von Währung. Ein neues Mittel für Transaktionen. Direkt. Sicher. Von überall. Für jeden."
+    "message": "Neue Währung. Neuer Weg zu handeln. Direkt. Sicher. Von überall. Für jeden."
   },
   "whatIsAda.section.headline": {
     "message": "Was ist Ada?"
@@ -602,10 +602,10 @@
     "message": "Sie ist nach Ada Lovelace benannt: einer Mathematikerin des 19. Jahrhunderts, die als erste Computerprogrammiererin gilt und die Tochter des Dichters Lord Byron war."
   },
   "whatIsAda.section.description2": {
-    "message": "Ada ist eine digitale Währung. Jeder Nutzer, überall auf der Welt, kann Ada als sicheres Tauschmittel verwenden – ohne dass ein Dritter den Austausch vermitteln muss. Jede Transaktion wird dauerhaft, sicher und transparent auf der Cardano-Blockchain aufgezeichnet."
+    "message": "Ada ist eine digitale Währung. Egal wo auf der Welt – mit Ada lassen sich Werte sicher austauschen, ganz ohne Mittelsmänner. Jede Transaktion wird dauerhaft, sicher und transparent auf der Cardano-Blockchain gespeichert."
   },
   "whatIsAda.section.description3": {
-    "message": "Jeder Ada-Holder besitzt auch einen Anteil am Cardano-Netzwerk. In einer Wallet gespeichertes Ada kann an einen Stake-Pool delegiert werden, um Belohnungen zu verdienen – um am erfolgreichen Betrieb des Netzwerks teilzunehmen – oder Sie können Ihren eigenen Stake-Pool gründen und betreiben, um die Wahrscheinlichkeit zu erhöhen, Belohnungen zu erhalten. Mit der Zeit wird Ada auch für verschiedene Anwendungen und Dienste auf der Cardano-Plattform nutzbar sein."
+    "message": "Wer Ada besitzt, hat auch einen Anteil am Cardano-Netzwerk. Du kannst deine Ada an einen Stake-Pool delegieren und damit Belohnungen verdienen – oder sogar einen eigenen Stake-Pool betreiben. Langfristig wird Ada auch für immer mehr Anwendungen und Dienste auf Cardano nutzbar sein."
   },
   "whatIsAda.section.quote": {
     "message": "Was kann ich mit Ada machen?"
@@ -614,259 +614,259 @@
     "message": "Wie kaufe/verkaufe ich Ada?"
   },
   "howToBuyAda.description1": {
-    "message": "Es gibt viele Möglichkeiten, Ada zu erhalten, um die Cardano-Blockchain zu nutzen. Erfahren Sie mehr unter {whereToGetAdaLink}"
+    "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen. Mehr dazu unter {whereToGetAdaLink}"
   },
   "howToBuyAda.whereToGetAdaLink": {
     "message": "Wo bekomme ich Ada?"
   },
   "howToBuyAda.description2": {
-    "message": "Als Ada-Holder ist es wichtig, Ihre Mittel sicher aufzubewahren, und das bedeutet, dass Sie Ihre privaten Schlüssel privat halten müssen. Es wird dringend empfohlen, Ihre Kryptowährung nicht länger als nötig auf einer Börse zu halten und stattdessen eine Kryptowährungs-Wallet zu verwenden."
+    "message": "Wer Ada besitzt, sollte die eigenen Schlüssel schützen. Lass deine Kryptowährung nicht länger als nötig auf einer Börse – nutze stattdessen eine eigene Wallet."
   },
   "walletSection.typhon.title": {
     "message": "Typhon Wallet"
   },
   "walletSection.typhon.text": {
-    "message": "Blazing fast, feature-rich, secure, beautiful web and extension Cardano wallet. Delegate to multiple pools of your choice with multi-accounts."
+    "message": "Schnelle, funktionsreiche und sichere Cardano-Wallet für Browser und als Erweiterung. Delegiere an mehrere Pools deiner Wahl mit Multi-Accounts."
   },
   "walletSection.typhon.subtext": {
-    "message": "Browser extension for Chrome, Brave and Edge"
+    "message": "Browser-Erweiterung für Chrome, Brave und Edge"
   },
   "walletSection.typhon.label": {
-    "message": "Get Typhon"
+    "message": "Typhon holen"
   },
   "walletSection.vespr.title": {
     "message": "VESPR Wallet"
   },
   "walletSection.vespr.text": {
-    "message": "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use."
+    "message": "VESPR ist eine mobile Light-Wallet für Cardano – nicht-kustodial, sicher und besonders einfach zu bedienen."
   },
   "walletSection.vespr.subtext": {
-    "message": "App for iOS and Android"
+    "message": "App für iOS und Android"
   },
   "walletSection.vespr.label": {
-    "message": "Get VESPR"
+    "message": "VESPR holen"
   },
   "walletSection.yoroi.title": {
     "message": "Yoroi Wallet"
   },
   "walletSection.yoroi.text": {
-    "message": "A user-friendly, [open-source](https://github.com/Emurgo/yoroi-frontend) Cardano wallet with a browser-based interface, providing a convenient way to manage ada holdings securely. Yoroi is also available as mobile app."
+    "message": "Eine benutzerfreundliche [Open-Source](https://github.com/Emurgo/yoroi-frontend)-Cardano-Wallet im Browser – ideal, um Ada sicher zu verwalten. Yoroi gibt es auch als mobile App."
   },
   "walletSection.yoroi.subtext": {
-    "message": "Browser extension and app for iOS and Android"
+    "message": "Browser-Erweiterung und App für iOS und Android"
   },
   "walletSection.yoroi.label": {
-    "message": "Get Yoroi"
+    "message": "Yoroi holen"
   },
   "walletSection.eternl.title": {
     "message": "Eternl Wallet"
   },
   "walletSection.eternl.text": {
-    "message": "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community. Eternl is also available as mobile app."
+    "message": "Die alternative Cardano-Light-Wallet im Browser – mit den Features, die sich die Community am meisten wünscht. Eternl gibt es auch als mobile App."
   },
   "walletSection.eternl.subtext": {
-    "message": "Browser extension and app for iOS and Android"
+    "message": "Browser-Erweiterung und App für iOS und Android"
   },
   "walletSection.eternl.label": {
-    "message": "Get Eternl"
+    "message": "Eternl holen"
   },
   "walletSection.lace.title": {
     "message": "Lace Wallet"
   },
   "walletSection.lace.text": {
-    "message": "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3."
+    "message": "Eine [Open-Source](https://github.com/input-output-hk/lace)-Light-Wallet von IOG, einem der Gründer von Cardano. Unabhängig geprüft – für schnelles, einfaches und sicheres Verwalten digitaler Assets."
   },
   "walletSection.lace.subtext": {
-    "message": "Browser extension for Chrome, Brave"
+    "message": "Browser-Erweiterung für Chrome, Brave"
   },
   "walletSection.lace.label": {
-    "message": "Get Lace"
+    "message": "Lace holen"
   },
   "walletSection.daedalus.title": {
     "message": "Daedalus Wallet"
   },
   "walletSection.daedalus.text": {
-    "message": "The [open-source](https://github.com/input-output-hk/daedalus) full node wallet for Cardano. It offers enhanced control and security by maintaining a complete copy of the blockchain, but this comes at the cost of a more complex user experience. As a result, they are typically geared towards professional users who require these advanced features."
+    "message": "Die [Open-Source](https://github.com/input-output-hk/daedalus)-Full-Node-Wallet für Cardano. Bietet maximale Kontrolle und Sicherheit durch eine vollständige Kopie der Blockchain – richtet sich aber eher an erfahrene Nutzer."
   },
   "walletSection.daedalus.subtext": {
-    "message": "Only for powerful desktop PCs"
+    "message": "Nur für leistungsstarke Desktop-PCs"
   },
   "walletSection.daedalus.label": {
-    "message": "Get Daedalus"
+    "message": "Daedalus holen"
   },
   "walletSection.explore.title": {
-    "message": "Explore Apps"
+    "message": "Apps entdecken"
   },
   "walletSection.explore.text": {
-    "message": "Discover a wide variety of wallets designed to facilitate your interaction."
+    "message": "Entdecke weitere Wallets für den Umgang mit Cardano."
   },
   "walletSection.explore.label": {
-    "message": "More Wallets"
+    "message": "Mehr Wallets"
   },
   "walletSection.divider": {
     "message": "Cardano Wallets"
   },
   "walletSection.disclaimer": {
-    "message": "The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+    "message": "Die aufgeführten Anwendungen dienen nur zur Information und sind weder empfohlen noch geprüft. Die Nutzung erfolgt auf eigenes Risiko. Die Beschreibungen stammen von den jeweiligen Projektteams."
   },
   "walletSection.storageTitle": {
-    "message": "How Do I Store My Ada And Keep It Safe?"
+    "message": "Wie bewahre ich meine Ada sicher auf?"
   },
   "walletSection.storageDescription1": {
-    "message": "A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, monitor your balance, and interact with supported blockchains."
+    "message": "Eine Krypto-Wallet ist eine Software, die deine öffentlichen und privaten Schlüssel verwaltet. Damit kannst du digitale Währungen senden und empfangen, dein Guthaben einsehen und mit der Blockchain interagieren."
   },
   "walletSection.storageDescription2": {
-    "message": "In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet."
+    "message": "Neben den verschiedenen Wallet-Anbietern gibt es zwei grundlegende Typen: Hot Wallets und Cold Wallets."
   },
   "walletSection.hotWalletText": {
-    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges."
+    "message": "Eine Hot Wallet ist mit dem Internet verbunden und jederzeit zugänglich. Beispiele sind mobile Wallets, Software-Wallets und Guthaben auf Börsen."
   },
   "walletSection.coldWalletText": {
-    "message": "A cold wallet is an offline wallet. It is not connected to the internet and is used for securing storing funds that do not have to be frequently accessed. Examples include hardware wallets - which is a secure hardware device that stores the wallet's private keys - and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets."
+    "message": "Eine Cold Wallet ist offline und eignet sich für Ada, auf die du nicht ständig zugreifen musst. Beispiele sind Hardware-Wallets – spezielle Geräte, die deine privaten Schlüssel sicher speichern – und Paper-Wallets. Cardano wird von Trezor und Ledger unterstützt."
   },
   "whatIsAda.button.getStarted": {
-    "message": "Get started with Cardano"
+    "message": "Erste Schritte mit Cardano"
   },
   "whatIsAda.button.whereToGetAda": {
-    "message": "Where to get ada?"
+    "message": "Wo bekommt man Ada?"
   },
   "getStarted.hero.title": {
-    "message": "Get started with Cardano"
+    "message": "Erste Schritte mit Cardano"
   },
   "getStarted.hero.description": {
-    "message": "Step into the new world yourself and learn all the basics in just few steps."
+    "message": "Lerne die Grundlagen und starte in wenigen Schritten."
   },
   "getStarted.meta.title": {
-    "message": "Get started with Cardano | cardano.org"
+    "message": "Erste Schritte mit Cardano | cardano.org"
   },
   "getStarted.meta.description": {
-    "message": "Step into the new world yourself and learn all the basics in just few steps."
+    "message": "Lerne die Grundlagen und starte in wenigen Schritten."
   },
   "getStarted.step1.title": {
-    "message": "Download a wallet"
+    "message": "Wallet herunterladen"
   },
   "getStarted.step1.description": {
-    "message": "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account."
+    "message": "Eine Wallet ist eine App, mit der du Kryptowährungen empfangen, senden und dein Cardano-Konto verwalten kannst."
   },
   "getStarted.step1.heading": {
-    "message": "Download a wallet"
+    "message": "Wallet herunterladen"
   },
   "getStarted.step1.text1": {
-    "message": "A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network."
+    "message": "Eine Cardano-Wallet ist dein persönlicher Zugang zur Blockchain – ähnlich wie ein Browser dein Zugang zum Internet ist. Damit verwaltest du deine Ada, nutzt dApps und interagierst mit dem Netzwerk."
   },
   "getStarted.step1.text2": {
-    "message": "You will create your wallet in the next steps. Downloading alone does not create one."
+    "message": "Deine Wallet erstellst du in den nächsten Schritten. Der Download allein reicht noch nicht."
   },
   "getStarted.step1.securityNote": {
-    "message": "Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism."
+    "message": "Deine Recovery Phrase brauchst du, um wieder Zugang zu deiner Wallet zu bekommen. Cardano-Wallets sind nicht-kustodial – es gibt keinen zentralen Dienst, keinen Helpdesk und keine Möglichkeit zur Wiederherstellung."
   },
   "getStarted.step1.checkbox": {
-    "message": "I downloaded a wallet."
+    "message": "Ich habe eine Wallet heruntergeladen."
   },
   "getStarted.common.scamLink": {
-    "message": "Be aware of the most common scams."
+    "message": "Informiere dich über die häufigsten Betrugsmaschen."
   },
   "getStarted.step2.title": {
-    "message": "Backup your recovery phrase"
+    "message": "Recovery Phrase sichern"
   },
   "getStarted.step2.description": {
-    "message": "When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!"
+    "message": "Beim Erstellen einer neuen Wallet erhältst du 12, 15 oder 24 Wörter. Das ist deine Recovery Phrase (auch Seed Phrase genannt) – der Hauptschlüssel zu deiner Wallet. Bewahre sie sicher auf!"
   },
   "getStarted.step2.heading": {
-    "message": "Save your recovery phrase"
+    "message": "Recovery Phrase sichern"
   },
   "getStarted.step2.whatToDo": {
-    "message": "What to do:"
+    "message": "So geht's:"
   },
   "getStarted.step2.tip1": {
-    "message": "Write it down on paper and store it securely offline"
+    "message": "Auf Papier aufschreiben und offline sicher aufbewahren"
   },
   "getStarted.step2.tip2": {
-    "message": "Never share it with anyone or store it digitally"
+    "message": "Niemals teilen oder digital speichern"
   },
   "getStarted.step2.tip3": {
-    "message": "Anyone with your recovery phrase can access your funds"
+    "message": "Wer deine Recovery Phrase kennt, hat Zugriff auf dein Guthaben"
   },
   "getStarted.step2.tip4": {
-    "message": "Keep multiple copies in different secure locations"
+    "message": "Mehrere Kopien an verschiedenen sicheren Orten aufbewahren"
   },
   "getStarted.step2.checkbox": {
-    "message": "I've backed up my recovery phrase."
+    "message": "Ich habe meine Recovery Phrase gesichert."
   },
   "getStarted.step3.title": {
-    "message": "Complete wallet setup"
+    "message": "Wallet-Einrichtung abschließen"
   },
   "getStarted.step3.description": {
-    "message": "Finish setting up your wallet with a password and verification."
+    "message": "Schließe die Einrichtung mit Passwort und Verifizierung ab."
   },
   "getStarted.step3.heading": {
-    "message": "Final setup steps"
+    "message": "Letzte Schritte"
   },
   "getStarted.step3.intro": {
-    "message": "After backing up your recovery phrase, complete these two important steps:"
+    "message": "Nachdem du deine Recovery Phrase gesichert hast, folgen zwei wichtige Schritte:"
   },
   "getStarted.step3.passwordLabel": {
-    "message": "Spending password:"
+    "message": "Ausgabepasswort:"
   },
   "getStarted.step3.passwordText": {
-    "message": "Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device."
+    "message": "Wähle ein starkes Passwort für deine täglichen Transaktionen. Dieses Passwort ist nicht deine Recovery Phrase – es schützt deine Wallet auf diesem Gerät."
   },
   "getStarted.step3.verifyLabel": {
-    "message": "Verify your backup:"
+    "message": "Backup überprüfen:"
   },
   "getStarted.step3.verifyText": {
-    "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
+    "message": "Die meisten Wallets bitten dich, deine Recovery Phrase zu bestätigen, indem du die Wörter in der richtigen Reihenfolge auswählst. So stellst du sicher, dass du sie korrekt gespeichert hast."
   },
   "getStarted.step3.ready": {
-    "message": "Once these steps are complete, your wallet is ready to use!"
+    "message": "Danach ist deine Wallet einsatzbereit!"
   },
   "getStarted.step3.securityNote": {
-    "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
+    "message": "Falls du dein Ausgabepasswort vergisst, kannst du deine Wallet mit der Recovery Phrase wiederherstellen."
   },
   "getStarted.step3.securityWarning": {
-    "message": "However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password."
+    "message": "Aber: Wer deine Recovery Phrase hat, kann deine Wallet komplett leeren – ganz ohne Ausgabepasswort."
   },
   "getStarted.step3.checkbox": {
-    "message": "I've completed the wallet setup."
+    "message": "Ich habe die Wallet-Einrichtung abgeschlossen."
   },
   "getStarted.step4.title": {
-    "message": "Connect your wallet"
+    "message": "Wallet verbinden"
   },
   "getStarted.step4.description": {
-    "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
+    "message": "Nutze deine Wallet als zentrales Konto für Apps und Projekte auf Cardano. Ein Wallet-Connector (wie unten gezeigt) verbindet Websites sicher mit deiner Wallet – ohne extra Konten oder Passwörter."
   },
   "getStarted.step4.securityNote": {
-    "message": "When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing."
+    "message": "Bei jeder Verbindung oder Transaktion erteilst du der Website bestimmte Berechtigungen. Prüfe immer die Adresse und lies genau, was du freigibst."
   },
   "getStarted.step4.checkbox": {
-    "message": "I've connected my wallet."
+    "message": "Ich habe meine Wallet verbunden."
   },
   "getStarted.step5.title": {
-    "message": "Get ada"
+    "message": "Ada besorgen"
   },
   "getStarted.step5.description": {
-    "message": "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain."
+    "message": "Besorge dir Ada – Cardanos native Kryptowährung –, um die Blockchain zu nutzen."
   },
   "getStarted.step5.heading": {
-    "message": "Where to get ada"
+    "message": "Wo bekommt man Ada?"
   },
   "getStarted.step5.text": {
-    "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
+    "message": "Es gibt verschiedene Wege, Ada zu bekommen. Am gängigsten ist der Kauf auf Kryptobörsen – mit Fiat-Währung oder anderen Kryptowährungen."
   },
   "getStarted.step5.button": {
-    "message": "View all options →"
+    "message": "Alle Optionen ansehen →"
   },
   "getStarted.step5.securityNote": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "Die Krypto-Welt bietet viele Chancen – aber auch Betrüger sind aktiv."
   },
   "getStarted.step5.checkbox": {
-    "message": "I have ada in my wallet."
+    "message": "Ich habe Ada in meiner Wallet."
   },
   "getStarted.step6.title": {
-    "message": "Explore the ecosystem"
+    "message": "Ökosystem entdecken"
   },
   "getStarted.step6.description": {
-    "message": "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps."
+    "message": "Mit Wallet und Ada bist du startklar. Entdecke, was Cardano zu bieten hat – am besten mit den beliebtesten Apps."
   },
   "whereToGetAda.hero.title": {
     "message": "Where to get ada?"
@@ -1452,7 +1452,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Insights": {
-    "message": "On-Chain- und regelmäßig aktualisierte Daten",
+    "message": "Aktuelle Zahlen und On-Chain-Daten",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Hard Forks": {
@@ -1464,7 +1464,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Newsletter": {
-    "message": "Über Cardano-Neuigkeiten informiert bleiben",
+    "message": "Regelmäßige Updates per E-Mail",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Online Communities": {
@@ -1476,11 +1476,11 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Events": {
-    "message": "An Cardano-Community-Events teilnehmen",
+    "message": "Community-Events rund um Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Forum": {
-    "message": "Strukturierte Diskussionen im Langformat",
+    "message": "Diskussionen und Austausch im Forum",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get involved in cardano.org": {
@@ -1492,7 +1492,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Governance Tools": {
-    "message": "Tools für transparente, gemeinschaftliche Entscheidungen",
+    "message": "Tools für gemeinschaftliche Entscheidungen",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Constitution": {
@@ -1504,11 +1504,11 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Integrate Cardano": {
-    "message": "Anleitungen für Börsen und Integrationen",
+    "message": "Guides für Börsen und Integrationen",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Developer Portal": {
-    "message": "Cardano Developer Portal und Dokumentation",
+    "message": "Developer Portal und Dokumentation",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Builder Tools": {
@@ -1524,7 +1524,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Contact the Foundation": {
-    "message": "Zusammenarbeit mit der Cardano Foundation",
+    "message": "Kontakt zur Cardano Foundation",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.All Use Cases": {
@@ -1532,11 +1532,11 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Identity": {
-    "message": "Nachweise und Verifizierung",
+    "message": "Digitale Nachweise und Identität",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Supply Chain": {
-    "message": "Rückverfolgbarkeit und Herkunft",
+    "message": "Rückverfolgbarkeit und Herkunftsnachweis",
     "description": "Mega menu item description"
   }
 }

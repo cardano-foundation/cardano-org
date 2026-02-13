@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
 import styles from "./styles.module.css";
@@ -37,19 +38,20 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   // Get the image source
   const getIconSrc = () => {
     if (!app.icon) return null;
-    
+
     if (typeof app.icon === 'string') {
       return app.icon;
     }
-    
+
     if (typeof app.icon === 'object') {
       return app.icon.default || app.icon.src || null;
     }
-    
+
     return null;
   };
-  
-  const iconSrc = getIconSrc();
+
+  const rawIconSrc = getIconSrc();
+  const iconSrc = useBaseUrl(rawIconSrc || '');
   const initial = app.title.charAt(0).toUpperCase();
   
   // Filter out 'favorite' tag if showing tags
@@ -65,7 +67,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       className={styles.appListItem}
     >
       <div className={styles.iconContainer}>
-        {iconSrc ? (
+        {rawIconSrc ? (
           <img src={iconSrc} alt={app.title} className={styles.appIcon} />
         ) : (
           <div className={styles.appInitial}>{initial}</div>
