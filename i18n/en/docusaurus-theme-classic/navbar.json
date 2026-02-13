@@ -114,5 +114,29 @@
   "item.label.Companies building on Cardano": {
     "message": "Companies building on Cardano",
     "description": "Navbar item with label Companies building on Cardano"
+  },
+  "item.label.Solutions": {
+    "message": "Solutions",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Enterprise Solutions": {
+    "message": "Enterprise Solutions",
+    "description": "Navbar item with label Enterprise Solutions"
+  },
+  "item.label.Use Cases": {
+    "message": "Use Cases",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.Identity": {
+    "message": "Identity",
+    "description": "Navbar item with label Identity"
+  },
+  "item.label.Finance": {
+    "message": "Finance",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Supply Chain": {
+    "message": "Supply Chain",
+    "description": "Navbar item with label Supply Chain"
   }
 }

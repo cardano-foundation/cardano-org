@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import OriginalDropdownNavbarItem from '@theme-original/NavbarItem/DropdownNavbarItem';
 import {useWindowSize} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {translate} from '@docusaurus/Translate';
 
 export default function DropdownNavbarItem({mobile = false, ...props}) {
   const windowSize = useWindowSize();
@@ -61,7 +62,7 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
                     aria-hidden="true"
                   />
                 )}
-                {col.title}
+                {translate({id: `navbar.mega.column.${col.title}`, message: col.title})}
               </div>
               <ul className="megaMenuColumnList">
                 {col.items.map((item) => (
@@ -79,10 +80,10 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
                         />
                       )}
                       <div className="megaMenuItemContent">
-                        <span className="megaMenuItemLabel">{item.label}</span>
+                        <span className="megaMenuItemLabel">{translate({id: `navbar.mega.label.${item.label}`, message: item.label})}</span>
                         {item.description && (
                           <span className="megaMenuItemDescription">
-                            {item.description}
+                            {translate({id: `navbar.mega.description.${item.label}`, message: item.description})}
                           </span>
                         )}
                       </div>
