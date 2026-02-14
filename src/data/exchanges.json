@@ -21,10 +21,11 @@
       }
     ]
   },
-
   "countries": {
     "Germany": {
-      "regions": ["Europe"],
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "Kraken",
@@ -52,9 +53,10 @@
         }
       ]
     },
-
     "Liechtenstein": {
-      "regions": ["Europe"],
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "LCX",
@@ -64,9 +66,10 @@
         }
       ]
     },
-
     "Belgium": {
-      "regions": ["Europe"],
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "Bitvavo",
@@ -76,9 +79,10 @@
         }
       ]
     },
-
     "Norway": {
-      "regions": ["Europe"],
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "NBX",
@@ -88,9 +92,10 @@
         }
       ]
     },
-
-    "Austria": { 
-      "regions": ["Europe"], 
+    "Austria": {
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "Bitpanda",
@@ -100,12 +105,34 @@
         }
       ]
     },
-    "France": { "regions": ["Europe"], "exchanges": [] },
-    "Spain": { "regions": ["Europe"], "exchanges": [] },
-    "Italy": { "regions": ["Europe"], "exchanges": [] },
-    "Portugal": { "regions": ["Europe"], "exchanges": [] },
-    "Netherlands": { 
-      "regions": ["Europe"], 
+    "France": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Spain": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Italy": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Portugal": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Netherlands": {
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "Bitvavo",
@@ -133,21 +160,88 @@
         }
       ]
     },
-    "Luxembourg": { "regions": ["Europe"], "exchanges": [] },
-    "Ireland": { "regions": ["Europe"], "exchanges": [] },
-    "Denmark": { "regions": ["Europe"], "exchanges": [] },
-    "Sweden": { "regions": ["Europe"], "exchanges": [] },
-    "Finland": { "regions": ["Europe"], "exchanges": [] },
-    "Poland": { "regions": ["Europe"], "exchanges": [] },
-    "Czech Republic": { "regions": ["Europe"], "exchanges": [] },
-    "Slovakia": { "regions": ["Europe"], "exchanges": [] },
-    "Hungary": { "regions": ["Europe"], "exchanges": [] },
-    "Slovenia": { "regions": ["Europe"], "exchanges": [] },
-    "Croatia": { "regions": ["Europe"], "exchanges": [] },
-    "Greece": { "regions": ["Europe"], "exchanges": [] },
-    "Cyprus": { "regions": ["Europe"], "exchanges": [] },
-    "Estonia": { 
-      "regions": ["Europe"], 
+    "Luxembourg": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Ireland": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Denmark": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Sweden": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Finland": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Poland": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Czech Republic": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Slovakia": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Hungary": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Slovenia": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Croatia": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Greece": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Cyprus": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Estonia": {
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "CoinMetro",
@@ -157,9 +251,16 @@
         }
       ]
     },
-    "Latvia": { "regions": ["Europe"], "exchanges": [] },
-    "Lithuania": { 
-      "regions": ["Europe"], 
+    "Latvia": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Lithuania": {
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "WhiteBIT",
@@ -169,10 +270,24 @@
         }
       ]
     },
-    "Malta": { "regions": ["Europe"], "exchanges": [] },
-    "Bulgaria": { "regions": ["Europe"], "exchanges": [] },
-    "Romania": { "regions": ["Europe"], "exchanges": [] },
-
+    "Malta": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Bulgaria": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
+    "Romania": {
+      "regions": [
+        "Europe"
+      ],
+      "exchanges": []
+    },
     "Switzerland": {
       "regions": [],
       "exchanges": [
@@ -190,9 +305,10 @@
         }
       ]
     },
-
     "UK": {
-      "regions": ["Europe"],
+      "regions": [
+        "Europe"
+      ],
       "exchanges": [
         {
           "name": "Revolut",
@@ -202,7 +318,6 @@
         }
       ]
     },
-
     "USA": {
       "regions": [],
       "exchanges": [
@@ -226,7 +341,6 @@
         }
       ]
     },
-
     "Philippines": {
       "regions": [],
       "exchanges": [
@@ -244,7 +358,6 @@
         }
       ]
     },
-
     "Thailand": {
       "regions": [],
       "exchanges": [
@@ -256,7 +369,6 @@
         }
       ]
     },
-
     "UAE": {
       "regions": [],
       "exchanges": [
@@ -280,7 +392,6 @@
         }
       ]
     },
-
     "LATAM": {
       "regions": [],
       "exchanges": [
@@ -298,7 +409,6 @@
         }
       ]
     },
-
     "Japan": {
       "regions": [],
       "exchanges": [
@@ -310,7 +420,6 @@
         }
       ]
     },
-
     "South Korea": {
       "regions": [],
       "exchanges": [
@@ -322,7 +431,6 @@
         }
       ]
     },
-
     "South Africa": {
       "regions": [],
       "exchanges": [
@@ -334,7 +442,6 @@
         }
       ]
     },
-
     "China": {
       "regions": [],
       "exchanges": [
@@ -353,44 +460,46 @@
       ],
       "notice": "Regional Notice for Users in Mainland China: Access to cryptocurrency trading services is restricted in Mainland China. Local regulations prohibit the operation of cryptocurrency exchanges and related trading activities. This page is provided for general informational purposes only and should not be interpreted as an offer, solicitation or recommendation to access or use such services from within Mainland China."
     },
-
-
-"Kenya": {
-  "regions": [],
-  "exchanges": [
-    {
-      "name": "Binance",
-      "link": "https://www.binance.com",
-      "ada": true,
-      "cnt": false
-    },
-    {
-      "name": "Yellow Card",
-      "link": "https://www.yellowcard.io",
-      "ada": true,
-      "cnt": false
-    },
-    {
-      "name": "Remitano",
-      "link": "https://www.remitano.com",
-      "ada": true,
-      "cnt": false
-    },
-    {
-      "name": "OKX",
-      "link": "https://www.okx.com",
-      "ada": true,
-      "cnt": false
-    },
-    {
-      "name": "BingX",
-      "link": "https://www.bingx.com",
-      "ada": true,
-      "cnt": false
+    "Kenya": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "Binance",
+          "link": "https://www.binance.com",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "OKX",
+          "link": "https://www.okx.com",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "BingX",
+          "link": "https://www.bingx.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Bybit",
+          "link": "https://www.bybit.com",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "Coinbase",
+          "link": "https://www.coinbase.com",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "Kucoin",
+          "link": "https://www.kucoin.com",
+          "ada": true,
+          "cnt": true
+        }
+      ]
     }
-
-  ]
-}
   }
-
 }
