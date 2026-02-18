@@ -1965,5 +1965,38 @@
   },
   "commonScams.rug.tip5": {
     "message": "Informiere dich, was andere über Projekte denken – zum Beispiel im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "quiz.ui.noQuestions": {
+    "message": "Keine Quizfragen verfügbar."
+  },
+  "quiz.ui.greatJob": {
+    "message": "Gut gemacht!"
+  },
+  "quiz.ui.keepLearning": {
+    "message": "Weiter lernen!"
+  },
+  "quiz.ui.scoreText": {
+    "message": "Du hast {score} von {totalQuestions} richtig"
+  },
+  "quiz.ui.tryAgain": {
+    "message": "Nochmal versuchen"
+  },
+  "quiz.ui.correct": {
+    "message": "Richtig!"
+  },
+  "quiz.ui.incorrect": {
+    "message": "Falsch"
+  },
+  "quiz.ui.explanation": {
+    "message": "Erklärung"
+  },
+  "quiz.ui.checkAnswer": {
+    "message": "Antwort prüfen"
+  },
+  "quiz.ui.nextQuestion": {
+    "message": "Nächste Frage"
+  },
+  "quiz.ui.finishQuiz": {
+    "message": "Quiz beenden"
   }
 }

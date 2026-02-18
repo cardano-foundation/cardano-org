@@ -10,8 +10,10 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import QuizCard from "@site/src/components/QuizCard";
 import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
-import scamsQuizData from "@site/src/data/quiz-scams.json";
+import scamsQuizDataEn from "@site/src/data/quiz-scams.json";
+import scamsQuizDataDe from "@site/src/data/quiz-scams.de.json";
 import {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
 
@@ -26,6 +28,9 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const {i18n: {currentLocale}} = useDocusaurusContext();
+  const scamsQuizData = currentLocale === 'de' ? scamsQuizDataDe : scamsQuizDataEn;
+
   return (
     <Layout
       title={translate({id: 'commonScams.meta.title', message: 'Common Cardano scams you should avoid | cardano.org'})}

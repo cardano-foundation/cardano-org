@@ -223,15 +223,21 @@ The [Common Scams](/common-scams) page uses this component in a sticky sidebar:
 ```jsx title="src/pages/common-scams.js"
 import QuizCard from '@site/src/components/QuizCard';
 import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
-import scamsQuizData from '@site/src/data/quiz-scams.json';
+import scamsQuizDataEn from '@site/src/data/quiz-scams.json';
+import scamsQuizDataDe from '@site/src/data/quiz-scams.de.json';
+import {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+const {i18n: {currentLocale}} = useDocusaurusContext();
+const scamsQuizData = currentLocale === 'de' ? scamsQuizDataDe : scamsQuizDataEn;
 
 <TwoColumnLayout
   sidebar={
     <QuizCard
       quizData={scamsQuizData}
-      title="Test Your Knowledge"
-      description="Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
-      buttonText="Start Quiz"
+      title={translate({id: 'commonScams.quiz.title', message: 'Test Your Knowledge'})}
+      description={translate({id: 'commonScams.quiz.description', message: 'Take the 5-question quiz...'})}
+      buttonText={translate({id: 'commonScams.quiz.buttonText', message: 'Start Quiz'})}
       questionCount={5}
       passingScore={80}
       allowRetry={false}
@@ -242,6 +248,23 @@ import scamsQuizData from '@site/src/data/quiz-scams.json';
   {/* Main scam education content */}
 </TwoColumnLayout>
 ```
+
+## Internationalization (i18n)
+
+The `QuizCard` component itself does not handle translations — the parent page is responsible for passing translated props (`title`, `description`, `buttonText`) using `translate()` from `@docusaurus/Translate`.
+
+For quiz content (questions, options, explanations), create a separate locale-specific JSON file (e.g., `quiz-scams.de.json`) and select the correct one based on `currentLocale`:
+
+```jsx
+import quizDataEn from '@site/src/data/quiz-example.json';
+import quizDataDe from '@site/src/data/quiz-example.de.json';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+const {i18n: {currentLocale}} = useDocusaurusContext();
+const quizData = currentLocale === 'de' ? quizDataDe : quizDataEn;
+```
+
+The inner `Quiz` component UI strings (buttons, labels, feedback messages) are already translatable via `translate()` — translations go into `i18n/<locale>/code.json` under the `quiz.ui.*` namespace.
 
 ## Integration with Other Components
 
