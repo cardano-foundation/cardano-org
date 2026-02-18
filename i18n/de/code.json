@@ -2327,5 +2327,768 @@
   },
   "ambassadors.roles.innovative.description": {
     "message": "Von Bildungskampagnen bis zu bahnbrechenden Community-Projekten – jede Initiative hinterlässt einen nachhaltigen Eindruck."
+  },
+
+  "codeOfConduct.hero.title": {
+    "message": "Community-Verhaltenskodex"
+  },
+  "codeOfConduct.hero.description": {
+    "message": "Die Cardano-Community besteht aus Menschen aus aller Welt, die sich zusammengeschlossen haben, um den Geist und die Zukunft von Cardano zu fördern und zu bewahren."
+  },
+  "codeOfConduct.layout.title": {
+    "message": "Community-Verhaltenskodex | cardano.org"
+  },
+  "codeOfConduct.layout.description": {
+    "message": "Die Cardano-Community besteht aus Menschen aus aller Welt, die sich zusammengeschlossen haben, um den Geist und die Zukunft von Cardano zu fördern und zu bewahren."
+  },
+  "codeOfConduct.intro.description": {
+    "message": "Die Cardano-Community besteht aus Menschen aus aller Welt, die sich zusammengeschlossen haben, um den Geist und die Zukunft von Cardano zu fördern und zu bewahren. Alle Community-Mitglieder sollen rechtmäßig, ehrlich, ethisch und im besten Interesse des Projekts handeln. Dieser Verhaltenskodex bietet Regeln und Richtlinien, die das Miteinander in unserer Community lenken und einen respektvollen öffentlichen Austausch über das Projekt ermöglichen. Wer einem offiziellen Cardano-Community-Kanal beitritt und dort teilnimmt, erklärt sich mit diesem Verhaltenskodex einverstanden."
+  },
+  "codeOfConduct.improveDiscussion.title": {
+    "message": "Diskussionen verbessern"
+  },
+  "codeOfConduct.improveDiscussion.description1": {
+    "message": "Hilf uns, die Community zu einem großartigen Ort für Diskussionen zu machen – indem du jede Diskussion ein Stück besser machst, egal wie klein der Beitrag. Wenn du dir nicht sicher bist, ob dein Beitrag etwas zur Unterhaltung beisteuert, überdenke ihn und versuche es später erneut. Die Themen in der Community sind uns wichtig – und wir möchten, dass sie auch dir wichtig sind. Respektiere die Themen und die Menschen, die darüber diskutieren, selbst wenn du anderer Meinung bist."
+  },
+  "codeOfConduct.improveDiscussion.description2": {
+    "message": "Eine gute Möglichkeit, Diskussionen zu verbessern: Schau erst, welche Gespräche schon laufen. Nimm dir Zeit, die Community-Plattform zu durchsuchen, bevor du antwortest – so findest du leichter Gleichgesinnte. Bringe immer Mehrwert ein. Diskussionen sollten gesund und informativ sein, und Mitglieder sollten sinnvoll zur Weiterentwicklung von Cardano beitragen. Inhalte, die geteilt oder hochgeladen werden, sollten relevant für die Community sein. Bitte verbreite keine Falschinformationen oder Fake News, die Angst oder Zweifel schüren sollen."
+  },
+  "codeOfConduct.improveDiscussion.description3": {
+    "message": "Außerdem erlauben wir keinen Handel mit Ada oder anderen Token, Gütern oder Dienstleistungen und kein Shilling."
+  },
+  "codeOfConduct.beAgreeable.title": {
+    "message": "Respektvoll bleiben – auch bei Meinungsverschiedenheiten"
+  },
+  "codeOfConduct.beAgreeable.description1": {
+    "message": "Es ist völlig in Ordnung, anderer Meinung zu sein. Aber denk daran: Kritisiere Ideen, nicht Menschen. Vermeide bitte:"
+  },
+  "codeOfConduct.beAgreeable.list1": {
+    "message": "Beschimpfungen"
+  },
+  "codeOfConduct.beAgreeable.list2": {
+    "message": "Persönliche Angriffe (Ad-hominem-Attacken)"
+  },
+  "codeOfConduct.beAgreeable.list3": {
+    "message": "Auf den Ton statt auf den Inhalt eines Beitrags zu reagieren"
+  },
+  "codeOfConduct.beAgreeable.list4": {
+    "message": "Impulsive Reaktionen"
+  },
+  "codeOfConduct.beAgreeable.list5": {
+    "message": "Feststelltaste. Wir betrachten das als elektronisches Anschreien"
+  },
+  "codeOfConduct.beAgreeable.description2": {
+    "message": "Bringe stattdessen sachliche Gegenargumente, die die Diskussion bereichern. Denke auch an die oben genannte Regel, Mehrwert und sinnvolle Diskussionen einzubringen. Die Cardano-Community-Kanäle sollten nicht für persönliche Streitigkeiten zwischen Community-Mitgliedern genutzt werden."
+  },
+  "codeOfConduct.participation.title": {
+    "message": "Deine Beteiligung zählt"
+  },
+  "codeOfConduct.participation.description": {
+    "message": "Die Gespräche in der Community setzen den Ton für jedes neue Mitglied. Hilf uns, die Zukunft dieser Community zu gestalten, indem du dich in Diskussionen einbringst, die dieses Forum zu einem interessanten Ort machen – und solche meidest, die das nicht tun."
+  },
+  "codeOfConduct.reportProblem.title": {
+    "message": "Probleme melden"
+  },
+  "codeOfConduct.reportProblem.description1": {
+    "message": "Moderatoren haben besondere Befugnisse in der Community – sie sorgen dafür, dass sich alle an diesen Verhaltenskodex halten. Aber das gilt auch für dich. Mit deiner Hilfe können Moderatoren als Community-Vermittler wirken. Wenn du schlechtes Verhalten siehst, antworte nicht darauf. Das ermutigt nur zum Fehlverhalten, verbraucht deine Energie und verschwendet die Zeit aller. Melde es einfach! Hier sind spezifische Anweisungen zum Melden von Verstößen in den einzelnen Kanälen."
+  },
+  "codeOfConduct.reportProblem.list1": {
+    "message": "[Cardano Forum](https://forum.cardano.org): Wenn du einen Beitrag siehst, der gegen den Cardano-Community-Verhaltenskodex verstößt, klicke auf die Optionsschaltfläche und markiere ihn als unangemessen oder hinterlasse eine detailliertere Nachricht für die Moderatoren."
+  },
+  "codeOfConduct.reportProblem.list2": {
+    "message": "[Reddit](https://www.reddit.com/r/cardano): Du kannst jeden Beitrag auf Reddit melden, indem du auf den 'Report'-Button unter dem Beitrag klickst. Du musst angeben, gegen welche Regeln oder Gesetze der Beitrag verstößt. Reddit-Moderatoren prüfen dann deine Meldung."
+  },
+  "codeOfConduct.reportProblem.list3": {
+    "message": "[Telegram](https://t.me/CardanoAnnouncements): Jede Nachricht kann per Rechtsklick gemeldet werden. Das geht direkt an die Plattform. Es gibt auch einen [Report to Admin](https://t.me/CardanoReportToAdmin)-Kanal speziell für die Meldung anstößiger Inhalte oder missbräuchlicher Nutzer. Du kannst Nachrichten, die gegen den Kodex verstoßen, auch per DM an einen unserer Admins weiterleiten."
+  },
+  "codeOfConduct.reportProblem.list4": {
+    "message": "[Facebook](https://www.facebook.com/groups/CardanoCommunity): Du kannst jeden Beitrag in unserer Facebook-Gruppe melden, indem du auf den Pfeil oben rechts im Beitrag klickst und 'Melden' wählst. Das benachrichtigt die Moderatoren und Admins zur Prüfung."
+  },
+  "codeOfConduct.reportProblem.list5": {
+    "message": "[Twitter](https://twitter.com/cardano): Du kannst jeden Tweet direkt bei Twitter melden, indem du auf das Dropdown-Menü im Tweet klickst. Beachte, dass Meldungen direkt an Twitter gehen und nicht an das Cardano-Moderationsteam."
+  },
+  "codeOfConduct.reportProblem.description2": {
+    "message": "Um unsere Community aufrechtzuerhalten, behalten sich Moderatoren das Recht vor, jederzeit und aus beliebigem Grund Inhalte und Benutzerkonten zu entfernen. Moderatoren überprüfen neue Beiträge nicht vorab; die Moderatoren und Betreiber übernehmen keine Verantwortung für von der Community gepostete Inhalte."
+  },
+  "codeOfConduct.reportProblem.description3": {
+    "message": "Wenn du andererseits der Meinung bist, dass dein Inhalt zu Unrecht entfernt wurde, kann das Community-Team eine Nachprüfung durchführen. Sende Details deines Beitrags an community *at* cardano *dot* org. Bitte beachte, dass eine Nachprüfung nur für ernsthafte Anliegen gedacht ist und es einige Zeit dauern kann, bis das Community-Team antwortet."
+  },
+  "codeOfConduct.beCivil.title": {
+    "message": "Immer höflich bleiben"
+  },
+  "codeOfConduct.beCivil.description1": {
+    "message": "Nichts schadet einer gesunden Unterhaltung so sehr wie Unhöflichkeit:"
+  },
+  "codeOfConduct.beCivil.list1": {
+    "message": "Sei höflich. Poste nichts, was ein vernünftiger Mensch als beleidigend, missbräuchlich oder als Hassrede betrachten würde."
+  },
+  "codeOfConduct.beCivil.list2": {
+    "message": "Halte es sauber. Poste nichts Obszönes oder sexuell Explizites."
+  },
+  "codeOfConduct.beCivil.list3": {
+    "message": "Respektiere einander. Belästige oder mobbe niemanden, gib dich nicht als andere Person aus und veröffentliche keine privaten Informationen anderer."
+  },
+  "codeOfConduct.beCivil.list4": {
+    "message": "Respektiere unsere Community. Poste keinen Spam und vandaliere das Forum nicht."
+  },
+  "codeOfConduct.beCivil.list5": {
+    "message": "Wir nehmen Belästigung ernst. Belästigung umfasst beleidigende Kommentare zu Geschlecht, Alter, sexueller Orientierung, Behinderung, Aussehen, Körperbau, Ethnizität oder Religion, aber auch vorsätzliche Einschüchterung, Stalking, Verfolgen und nachhaltige Störung von Gesprächen. Belästigung von Mitgliedern, Admins oder Moderatoren wird nicht toleriert."
+  },
+  "codeOfConduct.beCivil.list6": {
+    "message": "Veröffentliche keine persönlichen Informationen anderer Community-Mitglieder – einschließlich, aber nicht beschränkt auf Name, Adresse, Telefonnummer oder Social-Media-Konten."
+  },
+  "codeOfConduct.beCivil.list7": {
+    "message": "Veröffentliche keine entfernten oder gelöschten Informationen erneut."
+  },
+  "codeOfConduct.beCivil.description2": {
+    "message": "Das sind keine festen Begriffe mit exakten Definitionen – vermeide auch den Anschein eines solchen Verhaltens. Wenn du dir unsicher bist, frage dich, wie du dich fühlen würdest, wenn dein Beitrag auf der Titelseite einer internationalen Nachrichtenwebsite erscheinen würde. Das ist eine öffentliche Community, und Suchmaschinen indizieren diese Diskussionen. Halte Sprache, Links und Bilder familien- und freundschaftstauglich."
+  },
+  "codeOfConduct.keepTidy.title": {
+    "message": "Ordnung halten"
+  },
+  "codeOfConduct.keepTidy.description": {
+    "message": "Gib dir Mühe, Dinge am richtigen Ort zu platzieren, damit wir mehr Zeit mit Diskutieren und weniger mit Aufräumen verbringen. Eine gesunde Community braucht strukturierte und kategorisierte Gespräche. Daher:"
+  },
+  "codeOfConduct.keepTidy.list1": {
+    "message": "Starte kein Gespräch in der falschen Kategorie oder im falschen Kanal."
+  },
+  "codeOfConduct.keepTidy.list2": {
+    "message": "Poste nicht dasselbe in mehreren Kanälen."
+  },
+  "codeOfConduct.postOwnStuff.title": {
+    "message": "Nur eigene Inhalte posten"
+  },
+  "codeOfConduct.postOwnStuff.description": {
+    "message": "Du darfst keine digitalen Inhalte posten, die jemand anderem gehören, ohne dessen Erlaubnis. Du darfst keine Beschreibungen, Links oder Methoden zum Stehlen geistigen Eigentums (Software, Video, Audio, Bilder) oder zum Brechen anderer Gesetze posten. Quellenangaben sollten immer auf den ursprünglichen Ersteller verweisen."
+  },
+  "codeOfConduct.multipleAccounts.title": {
+    "message": "Mehrfach-Accounts"
+  },
+  "codeOfConduct.multipleAccounts.description": {
+    "message": "Mehrere Accounts desselben Nutzers sind nicht erlaubt. Das fördert ein menschlicheres Erlebnis in der Online-Welt und schränkt Spamming ein. Beachte, dass doppelte Accounts untersucht und entfernt werden können."
+  },
+  "codeOfConduct.violation.title": {
+    "message": "Regelverstöße"
+  },
+  "codeOfConduct.violation.description1": {
+    "message": "Bei Regelverstößen greifen folgende Maßnahmen:"
+  },
+  "codeOfConduct.violation.list1": {
+    "message": "Erster Verstoß: Es wird eine Verwarnung ausgesprochen und der Nutzer wird für 24 Stunden gesperrt."
+  },
+  "codeOfConduct.violation.list2": {
+    "message": "Zweiter Verstoß: Es wird eine Verwarnung ausgesprochen und der Nutzer wird je nach Schwere des Verstoßes für bis zu 1 Monat gesperrt."
+  },
+  "codeOfConduct.violation.list3": {
+    "message": "Dritter und letzter Verstoß: Wenn der Nutzer wiederholt gegen Community-Regeln verstößt, wird sein Account dauerhaft von der Community-Plattform ausgeschlossen. Diese Strafe kann bei Bedarf auf alle Community-Kanäle ausgeweitet werden."
+  },
+  "codeOfConduct.violation.description2": {
+    "message": "Das Community-Team behält sich das Recht vor, jedem den Zugang zu den offiziellen Community-Kanälen zu verweigern, der gegen den Cardano-Community-Verhaltenskodex verstoßen hat."
+  },
+  "codeOfConduct.poweredByYou.title": {
+    "message": "Von euch gestaltet"
+  },
+  "codeOfConduct.poweredByYou.description": {
+    "message": "Diese Community wird vom Community-Team und von euch betrieben. Wenn du weitere Fragen hast, eröffne ein neues Thema in der [Community-Feedback-Kategorie](https://forum.cardano.org/c/english/community-feedback/16) des Forums und lass uns darüber diskutieren! Bei kritischen oder dringenden Anliegen kontaktiere uns direkt unter community *at* cardano *dot* org."
+  },
+
+  "newsletter.hero.title": {
+    "message": "Bleib informiert"
+  },
+  "newsletter.hero.description": {
+    "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
+  },
+  "newsletter.layout.title": {
+    "message": "Cardano Community Digest | cardano.org"
+  },
+  "newsletter.layout.description": {
+    "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
+  },
+  "newsletter.divider.text": {
+    "message": "Bleib informiert"
+  },
+  "newsletter.content.title": {
+    "message": "Cardano Community Digest"
+  },
+  "newsletter.content.description": {
+    "message": "Alle zwei Wochen das Wichtigste: aktuelle Themen, Entwicklungs-Updates, bevorstehende Meetups, Delegationsstrategie-Updates, Neuigkeiten von unseren Cardano-Ambassadors und vieles mehr."
+  },
+
+  "insights.layout.title": {
+    "message": "Insights"
+  },
+  "insights.layout.description": {
+    "message": "Interaktive Cardano-Insights zu Governance, Staking, Konsens, Ökonomie und mehr."
+  },
+  "insights.hero.title": {
+    "message": "Insights"
+  },
+  "insights.hero.description": {
+    "message": "Cardano-Themen durch On-Chain-Daten und visuelle Charts erkunden."
+  },
+  "insights.search.placeholder": {
+    "message": "Suchen oder nach Tags filtern..."
+  },
+  "insights.search.ariaLabel": {
+    "message": "Insights durchsuchen"
+  },
+  "insights.filter.label": {
+    "message": "Nach Thema filtern"
+  },
+  "insights.filter.clear": {
+    "message": "Zurücksetzen"
+  },
+  "insights.card.openInsight": {
+    "message": "Insight öffnen"
+  },
+  "insights.pagination.prevAriaLabel": {
+    "message": "Vorherige Seite"
+  },
+  "insights.pagination.prev": {
+    "message": "Zurück"
+  },
+  "insights.pagination.pageOf": {
+    "message": "Seite {current} von {total}"
+  },
+  "insights.pagination.nextAriaLabel": {
+    "message": "Nächste Seite"
+  },
+  "insights.pagination.next": {
+    "message": "Weiter"
+  },
+  "insights.noResults": {
+    "message": "Keine Insights gefunden."
+  },
+  "insights.footer.text": {
+    "message": "Letzte Aktualisierung: {lastUpdated}. Charts verwenden Echtzeitdaten."
+  },
+
+  "insightsSupply.meta.pageTitle": {
+    "message": "Cardano-Angebotsübersicht"
+  },
+  "insightsSupply.meta.pageDescription": {
+    "message": "Visuelle Darstellung der Ada-Angebotsverteilung in den wichtigsten Kategorien des Cardano-Netzwerks."
+  },
+  "insightsSupply.meta.title": {
+    "message": "Cardano-Angebotsübersicht"
+  },
+  "insightsSupply.og.title": {
+    "message": "Cardano-Angebotsverteilung"
+  },
+  "insightsSupply.og.description": {
+    "message": "Erfahre, wie Ada auf Reserven, Umlauf, Treasury und Rewards verteilt ist."
+  },
+  "insightsSupply.error.configTitle": {
+    "message": "Fehlende Konfiguration"
+  },
+  "insightsSupply.error.configMessage": {
+    "message": "API-URL fehlt."
+  },
+  "insightsSupply.error.invalidEpochTitle": {
+    "message": "Ungültige Epoche"
+  },
+  "insightsSupply.error.invalidEpochMessage": {
+    "message": "Epoche muss ≥ {minEpoch} sein."
+  },
+  "insightsSupply.error.retrying": {
+    "message": "Wird wiederholt…"
+  },
+  "insightsSupply.error.retry": {
+    "message": "Erneut versuchen"
+  },
+  "insightsSupply.loading.preparing": {
+    "message": "Wird vorbereitet…"
+  },
+  "insightsSupply.chart.circulation": {
+    "message": "Umlauf"
+  },
+  "insightsSupply.chart.circulationInfo": {
+    "message": "Summe aller UTxOs im Umlauf"
+  },
+  "insightsSupply.chart.treasury": {
+    "message": "Treasury"
+  },
+  "insightsSupply.chart.treasuryInfo": {
+    "message": "Gesamte Ada aktuell im Treasury-Topf"
+  },
+  "insightsSupply.chart.rewards": {
+    "message": "Rewards"
+  },
+  "insightsSupply.chart.rewardsInfo": {
+    "message": "Alle nicht abgehobenen Rewards"
+  },
+  "insightsSupply.chart.depositsStake": {
+    "message": "Deposits Stake"
+  },
+  "insightsSupply.chart.depositsStakeInfo": {
+    "message": "Deposit-Topf für registrierte Stake Pools und Staking-Konten"
+  },
+  "insightsSupply.chart.depositsDRep": {
+    "message": "Deposits DRep"
+  },
+  "insightsSupply.chart.depositsDRepInfo": {
+    "message": "Deposit-Topf für registrierte DReps"
+  },
+  "insightsSupply.chart.depositsProposal": {
+    "message": "Deposits Proposal"
+  },
+  "insightsSupply.chart.depositsProposalInfo": {
+    "message": "Deposit-Topf für aktive Governance Actions"
+  },
+  "insightsSupply.chart.fees": {
+    "message": "Gebühren"
+  },
+  "insightsSupply.chart.feesInfo": {
+    "message": "Eingenommene Gebühren"
+  },
+  "insightsSupply.chart.totalSupply": {
+    "message": "Gesamtangebot"
+  },
+  "insightsSupply.chart.totalSupplyInfo": {
+    "message": "Gesamte Ada im Umlauf + nicht abgehobene Rewards + Deposits + Gebühren + Treasury"
+  },
+  "insightsSupply.chart.reserves": {
+    "message": "Reserven"
+  },
+  "insightsSupply.chart.reservesInfo": {
+    "message": "Differenz zwischen maximalem und Gesamtangebot"
+  },
+  "insightsSupply.chart.maximumSupply": {
+    "message": "Maximales Angebot"
+  },
+  "insightsSupply.chart.maximumSupplyInfo": {
+    "message": "Die maximale Menge an Ada, die jemals existieren kann – definiert im Genesis-Block."
+  },
+  "insightsSupply.table.category": {
+    "message": "Kategorie"
+  },
+  "insightsSupply.table.ada": {
+    "message": "Ada"
+  },
+  "insightsSupply.table.description": {
+    "message": "Beschreibung"
+  },
+  "insightsSupply.faq.heading": {
+    "message": "Fakten zu Epoche {epoch}:"
+  },
+  "insightsSupply.faq.q1.question": {
+    "message": "F: Wie haben sich die Werte im Vergleich zur vorherigen Epoche verändert?"
+  },
+  "insightsSupply.faq.q2.question": {
+    "message": "F: Wie viel Ada wurde dem Treasury hinzugefügt?"
+  },
+  "insightsSupply.faq.q3.question": {
+    "message": "F: Wie viele Gebühren wurden eingenommen und verteilt?"
+  },
+  "insightsSupply.faq.q4.question": {
+    "message": "F: Gab es in Epoche {epoch} Auszahlungen aus dem Treasury?"
+  },
+  "insightsSupply.faq.q4.noWithdrawals": {
+    "message": "A: In dieser Epoche gab es keine Treasury-Auszahlungen."
+  },
+  "insightsSupply.faq.q5.question": {
+    "message": "F: Wo erfahre ich mehr über die Cardano-Mainnet-Reward-Berechnung?"
+  },
+
+  "insightsTransactions.meta.pageTitle": {
+    "message": "Cardano-Transaktionstrends"
+  },
+  "insightsTransactions.meta.pageDescription": {
+    "message": "Historische Analyse der Cardano-Transaktionszahlen, Gebühren und Blockproduktion über Epochen."
+  },
+  "insightsTransactions.meta.title": {
+    "message": "Cardano-Transaktionstrends"
+  },
+  "insightsTransactions.og.title": {
+    "message": "Cardano-Transaktionstrends"
+  },
+  "insightsTransactions.og.description": {
+    "message": "Historische Trends bei Cardano-Transaktionen, eingenommenen Gebühren und Blockproduktion erkunden."
+  },
+  "insightsTransactions.intro.description": {
+    "message": "**Historische Trends bei Cardano-Transaktionen erkunden** – einschließlich Transaktionszahlen, eingenommener Gebühren und Blockproduktion. Wähle einen Epochenbereich, um die Netzwerkaktivität im Zeitverlauf zu analysieren."
+  },
+  "insightsTransactions.epochSelect.title": {
+    "message": "Epochenbereich wählen"
+  },
+  "insightsTransactions.epochSelect.start": {
+    "message": "Start:"
+  },
+  "insightsTransactions.epochSelect.end": {
+    "message": "Ende:"
+  },
+  "insightsTransactions.epochSelect.epoch": {
+    "message": "Epoche"
+  },
+  "insightsTransactions.loading.initial": {
+    "message": "Lade alle Epochendaten (das kann einen Moment dauern)..."
+  },
+  "insightsTransactions.loading.data": {
+    "message": "Lade Daten..."
+  },
+  "insightsTransactions.loading.loaded": {
+    "message": "{count} Epochen geladen. Passe den Regler an, um den Bereich zu filtern."
+  },
+  "insightsTransactions.loading.currentEpoch": {
+    "message": "Lade aktuelle Epoche..."
+  },
+  "insightsTransactions.notice.inProgressTitle": {
+    "message": "Aktuelle Epoche läuft"
+  },
+  "insightsTransactions.notice.inProgressDescription": {
+    "message": "Epoche {epoch} läuft gerade. Die Daten sind noch unvollständig und fallen niedriger aus als bei abgeschlossenen Epochen. Die endgültigen Werte stehen nach Epochenende zur Verfügung. Laufende Datenpunkte sind in den Charts orange markiert."
+  },
+  "insightsTransactions.toc.title": {
+    "message": "Inhalt"
+  },
+  "insightsTransactions.toc.transactions": {
+    "message": "Transaktionsvolumen"
+  },
+  "insightsTransactions.toc.fees": {
+    "message": "Transaktionsgebühren"
+  },
+  "insightsTransactions.toc.avgFee": {
+    "message": "Durchschnittliche Gebühr pro Transaktion"
+  },
+  "insightsTransactions.toc.blocks": {
+    "message": "Blockproduktion"
+  },
+  "insightsTransactions.toc.combined": {
+    "message": "Transaktionen & Gebühren kombiniert"
+  },
+  "insightsTransactions.transactions.divider": {
+    "message": "Transaktionsvolumen"
+  },
+  "insightsTransactions.fees.divider": {
+    "message": "Transaktionsgebühren"
+  },
+  "insightsTransactions.avgFee.divider": {
+    "message": "Durchschnittliche Gebühr pro Transaktion"
+  },
+  "insightsTransactions.blocks.divider": {
+    "message": "Blockproduktion"
+  },
+  "insightsTransactions.combined.divider": {
+    "message": "Transaktionen & Gebühren kombiniert"
+  },
+
+  "insightsGovernance.meta.pageTitle": {
+    "message": "Cardano Governance Action Charts"
+  },
+  "insightsGovernance.meta.pageDescription": {
+    "message": "Visuelle Darstellung der Cardano Governance Action-Prozessabläufe."
+  },
+  "insightsGovernance.meta.title": {
+    "message": "Cardano Governance Actions"
+  },
+  "insightsGovernance.og.title": {
+    "message": "Cardano Governance Actions"
+  },
+  "insightsGovernance.og.description": {
+    "message": "Die Ablauflogik der Cardano Governance Actions erkunden."
+  },
+  "insightsGovernance.page.title": {
+    "message": "Cardano Governance Action Charts"
+  },
+  "insightsGovernance.page.description": {
+    "message": "Cardano Governance Action-Abläufe als visuelle Charts erkunden"
+  },
+  "insightsGovernance.page.keywords": {
+    "message": "Cardano, Governance, Action, DRep, SPO, Abstimmung, Schwellenwert"
+  },
+  "insightsGovernance.intro.paragraph1": {
+    "message": "**Governance Actions Insights** visualisiert die sieben Cardano Governance Action-Typen als Flowcharts. Jeder Chart zeigt den Lebenszyklus (Einreichung → Ratifizierung → Inkrafttreten), wer abstimmt (DReps, SPOs, Constitutional Committee) und die Schwellenwerte. Die meisten Actions erfordern die Zustimmung von **mindestens zwei der drei** Gremien; einige erfordern **alle drei**. Definitionen und vollständige Schwellenwerte findest du im [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/)."
+  },
+  "insightsGovernance.intro.paragraph2": {
+    "message": "Wähle eine **Kategorie** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes) und dann einen **Chart**. Folge den Knoten; **violette Boxen** zeigen Schwellenwerte und Reihenfolge des Inkrafttretens. Du kannst das Diagramm **herunterladen** oder einfach die **URL teilen** – die Adressleiste aktualisiert sich passend zum angezeigten Chart. Die formale Grundlage findest du in der **Cardano Constitution – Appendix I: Guardrails** [Verfassung](/constitution)."
+  },
+  "insightsGovernance.intro.paragraph3": {
+    "message": "Bei **Protocol Parameter Changes** unterscheiden die Charts zwischen routinemäßigen Updates (typischerweise **DReps + CC**) und **sicherheitskritischen Parametern**, die zusätzlich die **Zustimmung der SPOs** erfordern – also alle drei Gremien. Appendix I listet die kritischen Parameter und ihre erlaubten Wertebereiche auf."
+  },
+  "insightsGovernance.divider.charts": {
+    "message": "Governance Action Charts"
+  },
+
+  "constitution.hero.title": {
+    "message": "Die Cardano-Verfassung"
+  },
+  "constitution.hero.description": {
+    "message": "Die Cardano-Verfassung – das Governance-Fundament der Cardano-Blockchain."
+  },
+  "constitution.layout.title": {
+    "message": "Die Cardano-Verfassung | cardano.org"
+  },
+  "constitution.layout.description": {
+    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
+  },
+  "constitution.error.title": {
+    "message": "Aktuelle gültige Verfassung"
+  },
+  "constitution.error.localCopy": {
+    "message": "(Lokale Kopie)"
+  },
+  "constitution.error.fetchError": {
+    "message": "Daten von data.cardano.org konnten nicht geladen werden:"
+  },
+  "constitution.error.showingLocal": {
+    "message": "Lokale Kopie wird angezeigt."
+  },
+  "constitution.error.loadDocument": {
+    "message": "Verfassungsdokument konnte nicht geladen werden:"
+  },
+  "constitution.link.download": {
+    "message": "Verfassung herunterladen"
+  },
+  "constitution.link.viewRawMarkdown": {
+    "message": "Rohtext anzeigen"
+  },
+  "constitution.link.viewOnIPFS": {
+    "message": "Auf IPFS ansehen"
+  },
+  "constitution.link.viewOnIPFSHistory": {
+    "message": "Diese Verfassung auf IPFS ansehen"
+  },
+  "constitution.loading.versions": {
+    "message": "Verfassungsversionen werden geladen ..."
+  },
+  "constitution.loading.document": {
+    "message": "Dokument wird geladen ..."
+  },
+  "constitution.enacted.title": {
+    "message": "Aktuelle Cardano-Verfassung"
+  },
+  "constitution.enacted.description": {
+    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
+  },
+  "constitution.history.title": {
+    "message": "Ratifizierungshistorie"
+  },
+  "constitution.history.description": {
+    "message": "Hier findest du die Cardano-Verfassung und ihre Ratifizierungshistorie. Klicke auf eine Version, um den vollständigen Text auf IPFS zu lesen."
+  },
+  "constitution.history.versionRatified": {
+    "message": "Version ratifiziert in Epoche"
+  },
+  "constitution.history.enactedAtEpoch": {
+    "message": "In Kraft seit Epoche"
+  },
+  "constitution.history.hash": {
+    "message": "Hash:"
+  },
+
+  "governance.hero.title": {
+    "message": "Governance auf Cardano"
+  },
+  "governance.hero.description": {
+    "message": "Cardano basiert auf einem sicheren, dezentralen System – Ada-Halter gestalten die Entwicklung der Plattform und beeinflussen die Richtung des Ökosystems."
+  },
+  "governance.meta.title": {
+    "message": "Governance auf Cardano | cardano.org"
+  },
+  "governance.meta.description": {
+    "message": "Cardano setzt auf ein sicheres, dezentrales Governance-System, das jedem Ada-Halter eine Stimme gibt. Die Community steuert gemeinsam die Weiterentwicklung der Plattform – von Kern-Upgrades über Anwendungen bis hin zu Services."
+  },
+  "governance.divider.withinCardano": {
+    "message": "Governance bei Cardano"
+  },
+  "governance.withinCardano.text1": {
+    "message": "Cardano wird von seiner Community definiert. Das Governance-Modell zeigt, dass echte Demokratie möglich ist – eine, in der jeder Einzelne zum Mitwirken motiviert wird und Abstimmungen unveränderlich festgehalten werden. Token-Halter bestimmen die Zukunft der Plattform und entscheiden über den Einsatz der Treasury-Mittel."
+  },
+  "governance.withinCardano.text2": {
+    "message": "Dieses Modell und die wegweisende Technologie dahinter lassen sich auf jede Anwendung, jedes System und sogar auf ganze Gesellschaften übertragen. Es ist ein Entwurf für Veränderung – getragen von vielen, nicht nur von wenigen –, der Macht umverteilt, Mittelsmänner beseitigt und das Leben aller verbessert."
+  },
+  "governance.withinCardano.quote": {
+    "message": "Wandel beginnt mit einer Stimme – und wird Wirklichkeit durch das Zusammenwirken vieler."
+  },
+  "governance.withinCardano.buttonText": {
+    "message": "Auf dem Laufenden bleiben"
+  },
+  "governance.divider.delegateVoting": {
+    "message": "Stimmrecht delegieren"
+  },
+  "governance.delegateVoting.text": {
+    "message": "Delegation bedeutet, dein Stimmrecht – entsprechend deinem Ada-Guthaben – einem Delegate Representative (DRep) zu übertragen, der in deinem Namen abstimmt, ähnlich einem Parlamentsabgeordneten. Alternativ kannst du automatisch abstimmen: Enthaltung oder ‚Kein Vertrauen' bei allen Vorschlägen."
+  },
+  "governance.delegateVoting.buttonText": {
+    "message": "DRep finden"
+  },
+  "governance.divider.becomeDRep": {
+    "message": "DRep auf Cardano werden"
+  },
+  "governance.becomeDRep.text1": {
+    "message": "DReps sind zentrale Akteure in der Cardano-Governance. Sie beteiligen sich aktiv und vertreten andere Community-Mitglieder. DReps müssen über Governance Actions informiert bleiben, um fundierte Entscheidungen zu treffen."
+  },
+  "governance.becomeDRep.text2": {
+    "message": "Wenn du die Zeit und das Engagement hast, zur Governance von Cardano beizutragen, registriere dich als DRep. Eine erstattungsfähige Kaution von 500 Ada ist erforderlich und wird bei Rücktritt zurückgezahlt."
+  },
+  "governance.becomeDRep.buttonText": {
+    "message": "DRep werden"
+  },
+  "governance.divider.viewActions": {
+    "message": "Governance Actions auf Cardano ansehen"
+  },
+  "governance.viewActions.text": {
+    "message": "Bleib informiert und beteilige dich an Cardanos dezentraler Governance. Sieh dir alle On-Chain-Aktionen an – eingereichte, ratifizierte, in Kraft getretene, abgelaufene und zurückgezogene. Verfolge laufende Vorschläge, beobachte ihren Fortschritt und verstehe ihre Auswirkungen auf das Netzwerk. Deine Beteiligung hilft, die Zukunft von Cardano zu gestalten."
+  },
+  "governance.viewActions.buttonText": {
+    "message": "Governance Actions"
+  },
+  "governance.divider.whyVoltaire": {
+    "message": "Warum Voltaire"
+  },
+  "governance.divider.actionCharts": {
+    "message": "Governance Action Charts"
+  },
+  "governance.actionCharts.text": {
+    "message": "Entdecke, wie Cardano-Governance funktioniert – mit interaktiven Charts, die jede Governance Action veranschaulichen. Prozesse, Regeln und Schwellenwerte auf einen Blick – visuell erklärt für schnelles Verständnis."
+  },
+  "governance.actionCharts.buttonText": {
+    "message": "Governance Action Charts"
+  },
+  "governance.blue.title": {
+    "message": "Ein Modell, das niemanden ausgrenzt und allen Macht verleiht."
+  },
+  "governance.blue.text": {
+    "message": "Unsere heutigen Systeme funktionieren nicht für alle. Eine bessere, positivere Zukunft ist möglich. Soll die Welt den Vielen dienen, muss sie von den Vielen getragen werden. Konsens muss den Fortschritt antreiben – und wo Uneinigkeit herrscht, kreative Lösungen hervorbringen."
+  },
+  "governance.voltaire.text1": {
+    "message": "Dezentralisierung beginnt mit der Technologie – mit Shelley –, wird aber erst dann wirklich erreicht, wenn keine einzelne Instanz die Kontrolle hat. Das Leitprinzip: Umverteilung der Macht. Globale Netzwerke, die nicht von einer Zentrale definiert werden, sondern von jedem Teilnehmer. Das ist der Zweck von Voltaire."
+  },
+  "governance.voltaire.text2": {
+    "message": "Voltaire gibt der Cardano-Community die Möglichkeit, wichtige Entscheidungen über Software-Updates, technische Verbesserungen und Finanzierung zu treffen. Diese sogenannten"
+  },
+  "governance.voltaire.text2b": {
+    "message": " ermöglichen es, die Zukunft von Cardano durch die Community zu bestimmen und aus dem Treasury der Plattform zu finanzieren."
+  },
+  "governance.voltaire.text3": {
+    "message": "Die Ära bringt auch eine Reihe von Experimenten mit sich – zu Themen wie dezentraler Governance, den Dynamiken von Demokratie und Konsens –, um Voltaire von der Forschung in die Praxis zu überführen. Wenn Shelley das Fundament eines global koordinierten Netzwerks ohne zentrale Autorität gelegt hat, dann erkundet Voltaire den Apparat für gemeinsame Entscheidungsfindung: die Sprache der Dezentralisierung."
+  },
+  "governance.voltaire.buttonText": {
+    "message": "Forschung lesen"
+  },
+
+  "signalGovernance.layout.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.layout.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.openGraph.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.openGraph.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.hero.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.hero.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.divider.text": {
+    "message": "Governance"
+  },
+
+  "events.hero.title": {
+    "message": "Cardano-Events"
+  },
+  "events.hero.description": {
+    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
+  },
+  "events.meta.title": {
+    "message": "Cardano-Events | cardano.org"
+  },
+  "events.meta.description": {
+    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
+  },
+  "events.divider.discoverWorldwide": {
+    "message": "Cardano-Events weltweit entdecken"
+  },
+  "events.platforms.luma": {
+    "message": "Events auf Luma.com"
+  },
+  "events.platforms.meetup": {
+    "message": "Events auf Meetup.com"
+  },
+  "events.divider.upcomingHighlighted": {
+    "message": "Kommende Event-Highlights"
+  },
+  "events.divider.pastHighlighted": {
+    "message": "Vergangene Event-Highlights"
+  },
+  "events.recapAvailable": {
+    "message": "Zusammenfassung verfügbar:"
+  },
+  "events.watchHere": {
+    "message": "Hier ansehen"
+  },
+  "events.pagination.previous": {
+    "message": "Zurück"
+  },
+  "events.pagination.next": {
+    "message": "Weiter"
+  },
+
+  "termExplainer.divider": {
+    "message": "{category}-Begriffe, die du kennen solltest"
+  },
+
+  "governanceCharts.searchPlaceholder": {
+    "message": "Charts durchsuchen ..."
+  },
+  "governanceCharts.parametersButton": {
+    "message": "Parameter"
+  },
+  "governanceCharts.availableParameters": {
+    "message": "Verfügbare Parameter"
+  },
+  "governanceCharts.clearAll": {
+    "message": "Alle zurücksetzen"
+  },
+  "governanceCharts.selectCategory": {
+    "message": "Kategorie wählen"
+  },
+  "governanceCharts.searchAndParamResults": {
+    "message": "Such- & Parameter-gefilterte Charts"
+  },
+  "governanceCharts.searchResults": {
+    "message": "Suchergebnisse"
+  },
+  "governanceCharts.paramFilteredCharts": {
+    "message": "Parameter-gefilterte Charts"
+  },
+  "governanceCharts.parameterDetails": {
+    "message": "Parameter-Details"
+  },
+  "governanceCharts.noResults.searchAndParams": {
+    "message": "Keine Charts gefunden für ‚{searchTerm}' mit den gewählten Parametern."
+  },
+  "governanceCharts.noResults.search": {
+    "message": "Keine Charts gefunden für ‚{searchTerm}'"
+  },
+  "governanceCharts.noResults.params": {
+    "message": "Keine Charts mit den gewählten Parametern gefunden."
+  },
+  "governanceCharts.selectChart": {
+    "message": "Chart auswählen:"
+  },
+  "governanceCharts.emptyState": {
+    "message": "Noch keine Charts für diese Kategorie verfügbar."
+  },
+  "governanceCharts.initialPrompt": {
+    "message": "Wähle eine Kategorie, um Governance Charts anzuzeigen, oder nutze die Suche."
+  },
+
+  "governanceGraphs.fallback.unavailable": {
+    "message": "Diagramm-Darstellung nicht verfügbar"
+  },
+  "governanceGraphs.fallback.preview": {
+    "message": "Datenvorschau:"
+  },
+  "governanceGraphs.downloading": {
+    "message": "Wird heruntergeladen ..."
+  },
+  "governanceGraphs.downloadImage": {
+    "message": "Bild herunterladen"
   }
 }

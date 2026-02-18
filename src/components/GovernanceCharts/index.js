@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ReactFlowProvider } from "@xyflow/react";
 import GovernanceGraphs from "@site/src/components/GovernanceGraphs";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
@@ -340,7 +341,7 @@ export default function GovernanceCharts({
         <div className={styles.searchInputContainer}>
           <input
             type="text"
-            placeholder="Search for charts or parameters..."
+            placeholder={translate({id: 'governanceCharts.searchPlaceholder', message: 'Search for charts or parameters...'})}
             value={searchTerm}
             onChange={(e) => {
               const newValue = e.target.value;
@@ -356,7 +357,7 @@ export default function GovernanceCharts({
             onClick={toggleParametersDropdown}
             ref={parametersButtonRef}
           >
-            Parameters ▼
+            {translate({id: 'governanceCharts.parametersButton', message: 'Parameters ▼'})}
           </button>
         </div>
 
@@ -365,7 +366,7 @@ export default function GovernanceCharts({
             className={styles.parametersDropdown}
             ref={parametersDropdownRef}
           >
-            <div className={styles.dropdownTitle}>Available Parameters:</div>
+            <div className={styles.dropdownTitle}>{translate({id: 'governanceCharts.availableParameters', message: 'Available Parameters:'})}</div>
               <div className={styles.parametersList}>
                 {manualParametersList.map((param, index) => {
                   const checked = selectedParameters.includes(param);
@@ -413,7 +414,7 @@ export default function GovernanceCharts({
                 className={`button ${styles.clearTagsButton}`}
                 onClick={clearAllTags}
               >
-                Clear All
+                {translate({id: 'governanceCharts.clearAll', message: 'Clear All'})}
               </button>
             )}
           </div>
@@ -422,7 +423,7 @@ export default function GovernanceCharts({
 
       {/* Category Selection */}
       <div className={styles.categorySelection}>
-        <div className={styles.selectionTitle}>Select a category:</div>
+        <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectCategory', message: 'Select a category:'})}</div>
         <div className={styles.categoryButtons}>
           {Object.values(CATEGORIES).map((category) => (
             <button
@@ -443,10 +444,10 @@ export default function GovernanceCharts({
         <div className={styles.graphSelection}>
           <div className={styles.selectionTitle}>
             {searchTerm && selectedParameters.length > 0
-              ? "Search Results & Parameter Filtered Charts:"
+              ? translate({id: 'governanceCharts.searchAndParamResults', message: 'Search Results & Parameter Filtered Charts:'})
               : searchTerm
-              ? "Search Results:"
-              : "Parameter Filtered Charts:"}
+              ? translate({id: 'governanceCharts.searchResults', message: 'Search Results:'})
+              : translate({id: 'governanceCharts.paramFilteredCharts', message: 'Parameter Filtered Charts:'})}
           </div>
           {searchResults.length > 0 ? (
             <div className={`${styles.graphList} Collapsible`}>
@@ -476,7 +477,7 @@ export default function GovernanceCharts({
                       </p>
                       {graph.parameterDetails && (
                         <div className={styles.parameterDetails}>
-                          <h4>Parameter Details</h4>
+                          <h4>{translate({id: 'governanceCharts.parameterDetails', message: 'Parameter Details'})}</h4>
                           <div
                             className="markdown"
                             dangerouslySetInnerHTML={{
@@ -503,10 +504,10 @@ export default function GovernanceCharts({
           ) : (
             <div className={styles.noResults}>
               {searchTerm && selectedParameters.length > 0
-                ? `No charts found matching "${searchTerm}" with the selected parameters.`
+                ? translate({id: 'governanceCharts.noResults.searchAndParams', message: 'No charts found matching "{searchTerm}" with the selected parameters.'}).replace('{searchTerm}', searchTerm)
                 : searchTerm
-                ? `No charts found matching "${searchTerm}"`
-                : "No charts found with the selected parameters."}
+                ? translate({id: 'governanceCharts.noResults.search', message: 'No charts found matching "{searchTerm}"'}).replace('{searchTerm}', searchTerm)
+                : translate({id: 'governanceCharts.noResults.params', message: 'No charts found with the selected parameters.'})}
             </div>
           )}
         </div>
@@ -514,7 +515,7 @@ export default function GovernanceCharts({
         graphsData[activeCategory] &&
         graphsData[activeCategory].length > 0 ? (
         <div className={styles.graphSelection}>
-          <div className={styles.selectionTitle}>Select a chart:</div>
+          <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectChart', message: 'Select a chart:'})}</div>
           <div className={`${styles.graphList} Collapsible`}>
             {graphsData[activeCategory].map((graph, index) => (
               <div
@@ -540,7 +541,7 @@ export default function GovernanceCharts({
                     </p>
                     {graph.parameterDetails && (
                       <div className={styles.parameterDetails}>
-                        <h4>Parameter Details</h4>
+                        <h4>{translate({id: 'governanceCharts.parameterDetails', message: 'Parameter Details'})}</h4>
                         <div
                           className="markdown"
                           dangerouslySetInnerHTML={{
@@ -565,13 +566,12 @@ export default function GovernanceCharts({
         </div>
       ) : activeCategory ? (
         <div className={styles.emptyState}>
-          <p>No charts available for this category yet.</p>
+          <p>{translate({id: 'governanceCharts.emptyState', message: 'No charts available for this category yet.'})}</p>
         </div>
       ) : (
         <div className={styles.initialPrompt}>
           <p>
-            Please select a category to view available governance charts, or use
-            the search to find specific charts.
+            {translate({id: 'governanceCharts.initialPrompt', message: 'Please select a category to view available governance charts, or use the search to find specific charts.'})}
           </p>
         </div>
       )}
