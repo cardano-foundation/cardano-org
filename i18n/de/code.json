@@ -1814,5 +1814,156 @@
   },
   "delegation.faq.a12.p1": {
     "message": "Ja. Belohnungen werden deinem bestehenden Stake zugerechnet. Sobald Belohnungen eingehen, steigt dein Guthaben – und damit auch dein delegierter Stake."
+  },
+
+  "commonScams.hero.title": {
+    "message": "Häufige Betrugsmaschen rund um Cardano"
+  },
+  "commonScams.hero.description": {
+    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen."
+  },
+  "commonScams.meta.title": {
+    "message": "Häufige Betrugsmaschen rund um Cardano | cardano.org"
+  },
+  "commonScams.meta.description": {
+    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen."
+  },
+  "commonScams.quiz.title": {
+    "message": "Teste dein Wissen"
+  },
+  "commonScams.quiz.description": {
+    "message": "Mach das Quiz mit 5 Fragen und finde heraus, wie gut du gängige Blockchain-Betrugsmaschen erkennst und vermeidest."
+  },
+  "commonScams.quiz.buttonText": {
+    "message": "Quiz starten"
+  },
+  "commonScams.intro.title": {
+    "message": "So schützt du dein Ada vor Betrügern"
+  },
+  "commonScams.intro.description1": {
+    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen. Auch Cardano (Ada) ist davon nicht ausgenommen. Von gefälschten Giveaways bis hin zu Phishing-Angriffen: Betrüger entwickeln ständig neue Methoden. Und mit den Fortschritten bei künstlicher Intelligenz werden diese Maschen immer raffinierter. Auf dieser Seite erfährst du, welche Betrugsmaschen im Cardano-Ökosystem am häufigsten vorkommen – und wie du dich davor schützt."
+  },
+  "commonScams.intro.description2": {
+    "message": "**Wichtig:** Wenn jemand Zugriff auf deine Seed-Wörter (Recovery-Phrase) bekommt, hat er die volle Kontrolle über deine Wallet – kein Passwort der Welt kann dich dann noch schützen. Einmal gestohlenes Ada ist unwiederbringlich verloren."
+  },
+  "commonScams.divider.giveaway": {
+    "message": "Giveaway"
+  },
+  "commonScams.giveaway.title": {
+    "message": "Ada-Giveaway-Betrug"
+  },
+  "commonScams.giveaway.description1": {
+    "message": "Eine der bekanntesten Betrugsmaschen in der Cardano-Community ist der **Ada-Giveaway-Betrug.** Betrüger versprechen, dein Ada zu verdoppeln – du musst nur zuerst einen bestimmten Betrag senden. Oft nutzen sie gefälschte Livestreams mit Charles Hoskinson oder anderen bekannten Persönlichkeiten, um seriös zu wirken. Die Streams imitieren echte Events und zeigen eine Wallet-Adresse, an die du dein Ada schicken sollst."
+  },
+  "commonScams.giveaway.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.giveaway.tip1": {
+    "message": "Echte Giveaways verlangen **niemals** eine Vorauszahlung."
+  },
+  "commonScams.giveaway.tip2": {
+    "message": "Klicke nicht auf Links in unaufgeforderten Nachrichten oder Livestreams."
+  },
+  "commonScams.giveaway.tip3": {
+    "message": "Denk daran: Einmal gesendetes Ada ist für immer weg."
+  },
+  "commonScams.giveaway.tip4": {
+    "message": "Lies Erfahrungsberichte und Betrugs-Meldungen anderer Nutzer im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "commonScams.divider.phishing": {
+    "message": "Phishing"
+  },
+  "commonScams.phishing.title": {
+    "message": "Phishing-Angriffe"
+  },
+  "commonScams.phishing.description": {
+    "message": "Bei Phishing-Betrug setzen Kriminelle gefälschte Websites, Apps oder E-Mails ein, um sensible Daten wie Wallet-Zugangsdaten oder deine Recovery-Phrase (Seed-Wörter) zu stehlen. Diese betrügerischen Seiten imitieren oft beliebte Wallets wie [Typhon, VESPR oder Eternl](/what-is-ada/#wallets)."
+  },
+  "commonScams.phishing.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.phishing.tip1": {
+    "message": "Prüfe URLs immer doppelt – stimmen sie mit der echten Wallet-Website überein?"
+  },
+  "commonScams.phishing.tip2": {
+    "message": "Teile deine Recovery-Phrase **niemals** – auch nicht mit angeblichem \"Support\" oder \"Moderatoren\"."
+  },
+  "commonScams.phishing.tip3": {
+    "message": "Nutze am besten eine Hardware-Wallet."
+  },
+  "commonScams.phishing.tip4": {
+    "message": "Aktiviere Zwei-Faktor-Authentifizierung, wo immer möglich."
+  },
+  "commonScams.divider.investment": {
+    "message": "Fake-Investment"
+  },
+  "commonScams.investment.title": {
+    "message": "Gefälschte Investmentangebote"
+  },
+  "commonScams.investment.description": {
+    "message": "Betrügerische Investmentprogramme sind eine weitere verbreitete Masche. Betrüger bewerben Fake-Projekte als \"Cardano-gestützt\" oder \"Ada-spezifisch\" – mit garantierten Traumrenditen. Opfer werden aufgefordert, Ada oder andere Mittel an eine Wallet-Adresse zu senden, mit dem Versprechen exponentieller Gewinne."
+  },
+  "commonScams.investment.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.investment.tip1": {
+    "message": "Seriöse Projekte versprechen **niemals** garantierte Renditen."
+  },
+  "commonScams.investment.tip2": {
+    "message": "Sei skeptisch bei unaufgeforderten Investmentangeboten."
+  },
+  "commonScams.investment.tip3": {
+    "message": "Recherchiere Projekte gründlich – achte auf Transparenz und ein glaubwürdiges Team."
+  },
+  "commonScams.divider.support": {
+    "message": "Fake-Support"
+  },
+  "commonScams.support.title": {
+    "message": "Gefälschter technischer Support"
+  },
+  "commonScams.support.description1": {
+    "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über Social Media, Foren oder E-Mail und behaupten, deine Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren – und um dir zu \"helfen\", fragen sie nach deiner Recovery-Phrase (Seed-Wörter) oder deinen privaten Schlüsseln."
+  },
+  "commonScams.support.description2": {
+    "message": "Das passiert besonders oft, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einer Wallet stellt. Betrüger antworten dann blitzschnell und geben sich als offizieller Support aus."
+  },
+  "commonScams.support.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.support.tip1": {
+    "message": "Seriöse Mitglieder in [Foren und Kanälen](/docs/communities) fragen **niemals** nach Passwörtern, Recovery-Phrasen oder privaten Schlüsseln."
+  },
+  "commonScams.support.tip2": {
+    "message": "Reagiere nie auf unaufgeforderte Nachrichten, die angeblich vom Support kommen."
+  },
+  "commonScams.support.tip3": {
+    "message": "Seriöse Mitglieder in Foren und Kanälen schreiben dich **niemals** als Erste per Privatnachricht an."
+  },
+  "commonScams.divider.rug": {
+    "message": "Rug Pulls"
+  },
+  "commonScams.rug.title": {
+    "message": "Rug Pulls im Cardano-Ökosystem"
+  },
+  "commonScams.rug.description": {
+    "message": "Cardano ist eine öffentliche, permissionless Layer-1-Blockchain – jeder kann sie nutzen. Manche betrügerischen Projekte starten auf Cardano, generieren Aufmerksamkeit mit großen Versprechen und auffälligem Marketing. Nachdem sie genug Ada von Investoren eingesammelt haben, verschwinden sie spurlos – das nennt man einen \"Rug Pull\"."
+  },
+  "commonScams.rug.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.rug.tip1": {
+    "message": "Recherchiere Qualifikationen und Reputation des Projektteams."
+  },
+  "commonScams.rug.tip2": {
+    "message": "Achte auf Audits und transparente Dokumentation."
+  },
+  "commonScams.rug.tip3": {
+    "message": "Vermeide Projekte mit anonymen Teams oder unrealistischen Versprechen."
+  },
+  "commonScams.rug.tip4": {
+    "message": "Kaufe Utility-Token nur dann, wenn du sie wirklich für den jeweiligen Zweck brauchst."
+  },
+  "commonScams.rug.tip5": {
+    "message": "Informiere dich, was andere über Projekte denken – zum Beispiel im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
   }
 }
