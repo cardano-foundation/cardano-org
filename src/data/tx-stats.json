@@ -1,146 +1,146 @@
 {
   "metadata": {
-    "generated": "2026-02-13",
-    "chainEpoch": 613,
+    "generated": "2026-02-18",
+    "chainEpoch": 614,
     "description": "Transaction stats for reporting period",
     "reportingWindow": {
-      "start": "2026-01-14T21:45:07",
-      "end": "2026-02-13T21:44:07"
+      "start": "2026-01-19T21:45:05",
+      "end": "2026-02-18T21:44:48"
     },
     "epochs": "~6 epochs (30 days)",
-    "totalTxCount": 886569
+    "totalTxCount": 885138
   },
   "appStats": [
     {
       "label": "minswap",
       "displayName": "Minswap",
-      "txCount": 186983,
+      "txCount": 181963,
       "rank": 1
     },
     {
       "label": "wingriders",
       "displayName": "WingRiders",
-      "txCount": 44119,
+      "txCount": 45259,
       "rank": 2
     },
     {
       "label": "sundaeswap",
       "displayName": "SundaeSwap",
-      "txCount": 33072,
+      "txCount": 32489,
       "rank": 3
     },
     {
       "label": "splash",
       "displayName": "Splash",
-      "txCount": 11849,
+      "txCount": 12206,
       "rank": 4
     },
     {
       "label": "indigo-protocol",
       "displayName": "Indigo Protocol",
-      "txCount": 10795,
+      "txCount": 11025,
       "rank": 5
-    },
-    {
-      "label": "cswap",
-      "displayName": "CSWAP",
-      "txCount": 10772,
-      "rank": 6
     },
     {
       "label": "liqwid-finance",
       "displayName": "Liqwid Finance",
-      "txCount": 10472,
+      "txCount": 10414,
+      "rank": 6
+    },
+    {
+      "label": "cswap",
+      "displayName": "CSWAP",
+      "txCount": 10411,
       "rank": 7
     },
     {
       "label": "jpg.store",
       "displayName": "JpgStore",
-      "txCount": 8570,
+      "txCount": 8510,
       "rank": 8
     },
     {
       "label": "vyfinance",
       "displayName": "VyFinance",
-      "txCount": 6416,
+      "txCount": 6398,
       "rank": 9
     },
     {
       "label": "strike-finance",
       "displayName": "Strike Finance",
-      "txCount": 3749,
+      "txCount": 3287,
       "rank": 10
     },
     {
       "label": "dexhunter",
       "displayName": "Dexhunter",
-      "txCount": 1708,
+      "txCount": 1404,
       "rank": 11
-    },
-    {
-      "label": "muesliswap",
-      "displayName": "MuesliSwap",
-      "txCount": 1531,
-      "rank": 12
     },
     {
       "label": "dripdropz",
       "displayName": "DripDropz",
-      "txCount": 1393,
+      "txCount": 1380,
+      "rank": 12
+    },
+    {
+      "label": "muesliswap",
+      "displayName": "MuesliSwap",
+      "txCount": 1331,
       "rank": 13
     },
     {
       "label": "charli3",
       "displayName": "Charli3",
-      "txCount": 941,
+      "txCount": 913,
       "rank": 14
     },
     {
       "label": "iagon",
       "displayName": "Iagon",
-      "txCount": 546,
+      "txCount": 529,
       "rank": 15
     },
     {
       "label": "wayup",
       "displayName": "Wayup",
-      "txCount": 147,
+      "txCount": 132,
       "rank": 16
     },
     {
       "label": "chilled-kongs",
       "displayName": "Chilled Kongs",
-      "txCount": 114,
+      "txCount": 121,
       "rank": 17
     },
     {
       "label": "kreate",
       "displayName": "Kreate",
-      "txCount": 91,
+      "txCount": 84,
       "rank": 18
     },
     {
       "label": "fluid-tokens",
       "displayName": "Fluid Tokens",
-      "txCount": 70,
+      "txCount": 63,
       "rank": 19
     },
     {
       "label": "genius-yield",
       "displayName": "Genius Yield",
-      "txCount": 50,
+      "txCount": 55,
       "rank": 20
-    },
-    {
-      "label": "$usdm",
-      "displayName": "$USDM",
-      "txCount": 25,
-      "rank": 21
     },
     {
       "label": "spectrum-finance",
       "displayName": "Spectrum Finance",
-      "txCount": 25,
+      "txCount": 24,
+      "rank": 21
+    },
+    {
+      "label": "$usdm",
+      "displayName": "$USDM",
+      "txCount": 22,
       "rank": 22
     },
     {
@@ -158,1225 +158,1219 @@
     {
       "label": "disco-solaris",
       "displayName": "Disco Solaris",
-      "txCount": 5,
+      "txCount": 4,
       "rank": 25
-    },
-    {
-      "label": "lenfi",
-      "displayName": "Lenfi",
-      "txCount": 4,
-      "rank": 26
-    },
-    {
-      "label": "lobster-challenge",
-      "displayName": "Lobster Challenge",
-      "txCount": 4,
-      "rank": 27
     },
     {
       "label": "astarter",
       "displayName": "Astarter",
       "txCount": 3,
-      "rank": 28
+      "rank": 26
+    },
+    {
+      "label": "lenfi",
+      "displayName": "Lenfi",
+      "txCount": 3,
+      "rank": 27
     },
     {
       "label": "aigacsystems",
       "displayName": "aigacsystems",
       "txCount": 2,
-      "rank": 29
+      "rank": 28
     },
     {
       "label": "generic",
       "displayName": "Generic",
       "txCount": 2,
-      "rank": 30
+      "rank": 29
     },
     {
       "label": "spacebudz",
       "displayName": "SpaceBudz",
       "txCount": 2,
-      "rank": 31
+      "rank": 30
     },
     {
       "label": "matrix-berry",
       "displayName": "Matrix Berry",
       "txCount": 1,
-      "rank": 32
+      "rank": 31
     }
   ],
   "metadataLabelStats": [
     {
       "label": 674,
-      "txCount": 231800,
+      "txCount": 225838,
       "verified": true,
       "description": "CIP-0020 - Transaction message/comment metadata",
       "rank": 1
     },
     {
       "label": 0,
-      "txCount": 40311,
+      "txCount": 42310,
       "verified": false,
       "description": null,
       "rank": 2
     },
     {
       "label": 1,
-      "txCount": 25306,
+      "txCount": 24687,
       "verified": false,
       "description": null,
       "rank": 3
     },
     {
       "label": 2,
-      "txCount": 21073,
+      "txCount": 20484,
       "verified": false,
       "description": null,
       "rank": 4
     },
     {
       "label": 3,
-      "txCount": 21073,
+      "txCount": 20484,
       "verified": false,
       "description": null,
       "rank": 5
     },
     {
       "label": 4,
-      "txCount": 21066,
+      "txCount": 20476,
       "verified": false,
       "description": null,
       "rank": 6
     },
     {
       "label": 30,
-      "txCount": 8569,
+      "txCount": 8509,
       "verified": false,
       "description": null,
       "rank": 7
     },
     {
       "label": 50,
-      "txCount": 8569,
+      "txCount": 8509,
       "verified": false,
       "description": null,
       "rank": 8
     },
     {
       "label": 51,
-      "txCount": 8569,
+      "txCount": 8509,
       "verified": false,
       "description": null,
       "rank": 9
     },
     {
       "label": 52,
-      "txCount": 8569,
+      "txCount": 8509,
       "verified": false,
       "description": null,
       "rank": 10
     },
     {
       "label": 53,
-      "txCount": 8569,
+      "txCount": 8509,
       "verified": false,
       "description": null,
       "rank": 11
     },
     {
       "label": 54,
-      "txCount": 8521,
+      "txCount": 8453,
       "verified": false,
       "description": null,
       "rank": 12
     },
     {
       "label": 55,
-      "txCount": 8489,
+      "txCount": 8421,
       "verified": false,
       "description": null,
       "rank": 13
     },
     {
       "label": 56,
-      "txCount": 8363,
+      "txCount": 8350,
       "verified": false,
       "description": null,
       "rank": 14
     },
     {
       "label": 721,
-      "txCount": 6391,
+      "txCount": 6101,
       "verified": true,
       "description": "CIP-0025 - NFT Token Standard",
       "rank": 15
     },
     {
       "label": 1226,
-      "txCount": 4808,
+      "txCount": 5210,
       "verified": true,
       "description": "Oracle related transaction metadata",
       "rank": 16
     },
     {
       "label": 57,
-      "txCount": 4298,
+      "txCount": 4286,
       "verified": false,
       "description": null,
       "rank": 17
     },
     {
       "label": 58,
-      "txCount": 4298,
+      "txCount": 4286,
       "verified": false,
       "description": null,
       "rank": 18
     },
     {
       "label": 59,
-      "txCount": 4237,
+      "txCount": 4226,
       "verified": false,
       "description": null,
       "rank": 19
     },
     {
       "label": 60,
-      "txCount": 4227,
+      "txCount": 4212,
       "verified": false,
       "description": null,
       "rank": 20
     },
     {
       "label": 61,
-      "txCount": 4221,
+      "txCount": 4208,
       "verified": false,
       "description": null,
       "rank": 21
     },
     {
       "label": 62,
-      "txCount": 4212,
+      "txCount": 4203,
       "verified": false,
       "description": null,
       "rank": 22
     },
     {
       "label": 63,
-      "txCount": 1554,
+      "txCount": 1596,
       "verified": false,
       "description": null,
       "rank": 23
     },
     {
       "label": 64,
-      "txCount": 1456,
+      "txCount": 1499,
       "verified": false,
       "description": null,
       "rank": 24
     },
     {
       "label": 65,
-      "txCount": 1456,
+      "txCount": 1499,
       "verified": false,
       "description": null,
       "rank": 25
     },
     {
       "label": 66,
-      "txCount": 1456,
+      "txCount": 1499,
       "verified": false,
       "description": null,
       "rank": 26
     },
     {
       "label": 67,
-      "txCount": 1456,
+      "txCount": 1499,
       "verified": false,
       "description": null,
       "rank": 27
     },
     {
       "label": 68,
-      "txCount": 1442,
+      "txCount": 1489,
       "verified": false,
       "description": null,
       "rank": 28
     },
     {
       "label": 69,
-      "txCount": 1441,
+      "txCount": 1488,
       "verified": false,
       "description": null,
       "rank": 29
     },
     {
       "label": 70,
-      "txCount": 1439,
+      "txCount": 1487,
       "verified": false,
       "description": null,
       "rank": 30
     },
     {
       "label": 73,
-      "txCount": 1414,
+      "txCount": 1461,
       "verified": false,
       "description": null,
       "rank": 31
     },
     {
       "label": 71,
-      "txCount": 1400,
+      "txCount": 1448,
       "verified": false,
       "description": null,
       "rank": 32
     },
     {
       "label": 72,
-      "txCount": 1399,
+      "txCount": 1446,
       "verified": false,
       "description": null,
       "rank": 33
     },
     {
       "label": 74,
-      "txCount": 1397,
+      "txCount": 1444,
       "verified": false,
       "description": null,
       "rank": 34
     },
     {
       "label": 75,
-      "txCount": 1397,
+      "txCount": 1444,
       "verified": false,
       "description": null,
       "rank": 35
     },
     {
       "label": 1998,
-      "txCount": 1050,
+      "txCount": 1054,
       "verified": false,
       "description": null,
       "rank": 36
     },
     {
       "label": 100,
-      "txCount": 872,
+      "txCount": 876,
       "verified": false,
       "description": null,
       "rank": 37
     },
     {
       "label": 76,
-      "txCount": 725,
+      "txCount": 715,
       "verified": false,
       "description": null,
       "rank": 38
     },
     {
       "label": 77,
-      "txCount": 724,
+      "txCount": 714,
       "verified": false,
       "description": null,
       "rank": 39
     },
     {
-      "label": 1000,
-      "txCount": 719,
+      "label": 78,
+      "txCount": 678,
       "verified": false,
       "description": null,
       "rank": 40
     },
     {
-      "label": 1002,
-      "txCount": 719,
+      "label": 79,
+      "txCount": 678,
       "verified": false,
       "description": null,
       "rank": 41
     },
     {
-      "label": 1003,
-      "txCount": 719,
+      "label": 80,
+      "txCount": 676,
       "verified": false,
       "description": null,
       "rank": 42
     },
     {
-      "label": 1004,
-      "txCount": 719,
+      "label": 81,
+      "txCount": 676,
       "verified": false,
       "description": null,
       "rank": 43
     },
     {
-      "label": 1005,
-      "txCount": 719,
+      "label": 82,
+      "txCount": 676,
       "verified": false,
       "description": null,
       "rank": 44
     },
     {
-      "label": 1007,
-      "txCount": 719,
+      "label": 83,
+      "txCount": 676,
       "verified": false,
       "description": null,
       "rank": 45
     },
     {
-      "label": 1008,
-      "txCount": 719,
+      "label": 84,
+      "txCount": 676,
       "verified": false,
       "description": null,
       "rank": 46
     },
     {
-      "label": 1009,
-      "txCount": 719,
+      "label": 1000,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 47
     },
     {
-      "label": 78,
-      "txCount": 684,
+      "label": 1002,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 48
     },
     {
-      "label": 79,
-      "txCount": 684,
+      "label": 1003,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 49
     },
     {
-      "label": 80,
-      "txCount": 680,
+      "label": 1004,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 50
     },
     {
-      "label": 81,
-      "txCount": 680,
+      "label": 1005,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 51
     },
     {
-      "label": 82,
-      "txCount": 680,
+      "label": 1007,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 52
     },
     {
-      "label": 83,
-      "txCount": 680,
+      "label": 1008,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 53
     },
     {
-      "label": 84,
-      "txCount": 680,
+      "label": 1009,
+      "txCount": 646,
       "verified": false,
       "description": null,
       "rank": 54
     },
     {
       "label": 85,
-      "txCount": 625,
+      "txCount": 623,
       "verified": false,
       "description": null,
       "rank": 55
     },
     {
       "label": 86,
-      "txCount": 623,
+      "txCount": 620,
       "verified": false,
       "description": null,
       "rank": 56
     },
     {
       "label": 87,
-      "txCount": 623,
+      "txCount": 620,
       "verified": true,
       "description": "milkomeda.com - The protocol magic for the milkomeda protocol",
       "rank": 57
     },
     {
       "label": 88,
-      "txCount": 623,
+      "txCount": 620,
       "verified": true,
       "description": "milkomeda.com - the destination address in the sidechain",
       "rank": 58
     },
     {
       "label": 89,
-      "txCount": 504,
+      "txCount": 497,
       "verified": false,
       "description": null,
       "rank": 59
     },
     {
       "label": 90,
-      "txCount": 503,
+      "txCount": 496,
       "verified": false,
       "description": null,
       "rank": 60
     },
     {
       "label": 91,
-      "txCount": 503,
+      "txCount": 496,
       "verified": false,
       "description": null,
       "rank": 61
     },
     {
       "label": 92,
-      "txCount": 482,
+      "txCount": 477,
       "verified": false,
       "description": null,
       "rank": 62
     },
     {
       "label": 93,
-      "txCount": 482,
+      "txCount": 477,
       "verified": false,
       "description": null,
       "rank": 63
     },
     {
       "label": 94,
-      "txCount": 481,
+      "txCount": 476,
       "verified": true,
       "description": "CIP-0094 - On-chain governance polls",
       "rank": 64
     },
     {
       "label": 95,
-      "txCount": 480,
+      "txCount": 475,
       "verified": false,
       "description": null,
       "rank": 65
     },
     {
       "label": 96,
-      "txCount": 480,
+      "txCount": 475,
       "verified": false,
       "description": null,
       "rank": 66
     },
     {
       "label": 97,
-      "txCount": 480,
+      "txCount": 475,
       "verified": false,
       "description": null,
       "rank": 67
     },
     {
       "label": 98,
-      "txCount": 480,
+      "txCount": 475,
       "verified": false,
       "description": null,
       "rank": 68
     },
     {
       "label": 99,
-      "txCount": 460,
+      "txCount": 457,
       "verified": false,
       "description": null,
       "rank": 69
     },
     {
       "label": 101,
-      "txCount": 460,
+      "txCount": 457,
       "verified": false,
       "description": null,
       "rank": 70
     },
     {
       "label": 6862,
-      "txCount": 409,
+      "txCount": 413,
       "verified": false,
       "description": null,
       "rank": 71
     },
     {
       "label": 102,
-      "txCount": 366,
+      "txCount": 367,
       "verified": false,
       "description": null,
       "rank": 72
     },
     {
       "label": 103,
-      "txCount": 366,
+      "txCount": 367,
       "verified": false,
       "description": null,
       "rank": 73
     },
     {
       "label": 104,
-      "txCount": 363,
+      "txCount": 365,
       "verified": false,
       "description": null,
       "rank": 74
     },
     {
       "label": 105,
-      "txCount": 363,
+      "txCount": 365,
       "verified": false,
       "description": null,
       "rank": 75
     },
     {
       "label": 106,
-      "txCount": 354,
+      "txCount": 357,
       "verified": false,
       "description": null,
       "rank": 76
     },
     {
       "label": 107,
-      "txCount": 354,
+      "txCount": 357,
       "verified": false,
       "description": null,
       "rank": 77
     },
     {
       "label": 108,
-      "txCount": 354,
+      "txCount": 357,
       "verified": false,
       "description": null,
       "rank": 78
     },
     {
       "label": 109,
-      "txCount": 354,
+      "txCount": 357,
       "verified": false,
       "description": null,
       "rank": 79
     },
     {
       "label": 110,
-      "txCount": 352,
+      "txCount": 355,
       "verified": false,
       "description": null,
       "rank": 80
     },
     {
       "label": 111,
-      "txCount": 352,
+      "txCount": 355,
       "verified": false,
       "description": null,
       "rank": 81
     },
     {
       "label": 112,
-      "txCount": 352,
+      "txCount": 355,
       "verified": false,
       "description": null,
       "rank": 82
     },
     {
       "label": 113,
-      "txCount": 335,
+      "txCount": 342,
       "verified": false,
       "description": null,
       "rank": 83
     },
     {
       "label": 114,
-      "txCount": 335,
+      "txCount": 342,
       "verified": false,
       "description": null,
       "rank": 84
     },
     {
       "label": 1997,
-      "txCount": 293,
+      "txCount": 305,
       "verified": false,
       "description": null,
       "rank": 85
     },
     {
       "label": 115,
-      "txCount": 248,
+      "txCount": 255,
       "verified": false,
       "description": null,
       "rank": 86
     },
     {
       "label": 116,
-      "txCount": 248,
+      "txCount": 255,
       "verified": false,
       "description": null,
       "rank": 87
     },
     {
       "label": 117,
-      "txCount": 248,
+      "txCount": 255,
       "verified": false,
       "description": null,
       "rank": 88
     },
     {
       "label": 118,
-      "txCount": 248,
+      "txCount": 255,
       "verified": false,
       "description": null,
       "rank": 89
     },
     {
       "label": 119,
-      "txCount": 247,
+      "txCount": 254,
       "verified": false,
       "description": null,
       "rank": 90
     },
     {
-      "label": 31415,
-      "txCount": 164,
+      "label": 120,
+      "txCount": 161,
       "verified": false,
       "description": null,
       "rank": 91
     },
     {
-      "label": 120,
-      "txCount": 159,
+      "label": 121,
+      "txCount": 161,
       "verified": false,
       "description": null,
       "rank": 92
     },
     {
-      "label": 121,
-      "txCount": 159,
+      "label": 122,
+      "txCount": 161,
       "verified": false,
       "description": null,
       "rank": 93
     },
     {
-      "label": 122,
-      "txCount": 159,
-      "verified": false,
-      "description": null,
+      "label": 123,
+      "txCount": 161,
+      "verified": true,
+      "description": "shareslake.com - Bridge routing information",
       "rank": 94
     },
     {
-      "label": 123,
-      "txCount": 159,
-      "verified": true,
-      "description": "shareslake.com - Bridge routing information",
+      "label": 124,
+      "txCount": 161,
+      "verified": false,
+      "description": null,
       "rank": 95
     },
     {
-      "label": 124,
-      "txCount": 159,
+      "label": 125,
+      "txCount": 161,
       "verified": false,
       "description": null,
       "rank": 96
     },
     {
-      "label": 125,
-      "txCount": 159,
+      "label": 126,
+      "txCount": 161,
       "verified": false,
       "description": null,
       "rank": 97
     },
     {
-      "label": 126,
+      "label": 127,
       "txCount": 159,
       "verified": false,
       "description": null,
       "rank": 98
     },
     {
-      "label": 127,
-      "txCount": 156,
+      "label": 128,
+      "txCount": 113,
       "verified": false,
       "description": null,
       "rank": 99
     },
     {
-      "label": 61284,
-      "txCount": 133,
-      "verified": true,
-      "description": "CIP-0015 - Catalyst registration",
+      "label": 129,
+      "txCount": 113,
+      "verified": false,
+      "description": null,
       "rank": 100
     },
     {
-      "label": 55555,
-      "txCount": 127,
+      "label": 130,
+      "txCount": 113,
       "verified": false,
       "description": null,
       "rank": 101
     },
     {
-      "label": 2001,
-      "txCount": 114,
+      "label": 131,
+      "txCount": 113,
       "verified": false,
       "description": null,
       "rank": 102
     },
     {
-      "label": 2002,
-      "txCount": 114,
+      "label": 132,
+      "txCount": 113,
       "verified": false,
       "description": null,
       "rank": 103
     },
     {
-      "label": 128,
-      "txCount": 111,
+      "label": 133,
+      "txCount": 113,
       "verified": false,
       "description": null,
       "rank": 104
     },
     {
-      "label": 129,
+      "label": 134,
       "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 105
     },
     {
-      "label": 130,
+      "label": 135,
       "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 106
     },
     {
-      "label": 131,
+      "label": 136,
       "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 107
     },
     {
-      "label": 132,
+      "label": 137,
       "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 108
     },
     {
-      "label": 133,
+      "label": 138,
       "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 109
     },
     {
-      "label": 134,
-      "txCount": 109,
+      "label": 139,
+      "txCount": 111,
       "verified": false,
       "description": null,
       "rank": 110
     },
     {
-      "label": 135,
-      "txCount": 109,
-      "verified": false,
-      "description": null,
+      "label": 61284,
+      "txCount": 111,
+      "verified": true,
+      "description": "CIP-0015 - Catalyst registration",
       "rank": 111
-    },
-    {
-      "label": 136,
-      "txCount": 109,
-      "verified": false,
-      "description": null,
-      "rank": 112
-    },
-    {
-      "label": 137,
-      "txCount": 109,
-      "verified": false,
-      "description": null,
-      "rank": 113
-    },
-    {
-      "label": 138,
-      "txCount": 109,
-      "verified": false,
-      "description": null,
-      "rank": 114
-    },
-    {
-      "label": 139,
-      "txCount": 109,
-      "verified": false,
-      "description": null,
-      "rank": 115
     },
     {
       "label": 140,
       "txCount": 109,
       "verified": false,
       "description": null,
-      "rank": 116
+      "rank": 112
+    },
+    {
+      "label": 55555,
+      "txCount": 103,
+      "verified": false,
+      "description": null,
+      "rank": 113
+    },
+    {
+      "label": 2001,
+      "txCount": 98,
+      "verified": false,
+      "description": null,
+      "rank": 114
+    },
+    {
+      "label": 2002,
+      "txCount": 98,
+      "verified": false,
+      "description": null,
+      "rank": 115
     },
     {
       "label": 141,
-      "txCount": 99,
+      "txCount": 96,
+      "verified": false,
+      "description": null,
+      "rank": 116
+    },
+    {
+      "label": 142,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 117
     },
     {
-      "label": 142,
-      "txCount": 99,
+      "label": 143,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 118
     },
     {
-      "label": 143,
-      "txCount": 99,
+      "label": 144,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 119
     },
     {
-      "label": 144,
-      "txCount": 99,
+      "label": 145,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 120
     },
     {
-      "label": 145,
-      "txCount": 99,
+      "label": 146,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 121
     },
     {
-      "label": 146,
-      "txCount": 99,
+      "label": 147,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 122
     },
     {
-      "label": 147,
-      "txCount": 99,
+      "label": 148,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 123
     },
     {
-      "label": 148,
-      "txCount": 98,
+      "label": 149,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 124
     },
     {
-      "label": 149,
-      "txCount": 98,
+      "label": 150,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 125
     },
     {
-      "label": 150,
-      "txCount": 98,
+      "label": 151,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 126
     },
     {
-      "label": 151,
-      "txCount": 98,
+      "label": 152,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 127
     },
     {
-      "label": 152,
-      "txCount": 98,
+      "label": 153,
+      "txCount": 96,
       "verified": false,
       "description": null,
       "rank": 128
     },
     {
-      "label": 153,
-      "txCount": 98,
+      "label": 42,
+      "txCount": 93,
       "verified": false,
       "description": null,
       "rank": 129
     },
     {
-      "label": 2000,
-      "txCount": 96,
+      "label": 154,
+      "txCount": 85,
       "verified": false,
       "description": null,
       "rank": 130
     },
     {
-      "label": 154,
-      "txCount": 87,
+      "label": 155,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 131
     },
     {
-      "label": 61285,
-      "txCount": 87,
-      "verified": true,
-      "description": "CIP-0015 - Catalyst witness",
+      "label": 156,
+      "txCount": 82,
+      "verified": false,
+      "description": null,
       "rank": 132
     },
     {
-      "label": 155,
-      "txCount": 84,
+      "label": 157,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 133
     },
     {
-      "label": 156,
-      "txCount": 84,
+      "label": 158,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 134
     },
     {
-      "label": 157,
-      "txCount": 84,
+      "label": 159,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 135
     },
     {
-      "label": 158,
-      "txCount": 84,
+      "label": 160,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 136
     },
     {
-      "label": 159,
-      "txCount": 84,
+      "label": 161,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 137
     },
     {
-      "label": 160,
-      "txCount": 84,
+      "label": 162,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 138
     },
     {
-      "label": 161,
-      "txCount": 84,
+      "label": 163,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 139
     },
     {
-      "label": 162,
-      "txCount": 83,
+      "label": 164,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 140
     },
     {
-      "label": 163,
-      "txCount": 83,
+      "label": 165,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 141
     },
     {
-      "label": 164,
-      "txCount": 83,
+      "label": 166,
+      "txCount": 82,
       "verified": false,
       "description": null,
       "rank": 142
     },
     {
-      "label": 165,
-      "txCount": 83,
+      "label": 167,
+      "txCount": 81,
       "verified": false,
       "description": null,
       "rank": 143
     },
     {
-      "label": 166,
-      "txCount": 83,
+      "label": 168,
+      "txCount": 81,
       "verified": false,
       "description": null,
       "rank": 144
     },
     {
-      "label": 167,
-      "txCount": 83,
+      "label": 169,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 145
     },
     {
-      "label": 168,
-      "txCount": 83,
+      "label": 170,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 146
     },
     {
-      "label": 169,
-      "txCount": 82,
+      "label": 171,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 147
     },
     {
-      "label": 170,
-      "txCount": 82,
+      "label": 172,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 148
     },
     {
-      "label": 171,
-      "txCount": 82,
+      "label": 173,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 149
     },
     {
-      "label": 172,
-      "txCount": 82,
+      "label": 174,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 150
     },
     {
-      "label": 173,
-      "txCount": 82,
+      "label": 175,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 151
     },
     {
-      "label": 174,
-      "txCount": 82,
+      "label": 176,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 152
     },
     {
-      "label": 175,
-      "txCount": 82,
+      "label": 177,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 153
     },
     {
-      "label": 176,
-      "txCount": 82,
+      "label": 178,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 154
     },
     {
-      "label": 177,
-      "txCount": 82,
+      "label": 179,
+      "txCount": 80,
       "verified": false,
       "description": null,
       "rank": 155
     },
     {
-      "label": 178,
-      "txCount": 82,
+      "label": 2000,
+      "txCount": 79,
       "verified": false,
       "description": null,
       "rank": 156
-    },
-    {
-      "label": 179,
-      "txCount": 82,
-      "verified": false,
-      "description": null,
-      "rank": 157
     },
     {
       "label": 1694,
       "txCount": 78,
       "verified": true,
       "description": "Voltaire - additional metadata for governance, provided in a separate transaction",
-      "rank": 158
+      "rank": 157
     },
     {
       "label": 1707,
-      "txCount": 76,
+      "txCount": 72,
       "verified": false,
       "description": null,
+      "rank": 158
+    },
+    {
+      "label": 61285,
+      "txCount": 72,
+      "verified": true,
+      "description": "CIP-0015 - Catalyst witness",
       "rank": 159
     },
     {
       "label": 103251,
-      "txCount": 75,
+      "txCount": 70,
       "verified": false,
       "description": null,
       "rank": 160
     },
     {
-      "label": 7,
-      "txCount": 47,
+      "label": 31415,
+      "txCount": 44,
       "verified": false,
       "description": null,
       "rank": 161
     },
     {
-      "label": 777,
-      "txCount": 33,
-      "verified": true,
-      "description": "CIP-0027 - Royalties Standard",
+      "label": 7,
+      "txCount": 41,
+      "verified": false,
+      "description": null,
       "rank": 162
     },
     {
-      "label": 202310,
-      "txCount": 28,
+      "label": 2222,
+      "txCount": 34,
       "verified": false,
       "description": null,
       "rank": 163
     },
     {
+      "label": 777,
+      "txCount": 31,
+      "verified": true,
+      "description": "CIP-0027 - Royalties Standard",
+      "rank": 164
+    },
+    {
       "label": 1100,
-      "txCount": 25,
+      "txCount": 29,
       "verified": false,
       "description": null,
-      "rank": 164
+      "rank": 165
+    },
+    {
+      "label": 202310,
+      "txCount": 29,
+      "verified": false,
+      "description": null,
+      "rank": 166
     },
     {
       "label": 378,
       "txCount": 22,
       "verified": false,
       "description": null,
-      "rank": 165
-    },
-    {
-      "label": 42,
-      "txCount": 21,
-      "verified": false,
-      "description": null,
-      "rank": 166
-    },
-    {
-      "label": 2003,
-      "txCount": 16,
-      "verified": false,
-      "description": null,
       "rank": 167
     },
     {
-      "label": 20823,
-      "txCount": 15,
+      "label": 2003,
+      "txCount": 17,
       "verified": false,
       "description": null,
       "rank": 168
@@ -1389,50 +1383,50 @@
       "rank": 169
     },
     {
-      "label": 1774,
-      "txCount": 13,
+      "label": 20823,
+      "txCount": 12,
       "verified": false,
       "description": null,
       "rank": 170
     },
     {
-      "label": 747264,
-      "txCount": 12,
+      "label": 1774,
+      "txCount": 11,
       "verified": false,
       "description": null,
       "rank": 171
+    },
+    {
+      "label": 747264,
+      "txCount": 10,
+      "verified": false,
+      "description": null,
+      "rank": 172
     },
     {
       "label": 21325,
       "txCount": 9,
       "verified": true,
       "description": "PRISM's Verifiable Data Registry for the PRISM DID method",
-      "rank": 172
-    },
-    {
-      "label": 427,
-      "txCount": 8,
-      "verified": false,
-      "description": null,
       "rank": 173
     },
     {
-      "label": 2222,
-      "txCount": 8,
+      "label": 1337420,
+      "txCount": 9,
       "verified": false,
       "description": null,
       "rank": 174
     },
     {
-      "label": 32228,
-      "txCount": 8,
+      "label": 427,
+      "txCount": 7,
       "verified": false,
       "description": null,
       "rank": 175
     },
     {
-      "label": 1337420,
-      "txCount": 7,
+      "label": 32228,
+      "txCount": 6,
       "verified": false,
       "description": null,
       "rank": 176
@@ -1452,24 +1446,24 @@
       "rank": 178
     },
     {
-      "label": 1854,
-      "txCount": 4,
-      "verified": true,
-      "description": "CIP-146 Multi-signatures wallet registration",
-      "rank": 179
-    },
-    {
-      "label": 5800,
-      "txCount": 4,
-      "verified": false,
-      "description": null,
-      "rank": 180
-    },
-    {
       "label": 22,
       "txCount": 3,
       "verified": true,
       "description": "Clarity - DAO creation metadata",
+      "rank": 179
+    },
+    {
+      "label": 1854,
+      "txCount": 3,
+      "verified": true,
+      "description": "CIP-146 Multi-signatures wallet registration",
+      "rank": 180
+    },
+    {
+      "label": 5800,
+      "txCount": 3,
+      "verified": false,
+      "description": null,
       "rank": 181
     },
     {
@@ -1564,10 +1558,10 @@
       "rank": 194
     },
     {
-      "label": 888,
+      "label": 778,
       "txCount": 1,
-      "verified": true,
-      "description": "finitum.io token bridge transactions metadata",
+      "verified": false,
+      "description": null,
       "rank": 195
     },
     {
@@ -1583,20 +1577,6 @@
       "verified": false,
       "description": null,
       "rank": 197
-    },
-    {
-      "label": 6948817,
-      "txCount": 1,
-      "verified": false,
-      "description": null,
-      "rank": 198
-    },
-    {
-      "label": 20260116,
-      "txCount": 1,
-      "verified": false,
-      "description": null,
-      "rank": 199
     }
   ]
 }
