@@ -1,4 +1,5 @@
 import React from "react";
+import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
 
 export default function openStickyButton() {
@@ -7,7 +8,7 @@ export default function openStickyButton() {
       <button className={`${styles.iconBtn} ${styles.addBtn}`}>
         <div className={styles.addIcon}></div>
         <div className={styles.btnText}>
-          <span className={styles.btnSpan}>ADD YOUR APP</span>
+          <span className={styles.btnSpan}>{translate({id: 'apps.stickyButton', message: 'ADD YOUR APP'})}</span>
         </div>
       </button>
     </a>

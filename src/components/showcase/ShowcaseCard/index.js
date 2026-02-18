@@ -9,6 +9,7 @@ import React, { memo, forwardRef } from "react";
 import clsx from "clsx";
 import Image from "@theme/IdealImage";
 import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
 import Tooltip from "../ShowcaseTooltip/index";
 import { useLocation } from "@docusaurus/router";
@@ -70,7 +71,7 @@ const ShowcaseCard = memo((card) => (
               styles.showcaseCardSrcBtn
             )}
           >
-            Get Started
+            {translate({id: 'apps.card.getStarted', message: 'Get Started'})}
           </Link>
         )}
         {card.showcase.source && (
@@ -81,7 +82,7 @@ const ShowcaseCard = memo((card) => (
               styles.showcaseCardSrcBtn
             )}
           >
-            Source
+            {translate({id: 'apps.card.source', message: 'Source'})}
           </Link>
         )}
       </div>

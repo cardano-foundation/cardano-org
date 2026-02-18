@@ -1215,7 +1215,7 @@
     "message": "Verändere deine Welt."
   },
   "home.divider.makeTheChange": {
-    "message": "Den Wandel gestalten"
+    "message": "Werde aktiv"
   },
   "home.discover.title": {
     "message": "Cardano entdecken"
@@ -1998,5 +1998,334 @@
   },
   "quiz.ui.finishQuiz": {
     "message": "Quiz beenden"
+  },
+  "apps.hero.title": {
+    "message": "Cardano-Anwendungen"
+  },
+  "apps.hero.description": {
+    "message": "Entdecke Anwendungen auf der Cardano-Blockchain"
+  },
+  "apps.cta": {
+    "message": "₳dd your project"
+  },
+  "apps.filters.title": {
+    "message": "Filter"
+  },
+  "apps.filters.projectCount.singular": {
+    "message": "1 Projekt"
+  },
+  "apps.filters.projectCount.plural": {
+    "message": "{count} Projekte"
+  },
+  "apps.filters.clearButton": {
+    "message": "Filter zurücksetzen"
+  },
+  "apps.filters.showLess": {
+    "message": "Weniger Filter anzeigen"
+  },
+  "apps.filters.showMore": {
+    "message": "{count} weitere Filter anzeigen"
+  },
+  "apps.searchPlaceholder": {
+    "message": "Apps suchen..."
+  },
+  "apps.noResult": {
+    "message": "Keine Ergebnisse"
+  },
+  "apps.ourFavorites": {
+    "message": "Unsere Favoriten"
+  },
+  "apps.allProjects": {
+    "message": "Alle Projekte"
+  },
+  "apps.card.getStarted": {
+    "message": "Loslegen"
+  },
+  "apps.card.source": {
+    "message": "Quellcode"
+  },
+  "apps.stickyButton": {
+    "message": "APP HINZUFÜGEN"
+  },
+
+  "commonScams.hero.title": {
+    "message": "Häufige Cardano-Betrugsmaschen"
+  },
+  "commonScams.hero.description": {
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
+  },
+  "commonScams.meta.title": {
+    "message": "Häufige Cardano-Betrugsmaschen | cardano.org"
+  },
+  "commonScams.meta.description": {
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
+  },
+  "commonScams.quiz.title": {
+    "message": "Teste dein Wissen"
+  },
+  "commonScams.quiz.description": {
+    "message": "Beantworte 5 Fragen und finde heraus, wie gut du Betrugsmaschen in der Blockchain-Welt erkennst und vermeidest."
+  },
+  "commonScams.quiz.buttonText": {
+    "message": "Quiz starten"
+  },
+  "commonScams.intro.title": {
+    "message": "So schützt du deine Ada vor Betrügern"
+  },
+  "commonScams.intro.description1": {
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus. Cardano (Ada) bildet da keine Ausnahme. Von gefälschten Giveaways bis hin zu Phishing-Angriffen: Betrüger entwickeln ständig neue Methoden, um Nutzer auszutricksen. Durch den Fortschritt künstlicher Intelligenz werden diese Maschen immer raffinierter. Auf dieser Seite erfährst du, welche Betrugsmaschen im Cardano-Ökosystem am häufigsten vorkommen – und wie du dich davor schützt."
+  },
+  "commonScams.intro.description2": {
+    "message": "**Wichtig:** Wer Zugang zu deinen Seed-Wörtern (Wiederherstellungsphrase) hat, kann dein Wallet komplett übernehmen – kein Passwort schützt dich dann noch. Einmal gestohlene Ada sind unwiederbringlich verloren."
+  },
+  "commonScams.divider.giveaway": {
+    "message": "Giveaway"
+  },
+  "commonScams.giveaway.title": {
+    "message": "Ada-Giveaway-Betrug"
+  },
+  "commonScams.giveaway.description1": {
+    "message": "Eine der bekanntesten Betrugsmaschen in der Cardano-Community: Betrüger versprechen, deine Ada zu verdoppeln, wenn du ihnen zuerst einen bestimmten Betrag schickst. Oft nutzen sie gefälschte Livestreams mit Charles Hoskinson oder anderen bekannten Persönlichkeiten, um seriös zu wirken. Die Streams imitieren echte Events und zeigen eine Wallet-Adresse, an die du Ada senden sollst."
+  },
+  "commonScams.giveaway.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.giveaway.tip1": {
+    "message": "Echte Giveaways verlangen **niemals** Geld im Voraus."
+  },
+  "commonScams.giveaway.tip2": {
+    "message": "Klicke nicht auf Links in unaufgeforderten Nachrichten oder Livestreams."
+  },
+  "commonScams.giveaway.tip3": {
+    "message": "Denk daran: Einmal gesendete Ada sind für immer weg."
+  },
+  "commonScams.giveaway.tip4": {
+    "message": "Lies Berichte und Betrugsmeldungen anderer Nutzer im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "commonScams.divider.phishing": {
+    "message": "Phishing"
+  },
+  "commonScams.phishing.title": {
+    "message": "Phishing-Angriffe"
+  },
+  "commonScams.phishing.description": {
+    "message": "Phishing-Betrug funktioniert über gefälschte Websites, Apps oder E-Mails, die darauf abzielen, sensible Daten wie Wallet-Zugangsdaten oder die Wiederherstellungsphrase (Seed-Wörter) zu stehlen. Diese betrügerischen Seiten imitieren häufig beliebte Wallets wie [Typhon, VESPR oder Eternl](/what-is-ada/#wallets)."
+  },
+  "commonScams.phishing.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.phishing.tip1": {
+    "message": "Überprüfe URLs sorgfältig – stimmen sie mit der echten Wallet-Website überein?"
+  },
+  "commonScams.phishing.tip2": {
+    "message": "Teile **niemals** deine Wiederherstellungsphrase – auch nicht mit angeblichem \"Support\" oder \"Moderatoren\"."
+  },
+  "commonScams.phishing.tip3": {
+    "message": "Nutze am besten ein Hardware-Wallet."
+  },
+  "commonScams.phishing.tip4": {
+    "message": "Aktiviere wenn möglich Zwei-Faktor-Authentifizierung."
+  },
+  "commonScams.divider.investment": {
+    "message": "Fake-Investment"
+  },
+  "commonScams.investment.title": {
+    "message": "Gefälschte Investmentangebote"
+  },
+  "commonScams.investment.description": {
+    "message": "Betrügerische Investmentangebote sind ebenfalls weit verbreitet. Betrüger bewerben Fake-Projekte und behaupten, es handle sich um \"Cardano-gestützte\" oder \"Ada-spezifische\" Chancen mit garantiert hohen Renditen. Opfer werden aufgefordert, Ada oder andere Mittel an eine Wallet-Adresse zu senden – mit dem Versprechen exponentieller Gewinne."
+  },
+  "commonScams.investment.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.investment.tip1": {
+    "message": "Seriöse Projekte versprechen **niemals** garantierte Renditen."
+  },
+  "commonScams.investment.tip2": {
+    "message": "Sei skeptisch bei unaufgeforderten Investmentangeboten."
+  },
+  "commonScams.investment.tip3": {
+    "message": "Recherchiere Projekte gründlich – achte auf Transparenz und ein glaubwürdiges Team."
+  },
+  "commonScams.divider.support": {
+    "message": "Fake-Support"
+  },
+  "commonScams.support.title": {
+    "message": "Gefälschter Tech-Support"
+  },
+  "commonScams.support.description1": {
+    "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über soziale Medien, Foren oder per E-Mail und behaupten, dein Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren und fragen nach deiner Wiederherstellungsphrase (Seed-Wörtern) oder privaten Schlüsseln – angeblich um dir zu \"helfen\"."
+  },
+  "commonScams.support.description2": {
+    "message": "Diese Masche tritt besonders häufig auf, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einem Wallet stellt. Betrüger reagieren dann blitzschnell und geben sich als offizieller Support aus."
+  },
+  "commonScams.support.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.support.tip1": {
+    "message": "Seriöse Nutzer in [Foren und Kanälen](/docs/communities) fragen **niemals** nach deinen Passwörtern, Wiederherstellungsphrasen oder privaten Schlüsseln."
+  },
+  "commonScams.support.tip2": {
+    "message": "Reagiere nie auf unaufgeforderte Nachrichten von angeblichem Support."
+  },
+  "commonScams.support.tip3": {
+    "message": "Seriöse Community-Mitglieder schreiben dich **niemals** zuerst per Privatnachricht an."
+  },
+  "commonScams.divider.rug": {
+    "message": "Rug Pulls"
+  },
+  "commonScams.rug.title": {
+    "message": "Rug Pulls im Cardano-Ökosystem"
+  },
+  "commonScams.rug.description": {
+    "message": "Cardano ist eine öffentliche, genehmigungsfreie Layer-1-Blockchain – jeder kann sie nutzen. Manche betrügerischen Projekte starten auf Cardano, gewinnen mit großen Versprechen und auffälligem Marketing Aufmerksamkeit und sammeln Ada von Investoren ein. Dann verschwinden sie – das nennt man einen \"Rug Pull\"."
+  },
+  "commonScams.rug.howToProtect": {
+    "message": "So schützt du dich:"
+  },
+  "commonScams.rug.tip1": {
+    "message": "Prüfe die Referenzen und den Ruf des Projektteams."
+  },
+  "commonScams.rug.tip2": {
+    "message": "Achte auf Audits oder transparente Dokumentation."
+  },
+  "commonScams.rug.tip3": {
+    "message": "Meide Projekte mit anonymen Teams oder unrealistischen Versprechen."
+  },
+  "commonScams.rug.tip4": {
+    "message": "Kaufe Utility-Token nur, wenn du die Utility auch tatsächlich nutzen willst."
+  },
+  "commonScams.rug.tip5": {
+    "message": "Informiere dich im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
+  },
+
+  "ambassadors.hero.title": {
+    "message": "Botschafter"
+  },
+  "ambassadors.hero.description": {
+    "message": "Das Cardano-Ambassador-Programm würdigt Community-Mitglieder, die das Cardano-Ökosystem aktiv voranbringen. Seit 2018 von der Cardano Foundation aufgebaut und stetig weiterentwickelt, ermöglicht es engagierten Mitwirkenden, weltweit etwas zu bewegen."
+  },
+  "ambassadors.layout.title": {
+    "message": "Ambassador-Programm | cardano.org"
+  },
+  "ambassadors.layout.description": {
+    "message": "Das Cardano-Ambassador-Programm zeichnet Community-Mitglieder aus, die durch Aufklärung, Engagement und Öffentlichkeitsarbeit die Verbreitung von Cardano vorantreiben."
+  },
+  "ambassadors.benefits.headline": {
+    "message": "Ambassador-Status"
+  },
+  "ambassadors.benefits.title": {
+    "message": "Ambassador-Status"
+  },
+  "ambassadors.benefits.description": {
+    "message": "Cardano-Ambassadors tragen maßgeblich dazu bei, das Ökosystem weltweit bekannter zu machen und besser verständlich zu machen. Zu den Vorteilen gehören:"
+  },
+  "ambassadors.benefits.benefit1": {
+    "message": "Anerkennung und Sichtbarkeit: Erhalte ein eigenes Badge und werde auf den offiziellen Cardano-Social-Media-Kanälen vorgestellt – das stärkt deine Reputation im Blockchain-Bereich."
+  },
+  "ambassadors.benefits.benefit2": {
+    "message": "Exklusiver Zugang und Informationen: Ambassadors erhalten frühzeitigen oder exklusiven Zugang zu wichtigen Neuigkeiten, Updates und Events – einschließlich privater Meetings, Webinare und Briefings."
+  },
+  "ambassadors.benefits.benefit3": {
+    "message": "Networking: Als Ambassador knüpfst du Kontakte zu Entwicklern, Unternehmern und Ökosystem-Leadern – eine Chance für Kooperationen und Partnerschaften innerhalb der Cardano-Community."
+  },
+  "ambassadors.benefits.benefit4": {
+    "message": "Community-Engagement und Support: Du erhältst Werbematerialien, Fördermöglichkeiten und Tools, die dir helfen, das Wachstum deiner Community voranzutreiben."
+  },
+  "ambassadors.benefits.quote": {
+    "message": "Communities stärken – Block für Block."
+  },
+  "ambassadors.cta.leftTitle": {
+    "message": "Werde Cardano-Ambassador"
+  },
+  "ambassadors.cta.leftText1": {
+    "message": "Der Weg zum Ambassador baut auf Engagement, Zusammenarbeit und wertvolle Beiträge. Ambassadors wachsen aus der Community heraus – durch aktive Teilnahme und nachhaltiges Engagement."
+  },
+  "ambassadors.cta.leftText2": {
+    "message": "Dein erster Schritt beginnt im Cardano Forum – ein lebendiger Ort für Zusammenarbeit, Diskussion und Wissensaustausch. Durch wertvolle Beiträge, aktive Gespräche und die Unterstützung anderer Community-Mitglieder baust du Vertrauen und Einfluss auf. Mit jedem Level eröffnen sich neue Möglichkeiten für tieferes Engagement und Führungsrollen."
+  },
+  "ambassadors.cta.leftText3": {
+    "message": "Die Rolle als Ambassador spiegelt Engagement und Beitrag wider. Wer die Community aktiv unterstützt und Cardano voranbringt, wächst ganz natürlich in diese Rolle hinein."
+  },
+  "ambassadors.cta.rightButtonLabel": {
+    "message": "Loslegen"
+  },
+  "ambassadors.program.divider": {
+    "message": "Ambassador-Programm"
+  },
+  "ambassadors.program.title": {
+    "message": "Das Cardano-Ambassador-Programm"
+  },
+  "ambassadors.program.description1": {
+    "message": "Die Cardano-Community hat engagierte Mitglieder, die aktiv zum Wachstum und zur Dezentralisierung des Ökosystems beitragen. Diese engagierten Personen – die Cardano-Ambassadors – spielen eine entscheidende Rolle dabei, Aufmerksamkeit und Beteiligung durch ihre wirkungsvollen Beiträge zu fördern."
+  },
+  "ambassadors.program.description2": {
+    "message": "Die Ambassadors kommen aus unterschiedlichsten Bereichen, Altersgruppen und Berufen und vertreten Länder auf der ganzen Welt. Sie erstellen wertvolle Inhalte in mehr als 17 Sprachen. Neue Ambassadors werden durch einen Prüfprozess aufgenommen, der Personen hervorhebt, die durch Wirkung, Engagement und den Einsatz für ein starkes Ökosystem überzeugen."
+  },
+  "ambassadors.program.description3": {
+    "message": "Seit der Gründung 2018 wurde das Ambassador-Programm mehrfach aktualisiert. Die aktuelle Phase legt den Fokus auf Wirkung und Transparenz – so wird sichergestellt, dass Beiträge fair gemessen und anerkannt werden. Die Anerkennung erfolgt sowohl durch finanzielle Vergütung als auch durch nicht-monetäre Anreize wie frühzeitigen Zugang zu Bildungsressourcen, Networking-Möglichkeiten und mehr Sichtbarkeit in der Community."
+  },
+  "ambassadors.overview.title": {
+    "message": "Wer sind die Cardano-Ambassadors?"
+  },
+  "ambassadors.overview.description": {
+    "message": "Entdecke die Profile von {count} Cardano-Ambassadors aus {countries} Ländern – jeder einzelne trägt dazu bei, Cardanos Vision weltweit zu verbreiten."
+  },
+  "ambassadors.roles.divider": {
+    "message": "Beiträge der Ambassadors"
+  },
+  "ambassadors.roles.title": {
+    "message": "Beiträge der Ambassadors"
+  },
+  "ambassadors.roles.description": {
+    "message": "Cardano-Ambassadors fördern das Community-Wachstum durch vielfältige Initiativen:"
+  },
+  "ambassadors.roles.contentCreation.title": {
+    "message": "Content-Erstellung"
+  },
+  "ambassadors.roles.contentCreation.description": {
+    "message": "Videos, fundierte Artikel, informative Threads, Grafiken und Podcasts erstellen, die bilden und inspirieren. [Aktuelle Cardano-Inhalte findest du hier.](https://cardano.org/news)"
+  },
+  "ambassadors.roles.meetups.title": {
+    "message": "Meetups & Events"
+  },
+  "ambassadors.roles.meetups.description": {
+    "message": "Vor-Ort- und Online-Treffen, Workshops und Hackathons organisieren, die lokale Communities zusammenbringen. [Finde Events in deiner Nähe.](https://luma.com/CardanoEvents)"
+  },
+  "ambassadors.roles.education.title": {
+    "message": "Bildung & Advocacy"
+  },
+  "ambassadors.roles.education.description": {
+    "message": "Seminare veranstalten, für die Einführung von Blockchain werben und Bildungsinitiativen an Institutionen unterstützen. [Entdecke Cardanos Forschung.](https://cardano.org/research)"
+  },
+  "ambassadors.roles.business.title": {
+    "message": "Business Development"
+  },
+  "ambassadors.roles.business.description": {
+    "message": "Partnerschaften aufbauen und Community-getriebene Projekte leiten, um Cardanos Einfluss zu erweitern. [Entdecke Anwendungsfälle.](https://cardano.org/use-cases)"
+  },
+  "ambassadors.roles.software.title": {
+    "message": "Softwareentwicklung"
+  },
+  "ambassadors.roles.software.description": {
+    "message": "An Open-Source-Projekten mitwirken, Cardano Improvement Proposals (CIPs) verfassen und Tools für das Ökosystem entwickeln. [Hier starten.](https://cardano.org/developers)"
+  },
+  "ambassadors.roles.translations.title": {
+    "message": "Übersetzungen"
+  },
+  "ambassadors.roles.translations.description": {
+    "message": "Cardanos Reichweite erweitern, indem wichtige Inhalte in zahlreiche Sprachen übersetzt werden. [Zum Forum.](https://forum.cardano.org/)"
+  },
+  "ambassadors.roles.moderation.title": {
+    "message": "Moderation"
+  },
+  "ambassadors.roles.moderation.description": {
+    "message": "Online-Diskussionen in über 50 [Kanälen](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 Sprachen auf 9 Plattformen moderieren – für produktive und einladende Räume in offiziellen und Community-Kanälen. Alle Community-Mitglieder müssen rechtmäßig, ethisch und im besten Interesse des Projekts handeln und den [Community Code of Conduct](https://cardano.org/community-code-of-conduct/) befolgen."
+  },
+  "ambassadors.roles.innovative.title": {
+    "message": "Innovative Beiträge"
+  },
+  "ambassadors.roles.innovative.description": {
+    "message": "Von Bildungskampagnen bis zu bahnbrechenden Community-Projekten – jede Initiative hinterlässt einen nachhaltigen Eindruck."
   }
 }
