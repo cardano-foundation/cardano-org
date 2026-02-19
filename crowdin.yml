@@ -20,7 +20,7 @@ files:
   - source: /docs/**/*.md
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
     ignore:
-      - /docs/get-involved/components/**/*
+      - /docs/get-involved/**/*
 
   # Blog posts excluded from translation to reduce hosted words
   # - source: /blog/**/*.md
