@@ -1086,5 +1086,173 @@
   },
   "commonScams.rug.tip5": {
     "message": "Find out what other people think about projects in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "home.meta.title": {
+    "message": "ホーム | cardano.org"
+  },
+  "home.meta.description": {
+    "message": "経済的なアイデンティティを持たない数十億の人々に、分散型アプリケーションによるID管理・価値移転・ガバナンスの手段を提供するオープンプラットフォーム。"
+  },
+  "home.hero.title": {
+    "message": "より良い世界を、すべての人に"
+  },
+  "home.hero.description": {
+    "message": "Cardanoは、変革者・イノベーター・ビジョナリーのためのブロックチェーンプラットフォームです。多くの人々に可能性をもたらし、世界にポジティブな変化を起こすためのツールとテクノロジーを提供します。"
+  },
+  "home.hero.ctaWhatIsAda": {
+    "message": "adaとは？"
+  },
+  "home.hero.ctaGetStarted": {
+    "message": "はじめる"
+  },
+  "home.featured.title": {
+    "message": "世界は変わりつつあります。共に、より良い方向へ変えていきましょう。"
+  },
+  "home.featured.description1": {
+    "message": "Cardanoはプルーフ・オブ・ステーク型のブロックチェーンプラットフォームです。[peer-reviewされた研究](/research)に基づき、エビデンスに基づく手法で開発された初のプラットフォームとして、最先端テクノロジーを組み合わせ、分散型アプリケーション・システム・社会に比類ない安全性と持続可能性を提供します。"
+  },
+  "home.featured.description2": {
+    "message": "優秀なエンジニアチームとともに、Cardanoは不透明な権力構造から個人へと力を再分配し、ポジティブな変化と進歩を実現する原動力となることを目指しています。"
+  },
+  "home.featured.quote1": {
+    "message": "不可能の歴史を、"
+  },
+  "home.featured.quote2": {
+    "message": "可能に変える"
+  },
+  "home.featured.buttonLabel": {
+    "message": "Cardanoアプリを使う"
+  },
+  "home.divider.benefits": {
+    "message": "メリット"
+  },
+  "home.quoteBox.description": {
+    "message": "Cardanoは科学の力でグローバルシステムに信頼を取り戻します。個人が安全に取引し、システムが効果的に機能し、企業が成長するための、より安全で透明性のある持続可能な基盤を構築します。"
+  },
+  "home.quoteBox.quote": {
+    "message": "Cardanoはテクノロジーに新たな基準をもたらします — オープンでインクルーシブ — 既存の常識に挑み、持続可能でグローバルに分散されたイノベーションの新時代を切り開きます。"
+  },
+  "home.benefits.ouroboros.label": {
+    "message": "プルーフ・オブ・ステークとOuroboros"
+  },
+  "home.benefits.ouroboros.category": {
+    "message": "プロトコル"
+  },
+  "home.benefits.ouroboros.title": {
+    "message": "プルーフ・オブ・ステークとOuroboros：最も環境に優しいブロックチェーンプロトコル"
+  },
+  "home.benefits.ouroboros.body": {
+    "message": "Ouroborosは、peer-reviewされ検証可能な安全性を持つ初のブロックチェーンプロトコルであり、Cardanoはそれを実装した最初のブロックチェーンです。セキュリティを犠牲にすることなく、グローバル規模での持続可能な分散化を実現します。<br /><br />このプロトコルは、より安全で透明性の高いグローバル決済システムを目指す基礎研究に基づく絶え間ない努力の成果です。権力と支配を公平に再分配する手段を提供します。"
+  },
+  "home.benefits.ouroboros.cta": {
+    "message": "Ouroborosについて"
+  },
+  "home.benefits.research.label": {
+    "message": "エビデンスに基づく開発"
+  },
+  "home.benefits.research.category": {
+    "message": "研究"
+  },
+  "home.benefits.research.title": {
+    "message": "科学に根ざした、最高水準の開発"
+  },
+  "home.benefits.research.body": {
+    "message": "Cardanoはエビデンスに基づく手法で開発されています。ミッションクリティカルなアプリケーションで使用される形式手法と、柔軟性を維持するアジャイル手法を独自に組み合わせた画期的なアプローチです。グローバルなアプリケーションやシステムをサポートするため、セキュリティの保証は選択肢ではなく必須要件と考えています。プロトコルの実装とプラットフォームの統合は、まず研究・検証・数学的モデリングとテストを経て仕様化されます。その仕様に基づく開発は独立監査を受けます。その結果、比類のない信頼性を持つコードベースが実現しています。"
+  },
+  "home.benefits.research.cta": {
+    "message": "研究を見る"
+  },
+  "home.benefits.secure.label": {
+    "message": "セキュア"
+  },
+  "home.benefits.secure.category": {
+    "message": "トランザクション"
+  },
+  "home.benefits.secure.title": {
+    "message": "比類ないセキュリティ — トラストレスな世界の実現"
+  },
+  "home.benefits.secure.body": {
+    "message": "Cardanoは、互いに面識がなく信頼関係もない当事者同士が安全にやり取りや取引を行うことを可能にします。信頼が自然には存在しない場面で信頼を構築するプラットフォームであり、まったく新しい市場と機会を切り開きます。Ouroborosにより、悪意ある攻撃やシビル攻撃に対して証明可能なセキュリティを実現しています。すべてのトランザクションは不変かつ透明に記録され、マルチシグネチャと革新的な拡張UTXOモデルによって安全に検証されます。"
+  },
+  "home.benefits.secure.cta": {
+    "message": "ロードマップを見る"
+  },
+  "home.benefits.participation.label": {
+    "message": "インセンティブ付きの参加"
+  },
+  "home.benefits.participation.category": {
+    "message": "オープン"
+  },
+  "home.benefits.participation.title": {
+    "message": "オープンでインセンティブに基づく参加"
+  },
+  "home.benefits.participation.body": {
+    "message": "熱心なコミュニティを核に、Cardanoはオープンな参加を通じて開発されるオープンソースプロジェクトです。ネットワークの長期的な健全性を確保するため、ステークプールオペレーターやステーク委任者として参加するユーザーに報酬を与えるインセンティブを備えています。プラットフォームは改善提案を通じて進化します。Cardanoのガバナンスはすべての人に民主的な発言権を与え、adaホルダーはプラットフォームのアップグレードや開発方針に関する提案の提出・投票ができます。このガバナンスモデルにより、将来の成長に向けた独自の立ち位置を確立し、ユーザーニーズに合わせた新機能導入の手段を提供します。コミュニティが継続的にプラットフォームとエコシステムの改善に資金を提供し、意思決定できる仕組みです。"
+  },
+  "home.benefits.participation.cta": {
+    "message": "ガバナンスについて"
+  },
+  "home.benefits.scalable.label": {
+    "message": "スケーラブルで持続可能"
+  },
+  "home.benefits.scalable.category": {
+    "message": "エコシステム"
+  },
+  "home.benefits.scalable.title": {
+    "message": "高いスケーラビリティと環境への持続可能性"
+  },
+  "home.benefits.scalable.body": {
+    "message": "Ouroborosにより、Cardanoは最小限のエネルギー消費でグローバル規模にスケールできます。他のブロックチェーンとは異なり、パフォーマンスの向上やブロック追加に指数関数的なエネルギー増加を必要としません。パフォーマンスと持続可能性のバランスは、マルチレジャー、サイドチェーン、マルチパーティステートチャネルによる並列トランザクション処理など、革新的なアプローチの組み合わせで達成されています。<br /><br />ステークプール数の増加とともにネットワークは拡大し、各プールの魅力度を測るパラメータが設定・調整されます。参加に直接報酬を与えるネットワークです。Cardanoは、ネットワークの利益のために行動する者が自身の利益のためにも行動するよう設計されています。これにより、耐久性のある健全で堅牢なネットワークとエコシステムの発展が確保されます。持続可能性とスケーラビリティの組み合わせにより、金融・物流・アイデンティティ・社会に関わるグローバルシステムの進化する需要に対応するスループットを実現します。"
+  },
+  "home.benefits.scalable.cta": {
+    "message": "Hydraについて"
+  },
+  "home.vision.title1": {
+    "message": "あなたの可能性を定義しよう。"
+  },
+  "home.vision.title2": {
+    "message": "あなたの世界を変えよう。"
+  },
+  "home.divider.makeTheChange": {
+    "message": "変革を起こす"
+  },
+  "home.discover.title": {
+    "message": "Cardanoを知る"
+  },
+  "home.discover.description": {
+    "message": "Cardanoは、[peer-reviewされた研究](/research)に基づいて構築された初のブロックチェーンプラットフォームです。数十億のデータを守るセキュリティ、グローバルシステムに対応するスケーラビリティ、そして根本的な変革を支える堅牢性を兼ね備えています。"
+  },
+  "home.discover.people": {
+    "message": "人々"
+  },
+  "home.discover.purpose": {
+    "message": "目的"
+  },
+  "home.discover.research": {
+    "message": "研究"
+  },
+  "home.discover.technology": {
+    "message": "テクノロジー"
+  },
+  "home.discover.opportunity": {
+    "message": "機会"
+  },
+  "home.discover.quote1": {
+    "message": "私たちは科学を変えました。グローバルシステムの構築、持続可能な交換とガバナンスのモデルが意味するものを変えました。"
+  },
+  "home.discover.quote2": {
+    "message": "Cardano上で構築するコミュニティ・組織・企業とともに、新しい未来が形づくられています — 仲介者のいない分散型の未来、権力が個人に戻される未来です。"
+  },
+  "home.divider.entities": {
+    "message": "エンティティ"
+  },
+  "home.entities.description": {
+    "message": "複数の独立した組織が分散型のチームフレームワークの中で協力し、Cardanoの前進を推進しています。進化と発展を続けながらも、コアミッションとの一致を確保しています。以下はその一部です："
+  },
+  "home.follow.divider": {
+    "message": "ソーシャル"
+  },
+  "home.follow.title": {
+    "message": "参加しよう"
   }
 }
