@@ -1,50 +1,50 @@
 {
   "logo.alt": {
-    "message": "Cardano Logo",
+    "message": "Logo Cardano",
     "description": "The alt text of navbar logo"
   },
   "item.label.Learn": {
-    "message": "Learn",
+    "message": "Tìm hiểu",
     "description": "Navbar item with label Learn"
   },
   "item.label.Participate": {
-    "message": "Participate",
+    "message": "Tham gia",
     "description": "Navbar item with label Participate"
   },
   "item.label.Build": {
-    "message": "Build",
+    "message": "Phát triển",
     "description": "Navbar item with label Build"
   },
   "item.label.News": {
-    "message": "News",
+    "message": "Tin tức",
     "description": "Navbar item with label News"
   },
   "item.label.What is ada?": {
-    "message": "What is ada?",
+    "message": "Ada là gì?",
     "description": "Navbar item with label What is ada?"
   },
   "item.label.Get started with Cardano": {
-    "message": "Get started with Cardano",
+    "message": "Bắt đầu với Cardano",
     "description": "Navbar item with label Get started with Cardano"
   },
   "item.label.Where to get ada?": {
-    "message": "Where to get ada?",
+    "message": "Mua ada ở đâu?",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "Protect your ada",
+    "message": "Bảo vệ ada của bạn",
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your ada": {
-    "message": "Delegate your ada",
+    "message": "Ủy quyền ada của bạn",
     "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Use Cardano Apps": {
-    "message": "Use Cardano Apps",
+    "message": "Sử dụng ứng dụng Cardano",
     "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
-    "message": "Cardano Research",
+    "message": "Nghiên cứu Cardano",
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
@@ -52,67 +52,91 @@
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
-    "message": "Hard Forks",
+    "message": "Hard Fork",
     "description": "Navbar item with label Hard Forks"
   },
   "item.label.Follow Cardano": {
-    "message": "Follow Cardano",
+    "message": "Theo dõi Cardano",
     "description": "Navbar item with label Follow Cardano"
   },
   "item.label.Newsletter": {
-    "message": "Newsletter",
+    "message": "Bản tin",
     "description": "Navbar item with label Newsletter"
   },
   "item.label.Online Communities": {
-    "message": "Online Communities",
+    "message": "Cộng đồng trực tuyến",
     "description": "Navbar item with label Online Communities"
   },
   "item.label.Cardano Ambassadors": {
-    "message": "Cardano Ambassadors",
+    "message": "Đại sứ Cardano",
     "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
-    "message": "Cardano Events",
+    "message": "Sự kiện Cardano",
     "description": "Navbar item with label Cardano Events"
   },
   "item.label.Cardano Forum": {
-    "message": "Cardano Forum",
+    "message": "Diễn đàn Cardano",
     "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
-    "message": "Get involved in cardano.org",
+    "message": "Đóng góp cho cardano.org",
     "description": "Navbar item with label Get involved in cardano.org"
   },
   "item.label.Participate in governance": {
-    "message": "Participate in governance",
+    "message": "Tham gia quản trị",
     "description": "Navbar item with label Participate in governance"
   },
   "item.label.Governance Tools": {
-    "message": "Governance Tools",
+    "message": "Công cụ quản trị",
     "description": "Navbar item with label Governance Tools"
   },
   "item.label.Cardano Constitution": {
-    "message": "Cardano Constitution",
+    "message": "Hiến pháp Cardano",
     "description": "Navbar item with label Cardano Constitution"
   },
   "item.label.Start building on Cardano": {
-    "message": "Start building on Cardano",
+    "message": "Bắt đầu phát triển trên Cardano",
     "description": "Navbar item with label Start building on Cardano"
   },
   "item.label.Integrate Cardano": {
-    "message": "Integrate Cardano",
+    "message": "Tích hợp Cardano",
     "description": "Navbar item with label Integrate Cardano"
   },
   "item.label.Developer Portal": {
-    "message": "Developer Portal",
+    "message": "Cổng nhà phát triển",
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
-    "message": "Builder Tools",
+    "message": "Công cụ phát triển",
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
-    "message": "Companies building on Cardano",
+    "message": "Doanh nghiệp xây dựng trên Cardano",
     "description": "Navbar item with label Companies building on Cardano"
+  },
+  "item.label.Solutions": {
+    "message": "Giải pháp",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Enterprise Solutions": {
+    "message": "Giải pháp doanh nghiệp",
+    "description": "Navbar item with label Enterprise Solutions"
+  },
+  "item.label.Use Cases": {
+    "message": "Ứng dụng thực tế",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.Identity": {
+    "message": "Danh tính",
+    "description": "Navbar item with label Identity"
+  },
+  "item.label.Finance": {
+    "message": "Tài chính",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Supply Chain": {
+    "message": "Chuỗi cung ứng",
+    "description": "Navbar item with label Supply Chain"
   }
 }

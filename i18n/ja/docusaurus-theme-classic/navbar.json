@@ -114,5 +114,29 @@
   "item.label.Companies building on Cardano": {
     "message": "Cardano上の企業",
     "description": "Navbar item with label Companies building on Cardano"
+  },
+  "item.label.Solutions": {
+    "message": "ソリューション",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Enterprise Solutions": {
+    "message": "エンタープライズソリューション",
+    "description": "Navbar item with label Enterprise Solutions"
+  },
+  "item.label.Use Cases": {
+    "message": "ユースケース",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.Identity": {
+    "message": "アイデンティティ",
+    "description": "Navbar item with label Identity"
+  },
+  "item.label.Finance": {
+    "message": "金融",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Supply Chain": {
+    "message": "サプライチェーン",
+    "description": "Navbar item with label Supply Chain"
   }
 }
