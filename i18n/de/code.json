@@ -3314,5 +3314,145 @@
   },
   "useCases.card.musicIp.summary": {
     "message": "Tantiemen direkt an Künstler auszahlen"
+  },
+
+  "exchanges.hero.title": {
+    "message": "Cardano integrieren"
+  },
+  "exchanges.hero.description": {
+    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
+  },
+  "exchanges.layout.title": {
+    "message": "Cardano integrieren | cardano.org"
+  },
+  "exchanges.layout.description": {
+    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
+  },
+  "exchanges.intro.description": {
+    "message": "Es gibt verschiedene [Wege, Cardano zu integrieren](https://developers.cardano.org) – einer davon ist Adrestia. Das Adrestia-Team unterstützt Börsen- und Entwicklerintegrationen mit einem Wallet-SDK und APIs, die die Interaktion mit Cardano über Releases hinweg vereinfachen."
+  },
+  "exchanges.whyAdrestia.divider": {
+    "message": "Warum Adrestia?"
+  },
+  "exchanges.whyAdrestia.leftText": {
+    "message": "Blockchains – und besonders Cardano – entwickeln sich rasant. Mit neuen Releases Schritt zu halten, kann zur Wartungsherausforderung werden. Wir machen es so einfach wie möglich, mit Cardano zu entwickeln und zu integrieren. Über Adrestia passt sich Cardano an deine Systeme und Anforderungen an."
+  },
+  "exchanges.whyAdrestia.rightText": {
+    "message": "Verbesserungen an Cardano sollen nicht mehr Komplexität oder Ressourcenaufwand bedeuten. Wir wollen Neuerungen bereitstellen, sobald sie verfügbar und nötig sind – mal wenige Updates pro Monat, mal viele. Adrestia bietet ein konsistentes SDK und GraphQL-APIs, mit denen Entwickler Anwendungen erstellen und Kernkompatibilität mit dem Cardano-Netzwerk über Releases hinweg beibehalten können."
+  },
+  "exchanges.cta1.title": {
+    "message": "Konzentrier dich auf das Wesentliche. Den Rest übernehmen wir."
+  },
+  "exchanges.cta1.buttonLabel": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.accessAdrestia.divider": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.whatMakesDifferent.title": {
+    "message": "Was macht Adrestia besonders?"
+  },
+  "exchanges.whatMakesDifferent.description1": {
+    "message": "Cardanos Architektur ist auf Modularität und Anpassungsfähigkeit ausgelegt. Über Adrestia sparen Entwickler und Börsen erheblichen Wartungsaufwand und – vor allem – Zeit."
+  },
+  "exchanges.whatMakesDifferent.description2": {
+    "message": "Anders als die meisten Blockchain-API-Suites entkoppelt Adrestia zentrale Services vom Cardano-Core-Node. Das SDK und die APIs bleiben über Releases hinweg konsistent – Entwickler müssen die Plattform nicht bei jedem Release neu lernen. Adrestia bietet eigenständige Services und vielfältige Möglichkeiten zum Abfragen, Transagieren und Extrahieren von Informationen."
+  },
+  "exchanges.benefits.reduceTime.title": {
+    "message": "Time-to-Market verkürzen"
+  },
+  "exchanges.benefits.reduceTime.text": {
+    "message": "Anwendungen für Cardano entwickeln, ohne dir Sorgen machen zu müssen, dass neue Releases deinen Code brechen."
+  },
+  "exchanges.benefits.reduceDowntime.title": {
+    "message": "Ausfallzeiten reduzieren"
+  },
+  "exchanges.benefits.reduceDowntime.text": {
+    "message": "Weniger Abwärtskompatibilitätsprobleme bedeuten deutlich weniger Ausfallzeiten."
+  },
+  "exchanges.benefits.reduceMaintenance.title": {
+    "message": "Wartungskosten senken"
+  },
+  "exchanges.benefits.reduceMaintenance.text": {
+    "message": "Weniger Zeit und Ressourcen für die Anwendungskompatibilität über Releases hinweg aufwenden."
+  },
+  "exchanges.benefits.increaseProductivity.title": {
+    "message": "Produktivität steigern"
+  },
+  "exchanges.benefits.increaseProductivity.text": {
+    "message": "Konzentrier dich auf das Wesentliche – Anwendungs- und Wallet-Entwicklung – und überlass die Updates uns."
+  },
+  "exchanges.cta2.title": {
+    "message": "Erfahre, wie Komponenten mit dem Cardano-Core-Node zusammenarbeiten, und wähle die passende Komponente für deine Anforderungen."
+  },
+  "exchanges.cta2.buttonLabel": {
+    "message": "Core-Node-Architektur kennenlernen"
+  },
+  "exchanges.learnArchitecture.divider": {
+    "message": "Core-Node-Architektur kennenlernen"
+  },
+  "exchanges.howDoesItWork.title": {
+    "message": "Wie funktioniert es?"
+  },
+  "exchanges.howDoesItWork.description": {
+    "message": "Cardano führt eine zusätzliche Schicht zwischen Nutzern bzw. Entwicklern und dem Core-Node ein. Innerhalb dieser Schicht verfolgt und verwaltet unser Code-Node-Team komplexe Änderungen, potenzielle Probleme und Hard Forks, die aus Protokollverbesserungen entstehen. Wir implementieren nötige Updates in den Adrestia-Libraries und APIs und kümmern uns um die Wartung – damit du es nicht musst."
+  },
+  "exchanges.ctaTwoColumn.leftTitle": {
+    "message": "Adrestia-Benutzerhandbuch"
+  },
+  "exchanges.ctaTwoColumn.leftText": {
+    "message": "Erfahre mehr über Adrestia und was es für dich bedeuten kann. Unser Benutzerhandbuch ist eine praktische, unkomplizierte Ressource, die dir hilft, die richtigen Schritte zur richtigen Zeit zu unternehmen."
+  },
+  "exchanges.ctaTwoColumn.leftButtonLabel": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.ctaTwoColumn.rightTitle": {
+    "message": "Adrestia-Komponenten & Flowchart-Guide"
+  },
+  "exchanges.ctaTwoColumn.rightText": {
+    "message": "Entdecke unsere eigenständigen Libraries und APIs und finde heraus, welche die richtige für dich ist."
+  },
+  "exchanges.ctaTwoColumn.rightButtonLabel": {
+    "message": "Mehr erfahren"
+  },
+
+  "developers.hero.title": {
+    "message": "Auf Cardano entwickeln"
+  },
+  "developers.hero.description": {
+    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
+  },
+  "developers.meta.title": {
+    "message": "Auf Cardano entwickeln | cardano.org"
+  },
+  "developers.meta.description": {
+    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
+  },
+  "developers.divider.resources": {
+    "message": "Entwickler-Ressourcen"
+  },
+  "developers.documentation.title": {
+    "message": "Dokumentation"
+  },
+  "developers.documentation.text": {
+    "message": "Hier findest du die wichtigsten Ressourcen und Updates, um auf der Cardano-Blockchain zu entwickeln, zu integrieren und informiert zu bleiben. Unten findest du Links zum Developer Portal, zur ausführlichen Dokumentation, zu Integrationsanleitungen und den neuesten Core-Development-Updates."
+  },
+  "developers.tools.title": {
+    "message": "Entwickler-Tools"
+  },
+  "developers.tools.text": {
+    "message": "Entdecke die Tools, Projekte und Updates, die das Cardano-Ökosystem formen. Unten findest du Links zu Entwickler-Tools, eine Übersicht der auf Cardano gebauten Projekte und einen technischen Update-Tracker, der Commits der letzten 7 Tage aus allen Branches der Cardano-Entwicklungs-Repos zusammenfasst."
+  },
+  "developers.support.title": {
+    "message": "Support"
+  },
+  "developers.support.text": {
+    "message": "Werde Teil der lebendigen Cardano-Entwickler-Community auf verschiedenen Plattformen. Unten findest du Links zum Cardano Stack Exchange, zum Cardano Forum und zur offiziellen Telegram-Gruppe. Tausch dich mit anderen Entwicklern aus, stell Fragen und teile Wissen in unserem dezentralen Ökosystem."
+  },
+  "developers.cta.title": {
+    "message": "Greif das Protokoll an, forke die Blockchain – oder lass es bleiben. Erlebe das Ouroboros-Protokoll hautnah in dieser interaktiven Simulation."
+  },
+  "developers.cta.buttonLabel": {
+    "message": "Spiel starten"
   }
 }
