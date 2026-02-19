@@ -1239,10 +1239,10 @@
     "message": "Chancen"
   },
   "home.discover.quote1": {
-    "message": "Wir haben die Wissenschaft verändert. Wir haben verändert, was es bedeutet, globale Systeme und nachhaltige Modelle für Austausch und Governance aufzubauen."
+    "message": "Wir haben die Wissenschaft verändert. Wir haben verändert, was es bedeutet, globale Systeme und nachhaltige Modelle für Austausch und Governance zu entwickeln."
   },
   "home.discover.quote2": {
-    "message": "Gemeinsam mit der Community, Organisationen und Unternehmen, die auf Cardano aufbauen, entsteht eine neue Zukunft: dezentral, ohne Mittelsmänner – und mit der Macht zurück beim Einzelnen"
+    "message": "Gemeinsam mit der Community, Organisationen und Unternehmen, die auf Cardano entwickeln, entsteht eine neue Zukunft: dezentral, ohne Mittelsmänner – und mit der Macht zurück beim Einzelnen"
   },
   "home.divider.entities": {
     "message": "Organisationen"
@@ -3090,5 +3090,229 @@
   },
   "governanceGraphs.downloadImage": {
     "message": "Bild herunterladen"
+  },
+
+  "solutions.hero.title": {
+    "message": "Enterprise-Lösungen"
+  },
+  "solutions.hero.description": {
+    "message": "Erprobte Blockchain-Lösungen für Lieferketten, Identität und mehr."
+  },
+  "solutions.layout.title": {
+    "message": "Enterprise-Lösungen | cardano.org"
+  },
+  "solutions.layout.description": {
+    "message": "Erprobte Enterprise-Blockchain-Lösungen auf Cardano entdecken – von Lieferketten-Rückverfolgbarkeit bis zu digitalen Produktpässen."
+  },
+  "solutions.intro.description": {
+    "message": "Cardano treibt Enterprise-Lösungen in verschiedensten Branchen voran – mit der Sicherheit und Transparenz der Blockchain kombiniert mit praxisnahen Geschäftsanwendungen. Unsere erprobten Einsätze zeigen, wie Organisationen dezentrale Technologie für Lieferkettenmanagement, Produktauthentifizierung und Nachhaltigkeitsmonitoring nutzen."
+  },
+  "solutions.divider.explore": {
+    "message": "Anwendungsfälle entdecken"
+  },
+  "solutions.explore.description": {
+    "message": "Du suchst bestimmte Blockchain-Anwendungen? Entdecke unsere Übersicht mit Anwendungsfällen aus den Bereichen Identität, Finanzen, Lieferkette und mehr."
+  },
+  "solutions.explore.button": {
+    "message": "Alle Anwendungsfälle ansehen"
+  },
+  "solutions.cta.title": {
+    "message": "Bereit, auf Cardano zu entwickeln? Kontaktiere die Cardano Foundation und entdecke Partnerschaftsmöglichkeiten."
+  },
+  "solutions.cta.button": {
+    "message": "Kontakt aufnehmen"
+  },
+  "solutions.section.title": {
+    "message": "Enterprise-Lösungen"
+  },
+  "solutions.card.learnMore": {
+    "message": "Mehr erfahren"
+  },
+
+  "useCases.hero.title": {
+    "message": "Anwendungsfälle"
+  },
+  "useCases.hero.description": {
+    "message": "Wie die Cardano-Blockchain reale Probleme branchenübergreifend löst."
+  },
+  "useCases.layout.title": {
+    "message": "Enterprise-Anwendungsfälle | cardano.org"
+  },
+  "useCases.layout.description": {
+    "message": "Eine offene Plattform für Milliarden von Menschen ohne wirtschaftliche Identität – mit dezentralen Anwendungen für Identität, Wertübertragung und Governance."
+  },
+  "useCases.intro.description": {
+    "message": "Blockchain-Anwendungen aus verschiedenen Branchen entdecken – von Identitätsprüfung bis Lieferkettenverfolgung. Cardano bietet sichere, skalierbare Lösungen für reale Herausforderungen."
+  },
+  "useCases.divider.enterprise": {
+    "message": "Enterprise-Lösungen"
+  },
+  "useCases.enterprise.description": {
+    "message": "Du suchst erprobte Enterprise-Einsätze? Entdecke Fallstudien und praxisnahe Implementierungen der Cardano Foundation und ihrer Partner."
+  },
+  "useCases.enterprise.button": {
+    "message": "Enterprise-Lösungen ansehen"
+  },
+
+  "enterprise.label.solutions": {
+    "message": "Lösungen"
+  },
+  "enterprise.label.products": {
+    "message": "Produkte"
+  },
+  "enterprise.learnMore": {
+    "message": "Mehr erfahren"
+  },
+
+  "solutions.data.dpp.title": {
+    "message": "Digitaler Produktpass"
+  },
+  "solutions.data.dpp.description": {
+    "message": "EU-konforme digitale Produktpässe für Transparenz und Nachhaltigkeit."
+  },
+  "solutions.data.category.supplyChain": {
+    "message": "Lieferkette"
+  },
+  "solutions.data.traceability.title": {
+    "message": "Rückverfolgbarkeit"
+  },
+  "solutions.data.traceability.description": {
+    "message": "Lückenlose Lieferketten-Rückverfolgbarkeit mit Blockchain."
+  },
+  "solutions.data.authenticity.title": {
+    "message": "Authentizität"
+  },
+  "solutions.data.authenticity.description": {
+    "message": "Fälschungen bekämpfen mit blockchain-verifizierter Produktechtheit."
+  },
+  "solutions.data.sustainability.title": {
+    "message": "Nachhaltigkeit"
+  },
+  "solutions.data.sustainability.description": {
+    "message": "Nachhaltigkeitsversprechen mit unveränderlichen Aufzeichnungen überprüfen."
+  },
+  "solutions.data.storage.title": {
+    "message": "Dezentraler Speicher"
+  },
+  "solutions.data.storage.description": {
+    "message": "Sichere, verteilte Datenspeicherlösungen für Unternehmen."
+  },
+  "solutions.data.category.dataTech": {
+    "message": "Daten & Technologie"
+  },
+  "solutions.data.navio.description": {
+    "message": "Blockchain-basierte Lösung für Lieferkettenmanagement."
+  },
+  "solutions.data.caseStudies.title": {
+    "message": "Fallstudien"
+  },
+  "solutions.data.caseStudies.description": {
+    "message": "Praxisbeispiele für Cardano-Blockchain-Lösungen entdecken."
+  },
+
+  "useCases.category.identity": {
+    "message": "Identität"
+  },
+  "useCases.card.education.title": {
+    "message": "Bildung"
+  },
+  "useCases.card.education.summary": {
+    "message": "Blockchain-verifizierte akademische Nachweise"
+  },
+  "useCases.card.digitalIdentity.title": {
+    "message": "Digitale Identität"
+  },
+  "useCases.card.digitalIdentity.summary": {
+    "message": "Deine digitale Identität selbst kontrollieren"
+  },
+  "useCases.card.financeKyc.title": {
+    "message": "Finanz-KYC"
+  },
+  "useCases.card.financeKyc.summary": {
+    "message": "Vereinfachte Identitätsprüfung"
+  },
+  "useCases.card.government.title": {
+    "message": "Verwaltung"
+  },
+  "useCases.card.government.summary": {
+    "message": "Fälschungssichere Dokumente"
+  },
+  "useCases.category.finance": {
+    "message": "Finanzen"
+  },
+  "useCases.card.defi.summary": {
+    "message": "Dezentrales Leihen und Handeln"
+  },
+  "useCases.card.payments.title": {
+    "message": "Zahlungen"
+  },
+  "useCases.card.payments.summary": {
+    "message": "Schnelle, günstige grenzüberschreitende Überweisungen"
+  },
+  "useCases.category.supplyChain": {
+    "message": "Lieferkette"
+  },
+  "useCases.card.agriculture.title": {
+    "message": "Landwirtschaft"
+  },
+  "useCases.card.agriculture.summary": {
+    "message": "Rückverfolgbarkeit vom Feld bis zum Tisch"
+  },
+  "useCases.card.retail.title": {
+    "message": "Einzelhandel"
+  },
+  "useCases.card.retail.summary": {
+    "message": "Fälschungen bekämpfen durch Herkunftsnachweis"
+  },
+  "useCases.card.logistics.title": {
+    "message": "Logistik"
+  },
+  "useCases.card.logistics.summary": {
+    "message": "Echtzeit-Tracking und Verifizierung"
+  },
+  "useCases.category.socialImpact": {
+    "message": "Soziale Wirkung"
+  },
+  "useCases.card.socialPrograms.title": {
+    "message": "Sozialprogramme"
+  },
+  "useCases.card.socialPrograms.summary": {
+    "message": "Transparente Mittelverteilung"
+  },
+  "useCases.category.dataTech": {
+    "message": "Daten & Technologie"
+  },
+  "useCases.card.dataStorage.title": {
+    "message": "Datenspeicher"
+  },
+  "useCases.card.dataStorage.summary": {
+    "message": "Dezentrale, sichere Speicherung"
+  },
+  "useCases.card.tokenizedAssets.title": {
+    "message": "Tokenisierte Assets"
+  },
+  "useCases.card.tokenizedAssets.summary": {
+    "message": "Anteiliges Eigentum an realen Vermögenswerten"
+  },
+  "useCases.category.emerging": {
+    "message": "Neue Anwendungen"
+  },
+  "useCases.card.votingSystems.title": {
+    "message": "Wahlsysteme"
+  },
+  "useCases.card.votingSystems.summary": {
+    "message": "Sichere, transparente Wahlen"
+  },
+  "useCases.card.healthcare.title": {
+    "message": "Gesundheitswesen"
+  },
+  "useCases.card.healthcare.summary": {
+    "message": "Portable, sichere Gesundheitsdaten"
+  },
+  "useCases.card.musicIp.title": {
+    "message": "Musik & geistiges Eigentum"
+  },
+  "useCases.card.musicIp.summary": {
+    "message": "Tantiemen direkt an Künstler auszahlen"
   }
 }

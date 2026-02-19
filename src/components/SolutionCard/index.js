@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 
 export default function SolutionCard({ title, description, category, url, icon }) {
@@ -26,7 +27,7 @@ export default function SolutionCard({ title, description, category, url, icon }
       </div>
       <div className={styles.cardFooter}>
         <span className={styles.learnMore}>
-          Learn more
+          {translate({id: 'solutions.card.learnMore', message: 'Learn more'})}
           <svg
             className={styles.externalIcon}
             xmlns="http://www.w3.org/2000/svg"

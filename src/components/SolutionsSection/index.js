@@ -2,13 +2,14 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import SolutionCard from "@site/src/components/SolutionCard";
 import { EnterpriseSolutions, CaseStudiesLink } from "@site/src/data/enterprise-solutions";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 
 export default function SolutionsSection() {
   return (
     <section className={styles.solutionsSection}>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>Enterprise Solutions</h2>
+        <h2 className={styles.sectionTitle}>{translate({id: 'solutions.section.title', message: 'Enterprise Solutions'})}</h2>
       </div>
 
       <div className={styles.cardsGrid}>
