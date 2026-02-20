@@ -751,9 +751,16 @@ img {
   }
 }
 
-#medusa-stage {
-  transform: translateY(-100px);
-  /*background-color: transparent !important;*/
+/* Medusa header */
+#medusa-root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+#medusa-root > div {
+  position: absolute;
+  inset: 0;
 }
 
 .event-content {

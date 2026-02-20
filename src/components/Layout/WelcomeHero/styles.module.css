@@ -23,13 +23,7 @@
   pointer-events: none;
 }
 
-/* Medusa */
-#medusa-root {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-   
-}
+/* Medusa styles moved to custom.css (CSS modules don't emit ID selectors reliably) */
 
 .medusaBackground {
   position: absolute;
