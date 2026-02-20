@@ -684,18 +684,18 @@ img {
 
 :root {
   --section-caret-fill-color: #ffffff;
-  /* white caret fill for light mode */
 }
 
-/* Override the fill color for dark mode */
 [data-theme="dark"] {
   --section-caret-fill-color: #1b1b1d;
-  /* black for dark mode */
 }
 
-/* Apply the variable to the polygon fill */
 .sectionCaret polygon {
-  fill: var(--section-caret-fill-color);
+  fill: #ffffff;
+}
+
+[data-theme="dark"] .sectionCaret polygon {
+  fill: #1b1b1d;
 }
 
 .sectionCaret {
