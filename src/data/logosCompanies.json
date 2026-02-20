@@ -1,5 +1,12 @@
 [
   {
+    "companyName": "WingRiders",
+    "imageName": "wingriders",
+    "link": "https://www.wingriders.com/about-us",
+    "knownFor": "WingRiders DEX",
+    "showCompanyName": false
+  },
+  {
     "companyName": "Blink Labs",
     "imageName": "blinklabs",
     "knownFor": "gOuroboros",
