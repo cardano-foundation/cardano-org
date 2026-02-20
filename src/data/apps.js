@@ -1380,6 +1380,16 @@ export const Showcases = [
     source: null,
     tags: ["bridge"],
   },
+  {
+    title: "UVerify",
+    description: "UVerify opens up blockchain technology to everyone, no matter your background. Effortlessly secure your file or text hashes on the Cardano blockchain.",
+    preview: require("./app-images/uverify.png"),
+    icon: "/img/app-icons/uverify.png",
+    statsLabel: "uverify",
+    website: "https://app.uverify.io",
+    source: "https://github.com/UVerify-io",
+    tags: ["goodForBeginners", "opensource"],
+  }
 ];
 
 export const TagList = Object.keys(Tags);
