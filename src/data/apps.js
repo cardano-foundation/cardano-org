@@ -1388,7 +1388,7 @@ export const Showcases = [
     statsLabel: "uverify",
     website: "https://app.uverify.io",
     source: "https://github.com/UVerify-io",
-    tags: ["goodForBeginners", "opensource"],
+    tags: ["ecosystem", "opensource"],
   }
 ];
 
