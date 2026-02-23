@@ -3,51 +3,7 @@ import Layout from '@theme/Layout';
 import BoundaryBox from '@site/src/components/Layout/BoundaryBox';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 
-// Import translation files
-import enCode from '@site/i18n/en/code.json';
-import deCode from '@site/i18n/de/code.json';
-import jaCode from '@site/i18n/ja/code.json';
-import viCode from '@site/i18n/vi/code.json';
-
-// Calculate translation stats for a locale, split by theme (Docusaurus) and custom (cardano.org)
-function calculateStats(sourceMessages, targetMessages) {
-  const sourceKeys = Object.keys(sourceMessages);
-
-  const theme = { total: 0, translated: 0, untranslatedKeys: [] };
-  const custom = { total: 0, translated: 0, untranslatedKeys: [] };
-
-  sourceKeys.forEach(key => {
-    const sourceMsg = sourceMessages[key]?.message || sourceMessages[key];
-    const targetMsg = targetMessages[key]?.message || targetMessages[key];
-    const bucket = key.startsWith('theme.') ? theme : custom;
-
-    bucket.total++;
-    if (targetMsg && targetMsg !== sourceMsg) {
-      bucket.translated++;
-    } else {
-      bucket.untranslatedKeys.push(key);
-    }
-  });
-
-  const finalize = (b) => ({
-    ...b,
-    untranslated: b.total - b.translated,
-    percentage: b.total > 0 ? Math.round((b.translated / b.total) * 100) : 0,
-  });
-
-  const total = sourceKeys.length;
-  const translated = theme.translated + custom.translated;
-
-  return {
-    total,
-    translated,
-    untranslated: total - translated,
-    percentage: total > 0 ? Math.round((translated / total) * 100) : 0,
-    untranslatedKeys: [...theme.untranslatedKeys, ...custom.untranslatedKeys],
-    theme: finalize(theme),
-    custom: finalize(custom),
-  };
-}
+import progressData from '@site/src/data/translation-progress.json';
 
 function ProgressBar({ percentage }) {
   return (
@@ -64,11 +20,13 @@ function ProgressBar({ percentage }) {
         height: '100%',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: percentage > 8 ? 'center' : 'flex-end',
+        paddingRight: percentage <= 8 ? '6px' : 0,
         color: 'white',
         fontWeight: 'bold',
         fontSize: '14px',
         transition: 'width 0.3s ease',
+        minWidth: percentage > 0 ? '32px' : 0,
       }}>
         {percentage}%
       </div>
@@ -76,56 +34,7 @@ function ProgressBar({ percentage }) {
   );
 }
 
-function StatsRow({ label, stats }) {
-  const [expanded, setExpanded] = React.useState(false);
-
-  return (
-    <div style={{ marginBottom: '12px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-        <span style={{ fontSize: '14px' }}>{label}</span>
-        <span style={{ fontSize: '13px', color: '#666' }}>
-          {stats.translated} / {stats.total}
-        </span>
-      </div>
-      <ProgressBar percentage={stats.percentage} />
-      {stats.untranslatedKeys.length > 0 && (
-        <div style={{ marginTop: '6px' }}>
-          <button
-            onClick={() => setExpanded(!expanded)}
-            style={{
-              background: 'none',
-              border: '1px solid #ddd',
-              borderRadius: '4px',
-              padding: '4px 10px',
-              cursor: 'pointer',
-              fontSize: '12px',
-            }}
-          >
-            {expanded ? '▼' : '▶'} {stats.untranslated} untranslated
-          </button>
-          {expanded && (
-            <div style={{
-              marginTop: '8px',
-              maxHeight: '200px',
-              overflow: 'auto',
-              backgroundColor: 'var(--ifm-code-background)',
-              padding: '10px',
-              borderRadius: '4px',
-              fontSize: '12px',
-              fontFamily: 'monospace',
-            }}>
-              {stats.untranslatedKeys.map(key => (
-                <div key={key} style={{ marginBottom: '4px' }}>{key}</div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function LocaleCard({ locale, label, stats }) {
+function LocaleCard({ language }) {
   return (
     <div style={{
       border: '1px solid #ddd',
@@ -134,33 +43,37 @@ function LocaleCard({ locale, label, stats }) {
       marginBottom: '20px',
       backgroundColor: 'var(--ifm-card-background-color)',
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-        <h3 style={{ margin: 0 }}>{label} ({locale})</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+        <h3 style={{ margin: 0 }}>{language.name} ({language.id})</h3>
         <span style={{ fontSize: '14px', color: '#666' }}>
-          {stats.translated} / {stats.total} strings total ({stats.percentage}%)
+          {language.phrases.translated} / {language.phrases.total} phrases
         </span>
       </div>
 
-      <StatsRow label="Cardano.org content" stats={stats.custom} />
-      <StatsRow label="Docusaurus UI" stats={stats.theme} />
+      <ProgressBar percentage={language.translationProgress} />
+
+      {language.approvalProgress > 0 && (
+        <div style={{ marginTop: '8px', fontSize: '13px', color: '#666' }}>
+          {language.approvalProgress}% approved
+        </div>
+      )}
     </div>
   );
 }
 
 export default function TranslationsPage() {
-  const deStats = calculateStats(enCode, deCode);
-  const jaStats = calculateStats(enCode, jaCode);
-  const viStats = calculateStats(enCode, viCode);
+  const { languages, lastUpdated } = progressData;
+  const hasData = languages.length > 0;
 
-  const locales = [
-    { locale: 'de', label: 'Deutsch', stats: deStats },
-    { locale: 'ja', label: '日本語', stats: jaStats },
-    { locale: 'vi', label: 'Tiếng Việt', stats: viStats },
-  ].sort((a, b) => b.stats.custom.percentage - a.stats.custom.percentage);
+  let overallPercentage = 0;
+  let overallTranslated = 0;
+  let overallTotal = 0;
 
-  const overallTranslated = deStats.translated + jaStats.translated + viStats.translated;
-  const overallTotal = deStats.total + jaStats.total + viStats.total;
-  const overallPercentage = Math.round((overallTranslated / overallTotal) * 100);
+  if (hasData) {
+    overallTranslated = languages.reduce((sum, l) => sum + l.phrases.translated, 0);
+    overallTotal = languages.reduce((sum, l) => sum + l.phrases.total, 0);
+    overallPercentage = overallTotal > 0 ? Math.round((overallTranslated / overallTotal) * 100) : 0;
+  }
 
   return (
     <Layout
@@ -174,29 +87,63 @@ export default function TranslationsPage() {
       />
       <BoundaryBox>
         <div style={{ padding: '40px 0' }}>
-          <div style={{
-            backgroundColor: 'var(--ifm-card-background-color)',
-            border: '1px solid #ddd',
-            borderRadius: '8px',
-            padding: '20px',
-            marginBottom: '32px',
-          }}>
-            <h3 style={{ marginTop: 0 }}>Overall Progress</h3>
-            <ProgressBar percentage={overallPercentage} />
-            <p style={{ marginTop: '12px', marginBottom: 0, color: '#666' }}>
-              {overallTranslated} of {overallTotal} strings translated across all languages
-            </p>
-          </div>
+          {hasData ? (
+            <>
+              <div style={{
+                backgroundColor: 'var(--ifm-card-background-color)',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                padding: '20px',
+                marginBottom: '32px',
+              }}>
+                <h3 style={{ marginTop: 0 }}>Overall Progress</h3>
+                <ProgressBar percentage={overallPercentage} />
+                <p style={{ marginTop: '12px', marginBottom: 0, color: '#666' }}>
+                  {overallTranslated} of {overallTotal} phrases translated across {languages.length} language{languages.length !== 1 && 's'}
+                </p>
+              </div>
 
-          <h2>Languages</h2>
-          {locales.map(({ locale, label, stats }) => (
-            <LocaleCard
-              key={locale}
-              locale={locale}
-              label={label}
-              stats={stats}
-            />
-          ))}
+              <h2>Languages</h2>
+              {languages.map((language) => (
+                <LocaleCard key={language.id} language={language} />
+              ))}
+
+              {lastUpdated && (
+                <p style={{ fontSize: '13px', color: '#999', marginTop: '16px' }}>
+                  Last updated: {new Date(lastUpdated).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZoneName: 'short',
+                  })}
+                  {' · '}
+                  Data from{' '}
+                  <a href="https://crowdin.com/project/cardano-org" target="_blank" rel="noopener noreferrer">
+                    Crowdin
+                  </a>
+                </p>
+              )}
+            </>
+          ) : (
+            <div style={{
+              backgroundColor: 'var(--ifm-card-background-color)',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              padding: '20px',
+              marginBottom: '32px',
+              textAlign: 'center',
+            }}>
+              <p style={{ marginBottom: 0, color: '#666' }}>
+                Translation progress data is not yet available. Check back soon or visit{' '}
+                <a href="https://crowdin.com/project/cardano-org" target="_blank" rel="noopener noreferrer">
+                  our Crowdin project
+                </a>{' '}
+                directly.
+              </p>
+            </div>
+          )}
 
           <div style={{ marginTop: '40px', padding: '24px', backgroundColor: 'var(--ifm-card-background-color)', border: '1px solid #ddd', borderRadius: '8px' }}>
             <h2 style={{ marginTop: 0 }}>Want to help translate?</h2>
@@ -256,7 +203,7 @@ export default function TranslationsPage() {
               directly via{' '}
               <a href="https://github.com/cardano-foundation/cardano-org" target="_blank" rel="noopener noreferrer">
                 GitHub
-              </a>. Translation files are located in <code>i18n/[locale]/code.json</code>.
+              </a>. Translation files are located in <code>i18n/[locale]/</code>.
             </div>
 
             <h3>Tips for translators</h3>

@@ -1,0 +1,59 @@
+{
+  "lastUpdated": "2026-02-23T14:06:19.817Z",
+  "languages": [
+    {
+      "id": "de",
+      "name": "German",
+      "translationProgress": 39,
+      "approvalProgress": 0,
+      "words": {
+        "total": 37627,
+        "translated": 14809,
+        "preTranslateAppliedTo": 0,
+        "approved": 13
+      },
+      "phrases": {
+        "total": 3996,
+        "translated": 1364,
+        "preTranslateAppliedTo": 0,
+        "approved": 5
+      }
+    },
+    {
+      "id": "ja",
+      "name": "Japanese",
+      "translationProgress": 2,
+      "approvalProgress": 0,
+      "words": {
+        "total": 37627,
+        "translated": 1104,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      },
+      "phrases": {
+        "total": 3996,
+        "translated": 368,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      }
+    },
+    {
+      "id": "vi",
+      "name": "Vietnamese",
+      "translationProgress": 0,
+      "approvalProgress": 0,
+      "words": {
+        "total": 37627,
+        "translated": 150,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      },
+      "phrases": {
+        "total": 3996,
+        "translated": 68,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      }
+    }
+  ]
+}

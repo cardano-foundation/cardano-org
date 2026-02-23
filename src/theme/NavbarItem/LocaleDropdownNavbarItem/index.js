@@ -4,36 +4,13 @@ import {useLocation} from '@docusaurus/router';
 import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 
-// Import translation files for stats calculation
-import enCode from '@site/i18n/en/code.json';
-import deCode from '@site/i18n/de/code.json';
-import jaCode from '@site/i18n/ja/code.json';
-import viCode from '@site/i18n/vi/code.json';
+import progressData from '@site/src/data/translation-progress.json';
 
-// Calculate translation percentage
-function calculatePercentage(sourceMessages, targetMessages) {
-  const sourceKeys = Object.keys(sourceMessages);
-  const total = sourceKeys.length;
-  let translated = 0;
-
-  sourceKeys.forEach(key => {
-    const sourceMsg = sourceMessages[key]?.message || sourceMessages[key];
-    const targetMsg = targetMessages[key]?.message || targetMessages[key];
-    if (targetMsg && targetMsg !== sourceMsg) {
-      translated++;
-    }
-  });
-
-  return Math.round((translated / total) * 100);
-}
-
-// Pre-calculate stats
-const translationStats = {
-  en: 100,
-  de: calculatePercentage(enCode, deCode),
-  ja: calculatePercentage(enCode, jaCode),
-  vi: calculatePercentage(enCode, viCode),
-};
+// Build lookup from Crowdin progress data
+const translationStats = {en: 100};
+progressData.languages.forEach((lang) => {
+  translationStats[lang.id] = lang.translationProgress;
+});
 
 // Progress bar component
 function MiniProgressBar({ percentage }) {
