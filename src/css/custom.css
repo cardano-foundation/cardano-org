@@ -651,6 +651,19 @@ img {
   letter-spacing: normal !important;
 }
 
+/* Reclaim horizontal space on medium-width screens where the
+   desktop navbar is visible but items start to collide (especially
+   with longer German labels like "Mitmachen", "Entwickeln"). */
+@media (max-width: 1200px) {
+  .navbar {
+    --ifm-navbar-item-padding-horizontal: 0.5rem;
+  }
+
+  .DocSearch-Button-Placeholder {
+    display: none !important;
+  }
+}
+
 /* Ensure mega menu doesn't display on small screens */
 @media (max-width: 899px) {
   .megaMenuPanel {
