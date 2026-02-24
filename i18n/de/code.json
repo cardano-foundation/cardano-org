@@ -19,10 +19,6 @@
     "message": "Die Seite ist abgestürzt.",
     "description": "The title of the fallback page when the page crashed"
   },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Zurück nach oben scrollen",
-    "description": "The ARIA label for the back to top button"
-  },
   "theme.blog.archive.title": {
     "message": "Archiv",
     "description": "The page & hero title of the blog archive page"
@@ -30,6 +26,10 @@
   "theme.blog.archive.description": {
     "message": "Archiv",
     "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Zurück nach oben scrollen",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "Navigation der Blog-Listenseite",
@@ -142,13 +142,13 @@
     "message": "Letztes Update{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versionen",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
   "theme.NotFound.title": {
     "message": "Seite nicht gefunden",
     "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versionen",
+    "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
@@ -210,14 +210,6 @@
     "message": "Auf dieser Seite",
     "description": "The label used by the button on the collapsible TOC component"
   },
-  "theme.blog.post.readMore": {
-    "message": "Mehr lesen",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "Mehr lesen über {title}",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
   "theme.NotFound.p1": {
     "message": "Wir konnten nicht finden, wonach du gesucht hast.",
     "description": "The first paragraph of the 404 page"
@@ -226,13 +218,17 @@
     "message": "Bitte kontaktiere den Betreiber der Seite, die dich hierher verlinkt hat – der Link funktioniert nicht mehr.",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.blog.post.readMore": {
+    "message": "Mehr lesen",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Mehr lesen über {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "Eine Minute Lesezeit|{readingTime} Minuten Lesezeit",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.CodeBlock.copy": {
     "message": "Kopieren",
@@ -245,6 +241,10 @@
   "theme.CodeBlock.copyButtonAriaLabel": {
     "message": "In die Zwischenablage kopieren",
     "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
@@ -262,13 +262,13 @@
     "message": "Docs sidebar",
     "description": "The ARIA label for the sidebar navigation"
   },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Zurück zum Hauptmenü",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "Close navigation bar",
     "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Zurück zum Hauptmenü",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "Toggle navigation bar",
@@ -938,156 +938,155 @@
     "message": "Cardano bietet beim Staking mehrere Vorteile: Es gibt keinen Mindestbetrag, kein Slashing-Risiko (kein Verlust deiner gestakten [Ada](/what-is-ada/)) und keine Sperrfrist. Deine delegierte [Ada](/what-is-ada/) bleibt jederzeit in deinem Besitz und zugänglich. Belohnungen werden direkt vom Protokoll verteilt – nicht von den Pools –, was für einen fairen und transparenten Prozess sorgt."
   },
   "commonScams.hero.title": {
-    "message": "Common Cardano scams"
+    "message": "Häufige Cardano-Betrugsmaschen"
   },
   "commonScams.hero.description": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
   },
   "commonScams.meta.title": {
-    "message": "Common Cardano scams you should avoid | cardano.org"
+    "message": "Häufige Cardano-Betrugsmaschen | cardano.org"
   },
   "commonScams.meta.description": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
   },
   "commonScams.quiz.title": {
-    "message": "Test Your Knowledge"
+    "message": "Teste dein Wissen"
   },
   "commonScams.quiz.description": {
-    "message": "Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
+    "message": "Beantworte 5 Fragen und finde heraus, wie gut du Betrugsmaschen in der Blockchain-Welt erkennst und vermeidest."
   },
   "commonScams.quiz.buttonText": {
-    "message": "Start Quiz"
+    "message": "Quiz starten"
   },
   "commonScams.intro.title": {
-    "message": "Protecting your ada from scammers"
+    "message": "So schützt du deine Ada vor Betrügern"
   },
   "commonScams.intro.description1": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn't immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself."
+    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus. Cardano (Ada) bildet da keine Ausnahme. Von gefälschten Giveaways bis hin zu Phishing-Angriffen: Betrüger entwickeln ständig neue Methoden, um Nutzer auszutricksen. Durch den Fortschritt künstlicher Intelligenz werden diese Maschen immer raffinierter. Auf dieser Seite erfährst du, welche Betrugsmaschen im Cardano-Ökosystem am häufigsten vorkommen – und wie du dich davor schützt."
   },
   "commonScams.intro.description2": {
-    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
+    "message": "**Wichtig:** Wer Zugang zu deinen Seed-Wörtern (Wiederherstellungsphrase) hat, kann dein Wallet komplett übernehmen – kein Passwort schützt dich dann noch. Einmal gestohlene Ada sind unwiederbringlich verloren."
   },
   "commonScams.divider.giveaway": {
     "message": "Giveaway"
   },
   "commonScams.giveaway.title": {
-    "message": "Ada Giveaway Scam"
+    "message": "Ada-Giveaway-Betrug"
   },
   "commonScams.giveaway.description1": {
-    "message": "One of the most well-known scams targeting the Cardano community is the **Ada Giveaway Scam.** Scammers promise to double your ada if you send them a certain amount first. These scams often feature fake live streams of Charles Hoskinson, or other well-known personalities, to appear legitimate. The streams may mimic genuine events and include a wallet address for you to send your ada."
+    "message": "Eine der bekanntesten Betrugsmaschen in der Cardano-Community: Betrüger versprechen, deine Ada zu verdoppeln, wenn du ihnen zuerst einen bestimmten Betrag schickst. Oft nutzen sie gefälschte Livestreams mit Charles Hoskinson oder anderen bekannten Persönlichkeiten, um seriös zu wirken. Die Streams imitieren echte Events und zeigen eine Wallet-Adresse, an die du Ada senden sollst."
   },
   "commonScams.giveaway.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "So schützt du dich:"
   },
   "commonScams.giveaway.tip1": {
-    "message": "Legitimate giveaways **never** ask for money upfront."
+    "message": "Echte Giveaways verlangen **niemals** Geld im Voraus."
   },
   "commonScams.giveaway.tip2": {
-    "message": "Avoid clicking on links in unsolicited messages or live streams."
+    "message": "Klicke nicht auf Links in unaufgeforderten Nachrichten oder Livestreams."
   },
   "commonScams.giveaway.tip3": {
-    "message": "Remember: Once sent, your ada is gone forever."
+    "message": "Denk daran: Einmal gesendete Ada sind für immer weg."
   },
   "commonScams.giveaway.tip4": {
-    "message": "Read reports and scam sightings from users in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+    "message": "Lies Berichte und Betrugsmeldungen anderer Nutzer im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
   },
   "commonScams.divider.phishing": {
     "message": "Phishing"
   },
   "commonScams.phishing.title": {
-    "message": "Phishing Attacks"
+    "message": "Phishing-Angriffe"
   },
   "commonScams.phishing.description": {
-    "message": "Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](/what-is-ada/#wallets)."
+    "message": "Phishing-Betrug funktioniert über gefälschte Websites, Apps oder E-Mails, die darauf abzielen, sensible Daten wie Wallet-Zugangsdaten oder die Wiederherstellungsphrase (Seed-Wörter) zu stehlen. Diese betrügerischen Seiten imitieren häufig beliebte Wallets wie [Typhon, VESPR oder Eternl](/what-is-ada/#wallets)."
   },
   "commonScams.phishing.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "So schützt du dich:"
   },
   "commonScams.phishing.tip1": {
-    "message": "Double-check URLs to ensure they match actual wallet websites."
+    "message": "Überprüfe URLs sorgfältig – stimmen sie mit der echten Wallet-Website überein?"
   },
   "commonScams.phishing.tip2": {
-    "message": "**Never** share your recovery phrase, **even** with \"support\" staff or \"moderators\"."
+    "message": "Teile **niemals** deine Wiederherstellungsphrase – auch nicht mit angeblichem \"Support\" oder \"Moderatoren\"."
   },
   "commonScams.phishing.tip3": {
-    "message": "Consider using hardware wallets."
+    "message": "Nutze am besten ein Hardware-Wallet."
   },
   "commonScams.phishing.tip4": {
-    "message": "Use two-factor authentication where possible."
+    "message": "Aktiviere wenn möglich Zwei-Faktor-Authentifizierung."
   },
   "commonScams.divider.investment": {
-    "message": "Fake Investment"
+    "message": "Fake-Investment"
   },
   "commonScams.investment.title": {
-    "message": "Fake Investment Opportunities"
+    "message": "Gefälschte Investmentangebote"
   },
   "commonScams.investment.description": {
-    "message": "Fraudulent investment schemes are another popular scam. Scammers promote fake projects, claiming they are \"Cardano-backed\" or \"ada-specific\" opportunities with guaranteed high returns. Victims are urged to send ada or other funds to a provided wallet address, with promises of earning exponential profits."
+    "message": "Betrügerische Investmentangebote sind ebenfalls weit verbreitet. Betrüger bewerben Fake-Projekte und behaupten, es handle sich um \"Cardano-gestützte\" oder \"Ada-spezifische\" Chancen mit garantiert hohen Renditen. Opfer werden aufgefordert, Ada oder andere Mittel an eine Wallet-Adresse zu senden – mit dem Versprechen exponentieller Gewinne."
   },
   "commonScams.investment.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "So schützt du dich:"
   },
   "commonScams.investment.tip1": {
-    "message": "Legitimate projects **never** promise guaranteed returns."
+    "message": "Seriöse Projekte versprechen **niemals** garantierte Renditen."
   },
   "commonScams.investment.tip2": {
-    "message": "Be skeptical of unsolicited investment offers."
+    "message": "Sei skeptisch bei unaufgeforderten Investmentangeboten."
   },
   "commonScams.investment.tip3": {
-    "message": "Research projects thoroughly, checking for transparency and a credible team."
+    "message": "Recherchiere Projekte gründlich – achte auf Transparenz und ein glaubwürdiges Team."
   },
   "commonScams.divider.support": {
-    "message": "Fake Support"
+    "message": "Fake-Support"
   },
   "commonScams.support.title": {
-    "message": "Fake Tech Support"
+    "message": "Gefälschter Tech-Support"
   },
   "commonScams.support.description1": {
-    "message": "In this scam, fraudsters pose as \"official\" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to \"help,\" they'll ask for your recovery phrase (seed words) or private keys."
+    "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über soziale Medien, Foren oder per E-Mail und behaupten, dein Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren und fragen nach deiner Wiederherstellungsphrase (Seed-Wörtern) oder privaten Schlüsseln – angeblich um dir zu \"helfen\"."
   },
   "commonScams.support.description2": {
-    "message": "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
+    "message": "Diese Masche tritt besonders häufig auf, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einem Wallet stellt. Betrüger reagieren dann blitzschnell und geben sich als offizieller Support aus."
   },
   "commonScams.support.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "So schützt du dich:"
   },
   "commonScams.support.tip1": {
-    "message": "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys."
+    "message": "Seriöse Nutzer in [Foren und Kanälen](/docs/communities) fragen **niemals** nach deinen Passwörtern, Wiederherstellungsphrasen oder privaten Schlüsseln."
   },
   "commonScams.support.tip2": {
-    "message": "Never engage with unsolicited messages claiming to be from support."
+    "message": "Reagiere nie auf unaufgeforderte Nachrichten von angeblichem Support."
   },
   "commonScams.support.tip3": {
-    "message": "Legitimate people on forums and channels will **never** contact you first in a private message."
+    "message": "Seriöse Community-Mitglieder schreiben dich **niemals** zuerst per Privatnachricht an."
   },
   "commonScams.divider.rug": {
     "message": "Rug Pulls"
   },
   "commonScams.rug.title": {
-    "message": "Rug Pulls in Cardano Ecosystem"
+    "message": "Rug Pulls im Cardano-Ökosystem"
   },
   "commonScams.rug.description": {
-    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a \"rug pull.\""
+    "message": "Cardano ist eine öffentliche, genehmigungsfreie Layer-1-Blockchain – jeder kann sie nutzen. Manche betrügerischen Projekte starten auf Cardano, gewinnen mit großen Versprechen und auffälligem Marketing Aufmerksamkeit und sammeln Ada von Investoren ein. Dann verschwinden sie – das nennt man einen \"Rug Pull\"."
   },
   "commonScams.rug.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "So schützt du dich:"
   },
   "commonScams.rug.tip1": {
-    "message": "Research the project team's credentials and reputation."
+    "message": "Prüfe die Referenzen und den Ruf des Projektteams."
   },
   "commonScams.rug.tip2": {
-    "message": "Check for audits or transparent documentation."
+    "message": "Achte auf Audits oder transparente Dokumentation."
   },
   "commonScams.rug.tip3": {
-    "message": "Avoid projects with anonymous teams or unrealistic promises."
+    "message": "Meide Projekte mit anonymen Teams oder unrealistischen Versprechen."
   },
   "commonScams.rug.tip4": {
-    "message": "Only get utility tokens when you need to use the utility."
+    "message": "Kaufe Utility-Token nur, wenn du die Utility auch tatsächlich nutzen willst."
   },
   "commonScams.rug.tip5": {
-    "message": "Find out what other people think about projects in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+    "message": "Informiere dich im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
   },
-
   "home.meta.title": {
     "message": "Startseite | cardano.org"
   },
@@ -1256,103 +1255,6 @@
   "home.follow.title": {
     "message": "Mach mit"
   },
-
-  "research.hero.title": {
-    "message": "Forschung"
-  },
-  "research.hero.description": {
-    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
-  },
-  "research.meta.title": {
-    "message": "Cardano Forschung | cardano.org"
-  },
-  "research.meta.description": {
-    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
-  },
-
-  "hardforks.hero.title": {
-    "message": "Hard Forks"
-  },
-  "hardforks.hero.description": {
-    "message": "Welche Hard Forks gab es bisher – und welche Neuerungen haben sie gebracht?"
-  },
-  "hardforks.layout.title": {
-    "message": "Bisherige Hard Forks | cardano.org"
-  },
-  "hardforks.layout.description": {
-    "message": "Ein umweltfreundliches, nachweislich sicheres Proof-of-Stake-Protokoll mit rigorosen Sicherheitsgarantien."
-  },
-  "hardforks.content.title": {
-    "message": "Cardano Hard Forks"
-  },
-  "hardforks.content.description": {
-    "message": "Hard Forks bedeuten bei Cardano keine Spaltung oder Meinungsverschiedenheiten innerhalb des Ökosystems. Im Gegenteil: Sie markieren einen exakten, gemeinschaftlich vereinbarten Zeitpunkt (Slot), an dem alle Nodes von der aktuellen Ära zur nächsten wechseln – mit neuen Funktionen, Validierungsregeln oder Parameterwerten. Alle Stake-Pool-Betreiber müssen das Upgrade installieren und haben dabei ein Mitspracherecht. Ein Hard Fork bei Cardano ist also keine Trennung, sondern eine präzise kollektive Weiterentwicklung."
-  },
-  "hardforks.divider.timeline": {
-    "message": "Zeitstrahl"
-  },
-  "hardforks.loading": {
-    "message": "Wird geladen..."
-  },
-  "hardforks.divider.transactionIds": {
-    "message": "Hard-Fork-Transaktions-IDs"
-  },
-  "hardforks.transactionIds.description": {
-    "message": "Einige Hard Forks – insbesondere Byron und Shelley – wurden durch eine Reihe von Updates umgesetzt und haben daher keine einzelne Transaktions-ID. Bei den übrigen entsprechen die angegebenen Transaktions-IDs den wesentlichen Parameteränderungen im Zuge der Hard Forks."
-  },
-
-  "stakePoolDelegation.hero.title": {
-    "message": "Stake delegieren"
-  },
-  "stakePoolDelegation.hero.description": {
-    "message": "Stärke das Netzwerk, verdiene Belohnungen und werde Teil der Cardano-Reise."
-  },
-  "stakePoolDelegation.meta.title": {
-    "message": "Stake delegieren | cardano.org"
-  },
-  "stakePoolDelegation.meta.description": {
-    "message": "Delegiere deinen Stake, um das Netzwerk zu stärken, Belohnungen zu verdienen und Teil der Cardano-Reise zu werden."
-  },
-  "stakePoolDelegation.whatIsStake.divider": {
-    "message": "Was ist Stake?"
-  },
-  "stakePoolDelegation.whatIsStake.text1": {
-    "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
-  },
-  "stakePoolDelegation.whatIsStake.text2": {
-    "message": "Ada-Inhaber können auf zwei Wegen Belohnungen verdienen: indem sie ihren Stake an einen Stake Pool delegieren, der von jemand anderem betrieben wird, oder indem sie einen eigenen Stake Pool betreiben. Die Menge des an einen Pool delegierten Stakes bestimmt maßgeblich, wen das Ouroboros-Protokoll auswählt, den nächsten Block zur Blockchain hinzuzufügen – und dafür eine Belohnung zu erhalten."
-  },
-  "stakePoolDelegation.whatIsStake.text3": {
-    "message": "Je mehr Stake an einen Pool delegiert wird (bis zu einem bestimmten Punkt), desto wahrscheinlicher erzeugt er den nächsten Block – und die Belohnungen werden unter allen aufgeteilt, die ihren Stake an diesen Pool delegiert haben."
-  },
-  "stakePoolDelegation.whatIsDelegation.divider": {
-    "message": "Was ist Stake-Delegation?"
-  },
-  "stakePoolDelegation.whatIsDelegation.text": {
-    "message": "Delegation ist der Vorgang, bei dem Ada-Inhaber den mit ihrer Ada verbundenen Stake an einen Stake Pool übertragen. So können auch Nutzer am Netzwerk teilnehmen und proportional zu ihrem delegierten Stake Belohnungen verdienen – ohne selbst einen Node betreiben zu müssen."
-  },
-  "stakePoolDelegation.whyIncentives.divider": {
-    "message": "Warum Anreize?"
-  },
-  "stakePoolDelegation.whyIncentives.text": {
-    "message": "Anreize sichern die Langlebigkeit und Gesundheit des Cardano-Netzwerks und -Ökosystems. Der Anreizmechanismus basiert auf wissenschaftlicher Forschung und vereint Mathematik, Wirtschaftstheorie und Spieltheorie."
-  },
-  "stakePoolDelegation.walletsCta.title": {
-    "message": "Cardano Wallets"
-  },
-  "stakePoolDelegation.walletsCta.text": {
-    "message": "Entdecke eine große Auswahl an Wallets, die dir den Zugang zum Cardano-Ökosystem erleichtern."
-  },
-  "stakePoolDelegation.walletsCta.buttonLabel": {
-    "message": "Jetzt entdecken"
-  },
-  "stakePoolDelegation.calculatorCta.title": {
-    "message": "Probiere unseren Staking-Rechner aus und sieh, wie viel Ada du durch Delegation an einen Stake Pool verdienen könntest."
-  },
-  "stakePoolDelegation.calculatorCta.buttonLabel": {
-    "message": "Ausprobieren"
-  },
-
   "navbar.mega.column.Get to know": {
     "message": "Kennenlernen",
     "description": "Mega menu column title"
@@ -1393,7 +1295,6 @@
     "message": "Anwendungsfälle",
     "description": "Mega menu column title"
   },
-
   "navbar.mega.label.What is ada?": {
     "message": "Was ist Ada?",
     "description": "Mega menu item label"
@@ -1514,7 +1415,6 @@
     "message": "Lieferkette",
     "description": "Mega menu item label"
   },
-
   "navbar.mega.description.What is ada?": {
     "message": "Cardanos nativer Token",
     "description": "Mega menu item description"
@@ -1635,570 +1535,156 @@
     "message": "Rückverfolgbarkeit und Herkunftsnachweis",
     "description": "Mega menu item description"
   },
-
-  "research.headings.papers": {
-    "message": "Papers"
+  "solutions.data.dpp.title": {
+    "message": "Digitaler Produktpass"
   },
-  "research.headings.specifications": {
-    "message": "Spezifikationen"
+  "solutions.data.dpp.description": {
+    "message": "EU-konforme digitale Produktpässe für Transparenz und Nachhaltigkeit."
   },
-  "research.byron.subtitle": {
-    "message": "Grundstein"
+  "solutions.data.category.supplyChain": {
+    "message": "Lieferkette"
   },
-  "research.byron.description": {
-    "message": "Eine Phase, in der ein föderiertes Netzwerk aufgebaut wurde, das den Kauf und Verkauf von Ada ermöglichte. Das Netzwerk lief mit dem Proof-of-Stake-Konsensprotokoll Ouroboros."
+  "solutions.data.traceability.title": {
+    "message": "Rückverfolgbarkeit"
   },
-  "research.shelley.subtitle": {
-    "message": "Dezentralisierung"
+  "solutions.data.traceability.description": {
+    "message": "Lückenlose Lieferketten-Rückverfolgbarkeit mit Blockchain."
   },
-  "research.shelley.description": {
-    "message": "Eine Phase des Wachstums mit Fokus auf Dezentralisierung. Mehr Sicherheit und ein robusteres Netzwerk – ermöglicht durch den Übergang zu einem System, in dem die Mehrheit der Nodes von Netzwerkteilnehmern betrieben wird."
+  "solutions.data.authenticity.title": {
+    "message": "Authentizität"
   },
-  "research.goguen.subtitle": {
-    "message": "Smart Contracts"
+  "solutions.data.authenticity.description": {
+    "message": "Fälschungen bekämpfen mit blockchain-verifizierter Produktechtheit."
   },
-  "research.goguen.description": {
-    "message": "Die Goguen-Ära brachte Smart-Contract-Funktionalität und ermöglichte dezentrale Anwendungen – mit Unterstützung für Multi-Asset-Token, fungible und nicht-fungible Token-Standards."
+  "solutions.data.sustainability.title": {
+    "message": "Nachhaltigkeit"
   },
-  "research.basho.subtitle": {
-    "message": "Skalierung"
+  "solutions.data.sustainability.description": {
+    "message": "Nachhaltigkeitsversprechen mit unveränderlichen Aufzeichnungen überprüfen."
   },
-  "research.basho.description": {
-    "message": "Eine Ära der Optimierung – mit Fokus auf Skalierbarkeit und Interoperabilität. Basho führt Sidechains ein: neue Blockchains, die mit der Cardano-Hauptchain interagieren und das Potenzial des Netzwerks erheblich erweitern."
+  "solutions.data.storage.title": {
+    "message": "Dezentraler Speicher"
   },
-  "research.voltaire.subtitle": {
-    "message": "Governance"
+  "solutions.data.storage.description": {
+    "message": "Sichere, verteilte Datenspeicherlösungen für Unternehmen."
   },
-  "research.voltaire.description": {
-    "message": "Die aktuelle Entwicklungsphase macht Cardano zu einem sich selbst tragenden System. Voltaire führt ein Abstimmungs- und Treasury-System ein, mit dem Netzwerkteilnehmer ihren Stake und ihre Stimmrechte nutzen können, um die Zukunft der Blockchain mitzugestalten."
+  "solutions.data.category.dataTech": {
+    "message": "Daten & Technologie"
   },
-
-  "hardforks.timeline.byron.description": {
-    "message": "Start des Cardano-Mainnets und Einführung der Kryptowährung Ada."
+  "solutions.data.navio.description": {
+    "message": "Blockchain-basierte Lösung für Lieferkettenmanagement."
   },
-  "hardforks.timeline.shelley.description": {
-    "message": "Einführung von Staking und Dezentralisierungsfunktionen – der Übergang von einem föderierten zu einem dezentralen System."
+  "solutions.data.caseStudies.title": {
+    "message": "Fallstudien"
   },
-  "hardforks.timeline.allegra.description": {
-    "message": "Token-Locking-Funktionen als Voraussetzung für die spätere Smart-Contract-Funktionalität."
+  "solutions.data.caseStudies.description": {
+    "message": "Praxisbeispiele für Cardano-Blockchain-Lösungen entdecken."
   },
-  "hardforks.timeline.mary.description": {
-    "message": "Native-Token-Funktionalität für Cardano – Nutzer können eigene Token erstellen und damit handeln."
+  "useCases.category.identity": {
+    "message": "Identität"
   },
-  "hardforks.timeline.alonzo.description": {
-    "message": "Smart-Contract-Fähigkeiten mit Plutus – und damit die Möglichkeit, dezentrale Anwendungen (dApps) zu erstellen."
+  "useCases.card.education.title": {
+    "message": "Bildung"
   },
-  "hardforks.timeline.vasil.description": {
-    "message": "Verbesserung der Skalierbarkeit und Performance des Netzwerks – benannt nach Vasil Dabov, einem Mitglied der Cardano-Community."
+  "useCases.card.education.summary": {
+    "message": "Blockchain-verifizierte akademische Nachweise"
   },
-  "hardforks.timeline.valentine.description": {
-    "message": "Weitere Verbesserungen der Plutus-Smart-Contract-Funktionalität und der Netzwerk-Performance."
+  "useCases.card.digitalIdentity.title": {
+    "message": "Digitale Identität"
   },
-  "hardforks.timeline.chang1.description": {
-    "message": "Erste dezentrale Governance-Funktionen aus CIP-1694 – zunächst nur Parameteränderungen und Hard-Fork-Initiierungen."
+  "useCases.card.digitalIdentity.summary": {
+    "message": "Deine digitale Identität selbst kontrollieren"
   },
-  "hardforks.timeline.plomin.description": {
-    "message": "Zweite Welle der dezentralen Governance-Funktionen aus CIP-1694 – mit dem vollständigen Set an Governance-Aktionen und der DRep-Rolle."
+  "useCases.card.financeKyc.title": {
+    "message": "Finanz-KYC"
   },
-  "hardforks.timeline.label.epoch": {
-    "message": "Epoch"
+  "useCases.card.financeKyc.summary": {
+    "message": "Vereinfachte Identitätsprüfung"
   },
-  "hardforks.timeline.label.protocolVersion": {
-    "message": "Protokollversion"
+  "useCases.card.government.title": {
+    "message": "Verwaltung"
   },
-  "hardforks.timeline.label.transactionId": {
-    "message": "Transaktions-ID"
+  "useCases.card.government.summary": {
+    "message": "Fälschungssichere Dokumente"
   },
-  "hardforks.timeline.label.transactionIds": {
-    "message": "Transaktions-IDs"
+  "useCases.category.finance": {
+    "message": "Finanzen"
   },
-
-  "delegation.faq.q1": {
-    "message": "Was ist ein Stake Pool?"
+  "useCases.card.defi.summary": {
+    "message": "Dezentrales Leihen und Handeln"
   },
-  "delegation.faq.a1.p1": {
-    "message": "Stake Pools werden von Stake-Pool-Betreibern geführt. Das sind Netzwerkteilnehmer mit dem Know-how, einen Node zuverlässig rund um die Uhr zu betreiben – entscheidend für das Ouroboros-Protokoll und das gesamte Cardano-Netzwerk."
+  "useCases.card.payments.title": {
+    "message": "Zahlungen"
   },
-  "delegation.faq.a1.p2": {
-    "message": "Das Protokoll wählt per Zufallsverfahren einen Leader für jeden Slot, der den nächsten Block erzeugt. Je mehr Stake an einen Node delegiert ist, desto höher die Chance, ausgewählt zu werden. Für jeden erfolgreich erzeugten Block erhält der Pool eine Belohnung, die proportional zum delegierten Anteil aufgeteilt wird. Pool-Betreiber können ihre Betriebskosten und eine Gewinnmarge abziehen."
+  "useCases.card.payments.summary": {
+    "message": "Schnelle, günstige grenzüberschreitende Überweisungen"
   },
-  "delegation.faq.q2": {
-    "message": "Kann ich meinen Stake an einen anderen Pool übertragen?"
+  "useCases.category.supplyChain": {
+    "message": "Lieferkette"
   },
-  "delegation.faq.a2.p1": {
-    "message": "Ja. Du kannst deinen Stake jederzeit an einen anderen Pool delegieren. Der Stake bleibt bis zur übernächsten Epoch im bisherigen Pool, danach wird deine neue Delegation auf der Chain aktualisiert. Da Belohnungen am Ende jeder Epoch verteilt werden, erhältst du noch für zwei Epochen Belohnungen vom alten Pool."
+  "useCases.card.agriculture.title": {
+    "message": "Landwirtschaft"
   },
-  "delegation.faq.q3": {
-    "message": "Kann ich an mehrere Stake Pools gleichzeitig delegieren?"
+  "useCases.card.agriculture.summary": {
+    "message": "Rückverfolgbarkeit vom Feld bis zum Tisch"
   },
-  "delegation.faq.a3.p1": {
-    "message": "Einige Wallets bieten Lösungen, um gleichzeitig an verschiedene Stake Pools zu delegieren. [Wallets entdecken](/what-is-ada#wallets)."
+  "useCases.card.retail.title": {
+    "message": "Einzelhandel"
   },
-  "delegation.faq.q4": {
-    "message": "Was ist Stake-Pool-Performance?"
+  "useCases.card.retail.summary": {
+    "message": "Fälschungen bekämpfen durch Herkunftsnachweis"
   },
-  "delegation.faq.a4.p1": {
-    "message": "Die Performance zeigt, wie zuverlässig ein Stake Pool arbeitet. Da die Slot-Leader-Wahl privat erfolgt, lässt sich nur schätzen, wie oft ein Pool gewählt werden sollte – basierend auf den tatsächlich erzeugten Blöcken. Produziert ein Pool z. B. nur die Hälfte der erwarteten Blöcke, liegt seine Performance bei 50 %. Das kann an einer schlechten Netzwerkverbindung oder daran liegen, dass der Betreiber den Pool abgeschaltet hat."
+  "useCases.card.logistics.title": {
+    "message": "Logistik"
   },
-  "delegation.faq.a4.p2": {
-    "message": "Performance-Werte werden über einen längeren Zeitraum aussagekräftiger. Wurde ein Pool in der aktuellen Epoch noch nicht ausgewählt, steht seine Performance bei 0 % – selbst wenn er später noch Blöcke erzeugen wird. Werte über 100 % sind möglich, wenn ein Pool mehr Blöcke produziert als erwartet."
+  "useCases.card.logistics.summary": {
+    "message": "Echtzeit-Tracking und Verifizierung"
   },
-  "delegation.faq.q5": {
-    "message": "Was ist Stake-Pool-Sättigung?"
+  "useCases.category.socialImpact": {
+    "message": "Soziale Wirkung"
   },
-  "delegation.faq.a5.p1": {
-    "message": "Sättigung bedeutet, dass ein Pool mehr Stake hat als für das Netzwerk ideal ist – ab diesem Punkt sinken die Belohnungen. Dieser Mechanismus soll Zentralisierung verhindern: Delegierende werden ermutigt, ihren Stake auf verschiedene Pools zu verteilen, und Betreiber, weitere Pools aufzusetzen."
+  "useCases.card.socialPrograms.title": {
+    "message": "Sozialprogramme"
   },
-  "delegation.faq.a5.p2": {
-    "message": "Ziel ist es, einzelne Pools nicht zu groß werden zu lassen, damit die Belohnungen fair verteilt bleiben. Die Gesundheit des Netzwerks hängt von vielen aktiven Pools mit ausgewogenem Stake ab – je zahlreicher und geografisch vielfältiger, desto besser. Der Sättigungsgrad jedes Pools wird im Daedalus-Auswahlmenü angezeigt."
+  "useCases.card.socialPrograms.summary": {
+    "message": "Transparente Mittelverteilung"
   },
-  "delegation.faq.q6": {
-    "message": "Was ist die Attraktivität eines Stake Pools?"
+  "useCases.category.dataTech": {
+    "message": "Daten & Technologie"
   },
-  "delegation.faq.a6.p1": {
-    "message": "Die Attraktivität misst, wie interessant ein Stake Pool für Delegierende ist. Sie wird von mehreren Faktoren beeinflusst – darunter die Marge des Pools, seine Gebühren, Performance, die verfügbare Gesamtbelohnung in der aktuellen Epoch und der Sättigungsgrad – und fließt in das Ranking ein."
+  "useCases.card.dataStorage.title": {
+    "message": "Datenspeicher"
   },
-  "delegation.faq.q7": {
-    "message": "Wie werden Stake Pools gerankt?"
+  "useCases.card.dataStorage.summary": {
+    "message": "Dezentrale, sichere Speicherung"
   },
-  "delegation.faq.a7.p1": {
-    "message": "Stake Pools werden hauptsächlich nach Attraktivität und Performance gerankt, zusammen mit weiteren Faktoren. Wichtig: Die Wallet-Entwickler entscheiden, wie das Ranking in ihrer Wallet umgesetzt wird. [Wallets entdecken](/what-is-ada#wallets)."
+  "useCases.card.tokenizedAssets.title": {
+    "message": "Tokenisierte Assets"
   },
-  "delegation.faq.q8": {
-    "message": "Wie wähle ich den richtigen Stake Pool?"
+  "useCases.card.tokenizedAssets.summary": {
+    "message": "Anteiliges Eigentum an realen Vermögenswerten"
   },
-  "delegation.faq.a8.p1": {
-    "message": "Bei der Wahl eines Stake Pools spielen mehrere Faktoren eine Rolle. [Pool-Tools](/apps?tags=pooltool) können dir bei der Entscheidung helfen. Worauf du achten solltest:"
+  "useCases.category.emerging": {
+    "message": "Neue Anwendungen"
   },
-  "delegation.faq.a8.p2": {
-    "message": "**Performance:** Achte auf die historische Performance – sie zeigt, wie zuverlässig der Pool Blöcke erzeugt. Konstant hohe Werte sprechen für einen gut betriebenen Pool."
+  "useCases.card.votingSystems.title": {
+    "message": "Wahlsysteme"
   },
-  "delegation.faq.a8.p3": {
-    "message": "**Verfügbarkeit:** Der Pool sollte möglichst unterbrechungsfrei laufen. Hohe Verfügbarkeit steigert die Chancen, für die Blockerzeugung ausgewählt zu werden."
+  "useCases.card.votingSystems.summary": {
+    "message": "Sichere, transparente Wahlen"
   },
-  "delegation.faq.a8.p4": {
-    "message": "**Marge:** Stake Pools erheben eine prozentuale Gebühr auf die Belohnungen. Niedrigere Gebühren bedeuten mehr Ertrag – aber achte auf das Verhältnis zu Performance und Zuverlässigkeit."
+  "useCases.card.healthcare.title": {
+    "message": "Gesundheitswesen"
   },
-  "delegation.faq.a8.p5": {
-    "message": "**Fixgebühr:** Es gibt eine vom Protokoll festgelegte Mindestgebühr. Prüfe, welche Fixgebühr der Pool erhebt."
+  "useCases.card.healthcare.summary": {
+    "message": "Portable, sichere Gesundheitsdaten"
   },
-  "delegation.faq.a8.p6": {
-    "message": "**Sättigungspunkt:** Ein Pool ist gesättigt, wenn er mehr Stake hat als das Protokoll als optimal vorsieht. Bei einem gesättigten Pool sinken die Belohnungen – wähle besser einen Pool unter dieser Schwelle."
+  "useCases.card.musicIp.title": {
+    "message": "Musik & geistiges Eigentum"
   },
-  "delegation.faq.a8.p7": {
-    "message": "**Community-Engagement:** Pools, die sich aktiv in der Cardano-Community einbringen – durch Bildung, Support oder Beiträge zum Ökosystem – sind oft eine gute Wahl."
+  "useCases.card.musicIp.summary": {
+    "message": "Tantiemen direkt an Künstler auszahlen"
   },
-  "delegation.faq.a8.p8": {
-    "message": "**Pools mit Mission:** Manche Pools spenden einen Teil ihrer Gebühren für wohltätige Zwecke oder setzen sich für Nachhaltigkeit oder Bildung ein. Wenn dir das wichtig ist, kann das deine Wahl beeinflussen."
-  },
-  "delegation.faq.q9": {
-    "message": "Wie viel verdiene ich an Belohnungen?"
-  },
-  "delegation.faq.a9.p1": {
-    "message": "Mit dem [Belohnungsrechner](/calculator) bekommst du eine Schätzung deiner möglichen Belohnungen. Wichtig: Die Ergebnisse sind nur Richtwerte und keine Garantie. In Zukunft können sich Parameter ändern, die die Belohnungen beeinflussen. Die berechneten Beträge sind aber realistisch und sinnvoll."
-  },
-  "delegation.faq.q10": {
-    "message": "Welche Wallets werden unterstützt und wo finde ich sie?"
-  },
-  "delegation.faq.a10.p1": {
-    "message": "Es gibt verschiedene Wallets zur Auswahl. Achte darauf, Wallets nur von vertrauenswürdigen Seiten herunterzuladen. [Wallets entdecken](/what-is-ada#wallets)."
-  },
-  "delegation.faq.q11": {
-    "message": "Kann ich ein Ada-Guthaben von einer Hardware-Wallet wiederherstellen?"
-  },
-  "delegation.faq.a11.p1": {
-    "message": "Ja. Du kannst Daedalus nutzen, um ein Ada-Guthaben von einer Hardware-Wallet wiederherzustellen. Aber Vorsicht: Die Eingabe deiner Hardware-Wallet-Recovery-Phrase in Daedalus kann deine privaten Schlüssel zusätzlichen Sicherheitsrisiken aussetzen. Empfehlungen dazu findest du während des Wiederherstellungsprozesses in Daedalus."
-  },
-  "delegation.faq.q12": {
-    "message": "Werden meine Ada-Belohnungen dem delegierten Stake hinzugefügt?"
-  },
-  "delegation.faq.a12.p1": {
-    "message": "Ja. Belohnungen werden deinem bestehenden Stake zugerechnet. Sobald Belohnungen eingehen, steigt dein Guthaben – und damit auch dein delegierter Stake."
-  },
-
-  "commonScams.hero.title": {
-    "message": "Häufige Betrugsmaschen rund um Cardano"
-  },
-  "commonScams.hero.description": {
-    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen."
-  },
-  "commonScams.meta.title": {
-    "message": "Häufige Betrugsmaschen rund um Cardano | cardano.org"
-  },
-  "commonScams.meta.description": {
-    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen."
-  },
-  "commonScams.quiz.title": {
-    "message": "Teste dein Wissen"
-  },
-  "commonScams.quiz.description": {
-    "message": "Mach das Quiz mit 5 Fragen und finde heraus, wie gut du gängige Blockchain-Betrugsmaschen erkennst und vermeidest."
-  },
-  "commonScams.quiz.buttonText": {
-    "message": "Quiz starten"
-  },
-  "commonScams.intro.title": {
-    "message": "So schützt du dein Ada vor Betrügern"
-  },
-  "commonScams.intro.description1": {
-    "message": "Im Kryptobereich gibt es viele Chancen – aber auch Betrüger, die genau das ausnutzen. Auch Cardano (Ada) ist davon nicht ausgenommen. Von gefälschten Giveaways bis hin zu Phishing-Angriffen: Betrüger entwickeln ständig neue Methoden. Und mit den Fortschritten bei künstlicher Intelligenz werden diese Maschen immer raffinierter. Auf dieser Seite erfährst du, welche Betrugsmaschen im Cardano-Ökosystem am häufigsten vorkommen – und wie du dich davor schützt."
-  },
-  "commonScams.intro.description2": {
-    "message": "**Wichtig:** Wenn jemand Zugriff auf deine Seed-Wörter (Recovery-Phrase) bekommt, hat er die volle Kontrolle über deine Wallet – kein Passwort der Welt kann dich dann noch schützen. Einmal gestohlenes Ada ist unwiederbringlich verloren."
-  },
-  "commonScams.divider.giveaway": {
-    "message": "Giveaway"
-  },
-  "commonScams.giveaway.title": {
-    "message": "Ada-Giveaway-Betrug"
-  },
-  "commonScams.giveaway.description1": {
-    "message": "Eine der bekanntesten Betrugsmaschen in der Cardano-Community ist der **Ada-Giveaway-Betrug.** Betrüger versprechen, dein Ada zu verdoppeln – du musst nur zuerst einen bestimmten Betrag senden. Oft nutzen sie gefälschte Livestreams mit Charles Hoskinson oder anderen bekannten Persönlichkeiten, um seriös zu wirken. Die Streams imitieren echte Events und zeigen eine Wallet-Adresse, an die du dein Ada schicken sollst."
-  },
-  "commonScams.giveaway.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.giveaway.tip1": {
-    "message": "Echte Giveaways verlangen **niemals** eine Vorauszahlung."
-  },
-  "commonScams.giveaway.tip2": {
-    "message": "Klicke nicht auf Links in unaufgeforderten Nachrichten oder Livestreams."
-  },
-  "commonScams.giveaway.tip3": {
-    "message": "Denk daran: Einmal gesendetes Ada ist für immer weg."
-  },
-  "commonScams.giveaway.tip4": {
-    "message": "Lies Erfahrungsberichte und Betrugs-Meldungen anderer Nutzer im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
-  },
-  "commonScams.divider.phishing": {
-    "message": "Phishing"
-  },
-  "commonScams.phishing.title": {
-    "message": "Phishing-Angriffe"
-  },
-  "commonScams.phishing.description": {
-    "message": "Bei Phishing-Betrug setzen Kriminelle gefälschte Websites, Apps oder E-Mails ein, um sensible Daten wie Wallet-Zugangsdaten oder deine Recovery-Phrase (Seed-Wörter) zu stehlen. Diese betrügerischen Seiten imitieren oft beliebte Wallets wie [Typhon, VESPR oder Eternl](/what-is-ada/#wallets)."
-  },
-  "commonScams.phishing.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.phishing.tip1": {
-    "message": "Prüfe URLs immer doppelt – stimmen sie mit der echten Wallet-Website überein?"
-  },
-  "commonScams.phishing.tip2": {
-    "message": "Teile deine Recovery-Phrase **niemals** – auch nicht mit angeblichem \"Support\" oder \"Moderatoren\"."
-  },
-  "commonScams.phishing.tip3": {
-    "message": "Nutze am besten eine Hardware-Wallet."
-  },
-  "commonScams.phishing.tip4": {
-    "message": "Aktiviere Zwei-Faktor-Authentifizierung, wo immer möglich."
-  },
-  "commonScams.divider.investment": {
-    "message": "Fake-Investment"
-  },
-  "commonScams.investment.title": {
-    "message": "Gefälschte Investmentangebote"
-  },
-  "commonScams.investment.description": {
-    "message": "Betrügerische Investmentprogramme sind eine weitere verbreitete Masche. Betrüger bewerben Fake-Projekte als \"Cardano-gestützt\" oder \"Ada-spezifisch\" – mit garantierten Traumrenditen. Opfer werden aufgefordert, Ada oder andere Mittel an eine Wallet-Adresse zu senden, mit dem Versprechen exponentieller Gewinne."
-  },
-  "commonScams.investment.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.investment.tip1": {
-    "message": "Seriöse Projekte versprechen **niemals** garantierte Renditen."
-  },
-  "commonScams.investment.tip2": {
-    "message": "Sei skeptisch bei unaufgeforderten Investmentangeboten."
-  },
-  "commonScams.investment.tip3": {
-    "message": "Recherchiere Projekte gründlich – achte auf Transparenz und ein glaubwürdiges Team."
-  },
-  "commonScams.divider.support": {
-    "message": "Fake-Support"
-  },
-  "commonScams.support.title": {
-    "message": "Gefälschter technischer Support"
-  },
-  "commonScams.support.description1": {
-    "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über Social Media, Foren oder E-Mail und behaupten, deine Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren – und um dir zu \"helfen\", fragen sie nach deiner Recovery-Phrase (Seed-Wörter) oder deinen privaten Schlüsseln."
-  },
-  "commonScams.support.description2": {
-    "message": "Das passiert besonders oft, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einer Wallet stellt. Betrüger antworten dann blitzschnell und geben sich als offizieller Support aus."
-  },
-  "commonScams.support.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.support.tip1": {
-    "message": "Seriöse Mitglieder in [Foren und Kanälen](/docs/communities) fragen **niemals** nach Passwörtern, Recovery-Phrasen oder privaten Schlüsseln."
-  },
-  "commonScams.support.tip2": {
-    "message": "Reagiere nie auf unaufgeforderte Nachrichten, die angeblich vom Support kommen."
-  },
-  "commonScams.support.tip3": {
-    "message": "Seriöse Mitglieder in Foren und Kanälen schreiben dich **niemals** als Erste per Privatnachricht an."
-  },
-  "commonScams.divider.rug": {
-    "message": "Rug Pulls"
-  },
-  "commonScams.rug.title": {
-    "message": "Rug Pulls im Cardano-Ökosystem"
-  },
-  "commonScams.rug.description": {
-    "message": "Cardano ist eine öffentliche, permissionless Layer-1-Blockchain – jeder kann sie nutzen. Manche betrügerischen Projekte starten auf Cardano, generieren Aufmerksamkeit mit großen Versprechen und auffälligem Marketing. Nachdem sie genug Ada von Investoren eingesammelt haben, verschwinden sie spurlos – das nennt man einen \"Rug Pull\"."
-  },
-  "commonScams.rug.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.rug.tip1": {
-    "message": "Recherchiere Qualifikationen und Reputation des Projektteams."
-  },
-  "commonScams.rug.tip2": {
-    "message": "Achte auf Audits und transparente Dokumentation."
-  },
-  "commonScams.rug.tip3": {
-    "message": "Vermeide Projekte mit anonymen Teams oder unrealistischen Versprechen."
-  },
-  "commonScams.rug.tip4": {
-    "message": "Kaufe Utility-Token nur dann, wenn du sie wirklich für den jeweiligen Zweck brauchst."
-  },
-  "commonScams.rug.tip5": {
-    "message": "Informiere dich, was andere über Projekte denken – zum Beispiel im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
-  },
-  "quiz.ui.noQuestions": {
-    "message": "Keine Quizfragen verfügbar."
-  },
-  "quiz.ui.greatJob": {
-    "message": "Gut gemacht!"
-  },
-  "quiz.ui.keepLearning": {
-    "message": "Weiter lernen!"
-  },
-  "quiz.ui.scoreText": {
-    "message": "Du hast {score} von {totalQuestions} richtig"
-  },
-  "quiz.ui.tryAgain": {
-    "message": "Nochmal versuchen"
-  },
-  "quiz.ui.correct": {
-    "message": "Richtig!"
-  },
-  "quiz.ui.incorrect": {
-    "message": "Falsch"
-  },
-  "quiz.ui.explanation": {
-    "message": "Erklärung"
-  },
-  "quiz.ui.checkAnswer": {
-    "message": "Antwort prüfen"
-  },
-  "quiz.ui.nextQuestion": {
-    "message": "Nächste Frage"
-  },
-  "quiz.ui.finishQuiz": {
-    "message": "Quiz beenden"
-  },
-  "apps.hero.title": {
-    "message": "Cardano-Anwendungen"
-  },
-  "apps.hero.description": {
-    "message": "Entdecke Anwendungen auf der Cardano-Blockchain"
-  },
-  "apps.cta": {
-    "message": "₳dd your project"
-  },
-  "apps.filters.title": {
-    "message": "Filter"
-  },
-  "apps.filters.projectCount.singular": {
-    "message": "1 Projekt"
-  },
-  "apps.filters.projectCount.plural": {
-    "message": "{count} Projekte"
-  },
-  "apps.filters.clearButton": {
-    "message": "Filter zurücksetzen"
-  },
-  "apps.filters.showLess": {
-    "message": "Weniger Filter anzeigen"
-  },
-  "apps.filters.showMore": {
-    "message": "{count} weitere Filter anzeigen"
-  },
-  "apps.searchPlaceholder": {
-    "message": "Apps suchen..."
-  },
-  "apps.noResult": {
-    "message": "Keine Ergebnisse"
-  },
-  "apps.ourFavorites": {
-    "message": "Unsere Favoriten"
-  },
-  "apps.allProjects": {
-    "message": "Alle Projekte"
-  },
-  "apps.card.getStarted": {
-    "message": "Loslegen"
-  },
-  "apps.card.source": {
-    "message": "Quellcode"
-  },
-  "apps.stickyButton": {
-    "message": "APP HINZUFÜGEN"
-  },
-
-  "commonScams.hero.title": {
-    "message": "Häufige Cardano-Betrugsmaschen"
-  },
-  "commonScams.hero.description": {
-    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
-  },
-  "commonScams.meta.title": {
-    "message": "Häufige Cardano-Betrugsmaschen | cardano.org"
-  },
-  "commonScams.meta.description": {
-    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
-  },
-  "commonScams.quiz.title": {
-    "message": "Teste dein Wissen"
-  },
-  "commonScams.quiz.description": {
-    "message": "Beantworte 5 Fragen und finde heraus, wie gut du Betrugsmaschen in der Blockchain-Welt erkennst und vermeidest."
-  },
-  "commonScams.quiz.buttonText": {
-    "message": "Quiz starten"
-  },
-  "commonScams.intro.title": {
-    "message": "So schützt du deine Ada vor Betrügern"
-  },
-  "commonScams.intro.description1": {
-    "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus. Cardano (Ada) bildet da keine Ausnahme. Von gefälschten Giveaways bis hin zu Phishing-Angriffen: Betrüger entwickeln ständig neue Methoden, um Nutzer auszutricksen. Durch den Fortschritt künstlicher Intelligenz werden diese Maschen immer raffinierter. Auf dieser Seite erfährst du, welche Betrugsmaschen im Cardano-Ökosystem am häufigsten vorkommen – und wie du dich davor schützt."
-  },
-  "commonScams.intro.description2": {
-    "message": "**Wichtig:** Wer Zugang zu deinen Seed-Wörtern (Wiederherstellungsphrase) hat, kann dein Wallet komplett übernehmen – kein Passwort schützt dich dann noch. Einmal gestohlene Ada sind unwiederbringlich verloren."
-  },
-  "commonScams.divider.giveaway": {
-    "message": "Giveaway"
-  },
-  "commonScams.giveaway.title": {
-    "message": "Ada-Giveaway-Betrug"
-  },
-  "commonScams.giveaway.description1": {
-    "message": "Eine der bekanntesten Betrugsmaschen in der Cardano-Community: Betrüger versprechen, deine Ada zu verdoppeln, wenn du ihnen zuerst einen bestimmten Betrag schickst. Oft nutzen sie gefälschte Livestreams mit Charles Hoskinson oder anderen bekannten Persönlichkeiten, um seriös zu wirken. Die Streams imitieren echte Events und zeigen eine Wallet-Adresse, an die du Ada senden sollst."
-  },
-  "commonScams.giveaway.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.giveaway.tip1": {
-    "message": "Echte Giveaways verlangen **niemals** Geld im Voraus."
-  },
-  "commonScams.giveaway.tip2": {
-    "message": "Klicke nicht auf Links in unaufgeforderten Nachrichten oder Livestreams."
-  },
-  "commonScams.giveaway.tip3": {
-    "message": "Denk daran: Einmal gesendete Ada sind für immer weg."
-  },
-  "commonScams.giveaway.tip4": {
-    "message": "Lies Berichte und Betrugsmeldungen anderer Nutzer im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
-  },
-  "commonScams.divider.phishing": {
-    "message": "Phishing"
-  },
-  "commonScams.phishing.title": {
-    "message": "Phishing-Angriffe"
-  },
-  "commonScams.phishing.description": {
-    "message": "Phishing-Betrug funktioniert über gefälschte Websites, Apps oder E-Mails, die darauf abzielen, sensible Daten wie Wallet-Zugangsdaten oder die Wiederherstellungsphrase (Seed-Wörter) zu stehlen. Diese betrügerischen Seiten imitieren häufig beliebte Wallets wie [Typhon, VESPR oder Eternl](/what-is-ada/#wallets)."
-  },
-  "commonScams.phishing.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.phishing.tip1": {
-    "message": "Überprüfe URLs sorgfältig – stimmen sie mit der echten Wallet-Website überein?"
-  },
-  "commonScams.phishing.tip2": {
-    "message": "Teile **niemals** deine Wiederherstellungsphrase – auch nicht mit angeblichem \"Support\" oder \"Moderatoren\"."
-  },
-  "commonScams.phishing.tip3": {
-    "message": "Nutze am besten ein Hardware-Wallet."
-  },
-  "commonScams.phishing.tip4": {
-    "message": "Aktiviere wenn möglich Zwei-Faktor-Authentifizierung."
-  },
-  "commonScams.divider.investment": {
-    "message": "Fake-Investment"
-  },
-  "commonScams.investment.title": {
-    "message": "Gefälschte Investmentangebote"
-  },
-  "commonScams.investment.description": {
-    "message": "Betrügerische Investmentangebote sind ebenfalls weit verbreitet. Betrüger bewerben Fake-Projekte und behaupten, es handle sich um \"Cardano-gestützte\" oder \"Ada-spezifische\" Chancen mit garantiert hohen Renditen. Opfer werden aufgefordert, Ada oder andere Mittel an eine Wallet-Adresse zu senden – mit dem Versprechen exponentieller Gewinne."
-  },
-  "commonScams.investment.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.investment.tip1": {
-    "message": "Seriöse Projekte versprechen **niemals** garantierte Renditen."
-  },
-  "commonScams.investment.tip2": {
-    "message": "Sei skeptisch bei unaufgeforderten Investmentangeboten."
-  },
-  "commonScams.investment.tip3": {
-    "message": "Recherchiere Projekte gründlich – achte auf Transparenz und ein glaubwürdiges Team."
-  },
-  "commonScams.divider.support": {
-    "message": "Fake-Support"
-  },
-  "commonScams.support.title": {
-    "message": "Gefälschter Tech-Support"
-  },
-  "commonScams.support.description1": {
-    "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über soziale Medien, Foren oder per E-Mail und behaupten, dein Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren und fragen nach deiner Wiederherstellungsphrase (Seed-Wörtern) oder privaten Schlüsseln – angeblich um dir zu \"helfen\"."
-  },
-  "commonScams.support.description2": {
-    "message": "Diese Masche tritt besonders häufig auf, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einem Wallet stellt. Betrüger reagieren dann blitzschnell und geben sich als offizieller Support aus."
-  },
-  "commonScams.support.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.support.tip1": {
-    "message": "Seriöse Nutzer in [Foren und Kanälen](/docs/communities) fragen **niemals** nach deinen Passwörtern, Wiederherstellungsphrasen oder privaten Schlüsseln."
-  },
-  "commonScams.support.tip2": {
-    "message": "Reagiere nie auf unaufgeforderte Nachrichten von angeblichem Support."
-  },
-  "commonScams.support.tip3": {
-    "message": "Seriöse Community-Mitglieder schreiben dich **niemals** zuerst per Privatnachricht an."
-  },
-  "commonScams.divider.rug": {
-    "message": "Rug Pulls"
-  },
-  "commonScams.rug.title": {
-    "message": "Rug Pulls im Cardano-Ökosystem"
-  },
-  "commonScams.rug.description": {
-    "message": "Cardano ist eine öffentliche, genehmigungsfreie Layer-1-Blockchain – jeder kann sie nutzen. Manche betrügerischen Projekte starten auf Cardano, gewinnen mit großen Versprechen und auffälligem Marketing Aufmerksamkeit und sammeln Ada von Investoren ein. Dann verschwinden sie – das nennt man einen \"Rug Pull\"."
-  },
-  "commonScams.rug.howToProtect": {
-    "message": "So schützt du dich:"
-  },
-  "commonScams.rug.tip1": {
-    "message": "Prüfe die Referenzen und den Ruf des Projektteams."
-  },
-  "commonScams.rug.tip2": {
-    "message": "Achte auf Audits oder transparente Dokumentation."
-  },
-  "commonScams.rug.tip3": {
-    "message": "Meide Projekte mit anonymen Teams oder unrealistischen Versprechen."
-  },
-  "commonScams.rug.tip4": {
-    "message": "Kaufe Utility-Token nur, wenn du die Utility auch tatsächlich nutzen willst."
-  },
-  "commonScams.rug.tip5": {
-    "message": "Informiere dich im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
-  },
-
   "ambassadors.hero.title": {
     "message": "Botschafter"
   },
@@ -2250,85 +1736,18 @@
   "ambassadors.cta.rightButtonLabel": {
     "message": "Loslegen"
   },
-  "ambassadors.program.divider": {
-    "message": "Ambassador-Programm"
+  "brandAssets.hero.title": {
+    "message": "Brand Assets"
   },
-  "ambassadors.program.title": {
-    "message": "Das Cardano-Ambassador-Programm"
+  "brandAssets.hero.description": {
+    "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
   },
-  "ambassadors.program.description1": {
-    "message": "Die Cardano-Community hat engagierte Mitglieder, die aktiv zum Wachstum und zur Dezentralisierung des Ökosystems beitragen. Diese engagierten Personen – die Cardano-Ambassadors – spielen eine entscheidende Rolle dabei, Aufmerksamkeit und Beteiligung durch ihre wirkungsvollen Beiträge zu fördern."
+  "brandAssets.layout.title": {
+    "message": "Brand Assets | cardano.org"
   },
-  "ambassadors.program.description2": {
-    "message": "Die Ambassadors kommen aus unterschiedlichsten Bereichen, Altersgruppen und Berufen und vertreten Länder auf der ganzen Welt. Sie erstellen wertvolle Inhalte in mehr als 17 Sprachen. Neue Ambassadors werden durch einen Prüfprozess aufgenommen, der Personen hervorhebt, die durch Wirkung, Engagement und den Einsatz für ein starkes Ökosystem überzeugen."
+  "brandAssets.layout.description": {
+    "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
   },
-  "ambassadors.program.description3": {
-    "message": "Seit der Gründung 2018 wurde das Ambassador-Programm mehrfach aktualisiert. Die aktuelle Phase legt den Fokus auf Wirkung und Transparenz – so wird sichergestellt, dass Beiträge fair gemessen und anerkannt werden. Die Anerkennung erfolgt sowohl durch finanzielle Vergütung als auch durch nicht-monetäre Anreize wie frühzeitigen Zugang zu Bildungsressourcen, Networking-Möglichkeiten und mehr Sichtbarkeit in der Community."
-  },
-  "ambassadors.overview.title": {
-    "message": "Wer sind die Cardano-Ambassadors?"
-  },
-  "ambassadors.overview.description": {
-    "message": "Entdecke die Profile von {count} Cardano-Ambassadors aus {countries} Ländern – jeder einzelne trägt dazu bei, Cardanos Vision weltweit zu verbreiten."
-  },
-  "ambassadors.roles.divider": {
-    "message": "Beiträge der Ambassadors"
-  },
-  "ambassadors.roles.title": {
-    "message": "Beiträge der Ambassadors"
-  },
-  "ambassadors.roles.description": {
-    "message": "Cardano-Ambassadors fördern das Community-Wachstum durch vielfältige Initiativen:"
-  },
-  "ambassadors.roles.contentCreation.title": {
-    "message": "Content-Erstellung"
-  },
-  "ambassadors.roles.contentCreation.description": {
-    "message": "Videos, fundierte Artikel, informative Threads, Grafiken und Podcasts erstellen, die bilden und inspirieren. [Aktuelle Cardano-Inhalte findest du hier.](https://cardano.org/news)"
-  },
-  "ambassadors.roles.meetups.title": {
-    "message": "Meetups & Events"
-  },
-  "ambassadors.roles.meetups.description": {
-    "message": "Vor-Ort- und Online-Treffen, Workshops und Hackathons organisieren, die lokale Communities zusammenbringen. [Finde Events in deiner Nähe.](https://luma.com/CardanoEvents)"
-  },
-  "ambassadors.roles.education.title": {
-    "message": "Bildung & Advocacy"
-  },
-  "ambassadors.roles.education.description": {
-    "message": "Seminare veranstalten, für die Einführung von Blockchain werben und Bildungsinitiativen an Institutionen unterstützen. [Entdecke Cardanos Forschung.](https://cardano.org/research)"
-  },
-  "ambassadors.roles.business.title": {
-    "message": "Business Development"
-  },
-  "ambassadors.roles.business.description": {
-    "message": "Partnerschaften aufbauen und Community-getriebene Projekte leiten, um Cardanos Einfluss zu erweitern. [Entdecke Anwendungsfälle.](https://cardano.org/use-cases)"
-  },
-  "ambassadors.roles.software.title": {
-    "message": "Softwareentwicklung"
-  },
-  "ambassadors.roles.software.description": {
-    "message": "An Open-Source-Projekten mitwirken, Cardano Improvement Proposals (CIPs) verfassen und Tools für das Ökosystem entwickeln. [Hier starten.](https://cardano.org/developers)"
-  },
-  "ambassadors.roles.translations.title": {
-    "message": "Übersetzungen"
-  },
-  "ambassadors.roles.translations.description": {
-    "message": "Cardanos Reichweite erweitern, indem wichtige Inhalte in zahlreiche Sprachen übersetzt werden. [Zum Forum.](https://forum.cardano.org/)"
-  },
-  "ambassadors.roles.moderation.title": {
-    "message": "Moderation"
-  },
-  "ambassadors.roles.moderation.description": {
-    "message": "Online-Diskussionen in über 50 [Kanälen](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 Sprachen auf 9 Plattformen moderieren – für produktive und einladende Räume in offiziellen und Community-Kanälen. Alle Community-Mitglieder müssen rechtmäßig, ethisch und im besten Interesse des Projekts handeln und den [Community Code of Conduct](https://cardano.org/community-code-of-conduct/) befolgen."
-  },
-  "ambassadors.roles.innovative.title": {
-    "message": "Innovative Beiträge"
-  },
-  "ambassadors.roles.innovative.description": {
-    "message": "Von Bildungskampagnen bis zu bahnbrechenden Community-Projekten – jede Initiative hinterlässt einen nachhaltigen Eindruck."
-  },
-
   "codeOfConduct.hero.title": {
     "message": "Community-Verhaltenskodex"
   },
@@ -2491,7 +1910,654 @@
   "codeOfConduct.poweredByYou.description": {
     "message": "Diese Community wird vom Community-Team und von euch betrieben. Wenn du weitere Fragen hast, eröffne ein neues Thema in der [Community-Feedback-Kategorie](https://forum.cardano.org/c/english/community-feedback/16) des Forums und lass uns darüber diskutieren! Bei kritischen oder dringenden Anliegen kontaktiere uns direkt unter community *at* cardano *dot* org."
   },
-
+  "constitution.error.title": {
+    "message": "Aktuelle gültige Verfassung"
+  },
+  "constitution.error.localCopy": {
+    "message": "(Lokale Kopie)"
+  },
+  "constitution.error.fetchError": {
+    "message": "Daten von data.cardano.org konnten nicht geladen werden:"
+  },
+  "constitution.error.showingLocal": {
+    "message": "Lokale Kopie wird angezeigt."
+  },
+  "constitution.link.download": {
+    "message": "Verfassung herunterladen"
+  },
+  "constitution.link.viewRawMarkdown": {
+    "message": "Rohtext anzeigen"
+  },
+  "constitution.loading.versions": {
+    "message": "Verfassungsversionen werden geladen ..."
+  },
+  "constitution.enacted.title": {
+    "message": "Aktuelle Cardano-Verfassung"
+  },
+  "constitution.enacted.description": {
+    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
+  },
+  "constitution.link.viewOnIPFS": {
+    "message": "Auf IPFS ansehen"
+  },
+  "constitution.error.loadDocument": {
+    "message": "Verfassungsdokument konnte nicht geladen werden:"
+  },
+  "constitution.loading.document": {
+    "message": "Dokument wird geladen ..."
+  },
+  "constitution.history.title": {
+    "message": "Ratifizierungshistorie"
+  },
+  "constitution.history.description": {
+    "message": "Hier findest du die Cardano-Verfassung und ihre Ratifizierungshistorie. Klicke auf eine Version, um den vollständigen Text auf IPFS zu lesen."
+  },
+  "constitution.history.versionRatified": {
+    "message": "Version ratifiziert in Epoche"
+  },
+  "constitution.history.enactedAtEpoch": {
+    "message": "In Kraft seit Epoche"
+  },
+  "constitution.history.hash": {
+    "message": "Hash:"
+  },
+  "constitution.link.viewOnIPFSHistory": {
+    "message": "Diese Verfassung auf IPFS ansehen"
+  },
+  "constitution.hero.title": {
+    "message": "Die Cardano-Verfassung"
+  },
+  "constitution.hero.description": {
+    "message": "Die Cardano-Verfassung – das Governance-Fundament der Cardano-Blockchain."
+  },
+  "constitution.layout.title": {
+    "message": "Die Cardano-Verfassung | cardano.org"
+  },
+  "constitution.layout.description": {
+    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
+  },
+  "contact.hero.title": {
+    "message": "Contact | cardano.org"
+  },
+  "contact.hero.description": {
+    "message": "Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
+  },
+  "contact.intersect.title": {
+    "message": "Intersect - one of the member-based organizations"
+  },
+  "contact.intersect.description": {
+    "message": "Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development."
+  },
+  "contact.intersect.buttonLabel": {
+    "message": "Join Intersect"
+  },
+  "contact.technicalIssue.title": {
+    "message": "Report a technical issue"
+  },
+  "contact.technicalIssue.description": {
+    "message": "To get help for one of the following wallets, please raise a support ticket."
+  },
+  "contact.technicalIssue.buttonLabel": {
+    "message": "Raise Ticket"
+  },
+  "contact.sponsorship.title": {
+    "message": "Cardano Summit Sponsorship"
+  },
+  "contact.sponsorship.description1": {
+    "message": "Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we're excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization's needs and goals."
+  },
+  "contact.sponsorship.description2": {
+    "message": "Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event."
+  },
+  "contact.sponsorship.buttonLabel": {
+    "message": "Sponsorship Request"
+  },
+  "contact.meta.title": {
+    "message": "Cardano - making the world work better for all"
+  },
+  "contact.meta.description": {
+    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+  },
+  "contact.divider.hereToHelp": {
+    "message": "Here to help"
+  },
+  "contact.helpSection.title": {
+    "message": "What Can We Help You With?"
+  },
+  "contact.select.prefix": {
+    "message": "I have"
+  },
+  "contact.select.placeholder": {
+    "message": "not yet decided (please select)"
+  },
+  "contact.select.option.technicalIssue": {
+    "message": "a technical issue with Daedalus, Nami or Lace"
+  },
+  "contact.select.option.intersect": {
+    "message": "the intention to join Intersect"
+  },
+  "contact.select.option.sponsor": {
+    "message": "the desire to sponsor the Cardano Summit"
+  },
+  "contact.select.option.different": {
+    "message": "another inquiry"
+  },
+  "artworkContest.hero.title": {
+    "message": "Making the world Work Better For All"
+  },
+  "artworkContest.hero.description": {
+    "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."
+  },
+  "artworkContest.imagePreview.alt": {
+    "message": "Preview"
+  },
+  "artworkContest.layout.title": {
+    "message": "Home | cardano.org"
+  },
+  "artworkContest.layout.description": {
+    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+  },
+  "artworkContest.content.title": {
+    "message": "Artwork Contest Test Page"
+  },
+  "artworkContest.content.description1": {
+    "message": "Upload your image here to see how it would look like."
+  },
+  "artworkContest.content.description2": {
+    "message": "Toggle dark mode and resize the browser to see how it adapts."
+  },
+  "artworkContest.content.quote1": {
+    "message": "Image will not be submitted,"
+  },
+  "artworkContest.content.quote2": {
+    "message": "This happens on your machine only"
+  },
+  "developers.hero.title": {
+    "message": "Auf Cardano entwickeln"
+  },
+  "developers.hero.description": {
+    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
+  },
+  "developers.meta.title": {
+    "message": "Auf Cardano entwickeln | cardano.org"
+  },
+  "developers.meta.description": {
+    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
+  },
+  "developers.divider.resources": {
+    "message": "Entwickler-Ressourcen"
+  },
+  "developers.documentation.title": {
+    "message": "Dokumentation"
+  },
+  "developers.documentation.text": {
+    "message": "Hier findest du die wichtigsten Ressourcen und Updates, um auf der Cardano-Blockchain zu entwickeln, zu integrieren und informiert zu bleiben. Unten findest du Links zum Developer Portal, zur ausführlichen Dokumentation, zu Integrationsanleitungen und den neuesten Core-Development-Updates."
+  },
+  "developers.tools.title": {
+    "message": "Entwickler-Tools"
+  },
+  "developers.tools.text": {
+    "message": "Entdecke die Tools, Projekte und Updates, die das Cardano-Ökosystem formen. Unten findest du Links zu Entwickler-Tools, eine Übersicht der auf Cardano gebauten Projekte und einen technischen Update-Tracker, der Commits der letzten 7 Tage aus allen Branches der Cardano-Entwicklungs-Repos zusammenfasst."
+  },
+  "developers.support.title": {
+    "message": "Support"
+  },
+  "developers.support.text": {
+    "message": "Werde Teil der lebendigen Cardano-Entwickler-Community auf verschiedenen Plattformen. Unten findest du Links zum Cardano Stack Exchange, zum Cardano Forum und zur offiziellen Telegram-Gruppe. Tausch dich mit anderen Entwicklern aus, stell Fragen und teile Wissen in unserem dezentralen Ökosystem."
+  },
+  "developers.cta.title": {
+    "message": "Greif das Protokoll an, forke die Blockchain – oder lass es bleiben. Erlebe das Ouroboros-Protokoll hautnah in dieser interaktiven Simulation."
+  },
+  "developers.cta.buttonLabel": {
+    "message": "Spiel starten"
+  },
+  "discoverCardano.hero.title": {
+    "message": "Discover Cardano"
+  },
+  "discoverCardano.hero.description": {
+    "message": "Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
+  },
+  "discoverCardano.meta.title": {
+    "message": "Discover Cardano | cardano.org"
+  },
+  "discoverCardano.meta.description": {
+    "message": "Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
+  },
+  "discoverCardano.people.title": {
+    "message": "People"
+  },
+  "discoverCardano.people.subtitle": {
+    "message": "Working together, we achieve more for the many."
+  },
+  "discoverCardano.people.text1": {
+    "message": "Cardano is built by a decentralized community of scientists, engineers, and thought leaders united in a common purpose: to create a technology platform that will ignite the positive change the world needs. We believe the future should not be defined by the past, and that more is possible - and, through technology, can be made possible for all. We measure the worth of a task not by its challenge, but by its results."
+  },
+  "discoverCardano.people.text2": {
+    "message": "Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or pledged to a stake pool to increase the pool's likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform."
+  },
+  "discoverCardano.purpose.title": {
+    "message": "Purpose"
+  },
+  "discoverCardano.purpose.subtitle": {
+    "message": "A platform built for a sustainable future, to help people work better together, trust one another, and build global solutions to global problems."
+  },
+  "discoverCardano.purpose.text1": {
+    "message": "Cardano is a fork in the road. It takes us from where we've been to where we're destined to go: a global society that is secure, transparent, and fair, and which serves the many as well as the few. Like the technological revolutions that have come before, it offers a new template for how we work, interact, and create, as individuals, businesses, and societies."
+  },
+  "discoverCardano.purpose.text2": {
+    "message": "Cardano began with a vision of a world without intermediaries, in which power is not controlled by an accountable few, but by the empowered many. In this world, individuals have control over their data and how they interact and transact. Businesses have the opportunity to grow independent of monopolistic and bureaucratic power structures. Societies are able to pursue true democracy: self-governing, fair, and accountable. It is a world made possible by Cardano."
+  },
+  "discoverCardano.technology.title": {
+    "message": "Technology"
+  },
+  "discoverCardano.technology.subtitle": {
+    "message": "Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation."
+  },
+  "discoverCardano.technology.text1": {
+    "message": "From the incremental to global, Cardano improves how we interact, transact, and create - and ultimately operate as a global society."
+  },
+  "discoverCardano.technology.text2": {
+    "message": "Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability."
+  },
+  "discoverCardano.technology.text3": {
+    "message": "Our technology is underpinned by [research](/research). We have redefined what it means to create a global software platform through scientific methods. We have not compromised on our belief, or in our approach. To build a better future - secure, sustainable, and governable by the many - we have taken the road less traveled. The result of our efforts is a blockchain platform unparalleled in its capability and performance, and which is truly able to support global applications, systems, and real-life business use cases."
+  },
+  "discoverCardano.research.title": {
+    "message": "Research"
+  },
+  "discoverCardano.research.subtitle": {
+    "message": "Pioneering tech begins with groundbreaking research."
+  },
+  "discoverCardano.research.text1": {
+    "message": "Cardano began with and has grown through [research](/research). Before any technology we integrate is developed, it is specified. And before it is specified, it is researched. That [research](/research) is peer-reviewed - a unique achievement for a blockchain platform - so that our ideas may be challenged before they are validated."
+  },
+  "discoverCardano.research.text2": {
+    "message": "[Our research](/research) - led by leading academics - explores philosophy, sociology, behavior, and game theory. To achieve each outcome, we consider the minutiae of possibilities: the variables that often go unconsidered, but which may ultimately impact the integrity and sustainability of a global, decentralized platform. We take nothing for granted."
+  },
+  "discoverCardano.opportunity.title": {
+    "message": "Opportunity"
+  },
+  "discoverCardano.opportunity.subtitle": {
+    "message": "The staging point for every new opportunity. Empower your business through Cardano, and discover the future of technology."
+  },
+  "discoverCardano.opportunity.text1": {
+    "message": "Cardano provides the template and toolset to a new age of innovation. It introduces leading-edge technologies, models, and methodologies to help individuals, developers, and enterprises discover a new possible, realize change, and enrich their lives.."
+  },
+  "discoverCardano.opportunity.text2": {
+    "message": "Blockchain technology holds the answer to a number of legacy challenges, whether financial, societal, or technological. It disintermediates essential relationships, and redistributes power to alleviate costly dependencies, restrictive paradigms, and inefficient systems of transaction and exchange. Cardano is a realization of this potential. It is a platform with the security, privacy sustainability, and performance standards required to accelerate the mass adoption of the technology, and support a lasting ecosystem."
+  },
+  "discoverCardano.opportunity.text3": {
+    "message": "Cardano powers new, more secure, and globally scalable solutions. Its technology is continuously improved upon through evidence-based development methods, and guided by a democratic voting system, in which every member has a voice. The opportunity of Cardano is adaptable to your use case. It is an opportunity that creates other opportunities, continuously."
+  },
+  "entities.hero.title": {
+    "message": "Entities building on Cardano"
+  },
+  "entities.hero.description": {
+    "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
+  },
+  "entities.meta.title": {
+    "message": "Entities building on Cardano | cardano.org"
+  },
+  "entities.meta.description": {
+    "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
+  },
+  "entities.entitiesSection.divider": {
+    "message": "Entities advancing Cardano"
+  },
+  "entities.companiesSection.divider": {
+    "message": "Companies, associations, and collaborations building on Cardano"
+  },
+  "entities.companiesSection.description": {
+    "message": "There is a growing number of entities that build on Cardano. Below are a few of them:"
+  },
+  "entities.companiesSection.addCompanyLink": {
+    "message": "add your company"
+  },
+  "events.hero.title": {
+    "message": "Cardano-Events"
+  },
+  "events.hero.description": {
+    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
+  },
+  "events.pagination.previous": {
+    "message": "Zurück"
+  },
+  "events.pagination.next": {
+    "message": "Weiter"
+  },
+  "events.meta.title": {
+    "message": "Cardano-Events | cardano.org"
+  },
+  "events.meta.description": {
+    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
+  },
+  "events.divider.discoverWorldwide": {
+    "message": "Cardano-Events weltweit entdecken"
+  },
+  "events.platforms.luma": {
+    "message": "Events auf Luma.com"
+  },
+  "events.platforms.meetup": {
+    "message": "Events auf Meetup.com"
+  },
+  "events.divider.upcomingHighlighted": {
+    "message": "Kommende Event-Highlights"
+  },
+  "events.divider.pastHighlighted": {
+    "message": "Vergangene Event-Highlights"
+  },
+  "events.recapAvailable": {
+    "message": "Zusammenfassung verfügbar:"
+  },
+  "events.watchHere": {
+    "message": "Hier ansehen"
+  },
+  "exchanges.hero.title": {
+    "message": "Cardano integrieren"
+  },
+  "exchanges.hero.description": {
+    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
+  },
+  "exchanges.layout.title": {
+    "message": "Cardano integrieren | cardano.org"
+  },
+  "exchanges.layout.description": {
+    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
+  },
+  "exchanges.intro.description": {
+    "message": "Es gibt verschiedene [Wege, Cardano zu integrieren](https://developers.cardano.org) – einer davon ist Adrestia. Das Adrestia-Team unterstützt Börsen- und Entwicklerintegrationen mit einem Wallet-SDK und APIs, die die Interaktion mit Cardano über Releases hinweg vereinfachen."
+  },
+  "exchanges.whyAdrestia.divider": {
+    "message": "Warum Adrestia?"
+  },
+  "exchanges.whyAdrestia.leftText": {
+    "message": "Blockchains – und besonders Cardano – entwickeln sich rasant. Mit neuen Releases Schritt zu halten, kann zur Wartungsherausforderung werden. Wir machen es so einfach wie möglich, mit Cardano zu entwickeln und zu integrieren. Über Adrestia passt sich Cardano an deine Systeme und Anforderungen an."
+  },
+  "exchanges.whyAdrestia.rightText": {
+    "message": "Verbesserungen an Cardano sollen nicht mehr Komplexität oder Ressourcenaufwand bedeuten. Wir wollen Neuerungen bereitstellen, sobald sie verfügbar und nötig sind – mal wenige Updates pro Monat, mal viele. Adrestia bietet ein konsistentes SDK und GraphQL-APIs, mit denen Entwickler Anwendungen erstellen und Kernkompatibilität mit dem Cardano-Netzwerk über Releases hinweg beibehalten können."
+  },
+  "exchanges.cta1.title": {
+    "message": "Konzentrier dich auf das Wesentliche. Den Rest übernehmen wir."
+  },
+  "exchanges.cta1.buttonLabel": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.accessAdrestia.divider": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.whatMakesDifferent.title": {
+    "message": "Was macht Adrestia besonders?"
+  },
+  "exchanges.whatMakesDifferent.description1": {
+    "message": "Cardanos Architektur ist auf Modularität und Anpassungsfähigkeit ausgelegt. Über Adrestia sparen Entwickler und Börsen erheblichen Wartungsaufwand und – vor allem – Zeit."
+  },
+  "exchanges.whatMakesDifferent.description2": {
+    "message": "Anders als die meisten Blockchain-API-Suites entkoppelt Adrestia zentrale Services vom Cardano-Core-Node. Das SDK und die APIs bleiben über Releases hinweg konsistent – Entwickler müssen die Plattform nicht bei jedem Release neu lernen. Adrestia bietet eigenständige Services und vielfältige Möglichkeiten zum Abfragen, Transagieren und Extrahieren von Informationen."
+  },
+  "exchanges.benefits.reduceTime.title": {
+    "message": "Time-to-Market verkürzen"
+  },
+  "exchanges.benefits.reduceTime.text": {
+    "message": "Anwendungen für Cardano entwickeln, ohne dir Sorgen machen zu müssen, dass neue Releases deinen Code brechen."
+  },
+  "exchanges.benefits.reduceDowntime.title": {
+    "message": "Ausfallzeiten reduzieren"
+  },
+  "exchanges.benefits.reduceDowntime.text": {
+    "message": "Weniger Abwärtskompatibilitätsprobleme bedeuten deutlich weniger Ausfallzeiten."
+  },
+  "exchanges.benefits.reduceMaintenance.title": {
+    "message": "Wartungskosten senken"
+  },
+  "exchanges.benefits.reduceMaintenance.text": {
+    "message": "Weniger Zeit und Ressourcen für die Anwendungskompatibilität über Releases hinweg aufwenden."
+  },
+  "exchanges.benefits.increaseProductivity.title": {
+    "message": "Produktivität steigern"
+  },
+  "exchanges.benefits.increaseProductivity.text": {
+    "message": "Konzentrier dich auf das Wesentliche – Anwendungs- und Wallet-Entwicklung – und überlass die Updates uns."
+  },
+  "exchanges.cta2.title": {
+    "message": "Erfahre, wie Komponenten mit dem Cardano-Core-Node zusammenarbeiten, und wähle die passende Komponente für deine Anforderungen."
+  },
+  "exchanges.cta2.buttonLabel": {
+    "message": "Core-Node-Architektur kennenlernen"
+  },
+  "exchanges.learnArchitecture.divider": {
+    "message": "Core-Node-Architektur kennenlernen"
+  },
+  "exchanges.howDoesItWork.title": {
+    "message": "Wie funktioniert es?"
+  },
+  "exchanges.howDoesItWork.description": {
+    "message": "Cardano führt eine zusätzliche Schicht zwischen Nutzern bzw. Entwicklern und dem Core-Node ein. Innerhalb dieser Schicht verfolgt und verwaltet unser Code-Node-Team komplexe Änderungen, potenzielle Probleme und Hard Forks, die aus Protokollverbesserungen entstehen. Wir implementieren nötige Updates in den Adrestia-Libraries und APIs und kümmern uns um die Wartung – damit du es nicht musst."
+  },
+  "exchanges.ctaTwoColumn.leftTitle": {
+    "message": "Adrestia-Benutzerhandbuch"
+  },
+  "exchanges.ctaTwoColumn.leftText": {
+    "message": "Erfahre mehr über Adrestia und was es für dich bedeuten kann. Unser Benutzerhandbuch ist eine praktische, unkomplizierte Ressource, die dir hilft, die richtigen Schritte zur richtigen Zeit zu unternehmen."
+  },
+  "exchanges.ctaTwoColumn.leftButtonLabel": {
+    "message": "Adrestia nutzen"
+  },
+  "exchanges.ctaTwoColumn.rightTitle": {
+    "message": "Adrestia-Komponenten & Flowchart-Guide"
+  },
+  "exchanges.ctaTwoColumn.rightText": {
+    "message": "Entdecke unsere eigenständigen Libraries und APIs und finde heraus, welche die richtige für dich ist."
+  },
+  "exchanges.ctaTwoColumn.rightButtonLabel": {
+    "message": "Mehr erfahren"
+  },
+  "genesis.hero.title": {
+    "message": "Genesis"
+  },
+  "genesis.hero.description": {
+    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+  },
+  "genesis.layout.title": {
+    "message": "Genesis Distribution | cardano.org"
+  },
+  "genesis.layout.description": {
+    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+  },
+  "genesis.divider.distribution": {
+    "message": "Genesis Distribution"
+  },
+  "genesis.distribution.title": {
+    "message": "Distribution"
+  },
+  "genesis.distribution.paragraph1": {
+    "message": "The initial distribution of ada, essentially a pre-launch sales event, was the first in the cryptocurrency industry to set Know Your Customer guidelines, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Ada Voucher Distribution Stats section."
+  },
+  "genesis.distribution.paragraph2": {
+    "message": "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool; IOHK, EMURGO, and the Cardano Foundation, as follows:"
+  },
+  "genesis.distribution.cardanoFoundation": {
+    "message": "The Cardano Foundation, Switzerland: **648,176,761 ada**"
+  },
+  "genesis.distribution.emurgo": {
+    "message": "EMURGO: **2,074,165,644 ada**"
+  },
+  "genesis.distribution.iohk": {
+    "message": "IOHK: **2,463,071,701 ada**"
+  },
+  "genesis.distribution.totalAmount": {
+    "message": "The public sales distribution accounts for **25,927,070,538 ada**. The total amount of ada available at launch was therefore equal to **31,112,484,646 ada**."
+  },
+  "genesis.distribution.supplyTracking": {
+    "message": "Since the Genesis Block, and especially since the Shelley phase with staking rewards, Cardano token distribution and supply have been continuously expanding. This can be tracked epoch by epoch on the [Supply Insight page](/insights/supply)."
+  },
+  "genesis.divider.proceeds": {
+    "message": "Genesis Proceeds"
+  },
+  "genesis.proceeds.title": {
+    "message": "Proceeds"
+  },
+  "genesis.proceeds.paragraph1": {
+    "message": "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC. Further information on the sale can be found here."
+  },
+  "genesis.proceeds.paragraph2": {
+    "message": "A part of the total sales proceeds were donated to the Cardano Foundation as follows:"
+  },
+  "genesis.proceeds.isleOfMan": {
+    "message": "Cardano Foundation, Isle of Man (predecessor): **1,090.00 BTC**"
+  },
+  "genesis.proceeds.switzerland": {
+    "message": "Cardano Foundation, Switzerland: **7,168.00 BTC**"
+  },
+  "governance.hero.title": {
+    "message": "Governance auf Cardano"
+  },
+  "governance.hero.description": {
+    "message": "Cardano basiert auf einem sicheren, dezentralen System – Ada-Halter gestalten die Entwicklung der Plattform und beeinflussen die Richtung des Ökosystems."
+  },
+  "governance.meta.title": {
+    "message": "Governance auf Cardano | cardano.org"
+  },
+  "governance.meta.description": {
+    "message": "Cardano setzt auf ein sicheres, dezentrales Governance-System, das jedem Ada-Halter eine Stimme gibt. Die Community steuert gemeinsam die Weiterentwicklung der Plattform – von Kern-Upgrades über Anwendungen bis hin zu Services."
+  },
+  "governance.divider.withinCardano": {
+    "message": "Governance bei Cardano"
+  },
+  "governance.withinCardano.text1": {
+    "message": "Cardano wird von seiner Community definiert. Das Governance-Modell zeigt, dass echte Demokratie möglich ist – eine, in der jeder Einzelne zum Mitwirken motiviert wird und Abstimmungen unveränderlich festgehalten werden. Token-Halter bestimmen die Zukunft der Plattform und entscheiden über den Einsatz der Treasury-Mittel."
+  },
+  "governance.withinCardano.text2": {
+    "message": "Dieses Modell und die wegweisende Technologie dahinter lassen sich auf jede Anwendung, jedes System und sogar auf ganze Gesellschaften übertragen. Es ist ein Entwurf für Veränderung – getragen von vielen, nicht nur von wenigen –, der Macht umverteilt, Mittelsmänner beseitigt und das Leben aller verbessert."
+  },
+  "governance.withinCardano.quote": {
+    "message": "Wandel beginnt mit einer Stimme – und wird Wirklichkeit durch das Zusammenwirken vieler."
+  },
+  "governance.withinCardano.buttonText": {
+    "message": "Auf dem Laufenden bleiben"
+  },
+  "governance.divider.delegateVoting": {
+    "message": "Stimmrecht delegieren"
+  },
+  "governance.delegateVoting.text": {
+    "message": "Delegation bedeutet, dein Stimmrecht – entsprechend deinem Ada-Guthaben – einem Delegate Representative (DRep) zu übertragen, der in deinem Namen abstimmt, ähnlich einem Parlamentsabgeordneten. Alternativ kannst du automatisch abstimmen: Enthaltung oder ‚Kein Vertrauen' bei allen Vorschlägen."
+  },
+  "governance.delegateVoting.buttonText": {
+    "message": "DRep finden"
+  },
+  "governance.divider.becomeDRep": {
+    "message": "DRep auf Cardano werden"
+  },
+  "governance.becomeDRep.text1": {
+    "message": "DReps sind zentrale Akteure in der Cardano-Governance. Sie beteiligen sich aktiv und vertreten andere Community-Mitglieder. DReps müssen über Governance Actions informiert bleiben, um fundierte Entscheidungen zu treffen."
+  },
+  "governance.becomeDRep.text2": {
+    "message": "Wenn du die Zeit und das Engagement hast, zur Governance von Cardano beizutragen, registriere dich als DRep. Eine erstattungsfähige Kaution von 500 Ada ist erforderlich und wird bei Rücktritt zurückgezahlt."
+  },
+  "governance.becomeDRep.buttonText": {
+    "message": "DRep werden"
+  },
+  "governance.divider.viewActions": {
+    "message": "Governance Actions auf Cardano ansehen"
+  },
+  "governance.viewActions.text": {
+    "message": "Bleib informiert und beteilige dich an Cardanos dezentraler Governance. Sieh dir alle On-Chain-Aktionen an – eingereichte, ratifizierte, in Kraft getretene, abgelaufene und zurückgezogene. Verfolge laufende Vorschläge, beobachte ihren Fortschritt und verstehe ihre Auswirkungen auf das Netzwerk. Deine Beteiligung hilft, die Zukunft von Cardano zu gestalten."
+  },
+  "governance.viewActions.buttonText": {
+    "message": "Governance Actions"
+  },
+  "governance.divider.whyVoltaire": {
+    "message": "Warum Voltaire"
+  },
+  "governance.divider.actionCharts": {
+    "message": "Governance Action Charts"
+  },
+  "governance.actionCharts.text": {
+    "message": "Entdecke, wie Cardano-Governance funktioniert – mit interaktiven Charts, die jede Governance Action veranschaulichen. Prozesse, Regeln und Schwellenwerte auf einen Blick – visuell erklärt für schnelles Verständnis."
+  },
+  "governance.actionCharts.buttonText": {
+    "message": "Governance Action Charts"
+  },
+  "hardforks.timeline.byron.description": {
+    "message": "Start des Cardano-Mainnets und Einführung der Kryptowährung Ada."
+  },
+  "hardforks.timeline.label.epoch": {
+    "message": "Epoch"
+  },
+  "hardforks.timeline.label.protocolVersion": {
+    "message": "Protokollversion"
+  },
+  "hardforks.timeline.label.transactionId": {
+    "message": "Transaktions-ID"
+  },
+  "hardforks.timeline.shelley.description": {
+    "message": "Einführung von Staking und Dezentralisierungsfunktionen – der Übergang von einem föderierten zu einem dezentralen System."
+  },
+  "hardforks.timeline.allegra.description": {
+    "message": "Token-Locking-Funktionen als Voraussetzung für die spätere Smart-Contract-Funktionalität."
+  },
+  "hardforks.timeline.mary.description": {
+    "message": "Native-Token-Funktionalität für Cardano – Nutzer können eigene Token erstellen und damit handeln."
+  },
+  "hardforks.timeline.alonzo.description": {
+    "message": "Smart-Contract-Fähigkeiten mit Plutus – und damit die Möglichkeit, dezentrale Anwendungen (dApps) zu erstellen."
+  },
+  "hardforks.timeline.vasil.description": {
+    "message": "Verbesserung der Skalierbarkeit und Performance des Netzwerks – benannt nach Vasil Dabov, einem Mitglied der Cardano-Community."
+  },
+  "hardforks.timeline.label.transactionIds": {
+    "message": "Transaktions-IDs"
+  },
+  "hardforks.timeline.valentine.description": {
+    "message": "Weitere Verbesserungen der Plutus-Smart-Contract-Funktionalität und der Netzwerk-Performance."
+  },
+  "hardforks.timeline.chang1.description": {
+    "message": "Erste dezentrale Governance-Funktionen aus CIP-1694 – zunächst nur Parameteränderungen und Hard-Fork-Initiierungen."
+  },
+  "hardforks.timeline.plomin.description": {
+    "message": "Zweite Welle der dezentralen Governance-Funktionen aus CIP-1694 – mit dem vollständigen Set an Governance-Aktionen und der DRep-Rolle."
+  },
+  "hardforks.hero.title": {
+    "message": "Hard Forks"
+  },
+  "hardforks.hero.description": {
+    "message": "Welche Hard Forks gab es bisher – und welche Neuerungen haben sie gebracht?"
+  },
+  "hardforks.layout.title": {
+    "message": "Bisherige Hard Forks | cardano.org"
+  },
+  "hardforks.layout.description": {
+    "message": "Ein umweltfreundliches, nachweislich sicheres Proof-of-Stake-Protokoll mit rigorosen Sicherheitsgarantien."
+  },
+  "hardforks.content.title": {
+    "message": "Cardano Hard Forks"
+  },
+  "hardforks.content.description": {
+    "message": "Hard Forks bedeuten bei Cardano keine Spaltung oder Meinungsverschiedenheiten innerhalb des Ökosystems. Im Gegenteil: Sie markieren einen exakten, gemeinschaftlich vereinbarten Zeitpunkt (Slot), an dem alle Nodes von der aktuellen Ära zur nächsten wechseln – mit neuen Funktionen, Validierungsregeln oder Parameterwerten. Alle Stake-Pool-Betreiber müssen das Upgrade installieren und haben dabei ein Mitspracherecht. Ein Hard Fork bei Cardano ist also keine Trennung, sondern eine präzise kollektive Weiterentwicklung."
+  },
+  "hardforks.divider.timeline": {
+    "message": "Zeitstrahl"
+  },
+  "hardforks.loading": {
+    "message": "Wird geladen..."
+  },
+  "hardforks.divider.transactionIds": {
+    "message": "Hard-Fork-Transaktions-IDs"
+  },
+  "hardforks.transactionIds.description": {
+    "message": "Einige Hard Forks – insbesondere Byron und Shelley – wurden durch eine Reihe von Updates umgesetzt und haben daher keine einzelne Transaktions-ID. Bei den übrigen entsprechen die angegebenen Transaktions-IDs den wesentlichen Parameteränderungen im Zuge der Hard Forks."
+  },
+  "learn.hero.title": {
+    "message": "Learn"
+  },
+  "learn.hero.description": {
+    "message": "Empowering the digital architects of the future."
+  },
+  "learn.layout.title": {
+    "message": "Learn | cardano.org"
+  },
+  "learn.layout.description": {
+    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+  },
   "newsletter.hero.title": {
     "message": "Bleib informiert"
   },
@@ -2513,7 +2579,546 @@
   "newsletter.content.description": {
     "message": "Alle zwei Wochen das Wichtigste: aktuelle Themen, Entwicklungs-Updates, bevorstehende Meetups, Delegationsstrategie-Updates, Neuigkeiten von unseren Cardano-Ambassadors und vieles mehr."
   },
-
+  "ouroboros.hero.title": {
+    "message": "Ouroboros"
+  },
+  "ouroboros.hero.description": {
+    "message": "An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
+  },
+  "ouroboros.meta.title": {
+    "message": "What is Ouroboros? | cardano.org"
+  },
+  "ouroboros.meta.description": {
+    "message": "An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
+  },
+  "ouroboros.divider.vision": {
+    "message": "Vision"
+  },
+  "ouroboros.vision.title": {
+    "message": "The Blockchain Revolution Started With Bitcoin. It Continues Now With Ouroboros:"
+  },
+  "ouroboros.vision.description": {
+    "message": "A proof-of-stake protocol that provides and improves the security guarantees of proof-of-work at a fraction of the energy cost. Ouroboros applies cryptography, combinatorics, and mathematical game theory to guarantee the protocol's integrity, longevity, and performance, and that of the distributed networks that depend upon it."
+  },
+  "ouroboros.whatIs.title": {
+    "message": "What Is Ouroboros?"
+  },
+  "ouroboros.whatIs.description1": {
+    "message": "Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. Ouroboros combines unique technology and mathematically-verified mechanisms - which, in turn, combine behavioral psychology and economic philosophy - to ensure the security and sustainability of the blockchains that depend upon it. The result is a protocol with proven security guarantees able to facilitate the propagation of global, permissionless networks with minimal energy requirements - of which Cardano is the first."
+  },
+  "ouroboros.whatIs.description2": {
+    "message": "At the heart of Ouroboros is the concept of infinity. Global networks must be able to grow sustainably and ethically: to provide greater opportunities to the world while also preserving it. This becomes possible with Ouroboros."
+  },
+  "ouroboros.whatIs.description3": {
+    "message": "Ouroboros facilitates the creation and fruition of distributed, permissionless networks capable of sustainably supporting new markets."
+  },
+  "ouroboros.whatIs.quote": {
+    "message": "Ouroboros exists to define the parameters of the new world: a protocol more secure, scalable, and energy-efficient than anything that has come before."
+  },
+  "ouroboros.whatIs.buttonLabel": {
+    "message": "Explore the research"
+  },
+  "ouroboros.divider.features": {
+    "message": "Features"
+  },
+  "ouroboros.features.provablySecure.title": {
+    "message": "Provably Secure"
+  },
+  "ouroboros.features.provablySecure.text1": {
+    "message": "Ouroboros features mathematically verifiable security against attackers."
+  },
+  "ouroboros.features.provablySecure.text2": {
+    "message": "The protocol is guaranteed to be secure so long as 51% of the stake – in the case of Cardano, ada – is held by honest participants, which, in addition to other novel concepts, is achieved through random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis."
+  },
+  "ouroboros.features.incentivesRewards.title": {
+    "message": "Incentives & Rewards"
+  },
+  "ouroboros.features.incentivesRewards.text1": {
+    "message": "To ensure the sustainability of the blockchain networks using Ouroboros, the protocol features an incentive mechanism that rewards network participants for their participation."
+  },
+  "ouroboros.features.incentivesRewards.text2": {
+    "message": "This can either be operating a stake pool or delegating a stake in ada to a stake pool. Rewards (in the form of ada) can be earned by completing either of these activities."
+  },
+  "ouroboros.features.stakeDelegation.title": {
+    "message": "Stake Delegation And Stake Pools"
+  },
+  "ouroboros.features.stakeDelegation.text1": {
+    "message": "Ouroboros is a proof-of-stake protocol. It distributes network control across stake pools: node operators with the infrastructure required to ensure a consistent and reliable connection to the network."
+  },
+  "ouroboros.features.stakeDelegation.text2": {
+    "message": "For each slot, a stake pool is assigned as the slot leader, and is rewarded for adding a block to the chain. Ada holders may delegate their stake to a specific stake pool, increasing its chance of being selected as the slot leader, and share in the stake pool's rewards."
+  },
+  "ouroboros.features.energyEfficient.title": {
+    "message": "Energy Efficient"
+  },
+  "ouroboros.features.energyEfficient.text1": {
+    "message": "Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://iohk.io/en/blog/posts/2020/03/23/from-classic-to-hydra-the-implementations-of-ouroboros-explained/)."
+  },
+  "ouroboros.cta.title": {
+    "message": "Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
+  },
+  "ouroboros.cta.buttonLabel": {
+    "message": "Play the game"
+  },
+  "research.hero.title": {
+    "message": "Forschung"
+  },
+  "research.hero.description": {
+    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
+  },
+  "research.meta.title": {
+    "message": "Cardano Forschung | cardano.org"
+  },
+  "research.meta.description": {
+    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
+  },
+  "signalGovernance.layout.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.layout.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.openGraph.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.openGraph.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.hero.title": {
+    "message": "Interesse an Governance bekunden"
+  },
+  "signalGovernance.hero.description": {
+    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
+  },
+  "signalGovernance.divider.text": {
+    "message": "Governance"
+  },
+  "signalOperator.layout.title": {
+    "message": "Signal your interest in Stake Pool Operations"
+  },
+  "signalOperator.layout.description": {
+    "message": "Stay informed about everything related to running a Stake Pool and technical updates."
+  },
+  "signalOperator.openGraph.title": {
+    "message": "Signal your interest in Stake Pool Operations"
+  },
+  "signalOperator.openGraph.description": {
+    "message": "Stay informed about everything related to running a Stake Pool and technical updates."
+  },
+  "signalOperator.hero.title": {
+    "message": "Signal your interest in Stake Pool Operations"
+  },
+  "signalOperator.hero.description": {
+    "message": "Stay informed about everything related to running a Stake Pool and technical updates."
+  },
+  "signalOperator.divider.text": {
+    "message": "operator"
+  },
+  "signal.layout.title": {
+    "message": "Signal your interest"
+  },
+  "signal.layout.description": {
+    "message": "Get just the information you want"
+  },
+  "signal.openGraph.title": {
+    "message": "Signal your interest"
+  },
+  "signal.openGraph.description": {
+    "message": "Get just the information you want"
+  },
+  "signal.hero.title": {
+    "message": "Signal your interest"
+  },
+  "signal.hero.description": {
+    "message": "Look at the available topics and get just the information you want"
+  },
+  "signal.topics.title": {
+    "message": "Available Topics"
+  },
+  "solutions.hero.title": {
+    "message": "Enterprise-Lösungen"
+  },
+  "solutions.hero.description": {
+    "message": "Erprobte Blockchain-Lösungen für Lieferketten, Identität und mehr."
+  },
+  "solutions.layout.title": {
+    "message": "Enterprise-Lösungen | cardano.org"
+  },
+  "solutions.layout.description": {
+    "message": "Erprobte Enterprise-Blockchain-Lösungen auf Cardano entdecken – von Lieferketten-Rückverfolgbarkeit bis zu digitalen Produktpässen."
+  },
+  "solutions.intro.description": {
+    "message": "Cardano treibt Enterprise-Lösungen in verschiedensten Branchen voran – mit der Sicherheit und Transparenz der Blockchain kombiniert mit praxisnahen Geschäftsanwendungen. Unsere erprobten Einsätze zeigen, wie Organisationen dezentrale Technologie für Lieferkettenmanagement, Produktauthentifizierung und Nachhaltigkeitsmonitoring nutzen."
+  },
+  "solutions.divider.explore": {
+    "message": "Anwendungsfälle entdecken"
+  },
+  "solutions.explore.description": {
+    "message": "Du suchst bestimmte Blockchain-Anwendungen? Entdecke unsere Übersicht mit Anwendungsfällen aus den Bereichen Identität, Finanzen, Lieferkette und mehr."
+  },
+  "solutions.explore.button": {
+    "message": "Alle Anwendungsfälle ansehen"
+  },
+  "solutions.cta.title": {
+    "message": "Bereit, auf Cardano zu entwickeln? Kontaktiere die Cardano Foundation und entdecke Partnerschaftsmöglichkeiten."
+  },
+  "solutions.cta.button": {
+    "message": "Kontakt aufnehmen"
+  },
+  "delegation.faq.q1": {
+    "message": "Was ist ein Stake Pool?"
+  },
+  "delegation.faq.a1.p1": {
+    "message": "Stake Pools werden von Stake-Pool-Betreibern geführt. Das sind Netzwerkteilnehmer mit dem Know-how, einen Node zuverlässig rund um die Uhr zu betreiben – entscheidend für das Ouroboros-Protokoll und das gesamte Cardano-Netzwerk."
+  },
+  "delegation.faq.a1.p2": {
+    "message": "Das Protokoll wählt per Zufallsverfahren einen Leader für jeden Slot, der den nächsten Block erzeugt. Je mehr Stake an einen Node delegiert ist, desto höher die Chance, ausgewählt zu werden. Für jeden erfolgreich erzeugten Block erhält der Pool eine Belohnung, die proportional zum delegierten Anteil aufgeteilt wird. Pool-Betreiber können ihre Betriebskosten und eine Gewinnmarge abziehen."
+  },
+  "delegation.faq.q2": {
+    "message": "Kann ich meinen Stake an einen anderen Pool übertragen?"
+  },
+  "delegation.faq.a2.p1": {
+    "message": "Ja. Du kannst deinen Stake jederzeit an einen anderen Pool delegieren. Der Stake bleibt bis zur übernächsten Epoch im bisherigen Pool, danach wird deine neue Delegation auf der Chain aktualisiert. Da Belohnungen am Ende jeder Epoch verteilt werden, erhältst du noch für zwei Epochen Belohnungen vom alten Pool."
+  },
+  "delegation.faq.q3": {
+    "message": "Kann ich an mehrere Stake Pools gleichzeitig delegieren?"
+  },
+  "delegation.faq.a3.p1": {
+    "message": "Einige Wallets bieten Lösungen, um gleichzeitig an verschiedene Stake Pools zu delegieren. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q4": {
+    "message": "Was ist Stake-Pool-Performance?"
+  },
+  "delegation.faq.a4.p1": {
+    "message": "Die Performance zeigt, wie zuverlässig ein Stake Pool arbeitet. Da die Slot-Leader-Wahl privat erfolgt, lässt sich nur schätzen, wie oft ein Pool gewählt werden sollte – basierend auf den tatsächlich erzeugten Blöcken. Produziert ein Pool z. B. nur die Hälfte der erwarteten Blöcke, liegt seine Performance bei 50 %. Das kann an einer schlechten Netzwerkverbindung oder daran liegen, dass der Betreiber den Pool abgeschaltet hat."
+  },
+  "delegation.faq.a4.p2": {
+    "message": "Performance-Werte werden über einen längeren Zeitraum aussagekräftiger. Wurde ein Pool in der aktuellen Epoch noch nicht ausgewählt, steht seine Performance bei 0 % – selbst wenn er später noch Blöcke erzeugen wird. Werte über 100 % sind möglich, wenn ein Pool mehr Blöcke produziert als erwartet."
+  },
+  "delegation.faq.q5": {
+    "message": "Was ist Stake-Pool-Sättigung?"
+  },
+  "delegation.faq.a5.p1": {
+    "message": "Sättigung bedeutet, dass ein Pool mehr Stake hat als für das Netzwerk ideal ist – ab diesem Punkt sinken die Belohnungen. Dieser Mechanismus soll Zentralisierung verhindern: Delegierende werden ermutigt, ihren Stake auf verschiedene Pools zu verteilen, und Betreiber, weitere Pools aufzusetzen."
+  },
+  "delegation.faq.a5.p2": {
+    "message": "Ziel ist es, einzelne Pools nicht zu groß werden zu lassen, damit die Belohnungen fair verteilt bleiben. Die Gesundheit des Netzwerks hängt von vielen aktiven Pools mit ausgewogenem Stake ab – je zahlreicher und geografisch vielfältiger, desto besser. Der Sättigungsgrad jedes Pools wird im Daedalus-Auswahlmenü angezeigt."
+  },
+  "delegation.faq.q6": {
+    "message": "Was ist die Attraktivität eines Stake Pools?"
+  },
+  "delegation.faq.a6.p1": {
+    "message": "Die Attraktivität misst, wie interessant ein Stake Pool für Delegierende ist. Sie wird von mehreren Faktoren beeinflusst – darunter die Marge des Pools, seine Gebühren, Performance, die verfügbare Gesamtbelohnung in der aktuellen Epoch und der Sättigungsgrad – und fließt in das Ranking ein."
+  },
+  "delegation.faq.q7": {
+    "message": "Wie werden Stake Pools gerankt?"
+  },
+  "delegation.faq.a7.p1": {
+    "message": "Stake Pools werden hauptsächlich nach Attraktivität und Performance gerankt, zusammen mit weiteren Faktoren. Wichtig: Die Wallet-Entwickler entscheiden, wie das Ranking in ihrer Wallet umgesetzt wird. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q8": {
+    "message": "Wie wähle ich den richtigen Stake Pool?"
+  },
+  "delegation.faq.a8.p1": {
+    "message": "Bei der Wahl eines Stake Pools spielen mehrere Faktoren eine Rolle. [Pool-Tools](/apps?tags=pooltool) können dir bei der Entscheidung helfen. Worauf du achten solltest:"
+  },
+  "delegation.faq.a8.p2": {
+    "message": "**Performance:** Achte auf die historische Performance – sie zeigt, wie zuverlässig der Pool Blöcke erzeugt. Konstant hohe Werte sprechen für einen gut betriebenen Pool."
+  },
+  "delegation.faq.a8.p3": {
+    "message": "**Verfügbarkeit:** Der Pool sollte möglichst unterbrechungsfrei laufen. Hohe Verfügbarkeit steigert die Chancen, für die Blockerzeugung ausgewählt zu werden."
+  },
+  "delegation.faq.a8.p4": {
+    "message": "**Marge:** Stake Pools erheben eine prozentuale Gebühr auf die Belohnungen. Niedrigere Gebühren bedeuten mehr Ertrag – aber achte auf das Verhältnis zu Performance und Zuverlässigkeit."
+  },
+  "delegation.faq.a8.p5": {
+    "message": "**Fixgebühr:** Es gibt eine vom Protokoll festgelegte Mindestgebühr. Prüfe, welche Fixgebühr der Pool erhebt."
+  },
+  "delegation.faq.a8.p6": {
+    "message": "**Sättigungspunkt:** Ein Pool ist gesättigt, wenn er mehr Stake hat als das Protokoll als optimal vorsieht. Bei einem gesättigten Pool sinken die Belohnungen – wähle besser einen Pool unter dieser Schwelle."
+  },
+  "delegation.faq.a8.p7": {
+    "message": "**Community-Engagement:** Pools, die sich aktiv in der Cardano-Community einbringen – durch Bildung, Support oder Beiträge zum Ökosystem – sind oft eine gute Wahl."
+  },
+  "delegation.faq.a8.p8": {
+    "message": "**Pools mit Mission:** Manche Pools spenden einen Teil ihrer Gebühren für wohltätige Zwecke oder setzen sich für Nachhaltigkeit oder Bildung ein. Wenn dir das wichtig ist, kann das deine Wahl beeinflussen."
+  },
+  "delegation.faq.q9": {
+    "message": "Wie viel verdiene ich an Belohnungen?"
+  },
+  "delegation.faq.a9.p1": {
+    "message": "Mit dem [Belohnungsrechner](/calculator) bekommst du eine Schätzung deiner möglichen Belohnungen. Wichtig: Die Ergebnisse sind nur Richtwerte und keine Garantie. In Zukunft können sich Parameter ändern, die die Belohnungen beeinflussen. Die berechneten Beträge sind aber realistisch und sinnvoll."
+  },
+  "delegation.faq.q10": {
+    "message": "Welche Wallets werden unterstützt und wo finde ich sie?"
+  },
+  "delegation.faq.a10.p1": {
+    "message": "Es gibt verschiedene Wallets zur Auswahl. Achte darauf, Wallets nur von vertrauenswürdigen Seiten herunterzuladen. [Wallets entdecken](/what-is-ada#wallets)."
+  },
+  "delegation.faq.q11": {
+    "message": "Kann ich ein Ada-Guthaben von einer Hardware-Wallet wiederherstellen?"
+  },
+  "delegation.faq.a11.p1": {
+    "message": "Ja. Du kannst Daedalus nutzen, um ein Ada-Guthaben von einer Hardware-Wallet wiederherzustellen. Aber Vorsicht: Die Eingabe deiner Hardware-Wallet-Recovery-Phrase in Daedalus kann deine privaten Schlüssel zusätzlichen Sicherheitsrisiken aussetzen. Empfehlungen dazu findest du während des Wiederherstellungsprozesses in Daedalus."
+  },
+  "delegation.faq.q12": {
+    "message": "Werden meine Ada-Belohnungen dem delegierten Stake hinzugefügt?"
+  },
+  "delegation.faq.a12.p1": {
+    "message": "Ja. Belohnungen werden deinem bestehenden Stake zugerechnet. Sobald Belohnungen eingehen, steigt dein Guthaben – und damit auch dein delegierter Stake."
+  },
+  "stakePoolDelegation.hero.title": {
+    "message": "Stake delegieren"
+  },
+  "stakePoolDelegation.hero.description": {
+    "message": "Stärke das Netzwerk, verdiene Belohnungen und werde Teil der Cardano-Reise."
+  },
+  "stakePoolDelegation.meta.title": {
+    "message": "Stake delegieren | cardano.org"
+  },
+  "stakePoolDelegation.meta.description": {
+    "message": "Delegiere deinen Stake, um das Netzwerk zu stärken, Belohnungen zu verdienen und Teil der Cardano-Reise zu werden."
+  },
+  "stakePoolDelegation.whatIsStake.divider": {
+    "message": "Was ist Stake?"
+  },
+  "stakePoolDelegation.whatIsStake.text1": {
+    "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
+  },
+  "stakePoolDelegation.whatIsStake.text2": {
+    "message": "Ada-Inhaber können auf zwei Wegen Belohnungen verdienen: indem sie ihren Stake an einen Stake Pool delegieren, der von jemand anderem betrieben wird, oder indem sie einen eigenen Stake Pool betreiben. Die Menge des an einen Pool delegierten Stakes bestimmt maßgeblich, wen das Ouroboros-Protokoll auswählt, den nächsten Block zur Blockchain hinzuzufügen – und dafür eine Belohnung zu erhalten."
+  },
+  "stakePoolDelegation.whatIsStake.text3": {
+    "message": "Je mehr Stake an einen Pool delegiert wird (bis zu einem bestimmten Punkt), desto wahrscheinlicher erzeugt er den nächsten Block – und die Belohnungen werden unter allen aufgeteilt, die ihren Stake an diesen Pool delegiert haben."
+  },
+  "stakePoolDelegation.whatIsDelegation.divider": {
+    "message": "Was ist Stake-Delegation?"
+  },
+  "stakePoolDelegation.whatIsDelegation.text": {
+    "message": "Delegation ist der Vorgang, bei dem Ada-Inhaber den mit ihrer Ada verbundenen Stake an einen Stake Pool übertragen. So können auch Nutzer am Netzwerk teilnehmen und proportional zu ihrem delegierten Stake Belohnungen verdienen – ohne selbst einen Node betreiben zu müssen."
+  },
+  "stakePoolDelegation.whyIncentives.divider": {
+    "message": "Warum Anreize?"
+  },
+  "stakePoolDelegation.whyIncentives.text": {
+    "message": "Anreize sichern die Langlebigkeit und Gesundheit des Cardano-Netzwerks und -Ökosystems. Der Anreizmechanismus basiert auf wissenschaftlicher Forschung und vereint Mathematik, Wirtschaftstheorie und Spieltheorie."
+  },
+  "stakePoolDelegation.walletsCta.title": {
+    "message": "Cardano Wallets"
+  },
+  "stakePoolDelegation.walletsCta.text": {
+    "message": "Entdecke eine große Auswahl an Wallets, die dir den Zugang zum Cardano-Ökosystem erleichtern."
+  },
+  "stakePoolDelegation.walletsCta.buttonLabel": {
+    "message": "Jetzt entdecken"
+  },
+  "stakePoolDelegation.calculatorCta.title": {
+    "message": "Probiere unseren Staking-Rechner aus und sieh, wie viel Ada du durch Delegation an einen Stake Pool verdienen könntest."
+  },
+  "stakePoolDelegation.calculatorCta.buttonLabel": {
+    "message": "Ausprobieren"
+  },
+  "stakePoolOperation.hero.title1": {
+    "message": "Designed For Mass Participation"
+  },
+  "stakePoolOperation.hero.title2": {
+    "message": "Built For Secure Decentralization"
+  },
+  "stakePoolOperation.hero.description": {
+    "message": "Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network."
+  },
+  "stakePoolOperation.meta.title": {
+    "message": "Operate a stake pool | cardano.org"
+  },
+  "stakePoolOperation.meta.description": {
+    "message": "Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network."
+  },
+  "stakePoolOperation.whatIsStaking.divider": {
+    "message": "What is staking?"
+  },
+  "stakePoolOperation.whatIsStaking.leftText": {
+    "message": "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works."
+  },
+  "stakePoolOperation.whatIsStaking.rightText1": {
+    "message": "There are two ways an ada holder can earn rewards: by delegating their stake to a stake pool run by someone else, or by running their own stake pool."
+  },
+  "stakePoolOperation.whatIsStaking.rightText2": {
+    "message": "The amount of stake delegated to a given stake pool is the primary way the Ouroboros protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."
+  },
+  "stakePoolOperation.whatIsStaking.rightText3": {
+    "message": "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards that it earns are shared between everyone who delegated their stake to that stake pool."
+  },
+  "stakePoolOperation.whatIsStakePool.divider": {
+    "message": "What is stake pool?"
+  },
+  "stakePoolOperation.whatIsStakePool.text1": {
+    "message": "Stake pools may be either public or private. A public stake pool is a Cardano network node with a public address that other users can delegate to, and receive rewards. Private stake pools only deliver rewards to their owners."
+  },
+  "stakePoolOperation.whatIsStakePool.text2": {
+    "message": "Stake pools are run by a reliable operator: an individual or business with the knowledge and resources to run the node on a consistent basis. Ada holders can delegate to public stake pools if they wish to participate in the protocol and receive rewards, but do not wish to operate a Cardano network node themselves."
+  },
+  "stakePoolOperation.whatIsStakePool.text3": {
+    "message": "The more stake that is delegated to a stake pool, the greater chance it has of being selected as a slot leader. Each time it is selected and produces a block that is accepted onto the blockchain, it is rewarded, and these rewards are shared between the stake pool operator and stake pool delegators."
+  },
+  "stakePoolOperation.whatIsStakePool.text4": {
+    "message": "Extensive research and development has gone into ensuring a fair, competitive marketplace that proportionately incentivizes participation, and rewards the investment of time, energy, and resources. The key technical parameters influencing stake pools and the rewards received are:"
+  },
+  "stakePoolOperation.pledging.title": {
+    "message": "Pledging Mechanism"
+  },
+  "stakePoolOperation.pledging.text": {
+    "message": "While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward."
+  },
+  "stakePoolOperation.desirability.title": {
+    "message": "Desirability Index"
+  },
+  "stakePoolOperation.desirability.text": {
+    "message": "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. This number will be used to rank pools in wallets, and indicates how 'desirable' or 'attractive' the pool is to potential delegators."
+  },
+  "stakePoolOperation.saturation.title": {
+    "message": "Saturation Parameter (K)"
+  },
+  "stakePoolOperation.saturation.text": {
+    "message": "Saturation is a term used to indicate that a particular stake pool has more stake delegated to it than is ideal for the network, while k is the targeted number of desired pools. Once a pool reaches the point of saturation, it will offer diminishing rewards. The saturation mechanism was designed to prevent centralization by encouraging delegators to delegate to different stake pools, and to incentivize operators to set up alternative pools so that they can continue earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their stake and stake pool operators, and to prevent any single pool from becoming too large."
+  },
+  "stakePoolOperation.setupCta.title": {
+    "message": "How do I set up a stake pool?"
+  },
+  "stakePoolOperation.setupCta.text1": {
+    "message": "It's important to remember the role of a stake pool operator: to ensure reliable, 24/7 operation of a network node. As a stake pool operator, you have a responsibility to the ada holders who delegate to you but also to the health of the network itself. This requires a stable and reliable network infrastructure and, ideally, system operation and server administration skills along with experience in development and operations."
+  },
+  "stakePoolOperation.setupCta.text2": {
+    "message": "Anybody can learn how to operate a stake pool, but a degree of technical familiarity and knowledge is required."
+  },
+  "stakePoolOperation.setupCta.buttonLabel": {
+    "message": "Learn how"
+  },
+  "stakePoolOperation.calculatorCta.title": {
+    "message": "Try our staking calculator to see how much ada you could receive by running a stake pool."
+  },
+  "stakePoolOperation.calculatorCta.buttonLabel": {
+    "message": "Try Out"
+  },
+  "useCases.hero.title": {
+    "message": "Anwendungsfälle"
+  },
+  "useCases.hero.description": {
+    "message": "Wie die Cardano-Blockchain reale Probleme branchenübergreifend löst."
+  },
+  "useCases.layout.title": {
+    "message": "Enterprise-Anwendungsfälle | cardano.org"
+  },
+  "useCases.layout.description": {
+    "message": "Eine offene Plattform für Milliarden von Menschen ohne wirtschaftliche Identität – mit dezentralen Anwendungen für Identität, Wertübertragung und Governance."
+  },
+  "useCases.intro.description": {
+    "message": "Blockchain-Anwendungen aus verschiedenen Branchen entdecken – von Identitätsprüfung bis Lieferkettenverfolgung. Cardano bietet sichere, skalierbare Lösungen für reale Herausforderungen."
+  },
+  "useCases.divider.enterprise": {
+    "message": "Enterprise-Lösungen"
+  },
+  "useCases.enterprise.description": {
+    "message": "Du suchst erprobte Enterprise-Einsätze? Entdecke Fallstudien und praxisnahe Implementierungen der Cardano Foundation und ihrer Partner."
+  },
+  "useCases.enterprise.button": {
+    "message": "Enterprise-Lösungen ansehen"
+  },
+  "why.hero.title": {
+    "message": "Why Cardano?"
+  },
+  "why.hero.description": {
+    "message": "Wondering about Cardano's motiviation?"
+  },
+  "why.meta.title": {
+    "message": "Why Cardano? | cardano.org"
+  },
+  "why.meta.description": {
+    "message": "Wondering about Cardano's motiviation?"
+  },
+  "why.divider.howItAllBegan": {
+    "message": "How it all began"
+  },
+  "why.whatIsCardano.title": {
+    "message": "What is Cardano?"
+  },
+  "why.whatIsCardano.text1": {
+    "message": "Cardano is a blockchain platform and cryptocurrency project that began in 2015. It was created to rethink how cryptocurrencies are designed and developed, with the goal of providing a more balanced and sustainable ecosystem for users and for other systems that might integrate with it. The [cryptocurrency of the Cardano platform is called ada](/what-is-ada). In simple terms, Cardano is a technology that allows people to manage and exhange value, identity and governance over the internet."
+  },
+  "why.whatIsCardano.text2": {
+    "message": "Cardano is often called a third-generation blockchain. Bitcoin was the first generation (focusing on digital money), Ethereum the second (adding smart contracts - programs that run on the blockchain), and Cardano aims to be the next step by solving issues of scalability, interoperability, and sustainability that earlier networks face. It's an open-source project, meaning its code is public and it's developed by a broad community of engineers and researchers rather than a single company."
+  },
+  "why.whyCreated.title": {
+    "message": "Why was Cardano created?"
+  },
+  "why.whyCreated.intro": {
+    "message": "The creators of Cardano saw that despite the success of Bitcoin and other cryptocurrencies, there were major challenges preventing mainstream adoption and long-term utility. Cardano's development started by identifying these problems and setting principles to solve them."
+  },
+  "why.whyCreated.list.sustainability": {
+    "message": "**Lack of Sustainability:** Many crypto projects rely on initial funding (like ICOs) and have no built-in way to fund future improvements. This can lead to stagnation. The goal was to establish a sustainable funding mechanism to support long-term development. This led to the idea of a treasury system – a community-controlled fund designed to finance network upgrades and ongoing maintenance."
+  },
+  "why.whyCreated.list.governance": {
+    "message": "**Governance and Evolution:** Early blockchains had no clear way for users to agree on changes or upgrades (leading to disputes and splits like Bitcoin vs. Bitcoin Cash, or Ethereum vs. Ethereum Classic). Cardano's vision is to enable the community of ada holders to vote on proposals and changes, so the system can upgrade itself over time without breaking. This makes Cardano a self-evolving system that can adapt as needs change."
+  },
+  "why.whyCreated.list.scalability": {
+    "message": "**Scalability:** Bitcoin and Ethereum become slow and expensive as more people use them because they were not designed to scale globally. For example, adding more computers (nodes) to those networks doesn't make them faster; every node still has to process every transaction. Cardano aims to scale to millions or even billions of users."
+  },
+  "why.whyCreated.list.security": {
+    "message": "**Security and Academic Rigor:** The crypto space sometimes saw new features added without fully studying past research or potential flaws. Cardano's team took a different approach: study the science (cryptography, distributed systems) and use peer-reviewed research before building. In fact, Cardano is built on [a collection of peer-reviewed papers](/research) and formal methods. By involving expert cryptographers and scientists, Cardano tries to ensure its technology is secure and based on evidence rather than only on quick experimentation."
+  },
+  "why.whyCreated.list.interoperability": {
+    "message": "**Interoperability:** There are thousands of cryptocurrencies, but they often exist in isolation, unable to interact with each other or with legacy systems. Cardano's goal is to make it easier for different blockchains and the traditional financial system to connect. For example, Cardano is exploring sidechains technology to allow value and data to move between Cardano and other blockchains. It's also building in support for standards (similar to how internet protocols work) so it can communicate with banks and regulators if needed, without compromising the core principles of a blockchain."
+  },
+  "why.whyCreated.list.realWorld": {
+    "message": "**Addressing Real-World Needs:** Ultimately, Cardano's mission is not just about advancing technology for its own sake. It poses a deeper question: \"What is the point of all of it?\" The answer lies in providing financial services to those who lack access. In many developing countries, people are without banks, legal identity, credit, or insurance. The goal is to bundle these essential services – money transfers, property records, identity, credit, and more – into one secure platform that can operate on a basic smartphone. In regions where traditional banking is unavailable or unaffordable, a blockchain like Cardano has the potential to be transformative, offering people powerful digital financial tools."
+  },
+  "why.cta.title": {
+    "message": "The original essay from 2017 outlining the background, philosophy and inspiration behind the Cardano blockchain. By Charles Hoskinson."
+  },
+  "why.cta.buttonLabel": {
+    "message": "Read the essay"
+  },
+  "apps.hero.title": {
+    "message": "Cardano-Anwendungen"
+  },
+  "apps.hero.description": {
+    "message": "Entdecke Anwendungen auf der Cardano-Blockchain"
+  },
+  "apps.cta": {
+    "message": "₳dd your project"
+  },
+  "apps.filters.title": {
+    "message": "Filter"
+  },
+  "apps.filters.projectCount.singular": {
+    "message": "1 Projekt"
+  },
+  "apps.filters.projectCount.plural": {
+    "message": "{count} Projekte"
+  },
+  "apps.filters.clearButton": {
+    "message": "Filter zurücksetzen"
+  },
+  "apps.filters.showLess": {
+    "message": "Weniger Filter anzeigen"
+  },
+  "apps.filters.showMore": {
+    "message": "{count} weitere Filter anzeigen"
+  },
+  "apps.noResult": {
+    "message": "Keine Ergebnisse"
+  },
+  "apps.ourFavorites": {
+    "message": "Unsere Favoriten"
+  },
+  "apps.allProjects": {
+    "message": "Alle Projekte"
+  },
+  "apps.searchPlaceholder": {
+    "message": "Apps suchen..."
+  },
+  "insights.card.openInsight": {
+    "message": "Insight öffnen"
+  },
   "insights.layout.title": {
     "message": "Insights"
   },
@@ -2538,9 +3143,6 @@
   "insights.filter.clear": {
     "message": "Zurücksetzen"
   },
-  "insights.card.openInsight": {
-    "message": "Insight öffnen"
-  },
   "insights.pagination.prevAriaLabel": {
     "message": "Vorherige Seite"
   },
@@ -2559,10 +3161,288 @@
   "insights.noResults": {
     "message": "Keine Insights gefunden."
   },
-  "insights.footer.text": {
-    "message": "Letzte Aktualisierung: {lastUpdated}. Charts verwenden Echtzeitdaten."
+  "ambassadors.overview.title": {
+    "message": "Wer sind die Cardano-Ambassadors?"
   },
-
+  "ambassadors.overview.description": {
+    "message": "Entdecke die Profile von {count} Cardano-Ambassadors aus {countries} Ländern – jeder einzelne trägt dazu bei, Cardanos Vision weltweit zu verbreiten."
+  },
+  "ambassadors.program.divider": {
+    "message": "Ambassador-Programm"
+  },
+  "ambassadors.program.title": {
+    "message": "Das Cardano-Ambassador-Programm"
+  },
+  "ambassadors.program.description1": {
+    "message": "Die Cardano-Community hat engagierte Mitglieder, die aktiv zum Wachstum und zur Dezentralisierung des Ökosystems beitragen. Diese engagierten Personen – die Cardano-Ambassadors – spielen eine entscheidende Rolle dabei, Aufmerksamkeit und Beteiligung durch ihre wirkungsvollen Beiträge zu fördern."
+  },
+  "ambassadors.program.description2": {
+    "message": "Die Ambassadors kommen aus unterschiedlichsten Bereichen, Altersgruppen und Berufen und vertreten Länder auf der ganzen Welt. Sie erstellen wertvolle Inhalte in mehr als 17 Sprachen. Neue Ambassadors werden durch einen Prüfprozess aufgenommen, der Personen hervorhebt, die durch Wirkung, Engagement und den Einsatz für ein starkes Ökosystem überzeugen."
+  },
+  "ambassadors.program.description3": {
+    "message": "Seit der Gründung 2018 wurde das Ambassador-Programm mehrfach aktualisiert. Die aktuelle Phase legt den Fokus auf Wirkung und Transparenz – so wird sichergestellt, dass Beiträge fair gemessen und anerkannt werden. Die Anerkennung erfolgt sowohl durch finanzielle Vergütung als auch durch nicht-monetäre Anreize wie frühzeitigen Zugang zu Bildungsressourcen, Networking-Möglichkeiten und mehr Sichtbarkeit in der Community."
+  },
+  "ambassadors.roles.contentCreation.title": {
+    "message": "Content-Erstellung"
+  },
+  "ambassadors.roles.contentCreation.description": {
+    "message": "Videos, fundierte Artikel, informative Threads, Grafiken und Podcasts erstellen, die bilden und inspirieren. [Aktuelle Cardano-Inhalte findest du hier.](https://cardano.org/news)"
+  },
+  "ambassadors.roles.meetups.title": {
+    "message": "Meetups & Events"
+  },
+  "ambassadors.roles.meetups.description": {
+    "message": "Vor-Ort- und Online-Treffen, Workshops und Hackathons organisieren, die lokale Communities zusammenbringen. [Finde Events in deiner Nähe.](https://luma.com/CardanoEvents)"
+  },
+  "ambassadors.roles.education.title": {
+    "message": "Bildung & Advocacy"
+  },
+  "ambassadors.roles.education.description": {
+    "message": "Seminare veranstalten, für die Einführung von Blockchain werben und Bildungsinitiativen an Institutionen unterstützen. [Entdecke Cardanos Forschung.](https://cardano.org/research)"
+  },
+  "ambassadors.roles.business.title": {
+    "message": "Business Development"
+  },
+  "ambassadors.roles.business.description": {
+    "message": "Partnerschaften aufbauen und Community-getriebene Projekte leiten, um Cardanos Einfluss zu erweitern. [Entdecke Anwendungsfälle.](https://cardano.org/use-cases)"
+  },
+  "ambassadors.roles.software.title": {
+    "message": "Softwareentwicklung"
+  },
+  "ambassadors.roles.software.description": {
+    "message": "An Open-Source-Projekten mitwirken, Cardano Improvement Proposals (CIPs) verfassen und Tools für das Ökosystem entwickeln. [Hier starten.](https://cardano.org/developers)"
+  },
+  "ambassadors.roles.translations.title": {
+    "message": "Übersetzungen"
+  },
+  "ambassadors.roles.translations.description": {
+    "message": "Cardanos Reichweite erweitern, indem wichtige Inhalte in zahlreiche Sprachen übersetzt werden. [Zum Forum.](https://forum.cardano.org/)"
+  },
+  "ambassadors.roles.moderation.title": {
+    "message": "Moderation"
+  },
+  "ambassadors.roles.moderation.description": {
+    "message": "Online-Diskussionen in über 50 [Kanälen](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 Sprachen auf 9 Plattformen moderieren – für produktive und einladende Räume in offiziellen und Community-Kanälen. Alle Community-Mitglieder müssen rechtmäßig, ethisch und im besten Interesse des Projekts handeln und den [Community Code of Conduct](https://cardano.org/community-code-of-conduct/) befolgen."
+  },
+  "ambassadors.roles.innovative.title": {
+    "message": "Innovative Beiträge"
+  },
+  "ambassadors.roles.innovative.description": {
+    "message": "Von Bildungskampagnen bis zu bahnbrechenden Community-Projekten – jede Initiative hinterlässt einen nachhaltigen Eindruck."
+  },
+  "ambassadors.roles.divider": {
+    "message": "Beiträge der Ambassadors"
+  },
+  "ambassadors.roles.title": {
+    "message": "Beiträge der Ambassadors"
+  },
+  "ambassadors.roles.description": {
+    "message": "Cardano-Ambassadors fördern das Community-Wachstum durch vielfältige Initiativen:"
+  },
+  "enterprise.label.solutions": {
+    "message": "Lösungen"
+  },
+  "enterprise.label.products": {
+    "message": "Produkte"
+  },
+  "enterprise.learnMore": {
+    "message": "Mehr erfahren"
+  },
+  "governance.blue.title": {
+    "message": "Ein Modell, das niemanden ausgrenzt und allen Macht verleiht."
+  },
+  "governance.blue.text": {
+    "message": "Unsere heutigen Systeme funktionieren nicht für alle. Eine bessere, positivere Zukunft ist möglich. Soll die Welt den Vielen dienen, muss sie von den Vielen getragen werden. Konsens muss den Fortschritt antreiben – und wo Uneinigkeit herrscht, kreative Lösungen hervorbringen."
+  },
+  "governanceCharts.searchPlaceholder": {
+    "message": "Charts durchsuchen ..."
+  },
+  "governanceCharts.parametersButton": {
+    "message": "Parameter"
+  },
+  "governanceCharts.availableParameters": {
+    "message": "Verfügbare Parameter"
+  },
+  "governanceCharts.clearAll": {
+    "message": "Alle zurücksetzen"
+  },
+  "governanceCharts.selectCategory": {
+    "message": "Kategorie wählen"
+  },
+  "governanceCharts.searchAndParamResults": {
+    "message": "Such- & Parameter-gefilterte Charts"
+  },
+  "governanceCharts.searchResults": {
+    "message": "Suchergebnisse"
+  },
+  "governanceCharts.paramFilteredCharts": {
+    "message": "Parameter-gefilterte Charts"
+  },
+  "governanceCharts.parameterDetails": {
+    "message": "Parameter-Details"
+  },
+  "governanceCharts.noResults.searchAndParams": {
+    "message": "Keine Charts gefunden für ‚{searchTerm}' mit den gewählten Parametern."
+  },
+  "governanceCharts.noResults.search": {
+    "message": "Keine Charts gefunden für ‚{searchTerm}'"
+  },
+  "governanceCharts.noResults.params": {
+    "message": "Keine Charts mit den gewählten Parametern gefunden."
+  },
+  "governanceCharts.selectChart": {
+    "message": "Chart auswählen:"
+  },
+  "governanceCharts.emptyState": {
+    "message": "Noch keine Charts für diese Kategorie verfügbar."
+  },
+  "governanceCharts.initialPrompt": {
+    "message": "Wähle eine Kategorie, um Governance Charts anzuzeigen, oder nutze die Suche."
+  },
+  "governanceGraphs.fallback.unavailable": {
+    "message": "Diagramm-Darstellung nicht verfügbar"
+  },
+  "governanceGraphs.fallback.preview": {
+    "message": "Datenvorschau:"
+  },
+  "governanceGraphs.downloading": {
+    "message": "Wird heruntergeladen ..."
+  },
+  "governanceGraphs.downloadImage": {
+    "message": "Bild herunterladen"
+  },
+  "governance.voltaire.text1": {
+    "message": "Dezentralisierung beginnt mit der Technologie – mit Shelley –, wird aber erst dann wirklich erreicht, wenn keine einzelne Instanz die Kontrolle hat. Das Leitprinzip: Umverteilung der Macht. Globale Netzwerke, die nicht von einer Zentrale definiert werden, sondern von jedem Teilnehmer. Das ist der Zweck von Voltaire."
+  },
+  "governance.voltaire.text2": {
+    "message": "Voltaire gibt der Cardano-Community die Möglichkeit, wichtige Entscheidungen über Software-Updates, technische Verbesserungen und Finanzierung zu treffen. Diese sogenannten"
+  },
+  "governance.voltaire.text2b": {
+    "message": " ermöglichen es, die Zukunft von Cardano durch die Community zu bestimmen und aus dem Treasury der Plattform zu finanzieren."
+  },
+  "governance.voltaire.text3": {
+    "message": "Die Ära bringt auch eine Reihe von Experimenten mit sich – zu Themen wie dezentraler Governance, den Dynamiken von Demokratie und Konsens –, um Voltaire von der Forschung in die Praxis zu überführen. Wenn Shelley das Fundament eines global koordinierten Netzwerks ohne zentrale Autorität gelegt hat, dann erkundet Voltaire den Apparat für gemeinsame Entscheidungsfindung: die Sprache der Dezentralisierung."
+  },
+  "governance.voltaire.buttonText": {
+    "message": "Forschung lesen"
+  },
+  "quiz.ui.noQuestions": {
+    "message": "Keine Quizfragen verfügbar."
+  },
+  "quiz.ui.greatJob": {
+    "message": "Gut gemacht!"
+  },
+  "quiz.ui.keepLearning": {
+    "message": "Weiter lernen!"
+  },
+  "quiz.ui.scoreText": {
+    "message": "Du hast {score} von {totalQuestions} richtig"
+  },
+  "quiz.ui.tryAgain": {
+    "message": "Nochmal versuchen"
+  },
+  "quiz.ui.correct": {
+    "message": "Richtig!"
+  },
+  "quiz.ui.incorrect": {
+    "message": "Falsch"
+  },
+  "quiz.ui.explanation": {
+    "message": "Erklärung"
+  },
+  "quiz.ui.checkAnswer": {
+    "message": "Antwort prüfen"
+  },
+  "quiz.ui.nextQuestion": {
+    "message": "Nächste Frage"
+  },
+  "quiz.ui.finishQuiz": {
+    "message": "Quiz beenden"
+  },
+  "research.headings.papers": {
+    "message": "Papers"
+  },
+  "research.headings.specifications": {
+    "message": "Spezifikationen"
+  },
+  "research.byron.subtitle": {
+    "message": "Grundstein"
+  },
+  "research.byron.description": {
+    "message": "Eine Phase, in der ein föderiertes Netzwerk aufgebaut wurde, das den Kauf und Verkauf von Ada ermöglichte. Das Netzwerk lief mit dem Proof-of-Stake-Konsensprotokoll Ouroboros."
+  },
+  "research.shelley.subtitle": {
+    "message": "Dezentralisierung"
+  },
+  "research.shelley.description": {
+    "message": "Eine Phase des Wachstums mit Fokus auf Dezentralisierung. Mehr Sicherheit und ein robusteres Netzwerk – ermöglicht durch den Übergang zu einem System, in dem die Mehrheit der Nodes von Netzwerkteilnehmern betrieben wird."
+  },
+  "research.goguen.subtitle": {
+    "message": "Smart Contracts"
+  },
+  "research.goguen.description": {
+    "message": "Die Goguen-Ära brachte Smart-Contract-Funktionalität und ermöglichte dezentrale Anwendungen – mit Unterstützung für Multi-Asset-Token, fungible und nicht-fungible Token-Standards."
+  },
+  "research.basho.subtitle": {
+    "message": "Skalierung"
+  },
+  "research.basho.description": {
+    "message": "Eine Ära der Optimierung – mit Fokus auf Skalierbarkeit und Interoperabilität. Basho führt Sidechains ein: neue Blockchains, die mit der Cardano-Hauptchain interagieren und das Potenzial des Netzwerks erheblich erweitern."
+  },
+  "research.voltaire.subtitle": {
+    "message": "Governance"
+  },
+  "research.voltaire.description": {
+    "message": "Die aktuelle Entwicklungsphase macht Cardano zu einem sich selbst tragenden System. Voltaire führt ein Abstimmungs- und Treasury-System ein, mit dem Netzwerkteilnehmer ihren Stake und ihre Stimmrechte nutzen können, um die Zukunft der Blockchain mitzugestalten."
+  },
+  "solutions.card.learnMore": {
+    "message": "Mehr erfahren"
+  },
+  "solutions.section.title": {
+    "message": "Enterprise-Lösungen"
+  },
+  "termExplainer.divider": {
+    "message": "{category}-Begriffe, die du kennen solltest"
+  },
+  "apps.stickyButton": {
+    "message": "APP HINZUFÜGEN"
+  },
+  "insightsGovernance.meta.pageTitle": {
+    "message": "Cardano Governance Action Charts"
+  },
+  "insightsGovernance.meta.pageDescription": {
+    "message": "Visuelle Darstellung der Cardano Governance Action-Prozessabläufe."
+  },
+  "insightsGovernance.meta.title": {
+    "message": "Cardano Governance Actions"
+  },
+  "insightsGovernance.og.title": {
+    "message": "Cardano Governance Actions"
+  },
+  "insightsGovernance.og.description": {
+    "message": "Die Ablauflogik der Cardano Governance Actions erkunden."
+  },
+  "insightsGovernance.page.title": {
+    "message": "Cardano Governance Action Charts"
+  },
+  "insightsGovernance.page.description": {
+    "message": "Cardano Governance Action-Abläufe als visuelle Charts erkunden"
+  },
+  "insightsGovernance.page.keywords": {
+    "message": "Cardano, Governance, Action, DRep, SPO, Abstimmung, Schwellenwert"
+  },
+  "insightsGovernance.intro.paragraph1": {
+    "message": "**Governance Actions Insights** visualisiert die sieben Cardano Governance Action-Typen als Flowcharts. Jeder Chart zeigt den Lebenszyklus (Einreichung → Ratifizierung → Inkrafttreten), wer abstimmt (DReps, SPOs, Constitutional Committee) und die Schwellenwerte. Die meisten Actions erfordern die Zustimmung von **mindestens zwei der drei** Gremien; einige erfordern **alle drei**. Definitionen und vollständige Schwellenwerte findest du im [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/)."
+  },
+  "insightsGovernance.intro.paragraph2": {
+    "message": "Wähle eine **Kategorie** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes) und dann einen **Chart**. Folge den Knoten; **violette Boxen** zeigen Schwellenwerte und Reihenfolge des Inkrafttretens. Du kannst das Diagramm **herunterladen** oder einfach die **URL teilen** – die Adressleiste aktualisiert sich passend zum angezeigten Chart. Die formale Grundlage findest du in der **Cardano Constitution – Appendix I: Guardrails** [Verfassung](/constitution)."
+  },
+  "insightsGovernance.intro.paragraph3": {
+    "message": "Bei **Protocol Parameter Changes** unterscheiden die Charts zwischen routinemäßigen Updates (typischerweise **DReps + CC**) und **sicherheitskritischen Parametern**, die zusätzlich die **Zustimmung der SPOs** erfordern – also alle drei Gremien. Appendix I listet die kritischen Parameter und ihre erlaubten Wertebereiche auf."
+  },
+  "insightsGovernance.divider.charts": {
+    "message": "Governance Action Charts"
+  },
   "insightsSupply.meta.pageTitle": {
     "message": "Cardano-Angebotsübersicht"
   },
@@ -2689,7 +3569,120 @@
   "insightsSupply.faq.q5.question": {
     "message": "F: Wo erfahre ich mehr über die Cardano-Mainnet-Reward-Berechnung?"
   },
-
+  "insightsSupplySummary.meta.pageTitle": {
+    "message": "Cardano Supply Summary"
+  },
+  "insightsSupplySummary.meta.pageDescription": {
+    "message": "Historical analysis of Cardano ada supply distribution across reserves, rewards, treasury, and deposits."
+  },
+  "insightsSupplySummary.meta.title": {
+    "message": "Cardano Supply Summary"
+  },
+  "insightsSupplySummary.og.title": {
+    "message": "Cardano Supply Summary"
+  },
+  "insightsSupplySummary.og.description": {
+    "message": "Explore historical trends in Cardano supply distribution, reserves, rewards, treasury, and deposits."
+  },
+  "insightsSupplySummary.intro.description": {
+    "message": "**Explore historical trends in Cardano ada supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time."
+  },
+  "insightsSupplySummary.epochSelect.title": {
+    "message": "Select Epoch Range"
+  },
+  "insightsSupplySummary.epochSelect.start": {
+    "message": "Start:"
+  },
+  "insightsSupplySummary.epochSelect.end": {
+    "message": "End:"
+  },
+  "insightsSupplySummary.loading.initial": {
+    "message": "Loading all epoch data (this may take a moment)..."
+  },
+  "insightsSupplySummary.loading.data": {
+    "message": "Loading data..."
+  },
+  "insightsSupplySummary.loading.loaded": {
+    "message": "Loaded {count} epochs. Adjust the slider to filter the range."
+  },
+  "insightsSupplySummary.loading.currentEpoch": {
+    "message": "Loading current epoch..."
+  },
+  "insightsSupplySummary.toc.title": {
+    "message": "Contents"
+  },
+  "insightsSupplySummary.toc.reserves": {
+    "message": "Reserves Evolution"
+  },
+  "insightsSupplySummary.toc.rewards": {
+    "message": "Distributed Rewards"
+  },
+  "insightsSupplySummary.toc.treasury": {
+    "message": "Treasury Evolution"
+  },
+  "insightsSupplySummary.toc.deposits": {
+    "message": "Deposits"
+  },
+  "insightsSupplySummary.reserves.divider": {
+    "message": "Reserves Evolution"
+  },
+  "insightsSupplySummary.rewards.divider": {
+    "message": "Distributed Rewards"
+  },
+  "insightsSupplySummary.treasury.divider": {
+    "message": "Treasury Evolution"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.divider": {
+    "message": "Treasury Withdrawals in Selected Range"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.table.epoch": {
+    "message": "Epoch"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.table.title": {
+    "message": "Title"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.table.amount": {
+    "message": "Amount (ada)"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.table.explorer": {
+    "message": "Explorer"
+  },
+  "insightsSupplySummary.treasuryWithdrawals.table.view": {
+    "message": "View"
+  },
+  "insightsSupplySummary.deposits.divider": {
+    "message": "Deposits"
+  },
+  "insightsTemplate.meta.pageTitle": {
+    "message": "Insights Template | cardano.org"
+  },
+  "insightsTemplate.meta.pageDescription": {
+    "message": "Insights Template"
+  },
+  "insightsTemplate.meta.title": {
+    "message": "This is just an insights template"
+  },
+  "insightsTemplate.og.title": {
+    "message": "This is just an insights template | Cardano.org"
+  },
+  "insightsTemplate.og.description": {
+    "message": "Detailed description for open graph pages, and more."
+  },
+  "insightsTemplate.page.keywords": {
+    "message": "Cardano, Insights, Template"
+  },
+  "insightsTemplate.content.paragraph1": {
+    "message": "You don't need to use TitleWithText or similar components—plain HTML is fine."
+  },
+  "insightsTemplate.content.internalLinksLabel": {
+    "message": "For internal links use:"
+  },
+  "insightsTemplate.content.internalLinkText": {
+    "message": "where to get ada?"
+  },
+  "insightsTemplate.content.externalLinksLabel": {
+    "message": "For external links use:"
+  },
   "insightsTransactions.meta.pageTitle": {
     "message": "Cardano-Transaktionstrends"
   },
@@ -2714,11 +3707,11 @@
   "insightsTransactions.epochSelect.start": {
     "message": "Start:"
   },
-  "insightsTransactions.epochSelect.end": {
-    "message": "Ende:"
-  },
   "insightsTransactions.epochSelect.epoch": {
     "message": "Epoche"
+  },
+  "insightsTransactions.epochSelect.end": {
+    "message": "Ende:"
   },
   "insightsTransactions.loading.initial": {
     "message": "Lade alle Epochendaten (das kann einen Moment dauern)..."
@@ -2771,688 +3764,13 @@
   "insightsTransactions.combined.divider": {
     "message": "Transaktionen & Gebühren kombiniert"
   },
-
-  "insightsGovernance.meta.pageTitle": {
-    "message": "Cardano Governance Action Charts"
+  "insights.footer.text": {
+    "message": "Letzte Aktualisierung: {lastUpdated}. Charts verwenden Echtzeitdaten."
   },
-  "insightsGovernance.meta.pageDescription": {
-    "message": "Visuelle Darstellung der Cardano Governance Action-Prozessabläufe."
+  "apps.card.getStarted": {
+    "message": "Loslegen"
   },
-  "insightsGovernance.meta.title": {
-    "message": "Cardano Governance Actions"
-  },
-  "insightsGovernance.og.title": {
-    "message": "Cardano Governance Actions"
-  },
-  "insightsGovernance.og.description": {
-    "message": "Die Ablauflogik der Cardano Governance Actions erkunden."
-  },
-  "insightsGovernance.page.title": {
-    "message": "Cardano Governance Action Charts"
-  },
-  "insightsGovernance.page.description": {
-    "message": "Cardano Governance Action-Abläufe als visuelle Charts erkunden"
-  },
-  "insightsGovernance.page.keywords": {
-    "message": "Cardano, Governance, Action, DRep, SPO, Abstimmung, Schwellenwert"
-  },
-  "insightsGovernance.intro.paragraph1": {
-    "message": "**Governance Actions Insights** visualisiert die sieben Cardano Governance Action-Typen als Flowcharts. Jeder Chart zeigt den Lebenszyklus (Einreichung → Ratifizierung → Inkrafttreten), wer abstimmt (DReps, SPOs, Constitutional Committee) und die Schwellenwerte. Die meisten Actions erfordern die Zustimmung von **mindestens zwei der drei** Gremien; einige erfordern **alle drei**. Definitionen und vollständige Schwellenwerte findest du im [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/)."
-  },
-  "insightsGovernance.intro.paragraph2": {
-    "message": "Wähle eine **Kategorie** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes) und dann einen **Chart**. Folge den Knoten; **violette Boxen** zeigen Schwellenwerte und Reihenfolge des Inkrafttretens. Du kannst das Diagramm **herunterladen** oder einfach die **URL teilen** – die Adressleiste aktualisiert sich passend zum angezeigten Chart. Die formale Grundlage findest du in der **Cardano Constitution – Appendix I: Guardrails** [Verfassung](/constitution)."
-  },
-  "insightsGovernance.intro.paragraph3": {
-    "message": "Bei **Protocol Parameter Changes** unterscheiden die Charts zwischen routinemäßigen Updates (typischerweise **DReps + CC**) und **sicherheitskritischen Parametern**, die zusätzlich die **Zustimmung der SPOs** erfordern – also alle drei Gremien. Appendix I listet die kritischen Parameter und ihre erlaubten Wertebereiche auf."
-  },
-  "insightsGovernance.divider.charts": {
-    "message": "Governance Action Charts"
-  },
-
-  "constitution.hero.title": {
-    "message": "Die Cardano-Verfassung"
-  },
-  "constitution.hero.description": {
-    "message": "Die Cardano-Verfassung – das Governance-Fundament der Cardano-Blockchain."
-  },
-  "constitution.layout.title": {
-    "message": "Die Cardano-Verfassung | cardano.org"
-  },
-  "constitution.layout.description": {
-    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
-  },
-  "constitution.error.title": {
-    "message": "Aktuelle gültige Verfassung"
-  },
-  "constitution.error.localCopy": {
-    "message": "(Lokale Kopie)"
-  },
-  "constitution.error.fetchError": {
-    "message": "Daten von data.cardano.org konnten nicht geladen werden:"
-  },
-  "constitution.error.showingLocal": {
-    "message": "Lokale Kopie wird angezeigt."
-  },
-  "constitution.error.loadDocument": {
-    "message": "Verfassungsdokument konnte nicht geladen werden:"
-  },
-  "constitution.link.download": {
-    "message": "Verfassung herunterladen"
-  },
-  "constitution.link.viewRawMarkdown": {
-    "message": "Rohtext anzeigen"
-  },
-  "constitution.link.viewOnIPFS": {
-    "message": "Auf IPFS ansehen"
-  },
-  "constitution.link.viewOnIPFSHistory": {
-    "message": "Diese Verfassung auf IPFS ansehen"
-  },
-  "constitution.loading.versions": {
-    "message": "Verfassungsversionen werden geladen ..."
-  },
-  "constitution.loading.document": {
-    "message": "Dokument wird geladen ..."
-  },
-  "constitution.enacted.title": {
-    "message": "Aktuelle Cardano-Verfassung"
-  },
-  "constitution.enacted.description": {
-    "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
-  },
-  "constitution.history.title": {
-    "message": "Ratifizierungshistorie"
-  },
-  "constitution.history.description": {
-    "message": "Hier findest du die Cardano-Verfassung und ihre Ratifizierungshistorie. Klicke auf eine Version, um den vollständigen Text auf IPFS zu lesen."
-  },
-  "constitution.history.versionRatified": {
-    "message": "Version ratifiziert in Epoche"
-  },
-  "constitution.history.enactedAtEpoch": {
-    "message": "In Kraft seit Epoche"
-  },
-  "constitution.history.hash": {
-    "message": "Hash:"
-  },
-
-  "governance.hero.title": {
-    "message": "Governance auf Cardano"
-  },
-  "governance.hero.description": {
-    "message": "Cardano basiert auf einem sicheren, dezentralen System – Ada-Halter gestalten die Entwicklung der Plattform und beeinflussen die Richtung des Ökosystems."
-  },
-  "governance.meta.title": {
-    "message": "Governance auf Cardano | cardano.org"
-  },
-  "governance.meta.description": {
-    "message": "Cardano setzt auf ein sicheres, dezentrales Governance-System, das jedem Ada-Halter eine Stimme gibt. Die Community steuert gemeinsam die Weiterentwicklung der Plattform – von Kern-Upgrades über Anwendungen bis hin zu Services."
-  },
-  "governance.divider.withinCardano": {
-    "message": "Governance bei Cardano"
-  },
-  "governance.withinCardano.text1": {
-    "message": "Cardano wird von seiner Community definiert. Das Governance-Modell zeigt, dass echte Demokratie möglich ist – eine, in der jeder Einzelne zum Mitwirken motiviert wird und Abstimmungen unveränderlich festgehalten werden. Token-Halter bestimmen die Zukunft der Plattform und entscheiden über den Einsatz der Treasury-Mittel."
-  },
-  "governance.withinCardano.text2": {
-    "message": "Dieses Modell und die wegweisende Technologie dahinter lassen sich auf jede Anwendung, jedes System und sogar auf ganze Gesellschaften übertragen. Es ist ein Entwurf für Veränderung – getragen von vielen, nicht nur von wenigen –, der Macht umverteilt, Mittelsmänner beseitigt und das Leben aller verbessert."
-  },
-  "governance.withinCardano.quote": {
-    "message": "Wandel beginnt mit einer Stimme – und wird Wirklichkeit durch das Zusammenwirken vieler."
-  },
-  "governance.withinCardano.buttonText": {
-    "message": "Auf dem Laufenden bleiben"
-  },
-  "governance.divider.delegateVoting": {
-    "message": "Stimmrecht delegieren"
-  },
-  "governance.delegateVoting.text": {
-    "message": "Delegation bedeutet, dein Stimmrecht – entsprechend deinem Ada-Guthaben – einem Delegate Representative (DRep) zu übertragen, der in deinem Namen abstimmt, ähnlich einem Parlamentsabgeordneten. Alternativ kannst du automatisch abstimmen: Enthaltung oder ‚Kein Vertrauen' bei allen Vorschlägen."
-  },
-  "governance.delegateVoting.buttonText": {
-    "message": "DRep finden"
-  },
-  "governance.divider.becomeDRep": {
-    "message": "DRep auf Cardano werden"
-  },
-  "governance.becomeDRep.text1": {
-    "message": "DReps sind zentrale Akteure in der Cardano-Governance. Sie beteiligen sich aktiv und vertreten andere Community-Mitglieder. DReps müssen über Governance Actions informiert bleiben, um fundierte Entscheidungen zu treffen."
-  },
-  "governance.becomeDRep.text2": {
-    "message": "Wenn du die Zeit und das Engagement hast, zur Governance von Cardano beizutragen, registriere dich als DRep. Eine erstattungsfähige Kaution von 500 Ada ist erforderlich und wird bei Rücktritt zurückgezahlt."
-  },
-  "governance.becomeDRep.buttonText": {
-    "message": "DRep werden"
-  },
-  "governance.divider.viewActions": {
-    "message": "Governance Actions auf Cardano ansehen"
-  },
-  "governance.viewActions.text": {
-    "message": "Bleib informiert und beteilige dich an Cardanos dezentraler Governance. Sieh dir alle On-Chain-Aktionen an – eingereichte, ratifizierte, in Kraft getretene, abgelaufene und zurückgezogene. Verfolge laufende Vorschläge, beobachte ihren Fortschritt und verstehe ihre Auswirkungen auf das Netzwerk. Deine Beteiligung hilft, die Zukunft von Cardano zu gestalten."
-  },
-  "governance.viewActions.buttonText": {
-    "message": "Governance Actions"
-  },
-  "governance.divider.whyVoltaire": {
-    "message": "Warum Voltaire"
-  },
-  "governance.divider.actionCharts": {
-    "message": "Governance Action Charts"
-  },
-  "governance.actionCharts.text": {
-    "message": "Entdecke, wie Cardano-Governance funktioniert – mit interaktiven Charts, die jede Governance Action veranschaulichen. Prozesse, Regeln und Schwellenwerte auf einen Blick – visuell erklärt für schnelles Verständnis."
-  },
-  "governance.actionCharts.buttonText": {
-    "message": "Governance Action Charts"
-  },
-  "governance.blue.title": {
-    "message": "Ein Modell, das niemanden ausgrenzt und allen Macht verleiht."
-  },
-  "governance.blue.text": {
-    "message": "Unsere heutigen Systeme funktionieren nicht für alle. Eine bessere, positivere Zukunft ist möglich. Soll die Welt den Vielen dienen, muss sie von den Vielen getragen werden. Konsens muss den Fortschritt antreiben – und wo Uneinigkeit herrscht, kreative Lösungen hervorbringen."
-  },
-  "governance.voltaire.text1": {
-    "message": "Dezentralisierung beginnt mit der Technologie – mit Shelley –, wird aber erst dann wirklich erreicht, wenn keine einzelne Instanz die Kontrolle hat. Das Leitprinzip: Umverteilung der Macht. Globale Netzwerke, die nicht von einer Zentrale definiert werden, sondern von jedem Teilnehmer. Das ist der Zweck von Voltaire."
-  },
-  "governance.voltaire.text2": {
-    "message": "Voltaire gibt der Cardano-Community die Möglichkeit, wichtige Entscheidungen über Software-Updates, technische Verbesserungen und Finanzierung zu treffen. Diese sogenannten"
-  },
-  "governance.voltaire.text2b": {
-    "message": " ermöglichen es, die Zukunft von Cardano durch die Community zu bestimmen und aus dem Treasury der Plattform zu finanzieren."
-  },
-  "governance.voltaire.text3": {
-    "message": "Die Ära bringt auch eine Reihe von Experimenten mit sich – zu Themen wie dezentraler Governance, den Dynamiken von Demokratie und Konsens –, um Voltaire von der Forschung in die Praxis zu überführen. Wenn Shelley das Fundament eines global koordinierten Netzwerks ohne zentrale Autorität gelegt hat, dann erkundet Voltaire den Apparat für gemeinsame Entscheidungsfindung: die Sprache der Dezentralisierung."
-  },
-  "governance.voltaire.buttonText": {
-    "message": "Forschung lesen"
-  },
-
-  "signalGovernance.layout.title": {
-    "message": "Interesse an Governance bekunden"
-  },
-  "signalGovernance.layout.description": {
-    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
-  },
-  "signalGovernance.openGraph.title": {
-    "message": "Interesse an Governance bekunden"
-  },
-  "signalGovernance.openGraph.description": {
-    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
-  },
-  "signalGovernance.hero.title": {
-    "message": "Interesse an Governance bekunden"
-  },
-  "signalGovernance.hero.description": {
-    "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
-  },
-  "signalGovernance.divider.text": {
-    "message": "Governance"
-  },
-
-  "events.hero.title": {
-    "message": "Cardano-Events"
-  },
-  "events.hero.description": {
-    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
-  },
-  "events.meta.title": {
-    "message": "Cardano-Events | cardano.org"
-  },
-  "events.meta.description": {
-    "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
-  },
-  "events.divider.discoverWorldwide": {
-    "message": "Cardano-Events weltweit entdecken"
-  },
-  "events.platforms.luma": {
-    "message": "Events auf Luma.com"
-  },
-  "events.platforms.meetup": {
-    "message": "Events auf Meetup.com"
-  },
-  "events.divider.upcomingHighlighted": {
-    "message": "Kommende Event-Highlights"
-  },
-  "events.divider.pastHighlighted": {
-    "message": "Vergangene Event-Highlights"
-  },
-  "events.recapAvailable": {
-    "message": "Zusammenfassung verfügbar:"
-  },
-  "events.watchHere": {
-    "message": "Hier ansehen"
-  },
-  "events.pagination.previous": {
-    "message": "Zurück"
-  },
-  "events.pagination.next": {
-    "message": "Weiter"
-  },
-
-  "termExplainer.divider": {
-    "message": "{category}-Begriffe, die du kennen solltest"
-  },
-
-  "governanceCharts.searchPlaceholder": {
-    "message": "Charts durchsuchen ..."
-  },
-  "governanceCharts.parametersButton": {
-    "message": "Parameter"
-  },
-  "governanceCharts.availableParameters": {
-    "message": "Verfügbare Parameter"
-  },
-  "governanceCharts.clearAll": {
-    "message": "Alle zurücksetzen"
-  },
-  "governanceCharts.selectCategory": {
-    "message": "Kategorie wählen"
-  },
-  "governanceCharts.searchAndParamResults": {
-    "message": "Such- & Parameter-gefilterte Charts"
-  },
-  "governanceCharts.searchResults": {
-    "message": "Suchergebnisse"
-  },
-  "governanceCharts.paramFilteredCharts": {
-    "message": "Parameter-gefilterte Charts"
-  },
-  "governanceCharts.parameterDetails": {
-    "message": "Parameter-Details"
-  },
-  "governanceCharts.noResults.searchAndParams": {
-    "message": "Keine Charts gefunden für ‚{searchTerm}' mit den gewählten Parametern."
-  },
-  "governanceCharts.noResults.search": {
-    "message": "Keine Charts gefunden für ‚{searchTerm}'"
-  },
-  "governanceCharts.noResults.params": {
-    "message": "Keine Charts mit den gewählten Parametern gefunden."
-  },
-  "governanceCharts.selectChart": {
-    "message": "Chart auswählen:"
-  },
-  "governanceCharts.emptyState": {
-    "message": "Noch keine Charts für diese Kategorie verfügbar."
-  },
-  "governanceCharts.initialPrompt": {
-    "message": "Wähle eine Kategorie, um Governance Charts anzuzeigen, oder nutze die Suche."
-  },
-
-  "governanceGraphs.fallback.unavailable": {
-    "message": "Diagramm-Darstellung nicht verfügbar"
-  },
-  "governanceGraphs.fallback.preview": {
-    "message": "Datenvorschau:"
-  },
-  "governanceGraphs.downloading": {
-    "message": "Wird heruntergeladen ..."
-  },
-  "governanceGraphs.downloadImage": {
-    "message": "Bild herunterladen"
-  },
-
-  "solutions.hero.title": {
-    "message": "Enterprise-Lösungen"
-  },
-  "solutions.hero.description": {
-    "message": "Erprobte Blockchain-Lösungen für Lieferketten, Identität und mehr."
-  },
-  "solutions.layout.title": {
-    "message": "Enterprise-Lösungen | cardano.org"
-  },
-  "solutions.layout.description": {
-    "message": "Erprobte Enterprise-Blockchain-Lösungen auf Cardano entdecken – von Lieferketten-Rückverfolgbarkeit bis zu digitalen Produktpässen."
-  },
-  "solutions.intro.description": {
-    "message": "Cardano treibt Enterprise-Lösungen in verschiedensten Branchen voran – mit der Sicherheit und Transparenz der Blockchain kombiniert mit praxisnahen Geschäftsanwendungen. Unsere erprobten Einsätze zeigen, wie Organisationen dezentrale Technologie für Lieferkettenmanagement, Produktauthentifizierung und Nachhaltigkeitsmonitoring nutzen."
-  },
-  "solutions.divider.explore": {
-    "message": "Anwendungsfälle entdecken"
-  },
-  "solutions.explore.description": {
-    "message": "Du suchst bestimmte Blockchain-Anwendungen? Entdecke unsere Übersicht mit Anwendungsfällen aus den Bereichen Identität, Finanzen, Lieferkette und mehr."
-  },
-  "solutions.explore.button": {
-    "message": "Alle Anwendungsfälle ansehen"
-  },
-  "solutions.cta.title": {
-    "message": "Bereit, auf Cardano zu entwickeln? Kontaktiere die Cardano Foundation und entdecke Partnerschaftsmöglichkeiten."
-  },
-  "solutions.cta.button": {
-    "message": "Kontakt aufnehmen"
-  },
-  "solutions.section.title": {
-    "message": "Enterprise-Lösungen"
-  },
-  "solutions.card.learnMore": {
-    "message": "Mehr erfahren"
-  },
-
-  "useCases.hero.title": {
-    "message": "Anwendungsfälle"
-  },
-  "useCases.hero.description": {
-    "message": "Wie die Cardano-Blockchain reale Probleme branchenübergreifend löst."
-  },
-  "useCases.layout.title": {
-    "message": "Enterprise-Anwendungsfälle | cardano.org"
-  },
-  "useCases.layout.description": {
-    "message": "Eine offene Plattform für Milliarden von Menschen ohne wirtschaftliche Identität – mit dezentralen Anwendungen für Identität, Wertübertragung und Governance."
-  },
-  "useCases.intro.description": {
-    "message": "Blockchain-Anwendungen aus verschiedenen Branchen entdecken – von Identitätsprüfung bis Lieferkettenverfolgung. Cardano bietet sichere, skalierbare Lösungen für reale Herausforderungen."
-  },
-  "useCases.divider.enterprise": {
-    "message": "Enterprise-Lösungen"
-  },
-  "useCases.enterprise.description": {
-    "message": "Du suchst erprobte Enterprise-Einsätze? Entdecke Fallstudien und praxisnahe Implementierungen der Cardano Foundation und ihrer Partner."
-  },
-  "useCases.enterprise.button": {
-    "message": "Enterprise-Lösungen ansehen"
-  },
-
-  "enterprise.label.solutions": {
-    "message": "Lösungen"
-  },
-  "enterprise.label.products": {
-    "message": "Produkte"
-  },
-  "enterprise.learnMore": {
-    "message": "Mehr erfahren"
-  },
-
-  "solutions.data.dpp.title": {
-    "message": "Digitaler Produktpass"
-  },
-  "solutions.data.dpp.description": {
-    "message": "EU-konforme digitale Produktpässe für Transparenz und Nachhaltigkeit."
-  },
-  "solutions.data.category.supplyChain": {
-    "message": "Lieferkette"
-  },
-  "solutions.data.traceability.title": {
-    "message": "Rückverfolgbarkeit"
-  },
-  "solutions.data.traceability.description": {
-    "message": "Lückenlose Lieferketten-Rückverfolgbarkeit mit Blockchain."
-  },
-  "solutions.data.authenticity.title": {
-    "message": "Authentizität"
-  },
-  "solutions.data.authenticity.description": {
-    "message": "Fälschungen bekämpfen mit blockchain-verifizierter Produktechtheit."
-  },
-  "solutions.data.sustainability.title": {
-    "message": "Nachhaltigkeit"
-  },
-  "solutions.data.sustainability.description": {
-    "message": "Nachhaltigkeitsversprechen mit unveränderlichen Aufzeichnungen überprüfen."
-  },
-  "solutions.data.storage.title": {
-    "message": "Dezentraler Speicher"
-  },
-  "solutions.data.storage.description": {
-    "message": "Sichere, verteilte Datenspeicherlösungen für Unternehmen."
-  },
-  "solutions.data.category.dataTech": {
-    "message": "Daten & Technologie"
-  },
-  "solutions.data.navio.description": {
-    "message": "Blockchain-basierte Lösung für Lieferkettenmanagement."
-  },
-  "solutions.data.caseStudies.title": {
-    "message": "Fallstudien"
-  },
-  "solutions.data.caseStudies.description": {
-    "message": "Praxisbeispiele für Cardano-Blockchain-Lösungen entdecken."
-  },
-
-  "useCases.category.identity": {
-    "message": "Identität"
-  },
-  "useCases.card.education.title": {
-    "message": "Bildung"
-  },
-  "useCases.card.education.summary": {
-    "message": "Blockchain-verifizierte akademische Nachweise"
-  },
-  "useCases.card.digitalIdentity.title": {
-    "message": "Digitale Identität"
-  },
-  "useCases.card.digitalIdentity.summary": {
-    "message": "Deine digitale Identität selbst kontrollieren"
-  },
-  "useCases.card.financeKyc.title": {
-    "message": "Finanz-KYC"
-  },
-  "useCases.card.financeKyc.summary": {
-    "message": "Vereinfachte Identitätsprüfung"
-  },
-  "useCases.card.government.title": {
-    "message": "Verwaltung"
-  },
-  "useCases.card.government.summary": {
-    "message": "Fälschungssichere Dokumente"
-  },
-  "useCases.category.finance": {
-    "message": "Finanzen"
-  },
-  "useCases.card.defi.summary": {
-    "message": "Dezentrales Leihen und Handeln"
-  },
-  "useCases.card.payments.title": {
-    "message": "Zahlungen"
-  },
-  "useCases.card.payments.summary": {
-    "message": "Schnelle, günstige grenzüberschreitende Überweisungen"
-  },
-  "useCases.category.supplyChain": {
-    "message": "Lieferkette"
-  },
-  "useCases.card.agriculture.title": {
-    "message": "Landwirtschaft"
-  },
-  "useCases.card.agriculture.summary": {
-    "message": "Rückverfolgbarkeit vom Feld bis zum Tisch"
-  },
-  "useCases.card.retail.title": {
-    "message": "Einzelhandel"
-  },
-  "useCases.card.retail.summary": {
-    "message": "Fälschungen bekämpfen durch Herkunftsnachweis"
-  },
-  "useCases.card.logistics.title": {
-    "message": "Logistik"
-  },
-  "useCases.card.logistics.summary": {
-    "message": "Echtzeit-Tracking und Verifizierung"
-  },
-  "useCases.category.socialImpact": {
-    "message": "Soziale Wirkung"
-  },
-  "useCases.card.socialPrograms.title": {
-    "message": "Sozialprogramme"
-  },
-  "useCases.card.socialPrograms.summary": {
-    "message": "Transparente Mittelverteilung"
-  },
-  "useCases.category.dataTech": {
-    "message": "Daten & Technologie"
-  },
-  "useCases.card.dataStorage.title": {
-    "message": "Datenspeicher"
-  },
-  "useCases.card.dataStorage.summary": {
-    "message": "Dezentrale, sichere Speicherung"
-  },
-  "useCases.card.tokenizedAssets.title": {
-    "message": "Tokenisierte Assets"
-  },
-  "useCases.card.tokenizedAssets.summary": {
-    "message": "Anteiliges Eigentum an realen Vermögenswerten"
-  },
-  "useCases.category.emerging": {
-    "message": "Neue Anwendungen"
-  },
-  "useCases.card.votingSystems.title": {
-    "message": "Wahlsysteme"
-  },
-  "useCases.card.votingSystems.summary": {
-    "message": "Sichere, transparente Wahlen"
-  },
-  "useCases.card.healthcare.title": {
-    "message": "Gesundheitswesen"
-  },
-  "useCases.card.healthcare.summary": {
-    "message": "Portable, sichere Gesundheitsdaten"
-  },
-  "useCases.card.musicIp.title": {
-    "message": "Musik & geistiges Eigentum"
-  },
-  "useCases.card.musicIp.summary": {
-    "message": "Tantiemen direkt an Künstler auszahlen"
-  },
-
-  "exchanges.hero.title": {
-    "message": "Cardano integrieren"
-  },
-  "exchanges.hero.description": {
-    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
-  },
-  "exchanges.layout.title": {
-    "message": "Cardano integrieren | cardano.org"
-  },
-  "exchanges.layout.description": {
-    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
-  },
-  "exchanges.intro.description": {
-    "message": "Es gibt verschiedene [Wege, Cardano zu integrieren](https://developers.cardano.org) – einer davon ist Adrestia. Das Adrestia-Team unterstützt Börsen- und Entwicklerintegrationen mit einem Wallet-SDK und APIs, die die Interaktion mit Cardano über Releases hinweg vereinfachen."
-  },
-  "exchanges.whyAdrestia.divider": {
-    "message": "Warum Adrestia?"
-  },
-  "exchanges.whyAdrestia.leftText": {
-    "message": "Blockchains – und besonders Cardano – entwickeln sich rasant. Mit neuen Releases Schritt zu halten, kann zur Wartungsherausforderung werden. Wir machen es so einfach wie möglich, mit Cardano zu entwickeln und zu integrieren. Über Adrestia passt sich Cardano an deine Systeme und Anforderungen an."
-  },
-  "exchanges.whyAdrestia.rightText": {
-    "message": "Verbesserungen an Cardano sollen nicht mehr Komplexität oder Ressourcenaufwand bedeuten. Wir wollen Neuerungen bereitstellen, sobald sie verfügbar und nötig sind – mal wenige Updates pro Monat, mal viele. Adrestia bietet ein konsistentes SDK und GraphQL-APIs, mit denen Entwickler Anwendungen erstellen und Kernkompatibilität mit dem Cardano-Netzwerk über Releases hinweg beibehalten können."
-  },
-  "exchanges.cta1.title": {
-    "message": "Konzentrier dich auf das Wesentliche. Den Rest übernehmen wir."
-  },
-  "exchanges.cta1.buttonLabel": {
-    "message": "Adrestia nutzen"
-  },
-  "exchanges.accessAdrestia.divider": {
-    "message": "Adrestia nutzen"
-  },
-  "exchanges.whatMakesDifferent.title": {
-    "message": "Was macht Adrestia besonders?"
-  },
-  "exchanges.whatMakesDifferent.description1": {
-    "message": "Cardanos Architektur ist auf Modularität und Anpassungsfähigkeit ausgelegt. Über Adrestia sparen Entwickler und Börsen erheblichen Wartungsaufwand und – vor allem – Zeit."
-  },
-  "exchanges.whatMakesDifferent.description2": {
-    "message": "Anders als die meisten Blockchain-API-Suites entkoppelt Adrestia zentrale Services vom Cardano-Core-Node. Das SDK und die APIs bleiben über Releases hinweg konsistent – Entwickler müssen die Plattform nicht bei jedem Release neu lernen. Adrestia bietet eigenständige Services und vielfältige Möglichkeiten zum Abfragen, Transagieren und Extrahieren von Informationen."
-  },
-  "exchanges.benefits.reduceTime.title": {
-    "message": "Time-to-Market verkürzen"
-  },
-  "exchanges.benefits.reduceTime.text": {
-    "message": "Anwendungen für Cardano entwickeln, ohne dir Sorgen machen zu müssen, dass neue Releases deinen Code brechen."
-  },
-  "exchanges.benefits.reduceDowntime.title": {
-    "message": "Ausfallzeiten reduzieren"
-  },
-  "exchanges.benefits.reduceDowntime.text": {
-    "message": "Weniger Abwärtskompatibilitätsprobleme bedeuten deutlich weniger Ausfallzeiten."
-  },
-  "exchanges.benefits.reduceMaintenance.title": {
-    "message": "Wartungskosten senken"
-  },
-  "exchanges.benefits.reduceMaintenance.text": {
-    "message": "Weniger Zeit und Ressourcen für die Anwendungskompatibilität über Releases hinweg aufwenden."
-  },
-  "exchanges.benefits.increaseProductivity.title": {
-    "message": "Produktivität steigern"
-  },
-  "exchanges.benefits.increaseProductivity.text": {
-    "message": "Konzentrier dich auf das Wesentliche – Anwendungs- und Wallet-Entwicklung – und überlass die Updates uns."
-  },
-  "exchanges.cta2.title": {
-    "message": "Erfahre, wie Komponenten mit dem Cardano-Core-Node zusammenarbeiten, und wähle die passende Komponente für deine Anforderungen."
-  },
-  "exchanges.cta2.buttonLabel": {
-    "message": "Core-Node-Architektur kennenlernen"
-  },
-  "exchanges.learnArchitecture.divider": {
-    "message": "Core-Node-Architektur kennenlernen"
-  },
-  "exchanges.howDoesItWork.title": {
-    "message": "Wie funktioniert es?"
-  },
-  "exchanges.howDoesItWork.description": {
-    "message": "Cardano führt eine zusätzliche Schicht zwischen Nutzern bzw. Entwicklern und dem Core-Node ein. Innerhalb dieser Schicht verfolgt und verwaltet unser Code-Node-Team komplexe Änderungen, potenzielle Probleme und Hard Forks, die aus Protokollverbesserungen entstehen. Wir implementieren nötige Updates in den Adrestia-Libraries und APIs und kümmern uns um die Wartung – damit du es nicht musst."
-  },
-  "exchanges.ctaTwoColumn.leftTitle": {
-    "message": "Adrestia-Benutzerhandbuch"
-  },
-  "exchanges.ctaTwoColumn.leftText": {
-    "message": "Erfahre mehr über Adrestia und was es für dich bedeuten kann. Unser Benutzerhandbuch ist eine praktische, unkomplizierte Ressource, die dir hilft, die richtigen Schritte zur richtigen Zeit zu unternehmen."
-  },
-  "exchanges.ctaTwoColumn.leftButtonLabel": {
-    "message": "Adrestia nutzen"
-  },
-  "exchanges.ctaTwoColumn.rightTitle": {
-    "message": "Adrestia-Komponenten & Flowchart-Guide"
-  },
-  "exchanges.ctaTwoColumn.rightText": {
-    "message": "Entdecke unsere eigenständigen Libraries und APIs und finde heraus, welche die richtige für dich ist."
-  },
-  "exchanges.ctaTwoColumn.rightButtonLabel": {
-    "message": "Mehr erfahren"
-  },
-
-  "developers.hero.title": {
-    "message": "Auf Cardano entwickeln"
-  },
-  "developers.hero.description": {
-    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
-  },
-  "developers.meta.title": {
-    "message": "Auf Cardano entwickeln | cardano.org"
-  },
-  "developers.meta.description": {
-    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
-  },
-  "developers.divider.resources": {
-    "message": "Entwickler-Ressourcen"
-  },
-  "developers.documentation.title": {
-    "message": "Dokumentation"
-  },
-  "developers.documentation.text": {
-    "message": "Hier findest du die wichtigsten Ressourcen und Updates, um auf der Cardano-Blockchain zu entwickeln, zu integrieren und informiert zu bleiben. Unten findest du Links zum Developer Portal, zur ausführlichen Dokumentation, zu Integrationsanleitungen und den neuesten Core-Development-Updates."
-  },
-  "developers.tools.title": {
-    "message": "Entwickler-Tools"
-  },
-  "developers.tools.text": {
-    "message": "Entdecke die Tools, Projekte und Updates, die das Cardano-Ökosystem formen. Unten findest du Links zu Entwickler-Tools, eine Übersicht der auf Cardano gebauten Projekte und einen technischen Update-Tracker, der Commits der letzten 7 Tage aus allen Branches der Cardano-Entwicklungs-Repos zusammenfasst."
-  },
-  "developers.support.title": {
-    "message": "Support"
-  },
-  "developers.support.text": {
-    "message": "Werde Teil der lebendigen Cardano-Entwickler-Community auf verschiedenen Plattformen. Unten findest du Links zum Cardano Stack Exchange, zum Cardano Forum und zur offiziellen Telegram-Gruppe. Tausch dich mit anderen Entwicklern aus, stell Fragen und teile Wissen in unserem dezentralen Ökosystem."
-  },
-  "developers.cta.title": {
-    "message": "Greif das Protokoll an, forke die Blockchain – oder lass es bleiben. Erlebe das Ouroboros-Protokoll hautnah in dieser interaktiven Simulation."
-  },
-  "developers.cta.buttonLabel": {
-    "message": "Spiel starten"
+  "apps.card.source": {
+    "message": "Quellcode"
   }
 }
