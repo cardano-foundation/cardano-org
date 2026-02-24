@@ -5,9 +5,9 @@ sidebar_label: Agriculture
 sidebar_position: 8
 ---
 
-# Agriculture
+# Agrarwirtschaft
 
-## The Challenge
+## Das Problem
 
 Modern food supply chains are complex and opaque. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
 
