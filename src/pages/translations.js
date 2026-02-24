@@ -4,6 +4,7 @@ import BoundaryBox from '@site/src/components/Layout/BoundaryBox';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 
 import progressData from '@site/src/data/translation-progress.json';
+import contributorsData from '@site/src/data/top-translators.json';
 
 function ProgressBar({ percentage }) {
   return (
@@ -61,6 +62,65 @@ function LocaleCard({ language }) {
   );
 }
 
+function TopContributors({ contributors }) {
+  if (!contributors || contributors.length === 0) return null;
+
+  return (
+    <div style={{ marginTop: '40px' }}>
+      <h2>Top Contributors</h2>
+      <p style={{ color: '#666', marginBottom: '20px' }}>
+        Recognising our most active translators by words translated.
+      </p>
+      <div style={{
+        border: '1px solid #ddd',
+        borderRadius: '8px',
+        overflow: 'hidden',
+        backgroundColor: 'var(--ifm-card-background-color)',
+      }}>
+        <table style={{
+          width: '100%',
+          borderCollapse: 'collapse',
+          margin: 0,
+        }}>
+          <thead>
+            <tr style={{ backgroundColor: 'var(--ifm-code-background)' }}>
+              <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: '1px solid #ddd' }}>#</th>
+              <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: '1px solid #ddd' }}>Contributor</th>
+              <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: '1px solid #ddd' }}>Languages</th>
+              <th style={{ padding: '12px 16px', textAlign: 'right', borderBottom: '1px solid #ddd' }}>Words</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contributors.map((c) => (
+              <tr key={c.rank} style={{ borderBottom: '1px solid #eee' }}>
+                <td style={{ padding: '10px 16px', fontWeight: 'bold', color: '#666' }}>{c.rank}</td>
+                <td style={{ padding: '10px 16px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    {c.avatarUrl && (
+                      <img
+                        src={c.avatarUrl}
+                        alt=""
+                        style={{ width: 24, height: 24, borderRadius: '50%' }}
+                      />
+                    )}
+                    {c.user}
+                  </div>
+                </td>
+                <td style={{ padding: '10px 16px', fontSize: '13px', color: '#666' }}>
+                  {c.languages.join(', ')}
+                </td>
+                <td style={{ padding: '10px 16px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
+                  {c.translated.toLocaleString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export default function TranslationsPage() {
   const { languages, lastUpdated } = progressData;
   const hasData = languages.length > 0;
@@ -107,6 +167,8 @@ export default function TranslationsPage() {
               {languages.map((language) => (
                 <LocaleCard key={language.id} language={language} />
               ))}
+
+              <TopContributors contributors={contributorsData.contributors} />
 
               {lastUpdated && (
                 <p style={{ fontSize: '13px', color: '#999', marginTop: '16px' }}>

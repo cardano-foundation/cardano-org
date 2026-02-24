@@ -1,0 +1,25 @@
+{
+  "lastUpdated": "2026-02-24T15:30:14.357Z",
+  "contributors": [
+    {
+      "rank": 1,
+      "user": "Markus Gufler (gufmar)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13770965/medium/40e5c1f696bf35b4efcc6a7de2bb109f.jpg",
+      "languages": [
+        "German"
+      ],
+      "translated": 21,
+      "approved": 0
+    },
+    {
+      "rank": 2,
+      "user": "Tommy Kammerer (adatainment)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15114815/medium/d1c1b44d524d9618cda3700773463c30.png",
+      "languages": [
+        "German"
+      ],
+      "translated": 15,
+      "approved": 0
+    }
+  ]
+}
