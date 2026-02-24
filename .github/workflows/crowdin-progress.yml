@@ -19,10 +19,16 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Commit updated progress
+      - name: Fetch Crowdin top contributors
+        run: node scripts/fetch-crowdin-contributors.js
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/translation-progress.json
+          git add src/data/translation-progress.json src/data/top-translators.json
           git diff --cached --quiet || git commit -m "chore: update translation progress from Crowdin"
           git push
