@@ -1,44 +1,44 @@
 ---
-title: Online-Communities
+title: Online Communities
 displayed_sidebar: null
-description: Cardano Online-Communities
+description: Cardano Online Communities
 ---
 
-Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. They’re all different and unique in their own way. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
+The Cardano community has many different social channels. They’re all different and unique in their own way. So here’s a list of all of our recommended community channels, join the ones you like and connect with fellow Cardano community members around the world!
 
-## Foren
+## Forums
 
-Strukturierte Diskussionen in Langformat.
+Enjoy structured long-format discussions.
 
-- [r/Cardano](https://www.reddit.com/r/cardano/) – Cardano-Community auf Reddit
-- [forum.cardano.org](https://forum.cardano.org) – das Cardano Forum
-- [Cardano Stackexchange](https://cardano.stackexchange.com) – Hilfe für Cardano-Entwickler
-- [Facebook-Gruppe](https://www.facebook.com/groups/CardanoCommunity/) – die Cardano Facebook-Gruppe
+- [r/Cardano](https://www.reddit.com/r/cardano/) - Cardano community on Reddit
+- [forum.cardano.org](https://forum.cardano.org) - the Cardano Forum
+- [Cardano Stackexchange](https://cardano.stackexchange.com) - help for Cardano developers
+- [Facebook Group](https://www.facebook.com/groups/CardanoCommunity/) - the Cardano Facebook Group
 
-## Veranstaltungen und lokale Treffen
+## Events and local gatherings
 
-Lerne die Cardano-Community bei Veranstaltungen vor Ort oder online kennen.
+Connect with the Cardano community at in-person or virtual events.
 
-- [Cardano auf Meetup](https://www.meetup.com/pro/cardano) – Cardano-Meetup-Gruppen weltweit.
-- [Cardano auf Luma](https://luma.com/CardanoEvents) – Cardano-Events weltweit.
+- [Cardano on Meetup](https://www.meetup.com/pro/cardano) - Cardano Meetup Groups around the world.
+- [Cardano on Luma](https://luma.com/CardanoEvents) - Cardano Luma Events around the world.
 
-## Cardano auf Telegram
+## Cardano on Telegram
 
-Echtzeit-Chat und schnelle Diskussionen.
+Real time chat and quick discussions.
 
 - Cardano Main: https://t.me/Cardano
 - Cardano Developers: https://t.me/CardanoDevelopersOfficial
-- Cardano Report to Admin: https://t.me/cardanoreporttoadmin – für Fragen oder Probleme mit Regeln, Nutzern, Admins, Moderatoren oder anderen Themen in unseren Telegram-Kanälen.
+- Cardano Report to Admin: https://t.me/cardanoreporttoadmin is for when you have issues with other our rulings, users, admins, moderators, or something else that isn’t working for you in our Telegram channels.
 
-## Cardano auf Discord
+## Cardano on Discord
 
-Echtzeit-Chat und schnelle Diskussionen.
+Real-time chat and quick discussions.
 
 - [Cardano Foundation Discord](https://discord.gg/MmeqpAzKbp)
 - [Cardano Community Discord](https://discord.com/invite/2nPUa5d7DE)
 - [IOG Discord](https://discord.com/invite/w6TwW9bGA6)
 
-## Sprachspezifische Kanäle
+## Language specific discussions
 
 - :vietnam: Cardano Vietnam: https://t.me/CardanoVNCommunity
 - :jp: Cardano Japan: https://t.me/CardanoJapanOfficial
@@ -68,8 +68,8 @@ Echtzeit-Chat und schnelle Diskussionen.
 - 🇺🇸 USA: https://t.me/CardanoAmerica
 - :uk: Cardano UK: https://t.me/CardanoUK
 
-## Community hinzufügen
+## Add your community
 
-Du möchtest deine Community hier sehen? Wir freuen uns über weitere großartige Cardano-Communities!
+Want to see your community listed here? We'd love to include more great Cardano communities!
 
-Lies die Anleitung [Community hinzufügen](/docs/get-involved/add-community), um mehr über die Voraussetzungen zu erfahren und deine Community per Pull Request einzureichen.
+Please read the [Add your Community](/docs/get-involved/add-community) guide to learn about the requirements and how to submit your community through a pull request.
