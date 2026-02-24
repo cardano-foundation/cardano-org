@@ -382,25 +382,6 @@ const config = {
           },
           */
           {
-            to: '/news', label: 'News', position: 'left',
-            /*
-            items: [
-              {to: '/news', label: 'All Articles (Chronological)'},
-              {to: '/news/tags/community-digest', label: 'Community Digest'},
-              {to: '/news/tags/education', label: 'Education'},
-              {to: '/news/tags/development', label: 'Development'},
-              {to: '/news/tags/governance', label: 'Governance'},
-              {to: '/news/tags/scaling', label: 'Scaling'},
-              {to: '/news/tags', label: 'View Tags'},
-          ],
-          */
-          },
-          {
-            href: `${vars.repository}`,
-            position: "right",
-            className: "header-github-link",
-          },
-          {
             type: 'localeDropdown',
             position: 'right',
             dropdownItemsAfter: [
@@ -526,6 +507,10 @@ const config = {
               {
                 label: 'Contributors',
                 href: 'https://github.com/cardano-foundation/cardano-org/graphs/contributors',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/cardano-foundation/cardano-org',
               }
             ],
           },
