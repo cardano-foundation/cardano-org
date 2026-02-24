@@ -161,8 +161,8 @@ export default function TranslationsPage() {
             }}>
               <strong>Coordinate with other translators:</strong>{' '}
               Join the discussion and track progress in{' '}
-              <a href="https://github.com/cardano-foundation/cardano-org/issues/XXX" target="_blank" rel="noopener noreferrer">
-                Issue #XXX (FIXME)
+              <a href="https://github.com/cardano-foundation/cardano-org/issues/442" target="_blank" rel="noopener noreferrer">
+                Issue #442
               </a>.
             </div>
 
