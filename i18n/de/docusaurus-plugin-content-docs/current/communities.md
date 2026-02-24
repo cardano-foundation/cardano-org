@@ -4,7 +4,7 @@ displayed_sidebar: null
 description: Cardano Online-Communities
 ---
 
-Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
+Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. They’re all different and unique in their own way. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
 
 ## Foren
 
@@ -14,7 +14,6 @@ Strukturierte Diskussionen in Langformat.
 - [forum.cardano.org](https://forum.cardano.org) – das Cardano Forum
 - [Cardano Stackexchange](https://cardano.stackexchange.com) – Hilfe für Cardano-Entwickler
 - [Facebook-Gruppe](https://www.facebook.com/groups/CardanoCommunity/) – die Cardano Facebook-Gruppe
-
 
 ## Veranstaltungen und lokale Treffen
 
