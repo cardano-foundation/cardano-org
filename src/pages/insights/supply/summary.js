@@ -7,6 +7,7 @@ import * as echarts from 'echarts';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 import Divider from "@site/src/components/Layout/Divider";
+import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
@@ -48,14 +49,14 @@ import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 // ────────────────────────────────────────────────────────────────────────────
 export const meta = {
   pageName: 'supply-summary',
-  pageTitle: 'Cardano Supply Summary',
-  pageDescription: 'Historical analysis of Cardano ada supply distribution across reserves, rewards, treasury, and deposits.',
-  title: 'Cardano Supply Summary',
+  pageTitle: translate({id: 'insightsSupplySummary.meta.pageTitle', message: 'Cardano Supply Summary'}),
+  pageDescription: translate({id: 'insightsSupplySummary.meta.pageDescription', message: 'Historical analysis of Cardano ada supply distribution across reserves, rewards, treasury, and deposits.'}),
+  title: translate({id: 'insightsSupplySummary.meta.title', message: 'Cardano Supply Summary'}),
   date: '',
   og: {
-    title: 'Cardano Supply Summary',
-    description: 'Explore historical trends in Cardano supply distribution, reserves, rewards, treasury, and deposits.'
-  }, 
+    title: translate({id: 'insightsSupplySummary.og.title', message: 'Cardano Supply Summary'}),
+    description: translate({id: 'insightsSupplySummary.og.description', message: 'Explore historical trends in Cardano supply distribution, reserves, rewards, treasury, and deposits.'})
+  },
   tags: ['economics', 'staking', 'treasury'],
   indexed: true
 };
@@ -659,27 +660,27 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          `**Explore historical trends in Cardano ada supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time.`
+          translate({id: 'insightsSupplySummary.intro.description', message: '**Explore historical trends in Cardano ada supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time.'})
         ]}
         headingDot
       />
 
       {/* Epoch Selection */}
       <div style={{ margin: '2rem 0', padding: '1.5rem', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: 8 }}>
-        <h3 style={{ marginTop: 0 }}>Select Epoch Range</h3>
+        <h3 style={{ marginTop: 0 }}>{translate({id: 'insightsSupplySummary.epochSelect.title', message: 'Select Epoch Range'})}</h3>
         {currentEpochNo && (
           <>
             <div style={{ marginBottom: '1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'center' }}>
                 <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>Start: </span>
+                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({id: 'insightsSupplySummary.epochSelect.start', message: 'Start:'})}{' '}</span>
                   <strong style={{ fontSize: '1.1rem' }}>Epoch {startEpoch}</strong>
                   <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
                     ({getEpochDate(startEpoch)})
                   </span>
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>End: </span>
+                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({id: 'insightsSupplySummary.epochSelect.end', message: 'End:'})}{' '}</span>
                   <strong style={{ fontSize: '1.1rem' }}>Epoch {endEpoch}</strong>
                   <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
                     ({getEpochDate(endEpoch)})
@@ -871,28 +872,28 @@ function PageContent() {
             </div>
             {isLoading && (
               <p style={{ margin: 0, color: '#666' }}>
-                {isInitialLoad ? 'Loading all epoch data (this may take a moment)...' : 'Loading data...'}
+                {isInitialLoad ? translate({id: 'insightsSupplySummary.loading.initial', message: 'Loading all epoch data (this may take a moment)...'}) : translate({id: 'insightsSupplySummary.loading.data', message: 'Loading data...'})}
               </p>
             )}
             {!isLoading && Object.keys(allEpochData).length > 0 && (
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', marginTop: '0.5rem' }}>
-                Loaded {Object.keys(allEpochData).length} epochs. Adjust the slider to filter the range.
+                {translate({id: 'insightsSupplySummary.loading.loaded', message: 'Loaded {count} epochs. Adjust the slider to filter the range.'}, {count: Object.keys(allEpochData).length})}
               </p>
             )}
           </>
         )}
-        {!currentEpochNo && <p>Loading current epoch...</p>}
+        {!currentEpochNo && <p>{translate({id: 'insightsSupplySummary.loading.currentEpoch', message: 'Loading current epoch...'})}</p>}
       </div>
 
       {/* Table of Contents */}
       {epochData.length > 0 && (
         <div style={{ margin: '2rem 0' }}>
-          <Heading as="h2">Contents</Heading>
+          <Heading as="h2">{translate({id: 'insightsSupplySummary.toc.title', message: 'Contents'})}</Heading>
           <ul>
-            <li><Link href="#reserves">Reserves Evolution</Link></li>
-            <li><Link href="#rewards">Distributed Rewards</Link></li>
-            <li><Link href="#treasury">Treasury Evolution</Link></li>
-            <li><Link href="#deposits">Deposits</Link></li>
+            <li><Link href="#reserves">{translate({id: 'insightsSupplySummary.toc.reserves', message: 'Reserves Evolution'})}</Link></li>
+            <li><Link href="#rewards">{translate({id: 'insightsSupplySummary.toc.rewards', message: 'Distributed Rewards'})}</Link></li>
+            <li><Link href="#treasury">{translate({id: 'insightsSupplySummary.toc.treasury', message: 'Treasury Evolution'})}</Link></li>
+            <li><Link href="#deposits">{translate({id: 'insightsSupplySummary.toc.deposits', message: 'Deposits'})}</Link></li>
           </ul>
         </div>
       )}
@@ -900,7 +901,7 @@ function PageContent() {
       {/* Reserves Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text="Reserves Evolution" id="reserves" />
+          <Divider text={translate({id: 'insightsSupplySummary.reserves.divider', message: 'Reserves Evolution'})} id="reserves" />
           <p>
             The Cardano reserves represent the difference between the maximum supply (45 billion ada) and the total supply in circulation. 
             Reserves were originally defined in the <Link href="/genesis">genesis block</Link> and are gradually released through the reward mechanism, where a portion of each epoch's rewards comes from the reserves.
@@ -930,7 +931,7 @@ function PageContent() {
       {/* Rewards Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text="Distributed Rewards" id="rewards" />
+          <Divider text={translate({id: 'insightsSupplySummary.rewards.divider', message: 'Distributed Rewards'})} id="rewards" />
           <p>
             Distributed rewards are composed of two sources: ada taken from the reserves and transaction fees paid by users. 
             These rewards are distributed to various participants in the Cardano ecosystem.
@@ -951,7 +952,7 @@ function PageContent() {
       {/* Treasury Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text="Treasury Evolution" id="treasury" />
+          <Divider text={translate({id: 'insightsSupplySummary.treasury.divider', message: 'Treasury Evolution'})} id="treasury" />
           <p>
             The Cardano treasury grows from the taxation portion of each epoch's reward distribution. This cut ensures ongoing 
             funding for ecosystem development, research, and community initiatives.
@@ -980,7 +981,7 @@ function PageContent() {
           {/* Treasury Withdrawals List */}
           {filteredWithdrawals.length > 0 && (
             <div style={{ marginTop: '2rem' }}>
-              <Divider text="Treasury Withdrawals in Selected Range" id="treasury-withdrawals" />
+              <Divider text={translate({id: 'insightsSupplySummary.treasuryWithdrawals.divider', message: 'Treasury Withdrawals in Selected Range'})} id="treasury-withdrawals" />
               <p style={{ marginBottom: '1rem' }}>
                 Between Epoch <strong>{startEpoch}</strong> ({getEpochDate(startEpoch)}) and Epoch <strong>{endEpoch}</strong> ({getEpochDate(endEpoch)}),{' '}
                 <strong>{filteredWithdrawals.length}</strong> Treasury Withdrawal{filteredWithdrawals.length !== 1 ? 's were' : ' was'} enacted and{' '}
@@ -990,10 +991,10 @@ function PageContent() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ backgroundColor: 'var(--ifm-color-emphasis-100)', position: 'sticky', top: 0 }}>
-                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Epoch</th>
-                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Title</th>
-                      <th style={{ padding: '0.75rem', textAlign: 'right', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Amount (ada)</th>
-                      <th style={{ padding: '0.75rem', textAlign: 'center', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>Explorer</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>{translate({id: 'insightsSupplySummary.treasuryWithdrawals.table.epoch', message: 'Epoch'})}</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>{translate({id: 'insightsSupplySummary.treasuryWithdrawals.table.title', message: 'Title'})}</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'right', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>{translate({id: 'insightsSupplySummary.treasuryWithdrawals.table.amount', message: 'Amount (ada)'})}</th>
+                      <th style={{ padding: '0.75rem', textAlign: 'center', borderBottom: '1px solid var(--ifm-color-emphasis-300)' }}>{translate({id: 'insightsSupplySummary.treasuryWithdrawals.table.explorer', message: 'Explorer'})}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1010,7 +1011,7 @@ function PageContent() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            View
+                            {translate({id: 'insightsSupplySummary.treasuryWithdrawals.table.view', message: 'View'})}
                           </a>
                         </td>
                       </tr>
@@ -1026,7 +1027,7 @@ function PageContent() {
       {/* Deposits Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text="Deposits" id="deposits" />
+          <Divider text={translate({id: 'insightsSupplySummary.deposits.divider', message: 'Deposits'})} id="deposits" />
           <p>
             Cardano requires various types of deposits to ensure network security and governance participation. Users register 
             their wallets with a staking key deposit (currently 2 ada per key), Stake Pool Operators register pools with a 

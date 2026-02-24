@@ -25,10 +25,11 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Fav from "../../svg/fav.svg";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import {translate} from '@docusaurus/Translate';
 
-const TITLE = "Cardano Applications";
-const DESCRIPTION = "Explore curated applications that run on Cardano mainnet today";
-const CTA = "₳dd your project";
+const TITLE = translate({id: 'apps.hero.title', message: 'Cardano Applications'});
+const DESCRIPTION = translate({id: 'apps.hero.description', message: 'Explore curated applications that run on Cardano mainnet today'});
+const CTA = translate({id: 'apps.cta', message: '₳dd your project'});
 const FILENAME = "apps.js";
 
 export function prepareUserState() {
@@ -209,22 +210,23 @@ function ShowcaseFilters() {
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
         <div>
           <h2>
-            Filters
+            {translate({id: 'apps.filters.title', message: 'Filters'})}
             {selectedTags.length > 0 && (
               <span className={styles.filterCount}> ({selectedTags.length})</span>
             )}
-          </h2> 
-          <span>{`${filteredProjects.length} project${
-            filteredProjects.length === 1 ? "" : "s"
-          }`}</span>
+          </h2>
+          <span>{filteredProjects.length === 1
+            ? translate({id: 'apps.filters.projectCount.singular', message: '1 project'})
+            : translate({id: 'apps.filters.projectCount.plural', message: '{count} projects'}).replace('{count}', filteredProjects.length)
+          }</span>
         </div>
         <div className={styles.filterControls}>
           {selectedTags.length > 0 && (
-            <button 
+            <button
               onClick={clearAllFilters}
               className={styles.clearButton}
             >
-              Clear filters
+              {translate({id: 'apps.filters.clearButton', message: 'Clear filters'})}
             </button>
           )}
           <ShowcaseLatestToggle />
@@ -280,11 +282,13 @@ function ShowcaseFilters() {
       </div>
       {sortedTags.length > initialTagCount && (
         <div className={styles.showMoreContainer}>
-          <button 
+          <button
             onClick={() => setShowAllTags(!showAllTags)}
             className={styles.showMoreButton}
           >
-            {showAllTags ? `Show less filters` : `Show ${sortedTags.length - initialTagCount} more filters`}
+            {showAllTags
+              ? translate({id: 'apps.filters.showLess', message: 'Show less filters'})
+              : translate({id: 'apps.filters.showMore', message: 'Show {count} more filters'}).replace('{count}', sortedTags.length - initialTagCount)}
           </button>
         </div>
       )}
@@ -300,7 +304,7 @@ function ShowcaseCards() {
     return (
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
-          <h2>No result</h2>
+          <h2>{translate({id: 'apps.noResult', message: 'No result'})}</h2>
           <SearchBar />
         </div>
       </section>
@@ -319,7 +323,7 @@ function ShowcaseCards() {
                   styles.showcaseFavoriteHeader
                 )}
               >
-                <h2 className={styles.ourFavorites}>Our favorites</h2>
+                <h2 className={styles.ourFavorites}>{translate({id: 'apps.ourFavorites', message: 'Our favorites'})}</h2>
                 <Fav className={styles.svgIconFavorite} size="small" />
                 <SearchBar />
               </div>
@@ -331,7 +335,7 @@ function ShowcaseCards() {
             </div>
           </div>
           <div className="container margin-top--lg">
-            <h2 className={styles.showcaseHeader}>All Projects</h2>
+            <h2 className={styles.showcaseHeader}>{translate({id: 'apps.allProjects', message: 'All Projects'})}</h2>
             <ul className={styles.showcaseList}>
               {otherShowcases.map((showcase) => (
                 <ShowcaseCard key={showcase.title} showcase={showcase} />
@@ -404,7 +408,7 @@ function SearchBar() {
       <input
         ref={inputRef}
         id="searchbar"
-        placeholder="Search apps..."
+        placeholder={translate({id: 'apps.searchPlaceholder', message: 'Search apps...'})}
         value={value}
         onInput={handleInput}
       />

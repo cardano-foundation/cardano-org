@@ -8,13 +8,13 @@ import CommunityDigestForm from "@site/src/components/CommunityDigestFormHS";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
-      title="Stay Informed"
-      description="Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem."
+      title={translate({id: 'newsletter.hero.title', message: 'Stay Informed'})}
+      description={translate({id: 'newsletter.hero.description', message: 'Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem.'})}
       bannerType="overlap"
     />
   );
@@ -24,19 +24,19 @@ export default function Home() {
 
   return (
     <Layout
-    title="Cardano Community Digest | cardano.org"
-    description="Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem."
+    title={translate({id: 'newsletter.layout.title', message: 'Cardano Community Digest | cardano.org'})}
+    description={translate({id: 'newsletter.layout.description', message: 'Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem.'})}
     >
       <OpenGraphInfo pageName="newsletter" />
       <HomepageHeader />
       <BoundaryBox>
-          <Divider text="Stay informed" />
-          <TitleWithText 
-              title="Cardano Community Digest" 
+          <Divider text={translate({id: 'newsletter.divider.text', message: 'Stay informed'})} />
+          <TitleWithText
+              title={translate({id: 'newsletter.content.title', message: 'Cardano Community Digest'})}
               description={[
-                "Get your bi-weekly dose of the latest hot topics, development updates, a list of upcoming meetups, delegation strategy updates, what our Cardano Ambassadors are up to, and much more."
+                translate({id: 'newsletter.content.description', message: 'Get your bi-weekly dose of the latest hot topics, development updates, a list of upcoming meetups, delegation strategy updates, what our Cardano Ambassadors are up to, and much more.'})
               ]}
-              headingDot={true} 
+              headingDot={true}
           />
           <CommunityDigestForm />
         </BoundaryBox>

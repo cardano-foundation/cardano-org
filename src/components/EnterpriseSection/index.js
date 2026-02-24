@@ -2,6 +2,7 @@ import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider";
@@ -37,9 +38,9 @@ function UseCase({
     <div className={clsx("row", styles.enterpriseWrap)}>
       <div className={imageColumnClass}>
         <img src={imageUrl} alt={title} />
-        <div className={styles.solutions}>Solutions</div>
+        <div className={styles.solutions}>{translate({id: 'enterprise.label.solutions', message: 'Solutions'})}</div>
         <div className={styles.solutionsContent}>{solutions}</div>
-        <div className={styles.product}>Products</div>
+        <div className={styles.product}>{translate({id: 'enterprise.label.products', message: 'Products'})}</div>
         <div className={styles.productContent}>
           {Array.isArray(product) ? (
             <ul>
@@ -69,7 +70,7 @@ function UseCase({
           href={buttonLink}
           className={clsx("button button--primary", styles.buttonLink)}
         >
-          Learn more
+          {translate({id: 'enterprise.learnMore', message: 'Learn more'})}
         </Link>
       </div>
     </div>

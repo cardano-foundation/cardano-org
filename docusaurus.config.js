@@ -62,7 +62,13 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja', 'de', 'vi'],
+    localeConfigs: {
+      en: { label: 'English', htmlLang: 'en-US' },
+      ja: { label: '日本語', htmlLang: 'ja' },
+      de: { label: 'Deutsch', htmlLang: 'de' },
+      vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
+    },
   },
 
   headTags: [
@@ -163,27 +169,9 @@ const config = {
         appId: '2GOYNZM2J1',
         apiKey: 'b3ea5bee26e2b95a6c6446489bdc6adf',
         indexName: 'cardano_org_pages',
-        contextualSearch: false,
-        placeholder: 'Search cardano.org',
-        translations: {
-          button: {
-            buttonText: 'Search',
-            buttonAriaLabel: 'Search',
-          },
-          modal: {
-            searchBox: {
-              resetButtonTitle: 'Clear',
-              resetButtonAriaLabel: 'Clear',
-              cancelButtonText: 'Cancel',
-              cancelButtonAriaLabel: 'Cancel',
-            },
-            footer: {
-              selectText: 'to select',
-              navigateText: 'to navigate',
-              closeText: 'to close',
-            },
-          },
-        },
+        contextualSearch: true,
+        searchPagePath: 'search',
+        // Search UI translations moved to i18n/*/docusaurus-theme-classic/theme.json
       },
 
       navbar: {
@@ -394,15 +382,37 @@ const config = {
           },
           */
           {
-            to: "/docs/communities/#cardano-on-discord",
-            position: "right",
-            className: "header-discord-link",
-            "aria-label": "Discord",
+            to: '/news', label: 'News', position: 'left',
+            /*
+            items: [
+              {to: '/news', label: 'All Articles (Chronological)'},
+              {to: '/news/tags/community-digest', label: 'Community Digest'},
+              {to: '/news/tags/education', label: 'Education'},
+              {to: '/news/tags/development', label: 'Development'},
+              {to: '/news/tags/governance', label: 'Governance'},
+              {to: '/news/tags/scaling', label: 'Scaling'},
+              {to: '/news/tags', label: 'View Tags'},
+          ],
+          */
           },
           {
             href: `${vars.repository}`,
             position: "right",
             className: "header-github-link",
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 4px 0;">',
+              },
+              {
+                to: '/translations',
+                label: 'Help Translate',
+              },
+            ],
           },
         ],
       },

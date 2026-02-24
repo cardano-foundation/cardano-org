@@ -9,12 +9,13 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import Divider from "@site/src/components/Layout/Divider";
+import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
   return (
     <SiteHero
-      title="Enterprise Solutions"
-      description="Proven blockchain solutions for supply chain, identity, and beyond."
+      title={translate({id: 'solutions.hero.title', message: 'Enterprise Solutions'})}
+      description={translate({id: 'solutions.hero.description', message: 'Proven blockchain solutions for supply chain, identity, and beyond.'})}
       bannerType="fluidBlue"
     />
   );
@@ -23,8 +24,8 @@ function HomepageHeader() {
 export default function Solutions() {
   return (
     <Layout
-      title="Enterprise Solutions | cardano.org"
-      description="Discover proven enterprise blockchain solutions built on Cardano. From supply chain traceability to digital product passports, explore real-world implementations."
+      title={translate({id: 'solutions.layout.title', message: 'Enterprise Solutions | cardano.org'})}
+      description={translate({id: 'solutions.layout.description', message: 'Discover proven enterprise blockchain solutions built on Cardano. From supply chain traceability to digital product passports, explore real-world implementations.'})}
     >
       <OpenGraphInfo pageName="enterprise-solutions" />
       <HomepageHeader />
@@ -33,7 +34,7 @@ export default function Solutions() {
           <BoundaryBox>
             <TitleWithText
               description={[
-                "Cardano powers enterprise solutions across industries, combining the security and transparency of blockchain with practical business applications. Our proven deployments demonstrate how organizations can leverage decentralized technology for supply chain management, product authentication, and sustainability tracking.",
+                translate({id: 'solutions.intro.description', message: "Cardano powers enterprise solutions across industries, combining the security and transparency of blockchain with practical business applications. Our proven deployments demonstrate how organizations can leverage decentralized technology for supply chain management, product authentication, and sustainability tracking."}),
               ]}
             />
 
@@ -41,10 +42,10 @@ export default function Solutions() {
 
             <SpacerBox size="medium" />
 
-            <Divider text="Explore Use Cases" id="explore" />
+            <Divider text={translate({id: 'solutions.divider.explore', message: 'Explore Use Cases'})} id="explore" />
             <TitleWithText
               description={[
-                "Looking for specific blockchain applications? Explore our comprehensive use case library covering identity, finance, supply chain, and more.",
+                translate({id: 'solutions.explore.description', message: "Looking for specific blockchain applications? Explore our comprehensive use case library covering identity, finance, supply chain, and more."}),
               ]}
             />
             <p style={{ textAlign: "center", marginBottom: "2rem" }}>
@@ -52,7 +53,7 @@ export default function Solutions() {
                 to="/use-cases"
                 className="button button--primary button--lg"
               >
-                View All Use Cases
+                {translate({id: 'solutions.explore.button', message: 'View All Use Cases'})}
               </Link>
             </p>
           </BoundaryBox>
@@ -61,11 +62,11 @@ export default function Solutions() {
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
             <CtaOneColumn
-              title="Ready to build on Cardano? Connect with the Cardano Foundation to explore partnership opportunities."
-              buttonLabel={"Contact Us"}
+              title={translate({id: 'solutions.cta.title', message: 'Ready to build on Cardano? Connect with the Cardano Foundation to explore partnership opportunities.'})}
+              buttonLabel={translate({id: 'solutions.cta.button', message: 'Contact Us'})}
               buttonLink={"https://cardanofoundation.org/contact"}
             />
-            
+
           </BoundaryBox>
         </BackgroundWrapper>
       </main>

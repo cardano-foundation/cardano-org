@@ -1,37 +1,40 @@
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import {translate} from '@docusaurus/Translate';
 
 import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithButton";
 import QuoteWithText from "@site/src/components/Layout/QuoteWithText";
 
-const DiscoverItemList = [
-  {
-    imageName: "people",
-    buttonLabel: "People",
-    buttonLink: "/discover-cardano#people",
-  },
-  {
-    imageName: "purpose",
-    buttonLabel: "Purpose",
-    buttonLink: "/discover-cardano#purpose",
-  },
-  {
-    imageName: "research",
-    buttonLabel: "Research",
-    buttonLink: "/discover-cardano#research",
-  },
-  {
-    imageName: "technology",
-    buttonLabel: "Technology",
-    buttonLink: "/discover-cardano#technology",
-  },
-  {
-    imageName: "opportunity",
-    buttonLabel: "Opportunity",
-    buttonLink: "/discover-cardano#opportunity",
-  },
-];
+function getDiscoverItemList() {
+  return [
+    {
+      imageName: "people",
+      buttonLabel: translate({id: 'home.discover.people', message: 'People'}),
+      buttonLink: "/discover-cardano#people",
+    },
+    {
+      imageName: "purpose",
+      buttonLabel: translate({id: 'home.discover.purpose', message: 'Purpose'}),
+      buttonLink: "/discover-cardano#purpose",
+    },
+    {
+      imageName: "research",
+      buttonLabel: translate({id: 'home.discover.research', message: 'Research'}),
+      buttonLink: "/discover-cardano#research",
+    },
+    {
+      imageName: "technology",
+      buttonLabel: translate({id: 'home.discover.technology', message: 'Technology'}),
+      buttonLink: "/discover-cardano#technology",
+    },
+    {
+      imageName: "opportunity",
+      buttonLabel: translate({id: 'home.discover.opportunity', message: 'Opportunity'}),
+      buttonLink: "/discover-cardano#opportunity",
+    },
+  ];
+}
 
 function DiscoverItem({ imageName, buttonLabel, buttonLink }) {
   return (
@@ -44,24 +47,25 @@ function DiscoverItem({ imageName, buttonLabel, buttonLink }) {
 }
 
 export default function HomeDiscoverSection() {
+  const discoverItems = getDiscoverItemList();
   return (
     <div>
       <div className={styles.discoverWrap}>
         <div className={styles.discoverItems}>
-          {DiscoverItemList.map((props, idx) => (
+          {discoverItems.map((props, idx) => (
             <DiscoverItem key={idx} {...props} />
           ))}
         </div>
       </div>
       <div className={styles.quoteWrap}>
         <QuoteWithText
-          text="We have changed science. We have changed what it means to build global systems and sustainable models of exchange and governance."
+          text={translate({id: 'home.discover.quote1', message: 'We have changed science. We have changed what it means to build global systems and sustainable models of exchange and governance.'})}
           quoteType="mixed"
         />
       </div>
       <div className={styles.quoteWrap}>
         <QuoteWithText
-          text="Alongside the community, entities, and companies building on Cardano, a new future is being defined: a decentralized future without intermediaries, where power is returned to the individual"
+          text={translate({id: 'home.discover.quote2', message: 'Alongside the community, entities, and companies building on Cardano, a new future is being defined: a decentralized future without intermediaries, where power is returned to the individual'})}
           quoteType="none"
         />
       </div>

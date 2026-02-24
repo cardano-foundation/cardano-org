@@ -12,7 +12,11 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "crowdin:upload": "crowdin upload sources",
+    "crowdin:upload-all": "crowdin upload sources && crowdin upload translations",
+    "crowdin:download": "crowdin download",
+    "crowdin:progress": "node scripts/fetch-crowdin-progress.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",

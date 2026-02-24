@@ -1,0 +1,1258 @@
+{
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "サイドバーを開く",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "サイドバーを開く",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "エラーが発生しました",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.blog.archive.title": {
+    "message": "アーカイブ",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "アーカイブ",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "先頭へ戻る",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ブログ記事一覧のナビゲーション",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "新しい記事",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "過去の記事",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ブログ記事のナビゲーション",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "新しい記事",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "過去の記事",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "全てのタグを見る",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "システムモード",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "ライトモード",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "ダークモード",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "ダークモードを切り替える(現在は{mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "パンくずリストのナビゲーション",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "ドキュメントページ",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "前へ",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "次へ",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count}記事",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "「{tagName}」タグのついた{nDocsTagged}",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "バージョン: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで現在はメンテナンスされていません",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) を見てください",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新バージョン",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "このページを編集",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} への直接リンク",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "{date}に",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "{user}が",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "{atDate}{byUser}最終更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "ページが見つかりません",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "他のバージョン",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "タグ:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "注意",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危険",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "備考",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "注記",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "ヒント",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "警告",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "閉じる",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近のブログ記事のナビゲーション",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "'{label}'の目次を開く",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "'{label}'の目次を隠す",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "ナビゲーション",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "お探しのページが見つかりませんでした",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "このページにリンクしているサイトの所有者にリンクが壊れていることを伝えてください",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "他の言語",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "このページの見出し",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "約{readingTime}分",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "もっと見る",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "{title}についてもっと見る",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "コピー",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "コピーしました",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "クリップボードにコードをコピー",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "折り返し",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "ホームページ",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "サイドバーを隠す",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "サイドバーを隠す",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "ドキュメントのサイドバー",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "ナビゲーションバーを閉じる",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← メインメニューに戻る",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "ナビゲーションバーを開く",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "検索結果{count}件をすべて見る"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "{count}件のドキュメントが見つかりました",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "『{query}』の検索結果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "ドキュメントを検索",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "検索するキーワードを入力してください",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "検索",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Algolia提供",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "検索結果が見つかりませんでした",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "新しい検索結果を取得しています...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "検索",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "クリア",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "キャンセル",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "ドキュメントを検索",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "別の質問をする...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "回答中...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "検索",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "確定",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "検索",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "キーワード検索に戻る",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "キーワード検索に戻る",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "最近の検索",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "最近の検索履歴はありません",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "この検索をお気に入りに追加",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "この検索を履歴から削除",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "お気に入り",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "この検索をお気に入りから削除",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "最近の会話",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "この会話を履歴から削除",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "検索結果の取得に失敗しました",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "ネットワーク接続を確認してください",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "AIに質問：",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "回答はAIによって生成されており、誤りがある可能性があります。必ず内容を確認してください。",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "関連ソース",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "考え中...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "コピー",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "コピーしました！",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "コピー",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "いいね",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "よくない",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "フィードバックありがとうございます！",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "検索中...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "検索中：",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "検索完了：",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "選ぶ",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "質問を送信",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "エンターキー",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "移動",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "上矢印キー",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "下矢印キー",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "閉じる",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "エスケープキー",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "検索",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "検索に戻る",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "見つかりませんでした",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "次の検索を試す:",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "よりよい検索結果がありますか?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "報告する",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "ドキュメントを検索",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "読み込み中...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "クリックして読み込む{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "オフライン中は画像は読み込まれません",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "画像が存在しません",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "画像の読み込みに失敗しました",
+    "description": "When the image fails to load for unknown error"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count}件",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "「{tagName}」タグの記事が{nPosts}件あります",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "著者一覧",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "すべての著者を見る",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "この著者による投稿はまだありません。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "非公開のページ",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "このページは非公開です。 検索対象外となり、このページのリンクに直接アクセスできるユーザーのみに公開されます。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "下書きのページ",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "このページは下書きです。開発環境でのみ表示され、本番環境のビルドには含まれません。",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "もう一度試してください",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "メインコンテンツまでスキップ",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "タグ",
+    "description": "The title of the tag list page"
+  },
+  "whatIsAda.hero.title": {
+    "message": "What is ada?"
+  },
+  "whatIsAda.hero.description1": {
+    "message": "A new type of currency. A new means of transaction."
+  },
+  "whatIsAda.hero.description2": {
+    "message": "Direct. Secure. From Anywhere. For Everyone."
+  },
+  "whatIsAda.meta.title": {
+    "message": "What is ada? | cardano.org"
+  },
+  "whatIsAda.meta.description": {
+    "message": "A new type of currency. A new means of transaction. Direct. Secure. From Anywhere. For Everyone."
+  },
+  "whatIsAda.section.headline": {
+    "message": "What is ada?"
+  },
+  "whatIsAda.section.title": {
+    "message": "Ada Is The Native Token Of Cardano"
+  },
+  "whatIsAda.section.description1": {
+    "message": "It is named after Ada Lovelace: a 19th-century mathematician who is recognized as the first computer programmer, and is the daughter of the poet Lord Byron."
+  },
+  "whatIsAda.section.description2": {
+    "message": "Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value – without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain."
+  },
+  "whatIsAda.section.description3": {
+    "message": "Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or found and run your own stake pool to increase the pool's likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform."
+  },
+  "whatIsAda.section.quote": {
+    "message": "What can I do with ada?"
+  },
+  "howToBuyAda.title": {
+    "message": "How Do I Buy/Sell Ada?"
+  },
+  "howToBuyAda.description1": {
+    "message": "There are many ways to obtain ada to use the Cardano blockchain. Find out on {whereToGetAdaLink}"
+  },
+  "howToBuyAda.whereToGetAdaLink": {
+    "message": "where to get ada?"
+  },
+  "howToBuyAda.description2": {
+    "message": "As an ada holder, it is important to keep your funds secure, and that means you need to keep your private keys private. It is highly recommended to avoid keeping your cryptocurrency in an exchange longer than necessary, and instead to use a cryptocurrency wallet."
+  },
+  "walletSection.typhon.title": {
+    "message": "Typhon Wallet"
+  },
+  "walletSection.typhon.text": {
+    "message": "Blazing fast, feature-rich, secure, beautiful web and extension Cardano wallet. Delegate to multiple pools of your choice with multi-accounts."
+  },
+  "walletSection.typhon.subtext": {
+    "message": "Browser extension for Chrome, Brave and Edge"
+  },
+  "walletSection.typhon.label": {
+    "message": "Get Typhon"
+  },
+  "walletSection.vespr.title": {
+    "message": "VESPR Wallet"
+  },
+  "walletSection.vespr.text": {
+    "message": "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use."
+  },
+  "walletSection.vespr.subtext": {
+    "message": "App for iOS and Android"
+  },
+  "walletSection.vespr.label": {
+    "message": "Get VESPR"
+  },
+  "walletSection.yoroi.title": {
+    "message": "Yoroi Wallet"
+  },
+  "walletSection.yoroi.text": {
+    "message": "A user-friendly, [open-source](https://github.com/Emurgo/yoroi-frontend) Cardano wallet with a browser-based interface, providing a convenient way to manage ada holdings securely. Yoroi is also available as mobile app."
+  },
+  "walletSection.yoroi.subtext": {
+    "message": "Browser extension and app for iOS and Android"
+  },
+  "walletSection.yoroi.label": {
+    "message": "Get Yoroi"
+  },
+  "walletSection.eternl.title": {
+    "message": "Eternl Wallet"
+  },
+  "walletSection.eternl.text": {
+    "message": "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community. Eternl is also available as mobile app."
+  },
+  "walletSection.eternl.subtext": {
+    "message": "Browser extension and app for iOS and Android"
+  },
+  "walletSection.eternl.label": {
+    "message": "Get Eternl"
+  },
+  "walletSection.lace.title": {
+    "message": "Lace Wallet"
+  },
+  "walletSection.lace.text": {
+    "message": "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3."
+  },
+  "walletSection.lace.subtext": {
+    "message": "Browser extension for Chrome, Brave"
+  },
+  "walletSection.lace.label": {
+    "message": "Get Lace"
+  },
+  "walletSection.daedalus.title": {
+    "message": "Daedalus Wallet"
+  },
+  "walletSection.daedalus.text": {
+    "message": "The [open-source](https://github.com/input-output-hk/daedalus) full node wallet for Cardano. It offers enhanced control and security by maintaining a complete copy of the blockchain, but this comes at the cost of a more complex user experience. As a result, they are typically geared towards professional users who require these advanced features."
+  },
+  "walletSection.daedalus.subtext": {
+    "message": "Only for powerful desktop PCs"
+  },
+  "walletSection.daedalus.label": {
+    "message": "Get Daedalus"
+  },
+  "walletSection.explore.title": {
+    "message": "Explore Apps"
+  },
+  "walletSection.explore.text": {
+    "message": "Discover a wide variety of wallets designed to facilitate your interaction."
+  },
+  "walletSection.explore.label": {
+    "message": "More Wallets"
+  },
+  "walletSection.divider": {
+    "message": "Cardano Wallets"
+  },
+  "walletSection.disclaimer": {
+    "message": "The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+  },
+  "walletSection.storageTitle": {
+    "message": "How Do I Store My Ada And Keep It Safe?"
+  },
+  "walletSection.storageDescription1": {
+    "message": "A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, monitor your balance, and interact with supported blockchains."
+  },
+  "walletSection.storageDescription2": {
+    "message": "In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet."
+  },
+  "walletSection.hotWalletText": {
+    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges."
+  },
+  "walletSection.coldWalletText": {
+    "message": "A cold wallet is an offline wallet. It is not connected to the internet and is used for securing storing funds that do not have to be frequently accessed. Examples include hardware wallets - which is a secure hardware device that stores the wallet's private keys - and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets."
+  },
+  "whatIsAda.button.getStarted": {
+    "message": "Get started with Cardano"
+  },
+  "whatIsAda.button.whereToGetAda": {
+    "message": "Where to get ada?"
+  },
+  "getStarted.hero.title": {
+    "message": "Get started with Cardano"
+  },
+  "getStarted.hero.description": {
+    "message": "Step into the new world yourself and learn all the basics in just few steps."
+  },
+  "getStarted.meta.title": {
+    "message": "Get started with Cardano | cardano.org"
+  },
+  "getStarted.meta.description": {
+    "message": "Step into the new world yourself and learn all the basics in just few steps."
+  },
+  "getStarted.step1.title": {
+    "message": "Download a wallet"
+  },
+  "getStarted.step1.description": {
+    "message": "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account."
+  },
+  "getStarted.step1.heading": {
+    "message": "Download a wallet"
+  },
+  "getStarted.step1.text1": {
+    "message": "A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network."
+  },
+  "getStarted.step1.text2": {
+    "message": "You will create your wallet in the next steps. Downloading alone does not create one."
+  },
+  "getStarted.step1.securityNote": {
+    "message": "Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism."
+  },
+  "getStarted.step1.checkbox": {
+    "message": "I downloaded a wallet."
+  },
+  "getStarted.common.scamLink": {
+    "message": "Be aware of the most common scams."
+  },
+  "getStarted.step2.title": {
+    "message": "Backup your recovery phrase"
+  },
+  "getStarted.step2.description": {
+    "message": "When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!"
+  },
+  "getStarted.step2.heading": {
+    "message": "Save your recovery phrase"
+  },
+  "getStarted.step2.whatToDo": {
+    "message": "What to do:"
+  },
+  "getStarted.step2.tip1": {
+    "message": "Write it down on paper and store it securely offline"
+  },
+  "getStarted.step2.tip2": {
+    "message": "Never share it with anyone or store it digitally"
+  },
+  "getStarted.step2.tip3": {
+    "message": "Anyone with your recovery phrase can access your funds"
+  },
+  "getStarted.step2.tip4": {
+    "message": "Keep multiple copies in different secure locations"
+  },
+  "getStarted.step2.checkbox": {
+    "message": "I've backed up my recovery phrase."
+  },
+  "getStarted.step3.title": {
+    "message": "Complete wallet setup"
+  },
+  "getStarted.step3.description": {
+    "message": "Finish setting up your wallet with a password and verification."
+  },
+  "getStarted.step3.heading": {
+    "message": "Final setup steps"
+  },
+  "getStarted.step3.intro": {
+    "message": "After backing up your recovery phrase, complete these two important steps:"
+  },
+  "getStarted.step3.passwordLabel": {
+    "message": "Spending password:"
+  },
+  "getStarted.step3.passwordText": {
+    "message": "Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device."
+  },
+  "getStarted.step3.verifyLabel": {
+    "message": "Verify your backup:"
+  },
+  "getStarted.step3.verifyText": {
+    "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
+  },
+  "getStarted.step3.ready": {
+    "message": "Once these steps are complete, your wallet is ready to use!"
+  },
+  "getStarted.step3.securityNote": {
+    "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
+  },
+  "getStarted.step3.securityWarning": {
+    "message": "However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password."
+  },
+  "getStarted.step3.checkbox": {
+    "message": "I've completed the wallet setup."
+  },
+  "getStarted.step4.title": {
+    "message": "Connect your wallet"
+  },
+  "getStarted.step4.description": {
+    "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
+  },
+  "getStarted.step4.securityNote": {
+    "message": "When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing."
+  },
+  "getStarted.step4.checkbox": {
+    "message": "I've connected my wallet."
+  },
+  "getStarted.step5.title": {
+    "message": "Get ada"
+  },
+  "getStarted.step5.description": {
+    "message": "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain."
+  },
+  "getStarted.step5.heading": {
+    "message": "Where to get ada"
+  },
+  "getStarted.step5.text": {
+    "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
+  },
+  "getStarted.step5.button": {
+    "message": "View all options →"
+  },
+  "getStarted.step5.securityNote": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "getStarted.step5.checkbox": {
+    "message": "I have ada in my wallet."
+  },
+  "getStarted.step6.title": {
+    "message": "Explore the ecosystem"
+  },
+  "getStarted.step6.description": {
+    "message": "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps."
+  },
+  "whereToGetAda.hero.title": {
+    "message": "Where to get ada?"
+  },
+  "whereToGetAda.hero.description": {
+    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+  },
+  "whereToGetAda.meta.title": {
+    "message": "Get ada | cardano.org"
+  },
+  "whereToGetAda.meta.description": {
+    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+  },
+  "whereToGetAda.divider.exchanges": {
+    "message": "Buy ada using Exchanges"
+  },
+  "whereToGetAda.cex.title": {
+    "message": "Centralized Exchanges"
+  },
+  "whereToGetAda.cex.description": {
+    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control."
+  },
+  "whereToGetAda.cex.disclaimer": {
+    "message": "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/)."
+  },
+  "whereToGetAda.dex.title": {
+    "message": "Decentralized Exchanges"
+  },
+  "whereToGetAda.dex.description": {
+    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges."
+  },
+  "whereToGetAda.dex.disclaimer": {
+    "message": "DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days."
+  },
+  "whereToGetAda.divider.receive": {
+    "message": "Receive ada from people around the world"
+  },
+  "whereToGetAda.receive.title": {
+    "message": "Receive ada"
+  },
+  "whereToGetAda.receive.description1": {
+    "message": "Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets)."
+  },
+  "whereToGetAda.receive.description2": {
+    "message": "Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer."
+  },
+  "whereToGetAda.receive.description3": {
+    "message": "Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+  },
+  "whereToGetAda.divider.funding": {
+    "message": "Get funded in ada"
+  },
+  "whereToGetAda.funding.title": {
+    "message": "Project Catalyst"
+  },
+  "whereToGetAda.funding.description": {
+    "message": "Discover Cardano's innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal."
+  },
+  "whereToGetAda.divider.rewards": {
+    "message": "Staking rewards"
+  },
+  "whereToGetAda.staking.title": {
+    "message": "Staking rewards"
+  },
+  "whereToGetAda.staking.description1": {
+    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+  },
+  "whereToGetAda.staking.description2": {
+    "message": "Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+  },
+  "commonScams.hero.title": {
+    "message": "Common Cardano scams"
+  },
+  "commonScams.hero.description": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "commonScams.meta.title": {
+    "message": "Common Cardano scams you should avoid | cardano.org"
+  },
+  "commonScams.meta.description": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+  },
+  "commonScams.quiz.title": {
+    "message": "Test Your Knowledge"
+  },
+  "commonScams.quiz.description": {
+    "message": "Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
+  },
+  "commonScams.quiz.buttonText": {
+    "message": "Start Quiz"
+  },
+  "commonScams.intro.title": {
+    "message": "Protecting your ada from scammers"
+  },
+  "commonScams.intro.description1": {
+    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn't immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself."
+  },
+  "commonScams.intro.description2": {
+    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
+  },
+  "commonScams.divider.giveaway": {
+    "message": "Giveaway"
+  },
+  "commonScams.giveaway.title": {
+    "message": "Ada Giveaway Scam"
+  },
+  "commonScams.giveaway.description1": {
+    "message": "One of the most well-known scams targeting the Cardano community is the **Ada Giveaway Scam.** Scammers promise to double your ada if you send them a certain amount first. These scams often feature fake live streams of Charles Hoskinson, or other well-known personalities, to appear legitimate. The streams may mimic genuine events and include a wallet address for you to send your ada."
+  },
+  "commonScams.giveaway.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.giveaway.tip1": {
+    "message": "Legitimate giveaways **never** ask for money upfront."
+  },
+  "commonScams.giveaway.tip2": {
+    "message": "Avoid clicking on links in unsolicited messages or live streams."
+  },
+  "commonScams.giveaway.tip3": {
+    "message": "Remember: Once sent, your ada is gone forever."
+  },
+  "commonScams.giveaway.tip4": {
+    "message": "Read reports and scam sightings from users in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "commonScams.divider.phishing": {
+    "message": "Phishing"
+  },
+  "commonScams.phishing.title": {
+    "message": "Phishing Attacks"
+  },
+  "commonScams.phishing.description": {
+    "message": "Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](/what-is-ada/#wallets)."
+  },
+  "commonScams.phishing.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.phishing.tip1": {
+    "message": "Double-check URLs to ensure they match actual wallet websites."
+  },
+  "commonScams.phishing.tip2": {
+    "message": "**Never** share your recovery phrase, **even** with \"support\" staff or \"moderators\"."
+  },
+  "commonScams.phishing.tip3": {
+    "message": "Consider using hardware wallets."
+  },
+  "commonScams.phishing.tip4": {
+    "message": "Use two-factor authentication where possible."
+  },
+  "commonScams.divider.investment": {
+    "message": "Fake Investment"
+  },
+  "commonScams.investment.title": {
+    "message": "Fake Investment Opportunities"
+  },
+  "commonScams.investment.description": {
+    "message": "Fraudulent investment schemes are another popular scam. Scammers promote fake projects, claiming they are \"Cardano-backed\" or \"ada-specific\" opportunities with guaranteed high returns. Victims are urged to send ada or other funds to a provided wallet address, with promises of earning exponential profits."
+  },
+  "commonScams.investment.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.investment.tip1": {
+    "message": "Legitimate projects **never** promise guaranteed returns."
+  },
+  "commonScams.investment.tip2": {
+    "message": "Be skeptical of unsolicited investment offers."
+  },
+  "commonScams.investment.tip3": {
+    "message": "Research projects thoroughly, checking for transparency and a credible team."
+  },
+  "commonScams.divider.support": {
+    "message": "Fake Support"
+  },
+  "commonScams.support.title": {
+    "message": "Fake Tech Support"
+  },
+  "commonScams.support.description1": {
+    "message": "In this scam, fraudsters pose as \"official\" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to \"help,\" they'll ask for your recovery phrase (seed words) or private keys."
+  },
+  "commonScams.support.description2": {
+    "message": "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
+  },
+  "commonScams.support.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.support.tip1": {
+    "message": "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys."
+  },
+  "commonScams.support.tip2": {
+    "message": "Never engage with unsolicited messages claiming to be from support."
+  },
+  "commonScams.support.tip3": {
+    "message": "Legitimate people on forums and channels will **never** contact you first in a private message."
+  },
+  "commonScams.divider.rug": {
+    "message": "Rug Pulls"
+  },
+  "commonScams.rug.title": {
+    "message": "Rug Pulls in Cardano Ecosystem"
+  },
+  "commonScams.rug.description": {
+    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a \"rug pull.\""
+  },
+  "commonScams.rug.howToProtect": {
+    "message": "How to protect yourself:"
+  },
+  "commonScams.rug.tip1": {
+    "message": "Research the project team's credentials and reputation."
+  },
+  "commonScams.rug.tip2": {
+    "message": "Check for audits or transparent documentation."
+  },
+  "commonScams.rug.tip3": {
+    "message": "Avoid projects with anonymous teams or unrealistic promises."
+  },
+  "commonScams.rug.tip4": {
+    "message": "Only get utility tokens when you need to use the utility."
+  },
+  "commonScams.rug.tip5": {
+    "message": "Find out what other people think about projects in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+  },
+  "home.meta.title": {
+    "message": "ホーム | cardano.org"
+  },
+  "home.meta.description": {
+    "message": "経済的なアイデンティティを持たない数十億の人々に、分散型アプリケーションによるID管理・価値移転・ガバナンスの手段を提供するオープンプラットフォーム。"
+  },
+  "home.hero.title": {
+    "message": "より良い世界を、すべての人に"
+  },
+  "home.hero.description": {
+    "message": "Cardanoは、変革者・イノベーター・ビジョナリーのためのブロックチェーンプラットフォームです。多くの人々に可能性をもたらし、世界にポジティブな変化を起こすためのツールとテクノロジーを提供します。"
+  },
+  "home.hero.ctaWhatIsAda": {
+    "message": "adaとは？"
+  },
+  "home.hero.ctaGetStarted": {
+    "message": "はじめる"
+  },
+  "home.featured.title": {
+    "message": "世界は変わりつつあります。共に、より良い方向へ変えていきましょう。"
+  },
+  "home.featured.description1": {
+    "message": "Cardanoはプルーフ・オブ・ステーク型のブロックチェーンプラットフォームです。[peer-reviewされた研究](/research)に基づき、エビデンスに基づく手法で開発された初のプラットフォームとして、最先端テクノロジーを組み合わせ、分散型アプリケーション・システム・社会に比類ない安全性と持続可能性を提供します。"
+  },
+  "home.featured.description2": {
+    "message": "優秀なエンジニアチームとともに、Cardanoは不透明な権力構造から個人へと力を再分配し、ポジティブな変化と進歩を実現する原動力となることを目指しています。"
+  },
+  "home.featured.quote1": {
+    "message": "不可能の歴史を、"
+  },
+  "home.featured.quote2": {
+    "message": "可能に変える"
+  },
+  "home.featured.buttonLabel": {
+    "message": "Cardanoアプリを使う"
+  },
+  "home.divider.benefits": {
+    "message": "メリット"
+  },
+  "home.quoteBox.description": {
+    "message": "Cardanoは科学の力でグローバルシステムに信頼を取り戻します。個人が安全に取引し、システムが効果的に機能し、企業が成長するための、より安全で透明性のある持続可能な基盤を構築します。"
+  },
+  "home.quoteBox.quote": {
+    "message": "Cardanoはテクノロジーに新たな基準をもたらします — オープンでインクルーシブ — 既存の常識に挑み、持続可能でグローバルに分散されたイノベーションの新時代を切り開きます。"
+  },
+  "home.benefits.ouroboros.label": {
+    "message": "プルーフ・オブ・ステークとOuroboros"
+  },
+  "home.benefits.ouroboros.category": {
+    "message": "プロトコル"
+  },
+  "home.benefits.ouroboros.title": {
+    "message": "プルーフ・オブ・ステークとOuroboros：最も環境に優しいブロックチェーンプロトコル"
+  },
+  "home.benefits.ouroboros.body": {
+    "message": "Ouroborosは、peer-reviewされ検証可能な安全性を持つ初のブロックチェーンプロトコルであり、Cardanoはそれを実装した最初のブロックチェーンです。セキュリティを犠牲にすることなく、グローバル規模での持続可能な分散化を実現します。<br /><br />このプロトコルは、より安全で透明性の高いグローバル決済システムを目指す基礎研究に基づく絶え間ない努力の成果です。権力と支配を公平に再分配する手段を提供します。"
+  },
+  "home.benefits.ouroboros.cta": {
+    "message": "Ouroborosについて"
+  },
+  "home.benefits.research.label": {
+    "message": "エビデンスに基づく開発"
+  },
+  "home.benefits.research.category": {
+    "message": "研究"
+  },
+  "home.benefits.research.title": {
+    "message": "科学に根ざした、最高水準の開発"
+  },
+  "home.benefits.research.body": {
+    "message": "Cardanoはエビデンスに基づく手法で開発されています。ミッションクリティカルなアプリケーションで使用される形式手法と、柔軟性を維持するアジャイル手法を独自に組み合わせた画期的なアプローチです。グローバルなアプリケーションやシステムをサポートするため、セキュリティの保証は選択肢ではなく必須要件と考えています。プロトコルの実装とプラットフォームの統合は、まず研究・検証・数学的モデリングとテストを経て仕様化されます。その仕様に基づく開発は独立監査を受けます。その結果、比類のない信頼性を持つコードベースが実現しています。"
+  },
+  "home.benefits.research.cta": {
+    "message": "研究を見る"
+  },
+  "home.benefits.secure.label": {
+    "message": "セキュア"
+  },
+  "home.benefits.secure.category": {
+    "message": "トランザクション"
+  },
+  "home.benefits.secure.title": {
+    "message": "比類ないセキュリティ — トラストレスな世界の実現"
+  },
+  "home.benefits.secure.body": {
+    "message": "Cardanoは、互いに面識がなく信頼関係もない当事者同士が安全にやり取りや取引を行うことを可能にします。信頼が自然には存在しない場面で信頼を構築するプラットフォームであり、まったく新しい市場と機会を切り開きます。Ouroborosにより、悪意ある攻撃やシビル攻撃に対して証明可能なセキュリティを実現しています。すべてのトランザクションは不変かつ透明に記録され、マルチシグネチャと革新的な拡張UTXOモデルによって安全に検証されます。"
+  },
+  "home.benefits.secure.cta": {
+    "message": "ロードマップを見る"
+  },
+  "home.benefits.participation.label": {
+    "message": "インセンティブ付きの参加"
+  },
+  "home.benefits.participation.category": {
+    "message": "オープン"
+  },
+  "home.benefits.participation.title": {
+    "message": "オープンでインセンティブに基づく参加"
+  },
+  "home.benefits.participation.body": {
+    "message": "熱心なコミュニティを核に、Cardanoはオープンな参加を通じて開発されるオープンソースプロジェクトです。ネットワークの長期的な健全性を確保するため、ステークプールオペレーターやステーク委任者として参加するユーザーに報酬を与えるインセンティブを備えています。プラットフォームは改善提案を通じて進化します。Cardanoのガバナンスはすべての人に民主的な発言権を与え、adaホルダーはプラットフォームのアップグレードや開発方針に関する提案の提出・投票ができます。このガバナンスモデルにより、将来の成長に向けた独自の立ち位置を確立し、ユーザーニーズに合わせた新機能導入の手段を提供します。コミュニティが継続的にプラットフォームとエコシステムの改善に資金を提供し、意思決定できる仕組みです。"
+  },
+  "home.benefits.participation.cta": {
+    "message": "ガバナンスについて"
+  },
+  "home.benefits.scalable.label": {
+    "message": "スケーラブルで持続可能"
+  },
+  "home.benefits.scalable.category": {
+    "message": "エコシステム"
+  },
+  "home.benefits.scalable.title": {
+    "message": "高いスケーラビリティと環境への持続可能性"
+  },
+  "home.benefits.scalable.body": {
+    "message": "Ouroborosにより、Cardanoは最小限のエネルギー消費でグローバル規模にスケールできます。他のブロックチェーンとは異なり、パフォーマンスの向上やブロック追加に指数関数的なエネルギー増加を必要としません。パフォーマンスと持続可能性のバランスは、マルチレジャー、サイドチェーン、マルチパーティステートチャネルによる並列トランザクション処理など、革新的なアプローチの組み合わせで達成されています。<br /><br />ステークプール数の増加とともにネットワークは拡大し、各プールの魅力度を測るパラメータが設定・調整されます。参加に直接報酬を与えるネットワークです。Cardanoは、ネットワークの利益のために行動する者が自身の利益のためにも行動するよう設計されています。これにより、耐久性のある健全で堅牢なネットワークとエコシステムの発展が確保されます。持続可能性とスケーラビリティの組み合わせにより、金融・物流・アイデンティティ・社会に関わるグローバルシステムの進化する需要に対応するスループットを実現します。"
+  },
+  "home.benefits.scalable.cta": {
+    "message": "Hydraについて"
+  },
+  "home.vision.title1": {
+    "message": "あなたの可能性を定義しよう。"
+  },
+  "home.vision.title2": {
+    "message": "あなたの世界を変えよう。"
+  },
+  "home.divider.makeTheChange": {
+    "message": "変革を起こす"
+  },
+  "home.discover.title": {
+    "message": "Cardanoを知る"
+  },
+  "home.discover.description": {
+    "message": "Cardanoは、[peer-reviewされた研究](/research)に基づいて構築された初のブロックチェーンプラットフォームです。数十億のデータを守るセキュリティ、グローバルシステムに対応するスケーラビリティ、そして根本的な変革を支える堅牢性を兼ね備えています。"
+  },
+  "home.discover.people": {
+    "message": "人々"
+  },
+  "home.discover.purpose": {
+    "message": "目的"
+  },
+  "home.discover.research": {
+    "message": "研究"
+  },
+  "home.discover.technology": {
+    "message": "テクノロジー"
+  },
+  "home.discover.opportunity": {
+    "message": "機会"
+  },
+  "home.discover.quote1": {
+    "message": "私たちは科学を変えました。グローバルシステムの構築、持続可能な交換とガバナンスのモデルが意味するものを変えました。"
+  },
+  "home.discover.quote2": {
+    "message": "Cardano上で構築するコミュニティ・組織・企業とともに、新しい未来が形づくられています — 仲介者のいない分散型の未来、権力が個人に戻される未来です。"
+  },
+  "home.divider.entities": {
+    "message": "エンティティ"
+  },
+  "home.entities.description": {
+    "message": "複数の独立した組織が分散型のチームフレームワークの中で協力し、Cardanoの前進を推進しています。進化と発展を続けながらも、コアミッションとの一致を確保しています。以下はその一部です："
+  },
+  "home.follow.divider": {
+    "message": "ソーシャル"
+  },
+  "home.follow.title": {
+    "message": "参加しよう"
+  }
+}

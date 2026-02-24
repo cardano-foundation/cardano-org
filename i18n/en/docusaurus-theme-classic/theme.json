@@ -1,0 +1,34 @@
+{
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Clear",
+    "description": "The title for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Cancel",
+    "description": "The text for search box cancel button"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "to select",
+    "description": "The text for the select key instruction"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "to navigate",
+    "description": "The text for the navigate key instruction"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "to close",
+    "description": "The text for the close key instruction"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "One document found|{count} documents found",
+    "description": "The label for search page documents found counter"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No documents were found",
+    "description": "The text for no search results"
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
+import {translate} from '@docusaurus/Translate';
 
 function WelcomeHero({ title, description }) {
   const containerRef = useRef(null);
@@ -58,13 +59,13 @@ function WelcomeHero({ title, description }) {
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
               to="/what-is-ada"
             >
-              What is ada?
+              {translate({id: 'home.hero.ctaWhatIsAda', message: 'What is ada?'})}
             </Link>
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
               to="/get-started"
             >
-              Get Started
+              {translate({id: 'home.hero.ctaGetStarted', message: 'Get Started'})}
             </Link>
           </div>
         </div>

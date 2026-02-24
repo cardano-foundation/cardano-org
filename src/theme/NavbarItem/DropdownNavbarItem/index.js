@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import OriginalDropdownNavbarItem from '@theme-original/NavbarItem/DropdownNavbarItem';
 import {useWindowSize} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {translate} from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function DropdownNavbarItem({mobile = false, ...props}) {
   const windowSize = useWindowSize();
@@ -12,6 +14,8 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
   const {siteConfig} = useDocusaurusContext();
   const megaMenuIconsEnabled = siteConfig?.themeConfig?.megaMenuIcons !== false;
   const megaMenuColumnIconsEnabled = siteConfig?.themeConfig?.megaMenuColumnIcons === true;
+
+  const iconBasePath = useBaseUrl('/img/icons/');
 
   const mega =
     props.mega &&
@@ -55,13 +59,13 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
               <div className="megaMenuColumnTitle">
                 {megaMenuColumnIconsEnabled && col.icon && (
                   <img
-                    src={`/img/icons/${col.icon}.svg`}
+                    src={`${iconBasePath}${col.icon}.svg`}
                     alt=""
                     className="megaMenuColumnIcon"
                     aria-hidden="true"
                   />
                 )}
-                {col.title}
+                {translate({id: `navbar.mega.column.${col.title}`, message: col.title})}
               </div>
               <ul className="megaMenuColumnList">
                 {col.items.map((item) => (
@@ -72,17 +76,17 @@ export default function DropdownNavbarItem({mobile = false, ...props}) {
                       href={item.href}>
                       {megaMenuIconsEnabled && item.icon && (
                         <img
-                          src={`/img/icons/${item.icon}.svg`}
+                          src={`${iconBasePath}${item.icon}.svg`}
                           alt=""
                           className="megaMenuItemIcon"
                           aria-hidden="true"
                         />
                       )}
                       <div className="megaMenuItemContent">
-                        <span className="megaMenuItemLabel">{item.label}</span>
+                        <span className="megaMenuItemLabel">{translate({id: `navbar.mega.label.${item.label}`, message: item.label})}</span>
                         {item.description && (
                           <span className="megaMenuItemDescription">
-                            {item.description}
+                            {translate({id: `navbar.mega.description.${item.label}`, message: item.description})}
                           </span>
                         )}
                       </div>

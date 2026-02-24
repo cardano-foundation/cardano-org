@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import {translate} from '@docusaurus/Translate';
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
@@ -14,13 +15,13 @@ import { useLocation } from '@docusaurus/router';
 // 🔹 Export meta so the indexer (mod.meta) can read it, even though indexed=false
 export const meta = {
   pageName: 'template',
-  pageTitle: 'Insights Template | cardano.org',
-  pageDescription: 'Insights Template',
-  title: 'This is just an insights template',
+  pageTitle: translate({id: 'insightsTemplate.meta.pageTitle', message: 'Insights Template | cardano.org'}),
+  pageDescription: translate({id: 'insightsTemplate.meta.pageDescription', message: 'Insights Template'}),
+  title: translate({id: 'insightsTemplate.meta.title', message: 'This is just an insights template'}),
   date: '2025-03-17',
   og: {
-    title: 'This is just an insights template | Cardano.org',
-    description: 'Detailed description for open graph pages, and more.'
+    title: translate({id: 'insightsTemplate.og.title', message: 'This is just an insights template | Cardano.org'}),
+    description: translate({id: 'insightsTemplate.og.description', message: 'Detailed description for open graph pages, and more.'})
   },
   tags: ['governance'],
   indexed: false
@@ -67,7 +68,7 @@ function PageContent() {
 
   const pageTitle = meta.pageTitle;
   const pageDescription = meta.pageDescription;
-  const pageKeywords = 'Cardano, Insights, Template'; // define or remove
+  const pageKeywords = translate({id: 'insightsTemplate.page.keywords', message: 'Cardano, Insights, Template'}); // define or remove
   const canonicalUrl = `https://www.cardano.org/insights/${meta.pageName}`;
 
   // insert custom data fetching logic here (e.g., API calls, hooks, etc.)
@@ -100,12 +101,12 @@ function PageContent() {
       </Head>
 
       <p>
-        You don't need to use TitleWithText or similar components—plain HTML is fine.
-        For internal links use: <Link to="/where-to-get-ada">where to get ada?</Link>
+        {translate({id: 'insightsTemplate.content.paragraph1', message: "You don't need to use TitleWithText or similar components—plain HTML is fine."})}
+        {' '}{translate({id: 'insightsTemplate.content.internalLinksLabel', message: 'For internal links use:'})}{' '}<Link to="/where-to-get-ada">{translate({id: 'insightsTemplate.content.internalLinkText', message: 'where to get ada?'})}</Link>
       </p>
 
       <p>
-        For external links use: <Link href="https://developers.cardano.org">developers.cardano.org</Link>
+        {translate({id: 'insightsTemplate.content.externalLinksLabel', message: 'For external links use:'})}{' '}<Link href="https://developers.cardano.org">developers.cardano.org</Link>
       </p>
 
       <ExampleDonutChart />

@@ -1,0 +1,450 @@
+{
+  "home.meta.title": {
+    "message": "Trang chủ | cardano.org"
+  },
+  "home.meta.description": {
+    "message": "Nền tảng mở được thiết kế để trao quyền cho hàng tỷ người chưa có danh tính kinh tế, thông qua các ứng dụng phi tập trung quản lý danh tính, giá trị và quản trị."
+  },
+  "home.hero.title": {
+    "message": "Xây dựng thế giới tốt đẹp hơn cho tất cả"
+  },
+  "home.hero.description": {
+    "message": "Cardano là nền tảng blockchain dành cho những người tiên phong, nhà đổi mới và người có tầm nhìn – với đầy đủ công cụ và công nghệ để tạo cơ hội cho số đông, không chỉ cho số ít, nhằm mang lại thay đổi tích cực trên toàn cầu."
+  },
+  "home.hero.ctaWhatIsAda": {
+    "message": "Ada là gì?"
+  },
+  "home.hero.ctaGetStarted": {
+    "message": "Bắt đầu"
+  },
+  "home.featured.title": {
+    "message": "Thế giới đang thay đổi. Cùng nhau, chúng ta có thể thay đổi nó theo hướng tốt hơn."
+  },
+  "home.featured.description1": {
+    "message": "Cardano là nền tảng blockchain proof-of-stake: nền tảng đầu tiên được xây dựng dựa trên [nghiên cứu peer-reviewed](/research) và phát triển bằng phương pháp dựa trên bằng chứng. Cardano kết hợp các công nghệ tiên phong để mang đến sự bảo mật và tính bền vững chưa từng có cho các ứng dụng, hệ thống và xã hội phi tập trung."
+  },
+  "home.featured.description2": {
+    "message": "Với đội ngũ kỹ sư hàng đầu, Cardano tồn tại để phân phối lại quyền lực từ các cấu trúc thiếu trách nhiệm đến từng cá nhân – và trở thành động lực cho sự thay đổi và tiến bộ tích cực."
+  },
+  "home.featured.quote1": {
+    "message": "Lịch sử của những điều bất khả,"
+  },
+  "home.featured.quote2": {
+    "message": "trở thành hiện thực"
+  },
+  "home.featured.buttonLabel": {
+    "message": "Sử dụng ứng dụng Cardano"
+  },
+  "home.divider.benefits": {
+    "message": "Lợi ích"
+  },
+  "home.quoteBox.description": {
+    "message": "Cardano khôi phục niềm tin cho các hệ thống toàn cầu – thông qua khoa học, tạo ra nền tảng an toàn, minh bạch và bền vững hơn cho cá nhân giao dịch, hệ thống quản trị và doanh nghiệp phát triển."
+  },
+  "home.quoteBox.quote": {
+    "message": "Cardano mang đến tiêu chuẩn mới trong công nghệ – mở và bao trùm – để thách thức cái cũ và khởi động kỷ nguyên mới của đổi mới bền vững, phân tán toàn cầu."
+  },
+  "home.benefits.ouroboros.label": {
+    "message": "Proof-of-Stake và Ouroboros"
+  },
+  "home.benefits.ouroboros.category": {
+    "message": "Giao thức"
+  },
+  "home.benefits.ouroboros.title": {
+    "message": "Proof-of-Stake và Ouroboros: Giao thức blockchain bền vững nhất với môi trường"
+  },
+  "home.benefits.ouroboros.body": {
+    "message": "Ouroboros là giao thức blockchain peer-reviewed đầu tiên, được xác minh an toàn, và Cardano là blockchain đầu tiên triển khai nó. Ouroboros cho phép phi tập trung hóa mạng lưới Cardano ở quy mô bền vững cho các yêu cầu toàn cầu, và quan trọng nhất là không ảnh hưởng đến bảo mật.<br /><br />Giao thức này là kết quả của nỗ lực không ngừng, dựa trên nghiên cứu nền tảng, được thúc đẩy bởi tầm nhìn về hệ thống thanh toán toàn cầu an toàn và minh bạch hơn, đồng thời cung cấp phương tiện để phân phối lại quyền lực và quyền kiểm soát một cách công bằng."
+  },
+  "home.benefits.ouroboros.cta": {
+    "message": "Tìm hiểu về Ouroboros"
+  },
+  "home.benefits.research.label": {
+    "message": "Phát triển dựa trên bằng chứng"
+  },
+  "home.benefits.research.category": {
+    "message": "Nghiên cứu"
+  },
+  "home.benefits.research.title": {
+    "message": "Tiêu chuẩn phát triển cao nhất, bắt nguồn từ khoa học"
+  },
+  "home.benefits.research.body": {
+    "message": "Cardano được phát triển bằng phương pháp dựa trên bằng chứng – sự kết hợp mới lạ giữa phương pháp hình thức, thường thấy trong các ứng dụng quan trọng có rủi ro cao, và phương pháp linh hoạt (agile), giúp dự án luôn thích ứng và phản hồi nhanh với các yêu cầu mới. Để hỗ trợ các ứng dụng, hệ thống và giải pháp toàn cầu, chúng tôi tin rằng đảm bảo bảo mật không phải là lựa chọn mà là yêu cầu bắt buộc. Các giao thức và tích hợp nền tảng được nghiên cứu, thử thách và mô hình hóa toán học trước khi được đặc tả. Các đặc tả này sau đó định hướng quá trình phát triển, và kết quả được kiểm toán độc lập. Kết quả là một mã nguồn với mức độ đảm bảo chưa từng có."
+  },
+  "home.benefits.research.cta": {
+    "message": "Khám phá nghiên cứu"
+  },
+  "home.benefits.secure.label": {
+    "message": "Bảo mật"
+  },
+  "home.benefits.secure.category": {
+    "message": "Giao dịch"
+  },
+  "home.benefits.secure.title": {
+    "message": "Bảo mật vượt trội – Nền tảng của thế giới không cần tin cậy"
+  },
+  "home.benefits.secure.body": {
+    "message": "Cardano cho phép các bên không quen biết nhau – và không có lý do để tin tưởng lẫn nhau – tương tác và giao dịch một cách an toàn. Đây là nền tảng xây dựng niềm tin nơi vốn không tồn tại, mở ra thị trường và cơ hội hoàn toàn mới. Thông qua Ouroboros, Cardano được bảo vệ trước các tác nhân xấu và tấn công Sybil. Mỗi giao dịch, tương tác và trao đổi đều được ghi lại bất biến và minh bạch, được xác thực an toàn bằng đa chữ ký và mô hình UTXO mở rộng tiên phong."
+  },
+  "home.benefits.secure.cta": {
+    "message": "Xem lộ trình"
+  },
+  "home.benefits.participation.label": {
+    "message": "Tham gia có khuyến khích"
+  },
+  "home.benefits.participation.category": {
+    "message": "Mở"
+  },
+  "home.benefits.participation.title": {
+    "message": "Mở và khuyến khích sự tham gia"
+  },
+  "home.benefits.participation.body": {
+    "message": "Với cộng đồng tận tâm làm nòng cốt, Cardano là dự án mã nguồn mở được phát triển thông qua sự tham gia mở. Để đảm bảo sự bền vững và sức khỏe của mạng lưới, Cardano có cơ chế khuyến khích thưởng cho người dùng – dù là nhà vận hành stake pool hay người ủy quyền – cho sự tham gia của họ. Nền tảng được xây dựng và mở rộng thông qua các đề xuất cải tiến. Hệ thống quản trị của Cardano trao cho mọi người tiếng nói dân chủ; người nắm giữ ada có thể gửi hoặc bỏ phiếu cho các đề xuất nâng cấp nền tảng hoặc định hướng phát triển. Mô hình quản trị này đặt Cardano vào vị thế thuận lợi cho sự tăng trưởng trong tương lai, đồng thời cung cấp phương tiện để giới thiệu tính năng mới phù hợp với nhu cầu người dùng. Điều này đảm bảo Cardano và cộng đồng có thể liên tục tài trợ và quyết định các cải tiến cho nền tảng và hệ sinh thái."
+  },
+  "home.benefits.participation.cta": {
+    "message": "Tìm hiểu về quản trị"
+  },
+  "home.benefits.scalable.label": {
+    "message": "Khả năng mở rộng và bền vững"
+  },
+  "home.benefits.scalable.category": {
+    "message": "Hệ sinh thái"
+  },
+  "home.benefits.scalable.title": {
+    "message": "Khả năng mở rộng vượt trội và bền vững với môi trường"
+  },
+  "home.benefits.scalable.body": {
+    "message": "Ouroboros cho phép Cardano mở rộng theo yêu cầu toàn cầu với mức tiêu thụ năng lượng tối thiểu. Khác với các blockchain khác, Cardano không yêu cầu tăng năng lượng theo cấp số nhân để nâng cao hiệu suất và thêm khối. Sự cân bằng giữa hiệu suất và tính bền vững đạt được thông qua sự kết hợp các phương pháp mới, bao gồm đa sổ cái, chuỗi phụ và xử lý giao dịch song song qua kênh trạng thái đa bên.<br /><br />Mạng lưới phát triển khi số lượng stake pool tăng lên, trong khi các tham số được thiết lập và điều chỉnh để đo lường sức hấp dẫn của từng stake pool. Đây là mạng lưới thưởng trực tiếp cho sự tham gia. Cardano được thiết kế để đảm bảo rằng những ai hành động vì lợi ích tốt nhất của mạng lưới cũng đang hành động vì lợi ích của chính mình. Điều này đảm bảo sự phát triển của một hệ sinh thái lành mạnh với mạng lưới bền bỉ và mạnh mẽ, cho hiện tại và tương lai. Sự kết hợp giữa tính bền vững và khả năng mở rộng cho phép Cardano đạt được thông lượng cần thiết để đáp ứng nhu cầu ngày càng phát triển của các hệ thống toàn cầu – tài chính, hậu cần, danh tính, xã hội."
+  },
+  "home.benefits.scalable.cta": {
+    "message": "Tìm hiểu về Hydra"
+  },
+  "home.vision.title1": {
+    "message": "Định nghĩa khả năng của bạn."
+  },
+  "home.vision.title2": {
+    "message": "Thay đổi thế giới của bạn."
+  },
+  "home.divider.makeTheChange": {
+    "message": "Tạo sự thay đổi"
+  },
+  "home.discover.title": {
+    "message": "Khám phá Cardano"
+  },
+  "home.discover.description": {
+    "message": "Cardano là nền tảng blockchain đầu tiên được xây dựng dựa trên [nghiên cứu peer-reviewed](/research), đủ an toàn để bảo vệ dữ liệu của hàng tỷ người, đủ khả năng mở rộng để phục vụ các hệ thống toàn cầu, và đủ vững chắc để hỗ trợ thay đổi nền tảng."
+  },
+  "home.discover.people": {
+    "message": "Con người"
+  },
+  "home.discover.purpose": {
+    "message": "Mục đích"
+  },
+  "home.discover.research": {
+    "message": "Nghiên cứu"
+  },
+  "home.discover.technology": {
+    "message": "Công nghệ"
+  },
+  "home.discover.opportunity": {
+    "message": "Cơ hội"
+  },
+  "home.discover.quote1": {
+    "message": "Chúng tôi đã thay đổi khoa học. Chúng tôi đã thay đổi ý nghĩa của việc xây dựng các hệ thống toàn cầu và mô hình trao đổi, quản trị bền vững."
+  },
+  "home.discover.quote2": {
+    "message": "Cùng với cộng đồng, các tổ chức và doanh nghiệp xây dựng trên Cardano, một tương lai mới đang được định hình: tương lai phi tập trung không có trung gian, nơi quyền lực được trao lại cho mỗi cá nhân"
+  },
+  "home.divider.entities": {
+    "message": "Các tổ chức"
+  },
+  "home.entities.description": {
+    "message": "Nhiều tổ chức độc lập cùng hợp tác trong khuôn khổ phi tập trung để thúc đẩy Cardano tiến lên, đảm bảo luôn phù hợp với sứ mệnh cốt lõi trong quá trình phát triển. Dưới đây là một số tổ chức tiêu biểu:"
+  },
+  "home.follow.divider": {
+    "message": "Mạng xã hội"
+  },
+  "home.follow.title": {
+    "message": "Tham gia cùng chúng tôi"
+  },
+  "navbar.mega.column.Get to know": {
+    "message": "Tìm hiểu",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Take part": {
+    "message": "Tham gia",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Research": {
+    "message": "Nghiên cứu",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Connect": {
+    "message": "Kết nối",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Engage": {
+    "message": "Cộng đồng",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Governance": {
+    "message": "Quản trị",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Get started": {
+    "message": "Bắt đầu",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Tools": {
+    "message": "Công cụ",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.For Enterprise": {
+    "message": "Doanh nghiệp",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Use Cases": {
+    "message": "Ứng dụng thực tế",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.label.What is ada?": {
+    "message": "Ada là gì?",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Get started with Cardano": {
+    "message": "Bắt đầu với Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Where to get ada?": {
+    "message": "Mua ada ở đâu?",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Protect your ada": {
+    "message": "Bảo vệ ada của bạn",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Delegate your ada": {
+    "message": "Ủy quyền ada của bạn",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Use Cardano Apps": {
+    "message": "Sử dụng ứng dụng Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Code of Conduct": {
+    "message": "Quy tắc ứng xử",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Research": {
+    "message": "Nghiên cứu Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Insights": {
+    "message": "Cardano Insights",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Hard Forks": {
+    "message": "Hard Fork",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.News": {
+    "message": "Tin tức",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Newsletter": {
+    "message": "Bản tin",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Online Communities": {
+    "message": "Cộng đồng trực tuyến",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Ambassador Program": {
+    "message": "Chương trình Đại sứ",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Events": {
+    "message": "Sự kiện Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Forum": {
+    "message": "Diễn đàn Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Get involved in cardano.org": {
+    "message": "Đóng góp cho cardano.org",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Participate in governance": {
+    "message": "Tham gia quản trị",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Governance Tools": {
+    "message": "Công cụ quản trị",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Constitution": {
+    "message": "Hiến pháp Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Start building on Cardano": {
+    "message": "Bắt đầu phát triển trên Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Integrate Cardano": {
+    "message": "Tích hợp Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Developer Portal": {
+    "message": "Cổng nhà phát triển",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Builder Tools": {
+    "message": "Công cụ phát triển",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Companies building on Cardano": {
+    "message": "Doanh nghiệp xây dựng trên Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Enterprise Solutions": {
+    "message": "Giải pháp doanh nghiệp",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Contact the Foundation": {
+    "message": "Liên hệ với Foundation",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.All Use Cases": {
+    "message": "Tất cả ứng dụng",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Identity": {
+    "message": "Danh tính",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Supply Chain": {
+    "message": "Chuỗi cung ứng",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.description.What is ada?": {
+    "message": "Token gốc của Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Get started with Cardano": {
+    "message": "Tìm hiểu cơ bản và bắt đầu sử dụng Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Where to get ada?": {
+    "message": "Sở hữu ada để sử dụng Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Protect your ada": {
+    "message": "Đừng để bị lừa đảo",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Delegate your ada": {
+    "message": "Tham gia và nhận phần thưởng",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Use Cardano Apps": {
+    "message": "Khám phá các ứng dụng được tuyển chọn",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Code of Conduct": {
+    "message": "Tiêu chuẩn và giá trị cộng đồng",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Research": {
+    "message": "Nghiên cứu và bài báo peer-reviewed",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Insights": {
+    "message": "Dữ liệu on-chain và cập nhật định kỳ",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Hard Forks": {
+    "message": "Các nâng cấp đã triển khai",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.News": {
+    "message": "Tin tức và cập nhật mới nhất về Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Newsletter": {
+    "message": "Cập nhật tin tức Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Online Communities": {
+    "message": "Các kênh được khuyên dùng",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Ambassador Program": {
+    "message": "Gặp gỡ các Đại sứ Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Events": {
+    "message": "Tham gia các sự kiện cộng đồng Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Forum": {
+    "message": "Thảo luận chuyên sâu theo chủ đề",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Get involved in cardano.org": {
+    "message": "Nếu bạn muốn tham gia, hãy bắt đầu từ đây",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Participate in governance": {
+    "message": "Định hình tương lai của Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Governance Tools": {
+    "message": "Công cụ cho các quyết định minh bạch của cộng đồng",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Constitution": {
+    "message": "Tìm hiểu về quản trị",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Start building on Cardano": {
+    "message": "Tài nguyên và công cụ cho nhà phát triển",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Integrate Cardano": {
+    "message": "Hướng dẫn tích hợp cho sàn giao dịch",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Developer Portal": {
+    "message": "Cổng và tài liệu cho nhà phát triển Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Builder Tools": {
+    "message": "Công cụ xây dựng trên Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Companies building on Cardano": {
+    "message": "Doanh nghiệp, hiệp hội và hợp tác",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Enterprise Solutions": {
+    "message": "Nghiên cứu tình huống và triển khai thực tế",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Contact the Foundation": {
+    "message": "Hợp tác với Cardano Foundation",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.All Use Cases": {
+    "message": "Khám phá các ứng dụng blockchain",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Identity": {
+    "message": "Xác thực và chứng nhận",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Supply Chain": {
+    "message": "Truy xuất nguồn gốc",
+    "description": "Mega menu item description"
+  }
+}

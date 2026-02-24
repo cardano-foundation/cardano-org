@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60 }) => {
@@ -89,7 +90,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
   if (!quizData || questions.length === 0) {
     return (
       <div className={styles.quizContainer}>
-        <p className={styles.noData}>No quiz questions available.</p>
+        <p className={styles.noData}>{translate({id: 'quiz.ui.noQuestions', message: 'No quiz questions available.'})}</p>
       </div>
     );
   }
@@ -113,16 +114,16 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
             )}
           </div>
           <h2 className={styles.resultTitle}>
-            {isPassing ? 'Great job!' : 'Keep learning!'}
+            {isPassing ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'}) : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
           </h2>
           <div className={styles.scoreDisplay}>
             <span className={styles.scoreNumber}>{percentage}%</span>
             <span className={styles.scoreText}>
-              You scored {score} out of {totalQuestions}
+              {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
             </span>
           </div>
           <button onClick={handleRestartQuiz} className={styles.primaryButton}>
-            Try again
+            {translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
           </button>
         </div>
       </div>
@@ -156,7 +157,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
                 </svg>
               )}
             </div>
-            {isCorrect ? 'Correct!' : 'Incorrect'}
+            {isCorrect ? translate({id: 'quiz.ui.correct', message: 'Correct!'}) : translate({id: 'quiz.ui.incorrect', message: 'Incorrect'})}
           </div>
         )}
 
@@ -219,7 +220,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
         {/* Explanation */}
         {isAnswered && currentQuestion.explanation && (
           <div className={styles.explanation}>
-            <h4 className={styles.explanationTitle}>Explanation</h4>
+            <h4 className={styles.explanationTitle}>{translate({id: 'quiz.ui.explanation', message: 'Explanation'})}</h4>
             <p className={styles.explanationText}>{currentQuestion.explanation}</p>
           </div>
         )}
@@ -232,17 +233,17 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
               disabled={selectedAnswer === null}
               className={styles.checkButton}
             >
-              Check answer
+              {translate({id: 'quiz.ui.checkAnswer', message: 'Check answer'})}
             </button>
           ) : (
             <>
               {isIncorrect && allowRetry && (
                 <button onClick={handleTryAgain} className={styles.secondaryButton}>
-                  Try again
+                  {translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
                 </button>
               )}
               <button onClick={handleNextQuestion} className={styles.primaryButton}>
-                {currentQuestionIndex + 1 < totalQuestions ? 'Next question' : 'Finish quiz'}
+                {currentQuestionIndex + 1 < totalQuestions ? translate({id: 'quiz.ui.nextQuestion', message: 'Next question'}) : translate({id: 'quiz.ui.finishQuiz', message: 'Finish quiz'})}
               </button>
             </>
           )}

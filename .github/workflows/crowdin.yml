@@ -1,0 +1,22 @@
+name: Crowdin Sync
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crowdin Sync
+        uses: crowdin/github-action@v1
+        with:
+          upload_sources: true
+          download_translations: true
+          create_pull_request: true
+          pull_request_base_branch_name: 'staging'
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}

@@ -20,11 +20,11 @@ const faqData = {
   pineappleFAQ,
 };
 
-export default function FAQSection({ jsonFileName = "delegationFAQ" }) {
+export default function FAQSection({ jsonFileName = "delegationFAQ", data }) {
   // to maintain the alternating background we need to
   // manage the active state of each Collabsible on our own
   const [activeIndex, setActiveIndex] = useState(null);
-  const faqList = faqData[jsonFileName] || [];
+  const faqList = data || faqData[jsonFileName] || [];
 
 
   const handleClick = (index) => {

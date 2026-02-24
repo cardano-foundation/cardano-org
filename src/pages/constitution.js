@@ -10,6 +10,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import TermExplainer from "@site/src/components/TermExplainer";
+import {translate} from '@docusaurus/Translate';
 
 // Any fetch problem will result in showing a local copy, we will then let the user know
 const localConstitutionUrl = require('!!file-loader!@site/src/data/constitution-541.md').default;
@@ -85,14 +86,14 @@ const ConstitutionList = () => {
     return (
       <section>
         <h2>
-          Current Enacted Constitution&nbsp;<small>(Local Copy)</small>
+          {translate({id: 'constitution.error.title', message: 'Current Enacted Constitution'})}&nbsp;<small>{translate({id: 'constitution.error.localCopy', message: '(Local Copy)'})}</small>
         </h2>
         <p style={{ color: 'crimson' }}>
-          Could not fetch from data.cardano.org: {error}. Showing local copy below.
+          {translate({id: 'constitution.error.fetchError', message: 'Could not fetch from data.cardano.org:'})} {error}. {translate({id: 'constitution.error.showingLocal', message: 'Showing local copy below.'})}
         </p>
         <div style={{ marginBottom: '1rem' }}>
           <a href={localConstitutionUrl} download>
-            Download Constitution
+            {translate({id: 'constitution.link.download', message: 'Download Constitution'})}
           </a>{' '}
           |{' '}
           <a
@@ -100,7 +101,7 @@ const ConstitutionList = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Raw Markdown
+            {translate({id: 'constitution.link.viewRawMarkdown', message: 'View Raw Markdown'})}
           </a>
         </div>
         <div
@@ -113,7 +114,7 @@ const ConstitutionList = () => {
   }
 
   if (!proposals.length) {
-    return <p>Loading constitution versions...</p>;
+    return <p>{translate({id: 'constitution.loading.versions', message: 'Loading constitution versions...'})}</p>;
   }
 
   // Determine if there is an enacted constitution to embed
@@ -131,27 +132,27 @@ const ConstitutionList = () => {
       {hasEnacted && (
         <section>
           <TitleWithText
-          title="Current Enacted Cardano Constitution"
+          title={translate({id: 'constitution.enacted.title', message: 'Current Enacted Cardano Constitution'})}
           description={[
-            'Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS.'
+            translate({id: 'constitution.enacted.description', message: 'Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS.'})
           ]}
           headingDot
         />
           <div style={{ marginBottom: '1rem' }}>
             <a href={fileUrl} target="_blank" rel="noopener noreferrer" download>
-              Download Constitution
+              {translate({id: 'constitution.link.download', message: 'Download Constitution'})}
             </a>{' '}
             |{' '}
             <a href={fileUrl} target="_blank" rel="noopener noreferrer">
-              View on IPFS
+              {translate({id: 'constitution.link.viewOnIPFS', message: 'View on IPFS'})}
             </a>
           </div>
           {docError ? (
             <p style={{ color: 'red' }}>
-              Could not load constitution document: {docError}
+              {translate({id: 'constitution.error.loadDocument', message: 'Could not load constitution document:'})} {docError}
             </p>
           ) : !docContent ? (
-            <p>Loading document...</p>
+            <p>{translate({id: 'constitution.loading.document', message: 'Loading document...'})}</p>
           ) : (
             <div style={{ maxHeight: '600px', overflow: 'auto', marginBottom: '1rem' }}>
               <ReactMarkdown>{docContent}</ReactMarkdown>
@@ -160,22 +161,22 @@ const ConstitutionList = () => {
         </section>
       )}
       <TitleWithText
-        title="Constitution Ratification History"
+        title={translate({id: 'constitution.history.title', message: 'Constitution Ratification History'})}
         description={[
-          'Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS.'
+          translate({id: 'constitution.history.description', message: 'Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS.'})
         ]}
       />
       <ul>
         {proposals.map(proposal => (
           <li key={proposal.ratifiedEpoch}>
-            <strong>Version ratified at epoch {proposal.ratifiedEpoch}</strong>
-            
+            <strong>{translate({id: 'constitution.history.versionRatified', message: 'Version ratified at epoch'})} {proposal.ratifiedEpoch}</strong>
+
             {proposal.enactedEpoch && (
-              <span> (Enacted at epoch {proposal.enactedEpoch})</span>
+              <span> ({translate({id: 'constitution.history.enactedAtEpoch', message: 'Enacted at epoch'})} {proposal.enactedEpoch})</span>
             )}
 
             <p style={{ fontSize: '0.9em', color: '#555' }}>
-              Hash: <code>{proposal.contents.anchor.dataHash}</code>
+              {translate({id: 'constitution.history.hash', message: 'Hash:'})}{' '}<code>{proposal.contents.anchor.dataHash}</code>
             </p>
             {proposal.enactedEpoch && (
               <div>
@@ -191,7 +192,7 @@ const ConstitutionList = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View this constitution on IPFS
+                  {translate({id: 'constitution.link.viewOnIPFSHistory', message: 'View this constitution on IPFS'})}
                 </a>
               </div>
             )}
@@ -206,8 +207,8 @@ const ConstitutionList = () => {
 function HomepageHeader() {
   return (
     <SiteHero
-      title="The Cardano Constitution"
-      description="Discover the Cardano Constitution: the governance framework of the Cardano blockchain."
+      title={translate({id: 'constitution.hero.title', message: 'The Cardano Constitution'})}
+      description={translate({id: 'constitution.hero.description', message: 'Discover the Cardano Constitution: the governance framework of the Cardano blockchain.'})}
       bannerType="zoom"
     />
   );
@@ -216,8 +217,8 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title="The Cardano Constitution | cardano.org"
-      description="Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
+      title={translate({id: 'constitution.layout.title', message: 'The Cardano Constitution | cardano.org'})}
+      description={translate({id: 'constitution.layout.description', message: 'Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS.'})}
     >
       <OpenGraphInfo pageName="constitution" />
       <HomepageHeader />

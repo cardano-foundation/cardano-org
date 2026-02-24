@@ -6,6 +6,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
+import {translate} from '@docusaurus/Translate';
 
 // Layout components 
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
@@ -23,16 +24,16 @@ import authors from '@site/src/data/authors.json';
 // ────────────────────────────────────────────────────────────────────────────
 export const meta = {
   pageName: 'governance-actions',
-  pageTitle: 'Cardano Governance Action Charts',
-  pageDescription: 'Visual representation of Cardano Governance Action process flows.',
-  title: 'Cardano Governance Actions',
-  date: '2025-04-09', 
+  pageTitle: translate({id: 'insightsGovernance.meta.pageTitle', message: 'Cardano Governance Action Charts'}),
+  pageDescription: translate({id: 'insightsGovernance.meta.pageDescription', message: 'Visual representation of Cardano Governance Action process flows.'}),
+  title: translate({id: 'insightsGovernance.meta.title', message: 'Cardano Governance Actions'}),
+  date: '2025-04-09',
   og: {
-    title: 'Cardano Governance Actions',
-    description: 'Explore the Cardano Governance Action flow logic.'
-  }, 
+    title: translate({id: 'insightsGovernance.og.title', message: 'Cardano Governance Actions'}),
+    description: translate({id: 'insightsGovernance.og.description', message: 'Explore the Cardano Governance Action flow logic.'})
+  },
   tags: ['governance'],
-  indexed: true 
+  indexed: true
 };
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -66,9 +67,9 @@ function PageContent() {
   };
   
   // Canonical URL (optional: keep parameters for shareability)
-  const pageTitle = `Cardano Governance Action Charts`;
-  const pageDescription = `Explore the Cardano Governance Action Flows in a visual chart visualization`;
-  const pageKeywords = `Cardano, governance, action, DRep, SPO, voting, threshold`;
+  const pageTitle = translate({id: 'insightsGovernance.page.title', message: 'Cardano Governance Action Charts'});
+  const pageDescription = translate({id: 'insightsGovernance.page.description', message: 'Explore the Cardano Governance Action Flows in a visual chart visualization'});
+  const pageKeywords = translate({id: 'insightsGovernance.page.keywords', message: 'Cardano, governance, action, DRep, SPO, voting, threshold'});
   const canonicalUrlBase = `https://www.cardano.org/insights/governance-actions`;
   const canonicalUrl = canonicalUrlBase;
   
@@ -111,15 +112,15 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          `**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle (submission → ratification → enactment), who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies; some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/).`,
-          `Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you’re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** [constitution](/constitution).`,
-          `For **Protocol Parameter Changes**, the charts separate routine updates (typically **DReps + CC**) from **security-critical parameters**, which also need **SPO approval**, i.e., all three bodies. Appendix I lists the critical parameters and their permitted ranges/scope.`
+          translate({id: 'insightsGovernance.intro.paragraph1', message: '**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle (submission → ratification → enactment), who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies; some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/).'}),
+          translate({id: 'insightsGovernance.intro.paragraph2', message: 'Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you\'re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** [constitution](/constitution).'}),
+          translate({id: 'insightsGovernance.intro.paragraph3', message: 'For **Protocol Parameter Changes**, the charts separate routine updates (typically **DReps + CC**) from **security-critical parameters**, which also need **SPO approval**, i.e., all three bodies. Appendix I lists the critical parameters and their permitted ranges/scope.'})
         ]}
         headingDot
       />
 
       <BoundaryBox>
-        <Divider text="Governance Action Charts" id="charts" />
+        <Divider text={translate({id: 'insightsGovernance.divider.charts', message: 'Governance Action Charts'})} id="charts" />
         <GovernanceCharts
           initialCategory={initialCategory}
           initialParameters={initialParameters}

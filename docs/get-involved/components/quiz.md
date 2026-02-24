@@ -225,6 +225,41 @@ import quizData from '@site/src/data/quiz-demo.json';
 ---
 
 
+## Internationalization (i18n)
+
+All UI strings in the Quiz component (`Correct!`, `Incorrect`, `Check answer`, `Try again`, `Next question`, `Finish quiz`, `Explanation`, score text, etc.) use `translate()` from `@docusaurus/Translate` and can be translated via `i18n/<locale>/code.json` under the `quiz.ui.*` namespace.
+
+Quiz content (questions, options, explanations) comes from the JSON data file. To support multiple languages, create a locale-specific copy (e.g., `quiz-scams.de.json`) and select the correct file in the parent page based on `currentLocale`:
+
+```jsx
+import quizDataEn from '@site/src/data/quiz-example.json';
+import quizDataDe from '@site/src/data/quiz-example.de.json';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+const {i18n: {currentLocale}} = useDocusaurusContext();
+const quizData = currentLocale === 'de' ? quizDataDe : quizDataEn;
+
+<Quiz quizData={quizData} />
+```
+
+### Available Translation Keys
+
+| Key | English Default |
+|-----|----------------|
+| `quiz.ui.noQuestions` | No quiz questions available. |
+| `quiz.ui.greatJob` | Great job! |
+| `quiz.ui.keepLearning` | Keep learning! |
+| `quiz.ui.scoreText` | You scored \{score\} out of \{totalQuestions\} |
+| `quiz.ui.tryAgain` | Try again |
+| `quiz.ui.correct` | Correct! |
+| `quiz.ui.incorrect` | Incorrect |
+| `quiz.ui.explanation` | Explanation |
+| `quiz.ui.checkAnswer` | Check answer |
+| `quiz.ui.nextQuestion` | Next question |
+| `quiz.ui.finishQuiz` | Finish quiz |
+
+---
+
 ## Related Components
 
 - **[FAQ Component](/docs/get-involved/faq-component)** - For Q&A content without scoring
@@ -236,5 +271,6 @@ import quizData from '@site/src/data/quiz-demo.json';
 
 - **`quiz-demo.json`** - Cardano fundamentals (5 questions)
 - **`quiz-scams.json`** - Common scam awareness (10 questions)
+- **`quiz-scams.de.json`** - Common scam awareness, German (10 questions)
 
 You can create additional quiz files for different topics.

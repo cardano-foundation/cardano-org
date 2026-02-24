@@ -1,0 +1,142 @@
+{
+  "logo.alt": {
+    "message": "Cardano Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Learn": {
+    "message": "Lernen",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Participate": {
+    "message": "Mitmachen",
+    "description": "Navbar item with label Participate"
+  },
+  "item.label.Build": {
+    "message": "Entwickeln",
+    "description": "Navbar item with label Build"
+  },
+  "item.label.News": {
+    "message": "Neues",
+    "description": "Navbar item with label News"
+  },
+  "item.label.What is ada?": {
+    "message": "Was ist Ada?",
+    "description": "Navbar item with label What is ada?"
+  },
+  "item.label.Get started with Cardano": {
+    "message": "Erste Schritte mit Cardano",
+    "description": "Navbar item with label Get started with Cardano"
+  },
+  "item.label.Where to get ada?": {
+    "message": "Wo bekommt man Ada?",
+    "description": "Navbar item with label Where to get ada?"
+  },
+  "item.label.Protect your ada": {
+    "message": "Schütze deine Ada",
+    "description": "Navbar item with label Protect your ada"
+  },
+  "item.label.Delegate your ada": {
+    "message": "Delegiere deine Ada",
+    "description": "Navbar item with label Delegate your ada"
+  },
+  "item.label.Use Cardano Apps": {
+    "message": "Cardano Apps nutzen",
+    "description": "Navbar item with label Use Cardano Apps"
+  },
+  "item.label.Cardano Research": {
+    "message": "Cardano Research",
+    "description": "Navbar item with label Cardano Research"
+  },
+  "item.label.Cardano Insights": {
+    "message": "Cardano Insights",
+    "description": "Navbar item with label Cardano Insights"
+  },
+  "item.label.Hard Forks": {
+    "message": "Hard Forks",
+    "description": "Navbar item with label Hard Forks"
+  },
+  "item.label.Follow Cardano": {
+    "message": "Folge Cardano",
+    "description": "Navbar item with label Follow Cardano"
+  },
+  "item.label.Newsletter": {
+    "message": "Newsletter",
+    "description": "Navbar item with label Newsletter"
+  },
+  "item.label.Online Communities": {
+    "message": "Online-Communities",
+    "description": "Navbar item with label Online Communities"
+  },
+  "item.label.Cardano Ambassadors": {
+    "message": "Cardano Ambassadors",
+    "description": "Navbar item with label Cardano Ambassadors"
+  },
+  "item.label.Cardano Events": {
+    "message": "Cardano Events",
+    "description": "Navbar item with label Cardano Events"
+  },
+  "item.label.Cardano Forum": {
+    "message": "Cardano Forum",
+    "description": "Navbar item with label Cardano Forum"
+  },
+  "item.label.Get involved in cardano.org": {
+    "message": "Bei cardano.org mitmachen",
+    "description": "Navbar item with label Get involved in cardano.org"
+  },
+  "item.label.Participate in governance": {
+    "message": "An Governance teilnehmen",
+    "description": "Navbar item with label Participate in governance"
+  },
+  "item.label.Governance Tools": {
+    "message": "Governance-Tools",
+    "description": "Navbar item with label Governance Tools"
+  },
+  "item.label.Cardano Constitution": {
+    "message": "Cardano Constitution",
+    "description": "Navbar item with label Cardano Constitution"
+  },
+  "item.label.Start building on Cardano": {
+    "message": "Mit Cardano entwickeln",
+    "description": "Navbar item with label Start building on Cardano"
+  },
+  "item.label.Integrate Cardano": {
+    "message": "Cardano integrieren",
+    "description": "Navbar item with label Integrate Cardano"
+  },
+  "item.label.Developer Portal": {
+    "message": "Developer Portal",
+    "description": "Navbar item with label Developer Portal"
+  },
+  "item.label.Builder Tools": {
+    "message": "Entwickler-Tools",
+    "description": "Navbar item with label Builder Tools"
+  },
+  "item.label.Companies building on Cardano": {
+    "message": "Unternehmen setzen auf Cardano",
+    "description": "Navbar item with label Companies building on Cardano"
+  },
+  "item.label.Solutions": {
+    "message": "Lösungen",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Enterprise Solutions": {
+    "message": "Enterprise-Lösungen",
+    "description": "Navbar item with label Enterprise Solutions"
+  },
+  "item.label.Use Cases": {
+    "message": "Anwendungsfälle",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.Identity": {
+    "message": "Identität",
+    "description": "Navbar item with label Identity"
+  },
+  "item.label.Finance": {
+    "message": "Finanzen",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Supply Chain": {
+    "message": "Lieferkette",
+    "description": "Navbar item with label Supply Chain"
+  }
+}

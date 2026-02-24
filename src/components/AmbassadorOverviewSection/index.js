@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
-import Divider from "@site/src/components/Layout/Divider"; 
-import TitleWithText from "@site/src/components/Layout/TitleWithText"; 
+import Divider from "@site/src/components/Layout/Divider";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 
 /* 
@@ -74,9 +74,9 @@ export default function AmbassadorRolesSection() {
     <div>
       <div className={styles.ambassadorsContainer}>
         <TitleWithText
-              title="Who are the Cardano Ambassadors?"
+              title={translate({id: 'ambassadors.overview.title', message: 'Who are the Cardano Ambassadors?'})}
               description={[
-                `Discover profiles of ${ambassadorsCount} Cardano Ambassadors representing ${uniqueCountriesCount} countries, each playing a vital part in spreading Cardano’s vision worldwide.`,
+                translate({id: 'ambassadors.overview.description', message: 'Discover profiles of {count} Cardano Ambassadors representing {countries} countries, each playing a vital part in spreading Cardano\'s vision worldwide.'}).replace('{count}', ambassadorsCount).replace('{countries}', uniqueCountriesCount),
               ]}
               titleType="red"
               headingDot={false}

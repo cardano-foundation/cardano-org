@@ -1,0 +1,34 @@
+{
+  "theme.SearchBar.label": {
+    "message": "検索",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "クリア",
+    "description": "The title for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "キャンセル",
+    "description": "The text for search box cancel button"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "選択",
+    "description": "The text for the select key instruction"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "移動",
+    "description": "The text for the navigate key instruction"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "閉じる",
+    "description": "The text for the close key instruction"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "{count}件のドキュメントが見つかりました",
+    "description": "The label for search page documents found counter"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "ドキュメントが見つかりませんでした",
+    "description": "The text for no search results"
+  }
+}

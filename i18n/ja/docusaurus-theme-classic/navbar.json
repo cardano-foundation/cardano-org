@@ -1,0 +1,142 @@
+{
+  "logo.alt": {
+    "message": "Cardanoロゴ",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Learn": {
+    "message": "学ぶ",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Participate": {
+    "message": "参加する",
+    "description": "Navbar item with label Participate"
+  },
+  "item.label.Build": {
+    "message": "開発する",
+    "description": "Navbar item with label Build"
+  },
+  "item.label.News": {
+    "message": "ニュース",
+    "description": "Navbar item with label News"
+  },
+  "item.label.What is ada?": {
+    "message": "adaとは？",
+    "description": "Navbar item with label What is ada?"
+  },
+  "item.label.Get started with Cardano": {
+    "message": "Cardanoを始める",
+    "description": "Navbar item with label Get started with Cardano"
+  },
+  "item.label.Where to get ada?": {
+    "message": "adaの入手方法",
+    "description": "Navbar item with label Where to get ada?"
+  },
+  "item.label.Protect your ada": {
+    "message": "adaを守る",
+    "description": "Navbar item with label Protect your ada"
+  },
+  "item.label.Delegate your ada": {
+    "message": "adaを委任する",
+    "description": "Navbar item with label Delegate your ada"
+  },
+  "item.label.Use Cardano Apps": {
+    "message": "Cardanoアプリを使う",
+    "description": "Navbar item with label Use Cardano Apps"
+  },
+  "item.label.Cardano Research": {
+    "message": "Cardano研究",
+    "description": "Navbar item with label Cardano Research"
+  },
+  "item.label.Cardano Insights": {
+    "message": "Cardanoインサイト",
+    "description": "Navbar item with label Cardano Insights"
+  },
+  "item.label.Hard Forks": {
+    "message": "ハードフォーク",
+    "description": "Navbar item with label Hard Forks"
+  },
+  "item.label.Follow Cardano": {
+    "message": "Cardanoをフォロー",
+    "description": "Navbar item with label Follow Cardano"
+  },
+  "item.label.Newsletter": {
+    "message": "ニュースレター",
+    "description": "Navbar item with label Newsletter"
+  },
+  "item.label.Online Communities": {
+    "message": "オンラインコミュニティ",
+    "description": "Navbar item with label Online Communities"
+  },
+  "item.label.Cardano Ambassadors": {
+    "message": "Cardanoアンバサダー",
+    "description": "Navbar item with label Cardano Ambassadors"
+  },
+  "item.label.Cardano Events": {
+    "message": "Cardanoイベント",
+    "description": "Navbar item with label Cardano Events"
+  },
+  "item.label.Cardano Forum": {
+    "message": "Cardanoフォーラム",
+    "description": "Navbar item with label Cardano Forum"
+  },
+  "item.label.Get involved in cardano.org": {
+    "message": "cardano.orgに参加",
+    "description": "Navbar item with label Get involved in cardano.org"
+  },
+  "item.label.Participate in governance": {
+    "message": "ガバナンスに参加",
+    "description": "Navbar item with label Participate in governance"
+  },
+  "item.label.Governance Tools": {
+    "message": "ガバナンスツール",
+    "description": "Navbar item with label Governance Tools"
+  },
+  "item.label.Cardano Constitution": {
+    "message": "Cardano憲法",
+    "description": "Navbar item with label Cardano Constitution"
+  },
+  "item.label.Start building on Cardano": {
+    "message": "Cardanoで開発を始める",
+    "description": "Navbar item with label Start building on Cardano"
+  },
+  "item.label.Integrate Cardano": {
+    "message": "Cardanoを統合",
+    "description": "Navbar item with label Integrate Cardano"
+  },
+  "item.label.Developer Portal": {
+    "message": "開発者ポータル",
+    "description": "Navbar item with label Developer Portal"
+  },
+  "item.label.Builder Tools": {
+    "message": "開発ツール",
+    "description": "Navbar item with label Builder Tools"
+  },
+  "item.label.Companies building on Cardano": {
+    "message": "Cardano上の企業",
+    "description": "Navbar item with label Companies building on Cardano"
+  },
+  "item.label.Solutions": {
+    "message": "ソリューション",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Enterprise Solutions": {
+    "message": "エンタープライズソリューション",
+    "description": "Navbar item with label Enterprise Solutions"
+  },
+  "item.label.Use Cases": {
+    "message": "ユースケース",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.Identity": {
+    "message": "アイデンティティ",
+    "description": "Navbar item with label Identity"
+  },
+  "item.label.Finance": {
+    "message": "金融",
+    "description": "Navbar item with label Finance"
+  },
+  "item.label.Supply Chain": {
+    "message": "サプライチェーン",
+    "description": "Navbar item with label Supply Chain"
+  }
+}
