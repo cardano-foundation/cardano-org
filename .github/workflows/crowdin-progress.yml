@@ -25,10 +25,18 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Commit updated data
+      - name: Create pull request
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/translation-progress.json src/data/top-translators.json
-          git diff --cached --quiet || git commit -m "chore: update translation progress from Crowdin"
-          git push
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git checkout -b chore/update-crowdin-data
+          git commit -m "chore: update translation progress from Crowdin [skip ci]"
+          git push -f origin chore/update-crowdin-data
+          gh pr list --head chore/update-crowdin-data --state open | grep -q . || \
+            gh pr create --base staging \
+              --title "chore: update translation progress from Crowdin" \
+              --body "Automated daily update of translation progress and top contributors data from Crowdin."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
