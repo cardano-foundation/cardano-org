@@ -110,7 +110,7 @@ function TopContributors({ contributors }) {
                   {c.languages.join(', ')}
                 </td>
                 <td style={{ padding: '10px 16px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
-                  {c.translated.toLocaleString()}
+                  {new Intl.NumberFormat('en-US').format(c.translated)}
                 </td>
               </tr>
             ))}
