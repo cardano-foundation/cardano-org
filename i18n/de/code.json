@@ -632,7 +632,7 @@
     "message": "Browser-Erweiterung für Chrome, Brave und Edge"
   },
   "walletSection.typhon.label": {
-    "message": "Typhon holen"
+    "message": "Typhon laden"
   },
   "walletSection.vespr.title": {
     "message": "VESPR Wallet"
@@ -644,7 +644,7 @@
     "message": "App für iOS und Android"
   },
   "walletSection.vespr.label": {
-    "message": "VESPR holen"
+    "message": "VESPR laden"
   },
   "walletSection.yoroi.title": {
     "message": "Yoroi Wallet"
@@ -656,7 +656,7 @@
     "message": "Browser-Erweiterung und App für iOS und Android"
   },
   "walletSection.yoroi.label": {
-    "message": "Yoroi holen"
+    "message": "Yoroi laden"
   },
   "walletSection.eternl.title": {
     "message": "Eternl Wallet"
@@ -668,7 +668,7 @@
     "message": "Browser-Erweiterung und App für iOS und Android"
   },
   "walletSection.eternl.label": {
-    "message": "Eternl holen"
+    "message": "Eternl laden"
   },
   "walletSection.lace.title": {
     "message": "Lace Wallet"
@@ -680,7 +680,7 @@
     "message": "Browser-Erweiterung für Chrome, Brave"
   },
   "walletSection.lace.label": {
-    "message": "Lace holen"
+    "message": "Lace laden"
   },
   "walletSection.daedalus.title": {
     "message": "Daedalus Wallet"
@@ -692,7 +692,7 @@
     "message": "Nur für leistungsstarke Desktop-PCs"
   },
   "walletSection.daedalus.label": {
-    "message": "Daedalus holen"
+    "message": "Daedalus laden"
   },
   "walletSection.explore.title": {
     "message": "Apps entdecken"
@@ -1352,7 +1352,7 @@
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Events": {
-    "message": "Cardano Events",
+    "message": "Cardano-Events",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Forum": {
@@ -1384,7 +1384,7 @@
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Developer Portal": {
-    "message": "Developer Portal",
+    "message": "Entwicklerportal",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Builder Tools": {
@@ -1737,7 +1737,7 @@
     "message": "Loslegen"
   },
   "brandAssets.hero.title": {
-    "message": "Brand Assets"
+    "message": "Asset-Sammlung"
   },
   "brandAssets.hero.description": {
     "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
@@ -1989,7 +1989,7 @@
     "message": "Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development."
   },
   "contact.intersect.buttonLabel": {
-    "message": "Join Intersect"
+    "message": "Intersect beitreten"
   },
   "contact.technicalIssue.title": {
     "message": "Report a technical issue"
