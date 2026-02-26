@@ -20,7 +20,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  pointer-events: none;
 }
 
 /* Medusa styles moved to custom.css (CSS modules don't emit ID selectors reliably) */
@@ -55,6 +54,12 @@
 .heroForeground {
   position: relative;
   z-index: 2;
+  pointer-events: none;
+}
+
+.heroForeground a,
+.heroForeground button {
+  pointer-events: auto;
 }
 
 .container {
@@ -64,10 +69,12 @@
 
 .heroTitle {
   color: white;
+  text-shadow: #0a38a6 0px 0px 2.4rem;
 }
 
 .heroSubtitle {
   color: white;
+  text-shadow: #0a38a6 0px 0px 2.4rem;
 }
 
 .cta {
