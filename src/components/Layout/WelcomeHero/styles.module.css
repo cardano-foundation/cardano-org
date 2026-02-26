@@ -173,7 +173,7 @@ html[data-theme='dark'] .heroCtaButton:hover {
 
 .vizBadge {
   position: absolute;
-  bottom: 36px;
+  bottom: 50px;
   right: 1rem;
   z-index: 3;
   background: none;

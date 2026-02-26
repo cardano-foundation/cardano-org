@@ -93,8 +93,6 @@ export default function Home() {
         </BoundaryBox>
       </BackgroundWrapper>
 
-      <ProofOfStakeSection />
-
       <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
             <CtaOneColumn
@@ -105,6 +103,8 @@ export default function Home() {
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
+
+      <ProofOfStakeSection />
     </Layout>
   );
 }
