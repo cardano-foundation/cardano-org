@@ -73,7 +73,7 @@ export default function NotFoundContent({ className }) {
       </p>
       <p
         style={{
-          color: "var(--ifm-color-emphasis-700)",
+          color: "var(--ifm-color-emphasis-500)",
           fontSize: "0.9rem",
           marginBottom: "2rem",
         }}
