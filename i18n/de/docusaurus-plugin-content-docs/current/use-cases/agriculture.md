@@ -9,7 +9,7 @@ sidebar_position: 8
 
 ## Das Problem
 
-Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
+Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Verbraucher möchten zunehmend wissen, woher ihre Lebensmittel stammen, wie sie produziert wurden und ob Angaben zu Bio-, Fair-Trade- oder nachhaltigen Praktiken tatsächlich zutreffen. Food fraud costs the global industry an estimated $40 billion annually.
 
 For farmers and producers, proving the quality and origin of their products is difficult and expensive. Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
 
