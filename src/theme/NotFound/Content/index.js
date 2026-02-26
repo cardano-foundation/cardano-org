@@ -82,28 +82,11 @@ export default function NotFoundContent({ className }) {
           Try the search bar above or head back to familiar ground.
         </Translate>
       </p>
-      <div
-        style={{
-          display: "flex",
-          gap: "0.75rem",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
-        <Link className="button button--primary button--lg" to="/">
-          <Translate id="notFound.button.homepage" description="404 page homepage button">
-            Go to Homepage
-          </Translate>
-        </Link>
-        <Link
-          className="button button--secondary button--lg"
-          to="/docs/get-involved/"
-        >
-          <Translate id="notFound.button.docs" description="404 page docs button">
-            Browse Documentation
-          </Translate>
-        </Link>
-      </div>
+      <Link className="button button--primary button--lg" to="/">
+        <Translate id="notFound.button.homepage" description="404 page homepage button">
+          Go to Homepage
+        </Translate>
+      </Link>
     </main>
   );
 }
