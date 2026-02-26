@@ -3,6 +3,8 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 function WelcomeHero({ title, description }) {
   const containerRef = useRef(null);
@@ -69,7 +71,51 @@ function WelcomeHero({ title, description }) {
             </Link>
           </div>
         </div>
+
       </div>
+
+      {webglSupported && (
+        <Tippy
+          content={
+            <div className={styles.vizPopover}>
+              <p>
+                {translate({
+                  id: 'home.hero.vizBadge.description',
+                  message: 'This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders.',
+                })}
+              </p>
+              <p>
+                {translate({
+                  id: 'home.hero.vizBadge.interaction',
+                  message: 'Click and drag to rotate.',
+                })}
+              </p>
+              <Link to="/ouroboros" className={styles.vizPopoverLink}>
+                {translate({
+                  id: 'home.hero.vizBadge.link',
+                  message: 'Learn more about Ouroboros →',
+                })}
+              </Link>
+            </div>
+          }
+          interactive={true}
+          trigger="click"
+          placement="top-end"
+          maxWidth={320}
+          appendTo={() => document.body}
+        >
+          <button className={styles.vizBadge} aria-label={translate({
+            id: 'home.hero.vizBadge.ariaLabel',
+            message: 'Information about this visualization',
+          })}>
+            {translate({
+              id: 'home.hero.vizBadge.label',
+              message: 'Visualizing ouroboros-consensus',
+            })}
+            <span className={styles.vizBadgeIcon}>ⓘ</span>
+          </button>
+        </Tippy>
+      )}
 
       <div className="sectionCaret">
         <svg x="0px" y="0px" viewBox="0 0 2000 30">
