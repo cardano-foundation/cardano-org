@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
 
@@ -53,7 +54,9 @@ export default function NotFoundContent({ className }) {
           marginBottom: "0.75rem",
         }}
       >
-        Page Not Found
+        <Translate id="theme.NotFound.title" description="The title of the 404 page">
+          Page Not Found
+        </Translate>
       </h1>
       <p
         style={{
@@ -64,7 +67,9 @@ export default function NotFoundContent({ className }) {
           marginBottom: "0.5rem",
         }}
       >
-        The page you're looking for doesn't exist or may have been moved.
+        <Translate id="notFound.description" description="404 page description text">
+          The page you're looking for doesn't exist or may have been moved.
+        </Translate>
       </p>
       <p
         style={{
@@ -73,7 +78,9 @@ export default function NotFoundContent({ className }) {
           marginBottom: "2rem",
         }}
       >
-        Try the search bar above or head back to familiar ground.
+        <Translate id="notFound.hint" description="404 page hint text">
+          Try the search bar above or head back to familiar ground.
+        </Translate>
       </p>
       <div
         style={{
@@ -84,13 +91,17 @@ export default function NotFoundContent({ className }) {
         }}
       >
         <Link className="button button--primary button--lg" to="/">
-          Go to Homepage
+          <Translate id="notFound.button.homepage" description="404 page homepage button">
+            Go to Homepage
+          </Translate>
         </Link>
         <Link
           className="button button--secondary button--lg"
           to="/docs/get-involved/"
         >
-          Browse Documentation
+          <Translate id="notFound.button.docs" description="404 page docs button">
+            Browse Documentation
+          </Translate>
         </Link>
       </div>
     </main>
