@@ -86,14 +86,12 @@ export default function Home() {
                 imageName="power-arrows"
                 title={translate({id: 'ouroboros.features.energyEfficient.title', message: 'Energy Efficient'})}
                 text={[
-                  translate({id: 'ouroboros.features.energyEfficient.text1', message: 'Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://iohk.io/en/blog/posts/2020/03/23/from-classic-to-hydra-the-implementations-of-ouroboros-explained/).'}),
+                  translate({id: 'ouroboros.features.energyEfficient.text1', message: 'Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol).'}),
                 ]}
                 headingDot={true}
               />
         </BoundaryBox>
       </BackgroundWrapper>
-
-      <ProofOfStakeSection />
 
       <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
@@ -105,6 +103,8 @@ export default function Home() {
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
+
+      <ProofOfStakeSection />
     </Layout>
   );
 }

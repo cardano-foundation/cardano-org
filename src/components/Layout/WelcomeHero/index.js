@@ -3,6 +3,8 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 function WelcomeHero({ title, description }) {
   const containerRef = useRef(null);
@@ -10,17 +12,19 @@ function WelcomeHero({ title, description }) {
 
   useEffect(() => {
     const ua = navigator.userAgent || "";
-  
-    // Fallback list: 
-    // old Android devices (Android 1.x bis 7.x and old Chrome  versions) they deliver a webgl context but performance is bad
-    // const isOldAndroid = /Android [1-7]\./.test(ua) || /Android.*Chrome\/\d{1,2}\./.test(ua);;
-    const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  
+
+    // Block only devices known to have poor WebGL performance
+    const isOldDevice =
+      /Android [1-7]\./i.test(ua) ||              // Android < 8
+      /iPhone OS [5-9]_/i.test(ua) ||             // iOS < 10
+      /OS [5-9]_\d/i.test(ua) ||                  // iPad iOS < 10
+      /BlackBerry|IEMobile|Opera Mini/i.test(ua); // Legacy mobile browsers
+
     // webgl test
     const canvas = document.createElement("canvas");
     const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-  
-    if (isMobile || !gl) {
+
+    if (isOldDevice || !gl) {
       setWebglSupported(false);
       return;
     }
@@ -69,7 +73,51 @@ function WelcomeHero({ title, description }) {
             </Link>
           </div>
         </div>
+
       </div>
+
+      {webglSupported && (
+        <Tippy
+          content={
+            <div className={styles.vizPopover}>
+              <p>
+                {translate({
+                  id: 'home.hero.vizBadge.description',
+                  message: 'This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders.',
+                })}
+              </p>
+              <p>
+                {translate({
+                  id: 'home.hero.vizBadge.interaction',
+                  message: 'Drag to rotate.',
+                })}
+              </p>
+              <Link to="/ouroboros" className={styles.vizPopoverLink}>
+                {translate({
+                  id: 'home.hero.vizBadge.link',
+                  message: 'Learn more about Ouroboros →',
+                })}
+              </Link>
+            </div>
+          }
+          interactive={true}
+          trigger="click"
+          placement="top-end"
+          maxWidth={320}
+          appendTo={() => document.body}
+        >
+          <button className={styles.vizBadge} aria-label={translate({
+            id: 'home.hero.vizBadge.ariaLabel',
+            message: 'Information about this visualization',
+          })}>
+            {translate({
+              id: 'home.hero.vizBadge.label',
+              message: 'Visualizing ouroboros-consensus',
+            })}
+            <span className={styles.vizBadgeIcon}>ⓘ</span>
+          </button>
+        </Tippy>
+      )}
 
       <div className="sectionCaret">
         <svg x="0px" y="0px" viewBox="0 0 2000 30">

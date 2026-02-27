@@ -20,7 +20,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  pointer-events: none;
 }
 
 /* Medusa styles moved to custom.css (CSS modules don't emit ID selectors reliably) */
@@ -36,7 +35,7 @@
 .fallbackBackground {
   position: absolute;
   inset: 0;
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  background-image: url(/img/hero-header-medusa-fallback.jpg);
   background-size: cover;  
   z-index: 0;
   pointer-events: none;
@@ -55,6 +54,12 @@
 .heroForeground {
   position: relative;
   z-index: 2;
+  pointer-events: none;
+}
+
+.heroForeground a,
+.heroForeground button {
+  pointer-events: auto;
 }
 
 .container {
@@ -64,10 +69,12 @@
 
 .heroTitle {
   color: white;
+  text-shadow: #0a38a6 0px 0px 2.4rem;
 }
 
 .heroSubtitle {
   color: white;
+  text-shadow: #0a38a6 0px 0px 2.4rem;
 }
 
 .cta {
@@ -109,6 +116,9 @@ html[data-theme="dark"] .button {
     background-size: cover;
     background-position: 50% 50%;
     height: 620px;
+  }
+  .heroForeground {
+    pointer-events: auto;
   }
   .cta .button {
     margin-bottom: 1rem;
@@ -160,5 +170,66 @@ html[data-theme='dark'] .heroCtaButton {
 
 html[data-theme='dark'] .heroCtaButton:hover {
   background-color: #1f1f1f !important;
+}
+
+/* Visualization info badge */
+
+.vizBadge {
+  position: absolute;
+  bottom: 50px;
+  right: 1rem;
+  z-index: 3;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.vizBadge:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.vizBadgeIcon {
+  font-size: 0.9rem;
+}
+
+.vizPopover {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.vizPopover p {
+  margin: 0 0 0.5rem 0;
+}
+
+.vizPopover p:last-of-type {
+  margin-bottom: 0.6rem;
+}
+
+.vizPopoverLink {
+  color: #6ea8fe;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vizPopoverLink:hover {
+  color: #9ec5fe;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 966px) {
+  .vizBadge {
+    bottom: 30px;
+    right: 0.75rem;
+    font-size: 0.72rem;
+  }
 }
  
