@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-26T14:31:59.062Z",
+  "lastUpdated": "2026-02-27T06:12:44.999Z",
   "contributors": [
     {
       "rank": 1,
@@ -13,6 +13,16 @@
     },
     {
       "rank": 2,
+      "user": "Bora Oben (bora.oben)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601486/medium/f486d95602aa273664293b18d9eeb876.jpeg",
+      "languages": [
+        "German"
+      ],
+      "translated": 26,
+      "approved": 0
+    },
+    {
+      "rank": 3,
       "user": "Markus Gufler (gufmar)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13770965/medium/40e5c1f696bf35b4efcc6a7de2bb109f.jpg",
       "languages": [
@@ -22,7 +32,7 @@
       "approved": 0
     },
     {
-      "rank": 3,
+      "rank": 4,
       "user": "Sozon-Apostolos Iriotis (iriotis)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601380/medium/7334e60ce20395036d24aea20f35a09b.jpeg",
       "languages": [
