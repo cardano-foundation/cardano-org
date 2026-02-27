@@ -303,7 +303,6 @@ const config = {
             position: 'left',
             items: [
               { to: '/developers', label: 'Start building on Cardano' },
-              { to: '/research', label: 'Cardano Research' },
               { to: '/exchanges', label: 'Integrate Cardano' },
               { href: 'https://developers.cardano.org', label: 'Developer Portal' },
               { href: 'https://developers.cardano.org/tools', label: 'Builder Tools' },
@@ -319,7 +318,6 @@ const config = {
                   icon: 'code-solid',
                   items: [
                     { to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling', icon: 'code-solid' },
-                    { to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers', icon: 'flask-solid' },
                     { to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides', icon: 'plug-solid' },
                   ],
                 },

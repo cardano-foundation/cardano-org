@@ -1,0 +1,290 @@
+/* Single showcase card — the heart of the page */
+.showcaseCard {
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Portal hero section inside the card */
+.portalHero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.portalHero img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.portalHero h2 {
+  font-size: 2rem;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.portalHero p {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Thin divider inside the card */
+.inCardDivider {
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 2.5rem 0;
+}
+
+/* Feature section label */
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ifm-color-primary);
+  margin-bottom: 2rem;
+}
+
+/* Feature rows — screenshot + text flowing vertically */
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featureRow:last-child {
+  margin-bottom: 0;
+}
+
+.featureRow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.featureRowReverse {
+  flex-direction: row-reverse;
+}
+
+.featureScreenshot {
+  flex: 1;
+  min-width: 0;
+}
+
+.featureScreenshot img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  display: block;
+}
+
+.featureText {
+  flex: 1;
+}
+
+.featureText h3 {
+  font-size: 1.5rem;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.featureText p {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.featureLink {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.featureLink span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.featureRow:hover .featureLink span {
+  transform: translateX(4px);
+}
+
+/* Developer Tools */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.toolTile {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolTileImage {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.toolTileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.toolTileContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.toolTile:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.toolTileContent svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+}
+
+.toolTileContent div {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolTileContent strong {
+  font-size: 0.95rem;
+  color: var(--ifm-heading-color);
+  line-height: 1.3;
+}
+
+.toolTileContent span {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.3;
+}
+
+/* In-card bottom links */
+.inCardLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.inCardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.inCardLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.inCardLink svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.inCardLink span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.inCardLink:hover span {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .showcaseCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .portalHero h2 {
+    font-size: 1.5rem;
+  }
+
+  .portalHero p {
+    font-size: 1rem;
+  }
+
+  .featureRow {
+    flex-direction: column !important;
+    gap: 1.25rem;
+  }
+
+  .featureText h3 {
+    font-size: 1.25rem;
+  }
+
+  .featureText p {
+    font-size: 1rem;
+  }
+
+  .toolsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode */
+[data-theme="dark"] .showcaseCard {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .portalHero img,
+[data-theme="dark"] .featureScreenshot img {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .toolTile {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .featureRow:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .toolTile:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
