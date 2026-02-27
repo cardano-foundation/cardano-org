@@ -117,6 +117,9 @@ html[data-theme="dark"] .button {
     background-position: 50% 50%;
     height: 620px;
   }
+  .heroForeground {
+    pointer-events: auto;
+  }
   .cta .button {
     margin-bottom: 1rem;
   }
