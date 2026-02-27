@@ -35,7 +35,7 @@
 .fallbackBackground {
   position: absolute;
   inset: 0;
-  background-image: url(/img/hero-header-welcome-fallback.jpg);
+  background-image: url(/img/hero-header-medusa-fallback.jpg);
   background-size: cover;  
   z-index: 0;
   pointer-events: none;
