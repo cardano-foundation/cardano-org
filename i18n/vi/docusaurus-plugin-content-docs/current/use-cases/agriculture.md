@@ -36,5 +36,5 @@ Smart contracts can automate payments to farmers when products meet quality stan
 ## Get Started
 
 - [Explore supply chain solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [Tài nguyên phát triển xây dựng trên nền tảng](https://developers.cardano.org)
 - [View Enterprise Solutions](/solutions)
