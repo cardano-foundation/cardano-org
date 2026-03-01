@@ -31,7 +31,7 @@ Hợp đồng thông minh có thể tự động hóa việc quản lý sự đ�
 - **Bảo mật** thông qua các giao thức mã hóa đã được chứng minh.
 - **Tập trung vào khả năng tương tác** cho phép tích hợp hệ thống chăm sóc sức khỏe.
 - **Khả năng tiếp cận toàn cầu** hỗ trợ chăm sóc sức khỏe xuyên biên giới.
-- **Tuân thủ quy định** đối với HIPAA và các yêu cầu tương tự
+- **Tuân thủ quy định** đối với HIPAA, các yêu cầu tương tự
 
 ## Bắt đầu
 
