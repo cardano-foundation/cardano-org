@@ -36,5 +36,5 @@ Hợp đồng thông minh có thể tự động hóa việc quản lý sự đ�
 ## Bắt đầu
 
 - [Khám phá các ứng dụng của Cardano](/apps)
-- [Tài nguyên dành cho nhà phát triển để xây dựng trên nền tảng Cardano] (https://developers.cardano.org)
+- [Tài nguyên dành cho phát triển xây dựng trên nền tảng] (https://developers.cardano.org)
 - [Xem các giải pháp doanh nghiệp](/solutions)
