@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-27T06:12:40.355Z",
+  "lastUpdated": "2026-03-02T06:12:28.163Z",
   "languages": [
     {
       "id": "de",
@@ -8,13 +8,13 @@
       "approvalProgress": 0,
       "words": {
         "total": 37712,
-        "translated": 21584,
+        "translated": 21585,
         "preTranslateAppliedTo": 0,
         "approved": 13
       },
       "phrases": {
         "total": 3570,
-        "translated": 1885,
+        "translated": 1886,
         "preTranslateAppliedTo": 0,
         "approved": 5
       }
@@ -40,17 +40,17 @@
     {
       "id": "vi",
       "name": "Vietnamese",
-      "translationProgress": 3,
+      "translationProgress": 4,
       "approvalProgress": 0,
       "words": {
         "total": 37712,
-        "translated": 1300,
+        "translated": 1764,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
         "total": 3570,
-        "translated": 193,
+        "translated": 251,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }
