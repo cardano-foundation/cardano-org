@@ -1,40 +1,40 @@
 ---
-title: Healthcare
-description: Portable, secure health records using Cardano blockchain technology
-sidebar_label: Healthcare
+title: Chăm sóc sức khỏe
+description: Hồ sơ di động, bảo mật hồ sơ sức khỏe bằng công nghệ blockchain Cardano.
+sidebar_label: Chăm sóc sức khỏe
 sidebar_position: 15
 ---
 
-# Healthcare
+# Chăm sóc sức khỏe
 
-## The Challenge
+## Sự thử thách
 
-Healthcare data is fragmented across providers, making it difficult for patients and doctors to access complete medical histories. This fragmentation leads to repeated tests, dangerous drug interactions, and delayed diagnoses. In emergencies, critical information may be unavailable.
+Dữ liệu y tế bị phân tán giữa các nhà cung cấp dịch vụ, gây khó khăn cho bệnh nhân và bác sĩ trong việc tiếp cận đầy đủ tiền sử bệnh án. Sự phân tán này dẫn đến việc phải xét nghiệm lặp đi lặp lại, tương tác thuốc nguy hiểm và chẩn đoán chậm trễ. Trong trường hợp khẩn cấp, thông tin quan trọng có thể không có sẵn.
 
-Current systems also create privacy and security risks. Centralized databases are attractive targets for hackers, and patients have limited control over who accesses their sensitive health information.
+Các hệ thống hiện tại cũng tạo ra những rủi ro về quyền riêng tư và bảo mật. Các cơ sở dữ liệu tập trung là mục tiêu hấp dẫn đối với tin tặc, và bệnh nhân bị hạn chế quyền kiểm soát ai truy cập thông tin sức khỏe nhạy cảm của họ.
 
-## How Blockchain Solves This
+## Blockchain giải quyết vấn đề này như thế nào?
 
-Blockchain-based health records give patients control over their complete medical history:
+Hồ sơ sức khỏe dựa trên công nghệ blockchain giúp bệnh nhân kiểm soát toàn bộ lịch sử y tế của mình:
 
-- **Patient ownership**: Individuals control access to their health data
-- **Portability**: Access records from any provider, anywhere in the world
-- **Interoperability**: Standardized data formats enable information sharing
-- **Audit trails**: Track who accessed records and when
-- **Selective sharing**: Share only relevant information with each provider
+- **Quyền sở hữu của bệnh nhân**: Cá nhân kiểm soát quyền truy cập vào dữ liệu sức khỏe của chính họ.
+- **Tính di động**: Truy cập hồ sơ từ bất kỳ nhà cung cấp nào, ở bất kỳ đâu trên thế giới.
+- **Khả năng tương tác**: Các định dạng dữ liệu tiêu chuẩn cho phép chia sẻ thông tin.
+- **Nhật ký kiểm toán**: Theo dõi ai đã truy cập hồ sơ và vào thời điểm nào.
+- **Chia sẻ có chọn lọc**: Chỉ chia sẻ thông tin liên quan với từng nhà cung cấp.
 
-Smart contracts can automate consent management, ensuring providers only access data they're authorized to see while maintaining compliance with healthcare regulations.
+Hợp đồng thông minh có thể tự động hóa việc quản lý sự đồng ý, đảm bảo các nhà cung cấp chỉ được phép truy cập dữ liệu mà họ được ủy quyền theo dõi, đồng thời tuân thủ các quy định về chăm sóc sức khỏe.
 
-## Why Cardano
+## Tại sao lại là Cardano?
 
-- **Privacy features** protect sensitive health information
-- **Security** through proven cryptographic protocols
-- **Interoperability focus** enables healthcare system integration
-- **Global accessibility** supports healthcare across borders
-- **Regulatory compliance** capabilities for HIPAA and similar requirements
+- **Các tính năng bảo mật** giúp bảo vệ thông tin sức khỏe nhạy cảm.
+- **Bảo mật** thông qua các giao thức mã hóa đã được chứng minh.
+- **Tập trung vào khả năng tương tác** cho phép tích hợp hệ thống chăm sóc sức khỏe.
+- **Khả năng tiếp cận toàn cầu** hỗ trợ chăm sóc sức khỏe xuyên biên giới.
+- **Tuân thủ quy định** đối với HIPAA, các yêu cầu tương tự
 
-## Get Started
+## Bắt đầu
 
-- [Explore Cardano applications](/apps)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các ứng dụng của Cardano](/apps)
+- [Tài nguyên dành cho phát triển xây dựng trên nền tảng] (https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)
