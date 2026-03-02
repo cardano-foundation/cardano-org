@@ -192,7 +192,15 @@ export const Tags = {
     color: '#B8860B',  // Dark Gold
   },
 
-  // Open-Source 
+  // Notary
+  notary: {
+    label: "Notary",
+    description: "Tools that provide proof of existence or timestamp files on the Cardano blockchain.",
+    icon: null,
+    color: '#5D4037',  // Warm Brown
+  },
+
+  // Open-Source
   opensource: {
     label: "Open-Source",
     description: "Open-Source sites can be useful for inspiration.",
@@ -285,7 +293,7 @@ export const Showcases = [
     preview: require("./app-images/cardanowall.png"),
     website: "https://cardanowall.com/en/explore/",
     source: null,
-    tags: ["favorite", "metadata"],
+    tags: ["favorite", "notary"],
   },
   {
     title: "NMKR",
@@ -679,15 +687,6 @@ export const Showcases = [
     website: "https://cardastation.com/",
     source: null,
     tags: ["game"],
-  },
-  {
-    title: "STAMPD",
-    description: 
-      "Use the public blockchains to timestamp your files with indelible proof and mint with linked NFC physical tags for embedment in physical objects.",
-    preview: require("./app-images/stampd.png"),
-    website: "https://stampd.io/",
-    source: null,
-    tags: ["minting", "metadata"],
   },
   {
     title: "CNFTLab Party",
@@ -1388,7 +1387,7 @@ export const Showcases = [
     statsLabel: "uverify",
     website: "https://app.uverify.io",
     source: "https://github.com/UVerify-io",
-    tags: ["ecosystem", "opensource"],
+    tags: ["notary", "opensource"],
   }
 ];
 
