@@ -1331,7 +1331,7 @@ export const Showcases = [
   },
   {
     title: "CoinCashew.io",
-    description: "The How to Set Up a Cardano Stake Pool guide offers comprehensive, up-to-date documentation including step-by-step procedures for operating a Cardano stake pool using practical, real-world configurations.",
+    description: "Want to operate a Cardano stake pool? The How to Set Up a Cardano Stake Pool guide offers comprehensive, up-to-date technical documentation including step-by-step procedures for setting up and administering a stake pool using practical, real-world scenarios.",
     preview: require("./app-images/coincashew.png"),
     icon: "/img/app-icons/coincashew.svg",
     statsLabel: "coincashew",
