@@ -1,13 +1,13 @@
 ---
-title: Data Storage
+title: Lưu trữ dữ liệu
 description: Decentralized, secure data storage solutions on Cardano blockchain
-sidebar_label: Data Storage
+sidebar_label: Lưu trữ dữ liệu
 sidebar_position: 12
 ---
 
-# Data Storage
+# Lưu trữ dữ liệu
 
-## The Challenge
+## Thử thách
 
 Centralized data storage creates single points of failure and concentrates control over sensitive information. Cloud providers can experience outages, change terms of service, or be compelled to provide access to stored data. For sensitive applications, this dependency on third parties creates unacceptable risks.
 
