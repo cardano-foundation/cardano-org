@@ -358,6 +358,86 @@ function CategoryPieChart({ data }) {
   return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
 }
 
+// Treemap Component for Metadata Labels
+function MetadataTreemap({ data }) {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+  const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+
+  useEffect(() => {
+    if (!chartRef.current) return;
+    chartInstanceRef.current = echarts.init(chartRef.current);
+    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.dispose();
+        chartInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  const option = useMemo(() => {
+    if (!data || !data.length) return null;
+
+    const treeData = data.map(entry => ({
+      name: entry.name,
+      value: entry.txCount,
+      itemStyle: {
+        color: categoryColors[entry.category] || '#757575',
+      }
+    }));
+
+    return {
+      tooltip: {
+        formatter: (params) => {
+          return `<strong>${params.name}</strong><br/>` +
+                 `${formatNumber(params.value)} transactions`;
+        }
+      },
+      series: [{
+        type: 'treemap',
+        data: treeData,
+        roam: false,
+        nodeClick: false,
+        breadcrumb: { show: false },
+        label: {
+          show: true,
+          formatter: (params) => {
+            return `${params.name}\n${formatShortNumber(params.value)}`;
+          },
+          color: '#fff',
+          fontSize: 12,
+          fontWeight: 500,
+        },
+        upperLabel: { show: false },
+        itemStyle: {
+          borderColor: isDark ? '#1a1a1a' : '#fff',
+          borderWidth: 2,
+          gapWidth: 2,
+          borderRadius: 4,
+        },
+        levels: [{
+          itemStyle: {
+            borderColor: isDark ? '#1a1a1a' : '#fff',
+            borderWidth: 3,
+            gapWidth: 3,
+          }
+        }]
+      }]
+    };
+  }, [data, isDark]);
+
+  useEffect(() => {
+    if (!chartInstanceRef.current || !option) return;
+    chartInstanceRef.current.setOption(option, { notMerge: true });
+  }, [option]);
+
+  return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
+}
+
 // App Row Component for the leaderboard list
 function AppRow({ app, rank, appDetails }) {
   const iconSrc = getIconSrc(appDetails);
@@ -500,6 +580,23 @@ export default function LeaderboardPage() {
       .sort((a, b) => b.txCount - a.txCount);
   }, [unifiedData]);
 
+  // Metadata labels sorted by tx count (verified only, ungrouped)
+  const metadataLabels = useMemo(() => {
+    return metadataLabelStats
+      .filter(entry => entry.verified)
+      .filter(entry => showCip20 || entry.label !== CIP20_LABEL)
+      .map(entry => {
+        const info = metadataInfo[entry.label];
+        return {
+          label: entry.label,
+          name: info?.name || `Label ${entry.label}`,
+          category: info?.category || null,
+          txCount: entry.txCount,
+        };
+      })
+      .sort((a, b) => b.txCount - a.txCount);
+  }, [metadataLabelStats, showCip20]);
+
   // Count apps with statsLabel in apps.js
   const trackedAppsInAppsJs = useMemo(() => {
     return Showcases.filter(app => app.statsLabel).length;
@@ -546,7 +643,7 @@ export default function LeaderboardPage() {
   return (
     <Layout
       title="App Leaderboard | cardano.org"
-      description="See which apps are driving Cardano transactions. Explore the top apps by transaction volume and discover hot categories."
+      description="See which apps are driving Cardano transactions. Explore the top apps by transaction count and discover hot categories."
     >
       <OpenGraphInfo pageName="apps-leaderboard" />
       <SiteHero
@@ -619,7 +716,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="small" />
 
             {/* Top Apps Section */}
-            <Divider text="Top Apps by Transaction Volume" id="top-apps" />
+            <Divider text="Top Apps by Transaction Count" id="top-apps" />
             <TitleWithText
               description={[
                 `The top 10 apps by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. Bars are colored by category.`
@@ -668,6 +765,52 @@ export default function LeaderboardPage() {
                   totalTx={totalTrackedTx}
                   appCount={cat.appCount}
                 />
+              ))}
+            </div>
+
+            <SpacerBox size="medium" />
+
+            {/* Metadata Labels Section */}
+            <Divider text="Metadata Labels" id="metadata-labels" />
+            <TitleWithText
+              description={[
+                "Transaction counts by metadata label. These represent on-chain activity identified through transaction metadata, not smart contract interactions."
+              ]}
+              headingDot={false}
+            />
+
+            <MetadataTreemap data={metadataLabels} />
+
+            <SpacerBox size="small" />
+
+            <div className={styles.metadataTable}>
+              <div className={styles.metadataHeader}>
+                <span className={styles.metadataColLabel}>Label</span>
+                <span className={styles.metadataColName}>Name</span>
+                <span className={styles.metadataColCategory}>Category</span>
+                <span className={styles.metadataColTx}>Transactions</span>
+              </div>
+              {metadataLabels.map(entry => (
+                <div key={entry.label} className={styles.metadataRow}>
+                  <span className={styles.metadataColLabel}>
+                    <code>{entry.label}</code>
+                  </span>
+                  <span className={styles.metadataColName}>{entry.name}</span>
+                  <span className={styles.metadataColCategory}>
+                    {entry.category && (
+                      <span
+                        className={styles.categoryTag}
+                        style={{
+                          backgroundColor: (categoryColors[entry.category] || '#757575') + '20',
+                          color: categoryColors[entry.category] || '#757575'
+                        }}
+                      >
+                        {entry.category}
+                      </span>
+                    )}
+                  </span>
+                  <span className={styles.metadataColTx}>{formatNumber(entry.txCount)}</span>
+                </div>
               ))}
             </div>
 

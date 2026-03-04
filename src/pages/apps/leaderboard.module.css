@@ -307,6 +307,71 @@
   content: " \2192";
 }
 
+/* Metadata Labels Table */
+.metadataTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.metadataHeader,
+.metadataRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  gap: 1rem;
+}
+
+.metadataHeader {
+  background: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.metadataRow {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  transition: background 0.15s ease;
+}
+
+.metadataRow:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.metadataColLabel code {
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.metadataColName {
+  font-weight: 500;
+}
+
+.metadataColTx {
+  text-align: right;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 768px) {
+  .metadataHeader,
+  .metadataRow {
+    grid-template-columns: 60px 1fr 100px;
+  }
+
+  .metadataColCategory {
+    display: none;
+  }
+}
+
 /* Coverage Section */
 .coverageSection {
   display: grid;
