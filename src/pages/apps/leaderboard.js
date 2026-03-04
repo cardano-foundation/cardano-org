@@ -478,14 +478,9 @@ export default function LeaderboardPage() {
     return unifiedData.reduce((sum, app) => sum + app.txCount, 0);
   }, [unifiedData]);
 
-  // Get top 10 apps
+  // Get top 50 apps
   const topApps = useMemo(() => {
-    return unifiedData.slice(0, 10);
-  }, [unifiedData]);
-
-  // Get rising apps (ranks 11-20)
-  const risingApps = useMemo(() => {
-    return unifiedData.slice(10, 20);
+    return unifiedData.slice(0, 50);
   }, [unifiedData]);
 
   // Calculate category stats
@@ -672,28 +667,6 @@ export default function LeaderboardPage() {
                   txCount={cat.txCount}
                   totalTx={totalTrackedTx}
                   appCount={cat.appCount}
-                />
-              ))}
-            </div>
-
-            <SpacerBox size="medium" />
-
-            {/* Rising Apps Section */}
-            <Divider text="Rising Apps" id="rising" />
-            <TitleWithText
-              description={[
-                "Apps ranked 11-20 by transaction volume. These apps show activity and could be ones to watch."
-              ]}
-              headingDot={false}
-            />
-
-            <div className={styles.appList}>
-              {risingApps.map((app, idx) => (
-                <AppRow
-                  key={app.label}
-                  app={app}
-                  rank={idx + 11}
-                  appDetails={findAppDetails(app)}
                 />
               ))}
             </div>
