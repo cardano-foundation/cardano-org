@@ -1388,6 +1388,16 @@ export const Showcases = [
     website: "https://app.uverify.io",
     source: "https://github.com/UVerify-io",
     tags: ["notary", "opensource"],
+  },
+  {
+    title: "CommitProof",
+    description: "CommitProof lets you prove what you knew and when. Hash your ideas client-side, anchor the proof on Cardano, and verify it anytime. Your original never leaves your device.",
+    preview: require("./app-images/commitproof.jpg"),
+    icon: "/img/app-icons/commitproof.png",
+    statsLabel: "commitproof",
+    website: "https://commitproof.com",
+    source: null,
+    tags: ["notary"],
   }
 ];
 
