@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-02T06:12:28.163Z",
+  "lastUpdated": "2026-03-04T06:09:18.447Z",
   "languages": [
     {
       "id": "de",
@@ -20,37 +20,37 @@
       }
     },
     {
+      "id": "vi",
+      "name": "Vietnamese",
+      "translationProgress": 6,
+      "approvalProgress": 0,
+      "words": {
+        "total": 37712,
+        "translated": 2610,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      },
+      "phrases": {
+        "total": 3570,
+        "translated": 366,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      }
+    },
+    {
       "id": "ja",
       "name": "Japanese",
       "translationProgress": 5,
       "approvalProgress": 0,
       "words": {
         "total": 37712,
-        "translated": 2038,
+        "translated": 2051,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
         "total": 3570,
-        "translated": 424,
-        "preTranslateAppliedTo": 0,
-        "approved": 0
-      }
-    },
-    {
-      "id": "vi",
-      "name": "Vietnamese",
-      "translationProgress": 4,
-      "approvalProgress": 0,
-      "words": {
-        "total": 37712,
-        "translated": 1764,
-        "preTranslateAppliedTo": 0,
-        "approved": 0
-      },
-      "phrases": {
-        "total": 3570,
-        "translated": 251,
+        "translated": 426,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }
