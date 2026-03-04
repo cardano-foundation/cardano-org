@@ -1,13 +1,13 @@
 ---
-title: DeFi
-description: Decentralized finance applications on Cardano provide transparent, accessible financial services
-sidebar_label: DeFi
+title: Tài chính phi tập trung
+description: Các ứng dụng tài chính phi tập trung trên Cardano cung cấp các dịch vụ tài chính minh bạch và dễ dàng tiếp cận
+sidebar_label: Tài chính phi tập trung
 sidebar_position: 6
 ---
 
 # Decentralized Finance (DeFi)
 
-## The Challenge
+## Thử thách
 
 Traditional financial systems exclude billions of people worldwide who lack access to banking services. Even for those with access, financial services often come with high fees, opaque terms, and centralized control that can freeze assets or deny services arbitrarily.
 
