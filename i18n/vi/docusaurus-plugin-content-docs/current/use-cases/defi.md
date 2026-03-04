@@ -5,7 +5,7 @@ sidebar_label: Tài chính phi tập trung
 sidebar_position: 6
 ---
 
-# Decentralized Finance (DeFi)
+# Tài chính phi tập trung (DeFi)
 
 ## Thử thách
 
@@ -31,11 +31,11 @@ Hệ sinh thái Tài chính phi tập trung của Cardano bao gồm các sàn gi
 - **Xác minh chính thức** cung cấp các đảm bảo toán học về hành vi của hợp đồng thông minh
 - **Các tài sản gốc** giúp giảm độ phức tạp và độ phủ rộng tấn công cho các hoạt động mã thông báo
 - **Tính bền vững** thông qua bằng chứng cổ phần phù hợp với việc tạo ra giá trị lâu dài
-- **Strong community** of developers building innovative financial applications
+- **Cộng đồng mạnh mẽ** bao gồm các nhà phát triển đang xây dựng các ứng dụng tài chính sáng tạo
 
-## Get Started
+## Bắt đầu
 
-- [Explore DeFi applications on Cardano](/apps/?operator=OR&tags=lending&tags=dex)
-- [Get a Cardano wallet](/apps/?tags=wallet)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các ứng dụng Tài chính phi tập trung trên Cardano](/apps/?operator=OR&tags=lending&tags=dex)
+- [Tạo ví Cardano](/apps/?tags=wallet)
+- [Tài nguyên dành cho người phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)
