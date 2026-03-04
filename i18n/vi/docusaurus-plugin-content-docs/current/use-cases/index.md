@@ -1,15 +1,15 @@
 ---
-title: Use Cases Overview
-description: Explore how Cardano blockchain technology solves real-world problems across industries
-sidebar_label: Overview
+title: Các trường hợp sử dụng tổng quan
+description: Tìm hiểu cách công nghệ blockchain Cardano giải quyết các vấn đề thực tiễn trong nhiều ngành công nghiệp khác nhau
+sidebar_label: Tổng quan
 sidebar_position: 1
 ---
 
-# Cardano Use Cases
+# Các trường hợp sử dụng Cardano
 
-Cardano is a public, permissionless Layer 1 blockchain, perfect for enterprises and individuals seeking secure, scalable, and transparent solutions. Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage.
+Cardano là một blockchain Layer 1 công khai, không cần cấp phép, hoàn hảo cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay mã hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
 
-## Identity
+## Danh tính
 
 Blockchain-based identity solutions provide secure, verifiable credentials that users control.
 
