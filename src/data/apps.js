@@ -309,7 +309,7 @@ export const Showcases = [
     preview: require("./app-images/cardanowall.png"),
     website: "https://cardanowall.com/en/explore/",
     source: null,
-    tags: ["favorite", "notary"],
+    tags: ["notary"],
   },
   {
     title: "NMKR",
@@ -318,7 +318,7 @@ export const Showcases = [
     preview: require("./app-images/nmkr.png"),
     website: "https://www.nmkr.io/",
     source: null,
-    tags: ["favorite", "minting", "nft"],
+    tags: ["minting", "nft"],
   },
   {
     title: "AdaStat",
@@ -354,7 +354,7 @@ export const Showcases = [
     preview: require("./app-images/cardanoscan.png"),
     website: "https://cardanoscan.io/",
     source: null,
-    tags: ["favorite", "explorer"],
+    tags: ["explorer"],
   },
   {
     title: "Pool PM",
@@ -363,7 +363,7 @@ export const Showcases = [
     preview: require("./app-images/poolpm.png"),
     website: "https://pool.pm",
     source: null,
-    tags: ["favorite", "explorer"],
+    tags: ["explorer"],
   },
   {
     title: "PoolTool",
@@ -372,7 +372,7 @@ export const Showcases = [
     preview: require("./app-images/pooltool.png"),
     website: "https://pooltool.io",
     source: null,
-    tags: ["favorite", "analytics", "explorer"],
+    tags: ["analytics", "explorer"],
   },
   {
     title: "AdaLite",
@@ -411,7 +411,7 @@ export const Showcases = [
     icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["favorite", "wallet", "mobile", "opensource"],
+    tags: ["wallet", "mobile", "opensource"],
   },
   {
     title: "Cardano Warriors",
@@ -428,7 +428,7 @@ export const Showcases = [
     preview: require("./app-images/cardanoupdates.png"),
     website: "https://cardanoupdates.com",
     source: null,
-    tags: ["favorite", "analytics"],
+    tags: ["analytics"],
   },
   {
     title: "Pool Stats",
@@ -445,7 +445,7 @@ export const Showcases = [
     preview: require("./app-images/nowpayments.png"),
     website: "https://nowpayments.io",
     source: null,
-    tags: ["favorite", "payments"],
+    tags: ["payments"],
   },
   {
     title: "Coti adaPay",
@@ -463,7 +463,7 @@ export const Showcases = [
     preview: require("./app-images/gimbalabs.png"),
     website: "https://gimbalabs.com",
     source: "https://gitlab.com/gimbalabs",
-    tags: ["favorite", "educational", "opensource"],
+    tags: ["educational", "opensource"],
   },
   {
     title: "Eternl",
@@ -473,7 +473,7 @@ export const Showcases = [
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
-    tags: ["favorite", "wallet", "mobile"],
+    tags: ["wallet", "mobile"],
   },
   {
     title: "Cardano Token and NFT Builder",
@@ -501,7 +501,7 @@ export const Showcases = [
     icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
-    tags: ["favorite", "wallet"],
+    tags: ["wallet"],
   },
   {
     title: "Staking Rewards Calculator",
@@ -539,7 +539,7 @@ export const Showcases = [
     statsLabel: "muesliswap",
     website: "https://muesliswap.com/",
     source: null,
-    tags: ["favorite", "dex"],
+    tags: ["dex"],
   },
   {
     title: "SundaeSwap",
@@ -549,7 +549,7 @@ export const Showcases = [
     icon: "/img/app-icons/sundaeswap.jpg",
     website: "https://app.sundae.fi",
     source: null,
-    tags: ["favorite", "dex"],
+    tags: ["dex"],
   },
   {
     title: "DripDropz",
@@ -720,7 +720,7 @@ export const Showcases = [
     preview: require("./app-images/taptools.png"),
     website: "https://www.taptools.io",
     source: null,
-    tags: ["favorite", "analytics"],
+    tags: ["analytics"],
   },
   {
     title: "Chainport",
@@ -793,7 +793,7 @@ export const Showcases = [
     icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["favorite", "wallet", "opensource"],
+    tags: ["wallet", "opensource"],
   },
   {
     title: "Do it with Lovelace",
@@ -822,7 +822,7 @@ export const Showcases = [
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["favorite", "wallet", "mobile"],
+    tags: ["wallet", "mobile"],
   },
   {
     title: "DexHunter",
@@ -864,7 +864,7 @@ export const Showcases = [
     preview: require("./app-images/cardano-academy.jpg"),
     website: "https://academy.cardanofoundation.org",
     source: null,
-    tags: ["favorite", "educational"],
+    tags: ["educational"],
   },
   {
     title: "Cardano Governance Tool",
@@ -873,7 +873,7 @@ export const Showcases = [
     preview: require("./app-images/govtools.jpg"),
     website: "https://gov.tools",
     source: null,
-    tags: ["favorite", "governance"],
+    tags: ["governance"],
   },
   {
     title: "Chang Watch",
@@ -948,7 +948,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "minting", "nft"],
+    tags: ["minting", "nft"],
   },
     {
     title: "Stuff.io",
@@ -1011,7 +1011,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "music", "opensource"],
+    tags: ["music", "opensource"],
   },
   {
     title: "Andamio",

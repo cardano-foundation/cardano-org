@@ -5,18 +5,12 @@ import ShowcaseTooltip from "@site/src/components/showcase/ShowcaseTooltip";
 import ShowcaseTagSelect from "@site/src/components/showcase/ShowcaseTagSelect";
 import ShowcaseCard from "@site/src/components/showcase/ShowcaseCard/";
 import OpenStickyButton from "../../components/buttons/openStickyButton";
-import ShowcaseFilterToggle, {
-  readOperator,
-} from "@site/src/components/showcase/ShowcaseFilterToggle";
 import clsx from "clsx";
-
-import ShowcaseLatestToggle, {
-  readLatestOperator,
-} from "@site/src/components/showcase/ShowcaseLatestToggle";
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { toggleListItem } from "../../utils/jsUtils";
-import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
+import { SortedShowcases, Tags, TagList } from "../../data/apps";
+import { EcosystemGroups } from "../../data/ecosystem-categories";
 import { useHistory, useLocation } from "@docusaurus/router";
 import _debounce from 'lodash/debounce';
 import styles from "./styles.module.css";
@@ -50,6 +44,8 @@ const otherShowcases = SortedShowcases.filter(
   (showcase) => !showcase.tags.includes("favorite")
 );
 
+
+
 function restoreUserState(userState) {
   const { scrollTopPosition, focusedElementId } = userState ?? {
     scrollTopPosition: 0,
@@ -73,13 +69,8 @@ function replaceSearchTags(search, newTags) {
   return searchParams.toString();
 }
 
-// Filter projects based on chosen project tags, toggle operator or searchbar value
-function filterProjects(projects, selectedTags, latest, operator, searchName, unfilteredProjects) {
-  // Check if "LAST" filter is applied to decide if to filter through all projects or only last ones
-  if (latest === "LAST") {
-    var projects = unfilteredProjects.slice(-10);
-  }
-
+// Filter projects based on chosen project tags or searchbar value
+function filterProjects(projects, selectedTags, searchName) {
   if (searchName) {
     projects = projects.filter((project) =>
       project.title.toLowerCase().includes(searchName.toLowerCase())
@@ -92,8 +83,6 @@ function filterProjects(projects, selectedTags, latest, operator, searchName, un
   return projects.filter((project) => {
     if (project.tags.length === 0) {
       return false;
-    } else if (operator === "AND") {
-      return selectedTags.every((tag) => project.tags.includes(tag));
     } else {
       return selectedTags.some((tag) => project.tags.includes(tag));
     }
@@ -102,8 +91,6 @@ function filterProjects(projects, selectedTags, latest, operator, searchName, un
 
 function useFilteredProjects() {
   const location = useLocation();
-  const [operator, setOperator] = useState("OR");
-  const [latest, setLatest] = useState("LAST");
 
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState([]);
@@ -112,8 +99,6 @@ function useFilteredProjects() {
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client hydration mismatch)
   useEffect(() => {
     setSelectedTags(readSearchTags(location.search));
-    setOperator(readOperator(location.search));
-    setLatest(readLatestOperator(location.search));
     setSearchName(readSearchName(location.search));
     // Only restore scroll position if it's not a search action
     if (ExecutionEnvironment.canUseDOM && location.state && !location.state.isSearch) {
@@ -125,15 +110,8 @@ function useFilteredProjects() {
 
   return useMemo(
     () =>
-      filterProjects(
-        SortedShowcases,
-        selectedTags,
-        latest,
-        operator,
-        searchName,
-        Showcases
-      ),
-    [selectedTags, latest, operator, searchName]
+      filterProjects(SortedShowcases, selectedTags, searchName),
+    [selectedTags, searchName]
   );
 }
 
@@ -180,29 +158,33 @@ function ShowcaseFilters() {
   const { selectedTags, toggleTag } = useSelectedTags();
   const location = useLocation();
   const { push } = useHistory();
-  const [showAllTags, setShowAllTags] = useState(false);
 
   const clearAllFilters = useCallback(() => {
     const newSearch = replaceSearchTags(location.search, []);
     push({ ...location, search: newSearch });
   }, [location, push]);
 
-  // Count apps per tag
-  const tagCounts = useMemo(() => {
+  // Single-pass: count apps per tag and build tag→apps index for group counts
+  const { tagCounts, groupCounts } = useMemo(() => {
     const counts = {};
-    TagList.forEach(tag => {
-      counts[tag] = SortedShowcases.filter(showcase => showcase.tags.includes(tag)).length;
+    const tagApps = {};
+    SortedShowcases.forEach((s) => {
+      s.tags.forEach((tag) => {
+        counts[tag] = (counts[tag] || 0) + 1;
+        if (!tagApps[tag]) tagApps[tag] = new Set();
+        tagApps[tag].add(s.title);
+      });
     });
-    return counts;
+    const gCounts = {};
+    EcosystemGroups.forEach((group) => {
+      const apps = new Set();
+      group.tags.forEach((tag) => {
+        tagApps[tag]?.forEach((app) => apps.add(app));
+      });
+      gCounts[group.key] = apps.size;
+    });
+    return { tagCounts: counts, groupCounts: gCounts };
   }, []);
-
-  // Show only top tags initially (sorted by count)
-  const initialTagCount = 10;
-  const sortedTags = useMemo(() => {
-    return [...TagList].sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0));
-  }, [tagCounts]);
-  
-  const visibleTags = showAllTags ? sortedTags : sortedTags.slice(0, initialTagCount);
 
   return (
     <BackgroundWrapper backgroundType="adaLight">
@@ -229,69 +211,50 @@ function ShowcaseFilters() {
               {translate({id: 'apps.filters.clearButton', message: 'Clear filters'})}
             </button>
           )}
-          <ShowcaseLatestToggle />
-          <ShowcaseFilterToggle />
         </div>
       </div>
-      <div className={styles.checkboxList}>
-        {visibleTags.map((tag, i) => {
-          const { label, description, color } = Tags[tag];
-          const id = `showcase_checkbox_id_${tag}`;
-          const count = tagCounts[tag] || 0;
-          return (
-              <div key={i} className={styles.checkboxListItem}>
-                <ShowcaseTooltip
-                  id={id}
-                  text={description}
-                  anchorEl="#__docusaurus"
-                >
-                  <ShowcaseTagSelect
-                    tag={tag}
-                    id={id}
-                    label={`${label} (${count})`}
-                    icon={
-                      label === "Favorite" ? (
-                        <span
-                          style={{
-                            marginLeft: 8,
-                          }}
-                        >
-                          <Fav
-                            className={styles.svgIconFavorite}
-                            size="small"
-                            style={{ display: "grid" }}
-                          />
-                        </span>
-                      ) : (
-                        <span
-                          style={{
-                            backgroundColor: color,
-                            width: 10,
-                            height: 10,
-                            borderRadius: "50%",
-                            marginLeft: 8,
-                          }}
-                        />
-                      )
-                    }
-                  />
-                </ShowcaseTooltip>
-              </div>
-          );
-        })}
-      </div>
-      {sortedTags.length > initialTagCount && (
-        <div className={styles.showMoreContainer}>
-          <button
-            onClick={() => setShowAllTags(!showAllTags)}
-            className={styles.showMoreButton}
+      <div className={styles.groupGrid}>
+        {EcosystemGroups.map((group) => (
+          <div
+            key={group.key}
+            className={styles.groupCard}
           >
-            {showAllTags
-              ? translate({id: 'apps.filters.showLess', message: 'Show less filters'})
-              : translate({id: 'apps.filters.showMore', message: 'Show {count} more filters'}).replace('{count}', sortedTags.length - initialTagCount)}
-          </button>
-        </div>
-      )}
+            <div className={styles.groupCardHeader}>
+              <span className={styles.groupCardDot} />
+              <h3 className={styles.groupCardTitle}>
+                {translate({id: `apps.group.${group.key}`, message: group.label})}
+              </h3>
+              <span className={styles.groupCardCount}>{groupCounts[group.key]}</span>
+            </div>
+            <div className={styles.groupCardTags}>
+              {group.tags
+                .slice()
+                .sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0))
+                .map((tag) => {
+                  const tagInfo = Tags[tag];
+                  if (!tagInfo) return null;
+                  const id = `showcase_checkbox_id_${tag}`;
+                  const count = tagCounts[tag] || 0;
+                  return (
+                    <div key={tag} className={styles.checkboxListItem}>
+                      <ShowcaseTooltip
+                        id={id}
+                        text={tagInfo.description}
+                        anchorEl="#__docusaurus"
+                      >
+                        <ShowcaseTagSelect
+                          tag={tag}
+                          id={id}
+                          label={`${tagInfo.label} (${count})`}
+                        />
+                      </ShowcaseTooltip>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
     </BackgroundWrapper>
   );
@@ -313,7 +276,7 @@ function ShowcaseCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredProjects.length === SortedShowcases.length ? (
+      {filteredProjects.length === SortedShowcases.length && favoriteShowcases.length > 0 ? (
         <>
           <div className={styles.showcaseFavorite}>
             <div className="container">
@@ -348,6 +311,7 @@ function ShowcaseCards() {
           <div
             className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
           >
+            <h2>{translate({id: 'apps.allProjects', message: 'All Projects'})}</h2>
             <SearchBar />
           </div>
           <ul className={styles.showcaseList}>
