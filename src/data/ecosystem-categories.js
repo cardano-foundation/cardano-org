@@ -7,7 +7,7 @@ export const EcosystemGroups = [
     key: 'defi',
     label: 'DeFi',
     color: '#3D5AFE',
-    tags: ['dex', 'dexAggregator', 'lending', 'yield', 'stablecoin', 'synthetics', 'prediction'],
+    tags: ['dex', 'dexAggregator', 'lending', 'yield', 'stablecoin', 'synthetics', 'perpetuals', 'prediction'],
   },
   {
     key: 'consumer',

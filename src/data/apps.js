@@ -216,6 +216,14 @@ export const Tags = {
     color: '#6C6FFF',  // Soft Blue
   },
 
+  // Perpetuals
+  perpetuals: {
+    label: "Perpetuals",
+    description: "Perpetual futures and leverage trading platforms.",
+    icon: null,
+    color: '#E65100',  // Deep Orange
+  },
+
   // Prediction
   prediction: {
     label: "Prediction",
@@ -1140,7 +1148,7 @@ export const Showcases = [
     statsLabel: "strike-finance",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
-    tags: ["dex", "goodForBeginners", "opensource"],
+    tags: ["perpetuals", "goodForBeginners", "opensource"],
   },
   {
     title: "Smart Places",
