@@ -1,13 +1,13 @@
 ---
 title: Lưu trữ dữ liệu
-description: Giải pháp lưu trữ dữ liệu phi tập trung và an toàn trên blockchain Cardano
+description: Decentralized, secure data storage solutions on Cardano blockchain
 sidebar_label: Lưu trữ dữ liệu
 sidebar_position: 12
 ---
 
 # Lưu trữ dữ liệu
 
-## Thách thức
+## Thử thách
 
 Lưu trữ dữ liệu tập trung tạo ra các điểm lỗi đơn lẻ và tập trung quyền kiểm soát đối với thông tin nhạy cảm. Các nhà cung cấp dịch vụ đám mây có thể gặp sự cố ngừng hoạt động, thay đổi điều khoản dịch vụ hoặc bị yêu cầu cung cấp quyền truy cập vào dữ liệu đã lưu trữ. Đối với các ứng dụng nhạy cảm, sự phụ thuộc vào bên thứ ba này tạo ra những rủi ro khó chấp nhận.
 
