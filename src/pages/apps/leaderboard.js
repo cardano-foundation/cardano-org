@@ -18,8 +18,11 @@ import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 
 import { Showcases, Tags } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
+import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
 import styles from "./leaderboard.module.css";
+
+const CIP20_LABEL = 674;
 
 // Helper to format numbers with commas
 function formatNumber(num) {
@@ -68,6 +71,89 @@ function getCategoryForApp(app) {
   if (tags.includes('bridge')) return 'Bridge';
   if (tags.includes('minting')) return 'Minting';
   return 'Other';
+}
+
+// Metadata label info: maps numeric labels to display names and existing categories
+const metadataInfo = {
+  674:   { name: 'CIP-20 Tx Messages',       category: null },
+  721:   { name: 'CIP-25 NFT Minting',       category: 'Minting' },
+  1226:  { name: 'Oracle Metadata',           category: 'Oracle' },
+  61284: { name: 'Catalyst Registration',     category: 'Governance', group: 'catalyst' },
+  61285: { name: 'Catalyst Witness',          category: 'Governance', group: 'catalyst' },
+  61286: { name: 'Catalyst Deregistration',   category: 'Governance', group: 'catalyst' },
+  87:    { name: 'Milkomeda Protocol',        category: 'Bridge',     group: 'milkomeda' },
+  88:    { name: 'Milkomeda Sidechain',       category: 'Bridge',     group: 'milkomeda' },
+  94:    { name: 'SPO On-chain Polls',        category: 'Governance' },
+  777:   { name: 'CIP-27 Royalties',          category: 'Minting' },
+  1694:  { name: 'Voltaire Governance',       category: 'Governance' },
+  123:   { name: 'Shareslake Bridge',         category: 'Bridge' },
+  1854:  { name: 'CIP-146 Multi-sig',         category: null },
+  22:    { name: 'Clarity DAO',               category: 'Governance' },
+  867:   { name: 'CIP-88 Token Policy',       category: null },
+  1447:  { name: 'Reeve On-chain Records',    category: null },
+  3692:  { name: 'CIP-149 DRep Compensation', category: 'Governance' },
+  620:   { name: 'Seedtrace Supply Chain',    category: null },
+  839:   { name: 'Agora Proposals',           category: 'Governance' },
+  888:   { name: 'Finitum Bridge',            category: 'Bridge' },
+  21325: { name: 'PRISM DID Registry',        category: null },
+  1967:  { name: 'nut.link Oracle Registry',  category: 'Oracle' },
+  1968:  { name: 'nut.link Oracle Data',      category: 'Oracle' },
+  1668:  { name: 'Begin dApp Ratings',        category: 'Wallet' },
+  1904:  { name: 'Supply Chain Verification', category: null },
+};
+
+const metadataGroups = {
+  catalyst:  { name: 'Catalyst Voting',   category: 'Governance' },
+  milkomeda: { name: 'Milkomeda Bridge',  category: 'Bridge' },
+};
+
+// Merge metadata entries that share a group into single combined rows
+function mergeMetadataGroups(entries) {
+  const grouped = {};
+  const ungrouped = [];
+
+  entries.forEach(entry => {
+    const originalLabel = Number(entry.label.replace('metadata-', ''));
+    const info = metadataInfo[originalLabel];
+    if (info?.group) {
+      const groupKey = info.group;
+      if (!grouped[groupKey]) {
+        const groupInfo = metadataGroups[groupKey];
+        grouped[groupKey] = {
+          label: `metadata-group-${groupKey}`,
+          displayName: groupInfo.name,
+          txCount: 0,
+          isMetadata: true,
+          metadataCategory: groupInfo.category,
+        };
+      }
+      grouped[groupKey].txCount = Math.max(grouped[groupKey].txCount, entry.txCount);
+    } else {
+      ungrouped.push(entry);
+    }
+  });
+
+  return [...ungrouped, ...Object.values(grouped)];
+}
+
+// Normalize a metadataLabelStats entry into the same shape as appStats entries
+function normalizeMetadataEntry(entry) {
+  const info = metadataInfo[entry.label];
+  const displayName = info?.name
+    || (entry.description ? entry.description.split(' - ')[0] : `Label ${entry.label}`);
+  return {
+    label: `metadata-${entry.label}`,
+    displayName,
+    txCount: entry.txCount,
+    isMetadata: true,
+    metadataCategory: info?.category || null,
+  };
+}
+
+// Get category for any entry (app or metadata)
+function getCategoryForEntry(statEntry, appDetails) {
+  if (statEntry.isMetadata) return statEntry.metadataCategory || 'Not Listed';
+  return getCategoryForApp(appDetails);
 }
 
 // Define category colors
@@ -120,9 +206,9 @@ function TopAppsChart({ data }) {
         axisPointer: { type: 'shadow' },
         formatter: (params) => {
           const idx = params[0].dataIndex;
-          const app = topApps[idx];
+          const app = topApps[topApps.length - 1 - idx];
           const appDetails = findAppDetails(app);
-          const category = getCategoryForApp(appDetails);
+          const category = getCategoryForEntry(app, appDetails);
           return `<strong>${app.displayName}</strong><br/>` +
                  `Transactions: ${formatNumber(app.txCount)}<br/>` +
                  `Category: ${category}`;
@@ -154,8 +240,9 @@ function TopAppsChart({ data }) {
         type: 'bar',
         data: values.reverse().map((value, idx) => {
           const realIdx = topApps.length - 1 - idx;
-          const appDetails = findAppDetails(topApps[realIdx]);
-          const category = getCategoryForApp(appDetails);
+          const entry = topApps[realIdx];
+          const appDetails = findAppDetails(entry);
+          const category = getCategoryForEntry(entry, appDetails);
           return {
             value,
             itemStyle: {
@@ -208,10 +295,10 @@ function CategoryPieChart({ data }) {
 
     // Aggregate by category
     const categoryStats = {};
-    data.forEach(app => {
-      const appDetails = findAppDetails(app);
-      const category = getCategoryForApp(appDetails);
-      categoryStats[category] = (categoryStats[category] || 0) + app.txCount;
+    data.forEach(entry => {
+      const appDetails = findAppDetails(entry);
+      const category = getCategoryForEntry(entry, appDetails);
+      categoryStats[category] = (categoryStats[category] || 0) + entry.txCount;
     });
 
     // Convert to array and sort
@@ -271,11 +358,91 @@ function CategoryPieChart({ data }) {
   return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
 }
 
+// Treemap Component for Metadata Labels
+function MetadataTreemap({ data }) {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+  const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+
+  useEffect(() => {
+    if (!chartRef.current) return;
+    chartInstanceRef.current = echarts.init(chartRef.current);
+    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.dispose();
+        chartInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  const option = useMemo(() => {
+    if (!data || !data.length) return null;
+
+    const treeData = data.map(entry => ({
+      name: entry.name,
+      value: entry.txCount,
+      itemStyle: {
+        color: categoryColors[entry.category] || '#757575',
+      }
+    }));
+
+    return {
+      tooltip: {
+        formatter: (params) => {
+          return `<strong>${params.name}</strong><br/>` +
+                 `${formatNumber(params.value)} transactions`;
+        }
+      },
+      series: [{
+        type: 'treemap',
+        data: treeData,
+        roam: false,
+        nodeClick: false,
+        breadcrumb: { show: false },
+        label: {
+          show: true,
+          formatter: (params) => {
+            return `${params.name}\n${formatShortNumber(params.value)}`;
+          },
+          color: '#fff',
+          fontSize: 12,
+          fontWeight: 500,
+        },
+        upperLabel: { show: false },
+        itemStyle: {
+          borderColor: isDark ? '#1a1a1a' : '#fff',
+          borderWidth: 2,
+          gapWidth: 2,
+          borderRadius: 4,
+        },
+        levels: [{
+          itemStyle: {
+            borderColor: isDark ? '#1a1a1a' : '#fff',
+            borderWidth: 3,
+            gapWidth: 3,
+          }
+        }]
+      }]
+    };
+  }, [data, isDark]);
+
+  useEffect(() => {
+    if (!chartInstanceRef.current || !option) return;
+    chartInstanceRef.current.setOption(option, { notMerge: true });
+  }, [option]);
+
+  return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
+}
+
 // App Row Component for the leaderboard list
 function AppRow({ app, rank, appDetails }) {
   const iconSrc = getIconSrc(appDetails);
   const initial = app.displayName.charAt(0).toUpperCase();
-  const category = getCategoryForApp(appDetails);
+  const category = getCategoryForEntry(app, appDetails);
   const isTop3 = rank <= 3;
 
   return (
@@ -365,43 +532,70 @@ export default function LeaderboardPage() {
   const { siteConfig } = useDocusaurusContext();
   const API_URL = siteConfig.customFields.CARDANO_ORG_API_URL;
 
-  const appStatsData = appStats.appStats;
-  const metadata = appStats.metadata;
+  const [period, setPeriod] = useState('30d');
+  const [showCip20, setShowCip20] = useState(false);
+  const activeStats = period === '30d' ? appStats : appStats73;
+  const appStatsData = activeStats.appStats;
+  const metadataLabelStats = activeStats.metadataLabelStats;
+  const metadata = activeStats.metadata;
 
   const [coverageData, setCoverageData] = useState(null);
   const [coverageLoading, setCoverageLoading] = useState(true);
 
+  // Merge app stats with verified metadata label stats
+  const unifiedData = useMemo(() => {
+    const verifiedMetadata = metadataLabelStats
+      .filter(entry => entry.verified)
+      .filter(entry => showCip20 || entry.label !== CIP20_LABEL)
+      .map(normalizeMetadataEntry);
+    const merged = mergeMetadataGroups(verifiedMetadata);
+    return [...appStatsData, ...merged]
+      .sort((a, b) => b.txCount - a.txCount);
+  }, [appStatsData, metadataLabelStats, showCip20]);
+
   // Calculate totals and aggregations
   const totalTrackedTx = useMemo(() => {
-    return appStatsData.reduce((sum, app) => sum + app.txCount, 0);
-  }, [appStatsData]);
+    return unifiedData.reduce((sum, app) => sum + app.txCount, 0);
+  }, [unifiedData]);
 
-  // Get top 10 apps
+  // Get top 50 apps
   const topApps = useMemo(() => {
-    return appStatsData.slice(0, 10);
-  }, [appStatsData]);
-
-  // Get rising apps (ranks 11-20)
-  const risingApps = useMemo(() => {
-    return appStatsData.slice(10, 20);
-  }, [appStatsData]);
+    return unifiedData.slice(0, 50);
+  }, [unifiedData]);
 
   // Calculate category stats
   const categoryStats = useMemo(() => {
     const stats = {};
-    appStatsData.forEach(app => {
-      const appDetails = findAppDetails(app);
-      const category = getCategoryForApp(appDetails);
+    unifiedData.forEach(entry => {
+      const appDetails = findAppDetails(entry);
+      const category = getCategoryForEntry(entry, appDetails);
       if (!stats[category]) {
         stats[category] = { txCount: 0, appCount: 0 };
       }
-      stats[category].txCount += app.txCount;
+      stats[category].txCount += entry.txCount;
       stats[category].appCount += 1;
     });
     return Object.entries(stats)
       .map(([name, data]) => ({ name, ...data }))
       .sort((a, b) => b.txCount - a.txCount);
-  }, [appStatsData]);
+  }, [unifiedData]);
+
+  // Metadata labels sorted by tx count (verified only, ungrouped)
+  const metadataLabels = useMemo(() => {
+    return metadataLabelStats
+      .filter(entry => entry.verified)
+      .filter(entry => showCip20 || entry.label !== CIP20_LABEL)
+      .map(entry => {
+        const info = metadataInfo[entry.label];
+        return {
+          label: entry.label,
+          name: info?.name || `Label ${entry.label}`,
+          category: info?.category || null,
+          txCount: entry.txCount,
+        };
+      })
+      .sort((a, b) => b.txCount - a.txCount);
+  }, [metadataLabelStats, showCip20]);
 
   // Count apps with statsLabel in apps.js
   const trackedAppsInAppsJs = useMemo(() => {
@@ -449,7 +643,7 @@ export default function LeaderboardPage() {
   return (
     <Layout
       title="App Leaderboard | cardano.org"
-      description="See which apps are driving Cardano transactions. Explore the top apps by transaction volume and discover hot categories."
+      description="See which apps are driving Cardano transactions. Explore the top apps by transaction count and discover hot categories."
     >
       <OpenGraphInfo pageName="apps-leaderboard" />
       <SiteHero
@@ -460,15 +654,39 @@ export default function LeaderboardPage() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <div className={styles.periodToggle}>
+              <button
+                className={`${styles.periodButton} ${period === '30d' ? styles.periodButtonActive : ''}`}
+                onClick={() => setPeriod('30d')}
+              >
+                30 Days
+              </button>
+              <button
+                className={`${styles.periodButton} ${period === '365d' ? styles.periodButtonActive : ''}`}
+                onClick={() => setPeriod('365d')}
+              >
+                1 Year
+              </button>
+            </div>
+
+            <label className={styles.cip20Toggle}>
+              <input
+                type="checkbox"
+                checked={showCip20}
+                onChange={(e) => setShowCip20(e.target.checked)}
+              />
+              Include unattributed CIP-20 messages
+            </label>
+
             {/* Stats Summary */}
             <div className={styles.statsSummary}>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{formatNumber(totalTrackedTx)}</span>
                 <span className={styles.statLabel}>Tracked Transactions</span>
-                <span className={styles.statPeriod}>Last 30 days</span>
+                <span className={styles.statPeriod}>{period === '30d' ? 'Last 30 days' : 'Last 1 year'}</span>
               </div>
               <div className={styles.statCard}>
-                <span className={styles.statValue}>{appStatsData.length}</span>
+                <span className={styles.statValue}>{unifiedData.length}</span>
                 <span className={styles.statLabel}>Tracked Apps</span>
                 <span className={styles.statPeriod}>On-chain identifiable</span>
               </div>
@@ -498,15 +716,15 @@ export default function LeaderboardPage() {
             <SpacerBox size="small" />
 
             {/* Top Apps Section */}
-            <Divider text="Top Apps by Transaction Volume" id="top-apps" />
+            <Divider text="Top Apps by Transaction Count" id="top-apps" />
             <TitleWithText
               description={[
-                "The top 10 apps by transaction count over the last 30 days. Bars are colored by category."
+                `The top 10 apps by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. Bars are colored by category.`
               ]}
               headingDot={false}
             />
 
-            <TopAppsChart data={appStatsData} />
+            <TopAppsChart data={unifiedData} />
 
             <SpacerBox size="small" />
 
@@ -533,7 +751,7 @@ export default function LeaderboardPage() {
               headingDot={false}
             />
 
-            <CategoryPieChart data={appStatsData} />
+            <CategoryPieChart data={unifiedData} />
 
             <SpacerBox size="small" />
 
@@ -552,23 +770,47 @@ export default function LeaderboardPage() {
 
             <SpacerBox size="medium" />
 
-            {/* Rising Apps Section */}
-            <Divider text="Rising Apps" id="rising" />
+            {/* Metadata Labels Section */}
+            <Divider text="Metadata Labels" id="metadata-labels" />
             <TitleWithText
               description={[
-                "Apps ranked 11-20 by transaction volume. These apps show activity and could be ones to watch."
+                "Transaction counts by metadata label. These represent on-chain activity identified through transaction metadata, not smart contract interactions."
               ]}
               headingDot={false}
             />
 
-            <div className={styles.appList}>
-              {risingApps.map((app, idx) => (
-                <AppRow
-                  key={app.label}
-                  app={app}
-                  rank={idx + 11}
-                  appDetails={findAppDetails(app)}
-                />
+            <MetadataTreemap data={metadataLabels} />
+
+            <SpacerBox size="small" />
+
+            <div className={styles.metadataTable}>
+              <div className={styles.metadataHeader}>
+                <span className={styles.metadataColLabel}>Label</span>
+                <span className={styles.metadataColName}>Name</span>
+                <span className={styles.metadataColCategory}>Category</span>
+                <span className={styles.metadataColTx}>Transactions</span>
+              </div>
+              {metadataLabels.map(entry => (
+                <div key={entry.label} className={styles.metadataRow}>
+                  <span className={styles.metadataColLabel}>
+                    <code>{entry.label}</code>
+                  </span>
+                  <span className={styles.metadataColName}>{entry.name}</span>
+                  <span className={styles.metadataColCategory}>
+                    {entry.category && (
+                      <span
+                        className={styles.categoryTag}
+                        style={{
+                          backgroundColor: (categoryColors[entry.category] || '#757575') + '20',
+                          color: categoryColors[entry.category] || '#757575'
+                        }}
+                      >
+                        {entry.category}
+                      </span>
+                    )}
+                  </span>
+                  <span className={styles.metadataColTx}>{formatNumber(entry.txCount)}</span>
+                </div>
               ))}
             </div>
 
@@ -584,7 +826,7 @@ export default function LeaderboardPage() {
                   <p>
                     During this reporting period, the Cardano network processed{' '}
                     <strong>{formatNumber(coverageData.totalNetworkTx)}</strong> total transactions.
-                    The {appStatsData.length} tracked apps account for{' '}
+                    The {unifiedData.length} tracked entries account for{' '}
                     <strong>{formatNumber(totalTrackedTx)}</strong> transactions
                     ({coverageData.coveragePercent.toFixed(1)}% of network activity).
                   </p>

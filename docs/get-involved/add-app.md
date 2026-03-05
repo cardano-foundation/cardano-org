@@ -84,7 +84,7 @@ Before making a pull request, please make sure that you fulfill all these requir
    **statsLabel field:**
    - Used to map your app to transaction statistics data
    - Only needed if your app has on-chain transaction metrics
-   - Must match the exact label in `/src/data/app-stats.json`
+   - Must match the exact label in `/src/data/tx-stats.json`
    - See [Transaction Rankings Guide](/docs/get-involved/tx-rankings) for details on getting your app tracked
    - Example: `statsLabel: "minswap"`
    - If omitted, the system will attempt normalized matching on your title

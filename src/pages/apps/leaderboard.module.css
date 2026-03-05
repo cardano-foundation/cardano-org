@@ -1,3 +1,58 @@
+/* Period Toggle */
+.periodToggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.periodButton {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.periodButton:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.periodButton:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.periodButtonActive {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-color: var(--ifm-color-primary);
+}
+
+.periodButtonActive + .periodButton {
+  border-left: none;
+}
+
+/* CIP-20 Toggle */
+.cip20Toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.cip20Toggle input[type="checkbox"] {
+  cursor: pointer;
+}
+
 /* Stats Summary */
 .statsSummary {
   display: grid;
@@ -250,6 +305,71 @@
 
 .categoryLink::after {
   content: " \2192";
+}
+
+/* Metadata Labels Table */
+.metadataTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.metadataHeader,
+.metadataRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  gap: 1rem;
+}
+
+.metadataHeader {
+  background: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.metadataRow {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  transition: background 0.15s ease;
+}
+
+.metadataRow:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.metadataColLabel code {
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.metadataColName {
+  font-weight: 500;
+}
+
+.metadataColTx {
+  text-align: right;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 768px) {
+  .metadataHeader,
+  .metadataRow {
+    grid-template-columns: 60px 1fr 100px;
+  }
+
+  .metadataColCategory {
+    display: none;
+  }
 }
 
 /* Coverage Section */
