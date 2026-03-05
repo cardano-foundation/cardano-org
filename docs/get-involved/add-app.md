@@ -50,28 +50,29 @@ Before making a pull request, please make sure that you fulfill all these requir
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
      source: "https://github.com/your-org/your-project", // or null if not open-source
-     tags: ["primary", "secondary"], // Use 1-2 tags maximum - see guidelines below
+     tags: ["primary"], // Usually 1 tag — see guidelines below
    }
    ```
 
-5. **Select appropriate tags** ⚠️ **Keep it minimal!**
+5. **Select appropriate tags**
 
-   Available tags include: `wallet`, `dex`, `oracle`, `bridge`, `lending`, `governance`, `marketplace`, `game`, `nft`, `educational`, and more.
+   **Category tags:** `accounting`, `analytics`, `bridge`, `dao`, `dex`, `dexAggregator`, `educational`, `explorer`, `funding`, `gaming`, `governance`, `identity`, `lending`, `marketplace`, `minting`, `music`, `nft`, `notary`, `oracle`, `payments`, `prediction`, `privacy`, `social`, `stablecoin`, `synthetics`, `wallet`, `yield`.
 
-   **Critical Guidelines:**
-   - **Use only 1-2 tags** that best describe your app's primary function
-   - Tags are used in the AppList component and other discovery features
-   - Too many tags dilute your app's discoverability
-   - Choose the most specific tag that fits (e.g., `dex` over generic `token`)
-   - Do NOT add the `favorite` tag yourself
-   - Check `src/data/apps.js` for the complete list of available tags
-   - If your project is open-source, include the `opensource` tag AND provide the `source` URL
+   **Meta tags:** `favorite` (maintainers only), `goodForBeginners` (maintainers only), `opensource`, `mobile`.
+
+   **How many tags?**
+   - Use **1–2 category tags** that describe your app's primary function(s).
+   - Apps that serve a single purpose need one tag (e.g., a DEX → `["dex"]`).
+   - Apps that combine distinct functions may use two (e.g., a protocol that does both lending and yield aggregation → `["lending", "yield"]`).
+   - If you are unsure whether a second tag applies, start with one. Maintainers may suggest changes during PR review.
+   - Do not add `favorite` or `goodForBeginners` yourself.
+   - If your project is open-source, include `opensource` and provide the `source` URL.
 
    **Examples:**
-   - DEX: `["dex"]` ✅
-   - Wallet: `["wallet", "nft"]` ✅
-   - Marketplace: `["marketplace", "nft"]` ✅
-   - Too many: `["dex", "marketplace", "lending", "governance", "nft"]` ❌
+   - `["dex"]` — a decentralized exchange
+   - `["wallet"]` — a wallet (do not add `nft`; NFT support is expected)
+   - `["marketplace"]` — an NFT marketplace
+   - `["lending", "yield"]` — a protocol offering both lending and yield aggregation
 
 6. **Optional Fields Explained**
 

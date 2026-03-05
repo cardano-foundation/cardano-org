@@ -60,16 +60,23 @@ function getIconSrc(app) {
 function getCategoryForApp(app) {
   if (!app) return 'Not Listed';
   const tags = app.tags || [];
+  if (tags.includes('yield')) return 'Yield';
+  if (tags.includes('dexAggregator')) return 'DEX Aggregator';
   if (tags.includes('dex')) return 'DEX';
   if (tags.includes('lending')) return 'Lending';
   if (tags.includes('marketplace')) return 'Marketplace';
   if (tags.includes('oracle')) return 'Oracle';
   if (tags.includes('stablecoin')) return 'Stablecoin';
   if (tags.includes('wallet')) return 'Wallet';
-  if (tags.includes('game')) return 'Gaming';
+  if (tags.includes('gaming')) return 'Gaming';
   if (tags.includes('governance')) return 'Governance';
   if (tags.includes('bridge')) return 'Bridge';
   if (tags.includes('minting')) return 'Minting';
+  if (tags.includes('synthetics')) return 'Synthetics';
+  if (tags.includes('prediction')) return 'Prediction';
+  if (tags.includes('privacy')) return 'Privacy';
+  if (tags.includes('payments')) return 'Payments';
+  if (tags.includes('dao')) return 'DAO';
   return 'Other';
 }
 
@@ -159,6 +166,7 @@ function getCategoryForEntry(statEntry, appDetails) {
 // Define category colors
 const categoryColors = {
   'DEX': '#3D5AFE',
+  'DEX Aggregator': '#304FFE',
   'Lending': '#9E1C1C',
   'Marketplace': '#E53935',
   'Oracle': '#1E88E5',
@@ -168,6 +176,12 @@ const categoryColors = {
   'Governance': '#673AB7',
   'Bridge': '#FFC107',
   'Minting': '#42A5F5',
+  'Yield': '#00C853',
+  'Synthetics': '#AA00FF',
+  'Prediction': '#FF6D00',
+  'Privacy': '#6C6FFF',
+  'Payments': '#FF5722',
+  'DAO': '#37BEB0',
   'Not Listed': '#757575'
 };
 
@@ -492,15 +506,22 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
   // Map display category names to app.js tag names
   const tagMap = {
     'dex': 'dex',
+    'dex-aggregator': 'dexAggregator',
     'lending': 'lending',
     'marketplace': 'marketplace',
     'oracle': 'oracle',
     'stablecoin': 'stablecoin',
     'wallet': 'wallet',
-    'gaming': 'game',
+    'gaming': 'gaming',
     'governance': 'governance',
     'bridge': 'bridge',
     'minting': 'minting',
+    'yield': 'yield',
+    'synthetics': 'synthetics',
+    'prediction': 'prediction',
+    'privacy': 'privacy',
+    'payments': 'payments',
+    'dao': 'dao',
     'not-listed': ''
   };
 
