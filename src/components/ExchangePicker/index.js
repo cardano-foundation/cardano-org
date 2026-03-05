@@ -29,6 +29,7 @@ const EXCHANGE_LOGOS = {
   "VALR": "/img/exchanges/valr.jpg",
   "LBank": "/img/exchanges/lbank.jpg",
   "OKX": "/img/exchanges/okx.jpg",
+  "CoinEx": "/img/exchanges/CoinEx.svg",
 };
 
 function getExchangesForCountry(countryName) {
