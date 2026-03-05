@@ -1,40 +1,40 @@
 ---
-title: Tokenized Assets
-description: Fractional ownership of real-world assets through tokenization on Cardano
+title: Tài sản được token hóa
+description: Quyền sở hữu phân mảnh đối với tài sản thực thông qua token hóa trên Cardano
 sidebar_label: Tokenized Assets
 sidebar_position: 13
 ---
 
-# Tokenized Assets
+# Tài sản được token hóa
 
-## The Challenge
+## Thách thức
 
-Traditional investment in real-world assets like real estate, art, or commodities requires significant capital and involves complex legal and administrative processes. This excludes most people from wealth-building opportunities that have historically been reserved for the wealthy.
+Đầu tư truyền thống vào các tài sản thực như bất động sản, nghệ thuật hoặc hàng hóa đòi hỏi nguồn vốn lớn và liên quan đến các quy trình pháp lý cũng như hành chính phức tạp. Điều này khiến phần lớn mọi người bị loại khỏi các cơ hội tích lũy tài sản vốn trước đây chủ yếu dành cho những người giàu có.
 
-Even for those who can invest, assets are often illiquid, making it difficult to access funds when needed. The overhead of buying, selling, and managing these assets further reduces returns.
+Ngay cả đối với những người có khả năng đầu tư, các tài sản này thường thiếu tính thanh khoản, khiến việc tiếp cận nguồn vốn khi cần trở nên khó khăn. Chi phí và công sức liên quan đến việc mua, bán và quản lý tài sản cũng làm giảm lợi nhuận.
 
-## How Blockchain Solves This
+## Blockchain giải quyết vấn đề này như thế nào
 
-Asset tokenization divides ownership of real-world assets into digital tokens that can be easily traded:
+Token hóa tài sản chia quyền sở hữu của các tài sản thực thành các token kỹ thuật số có thể giao dịch dễ dàng:
 
-- **Fractional ownership**: Own a piece of a building, artwork, or other valuable asset
-- **Increased liquidity**: Trade tokens 24/7 on decentralized exchanges
-- **Reduced barriers**: Lower minimum investments open opportunities to more people
-- **Automated compliance**: Smart contracts can enforce regulatory requirements
-- **Transparent ownership**: All ownership records are publicly verifiable
+- **Quyền sở hữu phân mảnh**: Sở hữu một phần của tòa nhà, tác phẩm nghệ thuật hoặc các tài sản giá trị khác  
+- **Tăng tính thanh khoản**: Giao dịch token 24/7 trên các sàn giao dịch phi tập trung  
+- **Giảm rào cản tham gia**: Mức đầu tư tối thiểu thấp hơn mở ra cơ hội cho nhiều người hơn  
+- **Tuân thủ tự động**: Hợp đồng thông minh có thể thực thi các yêu cầu pháp lý  
+- **Quyền sở hữu minh bạch**: Tất cả hồ sơ quyền sở hữu đều có thể được xác minh công khai  
 
-Tokenization can apply to virtually any asset class: real estate, infrastructure, commodities, collectibles, intellectual property, and more.
+Token hóa có thể áp dụng cho hầu như mọi loại tài sản: bất động sản, cơ sở hạ tầng, hàng hóa, đồ sưu tầm, sở hữu trí tuệ và nhiều loại khác.
 
-## Why Cardano
+## Vì sao chọn Cardano
 
-- **Native tokens** provide efficient, secure asset representation
-- **Low transaction fees** make small trades economically viable
-- **Regulatory awareness** supports compliant tokenization schemes
-- **Smart contract security** through formal verification methods
-- **Global accessibility** enables worldwide participation
+- **Native tokens** cung cấp phương thức biểu diễn tài sản hiệu quả và an toàn  
+- **Phí giao dịch thấp** giúp các giao dịch nhỏ vẫn khả thi về mặt kinh tế  
+- **Nhận thức về quy định pháp lý** hỗ trợ các mô hình token hóa tuân thủ quy định  
+- **Bảo mật hợp đồng thông minh** thông qua các phương pháp xác minh hình thức (formal verification)  
+- **Khả năng tiếp cận toàn cầu** cho phép sự tham gia từ khắp nơi trên thế giới  
 
-## Get Started
+## Bắt đầu
 
-- [Explore Cardano applications](/apps)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các ứng dụng Cardano](/apps)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)

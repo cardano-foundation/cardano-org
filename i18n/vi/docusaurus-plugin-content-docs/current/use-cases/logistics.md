@@ -1,40 +1,40 @@
 ---
 title: Logistics
-description: Real-time tracking and verification for supply chain logistics on Cardano
+description: Theo dõi và xác minh logistics chuỗi cung ứng theo thời gian thực trên Cardano
 sidebar_label: Logistics
 sidebar_position: 10
 ---
 
 # Logistics
 
-## The Challenge
+## Thách thức
 
-Global logistics involves countless handoffs between carriers, warehouses, and customs authorities. Each handoff creates opportunities for errors, delays, disputes, and fraud. Paper-based documentation leads to inefficiencies and disputes that cost the industry billions annually.
+Logistics toàn cầu liên quan đến vô số lần bàn giao giữa các đơn vị vận chuyển, kho bãi và cơ quan hải quan. Mỗi lần bàn giao đều tạo ra khả năng xảy ra sai sót, chậm trễ, tranh chấp và gian lận. Tài liệu giấy dẫn đến sự kém hiệu quả và các tranh chấp khiến ngành logistics thiệt hại hàng tỷ đô la mỗi năm.
 
-Lack of real-time visibility makes it difficult to optimize routes, predict delays, or respond quickly to disruptions. When problems occur, determining responsibility across multiple parties becomes contentious and time-consuming.
+Việc thiếu khả năng quan sát theo thời gian thực khiến việc tối ưu hóa tuyến đường, dự đoán chậm trễ hoặc phản ứng nhanh với các gián đoạn trở nên khó khăn. Khi sự cố xảy ra, việc xác định trách nhiệm giữa nhiều bên liên quan trở nên phức tạp và tốn nhiều thời gian.
 
-## How Blockchain Solves This
+## Blockchain giải quyết vấn đề này như thế nào
 
-Blockchain technology creates a shared, immutable record of logistics operations:
+Công nghệ blockchain tạo ra một bản ghi chung và bất biến cho các hoạt động logistics:
 
-- **Real-time tracking**: All parties share a single source of truth about shipment status
-- **Smart documentation**: Bills of lading, customs forms, and other documents digitized and verified
-- **Automated compliance**: Smart contracts enforce terms and trigger payments on delivery
-- **Dispute resolution**: Immutable records provide clear evidence for resolving conflicts
-- **Multi-party coordination**: All stakeholders can access relevant information without intermediaries
+- **Theo dõi theo thời gian thực**: Tất cả các bên chia sẻ một nguồn dữ liệu chung về trạng thái lô hàng  
+- **Tài liệu thông minh**: Vận đơn, biểu mẫu hải quan và các tài liệu khác được số hóa và xác minh  
+- **Tuân thủ tự động**: Hợp đồng thông minh thực thi các điều khoản và kích hoạt thanh toán khi giao hàng  
+- **Giải quyết tranh chấp**: Hồ sơ bất biến cung cấp bằng chứng rõ ràng để giải quyết xung đột  
+- **Phối hợp đa bên**: Tất cả các bên liên quan có thể truy cập thông tin cần thiết mà không cần trung gian  
 
-IoT devices can automatically record location, temperature, humidity, and other conditions, creating an unbroken chain of custody documentation.
+Các thiết bị IoT có thể tự động ghi lại vị trí, nhiệt độ, độ ẩm và các điều kiện khác, tạo ra chuỗi tài liệu theo dõi liên tục về quá trình vận chuyển.
 
-## Why Cardano
+## Vì sao chọn Cardano
 
-- **Scalability** supports high-volume logistics operations
-- **Interoperability** enables connection with existing logistics management systems
-- **Global reach** facilitates cross-border trade
-- **Low latency** provides timely updates for operational decisions
-- **Enterprise-ready** security and reliability
+- **Khả năng mở rộng** hỗ trợ các hoạt động logistics với khối lượng lớn  
+- **Khả năng tương tác** cho phép kết nối với các hệ thống quản lý logistics hiện có  
+- **Phạm vi toàn cầu** hỗ trợ thương mại xuyên biên giới  
+- **Độ trễ thấp** cung cấp cập nhật kịp thời cho các quyết định vận hành  
+- **Bảo mật và độ tin cậy sẵn sàng cho doanh nghiệp**  
 
-## Get Started
+## Bắt đầu
 
-- [Explore traceability solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các giải pháp truy xuất nguồn gốc](/solutions)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)

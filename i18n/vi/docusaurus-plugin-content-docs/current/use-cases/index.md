@@ -1,61 +1,61 @@
 ---
-title: Các trường hợp sử dụng tổng quan
-description: Tìm hiểu cách công nghệ blockchain Cardano giải quyết các vấn đề thực tiễn trong nhiều ngành công nghiệp khác nhau
+title: Tổng quan các trường hợp sử dụng
+description: Khám phá cách công nghệ blockchain Cardano giải quyết các vấn đề thực tế trong nhiều lĩnh vực
 sidebar_label: Tổng quan
 sidebar_position: 1
 ---
 
-# Các trường hợp sử dụng Cardano
+# Các trường hợp sử dụng của Cardano
 
-Cardano là một blockchain Layer 1 công khai, không cần cấp phép, hoàn hảo cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay mã hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
+Cardano là một blockchain Layer 1 công khai và không cần cấp phép (permissionless), phù hợp cho doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Từ việc tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu cho đến token hóa tài sản, Cardano mang lại sự đổi mới phi tập trung với độ bảo mật cao và mức tiêu thụ năng lượng thấp.
 
 ## Danh tính
 
-Blockchain-based identity solutions provide secure, verifiable credentials that users control.
+Các giải pháp danh tính dựa trên blockchain cung cấp thông tin xác thực an toàn, có thể kiểm chứng và do chính người dùng kiểm soát.
 
-- **[Education Credentials](./education)** - Blockchain-verified academic credentials
-- **[Digital Identity](./digital-identity)** - Self-sovereign identity solutions
-- **[Finance KYC](./finance-kyc)** - Streamlined identity verification for financial services
-- **[Government Documents](./government)** - Tamper-proof official documents
+- **[Chứng chỉ giáo dục](./education)** - Chứng chỉ học thuật được xác minh bằng blockchain  
+- **[Danh tính số](./digital-identity)** - Các giải pháp danh tính tự chủ (self-sovereign identity)  
+- **[KYC trong tài chính](./finance-kyc)** - Xác minh danh tính tối ưu cho các dịch vụ tài chính  
+- **[Tài liệu chính phủ](./government)** - Các tài liệu chính thức chống giả mạo  
 
-## Finance
+## Tài chính
 
-Decentralized financial applications that provide transparency and accessibility.
+Các ứng dụng tài chính phi tập trung cung cấp sự minh bạch và khả năng tiếp cận rộng rãi.
 
-- **[DeFi](./defi)** - Decentralized lending, borrowing, and exchanges
-- **[Payments](./payments)** - Fast, low-cost cross-border transfers
+- **[DeFi](./defi)** - Cho vay, vay và giao dịch phi tập trung  
+- **[Thanh toán](./payments)** - Chuyển tiền xuyên biên giới nhanh với chi phí thấp  
 
-## Supply Chain
+## Chuỗi cung ứng
 
-End-to-end traceability and verification for products and goods.
+Truy xuất và xác minh toàn bộ vòng đời của sản phẩm và hàng hóa.
 
-- **[Agriculture](./agriculture)** - Farm-to-table traceability
-- **[Retail](./retail)** - Combat counterfeiting with provenance tracking
-- **[Logistics](./logistics)** - Real-time tracking and verification
+- **[Nông nghiệp](./agriculture)** - Truy xuất nguồn gốc từ trang trại đến bàn ăn  
+- **[Bán lẻ](./retail)** - Chống hàng giả bằng theo dõi nguồn gốc sản phẩm  
+- **[Logistics](./logistics)** - Theo dõi và xác minh theo thời gian thực  
 
-## Social Impact
+## Tác động xã hội
 
-Blockchain solutions for transparency and accountability in social programs.
+Các giải pháp blockchain giúp tăng cường tính minh bạch và trách nhiệm giải trình trong các chương trình xã hội.
 
-- **[Social Programs](./social-programs)** - Transparent fund distribution
+- **[Chương trình xã hội](./social-programs)** - Phân phối quỹ minh bạch  
 
-## Data & Technology
+## Dữ liệu & Công nghệ
 
-Decentralized approaches to data management and asset ownership.
+Các phương pháp phi tập trung để quản lý dữ liệu và quyền sở hữu tài sản.
 
-- **[Data Storage](./data-storage)** - Decentralized, secure storage solutions
-- **[Tokenized Assets](./tokenized-assets)** - Fractional ownership of real-world assets
+- **[Lưu trữ dữ liệu](./data-storage)** - Giải pháp lưu trữ an toàn và phi tập trung  
+- **[Tài sản được token hóa](./tokenized-assets)** - Quyền sở hữu phân mảnh đối với tài sản thực  
 
-## Emerging Applications
+## Ứng dụng mới nổi
 
-New and developing use cases for blockchain technology.
+Các trường hợp sử dụng mới và đang phát triển của công nghệ blockchain.
 
-- **[Voting Systems](./voting-systems)** - Secure, transparent elections
-- **[Healthcare](./healthcare)** - Portable, secure health records
-- **[Music & IP](./music-ip)** - Direct royalty payments to artists
+- **[Hệ thống bỏ phiếu](./voting-systems)** - Bầu cử an toàn và minh bạch  
+- **[Y tế](./healthcare)** - Hồ sơ sức khỏe an toàn và có thể di chuyển  
+- **[Âm nhạc & Sở hữu trí tuệ](./music-ip)** - Thanh toán tiền bản quyền trực tiếp cho nghệ sĩ  
 
 ---
 
-## Enterprise Solutions
+## Giải pháp doanh nghiệp
 
-Looking for proven enterprise deployments and case studies? Visit our [Enterprise Solutions](/solutions) page to explore real-world implementations by the Cardano Foundation and partners.
+Bạn đang tìm kiếm các triển khai doanh nghiệp thực tế và các nghiên cứu điển hình đã được chứng minh? Hãy truy cập trang [Giải pháp doanh nghiệp](/solutions) để khám phá các ứng dụng thực tế do Cardano Foundation và các đối tác triển khai.
