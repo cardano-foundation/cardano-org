@@ -253,6 +253,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -271,6 +277,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -301,6 +313,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -325,6 +343,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -343,6 +367,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -361,6 +391,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
@@ -379,6 +415,12 @@
           "link": "https://www.mexc.com",
           "ada": true,
           "cnt": true
+        },
+        {
+          "name": "CoinEx",
+          "link": "https://www.coinex.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     },
