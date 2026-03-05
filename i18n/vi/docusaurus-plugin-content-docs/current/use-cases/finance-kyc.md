@@ -1,6 +1,6 @@
 ---
 title: KYC Tài chính
-description: Cardano
+description: Quy trình xác minh khách hàng (Kyc) được đơn giản hóa bằng công nghệ blockchain trên nền tảng Cardano
 sidebar_label: Finance KYC
 sidebar_position: 4
 ---
