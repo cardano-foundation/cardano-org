@@ -1255,6 +1255,7 @@ export const Showcases = [
       "USDM is a fully backed USD stablecoin on Cardano, designed for seamless transactions and DeFi applications.",
     preview: require("./app-images/usdm.png"),
     icon: "/img/app-icons/usdm.jpeg",
+    statsLabel: "$usdm",
     website: "https://moneta.global/",
     source: null,
     tags: ["stablecoin"],
@@ -1392,8 +1393,8 @@ export const Showcases = [
   {
     title: "CommitProof",
     description: "CommitProof lets you prove what you knew and when. Hash your ideas client-side, anchor the proof on Cardano, and verify it anytime. Your original never leaves your device.",
-    preview: require("./app-images/commitproof.jpg"),
-    icon: "/img/app-icons/commitproof.png",
+    preview: require("./app-images/commitproof.png"),
+    icon: "/img/app-icons/commitproof.svg",
     statsLabel: "commitproof",
     website: "https://commitproof.com",
     source: null,
