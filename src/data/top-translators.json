@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-05T06:11:01.865Z",
+  "lastUpdated": "2026-03-06T06:09:33.291Z",
   "contributors": [
     {
       "rank": 1,
@@ -83,6 +83,16 @@
     },
     {
       "rank": 9,
+      "user": "tran thi minh Hieu (hieuvan.ttmh)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17610216/medium/8f3437a0b851e58e972032627d72eb76.jpeg",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 12,
+      "approved": 0
+    },
+    {
+      "rank": 10,
       "user": "Iago Emanuel (IagoEmanuel15)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15849127/medium/e9fee6b4f74f480ba50df5d15b8f9f22.jpg",
       "languages": [
