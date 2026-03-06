@@ -1,34 +1,34 @@
 ---
-title: Logistics
-description: Real-time tracking and verification for supply chain logistics on Cardano
-sidebar_label: Logistics
+title: Logistic
+description: Theo dõi và xác minh thời gian thực cho chuỗi cung ứng Logistic trên Cardano
+sidebar_label: Logistic
 sidebar_position: 10
 ---
 
-# Logistics
+# Logistic
 
-## The Challenge
+## Thử thách
 
-Global logistics involves countless handoffs between carriers, warehouses, and customs authorities. Each handoff creates opportunities for errors, delays, disputes, and fraud. Paper-based documentation leads to inefficiencies and disputes that cost the industry billions annually.
+Logistic toàn cầu bao gồm vô số khâu trung gian giữa các hãng vận chuyển, kho bãi và cơ quan hải quan. Mỗi lần chuyển giao đều tạo ra cơ hội cho sai sót, chậm trễ, tranh chấp và gian lận. Việc sử dụng hồ sơ giấy dẫn đến thiếu hiệu quả và tranh chấp, gây thiệt hại hàng tỷ đô la mỗi năm cho ngành công nghiệp này.
 
-Lack of real-time visibility makes it difficult to optimize routes, predict delays, or respond quickly to disruptions. When problems occur, determining responsibility across multiple parties becomes contentious and time-consuming.
+Việc thiếu khả năng theo dõi thời gian thực gây ra khó khăn trong việc tối ưu hóa tuyến đường, dự đoán sự chậm trễ hoặc phản ứng nhanh chóng trước các sự cố. Khi vấn đề phát sinh, việc xác định trách nhiệm giữa các bên trở nên phức tạp và tốn thời gian.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Blockchain technology creates a shared, immutable record of logistics operations:
+Công nghệ Blockchain tạo ra một bản ghi chung, bất biến về các hoạt động Logistic:
 
-- **Real-time tracking**: All parties share a single source of truth about shipment status
+- **Theo dõi thời gian thực**: Tất cả các bên đều có chung một nguồn thông tin chính xác về tình trạng vận chuyển
 - **Smart documentation**: Bills of lading, customs forms, and other documents digitized and verified
-- **Automated compliance**: Smart contracts enforce terms and trigger payments on delivery
-- **Dispute resolution**: Immutable records provide clear evidence for resolving conflicts
-- **Multi-party coordination**: All stakeholders can access relevant information without intermediaries
+- **Tuân thủ tự động**: Hợp đồng thông minh thực thi các điều khoản và kích hoạt thanh toán khi giao hàng
+- **Giải quyết tranh chấp**: Hồ sơ không thể thay đổi cung cấp bằng chứng rõ ràng để giải quyết xung đột
+- **Phối hợp đa bên**: Tất cả các bên liên quan có thể truy cập thông tin cần thiết mà không cần trung gian
 
-IoT devices can automatically record location, temperature, humidity, and other conditions, creating an unbroken chain of custody documentation.
+Các thiết bị IoT có thể tự động ghi lại vị trí, nhiệt độ, độ ẩm và các điều kiện khác, tạo ra một chuỗi tài liệu chứng minh tính toàn vẹn không bị gián đoạn.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
 - **Scalability** supports high-volume logistics operations
-- **Interoperability** enables connection with existing logistics management systems
+- **Khả năng tương tác** cho phép tích hợp với các hệ thống quản lý nông nghiệp hiện có
 - **Global reach** facilitates cross-border trade
 - **Low latency** provides timely updates for operational decisions
 - **Enterprise-ready** security and reliability
