@@ -42,6 +42,14 @@ function formatShortNumber(num) {
 
 // Helper to find app details from apps.js by matching statsLabel or normalized title
 function findAppDetails(statEntry) {
+  // For metadata entries, check if metadataInfo has an appLabel linking to apps.js
+  if (statEntry.isMetadata) {
+    const originalLabel = Number(String(statEntry.label).replace('metadata-', '').replace('metadata-group-', ''));
+    const info = metadataInfo[originalLabel];
+    if (info?.appLabel) {
+      return Showcases.find(app => app.statsLabel === info.appLabel);
+    }
+  }
   return Showcases.find(app =>
     app.statsLabel === statEntry.label ||
     app.title.toLowerCase().replace(/\s+/g, '').replace(/-/g, '') === statEntry.label.replace(/-/g, '')
@@ -70,6 +78,7 @@ function getCategoryForApp(app) {
   if (tags.includes('governance')) return 'Governance';
   if (tags.includes('bridge')) return 'Bridge';
   if (tags.includes('minting')) return 'Minting';
+  if (tags.includes('notary')) return 'Notary';
   return 'Other';
 }
 
@@ -100,6 +109,7 @@ const metadataInfo = {
   1968:  { name: 'nut.link Oracle Data',      category: 'Oracle' },
   1668:  { name: 'Begin dApp Ratings',        category: 'Wallet' },
   1904:  { name: 'Supply Chain Verification', category: null },
+  8413:  { name: 'CommitProof',  category: 'Notary', appLabel: 'commitproof' },
 };
 
 const metadataGroups = {
@@ -168,6 +178,7 @@ const categoryColors = {
   'Governance': '#673AB7',
   'Bridge': '#FFC107',
   'Minting': '#42A5F5',
+  'Notary': '#26A69A',
   'Not Listed': '#757575'
 };
 
@@ -501,6 +512,7 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
     'governance': 'governance',
     'bridge': 'bridge',
     'minting': 'minting',
+    'notary': 'notary',
     'not-listed': ''
   };
 
