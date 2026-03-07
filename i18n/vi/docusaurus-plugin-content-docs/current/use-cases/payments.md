@@ -1,41 +1,41 @@
 ---
-title: Payments
-description: Fast, low-cost cross-border transfers using Cardano blockchain technology
-sidebar_label: Payments
+title: Thanh toán
+description: Chuyển tiền xuyên biên giới nhanh chóng, chi phí thấp thông qua công nghệ Blockchain Cardano
+sidebar_label: Thanh toán
 sidebar_position: 7
 ---
 
-# Payments
+# Thanh toán
 
-## The Challenge
+## Thử thách
 
-Cross-border payments remain slow, expensive, and opaque. Traditional remittance services charge fees averaging 6-7% globally, with some corridors exceeding 10%. Transactions can take days to settle, and recipients often have limited options for accessing funds.
+Thanh toán xuyên biên giới vẫn còn chậm, tốn kém và thiếu minh bạch. Các dịch vụ chuyển tiền truyền thống tính phí trung bình từ 6-7% trên toàn cầu, với một số tuyến chuyển tiền vượt quá 10%. Các giao dịch có thể mất nhiều ngày để hoàn tất, và người nhận thường có rất ít lựa chọn để tiếp cận số tiền đó.
 
-For the millions of migrant workers sending money home to support their families, these fees represent a significant burden. The World Bank estimates that reducing remittance fees to 3% could save senders over $20 billion annually.
+Đối với hàng triệu lao động nhập cư gửi tiền về nhà để hỗ trợ gia đình, những khoản phí này gây ra một gánh nặng đáng kể. Ngân hàng Thế giới ước tính rằng việc giảm phí chuyển tiền xuống còn 3% có thể giúp người gửi tiết kiệm hơn 20 tỉ đô la mỗi năm.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Cardano enables fast, low-cost payments that settle in minutes rather than days:
+Cardano cho phép thanh toán nhanh chóng, chi phí thấp, hoàn tất trong vài phút thay vì vài ngày:
 
-- **Low fees**: Transaction costs of fractions of a cent make small payments viable
-- **Fast settlement**: Transactions confirm in minutes, not days
-- **Global reach**: Anyone with internet access can send or receive payments
-- **Transparent pricing**: No hidden fees or unfavorable exchange rates
-- **24/7 availability**: Payments process any time, regardless of banking hours or holidays
+- **Phí giao dịch thấp**: Chi phí giao dịch rất nhỏ giúp cho các khoản thanh toán nhỏ trở nên khả thi
+- **Giao dịch nhanh chóng**: Giao dịch được xác nhận trong vài phút thay vì không phải vài ngày
+- **Phạm vi toàn cầu**: Bất kỳ ai có kết nối Internet đều có thể gửi hoặc nhận các khoản thanh toán
+- **Chi phí minh bạch**: Không có phí ẩn hoặc tỉ giá hối đoái bất lợi
+- **Hỗ trợ 24/7**: Xử lý thanh toán bất cứ lúc nào, không phụ thuộc vào giờ làm việc của ngân hàng hay ngày lễ
 
-Native tokens on Cardano enable stablecoins pegged to local currencies, reducing volatility concerns for everyday transactions while maintaining the benefits of blockchain settlement.
+Các Token gốc trên Cardano cho phép tạo ra Stablecoin được neo theo các loại tiền tệ địa phương, giảm thiểu lo ngại về biến động tỉ giá trong các giao dịch hàng ngày đồng thời vẫn duy trì được lợi ích của việc thanh toán trên Blockchain.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
-- **Scalability** through Hydra and other Layer 2 solutions enables high transaction throughput
-- **Interoperability** allows connection with traditional payment systems
-- **Security** protects against fraud and unauthorized transactions
-- **Low environmental impact** through proof of stake consensus
-- **Growing merchant adoption** expands real-world payment utility
+- **Khả năng mở rộng** thông qua Hydra và các giải pháp Layer 2 khác cho phép thông lượng giao dịch cao
+- **Khả năng tương tác** cho phép kết nối với các hệ thống thanh toán truyền thống
+- **Bảo mật** giúp ngăn chặn gian lận và các giao dịch trái phép
+- **Tác động môi trường thấp** thông qua cơ chế đồng thuận PoS
+- **Tăng cường chấp nhận bán lẻ** mở rộng tiện ích thanh toán thực tế
 
-## Get Started
+## Hãy Bắt Đầu
 
-- [Get a Cardano wallet](/apps/?tags=wallet)
-- [Where to get ada](/where-to-get-ada)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Tạo ví Cardano]
+- [Nhận ada ở đâu]
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp]
