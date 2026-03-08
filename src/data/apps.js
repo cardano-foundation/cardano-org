@@ -1326,6 +1326,15 @@ export const Showcases = [
     tags: ["music"],
   },
   {
+    title: "Hydralands",
+    description: "Engage in PVP and hydra challenges to earn rewards, progress through an XP-based leveling system to enhance their hero's abilities, build collections via a shop featuring seasoned items, and climb competitive leaderboards by dominating opponents",
+    preview: require("./app-images/hydralands.png"),
+    icon: "/img/app-icons/hydralands.webp",
+    website: "https://www.hydralands.com",
+    source: null,
+    tags: ["game"],
+  },
+  {
     title: "CGOV",
     description:
       "A governance monitoring dashboard to track and analyze on-chain governance actions, including active, ratified, and expired proposals on the Cardano blockchain.",
