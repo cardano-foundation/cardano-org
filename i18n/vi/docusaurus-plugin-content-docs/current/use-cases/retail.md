@@ -1,40 +1,40 @@
 ---
-title: Retail
-description: Combat counterfeiting with blockchain-verified product provenance on Cardano
-sidebar_label: Retail
+title: Bán lẻ
+description: Chống hàng giả bằng cách xác minh nguồn gốc sản phẩm dựa trên công nghệ Blockchain trên nền tảng Cardano
+sidebar_label: Bán lẻ
 sidebar_position: 9
 ---
 
-# Retail
+# Bán lẻ
 
-## The Challenge
+## Thử thách
 
-Counterfeiting costs legitimate businesses hundreds of billions of dollars annually and poses real risks to consumers. From luxury goods to electronics to pharmaceuticals, fake products flood markets worldwide. Traditional anti-counterfeiting measures like holograms and serial numbers are easily replicated.
+Hàng giả gây thiệt hại hàng trăm tỉ đô la mỗi năm cho các doanh nghiệp chính thống và tiềm ẩn những rủi ro thực tiễn đối với người tiêu dùng. Từ hàng xa xỉ đến đồ điện tử và dược phẩm, hàng giả tràn lan trên thị trường toàn cầu. Các biện pháp chống hàng giả truyền thống như hình ba chiều và số seri rất dễ bị làm giả.
 
-Consumers struggle to verify product authenticity, especially when purchasing through secondary markets or online platforms. Legitimate brands face reputational damage when counterfeits bearing their name cause harm or disappointment.
+Người tiêu dùng gặp khó khăn trong việc xác minh tính xác thực của sản phẩm, đặc biệt là khi mua hàng qua thị trường thứ cấp hoặc các nền tảng trực tuyến. Các thương hiệu chính hãng sẽ bị tổn hại danh tiếng khi hàng giả mang tên họ gây ra tổn hại hoặc thất vọng.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Blockchain-based product authentication provides unforgeable proof of origin and ownership:
+Xác thực sản phẩm dựa trên công nghệ Blockchain cung cấp bằng chứng không thể làm giả về nguồn gốc và quyền sở hữu:
 
-- **Digital product passports**: Each product receives a unique, verifiable digital identity
-- **Ownership history**: Track the complete chain of custody from manufacturer to consumer
-- **Authentication**: Consumers can verify authenticity with a simple scan
-- **Secondary market trust**: Verified provenance supports resale markets
-- **Warranty and service**: Automatic warranty tracking and service history
+- **Hộ chiếu sản phẩm kỹ thuật số**: Mỗi sản phẩm đều có một mã định danh kỹ thuật số duy nhất có thể xác minh.
+- **Lịch sử sở hữu**: Theo dõi toàn bộ chuỗi cung ứng từ nhà sản xuất đến người tiêu dùng
+- **Xác thực**: Người tiêu dùng có thể xác minh tính xác thực bằng một thao tác quét đơn giản
+- **Niềm tin thị trường thứ cấp**: Nguồn gốc xuất xứ được xác minh hỗ trợ thị trường bán lại
+- **Bảo hành và dịch vụ**: Theo dõi bảo hành tự động và lịch sử dịch vụ
 
-Smart contracts can link physical products to digital twins, enabling automated warranty claims, loyalty rewards, and product registration.
+Hợp đồng thông minh có thể liên kết các sản phẩm vật lý với bản sao kỹ thuật số, cho phép tự động hóa các yêu cầu bảo hành, chương trình thưởng khách hàng thân thiết và đăng ký sản phẩm.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
-- **Native tokens** enable efficient product tokenization without complex smart contracts
-- **Low fees** make tracking individual items economically viable
-- **Immutable records** provide trustworthy provenance that cannot be falsified
-- **Consumer-friendly verification** through mobile applications
-- **Enterprise solutions** proven in real-world retail deployments
+- **Token gốc** cho phép mã hóa sản phẩm hiệu quả mà không cần các hợp đồng thông minh phức tạp
+- **Phí thấp** giúp việc theo dõi từng mặt hàng trở nên khả thi về mặt kinh tế
+- **Hồ sơ bất biến** cung cấp nguồn gốc đáng tin cậy mà không thể bị làm giả
+- **Xác minh thân thiện với người dùng** thông qua ứng dụng di động
+- **Giải pháp doanh nghiệp** đã được chứng minh hiệu quả trong các triển khai bán lẻ thực tế
 
-## Get Started
+## Hãy Bắt Đầu
 
-- [Explore authenticity solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các giải pháp chuỗi cung ứng]
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp]
