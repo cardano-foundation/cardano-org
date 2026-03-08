@@ -28,7 +28,7 @@ Hợp đồng thông minh có thể liên kết các sản phẩm vật lý vớ
 ## Tại sao chọn Cardano
 
 - **Token gốc** cho phép mã hóa sản phẩm hiệu quả mà không cần các hợp đồng thông minh phức tạp
-- **Phí thấp** giúp việc theo dõi từng mặt hàng trở nên khả thi về mặt kinh tế
+- **Chi phí thấp** giúp việc theo dõi từng mặt hàng trở nên khả thi về mặt kinh tế
 - **Hồ sơ bất biến** cung cấp nguồn gốc đáng tin cậy mà không thể bị làm giả
 - **Xác minh thân thiện với người dùng** thông qua ứng dụng di động
 - **Giải pháp doanh nghiệp** đã được chứng minh hiệu quả trong các triển khai bán lẻ thực tế
