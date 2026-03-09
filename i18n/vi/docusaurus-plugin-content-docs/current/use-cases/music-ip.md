@@ -1,15 +1,15 @@
 ---
-title: Music & IP
-description: Direct royalty payments to artists through blockchain technology on Cardano
-sidebar_label: Music & IP
+title: Âm nhạc và sở hữu trí tuệ
+description: Thanh toán tiền bản quyền trực tiếp cho nghệ sĩ thông qua công nghệ Blockchain trên Cardano
+sidebar_label: Âm nhạc và sở hữu trí tuệ
 sidebar_position: 16
 ---
 
-# Music & Intellectual Property
+# Âm nhạc và sở hữu trí tuệ
 
-## The Challenge
+## Thử thách
 
-Artists and creators often receive a small fraction of the revenue their work generates. Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
+Các nghệ sĩ và nhà sáng tạo thường chỉ nhận được một phần nhỏ doanh thu từ tác phẩm của họ. Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
 
 Intellectual property rights are difficult to track and enforce in the digital age. Piracy is rampant, and even legitimate uses often fail to compensate creators fairly.
 
