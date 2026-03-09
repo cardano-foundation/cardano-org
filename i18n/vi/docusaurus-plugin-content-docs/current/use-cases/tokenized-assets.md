@@ -1,17 +1,17 @@
 ---
-title: Tokenized Assets
-description: Fractional ownership of real-world assets through tokenization on Cardano
-sidebar_label: Tokenized Assets
+title: Tài sản được mã hóa
+description: Sở hữu một phần tài sản thế giới thực thông qua Token hóa trên Cardano
+sidebar_label: Tài sản được mã hóa
 sidebar_position: 13
 ---
 
-# Tokenized Assets
+# Tài sản được mã hóa
 
-## The Challenge
+## Thử thách
 
-Traditional investment in real-world assets like real estate, art, or commodities requires significant capital and involves complex legal and administrative processes. This excludes most people from wealth-building opportunities that have historically been reserved for the wealthy.
+Đầu tư truyền thống vào các tài sản thế giới thực như bất động sản, nghệ thuật hoặc hàng hóa đòi hỏi nguồn vốn đáng kể và liên quan đến các quy trình pháp lý và hành chính phức tạp. Điều này loại trừ hầu hết mọi người khỏi các cơ hội tạo dựng tài sản từ trước đến nay vốn chỉ dành cho người giàu.
 
-Even for those who can invest, assets are often illiquid, making it difficult to access funds when needed. The overhead of buying, selling, and managing these assets further reduces returns.
+Ngay cả đối với những người có khả năng đầu tư, tài sản thường khó chuyển đổi thành tiền mặt, gây khó khăn trong việc tiếp cận nguồn vốn khi cần thiết. The overhead of buying, selling, and managing these assets further reduces returns.
 
 ## How Blockchain Solves This
 
