@@ -37,4 +37,4 @@ Hợp đồng thông minh có thể liên kết các sản phẩm vật lý vớ
 
 - [Khám phá các giải pháp chuỗi cung ứng]
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp]
+- Xem các giải pháp doanh nghiệp
