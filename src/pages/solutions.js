@@ -27,7 +27,7 @@ export default function Solutions() {
       title={translate({id: 'solutions.layout.title', message: 'Enterprise Solutions | cardano.org'})}
       description={translate({id: 'solutions.layout.description', message: 'Discover proven enterprise blockchain solutions built on Cardano. From supply chain traceability to digital product passports, explore real-world implementations.'})}
     >
-      <OpenGraphInfo pageName="enterprise-solutions" />
+      <OpenGraphInfo pageName="use-cases-for-enterprise" />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>

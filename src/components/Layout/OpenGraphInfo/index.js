@@ -13,7 +13,7 @@ const OpenGraphInfo = ({ pageName, title, description }) => {
   return (
     <Head>
       <meta property="og:image" content={imageUrl} />
-      <meta property="twitter:image" content={imageUrl} />
+      <meta name="twitter:image" content={imageUrl} />
       {title && (
         <>
           <meta property="og:title" content={title} />
