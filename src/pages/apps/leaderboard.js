@@ -657,7 +657,7 @@ export default function LeaderboardPage() {
       title="App Leaderboard | cardano.org"
       description="See which apps are driving Cardano transactions. Explore the top apps by transaction count and discover hot categories."
     >
-      <OpenGraphInfo pageName="apps-leaderboard" />
+      <OpenGraphInfo pageName="transaction-leaderboard" />
       <SiteHero
         title="App Leaderboard"
         description={["See which apps are driving Cardano transactions"]}

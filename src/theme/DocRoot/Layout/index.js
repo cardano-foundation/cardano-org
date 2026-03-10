@@ -5,7 +5,6 @@ import BackToTopButton from '@theme/BackToTopButton';
 import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
 import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import styles from './styles.module.css';
 
 export default function DocRootLayout({children}) {

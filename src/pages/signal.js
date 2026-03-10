@@ -28,7 +28,7 @@ import contentMap from '../data/signal-contentmap.js';
       title={translate({id: 'signal.layout.title', message: 'Signal your interest'})}
       description={translate({id: 'signal.layout.description', message: 'Get just the information you want'})}
     >
-      <OpenGraphInfo pageName="Signal your interest" title={translate({id: 'signal.openGraph.title', message: 'Signal your interest'})} description={translate({id: 'signal.openGraph.description', message: 'Get just the information you want'})} />
+      <OpenGraphInfo pageName="signal" title={translate({id: 'signal.openGraph.title', message: 'Signal your interest'})} description={translate({id: 'signal.openGraph.description', message: 'Get just the information you want'})} />
       <SiteHero
         title={translate({id: 'signal.hero.title', message: 'Signal your interest'})}
         description={translate({id: 'signal.hero.description', message: 'Look at the available topics and get just the information you want'})}
