@@ -1,14 +1,14 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Tiếp theo",
     "description": "The label for version current"
   },
   "sidebar.getInvolvedSidebar.category.Site Components": {
-    "message": "Site Components",
+    "message": "Các thành phần của trang web",
     "description": "The label for category 'Site Components' in sidebar 'getInvolvedSidebar'"
   },
   "sidebar.getInvolvedSidebar.category.Site Components.link.generated-index.description": {
-    "message": "Get to know the components with which you can create pages.",
+    "message": "Hãy tìm hiểu các thành phần bạn có thể sử dụng để tạo trang.",
     "description": "The generated-index page description for category 'Site Components' in sidebar 'getInvolvedSidebar'"
   }
 }

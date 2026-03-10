@@ -77,8 +77,8 @@ Trò chuyện trực tiếp và thảo luận nhanh chóng.
 - 🇺🇸 Mỹ: https://t.me/CardanoAmerica
 - :uk: Cardano Anh: https://t.me/CardanoUK
 
-## Add your community
+## Hãy thêm cộng đồng của bạn
 
-Want to see your community listed here? We'd love to include more great Cardano communities!
+Bạn muốn cộng đồng của mình được liệt kê ở đây? Chúng tôi rất mong muốn được hợp tác với nhiều cộng đồng Cardano tuyệt vời hơn nữa!
 
-Please read the [Add your Community](/docs/get-involved/add-community) guide to learn about the requirements and how to submit your community through a pull request.
+Vui lòng đọc hướng dẫn [Thêm cộng đồng của bạn](/docs/get-involved/add-community) để tìm hiểu về các yêu cầu và cách gửi cộng đồng của bạn thông qua yêu cầu kéo.

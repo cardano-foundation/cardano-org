@@ -1,6 +1,6 @@
 ---
 title: Lưu trữ dữ liệu
-description: Decentralized, secure data storage solutions on Cardano blockchain
+description: Giải pháp lưu trữ dữ liệu phi tập trung, an toàn trên Blockchain Cardano
 sidebar_label: Lưu trữ dữ liệu
 sidebar_position: 12
 ---
@@ -9,32 +9,32 @@ sidebar_position: 12
 
 ## Thử thách
 
-Centralized data storage creates single points of failure and concentrates control over sensitive information. Cloud providers can experience outages, change terms of service, or be compelled to provide access to stored data. For sensitive applications, this dependency on third parties creates unacceptable risks.
+Việc lưu trữ dữ liệu tập trung tạo ra các điểm yếu dễ bị lỗi và tập trung quyền kiểm soát đối với thông tin nhạy cảm. Các nhà cung cấp dịch vụ đám mây có thể gặp sự cố ngừng hoạt động, thay đổi điều khoản dịch vụ hoặc bị buộc phải cung cấp quyền truy cập vào dữ liệu đã lưu trữ. Đối với các ứng dụng nhạy cảm, sự phụ thuộc vào bên thứ ba này tạo ra những rủi ro không thể chấp nhận.
 
-Data integrity is another concern. How can users verify that stored data hasn't been tampered with, especially over long time periods? Traditional backup systems provide redundancy but not proof of integrity.
+Tính toàn vẹn dữ liệu là một mối quan ngại khác. Người dùng có thể xác minh dữ liệu đã lưu trữ không bị giả mạo bằng cách nào, đặc biệt là trong thời gian dài? Các hệ thống sao lưu truyền thống cung cấp khả năng dự phòng nhưng không đảm bảo tính toàn vẹn dữ liệu.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Blockchain-based storage solutions combine decentralization with cryptographic integrity guarantees:
+Các giải pháp lưu trữ dựa trên Blockchain kết hợp tính phi tập trung với các đảm bảo về tính toàn vẹn mật mã:
 
-- **Distributed redundancy**: Data is stored across multiple nodes, eliminating single points of failure
-- **Integrity verification**: Cryptographic proofs ensure data hasn't been altered
-- **Censorship resistance**: No single entity can block access to stored data
-- **Immutable timestamps**: Prove when data was stored with blockchain-based timestamps
-- **Access control**: Smart contracts can manage who can access stored data and under what conditions
+- **Khả năng dự phòng phân tán**: Dữ liệu được lưu trữ trên nhiều máy chủ, loại bỏ các điểm lỗi đơn lẻ
+- **Xác minh tính toàn vẹn**: Bằng chứng mật mã đảm bảo dữ liệu không bị thay đổi
+- **Khả năng chống kiểm duyệt**: Không một thực thể nào có thể chặn hoàn toàn việc truy cập vào dữ liệu đã lưu trữ
+- **Dấu thời gian bất biến**: Chứng minh thời điểm dữ liệu được lưu trữ bằng dấu thời gian dựa trên Blockchain
+- **Kiểm soát truy cập**: Hợp đồng thông minh có thể quản lý ai có thể truy cập dữ liệu được lưu trữ và trong điều kiện nào
 
-While large files are typically stored off-chain, their cryptographic hashes recorded on Cardano provide proof of existence and integrity that is as permanent as the blockchain itself.
+Mặc dù các tập tin lớn thường được lưu trữ ngoài chuỗi, nhưng các Hash mật mã của chúng được ghi lại trên Cardano cung cấp bằng chứng tồn tại và tính toàn vẹn, có độ bền vững tương đương với chính Blockchain.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
-- **Proven security** through rigorous cryptographic protocols
-- **Long-term sustainability** through proof of stake and community governance
-- **Interoperability** with decentralized storage networks
-- **Low costs** for storing hashes and access control logic
-- **Developer tools** for building storage applications
+- **Bảo mật đã được chứng minh** thông qua các giao thức mã hóa nghiêm ngặt
+- **Tính bền vững lâu dài** thông qua bằng chứng về cổ phần và quản trị cộng đồng
+- **Khả năng tương tác** với các mạng lưu trữ phi tập trung
+- **Chi phí thấp** cho việc lưu trữ Hash và Logic kiểm soát truy cập
+- **Công cụ dành cho nhà phát triển** để xây dựng các ứng dụng lưu trữ
 
-## Get Started
+## Hãy Bắt Đầu
 
-- [Explore decentralized storage solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các giải pháp lưu trữ phi tập trung](/solutions)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)

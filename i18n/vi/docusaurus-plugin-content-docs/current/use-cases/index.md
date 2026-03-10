@@ -11,51 +11,51 @@ Cardano là một blockchain Layer 1 công khai, không cần cấp phép, hoàn
 
 ## Danh tính
 
-Blockchain-based identity solutions provide secure, verifiable credentials that users control.
+Các giải pháp định danh dựa trên blockchain cung cấp thông tin xác thực an toàn, có thể kiểm chứng do người dùng kiểm soát.
 
-- **[Education Credentials](./education)** - Blockchain-verified academic credentials
-- **[Digital Identity](./digital-identity)** - Self-sovereign identity solutions
-- **[Finance KYC](./finance-kyc)** - Streamlined identity verification for financial services
-- **[Government Documents](./government)** - Tamper-proof official documents
+- **[Thông tin học vấn](./education)** - Chứng chỉ học thuật được xác minh bằng công nghệ blockchain
+- **[Định danh kỹ thuật số](./digital-identity)** - Giải pháp định danh tự chủ
+- **[KYC tài chính](./finance-kyc)** - Quy trình xác minh danh tính được đơn giản hóa cho các dịch vụ tài chính
+- **[Tài liệu Chính phủ](./government)** - Tài liệu chính thức chống làm giả
 
-## Finance
+## Tài chính
 
-Decentralized financial applications that provide transparency and accessibility.
+Các ứng dụng tài chính phi tập trung cung cấp tính minh bạch và khả năng truy cập dễ dàng.
 
-- **[DeFi](./defi)** - Decentralized lending, borrowing, and exchanges
-- **[Payments](./payments)** - Fast, low-cost cross-border transfers
+- **[DeFi](./defi)** - Lending, Borrowing và sàn giao dịch phi tập trung
+- **[Thanh toán](./payments)** - Chuyển tiền xuyên biên giới nhanh chóng, chi phí thấp
 
-## Supply Chain
+## Chuỗi cung ứng
 
-End-to-end traceability and verification for products and goods.
+Đảm bảo truy xuất nguồn gốc và xác minh toàn diện cho sản phẩm và hàng hóa.
 
-- **[Agriculture](./agriculture)** - Farm-to-table traceability
-- **[Retail](./retail)** - Combat counterfeiting with provenance tracking
-- **[Logistics](./logistics)** - Real-time tracking and verification
+- **[Nông nghiệp](./agriculture)** - Truy xuất nguồn gốc từ trang trại đến bàn ăn
+- **[Bán lẻ](./retail)** - Chống hàng giả bằng cách truy xuất nguồn gốc
+- **[Logistic](./logistics)** - Theo dõi và xác minh thời gian thực
 
-## Social Impact
+## Tác động xã hội
 
-Blockchain solutions for transparency and accountability in social programs.
+Giải pháp blockchain nhằm tăng tính minh bạch và trách nhiệm giải trình trong các chương trình xã hội.
 
-- **[Social Programs](./social-programs)** - Transparent fund distribution
+- **[Chương trình xã hội](./social-programs)** - Phân bổ quỹ minh bạch
 
-## Data & Technology
+## Dữ liệu & Công nghệ
 
-Decentralized approaches to data management and asset ownership.
+Các phương pháp tiếp cận phi tập trung đối với quản lý dữ liệu và quyền sở hữu tài sản.
 
-- **[Data Storage](./data-storage)** - Decentralized, secure storage solutions
-- **[Tokenized Assets](./tokenized-assets)** - Fractional ownership of real-world assets
+- **[Lưu trữ dữ liệu](./data-storage)** - Giải pháp lưu trữ phi tập trung, an toàn
+- **[Token hoá tài sản](./tokenized-assets)** - Sở hữu một phần tài sản thế giới thực
 
-## Emerging Applications
+## Ứng dụng mới nổi
 
-New and developing use cases for blockchain technology.
+Các trường hợp ứng dụng mới và đang phát triển của công nghệ blockchain.
 
-- **[Voting Systems](./voting-systems)** - Secure, transparent elections
-- **[Healthcare](./healthcare)** - Portable, secure health records
-- **[Music & IP](./music-ip)** - Direct royalty payments to artists
+- **[Hệ thống bỏ phiếu](./voting-systems)** - Bầu cử an toàn, minh bạch
+- **[Chăm sóc sức khỏe](./healthcare)** - Hồ sơ sức khỏe có thể di chuyển và được bảo mật
+- **[Âm nhạc & Sở hữu trí tuệ](./music-ip)** - Thanh toán tiền bản quyền trực tiếp cho nghệ sĩ
 
 ---
 
-## Enterprise Solutions
+## Giải pháp doanh nghiệp
 
-Looking for proven enterprise deployments and case studies? Visit our [Enterprise Solutions](/solutions) page to explore real-world implementations by the Cardano Foundation and partners.
+Bạn đang tìm kiếm các giải pháp triển khai doanh nghiệp đã được chứng minh hiệu quả và các nghiên cứu điển hình? Hãy truy cập trang [Giải pháp Doanh nghiệp](/solutions) của chúng tôi để khám phá các ứng dụng thực tế của Cardano Foundation và các đối tác.
