@@ -1,40 +1,40 @@
 ---
 title: KYC Tài chính
 description: Quy trình xác minh khách hàng (Kyc) được đơn giản hóa bằng công nghệ blockchain trên nền tảng Cardano
-sidebar_label: Finance KYC
+sidebar_label: KYC tài chính
 sidebar_position: 4
 ---
 
-# Finance KYC
+# KYC tài chính
 
-## The Challenge
+## Thử thách
 
-Know Your Customer (KYC) processes are essential for financial compliance but create significant friction for both institutions and customers. Users must repeatedly submit the same documents to different institutions, leading to duplicated effort and increased exposure of sensitive data. Financial institutions spend billions annually on KYC compliance, with much of that cost passed on to customers.
+Quy trình Xác minh danh tính khách hàng (KYC) rất cần thiết cho việc tuân thủ các quy định tài chính nhưng lại tạo ra nhiều khó khăn đáng kể cho cả các tổ chức và khách hàng. Người dùng phải liên tục gửi cùng một loại tài liệu đến các tổ chức khác nhau, dẫn đến việc lãng phí công sức và làm tăng nguy cơ lộ thông tin nhạy cảm. Các tổ chức tài chính chi hàng tỉ đô la mỗi năm cho việc tuân thủ quy định KYC, và phần lớn chi phí đó được chuyển sang cho khách hàng.
 
-The current system is also exclusionary. The estimated 1.4 billion adults worldwide without formal identity documents are effectively locked out of the financial system, unable to access basic services like bank accounts or loans.
+Hệ thống hiện tại cũng mang tính loại trừ. Ước tính có khoảng 1,4 tỷ người trưởng thành trên toàn thế giới không có giấy tờ tùy thân chính thức, do đó họ bị loại khỏi hệ thống tài chính, không thể tiếp cận các dịch vụ cơ bản như tài khoản ngân hàng hoặc các khoản vay.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Blockchain-based KYC solutions create a more efficient and inclusive verification system:
+Các giải pháp KYC dựa trên Blockchain tạo ra một hệ thống xác minh hiệu quả và toàn diện hơn:
 
-- **Reusable verification**: Complete KYC once, use it across multiple institutions
-- **Reduced data exposure**: Share only verification status, not underlying documents
-- **Faster onboarding**: Instant verification of pre-validated credentials
-- **Cost reduction**: Shared verification infrastructure reduces compliance costs
-- **Inclusion**: Alternative identity verification methods can bring the unbanked into the financial system
+- **Xác minh tái sử dụng**: Hoàn tất quy trình KYC một lần, sử dụng tại nhiều tổ chức khác nhau
+- **Giảm thiểu nguy cơ lộ dữ liệu**: Chỉ chia sẻ trạng thái xác minh, không chia sẻ các tài liệu gốc
+- **Đăng ký nhanh hơn**: Xác minh tức thì thông tin đăng nhập đã được xác thực trước đó
+- **Giảm thiểu chi phí**: Cơ sở hạ tầng xác minh dùng chung giúp giảm thiểu chi phí tuân thủ
+- **Hòa nhập**: Các phương pháp xác minh danh tính thay thế có thể đưa những người không có tài khoản ngân hàng vào hệ thống tài chính
 
-Smart contracts can automate compliance checks, ensuring only verified users can access specific financial services while maintaining privacy and reducing manual review requirements.
+Hợp đồng thông minh có thể tự động hóa việc kiểm tra tuân thủ, đảm bảo chỉ những người dùng đã được xác minh mới có thể truy cập các dịch vụ tài chính cụ thể, đồng thời duy trì quyền riêng tư và giảm thiểu yêu cầu xem xét thủ công.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
-- **Regulatory awareness** built into platform development from the start
-- **Privacy features** enable compliant verification without unnecessary data exposure
-- **Global reach** supports financial inclusion across borders
-- **Low fees** make micro-transactions and small account verification economically viable
-- **Enterprise partnerships** demonstrate real-world financial sector adoption
+- **Nhận thức về quy định** được tích hợp vào quá trình phát triển nền tảng ngay từ đầu
+- **Các tính năng bảo mật** cho phép xác minh tuân thủ mà không làm lộ dữ liệu không cần thiết
+- **Phạm vi toàn cầu** hỗ trợ hòa nhập tài chính xuyên biên giới
+- **Chi phí thấp** giúp các giao dịch nhỏ và xác minh tài khoản quy mô nhỏ trở nên khả thi về mặt kinh tế
+- **Quan hệ đối tác doanh nghiệp** thể hiện sự ứng dụng thực tiễn trong lĩnh vực tài chính
 
-## Get Started
+## Hãy Bắt Đầu
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các ứng dụng định danh trên Cardano](/apps/?tags=identity)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)
