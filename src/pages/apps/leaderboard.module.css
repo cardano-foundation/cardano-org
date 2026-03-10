@@ -27,7 +27,7 @@
   border-left: none;
 }
 
-.periodButtonActive {
+.periodButton.periodButtonActive {
   background: var(--ifm-color-primary);
   color: #fff;
   border-color: var(--ifm-color-primary);
