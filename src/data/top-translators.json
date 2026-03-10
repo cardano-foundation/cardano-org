@@ -1,24 +1,24 @@
 {
-  "lastUpdated": "2026-03-07T06:04:39.220Z",
+  "lastUpdated": "2026-03-10T06:09:05.373Z",
   "contributors": [
     {
       "rank": 1,
+      "user": "tu_nguyen",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 2344,
+      "approved": 0
+    },
+    {
+      "rank": 2,
       "user": "HaSala",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17602462/medium/b8b6783a0503304c1b9c8764214ded12_default.png",
       "languages": [
         "Vietnamese"
       ],
       "translated": 1029,
-      "approved": 0
-    },
-    {
-      "rank": 2,
-      "user": "tu_nguyen",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
-      "languages": [
-        "Vietnamese"
-      ],
-      "translated": 707,
       "approved": 0
     },
     {
