@@ -1,40 +1,40 @@
 ---
 title: Định danh kỹ thuật số
-description: Self-sovereign identity solutions on Cardano give users control over their personal data
-sidebar_label: Digital Identity
+description: Các giải pháp định danh tự chủ trên Cardano cho phép người dùng kiểm soát dữ liệu cá nhân
+sidebar_label: Định danh kỹ thuật số
 sidebar_position: 3
 ---
 
-# Digital Identity
+# Định danh kỹ thuật số
 
-## The Challenge
+## Thử thách
 
-In today's digital world, our identities are fragmented across countless platforms, each holding pieces of our personal information. Users have little control over how their data is used, shared, or monetized. Data breaches expose millions of records, identity theft is rampant, and proving who you are online remains cumbersome and privacy-invasive.
+Trong thế giới kỹ thuật số ngày nay, danh tính của mỗi người bị phân mảnh trên vô số nền tảng, mỗi nền tảng đều lưu giữ những mẩu thông tin cá nhân của chúng ta. Người dùng hầu như không có quyền kiểm soát việc dữ liệu của mình được sử dụng, chia sẻ hoặc kiếm tiền như thế nào. Các vụ rò rỉ dữ liệu làm lộ hàng triệu hồ sơ, nạn đánh cắp danh tính hoành hành, và việc chứng minh danh tính trực tuyến vẫn còn rườm rà và xâm phạm quyền riêng tư.
 
-Centralized identity systems create single points of failure and give disproportionate power to identity providers. Users must repeatedly share sensitive information, creating unnecessary exposure and friction in digital interactions.
+Các hệ thống định danh tập trung tạo ra các điểm yếu dễ bị tổn thương và trao quyền lực không cân xứng cho các nhà cung cấp dịch vụ định danh. Người dùng phải liên tục chia sẻ thông tin nhạy cảm, tạo ra rủi ro không cần thiết và gây ra mâu thuẫn trong các tương tác kỹ thuật số.
 
-## How Blockchain Solves This
+## Cách Blockchain giải quyết vấn đề
 
-Self-sovereign identity (SSI) on Cardano puts users in control of their digital identity. Key features include:
+Định danh tự chủ (SSI) trên Cardano cho phép người dùng kiểm soát danh tính kỹ thuật số của mình. Các đặc điểm chính bao gồm:
 
-- **User ownership**: Individuals control their identity data and decide what to share
-- **Selective disclosure**: Share only the information needed for a specific transaction
-- **Verifiable credentials**: Third parties can cryptographically verify claims without accessing underlying data
-- **Decentralized identifiers (DIDs)**: Persistent identifiers that don't depend on any central authority
-- **Privacy preservation**: Zero-knowledge proofs can verify attributes without revealing them
+- **Quyền sở hữu của người dùng**: Cá nhân kiểm soát dữ liệu định danh và quyết định những gì họ muốn chia sẻ
+- **Tiết lộ có chọn lọc**: Chỉ chia sẻ thông tin cần thiết cho một giao dịch cụ thể
+- **Thông tin xác thực có thể xác minh**: Bên thứ ba có thể xác minh các tuyên bố bằng mật mã mà không cần truy cập vào dữ liệu gốc
+- **Mã định danh phi tập trung (DID)**: Mã định danh bền vững không phụ thuộc vào bất kỳ cơ quan trung ương nào
+- **Bảo vệ quyền riêng tư**: Bằng chứng không kiến thức có thể xác minh các thuộc tính mà không cần tiết lộ chúng
 
-With blockchain-based identity, users can prove they're over 18 without revealing their birthdate, or prove they live in a certain country without revealing their address.
+Với định danh dựa trên Blockchain, người dùng có thể chứng minh mình trên 18 tuổi mà không cần tiết lộ ngày sinh, hoặc chứng minh mình sống ở một quốc gia nhất định mà không cần tiết lộ địa chỉ.
 
-## Why Cardano
+## Tại sao chọn Cardano
 
-- **Formal verification methods** ensure identity smart contracts behave as intended
-- **Extended UTXO model** provides predictable transaction costs for identity operations
-- **Interoperability focus** enables identity credentials to work across different systems
-- **Strong governance** ensures the platform evolves with community input
-- **Scalability roadmap** supports identity solutions at global scale
+- **Các phương pháp xác minh chính thức** đảm bảo những hợp đồng thông minh về định danh hoạt động như mong muốn
+- **Mô hình UTXO mở rộng** cung cấp chi phí giao dịch có thể dự đoán được cho các hoạt động xác thực danh tính
+- **Tập trung vào khả năng tương tác** cho phép thông tin xác thực danh tính hoạt động trên các hệ thống khác nhau
+- **Quản trị mạnh mẽ** đảm bảo nền tảng phát triển dựa trên ý kiến ​​đóng góp từ cộng đồng
+- **Lộ trình mở rộng** hỗ trợ các giải pháp định danh ở quy mô toàn cầu
 
-## Get Started
+## Hãy Bắt Đầu
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Khám phá các ứng dụng định danh trên Cardano](/apps/?tags=identity)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Xem các giải pháp doanh nghiệp](/solutions)
