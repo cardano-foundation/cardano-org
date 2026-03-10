@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "build-authors": "node scripts/generate-authors-json.js",
+    "build-news": "node scripts/generate-recent-news.js",
     "docusaurus": "docusaurus",
-    "start": "yarn build-authors && docusaurus start",
-    "build": "yarn build-authors && docusaurus build",
+    "start": "yarn build-authors && yarn build-news && docusaurus start",
+    "build": "yarn build-authors && yarn build-news && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

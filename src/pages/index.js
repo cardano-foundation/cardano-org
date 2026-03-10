@@ -10,6 +10,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
 import Logos from "@site/src/components/Layout/Logos";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
+import LatestNewsSection from "@site/src/components/LatestNewsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import {translate} from '@docusaurus/Translate';
 
@@ -66,6 +67,19 @@ export default function Home() {
               translate({id: 'home.vision.title2', message: 'Change Your World.'}),
             ]}
           />
+
+        <BoundaryBox>
+          <Divider text={translate({id: 'home.divider.news', message: 'News'})} />
+          <TitleWithText
+            title={translate({id: 'home.news.title', message: 'Latest News'})}
+            description={[
+              translate({id: 'home.news.description', message: 'Stay up to date with the latest developments, announcements, and community updates from the Cardano ecosystem.'}),
+            ]}
+            titleType="black"
+            headingDot={true}
+          />
+          <LatestNewsSection count={6} />
+        </BoundaryBox>
 
         <BoundaryBox>
           <Divider text={translate({id: 'home.divider.makeTheChange', message: 'Make the Change'})} />
