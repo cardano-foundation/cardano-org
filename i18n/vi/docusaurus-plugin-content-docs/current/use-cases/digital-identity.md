@@ -1,5 +1,5 @@
 ---
-title: Digital Identity
+title: Định danh kỹ thuật số
 description: Self-sovereign identity solutions on Cardano give users control over their personal data
 sidebar_label: Digital Identity
 sidebar_position: 3
