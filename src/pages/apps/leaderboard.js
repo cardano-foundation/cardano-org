@@ -206,7 +206,7 @@ function TopAppsChart({ data }) {
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
-    // Top 10 apps
+    // Top 10 entries
     const topApps = data.slice(0, 10);
     const categories = topApps.map(d => d.displayName);
     const values = topApps.map(d => d.txCount);
@@ -469,6 +469,9 @@ function AppRow({ app, rank, appDetails }) {
         )}
         <div className={styles.appDetails}>
           <h4 className={styles.appName}>{app.displayName}</h4>
+          {app.isMetadata && (
+            <span className={styles.typeBadge}>Standard</span>
+          )}
           <span
             className={styles.categoryTag}
             style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
@@ -480,6 +483,9 @@ function AppRow({ app, rank, appDetails }) {
       <div className={styles.txCount}>
         <span className={styles.txValue}>{formatNumber(app.txCount)}</span>
         <span className={styles.txLabel}>transactions</span>
+        {appDetails?.statsNote && (
+          <span className={styles.statsNote}>{appDetails.statsNote}</span>
+        )}
       </div>
       {appDetails?.website && (
         <a
@@ -654,13 +660,13 @@ export default function LeaderboardPage() {
 
   return (
     <Layout
-      title="App Leaderboard | cardano.org"
-      description="See which apps are driving Cardano transactions. Explore the top apps by transaction count and discover hot categories."
+      title="Transaction Leaderboard | cardano.org"
+      description="See what's driving on-chain activity on Cardano. Explore apps, standards, and protocols ranked by transaction count."
     >
       <OpenGraphInfo pageName="transaction-leaderboard" />
       <SiteHero
-        title="App Leaderboard"
-        description={["See which apps are driving Cardano transactions"]}
+        title="Transaction Leaderboard"
+        description={["See what's driving on-chain activity on Cardano"]}
         bannerType="fluidBlue"
       />
       <main>
@@ -699,7 +705,7 @@ export default function LeaderboardPage() {
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{unifiedData.length}</span>
-                <span className={styles.statLabel}>Tracked Apps</span>
+                <span className={styles.statLabel}>Apps & Standards</span>
                 <span className={styles.statPeriod}>On-chain identifiable</span>
               </div>
               <div className={styles.statCard}>
@@ -727,11 +733,11 @@ export default function LeaderboardPage() {
 
             <SpacerBox size="small" />
 
-            {/* Top Apps Section */}
-            <Divider text="Top Apps by Transaction Count" id="top-apps" />
+            {/* Top On-Chain Activity Section */}
+            <Divider text="Top On-Chain Activity" id="top-apps" />
             <TitleWithText
               description={[
-                `The top 10 apps by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. Bars are colored by category.`
+                `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards. Bars are colored by category.`
               ]}
               headingDot={false}
             />
