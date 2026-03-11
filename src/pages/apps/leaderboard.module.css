@@ -191,15 +191,10 @@
   text-overflow: ellipsis;
 }
 
-.typeBadge {
-  display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 500;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-700);
-  width: fit-content;
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
 .categoryTag {
@@ -219,6 +214,8 @@
   align-items: flex-end;
   gap: 0.125rem;
   flex-shrink: 0;
+  margin-left: auto;
+  min-width: 100px;
 }
 
 .txValue {
@@ -258,6 +255,12 @@
   background: var(--ifm-color-primary);
   color: white;
   text-decoration: none;
+}
+
+.visitLinkSpacer {
+  display: inline-block;
+  width: 62px;
+  flex-shrink: 0;
 }
 
 /* Category Grid */
@@ -322,6 +325,11 @@
 
 .categoryLink::after {
   content: " \2192";
+}
+
+.categoryIncludes {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 /* Metadata Labels Table */
@@ -458,12 +466,15 @@
 
   .txCount {
     order: 2;
-    flex: 1;
-    align-items: flex-start;
+    margin-left: auto;
   }
 
   .visitLink {
     order: 3;
+  }
+
+  .visitLinkSpacer {
+    display: none;
   }
 
   .categoryGrid {

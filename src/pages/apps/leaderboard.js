@@ -179,7 +179,8 @@ const categoryColors = {
   'Bridge': '#FFC107',
   'Minting': '#42A5F5',
   'Notary': '#26A69A',
-  'Not Listed': '#757575'
+  'Not Listed': '#757575',
+  'Other': '#9E9E9E'
 };
 
 // Horizontal Bar Chart Component for Top Apps
@@ -469,15 +470,19 @@ function AppRow({ app, rank, appDetails }) {
         )}
         <div className={styles.appDetails}>
           <h4 className={styles.appName}>{app.displayName}</h4>
-          {app.isMetadata && (
-            <span className={styles.typeBadge}>Standard</span>
-          )}
-          <span
-            className={styles.categoryTag}
-            style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
-          >
-            {category}
-          </span>
+          <div className={styles.tagRow}>
+            <span
+              className={styles.categoryTag}
+              style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
+            >
+              {category}
+            </span>
+            {app.isMetadata && (
+              <span className={styles.categoryTag} style={{ backgroundColor: '#75757520', color: '#757575' }}>
+                Standard
+              </span>
+            )}
+          </div>
         </div>
       </div>
       <div className={styles.txCount}>
@@ -487,7 +492,7 @@ function AppRow({ app, rank, appDetails }) {
           <span className={styles.statsNote}>{appDetails.statsNote}</span>
         )}
       </div>
-      {appDetails?.website && (
+      {appDetails?.website ? (
         <a
           href={appDetails.website}
           target="_blank"
@@ -496,13 +501,15 @@ function AppRow({ app, rank, appDetails }) {
         >
           Visit
         </a>
+      ) : (
+        <span className={styles.visitLinkSpacer} />
       )}
     </div>
   );
 }
 
 // Category Card Component
-function CategoryCard({ category, txCount, totalTx, appCount }) {
+function CategoryCard({ category, txCount, totalTx, appCount, includes }) {
   const percentage = ((txCount / totalTx) * 100).toFixed(1);
   const tagSlug = category.toLowerCase().replace(/\s+/g, '-');
 
@@ -536,11 +543,13 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
       <div className={styles.categoryStats}>
         <span className={styles.categoryTx}>{formatNumber(txCount)} tx</span>
       </div>
-      {linkTag && (
+      {includes ? (
+        <span className={styles.categoryIncludes}>{includes.join(', ')}</span>
+      ) : linkTag ? (
         <Link to={`/apps?tags=${linkTag}`} className={styles.categoryLink}>
           View {category} apps
         </Link>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -593,9 +602,21 @@ export default function LeaderboardPage() {
       stats[category].txCount += entry.txCount;
       stats[category].appCount += 1;
     });
-    return Object.entries(stats)
+    const sorted = Object.entries(stats)
       .map(([name, data]) => ({ name, ...data }))
       .sort((a, b) => b.txCount - a.txCount);
+
+    const top = sorted.slice(0, 5);
+    const rest = sorted.slice(5);
+    if (rest.length > 0) {
+      top.push({
+        name: 'Other',
+        txCount: rest.reduce((sum, c) => sum + c.txCount, 0),
+        appCount: rest.reduce((sum, c) => sum + c.appCount, 0),
+        includes: rest.map(c => c.name),
+      });
+    }
+    return top;
   }, [unifiedData]);
 
   // Metadata labels sorted by tx count (verified only, ungrouped)
@@ -737,7 +758,7 @@ export default function LeaderboardPage() {
             <Divider text="Top On-Chain Activity" id="top-apps" />
             <TitleWithText
               description={[
-                `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards. Bars are colored by category.`
+                `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards (labeled "Standard"). Bars are colored by category.`
               ]}
               headingDot={false}
             />
@@ -775,13 +796,14 @@ export default function LeaderboardPage() {
 
             {/* Category Cards */}
             <div className={styles.categoryGrid}>
-              {categoryStats.slice(0, 6).map(cat => (
+              {categoryStats.map(cat => (
                 <CategoryCard
                   key={cat.name}
                   category={cat.name}
                   txCount={cat.txCount}
                   totalTx={totalTrackedTx}
                   appCount={cat.appCount}
+                  includes={cat.includes}
                 />
               ))}
             </div>
