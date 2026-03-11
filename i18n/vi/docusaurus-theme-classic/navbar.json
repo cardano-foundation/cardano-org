@@ -48,7 +48,7 @@
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Insights",
+    "message": "Thông tin chi tiết về Cardano",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
