@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-10T06:09:00.935Z",
+  "lastUpdated": "2026-03-11T06:10:55.797Z",
   "languages": [
     {
       "id": "de",
@@ -22,17 +22,17 @@
     {
       "id": "vi",
       "name": "Vietnamese",
-      "translationProgress": 13,
+      "translationProgress": 14,
       "approvalProgress": 0,
       "words": {
         "total": 37712,
-        "translated": 4966,
+        "translated": 5507,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
         "total": 3570,
-        "translated": 667,
+        "translated": 727,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }
