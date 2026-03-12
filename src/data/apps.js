@@ -1256,6 +1256,7 @@ export const Showcases = [
     preview: require("./app-images/usdm.png"),
     icon: "/img/app-icons/usdm.jpeg",
     statsLabel: "$usdm",
+    statsNote: "mint/burn only",
     website: "https://moneta.global/",
     source: null,
     tags: ["stablecoin"],
@@ -1429,6 +1430,7 @@ function ensureShowcaseValid(showcase) {
       "tags",
       "icon",
       "statsLabel",
+      "statsNote",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {

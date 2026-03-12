@@ -179,7 +179,8 @@ const categoryColors = {
   'Bridge': '#FFC107',
   'Minting': '#42A5F5',
   'Notary': '#26A69A',
-  'Not Listed': '#757575'
+  'Not Listed': '#757575',
+  'Other': '#9E9E9E'
 };
 
 // Horizontal Bar Chart Component for Top Apps
@@ -206,7 +207,7 @@ function TopAppsChart({ data }) {
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
-    // Top 10 apps
+    // Top 10 entries
     const topApps = data.slice(0, 10);
     const categories = topApps.map(d => d.displayName);
     const values = topApps.map(d => d.txCount);
@@ -469,19 +470,29 @@ function AppRow({ app, rank, appDetails }) {
         )}
         <div className={styles.appDetails}>
           <h4 className={styles.appName}>{app.displayName}</h4>
-          <span
-            className={styles.categoryTag}
-            style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
-          >
-            {category}
-          </span>
+          <div className={styles.tagRow}>
+            <span
+              className={styles.categoryTag}
+              style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
+            >
+              {category}
+            </span>
+            {app.isMetadata && (
+              <span className={styles.categoryTag} style={{ backgroundColor: '#75757520', color: '#757575' }}>
+                Standard
+              </span>
+            )}
+          </div>
         </div>
       </div>
       <div className={styles.txCount}>
         <span className={styles.txValue}>{formatNumber(app.txCount)}</span>
         <span className={styles.txLabel}>transactions</span>
+        {appDetails?.statsNote && (
+          <span className={styles.statsNote}>{appDetails.statsNote}</span>
+        )}
       </div>
-      {appDetails?.website && (
+      {appDetails?.website ? (
         <a
           href={appDetails.website}
           target="_blank"
@@ -490,13 +501,15 @@ function AppRow({ app, rank, appDetails }) {
         >
           Visit
         </a>
+      ) : (
+        <span className={styles.visitLinkSpacer} />
       )}
     </div>
   );
 }
 
 // Category Card Component
-function CategoryCard({ category, txCount, totalTx, appCount }) {
+function CategoryCard({ category, txCount, totalTx, appCount, includes }) {
   const percentage = ((txCount / totalTx) * 100).toFixed(1);
   const tagSlug = category.toLowerCase().replace(/\s+/g, '-');
 
@@ -530,11 +543,13 @@ function CategoryCard({ category, txCount, totalTx, appCount }) {
       <div className={styles.categoryStats}>
         <span className={styles.categoryTx}>{formatNumber(txCount)} tx</span>
       </div>
-      {linkTag && (
+      {includes ? (
+        <span className={styles.categoryIncludes}>{includes.join(', ')}</span>
+      ) : linkTag ? (
         <Link to={`/apps?tags=${linkTag}`} className={styles.categoryLink}>
           View {category} apps
         </Link>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -587,9 +602,21 @@ export default function LeaderboardPage() {
       stats[category].txCount += entry.txCount;
       stats[category].appCount += 1;
     });
-    return Object.entries(stats)
+    const sorted = Object.entries(stats)
       .map(([name, data]) => ({ name, ...data }))
       .sort((a, b) => b.txCount - a.txCount);
+
+    const top = sorted.slice(0, 5);
+    const rest = sorted.slice(5);
+    if (rest.length > 0) {
+      top.push({
+        name: 'Other',
+        txCount: rest.reduce((sum, c) => sum + c.txCount, 0),
+        appCount: rest.reduce((sum, c) => sum + c.appCount, 0),
+        includes: rest.map(c => c.name),
+      });
+    }
+    return top;
   }, [unifiedData]);
 
   // Metadata labels sorted by tx count (verified only, ungrouped)
@@ -654,13 +681,13 @@ export default function LeaderboardPage() {
 
   return (
     <Layout
-      title="App Leaderboard | cardano.org"
-      description="See which apps are driving Cardano transactions. Explore the top apps by transaction count and discover hot categories."
+      title="Transaction Leaderboard | cardano.org"
+      description="See what's driving on-chain activity on Cardano. Explore apps, standards, and protocols ranked by transaction count."
     >
       <OpenGraphInfo pageName="transaction-leaderboard" />
       <SiteHero
-        title="App Leaderboard"
-        description={["See which apps are driving Cardano transactions"]}
+        title="Transaction Leaderboard"
+        description={["See what's driving on-chain activity on Cardano"]}
         bannerType="fluidBlue"
       />
       <main>
@@ -699,7 +726,7 @@ export default function LeaderboardPage() {
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{unifiedData.length}</span>
-                <span className={styles.statLabel}>Tracked Apps</span>
+                <span className={styles.statLabel}>Apps & Standards</span>
                 <span className={styles.statPeriod}>On-chain identifiable</span>
               </div>
               <div className={styles.statCard}>
@@ -727,11 +754,11 @@ export default function LeaderboardPage() {
 
             <SpacerBox size="small" />
 
-            {/* Top Apps Section */}
-            <Divider text="Top Apps by Transaction Count" id="top-apps" />
+            {/* Top On-Chain Activity Section */}
+            <Divider text="Top On-Chain Activity" id="top-apps" />
             <TitleWithText
               description={[
-                `The top 10 apps by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. Bars are colored by category.`
+                `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards (labeled "Standard"). Bars are colored by category.`
               ]}
               headingDot={false}
             />
@@ -769,13 +796,14 @@ export default function LeaderboardPage() {
 
             {/* Category Cards */}
             <div className={styles.categoryGrid}>
-              {categoryStats.slice(0, 6).map(cat => (
+              {categoryStats.map(cat => (
                 <CategoryCard
                   key={cat.name}
                   category={cat.name}
                   txCount={cat.txCount}
                   totalTx={totalTrackedTx}
                   appCount={cat.appCount}
+                  includes={cat.includes}
                 />
               ))}
             </div>

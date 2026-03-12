@@ -191,6 +191,12 @@
   text-overflow: ellipsis;
 }
 
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .categoryTag {
   display: inline-block;
   font-size: 0.7rem;
@@ -208,6 +214,8 @@
   align-items: flex-end;
   gap: 0.125rem;
   flex-shrink: 0;
+  margin-left: auto;
+  min-width: 100px;
 }
 
 .txValue {
@@ -221,6 +229,12 @@
   color: var(--ifm-color-emphasis-600);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.statsNote {
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
 }
 
 .visitLink {
@@ -241,6 +255,12 @@
   background: var(--ifm-color-primary);
   color: white;
   text-decoration: none;
+}
+
+.visitLinkSpacer {
+  display: inline-block;
+  width: 62px;
+  flex-shrink: 0;
 }
 
 /* Category Grid */
@@ -305,6 +325,11 @@
 
 .categoryLink::after {
   content: " \2192";
+}
+
+.categoryIncludes {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 /* Metadata Labels Table */
@@ -441,12 +466,15 @@
 
   .txCount {
     order: 2;
-    flex: 1;
-    align-items: flex-start;
+    margin-left: auto;
   }
 
   .visitLink {
     order: 3;
+  }
+
+  .visitLinkSpacer {
+    display: none;
   }
 
   .categoryGrid {
