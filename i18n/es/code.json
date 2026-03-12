@@ -9,7 +9,7 @@
     "message": "Un mundo mejor. Para todos."
   },
   "home.hero.description": {
-    "message": "Cardano es una plataforma blockchain para visionarios, innovadores y agentes de cambio, con las herramientas y tecnologías necesarias para crear oportunidades para muchos — no solo para unos pocos — e impulsar un cambio global positivo."
+    "message": "Cardano es una plataforma blockchain para visionarios, innovadores y agentes de cambio, con las herramientas y tecnologías necesarias para crear oportunidades para todos e impulsar un cambio global positivo."
   },
   "home.hero.ctaWhatIsAda": {
     "message": "¿Qué es ada?"
@@ -39,7 +39,7 @@
     "message": "Cardano es una plataforma blockchain de prueba de participación: la primera basada en [investigación revisada por pares](/research) y desarrollada con métodos basados en evidencia. Combina tecnologías pioneras para ofrecer una seguridad y sostenibilidad sin precedentes a aplicaciones, sistemas y sociedades descentralizadas."
   },
   "home.featured.description2": {
-    "message": "Con un equipo de ingenieros de primer nivel, Cardano devuelve el poder de las estructuras opacas a las personas — y se convierte en motor de cambio positivo y progreso."
+    "message": "Con un equipo de ingenieros de primer nivel, Cardano devuelve el poder de las estructuras opacas a las personas y se convierte en motor de cambio positivo y progreso."
   },
   "home.featured.quote1": {
     "message": "Una historia de lo imposible,"
@@ -54,10 +54,10 @@
     "message": "Beneficios"
   },
   "home.quoteBox.description": {
-    "message": "Cardano restaura la confianza en los sistemas globales — creando, a través de la ciencia, una base más segura, transparente y sostenible para que las personas realicen transacciones, los sistemas gobiernen y las empresas crezcan."
+    "message": "Cardano restaura la confianza en los sistemas globales. A través de la ciencia, crea una base más segura, transparente y sostenible para que las personas realicen transacciones, los sistemas gobiernen y las empresas crezcan."
   },
   "home.quoteBox.quote": {
-    "message": "Cardano establece un nuevo estándar tecnológico — abierto e inclusivo — que desafía lo establecido e inaugura una nueva era de innovación sostenible y distribuida globalmente."
+    "message": "Cardano establece un nuevo estándar tecnológico, abierto e inclusivo, que desafía lo establecido e inaugura una nueva era de innovación sostenible y distribuida globalmente."
   },
   "home.benefits.ouroboros.label": {
     "message": "Prueba de participación y Ouroboros"
@@ -69,7 +69,7 @@
     "message": "Prueba de participación y Ouroboros: el protocolo blockchain más sostenible del planeta"
   },
   "home.benefits.ouroboros.body": {
-    "message": "Ouroboros es el primer protocolo blockchain revisado por pares y verificablemente seguro — y Cardano fue la primera blockchain en implementarlo. Ouroboros permite la descentralización de la red Cardano a escala global sin comprometer la seguridad.<br /><br />El protocolo es fruto de un esfuerzo incansable basado en investigación fundamental, impulsado por la visión de sistemas de pago globales más seguros y transparentes, y ofrece los medios para redistribuir el poder y el control de manera equitativa."
+    "message": "Ouroboros es el primer protocolo blockchain revisado por pares y verificablemente seguro, y Cardano fue la primera blockchain en implementarlo. Ouroboros permite la descentralización de la red Cardano a escala global sin comprometer la seguridad.<br /><br />El protocolo es fruto de un esfuerzo incansable basado en investigación fundamental, impulsado por la visión de sistemas de pago globales más seguros y transparentes, y ofrece los medios para redistribuir el poder y el control de manera equitativa."
   },
   "home.benefits.ouroboros.cta": {
     "message": "Conoce Ouroboros"
@@ -84,7 +84,7 @@
     "message": "Los más altos estándares de desarrollo, con raíces en la ciencia"
   },
   "home.benefits.research.body": {
-    "message": "Cardano se desarrolla con métodos basados en evidencia — una combinación novedosa de métodos formales, habitualmente reservados para aplicaciones de alta criticidad, y un enfoque ágil que mantiene al proyecto adaptable y receptivo. Para aplicaciones, sistemas y soluciones globales, la seguridad no es opcional: es un requisito. Nuestras implementaciones de protocolo y las integraciones de plataforma primero se investigan, cuestionan, modelan matemáticamente y prueban antes de especificarse. Estas especificaciones guían el desarrollo, que a su vez se audita de forma independiente. El resultado es un código con un nivel de fiabilidad sin igual."
+    "message": "Cardano se desarrolla con métodos basados en evidencia: una combinación novedosa de métodos formales, habitualmente reservados para aplicaciones de alta criticidad, y un enfoque ágil que mantiene al proyecto adaptable y receptivo. Para aplicaciones, sistemas y soluciones globales, la seguridad no es opcional, es un requisito. Nuestras implementaciones de protocolo y las integraciones de plataforma primero se investigan, cuestionan, modelan matemáticamente y prueban antes de especificarse. Estas especificaciones guían el desarrollo, que a su vez se audita de forma independiente. El resultado es un código con un nivel de fiabilidad sin igual."
   },
   "home.benefits.research.cta": {
     "message": "Descubre la investigación"
@@ -96,10 +96,10 @@
     "message": "Transacciones"
   },
   "home.benefits.secure.title": {
-    "message": "Seguridad sin precedentes — y los cimientos de un mundo sin intermediarios"
+    "message": "Seguridad sin precedentes y los cimientos de un mundo sin intermediarios"
   },
   "home.benefits.secure.body": {
-    "message": "Cardano permite que actores que no se conocen — y no tienen razón para confiar entre sí — interactúen y realicen transacciones de forma segura. Es una plataforma que genera confianza donde no la hay, abriendo mercados y oportunidades completamente nuevos. Gracias a Ouroboros, Cardano está protegido de forma demostrable contra actores malintencionados y ataques Sybil. Cada transacción e interacción queda registrada de forma inmutable y transparente, validada de forma segura mediante multifirma y un modelo UTXO extendido pionero."
+    "message": "Cardano permite que actores que no se conocen, y que no tienen razón para confiar entre sí, interactúen y realicen transacciones de forma segura. Es una plataforma que genera confianza donde no la hay, abriendo mercados y oportunidades completamente nuevos. Gracias a Ouroboros, Cardano está protegido de forma demostrable contra actores malintencionados y ataques Sybil. Cada transacción e interacción queda registrada de forma inmutable y transparente, validada de forma segura mediante multifirma y un modelo UTXO extendido pionero."
   },
   "home.benefits.secure.cta": {
     "message": "Visita la hoja de ruta"
@@ -114,7 +114,7 @@
     "message": "Participación abierta e incentivada"
   },
   "home.benefits.participation.body": {
-    "message": "Con una comunidad comprometida en su núcleo, Cardano es un proyecto de código abierto que se desarrolla mediante participación abierta. Para garantizar la longevidad y la salud de la red, un mecanismo de incentivos recompensa a los usuarios — ya sean operadores de stake pools o delegadores — por su participación. La plataforma crece a través de propuestas de mejora y ampliación. El sistema de gobernanza de Cardano da a todos una voz democrática: los poseedores de ada pueden presentar o votar propuestas para mejorar la plataforma o decidir su dirección. Este modelo posiciona a Cardano de forma única para el crecimiento futuro, permitiendo introducir nuevas funciones adaptadas a las necesidades de los usuarios. Así, Cardano y su comunidad pueden financiar y decidir de forma continua sobre las mejoras de la plataforma y el ecosistema."
+    "message": "Con una comunidad comprometida en su núcleo, Cardano es un proyecto de código abierto que se desarrolla mediante participación abierta. Para garantizar la longevidad y la salud de la red, un mecanismo de incentivos recompensa a los usuarios, ya sean operadores de stake pools o delegadores, por su participación. La plataforma crece a través de propuestas de mejora y ampliación. El sistema de gobernanza de Cardano da a todos una voz democrática: los poseedores de ada pueden presentar o votar propuestas para mejorar la plataforma o decidir su dirección. Este modelo posiciona a Cardano de forma única para el crecimiento futuro, permitiendo introducir nuevas funciones adaptadas a las necesidades de los usuarios. Así, Cardano y su comunidad pueden financiar y decidir de forma continua sobre las mejoras de la plataforma y el ecosistema."
   },
   "home.benefits.participation.cta": {
     "message": "Conoce la gobernanza"
@@ -129,7 +129,7 @@
     "message": "Extremadamente escalable y respetuoso con el medio ambiente"
   },
   "home.benefits.scalable.body": {
-    "message": "Ouroboros permite a Cardano escalar para satisfacer las necesidades globales con un consumo energético mínimo. A diferencia de otras blockchains, Cardano no necesita un aumento exponencial de energía para mejorar el rendimiento y añadir bloques. El equilibrio entre rendimiento y sostenibilidad se logra mediante enfoques novedosos como multi-ledger, cadenas laterales y procesamiento paralelo de transacciones a través de canales de estado multipartitos.<br /><br />La red crece con el número de stake pools, mientras los parámetros se ajustan para regular la atracción de pools específicos. Es una red que recompensa la participación directamente. Cardano está diseñado para que quienes actúen en beneficio de la red también actúen en su propio beneficio. Esto asegura un ecosistema saludable con una red duradera y robusta — hoy y en el futuro. La combinación de sostenibilidad y escalabilidad permite a Cardano alcanzar el rendimiento que exigen los sistemas globales — financieros, logísticos, de identidad y sociales."
+    "message": "Ouroboros permite a Cardano escalar para satisfacer las necesidades globales con un consumo energético mínimo. A diferencia de otras blockchains, Cardano no necesita un aumento exponencial de energía para mejorar el rendimiento y añadir bloques. El equilibrio entre rendimiento y sostenibilidad se logra mediante enfoques novedosos como multi-ledger, cadenas laterales y procesamiento paralelo de transacciones a través de canales de estado multipartitos.<br /><br />La red crece con el número de stake pools, mientras los parámetros se ajustan para regular la atracción de pools específicos. Es una red que recompensa la participación directamente. Cardano está diseñado para que quienes actúen en beneficio de la red también actúen en su propio beneficio. Esto asegura un ecosistema saludable con una red duradera y robusta, hoy y en el futuro. La combinación de sostenibilidad y escalabilidad permite a Cardano alcanzar el rendimiento que exigen los sistemas globales, ya sean financieros, logísticos, de identidad o sociales."
   },
   "home.benefits.scalable.cta": {
     "message": "Conoce Hydra"
@@ -147,7 +147,7 @@
     "message": "Descubre Cardano"
   },
   "home.discover.description": {
-    "message": "Cardano es la primera plataforma blockchain construida sobre [investigación revisada por pares](/research) — lo suficientemente segura para proteger los datos de miles de millones, lo suficientemente escalable para sistemas globales y lo suficientemente robusta para impulsar un cambio profundo."
+    "message": "Cardano es la primera plataforma blockchain construida sobre [investigación revisada por pares](/research), lo suficientemente segura para proteger los datos de miles de millones, lo suficientemente escalable para sistemas globales y lo suficientemente robusta para impulsar un cambio profundo."
   },
   "home.discover.people": {
     "message": "Personas"
