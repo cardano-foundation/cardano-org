@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-11T06:11:00.410Z",
+  "lastUpdated": "2026-03-12T06:12:17.269Z",
   "contributors": [
     {
       "rank": 1,
@@ -8,7 +8,7 @@
       "languages": [
         "Vietnamese"
       ],
-      "translated": 2895,
+      "translated": 2993,
       "approved": 0
     },
     {
@@ -53,6 +53,16 @@
     },
     {
       "rank": 6,
+      "user": "tran thi minh Hieu (hieuvan.ttmh)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17610216/medium/8f3437a0b851e58e972032627d72eb76.jpeg",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 26,
+      "approved": 0
+    },
+    {
+      "rank": 7,
       "user": "Markus Gufler (gufmar)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13770965/medium/40e5c1f696bf35b4efcc6a7de2bb109f.jpg",
       "languages": [
@@ -62,7 +72,7 @@
       "approved": 0
     },
     {
-      "rank": 7,
+      "rank": 8,
       "user": "Sozon-Apostolos Iriotis (iriotis)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601380/medium/7334e60ce20395036d24aea20f35a09b.jpeg",
       "languages": [
@@ -72,23 +82,13 @@
       "approved": 0
     },
     {
-      "rank": 8,
+      "rank": 9,
       "user": "J M (tohoho)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17606604/medium/993ede63ed63e63d91c570434d2cba7c.png",
       "languages": [
         "Japanese"
       ],
       "translated": 13,
-      "approved": 0
-    },
-    {
-      "rank": 9,
-      "user": "tran thi minh Hieu (hieuvan.ttmh)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17610216/medium/8f3437a0b851e58e972032627d72eb76.jpeg",
-      "languages": [
-        "Vietnamese"
-      ],
-      "translated": 12,
       "approved": 0
     },
     {
