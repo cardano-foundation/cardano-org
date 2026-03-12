@@ -62,11 +62,12 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja', 'de', 'vi'],
+    locales: ['en', 'ja', 'de', 'es', 'vi'],
     localeConfigs: {
       en: { label: 'English', htmlLang: 'en-US' },
       ja: { label: '日本語', htmlLang: 'ja' },
       de: { label: 'Deutsch', htmlLang: 'de' },
+      es: { label: 'Español', htmlLang: 'es' },
       vi: { label: 'Tiếng Việt', htmlLang: 'vi' },
     },
   },
