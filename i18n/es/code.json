@@ -1,0 +1,465 @@
+{
+  "home.meta.title": {
+    "message": "Inicio | cardano.org"
+  },
+  "home.meta.description": {
+    "message": "Una plataforma abierta diseñada para empoderar a miles de millones de personas sin identidad económica, con aplicaciones descentralizadas para gestionar identidad, valor y gobernanza."
+  },
+  "home.hero.title": {
+    "message": "Un mundo mejor. Para todos."
+  },
+  "home.hero.description": {
+    "message": "Cardano es una plataforma blockchain para visionarios, innovadores y agentes de cambio, con las herramientas y tecnologías necesarias para crear oportunidades para todos e impulsar un cambio global positivo."
+  },
+  "home.hero.ctaWhatIsAda": {
+    "message": "¿Qué es ada?"
+  },
+  "home.hero.ctaGetStarted": {
+    "message": "Primeros pasos"
+  },
+  "home.hero.vizBadge.description": {
+    "message": "Esta visualización 3D muestra la estructura de archivos del repositorio ouroboros-consensus. Cada punto representa un archivo o directorio, y las líneas conectan los archivos con sus carpetas principales."
+  },
+  "home.hero.vizBadge.interaction": {
+    "message": "Arrastra para rotar."
+  },
+  "home.hero.vizBadge.link": {
+    "message": "Más sobre Ouroboros →"
+  },
+  "home.hero.vizBadge.ariaLabel": {
+    "message": "Información sobre esta visualización"
+  },
+  "home.hero.vizBadge.label": {
+    "message": "Visualización de ouroboros-consensus"
+  },
+  "home.featured.title": {
+    "message": "Nuestro mundo está cambiando. Juntos, podemos cambiarlo para mejor."
+  },
+  "home.featured.description1": {
+    "message": "Cardano es una plataforma blockchain de prueba de participación: la primera basada en [investigación revisada por pares](/research) y desarrollada con métodos basados en evidencia. Combina tecnologías pioneras para ofrecer una seguridad y sostenibilidad sin precedentes a aplicaciones, sistemas y sociedades descentralizadas."
+  },
+  "home.featured.description2": {
+    "message": "Con un equipo de ingenieros de primer nivel, Cardano devuelve el poder de las estructuras opacas a las personas y se convierte en motor de cambio positivo y progreso."
+  },
+  "home.featured.quote1": {
+    "message": "Una historia de lo imposible,"
+  },
+  "home.featured.quote2": {
+    "message": "hecho posible"
+  },
+  "home.featured.buttonLabel": {
+    "message": "Explora las apps de Cardano"
+  },
+  "home.divider.benefits": {
+    "message": "Beneficios"
+  },
+  "home.quoteBox.description": {
+    "message": "Cardano restaura la confianza en los sistemas globales. A través de la ciencia, crea una base más segura, transparente y sostenible para que las personas realicen transacciones, los sistemas gobiernen y las empresas crezcan."
+  },
+  "home.quoteBox.quote": {
+    "message": "Cardano establece un nuevo estándar tecnológico, abierto e inclusivo, que desafía lo establecido e inaugura una nueva era de innovación sostenible y distribuida globalmente."
+  },
+  "home.benefits.ouroboros.label": {
+    "message": "Prueba de participación y Ouroboros"
+  },
+  "home.benefits.ouroboros.category": {
+    "message": "Protocolo"
+  },
+  "home.benefits.ouroboros.title": {
+    "message": "Prueba de participación y Ouroboros: el protocolo blockchain más sostenible del planeta"
+  },
+  "home.benefits.ouroboros.body": {
+    "message": "Ouroboros es el primer protocolo blockchain revisado por pares y verificablemente seguro, y Cardano fue la primera blockchain en implementarlo. Ouroboros permite la descentralización de la red Cardano a escala global sin comprometer la seguridad.<br /><br />El protocolo es fruto de un esfuerzo incansable basado en investigación fundamental, impulsado por la visión de sistemas de pago globales más seguros y transparentes, y ofrece los medios para redistribuir el poder y el control de manera equitativa."
+  },
+  "home.benefits.ouroboros.cta": {
+    "message": "Conoce Ouroboros"
+  },
+  "home.benefits.research.label": {
+    "message": "Desarrollo basado en evidencia"
+  },
+  "home.benefits.research.category": {
+    "message": "Investigación"
+  },
+  "home.benefits.research.title": {
+    "message": "Los más altos estándares de desarrollo, con raíces en la ciencia"
+  },
+  "home.benefits.research.body": {
+    "message": "Cardano se desarrolla con métodos basados en evidencia: una combinación novedosa de métodos formales, habitualmente reservados para aplicaciones de alta criticidad, y un enfoque ágil que mantiene al proyecto adaptable y receptivo. Para aplicaciones, sistemas y soluciones globales, la seguridad no es opcional, es un requisito. Nuestras implementaciones de protocolo y las integraciones de plataforma primero se investigan, cuestionan, modelan matemáticamente y prueban antes de especificarse. Estas especificaciones guían el desarrollo, que a su vez se audita de forma independiente. El resultado es un código con un nivel de fiabilidad sin igual."
+  },
+  "home.benefits.research.cta": {
+    "message": "Descubre la investigación"
+  },
+  "home.benefits.secure.label": {
+    "message": "Seguro"
+  },
+  "home.benefits.secure.category": {
+    "message": "Transacciones"
+  },
+  "home.benefits.secure.title": {
+    "message": "Seguridad sin precedentes y los cimientos de un mundo sin intermediarios"
+  },
+  "home.benefits.secure.body": {
+    "message": "Cardano permite que actores que no se conocen, y que no tienen razón para confiar entre sí, interactúen y realicen transacciones de forma segura. Es una plataforma que genera confianza donde no la hay, abriendo mercados y oportunidades completamente nuevos. Gracias a Ouroboros, Cardano está protegido de forma demostrable contra actores malintencionados y ataques Sybil. Cada transacción e interacción queda registrada de forma inmutable y transparente, validada de forma segura mediante multifirma y un modelo UTXO extendido pionero."
+  },
+  "home.benefits.secure.cta": {
+    "message": "Visita la hoja de ruta"
+  },
+  "home.benefits.participation.label": {
+    "message": "Participación con incentivos"
+  },
+  "home.benefits.participation.category": {
+    "message": "Abierto"
+  },
+  "home.benefits.participation.title": {
+    "message": "Participación abierta e incentivada"
+  },
+  "home.benefits.participation.body": {
+    "message": "Con una comunidad comprometida en su núcleo, Cardano es un proyecto de código abierto que se desarrolla mediante participación abierta. Para garantizar la longevidad y la salud de la red, un mecanismo de incentivos recompensa a los usuarios, ya sean operadores de stake pools o delegadores, por su participación. La plataforma crece a través de propuestas de mejora y ampliación. El sistema de gobernanza de Cardano da a todos una voz democrática: los poseedores de ada pueden presentar o votar propuestas para mejorar la plataforma o decidir su dirección. Este modelo posiciona a Cardano de forma única para el crecimiento futuro, permitiendo introducir nuevas funciones adaptadas a las necesidades de los usuarios. Así, Cardano y su comunidad pueden financiar y decidir de forma continua sobre las mejoras de la plataforma y el ecosistema."
+  },
+  "home.benefits.participation.cta": {
+    "message": "Conoce la gobernanza"
+  },
+  "home.benefits.scalable.label": {
+    "message": "Escalable y sostenible"
+  },
+  "home.benefits.scalable.category": {
+    "message": "Ecosistema"
+  },
+  "home.benefits.scalable.title": {
+    "message": "Extremadamente escalable y respetuoso con el medio ambiente"
+  },
+  "home.benefits.scalable.body": {
+    "message": "Ouroboros permite a Cardano escalar para satisfacer las necesidades globales con un consumo energético mínimo. A diferencia de otras blockchains, Cardano no necesita un aumento exponencial de energía para mejorar el rendimiento y añadir bloques. El equilibrio entre rendimiento y sostenibilidad se logra mediante enfoques novedosos como multi-ledger, cadenas laterales y procesamiento paralelo de transacciones a través de canales de estado multipartitos.<br /><br />La red crece con el número de stake pools, mientras los parámetros se ajustan para regular la atracción de pools específicos. Es una red que recompensa la participación directamente. Cardano está diseñado para que quienes actúen en beneficio de la red también actúen en su propio beneficio. Esto asegura un ecosistema saludable con una red duradera y robusta, hoy y en el futuro. La combinación de sostenibilidad y escalabilidad permite a Cardano alcanzar el rendimiento que exigen los sistemas globales, ya sean financieros, logísticos, de identidad o sociales."
+  },
+  "home.benefits.scalable.cta": {
+    "message": "Conoce Hydra"
+  },
+  "home.vision.title1": {
+    "message": "Define lo posible."
+  },
+  "home.vision.title2": {
+    "message": "Transforma tu mundo."
+  },
+  "home.divider.makeTheChange": {
+    "message": "Da el paso"
+  },
+  "home.discover.title": {
+    "message": "Descubre Cardano"
+  },
+  "home.discover.description": {
+    "message": "Cardano es la primera plataforma blockchain construida sobre [investigación revisada por pares](/research), lo suficientemente segura para proteger los datos de miles de millones, lo suficientemente escalable para sistemas globales y lo suficientemente robusta para impulsar un cambio profundo."
+  },
+  "home.discover.people": {
+    "message": "Personas"
+  },
+  "home.discover.purpose": {
+    "message": "Propósito"
+  },
+  "home.discover.research": {
+    "message": "Investigación"
+  },
+  "home.discover.technology": {
+    "message": "Tecnología"
+  },
+  "home.discover.opportunity": {
+    "message": "Oportunidad"
+  },
+  "home.discover.quote1": {
+    "message": "Hemos cambiado la ciencia. Hemos redefinido lo que significa construir sistemas globales y modelos sostenibles de intercambio y gobernanza."
+  },
+  "home.discover.quote2": {
+    "message": "Junto a la comunidad, las entidades y las empresas que construyen sobre Cardano, se está definiendo un nuevo futuro: descentralizado, sin intermediarios, donde el poder vuelve a cada individuo"
+  },
+  "home.divider.entities": {
+    "message": "Entidades"
+  },
+  "home.entities.description": {
+    "message": "Varias entidades independientes colaboran en un marco de trabajo descentralizado para impulsar Cardano, asegurando que su misión fundamental se preserve en cada paso de su evolución. Estas son algunas de ellas:"
+  },
+  "home.follow.divider": {
+    "message": "Social"
+  },
+  "home.follow.title": {
+    "message": "Únete"
+  },
+  "navbar.mega.column.Get to know": {
+    "message": "Conoce",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Take part": {
+    "message": "Participa",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Research": {
+    "message": "Investigación",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Connect": {
+    "message": "Conéctate",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Engage": {
+    "message": "Involúcrate",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Governance": {
+    "message": "Gobernanza",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Get started": {
+    "message": "Primeros pasos",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Tools": {
+    "message": "Herramientas",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.For Enterprise": {
+    "message": "Para empresas",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.column.Use Cases": {
+    "message": "Casos de uso",
+    "description": "Mega menu column title"
+  },
+  "navbar.mega.label.What is ada?": {
+    "message": "¿Qué es ada?",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Get started with Cardano": {
+    "message": "Primeros pasos con Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Where to get ada?": {
+    "message": "¿Dónde conseguir ada?",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Protect your ada": {
+    "message": "Protege tus ada",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Delegate your ada": {
+    "message": "Delega tus ada",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Use Cardano Apps": {
+    "message": "Usa las apps de Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Code of Conduct": {
+    "message": "Código de conducta",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Research": {
+    "message": "Investigación de Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Insights": {
+    "message": "Cardano Insights",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Hard Forks": {
+    "message": "Hard Forks",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.News": {
+    "message": "Noticias",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Newsletter": {
+    "message": "Newsletter",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Online Communities": {
+    "message": "Comunidades en línea",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Ambassador Program": {
+    "message": "Programa de embajadores",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Events": {
+    "message": "Eventos de Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Forum": {
+    "message": "Foro de Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Get involved in cardano.org": {
+    "message": "Colabora en cardano.org",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Participate in governance": {
+    "message": "Participa en la gobernanza",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Governance Tools": {
+    "message": "Herramientas de gobernanza",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Constitution": {
+    "message": "Constitución de Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Start building on Cardano": {
+    "message": "Empieza a desarrollar en Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Integrate Cardano": {
+    "message": "Integra Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Developer Portal": {
+    "message": "Portal para desarrolladores",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Builder Tools": {
+    "message": "Herramientas de desarrollo",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Companies building on Cardano": {
+    "message": "Empresas que desarrollan en Cardano",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Enterprise Solutions": {
+    "message": "Soluciones empresariales",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Contact the Foundation": {
+    "message": "Contacta con la Foundation",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.All Use Cases": {
+    "message": "Todos los casos de uso",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Identity": {
+    "message": "Identidad",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Supply Chain": {
+    "message": "Cadena de suministro",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.description.What is ada?": {
+    "message": "El token nativo de Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Get started with Cardano": {
+    "message": "Aprende lo básico y empieza a usar Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Where to get ada?": {
+    "message": "Obtén ada y empieza a usar Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Protect your ada": {
+    "message": "No caigas en estafas",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Delegate your ada": {
+    "message": "Participa y gana recompensas",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Use Cardano Apps": {
+    "message": "Explora aplicaciones seleccionadas",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Code of Conduct": {
+    "message": "Estándares y valores de la comunidad",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Research": {
+    "message": "Investigación y publicaciones revisadas por pares",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Insights": {
+    "message": "Datos on-chain actualizados periódicamente",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Hard Forks": {
+    "message": "Actualizaciones implementadas",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.News": {
+    "message": "Últimas noticias sobre Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Newsletter": {
+    "message": "Recibe novedades de Cardano por email",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Online Communities": {
+    "message": "Canales recomendados",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Ambassador Program": {
+    "message": "Conoce a los embajadores de Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Events": {
+    "message": "Eventos de la comunidad Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Forum": {
+    "message": "Debates y conversaciones en el foro",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Get involved in cardano.org": {
+    "message": "Aquí empiezas si quieres colaborar",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Participate in governance": {
+    "message": "Ayuda a definir el futuro de Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Governance Tools": {
+    "message": "Herramientas para decisiones comunitarias transparentes",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Constitution": {
+    "message": "Aprende sobre gobernanza",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Start building on Cardano": {
+    "message": "Recursos y herramientas para desarrolladores",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Integrate Cardano": {
+    "message": "Guías para exchanges e integraciones",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Developer Portal": {
+    "message": "Portal de desarrolladores y documentación",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Builder Tools": {
+    "message": "Herramientas para desarrollar en Cardano",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Companies building on Cardano": {
+    "message": "Empresas, asociaciones y colaboraciones",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Enterprise Solutions": {
+    "message": "Casos de estudio e implementaciones probadas",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Contact the Foundation": {
+    "message": "Colabora con la Cardano Foundation",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.All Use Cases": {
+    "message": "Explora aplicaciones blockchain",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Identity": {
+    "message": "Credenciales y verificación",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Supply Chain": {
+    "message": "Trazabilidad y procedencia",
+    "description": "Mega menu item description"
+  }
+}

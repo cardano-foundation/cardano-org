@@ -253,20 +253,7 @@ export default function TranslationsPage() {
               </li>
             </ol>
 
-            <div style={{
-              marginTop: '16px',
-              marginBottom: '24px',
-              padding: '16px',
-              backgroundColor: 'var(--ifm-code-background)',
-              borderRadius: '4px',
-              border: '1px solid #ddd',
-            }}>
-              <strong>For developers:</strong> If you're comfortable with Git, you can also contribute
-              directly via{' '}
-              <a href="https://github.com/cardano-foundation/cardano-org" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>. Translation files are located in <code>i18n/[locale]/</code>.
-            </div>
+           
 
             <h3>Tips for translators</h3>
             <ul style={{ lineHeight: '1.8' }}>

@@ -46,7 +46,9 @@ export default function LocaleDropdownNavbarItem({
   const alternatePageUtils = useAlternatePageUtils();
   const {search, hash} = useLocation();
 
-  const localeItems = locales.map((locale) => {
+  const sortedLocales = [...locales].sort((a, b) => (translationStats[b] || 0) - (translationStats[a] || 0));
+
+  const localeItems = sortedLocales.map((locale) => {
     const baseTo = `pathname://${alternatePageUtils.createUrl({
       locale,
       fullyQualified: false,
