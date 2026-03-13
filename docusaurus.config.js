@@ -20,8 +20,6 @@ const isAnnouncementActive = false;
 const config = {
   title: 'Cardano',
   tagline: 'Making The World Work Better For All',
-  favicon: 'img/favicon.ico',
-
   // Set the production url of your site here
   url: 'https://cardano.org',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -84,6 +82,22 @@ const config = {
       tagName: 'script',
       attributes: {},
       innerHTML: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}',
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: '/img/favicon.ico',
+        media: '(prefers-color-scheme: light)',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: '/img/favicon-light.ico',
+        media: '(prefers-color-scheme: dark)',
+      },
     },
   ],
 
