@@ -41,20 +41,20 @@ Chat en tiempo real y debates rápidos.
 ## Debates en idiomas específicos
 
 - :vietnam: Cardano Vietnam: https://t.me/CardanoVNCommunity
-- :jp: Cardano Japan: https://t.me/CardanoJapanOfficial
-- :jp: Cardano Japan Trading: https://t.me/CardanoJapanTrading
+- :jp: Cardano Japón: https://t.me/CardanoJapanOfficial
+- :jp: Cardano Japón Trading: https://t.me/CardanoJapanTrading
 - :jp: Cardano on Line https://forum.cardano.org/t/cardano-line/25812
-- :kr: Cardano Korea: https://t.me/CardanoKoreaOfficial
-- :kr: Cardano Korea Trading: https://t.me/CardanoKoreaTrading
+- :kr: Cardano Corea: https://t.me/CardanoKoreaOfficial
+- :kr: Cardano Corea Trading: https://t.me/CardanoKoreaTrading
 - :cn: Cardano China: https://t.me/CardanoChinaOfficial
-- :netherlands: Cardano Dutch and Flemish Official: https://t.me/CardanoDutchOfficial
-- :de: Cardano German: https://t.me/CardanoGermanOfficial
-- :de: Cardano German Trading: https://t.me/cardanotradinggerman
-- :es: Cardano Spanish Official: https://t.me/CardanoSpanishOfficial
-- :portugal: Cardano Portuguese Official: https://t.me/CardanoPortugueseOfficial
-- :earth_americas: Cardano North-America Official: https://t.me/CardanoNorthAmericaOfficial
+- :netherlands: Cardano Neerlandés y Flamenco Oficial: https://t.me/CardanoDutchOfficial
+- :de: Cardano Alemán: https://t.me/CardanoGermanOfficial
+- :de: Cardano Alemán Trading: https://t.me/cardanotradinggerman
+- :es: Cardano Español Oficial: https://t.me/CardanoSpanishOfficial
+- :portugal: Cardano Portugués Oficial: https://t.me/CardanoPortugueseOfficial
+- :earth_americas: Cardano Norte América Oficial: https://t.me/CardanoNorthAmericaOfficial
 - :india: Cardano India & Sri Lanka: https://t.me/cardano_india
-- :earth_asia: Cardano South Asia: https://t.me/cardanosouthasia
+- :earth_asia: Cardano Asia: https://t.me/cardanosouthasia
 - :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial
 - :australia: Cardano Australia: https://t.me/CardanoAustralia
 - 🇧🇷 Brasil: https://t.me/AdaBrasil
@@ -64,12 +64,12 @@ Chat en tiempo real y debates rápidos.
 - 🇷🇺 Ruso: https://t.me/cardano_rus
 - 🇷🇺 Desarrolladores en Ruso: https://t.me/CardanoRussianMain
 - 🇪🇸 Español: https://t.me/CardanoEsp
-- 🇹🇷 Turkey: https://t.me/CardanoTurk
-- 🇺🇸 USA: https://t.me/CardanoAmerica
+- 🇹🇷 Cardano Turquía: https://t.me/CardanoTurk
+- 🇺🇸 Cardano USA: https://t.me/CardanoAmerica
 - :uk: Cardano UK: https://t.me/CardanoUK
 
-## Add your community
+## Añade tu comunidad
 
-Want to see your community listed here? We'd love to include more great Cardano communities!
+¿Quieres ver a tu comunidad en esta lista? ¡Nos encantaría sumar más comunidades de Cardano!
 
-Please read the [Add your Community](/docs/get-involved/add-community) guide to learn about the requirements and how to submit your community through a pull request.
+Consulta la guía [Añade tú comunidad](/docs/get-involved/add-community) para conocer los requisitos y saber cómo enviar la tuya mediante un pull request.
