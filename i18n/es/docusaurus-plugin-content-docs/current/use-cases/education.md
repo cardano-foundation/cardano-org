@@ -9,17 +9,17 @@ sidebar_position: 2
 
 ## El desafío
 
-La expedición de certificaciones académicas es demasiado centralizada y en muchas veces opaca. Traditional paper-based credentials are easily forged, difficult to verify, and can be lost or damaged. Educational institutions face challenges in maintaining the integrity of their certifications, while employers struggle to verify the authenticity of candidates' qualifications.
+La expedición de certificaciones académicas es demasiado centralizada y en muchas veces opaca. Las credenciales tradicionales en papel son fácilmente falsificadas, difíciles de verificar y pueden ser perdidas o dañadas. Las instituciones educativas se enfrentan a desafíos para mantener la integridad de sus certificaciones, mientras que los empleadores luchan por verificar la autenticidad de las cualificaciones de los candidatos.
 
-The verification process is slow and costly, often requiring direct contact with issuing institutions. This creates friction in hiring processes and can disadvantage qualified candidates who obtained credentials from institutions that are difficult to reach or no longer exist.
+El proceso de verificación es lento y costoso, que a menudo requiere contacto directo con las instituciones emisoras. Esto crea fricción en los procesos de contratación y puede perjudicar a los candidatos cualificados que obtuvieron credenciales de instituciones que son difíciles de contactar o ya no existen.
 
-## How Blockchain Solves This
+## Cómo resuelve esto la tecnología Blockchain
 
-Cardano's blockchain-based identity and credentials solutions enable educational institutions to issue digital credentials that are:
+Las soluciones de identidad y credenciales basadas en blockchain de Cardano permiten a las instituciones educativas emitir credenciales digitales que son:
 
-- **Tamper-proof**: Once recorded on the blockchain, credentials cannot be altered or forged
-- **Instantly verifiable**: Anyone can verify a credential's authenticity without contacting the issuing institution
-- **Portable**: Students own their credentials and can share them with any employer or institution
+- **A prueba de manipulación**: Una vez grabadas en la blockchain, las credenciales no pueden ser alteradas o falsificadas
+- **Verificables al instante**: Cualquiera puede verificar la autenticidad de una credencial sin contactar con la institución emisora
+- **Portátiles**: Los estudiantes son dueños sus credenciales y pueden compartirlas con cualquier empleador o institución
 - **Persistent**: Credentials remain valid and verifiable even if the issuing institution closes
 
 Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
