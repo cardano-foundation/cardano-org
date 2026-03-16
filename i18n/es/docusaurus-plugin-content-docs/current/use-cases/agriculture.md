@@ -9,32 +9,32 @@ sidebar_position: 8
 
 ## El Reto
 
-Modern food supply chains are complex and opaque. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
+Las cadenas modernas de abastecimiento de alimentos son complejas y opacas. Los consumidores quieren cada vez más saber de dónde proceden sus alimentos, cómo se produjeron, y si las afirmaciones sobre prácticas orgánicas, justas o sostenibles son genuinas. El fraude alimentario le cuesta a la industria mundialmente unos 40 mil millones de dólares al año.
 
-For farmers and producers, proving the quality and origin of their products is difficult and expensive. Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
+Para los agricultores y productores, demostrar la calidad y el origen de sus productos es difícil y costoso. Los intermediarios capturan gran parte del valor, mientras que los productores luchan por diferenciar sus productos en el mercado.
 
-## How Blockchain Solves This
+## Cómo resuelve esto la tecnología Blockchain
 
-Blockchain technology creates an immutable record of a product's journey from farm to table:
+La tecnología Blockchain crea un registro inmutable del viaje de un producto desde la granja al hogar:
 
-- **Origin verification**: Prove exactly where products come from and how they were produced
-- **Quality assurance**: Record temperature, handling, and other quality metrics throughout the supply chain
-- **Certification tracking**: Verify organic, fair trade, and other certifications at every step
-- **Fraud prevention**: Immutable records make it difficult to substitute or mislabel products
-- **Consumer transparency**: End consumers can scan a product and see its complete history
+- **Verificación de origen**: Demuestra exactamente de dónde proceden los productos y cómo fueron producidos
+- **Aseguramiento de calidad**: temperatura de registro, manipulación y otras métricas de calidad a lo largo de la cadena de suministro
+- **Seguimiento de certificación**: Verifique certificaciones orgánicas, de comercio justo y otras en cada paso
+- **Prevención de la Fraud**: Los registros inmutables dificultan la sustitución de productos o etiquetas erróneas
+- **Transparencia del consumidor**: Los consumidores finales pueden escanear un producto y ver su historial completo
 
-Smart contracts can automate payments to farmers when products meet quality standards, reducing delays and disputes while ensuring fair compensation.
+Los contratos inteligentes pueden automatizar los pagos a los agricultores cuando los productos cumplen las normas de calidad, reducen los retrasos y los litigios, al tiempo que garantizan una compensación justa.
 
-## Why Cardano
+## Por qué Cardano
 
-- **Low transaction costs** make tracking even low-value agricultural products economically viable
-- **Sustainability credentials** align with environmental claims in the agriculture sector
-- **Interoperability** enables integration with existing agricultural management systems
-- **Global accessibility** supports smallholder farmers in developing regions
-- **Proven deployments** demonstrate real-world agricultural traceability
+- Los **bajos costos de transacción** hacen que el rastreo de productos agrícolas de bajo valor económico sea viable
+- Las **credenciales de sostenibilidad** se alinean con las afirmaciones ambientales en el sector agrícola
+- La **interoperabilidad** permite la integración con los sistemas de gestión agrícola existentes
+- La **accesibilidad global** apoya a los pequeños agricultores de las regiones en desarrollo
+- **Despliegues probados** demuestran la trazabilidad agrícola del mundo real
 
-## Get Started
+## Primeros pasos
 
-- [Explore supply chain solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Explorar soluciones de cadena de suministros](/solutions)
+- [Recursos de desarrollador para construir en Cardano](https://developers.cardano.org)
+- [Ver Soluciones Empresariales](/solutions)
