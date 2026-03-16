@@ -20,16 +20,16 @@ Las soluciones de identidad y credenciales basadas en blockchain de Cardano perm
 - **A prueba de manipulación**: Una vez grabadas en la blockchain, las credenciales no pueden ser alteradas o falsificadas
 - **Verificables al instante**: Cualquiera puede verificar la autenticidad de una credencial sin contactar con la institución emisora
 - **Portátiles**: Los estudiantes son dueños sus credenciales y pueden compartirlas con cualquier empleador o institución
-- **Persistent**: Credentials remain valid and verifiable even if the issuing institution closes
+- **Persistentes**: Las credenciales siguen siendo válidas y verificables, incluso si la institución emisora cierra
 
-Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
+Los contratos inteligentes pueden automatizar el proceso de emisión, asegurando que las credenciales se emitan únicamente cuando se cumplen los requisitos específicos. Esto crea un registro verificable de los logros académicos que beneficia tanto a estudiantes, instituciones y empleadores por igual.
 
-## Why Cardano
+## Por qué Cardano
 
-- **Low transaction fees** make credential issuance economically viable at scale
-- **Energy-efficient proof of stake** aligns with educational institutions' sustainability goals
-- **Native token support** enables certification NFTs without additional smart contract complexity
-- **Aiken smart contracts** provide programmable verification logic
+- Las **bajas comisiones de transacción** hacen económicamente viable la emisión de credenciales a escala
+- La **Prueba de participación energéticamente -eficiente** se alinea con los objetivos de sostenibilidad de las instituciones educativas
+- La **compatibilidad con tokens** nativos permite la certificación de NFT sin complejidad adicional en los contratos inteligentes
+- Los **contratos inteligentes de Aiken** proporcionan lógica de verificación programable
 - **Global accessibility** ensures credentials can be verified anywhere in the world
 
 ## Get Started
