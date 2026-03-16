@@ -20,7 +20,7 @@ La tecnología Blockchain crea un registro inmutable del viaje de un producto de
 - **Verificación de origen**: Demuestra exactamente de dónde proceden los productos y cómo fueron producidos
 - **Aseguramiento de calidad**: temperatura de registro, manipulación y otras métricas de calidad a lo largo de la cadena de suministro
 - **Seguimiento de certificación**: Verifique certificaciones orgánicas, de comercio justo y otras en cada paso
-- **Prevención de la Fraud**: Los registros inmutables dificultan la sustitución de productos o etiquetas erróneas
+- **Prevención de Fraudes**: Los registros inmutables dificultan la sustitución de productos o etiquetas erróneas
 - **Transparencia del consumidor**: Los consumidores finales pueden escanear un producto y ver su historial completo
 
 Los contratos inteligentes pueden automatizar los pagos a los agricultores cuando los productos cumplen las normas de calidad, reducen los retrasos y los litigios, al tiempo que garantizan una compensación justa.
