@@ -30,10 +30,10 @@ Los contratos inteligentes pueden automatizar el proceso de emisión, asegurando
 - La **Prueba de participación energéticamente -eficiente** se alinea con los objetivos de sostenibilidad de las instituciones educativas
 - La **compatibilidad con tokens** nativos permite la certificación de NFT sin complejidad adicional en los contratos inteligentes
 - Los **contratos inteligentes de Aiken** proporcionan lógica de verificación programable
-- **Global accessibility** ensures credentials can be verified anywhere in the world
+- La **accesibilidad global** asegura que las credenciales puedan ser verificadas en cualquier parte del mundo
 
-## Get Started
+## Primeros pasos
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Explora las aplicaciones de identidad de Cardano](/apps/?tags=identity)
+- [Recursos para desarrolladores para la creación de aplicaciones en Cardano](https://developers.cardano.org)
+- [Ver Soluciones Empresariales](/solutions)
