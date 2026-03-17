@@ -5,6 +5,7 @@ import {translate} from '@docusaurus/Translate';
 
 import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithButton";
 import QuoteWithText from "@site/src/components/Layout/QuoteWithText";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 function getDiscoverItemList() {
   return [
@@ -63,12 +64,7 @@ export default function HomeDiscoverSection() {
           quoteType="mixed"
         />
       </div>
-      <div className={styles.quoteWrap}>
-        <QuoteWithText
-          text={translate({id: 'home.discover.quote2', message: 'Alongside the community, entities, and companies building on Cardano, a new future is being defined: a decentralized future without intermediaries, where power is returned to the individual'})}
-          quoteType="none"
-        />
-      </div>
+      <SpacerBox size="medium" />
     </div>
   );
 }
