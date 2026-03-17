@@ -1,11 +1,13 @@
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import ImageWithText from "@site/src/components/Layout/ImageWithText";
-import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "../components/Layout/BoundaryBox";
 import SpacerBox from "../components/Layout/SpacerBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
@@ -44,7 +46,18 @@ export default function Home() {
         </BoundaryBox>
 
         <BackgroundWrapper backgroundType={"gradientDark"}>
-          <DiscoverUsSection />
+          <BoundaryBox>
+            <Divider text={translate({id: 'discoverCardano.entities.divider', message: 'Explore the Ecosystem'})} />
+            <TitleWithText
+              description={translate({id: 'discoverCardano.entities.description', message: 'Numerous independent entities collaborate to drive Cardano forward, ensuring it remains aligned with its core mission.'})}
+              titleType="none"
+              headingDot={false}
+            />
+            <div className="centered-link">
+              <Link to="/entities" style={{color: '#ffffff'}}>{translate({id: 'discoverCardano.entities.link', message: 'Discover all entities building on Cardano'})}</Link>
+            </div>
+            <SpacerBox size="medium" />
+          </BoundaryBox>
         </BackgroundWrapper>
 
         <BoundaryBox>

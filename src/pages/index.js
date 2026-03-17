@@ -8,7 +8,7 @@ import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
-import Logos from "@site/src/components/Layout/Logos";
+import Link from "@docusaurus/Link";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import {translate} from '@docusaurus/Translate';
@@ -89,7 +89,9 @@ export default function Home() {
               titleType="none"
               headingDot={false}
             />
-            <Logos jsonFileName="logosEntities" />
+            <div className="centered-link">
+              <Link to="/entities">{translate({id: 'home.entities.link', message: 'Explore all entities building on Cardano'})}</Link>
+            </div>
           </BoundaryBox>
         </BackgroundWrapper>
 

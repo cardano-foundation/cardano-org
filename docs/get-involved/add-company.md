@@ -5,7 +5,7 @@ title: Add your Company
 
 ## Add your Company
 
-Thank you for considering adding your company, association or collaboration to [Entities Building on Cardano](https://cardano.org/entities#companies). 
+Thank you for considering adding your company, association or collaboration to [Entities Building on Cardano](https://cardano.org/entities).
 
 ## Requirements
 

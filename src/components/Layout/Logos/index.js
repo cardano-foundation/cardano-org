@@ -6,11 +6,9 @@ import styles from './styles.module.css';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';  //Default Styling
 import logosCompanies from '@site/src/data/logosCompanies.json';
-import logosEntities from '@site/src/data/logosEntities.json';
 
 const logoData = {
   logosCompanies,
-  logosEntities,
 };
 
 // shows a logo with a link, forces svg to ensure quality
