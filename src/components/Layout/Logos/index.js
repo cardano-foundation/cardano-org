@@ -16,15 +16,14 @@ const logoData = {
 // shows a logo with a link, forces svg to ensure quality
 // "companyName" in the json file is optional, therefore
 // if the logo consists of the company name leave the field out (example: Sundae Labs)
-function LogoWithLink({ imageName, imageExtension, link, companyName, knownFor, showCompanyName }) {
-  const ext = imageExtension || 'svg';
+function LogoWithLink({ imageName, link, companyName, knownFor, showCompanyName }) {
   const logoElement = (
     <Link to={link}>
       <ThemedImage
         alt={`Company logo of ${companyName}`}
         sources={{
-          light: useBaseUrl(`/img/logos/${imageName}.${ext}`),
-          dark: useBaseUrl(`/img/logos/${imageName}-dark.${ext}`),
+          light: useBaseUrl(`/img/logos/${imageName}.svg`),
+          dark: useBaseUrl(`/img/logos/${imageName}-dark.svg`),
         }}
       />
     </Link>
@@ -51,8 +50,8 @@ function LogoWithLink({ imageName, imageExtension, link, companyName, knownFor, 
   );
 }
 
-function PartnerItem({ imageName, imageExtension, label, link, companyName, knownFor, showCompanyName }) {
-  return <LogoWithLink imageName={imageName} imageExtension={imageExtension} link={link} companyName={companyName} knownFor={knownFor} showCompanyName={showCompanyName} />;
+function PartnerItem({ imageName, label, link, companyName, knownFor, showCompanyName }) {
+  return <LogoWithLink imageName={imageName} link={link} companyName={companyName} knownFor={knownFor} showCompanyName={showCompanyName} />;
 }
 
 export default function HomePartnersSection({ jsonFileName }) {
