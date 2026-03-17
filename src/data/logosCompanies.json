@@ -359,6 +359,7 @@
   {
     "companyName": "No Witness Labs",
     "imageName": "nowitnesslabs",
+    "imageExtension": "png",
     "link": "https://nowitnesslabs.com/",
     "knownFor": "Evolution SDK",
     "showCompanyName": false
