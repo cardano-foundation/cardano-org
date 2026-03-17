@@ -142,8 +142,8 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title={translate({id: 'hardforks.layout.title', message: 'Which hard forks have occurred? | cardano.org'})}
-      description={translate({id: 'hardforks.layout.description', message: 'An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees.'})}
+      title={translate({id: 'hardforks.layout.title', message: 'Cardano Hard Forks, Network Upgrade History'})}
+      description={translate({id: 'hardforks.layout.description', message: 'A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved.'})}
     >
       <OpenGraphInfo pageName="hard-forks" />
       <HomepageHeader />

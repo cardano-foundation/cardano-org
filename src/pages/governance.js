@@ -31,8 +31,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'governance.meta.title', message: 'Governance on Cardano | cardano.org'})}
-      description={translate({id: 'governance.meta.description', message: "Cardano now runs on a secure, decentralized governance system that gives every ada holder a voice. The community collectively steers the platform's development, influencing the direction of core upgrades, applications, and services built on Cardano."})}
+      title={translate({id: 'governance.meta.title', message: 'Cardano Governance, Community-Driven Decision Making'})}
+      description={translate({id: 'governance.meta.description', message: "Cardano governance gives every ada holder a voice. Delegate to a DRep, vote on proposals, or register as a delegate representative to shape the network."})}
     >
       <OpenGraphInfo pageName="governance" />
       <HomepageHeader />

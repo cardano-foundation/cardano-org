@@ -142,7 +142,7 @@ export default function InsightsIndex() {
 
   return (
     <Layout
-      title={translate({id: 'insights.layout.title', message: 'Insights'})}
+      title={translate({id: 'insights.layout.title', message: 'Cardano Insights, Data and Analytics'})}
       description={translate({id: 'insights.layout.description', message: 'Explore interactive Cardano insights across governance, staking, consensus, economics, and more.'})}
     >
       <SiteHero

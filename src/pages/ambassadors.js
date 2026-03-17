@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'ambassadors.layout.title', message: 'Ambassador Program | cardano.org'})}
+    title={translate({id: 'ambassadors.layout.title', message: 'Cardano Ambassador Program, Join the Community'})}
     description={translate({id: 'ambassadors.layout.description', message: 'The Cardano Ambassador Program recognizes community leaders who educate, engage, and raise awareness to drive Cardano\'s adoption.'})}
     >
       <OpenGraphInfo pageName="ambassadors" />

@@ -23,8 +23,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'why.meta.title', message: 'Why Cardano? | cardano.org'})}
-    description={translate({id: 'why.meta.description', message: 'Wondering about Cardano\'s motiviation?'})}
+    title={translate({id: 'why.meta.title', message: 'Why Cardano, What Makes It Different'})}
+    description={translate({id: 'why.meta.description', message: 'Cardano combines peer-reviewed research, formal verification, and a proof-of-stake protocol to deliver a secure, sustainable, and scalable blockchain platform.'})}
     >
       <OpenGraphInfo pageName="developers" />
       <HomepageHeader />

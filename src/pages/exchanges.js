@@ -28,8 +28,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'exchanges.layout.title', message: 'Integrate Cardano | cardano.org'})}
-    description={translate({id: 'exchanges.layout.description', message: 'Easy integration with Cardano. All of the upgrades. None of the maintenance.'})}
+    title={translate({id: 'exchanges.layout.title', message: 'Integrate Cardano, Exchange and Wallet Partnerships'})}
+    description={translate({id: 'exchanges.layout.description', message: 'Integrate Cardano into your exchange, wallet, or payment platform. Access documentation, resources, and partnership opportunities for ada support.'})}
     >
       <OpenGraphInfo pageName="integrate-cardano" />
       <HomepageHeader />

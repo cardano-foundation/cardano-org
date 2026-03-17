@@ -115,7 +115,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'stakePoolDelegation.meta.title', message: 'Delegate your stake | cardano.org'})}
+      title={translate({id: 'stakePoolDelegation.meta.title', message: 'Delegate ada, Cardano Staking Made Simple'})}
       description={translate({id: 'stakePoolDelegation.meta.description', message: 'Delegate your stake to build the network, earn rewards, and become part of the Cardano journey.'})}
     >
       <OpenGraphInfo pageName="stake-pool-delegation" />

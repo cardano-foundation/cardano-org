@@ -27,8 +27,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'home.meta.title', message: 'Home | cardano.org'})}
-      description={translate({id: 'home.meta.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
+      title={translate({id: 'home.meta.title', message: 'Cardano, Secure Decentralized Blockchain Platform'})}
+      description={translate({id: 'home.meta.description', message: 'Cardano is a decentralized blockchain platform built through peer-reviewed research. Explore ada, staking, governance, DApps, and a global open-source community.'})}
     >
       <HomepageHeader />
       <main>

@@ -184,7 +184,7 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'events.meta.title', message: 'Cardano Events | cardano.org'})}
+    title={translate({id: 'events.meta.title', message: 'Cardano Events, Conferences and Meetups'})}
     description={translate({id: 'events.meta.description', message: 'Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.'})}
     >
       <OpenGraphInfo pageName="events" /> 

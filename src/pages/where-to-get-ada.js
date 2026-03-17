@@ -26,8 +26,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'whereToGetAda.meta.title', message: 'Get ada | cardano.org'})}
-    description={translate({id: 'whereToGetAda.meta.description', message: 'There are many ways to obtain ada to use the Cardano blockchain.'})}
+    title={translate({id: 'whereToGetAda.meta.title', message: 'Buy ada, Where to Get Cardano\'s Native Token'})}
+    description={translate({id: 'whereToGetAda.meta.description', message: 'Buy ada on centralized or decentralized exchanges, earn staking rewards, or receive it directly. Find the best way to get Cardano\'s native token.'})}
     >
       <OpenGraphInfo pageName="where-to-get-ada" />
       <HomepageHeader />

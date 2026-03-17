@@ -217,7 +217,7 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title={translate({id: 'constitution.layout.title', message: 'The Cardano Constitution | cardano.org'})}
+      title={translate({id: 'constitution.layout.title', message: 'The Cardano Constitution, On-Chain Governance Framework'})}
       description={translate({id: 'constitution.layout.description', message: 'Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS.'})}
     >
       <OpenGraphInfo pageName="constitution" />

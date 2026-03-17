@@ -26,8 +26,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'ouroboros.meta.title', message: 'What is Ouroboros? | cardano.org'})}
-    description={translate({id: 'ouroboros.meta.description', message: 'An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees.'})}
+    title={translate({id: 'ouroboros.meta.title', message: 'Ouroboros, Cardano\'s Proof-of-Stake Protocol'})}
+    description={translate({id: 'ouroboros.meta.description', message: 'Ouroboros is the first peer-reviewed, provably secure proof-of-stake consensus protocol. Learn how it powers the Cardano blockchain with minimal energy usage.'})}
     >
       <OpenGraphInfo pageName="ouroboros" />
       <HomepageHeader />

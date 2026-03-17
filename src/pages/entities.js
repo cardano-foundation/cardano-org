@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'entities.meta.title', message: 'Entities building on Cardano | cardano.org'})}
+      title={translate({id: 'entities.meta.title', message: 'Organizations Building on Cardano'})}
       description={translate({id: 'entities.meta.description', message: 'Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission.'})}
     >
       <OpenGraphInfo pageName="entities" />

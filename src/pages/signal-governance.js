@@ -24,7 +24,7 @@ const interestId = "governance";
 
   const isValidInterest = Object.keys(contentMap).includes(interestId);
   const content = isValidInterest ? contentMap[interestId] : contentMap["governance"];
-  const siteTitle = `${translate({id: 'signalGovernance.layout.title', message: 'Signal your interest in Governance'})} | ${siteConfig.title}`;
+  const siteTitle = translate({id: 'signalGovernance.layout.title', message: 'Signal your interest in Cardano Governance'});
 
   return (
     <Layout

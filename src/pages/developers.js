@@ -316,12 +316,12 @@ export default function Home() {
     <Layout
       title={translate({
         id: "developers.meta.title",
-        message: "Build on Cardano | cardano.org",
+        message: "Build on Cardano, Developer Tools and Documentation",
       })}
       description={translate({
         id: "developers.meta.description",
         message:
-          "Everything you need, from your first transaction to production dApps.",
+          "Start building on Cardano. Access developer tools, smart contract languages, APIs, testnets, and tutorials to launch your first decentralized application.",
       })}
     >
       <OpenGraphInfo pageName="developers" />

@@ -21,8 +21,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'research.meta.title', message: 'Cardano Research | cardano.org'})}
-      description={translate({id: 'research.meta.description', message: 'Cardano relevant research papers and specifications.'})}
+      title={translate({id: 'research.meta.title', message: 'Cardano Research, Peer-Reviewed Blockchain Science'})}
+      description={translate({id: 'research.meta.description', message: 'Explore the peer-reviewed papers and formal specifications behind the Cardano blockchain, spanning cryptography, consensus, smart contracts, and governance.'})}
     >
       <OpenGraphInfo pageName="research" />
       <HomepageHeader />

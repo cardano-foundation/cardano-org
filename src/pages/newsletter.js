@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'newsletter.layout.title', message: 'Cardano Community Digest | cardano.org'})}
+    title={translate({id: 'newsletter.layout.title', message: 'Cardano Community Digest, Weekly News and Updates'})}
     description={translate({id: 'newsletter.layout.description', message: 'Get access to the latest Cardano news and content, and the hottest topics happening around the Cardano ecosystem.'})}
     >
       <OpenGraphInfo pageName="newsletter" />

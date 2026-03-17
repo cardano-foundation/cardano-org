@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'codeOfConduct.layout.title', message: 'Community Code of Conduct | cardano.org'})}
+    title={translate({id: 'codeOfConduct.layout.title', message: 'Cardano Community Code of Conduct'})}
     description={translate({id: 'codeOfConduct.layout.description', message: 'The Cardano community consists of people from all over the world, who have come together to grow and safeguard the spirit and the future of Cardano.'})}
     >
       <OpenGraphInfo pageName="community-code-of-conduct" />

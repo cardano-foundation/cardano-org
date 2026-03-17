@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={`${pageTitle} | cardano.org`}
+      title={`Cardano Staking Calculator, Estimate Your ada Rewards`}
       description={pageDescription}
     >
       <OpenGraphInfo pageName="calculator" />

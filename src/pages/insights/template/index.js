@@ -15,7 +15,7 @@ import { useLocation } from '@docusaurus/router';
 // 🔹 Export meta so the indexer (mod.meta) can read it, even though indexed=false
 export const meta = {
   pageName: 'template',
-  pageTitle: translate({id: 'insightsTemplate.meta.pageTitle', message: 'Insights Template | cardano.org'}),
+  pageTitle: translate({id: 'insightsTemplate.meta.pageTitle', message: 'Cardano Insights Template'}),
   pageDescription: translate({id: 'insightsTemplate.meta.pageDescription', message: 'Insights Template'}),
   title: translate({id: 'insightsTemplate.meta.title', message: 'This is just an insights template'}),
   date: '2025-03-17',
