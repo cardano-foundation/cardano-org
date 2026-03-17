@@ -681,7 +681,7 @@ export default function LeaderboardPage() {
 
   return (
     <Layout
-      title="Transaction Leaderboard | cardano.org"
+      title="Cardano Transaction Leaderboard, Top DApps by Activity"
       description="See what's driving on-chain activity on Cardano. Explore apps, standards, and protocols ranked by transaction count."
     >
       <OpenGraphInfo pageName="transaction-leaderboard" />

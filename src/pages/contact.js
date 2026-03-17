@@ -18,7 +18,7 @@ import {translate} from '@docusaurus/Translate';
 function HomepageHeader() {
   return (
     <SiteHero
-      title={translate({id: 'contact.hero.title', message: 'Contact | cardano.org'})}
+      title={translate({id: 'contact.hero.title', message: 'Contact'})}
       description={translate({id: 'contact.hero.description', message: 'Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you.'})}
       bannerType="fluidBlue"
     />
@@ -114,8 +114,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'contact.meta.title', message: 'Cardano - making the world work better for all'})}
-    description={translate({id: 'contact.meta.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
+    title={translate({id: 'contact.meta.title', message: 'Contact Cardano, Get in Touch'})}
+    description={translate({id: 'contact.meta.description', message: 'Get in touch with the Cardano ecosystem. Reach the Cardano Foundation, Intersect, IOG, or EMURGO for partnerships, support, or sponsorship inquiries.'})}
     >
       <OpenGraphInfo pageName="contact" />
       <HomepageHeader />

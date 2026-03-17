@@ -25,8 +25,8 @@ import contentMap from '../data/signal-contentmap.js';
 
   return (
     <Layout
-      title={translate({id: 'signal.layout.title', message: 'Signal your interest'})}
-      description={translate({id: 'signal.layout.description', message: 'Get just the information you want'})}
+      title={translate({id: 'signal.layout.title', message: 'Signal Your Interest in Cardano'})}
+      description={translate({id: 'signal.layout.description', message: 'Sign up to receive Cardano updates on governance, stake pool operations, or development. Stay informed about what matters to you.'})}
     >
       <OpenGraphInfo pageName="signal" title={translate({id: 'signal.openGraph.title', message: 'Signal your interest'})} description={translate({id: 'signal.openGraph.description', message: 'Get just the information you want'})} />
       <SiteHero

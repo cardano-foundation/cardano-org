@@ -26,8 +26,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'whatIsAda.meta.title', message: 'What is ada? | cardano.org'})}
-      description={translate({id: 'whatIsAda.meta.description', message: 'A new type of currency. A new means of transaction. Direct. Secure. From Anywhere. For Everyone.'})}
+      title={translate({id: 'whatIsAda.meta.title', message: 'What Is ada, the Native Token of Cardano'})}
+      description={translate({id: 'whatIsAda.meta.description', message: 'ada is the native cryptocurrency of the Cardano blockchain. Use it for transactions, staking, governance voting, and interacting with decentralized applications.'})}
     >
       <OpenGraphInfo pageName="what-is-ada" />
       <HomepageHeader />

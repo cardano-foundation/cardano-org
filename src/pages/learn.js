@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <Layout
-    title={translate({id: 'learn.layout.title', message: 'Learn | cardano.org'})}
-    description={translate({id: 'learn.layout.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
+    title={translate({id: 'learn.layout.title', message: 'Learn About Cardano, Guides, Tutorials and Resources'})}
+    description={translate({id: 'learn.layout.description', message: 'Learn how Cardano works, from proof-of-stake consensus and smart contracts to staking, governance, and building decentralized applications.'})}
     >
       <HomepageHeader />
       <BoundaryBox>

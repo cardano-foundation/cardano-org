@@ -23,8 +23,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'discoverCardano.meta.title', message: 'Discover Cardano | cardano.org'})}
-      description={translate({id: 'discoverCardano.meta.description', message: 'Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge.'})}
+      title={translate({id: 'discoverCardano.meta.title', message: 'What Is Cardano, Blockchain Built for Sustainability'})}
+      description={translate({id: 'discoverCardano.meta.description', message: 'Discover what makes Cardano different. Built on peer-reviewed science, powered by a global community, and designed for a sustainable, decentralized future.'})}
     >
       <OpenGraphInfo pageName="discover-cardano" />
       <HomepageHeader />

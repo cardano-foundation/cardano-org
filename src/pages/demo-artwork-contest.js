@@ -69,7 +69,7 @@ function FeaturedTitleWithText({ title, description, quote, headingDot }) {
 export default function Home() {
   return (
     <Layout
-      title={translate({id: 'artworkContest.layout.title', message: 'Home | cardano.org'})}
+      title={translate({id: 'artworkContest.layout.title', message: 'Cardano Artwork Contest'})}
       description={translate({id: 'artworkContest.layout.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
     >
       <HomepageHeader />

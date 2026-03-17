@@ -218,8 +218,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'getStarted.meta.title', message: 'Get started with Cardano | cardano.org'})}
-      description={translate({id: 'getStarted.meta.description', message: 'Step into the new world yourself and learn all the basics in just few steps.'})}
+      title={translate({id: 'getStarted.meta.title', message: 'Get Started with Cardano, Your First Steps'})}
+      description={translate({id: 'getStarted.meta.description', message: 'Set up a Cardano wallet, get ada, and start exploring DApps and staking in a few simple steps. Your beginner\'s guide to the Cardano ecosystem.'})}
     >
       <OpenGraphInfo pageName="get-started" />
       <HomepageHeader />

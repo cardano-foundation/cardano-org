@@ -137,7 +137,7 @@ export default function TranslationsPage() {
 
   return (
     <Layout
-      title="Help Translate Cardano.org"
+      title="Cardano in Your Language, Translation Community"
       description="Join the community of translators and help make Cardano accessible worldwide."
     >
       <SiteHero

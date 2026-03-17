@@ -24,7 +24,7 @@ const interestId = "operator";
 
   const isValidInterest = Object.keys(contentMap).includes(interestId);
   const content = isValidInterest ? contentMap[interestId] : contentMap["operator"];
-  const siteTitle = `${translate({id: 'signalOperator.layout.title', message: 'Signal your interest in Stake Pool Operations'})} | ${siteConfig.title}`;
+  const siteTitle = translate({id: 'signalOperator.layout.title', message: 'Signal your interest in Cardano Stake Pool Operations'});
 
   return (
     <Layout

@@ -27,7 +27,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
 
-const TITLE = translate({id: 'apps.hero.title', message: 'Cardano Applications'});
+const TITLE = translate({id: 'apps.hero.title', message: 'Cardano Apps and DApps, Explore the Ecosystem'});
 const DESCRIPTION = translate({id: 'apps.hero.description', message: 'Explore curated applications that run on Cardano mainnet today'});
 const CTA = translate({id: 'apps.cta', message: '₳dd your project'});
 const FILENAME = "apps.js";

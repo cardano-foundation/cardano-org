@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'commonScams.meta.title', message: 'Common Cardano scams you should avoid | cardano.org'})}
+      title={translate({id: 'commonScams.meta.title', message: 'Common Cardano Scams, How to Stay Safe'})}
       description={translate({id: 'commonScams.meta.description', message: 'The cryptocurrency space is full of opportunities, but it\'s also a playground for scammers.'})}
     >
       <OpenGraphInfo pageName="common-scams" />

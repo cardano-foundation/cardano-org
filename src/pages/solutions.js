@@ -24,7 +24,7 @@ function HomepageHeader() {
 export default function Solutions() {
   return (
     <Layout
-      title={translate({id: 'solutions.layout.title', message: 'Enterprise Solutions | cardano.org'})}
+      title={translate({id: 'solutions.layout.title', message: 'Cardano Enterprise Solutions, Blockchain for Business'})}
       description={translate({id: 'solutions.layout.description', message: 'Discover proven enterprise blockchain solutions built on Cardano. From supply chain traceability to digital product passports, explore real-world implementations.'})}
     >
       <OpenGraphInfo pageName="use-cases-for-enterprise" />

@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'genesis.layout.title', message: 'Genesis Distribution | cardano.org'})}
+      title={translate({id: 'genesis.layout.title', message: 'Cardano Genesis Distribution, Initial ada Allocation'})}
       description={translate({id: 'genesis.layout.description', message: 'Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017.'})}
     >
       <OpenGraphInfo pageName="genesis" />

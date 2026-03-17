@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={translate({id: 'stakePoolOperation.meta.title', message: 'Operate a stake pool | cardano.org'})}
+      title={translate({id: 'stakePoolOperation.meta.title', message: 'Run a Cardano Stake Pool, Setup and Requirements'})}
       description={translate({id: 'stakePoolOperation.meta.description', message: 'Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network.'})}
     >
       <OpenGraphInfo pageName="stake-pool-operation" />

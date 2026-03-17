@@ -23,8 +23,8 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title={translate({id: 'useCases.layout.title', message: 'Use cases for enterprise | cardano.org'})}
-      description={translate({id: 'useCases.layout.description', message: 'An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance.'})}
+      title={translate({id: 'useCases.layout.title', message: 'Cardano Enterprise Solutions and Real-World Use Cases'})}
+      description={translate({id: 'useCases.layout.description', message: 'Explore real-world Cardano use cases across supply chain, identity, finance, and education. See how enterprises leverage blockchain for transparency and efficiency.'})}
     >
       <OpenGraphInfo pageName="use-cases-for-enterprise" />
       <HomepageHeader />

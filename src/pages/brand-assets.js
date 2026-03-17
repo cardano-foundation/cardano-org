@@ -18,7 +18,7 @@ function HomepageHeader() {
 export default function Home() {
   return (
     <Layout
-      title={translate({id: 'brandAssets.layout.title', message: 'Brand Assets | cardano.org'})}
+      title={translate({id: 'brandAssets.layout.title', message: 'Cardano Brand Assets, Logos and Guidelines'})}
       description={translate({id: 'brandAssets.layout.description', message: 'Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them.'})}
     >
       <OpenGraphInfo pageName="brand-assets" />
