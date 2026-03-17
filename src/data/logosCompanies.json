@@ -362,5 +362,12 @@
     "link": "https://nowitnesslabs.com/",
     "knownFor": "Evolution SDK",
     "showCompanyName": false
+  },
+  {
+    "companyName": "Agrow Labs",
+    "imageName": "agrowlabs",
+    "link": "https://www.agrowlabs.xyz",
+    "knownFor": "Onboard Ninja",
+    "showCompanyName": false
   }
 ]
