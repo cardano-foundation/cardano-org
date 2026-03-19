@@ -1,8 +1,18 @@
 {
-  "lastUpdated": "2026-03-17T06:17:54.019Z",
+  "lastUpdated": "2026-03-19T06:15:44.742Z",
   "contributors": [
     {
       "rank": 1,
+      "user": "Nápoles (enapoles)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/14053495/medium/929961300fa5ff67cce99ecffc733830.jpg",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 6822,
+      "approved": 6512
+    },
+    {
+      "rank": 2,
       "user": "tu_nguyen",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
       "languages": [
@@ -12,7 +22,27 @@
       "approved": 0
     },
     {
-      "rank": 2,
+      "rank": 3,
+      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 2880,
+      "approved": 2300
+    },
+    {
+      "rank": 4,
+      "user": "davidmtz",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17625642/medium/f4c025a0afc6af7faa976451ea050b43_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 1031,
+      "approved": 0
+    },
+    {
+      "rank": 5,
       "user": "HaSala",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17602462/medium/b8b6783a0503304c1b9c8764214ded12_default.png",
       "languages": [
@@ -22,43 +52,13 @@
       "approved": 0
     },
     {
-      "rank": 3,
-      "user": "davidmtz",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17625642/medium/f4c025a0afc6af7faa976451ea050b43_default.png",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 756,
-      "approved": 0
-    },
-    {
-      "rank": 4,
-      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 486,
-      "approved": 0
-    },
-    {
-      "rank": 5,
+      "rank": 6,
       "user": "BaelFire",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15877549/medium/3a83e601d8016828ebacb8d153df99dd_default.png",
       "languages": [
         "Vietnamese"
       ],
       "translated": 281,
-      "approved": 0
-    },
-    {
-      "rank": 6,
-      "user": "Nápoles (enapoles)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/14053495/medium/929961300fa5ff67cce99ecffc733830.jpg",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 257,
       "approved": 0
     },
     {
