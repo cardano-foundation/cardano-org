@@ -103,7 +103,7 @@ function filterProjects(projects, selectedTags, latest, operator, searchName, un
 function useFilteredProjects() {
   const location = useLocation();
   const [operator, setOperator] = useState("OR");
-  const [latest, setLatest] = useState("LAST");
+  const [latest, setLatest] = useState("ALL");
 
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState([]);
