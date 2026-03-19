@@ -2,17 +2,12 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
-import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import PartnersOverviewSection from "@site/src/components/PartnersOverviewSection";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import Logos from "@site/src/components/Layout/Logos";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import Link from "@docusaurus/Link";
+import CompaniesShowcase from "@site/src/components/CompaniesShowcase";
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title={translate({id: 'entities.hero.title', message: 'Entities building on Cardano'})}
@@ -23,7 +18,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-
   return (
     <Layout
       title={translate({id: 'entities.meta.title', message: 'Organizations Building on Cardano'})}
@@ -33,24 +27,15 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <BoundaryBox>
-          <Divider text={translate({id: 'entities.entitiesSection.divider', message: 'Entities advancing Cardano'})} id="entities" />
-          <PartnersOverviewSection />
+          <Divider text={translate({id: 'entities.entitiesSection.divider', message: 'Entities building on Cardano'})} id="entities" />
+          <span id="companies" />
+          <TitleWithText
+            description={translate({id: 'entities.companiesSection.description', message: 'There is a growing number of entities that build on Cardano. Below are a few of them:'})}
+            titleType="none"
+            headingDot={false}
+          />
+          <CompaniesShowcase />
         </BoundaryBox>
-        <SpacerBox size="medium" />
-        <BackgroundWrapper backgroundType={"zoom"}>
-          <BoundaryBox>
-            <Divider text={translate({id: 'entities.companiesSection.divider', message: 'Companies, associations, and collaborations building on Cardano'})} id="companies" />
-            <TitleWithText
-              description={translate({id: 'entities.companiesSection.description', message: 'There is a growing number of entities that build on Cardano. Below are a few of them:'})}
-              titleType="none"
-              headingDot={false}
-            />
-            <Logos jsonFileName="logosCompanies" />
-            <div className="centered-link">
-              <Link to="/docs/get-involved/add-company">{translate({id: 'entities.companiesSection.addCompanyLink', message: 'add your company'})}</Link>
-            </div>
-          </BoundaryBox>
-        </BackgroundWrapper>
       </main>
     </Layout>
   );

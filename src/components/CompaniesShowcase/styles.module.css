@@ -1,0 +1,191 @@
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+}
+
+.logoCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+  min-height: 100px;
+}
+
+.logoCell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logoCellActive {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 1px var(--ifm-color-primary);
+}
+
+.logoImage {
+  max-height: 60px;
+  max-width: 120px;
+  min-height: 40px;
+  object-fit: contain;
+}
+
+.companyName {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  text-align: center;
+  color: var(--ifm-font-color-base);
+}
+
+/* Spotlight panel */
+.spotlight {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  scroll-margin-top: 5rem;
+}
+
+.spotlightOpen {
+  max-height: 800px;
+  opacity: 1;
+}
+
+.spotlightInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  animation: fadeSlideIn 0.25s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spotlightClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.spotlightClose:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+.spotlightLogo {
+  max-width: 280px;
+  max-height: 120px;
+  margin-bottom: 1rem;
+}
+
+.spotlightName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.spotlightCategory {
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 1rem;
+}
+
+.spotlightDescription {
+  max-width: 48rem;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.spotlightKnownFor {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.spotlightLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Add company card */
+.addCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  border: 2px dashed var(--ifm-color-emphasis-300);
+  min-height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.addCard:hover {
+  transform: scale(1.05);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.addIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--ifm-color-primary);
+}
+
+.addLabel {
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.25rem;
+  }
+
+  .spotlightLogo {
+    max-width: 200px;
+  }
+
+  .spotlightInner {
+    padding: 1.5rem 1rem;
+  }
+}

@@ -1,9 +1,8 @@
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import ImageWithText from "@site/src/components/Layout/ImageWithText";
-import DiscoverUsSection from "@site/src/components/DiscoverUsSection";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "../components/Layout/BoundaryBox";
+import BackgroundWrapper from "../components/Layout/BackgroundWrapper";
 import SpacerBox from "../components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
@@ -43,11 +42,8 @@ export default function Home() {
           />
         </BoundaryBox>
 
-        <BackgroundWrapper backgroundType={"gradientDark"}>
-          <DiscoverUsSection />
-        </BackgroundWrapper>
-
-        <BoundaryBox>
+        <BackgroundWrapper backgroundType={"zoom"}>
+          <BoundaryBox>
             <ImageWithText
               imageName={"discover/purpose.webp"}
               title={translate({id: 'discoverCardano.purpose.title', message: 'Purpose'})}
@@ -59,20 +55,26 @@ export default function Home() {
               isImageRight={true}
               id={"purpose"}
             />
+          </BoundaryBox>
+        </BackgroundWrapper>
 
-            <ImageWithText
-              imageName={"discover/technology.webp"}
-              title={translate({id: 'discoverCardano.technology.title', message: 'Technology'})}
-              subtitle={translate({id: 'discoverCardano.technology.subtitle', message: 'Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'})}
-              text={[
-                translate({id: 'discoverCardano.technology.text1', message: 'From the incremental to global, Cardano improves how we interact, transact, and create - and ultimately operate as a global society.'}),
-                translate({id: 'discoverCardano.technology.text2', message: 'Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability.'}),
-                translate({id: 'discoverCardano.technology.text3', message: 'Our technology is underpinned by [research](/research). We have redefined what it means to create a global software platform through scientific methods. We have not compromised on our belief, or in our approach. To build a better future - secure, sustainable, and governable by the many - we have taken the road less traveled. The result of our efforts is a blockchain platform unparalleled in its capability and performance, and which is truly able to support global applications, systems, and real-life business use cases.'}),
-              ]}
-              isImageRight={false}
-              id={"technology"}
-            />
+        <BoundaryBox>
+          <ImageWithText
+            imageName={"discover/technology.webp"}
+            title={translate({id: 'discoverCardano.technology.title', message: 'Technology'})}
+            subtitle={translate({id: 'discoverCardano.technology.subtitle', message: 'Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'})}
+            text={[
+              translate({id: 'discoverCardano.technology.text1', message: 'From the incremental to global, Cardano improves how we interact, transact, and create - and ultimately operate as a global society.'}),
+              translate({id: 'discoverCardano.technology.text2', message: 'Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability.'}),
+              translate({id: 'discoverCardano.technology.text3', message: 'Our technology is underpinned by [research](/research). We have redefined what it means to create a global software platform through scientific methods. We have not compromised on our belief, or in our approach. To build a better future - secure, sustainable, and governable by the many - we have taken the road less traveled. The result of our efforts is a blockchain platform unparalleled in its capability and performance, and which is truly able to support global applications, systems, and real-life business use cases.'}),
+            ]}
+            isImageRight={false}
+            id={"technology"}
+          />
+        </BoundaryBox>
 
+        <BackgroundWrapper backgroundType={"zoom"}>
+          <BoundaryBox>
             <ImageWithText
               imageName={"discover/research.webp"}
               title={translate({id: 'discoverCardano.research.title', message: 'Research'})}
@@ -84,22 +86,24 @@ export default function Home() {
               isImageRight={true}
               id={"research"}
             />
+          </BoundaryBox>
+        </BackgroundWrapper>
 
-            <ImageWithText
-              imageName={"discover/opportunity.webp"}
-              title={translate({id: 'discoverCardano.opportunity.title', message: 'Opportunity'})}
-              subtitle={translate({id: 'discoverCardano.opportunity.subtitle', message: 'The staging point for every new opportunity. Empower your business through Cardano, and discover the future of technology.'})}
-              text={[
-                translate({id: 'discoverCardano.opportunity.text1', message: 'Cardano provides the template and toolset to a new age of innovation. It introduces leading-edge technologies, models, and methodologies to help individuals, developers, and enterprises discover a new possible, realize change, and enrich their lives..'}),
-                translate({id: 'discoverCardano.opportunity.text2', message: 'Blockchain technology holds the answer to a number of legacy challenges, whether financial, societal, or technological. It disintermediates essential relationships, and redistributes power to alleviate costly dependencies, restrictive paradigms, and inefficient systems of transaction and exchange. Cardano is a realization of this potential. It is a platform with the security, privacy sustainability, and performance standards required to accelerate the mass adoption of the technology, and support a lasting ecosystem.'}),
-                translate({id: 'discoverCardano.opportunity.text3', message: 'Cardano powers new, more secure, and globally scalable solutions. Its technology is continuously improved upon through evidence-based development methods, and guided by a democratic voting system, in which every member has a voice. The opportunity of Cardano is adaptable to your use case. It is an opportunity that creates other opportunities, continuously.'}),
-              ]}
-              isImageRight={false}
-              id={"opportunity"}
-            />
+        <BoundaryBox>
+          <ImageWithText
+            imageName={"discover/opportunity.webp"}
+            title={translate({id: 'discoverCardano.opportunity.title', message: 'Opportunity'})}
+            subtitle={translate({id: 'discoverCardano.opportunity.subtitle', message: 'The staging point for every new opportunity. Empower your business through Cardano, and discover the future of technology.'})}
+            text={[
+              translate({id: 'discoverCardano.opportunity.text1', message: 'Cardano provides the template and toolset to a new age of innovation. It introduces leading-edge technologies, models, and methodologies to help individuals, developers, and enterprises discover a new possible, realize change, and enrich their lives..'}),
+              translate({id: 'discoverCardano.opportunity.text2', message: 'Blockchain technology holds the answer to a number of legacy challenges, whether financial, societal, or technological. It disintermediates essential relationships, and redistributes power to alleviate costly dependencies, restrictive paradigms, and inefficient systems of transaction and exchange. Cardano is a realization of this potential. It is a platform with the security, privacy sustainability, and performance standards required to accelerate the mass adoption of the technology, and support a lasting ecosystem.'}),
+              translate({id: 'discoverCardano.opportunity.text3', message: 'Cardano powers new, more secure, and globally scalable solutions. Its technology is continuously improved upon through evidence-based development methods, and guided by a democratic voting system, in which every member has a voice. The opportunity of Cardano is adaptable to your use case. It is an opportunity that creates other opportunities, continuously.'}),
+            ]}
+            isImageRight={false}
+            id={"opportunity"}
+          />
+          <SpacerBox size="medium" />
         </BoundaryBox>
-
-        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

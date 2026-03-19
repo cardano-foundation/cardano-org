@@ -321,7 +321,7 @@ const config = {
               { to: '/exchanges', label: 'Integrate Cardano' },
               { href: 'https://developers.cardano.org', label: 'Developer Portal' },
               { href: 'https://developers.cardano.org/tools', label: 'Builder Tools' },
-              { to: '/entities/#companies', label: 'Companies building on Cardano' },
+              { to: '/entities/', label: 'Companies building on Cardano' },
             ],
             // The mega menu full version for "Build"
             mega: true,
@@ -450,7 +450,7 @@ const config = {
               },
               {
                 label: 'More entities',
-                href: '/entities/#companies',
+                href: '/entities/',
               },
             ],
           },
