@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+src/data/recentNews.json
 
 # Misc
 .DS_Store
