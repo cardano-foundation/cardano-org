@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The March 06, 2026, development report highlights that 137 SPAR stores in Switzerland now accept ada for payments. The ledger team progressed with nested transactions and performance restructuring. Lace wallet supported the Midnight mainnet release and advanced the LaceID identity feature, while the Mithril team completed signer authentication for SNARK verification keys. Research breakthroughs included formal models for geographic diversity and Sybil-proofness in restaking.
+Payments in 137 SPAR stores across Switzerland now support ada, highlighting significant real-world adoption. The ledger team advanced nested transactions and performance restructuring, while the Lace wallet integrated Midnight mainnet support and the LaceID identity feature. Furthermore, the Mithril team completed signer authentication for SNARK verification keys. Research breakthroughs also established formal models for geographic diversity and Sybil-proofness in decentralized restaking networks.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2026-03-06) 
