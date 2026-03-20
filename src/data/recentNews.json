@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Action Required: Vote on Plutus Execution Limit Changes",
+    "permalink": "/news/2026-02-10-call-to-action-spo-parameter-changes",
+    "date": "2026-02-10",
+    "description": "The February 10, 2026, Call to Action reminds SPOs and DReps there are only three days left to vote on the currently active Protocol Parameter Update, which improves Plutus execution limits. The update expands application capabilities by allowing more logic per transaction, optimizes block usage for higher throughput, and helps the network stay ahead of growing demand. SPOs and DReps are encouraged to review the proposal, and the recent SPO Roundtable discussion, before casting their vote.",
+    "authors": [
+      {
+        "name": "Cardano Foundation",
+        "imageUrl": "/img/authors/cardano-foundation.png"
+      }
+    ],
+    "tags": [
+      "spo"
+    ]
+  },
+  {
+    "title": "Weekly Development Report",
+    "permalink": "/news/2026-02-06-weekly-development-report",
+    "date": "2026-02-06",
+    "description": "The February 06, 2026, development report highlights the High Assurance team's launch of the automatic formal verification tool early access program, inviting developers to shape security tooling. In scaling news, the Mithril team released distribution 2603.1, adding support for the decentralized message queue protocol and a Blockfrost API integration. Additionally, the Input Output Research team submitted final end-of-year 2025 reports to Intersect, closing Work Package 25.",
+    "authors": [
+      {
+        "name": "Input Output Global",
+        "imageUrl": "/img/authors/input-output-hk.png"
+      }
+    ],
+    "tags": [
+      "weekly development report",
+      "development"
+    ]
+  },
+  {
+    "title": "Yaci Store 2.0.0: The Next Evolution of Cardano Indexers",
+    "permalink": "/news/2026-02-03-yaci-store-2",
+    "date": "2026-02-03",
+    "description": "The February 03, 2026, blog post by Satya Ranjan announces the release of Yaci Store 2.0.0, a high-performance Java-based indexer for the Cardano blockchain. This update introduces native ledger and governance state derivation, enabling applications to track proposals and calculate rewards directly. It also features a new plugin framework for custom data processing and operational enhancements like PostgreSQL partitioning and Prometheus monitoring, supporting scalable, production-ready deployments.",
+    "authors": [
+      {
+        "name": "Cardano Foundation",
+        "imageUrl": "/img/authors/cardano-foundation.png"
+      }
+    ],
+    "tags": [
+      "development"
+    ]
+  },
+  {
+    "title": "Community Digest",
+    "permalink": "/news/2026-02-02-community-digest",
+    "date": "2026-02-02",
+    "description": "The February 02, 2026, Cardano Community Digest highlights the agreement between Circle and the Cardano Pentad to integrate USDCx on Cardano, a deliverable from the Critical Infrastructure Budget. The update features content creators Linda and Josh, the launch of the open-source governance platform CGOV by Mesh, and Intersect MBO’s State of Developer Experience Survey. Additionally, the digest details the NuLuna Roundtable in Barcelona and an SPO Table Talk on Plutus memory limits.",
+    "authors": [
+      {
+        "name": "Cardano Foundation",
+        "imageUrl": "/img/authors/cardano-foundation.png"
+      }
+    ],
+    "tags": [
+      "community digest"
+    ]
+  },
+  {
+    "title": "Weekly Development Report",
+    "permalink": "/news/2026-01-30-weekly-development-report",
+    "date": "2026-01-30",
+    "description": "The January 30, 2026, development report highlights the consensus team's work on Cardano node v.10.7 and the prototyping of Leios endorsement block production. The Hydra team focused on performance improvements and the Raspberry Pi demo, while the Mithril team prepared the pre-release for the 2603.1-pre distribution, introducing support for the DMQ protocol. Additionally, Intersect is facilitating an intra-era upgrade to protocol version 11.",
+    "authors": [
+      {
+        "name": "Input Output Global",
+        "imageUrl": "/img/authors/input-output-hk.png"
+      }
+    ],
+    "tags": [
+      "weekly development report",
+      "development"
+    ]
+  },
+  {
+    "title": "Weekly Development Report",
+    "permalink": "/news/2026-01-23-weekly-development-report",
+    "date": "2026-01-23",
+    "description": "The January 23, 2026, development report highlights the ratification of the updated Cardano constitution, effective January 24. On the core technology front, the ledger team finalized the design for nested transactions (CIP-118) and began implementing account address enhancements (CIP-159) for the Dijkstra era. Additionally, the Mithril team focused on SNARK-friendly libraries and prepared infrastructure for the decentralized message queue (DMQ) network deployment.",
+    "authors": [
+      {
+        "name": "Input Output Global",
+        "imageUrl": "/img/authors/input-output-hk.png"
+      }
+    ],
+    "tags": [
+      "weekly development report",
+      "development"
+    ]
+  }
+]
