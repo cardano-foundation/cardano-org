@@ -13,7 +13,7 @@ Los artistas y creadores suelen recibir solo una pequeña parte de los ingresos 
 
 En la era digital, resulta difícil rastrear y hacer cumplir los derechos de propiedad intelectual. La piratería está descontrolada e incluso los usos legítimos a menudo no compensan a los creadores de forma justa.
 
-## Cómo es que Blockchain resuelve esto
+## Cómo la Blockchain resuelve esto
 
 La tecnología Blockchain habilita relaciones directas entre creadores y consumidores:
 
@@ -21,11 +21,11 @@ La tecnología Blockchain habilita relaciones directas entre creadores y consumi
 - **Regalías transparentes**: los contratos inteligentes distribuyen automáticamente los pagos a todos los titulares de derechos
 - **Propiedad inmutable**: comprueban la creación y titularidad de la propiedad intelectual
 - **Derechos fraccionados**: permiten la inversión en obras creativas a través de la tokenización
-- **Licencias programables**: los contratos inteligentes pueden aplicar automáticamente los términos de uso
+- **Licencias programables**: Los contratos inteligentes pueden aplicar automáticamente los términos de uso
 
 Los NFTs y los tokens nativos de Cardano permiten nuevos modelos de distribución musical, desde lanzamientos de edición limitada hasta flujos continuos de regalías que compensan justamente a todos los colaboradores.
 
-## Por qué Cardano
+## ¿Por qué Cardano?
 
 - **Bajas comisiones por transacción**: hacen que los micro pagos a los artistas sean económicamente viables
 - **Tokens nativos**: permiten una representación eficiente de los derechos y regalías
@@ -33,8 +33,8 @@ Los NFTs y los tokens nativos de Cardano permiten nuevos modelos de distribució
 - **Enfoque comunitario**: se alinea con los artistas que buscan alternativas al control corporativo
 - **Sostenibilidad**: mediante el proof of stake, atrae a los creadores comprometidos con el medio ambiente
 
-## Primeros pasos
+## Primeros Pasos
 
 - [Explora los mercados de NFT en Cardano](/apps/?tags=nft)
-- [Recursos para desarrolladores para la creación de aplicaciones en Cardano](https://developers.cardano.org)
-- [Ver Soluciones Empresariales](/solutions)
+- [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)
+- [Vea las soluciones para empresas](/solutions)

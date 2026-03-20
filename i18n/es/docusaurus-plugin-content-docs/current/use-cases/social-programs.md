@@ -13,7 +13,7 @@ Los programas sociales destinados a la reducción de la pobreza, la ayuda en cas
 
 Para los beneficiarios, acceder a la ayuda puede implicar obstáculos burocráticos, intermediarios que cobran comisiones y retrasos que menoscaban la eficacia del programa. Demostrar la elegibilidad y evitar reclamaciones duplicadas añade aún más complejidad.
 
-## Cómo es que Blockchain resuelve esto
+## Cómo la Blockchain resuelve esto
 
 La tecnología Blockchain permite una distribución transparente y eficiente de los fondos de los programas sociales:
 
@@ -25,7 +25,7 @@ La tecnología Blockchain permite una distribución transparente y eficiente de 
 
 Las stablecoins y las billeteras digitales permiten a los beneficiarios recibir y utilizar fondos incluso sin cuentas bancarias tradicionales, lo que aumenta la inclusión financiera.
 
-## Por qué Cardano
+## Porqué Cardano
 
 - **Bajas comisiones por transacción** maximizan el porcentaje de fondos que llegan a los beneficiarios
 - **Sostenibilidad** mediante el proof of stake que se alinea con los objetivos de desarrollo
@@ -33,8 +33,8 @@ Las stablecoins y las billeteras digitales permiten a los beneficiarios recibir 
 - **Accesibilidad** funciona en areas con una infraestructura bancaria limitada
 - **Gobernanza** permite la participación de la comunidad en el diseño del programa
 
-## Primeros pasos
+## Primeros Pasos
 
-- [Explora las aplicaciones Cardano](/apps)
-- [Recursos para desarrolladores en Cardano](https://developers.cardano.org)
-- [Ver Soluciones Empresariales](/solutions)
+- [Explore las aplicaciones Cardano](/apps)
+- [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)
+- [Vea las soluciones para empresas](/solutions)
