@@ -5,7 +5,8 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The February 21, 2025, development report highlights Cardano's stable growth, with 1,985 projects building on the platform and over 106.5 million transactions processed. The consensus team benchmarked the in-memory backend for UTXO-HD, achieving a 9% reduction in CPU usage. The Lace team released version 1.20.0, introducing wallet renaming and a new 'Governance' tab. The Plutus team rebranded Plutus Tx to Plinth, enhancing the compiler for improved smart contract development. Additionally, the Hydra team launched the Hydra explorer for better network monitoring.
+
+The network has reached 1,985 projects and 106.5 million transactions. The consensus team achieved a 9% CPU reduction benchmarking the UTXO-HD in-memory backend. Lace 1.20.0 launched with a new Governance tab, while Plutus Tx was rebranded to Plinth to improve smart contract development. Additionally, a Hydra explorer was released for enhanced network monitoring.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2025-02-21) 

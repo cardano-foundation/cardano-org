@@ -6,7 +6,7 @@ tags: [community digest]
 ---
 
 
-The August 29, 2025, development report highlights the ledger team's work on enforcing the uniqueness of stake pool VRF keys and integrating Plutus V4 into the Dijkstra era. Smart contract development progressed with Plutus Core adding support for built-in lists. Ecosystem news includes Midnight's partnership with Copper, the launch of the Cardano Governance Education Working Group, and the release of the Halo2-Plutus verifier for zero-knowledge proofs.
+The ledger team is working on enforcing stake pool VRF key uniqueness and integrating Plutus V4 into the Dijkstra era. Plutus Core has added support for built-in lists, while Midnight partnered with Copper for institutional custody. Additionally, the Governance Education Working Group has launched, and the Halo2-Plutus verifier is now available to support on-chain zero-knowledge proofs.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://forum.cardano.org/t/digest-august-20-2025-summit-2025-ticket-discounts-awards-rare-evo-2025-recap-71m-treasury-approved-for-core-development/148582) 

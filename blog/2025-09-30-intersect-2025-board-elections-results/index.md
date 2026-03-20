@@ -5,7 +5,7 @@ authors: [intersect]
 tags: [development]
 ---
 
-On October 1, 2025, Intersect announced the results of its 2025 board elections, with Adam Rusch and Jack Briggs being elected as new members. This election is a significant milestone for Cardano's governance, as it marks the first time a majority of the Intersect board has been directly elected by its members. The result, determined by a 26% voter turnout, reinforces the ecosystem's commitment to decentralized, community-led decision-making.
+Intersect board election results have been announced, with Adam Rusch and Jack Briggs elected as new members. This milestone marks the first time a majority of the board is directly elected by its members, achieved with a 26% voter turnout to reinforce decentralized, community-led governance.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.intersectmbo.org/news/intersect-announces-results-of-2025-board-elections) 

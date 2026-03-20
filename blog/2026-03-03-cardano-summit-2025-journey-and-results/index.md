@@ -6,7 +6,7 @@ tags: [recap,report,events]
 ---
 
 
-The March 03, 2026, report by Laura Mattiucci reflects on the Cardano Summit 2025, detailing its success across Berlin and regional hubs. Exceeding major KPIs, the flagship event hosted over 1,460 in-person attendees and 26,000 online viewers, fostering engagement with global enterprises like Volvo and Mastercard. The transition to a treasury-funded model highlights the ecosystem's decentralized maturity, with preparations already underway for the 2026 Summit in Singapore.
+Cardano Summit 2025 surpassed major KPIs, hosting 1,460 in-person attendees in Berlin and 26,000 global online viewers. High-level engagement from enterprises like Volvo and Mastercard underscored the network's increasing institutional appeal. As the first flagship event funded entirely by the treasury, it showcased the ecosystem's decentralized maturity. With the 2025 journey concluded, preparations are already in motion for the 2026 Summit in Singapore.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/cardano-summit-2025-journey-and-results) 
