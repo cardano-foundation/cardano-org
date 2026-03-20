@@ -5,7 +5,7 @@ authors: [iog]
 tags: [development]
 ---
 
-The February 20, 2026, development report highlights the transition of Hydra into its adoption phase, focusing on production feedback and real-world use cases. The core team advanced version 1.3, which introduces fee calculation fixes, memory optimizations, and partial fan-out functionality. Notable projects like DeltaDeFi and Masumi demonstrated how Hydra enables high-performance trading and scalable micropayments, while the working group prioritized infrastructure hardening and improved developer experience.
+Hydra has officially transitioned into its adoption phase, with the core team focusing on production feedback and real-world use cases. The upcoming v.1.3 release introduces critical memory optimizations, fee calculation fixes, and partial fan-out functionality to improve head management. Projects like DeltaDeFi and Masumi are already demonstrating high-performance trading and scalable micropayments, while the working group prioritizes infrastructure hardening to support enterprise-grade deployments.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.iog.io/news/hydra-adoption-phase) 

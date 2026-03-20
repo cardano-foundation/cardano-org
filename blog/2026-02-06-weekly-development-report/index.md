@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The February 06, 2026, development report highlights the High Assurance team's launch of the automatic formal verification tool early access program, inviting developers to shape security tooling. In scaling news, the Mithril team released distribution 2603.1, adding support for the decentralized message queue protocol and a Blockfrost API integration. Additionally, the Input Output Research team submitted final end-of-year 2025 reports to Intersect, closing Work Package 25.
+The High Assurance team has launched an early access program for its automatic formal verification tool, inviting developers to help shape the future of smart contract security. In scaling updates, Mithril distribution 2603.1 is now available, featuring a decentralized message queue protocol and Blockfrost API integration. Furthermore, the IOG Research team officially closed Work Package 25 by submitting its comprehensive 2025 end-of-year reports to Intersect.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2026-02-06) 

@@ -6,7 +6,7 @@ tags: [events]
 ---
 
 
-The November 12, 2025, blog post by Laura Mattiucci recaps Day 1 of the Cardano Summit in Berlin. Key highlights included a keynote by CEO Frederik Gregaard on enterprise adoption, the release of the Digital Trust Infrastructure report, and panels featuring leaders from Mastercard, Volvo, and the UN. The day concluded with Giorgio Zinetti summarizing major announcements like the new Gyro crypto card and increased network liquidity initiatives.
+Laura Mattiucci recapped Day 1 of the Cardano Summit in Berlin, which featured a keynote by CEO Frederik Gregaard on enterprise adoption and the release of the Digital Trust Infrastructure report. Panels included leaders from Mastercard, Volvo, and the UN, highlighting real-world blockchain applications. Giorgio Zinetti concluded the day by summarizing major announcements, including the new Gyro crypto card and initiatives to increase network liquidity.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/summit-2025-day-1-recap) 

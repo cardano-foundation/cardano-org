@@ -6,7 +6,7 @@ tags: [governance]
 ---
 
 
-The December 03, 2025, blog post by Nicolas Cerny reflects on a historic year for Cardano governance, highlighting the Foundation's transition to fully decentralized decision-making. Key achievements include the Foundation's 100% voting record as a DRep, completion of its Interim Constitutional Committee tenure, and the delegation of 140 million ada to seven community DReps. Plans are underway to delegate an additional 220 million ada to Adoption and Operations DReps in early 2026.
+Nicolas Cerny reflects on the transition to fully decentralized decision-making during a historic year for Cardano governance. Key milestones include a 100% voting record as a DRep, the completion of the Interim Constitutional Committee tenure, and the delegation of 140 million ada to seven community DReps. Plans are underway to delegate an additional 220 million ada to Adoption and Operations DReps in early 2026.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/reflecting-cardano-governance-2025) 
