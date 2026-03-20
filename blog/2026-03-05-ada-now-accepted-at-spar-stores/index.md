@@ -6,7 +6,7 @@ tags: [development]
 ---
 
 
-The March 05, 2026, press release by Siobhán Calpin announces that ada is now accepted at 137 SPAR stores across Switzerland. This integration, powered by DFX.swiss and the Open Crypto Pay standard, allows customers to pay directly from native wallets without centralized intermediaries. The partnership significantly reduces transaction costs for retailers while marking a major milestone in the real-world, everyday adoption of the Cardano network.
+Customers in Switzerland can now pay with ada at 137 SPAR stores, marking a significant milestone for real-world retail adoption. This integration, powered by DFX.swiss and the Open Crypto Pay standard, enables direct payments from native wallets without centralized intermediaries. By bypassing traditional payment providers, retailers benefit from transaction fees reduced by nearly two-thirds, demonstrating the practical economic value of the Cardano network in everyday life.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/ada-accepted-spar-switzerland) 
