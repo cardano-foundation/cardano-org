@@ -8,7 +8,6 @@ import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
-import Link from "@docusaurus/Link";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import LatestNewsSection from "@site/src/components/LatestNewsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -95,19 +94,6 @@ export default function Home() {
           <HomeDiscoverSection />
         </BoundaryBox>
 
-        <BackgroundWrapper backgroundType={"solidGrey"}>
-          <BoundaryBox>
-            <Divider text={translate({id: 'home.divider.entities', message: 'Entities'})} />
-            <TitleWithText
-              description={translate({id: 'home.entities.description', message: 'Multiple independent entities collaborate within a decentralized team framework to drive Cardano forward, ensuring that it remains aligned with its core mission as it progresses and develops. These are a few of them:'})}
-              titleType="none"
-              headingDot={false}
-            />
-            <div className="centered-link">
-              <Link to="/entities">{translate({id: 'home.entities.link', message: 'Explore all entities building on Cardano'})}</Link>
-            </div>
-          </BoundaryBox>
-        </BackgroundWrapper>
 
         <FollowCardanoSection />
       </main>
