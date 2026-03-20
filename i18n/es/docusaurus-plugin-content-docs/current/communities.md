@@ -24,15 +24,15 @@ Conecta con la comunidad de Cardano en eventos presenciales o virtuales.
 
 ## Cardano en Telegram
 
-Chat en tiempo real y debates rápidos.
+Chat en tiempo real y discusiones rápidas.
 
 - Cardano Principal: https://t.me/Cardano
-- Cardano Desarrolladores: https://t.me/CardanoDevelopersOfficial
+- Desarrolladores de Cardano: https://t.me/CardanoDevelopersOfficial
 - Cardano Report to Admin: https://t.me/cardanoreporttoadmin es el canal para reportar problemas con nuestras normas, usuarios, administradores, moderadores o cualquier otro aspecto que no esté funcionando correctamente en los canales de Telegram.
 
 ## Cardano en Discord
 
-Chat en tiempo real y debates rápidos.
+Chat en tiempo real y discusiones rápidas.
 
 - [Discord de la Fundación Cardano](https://discord.gg/MmeqpAzKbp)
 - [Discord de la Comunidad de Cardano](https://discord.com/invite/2nPUa5d7DE)
@@ -62,7 +62,7 @@ Chat en tiempo real y debates rápidos.
 - 🇲🇽 México: https://t.me/CardanoMexico
 - 🇮🇹 Italiano: https://t.me/CardanoIT
 - 🇷🇺 Ruso: https://t.me/cardano_rus
-- 🇷🇺 Desarrolladores en Ruso: https://t.me/CardanoRussianMain
+- 🇷🇺 Desarrolladores rusos : https://t.me/CardanoRussianMain
 - 🇪🇸 Español: https://t.me/CardanoEsp
 - 🇹🇷 Cardano Turquía: https://t.me/CardanoTurk
 - 🇺🇸 Cardano USA: https://t.me/CardanoAmerica
