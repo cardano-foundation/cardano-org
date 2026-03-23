@@ -38,3 +38,28 @@ export function filterWallets(wallets, { platforms = [], features = [], custody 
     return true;
   });
 }
+
+// Filter wallets for beginner mode
+// Mobile: wallets with easy-setup feature + mobile platforms
+// Desktop: favorite wallets + browser/desktop platforms
+export function getBeginnerWallets(wallets, platform) {
+  if (platform === "mobile") {
+    return wallets.filter((w) => {
+      const wf = w.walletFeatures;
+      return (
+        wf.features.includes("easy-setup") &&
+        wf.platforms.some((p) => p === "ios" || p === "android")
+      );
+    });
+  }
+  if (platform === "desktop") {
+    return wallets.filter((w) => {
+      const wf = w.walletFeatures;
+      return (
+        w.tags.includes("favorite") &&
+        wf.platforms.some((p) => p === "browser" || p === "desktop")
+      );
+    });
+  }
+  return wallets;
+}

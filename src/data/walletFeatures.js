@@ -62,6 +62,10 @@ export const WalletFeatures = {
     label: translate({id: 'walletFinder.features.qrClaim', message: 'QR Claim'}),
     description: translate({id: 'walletFinder.features.qrClaim.desc', message: 'Claim tokens via QR codes or claim links (CIP-0099)'}),
   },
+  "easy-setup": {
+    label: translate({id: 'walletFinder.features.easySetup', message: 'Easy Setup'}),
+    description: translate({id: 'walletFinder.features.easySetup.desc', message: 'Get started quickly with deferred seed backup'}),
+  },
 };
 
 // Custody type definitions

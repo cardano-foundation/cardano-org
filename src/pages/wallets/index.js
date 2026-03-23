@@ -11,14 +11,18 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import WalletFinderFilters from "@site/src/components/WalletFinderFilters";
 import WalletFinderCard from "@site/src/components/WalletFinderCard";
-import { getWallets, filterWallets } from "@site/src/utils/walletFinderUtils";
+import { getWallets, filterWallets, getBeginnerWallets } from "@site/src/utils/walletFinderUtils";
 import { toggleListItem } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
 
-const TITLE = translate({id: 'walletFinder.hero.title', message: 'Find a Wallet'});
-const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Find the right Cardano wallet for your needs'});
+const TITLE = translate({id: 'walletFinder.hero.title', message: 'Find a Cardano Wallet'});
+const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Compare Cardano wallets by platform, features, and security to find the one that fits your needs'});
+const META_TITLE = translate({id: 'walletFinder.meta.title', message: 'Cardano Wallet Finder, Compare and Choose the Best Wallet'});
+const META_DESCRIPTION = translate({id: 'walletFinder.meta.description', message: 'Find the best Cardano wallet for you. Filter by platform, staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side.'});
 
 // Query parameter keys
+const MODE_KEY = "mode";
+const BEGINNER_PLATFORM_KEY = "device";
 const PLATFORMS_KEY = "platforms";
 const FEATURES_KEY = "features";
 const CUSTODY_KEY = "custody";
@@ -28,6 +32,8 @@ const OPENSOURCE_KEY = "opensource";
 function readParams(search) {
   const params = new URLSearchParams(search);
   return {
+    mode: params.get(MODE_KEY) || null,
+    beginnerPlatform: params.get(BEGINNER_PLATFORM_KEY) || null,
     platforms: params.getAll(PLATFORMS_KEY),
     features: params.getAll(FEATURES_KEY),
     custody: params.get(CUSTODY_KEY) || null,
@@ -36,8 +42,10 @@ function readParams(search) {
   };
 }
 
-function buildSearch({ platforms, features, custody, type, openSource }) {
+function buildSearch({ mode, beginnerPlatform, platforms, features, custody, type, openSource }) {
   const params = new URLSearchParams();
+  if (mode) params.set(MODE_KEY, mode);
+  if (beginnerPlatform) params.set(BEGINNER_PLATFORM_KEY, beginnerPlatform);
   platforms.forEach((p) => params.append(PLATFORMS_KEY, p));
   features.forEach((f) => params.append(FEATURES_KEY, f));
   if (custody) params.set(CUSTODY_KEY, custody);
@@ -50,7 +58,9 @@ function useWalletFilters() {
   const location = useLocation();
   const { push } = useHistory();
 
-  const [filters, setFilters] = useState({
+  const [state, setState] = useState({
+    mode: null,
+    beginnerPlatform: null,
     platforms: [],
     features: [],
     custody: null,
@@ -58,61 +68,81 @@ function useWalletFilters() {
     openSource: null,
   });
 
-  // Sync from URL on mount and navigation
   useEffect(() => {
-    setFilters(readParams(location.search));
+    setState(readParams(location.search));
   }, [location]);
 
-  const updateFilters = useCallback(
-    (newFilters) => {
-      const search = buildSearch(newFilters);
+  const updateState = useCallback(
+    (newState) => {
+      const search = buildSearch(newState);
       push({ ...location, search });
     },
     [location, push]
   );
 
+  const setMode = useCallback(
+    (mode) => {
+      updateState({
+        mode,
+        beginnerPlatform: null,
+        platforms: [],
+        features: [],
+        custody: null,
+        type: null,
+        openSource: null,
+      });
+    },
+    [updateState]
+  );
+
+  const setBeginnerPlatform = useCallback(
+    (platform) => {
+      updateState({ ...state, beginnerPlatform: state.beginnerPlatform === platform ? null : platform });
+    },
+    [state, updateState]
+  );
+
   const togglePlatform = useCallback(
     (key) => {
-      const newPlatforms = toggleListItem(filters.platforms, key);
-      updateFilters({ ...filters, platforms: newPlatforms });
+      updateState({ ...state, platforms: toggleListItem(state.platforms, key) });
     },
-    [filters, updateFilters]
+    [state, updateState]
   );
 
   const toggleFeature = useCallback(
     (key) => {
-      const newFeatures = toggleListItem(filters.features, key);
-      updateFilters({ ...filters, features: newFeatures });
+      updateState({ ...state, features: toggleListItem(state.features, key) });
     },
-    [filters, updateFilters]
+    [state, updateState]
   );
 
   const setType = useCallback(
     (value) => {
-      updateFilters({ ...filters, type: value });
+      updateState({ ...state, type: value });
     },
-    [filters, updateFilters]
+    [state, updateState]
   );
 
   const toggleOpenSource = useCallback(() => {
-    updateFilters({
-      ...filters,
-      openSource: filters.openSource ? null : true,
-    });
-  }, [filters, updateFilters]);
+    updateState({ ...state, openSource: state.openSource ? null : true });
+  }, [state, updateState]);
 
   const clearAll = useCallback(() => {
-    updateFilters({
+    updateState({
+      ...state,
+      beginnerPlatform: null,
       platforms: [],
       features: [],
       custody: null,
       type: null,
       openSource: null,
     });
-  }, [updateFilters]);
+  }, [state, updateState]);
 
   return {
-    filters,
+    state,
+    setMode,
+    setBeginnerPlatform,
     togglePlatform,
     toggleFeature,
     setType,
@@ -131,6 +161,58 @@ function WalletFinderHeader() {
   );
 }
 
+function ModeSelector({ onSelectMode }) {
+  return (
+    <div className={styles.modeSelector}>
+      <button className={styles.modeCard} onClick={() => onSelectMode("beginner")} type="button">
+        <span className={styles.modeCardTitle}>
+          {translate({id: 'walletFinder.mode.beginner.title', message: "I'm new to Cardano"})}
+        </span>
+        <span className={styles.modeCardDescription}>
+          {translate({id: 'walletFinder.mode.beginner.description', message: 'Show me the easiest options'})}
+        </span>
+      </button>
+      <button className={styles.modeCard} onClick={() => onSelectMode("advanced")} type="button">
+        <span className={styles.modeCardTitle}>
+          {translate({id: 'walletFinder.mode.advanced.title', message: 'I know what I need'})}
+        </span>
+        <span className={styles.modeCardDescription}>
+          {translate({id: 'walletFinder.mode.advanced.description', message: 'Filter by platform, features, and more'})}
+        </span>
+      </button>
+    </div>
+  );
+}
+
+function BeginnerFilter({ selected, onSelect, onSwitchMode }) {
+  return (
+    <div className={styles.beginnerFilter}>
+      <span className={styles.beginnerLabel}>
+        {translate({id: 'walletFinder.beginner.label', message: 'What device will you use?'})}
+      </span>
+      <div className={styles.beginnerOptions}>
+        <button
+          className={`${styles.beginnerPill} ${selected === "mobile" ? styles.beginnerPillActive : ""}`}
+          onClick={() => onSelect("mobile")}
+          type="button"
+        >
+          {translate({id: 'walletFinder.beginner.mobile', message: 'Mobile'})}
+        </button>
+        <button
+          className={`${styles.beginnerPill} ${selected === "desktop" ? styles.beginnerPillActive : ""}`}
+          onClick={() => onSelect("desktop")}
+          type="button"
+        >
+          {translate({id: 'walletFinder.beginner.desktop', message: 'Desktop'})}
+        </button>
+        <button className={styles.modeSwitch} onClick={() => onSwitchMode("advanced")} type="button">
+          {translate({id: 'walletFinder.beginner.showAllFilters', message: 'Show all filters'})}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function ChecklistItem({ children }) {
   return (
     <li className={styles.checklistItem}>
@@ -143,7 +225,9 @@ function ChecklistItem({ children }) {
 export default function WalletFinder() {
   const allWallets = useMemo(() => getWallets(), []);
   const {
-    filters,
+    state,
+    setMode,
+    setBeginnerPlatform,
     togglePlatform,
     toggleFeature,
     setType,
@@ -151,30 +235,56 @@ export default function WalletFinder() {
     clearAll,
   } = useWalletFilters();
 
-  const filteredWallets = useMemo(
-    () => filterWallets(allWallets, filters),
-    [allWallets, filters]
-  );
+  const filteredWallets = useMemo(() => {
+    if (state.mode === "beginner" && state.beginnerPlatform) {
+      return getBeginnerWallets(allWallets, state.beginnerPlatform);
+    }
+    if (state.mode === "advanced") {
+      return filterWallets(allWallets, state);
+    }
+    return allWallets;
+  }, [allWallets, state]);
 
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout title={META_TITLE} description={META_DESCRIPTION}>
       <OpenGraphInfo pageName="wallets" />
       <WalletFinderHeader />
       <main>
         <BackgroundWrapper backgroundType="adaLight">
           <div className="container">
-            <WalletFinderFilters
-              selectedPlatforms={filters.platforms}
-              selectedFeatures={filters.features}
-              selectedType={filters.type}
-              openSource={filters.openSource}
-              resultCount={filteredWallets.length}
-              onTogglePlatform={togglePlatform}
-              onToggleFeature={toggleFeature}
-              onSetType={setType}
-              onToggleOpenSource={toggleOpenSource}
-              onClearAll={clearAll}
-            />
+            {state.mode === null && (
+              <ModeSelector onSelectMode={setMode} />
+            )}
+
+            {state.mode === "beginner" && (
+              <BeginnerFilter
+                selected={state.beginnerPlatform}
+                onSelect={setBeginnerPlatform}
+                onSwitchMode={setMode}
+              />
+            )}
+
+            {state.mode === "advanced" && (
+              <>
+                <div style={{ paddingTop: "1rem" }}>
+                  <button className={styles.modeSwitch} onClick={() => setMode("beginner")} type="button">
+                    {translate({id: 'walletFinder.advanced.simplify', message: 'Simplify filters'})}
+                  </button>
+                </div>
+                <WalletFinderFilters
+                  selectedPlatforms={state.platforms}
+                  selectedFeatures={state.features}
+                  selectedType={state.type}
+                  openSource={state.openSource}
+                  resultCount={filteredWallets.length}
+                  onTogglePlatform={togglePlatform}
+                  onToggleFeature={toggleFeature}
+                  onSetType={setType}
+                  onToggleOpenSource={toggleOpenSource}
+                  onClearAll={clearAll}
+                />
+              </>
+            )}
           </div>
         </BackgroundWrapper>
 

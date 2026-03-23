@@ -882,7 +882,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "qr-claim"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "qr-claim", "easy-setup"],
       type: "light",
     },
   },
@@ -1018,7 +1018,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["nft", "dapp-connector", "hardware-wallet", "qr-claim"],
+      features: ["nft", "dapp-connector", "hardware-wallet", "qr-claim", "easy-setup"],
       type: "light",
     },
   },
@@ -1214,7 +1214,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android"],
       custody: "non-custodial",
-      features: ["nft", "multi-asset", "qr-claim"],
+      features: ["nft", "multi-asset", "qr-claim", "easy-setup"],
       type: "light",
     },
   },
