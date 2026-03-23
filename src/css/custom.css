@@ -288,19 +288,17 @@ img {
 
 .headingDot {
   position: relative;
+  padding-top: 1rem;
 }
 
 .headingDot::before {
   content: "";
   position: absolute;
-  top: -1.5rem;
+  top: 0;
   left: 0;
   width: 0.7rem;
   height: 0.7rem;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
+  border-radius: 100%;
   background-color: rgb(255, 118, 118);
 }
 
