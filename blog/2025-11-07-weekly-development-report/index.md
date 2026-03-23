@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The November 07, 2025, development report highlights the Plutus team's hosting of UPLC 2025 and the addition of a new `scaleValue` primitive for the upcoming intra-era hard fork. Scaling updates include Mithril's release of distribution 2543.0 with enhanced database restoration and the Hydra team's v1.1.0 release. Intersect committee election voting concluded, with results expected on November 14. Ecosystem news features the Ouroboros Phalanx upgrade and a new Compact DApps category for Catalyst Fund15.
+The Plutus team hosted UPLC 2025 and introduced the scaleValue primitive for the upcoming hard fork. Scaling advancements include the Mithril 2543.0 distribution and the Hydra v1.1.0 release, while Intersect concluded its committee election voting. Additionally, the Ouroboros Phalanx upgrade was introduced alongside a new Compact DApps category for Project Catalyst Fund15.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2025-11-07) 

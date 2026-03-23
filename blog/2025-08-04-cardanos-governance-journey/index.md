@@ -5,7 +5,7 @@ authors: [iog]
 tags: [development]
 ---
 
-A blog post by Ivan Irakoze on August 3, 2025, details Cardano's three-year journey towards decentralized governance. It chronicles the key milestones, from community workshops to the establishment of the Cardano Constitution and elected representatives. This process culminated in a fully autonomous, on-chain democratic system, empowering ada holders to shape the future of the protocol through direct participation and voting.
+The journey toward decentralized governance has spanned three years, marking a transition from foundational community workshops to a fully autonomous, on-chain democratic system. Key milestones included the establishment of the Constitution and the introduction of elected representatives. This framework empowers ADA holders to shape the protocol's future through direct participation and voting.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://iohk.io/en/blog/posts/2025/08/04/cardanos-governance-journey-a-timeline-for-decentralized-democracy-1/) 

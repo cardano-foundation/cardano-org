@@ -6,7 +6,7 @@ tags: [development]
 ---
 
 
-The December 11, 2025, blog post by Matthias Benkort presents the 2025 State of the Cardano Developer Ecosystem Survey results. With 109 responses, the survey highlights TypeScript, JavaScript, and Python as top proficiency languages, while over 75% of developers use Aiken for smart contracts. Key priorities include higher throughput (Leios) and improved documentation. Identity and authentication emerged as the primary focus for decentralized applications, surpassing DeFi and stablecoins.
+The 2025 State of the Cardano Developer Ecosystem Survey reveals a shift in developer priorities, with Identity and Authentication now the primary focus for DApps, overtaking DeFi and stablecoins. Key findings from the 109 respondents include TypeScript, JavaScript, and Python as the top proficiency languages, while Aiken has become the dominant smart contract tool, used by over 75% of developers. The community identified Ouroboros Leios (higher throughput) and improved documentation as the ecosystem's most pressing technical needs.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/2025-developer-ecosystem-survey-results) 

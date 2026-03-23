@@ -6,7 +6,7 @@ tags: [community digest]
 ---
 
 
-The February 02, 2026, Cardano Community Digest highlights the agreement between Circle and the Cardano Pentad to integrate USDCx on Cardano, a deliverable from the Critical Infrastructure Budget. The update features content creators Linda and Josh, the launch of the open-source governance platform CGOV by Mesh, and Intersect MBO’s State of Developer Experience Survey. Additionally, the digest details the NuLuna Roundtable in Barcelona and an SPO Table Talk on Plutus memory limits.
+USDCx is coming to Cardano through an agreement between Circle and the Cardano Pentad, funded via the Critical Infrastructure Budget. Mesh has launched CGOV, an open-source governance platform, while Intersect released its State of Developer Experience Survey. The community also focused on technical optimization through the NuLuna Roundtable in Barcelona and an SPO Table Talk addressing critical Plutus memory limits.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://forum.cardano.org/t/digest-february-2-2026-circle-and-pentad-integrate-usdcx-on-cardano-spotlight-linda-josh-call-for-action-intersect-mbo-state-of-developer-survey-2026-nuluna-roundtable-barcelona-your-art-your-rules-upcoming-spo-table-talk-feb-2nd/152962) 

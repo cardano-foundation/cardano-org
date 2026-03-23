@@ -5,7 +5,7 @@ authors: [iog]
 tags: [development]
 ---
 
-A blog post by Nicolas Biri on August 25, 2025, details Input | Output's research and development process for turning foundational research into practical advancements. It highlights recent progress on Ouroboros Peras for fast finality, Ouroboros Leios for high throughput, and the Cardinal protocol for a trust-minimized bridge between Bitcoin and Cardano. The post emphasizes a structured, evidence-based methodology to ensure robust, scalable, and relevant innovations.
+Research and development efforts focus on transforming foundational studies into practical advancements using a structured, evidence-based methodology. Recent progress includes Ouroboros Peras for achieving fast finality and Ouroboros Leios to enable high throughput. Additionally, the Cardinal protocol is being developed as a trust-minimized bridge between Bitcoin and the network to ensure robust and scalable interoperability.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://iohk.io/en/blog/posts/2025/08/26/from-idea-to-implementation-a-look-into-input-output-s-research-and-development/) 

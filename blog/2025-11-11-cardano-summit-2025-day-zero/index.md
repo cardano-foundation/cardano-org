@@ -6,7 +6,7 @@ tags: [events]
 ---
 
 
-On November 11, 2025, the Cardano Foundation recapped "Day Zero" of the Cardano Summit in Berlin. Hosted at w3.hub, the event gathered over 475 builders and developers for collaboration and innovation. Highlights included governance workshops, the "Layer Up Hackathon" finale, and the "Battle of the Builders" pitch competition with ten finalists. The day set a vibrant, community-driven tone for the main enterprise summit.
+The "Day Zero" event at w3.hub gathered over 475 builders and developers, establishing a community-driven atmosphere ahead of the main summit. Highlights included interactive governance workshops, the finale of the "Layer Up" hackathon, and the "Battle of the Builders" pitch competition. BikeID emerged as the winner of the pitch competition, while BioFlow and KarbonSense took top honors in the hackathon for their work in health data and environmental intelligence.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/summit-2025-day-zero-recap) 

@@ -5,7 +5,7 @@ authors: [intersect]
 tags: [governance]
 ---
 
-The January 21, 2026, Intersect report announces that DReps have successfully ratified the Cardano 2030 Vision Info Action with 67.8% approval, representing 3.77 billion ada. Facilitated by the Product Committee and involving over 700 community members, this non-binding framework positions Cardano as the premier secure blockchain for mission-critical applications. The vote serves as a checkpoint to validate shared strategic pillars, including adoption, governance, and sustainability, guiding future ecosystem development.
+Cardano 2030 Vision passed with 67.8% approval (3.77B ada). This non-binding framework, built by 700+ community members, focuses on adoption, governance, and sustainability. It defines Cardano as the premier choice for mission-critical applications, providing a strategic roadmap to align future ecosystem development and technical priorities.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.intersectmbo.org/news/cardano-2030-an-info-action-to-validate-shared-direction) 

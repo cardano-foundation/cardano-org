@@ -5,7 +5,7 @@ authors: [iog]
 tags: [weekly development report, development]
 ---
 
-The October 31, 2025, development report highlights the Hydra v1 announcement, marking the protocol as production-ready. The ledger team also finalized CIP-118 (nested transactions/Babel fees). IOG published a deep dive on Ouroboros Phalanx, a mechanism to deter grinding attacks, and the consensus team showcased a Leios prototype. Intersect committee elections are underway, and Project Catalyst Fund15 is set to launch on November 5.
+The Hydra team announced the launch of v1, marking the protocol as production-ready. The ledger team finalized CIP-118, introducing nested transactions and Babel fees, while IOG published a deep dive on Ouroboros Phalanx to deter grinding attacks. Additionally, the consensus team showcased a Leios prototype, Intersect committee elections are currently underway, and Project Catalyst Fund15 is preparing for its official launch.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.essentialcardano.io/development-update/weekly-development-report-as-of-2025-10-31) 

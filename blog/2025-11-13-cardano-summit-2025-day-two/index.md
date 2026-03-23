@@ -6,7 +6,7 @@ tags: [events]
 ---
 
 
-On November 13, 2025, Laura Mattiucci recapped Day 2 of the Cardano Summit in Berlin. Key highlights included CTO Giorgio Zinetti announcing a new stablecoin initiative and a Masumi hackathon. EMURGO's CEO Phillip Pon discussed the organization's focus on connecting technology, capital, and real-world value. Panels explored AI infrastructure, future disruptions, and the convergence of stablecoins with traditional payments. The day also featured masterclasses on digital identity and decentralized funding.
+Laura Mattiucci recapped Day 2 of the Cardano Summit in Berlin, where CTO Giorgio Zinetti announced a new stablecoin initiative and a Masumi hackathon. EMURGO CEO Phillip Pon discussed the organization's strategy for connecting technology, capital, and real-world value. Panels explored AI infrastructure, future disruptions, and the convergence of stablecoins with traditional payments, while masterclasses focused on digital identity and decentralized funding.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://cardanofoundation.org/blog/summit-2025-day-2-recap) 
