@@ -318,7 +318,7 @@ function PageContent() {
       const allTotals = {};
       
       try {
-        const totalsRes = await api.get('/totals');
+        const totalsRes = await api.get('/totals?limit=1000&order=epoch_no.asc');
         totalsRes.data.forEach(item => {
           if (item.epoch_no) {
             allTotals[item.epoch_no] = item;
