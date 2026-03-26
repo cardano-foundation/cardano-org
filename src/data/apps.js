@@ -418,7 +418,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "hardware-wallet", "qr-claim"],
+      features: ["staking", "nft", "dapp-connector", "hardware-wallet", "governance", "qr-claim"],
       type: "light",
     },
   },
@@ -486,7 +486,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "qr-claim"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance", "qr-claim"],
       type: "light",
     },
   },
@@ -520,7 +520,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance"],
       type: "light",
     },
   },
@@ -837,7 +837,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "governance"],
       type: "light",
     },
   },
@@ -882,7 +882,7 @@ export const Showcases = [
     walletFeatures: {
       platforms: ["ios", "android"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "qr-claim", "easy-setup"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "governance", "qr-claim", "easy-setup"],
       type: "light",
     },
   },
