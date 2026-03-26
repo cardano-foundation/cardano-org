@@ -1400,7 +1400,18 @@ export const Showcases = [
     website: "https://commitproof.com",
     source: null,
     tags: ["notary"],
-  }
+  },
+  {
+    title: "Cardano Smart Contract Quiz V1000",
+    description:
+      "A free-to-enter, knowledge-based quiz system built on Cardano smart contracts. Players submit answers on-chain via a Plutus smart contract, whereby the entrant with the highest score can claim the prize. Answer integrity is maintained through encrypted submissions and a salted hashing algorithm, ensuring fairness and preventing manipulation. Smart contract logic ensures only the highest scorer can claim, through fully trustless operations. Operated by the GNP1 stake pool, which actively supports mental health charities.",
+    preview: require("./app-images/gnp1quiz.jpeg"),
+    icon: "/img/app-icons/gnp1quiz.jpeg",
+    statsLabel: "GNP1Quiz",
+    website: "https://server-tools.grahamsnumberplus1.com/quiz_V1000/quiz-V1000.html",
+    source: null,
+    tags: ["educational"],
+  },  
 ];
 
 export const TagList = Object.keys(Tags);
