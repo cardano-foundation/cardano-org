@@ -1400,6 +1400,15 @@ export const Showcases = [
     website: "https://commitproof.com",
     source: null,
     tags: ["notary"],
+  },
+  {
+    title: "TapDano",
+    description: "Enterprise-grade verifiable proof infrastructure combining NFC hardware identity with immutable on-chain records. Enables cryptographically signed, bilateral proof of attendance and corporate compliance actions on Cardano.",
+    preview: require("./app-images/tapdano.png"),
+    icon: "/img/app-icons/tapdano.png",
+    website: "https://tapdano.com",
+    source: null,
+    tags: ["identity", "notary"],
   }
 ];
 
