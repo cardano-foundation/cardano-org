@@ -1,0 +1,94 @@
+.filtersContainer {
+  padding: 1.5rem 0;
+}
+
+.filterSection {
+  margin-bottom: 1.25rem;
+}
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.filterTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ifm-font-color-base);
+}
+
+.filterCount {
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.clearButton {
+  background: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.pillGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1.5;
+  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  transition: all 200ms ease-out;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  user-select: none;
+}
+
+.pill:hover {
+  opacity: 1;
+  border-color: var(--ifm-color-emphasis-500);
+}
+
+.pillActive {
+  opacity: 1;
+  background-color: var(--site-color-checkbox-checked-bg, rgba(0, 51, 173, 0.08));
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.pillActive:hover {
+  opacity: 0.85;
+}
+
+.resultCount {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.5rem;
+}

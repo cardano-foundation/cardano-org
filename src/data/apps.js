@@ -367,6 +367,12 @@ export const Showcases = [
     website: "https://adalite.io",
     source: null,
     tags: ["wallet"],
+    walletFeatures: {
+      platforms: ["web"],
+      custody: "non-custodial",
+      features: ["staking", "hardware-wallet", "multi-account"],
+      type: "light",
+    },
   },
   {
     title: "Atomic Wallet",
@@ -377,15 +383,28 @@ export const Showcases = [
     website: "https://atomicwallet.io",
     source: null,
     tags: ["wallet"],
+    walletFeatures: {
+      platforms: ["ios", "android", "desktop"],
+      custody: "non-custodial",
+      features: ["staking", "multi-asset"],
+      type: "light",
+    },
   },
   {
     title: "Daedalus",
     description:
       "Daedalus is a full node and developed by IOHK, one of the founding entities of Cardano.",
     preview: require("./app-images/daedalus.png"),
+    icon: "/img/app-icons/daedalus.svg",
     website: "https://daedaluswallet.io",
     source: "https://github.com/input-output-hk/daedalus",
     tags: ["wallet", "opensource"],
+    walletFeatures: {
+      platforms: ["desktop"],
+      custody: "non-custodial",
+      features: ["staking", "multi-account"],
+      type: "full-node",
+    },
   },
   {
     title: "Yoroi",
@@ -396,6 +415,12 @@ export const Showcases = [
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
     tags: ["favorite", "wallet", "nft", "mobile", "opensource"],
+    walletFeatures: {
+      platforms: ["ios", "android", "browser"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "hardware-wallet", "governance", "qr-claim"],
+      type: "light",
+    },
   },
   {
     title: "Cardano Warriors",
@@ -458,6 +483,12 @@ export const Showcases = [
     website: "https://eternl.io",
     source: null,
     tags: ["favorite", "wallet", "nft", "mobile"],
+    walletFeatures: {
+      platforms: ["ios", "android", "browser"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance", "qr-claim"],
+      type: "light",
+    },
   },
   {
     title: "Cardano Token and NFT Builder",
@@ -486,6 +517,12 @@ export const Showcases = [
     website: "https://typhonwallet.io",
     source: null,
     tags: ["favorite", "wallet", "nft"],
+    walletFeatures: {
+      platforms: ["browser"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance"],
+      type: "light",
+    },
   },
   {
     title: "Staking Rewards Calculator",
@@ -573,6 +610,12 @@ export const Showcases = [
     website: "https://gamechanger.finance",
     source: null,
     tags: ["wallet", "nft"],
+    walletFeatures: {
+      platforms: ["browser", "web"],
+      custody: "non-custodial",
+      features: ["nft", "dapp-connector", "multi-asset"],
+      type: "light",
+    },
   },
   {
     title: "GeroWallet",
@@ -583,6 +626,12 @@ export const Showcases = [
     website: "https://gerowallet.io",
     source: null,
     tags: ["wallet"],
+    walletFeatures: {
+      platforms: ["browser"],
+      custody: "non-custodial",
+      features: ["staking", "dapp-connector"],
+      type: "light",
+    },
   },
   {
     title: "Built on Cardano",
@@ -675,10 +724,17 @@ export const Showcases = [
     description:
       "Non-custodial, multi-chain wallet with in-app DEX.",
     preview: require("./app-images/nufiwallet.png"),
+    icon: "/img/app-icons/nufi.png",
     website: "https://nu.fi",
     source: null,
     tags: [ "wallet", "dex", "nft"],
-  }, 
+    walletFeatures: {
+      platforms: ["browser"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "dex", "hardware-wallet"],
+      type: "light",
+    },
+  },
   {
     title: "Carda Station",
     description: 
@@ -778,6 +834,12 @@ export const Showcases = [
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
     tags: ["favorite", "wallet", "nft", "opensource"],
+    walletFeatures: {
+      platforms: ["browser"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "governance"],
+      type: "light",
+    },
   },
   {
     title: "Do it with Lovelace",
@@ -817,6 +879,12 @@ export const Showcases = [
     website: "https://www.vespr.xyz/#/",
     source: null,
     tags: ["favorite", "wallet", "nft", "mobile"],
+    walletFeatures: {
+      platforms: ["ios", "android"],
+      custody: "non-custodial",
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "governance", "qr-claim", "easy-setup"],
+      type: "light",
+    },
   },
   {
     title: "DexHunter",
@@ -883,9 +951,16 @@ export const Showcases = [
     description:
         "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
     preview: require("./app-images/medusa_wallet_poster.png"),
+    icon: "/img/app-icons/medusa.jpg",
     website: "https://adawallet.io",
     source: null,
     tags: ["wallet"],
+    walletFeatures: {
+      platforms: ["web"],
+      custody: "non-custodial",
+      features: ["staking"],
+      type: "light",
+    },
    },
   {
     title: "Danogo",
@@ -906,6 +981,12 @@ export const Showcases = [
     website: "https://multisig.meshjs.dev/features",
     source: null,
     tags: ["governance", "wallet", "daotool"],
+    walletFeatures: {
+      platforms: ["web"],
+      custody: "non-custodial",
+      features: ["governance", "multi-asset"],
+      type: "light",
+    },
   },
   {
     title: "Tempo",
@@ -934,6 +1015,12 @@ export const Showcases = [
     website: "https://begin.is",
     source: null,
     tags: ["wallet", "nft", "mobile"],
+    walletFeatures: {
+      platforms: ["ios", "android", "browser"],
+      custody: "non-custodial",
+      features: ["nft", "dapp-connector", "hardware-wallet", "qr-claim", "easy-setup"],
+      type: "light",
+    },
   },
   {
     title: "Onboard Ninja",
@@ -1124,6 +1211,12 @@ export const Showcases = [
     website: "https://tokeo.io/",
     source: null,
     tags: ["wallet", "mobile"],
+    walletFeatures: {
+      platforms: ["ios", "android"],
+      custody: "non-custodial",
+      features: ["nft", "multi-asset", "qr-claim", "easy-setup"],
+      type: "light",
+    },
   },
   {
     title: "Empowa",
@@ -1440,6 +1533,7 @@ function ensureShowcaseValid(showcase) {
       "icon",
       "statsLabel",
       "statsNote",
+      "walletFeatures",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {
