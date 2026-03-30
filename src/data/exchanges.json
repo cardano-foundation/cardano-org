@@ -583,11 +583,22 @@
           "ada": true,
           "cnt": false
         },
-        {
+                {
           "name": "Kucoin",
           "link": "https://www.kucoin.com",
           "ada": true,
           "cnt": true
+        }
+      ]
+    },
+    "Turkey": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "Paribu",
+          "link": "https://www.paribu.com",
+          "ada": true,
+          "cnt": false
         }
       ]
     }

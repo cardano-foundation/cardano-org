@@ -29,6 +29,7 @@ const EXCHANGE_LOGOS = {
   "VALR": "/img/exchanges/valr.jpg",
   "LBank": "/img/exchanges/lbank.jpg",
   "OKX": "/img/exchanges/okx.jpg",
+  "Paribu": "/img/exchanges/paribu.png",
   "CoinEx": "/img/exchanges/CoinEx.svg",
 };
 
