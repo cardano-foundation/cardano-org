@@ -55,18 +55,13 @@ Real-time chat and quick discussions.
 - :portugal: Cardano Portuguese Official: https://t.me/CardanoPortugueseOfficial  
 - :earth_americas: Cardano North-America Official: https://t.me/CardanoNorthAmericaOfficial  
 - :india: Cardano India & Sri Lanka: https://t.me/cardano_india  
-- :earth_asia: Cardano South Asia: https://t.me/cardanosouthasia  
 - :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial  
-- :australia: Cardano Australia: https://t.me/CardanoAustralia  
-- 🇧🇷 Brazil: https://t.me/AdaBrasil  
-- 🇫🇷 France: https://t.me/CardanoFranceMain  
-- 🇲🇽 Mexico: https://t.me/CardanoMexico  
+- :australia: Cardano Australia: https://t.me/CardanoAustralia    
 - 🇮🇹 Italy: https://t.me/CardanoIT  
 - 🇷🇺 Russia : https://t.me/cardano_rus  
 - 🇷🇺 Russian Developers : https://t.me/CardanoRussianMain  
 - 🇪🇸 Spain: https://t.me/CardanoEsp  
-- 🇹🇷 Turkey: https://t.me/CardanoTurk  
-- 🇺🇸 USA: https://t.me/CardanoAmerica  
+- 🇹🇷 Turkey: https://t.me/CardanoTurk
 - :uk: Cardano UK: https://t.me/CardanoUK
 
 ## Add your community
