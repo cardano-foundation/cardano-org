@@ -30,7 +30,7 @@
     "@popperjs/core": "^2.11.8",
     "@tippyjs/react": "^4.2.6",
     "@xyflow/react": "^12.5.5",
-    "axios": "^1.13.2",
+    "axios": "1.13.2",
     "buffer": "^6.0.3",
     "clsx": "^2.0.0",
     "crypto-browserify": "^3.12.1",
