@@ -1504,7 +1504,8 @@ export const Showcases = [
     website: "https://server-tools.grahamsnumberplus1.com/quiz_V1000/quiz-V1000.html",
     source: null,
     tags: ["educational"],
-  },  
+  },
+  {
     title: "TapDano",
     description: "Enterprise-grade verifiable proof infrastructure combining NFC hardware identity with immutable on-chain records. Enables cryptographically signed, bilateral proof of attendance and corporate compliance actions on Cardano.",
     preview: require("./app-images/tapdano.png"),
