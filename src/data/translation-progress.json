@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-01T06:28:05.129Z",
+  "lastUpdated": "2026-04-02T06:20:11.059Z",
   "languages": [
     {
       "id": "de",
@@ -7,13 +7,13 @@
       "translationProgress": 55,
       "approvalProgress": 0,
       "words": {
-        "total": 38024,
+        "total": 37998,
         "translated": 21105,
         "preTranslateAppliedTo": 0,
         "approved": 13
       },
       "phrases": {
-        "total": 3570,
+        "total": 3560,
         "translated": 1828,
         "preTranslateAppliedTo": 0,
         "approved": 5
@@ -25,16 +25,16 @@
       "translationProgress": 28,
       "approvalProgress": 23,
       "words": {
-        "total": 38024,
-        "translated": 10716,
+        "total": 37998,
+        "translated": 10690,
         "preTranslateAppliedTo": 0,
-        "approved": 8810
+        "approved": 8784
       },
       "phrases": {
-        "total": 3570,
-        "translated": 1524,
+        "total": 3560,
+        "translated": 1514,
         "preTranslateAppliedTo": 0,
-        "approved": 1184
+        "approved": 1174
       }
     },
     {
@@ -43,14 +43,14 @@
       "translationProgress": 14,
       "approvalProgress": 0,
       "words": {
-        "total": 38024,
-        "translated": 5597,
+        "total": 37998,
+        "translated": 5584,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
-        "total": 3570,
-        "translated": 786,
+        "total": 3560,
+        "translated": 781,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }
@@ -61,13 +61,13 @@
       "translationProgress": 5,
       "approvalProgress": 0,
       "words": {
-        "total": 38024,
+        "total": 37998,
         "translated": 2029,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
-        "total": 3570,
+        "total": 3560,
         "translated": 424,
         "preTranslateAppliedTo": 0,
         "approved": 0
