@@ -602,37 +602,37 @@
     "message": "Su nombre viene de Ada Lovelace: una matemática del siglo XIX que es reconocida como la primera programadora de computación, y es hija del poeta Lord Byron."
   },
   "whatIsAda.section.description2": {
-    "message": "Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value – without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain."
+    "message": "Ada es una moneda digital. Cualquier usuario, ubicado en cualquier lugar del mundo, puede usar ada como un intercambio seguro de valor, sin necesidad de que un tercero medie en el intercambio. Cada transacción se registra de forma permanente, segura y transparente en el blockchain de Cardano."
   },
   "whatIsAda.section.description3": {
-    "message": "Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or found and run your own stake pool to increase the pool's likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform."
+    "message": "Cada titular de ada también tiene una participación en la red de Cardano. El ada almacenado en una cartera puede ser delegado a un \"stake pool\" para ganar recompensas y participar en el seguro funcionamiento de la red o crear y operar su propio \"stake pool\". Con el tiempo, ada también será utilizable para una variedad de aplicaciones y servicios en la plataforma Cardano."
   },
   "whatIsAda.section.quote": {
-    "message": "What can I do with ada?"
+    "message": "¿Qué puedo hacer con ada?"
   },
   "howToBuyAda.title": {
-    "message": "How Do I Buy/Sell Ada?"
+    "message": "¿Cómo Compro/Vendo Ada?"
   },
   "howToBuyAda.description1": {
-    "message": "There are many ways to obtain ada to use the Cardano blockchain. Find out on {whereToGetAdaLink}"
+    "message": "Hay muchas maneras de obtener ada para usar la blockchain de Cardano. Descubre en {whereToGetAdaLink}"
   },
   "howToBuyAda.whereToGetAdaLink": {
-    "message": "where to get ada?"
+    "message": "¿dónde obtener ada?"
   },
   "howToBuyAda.description2": {
-    "message": "As an ada holder, it is important to keep your funds secure, and that means you need to keep your private keys private. It is highly recommended to avoid keeping your cryptocurrency in an exchange longer than necessary, and instead to use a cryptocurrency wallet."
+    "message": "Como titular de ada, es importante mantener sus fondos seguros, y eso significa que necesitas mantener sus claves privadas seguras. Es altamente recomendable evitar mantener la criptomoneda en un intercambio más tiempo de lo necesario, y en su lugar utilizar una cartera de criptomonedas."
   },
   "walletSection.typhon.title": {
     "message": "Typhon Wallet"
   },
   "walletSection.typhon.text": {
-    "message": "Blazing fast, feature-rich, secure, beautiful web and extension Cardano wallet. Delegate to multiple pools of your choice with multi-accounts."
+    "message": "Super rápida, múltiples opciones, segura y bien diseñada cartera, disponible para web y extensiones para el navegador. Delega a múltiples pools de tu elección con cuentas múltiples."
   },
   "walletSection.typhon.subtext": {
-    "message": "Browser extension for Chrome, Brave and Edge"
+    "message": "Extensión del navegador para Chrome, Brave y Edge"
   },
   "walletSection.typhon.label": {
-    "message": "Get Typhon"
+    "message": "Obtén Typhon"
   },
   "walletSection.vespr.title": {
     "message": "VESPR Wallet"
