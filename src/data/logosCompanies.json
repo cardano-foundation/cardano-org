@@ -122,6 +122,13 @@
     "showCompanyName": true
   },
   {
+    "companyName": "Dune Innovations",
+    "imageName": "dune-innovations",
+    "link": "https://www.duneinnovations.com",
+    "knownFor": "Adastack.io",
+    "showCompanyName": false
+  },
+  {
     "companyName": "DexHunter",
     "imageName": "dexhunter",
     "link": "https://www.dexhunter.io/",
