@@ -638,85 +638,85 @@
     "message": "VESPR Wallet"
   },
   "walletSection.vespr.text": {
-    "message": "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use."
+    "message": "VESPR es una cartera móvil no custodia para la red de Cardano, que prioriza la seguridad y custodia de sus activos digitales, garantizando al mismo tiempo una facilidad de uso excepcional."
   },
   "walletSection.vespr.subtext": {
-    "message": "App for iOS and Android"
+    "message": "Aplicación para iOS y Android"
   },
   "walletSection.vespr.label": {
-    "message": "Get VESPR"
+    "message": "Obtener VESPR"
   },
   "walletSection.yoroi.title": {
     "message": "Yoroi Wallet"
   },
   "walletSection.yoroi.text": {
-    "message": "A user-friendly, [open-source](https://github.com/Emurgo/yoroi-frontend) Cardano wallet with a browser-based interface, providing a convenient way to manage ada holdings securely. Yoroi is also available as mobile app."
+    "message": "Una billetera de Cardano, fácil de usar, [open-source](https://github.com/Emurgo/yoroi-frontend) con una interfaz basada en el navegador, proporcionando una manera conveniente de gestionar las tenencias de ada de forma segura. También está disponible como aplicación móvil."
   },
   "walletSection.yoroi.subtext": {
-    "message": "Browser extension and app for iOS and Android"
+    "message": "Extensión del navegador y aplicación para iOS y Android"
   },
   "walletSection.yoroi.label": {
-    "message": "Get Yoroi"
+    "message": "Obtén Yoroi"
   },
   "walletSection.eternl.title": {
     "message": "Eternl Wallet"
   },
   "walletSection.eternl.text": {
-    "message": "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community. Eternl is also available as mobile app."
+    "message": "El monedero liviano alternativo de Cardano en el navegador. Tiene por objeto añadir características más solicitadas por la comunidad de Cardano. Eternl también está disponible como aplicación móvil."
   },
   "walletSection.eternl.subtext": {
-    "message": "Browser extension and app for iOS and Android"
+    "message": "Extensión del navegador y aplicación para iOS y Android"
   },
   "walletSection.eternl.label": {
-    "message": "Get Eternl"
+    "message": "Obtén Eternl"
   },
   "walletSection.lace.title": {
     "message": "Lace Wallet"
   },
   "walletSection.lace.text": {
-    "message": "An [open-source](https://github.com/input-output-hk/lace) light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3."
+    "message": "Una plataforma ligera [open-source](https://github.com/input-output-hk/lace) de IOG, uno de los creadores de Cardano. Verificado manualmente por un auditor independiente, Lace le permite administrar de forma rápida, fácil y segura sus activos digitales y disfrutar de Web3."
   },
   "walletSection.lace.subtext": {
-    "message": "Browser extension for Chrome, Brave"
+    "message": "Extensión del navegador para Chrome, Brave y Edge"
   },
   "walletSection.lace.label": {
-    "message": "Get Lace"
+    "message": "Obtener Lace"
   },
   "walletSection.daedalus.title": {
     "message": "Daedalus Wallet"
   },
   "walletSection.daedalus.text": {
-    "message": "The [open-source](https://github.com/input-output-hk/daedalus) full node wallet for Cardano. It offers enhanced control and security by maintaining a complete copy of the blockchain, but this comes at the cost of a more complex user experience. As a result, they are typically geared towards professional users who require these advanced features."
+    "message": "La [open-source](https://github.com/input-output-hk/daedalus) cartera de nodo completa para Cardano. Ofrece mayor control y seguridad manteniendo una copia completa de la blockchain, pero esto se hace a costa de una experiencia de usuario más compleja. Como resultado, normalmente se orientan hacia usuarios profesionales que requieren estas características avanzadas."
   },
   "walletSection.daedalus.subtext": {
-    "message": "Only for powerful desktop PCs"
+    "message": "Sólo para potentes PCs de escritorio"
   },
   "walletSection.daedalus.label": {
-    "message": "Get Daedalus"
+    "message": "Obtén Daedalus"
   },
   "walletSection.explore.title": {
-    "message": "Explore Apps"
+    "message": "Explorar aplicaciones"
   },
   "walletSection.explore.text": {
-    "message": "Discover a wide variety of wallets designed to facilitate your interaction."
+    "message": "Descubra una amplia variedad de carteras diseñadas para facilitar su interacción."
   },
   "walletSection.explore.label": {
-    "message": "More Wallets"
+    "message": "Más billeteras"
   },
   "walletSection.divider": {
     "message": "Cardano Wallets"
   },
   "walletSection.disclaimer": {
-    "message": "The example applications are provided for informational purposes only and not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+    "message": "Las aplicaciones de ejemplo se proporcionan sólo con fines informativos y no están respaldadas o aprobadas. Su uso es estrictamente bajo su propio riesgo. Las descripciones han sido proporcionadas por los respectivos equipos de proyecto."
   },
   "walletSection.storageTitle": {
-    "message": "How Do I Store My Ada And Keep It Safe?"
+    "message": "¿Cómo almaceno mi Ada y lo mantengo seguro?"
   },
   "walletSection.storageDescription1": {
-    "message": "A cryptocurrency wallet is a software program designed to store your public and private keys, send and receive digital currencies, monitor your balance, and interact with supported blockchains."
+    "message": "Una cartera de criptomonedas es un programa de software diseñado para almacenar sus claves públicas y privadas, envía y recibe monedas digitales, monitorea tu saldo e interactúa con blockchains soportados."
   },
   "walletSection.storageDescription2": {
-    "message": "In addition to the variation of wallets available, there are also two types of wallets: a hot wallet and a cold wallet."
+    "message": "Además de la variedad de carteras disponibles, también hay dos tipos de carteras: una cartera caliente y una cartera fría."
   },
   "walletSection.hotWalletText": {
     "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges."
