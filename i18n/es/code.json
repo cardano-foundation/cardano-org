@@ -812,7 +812,7 @@
     "message": "Crea una contraseña segura para proteger las transacciones diarias. Esta contraseña es diferente de tu frase de recuperación y asegura tu cartera en este dispositivo."
   },
   "getStarted.step3.verifyLabel": {
-    "message": "Verify your backup:"
+    "message": "Verifique su copia de seguridad:"
   },
   "getStarted.step3.verifyText": {
     "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
