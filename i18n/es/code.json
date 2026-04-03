@@ -815,10 +815,10 @@
     "message": "Verifique su copia de seguridad:"
   },
   "getStarted.step3.verifyText": {
-    "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
+    "message": "La mayoría de las billeteras le pedirán que confirme su frase de recuperación seleccionando palabras en orden. Esto asegura que la ha guardado correctamente."
   },
   "getStarted.step3.ready": {
-    "message": "Once these steps are complete, your wallet is ready to use!"
+    "message": "Una vez completados estos pasos, ¡tu billetera está lista para usar!"
   },
   "getStarted.step3.securityNote": {
     "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
