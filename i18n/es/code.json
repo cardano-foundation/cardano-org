@@ -821,16 +821,16 @@
     "message": "Una vez completados estos pasos, ¡tu billetera está lista para usar!"
   },
   "getStarted.step3.securityNote": {
-    "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
+    "message": "Si olvida su contraseña para gastos, puede restaurar su billetera usando su frase de recuperación."
   },
   "getStarted.step3.securityWarning": {
-    "message": "However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password."
+    "message": "Sin embargo, cualquiera que obtenga su frase de recuperación puede acceder completamente y vaciar su billetera sin necesidad de utilizar la contraseña de ingreso."
   },
   "getStarted.step3.checkbox": {
-    "message": "I've completed the wallet setup."
+    "message": "He completado la configuración de la billetera."
   },
   "getStarted.step4.title": {
-    "message": "Connect your wallet"
+    "message": "Conecte su billetera"
   },
   "getStarted.step4.description": {
     "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
