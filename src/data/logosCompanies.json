@@ -101,10 +101,10 @@
     "showCompanyName": true
   },
   {
-    "companyName": "Dano Foundation",
-    "imageName": "danogo",
+    "companyName": "Dano Finance",
+    "imageName": "dano-finance",
     "link": "https://app.danogo.io/about-us",
-    "knownFor": "Danogo",
+    "knownFor": "Dano Finance",
     "showCompanyName": false
   },
   {

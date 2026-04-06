@@ -1,10 +1,10 @@
 /*
  * APPS SECTION INFO
- * 
- * The Cardano applications page should be a place where someone new to the ecosystem 
- * can come to see what can be done - it should not be seen as a database where 
+ *
+ * The Cardano applications page should be a place where someone new to the ecosystem
+ * can come to see what can be done - it should not be seen as a database where
  * every project is promoted.
- * 
+ *
  * HOW TO ADD YOUR APP: See docs/get-involved/add-app.md
  */
 
@@ -47,7 +47,7 @@ export const Tags = {
     color: '#228660ff',  // Vibrant Green
   },
 
-  // Bridge 
+  // Bridge
   bridge: {
     label: "Bridge",
     description: "Projects that provide cross-chain bridge support.",
@@ -96,7 +96,7 @@ export const Tags = {
     color: '#D81B60',  // Hot Pink
   },
 
-  // Funding 
+  // Funding
   funding: {
     label: "Funding",
     description: "Projects aimed at providing funding assistance to individuals.",
@@ -104,7 +104,7 @@ export const Tags = {
     color: '#004BA0',  // Rich Blue
   },
 
-  // Game, don't tag your game with nft 
+  // Game, don't tag your game with nft
   game: {
     label: "Game",
     description: "Games on the Cardano blockchain.",
@@ -136,7 +136,7 @@ export const Tags = {
     color: '#212121',  // Solid Black
   },
 
-  // Lending 
+  // Lending
   lending: {
     label: "Lending",
     description: "Projects that provide lending and borrowing of ada.",
@@ -144,7 +144,7 @@ export const Tags = {
     color: '#9E1C1C',  // Deep Red
   },
 
-  // Marketplace 
+  // Marketplace
   marketplace: {
     label: "Marketplace",
     description: "Marketplace where you can buy or sell NFTs.",
@@ -160,7 +160,7 @@ export const Tags = {
     color: '#00ACC1',  // Bright Teal
   },
 
-  // Minting 
+  // Minting
   minting: {
     label: "Minting",
     description: "Minting Tool.",
@@ -168,7 +168,7 @@ export const Tags = {
     color: '#42A5F5',  // Light Blue
   },
 
-  // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site) 
+  // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site)
   mobile: {
     label: "Mobile",
     description: "Great mobile experience.",
@@ -251,7 +251,7 @@ export const Tags = {
 
 // Add your project to (THE END OF) this list.
 // Please don't add the "favorite"-tag yourself.
-// 
+//
 // ICON FIELD (optional):
 // - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
 // - Icons should be stored in /static/img/app-icons/ and referenced as string URLs
@@ -737,7 +737,7 @@ export const Showcases = [
   },
   {
     title: "Carda Station",
-    description: 
+    description:
       "Explore this virtual world on the moon with an in game avatar, and interact with other players through hangouts, games or events.",
     preview: require("./app-images/cardastation.png"),
     website: "https://cardastation.com/",
@@ -746,7 +746,7 @@ export const Showcases = [
   },
   {
     title: "CNFTLab Party",
-    description: 
+    description:
       "Tool for minting CNFTs, manage your policyID, create royalties and start minting in few seconds.",
     preview: require("./app-images/cnftlab-party.png"),
     website: "https://www.cnftlab.party/",
@@ -764,7 +764,7 @@ export const Showcases = [
   },
   {
     title: "Chainport",
-    description: 
+    description:
       "ChainPort is a next-gen hard-security blockchain bridge that lets you hop across EVM chains to Cardano at a click.",
     preview: require("./app-images/chainport.png"),
     website: "https://www.chainport.io/",
@@ -773,13 +773,13 @@ export const Showcases = [
   },
   {
     title: "Cardano Pet Registry",
-    description: 
+    description:
       "A virtually free, non profit, global pet registry system built on the Cardano blockchain, facilitates peer to peer pet rescue and historical proof of pet ownership.",
     preview: require("./app-images/petregistry.png"),
     website: "https://savepet.org",
     source: null,
     tags: ["identity"],
-  }, 
+  },
   {
     title: "Cardano Studio",
     description:
@@ -791,7 +791,7 @@ export const Showcases = [
   },
   {
     title: "Cardano Relay Map",
-    description: 
+    description:
       "Shows geographical distribution of Cardano stake pool relay nodes with flexible map features.",
     preview: require("./app-images/monadpool-relay-map.png"),
     website: "https://monadpool.com/cardano.html",
@@ -800,7 +800,7 @@ export const Showcases = [
   },
   {
     title: "Finitum Bridge",
-    description: 
+    description:
       "Move supported tokens cross-chain, from BSC to Cardano and vice versa.",
     preview: require("./app-images/finitum-bridge.png"),
     website: "https://finitum.io/bridge",
@@ -818,7 +818,7 @@ export const Showcases = [
   },
   {
     title: "adahandle",
-    description: 
+    description:
       "A standardized NFT that developers and users can use to associate an address with a custom and human-readable address.",
     preview: require("./app-images/adahandle.png"),
     website: "https://adahandle.com",
@@ -827,7 +827,7 @@ export const Showcases = [
   },
   {
     title: "Lace",
-    description: 
+    description:
       "A new light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
     preview: require("./app-images/lace.png"),
     icon: "/img/app-icons/lace.jpg",
@@ -852,7 +852,7 @@ export const Showcases = [
   },
   {
     title: "Aada.finance",
-    description: 
+    description:
       "Aada is a peer-to-peer lending and borrowing protocol on the Cardano blockchain.",
     preview: require("./app-images/aada-finance.png"),
     icon: "/img/app-icons/aada.finance.png",
@@ -963,12 +963,12 @@ export const Showcases = [
     },
    },
   {
-    title: "Danogo",
+    title: "Dano Finance",
     description:
-      "Danogo is a yield aggregator that provides lending and borrowing, obtaining optimized rates by combining data from multiple Cardano protocols.",
-    preview: require("./app-images/danogo.png"),
-    icon: "/img/app-icons/danogo.jpg",
-    statsLabel: "danogo",
+      "Dano Finance is a DeFi platform for lending, borrowing, and trading — all in one.",
+    preview: require("./app-images/dano-finance.png"),
+    icon: "/img/app-icons/dano-finance.png",
+    statsLabel: "dano-finance",
     website: "https://danogo.io/",
     source: null,
     tags: ["lending", "marketplace", "dex"],
@@ -1042,7 +1042,7 @@ export const Showcases = [
   },
   {
     title: "Veridian Wallet",
-    description: 
+    description:
       "Manages identity across platforms using decentralized public key infrastructure and verifiable credentials: ensuring data privacy and ownership with tamper proofing and quantum resistance. Built on KERI and optionally anchored to Cardano.",
     preview: require("./app-images/veridian2.png"),
     website: "https://www.veridian.id/",
