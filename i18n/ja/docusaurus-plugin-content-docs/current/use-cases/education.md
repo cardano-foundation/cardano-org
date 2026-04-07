@@ -1,39 +1,39 @@
 ---
-title: Education Credentials
-description: Blockchain-verified academic credentials on Cardano provide tamper-proof, instantly verifiable certifications
-sidebar_label: Education
+title: 教育資格証明
+description: Cardanoブロックチェーンによる改ざん不可能で即座に検証できる学術資格証明
+sidebar_label: 教育
 sidebar_position: 2
 ---
 
-# Education Credentials
+# 教育資格証明
 
-## The Challenge
+## 課題
 
-The issuance of academic certifications is heavily centralized and often opaque. Traditional paper-based credentials are easily forged, difficult to verify, and can be lost or damaged. Educational institutions face challenges in maintaining the integrity of their certifications, while employers struggle to verify the authenticity of candidates' qualifications.
+学術資格の発行は中央集権的で、不透明なことが多いのが現状です。従来の紙ベースの資格証明は偽造が容易で、検証が難しく、紛失や破損のリスクもあります。教育機関は資格の信頼性を維持することに課題を抱え、雇用者は候補者の資格の真正性を確認するのに苦労しています。
 
-The verification process is slow and costly, often requiring direct contact with issuing institutions. This creates friction in hiring processes and can disadvantage qualified candidates who obtained credentials from institutions that are difficult to reach or no longer exist.
+検証プロセスは遅くコストがかかり、多くの場合、発行機関への直接の問い合わせが必要です。これが採用プロセスの障壁となり、連絡が困難な機関や既に存在しない機関で資格を取得した候補者にとって不利に働くことがあります。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決策
 
-Cardano's blockchain-based identity and credentials solutions enable educational institutions to issue digital credentials that are:
+Cardanoのブロックチェーンベースのアイデンティティ・資格証明ソリューションにより、教育機関は以下のようなデジタル資格を発行できます。
 
-- **Tamper-proof**: Once recorded on the blockchain, credentials cannot be altered or forged
-- **Instantly verifiable**: Anyone can verify a credential's authenticity without contacting the issuing institution
-- **Portable**: Students own their credentials and can share them with any employer or institution
-- **Persistent**: Credentials remain valid and verifiable even if the issuing institution closes
+- **改ざん不可能**: ブロックチェーンに記録された資格は変更や偽造ができない
+- **即座に検証可能**: 発行機関に問い合わせることなく、誰でも資格の真正性を検証できる
+- **ポータブル**: 学生が自分の資格を所有し、どの雇用者や機関にも共有可能
+- **永続的**: 発行機関が閉鎖されても、資格は有効で検証可能であり続ける
 
-Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
+スマートコントラクトにより発行プロセスを自動化し、特定の要件を満たした場合にのみ資格が発行されるようにできます。これにより、学生、教育機関、雇用者のすべてにとって有益な、監査可能な学業実績の記録が生まれます。
 
-## Why Cardano
+## Cardanoが選ばれる理由
 
-- **Low transaction fees** make credential issuance economically viable at scale
-- **Energy-efficient proof of stake** aligns with educational institutions' sustainability goals
-- **Native token support** enables certification NFTs without additional smart contract complexity
-- **Aiken smart contracts** provide programmable verification logic
-- **Global accessibility** ensures credentials can be verified anywhere in the world
+- **低い取引手数料**により大規模な資格発行も経済的に実現可能
+- **省エネルギーなプルーフ・オブ・ステーク**が教育機関のサステナビリティ目標と整合
+- **ネイティブトークン対応**により追加のスマートコントラクトなしで資格NFTを発行可能
+- **Aikenスマートコントラクト**によるプログラマブルな検証ロジック
+- **グローバルなアクセシビリティ**により世界中どこでも資格の検証が可能
 
-## Get Started
+## はじめよう
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [CardanoのIDアプリケーションを探す](/apps/?tags=identity)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)

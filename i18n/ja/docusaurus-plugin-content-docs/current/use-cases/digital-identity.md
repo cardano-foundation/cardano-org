@@ -1,40 +1,40 @@
 ---
-title: Digital Identity
-description: Self-sovereign identity solutions on Cardano give users control over their personal data
-sidebar_label: Digital Identity
+title: デジタルID
+description: Cardano上の自己主権型アイデンティティソリューションにより、ユーザーが自分の個人データを管理できます
+sidebar_label: デジタルID
 sidebar_position: 3
 ---
 
-# Digital Identity
+# デジタルID
 
-## The Challenge
+## 課題
 
-In today's digital world, our identities are fragmented across countless platforms, each holding pieces of our personal information. Users have little control over how their data is used, shared, or monetized. Data breaches expose millions of records, identity theft is rampant, and proving who you are online remains cumbersome and privacy-invasive.
+今日のデジタル社会では、個人のアイデンティティが無数のプラットフォームに分散しており、それぞれが個人情報の一部を保持しています。ユーザーは自分のデータがどう使われ、共有され、収益化されているかをほとんどコントロールできません。データ漏洩により数百万件の記録が流出し、なりすまし犯罪は横行し、オンラインでの本人証明は依然として煩雑でプライバシーを侵害するものとなっています。
 
-Centralized identity systems create single points of failure and give disproportionate power to identity providers. Users must repeatedly share sensitive information, creating unnecessary exposure and friction in digital interactions.
+中央集権型のIDシステムは単一障害点を生み出し、IDプロバイダーに過度な権力を与えます。ユーザーは繰り返し機密情報を提供しなければならず、不要なリスクとデジタルでの摩擦を生んでいます。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決策
 
-Self-sovereign identity (SSI) on Cardano puts users in control of their digital identity. Key features include:
+Cardano上の自己主権型アイデンティティ（SSI）は、ユーザー自身がデジタルIDを管理できるようにします。主な特徴は以下の通りです。
 
-- **User ownership**: Individuals control their identity data and decide what to share
-- **Selective disclosure**: Share only the information needed for a specific transaction
-- **Verifiable credentials**: Third parties can cryptographically verify claims without accessing underlying data
-- **Decentralized identifiers (DIDs)**: Persistent identifiers that don't depend on any central authority
-- **Privacy preservation**: Zero-knowledge proofs can verify attributes without revealing them
+- **ユーザーによる所有権**: 個人が自分のID情報を管理し、何を共有するかを決定
+- **選択的開示**: 特定の取引に必要な情報のみを共有
+- **検証可能な資格情報**: 第三者が元データにアクセスすることなく、暗号学的に主張を検証可能
+- **分散型識別子（DID）**: 中央機関に依存しない永続的な識別子
+- **プライバシー保護**: ゼロ知識証明により、属性を明かさずに検証が可能
 
-With blockchain-based identity, users can prove they're over 18 without revealing their birthdate, or prove they live in a certain country without revealing their address.
+ブロックチェーンベースのIDにより、ユーザーは生年月日を明かさずに18歳以上であることを証明したり、住所を明かさずに特定の国に居住していることを証明したりできます。
 
-## Why Cardano
+## Cardanoが選ばれる理由
 
-- **Formal verification methods** ensure identity smart contracts behave as intended
-- **Extended UTXO model** provides predictable transaction costs for identity operations
-- **Interoperability focus** enables identity credentials to work across different systems
-- **Strong governance** ensures the platform evolves with community input
-- **Scalability roadmap** supports identity solutions at global scale
+- **形式検証手法**によりIDスマートコントラクトが意図通りに動作することを保証
+- **拡張UTXOモデル**によりID関連操作の取引コストが予測可能
+- **相互運用性の重視**により、異なるシステム間でID資格情報を利用可能
+- **強固なガバナンス**によりコミュニティの意見を反映したプラットフォームの進化を実現
+- **スケーラビリティのロードマップ**がグローバル規模のIDソリューションを支援
 
-## Get Started
+## はじめよう
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [CardanoのIDアプリケーションを探す](/apps/?tags=identity)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)

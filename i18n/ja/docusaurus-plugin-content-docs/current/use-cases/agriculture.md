@@ -1,40 +1,40 @@
 ---
-title: Agriculture
-description: Farm-to-table traceability using Cardano blockchain for food supply chain transparency
-sidebar_label: Agriculture
+title: 農業
+description: Cardanoブロックチェーンを活用した食品サプライチェーンの透明性と農場から食卓までのトレーサビリティ
+sidebar_label: 農業
 sidebar_position: 8
 ---
 
-# Agriculture
+# 農業
 
-## The Challenge
+## 課題
 
-Modern food supply chains are complex and opaque. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
+現代の食品サプライチェーンは複雑で不透明です。消費者は食品の産地、生産方法、オーガニックやフェアトレード、サステナブルといった表示が本当かどうかを知りたいと考えるようになっています。食品偽装による被害額は世界全体で年間推定400億ドルにのぼります。
 
-For farmers and producers, proving the quality and origin of their products is difficult and expensive. Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
+農家や生産者にとって、自らの製品の品質や産地を証明するのは難しくコストがかかります。仲介業者が利益の多くを占め、生産者は市場での差別化に苦労しています。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決策
 
-Blockchain technology creates an immutable record of a product's journey from farm to table:
+ブロックチェーン技術により、農場から食卓までの製品の流れを改ざん不可能な形で記録できます。
 
-- **Origin verification**: Prove exactly where products come from and how they were produced
-- **Quality assurance**: Record temperature, handling, and other quality metrics throughout the supply chain
-- **Certification tracking**: Verify organic, fair trade, and other certifications at every step
-- **Fraud prevention**: Immutable records make it difficult to substitute or mislabel products
-- **Consumer transparency**: End consumers can scan a product and see its complete history
+- **産地証明**: 製品がどこでどのように生産されたかを正確に証明
+- **品質保証**: サプライチェーン全体を通じて温度や取り扱いなどの品質指標を記録
+- **認証追跡**: オーガニック、フェアトレードなどの認証をあらゆる段階で検証
+- **偽装防止**: 改ざん不可能な記録により、製品のすり替えや偽表示を困難に
+- **消費者への透明性**: 消費者が製品をスキャンするだけで、完全な履歴を確認可能
 
-Smart contracts can automate payments to farmers when products meet quality standards, reducing delays and disputes while ensuring fair compensation.
+スマートコントラクトにより、製品が品質基準を満たした際に農家への支払いを自動化し、遅延や紛争を減らして公正な報酬を確保できます。
 
-## Why Cardano
+## Cardanoが選ばれる理由
 
-- **Low transaction costs** make tracking even low-value agricultural products economically viable
-- **Sustainability credentials** align with environmental claims in the agriculture sector
-- **Interoperability** enables integration with existing agricultural management systems
-- **Global accessibility** supports smallholder farmers in developing regions
-- **Proven deployments** demonstrate real-world agricultural traceability
+- **低い取引コスト**により、低価格の農産物でも経済的に追跡が可能
+- **サステナビリティへの取り組み**が農業分野の環境配慮と整合
+- **相互運用性**により既存の農業管理システムとの統合が可能
+- **グローバルなアクセシビリティ**が途上国の小規模農家をサポート
+- **実績のある導入事例**が農業トレーサビリティの実用性を実証
 
-## Get Started
+## はじめよう
 
-- [Explore supply chain solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [サプライチェーンソリューションを見る](/solutions)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)

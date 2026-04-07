@@ -1,40 +1,40 @@
 ---
-title: Healthcare
-description: Portable, secure health records using Cardano blockchain technology
-sidebar_label: Healthcare
+title: ヘルスケア
+description: Cardanoブロックチェーン技術を活用した、ポータブルで安全な医療記録
+sidebar_label: ヘルスケア
 sidebar_position: 15
 ---
 
-# Healthcare
+# ヘルスケア
 
-## The Challenge
+## 課題
 
-Healthcare data is fragmented across providers, making it difficult for patients and doctors to access complete medical histories. This fragmentation leads to repeated tests, dangerous drug interactions, and delayed diagnoses. In emergencies, critical information may be unavailable.
+医療データは複数の医療機関に分散しており、患者や医師が完全な病歴にアクセスすることが困難です。この分断は、検査の重複、危険な薬物相互作用、診断の遅れにつながります。緊急時には、重要な情報が手に入らない場合もあります。
 
-Current systems also create privacy and security risks. Centralized databases are attractive targets for hackers, and patients have limited control over who accesses their sensitive health information.
+現行のシステムには、プライバシーとセキュリティのリスクもあります。中央集権型のデータベースはハッカーの標的になりやすく、患者は自分の機密性の高い健康情報に誰がアクセスしているかをほとんどコントロールできません。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決
 
-Blockchain-based health records give patients control over their complete medical history:
+ブロックチェーンベースの医療記録により、患者が自分自身の完全な病歴を管理できるようになります。
 
-- **Patient ownership**: Individuals control access to their health data
-- **Portability**: Access records from any provider, anywhere in the world
-- **Interoperability**: Standardized data formats enable information sharing
-- **Audit trails**: Track who accessed records and when
-- **Selective sharing**: Share only relevant information with each provider
+- **患者によるデータ所有**: 個人が自分の健康データへのアクセスを管理
+- **ポータビリティ**: 世界中のどの医療機関からでも記録にアクセス可能
+- **相互運用性**: 標準化されたデータ形式により情報共有がスムーズに
+- **監査証跡**: 誰がいつ記録にアクセスしたかを追跡
+- **選択的な情報共有**: 各医療機関に必要な情報のみを共有
 
-Smart contracts can automate consent management, ensuring providers only access data they're authorized to see while maintaining compliance with healthcare regulations.
+スマートコントラクトで同意管理を自動化すれば、医療規制に準拠しながら、許可された医療機関だけがデータにアクセスできる仕組みを実現できます。
 
-## Why Cardano
+## なぜCardanoなのか
 
-- **Privacy features** protect sensitive health information
-- **Security** through proven cryptographic protocols
-- **Interoperability focus** enables healthcare system integration
-- **Global accessibility** supports healthcare across borders
-- **Regulatory compliance** capabilities for HIPAA and similar requirements
+- **プライバシー機能**: 機密性の高い健康情報を保護
+- **セキュリティ**: 実証済みの暗号プロトコルによる安全性
+- **相互運用性を重視**: 医療システムとの統合が可能
+- **グローバルなアクセス性**: 国境を越えた医療を支援
+- **規制準拠**: HIPAAなどの規制要件への対応力
 
-## Get Started
+## はじめる
 
-- [Explore Cardano applications](/apps)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Cardanoのアプリケーションを探す](/apps)
+- [開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)
