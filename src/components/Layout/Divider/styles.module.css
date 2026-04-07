@@ -45,6 +45,11 @@
   background-color: #ffffff !important; 
 }
 
+.header h6 :global(.hash-link) {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Responsive styles */
 @media (max-width: 599px) {
   .horizontalBar {
