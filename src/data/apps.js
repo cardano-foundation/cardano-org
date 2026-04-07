@@ -72,6 +72,14 @@ export const Tags = {
     color: '#37BEB0',  // Bright Cyan
   },
 
+  // Distribution
+  distribution: {
+    label: "Distribution",
+    description: "Platforms for distributing tokens, airdrops, and rewards to the Cardano community.",
+    icon: null,
+    color: '#E07850',  // Warm Coral
+  },
+
   // DEX
   dex: {
     label: "DEX",
@@ -580,7 +588,7 @@ export const Showcases = [
     icon: "/img/app-icons/dripdropz.jpg",
     website: "https://dripdropz.io",
     source: null,
-    tags: ["minting"],
+    tags: ["distribution"],
   },
   {
     title: "ADAZOO MMORPG and Metaverse",
@@ -1029,7 +1037,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "minting", "nft"],
+    tags: ["favorite", "distribution", "nft"],
   },
     {
     title: "Stuff.io",
