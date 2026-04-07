@@ -833,31 +833,31 @@
     "message": "Conecte su billetera"
   },
   "getStarted.step4.description": {
-    "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
+    "message": "Utilice su billetera como una única cuenta para aplicaciones y proyectos en Cardano. Un conector de billetera, como el que se muestra a continuación, permite a los sitios web conectarse de forma segura a su billetera para que pueda interactuar sin crear cuentas separadas o contraseñas."
   },
   "getStarted.step4.securityNote": {
-    "message": "When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing."
+    "message": "Cuando aprueba una conexión o transacción, está otorgando a ese sitio permisos específicos. Compruebe siempre la dirección del sitio web y revise lo que se le pide que apruebe antes de continuar."
   },
   "getStarted.step4.checkbox": {
-    "message": "I've connected my wallet."
+    "message": "He conectado mi billetera."
   },
   "getStarted.step5.title": {
-    "message": "Get ada"
+    "message": "Obtener Ada"
   },
   "getStarted.step5.description": {
-    "message": "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain."
+    "message": "Obtén ada, criptomoneda nativa de Cardano, para empezar a usar la blockchain."
   },
   "getStarted.step5.heading": {
-    "message": "Where to get ada"
+    "message": "Donde conseguir ada"
   },
   "getStarted.step5.text": {
-    "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
+    "message": "Hay varias maneras de obtener ada, pero el método más común es comprarlo en bolsas de criptomoneda usando monedas fiat u otras criptomonedas."
   },
   "getStarted.step5.button": {
-    "message": "View all options →"
+    "message": "Ver todas las opciones →"
   },
   "getStarted.step5.securityNote": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de juegos para estafadores."
   },
   "getStarted.step5.checkbox": {
     "message": "I have ada in my wallet."
