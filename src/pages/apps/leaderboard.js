@@ -110,6 +110,7 @@ const metadataInfo = {
   1668:  { name: 'Begin dApp Ratings',        category: 'Wallet' },
   1904:  { name: 'Supply Chain Verification', category: null },
   8413:  { name: 'CommitProof',  category: 'Notary', appLabel: 'commitproof' },
+  8414:  { name: 'Claimpaign',  category: 'Minting', appLabel: 'claimpaign' },
 };
 
 const metadataGroups = {

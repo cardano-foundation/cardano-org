@@ -1510,7 +1510,18 @@ export const Showcases = [
     website: "https://tapdano.com",
     source: null,
     tags: ["identity", "notary"],
-  }
+  },
+  {
+    title: "Claimpaign",
+    description:
+      "Cardano airdrop tool built for real-world token distribution. Instead of sending tokens to random wallets, you create QR code claim campaigns that put recipients in control. (based on CIP-99)",
+    preview: require("./app-images/claimpaign.png"),
+     icon: "/img/app-icons/claimpaign.png",
+     statsLabel: "claimpaign",
+    website: "https://claimpaign.com",
+    source: null,
+    tags: ["minting", "nft"],
+  },
 ];
 
 export const TagList = Object.keys(Tags);
