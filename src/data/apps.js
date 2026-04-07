@@ -1520,7 +1520,7 @@ export const Showcases = [
      statsLabel: "claimpaign",
     website: "https://claimpaign.com",
     source: null,
-    tags: ["minting", "nft"],
+    tags: ["distribution", "nft"],
   },
 ];
 
