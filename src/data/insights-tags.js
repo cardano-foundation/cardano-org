@@ -34,4 +34,8 @@ export const InsightsTags = {
     label: 'Blocks',
     color: '#D84315', // Deep Orange
   },
+  ecosystem: {
+    label: 'Ecosystem',
+    color: '#00897B', // Teal
+  },
 };

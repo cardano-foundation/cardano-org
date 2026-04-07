@@ -338,7 +338,7 @@ export const Showcases = [
     tags: ["explorer"],
   },
   {
-    title: "Cardano Explorer Landing Page",
+    title: "Cardano Explorers",
     description:
       "List of Cardano Explorers built by the community for the community.",
     preview: require("./app-images/cf-explorer.png"),
@@ -484,7 +484,7 @@ export const Showcases = [
     tags: ["wallet", "mobile"],
   },
   {
-    title: "Cardano Token and NFT Builder",
+    title: "Token & NFT Builder",
     description:
       "Create your own native tokens and NFT in a few clicks without any code.",
     preview: require("./app-images/token-builder.png"),
@@ -512,7 +512,7 @@ export const Showcases = [
     tags: ["wallet"],
   },
   {
-    title: "Staking Rewards Calculator",
+    title: "Staking Calculator",
     description:
       "A detailed Staking Rewards Calculator thats shows expected return to the operator and delegators of each pool based on the current and alternative network parameters. It also runs a Monte Carlo simulation to show possible variability in the return.",
     preview: require("./app-images/staking-rewards-calculator.png"),
@@ -521,7 +521,7 @@ export const Showcases = [
     tags: ["analytics", "educational"],
   },
   {
-    title: "Cardahub - A services hub on Cardano",
+    title: "Cardahub",
     description:
       "One stop shop for everything CNFT. A smart-contract NFT platform on Cardano where user can mint, distribute, list and buy NFT in a few clicks.",
     preview: require("./app-images/cardahub.png"),
@@ -570,7 +570,7 @@ export const Showcases = [
     tags: ["minting"],
   },
   {
-    title: "ADAZOO MMORPG and Metaverse",
+    title: "ADAZOO",
     description: "Start exploring ADAZOO, battle and capture CNFT's. Brag to your friends, show off your stats.",
     preview: require("./app-images/adazoo.png"),
     website: "https://adazoo.com",
@@ -813,7 +813,7 @@ export const Showcases = [
     tags: ["funding"],
   },
   {
-    title: "Continuity Token",
+    title: "Continuity",
     description:
       "$COTO provides secure, global and long-lasting cold storage backups of Cardano NFT media.",
     preview: require("./app-images/coto.png"),
@@ -875,7 +875,7 @@ export const Showcases = [
     tags: ["educational"],
   },
   {
-    title: "Cardano Governance Tool",
+    title: "GovTool",
     description:
       "A collection of tools to delegate voting power, become a DRep, become a direct voter, browse or proposa a governance actions on Cardano blockchain.",
     preview: require("./app-images/govtools.jpg"),
@@ -913,7 +913,7 @@ export const Showcases = [
     tags: ["yield", "lending"],
   },
   {
-    title: "Multisig Platform",
+    title: "Multisig",
     description:
       "Secure your treasury and participant in governance, as a team with multi-signature.",
     preview: require("./app-images/mesh-multisig-platform.jpg"),
@@ -995,7 +995,7 @@ export const Showcases = [
     tags: ["educational"],
   },
   {
-    title: "ADAM Cardano App",
+    title: "ADAM",
     description:
       "Are you looking for an efficient way to connect and track your ADA wallets? ADAM Cardano app for iOS and Android is designed to help track all your Cardano stacking rewards, wallets and funds from a single, cohesive interface. ADAM app also exclusively provides stunning price widgets, packed with valuable price insights.",
     preview: require("./app-images/adam.png"),
@@ -1004,7 +1004,7 @@ export const Showcases = [
     tags: ["accounting"],
   },
   {
-    title: "Cardano Governance Voting Tool",
+    title: "Governance Voting",
     description:
       "A simple tool to help every Cardano stakeholder participate in on-chain governance with confidence.",
     preview: require("./app-images/cf-voting-tool.png"),
@@ -1348,7 +1348,7 @@ export const Showcases = [
     tags: ["governance", "analytics"],
   },
   {
-    title: "Sundae Treasury Dashboard",
+    title: "Sundae Treasury",
     description:
       "A smart contract-based treasury management platform by Sundae Labs for transparent milestone-based fund disbursements from Cardano governance actions.",
     preview: require("./app-images/sundae-treasury.png"),
@@ -1357,7 +1357,7 @@ export const Showcases = [
     tags: ["governance", "opensource"],
   },
   {
-    title: "Cardano Supply Summary",
+    title: "Supply Summary",
     description:
       "Explore historical trends in Cardano's ada supply distribution, including reserves, rewards, treasury, and deposits across epochs.",
     preview: require("./app-images/cardano-supply-summary.png"),
@@ -1366,7 +1366,7 @@ export const Showcases = [
     tags: ["governance", "analytics"],
   },
   {
-    title: "CardanoCube Governance Actions",
+    title: "CardanoCube Gov",
     description:
       "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
     preview: require("./app-images/cardanocube-governance.png"),

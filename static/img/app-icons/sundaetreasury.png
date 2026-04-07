@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <script>
+          window.__APP_CONFIG = {"env":"cardano-tom","apiUrls":{"treasury":"https://api.treasury.sundae.fi/graphql"},"blockfrostApiKey":"mainnetucizn6bhrJ7qHSFJhCPBq9VgBgEBOkKZ","transactionAuthor":"1880102b04725318eb7a6f9f481815c82473c2f50cfe9932c85a3bf8"};
+          window.__BUILD_CONFIG = {"commitHash":"2d6fbbe347a031726f583a735002b95be9e4994a","buildId":"999.2d6fbbe","buildDate":1772077876170}
+        </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg" href="/favicon.svg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/entry/index-BLIv8dv-.js"></script>
+    <link rel="modulepreload" crossorigin href="/chunks/uplc-wasm-LQwpnbCM.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DV2kXa9e.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

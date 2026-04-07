@@ -1,0 +1,160 @@
+/* Ecosystem Map — poster layout for PNG export */
+
+.wrapper {
+  position: relative;
+}
+
+.poster {
+  width: 1920px;
+  height: 1080px;
+  background: #1b1b1d;
+  color: #e0e0e0;
+  padding: 40px 48px 32px;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable wrapper for viewing on smaller screens */
+.posterScroll {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.count {
+  font-size: 20px;
+  color: #999;
+  margin-left: auto;
+}
+
+.categoriesGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  min-height: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.categorySection {
+  border-left: 4px solid var(--cat-color, #555);
+  padding-left: 16px;
+}
+
+.categoryHeader {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cat-color, #aaa);
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subCategoryRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.subCategoryLabel {
+  font-size: 12px;
+  color: #888;
+  min-width: 110px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.appTile {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #2a2a2c;
+  border-radius: 6px;
+  padding: 3px 7px;
+  max-width: 180px;
+}
+
+.appIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.firstLetterFallback {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.appName {
+  font-size: 12px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  flex-shrink: 0;
+}
+
+.footerDate {
+  font-size: 13px;
+  color: #666;
+}
+
+.footerSite {
+  font-size: 13px;
+  color: #666;
+}
+
+.downloadButton {
+  margin-top: 16px;
+}
