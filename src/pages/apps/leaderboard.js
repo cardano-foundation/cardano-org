@@ -77,6 +77,7 @@ function getCategoryForApp(app) {
   if (tags.includes('game')) return 'Gaming';
   if (tags.includes('governance')) return 'Governance';
   if (tags.includes('bridge')) return 'Bridge';
+  if (tags.includes('distribution')) return 'Distribution';
   if (tags.includes('minting')) return 'Minting';
   if (tags.includes('notary')) return 'Notary';
   return 'Other';
@@ -110,7 +111,7 @@ const metadataInfo = {
   1668:  { name: 'Begin dApp Ratings',        category: 'Wallet' },
   1904:  { name: 'Supply Chain Verification', category: null },
   8413:  { name: 'CommitProof',  category: 'Notary', appLabel: 'commitproof' },
-  8414:  { name: 'Claimpaign',  category: 'Minting', appLabel: 'claimpaign' },
+  8414:  { name: 'Claimpaign',  category: 'Distribution', appLabel: 'claimpaign' },
 };
 
 const metadataGroups = {
@@ -178,6 +179,7 @@ const categoryColors = {
   'Gaming': '#008080',
   'Governance': '#673AB7',
   'Bridge': '#FFC107',
+  'Distribution': '#E07850',
   'Minting': '#42A5F5',
   'Notary': '#26A69A',
   'Not Listed': '#757575',
@@ -525,6 +527,7 @@ function CategoryCard({ category, txCount, totalTx, appCount, includes }) {
     'gaming': 'game',
     'governance': 'governance',
     'bridge': 'bridge',
+    'distribution': 'distribution',
     'minting': 'minting',
     'notary': 'notary',
     'not-listed': ''
