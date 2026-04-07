@@ -1,40 +1,40 @@
 ---
-title: Government Documents
-description: Tamper-proof official documents and records using Cardano blockchain technology
-sidebar_label: Government
+title: 行政文書
+description: Cardanoブロックチェーン技術による改ざん不可能な公文書・記録管理
+sidebar_label: 行政
 sidebar_position: 5
 ---
 
-# Government Documents
+# 行政文書
 
-## The Challenge
+## 課題
 
-Government-issued documents form the foundation of civic identity, yet they remain vulnerable to forgery, loss, and bureaucratic inefficiency. Birth certificates, property deeds, business licenses, and other official records are often paper-based, creating challenges for verification and portability.
+政府が発行する文書は市民のアイデンティティの基盤ですが、偽造、紛失、行政の非効率性に対して依然として脆弱です。出生証明書、不動産登記、事業許可証などの公文書は紙ベースであることが多く、その確認や持ち運びに課題があります。
 
-Citizens frequently face lengthy processes to obtain copies of their own documents, while government agencies struggle with record-keeping across jurisdictions. Document fraud undermines trust in institutions and creates real harm for individuals whose identities are misused.
+市民は自分自身の書類のコピーを取得するために長い手続きを強いられ、行政機関は管轄をまたぐ記録管理に苦労しています。文書の偽造は制度への信頼を損ない、不正利用された個人には深刻な被害をもたらします。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決
 
-Blockchain technology enables governments to issue and manage official documents with unprecedented security and efficiency:
+ブロックチェーン技術を活用することで、行政機関はかつてないセキュリティと効率性で公文書を発行・管理できます。
 
-- **Immutable records**: Once issued, documents cannot be altered without detection
-- **Instant verification**: Third parties can verify document authenticity without contacting issuing agencies
-- **Citizen control**: Individuals can access and share their documents securely
-- **Cross-border recognition**: Standardized digital documents facilitate international verification
-- **Audit trails**: Complete history of document issuance and verification
+- **改ざん不可能な記録**: 一度発行された文書は、改ざんがあれば即座に検知可能
+- **即時検証**: 第三者が発行機関に問い合わせることなく文書の真正性を確認
+- **市民による管理**: 個人が自らの文書に安全にアクセス・共有できる
+- **国境を越えた認証**: 標準化されたデジタル文書により国際的な検証が容易に
+- **監査証跡**: 文書の発行・検証の完全な履歴を記録
 
-Smart contracts can automate document issuance when conditions are met, reducing processing times and human error while maintaining security and compliance.
+スマートコントラクトにより、条件が満たされた際の文書発行を自動化でき、セキュリティとコンプライアンスを維持しながら処理時間とヒューマンエラーを削減できます。
 
-## Why Cardano
+## なぜCardanoなのか
 
-- **Proven security** through peer-reviewed cryptographic protocols
-- **Sustainability** aligns with government environmental commitments
-- **Transparency** supports public accountability requirements
-- **Scalability** handles document verification at national scale
-- **Interoperability** enables integration with existing government systems
+- **実証済みのセキュリティ**: 査読済みの暗号プロトコルによる高い安全性
+- **サステナビリティ**: 政府の環境目標と合致
+- **透明性**: 公的説明責任の要件に対応
+- **スケーラビリティ**: 国家規模の文書検証に対応可能
+- **相互運用性**: 既存の行政システムとの連携が可能
 
-## Get Started
+## はじめる
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Cardano上のIDアプリケーションを探す](/apps/?tags=identity)
+- [開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)

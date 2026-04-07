@@ -1,40 +1,40 @@
 ---
-title: Music & IP
-description: Direct royalty payments to artists through blockchain technology on Cardano
-sidebar_label: Music & IP
+title: 音楽と知的財産
+description: Cardanoのブロックチェーン技術を通じた、アーティストへの直接的なロイヤリティ支払い
+sidebar_label: 音楽と知的財産
 sidebar_position: 16
 ---
 
-# Music & Intellectual Property
+# 音楽と知的財産
 
-## The Challenge
+## 課題
 
-Artists and creators often receive a small fraction of the revenue their work generates. Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
+アーティストやクリエイターは、自身の作品が生み出す収益のごく一部しか受け取れないことが少なくありません。複雑なライセンス契約、不透明なロイヤリティ計算、多数の仲介業者の存在により、支払いはあらゆる段階で遅延・減額されます。作品が広く消費されているにもかかわらず、生計を立てるのに苦労しているクリエイターは数多くいます。
 
-Intellectual property rights are difficult to track and enforce in the digital age. Piracy is rampant, and even legitimate uses often fail to compensate creators fairly.
+デジタル時代において、知的財産権の追跡と執行は非常に困難です。海賊版は横行しており、正規の利用であってもクリエイターに適正な対価が支払われないケースが多いのが現状です。
 
-## How Blockchain Solves This
+## ブロックチェーンによる解決
 
-Blockchain technology enables direct relationships between creators and consumers:
+ブロックチェーン技術により、クリエイターとファンが直接つながる新しい関係が実現します。
 
-- **Direct payments**: Fans can support artists without intermediaries taking large cuts
-- **Transparent royalties**: Smart contracts automatically distribute payments to all rights holders
-- **Immutable ownership**: Prove creation and ownership of intellectual property
-- **Fractional rights**: Enable investment in creative works through tokenization
-- **Programmable licenses**: Smart contracts can enforce usage terms automatically
+- **ダイレクトペイメント**: 仲介業者に大きなマージンを取られることなく、ファンがアーティストを直接支援
+- **透明なロイヤリティ**: スマートコントラクトがすべての権利者に自動的に収益を分配
+- **改ざん不可能な所有権記録**: 知的財産の創作と所有を証明
+- **権利の分割所有**: トークン化によりクリエイティブ作品への投資を可能に
+- **プログラマブルライセンス**: スマートコントラクトが利用条件を自動的に執行
 
-NFTs and native tokens on Cardano enable new models for music distribution, from limited edition releases to ongoing royalty streams that fairly compensate all contributors.
+CardanoのNFTとネイティブトークンにより、限定リリースから、すべての貢献者に公正に報いる継続的なロイヤリティストリームまで、音楽配信の新しいモデルが可能になります。
 
-## Why Cardano
+## なぜCardanoなのか
 
-- **Low transaction fees** make micropayments to artists economically viable
-- **Native tokens** enable efficient representation of rights and royalties
-- **Smart contracts** automate fair distribution to all collaborators
-- **Community focus** aligns with artists seeking alternatives to corporate control
-- **Sustainability** through proof of stake appeals to environmentally conscious creators
+- **低い取引手数料**: アーティストへのマイクロペイメントを経済的に実現
+- **ネイティブトークン**: 権利やロイヤリティを効率的に表現
+- **スマートコントラクト**: すべてのコラボレーターへの公正な分配を自動化
+- **コミュニティ重視**: 企業支配に代わる選択肢を求めるアーティストと方向性が一致
+- **サステナビリティ**: プルーフ・オブ・ステークによる環境配慮が、エコ意識の高いクリエイターに支持
 
-## Get Started
+## はじめる
 
-- [Explore NFT marketplaces on Cardano](/apps/?tags=nft)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [CardanoのNFTマーケットプレイスを探す](/apps/?tags=nft)
+- [開発者向けリソース](https://developers.cardano.org)
+- [エンタープライズソリューションを見る](/solutions)
