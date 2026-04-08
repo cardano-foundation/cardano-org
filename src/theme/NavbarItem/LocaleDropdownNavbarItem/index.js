@@ -10,6 +10,10 @@ import progressData from '@site/src/data/translation-progress.json';
 const translationStats = {en: 100};
 progressData.languages.forEach((lang) => {
   translationStats[lang.id] = lang.translationProgress;
+  const shortCode = lang.id.split('-')[0];
+  if (shortCode !== lang.id) {
+    translationStats[shortCode] = lang.translationProgress;
+  }
 });
 
 // Progress bar component
