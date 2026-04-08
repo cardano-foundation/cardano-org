@@ -4,6 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
+import GovernancePulse from "@site/src/components/GovernancePulse";
 import GovernancePathsSection from "@site/src/components/GovernancePathsSection";
 import TermExplainer from "@site/src/components/TermExplainer";
 import QuizCard from "@site/src/components/QuizCard";
@@ -167,6 +168,7 @@ export default function Governance() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <GovernancePulse />
             <GovernanceRolesSection />
           </BoundaryBox>
         </BackgroundWrapper>
