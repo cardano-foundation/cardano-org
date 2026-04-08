@@ -1,40 +1,40 @@
 ---
-title: トークン化資産
-description: Cardano上のトークン化による実物資産の分割所有
-sidebar_label: トークン化資産
+title: Tokenized Assets
+description: Fractional ownership of real-world assets through tokenization on Cardano
+sidebar_label: Tokenized Assets
 sidebar_position: 13
 ---
 
-# トークン化資産
+# Tokenized Assets
 
-## 課題
+## The Challenge
 
-不動産、美術品、コモディティなど実物資産への投資には、多額の資金が必要で、複雑な法的・事務的手続きが伴います。そのため、歴史的に富裕層だけに限られてきた資産形成の機会から、大多数の人々が排除されています。
+Traditional investment in real-world assets like real estate, art, or commodities requires significant capital and involves complex legal and administrative processes. This excludes most people from wealth-building opportunities that have historically been reserved for the wealthy.
 
-投資できる人にとっても、資産の流動性が低いため、必要なときに資金を引き出しにくいという問題があります。売買や管理にかかるコストもリターンを圧迫します。
+Even for those who can invest, assets are often illiquid, making it difficult to access funds when needed. The overhead of buying, selling, and managing these assets further reduces returns.
 
-## ブロックチェーンによる解決
+## How Blockchain Solves This
 
-資産のトークン化は、実物資産の所有権をデジタルトークンに分割し、簡単に取引できるようにします。
+Asset tokenization divides ownership of real-world assets into digital tokens that can be easily traded:
 
-- **分割所有**: ビル、美術品、その他の価値ある資産の一部を所有可能
-- **流動性の向上**: 分散型取引所で24時間365日トークンを売買可能
-- **参入障壁の低減**: 最低投資額を下げ、より多くの人に機会を開放
-- **コンプライアンスの自動化**: スマートコントラクトにより規制要件を自動的に適用
-- **透明な所有記録**: すべての所有記録が公開検証可能
+- **Fractional ownership**: Own a piece of a building, artwork, or other valuable asset
+- **Increased liquidity**: Trade tokens 24/7 on decentralized exchanges
+- **Reduced barriers**: Lower minimum investments open opportunities to more people
+- **Automated compliance**: Smart contracts can enforce regulatory requirements
+- **Transparent ownership**: All ownership records are publicly verifiable
 
-トークン化は不動産、インフラ、コモディティ、コレクティブル、知的財産など、事実上あらゆる資産クラスに適用できます。
+Tokenization can apply to virtually any asset class: real estate, infrastructure, commodities, collectibles, intellectual property, and more.
 
-## なぜCardanoなのか
+## Why Cardano
 
-- **ネイティブトークン**: 効率的で安全な資産のデジタル表現を実現
-- **低トランザクション手数料**: 小口取引も経済的に成立
-- **規制への意識**: コンプライアンスに対応したトークン化スキームをサポート
-- **スマートコントラクトの安全性**: 形式検証手法による堅牢性の確保
-- **グローバルなアクセス**: 世界中から誰でも参加可能
+- **Native tokens** provide efficient, secure asset representation
+- **Low transaction fees** make small trades economically viable
+- **Regulatory awareness** supports compliant tokenization schemes
+- **Smart contract security** through formal verification methods
+- **Global accessibility** enables worldwide participation
 
-## はじめよう
+## Get Started
 
-- [Cardanoアプリケーションを探す](/apps)
-- [Cardano開発者向けリソース](https://developers.cardano.org)
-- [エンタープライズソリューションを見る](/solutions)
+- [Explore Cardano applications](/apps)
+- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [View Enterprise Solutions](/solutions)
