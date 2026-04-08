@@ -869,13 +869,13 @@
     "message": "Ahora que usted tiene una billetera y ada, usted está listo para explorar todo lo que Cardano tiene para ofrecer. Un buen lugar para comenzar es explorar aplicaciones populares."
   },
   "whereToGetAda.hero.title": {
-    "message": "Where to get ada?"
+    "message": "¿Dónde conseguir ada?"
   },
   "whereToGetAda.hero.description": {
-    "message": "There are many ways to obtain ada to use the Cardano blockchain."
+    "message": "Hay muchas maneras de obtener ada para usar la blockchain de Cardano."
   },
   "whereToGetAda.meta.title": {
-    "message": "Buy ada, Where to Get Cardano's Native Token"
+    "message": "Compra ada, Donde Obtener el Token Nativo de Cardano"
   },
   "whereToGetAda.meta.description": {
     "message": "Buy ada on centralized or decentralized exchanges, earn staking rewards, or receive it directly. Find the best way to get Cardano's native token."
