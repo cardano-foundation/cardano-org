@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
-const STORAGE_KEY = 'cardano-get-started-step';
+const DEFAULT_STORAGE_KEY = 'cardano-get-started-step';
 
 /**
  * StepIndicator - Displays the current step number out of total steps
@@ -30,12 +30,12 @@ function StepIndicator({ currentStep, totalSteps, onReset }) {
  * @param {Function} props.onStepChange - Callback function called when step changes
  * @param {boolean} props.walletConnected - External state to auto-check wallet connection step
  */
-export default function StepCard({ steps = [], initialStep = 1, onStepChange, walletConnected }) {
+export default function StepCard({ steps = [], initialStep = 1, onStepChange, walletConnected, storageKey = DEFAULT_STORAGE_KEY }) {
   // Load saved step from localStorage
   const getSavedStep = () => {
     if (typeof window === 'undefined') return initialStep;
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(storageKey);
       return saved ? parseInt(saved, 10) : initialStep;
     } catch (e) {
       return initialStep;
@@ -49,7 +49,7 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
-        localStorage.setItem(STORAGE_KEY, currentStep.toString());
+        localStorage.setItem(storageKey, currentStep.toString());
       } catch (e) {
         console.error('Failed to save step to localStorage', e);
       }
@@ -80,7 +80,7 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
     setChecked(false);
     if (typeof window !== 'undefined') {
       try {
-        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(storageKey);
       } catch (e) {
         console.error('Failed to clear localStorage', e);
       }
