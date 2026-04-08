@@ -51,7 +51,7 @@ export default function Divider({ text, id, white = false }) {
       <>
         <br />
         <div className={headerClass}>
-          <h6>{text}</h6>
+          <h6>{text}{id && <a className="hash-link" href={`#${id}`}>&#8203;</a>}</h6>
           <div className={styles.horizontalBar}></div>
         </div>
       </>
