@@ -1,9 +1,60 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import { convertLovelacesToAda } from "@site/src/utils/insights/numbers";
 import styles from "./styles.module.css";
+
+const ANIMATION_DURATION = 1500;
+
+function useCountUp(target, duration = ANIMATION_DURATION) {
+  const [value, setValue] = useState(0);
+  const frameRef = useRef(null);
+
+  useEffect(() => {
+    if (target == null || target === 0) {
+      setValue(target ?? 0);
+      return;
+    }
+
+    const start = performance.now();
+    const animate = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(eased * target);
+      if (progress < 1) {
+        frameRef.current = requestAnimationFrame(animate);
+      } else {
+        setValue(target);
+      }
+    };
+    frameRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
+  }, [target, duration]);
+
+  return value;
+}
+
+function AnimatedStat({ target, format, label }) {
+  const animated = useCountUp(target);
+  return (
+    <div className={styles.statCard}>
+      <span className={styles.statValue}>{format(animated)}</span>
+      <span className={styles.statLabel}>{label}</span>
+    </div>
+  );
+}
+
+function formatAdaValue(value) {
+  if (value == null) return "...";
+  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B ada`;
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M ada`;
+  return `${Math.round(value).toLocaleString()} ada`;
+}
 
 export default function GovernancePulse() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
@@ -64,53 +115,62 @@ export default function GovernancePulse() {
 
   if (error || !API_URL) return null;
 
-  const formatAda = (value) => {
-    if (value == null) return "...";
-    if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
-    if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
-    return value.toLocaleString();
-  };
-
-  const stats = [
-    {
-      label: translate({ id: "governance.pulse.treasury", message: "Treasury" }),
-      value: data ? `${formatAda(data.treasury)} ada` : "...",
-    },
-    {
-      label: translate({ id: "governance.pulse.activeProposals", message: "Active proposals" }),
-      value: data ? String(data.activeProposals) : "...",
-    },
-    {
-      label: translate({ id: "governance.pulse.epoch", message: "Current epoch" }),
-      value: data ? String(data.epoch) : "...",
-    },
-    {
-      label: translate({ id: "governance.pulse.enacted", message: "Actions enacted" }),
-      value: data ? String(data.enactedActions) : "...",
-    },
-  ];
+  if (!data) {
+    return (
+      <div className={styles.pulseWrapper}>
+        <div className={`row ${styles.statsRow}`}>
+          {[0, 1, 2, 3].map((i) => (
+            <div className="col col--3" key={i}>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>...</span>
+                <span className={styles.statLabel}>&nbsp;</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.pulseWrapper}>
       <div className={`row ${styles.statsRow}`}>
-        {stats.map((stat) => (
-          <div className="col col--3" key={stat.label}>
-            <div className={styles.statCard}>
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{stat.label}</span>
-            </div>
-          </div>
-        ))}
+        <div className="col col--3">
+          <AnimatedStat
+            target={data.treasury}
+            format={formatAdaValue}
+            label={translate({ id: "governance.pulse.treasury", message: "Treasury" })}
+          />
+        </div>
+        <div className="col col--3">
+          <AnimatedStat
+            target={data.activeProposals}
+            format={(v) => String(Math.round(v))}
+            label={translate({ id: "governance.pulse.activeProposals", message: "Active proposals" })}
+          />
+        </div>
+        <div className="col col--3">
+          <AnimatedStat
+            target={data.epoch}
+            format={(v) => String(Math.round(v))}
+            label={translate({ id: "governance.pulse.epoch", message: "Current epoch" })}
+          />
+        </div>
+        <div className="col col--3">
+          <AnimatedStat
+            target={data.enactedActions}
+            format={(v) => String(Math.round(v))}
+            label={translate({ id: "governance.pulse.enacted", message: "Actions enacted" })}
+          />
+        </div>
       </div>
-      {data && (
-        <p className={styles.pulseLine}>
-          <span className={styles.pulseDot} />
-          {translate(
-            { id: "governance.pulse.liveLine", message: "Epoch {epoch} is live. {count} proposals are being voted on right now." },
-            { epoch: data.epoch, count: data.activeProposals }
-          )}
-        </p>
-      )}
+      <p className={styles.pulseLine}>
+        <span className={styles.pulseDot} />
+        {translate(
+          { id: "governance.pulse.liveLine", message: "Epoch {epoch} is live. {count} proposals are being voted on right now." },
+          { epoch: data.epoch, count: data.activeProposals }
+        )}
+      </p>
     </div>
   );
 }
