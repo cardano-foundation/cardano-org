@@ -1,41 +1,41 @@
 ---
 title: DeFi
-description: Cardano上の分散型金融アプリケーションは、透明性とアクセシビリティを備えた金融サービスを提供します
+description: Decentralized finance applications on Cardano provide transparent, accessible financial services
 sidebar_label: DeFi
 sidebar_position: 6
 ---
 
-# 分散型金融（DeFi）
+# Decentralized Finance (DeFi)
 
-## 課題
+## The Challenge
 
-従来の金融システムでは、世界中で数十億人が銀行サービスを利用できずにいます。利用できる人にとっても、高い手数料、不透明な条件、資産の凍結やサービス拒否を一方的に行える中央集権的な管理が問題となっています。
+Traditional financial systems exclude billions of people worldwide who lack access to banking services. Even for those with access, financial services often come with high fees, opaque terms, and centralized control that can freeze assets or deny services arbitrarily.
 
-2008年の金融危機は、中央集権型金融システムのリスクを明らかにしました。大手金融機関の破綻が経済全体に連鎖し得ることが示されたのです。ユーザーは自分の預金がどう使われ、どのようなリスクにさらされているかをほとんど知ることができません。
+The 2008 financial crisis demonstrated the risks of centralized financial systems, where failures at major institutions can cascade through the entire economy. Users have little visibility into how their deposits are used or what risks they're exposed to.
 
-## ブロックチェーンによる解決策
+## How Blockchain Solves This
 
-Cardano上の分散型金融は、インターネット接続さえあれば誰でも利用できる、オープンで透明な金融サービスを提供します。
+Decentralized finance on Cardano provides open, transparent financial services accessible to anyone with an internet connection:
 
-- **パーミッションレスなアクセス**: 中央管理者の承認なしに誰でも参加可能
-- **透明な運用**: すべての取引とスマートコントラクトのロジックを公開監査可能
-- **ユーザー自身による資産管理**: 仲介者に頼ることなく自分の資産を管理
-- **コンポーザビリティ**: DeFiプロトコルを組み合わせて新しい金融商品を構築可能
-- **24時間365日稼働**: 営業時間やダウンタイムなく常時サービスを提供
+- **Permissionless access**: Anyone can participate without approval from centralized gatekeepers
+- **Transparent operations**: All transactions and smart contract logic are publicly auditable
+- **User custody**: Users maintain control of their assets without relying on intermediaries
+- **Composability**: DeFi protocols can be combined to create new financial products
+- **24/7 availability**: Services operate continuously without downtime or business hours
 
-CardanoのDeFiエコシステムには、分散型取引所（DEX）、レンディング・借入プラットフォーム、ステーブルコイン、イールド最適化プロトコルなどがあり、すべて安全で監査済みのスマートコントラクト上で稼働しています。
+Cardano's DeFi ecosystem includes decentralized exchanges (DEXs), lending and borrowing platforms, stablecoins, and yield optimization protocols, all operating on secure, audited smart contracts.
 
-## Cardanoが選ばれる理由
+## Why Cardano
 
-- **予測可能な手数料**：拡張UTXOモデルにより正確なコスト計画が可能
-- **形式検証**：スマートコントラクトの動作に対する数学的な保証
-- **ネイティブアセット**：トークン操作の複雑さと攻撃対象を軽減
-- **サステナビリティ**：プルーフ・オブ・ステークによる長期的な価値創造
-- **強力なコミュニティ**：革新的な金融アプリケーションを構築する開発者の集まり
+- **Predictable fees** through the extended UTXO model enable accurate cost planning
+- **Formal verification** provides mathematical guarantees about smart contract behavior
+- **Native assets** reduce complexity and attack surface for token operations
+- **Sustainability** through proof of stake aligns with long-term value creation
+- **Strong community** of developers building innovative financial applications
 
-## はじめよう
+## Get Started
 
-- [CardanoのDeFiアプリを探す](/apps/?operator=OR&tags=lending&tags=dex)
-- [Cardanoウォレットを入手する](/apps/?tags=wallet)
-- [Cardano開発者向けリソース](https://developers.cardano.org)
-- [エンタープライズソリューションを見る](/solutions)
+- [Explore DeFi applications on Cardano](/apps/?operator=OR&tags=lending&tags=dex)
+- [Get a Cardano wallet](/apps/?tags=wallet)
+- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [View Enterprise Solutions](/solutions)
