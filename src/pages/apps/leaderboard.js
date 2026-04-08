@@ -40,6 +40,11 @@ function formatShortNumber(num) {
   return num.toString();
 }
 
+// Override display info for apps not listed in apps.js
+const appOverrides = {
+  'fms-by-trivolve': { title: 'Forensic Management System', icon: '/img/app-icons/trivolve.jpg', tags: ['notary'] },
+};
+
 // Helper to find app details from apps.js by matching statsLabel or normalized title
 function findAppDetails(statEntry) {
   // For metadata entries, check if metadataInfo has an appLabel linking to apps.js
@@ -50,10 +55,12 @@ function findAppDetails(statEntry) {
       return Showcases.find(app => app.statsLabel === info.appLabel);
     }
   }
-  return Showcases.find(app =>
+  const fromApps = Showcases.find(app =>
     app.statsLabel === statEntry.label ||
     app.title.toLowerCase().replace(/\s+/g, '').replace(/-/g, '') === statEntry.label.replace(/-/g, '')
   );
+  if (fromApps) return fromApps;
+  return appOverrides[statEntry.label] || null;
 }
 
 // Get the image source, handling both require() objects and string URLs
