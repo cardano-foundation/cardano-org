@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
+import GovernancePathsSection from "@site/src/components/GovernancePathsSection";
 import TermExplainer from "@site/src/components/TermExplainer";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
@@ -67,73 +67,6 @@ function GovernanceRolesSection() {
   );
 }
 
-function GovernancePathsSection() {
-  return (
-    <>
-      <Divider text={translate({id: 'governance.divider.getInvolved', message: 'Get involved'})} id="get-involved" />
-      <SpacerBox size="small" />
-
-      <div id="delegate">
-        <DottedImageWithText
-          imageName="ada-upturned-hand"
-          title={translate({id: 'governance.paths.delegate.title', message: 'Delegate your voting power'})}
-          text={[
-            translate({id: 'governance.paths.delegate.text', message: 'You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, it costs nothing extra, and you can change your DRep at any time.'}),
-          ]}
-        />
-        <div className={styles.pathCta}>
-          <Link
-            to="https://tempo.vote/dreps"
-            className="button button--primary button--lg"
-          >
-            {translate({id: 'governance.paths.delegate.buttonText', message: 'Find a DRep'})}
-          </Link>
-        </div>
-      </div>
-
-      <div id="lead">
-        <DottedImageWithText
-          imageName="purpose"
-          title={translate({id: 'governance.paths.lead.title', message: 'Become a DRep'})}
-          text={[
-            translate({id: 'governance.paths.lead.text', message: 'Represent your community and shape Cardano policy. DReps actively engage in governance, stay informed on proposals, and vote on behalf of those who delegate to them. A refundable deposit of 500 ada is required and will be returned upon retirement.'}),
-          ]}
-        />
-        <div className={styles.pathCta}>
-          <Link
-            to="https://docs.gov.tools/about/what-is-cardano-govtool/govtool-functions/dreps/register-as-a-drep"
-            className="button button--primary button--lg"
-          >
-            {translate({id: 'governance.paths.lead.buttonText', message: 'Register as a DRep'})}
-          </Link>
-        </div>
-      </div>
-
-      <DottedImageWithText
-        imageName="research"
-        title={translate({id: 'governance.paths.understand.title', message: 'Learn how governance works'})}
-        text={[
-          translate({id: 'governance.paths.understand.text', message: 'New to Cardano governance? Read the constitution, explore governance action charts, or browse the governance tools to understand how proposals move from submission to enactment.'}),
-        ]}
-      />
-      <div className={styles.pathCta}>
-        <Link
-          to="/constitution"
-          className="button button--primary button--lg"
-        >
-          {translate({id: 'governance.paths.understand.buttonText', message: 'Read the Constitution'})}
-        </Link>
-        {' '}
-        <Link
-          to="/insights/governance-actions"
-          className={`button button--outline button--primary button--lg ${styles.secondaryButton}`}
-        >
-          {translate({id: 'governance.paths.understand.buttonText2', message: 'Governance Action Charts'})}
-        </Link>
-      </div>
-    </>
-  );
-}
 
 function ImpactTimeline() {
   return (
