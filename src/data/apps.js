@@ -1511,7 +1511,7 @@ export const Showcases = [
     statsLabel: "GNP1Quiz",
     website: "https://server-tools.grahamsnumberplus1.com/quiz_V1000/quiz-V1000.html",
     source: null,
-    tags: ["educational"],
+    tags: ["game"],
   },
   {
     title: "TapDano",
