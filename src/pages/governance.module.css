@@ -1,0 +1,34 @@
+.roleCard {
+  text-align: center;
+  padding: 1rem;
+}
+
+.roleIcon {
+  width: 80px;
+  height: 80px;
+}
+
+.pathCta {
+  padding-left: 100px;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+.toolDescription {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.toolsRow {
+  justify-content: center;
+}
+
+.secondaryButton {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .pathCta {
+    padding-left: 0;
+  }
+}

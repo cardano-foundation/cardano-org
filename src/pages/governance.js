@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import clsx from "clsx";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
@@ -14,6 +13,7 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithButton";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import {translate} from '@docusaurus/Translate';
+import styles from "./governance.module.css";
 
 function GovernanceHero() {
   return (
@@ -27,7 +27,7 @@ function GovernanceHero() {
 
 function GovernanceRolesSection() {
   return (
-    <div>
+    <>
       <Divider text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
       <SpacerBox size="small" />
       <p className="black-text">
@@ -36,8 +36,8 @@ function GovernanceRolesSection() {
       <SpacerBox size="small" />
       <div className="row">
         <div className="col col--4">
-          <div style={{textAlign: 'center', padding: '1rem'}}>
-            <img src={useBaseUrl('/img/dotted-icons/people.svg')} alt="DReps" style={{width: '80px', height: '80px'}} />
+          <div className={styles.roleCard}>
+            <img src={useBaseUrl('/img/dotted-icons/people.svg')} alt="DReps" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
@@ -45,8 +45,8 @@ function GovernanceRolesSection() {
           </div>
         </div>
         <div className="col col--4">
-          <div style={{textAlign: 'center', padding: '1rem'}}>
-            <img src={useBaseUrl('/img/dotted-icons/decentralization.svg')} alt="SPOs" style={{width: '80px', height: '80px'}} />
+          <div className={styles.roleCard}>
+            <img src={useBaseUrl('/img/dotted-icons/decentralization.svg')} alt="SPOs" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on technical changes like hard forks and protocol parameters.'})}
@@ -54,8 +54,8 @@ function GovernanceRolesSection() {
           </div>
         </div>
         <div className="col col--4">
-          <div style={{textAlign: 'center', padding: '1rem'}}>
-            <img src={useBaseUrl('/img/dotted-icons/government.svg')} alt="Constitutional Committee" style={{width: '80px', height: '80px'}} />
+          <div className={styles.roleCard}>
+            <img src={useBaseUrl('/img/dotted-icons/government.svg')} alt="Constitutional Committee" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
@@ -63,17 +63,16 @@ function GovernanceRolesSection() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
 function GovernancePathsSection() {
   return (
-    <div>
+    <>
       <Divider text={translate({id: 'governance.divider.getInvolved', message: 'Get involved'})} id="get-involved" />
       <SpacerBox size="small" />
 
-      {/* Delegate path */}
       <div id="delegate">
         <DottedImageWithText
           imageName="ada-upturned-hand"
@@ -82,7 +81,7 @@ function GovernancePathsSection() {
             translate({id: 'governance.paths.delegate.text', message: 'You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, it costs nothing extra, and you can change your DRep at any time.'}),
           ]}
         />
-        <div style={{paddingLeft: '100px', marginTop: '-0.5rem', marginBottom: '2rem'}}>
+        <div className={styles.pathCta}>
           <Link
             to="https://tempo.vote/dreps"
             className="button button--primary button--lg"
@@ -92,7 +91,6 @@ function GovernancePathsSection() {
         </div>
       </div>
 
-      {/* Become a DRep path */}
       <div id="lead">
         <DottedImageWithText
           imageName="purpose"
@@ -101,7 +99,7 @@ function GovernancePathsSection() {
             translate({id: 'governance.paths.lead.text', message: 'Represent your community and shape Cardano policy. DReps actively engage in governance, stay informed on proposals, and vote on behalf of those who delegate to them. A refundable deposit of 500 ada is required and will be returned upon retirement.'}),
           ]}
         />
-        <div style={{paddingLeft: '100px', marginTop: '-0.5rem', marginBottom: '2rem'}}>
+        <div className={styles.pathCta}>
           <Link
             to="https://docs.gov.tools/about/what-is-cardano-govtool/govtool-functions/dreps/register-as-a-drep"
             className="button button--primary button--lg"
@@ -111,7 +109,6 @@ function GovernancePathsSection() {
         </div>
       </div>
 
-      {/* Understand path */}
       <DottedImageWithText
         imageName="research"
         title={translate({id: 'governance.paths.understand.title', message: 'Learn how governance works'})}
@@ -119,7 +116,7 @@ function GovernancePathsSection() {
           translate({id: 'governance.paths.understand.text', message: 'New to Cardano governance? Read the constitution, explore governance action charts, or browse the governance tools to understand how proposals move from submission to enactment.'}),
         ]}
       />
-      <div style={{paddingLeft: '100px', marginTop: '-0.5rem', marginBottom: '2rem'}}>
+      <div className={styles.pathCta}>
         <Link
           to="/constitution"
           className="button button--primary button--lg"
@@ -129,19 +126,18 @@ function GovernancePathsSection() {
         {' '}
         <Link
           to="/insights/governance-actions"
-          className="button button--outline button--primary button--lg"
-          style={{marginLeft: '0.5rem'}}
+          className={`button button--outline button--primary button--lg ${styles.secondaryButton}`}
         >
           {translate({id: 'governance.paths.understand.buttonText2', message: 'Governance Action Charts'})}
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 
 function ImpactTimeline() {
   return (
-    <div>
+    <>
       <Divider text={translate({id: 'governance.divider.impact', message: 'What governance has achieved'})} id="impact" />
       <SpacerBox size="small" />
       <p className="black-text">
@@ -178,85 +174,48 @@ function ImpactTimeline() {
         title={translate({id: 'governance.impact.params.title', message: 'Protocol parameters changed'})}
         text={translate({id: 'governance.impact.params.text', message: 'SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds. [Read more](/blog/2026-02-10-call-to-action-spo-parameter-changes)'})}
       />
-    </div>
+    </>
   );
 }
 
+const governanceTools = [
+  { imageName: "government", labelId: "governance.tools.govtool", label: "GovTool", link: "https://gov.tools", descId: "governance.tools.govtool.description", desc: "Vote on proposals and register as a DRep" },
+  { imageName: "people", labelId: "governance.tools.tempo", label: "Tempo", link: "https://tempo.vote", descId: "governance.tools.tempo.description", desc: "Find and compare DReps" },
+  { imageName: "chains", labelId: "governance.tools.adastat", label: "AdaStat", link: "https://adastat.net/governances", descId: "governance.tools.adastat.description", desc: "Track all governance actions" },
+  { imageName: "technology", labelId: "governance.tools.governancespace", label: "Governance Space", link: "https://governancespace.com", descId: "governance.tools.governancespace.description", desc: "Governance analytics and insights" },
+  { imageName: "research", labelId: "governance.tools.charts", label: "Governance Charts", link: "/insights/governance-actions", descId: "governance.tools.charts.description", desc: "Interactive visual process guides" },
+  { imageName: "opportunity", labelId: "governance.tools.constitution", label: "Constitution", link: "/constitution", descId: "governance.tools.constitution.description", desc: "Read the governing document" },
+];
+
 function ToolsGrid() {
   return (
-    <div>
+    <>
       <Divider text={translate({id: 'governance.divider.tools', message: 'Governance tools'})} id="tools" />
       <SpacerBox size="small" />
       <p className="black-text">
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      <div className="row" style={{justifyContent: 'center'}}>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="government"
-            buttonLabel={translate({id: 'governance.tools.govtool', message: 'GovTool'})}
-            buttonLink="https://gov.tools"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.govtool.description', message: 'Vote on proposals and register as a DRep'})}
-          </p>
-        </div>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="people"
-            buttonLabel={translate({id: 'governance.tools.tempo', message: 'Tempo'})}
-            buttonLink="https://tempo.vote"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.tempo.description', message: 'Find and compare DReps'})}
-          </p>
-        </div>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="chains"
-            buttonLabel={translate({id: 'governance.tools.adastat', message: 'AdaStat'})}
-            buttonLink="https://adastat.net/governances"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.adastat.description', message: 'Track all governance actions'})}
-          </p>
-        </div>
-      </div>
-      <SpacerBox size="small" />
-      <div className="row" style={{justifyContent: 'center'}}>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="technology"
-            buttonLabel={translate({id: 'governance.tools.governancespace', message: 'Governance Space'})}
-            buttonLink="https://governancespace.com"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.governancespace.description', message: 'Governance analytics and insights'})}
-          </p>
-        </div>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="research"
-            buttonLabel={translate({id: 'governance.tools.charts', message: 'Governance Charts'})}
-            buttonLink="/insights/governance-actions"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.charts.description', message: 'Interactive visual process guides'})}
-          </p>
-        </div>
-        <div className="col col--4">
-          <DottedImageWithButton
-            imageName="opportunity"
-            buttonLabel={translate({id: 'governance.tools.constitution', message: 'Constitution'})}
-            buttonLink="/constitution"
-          />
-          <p className="black-text" style={{textAlign: 'center', marginTop: '0.5rem'}}>
-            {translate({id: 'governance.tools.constitution.description', message: 'Read the governing document'})}
-          </p>
-        </div>
-      </div>
-    </div>
+      {[0, 3].map((startIndex) => (
+        <React.Fragment key={startIndex}>
+          <div className={`row ${styles.toolsRow}`}>
+            {governanceTools.slice(startIndex, startIndex + 3).map((tool) => (
+              <div className="col col--4" key={tool.labelId}>
+                <DottedImageWithButton
+                  imageName={tool.imageName}
+                  buttonLabel={translate({id: tool.labelId, message: tool.label})}
+                  buttonLink={tool.link}
+                />
+                <p className={`black-text ${styles.toolDescription}`}>
+                  {translate({id: tool.descId, message: tool.desc})}
+                </p>
+              </div>
+            ))}
+          </div>
+          {startIndex === 0 && <SpacerBox size="small" />}
+        </React.Fragment>
+      ))}
+    </>
   );
 }
 
@@ -269,20 +228,17 @@ export default function Governance() {
       <OpenGraphInfo pageName="governance" />
       <GovernanceHero />
       <main>
-        {/* Section 3: Governance Onboarding - How it works + Roles */}
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <GovernanceRolesSection />
           </BoundaryBox>
         </BackgroundWrapper>
 
-        {/* Section 3b: Get involved - Delegate / Lead / Understand */}
         <BoundaryBox>
           <GovernancePathsSection />
           <SpacerBox size="medium" />
         </BoundaryBox>
 
-        {/* Section 5: Impact Timeline */}
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <ImpactTimeline />
@@ -290,14 +246,12 @@ export default function Governance() {
           </BoundaryBox>
         </BackgroundWrapper>
 
-        {/* Section 6: Blue Statement */}
         <BackgroundWrapper backgroundType={"solidBlue"}>
           <BoundaryBox>
             <GovernanceBlueSection />
           </BoundaryBox>
         </BackgroundWrapper>
 
-        {/* Section 8: Tools Grid */}
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
             <ToolsGrid />
@@ -305,7 +259,6 @@ export default function Governance() {
           </BoundaryBox>
         </BackgroundWrapper>
 
-        {/* Section 10: Term Explainer */}
         <BoundaryBox>
           <TermExplainer category="governance" />
         </BoundaryBox>
