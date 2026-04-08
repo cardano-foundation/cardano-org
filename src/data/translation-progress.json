@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-08T06:25:39.882Z",
+  "lastUpdated": "2026-04-08T07:25:19.873Z",
   "languages": [
     {
       "id": "de",
@@ -17,6 +17,24 @@
         "translated": 1828,
         "preTranslateAppliedTo": 0,
         "approved": 5
+      }
+    },
+    {
+      "id": "ja",
+      "name": "Japanese",
+      "translationProgress": 50,
+      "approvalProgress": 46,
+      "words": {
+        "total": 37998,
+        "translated": 19132,
+        "preTranslateAppliedTo": 0,
+        "approved": 17668
+      },
+      "phrases": {
+        "total": 3560,
+        "translated": 1862,
+        "preTranslateAppliedTo": 0,
+        "approved": 1624
       }
     },
     {
@@ -51,24 +69,6 @@
       "phrases": {
         "total": 3560,
         "translated": 781,
-        "preTranslateAppliedTo": 0,
-        "approved": 0
-      }
-    },
-    {
-      "id": "ja",
-      "name": "Japanese",
-      "translationProgress": 5,
-      "approvalProgress": 0,
-      "words": {
-        "total": 37998,
-        "translated": 2029,
-        "preTranslateAppliedTo": 0,
-        "approved": 0
-      },
-      "phrases": {
-        "total": 3560,
-        "translated": 424,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }
