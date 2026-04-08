@@ -11,7 +11,7 @@ export default function GovernanceBlueSection({}) {
         {translate({id: 'governance.blue.title', message: 'A Model To Marginalize None, And Give Power To All.'})}
       </h1>
       <p className={styles.text}>
-        {translate({id: 'governance.blue.text', message: 'Our current systems do not work for everyone. A better, more positive future is possible. If the world is to serve the many, it must be agreed to by the many. Consensus must drive progress and where disagreement occurs, it must drive creative solutions.'})}
+        {translate({id: 'governance.blue.text', message: 'Cardano governance has moved from vision to reality. With a ratified constitution, active DReps, and a funded treasury, the community now directs the network\'s future. This is decentralization not as a promise, but as practice.'})}
       </p>
     </div>
   );
