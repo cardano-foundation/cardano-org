@@ -54,6 +54,7 @@ function getPathsData() {
 export default function GovernancePathsSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const paths = getPathsData();
+  const iconBase = useBaseUrl('/img/dotted-icons');
 
   return (
     <div className={styles.wrapper}>
@@ -81,11 +82,11 @@ export default function GovernancePathsSection() {
             </TabList>
           </div>
           <div className={clsx("col col--8", styles.rightColumn)}>
-            {paths.map((path, index) => (
+            {paths.map((path) => (
               <TabPanel key={path.label}>
                 <div className={styles.panelContent}>
                   <img
-                    src={useBaseUrl(`/img/dotted-icons/${path.icon}.svg`)}
+                    src={`${iconBase}/${path.icon}.svg`}
                     alt={path.label}
                     className={styles.panelIcon}
                   />
@@ -97,7 +98,7 @@ export default function GovernancePathsSection() {
                     </Link>
                     {path.secondaryCtaLink && (
                       <Link
-                        className={clsx("button button--outline button--primary button--lg", styles.secondaryButton)}
+                        className="button button--outline button--primary button--lg"
                         to={path.secondaryCtaLink}
                       >
                         {path.secondaryCtaTitle}

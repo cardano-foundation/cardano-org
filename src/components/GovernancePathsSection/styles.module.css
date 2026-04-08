@@ -70,10 +70,6 @@
   flex-wrap: wrap;
 }
 
-.secondaryButton {
-  /* inherits button styles, gap handles spacing */
-}
-
 @media (max-width: 768px) {
   .leftColumn {
     margin-bottom: 1rem;
