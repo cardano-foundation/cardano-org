@@ -1,40 +1,40 @@
 ---
-title: データストレージ
-description: Cardanoブロックチェーンによる分散型で安全なデータストレージソリューション
-sidebar_label: データストレージ
+title: Data Storage
+description: Decentralized, secure data storage solutions on Cardano blockchain
+sidebar_label: Data Storage
 sidebar_position: 12
 ---
 
-# データストレージ
+# Data Storage
 
-## 課題
+## The Challenge
 
-中央集権型のデータストレージには、単一障害点が存在し、機密情報の管理が一箇所に集中するリスクがあります。クラウドプロバイダーは障害を起こすことがあり、利用規約を変更したり、保存データへのアクセスを強制されたりすることもあります。機密性の高いアプリケーションにとって、サードパーティへの依存は許容できないリスクを生みます。
+Centralized data storage creates single points of failure and concentrates control over sensitive information. Cloud providers can experience outages, change terms of service, or be compelled to provide access to stored data. For sensitive applications, this dependency on third parties creates unacceptable risks.
 
-データの完全性も課題です。保存されたデータが改ざんされていないことを、特に長期間にわたってどう検証するのでしょうか。従来のバックアップシステムは冗長性を提供しますが、完全性の証明はできません。
+Data integrity is another concern. How can users verify that stored data hasn't been tampered with, especially over long time periods? Traditional backup systems provide redundancy but not proof of integrity.
 
-## ブロックチェーンによる解決策
+## How Blockchain Solves This
 
-ブロックチェーンベースのストレージソリューションは、分散化と暗号学的な完全性保証を両立させます。
+Blockchain-based storage solutions combine decentralization with cryptographic integrity guarantees:
 
-- **分散型の冗長性**: データが複数のノードに保存され、単一障害点を排除
-- **完全性の検証**: 暗号学的証明によりデータが改ざんされていないことを保証
-- **検閲耐性**: 特定の組織が保存データへのアクセスをブロックすることが不可能
-- **改ざん不可能なタイムスタンプ**: ブロックチェーンベースのタイムスタンプでデータの保存時刻を証明
-- **アクセス制御**: スマートコントラクトによって、誰がどのような条件でデータにアクセスできるかを管理
+- **Distributed redundancy**: Data is stored across multiple nodes, eliminating single points of failure
+- **Integrity verification**: Cryptographic proofs ensure data hasn't been altered
+- **Censorship resistance**: No single entity can block access to stored data
+- **Immutable timestamps**: Prove when data was stored with blockchain-based timestamps
+- **Access control**: Smart contracts can manage who can access stored data and under what conditions
 
-大容量ファイルは通常オフチェーンに保存されますが、そのハッシュ値をCardano上に記録することで、ブロックチェーンと同等の永続性を持つ存在証明と完全性の証明が得られます。
+While large files are typically stored off-chain, their cryptographic hashes recorded on Cardano provide proof of existence and integrity that is as permanent as the blockchain itself.
 
-## Cardanoが選ばれる理由
+## Why Cardano
 
-- **実証済みのセキュリティ**：厳格な暗号プロトコルによる保護
-- **長期的な持続可能性**：プルーフ・オブ・ステークとコミュニティガバナンスによる運営
-- **相互運用性**：分散型ストレージネットワークとの連携
-- **低コスト**：ハッシュ値やアクセス制御ロジックの保存が安価
-- **開発者ツール**：ストレージアプリケーション構築のための充実したツール群
+- **Proven security** through rigorous cryptographic protocols
+- **Long-term sustainability** through proof of stake and community governance
+- **Interoperability** with decentralized storage networks
+- **Low costs** for storing hashes and access control logic
+- **Developer tools** for building storage applications
 
-## はじめよう
+## Get Started
 
-- [分散型ストレージソリューションを見る](/solutions)
-- [Cardano開発者向けリソース](https://developers.cardano.org)
-- [エンタープライズソリューションを見る](/solutions)
+- [Explore decentralized storage solutions](/solutions)
+- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [View Enterprise Solutions](/solutions)
