@@ -1,71 +1,70 @@
 ---
-title: オンラインコミュニティ
+title: Online Communities
 displayed_sidebar: null
-description: Cardanoオンラインコミュニティ
+description: Cardano Online Communities
 ---
 
-Cardanoコミュニティにはさまざまなソーシャルチャンネルがあります。それぞれに個性があり、ユニークな特徴を持っています。おすすめのコミュニティチャンネルをまとめましたので、気になるものに参加して、世界中のCardanoコミュニティメンバーとつながりましょう！
+The Cardano community has many different social channels. They’re all different and unique in their own way. So here’s a list of all of our recommended community channels, join the ones you like and connect with fellow Cardano community members around the world!
 
-## フォーラム
+## Forums
 
-体系的なロングフォーマットのディスカッションを楽しめます。
+Enjoy structured long-format discussions.
 
-- [r/Cardano](https://www.reddit.com/r/cardano/) - Reddit上のCardanoコミュニティ
-- [forum.cardano.org](https://forum.cardano.org) - Cardanoフォーラム
-- [Cardano Stackexchange](https://cardano.stackexchange.com) - Cardano開発者向けヘルプ
-- [Facebook Group](https://www.facebook.com/groups/CardanoCommunity/) - CardanoのFacebookグループ
+- [r/Cardano](https://www.reddit.com/r/cardano/) - Cardano community on Reddit
+- [forum.cardano.org](https://forum.cardano.org) - the Cardano Forum
+- [Cardano Stackexchange](https://cardano.stackexchange.com) - help for Cardano developers
+- [Facebook Group](https://www.facebook.com/groups/CardanoCommunity/) - the Cardano Facebook Group
 
+## Events and local gatherings
 
-## イベントとローカルミートアップ
+Connect with the Cardano community at in-person or virtual events.
 
-対面またはバーチャルイベントでCardanoコミュニティとつながりましょう。
-
-- [Cardano on Meetup](https://www.meetup.com/pro/cardano) - 世界中のCardano Meetupグループ
-- [Cardano on Luma](https://luma.com/CardanoEvents) - 世界中のCardano Lumaイベント
+- [Cardano on Meetup](https://www.meetup.com/pro/cardano) - Cardano Meetup Groups around the world.
+- [Cardano on Luma](https://luma.com/CardanoEvents) - Cardano Luma Events around the world.
 
 ## Cardano on Telegram
 
-リアルタイムチャットと素早いディスカッション。
+Real time chat and quick discussions.
 
 - Cardano Main: https://t.me/Cardano
 - Cardano Developers: https://t.me/CardanoDevelopersOfficial
-- Cardano Report to Admin: https://t.me/cardanoreporttoadmin は、Telegramチャンネルでの判定、ユーザー、管理者、モデレーターなどに問題がある場合にご利用ください。
+- Cardano Report to Admin: https://t.me/cardanoreporttoadmin is for when you have issues with other our rulings, users, admins, moderators, or something else that isn’t working for you in our Telegram channels.
 
 ## Cardano on Discord
 
-リアルタイムチャットと素早いディスカッション。
+Real-time chat and quick discussions.
 
 - [Cardano Foundation Discord](https://discord.gg/MmeqpAzKbp)
 - [Cardano Community Discord](https://discord.com/invite/2nPUa5d7DE)
 - [IOG Discord](https://discord.com/invite/w6TwW9bGA6)
 
-## 言語別のディスカッション
+## Language specific discussions
 
-- :vietnam: Cardano Vietnam: https://t.me/CardanoVNCommunity  
-- :jp: Cardano Japan: https://t.me/CardanoJapanOfficial  
-- :jp: Cardano Japan Trading: https://t.me/CardanoJapanTrading  
-- :jp: Cardano on Line https://forum.cardano.org/t/cardano-line/25812  
-- :kr: Cardano Korea: https://t.me/CardanoKoreaOfficial  
-- :kr: Cardano Korea Trading: https://t.me/CardanoKoreaTrading  
-- :cn: Cardano China: https://t.me/CardanoChinaOfficial  
-- :netherlands: Cardano Dutch and Flemish Official: https://t.me/CardanoDutchOfficial  
-- :de: Cardano German: https://t.me/CardanoGermanOfficial  
-- :de: Cardano German Trading: https://t.me/cardanotradinggerman  
-- :es: Cardano Spanish Official: https://t.me/CardanoSpanishOfficial  
-- :portugal: Cardano Portuguese Official: https://t.me/CardanoPortugueseOfficial  
-- :earth_americas: Cardano North-America Official: https://t.me/CardanoNorthAmericaOfficial  
-- :india: Cardano India & Sri Lanka: https://t.me/cardano_india  
-- :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial  
-- :australia: Cardano Australia: https://t.me/CardanoAustralia    
-- 🇮🇹 Italy: https://t.me/CardanoIT  
-- 🇷🇺 Russia : https://t.me/cardano_rus  
-- 🇷🇺 Russian Developers : https://t.me/CardanoRussianMain  
-- 🇪🇸 Spain: https://t.me/CardanoEsp  
+- :vietnam: Cardano Vietnam: https://t.me/CardanoVNCommunity
+- :jp: Cardano Japan: https://t.me/CardanoJapanOfficial
+- :jp: Cardano Japan Trading: https://t.me/CardanoJapanTrading
+- :jp: Cardano on Line https://forum.cardano.org/t/cardano-line/25812
+- :kr: Cardano Korea: https://t.me/CardanoKoreaOfficial
+- :kr: Cardano Korea Trading: https://t.me/CardanoKoreaTrading
+- :cn: Cardano China: https://t.me/CardanoChinaOfficial
+- :netherlands: Cardano Dutch and Flemish Official: https://t.me/CardanoDutchOfficial
+- :de: Cardano German: https://t.me/CardanoGermanOfficial
+- :de: Cardano German Trading: https://t.me/cardanotradinggerman
+- :es: Cardano Spanish Official: https://t.me/CardanoSpanishOfficial
+- :portugal: Cardano Portuguese Official: https://t.me/CardanoPortugueseOfficial
+- :earth_americas: Cardano North-America Official: https://t.me/CardanoNorthAmericaOfficial
+- :india: Cardano India & Sri Lanka: https://t.me/cardano_india
+- :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial
+- :australia: Cardano Australia: https://t.me/CardanoAustralia
+- 🇮🇹 Italy: https://t.me/CardanoIT
+- 🇷🇺 Russia : https://t.me/cardano_rus
+- 🇷🇺 Russian Developers : https://t.me/CardanoRussianMain
+- 🇪🇸 Spain: https://t.me/CardanoEsp
 - 🇹🇷 Turkey: https://t.me/CardanoTurk
 - :uk: Cardano UK: https://t.me/CardanoUK
 
-## コミュニティを追加する
+## Add your community
 
-あなたのコミュニティをここに掲載しませんか？素晴らしいCardanoコミュニティをもっと紹介したいです！
+Want to see your community listed here? We'd love to include more great Cardano communities!
 
-要件やプルリクエストによるコミュニティの申請方法については、[コミュニティの追加](/docs/get-involved/add-community)ガイドをお読みください。
+Please read the [Add your Community](/docs/get-involved/add-community) guide to learn about the requirements and how to submit your community through a pull request.

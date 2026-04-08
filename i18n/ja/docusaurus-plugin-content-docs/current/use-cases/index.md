@@ -1,61 +1,61 @@
 ---
-title: ユースケース概要
-description: Cardanoブロックチェーン技術がさまざまな業界の課題をどう解決するかをご紹介します
-sidebar_label: 概要
+title: Use Cases Overview
+description: Explore how Cardano blockchain technology solves real-world problems across industries
+sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# Cardanoのユースケース
+# Cardano Use Cases
 
-Cardanoはパブリックでパーミッションレスなレイヤー1ブロックチェーンであり、安全でスケーラブルかつ透明性の高いソリューションを求める企業や個人に最適です。サプライチェーンの効率化、グローバル決済、資産のトークン化など、堅牢なセキュリティと低消費電力で分散型イノベーションを提供します。
+Cardano is a public, permissionless Layer 1 blockchain, perfect for enterprises and individuals seeking secure, scalable, and transparent solutions. Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage.
 
-## アイデンティティ
+## Identity
 
-ブロックチェーンベースのID（アイデンティティ）ソリューションは、ユーザー自身が管理できる安全で検証可能な資格情報を提供します。
+Blockchain-based identity solutions provide secure, verifiable credentials that users control.
 
-- **[教育資格証明](./education)** - ブロックチェーンで検証可能な学術資格
-- **[デジタルID](./digital-identity)** - 自己主権型のアイデンティティソリューション
-- **[金融KYC](./finance-kyc)** - 金融サービスにおける効率的な本人確認
-- **[公的文書](./government)** - 改ざん不可能な公式文書
+- **[Education Credentials](./education)** - Blockchain-verified academic credentials
+- **[Digital Identity](./digital-identity)** - Self-sovereign identity solutions
+- **[Finance KYC](./finance-kyc)** - Streamlined identity verification for financial services
+- **[Government Documents](./government)** - Tamper-proof official documents
 
-## 金融
+## Finance
 
-透明性とアクセシビリティを備えた分散型金融アプリケーション。
+Decentralized financial applications that provide transparency and accessibility.
 
-- **[DeFi](./defi)** - 分散型レンディング、借入、取引所
-- **[決済](./payments)** - 高速・低コストの国際送金
+- **[DeFi](./defi)** - Decentralized lending, borrowing, and exchanges
+- **[Payments](./payments)** - Fast, low-cost cross-border transfers
 
-## サプライチェーン
+## Supply Chain
 
-製品・商品のエンドツーエンドのトレーサビリティと検証。
+End-to-end traceability and verification for products and goods.
 
-- **[農業](./agriculture)** - 農場から食卓までのトレーサビリティ
-- **[小売](./retail)** - 来歴追跡による偽造品対策
-- **[物流](./logistics)** - リアルタイムの追跡と検証
+- **[Agriculture](./agriculture)** - Farm-to-table traceability
+- **[Retail](./retail)** - Combat counterfeiting with provenance tracking
+- **[Logistics](./logistics)** - Real-time tracking and verification
 
-## ソーシャルインパクト
+## Social Impact
 
-社会プログラムの透明性と説明責任を実現するブロックチェーンソリューション。
+Blockchain solutions for transparency and accountability in social programs.
 
-- **[社会プログラム](./social-programs)** - 透明性のある資金分配
+- **[Social Programs](./social-programs)** - Transparent fund distribution
 
-## データ＆テクノロジー
+## Data & Technology
 
-データ管理と資産所有権への分散型アプローチ。
+Decentralized approaches to data management and asset ownership.
 
-- **[データストレージ](./data-storage)** - 分散型の安全なストレージソリューション
-- **[トークン化資産](./tokenized-assets)** - 現実世界の資産の分割所有
+- **[Data Storage](./data-storage)** - Decentralized, secure storage solutions
+- **[Tokenized Assets](./tokenized-assets)** - Fractional ownership of real-world assets
 
-## 新たなアプリケーション
+## Emerging Applications
 
-ブロックチェーン技術の新しいユースケース。
+New and developing use cases for blockchain technology.
 
-- **[投票システム](./voting-systems)** - 安全で透明性の高い選挙
-- **[ヘルスケア](./healthcare)** - ポータブルで安全な医療記録
-- **[音楽＆知的財産](./music-ip)** - アーティストへのロイヤリティ直接支払い
+- **[Voting Systems](./voting-systems)** - Secure, transparent elections
+- **[Healthcare](./healthcare)** - Portable, secure health records
+- **[Music & IP](./music-ip)** - Direct royalty payments to artists
 
 ---
 
-## エンタープライズソリューション
+## Enterprise Solutions
 
-実績のあるエンタープライズ導入事例をお探しですか？[エンタープライズソリューション](/solutions)ページで、Cardano Foundationとパートナーによる実際の導入事例をご覧ください。
+Looking for proven enterprise deployments and case studies? Visit our [Enterprise Solutions](/solutions) page to explore real-world implementations by the Cardano Foundation and partners.

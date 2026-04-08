@@ -1,40 +1,40 @@
 ---
-title: 社会プログラム
-description: Cardanoブロックチェーンを活用した社会プログラムにおける透明な資金配分
-sidebar_label: 社会プログラム
+title: Social Programs
+description: Transparent fund distribution for social programs using Cardano blockchain
+sidebar_label: Social Programs
 sidebar_position: 11
 ---
 
-# 社会プログラム
+# Social Programs
 
-## 課題
+## The Challenge
 
-貧困削減、災害救援、開発を目的とした社会プログラムは、資金配分において根深い課題を抱えています。汚職により本来届くべき受益者から資源が奪われ、行政の非効率性がコストと遅延を生み出しています。寄付者や納税者は、資金が実際にどのように使われているかを把握しにくい状況です。
+Social programs aimed at poverty reduction, disaster relief, and development face persistent challenges with fund distribution. Corruption siphons resources away from intended beneficiaries, while administrative inefficiencies add costs and delays. Donors and taxpayers often lack visibility into how funds are actually used.
 
-受益者の側から見ると、支援を受けるために煩雑な手続きを経なければならず、仲介者による手数料の搾取や遅延がプログラムの有効性を損なっています。受給資格の証明や重複受給の防止も、さらなる複雑さを招いています。
+For beneficiaries, accessing aid can involve bureaucratic hurdles, intermediaries who extract fees, and delays that undermine the program's effectiveness. Proving eligibility and preventing duplicate claims adds further complexity.
 
-## ブロックチェーンによる解決
+## How Blockchain Solves This
 
-ブロックチェーン技術により、社会プログラムの資金を透明かつ効率的に配分できます。
+Blockchain technology enables transparent, efficient distribution of social program funds:
 
-- **透明な資金配分**: すべてのトランザクションが公開監査可能で、汚職を抑止
-- **直接配分**: 仲介者を介さず、資金を受益者に直接届けられる
-- **条件付き支払い**: スマートコントラクトにより、特定の条件が満たされた場合にのみ資金をリリース
-- **アイデンティティとの統合**: ブロックチェーンベースのID技術でプライバシーを守りつつ受益者を確認
-- **リアルタイム監視**: プログラム管理者や寄付者が資金の利用状況をリアルタイムで追跡可能
+- **Transparent allocation**: Every transaction is publicly auditable, deterring corruption
+- **Direct distribution**: Funds can flow directly to beneficiaries without intermediaries
+- **Conditional payments**: Smart contracts release funds when specific conditions are verified
+- **Identity integration**: Blockchain identity solutions enable beneficiary verification while protecting privacy
+- **Real-time monitoring**: Program administrators and donors can track fund utilization
 
-ステーブルコインとデジタルウォレットにより、従来の銀行口座を持たない受益者でも資金を受け取り、利用することが可能となり、金融包摂が促進されます。
+Stablecoins and digital wallets enable beneficiaries to receive and use funds even without traditional bank accounts, increasing financial inclusion.
 
-## なぜCardanoなのか
+## Why Cardano
 
-- **低トランザクション手数料**: 受益者に届く資金の割合を最大化
-- **持続可能性**: プルーフ・オブ・ステークは開発目標と整合
-- **プライバシー機能**: 脆弱な立場にある受益者を保護
-- **アクセシビリティ**: 銀行インフラが限られた地域でも機能
-- **ガバナンス**: コミュニティがプログラム設計に参加可能
+- **Low transaction fees** maximize the percentage of funds reaching beneficiaries
+- **Sustainability** through proof of stake aligns with development goals
+- **Privacy features** protect vulnerable beneficiaries
+- **Accessibility** works in areas with limited banking infrastructure
+- **Governance** enables community participation in program design
 
-## はじめよう
+## Get Started
 
-- [Cardanoアプリケーションを探す](/apps)
-- [Cardano開発者向けリソース](https://developers.cardano.org)
-- [エンタープライズソリューションを見る](/solutions)
+- [Explore Cardano applications](/apps)
+- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [View Enterprise Solutions](/solutions)

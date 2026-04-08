@@ -1,41 +1,41 @@
 ---
-title: 決済
-description: Cardanoブロックチェーン技術による高速・低コストな国際送金
-sidebar_label: 決済
+title: Payments
+description: Fast, low-cost cross-border transfers using Cardano blockchain technology
+sidebar_label: Payments
 sidebar_position: 7
 ---
 
-# 決済
+# Payments
 
-## 課題
+## The Challenge
 
-国際送金は依然として遅く、手数料が高く、不透明です。従来の送金サービスの手数料は世界平均で6〜7%にのぼり、送金ルートによっては10%を超えることもあります。送金完了まで数日かかることもあり、受取人が資金を利用できる手段も限られています。
+Cross-border payments remain slow, expensive, and opaque. Traditional remittance services charge fees averaging 6-7% globally, with some corridors exceeding 10%. Transactions can take days to settle, and recipients often have limited options for accessing funds.
 
-家族を支えるために母国へ仕送りをする数百万人の労働者にとって、この手数料は大きな負担です。世界銀行の試算では、送金手数料を3%に引き下げるだけで、送金者全体で年間200億ドル以上の節約が可能とされています。
+For the millions of migrant workers sending money home to support their families, these fees represent a significant burden. The World Bank estimates that reducing remittance fees to 3% could save senders over $20 billion annually.
 
-## ブロックチェーンによる解決
+## How Blockchain Solves This
 
-Cardanoは、数日ではなく数分で完了する高速・低コストな決済を実現します。
+Cardano enables fast, low-cost payments that settle in minutes rather than days:
 
-- **低手数料**: 1円未満のトランザクションコストで少額決済も可能
-- **高速な決済処理**: 数日ではなく数分でトランザクションが確認
-- **グローバルな利用**: インターネット環境があれば誰でも送受金が可能
-- **透明な価格設定**: 隠れた手数料や不利な為替レートなし
-- **24時間365日対応**: 銀行の営業時間や祝日に関係なくいつでも送金可能
+- **Low fees**: Transaction costs of fractions of a cent make small payments viable
+- **Fast settlement**: Transactions confirm in minutes, not days
+- **Global reach**: Anyone with internet access can send or receive payments
+- **Transparent pricing**: No hidden fees or unfavorable exchange rates
+- **24/7 availability**: Payments process any time, regardless of banking hours or holidays
 
-Cardano上のネイティブトークンにより、各国の法定通貨に連動したステーブルコインが利用でき、ブロックチェーン決済のメリットを維持しながら、日常的な取引における価格変動リスクを抑えられます。
+Native tokens on Cardano enable stablecoins pegged to local currencies, reducing volatility concerns for everyday transactions while maintaining the benefits of blockchain settlement.
 
-## なぜCardanoなのか
+## Why Cardano
 
-- **スケーラビリティ**: HydraなどのLayer 2ソリューションにより高いトランザクション処理能力を実現
-- **相互運用性**: 従来の決済システムとの連携が可能
-- **セキュリティ**: 不正行為や不正な取引からの保護
-- **環境負荷が低い**: プルーフ・オブ・ステーク方式のコンセンサスメカニズムを採用
-- **加盟店の増加**: 実世界での決済活用が広がっている
+- **Scalability** through Hydra and other Layer 2 solutions enables high transaction throughput
+- **Interoperability** allows connection with traditional payment systems
+- **Security** protects against fraud and unauthorized transactions
+- **Low environmental impact** through proof of stake consensus
+- **Growing merchant adoption** expands real-world payment utility
 
-## はじめよう
+## Get Started
 
-- [Cardanoウォレットを入手する](/apps/?tags=wallet)
-- [ADAの入手方法](/where-to-get-ada)
-- [Cardano開発者向けリソース](https://developers.cardano.org)
-- [エンタープライズソリューションを見る](/solutions)
+- [Get a Cardano wallet](/apps/?tags=wallet)
+- [Where to get ada](/where-to-get-ada)
+- [Developer resources for building on Cardano](https://developers.cardano.org)
+- [View Enterprise Solutions](/solutions)
