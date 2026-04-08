@@ -6,6 +6,8 @@ import Divider from "@site/src/components/Layout/Divider";
 import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
 import GovernancePathsSection from "@site/src/components/GovernancePathsSection";
 import TermExplainer from "@site/src/components/TermExplainer";
+import QuizCard from "@site/src/components/QuizCard";
+import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -14,6 +16,8 @@ import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithBu
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
+import governanceRoleQuiz from "@site/src/data/governanceRoleQuiz.json";
+import governanceFAQ from "@site/src/data/governanceFAQ.json";
 
 function GovernanceHero() {
   return (
@@ -169,6 +173,20 @@ export default function Governance() {
 
         <BoundaryBox>
           <GovernancePathsSection />
+          <SpacerBox size="small" />
+          <div className="row" style={{justifyContent: 'center'}}>
+            <div className="col col--6">
+              <QuizCard
+                quizData={governanceRoleQuiz}
+                title={translate({id: 'governance.quiz.title', message: 'Not sure where to start?'})}
+                description={translate({id: 'governance.quiz.description', message: 'Answer a few questions to find out which governance role fits you best.'})}
+                buttonText={translate({id: 'governance.quiz.buttonText', message: 'Find your role'})}
+                questionCount={5}
+                passingScore={0}
+                allowRetry={false}
+              />
+            </div>
+          </div>
           <SpacerBox size="medium" />
         </BoundaryBox>
 
@@ -193,8 +211,15 @@ export default function Governance() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <TermExplainer category="governance" />
+          <FAQSection data={governanceFAQ} />
+          <SpacerBox size="medium" />
         </BoundaryBox>
+
+        <BackgroundWrapper backgroundType={"gradientLight"}>
+          <BoundaryBox>
+            <TermExplainer category="governance" />
+          </BoundaryBox>
+        </BackgroundWrapper>
       </main>
     </Layout>
   );
