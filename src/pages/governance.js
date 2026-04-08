@@ -14,7 +14,6 @@ import StepCard from "@site/src/components/Layout/StepCard";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithButton";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import {translate} from '@docusaurus/Translate';
@@ -75,6 +74,49 @@ function GovernanceRolesSection() {
 }
 
 
+const milestones = [
+  {
+    titleId: "governance.impact.constitution.title",
+    title: "Constitution ratified",
+    textId: "governance.impact.constitution.text",
+    text: "The Cardano community ratified its constitution through an on-chain governance action, establishing the foundational rules for decentralized decision-making.",
+    blog: "/blog/2026-01-22-update-cardano-constitution",
+    banner: "/blog/2026-01-22-update-cardano-constitution/banner.png",
+  },
+  {
+    titleId: "governance.impact.treasury.title",
+    title: "Treasury withdrawals enacted",
+    textId: "governance.impact.treasury.text",
+    text: "The community voted to fund projects directly from the Cardano treasury, directing resources toward ecosystem growth.",
+    blog: "/blog/2025-08-07-treasury-withdrawal-actions",
+    banner: "/blog/2025-08-07-treasury-withdrawal-actions/banner.png",
+  },
+  {
+    titleId: "governance.impact.hardfork.title",
+    title: "Hard fork proposals approved",
+    textId: "governance.impact.hardfork.text",
+    text: "Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance.",
+    blog: "/blog/2025-11-20-hard-fork-proposal",
+    banner: "/blog/2025-11-20-hard-fork-proposal/banner.png",
+  },
+  {
+    titleId: "governance.impact.committee.title",
+    title: "Constitutional Committee elected",
+    textId: "governance.impact.committee.text",
+    text: "The first Constitutional Committee was elected by the community through an on-chain governance action.",
+    blog: "/blog/2025-09-07-constitutional-committee-elections",
+    banner: "/blog/2025-09-07-constitutional-committee-elections/banner.png",
+  },
+  {
+    titleId: "governance.impact.params.title",
+    title: "Protocol parameters changed",
+    textId: "governance.impact.params.text",
+    text: "SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds.",
+    blog: "/blog/2026-02-10-call-to-action-spo-parameter-changes",
+    banner: "/blog/2026-02-10-call-to-action-spo-parameter-changes/banner.webp",
+  },
+];
+
 function ImpactTimeline() {
   return (
     <>
@@ -85,35 +127,17 @@ function ImpactTimeline() {
       </p>
       <SpacerBox size="small" />
 
-      <DottedImageWithText
-        imageName="government"
-        title={translate({id: 'governance.impact.constitution.title', message: 'Constitution ratified'})}
-        text={translate({id: 'governance.impact.constitution.text', message: 'The Cardano community ratified its constitution through an on-chain governance action, establishing the foundational rules for decentralized decision-making. [Read more](/blog/2026-01-22-update-cardano-constitution)'})}
-      />
-
-      <DottedImageWithText
-        imageName="finance"
-        title={translate({id: 'governance.impact.treasury.title', message: 'Treasury withdrawals enacted'})}
-        text={translate({id: 'governance.impact.treasury.text', message: 'The community voted to fund projects directly from the Cardano treasury, directing resources toward ecosystem growth. [Read more](/blog/2025-08-07-treasury-withdrawal-actions)'})}
-      />
-
-      <DottedImageWithText
-        imageName="chains"
-        title={translate({id: 'governance.impact.hardfork.title', message: 'Hard fork proposals approved'})}
-        text={translate({id: 'governance.impact.hardfork.text', message: 'Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance. [Read more](/blog/2025-11-20-hard-fork-proposal)'})}
-      />
-
-      <DottedImageWithText
-        imageName="innovation"
-        title={translate({id: 'governance.impact.committee.title', message: 'Constitutional Committee elected'})}
-        text={translate({id: 'governance.impact.committee.text', message: 'The first Constitutional Committee was elected by the community through an on-chain governance action. [Read more](/blog/2025-09-07-constitutional-committee-elections)'})}
-      />
-
-      <DottedImageWithText
-        imageName="power-arrows"
-        title={translate({id: 'governance.impact.params.title', message: 'Protocol parameters changed'})}
-        text={translate({id: 'governance.impact.params.text', message: 'SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds. [Read more](/blog/2026-02-10-call-to-action-spo-parameter-changes)'})}
-      />
+      {milestones.map((m) => (
+        <a href={m.blog} key={m.titleId} className={styles.milestoneCard}>
+          <div className={styles.milestoneBanner}>
+            <img src={useBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
+          </div>
+          <div className={styles.milestoneContent}>
+            <h3>{translate({id: m.titleId, message: m.title})}</h3>
+            <p className="black-text">{translate({id: m.textId, message: m.text})}</p>
+          </div>
+        </a>
+      ))}
     </>
   );
 }
