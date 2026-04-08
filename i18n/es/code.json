@@ -860,10 +860,10 @@
     "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de juegos para estafadores."
   },
   "getStarted.step5.checkbox": {
-    "message": "I have ada in my wallet."
+    "message": "Tengo ada en mi billetera."
   },
   "getStarted.step6.title": {
-    "message": "Explore the ecosystem"
+    "message": "Explora el ecosistema"
   },
   "getStarted.step6.description": {
     "message": "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps."
