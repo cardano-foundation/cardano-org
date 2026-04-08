@@ -21,14 +21,25 @@ export default function GovernancePulse() {
 
     async function fetchData() {
       try {
-        const [tipRes, totalsRes, proposalsRes] = await Promise.all([
+        const [tipRes, proposalsRes] = await Promise.all([
           api.get("/tip"),
-          api.get("/totals?limit=1&order=epoch_no.desc"),
           api.get("/proposal_list?select=proposal_id,enacted_epoch,expiration&order=proposal_id.desc&limit=100"),
         ]);
 
         const epochNo = tipRes.data?.[0]?.epoch_no;
-        const treasury = totalsRes.data?.[0]?.treasury;
+
+        // /totals is a POST endpoint that requires _epoch_no in the body
+        let treasury = null;
+        if (epochNo) {
+          try {
+            const totalsRes = await api.post("/totals", { _epoch_no: epochNo });
+            treasury = totalsRes.data?.[0]?.treasury;
+          } catch {
+            // Fall back to previous epoch if current isn't available yet
+            const totalsRes = await api.post("/totals", { _epoch_no: epochNo - 1 });
+            treasury = totalsRes.data?.[0]?.treasury;
+          }
+        }
 
         const proposals = proposalsRes.data || [];
         const active = proposals.filter(
