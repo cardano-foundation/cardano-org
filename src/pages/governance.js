@@ -9,7 +9,7 @@ import GovernanceBlueSection from "@site/src/components/GovernanceBlueSection";
 import GovernancePulse from "@site/src/components/GovernancePulse";
 import GovernancePathsSection from "@site/src/components/GovernancePathsSection";
 import TermExplainer from "@site/src/components/TermExplainer";
-import QuizCard from "@site/src/components/QuizCard";
+import SurveyCard from "@site/src/components/SurveyCard";
 import FAQSection from "@site/src/components/FAQSection";
 import StepCard from "@site/src/components/Layout/StepCard";
 
@@ -20,7 +20,7 @@ import DottedImageWithButton from "@site/src/components/Layout/DottedImageWithBu
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
-import governanceRoleQuiz from "@site/src/data/governanceRoleQuiz.json";
+import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
 import governanceFAQ from "@site/src/data/governanceFAQ.json";
 
 function GovernanceHero() {
@@ -285,13 +285,11 @@ export default function Governance() {
               <FAQSection data={governanceFAQ} />
             </div>
             <div className="col col--4" style={{display: 'flex', alignItems: 'flex-end'}}>
-              <QuizCard
-                quizData={governanceRoleQuiz}
-                title={translate({id: 'governance.quiz.title', message: 'Not sure where to start?'})}
-                description={translate({id: 'governance.quiz.description', message: 'Answer a few questions to find out which governance role fits you best.'})}
-                buttonText={translate({id: 'governance.quiz.buttonText', message: 'Find your role'})}
-                questionCount={5}
-                surveyMode={true}
+              <SurveyCard
+                surveyData={governanceRoleSurvey}
+                title={translate({id: 'governance.survey.title', message: 'Not sure where to start?'})}
+                description={translate({id: 'governance.survey.description', message: 'Answer a few questions to find out which governance role fits you best.'})}
+                buttonText={translate({id: 'governance.survey.buttonText', message: 'Find your role'})}
               />
             </div>
           </div>

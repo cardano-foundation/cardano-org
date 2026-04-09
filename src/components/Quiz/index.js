@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60, surveyMode = false }) => {
+const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -46,7 +46,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
 
-    const isCorrect = surveyMode ? true : selectedAnswer === currentQuestion.correctAnswer;
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     setIsAnswered(true);
     if (isCorrect) {
       setScore(score + 1);
@@ -97,7 +97,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
   if (isQuizComplete) {
     const percentage = Math.round((score / totalQuestions) * 100);
-    const isPassing = surveyMode ? true : percentage >= passingScore;
+    const isPassing = percentage >= passingScore;
 
     return (
       <div className={styles.quizContainer}>
@@ -114,30 +114,24 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
             )}
           </div>
           <h2 className={styles.resultTitle}>
-            {surveyMode
-              ? translate({id: 'quiz.ui.surveyComplete', message: 'Thanks for your answers!'})
-              : isPassing ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'}) : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
+            {isPassing ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'}) : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
           </h2>
-          {!surveyMode && (
-            <div className={styles.scoreDisplay}>
-              <span className={styles.scoreNumber}>{percentage}%</span>
-              <span className={styles.scoreText}>
-                {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
-              </span>
-            </div>
-          )}
+          <div className={styles.scoreDisplay}>
+            <span className={styles.scoreNumber}>{percentage}%</span>
+            <span className={styles.scoreText}>
+              {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
+            </span>
+          </div>
           <button onClick={handleRestartQuiz} className={styles.primaryButton}>
-            {surveyMode
-              ? translate({id: 'quiz.ui.startOver', message: 'Start over'})
-              : translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
+            {translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
           </button>
         </div>
       </div>
     );
   }
 
-  const isCorrect = isAnswered && (surveyMode || selectedAnswer === currentQuestion.correctAnswer);
-  const isIncorrect = isAnswered && !surveyMode && selectedAnswer !== currentQuestion.correctAnswer;
+  const isCorrect = isAnswered && selectedAnswer === currentQuestion.correctAnswer;
+  const isIncorrect = isAnswered && selectedAnswer !== currentQuestion.correctAnswer;
 
   return (
     <div className={styles.quizContainer}>
@@ -150,7 +144,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
       <div className={`${styles.questionCard} ${isCorrect ? styles.correct : ''} ${isIncorrect ? styles.incorrect : ''}`}>
         {/* Status Message */}
-        {isAnswered && !surveyMode && (
+        {isAnswered && (
           <div className={styles.statusMessage}>
             <div className={styles.statusIcon}>
               {isCorrect ? (
@@ -195,11 +189,11 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
           {currentQuestion.options.map((option, index) => {
             const isSelected = selectedAnswer === index;
             const isCorrectOption = index === currentQuestion.correctAnswer;
-            const showAsCorrect = !surveyMode && isAnswered && isCorrectOption;
-            const showAsIncorrect = !surveyMode && isAnswered && isSelected && !isCorrectOption;
+            const showAsCorrect = isAnswered && isCorrectOption;
+            const showAsIncorrect = isAnswered && isSelected && !isCorrectOption;
 
-            // In survey mode, always show all options; in quiz mode, only show selected
-            const shouldShow = surveyMode || !isAnswered || isSelected;
+            // Only show selected answer when answered
+            const shouldShow = !isAnswered || isSelected;
 
             if (!shouldShow) return null;
 
@@ -233,22 +227,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
         {/* Action Buttons */}
         <div className={styles.actionButtons}>
-          {surveyMode && !isAnswered ? (
-            <button
-              onClick={() => { handleCheckAnswer(); }}
-              disabled={selectedAnswer === null}
-              className={styles.primaryButton}
-            >
-              {currentQuestionIndex + 1 < totalQuestions ? translate({id: 'quiz.ui.nextQuestion', message: 'Next question'}) : translate({id: 'quiz.ui.finishQuiz', message: 'Finish quiz'})}
-            </button>
-          ) : surveyMode && isAnswered ? (
-            <button
-              onClick={handleNextQuestion}
-              className={styles.primaryButton}
-            >
-              {currentQuestionIndex + 1 < totalQuestions ? translate({id: 'quiz.ui.nextQuestion', message: 'Next question'}) : translate({id: 'quiz.ui.finishQuiz', message: 'Finish quiz'})}
-            </button>
-          ) : !isAnswered ? (
+          {!isAnswered ? (
             <button
               onClick={handleCheckAnswer}
               disabled={selectedAnswer === null}

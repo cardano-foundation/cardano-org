@@ -1,0 +1,216 @@
+.surveyContainer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.questionCard {
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.progressBar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.progressSegment {
+  flex: 1;
+  height: 4px;
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.progressSegment.done {
+  background: var(--ifm-color-primary);
+}
+
+.progressSegment.active {
+  background: var(--ifm-color-primary);
+  opacity: 0.5;
+}
+
+.questionText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+  line-height: 1.5;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--ifm-font-color-base);
+}
+
+.optionButton:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.optionButton:hover .optionLabel {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.optionButton.selected {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.optionButton.selected .optionLabel {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.optionText {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.nextButton {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.nextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result */
+.resultCard {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 2px solid var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+}
+
+.resultTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.resultDescription {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resultActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.restartButton {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ifm-color-emphasis-600);
+  transition: color 0.2s ease;
+}
+
+.restartButton:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+@media (max-width: 768px) {
+  .questionCard {
+    padding: 1rem;
+  }
+
+  .questionText {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .optionsContainer {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .optionButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .optionLabel {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+
+  .resultCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .nextButton {
+    width: 100%;
+  }
+}

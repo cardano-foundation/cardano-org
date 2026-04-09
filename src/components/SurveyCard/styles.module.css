@@ -1,0 +1,21 @@
+.card {
+  background: var(--ifm-background-surface-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+}

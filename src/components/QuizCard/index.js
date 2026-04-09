@@ -23,8 +23,7 @@ const QuizCard = ({
   questionCount = 5,
   passingScore = 60,
   allowRetry = true,
-  showDot = false,
-  surveyMode = false
+  showDot = false
 }) => {
   return (
     <div className={styles.card}>
@@ -43,7 +42,6 @@ const QuizCard = ({
         questionCount={questionCount}
         passingScore={passingScore}
         allowRetry={allowRetry}
-        surveyMode={surveyMode}
       />
     </div>
   );

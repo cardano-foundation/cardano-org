@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Quiz from '../Quiz';
+import Survey from '../Survey';
 import styles from './styles.module.css';
 
-const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount = 5, allowRetry = true, passingScore = 60 }) => {
+const SurveyModal = ({ surveyData, buttonText = "Start", questionCount }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -17,7 +16,6 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
     };
   }, [isOpen]);
 
-  // Close on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && isOpen) {
@@ -28,34 +26,26 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
-  const handleOpen = () => setIsOpen(true);
-  const handleClose = () => setIsOpen(false);
-
   return (
     <>
-      <button onClick={handleOpen} className={styles.startButton}>
+      <button onClick={() => setIsOpen(true)} className={styles.startButton}>
         {buttonText}
       </button>
 
       {isOpen && (
-        <div className={styles.modalOverlay} onClick={handleClose}>
+        <div className={styles.modalOverlay} onClick={() => setIsOpen(false)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button 
-              onClick={handleClose} 
+            <button
+              onClick={() => setIsOpen(false)}
               className={styles.closeButton}
-              aria-label="Close quiz"
+              aria-label="Close survey"
             >
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
               </svg>
             </button>
-            <div className={styles.quizWrapper}>
-              <Quiz
-                quizData={quizData}
-                questionCount={questionCount}
-                allowRetry={allowRetry}
-                passingScore={passingScore}
-              />
+            <div className={styles.surveyWrapper}>
+              <Survey surveyData={surveyData} questionCount={questionCount} />
             </div>
           </div>
         </div>
@@ -64,4 +54,4 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
   );
 };
 
-export default QuizModal;
+export default SurveyModal;
