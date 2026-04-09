@@ -18,10 +18,10 @@ function getPathsData() {
         message:
           "New to Cardano governance? Read the constitution, explore governance action charts, or browse the governance tools to understand how proposals move from submission to enactment.",
       }),
-      ctaLink: "/constitution",
-      ctaTitle: translate({ id: "governance.paths.understand.buttonText", message: "Read the Constitution" }),
-      secondaryCtaLink: "/insights/governance-actions",
-      secondaryCtaTitle: translate({ id: "governance.paths.understand.buttonText2", message: "Governance Action Charts" }),
+      ctaLink: "/insights/governance-actions/?category=General#charts",
+      ctaTitle: translate({ id: "governance.paths.understand.buttonText2", message: "Governance Action Charts" }),
+      secondaryCtaLink: "/constitution",
+      secondaryCtaTitle: translate({ id: "governance.paths.understand.buttonText", message: "Read the Constitution" }),
     },
     {
       label: translate({ id: "governance.paths.delegate.label", message: "Delegate" }),
