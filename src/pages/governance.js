@@ -81,7 +81,7 @@ const milestones = [
     textId: "governance.impact.constitution.text",
     text: "The Cardano community ratified its constitution through an on-chain governance action, establishing the foundational rules for decentralized decision-making.",
     blog: "/news/2026-01-22-update-cardano-constitution",
-    banner: "/news/2026-01-22-update-cardano-constitution/banner.png",
+    banner: "/img/governance/constitution.png",
   },
   {
     titleId: "governance.impact.treasury.title",
@@ -89,7 +89,7 @@ const milestones = [
     textId: "governance.impact.treasury.text",
     text: "The community voted to fund projects directly from the Cardano treasury, directing resources toward ecosystem growth.",
     blog: "/news/2025-08-07-treasury-withdrawal-actions",
-    banner: "/news/2025-08-07-treasury-withdrawal-actions/banner.png",
+    banner: "/img/governance/treasury.png",
   },
   {
     titleId: "governance.impact.hardfork.title",
@@ -97,7 +97,7 @@ const milestones = [
     textId: "governance.impact.hardfork.text",
     text: "Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance.",
     blog: "/news/2025-11-20-hard-fork-proposal",
-    banner: "/news/2025-11-20-hard-fork-proposal/banner.png",
+    banner: "/img/governance/hardfork.png",
   },
   {
     titleId: "governance.impact.committee.title",
@@ -105,7 +105,7 @@ const milestones = [
     textId: "governance.impact.committee.text",
     text: "The first Constitutional Committee was elected by the community through an on-chain governance action.",
     blog: "/news/2025-09-07-constitutional-committee-elections",
-    banner: "/news/2025-09-07-constitutional-committee-elections/banner.png",
+    banner: "/img/governance/committee.png",
   },
   {
     titleId: "governance.impact.params.title",
@@ -113,7 +113,7 @@ const milestones = [
     textId: "governance.impact.params.text",
     text: "SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds.",
     blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
-    banner: "/news/2026-02-10-call-to-action-spo-parameter-changes/banner.webp",
+    banner: "/img/governance/params.webp",
   },
 ];
 
