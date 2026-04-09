@@ -43,7 +43,7 @@ function GovernanceRolesSection() {
       <div className="row">
         <div className="col col--4">
           <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/people.svg')} alt="DReps" className={styles.roleIcon} />
+            <img src={useBaseUrl('/img/dotted-icons/dreps.png')} alt="DReps" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
@@ -52,7 +52,7 @@ function GovernanceRolesSection() {
         </div>
         <div className="col col--4">
           <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/decentralization.svg')} alt="SPOs" className={styles.roleIcon} />
+            <img src={useBaseUrl('/img/dotted-icons/spo.png')} alt="SPOs" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on technical changes like hard forks and protocol parameters.'})}
@@ -61,7 +61,7 @@ function GovernanceRolesSection() {
         </div>
         <div className="col col--4">
           <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/government.svg')} alt="Constitutional Committee" className={styles.roleIcon} />
+            <img src={useBaseUrl('/img/dotted-icons/constitutional-committee.png')} alt="Constitutional Committee" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}</h3>
             <p className="black-text">
               {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
@@ -77,17 +77,28 @@ function GovernanceRolesSection() {
 const milestones = [
   {
     titleId: "governance.impact.constitution.title",
-    title: "Constitution ratified",
+    title: "Constitution updated with 79% support",
     textId: "governance.impact.constitution.text",
-    text: "The Cardano community ratified its constitution through an on-chain governance action, establishing the foundational rules for decentralized decision-making.",
+    text: "The Cardano community ratified an updated constitution through on-chain governance, introducing stricter standards for transparency and standalone accountability.",
+    date: "January 2026",
     blog: "/news/2026-01-22-update-cardano-constitution",
     banner: "/img/governance/constitution.webp",
+  },
+  {
+    titleId: "governance.impact.committee.title",
+    title: "Constitutional Committee elected",
+    textId: "governance.impact.committee.text",
+    text: "The first Constitutional Committee was elected by the community through an on-chain governance action.",
+    date: "September 2025",
+    blog: "/news/2025-09-07-constitutional-committee-elections",
+    banner: "/img/governance/committee.webp",
   },
   {
     titleId: "governance.impact.treasury.title",
     title: "Treasury withdrawals enacted",
     textId: "governance.impact.treasury.text",
     text: "The community voted to fund projects directly from the Cardano treasury, directing resources toward ecosystem growth.",
+    date: "August 2025",
     blog: "/news/2025-08-07-treasury-withdrawal-actions",
     banner: "/img/governance/treasury.webp",
   },
@@ -96,22 +107,16 @@ const milestones = [
     title: "Hard fork proposals approved",
     textId: "governance.impact.hardfork.text",
     text: "Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance.",
+    date: "November 2025",
     blog: "/news/2025-11-20-hard-fork-proposal",
     banner: "/img/governance/hardfork.webp",
-  },
-  {
-    titleId: "governance.impact.committee.title",
-    title: "Constitutional Committee elected",
-    textId: "governance.impact.committee.text",
-    text: "The first Constitutional Committee was elected by the community through an on-chain governance action.",
-    blog: "/news/2025-09-07-constitutional-committee-elections",
-    banner: "/img/governance/committee.webp",
   },
   {
     titleId: "governance.impact.params.title",
     title: "Protocol parameters changed",
     textId: "governance.impact.params.text",
     text: "SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds.",
+    date: "February 2026",
     blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
     banner: "/img/governance/params.webp",
   },
@@ -133,6 +138,7 @@ function ImpactTimeline() {
             <img src={useBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
           </div>
           <div className={styles.milestoneContent}>
+            <span className={styles.milestoneDate}>{m.date}</span>
             <h3>{translate({id: m.titleId, message: m.title})}</h3>
             <p className="black-text">{translate({id: m.textId, message: m.text})}</p>
           </div>

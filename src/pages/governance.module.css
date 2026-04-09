@@ -4,8 +4,8 @@
 }
 
 .roleIcon {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
 }
 
 .toolDescription {
@@ -53,8 +53,15 @@
   flex: 1;
 }
 
+.milestoneDate {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .milestoneContent h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0.25rem 0 0.5rem 0;
   font-size: 1.1rem;
 }
 

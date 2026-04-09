@@ -5,38 +5,13 @@ import { FaArrowRight } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { translate } from "@docusaurus/Translate";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 
 function getPathsData() {
   return [
     {
-      label: translate({ id: "governance.paths.delegate.label", message: "Delegate" }),
-      icon: "ada-upturned-hand",
-      title: translate({ id: "governance.paths.delegate.title", message: "Delegate your voting power" }),
-      body: translate({
-        id: "governance.paths.delegate.body",
-        message:
-          "You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, it costs nothing extra, and you can change your DRep at any time.",
-      }),
-      ctaLink: "https://tempo.vote/dreps",
-      ctaTitle: translate({ id: "governance.paths.delegate.buttonText", message: "Find a DRep" }),
-    },
-    {
-      label: translate({ id: "governance.paths.lead.label", message: "Lead" }),
-      icon: "purpose",
-      title: translate({ id: "governance.paths.lead.title", message: "Become a DRep" }),
-      body: translate({
-        id: "governance.paths.lead.body",
-        message:
-          "Represent your community and shape Cardano policy. DReps actively engage in governance, stay informed on proposals, and vote on behalf of those who delegate to them. A refundable deposit of 500 ada is required and will be returned upon retirement.",
-      }),
-      ctaLink: "https://docs.gov.tools/about/what-is-cardano-govtool/govtool-functions/dreps/register-as-a-drep",
-      ctaTitle: translate({ id: "governance.paths.lead.buttonText", message: "Register as a DRep" }),
-    },
-    {
       label: translate({ id: "governance.paths.understand.label", message: "Understand" }),
-      icon: "research",
+
       title: translate({ id: "governance.paths.understand.title", message: "Learn how governance works" }),
       body: translate({
         id: "governance.paths.understand.body",
@@ -48,14 +23,36 @@ function getPathsData() {
       secondaryCtaLink: "/insights/governance-actions",
       secondaryCtaTitle: translate({ id: "governance.paths.understand.buttonText2", message: "Governance Action Charts" }),
     },
+    {
+      label: translate({ id: "governance.paths.delegate.label", message: "Delegate" }),
+
+      title: translate({ id: "governance.paths.delegate.title", message: "Delegate your voting power" }),
+      body: translate({
+        id: "governance.paths.delegate.body",
+        message:
+          "You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, it costs nothing extra, and you can change your DRep at any time.",
+      }),
+      ctaLink: "https://tempo.vote/dreps",
+      ctaTitle: translate({ id: "governance.paths.delegate.buttonText", message: "Find a DRep" }),
+    },
+    {
+      label: translate({ id: "governance.paths.lead.label", message: "Lead" }),
+
+      title: translate({ id: "governance.paths.lead.title", message: "Become a DRep" }),
+      body: translate({
+        id: "governance.paths.lead.body",
+        message:
+          "Represent your community and shape Cardano policy. DReps actively engage in governance, stay informed on proposals, and vote on behalf of those who delegate to them. A refundable deposit of 500 ada is required and will be returned upon retirement.",
+      }),
+      ctaLink: "https://docs.gov.tools/about/what-is-cardano-govtool/govtool-functions/dreps/register-as-a-drep",
+      ctaTitle: translate({ id: "governance.paths.lead.buttonText", message: "Register as a DRep" }),
+    },
   ];
 }
 
 export default function GovernancePathsSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const paths = getPathsData();
-  const iconBase = useBaseUrl('/img/dotted-icons');
-
   return (
     <div className={styles.wrapper}>
       <Tabs
@@ -85,11 +82,6 @@ export default function GovernancePathsSection() {
             {paths.map((path) => (
               <TabPanel key={path.label}>
                 <div className={styles.panelContent}>
-                  <img
-                    src={`${iconBase}/${path.icon}.svg`}
-                    alt={path.label}
-                    className={styles.panelIcon}
-                  />
                   <h2>{path.title}</h2>
                   <p>{path.body}</p>
                   <div className={styles.buttonWrap}>
