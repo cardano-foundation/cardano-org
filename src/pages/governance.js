@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "@docusaurus/Head";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import SiteHero from "@site/src/components/Layout/SiteHero";
@@ -11,6 +12,7 @@ import TermExplainer from "@site/src/components/TermExplainer";
 import QuizCard from "@site/src/components/QuizCard";
 import FAQSection from "@site/src/components/FAQSection";
 import StepCard from "@site/src/components/Layout/StepCard";
+
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -250,6 +252,22 @@ export default function Governance() {
       description={translate({id: 'governance.meta.description', message: "Cardano governance gives every ada holder a voice. Delegate to a DRep, vote on proposals, or register as a delegate representative to shape the network."})}
     >
       <OpenGraphInfo pageName="governance" />
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": governanceFAQ.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer.join(" "),
+              },
+            })),
+          })}
+        </script>
+      </Head>
       <GovernanceHero />
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
@@ -262,17 +280,18 @@ export default function Governance() {
 
         <BoundaryBox>
           <GovernancePathsSection />
-          <SpacerBox size="small" />
-          <div className="row" style={{justifyContent: 'center'}}>
-            <div className="col col--6">
+          <div className="row">
+            <div className="col col--8">
+              <FAQSection data={governanceFAQ} />
+            </div>
+            <div className="col col--4" style={{display: 'flex', alignItems: 'flex-end'}}>
               <QuizCard
                 quizData={governanceRoleQuiz}
                 title={translate({id: 'governance.quiz.title', message: 'Not sure where to start?'})}
                 description={translate({id: 'governance.quiz.description', message: 'Answer a few questions to find out which governance role fits you best.'})}
                 buttonText={translate({id: 'governance.quiz.buttonText', message: 'Find your role'})}
                 questionCount={5}
-                passingScore={0}
-                allowRetry={false}
+                surveyMode={true}
               />
             </div>
           </div>
@@ -305,11 +324,6 @@ export default function Governance() {
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>
-
-        <BoundaryBox>
-          <FAQSection data={governanceFAQ} />
-          <SpacerBox size="medium" />
-        </BoundaryBox>
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>

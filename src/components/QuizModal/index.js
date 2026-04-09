@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Quiz from '../Quiz';
 import styles from './styles.module.css';
 
-const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount = 5, allowRetry = true, passingScore = 60 }) => {
+const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount = 5, allowRetry = true, passingScore = 60, surveyMode = false }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Prevent body scroll when modal is open
@@ -50,11 +50,12 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
               </svg>
             </button>
             <div className={styles.quizWrapper}>
-              <Quiz 
-                quizData={quizData} 
+              <Quiz
+                quizData={quizData}
                 questionCount={questionCount}
                 allowRetry={allowRetry}
                 passingScore={passingScore}
+                surveyMode={surveyMode}
               />
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60 }) => {
+const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 60, surveyMode = false }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -45,13 +45,13 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
-    
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+
+    const isCorrect = surveyMode ? true : selectedAnswer === currentQuestion.correctAnswer;
     setIsAnswered(true);
     if (isCorrect) {
       setScore(score + 1);
     }
-    
+
     // Record the result for this question
     const newResults = [...answerResults];
     newResults[currentQuestionIndex] = isCorrect;
@@ -97,7 +97,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
   if (isQuizComplete) {
     const percentage = Math.round((score / totalQuestions) * 100);
-    const isPassing = percentage >= passingScore;
+    const isPassing = surveyMode ? true : percentage >= passingScore;
 
     return (
       <div className={styles.quizContainer}>
@@ -114,24 +114,30 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
             )}
           </div>
           <h2 className={styles.resultTitle}>
-            {isPassing ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'}) : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
+            {surveyMode
+              ? translate({id: 'quiz.ui.surveyComplete', message: 'Thanks for your answers!'})
+              : isPassing ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'}) : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
           </h2>
-          <div className={styles.scoreDisplay}>
-            <span className={styles.scoreNumber}>{percentage}%</span>
-            <span className={styles.scoreText}>
-              {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
-            </span>
-          </div>
+          {!surveyMode && (
+            <div className={styles.scoreDisplay}>
+              <span className={styles.scoreNumber}>{percentage}%</span>
+              <span className={styles.scoreText}>
+                {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
+              </span>
+            </div>
+          )}
           <button onClick={handleRestartQuiz} className={styles.primaryButton}>
-            {translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
+            {surveyMode
+              ? translate({id: 'quiz.ui.startOver', message: 'Start over'})
+              : translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
           </button>
         </div>
       </div>
     );
   }
 
-  const isCorrect = isAnswered && selectedAnswer === currentQuestion.correctAnswer;
-  const isIncorrect = isAnswered && selectedAnswer !== currentQuestion.correctAnswer;
+  const isCorrect = isAnswered && (surveyMode || selectedAnswer === currentQuestion.correctAnswer);
+  const isIncorrect = isAnswered && !surveyMode && selectedAnswer !== currentQuestion.correctAnswer;
 
   return (
     <div className={styles.quizContainer}>
@@ -144,7 +150,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
       <div className={`${styles.questionCard} ${isCorrect ? styles.correct : ''} ${isIncorrect ? styles.incorrect : ''}`}>
         {/* Status Message */}
-        {isAnswered && (
+        {isAnswered && !surveyMode && (
           <div className={styles.statusMessage}>
             <div className={styles.statusIcon}>
               {isCorrect ? (
@@ -189,12 +195,12 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
           {currentQuestion.options.map((option, index) => {
             const isSelected = selectedAnswer === index;
             const isCorrectOption = index === currentQuestion.correctAnswer;
-            const showAsCorrect = isAnswered && isCorrectOption;
-            const showAsIncorrect = isAnswered && isSelected && !isCorrectOption;
-            
-            // Only show selected answer when answered
-            const shouldShow = !isAnswered || isSelected;
-            
+            const showAsCorrect = !surveyMode && isAnswered && isCorrectOption;
+            const showAsIncorrect = !surveyMode && isAnswered && isSelected && !isCorrectOption;
+
+            // In survey mode, always show all options; in quiz mode, only show selected
+            const shouldShow = surveyMode || !isAnswered || isSelected;
+
             if (!shouldShow) return null;
 
             return (
@@ -227,7 +233,22 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
         {/* Action Buttons */}
         <div className={styles.actionButtons}>
-          {!isAnswered ? (
+          {surveyMode && !isAnswered ? (
+            <button
+              onClick={() => { handleCheckAnswer(); }}
+              disabled={selectedAnswer === null}
+              className={styles.primaryButton}
+            >
+              {currentQuestionIndex + 1 < totalQuestions ? translate({id: 'quiz.ui.nextQuestion', message: 'Next question'}) : translate({id: 'quiz.ui.finishQuiz', message: 'Finish quiz'})}
+            </button>
+          ) : surveyMode && isAnswered ? (
+            <button
+              onClick={handleNextQuestion}
+              className={styles.primaryButton}
+            >
+              {currentQuestionIndex + 1 < totalQuestions ? translate({id: 'quiz.ui.nextQuestion', message: 'Next question'}) : translate({id: 'quiz.ui.finishQuiz', message: 'Finish quiz'})}
+            </button>
+          ) : !isAnswered ? (
             <button
               onClick={handleCheckAnswer}
               disabled={selectedAnswer === null}
