@@ -11,3 +11,14 @@ export function toAdaIfMoney(key, v) {
   if (!Number.isFinite(n)) return v;
   return LOVELACE_KEY.test(key) ? Math.round(n / 1_000_000) : n;
 }
+
+// Koios returns `withdrawal` on a TreasuryWithdrawals proposal as an array of
+// {amount, stake_address} objects — one entry per recipient. Sum them up to
+// get the total payout in lovelace.
+export function sumWithdrawalAmounts(withdrawal) {
+  if (!Array.isArray(withdrawal)) return 0;
+  return withdrawal.reduce((sum, w) => {
+    const n = Number(w?.amount);
+    return sum + (Number.isNaN(n) ? 0 : n);
+  }, 0);
+}

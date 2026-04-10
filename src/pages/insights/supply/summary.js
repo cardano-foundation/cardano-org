@@ -11,7 +11,7 @@ import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
-import { convertLovelacesToAda } from '@site/src/utils/insights/numbers';
+import { convertLovelacesToAda, sumWithdrawalAmounts } from '@site/src/utils/insights/numbers';
 import { MIN_EPOCH, GOVERNANCE_EPOCH_THRESHOLD, getEpochDate } from '@site/src/utils/insights/epochs';
 import './summary.css';
 
@@ -353,8 +353,6 @@ function PageContent() {
       }
       
       // Governance withdrawals (epochs >= 571) - fetch all without epoch filter
-      // The `withdrawal` field is an array of {amount, stake_address} objects;
-      // a single proposal can pay out to multiple stake addresses, so we sum them up.
       const withdrawalDetails = [];
       try {
         const withdrawalsRes = await api.get(
@@ -363,12 +361,7 @@ function PageContent() {
         withdrawalsRes.data.forEach(item => {
           const epoch = item.enacted_epoch;
           if (epoch && epoch >= GOVERNANCE_EPOCH_THRESHOLD) {
-            const totalAmount = Array.isArray(item.withdrawal)
-              ? item.withdrawal.reduce((sum, w) => {
-                  const n = Number(w?.amount);
-                  return sum + (isNaN(n) ? 0 : n);
-                }, 0)
-              : 0;
+            const totalAmount = sumWithdrawalAmounts(item.withdrawal);
 
             // Aggregate per epoch (existing behavior)
             if (!allWithdrawals[epoch]) allWithdrawals[epoch] = 0;
