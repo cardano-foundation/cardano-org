@@ -12,7 +12,7 @@ import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
-import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY } from '@site/src/utils/insights/numbers';
+import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY, sumWithdrawalAmounts } from '@site/src/utils/insights/numbers';
 import { MIN_EPOCH, GOVERNANCE_EPOCH_THRESHOLD, getEpochDate } from '@site/src/utils/insights/epochs';
 
 // Layout components 
@@ -216,14 +216,13 @@ function PageContent() {
       let withdrawalsPrev = [];
       
       if (displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD) {
-        // Fetch governance action based treasury withdrawals for current epoch
-        // Note: For governance epochs, withdrawals are counted in the same epoch they are enacted
+        // For governance epochs, withdrawals are counted in the same epoch they are enacted.
         try {
           const currRes = await api.get(
-            `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=eq.${displayedEpoch}&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal-%3Eamount`
+            `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=eq.${displayedEpoch}&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal`
           );
           withdrawalsCurr = (currRes.data || []).map(item => ({
-            amount: item.amount != null ? String(item.amount) : '0',
+            amount: String(sumWithdrawalAmounts(item.withdrawal)),
             title: item.title || 'Untitled withdrawal',
             proposal_id: item.proposal_id,
             proposal_index: item.proposal_index

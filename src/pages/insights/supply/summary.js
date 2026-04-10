@@ -11,7 +11,7 @@ import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
-import { convertLovelacesToAda } from '@site/src/utils/insights/numbers';
+import { convertLovelacesToAda, sumWithdrawalAmounts } from '@site/src/utils/insights/numbers';
 import { MIN_EPOCH, GOVERNANCE_EPOCH_THRESHOLD, getEpochDate } from '@site/src/utils/insights/epochs';
 import './summary.css';
 
@@ -318,7 +318,7 @@ function PageContent() {
       const allTotals = {};
       
       try {
-        const totalsRes = await api.get('/totals?limit=1000&order=epoch_no.asc');
+        const totalsRes = await api.get('/totals?order=epoch_no.asc');
         totalsRes.data.forEach(item => {
           if (item.epoch_no) {
             allTotals[item.epoch_no] = item;
@@ -353,24 +353,24 @@ function PageContent() {
       }
       
       // Governance withdrawals (epochs >= 571) - fetch all without epoch filter
-      // Use the same query structure as the working version in index.js, but include title
       const withdrawalDetails = [];
       try {
         const withdrawalsRes = await api.get(
-          `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal-%3Eamount`
+          `/proposal_list?proposal_type=eq.TreasuryWithdrawals&enacted_epoch=not.is.null&select=proposal_id,proposal_index,proposal_type,enacted_epoch,meta_json-%3Ebody-%3Etitle,withdrawal`
         );
         withdrawalsRes.data.forEach(item => {
           const epoch = item.enacted_epoch;
           if (epoch && epoch >= GOVERNANCE_EPOCH_THRESHOLD) {
+            const totalAmount = sumWithdrawalAmounts(item.withdrawal);
+
             // Aggregate per epoch (existing behavior)
             if (!allWithdrawals[epoch]) allWithdrawals[epoch] = 0;
-            const amount = item.amount != null ? Number(item.amount) : 0;
-            allWithdrawals[epoch] += isNaN(amount) ? 0 : amount;
+            allWithdrawals[epoch] += totalAmount;
 
             // Store individual withdrawal details (new)
             withdrawalDetails.push({
               epoch: epoch,
-              amount: amount,
+              amount: totalAmount,
               title: item.title || 'Untitled withdrawal',
               proposal_id: item.proposal_id,
               proposal_index: item.proposal_index
