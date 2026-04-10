@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-04-09",
+    "generated": "2026-04-10",
     "chainEpoch": 624,
     "description": "Transaction stats for reporting period",
     "reportingWindow": {
@@ -26,7 +26,7 @@
     {
       "label": "sundaeswap",
       "displayName": "SundaeSwap",
-      "txCount": 28762,
+      "txCount": 28898,
       "rank": 3
     },
     {
@@ -38,7 +38,7 @@
     {
       "label": "liqwid-finance",
       "displayName": "Liqwid Finance",
-      "txCount": 10704,
+      "txCount": 11484,
       "rank": 5
     },
     {
@@ -48,226 +48,190 @@
       "rank": 6
     },
     {
+      "label": "vyfinance",
+      "displayName": "VyFinance",
+      "txCount": 8089,
+      "rank": 7
+    },
+    {
       "label": "splash",
       "displayName": "Splash",
       "txCount": 7882,
-      "rank": 7
+      "rank": 8
     },
     {
       "label": "jpg.store",
       "displayName": "JpgStore",
       "txCount": 7751,
-      "rank": 8
+      "rank": 9
     },
     {
       "label": "fms-by-trivolve",
       "displayName": "FMS by Trivolve",
       "txCount": 7346,
-      "rank": 9
+      "rank": 10
     },
     {
-      "label": "vyfinance",
-      "displayName": "VyFinance",
-      "txCount": 5286,
-      "rank": 10
+      "label": "strike-finance",
+      "displayName": "Strike Finance",
+      "txCount": 4381,
+      "rank": 11
     },
     {
       "label": "dano-finance",
       "displayName": "Dano Finance",
       "txCount": 3338,
-      "rank": 11
-    },
-    {
-      "label": "vy-finance",
-      "displayName": "VyFinance",
-      "txCount": 2803,
       "rank": 12
-    },
-    {
-      "label": "strike-finance",
-      "displayName": "Strike Finance",
-      "txCount": 2672,
-      "rank": 13
-    },
-    {
-      "label": "strike-finance",
-      "displayName": "Strike Finance",
-      "txCount": 1709,
-      "rank": 14
     },
     {
       "label": "iagon",
       "displayName": "Iagon",
       "txCount": 1433,
-      "rank": 15
+      "rank": 13
     },
     {
       "label": "masumi",
       "displayName": "Masumi",
       "txCount": 1346,
-      "rank": 16
+      "rank": 14
     },
     {
       "label": "dripdropz",
       "displayName": "DripDropz",
       "txCount": 1099,
-      "rank": 17
+      "rank": 15
     },
     {
       "label": "charli3",
       "displayName": "Charli3",
       "txCount": 839,
-      "rank": 18
-    },
-    {
-      "label": "liqwid-finance",
-      "displayName": "Liqwid Finance",
-      "txCount": 780,
-      "rank": 19
+      "rank": 16
     },
     {
       "label": "muesliswap",
       "displayName": "MuesliSwap",
       "txCount": 692,
-      "rank": 20
+      "rank": 17
     },
     {
       "label": "dexhunter",
       "displayName": "Dexhunter",
       "txCount": 620,
-      "rank": 21
+      "rank": 18
     },
     {
       "label": "wanchain",
       "displayName": "Wanchain",
       "txCount": 411,
-      "rank": 22
+      "rank": 19
     },
     {
       "label": "spectrum-finance",
       "displayName": "Spectrum Finance",
-      "txCount": 177,
-      "rank": 23
+      "txCount": 198,
+      "rank": 20
     },
     {
       "label": "wayup",
       "displayName": "Wayup",
       "txCount": 161,
-      "rank": 24
+      "rank": 21
     },
     {
       "label": "fluid-tokens",
       "displayName": "Fluid Tokens",
       "txCount": 150,
-      "rank": 25
-    },
-    {
-      "label": "sundae-swap",
-      "displayName": "SundaeSwap",
-      "txCount": 136,
-      "rank": 26
+      "rank": 22
     },
     {
       "label": "singularitynet",
       "displayName": "SingularityNET",
       "txCount": 123,
-      "rank": 27
+      "rank": 23
     },
     {
       "label": "lenfi",
       "displayName": "Lenfi",
       "txCount": 66,
-      "rank": 28
+      "rank": 24
     },
     {
-      "label": "teddy-swap",
+      "label": "teddyswap",
       "displayName": "TeddySwap",
       "txCount": 64,
-      "rank": 29
+      "rank": 25
     },
     {
       "label": "pondora",
       "displayName": "Pondora",
       "txCount": 60,
-      "rank": 30
+      "rank": 26
     },
     {
       "label": "chilled-kongs",
       "displayName": "Chilled Kongs",
       "txCount": 59,
-      "rank": 31
+      "rank": 27
     },
     {
       "label": "intersect-budget-contracts",
       "displayName": "Intersect Budget Contracts",
       "txCount": 54,
-      "rank": 32
+      "rank": 28
     },
     {
-      "label": "genius-yield",
-      "displayName": "Genius Yield",
-      "txCount": 41,
-      "rank": 33
+      "label": "geniusyield",
+      "displayName": "GeniusYield",
+      "txCount": 47,
+      "rank": 29
     },
     {
       "label": "cardano-smart-contract-quiz-v1000",
       "displayName": "Cardano Smart Contract Quiz V1000",
       "txCount": 30,
-      "rank": 34
-    },
-    {
-      "label": "spectrum-finance",
-      "displayName": "Spectrum Finance",
-      "txCount": 21,
-      "rank": 35
+      "rank": 30
     },
     {
       "label": "$usdm",
       "displayName": "$USDM",
       "txCount": 11,
-      "rank": 36
+      "rank": 31
     },
     {
       "label": "disco-solaris",
       "displayName": "Disco Solaris",
       "txCount": 7,
-      "rank": 37
+      "rank": 32
     },
     {
       "label": "book.io",
       "displayName": "Book.io",
       "txCount": 6,
-      "rank": 38
-    },
-    {
-      "label": "genius-yield",
-      "displayName": "GeniusYield",
-      "txCount": 6,
-      "rank": 39
+      "rank": 33
     },
     {
       "label": "spacebudz",
       "displayName": "SpaceBudz",
       "txCount": 6,
-      "rank": 40
+      "rank": 34
     },
     {
       "label": "generic",
       "displayName": "Generic",
       "txCount": 5,
-      "rank": 41
+      "rank": 35
     },
     {
       "label": "saturn-swap",
       "displayName": "Saturn Swap",
       "txCount": 1,
-      "rank": 42
+      "rank": 36
     },
     {
       "label": "world-mobile-token",
       "displayName": "World Mobile Token",
       "txCount": 1,
-      "rank": 43
+      "rank": 37
     }
   ],
   "metadataLabelStats": [
