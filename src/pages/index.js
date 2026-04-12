@@ -17,8 +17,8 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <WelcomeHero
-      title={[translate({id: 'home.hero.title', message: 'Making the world Work Better For All'})]}
-      description={translate({id: 'home.hero.description', message: 'Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change.'})}
+      title={[translate({id: 'home.hero.title', message: 'Designed for secure, reliable systems'})]}
+      description={translate({id: 'home.hero.description', message: 'Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future.'})}
     />
   );
 }
