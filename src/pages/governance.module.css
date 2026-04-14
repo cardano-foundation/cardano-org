@@ -8,28 +8,6 @@
   height: 150px;
 }
 
-.toolCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
-.toolIcon {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1rem;
-}
-
-.toolDescription {
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-.toolsRow {
-  justify-content: center;
-}
-
 .milestoneCard {
   display: flex;
   gap: 1.5rem;

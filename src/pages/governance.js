@@ -12,8 +12,7 @@ import TermExplainer from "@site/src/components/TermExplainer";
 import SurveyCard from "@site/src/components/SurveyCard";
 import FAQSection from "@site/src/components/FAQSection";
 import StepCard from "@site/src/components/Layout/StepCard";
-
-
+import AppGrid from "@site/src/components/AppGrid";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -150,15 +149,6 @@ function ImpactTimeline() {
   );
 }
 
-const governanceTools = [
-  { image: "/img/dotted-icons/govtool.png", labelId: "governance.tools.govtool", label: "GovTool", link: "https://gov.tools", descId: "governance.tools.govtool.description", desc: "Vote on proposals and register as a DRep" },
-  { image: "/img/dotted-icons/tempo.png", labelId: "governance.tools.tempo", label: "Tempo", link: "https://tempo.vote", descId: "governance.tools.tempo.description", desc: "Find and compare DReps" },
-  { image: "/img/dotted-icons/adastat.png", labelId: "governance.tools.adastat", label: "AdaStat", link: "https://adastat.net/governances", descId: "governance.tools.adastat.description", desc: "Track all governance actions" },
-  { image: "/img/dotted-icons/governance-space.png", labelId: "governance.tools.governancespace", label: "Governance Space", link: "https://governancespace.com", descId: "governance.tools.governancespace.description", desc: "Governance analytics and insights" },
-  { image: "/img/dotted-icons/governance-charts.png", labelId: "governance.tools.charts", label: "Governance Charts", link: "/insights/governance-actions/?category=General#charts", descId: "governance.tools.charts.description", desc: "Interactive visual process guides" },
-  { image: "/img/dotted-icons/cardano-constitution.png", labelId: "governance.tools.constitution", label: "Constitution", link: "/constitution", descId: "governance.tools.constitution.description", desc: "Read the governing document" },
-];
-
 function ToolsGrid() {
   return (
     <>
@@ -168,33 +158,13 @@ function ToolsGrid() {
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      {[0, 3].map((startIndex) => (
-        <React.Fragment key={startIndex}>
-          <div className={`row ${styles.toolsRow}`}>
-            {governanceTools.slice(startIndex, startIndex + 3).map((tool) => (
-              <div className="col col--4" key={tool.labelId}>
-                <div className={styles.toolCard}>
-                  <img
-                    src={useBaseUrl(tool.image)}
-                    alt={translate({id: tool.labelId, message: tool.label})}
-                    className={styles.toolIcon}
-                  />
-                  <Link
-                    to={tool.link}
-                    className="button button--primary"
-                  >
-                    {translate({id: tool.labelId, message: tool.label})}
-                  </Link>
-                  <p className={`black-text ${styles.toolDescription}`}>
-                    {translate({id: tool.descId, message: tool.desc})}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {startIndex === 0 && <SpacerBox size="small" />}
-        </React.Fragment>
-      ))}
+      <AppGrid
+        tags={['governance']}
+        showRank={false}
+        showStats={false}
+        ctaText={translate({id: 'governance.tools.cta', message: 'Visit'})}
+        moreTitle={translate({id: 'governance.tools.more', message: 'More tools'})}
+      />
     </>
   );
 }
