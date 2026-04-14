@@ -10,7 +10,7 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <WelcomeHeroArtworkContest
-      title={[translate({id: 'artworkContest.hero.title', message: 'Making the world Work Better For All'})]}
+      title={[translate({id: 'artworkContest.hero.title', message: 'Making the World Work Better for All'})]}
       description={translate({id: 'artworkContest.hero.description', message: 'Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change.'})}
     />
   );
