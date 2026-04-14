@@ -17,7 +17,7 @@ function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
   return (
     <WelcomeHero
-      title={[translate({id: 'home.hero.title', message: 'Making the world Work Better For All'})]}
+      title={[translate({id: 'home.hero.title', message: 'Making the World Work Better for All'})]}
       description={translate({id: 'home.hero.description', message: 'Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future.'})}
     />
   );
