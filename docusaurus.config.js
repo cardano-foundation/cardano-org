@@ -320,7 +320,7 @@ const config = {
             position: 'left',
             items: [
               { to: '/developers', label: 'Start building on Cardano' },
-              { to: '/exchanges', label: 'Integrate Cardano' },
+              { href: 'https://developers.cardano.org/docs/build/integrate/overview/', label: 'Integrate Cardano' },
               { href: 'https://developers.cardano.org', label: 'Developer Portal' },
               { href: 'https://developers.cardano.org/tools', label: 'Builder Tools' },
               { to: '/entities/', label: 'Companies building on Cardano' },
@@ -335,7 +335,7 @@ const config = {
                   icon: 'code-solid',
                   items: [
                     { to: '/developers', label: 'Start building on Cardano', description: 'Developer resources and tooling', icon: 'code-solid' },
-                    { to: '/exchanges', label: 'Integrate Cardano', description: 'Exchange and integration guides', icon: 'plug-solid' },
+                    { href: 'https://developers.cardano.org/docs/build/integrate/overview/', label: 'Integrate Cardano', description: 'Exchange and integration guides', icon: 'plug-solid' },
                   ],
                 },
                 {
