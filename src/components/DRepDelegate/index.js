@@ -36,36 +36,39 @@ function formatVotingPower(lovelace) {
   return `${Math.round(ada).toLocaleString()} ada`;
 }
 
-// CIP-119 has `body.givenName`, but many DReps still use legacy `name`.
-// Try both, plus a few common alternates seen in the wild.
+// CIP-119 metadata is JSON-LD: string values may be wrapped as `{"@value": "..."}`.
+function asString(v) {
+  if (v == null) return null;
+  if (typeof v === "string") return v;
+  if (typeof v === "object" && typeof v["@value"] === "string") return v["@value"];
+  return null;
+}
+
 function extractName(meta) {
   return (
-    meta?.body?.givenName ||
-    meta?.body?.name ||
-    meta?.name ||
+    asString(meta?.body?.givenName) ||
+    asString(meta?.body?.name) ||
+    asString(meta?.name) ||
     null
   );
 }
 
 function extractImage(meta) {
-  return (
-    meta?.body?.image?.contentUrl ||
-    meta?.body?.image ||
-    meta?.image?.contentUrl ||
-    meta?.image ||
-    null
-  );
+  const img = meta?.body?.image || meta?.image;
+  if (!img) return null;
+  const direct = asString(img);
+  if (direct) return direct;
+  return asString(img?.contentUrl);
 }
 
 function extractBio(meta) {
   const candidate =
-    meta?.body?.motivations ||
-    meta?.body?.objectives ||
-    meta?.body?.qualifications ||
-    meta?.motivation ||
-    meta?.bio ||
+    asString(meta?.body?.motivations) ||
+    asString(meta?.body?.objectives) ||
+    asString(meta?.body?.qualifications) ||
+    asString(meta?.motivation) ||
+    asString(meta?.bio) ||
     "";
-  if (typeof candidate !== "string") return "";
   return candidate.length > 180 ? candidate.slice(0, 177) + "…" : candidate;
 }
 
