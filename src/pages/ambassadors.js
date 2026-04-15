@@ -66,7 +66,7 @@ export default function Home() {
               ]}
               leftHeadingDot={true}
               rightButtonLabel={translate({id: 'ambassadors.cta.rightButtonLabel', message: 'Get Started'})}
-              rightButtonLink={"https://forum.cardano.org/t/welcome-understanding-trust-levels-on-the-cardano-forum/117680"}
+              rightButtonLink={"https://forum.cardano.org/t/cardano-ambassadors-roles-and-responsibilities/154055"}
               rightButtonAlign={"center"}
             />
             </BoundaryBox>
