@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
+import { BrowserWallet } from "@meshsdk/wallet";
+import { MeshTxBuilder } from "@meshsdk/transaction";
+import { KoiosProvider } from "@meshsdk/provider";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import styles from "./styles.module.css";
 
@@ -8,6 +11,8 @@ const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
 const DISPLAY_COUNT = 5;
 const BATCH_SIZE = 50;
+const EXPECTED_NETWORK_ID = 1; // mainnet
+const EXPLORER_TX_BASE = "https://cardanoscan.io/transaction/";
 
 function fisherYates(arr) {
   const a = [...arr];
@@ -72,6 +77,161 @@ function isValidDRepId(input) {
   return false;
 }
 
+function shortAddress(addr) {
+  if (!addr) return "";
+  return `${addr.slice(0, 12)}…${addr.slice(-8)}`;
+}
+
+function classifyError(err) {
+  const msg = String(err?.message || err || "");
+  if (/StakeKeyNotRegistered|StakeNotRegistered/i.test(msg)) return "stakeNotRegistered";
+  if (/declined|rejected|cancel/i.test(msg)) return "userCancelled";
+  return "generic";
+}
+
+function WalletPicker({ onConnect, busy }) {
+  const [available, setAvailable] = useState([]);
+  const [pickerError, setPickerError] = useState(null);
+
+  useEffect(() => {
+    try {
+      setAvailable(BrowserWallet.getInstalledWallets() || []);
+    } catch (err) {
+      setPickerError(String(err?.message || err));
+    }
+  }, []);
+
+  const connect = async (walletName) => {
+    try {
+      const instance = await BrowserWallet.enable(walletName);
+      const [addresses, networkId] = await Promise.all([
+        instance.getUsedAddresses(),
+        instance.getNetworkId(),
+      ]);
+      onConnect({
+        instance,
+        name: walletName,
+        address: addresses?.[0] || null,
+        networkId,
+      });
+    } catch (err) {
+      if (classifyError(err) !== "userCancelled") {
+        setPickerError(String(err?.message || err));
+      }
+    }
+  };
+
+  if (pickerError) {
+    return (
+      <p className={styles.walletError}>
+        {translate(
+          { id: "governance.delegate.wallet.error", message: "Wallet error: {error}" },
+          { error: pickerError }
+        )}
+      </p>
+    );
+  }
+
+  if (!available.length) {
+    return (
+      <p className={styles.walletEmpty}>
+        {translate({
+          id: "governance.delegate.wallet.empty",
+          message: "No Cardano wallet detected. Install Eternl, Lace, Nami, Yoroi or another CIP-30 wallet to continue.",
+        })}
+      </p>
+    );
+  }
+
+  return (
+    <div className={styles.walletPicker}>
+      {available.map((w) => {
+        const name = w?.name || String(w);
+        const icon = w?.icon;
+        return (
+          <button
+            key={name}
+            type="button"
+            disabled={busy}
+            onClick={() => connect(name)}
+            className={styles.walletButton}
+          >
+            {icon && <img src={icon} alt="" className={styles.walletIcon} />}
+            <span>{name}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function WalletStatus({ wallet, onDisconnect }) {
+  const wrongNetwork = wallet.networkId !== EXPECTED_NETWORK_ID;
+  return (
+    <div className={`${styles.walletStatus} ${wrongNetwork ? styles.walletStatusWarning : ""}`}>
+      <div className={styles.walletStatusLeft}>
+        <span className={styles.walletDot} aria-hidden="true" />
+        <span>
+          {translate(
+            { id: "governance.delegate.wallet.connected", message: "Connected: {name} · {addr}" },
+            { name: wallet.name, addr: shortAddress(wallet.address) }
+          )}
+        </span>
+      </div>
+      <button type="button" onClick={onDisconnect} className={styles.disconnectButton}>
+        {translate({ id: "governance.delegate.wallet.disconnect", message: "Disconnect" })}
+      </button>
+    </div>
+  );
+}
+
+function NetworkWarning() {
+  return (
+    <div className={styles.banner + " " + styles.bannerWarning}>
+      {translate({
+        id: "governance.delegate.networkWarning",
+        message: "Your wallet is on the wrong network. Switch to Mainnet to delegate.",
+      })}
+    </div>
+  );
+}
+
+function TxBanner({ state }) {
+  if (state.status === "building") {
+    return (
+      <div className={`${styles.banner} ${styles.bannerInfo}`}>
+        {translate(
+          { id: "governance.delegate.tx.building", message: "Preparing delegation to {target}. Please confirm in your wallet…" },
+          { target: state.target }
+        )}
+      </div>
+    );
+  }
+  if (state.status === "success") {
+    return (
+      <div className={`${styles.banner} ${styles.bannerSuccess}`}>
+        <p style={{ margin: 0 }}>
+          {translate(
+            { id: "governance.delegate.tx.success", message: "Delegation submitted to {target}." },
+            { target: state.target }
+          )}
+        </p>
+        <a href={EXPLORER_TX_BASE + state.txHash} target="_blank" rel="noopener noreferrer">
+          {translate({ id: "governance.delegate.tx.viewOnExplorer", message: "View on Cardanoscan" })}
+        </a>
+      </div>
+    );
+  }
+  if (state.status === "error") {
+    return (
+      <div className={`${styles.banner} ${styles.bannerError}`}>
+        {state.message}
+      </div>
+    );
+  }
+  return null;
+}
+
 function Initials({ name }) {
   const text = (name || "?")
     .split(/\s+/)
@@ -83,7 +243,7 @@ function Initials({ name }) {
   return <div className={styles.initials} aria-hidden="true">{text}</div>;
 }
 
-function DRepCard({ drep, onSelect }) {
+function DRepCard({ drep, onSelect, disabled }) {
   const [imgError, setImgError] = useState(false);
   const showImage = drep.image && !imgError;
   return (
@@ -109,6 +269,7 @@ function DRepCard({ drep, onSelect }) {
       <button
         type="button"
         className={`button button--primary ${styles.cardCta}`}
+        disabled={disabled}
         onClick={() => onSelect({ dRepId: drep.drepId }, drep.name)}
       >
         {translate(
@@ -120,7 +281,7 @@ function DRepCard({ drep, onSelect }) {
   );
 }
 
-function CustomDelegateRow({ onSelect }) {
+function CustomDelegateRow({ onSelect, disabled }) {
   const [value, setValue] = useState("");
   const trimmed = value.trim();
   const valid = isValidDRepId(trimmed);
@@ -146,7 +307,7 @@ function CustomDelegateRow({ onSelect }) {
       <button
         type="button"
         className="button button--primary"
-        disabled={!valid}
+        disabled={!valid || disabled}
         onClick={() => onSelect({ dRepId: trimmed }, trimmed)}
       >
         {translate({ id: "governance.delegate.custom.cta", message: "Delegate" })}
@@ -155,12 +316,13 @@ function CustomDelegateRow({ onSelect }) {
   );
 }
 
-function SpecialOption({ label, help, onSelect, target }) {
+function SpecialOption({ label, help, onSelect, target, disabled }) {
   return (
     <div className={styles.specialOption}>
       <button
         type="button"
         className={`button button--outline button--secondary ${styles.specialButton}`}
+        disabled={disabled}
         onClick={() => onSelect(target, label)}
       >
         {label}
@@ -180,6 +342,8 @@ export default function DRepDelegate() {
   const [displayed, setDisplayed] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [wallet, setWallet] = useState(null);
+  const [tx, setTx] = useState({ status: "idle" });
 
   useEffect(() => {
     if (!API_URL) return;
@@ -265,9 +429,59 @@ export default function DRepDelegate() {
     setDisplayed(fisherYates(pool).slice(0, DISPLAY_COUNT));
   }, [pool]);
 
-  const handleSelect = useCallback((drep) => {
-    console.log("DRep selected:", drep.drepId);
+  const wrongNetwork = wallet && wallet.networkId !== EXPECTED_NETWORK_ID;
+  const txBusy = tx.status === "building";
+  const canDelegate = !!wallet && !wrongNetwork && !txBusy;
+
+  const handleDisconnect = useCallback(() => {
+    setWallet(null);
+    setTx({ status: "idle" });
   }, []);
+
+  const handleSelect = useCallback(async (target, displayName) => {
+    if (!wallet || wrongNetwork || txBusy) return;
+    setTx({ status: "building", target: displayName });
+    try {
+      const provider = new KoiosProvider(API_URL);
+      const [utxos, changeAddress, rewardAddrs] = await Promise.all([
+        wallet.instance.getUtxos(),
+        wallet.instance.getChangeAddress(),
+        wallet.instance.getRewardAddresses(),
+      ]);
+      if (!rewardAddrs?.length) {
+        throw new Error("Wallet did not return a reward address.");
+      }
+      const txBuilder = new MeshTxBuilder({
+        fetcher: provider,
+        submitter: provider,
+        verbose: false,
+      });
+      const unsignedTx = await txBuilder
+        .voteDelegationCertificate(target, rewardAddrs[0])
+        .changeAddress(changeAddress)
+        .selectUtxosFrom(utxos)
+        .complete();
+      const signedTx = await wallet.instance.signTx(unsignedTx, true);
+      const txHash = await wallet.instance.submitTx(signedTx);
+      setTx({ status: "success", txHash, target: displayName });
+    } catch (err) {
+      const kind = classifyError(err);
+      if (kind === "userCancelled") {
+        setTx({ status: "idle" });
+        return;
+      }
+      const message = kind === "stakeNotRegistered"
+        ? translate({
+            id: "governance.delegate.error.stakeNotRegistered",
+            message: "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote.",
+          })
+        : translate(
+            { id: "governance.delegate.error.generic", message: "Delegation failed: {error}" },
+            { error: String(err?.message || err) }
+          );
+      setTx({ status: "error", message });
+    }
+  }, [wallet, wrongNetwork, txBusy, API_URL]);
 
   if (!API_URL) return null;
 
@@ -309,6 +523,22 @@ export default function DRepDelegate() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.walletSection}>
+        {wallet ? (
+          <WalletStatus wallet={wallet} onDisconnect={handleDisconnect} />
+        ) : (
+          <>
+            <h3 className={styles.sectionHeading}>
+              {translate({ id: "governance.delegate.wallet.heading", message: "Connect a wallet to delegate" })}
+            </h3>
+            <WalletPicker onConnect={setWallet} busy={txBusy} />
+          </>
+        )}
+        {wrongNetwork && <NetworkWarning />}
+      </div>
+
+      <TxBanner state={tx} />
+
       <div className={styles.poolHeader}>
         <p className={styles.poolIntro}>
           {translate(
@@ -329,7 +559,12 @@ export default function DRepDelegate() {
       </div>
       <div className={styles.cardGrid}>
         {displayed.map((drep) => (
-          <DRepCard key={drep.drepId} drep={drep} onSelect={handleSelect} />
+          <DRepCard
+            key={drep.drepId}
+            drep={drep}
+            onSelect={handleSelect}
+            disabled={!canDelegate}
+          />
         ))}
       </div>
 
@@ -340,7 +575,7 @@ export default function DRepDelegate() {
             message: "Already know your DRep?",
           })}
         </h3>
-        <CustomDelegateRow onSelect={handleSelect} />
+        <CustomDelegateRow onSelect={handleSelect} disabled={!canDelegate} />
       </div>
 
       <div className={styles.specialSection}>
@@ -359,6 +594,7 @@ export default function DRepDelegate() {
             })}
             target={{ alwaysAbstain: null }}
             onSelect={handleSelect}
+            disabled={!canDelegate}
           />
           <SpecialOption
             label={translate({ id: "governance.delegate.noConfidence.label", message: "No Confidence" })}
@@ -368,6 +604,7 @@ export default function DRepDelegate() {
             })}
             target={{ alwaysNoConfidence: null }}
             onSelect={handleSelect}
+            disabled={!canDelegate}
           />
         </div>
       </div>

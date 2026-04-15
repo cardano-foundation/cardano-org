@@ -161,3 +161,133 @@
   color: var(--ifm-color-emphasis-700);
   line-height: 1.45;
 }
+
+.walletSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.walletPicker {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.walletButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-900);
+  text-transform: capitalize;
+}
+
+.walletButton:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+}
+
+.walletButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.walletIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.walletEmpty,
+.walletError {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.walletError {
+  color: var(--ifm-color-danger);
+}
+
+.walletStatus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.walletStatusWarning {
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.walletStatusLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.walletDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ea44f;
+  flex-shrink: 0;
+}
+
+.disconnectButton {
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.disconnectButton:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.banner {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.bannerInfo {
+  background: rgba(0, 127, 255, 0.08);
+  color: #093db0;
+}
+
+.bannerSuccess {
+  background: rgba(46, 164, 79, 0.1);
+  color: #1a5d2b;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bannerError {
+  background: rgba(220, 53, 69, 0.08);
+  color: #842029;
+}
+
+.bannerWarning {
+  background: rgba(255, 193, 7, 0.15);
+  color: #6b5200;
+}
