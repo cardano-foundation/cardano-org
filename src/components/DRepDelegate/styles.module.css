@@ -3,3 +3,102 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+.statusLine {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.poolHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poolIntro {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  flex: 1 1 auto;
+}
+
+.shuffleButton {
+  flex: 0 0 auto;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--ifm-card-background-color, white);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.avatar,
+.initials {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #093DB0 0%, #007FFF 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.cardIdentity {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cardName {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--ifm-color-emphasis-900);
+  word-break: break-word;
+}
+
+.cardVp {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-top: 0.15rem;
+}
+
+.cardBio {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.cardCta {
+  margin-top: auto;
+  align-self: stretch;
+}
