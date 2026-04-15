@@ -16,7 +16,7 @@ const ALTERNATIVES = [
     name: "GovTool",
     url: "https://gov.tools",
     descId: "governance.delegate.alt.govtool",
-    desc: "Cardano Foundation's full-feature governance interface.",
+    desc: "Intersect's full-feature governance interface.",
   },
   {
     name: "Tempo",

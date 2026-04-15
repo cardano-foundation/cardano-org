@@ -27,13 +27,13 @@ export default function WalletConnect({ onConnect }) {
     }
   }, [connected, onConnect]);
 
-  const handleConnect = async (walletName) => {
+  const handleConnect = async (walletId, displayName) => {
     try {
-      const wallet = await BrowserWallet.enable(walletName);
+      const wallet = await BrowserWallet.enable(walletId);
       setWallet(wallet);
-      setWalletName(walletName);
+      setWalletName(displayName);
       setConnected(true);
-      
+
       const addresses = await wallet.getUsedAddresses();
       if (addresses && addresses.length > 0) {
         setAddress(addresses[0]);
@@ -57,18 +57,22 @@ export default function WalletConnect({ onConnect }) {
           <h3>Select a wallet</h3>
           <div className={styles.walletList}>
             {installedWallets && installedWallets.length > 0 ? (
-              installedWallets.map((wallet) => (
-                <button
-                  key={wallet?.name || wallet}
-                  onClick={() => handleConnect(wallet?.name || wallet)}
-                  className={styles.walletButton}
-                >
-                  {wallet?.icon && (
-                    <img src={wallet.icon} alt={wallet?.name || wallet} className={styles.walletIcon} />
-                  )}
-                  {wallet?.name || wallet}
-                </button>
-              ))
+              installedWallets.map((wallet) => {
+                const id = wallet?.id || wallet?.name || wallet;
+                const name = wallet?.name || wallet;
+                return (
+                  <button
+                    key={id}
+                    onClick={() => handleConnect(id, name)}
+                    className={styles.walletButton}
+                  >
+                    {wallet?.icon && (
+                      <img src={wallet.icon} alt={name} className={styles.walletIcon} />
+                    )}
+                    {name}
+                  </button>
+                );
+              })
             ) : (
               <p>No Cardano wallets detected. Please install a wallet extension.</p>
             )}

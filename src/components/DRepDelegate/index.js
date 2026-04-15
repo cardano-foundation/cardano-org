@@ -10,7 +10,8 @@ import styles from "./styles.module.css";
 const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
 const DISPLAY_COUNT = 8;
-const BATCH_SIZE = 500;
+// data.cardano.org proxy caps POST bodies at 5120 bytes — ~80 drep_ids max per batch.
+const BATCH_SIZE = 50;
 const EXPECTED_NETWORK_ID = 1; // mainnet
 const EXPLORER_TX_BASE = "https://cardanoscan.io/transaction/";
 
@@ -86,9 +87,10 @@ function shortAddress(addr) {
 }
 
 function classifyError(err) {
+  if (err && err.code === 2) return "userCancelled"; // CIP-30 UserDeclined
   const msg = String(err?.message || err || "");
   if (/StakeKeyNotRegistered|StakeNotRegistered/i.test(msg)) return "stakeNotRegistered";
-  if (/declined|rejected|cancel/i.test(msg)) return "userCancelled";
+  if (/user\s*(declined|rejected|cancel)/i.test(msg)) return "userCancelled";
   return "generic";
 }
 
@@ -104,16 +106,16 @@ function WalletPicker({ onConnect, busy }) {
     }
   }, []);
 
-  const connect = async (walletName) => {
+  const connect = async (walletId, displayName) => {
     try {
-      const instance = await BrowserWallet.enable(walletName);
+      const instance = await BrowserWallet.enable(walletId);
       const [addresses, networkId] = await Promise.all([
         instance.getUsedAddresses(),
         instance.getNetworkId(),
       ]);
       onConnect({
         instance,
-        name: walletName,
+        name: displayName,
         address: addresses?.[0] || null,
         networkId,
       });
@@ -149,14 +151,15 @@ function WalletPicker({ onConnect, busy }) {
   return (
     <div className={styles.walletPicker}>
       {available.map((w) => {
+        const id = w?.id || w?.name;
         const name = w?.name || String(w);
         const icon = w?.icon;
         return (
           <button
-            key={name}
+            key={id}
             type="button"
             disabled={busy}
-            onClick={() => connect(name)}
+            onClick={() => connect(id, name)}
             className={styles.walletButton}
           >
             {icon && <img src={icon} alt="" className={styles.walletIcon} />}
@@ -442,6 +445,14 @@ export default function DRepDelegate() {
     if (!wallet || wrongNetwork || txBusy) return;
     setTx({ status: "building", target: displayName });
     try {
+      // Re-check network live in case user switched wallet network since connect.
+      const liveNetworkId = await wallet.instance.getNetworkId();
+      if (liveNetworkId !== EXPECTED_NETWORK_ID) {
+        throw new Error(translate({
+          id: "governance.delegate.error.wrongNetwork",
+          message: "Wallet is on the wrong network. Switch to Mainnet and try again.",
+        }));
+      }
       const provider = new KoiosProvider(API_URL);
       const [utxos, changeAddress, rewardAddrs] = await Promise.all([
         wallet.instance.getUtxos(),

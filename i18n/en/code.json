@@ -3392,6 +3392,9 @@
   "governance.delegate.error.generic": {
     "message": "Delegation failed: {error}"
   },
+  "governance.delegate.error.wrongNetwork": {
+    "message": "Wallet is on the wrong network. Switch to Mainnet and try again."
+  },
   "governance.delegate.custom.heading": {
     "message": "Already know your DRep?"
   },
@@ -3426,7 +3429,7 @@
     "message": "Specialized governance tools cover advanced flows like proposal authoring, vote tracking, and detailed DRep profiles."
   },
   "governance.delegate.alt.govtool": {
-    "message": "Cardano Foundation's full-feature governance interface."
+    "message": "Intersect's full-feature governance interface."
   },
   "governance.delegate.alt.tempo": {
     "message": "Browse, compare, and follow DReps with rich profiles."
