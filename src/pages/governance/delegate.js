@@ -1,11 +1,36 @@
 import React, { Suspense, lazy } from "react";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import Divider from "@site/src/components/Layout/Divider";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { translate } from "@docusaurus/Translate";
+import styles from "./delegate.module.css";
+
+const ALTERNATIVES = [
+  {
+    name: "GovTool",
+    url: "https://gov.tools",
+    descId: "governance.delegate.alt.govtool",
+    desc: "Cardano Foundation's full-feature governance interface.",
+  },
+  {
+    name: "Tempo",
+    url: "https://tempo.vote",
+    descId: "governance.delegate.alt.tempo",
+    desc: "Browse, compare, and follow DReps with rich profiles.",
+  },
+  {
+    name: "AdaStat",
+    url: "https://adastat.net/governances",
+    descId: "governance.delegate.alt.adastat",
+    desc: "Track every governance action and DRep on-chain.",
+  },
+];
 
 const DRepDelegate = lazy(() =>
   import(/* webpackChunkName: "drep-delegate" */ "@site/src/components/DRepDelegate")
@@ -50,6 +75,29 @@ export default function DelegatePage() {
               </Suspense>
             )}
           </BrowserOnly>
+
+          <SpacerBox size="medium" />
+          <Divider
+            text={translate({ id: "governance.delegate.alt.heading", message: "Prefer another tool?" })}
+            id="alternatives"
+          />
+          <p className="black-text">
+            {translate({
+              id: "governance.delegate.alt.intro",
+              message: "Specialized governance tools cover advanced flows like proposal authoring, vote tracking, and detailed DRep profiles.",
+            })}
+          </p>
+          <SpacerBox size="small" />
+          <div className={styles.altGrid}>
+            {ALTERNATIVES.map((tool) => (
+              <Link key={tool.name} to={tool.url} className={styles.altCard}>
+                <h3 className={styles.altName}>{tool.name}</h3>
+                <p className={styles.altDesc}>
+                  {translate({ id: tool.descId, message: tool.desc })}
+                </p>
+              </Link>
+            ))}
+          </div>
         </BoundaryBox>
       </BackgroundWrapper>
     </Layout>
