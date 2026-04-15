@@ -102,3 +102,62 @@
   margin-top: auto;
   align-self: stretch;
 }
+
+.sectionHeading {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.customSection,
+.specialSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.customRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.customInput {
+  flex: 1 1 280px;
+  min-width: 0;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  font-family: var(--ifm-font-family-monospace);
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 8px;
+  background: white;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.customInput:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px rgba(9, 61, 176, 0.15);
+}
+
+.specialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.specialOption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specialButton {
+  align-self: flex-start;
+}
+
+.specialHelp {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.45;
+}

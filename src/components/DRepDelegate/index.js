@@ -64,6 +64,14 @@ function extractBio(meta) {
   return candidate.length > 180 ? candidate.slice(0, 177) + "…" : candidate;
 }
 
+function isValidDRepId(input) {
+  if (!input || typeof input !== "string") return false;
+  const t = input.trim();
+  if (/^drep(_script)?1[a-z0-9]{40,}$/i.test(t)) return true;
+  if (/^[0-9a-f]{56,64}$/i.test(t)) return true;
+  return false;
+}
+
 function Initials({ name }) {
   const text = (name || "?")
     .split(/\s+/)
@@ -101,13 +109,63 @@ function DRepCard({ drep, onSelect }) {
       <button
         type="button"
         className={`button button--primary ${styles.cardCta}`}
-        onClick={() => onSelect(drep)}
+        onClick={() => onSelect({ dRepId: drep.drepId }, drep.name)}
       >
         {translate(
           { id: "governance.delegate.card.cta", message: "Delegate to {name}" },
           { name: drep.name }
         )}
       </button>
+    </div>
+  );
+}
+
+function CustomDelegateRow({ onSelect }) {
+  const [value, setValue] = useState("");
+  const trimmed = value.trim();
+  const valid = isValidDRepId(trimmed);
+  return (
+    <div className={styles.customRow}>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={translate({
+          id: "governance.delegate.custom.placeholder",
+          message: "drep1… or hex DRep ID",
+        })}
+        className={styles.customInput}
+        spellCheck={false}
+        autoCorrect="off"
+        autoCapitalize="off"
+        aria-label={translate({
+          id: "governance.delegate.custom.label",
+          message: "Custom DRep ID",
+        })}
+      />
+      <button
+        type="button"
+        className="button button--primary"
+        disabled={!valid}
+        onClick={() => onSelect({ dRepId: trimmed }, trimmed)}
+      >
+        {translate({ id: "governance.delegate.custom.cta", message: "Delegate" })}
+      </button>
+    </div>
+  );
+}
+
+function SpecialOption({ label, help, onSelect, target }) {
+  return (
+    <div className={styles.specialOption}>
+      <button
+        type="button"
+        className={`button button--outline button--secondary ${styles.specialButton}`}
+        onClick={() => onSelect(target, label)}
+      >
+        {label}
+      </button>
+      <p className={styles.specialHelp}>{help}</p>
     </div>
   );
 }
@@ -273,6 +331,45 @@ export default function DRepDelegate() {
         {displayed.map((drep) => (
           <DRepCard key={drep.drepId} drep={drep} onSelect={handleSelect} />
         ))}
+      </div>
+
+      <div className={styles.customSection}>
+        <h3 className={styles.sectionHeading}>
+          {translate({
+            id: "governance.delegate.custom.heading",
+            message: "Already know your DRep?",
+          })}
+        </h3>
+        <CustomDelegateRow onSelect={handleSelect} />
+      </div>
+
+      <div className={styles.specialSection}>
+        <h3 className={styles.sectionHeading}>
+          {translate({
+            id: "governance.delegate.special.heading",
+            message: "Or pick a protocol option",
+          })}
+        </h3>
+        <div className={styles.specialGrid}>
+          <SpecialOption
+            label={translate({ id: "governance.delegate.abstain.label", message: "Abstain" })}
+            help={translate({
+              id: "governance.delegate.abstain.help",
+              message: "Always abstain. Your stake counts toward turnout but never picks a side on any proposal.",
+            })}
+            target={{ alwaysAbstain: null }}
+            onSelect={handleSelect}
+          />
+          <SpecialOption
+            label={translate({ id: "governance.delegate.noConfidence.label", message: "No Confidence" })}
+            help={translate({
+              id: "governance.delegate.noConfidence.help",
+              message: "Always vote no confidence in the current Constitutional Committee.",
+            })}
+            target={{ alwaysNoConfidence: null }}
+            onSelect={handleSelect}
+          />
+        </div>
       </div>
     </div>
   );
