@@ -3357,7 +3357,7 @@
     "message": "Shuffle DReps"
   },
   "governance.delegate.card.cta": {
-    "message": "Delegate to {name}"
+    "message": "Delegate"
   },
   "governance.delegate.wallet.heading": {
     "message": "Connect a wallet to delegate"

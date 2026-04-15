@@ -9,8 +9,8 @@ import styles from "./styles.module.css";
 
 const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
-const DISPLAY_COUNT = 5;
-const BATCH_SIZE = 50;
+const DISPLAY_COUNT = 8;
+const BATCH_SIZE = 500;
 const EXPECTED_NETWORK_ID = 1; // mainnet
 const EXPLORER_TX_BASE = "https://cardanoscan.io/transaction/";
 
@@ -75,7 +75,7 @@ function extractBio(meta) {
 function isValidDRepId(input) {
   if (!input || typeof input !== "string") return false;
   const t = input.trim();
-  if (/^drep(_script)?1[a-z0-9]{40,}$/i.test(t)) return true;
+  if (/^drep(_script)?1[a-z0-9]{40,}$/.test(t)) return true;
   if (/^[0-9a-f]{56,64}$/i.test(t)) return true;
   return false;
 }
@@ -190,7 +190,7 @@ function WalletStatus({ wallet, onDisconnect }) {
 
 function NetworkWarning() {
   return (
-    <div className={styles.banner + " " + styles.bannerWarning}>
+    <div className={`${styles.banner} ${styles.bannerWarning}`}>
       {translate({
         id: "governance.delegate.networkWarning",
         message: "Your wallet is on the wrong network. Switch to Mainnet to delegate.",
@@ -275,10 +275,7 @@ function DRepCard({ drep, onSelect, disabled }) {
         disabled={disabled}
         onClick={() => onSelect({ dRepId: drep.drepId }, drep.name)}
       >
-        {translate(
-          { id: "governance.delegate.card.cta", message: "Delegate to {name}" },
-          { name: drep.name }
-        )}
+        {translate({ id: "governance.delegate.card.cta", message: "Delegate" })}
       </button>
     </div>
   );
