@@ -74,7 +74,7 @@ export default function GovernancePulse() {
       try {
         const [tipRes, proposalsRes] = await Promise.all([
           api.get("/tip"),
-          api.get("/proposal_list?select=proposal_id,enacted_epoch,expiration&order=proposal_id.desc&limit=100"),
+          api.get("/proposal_list?select=proposal_id,enacted_epoch,expiration&order=proposal_id.desc&limit=1000"),
         ]);
 
         const epochNo = tipRes.data?.[0]?.epoch_no;
