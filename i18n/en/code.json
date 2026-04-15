@@ -3326,6 +3326,114 @@
   "governance.voltaire.buttonText": {
     "message": "Read the research"
   },
+  "governance.delegate.layout.title": {
+    "message": "Delegate to a DRep — Cardano Governance"
+  },
+  "governance.delegate.layout.description": {
+    "message": "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps."
+  },
+  "governance.delegate.hero.title": {
+    "message": "Delegate your voice"
+  },
+  "governance.delegate.hero.description": {
+    "message": "Connect your wallet, choose a Delegated Representative, and vote on Cardano's future. No middlemen, no custody, your stake stays in your wallet."
+  },
+  "governance.delegate.loading": {
+    "message": "Loading delegation tool…"
+  },
+  "governance.delegate.loadingDReps": {
+    "message": "Loading active DReps…"
+  },
+  "governance.delegate.error.fetch": {
+    "message": "Could not load DReps right now. Please refresh in a moment."
+  },
+  "governance.delegate.noResults": {
+    "message": "No DReps in the curated range right now. Try one of the alternative tools below."
+  },
+  "governance.delegate.poolIntro": {
+    "message": "{count} active DReps with mid-tier voting power. Refresh for a different selection."
+  },
+  "governance.delegate.shuffle": {
+    "message": "Shuffle DReps"
+  },
+  "governance.delegate.card.cta": {
+    "message": "Delegate to {name}"
+  },
+  "governance.delegate.wallet.heading": {
+    "message": "Connect a wallet to delegate"
+  },
+  "governance.delegate.wallet.connected": {
+    "message": "Connected: {name} · {addr}"
+  },
+  "governance.delegate.wallet.disconnect": {
+    "message": "Disconnect"
+  },
+  "governance.delegate.wallet.error": {
+    "message": "Wallet error: {error}"
+  },
+  "governance.delegate.wallet.empty": {
+    "message": "No Cardano wallet detected. Install Eternl, Lace, Nami, Yoroi or another CIP-30 wallet to continue."
+  },
+  "governance.delegate.networkWarning": {
+    "message": "Your wallet is on the wrong network. Switch to Mainnet to delegate."
+  },
+  "governance.delegate.tx.building": {
+    "message": "Preparing delegation to {target}. Please confirm in your wallet…"
+  },
+  "governance.delegate.tx.success": {
+    "message": "Delegation submitted to {target}."
+  },
+  "governance.delegate.tx.viewOnExplorer": {
+    "message": "View on Cardanoscan"
+  },
+  "governance.delegate.error.stakeNotRegistered": {
+    "message": "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote."
+  },
+  "governance.delegate.error.generic": {
+    "message": "Delegation failed: {error}"
+  },
+  "governance.delegate.custom.heading": {
+    "message": "Already know your DRep?"
+  },
+  "governance.delegate.custom.placeholder": {
+    "message": "drep1… or hex DRep ID"
+  },
+  "governance.delegate.custom.label": {
+    "message": "Custom DRep ID"
+  },
+  "governance.delegate.custom.cta": {
+    "message": "Delegate"
+  },
+  "governance.delegate.special.heading": {
+    "message": "Or pick a protocol option"
+  },
+  "governance.delegate.abstain.label": {
+    "message": "Abstain"
+  },
+  "governance.delegate.abstain.help": {
+    "message": "Always abstain. Your stake counts toward turnout but never picks a side on any proposal."
+  },
+  "governance.delegate.noConfidence.label": {
+    "message": "No Confidence"
+  },
+  "governance.delegate.noConfidence.help": {
+    "message": "Always vote no confidence in the current Constitutional Committee."
+  },
+  "governance.delegate.alt.heading": {
+    "message": "Prefer another tool?"
+  },
+  "governance.delegate.alt.intro": {
+    "message": "Specialized governance tools cover advanced flows like proposal authoring, vote tracking, and detailed DRep profiles."
+  },
+  "governance.delegate.alt.govtool": {
+    "message": "Cardano Foundation's full-feature governance interface."
+  },
+  "governance.delegate.alt.tempo": {
+    "message": "Browse, compare, and follow DReps with rich profiles."
+  },
+  "governance.delegate.alt.adastat": {
+    "message": "Track every governance action and DRep on-chain."
+  },
   "quiz.ui.noQuestions": {
     "message": "No quiz questions available."
   },
