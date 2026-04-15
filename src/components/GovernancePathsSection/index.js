@@ -32,8 +32,8 @@ function getPathsData() {
         message:
           "You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, it costs nothing extra, and you can change your DRep at any time.",
       }),
-      ctaLink: "https://tempo.vote/dreps",
-      ctaTitle: translate({ id: "governance.paths.delegate.buttonText", message: "Find a DRep" }),
+      ctaLink: "/governance/delegate",
+      ctaTitle: translate({ id: "governance.paths.delegate.buttonText", message: "Choose a DRep" }),
     },
     {
       label: translate({ id: "governance.paths.lead.label", message: "Lead" }),

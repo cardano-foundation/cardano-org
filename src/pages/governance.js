@@ -190,8 +190,8 @@ function getDelegationSteps() {
       content: (
         <div>
           <p>{translate({id: 'governance.delegation.step2.text', message: 'DReps publish their platform and voting intentions. Choose one whose priorities match yours, or use an automatic voting option (Abstain or No Confidence).'})}</p>
-          <Link to="https://tempo.vote/dreps" className="button button--outline button--primary">
-            {translate({id: 'governance.delegation.step2.buttonText', message: 'Find a DRep on Tempo'})}
+          <Link to="/governance/delegate" className="button button--outline button--primary">
+            {translate({id: 'governance.delegation.step2.buttonText', message: 'Choose a DRep'})}
           </Link>
         </div>
       ),
@@ -199,12 +199,12 @@ function getDelegationSteps() {
     },
     {
       title: translate({id: 'governance.delegation.step3.title', message: 'Delegate your voting power'}),
-      description: translate({id: 'governance.delegation.step3.description', message: 'Use your wallet or GovTool to delegate to your chosen DRep.'}),
+      description: translate({id: 'governance.delegation.step3.description', message: 'Sign a delegation transaction directly on cardano.org or with another tool.'}),
       content: (
         <div>
-          <p>{translate({id: 'governance.delegation.step3.text', message: 'Open your wallet\'s governance section or use GovTool to delegate. You will need to sign a transaction. Your ada stays in your wallet at all times.'})}</p>
-          <Link to="https://gov.tools" className="button button--outline button--primary">
-            {translate({id: 'governance.delegation.step3.buttonText', message: 'Open GovTool'})}
+          <p>{translate({id: 'governance.delegation.step3.text', message: 'Connect your wallet, pick your DRep, and sign one transaction. Your ada stays in your wallet at all times.'})}</p>
+          <Link to="/governance/delegate" className="button button--outline button--primary">
+            {translate({id: 'governance.delegation.step3.buttonText', message: 'Open delegation tool'})}
           </Link>
         </div>
       ),
