@@ -13,7 +13,7 @@ const DISPLAY_COUNT = 8;
 // data.cardano.org proxy caps POST bodies at 5120 bytes — ~80 drep_ids max per batch.
 const BATCH_SIZE = 50;
 const EXPECTED_NETWORK_ID = 1; // mainnet
-const EXPLORER_TX_BASE = "https://cardanoscan.io/transaction/";
+const EXPLORER_TX_BASE = "https://explorer.cardano.org/transaction/";
 const POOL_CACHE_KEY = "cardano-org.drep-pool.v1";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
@@ -324,7 +324,7 @@ function TxBanner({ state }) {
           )}
         </p>
         <a href={EXPLORER_TX_BASE + state.txHash} target="_blank" rel="noopener noreferrer">
-          {translate({ id: "governance.delegate.tx.viewOnExplorer", message: "View on Cardanoscan" })}
+          {translate({ id: "governance.delegate.tx.viewOnExplorer", message: "View on explorer" })}
         </a>
       </div>
     );

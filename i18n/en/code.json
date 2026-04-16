@@ -3402,7 +3402,7 @@
     "message": "Delegation submitted to {target}."
   },
   "governance.delegate.tx.viewOnExplorer": {
-    "message": "View on Cardanoscan"
+    "message": "View on explorer"
   },
   "governance.delegate.error.stakeNotRegistered": {
     "message": "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote."
