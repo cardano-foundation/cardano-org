@@ -143,6 +143,7 @@ export default function GovernanceCharts({
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
+  const activeChartRef = useRef(null);
 
   const lastUrlSigRef = useRef(urlSignature);
 
@@ -203,11 +204,10 @@ export default function GovernanceCharts({
     setActiveGraphIndex(null);
   }, [activeCategory]);
 
-  // Deep-link: scroll to initial chart once it is expanded in the DOM
   useEffect(() => {
     if (!initialChartId) return;
     const t = setTimeout(() => {
-      const el = document.querySelector('.Collapsible.active');
+      const el = activeChartRef.current;
       if (!el) return;
       const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
@@ -470,6 +470,7 @@ export default function GovernanceCharts({
               {searchResults.map((graph, index) => (
                 <div
                   key={index}
+                  ref={activeChartId === graph.id ? activeChartRef : null}
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
                   } ${activeChartId === graph.id ? "active" : ""}`}
@@ -536,6 +537,7 @@ export default function GovernanceCharts({
             {graphsData[activeCategory].map((graph, index) => (
               <div
                 key={index}
+                ref={activeChartId === graph.id ? activeChartRef : null}
                 className={`${styles.graphItem} Collapsible ${
                   index % 2 === 0 ? "even" : "odd"
                 } ${activeChartId === graph.id ? "active" : ""}`}
