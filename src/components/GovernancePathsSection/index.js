@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FaArrowRight } from "react-icons/fa";
@@ -50,11 +50,24 @@ function getPathsData() {
   ];
 }
 
+const HASH_TO_INDEX = { understand: 0, delegate: 1, lead: 2 };
+
 export default function GovernancePathsSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const paths = getPathsData();
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash.replace(/^#/, "").toLowerCase();
+    const idx = HASH_TO_INDEX[hash];
+    if (idx == null) return;
+    setSelectedIndex(idx);
+    wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <div id="paths" ref={wrapperRef} className={styles.wrapper}>
       <Tabs
         className={styles.tabs}
         onSelect={(index) => setSelectedIndex(index)}
