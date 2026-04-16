@@ -3469,6 +3469,9 @@
   "governance.delegate.alt.adastat": {
     "message": "Track every governance action and DRep on-chain."
   },
+  "governance.delegate.alt.cgov": {
+    "message": "Dashboard to monitor DReps and governance actions."
+  },
   "quiz.ui.noQuestions": {
     "message": "No quiz questions available."
   },

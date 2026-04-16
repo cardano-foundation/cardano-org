@@ -30,6 +30,12 @@ const ALTERNATIVES = [
     descId: "governance.delegate.alt.adastat",
     desc: "Track every governance action and DRep on-chain.",
   },
+  {
+    name: "CGOV",
+    url: "https://app.cgov.io/drep",
+    descId: "governance.delegate.alt.cgov",
+    desc: "Dashboard to monitor DReps and governance actions.",
+  },
 ];
 
 const DRepDelegate = lazy(() =>
