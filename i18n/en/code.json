@@ -1315,6 +1315,10 @@
     "message": "Delegate your ada",
     "description": "Mega menu item label"
   },
+  "navbar.mega.label.Delegate your vote": {
+    "message": "Delegate your vote",
+    "description": "Mega menu item label"
+  },
   "navbar.mega.label.Use Cardano Apps": {
     "message": "Use Cardano Apps",
     "description": "Mega menu item label"
@@ -1433,6 +1437,10 @@
   },
   "navbar.mega.description.Delegate your ada": {
     "message": "Be a part of it and earn rewards",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Delegate your vote": {
+    "message": "Lend your voting power to a DRep",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Use Cardano Apps": {
@@ -3331,6 +3339,12 @@
   },
   "governance.delegate.layout.description": {
     "message": "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps."
+  },
+  "governance.delegate.og.title": {
+    "message": "Delegate your voice"
+  },
+  "governance.delegate.og.description": {
+    "message": "Connect your wallet and delegate your Cardano voting power to a DRep in one transaction."
   },
   "governance.delegate.hero.title": {
     "message": "Delegate your voice"
