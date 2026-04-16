@@ -20,13 +20,13 @@ const ALTERNATIVES = [
   },
   {
     name: "Tempo",
-    url: "https://tempo.vote",
+    url: "https://tempo.vote/dreps",
     descId: "governance.delegate.alt.tempo",
     desc: "Browse, compare, and follow DReps with rich profiles.",
   },
   {
     name: "AdaStat",
-    url: "https://adastat.net/governances",
+    url: "https://adastat.net/dreps",
     descId: "governance.delegate.alt.adastat",
     desc: "Track every governance action and DRep on-chain.",
   },
@@ -111,6 +111,7 @@ export default function DelegatePage() {
               </Link>
             ))}
           </div>
+          <SpacerBox size="small" />
         </BoundaryBox>
       </BackgroundWrapper>
     </Layout>
