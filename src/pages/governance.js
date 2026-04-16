@@ -56,7 +56,7 @@ function GovernanceRolesSection() {
             <img src={useBaseUrl('/img/dotted-icons/spo.png')} alt="SPOs" className={styles.roleIcon} />
             <h3>{translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}</h3>
             <p className="black-text">
-              {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks and critical protocol parameter changes.'})}
+              {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
             </p>
           </div>
         </div>
@@ -257,6 +257,8 @@ export default function Governance() {
         </BackgroundWrapper>
 
         <BoundaryBox>
+          <Divider text={translate({id: 'governance.divider.paths', message: 'Choose your path'})} id="paths" />
+          <SpacerBox size="small" />
           <GovernancePathsSection />
           <div className="row">
             <div className="col col--8">

@@ -5,75 +5,205 @@
 }
 
 .tabs {
-  padding-top: 1rem;
+  background-color: rgba(5, 56, 175, 0.03);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(5, 56, 175, 0.22) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: right center;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.65) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.row {
+  position: relative;
+  z-index: 1;
 }
 
 .leftColumn {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .rightColumn {
-  margin-top: -1rem;
+  display: flex;
+  align-items: flex-start;
 }
 
 .tabList {
   cursor: pointer;
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 2rem;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stepperLine {
+  position: absolute;
+  top: calc(1rem + 19px);
+  bottom: calc(1rem + 19px);
+  left: calc(1.25rem + 18.25px);
+  width: 1.5px;
+  background-color: var(--ifm-color-emphasis-300);
+  z-index: 0;
 }
 
 .tab {
-  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: background-color 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.tab:hover {
-  background-color: var(--ifm-color-emphasis-100);
+.tab:hover:not(.tabSelected) {
+  background-color: rgba(5, 56, 175, 0.04);
 }
 
 .tabSelected {
-  background-color: var(--ifm-color-emphasis-100) !important;
+  background-color: rgba(5, 56, 175, 0.08) !important;
+}
+
+.stepCircle {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-emphasis-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.stepCircleActive {
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.stepArrow {
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+  font-size: 0.95rem;
+  margin: 0 -0.25rem 0 -0.35rem;
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
 }
 
 .tabLabel {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--ifm-color-primary);
-  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-900);
+  line-height: 1.2;
+  transition: color 0.2s ease;
 }
 
-.tabIcon {
-  flex-shrink: 0;
+.tabSelected .tabLabel {
+  color: var(--ifm-color-primary);
+}
+
+.tabSubtitle {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.35;
 }
 
 .panelContent {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.iconTile {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  background-color: rgba(5, 56, 175, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.iconImage {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.panelTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-900);
+  line-height: 1.15;
+}
+
+.panelBody {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 2rem;
 }
 
 .buttonWrap {
-  margin-top: 1.5rem;
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .leftColumn {
-    margin-bottom: 1rem;
+@media (max-width: 996px) {
+  .tabs {
+    padding: 1.5rem;
   }
-
+  .tabs::after {
+    display: none;
+  }
   .rightColumn {
-    margin-top: 0;
+    margin-top: 1.5rem;
   }
-
   .panelContent {
     padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  .panelTitle {
+    font-size: 1.5rem;
+  }
+  .tab {
+    padding: 0.75rem 1rem;
+  }
+  .stepperLine {
+    left: calc(1rem + 18.25px);
   }
 }
