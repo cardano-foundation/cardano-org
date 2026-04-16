@@ -14,6 +14,28 @@ const DISPLAY_COUNT = 8;
 const BATCH_SIZE = 50;
 const EXPECTED_NETWORK_ID = 1; // mainnet
 const EXPLORER_TX_BASE = "https://cardanoscan.io/transaction/";
+const POOL_CACHE_KEY = "cardano-org.drep-pool.v1";
+const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+
+function readPoolCache() {
+  try {
+    const raw = sessionStorage.getItem(POOL_CACHE_KEY);
+    if (!raw) return null;
+    const { ts, pool } = JSON.parse(raw);
+    if (Date.now() - ts > POOL_CACHE_TTL_MS) return null;
+    return Array.isArray(pool) ? pool : null;
+  } catch {
+    return null;
+  }
+}
+
+function writePoolCache(pool) {
+  try {
+    sessionStorage.setItem(POOL_CACHE_KEY, JSON.stringify({ ts: Date.now(), pool }));
+  } catch {
+    // Quota exceeded or storage disabled — cache is best-effort.
+  }
+}
 
 function fisherYates(arr) {
   const a = [...arr];
@@ -28,6 +50,20 @@ function chunk(arr, size) {
   const out = [];
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
   return out;
+}
+
+async function fetchAllDRepIds(api) {
+  const PAGE_SIZE = 600;
+  const ids = [];
+  for (let offset = 0; ; offset += PAGE_SIZE) {
+    const page = await api.get(
+      `/drep_list?registered=eq.true&limit=${PAGE_SIZE}&offset=${offset}`
+    );
+    const rows = page.data || [];
+    for (const r of rows) if (r.drep_id) ids.push(r.drep_id);
+    if (rows.length < PAGE_SIZE) break;
+  }
+  return ids;
 }
 
 function formatVotingPower(lovelace) {
@@ -54,12 +90,18 @@ function extractName(meta) {
   );
 }
 
+function safeImageUrl(url) {
+  if (typeof url !== "string") return null;
+  const trimmed = url.trim();
+  if (/^https:\/\//i.test(trimmed)) return trimmed;
+  if (/^data:image\/(png|jpeg|jpg|gif|webp|svg\+xml);/i.test(trimmed)) return trimmed;
+  return null;
+}
+
 function extractImage(meta) {
   const img = meta?.body?.image || meta?.image;
   if (!img) return null;
-  const direct = asString(img);
-  if (direct) return direct;
-  return asString(img?.contentUrl);
+  return safeImageUrl(asString(img)) || safeImageUrl(asString(img?.contentUrl));
 }
 
 function extractBio(meta) {
@@ -142,7 +184,7 @@ function WalletPicker({ onConnect, busy }) {
       <p className={styles.walletEmpty}>
         {translate({
           id: "governance.delegate.wallet.empty",
-          message: "No Cardano wallet detected. Install Eternl, Lace, Nami, Yoroi or another CIP-30 wallet to continue.",
+          message: "No Cardano wallet detected. Install Eternl, Typhon, Nami, Yoroi or another CIP-30 wallet to continue.",
         })}
       </p>
     );
@@ -171,18 +213,60 @@ function WalletPicker({ onConnect, busy }) {
   );
 }
 
-function WalletStatus({ wallet, onDisconnect }) {
+function formatDelegationLabel(delegation) {
+  if (delegation === undefined) {
+    return translate({
+      id: "governance.delegate.wallet.delegationLoading",
+      message: "Checking current delegation…",
+    });
+  }
+  if (delegation === null) {
+    return translate({
+      id: "governance.delegate.wallet.delegationNone",
+      message: "Not yet delegated",
+    });
+  }
+  if (delegation.kind === "abstain") {
+    return translate({
+      id: "governance.delegate.wallet.delegationAbstain",
+      message: "Delegated: Always Abstain",
+    });
+  }
+  if (delegation.kind === "noConfidence") {
+    return translate({
+      id: "governance.delegate.wallet.delegationNoConfidence",
+      message: "Delegated: Always No Confidence",
+    });
+  }
+  if (delegation.name) {
+    return translate(
+      { id: "governance.delegate.wallet.delegationNamed", message: "Delegated to {name}" },
+      { name: delegation.name }
+    );
+  }
+  return translate(
+    { id: "governance.delegate.wallet.delegationIdOnly", message: "Delegated to {id}" },
+    { id: `${delegation.drepId.slice(0, 14)}…${delegation.drepId.slice(-6)}` }
+  );
+}
+
+function WalletStatus({ wallet, delegation, onDisconnect }) {
   const wrongNetwork = wallet.networkId !== EXPECTED_NETWORK_ID;
   return (
     <div className={`${styles.walletStatus} ${wrongNetwork ? styles.walletStatusWarning : ""}`}>
       <div className={styles.walletStatusLeft}>
         <span className={styles.walletDot} aria-hidden="true" />
-        <span>
-          {translate(
-            { id: "governance.delegate.wallet.connected", message: "Connected: {name} · {addr}" },
-            { name: wallet.name, addr: shortAddress(wallet.address) }
-          )}
-        </span>
+        <div className={styles.walletStatusText}>
+          <span>
+            {translate(
+              { id: "governance.delegate.wallet.connected", message: "Connected: {name} · {addr}" },
+              { name: wallet.name, addr: shortAddress(wallet.address) }
+            )}
+          </span>
+          <span className={styles.walletDelegation}>
+            {formatDelegationLabel(delegation)}
+          </span>
+        </div>
       </div>
       <button type="button" onClick={onDisconnect} className={styles.disconnectButton}>
         {translate({ id: "governance.delegate.wallet.disconnect", message: "Disconnect" })}
@@ -261,6 +345,7 @@ function DRepCard({ drep, onSelect, disabled }) {
             alt=""
             className={styles.avatar}
             loading="lazy"
+            referrerPolicy="no-referrer"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -347,6 +432,7 @@ export default function DRepDelegate() {
   const [error, setError] = useState(null);
   const [wallet, setWallet] = useState(null);
   const [tx, setTx] = useState({ status: "idle" });
+  const [delegation, setDelegation] = useState(undefined);
 
   useEffect(() => {
     if (!API_URL) return;
@@ -355,10 +441,17 @@ export default function DRepDelegate() {
 
     let cancelled = false;
 
+    const cached = readPoolCache();
+    if (cached) {
+      setPool(cached);
+      setDisplayed(fisherYates(cached).slice(0, DISPLAY_COUNT));
+      setLoading(false);
+      return () => { cancelled = true; };
+    }
+
     async function fetchDReps() {
       try {
-        const listRes = await api.get("/drep_list?select=drep_id&registered=eq.true");
-        const ids = (listRes.data || []).map((r) => r.drep_id).filter(Boolean);
+        const ids = await fetchAllDRepIds(api);
         if (!ids.length) throw new Error("No DReps returned by /drep_list");
 
         const infoResults = await Promise.all(
@@ -413,6 +506,7 @@ export default function DRepDelegate() {
           .filter(Boolean);
 
         if (cancelled) return;
+        writePoolCache(enriched);
         setPool(enriched);
         setDisplayed(fisherYates(enriched).slice(0, DISPLAY_COUNT));
         setLoading(false);
@@ -439,7 +533,36 @@ export default function DRepDelegate() {
   const handleDisconnect = useCallback(() => {
     setWallet(null);
     setTx({ status: "idle" });
+    setDelegation(undefined);
   }, []);
+
+  useEffect(() => {
+    if (!wallet) return;
+    const api = apiRef.current;
+    if (!api) return;
+    let cancelled = false;
+    setDelegation(undefined);
+    (async () => {
+      try {
+        const rewardAddrs = await wallet.instance.getRewardAddresses();
+        const stakeAddr = rewardAddrs?.[0];
+        if (!stakeAddr) { if (!cancelled) setDelegation(null); return; }
+        const res = await api.post("/account_info", { _stake_addresses: [stakeAddr] });
+        if (cancelled) return;
+        const drepId = res.data?.[0]?.delegated_drep || null;
+        if (!drepId) { setDelegation(null); return; }
+        if (drepId.startsWith("drep_always_abstain")) { setDelegation({ kind: "abstain" }); return; }
+        if (drepId.startsWith("drep_always_no_confidence")) { setDelegation({ kind: "noConfidence" }); return; }
+        const match = pool.find((p) => p.drepId === drepId);
+        setDelegation({ kind: "drep", drepId, name: match?.name || null });
+      } catch (err) {
+        if (cancelled) return;
+        console.error("DRepDelegate: failed to load current delegation", err);
+        setDelegation(null);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [wallet, pool, tx.status]);
 
   const handleSelect = useCallback(async (target, displayName) => {
     if (!wallet || wrongNetwork || txBusy) return;
@@ -536,7 +659,7 @@ export default function DRepDelegate() {
     <div className={styles.container}>
       <div className={styles.walletSection}>
         {wallet ? (
-          <WalletStatus wallet={wallet} onDisconnect={handleDisconnect} />
+          <WalletStatus wallet={wallet} delegation={delegation} onDisconnect={handleDisconnect} />
         ) : (
           <>
             <h3 className={styles.sectionHeading}>

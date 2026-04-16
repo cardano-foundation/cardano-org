@@ -6,7 +6,6 @@ export function makeApiClient(API_URL) {
   return axios.create({
     baseURL: API_URL,
     timeout: API_TIMEOUT_MS,
-    // No Authorization header (public)
     validateStatus: (s) => s >= 200 && s < 300,
   });
 }

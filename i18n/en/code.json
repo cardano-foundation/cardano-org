@@ -3365,6 +3365,24 @@
   "governance.delegate.wallet.connected": {
     "message": "Connected: {name} · {addr}"
   },
+  "governance.delegate.wallet.delegationLoading": {
+    "message": "Checking current delegation…"
+  },
+  "governance.delegate.wallet.delegationNone": {
+    "message": "Not yet delegated"
+  },
+  "governance.delegate.wallet.delegationAbstain": {
+    "message": "Delegated: Always Abstain"
+  },
+  "governance.delegate.wallet.delegationNoConfidence": {
+    "message": "Delegated: Always No Confidence"
+  },
+  "governance.delegate.wallet.delegationNamed": {
+    "message": "Delegated to {name}"
+  },
+  "governance.delegate.wallet.delegationIdOnly": {
+    "message": "Delegated to {id}"
+  },
   "governance.delegate.wallet.disconnect": {
     "message": "Disconnect"
   },
@@ -3372,7 +3390,7 @@
     "message": "Wallet error: {error}"
   },
   "governance.delegate.wallet.empty": {
-    "message": "No Cardano wallet detected. Install Eternl, Lace, Nami, Yoroi or another CIP-30 wallet to continue."
+    "message": "No Cardano wallet detected. Install Eternl, Lace, Typhon, Yoroi or another CIP-30 wallet to continue."
   },
   "governance.delegate.networkWarning": {
     "message": "Your wallet is on the wrong network. Switch to Mainnet to delegate."

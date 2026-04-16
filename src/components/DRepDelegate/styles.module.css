@@ -238,6 +238,18 @@
   word-break: break-all;
 }
 
+.walletStatusText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.walletDelegation {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .walletDot {
   width: 8px;
   height: 8px;
