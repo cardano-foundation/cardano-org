@@ -113,11 +113,14 @@ const sameSet = (a = [], b = []) => {
 
 export default function GovernanceCharts({
   initialCategory = null,
+  initialChartId = null,
   initialParameters = [],
   onSelectionChange,
   urlSignature = '',
 }) {
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory || (initialChartId ? initialChartId.split(':')[0] : null)
+  );
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
   const [graphsData, setGraphsData] = useState({});
   const [allGraphs, setAllGraphs] = useState([]);
@@ -136,7 +139,7 @@ export default function GovernanceCharts({
     for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
     return true;
   };
-  const [activeChartId, setActiveChartId] = useState(null);
+  const [activeChartId, setActiveChartId] = useState(initialChartId);
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
@@ -199,6 +202,19 @@ export default function GovernanceCharts({
   useEffect(() => {
     setActiveGraphIndex(null);
   }, [activeCategory]);
+
+  // Deep-link: scroll to initial chart once it is expanded in the DOM
+  useEffect(() => {
+    if (!initialChartId) return;
+    const t = setTimeout(() => {
+      const el = document.querySelector('.Collapsible.active');
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 600);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Filter charts based on search term and parameters
   useEffect(() => {
