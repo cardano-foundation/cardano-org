@@ -6,12 +6,6 @@
     "link": "https://forum.cardano.org/u/cardano_agus/"
   },
   {
-    "name": "Alexandru Dragnescu",
-    "role": "Romania",
-    "country": "RO",
-    "link": "https://forum.cardano.org/u/alexd1985/"
-  },
-  {
     "name": "Andreas Sosilo",
     "role": "Indonesia",
     "country": "ID",
@@ -72,12 +66,6 @@
     "link": "https://forum.cardano.org/u/ddlezu/"
   },
   {
-    "name": "Daniel Lynch",
-    "role": "United States",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/dominatingslash/"
-  },
-  {
     "name": "Darlington Wleh",
     "role": "United States",
     "country": "US",
@@ -90,7 +78,13 @@
     "link": "https://forum.cardano.org/u/fell-x27/"
   },
   {
-    "name": "Diego Torres Borda        ​",
+    "name": "Diego Macchi",
+    "role": "Argentina",
+    "country": "AR",
+    "link": "https://forum.cardano.org/u/diegomac35"
+  },
+  {
+    "name": "Diego Torres Borda",
     "role": "Argentina",
     "country": "AR",
     "link": "https://forum.cardano.org/u/diegotowers/"
@@ -162,12 +156,6 @@
     "link": "https://forum.cardano.org/u/felix_weber/"
   },
   {
-    "name": "Fletcher Watson",
-    "role": "United States",
-    "country": "US",
-    "link": "https://forum.cardano.org/u/carpool/"
-  },
-  {
     "name": "Giannis Mitsios",
     "role": "Greece",
     "country": "GR",
@@ -204,7 +192,7 @@
     "link": "https://forum.cardano.org/u/cryptoveri/"
   },
   {
-    "name": "Cardisa Latina ",
+    "name": "Cardisa Latina",
     "role": "Colombia",
     "country": "CO",
     "link": "https://forum.cardano.org/u/cardisalatina/"
@@ -262,12 +250,6 @@
     "role": "Argentina",
     "country": "AR",
     "link": "https://forum.cardano.org/u/joseiadicicco/"
-  },
-  {
-    "name": "Joshua Daviau",
-    "role": "Canada",
-    "country": "CA",
-    "link": "https://forum.cardano.org/u/southrye/"
   },
   {
     "name": "Oscar Hong",
@@ -372,16 +354,16 @@
     "link": "https://forum.cardano.org/u/wnipos/"
   },
   {
-    "name": "Randy",
-    "role": "Indonesia",
-    "country": "ID",
-    "link": "https://forum.cardano.org/u/randy/"
-  },
-  {
     "name": "Rami Hanania",
     "role": "Lebanon",
     "country": "LB",
     "link": "https://forum.cardano.org/u/ramih/"
+  },
+  {
+    "name": "Randy",
+    "role": "Indonesia",
+    "country": "ID",
+    "link": "https://forum.cardano.org/u/randy/"
   },
   {
     "name": "Rena Oishi",
@@ -426,12 +408,6 @@
     "link": "https://forum.cardano.org/u/seirayun/"
   },
   {
-    "name": "Shaun Byres",
-    "role": "Scotland",
-    "country": "_scotland",
-    "link": "https://forum.cardano.org/u/byres/"
-  },
-  {
     "name": "Shusuke Wakuda",
     "role": "Japan",
     "country": "JP",
@@ -474,16 +450,16 @@
     "link": "https://forum.cardano.org/u/tsnnst/"
   },
   {
-    "name": "Tien",
-    "role": "Vietnam",
-    "country": "VN",
-    "link": "https://forum.cardano.org/u/tien_nguyen_anh/"
-  },
-  {
     "name": "Thomas Lindseth",
     "role": "Norway",
     "country": "NO",
     "link": "https://forum.cardano.org/u/thomaslindseth/"
+  },
+  {
+    "name": "Tien",
+    "role": "Vietnam",
+    "country": "VN",
+    "link": "https://forum.cardano.org/u/tien_nguyen_anh/"
   },
   {
     "name": "Tim Brückmann",
@@ -502,6 +478,12 @@
     "role": "Taiwan",
     "country": "TW",
     "link": "https://forum.cardano.org/u/willhuang0606/"
+  },
+  {
+    "name": "Neal Lam",
+    "role": "Hong Kong",
+    "country": "HK",
+    "link": "https://forum.cardano.org/u/nealsidan/"
   },
   {
     "name": "Hinson Wong",
