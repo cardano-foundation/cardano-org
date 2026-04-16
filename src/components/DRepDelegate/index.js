@@ -128,11 +128,28 @@ function shortAddress(addr) {
   return `${addr.slice(0, 12)}…${addr.slice(-8)}`;
 }
 
+function stringifyError(err) {
+  if (!err) return "";
+  if (typeof err === "string") return err;
+  if (err instanceof Error) return err.message || err.toString();
+  const parts = [];
+  if (err.message) parts.push(String(err.message));
+  if (err.info) parts.push(String(err.info));
+  if (err.code != null) parts.push(`code=${err.code}`);
+  if (!parts.length) {
+    try { return JSON.stringify(err); } catch { return String(err); }
+  }
+  return parts.join(" · ");
+}
+
 function classifyError(err) {
-  if (err && err.code === 2) return "userCancelled"; // CIP-30 UserDeclined
-  const msg = String(err?.message || err || "");
+  const msg = stringifyError(err);
   if (/StakeKeyNotRegistered|StakeNotRegistered/i.test(msg)) return "stakeNotRegistered";
-  if (/user\s*(declined|rejected|cancel)/i.test(msg)) return "userCancelled";
+  // CIP-30 signTx throws code 2 for UserDeclined; submitTx code 2 means Failure.
+  // Only classify as cancel when the message corroborates it.
+  if (/user\s*(declined|rejected|cancel)|declined\s*by\s*user|rejected\s*by\s*user/i.test(msg)) {
+    return "userCancelled";
+  }
   return "generic";
 }
 
@@ -433,6 +450,7 @@ export default function DRepDelegate() {
   const [wallet, setWallet] = useState(null);
   const [tx, setTx] = useState({ status: "idle" });
   const [delegation, setDelegation] = useState(undefined);
+  const [stakeRegistered, setStakeRegistered] = useState(undefined);
 
   useEffect(() => {
     if (!API_URL) return;
@@ -534,6 +552,7 @@ export default function DRepDelegate() {
     setWallet(null);
     setTx({ status: "idle" });
     setDelegation(undefined);
+    setStakeRegistered(undefined);
   }, []);
 
   useEffect(() => {
@@ -542,14 +561,20 @@ export default function DRepDelegate() {
     if (!api) return;
     let cancelled = false;
     setDelegation(undefined);
+    setStakeRegistered(undefined);
     (async () => {
       try {
         const rewardAddrs = await wallet.instance.getRewardAddresses();
         const stakeAddr = rewardAddrs?.[0];
-        if (!stakeAddr) { if (!cancelled) setDelegation(null); return; }
+        if (!stakeAddr) {
+          if (!cancelled) { setDelegation(null); setStakeRegistered(false); }
+          return;
+        }
         const res = await api.post("/account_info", { _stake_addresses: [stakeAddr] });
         if (cancelled) return;
-        const drepId = res.data?.[0]?.delegated_drep || null;
+        const info = res.data?.[0] || {};
+        setStakeRegistered(info.status === "registered");
+        const drepId = info.delegated_drep || null;
         if (!drepId) { setDelegation(null); return; }
         if (drepId.startsWith("drep_always_abstain")) { setDelegation({ kind: "abstain" }); return; }
         if (drepId.startsWith("drep_always_no_confidence")) { setDelegation({ kind: "noConfidence" }); return; }
@@ -559,6 +584,7 @@ export default function DRepDelegate() {
         if (cancelled) return;
         console.error("DRepDelegate: failed to load current delegation", err);
         setDelegation(null);
+        setStakeRegistered(undefined);
       }
     })();
     return () => { cancelled = true; };
@@ -566,6 +592,16 @@ export default function DRepDelegate() {
 
   const handleSelect = useCallback(async (target, displayName) => {
     if (!wallet || wrongNetwork || txBusy) return;
+    if (stakeRegistered === false) {
+      setTx({
+        status: "error",
+        message: translate({
+          id: "governance.delegate.error.stakeNotRegistered",
+          message: "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote.",
+        }),
+      });
+      return;
+    }
     setTx({ status: "building", target: displayName });
     try {
       // Re-check network live in case user switched wallet network since connect.
@@ -595,7 +631,7 @@ export default function DRepDelegate() {
         .changeAddress(changeAddress)
         .selectUtxosFrom(utxos)
         .complete();
-      const signedTx = await wallet.instance.signTx(unsignedTx, true);
+      const signedTx = await wallet.instance.signTx(unsignedTx);
       const txHash = await wallet.instance.submitTx(signedTx);
       setTx({ status: "success", txHash, target: displayName });
     } catch (err) {
@@ -604,6 +640,7 @@ export default function DRepDelegate() {
         setTx({ status: "idle" });
         return;
       }
+      console.error("DRepDelegate: delegation failed", err);
       const message = kind === "stakeNotRegistered"
         ? translate({
             id: "governance.delegate.error.stakeNotRegistered",
@@ -611,11 +648,11 @@ export default function DRepDelegate() {
           })
         : translate(
             { id: "governance.delegate.error.generic", message: "Delegation failed: {error}" },
-            { error: String(err?.message || err) }
+            { error: stringifyError(err) }
           );
       setTx({ status: "error", message });
     }
-  }, [wallet, wrongNetwork, txBusy, API_URL]);
+  }, [wallet, wrongNetwork, txBusy, API_URL, stakeRegistered]);
 
   if (!API_URL) return null;
 
