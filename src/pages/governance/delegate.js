@@ -64,7 +64,14 @@ export default function DelegatePage() {
         message: "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps.",
       })}
     >
-      <OpenGraphInfo pageName="governance" />
+      <OpenGraphInfo
+        pageName="governance"
+        title={translate({ id: "governance.delegate.og.title", message: "Delegate your voice" })}
+        description={translate({
+          id: "governance.delegate.og.description",
+          message: "Connect your wallet and delegate your Cardano voting power to a DRep in one transaction.",
+        })}
+      />
       <DelegateHero />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
