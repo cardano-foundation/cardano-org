@@ -1,14 +1,18 @@
-.hero {
+.hero,
+.heroPlain {
   flex-shrink: 0;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   position: relative;
-  background-image: radial-gradient(circle, rgba(5, 56, 175, 0.22) 1px, transparent 1.5px);
-  background-size: 14px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero {
+  background-image: radial-gradient(circle, rgba(5, 56, 175, 0.22) 1px, transparent 1.5px);
+  background-size: 14px 14px;
 }
 
 .tile {
@@ -33,7 +37,8 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .hero,
+  .heroPlain {
     width: 90px;
     height: 90px;
   }

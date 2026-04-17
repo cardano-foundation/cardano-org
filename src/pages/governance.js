@@ -11,11 +11,15 @@ import TermExplainer from "@site/src/components/TermExplainer";
 import SurveyCard from "@site/src/components/SurveyCard";
 import FAQSection from "@site/src/components/FAQSection";
 import DelegationFlow from "@site/src/components/DelegationFlow";
+import RoleCard from "@site/src/components/Layout/RoleCard";
+import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
+import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import AppGrid from "@site/src/components/AppGrid";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { FaUsers, FaServer, FaUniversity, FaShieldAlt } from "react-icons/fa";
 import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
 import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
@@ -32,6 +36,34 @@ function GovernanceHero() {
 }
 
 function GovernanceRolesSection() {
+  const drep = (
+    <RoleCard
+      accent="blue"
+      icon={<FaUsers />}
+      title={translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}
+    >
+      {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
+    </RoleCard>
+  );
+  const spo = (
+    <RoleCard
+      accent="violet"
+      icon={<FaServer />}
+      title={translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}
+    >
+      {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
+    </RoleCard>
+  );
+  const committee = (
+    <RoleCard
+      accent="teal"
+      icon={<FaUniversity />}
+      title={translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}
+    >
+      {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
+    </RoleCard>
+  );
+
   return (
     <>
       <Divider text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
@@ -40,34 +72,33 @@ function GovernanceRolesSection() {
         {translate({id: 'governance.onboarding.intro', message: 'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding.'})}
       </p>
       <SpacerBox size="small" />
-      <div className="row">
-        <div className="col col--4">
-          <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/dreps.png')} alt="DReps" className={styles.roleIcon} />
-            <h3>{translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}</h3>
-            <p className="black-text">
-              {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
-            </p>
-          </div>
-        </div>
-        <div className="col col--4">
-          <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/spo.png')} alt="SPOs" className={styles.roleIcon} />
-            <h3>{translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}</h3>
-            <p className="black-text">
-              {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
-            </p>
-          </div>
-        </div>
-        <div className="col col--4">
-          <div className={styles.roleCard}>
-            <img src={useBaseUrl('/img/dotted-icons/constitutional-committee.png')} alt="Constitutional Committee" className={styles.roleIcon} />
-            <h3>{translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}</h3>
-            <p className="black-text">
-              {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
-            </p>
-          </div>
-        </div>
+
+      <div className={styles.rolesTriangle}>
+        <div className={styles.areaDrep}>{drep}</div>
+        <div className={styles.areaSpo}>{spo}</div>
+        <div className={styles.areaCommittee}>{committee}</div>
+        <svg
+          className={styles.connections}
+          viewBox="0 0 1000 700"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <line x1="500" y1="210" x2="300" y2="430" className={styles.connLine} />
+          <line x1="500" y1="210" x2="700" y2="430" className={styles.connLine} />
+          <line x1="300" y1="430" x2="700" y2="430" className={styles.connLine} />
+          <circle cx="500" cy="210" r="6" className={styles.connNode} />
+          <circle cx="300" cy="430" r="6" className={styles.connNode} />
+          <circle cx="700" cy="430" r="6" className={styles.connNode} />
+        </svg>
+        <ConnectionLine direction="vertical" className={styles.mobileVLine1} />
+        <ConnectionLine direction="vertical" className={styles.mobileVLine2} />
+      </div>
+
+      <SpacerBox size="small" />
+      <div className={styles.calloutWrap}>
+        <HighlightCallout icon={<FaShieldAlt />}>
+          {translate({id: 'governance.onboarding.together', message: 'Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone.'})}
+        </HighlightCallout>
       </div>
     </>
   );
