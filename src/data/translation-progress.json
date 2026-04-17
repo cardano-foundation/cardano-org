@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-10T06:30:11.282Z",
+  "lastUpdated": "2026-04-17T06:30:28.586Z",
   "languages": [
     {
       "id": "de",
@@ -7,14 +7,14 @@
       "translationProgress": 55,
       "approvalProgress": 0,
       "words": {
-        "total": 37998,
-        "translated": 21105,
+        "total": 37974,
+        "translated": 21025,
         "preTranslateAppliedTo": 0,
         "approved": 13
       },
       "phrases": {
         "total": 3560,
-        "translated": 1828,
+        "translated": 1824,
         "preTranslateAppliedTo": 0,
         "approved": 5
       }
@@ -25,34 +25,34 @@
       "translationProgress": 50,
       "approvalProgress": 46,
       "words": {
-        "total": 37998,
-        "translated": 19132,
+        "total": 37974,
+        "translated": 19045,
         "preTranslateAppliedTo": 0,
-        "approved": 17668
+        "approved": 17621
       },
       "phrases": {
         "total": 3560,
-        "translated": 1862,
+        "translated": 1857,
         "preTranslateAppliedTo": 0,
-        "approved": 1624
+        "approved": 1621
       }
     },
     {
       "id": "es-ES",
       "name": "Spanish",
-      "translationProgress": 31,
-      "approvalProgress": 23,
+      "translationProgress": 34,
+      "approvalProgress": 34,
       "words": {
-        "total": 37998,
-        "translated": 11971,
+        "total": 37974,
+        "translated": 12989,
         "preTranslateAppliedTo": 0,
-        "approved": 8784
+        "approved": 12989
       },
       "phrases": {
         "total": 3560,
-        "translated": 1605,
+        "translated": 1661,
         "preTranslateAppliedTo": 0,
-        "approved": 1174
+        "approved": 1661
       }
     },
     {
@@ -61,14 +61,14 @@
       "translationProgress": 14,
       "approvalProgress": 0,
       "words": {
-        "total": 37998,
-        "translated": 5584,
+        "total": 37974,
+        "translated": 5544,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
         "total": 3560,
-        "translated": 781,
+        "translated": 779,
         "preTranslateAppliedTo": 0,
         "approved": 0
       }

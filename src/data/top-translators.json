@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-10T06:30:15.675Z",
+  "lastUpdated": "2026-04-17T06:30:33.077Z",
   "contributors": [
     {
       "rank": 1,
@@ -13,6 +13,16 @@
     },
     {
       "rank": 2,
+      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 4556,
+      "approved": 6505
+    },
+    {
+      "rank": 3,
       "user": "tu_nguyen",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
       "languages": [
@@ -20,16 +30,6 @@
       ],
       "translated": 2993,
       "approved": 0
-    },
-    {
-      "rank": 3,
-      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 2880,
-      "approved": 2300
     },
     {
       "rank": 4,
