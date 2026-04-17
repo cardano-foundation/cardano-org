@@ -12,7 +12,7 @@
     "description": "Navbar item with label Participate"
   },
   "item.label.Build": {
-    "message": "Desarrollar",
+    "message": "Construir",
     "description": "Navbar item with label Build"
   },
   "item.label.News": {
@@ -24,23 +24,27 @@
     "description": "Navbar item with label What is ada?"
   },
   "item.label.Get started with Cardano": {
-    "message": "Primeros pasos con Cardano",
+    "message": "Empieza en Cardano",
     "description": "Navbar item with label Get started with Cardano"
   },
   "item.label.Where to get ada?": {
-    "message": "¿Dónde conseguir ada?",
+    "message": "¿Dónde obtener ada?",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "Protege tus ada",
+    "message": "Protege tú ada",
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your ada": {
-    "message": "Delega tus ada",
+    "message": "Delega tú ada",
     "description": "Navbar item with label Delegate your ada"
   },
+  "item.label.Delegate your vote": {
+    "message": "Delegate your vote",
+    "description": "Navbar item with label Delegate your vote"
+  },
   "item.label.Use Cardano Apps": {
-    "message": "Usa las apps de Cardano",
+    "message": "Usar aplicaciones de Cardano",
     "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
@@ -48,7 +52,7 @@
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Insights",
+    "message": "Insights de Cardano",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
@@ -60,11 +64,11 @@
     "description": "Navbar item with label Follow Cardano"
   },
   "item.label.Newsletter": {
-    "message": "Newsletter",
+    "message": "Boletín de noticias",
     "description": "Navbar item with label Newsletter"
   },
   "item.label.Online Communities": {
-    "message": "Comunidades en línea",
+    "message": "Comunidades Online",
     "description": "Navbar item with label Online Communities"
   },
   "item.label.Cardano Ambassadors": {
@@ -80,7 +84,7 @@
     "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
-    "message": "Colabora en cardano.org",
+    "message": "Participa en cardano.org",
     "description": "Navbar item with label Get involved in cardano.org"
   },
   "item.label.Participate in governance": {
@@ -96,11 +100,11 @@
     "description": "Navbar item with label Cardano Constitution"
   },
   "item.label.Start building on Cardano": {
-    "message": "Empieza a desarrollar en Cardano",
+    "message": "Empieza a construir en Cardano",
     "description": "Navbar item with label Start building on Cardano"
   },
   "item.label.Integrate Cardano": {
-    "message": "Integra Cardano",
+    "message": "Integrar Cardano",
     "description": "Navbar item with label Integrate Cardano"
   },
   "item.label.Developer Portal": {
@@ -108,11 +112,11 @@
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
-    "message": "Herramientas de desarrollo",
+    "message": "Recursos para el constructor",
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
-    "message": "Empresas que desarrollan en Cardano",
+    "message": "Empresas construyendo en Cardano",
     "description": "Navbar item with label Companies building on Cardano"
   },
   "item.label.Solutions": {
@@ -120,11 +124,11 @@
     "description": "Navbar item with label Solutions"
   },
   "item.label.Enterprise Solutions": {
-    "message": "Soluciones empresariales",
+    "message": "Soluciones para empresas",
     "description": "Navbar item with label Enterprise Solutions"
   },
   "item.label.Use Cases": {
-    "message": "Casos de uso",
+    "message": "Casos de Uso",
     "description": "Navbar item with label Use Cases"
   },
   "item.label.Identity": {
@@ -136,7 +140,7 @@
     "description": "Navbar item with label Finance"
   },
   "item.label.Supply Chain": {
-    "message": "Cadena de suministro",
+    "message": "Cadenas de suministro",
     "description": "Navbar item with label Supply Chain"
   }
 }
