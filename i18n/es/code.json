@@ -119,7 +119,7 @@
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "Última versión",
+    "message": "última versión",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
@@ -546,7 +546,7 @@
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "Este autor aún no ha escrito ninguna publicación aún.",
+    "message": "Este autor no ha escrito ninguna publicación aún.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -554,7 +554,7 @@
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "Esta página no está en la lista. Los motores de búsqueda no lo indexarán, y sólo los usuarios que tengan un enlace directo pueden acceder a ella.",
+    "message": "Esta página no está en la lista. Los motores de búsqueda no lo indexarán, y solo los usuarios que tengan un enlace directo pueden acceder a ella.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
@@ -590,7 +590,7 @@
     "message": "Ada es el Token Nativo de Cardano"
   },
   "whatIsAda.meta.description": {
-    "message": "ada es la criptomoneda nativa de la blockchain de Cardano. Úsala para transacciones, staking, voto de gobierno e interacción con aplicaciones descentralizadas."
+    "message": "ada es la criptomoneda nativa de la blockchain de Cardano. Úsala para transacciones, staking, voto de gobernanza e interacción con aplicaciones descentralizadas."
   },
   "whatIsAda.section.headline": {
     "message": "¿Qué es ada?"
@@ -677,16 +677,16 @@
     "message": "Una plataforma ligera [open-source](https://github.com/input-output-hk/lace) de IOG, uno de los creadores de Cardano. Verificado manualmente por un auditor independiente, Lace le permite administrar de forma rápida, fácil y segura sus activos digitales y disfrutar de Web3."
   },
   "walletSection.lace.subtext": {
-    "message": "Extensión del navegador para Chrome, Brave y Edge"
+    "message": "Extensión para navegador para Chrome, Brave y Edge"
   },
   "walletSection.lace.label": {
-    "message": "Obtener Lace"
+    "message": "Obtén Lace"
   },
   "walletSection.daedalus.title": {
     "message": "Daedalus Wallet"
   },
   "walletSection.daedalus.text": {
-    "message": "La [open-source](https://github.com/input-output-hk/daedalus) cartera de nodo completa para Cardano. Ofrece mayor control y seguridad manteniendo una copia completa de la blockchain, pero esto se hace a costa de una experiencia de usuario más compleja. Como resultado, normalmente se orientan hacia usuarios profesionales que requieren estas características avanzadas."
+    "message": "La [open-source](https://github.com/input-output-hk/daedalus) cartera de nodo completa para Cardano. Ofrece mayor control y seguridad manteniendo una copia completa de la blockchain, pero esto se hace a costa de una experiencia de usuario más compleja. Como resultado, normalmente se orienta hacia usuarios profesionales que requieren estas características avanzadas."
   },
   "walletSection.daedalus.subtext": {
     "message": "Sólo para potentes PCs de escritorio"
@@ -707,13 +707,13 @@
     "message": "Cardano Wallets"
   },
   "walletSection.disclaimer": {
-    "message": "Las aplicaciones de ejemplo se proporcionan sólo con fines informativos y no están respaldadas o aprobadas. Su uso es estrictamente bajo su propio riesgo. Las descripciones han sido proporcionadas por los respectivos equipos de proyecto."
+    "message": "Las aplicaciones de ejemplo se proporcionan solo con fines informativos y no están respaldadas o aprobadas. Su uso es estrictamente bajo su propio riesgo. Las descripciones han sido proporcionadas por los respectivos equipos de proyecto."
   },
   "walletSection.storageTitle": {
     "message": "¿Cómo almaceno mi Ada y lo mantengo seguro?"
   },
   "walletSection.storageDescription1": {
-    "message": "Una cartera de criptomonedas es un programa de software diseñado para almacenar sus claves públicas y privadas, envía y recibe monedas digitales, monitorea tu saldo e interactúa con blockchains soportados."
+    "message": "Una cartera de criptomonedas es un programa de software diseñado para almacenar sus claves públicas y privadas, envía y recibe monedas digitales, monitorea tu saldo e interactúa con blockchains soportadas."
   },
   "walletSection.storageDescription2": {
     "message": "Además de la variedad de carteras disponibles, también hay dos tipos de carteras: una cartera caliente y una cartera fría."
@@ -722,7 +722,7 @@
     "message": "Una cartera caliente está conectada a Internet y se puede acceder en cualquier momento con las claves solicitadas. Ejemplos de carteras calientes son las carteras móviles y de software, y los fondos almacenados en los intercambios."
   },
   "walletSection.coldWalletText": {
-    "message": "Una cartera fría es una cartera sin conexión. No está conectado a Internet y se utiliza para garantizar el almacenamiento de fondos que no tienen que ser accedidos con frecuencia. Algunos ejemplos son las carteras de hardware - que es un dispositivo de hardware seguro que almacena las claves privadas de la cartera - y las carteras de papel. Cardano es soportado por las carteras de hardware Trezor y Ledger."
+    "message": "Una cartera fría es una cartera sin conexión. No está conectada a Internet y se utiliza para garantizar el almacenamiento de fondos que no tienen que ser accedidos con frecuencia. Algunos ejemplos son las carteras de hardware, que son un dispositivo de hardware seguro que almacena las claves privadas de la cartera, y las carteras de papel. Cardano es soportado por las carteras de hardware Keystone, Trezor y Ledger entre otras."
   },
   "whatIsAda.button.getStarted": {
     "message": "Empieza en Cardano"
@@ -740,7 +740,7 @@
     "message": "Comience con Cardano, primeros pasos"
   },
   "getStarted.meta.description": {
-    "message": "Configura una cartera de Cardano, obtén ada, y comience a explorar DApps siguiendo unos simples pasos. Tu guía inicial para el ecosistema de Cardano."
+    "message": "Configura una cartera de Cardano, obtén ada, y comience a explorar dApps siguiendo unos simples pasos. Tu guía inicial para el ecosistema de Cardano."
   },
   "getStarted.step1.title": {
     "message": "Descargar billetera"
@@ -752,7 +752,7 @@
     "message": "Descargar billetera"
   },
   "getStarted.step1.text1": {
-    "message": "Una billetera de Cardano es su interfaz personal al blockchain, al igual que un navegador web es su interfaz a Internet. le permite administrar de forma segura su ada, usar dApps, e interactuar con la red."
+    "message": "Una billetera de Cardano es tu interfaz personal a la blockchain, al igual que un navegador web es tu interfaz a Internet. Te permite administrar de forma segura tu ada, usar dApps, e interactuar con la red."
   },
   "getStarted.step1.text2": {
     "message": "Creará su billetera en los siguientes pasos. La descarga por sí sola no crea una billetera."
@@ -767,13 +767,13 @@
     "message": "Tenga en cuenta las estafas más comunes."
   },
   "getStarted.step2.title": {
-    "message": "Respalde su Frase de Recuperación"
+    "message": "Respalde su frase de recuperación"
   },
   "getStarted.step2.description": {
     "message": "Cuando cree una nueva billetera, recibirá un conjunto de 12, 15 o 24 palabras. Esta es su frase de recuperación, también llamada una frase de semilla. Es la clave maestra de su billetera. ¡Manténgala segura!"
   },
   "getStarted.step2.heading": {
-    "message": "Respalde su Frase de Recuperación"
+    "message": "Respalde su frase de recuperación"
   },
   "getStarted.step2.whatToDo": {
     "message": "Lo que necesita hacer:"
@@ -788,10 +788,10 @@
     "message": "Cualquiera con su frase de recuperación puede acceder a sus fondos"
   },
   "getStarted.step2.tip4": {
-    "message": "Mantener varias copias en diferentes lugares seguros"
+    "message": "Mantén varias copias en diferentes lugares seguros"
   },
   "getStarted.step2.checkbox": {
-    "message": "Respalde su Frase de Recuperación."
+    "message": "He respaldado mi frase de recuperación."
   },
   "getStarted.step3.title": {
     "message": "Configuración completa de la billetera"
@@ -842,22 +842,22 @@
     "message": "He conectado mi billetera."
   },
   "getStarted.step5.title": {
-    "message": "Obtener Ada"
+    "message": "Obtener ada"
   },
   "getStarted.step5.description": {
     "message": "Obtén ada, criptomoneda nativa de Cardano, para empezar a usar la blockchain."
   },
   "getStarted.step5.heading": {
-    "message": "Donde conseguir ada"
+    "message": "Dónde conseguir ada"
   },
   "getStarted.step5.text": {
-    "message": "Hay varias maneras de obtener ada, pero el método más común es comprarlo en bolsas de criptomoneda usando monedas fiat u otras criptomonedas."
+    "message": "Hay varias maneras de obtener ada, pero el método más común es comprarlo en intercambios de criptomoneda usando monedas fiat u otras criptomonedas."
   },
   "getStarted.step5.button": {
     "message": "Ver todas las opciones →"
   },
   "getStarted.step5.securityNote": {
-    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de juegos para estafadores."
+    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores."
   },
   "getStarted.step5.checkbox": {
     "message": "Tengo ada en mi billetera."
@@ -866,7 +866,7 @@
     "message": "Explora el ecosistema"
   },
   "getStarted.step6.description": {
-    "message": "Ahora que usted tiene una billetera y ada, usted está listo para explorar todo lo que Cardano tiene para ofrecer. Un buen lugar para comenzar es explorar aplicaciones populares."
+    "message": "Ahora que usted tiene una billetera y ada, usted está listo para explorar todo lo que Cardano tiene para ofrecer. Un buen lugar para comenzar es explorar aplicaciones más populares."
   },
   "whereToGetAda.hero.title": {
     "message": "¿Dónde conseguir ada?"
@@ -962,10 +962,10 @@
     "message": "Protecting your ada from scammers"
   },
   "commonScams.intro.description1": {
-    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de juegos para estafadores. Cardano (ada), uno de los blockchains más populares, no es inmune a estas amenazas. Desde falsas entregas hasta ataques de phishing, los estafadores están constantemente innovando nuevas formas de explotar a los usuarios. A medida que la inteligencia artificial sigue mejorando, estas estafas también se están haciendo más frecuentes. Esta página describe las estafas más comunes en el ecosistema de Cardano y cómo puedes protegerte a ti mismo."
+    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores. Cardano (ada), una de las blockchains más populares, no es inmune a estas amenazas. Desde falsas entregas hasta ataques de phishing, los estafadores están constantemente innovando nuevas formas de explotar a los usuarios. A medida que la inteligencia artificial sigue mejorando, estas estafas también se están haciendo más frecuentes. Esta página describe las estafas más comunes en el ecosistema de Cardano y cómo puedes protegerte a ti mismo."
   },
   "commonScams.intro.description2": {
-    "message": "**Recuerda:** Si alguien obtiene acceso a tus palabras de semilla (frase de recuperación), puede tomar el control total de tu cartera: ninguna contraseña de gasto puede protegerte. Una vez robada tu ada, ha desaparecido para siempre, sin ninguna forma de recuperarla."
+    "message": "**Recuerda:** Si alguien obtiene acceso a tus palabras semillas (frase de recuperación), puede tomar el control total de tu cartera: ninguna contraseña de gasto puede protegerte. Una vez robada tu ada, ha desaparecido para siempre, sin ninguna forma de recuperarla."
   },
   "commonScams.divider.giveaway": {
     "message": "Regalo"
@@ -974,7 +974,7 @@
     "message": "Estafa de Regalo de Ada"
   },
   "commonScams.giveaway.description1": {
-    "message": "Una de las estafas más conocidas que apuntan a la comunidad de Cardano es la **estafa Ada Giveaway. ** Los estafadores prometen duplicar tu ada si los mandas una cierta cantidad primero. Estas estafas a menudo presentan flujos en vivo falsos de Charles Hoskinson, u otras personalidades conocidas, para parecer legítimas. Los streams pueden imitar eventos genuinos e incluir una dirección de cartera para que usted envíe su ada."
+    "message": "Una de las estafas más conocidas que apuntan a la comunidad de Cardano es la **estafa Ada Giveaway. ** Los estafadores prometen duplicar tu ada si los mandas una cierta cantidad primero. Estas estafas a menudo presentan videos en vivo falsos de Charles Hoskinson, u otras personalidades conocidas, para parecer legítimas. Los streams pueden imitar eventos genuinos e incluir una dirección de cartera para que usted envíe su ada."
   },
   "commonScams.giveaway.howToProtect": {
     "message": "Cómo protegerte a ti mismo:"
@@ -983,7 +983,7 @@
     "message": "Regalos legítimos **nunca** piden dinero de antemano."
   },
   "commonScams.giveaway.tip2": {
-    "message": "Evite hacer clic en enlaces en mensajes no solicitados o streams en vivo."
+    "message": "Evite hacer clic en enlaces en mensajes no solicitados o videos en vivo."
   },
   "commonScams.giveaway.tip3": {
     "message": "Recuerde: Una vez enviado, tu ada se ha ido para siempre."
@@ -998,7 +998,7 @@
     "message": "Ataques de Phishing"
   },
   "commonScams.phishing.description": {
-    "message": "Los fraudes de Phishing implican sitios web falsos, aplicaciones o correos electrónicos diseñados para robar información confidencial, como sus credenciales de cartera o frase de recuperación (palabras de semilla). Estos sitios fraudulentos a menudo imitan carteras populares como [Typhon, VESPR o Eternl](/what-is-ada/#wallets)."
+    "message": "Los fraudes de phishing implican sitios web falsos, aplicaciones o correos electrónicos diseñados para robar información confidencial, como sus credenciales de cartera o frase de recuperación (palabras semilla). Estos sitios fraudulentos a menudo imitan carteras populares como [Typhon, VESPR o Eternl](/what-is-ada/#wallets)."
   },
   "commonScams.phishing.howToProtect": {
     "message": "Cómo protegerte a ti mismo:"
@@ -1094,10 +1094,10 @@
     "message": "Cardano is a decentralized blockchain platform built through peer-reviewed research. Explore ada, staking, governance, DApps, and a global open-source community."
   },
   "home.hero.title": {
-    "message": "Making the world Work Better For All"
+    "message": "Making the World Work Better for All"
   },
   "home.hero.description": {
-    "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."
+    "message": "Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future."
   },
   "home.hero.ctaWhatIsAda": {
     "message": "What is ada?"
@@ -2043,7 +2043,7 @@
     "message": "another inquiry"
   },
   "artworkContest.hero.title": {
-    "message": "Making the world Work Better For All"
+    "message": "Making the World Work Better for All"
   },
   "artworkContest.hero.description": {
     "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."

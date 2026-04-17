@@ -587,10 +587,10 @@
     "message": "Direkt. Sicher. Von überall. Für jeden."
   },
   "whatIsAda.meta.title": {
-    "message": "Was ist Ada? | cardano.org"
+    "message": "What Is ada, the Native Token of Cardano"
   },
   "whatIsAda.meta.description": {
-    "message": "Neue Währung. Neuer Weg zu handeln. Direkt. Sicher. Von überall. Für jeden."
+    "message": "ada is the native cryptocurrency of the Cardano blockchain. Use it for transactions, staking, governance voting, and interacting with decentralized applications."
   },
   "whatIsAda.section.headline": {
     "message": "Was ist Ada?"
@@ -737,10 +737,10 @@
     "message": "Lerne die Grundlagen und starte in wenigen Schritten."
   },
   "getStarted.meta.title": {
-    "message": "Erste Schritte mit Cardano | cardano.org"
+    "message": "Get Started with Cardano, Your First Steps"
   },
   "getStarted.meta.description": {
-    "message": "Lerne die Grundlagen und starte in wenigen Schritten."
+    "message": "Set up a Cardano wallet, get ada, and start exploring DApps and staking in a few simple steps. Your beginner's guide to the Cardano ecosystem."
   },
   "getStarted.step1.title": {
     "message": "Wallet herunterladen"
@@ -875,10 +875,10 @@
     "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen."
   },
   "whereToGetAda.meta.title": {
-    "message": "Ada bekommen | cardano.org"
+    "message": "Buy ada, Where to Get Cardano's Native Token"
   },
   "whereToGetAda.meta.description": {
-    "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen."
+    "message": "Buy ada on centralized or decentralized exchanges, earn staking rewards, or receive it directly. Find the best way to get Cardano's native token."
   },
   "whereToGetAda.divider.exchanges": {
     "message": "Ada über Börsen kaufen"
@@ -944,7 +944,7 @@
     "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
   },
   "commonScams.meta.title": {
-    "message": "Häufige Cardano-Betrugsmaschen | cardano.org"
+    "message": "Common Cardano Scams, How to Stay Safe"
   },
   "commonScams.meta.description": {
     "message": "Der Kryptomarkt bietet viele Chancen – aber auch Betrüger nutzen ihn aus."
@@ -1088,16 +1088,16 @@
     "message": "Informiere dich im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
   },
   "home.meta.title": {
-    "message": "Startseite | cardano.org"
+    "message": "Cardano, Secure Decentralized Blockchain Platform"
   },
   "home.meta.description": {
-    "message": "Eine offene Plattform, die Milliarden Menschen ohne ökonomische Identität befähigt – mit dezentralen Anwendungen für Identität, Werte und Governance."
+    "message": "Cardano is a decentralized blockchain platform built through peer-reviewed research. Explore ada, staking, governance, DApps, and a global open-source community."
   },
   "home.hero.title": {
-    "message": "Eine bessere Welt. Für alle."
+    "message": "Making the World Work Better for All"
   },
   "home.hero.description": {
-    "message": "Cardano ist eine Blockchain-Plattform für Visionäre, Innovatoren und Macher – mit den Werkzeugen und Technologien, um Möglichkeiten für viele statt für wenige zu schaffen und positiven globalen Wandel voranzutreiben."
+    "message": "Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future."
   },
   "home.hero.ctaWhatIsAda": {
     "message": "Was ist Ada?"
@@ -1692,7 +1692,7 @@
     "message": "Das Cardano-Ambassador-Programm würdigt Community-Mitglieder, die das Cardano-Ökosystem aktiv voranbringen. Seit 2018 von der Cardano Foundation aufgebaut und stetig weiterentwickelt, ermöglicht es engagierten Mitwirkenden, weltweit etwas zu bewegen."
   },
   "ambassadors.layout.title": {
-    "message": "Ambassador-Programm | cardano.org"
+    "message": "Cardano Ambassador Program, Join the Community"
   },
   "ambassadors.layout.description": {
     "message": "Das Cardano-Ambassador-Programm zeichnet Community-Mitglieder aus, die durch Aufklärung, Engagement und Öffentlichkeitsarbeit die Verbreitung von Cardano vorantreiben."
@@ -1743,7 +1743,7 @@
     "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
   },
   "brandAssets.layout.title": {
-    "message": "Brand Assets | cardano.org"
+    "message": "Cardano Brand Assets, Logos and Guidelines"
   },
   "brandAssets.layout.description": {
     "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
@@ -1755,7 +1755,7 @@
     "message": "Die Cardano-Community besteht aus Menschen aus aller Welt, die sich zusammengeschlossen haben, um den Geist und die Zukunft von Cardano zu fördern und zu bewahren."
   },
   "codeOfConduct.layout.title": {
-    "message": "Community-Verhaltenskodex | cardano.org"
+    "message": "Cardano Community Code of Conduct"
   },
   "codeOfConduct.layout.description": {
     "message": "Die Cardano-Community besteht aus Menschen aus aller Welt, die sich zusammengeschlossen haben, um den Geist und die Zukunft von Cardano zu fördern und zu bewahren."
@@ -1971,13 +1971,13 @@
     "message": "Die Cardano-Verfassung – das Governance-Fundament der Cardano-Blockchain."
   },
   "constitution.layout.title": {
-    "message": "Die Cardano-Verfassung | cardano.org"
+    "message": "The Cardano Constitution, On-Chain Governance Framework"
   },
   "constitution.layout.description": {
     "message": "Die Cardano-Verfassung entdecken: das Governance-Fundament der Cardano-Blockchain. Die aktuelle Verfassung lesen, ihre Ratifizierungshistorie erkunden und den Volltext über IPFS herunterladen."
   },
   "contact.hero.title": {
-    "message": "Contact | cardano.org"
+    "message": "Contact"
   },
   "contact.hero.description": {
     "message": "Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
@@ -2013,10 +2013,10 @@
     "message": "Sponsorship Request"
   },
   "contact.meta.title": {
-    "message": "Cardano - making the world work better for all"
+    "message": "Contact Cardano, Get in Touch"
   },
   "contact.meta.description": {
-    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    "message": "Get in touch with the Cardano ecosystem. Reach the Cardano Foundation, Intersect, IOG, or EMURGO for partnerships, support, or sponsorship inquiries."
   },
   "contact.divider.hereToHelp": {
     "message": "Here to help"
@@ -2043,7 +2043,7 @@
     "message": "another inquiry"
   },
   "artworkContest.hero.title": {
-    "message": "Making the world Work Better For All"
+    "message": "Making the World Work Better for All"
   },
   "artworkContest.hero.description": {
     "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."
@@ -2052,7 +2052,7 @@
     "message": "Preview"
   },
   "artworkContest.layout.title": {
-    "message": "Home | cardano.org"
+    "message": "Cardano Artwork Contest"
   },
   "artworkContest.layout.description": {
     "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
@@ -2079,10 +2079,10 @@
     "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
   },
   "developers.meta.title": {
-    "message": "Auf Cardano entwickeln | cardano.org"
+    "message": "Build on Cardano, Developer Tools and Documentation"
   },
   "developers.meta.description": {
-    "message": "Kuratierte Ressourcen und Einstiegspunkte für den Start mit der Cardano-Entwicklung."
+    "message": "Start building on Cardano. Access developer tools, smart contract languages, APIs, testnets, and tutorials to launch your first decentralized application."
   },
   "developers.divider.resources": {
     "message": "Entwickler-Ressourcen"
@@ -2118,10 +2118,10 @@
     "message": "Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
   },
   "discoverCardano.meta.title": {
-    "message": "Discover Cardano | cardano.org"
+    "message": "What Is Cardano, Blockchain Built for Sustainability"
   },
   "discoverCardano.meta.description": {
-    "message": "Cardano is the nexus of five principles: People, purpose, technology, research, and opportunity. Explore and learn this new constellation of knowledge."
+    "message": "Discover what makes Cardano different. Built on peer-reviewed science, powered by a global community, and designed for a sustainable, decentralized future."
   },
   "discoverCardano.people.title": {
     "message": "People"
@@ -2196,7 +2196,7 @@
     "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
   },
   "entities.meta.title": {
-    "message": "Entities building on Cardano | cardano.org"
+    "message": "Organizations Building on Cardano"
   },
   "entities.meta.description": {
     "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
@@ -2226,7 +2226,7 @@
     "message": "Weiter"
   },
   "events.meta.title": {
-    "message": "Cardano-Events | cardano.org"
+    "message": "Cardano Events, Conferences and Meetups"
   },
   "events.meta.description": {
     "message": "Alle kommenden Cardano-Events an einem Ort – damit du keine Gelegenheit verpasst, dich mit der Cardano-Community zu vernetzen und weiterzuentwickeln."
@@ -2259,10 +2259,10 @@
     "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
   },
   "exchanges.layout.title": {
-    "message": "Cardano integrieren | cardano.org"
+    "message": "Integrate Cardano, Exchange and Wallet Partnerships"
   },
   "exchanges.layout.description": {
-    "message": "Einfache Integration mit Cardano. Alle Upgrades. Kein Wartungsaufwand."
+    "message": "Integrate Cardano into your exchange, wallet, or payment platform. Access documentation, resources, and partnership opportunities for ada support."
   },
   "exchanges.intro.description": {
     "message": "Es gibt verschiedene [Wege, Cardano zu integrieren](https://developers.cardano.org) – einer davon ist Adrestia. Das Adrestia-Team unterstützt Börsen- und Entwicklerintegrationen mit einem Wallet-SDK und APIs, die die Interaktion mit Cardano über Releases hinweg vereinfachen."
@@ -2358,7 +2358,7 @@
     "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
   },
   "genesis.layout.title": {
-    "message": "Genesis Distribution | cardano.org"
+    "message": "Cardano Genesis Distribution, Initial ada Allocation"
   },
   "genesis.layout.description": {
     "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
@@ -2415,10 +2415,10 @@
     "message": "Cardano basiert auf einem sicheren, dezentralen System – Ada-Halter gestalten die Entwicklung der Plattform und beeinflussen die Richtung des Ökosystems."
   },
   "governance.meta.title": {
-    "message": "Governance auf Cardano | cardano.org"
+    "message": "Cardano Governance, Community-Driven Decision Making"
   },
   "governance.meta.description": {
-    "message": "Cardano setzt auf ein sicheres, dezentrales Governance-System, das jedem Ada-Halter eine Stimme gibt. Die Community steuert gemeinsam die Weiterentwicklung der Plattform – von Kern-Upgrades über Anwendungen bis hin zu Services."
+    "message": "Cardano governance gives every ada holder a voice. Delegate to a DRep, vote on proposals, or register as a delegate representative to shape the network."
   },
   "governance.divider.withinCardano": {
     "message": "Governance bei Cardano"
@@ -2523,10 +2523,10 @@
     "message": "Welche Hard Forks gab es bisher – und welche Neuerungen haben sie gebracht?"
   },
   "hardforks.layout.title": {
-    "message": "Bisherige Hard Forks | cardano.org"
+    "message": "Cardano Hard Forks, Network Upgrade History"
   },
   "hardforks.layout.description": {
-    "message": "Ein umweltfreundliches, nachweislich sicheres Proof-of-Stake-Protokoll mit rigorosen Sicherheitsgarantien."
+    "message": "A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved."
   },
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
@@ -2553,10 +2553,10 @@
     "message": "Empowering the digital architects of the future."
   },
   "learn.layout.title": {
-    "message": "Learn | cardano.org"
+    "message": "Learn About Cardano, Guides, Tutorials and Resources"
   },
   "learn.layout.description": {
-    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    "message": "Learn how Cardano works, from proof-of-stake consensus and smart contracts to staking, governance, and building decentralized applications."
   },
   "newsletter.hero.title": {
     "message": "Bleib informiert"
@@ -2565,7 +2565,7 @@
     "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
   },
   "newsletter.layout.title": {
-    "message": "Cardano Community Digest | cardano.org"
+    "message": "Cardano Community Digest, Weekly News and Updates"
   },
   "newsletter.layout.description": {
     "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
@@ -2586,10 +2586,10 @@
     "message": "An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
   },
   "ouroboros.meta.title": {
-    "message": "What is Ouroboros? | cardano.org"
+    "message": "Ouroboros, Cardano's Proof-of-Stake Protocol"
   },
   "ouroboros.meta.description": {
-    "message": "An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
+    "message": "Ouroboros is the first peer-reviewed, provably secure proof-of-stake consensus protocol. Learn how it powers the Cardano blockchain with minimal energy usage."
   },
   "ouroboros.divider.vision": {
     "message": "Vision"
@@ -2667,13 +2667,13 @@
     "message": "Forschungspapiere und Spezifikationen rund um Cardano."
   },
   "research.meta.title": {
-    "message": "Cardano Forschung | cardano.org"
+    "message": "Cardano Research, Peer-Reviewed Blockchain Science"
   },
   "research.meta.description": {
-    "message": "Forschungspapiere und Spezifikationen rund um Cardano."
+    "message": "Explore the peer-reviewed papers and formal specifications behind the Cardano blockchain, spanning cryptography, consensus, smart contracts, and governance."
   },
   "signalGovernance.layout.title": {
-    "message": "Interesse an Governance bekunden"
+    "message": "Signal your interest in Cardano Governance"
   },
   "signalGovernance.layout.description": {
     "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
@@ -2694,7 +2694,7 @@
     "message": "Governance"
   },
   "signalOperator.layout.title": {
-    "message": "Signal your interest in Stake Pool Operations"
+    "message": "Signal your interest in Cardano Stake Pool Operations"
   },
   "signalOperator.layout.description": {
     "message": "Stay informed about everything related to running a Stake Pool and technical updates."
@@ -2715,10 +2715,10 @@
     "message": "operator"
   },
   "signal.layout.title": {
-    "message": "Signal your interest"
+    "message": "Signal Your Interest in Cardano"
   },
   "signal.layout.description": {
-    "message": "Get just the information you want"
+    "message": "Sign up to receive Cardano updates on governance, stake pool operations, or development. Stay informed about what matters to you."
   },
   "signal.openGraph.title": {
     "message": "Signal your interest"
@@ -2742,7 +2742,7 @@
     "message": "Erprobte Blockchain-Lösungen für Lieferketten, Identität und mehr."
   },
   "solutions.layout.title": {
-    "message": "Enterprise-Lösungen | cardano.org"
+    "message": "Cardano Enterprise Solutions, Blockchain for Business"
   },
   "solutions.layout.description": {
     "message": "Erprobte Enterprise-Blockchain-Lösungen auf Cardano entdecken – von Lieferketten-Rückverfolgbarkeit bis zu digitalen Produktpässen."
@@ -2874,7 +2874,7 @@
     "message": "Stärke das Netzwerk, verdiene Belohnungen und werde Teil der Cardano-Reise."
   },
   "stakePoolDelegation.meta.title": {
-    "message": "Stake delegieren | cardano.org"
+    "message": "Delegate ada, Cardano Staking Made Simple"
   },
   "stakePoolDelegation.meta.description": {
     "message": "Delegiere deinen Stake, um das Netzwerk zu stärken, Belohnungen zu verdienen und Teil der Cardano-Reise zu werden."
@@ -2928,7 +2928,7 @@
     "message": "Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network."
   },
   "stakePoolOperation.meta.title": {
-    "message": "Operate a stake pool | cardano.org"
+    "message": "Run a Cardano Stake Pool, Setup and Requirements"
   },
   "stakePoolOperation.meta.description": {
     "message": "Become a stake pool operator, earn ada, and contribute to the decentralization of the Cardano network."
@@ -3006,10 +3006,10 @@
     "message": "Wie die Cardano-Blockchain reale Probleme branchenübergreifend löst."
   },
   "useCases.layout.title": {
-    "message": "Enterprise-Anwendungsfälle | cardano.org"
+    "message": "Cardano Enterprise Solutions and Real-World Use Cases"
   },
   "useCases.layout.description": {
-    "message": "Eine offene Plattform für Milliarden von Menschen ohne wirtschaftliche Identität – mit dezentralen Anwendungen für Identität, Wertübertragung und Governance."
+    "message": "Explore real-world Cardano use cases across supply chain, identity, finance, and education. See how enterprises leverage blockchain for transparency and efficiency."
   },
   "useCases.intro.description": {
     "message": "Blockchain-Anwendungen aus verschiedenen Branchen entdecken – von Identitätsprüfung bis Lieferkettenverfolgung. Cardano bietet sichere, skalierbare Lösungen für reale Herausforderungen."
@@ -3030,10 +3030,10 @@
     "message": "Wondering about Cardano's motiviation?"
   },
   "why.meta.title": {
-    "message": "Why Cardano? | cardano.org"
+    "message": "Why Cardano, What Makes It Different"
   },
   "why.meta.description": {
-    "message": "Wondering about Cardano's motiviation?"
+    "message": "Cardano combines peer-reviewed research, formal verification, and a proof-of-stake protocol to deliver a secure, sustainable, and scalable blockchain platform."
   },
   "why.divider.howItAllBegan": {
     "message": "How it all began"
@@ -3078,7 +3078,7 @@
     "message": "Read the essay"
   },
   "apps.hero.title": {
-    "message": "Cardano-Anwendungen"
+    "message": "Cardano Apps and DApps, Explore the Ecosystem"
   },
   "apps.hero.description": {
     "message": "Entdecke Anwendungen auf der Cardano-Blockchain"
@@ -3120,7 +3120,7 @@
     "message": "Insight öffnen"
   },
   "insights.layout.title": {
-    "message": "Insights"
+    "message": "Cardano Insights, Data and Analytics"
   },
   "insights.layout.description": {
     "message": "Interaktive Cardano-Insights zu Governance, Staking, Konsens, Ökonomie und mehr."
@@ -3654,7 +3654,7 @@
     "message": "Deposits"
   },
   "insightsTemplate.meta.pageTitle": {
-    "message": "Insights Template | cardano.org"
+    "message": "Cardano Insights Template"
   },
   "insightsTemplate.meta.pageDescription": {
     "message": "Insights Template"
