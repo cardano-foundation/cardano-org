@@ -3350,7 +3350,7 @@
     "message": "Delegate your voice"
   },
   "governance.delegate.hero.description": {
-    "message": "Connect your wallet, choose a Delegated Representative, and vote on Cardano's future. No middlemen, no custody, your stake stays in your wallet."
+    "message": "Connect your wallet, pick a Delegated Representative, and lend them your voting power. Non-custodial, no lock-up, your ada never leaves your wallet."
   },
   "governance.delegate.loading": {
     "message": "Loading delegation tool…"
@@ -3404,7 +3404,7 @@
     "message": "Wallet error: {error}"
   },
   "governance.delegate.wallet.empty": {
-    "message": "No Cardano wallet detected. Install Eternl, Lace, Typhon, Yoroi or another CIP-30 wallet to continue."
+    "message": "No Cardano wallet detected. Install Eternl, Typhon, Begin or another CIP-30 wallet to continue."
   },
   "governance.delegate.networkWarning": {
     "message": "Your wallet is on the wrong network. Switch to Mainnet to delegate."
@@ -3458,7 +3458,7 @@
     "message": "Prefer another tool?"
   },
   "governance.delegate.alt.intro": {
-    "message": "Specialized governance tools cover advanced flows like proposal authoring, vote tracking, and detailed DRep profiles."
+    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
   },
   "governance.delegate.alt.govtool": {
     "message": "Intersect's full-feature governance interface."

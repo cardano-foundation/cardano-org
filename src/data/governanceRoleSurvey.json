@@ -6,8 +6,8 @@
       "id": "delegate",
       "title": "Delegate your voting power",
       "description": "Delegation is the easiest way to participate. A DRep votes on proposals on your behalf while your ada stays safely in your wallet. It takes just a few minutes to set up and you can change your DRep at any time.",
-      "ctaText": "Find a DRep",
-      "ctaLink": "https://tempo.vote/dreps"
+      "ctaText": "Choose a DRep",
+      "ctaLink": "/governance/delegate"
     },
     {
       "id": "drep",

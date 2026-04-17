@@ -48,7 +48,7 @@ function DelegateHero() {
       title={translate({ id: "governance.delegate.hero.title", message: "Delegate your voice" })}
       description={translate({
         id: "governance.delegate.hero.description",
-        message: "Connect your wallet, choose a Delegated Representative, and vote on Cardano's future. No middlemen, no custody, your stake stays in your wallet.",
+        message: "Connect your wallet, pick a Delegated Representative, and lend them your voting power. Non-custodial, no lock-up, your ada never leaves your wallet.",
       })}
       bannerType="braidBlue"
     />
@@ -97,7 +97,7 @@ export default function DelegatePage() {
           <p className="black-text">
             {translate({
               id: "governance.delegate.alt.intro",
-              message: "Specialized governance tools cover advanced flows like proposal authoring, vote tracking, and detailed DRep profiles.",
+              message: "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics.",
             })}
           </p>
           <SpacerBox size="small" />

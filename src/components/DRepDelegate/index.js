@@ -201,7 +201,7 @@ function WalletPicker({ onConnect, busy }) {
       <p className={styles.walletEmpty}>
         {translate({
           id: "governance.delegate.wallet.empty",
-          message: "No Cardano wallet detected. Install Eternl, Typhon, Nami, Yoroi or another CIP-30 wallet to continue.",
+          message: "No Cardano wallet detected. Install Eternl, Typhon, Begin or another CIP-30 wallet to continue.",
         })}
       </p>
     );
