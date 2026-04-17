@@ -3,37 +3,46 @@
     "question": "Do I lose my ada when I delegate?",
     "answer": [
       "No. Delegation is completely non-custodial. Your ada never leaves your wallet. You are only lending your voting power to a DRep, not transferring any funds."
-    ]
+    ],
+    "category": "getting-started",
+    "popular": "No. Your ada never leaves your wallet."
   },
   {
     "question": "How much does it cost to delegate?",
     "answer": [
       "Delegating your voting power to a DRep is free beyond the standard transaction fee (typically less than 0.2 ada). There is no deposit required for delegation."
-    ]
+    ],
+    "category": "getting-started",
+    "popular": "Delegating to a DRep is free. You only pay standard network fees."
   },
   {
     "question": "Can I change my DRep later?",
     "answer": [
       "Yes, you can change your DRep at any time. Simply delegate to a different DRep and the change takes effect in the next epoch."
-    ]
+    ],
+    "category": "delegation",
+    "popular": "Yes. You can update or remove your delegation at any time."
   },
   {
     "question": "What happens if I don't delegate?",
     "answer": [
       "If you don't delegate your voting power, your ada does not count toward any governance vote. Your voice goes unused. Delegating ensures your stake contributes to the decisions that shape Cardano."
-    ]
+    ],
+    "category": "delegation"
   },
   {
     "question": "How long does delegation take to become active?",
     "answer": [
       "Delegation becomes active at the start of the next epoch. Epochs on Cardano last 5 days, so it can take up to 5 days for your delegation to take effect."
-    ]
+    ],
+    "category": "technical"
   },
   {
     "question": "What does it cost to become a DRep?",
     "answer": [
       "Registering as a DRep requires a refundable deposit of 500 ada. This deposit is returned when you retire as a DRep. There is also a standard transaction fee for the registration."
-    ]
+    ],
+    "category": "drep-role"
   },
   {
     "question": "What are the alternatives to delegating to a DRep?",
@@ -41,12 +50,14 @@
       "Instead of delegating to a specific DRep, you can choose one of two automatic voting options:",
       "- **Abstain** automatically abstains from all governance votes",
       "- **No Confidence** signals no confidence in all proposals"
-    ]
+    ],
+    "category": "governance-basics"
   },
   {
     "question": "What is a governance action?",
     "answer": [
       "A governance action is an on-chain proposal that can change how Cardano works. There are several types, including protocol parameter changes, hard fork initiations, treasury withdrawals, and constitutional amendments. Each type requires different approval thresholds from DReps, SPOs, and the Constitutional Committee."
-    ]
+    ],
+    "category": "governance-basics"
   }
 ]

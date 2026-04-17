@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import clsx from 'clsx';
 import Survey from '../Survey';
 import styles from './styles.module.css';
 
-const SurveyModal = ({ surveyData, buttonText = "Start", questionCount }) => {
+const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonClassName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,10 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount }) => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className={styles.startButton}>
+      <button
+        onClick={() => setIsOpen(true)}
+        className={clsx(buttonClassName || styles.startButton)}
+      >
         {buttonText}
       </button>
 

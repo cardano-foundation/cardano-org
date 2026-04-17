@@ -9,7 +9,7 @@ import GovernancePulse from "@site/src/components/GovernancePulse";
 import GovernancePathsSection from "@site/src/components/GovernancePathsSection";
 import TermExplainer from "@site/src/components/TermExplainer";
 import SurveyCard from "@site/src/components/SurveyCard";
-import FAQSection from "@site/src/components/FAQSection";
+import GovernanceFAQ from "@site/src/components/GovernanceFAQ";
 import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
@@ -19,7 +19,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { FaUsers, FaServer, FaUniversity, FaShieldAlt } from "react-icons/fa";
+import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-icons/fa";
 import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
 import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
@@ -252,19 +252,16 @@ export default function Governance() {
           <Divider text={translate({id: 'governance.divider.paths', message: 'Choose your path'})} id="paths" />
           <SpacerBox size="small" />
           <GovernancePathsSection />
-          <div className="row">
-            <div className="col col--8">
-              <FAQSection data={governanceFAQ} />
-            </div>
-            <div className="col col--4" style={{display: 'flex', alignItems: 'flex-end'}}>
-              <SurveyCard
-                surveyData={governanceRoleSurvey}
-                title={translate({id: 'governance.survey.title', message: 'Not sure where to start?'})}
-                description={translate({id: 'governance.survey.description', message: 'Answer a few questions to find out which governance role fits you best.'})}
-                buttonText={translate({id: 'governance.survey.buttonText', message: 'Find your role'})}
-              />
-            </div>
-          </div>
+          <SpacerBox size="medium" />
+          <GovernanceFAQ data={governanceFAQ} />
+          <SpacerBox size="medium" />
+          <SurveyCard
+            surveyData={governanceRoleSurvey}
+            icon={<FaCompass />}
+            title={translate({id: 'governance.survey.title', message: 'Not sure where to start?'})}
+            description={translate({id: 'governance.survey.description', message: 'Take a short guided path to understand your options and find the governance role that fits you best.'})}
+            buttonText={translate({id: 'governance.survey.buttonText', message: 'Find your role'})}
+          />
           <SpacerBox size="medium" />
         </BoundaryBox>
 
