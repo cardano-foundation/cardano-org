@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import {
   FaArrowRight,
@@ -12,6 +13,7 @@ import {
   FaWallet,
   FaRegSun,
 } from "react-icons/fa";
+import IconHero from "@site/src/components/Layout/IconHero";
 import styles from "./styles.module.css";
 
 const DEFAULT_STORAGE_KEY = "cardano-governance-delegation-step";
@@ -22,62 +24,57 @@ const POPULAR_WALLETS = [
   { id: "yoroi", name: "Yoroi", icon: "/img/wallets/yoroi-ada.svg" },
 ];
 
-function useStepState(storageKey) {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [checked, setChecked] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved) setCurrentStep(parseInt(saved, 10) || 1);
-    } catch (e) {
-      /* noop */
-    }
-  }, [storageKey]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      localStorage.setItem(storageKey, String(currentStep));
-    } catch (e) {
-      /* noop */
-    }
-  }, [currentStep, storageKey]);
-
-  return { currentStep, setCurrentStep, checked, setChecked };
-}
+const STEPPER_ITEMS = [
+  {
+    label: translate({ id: "governance.delegation.step1.stepperLabel", message: "Wallet" }),
+    hint: translate({ id: "governance.delegation.stepper.hint.wallet", message: "Get a compatible wallet" }),
+    Icon: FaWallet,
+  },
+  {
+    label: translate({ id: "governance.delegation.step2.stepperLabel", message: "DRep" }),
+    hint: translate({ id: "governance.delegation.stepper.hint.drep", message: "Choose a DRep" }),
+    Icon: FaUsers,
+  },
+  {
+    label: translate({ id: "governance.delegation.step3.stepperLabel", message: "Delegate" }),
+    hint: translate({ id: "governance.delegation.stepper.hint.delegate", message: "Sign delegation transaction" }),
+    Icon: FaPenNib,
+  },
+  {
+    label: translate({ id: "governance.delegation.step4.stepperLabel", message: "Done" }),
+    hint: translate({ id: "governance.delegation.stepper.hint.done", message: "Your delegation is active" }),
+    Icon: FaCheck,
+  },
+];
 
 function StepperItem({ index, label, hint, Icon, state, onClick }) {
   const isCurrent = state === "current";
   const isDone = state === "done";
   const isUpcoming = state === "upcoming";
 
-  const className = [
-    styles.stepperItem,
-    isCurrent && styles.stepperItemCurrent,
-    isDone && styles.stepperItemDone,
-    isUpcoming && styles.stepperItemUpcoming,
-    isDone && styles.stepperItemClickable,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  const circleClass = [
-    styles.stepCircle,
-    isCurrent && styles.stepCircleCurrent,
-    isDone && styles.stepCircleDone,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  const Tag = isDone ? "button" : "div";
-  const tagProps = isDone ? { type: "button", onClick } : {};
-
   return (
     <li>
-      <Tag className={className} {...tagProps}>
-        <span className={circleClass} aria-hidden="true">
+      <button
+        type="button"
+        className={clsx(
+          styles.stepperItem,
+          isCurrent && styles.stepperItemCurrent,
+          isDone && styles.stepperItemDone,
+          isUpcoming && styles.stepperItemUpcoming,
+          isDone && styles.stepperItemClickable,
+        )}
+        onClick={isDone ? onClick : undefined}
+        disabled={isUpcoming}
+        aria-current={isCurrent ? "step" : undefined}
+      >
+        <span
+          className={clsx(
+            styles.stepCircle,
+            isCurrent && styles.stepCircleCurrent,
+            isDone && styles.stepCircleDone,
+          )}
+          aria-hidden="true"
+        >
           {isDone ? <FaCheck size={12} /> : index}
         </span>
         <Icon className={styles.stepIcon} aria-hidden="true" />
@@ -85,40 +82,17 @@ function StepperItem({ index, label, hint, Icon, state, onClick }) {
           <span className={styles.stepLabel}>{label}</span>
           <span className={styles.stepHint}>{hint}</span>
         </span>
-      </Tag>
+      </button>
     </li>
   );
 }
 
 function Stepper({ currentStep, onJump, onReset }) {
-  const items = [
-    {
-      label: translate({ id: "governance.delegation.step1.stepperLabel", message: "Wallet" }),
-      hint: translate({ id: "governance.delegation.stepper.hint.wallet", message: "Get a compatible wallet" }),
-      Icon: FaWallet,
-    },
-    {
-      label: translate({ id: "governance.delegation.step2.stepperLabel", message: "DRep" }),
-      hint: translate({ id: "governance.delegation.stepper.hint.drep", message: "Choose a DRep" }),
-      Icon: FaUsers,
-    },
-    {
-      label: translate({ id: "governance.delegation.step3.stepperLabel", message: "Delegate" }),
-      hint: translate({ id: "governance.delegation.stepper.hint.delegate", message: "Sign delegation transaction" }),
-      Icon: FaPenNib,
-    },
-    {
-      label: translate({ id: "governance.delegation.step4.stepperLabel", message: "Done" }),
-      hint: translate({ id: "governance.delegation.stepper.hint.done", message: "Your delegation is active" }),
-      Icon: FaCheck,
-    },
-  ];
-
   return (
     <div className={styles.stepperCol}>
       <ol className={styles.stepperList}>
         <span className={styles.stepperLine} aria-hidden="true" />
-        {items.map((item, i) => {
+        {STEPPER_ITEMS.map((item, i) => {
           const index = i + 1;
           let state = "upcoming";
           if (index < currentStep) state = "done";
@@ -146,12 +120,13 @@ function Stepper({ currentStep, onJump, onReset }) {
 }
 
 function WalletChips() {
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <>
       <div className={styles.walletChips}>
         {POPULAR_WALLETS.map((w) => (
           <Link key={w.id} to="/wallets" className={styles.walletChip} aria-label={w.name}>
-            <img src={useBaseUrl(w.icon)} alt={w.name} className={styles.walletChipIcon} />
+            <img src={withBaseUrl(w.icon)} alt={w.name} className={styles.walletChipIcon} />
             <FaArrowRight className={styles.walletChipArrow} aria-hidden="true" />
           </Link>
         ))}
@@ -304,7 +279,24 @@ const STEPS = [
 ];
 
 export default function DelegationFlow({ storageKey = DEFAULT_STORAGE_KEY }) {
-  const { currentStep, setCurrentStep, checked, setChecked } = useStepState(storageKey);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) setCurrentStep(parseInt(saved, 10) || 1);
+    } catch (e) {}
+  }, [storageKey]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      localStorage.setItem(storageKey, String(currentStep));
+    } catch (e) {}
+  }, [currentStep, storageKey]);
+
   const step = STEPS[currentStep - 1];
   if (!step) return null;
 
@@ -328,9 +320,7 @@ export default function DelegationFlow({ storageKey = DEFAULT_STORAGE_KEY }) {
     if (typeof window !== "undefined") {
       try {
         localStorage.removeItem(storageKey);
-      } catch (e) {
-        /* noop */
-      }
+      } catch (e) {}
     }
   };
 
@@ -365,23 +355,16 @@ export default function DelegationFlow({ storageKey = DEFAULT_STORAGE_KEY }) {
                   </span>
                   <h3 className={styles.panelTitle}>{step.title}</h3>
                 </div>
-                <div className={styles.hero} aria-hidden="true">
-                  <div className={styles.heroTile}>
-                    <HeroIcon />
-                  </div>
-                </div>
+                <IconHero>
+                  <HeroIcon />
+                </IconHero>
               </div>
               {step.render()}
             </div>
             {!step.isFinal && (
               <div className={styles.actionBar}>
                 <label
-                  className={[
-                    styles.checkboxToggle,
-                    checked && styles.checkboxToggleChecked,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
+                  className={clsx(styles.checkboxToggle, checked && styles.checkboxToggleChecked)}
                 >
                   <input
                     type="checkbox"
