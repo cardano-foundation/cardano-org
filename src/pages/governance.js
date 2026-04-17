@@ -84,6 +84,8 @@ const milestones = [
     date: "January 2026",
     blog: "/news/2026-01-22-update-cardano-constitution",
     banner: "/img/governance/constitution.webp",
+    categoryId: "governance.impact.category.constitution",
+    category: "Constitution",
   },
   {
     titleId: "governance.impact.committee.title",
@@ -93,6 +95,8 @@ const milestones = [
     date: "September 2025",
     blog: "/news/2025-09-07-constitutional-committee-elections",
     banner: "/img/governance/committee.webp",
+    categoryId: "governance.impact.category.committee",
+    category: "Committee",
   },
   {
     titleId: "governance.impact.treasury.title",
@@ -102,6 +106,8 @@ const milestones = [
     date: "August 2025",
     blog: "/news/2025-08-07-treasury-withdrawal-actions",
     banner: "/img/governance/treasury.webp",
+    categoryId: "governance.impact.category.treasury",
+    category: "Treasury",
   },
   {
     titleId: "governance.impact.hardfork.title",
@@ -111,6 +117,8 @@ const milestones = [
     date: "November 2025",
     blog: "/news/2025-11-20-hard-fork-proposal",
     banner: "/img/governance/hardfork.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
   },
   {
     titleId: "governance.impact.params.title",
@@ -120,6 +128,8 @@ const milestones = [
     date: "February 2026",
     blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
     banner: "/img/governance/params.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
   },
 ];
 
@@ -133,18 +143,24 @@ function ImpactTimeline() {
       </p>
       <SpacerBox size="small" />
 
-      {milestones.map((m) => (
-        <a href={m.blog} key={m.titleId} className={styles.milestoneCard}>
-          <div className={styles.milestoneBanner}>
-            <img src={useBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
-          </div>
-          <div className={styles.milestoneContent}>
-            <span className={styles.milestoneDate}>{m.date}</span>
-            <h3>{translate({id: m.titleId, message: m.title})}</h3>
-            <p className="black-text">{translate({id: m.textId, message: m.text})}</p>
-          </div>
-        </a>
-      ))}
+      <div className={styles.timeline}>
+        {milestones.map((m) => (
+          <a href={m.blog} key={m.titleId} className={styles.milestoneCard}>
+            <span className={styles.timelineDot} aria-hidden="true" />
+            <div className={styles.milestoneBanner}>
+              <img src={useBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
+            </div>
+            <div className={styles.milestoneContent}>
+              <span className={styles.milestoneDate}>{m.date}</span>
+              <h3>{translate({id: m.titleId, message: m.title})}</h3>
+              <p className="black-text">{translate({id: m.textId, message: m.text})}</p>
+              <span className={styles.categoryPill}>
+                {translate({id: m.categoryId, message: m.category})}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
     </>
   );
 }
