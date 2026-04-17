@@ -1,4 +1,7 @@
 .card {
+  --role-accent-tile-alpha: 0.1;
+  --role-accent-dot-alpha: 0.7;
+  --role-accent-ring-alpha: 0.2;
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
@@ -40,17 +43,17 @@ a.card:hover {
 
 .orbitRing {
   fill: none;
-  stroke: var(--role-halo-ring);
+  stroke: rgb(var(--role-accent) / var(--role-accent-ring-alpha));
   stroke-width: 1.5;
 }
 
 .orbitSpokes line {
-  stroke: var(--role-halo-ring);
+  stroke: rgb(var(--role-accent) / var(--role-accent-ring-alpha));
   stroke-width: 0.6;
 }
 
 .orbitDots circle {
-  fill: var(--role-halo-dot);
+  fill: rgb(var(--role-accent) / var(--role-accent-dot-alpha));
 }
 
 .iconWrap {
@@ -63,6 +66,8 @@ a.card:hover {
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
+  background-color: rgb(var(--role-accent) / var(--role-accent-tile-alpha));
+  color: var(--role-accent-solid);
 }
 
 .body {
@@ -78,6 +83,7 @@ a.card:hover {
   font-weight: 700;
   line-height: 1.25;
   margin: 0;
+  color: var(--role-accent-solid);
 }
 
 .description {
@@ -87,44 +93,14 @@ a.card:hover {
   margin: 0;
 }
 
-/* Accent variants */
-.accentBlue {
-  --role-halo-dot: rgba(0, 51, 173, 0.7);
-  --role-halo-ring: rgba(0, 51, 173, 0.2);
-}
-.accentBlue .iconWrap {
-  background-color: rgba(0, 51, 173, 0.1);
-  color: #0033AD;
-}
-.accentBlue .title {
-  color: #0033AD;
-}
-
-.accentViolet {
-  --role-halo-dot: rgba(91, 77, 240, 0.7);
-  --role-halo-ring: rgba(91, 77, 240, 0.2);
-}
-.accentViolet .iconWrap {
-  background-color: rgba(91, 77, 240, 0.1);
-  color: #5B4DF0;
-}
-.accentViolet .title {
-  color: #5B4DF0;
-}
-
-.accentTeal {
-  --role-halo-dot: rgba(0, 163, 163, 0.7);
-  --role-halo-ring: rgba(0, 163, 163, 0.2);
-}
-.accentTeal .iconWrap {
-  background-color: rgba(0, 163, 163, 0.1);
-  color: #00A3A3;
-}
-.accentTeal .title {
-  color: #00A3A3;
-}
+.accentBlue   { --role-accent: 0 51 173;   --role-accent-solid: #0033AD; }
+.accentViolet { --role-accent: 91 77 240;  --role-accent-solid: #5B4DF0; }
+.accentTeal   { --role-accent: 0 163 163;  --role-accent-solid: #00A3A3; }
 
 [data-theme='dark'] .card {
+  --role-accent-tile-alpha: 0.18;
+  --role-accent-dot-alpha: 0.75;
+  --role-accent-ring-alpha: 0.3;
   background-color: var(--ifm-background-surface-color);
   border-color: var(--ifm-color-emphasis-300);
 }
@@ -133,41 +109,9 @@ a.card:hover {
   color: var(--ifm-color-emphasis-700);
 }
 
-[data-theme='dark'] .accentBlue {
-  --role-halo-dot: rgba(143, 177, 255, 0.75);
-  --role-halo-ring: rgba(143, 177, 255, 0.3);
-}
-[data-theme='dark'] .accentBlue .iconWrap {
-  background-color: rgba(119, 161, 255, 0.18);
-  color: #8FB1FF;
-}
-[data-theme='dark'] .accentBlue .title {
-  color: #8FB1FF;
-}
-
-[data-theme='dark'] .accentViolet {
-  --role-halo-dot: rgba(146, 134, 255, 0.75);
-  --role-halo-ring: rgba(146, 134, 255, 0.3);
-}
-[data-theme='dark'] .accentViolet .iconWrap {
-  background-color: rgba(146, 134, 255, 0.18);
-  color: #9286FF;
-}
-[data-theme='dark'] .accentViolet .title {
-  color: #9286FF;
-}
-
-[data-theme='dark'] .accentTeal {
-  --role-halo-dot: rgba(80, 207, 207, 0.75);
-  --role-halo-ring: rgba(80, 207, 207, 0.3);
-}
-[data-theme='dark'] .accentTeal .iconWrap {
-  background-color: rgba(80, 207, 207, 0.18);
-  color: #50CFCF;
-}
-[data-theme='dark'] .accentTeal .title {
-  color: #50CFCF;
-}
+[data-theme='dark'] .accentBlue   { --role-accent: 143 177 255; --role-accent-solid: #8FB1FF; }
+[data-theme='dark'] .accentViolet { --role-accent: 146 134 255; --role-accent-solid: #9286FF; }
+[data-theme='dark'] .accentTeal   { --role-accent: 80 207 207;  --role-accent-solid: #50CFCF; }
 
 @media (max-width: 768px) {
   .card {
