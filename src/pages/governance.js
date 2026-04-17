@@ -282,7 +282,7 @@ export default function Governance() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <Divider text={translate({id: 'governance.divider.delegation', message: 'Delegate in 4 steps'})} id="delegate-walkthrough" />
+          <Divider text={translate({id: 'governance.divider.delegation', message: 'How to delegate'})} id="delegate-walkthrough" />
           <SpacerBox size="small" />
           <DelegationFlow storageKey="cardano-governance-delegation-step" />
           <SpacerBox size="medium" />

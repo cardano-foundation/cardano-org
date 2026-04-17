@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaBookOpen, FaVoteYea, FaBullhorn } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { translate } from "@docusaurus/Translate";
+import IconHero from "@site/src/components/Layout/IconHero";
 import styles from "./styles.module.css";
 
 function getPathsData() {
   return [
     {
       label: translate({ id: "governance.paths.understand.label", message: "Understand" }),
+      Icon: FaBookOpen,
       subtitle: translate({
         id: "governance.paths.understand.subtitle",
         message: "Learn how governance works",
@@ -29,6 +30,7 @@ function getPathsData() {
     },
     {
       label: translate({ id: "governance.paths.delegate.label", message: "Delegate" }),
+      Icon: FaVoteYea,
       subtitle: translate({
         id: "governance.paths.delegate.subtitle",
         message: "Give voting power to a DRep",
@@ -44,6 +46,7 @@ function getPathsData() {
     },
     {
       label: translate({ id: "governance.paths.lead.label", message: "Lead" }),
+      Icon: FaBullhorn,
       subtitle: translate({
         id: "governance.paths.lead.subtitle",
         message: "Run for a governance role",
@@ -66,12 +69,6 @@ export default function GovernancePathsSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const paths = getPathsData();
   const wrapperRef = useRef(null);
-
-  const iconUrls = [
-    useBaseUrl("/img/dotted-icons/governance-charts.png"),
-    useBaseUrl("/img/dotted-icons/dreps.png"),
-    useBaseUrl("/img/dotted-icons/constitutional-committee.png"),
-  ];
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -121,12 +118,14 @@ export default function GovernancePathsSection() {
             </TabList>
           </div>
           <div className={clsx("col col--7", styles.rightColumn)}>
-            {paths.map((path, index) => (
+            {paths.map((path) => {
+              const PathIcon = path.Icon;
+              return (
               <TabPanel key={path.label}>
                 <div className={styles.panelContent}>
-                  <div className={styles.iconTile}>
-                    <img src={iconUrls[index]} alt="" className={styles.iconImage} />
-                  </div>
+                  <IconHero className={styles.panelHero}>
+                    <PathIcon />
+                  </IconHero>
                   <h2 className={styles.panelTitle}>{path.title}</h2>
                   <p className={styles.panelBody}>{path.body}</p>
                   <div className={styles.buttonWrap}>
@@ -147,7 +146,8 @@ export default function GovernancePathsSection() {
                   </div>
                 </div>
               </TabPanel>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Tabs>

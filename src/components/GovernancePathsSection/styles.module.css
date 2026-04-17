@@ -139,21 +139,8 @@
   width: 100%;
 }
 
-.iconTile {
-  width: 80px;
-  height: 80px;
-  border-radius: 14px;
-  background-color: rgba(5, 56, 175, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.iconImage {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
+.panelHero {
+  margin-bottom: 1.25rem;
 }
 
 .panelTitle {
