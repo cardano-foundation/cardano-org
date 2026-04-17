@@ -20,8 +20,7 @@ const DEFAULT_STORAGE_KEY = "cardano-governance-delegation-step";
 
 const POPULAR_WALLETS = [
   { id: "eternl", name: "Eternl", icon: "/img/wallets/eternl-ada.svg" },
-  { id: "lace", name: "Lace", icon: "/img/wallets/lace-ada.svg" },
-  { id: "yoroi", name: "Yoroi", icon: "/img/wallets/yoroi-ada.svg" },
+  { id: "typhon", name: "Typhon", icon: "/img/wallets/typhon-ada.svg" },
 ];
 
 const STEPPER_ITEMS = [
@@ -125,8 +124,9 @@ function WalletChips() {
     <>
       <div className={styles.walletChips}>
         {POPULAR_WALLETS.map((w) => (
-          <Link key={w.id} to="/wallets" className={styles.walletChip} aria-label={w.name}>
-            <img src={withBaseUrl(w.icon)} alt={w.name} className={styles.walletChipIcon} />
+          <Link key={w.id} to="/wallets" className={styles.walletChip}>
+            <img src={withBaseUrl(w.icon)} alt="" className={styles.walletChipIcon} />
+            <span className={styles.walletChipName}>{w.name}</span>
             <FaArrowRight className={styles.walletChipArrow} aria-hidden="true" />
           </Link>
         ))}
@@ -176,14 +176,14 @@ function StepTwo() {
       <p className={styles.panelDescription}>
         {translate({
           id: "governance.delegation.step2.text",
-          message: "DReps publish their platform and voting intentions. Choose one whose priorities match yours, or pick an automatic option (Abstain or No Confidence).",
+          message: "DReps publish their positions and voting intentions. Choose one whose priorities match yours, or pick an automatic option (Abstain or No Confidence).",
         })}
       </p>
       <div className={styles.stepVisual}>
         <FeatureTile
           Icon={FaUsers}
           title={translate({ id: "governance.delegation.step2.featureTitle", message: "Browse DReps" })}
-          hint={translate({ id: "governance.delegation.step2.featureHint", message: "Compare platforms, voting power and activity" })}
+          hint={translate({ id: "governance.delegation.step2.featureHint", message: "Compare positions, voting power and activity" })}
           to="/governance/delegate"
         />
       </div>
