@@ -7,6 +7,7 @@ import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
 import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
 import criticalParamCharts from "@site/src/data/governanceChartsCriticalParams.json";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 
 // Simple markdown to HTML converter
 const markdownToHtml = (markdown) => {
@@ -206,12 +207,7 @@ export default function GovernanceCharts({
 
   useEffect(() => {
     if (!initialChartId) return;
-    const t = setTimeout(() => {
-      const el = activeChartRef.current;
-      if (!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }, 600);
+    const t = setTimeout(() => scrollToElement(activeChartRef.current), 600);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -13,6 +13,12 @@ export function sortBy(array, getter) {
   return sortedArray;
 }
 
+export function scrollToElement(el, offset = -100) {
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 export function toggleListItem(list, item) {
   const itemIndex = list.indexOf(item);
   if (itemIndex === -1) {

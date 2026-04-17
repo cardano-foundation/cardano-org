@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clsx from 'clsx';
 import Survey from '../Survey';
 import styles from './styles.module.css';
 
@@ -31,7 +30,7 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className={clsx(buttonClassName || styles.startButton)}
+        className={buttonClassName || styles.startButton}
       >
         {buttonText}
       </button>

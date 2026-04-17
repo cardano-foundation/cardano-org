@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import {
   FaArrowRight,
@@ -13,7 +13,8 @@ import {
 } from "react-icons/fa";
 import { translate } from "@docusaurus/Translate";
 import Divider from "@site/src/components/Layout/Divider";
-import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import { renderAnswerArray } from "@site/src/utils/textUtils";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
 
 const CATEGORY_ORDER = [
@@ -49,41 +50,6 @@ function getCategoryMeta() {
   };
 }
 
-function renderAnswer(answerArray) {
-  const elements = [];
-  let currentList = [];
-
-  answerArray.forEach((text, idx) => {
-    if (text.startsWith("- ")) {
-      currentList.push(text.substring(2).trim());
-      return;
-    }
-    if (currentList.length > 0) {
-      elements.push(
-        <ul key={`list-${idx}`}>
-          {currentList.map((item, i) => (
-            <li key={i}>{parseMarkdownLikeText(item)}</li>
-          ))}
-        </ul>
-      );
-      currentList = [];
-    }
-    elements.push(<p key={`p-${idx}`}>{parseMarkdownLikeText(text)}</p>);
-  });
-
-  if (currentList.length > 0) {
-    elements.push(
-      <ul key="list-end">
-        {currentList.map((item, i) => (
-          <li key={i}>{parseMarkdownLikeText(item)}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  return elements;
-}
-
 function AccordionItem({ question, answer, isOpen, onToggle, itemRef }) {
   return (
     <div ref={itemRef} className={clsx(styles.accordion, isOpen && styles.accordionOpen)}>
@@ -93,64 +59,59 @@ function AccordionItem({ question, answer, isOpen, onToggle, itemRef }) {
         </span>
         <span className={styles.accordionQuestion}>{question}</span>
       </button>
-      {isOpen && <div className={styles.accordionAnswer}>{renderAnswer(answer)}</div>}
+      {isOpen && <div className={styles.accordionAnswer}>{renderAnswerArray(answer)}</div>}
     </div>
   );
 }
 
 export default function GovernanceFAQ({ data }) {
-  const categoryMeta = getCategoryMeta();
-  const categories = CATEGORY_ORDER
-    .map((key) => ({
-      key,
-      ...categoryMeta[key],
-      items: data
-        .map((entry, idx) => ({ ...entry, _index: idx }))
-        .filter((entry) => entry.category === key),
-    }))
-    .filter((cat) => cat.items.length > 0);
-
-  const popularItems = data
-    .map((entry, idx) => ({ ...entry, _index: idx }))
-    .filter((entry) => entry.popular);
+  const { categories, popularItems } = useMemo(() => {
+    const categoryMeta = getCategoryMeta();
+    const indexed = data.map((entry, idx) => ({ ...entry, _index: idx }));
+    return {
+      categories: CATEGORY_ORDER
+        .map((key) => ({
+          key,
+          ...categoryMeta[key],
+          items: indexed.filter((entry) => entry.category === key),
+        }))
+        .filter((cat) => cat.items.length > 0),
+      popularItems: indexed.filter((entry) => entry.popular),
+    };
+  }, [data]);
 
   const [activeCategory, setActiveCategory] = useState(categories[0]?.key);
   const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
   const sectionRefs = useRef({});
   const questionRefs = useRef({});
+  const intersectingKeys = useRef(new Set());
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) {
-          setActiveCategory(visible[0].target.dataset.category);
-        }
+        entries.forEach((entry) => {
+          const key = entry.target.dataset.category;
+          if (entry.isIntersecting) intersectingKeys.current.add(key);
+          else intersectingKeys.current.delete(key);
+        });
+        const topmost = CATEGORY_ORDER.find((key) => intersectingKeys.current.has(key));
+        if (topmost) setActiveCategory(topmost);
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
     );
     Object.values(sectionRefs.current).forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
-  }, [categories.length]);
+  }, [data]);
 
-  const scrollToCategory = (key) => {
-    const el = sectionRefs.current[key];
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 100;
-    window.scrollTo({ top, behavior: "smooth" });
+  const goToCategory = (key) => {
+    setActiveCategory(key);
+    scrollToElement(sectionRefs.current[key]);
   };
 
   const openQuestion = (entry) => {
     setOpenQuestionIndex(entry._index);
     setActiveCategory(entry.category);
-    requestAnimationFrame(() => {
-      const el = questionRefs.current[entry._index];
-      if (!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: "smooth" });
-    });
+    requestAnimationFrame(() => scrollToElement(questionRefs.current[entry._index]));
   };
 
   return (
@@ -208,7 +169,7 @@ export default function GovernanceFAQ({ data }) {
                   key={cat.key}
                   type="button"
                   className={clsx(styles.tab, isActive && styles.tabSelected)}
-                  onClick={() => scrollToCategory(cat.key)}
+                  onClick={() => goToCategory(cat.key)}
                 >
                   <span className={styles.tabIcon} aria-hidden="true">
                     <Icon />
