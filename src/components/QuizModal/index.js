@@ -50,8 +50,8 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
               </svg>
             </button>
             <div className={styles.quizWrapper}>
-              <Quiz 
-                quizData={quizData} 
+              <Quiz
+                quizData={quizData}
                 questionCount={questionCount}
                 allowRetry={allowRetry}
                 passingScore={passingScore}

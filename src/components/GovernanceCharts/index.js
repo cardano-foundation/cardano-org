@@ -7,6 +7,7 @@ import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
 import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
 import criticalParamCharts from "@site/src/data/governanceChartsCriticalParams.json";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 
 // Simple markdown to HTML converter
 const markdownToHtml = (markdown) => {
@@ -113,11 +114,14 @@ const sameSet = (a = [], b = []) => {
 
 export default function GovernanceCharts({
   initialCategory = null,
+  initialChartId = null,
   initialParameters = [],
   onSelectionChange,
   urlSignature = '',
 }) {
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory || (initialChartId ? initialChartId.split(':')[0] : null)
+  );
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
   const [graphsData, setGraphsData] = useState({});
   const [allGraphs, setAllGraphs] = useState([]);
@@ -136,10 +140,11 @@ export default function GovernanceCharts({
     for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
     return true;
   };
-  const [activeChartId, setActiveChartId] = useState(null);
+  const [activeChartId, setActiveChartId] = useState(initialChartId);
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
+  const activeChartRef = useRef(null);
 
   const lastUrlSigRef = useRef(urlSignature);
 
@@ -199,6 +204,13 @@ export default function GovernanceCharts({
   useEffect(() => {
     setActiveGraphIndex(null);
   }, [activeCategory]);
+
+  useEffect(() => {
+    if (!initialChartId) return;
+    const t = setTimeout(() => scrollToElement(activeChartRef.current), 600);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Filter charts based on search term and parameters
   useEffect(() => {
@@ -454,6 +466,7 @@ export default function GovernanceCharts({
               {searchResults.map((graph, index) => (
                 <div
                   key={index}
+                  ref={activeChartId === graph.id ? activeChartRef : null}
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
                   } ${activeChartId === graph.id ? "active" : ""}`}
@@ -520,6 +533,7 @@ export default function GovernanceCharts({
             {graphsData[activeCategory].map((graph, index) => (
               <div
                 key={index}
+                ref={activeChartId === graph.id ? activeChartRef : null}
                 className={`${styles.graphItem} Collapsible ${
                   index % 2 === 0 ? "even" : "odd"
                 } ${activeChartId === graph.id ? "active" : ""}`}

@@ -941,6 +941,7 @@ export const Showcases = [
     description:
       "A collection of tools to delegate voting power, become a DRep, become a direct voter, browse or proposa a governance actions on Cardano blockchain.",
     preview: require("./app-images/govtools.jpg"),
+    icon: "/img/app-icons/govtools.svg",
     website: "https://gov.tools",
     source: null,
     tags: ["favorite", "governance"],
@@ -950,6 +951,7 @@ export const Showcases = [
     description:
       "Chang Watch provides various donut charts with insights on vote distribution and DReps.",
     preview: require("./app-images/changwatch.jpg"),
+    icon: "/img/app-icons/changwatch.png",
     website: "https://www.changwatch.com",
     source: null,
     tags: ["governance", "analytics"],
@@ -986,6 +988,7 @@ export const Showcases = [
     description:
       "Secure your treasury and participant in governance, as a team with multi-signature.",
     preview: require("./app-images/mesh-multisig-platform.jpg"),
+    icon: "/img/app-icons/multisig.png",
     website: "https://multisig.meshjs.dev/features",
     source: null,
     tags: ["governance", "wallet", "daotool"],
@@ -1001,6 +1004,7 @@ export const Showcases = [
     description:
       "Tempo is a governance tool designed to streamline and enhance Cardano’s decision-making processes. We make it easier for DReps to register, gain delegations, and engage with their delegators. Additionally, Tempo supports DAOs and SPOs by providing essential tools for governance and transparency.",
     preview: require("./app-images/tempo.png"),
+    icon: "/img/app-icons/tempo.png",
     website: "https://tempo.vote",
     source: null,
     tags: ["daotool", "governance"],
@@ -1062,6 +1066,7 @@ export const Showcases = [
     description:
       "A blockchain governance platform for DAOs, projects, and institutions: providing indexing & analytics for DReps, governance actions, budget proposals & discussions, committee members, live events, and more.",
     preview: require("./app-images/govspace.png"),
+    icon: "/img/app-icons/govspace.png",
     website: "https://governancespace.com/",
     source: null,
     tags: ["daotool", "governance"],
@@ -1089,6 +1094,7 @@ export const Showcases = [
     description:
       "A simple tool to help every Cardano stakeholder participate in on-chain governance with confidence.",
     preview: require("./app-images/cf-voting-tool.png"),
+    icon: "/img/app-icons/cf-voting-tool.svg",
     website: "https://voting.cardanofoundation.org/",
     source: "https://github.com/cardano-foundation/cardano-governance-voting-tool",
     tags: ["governance", "opensource"],
@@ -1432,6 +1438,7 @@ export const Showcases = [
     description:
       "A governance monitoring dashboard to track and analyze on-chain governance actions, including active, ratified, and expired proposals on the Cardano blockchain.",
     preview: require("./app-images/cgov.png"),
+    icon: "/img/app-icons/cgov.svg",
     website: "https://app.cgov.io/",
     source: "https://github.com/nomos-guild/cgov",
     tags: ["governance", "analytics", "opensource"],
@@ -1441,6 +1448,7 @@ export const Showcases = [
     description:
       "A dashboard for exploring and analyzing Cardano's treasury data, providing insights into treasury balance, withdrawals, and funding allocations.",
     preview: require("./app-images/cardano-treasury-explorer.png"),
+    icon: "/img/app-icons/cardano-treasury.png",
     website: "https://cardanotreasury.fi/",
     source: null,
     tags: ["governance", "analytics"],
@@ -1450,6 +1458,7 @@ export const Showcases = [
     description:
       "A smart contract-based treasury management platform by Sundae Labs for transparent milestone-based fund disbursements from Cardano governance actions.",
     preview: require("./app-images/sundae-treasury.png"),
+    icon: "/img/app-icons/sundae-treasury.svg",
     website: "https://treasury.sundae.fi/",
     source: "https://github.com/SundaeSwap-finance/treasury-contracts",
     tags: ["governance", "opensource"],
@@ -1459,6 +1468,7 @@ export const Showcases = [
     description:
       "Explore historical trends in Cardano's ada supply distribution, including reserves, rewards, treasury, and deposits across epochs.",
     preview: require("./app-images/cardano-supply-summary.png"),
+    icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://cardano.org/insights/supply/summary/",
     source: null,
     tags: ["governance", "analytics"],
@@ -1468,6 +1478,7 @@ export const Showcases = [
     description:
       "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
     preview: require("./app-images/cardanocube-governance.png"),
+    icon: "/img/app-icons/cardanocube.png",
     website: "https://www.cardanocube.com/governance/gov_actions",
     source: null,
     tags: ["governance"],

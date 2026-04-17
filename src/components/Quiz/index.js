@@ -45,13 +45,13 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
-    
+
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     setIsAnswered(true);
     if (isCorrect) {
       setScore(score + 1);
     }
-    
+
     // Record the result for this question
     const newResults = [...answerResults];
     newResults[currentQuestionIndex] = isCorrect;
@@ -191,10 +191,10 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
             const isCorrectOption = index === currentQuestion.correctAnswer;
             const showAsCorrect = isAnswered && isCorrectOption;
             const showAsIncorrect = isAnswered && isSelected && !isCorrectOption;
-            
+
             // Only show selected answer when answered
             const shouldShow = !isAnswered || isSelected;
-            
+
             if (!shouldShow) return null;
 
             return (

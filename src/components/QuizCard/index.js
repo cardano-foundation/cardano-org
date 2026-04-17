@@ -15,7 +15,7 @@ import styles from './styles.module.css';
  * @param {boolean} props.allowRetry - Allow retry on incorrect answers (default: true)
  * @param {boolean} props.showDot - Show animated attention dot (default: false)
  */
-const QuizCard = ({ 
+const QuizCard = ({
   quizData,
   title = 'Test Your Knowledge',
   description,
@@ -36,11 +36,11 @@ const QuizCard = ({
       )}
       <h3 className={styles.title}>{title}</h3>
       {description && <p className={styles.description}>{description}</p>}
-      <QuizModal 
-        quizData={quizData} 
+      <QuizModal
+        quizData={quizData}
         buttonText={buttonText}
-        questionCount={questionCount} 
-        passingScore={passingScore} 
+        questionCount={questionCount}
+        passingScore={passingScore}
         allowRetry={allowRetry}
       />
     </div>

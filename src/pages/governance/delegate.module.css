@@ -1,0 +1,37 @@
+.altGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.altCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.altCard:hover {
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.altName {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ifm-color-primary);
+}
+
+.altDesc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}

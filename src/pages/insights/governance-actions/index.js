@@ -48,6 +48,7 @@ function PageContent() {
   const searchParams = new URLSearchParams(location.search);
   // Parse initial selections from URL
   const initialCategory = searchParams.get('category') || null;
+  const initialChartId = searchParams.get('chart') || null;
   const initialParameters = (searchParams.get('parameter') || '')
     .split(SEPARATOR)
     .map(s => s.trim())
@@ -123,6 +124,7 @@ function PageContent() {
         <Divider text={translate({id: 'insightsGovernance.divider.charts', message: 'Governance Action Charts'})} id="charts" />
         <GovernanceCharts
           initialCategory={initialCategory}
+          initialChartId={initialChartId}
           initialParameters={initialParameters}
           onSelectionChange={handleSelectionChange}
 		  urlSignature={location.search || ''}
