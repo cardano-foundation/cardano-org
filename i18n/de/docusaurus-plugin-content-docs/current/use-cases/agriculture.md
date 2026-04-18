@@ -13,19 +13,19 @@ Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Verbrauch
 
 For farmers and producers, proving the quality and origin of their products is difficult and expensive. Zwischenhändler schöpfen einen Großteil des Gewinns ab, während die Hersteller Schwierigkeiten haben, sich mit ihren Produkten auf dem Markt von der Konkurrenz abzuheben.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain technology creates an immutable record of a product's journey from farm to table:
 
 - **Origin verification**: Prove exactly where products come from and how they were produced
-- **Quality assurance**: Record temperature, handling, and other quality metrics throughout the supply chain
-- **Certification tracking**: Verify organic, fair trade, and other certifications at every step
+- **Qualitätssicherung**: Erfasst Temperatur, Verarbeitung und andere qualitätsrelevanten Kennzahlen entlang der gesamten Lieferkette
+- **Zertifizierungsnachverfolgung**: Stellt Bio, fair trade und andere Zertifizierungen in jedem Schritt sicher
 - **Fraud prevention**: Immutable records make it difficult to substitute or mislabel products
 - **Consumer transparency**: End consumers can scan a product and see its complete history
 
-Smart contracts can automate payments to farmers when products meet quality standards, reducing delays and disputes while ensuring fair compensation.
+Intelligente Verträge (Smart contracts) können Zahlungen an Landwirte automatisieren, wenn die Produkte die Qualitätsstandards erfüllen. Verzögerungen und Streitigkeiten werden verringert und gleichzeitig eine faire Entlohnung gewährleisten.
 
-## Why Cardano
+## Warum Cardano
 
 - **Low transaction costs** make tracking even low-value agricultural products economically viable
 - **Sustainability credentials** align with environmental claims in the agriculture sector
