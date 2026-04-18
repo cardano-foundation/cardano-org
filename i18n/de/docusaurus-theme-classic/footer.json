@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=Newsletter linking to /newsletter"
   },
   "link.item.label.Contact": {
-    "message": "Contact",
+    "message": "Kontakte",
     "description": "The label of footer link with label=Contact linking to /contact"
   },
   "link.item.label.Terms": {
@@ -72,15 +72,15 @@
     "description": "The label of footer link with label=Cardano News linking to /news"
   },
   "link.item.label.Get Involved": {
-    "message": "Get Involved",
+    "message": "Mitmachen",
     "description": "The label of footer link with label=Get Involved linking to /docs/get-involved"
   },
   "link.item.label.Contributors": {
-    "message": "Contributors",
+    "message": "Mitwirkende",
     "description": "The label of footer link with label=Contributors linking to https://github.com/cardano-foundation/cardano-org/graphs/contributors"
   },
   "copyright": {
-    "message": "® Cardano",
+    "message": "®️ Cardano",
     "description": "The footer copyright"
   }
 }
