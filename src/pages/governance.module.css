@@ -56,9 +56,11 @@
   fill: #0033AD;
 }
 
-.mobileVLine1,
-.mobileVLine2 {
-  display: none;
+@media (min-width: 769px) {
+  .mobileVLine1,
+  .mobileVLine2 {
+    display: none;
+  }
 }
 
 [data-theme='dark'] .connLine {
