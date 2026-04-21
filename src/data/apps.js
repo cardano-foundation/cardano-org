@@ -771,6 +771,14 @@ export const Showcases = [
     tags: [ "favorite", "analytics", "minting"],
   },
   {
+  title: "Dune",
+  description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
+  preview: require("./app-images/dune.png"),
+  icon: "/img/app-icons/dune.svg",
+  link: "https://dune.com/browse/dashboards?q=cardano",
+  tags: ["educational", "infrastructure"] 
+  },
+  {
     title: "Chainport",
     description:
       "ChainPort is a next-gen hard-security blockchain bridge that lets you hop across EVM chains to Cardano at a click.",
