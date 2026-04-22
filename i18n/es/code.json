@@ -878,88 +878,88 @@
     "message": "Compra ada, Donde Obtener el Token Nativo de Cardano"
   },
   "whereToGetAda.meta.description": {
-    "message": "Buy ada on centralized or decentralized exchanges, earn staking rewards, or receive it directly. Find the best way to get Cardano's native token."
+    "message": "Compra ada en los exchanges centralizados o descentralizados, gana recompensas de staking, o recíbelas directamente. Encuentra la mejor forma de obtener el token nativo de Cardano."
   },
   "whereToGetAda.divider.exchanges": {
-    "message": "Buy ada using Exchanges"
+    "message": "Comprar ada usando Exchanges"
   },
   "whereToGetAda.cex.title": {
-    "message": "Centralized Exchanges"
+    "message": "Exchanges Centralizados"
   },
   "whereToGetAda.cex.description": {
-    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control."
+    "message": "Los exchanges centralizados (CEXs) son plataformas donde operar criptomonedas y otros activos digitales. Actúan como intermediarios entre compradores y vendedores, facilitando las transacciones y a menudo proporcionando servicios adicionales como el almacenamiento custodial, el emparejamiento de órdenes y el cumplimiento de la normativa. Ten en cuenta que los CEXs tienen la custodia sobre [ada](/what-is-ada/) y otros tokens nativos hasta que los envíes a una [wallet](/what-is-ada/#wallets) que tu controles."
   },
   "whereToGetAda.cex.disclaimer": {
-    "message": "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/)."
+    "message": "La lista aquí no implica aprobación. Estos datos son recopilados por la comunidad. Visita [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) para ver una lista completa de exchanges que soportan [ada](/what-is-ada/)."
   },
   "whereToGetAda.dex.title": {
-    "message": "Decentralized Exchanges"
+    "message": "Exchanges Descentralizados"
   },
   "whereToGetAda.dex.description": {
-    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges."
+    "message": "Los intercambios descentralizados (DEXs) son plataformas para operar criptomonedas que operan sin una autoridad central. Permiten a los usuarios operar directamente entre sí (par a par) a través de procesos automatizados facilitados por contratos inteligentes. Este enfoque mejora la seguridad y la privacidad, reduciendo el riesgo de ataques informáticos y problemas de custodia asociados con los exchanges centralizados."
   },
   "whereToGetAda.dex.disclaimer": {
-    "message": "DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days."
+    "message": "Los DEXs no son adecuados para principiantes, ya que debes tener [ada](/what-is-ada/) para usarlos. La lista aquí no implica aprobación. Los datos de transacciones se basan en los últimos 30 días."
   },
   "whereToGetAda.divider.receive": {
-    "message": "Receive ada from people around the world"
+    "message": "Recibe ada de personas de todo el mundo"
   },
   "whereToGetAda.receive.title": {
-    "message": "Receive ada"
+    "message": "Recibir ada"
   },
   "whereToGetAda.receive.description1": {
-    "message": "Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets)."
+    "message": "Antes de recibir o comprar [ada](/what-is-ada/), necesitas configurar una [billetera de Cardano](/what-is-ada/#wallets)."
   },
   "whereToGetAda.receive.description2": {
-    "message": "Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer."
+    "message": "Una vez que tengas una [billetera de Cardano](/what-is-ada/#wallets), todo lo que necesitas hacer es compartir tu dirección para empezar a enviar y recibir [ada](/what-is-ada/) (y otros tokens nativos) par a par."
   },
   "whereToGetAda.receive.description3": {
-    "message": "Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+    "message": "Algunas [billeteras](/what-is-ada/#wallets) te permiten comprar criptomonedas con una tarjeta de débito/crédito, transferencia bancaria o Apple Pay. La disponibilidad depende de tu ubicación."
   },
   "whereToGetAda.divider.funding": {
-    "message": "Get funded in ada"
+    "message": "Obtén fondos en ada"
   },
   "whereToGetAda.funding.title": {
-    "message": "Project Catalyst"
+    "message": "Proyecto Catalyst"
   },
   "whereToGetAda.funding.description": {
-    "message": "Discover Cardano's innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal."
+    "message": "Descubra el fondo de innovación de Cardano diseñado para apoyar proyectos e ideas innovadoras. Al participar, puedes recibir fondos en [ada](/what-is-ada/) para dar vida a tu visión. Visita [Projecto Catalyst](https://projectcatalyst.io) y aprende a crear una propuesta."
   },
   "whereToGetAda.divider.rewards": {
-    "message": "Staking rewards"
+    "message": "Recompensas de staking"
   },
   "whereToGetAda.staking.title": {
-    "message": "Staking rewards"
+    "message": "Recompensas de staking"
   },
   "whereToGetAda.staking.description1": {
-    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+    "message": "Si ya tienes [ada](/what-is-ada/), puedes ganar más al [delegar tu ada a un stake pool](/stake-pool-delegation/). Esto le permite participar en el sistema de prueba de participación de la red y ganar recompensas. Alternativamente, puedes [correr tu propio servidor](/stake-pool-operation/), lo que requiere más esfuerzo y conocimientos técnicos pero puede ser más gratificante."
   },
   "whereToGetAda.staking.description2": {
-    "message": "Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+    "message": "Cardano ofrece varias ventajas sl hacer staking: no se requiere una cantidad mínima de [ada](/what-is-ada/) para delegar, sin riesgo de slashing (perdiendo el [ada] en stake (/what-is-ada/)), y sin período de bloqueo. Siempre mantienes la custodia sobre el [ada] delegado (/what-is-ada/), asegurándote de que tus fondos permanezcan seguros y accesibles en todo momento. Además, las recompensas se distribuyen por el propio protocolo, no por los pools, garantizando un proceso de distribución justo y transparente."
   },
   "commonScams.hero.title": {
-    "message": "Common Cardano scams"
+    "message": "Estafas comunes en Cardano"
   },
   "commonScams.hero.description": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores."
   },
   "commonScams.meta.title": {
-    "message": "Common Cardano Scams, How to Stay Safe"
+    "message": "Estafas Comunes en Cardano: Cómo Mantenerse Seguro"
   },
   "commonScams.meta.description": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
+    "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores."
   },
   "commonScams.quiz.title": {
-    "message": "Test Your Knowledge"
+    "message": "Pon a prueba tu conocimiento"
   },
   "commonScams.quiz.description": {
-    "message": "Take the 5-question quiz to see how well you can identify and avoid common blockchain scams."
+    "message": "Responde el cuestionario de 5 preguntas para ver si puedes identificar y evitar estafas comunes en blockchain."
   },
   "commonScams.quiz.buttonText": {
-    "message": "Start Quiz"
+    "message": "Iniciar Cuestionario"
   },
   "commonScams.intro.title": {
-    "message": "Protecting your ada from scammers"
+    "message": "Protegiendo tu ada de estafadores"
   },
   "commonScams.intro.description1": {
     "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores. Cardano (ada), una de las blockchains más populares, no es inmune a estas amenazas. Desde falsas entregas hasta ataques de phishing, los estafadores están constantemente innovando nuevas formas de explotar a los usuarios. A medida que la inteligencia artificial sigue mejorando, estas estafas también se están haciendo más frecuentes. Esta página describe las estafas más comunes en el ecosistema de Cardano y cómo puedes protegerte a ti mismo."
@@ -1019,70 +1019,70 @@
     "message": "Inversión falsa"
   },
   "commonScams.investment.title": {
-    "message": "Fake Investment Opportunities"
+    "message": "Oportunidades de inversión falsas"
   },
   "commonScams.investment.description": {
-    "message": "Fraudulent investment schemes are another popular scam. Scammers promote fake projects, claiming they are \"Cardano-backed\" or \"ada-specific\" opportunities with guaranteed high returns. Victims are urged to send ada or other funds to a provided wallet address, with promises of earning exponential profits."
+    "message": "Los estafadores promueven proyectos falsos, afirmando que son oportunidades \"apoyadas por Cardano\" o \"específicas de ada\" con altos rendimientos garantizados. Se insta a las víctimas a enviar ada u otros fondos a una dirección de cartera proporcionada, con promesas de obtener ganancias exponenciales."
   },
   "commonScams.investment.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "Cómo protegerte a ti mismo:"
   },
   "commonScams.investment.tip1": {
-    "message": "Legitimate projects **never** promise guaranteed returns."
+    "message": "Proyectos legitimados **nunca** promenten retornos garantizados."
   },
   "commonScams.investment.tip2": {
-    "message": "Be skeptical of unsolicited investment offers."
+    "message": "Sean escépticos con respecto a las ofertas de inversión no solicitadas."
   },
   "commonScams.investment.tip3": {
-    "message": "Research projects thoroughly, checking for transparency and a credible team."
+    "message": "Investigue a fondo los Proyectos, comprobando la transparencia y un equipo creíble."
   },
   "commonScams.divider.support": {
-    "message": "Fake Support"
+    "message": "Soporte falso"
   },
   "commonScams.support.title": {
-    "message": "Fake Tech Support"
+    "message": "Soporte técnico falso"
   },
   "commonScams.support.description1": {
-    "message": "In this scam, fraudsters pose as \"official\" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to \"help,\" they'll ask for your recovery phrase (seed words) or private keys."
+    "message": "En esta estafa, los defraudadores se presentan como representantes \"oficiales\" que apoyan a los representantes. A menudo llegan a través de redes sociales, foros o correo electrónico, afirmando que pueden arreglar su billetera o solucionar un problema. También a menudo copian los perfiles de los moderadores reales y para \"ayudar\", pedirán su frase de recuperación (palabras de semilla) o claves privadas."
   },
   "commonScams.support.description2": {
-    "message": "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
+    "message": "Esta estafa se ve a menudo cuando un [nuevo usuario entra en un canal] (/docs/communities) y hace una pregunta sobre una billetera. Los estafadores responden rápidamente, fingiendo ser un apoyo oficial."
   },
   "commonScams.support.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "Cómo protegerte a ti mismo:"
   },
   "commonScams.support.tip1": {
-    "message": "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys."
+    "message": "Personas legitimadas en [foros y canales](/docs/communities) **nunca** pedirán tus contraseñas, frases de recuperación o claves privadas."
   },
   "commonScams.support.tip2": {
-    "message": "Never engage with unsolicited messages claiming to be from support."
+    "message": "Nunca te comprometas con mensajes no solicitados que afirman ser de soporte."
   },
   "commonScams.support.tip3": {
-    "message": "Legitimate people on forums and channels will **never** contact you first in a private message."
+    "message": "Personas legítimas en los foros y canales **nunca** se pondrán en contacto contigo primero en un mensaje privado."
   },
   "commonScams.divider.rug": {
     "message": "Rug Pulls"
   },
   "commonScams.rug.title": {
-    "message": "Rug Pulls in Cardano Ecosystem"
+    "message": "Rug Pulls en el ecosistema de Cardano"
   },
   "commonScams.rug.description": {
-    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a \"rug pull.\""
+    "message": "Cardano es una blockchain de capa 1 pública sin permisos y todo el mundo puede usarla. Algunos proyectos fraudulentos se lanzan en Cardano, ganando atención con grandes promesas y mercadeo escandaloso. Después de recoger una cantidad significativa de ada de los inversores, estos proyectos desaparecen, lo que se conoce como un \"rug pull\"."
   },
   "commonScams.rug.howToProtect": {
-    "message": "How to protect yourself:"
+    "message": "Cómo protegerte a ti mismo:"
   },
   "commonScams.rug.tip1": {
-    "message": "Research the project team's credentials and reputation."
+    "message": "Investiga las credenciales y la reputación del equipo del proyecto."
   },
   "commonScams.rug.tip2": {
-    "message": "Check for audits or transparent documentation."
+    "message": "Comprobar auditorías o documentación transparente."
   },
   "commonScams.rug.tip3": {
-    "message": "Avoid projects with anonymous teams or unrealistic promises."
+    "message": "Evite proyectos con equipos anónimos o promesas poco realistas."
   },
   "commonScams.rug.tip4": {
-    "message": "Only get utility tokens when you need to use the utility."
+    "message": "Sólo obtenga tokens de utilidad cuando necesite usar la utilidad."
   },
   "commonScams.rug.tip5": {
     "message": "Find out what other people think about projects in [the Cardano forum](https://forum.cardano.org/c/english/report-a-scam/184)."
