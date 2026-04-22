@@ -87,7 +87,7 @@ Your page is ready at `http://localhost:3000/my-page`
 ### Standalone Pages
 - Located in `/docs/` root
 - No sidebar shown with `displayed_sidebar: null`
-- Examples: [Communities](../communities.md), [Glossary](../glossary.md)
+- Examples: [Communities](/docs/communities), [Glossary](/docs/glossary)
 
 ### Custom Pages
 - Located in `/src/pages/`

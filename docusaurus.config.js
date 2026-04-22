@@ -32,7 +32,7 @@ const config = {
   projectName: 'www-cardano-org',
   
   trailingSlash: true,
-  onBrokenLinks: 'warn', // TODO: Change back to 'throw' once Docusaurus fixes pagination with trailingSlash
+  onBrokenLinks: 'throw',
   // Set to 'ignore' because anchor IDs are added dynamically by React components (e.g., Divider)
   // Docusaurus can't detect these at build time
   onBrokenAnchors: 'ignore',
@@ -41,7 +41,7 @@ const config = {
     format: 'mdx',
     mermaid: false,
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
     },
   },
 
