@@ -771,12 +771,13 @@ export const Showcases = [
     tags: [ "favorite", "analytics", "minting"],
   },
   {
-  title: "Dune",
-  description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
-  preview: require("./app-images/dune.png"),
-  icon: "/img/app-icons/dune.svg",
-  link: "https://dune.com/browse/dashboards?q=cardano",
-  tags: ["educational", "infrastructure"] 
+    title: "Dune",
+    description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
+    preview: require("./app-images/dune.png"),
+    icon: "/img/app-icons/dune.svg",
+    website: "https://dune.com/browse/dashboards?q=cardano",
+    source: null,
+    tags: ["analytics"],
   },
   {
     title: "Chainport",
