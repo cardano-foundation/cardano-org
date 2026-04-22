@@ -553,16 +553,6 @@ const config = {
         isCloseable: true, // Use true
       } : undefined,
 
-      head: [
-        // ...
-        {
-          tagName: 'link',
-          attributes: {
-            rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css?family=Chivo', // replace with your font URL
-          },
-        },
-      ],
     }),
 
   // Custom JavaScript that will be injected into the <head> section of every page

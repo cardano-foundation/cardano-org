@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cardano.org/sitemap.xml
+Sitemap: https://cardano.org/de/sitemap.xml
+Sitemap: https://cardano.org/ja/sitemap.xml
+Sitemap: https://cardano.org/es/sitemap.xml
+Sitemap: https://cardano.org/vi/sitemap.xml
