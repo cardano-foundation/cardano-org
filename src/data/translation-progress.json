@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-04-17T06:30:28.586Z",
+  "lastUpdated": "2026-04-22T06:30:58.906Z",
   "languages": [
     {
       "id": "de",
       "name": "German",
-      "translationProgress": 55,
+      "translationProgress": 56,
       "approvalProgress": 0,
       "words": {
-        "total": 37974,
-        "translated": 21025,
+        "total": 38628,
+        "translated": 21727,
         "preTranslateAppliedTo": 0,
         "approved": 13
       },
       "phrases": {
-        "total": 3560,
-        "translated": 1824,
+        "total": 3658,
+        "translated": 1928,
         "preTranslateAppliedTo": 0,
         "approved": 5
       }
@@ -22,16 +22,16 @@
     {
       "id": "ja",
       "name": "Japanese",
-      "translationProgress": 50,
-      "approvalProgress": 46,
+      "translationProgress": 49,
+      "approvalProgress": 45,
       "words": {
-        "total": 37974,
+        "total": 38628,
         "translated": 19045,
         "preTranslateAppliedTo": 0,
         "approved": 17621
       },
       "phrases": {
-        "total": 3560,
+        "total": 3658,
         "translated": 1857,
         "preTranslateAppliedTo": 0,
         "approved": 1621
@@ -40,16 +40,16 @@
     {
       "id": "es-ES",
       "name": "Spanish",
-      "translationProgress": 34,
-      "approvalProgress": 34,
+      "translationProgress": 33,
+      "approvalProgress": 33,
       "words": {
-        "total": 37974,
+        "total": 38628,
         "translated": 12989,
         "preTranslateAppliedTo": 0,
         "approved": 12989
       },
       "phrases": {
-        "total": 3560,
+        "total": 3658,
         "translated": 1661,
         "preTranslateAppliedTo": 0,
         "approved": 1661
@@ -61,13 +61,13 @@
       "translationProgress": 14,
       "approvalProgress": 0,
       "words": {
-        "total": 37974,
+        "total": 38628,
         "translated": 5544,
         "preTranslateAppliedTo": 0,
         "approved": 0
       },
       "phrases": {
-        "total": 3560,
+        "total": 3658,
         "translated": 779,
         "preTranslateAppliedTo": 0,
         "approved": 0
