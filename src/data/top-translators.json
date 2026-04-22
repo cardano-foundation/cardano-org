@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T06:30:33.077Z",
+  "lastUpdated": "2026-04-22T06:31:03.067Z",
   "contributors": [
     {
       "rank": 1,
@@ -63,6 +63,16 @@
     },
     {
       "rank": 7,
+      "user": "matzeee",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17667694/medium/cf9127414963fac6c59504e231a44962_default.png",
+      "languages": [
+        "German"
+      ],
+      "translated": 702,
+      "approved": 0
+    },
+    {
+      "rank": 8,
       "user": "BaelFire",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15877549/medium/3a83e601d8016828ebacb8d153df99dd_default.png",
       "languages": [
@@ -72,7 +82,7 @@
       "approved": 0
     },
     {
-      "rank": 8,
+      "rank": 9,
       "user": "Tommy Kammerer (adatainment)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15114815/medium/d1c1b44d524d9618cda3700773463c30.png",
       "languages": [
@@ -82,21 +92,11 @@
       "approved": 0
     },
     {
-      "rank": 9,
+      "rank": 10,
       "user": "Bora Oben (bora.oben)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601486/medium/f486d95602aa273664293b18d9eeb876.jpeg",
       "languages": [
         "German"
-      ],
-      "translated": 26,
-      "approved": 0
-    },
-    {
-      "rank": 10,
-      "user": "tran thi minh Hieu (hieuvan.ttmh)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17610216/medium/8f3437a0b851e58e972032627d72eb76.jpeg",
-      "languages": [
-        "Vietnamese"
       ],
       "translated": 26,
       "approved": 0
