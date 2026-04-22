@@ -17,7 +17,8 @@
     "crowdin:upload": "crowdin upload sources",
     "crowdin:upload-all": "crowdin upload sources && crowdin upload translations",
     "crowdin:download": "crowdin download",
-    "crowdin:progress": "node scripts/fetch-crowdin-progress.js"
+    "crowdin:progress": "node scripts/fetch-crowdin-progress.js",
+    "test:sitemap": "node scripts/test-sitemap-hreflang.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",

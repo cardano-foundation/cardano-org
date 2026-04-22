@@ -13,8 +13,7 @@ import 'dotenv/config';
 // GitHub Settings to setup repository and branch customFields
 const vars = require('./variables')
 
-const fs = require('node:fs');
-const path = require('node:path');
+const { createSitemapItemsHook } = require('./scripts/sitemap-hreflang');
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
 const isAnnouncementActive = false;
@@ -134,158 +133,9 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
           ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**'],
-          /**
-           * Self-healing hreflang annotations.
-           *
-           * For every URL in the sitemap, we add `<xhtml:link rel="alternate" hreflang="...">`
-           * entries pointing to the equivalent page in each locale that actually has the
-           * translated content. We also drop URLs from per-locale sitemaps when the locale
-           * has no translation for that page, so we never declare a German URL as an
-           * alternate for an English-only article.
-           *
-           * Three content classes:
-           *
-           *   1. React pages (src/pages/*)         -> always available in every locale,
-           *                                          translations come from i18n JSON
-           *                                          catalogs (docusaurus-theme-classic,
-           *                                          per-page Translate calls)
-           *
-           *   2. Docs (docs/*.md)                  -> per-locale source file at
-           *                                          i18n/<locale>/docusaurus-plugin-content-docs/current/<path>.md
-           *
-           *   3. Blog / news (blog/*.md)           -> per-locale source file at
-           *                                          i18n/<locale>/docusaurus-plugin-content-blog/<slug>.md
-           *                                          (also matches <slug>/index.md for
-           *                                          posts laid out as a directory)
-           *
-           * The news index `/news/` is treated as a React-style page since it is just a
-           * paginated list whose UI is fully translated.
-           *
-           * To extend: if you add a new content plugin (e.g. a second blog at /events),
-           * add a clause in `getTranslationSourcePath` that maps its URL prefix to the
-           * expected `i18n/<locale>/docusaurus-plugin-<id>/...` path.
-           */
-          createSitemapItems: async (params) => {
-            const { defaultCreateSitemapItems, siteConfig } = params;
-            const items = await defaultCreateSitemapItems(params);
-            const { locales, defaultLocale } = siteConfig.i18n;
-            const siteUrl = siteConfig.url.replace(/\/$/, '');
-            const projectRoot = __dirname;
-
-            // Strip the locale prefix from a pathname to get the locale-neutral path.
-            // Example: "/de/governance/" -> "/governance/"
-            const stripLocale = (pathname) => {
-              for (const l of locales) {
-                if (l !== defaultLocale && pathname.startsWith(`/${l}/`)) {
-                  return pathname.slice(l.length + 1);
-                }
-              }
-              return pathname;
-            };
-
-            // Detect which locale a given URL belongs to (by prefix). Default locale has
-            // no prefix, so anything that doesn't start with a non-default locale is EN.
-            const detectLocale = (pathname) => {
-              for (const l of locales) {
-                if (l !== defaultLocale && pathname.startsWith(`/${l}/`)) return l;
-              }
-              return defaultLocale;
-            };
-
-            // Build the canonical URL for a given locale + neutral pathname.
-            const localeUrl = (locale, neutralPathname) =>
-              locale === defaultLocale
-                ? `${siteUrl}${neutralPathname}`
-                : `${siteUrl}/${locale}${neutralPathname}`;
-
-            // Map a locale-neutral pathname to the on-disk path of its translation
-            // source for `locale`. Returns null for React pages (always translated via
-            // i18n catalogs) and for paths we don't recognize as markdown content.
-            const getTranslationSourcePath = (neutralPathname, locale) => {
-              const trimmed = neutralPathname.replace(/\/$/, '');
-
-              // Blog / news posts: /news/<slug>/  (but not /news/ itself)
-              const newsMatch = trimmed.match(/^\/news\/(.+)$/);
-              if (newsMatch) {
-                const slug = newsMatch[1];
-                const baseDir = path.join(
-                  projectRoot,
-                  'i18n',
-                  locale,
-                  'docusaurus-plugin-content-blog',
-                );
-                return [
-                  path.join(baseDir, `${slug}.md`),
-                  path.join(baseDir, `${slug}.mdx`),
-                  path.join(baseDir, slug, 'index.md'),
-                  path.join(baseDir, slug, 'index.mdx'),
-                ];
-              }
-
-              // Docs: /docs/<path>
-              const docsMatch = trimmed.match(/^\/docs\/(.+)$/);
-              if (docsMatch) {
-                const docPath = docsMatch[1];
-                const baseDir = path.join(
-                  projectRoot,
-                  'i18n',
-                  locale,
-                  'docusaurus-plugin-content-docs',
-                  'current',
-                );
-                return [
-                  path.join(baseDir, `${docPath}.md`),
-                  path.join(baseDir, `${docPath}.mdx`),
-                  path.join(baseDir, docPath, 'index.md'),
-                  path.join(baseDir, docPath, 'index.mdx'),
-                ];
-              }
-
-              // React page or unknown -> treat as always-translated.
-              return null;
-            };
-
-            // Decide whether a given locale has a usable translation for the page.
-            // - Default locale: always true (it is the source).
-            // - React page (no source path candidates): true.
-            // - Markdown page: true iff at least one candidate file exists on disk.
-            const hasTranslation = (neutralPathname, locale) => {
-              if (locale === defaultLocale) return true;
-              const candidates = getTranslationSourcePath(neutralPathname, locale);
-              if (!candidates) return true;
-              return candidates.some((p) => fs.existsSync(p));
-            };
-
-            const result = [];
-            for (const item of items) {
-              const { pathname } = new URL(item.url);
-              const currentLocale = detectLocale(pathname);
-              const neutralPathname = stripLocale(pathname);
-
-              // Drop URLs from non-default locale sitemaps when no translation exists.
-              if (!hasTranslation(neutralPathname, currentLocale)) {
-                continue;
-              }
-
-              // Build hreflang links only for locales that have the translation.
-              const translatedLocales = locales.filter((l) =>
-                hasTranslation(neutralPathname, l),
-              );
-              const links = translatedLocales.map((l) => ({
-                lang: l,
-                url: localeUrl(l, neutralPathname),
-              }));
-              // Always anchor x-default to the default locale (only if it exists,
-              // which it does for any URL we keep here).
-              links.push({
-                lang: 'x-default',
-                url: localeUrl(defaultLocale, neutralPathname),
-              });
-
-              result.push({ ...item, links });
-            }
-            return result;
-          },
+          // Hook implementation lives in scripts/sitemap-hreflang.js so it can be
+          // unit-tested without spinning up a Docusaurus build. See the JSDoc there.
+          createSitemapItems: createSitemapItemsHook({ projectRoot: __dirname }),
         },
       }),
     ],
