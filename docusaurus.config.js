@@ -13,6 +13,8 @@ import 'dotenv/config';
 // GitHub Settings to setup repository and branch customFields
 const vars = require('./variables')
 
+const { createSitemapItemsHook } = require('./scripts/sitemap-hreflang');
+
 // enable or disable the announcement header bar (see 'announcementBar' section below)
 const isAnnouncementActive = false;
 
@@ -125,6 +127,15 @@ const config = {
           // don't be evil
           trackingID: 'G-LGRGXBVYMC',
           anonymizeIP: true,
+        },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**'],
+          // Hook implementation lives in scripts/sitemap-hreflang.js so it can be
+          // unit-tested without spinning up a Docusaurus build. See the JSDoc there.
+          createSitemapItems: createSitemapItemsHook({ projectRoot: __dirname }),
         },
       }),
     ],
