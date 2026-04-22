@@ -39,16 +39,20 @@
     "message": "Delegiere deine Ada",
     "description": "Navbar item with label Delegate your ada"
   },
+  "item.label.Delegate your vote": {
+    "message": "Delegate your vote",
+    "description": "Navbar item with label Delegate your vote"
+  },
   "item.label.Use Cardano Apps": {
     "message": "Cardano Apps nutzen",
     "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
-    "message": "Cardano Research",
+    "message": "Cardano Forschung",
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Insights",
+    "message": "Cardano Einblicke",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Hard Forks": {
@@ -104,7 +108,7 @@
     "description": "Navbar item with label Integrate Cardano"
   },
   "item.label.Developer Portal": {
-    "message": "Developer Portal",
+    "message": "Entwicklerportal",
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {

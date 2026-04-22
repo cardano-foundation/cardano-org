@@ -1315,6 +1315,10 @@
     "message": "Ủy quyền ada của bạn",
     "description": "Mega menu item label"
   },
+  "navbar.mega.label.Delegate your vote": {
+    "message": "Delegate your vote",
+    "description": "Mega menu item label"
+  },
   "navbar.mega.label.Use Cardano Apps": {
     "message": "Sử dụng ứng dụng Cardano",
     "description": "Mega menu item label"
@@ -1433,6 +1437,10 @@
   },
   "navbar.mega.description.Delegate your ada": {
     "message": "Tham gia và nhận phần thưởng",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Delegate your vote": {
+    "message": "Lend your voting power to a DRep",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Use Cardano Apps": {
@@ -3325,6 +3333,144 @@
   },
   "governance.voltaire.buttonText": {
     "message": "Read the research"
+  },
+  "governance.delegate.layout.title": {
+    "message": "Delegate to a DRep — Cardano Governance"
+  },
+  "governance.delegate.layout.description": {
+    "message": "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps."
+  },
+  "governance.delegate.og.title": {
+    "message": "Delegate your voice"
+  },
+  "governance.delegate.og.description": {
+    "message": "Connect your wallet and delegate your Cardano voting power to a DRep in one transaction."
+  },
+  "governance.delegate.hero.title": {
+    "message": "Delegate your voice"
+  },
+  "governance.delegate.hero.description": {
+    "message": "Connect your wallet, pick a Delegated Representative, and lend them your voting power. Non-custodial, no lock-up, your ada never leaves your wallet."
+  },
+  "governance.delegate.loading": {
+    "message": "Loading delegation tool…"
+  },
+  "governance.delegate.loadingDReps": {
+    "message": "Loading active DReps…"
+  },
+  "governance.delegate.error.fetch": {
+    "message": "Could not load DReps right now. Please refresh in a moment."
+  },
+  "governance.delegate.noResults": {
+    "message": "No DReps in the curated range right now. Try one of the alternative tools below."
+  },
+  "governance.delegate.poolIntro": {
+    "message": "{count} active DReps with mid-tier voting power. Refresh for a different selection."
+  },
+  "governance.delegate.shuffle": {
+    "message": "Shuffle DReps"
+  },
+  "governance.delegate.card.cta": {
+    "message": "Delegate"
+  },
+  "governance.delegate.wallet.heading": {
+    "message": "Connect a wallet to delegate"
+  },
+  "governance.delegate.wallet.connected": {
+    "message": "Connected: {name} · {addr}"
+  },
+  "governance.delegate.wallet.delegationLoading": {
+    "message": "Checking current delegation…"
+  },
+  "governance.delegate.wallet.delegationNone": {
+    "message": "Not yet delegated"
+  },
+  "governance.delegate.wallet.delegationAbstain": {
+    "message": "Delegated: Always Abstain"
+  },
+  "governance.delegate.wallet.delegationNoConfidence": {
+    "message": "Delegated: Always No Confidence"
+  },
+  "governance.delegate.wallet.delegationNamed": {
+    "message": "Delegated to {name}"
+  },
+  "governance.delegate.wallet.delegationIdOnly": {
+    "message": "Delegated to {id}"
+  },
+  "governance.delegate.wallet.disconnect": {
+    "message": "Disconnect"
+  },
+  "governance.delegate.wallet.error": {
+    "message": "Wallet error: {error}"
+  },
+  "governance.delegate.wallet.empty": {
+    "message": "No Cardano wallet detected. Install Eternl, Typhon, Begin or another CIP-30 wallet to continue."
+  },
+  "governance.delegate.networkWarning": {
+    "message": "Your wallet is on the wrong network. Switch to Mainnet to delegate."
+  },
+  "governance.delegate.tx.building": {
+    "message": "Preparing delegation to {target}. Please confirm in your wallet…"
+  },
+  "governance.delegate.tx.success": {
+    "message": "Delegation submitted to {target}."
+  },
+  "governance.delegate.tx.viewOnExplorer": {
+    "message": "View on explorer"
+  },
+  "governance.delegate.error.stakeNotRegistered": {
+    "message": "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote."
+  },
+  "governance.delegate.error.generic": {
+    "message": "Delegation failed: {error}"
+  },
+  "governance.delegate.error.wrongNetwork": {
+    "message": "Wallet is on the wrong network. Switch to Mainnet and try again."
+  },
+  "governance.delegate.custom.heading": {
+    "message": "Already know your DRep?"
+  },
+  "governance.delegate.custom.placeholder": {
+    "message": "drep1… or hex DRep ID"
+  },
+  "governance.delegate.custom.label": {
+    "message": "Custom DRep ID"
+  },
+  "governance.delegate.custom.cta": {
+    "message": "Delegate"
+  },
+  "governance.delegate.special.heading": {
+    "message": "Or pick a protocol option"
+  },
+  "governance.delegate.abstain.label": {
+    "message": "Abstain"
+  },
+  "governance.delegate.abstain.help": {
+    "message": "Always abstain. Your stake counts toward turnout but never picks a side on any proposal."
+  },
+  "governance.delegate.noConfidence.label": {
+    "message": "No Confidence"
+  },
+  "governance.delegate.noConfidence.help": {
+    "message": "Always vote no confidence in the current Constitutional Committee."
+  },
+  "governance.delegate.alt.heading": {
+    "message": "Prefer another tool?"
+  },
+  "governance.delegate.alt.intro": {
+    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
+  },
+  "governance.delegate.alt.govtool": {
+    "message": "Intersect's full-feature governance interface."
+  },
+  "governance.delegate.alt.tempo": {
+    "message": "Browse, compare, and follow DReps with rich profiles."
+  },
+  "governance.delegate.alt.adastat": {
+    "message": "Track every governance action and DRep on-chain."
+  },
+  "governance.delegate.alt.cgov": {
+    "message": "Dashboard to monitor DReps and governance actions."
   },
   "quiz.ui.noQuestions": {
     "message": "No quiz questions available."

@@ -1,41 +1,41 @@
 ---
 title: DeFi
-description: Decentralized finance applications on Cardano provide transparent, accessible financial services
+description: Dezentrale Finanzanwendungen auf Cardano bieten transparente und leicht zugängliche Finanzdienstleistungen
 sidebar_label: DeFi
 sidebar_position: 6
 ---
 
-# Decentralized Finance (DeFi)
+# Dezentrale Finanzanwendungen (DeFi)
 
-## The Challenge
+## Die Herausforderung
 
-Traditional financial systems exclude billions of people worldwide who lack access to banking services. Even for those with access, financial services often come with high fees, opaque terms, and centralized control that can freeze assets or deny services arbitrarily.
+Traditionelle Finanzsysteme schließen Milliarden von Menschen weltweit aus, die keinen Zugang zu Bankdienstleistungen haben. Selbst für diejenigen, die Zugang dazu haben, sind Finanzdienstleistungen oft mit hohen Gebühren, undurchsichtigen Bedingungen und einer zentralisierten Kontrolle verbunden, die dazu führen kann, dass Vermögenswerte eingefroren oder Dienstleistungen willkürlich verweigert werden.
 
-The 2008 financial crisis demonstrated the risks of centralized financial systems, where failures at major institutions can cascade through the entire economy. Users have little visibility into how their deposits are used or what risks they're exposed to.
+Die Finanzkrise von 2008 hat gezeigt, welche Risiken zentralisierte Finanzsysteme bergen, bei denen Ausfälle großer Institute eine Kettenreaktion in der gesamten Wirtschaft auslösen können. Die Nutzer haben kaum Einblick darin, wie ihre Einlagen verwendet werden oder welchen Risiken sie ausgesetzt sind.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
-Decentralized finance on Cardano provides open, transparent financial services accessible to anyone with an internet connection:
+Dezentrale Finanzierung auf Cardano bietet offene, transparente Finanzdienstleistungen, die jedem mit einer Internetverbindung zugänglich sind:
 
-- **Permissionless access**: Anyone can participate without approval from centralized gatekeepers
-- **Transparent operations**: All transactions and smart contract logic are publicly auditable
-- **User custody**: Users maintain control of their assets without relying on intermediaries
-- **Composability**: DeFi protocols can be combined to create new financial products
-- **24/7 availability**: Services operate continuously without downtime or business hours
+- **Freier Zugang**: Jeder kann ohne Genehmigung durch zentrale Instanz teilnehmen
+- **Transparente Abläufe**: Alle Transaktionen und Smart Contracts sind öffentlich überprüfbar
+- **Verwahrung durch den Nutzer**: Die Nutzer behalten die Kontrolle über ihre Vermögenswerte, ohne auf Zwischenhändler angewiesen zu sein
+- **Kombinierbarkeit**: DeFi-Protokolle lassen sich miteinander kombinieren, um neue Finanzprodukte zu schaffen
+- **24/7 Verfügbarkeit**: Services funktionieren kontinuierlich ohne Ausfallzeiten oder Geschäftszeiten
 
-Cardano's DeFi ecosystem includes decentralized exchanges (DEXs), lending and borrowing platforms, stablecoins, and yield optimization protocols, all operating on secure, audited smart contracts.
+Das DeFi-Ökosystem von Cardano umfasst dezentralisierte Börsen (DEX), Kreditvergabe- und Kreditaufnahmeplattformen, Stablecoins sowie Protokolle zur Renditeoptimierung, die alle auf sicheren, geprüften Smart Contracts basieren.
 
-## Why Cardano
+## Warum Cardano
 
-- **Predictable fees** through the extended UTXO model enable accurate cost planning
-- **Formal verification** provides mathematical guarantees about smart contract behavior
-- **Native assets** reduce complexity and attack surface for token operations
-- **Sustainability** through proof of stake aligns with long-term value creation
-- **Strong community** of developers building innovative financial applications
+- **Vorhersehbare Gebühren** dank des erweiterten UTXO-Modells das eine genaue Kostenplanung ermöglicht
+- **Formale Überprüfung** bietet mathematische Garantien über das Verhalten von Smart Contracts
+- **Native Assets** verringern die Komplexität und die Angriffsfläche bei Token-Vorgängen
+- **Nachhaltigkeit** durch Proof-of-Stake steht im Einklang mit langfristiger Wertschöpfung
+- **Starke Community** von Entwicklern, die innovative Finanzanwendungen entwickeln
 
-## Get Started
+## Erste Schritte
 
-- [Explore DeFi applications on Cardano](/apps/?operator=OR&tags=lending&tags=dex)
-- [Get a Cardano wallet](/apps/?tags=wallet)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Entdecken Sie DeFi-Anwendungen auf Cardano](/apps/?operator=OR&tags=lending&tags=dex)
+- [Cardano wallet erstellen](/apps/?tags=wallet)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

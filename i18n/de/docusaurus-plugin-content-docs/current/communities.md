@@ -4,7 +4,7 @@ displayed_sidebar: null
 description: Cardano Online-Communities
 ---
 
-Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. They’re all different and unique in their own way. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
+Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. Jeder davon ist anders und auf seine Weise einzigartig. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
 
 ## Foren
 
@@ -54,18 +54,13 @@ Echtzeit-Chat und schnelle Diskussionen.
 - :portugal: Cardano Portuguese Official: https://t.me/CardanoPortugueseOfficial
 - :earth_americas: Cardano North-America Official: https://t.me/CardanoNorthAmericaOfficial
 - :india: Cardano India & Sri Lanka: https://t.me/cardano_india
-- :earth_asia: Cardano South Asia: https://t.me/cardanosouthasia
 - :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial
 - :australia: Cardano Australia: https://t.me/CardanoAustralia
-- 🇧🇷 Brazil: https://t.me/AdaBrasil
-- 🇫🇷 France: https://t.me/CardanoFranceMain
-- 🇲🇽 Mexico: https://t.me/CardanoMexico
 - 🇮🇹 Italy: https://t.me/CardanoIT
 - 🇷🇺 Russia : https://t.me/cardano_rus
 - 🇷🇺 Russian Developers : https://t.me/CardanoRussianMain
 - 🇪🇸 Spain: https://t.me/CardanoEsp
 - 🇹🇷 Turkey: https://t.me/CardanoTurk
-- 🇺🇸 USA: https://t.me/CardanoAmerica
 - :uk: Cardano UK: https://t.me/CardanoUK
 
 ## Community hinzufügen
