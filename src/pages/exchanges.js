@@ -1,35 +1,65 @@
+import React from "react";
+import Link from "@docusaurus/Link";
+import {
+  FaServer,
+  FaProjectDiagram,
+  FaDatabase,
+  FaBookOpen,
+  FaUserPlus,
+  FaSatelliteDish,
+  FaLayerGroup,
+  FaPaperPlane,
+  FaCoins,
+  FaMoneyBillWave,
+  FaUserShield,
+  FaBroadcastTower,
+} from "react-icons/fa";
+import { translate } from "@docusaurus/Translate";
+
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import RoleCard from "@site/src/components/Layout/RoleCard";
+import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
-import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import {translate} from '@docusaurus/Translate';
 
-/* FIXME: shouldn't this file be named "Cardano Integration"? */
+const CARD_COL_STYLE = { marginBottom: "1.5rem", display: "flex" };
 
 function HomepageHeader() {
   return (
     <SiteHero
-      title={translate({id: 'exchanges.hero.title', message: 'Integrate Cardano'})}
-      description={translate({id: 'exchanges.hero.description', message: 'Easy integration with Cardano. All of the upgrades. None of the maintenance.'})}
+      title={translate({
+        id: "exchanges.hero.heading",
+        message: "Integrate Cardano",
+      })}
+      description={translate({
+        id: "exchanges.hero.tagline",
+        message:
+          "A starting point for exchanges, custodians, and listing platforms adding support for ada and native assets.",
+      })}
       bannerType="fluidBlue"
     />
   );
 }
 
 export default function Home() {
-
   return (
     <Layout
-    title={translate({id: 'exchanges.layout.title', message: 'Integrate Cardano, Exchange and Wallet Partnerships'})}
-    description={translate({id: 'exchanges.layout.description', message: 'Integrate Cardano into your exchange, wallet, or payment platform. Access documentation, resources, and partnership opportunities for ada support.'})}
+      title={translate({
+        id: "exchanges.meta.title",
+        message: "Integrate Cardano, a guide for exchanges and custodians",
+      })}
+      description={translate({
+        id: "exchanges.meta.description",
+        message:
+          "Integrate ada and native assets into your exchange, custodial wallet, or payment platform. A non-technical introduction linking to the full developer documentation.",
+      })}
     >
       <OpenGraphInfo pageName="integrate-cardano" />
       <HomepageHeader />
@@ -37,126 +67,352 @@ export default function Home() {
         <BoundaryBox>
           <SpacerBox size="small" />
           <TitleWithText
-              description={[
-                translate({id: 'exchanges.intro.description', message: 'There are various [ways to integrate Cardano](https://developers.cardano.org), one of which is Adrestia. The Adrestia team focuses on supporting exchange and developer integrations by providing a wallet SDK and set of APIs that make it easier for developers and exchanges to integrate and interact with Cardano across releases.'}),
-              ]}
-              titleType="black"
-              headingDot={true}
-            />
-
-             <Divider text={translate({id: 'exchanges.whyAdrestia.divider', message: 'Why Adrestia?'})} />
-              <TwoColumnBox
-                leftText={[
-                  translate({id: 'exchanges.whyAdrestia.leftText', message: 'Blockchains - and especially Cardano - are fast developing. Staying up to date with releases can become a maintenance challenge. We\'re committed to making it as easy as possible to develop and integrate with Cardano. Through Adrestia, Cardano is adaptable to your systems and requirements.'}),
-                ]}
-                rightText={[
-                  translate({id: 'exchanges.whyAdrestia.rightText', message: 'Improvements to Cardano should not mean greater complexity or resource overhead. We want to innovate and deploy improvements as they\'re available, and as they become necessary. This might mean a few updates one month, and many the next. Adrestia is a consistent SDK and set of GraphQL APIs that make it easy for developers to create applications and maintain core compatibility and functionality with the Cardano network across releases.'}),
-                ]}
-              />
-               <SpacerBox size="small" />
+            titleType="black"
+            headingDot={true}
+            description={[
+              translate({
+                id: "exchanges.intro.p1",
+                message:
+                  "Integrating Cardano means accepting ada deposits, processing withdrawals, and monitoring the chain for customer activity. Cardano also supports [native tokens](https://developers.cardano.org/docs/build/integrate/exchange-integrations/#native-assets) directly at the ledger level, so an integration covers both ada and a wide range of other assets.",
+              }),
+            ]}
+          />
         </BoundaryBox>
 
+        <BackgroundWrapper backgroundType={"zoom"}>
+          <BoundaryBox>
+            <Divider
+              text={translate({
+                id: "exchanges.movingParts.divider",
+                message: "The moving parts",
+              })}
+              id="moving-parts"
+            />
+            <SpacerBox size="small" />
+            <div className="row">
+              <div className="col col--6" style={CARD_COL_STYLE}>
+                <RoleCard
+                  accent="blue"
+                  icon={<FaServer />}
+                  title={translate({
+                    id: "exchanges.components.node.title",
+                    message: "cardano-node",
+                  })}
+                >
+                  {translate({
+                    id: "exchanges.components.node.text",
+                    message:
+                      "The underlying Cardano node that participates in the network. Every integration runs on top of it, directly or through a managed provider.",
+                  })}
+                </RoleCard>
+              </div>
+              <div className="col col--6" style={CARD_COL_STYLE}>
+                <RoleCard
+                  accent="violet"
+                  icon={<FaProjectDiagram />}
+                  title={translate({
+                    id: "exchanges.components.rosetta.title",
+                    message: "cardano-rosetta-java",
+                  })}
+                >
+                  {translate({
+                    id: "exchanges.components.rosetta.text",
+                    message:
+                      "The Cardano Foundation's recommended path for exchanges. A standardized Mesh API that bundles the node, submit API, and indexer in one package. cardano-wallet is an alternative for smaller operators but is currently in maintenance-only mode.",
+                  })}
+                </RoleCard>
+              </div>
+              <div className="col col--6" style={CARD_COL_STYLE}>
+                <RoleCard
+                  accent="teal"
+                  icon={<FaDatabase />}
+                  title={translate({
+                    id: "exchanges.components.dbgraphql.title",
+                    message: "cardano-db-sync and cardano-graphql",
+                  })}
+                >
+                  {translate({
+                    id: "exchanges.components.dbgraphql.text",
+                    message:
+                      "Queryable blockchain data for balances, transaction history, and confirmations. Useful for dashboards, monitoring, and back-office reporting.",
+                  })}
+                </RoleCard>
+              </div>
+              <div className="col col--6" style={CARD_COL_STYLE}>
+                <RoleCard
+                  accent="blue"
+                  icon={<FaBookOpen />}
+                  title={translate({
+                    id: "exchanges.components.registry.title",
+                    message: "Cardano Token Registry",
+                  })}
+                >
+                  {translate({
+                    id: "exchanges.components.registry.text",
+                    message:
+                      "Off-chain metadata for native assets, including ticker, decimals, and logo. Needed for accurate display and correct fractional accounting.",
+                  })}
+                </RoleCard>
+              </div>
+            </div>
+            <SpacerBox size="small" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BoundaryBox>
+          <SpacerBox size="small" />
+          <TitleWithText
+            title={translate({
+              id: "exchanges.flow.title",
+              message: "How the flow looks",
+            })}
+            titleType="black"
+            headingDot={true}
+            description={[
+              translate({
+                id: "exchanges.flow.description",
+                message:
+                  "A typical exchange keeps individual deposit addresses per customer and consolidates funds into a centralized withdrawal wallet. Four phases summarize the lifecycle.",
+              }),
+            ]}
+          />
+          <SpacerBox size="small" />
+          <div className="row">
+            <div className="col col--6" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="blue"
+                icon={<FaUserPlus />}
+                title={translate({
+                  id: "exchanges.flow.step1.title",
+                  message: "1. Generate deposit addresses",
+                })}
+              >
+                {translate({
+                  id: "exchanges.flow.step1.text",
+                  message:
+                    "One address per customer, created from the exchange's own keys, so every incoming transaction maps to a single account.",
+                })}
+              </RoleCard>
+            </div>
+            <div className="col col--6" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="violet"
+                icon={<FaSatelliteDish />}
+                title={translate({
+                  id: "exchanges.flow.step2.title",
+                  message: "2. Monitor the chain",
+                })}
+              >
+                {translate({
+                  id: "exchanges.flow.step2.text",
+                  message:
+                    "Watch for incoming transactions to those addresses, wait for the expected confirmation depth, and credit customer balances.",
+                })}
+              </RoleCard>
+            </div>
+            <div className="col col--6" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="teal"
+                icon={<FaLayerGroup />}
+                title={translate({
+                  id: "exchanges.flow.step3.title",
+                  message: "3. Consolidate funds",
+                })}
+              >
+                {translate({
+                  id: "exchanges.flow.step3.text",
+                  message:
+                    "Periodically move deposits into a centralized withdrawal wallet, so outgoing traffic can be served from a single, well-controlled location.",
+                })}
+              </RoleCard>
+            </div>
+            <div className="col col--6" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="blue"
+                icon={<FaPaperPlane />}
+                title={translate({
+                  id: "exchanges.flow.step4.title",
+                  message: "4. Process withdrawals",
+                })}
+              >
+                {translate({
+                  id: "exchanges.flow.step4.text",
+                  message:
+                    "Build, sign, and submit outgoing transactions on customer request. Signing stays offline when using cardano-rosetta-java together with a dedicated signing library.",
+                })}
+              </RoleCard>
+            </div>
+          </div>
+          <p className="black-text" style={{ textAlign: "center" }}>
+            <Link to="https://developers.cardano.org/docs/build/integrate/exchange-integrations/#wallet-management">
+              {translate({
+                id: "exchanges.flow.learnMore",
+                message: "Read the wallet management workflow in detail →",
+              })}
+            </Link>
+          </p>
+          <SpacerBox size="small" />
+        </BoundaryBox>
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <CtaOneColumn
-              title={translate({id: 'exchanges.cta1.title', message: 'Focus On What Matters. Leave The Rest To Us.'})}
-              buttonLabel={translate({id: 'exchanges.cta1.buttonLabel', message: 'Access Adrestia'})}
-              buttonLink={"https://input-output-hk.github.io/adrestia/"}
-            />
-          </BoundaryBox>
-        </BackgroundWrapper>
-
-        <BackgroundWrapper backgroundType={"zoom"}>
-          <BoundaryBox>
-            <Divider text={translate({id: 'exchanges.accessAdrestia.divider', message: 'Access Adrestia'})} />
-            <TitleWithText
-                title={translate({id: 'exchanges.whatMakesDifferent.title', message: 'What makes Adrestia different?'})}
-                description={[
-                  translate({id: 'exchanges.whatMakesDifferent.description1', message: 'Cardano\'s architecture is built for modularity and adaptability. Through Adrestia, we\'re able to save developers and exchanges significant maintenance overhead and, most importantly, time.'}),
-
-                  translate({id: 'exchanges.whatMakesDifferent.description2', message: 'Unlike most blockchain API suites, Adrestia decouples and splits out key services from the core Cardano node. The new SDK and APIs are consistent across releases, which means developers are not required to re-learn the platform with each release. Adrestia offers a host of self-contained services and ways to query, transact, and extract information.'}),
-
-                ]}
-                titleType="black"
-                headingDot={true}
-              />
-
-            <DottedImageWithText
-              imageName="dots-with-line"
-              title={translate({id: 'exchanges.benefits.reduceTime.title', message: 'Reduce Time To Market'})}
-              text={[
-                translate({id: 'exchanges.benefits.reduceTime.text', message: 'Develop applications for Cardano without worrying about new releases breaking your code.'}),
-              ]}
-              headingDot={true}
-              />
-
-            <DottedImageWithText
-              imageName="ada-upturned-hand"
-              title={translate({id: 'exchanges.benefits.reduceDowntime.title', message: 'Reduce Downtime'})}
-              text={[
-                translate({id: 'exchanges.benefits.reduceDowntime.text', message: 'Fewer backward compatibility issues mean significantly reduced downtime.'}),
-              ]}
-              />
-
-            <DottedImageWithText
-              imageName="machine-squares"
-              title={translate({id: 'exchanges.benefits.reduceMaintenance.title', message: 'Reduce Maintenance Costs'})}
-              text={[
-                translate({id: 'exchanges.benefits.reduceMaintenance.text', message: 'Spend less time and resources on maintaining application compatibility across releases.'}),
-              ]}
-              />
-
-            <DottedImageWithText
-                imageName="power-arrows"
-                title={translate({id: 'exchanges.benefits.increaseProductivity.title', message: 'Increase Productivity'})}
-                text={[
-                  translate({id: 'exchanges.benefits.increaseProductivity.text', message: 'Focus on what matters - application and wallet development - and leave the updates to us.'}),
-                ]}
-                />
-
-          </BoundaryBox>
-        </BackgroundWrapper>
-
-        <BackgroundWrapper backgroundType={"ada"}>
-          <BoundaryBox>
-            <CtaOneColumn
-              title={translate({id: 'exchanges.cta2.title', message: 'Discover how components work and interact with the Cardano core node, and choose the right component to suit your requirements.'})}
-              buttonLabel={translate({id: 'exchanges.cta2.buttonLabel', message: 'Learn the Core Node Architecture'})}
-              buttonLink={"https://input-output-hk.github.io/adrestia/code/Adrestia-Architecture"}
-            />
-          </BoundaryBox>
-        </BackgroundWrapper>
-
-        <BackgroundWrapper backgroundType={"zoom"}>
-          <BoundaryBox>
-            <Divider text={translate({id: 'exchanges.learnArchitecture.divider', message: 'Learn the Core Node Architecture'})} />
-            <TitleWithText
-                title={translate({id: 'exchanges.howDoesItWork.title', message: 'How Does It Work?'})}
-                description={[
-                  translate({id: 'exchanges.howDoesItWork.description', message: 'Cardano introduces an additional layer between users and developers and the core node. Within this layer, our code node team tracks and manages complex changes, potential issues, and hard forks that arise from protocol improvements. We implement necessary updates across Adrestia libraries and APIs, and take care of the maintenance so you don\'t have to.'}),
-                ]}
-                titleType="black"
-                headingDot={true}
-              />
-              <SpacerBox size="medium" />
+            <SpacerBox size="small" />
+            <HighlightCallout icon={<FaCoins style={{ color: "#ffffff" }} />}>
+              <span style={{ color: "#ffffff" }}>
+                {translate({
+                  id: "exchanges.nativeAssets.text",
+                  message:
+                    "Cardano supports native tokens directly at the ledger level, with no smart contract required. Deposit addresses can receive ada and tokens in the same transaction, so an integration should be ready to recognize and credit both. ",
+                })}
+                <Link
+                  to="https://developers.cardano.org/docs/build/integrate/exchange-integrations/#native-assets"
+                  style={{ color: "#ffffff", textDecoration: "underline" }}
+                >
+                  {translate({
+                    id: "exchanges.nativeAssets.linkLabel",
+                    message: "Learn how to handle native assets →",
+                  })}
+                </Link>
+              </span>
+            </HighlightCallout>
+            <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
             <CtaTwoColumn
-                  leftTitle={translate({id: 'exchanges.ctaTwoColumn.leftTitle', message: 'Adrestia User Guide'})}
-                  leftText={translate({id: 'exchanges.ctaTwoColumn.leftText', message: 'Find out more about Adrestia and what it could mean for you. Our user guide is a handy, straight-forward resource to help you determine which actions to take and when.'})}
-                  leftButtonLabel={translate({id: 'exchanges.ctaTwoColumn.leftButtonLabel', message: 'Access Adrestia'})}
-                  leftButtonLink={"https://input-output-hk.github.io/adrestia/cardano-wallet/developers/api-references"}
-                  leftHeadingDot={false}
-                  rightTitle={translate({id: 'exchanges.ctaTwoColumn.rightTitle', message: 'Adrestia Component Overview & Flow Chart Guide'})}
-                  rightText={translate({id: 'exchanges.ctaTwoColumn.rightText', message: 'Discover our new, self-contained set of libraries and APIs to decide which is right for you.'})}
-                  rightButtonLabel={translate({id: 'exchanges.ctaTwoColumn.rightButtonLabel', message: 'Find out more'})}
-                  rightButtonLink={"https://input-output-hk.github.io/adrestia/cardano-wallet/user-guide"}
-                  rightHeadingDot={false}
-                />
+              leftTitle={translate({
+                id: "exchanges.learnMore.leftTitle",
+                message: "Exchange integration guide",
+              })}
+              leftText={translate({
+                id: "exchanges.learnMore.leftText",
+                message:
+                  "Step-by-step guidance for custodians and listing platforms. Covers the accounting model, transaction handling, native assets, and upgrade practices.",
+              })}
+              leftButtonLabel={translate({
+                id: "exchanges.learnMore.leftButtonLabel",
+                message: "Read the full guide",
+              })}
+              leftButtonLink={
+                "https://developers.cardano.org/docs/build/integrate/exchange-integrations/"
+              }
+              leftHeadingDot={false}
+              rightTitle={translate({
+                id: "exchanges.learnMore.rightTitle",
+                message: "Integration components overview",
+              })}
+              rightText={translate({
+                id: "exchanges.learnMore.rightText",
+                message:
+                  "A shorter reference listing the components used to integrate Cardano into websites, services, and back-office systems.",
+              })}
+              rightButtonLabel={translate({
+                id: "exchanges.learnMore.rightButtonLabel",
+                message: "Browse the components",
+              })}
+              rightButtonLink={
+                "https://developers.cardano.org/docs/build/integrate/overview/"
+              }
+              rightHeadingDot={false}
+            />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BoundaryBox>
+          <SpacerBox size="small" />
+          <TitleWithText
+            title={translate({
+              id: "exchanges.exploreMore.title",
+              message: "Explore more integrations",
+            })}
+            titleType="black"
+            headingDot={true}
+            description={[
+              translate({
+                id: "exchanges.exploreMore.description",
+                message:
+                  "Exchange integration is one of several paths. The developer portal also covers adjacent use cases that often come up alongside custody.",
+              }),
+            ]}
+          />
+          <SpacerBox size="small" />
+          <div className="row">
+            <div className="col col--4" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="violet"
+                icon={<FaMoneyBillWave />}
+                title={translate({
+                  id: "exchanges.exploreMore.payments.title",
+                  message: "Payments",
+                })}
+                href="https://developers.cardano.org/docs/build/integrate/overview/"
+              >
+                {translate({
+                  id: "exchanges.exploreMore.payments.text",
+                  message:
+                    "Accepting ada and tokens at the point of sale, in-app, or through a merchant gateway.",
+                })}
+              </RoleCard>
+            </div>
+            <div className="col col--4" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="violet"
+                icon={<FaUserShield />}
+                title={translate({
+                  id: "exchanges.exploreMore.auth.title",
+                  message: "Wallet authentication",
+                })}
+                href="https://developers.cardano.org/docs/build/integrate/overview/"
+              >
+                {translate({
+                  id: "exchanges.exploreMore.auth.text",
+                  message:
+                    "Using a Cardano wallet to sign in to applications without storing passwords.",
+                })}
+              </RoleCard>
+            </div>
+            <div className="col col--4" style={CARD_COL_STYLE}>
+              <RoleCard
+                accent="violet"
+                icon={<FaBroadcastTower />}
+                title={translate({
+                  id: "exchanges.exploreMore.oracles.title",
+                  message: "Oracles",
+                })}
+                href="https://developers.cardano.org/docs/build/integrate/overview/"
+              >
+                {translate({
+                  id: "exchanges.exploreMore.oracles.text",
+                  message:
+                    "Bringing off-chain data, such as prices and events, on-chain for smart contracts to consume.",
+                })}
+              </RoleCard>
+            </div>
+          </div>
+          <SpacerBox size="small" />
+        </BoundaryBox>
+
+        <BackgroundWrapper backgroundType={"gradientLight"}>
+          <BoundaryBox>
+            <CtaOneColumn
+              title={translate({
+                id: "exchanges.support.title",
+                message:
+                  "Talk to the Cardano Foundation's Core Integrations team",
+              })}
+              text={translate({
+                id: "exchanges.support.text",
+                message:
+                  "Reach out for tailored support, real-time updates, and integration queries.",
+              })}
+              buttonLabel={translate({
+                id: "exchanges.support.buttonLabel",
+                message: "Contact the Core Integrations team",
+              })}
+              buttonLink={"mailto:integrations@cardanofoundation.org"}
+            />
           </BoundaryBox>
         </BackgroundWrapper>
 
