@@ -54,6 +54,40 @@ builderfest:
   image_url: ../img/authors/builderfest.png
 ```
 
+## Required Frontmatter
+
+Every news article must declare the following fields at the top of its `index.md`:
+
+| Field | Purpose |
+|---|---|
+| `slug` | The URL path under `/news/`. Must be unique across the site. |
+| `title` | The headline shown on the article page, in listings, and in social cards. |
+| `description` | A 140-160 character meta description used by search engines and social previews (Google snippet, OG card, Twitter card). This is **not** the same as the in-post summary. |
+| `authors` | One or more author handles defined in `/blog/authors.yml`. |
+| `tags` | Topical labels (specific to broad). |
+
+### Writing a good `description`
+
+The `description` answers the question "What is this article about, in one sentence?" A reader scanning Google results decides in under a second whether to click. The description must:
+
+- Stand alone (do not assume the reader has the title in front of them)
+- Stay under ~160 characters or it will be truncated by search engines
+- Avoid duplicating the title verbatim
+- Trigger search intent (use the words people would search for)
+- Be factual; do not embellish
+
+Examples:
+
+| Good | Why |
+|---|---|
+| `description: "Cardano Foundation publishes the December 2025 financial report covering revenue, treasury holdings, grants, and operating costs."` | Tells the reader exactly what the post contains. Includes searchable terms. |
+| `description: "Lace wallet v1.23 ships an updated price feed for Cardano native tokens, alongside Mithril support for node v10.4.1."` | Concrete, names releases, no fluff. |
+
+| Avoid | Why |
+|---|---|
+| `description: "Read more about this exciting news from the Cardano ecosystem!"` | Says nothing. No keywords, no specifics. |
+| `description: "{{title}}"` | Duplicates the title. Search engines penalize this. |
+
 ## Create your first Post
 
 Create a new folder in `/blog` with the name `2024-04-14-hello-world`. Then create an `index.md` in this folder with the following content:
@@ -62,6 +96,7 @@ Create a new folder in `/blog` with the name `2024-04-14-hello-world`. Then crea
 ---
 slug: hello-world
 title: Hello World!
+description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest]
 tags: [greetings]
 ---
@@ -79,10 +114,11 @@ As you can see, we have used `builderfest` as the author and the news article us
 
 Copy an image into the 2024-04-14-hello-world folder, then follow the highlighted instructions to add another author and to incorporate the image into the news article: 
 
-```md {4,12} title="blog/2024-04-14-hello-world.md.md"
+```md {4,5,13} title="blog/2024-04-14-hello-world.md.md"
 ---
 slug: hello-world
 title: Hello World!
+description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest, taptools]
 tags: [greetings]
 ---
@@ -112,10 +148,11 @@ Cardano.org serves as a hub rather than a primary platform for publishing articl
 
 Additionally, include a `Read more` link directing readers to the full article on its original website. If the article has an image, add the `Read more` link above it:
 
-```md {10} title="blog/2024-04-14-hello-world.md.md"
+```md {11} title="blog/2024-04-14-hello-world.md.md"
 ---
 slug: hello-world
 title: Hello World!
+description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest, taptools]
 tags: [greetings]
 ---
@@ -162,6 +199,7 @@ An example entry looks like:
 ---
 slug: 2024-10-25-media-cardano-summit-2024-day1
 title: "Cardano Summit 2024 - Day 1 Highlights"
+description: "Recap of day one at the Cardano Summit 2024 in Dubai: keynotes, panels, the Cardano Market, and community highlights from across the ecosystem."
 authors: [cf]
 tags: [media, summit, events]
 ---

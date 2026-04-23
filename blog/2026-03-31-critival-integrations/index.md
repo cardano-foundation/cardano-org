@@ -1,6 +1,7 @@
 ---
 slug: 2026-03-31-critival-integrations
 title: "Critical Integrations Technical Progress update and “Pentad V2”"
+description: "USDCx launch boosts Cardano stablecoin supply 40%. Pyth oracles ready for Q2, Dune and LayerZero integrations in progress, Pentad V2 design begins."
 authors: [intersect]
 tags: [development]
 ---

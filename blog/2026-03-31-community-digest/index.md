@@ -1,6 +1,7 @@
 ---
 slug: 2026-03-31-community-digest
 title: "Community Digest"
+description: "Midnight mainnet launches ZK apps, FluidTokens runs the first native Bitcoin to Cardano atomic swap, Cardano Node 10.7.0 cuts RAM use from 24 GB to 8 GB."
 authors: [cf]
 tags: [community digest,ambassadors]
 ---

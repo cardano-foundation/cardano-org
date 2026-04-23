@@ -1,6 +1,7 @@
 ---
 slug: 2026-03-27-weekly-development-report
 title: "Weekly Development Report"
+description: "Node v10.7.0 ships, Peras adds on-chain certificate tracking, Mithril completes Halo2 SNARK primitives, Aggelos Kiayias named 2026 IACR Fellow."
 authors: [iog]
 tags: [weekly development report, development]
 ---

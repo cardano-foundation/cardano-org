@@ -1,6 +1,7 @@
 ---
 slug: 2026-03-25-research-on-validator-incentives
 title: "New Research on Validator Incentives and Restaking Security"
+description: "Cardano Foundation, IOG, and Gauntlet study restaking security: how slashing-based validator incentives can cascade across protocols and what to do instead."
 authors: [cf]
 tags: [research]
 ---

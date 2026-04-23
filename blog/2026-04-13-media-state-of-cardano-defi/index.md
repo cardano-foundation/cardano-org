@@ -1,6 +1,7 @@
 ---
 slug: 2026-04-13-media-state-of-cardano-defi
 title: "The State of Cardano DeFi"
+description: "Cardano DeFi panel on liquidity depth, stablecoin adoption, and trading UX. Practical paths to better incentive structures and ecosystem coordination."
 authors: [community]
 tags: [media]
 ---
