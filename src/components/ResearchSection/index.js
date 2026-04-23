@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import useBaseUrl, { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
@@ -20,6 +20,7 @@ function Category({
   papers,
   specifications,
 }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/eras/${imageName}.avif`);
 
@@ -47,7 +48,7 @@ function Category({
             <ul>
               {papers.map((paper, index) => (
                 <li key={index}>
-                  <Link to={useBaseUrl(paper.url)}>{paper.title}</Link>
+                  <Link to={withBaseUrl(paper.url)}>{paper.title}</Link>
                 </li>
               ))}
             </ul>
@@ -60,7 +61,7 @@ function Category({
             <ul>
               {specifications.map((specification, index) => (
                 <li key={index}>
-                  <Link to={useBaseUrl(specification.url)}>
+                  <Link to={withBaseUrl(specification.url)}>
                     {specification.title}
                   </Link>
                 </li>

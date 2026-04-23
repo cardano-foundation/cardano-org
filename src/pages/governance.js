@@ -18,7 +18,7 @@ import AppGrid from "@site/src/components/AppGrid";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-icons/fa";
 import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
@@ -164,6 +164,7 @@ const milestones = [
 ];
 
 function ImpactTimeline() {
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <>
       <Divider text={translate({id: 'governance.divider.impact', message: 'What governance has achieved'})} id="impact" />
@@ -178,7 +179,7 @@ function ImpactTimeline() {
           <a href={m.blog} key={m.titleId} className={styles.milestoneCard}>
             <span className={styles.timelineDot} aria-hidden="true" />
             <div className={styles.milestoneBanner}>
-              <img src={useBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
+              <img src={withBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
             </div>
             <div className={styles.milestoneContent}>
               <span className={styles.milestoneDate}>{m.date}</span>

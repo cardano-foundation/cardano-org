@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import {translate} from "@docusaurus/Translate";
 import recentNews from "@site/src/data/recentNews.json";
 import styles from "./styles.module.css";
 
 export default function LatestNewsSection({ count = 3 }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   const posts = recentNews.slice(0, count);
 
   function formatDate(dateStr) {
@@ -31,7 +32,7 @@ export default function LatestNewsSection({ count = 3 }) {
                 {post.authors[0] && (
                   <>
                     <img
-                      src={useBaseUrl(post.authors[0].imageUrl)}
+                      src={withBaseUrl(post.authors[0].imageUrl)}
                       alt={post.authors[0].name}
                       className={styles.authorAvatar}
                       loading="lazy"

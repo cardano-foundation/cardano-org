@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, useHistory } from "@docusaurus/router";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
@@ -12,6 +12,7 @@ function getCompanyId(company) {
 }
 
 function SpotlightPanel({ company, onClose }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   if (!company) return null;
 
   return (
@@ -27,8 +28,8 @@ function SpotlightPanel({ company, onClose }) {
         className={styles.spotlightLogo}
         alt={company.companyName}
         sources={{
-          light: useBaseUrl(`/img/logos/${company.imageName}.svg`),
-          dark: useBaseUrl(`/img/logos/${company.imageName}-dark.svg`),
+          light: withBaseUrl(`/img/logos/${company.imageName}.svg`),
+          dark: withBaseUrl(`/img/logos/${company.imageName}-dark.svg`),
         }}
       />
       <h3 className={styles.spotlightName}>{company.companyName}</h3>
@@ -53,6 +54,7 @@ function SpotlightPanel({ company, onClose }) {
 }
 
 function LogoCell({ company, isActive, onClick }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <div
       className={`${styles.logoCell} ${isActive ? styles.logoCellActive : ""}`}
@@ -71,8 +73,8 @@ function LogoCell({ company, isActive, onClick }) {
         className={styles.logoImage}
         alt={company.companyName}
         sources={{
-          light: useBaseUrl(`/img/logos/${company.imageName}.svg`),
-          dark: useBaseUrl(`/img/logos/${company.imageName}-dark.svg`),
+          light: withBaseUrl(`/img/logos/${company.imageName}.svg`),
+          dark: withBaseUrl(`/img/logos/${company.imageName}-dark.svg`),
         }}
       />
       {company.showCompanyName && company.companyName && (
