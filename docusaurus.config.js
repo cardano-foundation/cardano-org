@@ -102,6 +102,52 @@ const config = {
         media: '(prefers-color-scheme: dark)',
       },
     },
+    // Preload the two Chivo variable fonts so the browser fetches them in
+    // parallel with the HTML/CSS instead of waiting for the CSS to declare
+    // them. Paths point to /fonts/* which are served from static/ unhashed,
+    // matching the @font-face URLs declared inline below.
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/ttf',
+        href: '/fonts/Chivo-VariableFont_wght.ttf',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/ttf',
+        href: '/fonts/Chivo-Italic-VariableFont_wght.ttf',
+        crossorigin: 'anonymous',
+      },
+    },
+    // Inline @font-face so the URLs stay as /fonts/* (webpack does not see
+    // them) and the preload above hits the same cache entry.
+    {
+      tagName: 'style',
+      attributes: {},
+      innerHTML: `
+        @font-face {
+          font-family: 'Chivo';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('/fonts/Chivo-VariableFont_wght.ttf') format('truetype-variations');
+        }
+        @font-face {
+          font-family: 'Chivo';
+          font-style: italic;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('/fonts/Chivo-Italic-VariableFont_wght.ttf') format('truetype-variations');
+        }
+      `,
+    },
   ],
 
   presets: [
