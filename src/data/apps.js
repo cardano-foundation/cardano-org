@@ -1553,6 +1553,16 @@ export const Showcases = [
     source: null,
     tags: ["distribution", "nft"],
   },
+  {
+    title: "Surf",
+    description:
+      "Surf is a pooled lending protocol on Cardano with isolated lending markets for earning interest and borrowing against native tokens.",
+    preview: require("./app-images/surflending.png"),
+    icon: "/img/app-icons/surflending.png",
+    website: "https://http://surflending.org",
+    source: "https://github.com/flow-lending",
+    tags: ["lending", "opensource"],
+  },
 ];
 
 export const TagList = Object.keys(Tags);
