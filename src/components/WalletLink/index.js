@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
@@ -20,6 +20,7 @@ export default function WalletLink({
   label,
   link,
 }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <div className={styles.logoContainer}>
       {imageName && (
@@ -27,8 +28,8 @@ export default function WalletLink({
           <ThemedImage
             alt={label}
             sources={{
-              light: useBaseUrl(`/img/wallets/${imageName}.svg`),
-              dark: useBaseUrl(`/img/wallets/${imageName}.svg`), // fixme: there are no dark images available yet
+              light: withBaseUrl(`/img/wallets/${imageName}.svg`),
+              dark: withBaseUrl(`/img/wallets/${imageName}.svg`), // fixme: there are no dark images available yet
             }}
           />
         </div>

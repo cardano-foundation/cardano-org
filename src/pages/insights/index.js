@@ -6,7 +6,7 @@
 import React, {useMemo, useState, useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import {translate} from '@docusaurus/Translate';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
@@ -66,7 +66,8 @@ function uniqueTags(items) {
 }
 
 function InsightCard({item}) {
-  const imageUrl = item.imagePath ? useBaseUrl(item.imagePath) : null;
+  const { withBaseUrl } = useBaseUrlUtils();
+  const imageUrl = item.imagePath ? withBaseUrl(item.imagePath) : null;
   return (
     <article className="insight-row insight-grid">
       <div className="insight-title-wrap">

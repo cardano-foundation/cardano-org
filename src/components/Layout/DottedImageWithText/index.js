@@ -3,15 +3,16 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 // This component:
 // shows a dotted image and some text to the right, title is optional
 
 export default function DottedImageWithText({ imageName, title, text, headingDot }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   // Construct the image URL using the imageName prop (if there is one), we may want to handle image load errors in the future
-  const imageUrl = imageName ? useBaseUrl(`/img/dotted-icons/${imageName}.svg`) : null;
+  const imageUrl = imageName ? withBaseUrl(`/img/dotted-icons/${imageName}.svg`) : null;
 
   // Function to render text content
   const renderTextContent = (content) => {
