@@ -1,5 +1,6 @@
 ---
 title: Divider
+description: Insert a labeled section divider with optional anchor id using the Divider component on cardano.org.
 ---
 
 import Divider from "@site/src/components/Layout/Divider";

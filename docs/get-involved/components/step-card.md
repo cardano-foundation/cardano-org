@@ -1,5 +1,6 @@
 ---
 title: Step Card 
+description: Display a numbered step in an instructional flow using the StepCard component on cardano.org.
 ---
 
 ## StepCard 

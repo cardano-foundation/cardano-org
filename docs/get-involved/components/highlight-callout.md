@@ -1,5 +1,6 @@
 ---
 title: Highlight Callout
+description: Highlight an important piece of content with an icon and accent border using the HighlightCallout component.
 ---
 
 import HighlightCallout from '@site/src/components/Layout/HighlightCallout';

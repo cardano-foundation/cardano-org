@@ -1,5 +1,6 @@
 ---
 title: App Grid
+description: Render a filtered grid of Cardano applications from src/data/apps.js with tag filters and search using the AppGrid component.
 ---
 
 ## AppGrid

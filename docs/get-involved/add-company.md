@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Add your Company
+description: Add your company to the Cardano ecosystem listing on cardano.org. Required fields, logo guidelines, and submission process.
 ---
 
 ## Add your Company

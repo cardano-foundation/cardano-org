@@ -1,5 +1,6 @@
 ---
 title: Role Card
+description: Display a role or persona description with icon and accent color using the RoleCard component.
 ---
 
 import RoleCard from '@site/src/components/Layout/RoleCard';

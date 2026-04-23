@@ -1,5 +1,6 @@
 ---
 title: Transaction Rankings
+description: How transaction rankings on the cardano.org apps page work, where the data comes from, and how an app maps to its statsLabel.
 ---
 
 ## Transaction Rankings

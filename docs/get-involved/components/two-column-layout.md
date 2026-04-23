@@ -1,5 +1,6 @@
 ---
 title: Two Column Layout
+description: Arrange content in a responsive two-column layout with optional reverse order using the TwoColumnLayout component.
 ---
 
 ## Two Column Layout

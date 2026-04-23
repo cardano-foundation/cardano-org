@@ -1,5 +1,6 @@
 ---
 title: Site Hero
+description: Render a page hero with title, description, and themed banner using the SiteHero component on cardano.org.
 ---
 
 import Divider from "@site/src/components/Layout/Divider";

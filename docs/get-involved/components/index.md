@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Reference for cardano.org's shared React component library. Layout primitives, content blocks, and interactive widgets used across pages.
 ---
 
 ## Overview

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Create a Page
+description: Choose between a Markdown standalone page and a custom React page on cardano.org, and learn when each format fits the content you want to publish.
 ---
 
 ## Create a new Page

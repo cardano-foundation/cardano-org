@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Add your Application
+description: Submit your Cardano application to the cardano.org showcase. Requirements, available tags, screenshots, and the pull request workflow.
 ---
 
 ## Add your application

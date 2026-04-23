@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Create a FAQ Section
+description: Use the FAQSection component on cardano.org. Data sources, JSON file structure, and how the collapsible accordion renders.
 ---
 
 ## Create a FAQ Section

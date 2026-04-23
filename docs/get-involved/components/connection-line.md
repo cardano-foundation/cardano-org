@@ -1,5 +1,6 @@
 ---
 title: Connection Line
+description: Draw decorative connecting lines between page sections with the ConnectionLine component on cardano.org.
 ---
 
 import ConnectionLine from '@site/src/components/Layout/ConnectionLine';

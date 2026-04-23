@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Create an Event Highlight
+description: Add a Cardano event to the events page. Required metadata, image guidelines, and how event entries are reviewed and merged.
 ---
 
 ## Create a Event Highlight

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Get involved
+description: Overview of how to contribute to cardano.org. Add apps and companies, write news, build pages, and use the shared component library.
 ---
 
 Welcome to the [cardano.org](https://cardano.org) website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
