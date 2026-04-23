@@ -119,6 +119,10 @@ const config = {
           blogSidebarCount: 50,
           editUrl: `${vars.repository}/edit/${vars.branch}`,
           onUntruncatedBlogPosts: 'ignore',
+          // Replaces the default "Blog | Cardano" page title and missing
+          // description on /news/. Translatable via Crowdin.
+          blogTitle: 'Cardano News',
+          blogDescription: 'Stay current with Cardano: weekly development reports, community digests, governance updates, and ecosystem announcements.',
         },
         theme: {
           customCss: './src/css/custom.css',
