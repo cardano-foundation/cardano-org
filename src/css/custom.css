@@ -129,24 +129,9 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   padding-bottom: 15px;
 }
 
-/* Chivo Variable Font */
-@font-face {
-  font-family: 'Chivo';
-  font-style: normal;
-  font-weight: 100 900;
-  /* This range covers Thin to Black weights */
-  font-display: swap;
-  src: url('/fonts/Chivo-VariableFont_wght.ttf') format('truetype-variations');
-}
-
-@font-face {
-  font-family: 'Chivo';
-  font-style: italic;
-  font-weight: 100 900;
-  /* This range covers Thin to Black weights */
-  font-display: swap;
-  src: url('/fonts/Chivo-Italic-VariableFont_wght.ttf') format('truetype-variations');
-}
+/* Chivo Variable Font @font-face declarations live inline in docusaurus.config.js
+   headTags so the URLs stay stable (no webpack hash) and can be matched by the
+   <link rel="preload"> entries in the document head. */
 
 /* Cardano Brand */
 body {

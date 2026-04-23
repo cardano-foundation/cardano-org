@@ -412,7 +412,7 @@ function PageContent() {
   const pageTitle = `Cardano ada Supply Distribution – Epoch ${displayedEpoch} (${epochDate})`;
   const pageDescription = `Explore the Cardano ADA supply distribution for epoch ${displayedEpoch}. Understand how ADA is allocated across circulating supply, reserves, staking rewards, and the treasury. `
   const pageKeywords = `Cardano, ADA, supply distribution, staking rewards, Cardano treasury, Ouroboros protocol, Cardano blockchain, ADA rewards, Cardano supply insights`
-  const canonicalUrl = `https://www.cardano.org.com/insights/supply${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
+  const canonicalUrl = `https://cardano.org/insights/supply/${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
 
   const navStickyClass = 'epochNavSticky'; // CSS is in custom.css
 
