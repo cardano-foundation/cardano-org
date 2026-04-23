@@ -688,7 +688,10 @@ function PageContent() {
                   }}
                 />
                 {/* Click zone for start handle - left portion */}
+                {/* Mouse-only drag affordance. Keyboard a11y is provided by
+                    the <input type="range"> startHandleRef above. */}
                 <div
+                  aria-hidden="true"
                   style={{
                     position: 'absolute',
                     top: '50%',
@@ -699,6 +702,7 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
+                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();
@@ -735,7 +739,10 @@ function PageContent() {
                   }}
                 />
                 {/* Click zone for end handle - right portion */}
+                {/* Mouse-only drag affordance. Keyboard a11y is provided by
+                    the <input type="range"> endHandleRef above. */}
                 <div
+                  aria-hidden="true"
                   style={{
                     position: 'absolute',
                     top: '50%',
@@ -746,6 +753,7 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
+                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();

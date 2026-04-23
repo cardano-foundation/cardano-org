@@ -30,6 +30,7 @@ export default function FollowCardanoSection() {
         className={styles.statsFrame}
         scrolling="no"
         src="/archive/static.iohk.io/adasale/"
+        title="Cardano genesis distribution statistics"
       ></iframe>
       <h3>Post-Commission Exodus Addresses</h3>
       <div className="exodusTable">

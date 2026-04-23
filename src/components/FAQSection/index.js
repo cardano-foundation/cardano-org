@@ -24,10 +24,6 @@ export default function FAQSection({ jsonFileName = "delegationFAQ", data }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqList = data || faqData[jsonFileName] || [];
 
-  const handleClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
     <div>
       <Divider text="FAQ" id="faq" />
@@ -37,9 +33,12 @@ export default function FAQSection({ jsonFileName = "delegationFAQ", data }) {
           className={`Collapsible ${index % 2 === 0 ? "even" : "odd"} ${
             activeIndex === index ? "active" : ""
           }`}
-          onClick={() => handleClick(index)}
         >
-          <Collapsible trigger={faq.question}>
+          <Collapsible
+            trigger={faq.question}
+            onOpening={() => setActiveIndex(index)}
+            onClosing={() => setActiveIndex((current) => (current === index ? null : current))}
+          >
             <div>{renderAnswerArray(faq.answer)}</div>
           </Collapsible>
         </div>

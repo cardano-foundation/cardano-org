@@ -338,10 +338,6 @@ export default function GovernanceCharts({
     setActiveCategory(null);
   };
 
-  const handleContentClick = (event) => {
-    event.stopPropagation();
-  };
-
   const toggleParametersDropdown = () => {
     setParametersDropdownOpen(!parametersDropdownOpen);
   };
@@ -470,9 +466,19 @@ export default function GovernanceCharts({
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
                   } ${activeChartId === graph.id ? "active" : ""}`}
-                  onClick={(e) => handleGraphSelect(index, graph.category, e)}
                 >
-                  <div className="Collapsible__trigger">
+                  <div
+                    className="Collapsible__trigger"
+                    role="button"
+                    tabIndex={0}
+                    onClick={(e) => handleGraphSelect(index, graph.category, e)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleGraphSelect(index, graph.category, e);
+                      }
+                    }}
+                  >
                     <h4 className={styles.graphTitle}>
                       <span>{graph.title}</span>
                       <div className={styles.graphCategory}>
@@ -481,10 +487,7 @@ export default function GovernanceCharts({
                     </h4>
                   </div>
                   {activeChartId === graph.id && (
-                    <div
-                      className={`${styles.graphContent} Collapsible__contentInner`}
-                      onClick={handleContentClick}
-                    >
+                    <div className={`${styles.graphContent} Collapsible__contentInner`}>
                       <p className={styles.graphDescription}>
                         {graph.description}
                       </p>
@@ -537,19 +540,26 @@ export default function GovernanceCharts({
                 className={`${styles.graphItem} Collapsible ${
                   index % 2 === 0 ? "even" : "odd"
                 } ${activeChartId === graph.id ? "active" : ""}`}
-                onClick={(e) => handleGraphSelect(index, activeCategory, e)}
               >
-                <div className="Collapsible__trigger">
+                <div
+                  className="Collapsible__trigger"
+                  role="button"
+                  tabIndex={0}
+                  onClick={(e) => handleGraphSelect(index, activeCategory, e)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleGraphSelect(index, activeCategory, e);
+                    }
+                  }}
+                >
                   <h4 className={styles.graphTitle}>
                     <span>{graph.title}</span>
                     <div className={styles.graphCategory}>{graph.category}</div>
                   </h4>
                 </div>
                 {activeChartId === graph.id && (
-                  <div
-                    className={`${styles.graphContent} Collapsible__contentInner`}
-                    onClick={handleContentClick}
-                  >
+                  <div className={`${styles.graphContent} Collapsible__contentInner`}>
                     <p className={styles.graphDescription}>
                       {graph.description}
                     </p>

@@ -38,10 +38,22 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
       </button>
 
       {isOpen && (
-        <div className={styles.modalOverlay} onClick={handleClose}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button 
-              onClick={handleClose} 
+        // Backdrop click-outside-to-close. Keyboard equivalent is the
+        // document-level Escape handler above plus the dedicated close
+        // button, both of which are accessible to keyboard users.
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
+          className={styles.modalOverlay}
+          onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
+        >
+          <div
+            className={styles.modalContent}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Quiz"
+          >
+            <button
+              onClick={handleClose}
               className={styles.closeButton}
               aria-label="Close quiz"
             >
