@@ -12,8 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: bahmutov/npm-install@v1
+      - uses: actions/setup-node@v4
         with:
-          useLockFile: false
-      - run: yarn install
+          node-version: 20
+          cache: yarn
+      - run: corepack enable
+      - run: yarn install --frozen-lockfile
       - run: yarn build

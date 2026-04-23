@@ -8,6 +8,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* DocSearch styling */
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-searchbox-background: var(--ifm-background-surface-color);
+  --docsearch-searchbox-focus-background: var(--ifm-background-surface-color);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, 0.4);
   --ifm-color-primary: #0538af;
   --ifm-color-primary-dark: #325cbd;
   --ifm-color-primary-darker: #325cbd;
@@ -18,7 +25,8 @@
   --ifm-code-font-size: 95%;
   --ifm-footer-link-hover-color: #6684ce;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-navbar-link-color: #0538af; /* navbar in light mode */
+  --ifm-navbar-link-color: #0538af;
+  /* navbar in light mode */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -31,25 +39,23 @@
   --ifm-color-primary-lighter: #6684ce;
   --ifm-color-primary-lightest: #6684ce;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-navbar-link-color: var(--ifm-font-color-base); /* navbar in dark mode */
+  --ifm-navbar-link-color: var(--ifm-font-color-base);
+  /* navbar in dark mode */
 }
 
-/* GitHub icon */
-.header-github-link:before {
-  content: "";
+.header-discord-link:before {
+  content: '';
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-    no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath d='M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1 .1s-.6 .4-.8 .8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2c-41.3 7.1-81.6 19.6-119.7 37.1-.3 .1-.6 .4-.8 .7-76.2 113.8-97.1 224.9-86.9 334.5 0 .3 .1 .5 .2 .8s.3 .4 .5 .6c44.4 32.9 94 58 146.8 74.2 .4 .1 .8 .1 1.1 0s.7-.4 .9-.7c11.3-15.4 21.4-31.8 30-48.8 .1-.2 .2-.5 .2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6 .2-.9 .3-.5 .6-.7c3.1-2.3 6.2-4.7 9.1-7.1 .3-.2 .6-.4 .9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1 .7-.2 1-.2s.7 .2 .9 .4c2.9 2.4 6 4.9 9.1 7.2 .2 .2 .4 .4 .6 .7s.2 .6 .2 .9-.1 .6-.3 .9-.4 .5-.6 .6c-14.7 8.6-30 15.9-45.9 21.8-.2 .1-.5 .2-.7 .4s-.3 .4-.4 .7-.1 .5-.1 .8 .1 .5 .2 .8c8.8 17 18.8 33.3 30 48.8 .2 .3 .6 .6 .9 .7s.8 .1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2 .2-.2 .4-.4 .5-.6s.2-.5 .2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2zm195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2z'/%3E%3C/svg%3E") no-repeat;
 }
 
-html[data-theme="dark"] .header-github-link:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-    no-repeat;
+html[data-theme='dark'] .header-discord-link:before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='white' d='M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1 .1s-.6 .4-.8 .8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2c-41.3 7.1-81.6 19.6-119.7 37.1-.3 .1-.6 .4-.8 .7-76.2 113.8-97.1 224.9-86.9 334.5 0 .3 .1 .5 .2 .8s.3 .4 .5 .6c44.4 32.9 94 58 146.8 74.2 .4 .1 .8 .1 1.1 0s.7-.4 .9-.7c11.3-15.4 21.4-31.8 30-48.8 .1-.2 .2-.5 .2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6 .2-.9 .3-.5 .6-.7c3.1-2.3 6.2-4.7 9.1-7.1 .3-.2 .6-.4 .9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1 .7-.2 1-.2s.7 .2 .9 .4c2.9 2.4 6 4.9 9.1 7.2 .2 .2 .4 .4 .6 .7s.2 .6 .2 .9-.1 .6-.3 .9-.4 .5-.6 .6c-14.7 8.6-30 15.9-45.9 21.8-.2 .1-.5 .2-.7 .4s-.3 .4-.4 .7-.1 .5-.1 .8 .1 .5 .2 .8c8.8 17 18.8 33.3 30 48.8 .2 .3 .6 .6 .9 .7s.8 .1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2 .2-.2 .4-.4 .5-.6s.2-.5 .2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2zm195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2z'/%3E%3C/svg%3E") no-repeat;
 }
 
-.header-github-link:hover {
+.header-discord-link:hover {
   opacity: 0.6;
 }
 
@@ -69,20 +75,22 @@ html {
 
 .mauticform-button {
   background-color: var(--ifm-color-primary) !important;
-  color: white  !important;
-  border-radius: 30px  !important;
-  font-weight: 400  !important;
+  color: white !important;
+  border-radius: 30px !important;
+  font-weight: 400 !important;
 }
 
 .mautic-form-container {
   display: flex;
-  justify-content: left; /* centers the form horizontally */
+  justify-content: left;
+  /* centers the form horizontally */
 }
 
 .mautic-form-container .mauticform_wrapper {
   width: 100%;
   max-width: 400px;
-  margin: 0; /* nicht auto */
+  margin: 0;
+  /* nicht auto */
   box-sizing: border-box;
 }
 
@@ -104,6 +112,13 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   height: 80px;
 }
 
+/* Ensure navbar is a positioned container so absolutely positioned
+   mega menu panels can span the full header width instead of the
+   small trigger button width. */
+.navbar {
+  position: relative;
+}
+
 .navbar__logo {
   height: 35px;
   padding-left: 10px;
@@ -114,26 +129,14 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   padding-bottom: 15px;
 }
 
-/* Chivo Variable Font */
-@font-face {
-  font-family: 'Chivo';
-  font-style: normal;
-  font-weight: 100 900; /* This range covers Thin to Black weights */
-  font-display: swap;
-  src: url('/fonts/Chivo-VariableFont_wght.ttf') format('truetype-variations');
-}
-
-@font-face {
-  font-family: 'Chivo';
-  font-style: italic;
-  font-weight: 100 900; /* This range covers Thin to Black weights */
-  font-display: swap;
-  src: url('/fonts/Chivo-Italic-VariableFont_wght.ttf') format('truetype-variations');
-}
+/* Chivo Variable Font @font-face declarations live inline in docusaurus.config.js
+   headTags so the URLs stay stable (no webpack hash) and can be matched by the
+   <link rel="preload"> entries in the document head. */
 
 /* Cardano Brand */
 body {
-  font-family: Chivo, sans-serif; /* Replace with your font name */
+  font-family: Chivo, sans-serif;
+  /* Replace with your font name */
 }
 
 h1 {
@@ -145,10 +148,11 @@ h1 {
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  text-transform: capitalize;
   font-size: 3.4;
   margin: 2.75rem 0 1.05rem;
-} /*!sc*/
+}
+
+/*!sc*/
 
 h2 {
   font-family: Chivo, sans-serif;
@@ -159,10 +163,11 @@ h2 {
   -moz-letter-spacing: 0.05rem;
   -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  text-transform: capitalize;
   font-size: 2.8;
   margin: 2.75rem 0 1.05rem;
-} /*!sc*/
+}
+
+/*!sc*/
 
 h3 {
   font-family: Chivo, sans-serif;
@@ -173,18 +178,20 @@ h3 {
   -moz-letter-spacing: 0.05rem;
   -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  text-transform: capitalize;
   font-size: 1.44;
   margin: 2.75rem 0 1.05rem;
-} /*!sc*/
+}
+
+/*!sc*/
 
 h4 {
   font-family: Chivo, sans-serif;
   /*font-size: 2.2rem;*/
   font-weight: 700;
   line-height: 1.2;
-  text-transform: capitalize;
-} /*!sc*/
+}
+
+/*!sc*/
 
 h5 {
   font-family: Chivo, sans-serif;
@@ -198,7 +205,9 @@ h5 {
   text-transform: uppercase;
   font-size: 0.7;
   margin: 2.75rem 0 1.05rem;
-} /*!sc*/
+}
+
+/*!sc*/
 
 h6 {
   font-family: Chivo, sans-serif;
@@ -211,7 +220,9 @@ h6 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin: 2.75rem 0 1.05rem;
-} /*!sc*/
+}
+
+/*!sc*/
 
 a {
   outline-width: 0.5rem;
@@ -220,16 +231,22 @@ a {
   transition: color 0.1s ease-in-out;
   -webkit-text-decoration: none;
   text-decoration: none;
-} /*!sc*/
+}
+
+/*!sc*/
 
 a:hover {
   color: #3b5fb7;
-} /*!sc*/
+}
+
+/*!sc*/
 
 img {
   max-width: 100%;
   height: auto;
-} /*!sc*/
+}
+
+/*!sc*/
 
 .red-text {
   color: rgb(255, 118, 118);
@@ -244,8 +261,10 @@ img {
 }
 
 .black-text {
-  /*color: rgb(29, 30, 33);*/ /* bad example if you want to have dark mode */
-  color: var(--ifm-font-color-base); /* good example */
+  /*color: rgb(29, 30, 33);*/
+  /* bad example if you want to have dark mode */
+  color: var(--ifm-font-color-base);
+  /* good example */
 }
 
 .slight-text {
@@ -254,19 +273,17 @@ img {
 
 .headingDot {
   position: relative;
+  padding-top: 1rem;
 }
 
 .headingDot::before {
   content: "";
   position: absolute;
-  top: -1.5rem;
+  top: 0;
   left: 0;
   width: 0.7rem;
   height: 0.7rem;
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
+  border-radius: 100%;
   background-color: rgb(255, 118, 118);
 }
 
@@ -295,19 +312,21 @@ img {
   color: var(--ifm-base-color);
   font-size: 1rem;
   font-weight: bold;
-  text-align: left; 
+  text-align: left;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .Collapsible__trigger:after {
   display: block;
   content: "";
-  width: 1em; /* Adjust size as needed */
-  height: 1em; /* Adjust size as needed */
+  width: 1em;
+  /* Adjust size as needed */
+  height: 1em;
+  /* Adjust size as needed */
   transition: transform 0.3s ease;
   background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -330,40 +349,49 @@ img {
 
 /*  alternating background styles */
 .Collapsible.odd {
-  background-color: #f6f7f9; /* odd rows */
+  background-color: #f6f7f9;
+  /* odd rows */
 }
 
 .Collapsible.even {
-  background-color: #fdfdfb; /* even rows */
+  background-color: #fdfdfb;
+  /* even rows */
 }
 
 [data-theme="dark"] .Collapsible.odd {
-  background-color: #f6f7f9; /* odd rows */
+  background-color: #f6f7f9;
+  /* odd rows */
 }
 
 [data-theme="dark"] .Collapsible.even {
-  background-color: #fdfdfb; /* even rows */
+  background-color: #fdfdfb;
+  /* even rows */
 }
 
 
 [data-theme="dark"] .Collapsible.odd {
-  background-color: #2d2d2d; /* dark gray for odd rows in dark mode */
+  background-color: #2d2d2d;
+  /* dark gray for odd rows in dark mode */
 }
 
 [data-theme="dark"] .Collapsible.even {
-  background-color: #252525; /* slightly darker gray for even rows in dark mode */
+  background-color: #252525;
+  /* slightly darker gray for even rows in dark mode */
 }
 
 .Collapsible ul {
-  list-style-type: disc; /* This makes standard bullets */
-  margin-left: 20px; /* Adjust indentation of the list */
-  padding-left: 0; 
+  list-style-type: disc;
+  /* This makes standard bullets */
+  margin-left: 20px;
+  /* Adjust indentation of the list */
+  padding-left: 0;
 }
 
 /* tabs (like partners, benefits) */
 
 .tabIcon {
-  margin-right: 8px; /* Add some space between the icon and the text */
+  margin-right: 8px;
+  /* Add some space between the icon and the text */
   color: var(--ifm-color-primary);
 }
 
@@ -374,13 +402,14 @@ img {
 [data-theme="dark"] .tabCategory {
   color: #e0e0e0;
 }
-  
+
 /* transition (tabs) */
 @keyframes swipeIn {
   from {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -392,6 +421,7 @@ img {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(-100%);
     opacity: 0;
@@ -402,6 +432,228 @@ img {
   animation: swipeIn 0.5s forwards;
 }
 
+/* Mega menu styles */
+.navbar__item--mega {
+  position: relative;
+}
+
+.megaMenuTrigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--ifm-navbar-item-padding-vertical) var(--ifm-navbar-item-padding-horizontal);
+  display: flex;
+  align-items: center;
+  color: var(--ifm-navbar-link-color);
+  font-size: var(--ifm-font-size-base);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar__link {
+  font-weight: 600;
+}
+
+.megaMenuTrigger::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid currentColor;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+
+.megaMenuPanel {
+  position: absolute;
+  top: var(--ifm-navbar-height);
+  left: 10%;
+  transform: translateX(-50%);
+  margin: 2px 0 0 0;
+  padding: 16px 24px 24px;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  z-index: 1000;
+  display: none;
+  box-sizing: border-box;
+  /* Width is set by data-column-count variant rules below */
+}
+
+/* Invisible hover zone below panel to prevent closing when moving mouse down */
+.megaMenuPanel::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  height: 10px;
+  pointer-events: auto;
+}
+
+.navbar__item--mega:hover .megaMenuPanel,
+.navbar__item--mega:focus-within .megaMenuPanel {
+  display: block;
+}
+
+.megaMenuInner {
+  display: grid;
+  /* ensure each column has a reasonable minimum width so labels don't
+     wrap into vertical stacks on narrow viewports */
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Dynamic width based on column count */
+.navbar__item--mega[data-column-count="2"] .megaMenuPanel {
+  width: min(600px, calc(100vw - 48px));
+  max-width: 600px;
+  min-width: 480px;
+}
+
+.navbar__item--mega[data-column-count="2"] .megaMenuInner {
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+.navbar__item--mega[data-column-count="3"] .megaMenuPanel {
+  width: min(800px, calc(100vw - 48px));
+  max-width: 800px;
+  min-width: 720px;
+}
+
+.navbar__item--mega[data-column-count="3"] .megaMenuInner {
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+}
+
+.megaMenuColumnTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.megaMenuColumnIcon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: none;
+}
+
+/* Improve contrast for column icons in dark mode */
+[data-theme="dark"] .megaMenuColumnIcon {
+  /* invert black icons to light, then tone down to a soft grey */
+  filter: invert(1) brightness(1.05) contrast(0.9) saturate(0.6);
+  opacity: 0.85;
+}
+
+.megaMenuItemLink {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
+  margin: 0 -12px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+  gap: 12px;
+}
+
+.megaMenuItemLink:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+/* (focus visible outlines intentionally omitted in original version) */
+
+.megaMenuItemLabel {
+  font-weight: 500;
+  display: block;
+  font-size: 1.05rem;
+  /* force horizontal text flow */
+  writing-mode: horizontal-tb;
+  white-space: normal;
+  color: var(--ifm-color-primary);
+}
+
+.megaMenuItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.megaMenuItemDescription {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  display: block;
+}
+
+/* Replace default list bullets with Font Awesome icons */
+.megaMenuColumnList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.megaMenuItem {
+  display: block;
+}
+
+.megaMenuItemIcon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 4px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+  filter: grayscale(5%) brightness(0) saturate(100%) invert(21%) sepia(78%) saturate(2273%) hue-rotate(222deg);
+}
+
+.megaMenuItemLink:hover .megaMenuItemIcon {
+  opacity: 0.95;
+}
+
+/* Strong reset for text orientation inside the mega menu to avoid
+   inherited or theme rules that could produce vertical text. */
+.navbar__item--mega,
+.navbar__item--mega * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  letter-spacing: normal !important;
+}
+
+/* Reclaim horizontal space on medium-width screens where the
+   desktop navbar is visible but items start to collide (especially
+   with longer German labels like "Mitmachen", "Entwickeln"). */
+@media (max-width: 1200px) {
+  .navbar {
+    --ifm-navbar-item-padding-horizontal: 0.5rem;
+  }
+
+  .DocSearch-Button-Placeholder {
+    display: none !important;
+  }
+}
+
+/* Ensure mega menu doesn't display on small screens */
+@media (max-width: 899px) {
+  .megaMenuPanel {
+    display: none !important;
+  }
+}
+
 .swipeOut {
   animation: swipeOut 0.5s forwards;
 }
@@ -410,17 +662,19 @@ img {
 /* section caret */
 
 :root {
-  --section-caret-fill-color: #ffffff; /* white caret fill for light mode */
+  --section-caret-fill-color: #ffffff;
 }
 
-/* Override the fill color for dark mode */
 [data-theme="dark"] {
-  --section-caret-fill-color: #1b1b1d; /* black for dark mode */
+  --section-caret-fill-color: #1b1b1d;
 }
 
-/* Apply the variable to the polygon fill */
 .sectionCaret polygon {
-  fill: var(--section-caret-fill-color);
+  fill: #ffffff;
+}
+
+[data-theme="dark"] .sectionCaret polygon {
+  fill: #1b1b1d;
 }
 
 .sectionCaret {
@@ -442,15 +696,18 @@ img {
   .hero h1 {
     font-size: 32px;
   }
+
   .hero p {
     font-size: 18px;
   }
+
   .hero__title {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
   }
+
   .hero__subtitle {
     padding-left: 0;
     padding-right: 0;
@@ -461,10 +718,11 @@ img {
   .hero h1 {
     font-size: 48px;
   }
+
   .hero p {
     font-size: 24px;
   }
-  
+
   .sectionCaret {
     height: 45px;
     width: 3000px;
@@ -472,45 +730,231 @@ img {
   }
 }
 
-#medusa-stage {
-  transform: translateY(-100px);
-  /*background-color: transparent !important;*/
+/* Medusa header */
+#medusa-root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
- 
+
+#medusa-root > div {
+  position: absolute;
+  inset: 0;
+}
+
+
 .event-content {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
+
 @media (max-width: 768px) {
   .event-content {
     flex-direction: column;
   }
 }
 
-/* Events platform link cards */
+/* Start: Insights Supply epoch prev/next navigation buttons */
+.epochNavSticky {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 60px) + 22px);
+  z-index: 20;
+}
+
+.epochNavSticky nav {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .epochNavSticky {
+    position: fixed;
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* Container + main row */
+.epochNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.epochNavMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.epochNavLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Larger center label (desktop/tablet) */
+.epochNavLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  font-size: 1rem;
+}
+
+.epochNavLabel strong {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Desktop jump input aligned right */
+.epochJump--desktop {
+  margin-left: auto;
+  display: flex;
+  /* desktop default: visible */
+  align-items: center;
+}
+
+.epochJumpRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.epochJumpInput {
+  width: 8ch;
+  /* roomy for 4 digits */
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.epochJumpGo {
+  padding-inline: 12px;
+}
+
+.epochJumpCancel {
+  display: none;
+}
+
+/* never on desktop */
+
+.epochJumpHint {
+  font-size: 11px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.epochJumpHint.is-invalid {
+  color: var(--ifm-color-danger);
+}
+
+/* Hide “Jump…” button on desktop */
+.epochJumpLink {
+  display: none;
+}
+
+/* -------- Mobile behavior -------- */
+@media (max-width: 768px) {
+  .epochNav {
+    gap: 0.5rem;
+  }
+
+  /* Keep Prev/Next tap-friendly */
+  .epochNav .button {
+    min-height: 36px;
+  }
+
+  /* On mobile, hide desktop input by default */
+  .epochJump--desktop {
+    display: none;
+  }
+
+  /* Show “Jump…” trigger on the right */
+  .epochJumpLink {
+    display: inline-flex;
+    background: transparent;
+    border: 1px dashed var(--ifm-color-emphasis-300);
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+
+  /* Mobile jump block is hidden by default */
+  .epochJump--mobile {
+    display: none;
+  }
+
+  /* When jump mode is active, hide main row and show mobile jump */
+  .epochNav.is-jump .epochNavMain {
+    display: none;
+  }
+
+  .epochNav.is-jump .epochJump--mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .epochNav.is-jump .epochJumpInput {
+    width: 6ch;
+    /* compact but fits 4 digits */
+    padding: 4px 8px;
+    font-size: 0.95rem;
+  }
+
+  .epochNav.is-jump .epochJumpGo {
+    padding: 4px 10px;
+  }
+
+  .epochNav.is-jump .epochJumpCancel {
+    display: inline-flex;
+  }
+}
+
+/* end Insights page epoch navigation */
+
+/* Start Events platform link cards */
 .event-platforms {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
   align-items: flex-start;
 }
+
 .platform-card {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   width: 260px;
 }
+
 .platform-card figure {
   margin: 0;
 }
+
 .platform-card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: block;
 }
+
 .platform-card figcaption {
   margin-top: 0.5rem;
   text-align: center;
@@ -521,15 +965,443 @@ img {
 .platform-card img {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .platform-card:hover img,
 .platform-card:focus-visible img {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
+
 .platform-card figcaption {
   transition: color 0.15s ease;
 }
+
 .platform-card:hover figcaption,
 .platform-card:focus-visible figcaption {
   color: var(--ifm-color-primary);
 }
+
+/* Event pagination */
+.events-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* List reset */
+.events-pagination__list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared button base – use theme tokens */
+.events-pagination__nav,
+.events-pagination__page {
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover/active/focus states */
+.events-pagination__nav:hover,
+.events-pagination__page:hover {
+  border-color: var(--ifm-color-emphasis-400);
+  transform: translateY(-1px);
+}
+
+.events-pagination__nav:active,
+.events-pagination__page:active {
+  transform: translateY(0);
+}
+
+.events-pagination__nav:focus-visible,
+.events-pagination__page:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Current page */
+.events-pagination__page.is-active {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-color: var(--ifm-color-primary);
+  cursor: default;
+}
+
+/* Disabled */
+.events-pagination__nav[disabled],
+.events-pagination__page[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Optional: slight dark-mode border tuning */
+[data-theme='dark'] .events-pagination__nav,
+[data-theme='dark'] .events-pagination__page {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+/* End Events platform link cards */
+
+/* Start insights index list */
+
+/* Search input */
+.insights-search-container {
+  margin-bottom: 1.25rem;
+}
+
+.insights-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.insights-search-input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(5, 56, 175, 0.1);
+}
+
+[data-theme='dark'] .insights-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(102, 132, 206, 0.2);
+}
+
+/* Filter tags */
+.insights-filter-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.insights-filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.insight-filter-tag {
+  font-size: 0.675rem;
+  border: 1px solid var(--ifm-color-secondary-darkest);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.insight-filter-tag:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.insight-filter-tag.is-active {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.insight-filter-clear {
+  padding: 0 10px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.insights-list {
+  display: block;
+}
+
+/* Row layout: image left, text right, separator line */
+.insight-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-row:last-child {
+  border-bottom: 0;
+}
+
+/* Thumbnail */
+.insight-thumb {
+  flex: 0 0 240px;
+  max-width: 280px;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Text area */
+.insight-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.insight-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.insight-desc {
+  margin: 0.35rem 0 0.5rem;
+  opacity: 0.9;
+}
+
+/* Tags — matching ShowcaseCard tag style with colored dots */
+.insight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.15rem 0 0.3rem;
+  list-style: none;
+  padding: 0;
+}
+
+.insight-tag {
+  font-size: 0.675rem;
+  border: 1px solid var(--ifm-color-secondary-darkest);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  cursor: default;
+}
+
+.insight-tag-label {
+  margin-left: 8px;
+}
+
+.insight-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+/* CTA link */
+.insight-cta {
+  margin-top: 0.25rem;
+}
+
+.insight-link {
+  font-weight: 600;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .insight-row {
+    flex-direction: column;
+  }
+
+  .insight-thumb {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Grid layout enabling different orders per viewport */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "thumb title"
+    "thumb tags"
+    "thumb desc"
+    "thumb cta";
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: start;
+}
+
+/* Assign areas */
+.insight-thumb {
+  grid-area: thumb;
+}
+
+.insight-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.insight-tags {
+  grid-area: tags;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.insight-desc {
+  grid-area: desc;
+  margin: 0.25rem 0 0.25rem;
+  opacity: 0.9;
+}
+
+.insight-cta {
+  grid-area: cta;
+  margin-top: 0.1rem;
+}
+
+/* Keep your existing thumbnail and tag pill visuals */
+.insight-thumb {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Mobile: Title → Thumbnail → Description (then CTA), as requested */
+@media (max-width: 768px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "thumb"
+      "tags"
+      "desc"
+      "cta";
+  }
+}
+
+/* End insights index list */
+
+/* DocSearch button styling - rounded corners */
+.DocSearch-Button {
+  border-radius: 30px !important;
+  padding: 0 16px !important;
+  height: 36px !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  background: var(--ifm-background-surface-color) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.DocSearch-Button:hover {
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(5, 56, 175, 0.1) !important;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 0.9rem !important;
+}
+
+.DocSearch-Button-Keys {
+  display: none !important;
+}
+
+/* DocSearch modal styling */
+.DocSearch-Modal {
+  border-radius: 12px !important;
+}
+
+.DocSearch-SearchBar {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Form {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Hit {
+  border-radius: 8px !important;
+}
+
+.DocSearch-Hit a {
+  border-radius: 8px !important;
+}
+
+/* Hide Algolia attribution (paid plan without attribution requirement) */
+.DocSearch-Logo {
+  display: none !important;
+}
+
+/* Glossary term cards */
+.theme-doc-markdown h3 {
+  background: var(--ifm-color-emphasis-100);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.theme-doc-markdown h3:target {
+  border-left-color: var(--ifm-color-warning);
+  animation: highlight-pulse 1s ease;
+}
+
+@keyframes highlight-pulse {
+  0% { background: var(--ifm-color-warning-light); }
+  100% { background: var(--ifm-color-emphasis-100); }
+}
+
+/* Letter section headers */
+.theme-doc-markdown h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+/* Position locale dropdown after dark mode toggle */
+.navbar__items--right > .navbar__item.dropdown {
+  order: 10;
+}
+

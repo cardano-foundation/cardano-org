@@ -1,0 +1,66 @@
+{
+  "title": "Which governance role fits you?",
+  "description": "Answer a few questions to find out how you can best participate in Cardano governance.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "How much time can you dedicate to Cardano governance?",
+      "options": [
+        "A few minutes to set it up, then I'm done",
+        "I can check in regularly and stay informed",
+        "I want to actively participate and vote on proposals",
+        "I'm ready to represent others and make it a regular commitment"
+      ],
+      "correctAnswer": 0,
+      "explanation": "No matter how much time you have, there's a role for you. Even delegating your voting power takes just a few minutes and ensures your ada counts."
+    },
+    {
+      "id": 2,
+      "question": "Do you want to vote on every governance proposal yourself?",
+      "options": [
+        "No, I'd rather have someone knowledgeable vote on my behalf",
+        "I'd like to follow along but let someone else decide",
+        "Yes, I want to review and vote on proposals myself",
+        "Yes, and I want to help others make informed decisions too"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Delegating to a DRep is the easiest way to participate. Your DRep votes on proposals on your behalf, and you can change your DRep anytime."
+    },
+    {
+      "id": 3,
+      "question": "How familiar are you with Cardano's technical parameters and governance processes?",
+      "options": [
+        "I'm new to this and still learning",
+        "I understand the basics but not the technical details",
+        "I'm comfortable with most governance concepts",
+        "I have deep knowledge and can explain them to others"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano governance is designed for all levels. Newcomers can delegate to experienced DReps, while experts can become DReps themselves."
+    },
+    {
+      "id": 4,
+      "question": "What motivates you most about Cardano governance?",
+      "options": [
+        "Making sure my ada has a voice without extra effort",
+        "Understanding how decentralized decision-making works",
+        "Actively shaping the future direction of Cardano",
+        "Representing my community and building trust"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Every motivation is valid. The key is to participate in whatever way works best for you, whether that's delegating, learning, or leading."
+    },
+    {
+      "id": 5,
+      "question": "Would you be comfortable making decisions that affect the entire Cardano network?",
+      "options": [
+        "I'd rather leave that to people who know more",
+        "Maybe in the future, once I learn more",
+        "Yes, I'm ready to take on that responsibility",
+        "Yes, and I want to advocate for specific policy directions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "There's no wrong answer here. Governance works best when people participate at their comfort level. You can always increase your involvement over time."
+    }
+  ]
+}

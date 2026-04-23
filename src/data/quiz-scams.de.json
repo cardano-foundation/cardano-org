@@ -1,0 +1,126 @@
+{
+  "title": "Quiz: Betrugsmaschen erkennen",
+  "description": "Teste dein Wissen über gängige Betrugsmaschen im Blockchain-Bereich und wie du dich davor schützt.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Was solltest du tun, wenn dich jemand kontaktiert und behauptet, vom offiziellen Cardano-Support zu sein?",
+      "options": [
+        "Ignorieren und niemals deine Wiederherstellungsphrase oder privaten Schlüssel teilen",
+        "Wiederherstellungsphrase teilen, damit das Wallet repariert werden kann",
+        "Ada senden, um den Wallet-Besitz zu bestätigen",
+        "Vertrauen, wenn das Profilbild seriös aussieht"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Seriöser Support kontaktiert dich niemals zuerst per Privatnachricht und fragt niemals nach deiner Wiederherstellungsphrase, Passwörtern oder privaten Schlüsseln. Wer das tut, ist ein Betrüger."
+    },
+    {
+      "id": 2,
+      "question": "Ein Livestream verspricht, deine Ada zu verdoppeln, wenn du sie an ein bestimmtes Wallet sendest. Was ist das?",
+      "options": [
+        "Ein seriöses Giveaway der Cardano Foundation",
+        "Ein Ada-Giveaway-Betrug",
+        "Eine Sonderaktion, bei der du schnell mitmachen solltest",
+        "Ein normaler Weg, mehr Ada zu verdienen"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Das ist der klassische Ada-Giveaway-Betrug. Seriöse Giveaways verlangen niemals, dass du zuerst Geld sendest. Auch wenn im Stream Charles Hoskinson oder andere bekannte Persönlichkeiten zu sehen sind – es ist eine Fälschung. Einmal gesendete Ada sind unwiederbringlich verloren."
+    },
+    {
+      "id": 3,
+      "question": "Was passiert, wenn jemand Zugang zu deiner Wiederherstellungsphrase (Seed Words) bekommt?",
+      "options": [
+        "Die Person kann dein Guthaben sehen, aber keine Ada ausgeben",
+        "Sie bekommt die volle Kontrolle über dein Wallet und kann alle Ada stehlen",
+        "Dein Ausgabepasswort schützt dein Guthaben trotzdem",
+        "Du kannst deine Ada einfach zurückbekommen, indem du den Support kontaktierst"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Wer deine Wiederherstellungsphrase hat, hat die komplette Kontrolle über dein Wallet. Kein Ausgabepasswort kann dich dann schützen, und gestohlene Ada sind für immer verloren. Teile deine Seed Words niemals mit anderen."
+    },
+    {
+      "id": 4,
+      "question": "Wie schützt du dich vor Phishing-Angriffen auf dein Wallet?",
+      "options": [
+        "Wiederherstellungsphrase an den Support geben, wenn danach gefragt wird",
+        "Auf alle Wallet-Links klicken, die per E-Mail oder Nachricht kommen",
+        "URLs genau prüfen und Wiederherstellungsphrase niemals teilen",
+        "Jeder Website vertrauen, die wie dein Wallet aussieht"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Prüfe URLs immer sorgfältig und stelle sicher, dass sie zur offiziellen Wallet-Website gehören. Teile deine Wiederherstellungsphrase mit niemandem – auch nicht mit \u201ESupport-Mitarbeitern\u201C. Hardware-Wallets und Zwei-Faktor-Authentifizierung bieten zusätzlichen Schutz."
+    },
+    {
+      "id": 5,
+      "question": "Was ist ein deutliches Warnsignal für einen möglichen Rug Pull?",
+      "options": [
+        "Ein Projekt mit transparentem, verifiziertem Team und veröffentlichten Audits",
+        "Ein anonymes Team mit unrealistischen Gewinnversprechen",
+        "Ein Projekt mit ausführlicher Dokumentation und Roadmap",
+        "Ein Team, das offen mit der Community kommuniziert"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Rug Pulls stammen häufig von anonymen Teams, die große Versprechen ohne glaubwürdige Grundlage machen. Projekte mit unrealistischen Garantien, ohne Audits und ohne Transparenz bergen ein hohes Risiko. Recherchiere immer die Referenzen des Teams, bevor du investierst."
+    },
+    {
+      "id": 6,
+      "question": "Bei welcher Art von Investmentangebot solltest du besonders skeptisch sein?",
+      "options": [
+        "Projekte, die Risiken einräumen und realistische Erwartungen setzen",
+        "Projekte, die garantiert hohe Renditen ohne Risiko versprechen",
+        "Projekte, die von Dritten geprüft wurden",
+        "Projekte, die detaillierte Whitepapers und Team-Infos bereitstellen"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Seriöse Projekte versprechen niemals garantierte Renditen. Wenn ein Investmentangebot zu gut klingt, um wahr zu sein, ist es das wahrscheinlich auch. Sei besonders vorsichtig bei unaufgeforderten Angeboten und recherchiere gründlich, bevor du investierst."
+    },
+    {
+      "id": 7,
+      "question": "Ein Moderator in einem Cardano-Forum schreibt dir eine Privatnachricht und bietet Hilfe mit deinem Wallet an. Was tust du?",
+      "options": [
+        "Wiederherstellungsphrase teilen, damit das Problem analysiert werden kann",
+        "Nicht darauf eingehen – seriöse Moderatoren kontaktieren dich nie zuerst per Privatnachricht",
+        "Ada senden, um deine Identität zu bestätigen",
+        "Vertrauen, weil die Person ein Moderator-Abzeichen hat"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Betrüger kopieren häufig die Profile echter Moderatoren. Seriöse Moderatoren kontaktieren dich niemals zuerst per Privatnachricht und fragen niemals nach deiner Wiederherstellungsphrase, Passwörtern oder Ada. Das ist immer Betrug."
+    },
+    {
+      "id": 8,
+      "question": "Was ist die beste Methode, um deine Ada sicher aufzubewahren?",
+      "options": [
+        "Seed Words zur Sicherung mit einer vertrauenswürdigen Person teilen",
+        "Wiederherstellungsphrase digital in der Cloud speichern",
+        "Wiederherstellungsphrase niemals teilen und ein Hardware-Wallet in Betracht ziehen",
+        "Wiederherstellungsphrase in einer E-Mail aufbewahren, damit du schnell darauf zugreifen kannst"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Deine Wiederherstellungsphrase sollte niemals geteilt oder digital gespeichert werden, wo sie gehackt werden kann. Bewahre sie offline an einem sicheren Ort auf. Hardware-Wallets bieten eine zusätzliche Sicherheitsebene für dein Guthaben."
+    },
+    {
+      "id": 9,
+      "question": "Was solltest du tun, bevor du in ein neues Cardano-Projekt investierst?",
+      "options": [
+        "Sofort investieren, wenn das Marketing professionell aussieht",
+        "Das Team recherchieren, nach Audits suchen und die Reputation prüfen",
+        "Dem Projekt vertrauen, wenn es viele Follower in sozialen Medien hat",
+        "Nur auf die versprochene Rendite schauen"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Recherchiere immer gründlich, bevor du investierst. Prüfe die Referenzen des Teams, suche nach unabhängigen Audits, lies die Dokumentation und verifiziere die Reputation des Projekts in der Community. Social-Media-Follower und auffälliges Marketing können gefälscht sein."
+    },
+    {
+      "id": 10,
+      "question": "Wenn du Ada an einen Betrüger sendest – wie stehen die Chancen, sie zurückzubekommen?",
+      "options": [
+        "Hoch – du kannst den Cardano-Support kontaktieren, um die Transaktion rückgängig zu machen",
+        "Mittel – die Blockchain erstattet dir automatisch den Betrag",
+        "Null – einmal gesendet, sind die Ada für immer verloren",
+        "Gut – wenn du es schnell genug meldest"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Blockchain-Transaktionen sind unumkehrbar. Einmal an einen Betrüger gesendete Ada sind für immer verloren. Deshalb sind Prävention und Aufklärung so wichtig – es gibt kein Sicherheitsnetz und keinen Kundenservice, der dir helfen kann."
+    }
+  ]
+}

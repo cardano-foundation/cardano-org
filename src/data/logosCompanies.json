@@ -1,5 +1,40 @@
 [
   {
+    "companyName": "AdaStat",
+    "imageName": "adastat",
+    "link": "https://adastat.net/about",
+    "knownFor": "AdaStat statistics and insights",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Agrow Labs",
+    "imageName": "agrowlabs",
+    "link": "https://www.agrowlabs.xyz",
+    "knownFor": "Onboard Ninja",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Anastasia Labs",
+    "imageName": "anastasialabs",
+    "link": "https://www.anastasialabs.com/",
+    "knownFor": "Lucid",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Andamio",
+    "imageName": "andamio",
+    "link": "https://www.andamio.io/about",
+    "knownFor": "Andamio",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Anvil",
+    "imageName": "anvil",
+    "link": "https://ada-anvil.io",
+    "knownFor": "Anvil API",
+    "showCompanyName": false
+  },
+  {
     "companyName": "Blink Labs",
     "imageName": "blinklabs",
     "knownFor": "gOuroboros",
@@ -14,10 +49,90 @@
     "showCompanyName": false
   },
   {
+    "companyName": "BloxBean",
+    "imageName": "bloxbean",
+    "link": "https://www.bloxbean.com/",
+    "knownFor": "Yaci DevKit",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Bodega Labs",
+    "imageName": "bodega",
+    "link": "https://www.bodegamarket.xyz/#about",
+    "knownFor": "Bodega Market",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Book.io",
+    "imageName": "book",
+    "link": "https://book.io/about-us/",
+    "knownFor": "Book.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Butane",
+    "imageName": "butane",
+    "link": "https://butane.dev/company",
+    "knownFor": "Butane Plattform",
+    "showCompanyName": false
+  },
+  {
+    "id": "cardanofoundation",
+    "companyName": "Cardano Foundation",
+    "imageName": "cardanofoundation",
+    "link": "https://cardanofoundation.org",
+    "knownFor": "Advancing Cardano as public digital infrastructure",
+    "category": "Not-for-profit organization",
+    "description": "The Cardano Foundation is an independent, Swiss-based not-for-profit organization. The Foundation is tasked with advancing the public digital infrastructure Cardano and works to anchor it as a utility for financial and social systems, thus empowering the digital architects of the future.<br /><br />The Foundation facilitates the worldwide advancement of Cardano in enterprise applications. It develops infrastructure tooling—including where there may not be an immediate commercial use case—plus strengthens operational resilience, and drives diversity of on-infrastructure use cases as well as the development of sound and representative governance.<br /><br />Another significant part of the Cardano Foundation's mission is to engage with and support the Cardano community. The Foundation assists the development of tools the community can use to leverage Cardano to solve problems in new ways.",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Charli3",
+    "imageName": "charli3",
+    "link": "https://charli3.io/",
+    "knownFor": "Decentralized Oracle solutions",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "CSWAP Systems",
+    "imageName": "cswap",
+    "link": "https://www.cswap.fi/",
+    "knownFor": "CSWAP DEX",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Dano Finance",
+    "imageName": "dano-finance",
+    "link": "https://app.danogo.io/about-us",
+    "knownFor": "Dano Finance",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "DCOne Crypto",
+    "imageName": "dcone",
+    "link": "https://dconecrypto.finance/",
+    "knownFor": "DCOne Crypto Webhook",
+    "showCompanyName": false
+  },
+  {
     "companyName": "dcSpark",
     "imageName": "dcspark",
     "knownFor": "Flint wallet",
     "link": "https://dcspark.io",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Dune Innovations",
+    "imageName": "dune-innovations",
+    "link": "https://www.duneinnovations.com",
+    "knownFor": "Adastack.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "DexHunter",
+    "imageName": "dexhunter",
+    "link": "https://www.dexhunter.io/",
+    "knownFor": "DexHunter DEX Aggregator",
     "showCompanyName": true
   },
   {
@@ -28,6 +143,30 @@
     "showCompanyName": true
   },
   {
+    "id": "emurgo",
+    "companyName": "EMURGO",
+    "imageName": "emurgo",
+    "link": "https://emurgo.io",
+    "knownFor": "Driving adoption of Cardano's Web3 ecosystem",
+    "category": "For-profit arm of Cardano",
+    "description": "EMURGO is a blockchain technology company and a founding entity of the Cardano blockchain that provides products and services to drive the adoption of Cardano's Web3 ecosystem. Established in 2015 in Japan, EMURGO's mission is to facilitate commercial adoption through dynamic partnerships with existing ecosystem members and the seamless integration of new entrants.<br /><br />By prioritizing investments, delivering continuous education, and providing infrastructure services, EMURGO aims to unlock the full potential of the Cardano ecosystem.",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "FT Labs GmbH",
+    "imageName": "fluidtokens",
+    "link": "https://fluidtokens.com/team",
+    "knownFor": "FluidTokens",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Genius Yield",
+    "imageName": "genius-yield",
+    "link": "https://www.geniusyield.co/",
+    "knownFor": "Genius Yield DEX",
+    "showCompanyName": false
+  },
+  {
     "companyName": "Guild Operators",
     "imageName": "guild",
     "link": "https://cardano-community.github.io/guild-operators/contributors/",
@@ -35,10 +174,37 @@
     "showCompanyName": true
   },
   {
+    "companyName": "Harmonic Labs",
+    "imageName": "harmonic",
+    "link": "https://www.harmoniclabs.tech/",
+    "knownFor": "plu-ts",
+    "showCompanyName": true
+  },
+  {
     "companyName": "Iagon",
     "imageName": "iagon",
     "link": "https://iagon.com",
     "knownFor": "decentralized cloud storage",
+    "showCompanyName": false
+  },
+  {
+    "id": "iog",
+    "companyName": "Input Output",
+    "imageName": "iog",
+    "link": "https://iohk.io",
+    "knownFor": "Research and engineering for Cardano",
+    "category": "Research and engineering company",
+    "description": "Input Output is a research and engineering company and venture studio that builds blockchain and Web3 products to empower everyone, everywhere.<br /><br />Founded by Charles Hoskinson and Jeremy Wood, Input Output was one of the three pioneer entities behind Cardano, originally contracted to design, build, and help maintain the Cardano platform. A fully decentralized company, Input Output is comprised of dynamic, innovative teams– based all over the world, collectively committed to innovation through delivering the highest standards in software engineering based on rigorous peer-to-peer reviewed science.<br /><br />Input Output is a leader in building distributed computing systems and decentralized technology solutions. The company continues to research and build new paradigms and products in the field of distributed ledger technology and the architecture of Web3. Input Output is committed to open-source principles, and ethical, purpose-driven business, creating technology to benefit the many, not the few. Just like the Cardano Foundation and EMURGO, driving blockchain education is core to Input Output's philosophy. IO Research is focused on promoting the academic study of blockchain, supported by a team of educators, academic partners, and specially developed courses.",
+    "showCompanyName": false
+  },
+  {
+    "id": "intersect",
+    "companyName": "Intersect",
+    "imageName": "intersect",
+    "link": "https://intersectmbo.org",
+    "knownFor": "Empowering distributed development on Cardano",
+    "category": "Member based organization",
+    "description": "Intersect is a not-for-profit member-based organization for the Cardano ecosystem. Intersect acts as a champion for distributed development and is committed to empowering the Cardano community to build together and drive the blockchain forward. Our mission is to ensure, through our members, the lasting continuity and progressive development of Cardano - fostering a self-sustaining ecosystem that's fit-for-purpose, perpetually future-proof, resilient, secure, and transparent.<br /><br />Enablement is a key foundation of this work, providing the necessary inclusive contributory opportunities to allow every member of Intersect to have their voice heard. By providing additional governance processes and structure, from maintenance to development and testing to fundraising, Intersect enables the community to continue to advance the protocol.",
     "showCompanyName": false
   },
   {
@@ -56,6 +222,34 @@
     "showCompanyName": true
   },
   {
+    "companyName": "Kora Labs",
+    "imageName": "koralabs",
+    "link": "https://koralabs.io/",
+    "knownFor": "handle.me",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Lantr.io",
+    "imageName": "lantr",
+    "link": "https://lantr.io/",
+    "knownFor": "Scalus",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Liqwid Labs",
+    "imageName": "liqwid",
+    "link": "https://liqwid.finance/team",
+    "knownFor": "Liqwid Pooled Lending Protocol",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Maestro Blockchain",
+    "imageName": "maestro",
+    "link": "https://www.gomaestro.org/",
+    "knownFor": "Maestro DApp Platform",
+    "showCompanyName": false
+  },
+  {
     "companyName": "MeshJS",
     "imageName": "mesh",
     "link": "https://meshjs.dev/about",
@@ -63,10 +257,76 @@
     "showCompanyName": true
   },
   {
+    "companyName": "Minswap Labs LLC",
+    "imageName": "minswap",
+    "link": "https://minswap.org/about-us",
+    "knownFor": "Minswap DEX",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "NFTCDN LTD",
+    "imageName": "nftcdn",
+    "link": "https://nftcdn.io/about",
+    "knownFor": "NFTCDN API",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "No Witness Labs",
+    "imageName": "nowitnesslabs",
+    "link": "https://nowitnesslabs.com/",
+    "knownFor": "Evolution SDK",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "OpShin",
+    "imageName": "opshin",
+    "link": "https://opshin.dev/",
+    "knownFor": "OpShin Toolchain",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Optim",
+    "imageName": "optim",
+    "link": "https://www.optim.finance/",
+    "knownFor": "Optim Finance",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Orcfax Ltd.",
+    "imageName": "orcfax",
+    "link": "https://orcfax.io/#about",
+    "knownFor": "Orcfax Oracle",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "PoolTool",
+    "imageName": "pooltool",
+    "link": "https://pooltool.io/about",
+    "knownFor": "PoolTool for SPOs and stakeholders",
+    "showCompanyName": true
+  },
+  {
+    "id": "pragma",
+    "companyName": "PRAGMA",
+    "imageName": "pragma",
+    "link": "https://pragma.builders",
+    "knownFor": "Open-source tools for Cardano and beyond",
+    "category": "Not-for-profit Swiss Association",
+    "description": "PRAGMA is a member-based, not-for-profit open source Association for blockchain software projects. It aims to foster an alternative open-source ecosystem for Cardano and beyond. A team of passionate software engineers from various backgrounds who build open-source tools for developers aiming for mass adoption.<br /><br />By delivering solutions in small steps, PRAGMA intend to involve other builders to create strong open-source communities. Projects under PRAGMA are open to contributions and will onboard those who want to get involved.",
+    "showCompanyName": false
+  },
+  {
     "companyName": "Saib",
     "imageName": "saib",
     "link": "https://saib.dev",
     "knownFor": "Argus (Cardano.Sync)",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "SIDAN Lab",
+    "imageName": "sidanlab",
+    "link": "https://sidan.io/",
+    "knownFor": "Whisky",
     "showCompanyName": false
   },
   {
@@ -84,10 +344,31 @@
     "showCompanyName": false
   },
   {
+    "companyName": "TapTools",
+    "imageName": "taptools",
+    "link": "https://www.taptools.io/",
+    "knownFor": "Token distribution, comprehensive charts, NFT generation",
+    "showCompanyName": true
+  },
+  {
     "companyName": "Tastenkunst GmbH",
     "imageName": "tastenkunst",
     "link": "https://www.tastenkunst.com",
     "knownFor": "Eternl wallet",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Tavern Studios LTD",
+    "imageName": "tavern-studios",
+    "link": "https://tavernstudios.io",
+    "knownFor": "Ale & Axes",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Tokeo Labs",
+    "imageName": "tokeo",
+    "link": "https://tokeo.io/team/",
+    "knownFor": "TokeoPay",
     "showCompanyName": true
   },
   {
@@ -105,52 +386,52 @@
     "showCompanyName": false
   },
   {
-    "companyName": "World Mobile",
-    "imageName": "worldmobile",
-    "link": "https://worldmobile.io",
-    "knownFor": " decentralized internet connectivity",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "Minswap Labs LLC",
-    "imageName": "minswap",
-    "link": "https://minswap.org/about-us",
-    "knownFor": " Minswap DEX",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "Dano Foundation",
-    "imageName": "danogo",
-    "link": "https://app.danogo.io/about-us",
-    "knownFor": " Danogo",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "Tavern Studios LTD",
-    "imageName": "tavern-studios",
-    "link": "https://tavernstudios.io",
-    "knownFor": "Ale & Axes",
-    "showCompanyName": false
- },
- {
-    "companyName": "Andamio",
-    "imageName": "andamio",
-    "link": "https://www.andamio.io/about",
-    "knownFor": "Andamio",
+    "companyName": "UTXOS",
+    "imageName": "utxos",
+    "link": "https://utxos.dev/",
+    "knownFor": "UTXOS Web3 Services",
     "showCompanyName": true
   },
   {
-    "companyName": "FT Labs GmbH",
-    "imageName": "fluidtokens",
-    "link": "https://fluidtokens.com/team",
-    "knownFor": " FluidTokens",
+    "companyName": "Vellum Labs",
+    "imageName": "vellumlabs",
+    "link": "https://vellumlabs.cz",
+    "knownFor": "Cexplorer.io",
     "showCompanyName": false
   },
   {
-    "companyName": "SIDAN Lab",
-    "imageName": "sidanlab",
-    "link": "https://sidan.io/",
-    "knownFor": " Whisky",
+    "companyName": "VESPR",
+    "imageName": "vespr",
+    "link": "https://vespr.xyz/about",
+    "knownFor": "VESPR Wallet",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "WingRiders",
+    "imageName": "wingriders",
+    "link": "https://www.wingriders.com/about-us",
+    "knownFor": "WingRiders DEX",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "World Mobile",
+    "imageName": "worldmobile",
+    "link": "https://worldmobile.io",
+    "knownFor": "decentralized internet connectivity",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Xerberus Labs",
+    "imageName": "xerberus",
+    "link": "https://www.xerberus.io/",
+    "knownFor": "Xerberus RiskFi Protocol",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "zenGate",
+    "imageName": "zengate",
+    "link": "https://www.zengate.global/",
+    "knownFor": "Palmyra Platform",
     "showCompanyName": false
   },
   {

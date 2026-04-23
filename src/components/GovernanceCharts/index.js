@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ReactFlowProvider } from "@xyflow/react";
 import GovernanceGraphs from "@site/src/components/GovernanceGraphs";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import generalCharts from "@site/src/data/governanceChartsGeneral.json";
 import infoActionCharts from "@site/src/data/governanceChartsInfoActions.json";
 import protocolParamCharts from "@site/src/data/governanceChartsProtocolParams.json";
 import criticalParamCharts from "@site/src/data/governanceChartsCriticalParams.json";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 
 // Simple markdown to HTML converter
 const markdownToHtml = (markdown) => {
@@ -93,30 +95,84 @@ const manualParametersList = [
 // Extract parameters from text
 const extractParameters = (parameterDetails) => {
   if (!parameterDetails) return [];
-
   const paramsList = [];
   for (const param of manualParametersList) {
     if (parameterDetails.toLowerCase().includes(param.toLowerCase())) {
       paramsList.push(param);
     }
   }
-
   return paramsList;
 };
 
-export default function GovernanceCharts() {
-  const [activeCategory, setActiveCategory] = useState(null);
+// shallow equality for arrays (order-insensitive)
+const sameSet = (a = [], b = []) => {
+  if (a.length !== b.length) return false;
+  const sa = new Set(a);
+  for (const x of b) if (!sa.has(x)) return false;
+  return true;
+};
+
+export default function GovernanceCharts({
+  initialCategory = null,
+  initialChartId = null,
+  initialParameters = [],
+  onSelectionChange,
+  urlSignature = '',
+}) {
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory || (initialChartId ? initialChartId.split(':')[0] : null)
+  );
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
   const [graphsData, setGraphsData] = useState({});
   const [allGraphs, setAllGraphs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
-  const [selectedParameters, setSelectedParameters] = useState([]);
-  const [activeChartId, setActiveChartId] = useState(null); // Add a unique identifier for active chart
+  const [selectedParameters, setSelectedParameters] = useState(initialParameters);
+  // remember last selection
+  const lastReportedRef = useRef({ category: initialCategory || null, parameters: [...initialParameters].sort() });
+
+  const sameSelection = (a, b) => {
+    if ((a.category || null) !== (b.category || null)) return false;
+    const ap = [...(a.parameters || [])].sort();
+    const bp = [...(b.parameters || [])].sort();
+    if (ap.length !== bp.length) return false;
+    for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
+    return true;
+  };
+  const [activeChartId, setActiveChartId] = useState(initialChartId);
 
   const parametersDropdownRef = useRef(null);
   const parametersButtonRef = useRef(null);
+  const activeChartRef = useRef(null);
+
+  const lastUrlSigRef = useRef(urlSignature);
+
+  //useEffect(() => { console.log('PARAMS', selectedParameters) }, [selectedParameters]);
+
+  // React to external URL changes (back/forward or parent updates)
+  useEffect(() => {
+    // only if URL has realy changed
+    if (urlSignature !== lastUrlSigRef.current) {
+      if (initialCategory !== activeCategory) {
+        setActiveCategory(initialCategory || null);
+        setActiveGraphIndex(null);
+        setActiveChartId(null);
+      }
+      if (!sameSet(initialParameters, selectedParameters)) {
+        setSelectedParameters(initialParameters || []);
+        setActiveGraphIndex(null);
+        setActiveChartId(null);
+      }
+      lastUrlSigRef.current = urlSignature;
+      lastReportedRef.current = {
+        category: initialCategory || null,
+        parameters: [...(initialParameters || [])].sort(),
+      };
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlSignature, initialCategory, initialParameters]);
+
 
   // Initialize charts data
   useEffect(() => {
@@ -126,9 +182,7 @@ export default function GovernanceCharts() {
     Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
       const categoryGraphs = data.map((chart) => {
         const parameters = extractParameters(chart.parameterDetails);
-        // Create a unique ID for each chart based on category and title
         const chartId = `${category}:${chart.title}`;
-
         return {
           id: chartId,
           title: chart.title,
@@ -139,7 +193,6 @@ export default function GovernanceCharts() {
           parameters: parameters,
         };
       });
-
       organizedData[category] = categoryGraphs;
       allGraphsList = [...allGraphsList, ...categoryGraphs];
     });
@@ -151,6 +204,13 @@ export default function GovernanceCharts() {
   useEffect(() => {
     setActiveGraphIndex(null);
   }, [activeCategory]);
+
+  useEffect(() => {
+    if (!initialChartId) return;
+    const t = setTimeout(() => scrollToElement(activeChartRef.current), 600);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Filter charts based on search term and parameters
   useEffect(() => {
@@ -166,13 +226,9 @@ export default function GovernanceCharts() {
           !searchTerm ||
           graph.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
           (graph.description &&
-            graph.description
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())) ||
+            graph.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (graph.parameterDetails &&
-            graph.parameterDetails
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())) ||
+            graph.parameterDetails.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (graph.parameters &&
             graph.parameters.some((param) =>
               param.toLowerCase().includes(searchTerm.toLowerCase())
@@ -181,9 +237,7 @@ export default function GovernanceCharts() {
         const paramMatch =
           selectedParameters.length === 0 ||
           (graph.parameters &&
-            selectedParameters.some((param) =>
-              graph.parameters.includes(param)
-            ));
+            selectedParameters.some((param) => graph.parameters.includes(param)));
 
         return textMatch && paramMatch;
       });
@@ -215,13 +269,23 @@ export default function GovernanceCharts() {
     };
   }, [parametersDropdownOpen]);
 
+  // ────────────────────────────────────────────────────────────────────────
+  // URL sync: report selection changes upward
+  // ────────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const current = { category: activeCategory || null, parameters: selectedParameters };
+    if (!sameSelection(current, lastReportedRef.current)) {
+      lastReportedRef.current = { category: current.category, parameters: [...current.parameters].sort() };
+      onSelectionChange?.(current);
+    }
+  }, [activeCategory, selectedParameters, onSelectionChange]);
+
   // Event handlers
   const handleCategorySelect = (category) => {
     setActiveCategory(category === activeCategory ? null : category);
     setSearchTerm("");
   };
 
-  // Handle graph selection
   const handleGraphSelect = (index, category, event) => {
     if (
       event.target.closest(".Collapsible__trigger") ||
@@ -255,12 +319,13 @@ export default function GovernanceCharts() {
     }
   };
 
-  const handleParameterSelect = (parameter) => {
-    if (selectedParameters.includes(parameter)) {
-      setSelectedParameters(selectedParameters.filter((p) => p !== parameter));
-    } else {
-      setSelectedParameters([...selectedParameters, parameter]);
-    }
+  const handleParameterSelect = (parameter, nextChecked) => {
+    setSelectedParameters((prev) => {
+      if (nextChecked) {
+        return prev.includes(parameter) ? prev : [...prev, parameter];
+      }
+      return prev.filter((p) => p !== parameter);
+    });
   };
 
   const removeParameterTag = (parameter) => {
@@ -270,11 +335,7 @@ export default function GovernanceCharts() {
   const clearAllTags = () => {
     setSelectedParameters([]);
     setSearchTerm("");
-    setActiveCategory(null); // Reset to initial state
-  };
-
-  const handleContentClick = (event) => {
-    event.stopPropagation();
+    setActiveCategory(null);
   };
 
   const toggleParametersDropdown = () => {
@@ -288,7 +349,7 @@ export default function GovernanceCharts() {
         <div className={styles.searchInputContainer}>
           <input
             type="text"
-            placeholder="Search for charts or parameters..."
+            placeholder={translate({id: 'governanceCharts.searchPlaceholder', message: 'Search for charts or parameters...'})}
             value={searchTerm}
             onChange={(e) => {
               const newValue = e.target.value;
@@ -304,7 +365,7 @@ export default function GovernanceCharts() {
             onClick={toggleParametersDropdown}
             ref={parametersButtonRef}
           >
-            Parameters ▼
+            {translate({id: 'governanceCharts.parametersButton', message: 'Parameters ▼'})}
           </button>
         </div>
 
@@ -313,25 +374,32 @@ export default function GovernanceCharts() {
             className={styles.parametersDropdown}
             ref={parametersDropdownRef}
           >
-            <div className={styles.dropdownTitle}>Available Parameters:</div>
-            <div className={styles.parametersList}>
-              {manualParametersList.map((param, index) => (
-                <div
-                  key={index}
-                  className={styles.parameterItem}
-                  onClick={() => handleParameterSelect(param)}
-                >
-                  <input
-                    type="checkbox"
-                    className={styles.parameterCheckbox}
-                    checked={selectedParameters.includes(param)}
-                    onChange={() => {}}
-                  />
-                  {param}
-                </div>
-              ))}
+            <div className={styles.dropdownTitle}>{translate({id: 'governanceCharts.availableParameters', message: 'Available Parameters:'})}</div>
+              <div className={styles.parametersList}>
+                {manualParametersList.map((param, index) => {
+                  const checked = selectedParameters.includes(param);
+                  return (
+                    <label key={param} className={styles.parameterItem}>
+                      <input
+                        type="checkbox"
+                        className={styles.parameterCheckbox}
+                        checked={checked}
+                        onChange={(e) => {
+                          const nextChecked = e.target.checked;
+                          setSelectedParameters((prev) => {
+                            if (nextChecked) {
+                              return prev.includes(param) ? prev : [...prev, param];
+                            }
+                            return prev.filter((p) => p !== param);
+                          });
+                        }}
+                      />
+                      <span className={styles.parameterLabel}>{param}</span>
+                    </label>
+                  );
+                })}
+              </div>
             </div>
-          </div>
         )}
 
         {/* Selected Parameter Tags */}
@@ -354,7 +422,7 @@ export default function GovernanceCharts() {
                 className={`button ${styles.clearTagsButton}`}
                 onClick={clearAllTags}
               >
-                Clear All
+                {translate({id: 'governanceCharts.clearAll', message: 'Clear All'})}
               </button>
             )}
           </div>
@@ -363,7 +431,7 @@ export default function GovernanceCharts() {
 
       {/* Category Selection */}
       <div className={styles.categorySelection}>
-        <div className={styles.selectionTitle}>Select a category:</div>
+        <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectCategory', message: 'Select a category:'})}</div>
         <div className={styles.categoryButtons}>
           {Object.values(CATEGORIES).map((category) => (
             <button
@@ -384,22 +452,33 @@ export default function GovernanceCharts() {
         <div className={styles.graphSelection}>
           <div className={styles.selectionTitle}>
             {searchTerm && selectedParameters.length > 0
-              ? "Search Results & Parameter Filtered Charts:"
+              ? translate({id: 'governanceCharts.searchAndParamResults', message: 'Search Results & Parameter Filtered Charts:'})
               : searchTerm
-              ? "Search Results:"
-              : "Parameter Filtered Charts:"}
+              ? translate({id: 'governanceCharts.searchResults', message: 'Search Results:'})
+              : translate({id: 'governanceCharts.paramFilteredCharts', message: 'Parameter Filtered Charts:'})}
           </div>
           {searchResults.length > 0 ? (
             <div className={`${styles.graphList} Collapsible`}>
               {searchResults.map((graph, index) => (
                 <div
                   key={index}
+                  ref={activeChartId === graph.id ? activeChartRef : null}
                   className={`${styles.graphItem} Collapsible ${
                     index % 2 === 0 ? "even" : "odd"
                   } ${activeChartId === graph.id ? "active" : ""}`}
-                  onClick={(e) => handleGraphSelect(index, graph.category, e)}
                 >
-                  <div className="Collapsible__trigger">
+                  <div
+                    className="Collapsible__trigger"
+                    role="button"
+                    tabIndex={0}
+                    onClick={(e) => handleGraphSelect(index, graph.category, e)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleGraphSelect(index, graph.category, e);
+                      }
+                    }}
+                  >
                     <h4 className={styles.graphTitle}>
                       <span>{graph.title}</span>
                       <div className={styles.graphCategory}>
@@ -408,16 +487,13 @@ export default function GovernanceCharts() {
                     </h4>
                   </div>
                   {activeChartId === graph.id && (
-                    <div
-                      className={`${styles.graphContent} Collapsible__contentInner`}
-                      onClick={handleContentClick}
-                    >
+                    <div className={`${styles.graphContent} Collapsible__contentInner`}>
                       <p className={styles.graphDescription}>
                         {graph.description}
                       </p>
                       {graph.parameterDetails && (
                         <div className={styles.parameterDetails}>
-                          <h4>Parameter Details</h4>
+                          <h4>{translate({id: 'governanceCharts.parameterDetails', message: 'Parameter Details'})}</h4>
                           <div
                             className="markdown"
                             dangerouslySetInnerHTML={{
@@ -444,10 +520,10 @@ export default function GovernanceCharts() {
           ) : (
             <div className={styles.noResults}>
               {searchTerm && selectedParameters.length > 0
-                ? `No charts found matching "${searchTerm}" with the selected parameters.`
+                ? translate({id: 'governanceCharts.noResults.searchAndParams', message: 'No charts found matching "{searchTerm}" with the selected parameters.'}).replace('{searchTerm}', searchTerm)
                 : searchTerm
-                ? `No charts found matching "${searchTerm}"`
-                : "No charts found with the selected parameters."}
+                ? translate({id: 'governanceCharts.noResults.search', message: 'No charts found matching "{searchTerm}"'}).replace('{searchTerm}', searchTerm)
+                : translate({id: 'governanceCharts.noResults.params', message: 'No charts found with the selected parameters.'})}
             </div>
           )}
         </div>
@@ -455,33 +531,41 @@ export default function GovernanceCharts() {
         graphsData[activeCategory] &&
         graphsData[activeCategory].length > 0 ? (
         <div className={styles.graphSelection}>
-          <div className={styles.selectionTitle}>Select a chart:</div>
+          <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectChart', message: 'Select a chart:'})}</div>
           <div className={`${styles.graphList} Collapsible`}>
             {graphsData[activeCategory].map((graph, index) => (
               <div
                 key={index}
+                ref={activeChartId === graph.id ? activeChartRef : null}
                 className={`${styles.graphItem} Collapsible ${
                   index % 2 === 0 ? "even" : "odd"
                 } ${activeChartId === graph.id ? "active" : ""}`}
-                onClick={(e) => handleGraphSelect(index, activeCategory, e)}
               >
-                <div className="Collapsible__trigger">
+                <div
+                  className="Collapsible__trigger"
+                  role="button"
+                  tabIndex={0}
+                  onClick={(e) => handleGraphSelect(index, activeCategory, e)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleGraphSelect(index, activeCategory, e);
+                    }
+                  }}
+                >
                   <h4 className={styles.graphTitle}>
                     <span>{graph.title}</span>
                     <div className={styles.graphCategory}>{graph.category}</div>
                   </h4>
                 </div>
                 {activeChartId === graph.id && (
-                  <div
-                    className={`${styles.graphContent} Collapsible__contentInner`}
-                    onClick={handleContentClick}
-                  >
+                  <div className={`${styles.graphContent} Collapsible__contentInner`}>
                     <p className={styles.graphDescription}>
                       {graph.description}
                     </p>
                     {graph.parameterDetails && (
                       <div className={styles.parameterDetails}>
-                        <h4>Parameter Details</h4>
+                        <h4>{translate({id: 'governanceCharts.parameterDetails', message: 'Parameter Details'})}</h4>
                         <div
                           className="markdown"
                           dangerouslySetInnerHTML={{
@@ -506,13 +590,12 @@ export default function GovernanceCharts() {
         </div>
       ) : activeCategory ? (
         <div className={styles.emptyState}>
-          <p>No charts available for this category yet.</p>
+          <p>{translate({id: 'governanceCharts.emptyState', message: 'No charts available for this category yet.'})}</p>
         </div>
       ) : (
         <div className={styles.initialPrompt}>
           <p>
-            Please select a category to view available governance charts, or use
-            the search to find specific charts.
+            {translate({id: 'governanceCharts.initialPrompt', message: 'Please select a category to view available governance charts, or use the search to find specific charts.'})}
           </p>
         </div>
       )}

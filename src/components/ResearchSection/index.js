@@ -2,6 +2,7 @@ import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
+import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider";
@@ -42,7 +43,7 @@ function Category({
         {/* Papers section */}
         {papers && papers.length > 0 && (
           <div className={styles.papers}>
-            <h3>Papers</h3>
+            <h3>{translate({id: 'research.headings.papers', message: 'Papers'})}</h3>
             <ul>
               {papers.map((paper, index) => (
                 <li key={index}>
@@ -55,7 +56,7 @@ function Category({
         {/* Specifications section */}
         {specifications && specifications.length > 0 && (
           <div className={styles.specifications}>
-            <h3>Specifications</h3>
+            <h3>{translate({id: 'research.headings.specifications', message: 'Specifications'})}</h3>
             <ul>
               {specifications.map((specification, index) => (
                 <li key={index}>
@@ -85,10 +86,9 @@ export default function EnterpriseSection({}) {
         title="Byron"
         imageName="byron"
         isImageRight={false}
-        subtitle="Foundation"
+        subtitle={translate({id: 'research.byron.subtitle', message: 'Foundation'})}
         description={[
-          "A period dedicated to building a foundational federated network that enabled the purchase \
-          and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol.",
+          translate({id: 'research.byron.description', message: 'A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol.'}),
         ]}
         papers={[
           {
@@ -127,11 +127,9 @@ export default function EnterpriseSection({}) {
         title="Shelley"
         imageName="shelley"
         isImageRight={true}
-        subtitle="Decentralization"
+        subtitle={translate({id: 'research.shelley.subtitle', message: 'Decentralization'})}
         description={[
-          "A period of growth and development occurred for the network, focusing on ensuring greater decentralization. \
-          This phase led to enhanced security and a more robust environment, following the transition where the majority \
-          of nodes became operated by network participants.",
+          translate({id: 'research.shelley.description', message: 'A period of growth and development occurred for the network, focusing on ensuring greater decentralization. This phase led to enhanced security and a more robust environment, following the transition where the majority of nodes became operated by network participants.'}),
         ]}
         papers={[
           {
@@ -159,7 +157,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Flexible Formality: Practical Experience with Agile Formal Methods",
-            url: "https://iohk.io/en/research/library/papers/flexible-formalitypractical-experience-with-agile-formal-methods/",
+            url: "https://www.iog.io/papers/flexible-formality-practical-experience-with-agile-formal-methods",
           },
           {
             title: "Coalition-Safe Equilibria with Virtual Payoffs",
@@ -185,10 +183,9 @@ export default function EnterpriseSection({}) {
         title="Goguen"
         imageName="goguen"
         isImageRight={false}
-        subtitle="Smart Contracts"
+        subtitle={translate({id: 'research.goguen.subtitle', message: 'Smart Contracts'})}
         description={[
-          "The Goguen era introduced smart-contract functionality, enabling the construction of decentralized applications \
-          while supporting multifunctional assets, fungible, and non-fungible token standards.",
+          translate({id: 'research.goguen.description', message: 'The Goguen era introduced smart-contract functionality, enabling the construction of decentralized applications while supporting multifunctional assets, fungible, and non-fungible token standards.'}),
         ]}
         papers={[
           {
@@ -197,7 +194,7 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "UTXOma: UTXO with Multi-Asset Support",
-            url: "https://iohk.io/en/research/library/papers/utxoma-utxo-with-multi-asset-support/",
+            url: "https://www.iog.io/papers/utxomautxo-with-multi-asset-support",
           },
           {
             title: "Native Custom Tokens in the Extended UTXO Model",
@@ -214,21 +211,21 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "Marlowe: financial contracts on blockchain",
-            url: "https://iohk.io/en/research/library/papers/marlowefinancial-contracts-on-blockchain/",
+            url: "https://www.iog.io/papers/marlowe-financial-contracts-on-blockchain/",
           },
           {
             title:
               "Marlowe: implementing and analysing financial contracts on blockchain",
-            url: "https://iohk.io/en/research/library/papers/marloweimplementing-and-analysing-financial-contracts-on-blockchain/",
+            url: "https://www.iog.io/papers/marlowe-implementing-and-analysing-financial-contracts-on-blockchain/",
           },
           {
             title:
               "Unraveling recursion: compiling an IR with recursion to System F",
-            url: "https://iohk.io/en/research/library/papers/unraveling-recursioncompiling-an-ir-with-recursion-to-system-f/",
+            url: "https://www.iog.io/papers/unraveling-recursion-compiling-an-ir-with-recursion-to-system-f/",
           },
           {
             title: "System F in Agda, for fun and profit",
-            url: "https://iohk.io/en/research/library/papers/system-f-in-agdafor-fun-and-profit/",
+            url: "https://www.iog.io/papers/system-f-in-agda-for-fun-and-profit/",
           },
           {
             title: "Translation Certification for Smart Contracts",
@@ -254,11 +251,9 @@ export default function EnterpriseSection({}) {
         title="Basho"
         imageName="basho"
         isImageRight={true}
-        subtitle="Scaling"
+        subtitle={translate({id: 'research.basho.subtitle', message: 'Scaling'})}
         description={[
-          "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network \
-          performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with \
-          immense potential to extend the network’s capabilities.",
+          translate({id: 'research.basho.description', message: "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with immense potential to extend the network's capabilities."}),
         ]}
         papers={[
           {
@@ -274,12 +269,12 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Interhead Hydra: Two Heads are Better than One",
-            url: "https://iohk.io/en/research/library/papers/interhead-hydratwo-heads-are-better-than-one/",
+            url: "https://www.iog.io/papers/interhead-hydra-two-heads-are-better-than-one/",
           },
           {
             title:
               "Mithril: Stake-based Threshold Multisignatures",
-            url: "https://iohk.io/en/research/library/papers/mithrilstake-based-threshold-multisignatures/",
+            url: "https://www.iog.io/papers/mithril-stake-based-threshold-multisignatures/",
           },
           {
             title:
@@ -289,7 +284,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "Djed: A Formally Verified Crypto-Backed Pegged Algorithmic Stablecoin",
-            url: "https://iohk.io/en/research/library/papers/djeda-formally-verified-crypto-backed-pegged-algorithmic-stablecoin/",
+            url: "https://www.iog.io/papers/djed-a-formally-verified-crypto-backed-pegged-algorithmic-stablecoin/",
           },
         ]}
         specifications={[
@@ -306,11 +301,9 @@ export default function EnterpriseSection({}) {
         title="Voltaire"
         imageName="voltaire"
         isImageRight={false}
-        subtitle="Governance"
+        subtitle={translate({id: 'research.voltaire.subtitle', message: 'Governance'})}
         description={[
-          "The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is \
-          introducing a voting and treasury system that allows network participants to use their stake and voting rights \
-          to influence the future development of the blockchain.",
+          translate({id: 'research.voltaire.description', message: 'The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is introducing a voting and treasury system that allows network participants to use their stake and voting rights to influence the future development of the blockchain.'}),
         ]}
         papers={[
           {
@@ -326,7 +319,7 @@ export default function EnterpriseSection({}) {
           {
             title:
               "SoK: Blockchain Governance",
-            url: "https://iohk.io/en/research/library/papers/sokblockchain-governance/yyyy",
+            url: "https://www.iog.io/papers/sok-blockchain-governance",
           },
         ]}
         specifications={[

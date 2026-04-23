@@ -10,12 +10,13 @@ import { toPng } from "html-to-image";
 import "@xyflow/react/dist/style.css";
 import styles from "./styles.module.css";
 import { useColorMode } from "@docusaurus/theme-common";
+import {translate} from '@docusaurus/Translate';
 
 // Fallback component for when ReactFlow fails
 const FallbackComponent = ({ data }) => (
   <div className={styles.flowError}>
-    <p>Graph visualization unavailable</p>
-    <p>Data preview:</p>
+    <p>{translate({id: 'governanceGraphs.fallback.unavailable', message: 'Graph visualization unavailable'})}</p>
+    <p>{translate({id: 'governanceGraphs.fallback.preview', message: 'Data preview:'})}</p>
     <pre style={{ fontSize: "11px", overflow: "auto", maxHeight: "200px" }}>
       {JSON.stringify(data, null, 2)}
     </pre>
@@ -310,7 +311,7 @@ export default function FlowChart({
               className={`button ${styles.downloadButton}`}
               disabled={downloading}
             >
-              {downloading ? "Downloading..." : "Download Image"}
+              {downloading ? translate({id: 'governanceGraphs.downloading', message: 'Downloading...'}) : translate({id: 'governanceGraphs.downloadImage', message: 'Download Image'})}
             </button>
           </Panel>
         </ReactFlow>

@@ -1,0 +1,77 @@
+{
+  "lastUpdated": "2026-04-23T06:31:28.129Z",
+  "languages": [
+    {
+      "id": "de",
+      "name": "German",
+      "translationProgress": 56,
+      "approvalProgress": 0,
+      "words": {
+        "total": 38628,
+        "translated": 21727,
+        "preTranslateAppliedTo": 0,
+        "approved": 13
+      },
+      "phrases": {
+        "total": 3658,
+        "translated": 1928,
+        "preTranslateAppliedTo": 0,
+        "approved": 5
+      }
+    },
+    {
+      "id": "ja",
+      "name": "Japanese",
+      "translationProgress": 49,
+      "approvalProgress": 45,
+      "words": {
+        "total": 38628,
+        "translated": 19045,
+        "preTranslateAppliedTo": 0,
+        "approved": 17621
+      },
+      "phrases": {
+        "total": 3658,
+        "translated": 1857,
+        "preTranslateAppliedTo": 0,
+        "approved": 1621
+      }
+    },
+    {
+      "id": "es-ES",
+      "name": "Spanish",
+      "translationProgress": 35,
+      "approvalProgress": 33,
+      "words": {
+        "total": 38628,
+        "translated": 13792,
+        "preTranslateAppliedTo": 0,
+        "approved": 12989
+      },
+      "phrases": {
+        "total": 3658,
+        "translated": 1711,
+        "preTranslateAppliedTo": 0,
+        "approved": 1661
+      }
+    },
+    {
+      "id": "vi",
+      "name": "Vietnamese",
+      "translationProgress": 14,
+      "approvalProgress": 0,
+      "words": {
+        "total": 38628,
+        "translated": 5544,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      },
+      "phrases": {
+        "total": 3658,
+        "translated": 779,
+        "preTranslateAppliedTo": 0,
+        "approved": 0
+      }
+    }
+  ]
+}

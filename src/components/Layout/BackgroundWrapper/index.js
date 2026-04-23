@@ -34,6 +34,9 @@ export default function BackgroundWrapper({ children, backgroundType }) {
     case "ada":
       wrapperClassName = styles.backgroundAda;
       break;
+    case "adaLight":
+      wrapperClassName = styles.backgroundAdaLight;
+      break;
     default:
       wrapperClassName = styles.backgroundNone;
   }

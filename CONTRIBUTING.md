@@ -14,6 +14,11 @@ Please check out our [Discussions section](https://github.com/cardano-foundation
 
 Discussions are also the place to talk about your ideas on how to improve cardano.org and engage with other contributors.
 
+## Before writing code or content
+
+Please search existing issues and discussions to avoid duplicate work.
+If your idea is conceptual rather than concrete, start a [Discussions](https://github.com/cardano-foundation/cardano-org/discussions), not a PR.
+
 ## Pull Requests
 
 To maintain the quality of content on cardano.org, we use pull requests to integrate changes from contributors. 
@@ -25,3 +30,15 @@ Please follow these steps to have your contribution considered by the maintainer
 3. After you submit your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing <details><summary>What if the status checks are failing?</summary>If a status check is failing, and you believe that the failure is unrelated to your change, please leave a comment on the pull request explaining why you believe the failure is unrelated. A maintainer will re-run the status check for you. If we conclude that the failure was a false positive, then we will open an issue to track and resolve that problem.</details>
 
 While the prerequisites above must be satisfied prior to having your pull request reviewed, the reviewer(s) may ask you to complete additional design work, tests, or other changes before your pull request can be ultimately accepted.
+
+## Contribution lifecycle description
+
+Every contribution passes through:
+idea → discussion → issue → implementation → PR → review → staging preview → merge
+
+Discussion is required before implementation for any change that is non-trivial.
+
+## Commit message convention
+Recommended style: [conventional commits](https://www.conventionalcommits.org/)
+
+Example: fix: broken link on research page

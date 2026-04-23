@@ -1,0 +1,71 @@
+.useCaseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.useCaseCard.clickable {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.useCaseCard.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4ff;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+html[data-theme='dark'] .icon {
+  filter: invert(1) brightness(2);
+}
+
+html[data-theme='dark'] .iconWrapper {
+  background: rgba(var(--ifm-color-primary-rgb), 0.15);
+}
+
+.cardBody {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--ifm-heading-color);
+}
+
+.cardSummary {
+  font-size: 0.813rem;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+html[data-theme='dark'] .useCaseCard.clickable:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

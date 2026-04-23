@@ -4,6 +4,35 @@ import Link from "@docusaurus/Link";
 // Parse text and replace link markdown in actual html links
 // Supports also **text** to mark things bold
 
+export function renderAnswerArray(answerArray) {
+  const elements = [];
+  let currentList = [];
+
+  const flushList = (keySuffix) => {
+    if (currentList.length === 0) return;
+    elements.push(
+      <ul key={`list-${keySuffix}`}>
+        {currentList.map((item, i) => (
+          <li key={i}>{parseMarkdownLikeText(item)}</li>
+        ))}
+      </ul>
+    );
+    currentList = [];
+  };
+
+  answerArray.forEach((text, idx) => {
+    if (text.startsWith("- ")) {
+      currentList.push(text.substring(2).trim());
+      return;
+    }
+    flushList(idx);
+    elements.push(<p key={`p-${idx}`}>{parseMarkdownLikeText(text)}</p>);
+  });
+
+  flushList("end");
+  return elements;
+}
+
 export function parseMarkdownLikeText(contentArray) {
   // Ensure contentArray is always treated as an array
   const safeArray = Array.isArray(contentArray) ? contentArray : [contentArray];

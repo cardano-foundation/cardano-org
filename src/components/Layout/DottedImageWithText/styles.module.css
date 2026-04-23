@@ -1,41 +1,40 @@
 .container {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
   align-items: flex-start;
-  justify-content: flex-start;
   padding: 20px;
-  gap: 20px; /* Adjust the space between the image and the text */
+  gap: 24px;
 }
 
 .imageWrap {
-  display: flex; /* Use flex to center the image within */
-  align-items: center; /* Center the image vertically */
-  justify-content: center; /* Center the image horizontally */
-  padding: 10px;
-  padding-top: 60px;
-  width: 10rem;
-  height: 8rem;
-  min-width: 8rem;
+  flex-shrink: 0;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrap img {
+  max-width: 100%;
+  height: auto;
 }
 
 .textWrap {
-  max-width: 50rem; /* Adjusted for more text, you can set it to fit your content */
-  text-align: left; /* Left align the text */
-  margin-left: 40px;
-  margin-right: auto;
+  flex: 1;
+  max-width: 50rem;
+  text-align: left;
+}
+
+.textWrap > h1:first-child,
+.textWrap > h2:first-child {
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-  }
-
-  .textWrap {
-    margin-left: 0; /* Reset margin for better readability */ 
+    flex-direction: column;
   }
 
   .imageWrap {
-    padding-top: 20px; /* Adjust padding for better spacing */
+    width: 6rem;
   }
 }

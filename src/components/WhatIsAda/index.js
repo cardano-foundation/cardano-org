@@ -1,11 +1,11 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Divider from "@site/src/components/Layout/Divider";
 import ThemedImage from "@theme/ThemedImage";
+import {translate} from '@docusaurus/Translate';
 
 //
 // This component:
@@ -52,19 +52,19 @@ export default function WhatIsAdaSection({
 
           <p>
             <Link
-              className="button button--primary button--lg"
-              to="/stake-pool-delegation"
+              className={clsx("button button--primary button--lg", styles.actionButton)}
+              to="/get-started"
             >
-              Delegate your stake
+              {translate({id: 'whatIsAda.button.getStarted', message: 'Get started with Cardano'})}
             </Link>
           </p>
 
           <p>
             <Link
-              className="button button--primary button--lg"
-              to="/stake-pool-operation"
+              className={clsx("button button--primary button--lg", styles.actionButton)}
+              to="/where-to-get-ada"
             >
-              Operate a stake pool
+              {translate({id: 'whatIsAda.button.whereToGetAda', message: 'Where to get ada?'})}
             </Link>
           </p>
         </div>

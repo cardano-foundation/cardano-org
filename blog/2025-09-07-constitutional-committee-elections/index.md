@@ -5,7 +5,7 @@ authors: [intersect]
 tags: [education]
 ---
 
-Intersect’s September 7, 2025, blog post recaps the first fully community-led Constitutional Committee election. Seven members were elected via on-chain vote by DReps and SPOs to uphold the Cardano Constitution for the next term. The post details the voting process, which used a one-lovelace-one-vote system, and introduces the newly selected members. This election marks a critical milestone in establishing a robust, decentralized governance framework for the ecosystem.
+The first community-led Constitutional Committee election has concluded, with seven members elected via an on-chain vote by DReps and SPOs. The process utilized a one-lovelace-one-vote system to select representatives responsible for upholding the Cardano Constitution for the upcoming term. This milestone establishes a decentralized governance framework and marks the full transition of constitutional power to the community.
 
 <div style={{ textAlign: 'right' }}>
  [**Read more**](https://www.intersectmbo.org/news/constitutional-committee-elections-2025what-happened-who-was-selected-how-it-worked-and-why-it-matter) 

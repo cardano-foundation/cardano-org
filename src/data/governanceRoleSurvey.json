@@ -1,0 +1,74 @@
+{
+  "title": "Which governance role fits you?",
+  "description": "Answer a few questions to find out how you can best participate in Cardano governance.",
+  "outcomes": [
+    {
+      "id": "delegate",
+      "title": "Delegate your voting power",
+      "description": "Delegation is the easiest way to participate. A DRep votes on proposals on your behalf while your ada stays safely in your wallet. It takes just a few minutes to set up and you can change your DRep at any time.",
+      "ctaText": "Choose a DRep",
+      "ctaLink": "/governance/delegate"
+    },
+    {
+      "id": "drep",
+      "title": "Become a DRep",
+      "description": "You have the time and motivation to actively shape Cardano. As a DRep you review governance proposals, vote on behalf of your delegators, and help steer the network's future. A refundable deposit of 500 ada is required.",
+      "ctaText": "Register as a DRep",
+      "ctaLink": "https://docs.gov.tools/about/what-is-cardano-govtool/govtool-functions/dreps/register-as-a-drep"
+    },
+    {
+      "id": "learn",
+      "title": "Start by learning more",
+      "description": "Governance is new to you and that's perfectly fine. Take your time to understand how it works, read the constitution, and explore governance actions before choosing your role.",
+      "ctaText": "Explore governance actions",
+      "ctaLink": "/insights/governance-actions/?category=General#charts"
+    }
+  ],
+  "questions": [
+    {
+      "question": "How much time can you dedicate to Cardano governance?",
+      "options": [
+        { "text": "A few minutes to set it up, then I'm done", "scores": { "delegate": 3, "learn": 1 } },
+        { "text": "I can check in occasionally", "scores": { "delegate": 2, "learn": 1 } },
+        { "text": "I want to stay informed and vote regularly", "scores": { "drep": 2 } },
+        { "text": "I'm ready to make it a regular commitment", "scores": { "drep": 3 } }
+      ]
+    },
+    {
+      "question": "Do you want to vote on every governance proposal yourself?",
+      "options": [
+        { "text": "No, I'd rather have someone knowledgeable vote on my behalf", "scores": { "delegate": 3 } },
+        { "text": "Not yet, I want to understand the process first", "scores": { "learn": 2, "delegate": 1 } },
+        { "text": "Yes, I want to review and vote on proposals myself", "scores": { "drep": 2 } },
+        { "text": "Yes, and I want to represent others too", "scores": { "drep": 3 } }
+      ]
+    },
+    {
+      "question": "How familiar are you with Cardano's governance processes?",
+      "options": [
+        { "text": "I'm completely new to this", "scores": { "learn": 3 } },
+        { "text": "I understand the basics", "scores": { "delegate": 2, "learn": 1 } },
+        { "text": "I'm comfortable with most governance concepts", "scores": { "drep": 1, "delegate": 1 } },
+        { "text": "I have deep knowledge and can explain them to others", "scores": { "drep": 3 } }
+      ]
+    },
+    {
+      "question": "Would you be comfortable making decisions that affect the entire Cardano network?",
+      "options": [
+        { "text": "I'd rather leave that to people who know more", "scores": { "delegate": 3 } },
+        { "text": "Maybe in the future, once I learn more", "scores": { "learn": 2, "delegate": 1 } },
+        { "text": "Yes, I'm ready to take on that responsibility", "scores": { "drep": 2 } },
+        { "text": "Yes, and I want to advocate for specific policy directions", "scores": { "drep": 3 } }
+      ]
+    },
+    {
+      "question": "What motivates you most about Cardano governance?",
+      "options": [
+        { "text": "Making sure my ada has a voice without extra effort", "scores": { "delegate": 3 } },
+        { "text": "Understanding how decentralized decision-making works", "scores": { "learn": 3 } },
+        { "text": "Actively shaping the future direction of Cardano", "scores": { "drep": 2 } },
+        { "text": "Representing my community and building trust", "scores": { "drep": 3 } }
+      ]
+    }
+  ]
+}

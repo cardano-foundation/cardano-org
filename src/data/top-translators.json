@@ -1,0 +1,105 @@
+{
+  "lastUpdated": "2026-04-23T06:31:32.399Z",
+  "contributors": [
+    {
+      "rank": 1,
+      "user": "Nápoles (enapoles)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/14053495/medium/929961300fa5ff67cce99ecffc733830.jpg",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 6822,
+      "approved": 6512
+    },
+    {
+      "rank": 2,
+      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 4556,
+      "approved": 6505
+    },
+    {
+      "rank": 3,
+      "user": "tu_nguyen",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 2993,
+      "approved": 0
+    },
+    {
+      "rank": 4,
+      "user": "cardanocastellano",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 2120,
+      "approved": 0
+    },
+    {
+      "rank": 5,
+      "user": "davidmtz",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17625642/medium/f4c025a0afc6af7faa976451ea050b43_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 1031,
+      "approved": 0
+    },
+    {
+      "rank": 6,
+      "user": "HaSala",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17602462/medium/b8b6783a0503304c1b9c8764214ded12_default.png",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 1029,
+      "approved": 0
+    },
+    {
+      "rank": 7,
+      "user": "matzeee",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17667694/medium/cf9127414963fac6c59504e231a44962_default.png",
+      "languages": [
+        "German"
+      ],
+      "translated": 702,
+      "approved": 0
+    },
+    {
+      "rank": 8,
+      "user": "BaelFire",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15877549/medium/3a83e601d8016828ebacb8d153df99dd_default.png",
+      "languages": [
+        "Vietnamese"
+      ],
+      "translated": 281,
+      "approved": 0
+    },
+    {
+      "rank": 9,
+      "user": "Tommy Kammerer (adatainment)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15114815/medium/d1c1b44d524d9618cda3700773463c30.png",
+      "languages": [
+        "German"
+      ],
+      "translated": 58,
+      "approved": 0
+    },
+    {
+      "rank": 10,
+      "user": "Bora Oben (bora.oben)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601486/medium/f486d95602aa273664293b18d9eeb876.jpeg",
+      "languages": [
+        "German"
+      ],
+      "translated": 26,
+      "approved": 0
+    }
+  ]
+}

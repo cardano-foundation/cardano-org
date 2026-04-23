@@ -29,7 +29,7 @@ export default function BlogLayout(props) {
             itemType="https://schema.org/Blog">
             {children}
             <div className="add-news-link" style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link to="/docs/tutorial/create-a-news-article">add news article</Link>
+              <Link to="/docs/get-involved/create-a-news-article">add news article</Link>
             </div>
           </main>
           {toc && <div className="col col--2">{toc}</div>}

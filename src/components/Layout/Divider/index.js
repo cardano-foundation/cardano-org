@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 
 //
 // This component:
@@ -15,16 +16,7 @@ export default function Divider({ text, id, white = false }) {
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === `#${id}`) {
-        // Using setTimeout to ensure the page layout has stabilized
-        setTimeout(() => {
-          const element = document.getElementById(id);
-          if (element) {
-            const yOffset = -100; // Adjusting the scroll position
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            // Smooth scroll to the calculated position
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        }, 100); // A short delay can help ensure layout updates have taken place
+        setTimeout(() => scrollToElement(document.getElementById(id)), 100);
       }
     };
 
@@ -51,7 +43,7 @@ export default function Divider({ text, id, white = false }) {
       <>
         <br />
         <div className={headerClass}>
-          <h6>{text}</h6>
+          <h6>{text}{id && <a className="hash-link" href={`#${id}`}>&#8203;</a>}</h6>
           <div className={styles.horizontalBar}></div>
         </div>
       </>

@@ -95,7 +95,7 @@
     "location": "Marrakech, Morocco",
     "link": "https://gitexafrica.com",
     "image": "gitex-2026.jpg",
-    "organizer": "KAOUN International / Digital Development Agency (ADD)",
+    "organizer": "Discover Cardano",
     "recapVideo": ""
   },
    {
@@ -167,8 +167,8 @@
    {
     "title": "Cardano Hackathon Asia",
     "description": "Cardano Hackathon Asia, hosted by EMURGO in Bangalore, is a two-day event focused on building and showcasing. Day one, the “Build Day,” is a hackathon that includes workshops, mentorship, and team collaboration.Day two, the “Showcase & Talks” day, will feature finalist demos, keynotes, panels, and awards, bringing together the best and brightest of the Indian blockchain community.",
-    "startDate": "2025-11-30",
-    "endDate": "2025-12-01",
+    "startDate": "2025-11-29",
+    "endDate": "2025-11-30",
     "location": "Bangalore",
     "link": "https://summit.cardano.org/page/5162919/regional-events",
     "image": "hackathon-asia-2025.jpg",
@@ -184,6 +184,161 @@
     "link": "https://summit.cardano.org/page/5162919/regional-events",
     "image": "afrika-tech-summit-2026.jpg",
     "organizer": "WADA, Catalyst Africa Town Hall, Lido Nation and RemoStart",
+    "recapVideo": ""
+  },
+   {
+    "title": "Digital Assets Forum (London)",
+    "description": "The Digital Assets Forum in London brings together policymakers, financial institutions, and innovators to discuss the integration of digital assets into global markets.",
+    "startDate": "2026-02-05",
+    "endDate": "2026-02-06",
+    "location": "London, United Kingdom",
+    "link": "https://eblockchainconvention.com/digital-assets-forum/",
+    "image": "digitalassetsforum.jpg",
+    "organizer": "Cardano Foundation",
+    "recapVideo": ""
+  },
+   {
+    "title": "Consensus HK 2026",
+    "description": "Consensus HK 2026 is the Asia edition of the global blockchain and Web3 conference, showcasing industry leaders, developers, and enterprises driving the digital asset economy.",
+    "startDate": "2026-02-10",
+    "endDate": "2026-02-12",
+    "location": "Hong Kong, China",
+    "link": "https://consensus-hongkong.coindesk.com/",
+    "image": "consensushk2026.jpg",
+    "organizer": "EMURGO and Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "Africa Tech Summit 2026",
+    "description": "Africa Tech Summit Nairobi connects African tech leaders, investors, and startups across fintech, Web3, AI, and digital transformation sectors.",
+    "startDate": "2026-02-11",
+    "endDate": "2026-02-12",
+    "location": "Nairobi, Kenya",
+    "link": "https://www.africatechsummit.com/nairobi/",
+    "image": "africatechsummit.jpg",
+    "organizer": "Cardano Foundation and WADA",
+    "recapVideo": ""
+  },
+   {
+    "title": "FutureProof Miami 2026",
+    "description": "Future Proof Miami is a large-scale event for wealth management, fintech, and digital innovation, attracting global investors and technology providers.",
+    "startDate": "2026-03-08",
+    "endDate": "2026-03-11",
+    "location": "Miami, Florida, United States",
+    "link": "https://futureproofhq.com/citywide/",
+    "image": "futureproofmiami.jpg",
+    "organizer": "Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "DC Blockchain Summit",
+    "description": "The DC Blockchain Summit is a policy-focused event in Washington DC that gathers regulators, industry leaders, and academics to shape the future of blockchain regulation and adoption.",
+    "startDate": "2026-03-17",
+    "endDate": "2026-03-18",
+    "location": "Washington, D.C., United States",
+    "link": "https://www.dcblockchainsummit.com/",
+    "image": "dcblockchainsummit.jpg",
+    "organizer": "Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "TEAMZ Web3 & AI Summit",
+    "description": "TEAMZ Web3 & AI Summit in Tokyo highlights innovations in blockchain, artificial intelligence, and Web3 applications, bringing together global experts and enterprises.",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-08",
+    "location": "Tokyo, Japan",
+    "link": "https://www.teamz.co.jp/en",
+    "image": "teamz.jpg",
+    "organizer": "EMURGO and Rare Network",
+    "recapVideo": ""
+  }
+  ,
+   {
+    "title": "Paris Blockchain Week",
+    "description": "Paris Blockchain Week is one of Europe’s largest blockchain conferences, uniting executives, entrepreneurs, and developers across digital assets, DeFi, and Web3.",
+    "startDate": "2026-04-14",
+    "endDate": "2026-04-16",
+    "location": "Paris, France",
+    "link": "https://www.parisblockchainweek.com/",
+    "image": "parisblockchainweek.jpg",
+    "organizer": "Cardano Foundation and Rare Network",
+    "recapVideo": ""
+  },
+   {
+    "title": "TechEx Global",
+    "description": "TechEx Global brings together enterprise leaders, IT decision-makers and technology innovators to explore the technologies shaping the future of business.",
+    "startDate": "2026-02-04",
+    "endDate": "2026-02-05",
+    "location": "London, UK",
+    "link": "https://techexevent.com/",
+    "image": "techex.png",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "GITEX Dubai 2026",
+    "description": "The flagship platform where finance, tech and regulation converge - exploring how payments, tokenisation, DeFi, Web3 & digital-assets reshape the global economy, while connecting banks, startups, regulators & investors to build the next-gen financial system.",
+    "startDate": "2026-12-07",
+    "endDate": "2026-12-11",
+    "location": "Dubai, UAE",
+    "link": "https://www.gitex.com/home",
+    "image": "gitex-dubai-2026.jpg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Blockchain Life 2026",
+    "description": "17th International Forum on Web3, Cryptocurrencies and Mining.",
+    "startDate": "2026-12-01",
+    "endDate": "2026-12-02",
+    "location": "Dubai, UAE",
+    "link": "https://blockchain-life.com/autumn2026/",
+    "image": "blockchain-life2026.png",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Bengaluru Tech Summit",
+    "description": "BTS 2026 will continue the mission to Futurise the world, shaping transformative opportunities across DeepTech, Digital Public Infrastructure, AI, SpaceTech, Semicon, Biotechnology, Mobility, FinTech, ClimateTech and beyond. ",
+    "startDate": "2026-11-17",
+    "endDate": "2026-11-19",
+    "location": "Bangalore, India",
+    "link": "https://www.bengalurutechsummit.com/",
+    "image": "bengaluru-2026.png",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "Crypto Expo Dubai",
+    "description": "Crypto Expo Dubai is the essential event for anyone in the cryptocurrency and blockchain space. Recognized as a key gathering for industry leaders and enthusiasts, it’s the ultimate platform to explore, learn, and connect within the fast-paced world of crypto.",
+    "startDate": "2026-09-09",
+    "endDate": "2026-09-11",
+    "location": "Dubai, UAE",
+    "link": "https://cryptoexpodubai.com/dubai",
+    "image": "expodubai2026.svg",
+    "organizer": "Discover Cardano",
+    "recapVideo": ""
+  },
+   {
+    "title": "WebX",
+    "description": "WebX is one of Asia’s largest global conferences planned and operated by CoinPost, Japan’s leading crypto asset and Web3 media platform.",
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-14",
+    "location": "Tokyo",
+    "link": "https://webx-asia.com/",
+    "image": "webx2026.svg",
+    "organizer": "EMURGO",
+    "recapVideo": ""
+  },
+   {
+    "title": "Consensus Miami 2026",
+    "description": "Consensus brings the largest crypto conference in the Americas to Miami’s electric epicenter of finance, technology, and culture.",
+    "startDate": "2026-05-05",
+    "endDate": "2026-05-07",
+    "location": "Miami, FL",
+    "link": "https://consensus.coindesk.com/",
+    "image": "consensus-2026-logo-v2.svg",
+    "organizer": "Rare Network",
     "recapVideo": ""
   }
 ]

@@ -1,0 +1,132 @@
+.card {
+  --role-accent-tile-alpha: 0.1;
+  --role-accent-dot-alpha: 0.7;
+  --role-accent-ring-alpha: 0.2;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 51, 173, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 51, 173, 0.12);
+  border-color: rgba(0, 51, 173, 0.2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.iconHalo {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.orbitRing {
+  fill: none;
+  stroke: rgb(var(--role-accent) / var(--role-accent-ring-alpha));
+  stroke-width: 1.5;
+}
+
+.orbitSpokes line {
+  stroke: rgb(var(--role-accent) / var(--role-accent-ring-alpha));
+  stroke-width: 0.6;
+}
+
+.orbitDots circle {
+  fill: rgb(var(--role-accent) / var(--role-accent-dot-alpha));
+}
+
+.iconWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  background-color: rgb(var(--role-accent) / var(--role-accent-tile-alpha));
+  color: var(--role-accent-solid);
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--role-accent-solid);
+}
+
+.description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+.accentBlue   { --role-accent: 0 51 173;   --role-accent-solid: #0033AD; }
+.accentViolet { --role-accent: 91 77 240;  --role-accent-solid: #5B4DF0; }
+.accentTeal   { --role-accent: 0 163 163;  --role-accent-solid: #00A3A3; }
+
+[data-theme='dark'] .card {
+  --role-accent-tile-alpha: 0.18;
+  --role-accent-dot-alpha: 0.75;
+  --role-accent-ring-alpha: 0.3;
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .description {
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] .accentBlue   { --role-accent: 143 177 255; --role-accent-solid: #8FB1FF; }
+[data-theme='dark'] .accentViolet { --role-accent: 146 134 255; --role-accent-solid: #9286FF; }
+[data-theme='dark'] .accentTeal   { --role-accent: 80 207 207;  --role-accent-solid: #50CFCF; }
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .iconHalo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .iconWrap {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+  }
+}

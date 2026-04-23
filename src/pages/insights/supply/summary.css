@@ -1,0 +1,63 @@
+/* Custom range slider styles for dual-range slider */
+.dual-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+.dual-range-slider::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 6px;
+}
+
+.dual-range-slider::-moz-range-track {
+  background: transparent;
+  height: 6px;
+}
+
+.dual-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  cursor: pointer;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-top: -7px;
+}
+
+.dual-range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  cursor: pointer;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.dual-range-slider:focus {
+  outline: none;
+}
+
+.dual-range-slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(var(--ifm-color-primary-rgb), 0.2), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dual-range-slider:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(var(--ifm-color-primary-rgb), 0.2), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dual-range-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
+
+.dual-range-slider:hover::-moz-range-thumb {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
+

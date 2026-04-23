@@ -26,3 +26,9 @@
 .mobileVisible {
   display: none;
 }
+
+.actionButton {
+  display: inline-block;
+  width: 280px;
+  text-align: center;
+}
