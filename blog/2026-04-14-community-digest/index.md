@@ -1,6 +1,7 @@
 ---
 slug: 2026-04-14-community-digest
 title: "Community Digest"
+description: "Pragma opens infrastructure project applications, Gerolamo TypeScript node debuts, Cardano hits 120M transactions, Van Rossem hard fork on track for June."
 authors: [cf]
 tags: [community digest,ambassadors]
 ---

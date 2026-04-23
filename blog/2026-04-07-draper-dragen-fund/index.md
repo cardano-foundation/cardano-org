@@ -1,6 +1,7 @@
 ---
 slug: 2026-04-07-draper-dragen-fund
 title: "Cardano and Draper Dragon Announce Initial Phase of Strategic $80M Ecosystem Fund"
+description: "Cardano Foundation and Draper Dragon launch the $80M Orion Fund for RWA, DeFi, and Bitcoin liquidity, with equity returns flowing to the Cardano treasury."
 authors: [cf]
 tags: [development]
 ---

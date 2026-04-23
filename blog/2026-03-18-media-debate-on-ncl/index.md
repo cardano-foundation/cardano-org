@@ -1,6 +1,7 @@
 ---
 slug: 2026-03-18-media-debate-on-ncl
 title: "Cardano Governance - A Debate on NCL & Constitutional Clarity"
+description: "Panel debates Cardano's Net Change Limit and treasury sustainability: constitutional interpretations of fund approval and the Constitutional Committee's role."
 authors: [community]
 tags: [media]
 ---
