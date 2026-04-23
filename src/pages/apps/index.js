@@ -77,7 +77,7 @@ function replaceSearchTags(search, newTags) {
 function filterProjects(projects, selectedTags, latest, operator, searchName, unfilteredProjects) {
   // Check if "LAST" filter is applied to decide if to filter through all projects or only last ones
   if (latest === "LAST") {
-    var projects = unfilteredProjects.slice(-10);
+    projects = unfilteredProjects.slice(-10);
   }
 
   if (searchName) {

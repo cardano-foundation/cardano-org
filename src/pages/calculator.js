@@ -92,6 +92,7 @@ export default function Home() {
           id="myIframe"
           src={`/crewardcalculator/?lang=${lang}`}
           style={{ width: "100%", height: "100vh", border: "none" }}
+          title="Cardano staking reward calculator"
         ></iframe>
       </main>
     </Layout>

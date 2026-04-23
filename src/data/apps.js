@@ -1679,7 +1679,8 @@ function ensureShowcaseValid(showcase) {
     checkOpenSource();
   } catch (e) {
     throw new Error(
-      `Showcase site with title=${showcase.title} contains errors:\n${e.message}`
+      `Showcase site with title=${showcase.title} contains errors:\n${e.message}`,
+      { cause: e }
     );
   }
 }

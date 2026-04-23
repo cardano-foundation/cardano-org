@@ -36,8 +36,20 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
       </button>
 
       {isOpen && (
-        <div className={styles.modalOverlay} onClick={() => setIsOpen(false)}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        // Backdrop click-outside-to-close. Keyboard equivalent is the
+        // document-level Escape handler above plus the dedicated close
+        // button, both of which are accessible to keyboard users.
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
+          className={styles.modalOverlay}
+          onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
+        >
+          <div
+            className={styles.modalContent}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Survey"
+          >
             <button
               onClick={() => setIsOpen(false)}
               className={styles.closeButton}

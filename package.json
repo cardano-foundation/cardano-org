@@ -18,7 +18,9 @@
     "crowdin:upload-all": "crowdin upload sources && crowdin upload translations",
     "crowdin:download": "crowdin download",
     "crowdin:progress": "node scripts/fetch-crowdin-progress.js",
-    "test:sitemap": "node scripts/test-sitemap-hreflang.js"
+    "test:sitemap": "node scripts/test-sitemap-hreflang.js",
+    "lint": "eslint src scripts docusaurus.config.js",
+    "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
@@ -57,8 +59,14 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/types": "^3.9.2",
+    "@eslint/js": "^10.0.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "eslint": "^10.2.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.5.0",
     "js-yaml": "^4.1.0"
   },
   "resolutions": {
