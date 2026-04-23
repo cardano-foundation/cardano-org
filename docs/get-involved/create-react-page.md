@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Create a React Page
+description: Build a custom React page on cardano.org with full layout freedom, using the shared component library and Docusaurus i18n helpers.
 ---
 
 ## Create a React Page

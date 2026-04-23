@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Add your Community
+description: Add your Cardano community to the online communities directory. Eligibility criteria, required fields, and review process.
 ---
 
 Thank you for considering adding your community to the [online communities](/docs/communities) page!

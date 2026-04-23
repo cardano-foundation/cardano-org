@@ -1,5 +1,6 @@
 ---
 title: Background Wrapper
+description: Apply themed background variants (zoom, plain, adaLight) to a page section with the BackgroundWrapper component.
 ---
 
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";

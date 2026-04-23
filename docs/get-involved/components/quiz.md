@@ -1,5 +1,6 @@
 ---
 title: Quiz
+description: Embed a multi-question quiz with scoring and retry handling using the Quiz component on cardano.org.
 ---
 
 ## Quiz

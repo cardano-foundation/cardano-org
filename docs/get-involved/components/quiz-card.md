@@ -1,5 +1,6 @@
 ---
 title: Quiz Card
+description: Embed a single quiz question card with answer feedback using the QuizCard component on cardano.org.
 ---
 
 ## Quiz Card

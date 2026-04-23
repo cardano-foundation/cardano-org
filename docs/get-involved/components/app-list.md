@@ -1,5 +1,6 @@
 ---
 title: App List
+description: Render a compact list of Cardano applications by tag using the AppList component on cardano.org.
 ---
 
 import AppList from "@site/src/components/AppList";

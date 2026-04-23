@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Local copy
+description: Run cardano.org locally. Clone the repo, install dependencies, and start a Docusaurus development server with hot reload.
 ---
  
 ## Local copy

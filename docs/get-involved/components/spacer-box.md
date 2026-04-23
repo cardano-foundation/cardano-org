@@ -1,5 +1,6 @@
 ---
 title: Spacer Box
+description: Insert vertical or horizontal spacing between content blocks using the SpacerBox component.
 ---
 
 import Divider from "@site/src/components/Layout/Divider";

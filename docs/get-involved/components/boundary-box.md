@@ -1,5 +1,6 @@
 ---
 title: Boundary Box
+description: Constrain content to the page boundary with consistent horizontal padding using the BoundaryBox component.
 ---
 
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";

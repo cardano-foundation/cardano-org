@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Create a Markdown Page
+description: Build a standalone Markdown page on cardano.org. File location, frontmatter fields, sidebar handling, and when Markdown vs MDX fits.
 ---
 
 ## Create a Markdown Page

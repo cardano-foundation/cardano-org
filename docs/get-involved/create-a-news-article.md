@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Create a News Article
+description: Author a news article on cardano.org. Required frontmatter (slug, title, description, authors, tags), image rules, and content sources.
 ---
 
 ## Create a News Article
