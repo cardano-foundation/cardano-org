@@ -1202,364 +1202,364 @@
     "message": "Extremadamente escalable y ambientalmente sostenible"
   },
   "home.benefits.scalable.body": {
-    "message": "Ouroboros allows Cardano to scale to global requirements with minimal energy consumption. Unlike other blockchains, Cardano does not require exponentially increasing energy to enhance performance and add blocks. The balance between performance and sustainability is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction processing through multi-party state channels.<br /><br />The network proliferates as the number of stake pools increases, while parameters are set and adjusted to measure the attractiveness of specific stake pools. This is a network that rewards participation directly. Cardano is designed to ensure that those who act in the best interests of the network are also acting in their own best interests. This ensures the development of a healthy ecosystem with a durable, healthy, and robust network, now and into the future. The combination of sustainability and scalability allows Cardano to achieve the throughput required to meet the evolving demands of global systems— financial, logistical, identity-related, societal."
+    "message": "Ouroboros permite a Cardano escalar a los requerimientos globales con un consumo de energía mínimo. A diferencia de otras blockchains, Cardano no requiere energía exponencialmente creciente para mejorar el rendimiento y añadir bloques. El equilibrio entre rendimiento y sostenibilidad se logra mediante una combinación de nuevos enfoques, incluyendo multi-ledger, cadenas laterales, y procesamiento de transacciones paralelas a través de canales de estado multipartitas.<br /><br />La red prolifera a medida que aumenta el número de stake pools, mientras que los parámetros son configurados y ajustados para medir el atractivo de los stake pools específicos. Esta es una red que recompensa directamente la participación. Cardano está diseñado para garantizar que quienes actúan en el mejor interés de la red también actúen en su propio interés. Esto asegura el desarrollo de un ecosistema saludable con una red duradera, saludable y robusta, ahora y hacia el futuro. La combinación de sostenibilidad y escalabilidad permite a Cardano lograr el avance necesario para satisfacer las crecientes demandas de los sistemas globales: financieros, logísticos, relacionados con la identidad, la sociedad."
   },
   "home.benefits.scalable.cta": {
-    "message": "Learn about Hydra"
+    "message": "Aprende sobre Hydra"
   },
   "home.vision.title1": {
-    "message": "Define Your Possible."
+    "message": "Defina su posibilidad."
   },
   "home.vision.title2": {
-    "message": "Change Your World."
+    "message": "Cambia tu mundo."
   },
   "home.divider.makeTheChange": {
-    "message": "Make the Change"
+    "message": "Haz el cambio"
   },
   "home.discover.title": {
-    "message": "Discover Cardano"
+    "message": "Descubra Cardano"
   },
   "home.discover.description": {
-    "message": "Cardano is the first blockchain platform to be built through [peer-reviewed research](/research), to be secure enough to protect the data of billions, scalable enough to accommodate global systems, and robust enough to support foundational change."
+    "message": "Cardano es la primera plataforma de blockchain que se construye a través de [investigación revisada por pares](/research), para estar lo suficientemente seguros como para proteger los datos de miles de millones, lo suficientemente escalables como para acomodar los sistemas globales y lo suficientemente sólidos como para apoyar el cambio fundacional."
   },
   "home.discover.people": {
-    "message": "People"
+    "message": "Personas"
   },
   "home.discover.purpose": {
-    "message": "Purpose"
+    "message": "Propósito"
   },
   "home.discover.research": {
-    "message": "Research"
+    "message": "Investigación"
   },
   "home.discover.technology": {
-    "message": "Technology"
+    "message": "Tecnología"
   },
   "home.discover.opportunity": {
-    "message": "Opportunity"
+    "message": "Oportunidad"
   },
   "home.discover.quote1": {
-    "message": "We have changed science. We have changed what it means to build global systems and sustainable models of exchange and governance."
+    "message": "Hemos cambiado la ciencia, hemos cambiado lo que significa construir sistemas globales y modelos sostenibles de intercambio y gobernanza."
   },
   "home.discover.quote2": {
-    "message": "Alongside the community, entities, and companies building on Cardano, a new future is being defined: a decentralized future without intermediaries, where power is returned to the individual"
+    "message": "Junto a la comunidad, entidades y empresas que construyen en Cardano, un nuevo futuro está siendo definido: un futuro descentralizado sin intermediarios, donde el poder es devuelto al individuo"
   },
   "home.divider.entities": {
-    "message": "Entities"
+    "message": "Entidades"
   },
   "home.entities.description": {
-    "message": "Multiple independent entities collaborate within a decentralized team framework to drive Cardano forward, ensuring that it remains aligned with its core mission as it progresses and develops. These are a few of them:"
+    "message": "Múltiples entidades independientes colaboran dentro de un marco de equipo descentralizado para hacer avanzar a Cardano. asegurar que permanezca alineado con su misión central a medida que avanza y se desarrolla. Estos son algunos de ellos:"
   },
   "home.follow.divider": {
     "message": "Social"
   },
   "home.follow.title": {
-    "message": "Get Involved"
+    "message": "Involúcrate"
   },
   "navbar.mega.column.Get to know": {
-    "message": "Get to know",
+    "message": "Conozca",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Take part": {
-    "message": "Take part",
+    "message": "Participa",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Research": {
-    "message": "Research",
+    "message": "Investigación",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Connect": {
-    "message": "Connect",
+    "message": "Conectar",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Engage": {
-    "message": "Engage",
+    "message": "Participar",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Governance": {
-    "message": "Governance",
+    "message": "Gobernanza",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Get started": {
-    "message": "Get started",
+    "message": "Comenzar",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Tools": {
-    "message": "Tools",
+    "message": "Herramientas",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.For Enterprise": {
-    "message": "For Enterprise",
+    "message": "Para la empresa",
     "description": "Mega menu column title"
   },
   "navbar.mega.column.Use Cases": {
-    "message": "Use Cases",
+    "message": "Casos de Uso",
     "description": "Mega menu column title"
   },
   "navbar.mega.label.What is ada?": {
-    "message": "What is ada?",
+    "message": "¿Qué es Ada?",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Get started with Cardano": {
-    "message": "Get started with Cardano",
+    "message": "Empieza con Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Where to get ada?": {
-    "message": "Where to get ada?",
+    "message": "¿Dónde conseguir ada?",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Protect your ada": {
-    "message": "Protect your ada",
+    "message": "Protege tú ada",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Delegate your ada": {
-    "message": "Delegate your ada",
+    "message": "Delega tú ada",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Delegate your vote": {
-    "message": "Delegate your vote",
+    "message": "Delegar tu voto",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Use Cardano Apps": {
-    "message": "Use Cardano Apps",
+    "message": "Usar aplicaciones de Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Code of Conduct": {
-    "message": "Code of Conduct",
+    "message": "Código de conducta",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Research": {
-    "message": "Cardano Research",
+    "message": "Investigación de Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Insights": {
-    "message": "Cardano Insights",
+    "message": "Perspectivas de Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Hard Forks": {
-    "message": "Hard Forks",
+    "message": "Bifurcaciones duras",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.News": {
-    "message": "News",
+    "message": "Noticias",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Newsletter": {
-    "message": "Newsletter",
+    "message": "Boletín de noticias",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Online Communities": {
-    "message": "Online Communities",
+    "message": "Comunidades Online",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Ambassador Program": {
-    "message": "Ambassador Program",
+    "message": "Programa de Embajadores",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Events": {
-    "message": "Cardano Events",
+    "message": "Eventos de Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Forum": {
-    "message": "Cardano Forum",
+    "message": "Foro Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Get involved in cardano.org": {
-    "message": "Get involved in cardano.org",
+    "message": "Participa en cardano.org",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Participate in governance": {
-    "message": "Participate in governance",
+    "message": "Participa en la gobernanza",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Governance Tools": {
-    "message": "Governance Tools",
+    "message": "Herramientas de gobernanza",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Constitution": {
-    "message": "Cardano Constitution",
+    "message": "Constitución de Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Start building on Cardano": {
-    "message": "Start building on Cardano",
+    "message": "Empieza a construir en Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Integrate Cardano": {
-    "message": "Integrate Cardano",
+    "message": "Integrar Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Developer Portal": {
-    "message": "Developer Portal",
+    "message": "Portal para desarrolladores",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Builder Tools": {
-    "message": "Builder Tools",
+    "message": "Herramientas para constructores",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Companies building on Cardano": {
-    "message": "Companies building on Cardano",
+    "message": "Empresas construyendo en Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Enterprise Solutions": {
-    "message": "Enterprise Solutions",
+    "message": "Soluciones para empresas",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Contact the Foundation": {
-    "message": "Contact the Foundation",
+    "message": "Contactar a la Fundación Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.All Use Cases": {
-    "message": "All Use Cases",
+    "message": "Todos los casos de uso",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Identity": {
-    "message": "Identity",
+    "message": "Identidad",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Supply Chain": {
-    "message": "Supply Chain",
+    "message": "Cadena de suministro",
     "description": "Mega menu item label"
   },
   "navbar.mega.description.What is ada?": {
-    "message": "Cardano's native token",
+    "message": "Token nativo de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get started with Cardano": {
-    "message": "Learn the basics and start using Cardano",
+    "message": "Aprende lo básico y empieza a usar Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Where to get ada?": {
-    "message": "Obtain ada to use Cardano",
+    "message": "Obtén ada para usar Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Protect your ada": {
-    "message": "Don't fall for scams",
+    "message": "No caigas por estafas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Delegate your ada": {
-    "message": "Be a part of it and earn rewards",
+    "message": "Sé parte de ello y gana recompensas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Delegate your vote": {
-    "message": "Lend your voting power to a DRep",
+    "message": "Presta tu poder de voto a un DRep",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Use Cardano Apps": {
-    "message": "Explore curated applications",
+    "message": "Explorar aplicaciones curadas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Code of Conduct": {
-    "message": "Community standards and values",
+    "message": "Estándares comunitarios y Valores",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Research": {
-    "message": "Peer-reviewed research and papers",
+    "message": "Investigaciones y documentos revisados por pares",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Insights": {
-    "message": "On-chain or regularly refreshed data",
+    "message": "Datos en cadena o actualizados regularmente",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Hard Forks": {
-    "message": "Implemented Upgrades",
+    "message": "Mejoras implementadas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.News": {
-    "message": "Latest Cardano news and updates",
+    "message": "Últimas noticias y actualizaciones de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Newsletter": {
-    "message": "Stay updated with Cardano news",
+    "message": "Mantente actualizado con noticias de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Online Communities": {
-    "message": "Recommended Channels",
+    "message": "Canales Recomendados",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Ambassador Program": {
-    "message": "Meet Cardano Ambassadors",
+    "message": "Conoce a los embajadores de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Events": {
-    "message": "Join Cardano community events",
+    "message": "Únete a eventos de la comunidad de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Forum": {
-    "message": "Structured long-format discussions",
+    "message": "Discusiones de formato largo estructuradas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get involved in cardano.org": {
-    "message": "If you'd like to participate, this will get you started",
+    "message": "Si quieres participar, esto te dará comienzo",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Participate in governance": {
-    "message": "Shape Cardano's future",
+    "message": "Dar forma al futuro de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Governance Tools": {
-    "message": "Tools for transparent, community-driven decisions",
+    "message": "Herramientas para decisiones transparentes impulsadas por la comunidad",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Constitution": {
-    "message": "Learn about governance",
+    "message": "Aprende sobre gobernanza",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Start building on Cardano": {
-    "message": "Developer resources and tooling",
+    "message": "Recursos de desarrollador y herramientas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Integrate Cardano": {
-    "message": "Exchange and integration guides",
+    "message": "Guías de intercambio e integración",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Developer Portal": {
-    "message": "Cardano developer portal and docs",
+    "message": "Portal de desarrolladores de Cardano y documentos",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Builder Tools": {
-    "message": "Tools to build on Cardano",
+    "message": "Herramientas para construir en Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Companies building on Cardano": {
-    "message": "Companies, associations, and collaborations",
+    "message": "Empresas, asociaciones y colaboraciones",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Enterprise Solutions": {
-    "message": "Case studies and proven deployments",
+    "message": "Casos de estudio e implementaciones probadas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Contact the Foundation": {
-    "message": "Partner with the Cardano Foundation",
+    "message": "Asociarse con la Fundación Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.All Use Cases": {
-    "message": "Explore blockchain applications",
+    "message": "Explorar aplicaciones blockchain",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Identity": {
-    "message": "Credentials & verification",
+    "message": "Credenciales y verificación",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Supply Chain": {
-    "message": "Traceability & provenance",
+    "message": "Trazabilidad y procedencia",
     "description": "Mega menu item description"
   },
   "solutions.data.dpp.title": {
-    "message": "Digital Product Passport"
+    "message": "Pasaporte de producto digital"
   },
   "solutions.data.dpp.description": {
-    "message": "EU-compliant digital product passports for transparency and sustainability."
+    "message": "Pasaportes de productos digitales compatibles con la UE para la transparencia y la sostenibilidad."
   },
   "solutions.data.category.supplyChain": {
-    "message": "Supply Chain"
+    "message": "Cadena de suministro"
   },
   "solutions.data.traceability.title": {
-    "message": "Traceability"
+    "message": "Trazabilidad"
   },
   "solutions.data.traceability.description": {
-    "message": "End-to-end supply chain traceability powered by blockchain."
+    "message": "Trazabilidad de la cadena de suministro de extremo a extremo impulsada por blockchain."
   },
   "solutions.data.authenticity.title": {
-    "message": "Authenticity"
+    "message": "Autenticidad"
   },
   "solutions.data.authenticity.description": {
     "message": "Combat counterfeiting with blockchain-verified product authenticity."
