@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Head from "@docusaurus/Head";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -39,12 +40,17 @@ function DeveloperShowcase() {
 
   return (
     <div className={styles.showcaseCard}>
+      <Head>
+        <link rel="preload" as="image" href={portalHeroImg} fetchpriority="high" />
+      </Head>
       {/* Portal Hero */}
       <div className={styles.portalHero}>
         <img
           src={portalHeroImg}
           alt="Cardano Developer Portal"
-          loading="lazy"
+          width="2970"
+          height="1204"
+          fetchpriority="high"
         />
         <h2>
           {translate({
