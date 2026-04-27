@@ -13,12 +13,12 @@ import { sortBy, difference } from "../utils/jsUtils";
 
 // List of available tags. The tag and the label should be in singular. (PLEASE DO NOT ADD NEW TAGS)
 export const Tags = {
-  // PLEASE DO NOT USE THIS TAG: maintainers add the favorite project tag  (process TBD)
-  // Favorite
+  // Maintainer picks. Set only by page maintainers via the process documented in
+  // docs/get-involved/maintainer-picks.md. Do not add this tag in your own PR.
   favorite: {
-    label: "Favorite",
+    label: "Maintainer pick",
     description:
-      "Favorite Cardano apps that you must absolutely check-out.",
+      "Curated by page maintainers as a strong starting point. See docs/get-involved/maintainer-picks.md.",
     color: '#e9669e',  // Vibrant Pink
   },
 
@@ -258,7 +258,8 @@ export const Tags = {
 };
 
 // Add your project to (THE END OF) this list.
-// Please don't add the "favorite"-tag yourself.
+// Please don't add the "favorite"-tag yourself — it is reserved for Maintainer picks.
+// See docs/get-involved/maintainer-picks.md for the proposal process.
 //
 // ICON FIELD (optional):
 // - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
@@ -301,7 +302,7 @@ export const Showcases = [
     preview: require("./app-images/cardanowall.png"),
     website: "https://cardanowall.com/en/explore/",
     source: null,
-    tags: ["favorite", "notary"],
+    tags: ["notary"],
   },
   {
     title: "NMKR",
@@ -319,7 +320,7 @@ export const Showcases = [
     preview: require("./app-images/adastat.png"),
     website: "https://adastat.net",
     source: null,
-    tags: ["explorer"],
+    tags: ["favorite", "explorer"],
   },
   {
     title: "Cardano Explorer Landing Page",
@@ -346,7 +347,7 @@ export const Showcases = [
     preview: require("./app-images/cardanoscan.png"),
     website: "https://cardanoscan.io/",
     source: null,
-    tags: ["favorite", "explorer"],
+    tags: ["explorer"],
   },
   {
     title: "Pool PM",
@@ -355,7 +356,7 @@ export const Showcases = [
     preview: require("./app-images/poolpm.png"),
     website: "https://pool.pm",
     source: null,
-    tags: ["favorite", "explorer"],
+    tags: ["explorer"],
   },
   {
     title: "PoolTool",
@@ -422,7 +423,7 @@ export const Showcases = [
     icon: "/img/app-icons/yoroi.png",
     website: "https://yoroi-wallet.com",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["favorite", "wallet", "nft", "mobile", "opensource"],
+    tags: ["wallet", "nft", "mobile", "opensource"],
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -445,7 +446,7 @@ export const Showcases = [
     preview: require("./app-images/cardanoupdates.png"),
     website: "https://cardanoupdates.com",
     source: null,
-    tags: ["favorite", "analytics"],
+    tags: ["analytics"],
   },
   {
     title: "Pool Stats",
@@ -462,7 +463,7 @@ export const Showcases = [
     preview: require("./app-images/nowpayments.png"),
     website: "https://nowpayments.io",
     source: null,
-    tags: ["favorite", "gateway"],
+    tags: ["gateway"],
   },
   {
     title: "Coti adaPay",
@@ -524,7 +525,7 @@ export const Showcases = [
     icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
-    tags: ["favorite", "wallet", "nft"],
+    tags: ["wallet", "nft"],
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -568,7 +569,7 @@ export const Showcases = [
     statsLabel: "muesliswap",
     website: "https://muesliswap.com/",
     source: null,
-    tags: ["favorite", "dex"],
+    tags: ["dex"],
   },
   {
     title: "SundaeSwap",
@@ -578,7 +579,7 @@ export const Showcases = [
     icon: "/img/app-icons/sundaeswap.jpg",
     website: "https://app.sundae.fi",
     source: null,
-    tags: ["favorite", "dex"],
+    tags: ["dex"],
   },
   {
     title: "DripDropz",
@@ -588,7 +589,7 @@ export const Showcases = [
     icon: "/img/app-icons/dripdropz.jpg",
     website: "https://dripdropz.io",
     source: null,
-    tags: ["distribution"],
+    tags: ["favorite", "distribution"],
   },
   {
     title: "ADAZOO MMORPG and Metaverse",
@@ -607,7 +608,7 @@ export const Showcases = [
     statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
-    tags: ["dex", "goodForBeginners"],
+    tags: ["favorite", "dex", "goodForBeginners"],
   },
   {
     title: "GameChanger Wallet",
@@ -850,7 +851,7 @@ export const Showcases = [
     icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["favorite", "wallet", "nft", "opensource"],
+    tags: ["wallet", "nft", "opensource"],
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -923,7 +924,7 @@ export const Showcases = [
     statsLabel: "liqwid-finance",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "marketplace", "goodForBeginners"],
+    tags: ["favorite", "lending", "marketplace", "goodForBeginners"],
   },
   {
     title: "Charli3",
@@ -943,7 +944,7 @@ export const Showcases = [
     preview: require("./app-images/cardano-academy.jpg"),
     website: "https://academy.cardanofoundation.org",
     source: null,
-    tags: ["favorite", "educational"],
+    tags: ["educational"],
   },
   {
     title: "Cardano Governance Tool",
@@ -953,7 +954,7 @@ export const Showcases = [
     icon: "/img/app-icons/govtools.svg",
     website: "https://gov.tools",
     source: null,
-    tags: ["favorite", "governance"],
+    tags: ["governance"],
   },
   {
     title: "Chang Watch",
@@ -1050,7 +1051,7 @@ export const Showcases = [
     preview: require("./app-images/onboard-ninja.jpg"),
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "distribution", "nft"],
+    tags: ["distribution", "nft"],
   },
     {
     title: "Stuff.io",
@@ -1115,7 +1116,7 @@ export const Showcases = [
     preview: require("./app-images/newm.png"),
     website: "https://newm.io/",
     source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "music", "opensource"],
+    tags: ["music", "opensource"],
   },
   {
     title: "Andamio",
@@ -1450,7 +1451,7 @@ export const Showcases = [
     icon: "/img/app-icons/cgov.svg",
     website: "https://app.cgov.io/",
     source: "https://github.com/nomos-guild/cgov",
-    tags: ["governance", "analytics", "opensource"],
+    tags: ["favorite", "governance", "analytics", "opensource"],
   },
   {
     title: "Cardano Treasury Explorer",
@@ -1552,6 +1553,16 @@ export const Showcases = [
     website: "https://claimpaign.com",
     source: null,
     tags: ["distribution", "nft"],
+  },
+  {
+    title: "Wayup",
+    description:
+      "Cardano NFT marketplace by Anvil. Continues the smart contracts of JpgStore as the platform sunsets, so existing listings and royalties keep working.",
+    preview: require("./app-images/wayup.png"),
+    statsLabel: "wayup",
+    website: "https://www.wayup.io",
+    source: null,
+    tags: ["favorite", "marketplace", "nft", "goodForBeginners"],
   },
 ];
 
