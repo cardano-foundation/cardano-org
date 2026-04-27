@@ -3211,6 +3211,12 @@
   "apps.detail.editLink": {
     "message": "Improve this entry on GitHub"
   },
+  "apps.detail.spotlight.label": {
+    "message": "Developer Spotlight"
+  },
+  "apps.detail.spotlight.aria": {
+    "message": "Open Developer Spotlight on developers.cardano.org"
+  },
   "apps.collections.title": {
     "message": "Cardano App Collections"
   },
@@ -3231,6 +3237,60 @@
   },
   "apps.collections.cta.button": {
     "message": "Browse collections"
+  },
+  "apps.intent.label": {
+    "message": "I want to"
+  },
+  "apps.hero.subtitle": {
+    "message": "{count} curated applications running on mainnet today"
+  },
+  "apps.allApps.title": {
+    "message": "All apps"
+  },
+  "apps.allApps.tracked": {
+    "message": "{count} with live tracking"
+  },
+  "apps.maintainerPicks.showAll": {
+    "message": "Show all {count} →"
+  },
+  "apps.maintainerPicks.showLess": {
+    "message": "Show fewer ←"
+  },
+  "apps.maintainerPicks.subtitleShort": {
+    "message": "Selected by cardano.org maintainers"
+  },
+  "apps.mostActive.leaderboardLink": {
+    "message": "Live from the transaction leaderboard"
+  },
+  "apps.filter.button": {
+    "message": "Filter"
+  },
+  "apps.filter.activeCount": {
+    "message": "Filter ({count})"
+  },
+  "apps.filter.categoriesHeading": {
+    "message": "Categories"
+  },
+  "apps.filter.propertiesHeading": {
+    "message": "Properties"
+  },
+  "apps.filter.clearAll": {
+    "message": "Clear all filters"
+  },
+  "apps.collections.banner.label": {
+    "message": "Collections"
+  },
+  "apps.collections.banner.subtitle": {
+    "message": "Curated journeys"
+  },
+  "apps.submit.enableTracking": {
+    "message": "Enable tracking"
+  },
+  "apps.new": {
+    "message": "NEW"
+  },
+  "apps.activity.unit": {
+    "message": "tx"
   },
   "insights.card.openInsight": {
     "message": "Open insight"

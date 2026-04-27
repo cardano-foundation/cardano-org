@@ -3,14 +3,14 @@ import clsx from "clsx";
 
 import styles from "./styles.module.css";
 
-// Reusable section-level CTA — title, description, single button.
-// Used as the closing slot on /apps for both the Collections link and the Submit-an-app
-// nudge. Keep semantics simple; if a third variant arrives consider an enum-typed prop.
+// Reusable section-level CTA — title, description, one or two buttons.
+// `secondaryButton` is optional: if provided, a second button renders next to the primary.
 export default function PageCTA({
   title,
   description,
   href,
   buttonText,
+  secondaryButton = null,
   variant = "secondary",
 }) {
   const isPrimary = variant === "primary";
@@ -20,16 +20,30 @@ export default function PageCTA({
         <div className={styles.inner}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.description}>{description}</p>
-          <a
-            className={clsx(
-              "button button--lg",
-              isPrimary ? "button--primary" : "button--secondary",
-              styles.button
+          <div className={styles.buttonRow}>
+            <a
+              className={clsx(
+                "button button--lg",
+                isPrimary ? "button--primary" : "button--secondary",
+                styles.button
+              )}
+              href={href}
+            >
+              {buttonText}
+            </a>
+            {secondaryButton && (
+              <a
+                className={clsx(
+                  "button button--lg button--outline",
+                  isPrimary ? "button--primary" : "button--secondary",
+                  styles.button
+                )}
+                href={secondaryButton.href}
+              >
+                {secondaryButton.label}
+              </a>
             )}
-            href={href}
-          >
-            {buttonText}
-          </a>
+          </div>
         </div>
       </div>
     </section>

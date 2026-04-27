@@ -19,7 +19,7 @@ function parseShowcases(source) {
   if (closeIdx < 0) throw new Error('Cannot find end of Showcases array');
   const block = source.slice(blockStart, closeIdx);
 
-  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?\n\s*\},?/g;
+  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
 
   const apps = [];
   let m;
@@ -40,6 +40,13 @@ function parseShowcases(source) {
         .filter(Boolean),
       maintainerPick: m[9] === 'true',
       beginnerFriendly: m[10] === 'true',
+      spotlight: m[11]
+        ? {
+            url: m[11],
+            title: parseStringValue(`"${m[12]}"`),
+            date: m[13],
+          }
+        : null,
     });
   }
 
@@ -47,7 +54,9 @@ function parseShowcases(source) {
 }
 
 function assertEntryCountMatches(apps, block) {
-  const titleCount = (block.match(/^\s*title:\s*"/gm) || []).length;
+  // Only count entry-level title lines (4-space indent). Nested objects like
+  // `spotlight: { title: "..." }` use deeper indentation and must be excluded.
+  const titleCount = (block.match(/^ {4}title:\s*"/gm) || []).length;
   if (apps.length < titleCount) {
     throw new Error(
       `Parsed ${apps.length} apps but found ${titleCount} title: lines — regex missed entries.`

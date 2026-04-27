@@ -261,6 +261,11 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: true,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2021-07-26-july/",
+      title: "Cardano Developer Spotlight: July 2021",
+      date: "2021-07-26",
+    },
   },
   {
     title: "AdaStat",
@@ -479,6 +484,11 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: true,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2023-01-02-january/",
+      title: "Cardano Developer Spotlight: January 2023",
+      date: "2023-01-02",
+    },
   },
   {
     title: "Eternl",
@@ -642,6 +652,11 @@ export const Showcases = [
     properties: [],
     maintainerPick: true,
     beginnerFriendly: true,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2022-04-27-april/",
+      title: "Cardano Developer Spotlight: April 2022",
+      date: "2022-04-27",
+    },
   },
   {
     title: "GameChanger Wallet",
@@ -988,6 +1003,11 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2023-10-16-october/",
+      title: "Cardano Developer Spotlight: October 2023 (as Lenfi)",
+      date: "2023-10-16",
+    },
   },
   {
     title: "Continuity Token",
@@ -1014,6 +1034,11 @@ export const Showcases = [
     properties: ["nft", "mobile"],
     maintainerPick: true,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2024-01-22-january/",
+      title: "Cardano Developer Spotlight: January 2024",
+      date: "2024-01-22",
+    },
     walletFeatures: {
       platforms: ["ios", "android"],
       custody: "non-custodial",
@@ -1034,6 +1059,11 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2024-12-09-december/",
+      title: "Cardano Developer Spotlight: December 2024",
+      date: "2024-12-09",
+    },
   },
   {
     title: "Liqwid",
@@ -1232,6 +1262,11 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-11-07-media-cardano-developer-office-hours/",
+      title: "Cardano Developer Office Hours",
+      date: "2025-11-07",
+    },
   },
   {
     title: "Governance Space",
@@ -1333,6 +1368,11 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-02-03-february/",
+      title: "Cardano Developer Spotlight: February 2025",
+      date: "2025-02-03",
+    },
   },
   {
     title: "Genius Yield",
@@ -1359,6 +1399,11 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-09-29-september/",
+      title: "Cardano Developer Spotlight: September 2025",
+      date: "2025-09-29",
+    },
   },
   {
     title: "Yamfore",
@@ -1530,6 +1575,11 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-06-24-june/",
+      title: "Cardano Developer Interview: June 2025",
+      date: "2025-06-24",
+    },
   },
   {
     title: "Encoins",
@@ -1809,6 +1859,11 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-06-13-media-cardano-developer-office-hours/",
+      title: "Cardano Developer Office Hours",
+      date: "2025-06-13",
+    },
   },
   {
     title: "CommitProof",
@@ -1880,6 +1935,10 @@ export const Showcases = [
 
 export const TagList = Object.keys(Tags);
 
+// Recent submissions count — the last N entries appended to Showcases get a NEW badge.
+// New entries are conventionally appended at the end (see add-app.md).
+export const RECENT_APPS_COUNT = 5;
+
 // Derive a stable URL slug from each Showcase title. Mirrors scripts/generate-apps-metadata.js
 // so /apps/<slug> in the runtime matches the routes registered by plugins/apps-routes.
 function slugifyTitle(title) {
@@ -1925,6 +1984,7 @@ function ensureShowcaseValid(showcase) {
       "statsLabel",
       "statsNote",
       "walletFeatures",
+      "spotlight",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {
@@ -2023,6 +2083,22 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
+  function checkSpotlight() {
+    if (showcase.spotlight === undefined) return;
+    const s = showcase.spotlight;
+    if (!s || typeof s !== "object") {
+      throw new Error("spotlight must be an object {url, title, date}");
+    }
+    for (const key of ["url", "title", "date"]) {
+      if (typeof s[key] !== "string" || !s[key]) {
+        throw new Error(`spotlight.${key} must be a non-empty string`);
+      }
+    }
+    if (!/^https?:\/\//.test(s.url)) {
+      throw new Error(`spotlight.url must be an http(s) URL: ${s.url}`);
+    }
+  }
+
   try {
     checkFields();
     checkTitle();
@@ -2033,6 +2109,7 @@ function ensureShowcaseValid(showcase) {
     checkProperties();
     checkBooleanFlags();
     checkOpenSource();
+    checkSpotlight();
   } catch (e) {
     throw new Error(
       `Showcase site with title=${showcase.title} contains errors:\n${e.message}`,

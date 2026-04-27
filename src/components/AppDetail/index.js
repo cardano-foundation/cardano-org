@@ -102,6 +102,35 @@ export default function AppDetail({ app }) {
 
         <p className={styles.description}>{app.description}</p>
 
+        {app.spotlight && (
+          <Link
+            href={app.spotlight.url}
+            className={styles.spotlight}
+            aria-label={translate({
+              id: "apps.detail.spotlight.aria",
+              message: "Open Developer Spotlight on developers.cardano.org",
+            })}
+          >
+            <span className={styles.spotlightLabel}>
+              {translate({
+                id: "apps.detail.spotlight.label",
+                message: "Developer Spotlight",
+              })}
+            </span>
+            <span className={styles.spotlightTitle}>
+              {app.spotlight.title}
+            </span>
+            <span className={styles.spotlightMeta}>
+              {new Date(app.spotlight.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}{" "}
+              · developers.cardano.org →
+            </span>
+          </Link>
+        )}
+
         <div className={styles.actions}>
           <Link
             href={app.website}

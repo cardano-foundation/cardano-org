@@ -121,6 +121,13 @@ Before making a pull request, please make sure that you fulfill all these requir
    - Example: `statsLabel: "minswap"`
    - If omitted, the system will attempt normalized matching on your title
 
+   **spotlight field (set by maintainers):**
+   - Links to a Developer Spotlight blog post on `developers.cardano.org/blog/`
+   - Renders a callout banner on the app's detail page (`/apps/<slug>`)
+   - Shape: `spotlight: { url: "https://developers.cardano.org/blog/...", title: "Spotlight: <App>", date: "YYYY-MM-DD" }`
+   - All three fields required if set; URL must be `http(s)://`
+   - Submitters: leave omitted. Maintainers add this when a Spotlight is published.
+
 9. **Test your submission**
    - Run `yarn build` (must complete without errors). The schema validator will reject unknown categories or properties.
    - Check that your project displays correctly

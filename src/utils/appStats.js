@@ -1,5 +1,13 @@
 import appStatsData from "@site/src/data/tx-stats.json";
-import { Categories } from "@site/src/data/apps";
+import {
+  Categories,
+  Showcases,
+  RECENT_APPS_COUNT,
+} from "@site/src/data/apps";
+
+const RECENT_SLUGS = new Set(
+  Showcases.slice(-RECENT_APPS_COUNT).map((s) => s.slug)
+);
 
 const TX_BY_LABEL = new Map(
   appStatsData.appStats.map((s) => [s.label, s])
@@ -37,6 +45,14 @@ export function getTxCount(app) {
 
 export function isTrackable(app) {
   return Categories[app.category]?.trackable ?? false;
+}
+
+export function isRecent(app) {
+  return RECENT_SLUGS.has(app.slug);
+}
+
+export function countLiveTracking(apps) {
+  return apps.filter((app) => isTrackable(app) && app.statsLabel).length;
 }
 
 export function getAppAxes(app) {

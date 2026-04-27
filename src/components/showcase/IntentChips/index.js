@@ -105,7 +105,7 @@ export default function IntentChips() {
     >
       <div className="container">
         <h2 id="apps-intent-title" className={styles.intentTitle}>
-          {translate({ id: "apps.intent.title", message: "Find apps for" })}
+          {translate({ id: "apps.intent.label", message: "I want to" })}
         </h2>
         <ul className={styles.intentList}>
           {INTENTS.map((intent) => {

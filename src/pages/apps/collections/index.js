@@ -10,36 +10,11 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import { getCollections } from "@site/src/data/collections";
 
 import styles from "./styles.module.css";
 
-const req = require.context("./", false, /\.mdx$/);
-
-function toSlug(filePath) {
-  return filePath.replace(/^\.\//, "").replace(/\.mdx$/, "");
-}
-
-const collections = req
-  .keys()
-  .map((filePath) => {
-    const mod = req(filePath);
-    const fm = mod?.frontMatter ?? null;
-    if (!fm?.title) return null;
-    const slug = toSlug(filePath);
-    return {
-      slug,
-      title: fm.title,
-      description: fm.description ?? "",
-      order: typeof fm.sidebar_position === "number" ? fm.sidebar_position : null,
-      permalink: `/apps/collections/${slug}`,
-    };
-  })
-  .filter(Boolean)
-  .sort(
-    (a, b) =>
-      (a.order ?? Infinity) - (b.order ?? Infinity) ||
-      a.title.localeCompare(b.title)
-  );
+const collections = getCollections();
 
 const TITLE = translate({
   id: "apps.collections.title",

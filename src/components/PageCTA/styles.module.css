@@ -41,3 +41,10 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.buttonRow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
