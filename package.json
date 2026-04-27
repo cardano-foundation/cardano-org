@@ -5,9 +5,10 @@
   "scripts": {
     "build-authors": "node scripts/generate-authors-json.js",
     "build-news": "node scripts/generate-recent-news.js",
+    "build-llms": "node scripts/generate-llms-txt.js",
     "docusaurus": "docusaurus",
-    "start": "yarn build-authors && yarn build-news && docusaurus start",
-    "build": "yarn build-authors && yarn build-news && docusaurus build",
+    "start": "yarn build-authors && yarn build-news && yarn build-llms && docusaurus start",
+    "build": "yarn build-authors && yarn build-news && yarn build-llms && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
