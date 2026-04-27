@@ -12,6 +12,10 @@ import React from "react";
 import { sortBy, difference } from "../utils/jsUtils";
 
 // List of available tags. The tag and the label should be in singular. (PLEASE DO NOT ADD NEW TAGS)
+//
+// `trackable` controls per-card activity badges and the "Most active" section on /apps.
+// Set true only for categories where on-chain tx count is a meaningful usage signal.
+// Wallets, NFT collections, gateways and similar tags undercount real usage so are tracked false.
 export const Tags = {
   // Maintainer picks. Set only by page maintainers via the process documented in
   // docs/get-involved/maintainer-picks.md. Do not add this tag in your own PR.
@@ -20,6 +24,7 @@ export const Tags = {
     description:
       "Curated by page maintainers as a strong starting point. See docs/get-involved/maintainer-picks.md.",
     color: '#e9669e',  // Vibrant Pink
+    trackable: false,
   },
 
   // Accounting
@@ -28,6 +33,7 @@ export const Tags = {
     description: "Tools providing specialised analytics for financial purposes, including portfolio tracking.",
     icon: null,
     color: '#85BB65',  // Dollar Bill Green
+    trackable: false,
   },
 
   // Analytics
@@ -36,6 +42,7 @@ export const Tags = {
     description: "Tools that provide special insights related to Cardano.",
     icon: null,
     color: '#6A8EAE',  // Cool Steel Blue
+    trackable: false,
   },
 
   // PLEASE DO NOT USE THIS TAG: maintainers add the good for beginners tag (process TBD)
@@ -45,6 +52,7 @@ export const Tags = {
     description:
       "Cardano apps that are good for beginners to start with.",
     color: '#228660ff',  // Vibrant Green
+    trackable: false,
   },
 
   // Bridge
@@ -53,6 +61,7 @@ export const Tags = {
     description: "Projects that provide cross-chain bridge support.",
     icon: null,
     color: '#FFC107',  // Golden Yellow
+    trackable: true,
   },
 
   // Block Explorer
@@ -62,6 +71,7 @@ export const Tags = {
       "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
     icon: null,
     color: '#2E3B4E',  // Deep Navy Blue
+    trackable: false,
   },
 
   // DAO Tool
@@ -70,6 +80,7 @@ export const Tags = {
     description: "DAO tools help in the proper control and management of a DAO.",
     icon: null,
     color: '#37BEB0',  // Bright Cyan
+    trackable: true,
   },
 
   // Distribution
@@ -78,6 +89,7 @@ export const Tags = {
     description: "Platforms for distributing tokens, airdrops, and rewards to the Cardano community.",
     icon: null,
     color: '#E07850',  // Warm Coral
+    trackable: true,
   },
 
   // DEX
@@ -86,6 +98,7 @@ export const Tags = {
     description: "Decentralised exchanges allow direct peer-to-peer cryptocurrency transactions to take place online securely.",
     icon: null,
     color: '#3D5AFE',  // Bright Blue
+    trackable: true,
   },
 
   // Ecosystem
@@ -94,6 +107,7 @@ export const Tags = {
     description: "Projects that map out the Cardano Ecosystem.",
     icon: null,
     color: '#9C27B0',  // Purple
+    trackable: false,
   },
 
   // Educational
@@ -102,6 +116,7 @@ export const Tags = {
     description: "Educational projects that will help you onboarding to Cardano.",
     icon: null,
     color: '#D81B60',  // Hot Pink
+    trackable: false,
   },
 
   // Funding
@@ -110,6 +125,7 @@ export const Tags = {
     description: "Projects aimed at providing funding assistance to individuals.",
     icon: null,
     color: '#004BA0',  // Rich Blue
+    trackable: false,
   },
 
   // Game, don't tag your game with nft
@@ -118,6 +134,7 @@ export const Tags = {
     description: "Games on the Cardano blockchain.",
     icon: null,
     color: '#008080',  // Teal
+    trackable: true,
   },
 
   // Gateways
@@ -126,6 +143,7 @@ export const Tags = {
     description: "Payment Gateway Providers.",
     icon: null,
     color: '#FF5722',  // Bright Orange
+    trackable: false,
   },
 
   // Governance
@@ -134,6 +152,7 @@ export const Tags = {
     description: "Governance tools.",
     icon: null,
     color: '#673AB7',  // Deep Purple
+    trackable: true,
   },
 
   // Identity
@@ -142,6 +161,7 @@ export const Tags = {
     description: "Decentralized identifiers (DIDs).",
     icon: null,
     color: '#212121',  // Solid Black
+    trackable: true,
   },
 
   // Lending
@@ -150,6 +170,7 @@ export const Tags = {
     description: "Projects that provide lending and borrowing of ada.",
     icon: null,
     color: '#9E1C1C',  // Deep Red
+    trackable: true,
   },
 
   // Marketplace
@@ -158,6 +179,7 @@ export const Tags = {
     description: "Marketplace where you can buy or sell NFTs.",
     icon: null,
     color: '#E53935',  // Bright Red
+    trackable: true,
   },
 
   // Meta data projects
@@ -166,6 +188,7 @@ export const Tags = {
     description: "Transaction metadata.",
     icon: null,
     color: '#00ACC1',  // Bright Teal
+    trackable: true,
   },
 
   // Minting
@@ -174,6 +197,7 @@ export const Tags = {
     description: "Minting Tool.",
     icon: null,
     color: '#42A5F5',  // Light Blue
+    trackable: true,
   },
 
   // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site)
@@ -182,6 +206,7 @@ export const Tags = {
     description: "Great mobile experience.",
     icon: null,
     color: '#3e09deff',  // Dark blue
+    trackable: false,
   },
 
    // Music
@@ -190,6 +215,7 @@ export const Tags = {
     description: "Music-related projects on Cardano.",
     icon: null,
     color: '#7757d9ff',  // Vibrant Purple
+    trackable: false,
   },
 
   // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
@@ -198,6 +224,7 @@ export const Tags = {
     description: "App that supports or uses NFTs.",
     icon: null,
     color: '#B8860B',  // Dark Gold
+    trackable: false,
   },
 
   // Notary
@@ -206,6 +233,7 @@ export const Tags = {
     description: "Tools that provide proof of existence or timestamp files on the Cardano blockchain.",
     icon: null,
     color: '#5D4037',  // Warm Brown
+    trackable: true,
   },
 
   // Open-Source
@@ -214,6 +242,7 @@ export const Tags = {
     description: "Open-Source sites can be useful for inspiration.",
     icon: null,
     color: '#8C2F00',  // Dark Orange-Red
+    trackable: false,
   },
 
   // Oracle
@@ -222,6 +251,7 @@ export const Tags = {
     description: "Oracles provide smart contracts with external data.",
     icon: null,
     color: '#1E88E5',  // Medium Blue
+    trackable: true,
   },
 
   // Pool Tool
@@ -230,6 +260,7 @@ export const Tags = {
     description: "Pool tools provide delegates with the necessary tools to find a good pool.",
     icon: null,
     color: '#6C6FFF',  // Soft Blue
+    trackable: false,
   },
 
   // Social
@@ -238,6 +269,7 @@ export const Tags = {
     description: "Sites that use the Cardano blockchain for social messaging, groups and sharing.",
     icon: null,
     color: '#4d6545',  // Custom: Olive (green-grey)
+    trackable: false,
   },
 
   // Stable Coins
@@ -246,6 +278,7 @@ export const Tags = {
     description: "Backed or algorithmic stable coins.",
     icon: null,
     color: '#FF1744',  // Bright Red
+    trackable: true,
   },
 
   // Wallets, don't forget to add the "mobile"-tag if you provide a mobile app as well.
@@ -254,6 +287,7 @@ export const Tags = {
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
     icon: null,
     color: '#7BC8A6',  // Soft Green
+    trackable: false,
   },
 };
 

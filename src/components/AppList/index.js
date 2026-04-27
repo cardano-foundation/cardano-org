@@ -2,18 +2,8 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
-import { getAppStats } from "@site/src/utils/appStats";
+import { getAppStats, formatTxCountCompact as formatTxCount } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
-
-function formatTxCount(num) {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + 'M';
-  }
-  if (num >= 1000) {
-    return (num / 1000).toFixed(1) + 'K';
-  }
-  return num.toLocaleString('en-US');
-}
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
