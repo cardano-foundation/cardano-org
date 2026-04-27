@@ -23,7 +23,7 @@ import ShowcaseLatestToggle, {
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { toggleListItem } from "../../utils/jsUtils";
 import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
-import { getTxCount } from "@site/src/utils/appStats";
+import { getTxCount, STATS_GENERATED_AT } from "@site/src/utils/appStats";
 import { useHistory, useLocation } from "@docusaurus/router";
 import _debounce from 'lodash/debounce';
 import styles from "./styles.module.css";
@@ -56,6 +56,35 @@ const maintainerPicks = SortedShowcases.filter((showcase) =>
 const otherShowcases = SortedShowcases.filter(
   (showcase) => !showcase.tags.includes("favorite")
 );
+
+const MOST_ACTIVE_LIMIT = 3;
+const mostActiveShowcases = Showcases
+  .map((s) => ({ s, tx: getTxCount(s) }))
+  .filter(({ tx }) => tx > 0)
+  .sort((a, b) => b.tx - a.tx)
+  .slice(0, MOST_ACTIVE_LIMIT)
+  .map(({ s }) => s);
+
+const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
+  ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })
+  : null;
+
+const ITEM_LIST_LIMIT = 30;
+const APPS_ITEM_LIST_JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Cardano apps and dApps",
+  itemListElement: SortedShowcases.slice(0, ITEM_LIST_LIMIT).map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: s.website,
+    name: s.title,
+  })),
+});
 
 function sortProjects(projects, sortOption) {
   if (sortOption === SORT_IDS.ALPHABETICAL) {
@@ -380,6 +409,29 @@ function ShowcaseCards() {
               </ul>
             </div>
           </div>
+          {mostActiveShowcases.length > 0 && (
+            <div className="container margin-top--lg">
+              <h2 className={styles.showcaseHeader}>
+                {translate({id: 'apps.mostActive.title', message: 'Most active'})}
+              </h2>
+              {STATS_GENERATED_AT_LABEL && (
+                <p className={styles.maintainerPicksSubtitle}>
+                  {translate(
+                    {
+                      id: 'apps.mostActive.subtitle',
+                      message: 'Top apps by on-chain transactions over the last 30 days. Snapshot from {date}.',
+                    },
+                    {date: STATS_GENERATED_AT_LABEL}
+                  )}
+                </p>
+              )}
+              <ul className={styles.showcaseList}>
+                {mostActiveShowcases.map((showcase) => (
+                  <ShowcaseCard key={showcase.title} showcase={showcase} />
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="container margin-top--lg">
             <h2 className={styles.showcaseHeader}>{translate({id: 'apps.allProjects', message: 'All Projects'})}</h2>
             <ul className={styles.showcaseList}>
@@ -500,6 +552,9 @@ function Showcase() {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <OpenGraphInfo pageName="apps" />
+      <Head>
+        <script type="application/ld+json">{APPS_ITEM_LIST_JSON_LD}</script>
+      </Head>
       <ShowcaseHeader />
       <IntentChips />
       <ShowcaseFilters selectedTags={selectedTags} toggleTag={toggleTag} />
