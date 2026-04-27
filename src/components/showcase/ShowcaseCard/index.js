@@ -71,7 +71,7 @@ const ShowcaseCard = memo((card) => {
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
           <h4 className={styles.showcaseCardTitle}>
-            <Link href={card.showcase.website}>{card.showcase.title}</Link>
+            <Link to={`/apps/${card.showcase.slug}`}>{card.showcase.title}</Link>
           </h4>
           {card.showcase.maintainerPick && (
             <Fav className={styles.svgIconFavorite} size="small" />

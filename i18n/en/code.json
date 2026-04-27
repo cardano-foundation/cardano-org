@@ -3184,6 +3184,33 @@
   "apps.card.activity.tooltip": {
     "message": "Transactions in the last 30 days"
   },
+  "apps.detail.backToApps": {
+    "message": "← All apps"
+  },
+  "apps.detail.maintainerPick": {
+    "message": "Maintainer pick"
+  },
+  "apps.detail.visitWebsite": {
+    "message": "Visit website"
+  },
+  "apps.detail.viewSource": {
+    "message": "View source"
+  },
+  "apps.detail.activity": {
+    "message": "Activity"
+  },
+  "apps.detail.activityBody": {
+    "message": "{count} on-chain transactions in the last 30 days (snapshot {date})."
+  },
+  "apps.detail.related": {
+    "message": "More in this category"
+  },
+  "apps.detail.visit": {
+    "message": "Visit"
+  },
+  "apps.detail.editLink": {
+    "message": "Improve this entry on GitHub"
+  },
   "insights.card.openInsight": {
     "message": "Open insight"
   },

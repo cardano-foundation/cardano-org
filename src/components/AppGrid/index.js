@@ -90,11 +90,13 @@ export default function AppGrid({
   gridTitle = null,
   ctaText = "Visit",
   moreLink = null,
-  moreTitle = "More Apps"
+  moreTitle = "More Apps",
+  excludeSlug = null,
 }) {
-  // Filter apps whose primary category matches any of the requested categories
+  // Filter apps whose primary category matches any of the requested categories.
+  // excludeSlug is set by detail pages so the current app isn't shown in its own related list.
   const filteredApps = Showcases.filter(app =>
-    categories.includes(app.category)
+    categories.includes(app.category) && app.slug !== excludeSlug
   );
 
   // Sort by transaction count (highest first), then alphabetically

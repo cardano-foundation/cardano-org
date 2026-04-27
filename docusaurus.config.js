@@ -201,6 +201,7 @@ const config = {
         steps: 2, // the max number of images generated between min and max (inclusive)
       },
     ],
+    './plugins/apps-routes',
     function (context, options) {
       return {
         name: 'custom-webpack-config',
