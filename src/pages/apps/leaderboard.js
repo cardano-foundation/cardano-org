@@ -16,7 +16,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 
-import { Showcases, Tags } from "@site/src/data/apps";
+import { Showcases, Tags, Categories } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
 import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
@@ -42,7 +42,7 @@ function formatShortNumber(num) {
 
 // Override display info for apps not listed in apps.js
 const appOverrides = {
-  'fms-by-trivolve': { title: 'Forensic Management System', icon: '/img/app-icons/trivolve.jpg', tags: ['notary'] },
+  'fms-by-trivolve': { title: 'Forensic Management System', icon: '/img/app-icons/trivolve.jpg', category: 'notary' },
 };
 
 // Helper to find app details from apps.js by matching statsLabel or normalized title
@@ -71,23 +71,9 @@ function getIconSrc(app) {
   return null;
 }
 
-// Map app labels to display-friendly category names
 function getCategoryForApp(app) {
   if (!app) return 'Not Listed';
-  const tags = app.tags || [];
-  if (tags.includes('dex')) return 'DEX';
-  if (tags.includes('lending')) return 'Lending';
-  if (tags.includes('marketplace')) return 'Marketplace';
-  if (tags.includes('oracle')) return 'Oracle';
-  if (tags.includes('stablecoin')) return 'Stablecoin';
-  if (tags.includes('wallet')) return 'Wallet';
-  if (tags.includes('game')) return 'Gaming';
-  if (tags.includes('governance')) return 'Governance';
-  if (tags.includes('bridge')) return 'Bridge';
-  if (tags.includes('distribution')) return 'Distribution';
-  if (tags.includes('minting')) return 'Minting';
-  if (tags.includes('notary')) return 'Notary';
-  return 'Other';
+  return Categories[app.category]?.label || 'Other';
 }
 
 // Metadata label info: maps numeric labels to display names and existing categories
@@ -175,15 +161,15 @@ function getCategoryForEntry(statEntry, appDetails) {
   return getCategoryForApp(appDetails);
 }
 
-// Define category colors
+// Category colors keyed by Categories[id].label so getCategoryForApp output matches.
 const categoryColors = {
   'DEX': '#3D5AFE',
   'Lending': '#9E1C1C',
   'Marketplace': '#E53935',
   'Oracle': '#1E88E5',
-  'Stablecoin': '#FF1744',
+  'Stable Coins': '#FF1744',
   'Wallet': '#7BC8A6',
-  'Gaming': '#008080',
+  'Game': '#008080',
   'Governance': '#673AB7',
   'Bridge': '#FFC107',
   'Distribution': '#E07850',

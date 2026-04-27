@@ -33,7 +33,7 @@ const steps = (onWalletConnect, images) => [
     hideActions: true,
     content: (actions) => (
       <TwoColumnLayout
-        sidebar={<AppList tags={["wallet"]} limit={5} showTxCount={false} hideHeader={true} categoryTitle="Wallets" showTags={true} showDescription={false} />}
+        sidebar={<AppList categories={["wallet"]} limit={5} showTxCount={false} hideHeader={true} categoryTitle="Wallets" showTags={true} showDescription={false} />}
         sidebarSticky={false}
         ratio="1:1"
       >
@@ -190,7 +190,7 @@ const steps = (onWalletConnect, images) => [
         centerVertically={false}
       >
         <AppList
-              tags={["goodForBeginners"]}
+              beginnerFriendly
               limit={5}
               showTags={true}
               categoryTitle="Popular Apps"

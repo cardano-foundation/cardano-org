@@ -3,7 +3,7 @@ import { SortedShowcases } from "../data/apps";
 // Extract wallet entries that have walletFeatures defined
 export function getWallets(showcases = SortedShowcases) {
   return showcases.filter(
-    (app) => app.tags.includes("wallet") && app.walletFeatures
+    (app) => app.category === "wallet" && app.walletFeatures
   );
 }
 
@@ -31,7 +31,7 @@ export function filterWallets(wallets, { platforms = [], features = [], custody 
       return false;
     }
 
-    if (openSource === true && !wallet.tags.includes("opensource")) {
+    if (openSource === true && !wallet.properties.includes("opensource")) {
       return false;
     }
 
@@ -56,7 +56,7 @@ export function getBeginnerWallets(wallets, platform) {
     return wallets.filter((w) => {
       const wf = w.walletFeatures;
       return (
-        w.tags.includes("favorite") &&
+        w.maintainerPick &&
         wf.platforms.some((p) => p === "browser" || p === "desktop")
       );
     });

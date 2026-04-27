@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
-import { getAppStats, formatTxCountCompact as formatTxCount } from "@site/src/utils/appStats";
+import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
@@ -27,10 +27,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   const iconSrc = useBaseUrl(rawIconSrc || '');
   const initial = app.title.charAt(0).toUpperCase();
   
-  // Filter out 'favorite' tag if showing tags
-  const visibleTags = showTags 
-    ? app.tags.filter(tag => tag !== 'favorite')
-    : [];
+  const visibleTags = showTags ? getAppAxes(app) : [];
 
   return (
     <a 
@@ -74,18 +71,18 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   );
 }
 
-export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
-  // Filter apps by tags
-  let filteredApps = Showcases.filter(app => 
-    tags.length === 0 || tags.some(tag => app.tags.includes(tag))
-  );
+export default function AppList({ categories = [], beginnerFriendly = false, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
+  let filteredApps = Showcases.filter(app => {
+    if (categories.length > 0 && !categories.includes(app.category)) return false;
+    if (beginnerFriendly && !app.beginnerFriendly) return false;
+    return true;
+  });
 
-  // Attach stats and sort
   const appsWithStats = filteredApps.map(app => ({
     app,
     stats: getAppStats(app),
     hasTxData: !!getAppStats(app)?.txCount,
-    isFavorite: app.tags?.includes('favorite') || false
+    isFavorite: app.maintainerPick || false,
   }));
 
   // Sort: Apps with tx data first (by count), then favorites, then alphabetically
@@ -113,11 +110,10 @@ export default function AppList({ tags = [], limit = 5, categoryTitle = "Apps", 
   const displayedApps = limit ? appsWithStats.slice(0, limit) : appsWithStats;
   const hasMore = limit && appsWithStats.length > limit;
 
-  // Build the "See all" link
-  const seeAllUrl = tags.length > 1 
-    ? `/apps?${tags.map(tag => `tags=${tag}`).join('&')}&operator=OR`
-    : tags.length === 1
-    ? `/apps?tags=${tags[0]}`
+  const seeAllUrl = categories.length > 1
+    ? `/apps?${categories.map((c) => `tags=${c}`).join('&')}&operator=OR`
+    : categories.length === 1
+    ? `/apps?tags=${categories[0]}`
     : '/apps';
 
   return (

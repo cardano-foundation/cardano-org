@@ -17,6 +17,7 @@ import {
   getAppStats,
   isTrackable,
   formatTxCountCompact,
+  getAppAxes,
 } from "@site/src/utils/appStats";
 import Fav from "../../../svg/fav.svg";
 
@@ -72,7 +73,7 @@ const ShowcaseCard = memo((card) => {
           <h4 className={styles.showcaseCardTitle}>
             <Link href={card.showcase.website}>{card.showcase.title}</Link>
           </h4>
-          {card.showcase.tags.includes("favorite") && (
+          {card.showcase.maintainerPick && (
             <Fav className={styles.svgIconFavorite} size="small" />
           )}
           {card.showcase.getstarted && (
@@ -106,7 +107,7 @@ const ShowcaseCard = memo((card) => {
         <p className={styles.showcaseCardBody}>{card.showcase.description}</p>
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
-        <ShowcaseCardTag tags={card.showcase.tags.filter((t) => t !== "favorite")} />
+        <ShowcaseCardTag tags={getAppAxes(card.showcase)} />
       </ul>
     </li>
   );

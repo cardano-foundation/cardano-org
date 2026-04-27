@@ -1,5 +1,5 @@
 import appStatsData from "@site/src/data/tx-stats.json";
-import { Tags } from "@site/src/data/apps";
+import { Categories } from "@site/src/data/apps";
 
 const TX_BY_LABEL = new Map(
   appStatsData.appStats.map((s) => [s.label, s])
@@ -8,10 +8,10 @@ const TX_BY_LABEL = new Map(
 export const STATS_GENERATED_AT = appStatsData.metadata?.generated ?? null;
 
 if (process.env.NODE_ENV !== "production") {
-  Object.entries(Tags).forEach(([key, def]) => {
+  Object.entries(Categories).forEach(([key, def]) => {
     if (typeof def.trackable !== "boolean") {
       // eslint-disable-next-line no-console
-      console.warn(`[appStats] Tag "${key}" is missing the 'trackable' boolean field`);
+      console.warn(`[appStats] Category "${key}" is missing the 'trackable' boolean field`);
     }
   });
 }
@@ -36,7 +36,15 @@ export function getTxCount(app) {
 }
 
 export function isTrackable(app) {
-  return app.tags?.some((t) => Tags[t]?.trackable) ?? false;
+  return Categories[app.category]?.trackable ?? false;
+}
+
+export function getAppAxes(app) {
+  return [app.category, ...(app.properties || [])];
+}
+
+export function appHasTag(app, tag) {
+  return app.category === tag || (app.properties || []).includes(tag);
 }
 
 export function formatTxCount(num) {

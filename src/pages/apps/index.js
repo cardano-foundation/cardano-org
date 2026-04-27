@@ -23,7 +23,7 @@ import ShowcaseLatestToggle, {
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { toggleListItem } from "../../utils/jsUtils";
 import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
-import { getTxCount, STATS_GENERATED_AT } from "@site/src/utils/appStats";
+import { getTxCount, STATS_GENERATED_AT, appHasTag } from "@site/src/utils/appStats";
 import { useHistory, useLocation } from "@docusaurus/router";
 import _debounce from 'lodash/debounce';
 import styles from "./styles.module.css";
@@ -50,12 +50,8 @@ export function prepareUserState() {
   return undefined;
 }
 
-const maintainerPicks = SortedShowcases.filter((showcase) =>
-  showcase.tags.includes("favorite")
-);
-const otherShowcases = SortedShowcases.filter(
-  (showcase) => !showcase.tags.includes("favorite")
-);
+const maintainerPicks = SortedShowcases.filter((showcase) => showcase.maintainerPick);
+const otherShowcases = SortedShowcases.filter((showcase) => !showcase.maintainerPick);
 
 const MOST_ACTIVE_LIMIT = 3;
 const mostActiveShowcases = Showcases
@@ -141,13 +137,10 @@ function filterProjects(projects, selectedTags, latest, operator, searchName, un
   }
 
   return projects.filter((project) => {
-    if (project.tags.length === 0) {
-      return false;
-    } else if (operator === "AND") {
-      return selectedTags.every((tag) => project.tags.includes(tag));
-    } else {
-      return selectedTags.some((tag) => project.tags.includes(tag));
+    if (operator === "AND") {
+      return selectedTags.every((tag) => appHasTag(project, tag));
     }
+    return selectedTags.some((tag) => appHasTag(project, tag));
   });
 }
 
@@ -245,11 +238,11 @@ function ShowcaseFilters() {
     push({ ...location, search: newSearch });
   }, [location, push]);
 
-  // Count apps per tag
+  // Count apps per tag (matches both category and properties)
   const tagCounts = useMemo(() => {
     const counts = {};
-    TagList.forEach(tag => {
-      counts[tag] = SortedShowcases.filter(showcase => showcase.tags.includes(tag)).length;
+    TagList.forEach((tag) => {
+      counts[tag] = SortedShowcases.filter((showcase) => appHasTag(showcase, tag)).length;
     });
     return counts;
   }, []);
@@ -309,29 +302,15 @@ function ShowcaseFilters() {
                     id={id}
                     label={`${label} (${count})`}
                     icon={
-                      tag === "favorite" ? (
-                        <span
-                          style={{
-                            marginLeft: 8,
-                          }}
-                        >
-                          <Fav
-                            className={styles.svgIconFavorite}
-                            size="small"
-                            style={{ display: "grid" }}
-                          />
-                        </span>
-                      ) : (
-                        <span
-                          style={{
-                            backgroundColor: color,
-                            width: 10,
-                            height: 10,
-                            borderRadius: "50%",
-                            marginLeft: 8,
-                          }}
-                        />
-                      )
+                      <span
+                        style={{
+                          backgroundColor: color,
+                          width: 10,
+                          height: 10,
+                          borderRadius: "50%",
+                          marginLeft: 8,
+                        }}
+                      />
                     }
                   />
                 </ShowcaseTooltip>

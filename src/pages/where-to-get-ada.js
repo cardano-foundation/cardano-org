@@ -73,7 +73,7 @@ export default function Home() {
             headingDot={false}
             />
 
-            <AppGrid tags={['dex']} limit={5} showRank={false} showStats={true} ctaText="Visit DEX" moreTitle="More DEXes" />
+            <AppGrid categories={['dex']} limit={5} showRank={false} showStats={true} ctaText="Visit DEX" moreTitle="More DEXes" />
             <SpacerBox size="medium"/>
 
             <TitleWithText

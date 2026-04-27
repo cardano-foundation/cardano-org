@@ -21,7 +21,7 @@ if (!showcasesMatch) {
 }
 const showcasesBlock = showcasesMatch[1];
 
-const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?tags:\s*\[([^\]]*)\][\s\S]*?\n\s*\},?/g;
+const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?\n\s*\},?/g;
 
 const apps = [];
 let m;
@@ -34,11 +34,13 @@ while ((m = entryRegex.exec(showcasesBlock)) !== null) {
     .trim();
   const website = m[3];
   const source = m[4] === 'null' ? null : m[4].replace(/^"|"$/g, '');
-  const tags = m[5]
+  const category = m[5];
+  const properties = m[6]
     .split(',')
     .map((t) => t.trim().replace(/^"|"$/g, ''))
     .filter(Boolean);
-  apps.push({ title, description, website, source, tags });
+  const maintainerPick = m[7] === 'true';
+  apps.push({ title, description, website, source, category, properties, maintainerPick });
 }
 
 const titleCount = (showcasesBlock.match(/^\s*title:\s*"/gm) || []).length;
@@ -62,12 +64,11 @@ const lines = [
 ];
 
 for (const app of apps) {
-  const isPick = app.tags.includes('favorite');
-  const visibleTags = app.tags.filter((t) => t !== 'favorite');
-  lines.push(`### ${app.title}${isPick ? ' (Maintainer pick)' : ''}`);
+  lines.push(`### ${app.title}${app.maintainerPick ? ' (Maintainer pick)' : ''}`);
   lines.push(`URL: ${app.website}`);
   if (app.source) lines.push(`Source: ${app.source}`);
-  if (visibleTags.length) lines.push(`Categories: ${visibleTags.join(', ')}`);
+  lines.push(`Category: ${app.category}`);
+  if (app.properties.length) lines.push(`Properties: ${app.properties.join(', ')}`);
   if (app.description) lines.push(app.description);
   lines.push('');
 }

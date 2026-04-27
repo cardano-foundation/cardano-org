@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 
 export default function WalletFinderCard({ wallet }) {
   const wf = wallet.walletFeatures;
-  const isOpenSource = wallet.tags.includes("opensource");
+  const isOpenSource = wallet.properties.includes("opensource");
   const iconUrl = useBaseUrl(wallet.icon || "");
 
   return (

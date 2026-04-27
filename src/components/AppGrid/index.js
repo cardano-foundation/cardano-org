@@ -83,7 +83,7 @@ function AppCard({ app, stats, appRank, ctaText }) {
 }
 
 export default function AppGrid({
-  tags = ['dex'],
+  categories = ['dex'],
   limit = null,
   showRank = true,
   showStats = true,
@@ -92,9 +92,9 @@ export default function AppGrid({
   moreLink = null,
   moreTitle = "More Apps"
 }) {
-  // Filter apps that have ANY of the specified tags
+  // Filter apps whose primary category matches any of the requested categories
   const filteredApps = Showcases.filter(app =>
-    tags.some(tag => app.tags.includes(tag))
+    categories.includes(app.category)
   );
 
   // Sort by transaction count (highest first), then alphabetically
@@ -124,12 +124,12 @@ export default function AppGrid({
   const hasMore = limit && appsWithRank.length > limit;
 
   // Generate default more link if not provided
-  const defaultMoreLink = `/apps?tags=${tags.join(',')}`;
+  const defaultMoreLink = `/apps?${categories.map((c) => `tags=${c}`).join('&')}`;
   const finalMoreLink = moreLink || defaultMoreLink;
 
-  // Generate tag label for display
-  const tagLabel = tags.length === 1
-    ? tags[0].toUpperCase()
+  // Generate label for display
+  const tagLabel = categories.length === 1
+    ? categories[0].toUpperCase()
     : 'apps';
 
   if (filteredApps.length === 0) {
