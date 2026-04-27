@@ -23,12 +23,36 @@ Before making a pull request, please make sure that you fulfill all these requir
 
 ## Step-by-Step Process
 
-1. **Prepare your project image**
-   - Create a PNG or JPG file
-   - Name it descriptively (e.g., `your-project-name.png`)
+1. **Prepare your project screenshot**
 
-2. **Add your image to the repository**
-   - Place it in: `src/data/app-images/your-project-name.png`
+   Cards on `/apps` crop to roughly 280×150 px. To look sharp on retina displays without bloating the repo, follow these specs:
+
+   | Item | Recommendation |
+   |---|---|
+   | Resolution | **1280×720 px** (1280 wide, 16:9) — downscales cleanly |
+   | Aspect ratio | **16:9 or 16:10** landscape; anything taller gets cropped on the card |
+   | Format | **JPEG** (quality 80) for UI screenshots; PNG only when pixel-perfect text or transparency matters; WebP welcome |
+   | File size | **Under 500 KB** (build will fail otherwise — limit enforced by `scripts/check-app-screenshots.js`) |
+   | Content | the actual app UI, cropped to the meaningful area. Not a marketing landing page. |
+   | Theme | prefer **light theme** for visual consistency with the grid |
+   | Browser chrome | omit URL bar and tabs unless intentional (use a clean window or crop them out) |
+
+   One-liner to resize and re-encode an oversized PNG (macOS, ships with `sips`):
+
+   ```bash
+   sips -Z 1280 -s formatOptions 80 -s format jpeg input.png --out your-project-name.jpg
+   ```
+
+   Equivalent on Linux (with ImageMagick):
+
+   ```bash
+   convert input.png -resize 1280x -quality 80 your-project-name.jpg
+   ```
+
+   Name the file descriptively, lowercase, hyphens (e.g. `minswap.jpg`, not `Screenshot 2026-04-19.png`).
+
+2. **Add your screenshot to the repository**
+   - Place it in: `src/data/app-screenshots/your-project-name.jpg`
 
 3. **(Optional) Add your project icon/logo**
    - Icons are displayed in specialized components like the DEX grid and app lists
@@ -46,7 +70,7 @@ Before making a pull request, please make sure that you fulfill all these requir
    {
      title: "Your Project Name",
      description: "Brief description of what your project does (avoid 'best/first/only' claims)",
-     preview: require("./app-images/your-project-name.png"),
+     preview: require("./app-screenshots/your-project-name.jpg"),
      icon: "/img/app-icons/your-project-name.svg", // OPTIONAL - for logo display in components
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
