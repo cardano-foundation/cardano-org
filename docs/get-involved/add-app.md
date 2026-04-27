@@ -64,7 +64,7 @@ Before making a pull request, please make sure that you fulfill all these requir
    - Tags are used in the AppList component and other discovery features
    - Too many tags dilute your app's discoverability
    - Choose the most specific tag that fits (e.g., `dex` over generic `token`)
-   - Do NOT add the `favorite` tag yourself
+   - Do NOT add the `favorite` tag yourself — it is reserved for [Maintainer picks](/docs/get-involved/maintainer-picks) and is set only by maintainers through that process
    - Check `src/data/apps.js` for the complete list of available tags
    - If your project is open-source, include the `opensource` tag AND provide the `source` URL
 

@@ -14,6 +14,7 @@
 - [ ] (Optional) I have added my icon/logo to `static/img/app-icons/`
 - [ ] I have run `yarn build` after adding my changes **without getting any errors**.
 - [ ] I have not committed any changes to `yarn.lock`.
+- [ ] I have **not** added the `favorite` tag to my entry. The `favorite` tag drives the [Maintainer picks](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/maintainer-picks.md) section and is only set by maintainers through that process.
 
 ## App addition
 
