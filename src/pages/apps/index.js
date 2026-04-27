@@ -4,6 +4,12 @@ import Layout from "@theme/Layout";
 import ShowcaseTooltip from "@site/src/components/showcase/ShowcaseTooltip";
 import ShowcaseTagSelect from "@site/src/components/showcase/ShowcaseTagSelect";
 import ShowcaseCard from "@site/src/components/showcase/ShowcaseCard/";
+import IntentChips from "@site/src/components/showcase/IntentChips";
+import ShowcaseSort, {
+  readSortOption,
+  DEFAULT_SORT,
+  SORT_IDS,
+} from "@site/src/components/showcase/ShowcaseSort";
 import OpenStickyButton from "../../components/buttons/openStickyButton";
 import ShowcaseFilterToggle, {
   readOperator,
@@ -17,6 +23,7 @@ import ShowcaseLatestToggle, {
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { toggleListItem } from "../../utils/jsUtils";
 import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
+import { getTxCount } from "@site/src/utils/appStats";
 import { useHistory, useLocation } from "@docusaurus/router";
 import _debounce from 'lodash/debounce';
 import styles from "./styles.module.css";
@@ -43,12 +50,27 @@ export function prepareUserState() {
   return undefined;
 }
 
-const favoriteShowcases = SortedShowcases.filter((showcase) =>
+const maintainerPicks = SortedShowcases.filter((showcase) =>
   showcase.tags.includes("favorite")
 );
 const otherShowcases = SortedShowcases.filter(
   (showcase) => !showcase.tags.includes("favorite")
 );
+
+function sortProjects(projects, sortOption) {
+  if (sortOption === SORT_IDS.ALPHABETICAL) {
+    return [...projects].sort((a, b) => a.title.localeCompare(b.title));
+  }
+  if (sortOption === SORT_IDS.MOST_ACTIVE) {
+    return [...projects].sort((a, b) => {
+      const txA = getTxCount(a);
+      const txB = getTxCount(b);
+      if (txA !== txB) return txB - txA;
+      return a.title.localeCompare(b.title);
+    });
+  }
+  return projects;
+}
 
 function restoreUserState(userState) {
   const { scrollTopPosition, focusedElementId } = userState ?? {
@@ -108,6 +130,7 @@ function useFilteredProjects() {
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchName, setSearchName] = useState(null);
+  const [sortOption, setSortOption] = useState(DEFAULT_SORT);
 
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client hydration mismatch)
   useEffect(() => {
@@ -115,6 +138,7 @@ function useFilteredProjects() {
     setOperator(readOperator(location.search));
     setLatest(readLatestOperator(location.search));
     setSearchName(readSearchName(location.search));
+    setSortOption(readSortOption(location.search));
     // Only restore scroll position if it's not a search action
     if (ExecutionEnvironment.canUseDOM && location.state && !location.state.isSearch) {
       setTimeout(() => {
@@ -123,18 +147,23 @@ function useFilteredProjects() {
     }
   }, [location]);
 
-  return useMemo(
+  const filtered = useMemo(
     () =>
-      filterProjects(
-        SortedShowcases,
-        selectedTags,
-        latest,
-        operator,
-        searchName,
-        Showcases
+      sortProjects(
+        filterProjects(
+          SortedShowcases,
+          selectedTags,
+          latest,
+          operator,
+          searchName,
+          Showcases
+        ),
+        sortOption
       ),
-    [selectedTags, latest, operator, searchName]
+    [selectedTags, latest, operator, searchName, sortOption]
   );
+
+  return { filtered, sortOption };
 }
 
 function useSelectedTags() {
@@ -176,7 +205,7 @@ function ShowcaseHeader() {
 }
 
 function ShowcaseFilters() {
-  const filteredProjects = useFilteredProjects();
+  const { filtered: filteredProjects } = useFilteredProjects();
   const { selectedTags, toggleTag } = useSelectedTags();
   const location = useLocation();
   const { push } = useHistory();
@@ -231,6 +260,7 @@ function ShowcaseFilters() {
           )}
           <ShowcaseLatestToggle />
           <ShowcaseFilterToggle />
+          <ShowcaseSort />
         </div>
       </div>
       <div className={styles.checkboxList}>
@@ -250,7 +280,7 @@ function ShowcaseFilters() {
                     id={id}
                     label={`${label} (${count})`}
                     icon={
-                      label === "Favorite" ? (
+                      tag === "favorite" ? (
                         <span
                           style={{
                             marginLeft: 8,
@@ -298,7 +328,17 @@ function ShowcaseFilters() {
 }
 
 function ShowcaseCards() {
-  const filteredProjects = useFilteredProjects();
+  const { filtered: filteredProjects, sortOption } = useFilteredProjects();
+  const isUnfiltered = filteredProjects.length === SortedShowcases.length;
+
+  const sortedPicks = useMemo(
+    () => (isUnfiltered ? sortProjects(maintainerPicks, sortOption) : []),
+    [isUnfiltered, sortOption]
+  );
+  const sortedOthers = useMemo(
+    () => (isUnfiltered ? sortProjects(otherShowcases, sortOption) : []),
+    [isUnfiltered, sortOption]
+  );
 
   if (filteredProjects.length === 0) {
     return (
@@ -313,7 +353,7 @@ function ShowcaseCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredProjects.length === SortedShowcases.length ? (
+      {isUnfiltered ? (
         <>
           <div className={styles.showcaseFavorite}>
             <div className="container">
@@ -323,12 +363,18 @@ function ShowcaseCards() {
                   styles.showcaseFavoriteHeader
                 )}
               >
-                <h2 className={styles.ourFavorites}>{translate({id: 'apps.ourFavorites', message: 'Our favorites'})}</h2>
+                <h2 className={styles.maintainerPicks}>{translate({id: 'apps.maintainerPicks', message: 'Maintainer picks'})}</h2>
                 <Fav className={styles.svgIconFavorite} size="small" />
                 <SearchBar />
               </div>
+              <p className={styles.maintainerPicksSubtitle}>
+                {translate({
+                  id: 'apps.maintainerPicks.subtitle',
+                  message: 'Curated by page maintainers as strong starting points. Selection criteria: see /docs/get-involved/maintainer-picks.',
+                })}
+              </p>
               <ul className={clsx("container", styles.showcaseList)}>
-                {favoriteShowcases.map((showcase) => (
+                {sortedPicks.map((showcase) => (
                   <ShowcaseCard key={showcase.title} showcase={showcase} />
                 ))}
               </ul>
@@ -337,7 +383,7 @@ function ShowcaseCards() {
           <div className="container margin-top--lg">
             <h2 className={styles.showcaseHeader}>{translate({id: 'apps.allProjects', message: 'All Projects'})}</h2>
             <ul className={styles.showcaseList}>
-              {otherShowcases.map((showcase) => (
+              {sortedOthers.map((showcase) => (
                 <ShowcaseCard key={showcase.title} showcase={showcase} />
               ))}
             </ul>
@@ -418,16 +464,47 @@ function SearchBar() {
 
  
 
+function SubmitCTA() {
+  return (
+    <section className={styles.submitCTA}>
+      <div className="container">
+        <div className={styles.submitCTAInner}>
+          <h2 className={styles.submitCTATitle}>
+            {translate({
+              id: 'apps.submit.title',
+              message: 'Built something on Cardano?',
+            })}
+          </h2>
+          <p className={styles.submitCTADescription}>
+            {translate({
+              id: 'apps.submit.description',
+              message:
+                'Add your app to this page. The submission process is open and lightweight.',
+            })}
+          </p>
+          <a
+            className={clsx('button button--primary button--lg', styles.submitCTAButton)}
+            href="/docs/get-involved/add-app"
+          >
+            {translate({id: 'apps.submit.button', message: 'Submit your app'})}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Showcase() {
   const { selectedTags, toggleTag } = useSelectedTags();
-  const filteredProjects = useFilteredProjects();
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <OpenGraphInfo pageName="apps" />
       <ShowcaseHeader />
+      <IntentChips />
       <ShowcaseFilters selectedTags={selectedTags} toggleTag={toggleTag} />
-      <ShowcaseCards filteredProjects={filteredProjects} />
+      <ShowcaseCards />
+      <SubmitCTA />
       <OpenStickyButton />
     </Layout>
   );

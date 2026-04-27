@@ -84,7 +84,7 @@ const ShowcaseCard = memo((card) => (
       <p className={styles.showcaseCardBody}>{card.showcase.description}</p>
     </div>
     <ul className={clsx("card__footer", styles.cardFooter)}>
-      <ShowcaseCardTag tags={card.showcase.tags} />
+      <ShowcaseCardTag tags={card.showcase.tags.filter((t) => t !== "favorite")} />
     </ul>
   </li>
 ));

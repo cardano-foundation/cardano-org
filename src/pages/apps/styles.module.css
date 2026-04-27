@@ -183,7 +183,44 @@
   font-size: 1rem;
 }
 
-.ourFavorites {
+.maintainerPicks {
   margin-right: 0.7rem;
+}
+
+.maintainerPicksSubtitle {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+  max-width: 640px;
+}
+
+.submitCTA {
+  background: var(--ifm-color-emphasis-100);
+  padding: 3rem 0;
+  margin-top: 1rem;
+}
+
+.submitCTAInner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.submitCTATitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.submitCTADescription {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.submitCTAButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
