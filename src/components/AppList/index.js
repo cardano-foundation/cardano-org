@@ -71,46 +71,58 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   );
 }
 
-export default function AppList({ categories = [], beginnerFriendly = false, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
-  let filteredApps = Showcases.filter(app => {
-    if (categories.length > 0 && !categories.includes(app.category)) return false;
-    if (beginnerFriendly && !app.beginnerFriendly) return false;
-    return true;
+export default function AppList({ categories = [], beginnerFriendly = false, slugs = null, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
+  // Explicit slug list (used by curated Collections) bypasses category/beginner filtering
+  // and preserves the curator's chosen order.
+  const isExplicit = Array.isArray(slugs) && slugs.length > 0;
+
+  let filteredApps = isExplicit
+    ? slugs
+        .map((slug) => {
+          const found = Showcases.find((app) => app.slug === slug);
+          if (!found && process.env.NODE_ENV !== 'production') {
+            // eslint-disable-next-line no-console
+            console.warn(`[AppList] Unknown slug "${slug}" — no matching app in Showcases.`);
+          }
+          return found;
+        })
+        .filter(Boolean)
+    : Showcases.filter((app) => {
+        if (categories.length > 0 && !categories.includes(app.category)) return false;
+        if (beginnerFriendly && !app.beginnerFriendly) return false;
+        return true;
+      });
+
+  const appsWithStats = filteredApps.map(app => {
+    const stats = getAppStats(app);
+    return {
+      app,
+      stats,
+      hasTxData: !!stats?.txCount,
+      isFavorite: app.maintainerPick || false,
+    };
   });
 
-  const appsWithStats = filteredApps.map(app => ({
-    app,
-    stats: getAppStats(app),
-    hasTxData: !!getAppStats(app)?.txCount,
-    isFavorite: app.maintainerPick || false,
-  }));
-
-  // Sort: Apps with tx data first (by count), then favorites, then alphabetically
-  appsWithStats.sort((a, b) => {
-    // First priority: apps with transaction data
-    if (a.hasTxData && !b.hasTxData) return -1;
-    if (!a.hasTxData && b.hasTxData) return 1;
-    
-    // If both have tx data, sort by count descending
-    if (a.hasTxData && b.hasTxData) {
-      return (b.stats?.txCount || 0) - (a.stats?.txCount || 0);
-    }
-    
-    // Second priority: favorites (among apps without tx data)
-    if (!a.hasTxData && !b.hasTxData) {
+  if (!isExplicit) {
+    // Default sort: tx-data first (by count), then maintainer picks, then alphabetical.
+    // Curated lists keep the order they were authored in.
+    appsWithStats.sort((a, b) => {
+      if (a.hasTxData && !b.hasTxData) return -1;
+      if (!a.hasTxData && b.hasTxData) return 1;
+      if (a.hasTxData && b.hasTxData) {
+        return (b.stats?.txCount || 0) - (a.stats?.txCount || 0);
+      }
       if (a.isFavorite && !b.isFavorite) return -1;
       if (!a.isFavorite && b.isFavorite) return 1;
-    }
-    
-    // Final: alphabetical
-    return a.app.title.localeCompare(b.app.title);
-  });
+      return a.app.title.localeCompare(b.app.title);
+    });
+  }
 
-  // Limit the results
   const displayedApps = limit ? appsWithStats.slice(0, limit) : appsWithStats;
-  const hasMore = limit && appsWithStats.length > limit;
 
-  const seeAllUrl = categories.length > 1
+  const seeAllUrl = isExplicit
+    ? null
+    : categories.length > 1
     ? `/apps?${categories.map((c) => `tags=${c}`).join('&')}&operator=OR`
     : categories.length === 1
     ? `/apps?tags=${categories[0]}`
@@ -126,12 +138,14 @@ export default function AppList({ categories = [], beginnerFriendly = false, lim
             </svg>
           </div>
           <h3 className={styles.categoryTitle}>{categoryTitle}</h3>
-          <Link to={seeAllUrl} className={styles.seeAllButton}>
-            See all
-          </Link>
+          {seeAllUrl && (
+            <Link to={seeAllUrl} className={styles.seeAllButton}>
+              See all
+            </Link>
+          )}
         </div>
       )}
-      
+
       <div className={styles.listContainer}>
         {displayedApps.map(({ app, stats }) => (
           <AppListItem key={app.title} app={app} stats={stats} showTxCount={showTxCount} showTags={showTags} showDescription={showDescription} />
