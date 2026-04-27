@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23T06:31:32.399Z",
+  "lastUpdated": "2026-04-27T06:45:22.533Z",
   "contributors": [
     {
       "rank": 1,
@@ -23,22 +23,22 @@
     },
     {
       "rank": 3,
+      "user": "cardanocastellano",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 3308,
+      "approved": 0
+    },
+    {
+      "rank": 4,
       "user": "tu_nguyen",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
       "languages": [
         "Vietnamese"
       ],
       "translated": 2993,
-      "approved": 0
-    },
-    {
-      "rank": 4,
-      "user": "cardanocastellano",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 2120,
       "approved": 0
     },
     {
