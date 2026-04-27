@@ -8,6 +8,7 @@
 .docusaurus
 .cache-loader
 src/data/recentNews.json
+src/data/apps-metadata.json
 static/apps.llms.txt
 
 # Misc
