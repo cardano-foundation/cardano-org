@@ -3211,6 +3211,27 @@
   "apps.detail.editLink": {
     "message": "Improve this entry on GitHub"
   },
+  "apps.collections.title": {
+    "message": "Cardano App Collections"
+  },
+  "apps.collections.description": {
+    "message": "Curated bundles of Cardano apps for specific use cases."
+  },
+  "apps.collections.lede": {
+    "message": "Each collection groups apps around a specific user goal. They are curated by page maintainers, not exhaustive — see /apps for the full directory."
+  },
+  "apps.collections.empty": {
+    "message": "No collections published yet."
+  },
+  "apps.collections.cta.title": {
+    "message": "Curated bundles for specific goals"
+  },
+  "apps.collections.cta.description": {
+    "message": "Collections group apps around concrete user goals — onboarding, DeFi, creator tooling — so you do not have to scan the full directory."
+  },
+  "apps.collections.cta.button": {
+    "message": "Browse collections"
+  },
   "insights.card.openInsight": {
     "message": "Open insight"
   },

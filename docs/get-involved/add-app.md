@@ -66,6 +66,10 @@ Before making a pull request, please make sure that you fulfill all these requir
    - Add your entry to the **END** of the Showcases array
    - Use this format:
 
+   :::caution Title is identifying
+   The detail page URL `/apps/<slug>` is derived from the title via `slugify`, so renaming an app's title later changes its slug. Curated [Collections](/apps/collections) reference apps by slug — `grep -r "<old-slug>" src/pages/apps/collections/` before merging title changes.
+   :::
+
    ```javascript
    {
      title: "Your Project Name",

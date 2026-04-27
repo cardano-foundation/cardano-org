@@ -5,6 +5,7 @@ import ShowcaseTooltip from "@site/src/components/showcase/ShowcaseTooltip";
 import ShowcaseTagSelect from "@site/src/components/showcase/ShowcaseTagSelect";
 import ShowcaseCard from "@site/src/components/showcase/ShowcaseCard/";
 import IntentChips from "@site/src/components/showcase/IntentChips";
+import PageCTA from "@site/src/components/PageCTA";
 import ShowcaseSort, {
   readSortOption,
   DEFAULT_SORT,
@@ -495,33 +496,47 @@ function SearchBar() {
 
  
 
+function CollectionsCTA() {
+  return (
+    <PageCTA
+      title={translate({
+        id: 'apps.collections.cta.title',
+        message: 'Curated bundles for specific goals',
+      })}
+      description={translate({
+        id: 'apps.collections.cta.description',
+        message:
+          'Collections group apps around concrete user goals — onboarding, DeFi, creator tooling — so you do not have to scan the full directory.',
+      })}
+      href="/apps/collections"
+      buttonText={translate({
+        id: 'apps.collections.cta.button',
+        message: 'Browse collections',
+      })}
+      variant="secondary"
+    />
+  );
+}
+
 function SubmitCTA() {
   return (
-    <section className={styles.submitCTA}>
-      <div className="container">
-        <div className={styles.submitCTAInner}>
-          <h2 className={styles.submitCTATitle}>
-            {translate({
-              id: 'apps.submit.title',
-              message: 'Built something on Cardano?',
-            })}
-          </h2>
-          <p className={styles.submitCTADescription}>
-            {translate({
-              id: 'apps.submit.description',
-              message:
-                'Add your app to this page. The submission process is open and lightweight.',
-            })}
-          </p>
-          <a
-            className={clsx('button button--primary button--lg', styles.submitCTAButton)}
-            href="/docs/get-involved/add-app"
-          >
-            {translate({id: 'apps.submit.button', message: 'Submit your app'})}
-          </a>
-        </div>
-      </div>
-    </section>
+    <PageCTA
+      title={translate({
+        id: 'apps.submit.title',
+        message: 'Built something on Cardano?',
+      })}
+      description={translate({
+        id: 'apps.submit.description',
+        message:
+          'Add your app to this page. The submission process is open and lightweight.',
+      })}
+      href="/docs/get-involved/add-app"
+      buttonText={translate({
+        id: 'apps.submit.button',
+        message: 'Submit your app',
+      })}
+      variant="primary"
+    />
   );
 }
 
@@ -538,6 +553,7 @@ function Showcase() {
       <IntentChips />
       <ShowcaseFilters selectedTags={selectedTags} toggleTag={toggleTag} />
       <ShowcaseCards />
+      <CollectionsCTA />
       <SubmitCTA />
       <OpenStickyButton />
     </Layout>

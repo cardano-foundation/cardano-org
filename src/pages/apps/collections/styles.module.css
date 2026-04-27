@@ -1,0 +1,49 @@
+.lede {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.collectionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.collectionCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.collectionCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.collectionTitle {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.collectionTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.collectionTitle a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.collectionDescription {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
