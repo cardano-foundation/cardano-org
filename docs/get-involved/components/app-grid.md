@@ -12,14 +12,14 @@ The `AppGrid` component displays a responsive grid of Cardano applications, with
 ```jsx
 import AppGrid from '@site/src/components/AppGrid';
 
-<AppGrid tags={['dex']} />
+<AppGrid categories={['dex']} />
 ```
 
 **Live Preview:**
 
 import AppGrid from '@site/src/components/AppGrid';
 
-<AppGrid tags={['dex']} limit={4} />
+<AppGrid categories={['dex']} limit={4} />
 
 ---
 
@@ -27,7 +27,7 @@ import AppGrid from '@site/src/components/AppGrid';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `tags` | `string[]` | `['dex']` | Array of tags to filter apps by. Apps matching ANY of the tags will be shown. |
+| `categories` | `string[]` | `['dex']` | Array of category ids to filter apps. Apps whose primary category matches any of these are shown. |
 | `limit` | `number` | `null` | Maximum number of apps to display. Shows all if not specified. |
 | `showRank` | `boolean` | `true` | Whether to display rank badges (#1, #2, etc.) on app cards. |
 | `showStats` | `boolean` | `true` | Whether to display transaction statistics on app cards. |
@@ -75,7 +75,7 @@ Apps can display custom logos via the `icon` field in `apps.js`:
 
 ```jsx
 <AppGrid
-  tags={['dex']}
+  categories={['dex']}
   limit={4}
   gridTitle="Top Cardano DEXs"
   ctaText="Visit DEX"
@@ -84,7 +84,7 @@ Apps can display custom logos via the `icon` field in `apps.js`:
 ```
 
 <AppGrid
-  tags={['dex']}
+  categories={['dex']}
   limit={4}
   gridTitle="Top Cardano DEXs"
   ctaText="Visit DEX"
@@ -97,7 +97,7 @@ Apps can display custom logos via the `icon` field in `apps.js`:
 
 ```jsx
 <AppGrid
-  tags={['lending']}
+  categories={['lending']}
   limit={4}
   gridTitle="Lending Platforms"
   ctaText="Visit Platform"
@@ -106,7 +106,7 @@ Apps can display custom logos via the `icon` field in `apps.js`:
 ```
 
 <AppGrid
-  tags={['lending']}
+  categories={['lending']}
   limit={4}
   gridTitle="Lending Platforms"
   ctaText="Visit Platform"
@@ -119,14 +119,14 @@ Apps can display custom logos via the `icon` field in `apps.js`:
 
 ```jsx
 <AppGrid
-  tags={['marketplace']}
+  categories={['marketplace']}
   limit={4}
   gridTitle="Marketplaces"
 />
 ```
 
 <AppGrid
-  tags={['marketplace']}
+  categories={['marketplace']}
   limit={4}
   gridTitle="Marketplaces"
 />
@@ -139,14 +139,14 @@ Useful for showcasing apps without emphasizing competitive ranking:
 
 ```jsx
 <AppGrid
-  tags={['dex']}
+  categories={['dex']}
   limit={6}
   showRank={false}
 />
 ```
 
 <AppGrid
-  tags={['dex']}
+  categories={['dex']}
   limit={6}
   showRank={false}
 />
@@ -159,14 +159,14 @@ Clean display focusing only on app information:
 
 ```jsx
 <AppGrid
-  tags={['wallet']}
+  categories={['wallet']}
   limit={4}
   showStats={false}
 />
 ```
 
 <AppGrid
-  tags={['wallet']}
+  categories={['wallet']}
   limit={4}
   showStats={false}
 />
@@ -179,7 +179,7 @@ Show apps from multiple categories:
 
 ```jsx
 <AppGrid
-  tags={['dex', 'lending']}
+  categories={['dex', 'lending']}
   limit={6}
   gridTitle="DeFi Apps"
   ctaText="Open App"
@@ -187,7 +187,7 @@ Show apps from multiple categories:
 ```
 
 <AppGrid
-  tags={['dex', 'lending']}
+  categories={['dex', 'lending']}
   limit={6}
   gridTitle="DeFi Apps"
   ctaText="Open App"
@@ -280,7 +280,7 @@ import AppGrid from '@site/src/components/AppGrid';
 Explore the growing DeFi ecosystem on Cardano, ranked by real transaction volume.
 
 <AppGrid
-  tags={['dex', 'lending']}
+  categories={['dex', 'lending']}
   limit={8}
   gridTitle="Top DeFi Apps by Volume"
   ctaText="Open App"
@@ -319,11 +319,11 @@ import DexGrid from '@site/src/components/DexGrid';
 
 // After (AppGrid)
 import AppGrid from '@site/src/components/AppGrid';
-<AppGrid tags={['dex']} limit={5} showRank={false} ctaText="Visit DEX" moreTitle="More DEXes" />
+<AppGrid categories={['dex']} limit={5} showRank={false} ctaText="Visit DEX" moreTitle="More DEXes" />
 ```
 
 Key differences:
-- `tags` prop is now required (defaults to `['dex']`)
+- `categories` prop is now required (defaults to `['dex']`)
 - `ctaText` prop allows customizing the button text (was hardcoded as "Visit DEX")
 - `moreTitle` prop allows customizing the "more" card title
 - `moreLink` prop allows customizing the "more" card link

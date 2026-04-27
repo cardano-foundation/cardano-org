@@ -51,30 +51,33 @@ Before making a pull request, please make sure that you fulfill all these requir
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
      source: "https://github.com/your-org/your-project", // or null if not open-source
-     tags: ["primary", "secondary"], // Use 1-2 tags maximum - see guidelines below
+     category: "dex",                  // exactly one — see categories below
+     properties: ["opensource"],       // zero or more — see properties below
+     maintainerPick: false,            // leave false; maintainers set this
+     beginnerFriendly: false,          // leave false unless verifiably beginner-friendly
    }
    ```
 
-5. **Select appropriate tags** ⚠️ **Keep it minimal!**
+5. **Pick exactly one category** ⚠️
 
-   Available tags include: `wallet`, `dex`, `oracle`, `bridge`, `lending`, `governance`, `marketplace`, `game`, `nft`, `educational`, and more.
+   Each app has one primary category that answers "what kind of app is this?". Available categories: `wallet`, `dex`, `lending`, `marketplace`, `governance`, `explorer`, `pooltool`, `analytics`, `educational`, `minting`, `stablecoin`, `bridge`, `identity`, `daotool`, `oracle`, `game`, `distribution`, `notary`, `accounting`, `ecosystem`, `social`, `funding`, `music`, `gateway`, `metadata`.
 
-   **Critical Guidelines:**
-   - **Use only 1-2 tags** that best describe your app's primary function
-   - Tags are used in the AppList component and other discovery features
-   - Too many tags dilute your app's discoverability
-   - Choose the most specific tag that fits (e.g., `dex` over generic `token`)
-   - Do NOT add the `favorite` tag yourself — it is reserved for [Maintainer picks](/docs/get-involved/maintainer-picks) and is set only by maintainers through that process
-   - Check `src/data/apps.js` for the complete list of available tags
-   - If your project is open-source, include the `opensource` tag AND provide the `source` URL
+   Pick the most specific one. Do not list multiple. If your app legitimately spans two, choose the primary user intent.
 
-   **Examples:**
-   - DEX: `["dex"]` ✅
-   - Wallet: `["wallet", "nft"]` ✅
-   - Marketplace: `["marketplace", "nft"]` ✅
-   - Too many: `["dex", "marketplace", "lending", "governance", "nft"]` ❌
+6. **Add properties (zero or more)**
 
-6. **Optional Fields Explained**
+   Properties are additive flags answering "what does this app also offer?":
+   - `mobile` — first-class native mobile app (not a responsive site)
+   - `nft` — supports or uses NFTs (do not use for image-based NFT collections)
+   - `opensource` — public source repository; you must also fill in `source`
+
+7. **`maintainerPick` and `beginnerFriendly`**
+
+   Both default to `false` for new submissions.
+   - `maintainerPick: true` is set only by page maintainers via the [Maintainer picks](/docs/get-involved/maintainer-picks) process.
+   - `beginnerFriendly: true` should only be set if onboarding is genuinely smooth for newcomers (no jargon walls, sensible defaults, working out of the box). Reviewers may push back if this looks promotional.
+
+8. **Optional Fields Explained**
 
    **icon field:**
    - Path to your logo/icon for display in component grids
@@ -90,12 +93,12 @@ Before making a pull request, please make sure that you fulfill all these requir
    - Example: `statsLabel: "minswap"`
    - If omitted, the system will attempt normalized matching on your title
 
-7. **Test your submission**
-   - Run `yarn build` (must complete without errors)
+9. **Test your submission**
+   - Run `yarn build` (must complete without errors). The schema validator will reject unknown categories or properties.
    - Check that your project displays correctly
    - Verify your icon appears if you added one
-   - Ensure your tags are appropriate and minimal
+   - Ensure category is the most specific match and properties are minimal
 
-8. **Submit your pull request**
+10. **Submit your pull request**
    - Use the "Add Your App" GitHub PR template
    - Fill out the checklist in the template 

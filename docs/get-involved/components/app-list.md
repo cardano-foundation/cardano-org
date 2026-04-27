@@ -13,7 +13,7 @@ The [`<AppList>`](/docs/get-involved/components/app-list) component displays a c
 
 ```jsx
 <AppList 
-  tags={['dex']} 
+  categories={['dex']} 
   limit={5} 
   categoryTitle="DEX" 
 />
@@ -22,7 +22,7 @@ The [`<AppList>`](/docs/get-involved/components/app-list) component displays a c
 ## Result
 
 <AppList 
-  tags={['dex']} 
+  categories={['dex']} 
   limit={5} 
   categoryTitle="DEX" 
 />
@@ -31,7 +31,8 @@ The [`<AppList>`](/docs/get-involved/components/app-list) component displays a c
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `tags` | `string[]` | `[]` | Array of tags to filter apps (e.g., `['dex']`, `['wallet', 'browser']`). Empty array shows all apps. |
+| `categories` | `string[]` | `[]` | Array of category ids to filter apps (e.g., `['dex']`, `['wallet']`). Empty array shows all apps. |
+| `beginnerFriendly` | `boolean` | `false` | When true, only apps with `beginnerFriendly: true` are shown. |
 | `limit` | `number` | `5` | Maximum number of apps to display. Set to `null` to show all. |
 | `categoryTitle` | `string` | `"Apps"` | Title displayed in the component header. |
 | `showTxCount` | `boolean` | `false` | Whether to display transaction counts next to each app. |
@@ -50,7 +51,7 @@ Apps are sorted in the following order:
 
 ```jsx
 <AppList 
-  tags={['dex']} 
+  categories={['dex']} 
   limit={5} 
   categoryTitle="Decentralized Exchanges" 
   showTxCount={true}
@@ -58,7 +59,7 @@ Apps are sorted in the following order:
 ```
 
 <AppList 
-  tags={['dex']} 
+  categories={['dex']} 
   limit={5} 
   categoryTitle="Decentralized Exchanges" 
   showTxCount={true}
@@ -68,7 +69,7 @@ Apps are sorted in the following order:
 
 ```jsx
 <AppList 
-  tags={['marketplace']} 
+  categories={['marketplace']} 
   limit={5} 
   categoryTitle="Marketplaces" 
   showTxCount={true}
@@ -76,7 +77,7 @@ Apps are sorted in the following order:
 ```
 
 <AppList 
-  tags={['marketplace']} 
+  categories={['marketplace']} 
   limit={5} 
   categoryTitle="Marketplaces" 
   showTxCount={true}
@@ -86,7 +87,7 @@ Apps are sorted in the following order:
 
 ```jsx
 <AppList 
-  tags={['wallet']} 
+  categories={['wallet']} 
   limit={5} 
   categoryTitle="Wallets" 
   showTxCount={false}
@@ -94,7 +95,7 @@ Apps are sorted in the following order:
 ```
 
 <AppList 
-  tags={['wallet']} 
+  categories={['wallet']} 
   limit={5} 
   categoryTitle="Wallets" 
   showTxCount={false}
@@ -106,7 +107,7 @@ You can combine multiple tags to show apps from different categories:
 
 ```jsx
 <AppList 
-  tags={['dex', 'lending']} 
+  categories={['dex', 'lending']} 
   limit={8} 
   categoryTitle="DeFi Protocols" 
   showTxCount={true}
@@ -114,7 +115,7 @@ You can combine multiple tags to show apps from different categories:
 ```
 
 <AppList 
-  tags={['dex', 'lending']} 
+  categories={['dex', 'lending']} 
   limit={8} 
   categoryTitle="DeFi Protocols" 
   showTxCount={true}
@@ -124,7 +125,7 @@ You can combine multiple tags to show apps from different categories:
 
 ```jsx
 <AppList 
-  tags={[]} 
+  categories={[]} 
   limit={10} 
   categoryTitle="Popular Apps" 
   showTxCount={true}
@@ -132,7 +133,7 @@ You can combine multiple tags to show apps from different categories:
 ```
 
 <AppList 
-  tags={[]} 
+  categories={[]} 
   limit={10} 
   categoryTitle="Popular Apps" 
   showTxCount={true}
@@ -202,14 +203,14 @@ export default function HomePage() {
       
       <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))' }}>
         <AppList 
-          tags={['dex']} 
+          categories={['dex']} 
           limit={5} 
           categoryTitle="Top DEXes" 
           showTxCount={true}
         />
         
         <AppList 
-          tags={['wallet']} 
+          categories={['wallet']} 
           limit={5} 
           categoryTitle="Wallets" 
         />
