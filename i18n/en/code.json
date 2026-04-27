@@ -3172,6 +3172,18 @@
   "apps.submit.button": {
     "message": "Submit your app"
   },
+  "apps.mostActive.title": {
+    "message": "Most active"
+  },
+  "apps.mostActive.subtitle": {
+    "message": "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}."
+  },
+  "apps.card.activity.unit": {
+    "message": "tx · 30d"
+  },
+  "apps.card.activity.tooltip": {
+    "message": "Transactions in the last 30 days"
+  },
   "insights.card.openInsight": {
     "message": "Open insight"
   },

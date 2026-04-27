@@ -61,6 +61,20 @@ html[data-theme='dark'] .showcaseCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
+.activityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
 .showcaseCardBody {
   font-size: smaller;
   line-height: 1.66;
