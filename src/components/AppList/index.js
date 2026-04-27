@@ -2,26 +2,9 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
-import appStats from "@site/src/data/tx-stats.json";
+import { getAppStats } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
 
-// Helper function to find app stats by label
-function getAppStats(app) {
-  // Use explicit statsLabel if provided
-  if (app.statsLabel) {
-    return appStats.appStats.find(stat => stat.label === app.statsLabel);
-  }
-  
-  // Fallback: try exact match with normalized title
-  const normalized = app.title.toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/dex$/i, '')
-    .trim();
-  
-  return appStats.appStats.find(stat => stat.label === normalized);
-}
-
-// Helper function to format numbers with commas
 function formatTxCount(num) {
   if (num >= 1000000) {
     return (num / 1000000).toFixed(1) + 'M';

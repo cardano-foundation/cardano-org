@@ -1,28 +1,7 @@
 import React from "react";
 import { Showcases } from "@site/src/data/apps";
-import appStats from "@site/src/data/tx-stats.json";
+import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
-
-// Helper function to format numbers with commas
-function formatNumber(num) {
-  return num.toLocaleString('en-US');
-}
-
-// Helper function to find app stats by label
-function getAppStats(app) {
-  // Use explicit statsLabel if provided
-  if (app.statsLabel) {
-    return appStats.appStats.find(stat => stat.label === app.statsLabel);
-  }
-
-  // Fallback: try exact match with normalized title
-  const normalized = app.title.toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/dex$/i, '')
-    .trim();
-
-  return appStats.appStats.find(stat => stat.label === normalized);
-}
 
 function AppCard({ app, stats, appRank, ctaText }) {
   const hasStats = stats && stats.txCount > 0;
