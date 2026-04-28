@@ -20,6 +20,9 @@ Before making a pull request, please make sure that you fulfill all these requir
 - Clear description without marketing claims like "the best", "the first", "the only"
 - Must provide unique value distinct from existing showcase items
 - Must have sufficient community reputation
+- Meets a basic design and quality bar — a working UI, real content, and enough polish that a first-time visitor would leave with a positive impression of the Cardano ecosystem
+
+These criteria are also applied retroactively. Apps that go offline, get abandoned, or pivot away from Cardano are removed during quarterly review — see [Apps curation policy](/docs/get-involved/apps-curation-policy) for the removal triggers and process.
 
 ## Step-by-Step Process
 

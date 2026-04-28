@@ -31,7 +31,9 @@ A pick must meet all four:
 
 A pick can be removed at any time if it clearly fails one of the criteria — for example, a security incident, an apparent abandonment, or a sustained collapse on the leaderboard. Open an issue with the reason; the same 7-day window applies.
 
-Routine removals also happen as part of the quarterly review.
+If a pick goes offline, gets abandoned, or pivots away from Cardano, it is also removed under the broader [Apps curation policy](/docs/get-involved/apps-curation-policy) — picks live inside the showcase and inherit those triggers.
+
+Routine removals also happen as part of the quarterly review (which runs alongside the showcase-wide [curation review](/docs/get-involved/apps-curation-policy#quarterly-review-cadence)).
 
 ## Quarterly review
 

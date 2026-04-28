@@ -9,7 +9,7 @@
  <!-- Please fill the boxes with [x] before submitting a pull request -->
 
 - [ ] I have read the [Contributing Guidelines](https://github.com/cardano-foundation/cardano-org/blob/staging/CONTRIBUTING.md).
-- [ ] I have read the [App Requirements](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/add-app.md)
+- [ ] I have read the [App Requirements](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/add-app.md) and understand that entries failing the [curation policy](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/apps-curation-policy.md) may be removed during quarterly review.
 - [ ] I have added my image to `src/data/app-screenshots/`
 - [ ] (Optional) I have added my icon/logo to `static/img/app-icons/`
 - [ ] I have run `yarn build` after adding my changes **without getting any errors**.
