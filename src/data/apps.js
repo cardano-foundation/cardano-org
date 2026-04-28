@@ -1073,25 +1073,6 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Aada.finance",
-    description:
-      "Peer-to-peer lending and borrowing protocol on Cardano. Supplies and loans are matched on-chain with NFT-backed positions and customizable terms.",
-    tagline: "Peer-to-peer lending and borrowing on Cardano",
-    preview: require("./app-screenshots/aada-finance.png"),
-    icon: "/img/app-icons/aada.finance.png",
-    website: "https://app.aada.finance",
-    source: null,
-    category: "lending",
-    properties: ["nft"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    spotlight: {
-      url: "https://developers.cardano.org/blog/2023-10-16-october/",
-      title: "Cardano Developer Spotlight: October 2023 (as Lenfi)",
-      date: "2023-10-16",
-    },
-  },
-  {
     title: "Continuity Token",
     description:
       "Provides secure, long-term cold-storage backups of Cardano NFT media so collections survive even if the original IPFS or Arweave host disappears.",
@@ -1834,7 +1815,7 @@ export const Showcases = [
       "Fully on-chain strategy game built for developers. Pilot a spaceship across a 2D grid where every entity is a Cardano eUTXO and Plutus contract.",
     tagline: "On-chain strategy game where everything is a UTxO",
     preview: require("./app-screenshots/asteria.png"),
-    icon: "/img/app-icons/asteria.svg",
+    icon: "/img/app-icons/asteria.png",
     website: "https://github.com/txpipe/asteria",
     source: "https://github.com/txpipe/asteria",
     category: "game",
