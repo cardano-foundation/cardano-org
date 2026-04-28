@@ -281,7 +281,7 @@ function SearchControls() {
 function MaintainerPicksSection({ apps }) {
   if (apps.length === 0) return null;
   return (
-    <section className={clsx("container", styles.section)}>
+    <section className={clsx("container", styles.section, styles.picksSection)}>
       <header className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>
           ★ {translate({ id: "apps.maintainerPicks", message: "Maintainer picks" })}
@@ -490,6 +490,7 @@ function ShowcaseSections() {
         sortOption={sortOption}
         isUnfiltered={isUnfiltered}
       />
+      <SubmitCTA />
       <MaintainerPicksSection apps={pickApps} />
     </>
   );
@@ -535,7 +536,6 @@ function Showcase() {
       <IntentChips />
       <SearchControls />
       <ShowcaseSections />
-      <SubmitCTA />
       <OpenStickyButton />
     </Layout>
   );
