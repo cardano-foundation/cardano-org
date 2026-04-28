@@ -6,7 +6,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 
-import { Categories, Properties } from "@site/src/data/apps";
+import { Categories, Properties, Showcases } from "@site/src/data/apps";
 import {
   getAppStats,
   isTrackable,
@@ -14,7 +14,8 @@ import {
   STATS_GENERATED_AT,
 } from "@site/src/utils/appStats";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import AppGrid from "@site/src/components/AppGrid";
+import SiteHero from "@site/src/components/Layout/SiteHero";
+import AppTile from "@site/src/components/AppTile";
 
 import styles from "./styles.module.css";
 
@@ -33,11 +34,24 @@ function buildJsonLd(app) {
   });
 }
 
+const RELATED_LIMIT = 4;
+
+function getRelatedApps(currentApp) {
+  return Showcases
+    .filter((s) => s.category === currentApp.category && s.slug !== currentApp.slug)
+    .sort((a, b) => {
+      const txDiff = (getAppStats(b)?.txCount ?? 0) - (getAppStats(a)?.txCount ?? 0);
+      return txDiff !== 0 ? txDiff : a.title.localeCompare(b.title);
+    })
+    .slice(0, RELATED_LIMIT);
+}
+
 export default function AppDetail({ app }) {
   const iconHref = useBaseUrl(app.icon || "");
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
+  const relatedApps = getRelatedApps(app);
 
   const pageTitle = `${app.title} on Cardano`;
   const pageDescription = app.description;
@@ -52,6 +66,7 @@ export default function AppDetail({ app }) {
       <Head>
         <script type="application/ld+json">{buildJsonLd(app)}</script>
       </Head>
+      <SiteHero title={app.title} description={app.tagline} bannerType="apps.js" />
       <main className={clsx("container", styles.detail)}>
         <nav className={styles.breadcrumb} aria-label="breadcrumb">
           <Link to="/apps">
@@ -68,7 +83,6 @@ export default function AppDetail({ app }) {
             </div>
           )}
           <div className={styles.headerText}>
-            <h1 className={styles.title}>{app.title}</h1>
             <div className={styles.tagRow}>
               {categoryDef && (
                 <span
@@ -176,21 +190,35 @@ export default function AppDetail({ app }) {
           </section>
         )}
 
-        <section className={styles.related}>
-          <h2 className={styles.sectionHeading}>
-            {translate({
-              id: "apps.detail.related",
-              message: "More in this category",
-            })}
-          </h2>
-          <AppGrid
-            categories={[app.category]}
-            limit={4}
-            excludeSlug={app.slug}
-            ctaText={translate({ id: "apps.detail.visit", message: "Visit" })}
-            moreLink={`/apps?tags=${app.category}`}
-          />
-        </section>
+        {relatedApps.length > 0 && (
+          <section className={styles.related}>
+            <h2 className={styles.sectionHeading}>
+              {translate({
+                id: "apps.detail.related",
+                message: "More in this category",
+              })}
+            </h2>
+            <ul className={styles.relatedGrid}>
+              {relatedApps.map((related) => (
+                <li key={related.slug}>
+                  <AppTile app={related} />
+                </li>
+              ))}
+            </ul>
+            <Link
+              className={styles.relatedMore}
+              to={`/apps?tags=${app.category}`}
+            >
+              {translate(
+                {
+                  id: "apps.detail.relatedMore",
+                  message: "View all {category} apps",
+                },
+                { category: categoryDef?.label ?? app.category }
+              )}
+            </Link>
+          </section>
+        )}
 
         <footer className={styles.footer}>
           <Link href={APPS_JS_GITHUB_URL}>

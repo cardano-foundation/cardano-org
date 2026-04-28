@@ -190,6 +190,19 @@
   margin-top: 1rem;
 }
 
+.relatedGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.relatedMore {
+  font-size: 0.95rem;
+}
+
 .footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
