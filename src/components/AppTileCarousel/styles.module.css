@@ -64,8 +64,14 @@
 }
 
 .arrow:disabled {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.arrow:disabled:hover {
+  border-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-700);
+  box-shadow: none;
 }
 
 @media (max-width: 600px) {
