@@ -66,17 +66,13 @@ export function getTopAppPerCategory(apps) {
     const tx = getTxCount(app);
     if (tx <= 0) continue;
     const current = byCategory.get(app.category);
-    if (!current || tx > getTxCount(current)) {
-      byCategory.set(app.category, app);
+    if (!current || tx > current.tx) {
+      byCategory.set(app.category, { app, tx });
     }
   }
-  return [...byCategory.values()].sort(
-    (a, b) => getTxCount(b) - getTxCount(a)
-  );
-}
-
-export function sortByTxCount(apps) {
-  return [...apps].sort((a, b) => getTxCount(b) - getTxCount(a));
+  return [...byCategory.values()]
+    .sort((a, b) => b.tx - a.tx)
+    .map((entry) => entry.app);
 }
 
 export function getAppAxes(app) {

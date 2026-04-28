@@ -6,8 +6,6 @@ import AppTile from "@site/src/components/AppTile";
 
 import styles from "./styles.module.css";
 
-const SCROLL_TILE_OFFSET = 276;
-
 function ChevronLeft() {
   return (
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden focusable="false">
@@ -58,7 +56,10 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
   const scrollBy = (direction) => {
     const node = scrollerRef.current;
     if (!node) return;
-    node.scrollBy({ left: direction * SCROLL_TILE_OFFSET, behavior: "smooth" });
+    const firstItem = node.firstElementChild;
+    const itemWidth = firstItem ? firstItem.getBoundingClientRect().width : 260;
+    const gap = parseFloat(getComputedStyle(node).columnGap) || 16;
+    node.scrollBy({ left: direction * (itemWidth + gap), behavior: "smooth" });
   };
 
   return (
@@ -73,9 +74,9 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
         <ChevronLeft />
       </button>
       <ul ref={scrollerRef} className={styles.scroller}>
-        {apps.map((app) => (
+        {apps.map((app, i) => (
           <li key={app.slug} className={styles.item}>
-            <AppTile app={app} badge={renderBadge ? renderBadge(app) : null} />
+            <AppTile app={app} badge={renderBadge ? renderBadge(app, i) : null} />
           </li>
         ))}
       </ul>

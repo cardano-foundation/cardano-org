@@ -33,7 +33,6 @@ import {
   appHasTag,
   countLiveTracking,
   getTopAppPerCategory,
-  sortByTxCount,
 } from "@site/src/utils/appStats";
 
 import styles from "./styles.module.css";
@@ -344,7 +343,8 @@ function MostActiveSection({ apps, isUnfiltered }) {
           id: "apps.mostActive.title",
           message: "Most active",
         })}
-        renderBadge={isUnfiltered ? null : (app) => <RankBadge rank={apps.indexOf(app) + 1} />}
+        // Rank badges only on filtered view: unfiltered shows top-1-per-category, where a global rank would be misleading.
+        renderBadge={isUnfiltered ? null : (_, i) => <RankBadge rank={i + 1} />}
       />
     </section>
   );
@@ -456,10 +456,10 @@ function ShowcaseSections() {
 
   const mostActiveApps = useMemo(() => {
     if (isUnfiltered) return mostActiveByCategory;
-    return sortByTxCount(filtered.filter((a) => getTxCount(a) > 0)).slice(
-      0,
-      FILTERED_MOST_ACTIVE_LIMIT
-    );
+    return filtered
+      .filter((a) => getTxCount(a) > 0)
+      .sort((a, b) => getTxCount(b) - getTxCount(a))
+      .slice(0, FILTERED_MOST_ACTIVE_LIMIT);
   }, [filtered, isUnfiltered]);
 
   const highlightApps = useMemo(() => {
