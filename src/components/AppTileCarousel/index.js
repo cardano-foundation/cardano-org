@@ -1,10 +1,15 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 
 import AppTile from "@site/src/components/AppTile";
 
 import styles from "./styles.module.css";
+
+const useIsomorphicLayoutEffect = ExecutionEnvironment.canUseDOM
+  ? useLayoutEffect
+  : useEffect;
 
 function ChevronLeft() {
   return (
@@ -41,13 +46,20 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
     setCanScrollNext(node.scrollLeft < max - 1);
   }, []);
 
-  useEffect(() => {
-    updateScrollState();
+  useIsomorphicLayoutEffect(() => {
     const node = scrollerRef.current;
     if (!node) return undefined;
+    // Reset to start so the prev button is correctly disabled on every mount,
+    // independent of browser scroll restoration carrying over a previous offset.
+    node.scrollLeft = 0;
+    updateScrollState();
+    // Layout sometimes settles after first paint (fonts loading, async tile sizing).
+    // A second pass on the next frame catches scrollWidth values that grew post-mount.
+    const frame = requestAnimationFrame(updateScrollState);
     node.addEventListener("scroll", updateScrollState, { passive: true });
     window.addEventListener("resize", updateScrollState);
     return () => {
+      cancelAnimationFrame(frame);
       node.removeEventListener("scroll", updateScrollState);
       window.removeEventListener("resize", updateScrollState);
     };
@@ -60,6 +72,9 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
     const itemWidth = firstItem ? firstItem.getBoundingClientRect().width : 260;
     const gap = parseFloat(getComputedStyle(node).columnGap) || 16;
     node.scrollBy({ left: direction * (itemWidth + gap), behavior: "smooth" });
+    // Smooth scrolls can settle without a scroll event (e.g. when clamped at an edge),
+    // leaving the disabled state stale. Recheck after the animation has had time to land.
+    requestAnimationFrame(updateScrollState);
   };
 
   return (
