@@ -20,17 +20,20 @@ import { readLatestOperator } from "@site/src/components/showcase/ShowcaseLatest
 import OpenStickyButton from "@site/src/components/buttons/openStickyButton";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import AppTile, { StarBadge, RankBadge } from "@site/src/components/AppTile";
+import { StarBadge, RankBadge } from "@site/src/components/AppTile";
+import AppTileCarousel from "@site/src/components/AppTileCarousel";
 import AppRow from "@site/src/components/AppRow";
 import AppFilterPanel from "@site/src/components/AppFilterPanel";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-import { SortedShowcases, Showcases } from "@site/src/data/apps";
+import { SortedShowcases, Showcases, RECENT_APPS_COUNT } from "@site/src/data/apps";
 import {
   getTxCount,
   STATS_GENERATED_AT,
   appHasTag,
   countLiveTracking,
+  getTopAppPerCategory,
+  sortByTxCount,
 } from "@site/src/utils/appStats";
 
 import styles from "./styles.module.css";
@@ -73,17 +76,11 @@ export function prepareUserState() {
 }
 
 const maintainerPicks = SortedShowcases.filter((s) => s.maintainerPick);
-const otherShowcases = SortedShowcases.filter((s) => !s.maintainerPick);
 
-const PICKS_INITIAL_VISIBLE = 3;
+const recentApps = Showcases.slice(-RECENT_APPS_COUNT);
+const mostActiveByCategory = getTopAppPerCategory(Showcases);
 
-const MOST_ACTIVE_LIMIT = 3;
-const mostActiveShowcases = Showcases
-  .map((s) => ({ s, tx: getTxCount(s) }))
-  .filter(({ tx }) => tx > 0)
-  .sort((a, b) => b.tx - a.tx)
-  .slice(0, MOST_ACTIVE_LIMIT)
-  .map(({ s }) => s);
+const FILTERED_MOST_ACTIVE_LIMIT = 10;
 
 const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
   ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
@@ -282,13 +279,8 @@ function SearchControls() {
   );
 }
 
-function MaintainerPicksSection() {
-  const [showAll, setShowAll] = useState(false);
-  const visiblePicks = showAll
-    ? maintainerPicks
-    : maintainerPicks.slice(0, PICKS_INITIAL_VISIBLE);
-  const canExpand = maintainerPicks.length > PICKS_INITIAL_VISIBLE;
-
+function MaintainerPicksSection({ apps }) {
+  if (apps.length === 0) return null;
   return (
     <section className={clsx("container", styles.section)}>
       <header className={styles.sectionHeader}>
@@ -302,41 +294,20 @@ function MaintainerPicksSection() {
           })}
         </span>
       </header>
-      <ul className={styles.tileGrid}>
-        {visiblePicks.map((app) => (
-          <li key={app.slug}>
-            <AppTile app={app} badge={<StarBadge />} />
-          </li>
-        ))}
-      </ul>
-      {canExpand && (
-        <div className={styles.sectionFooter}>
-          <button
-            type="button"
-            className={styles.linkButton}
-            onClick={() => setShowAll((v) => !v)}
-          >
-            {showAll
-              ? translate({
-                  id: "apps.maintainerPicks.showLess",
-                  message: "Show fewer ←",
-                })
-              : translate(
-                  {
-                    id: "apps.maintainerPicks.showAll",
-                    message: "Show all {count} →",
-                  },
-                  { count: maintainerPicks.length }
-                )}
-          </button>
-        </div>
-      )}
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.maintainerPicks",
+          message: "Maintainer picks",
+        })}
+        renderBadge={() => <StarBadge />}
+      />
     </section>
   );
 }
 
-function MostActiveSection() {
-  if (mostActiveShowcases.length === 0) return null;
+function MostActiveSection({ apps, isUnfiltered }) {
+  if (apps.length === 0) return null;
   return (
     <section className={clsx("container", styles.section)}>
       <header className={styles.sectionHeader}>
@@ -367,13 +338,40 @@ function MostActiveSection() {
           })}
         </Link>
       </p>
-      <ul className={styles.tileGrid}>
-        {mostActiveShowcases.map((app, i) => (
-          <li key={app.slug}>
-            <AppTile app={app} badge={<RankBadge rank={i + 1} />} />
-          </li>
-        ))}
-      </ul>
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.mostActive.title",
+          message: "Most active",
+        })}
+        renderBadge={isUnfiltered ? null : (app) => <RankBadge rank={apps.indexOf(app) + 1} />}
+      />
+    </section>
+  );
+}
+
+function HighlightsSection({ apps }) {
+  if (apps.length === 0) return null;
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          {translate({ id: "apps.highlights.title", message: "Recently added" })}
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            id: "apps.highlights.subtitle",
+            message: "The newest apps in the showcase",
+          })}
+        </span>
+      </header>
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.highlights.title",
+          message: "Recently added",
+        })}
+      />
     </section>
   );
 }
@@ -413,10 +411,8 @@ function CollectionsBanner() {
 }
 
 function AllAppsSection({ apps, sortOption, isUnfiltered }) {
-  // Unfiltered view shows the non-pick subset (Picks already render in their own section).
-  // Filtered view shows whatever survived the filter pipeline (already sorted upstream).
   const visible = useMemo(
-    () => (isUnfiltered ? sortProjects(otherShowcases, sortOption) : apps),
+    () => (isUnfiltered ? sortProjects(SortedShowcases, sortOption) : apps),
     [isUnfiltered, sortOption, apps]
   );
   return (
@@ -453,6 +449,29 @@ function AllAppsSection({ apps, sortOption, isUnfiltered }) {
 function ShowcaseSections() {
   const { filtered, sortOption, isUnfiltered } = useFilteredProjects();
 
+  const filteredSlugs = useMemo(
+    () => new Set(filtered.map((a) => a.slug)),
+    [filtered]
+  );
+
+  const mostActiveApps = useMemo(() => {
+    if (isUnfiltered) return mostActiveByCategory;
+    return sortByTxCount(filtered.filter((a) => getTxCount(a) > 0)).slice(
+      0,
+      FILTERED_MOST_ACTIVE_LIMIT
+    );
+  }, [filtered, isUnfiltered]);
+
+  const highlightApps = useMemo(() => {
+    if (isUnfiltered) return recentApps;
+    return recentApps.filter((a) => filteredSlugs.has(a.slug));
+  }, [filteredSlugs, isUnfiltered]);
+
+  const pickApps = useMemo(() => {
+    if (isUnfiltered) return maintainerPicks;
+    return maintainerPicks.filter((a) => filteredSlugs.has(a.slug));
+  }, [filteredSlugs, isUnfiltered]);
+
   if (filtered.length === 0) {
     return (
       <section className="container margin-top--lg margin-bottom--xl text--center">
@@ -461,18 +480,17 @@ function ShowcaseSections() {
     );
   }
 
-  if (!isUnfiltered) {
-    return (
-      <AllAppsSection apps={filtered} sortOption={sortOption} isUnfiltered={false} />
-    );
-  }
-
   return (
     <>
-      <MaintainerPicksSection />
-      <MostActiveSection />
-      <CollectionsBanner />
-      <AllAppsSection apps={filtered} sortOption={sortOption} isUnfiltered={true} />
+      <MostActiveSection apps={mostActiveApps} isUnfiltered={isUnfiltered} />
+      <HighlightsSection apps={highlightApps} />
+      {isUnfiltered && <CollectionsBanner />}
+      <AllAppsSection
+        apps={filtered}
+        sortOption={sortOption}
+        isUnfiltered={isUnfiltered}
+      />
+      <MaintainerPicksSection apps={pickApps} />
     </>
   );
 }
