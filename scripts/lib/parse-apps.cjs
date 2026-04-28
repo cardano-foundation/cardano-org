@@ -1,9 +1,6 @@
 //
 // Shared regex parser for src/data/apps.js. Used by build scripts that need to read
 // the Showcases array without invoking the React/webpack module system.
-// Field order in apps.js entries matters: title → description → icon? → statsLabel? →
-// website → source → category → properties → maintainerPick → beginnerFriendly.
-// If field ordering changes in apps.js, update the regex below.
 //
 
 function parseStringValue(s) {

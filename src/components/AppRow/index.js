@@ -9,6 +9,7 @@ import {
   isTrackable,
   isRecent,
   formatTxCountCompact,
+  getAppBlurb,
 } from "@site/src/utils/appStats";
 import AppIcon from "@site/src/components/AppIcon";
 
@@ -20,8 +21,6 @@ const ACTIVITY_UNIT = translate({
 });
 const NEW_LABEL = translate({ id: "apps.new", message: "NEW" });
 
-// Compact list-row for the "All apps" section. Smaller icon, tighter layout, includes
-// a NEW badge for recent submissions and a green dot when stats are tracked.
 function AppRow({ app }) {
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
@@ -37,9 +36,7 @@ function AppRow({ app }) {
           {showActivity && <span className={clsx(styles.dot)} aria-hidden />}
           {recent && <span className={styles.newBadge}>{NEW_LABEL}</span>}
         </h4>
-        {(app.tagline || app.description) && (
-          <p className={styles.description}>{app.tagline || app.description}</p>
-        )}
+        <p className={styles.description}>{getAppBlurb(app)}</p>
       </div>
       <div className={styles.metaRight}>
         {showActivity && (

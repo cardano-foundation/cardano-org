@@ -8,6 +8,7 @@ import {
   getAppStats,
   isTrackable,
   formatTxCountCompact,
+  getAppBlurb,
 } from "@site/src/utils/appStats";
 import AppIcon from "@site/src/components/AppIcon";
 
@@ -18,8 +19,6 @@ const ACTIVITY_UNIT = translate({
   message: "tx",
 });
 
-// Featured tile card for Maintainer Picks and Most active sections.
-// Top-right slot accepts a star (picks) or rank badge ("#1") via the `badge` prop.
 function AppTile({ app, badge = null }) {
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
@@ -32,7 +31,7 @@ function AppTile({ app, badge = null }) {
         {badge && <span className={styles.badge}>{badge}</span>}
       </div>
       <h3 className={styles.title}>{app.title}</h3>
-      <p className={styles.description}>{app.tagline || app.description}</p>
+      <p className={styles.description}>{getAppBlurb(app)}</p>
       <div className={styles.meta}>
         {showActivity && (
           <span className={styles.activity}>

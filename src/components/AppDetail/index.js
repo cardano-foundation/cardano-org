@@ -40,7 +40,7 @@ export default function AppDetail({ app }) {
   const showActivity = stats && stats.txCount > 0;
 
   const pageTitle = `${app.title} on Cardano`;
-  const pageDescription = app.description || `${app.title} on Cardano.`;
+  const pageDescription = app.description;
 
   return (
     <Layout title={pageTitle} description={pageDescription}>

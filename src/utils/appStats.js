@@ -47,6 +47,10 @@ export function isTrackable(app) {
   return Categories[app.category]?.trackable ?? false;
 }
 
+export function getAppBlurb(app) {
+  return app.tagline || app.description || "";
+}
+
 export function isRecent(app) {
   return RECENT_SLUGS.has(app.slug);
 }

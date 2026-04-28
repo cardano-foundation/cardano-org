@@ -2106,6 +2106,11 @@ export const TagList = Object.keys(Tags);
 // New entries are conventionally appended at the end (see add-app.md).
 export const RECENT_APPS_COUNT = 5;
 
+// Length constraints enforced by the schema validator and documented in add-app.md.
+export const TAGLINE_MAX_LEN = 60;
+export const DESCRIPTION_MIN_LEN = 120;
+export const DESCRIPTION_MAX_LEN = 180;
+
 // Derive a stable URL slug from each Showcase title. Mirrors scripts/generate-apps-metadata.js
 // so /apps/<slug> in the runtime matches the routes registered by plugins/apps-routes.
 function slugifyTitle(title) {
@@ -2173,9 +2178,9 @@ function ensureShowcaseValid(showcase) {
       throw new Error("Site description is missing");
     }
     const len = showcase.description.length;
-    if (len < 120 || len > 180) {
+    if (len < DESCRIPTION_MIN_LEN || len > DESCRIPTION_MAX_LEN) {
       throw new Error(
-        `description must be 120-180 chars, got ${len}: ${showcase.description}`
+        `description must be ${DESCRIPTION_MIN_LEN}-${DESCRIPTION_MAX_LEN} chars, got ${len}: ${showcase.description}`
       );
     }
   }
@@ -2262,9 +2267,9 @@ function ensureShowcaseValid(showcase) {
     if (typeof showcase.tagline !== "string" || !showcase.tagline.trim()) {
       throw new Error("tagline must be a non-empty string when set");
     }
-    if (showcase.tagline.length > 60) {
+    if (showcase.tagline.length > TAGLINE_MAX_LEN) {
       throw new Error(
-        `tagline exceeds 60 chars (${showcase.tagline.length}): ${showcase.tagline}`
+        `tagline exceeds ${TAGLINE_MAX_LEN} chars (${showcase.tagline.length}): ${showcase.tagline}`
       );
     }
   }
