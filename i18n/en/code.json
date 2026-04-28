@@ -3086,10 +3086,16 @@
     "message": "Read the essay"
   },
   "apps.hero.title": {
-    "message": "Cardano Apps and DApps, Explore the Ecosystem"
+    "message": "Cardano Apps and dApps"
   },
   "apps.hero.description": {
-    "message": "Explore curated applications that run on Cardano mainnet today"
+    "message": "Discover curated apps live on Cardano mainnet today. Wallets, DEXes, NFTs, lending, and more."
+  },
+  "apps.seo.title": {
+    "message": "Cardano Apps Directory: Wallets, DEXes, NFTs & More"
+  },
+  "apps.seo.description": {
+    "message": "Browse {count} curated Cardano apps live on mainnet. Wallets, DEXes, NFT marketplaces, lending, governance, and games. Filter by category or activity."
   },
   "apps.cta": {
     "message": "₳dd your project"
@@ -3240,9 +3246,6 @@
   },
   "apps.intent.label": {
     "message": "I want to"
-  },
-  "apps.hero.subtitle": {
-    "message": "{count} curated applications running on mainnet today"
   },
   "apps.allApps.title": {
     "message": "All apps"

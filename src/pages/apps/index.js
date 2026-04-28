@@ -35,14 +35,31 @@ import {
 
 import styles from "./styles.module.css";
 
-const TITLE = translate({
+// SEO meta — long, optimized for SERP. Used by <Layout>.
+const SEO_TITLE = translate({
+  id: "apps.seo.title",
+  message: "Cardano Apps Directory: Wallets, DEXes, NFTs & More",
+});
+const SEO_DESCRIPTION = translate(
+  {
+    id: "apps.seo.description",
+    message:
+      "Browse {count} curated Cardano apps live on mainnet. Wallets, DEXes, NFT marketplaces, lending, governance, and games. Filter by category or activity.",
+  },
+  { count: Showcases.length }
+);
+
+// Hero — short copy for the visible page banner. Used by <SiteHero>.
+const HERO_TITLE = translate({
   id: "apps.hero.title",
-  message: "Cardano Apps and DApps, Explore the Ecosystem",
+  message: "Cardano Apps and dApps",
 });
-const DESCRIPTION = translate({
+const HERO_DESCRIPTION = translate({
   id: "apps.hero.description",
-  message: "Explore curated applications that run on Cardano mainnet today",
+  message:
+    "Discover curated apps live on Cardano mainnet today. Wallets, DEXes, NFTs, lending, and more.",
 });
+
 const FILENAME = "apps.js";
 
 export function prepareUserState() {
@@ -76,7 +93,6 @@ const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
     })
   : null;
 
-const TOTAL_APPS = Showcases.length;
 const LIVE_TRACKING_COUNT = countLiveTracking(Showcases);
 
 const ITEM_LIST_LIMIT = 30;
@@ -192,20 +208,7 @@ function useFilteredProjects() {
 }
 
 function ShowcaseHeader() {
-  const subtitle = translate(
-    {
-      id: "apps.hero.subtitle",
-      message: "{count} curated applications running on mainnet today",
-    },
-    { count: TOTAL_APPS }
-  );
-  return (
-    <SiteHero
-      title={translate({ id: "apps.hero.titleShort", message: "Cardano apps" })}
-      description={subtitle}
-      bannerType={FILENAME}
-    />
-  );
+  return <SiteHero title={HERO_TITLE} description={HERO_DESCRIPTION} bannerType={FILENAME} />;
 }
 
 function SearchBar() {
@@ -505,7 +508,7 @@ function SubmitCTA() {
 
 function Showcase() {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout title={SEO_TITLE} description={SEO_DESCRIPTION}>
       <OpenGraphInfo pageName="apps" />
       <Head>
         <script type="application/ld+json">{APPS_ITEM_LIST_JSON_LD}</script>
