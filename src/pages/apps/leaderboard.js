@@ -103,9 +103,17 @@ const metadataInfo = {
   1968:  { name: 'nut.link Oracle Data',      category: 'Oracle' },
   1668:  { name: 'Begin dApp Ratings',        category: 'Wallet' },
   1904:  { name: 'Supply Chain Verification', category: null },
-  8413:  { name: 'CommitProof',  category: 'Notary', appLabel: 'commitproof' },
-  8414:  { name: 'Claimpaign',  category: 'Distribution', appLabel: 'claimpaign' },
+  8413:  { name: 'CommitProof',  category: 'Notary' },
+  8414:  { name: 'Claimpaign',  category: 'Distribution' },
 };
+
+// Derive appLabel links from Showcases so apps.js stays the single source of truth
+// for "which CIP metadata label belongs to which app".
+Showcases.forEach((app) => {
+  if (typeof app.metadataLabel === "number" && app.statsLabel && metadataInfo[app.metadataLabel]) {
+    metadataInfo[app.metadataLabel].appLabel = app.statsLabel;
+  }
+});
 
 const metadataGroups = {
   catalyst:  { name: 'Catalyst Voting',   category: 'Governance' },

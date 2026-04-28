@@ -13,6 +13,10 @@ const TX_BY_LABEL = new Map(
   appStatsData.appStats.map((s) => [s.label, s])
 );
 
+const TX_BY_METADATA_LABEL = new Map(
+  (appStatsData.metadataLabelStats || []).map((s) => [s.label, s])
+);
+
 export const STATS_GENERATED_AT = appStatsData.metadata?.generated ?? null;
 
 if (process.env.NODE_ENV !== "production") {
@@ -34,7 +38,11 @@ function normalizeTitle(title) {
 
 export function getAppStats(app) {
   if (app.statsLabel) {
-    return TX_BY_LABEL.get(app.statsLabel) || null;
+    const hit = TX_BY_LABEL.get(app.statsLabel);
+    if (hit) return hit;
+  }
+  if (typeof app.metadataLabel === "number") {
+    return TX_BY_METADATA_LABEL.get(app.metadataLabel) || null;
   }
   return TX_BY_LABEL.get(normalizeTitle(app.title)) || null;
 }

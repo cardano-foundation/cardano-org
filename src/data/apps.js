@@ -1898,6 +1898,7 @@ export const Showcases = [
     preview: require("./app-screenshots/commitproof.png"),
     icon: "/img/app-icons/commitproof.svg",
     statsLabel: "commitproof",
+    metadataLabel: 8413,
     website: "https://commitproof.com",
     source: null,
     category: "notary",
@@ -1926,6 +1927,7 @@ export const Showcases = [
     tagline: "NFC hardware identity with on-chain proof",
     preview: require("./app-screenshots/tapdano.jpg"),
     icon: "/img/app-icons/tapdano.png",
+    metadataLabel: 544,
     website: "https://tapdano.com",
     source: null,
     category: "identity",
@@ -1941,6 +1943,7 @@ export const Showcases = [
     preview: require("./app-screenshots/claimpaign.png"),
     icon: "/img/app-icons/claimpaign.png",
     statsLabel: "claimpaign",
+    metadataLabel: 8414,
     website: "https://claimpaign.com",
     source: null,
     category: "distribution",
@@ -2020,6 +2023,7 @@ function ensureShowcaseValid(showcase) {
       "beginnerFriendly",
       "icon",
       "statsLabel",
+      "metadataLabel",
       "statsNote",
       "walletFeatures",
       "spotlight",
@@ -2139,6 +2143,15 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
+  function checkMetadataLabel() {
+    if (showcase.metadataLabel === undefined) return;
+    if (!Number.isInteger(showcase.metadataLabel) || showcase.metadataLabel <= 0) {
+      throw new Error(
+        `metadataLabel must be a positive integer (CIP metadata label), got ${JSON.stringify(showcase.metadataLabel)}`
+      );
+    }
+  }
+
   function checkSpotlight() {
     if (showcase.spotlight === undefined) return;
     const s = showcase.spotlight;
@@ -2166,6 +2179,7 @@ function ensureShowcaseValid(showcase) {
     checkBooleanFlags();
     checkOpenSource();
     checkTagline();
+    checkMetadataLabel();
     checkSpotlight();
   } catch (e) {
     throw new Error(
