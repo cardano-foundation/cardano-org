@@ -18,6 +18,7 @@ Before making a pull request, please make sure that you fulfill all these requir
 - Functional product with real use case (not just a concept or idea)
 - Stable domain (no temporary/test domains, URL shorteners, or app store links)
 - Clear description without marketing claims like "the best", "the first", "the only"
+- Title is **at most 25 characters**, ideally 15-20. Concrete and brandable; drop a redundant `Cardano` prefix unless the bare project name is too generic on its own
 - Must provide unique value distinct from existing showcase items
 - Must have sufficient community reputation
 - Meets a basic design and quality bar — a working UI, real content, and enough polish that a first-time visitor would leave with a positive impression of the Cardano ecosystem

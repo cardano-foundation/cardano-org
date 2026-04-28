@@ -245,6 +245,7 @@ export const Showcases = [
       "Demonstrates use cases for Cardano transaction metadata. Sign messages, anchor files as proof of existence, and verify them on-chain.",
     tagline: "Sign messages and create proof of existence",
     preview: require("./app-screenshots/cardanowall.png"),
+    icon: "/img/app-icons/cardano-wall.jpg",
     website: "https://cardanowall.com/en/explore/",
     source: null,
     category: "notary",
@@ -286,7 +287,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Cardano Explorer Landing Page",
+    title: "Cardano Explorer Index",
     description:
       "Community-curated index of Cardano block explorers, pool tools, and analytics dashboards built and maintained by the community.",
     tagline: "Community index of Cardano explorers",
@@ -439,6 +440,7 @@ export const Showcases = [
       "Tracks Cardano development progress in real time, surfacing pull-request activity and release status without needing to dig through GitHub.",
     tagline: "Cardano development tracker without GitHub digging",
     preview: require("./app-screenshots/cardanoupdates.png"),
+    icon: "/img/app-icons/cardano-updates.jpg",
     website: "https://cardanoupdates.com",
     source: null,
     category: "analytics",
@@ -527,7 +529,7 @@ export const Showcases = [
     },
   },
   {
-    title: "Cardano Token and NFT Builder",
+    title: "Token & NFT Builder",
     description:
       "Create your own native Cardano tokens and NFTs without writing any code, with policy management and metadata templates handled in-app.",
     tagline: "No-code native token and NFT minting tool",
@@ -574,11 +576,12 @@ export const Showcases = [
     },
   },
   {
-    title: "Staking Rewards Calculator",
+    title: "Reward Calculator",
     description:
       "Detailed Cardano staking rewards calculator showing expected returns to operators and delegators, with a Monte Carlo simulation for return variability.",
     tagline: "Pool reward calculator with Monte Carlo sim",
-    preview: require("./app-screenshots/staking-rewards-calculator.png"),
+    preview: require("./app-screenshots/reward-calculator.png"),
+    icon: "/img/app-icons/reward-calculator.png",
     website: "https://cardano.org/calculator/",
     source: null,
     category: "pooltool",
@@ -644,20 +647,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "ADAZOO MMORPG and Metaverse",
-    description: "MMORPG metaverse on Cardano where players battle and capture CNFT creatures, level up avatars, and trade their collections with other adventurers.",
-    tagline: "MMORPG metaverse with battles and CNFT capture",
-    preview: require("./app-screenshots/adazoo.png"),
-    icon: "/img/app-icons/adazoo.jpg",
-    website: "https://adazoo.com",
-    source: null,
-    category: "game",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
-    title: "Minswap Dex",
+    title: "Minswap",
     description:
       "Multi-pool decentralized exchange on Cardano with deep liquidity, yield farming, and one of the highest-volume venues for native token swaps.",
     tagline: "Multi-pool decentralized exchange on Cardano",
@@ -1332,12 +1322,12 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Cardano Governance Voting Tool",
+    title: "Governance Voting Tool",
     description:
       "Simple voting tool for Cardano stakeholders to participate in on-chain governance with clear ballot UI, DRep info, and action explanations.",
     tagline: "Simple on-chain governance voting tool",
     preview: require("./app-screenshots/cf-voting-tool.png"),
-    icon: "/img/app-icons/cf-voting-tool.svg",
+    icon: "/img/app-icons/cardano-governance-voting-tool.png",
     website: "https://voting.cardanofoundation.org/",
     source: "https://github.com/cardano-foundation/cardano-governance-voting-tool",
     category: "governance",
@@ -1398,6 +1388,7 @@ export const Showcases = [
       "All-in-one Cardano DeFi platform combining a fully on-chain order-book DEX with an automated yield optimizer that compounds positions.",
     tagline: "Order-book DEX with built-in yield optimizer",
     preview: require("./app-screenshots/genius-yield.png"),
+    icon: "/img/app-icons/genius-yield.jpg",
     statsLabel: "geniusyield",
     website: "https://www.geniusyield.co/",
     source: "https://github.com/geniusyield",
@@ -1475,6 +1466,7 @@ export const Showcases = [
       "Decentralized yield optimization on Cardano with a suite of vaults that auto-compound staking, lending, and DEX-LP positions to maximize yield.",
     tagline: "Yield optimization suite for Cardano DeFi",
     preview: require("./app-screenshots/optim.png"),
+    icon: "/img/app-icons/optim-finance.jpg",
     website: "https://www.optim.finance/",
     source: null,
     category: "lending",
@@ -1540,7 +1532,7 @@ export const Showcases = [
     statsLabel: "strike-finance",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
-    category: "marketplace",
+    category: "dex",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: true,
@@ -1565,6 +1557,7 @@ export const Showcases = [
       "Xerberus' Risk Ratings deliver automated, objective, and real-time insights derived from on-chain data, providing investors and dApps with accurate risk assessments.",
     tagline: "Real-time on-chain risk ratings for assets",
     preview: require("./app-screenshots/xerberus.jpg"),
+    icon: "/img/app-icons/xerberus.jpg",
     website: "https://www.xerberus.io/",
     source: null,
     category: "marketplace",
@@ -1615,7 +1608,7 @@ export const Showcases = [
     icon: "/img/app-icons/butane.jpg",
     website: "https://butane.dev/",
     source: "https://github.com/butaneprotocol/butane-contracts",
-    category: "marketplace",
+    category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1740,6 +1733,7 @@ export const Showcases = [
       "Community governance and management toolkit usable by any Cardano project. Provides proposal flows, voting, treasury controls, and member registries.",
     tagline: "Community governance toolkit for Cardano projects",
     preview: require("./app-screenshots/clarity.png"),
+    icon: "/img/app-icons/clarity-protocol.jpg",
     website: "https://www.clarity.community/",
     source: null,
     category: "daotool",
@@ -1757,7 +1751,7 @@ export const Showcases = [
     statsLabel: "indigo-protocol",
     website: "https://indigoprotocol.io/",
     source: "https://github.com/IndigoProtocol/indigo-smart-contracts",
-    category: "marketplace",
+    category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1831,7 +1825,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Cardano Supply Summary",
+    title: "Supply Summary",
     description:
       "Explore historical trends in Cardano's ada supply distribution, including reserves, rewards, treasury, and deposits across epochs.",
     tagline: "Historical Ada supply and treasury distribution",
@@ -1845,7 +1839,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "CardanoCube Governance Actions",
+    title: "CardanoCube Governance",
     description:
       "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
     tagline: "Live on-chain governance proposal browser",
@@ -1907,7 +1901,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Cardano Smart Contract Quiz V1000",
+    title: "Plutus Quiz V1000",
     description:
       "Free-to-enter knowledge quiz built on Cardano Plutus smart contracts. Players submit encrypted answers on-chain; the highest scorer claims the prize.",
     tagline: "On-chain Plutus quiz with prize pool",
@@ -1975,6 +1969,7 @@ export const TagList = Object.keys(Tags);
 export const RECENT_APPS_COUNT = 5;
 
 // Length constraints enforced by the schema validator and documented in add-app.md.
+export const TITLE_MAX_LEN = 25;
 export const TAGLINE_MAX_LEN = 60;
 export const DESCRIPTION_MIN_LEN = 120;
 export const DESCRIPTION_MAX_LEN = 180;
@@ -2039,6 +2034,11 @@ function ensureShowcaseValid(showcase) {
   function checkTitle() {
     if (!showcase.title) {
       throw new Error("Site title is missing");
+    }
+    if (showcase.title.length > TITLE_MAX_LEN) {
+      throw new Error(
+        `title exceeds ${TITLE_MAX_LEN} chars (${showcase.title.length}): ${showcase.title}`
+      );
     }
   }
 
