@@ -434,18 +434,6 @@ export const Showcases = [
     },
   },
   {
-    title: "Cardano Warriors",
-    description: "Retro-styled RPG NFT collection on Cardano with 16-bit pixel art characters that double as in-game heroes for the Cardano Warriors world.",
-    tagline: "Retro RPG NFT collection on Cardano",
-    preview: require("./app-screenshots/cardanowarriors.png"),
-    website: "https://cardanowarriors.io/",
-    source: null,
-    category: "game",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
     title: "Cardano Updates",
     description:
       "Tracks Cardano development progress in real time, surfacing pull-request activity and release status without needing to dig through GitHub.",
@@ -595,20 +583,6 @@ export const Showcases = [
     source: null,
     category: "pooltool",
     properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
-    title: "Cardahub - A services hub on Cardano",
-    description:
-      "One stop shop for everything CNFT. A smart-contract NFT platform on Cardano where user can mint, distribute, list and buy NFT in a few clicks.",
-    tagline: "Mint, distribute, list, and buy CNFTs",
-    preview: require("./app-screenshots/cardahub.png"),
-    icon: "/img/app-icons/cardahub-a-services-hub-on-cardano.png",
-    website: "https://cardahub.io",
-    source: null,
-    category: "marketplace",
-    properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
   },
@@ -771,21 +745,6 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "JPG Store",
-    description:
-      "Cardano NFT marketplace where collectors discover artwork, explore community drops, and support artists through primary mints and royalties.",
-    tagline: "Cardano NFT marketplace and artist community",
-    preview: require("./app-screenshots/jpg.png"),
-    icon: "/img/app-icons/jpgstore.jpg",
-    statsLabel: "jpg.store",
-    website: "https://www.jpg.store",
-    source: null,
-    category: "marketplace",
-    properties: ["nft"],
-    maintainerPick: false,
-    beginnerFriendly: true,
-  },
-  {
     title: "Pavia",
     description:
       "User-owned virtual world on Cardano where players buy land NFTs, build experiences, and trade assets with other residents of the metaverse.",
@@ -889,19 +848,6 @@ export const Showcases = [
       features: ["staking", "nft", "dapp-connector", "multi-asset", "dex", "hardware-wallet"],
       type: "light",
     },
-  },
-  {
-    title: "Carda Station",
-    description:
-      "Explore this virtual world on the moon with an in game avatar, and interact with other players through hangouts, games or events.",
-    tagline: "Virtual moon world with games and avatars",
-    preview: require("./app-screenshots/cardastation.png"),
-    website: "https://cardastation.com/",
-    source: null,
-    category: "game",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "CNFTLab Party",
@@ -1061,19 +1007,6 @@ export const Showcases = [
       features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "governance"],
       type: "light",
     },
-  },
-  {
-    title: "Do it with Lovelace",
-    description:
-      "Donation dApp on Cardano with transparent on-chain receipts, recurring contributions, and a focus on community impact campaigns.",
-    tagline: "Transparent on-chain donations on Cardano",
-    preview: require("./app-screenshots/do-it-with-lovelace.png"),
-    website: "https://app.doitwithlovelace.io",
-    source: null,
-    category: "funding",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Continuity Token",
@@ -1413,20 +1346,6 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "NEWM",
-    description:
-      "Decentralized music streaming on Cardano. Artists own and monetize content through fractionalized IP rights, direct fan tipping, and real-time royalty payouts.",
-    tagline: "Decentralized music streaming with fractional rights",
-    preview: require("./app-screenshots/newm.png"),
-    icon: "/img/app-icons/newm.png",
-    website: "https://newm.io/",
-    source: "https://github.com/projectNEWM/",
-    category: "music",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
     title: "Andamio",
     description:
       "Verified trust protocol for distributed work on Cardano. Organizations mint credentials and find contributors; individuals learn, join, and launch projects.",
@@ -1505,20 +1424,6 @@ export const Showcases = [
       title: "Cardano Developer Spotlight: September 2025",
       date: "2025-09-29",
     },
-  },
-  {
-    title: "Yamfore",
-    description:
-      "Decentralized lending on Cardano backed by an internal stablecoin reserve. Offers indefinite-duration loans with no margin calls or liquidation risk.",
-    tagline: "Indefinite-duration loans backed by stablecoin",
-    preview: require("./app-screenshots/yamfore.jpg"),
-    icon: "/img/app-icons/yamfore.png",
-    website: "https://www.yamfore.com/",
-    source: "https://github.com/BigBlymp/yamfore-resources",
-    category: "lending",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "VyFinance",
@@ -1641,19 +1546,6 @@ export const Showcases = [
     beginnerFriendly: true,
   },
   {
-    title: "Smart Places",
-    description:
-      "Geo-location based SocialFi Network where owning digital land means owning opportunity. Each Landplot is a unique Virtual piece representing a real-world location.",
-    tagline: "Geo-located SocialFi with virtual landplots",
-    preview: require("./app-screenshots/smart-places.png"),
-    website: "https://smartplaces.io/",
-    source: null,
-    category: "social",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
     title: "Snek.fun",
     description:
       "Fair-launch memecoin launchpad on Cardano. Tokens launch in seconds for a flat fee with built-in liquidity protection and no team allocations.",
@@ -1699,20 +1591,6 @@ export const Showcases = [
       title: "Cardano Developer Interview: June 2025",
       date: "2025-06-24",
     },
-  },
-  {
-    title: "Encoins",
-    description:
-      "Decentralized private accounts and payments protocol on Cardano. Lets users hold and transfer ada with on-chain confidentiality via zero-knowledge proofs.",
-    tagline: "Private accounts and payments protocol",
-    preview: require("./app-screenshots/encoins.png"),
-    icon: "/img/app-icons/encoins.png",
-    website: "https://www.encoins.io/",
-    source: "https://github.com/encryptedcoins",
-    category: "identity",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Finest",
