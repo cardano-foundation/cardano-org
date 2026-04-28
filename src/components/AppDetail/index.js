@@ -44,7 +44,11 @@ export default function AppDetail({ app }) {
 
   return (
     <Layout title={pageTitle} description={pageDescription}>
-      <OpenGraphInfo pageName="apps" />
+      <OpenGraphInfo
+        pageName="apps"
+        title={pageTitle}
+        description={pageDescription}
+      />
       <Head>
         <script type="application/ld+json">{buildJsonLd(app)}</script>
       </Head>

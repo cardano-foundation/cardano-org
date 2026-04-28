@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
+import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // open graph images needs to be in the "og" folder + .jpg
 // we currently do not distinguish between og:image and twitter:image
@@ -9,10 +11,17 @@ import Head from '@docusaurus/Head';
 
 const OpenGraphInfo = ({ pageName, title, description }) => {
   const imageUrl = `https://cardano.org/img/og/${pageName}.jpg`;
+  const { siteConfig } = useDocusaurusContext();
+  const { pathname } = useLocation();
+  const canonicalUrl = `${siteConfig.url.replace(/\/$/, '')}${pathname}`;
 
   return (
     <Head>
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Cardano" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={imageUrl} />
       {title && (
         <>
