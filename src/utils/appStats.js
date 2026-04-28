@@ -59,6 +59,26 @@ export function countLiveTracking(apps) {
   return apps.filter((app) => isTrackable(app) && app.statsLabel).length;
 }
 
+export function getTopAppPerCategory(apps) {
+  const byCategory = new Map();
+  for (const app of apps) {
+    if (!isTrackable(app)) continue;
+    const tx = getTxCount(app);
+    if (tx <= 0) continue;
+    const current = byCategory.get(app.category);
+    if (!current || tx > getTxCount(current)) {
+      byCategory.set(app.category, app);
+    }
+  }
+  return [...byCategory.values()].sort(
+    (a, b) => getTxCount(b) - getTxCount(a)
+  );
+}
+
+export function sortByTxCount(apps) {
+  return [...apps].sort((a, b) => getTxCount(b) - getTxCount(a));
+}
+
 export function getAppAxes(app) {
   return [app.category, ...(app.properties || [])];
 }
