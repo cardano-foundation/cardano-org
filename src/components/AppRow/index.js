@@ -37,8 +37,8 @@ function AppRow({ app }) {
           {showActivity && <span className={clsx(styles.dot)} aria-hidden />}
           {recent && <span className={styles.newBadge}>{NEW_LABEL}</span>}
         </h4>
-        {app.description && (
-          <p className={styles.description}>{app.description}</p>
+        {(app.tagline || app.description) && (
+          <p className={styles.description}>{app.tagline || app.description}</p>
         )}
       </div>
       <div className={styles.metaRight}>

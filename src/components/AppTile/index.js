@@ -32,7 +32,7 @@ function AppTile({ app, badge = null }) {
         {badge && <span className={styles.badge}>{badge}</span>}
       </div>
       <h3 className={styles.title}>{app.title}</h3>
-      <p className={styles.description}>{app.description}</p>
+      <p className={styles.description}>{app.tagline || app.description}</p>
       <div className={styles.meta}>
         {showActivity && (
           <span className={styles.activity}>

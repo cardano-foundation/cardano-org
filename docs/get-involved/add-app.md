@@ -73,7 +73,8 @@ Before making a pull request, please make sure that you fulfill all these requir
    ```javascript
    {
      title: "Your Project Name",
-     description: "Brief description of what your project does (avoid 'best/first/only' claims)",
+     description: "Brief description of what your project does (120-180 chars; avoid 'best/first/only' claims)",
+     tagline: "Multi-pool DEX with deepest liquidity",  // max 60 chars; shown on /apps tiles
      preview: require("./app-screenshots/your-project-name.jpg"),
      icon: "/img/app-icons/your-project-name.svg", // OPTIONAL - for logo display in components
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping

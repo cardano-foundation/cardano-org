@@ -19,7 +19,7 @@ function parseShowcases(source) {
   if (closeIdx < 0) throw new Error('Cannot find end of Showcases array');
   const block = source.slice(blockStart, closeIdx);
 
-  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
+  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:tagline:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
 
   const apps = [];
   let m;
@@ -29,22 +29,23 @@ function parseShowcases(source) {
       description: m[2]
         ? parseStringValue(`"${m[2]}"`).replace(/\s+/g, ' ').trim()
         : '',
-      icon: m[3] || null,
-      statsLabel: m[4] || null,
-      website: m[5],
-      source: parseStringValue(m[6]),
-      category: m[7],
-      properties: m[8]
+      tagline: m[3] ? parseStringValue(`"${m[3]}"`) : null,
+      icon: m[4] || null,
+      statsLabel: m[5] || null,
+      website: m[6],
+      source: parseStringValue(m[7]),
+      category: m[8],
+      properties: m[9]
         .split(',')
         .map((t) => t.trim().replace(/^"|"$/g, ''))
         .filter(Boolean),
-      maintainerPick: m[9] === 'true',
-      beginnerFriendly: m[10] === 'true',
-      spotlight: m[11]
+      maintainerPick: m[10] === 'true',
+      beginnerFriendly: m[11] === 'true',
+      spotlight: m[12]
         ? {
-            url: m[11],
-            title: parseStringValue(`"${m[12]}"`),
-            date: m[13],
+            url: m[12],
+            title: parseStringValue(`"${m[13]}"`),
+            date: m[14],
           }
         : null,
     });
