@@ -3253,14 +3253,20 @@
   "apps.allApps.tracked": {
     "message": "{count} with live tracking"
   },
-  "apps.maintainerPicks.showAll": {
-    "message": "Show all {count} →"
-  },
-  "apps.maintainerPicks.showLess": {
-    "message": "Show fewer ←"
-  },
   "apps.maintainerPicks.subtitleShort": {
     "message": "Selected by cardano.org maintainers"
+  },
+  "apps.highlights.title": {
+    "message": "Recently added"
+  },
+  "apps.highlights.subtitle": {
+    "message": "The newest apps in the showcase"
+  },
+  "apps.carousel.prev": {
+    "message": "Previous"
+  },
+  "apps.carousel.next": {
+    "message": "Next"
   },
   "apps.mostActive.leaderboardLink": {
     "message": "Live from the transaction leaderboard"
