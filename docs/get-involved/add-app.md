@@ -94,7 +94,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 
 5. **Pick exactly one category** ⚠️
 
-   Each app has one primary category that answers "what kind of app is this?". Available categories: `wallet`, `dex`, `lending`, `marketplace`, `governance`, `explorer`, `pooltool`, `analytics`, `educational`, `minting`, `stablecoin`, `bridge`, `identity`, `daotool`, `oracle`, `game`, `distribution`, `notary`, `accounting`, `ecosystem`, `social`, `funding`, `music`, `gateway`, `metadata`.
+   Each app has one primary category that answers "what kind of app is this?". Available categories: `wallet`, `dex`, `lending`, `marketplace`, `governance`, `explorer`, `pooltool`, `analytics`, `minting`, `bridge`, `identity`, `daotool`, `game`, `distribution`, `notary`, `accounting`, `ecosystem`, `other`. Use `other` for thin segments (stablecoins, oracles, payment gateways, music, education, social) that don't have enough peers to warrant their own category.
 
    Pick the most specific one. Do not list multiple. If your app legitimately spans two, choose the primary user intent.
 

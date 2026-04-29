@@ -39,24 +39,17 @@
   * `dex`
   * `distribution`
   * `ecosystem`
-  * `educational`
   * `explorer`
-  * `funding`
   * `game`
-  * `gateway`
   * `governance`
   * `identity`
   * `lending`
   * `marketplace`
-  * `metadata`
   * `minting`
-  * `music`
   * `notary`
-  * `oracle`
   * `pooltool`
-  * `social`
-  * `stablecoin`
   * `wallet`
+  * `other` — thin segments (stablecoin, oracle, gateway, music, educational, social)
 * Properties — pick zero or more (additive):
   * `mobile` — native mobile app, not a responsive site
   * `nft` — supports or uses NFTs (not for image-based collections)

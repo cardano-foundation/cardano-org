@@ -57,22 +57,10 @@ export const Categories = {
     color: '#9C27B0',  // Purple
     trackable: false,
   },
-  educational: {
-    label: "Educational",
-    description: "Educational projects that will help you onboarding to Cardano.",
-    color: '#D81B60',  // Hot Pink
-    trackable: false,
-  },
   explorer: {
     label: "Block Explorer",
     description: "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
     color: '#2E3B4E',  // Deep Navy Blue
-    trackable: false,
-  },
-  funding: {
-    label: "Funding",
-    description: "Projects aimed at providing funding assistance to individuals.",
-    color: '#004BA0',  // Rich Blue
     trackable: false,
   },
   game: {
@@ -80,12 +68,6 @@ export const Categories = {
     description: "Games on the Cardano blockchain.",
     color: '#008080',  // Teal
     trackable: true,
-  },
-  gateway: {
-    label: "Gateway",
-    description: "Payment Gateway Providers.",
-    color: '#FF5722',  // Bright Orange
-    trackable: false,
   },
   governance: {
     label: "Governance",
@@ -111,34 +93,16 @@ export const Categories = {
     color: '#E53935',  // Bright Red
     trackable: true,
   },
-  metadata: {
-    label: "Metadata",
-    description: "Transaction metadata.",
-    color: '#00ACC1',  // Bright Teal
-    trackable: true,
-  },
   minting: {
     label: "Minting",
     description: "Minting Tool.",
     color: '#42A5F5',  // Light Blue
     trackable: true,
   },
-  music: {
-    label: "Music",
-    description: "Music-related projects on Cardano.",
-    color: '#7757d9ff',  // Vibrant Purple
-    trackable: false,
-  },
   notary: {
     label: "Notary",
     description: "Tools that provide proof of existence or timestamp files on the Cardano blockchain.",
     color: '#5D4037',  // Warm Brown
-    trackable: true,
-  },
-  oracle: {
-    label: "Oracle",
-    description: "Oracles provide smart contracts with external data.",
-    color: '#1E88E5',  // Medium Blue
     trackable: true,
   },
   pooltool: {
@@ -147,22 +111,16 @@ export const Categories = {
     color: '#6C6FFF',  // Soft Blue
     trackable: false,
   },
-  social: {
-    label: "Social",
-    description: "Sites that use the Cardano blockchain for social messaging, groups and sharing.",
-    color: '#4d6545',  // Custom: Olive (green-grey)
-    trackable: false,
-  },
-  stablecoin: {
-    label: "Stable Coins",
-    description: "Backed or algorithmic stable coins.",
-    color: '#FF1744',  // Bright Red
-    trackable: true,
-  },
   wallet: {
     label: "Wallet",
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
     color: '#7BC8A6',  // Soft Green
+    trackable: false,
+  },
+  other: {
+    label: "Other",
+    description: "Apps that don't fit a primary category — stablecoins, oracles, payment gateways, music, education, social, and other thin segments.",
+    color: '#607D8B',  // Blue Grey
     trackable: false,
   },
 };
@@ -234,7 +192,7 @@ export const Showcases = [
     icon: "/img/app-icons/djed.png",
     website: "https://djed.artifex.finance/",
     source: "https://github.com/artifex-labs/open-djed",
-    category: "stablecoin",
+    category: "other",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -471,7 +429,7 @@ export const Showcases = [
     icon: "/img/app-icons/nowpayments.ico",
     website: "https://nowpayments.io",
     source: null,
-    category: "gateway",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -486,7 +444,7 @@ export const Showcases = [
     icon: "/img/app-icons/gimbalabs.jpg",
     website: "https://gimbalabs.com",
     source: "https://gitlab.com/gimbalabs",
-    category: "educational",
+    category: "other",
     properties: ["opensource"],
     maintainerPick: true,
     beginnerFriendly: false,
@@ -780,7 +738,7 @@ export const Showcases = [
     icon: "/img/app-icons/vibrant.png",
     website: "https://www.vibrantnet.io",
     source: "https://github.com/nilscodes/hazelnet",
-    category: "social",
+    category: "other",
     properties: ["nft", "opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1056,7 +1014,7 @@ export const Showcases = [
     statsLabel: "charli3",
     website: "https://charli3.io",
     source: null,
-    category: "oracle",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1070,7 +1028,7 @@ export const Showcases = [
     preview: require("./app-screenshots/cardano-academy.jpg"),
     website: "https://learn.academy.cardanofoundation.org",
     source: null,
-    category: "educational",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1467,7 +1425,7 @@ export const Showcases = [
     icon: "/img/app-icons/farmroll.png",
     website: "https://farmroll.io/",
     source: null,
-    category: "social",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1650,7 +1608,7 @@ export const Showcases = [
     statsNote: "mint/burn only",
     website: "https://moneta.global/",
     source: null,
-    category: "stablecoin",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1736,7 +1694,7 @@ export const Showcases = [
     preview: require("./app-screenshots/orcfax.png"),
     website: "https://orcfax.io",
     source: "https://github.com/orcfax/orcfax-aiken",
-    category: "oracle",
+    category: "other",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1750,7 +1708,7 @@ export const Showcases = [
     preview: require("./app-screenshots/arpradio.png"),
     website: "https://arpradio.media",
     source: null,
-    category: "music",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
