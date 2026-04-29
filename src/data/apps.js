@@ -119,7 +119,7 @@ export const Categories = {
   },
   other: {
     label: "Other",
-    description: "Apps that don't fit a primary category — stablecoins, oracles, payment gateways, music, education, social, and other thin segments.",
+    description: "Apps that don't fit a primary category yet — thin segments grouped together until they have enough peers to warrant their own category.",
     color: '#607D8B',  // Blue Grey
     trackable: false,
   },

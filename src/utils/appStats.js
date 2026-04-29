@@ -51,6 +51,10 @@ export function getTxCount(app) {
   return getAppStats(app)?.txCount ?? 0;
 }
 
+export function compareByTxDesc(a, b) {
+  return getTxCount(b) - getTxCount(a);
+}
+
 export function isTrackable(app) {
   return Categories[app.category]?.trackable ?? false;
 }

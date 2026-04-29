@@ -6,31 +6,38 @@ import clsx from "clsx";
 
 import AppRow from "@site/src/components/AppRow";
 import { Categories, Showcases } from "@site/src/data/apps";
-import { getAppStats } from "@site/src/utils/appStats";
+import { compareByTxDesc } from "@site/src/utils/appStats";
 
 import styles from "./styles.module.css";
 
 function selectPanelApps(category, limit) {
   return Showcases
     .filter((app) => app.category === category)
-    .map((app) => ({ app, stats: getAppStats(app) }))
     .sort((a, b) => {
-      const aTx = a.stats?.txCount || 0;
-      const bTx = b.stats?.txCount || 0;
-      if (aTx !== bTx) return bTx - aTx;
-      if (a.app.maintainerPick !== b.app.maintainerPick) {
-        return a.app.maintainerPick ? -1 : 1;
-      }
-      return a.app.title.localeCompare(b.app.title);
+      const txDiff = compareByTxDesc(a, b);
+      if (txDiff !== 0) return txDiff;
+      if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
+      return a.title.localeCompare(b.title);
     })
-    .slice(0, limit)
-    .map(({ app }) => app);
+    .slice(0, limit);
 }
 
-function CategoryPanel({ category, limit }) {
+// Showcases is static at module scope; precompute each panel's apps once at load
+// time to avoid re-running the filter+sort on every parent re-render (every scroll
+// event triggers one). Keyed by `${category}:${limit}`.
+const PANEL_APPS_CACHE = new Map();
+function getPanelApps(category, limit) {
+  const key = `${category}:${limit}`;
+  if (!PANEL_APPS_CACHE.has(key)) {
+    PANEL_APPS_CACHE.set(key, selectPanelApps(category, limit));
+  }
+  return PANEL_APPS_CACHE.get(key);
+}
+
+const CategoryPanel = memo(function CategoryPanel({ category, limit }) {
   const def = Categories[category];
   if (!def) return null;
-  const apps = selectPanelApps(category, limit);
+  const apps = getPanelApps(category, limit);
   if (apps.length === 0) return null;
   return (
     <article className={styles.panel}>
@@ -49,7 +56,7 @@ function CategoryPanel({ category, limit }) {
       </ul>
     </article>
   );
-}
+});
 
 const useIsomorphicLayoutEffect = ExecutionEnvironment.canUseDOM
   ? useLayoutEffect
