@@ -3250,6 +3250,15 @@
   "apps.allApps.title": {
     "message": "All apps"
   },
+  "apps.allApps.titleScoped": {
+    "message": "All {label}"
+  },
+  "apps.allApps.titleOther": {
+    "message": "Other {label}"
+  },
+  "apps.mostActive.titleScoped": {
+    "message": "Most active {label}"
+  },
   "apps.allApps.tracked": {
     "message": "{count} with live tracking"
   },

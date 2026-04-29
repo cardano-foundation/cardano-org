@@ -26,13 +26,15 @@ import AppRow from "@site/src/components/AppRow";
 import AppFilterPanel from "@site/src/components/AppFilterPanel";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-import { SortedShowcases, Showcases, RECENT_APPS_COUNT } from "@site/src/data/apps";
+import { SortedShowcases, Showcases, RECENT_APPS_COUNT, Categories } from "@site/src/data/apps";
 import {
   getTxCount,
   STATS_GENERATED_AT,
   appHasTag,
   countLiveTracking,
   getTopAppPerCategory,
+  isTrackable,
+  compareByTxDesc,
 } from "@site/src/utils/appStats";
 
 import styles from "./styles.module.css";
@@ -79,31 +81,42 @@ const maintainerPicks = SortedShowcases.filter((s) => s.maintainerPick);
 const recentApps = Showcases.slice(-RECENT_APPS_COUNT);
 const mostActiveByCategory = getTopAppPerCategory(Showcases);
 
-const FILTERED_MOST_ACTIVE_LIMIT = 10;
+const FILTERED_MOST_ACTIVE_LIMIT = 3;
 
-// Manually-curated cluster order: newcomer-friendly path. Wallet first (every user
-// needs one), then DeFi / NFT, governance, consumer, data, infrastructure, discovery.
-// Categories not listed here are skipped from the panels carousel.
-const CATEGORY_PANEL_ORDER = [
-  "wallet",
-  "dex",
-  "lending",
-  "marketplace",
-  "minting",
-  "governance",
-  "daotool",
-  "game",
-  "distribution",
-  "explorer",
-  "analytics",
-  "accounting",
-  "pooltool",
-  "identity",
-  "notary",
-  "bridge",
-  "ecosystem",
-  "other",
-];
+// Browse-by-category panel order is derived at module load:
+//   1. Anchors pinned at the top so newcomer-priority categories never fall.
+//   2. Middle sorted by sum of on-chain tx within each category (desc); 0-tx
+//      categories tie-broken by app count (desc).
+//   3. `other` always last as the catch-all tail.
+// Driven entirely by Showcases + tx-stats, so new categories appear automatically.
+const ANCHOR_CATEGORIES = ["wallet", "dex"];
+const TAIL_CATEGORIES = ["other"];
+
+function deriveCategoryOrder() {
+  const txByCat = {};
+  const countByCat = {};
+  Showcases.forEach((app) => {
+    countByCat[app.category] = (countByCat[app.category] || 0) + 1;
+    if (isTrackable(app)) {
+      txByCat[app.category] = (txByCat[app.category] || 0) + getTxCount(app);
+    }
+  });
+  const present = Object.keys(countByCat);
+  const middle = present
+    .filter((c) => !ANCHOR_CATEGORIES.includes(c) && !TAIL_CATEGORIES.includes(c))
+    .sort((a, b) => {
+      const txDiff = (txByCat[b] || 0) - (txByCat[a] || 0);
+      if (txDiff !== 0) return txDiff;
+      return (countByCat[b] || 0) - (countByCat[a] || 0);
+    });
+  return [
+    ...ANCHOR_CATEGORIES.filter((c) => countByCat[c] > 0),
+    ...middle,
+    ...TAIL_CATEGORIES.filter((c) => countByCat[c] > 0),
+  ];
+}
+
+const CATEGORY_PANEL_ORDER = deriveCategoryOrder();
 
 const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
   ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
@@ -224,7 +237,7 @@ function useFilteredProjects() {
   const isUnfiltered =
     selectedTags.length === 0 && !searchName && latest !== "LAST";
 
-  return { filtered, sortOption, isUnfiltered };
+  return { filtered, sortOption, isUnfiltered, selectedTags };
 }
 
 function ShowcaseHeader() {
@@ -329,13 +342,19 @@ function MaintainerPicksSection({ apps }) {
   );
 }
 
-function MostActiveSection({ apps, isUnfiltered }) {
+function MostActiveSection({ apps, isUnfiltered, scopeLabel }) {
   if (apps.length === 0) return null;
+  const title = scopeLabel
+    ? translate(
+        { id: "apps.mostActive.titleScoped", message: "Most active {label}" },
+        { label: scopeLabel }
+      )
+    : translate({ id: "apps.mostActive.title", message: "Most active" });
   return (
     <section className={clsx("container", styles.section)}>
       <header className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>
-          <span className={styles.dot} aria-hidden /> {translate({ id: "apps.mostActive.title", message: "Most active" })}
+          <span className={styles.dot} aria-hidden /> {title}
         </h2>
         <span className={styles.sectionSubtitle}>
           {STATS_GENERATED_AT_LABEL
@@ -462,7 +481,7 @@ function BrowseByCategorySection() {
   );
 }
 
-function AllAppsSection({ apps, sortOption, isUnfiltered }) {
+function AllAppsSection({ apps, sortOption, isUnfiltered, heading }) {
   const visible = useMemo(
     () => (isUnfiltered ? sortProjects(SortedShowcases, sortOption) : apps),
     [isUnfiltered, sortOption, apps]
@@ -471,7 +490,7 @@ function AllAppsSection({ apps, sortOption, isUnfiltered }) {
     <section className={clsx("container", styles.section)}>
       <header className={clsx(styles.sectionHeader, styles.allAppsHeader)}>
         <h2 className={styles.sectionTitle}>
-          {translate({ id: "apps.allApps.title", message: "All apps" })}
+          {heading}
           <span className={styles.countMuted}>
             {" · "}
             {visible.length}
@@ -499,7 +518,7 @@ function AllAppsSection({ apps, sortOption, isUnfiltered }) {
 }
 
 function ShowcaseSections() {
-  const { filtered, sortOption, isUnfiltered } = useFilteredProjects();
+  const { filtered, sortOption, isUnfiltered, selectedTags } = useFilteredProjects();
 
   const filteredSlugs = useMemo(
     () => new Set(filtered.map((a) => a.slug)),
@@ -510,7 +529,7 @@ function ShowcaseSections() {
     if (isUnfiltered) return mostActiveByCategory;
     return filtered
       .filter((a) => getTxCount(a) > 0)
-      .sort((a, b) => getTxCount(b) - getTxCount(a))
+      .sort(compareByTxDesc)
       .slice(0, FILTERED_MOST_ACTIVE_LIMIT);
   }, [filtered, isUnfiltered]);
 
@@ -524,6 +543,16 @@ function ShowcaseSections() {
     return maintainerPicks.filter((a) => filteredSlugs.has(a.slug));
   }, [filteredSlugs, isUnfiltered]);
 
+  // Filtered "All …" list: drop entries already shown in Most active above and
+  // sort the remainder by tx desc so the highest-activity apps lead the bulk list.
+  const restApps = useMemo(() => {
+    if (isUnfiltered) return filtered;
+    const shownSlugs = new Set(mostActiveApps.map((a) => a.slug));
+    return filtered
+      .filter((a) => !shownSlugs.has(a.slug))
+      .sort((a, b) => compareByTxDesc(a, b) || a.title.localeCompare(b.title));
+  }, [filtered, mostActiveApps, isUnfiltered]);
+
   if (filtered.length === 0) {
     return (
       <section className="container margin-top--lg margin-bottom--xl text--center">
@@ -532,18 +561,40 @@ function ShowcaseSections() {
     );
   }
 
+  const scopeLabel = !isUnfiltered && selectedTags.length === 1
+    ? Categories[selectedTags[0]]?.label
+    : null;
+  const restHeadingId = scopeLabel
+    ? mostActiveApps.length > 0
+      ? "apps.allApps.titleOther"
+      : "apps.allApps.titleScoped"
+    : "apps.allApps.title";
+  const restHeadingMessage = scopeLabel
+    ? mostActiveApps.length > 0
+      ? "Other {label}"
+      : "All {label}"
+    : "All apps";
+  const restHeading = scopeLabel
+    ? translate({ id: restHeadingId, message: restHeadingMessage }, { label: scopeLabel })
+    : translate({ id: restHeadingId, message: restHeadingMessage });
+
   return (
     <>
-      <MostActiveSection apps={mostActiveApps} isUnfiltered={isUnfiltered} />
+      <MostActiveSection
+        apps={mostActiveApps}
+        isUnfiltered={isUnfiltered}
+        scopeLabel={scopeLabel}
+      />
       <HighlightsSection apps={highlightApps} />
       {isUnfiltered && <CollectionsBanner />}
       {isUnfiltered ? (
         <BrowseByCategorySection />
       ) : (
         <AllAppsSection
-          apps={filtered}
+          apps={restApps}
           sortOption={sortOption}
           isUnfiltered={isUnfiltered}
+          heading={restHeading}
         />
       )}
       <SubmitCTA />
