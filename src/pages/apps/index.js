@@ -17,7 +17,6 @@ import ShowcaseSort, {
 import { readSearchTags } from "@site/src/components/showcase/ShowcaseTagSelect";
 import { readOperator } from "@site/src/components/showcase/ShowcaseFilterToggle";
 import { readLatestOperator } from "@site/src/components/showcase/ShowcaseLatestToggle";
-import OpenStickyButton from "@site/src/components/buttons/openStickyButton";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { StarBadge, RankBadge } from "@site/src/components/AppTile";
@@ -536,7 +535,6 @@ function Showcase() {
       <IntentChips />
       <SearchControls />
       <ShowcaseSections />
-      <OpenStickyButton />
     </Layout>
   );
 }
