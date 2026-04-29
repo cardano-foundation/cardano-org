@@ -21,7 +21,7 @@ const ACTIVITY_UNIT = translate({
 });
 const NEW_LABEL = translate({ id: "apps.new", message: "NEW" });
 
-function AppRow({ app }) {
+function AppRow({ app, hideCategory = false }) {
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
   const categoryDef = Categories[app.category];
@@ -44,7 +44,7 @@ function AppRow({ app }) {
             {formatTxCountCompact(stats.txCount)} {ACTIVITY_UNIT}
           </span>
         )}
-        {categoryDef && (
+        {!hideCategory && categoryDef && (
           <span className={styles.category}>{categoryDef.label}</span>
         )}
       </div>

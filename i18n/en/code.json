@@ -3253,6 +3253,12 @@
   "apps.allApps.tracked": {
     "message": "{count} with live tracking"
   },
+  "apps.browseByCategory.title": {
+    "message": "Browse by category"
+  },
+  "apps.browseByCategory.subtitle": {
+    "message": "Top apps in each category. Tap See all to expand."
+  },
   "apps.maintainerPicks.subtitleShort": {
     "message": "Selected by cardano.org maintainers"
   },

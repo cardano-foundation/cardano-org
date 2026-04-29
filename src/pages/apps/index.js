@@ -21,6 +21,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { StarBadge, RankBadge } from "@site/src/components/AppTile";
 import AppTileCarousel from "@site/src/components/AppTileCarousel";
+import CategoryPanelsCarousel from "@site/src/components/CategoryPanelsCarousel";
 import AppRow from "@site/src/components/AppRow";
 import AppFilterPanel from "@site/src/components/AppFilterPanel";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -79,6 +80,30 @@ const recentApps = Showcases.slice(-RECENT_APPS_COUNT);
 const mostActiveByCategory = getTopAppPerCategory(Showcases);
 
 const FILTERED_MOST_ACTIVE_LIMIT = 10;
+
+// Manually-curated cluster order: newcomer-friendly path. Wallet first (every user
+// needs one), then DeFi / NFT, governance, consumer, data, infrastructure, discovery.
+// Categories not listed here are skipped from the panels carousel.
+const CATEGORY_PANEL_ORDER = [
+  "wallet",
+  "dex",
+  "lending",
+  "marketplace",
+  "minting",
+  "governance",
+  "daotool",
+  "game",
+  "distribution",
+  "explorer",
+  "analytics",
+  "accounting",
+  "pooltool",
+  "identity",
+  "notary",
+  "bridge",
+  "ecosystem",
+  "other",
+];
 
 const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
   ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
@@ -409,6 +434,34 @@ function CollectionsBanner() {
   );
 }
 
+function BrowseByCategorySection() {
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          {translate({
+            id: "apps.browseByCategory.title",
+            message: "Browse by category",
+          })}
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            id: "apps.browseByCategory.subtitle",
+            message: "Top apps in each category. Tap See all to expand.",
+          })}
+        </span>
+      </header>
+      <CategoryPanelsCarousel
+        categories={CATEGORY_PANEL_ORDER}
+        ariaLabel={translate({
+          id: "apps.browseByCategory.title",
+          message: "Browse by category",
+        })}
+      />
+    </section>
+  );
+}
+
 function AllAppsSection({ apps, sortOption, isUnfiltered }) {
   const visible = useMemo(
     () => (isUnfiltered ? sortProjects(SortedShowcases, sortOption) : apps),
@@ -484,11 +537,15 @@ function ShowcaseSections() {
       <MostActiveSection apps={mostActiveApps} isUnfiltered={isUnfiltered} />
       <HighlightsSection apps={highlightApps} />
       {isUnfiltered && <CollectionsBanner />}
-      <AllAppsSection
-        apps={filtered}
-        sortOption={sortOption}
-        isUnfiltered={isUnfiltered}
-      />
+      {isUnfiltered ? (
+        <BrowseByCategorySection />
+      ) : (
+        <AllAppsSection
+          apps={filtered}
+          sortOption={sortOption}
+          isUnfiltered={isUnfiltered}
+        />
+      )}
       <SubmitCTA />
       <MaintainerPicksSection apps={pickApps} />
     </>
