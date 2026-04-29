@@ -37,6 +37,7 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
   const scrollerRef = useRef(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const updateScrollState = useCallback(() => {
     const node = scrollerRef.current;
@@ -44,7 +45,17 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
     const max = node.scrollWidth - node.clientWidth;
     setCanScrollPrev(node.scrollLeft > 1);
     setCanScrollNext(node.scrollLeft < max - 1);
-  }, []);
+    const lastIndex = apps.length - 1;
+    if (max <= 0 || lastIndex <= 0) {
+      setActiveIndex(0);
+      return;
+    }
+    // Linear progress: scrollLeft ∈ [0, max] maps to tile index ∈ [0, lastIndex].
+    // Handles the edge where the last tile fits in the viewport before scrollLeft
+    // can equal lastIndex * stride — without this, the final dot never activates.
+    const progress = node.scrollLeft / max;
+    setActiveIndex(Math.round(progress * lastIndex));
+  }, [apps.length]);
 
   useIsomorphicLayoutEffect(() => {
     const node = scrollerRef.current;
@@ -88,7 +99,14 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
       >
         <ChevronLeft />
       </button>
-      <ul ref={scrollerRef} className={styles.scroller}>
+      <ul
+        ref={scrollerRef}
+        className={clsx(
+          styles.scroller,
+          canScrollPrev && styles.canPrev,
+          canScrollNext && styles.canNext
+        )}
+      >
         {apps.map((app, i) => (
           <li key={app.slug} className={styles.item}>
             <AppTile app={app} badge={renderBadge ? renderBadge(app, i) : null} />
@@ -104,6 +122,14 @@ function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
       >
         <ChevronRight />
       </button>
+      <div className={styles.dots} aria-hidden>
+        {apps.map((app, i) => (
+          <span
+            key={app.slug}
+            className={clsx(styles.dot, i === activeIndex && styles.dotActive)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -2,8 +2,9 @@
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   align-items: stretch;
-  gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
 .scroller {
@@ -74,6 +75,10 @@
   box-shadow: none;
 }
 
+.dots {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .arrow {
     display: none;
@@ -88,10 +93,81 @@
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    /* Edge-fade right by default. Combined with .canPrev / .canNext below. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 28px),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 28px),
+      transparent
+    );
+  }
+
+  .scroller.canPrev:not(.canNext) {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 28px,
+      black 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 28px,
+      black 100%
+    );
+  }
+
+  .scroller.canPrev.canNext {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 28px,
+      black calc(100% - 28px),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 28px,
+      black calc(100% - 28px),
+      transparent
+    );
+  }
+
+  .scroller:not(.canPrev):not(.canNext) {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .item {
     flex: 0 0 220px;
     max-width: 220px;
+  }
+
+  .dots {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0.75rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ifm-color-emphasis-300);
+    transition: background-color 150ms ease, transform 150ms ease;
+  }
+
+  .dotActive {
+    background: var(--ifm-color-emphasis-700);
+    transform: scale(1.3);
   }
 }
