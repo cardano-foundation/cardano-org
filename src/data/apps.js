@@ -266,6 +266,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: true,
     beginnerFriendly: false,
+    x: "nmkr_io",
     spotlight: {
       url: "https://developers.cardano.org/blog/2021-07-26-july/",
       title: "Cardano Developer Spotlight: July 2021",
@@ -474,6 +475,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "NOWPayments_io",
   },
   {
     title: "Coti adaPay",
@@ -502,6 +504,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: true,
     beginnerFriendly: false,
+    x: "gimbalabs",
     spotlight: {
       url: "https://developers.cardano.org/blog/2023-01-02-january/",
       title: "Cardano Developer Spotlight: January 2023",
@@ -602,6 +605,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "ada_dice",
   },
   {
     title: "MuesliSwap",
@@ -660,6 +664,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: true,
     beginnerFriendly: true,
+    x: "MinswapDEX",
     spotlight: {
       url: "https://developers.cardano.org/blog/2022-04-27-april/",
       title: "Cardano Developer Spotlight: April 2022",
@@ -719,6 +724,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "gerowallet",
   },
   {
     title: "CardanoCube",
@@ -733,6 +739,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "CardanoCube",
   },
   {
     title: "Pavia",
@@ -747,6 +754,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "Pavia_io",
   },
   {
     title: "WingRiders",
@@ -762,6 +770,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "wingriderscom",
   },
   {
     title: "Lido Nation",
@@ -804,6 +813,7 @@ export const Showcases = [
     properties: ["nft", "opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "VibrantNet_io",
   },
   {
     title: "Book.io",
@@ -852,6 +862,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "nufiwallet",
   },
   {
     title: "TapTools",
@@ -893,6 +904,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "chain_port",
   },
   {
     title: "Cardano Pet Registry",
@@ -907,6 +919,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "adaPetRegistry",
   },
   {
     title: "Cardano Studio",
@@ -921,6 +934,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "cardano_studio",
   },
   {
     title: "Cardano Relay Map",
@@ -1011,6 +1025,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "lace_io",
   },
   {
     title: "VESPR",
@@ -1052,6 +1067,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "dexhunterio",
     spotlight: {
       url: "https://developers.cardano.org/blog/2024-12-09-december/",
       title: "Cardano Developer Spotlight: December 2024",
@@ -1072,6 +1088,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: true,
     beginnerFriendly: true,
+    x: "liqwidfinance",
   },
   {
     title: "Charli3",
@@ -1087,6 +1104,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "Oraclecharli3",
   },
   {
     title: "Cardano Academy",
@@ -1211,6 +1229,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "NioApp",
   },
   {
     title: "Begin Wallet",
@@ -1245,6 +1264,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "BeginWallet",
   },
     {
     title: "Stuff.io",
@@ -1259,6 +1279,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "stuff_io",
   },
   {
     title: "Veridian Wallet",
@@ -1306,6 +1327,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "adastackio",
   },
   {
     title: "ADAM Cardano App",
@@ -1347,6 +1369,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "AndamioPlatform",
   },
   {
     title: "CSWAP",
@@ -1376,6 +1399,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "FluidTokens",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-02-03-february/",
       title: "Cardano Developer Spotlight: February 2025",
@@ -1396,6 +1420,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "GeniusyieldO",
   },
   {
     title: "Iagon",
@@ -1410,6 +1435,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "IagonOfficial",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-09-29-september/",
       title: "Cardano Developer Spotlight: September 2025",
@@ -1459,6 +1485,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "palmeconomy",
   },
   {
     title: "Optim Finance",
@@ -1473,6 +1500,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "OptimFi",
   },
   {
     title: "Farmroll",
@@ -1536,6 +1564,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: true,
+    x: "strikeperps",
   },
   {
     title: "Snek.fun",
@@ -1550,6 +1579,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "snekdotfun",
   },
   {
     title: "Xerberus",
@@ -1564,6 +1594,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "Xerberus",
   },
   {
     title: "Masumi",
@@ -1579,6 +1610,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "MasumiNetwork",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-06-24-june/",
       title: "Cardano Developer Interview: June 2025",
@@ -1641,6 +1673,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "InfinityRisingX",
   },
   {
     title: "Reeve",
@@ -1668,6 +1701,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "AscentRivals",
   },
   {
     title: "USDM Stablecoin",
@@ -1684,6 +1718,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "USDMOfficial",
   },
   {
     title: "Asteria",
@@ -1755,6 +1790,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "indigo_protocol",
   },
   {
     title: "Orcfax",
@@ -1768,6 +1804,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "orcfax",
   },
   {
     title: "Arp Radio",
@@ -1851,6 +1888,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "CardanoCube",
   },
   {
     title: "Wanchain",
@@ -1899,6 +1937,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "CommitProof",
   },
   {
     title: "Plutus Quiz V1000",
@@ -1944,6 +1983,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "claimpaign",
   },
   {
     title: "Wayup",
@@ -1959,6 +1999,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: true,
     beginnerFriendly: true,
+    x: "wayupio",
   },
 ];
 
@@ -2022,6 +2063,7 @@ function ensureShowcaseValid(showcase) {
       "statsNote",
       "walletFeatures",
       "spotlight",
+      "x",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {
@@ -2152,6 +2194,15 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
+  function checkX() {
+    if (showcase.x === undefined) return;
+    if (typeof showcase.x !== "string" || !/^[A-Za-z0-9_]{1,15}$/.test(showcase.x)) {
+      throw new Error(
+        `x must be a Twitter/X handle (1-15 chars, A-Z 0-9 _, no @, no URL), got ${JSON.stringify(showcase.x)}`
+      );
+    }
+  }
+
   function checkSpotlight() {
     if (showcase.spotlight === undefined) return;
     const s = showcase.spotlight;
@@ -2180,6 +2231,7 @@ function ensureShowcaseValid(showcase) {
     checkOpenSource();
     checkTagline();
     checkMetadataLabel();
+    checkX();
     checkSpotlight();
   } catch (e) {
     throw new Error(

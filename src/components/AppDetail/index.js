@@ -31,6 +31,7 @@ function buildJsonLd(app) {
     url: app.website,
     applicationCategory: Categories[app.category].label,
     ...(app.source ? { codeRepository: app.source } : {}),
+    ...(app.x ? { sameAs: [`https://x.com/${app.x}`] } : {}),
   });
 }
 
@@ -154,7 +155,10 @@ export default function AppDetail({ app }) {
             href={app.website}
             className={clsx("button button--primary button--lg", styles.actionButton)}
           >
-            {translate({ id: "apps.detail.visitWebsite", message: "Visit website" })}
+            {translate(
+              { id: "apps.detail.visit", message: "Visit {title}" },
+              { title: app.title }
+            )}
           </Link>
           {app.source && (
             <Link
@@ -167,12 +171,39 @@ export default function AppDetail({ app }) {
               {translate({ id: "apps.detail.viewSource", message: "View source" })}
             </Link>
           )}
+          {app.x && (
+            <Link
+              href={`https://x.com/${app.x}`}
+              className={clsx("button button--secondary button--lg", styles.xButton)}
+              aria-label={translate(
+                {
+                  id: "apps.detail.viewOnX.aria",
+                  message: "View {title} on X (Twitter)",
+                },
+                { title: app.title }
+              )}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                aria-hidden
+                focusable="false"
+              >
+                <path
+                  fill="currentColor"
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </Link>
+          )}
         </div>
 
         {showActivity && (
           <section className={styles.activity}>
             <h2 className={styles.sectionHeading}>
               {translate({ id: "apps.detail.activity", message: "Activity" })}
+              <span className={styles.activityDot} aria-hidden />
             </h2>
             <p className={styles.activityCopy}>
               {translate(

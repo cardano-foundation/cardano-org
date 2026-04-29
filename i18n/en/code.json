@@ -3196,11 +3196,14 @@
   "apps.detail.maintainerPick": {
     "message": "Maintainer pick"
   },
-  "apps.detail.visitWebsite": {
-    "message": "Visit website"
+  "apps.detail.visit": {
+    "message": "Visit {title}"
   },
   "apps.detail.viewSource": {
     "message": "View source"
+  },
+  "apps.detail.viewOnX.aria": {
+    "message": "View {title} on X (Twitter)"
   },
   "apps.detail.activity": {
     "message": "Activity"
@@ -3210,9 +3213,6 @@
   },
   "apps.detail.related": {
     "message": "More in this category"
-  },
-  "apps.detail.visit": {
-    "message": "Visit"
   },
   "apps.detail.editLink": {
     "message": "Improve this entry on GitHub"

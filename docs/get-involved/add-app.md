@@ -88,6 +88,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      properties: ["opensource"],       // zero or more — see properties below
      maintainerPick: false,            // leave false; maintainers set this
      beginnerFriendly: false,          // leave false unless verifiably beginner-friendly
+     x: "yourproject",                 // OPTIONAL - X (Twitter) handle without @, shown on detail page
    }
    ```
 
@@ -125,6 +126,12 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - See [Transaction Rankings Guide](/docs/get-involved/tx-rankings) for details on getting your app tracked
    - Example: `statsLabel: "minswap"`
    - If omitted, the system will attempt normalized matching on your title
+
+   **x field:**
+   - X (Twitter) handle for the project, used on the `/apps/<slug>` detail page and as `sameAs` in the JSON-LD
+   - Just the handle — no `@`, no URL. Example: `x: "MinswapDEX"`, not `"@MinswapDEX"` or `"https://x.com/MinswapDEX"`
+   - 1-15 characters, letters, digits, and underscores only (matches X's own handle constraints)
+   - The build's schema validator rejects anything else
 
    **spotlight field (set by maintainers):**
    - Links to a Developer Spotlight blog post on `developers.cardano.org/blog/`

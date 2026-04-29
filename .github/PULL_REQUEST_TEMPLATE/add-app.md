@@ -20,6 +20,7 @@
 - [ ] My `title` is ≤ 25 characters (ideally 15-20). The build's schema validator rejects anything longer. Drop a redundant `Cardano` prefix where the bare project name still reads cleanly.
 - [ ] My `tagline` is ≤ 60 characters and describes what the app **is**, not what it promises (e.g. "Multi-pool DEX with deepest liquidity", not "Best DEX on Cardano!"). The build's schema validator rejects anything longer.
 - [ ] My `description` is between **120 and 180 characters** (1-2 sentences). The build's schema validator rejects anything outside this range. Long descriptions get truncated in search results and social-share previews; very short ones repeat the tagline.
+- [ ] (Optional) If I added an `x` field, it is just the handle — no `@`, no URL — and matches X's own handle rules (1-15 characters, letters/digits/underscores).
 
 ## App addition
 
