@@ -3266,7 +3266,7 @@
     "message": "Browse by category"
   },
   "apps.browseByCategory.subtitle": {
-    "message": "Top apps in each category. Tap See all to expand."
+    "message": "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest."
   },
   "apps.maintainerPicks.subtitleShort": {
     "message": "Selected by cardano.org maintainers"

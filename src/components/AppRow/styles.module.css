@@ -53,6 +53,13 @@
   flex-shrink: 0;
 }
 
+.pickStar {
+  color: #f5b301;
+  font-size: 0.95rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .newBadge {
   font-size: 0.65rem;
   font-weight: 700;

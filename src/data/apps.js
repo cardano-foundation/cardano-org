@@ -458,8 +458,8 @@ export const Showcases = [
   {
     title: "Eternl",
     description:
-      "Feature-rich Cardano light wallet for browser and mobile, focused on shipping the features most requested by the Cardano community.",
-    tagline: "Feature-rich Cardano wallet for browser and mobile",
+      "Feature-rich Cardano light wallet for browser and mobile. Favored by experienced users for power features the community has requested most.",
+    tagline: "Power-user wallet for browser and mobile",
     preview: require("./app-screenshots/eternl.jpg"),
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
@@ -944,8 +944,8 @@ export const Showcases = [
   {
     title: "VESPR",
     description:
-      "Non-custodial mobile light wallet for Cardano. Prioritizes security and ease of use; private keys and assets always remain under the user's control.",
-    tagline: "Non-custodial mobile Cardano wallet",
+      "Non-custodial mobile wallet for Cardano. Designed for newcomers with simple onboarding, friendly defaults, and security that keeps private keys on-device.",
+    tagline: "Beginner-friendly mobile wallet",
     preview: require("./app-screenshots/vesprwallet.png"),
     icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",

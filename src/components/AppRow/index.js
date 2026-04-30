@@ -20,6 +20,7 @@ const ACTIVITY_UNIT = translate({
   message: "tx",
 });
 const NEW_LABEL = translate({ id: "apps.new", message: "NEW" });
+const PICK_LABEL = translate({ id: "apps.maintainerPick", message: "Maintainer picks" });
 
 function AppRow({ app, hideCategory = false }) {
   const stats = isTrackable(app) ? getAppStats(app) : null;
@@ -33,6 +34,11 @@ function AppRow({ app, hideCategory = false }) {
       <div className={styles.content}>
         <h4 className={styles.title}>
           {app.title}
+          {app.maintainerPick && (
+            <span className={styles.pickStar} aria-label={PICK_LABEL}>
+              ★
+            </span>
+          )}
           {showActivity && <span className={clsx(styles.dot)} aria-hidden />}
           {recent && <span className={styles.newBadge}>{NEW_LABEL}</span>}
         </h4>

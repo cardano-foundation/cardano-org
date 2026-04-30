@@ -11,13 +11,17 @@ import { compareByTxDesc } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
 
 function selectPanelApps(category, limit) {
+  // Three-tier sort: tracked tx desc, then maintainer picks, then random.
+  // Random tiebreak gives non-tracked categories (Wallet, Explorer, etc.) some
+  // freshness on each session start. Result is cached by PANEL_APPS_CACHE so the
+  // order stays stable until the next full page load.
   return Showcases
     .filter((app) => app.category === category)
     .sort((a, b) => {
       const txDiff = compareByTxDesc(a, b);
       if (txDiff !== 0) return txDiff;
       if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
-      return a.title.localeCompare(b.title);
+      return Math.random() - 0.5;
     })
     .slice(0, limit);
 }

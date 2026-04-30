@@ -76,9 +76,9 @@ export function prepareUserState() {
   return undefined;
 }
 
-const maintainerPicks = SortedShowcases.filter((s) => s.maintainerPick);
-
-const recentApps = Showcases.slice(-RECENT_APPS_COUNT);
+// Most-recent additions, re-sorted by tx desc so trackable apps lead. Apps with
+// no tx data keep their insertion order via Array.sort stability.
+const recentApps = [...Showcases.slice(-RECENT_APPS_COUNT)].sort(compareByTxDesc);
 const mostActiveByCategory = getTopAppPerCategory(Showcases);
 
 const FILTERED_MOST_ACTIVE_LIMIT = 3;
@@ -117,6 +117,19 @@ function deriveCategoryOrder() {
 }
 
 const CATEGORY_PANEL_ORDER = deriveCategoryOrder();
+
+// Maintainer picks follow the same category sequence as Browse-by-category, so
+// the carousels read left-to-right in matching buckets. Alphabetical within
+// each bucket as a tiebreak.
+const maintainerPicks = (() => {
+  const rank = new Map(CATEGORY_PANEL_ORDER.map((c, i) => [c, i]));
+  return SortedShowcases.filter((s) => s.maintainerPick).sort((a, b) => {
+    const ra = rank.has(a.category) ? rank.get(a.category) : Infinity;
+    const rb = rank.has(b.category) ? rank.get(b.category) : Infinity;
+    if (ra !== rb) return ra - rb;
+    return a.title.localeCompare(b.title);
+  });
+})();
 
 const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
   ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
@@ -318,7 +331,7 @@ function SearchControls() {
 function MaintainerPicksSection({ apps }) {
   if (apps.length === 0) return null;
   return (
-    <section className={clsx("container", styles.section, styles.picksSection)}>
+    <section className={clsx("container", styles.section)}>
       <header className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>
           ★ {translate({ id: "apps.maintainerPicks", message: "Maintainer picks" })}
@@ -466,7 +479,7 @@ function BrowseByCategorySection() {
         <span className={styles.sectionSubtitle}>
           {translate({
             id: "apps.browseByCategory.subtitle",
-            message: "Top apps in each category. Tap See all to expand.",
+            message: "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest.",
           })}
         </span>
       </header>
@@ -597,8 +610,8 @@ function ShowcaseSections() {
           heading={restHeading}
         />
       )}
-      <SubmitCTA />
       <MaintainerPicksSection apps={pickApps} />
+      <SubmitCTA />
     </>
   );
 }
