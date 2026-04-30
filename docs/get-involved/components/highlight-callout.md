@@ -26,9 +26,9 @@ import { FaShieldAlt } from 'react-icons/fa';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `icon` | `ReactNode` | – | Icon shown in a tinted circle on the left. Omit for a text-only callout. |
-| `children` | `ReactNode` | – | Body content (plain text, paragraphs, or any React node). |
-| `className` | `string` | – | Additional class name on the root element. |
+| `icon` | `ReactNode` | - | Icon shown in a tinted circle on the left. Omit for a text-only callout. |
+| `children` | `ReactNode` | - | Body content (plain text, paragraphs, or any React node). |
+| `className` | `string` | - | Additional class name on the root element. |
 
 ## Live Preview
 

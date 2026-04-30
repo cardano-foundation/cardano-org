@@ -246,7 +246,7 @@ Each slot represents an opportunity for a block to be produced by an elected slo
 The stake pool selected by [Ouroboros](/ouroboros/) to produce a block in a given time slot. Selection is probabilistic, weighted by the pool's delegated stake.
 
 ### SMASH
-Stakepool Metadata Aggregation Server. An off-chain service that collects and stores stake pool metadata such as name, ticker, and homepage. Wallets and explorers can choose which SMASH server to use for displaying pool information. Delisting a pool from a SMASH server only affects how it appears in applications using that server—it does not prevent the pool from participating in the network or producing blocks.
+Stakepool Metadata Aggregation Server. An off-chain service that collects and stores stake pool metadata such as name, ticker, and homepage. Wallets and explorers can choose which SMASH server to use for displaying pool information. Delisting a pool from a SMASH server only affects how it appears in applications using that server; it does not prevent the pool from participating in the network or producing blocks.
 
 ### smart contract
 Self-executing code stored on a blockchain that automatically enforces and executes agreement terms when predefined conditions are met.

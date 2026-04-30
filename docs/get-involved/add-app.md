@@ -21,9 +21,9 @@ Before making a pull request, please make sure that you fulfill all these requir
 - Title is **at most 25 characters**, ideally 15-20. Concrete and brandable; drop a redundant `Cardano` prefix unless the bare project name is too generic on its own
 - Must provide unique value distinct from existing showcase items
 - Must have sufficient community reputation
-- Meets a basic design and quality bar — a working UI, real content, and enough polish that a first-time visitor would leave with a positive impression of the Cardano ecosystem
+- Meets a basic design and quality bar: a working UI, real content, and enough polish that a first-time visitor would leave with a positive impression of the Cardano ecosystem
 
-These criteria are also applied retroactively. Apps that go offline, get abandoned, or pivot away from Cardano are removed during quarterly review — see [Apps curation policy](/docs/get-involved/apps-curation-policy) for the removal triggers and process.
+These criteria are also applied retroactively. Apps that go offline, get abandoned, or pivot away from Cardano are removed during quarterly review. See [Apps curation policy](/docs/get-involved/apps-curation-policy) for the removal triggers and process.
 
 ## Step-by-Step Process
 
@@ -33,10 +33,10 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 
    | Item | Recommendation |
    |---|---|
-   | Resolution | **1280×720 px** (1280 wide, 16:9) — downscales cleanly |
+   | Resolution | **1280×720 px** (1280 wide, 16:9), downscales cleanly |
    | Aspect ratio | **16:9 or 16:10** landscape; anything taller gets cropped on the card |
    | Format | **JPEG** (quality 80) for UI screenshots; PNG only when pixel-perfect text or transparency matters; WebP welcome |
-   | File size | **Under 500 KB** (build will fail otherwise — limit enforced by `scripts/check-app-screenshots.js`) |
+   | File size | **Under 500 KB** (build will fail otherwise; limit enforced by `scripts/check-app-screenshots.js`) |
    | Content | the actual app UI, cropped to the meaningful area. Not a marketing landing page. |
    | Theme | prefer **light theme** for visual consistency with the grid |
    | Browser chrome | omit URL bar and tabs unless intentional (use a clean window or crop them out) |
@@ -71,7 +71,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - Use this format:
 
    :::caution Title is identifying
-   The detail page URL `/apps/<slug>` is derived from the title via `slugify`, so renaming an app's title later changes its slug. Curated [Collections](/apps/collections) reference apps by slug — `grep -r "<old-slug>" src/pages/apps/collections/` before merging title changes.
+   The detail page URL `/apps/<slug>` is derived from the title via `slugify`, so renaming an app's title later changes its slug. Curated [Collections](/apps/collections) reference apps by slug, so run `grep -r "<old-slug>" src/pages/apps/collections/` before merging title changes.
    :::
 
    ```javascript
@@ -84,8 +84,8 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
      source: "https://github.com/your-org/your-project", // or null if not open-source
-     category: "dex",                  // exactly one — see categories below
-     properties: ["opensource"],       // zero or more — see properties below
+     category: "dex",                  // exactly one (see categories below)
+     properties: ["opensource"],       // zero or more (see properties below)
      maintainerPick: false,            // leave false; maintainers set this
      beginnerFriendly: false,          // leave false unless verifiably beginner-friendly
      x: "yourproject",                 // OPTIONAL - X (Twitter) handle without @, shown on detail page
@@ -101,9 +101,9 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 6. **Add properties (zero or more)**
 
    Properties are additive flags answering "what does this app also offer?":
-   - `mobile` — first-class native mobile app (not a responsive site)
-   - `nft` — supports or uses NFTs (do not use for image-based NFT collections)
-   - `opensource` — public source repository; you must also fill in `source`
+   - `mobile`: first-class native mobile app (not a responsive site)
+   - `nft`: supports or uses NFTs (do not use for image-based NFT collections)
+   - `opensource`: public source repository; you must also fill in `source`
 
 7. **`maintainerPick` and `beginnerFriendly`**
 
@@ -129,7 +129,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 
    **x field:**
    - X (Twitter) handle for the project, used on the `/apps/<slug>` detail page and as `sameAs` in the JSON-LD
-   - Just the handle — no `@`, no URL. Example: `x: "MinswapDEX"`, not `"@MinswapDEX"` or `"https://x.com/MinswapDEX"`
+   - Just the handle, no `@`, no URL. Example: `x: "MinswapDEX"`, not `"@MinswapDEX"` or `"https://x.com/MinswapDEX"`
    - 1-15 characters, letters, digits, and underscores only (matches X's own handle constraints)
    - The build's schema validator rejects anything else
 

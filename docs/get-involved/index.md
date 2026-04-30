@@ -31,7 +31,7 @@ These contributions require no technical skills - perfect for getting started:
 - **[Create a news article](/docs/get-involved/create-a-news-article)** - share important ecosystem news
 
 :::info Curation
-The [Maintainer picks](/docs/get-involved/maintainer-picks) section on `/apps` is curated separately by page maintainers. New picks follow a public proposal process — see the criteria and workflow.
+The [Maintainer picks](/docs/get-involved/maintainer-picks) section on `/apps` is curated separately by page maintainers. New picks follow a public proposal process. See the criteria and workflow.
 :::
 
 :::tip Start Here

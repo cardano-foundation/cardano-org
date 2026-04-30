@@ -112,8 +112,8 @@ The data flow from blockchain to leaderboard:
 
 1. **On-chain transactions** are processed by the stats pipeline
 2. The pipeline produces `tx-stats.json` containing two arrays:
-   - `appStats` — transactions attributed to applications via script hashes
-   - `metadataLabelStats` — transactions using registered metadata labels
+   - `appStats`: transactions attributed to applications via script hashes
+   - `metadataLabelStats`: transactions using registered metadata labels
 3. The **leaderboard page** merges both arrays (verified metadata only) and ranks everything by transaction count
 4. `appStats` entries are matched to `src/data/apps.js` via the `statsLabel` field to display icons, descriptions, and website links
 5. `metadataLabelStats` entries are shown with their CIP description and mapped to existing categories (Governance, Bridge, Minting, etc.)
