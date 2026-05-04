@@ -384,7 +384,7 @@ export const Showcases = [
     source: "https://github.com/Emurgo/yoroi-frontend",
     category: "wallet",
     properties: ["nft", "mobile", "opensource"],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
@@ -917,7 +917,7 @@ export const Showcases = [
     source: "https://github.com/input-output-hk/lace",
     category: "wallet",
     properties: ["nft", "opensource"],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
@@ -1097,7 +1097,7 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Multisig Platform",
+    title: "Multisig Wallet",
     description:
       "Secure team treasury management and governance participation on Cardano using native multi-signature scripts and an approval workflow UI.",
     tagline: "Multi-signature treasury and governance for teams",
@@ -1105,9 +1105,9 @@ export const Showcases = [
     icon: "/img/app-icons/multisig.png",
     website: "https://multisig.meshjs.dev/features",
     source: null,
-    category: "governance",
+    category: "wallet",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
