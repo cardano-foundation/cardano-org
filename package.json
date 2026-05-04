@@ -5,6 +5,7 @@
   "scripts": {
     "build-authors": "node scripts/generate-authors-json.js",
     "build-news": "node scripts/generate-recent-news.js",
+    "fetch-drep-avatars": "node scripts/fetch-drep-avatars.js",
     "docusaurus": "docusaurus",
     "start": "yarn build-authors && yarn build-news && docusaurus start",
     "build": "yarn build-authors && yarn build-news && docusaurus build",
@@ -67,7 +68,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.5.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.34.5"
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
