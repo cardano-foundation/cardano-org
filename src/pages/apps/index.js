@@ -88,14 +88,17 @@ const FILTERED_MOST_ACTIVE_LIMIT = 3;
 //   2. Middle sorted by sum of on-chain tx within each category (desc); 0-tx
 //      categories tie-broken by app count (desc).
 //   3. `other` always last as the catch-all tail.
-// Driven entirely by Showcases + tx-stats, so new categories appear automatically.
+// Categories are split into two tiers via Categories[c].prominent: prominent
+// ones lead "Browse by category", non-prominent ones are rendered separately
+// in the lower "Tools, Trackers & Insights" section.
 const ANCHOR_CATEGORIES = ["wallet", "dex"];
 const TAIL_CATEGORIES = ["other"];
 
-function deriveCategoryOrder() {
+function deriveCategoryOrder(categoryFilter) {
   const txByCat = {};
   const countByCat = {};
   Showcases.forEach((app) => {
+    if (!categoryFilter(app.category)) return;
     countByCat[app.category] = (countByCat[app.category] || 0) + 1;
     if (isTrackable(app)) {
       txByCat[app.category] = (txByCat[app.category] || 0) + getTxCount(app);
@@ -116,7 +119,14 @@ function deriveCategoryOrder() {
   ];
 }
 
-const CATEGORY_PANEL_ORDER = deriveCategoryOrder();
+const isProminentCategory = (c) => Categories[c]?.prominent === true;
+const isCompactCategory = (c) => Categories[c]?.prominent === false;
+
+const PROMINENT_CATEGORY_ORDER = deriveCategoryOrder(isProminentCategory);
+const COMPACT_CATEGORY_ORDER = deriveCategoryOrder(isCompactCategory);
+// Combined order drives the maintainer-picks round-robin and other consumers
+// that need to walk every category.
+const CATEGORY_PANEL_ORDER = [...PROMINENT_CATEGORY_ORDER, ...COMPACT_CATEGORY_ORDER];
 
 // Maintainer picks round-robin across categories so the section reads as a
 // cross-section of the ecosystem rather than a wallet-heavy cluster. Within each
@@ -472,30 +482,82 @@ function CollectionsBanner() {
   );
 }
 
+function CategoryBrowseSection({ categories, title, subtitle, muted = false }) {
+  if (categories.length === 0) return null;
+  return (
+    <section className={clsx("container", styles.section, muted && styles.sectionMuted)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={clsx(styles.sectionTitle, muted && styles.sectionTitleMuted)}>
+          {title}
+        </h2>
+        <span className={styles.sectionSubtitle}>{subtitle}</span>
+      </header>
+      <CategoryPanelsCarousel categories={categories} ariaLabel={title} />
+    </section>
+  );
+}
+
 function BrowseByCategorySection() {
   return (
-    <section className={clsx("container", styles.section)}>
-      <header className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>
-          {translate({
-            id: "apps.browseByCategory.title",
-            message: "Browse by category",
-          })}
-        </h2>
-        <span className={styles.sectionSubtitle}>
-          {translate({
-            id: "apps.browseByCategory.subtitle",
-            message: "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest.",
-          })}
-        </span>
-      </header>
-      <CategoryPanelsCarousel
-        categories={CATEGORY_PANEL_ORDER}
-        ariaLabel={translate({
-          id: "apps.browseByCategory.title",
-          message: "Browse by category",
-        })}
+    <CategoryBrowseSection
+      categories={PROMINENT_CATEGORY_ORDER}
+      title={translate({
+        id: "apps.browseByCategory.title",
+        message: "Browse apps by category",
+      })}
+      subtitle={translate({
+        id: "apps.browseByCategory.subtitle",
+        message: "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest.",
+      })}
+    />
+  );
+}
+
+function ToolsAndInsightsSection() {
+  return (
+    <CategoryBrowseSection
+      categories={COMPACT_CATEGORY_ORDER}
+      title={translate({
+        id: "apps.toolsAndInsights.title",
+        message: "Browse tools by category",
+      })}
+      subtitle={translate({
+        id: "apps.toolsAndInsights.subtitle",
+        message: "Read-only utilities, dashboards, and explorers. No on-chain actions, just signal.",
+      })}
+      muted
+    />
+  );
+}
+
+function AllAppsReveal() {
+  const [shown, setShown] = useState(false);
+  if (shown) {
+    // AllAppsSection ignores `apps` when isUnfiltered=true and sorts SortedShowcases itself.
+    return (
+      <AllAppsSection
+        apps={null}
+        sortOption={SORT_IDS.ALPHABETICAL}
+        isUnfiltered={true}
+        heading={translate(
+          { id: "apps.allApps.heading", message: "All {count} apps, A to Z" },
+          { count: SortedShowcases.length }
+        )}
       />
+    );
+  }
+  return (
+    <section className={clsx("container", styles.section, styles.allAppsReveal)}>
+      <button
+        type="button"
+        className={clsx("button button--secondary", styles.showAllButton)}
+        onClick={() => setShown(true)}
+      >
+        {translate(
+          { id: "apps.allApps.show", message: "View all {count} apps alphabetically" },
+          { count: SortedShowcases.length }
+        )}
+      </button>
     </section>
   );
 }
@@ -617,6 +679,8 @@ function ShowcaseSections() {
         />
       )}
       <MaintainerPicksSection apps={pickApps} />
+      {isUnfiltered && <ToolsAndInsightsSection />}
+      {isUnfiltered && <AllAppsReveal />}
       <SubmitCTA />
     </>
   );

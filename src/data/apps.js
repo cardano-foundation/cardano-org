@@ -14,114 +14,137 @@ import { sortBy, difference } from "../utils/jsUtils";
 // Primary categories — each Showcase has exactly one. Answers: "what is this app?".
 // `trackable: true` means on-chain tx count is a meaningful usage signal for that category;
 // activity badges and the "Most active" section gate on this.
+// `prominent: true` categories lead /apps in the Browse-by-category carousel.
+// `prominent: false` categories live in the lower "Tools, Trackers & Insights"
+// section — read-only utilities (analytics, explorers, accounting) that still
+// belong on the page but shouldn't compete for attention with apps people can
+// actually transact with.
 export const Categories = {
   accounting: {
     label: "Accounting",
     description: "Tools providing specialised analytics for financial purposes, including portfolio tracking.",
     color: '#85BB65',  // Dollar Bill Green
     trackable: false,
+    prominent: false,
   },
   analytics: {
     label: "Analytics",
     description: "Tools that provide special insights related to Cardano.",
     color: '#6A8EAE',  // Cool Steel Blue
     trackable: false,
+    prominent: false,
   },
   bridge: {
     label: "Bridge",
     description: "Projects that provide cross-chain bridge support.",
     color: '#FFC107',  // Golden Yellow
     trackable: true,
+    prominent: true,
   },
   daotool: {
     label: "DAO Tool",
     description: "DAO tools help in the proper control and management of a DAO.",
     color: '#37BEB0',  // Bright Cyan
     trackable: true,
+    prominent: true,
   },
   dex: {
     label: "DEX",
     description: "Decentralised exchanges allow direct peer-to-peer cryptocurrency transactions to take place online securely.",
     color: '#3D5AFE',  // Bright Blue
     trackable: true,
+    prominent: true,
   },
   distribution: {
     label: "Distribution",
     description: "Platforms for distributing tokens, airdrops, and rewards to the Cardano community.",
     color: '#E07850',  // Warm Coral
     trackable: true,
+    prominent: true,
   },
   ecosystem: {
     label: "Ecosystem",
     description: "Projects that map out the Cardano Ecosystem.",
     color: '#9C27B0',  // Purple
     trackable: false,
+    prominent: false,
   },
   explorer: {
     label: "Block Explorer",
     description: "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
     color: '#2E3B4E',  // Deep Navy Blue
     trackable: false,
+    prominent: false,
   },
   game: {
     label: "Game",
     description: "Games on the Cardano blockchain.",
     color: '#008080',  // Teal
     trackable: true,
+    prominent: true,
   },
   governance: {
     label: "Governance",
     description: "Governance tools.",
     color: '#673AB7',  // Deep Purple
     trackable: true,
+    prominent: true,
   },
   identity: {
     label: "Identity",
     description: "Decentralized identifiers (DIDs).",
     color: '#212121',  // Solid Black
     trackable: true,
+    prominent: true,
   },
   lending: {
     label: "Lending",
     description: "Projects that provide lending and borrowing of ada.",
     color: '#9E1C1C',  // Deep Red
     trackable: true,
+    prominent: true,
   },
   marketplace: {
     label: "Marketplace",
     description: "Marketplace where you can buy or sell NFTs.",
     color: '#E53935',  // Bright Red
     trackable: true,
+    prominent: true,
   },
   minting: {
     label: "Minting",
     description: "Minting Tool.",
     color: '#42A5F5',  // Light Blue
     trackable: true,
+    prominent: true,
   },
   notary: {
     label: "Notary",
     description: "Tools that provide proof of existence or timestamp files on the Cardano blockchain.",
     color: '#5D4037',  // Warm Brown
     trackable: true,
+    prominent: true,
   },
   pooltool: {
     label: "Pool Tool",
     description: "Pool tools provide delegates with the necessary tools to find a good pool.",
     color: '#6C6FFF',  // Soft Blue
     trackable: false,
+    prominent: false,
   },
   wallet: {
     label: "Wallet",
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
     color: '#7BC8A6',  // Soft Green
     trackable: false,
+    prominent: true,
   },
   other: {
     label: "Other",
     description: "Apps that don't fit a primary category yet — thin segments grouped together until they have enough peers to warrant their own category.",
     color: '#607D8B',  // Blue Grey
     trackable: false,
+    prominent: false,
   },
 };
 
@@ -404,7 +427,7 @@ export const Showcases = [
     source: null,
     category: "analytics",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
   },
   {
@@ -710,7 +733,7 @@ export const Showcases = [
     icon: "/img/app-icons/lido-nation.png",
     website: "https://www.lidonation.com/en/catalyst-explorer",
     source: null,
-    category: "analytics",
+    category: "ecosystem",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -724,7 +747,7 @@ export const Showcases = [
     icon: "/img/app-icons/eutxo.png",
     website: "https://eutxo.org",
     source: null,
-    category: "analytics",
+    category: "explorer",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -859,7 +882,7 @@ export const Showcases = [
     icon: "/img/app-icons/cardano-relay-map.png",
     website: "https://monadpool.com/cardano.html",
     source: null,
-    category: "analytics",
+    category: "pooltool",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1026,6 +1049,7 @@ export const Showcases = [
       "Online courses on blockchain fundamentals, consensus algorithms, transaction models, scaling, and Cardano governance, staking, and dApp development.",
     tagline: "Online courses on Cardano and blockchain basics",
     preview: require("./app-screenshots/cardano-academy.jpg"),
+    icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://learn.academy.cardanofoundation.org",
     source: null,
     category: "other",
@@ -1575,6 +1599,7 @@ export const Showcases = [
       "Project (also known as Ledger on the Blockchain or LOB) developing a Cardano-based decentralized ledger for digital recording of accounting data.",
     tagline: "Decentralized ledger for accounting records",
     preview: require("./app-screenshots/reeve.png"),
+    icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://www.cardanofoundation.org/reeve#mission",
     source: "https://github.com/cardano-foundation/cf-reeve-platform",
     category: "accounting",
@@ -1768,21 +1793,6 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
-  },
-  {
-    title: "CardanoCube Governance",
-    description:
-      "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
-    tagline: "Live on-chain governance proposal browser",
-    preview: require("./app-screenshots/cardanocube-governance.png"),
-    icon: "/img/app-icons/cardanocube.png",
-    website: "https://www.cardanocube.com/governance/gov_actions",
-    source: null,
-    category: "governance",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "CardanoCube",
   },
   {
     title: "Wanchain",

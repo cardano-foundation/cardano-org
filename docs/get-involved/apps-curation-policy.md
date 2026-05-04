@@ -86,6 +86,15 @@ Project teams who want to be re-added after a removal should reopen via the stan
 
 A removal is not a statement that the project is "bad". It means the showcase can no longer verify that the project is **live and functional on Cardano mainnet today**. Projects that come back to life are welcome to resubmit.
 
+## Page tier: prominent vs compact
+
+The /apps page uses two visibility tiers, set on each entry's category via the `prominent: true | false` flag in `Categories` (see `src/data/apps.js`).
+
+- **Prominent (top of page):** categories whose apps enable on-chain transactions. Wallet, DEX, lending, marketplace, minting, bridge, DAO tool, distribution, game, governance, identity, and notary all lead the **Browse apps by category** carousel.
+- **Compact (lower section):** read-only utilities. Accounting, analytics, ecosystem directories, block explorers, pool tools, and the catch-all `other` bucket appear under **Browse tools by category**, with the same tile styling but a more subdued heading.
+
+Tier is determined by category only; individual entries inherit. There are no per-entry overrides. Apps in compact-tier categories are **not** removal candidates and **not** lower-quality. They serve a different purpose, so they get a different position on the page.
+
 ## See also
 
 - [Add your application](/docs/get-involved/add-app): submission criteria and process for new entries

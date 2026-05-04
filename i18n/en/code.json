@@ -3263,10 +3263,22 @@
     "message": "{count} with live tracking"
   },
   "apps.browseByCategory.title": {
-    "message": "Browse by category"
+    "message": "Browse apps by category"
   },
   "apps.browseByCategory.subtitle": {
     "message": "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest."
+  },
+  "apps.toolsAndInsights.title": {
+    "message": "Browse tools by category"
+  },
+  "apps.toolsAndInsights.subtitle": {
+    "message": "Read-only utilities, dashboards, and explorers. No on-chain actions, just signal."
+  },
+  "apps.allApps.show": {
+    "message": "View all {count} apps alphabetically"
+  },
+  "apps.allApps.heading": {
+    "message": "All {count} apps, A to Z"
   },
   "apps.maintainerPicks.subtitleShort": {
     "message": "Selected by cardano.org maintainers"
