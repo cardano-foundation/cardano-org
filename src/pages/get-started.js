@@ -164,7 +164,7 @@ const steps = (onWalletConnect, images) => [
           <h3>{translate({id: 'getStarted.step5.heading', message: 'Where to get ada'})}</h3>
           <p>{translate({id: 'getStarted.step5.text', message: 'There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies.'})}</p>
 
-          <p><Link to="/where-to-get-ada" className="button button--primary">{translate({id: 'getStarted.step5.button', message: 'View all options →'})}</Link></p>
+          <p><Link to="/where-to-get-ada" className="button button--primary">{translate({id: 'getStarted.step5.button', message: 'View all options'})}</Link></p>
 
           <p className={styles.securityNote}>
             {translate({id: 'getStarted.step5.securityNote', message: 'The cryptocurrency space is full of opportunities, but it\'s also a playground for scammers.'})} <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>

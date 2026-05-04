@@ -457,7 +457,7 @@ function CollectionsBanner() {
               to={`/apps/collections/${c.slug}`}
               className={styles.collectionChip}
             >
-              {c.title} →
+              {c.title}
             </Link>
           </li>
         ))}

@@ -267,7 +267,7 @@
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "Back to main menu",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
@@ -854,7 +854,7 @@
     "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
   },
   "getStarted.step5.button": {
-    "message": "View all options →"
+    "message": "View all options"
   },
   "getStarted.step5.securityNote": {
     "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
@@ -3191,7 +3191,7 @@
     "message": "Transactions in the last 30 days"
   },
   "apps.detail.backToApps": {
-    "message": "← All apps"
+    "message": "Back to apps"
   },
   "apps.detail.maintainerPick": {
     "message": "Maintainer pick"

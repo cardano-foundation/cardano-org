@@ -47,7 +47,7 @@ function SpotlightPanel({ company, onClose }) {
         </p>
       )}
       <Link className={styles.spotlightLink} href={company.link}>
-        Visit website →
+        Visit website
       </Link>
     </div>
   );

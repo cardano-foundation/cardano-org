@@ -179,16 +179,6 @@
   text-decoration: underline;
 }
 
-.exchangeLink::after {
-  content: " →";
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.exchangeLink:hover::after {
-  transform: translateX(3px);
-}
-
 .noResults {
   text-align: center;
   padding: 3rem 1rem;

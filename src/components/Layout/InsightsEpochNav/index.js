@@ -78,7 +78,7 @@ export default function InsightsEpochNav({
             aria-label={`Go to epoch ${displayedEpoch - 1}`}
             title={canGoPrev ? `Epoch ${displayedEpoch - 1}` : `Min epoch is ${minEpoch}`}
           >
-            ← Prev
+            Prev
           </button>
 
           <div className="epochNavLabel" aria-live="polite">
@@ -94,7 +94,7 @@ export default function InsightsEpochNav({
             aria-label={`Go to epoch ${displayedEpoch + 1}`}
             title={canGoNext ? `Epoch ${displayedEpoch + 1}` : (currentEpochNo == null ? 'Fetching latest epoch…' : `Max epoch is ${currentEpochNo}`)}
           >
-            Next →
+            Next
           </button>
         </div>
 

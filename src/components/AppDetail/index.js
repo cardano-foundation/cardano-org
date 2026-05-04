@@ -71,7 +71,7 @@ export default function AppDetail({ app }) {
       <main className={clsx("container", styles.detail)}>
         <nav className={styles.breadcrumb} aria-label="breadcrumb">
           <Link to="/apps">
-            {translate({ id: "apps.detail.backToApps", message: "← All apps" })}
+            {translate({ id: "apps.detail.backToApps", message: "Back to apps" })}
           </Link>
         </nav>
 
@@ -145,7 +145,7 @@ export default function AppDetail({ app }) {
                 day: "numeric",
                 year: "numeric",
               })}{" "}
-              · developers.cardano.org →
+              · developers.cardano.org
             </span>
           </Link>
         )}

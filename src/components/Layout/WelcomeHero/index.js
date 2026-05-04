@@ -95,7 +95,7 @@ function WelcomeHero({ title, description }) {
               <Link to="/ouroboros" className={styles.vizPopoverLink}>
                 {translate({
                   id: 'home.hero.vizBadge.link',
-                  message: 'Learn more about Ouroboros →',
+                  message: 'Learn more about Ouroboros',
                 })}
               </Link>
             </div>
