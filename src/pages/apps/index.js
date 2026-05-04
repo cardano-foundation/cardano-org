@@ -118,17 +118,23 @@ function deriveCategoryOrder() {
 
 const CATEGORY_PANEL_ORDER = deriveCategoryOrder();
 
-// Maintainer picks follow the same category sequence as Browse-by-category, so
-// the carousels read left-to-right in matching buckets. Alphabetical within
-// each bucket as a tiebreak.
+// Maintainer picks round-robin across categories so the section reads as a
+// cross-section of the ecosystem rather than a wallet-heavy cluster. Within each
+// round the highest-tx pick from each category leads, following CATEGORY_PANEL_ORDER
+// for category sequence.
 const maintainerPicks = (() => {
-  const rank = new Map(CATEGORY_PANEL_ORDER.map((c, i) => [c, i]));
-  return SortedShowcases.filter((s) => s.maintainerPick).sort((a, b) => {
-    const ra = rank.has(a.category) ? rank.get(a.category) : Infinity;
-    const rb = rank.has(b.category) ? rank.get(b.category) : Infinity;
-    if (ra !== rb) return ra - rb;
-    return a.title.localeCompare(b.title);
-  });
+  const buckets = new Map(CATEGORY_PANEL_ORDER.map((c) => [c, []]));
+  for (const app of SortedShowcases) {
+    if (app.maintainerPick) buckets.get(app.category)?.push(app);
+  }
+  for (const list of buckets.values()) list.sort(compareByTxDesc);
+  const lists = [...buckets.values()];
+  const maxLen = Math.max(0, ...lists.map((l) => l.length));
+  const result = [];
+  for (let i = 0; i < maxLen; i++) {
+    for (const list of lists) if (list[i]) result.push(list[i]);
+  }
+  return result;
 })();
 
 const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
