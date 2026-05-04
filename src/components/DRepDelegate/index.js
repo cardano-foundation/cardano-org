@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BrowserWallet } from "@meshsdk/wallet";
 import { MeshTxBuilder } from "@meshsdk/transaction";
 import { KoiosProvider } from "@meshsdk/provider";
 import { makeApiClient } from "@site/src/utils/insights/api";
+import drepAvatarsManifest from "@site/src/data/drep-avatars.json";
 import styles from "./styles.module.css";
+
+const AVATAR_SET = new Set(drepAvatarsManifest.ids);
 
 const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
@@ -14,7 +18,7 @@ const DISPLAY_COUNT = 8;
 const BATCH_SIZE = 50;
 const EXPECTED_NETWORK_ID = 1; // mainnet
 const EXPLORER_TX_BASE = "https://explorer.cardano.org/transaction/";
-const POOL_CACHE_KEY = "cardano-org.drep-pool.v1";
+const POOL_CACHE_KEY = "cardano-org.drep-pool.v2";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 function readPoolCache() {
@@ -88,20 +92,6 @@ function extractName(meta) {
     asString(meta?.name) ||
     null
   );
-}
-
-function safeImageUrl(url) {
-  if (typeof url !== "string") return null;
-  const trimmed = url.trim();
-  if (/^https:\/\//i.test(trimmed)) return trimmed;
-  if (/^data:image\/(png|jpeg|jpg|gif|webp|svg\+xml);/i.test(trimmed)) return trimmed;
-  return null;
-}
-
-function extractImage(meta) {
-  const img = meta?.body?.image || meta?.image;
-  if (!img) return null;
-  return safeImageUrl(asString(img)) || safeImageUrl(asString(img?.contentUrl));
 }
 
 function extractBio(meta) {
@@ -352,17 +342,18 @@ function Initials({ name }) {
 
 function DRepCard({ drep, onSelect, disabled }) {
   const [imgError, setImgError] = useState(false);
-  const showImage = drep.image && !imgError;
+  const hasLocalAvatar = AVATAR_SET.has(drep.drepId);
+  const localAvatar = useBaseUrl(`/img/dreps/${drep.drepId}.jpg`);
+  const showImage = hasLocalAvatar && !imgError;
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
         {showImage ? (
           <img
-            src={drep.image}
+            src={localAvatar}
             alt=""
             className={styles.avatar}
             loading="lazy"
-            referrerPolicy="no-referrer"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -517,7 +508,6 @@ export default function DRepDelegate() {
               drepId: i.drep_id,
               votingPower: i.amount,
               name,
-              image: extractImage(meta),
               bio: extractBio(meta),
             };
           })
