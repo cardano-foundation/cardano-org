@@ -16,17 +16,10 @@ import { sortBy, difference } from "../utils/jsUtils";
 // activity badges and the "Most active" section gate on this.
 // `prominent: true` categories lead /apps in the Browse-by-category carousel.
 // `prominent: false` categories live in the lower "Tools, Trackers & Insights"
-// section — read-only utilities (analytics, explorers, accounting) that still
+// section — read-only utilities (analytics, explorers, education) that still
 // belong on the page but shouldn't compete for attention with apps people can
 // actually transact with.
 export const Categories = {
-  accounting: {
-    label: "Accounting",
-    description: "Tools providing specialised analytics for financial purposes, including portfolio tracking.",
-    color: '#85BB65',  // Dollar Bill Green
-    trackable: false,
-    prominent: false,
-  },
   analytics: {
     label: "Analytics",
     description: "Tools that provide special insights related to Cardano.",
@@ -38,13 +31,6 @@ export const Categories = {
     label: "Bridge",
     description: "Projects that provide cross-chain bridge support.",
     color: '#FFC107',  // Golden Yellow
-    trackable: true,
-    prominent: true,
-  },
-  daotool: {
-    label: "DAO Tool",
-    description: "DAO tools help in the proper control and management of a DAO.",
-    color: '#37BEB0',  // Bright Cyan
     trackable: true,
     prominent: true,
   },
@@ -66,6 +52,13 @@ export const Categories = {
     label: "Ecosystem",
     description: "Projects that map out the Cardano Ecosystem.",
     color: '#9C27B0',  // Purple
+    trackable: false,
+    prominent: false,
+  },
+  education: {
+    label: "Education",
+    description: "Courses, tutorials, and learning communities for Cardano.",
+    color: '#FB8C00',  // Warm Orange
     trackable: false,
     prominent: false,
   },
@@ -467,7 +460,7 @@ export const Showcases = [
     icon: "/img/app-icons/gimbalabs.jpg",
     website: "https://gimbalabs.com",
     source: "https://gitlab.com/gimbalabs",
-    category: "other",
+    category: "education",
     properties: ["opensource"],
     maintainerPick: true,
     beginnerFriendly: false,
@@ -556,7 +549,7 @@ export const Showcases = [
     source: null,
     category: "pooltool",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
   },
   {
@@ -689,7 +682,7 @@ export const Showcases = [
     source: null,
     category: "ecosystem",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
     x: "CardanoCube",
   },
@@ -1052,9 +1045,9 @@ export const Showcases = [
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://learn.academy.cardanofoundation.org",
     source: null,
-    category: "other",
+    category: "education",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
   },
   {
@@ -1149,7 +1142,7 @@ export const Showcases = [
     icon: "/img/app-icons/tempo.png",
     website: "https://tempo.vote",
     source: null,
-    category: "daotool",
+    category: "governance",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1163,7 +1156,7 @@ export const Showcases = [
     icon: "/img/app-icons/nio.png",
     website: "https://nioapp.io",
     source: null,
-    category: "accounting",
+    category: "other",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1247,7 +1240,7 @@ export const Showcases = [
     icon: "/img/app-icons/govspace.png",
     website: "https://governancespace.com/",
     source: null,
-    category: "daotool",
+    category: "governance",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1276,7 +1269,7 @@ export const Showcases = [
     icon: "/img/app-icons/adam-cardano-app.png",
     website: "https://androdevs.de",
     source: null,
-    category: "accounting",
+    category: "other",
     properties: ["nft"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1303,7 +1296,7 @@ export const Showcases = [
     preview: require("./app-screenshots/andamio.png"),
     website: "https://www.andamio.io/",
     source: null,
-    category: "daotool",
+    category: "identity",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1602,7 +1595,7 @@ export const Showcases = [
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://www.cardanofoundation.org/reeve#mission",
     source: "https://github.com/cardano-foundation/cf-reeve-platform",
-    category: "accounting",
+    category: "notary",
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
@@ -1664,7 +1657,7 @@ export const Showcases = [
     source: null,
     category: "game",
     properties: [],
-    maintainerPick: false,
+    maintainerPick: true,
     beginnerFriendly: false,
   },
   {
@@ -1690,7 +1683,7 @@ export const Showcases = [
     icon: "/img/app-icons/clarity-protocol.jpg",
     website: "https://www.clarity.community/",
     source: null,
-    category: "daotool",
+    category: "governance",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,

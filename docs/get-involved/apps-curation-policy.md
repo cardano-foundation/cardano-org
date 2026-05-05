@@ -36,7 +36,7 @@ The product no longer supports Cardano as a primary chain; for example, the team
 
 For apps in **trackable categories** (DEX, lending, marketplace, bridge, oracle, governance, identity, etc.) where on-chain activity is the meaningful usage signal: zero transactions for 3+ consecutive epochs despite having a `statsLabel` configured.
 
-This trigger does **not** apply to non-trackable categories like `wallet`, `educational`, `analytics`, or `social`; transaction count is not a meaningful signal there.
+This trigger does **not** apply to non-trackable categories like `wallet`, `education`, `analytics`, or `social`; transaction count is not a meaningful signal there.
 
 ### 5. Silent for 12+ months
 
@@ -90,8 +90,8 @@ A removal is not a statement that the project is "bad". It means the showcase ca
 
 The /apps page uses two visibility tiers, set on each entry's category via the `prominent: true | false` flag in `Categories` (see `src/data/apps.js`).
 
-- **Prominent (top of page):** categories whose apps enable on-chain transactions. Wallet, DEX, lending, marketplace, minting, bridge, DAO tool, distribution, game, governance, identity, and notary all lead the **Browse apps by category** carousel.
-- **Compact (lower section):** read-only utilities. Accounting, analytics, ecosystem directories, block explorers, pool tools, and the catch-all `other` bucket appear under **Browse tools by category**, with the same tile styling but a more subdued heading.
+- **Prominent (top of page):** categories whose apps enable on-chain transactions. Wallet, DEX, lending, marketplace, minting, bridge, distribution, game, governance, identity, and notary all lead the **Browse apps by category** carousel.
+- **Compact (lower section):** read-only utilities. Analytics, ecosystem directories, block explorers, pool tools, education, and the catch-all `other` bucket appear under **Browse tools by category**, with the same tile styling but a more subdued heading.
 
 Tier is determined by category only; individual entries inherit. There are no per-entry overrides. Apps in compact-tier categories are **not** removal candidates and **not** lower-quality. They serve a different purpose, so they get a different position on the page.
 

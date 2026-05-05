@@ -32,13 +32,12 @@
 * Source: <link_to_source_code> (or null if not open-source)
 * Icon: (Optional) <path_to_icon_in_static/img/app-icons/>
 * Category — pick **exactly one**:
-  * `accounting`
   * `analytics`
   * `bridge`
-  * `daotool`
   * `dex`
   * `distribution`
   * `ecosystem`
+  * `education`
   * `explorer`
   * `game`
   * `governance`
@@ -49,7 +48,7 @@
   * `notary`
   * `pooltool`
   * `wallet`
-  * `other` — thin segments (stablecoin, oracle, gateway, music, educational, social)
+  * `other` — thin segments (stablecoin, oracle, gateway, music, social)
 * Properties — pick zero or more (additive):
   * `mobile` — native mobile app, not a responsive site
   * `nft` — supports or uses NFTs (not for image-based collections)
