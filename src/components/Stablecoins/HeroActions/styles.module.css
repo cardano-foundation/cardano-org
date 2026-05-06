@@ -1,0 +1,38 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.outlined:hover,
+.outlined:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.filled {
+  background-color: #FFFFFF;
+  color: #0033AD;
+  border: 1px solid #FFFFFF;
+}
+
+.filled:hover,
+.filled:focus {
+  background-color: #FFFFFF;
+  color: #0033AD;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

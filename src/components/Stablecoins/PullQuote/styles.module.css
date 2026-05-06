@@ -1,0 +1,17 @@
+.quote {
+  margin: 0;
+  padding: 2.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .quote {
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+    max-width: 100%;
+  }
+}

@@ -267,6 +267,10 @@ img {
   /* good example */
 }
 
+.white-text {
+  color: #FFFFFF;
+}
+
 .slight-text {
   color: rgb(187, 187, 187);
 }

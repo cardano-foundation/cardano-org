@@ -1,0 +1,134 @@
+.row {
+  margin: 1.5rem 0;
+}
+
+.leftCol,
+.rightCol {
+  padding: 1rem;
+}
+
+.colHeading {
+  margin: 0 0 1.2rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0033AD;
+}
+
+[data-theme='dark'] .colHeading {
+  color: var(--ifm-color-primary);
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #0033AD;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.stepBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.stepTitle {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.stepText {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.panel {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+}
+
+[data-theme='dark'] .panel {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.panelLead {
+  margin: -1rem 0 1.5rem 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.directList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.directItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.directTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0033AD;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .directTitle {
+  color: var(--ifm-color-primary);
+}
+
+.directTitle:hover {
+  text-decoration: underline;
+}
+
+.directBody {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 768px) {
+  .leftCol,
+  .rightCol {
+    padding: 0.5rem;
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
+}

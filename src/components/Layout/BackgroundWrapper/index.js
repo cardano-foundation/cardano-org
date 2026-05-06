@@ -25,6 +25,12 @@ export default function BackgroundWrapper({ children, backgroundType }) {
     case "zoom":
       wrapperClassName = styles.backgroundZoom;
       break;
+    case "zoomBlueRight":
+      wrapperClassName = styles.backgroundZoomBlueRight;
+      break;
+    case "zoomBlueCenter":
+      wrapperClassName = styles.backgroundZoomBlueCenter;
+      break;
     case "gradientDark":
       wrapperClassName = styles.backgroundGradientDark;
       break;

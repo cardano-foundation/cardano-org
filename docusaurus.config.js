@@ -55,6 +55,10 @@ const config = {
     // If you use the data.cardano.org endpoint and you want to run this locally you need to disable CORS
     // Alternatively you can also replace it with a Koios endpoint and an Koios API Key.
     CARDANO_ORG_API_URL: 'https://data.cardano.org/k/api/v1',
+    // CoinGecko proxy hosted by data.cardano.org. Same host -> already on the
+    // CSP connect-src allowlist. The proxy injects the demo / paid API key
+    // server-side, so the public site never sees it.
+    CARDANO_ORG_CG_API_URL: 'https://data.cardano.org/cg/api/v3',
     CARDANO_ORG_API_KEY: 'secret',
   },
   // Even if you don't use internationalization, you can use this field to set

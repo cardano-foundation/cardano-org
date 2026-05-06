@@ -1,0 +1,69 @@
+.panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #0033AD;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 78%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(173, 216, 255, 0.4) 0%,
+    rgba(173, 216, 255, 0.22) 35%,
+    rgba(0, 51, 173, 0) 75%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.logoItem {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -22px;
+  filter: drop-shadow(0 0 14px rgba(173, 216, 255, 0.35));
+}
+
+.logoItem:first-child {
+  margin-top: 0;
+}
+
+.logoItem[data-coin-id='usdm'] .logo {
+  transform: scale(1.15);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logoItem {
+    width: 72px;
+    height: 72px;
+    margin-top: -18px;
+  }
+}
