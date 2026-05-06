@@ -1,9 +1,9 @@
 //
 // Fail-fast size guard for src/data/app-screenshots/.
 // Runs in the build chain to keep the repo from bloating with multi-megabyte previews.
-// Anyone hitting this should re-export their screenshot at a smaller resolution or convert
-// PNG → JPEG/WebP. macOS one-liner:
-//   sips -Z 1280 -s formatOptions 65 -s format jpeg in.png --out out.jpg
+// Target: 2048×1440 source (1024×720 displayed @ 2x), WebP quality 80, ≤500 KB.
+// Convert with cwebp:
+//   cwebp -q 80 -m 6 in.png -o out.webp
 //
 
 const fs = require('fs');
@@ -34,7 +34,7 @@ if (offenders.length > 0) {
     console.error(`  - ${o.name} (${fmt(o.size)})`);
   }
   console.error(
-    '\nResize/convert before committing. Example:\n  sips -Z 1280 -s formatOptions 80 -s format jpeg in.png --out out.jpg'
+    '\nResize/convert before committing. Example:\n  cwebp -q 80 -m 6 in.png -o out.webp'
   );
   process.exit(1);
 }

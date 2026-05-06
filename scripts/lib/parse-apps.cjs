@@ -18,9 +18,27 @@ function parseShowcases(source) {
 
   const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:tagline:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?(?:metadataLabel:\s*(\d+),[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?(?:x:\s*"([^"]+)",[\s\S]*?)?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
 
+  // Preview is a webpack require() expression — not captured by the main regex
+  // because group ordering is too brittle to extend. Searched per-entry so missing
+  // preview lines yield null instead of misaligning the array.
+  const previewLineRegex = /preview:\s*require\(["']\.\/app-screenshots\/([^"']+)["']\)/;
+  const extraPreviewsRegex = /extraPreviews:\s*\[([^\]]*)\]/;
+  const extraPreviewItemRegex = /require\(["']\.\/app-screenshots\/([^"']+)["']\)/g;
+
   const apps = [];
   let m;
   while ((m = entryRegex.exec(block)) !== null) {
+    const entrySlice = block.slice(m.index, entryRegex.lastIndex);
+    const previewMatch = entrySlice.match(previewLineRegex);
+    const extraMatch = entrySlice.match(extraPreviewsRegex);
+    const extraPreviewFiles = [];
+    if (extraMatch) {
+      let item;
+      const itemRe = new RegExp(extraPreviewItemRegex.source, 'g');
+      while ((item = itemRe.exec(extraMatch[1])) !== null) {
+        extraPreviewFiles.push(item[1]);
+      }
+    }
     apps.push({
       title: parseStringValue(`"${m[1]}"`),
       description: m[2]
@@ -47,6 +65,8 @@ function parseShowcases(source) {
             date: m[16],
           }
         : null,
+      previewFile: previewMatch ? previewMatch[1] : null,
+      extraPreviewFiles,
     });
   }
 
