@@ -33,9 +33,9 @@ function parseShowcases(source) {
     const extraMatch = entrySlice.match(extraPreviewsRegex);
     const extraPreviewFiles = [];
     if (extraMatch) {
+      extraPreviewItemRegex.lastIndex = 0;
       let item;
-      const itemRe = new RegExp(extraPreviewItemRegex.source, 'g');
-      while ((item = itemRe.exec(extraMatch[1])) !== null) {
+      while ((item = extraPreviewItemRegex.exec(extraMatch[1])) !== null) {
         extraPreviewFiles.push(item[1]);
       }
     }
