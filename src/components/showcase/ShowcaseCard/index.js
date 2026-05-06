@@ -65,9 +65,11 @@ const ShowcaseCard = memo((card) => {
 
   return (
     <li className="card shadow--md">
-      <div className={clsx("card__image", styles.showcaseCardImage)}>
-        <Image img={card.showcase.preview} alt={card.showcase.title} />
-      </div>
+      {card.showcase.preview && (
+        <div className={clsx("card__image", styles.showcaseCardImage)}>
+          <Image img={card.showcase.preview} alt={card.showcase.title} />
+        </div>
+      )}
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
           <h4 className={styles.showcaseCardTitle}>
