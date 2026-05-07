@@ -1709,12 +1709,13 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Wanchain",
+    title: "WanBridge",
     description:
       "Decentralized cross-chain bridge infrastructure connecting Cardano with multiple EVM and non-EVM networks via threshold-signature relayers.",
     tagline: "Cross-chain bridge for EVM and non-EVM networks",
-    preview: require("./app-screenshots/wanchain.webp"),
-    icon: "/img/app-icons/wanchain.svg",
+    preview: require("./app-screenshots/wanbridge.webp"),
+    icon: "/img/app-icons/wanbridge.svg",
+    statsLabel: "wanchain",
     website: "https://bridge.wanchain.org/AssetBridge",
     source: null,
     category: "bridge",
