@@ -523,7 +523,7 @@ function ToolsAndInsightsSection() {
       })}
       subtitle={translate({
         id: "apps.toolsAndInsights.subtitle",
-        message: "Read-only utilities, dashboards, and explorers. No on-chain actions, just signal.",
+        message: "Utilities, dashboards, and explorers for tracking and analytics.",
       })}
       muted
     />

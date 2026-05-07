@@ -323,6 +323,7 @@ export const Showcases = [
     description:
       "Feature-rich, unbiased Cardano pool tool with delegation analytics, missed-block detection, and a companion native mobile app.",
     tagline: "Feature-rich pool tool with companion native app",
+    icon: "/img/app-icons/pooltool.png",
     website: "https://pooltool.io",
     source: null,
     category: "pooltool",
@@ -469,6 +470,11 @@ export const Showcases = [
     description:
       "Feature-rich Cardano light wallet for browser and mobile. Favored by experienced users for power features the community has requested most.",
     tagline: "Power-user wallet for browser and mobile",
+    preview: require("./app-screenshots/eternl.webp"),
+    extraPreviews: [
+      require("./app-screenshots/eternl-staking.webp"),
+      require("./app-screenshots/eternl-governance.webp"),
+    ],
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
@@ -533,6 +539,11 @@ export const Showcases = [
       "Detailed Cardano staking rewards calculator showing expected returns to operators and delegators, with a Monte Carlo simulation for return variability.",
     tagline: "Pool reward calculator with Monte Carlo sim",
     icon: "/img/app-icons/reward-calculator.png",
+    preview: require("./app-screenshots/reward-calculator.webp"),
+    extraPreviews: [
+      require("./app-screenshots/reward-calculator-pools.webp"),
+      require("./app-screenshots/reward-calculator-parameters.webp"),
+    ],
     website: "https://cardano.org/calculator/",
     source: null,
     category: "pooltool",
@@ -559,6 +570,11 @@ export const Showcases = [
     description:
       "Native, scalable Cardano AMM DEX with automated liquidity provision, yield farming, and an order-book overlay built on Plutus.",
     tagline: "Native scalable AMM DEX on Cardano",
+    preview: require("./app-screenshots/sundaeswap.webp"),
+    extraPreviews: [
+      require("./app-screenshots/sundaeswap-pools.webp"),
+      require("./app-screenshots/sundaeswap-portfolio.webp"),
+    ],
     icon: "/img/app-icons/sundaeswap.jpg",
     website: "https://app.sundae.fi",
     source: null,
@@ -691,6 +707,10 @@ export const Showcases = [
     description:
       "Native AMM DEX on Cardano focused on fast settlement and predictable fees, with stableswap pools and an integrated yield-farming layer.",
     tagline: "Native AMM DEX on Cardano",
+    preview: require("./app-screenshots/wingriders.webp"),
+    extraPreviews: [
+      require("./app-screenshots/wingriders-pools.webp"),
+    ],
     icon: "/img/app-icons/wingriders.png",
     statsLabel: "wingriders",
     website: "https://www.wingriders.com",
@@ -746,6 +766,10 @@ export const Showcases = [
     description:
       "NFT marketplace where readers buy, read, and resell eBooks and audiobooks. Each title is an asset with verifiable provenance and resale rights.",
     tagline: "NFT marketplace for eBooks and audiobooks",
+    preview: require("./app-screenshots/book-io.webp"),
+    extraPreviews: [
+      require("./app-screenshots/book-io-detail.webp"),
+    ],
     icon: "/img/app-icons/book-io.jpg",
     website: "https://book.io",
     source: null,
@@ -930,6 +954,11 @@ export const Showcases = [
     description:
       "Non-custodial mobile wallet for Cardano. Designed for newcomers with simple onboarding, friendly defaults, and security that keeps private keys on-device.",
     tagline: "Beginner-friendly mobile wallet",
+    preview: require("./app-screenshots/vespr.webp"),
+    extraPreviews: [
+      require("./app-screenshots/vespr-nfts.webp"),
+      require("./app-screenshots/vespr-swap.webp"),
+    ],
     icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
@@ -955,6 +984,10 @@ export const Showcases = [
     description:
       "Cardano DEX aggregator that routes trades across all major venues for competitive pricing, with real-time alerts and a unified interface.",
     tagline: "Cardano DEX aggregator with real-time alerts",
+    preview: require("./app-screenshots/dexhunter.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dexhunter-trending.webp"),
+    ],
     icon: "/img/app-icons/dexhunter.svg",
     statsLabel: "dexhunter",
     website: "https://www.dexhunter.io/",
@@ -1068,6 +1101,11 @@ export const Showcases = [
     description:
       "All-in-one DeFi platform on Cardano combining lending, borrowing, and trading with cross-pool collateral and unified interest rate markets.",
     tagline: "DeFi platform for lending, borrowing, and trading",
+    preview: require("./app-screenshots/dano-finance.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dano-finance-leverage.webp"),
+      require("./app-screenshots/dano-finance-pools.webp"),
+    ],
     icon: "/img/app-icons/dano-finance.png",
     statsLabel: "dano-finance",
     website: "https://danogo.io/",
@@ -1246,19 +1284,24 @@ export const Showcases = [
     description:
       "Verified trust protocol for distributed work on Cardano. Organizations mint credentials and find contributors; individuals learn, join, and launch projects.",
     tagline: "Verified credentials and project work coordination",
+    icon: "/img/app-icons/andamio.jpg",
     website: "https://www.andamio.io/",
     source: null,
     category: "identity",
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
-    x: "AndamioPlatform",
+    x: "andamio_teams",
   },
   {
     title: "CSWAP",
     description:
       "CSWAP Systems is a next-gen decentralized exchange (DEX) that bridges tokens, NFTs, and real-world assets in one seamless trading ecosystem. ",
     tagline: "DEX for tokens, NFTs, and real-world assets",
+    preview: require("./app-screenshots/cswap.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cswap-farms.webp"),
+    ],
     icon: "/img/app-icons/cswap.jpg",
     statsLabel: "cswap",
     website: "https://www.cswap.fi/",
@@ -1273,6 +1316,11 @@ export const Showcases = [
     description:
       "Cardano-Bitcoin DeFi protocol covering lending, borrowing, staking, sponsored transactions, rental positions, and boosted-stake products.",
     tagline: "Cardano-Bitcoin lending and borrowing protocol",
+    preview: require("./app-screenshots/fluidtokens.webp"),
+    extraPreviews: [
+      require("./app-screenshots/fluidtokens-borrow.webp"),
+      require("./app-screenshots/fluidtokens-gold.webp"),
+    ],
     icon: "/img/app-icons/fluidtoken.png",
     website: "https://fluidtokens.com/",
     source: "https://github.com/fluidtokens",
@@ -1307,7 +1355,6 @@ export const Showcases = [
     description:
       "Iagon is an AI-driven shared storage and compute economy. Bridging decentralization with compliance to revolutionize cloud services.",
     tagline: "Decentralized storage and compute marketplace",
-    preview: require("./app-screenshots/iagon.webp"),
     icon: "/img/app-icons/iagon.png",
     website: "https://iagon.com",
     source: null,
@@ -1409,6 +1456,7 @@ export const Showcases = [
     description:
       "DeFi derivatives protocol on Cardano offering perpetual futures with on-chain margin, leverage, and oracle-priced settlement.",
     tagline: "Perpetual futures derivatives protocol on Cardano",
+    preview: require("./app-screenshots/strike.webp"),
     icon: "/img/app-icons/strike.png",
     statsLabel: "strike-finance",
     website: "https://www.strikefinance.org/",
@@ -1498,6 +1546,10 @@ export const Showcases = [
     description:
       "Prediction market on Cardano for speculating on real-world event outcomes. Settles outcomes on-chain using oracle data and Plutus smart contracts.",
     tagline: "Cardano prediction market for real-world events",
+    preview: require("./app-screenshots/bodega.webp"),
+    extraPreviews: [
+      require("./app-screenshots/bodega-market.webp"),
+    ],
     icon: "/img/app-icons/bodega.png",
     statsLabel: "bodega",
     website: "https://v3.bodegamarket.io",
@@ -1621,6 +1673,11 @@ export const Showcases = [
     description:
       "Autonomous synthetics protocol on Cardano for on-chain price exposure to real-world assets. Mints iAssets backed by collateralized debt positions.",
     tagline: "Synthetics protocol for on-chain RWA exposure",
+    preview: require("./app-screenshots/indigo.webp"),
+    extraPreviews: [
+      require("./app-screenshots/indigo-earn.webp"),
+      require("./app-screenshots/indigo-dao.webp"),
+    ],
     icon: "/img/app-icons/indy.png",
     statsLabel: "indigo-protocol",
     website: "https://indigoprotocol.io/",
@@ -1743,8 +1800,13 @@ export const Showcases = [
   },
   {
     title: "CommitProof",
-    description: "CommitProof lets you prove what you knew and when. Hash your ideas client-side, anchor the proof on Cardano, and verify it anytime. Your original never leaves your device.",
-    tagline: "Client-side hash anchoring with on-chain proof",
+    description: "Prove what you knew and when. Hash any file or text locally, then commit the proof to Cardano. Your original never leaves your device. The timestamp is public and verifiable.",
+    tagline: "Tamper-proof timestamps for files and ideas",
+    preview: require("./app-screenshots/commitproof.webp"),
+    extraPreviews: [
+      require("./app-screenshots/commitproof-committed.webp"),
+      require("./app-screenshots/commitproof-verify.webp"),
+    ],
     icon: "/img/app-icons/commitproof.svg",
     statsLabel: "commitproof",
     metadataLabel: 8413,
@@ -1788,7 +1850,11 @@ export const Showcases = [
     description:
       "Cardano airdrop tool for real-world token distribution. Recipients claim from QR codes instead of receiving wallet pushes, putting them in control (CIP-99).",
     tagline: "QR-based airdrop tool for in-person campaigns",
-    preview: require("./app-screenshots/claimpaign-qrcodes.webp"),
+    preview: require("./app-screenshots/claimpaign.webp"),
+    extraPreviews: [
+      require("./app-screenshots/claimpaign-qrcodes.webp"),
+      require("./app-screenshots/claimpaign-analytics.webp"),
+    ],
     icon: "/img/app-icons/claimpaign.png",
     statsLabel: "claimpaign",
     metadataLabel: 8414,
@@ -1805,6 +1871,10 @@ export const Showcases = [
     description:
       "Cardano NFT marketplace by Anvil. Continues the smart contracts of JpgStore as the platform sunsets, so existing listings and royalties keep working.",
     tagline: "Cardano NFT marketplace by Anvil, continuing JpgStore",
+    preview: require("./app-screenshots/wayup.webp"),
+    extraPreviews: [
+      require("./app-screenshots/wayup-home.webp"),
+    ],
     icon: "/img/app-icons/wayup.png",
     statsLabel: "wayup",
     website: "https://www.wayup.io",
