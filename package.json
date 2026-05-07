@@ -8,6 +8,7 @@
     "build-llms": "node scripts/generate-llms-txt.js",
     "build-apps-meta": "node scripts/generate-apps-metadata.js",
     "check-app-screenshots": "node scripts/check-app-screenshots.js",
+    "fetch-drep-avatars": "node scripts/fetch-drep-avatars.js",
     "docusaurus": "docusaurus",
     "start": "yarn check-app-screenshots && yarn build-authors && yarn build-news && yarn build-apps-meta && yarn build-llms && docusaurus start",
     "build": "yarn check-app-screenshots && yarn build-authors && yarn build-news && yarn build-apps-meta && yarn build-llms && docusaurus build",
@@ -70,7 +71,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.5.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.34.5"
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
