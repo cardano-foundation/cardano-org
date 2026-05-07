@@ -323,6 +323,13 @@
     "showCompanyName": false
   },
   {
+    "companyName": "Scorechain",
+    "imageName": "scorechain",
+    "link": "https://www.scorechain.com/resources/about-us",
+    "knownFor": "Scorechain Analytics and Compliance Solutions",
+    "showCompanyName": false
+  },
+  {
     "companyName": "SIDAN Lab",
     "imageName": "sidanlab",
     "link": "https://sidan.io/",

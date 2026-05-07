@@ -1553,6 +1553,15 @@ export const Showcases = [
     source: null,
     tags: ["distribution", "nft"],
   },
+  {
+    title: "Scorechain",
+    description: "Scorechain is a leading provider of blockchain analytics and compliance solutions, offering comprehensive tools for transaction monitoring, risk assessment, and regulatory compliance across multiple blockchains, including Cardano.",
+    preview: require("./app-images/scorechain.png"),
+    icon: "/img/app-icons/scorechain.png",
+    website: "https://www.scorechain.com/",
+    source: null,
+    tags: ["analytics"],
+  }
 ];
 
 export const TagList = Object.keys(Tags);
