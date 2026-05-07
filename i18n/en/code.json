@@ -3223,27 +3223,6 @@
   "apps.detail.spotlight.aria": {
     "message": "Open Developer Spotlight on developers.cardano.org"
   },
-  "apps.collections.title": {
-    "message": "Cardano App Collections"
-  },
-  "apps.collections.description": {
-    "message": "Curated bundles of Cardano apps for specific use cases."
-  },
-  "apps.collections.lede": {
-    "message": "Each collection groups apps around a specific user goal. They are curated by page maintainers, not exhaustive — see /apps for the full directory."
-  },
-  "apps.collections.empty": {
-    "message": "No collections published yet."
-  },
-  "apps.collections.cta.title": {
-    "message": "Curated bundles for specific goals"
-  },
-  "apps.collections.cta.description": {
-    "message": "Collections group apps around concrete user goals — onboarding, DeFi, creator tooling — so you do not have to scan the full directory."
-  },
-  "apps.collections.cta.button": {
-    "message": "Browse collections"
-  },
   "apps.intent.label": {
     "message": "I want to"
   },
@@ -3313,11 +3292,20 @@
   "apps.filter.clearAll": {
     "message": "Clear all filters"
   },
-  "apps.collections.banner.label": {
-    "message": "Collections"
+  "apps.guidedPaths.label": {
+    "message": "Guided paths"
   },
-  "apps.collections.banner.subtitle": {
-    "message": "Curated journeys"
+  "apps.guidedPaths.subtitle": {
+    "message": "Step-by-step on cardano.org"
+  },
+  "apps.guidedPaths.getStarted": {
+    "message": "First steps with ada"
+  },
+  "apps.guidedPaths.governance": {
+    "message": "Have a say in Cardano"
+  },
+  "apps.guidedPaths.developers": {
+    "message": "Build on Cardano"
   },
   "apps.submit.enableTracking": {
     "message": "Enable tracking"

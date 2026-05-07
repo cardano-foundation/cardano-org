@@ -71,7 +71,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - Use this format:
 
    :::caution Title is identifying
-   The detail page URL `/apps/<slug>` is derived from the title via `slugify`, so renaming an app's title later changes its slug. Curated [Collections](/apps/collections) reference apps by slug, so run `grep -r "<old-slug>" src/pages/apps/collections/` before merging title changes.
+   The detail page URL `/apps/<slug>` is derived from the title via `slugify`, so renaming an app's title later changes its slug.
    :::
 
    ```javascript

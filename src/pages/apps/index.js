@@ -170,11 +170,6 @@ const APPS_ITEM_LIST_JSON_LD = JSON.stringify({
   })),
 });
 
-import { getCollections } from "@site/src/data/collections";
-
-const COLLECTIONS_BANNER_LIMIT = 3;
-const collections = getCollections({ limit: COLLECTIONS_BANNER_LIMIT });
-
 function sortProjects(projects, sortOption) {
   if (sortOption === SORT_IDS.ALPHABETICAL) {
     return [...projects].sort((a, b) => a.title.localeCompare(b.title));
@@ -448,32 +443,51 @@ function HighlightsSection({ apps }) {
   );
 }
 
-function CollectionsBanner() {
-  if (collections.length === 0) return null;
+function GuidedPathsBanner() {
+  const paths = [
+    {
+      to: "/get-started",
+      label: translate({
+        id: "apps.guidedPaths.getStarted",
+        message: "First steps with ada",
+      }),
+    },
+    {
+      to: "/governance#paths",
+      label: translate({
+        id: "apps.guidedPaths.governance",
+        message: "Have a say in Cardano",
+      }),
+    },
+    {
+      to: "/developers",
+      label: translate({
+        id: "apps.guidedPaths.developers",
+        message: "Build on Cardano",
+      }),
+    },
+  ];
   return (
-    <section className={clsx("container", styles.collectionsBanner)}>
-      <div className={styles.collectionsHeader}>
-        <h2 className={styles.collectionsTitle}>
+    <section className={clsx("container", styles.guidedPathsBanner)}>
+      <div className={styles.guidedPathsHeader}>
+        <h2 className={styles.guidedPathsTitle}>
           {translate({
-            id: "apps.collections.banner.label",
-            message: "Collections",
+            id: "apps.guidedPaths.label",
+            message: "Guided paths",
           })}
         </h2>
-        <span className={styles.collectionsSubtitle}>
+        <span className={styles.guidedPathsSubtitle}>
           {translate({
-            id: "apps.collections.banner.subtitle",
-            message: "Curated journeys",
+            id: "apps.guidedPaths.subtitle",
+            message: "Step-by-step on cardano.org",
           })}
         </span>
       </div>
-      <ul className={styles.collectionChipList}>
-        {collections.map((c) => (
-          <li key={c.slug}>
-            <Link
-              to={`/apps/collections/${c.slug}`}
-              className={styles.collectionChip}
-            >
-              {c.title}
+      <ul className={styles.guidedPathChipList}>
+        {paths.map((p) => (
+          <li key={p.to}>
+            <Link to={p.to} className={styles.guidedPathChip}>
+              {p.label}
             </Link>
           </li>
         ))}
@@ -667,7 +681,7 @@ function ShowcaseSections() {
         scopeLabel={scopeLabel}
       />
       <HighlightsSection apps={highlightApps} />
-      {isUnfiltered && <CollectionsBanner />}
+      {isUnfiltered && <GuidedPathsBanner />}
       {isUnfiltered ? (
         <BrowseByCategorySection />
       ) : (
