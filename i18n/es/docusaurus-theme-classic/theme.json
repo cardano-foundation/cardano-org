@@ -28,7 +28,7 @@
     "description": "The label for search page documents found counter"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "No se encontraron documentos",
+    "message": "No se han encontrado documentos",
     "description": "The text for no search results"
   }
 }

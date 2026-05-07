@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Siguiente",
+    "description": "The label for version current"
+  },
+  "sidebar.getInvolvedSidebar.category.Site Components": {
+    "message": "Componentes",
+    "description": "The label for category 'Site Components' in sidebar 'getInvolvedSidebar'"
+  },
+  "sidebar.getInvolvedSidebar.category.Site Components.link.generated-index.description": {
+    "message": "Conozca los componentes con los que puede crear páginas.",
+    "description": "The generated-index page description for category 'Site Components' in sidebar 'getInvolvedSidebar'"
+  }
+}
