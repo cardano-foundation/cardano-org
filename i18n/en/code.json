@@ -3439,6 +3439,246 @@
   "ambassadors.roles.description": {
     "message": "Cardano Ambassadors drive community growth through various initiatives, including:"
   },
+  "ambassadors.hero.eyebrow": {
+    "message": "Cardano Ambassadors"
+  },
+  "ambassadors.hero.titleNew": {
+    "message": "Cardano Ambassadors"
+  },
+  "ambassadors.hero.titleAccent": {
+    "message": "in action"
+  },
+  "ambassadors.hero.lede": {
+    "message": "A global network of community leaders educating, organizing, translating, building and supporting Cardano across the world."
+  },
+  "ambassadors.hero.cta.directory": {
+    "message": "View directory"
+  },
+  "ambassadors.hero.cta.join": {
+    "message": "Become an ambassador"
+  },
+  "ambassadors.hero.featured.blurb": {
+    "message": "Driving Cardano adoption across LATAM through Spanish-language content, meetups and education."
+  },
+  "ambassadors.hero.featured.cta": {
+    "message": "View profile"
+  },
+  "ambassadors.map.aria": {
+    "message": "World map showing Cardano Ambassadors across countries"
+  },
+  "ambassadors.stats.ambassadors.label": {
+    "message": "Ambassadors"
+  },
+  "ambassadors.stats.ambassadors.caption": {
+    "message": "Global community leaders"
+  },
+  "ambassadors.stats.countries.label": {
+    "message": "Countries"
+  },
+  "ambassadors.stats.countries.caption": {
+    "message": "Represented worldwide"
+  },
+  "ambassadors.stats.languages.label": {
+    "message": "Languages"
+  },
+  "ambassadors.stats.languages.caption": {
+    "message": "Making Cardano accessible"
+  },
+  "ambassadors.stats.channels.label": {
+    "message": "Moderated channels"
+  },
+  "ambassadors.stats.channels.caption": {
+    "message": "Across {platforms} platforms"
+  },
+  "ambassadors.impact.divider": {
+    "message": "Impact Overview"
+  },
+  "ambassadors.impact.title": {
+    "message": "Measuring the global impact of our ambassadors"
+  },
+  "ambassadors.impact.description": {
+    "message": "Cardano Ambassadors create content, host events, translate, moderate channels and contribute to open source. The numbers below show the breadth of activity across the program."
+  },
+  "ambassadors.impact.content.label": {
+    "message": "Content created"
+  },
+  "ambassadors.impact.content.caption": {
+    "message": "Articles, videos, podcasts, threads"
+  },
+  "ambassadors.impact.events.label": {
+    "message": "Events hosted"
+  },
+  "ambassadors.impact.events.caption": {
+    "message": "Meetups, workshops, hackathons"
+  },
+  "ambassadors.impact.translations.label": {
+    "message": "Translations"
+  },
+  "ambassadors.impact.translations.caption": {
+    "message": "Content pieces translated in 17 languages"
+  },
+  "ambassadors.impact.channels.label": {
+    "message": "Channels moderated"
+  },
+  "ambassadors.impact.channels.caption": {
+    "message": "Community channels across 9 platforms"
+  },
+  "ambassadors.impact.openSource.label": {
+    "message": "Open-source contributions"
+  },
+  "ambassadors.impact.openSource.caption": {
+    "message": "Projects, tools and code contributions"
+  },
+  "ambassadors.contributions.title": {
+    "message": "What ambassadors do"
+  },
+  "ambassadors.contributions.description": {
+    "message": "Ambassadors contribute in many ways to support Cardano's mission and grow the ecosystem."
+  },
+  "ambassadors.milestones.divider": {
+    "message": "Program Milestones"
+  },
+  "ambassadors.milestones.title": {
+    "message": "The evolution of the Cardano Ambassador Program"
+  },
+  "ambassadors.milestones.description": {
+    "message": "From a 2018 initiative to a global network with measurable impact across continents."
+  },
+  "ambassadors.milestone.2018.title": {
+    "message": "Program launched"
+  },
+  "ambassadors.milestone.2018.body": {
+    "message": "The Cardano Ambassador Program is established by the Cardano Foundation."
+  },
+  "ambassadors.milestone.2020.title": {
+    "message": "Global growth phase"
+  },
+  "ambassadors.milestone.2020.body": {
+    "message": "Expansion of community channels and multilingual support."
+  },
+  "ambassadors.milestone.2021.title": {
+    "message": "Stronger recognition"
+  },
+  "ambassadors.milestone.2021.body": {
+    "message": "Structured roles, moderation and community operations."
+  },
+  "ambassadors.milestone.2023.title": {
+    "message": "Ecosystem impact"
+  },
+  "ambassadors.milestone.2023.body": {
+    "message": "More support for education, events and the developer ecosystem."
+  },
+  "ambassadors.milestone.2024-25.title": {
+    "message": "Impact and transparency"
+  },
+  "ambassadors.milestone.2024-25.body": {
+    "message": "Refinement toward impact measurement and transparency."
+  },
+  "ambassadors.milestone.now.title": {
+    "message": "Stronger together"
+  },
+  "ambassadors.milestone.now.body": {
+    "message": "A global network driving adoption and innovation."
+  },
+  "ambassadors.directory.divider": {
+    "message": "Ambassador Directory"
+  },
+  "ambassadors.directory.title": {
+    "message": "Search and filter our global network of ambassadors"
+  },
+  "ambassadors.directory.intro": {
+    "message": "Discover profiles of {count} Cardano Ambassadors representing {countries} countries."
+  },
+  "ambassadors.directory.searchPlaceholder": {
+    "message": "Search by name…"
+  },
+  "ambassadors.directory.searchAria": {
+    "message": "Search ambassadors by name"
+  },
+  "ambassadors.directory.countryAria": {
+    "message": "Filter by country"
+  },
+  "ambassadors.directory.languageAria": {
+    "message": "Filter by language"
+  },
+  "ambassadors.directory.allCountries": {
+    "message": "All countries"
+  },
+  "ambassadors.directory.allLanguages": {
+    "message": "All languages"
+  },
+  "ambassadors.directory.resultMeta": {
+    "message": "Showing {shown} of {total} ambassadors"
+  },
+  "ambassadors.directory.empty": {
+    "message": "No ambassadors match your filters."
+  },
+  "ambassadors.directory.clear": {
+    "message": "Clear filters"
+  },
+  "ambassadors.directory.loadMore": {
+    "message": "Load more"
+  },
+  "ambassadors.directory.socialAria.forum": {
+    "message": "Forum profile"
+  },
+  "ambassadors.directory.socialAria.x": {
+    "message": "X profile"
+  },
+  "ambassadors.directory.socialAria.linkedin": {
+    "message": "LinkedIn profile"
+  },
+  "ambassadors.directory.socialAria.youtube": {
+    "message": "YouTube channel"
+  },
+  "ambassadors.stories.divider": {
+    "message": "Impact Stories"
+  },
+  "ambassadors.stories.title": {
+    "message": "Real stories from ambassadors making a difference"
+  },
+  "ambassadors.stories.readMore": {
+    "message": "Read story"
+  },
+  "ambassadors.stories.byPrefix": {
+    "message": "By"
+  },
+  "ambassadors.story.story-latam.tag": {
+    "message": "Events"
+  },
+  "ambassadors.story.story-latam.title": {
+    "message": "Building a thriving Cardano community in Latin America"
+  },
+  "ambassadors.story.story-latam.excerpt": {
+    "message": "How local meetups and education initiatives are driving adoption and empowering thousands."
+  },
+  "ambassadors.story.story-asia.tag": {
+    "message": "Education"
+  },
+  "ambassadors.story.story-asia.title": {
+    "message": "Teaching blockchain to the next generation"
+  },
+  "ambassadors.story.story-asia.excerpt": {
+    "message": "From classroom workshops to nationwide university programs in Indonesia."
+  },
+  "ambassadors.story.story-translations.tag": {
+    "message": "Translations"
+  },
+  "ambassadors.story.story-translations.title": {
+    "message": "Breaking language barriers for global access"
+  },
+  "ambassadors.story.story-translations.excerpt": {
+    "message": "Localizing Cardano content into Japanese for one of the largest ada communities."
+  },
+  "ambassadors.story.story-development.tag": {
+    "message": "Development"
+  },
+  "ambassadors.story.story-development.title": {
+    "message": "Building tools for a better ecosystem"
+  },
+  "ambassadors.story.story-development.excerpt": {
+    "message": "Open-source contributions that make Cardano easier to use for developers everywhere."
+  },
   "enterprise.label.solutions": {
     "message": "Solutions"
   },

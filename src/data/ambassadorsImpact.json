@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "languages": 17,
+    "moderatedChannels": 50,
+    "platforms": 9,
+    "lastUpdated": "2026-05-08"
+  },
+  "impact": [
+    {
+      "id": "content",
+      "labelDefault": "Content created",
+      "value": "1,250+",
+      "captionDefault": "Articles, videos, podcasts, threads",
+      "trend": [42, 58, 71, 88, 96, 110, 124, 138, 151, 168, 182, 205]
+    },
+    {
+      "id": "events",
+      "labelDefault": "Events hosted",
+      "value": "620+",
+      "captionDefault": "Meetups, workshops, hackathons",
+      "trend": [12, 18, 24, 30, 36, 44, 52, 58, 67, 76, 84, 95]
+    },
+    {
+      "id": "translations",
+      "labelDefault": "Translations",
+      "value": "800+",
+      "captionDefault": "Content pieces translated in 17 languages",
+      "trend": [22, 30, 41, 52, 63, 78, 96, 114, 133, 152, 168, 188]
+    },
+    {
+      "id": "channels",
+      "labelDefault": "Channels moderated",
+      "value": "50+",
+      "captionDefault": "Community channels across 9 platforms",
+      "trend": [22, 26, 30, 33, 36, 38, 41, 44, 46, 48, 49, 50]
+    },
+    {
+      "id": "openSource",
+      "labelDefault": "Open-source contributions",
+      "value": "150+",
+      "captionDefault": "Projects, tools and code contributions",
+      "trend": [10, 14, 22, 31, 42, 53, 65, 78, 92, 108, 124, 142]
+    }
+  ],
+  "milestones": [
+    {
+      "id": "2018",
+      "year": "2018",
+      "titleDefault": "Program launched",
+      "bodyDefault": "The Cardano Ambassador Program is established by the Cardano Foundation."
+    },
+    {
+      "id": "2020",
+      "year": "2020",
+      "titleDefault": "Global growth phase",
+      "bodyDefault": "Expansion of community channels and multilingual support."
+    },
+    {
+      "id": "2021",
+      "year": "2021",
+      "titleDefault": "Stronger recognition",
+      "bodyDefault": "Structured roles, moderation and community operations."
+    },
+    {
+      "id": "2023",
+      "year": "2023",
+      "titleDefault": "Ecosystem impact",
+      "bodyDefault": "More support for education, events and the developer ecosystem."
+    },
+    {
+      "id": "2024-25",
+      "year": "2024 / 25",
+      "titleDefault": "Impact and transparency",
+      "bodyDefault": "Refinement toward impact measurement and transparency."
+    },
+    {
+      "id": "now",
+      "year": "Now",
+      "titleDefault": "Stronger together",
+      "bodyDefault": "A global network driving adoption and innovation."
+    }
+  ],
+  "featuredHero": {
+    "ambassadorRef": "Mauro Agustín Andreoli",
+    "tags": [
+      { "label": "Content", "tone": "content" },
+      { "label": "Events", "tone": "events" },
+      { "label": "Education", "tone": "education" }
+    ]
+  },
+  "stories": [
+    {
+      "id": "story-latam",
+      "ambassadorRef": "Mauro Agustín Andreoli",
+      "tagDefault": "Events",
+      "titleDefault": "Building a thriving Cardano community in Latin America",
+      "excerptDefault": "How local meetups and education initiatives are driving adoption and empowering thousands.",
+      "link": "https://forum.cardano.org/c/ambassadors/45"
+    },
+    {
+      "id": "story-asia",
+      "ambassadorRef": "Andreas Sosilo",
+      "tagDefault": "Education",
+      "titleDefault": "Teaching blockchain to the next generation",
+      "excerptDefault": "From classroom workshops to nationwide university programs in Indonesia.",
+      "link": "https://forum.cardano.org/c/ambassadors/45"
+    },
+    {
+      "id": "story-translations",
+      "ambassadorRef": "Hikaru Nomura",
+      "tagDefault": "Translations",
+      "titleDefault": "Breaking language barriers for global access",
+      "excerptDefault": "Localizing Cardano content into Japanese for one of the largest ada communities.",
+      "link": "https://forum.cardano.org/c/ambassadors/45"
+    },
+    {
+      "id": "story-development",
+      "ambassadorRef": "Kornel Gajewski",
+      "tagDefault": "Development",
+      "titleDefault": "Building tools for a better ecosystem",
+      "excerptDefault": "Open-source contributions that make Cardano easier to use for developers everywhere.",
+      "link": "https://forum.cardano.org/c/ambassadors/45"
+    }
+  ],
+  "countryToLanguage": {
+    "AR": "Spanish",
+    "AT": "German",
+    "AU": "English",
+    "BE": "French",
+    "BR": "Portuguese",
+    "CA": "English",
+    "CD": "French",
+    "CH": "German",
+    "CL": "Spanish",
+    "CN": "Chinese",
+    "CO": "Spanish",
+    "CZ": "Czech",
+    "DE": "German",
+    "FR": "French",
+    "GB": "English",
+    "GH": "English",
+    "GR": "Greek",
+    "HK": "Chinese",
+    "ID": "Indonesian",
+    "IE": "English",
+    "JP": "Japanese",
+    "KR": "Korean",
+    "KZ": "Russian",
+    "LB": "Arabic",
+    "MX": "Spanish",
+    "NL": "Dutch",
+    "NO": "Norwegian",
+    "NZ": "English",
+    "PL": "Polish",
+    "TH": "Thai",
+    "TW": "Chinese",
+    "TZ": "Swahili",
+    "US": "English",
+    "VE": "Spanish",
+    "VN": "Vietnamese",
+    "ZA": "English",
+    "_scotland": "English",
+    "ES": "Spanish",
+    "IT": "Italian",
+    "PT": "Portuguese",
+    "RU": "Russian",
+    "TR": "Turkish",
+    "UA": "Ukrainian",
+    "RO": "Romanian",
+    "HU": "Hungarian",
+    "FI": "Finnish",
+    "SE": "Swedish",
+    "DK": "Danish",
+    "IL": "Hebrew",
+    "SA": "Arabic",
+    "AE": "Arabic",
+    "EG": "Arabic",
+    "MA": "Arabic",
+    "NG": "English",
+    "KE": "English",
+    "UG": "English",
+    "ET": "Amharic",
+    "IN": "English",
+    "PK": "Urdu",
+    "BD": "Bengali",
+    "PH": "Filipino",
+    "MY": "Malay",
+    "SG": "English",
+    "PE": "Spanish",
+    "EC": "Spanish",
+    "BO": "Spanish",
+    "UY": "Spanish",
+    "CR": "Spanish"
+  }
+}

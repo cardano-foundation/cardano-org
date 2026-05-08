@@ -1,0 +1,113 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 51, 173, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 51, 173, 0.1);
+}
+
+.avatarWrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.flag {
+  position: absolute;
+  bottom: -2px;
+  right: -4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 0.15rem;
+}
+
+.role {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(58, 95, 214, 0.1);
+  color: #3a5fd6;
+  margin-bottom: 0.6rem;
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.socialLink,
+.socialLink:hover {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  background: #f1f5f9;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background: rgba(0, 51, 173, 0.1);
+  color: #0033ad;
+}
+
+[data-theme="dark"] .card {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+[data-theme="dark"] .name        { color: var(--ifm-color-emphasis-900); }
+[data-theme="dark"] .role        { color: var(--ifm-color-emphasis-600); }
+[data-theme="dark"] .flag        { border-color: var(--ifm-background-surface-color); background: var(--ifm-background-surface-color); }
+[data-theme="dark"] .socialLink  { background: var(--ifm-color-emphasis-200); color: var(--ifm-color-emphasis-700); }
+[data-theme="dark"] .socialLink:hover { background: rgba(102, 132, 206, 0.25); color: #b4c4ff; }
+[data-theme="dark"] .tag {
+  background: rgba(102, 132, 206, 0.18);
+  color: #b4c4ff;
+}
