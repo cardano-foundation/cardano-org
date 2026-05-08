@@ -119,7 +119,7 @@ export default function Stablecoins() {
                   {translate({
                     id: "stablecoins.bridges.intro",
                     message:
-                      "The future is interoperable, and so are stablecoins. From PayPal to Moneta, several services allow you to access Cardano's advantages.",
+                      "The future is interoperable, and so are stablecoins. From PayPal to MakerDAO, several bridges allow you to access Cardano's advantages.",
                   })}
                 </p>
               </div>
