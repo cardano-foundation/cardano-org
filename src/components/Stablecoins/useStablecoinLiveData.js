@@ -135,8 +135,13 @@ export default function useStablecoinLiveData() {
 
 // Coins whose CoinGecko entry doesn't yet carry market-cap data (preview
 // listings, recently launched native assets) but which exist on Cardano as
-// native tokens. We fall back to Koios `asset_info` and synthesize a market
-// cap from total_supply * pegUsd.
+// native tokens. We fall back to Koios `asset_info` for circulating supply.
+//
+// For the USD multiplier we prefer CoinGecko's live `usd` price when present,
+// so a depeg event is reflected in the market cap. We only fall back to the
+// static `pegUsd` when no live price exists at all. As a last-line guard, an
+// implausible CG price (non-finite, ≤0, or >50% off peg) is rejected in favour
+// of the peg — that's almost certainly bad upstream data, not a real depeg.
 async function fetchKoiosMarketCaps(koios, currentPrices) {
   const targets = [...NATIVE_STABLECOINS, ...BRIDGED_STABLECOINS].filter(
     (c) => {
@@ -175,9 +180,19 @@ async function fetchKoiosMarketCaps(koios, currentPrices) {
     if (!supplyRaw) continue;
     const supply = Number(supplyRaw) / 10 ** coin.cardanoAsset.decimals;
     if (!Number.isFinite(supply)) continue;
+
+    const peg = coin.cardanoAsset.pegUsd;
+    const cgUsd = currentPrices[coin.coingeckoId]?.usd;
+    const cgUsdIsPlausible =
+      typeof cgUsd === "number" &&
+      Number.isFinite(cgUsd) &&
+      cgUsd > 0 &&
+      Math.abs(cgUsd - peg) / peg <= 0.5;
+    const usd = cgUsdIsPlausible ? cgUsd : peg;
+
     out[coin.coingeckoId] = {
-      usd: coin.cardanoAsset.pegUsd,
-      usd_market_cap: supply * coin.cardanoAsset.pegUsd,
+      usd,
+      usd_market_cap: supply * usd,
     };
   }
   return out;
