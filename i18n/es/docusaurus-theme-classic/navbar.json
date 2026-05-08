@@ -40,7 +40,7 @@
     "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Delegate your vote": {
-    "message": "Delegate your vote",
+    "message": "Delegar tu voto",
     "description": "Navbar item with label Delegate your vote"
   },
   "item.label.Use Cardano Apps": {
@@ -112,7 +112,7 @@
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
-    "message": "Recursos para el constructor",
+    "message": "Herramientas para Desarrolladores",
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
