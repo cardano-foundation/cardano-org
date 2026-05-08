@@ -6,8 +6,7 @@ export const NATIVE_STABLECOINS = [
     name: "USDCx",
     coingeckoId: "usdcx",
     cardanoAsset: {
-      policyId:
-        "1f3aec8bfe7ea4fe14c5f121e2a92e301afe414147860d557cac7e34",
+      policyId: "1f3aec8bfe7ea4fe14c5f121e2a92e301afe414147860d557cac7e34",
       assetNameHex: "5553444378",
       decimals: 6,
       pegUsd: 1,
@@ -50,7 +49,7 @@ export const NATIVE_STABLECOINS = [
         value: "1:1 USDC (Circle xReserve)",
       },
     ],
-    href: "https://www.circle.com/usdcx",
+    href: "https://usdcx.iog.io/bridge",
     learnMore: translate({
       id: "stablecoins.usdcx.learnMore",
       message: "Learn more about USDCx",
