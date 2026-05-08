@@ -453,6 +453,13 @@ function GuidedPathsBanner() {
       }),
     },
     {
+      to: "/stablecoins",
+      label: translate({
+        id: "apps.guidedPaths.stablecoins",
+        message: "Use stablecoins",
+      }),
+    },
+    {
       to: "/governance#paths",
       label: translate({
         id: "apps.guidedPaths.governance",
