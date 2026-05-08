@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23T06:31:32.399Z",
+  "lastUpdated": "2026-05-08T06:29:38.054Z",
   "contributors": [
     {
       "rank": 1,
@@ -18,11 +18,21 @@
       "languages": [
         "Spanish"
       ],
-      "translated": 4556,
-      "approved": 6505
+      "translated": 5145,
+      "approved": 8682
     },
     {
       "rank": 3,
+      "user": "cardanocastellano",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 4259,
+      "approved": 0
+    },
+    {
+      "rank": 4,
       "user": "tu_nguyen",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17609548/medium/44c6c7af1bb421891853b9197203d77f_default.png",
       "languages": [
@@ -32,17 +42,18 @@
       "approved": 0
     },
     {
-      "rank": 4,
-      "user": "cardanocastellano",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
+      "rank": 5,
+      "user": "AMG (amgt)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17391280/medium/c0890db33cf65a9b08a6b041f9694312.png",
       "languages": [
+        "Japanese",
         "Spanish"
       ],
-      "translated": 2120,
+      "translated": 1036,
       "approved": 0
     },
     {
-      "rank": 5,
+      "rank": 6,
       "user": "davidmtz",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17625642/medium/f4c025a0afc6af7faa976451ea050b43_default.png",
       "languages": [
@@ -52,7 +63,7 @@
       "approved": 0
     },
     {
-      "rank": 6,
+      "rank": 7,
       "user": "HaSala",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17602462/medium/b8b6783a0503304c1b9c8764214ded12_default.png",
       "languages": [
@@ -62,7 +73,7 @@
       "approved": 0
     },
     {
-      "rank": 7,
+      "rank": 8,
       "user": "matzeee",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17667694/medium/cf9127414963fac6c59504e231a44962_default.png",
       "languages": [
@@ -72,33 +83,23 @@
       "approved": 0
     },
     {
-      "rank": 8,
+      "rank": 9,
+      "user": "Edickson23",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17684880/medium/7541631cc4cac4b0e45809412df875e7_default.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 331,
+      "approved": 0
+    },
+    {
+      "rank": 10,
       "user": "BaelFire",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15877549/medium/3a83e601d8016828ebacb8d153df99dd_default.png",
       "languages": [
         "Vietnamese"
       ],
       "translated": 281,
-      "approved": 0
-    },
-    {
-      "rank": 9,
-      "user": "Tommy Kammerer (adatainment)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/15114815/medium/d1c1b44d524d9618cda3700773463c30.png",
-      "languages": [
-        "German"
-      ],
-      "translated": 58,
-      "approved": 0
-    },
-    {
-      "rank": 10,
-      "user": "Bora Oben (bora.oben)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17601486/medium/f486d95602aa273664293b18d9eeb876.jpeg",
-      "languages": [
-        "German"
-      ],
-      "translated": 26,
       "approved": 0
     }
   ]
