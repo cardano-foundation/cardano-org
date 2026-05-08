@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import OuroborosLogo from "@site/src/components/Layout/OuroborosLogo";
 
-export default function SiteHero({ title, description, bannerType }) {
+export default function SiteHero({ title, description, bannerType, children }) {
 
   // Use bannerType to dynamically change the class for the hero banner
   let heroClassName;
@@ -72,6 +72,7 @@ export default function SiteHero({ title, description, bannerType }) {
               {description}
             </p>
           </div>
+          {children && <div className={styles.heroChildren}>{children}</div>}
 
           <div className="sectionCaret">
             <svg x="0px" y="0px" viewBox="0 0 2000 30">

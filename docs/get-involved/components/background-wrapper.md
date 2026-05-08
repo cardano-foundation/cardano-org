@@ -64,6 +64,50 @@ You can select between different background types by passing the backgroundType 
   Way more.  
 </BackgroundWrapper>
 
+### zoomBlueRight
+
+A blue Cardano zoom-blur logo anchored to the bottom-right of the section. Use it to signal product or ecosystem depth without overpowering content. Works best on tall sections that have empty space on the right (e.g. two-column intros above a grid).
+
+```
+<BackgroundWrapper backgroundType="zoomBlueRight">
+```
+
+#### Result
+<BackgroundWrapper backgroundType="zoomBlueRight">
+  This is how<br />
+  the selected<br />
+  background style<br />
+  looks like.<br />
+  <br />
+  This needs<br />
+  more space<br />
+  to breathe.<br />
+  <br />
+  Way more.
+</BackgroundWrapper>
+
+### zoomBlueCenter
+
+A lighter, faded variant of the Cardano zoom-blur logo, centered behind the section content. Acts as a subtle watermark for hero-style sections that need a quiet visual accent rather than a foreground graphic.
+
+```
+<BackgroundWrapper backgroundType="zoomBlueCenter">
+```
+
+#### Result
+<BackgroundWrapper backgroundType="zoomBlueCenter">
+  This is how<br />
+  the selected<br />
+  background style<br />
+  looks like.<br />
+  <br />
+  This needs<br />
+  more space<br />
+  to breathe.<br />
+  <br />
+  Way more.
+</BackgroundWrapper>
+
 ### gradientLight
 ```
 <BackgroundWrapper backgroundType="gradientLight">

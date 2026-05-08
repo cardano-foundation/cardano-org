@@ -48,6 +48,47 @@
   }
 }
 
+.backgroundZoomBlueRight {
+  position: relative;
+  background-image: url("/img/hero-cardano-zoom-blue.png");
+  background-size: 1560px auto;
+  background-repeat: no-repeat;
+  background-position: right -500px bottom -280px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 996px) {
+  .backgroundZoomBlueRight {
+      background-size: 1080px auto;                         
+      background-position: right -60px bottom 0; 
+  }
+}
+
+[data-theme="dark"] .backgroundZoomBlueRight {
+  background-blend-mode: screen;
+}
+
+.backgroundZoomBlueCenter {
+  position: relative;
+  background-image: url("/img/hero-cardano-zoom-blue-light.png");
+  background-size: 1100px auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 996px) {
+  .backgroundZoomBlueCenter {
+    background-size: 720px auto;
+  }
+}
+
+[data-theme="dark"] .backgroundZoomBlueCenter {
+  background-blend-mode: screen;
+}
+
 /** backgroundZoomMini */
 
 .backgroundGradientDark {

@@ -9,6 +9,12 @@
   width: 70%;
 }
 
+@media (max-width: 768px) {
+  .taglineContainer {
+    width: 100%;
+  }
+}
+
 .backgroundBox {
   padding-bottom: 40px;
 }
@@ -191,6 +197,33 @@ html[data-theme="light"] .heroBannerFluidRed {
 html[data-theme="dark"] .heroBannerFluidRed {
   background-image: url(/img/hero-header-fluid-red.svg);
   background-color: #f24545;
+}
+
+.heroBannerFluidBlue:has(.heroChildren),
+.heroBannerFluidRed:has(.heroChildren) {
+  height: auto;
+  min-height: 410px;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .heroBannerFluidBlue:has(.heroChildren),
+  .heroBannerFluidRed:has(.heroChildren) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.heroBannerFluidBlue:has(.heroChildren) :global(.sectionCaret),
+.heroBannerFluidRed:has(.heroChildren) :global(.sectionCaret) {
+  display: none;
+}
+
+.heroBannerFluidBlue:has(.heroChildren) .backgroundBox,
+.heroBannerFluidRed:has(.heroChildren) .backgroundBox {
+  padding-bottom: 0;
 }
 
 /** heroBannerOverlap **/
@@ -587,3 +620,11 @@ html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
   }
 }
 
+
+/** heroChildren — optional slot rendered after the subtitle (used e.g. by /stablecoins for the CTA group). **/
+
+.heroChildren {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}

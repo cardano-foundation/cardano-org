@@ -110,6 +110,7 @@ expect('es news index', localeUrl('es', '/news/'), 'https://cardano.org/es/news/
 section('getTranslationSourcePath: structure');
 expect('react page returns null (root)', getTranslationSourcePath('/', 'de'), null);
 expect('react page returns null (static)', getTranslationSourcePath('/governance/', 'de'), null);
+expect('react page returns null (stablecoins)', getTranslationSourcePath('/stablecoins/', 'de'), null);
 expect('news index returns null', getTranslationSourcePath('/news/', 'de'), null);
 expect('docs index returns null', getTranslationSourcePath('/docs/', 'de'), null);
 expect('news post: 4 candidates', getTranslationSourcePath('/news/foo-bar/', 'de').length, 4);
