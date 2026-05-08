@@ -1,35 +1,69 @@
 import React, { useState, useMemo, useCallback, useEffect } from "react";
-import Head from '@docusaurus/Head';
+import Head from "@docusaurus/Head";
 import Layout from "@theme/Layout";
-import ShowcaseTooltip from "@site/src/components/showcase/ShowcaseTooltip";
-import ShowcaseTagSelect from "@site/src/components/showcase/ShowcaseTagSelect";
-import ShowcaseCard from "@site/src/components/showcase/ShowcaseCard/";
-import OpenStickyButton from "../../components/buttons/openStickyButton";
-import ShowcaseFilterToggle, {
-  readOperator,
-} from "@site/src/components/showcase/ShowcaseFilterToggle";
+import Link from "@docusaurus/Link";
+import { useHistory, useLocation } from "@docusaurus/router";
+import { translate } from "@docusaurus/Translate";
+import _debounce from "lodash/debounce";
 import clsx from "clsx";
 
-import ShowcaseLatestToggle, {
-  readLatestOperator,
-} from "@site/src/components/showcase/ShowcaseLatestToggle";
-
+import IntentChips from "@site/src/components/showcase/IntentChips";
+import PageCTA from "@site/src/components/PageCTA";
+import ShowcaseSort, {
+  readSortOption,
+  DEFAULT_SORT,
+  SORT_IDS,
+} from "@site/src/components/showcase/ShowcaseSort";
+import { readSearchTags } from "@site/src/components/showcase/ShowcaseTagSelect";
+import { readOperator } from "@site/src/components/showcase/ShowcaseFilterToggle";
+import { readLatestOperator } from "@site/src/components/showcase/ShowcaseLatestToggle";
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import { toggleListItem } from "../../utils/jsUtils";
-import { SortedShowcases, Tags, TagList, Showcases } from "../../data/apps";
-import { useHistory, useLocation } from "@docusaurus/router";
-import _debounce from 'lodash/debounce';
+import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import { StarBadge, RankBadge } from "@site/src/components/AppTile";
+import AppTileCarousel from "@site/src/components/AppTileCarousel";
+import CategoryPanelsCarousel from "@site/src/components/CategoryPanelsCarousel";
+import AppRow from "@site/src/components/AppRow";
+import AppFilterPanel from "@site/src/components/AppFilterPanel";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+
+import { SortedShowcases, Showcases, RECENT_APPS_COUNT, Categories } from "@site/src/data/apps";
+import {
+  getTxCount,
+  STATS_GENERATED_AT,
+  appHasTag,
+  countLiveTracking,
+  getTopAppPerCategory,
+  isTrackable,
+  compareByTxDesc,
+} from "@site/src/utils/appStats";
+
 import styles from "./styles.module.css";
 
-import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import Fav from "../../svg/fav.svg";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import {translate} from '@docusaurus/Translate';
+// SEO meta — long, optimized for SERP. Used by <Layout>.
+const SEO_TITLE = translate({
+  id: "apps.seo.title",
+  message: "Cardano Apps Directory: Wallets, DEXes, NFTs & More",
+});
+const SEO_DESCRIPTION = translate(
+  {
+    id: "apps.seo.description",
+    message:
+      "Browse {count} curated Cardano apps live on mainnet. Wallets, DEXes, NFT marketplaces, lending, governance, and games. Filter by category or activity.",
+  },
+  { count: Showcases.length }
+);
 
-const TITLE = translate({id: 'apps.hero.title', message: 'Cardano Apps and DApps, Explore the Ecosystem'});
-const DESCRIPTION = translate({id: 'apps.hero.description', message: 'Explore curated applications that run on Cardano mainnet today'});
-const CTA = translate({id: 'apps.cta', message: '₳dd your project'});
+// Hero — short copy for the visible page banner. Used by <SiteHero>.
+const HERO_TITLE = translate({
+  id: "apps.hero.title",
+  message: "Cardano Apps and dApps",
+});
+const HERO_DESCRIPTION = translate({
+  id: "apps.hero.description",
+  message:
+    "Discover curated apps live on Cardano mainnet today. Wallets, DEXes, NFTs, lending, and more.",
+});
+
 const FILENAME = "apps.js";
 
 export function prepareUserState() {
@@ -39,16 +73,117 @@ export function prepareUserState() {
       focusedElementId: document.activeElement?.id,
     };
   }
-
   return undefined;
 }
 
-const favoriteShowcases = SortedShowcases.filter((showcase) =>
-  showcase.tags.includes("favorite")
-);
-const otherShowcases = SortedShowcases.filter(
-  (showcase) => !showcase.tags.includes("favorite")
-);
+// Most-recent additions, re-sorted by tx desc so trackable apps lead. Apps with
+// no tx data keep their insertion order via Array.sort stability.
+const recentApps = [...Showcases.slice(-RECENT_APPS_COUNT)].sort(compareByTxDesc);
+const mostActiveByCategory = getTopAppPerCategory(Showcases);
+
+const FILTERED_MOST_ACTIVE_LIMIT = 3;
+
+// Browse-by-category panel order is derived at module load:
+//   1. Anchors pinned at the top so newcomer-priority categories never fall.
+//   2. Middle sorted by sum of on-chain tx within each category (desc); 0-tx
+//      categories tie-broken by app count (desc).
+//   3. `other` always last as the catch-all tail.
+// Categories are split into two tiers via Categories[c].prominent: prominent
+// ones lead "Browse by category", non-prominent ones are rendered separately
+// in the lower "Tools, Trackers & Insights" section.
+const ANCHOR_CATEGORIES = ["wallet", "dex"];
+const TAIL_CATEGORIES = ["other"];
+
+function deriveCategoryOrder(categoryFilter) {
+  const txByCat = {};
+  const countByCat = {};
+  Showcases.forEach((app) => {
+    if (!categoryFilter(app.category)) return;
+    countByCat[app.category] = (countByCat[app.category] || 0) + 1;
+    if (isTrackable(app)) {
+      txByCat[app.category] = (txByCat[app.category] || 0) + getTxCount(app);
+    }
+  });
+  const present = Object.keys(countByCat);
+  const middle = present
+    .filter((c) => !ANCHOR_CATEGORIES.includes(c) && !TAIL_CATEGORIES.includes(c))
+    .sort((a, b) => {
+      const txDiff = (txByCat[b] || 0) - (txByCat[a] || 0);
+      if (txDiff !== 0) return txDiff;
+      return (countByCat[b] || 0) - (countByCat[a] || 0);
+    });
+  return [
+    ...ANCHOR_CATEGORIES.filter((c) => countByCat[c] > 0),
+    ...middle,
+    ...TAIL_CATEGORIES.filter((c) => countByCat[c] > 0),
+  ];
+}
+
+const isProminentCategory = (c) => Categories[c]?.prominent === true;
+const isCompactCategory = (c) => Categories[c]?.prominent === false;
+
+const PROMINENT_CATEGORY_ORDER = deriveCategoryOrder(isProminentCategory);
+const COMPACT_CATEGORY_ORDER = deriveCategoryOrder(isCompactCategory);
+// Combined order drives the maintainer-picks round-robin and other consumers
+// that need to walk every category.
+const CATEGORY_PANEL_ORDER = [...PROMINENT_CATEGORY_ORDER, ...COMPACT_CATEGORY_ORDER];
+
+// Maintainer picks round-robin across categories so the section reads as a
+// cross-section of the ecosystem rather than a wallet-heavy cluster. Within each
+// round the highest-tx pick from each category leads, following CATEGORY_PANEL_ORDER
+// for category sequence.
+const maintainerPicks = (() => {
+  const buckets = new Map(CATEGORY_PANEL_ORDER.map((c) => [c, []]));
+  for (const app of SortedShowcases) {
+    if (app.maintainerPick) buckets.get(app.category)?.push(app);
+  }
+  for (const list of buckets.values()) list.sort(compareByTxDesc);
+  const lists = [...buckets.values()];
+  const maxLen = Math.max(0, ...lists.map((l) => l.length));
+  const result = [];
+  for (let i = 0; i < maxLen; i++) {
+    for (const list of lists) if (list[i]) result.push(list[i]);
+  }
+  return result;
+})();
+
+const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
+  ? new Date(STATS_GENERATED_AT).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })
+  : null;
+
+const LIVE_TRACKING_COUNT = countLiveTracking(Showcases);
+
+const ITEM_LIST_LIMIT = 30;
+const APPS_ITEM_LIST_JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Cardano apps and dApps",
+  itemListElement: SortedShowcases.slice(0, ITEM_LIST_LIMIT).map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: s.website,
+    name: s.title,
+  })),
+});
+
+function sortProjects(projects, sortOption) {
+  if (sortOption === SORT_IDS.ALPHABETICAL) {
+    return [...projects].sort((a, b) => a.title.localeCompare(b.title));
+  }
+  if (sortOption === SORT_IDS.MOST_ACTIVE) {
+    return [...projects].sort((a, b) => {
+      const txA = getTxCount(a);
+      const txB = getTxCount(b);
+      if (txA !== txB) return txB - txA;
+      return a.title.localeCompare(b.title);
+    });
+  }
+  return projects;
+}
 
 function restoreUserState(userState) {
   const { scrollTopPosition, focusedElementId } = userState ?? {
@@ -59,44 +194,27 @@ function restoreUserState(userState) {
   window.scrollTo({ top: scrollTopPosition });
 }
 
-const TagQueryStringKey = "tags";
+const SearchNameQueryKey = "name";
 
-function readSearchTags(search) {
-  return new URLSearchParams(search).getAll(TagQueryStringKey);
+function readSearchName(search) {
+  return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-// Replace seach tags in the query
-function replaceSearchTags(search, newTags) {
-  const searchParams = new URLSearchParams(search);
-  searchParams.delete(TagQueryStringKey);
-  newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
-  return searchParams.toString();
-}
-
-// Filter projects based on chosen project tags, toggle operator or searchbar value
 function filterProjects(projects, selectedTags, latest, operator, searchName, unfilteredProjects) {
-  // Check if "LAST" filter is applied to decide if to filter through all projects or only last ones
   if (latest === "LAST") {
     projects = unfilteredProjects.slice(-10);
   }
-
   if (searchName) {
     projects = projects.filter((project) =>
       project.title.toLowerCase().includes(searchName.toLowerCase())
     );
   }
-  if (selectedTags.length === 0) {
-    return projects;
-  }
-
+  if (selectedTags.length === 0) return projects;
   return projects.filter((project) => {
-    if (project.tags.length === 0) {
-      return false;
-    } else if (operator === "AND") {
-      return selectedTags.every((tag) => project.tags.includes(tag));
-    } else {
-      return selectedTags.some((tag) => project.tags.includes(tag));
+    if (operator === "AND") {
+      return selectedTags.every((tag) => appHasTag(project, tag));
     }
+    return selectedTags.some((tag) => appHasTag(project, tag));
   });
 }
 
@@ -104,279 +222,68 @@ function useFilteredProjects() {
   const location = useLocation();
   const [operator, setOperator] = useState("OR");
   const [latest, setLatest] = useState("ALL");
-
-  // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchName, setSearchName] = useState(null);
+  const [sortOption, setSortOption] = useState(DEFAULT_SORT);
 
-  // Sync tags from QS to state (delayed on purpose to avoid SSR/Client hydration mismatch)
   useEffect(() => {
     setSelectedTags(readSearchTags(location.search));
     setOperator(readOperator(location.search));
     setLatest(readLatestOperator(location.search));
     setSearchName(readSearchName(location.search));
-    // Only restore scroll position if it's not a search action
+    setSortOption(readSortOption(location.search));
     if (ExecutionEnvironment.canUseDOM && location.state && !location.state.isSearch) {
       setTimeout(() => {
         restoreUserState(location.state);
       }, 0);
     }
-  }, [location]);
+    // location.search is the source of truth for filters; depending on the parent
+    // location object would re-trigger on every push (filter-panel toggles, etc.).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search]);
 
-  return useMemo(
+  const filtered = useMemo(
     () =>
-      filterProjects(
-        SortedShowcases,
-        selectedTags,
-        latest,
-        operator,
-        searchName,
-        Showcases
+      sortProjects(
+        filterProjects(
+          SortedShowcases,
+          selectedTags,
+          latest,
+          operator,
+          searchName,
+          Showcases
+        ),
+        sortOption
       ),
-    [selectedTags, latest, operator, searchName]
-  );
-}
-
-function useSelectedTags() {
-  // The search query-string is the source of truth!
-  const location = useLocation();
-  const { push } = useHistory();
-
-  // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = useState([]);
-
-  // Sync tags from URL
-  useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
-  }, [location]);
-
-  // Update the QS value
-  const toggleTag = useCallback(
-    (tag) => {
-      const tags = readSearchTags(location.search);
-      const newTags = toggleListItem(tags, tag);
-      const newSearch = replaceSearchTags(location.search, newTags);
-      push({ ...location, search: newSearch });
-    },
-    [location, push]
+    [selectedTags, latest, operator, searchName, sortOption]
   );
 
-  return { selectedTags, toggleTag };
+  const isUnfiltered =
+    selectedTags.length === 0 && !searchName && latest !== "LAST";
+
+  return { filtered, sortOption, isUnfiltered, selectedTags };
 }
 
 function ShowcaseHeader() {
-  return (
- 
-    <SiteHero
-      title={TITLE}
-      description={DESCRIPTION}
-      bannerType={FILENAME}
-    />
-  );
-}
-
-function ShowcaseFilters() {
-  const filteredProjects = useFilteredProjects();
-  const { selectedTags, toggleTag } = useSelectedTags();
-  const location = useLocation();
-  const { push } = useHistory();
-  const [showAllTags, setShowAllTags] = useState(false);
-
-  const clearAllFilters = useCallback(() => {
-    const newSearch = replaceSearchTags(location.search, []);
-    push({ ...location, search: newSearch });
-  }, [location, push]);
-
-  // Count apps per tag
-  const tagCounts = useMemo(() => {
-    const counts = {};
-    TagList.forEach(tag => {
-      counts[tag] = SortedShowcases.filter(showcase => showcase.tags.includes(tag)).length;
-    });
-    return counts;
-  }, []);
-
-  // Show only top tags initially (sorted by count)
-  const initialTagCount = 10;
-  const sortedTags = useMemo(() => {
-    return [...TagList].sort((a, b) => (tagCounts[b] || 0) - (tagCounts[a] || 0));
-  }, [tagCounts]);
-  
-  const visibleTags = showAllTags ? sortedTags : sortedTags.slice(0, initialTagCount);
-
-  return (
-    <BackgroundWrapper backgroundType="adaLight">
-    <div className="margin-top--l margin-bottom--md container">
-      <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
-        <div>
-          <h2>
-            {translate({id: 'apps.filters.title', message: 'Filters'})}
-            {selectedTags.length > 0 && (
-              <span className={styles.filterCount}> ({selectedTags.length})</span>
-            )}
-          </h2>
-          <span>{filteredProjects.length === 1
-            ? translate({id: 'apps.filters.projectCount.singular', message: '1 project'})
-            : translate({id: 'apps.filters.projectCount.plural', message: '{count} projects'}).replace('{count}', filteredProjects.length)
-          }</span>
-        </div>
-        <div className={styles.filterControls}>
-          {selectedTags.length > 0 && (
-            <button
-              onClick={clearAllFilters}
-              className={styles.clearButton}
-            >
-              {translate({id: 'apps.filters.clearButton', message: 'Clear filters'})}
-            </button>
-          )}
-          <ShowcaseLatestToggle />
-          <ShowcaseFilterToggle />
-        </div>
-      </div>
-      <div className={styles.checkboxList}>
-        {visibleTags.map((tag, i) => {
-          const { label, description, color } = Tags[tag];
-          const id = `showcase_checkbox_id_${tag}`;
-          const count = tagCounts[tag] || 0;
-          return (
-              <div key={i} className={styles.checkboxListItem}>
-                <ShowcaseTooltip
-                  id={id}
-                  text={description}
-                  anchorEl="#__docusaurus"
-                >
-                  <ShowcaseTagSelect
-                    tag={tag}
-                    id={id}
-                    label={`${label} (${count})`}
-                    icon={
-                      label === "Favorite" ? (
-                        <span
-                          style={{
-                            marginLeft: 8,
-                          }}
-                        >
-                          <Fav
-                            className={styles.svgIconFavorite}
-                            size="small"
-                            style={{ display: "grid" }}
-                          />
-                        </span>
-                      ) : (
-                        <span
-                          style={{
-                            backgroundColor: color,
-                            width: 10,
-                            height: 10,
-                            borderRadius: "50%",
-                            marginLeft: 8,
-                          }}
-                        />
-                      )
-                    }
-                  />
-                </ShowcaseTooltip>
-              </div>
-          );
-        })}
-      </div>
-      {sortedTags.length > initialTagCount && (
-        <div className={styles.showMoreContainer}>
-          <button
-            onClick={() => setShowAllTags(!showAllTags)}
-            className={styles.showMoreButton}
-          >
-            {showAllTags
-              ? translate({id: 'apps.filters.showLess', message: 'Show less filters'})
-              : translate({id: 'apps.filters.showMore', message: 'Show {count} more filters'}).replace('{count}', sortedTags.length - initialTagCount)}
-          </button>
-        </div>
-      )}
-    </div>
-    </BackgroundWrapper>
-  );
-}
-
-function ShowcaseCards() {
-  const filteredProjects = useFilteredProjects();
-
-  if (filteredProjects.length === 0) {
-    return (
-      <section className="margin-top--lg margin-bottom--xl">
-        <div className="container padding-vert--md text--center">
-          <h2>{translate({id: 'apps.noResult', message: 'No result'})}</h2>
-          <SearchBar />
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section className="margin-top--lg margin-bottom--xl">
-      {filteredProjects.length === SortedShowcases.length ? (
-        <>
-          <div className={styles.showcaseFavorite}>
-            <div className="container">
-              <div
-                className={clsx(
-                  "margin-bottom--md",
-                  styles.showcaseFavoriteHeader
-                )}
-              >
-                <h2 className={styles.ourFavorites}>{translate({id: 'apps.ourFavorites', message: 'Our favorites'})}</h2>
-                <Fav className={styles.svgIconFavorite} size="small" />
-                <SearchBar />
-              </div>
-              <ul className={clsx("container", styles.showcaseList)}>
-                {favoriteShowcases.map((showcase) => (
-                  <ShowcaseCard key={showcase.title} showcase={showcase} />
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="container margin-top--lg">
-            <h2 className={styles.showcaseHeader}>{translate({id: 'apps.allProjects', message: 'All Projects'})}</h2>
-            <ul className={styles.showcaseList}>
-              {otherShowcases.map((showcase) => (
-                <ShowcaseCard key={showcase.title} showcase={showcase} />
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : (
-        <div className="container">
-          <div
-            className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
-          >
-            <SearchBar />
-          </div>
-          <ul className={styles.showcaseList}>
-            {filteredProjects.map((showcase) => (
-              <ShowcaseCard key={showcase.title} showcase={showcase} />
-            ))}
-          </ul>
-        </div>
-      )}
-    </section>
-  );
-}
-const SearchNameQueryKey = "name";
-
-function readSearchName(search) {
-  return new URLSearchParams(search).get(SearchNameQueryKey);
+  return <SiteHero title={HERO_TITLE} description={HERO_DESCRIPTION} bannerType={FILENAME} />;
 }
 
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-  const [value, setValue] = useState(() => readSearchName(location.search) || '');
+  const [value, setValue] = useState(
+    () => readSearchName(location.search) || ""
+  );
   const inputRef = React.useRef(null);
 
   useEffect(() => {
-    const newValue = readSearchName(location.search) || '';
+    const newValue = readSearchName(location.search) || "";
     setValue(newValue);
-    // Only restore focus if it was actually lost
-    if (location.state?.isSearch && inputRef.current && document.activeElement !== inputRef.current) {
+    if (
+      location.state?.isSearch &&
+      inputRef.current &&
+      document.activeElement !== inputRef.current
+    ) {
       inputRef.current.focus();
     }
   }, [location]);
@@ -404,11 +311,15 @@ function SearchBar() {
   };
 
   return (
-    <div className={styles.searchContainer}>
+    <div className={styles.searchInputWrap}>
       <input
         ref={inputRef}
         id="searchbar"
-        placeholder={translate({id: 'apps.searchPlaceholder', message: 'Search apps...'})}
+        className={styles.searchInput}
+        placeholder={translate({
+          id: "apps.searchPlaceholder",
+          message: "Search apps...",
+        })}
         value={value}
         onInput={handleInput}
       />
@@ -416,19 +327,419 @@ function SearchBar() {
   );
 }
 
- 
+function SearchControls() {
+  return (
+    <section className={clsx("container", styles.controls)}>
+      <SearchBar />
+      <div className={styles.controlsRight}>
+        <AppFilterPanel />
+        <ShowcaseSort />
+      </div>
+    </section>
+  );
+}
 
-function Showcase() {
-  const { selectedTags, toggleTag } = useSelectedTags();
-  const filteredProjects = useFilteredProjects();
+function MaintainerPicksSection({ apps }) {
+  if (apps.length === 0) return null;
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          ★ {translate({ id: "apps.maintainerPicks", message: "Maintainer picks" })}
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            id: "apps.maintainerPicks.subtitleShort",
+            message: "Selected by cardano.org maintainers",
+          })}
+        </span>
+      </header>
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.maintainerPicks",
+          message: "Maintainer picks",
+        })}
+        renderBadge={() => <StarBadge />}
+      />
+    </section>
+  );
+}
+
+function MostActiveSection({ apps, isUnfiltered, scopeLabel }) {
+  if (apps.length === 0) return null;
+  const title = scopeLabel
+    ? translate(
+        { id: "apps.mostActive.titleScoped", message: "Most active {label}" },
+        { label: scopeLabel }
+      )
+    : translate({ id: "apps.mostActive.title", message: "Most active" });
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          <span className={styles.dot} aria-hidden /> {title}
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {STATS_GENERATED_AT_LABEL
+            ? translate(
+                {
+                  id: "apps.mostActive.subtitle",
+                  message:
+                    "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}.",
+                },
+                { date: STATS_GENERATED_AT_LABEL }
+              )
+            : translate({
+                id: "apps.mostActive.title",
+                message: "Most active",
+              })}
+        </span>
+      </header>
+      <p className={styles.leaderboardLink}>
+        <Link to="/apps/leaderboard">
+          {translate({
+            id: "apps.mostActive.leaderboardLink",
+            message: "Live from the transaction leaderboard",
+          })}
+        </Link>
+      </p>
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.mostActive.title",
+          message: "Most active",
+        })}
+        // Rank badges only on filtered view: unfiltered shows top-1-per-category, where a global rank would be misleading.
+        renderBadge={isUnfiltered ? null : (_, i) => <RankBadge rank={i + 1} />}
+      />
+    </section>
+  );
+}
+
+function HighlightsSection({ apps }) {
+  if (apps.length === 0) return null;
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          {translate({ id: "apps.highlights.title", message: "Recently added" })}
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            id: "apps.highlights.subtitle",
+            message: "The newest apps in the showcase",
+          })}
+        </span>
+      </header>
+      <AppTileCarousel
+        apps={apps}
+        ariaLabel={translate({
+          id: "apps.highlights.title",
+          message: "Recently added",
+        })}
+      />
+    </section>
+  );
+}
+
+function GuidedPathsBanner() {
+  const paths = [
+    {
+      to: "/get-started",
+      label: translate({
+        id: "apps.guidedPaths.getStarted",
+        message: "First steps with ada",
+      }),
+    },
+    {
+      to: "/governance#paths",
+      label: translate({
+        id: "apps.guidedPaths.governance",
+        message: "Have a say in Cardano",
+      }),
+    },
+    {
+      to: "/developers",
+      label: translate({
+        id: "apps.guidedPaths.developers",
+        message: "Build on Cardano",
+      }),
+    },
+  ];
+  return (
+    <section className={clsx("container", styles.guidedPathsBanner)}>
+      <div className={styles.guidedPathsHeader}>
+        <h2 className={styles.guidedPathsTitle}>
+          {translate({
+            id: "apps.guidedPaths.label",
+            message: "Guided paths",
+          })}
+        </h2>
+        <span className={styles.guidedPathsSubtitle}>
+          {translate({
+            id: "apps.guidedPaths.subtitle",
+            message: "Step-by-step on cardano.org",
+          })}
+        </span>
+      </div>
+      <ul className={styles.guidedPathChipList}>
+        {paths.map((p) => (
+          <li key={p.to}>
+            <Link to={p.to} className={styles.guidedPathChip}>
+              {p.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function CategoryBrowseSection({ categories, title, subtitle, muted = false }) {
+  if (categories.length === 0) return null;
+  return (
+    <section className={clsx("container", styles.section, muted && styles.sectionMuted)}>
+      <header className={styles.sectionHeader}>
+        <h2 className={clsx(styles.sectionTitle, muted && styles.sectionTitleMuted)}>
+          {title}
+        </h2>
+        <span className={styles.sectionSubtitle}>{subtitle}</span>
+      </header>
+      <CategoryPanelsCarousel categories={categories} ariaLabel={title} />
+    </section>
+  );
+}
+
+function BrowseByCategorySection() {
+  return (
+    <CategoryBrowseSection
+      categories={PROMINENT_CATEGORY_ORDER}
+      title={translate({
+        id: "apps.browseByCategory.title",
+        message: "Browse apps by category",
+      })}
+      subtitle={translate({
+        id: "apps.browseByCategory.subtitle",
+        message: "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest.",
+      })}
+    />
+  );
+}
+
+function ToolsAndInsightsSection() {
+  return (
+    <CategoryBrowseSection
+      categories={COMPACT_CATEGORY_ORDER}
+      title={translate({
+        id: "apps.toolsAndInsights.title",
+        message: "Browse tools by category",
+      })}
+      subtitle={translate({
+        id: "apps.toolsAndInsights.subtitle",
+        message: "Utilities, dashboards, and explorers for tracking and analytics.",
+      })}
+      muted
+    />
+  );
+}
+
+function AllAppsReveal() {
+  const [shown, setShown] = useState(false);
+  if (shown) {
+    // AllAppsSection ignores `apps` when isUnfiltered=true and sorts SortedShowcases itself.
+    return (
+      <AllAppsSection
+        apps={null}
+        sortOption={SORT_IDS.ALPHABETICAL}
+        isUnfiltered={true}
+        heading={translate(
+          { id: "apps.allApps.heading", message: "All {count} apps, A to Z" },
+          { count: SortedShowcases.length }
+        )}
+      />
+    );
+  }
+  return (
+    <section className={clsx("container", styles.section, styles.allAppsReveal)}>
+      <button
+        type="button"
+        className={clsx("button button--secondary", styles.showAllButton)}
+        onClick={() => setShown(true)}
+      >
+        {translate(
+          { id: "apps.allApps.show", message: "View all {count} apps alphabetically" },
+          { count: SortedShowcases.length }
+        )}
+      </button>
+    </section>
+  );
+}
+
+function AllAppsSection({ apps, sortOption, isUnfiltered, heading }) {
+  const visible = useMemo(
+    () => (isUnfiltered ? sortProjects(SortedShowcases, sortOption) : apps),
+    [isUnfiltered, sortOption, apps]
+  );
+  return (
+    <section className={clsx("container", styles.section)}>
+      <header className={clsx(styles.sectionHeader, styles.allAppsHeader)}>
+        <h2 className={styles.sectionTitle}>
+          {heading}
+          <span className={styles.countMuted}>
+            {" · "}
+            {visible.length}
+          </span>
+        </h2>
+        <span className={styles.sectionSubtitle}>
+          {translate(
+            {
+              id: "apps.allApps.tracked",
+              message: "{count} with live tracking",
+            },
+            { count: LIVE_TRACKING_COUNT }
+          )}
+        </span>
+      </header>
+      <ul className={styles.rowGrid}>
+        {visible.map((app) => (
+          <li key={app.slug}>
+            <AppRow app={app} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function ShowcaseSections() {
+  const { filtered, sortOption, isUnfiltered, selectedTags } = useFilteredProjects();
+
+  const filteredSlugs = useMemo(
+    () => new Set(filtered.map((a) => a.slug)),
+    [filtered]
+  );
+
+  const mostActiveApps = useMemo(() => {
+    if (isUnfiltered) return mostActiveByCategory;
+    return filtered
+      .filter((a) => getTxCount(a) > 0)
+      .sort(compareByTxDesc)
+      .slice(0, FILTERED_MOST_ACTIVE_LIMIT);
+  }, [filtered, isUnfiltered]);
+
+  const highlightApps = useMemo(() => {
+    if (isUnfiltered) return recentApps;
+    return recentApps.filter((a) => filteredSlugs.has(a.slug));
+  }, [filteredSlugs, isUnfiltered]);
+
+  const pickApps = useMemo(() => {
+    if (isUnfiltered) return maintainerPicks;
+    return maintainerPicks.filter((a) => filteredSlugs.has(a.slug));
+  }, [filteredSlugs, isUnfiltered]);
+
+  // Filtered "All …" list: drop entries already shown in Most active above and
+  // sort the remainder by tx desc so the highest-activity apps lead the bulk list.
+  const restApps = useMemo(() => {
+    if (isUnfiltered) return filtered;
+    const shownSlugs = new Set(mostActiveApps.map((a) => a.slug));
+    return filtered
+      .filter((a) => !shownSlugs.has(a.slug))
+      .sort((a, b) => compareByTxDesc(a, b) || a.title.localeCompare(b.title));
+  }, [filtered, mostActiveApps, isUnfiltered]);
+
+  if (filtered.length === 0) {
+    return (
+      <section className="container margin-top--lg margin-bottom--xl text--center">
+        <h2>{translate({ id: "apps.noResult", message: "No result" })}</h2>
+      </section>
+    );
+  }
+
+  const scopeLabel = !isUnfiltered && selectedTags.length === 1
+    ? Categories[selectedTags[0]]?.label
+    : null;
+  const restHeadingId = scopeLabel
+    ? mostActiveApps.length > 0
+      ? "apps.allApps.titleOther"
+      : "apps.allApps.titleScoped"
+    : "apps.allApps.title";
+  const restHeadingMessage = scopeLabel
+    ? mostActiveApps.length > 0
+      ? "Other {label}"
+      : "All {label}"
+    : "All apps";
+  const restHeading = scopeLabel
+    ? translate({ id: restHeadingId, message: restHeadingMessage }, { label: scopeLabel })
+    : translate({ id: restHeadingId, message: restHeadingMessage });
 
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <>
+      <MostActiveSection
+        apps={mostActiveApps}
+        isUnfiltered={isUnfiltered}
+        scopeLabel={scopeLabel}
+      />
+      <HighlightsSection apps={highlightApps} />
+      {isUnfiltered && <GuidedPathsBanner />}
+      {isUnfiltered ? (
+        <BrowseByCategorySection />
+      ) : (
+        <AllAppsSection
+          apps={restApps}
+          sortOption={sortOption}
+          isUnfiltered={isUnfiltered}
+          heading={restHeading}
+        />
+      )}
+      <MaintainerPicksSection apps={pickApps} />
+      {isUnfiltered && <ToolsAndInsightsSection />}
+      {isUnfiltered && <AllAppsReveal />}
+      <SubmitCTA />
+    </>
+  );
+}
+
+function SubmitCTA() {
+  return (
+    <PageCTA
+      title={translate({
+        id: "apps.submit.title",
+        message: "Built something on Cardano?",
+      })}
+      description={translate({
+        id: "apps.submit.description",
+        message:
+          "Add your app to this page. The submission process is open and lightweight.",
+      })}
+      href="/docs/get-involved/add-app"
+      buttonText={translate({
+        id: "apps.submit.button",
+        message: "Submit your app",
+      })}
+      secondaryButton={{
+        href: "/docs/get-involved/tx-rankings",
+        label: translate({
+          id: "apps.submit.enableTracking",
+          message: "Enable tracking",
+        }),
+      }}
+      variant="primary"
+    />
+  );
+}
+
+function Showcase() {
+  return (
+    <Layout title={SEO_TITLE} description={SEO_DESCRIPTION}>
       <OpenGraphInfo pageName="apps" />
+      <Head>
+        <script type="application/ld+json">{APPS_ITEM_LIST_JSON_LD}</script>
+      </Head>
       <ShowcaseHeader />
-      <ShowcaseFilters selectedTags={selectedTags} toggleTag={toggleTag} />
-      <ShowcaseCards filteredProjects={filteredProjects} />
-      <OpenStickyButton />
+      <IntentChips />
+      <SearchControls />
+      <ShowcaseSections />
     </Layout>
   );
 }

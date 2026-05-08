@@ -252,7 +252,7 @@ const scamsQuizData = currentLocale === 'de' ? scamsQuizDataDe : scamsQuizDataEn
 
 ## Internationalization (i18n)
 
-The `QuizCard` component itself does not handle translations — the parent page is responsible for passing translated props (`title`, `description`, `buttonText`) using `translate()` from `@docusaurus/Translate`.
+The `QuizCard` component itself does not handle translations. The parent page is responsible for passing translated props (`title`, `description`, `buttonText`) using `translate()` from `@docusaurus/Translate`.
 
 For quiz content (questions, options, explanations), create a separate locale-specific JSON file (e.g., `quiz-scams.de.json`) and select the correct one based on `currentLocale`:
 
@@ -265,7 +265,7 @@ const {i18n: {currentLocale}} = useDocusaurusContext();
 const quizData = currentLocale === 'de' ? quizDataDe : quizDataEn;
 ```
 
-The inner `Quiz` component UI strings (buttons, labels, feedback messages) are already translatable via `translate()` — translations go into `i18n/<locale>/code.json` under the `quiz.ui.*` namespace.
+The inner `Quiz` component UI strings (buttons, labels, feedback messages) are already translatable via `translate()`. Translations go into `i18n/<locale>/code.json` under the `quiz.ui.*` namespace.
 
 ## Integration with Other Components
 

@@ -11,254 +11,166 @@
 import React from "react";
 import { sortBy, difference } from "../utils/jsUtils";
 
-// List of available tags. The tag and the label should be in singular. (PLEASE DO NOT ADD NEW TAGS)
-export const Tags = {
-  // PLEASE DO NOT USE THIS TAG: maintainers add the favorite project tag  (process TBD)
-  // Favorite
-  favorite: {
-    label: "Favorite",
-    description:
-      "Favorite Cardano apps that you must absolutely check-out.",
-    color: '#e9669e',  // Vibrant Pink
-  },
-
-  // Accounting
-  accounting: {
-    label: "Accounting",
-    description: "Tools providing specialised analytics for financial purposes, including portfolio tracking.",
-    icon: null,
-    color: '#85BB65',  // Dollar Bill Green
-  },
-
-  // Analytics
+// Primary categories — each Showcase has exactly one. Answers: "what is this app?".
+// `trackable: true` means on-chain tx count is a meaningful usage signal for that category;
+// activity badges and the "Most active" section gate on this.
+// `prominent: true` categories lead /apps in the Browse-by-category carousel.
+// `prominent: false` categories live in the lower "Tools, Trackers & Insights"
+// section — read-only utilities (analytics, explorers, education) that still
+// belong on the page but shouldn't compete for attention with apps people can
+// actually transact with.
+export const Categories = {
   analytics: {
     label: "Analytics",
     description: "Tools that provide special insights related to Cardano.",
-    icon: null,
     color: '#6A8EAE',  // Cool Steel Blue
+    trackable: false,
+    prominent: false,
   },
-
-  // PLEASE DO NOT USE THIS TAG: maintainers add the good for beginners tag (process TBD)
-  // Beginner friendly, will be shown as suggest to explore the ecosystem in "get-started"
-  goodForBeginners: {
-    label: "Beginner friendly",
-    description:
-      "Cardano apps that are good for beginners to start with.",
-    color: '#228660ff',  // Vibrant Green
-  },
-
-  // Bridge
   bridge: {
     label: "Bridge",
     description: "Projects that provide cross-chain bridge support.",
-    icon: null,
     color: '#FFC107',  // Golden Yellow
+    trackable: true,
+    prominent: true,
   },
-
-  // Block Explorer
-  explorer: {
-    label: "Block Explorer",
-    description:
-      "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
-    icon: null,
-    color: '#2E3B4E',  // Deep Navy Blue
-  },
-
-  // DAO Tool
-  daotool: {
-    label: "DAO Tool",
-    description: "DAO tools help in the proper control and management of a DAO.",
-    icon: null,
-    color: '#37BEB0',  // Bright Cyan
-  },
-
-  // Distribution
-  distribution: {
-    label: "Distribution",
-    description: "Platforms for distributing tokens, airdrops, and rewards to the Cardano community.",
-    icon: null,
-    color: '#E07850',  // Warm Coral
-  },
-
-  // DEX
   dex: {
     label: "DEX",
     description: "Decentralised exchanges allow direct peer-to-peer cryptocurrency transactions to take place online securely.",
-    icon: null,
     color: '#3D5AFE',  // Bright Blue
+    trackable: true,
+    prominent: true,
   },
-
-  // Ecosystem
+  distribution: {
+    label: "Distribution",
+    description: "Platforms for distributing tokens, airdrops, and rewards to the Cardano community.",
+    color: '#E07850',  // Warm Coral
+    trackable: true,
+    prominent: true,
+  },
   ecosystem: {
     label: "Ecosystem",
     description: "Projects that map out the Cardano Ecosystem.",
-    icon: null,
     color: '#9C27B0',  // Purple
+    trackable: false,
+    prominent: false,
   },
-
-  // Educational
-  educational: {
-    label: "Educational",
-    description: "Educational projects that will help you onboarding to Cardano.",
-    icon: null,
-    color: '#D81B60',  // Hot Pink
+  education: {
+    label: "Education",
+    description: "Courses, tutorials, and learning communities for Cardano.",
+    color: '#FB8C00',  // Warm Orange
+    trackable: false,
+    prominent: false,
   },
-
-  // Funding
-  funding: {
-    label: "Funding",
-    description: "Projects aimed at providing funding assistance to individuals.",
-    icon: null,
-    color: '#004BA0',  // Rich Blue
+  explorer: {
+    label: "Block Explorer",
+    description: "Block explorers are browsers for the Cardano blockchain. They can display the contents of individual blocks and transactions.",
+    color: '#2E3B4E',  // Deep Navy Blue
+    trackable: false,
+    prominent: false,
   },
-
-  // Game, don't tag your game with nft
   game: {
     label: "Game",
     description: "Games on the Cardano blockchain.",
-    icon: null,
     color: '#008080',  // Teal
+    trackable: true,
+    prominent: true,
   },
-
-  // Gateways
-  gateway: {
-    label: "Gateway",
-    description: "Payment Gateway Providers.",
-    icon: null,
-    color: '#FF5722',  // Bright Orange
-  },
-
-  // Governance
   governance: {
     label: "Governance",
     description: "Governance tools.",
-    icon: null,
     color: '#673AB7',  // Deep Purple
+    trackable: true,
+    prominent: true,
   },
-
-  // Identity
   identity: {
     label: "Identity",
     description: "Decentralized identifiers (DIDs).",
-    icon: null,
     color: '#212121',  // Solid Black
+    trackable: true,
+    prominent: true,
   },
-
-  // Lending
   lending: {
     label: "Lending",
     description: "Projects that provide lending and borrowing of ada.",
-    icon: null,
     color: '#9E1C1C',  // Deep Red
+    trackable: true,
+    prominent: true,
   },
-
-  // Marketplace
   marketplace: {
     label: "Marketplace",
     description: "Marketplace where you can buy or sell NFTs.",
-    icon: null,
     color: '#E53935',  // Bright Red
+    trackable: true,
+    prominent: true,
   },
-
-  // Meta data projects
-  metadata: {
-    label: "Metadata",
-    description: "Transaction metadata.",
-    icon: null,
-    color: '#00ACC1',  // Bright Teal
-  },
-
-  // Minting
   minting: {
     label: "Minting",
     description: "Minting Tool.",
-    icon: null,
     color: '#42A5F5',  // Light Blue
+    trackable: true,
+    prominent: true,
   },
-
-  // Mobile, add mobile tag only if you provide an exceptional mobile experience like a mobile app. (not a responsive site)
-  mobile: {
-    label: "Mobile",
-    description: "Great mobile experience.",
-    icon: null,
-    color: '#3e09deff',  // Dark blue
-  },
-
-   // Music
-  music: {
-    label: "Music",
-    description: "Music-related projects on Cardano.",
-    icon: null,
-    color: '#7757d9ff',  // Vibrant Purple
-  },
-
-  // NFT, don't add image based NFTs (only wallets, marketplaces, utility nft like adahandle)
-  nft: {
-    label: "NFT",
-    description: "App that supports or uses NFTs.",
-    icon: null,
-    color: '#B8860B',  // Dark Gold
-  },
-
-  // Notary
   notary: {
     label: "Notary",
     description: "Tools that provide proof of existence or timestamp files on the Cardano blockchain.",
-    icon: null,
     color: '#5D4037',  // Warm Brown
+    trackable: true,
+    prominent: true,
   },
-
-  // Open-Source
-  opensource: {
-    label: "Open-Source",
-    description: "Open-Source sites can be useful for inspiration.",
-    icon: null,
-    color: '#8C2F00',  // Dark Orange-Red
-  },
-
-  // Oracle
-  oracle: {
-    label: "Oracle",
-    description: "Oracles provide smart contracts with external data.",
-    icon: null,
-    color: '#1E88E5',  // Medium Blue
-  },
-
-  // Pool Tool
   pooltool: {
     label: "Pool Tool",
     description: "Pool tools provide delegates with the necessary tools to find a good pool.",
-    icon: null,
     color: '#6C6FFF',  // Soft Blue
+    trackable: false,
+    prominent: false,
   },
-
-  // Social
-  social: {
-    label: "Social",
-    description: "Sites that use the Cardano blockchain for social messaging, groups and sharing.",
-    icon: null,
-    color: '#4d6545',  // Custom: Olive (green-grey)
-  },
-
-  // Stable Coins
-  stablecoin: {
-    label: "Stable Coins",
-    description: "Backed or algorithmic stable coins.",
-    icon: null,
-    color: '#FF1744',  // Bright Red
-  },
-
-  // Wallets, don't forget to add the "mobile"-tag if you provide a mobile app as well.
   wallet: {
     label: "Wallet",
     description: "Cardano wallets store the public and/or private keys to access and manage your funds.",
-    icon: null,
     color: '#7BC8A6',  // Soft Green
+    trackable: false,
+    prominent: true,
+  },
+  other: {
+    label: "Other",
+    description: "Apps that don't fit a primary category yet — thin segments grouped together until they have enough peers to warrant their own category.",
+    color: '#607D8B',  // Blue Grey
+    trackable: false,
+    prominent: false,
   },
 };
 
+// Additive properties — zero or more per Showcase. Answers: "what does this app also offer?".
+// Properties never act as primary classification.
+export const Properties = {
+  mobile: {
+    label: "Mobile",
+    description: "Great mobile experience (native app, not a responsive site).",
+    color: '#3e09deff',  // Dark blue
+  },
+  nft: {
+    label: "NFT",
+    description: "App that supports or uses NFTs (not image-based NFT collections).",
+    color: '#B8860B',  // Dark Gold
+  },
+  opensource: {
+    label: "Open-Source",
+    description: "Open-source code is available and can be inspected, forked, or contributed to.",
+    color: '#8C2F00',  // Dark Orange-Red
+  },
+};
+
+// Backwards-compat union for components that look up tag metadata by name without
+// caring which axis (category vs property) it belongs to.
+export const Tags = { ...Categories, ...Properties };
+
+export const CategoryList = Object.keys(Categories);
+export const PropertyList = Object.keys(Properties);
+
 // Add your project to (THE END OF) this list.
-// Please don't add the "favorite"-tag yourself.
+// Leave maintainerPick: false — that flag is set by maintainers via the Maintainer picks process.
+// See docs/get-involved/maintainer-picks.md for the proposal workflow.
 //
 // ICON FIELD (optional):
 // - Add an 'icon' field to display a logo/icon in some app cards (e.g., DEX grid)
@@ -272,109 +184,165 @@ export const Tags = {
 // - If not provided, the system will try to match using the normalized app title
 // - Example: statsLabel: "minswap"
 //
+// SCREENSHOTS:
+// - Format: WebP, 2048×1440 source (rendered 1024×720 @ 2x), quality 80, ≤500 KB
+// - Convert with: cwebp -q 80 -m 6 in.png -o out.webp
+// - Naming: primary uses the slug (e.g. "example.webp"); extras add a kebab suffix
+//   describing the view (e.g. "example-analytics.webp", "example-qrcodes.webp")
+// - For multi-screenshot detail pages, list extras via `extraPreviews: [...]`
+//
 // EXAMPLE APP ENTRY:
 // {
 //   title: "Example Dex",
 //   description: "A decentralized exchange on Cardano.",
-//   preview: require("./app-images/example.png"),
+//   preview: require("./app-screenshots/example.webp"),
+//   extraPreviews: [
+//     require("./app-screenshots/example-analytics.webp"),
+//   ],
 //   icon: "/img/app-icons/example.svg",  // Optional - for logo display
 //   statsLabel: "example",  // Optional - for transaction data mapping see https://cardano.org/docs/get-involved/tx-rankings/
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
-//   tags: ["dex", "opensource"], // don't overdo it usually one or two tags are enough
+//   category: "dex",                  // exactly one — see Categories above
+//   properties: ["opensource"],       // zero or more — see Properties above
+//   maintainerPick: false,
+//   beginnerFriendly: false,
 // }
 export const Showcases = [
   {
     title: "Open DJED",
     description:
-      "Mint and burn DJED, Cardano's overcollateralized stablecoin, with our open-source platform. Transparent alternative to DJED.xyz - accessible 24/7 anywhere. Built by Artifex Labs for the Cardano community.",
-    preview: require("./app-images/open-djed.png"),
+      "Mint and burn DJED, Cardano's overcollateralized stablecoin, on an open-source platform. Transparent alternative to DJED.xyz built by Artifex Labs.",
+    tagline: "Open-source DJED stablecoin minting platform",
     icon: "/img/app-icons/djed.png",
     website: "https://djed.artifex.finance/",
     source: "https://github.com/artifex-labs/open-djed",
-    tags: ["stablecoin", "opensource"],
+    category: "other",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Cardano Wall",
     description:
-      "Demonstrates several use cases for transaction metadata. You can sign messages and create proof of existence for files.",
-    preview: require("./app-images/cardanowall.png"),
+      "Demonstrates use cases for Cardano transaction metadata. Sign messages, anchor files as proof of existence, and verify them on-chain.",
+    tagline: "Sign messages and create proof of existence",
+    icon: "/img/app-icons/cardano-wall.jpg",
     website: "https://cardanowall.com/en/explore/",
     source: null,
-    tags: ["favorite", "notary"],
+    category: "notary",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "NMKR",
     description:
-      "NFT Minting, FIAT & Crypto Sales, Token Launches, Secondary Markets - all available at the press of a button.",
-    preview: require("./app-images/nmkr.png"),
+      "NFT minting, fiat and crypto sales, token launches, and secondary markets — full launchpad stack delivered through a single API.",
+    tagline: "NFT minting platform with fiat and crypto checkout",
+    icon: "/img/app-icons/nmkr.png",
     website: "https://www.nmkr.io/",
     source: null,
-    tags: ["favorite", "minting", "nft"],
+    category: "minting",
+    properties: ["nft"],
+    maintainerPick: true,
+    beginnerFriendly: false,
+    x: "nmkr_io",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2021-07-26-july/",
+      title: "Cardano Developer Spotlight: July 2021",
+      date: "2021-07-26",
+    },
   },
   {
     title: "AdaStat",
     description:
-      "The browser, inconspicuous at first glance, offers a great many statistics and insights.",
-    preview: require("./app-images/adastat.png"),
+      "Cardano explorer with deep statistics and insights covering blocks, transactions, addresses, stake pools, and protocol parameters.",
+    tagline: "Detailed Cardano explorer with stats and insights",
+    icon: "/img/app-icons/adastat.png",
     website: "https://adastat.net",
     source: null,
-    tags: ["explorer"],
+    category: "explorer",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
-    title: "Cardano Explorer Landing Page",
+    title: "Cardano Explorer Index",
     description:
-      "List of Cardano Explorers built by the community for the community.",
-    preview: require("./app-images/cf-explorer.png"),
+      "Community-curated index of Cardano block explorers, pool tools, and analytics dashboards built and maintained by the community.",
+    tagline: "Community index of Cardano explorers",
     website: "https://explorer.cardano.org",
     source: "https://github.com/cardano-foundation/cf-explorer-landing",
-    tags: ["explorer", "opensource"],
+    category: "explorer",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "CExplorer",
     description:
-        "An independent Cardano Explorer that provides useful all-in-one dashboards additionally.",
-    preview: require("./app-images/cexplorer.png"),
+        "Independent Cardano explorer with all-in-one dashboards covering blocks, transactions, stake pools, governance, and asset statistics.",
+    tagline: "Independent Cardano explorer with dashboards",
+    icon: "/img/app-icons/cexplorer.png",
     website: "https://cexplorer.io/",
     source: null,
-    tags: ["explorer"],
+    category: "explorer",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Cardano Scan",
     description:
-      "A combination of block explorer and pool tool, using its own implementation of db-sync.",
-    preview: require("./app-images/cardanoscan.png"),
+      "Block explorer and pool tool from the makers of Typhon, with its own indexing stack providing fast access to the full Cardano ledger.",
+    tagline: "Block explorer and pool tool with own db-sync",
+    icon: "/img/app-icons/cardano-scan.jpg",
     website: "https://cardanoscan.io/",
     source: null,
-    tags: ["favorite", "explorer"],
+    category: "explorer",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Pool PM",
     description:
-      "Block explorer that brought out a new, refreshing concept to visualize transactions.",
-    preview: require("./app-images/poolpm.png"),
+      "Cardano block explorer that visualizes transactions as interactive UTXO graphs, making asset flows and stake operations easy to follow.",
+    tagline: "Block explorer with visual transaction graphs",
+    icon: "/img/app-icons/pool-pm.ico",
     website: "https://pool.pm",
     source: null,
-    tags: ["favorite", "explorer"],
+    category: "explorer",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "PoolTool",
     description:
-      "One of the most feature-rich, unbiased pool tools. Also offers a native app.",
-    preview: require("./app-images/pooltool.png"),
+      "Feature-rich, unbiased Cardano pool tool with delegation analytics, missed-block detection, and a companion native mobile app.",
+    tagline: "Feature-rich pool tool with companion native app",
+    icon: "/img/app-icons/pooltool.png",
     website: "https://pooltool.io",
     source: null,
-    tags: ["favorite", "pooltool", "analytics", "explorer"],
+    category: "pooltool",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "AdaLite",
     description:
       "AdaLite was developed by vacuumlabs, they were also responsible for the Cardano Ledger app and won the crypto puzzle at the IOHK Summit 2019.",
-    preview: require("./app-images/adalite.png"),
+    tagline: "Lightweight in-browser Cardano wallet",
     icon: "/img/app-icons/adalite.jpg",
     website: "https://adalite.io",
     source: null,
-    tags: ["wallet"],
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -386,11 +354,14 @@ export const Showcases = [
     title: "Atomic Wallet",
     description:
       "Multi-cryptocurrency wallet that supports Cardano. During the integration they contributed code to the Cardano Rust library.",
-    preview: require("./app-images/atomicwallet.png"),
+    tagline: "Multi-cryptocurrency wallet with Cardano support",
     icon: "/img/app-icons/atomic.jpg",
     website: "https://atomicwallet.io",
     source: null,
-    tags: ["wallet"],
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "desktop"],
       custody: "non-custodial",
@@ -401,12 +372,15 @@ export const Showcases = [
   {
     title: "Daedalus",
     description:
-      "Daedalus is a full node and developed by IOHK, one of the founding entities of Cardano.",
-    preview: require("./app-images/daedalus.png"),
+      "Full-node Cardano wallet developed by IOG, one of Cardano's founding entities. Validates the chain locally rather than trusting third parties.",
+    tagline: "Full-node Cardano wallet by IOG",
     icon: "/img/app-icons/daedalus.svg",
     website: "https://daedaluswallet.io",
     source: "https://github.com/input-output-hk/daedalus",
-    tags: ["wallet", "opensource"],
+    category: "wallet",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["desktop"],
       custody: "non-custodial",
@@ -415,14 +389,17 @@ export const Showcases = [
     },
   },
   {
-    title: "Yoroi",
+    title: "SecondFi",
     description:
-      "Yoroi is a lightweight node and developed by EMURGO, one of the founding entities of Cardano.",
-    preview: require("./app-images/yoroi.png"),
-    icon: "/img/app-icons/yoroi.png",
-    website: "https://yoroi-wallet.com",
+      "Self-custody neofinance platform on Cardano for spending, trading, earning, and saving. The successor to Yoroi, built by EMURGO.",
+    tagline: "Self-custody neofinance, successor to Yoroi",
+    icon: "/img/app-icons/secondfi.png",
+    website: "https://secondfi.io",
     source: "https://github.com/Emurgo/yoroi-frontend",
-    tags: ["favorite", "wallet", "nft", "mobile", "opensource"],
+    category: "wallet",
+    properties: ["nft", "mobile", "opensource"],
+    maintainerPick: true,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -431,66 +408,80 @@ export const Showcases = [
     },
   },
   {
-    title: "Cardano Warriors",
-    description: "The retro RPG NFT Collection minted in Cardano Blockchain.",
-    preview: require("./app-images/cardanowarriors.png"),
-    website: "https://cardanowarriors.io/",
-    source: null,
-    tags: ["game"],
-  },
-  {
     title: "Cardano Updates",
     description:
-      "Follow the development of Cardano in real time without the hassle of GitHub.",
-    preview: require("./app-images/cardanoupdates.png"),
+      "Tracks Cardano development progress in real time, surfacing pull-request activity and release status without needing to dig through GitHub.",
+    tagline: "Cardano development tracker without GitHub digging",
+    icon: "/img/app-icons/cardano-updates.jpg",
     website: "https://cardanoupdates.com",
     source: null,
-    tags: ["favorite", "analytics"],
+    category: "analytics",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "Pool Stats",
-    description: "Pool tool and insights visualized by heat maps.",
-    preview: require("./app-images/poolstats.png"),
+    description: "Cardano stake-pool monitoring with heat-map visualizations of performance, saturation, and rewards across the entire pool universe.",
+    tagline: "Pool tool with heat-map visualizations",
+    icon: "/img/app-icons/pool-stats.png",
     website: "https://poolstats.io",
     source: null,
-    tags: ["pooltool", "analytics"],
+    category: "pooltool",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "NOWPayments",
     description:
-      "Payment gateway provider to accept ada payments and ada donations.",
-    preview: require("./app-images/nowpayments.png"),
+      "Payment gateway that lets merchants and creators accept ada and other cryptocurrencies for sales, subscriptions, and donations.",
+    tagline: "Payment gateway for ada payments and donations",
+    icon: "/img/app-icons/nowpayments.ico",
     website: "https://nowpayments.io",
     source: null,
-    tags: ["favorite", "gateway"],
-  },
-  {
-    title: "Coti adaPay",
-    description:
-      "Payment gateway provider to accept ada payments and ada donations.",
-    preview: require("./app-images/cotiadapay.png"),
-    website: "https://adapay.finance/",
-    source: null,
-    tags: ["gateway"],
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "NOWPayments_io",
   },
   {
     title: "Gimbalabs",
     description:
-      "Gimbalabs is a collaborative community and space where dApps and OpenSource tools are developed in the \"Playground\" (Project-Based Learning experiences). All are welcome to join every Tuesday at 4pm UTC!",
-    preview: require("./app-images/gimbalabs.png"),
+      "Collaborative community and space where dApps and open-source tools are developed in the Playground project-based learning experience on Cardano.",
+    tagline: "Project-based learning community for Cardano dApps",
+    icon: "/img/app-icons/gimbalabs.jpg",
     website: "https://gimbalabs.com",
     source: "https://gitlab.com/gimbalabs",
-    tags: ["favorite", "educational", "opensource"],
+    category: "education",
+    properties: ["opensource"],
+    maintainerPick: true,
+    beginnerFriendly: false,
+    x: "gimbalabs",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2023-01-02-january/",
+      title: "Cardano Developer Spotlight: January 2023",
+      date: "2023-01-02",
+    },
   },
   {
     title: "Eternl",
     description:
-      "The alternative Cardano light wallet in the browser. Aims to add features most requested by the Cardano community.",
-    preview: require("./app-images/eternl.jpg"),
+      "Feature-rich Cardano light wallet for browser and mobile. Favored by experienced users for power features the community has requested most.",
+    tagline: "Power-user wallet for browser and mobile",
+    preview: require("./app-screenshots/eternl.webp"),
+    extraPreviews: [
+      require("./app-screenshots/eternl-staking.webp"),
+      require("./app-screenshots/eternl-governance.webp"),
+    ],
     icon: "/img/app-icons/eternl.jpg",
     website: "https://eternl.io",
     source: null,
-    tags: ["favorite", "wallet", "nft", "mobile"],
+    category: "wallet",
+    properties: ["nft", "mobile"],
+    maintainerPick: true,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -499,32 +490,42 @@ export const Showcases = [
     },
   },
   {
-    title: "Cardano Token and NFT Builder",
+    title: "Token & NFT Builder",
     description:
-      "Create your own native tokens and NFT in a few clicks without any code.",
-    preview: require("./app-images/token-builder.png"),
+      "Create your own native Cardano tokens and NFTs without writing any code, with policy management and metadata templates handled in-app.",
+    tagline: "No-code native token and NFT minting tool",
     website: "https://cardano-native-token.com/",
     source: null,
-    tags: ["minting", "nft"],
+    category: "minting",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "cardano-tools.io",
     description:
-      "An advanced CNFT maker. You just pay network fees.",
-    preview: require("./app-images/cardano-tools.io.png"),
+      "Open-source CNFT minting toolkit. Configure metadata, royalties, and minting policies entirely client-side; you only pay network fees.",
+    tagline: "Open-source CNFT maker, pay only network fees",
+    icon: "/img/app-icons/cardano-tools-io.png",
     website: "https://cardano-tools.io",
     source: "https://github.com/wutzebaer/cardano-tools",
-    tags: ["minting", "nft", "opensource"],
+    category: "minting",
+    properties: ["nft", "opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Typhon",
     description:
       "Light wallet from the creators of cardanoscan.io. It comes with features like NFT gallery, transaction metadata, vote registration, among other features.",
-    preview: require("./app-images/typhonwallet.png"),
+    tagline: "Light wallet with NFT gallery and metadata tools",
     icon: "/img/app-icons/typhon.jpg",
     website: "https://typhonwallet.io",
     source: null,
-    tags: ["favorite", "wallet", "nft"],
+    category: "wallet",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -533,91 +534,106 @@ export const Showcases = [
     },
   },
   {
-    title: "Staking Rewards Calculator",
+    title: "Reward Calculator",
     description:
-      "A detailed Staking Rewards Calculator thats shows expected return to the operator and delegators of each pool based on the current and alternative network parameters. It also runs a Monte Carlo simulation to show possible variability in the return.",
-    preview: require("./app-images/staking-rewards-calculator.png"),
+      "Detailed Cardano staking rewards calculator showing expected returns to operators and delegators, with a Monte Carlo simulation for return variability.",
+    tagline: "Pool reward calculator with Monte Carlo sim",
+    icon: "/img/app-icons/reward-calculator.png",
+    preview: require("./app-screenshots/reward-calculator.webp"),
+    extraPreviews: [
+      require("./app-screenshots/reward-calculator-pools.webp"),
+      require("./app-screenshots/reward-calculator-parameters.webp"),
+    ],
     website: "https://cardano.org/calculator/",
     source: null,
-    tags: ["pooltool", "analytics", "educational"],
-  },
-  {
-    title: "Cardahub - A services hub on Cardano",
-    description:
-      "One stop shop for everything CNFT. A smart-contract NFT platform on Cardano where user can mint, distribute, list and buy NFT in a few clicks.",
-    preview: require("./app-images/cardahub.png"),
-    website: "https://cardahub.io",
-    source: null,
-    tags: ["marketplace", "minting", "nft"],
-  },
-  {
-    title: "ADAdice",
-    description:
-      "A fully on-chain, provably fair game of dice on the Cardano blockchain.",
-    preview: require("./app-images/adadice.png"),
-    website: "https://www.adadice.com",
-    source: null,
-    tags: ["game"],
+    category: "pooltool",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "MuesliSwap",
     description:
-      "MuesliSwap is a new decentralized exchange (DEX) operating on the Smart Bitcoin Cash blockchain and Cardano.",
-    preview: require("./app-images/muesliswap.png"),
+      "Order-book DEX with limit orders and matching running natively on Cardano, also operating on Smart Bitcoin Cash for cross-chain orders.",
+    tagline: "Order-book DEX on Cardano",
     icon: "/img/app-icons/muesliswap.webp",
     statsLabel: "muesliswap",
     website: "https://muesliswap.com/",
     source: null,
-    tags: ["favorite", "dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "SundaeSwap",
     description:
-      "SundaeSwap is a native, scalable decentralized exchange and automated liquidity provision protocol.",
-    preview: require("./app-images/sundaeswap.png"),
+      "Native, scalable Cardano AMM DEX with automated liquidity provision, yield farming, and an order-book overlay built on Plutus.",
+    tagline: "Native scalable AMM DEX on Cardano",
+    preview: require("./app-screenshots/sundaeswap.webp"),
+    extraPreviews: [
+      require("./app-screenshots/sundaeswap-pools.webp"),
+      require("./app-screenshots/sundaeswap-portfolio.webp"),
+    ],
     icon: "/img/app-icons/sundaeswap.jpg",
     website: "https://app.sundae.fi",
     source: null,
-    tags: ["favorite", "dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "DripDropz",
     description:
       "We provide token dispensing services to the Cardano community. An intuitive platform that offers projects a comprehensive selection of distribution parameters.",
-    preview: require("./app-images/dripdropz.png"),
+    tagline: "Token dispensing and airdrop platform",
+    preview: require("./app-screenshots/dripdropz.webp"),
     icon: "/img/app-icons/dripdropz.jpg",
     website: "https://dripdropz.io",
     source: null,
-    tags: ["distribution"],
+    category: "distribution",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
-    title: "ADAZOO MMORPG and Metaverse",
-    description: "Start exploring ADAZOO, battle and capture CNFT's. Brag to your friends, show off your stats.",
-    preview: require("./app-images/adazoo.png"),
-    website: "https://adazoo.com",
-    source: null,
-    tags: ["game"],
-  },
-  {
-    title: "Minswap Dex",
+    title: "Minswap",
     description:
-      "Minswap is a multi-pool decentralized exchange on Cardano.",
-    preview: require("./app-images/minswap.png"),
+      "Multi-pool decentralized exchange on Cardano with deep liquidity, yield farming, and one of the highest-volume venues for native token swaps.",
+    tagline: "Multi-pool decentralized exchange on Cardano",
+    preview: require("./app-screenshots/minswap.webp"),
+    extraPreviews: [
+      require("./app-screenshots/minswap-trade.webp"),
+      require("./app-screenshots/minswap-chart.webp"),
+    ],
     icon: "/img/app-icons/minswap.svg",
     statsLabel: "minswap",
     website: "https://minswap.org",
     source: null,
-    tags: ["dex", "goodForBeginners"],
+    category: "dex",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: true,
+    x: "MinswapDEX",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2022-04-27-april/",
+      title: "Cardano Developer Spotlight: April 2022",
+      date: "2022-04-27",
+    },
   },
   {
     title: "GameChanger Wallet",
     description:
       "The ultimate wallet experience for the Web, with native NFT and token features, powered by Cardano and third party applications.",
-    preview: require("./app-images/gamechanger.png"),
+    tagline: "Web wallet with native NFT and dApp connector",
     icon: "/img/app-icons/gamechanger.jpg",
     website: "https://gamechanger.finance",
     source: null,
-    tags: ["wallet", "nft"],
+    category: "wallet",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser", "web"],
       custody: "non-custodial",
@@ -629,11 +645,14 @@ export const Showcases = [
     title: "GeroWallet",
     description:
       "Start exploring the possibilities of Cardano. Purchase, send, and receive ADA - the cryptocurrency for Cardano. Available as a browser extension.",
-    preview: require("./app-images/gerowallet.png"),
+    tagline: "Cardano browser-extension wallet for ada and tokens",
     icon: "/img/app-icons/gero.jpg",
     website: "https://gerowallet.io",
     source: null,
-    tags: ["wallet"],
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -644,98 +663,133 @@ export const Showcases = [
   {
     title: "Built on Cardano",
     description:
-      "Discover projects and dApps building on Cardano along with the developer tools you can use to build on Cardano. Explore similar projects and tools with ease and simply find you way back to where you started.",
-    preview: require("./app-images/buildoncardano.png"),
+      "Discovery directory for projects, dApps, and developer tools on Cardano. Browse by category, find similar projects, and navigate the ecosystem easily.",
+    tagline: "Discover projects and developer tools on Cardano",
+    icon: "/img/app-icons/built-on-cardano.jpg",
     website: "https://builtoncardano.com",
     source: null,
-    tags: ["ecosystem"],
+    category: "ecosystem",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "gerowallet",
   },
   {
     title: "CardanoCube",
     description:
-      "Explore 650+ Projects Building on Cardano.",
-    preview: require("./app-images/cardanocube.png"),
+      "Curated directory of 650+ projects building on Cardano, organized by category with filters for DeFi, NFTs, governance, infrastructure, and more.",
+    tagline: "Directory of 650+ projects building on Cardano",
+    icon: "/img/app-icons/cardanocube.png",
     website: "https://www.cardanocube.io",
     source: null,
-    tags: ["ecosystem"],
-  },
-  {
-    title: "JPG Store",
-    description:
-      "Discover artwork, explore communities, and support artists on Cardano.",
-    preview: require("./app-images/jpg.png"),
-    icon: "/img/app-icons/jpgstore.jpg",
-    statsLabel: "jpg.store",
-    website: "https://www.jpg.store",
-    source: null,
-    tags: ["marketplace", "nft", "goodForBeginners"],
+    category: "ecosystem",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
+    x: "CardanoCube",
   },
   {
     title: "Pavia",
     description:
-      "Create, explore and trade in the Cardano virtual world owned by its users.",
-    preview: require("./app-images/pavia.png"),
+      "User-owned virtual world on Cardano where players buy land NFTs, build experiences, and trade assets with other residents of the metaverse.",
+    tagline: "User-owned virtual world on Cardano",
+    icon: "/img/app-icons/pavia.svg",
     website: "https://www.pavia.io",
     source: null,
-    tags: ["game"],
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "Pavia_io",
   },
   {
     title: "WingRiders",
     description:
-      "The DEX on Cardano. Native and fast AMM decentralized exchange platform.",
-    preview: require("./app-images/wingriders.jpg"),
+      "Native AMM DEX on Cardano focused on fast settlement and predictable fees, with stableswap pools and an integrated yield-farming layer.",
+    tagline: "Native AMM DEX on Cardano",
+    preview: require("./app-screenshots/wingriders.webp"),
+    extraPreviews: [
+      require("./app-screenshots/wingriders-pools.webp"),
+    ],
     icon: "/img/app-icons/wingriders.png",
     statsLabel: "wingriders",
     website: "https://www.wingriders.com",
     source: null,
-    tags: ["dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "wingriderscom",
   },
   {
     title: "Lido Nation",
     description:
-      "Aggregation of existing catalyst proposals, results, feedbacks and many more.",
-    preview: require("./app-images/lidonation.png"),
+      "Aggregator for Project Catalyst that surfaces proposals, voting results, community feedback, and DRep activity in a single dashboard.",
+    tagline: "Aggregator for Project Catalyst proposals",
+    icon: "/img/app-icons/lido-nation.png",
     website: "https://www.lidonation.com/en/catalyst-explorer",
     source: null,
-    tags: ["analytics"],
+    category: "ecosystem",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "eUTxO",
     description:
-      "Visual blockchain explorer for Cardano.",
-    preview: require("./app-images/eutxo.png"),
+      "Visual Cardano blockchain explorer that maps transactions, datums, and assets across the eUTXO model into interactive graphs.",
+    tagline: "Visual blockchain explorer for Cardano",
+    icon: "/img/app-icons/eutxo.png",
     website: "https://eutxo.org",
     source: null,
-    tags: ["analytics", "explorer"],
+    category: "explorer",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Vibrant",
     description:
-      "A community integration tool that allows stakepool operators and NFT projects to connect and engage with their audience, verify their delegators and holders, create polls, whitelists and more via Discord, Website, and other social media apps.",
-    preview: require("./app-images/vibrant.png"),
+      "Community integration tool for stake-pool operators and NFT projects to verify delegators and holders, run polls, and manage whitelists via Discord.",
+    tagline: "Discord verification for stake pools and NFT teams",
+    icon: "/img/app-icons/vibrant.png",
     website: "https://www.vibrantnet.io",
     source: "https://github.com/nilscodes/hazelnet",
-    tags: ["nft", "opensource"],
+    category: "other",
+    properties: ["nft", "opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "VibrantNet_io",
   },
   {
     title: "Book.io",
     description:
-      "An NFT marketplace for buying, reading, and selling eBooks and Audiobooks.",
-    preview: require("./app-images/book-token.png"),
-    website: "https://www.book.io",
+      "NFT marketplace where readers buy, read, and resell eBooks and audiobooks. Each title is an asset with verifiable provenance and resale rights.",
+    tagline: "NFT marketplace for eBooks and audiobooks",
+    preview: require("./app-screenshots/book-io.webp"),
+    extraPreviews: [
+      require("./app-screenshots/book-io-detail.webp"),
+    ],
+    icon: "/img/app-icons/book-io.jpg",
+    website: "https://book.io",
     source: null,
-    tags: [ "marketplace", "nft"],
-    icon: "/img/app-icons/bookio.jpg",
+    category: "marketplace",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "NuFi Wallet",
     description:
-      "Non-custodial, multi-chain wallet with in-app DEX.",
-    preview: require("./app-images/nufiwallet.png"),
+      "Non-custodial multi-chain wallet supporting Cardano alongside other major networks, with an in-app DEX for swaps without leaving the wallet.",
+    tagline: "Non-custodial multi-chain wallet with built-in DEX",
     icon: "/img/app-icons/nufi.png",
     website: "https://nu.fi",
     source: null,
-    tags: [ "wallet", "dex", "nft"],
+    category: "wallet",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -744,113 +798,136 @@ export const Showcases = [
     },
   },
   {
-    title: "Carda Station",
-    description:
-      "Explore this virtual world on the moon with an in game avatar, and interact with other players through hangouts, games or events.",
-    preview: require("./app-images/cardastation.png"),
-    website: "https://cardastation.com/",
-    source: null,
-    tags: ["game"],
-  },
-  {
     title: "CNFTLab Party",
     description:
-      "Tool for minting CNFTs, manage your policyID, create royalties and start minting in few seconds.",
-    preview: require("./app-images/cnftlab-party.png"),
+      "CNFT minting platform with policy ID management, on-chain royalty configuration, and bulk minting workflows ready in minutes.",
+    tagline: "CNFT minting with policy and royalty controls",
+    icon: "/img/app-icons/cnftlab-party.ico",
     website: "https://www.cnftlab.party/",
     source: null,
-    tags: ["minting", "nft"],
+    category: "minting",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "nufiwallet",
   },
   {
     title: "TapTools",
     description:
-      "All-in-one platform that offers free token distribution, comprehensive charts, NFT generation, and mint facilitation.",
-    preview: require("./app-images/taptools.png"),
+      "All-in-one Cardano portfolio tracker and market analytics with token charts, NFT generation tools, and on-chain activity dashboards.",
+    tagline: "Cardano portfolio tracker and market analytics",
+    icon: "/img/app-icons/taptools.jpg",
     website: "https://www.taptools.io",
     source: null,
-    tags: [ "favorite", "analytics", "minting"],
+    category: "analytics",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "Dune",
     description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
-    preview: require("./app-images/dune.png"),
+    tagline: "On-chain data analysis with community dashboards",
     icon: "/img/app-icons/dune.svg",
     website: "https://dune.com/browse/dashboards?q=cardano",
     source: null,
-    tags: ["analytics"],
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Chainport",
     description:
-      "ChainPort is a next-gen hard-security blockchain bridge that lets you hop across EVM chains to Cardano at a click.",
-    preview: require("./app-images/chainport.png"),
+      "Audited blockchain bridge connecting EVM chains to Cardano with a single-click experience, smart-contract attestations, and ported asset tracking.",
+    tagline: "Bridge between EVM chains and Cardano",
+    icon: "/img/app-icons/chainport.svg",
     website: "https://www.chainport.io/",
     source: null,
-    tags: ["bridge"],
-  },
-  {
-    title: "Cardano Pet Registry",
-    description:
-      "A virtually free, non profit, global pet registry system built on the Cardano blockchain, facilitates peer to peer pet rescue and historical proof of pet ownership.",
-    preview: require("./app-images/petregistry.png"),
-    website: "https://savepet.org",
-    source: null,
-    tags: ["identity"],
+    category: "bridge",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "chain_port",
   },
   {
     title: "Cardano Studio",
     description:
-      "Create and mint NFTs on Cardano all in your browser - without trusting a third party for minting.",
-    preview: require("./app-images/cardano-studio.png"),
+      "Mint NFTs on Cardano fully in your browser. Keys, metadata, and policy IDs stay on your device — no third party touches the minting flow.",
+    tagline: "Self-custody NFT minting in your browser",
+    icon: "/img/app-icons/cardano-studio.jpg",
     website: "https://cardano-studio.app",
     source: null,
-    tags: ["minting", "nft"],
+    category: "minting",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "cardano_studio",
   },
   {
     title: "Cardano Relay Map",
     description:
-      "Shows geographical distribution of Cardano stake pool relay nodes with flexible map features.",
-    preview: require("./app-images/monadpool-relay-map.png"),
+      "Geographic map of Cardano stake-pool relay nodes with filters for region, pool, and operator. Useful for monitoring decentralization in real time.",
+    tagline: "Geographic map of Cardano stake-pool relays",
+    icon: "/img/app-icons/cardano-relay-map.png",
     website: "https://monadpool.com/cardano.html",
     source: null,
-    tags: ["analytics"],
+    category: "pooltool",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Finitum Bridge",
     description:
-      "Move supported tokens cross-chain, from BSC to Cardano and vice versa.",
-    preview: require("./app-images/finitum-bridge.png"),
+      "Cross-chain bridge for moving supported tokens between Cardano and BSC. Wraps assets on the destination chain with custodian-backed reserves.",
+    tagline: "Cross-chain bridge between Cardano and BSC",
+    icon: "/img/app-icons/finitum-bridge.png",
     website: "https://finitum.io/bridge",
     source: null,
-    tags: ["bridge"],
+    category: "bridge",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "BALANCE Analytics",
     description:
-      "Graphical, configurable analytics specialising in Cardano PoS decentralisation metrics.",
-    preview: require("./app-images/balance-analytics.png"),
+      "Graphical, configurable analytics dashboards specialising in Cardano PoS decentralization metrics, stake distribution, and network health signals.",
+    tagline: "Decentralization metrics dashboards for Cardano",
+    icon: "/img/app-icons/balance-analytics.svg",
     website: "https://www.balanceanalytics.io/",
     source: null,
-    tags: ["analytics", "pooltool"],
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "adahandle",
     description:
-      "A standardized NFT that developers and users can use to associate an address with a custom and human-readable address.",
-    preview: require("./app-images/adahandle.png"),
+      "Standardized NFT that maps a Cardano wallet address to a human-readable handle. Used by wallets and dApps as the network's de facto naming layer.",
+    tagline: "Human-readable Cardano addresses as NFTs",
+    icon: "/img/app-icons/adahandle.jpg",
     website: "https://adahandle.com",
     source: null,
-    tags: ["identity", "nft"],
+    category: "identity",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Lace",
     description:
-      "A new light wallet platform from IOG, one of the creators of Cardano. Manually verified by an independent auditor, Lace lets you quickly, easily, and securely manage your digital assets and enjoy Web3.",
-    preview: require("./app-images/lace.png"),
+      "Light wallet platform from IOG, audited by an independent reviewer. Lace lets you manage your digital assets and connect to Web3 dApps on Cardano.",
+    tagline: "Light wallet from IOG with Web3 integrations",
     icon: "/img/app-icons/lace.jpg",
     website: "https://www.lace.io/",
     source: "https://github.com/input-output-hk/lace",
-    tags: ["favorite", "wallet", "nft", "opensource"],
+    category: "wallet",
+    properties: ["nft", "opensource"],
+    maintainerPick: true,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -859,43 +936,42 @@ export const Showcases = [
     },
   },
   {
-    title: "Do it with Lovelace",
-    description:
-      "A Cardano-based dApp platform for easy and secure donations with a focus on community impact and transparency.",
-    preview: require("./app-images/do-it-with-lovelace.png"),
-    website: "https://app.doitwithlovelace.io",
-    source: null,
-    tags: ["funding"],
-  },
-  {
-    title: "Aada.finance",
-    description:
-      "Aada is a peer-to-peer lending and borrowing protocol on the Cardano blockchain.",
-    preview: require("./app-images/aada-finance.png"),
-    icon: "/img/app-icons/aada.finance.png",
-    website: "https://app.aada.finance",
-    source: null,
-    tags: ["lending", "marketplace", "nft"],
-  },
-  {
     title: "Continuity Token",
     description:
-      "$COTO provides secure, global and long-lasting cold storage backups of Cardano NFT media.",
-    preview: require("./app-images/coto.png"),
+      "Provides secure, long-term cold-storage backups of Cardano NFT media so collections survive even if the original IPFS or Arweave host disappears.",
+    tagline: "Cold-storage backups of Cardano NFT media",
+    icon: "/img/app-icons/continuity-token.svg",
     website: "https://continuity.to/",
     source: null,
-    tags: ["nft"],
+    category: "notary",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "lace_io",
   },
   {
     title: "VESPR",
     description:
-      "VESPR is a non-custodial mobile light wallet for the Cardano network, prioritizing the security and safety of your digital assets while ensuring exceptional ease-of-use. Your private keys and assets always remain under your control.",
-    preview: require("./app-images/vesprwallet.png"),
+      "Non-custodial mobile wallet for Cardano. Designed for newcomers with simple onboarding, friendly defaults, and security that keeps private keys on-device.",
+    tagline: "Beginner-friendly mobile wallet",
+    preview: require("./app-screenshots/vespr.webp"),
+    extraPreviews: [
+      require("./app-screenshots/vespr-nfts.webp"),
+      require("./app-screenshots/vespr-swap.webp"),
+    ],
     icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",
     website: "https://www.vespr.xyz/#/",
     source: null,
-    tags: ["favorite", "wallet", "nft", "mobile"],
+    category: "wallet",
+    properties: ["nft", "mobile"],
+    maintainerPick: true,
+    beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2024-01-22-january/",
+      title: "Cardano Developer Spotlight: January 2024",
+      date: "2024-01-22",
+    },
     walletFeatures: {
       platforms: ["ios", "android"],
       custody: "non-custodial",
@@ -906,74 +982,113 @@ export const Showcases = [
   {
     title: "DexHunter",
     description:
-      "DexHunter is a decentralized exchange aggregator with real-time alerts and an easy to use interface.",
-    preview: require("./app-images/dexhunter.png"),
+      "Cardano DEX aggregator that routes trades across all major venues for competitive pricing, with real-time alerts and a unified interface.",
+    tagline: "Cardano DEX aggregator with real-time alerts",
+    preview: require("./app-screenshots/dexhunter.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dexhunter-trending.webp"),
+    ],
     icon: "/img/app-icons/dexhunter.svg",
     statsLabel: "dexhunter",
     website: "https://www.dexhunter.io/",
     source: null,
-    tags: ["dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "dexhunterio",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2024-12-09-december/",
+      title: "Cardano Developer Spotlight: December 2024",
+      date: "2024-12-09",
+    },
   },
   {
     title: "Liqwid",
     description:
-      "Liqwid is a non-custodial pooled lending protocol with liquid staking built on Cardano.",
-    preview: require("./app-images/liqwid.webp"),
+      "Non-custodial pooled lending protocol on Cardano with liquid staking, supporting multiple supplied assets and qToken collateral receipts.",
+    tagline: "Non-custodial lending with liquid staking",
+    preview: require("./app-screenshots/liqwid.webp"),
+    extraPreviews: [
+      require("./app-screenshots/liqwid-loans.webp"),
+      require("./app-screenshots/liqwid-swap.webp"),
+    ],
     icon: "/img/app-icons/liquid.png",
     statsLabel: "liqwid-finance",
     website: "https://liqwid.finance/",
     source: null,
-    tags: ["lending", "marketplace", "goodForBeginners"],
+    category: "lending",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: true,
+    x: "liqwidfinance",
   },
   {
     title: "Charli3",
     description:
       "Charli3 is a decentralized Oracle solution on Cardano, built natively for the chain, producing fully auditable data records on Cardano ledger.",
-    preview: require("./app-images/charli3.jpg"),
+    tagline: "Native decentralized oracle on Cardano",
     icon: "/img/app-icons/charli3.jpg",
     statsLabel: "charli3",
     website: "https://charli3.io",
     source: null,
-    tags: ["oracle", "metadata"],
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "Oraclecharli3",
   },
   {
     title: "Cardano Academy",
     description:
-      "Learn blockchain fundamentals, consensus algorithms, and encryption methods. You’ll explore transaction models, risk mitigation, and scaling solutions. Additionally, you’ll delve into the Cardano blockchain, its governance, and practical uses of ada, including staking and decentralized applications.​",
-    preview: require("./app-images/cardano-academy.jpg"),
-    website: "https://academy.cardanofoundation.org",
+      "Online courses on blockchain fundamentals, consensus algorithms, transaction models, scaling, and Cardano governance, staking, and dApp development.",
+    tagline: "Online courses on Cardano and blockchain basics",
+    icon: "/img/brand-assets/cardano-starburst-blue.svg",
+    website: "https://learn.academy.cardanofoundation.org",
     source: null,
-    tags: ["favorite", "educational"],
+    category: "education",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "Cardano Governance Tool",
     description:
       "A collection of tools to delegate voting power, become a DRep, become a direct voter, browse or proposa a governance actions on Cardano blockchain.",
-    preview: require("./app-images/govtools.jpg"),
+    tagline: "Delegate, register as DRep, and vote on proposals",
     icon: "/img/app-icons/govtools.svg",
     website: "https://gov.tools",
     source: null,
-    tags: ["favorite", "governance"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Chang Watch",
     description:
-      "Chang Watch provides various donut charts with insights on vote distribution and DReps.",
-    preview: require("./app-images/changwatch.jpg"),
+      "Cardano governance dashboard with donut charts and tables that visualize vote distribution, DRep concentration, and governance action outcomes.",
+    tagline: "Vote distribution and DRep insights dashboard",
     icon: "/img/app-icons/changwatch.png",
     website: "https://www.changwatch.com",
     source: null,
-    tags: ["governance", "analytics"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Medusa Wallet",
     description:
         "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
-    preview: require("./app-images/medusa_wallet_poster.png"),
+    tagline: "Privacy-focused lightweight Cardano wallet",
     icon: "/img/app-icons/medusa.jpg",
     website: "https://adawallet.io",
     source: null,
-    tags: ["wallet"],
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -984,23 +1099,34 @@ export const Showcases = [
   {
     title: "Dano Finance",
     description:
-      "Dano Finance is a DeFi platform for lending, borrowing, and trading — all in one.",
-    preview: require("./app-images/dano-finance.png"),
+      "All-in-one DeFi platform on Cardano combining lending, borrowing, and trading with cross-pool collateral and unified interest rate markets.",
+    tagline: "DeFi platform for lending, borrowing, and trading",
+    preview: require("./app-screenshots/dano-finance.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dano-finance-leverage.webp"),
+      require("./app-screenshots/dano-finance-pools.webp"),
+    ],
     icon: "/img/app-icons/dano-finance.png",
     statsLabel: "dano-finance",
     website: "https://danogo.io/",
     source: null,
-    tags: ["lending", "marketplace", "dex"],
+    category: "lending",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
-    title: "Multisig Platform",
+    title: "Multisig Wallet",
     description:
-      "Secure your treasury and participant in governance, as a team with multi-signature.",
-    preview: require("./app-images/mesh-multisig-platform.jpg"),
+      "Secure team treasury management and governance participation on Cardano using native multi-signature scripts and an approval workflow UI.",
+    tagline: "Multi-signature treasury and governance for teams",
     icon: "/img/app-icons/multisig.png",
     website: "https://multisig.meshjs.dev/features",
     source: null,
-    tags: ["governance", "wallet", "daotool"],
+    category: "wallet",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -1011,31 +1137,42 @@ export const Showcases = [
   {
     title: "Tempo",
     description:
-      "Tempo is a governance tool designed to streamline and enhance Cardano’s decision-making processes. We make it easier for DReps to register, gain delegations, and engage with their delegators. Additionally, Tempo supports DAOs and SPOs by providing essential tools for governance and transparency.",
-    preview: require("./app-images/tempo.png"),
+      "Governance tool that streamlines Cardano's decision making. Helps DReps register, gain delegations, and engage delegators; supports DAOs and SPOs too.",
+    tagline: "Governance tool for DReps to register and engage",
     icon: "/img/app-icons/tempo.png",
     website: "https://tempo.vote",
     source: null,
-    tags: ["daotool", "governance"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Nio",
     description:
-      "Track and monitor all assets in any wallet or locked in Cardano DeFi smart contracts.",
-    preview: require("./app-images/nio_app.png"),
+      "Tracks and monitors all assets across Cardano wallets and DeFi smart contracts in one dashboard. Surfaces lending positions, LP shares, and yields.",
+    tagline: "Track wallets and DeFi smart contract assets",
+    icon: "/img/app-icons/nio.png",
     website: "https://nioapp.io",
     source: null,
-    tags: ["accounting"],
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "NioApp",
   },
   {
     title: "Begin Wallet",
     description:
-      "Begin Wallet a non-custodial light Cardano Wallet, available as an Extension and Mobile. We offer payment link compatibility with deep link support, Begin ID user name based on ENS protocol for Wallet Address. Hardware wallet support Ledger and Keystone. Based on our own open source cryptographic core.",
-    preview: require("./app-images/begin.png"),
+      "Non-custodial Cardano wallet for browser and mobile with payment links, deep-link support, Begin ID usernames (ENS-style), and Ledger and Keystone hardware support.",
+    tagline: "Non-custodial Cardano wallet for browser and mobile",
     icon: "/img/app-icons/begin.jpg",
     website: "https://begin.is",
     source: null,
-    tags: ["wallet", "nft", "mobile"],
+    category: "wallet",
+    properties: ["nft", "mobile"],
+    maintainerPick: false,
+    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -1046,516 +1183,735 @@ export const Showcases = [
   {
     title: "Onboard Ninja",
     description:
-      "Onboard is a platform that allows creators to effortlessly distribute Cardano airdrops at in-person events.",
-    preview: require("./app-images/onboard-ninja.jpg"),
+      "Lets Cardano creators distribute airdrops at in-person events. Attendees scan a code, claim tokens to their wallet, and walk away onboarded.",
+    tagline: "In-person Cardano airdrop distribution platform",
+    icon: "/img/app-icons/onboard-ninja.png",
     website: "https://onboard.ninja",
     source: null,
-    tags: ["favorite", "distribution", "nft"],
+    category: "distribution",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "BeginWallet",
   },
     {
     title: "Stuff.io",
     description:
-      "Stuff.io is the global leader in true digital ownership, enabling consumers to genuinely own, share, gift, or resell their digital media like movies, music, ebooks, audiobooks, and podcasts.",
-    preview: require("./app-images/stuff-io.png"),
+      "Digital-ownership platform on Cardano letting consumers own, share, gift, or resell their movies, music, ebooks, audiobooks, and podcasts as NFTs.",
+    tagline: "True digital ownership for media you can resell",
+    icon: "/img/app-icons/stuff-io.png",
     website: "https://stuff.io",
     source: null,
-    tags: ["marketplace"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "stuff_io",
   },
   {
     title: "Veridian Wallet",
     description:
-      "Manages identity across platforms using decentralized public key infrastructure and verifiable credentials: ensuring data privacy and ownership with tamper proofing and quantum resistance. Built on KERI and optionally anchored to Cardano.",
-    preview: require("./app-images/veridian2.png"),
+      "Manages identity across platforms using decentralized public key infrastructure and verifiable credentials. Built on KERI, optionally anchored to Cardano.",
+    tagline: "Decentralized identity and verifiable credentials",
+    icon: "/img/app-icons/veridian-wallet.png",
     website: "https://www.veridian.id/",
     source: "https://github.com/cardano-foundation/veridian-wallet",
-    tags: ["identity", "opensource"],
+    category: "identity",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-11-07-media-cardano-developer-office-hours/",
+      title: "Cardano Developer Office Hours",
+      date: "2025-11-07",
+    },
   },
   {
     title: "Governance Space",
     description:
-      "A blockchain governance platform for DAOs, projects, and institutions: providing indexing & analytics for DReps, governance actions, budget proposals & discussions, committee members, live events, and more.",
-    preview: require("./app-images/govspace.png"),
+      "Blockchain governance platform for DAOs, projects, and institutions, providing indexing and analytics for DReps, governance actions, and committee work.",
+    tagline: "Indexer and analytics for Cardano governance",
     icon: "/img/app-icons/govspace.png",
     website: "https://governancespace.com/",
     source: null,
-    tags: ["daotool", "governance"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Adastack.io",
     description:
       "Comprehensive Cardano ecosystem explorer: Explore intro guides, wallets, DApps, NFTs, games, governance, Project Catalyst, DAOs, development, sidechains, L2s and more.",
-    preview: require("./app-images/adastack.png"),
+    tagline: "Cardano ecosystem explorer and intro guide hub",
+    icon: "/img/app-icons/adastack-io.png",
     website: "https://www.adastack.io",
     source: null,
-    tags: ["ecosystem", "educational"],
+    category: "ecosystem",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "adastackio",
   },
   {
     title: "ADAM Cardano App",
     description:
-      "Are you looking for an efficient way to connect and track your ADA wallets? ADAM Cardano app for iOS and Android is designed to help track all your Cardano stacking rewards, wallets and funds from a single, cohesive interface. ADAM app also exclusively provides stunning price widgets, packed with valuable price insights.",
-    preview: require("./app-images/adam.png"),
+      "Mobile app (iOS and Android) for tracking your Cardano wallets, staking rewards, and funds in one cohesive interface, with price widgets and insights.",
+    tagline: "iOS and Android tracker for Cardano wallets",
+    icon: "/img/app-icons/adam-cardano-app.png",
     website: "https://androdevs.de",
     source: null,
-    tags: ["accounting", "nft"],
+    category: "other",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
-    title: "Cardano Governance Voting Tool",
+    title: "Governance Voting Tool",
     description:
-      "A simple tool to help every Cardano stakeholder participate in on-chain governance with confidence.",
-    preview: require("./app-images/cf-voting-tool.png"),
-    icon: "/img/app-icons/cf-voting-tool.svg",
+      "Simple voting tool for Cardano stakeholders to participate in on-chain governance with clear ballot UI, DRep info, and action explanations.",
+    tagline: "Simple on-chain governance voting tool",
+    icon: "/img/app-icons/cardano-governance-voting-tool.png",
     website: "https://voting.cardanofoundation.org/",
     source: "https://github.com/cardano-foundation/cardano-governance-voting-tool",
-    tags: ["governance", "opensource"],
-  },
-  {
-    title: "NEWM",
-    description:
-      "Decentralized music streaming platform that enables artists to own and monetize their creative content through fractionalized IP rights, direct fan tipping, music rights marketplace, and real-time royalty payouts.",
-    preview: require("./app-images/newm.png"),
-    website: "https://newm.io/",
-    source: "https://github.com/projectNEWM/",
-    tags: ["favorite", "music", "opensource"],
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Andamio",
     description:
-      "Verified trust protocol for distributed work. Organizations can mint credentials, verify skills, and find contributors. Individuals can learn, discover opportunities, join project teams, and launch their own projects.",
-    preview: require("./app-images/andamio.png"),
+      "Verified trust protocol for distributed work on Cardano. Organizations mint credentials and find contributors; individuals learn, join, and launch projects.",
+    tagline: "Verified credentials and project work coordination",
+    icon: "/img/app-icons/andamio.jpg",
     website: "https://www.andamio.io/",
     source: null,
-    tags: ["daotool"],
+    category: "identity",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "andamio_teams",
   },
   {
     title: "CSWAP",
     description:
       "CSWAP Systems is a next-gen decentralized exchange (DEX) that bridges tokens, NFTs, and real-world assets in one seamless trading ecosystem. ",
-    preview: require("./app-images/cswap.png"),
+    tagline: "DEX for tokens, NFTs, and real-world assets",
+    preview: require("./app-screenshots/cswap.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cswap-farms.webp"),
+    ],
     icon: "/img/app-icons/cswap.jpg",
     statsLabel: "cswap",
     website: "https://www.cswap.fi/",
     source: null,
-    tags: ["dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "FluidTokens",
     description:
-      "FluidTokens is the leading Cardano-Bitcoin DeFi ecosystem, presenting a diverse range of services like lending, borrowing, staking, sponsored transactions and an array of other inventive products including rental options, boosted stake features, and more.",
-    preview: require("./app-images/fluidtokens.png"),
+      "Cardano-Bitcoin DeFi protocol covering lending, borrowing, staking, sponsored transactions, rental positions, and boosted-stake products.",
+    tagline: "Cardano-Bitcoin lending and borrowing protocol",
+    preview: require("./app-screenshots/fluidtokens.webp"),
+    extraPreviews: [
+      require("./app-screenshots/fluidtokens-borrow.webp"),
+      require("./app-screenshots/fluidtokens-gold.webp"),
+    ],
     icon: "/img/app-icons/fluidtoken.png",
     website: "https://fluidtokens.com/",
     source: "https://github.com/fluidtokens",
-    tags: ["lending", "marketplace", "opensource"],
+    category: "lending",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "FluidTokens",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-02-03-february/",
+      title: "Cardano Developer Spotlight: February 2025",
+      date: "2025-02-03",
+    },
   },
   {
     title: "Genius Yield",
     description:
-      "All-in-one platform, that combines an order book DEX with an automated yield optimizer.",
-    preview: require("./app-images/genius-yield.png"),
+      "All-in-one Cardano DeFi platform combining a fully on-chain order-book DEX with an automated yield optimizer that compounds positions.",
+    tagline: "Order-book DEX with built-in yield optimizer",
+    icon: "/img/app-icons/genius-yield.jpg",
     statsLabel: "geniusyield",
     website: "https://www.geniusyield.co/",
     source: "https://github.com/geniusyield",
-    tags: ["dex", "opensource"],
+    category: "dex",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "GeniusyieldO",
   },
   {
     title: "Iagon",
     description:
       "Iagon is an AI-driven shared storage and compute economy. Bridging decentralization with compliance to revolutionize cloud services.",
-    preview: require("./app-images/iagon.png"),
+    tagline: "Decentralized storage and compute marketplace",
     icon: "/img/app-icons/iagon.png",
     website: "https://iagon.com",
     source: null,
-    tags: ["marketplace"],
-  },
-  {
-    title: "Yamfore",
-    description:
-      "Yamfore streamlines lending on the Cardano blockchain with its decentralized platform that eliminates the need for traditional lenders. Utilizing an internal stablecoin reserve, it offers indefinite loan durations and no margin calls, ensuring borrowers are safe from loan liquidation during market volatility.",
-    preview: require("./app-images/yamfore.png"),
-    website: "https://www.yamfore.com/",
-    source: "https://github.com/BigBlymp/yamfore-resources",
-    tags: ["lending", "opensource"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "IagonOfficial",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-09-29-september/",
+      title: "Cardano Developer Spotlight: September 2025",
+      date: "2025-09-29",
+    },
   },
   {
     title: "VyFinance",
     description:
-      "VyFinance is Decentralized Finance protocol built on Cardano that includes features such as a decentralised exchange (DEx), redistributive mechanism (BAR), governance, lottery and token/NFT Vaults.",
-    preview: require("./app-images/vyfi.png"),
+      "Cardano DeFi protocol with a decentralized exchange, redistributive BAR mechanism, governance, lottery, and token and NFT vaults bundled together.",
+    tagline: "DeFi protocol with DEX, vaults, and governance",
     icon: "/img/app-icons/vyfinance.png",
     statsLabel: "vyfinance",
-    website: "https://app.vyfi.io/",
+    website: "https://vyfi.io",
     source: null,
-    tags: ["dex"],
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Splash",
     description:
-      "Decentralized open-source protocol for efficient market-making and trading on Cardano.",
-    preview: require("./app-images/splash.png"),
+      "Open-source decentralized protocol for efficient market-making and trading on Cardano, with batched settlement and gas-efficient routing.",
+    tagline: "Open-source market-making and trading protocol",
     icon: "/img/app-icons/splash.svg",
+    statsLabel: "splash",
     website: "https://www.splash.trade/",
     source: "https://github.com/splashprotocol/splash-core",
-      tags: ["dex", "opensource"],
-      statsLabel: "splash",
+    category: "dex",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Palmyra",
     description:
-      "Empowering inclusion for underserved commodities through RWA Tokenization.",
-    preview: require("./app-images/palmyra.png"),
+      "Real-world-asset tokenization on Cardano focused on underserved commodities, opening fractional investment access to producers and traders.",
+    tagline: "Tokenization for underserved RWA commodities",
+    icon: "/img/app-icons/palmyra.png",
     website: "https://palmeconomy.io/",
     source: "https://github.com/zenGate-Global/winter-cardano",
-    tags: ["marketplace", "opensource"],
+    category: "marketplace",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "palmeconomy",
   },
   {
     title: "Optim Finance",
     description:
-      "Optimize your yield with a decentralized suite of products.",
-    preview: require("./app-images/optim.png"),
+      "Decentralized yield optimization on Cardano with a suite of vaults that auto-compound staking, lending, and DEX-LP positions to maximize yield.",
+    tagline: "Yield optimization suite for Cardano DeFi",
+    icon: "/img/app-icons/optim-finance.jpg",
     website: "https://www.optim.finance/",
     source: null,
-    tags: ["lending", "marketplace"],
+    category: "lending",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "OptimFi",
   },
   {
     title: "Farmroll",
     description:
-      "Crypto engagement platform designed to enhance community interaction, incentivized participation, and AI-driven automation",
-    preview: require("./app-images/farmroll.png"),
+      "Cardano community engagement platform with token-gated rewards, automated participation tracking, and AI-driven campaign tools for projects.",
+    tagline: "AI-driven community engagement and rewards",
+    icon: "/img/app-icons/farmroll.png",
     website: "https://farmroll.io/",
     source: null,
-    tags: ["social"],
-  },
-  {
-    title: "TokeoPay",
-    description:
-      "Tokeo is a feature-rich Bitcoin and Cardano wallet that lets you securely store, manage, and trade your BTC, ADA, Runes, Cardano Native Tokens, Ordinals and NFTs, while providing seamless access to the Bitcoin and Cardano blockchain ecosystem.",
-    preview: require("./app-images/tokeo.png"),
-    icon: "/img/app-icons/tokeo.jpg",
-    website: "https://tokeo.io/",
-    source: null,
-    tags: ["wallet", "mobile"],
-    walletFeatures: {
-      platforms: ["ios", "android"],
-      custody: "non-custodial",
-      features: ["nft", "multi-asset", "qr-claim", "easy-setup"],
-      type: "light",
-    },
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Empowa",
     description:
       "Join a RWA project looking to enable 1 million African families to become owners of a climate-smart home across Africa by 2030.",
-    preview: require("./app-images/empowa.png"),
+    tagline: "RWA project for climate-smart housing in Africa",
+    icon: "/img/app-icons/empowa.png",
     website: "https://empowa.io/",
     source: null,
-    tags: ["marketplace"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Strike Finance",
     description:
-      "DeFi derivatives protocol revolutionizing perpetual futures trading on the Cardano blockchain.",
-    preview: require("./app-images/strike.png"),
+      "DeFi derivatives protocol on Cardano offering perpetual futures with on-chain margin, leverage, and oracle-priced settlement.",
+    tagline: "Perpetual futures derivatives protocol on Cardano",
+    preview: require("./app-screenshots/strike.webp"),
     icon: "/img/app-icons/strike.png",
     statsLabel: "strike-finance",
     website: "https://www.strikefinance.org/",
     source: "https://github.com/strike-finance/perpetuals-smart-contracts",
-    tags: ["marketplace", "goodForBeginners", "opensource"],
-  },
-  {
-    title: "Smart Places",
-    description:
-      "Geo-location based SocialFi Network where owning digital land means owning opportunity. Each Landplot is a unique Virtual piece representing a real-world location.",
-    preview: require("./app-images/smart-places.png"),
-    website: "https://smartplaces.io/",
-    source: null,
-    tags: ["social"],
+    category: "dex",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: true,
+    x: "strikeperps",
   },
   {
     title: "Snek.fun",
     description:
-      "Snek.fun is a fair-launch token launchpad on Cardano, designed for effortless memecoin creation. Users can launch a token in seconds for a flat fee, with built-in liquidity protection and no team allocations. Tokens are automatically listed via Splash DEX with LP burned, ensuring transparency and rug-pull resistance.",
-    preview: require("./app-images/snek-fun.png"),
+      "Fair-launch memecoin launchpad on Cardano. Tokens launch in seconds for a flat fee with built-in liquidity protection and no team allocations.",
+    tagline: "Fair-launch memecoin launchpad on Cardano",
+    icon: "/img/app-icons/snek-fun.jpg",
     website: "https://snek.fun/",
     source: null,
-    tags: ["marketplace"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "snekdotfun",
   },
   {
     title: "Xerberus",
     description:
       "Xerberus' Risk Ratings deliver automated, objective, and real-time insights derived from on-chain data, providing investors and dApps with accurate risk assessments.",
-    preview: require("./app-images/xerberus.png"),
+    tagline: "Real-time on-chain risk ratings for assets",
+    icon: "/img/app-icons/xerberus.jpg",
     website: "https://www.xerberus.io/",
     source: null,
-    tags: ["marketplace"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "Xerberus",
   },
   {
     title: "Masumi",
     description:
       "Masumi is a decentralized protocol empowering AI agents to collaborate seamlessly and monetize their services efficiently.",
-    preview: require("./app-images/masumi.png"),
+    tagline: "Decentralized protocol for AI agent collaboration",
     icon: "/img/app-icons/masumi.png",
     statsLabel: "masumi",
     website: "https://www.masumi.network",
     source: "https://github.com/masumi-network",
-    tags: ["marketplace", "opensource"],
-  },
-  {
-    title: "Encoins",
-    description:
-      "ENCOINS is a decentralized private accounts and payments protocol on the Cardano blockchain.",
-    preview: require("./app-images/encoins.png"),
-    website: "https://www.encoins.io/",
-    source: "https://github.com/encryptedcoins",
-    tags: ["identity", "opensource"],
+    category: "marketplace",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "MasumiNetwork",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-06-24-june/",
+      title: "Cardano Developer Interview: June 2025",
+      date: "2025-06-24",
+    },
   },
   {
     title: "Finest",
     description:
-      "Invest in tokenized real world assets. Fully regulated and compliant in Europe.",
-    preview: require("./app-images/finest.png"),
+      "Invest in tokenized real-world assets on Cardano. Fully regulated and compliant under European securities frameworks for institutional access.",
+    tagline: "Tokenized real-world asset investing in Europe",
+    icon: "/img/app-icons/finest.png",
     website: "https://www.finest.investments/",
     source: null,
-    tags: ["marketplace"],
+    category: "marketplace",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Butane",
     description:
-      "Butane is a fast, powerful, and innovative decentralised synthetics platform built on the Cardano blockchain.",
-    preview: require("./app-images/butane.png"),
+      "Decentralized synthetics platform on Cardano enabling on-chain price exposure to off-chain assets via collateralized synthetic positions.",
+    tagline: "Decentralized synthetics platform on Cardano",
     icon: "/img/app-icons/butane.jpg",
     website: "https://butane.dev/",
     source: "https://github.com/butaneprotocol/butane-contracts",
-    tags: ["opensource", "marketplace"],
+    category: "lending",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Bodega Market",
     description:
-      "As a prediction market, we provide a unique platform where you can speculate on the outcomes of real-world events, leveraging the security, scalability, and transparency that only Cardano can offer.",
-    preview: require("./app-images/bodega.png"),
+      "Prediction market on Cardano for speculating on real-world event outcomes. Settles outcomes on-chain using oracle data and Plutus smart contracts.",
+    tagline: "Cardano prediction market for real-world events",
+    preview: require("./app-screenshots/bodega.webp"),
+    extraPreviews: [
+      require("./app-screenshots/bodega-market.webp"),
+    ],
     icon: "/img/app-icons/bodega.png",
     statsLabel: "bodega",
-    website: "https://www.bodegamarket.xyz/",
+    website: "https://v3.bodegamarket.io",
     source: "https://github.com/bodega-market/bodega-market-smart-contracts",
-    tags: ["marketplace", "goodForBeginners", "opensource"],
+    category: "marketplace",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: true,
   },
   {
-    title: "Cornucopias",
+    title: "Infinity Rising",
     description:
-      "Open world MMO set in a world where humanity has ascended from the Earth's surface and created a breathtaking new world in the sky. ",
-    preview: require("./app-images/cornucopias.png"),
-    website: "https://cornucopias.io/",
+      "Open-world sandbox MMO and multiverse simulator set between Cornucopias in the sky, the broken Earth below, and worlds beyond. Explore, craft, build, trade.",
+    tagline: "Open-world sandbox MMO and multiverse simulator",
+    icon: "/img/app-icons/infinity-rising.jpg",
+    website: "https://infinityrising.com",
     source: null,
-    tags: ["game"],
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "InfinityRisingX",
   },
   {
     title: "Reeve",
     description:
-      "The Reeve project, aka Ledger on the Blockchain (LOB), project aims to develop a solution that supports the adoption of Blockchain as a decentralised ledger, for digital recording and storing of accounting and financial information.",
-    preview: require("./app-images/reeve.png"),
+      "Project (also known as Ledger on the Blockchain or LOB) developing a Cardano-based decentralized ledger for digital recording of accounting data.",
+    tagline: "Decentralized ledger for accounting records",
+    icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://www.cardanofoundation.org/reeve#mission",
     source: "https://github.com/cardano-foundation/cf-reeve-platform",
-    tags: ["accounting", "opensource"],
+    category: "notary",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Ascent Rivals",
     description:
-      "A competitive multiplayer racing-combat game featuring dual-engine twin-stick controls. Compete in sponsored tournaments, earn credits, place contracts on rivals, and master risk-reward combat mechanics in death-racing esports.",
-    preview: require("./app-images/ascent-rivals.png"),
+      "Multiplayer racing-combat game with dual-engine twin-stick controls. Compete in tournaments, place rival contracts, and master risk-reward death racing.",
+    tagline: "Multiplayer racing-combat game with rival contracts",
+    icon: "/img/app-icons/ascent-rivals.jpg",
     website: "https://www.ascentrivals.com/",
     source: null,
-    tags: ["game"],
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "AscentRivals",
   },
   {
     title: "USDM Stablecoin",
     description:
-      "USDM is a fully backed USD stablecoin on Cardano, designed for seamless transactions and DeFi applications.",
-    preview: require("./app-images/usdm.png"),
+      "Fully backed USD stablecoin on Cardano with off-chain reserves and monthly attestations. Designed for payments, treasury, and DeFi applications.",
+    tagline: "Fully backed USD stablecoin on Cardano",
     icon: "/img/app-icons/usdm.jpeg",
     statsLabel: "$usdm",
     statsNote: "mint/burn only",
     website: "https://moneta.global/",
     source: null,
-    tags: ["stablecoin"],
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "USDMOfficial",
   },
   {
     title: "Asteria",
     description:
-      "A fully on-chain strategy game for devs. Pilot a spaceship in a 2D grid where everything is a UTxO. ",
-    preview: require("./app-images/asteria.png"),
-    website: "https://github.com/txpipe/asteria",
+      "Fully on-chain strategy game built for developers. Pilot a spaceship across a 2D grid where every entity is a Cardano eUTXO and Plutus contract.",
+    tagline: "On-chain strategy game where everything is a UTxO",
+    icon: "/img/app-icons/asteria.png",
+    website: "https://asteria.txpipe.io",
     source: "https://github.com/txpipe/asteria",
-    tags: ["game", "opensource"],
+    category: "game",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Ale & Axes",
     description:
-      "A mobile & browser fantasy RPG built on Cardano, with native token $WYRM as the main in-game currency, and NFTs unlocking unique in-game perks. The game features advanced tokenomics that reward long-term strategy and engagement. Playable by both web2 and web3 gamers.",
-    preview: require("./app-images/ale-axes.png"),
+      "Mobile and browser fantasy RPG built on Cardano. NFTs unlock in-game perks, advanced tokenomics reward long-term play, and web2 and web3 gamers play together.",
+    tagline: "Mobile and browser fantasy RPG on Cardano",
+    icon: "/img/app-icons/ale-axes.jpg",
     website: "https://aleaxes.com/",
     source: null,
-    tags: ["game"],
+    category: "game",
+    properties: [],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "Mynth",
     description:
-      "Layer-zero network for any token to any token on any blockchain swaps.",
-    preview: require("./app-images/mynth.png"),
+      "Cross-chain swap network bridging Cardano with any-token-to-any-token routes across multiple chains. Settles cross-chain trades through audited relays.",
+    tagline: "Cross-chain swap network for any token pair",
+    icon: "/img/app-icons/mynth.png",
     website: "https://mynth.ai",
     source: null,
-    tags: ["bridge", "dex"],
+    category: "bridge",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Clarity Protocol",
     description:
-      "Clarity Protocol provides community governance and management tools usable by any Cardano project.",
-    preview: require("./app-images/clarity.png"),
+      "Community governance and management toolkit usable by any Cardano project. Provides proposal flows, voting, treasury controls, and member registries.",
+    tagline: "Community governance toolkit for Cardano projects",
+    icon: "/img/app-icons/clarity-protocol.jpg",
     website: "https://www.clarity.community/",
     source: null,
-    tags: ["daotool"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Indigo",
     description:
-      "Indigo is an autonomous synthetics protocol for on-chain price exposure to real-world assets, built on Cardano.",
-    preview: require("./app-images/indigo.png"),
+      "Autonomous synthetics protocol on Cardano for on-chain price exposure to real-world assets. Mints iAssets backed by collateralized debt positions.",
+    tagline: "Synthetics protocol for on-chain RWA exposure",
+    preview: require("./app-screenshots/indigo.webp"),
+    extraPreviews: [
+      require("./app-screenshots/indigo-earn.webp"),
+      require("./app-screenshots/indigo-dao.webp"),
+    ],
     icon: "/img/app-icons/indy.png",
     statsLabel: "indigo-protocol",
     website: "https://indigoprotocol.io/",
     source: "https://github.com/IndigoProtocol/indigo-smart-contracts",
-    tags: ["marketplace", "opensource"],
+    category: "lending",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "indigo_protocol",
   },
   {
     title: "Orcfax",
     description:
-      "Orcfax is a decentralized oracle service designed to publish data about real world events to the Cardano blockchain. Orcfax data is made available to on-chain smart contracts in Cardano's eUTXO native format using the Orcfax Protocol.",
-    preview: require("./app-images/orcfax.png"),
+      "Decentralized oracle service publishing real-world event data to Cardano. Data is delivered to on-chain Plutus contracts in eUTXO-native format.",
+    tagline: "Decentralized oracle for real-world data on Cardano",
     website: "https://orcfax.io",
     source: "https://github.com/orcfax/orcfax-aiken",
-    tags: ["oracle", "opensource"],
+    category: "other",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "orcfax",
   },
   {
     title: "Arp Radio",
     description:
-      "Discover the Cardano music ecosystem- where the key center is consensus and the tempo is in slots!  Explore and mint music NFTs and play your collections in our unique player, leveraging the CIP-60 token standard!",
-    preview: require("./app-images/arpradio.png"),
+      "Cardano music ecosystem player. Discover, mint, and play CIP-60 music NFT collections in a custom audio player tuned to consensus and slot timing.",
+    tagline: "Music NFT player based on CIP-60 token standard",
     website: "https://arpradio.media",
     source: null,
-    tags: ["music"],
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "CGOV",
     description:
       "A governance monitoring dashboard to track and analyze on-chain governance actions, including active, ratified, and expired proposals on the Cardano blockchain.",
-    preview: require("./app-images/cgov.png"),
-    icon: "/img/app-icons/cgov.svg",
+    tagline: "Governance dashboard for proposals and voting",
+    icon: "/img/app-icons/cgov.png",
     website: "https://app.cgov.io/",
     source: "https://github.com/nomos-guild/cgov",
-    tags: ["governance", "analytics", "opensource"],
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: true,
+    beginnerFriendly: false,
   },
   {
     title: "Cardano Treasury Explorer",
     description:
       "A dashboard for exploring and analyzing Cardano's treasury data, providing insights into treasury balance, withdrawals, and funding allocations.",
-    preview: require("./app-images/cardano-treasury-explorer.png"),
+    tagline: "Cardano treasury balance and outflows dashboard",
     icon: "/img/app-icons/cardano-treasury.png",
     website: "https://cardanotreasury.fi/",
     source: null,
-    tags: ["governance", "analytics"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Sundae Treasury Dashboard",
     description:
       "A smart contract-based treasury management platform by Sundae Labs for transparent milestone-based fund disbursements from Cardano governance actions.",
-    preview: require("./app-images/sundae-treasury.png"),
+    tagline: "Milestone-based treasury disbursement platform",
     icon: "/img/app-icons/sundae-treasury.svg",
     website: "https://treasury.sundae.fi/",
     source: "https://github.com/SundaeSwap-finance/treasury-contracts",
-    tags: ["governance", "opensource"],
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
-    title: "Cardano Supply Summary",
+    title: "Supply Summary",
     description:
       "Explore historical trends in Cardano's ada supply distribution, including reserves, rewards, treasury, and deposits across epochs.",
-    preview: require("./app-images/cardano-supply-summary.png"),
+    tagline: "Historical Ada supply and treasury distribution",
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://cardano.org/insights/supply/summary/",
     source: null,
-    tags: ["governance", "analytics"],
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
-    title: "CardanoCube Governance Actions",
+    title: "WanBridge",
     description:
-      "Browse live on-chain governance proposals shaping Cardano's future, including protocol updates, constitutional amendments, and budget allocations.",
-    preview: require("./app-images/cardanocube-governance.png"),
-    icon: "/img/app-icons/cardanocube.png",
-    website: "https://www.cardanocube.com/governance/gov_actions",
-    source: null,
-    tags: ["governance"],
-  },
-  {
-    title: "Wanchain",
-    description:
-      "Decentralised cross-chain bridge infrastructure connecting Cardano with multiple EVM and non-EVM networks.",
-    preview: require("./app-images/wanchain.png"),
-    icon: "/img/app-icons/wanchain.svg",
+      "Decentralized cross-chain bridge infrastructure connecting Cardano with multiple EVM and non-EVM networks via threshold-signature relayers.",
+    tagline: "Cross-chain bridge for EVM and non-EVM networks",
+    preview: require("./app-screenshots/wanbridge.webp"),
+    icon: "/img/app-icons/wanbridge.svg",
+    statsLabel: "wanchain",
     website: "https://bridge.wanchain.org/AssetBridge",
     source: null,
-    tags: ["bridge"],
+    category: "bridge",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "UVerify",
     description: "UVerify opens up blockchain technology to everyone, no matter your background. Effortlessly secure your file or text hashes on the Cardano blockchain.",
-    preview: require("./app-images/uverify.png"),
+    tagline: "Anchor file and text hashes on the Cardano chain",
     icon: "/img/app-icons/uverify.png",
     statsLabel: "uverify",
     website: "https://app.uverify.io",
     source: "https://github.com/UVerify-io",
-    tags: ["notary", "opensource"],
+    category: "notary",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2025-06-13-media-cardano-developer-office-hours/",
+      title: "Cardano Developer Office Hours",
+      date: "2025-06-13",
+    },
   },
   {
     title: "CommitProof",
-    description: "CommitProof lets you prove what you knew and when. Hash your ideas client-side, anchor the proof on Cardano, and verify it anytime. Your original never leaves your device.",
-    preview: require("./app-images/commitproof.png"),
+    description: "Prove what you knew and when. Hash any file or text locally, then commit the proof to Cardano. Your original never leaves your device. The timestamp is public and verifiable.",
+    tagline: "Tamper-proof timestamps for files and ideas",
+    preview: require("./app-screenshots/commitproof.webp"),
+    extraPreviews: [
+      require("./app-screenshots/commitproof-committed.webp"),
+      require("./app-screenshots/commitproof-verify.webp"),
+    ],
     icon: "/img/app-icons/commitproof.svg",
     statsLabel: "commitproof",
+    metadataLabel: 8413,
     website: "https://commitproof.com",
     source: null,
-    tags: ["notary"],
+    category: "notary",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "CommitProof",
   },
   {
-    title: "Cardano Smart Contract Quiz V1000",
+    title: "Plutus Quiz V1000",
     description:
-      "A free-to-enter, knowledge-based quiz built on Cardano smart contracts. Players submit answers on-chain via Plutus, and the highest scorer can claim the prize. Encrypted submissions and hashed answers ensure fairness.",
-    preview: require("./app-images/gnp1quiz.jpeg"),
+      "Free-to-enter knowledge quiz built on Cardano Plutus smart contracts. Players submit encrypted answers on-chain; the highest scorer claims the prize.",
+    tagline: "On-chain Plutus quiz with prize pool",
     icon: "/img/app-icons/gnp1quiz.jpeg",
     statsLabel: "GNP1Quiz",
     website: "https://server-tools.grahamsnumberplus1.com/quiz_V1000/quiz-V1000.html",
     source: null,
-    tags: ["game"],
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "TapDano",
-    description: "Enterprise-grade verifiable proof infrastructure combining NFC hardware identity with immutable on-chain records. Enables cryptographically signed, bilateral proof of attendance and corporate compliance actions on Cardano.",
-    preview: require("./app-images/tapdano.png"),
+    description: "Verifiable proof infrastructure combining NFC hardware identity with on-chain records on Cardano. Enables cryptographic proof of attendance and compliance.",
+    tagline: "NFC hardware identity with on-chain proof",
     icon: "/img/app-icons/tapdano.png",
+    metadataLabel: 544,
     website: "https://tapdano.com",
     source: null,
-    tags: ["identity", "notary"],
+    category: "identity",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
   {
     title: "Claimpaign",
     description:
-      "Cardano airdrop tool built for real-world token distribution. Instead of sending tokens to random wallets, you create QR code claim campaigns that put recipients in control. (based on CIP-99)",
-    preview: require("./app-images/claimpaign.png"),
-     icon: "/img/app-icons/claimpaign.png",
-     statsLabel: "claimpaign",
+      "Cardano airdrop tool for real-world token distribution. Recipients claim from QR codes instead of receiving wallet pushes, putting them in control (CIP-99).",
+    tagline: "QR-based airdrop tool for in-person campaigns",
+    preview: require("./app-screenshots/claimpaign.webp"),
+    extraPreviews: [
+      require("./app-screenshots/claimpaign-qrcodes.webp"),
+      require("./app-screenshots/claimpaign-analytics.webp"),
+    ],
+    icon: "/img/app-icons/claimpaign.png",
+    statsLabel: "claimpaign",
+    metadataLabel: 8414,
     website: "https://claimpaign.com",
     source: null,
-    tags: ["distribution", "nft"],
+    category: "distribution",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "claimpaign",
+  },
+  {
+    title: "Wayup",
+    description:
+      "Cardano NFT marketplace by Anvil. Continues the smart contracts of JpgStore as the platform sunsets, so existing listings and royalties keep working.",
+    tagline: "Cardano NFT marketplace by Anvil, continuing JpgStore",
+    preview: require("./app-screenshots/wayup.webp"),
+    extraPreviews: [
+      require("./app-screenshots/wayup-home.webp"),
+    ],
+    icon: "/img/app-icons/wayup.png",
+    statsLabel: "wayup",
+    website: "https://www.wayup.io",
+    source: null,
+    category: "marketplace",
+    properties: ["nft"],
+    maintainerPick: true,
+    beginnerFriendly: true,
+    x: "wayupio",
   },
 ];
 
 export const TagList = Object.keys(Tags);
+
+// Recent submissions count — the last N entries appended to Showcases get a NEW badge.
+// New entries are conventionally appended at the end (see add-app.md).
+export const RECENT_APPS_COUNT = 5;
+
+// Length constraints enforced by the schema validator and documented in add-app.md.
+export const TITLE_MAX_LEN = 25;
+export const TAGLINE_MAX_LEN = 60;
+export const DESCRIPTION_MIN_LEN = 120;
+export const DESCRIPTION_MAX_LEN = 180;
+
+// Derive a stable URL slug from each Showcase title. Mirrors scripts/generate-apps-metadata.js
+// so /apps/<slug> in the runtime matches the routes registered by plugins/apps-routes.
+function slugifyTitle(title) {
+  return title
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+Showcases.forEach((showcase) => {
+  showcase.slug = slugifyTitle(showcase.title);
+});
+
 function sortShowcases() {
   let result = Showcases;
 
@@ -1563,7 +1919,7 @@ function sortShowcases() {
   result = sortBy(result, (showcase) => showcase.title.toLowerCase());
 
   // Sort by favorite tag, favorite first
-  result = sortBy(result, (showcase) => !showcase.tags.includes("favorite"));
+  result = sortBy(result, (showcase) => !showcase.maintainerPick);
   return result;
 }
 
@@ -1575,15 +1931,24 @@ function ensureShowcaseValid(showcase) {
     const keys = Object.keys(showcase);
     const validKeys = [
       "title",
+      "slug",
       "description",
+      "tagline",
       "preview",
+      "extraPreviews",
       "website",
       "source",
-      "tags",
+      "category",
+      "properties",
+      "maintainerPick",
+      "beginnerFriendly",
       "icon",
       "statsLabel",
+      "metadataLabel",
       "statsNote",
       "walletFeatures",
+      "spotlight",
+      "x",
     ];
     const unknownKeys = difference(keys, validKeys);
     if (unknownKeys.length > 0) {
@@ -1597,11 +1962,22 @@ function ensureShowcaseValid(showcase) {
     if (!showcase.title) {
       throw new Error("Site title is missing");
     }
+    if (showcase.title.length > TITLE_MAX_LEN) {
+      throw new Error(
+        `title exceeds ${TITLE_MAX_LEN} chars (${showcase.title.length}): ${showcase.title}`
+      );
+    }
   }
 
   function checkDescription() {
     if (!showcase.description) {
       throw new Error("Site description is missing");
+    }
+    const len = showcase.description.length;
+    if (len < DESCRIPTION_MIN_LEN || len > DESCRIPTION_MAX_LEN) {
+      throw new Error(
+        `description must be ${DESCRIPTION_MIN_LEN}-${DESCRIPTION_MAX_LEN} chars, got ${len}: ${showcase.description}`
+      );
     }
   }
 
@@ -1620,11 +1996,10 @@ function ensureShowcaseValid(showcase) {
   }
 
   function checkPreview() {
+    if (showcase.preview == null) return; // optional — card omits the image area entirely
     if (
-      !showcase.preview ||
-      (showcase.preview instanceof String &&
-        (showcase.preview.startsWith("http") ||
-          showcase.preview.startsWith("//")))
+      showcase.preview instanceof String &&
+      (showcase.preview.startsWith("http") || showcase.preview.startsWith("//"))
     ) {
       throw new Error(
         `Site has bad image preview=[${showcase.preview}].\nThe image should be hosted on the Developer Portal GitHub, and not use remote HTTP or HTTPS URLs`
@@ -1632,21 +2007,34 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
-  function checkTags() {
-    if (
-      !showcase.tags ||
-      !(showcase.tags instanceof Array) ||
-      showcase.tags.includes("")
-    ) {
-      throw new Error(`Bad showcase tags=[${JSON.stringify(showcase.tags)}]`);
+  function checkCategory() {
+    if (!showcase.category || typeof showcase.category !== "string") {
+      throw new Error(`Missing or invalid category: ${JSON.stringify(showcase.category)}`);
     }
-    const unknownTags = difference(showcase.tags, TagList);
-    if (unknownTags.length > 0) {
+    if (!Categories[showcase.category]) {
       throw new Error(
-        `Unknown tags=[${unknownTags.join(
-          ","
-        )}\nThe available tags are ${TagList.join(",")}`
+        `Unknown category=${showcase.category}\nAvailable categories: ${CategoryList.join(", ")}`
       );
+    }
+  }
+
+  function checkProperties() {
+    if (!Array.isArray(showcase.properties)) {
+      throw new Error(`properties must be an array, got ${typeof showcase.properties}`);
+    }
+    const unknown = difference(showcase.properties, PropertyList);
+    if (unknown.length > 0) {
+      throw new Error(
+        `Unknown properties=[${unknown.join(",")}]\nAvailable properties: ${PropertyList.join(", ")}`
+      );
+    }
+  }
+
+  function checkBooleanFlags() {
+    for (const key of ["maintainerPick", "beginnerFriendly"]) {
+      if (typeof showcase[key] !== "boolean") {
+        throw new Error(`${key} must be a boolean, got ${typeof showcase[key]}`);
+      }
     }
   }
 
@@ -1656,16 +2044,62 @@ function ensureShowcaseValid(showcase) {
         "The source attribute is required.\nIf your Cardano project is not open-source, please make it explicit with 'source: null'"
       );
     } else {
-      const hasOpenSourceTag = showcase.tags.includes("opensource");
-      if (showcase.source === null && hasOpenSourceTag) {
+      const hasOpenSourceProp = showcase.properties.includes("opensource");
+      if (showcase.source === null && hasOpenSourceProp) {
         throw new Error(
-          "You can't add the opensource tag to a site that does not have a link to source code."
+          "You can't add the opensource property to a site that does not have a link to source code."
         );
-      } else if (showcase.source && !hasOpenSourceTag) {
+      } else if (showcase.source && !hasOpenSourceProp) {
         throw new Error(
-          "For open-source sites, please add the 'opensource' tag."
+          "For open-source sites, please add 'opensource' to properties."
         );
       }
+    }
+  }
+
+  function checkTagline() {
+    if (showcase.tagline === undefined) return;
+    if (typeof showcase.tagline !== "string" || !showcase.tagline.trim()) {
+      throw new Error("tagline must be a non-empty string when set");
+    }
+    if (showcase.tagline.length > TAGLINE_MAX_LEN) {
+      throw new Error(
+        `tagline exceeds ${TAGLINE_MAX_LEN} chars (${showcase.tagline.length}): ${showcase.tagline}`
+      );
+    }
+  }
+
+  function checkMetadataLabel() {
+    if (showcase.metadataLabel === undefined) return;
+    if (!Number.isInteger(showcase.metadataLabel) || showcase.metadataLabel <= 0) {
+      throw new Error(
+        `metadataLabel must be a positive integer (CIP metadata label), got ${JSON.stringify(showcase.metadataLabel)}`
+      );
+    }
+  }
+
+  function checkX() {
+    if (showcase.x === undefined) return;
+    if (typeof showcase.x !== "string" || !/^[A-Za-z0-9_]{1,15}$/.test(showcase.x)) {
+      throw new Error(
+        `x must be a Twitter/X handle (1-15 chars, A-Z 0-9 _, no @, no URL), got ${JSON.stringify(showcase.x)}`
+      );
+    }
+  }
+
+  function checkSpotlight() {
+    if (showcase.spotlight === undefined) return;
+    const s = showcase.spotlight;
+    if (!s || typeof s !== "object") {
+      throw new Error("spotlight must be an object {url, title, date}");
+    }
+    for (const key of ["url", "title", "date"]) {
+      if (typeof s[key] !== "string" || !s[key]) {
+        throw new Error(`spotlight.${key} must be a non-empty string`);
+      }
+    }
+    if (!/^https?:\/\//.test(s.url)) {
+      throw new Error(`spotlight.url must be an http(s) URL: ${s.url}`);
     }
   }
 
@@ -1675,8 +2109,14 @@ function ensureShowcaseValid(showcase) {
     checkDescription();
     checkWebsite();
     checkPreview();
-    checkTags();
+    checkCategory();
+    checkProperties();
+    checkBooleanFlags();
     checkOpenSource();
+    checkTagline();
+    checkMetadataLabel();
+    checkX();
+    checkSpotlight();
   } catch (e) {
     throw new Error(
       `Showcase site with title=${showcase.title} contains errors:\n${e.message}`,

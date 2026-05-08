@@ -1,28 +1,7 @@
 import React from "react";
 import { Showcases } from "@site/src/data/apps";
-import appStats from "@site/src/data/tx-stats.json";
+import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
 import styles from "./styles.module.css";
-
-// Helper function to format numbers with commas
-function formatNumber(num) {
-  return num.toLocaleString('en-US');
-}
-
-// Helper function to find app stats by label
-function getAppStats(app) {
-  // Use explicit statsLabel if provided
-  if (app.statsLabel) {
-    return appStats.appStats.find(stat => stat.label === app.statsLabel);
-  }
-
-  // Fallback: try exact match with normalized title
-  const normalized = app.title.toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/dex$/i, '')
-    .trim();
-
-  return appStats.appStats.find(stat => stat.label === normalized);
-}
 
 function AppCard({ app, stats, appRank, ctaText }) {
   const hasStats = stats && stats.txCount > 0;
@@ -104,18 +83,20 @@ function AppCard({ app, stats, appRank, ctaText }) {
 }
 
 export default function AppGrid({
-  tags = ['dex'],
+  categories = ['dex'],
   limit = null,
   showRank = true,
   showStats = true,
   gridTitle = null,
   ctaText = "Visit",
   moreLink = null,
-  moreTitle = "More Apps"
+  moreTitle = "More Apps",
+  excludeSlug = null,
 }) {
-  // Filter apps that have ANY of the specified tags
+  // Filter apps whose primary category matches any of the requested categories.
+  // excludeSlug is set by detail pages so the current app isn't shown in its own related list.
   const filteredApps = Showcases.filter(app =>
-    tags.some(tag => app.tags.includes(tag))
+    categories.includes(app.category) && app.slug !== excludeSlug
   );
 
   // Sort by transaction count (highest first), then alphabetically
@@ -145,12 +126,12 @@ export default function AppGrid({
   const hasMore = limit && appsWithRank.length > limit;
 
   // Generate default more link if not provided
-  const defaultMoreLink = `/apps?tags=${tags.join(',')}`;
+  const defaultMoreLink = `/apps?${categories.map((c) => `tags=${c}`).join('&')}`;
   const finalMoreLink = moreLink || defaultMoreLink;
 
-  // Generate tag label for display
-  const tagLabel = tags.length === 1
-    ? tags[0].toUpperCase()
+  // Generate label for display
+  const tagLabel = categories.length === 1
+    ? categories[0].toUpperCase()
     : 'apps';
 
   if (filteredApps.length === 0) {

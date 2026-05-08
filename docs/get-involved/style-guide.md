@@ -15,7 +15,9 @@ This guide ensures consistency across all cardano.org content. Use it when writi
 - Use gender-inclusive pronouns they/their/them rather than he/she.
 - Use the Oxford comma.
 - Spell out one to nine; use numerals for 10 and above.
-- Avoid three-letter acronyms (TLAs). There are too many in blockchain—don't invent new ones.
+- Avoid three-letter acronyms (TLAs). There are too many in blockchain; don't invent new ones.
+- No em dashes (`—`). Use a period, semicolon, colon, comma, or parentheses instead. The same applies to en dashes (`–`) outside of numeric ranges.
+- No arrow decorations on links (`→`, `←`). Plain link text is enough; do not append directional glyphs.
 
 ## Spelling & Capitalization
 
@@ -68,7 +70,7 @@ This guide ensures consistency across all cardano.org content. Use it when writi
 | IOG | Input Output | Outdated name |
 | SPO | stake pool / operator | Spell it out |
 | settlement layer | layer 1 | "Cardano SL" is outdated |
-| staking (without context) | delegating / operating a stake pool | "Staking" is ambiguous—clarify if you mean delegating stake or running a pool |
+| staking (without context) | delegating / operating a stake pool | "Staking" is ambiguous; clarify if you mean delegating stake or running a pool |
 | tps | transactions per second | Spell out; also note it's a flawed metric for blockchain performance |
 
 ## Entity Names
@@ -85,5 +87,5 @@ These organizations have specific branding requirements:
 
 ## See Also
 
-- [Glossary](/docs/glossary) — Definitions of Cardano terminology
-- [Create a News Article](/docs/get-involved/create-a-news-article) — How to publish news
+- [Glossary](/docs/glossary): Definitions of Cardano terminology
+- [Create a News Article](/docs/get-involved/create-a-news-article): How to publish news

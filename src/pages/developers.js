@@ -71,7 +71,7 @@ function DeveloperShowcase() {
         >
           {translate({
             id: "developers.showcase.cta",
-            message: "Explore Developer Portal →",
+            message: "Explore Developer Portal",
           })}
         </Link>
       </div>
@@ -116,8 +116,7 @@ function DeveloperShowcase() {
             {translate({
               id: "developers.features.startBuilding.linkLabel",
               message: "Browse SDKs and tools",
-            })}{" "}
-            <span aria-hidden="true">→</span>
+            })}
           </span>
         </div>
       </Link>
@@ -152,8 +151,7 @@ function DeveloperShowcase() {
             {translate({
               id: "developers.features.smartContracts.linkLabel",
               message: "Start with smart contracts",
-            })}{" "}
-            <span aria-hidden="true">→</span>
+            })}
           </span>
         </div>
       </Link>
@@ -188,8 +186,7 @@ function DeveloperShowcase() {
             {translate({
               id: "developers.features.firstLine.linkLabel",
               message: "Explore courses",
-            })}{" "}
-            <span aria-hidden="true">→</span>
+            })}
           </span>
         </div>
       </Link>
@@ -300,7 +297,6 @@ function DeveloperShowcase() {
             id: "developers.community.allCommunities",
             message: "Developer Communities",
           })}
-          <span aria-hidden="true">→</span>
         </Link>
         <Link to="https://cardanoupdates.com/" className={styles.inCardLink}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -310,7 +306,6 @@ function DeveloperShowcase() {
             id: "developers.explore.updateTracker.title",
             message: "Technical Update Tracker",
           })}
-          <span aria-hidden="true">→</span>
         </Link>
       </div>
     </div>

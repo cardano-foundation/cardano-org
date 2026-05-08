@@ -24,8 +24,8 @@ import ConnectionLine from '@site/src/components/Layout/ConnectionLine';
 |------|------|---------|-------------|
 | `direction` | `'horizontal' \| 'vertical'` | `'horizontal'` | Orientation of the line. Vertical needs a height-providing parent. |
 | `withDots` | `boolean` | `true` | Show small dots at each end of the line. |
-| `className` | `string` | – | Additional class name on the root span. |
-| `style` | `object` | – | Inline style passed to the root span (useful for setting custom length). |
+| `className` | `string` | - | Additional class name on the root span. |
+| `style` | `object` | - | Inline style passed to the root span (useful for setting custom length). |
 
 ## Live Preview
 

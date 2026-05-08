@@ -247,7 +247,7 @@ export default function Home() {
             <Link to="https://developers.cardano.org/docs/build/integrate/exchange-integrations/#wallet-management">
               {translate({
                 id: "exchanges.flow.learnMore",
-                message: "Read the wallet management workflow in detail →",
+                message: "Read the wallet management workflow in detail",
               })}
             </Link>
           </p>
@@ -270,7 +270,7 @@ export default function Home() {
                 >
                   {translate({
                     id: "exchanges.nativeAssets.linkLabel",
-                    message: "Learn how to handle native assets →",
+                    message: "Learn how to handle native assets",
                   })}
                 </Link>
               </span>

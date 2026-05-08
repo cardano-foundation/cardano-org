@@ -30,6 +30,10 @@ These contributions require no technical skills - perfect for getting started:
 - **[Create an event highlight](/docs/get-involved/create-a-event)** - promote your Cardano event
 - **[Create a news article](/docs/get-involved/create-a-news-article)** - share important ecosystem news
 
+:::info Curation
+The [Maintainer picks](/docs/get-involved/maintainer-picks) section on `/apps` is curated separately by page maintainers. New picks follow a public proposal process. See the criteria and workflow.
+:::
+
 :::tip Start Here
 Adding your project is the easiest way to contribute! It takes 5-10 minutes and requires no coding experience. Just follow our step-by-step guides.
 :::

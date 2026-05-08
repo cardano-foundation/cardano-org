@@ -119,15 +119,6 @@
   color: var(--ifm-color-primary);
 }
 
-.featureLink span {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.featureRow:hover .featureLink span {
-  transform: translateX(4px);
-}
-
 /* Developer Tools */
 .toolsGrid {
   display: grid;
@@ -225,15 +216,6 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-}
-
-.inCardLink span {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.inCardLink:hover span {
-  transform: translateX(4px);
 }
 
 /* Responsive */

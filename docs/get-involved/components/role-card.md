@@ -29,12 +29,12 @@ import { FaUsers } from 'react-icons/fa';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `icon` | `ReactNode` | – | Icon shown in the accented circle. Use a FontAwesome icon component (e.g. `<FaUsers />`). |
-| `title` | `string` | – | Card heading. |
-| `children` | `ReactNode` | – | Description text below the title. |
+| `icon` | `ReactNode` | - | Icon shown in the accented circle. Use a FontAwesome icon component (e.g. `<FaUsers />`). |
+| `title` | `string` | - | Card heading. |
+| `children` | `ReactNode` | - | Description text below the title. |
 | `accent` | `'blue' \| 'violet' \| 'teal'` | `'blue'` | Tints the icon background and the title. |
-| `href` | `string` | – | If set, the card renders as a `<Link>` to this URL. |
-| `className` | `string` | – | Additional class name passed to the root element. |
+| `href` | `string` | - | If set, the card renders as a `<Link>` to this URL. |
+| `className` | `string` | - | Additional class name passed to the root element. |
 
 ## Live Preview
 
