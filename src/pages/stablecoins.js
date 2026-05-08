@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
-import { translate } from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -291,6 +291,36 @@ export default function Stablecoins() {
             </div>
           </BoundaryBox>
         </BackgroundWrapper>
+
+        <BoundaryBox>
+          <div className={pageStyles.dataAttribution}>
+            <p>
+              <Translate
+                id="stablecoins.attribution.market"
+                values={{
+                  coingecko: (
+                    <a
+                      href="https://www.coingecko.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      CoinGecko
+                    </a>
+                  ),
+                }}
+              >
+                {"Market data powered by {coingecko}."}
+              </Translate>
+            </p>
+            <p className={pageStyles.dataAttributionFresh}>
+              {translate({
+                id: "stablecoins.attribution.freshness",
+                message:
+                  "Values update automatically and may lag exchange tickers by a few minutes.",
+              })}
+            </p>
+          </div>
+        </BoundaryBox>
       </main>
     </Layout>
   );
