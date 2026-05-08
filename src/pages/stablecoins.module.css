@@ -160,3 +160,29 @@
 .whyCardano {
   padding: 1rem 0px;
 }
+
+.dataAttribution {
+  margin: 3rem auto 1.5rem auto;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.dataAttribution a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ifm-color-emphasis-400);
+  text-underline-offset: 2px;
+}
+
+.dataAttribution a:hover {
+  color: var(--ifm-color-emphasis-800);
+  text-decoration-color: currentColor;
+}
+
+.dataAttributionFresh {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+}

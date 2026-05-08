@@ -1601,22 +1601,6 @@ export const Showcases = [
     x: "AscentRivals",
   },
   {
-    title: "USDM Stablecoin",
-    description:
-      "Fully backed USD stablecoin on Cardano with off-chain reserves and monthly attestations. Designed for payments, treasury, and DeFi applications.",
-    tagline: "Fully backed USD stablecoin on Cardano",
-    icon: "/img/app-icons/usdm.jpeg",
-    statsLabel: "$usdm",
-    statsNote: "mint/burn only",
-    website: "https://moneta.global/",
-    source: null,
-    category: "other",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "USDMOfficial",
-  },
-  {
     title: "Asteria",
     description:
       "Fully on-chain strategy game built for developers. Pilot a spaceship across a 2D grid where every entity is a Cardano eUTXO and Plutus contract.",

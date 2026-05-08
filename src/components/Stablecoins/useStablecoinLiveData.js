@@ -109,13 +109,17 @@ export default function useStablecoinLiveData() {
 
     async function loadFee() {
       try {
-        // Match the methodology used on /insights/transactions#avg-fee:
-        // weighted average over recent epochs, fees / tx_count. This reflects
-        // what users actually pay on-chain, not the protocol-min fee floor.
+        // Weighted average over the last 10 epochs (~50 days), fees / tx_count.
+        // Reflects current network conditions, smoothed across multiple epochs.
+        // Koios `/epoch_info` returns every epoch since launch, so we sort
+        // descending by epoch_no and keep the most recent slice.
         const epochsRes = await withSingleRetry(() => koios.get("/epoch_info"));
         if (cancelled) return;
 
-        const rows = Array.isArray(epochsRes?.data) ? epochsRes.data : [];
+        const rows = (Array.isArray(epochsRes?.data) ? epochsRes.data : [])
+          .slice()
+          .sort((a, b) => Number(b.epoch_no) - Number(a.epoch_no))
+          .slice(0, 10);
         let totalFees = 0;
         let totalTx = 0;
         for (const row of rows) {
