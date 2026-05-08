@@ -76,7 +76,7 @@ html[data-theme="dark"] .heroBannerZoomRedWhite {
   background-repeat: no-repeat;
   background-position: right;
   height: 410px;
-  background-color: #0538af;
+  background-color: #0033AD;
 }
 
 html[data-theme="light"] .heroBannerZoomRedWhiteDark {
@@ -98,7 +98,7 @@ html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
   background-repeat: no-repeat;
   background-position: calc(100% + 220px) center;  
   height: 410px;
-  background-color: #0538af;
+  background-color: #0033AD;
   background-image: url(/img/hero-header-zoom-blue-red.svg);
 }
 
@@ -120,7 +120,7 @@ html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
 
 html[data-theme="light"] .heroBannerAda {
   background-image: url(/img/hero-header-ada.webp);
-  background-color: #0538af;
+  background-color: #0033AD;
 }
 
 html[data-theme="dark"] .heroBannerAda {
@@ -231,7 +231,7 @@ html[data-theme="dark"] .heroBannerOverlap {
 
 html[data-theme="light"] .heroBannerWaves {
 
-  background-color: #0538af;
+  background-color: #0033AD;
 }
 
 html[data-theme="dark"] .heroBannerWaves {
