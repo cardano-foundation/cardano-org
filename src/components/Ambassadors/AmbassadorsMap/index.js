@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import worldOutline from "@site/src/data/worldOutline.json";
+import { avatarColor } from "@site/src/utils/ambassadorColors";
 import styles from "./styles.module.css";
 
 const VIEW_W = 1000;
@@ -12,13 +13,6 @@ function project(lon, lat) {
   const x = PAD_X + ((lon + 180) / 360) * (VIEW_W - 2 * PAD_X);
   const y = ((90 - lat) / 180) * VIEW_H;
   return [x, y];
-}
-
-const PALETTE = ["#3a5fd6", "#7c5be0", "#10a17a", "#d99808", "#dc2c5a", "#00a3a3", "#5b80ff"];
-function avatarColor(name) {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) | 0;
-  return PALETTE[Math.abs(hash) % PALETTE.length];
 }
 
 const POLYGON_PATHS = worldOutline.map((ring) => {

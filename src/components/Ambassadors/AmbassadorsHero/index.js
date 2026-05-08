@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import { HiArrowRight } from "react-icons/hi";
 import styles from "./styles.module.css";
 
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
