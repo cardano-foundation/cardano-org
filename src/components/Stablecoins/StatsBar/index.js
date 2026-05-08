@@ -9,7 +9,7 @@ function combinedMarketCap(pricesById) {
   let total = 0;
   let any = false;
   for (const coin of NATIVE_STABLECOINS) {
-    const p = pricesById[coin.coingeckoId];
+    const p = pricesById[coin.id];
     if (p && typeof p.usd_market_cap === 'number') {
       total += p.usd_market_cap;
       any = true;

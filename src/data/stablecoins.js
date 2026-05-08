@@ -4,7 +4,9 @@ export const NATIVE_STABLECOINS = [
   {
     id: "usdcx",
     name: "USDCx",
-    coingeckoId: "usdcx",
+    // CoinGecko's "usdcx" id resolves to a different chain's USDCx, not Cardano's
+    // (Circle xReserve). Sourcing this coin's market cap from Koios by design.
+    coingeckoId: null,
     cardanoAsset: {
       policyId: "1f3aec8bfe7ea4fe14c5f121e2a92e301afe414147860d557cac7e34",
       assetNameHex: "5553444378",

@@ -11,7 +11,7 @@ const MARKET_CAP_LABEL = translate({
 });
 
 function withLiveMarketCap(coin, pricesById, pricesStatus) {
-  const live = pricesById?.[coin.coingeckoId];
+  const live = pricesById?.[coin.id];
   return [
     {
       label: MARKET_CAP_LABEL,
