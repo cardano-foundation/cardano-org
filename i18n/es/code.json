@@ -1919,7 +1919,7 @@
     "message": "Esta comunidad es administrada por el personal de la comunidad y usted, la comunidad. Si tienes más preguntas sobre cómo deberían funcionar las cosas aquí, abrir un nuevo tema en la [categoría de comentarios de la comunidad](https://forum.cardano.org/c/english/community-feedback/16) del foro y vamos a discutir! Si alguna vez hay un problema crítico o urgente, por favor contáctenos directamente en la comunidad *at* cardano *dot* org."
   },
   "constitution.error.title": {
-    "message": "Constitución actualmente aprobada"
+    "message": "Constitución actualmente promulgada"
   },
   "constitution.error.localCopy": {
     "message": "(Copia local)"
@@ -1943,52 +1943,52 @@
     "message": "Constitución Cardano actualmente aprobada"
   },
   "constitution.enacted.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano. Lea la carta aprobada actualmente, explore su historial de ratificación y descargue el texto completo a través de IPFS."
   },
   "constitution.link.viewOnIPFS": {
-    "message": "View on IPFS"
+    "message": "Ver en IPFS"
   },
   "constitution.error.loadDocument": {
-    "message": "Could not load constitution document:"
+    "message": "No se pudo cargar el documento de constitución:"
   },
   "constitution.loading.document": {
-    "message": "Loading document..."
+    "message": "Cargando documento..."
   },
   "constitution.history.title": {
-    "message": "Constitution Ratification History"
+    "message": "Historia de la ratificación de la Constitución"
   },
   "constitution.history.description": {
-    "message": "Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS."
+    "message": "A continuación encontrará la Constitución de Cardano y su historia de ratificación. Haga clic en cualquier versión para ver el texto completo sobre IPFS."
   },
   "constitution.history.versionRatified": {
-    "message": "Version ratified at epoch"
+    "message": "Versión ratificada en epoch"
   },
   "constitution.history.enactedAtEpoch": {
-    "message": "Enacted at epoch"
+    "message": "Promulgada en epoch"
   },
   "constitution.history.hash": {
     "message": "Hash:"
   },
   "constitution.link.viewOnIPFSHistory": {
-    "message": "View this constitution on IPFS"
+    "message": "Ver esta constitución en IPFS"
   },
   "constitution.hero.title": {
-    "message": "The Cardano Constitution"
+    "message": "La Constitución de Cardano"
   },
   "constitution.hero.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano."
   },
   "constitution.layout.title": {
-    "message": "The Cardano Constitution, On-Chain Governance Framework"
+    "message": "La Constitución de Cardano, Marco de Gobernanza en Cadena"
   },
   "constitution.layout.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano. Lea la carta promulgada actualmente, explore su historial de ratificación y descargue el texto completo a través de IPFS."
   },
   "contact.hero.title": {
-    "message": "Contact"
+    "message": "Contacto"
   },
   "contact.hero.description": {
-    "message": "Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
+    "message": "Cardano cuenta con el apoyo de la Fundación Cardano, IOG, EMURGO, Intersect, PRAGMA y otros. Rellene el siguiente formulario de contacto y le pondremos en contacto con el equipo mejor situado para asistirle."
   },
   "contact.intersect.title": {
     "message": "Intersect - one of the member-based organizations"
