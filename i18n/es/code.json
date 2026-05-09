@@ -267,7 +267,7 @@
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "Back to main menu",
+    "message": "Volver al menú principal",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
@@ -854,7 +854,7 @@
     "message": "Hay varias maneras de obtener ada, pero el método más común es comprarlo en intercambios de criptomoneda usando monedas fiat u otras criptomonedas."
   },
   "getStarted.step5.button": {
-    "message": "View all options"
+    "message": "Ver todas las opciones"
   },
   "getStarted.step5.securityNote": {
     "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores."
@@ -1886,10 +1886,10 @@
     "message": "Publicar sólo tus propias cosas"
   },
   "codeOfConduct.postOwnStuff.description": {
-    "message": "You may not post anything digital that belongs to someone else without permission. You may not post descriptions of, links to, or methods for stealing someone's intellectual property (software, video, audio, images), or for breaking any other law. Credit should always be attributed back to the original content producer."
+    "message": "No puedes publicar nada digital que pertenezca a otra persona sin permiso. Usted no puede publicar descripciones de, enlaces o métodos para robar la propiedad intelectual de alguien (software, vídeo, audio, imágenes) o para infringir cualquier otra ley. Siempre se debe atribuir crédito al productor de contenido original."
   },
   "codeOfConduct.multipleAccounts.title": {
-    "message": "Multiple Accounts"
+    "message": "Múltiples cuentas"
   },
   "codeOfConduct.multipleAccounts.description": {
     "message": "Multiple accounts by the same user will not be allowed. This helps foster a more human experience in the online world and restricts spamming. Note that duplicate accounts may be investigated and removed."
