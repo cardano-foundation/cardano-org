@@ -1892,13 +1892,13 @@
     "message": "Múltiples cuentas"
   },
   "codeOfConduct.multipleAccounts.description": {
-    "message": "No se permitirán múltiples cuentas por el mismo usuario. Esto ayuda a fomentar una experiencia más humana en el mundo en línea y restringe el spameo. Tenga en cuenta que las cuentas duplicadas pueden ser investigadas y eliminadas."
+    "message": "No se permitirán múltiples cuentas por el mismo usuario. Esto ayuda a fomentar una experiencia más humana en el mundo en línea y restringe el spamming. Tenga en cuenta que las cuentas duplicadas pueden ser investigadas y eliminadas."
   },
   "codeOfConduct.violation.title": {
-    "message": "Violación de las reglas"
+    "message": "Incumplimiento de las reglas"
   },
   "codeOfConduct.violation.description1": {
-    "message": "Si alguna de las reglas se rompe, los moderadores ejecutarán las siguientes sanciones:"
+    "message": "Si alguna de las reglas es incumplida, los moderadores realizarán las siguientes sanciones:"
   },
   "codeOfConduct.violation.list1": {
     "message": "Primera infracción: se advierte y el usuario será suspendido de su cuenta durante 24 horas."
@@ -1991,25 +1991,25 @@
     "message": "Cardano cuenta con el apoyo de la Fundación Cardano, IOG, EMURGO, Intersect, PRAGMA y otros. Rellene el siguiente formulario de contacto y le pondremos en contacto con el equipo mejor situado para asistirle."
   },
   "contact.intersect.title": {
-    "message": "Intersect - one of the member-based organizations"
+    "message": "Intersect - una de las organizaciones basadas en miembros"
   },
   "contact.intersect.description": {
-    "message": "Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development."
+    "message": "Intersect es una organización basada en miembros del ecosistema de Cardano encargado de asegurar su continuidad y desarrollo futuro."
   },
   "contact.intersect.buttonLabel": {
-    "message": "Join Intersect"
+    "message": "Unirse a Intersect"
   },
   "contact.technicalIssue.title": {
-    "message": "Report a technical issue"
+    "message": "Reportar un problema técnico"
   },
   "contact.technicalIssue.description": {
-    "message": "To get help for one of the following wallets, please raise a support ticket."
+    "message": "Para obtener ayuda para una de las siguientes carteras, por favor levanta un ticket de soporte."
   },
   "contact.technicalIssue.buttonLabel": {
-    "message": "Raise Ticket"
+    "message": "Generar ticket"
   },
   "contact.sponsorship.title": {
-    "message": "Cardano Summit Sponsorship"
+    "message": "Patrocinación de Cardano Summit"
   },
   "contact.sponsorship.description1": {
     "message": "Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we're excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization's needs and goals."
