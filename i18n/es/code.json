@@ -1892,55 +1892,55 @@
     "message": "Múltiples cuentas"
   },
   "codeOfConduct.multipleAccounts.description": {
-    "message": "Multiple accounts by the same user will not be allowed. This helps foster a more human experience in the online world and restricts spamming. Note that duplicate accounts may be investigated and removed."
+    "message": "No se permitirán múltiples cuentas por el mismo usuario. Esto ayuda a fomentar una experiencia más humana en el mundo en línea y restringe el spameo. Tenga en cuenta que las cuentas duplicadas pueden ser investigadas y eliminadas."
   },
   "codeOfConduct.violation.title": {
-    "message": "Violation of rules"
+    "message": "Violación de las reglas"
   },
   "codeOfConduct.violation.description1": {
-    "message": "If any of the rules are broken, moderators will perform the following sanctions:"
+    "message": "Si alguna de las reglas se rompe, los moderadores ejecutarán las siguientes sanciones:"
   },
   "codeOfConduct.violation.list1": {
-    "message": "First offence: warning is given and the user will be suspended from their account for 24 hours."
+    "message": "Primera infracción: se advierte y el usuario será suspendido de su cuenta durante 24 horas."
   },
   "codeOfConduct.violation.list2": {
-    "message": "Second offence: warning is given and the user will be suspended for a period of up to 1 month depending on the severity of the violation."
+    "message": "Segunda infracción: se advierte y el usuario será suspendido durante un período de hasta 1 mes dependiendo de la gravedad de la violación."
   },
   "codeOfConduct.violation.list3": {
-    "message": "Third and final offence: if the user continues to repeatedly break community rules, their account will be banned from the community platform. This penalty may be applied across all community channels if necessary."
+    "message": "Tercera y última infracción: si el usuario continúa violando repetidamente las reglas de la comunidad, su cuenta será baneada de la plataforma comunitaria. Esta penalización puede aplicarse en todos los canales comunitarios si es necesario."
   },
   "codeOfConduct.violation.description2": {
-    "message": "The community team reserves the right to deny access to the official Community channels to anyone who has violated the Cardano Community Code of Conduct."
+    "message": "El equipo de la comunidad se reserva el derecho de denegar el acceso a los canales oficiales de la Comunidad a cualquiera que haya violado el Código de Conducta de la Comunidad Cardano."
   },
   "codeOfConduct.poweredByYou.title": {
-    "message": "Powered by you"
+    "message": "Desarrollado por ti"
   },
   "codeOfConduct.poweredByYou.description": {
-    "message": "This community is operated by the community staff and you, the community. If you have any further questions about how things should work here, open a new topic in the [community feedback category](https://forum.cardano.org/c/english/community-feedback/16) of the forum and let's discuss! If there is ever a critical or urgent issue please contact us directly at community *at* cardano *dot* org."
+    "message": "Esta comunidad es administrada por el personal de la comunidad y usted, la comunidad. Si tienes más preguntas sobre cómo deberían funcionar las cosas aquí, abrir un nuevo tema en la [categoría de comentarios de la comunidad](https://forum.cardano.org/c/english/community-feedback/16) del foro y vamos a discutir! Si alguna vez hay un problema crítico o urgente, por favor contáctenos directamente en la comunidad *at* cardano *dot* org."
   },
   "constitution.error.title": {
-    "message": "Current Enacted Constitution"
+    "message": "Constitución actualmente aprobada"
   },
   "constitution.error.localCopy": {
-    "message": "(Local Copy)"
+    "message": "(Copia local)"
   },
   "constitution.error.fetchError": {
-    "message": "Could not fetch from data.cardano.org:"
+    "message": "No se pudo obtener de data.cardano.org:"
   },
   "constitution.error.showingLocal": {
-    "message": "Showing local copy below."
+    "message": "Mostrando copia local abajo."
   },
   "constitution.link.download": {
-    "message": "Download Constitution"
+    "message": "Descargar Constitución"
   },
   "constitution.link.viewRawMarkdown": {
-    "message": "View Raw Markdown"
+    "message": "Ver Recorte Crudo"
   },
   "constitution.loading.versions": {
-    "message": "Loading constitution versions..."
+    "message": "Cargando versiones de la constitución..."
   },
   "constitution.enacted.title": {
-    "message": "Current Enacted Cardano Constitution"
+    "message": "Constitución Cardano actualmente aprobada"
   },
   "constitution.enacted.description": {
     "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
