@@ -1869,6 +1869,38 @@ export const Showcases = [
     beginnerFriendly: true,
     x: "wayupio",
   },
+  {
+    title: "Cardano-Korea",
+    description:
+      "",
+    tagline: "Synthetics protocol for on-chain RWA exposure",
+    preview: require("./app-screenshots/cardanokorea.jpg")
+    ],
+    icon: "/img/app-icons/cardanokorea.png",
+    statsLabel: "Cardano-Korea",
+    website: "https://cardanokorea.com",
+    source: "",
+    category: "",
+    properties: ["Community"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "ktop_pool",
+  },
+  {
+    title: "Cardano Korea",
+    description:
+      "A dedicated community hub for the South Korean Cardano ecosystem, providing wallet analysis tools, Governance info, news, interactive tools for Cardano",
+    tagline: "The central gateway for the Korean Cardano community",
+    preview: require("./app-screenshots/cardanokorea.jpg"),
+    icon: "/img/app-icons/cardanokorea.png",
+    website: "https://cardanokorea.com/",
+    source: null, 
+    category: "ecosystem", 
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: true, // 한국어 서비스와 가이드를 제공하므로 true가 적절합니다.
+    x: "Cardano_Korea",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
