@@ -2015,28 +2015,28 @@
     "message": "¡Gracias por su interés en patrocinar nuestra cumbre anual de Cardano! Su apoyo es crucial para el éxito de nuestra cumbre, y estamos entusiasmados con la posibilidad de asociarnos con usted. Las oportunidades de patrocinio proporcionan una exposición significativa y pueden adaptarse a las necesidades y metas de su organización."
   },
   "contact.sponsorship.description2": {
-    "message": "Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event."
+    "message": "Por favor rellene el siguiente formulario para expresar su interés y proporcionarnos más detalles sobre su organización y preferencias de patrocinio. Nuestro equipo revisará su envío y se pondrá en contacto con usted para discutir posibles paquetes de patrocinio y cómo podemos colaborar mejor para el próximo evento."
   },
   "contact.sponsorship.buttonLabel": {
-    "message": "Sponsorship Request"
+    "message": "Solicitud de patrocinio"
   },
   "contact.meta.title": {
-    "message": "Contact Cardano, Get in Touch"
+    "message": "Contactar con Cardano, Ponte en contacto"
   },
   "contact.meta.description": {
-    "message": "Get in touch with the Cardano ecosystem. Reach the Cardano Foundation, Intersect, IOG, or EMURGO for partnerships, support, or sponsorship inquiries."
+    "message": "Póngase en contacto con el ecosistema de Cardano, llegando a la Fundación Cardano, Intersect, IOG o EMURGO para consultas de asociaciones, apoyo o patrocinio."
   },
   "contact.divider.hereToHelp": {
-    "message": "Here to help"
+    "message": "Aquí para ayudar"
   },
   "contact.helpSection.title": {
-    "message": "What Can We Help You With?"
+    "message": "¿Cómo podemos ayudarle?"
   },
   "contact.select.prefix": {
     "message": "Yo tengo"
   },
   "contact.select.placeholder": {
-    "message": "not yet decided (please select)"
+    "message": "aún no se ha decidido (por favor seleccionar)"
   },
   "contact.select.option.technicalIssue": {
     "message": "un problema técnico con Daedalus, Nami o Lace"
