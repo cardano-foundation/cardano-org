@@ -1881,8 +1881,8 @@ export const Showcases = [
     category: "ecosystem", 
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: true, // 한국어 서비스와 가이드를 제공하므로 true가 적절합니다.
-    x: "Cardano_Korea",
+    beginnerFriendly: true, 
+    x: "ktop_pool",
   },
 ];
 
