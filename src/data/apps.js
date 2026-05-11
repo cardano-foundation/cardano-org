@@ -1870,7 +1870,7 @@ export const Showcases = [
     x: "wayupio",
   },
   {
-    title: "Surf",
+    title: "Surf Lending",
     description:
       "Pooled lending protocol with isolated markets, each with its own risk profile, for earning interest and borrowing against Cardano native tokens.",
     tagline: "Isolated lending markets on Cardano",
