@@ -1885,6 +1885,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
+    x: "surfcardano",
   },
 ];
 
