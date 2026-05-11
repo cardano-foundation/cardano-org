@@ -1869,6 +1869,25 @@ export const Showcases = [
     beginnerFriendly: true,
     x: "wayupio",
   },
+  {
+    title: "Hizz",
+    description:
+      "Hizz is a live Cardano trading terminal for fast token discovery, AI-powered signals, smart wallet tracking, and seamless trade execution across the Cardano ecosystem.",
+    tagline: "The Cardano terminal for AI signals and smart trading.",
+    preview: require("./app-screenshots/hizz.webp"),
+    extraPreviews: [
+      require("./app-screenshots/hizz_pair.webp"),
+      require("./app-screenshots/hizz_signal.webp"),
+    ],
+    icon: "/img/app-icons/hizz.png",
+    website: "https://www.hizz.io",
+    source: null,
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "hizz_io",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
