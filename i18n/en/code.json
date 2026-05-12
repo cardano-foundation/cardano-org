@@ -3536,49 +3536,112 @@
     "message": "Ambassadors contribute in many ways to support Cardano's mission and grow the ecosystem."
   },
   "ambassadors.milestones.divider": {
-    "message": "Program Milestones"
+    "message": "Top Achievements"
   },
   "ambassadors.milestones.title": {
-    "message": "The evolution of the Cardano Ambassador Program"
+    "message": "Top achievements led by Ambassadors"
   },
   "ambassadors.milestones.description": {
-    "message": "From a 2018 initiative to a global network with measurable impact across continents."
+    "message": "Concrete wins from the program. Partnerships, integrations and events delivered by named ambassadors and ambassador groups."
   },
-  "ambassadors.milestone.2018.title": {
-    "message": "Program launched"
+  "ambassadors.milestones.creditPrefix": {
+    "message": "Led by"
   },
-  "ambassadors.milestone.2018.body": {
-    "message": "The Cardano Ambassador Program is established by the Cardano Foundation."
+  "ambassadors.milestone.catalyst-reviewers.title": {
+    "message": "LVL2 Catalyst Reviewers"
   },
-  "ambassadors.milestone.2020.title": {
-    "message": "Global growth phase"
+  "ambassadors.milestone.catalyst-reviewers.body": {
+    "message": "Sustained, top-tier proposal review across multiple Catalyst funds, shaping how community funding gets allocated."
   },
-  "ambassadors.milestone.2020.body": {
-    "message": "Expansion of community channels and multilingual support."
+  "ambassadors.milestone.catalyst-reviewers.credit": {
+    "message": "20+ Ambassadors"
   },
-  "ambassadors.milestone.2021.title": {
-    "message": "Stronger recognition"
+  "ambassadors.milestone.catalyst-reviewers.linkLabel": {
+    "message": "Reviewer levels"
   },
-  "ambassadors.milestone.2021.body": {
-    "message": "Structured roles, moderation and community operations."
+  "ambassadors.milestone.ledger-live.title": {
+    "message": "Ledger Live Integration"
   },
-  "ambassadors.milestone.2023.title": {
-    "message": "Ecosystem impact"
+  "ambassadors.milestone.ledger-live.body": {
+    "message": "Secure Ada management lands in Ledger's flagship app, driven by an Ambassador-led Catalyst proposal."
   },
-  "ambassadors.milestone.2023.body": {
-    "message": "More support for education, events and the developer ecosystem."
+  "ambassadors.milestone.ledger-live.credit": {
+    "message": "Ambassador Guild"
   },
-  "ambassadors.milestone.2024-25.title": {
-    "message": "Impact and transparency"
+  "ambassadors.milestone.ledger-live.linkLabel": {
+    "message": "Ledger announcement"
   },
-  "ambassadors.milestone.2024-25.body": {
-    "message": "Refinement toward impact measurement and transparency."
+  "ambassadors.milestone.summit-events.title": {
+    "message": "30+ Cardano Summit community events"
   },
-  "ambassadors.milestone.now.title": {
-    "message": "Stronger together"
+  "ambassadors.milestone.summit-events.body": {
+    "message": "A worldwide network of community-led Summit events extending the official program across continents."
   },
-  "ambassadors.milestone.now.body": {
-    "message": "A global network driving adoption and innovation."
+  "ambassadors.milestone.summit-events.credit": {
+    "message": "15+ Ambassadors"
+  },
+  "ambassadors.milestone.summit-events.linkLabel": {
+    "message": "Forum recap"
+  },
+  "ambassadors.milestone.petrobras.title": {
+    "message": "Petrobras education partnership"
+  },
+  "ambassadors.milestone.petrobras.body": {
+    "message": "A landmark education partnership with one of the world's largest energy companies, opening blockchain training to Petrobras engineers."
+  },
+  "ambassadors.milestone.petrobras.credit": {
+    "message": "Thiago Nunes"
+  },
+  "ambassadors.milestone.petrobras.linkLabel": {
+    "message": "Foundation blog"
+  },
+  "ambassadors.milestone.utn.title": {
+    "message": "UTN Buenos Aires partnership"
+  },
+  "ambassadors.milestone.utn.body": {
+    "message": "Cardano enters Argentina's largest engineering university as an official education partner."
+  },
+  "ambassadors.milestone.utn.credit": {
+    "message": "Jose Iadiccico"
+  },
+  "ambassadors.milestone.utn.linkLabel": {
+    "message": "Foundation blog"
+  },
+  "ambassadors.milestone.alba-node.title": {
+    "message": "First Cardano node at a LATAM university"
+  },
+  "ambassadors.milestone.alba-node.body": {
+    "message": "ALBA (Ada Labs for Blockchain Applications) brings the first university-run Cardano node online in Latin America."
+  },
+  "ambassadors.milestone.alba-node.credit": {
+    "message": "Jose Iadiccico · Martin Ungar"
+  },
+  "ambassadors.milestone.alba-node.linkLabel": {
+    "message": "Announcement"
+  },
+  "ambassadors.milestone.buidler-fest.title": {
+    "message": "Buidler Fest, Buenos Aires"
+  },
+  "ambassadors.milestone.buidler-fest.body": {
+    "message": "A flagship developer gathering in LATAM, organised and powered by the local Ambassador community."
+  },
+  "ambassadors.milestone.buidler-fest.credit": {
+    "message": "9 Ambassadors"
+  },
+  "ambassadors.milestone.buidler-fest.linkLabel": {
+    "message": "Event announcement"
+  },
+  "ambassadors.milestone.org-translation.title": {
+    "message": "cardano.org community translation"
+  },
+  "ambassadors.milestone.org-translation.body": {
+    "message": "Ambassadors localised cardano.org into multiple languages, making the project accessible to non-English audiences."
+  },
+  "ambassadors.milestone.org-translation.credit": {
+    "message": "5 Ambassadors"
+  },
+  "ambassadors.milestone.org-translation.linkLabel": {
+    "message": "Translations page"
   },
   "ambassadors.directory.divider": {
     "message": "Ambassador Directory"

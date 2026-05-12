@@ -44,40 +44,76 @@
   ],
   "milestones": [
     {
-      "id": "2018",
-      "year": "2018",
-      "titleDefault": "Program launched",
-      "bodyDefault": "The Cardano Ambassador Program is established by the Cardano Foundation."
+      "id": "catalyst-reviewers",
+      "year": "2021-2025",
+      "titleDefault": "LVL2 Catalyst Reviewers",
+      "bodyDefault": "Sustained, top-tier proposal review across multiple Catalyst funds, shaping how community funding gets allocated.",
+      "creditDefault": "20+ Ambassadors",
+      "link": "https://docs.projectcatalyst.io/current-fund/community-review/community-reviewer-levels",
+      "linkLabelDefault": "Reviewer levels"
     },
     {
-      "id": "2020",
-      "year": "2020",
-      "titleDefault": "Global growth phase",
-      "bodyDefault": "Expansion of community channels and multilingual support."
+      "id": "ledger-live",
+      "year": "2022",
+      "titleDefault": "Ledger Live Integration",
+      "bodyDefault": "Secure Ada management lands in Ledger's flagship app, driven by an Ambassador-led Catalyst proposal.",
+      "creditDefault": "Ambassador Guild",
+      "link": "https://www.ledger.com/cardano-is-here-buy-manage-your-ada-in-ledger-live",
+      "linkLabelDefault": "Ledger announcement"
     },
     {
-      "id": "2021",
-      "year": "2021",
-      "titleDefault": "Stronger recognition",
-      "bodyDefault": "Structured roles, moderation and community operations."
+      "id": "summit-events",
+      "year": "2022-2023",
+      "titleDefault": "30+ Cardano Summit community events",
+      "bodyDefault": "A worldwide network of community-led Summit events extending the official program across continents.",
+      "creditDefault": "15+ Ambassadors",
+      "link": "https://forum.cardano.org/t/cardano-summit-2022-community-led-events/107443",
+      "linkLabelDefault": "Forum recap"
     },
     {
-      "id": "2023",
-      "year": "2023",
-      "titleDefault": "Ecosystem impact",
-      "bodyDefault": "More support for education, events and the developer ecosystem."
+      "id": "petrobras",
+      "year": "2024",
+      "titleDefault": "Petrobras education partnership",
+      "bodyDefault": "A landmark education partnership with one of the world's largest energy companies, opening blockchain training to Petrobras engineers.",
+      "creditDefault": "Thiago Nunes",
+      "link": "https://cardanofoundation.org/blog/cardano-foundation-announces-education-partnership-with-petrobras-1",
+      "linkLabelDefault": "Foundation blog"
     },
     {
-      "id": "2024-25",
-      "year": "2024 / 25",
-      "titleDefault": "Impact and transparency",
-      "bodyDefault": "Refinement toward impact measurement and transparency."
+      "id": "utn",
+      "year": "2024",
+      "titleDefault": "UTN Buenos Aires partnership",
+      "bodyDefault": "Cardano enters Argentina's largest engineering university as an official education partner.",
+      "creditDefault": "Jose Iadiccico",
+      "link": "https://cardanofoundation.org/blog/cardano-foundation-reveals-newest-education-partner",
+      "linkLabelDefault": "Foundation blog"
     },
     {
-      "id": "now",
-      "year": "Now",
-      "titleDefault": "Stronger together",
-      "bodyDefault": "A global network driving adoption and innovation."
+      "id": "alba-node",
+      "year": "2024",
+      "titleDefault": "First Cardano node at a LATAM university",
+      "bodyDefault": "ALBA (Ada Labs for Blockchain Applications) brings the first university-run Cardano node online in Latin America.",
+      "creditDefault": "Jose Iadiccico · Martin Ungar",
+      "link": "https://x.com/CardanoSolar/status/1801597418070257894",
+      "linkLabelDefault": "Announcement"
+    },
+    {
+      "id": "buidler-fest",
+      "year": "2026",
+      "titleDefault": "Buidler Fest, Buenos Aires",
+      "bodyDefault": "A flagship developer gathering in LATAM, organised and powered by the local Ambassador community.",
+      "creditDefault": "9 Ambassadors",
+      "link": "https://x.com/Cardano/status/2041788449892540795",
+      "linkLabelDefault": "Event announcement"
+    },
+    {
+      "id": "org-translation",
+      "year": "2026",
+      "titleDefault": "cardano.org community translation",
+      "bodyDefault": "Ambassadors localised cardano.org into multiple languages, making the project accessible to non-English audiences.",
+      "creditDefault": "5 Ambassadors",
+      "link": "https://cardano.org/translations/",
+      "linkLabelDefault": "Translations page"
     }
   ],
   "featuredHero": {
