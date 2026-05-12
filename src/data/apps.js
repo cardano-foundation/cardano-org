@@ -1869,6 +1869,24 @@ export const Showcases = [
     beginnerFriendly: true,
     x: "wayupio",
   },
+  {
+    title: "Surf Lending",
+    description:
+      "Pooled lending protocol with isolated markets, each with its own risk profile, for earning interest and borrowing against Cardano native tokens.",
+    tagline: "Isolated lending markets on Cardano",
+    preview: require("./app-screenshots/surflending.webp"),
+    extraPreviews: [
+      require("./app-screenshots/surflending-staking.webp"),
+    ],
+    icon: "/img/app-icons/surflending.png",
+    website: "https://surflending.org",
+    source: "https://github.com/flow-lending/flow-lending-smart-contracts",
+    category: "lending",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "surfcardano",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
