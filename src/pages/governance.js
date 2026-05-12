@@ -206,9 +206,10 @@ function ToolsGrid() {
       </p>
       <SpacerBox size="small" />
       <AppGrid
-        tags={['governance']}
+        categories={['governance']}
         showRank={false}
         showStats={false}
+        prioritizeMaintainerPicks
         ctaText={translate({id: 'governance.tools.cta', message: 'Visit'})}
         moreTitle={translate({id: 'governance.tools.more', message: 'More tools'})}
       />
