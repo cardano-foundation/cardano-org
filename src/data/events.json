@@ -340,5 +340,27 @@
     "image": "consensus-2026-logo-v2.svg",
     "organizer": "Rare Network",
     "recapVideo": ""
+  },
+   {
+    "title": "Rare Evo",
+    "description": "A multi-chain blockchain weekend built for founders, builders, investors, creators, and communities focused on real networking, education, and the future of Web3.",
+    "startDate": "2026-07-28",
+    "endDate": "2026-07-31",
+    "location": "Las Vegas, Nevada, United States of America",
+    "link": "https://rareevo.io/",
+    "image": "rare_evo_2026.jpg",
+    "organizer": "Rare Evo",
+    "recapVideo": ""
+  },
+   {
+    "title": "Open Source Summit",
+    "description": "Open Source Summit is the premier event for open source developers and contributors. It’s where maintainers, technologists, and community leaders come together to share knowledge, collaborate on solutions, and push open source projects forward. It’s the home for code, community, and the people driving the future of open source.",
+    "startDate": "2026-05-18",
+    "endDate": "2026-05-20",
+    "location": "Minneapolis, Minnesota, United States of America",
+    "link": "https://events.linuxfoundation.org/open-source-summit-north-america/",
+    "image": "oss_nama.jpg",
+    "organizer": "Linux Foundation",
+    "recapVideo": ""
   }
 ]
