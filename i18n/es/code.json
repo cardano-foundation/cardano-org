@@ -2153,16 +2153,16 @@
     "message": "Cardano es un tenedor en el camino. Nos lleva desde donde hemos estado a donde estamos destinados: una sociedad global que es segura, transparente, y justo, y que sirve tanto a los muchos como a unos pocos. Al igual que las revoluciones tecnológicas que se han producido, ofrece una nueva plantilla para cómo trabajamos, relacionamos y creamos, como individuos, empresas y sociedades."
   },
   "discoverCardano.purpose.text2": {
-    "message": "Cardano began with a vision of a world without intermediaries, in which power is not controlled by an accountable few, but by the empowered many. In this world, individuals have control over their data and how they interact and transact. Businesses have the opportunity to grow independent of monopolistic and bureaucratic power structures. Societies are able to pursue true democracy: self-governing, fair, and accountable. It is a world made possible by Cardano."
+    "message": "Cardano comenzó con una visión de un mundo sin intermediarios, en el que el poder no está controlado por unos pocos responsables, sino por los muchos. En este mundo, los individuos tienen control sobre sus datos y cómo interactúan y transaccionan. Las empresas tienen la oportunidad de crecer independientemente de las estructuras de poder monopolísticas y burocráticas. La sociedad es capaz de perseguir la verdadera misión: autosuficiencia, justa y responsable, un mundo hecho posible por Cardano."
   },
   "discoverCardano.technology.title": {
     "message": "Tecnología"
   },
   "discoverCardano.technology.subtitle": {
-    "message": "Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation."
+    "message": "Cardano aporta un nuevo estándar en tecnología -abierta e inclusiva- para desafiar a los viejos y activar una nueva era de innovación sostenible y distribuida a nivel global."
   },
   "discoverCardano.technology.text1": {
-    "message": "From the incremental to global, Cardano improves how we interact, transact, and create - and ultimately operate as a global society."
+    "message": "Desde el incremental hasta el global, Cardano mejora la forma en que interactuamos, comerciamos y creamos, y en última instancia operan como una sociedad global."
   },
   "discoverCardano.technology.text2": {
     "message": "Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability."
