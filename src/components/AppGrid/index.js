@@ -92,6 +92,7 @@ export default function AppGrid({
   moreLink = null,
   moreTitle = "More Apps",
   excludeSlug = null,
+  prioritizeMaintainerPicks = false,
 }) {
   // Filter apps whose primary category matches any of the requested categories.
   // excludeSlug is set by detail pages so the current app isn't shown in its own related list.
@@ -99,8 +100,16 @@ export default function AppGrid({
     categories.includes(app.category) && app.slug !== excludeSlug
   );
 
-  // Sort by transaction count (highest first), then alphabetically
+  // Sort by maintainer pick (when enabled), then tx count, then alphabetically
   const sortedApps = filteredApps.sort((a, b) => {
+    if (prioritizeMaintainerPicks) {
+      const pickA = a.maintainerPick ? 1 : 0;
+      const pickB = b.maintainerPick ? 1 : 0;
+      if (pickA !== pickB) {
+        return pickB - pickA;
+      }
+    }
+
     const statsA = getAppStats(a);
     const statsB = getAppStats(b);
 
@@ -108,7 +117,7 @@ export default function AppGrid({
     const txB = statsB?.txCount || 0;
 
     if (txA !== txB) {
-      return txB - txA; // Descending order
+      return txB - txA;
     }
 
     return a.title.localeCompare(b.title);
