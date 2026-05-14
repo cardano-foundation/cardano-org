@@ -267,7 +267,7 @@
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Volver al menú principal",
+    "message": "Volver al menú principal",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
@@ -854,7 +854,7 @@
     "message": "Hay varias maneras de obtener ada, pero el método más común es comprarlo en intercambios de criptomoneda usando monedas fiat u otras criptomonedas."
   },
   "getStarted.step5.button": {
-    "message": "Ver todas las opciones →"
+    "message": "Ver todas las opciones"
   },
   "getStarted.step5.securityNote": {
     "message": "El espacio de criptomonedas está lleno de oportunidades, pero también es un parque de diversiones para estafadores."
@@ -1886,157 +1886,157 @@
     "message": "Publicar sólo tus propias cosas"
   },
   "codeOfConduct.postOwnStuff.description": {
-    "message": "You may not post anything digital that belongs to someone else without permission. You may not post descriptions of, links to, or methods for stealing someone's intellectual property (software, video, audio, images), or for breaking any other law. Credit should always be attributed back to the original content producer."
+    "message": "No puedes publicar nada digital que pertenezca a otra persona sin permiso. Usted no puede publicar descripciones de, enlaces o métodos para robar la propiedad intelectual de alguien (software, vídeo, audio, imágenes) o para infringir cualquier otra ley. Siempre se debe atribuir crédito al productor de contenido original."
   },
   "codeOfConduct.multipleAccounts.title": {
-    "message": "Multiple Accounts"
+    "message": "Múltiples cuentas"
   },
   "codeOfConduct.multipleAccounts.description": {
-    "message": "Multiple accounts by the same user will not be allowed. This helps foster a more human experience in the online world and restricts spamming. Note that duplicate accounts may be investigated and removed."
+    "message": "No se permitirán múltiples cuentas por el mismo usuario. Esto ayuda a fomentar una experiencia más humana en el mundo en línea y restringe el spamming. Tenga en cuenta que las cuentas duplicadas pueden ser investigadas y eliminadas."
   },
   "codeOfConduct.violation.title": {
-    "message": "Violation of rules"
+    "message": "Incumplimiento de las reglas"
   },
   "codeOfConduct.violation.description1": {
-    "message": "If any of the rules are broken, moderators will perform the following sanctions:"
+    "message": "Si alguna de las reglas es incumplida, los moderadores realizarán las siguientes sanciones:"
   },
   "codeOfConduct.violation.list1": {
-    "message": "First offence: warning is given and the user will be suspended from their account for 24 hours."
+    "message": "Primera infracción: se advierte y el usuario será suspendido de su cuenta durante 24 horas."
   },
   "codeOfConduct.violation.list2": {
-    "message": "Second offence: warning is given and the user will be suspended for a period of up to 1 month depending on the severity of the violation."
+    "message": "Segunda infracción: se advierte y el usuario será suspendido durante un período de hasta 1 mes dependiendo de la gravedad de la violación."
   },
   "codeOfConduct.violation.list3": {
-    "message": "Third and final offence: if the user continues to repeatedly break community rules, their account will be banned from the community platform. This penalty may be applied across all community channels if necessary."
+    "message": "Tercera y última infracción: si el usuario continúa violando repetidamente las reglas de la comunidad, su cuenta será baneada de la plataforma comunitaria. Esta penalización puede aplicarse en todos los canales comunitarios si es necesario."
   },
   "codeOfConduct.violation.description2": {
-    "message": "The community team reserves the right to deny access to the official Community channels to anyone who has violated the Cardano Community Code of Conduct."
+    "message": "El equipo de la comunidad se reserva el derecho de denegar el acceso a los canales oficiales de la Comunidad a cualquiera que haya violado el Código de Conducta de la Comunidad Cardano."
   },
   "codeOfConduct.poweredByYou.title": {
-    "message": "Powered by you"
+    "message": "Desarrollado por ti"
   },
   "codeOfConduct.poweredByYou.description": {
-    "message": "This community is operated by the community staff and you, the community. If you have any further questions about how things should work here, open a new topic in the [community feedback category](https://forum.cardano.org/c/english/community-feedback/16) of the forum and let's discuss! If there is ever a critical or urgent issue please contact us directly at community *at* cardano *dot* org."
+    "message": "Esta comunidad es administrada por el personal de la comunidad y usted, la comunidad. Si tienes más preguntas sobre cómo deberían funcionar las cosas aquí, abrir un nuevo tema en la [categoría de comentarios de la comunidad](https://forum.cardano.org/c/english/community-feedback/16) del foro y vamos a discutir! Si alguna vez hay un problema crítico o urgente, por favor contáctenos directamente en la comunidad *at* cardano *dot* org."
   },
   "constitution.error.title": {
-    "message": "Current Enacted Constitution"
+    "message": "Constitución actualmente promulgada"
   },
   "constitution.error.localCopy": {
-    "message": "(Local Copy)"
+    "message": "(Copia local)"
   },
   "constitution.error.fetchError": {
-    "message": "Could not fetch from data.cardano.org:"
+    "message": "No se pudo obtener de data.cardano.org:"
   },
   "constitution.error.showingLocal": {
-    "message": "Showing local copy below."
+    "message": "Mostrando copia local abajo."
   },
   "constitution.link.download": {
-    "message": "Download Constitution"
+    "message": "Descargar Constitución"
   },
   "constitution.link.viewRawMarkdown": {
-    "message": "View Raw Markdown"
+    "message": "Ver Recorte Crudo"
   },
   "constitution.loading.versions": {
-    "message": "Loading constitution versions..."
+    "message": "Cargando versiones de la constitución..."
   },
   "constitution.enacted.title": {
-    "message": "Current Enacted Cardano Constitution"
+    "message": "Constitución Cardano actualmente aprobada"
   },
   "constitution.enacted.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano. Lea la carta aprobada actualmente, explore su historial de ratificación y descargue el texto completo a través de IPFS."
   },
   "constitution.link.viewOnIPFS": {
-    "message": "View on IPFS"
+    "message": "Ver en IPFS"
   },
   "constitution.error.loadDocument": {
-    "message": "Could not load constitution document:"
+    "message": "No se pudo cargar el documento de constitución:"
   },
   "constitution.loading.document": {
-    "message": "Loading document..."
+    "message": "Cargando documento..."
   },
   "constitution.history.title": {
-    "message": "Constitution Ratification History"
+    "message": "Historia de la ratificación de la Constitución"
   },
   "constitution.history.description": {
-    "message": "Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS."
+    "message": "A continuación encontrará la Constitución de Cardano y su historia de ratificación. Haga clic en cualquier versión para ver el texto completo sobre IPFS."
   },
   "constitution.history.versionRatified": {
-    "message": "Version ratified at epoch"
+    "message": "Versión ratificada en epoch"
   },
   "constitution.history.enactedAtEpoch": {
-    "message": "Enacted at epoch"
+    "message": "Promulgada en epoch"
   },
   "constitution.history.hash": {
     "message": "Hash:"
   },
   "constitution.link.viewOnIPFSHistory": {
-    "message": "View this constitution on IPFS"
+    "message": "Ver esta constitución en IPFS"
   },
   "constitution.hero.title": {
-    "message": "The Cardano Constitution"
+    "message": "La Constitución de Cardano"
   },
   "constitution.hero.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano."
   },
   "constitution.layout.title": {
-    "message": "The Cardano Constitution, On-Chain Governance Framework"
+    "message": "La Constitución de Cardano, Marco de Gobernanza en Cadena"
   },
   "constitution.layout.description": {
-    "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
+    "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano. Lea la carta promulgada actualmente, explore su historial de ratificación y descargue el texto completo a través de IPFS."
   },
   "contact.hero.title": {
-    "message": "Contact"
+    "message": "Contacto"
   },
   "contact.hero.description": {
-    "message": "Cardano is supported by the Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA and others. Fill out the contact form below and we will put you in touch with the team best placed to assist you."
+    "message": "Cardano cuenta con el apoyo de la Fundación Cardano, IOG, EMURGO, Intersect, PRAGMA y otros. Rellene el siguiente formulario de contacto y le pondremos en contacto con el equipo mejor situado para asistirle."
   },
   "contact.intersect.title": {
-    "message": "Intersect - one of the member-based organizations"
+    "message": "Intersect - una de las organizaciones basadas en miembros"
   },
   "contact.intersect.description": {
-    "message": "Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development."
+    "message": "Intersect es una organización basada en miembros del ecosistema de Cardano encargado de asegurar su continuidad y desarrollo futuro."
   },
   "contact.intersect.buttonLabel": {
-    "message": "Join Intersect"
+    "message": "Unirse a Intersect"
   },
   "contact.technicalIssue.title": {
-    "message": "Report a technical issue"
+    "message": "Reportar un problema técnico"
   },
   "contact.technicalIssue.description": {
-    "message": "To get help for one of the following wallets, please raise a support ticket."
+    "message": "Para obtener ayuda para una de las siguientes carteras, por favor levanta un ticket de soporte."
   },
   "contact.technicalIssue.buttonLabel": {
-    "message": "Raise Ticket"
+    "message": "Generar ticket"
   },
   "contact.sponsorship.title": {
-    "message": "Cardano Summit Sponsorship"
+    "message": "Patrocinación de Cardano Summit"
   },
   "contact.sponsorship.description1": {
-    "message": "Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we're excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization's needs and goals."
+    "message": "¡Gracias por su interés en patrocinar nuestra cumbre anual de Cardano! Su apoyo es crucial para el éxito de nuestra cumbre, y estamos entusiasmados con la posibilidad de asociarnos con usted. Las oportunidades de patrocinio proporcionan una exposición significativa y pueden adaptarse a las necesidades y metas de su organización."
   },
   "contact.sponsorship.description2": {
-    "message": "Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event."
+    "message": "Por favor rellene el siguiente formulario para expresar su interés y proporcionarnos más detalles sobre su organización y preferencias de patrocinio. Nuestro equipo revisará su envío y se pondrá en contacto con usted para discutir posibles paquetes de patrocinio y cómo podemos colaborar mejor para el próximo evento."
   },
   "contact.sponsorship.buttonLabel": {
-    "message": "Sponsorship Request"
+    "message": "Solicitud de patrocinio"
   },
   "contact.meta.title": {
-    "message": "Contact Cardano, Get in Touch"
+    "message": "Contactar con Cardano, Ponte en contacto"
   },
   "contact.meta.description": {
-    "message": "Get in touch with the Cardano ecosystem. Reach the Cardano Foundation, Intersect, IOG, or EMURGO for partnerships, support, or sponsorship inquiries."
+    "message": "Póngase en contacto con el ecosistema de Cardano, llegando a la Fundación Cardano, Intersect, IOG o EMURGO para consultas de asociaciones, apoyo o patrocinio."
   },
   "contact.divider.hereToHelp": {
-    "message": "Here to help"
+    "message": "Aquí para ayudar"
   },
   "contact.helpSection.title": {
-    "message": "What Can We Help You With?"
+    "message": "¿Cómo podemos ayudarle?"
   },
   "contact.select.prefix": {
     "message": "Yo tengo"
   },
   "contact.select.placeholder": {
-    "message": "not yet decided (please select)"
+    "message": "aún no se ha decidido (por favor seleccionar)"
   },
   "contact.select.option.technicalIssue": {
     "message": "un problema técnico con Daedalus, Nami o Lace"
@@ -2138,31 +2138,31 @@
     "message": "Trabajando juntos, conseguimos más para muchos."
   },
   "discoverCardano.people.text1": {
-    "message": "Cardano is built by a decentralized community of scientists, engineers, and thought leaders united in a common purpose: to create a technology platform that will ignite the positive change the world needs. We believe the future should not be defined by the past, and that more is possible - and, through technology, can be made possible for all. We measure the worth of a task not by its challenge, but by its results."
+    "message": "Cardano es construido por una comunidad descentralizada de científicos, ingenieros, y líderes de pensamiento unidos en un propósito común: crear una plataforma tecnológica que genere el cambio positivo que el mundo necesita. Creemos que el futuro no debe ser definido por el pasado, y que más es posible - y, a través de la tecnología, puede hacerse posible para todos. Medimos el valor de una tarea no por su reto, sino por sus resultados."
   },
   "discoverCardano.people.text2": {
-    "message": "Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or pledged to a stake pool to increase the pool's likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform."
+    "message": "Cada titular de ada también tiene una participación en la red de Cardano. El ada almacenado en una cartera puede ser delegado a un \"stake pool\" para ganar recompensas y participar en el seguro funcionamiento de la red o crear y operar su propio \"stake pool\". Con el tiempo, ada también será utilizable para una variedad de aplicaciones y servicios en la plataforma Cardano."
   },
   "discoverCardano.purpose.title": {
     "message": "Propósito"
   },
   "discoverCardano.purpose.subtitle": {
-    "message": "A platform built for a sustainable future, to help people work better together, trust one another, and build global solutions to global problems."
+    "message": "Una plataforma construida para un futuro sustentable, para ayudar a la gente a trabajar mejor junta, confiar unos en otros y construir soluciones globales a los problemas globales."
   },
   "discoverCardano.purpose.text1": {
-    "message": "Cardano is a fork in the road. It takes us from where we've been to where we're destined to go: a global society that is secure, transparent, and fair, and which serves the many as well as the few. Like the technological revolutions that have come before, it offers a new template for how we work, interact, and create, as individuals, businesses, and societies."
+    "message": "Cardano es un tenedor en el camino. Nos lleva desde donde hemos estado a donde estamos destinados: una sociedad global que es segura, transparente, y justo, y que sirve tanto a los muchos como a unos pocos. Al igual que las revoluciones tecnológicas que se han producido, ofrece una nueva plantilla para cómo trabajamos, relacionamos y creamos, como individuos, empresas y sociedades."
   },
   "discoverCardano.purpose.text2": {
-    "message": "Cardano began with a vision of a world without intermediaries, in which power is not controlled by an accountable few, but by the empowered many. In this world, individuals have control over their data and how they interact and transact. Businesses have the opportunity to grow independent of monopolistic and bureaucratic power structures. Societies are able to pursue true democracy: self-governing, fair, and accountable. It is a world made possible by Cardano."
+    "message": "Cardano comenzó con una visión de un mundo sin intermediarios, en el que el poder no está controlado por unos pocos responsables, sino por los muchos. En este mundo, los individuos tienen control sobre sus datos y cómo interactúan y transaccionan. Las empresas tienen la oportunidad de crecer independientemente de las estructuras de poder monopolísticas y burocráticas. La sociedad es capaz de perseguir la verdadera misión: autosuficiencia, justa y responsable, un mundo hecho posible por Cardano."
   },
   "discoverCardano.technology.title": {
     "message": "Tecnología"
   },
   "discoverCardano.technology.subtitle": {
-    "message": "Cardano brings a new standard in technology - open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation."
+    "message": "Cardano aporta un nuevo estándar en tecnología -abierta e inclusiva- para desafiar a los viejos y activar una nueva era de innovación sostenible y distribuida a nivel global."
   },
   "discoverCardano.technology.text1": {
-    "message": "From the incremental to global, Cardano improves how we interact, transact, and create - and ultimately operate as a global society."
+    "message": "Desde el incremental hasta el global, Cardano mejora la forma en que interactuamos, comerciamos y creamos, y en última instancia operan como una sociedad global."
   },
   "discoverCardano.technology.text2": {
     "message": "Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability."
@@ -3086,10 +3086,16 @@
     "message": "Read the essay"
   },
   "apps.hero.title": {
-    "message": "Cardano Apps and DApps, Explore the Ecosystem"
+    "message": "Cardano Apps and dApps"
   },
   "apps.hero.description": {
-    "message": "Explore curated applications that run on Cardano mainnet today"
+    "message": "Discover curated apps live on Cardano mainnet today. Wallets, DEXes, NFTs, lending, and more."
+  },
+  "apps.seo.title": {
+    "message": "Cardano Apps Directory: Wallets, DEXes, NFTs & More"
+  },
+  "apps.seo.description": {
+    "message": "Browse {count} curated Cardano apps live on mainnet. Wallets, DEXes, NFT marketplaces, lending, governance, and games. Filter by category or activity."
   },
   "apps.cta": {
     "message": "₳dd your project"
@@ -3115,14 +3121,200 @@
   "apps.noResult": {
     "message": "No result"
   },
-  "apps.ourFavorites": {
-    "message": "Our favorites"
+  "apps.maintainerPicks": {
+    "message": "Maintainer picks"
+  },
+  "apps.maintainerPicks.subtitle": {
+    "message": "Curated by page maintainers as strong starting points. Selection criteria: see /docs/get-involved/maintainer-picks."
   },
   "apps.allProjects": {
     "message": "All Projects"
   },
   "apps.searchPlaceholder": {
     "message": "Search apps..."
+  },
+  "apps.intent.title": {
+    "message": "Find apps for"
+  },
+  "apps.intent.stake": {
+    "message": "Stake ada"
+  },
+  "apps.intent.trade": {
+    "message": "Trade"
+  },
+  "apps.intent.vote": {
+    "message": "Vote"
+  },
+  "apps.intent.build": {
+    "message": "Build"
+  },
+  "apps.intent.mintNfts": {
+    "message": "Mint NFTs"
+  },
+  "apps.intent.play": {
+    "message": "Play"
+  },
+  "apps.intent.useWallet": {
+    "message": "Use a wallet"
+  },
+  "apps.sort.label": {
+    "message": "Sort"
+  },
+  "apps.sort.featured": {
+    "message": "Featured"
+  },
+  "apps.sort.alphabetical": {
+    "message": "A to Z"
+  },
+  "apps.sort.mostActive": {
+    "message": "Most active"
+  },
+  "apps.submit.title": {
+    "message": "Built something on Cardano?"
+  },
+  "apps.submit.description": {
+    "message": "Add your app to this page. The submission process is open and lightweight."
+  },
+  "apps.submit.button": {
+    "message": "Submit your app"
+  },
+  "apps.mostActive.title": {
+    "message": "Most active"
+  },
+  "apps.mostActive.subtitle": {
+    "message": "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}."
+  },
+  "apps.card.activity.unit": {
+    "message": "tx · 30d"
+  },
+  "apps.card.activity.tooltip": {
+    "message": "Transactions in the last 30 days"
+  },
+  "apps.detail.backToApps": {
+    "message": "Back to apps"
+  },
+  "apps.detail.maintainerPick": {
+    "message": "Maintainer pick"
+  },
+  "apps.detail.visit": {
+    "message": "Visit {title}"
+  },
+  "apps.detail.viewSource": {
+    "message": "View source"
+  },
+  "apps.detail.viewOnX.aria": {
+    "message": "View {title} on X (Twitter)"
+  },
+  "apps.detail.activity": {
+    "message": "Activity"
+  },
+  "apps.detail.activityBody": {
+    "message": "{count} on-chain transactions in the last 30 days (snapshot {date})."
+  },
+  "apps.detail.related": {
+    "message": "More in this category"
+  },
+  "apps.detail.editLink": {
+    "message": "Improve this entry on GitHub"
+  },
+  "apps.detail.spotlight.label": {
+    "message": "Developer Spotlight"
+  },
+  "apps.detail.spotlight.aria": {
+    "message": "Open Developer Spotlight on developers.cardano.org"
+  },
+  "apps.intent.label": {
+    "message": "I want to"
+  },
+  "apps.allApps.title": {
+    "message": "All apps"
+  },
+  "apps.allApps.titleScoped": {
+    "message": "All {label}"
+  },
+  "apps.allApps.titleOther": {
+    "message": "Other {label}"
+  },
+  "apps.mostActive.titleScoped": {
+    "message": "Most active {label}"
+  },
+  "apps.allApps.tracked": {
+    "message": "{count} with live tracking"
+  },
+  "apps.browseByCategory.title": {
+    "message": "Browse apps by category"
+  },
+  "apps.browseByCategory.subtitle": {
+    "message": "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest."
+  },
+  "apps.toolsAndInsights.title": {
+    "message": "Browse tools by category"
+  },
+  "apps.toolsAndInsights.subtitle": {
+    "message": "Utilities, dashboards, and explorers for tracking and analytics."
+  },
+  "apps.allApps.show": {
+    "message": "View all {count} apps alphabetically"
+  },
+  "apps.allApps.heading": {
+    "message": "All {count} apps, A to Z"
+  },
+  "apps.maintainerPicks.subtitleShort": {
+    "message": "Selected by cardano.org maintainers"
+  },
+  "apps.highlights.title": {
+    "message": "Recently added"
+  },
+  "apps.highlights.subtitle": {
+    "message": "The newest apps in the showcase"
+  },
+  "apps.carousel.prev": {
+    "message": "Previous"
+  },
+  "apps.carousel.next": {
+    "message": "Next"
+  },
+  "apps.mostActive.leaderboardLink": {
+    "message": "Live from the transaction leaderboard"
+  },
+  "apps.filter.button": {
+    "message": "Filter"
+  },
+  "apps.filter.activeCount": {
+    "message": "Filter ({count})"
+  },
+  "apps.filter.categoriesHeading": {
+    "message": "Categories"
+  },
+  "apps.filter.propertiesHeading": {
+    "message": "Properties"
+  },
+  "apps.filter.clearAll": {
+    "message": "Clear all filters"
+  },
+  "apps.guidedPaths.label": {
+    "message": "Guided paths"
+  },
+  "apps.guidedPaths.subtitle": {
+    "message": "Step-by-step on cardano.org"
+  },
+  "apps.guidedPaths.getStarted": {
+    "message": "First steps with ada"
+  },
+  "apps.guidedPaths.governance": {
+    "message": "Have a say in Cardano"
+  },
+  "apps.guidedPaths.developers": {
+    "message": "Build on Cardano"
+  },
+  "apps.submit.enableTracking": {
+    "message": "Enable tracking"
+  },
+  "apps.new": {
+    "message": "NEW"
+  },
+  "apps.activity.unit": {
+    "message": "tx"
   },
   "insights.card.openInsight": {
     "message": "Open insight"
