@@ -267,7 +267,7 @@
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Zurück zum Hauptmenü",
+    "message": "Back to main menu",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
@@ -854,7 +854,7 @@
     "message": "Es gibt verschiedene Wege, Ada zu bekommen. Am gängigsten ist der Kauf auf Kryptobörsen – mit Fiat-Währung oder anderen Kryptowährungen."
   },
   "getStarted.step5.button": {
-    "message": "Alle Optionen ansehen →"
+    "message": "View all options"
   },
   "getStarted.step5.securityNote": {
     "message": "Die Krypto-Welt bietet viele Chancen – aber auch Betrüger sind aktiv."
@@ -3086,10 +3086,16 @@
     "message": "Read the essay"
   },
   "apps.hero.title": {
-    "message": "Cardano Apps and DApps, Explore the Ecosystem"
+    "message": "Cardano Apps and dApps"
   },
   "apps.hero.description": {
-    "message": "Entdecke Anwendungen auf der Cardano-Blockchain"
+    "message": "Discover curated apps live on Cardano mainnet today. Wallets, DEXes, NFTs, lending, and more."
+  },
+  "apps.seo.title": {
+    "message": "Cardano Apps Directory: Wallets, DEXes, NFTs & More"
+  },
+  "apps.seo.description": {
+    "message": "Browse {count} curated Cardano apps live on mainnet. Wallets, DEXes, NFT marketplaces, lending, governance, and games. Filter by category or activity."
   },
   "apps.cta": {
     "message": "₳dd your project"
@@ -3115,14 +3121,200 @@
   "apps.noResult": {
     "message": "Keine Ergebnisse"
   },
-  "apps.ourFavorites": {
-    "message": "Unsere Favoriten"
+  "apps.maintainerPicks": {
+    "message": "Maintainer picks"
+  },
+  "apps.maintainerPicks.subtitle": {
+    "message": "Curated by page maintainers as strong starting points. Selection criteria: see /docs/get-involved/maintainer-picks."
   },
   "apps.allProjects": {
     "message": "Alle Projekte"
   },
   "apps.searchPlaceholder": {
     "message": "Apps suchen..."
+  },
+  "apps.intent.title": {
+    "message": "Find apps for"
+  },
+  "apps.intent.stake": {
+    "message": "Stake ada"
+  },
+  "apps.intent.trade": {
+    "message": "Trade"
+  },
+  "apps.intent.vote": {
+    "message": "Vote"
+  },
+  "apps.intent.build": {
+    "message": "Build"
+  },
+  "apps.intent.mintNfts": {
+    "message": "Mint NFTs"
+  },
+  "apps.intent.play": {
+    "message": "Play"
+  },
+  "apps.intent.useWallet": {
+    "message": "Use a wallet"
+  },
+  "apps.sort.label": {
+    "message": "Sort"
+  },
+  "apps.sort.featured": {
+    "message": "Featured"
+  },
+  "apps.sort.alphabetical": {
+    "message": "A to Z"
+  },
+  "apps.sort.mostActive": {
+    "message": "Most active"
+  },
+  "apps.submit.title": {
+    "message": "Built something on Cardano?"
+  },
+  "apps.submit.description": {
+    "message": "Add your app to this page. The submission process is open and lightweight."
+  },
+  "apps.submit.button": {
+    "message": "Submit your app"
+  },
+  "apps.mostActive.title": {
+    "message": "Most active"
+  },
+  "apps.mostActive.subtitle": {
+    "message": "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}."
+  },
+  "apps.card.activity.unit": {
+    "message": "tx · 30d"
+  },
+  "apps.card.activity.tooltip": {
+    "message": "Transactions in the last 30 days"
+  },
+  "apps.detail.backToApps": {
+    "message": "Back to apps"
+  },
+  "apps.detail.maintainerPick": {
+    "message": "Maintainer pick"
+  },
+  "apps.detail.visit": {
+    "message": "Visit {title}"
+  },
+  "apps.detail.viewSource": {
+    "message": "View source"
+  },
+  "apps.detail.viewOnX.aria": {
+    "message": "View {title} on X (Twitter)"
+  },
+  "apps.detail.activity": {
+    "message": "Activity"
+  },
+  "apps.detail.activityBody": {
+    "message": "{count} on-chain transactions in the last 30 days (snapshot {date})."
+  },
+  "apps.detail.related": {
+    "message": "More in this category"
+  },
+  "apps.detail.editLink": {
+    "message": "Improve this entry on GitHub"
+  },
+  "apps.detail.spotlight.label": {
+    "message": "Developer Spotlight"
+  },
+  "apps.detail.spotlight.aria": {
+    "message": "Open Developer Spotlight on developers.cardano.org"
+  },
+  "apps.intent.label": {
+    "message": "I want to"
+  },
+  "apps.allApps.title": {
+    "message": "All apps"
+  },
+  "apps.allApps.titleScoped": {
+    "message": "All {label}"
+  },
+  "apps.allApps.titleOther": {
+    "message": "Other {label}"
+  },
+  "apps.mostActive.titleScoped": {
+    "message": "Most active {label}"
+  },
+  "apps.allApps.tracked": {
+    "message": "{count} with live tracking"
+  },
+  "apps.browseByCategory.title": {
+    "message": "Browse apps by category"
+  },
+  "apps.browseByCategory.subtitle": {
+    "message": "A taste of each category. Top tracked apps first, then maintainer picks, then a random pick of the rest."
+  },
+  "apps.toolsAndInsights.title": {
+    "message": "Browse tools by category"
+  },
+  "apps.toolsAndInsights.subtitle": {
+    "message": "Utilities, dashboards, and explorers for tracking and analytics."
+  },
+  "apps.allApps.show": {
+    "message": "View all {count} apps alphabetically"
+  },
+  "apps.allApps.heading": {
+    "message": "All {count} apps, A to Z"
+  },
+  "apps.maintainerPicks.subtitleShort": {
+    "message": "Selected by cardano.org maintainers"
+  },
+  "apps.highlights.title": {
+    "message": "Recently added"
+  },
+  "apps.highlights.subtitle": {
+    "message": "The newest apps in the showcase"
+  },
+  "apps.carousel.prev": {
+    "message": "Previous"
+  },
+  "apps.carousel.next": {
+    "message": "Next"
+  },
+  "apps.mostActive.leaderboardLink": {
+    "message": "Live from the transaction leaderboard"
+  },
+  "apps.filter.button": {
+    "message": "Filter"
+  },
+  "apps.filter.activeCount": {
+    "message": "Filter ({count})"
+  },
+  "apps.filter.categoriesHeading": {
+    "message": "Categories"
+  },
+  "apps.filter.propertiesHeading": {
+    "message": "Properties"
+  },
+  "apps.filter.clearAll": {
+    "message": "Clear all filters"
+  },
+  "apps.guidedPaths.label": {
+    "message": "Guided paths"
+  },
+  "apps.guidedPaths.subtitle": {
+    "message": "Step-by-step on cardano.org"
+  },
+  "apps.guidedPaths.getStarted": {
+    "message": "First steps with ada"
+  },
+  "apps.guidedPaths.governance": {
+    "message": "Have a say in Cardano"
+  },
+  "apps.guidedPaths.developers": {
+    "message": "Build on Cardano"
+  },
+  "apps.submit.enableTracking": {
+    "message": "Enable tracking"
+  },
+  "apps.new": {
+    "message": "NEW"
+  },
+  "apps.activity.unit": {
+    "message": "tx"
   },
   "insights.card.openInsight": {
     "message": "Insight öffnen"
