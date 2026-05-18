@@ -2,7 +2,7 @@
 slug: 2025-07-07-media-economic-sustainability-of-cardano
 title: "Roundtable Talk: Economic Sustainability of Cardano"
 authors: [community]
-tags: [media]
+tags: [media,ambassadors]
 ---
 
 A Roundtable Talk, features a discussion from the Cardano Berlin Hackathon on the ecosystem's economic sustainability. Participants discussed why sustainability matters, how transaction fees are earned, and the role of the Net Change Limit. The conversation also covered the challenges of empowering developers and the "skin-in-the-game" approach to using treasury funds to ensure Cardano's long-term viability.

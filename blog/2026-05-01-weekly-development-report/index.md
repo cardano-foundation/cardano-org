@@ -1,5 +1,5 @@
 ---
-slug: 2026-04-24-weekly-development-report
+slug: 2026-05-01-weekly-development-report
 title: "Weekly Development Report"
 description: "IO’s 2026 treasury proposals live; Q4/Q1 delivery report published; Leios & Mithril SNARK progress; Intersect committee voting concludes today."
 authors: [iog]

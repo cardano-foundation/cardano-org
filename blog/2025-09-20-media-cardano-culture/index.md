@@ -2,7 +2,7 @@
 slug: 2025-09-20-media-cardano-culture
 title: "Roundtable Talk: Cardano Culture"
 authors: [community]
-tags: [media]
+tags: [media,ambassadors]
 ---
 
 A Roundtable Talk, features a discussion from Rare Evo Las Vegas on the values and spirit of Cardano Culture. Participants discussed the evolution of community voices, the impact of grassroots funding, and the importance of IRL presence. The conversation also addressed intentional culture shaping and inclusivity to ensure a resilient and welcoming environment for the global ecosystem.

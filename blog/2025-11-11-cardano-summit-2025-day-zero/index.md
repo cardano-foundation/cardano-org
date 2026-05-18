@@ -2,7 +2,7 @@
 slug: 2025-11-11-cardano-summit-2025-day-zero
 title: "Cardano Summit 2025: Day Zero Recap"
 authors: [cf]
-tags: [events]
+tags: [events,ambassadors]
 ---
 
 

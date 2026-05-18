@@ -2,7 +2,7 @@
 slug: 2025-10-02-media-community-expertise-in-action-2
 title: "Roundtable Talk: Community Expertise in Action - part 2"
 authors: [community]
-tags: [media]
+tags: [media,ambassadors]
 ---
 
 A Roundtable Talk, features a discussion for the Eastern Hemisphere on the Fund 14 Representative Pilot. Participants focused on shifting from popularity-based voting toward systematic, expertise-driven evaluations. The session explored how structured frameworks can guide DReps to improve the quality and fairness of future governance decisions.

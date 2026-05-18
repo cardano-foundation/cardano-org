@@ -2,7 +2,7 @@
 slug: 2025-11-10-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [community digest]
+tags: [community digest,ambassadors]
 ---
 
 

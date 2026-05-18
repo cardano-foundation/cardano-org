@@ -2,7 +2,7 @@
 slug: 2026-01-19-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [community digest]
+tags: [community digest,ambassadors]
 ---
 
 

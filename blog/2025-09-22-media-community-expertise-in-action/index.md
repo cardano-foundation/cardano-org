@@ -2,7 +2,7 @@
 slug: 2025-09-22-media-community-expertise-in-action
 title: "Roundtable Talk: Community Expertise in Action"
 authors: [community]
-tags: [media]
+tags: [media,ambassadors]
 ---
 
 A Roundtable Talk, features a discussion on the Fund 14 Representative Pilot and the evolution of Project Catalyst. Participants discussed shifting from popularity-based voting toward systematic, expertise-driven decision-making. The conversation also compared evaluation frameworks to help DReps prioritize quality and fairness, ensuring a more informed and transparent governance process for Fund 15 and beyond.
