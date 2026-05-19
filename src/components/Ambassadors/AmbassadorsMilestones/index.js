@@ -2,8 +2,10 @@ import React from "react";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 
-import achievements from "@site/src/data/ambassadorsAchievements.json";
+import achievementsData from "@site/src/data/ambassadorsAchievements.json";
 import styles from "./styles.module.css";
+
+const achievements = [...achievementsData].reverse();
 
 function evidenceLabel(url) {
   try {
