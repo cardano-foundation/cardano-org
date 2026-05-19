@@ -1,47 +1,31 @@
 {
+  "metadata": {
+    "lastUpdated": "2026-05-17T17:24:55.759Z",
+    "periodCalculated": "Last 12 Months",
+    "dateRange": {
+      "from": "2025-05-17",
+      "to": "2026-05-17"
+    }
+  },
+  "data": {
+    "totalContributionsLast12Months": 2128,
+    "contributionsByCategory": {
+      "content": 927,
+      "meetups": 199,
+      "developerSoftware": 102,
+      "education": 232,
+      "businessDevelopment": 49,
+      "partnerships": 52,
+      "moderation": 485,
+      "other": 82
+    },
+    "channelsModerated": "30+",
+    "impactPotProposalsFunded": 37
+  },
   "stats": {
     "languages": 17,
-    "moderatedChannels": 50,
-    "platforms": 9,
-    "lastUpdated": "2026-05-08"
+    "platforms": 9
   },
-  "impact": [
-    {
-      "id": "content",
-      "labelDefault": "Content created",
-      "value": "1,250+",
-      "captionDefault": "Articles, videos, podcasts, threads",
-      "trend": [42, 58, 71, 88, 96, 110, 124, 138, 151, 168, 182, 205]
-    },
-    {
-      "id": "events",
-      "labelDefault": "Events hosted",
-      "value": "620+",
-      "captionDefault": "Meetups, workshops, hackathons",
-      "trend": [12, 18, 24, 30, 36, 44, 52, 58, 67, 76, 84, 95]
-    },
-    {
-      "id": "translations",
-      "labelDefault": "Translations",
-      "value": "800+",
-      "captionDefault": "Content pieces translated in 17 languages",
-      "trend": [22, 30, 41, 52, 63, 78, 96, 114, 133, 152, 168, 188]
-    },
-    {
-      "id": "channels",
-      "labelDefault": "Channels moderated",
-      "value": "50+",
-      "captionDefault": "Community channels across 9 platforms",
-      "trend": [22, 26, 30, 33, 36, 38, 41, 44, 46, 48, 49, 50]
-    },
-    {
-      "id": "openSource",
-      "labelDefault": "Open-source contributions",
-      "value": "150+",
-      "captionDefault": "Projects, tools and code contributions",
-      "trend": [10, 14, 22, 31, 42, 53, 65, 78, 92, 108, 124, 142]
-    }
-  ],
   "featuredHero": {
     "ambassadors": [
       {

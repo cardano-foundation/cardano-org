@@ -3529,6 +3529,30 @@
   "ambassadors.impact.openSource.caption": {
     "message": "Projects, tools and code contributions"
   },
+  "ambassadors.impact.moderation.label": {
+    "message": "Moderation"
+  },
+  "ambassadors.impact.moderation.caption": {
+    "message": "Channels moderated across platforms"
+  },
+  "ambassadors.impact.education.label": {
+    "message": "Education"
+  },
+  "ambassadors.impact.education.caption": {
+    "message": "Teaching, onboarding and awareness"
+  },
+  "ambassadors.impact.meetups.label": {
+    "message": "Events hosted"
+  },
+  "ambassadors.impact.meetups.caption": {
+    "message": "Meetups, workshops and hackathons"
+  },
+  "ambassadors.impact.developerSoftware.label": {
+    "message": "Open source"
+  },
+  "ambassadors.impact.developerSoftware.caption": {
+    "message": "Projects, tools and code contributions"
+  },
   "ambassadors.contributions.title": {
     "message": "What Ambassadors do"
   },

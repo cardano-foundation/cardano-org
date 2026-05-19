@@ -25,7 +25,7 @@ export default function AmbassadorsStatsRow({ ambassadorsCount, countriesCount, 
     },
     {
       icon: <HiChatAlt2 />,
-      value: `${channels}+`,
+      value: channels,
       label: translate({ id: "ambassadors.stats.channels.label", message: "Moderated channels" }),
       caption: translate(
         { id: "ambassadors.stats.channels.caption", message: "Across {platforms} platforms" },

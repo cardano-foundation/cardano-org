@@ -1,50 +1,69 @@
 import React from "react";
 import { translate } from "@docusaurus/Translate";
-import { HiPencil, HiCalendar, HiGlobeAlt, HiChatAlt2 } from "react-icons/hi";
-import { BsCodeSlash } from "react-icons/bs";
+import { HiPencil, HiCalendar } from "react-icons/hi";
+import { MdSchool } from "react-icons/md";
+import { BsCodeSlash, BsShieldCheck } from "react-icons/bs";
 
-import Sparkline from "@site/src/components/Ambassadors/Sparkline";
 import impactData from "@site/src/data/ambassadorsImpact.json";
 import styles from "./styles.module.css";
 
-const ICONS = {
-  content: <HiPencil />,
-  events: <HiCalendar />,
-  translations: <HiGlobeAlt />,
-  channels: <HiChatAlt2 />,
-  openSource: <BsCodeSlash />,
-};
+const CATEGORIES = [
+  {
+    key: "content",
+    icon: <HiPencil />,
+    accent: "blue",
+    labelDefault: "Content created",
+    captionDefault: "Articles, videos, podcasts and threads",
+  },
+  {
+    key: "moderation",
+    icon: <BsShieldCheck />,
+    accent: "rose",
+    labelDefault: "Moderation",
+    captionDefault: "Channels moderated across platforms",
+  },
+  {
+    key: "education",
+    icon: <MdSchool />,
+    accent: "violet",
+    labelDefault: "Education",
+    captionDefault: "Teaching, onboarding and awareness",
+  },
+  {
+    key: "meetups",
+    icon: <HiCalendar />,
+    accent: "green",
+    labelDefault: "Events hosted",
+    captionDefault: "Meetups, workshops and hackathons",
+  },
+  {
+    key: "developerSoftware",
+    icon: <BsCodeSlash />,
+    accent: "amber",
+    labelDefault: "Open source",
+    captionDefault: "Projects, tools and code contributions",
+  },
+];
 
-const ACCENTS = {
-  content: "blue",
-  events: "green",
-  translations: "amber",
-  channels: "violet",
-  openSource: "teal",
-};
-
-function ImpactCard({ entry }) {
-  const accent = ACCENTS[entry.id] || "blue";
+function ImpactCard({ category, value }) {
   const labelTranslated = translate(
-    { id: `ambassadors.impact.${entry.id}.label`, message: entry.labelDefault },
+    { id: `ambassadors.impact.${category.key}.label`, message: category.labelDefault },
   );
   const captionTranslated = translate(
-    { id: `ambassadors.impact.${entry.id}.caption`, message: entry.captionDefault },
+    { id: `ambassadors.impact.${category.key}.caption`, message: category.captionDefault },
   );
   return (
-    <div className={`${styles.card} ${styles[`accent-${accent}`]}`}>
-      <span className={styles.icon} aria-hidden="true">{ICONS[entry.id]}</span>
+    <div className={`${styles.card} ${styles[`accent-${category.accent}`]}`}>
+      <span className={styles.icon} aria-hidden="true">{category.icon}</span>
       <div className={styles.label}>{labelTranslated}</div>
-      <div className={styles.value}>{entry.value}</div>
+      <div className={styles.value}>{value.toLocaleString()}</div>
       <div className={styles.caption}>{captionTranslated}</div>
-      <div className={styles.sparkWrap}>
-        <Sparkline data={entry.trend} ariaLabel={labelTranslated} />
-      </div>
     </div>
   );
 }
 
 export default function AmbassadorsImpactOverview() {
+  const byCategory = impactData.data.contributionsByCategory;
   return (
     <section id="impact">
       <div className={styles.layout}>
@@ -60,8 +79,12 @@ export default function AmbassadorsImpactOverview() {
           </p>
         </div>
         <div className={styles.grid}>
-          {impactData.impact.map((entry) => (
-            <ImpactCard key={entry.id} entry={entry} />
+          {CATEGORIES.map((category) => (
+            <ImpactCard
+              key={category.key}
+              category={category}
+              value={byCategory[category.key] || 0}
+            />
           ))}
         </div>
       </div>

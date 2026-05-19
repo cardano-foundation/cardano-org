@@ -79,7 +79,7 @@ export default function AmbassadorsHero() {
           ambassadorsCount={AMBASSADORS_COUNT}
           countriesCount={COUNTRIES_COUNT}
           languages={impactData.stats.languages}
-          channels={impactData.stats.moderatedChannels}
+          channels={impactData.data.channelsModerated}
           platforms={impactData.stats.platforms}
         />
       </div>

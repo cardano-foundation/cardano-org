@@ -82,24 +82,12 @@
   flex: 1;
 }
 
-.sparkWrap {
-  margin-top: 0.5rem;
-}
-
 .accent-blue   .icon { background: rgba(58, 95, 214, 0.12); color: #3a5fd6; }
-.accent-blue   .sparkWrap { color: #3a5fd6; }
-
 .accent-green  .icon { background: rgba(16, 161, 122, 0.12); color: #10a17a; }
-.accent-green  .sparkWrap { color: #10a17a; }
-
 .accent-amber  .icon { background: rgba(217, 152, 8, 0.14); color: #d99808; }
-.accent-amber  .sparkWrap { color: #d99808; }
-
 .accent-violet .icon { background: rgba(124, 91, 224, 0.14); color: #7c5be0; }
-.accent-violet .sparkWrap { color: #7c5be0; }
-
 .accent-teal   .icon { background: rgba(0, 163, 163, 0.14); color: #00a3a3; }
-.accent-teal   .sparkWrap { color: #00a3a3; }
+.accent-rose   .icon { background: rgba(225, 29, 72, 0.14); color: #e11d48; }
 
 [data-theme="dark"] .card {
   background: var(--ifm-background-surface-color);
