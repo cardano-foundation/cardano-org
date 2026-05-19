@@ -51,7 +51,7 @@ export default function AmbassadorsHero() {
               {translate({
                 id: "ambassadors.hero.lede",
                 message:
-                  "A global network of community leaders educating, organizing, translating, building and supporting Cardano across the world.",
+                  "A global network of community leaders educating, organizing, moderating, building and supporting Cardano across the world.",
               })}
             </p>
             <div className={styles.heroCtas}>
