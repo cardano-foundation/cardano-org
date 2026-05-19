@@ -3536,13 +3536,13 @@
     "message": "Ambassadors contribute in many ways to support Cardano's mission and grow the ecosystem."
   },
   "ambassadors.milestones.divider": {
-    "message": "Top Achievements"
+    "message": "Highlighted Achievements"
   },
   "ambassadors.milestones.title": {
-    "message": "Top achievements led by Ambassadors"
+    "message": "Selected milestones from the program"
   },
   "ambassadors.milestones.description": {
-    "message": "Concrete wins from the program. Partnerships, integrations and events delivered by named Ambassadors and Ambassador groups."
+    "message": "A handpicked timeline, not exhaustive. From the program's launch in 2018 to today's partnerships, integrations and events."
   },
   "ambassadors.milestones.creditPrefix": {
     "message": "Led by"

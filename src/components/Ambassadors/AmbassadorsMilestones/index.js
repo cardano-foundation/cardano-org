@@ -25,19 +25,19 @@ export default function AmbassadorsMilestones() {
   return (
     <section>
       <Divider
-        text={translate({ id: "ambassadors.milestones.divider", message: "Top Achievements" })}
+        text={translate({ id: "ambassadors.milestones.divider", message: "Highlighted Achievements" })}
         id="milestones"
       />
       <TitleWithText
         title={translate({
           id: "ambassadors.milestones.title",
-          message: "Top achievements led by Ambassadors",
+          message: "Selected milestones from the program",
         })}
         description={[
           translate({
             id: "ambassadors.milestones.description",
             message:
-              "Concrete wins from the program. Partnerships, integrations and events delivered by named ambassadors and ambassador groups.",
+              "A handpicked timeline, not exhaustive. From the program's launch in 2018 to today's partnerships, integrations and events.",
           }),
         ]}
         titleType="black"

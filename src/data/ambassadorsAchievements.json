@@ -1,5 +1,36 @@
 [
   {
+    "id": "program-launch",
+    "year": "2018",
+    "achievement": "Ambassador Program launches",
+    "bodyDefault": "The Cardano Foundation formally announces the Cardano Ambassador Program, defining the first four roles — Meetup Organizers, Translators, Content Creators and Moderators — as the program's foundation.",
+    "ambassadorsInvolved": "Cardano Foundation, founding Ambassador cohort",
+    "evidence": [
+      "https://forum.cardano.org/t/announcing-the-cardano-ambassador-program/19023"
+    ]
+  },
+  {
+    "id": "first-cohort",
+    "year": "2019",
+    "achievement": "First Ambassador cohort announced",
+    "bodyDefault": "After hundreds of community nominations, the Foundation publishes the first official group of Cardano Ambassadors, recognising early meetup organisers, translators and content creators.",
+    "ambassadorsInvolved": "Inaugural Ambassador cohort",
+    "evidence": [
+      "https://forum.cardano.org/t/announcing-our-first-group-of-cardano-ambassadors/20075"
+    ]
+  },
+  {
+    "id": "phase-2-rewards",
+    "year": "2020",
+    "achievement": "Phase 2 rewards program launches",
+    "bodyDefault": "Phase 2 of the Ambassador Program rolls out ada-denominated rewards. At rollout the program counts 58 Ambassadors across 26 countries and 28 languages.",
+    "ambassadorsInvolved": "Cardano Foundation, 58 Ambassadors at rollout",
+    "evidence": [
+      "https://forum.cardano.org/t/rollout-of-phase-2-rewards-of-the-ambassador-program/32506",
+      "https://cardanofoundation.org/blog/cardano-foundation-launches-phase-2-rewards-of-its-ambassador-program"
+    ]
+  },
+  {
     "id": "catalyst-reviewers",
     "year": "2021-2025",
     "achievement": "LVL2 Catalyst Reviewers",
