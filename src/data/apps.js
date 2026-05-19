@@ -1887,6 +1887,21 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "surfcardano",
   },
+  {
+    title: "5am.earth",
+    description:
+      "Empowering agri entrepreneurs and farmers with decentralized farm identity, earth observation data, and field sustainability scores on Cardano",
+    tagline: "Farm identity and sustainability scores on Cardano",
+    icon: "/img/app-icons/5am-earth.jpg",
+    website: "https://5am.earth",
+    source: null,
+    statsLabel: "5am.earth",
+    category: "identity",
+    properties: ["mobile", "nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "Elkconnect_web3",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
