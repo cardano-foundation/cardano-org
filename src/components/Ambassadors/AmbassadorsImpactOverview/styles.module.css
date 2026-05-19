@@ -1,8 +1,62 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-top: 0.5rem;
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: #0f172a;
+}
+
+.description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+.viewMetrics,
+.viewMetrics:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0033ad;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(0, 51, 173, 0.18);
+  border-radius: 8px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.viewMetrics:hover {
+  background: rgba(0, 51, 173, 0.06);
+  border-color: rgba(0, 51, 173, 0.4);
+}
+
+.viewMetricsIcon {
+  font-size: 0.95em;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 1.5rem;
 }
 
 .card {
@@ -76,16 +130,32 @@
   background: var(--ifm-background-surface-color);
   border-color: var(--ifm-color-emphasis-300);
 }
-[data-theme="dark"] .label  { color: var(--ifm-color-emphasis-700); }
-[data-theme="dark"] .value  { color: var(--ifm-color-emphasis-900); }
+[data-theme="dark"] .label   { color: var(--ifm-color-emphasis-700); }
+[data-theme="dark"] .value   { color: var(--ifm-color-emphasis-900); }
 [data-theme="dark"] .caption { color: var(--ifm-color-emphasis-600); }
+[data-theme="dark"] .title   { color: var(--ifm-color-emphasis-900); }
+[data-theme="dark"] .description { color: var(--ifm-color-emphasis-700); }
+[data-theme="dark"] .viewMetrics { color: #6684ce; border-color: rgba(102, 132, 206, 0.3); }
+[data-theme="dark"] .viewMetrics:hover {
+  background: rgba(102, 132, 206, 0.12);
+  border-color: #6684ce;
+}
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 720px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 480px) {
   .grid { grid-template-columns: 1fr; }
 }

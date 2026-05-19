@@ -3691,6 +3691,9 @@
   "ambassadors.contributions.learnMore": {
     "message": "Learn more about the program"
   },
+  "ambassadors.impact.viewAll": {
+    "message": "View all metrics"
+  },
   "ambassadors.hero.titlePrefix": {
     "message": "Cardano"
   },
