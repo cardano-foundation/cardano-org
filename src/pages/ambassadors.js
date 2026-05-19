@@ -1,9 +1,7 @@
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
-import CtaTwoColumn from "@site/src/components/Layout/CtaTwoColumn";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AmbassadorBenefitsSection from "@site/src/components/AmbassadorBenefitsSection";
 
@@ -14,6 +12,7 @@ import AmbassadorsContributions from "@site/src/components/Ambassadors/Ambassado
 import AmbassadorsMilestones from "@site/src/components/Ambassadors/AmbassadorsMilestones";
 import AmbassadorsDirectory from "@site/src/components/Ambassadors/AmbassadorsDirectory";
 import AmbassadorsImpactStories from "@site/src/components/Ambassadors/AmbassadorsImpactStories";
+import AmbassadorsCallToAction from "@site/src/components/Ambassadors/AmbassadorsCallToAction";
 
 export default function AmbassadorsPage() {
   return (
@@ -33,12 +32,13 @@ export default function AmbassadorsPage() {
 
       <main>
         <BoundaryBox>
-          <AmbassadorsProgramIntro />
           <AmbassadorsImpactOverview />
           <AmbassadorsContributions />
           <AmbassadorsMilestones />
           <AmbassadorsDirectory />
           <AmbassadorsImpactStories />
+          <AmbassadorsCallToAction />
+          <AmbassadorsProgramIntro />
           <AmbassadorBenefitsSection
             headline={translate({ id: "ambassadors.benefits.headline", message: "Ambassador Status" })}
             title={translate({ id: "ambassadors.benefits.title", message: "Ambassador Status" })}
@@ -77,43 +77,6 @@ export default function AmbassadorsPage() {
             })}
           />
         </BoundaryBox>
-
-        <BackgroundWrapper backgroundType={"gradientLight"}>
-          <BoundaryBox>
-            <CtaTwoColumn
-              leftTitle={translate({
-                id: "ambassadors.cta.leftTitle",
-                message: "Become a Cardano Ambassador",
-              })}
-              leftText={[
-                translate({
-                  id: "ambassadors.cta.leftText1",
-                  message:
-                    "The journey to becoming an Ambassador is built on dedication, collaboration, and meaningful contributions. Ambassadors emerge from the community by actively participating and making a lasting impact.",
-                }),
-                translate({
-                  id: "ambassadors.cta.leftText2",
-                  message:
-                    "Your first step begins in the Cardano Forum, a dynamic space for collaboration, discussion, and knowledge sharing. By contributing valuable insights, engaging in conversations, and supporting fellow community members, you build a strong foundation of trust and influence. As you progress through different levels, new opportunities for deeper involvement and leadership open up.",
-                }),
-                translate({
-                  id: "ambassadors.cta.leftText3",
-                  message:
-                    "Ambassadorship is a reflection of commitment and contribution. Those who actively support the community and help Cardano grow naturally step into this role.",
-                }),
-              ]}
-              leftHeadingDot={true}
-              rightButtonLabel={translate({
-                id: "ambassadors.cta.rightButtonLabel",
-                message: "Get Started",
-              })}
-              rightButtonLink={
-                "https://forum.cardano.org/t/cardano-ambassadors-roles-and-responsibilities/154055"
-              }
-              rightButtonAlign={"center"}
-            />
-          </BoundaryBox>
-        </BackgroundWrapper>
       </main>
     </Layout>
   );

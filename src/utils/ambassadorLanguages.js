@@ -16,3 +16,16 @@ export function deriveAvailableLanguages(ambassadors) {
     return a.localeCompare(b);
   });
 }
+
+export function ambassadorContributions(ambassador) {
+  return (ambassador.areasOfContribution || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s && s !== "SOON...");
+}
+
+export function deriveAvailableContributions(ambassadors) {
+  const set = new Set();
+  ambassadors.forEach((a) => ambassadorContributions(a).forEach((v) => set.add(v)));
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
+}

@@ -3664,11 +3664,41 @@
   "ambassadors.directory.languageAria": {
     "message": "Filter by language"
   },
+  "ambassadors.directory.contributionAria": {
+    "message": "Filter by contribution"
+  },
   "ambassadors.directory.allCountries": {
     "message": "All countries"
   },
   "ambassadors.directory.allLanguages": {
     "message": "All languages"
+  },
+  "ambassadors.directory.allContributions": {
+    "message": "All contributions"
+  },
+  "ambassadors.cta.bannerTitle": {
+    "message": "Ready to make an impact?"
+  },
+  "ambassadors.cta.bannerBody": {
+    "message": "Help grow Cardano in your community. Start contributing on the Cardano Forum and become part of our global Ambassador Program."
+  },
+  "ambassadors.cta.bannerForumLabel": {
+    "message": "Start on the Forum"
+  },
+  "ambassadors.cta.bannerJoinLabel": {
+    "message": "Learn How to Join"
+  },
+  "ambassadors.hero.titlePrefix": {
+    "message": "Cardano"
+  },
+  "ambassadors.hero.titleHighlight": {
+    "message": "Ambassadors"
+  },
+  "ambassadors.hero.featured.viewProfile": {
+    "message": "View profile →"
+  },
+  "ambassadors.hero.featured.aria": {
+    "message": "Featured ambassador"
   },
   "ambassadors.directory.resultMeta": {
     "message": "Showing {shown} of {total} ambassadors"

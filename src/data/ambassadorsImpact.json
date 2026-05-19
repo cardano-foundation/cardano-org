@@ -117,11 +117,43 @@
     }
   ],
   "featuredHero": {
-    "ambassadorRef": "Mauro Agustín Andreoli",
-    "tags": [
-      { "label": "Content", "tone": "content" },
-      { "label": "Events", "tone": "events" },
-      { "label": "Education", "tone": "education" }
+    "ambassadors": [
+      {
+        "ref": "Sebastian Aravena",
+        "tags": [
+          { "label": "Software", "tone": "openSource" },
+          { "label": "Education", "tone": "education" }
+        ]
+      },
+      {
+        "ref": "Mauro Agustín Andreoli",
+        "tags": [
+          { "label": "Content", "tone": "content" },
+          { "label": "Events", "tone": "events" },
+          { "label": "Education", "tone": "education" }
+        ]
+      },
+      {
+        "ref": "Hikaru Nomura",
+        "tags": [
+          { "label": "Translations", "tone": "translations" },
+          { "label": "Content", "tone": "content" }
+        ]
+      },
+      {
+        "ref": "Andreas Sosilo",
+        "tags": [
+          { "label": "Education", "tone": "education" },
+          { "label": "Events", "tone": "events" }
+        ]
+      },
+      {
+        "ref": "Kornel Gajewski",
+        "tags": [
+          { "label": "Development", "tone": "openSource" },
+          { "label": "Translations", "tone": "translations" }
+        ]
+      }
     ]
   },
   "stories": [

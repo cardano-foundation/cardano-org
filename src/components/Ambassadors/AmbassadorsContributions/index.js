@@ -4,7 +4,6 @@ import {
   BsPenFill,
   BsCodeSlash,
   BsShieldCheck,
-  BsLightbulbFill,
   BsBriefcaseFill,
 } from "react-icons/bs";
 import { HiUsers, HiTranslate } from "react-icons/hi";
@@ -79,15 +78,6 @@ const ROLES = [
     descId: "ambassadors.roles.moderation.description",
     descDefault:
       "Managing online discussions across 50 [channels](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 languages on 9 platforms, ensuring productive and welcoming digital environments in both official and community spaces. All community members must act lawfully, ethically, and in the project's best interest, following the [Community Code of Conduct.](https://cardano.org/community-code-of-conduct/)",
-  },
-  {
-    icon: <BsLightbulbFill />,
-    accent: "violet",
-    titleId: "ambassadors.roles.innovative.title",
-    titleDefault: "Innovative Contributions",
-    descId: "ambassadors.roles.innovative.description",
-    descDefault:
-      "From educational campaigns to groundbreaking community projects, every initiative makes a lasting impact.",
   },
 ];
 

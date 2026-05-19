@@ -6,7 +6,12 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AmbassadorCard from "@site/src/components/Ambassadors/AmbassadorCard";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
-import { getLanguageForCountry, deriveAvailableLanguages } from "@site/src/utils/ambassadorLanguages";
+import {
+  getLanguageForCountry,
+  deriveAvailableLanguages,
+  ambassadorContributions,
+  deriveAvailableContributions,
+} from "@site/src/utils/ambassadorLanguages";
 import styles from "./styles.module.css";
 
 const PAGE_SIZE = 24;
@@ -24,6 +29,7 @@ export default function AmbassadorsDirectory() {
   const [query, setQuery] = useState("");
   const [country, setCountry] = useState("all");
   const [language, setLanguage] = useState("all");
+  const [contribution, setContribution] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const sortedData = useMemo(
@@ -33,19 +39,21 @@ export default function AmbassadorsDirectory() {
 
   const countryOptions = useMemo(() => buildCountryOptions(sortedData), [sortedData]);
   const languageOptions = useMemo(() => deriveAvailableLanguages(sortedData), [sortedData]);
+  const contributionOptions = useMemo(() => deriveAvailableContributions(sortedData), [sortedData]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return sortedData.filter((a) => {
       if (country !== "all" && a.country !== country) return false;
       if (language !== "all" && getLanguageForCountry(a.country) !== language) return false;
+      if (contribution !== "all" && !ambassadorContributions(a).includes(contribution)) return false;
       if (!q) return true;
       return (
         a.name.toLowerCase().includes(q) ||
         (a.role && a.role.toLowerCase().includes(q))
       );
     });
-  }, [sortedData, query, country, language]);
+  }, [sortedData, query, country, language, contribution]);
 
   const total = sortedData.length;
   const visible = filtered.slice(0, visibleCount);
@@ -61,6 +69,7 @@ export default function AmbassadorsDirectory() {
     setQuery("");
     setCountry("all");
     setLanguage("all");
+    setContribution("all");
     setVisibleCount(PAGE_SIZE);
   }
 
@@ -145,6 +154,25 @@ export default function AmbassadorsDirectory() {
           {languageOptions.map((lang) => (
             <option key={lang} value={lang}>
               {lang}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={contribution}
+          onChange={(e) => handleFilterChange(setContribution)(e.target.value)}
+          aria-label={translate({
+            id: "ambassadors.directory.contributionAria",
+            message: "Filter by contribution",
+          })}
+          className={styles.select}
+        >
+          <option value="all">
+            {translate({ id: "ambassadors.directory.allContributions", message: "All contributions" })}
+          </option>
+          {contributionOptions.map((c) => (
+            <option key={c} value={c}>
+              {c}
             </option>
           ))}
         </select>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
@@ -9,10 +9,29 @@ import centroids from "@site/src/data/countryCentroids.json";
 
 import AmbassadorsMap from "@site/src/components/Ambassadors/AmbassadorsMap";
 import AmbassadorsStatsRow from "@site/src/components/Ambassadors/AmbassadorsStatsRow";
+import FeaturedCard from "@site/src/components/Ambassadors/AmbassadorsHero/FeaturedCard";
+
+const USE_RED_AMBASSADORS = true;
+
+function resolveFeatured(featuredHero) {
+  if (!featuredHero) return [];
+  const entries = featuredHero.ambassadors
+    || (featuredHero.ambassadorRef
+      ? [{ ref: featuredHero.ambassadorRef, tags: featuredHero.tags }]
+      : []);
+  const byName = new Map(ambassadorsData.map((a) => [a.name, a]));
+  return entries
+    .map((e) => {
+      const a = byName.get(e.ref);
+      return a ? { ...a, tags: e.tags || [] } : null;
+    })
+    .filter(Boolean);
+}
 
 export default function AmbassadorsHero() {
   const ambassadorsCount = ambassadorsData.length;
   const countriesCount = new Set(ambassadorsData.map((a) => a.country)).size;
+  const featured = useMemo(() => resolveFeatured(impactData.featuredHero), []);
 
   return (
     <header className={styles.hero}>
@@ -23,7 +42,16 @@ export default function AmbassadorsHero() {
               {translate({ id: "ambassadors.hero.eyebrow", message: "Cardano Ambassadors" })}
             </span>
             <h1 className={styles.heroTitle}>
-              {translate({ id: "ambassadors.hero.titleNew", message: "Cardano Ambassadors" })}
+              {USE_RED_AMBASSADORS ? (
+                <>
+                  {translate({ id: "ambassadors.hero.titlePrefix", message: "Cardano" })}{" "}
+                  <span className={styles.heroTitleRed}>
+                    {translate({ id: "ambassadors.hero.titleHighlight", message: "Ambassadors" })}
+                  </span>
+                </>
+              ) : (
+                translate({ id: "ambassadors.hero.titleNew", message: "Cardano Ambassadors" })
+              )}
               <br />
               <span className={styles.heroTitleAccent}>
                 {translate({ id: "ambassadors.hero.titleAccent", message: "in action" })}
@@ -52,6 +80,7 @@ export default function AmbassadorsHero() {
           <div className={styles.heroVisual}>
             <div className={styles.heroMap}>
               <AmbassadorsMap ambassadors={ambassadorsData} centroids={centroids} />
+              {featured.length > 0 && <FeaturedCard items={featured} />}
             </div>
           </div>
         </div>

@@ -54,6 +54,10 @@
   color: #6684ce;
 }
 
+.heroTitleRed {
+  color: rgb(255, 118, 118);
+}
+
 .heroLede {
   font-size: 1.05rem;
   line-height: 1.55;
