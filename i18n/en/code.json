@@ -3563,10 +3563,10 @@
     "message": "Highlighted Achievements"
   },
   "ambassadors.milestones.title": {
-    "message": "Selected milestones from the program"
+    "message": "Achievements"
   },
   "ambassadors.milestones.description": {
-    "message": "A handpicked timeline, not exhaustive. From the program's launch in 2018 to today's partnerships, integrations and events."
+    "message": "A handpicked timeline of Ambassador wins since 2018."
   },
   "ambassadors.milestones.creditPrefix": {
     "message": "Led by"
