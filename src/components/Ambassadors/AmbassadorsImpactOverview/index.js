@@ -4,6 +4,7 @@ import { HiPencil, HiCalendar } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 import { BsCodeSlash, BsShieldCheck } from "react-icons/bs";
 
+import Sparkline from "@site/src/components/Ambassadors/Sparkline";
 import impactData from "@site/src/data/ambassadorsImpact.json";
 import styles from "./styles.module.css";
 
@@ -45,7 +46,7 @@ const CATEGORIES = [
   },
 ];
 
-function ImpactCard({ category, value }) {
+function ImpactCard({ category, value, trend }) {
   const labelTranslated = translate(
     { id: `ambassadors.impact.${category.key}.label`, message: category.labelDefault },
   );
@@ -58,12 +59,18 @@ function ImpactCard({ category, value }) {
       <div className={styles.label}>{labelTranslated}</div>
       <div className={styles.value}>{value.toLocaleString()}</div>
       <div className={styles.caption}>{captionTranslated}</div>
+      {trend && trend.length > 0 && (
+        <div className={styles.sparkWrap}>
+          <Sparkline data={trend} ariaLabel={labelTranslated} />
+        </div>
+      )}
     </div>
   );
 }
 
 export default function AmbassadorsImpactOverview() {
   const byCategory = impactData.data.contributionsByCategory;
+  const trends = impactData.data.trendsByCategory || {};
   return (
     <section id="impact">
       <div className={styles.layout}>
@@ -84,6 +91,7 @@ export default function AmbassadorsImpactOverview() {
               key={category.key}
               category={category}
               value={byCategory[category.key] || 0}
+              trend={trends[category.key]}
             />
           ))}
         </div>

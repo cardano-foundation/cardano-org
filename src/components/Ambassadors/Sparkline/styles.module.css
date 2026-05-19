@@ -1,0 +1,18 @@
+.sparkline {
+  display: block;
+  width: 100%;
+  height: 36px;
+}
+
+.line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.area {
+  fill: currentColor;
+  opacity: 0.12;
+}
