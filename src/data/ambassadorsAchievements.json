@@ -156,6 +156,17 @@
     ]
   },
   {
+    "id": "ambassador-retreat-2025",
+    "year": "2025",
+    "achievement": "First Ambassador Retreat in Berlin",
+    "bodyDefault": "The first dedicated Cardano Ambassador workshop gathers around 12 Ambassadors at Projektraum Drahnsdorf the weekend before the Berlin Summit. The retreat is funded by Project Catalyst Fund 13 and focuses on governance, collaboration and program direction.",
+    "ambassadorsInvolved": "Felix Weber, 12 Ambassadors",
+    "evidence": [
+      "https://www.lidonation.com/en/posts/ambassadors-assemble-at-cardanosummit-berlin-2025",
+      "https://x.com/josi_sndnc/status/1987489604702707863"
+    ]
+  },
+  {
     "id": "buidler-fest",
     "year": "2026",
     "achievement": "Buidler Fest, Buenos Aires",
