@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import multiavatar from "@multiavatar/multiavatar";
 
-import { avatarColor } from "@site/src/utils/ambassadorColors";
 import { present } from "@site/src/utils/ambassadorLanguages";
 import styles from "./styles.module.css";
+
+function multiavatarDataUri(name) {
+  const svg = multiavatar(name || "Ambassador");
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
 
 export function Flag({ country, className }) {
   const flag = useBaseUrl(`img/flags/${country}.svg`);
@@ -18,6 +23,7 @@ export default function AmbassadorAvatar({
 }) {
   const [errored, setErrored] = useState(false);
   const showPhoto = present(ambassador.profilePicture) && !errored;
+  const fallbackSrc = useMemo(() => multiavatarDataUri(ambassador.name), [ambassador.name]);
 
   if (showPhoto) {
     return (
@@ -31,12 +37,11 @@ export default function AmbassadorAvatar({
     );
   }
   return (
-    <div
-      className={initialClassName || className || styles.initial}
-      style={{ backgroundColor: avatarColor(ambassador.name) }}
+    <img
+      src={fallbackSrc}
+      alt=""
+      className={initialClassName || className || styles.fallback}
       aria-hidden="true"
-    >
-      {ambassador.name.trim().charAt(0).toUpperCase()}
-    </div>
+    />
   );
 }
