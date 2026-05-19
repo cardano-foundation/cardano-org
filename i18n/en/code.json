@@ -3386,43 +3386,43 @@
     "message": "Content Creation"
   },
   "ambassadors.roles.contentCreation.description": {
-    "message": "Producing engaging videos, insightful articles, informative threads, graphics, and podcasts that educate and inspire. [Check out the latest Cardano content here.](https://cardano.org/news)"
+    "message": "Articles, videos, podcasts and social media education."
   },
   "ambassadors.roles.meetups.title": {
-    "message": "Meetups & Events"
+    "message": "Events & Meetups"
   },
   "ambassadors.roles.meetups.description": {
-    "message": "Organizing both in-person and virtual gatherings, workshops, and hackathons to unite local communities. [Find your local community events.](https://luma.com/CardanoEvents)"
+    "message": "Organizing local meetups, workshops, hackathons and conferences."
   },
   "ambassadors.roles.education.title": {
     "message": "Education & Advocacy"
   },
   "ambassadors.roles.education.description": {
-    "message": "Hosting seminars, advocating for blockchain adoption, and supporting learning initiatives across institutions. [Explore Cardano's research.](https://cardano.org/research)"
+    "message": "Teaching, onboarding new users and raising awareness."
   },
   "ambassadors.roles.business.title": {
     "message": "Business Development"
   },
   "ambassadors.roles.business.description": {
-    "message": "Forging partnerships and leading community-driven projects to expand Cardano's influence. [Explore use cases.](https://cardano.org/use-cases)"
+    "message": "Growing partnerships and real-world adoption."
   },
   "ambassadors.roles.software.title": {
-    "message": "Software Development"
+    "message": "Development"
   },
   "ambassadors.roles.software.description": {
-    "message": "Contributing to open-source projects, drafting Cardano Improvement Proposals (CIPs), and creating tools to enhance the ecosystem. [Get started here.](https://cardano.org/developers)"
+    "message": "Building tools, contributing to open source and technical docs."
   },
   "ambassadors.roles.translations.title": {
     "message": "Translations"
   },
   "ambassadors.roles.translations.description": {
-    "message": "Extending Cardano's reach by translating key content into multiple languages. [Visit the forum.](https://forum.cardano.org/)"
+    "message": "Making Cardano accessible in local languages."
   },
   "ambassadors.roles.moderation.title": {
     "message": "Moderation"
   },
   "ambassadors.roles.moderation.description": {
-    "message": "Managing online discussions across 50 [channels](https://forum.cardano.org/t/cardano-stay-safe-series-recommended-community-channel-list/20046) in 17 languages on 9 platforms, ensuring productive and welcoming digital environments in both official and community spaces. All community members must act lawfully, ethically, and in the project's best interest, following the [Community Code of Conduct.](https://cardano.org/community-code-of-conduct/)"
+    "message": "Creating safe, welcoming and informative spaces."
   },
   "ambassadors.roles.innovative.title": {
     "message": "Innovative Contributions"
@@ -3687,6 +3687,9 @@
   },
   "ambassadors.cta.bannerJoinLabel": {
     "message": "Learn How to Join"
+  },
+  "ambassadors.contributions.learnMore": {
+    "message": "Learn more about the program"
   },
   "ambassadors.hero.titlePrefix": {
     "message": "Cardano"
