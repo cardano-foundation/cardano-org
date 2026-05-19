@@ -1,0 +1,14 @@
+.photo,
+.initial {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: #e2e8f0;
+}

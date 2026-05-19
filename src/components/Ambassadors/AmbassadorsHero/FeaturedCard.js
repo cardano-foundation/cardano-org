@@ -1,52 +1,15 @@
 import React, { useEffect, useState, useCallback } from "react";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 
-import { avatarColor } from "@site/src/utils/ambassadorColors";
+import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import styles from "./FeaturedCard.module.css";
 
 const ROTATE_MS = 5000;
-const PLACEHOLDER = "SOON...";
-
-function present(value) {
-  if (!value) return false;
-  const trimmed = String(value).trim();
-  return trimmed.length > 0 && trimmed !== PLACEHOLDER;
-}
 
 function prefersReducedMotion() {
   if (typeof window === "undefined" || !window.matchMedia) return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
-function AvatarOrInitial({ ambassador }) {
-  const [errored, setErrored] = useState(false);
-  const showPhoto = present(ambassador.profilePicture) && !errored;
-  if (showPhoto) {
-    return (
-      <img
-        src={ambassador.profilePicture}
-        alt=""
-        className={styles.photo}
-        onError={() => setErrored(true)}
-      />
-    );
-  }
-  return (
-    <div
-      className={styles.initial}
-      style={{ backgroundColor: avatarColor(ambassador.name) }}
-      aria-hidden="true"
-    >
-      {ambassador.name.trim().charAt(0).toUpperCase()}
-    </div>
-  );
-}
-
-function Flag({ country }) {
-  const flag = useBaseUrl(`img/flags/${country}.svg`);
-  return <img src={flag} alt="" className={styles.flag} />;
 }
 
 export default function FeaturedCard({ items }) {
@@ -91,8 +54,12 @@ export default function FeaturedCard({ items }) {
     >
       <div className={styles.head}>
         <div className={styles.avatarWrap}>
-          <AvatarOrInitial ambassador={current} />
-          <Flag country={current.country} />
+          <AmbassadorAvatar
+            ambassador={current}
+            photoClassName={styles.photo}
+            initialClassName={styles.initial}
+          />
+          <Flag country={current.country} className={styles.flag} />
         </div>
         <div className={styles.meta}>
           <div className={styles.name}>{current.name}</div>

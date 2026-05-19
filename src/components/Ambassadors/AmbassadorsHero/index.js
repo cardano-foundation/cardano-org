@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
@@ -28,10 +28,11 @@ function resolveFeatured(featuredHero) {
     .filter(Boolean);
 }
 
+const AMBASSADORS_COUNT = ambassadorsData.length;
+const COUNTRIES_COUNT = new Set(ambassadorsData.map((a) => a.country)).size;
+const FEATURED = resolveFeatured(impactData.featuredHero);
+
 export default function AmbassadorsHero() {
-  const ambassadorsCount = ambassadorsData.length;
-  const countriesCount = new Set(ambassadorsData.map((a) => a.country)).size;
-  const featured = useMemo(() => resolveFeatured(impactData.featuredHero), []);
 
   return (
     <header className={styles.hero}>
@@ -80,14 +81,14 @@ export default function AmbassadorsHero() {
           <div className={styles.heroVisual}>
             <div className={styles.heroMap}>
               <AmbassadorsMap ambassadors={ambassadorsData} centroids={centroids} />
-              {featured.length > 0 && <FeaturedCard items={featured} />}
+              {FEATURED.length > 0 && <FeaturedCard items={FEATURED} />}
             </div>
           </div>
         </div>
 
         <AmbassadorsStatsRow
-          ambassadorsCount={ambassadorsCount}
-          countriesCount={countriesCount}
+          ambassadorsCount={AMBASSADORS_COUNT}
+          countriesCount={COUNTRIES_COUNT}
           languages={impactData.stats.languages}
           channels={impactData.stats.moderatedChannels}
           platforms={impactData.stats.platforms}

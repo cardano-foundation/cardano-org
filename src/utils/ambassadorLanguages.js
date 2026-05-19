@@ -1,6 +1,13 @@
 import impactData from "@site/src/data/ambassadorsImpact.json";
 
 const FALLBACK = "Other";
+export const PLACEHOLDER = "SOON...";
+
+export function present(value) {
+  if (!value) return false;
+  const trimmed = String(value).trim();
+  return trimmed.length > 0 && trimmed !== PLACEHOLDER;
+}
 
 export function getLanguageForCountry(country) {
   if (!country) return FALLBACK;
@@ -21,7 +28,7 @@ export function ambassadorContributions(ambassador) {
   return (ambassador.areasOfContribution || "")
     .split(",")
     .map((s) => s.trim())
-    .filter((s) => s && s !== "SOON...");
+    .filter(present);
 }
 
 export function deriveAvailableContributions(ambassadors) {
