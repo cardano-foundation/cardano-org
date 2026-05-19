@@ -56,7 +56,7 @@ export default function AmbassadorsImpactOverview() {
       <TitleWithText
         title={translate({
           id: "ambassadors.impact.title",
-          message: "Measuring the global impact of our ambassadors",
+          message: "Measuring the global impact of Cardano Ambassadors",
         })}
         description={[
           translate({

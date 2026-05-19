@@ -98,7 +98,7 @@ export default function AmbassadorsContributions() {
           <h2 className={styles.title}>
             {translate({
               id: "ambassadors.contributions.title",
-              message: "What ambassadors do",
+              message: "What Ambassadors do",
             })}
           </h2>
           <p className={styles.description}>

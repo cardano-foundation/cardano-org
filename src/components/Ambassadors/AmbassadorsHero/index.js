@@ -62,7 +62,7 @@ export default function AmbassadorsHero() {
                 to="https://forum.cardano.org/t/cardano-ambassadors-roles-and-responsibilities/154055"
                 className={styles.secondaryCta}
               >
-                {translate({ id: "ambassadors.hero.cta.join", message: "Become an ambassador" })}
+                {translate({ id: "ambassadors.hero.cta.join", message: "Become an Ambassador" })}
               </Link>
             </div>
           </div>

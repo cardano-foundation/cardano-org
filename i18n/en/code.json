@@ -3455,7 +3455,7 @@
     "message": "View directory"
   },
   "ambassadors.hero.cta.join": {
-    "message": "Become an ambassador"
+    "message": "Become an Ambassador"
   },
   "ambassadors.hero.featured.blurb": {
     "message": "Driving Cardano adoption across LATAM through Spanish-language content, meetups and education."
@@ -3494,7 +3494,7 @@
     "message": "Impact Overview"
   },
   "ambassadors.impact.title": {
-    "message": "Measuring the global impact of our ambassadors"
+    "message": "Measuring the global impact of Cardano Ambassadors"
   },
   "ambassadors.impact.description": {
     "message": "Cardano Ambassadors create content, host events, translate, moderate channels and contribute to open source. The numbers below show the breadth of activity across the program."
@@ -3530,7 +3530,7 @@
     "message": "Projects, tools and code contributions"
   },
   "ambassadors.contributions.title": {
-    "message": "What ambassadors do"
+    "message": "What Ambassadors do"
   },
   "ambassadors.contributions.description": {
     "message": "Ambassadors contribute in many ways to support Cardano's mission and grow the ecosystem."
@@ -3542,7 +3542,7 @@
     "message": "Top achievements led by Ambassadors"
   },
   "ambassadors.milestones.description": {
-    "message": "Concrete wins from the program. Partnerships, integrations and events delivered by named ambassadors and ambassador groups."
+    "message": "Concrete wins from the program. Partnerships, integrations and events delivered by named Ambassadors and Ambassador groups."
   },
   "ambassadors.milestones.creditPrefix": {
     "message": "Led by"
@@ -3647,7 +3647,7 @@
     "message": "Ambassador Directory"
   },
   "ambassadors.directory.title": {
-    "message": "Search and filter our global network of ambassadors"
+    "message": "Search and filter our global network of Ambassadors"
   },
   "ambassadors.directory.intro": {
     "message": "Discover profiles of {count} Cardano Ambassadors representing {countries} countries."
@@ -3656,7 +3656,7 @@
     "message": "Search by name…"
   },
   "ambassadors.directory.searchAria": {
-    "message": "Search ambassadors by name"
+    "message": "Search Ambassadors by name"
   },
   "ambassadors.directory.countryAria": {
     "message": "Filter by country"
@@ -3701,13 +3701,13 @@
     "message": "View profile →"
   },
   "ambassadors.hero.featured.aria": {
-    "message": "Featured ambassador"
+    "message": "Featured Ambassador"
   },
   "ambassadors.directory.resultMeta": {
-    "message": "Showing {shown} of {total} ambassadors"
+    "message": "Showing {shown} of {total} Ambassadors"
   },
   "ambassadors.directory.empty": {
-    "message": "No ambassadors match your filters."
+    "message": "No Ambassadors match your filters."
   },
   "ambassadors.directory.clear": {
     "message": "Clear filters"
@@ -3731,7 +3731,7 @@
     "message": "Impact Stories"
   },
   "ambassadors.stories.title": {
-    "message": "Real stories from ambassadors making a difference"
+    "message": "Real stories from Ambassadors making a difference"
   },
   "ambassadors.stories.readMore": {
     "message": "Read story"

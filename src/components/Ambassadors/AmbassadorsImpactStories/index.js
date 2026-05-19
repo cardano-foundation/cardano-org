@@ -120,7 +120,7 @@ export default function AmbassadorsImpactStories() {
       <TitleWithText
         title={translate({
           id: "ambassadors.stories.title",
-          message: "Real stories from ambassadors making a difference",
+          message: "Real stories from Ambassadors making a difference",
         })}
         titleType="black"
         headingDot={true}

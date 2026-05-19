@@ -82,7 +82,7 @@ export default function AmbassadorsDirectory() {
       <TitleWithText
         title={translate({
           id: "ambassadors.directory.title",
-          message: "Search and filter our global network of ambassadors",
+          message: "Search and filter our global network of Ambassadors",
         })}
         description={[
           translate(
@@ -114,7 +114,7 @@ export default function AmbassadorsDirectory() {
             })}
             aria-label={translate({
               id: "ambassadors.directory.searchAria",
-              message: "Search ambassadors by name",
+              message: "Search Ambassadors by name",
             })}
             className={styles.searchInput}
           />
@@ -182,7 +182,7 @@ export default function AmbassadorsDirectory() {
         {translate(
           {
             id: "ambassadors.directory.resultMeta",
-            message: "Showing {shown} of {total} ambassadors",
+            message: "Showing {shown} of {total} Ambassadors",
           },
           { shown: filtered.length, total }
         )}
@@ -193,7 +193,7 @@ export default function AmbassadorsDirectory() {
           <p>
             {translate({
               id: "ambassadors.directory.empty",
-              message: "No ambassadors match your filters.",
+              message: "No Ambassadors match your filters.",
             })}
           </p>
           <button type="button" className={styles.clearButton} onClick={clearFilters}>

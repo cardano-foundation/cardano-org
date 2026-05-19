@@ -46,7 +46,7 @@ function PinTooltip({ entry }) {
         <span className={styles.tooltipCountry}>{entry.role}</span>
         <span className={styles.tooltipCount}>
           {translate(
-            { id: "ambassadors.map.countLabel", message: "{n} ambassadors" },
+            { id: "ambassadors.map.countLabel", message: "{n} Ambassadors" },
             { n: entry.ambassadors.length }
           )}
         </span>
