@@ -3494,10 +3494,10 @@
     "message": "Impact Overview"
   },
   "ambassadors.impact.title": {
-    "message": "Measuring the global impact of Cardano Ambassadors"
+    "message": "Impact Overview"
   },
   "ambassadors.impact.description": {
-    "message": "Cardano Ambassadors create content, host events, translate, moderate channels and contribute to open source. The numbers below show the breadth of activity across the program."
+    "message": "Measuring the global impact of Cardano Ambassadors."
   },
   "ambassadors.impact.content.label": {
     "message": "Content created"
@@ -3690,9 +3690,6 @@
   },
   "ambassadors.contributions.learnMore": {
     "message": "Learn more about the program"
-  },
-  "ambassadors.impact.viewAll": {
-    "message": "View all metrics"
   },
   "ambassadors.hero.titlePrefix": {
     "message": "Cardano"

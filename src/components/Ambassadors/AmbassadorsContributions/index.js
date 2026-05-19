@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { BsPenFill, BsCodeSlash, BsShieldCheck, BsBriefcaseFill } from "react-icons/bs";
-import { HiUsers, HiTranslate, HiArrowRight } from "react-icons/hi";
+import { HiUsers, HiTranslate } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 
 import styles from "./styles.module.css";
@@ -108,7 +108,6 @@ export default function AmbassadorsContributions() {
               id: "ambassadors.contributions.learnMore",
               message: "Learn more about the program",
             })}
-            <HiArrowRight className={styles.learnMoreIcon} aria-hidden="true" />
           </Link>
         </div>
         <div className={styles.tilesCard}>
