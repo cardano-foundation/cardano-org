@@ -51,8 +51,8 @@
   content: "";
   position: absolute;
   top: 1.75rem;
-  left: 130px;
-  right: 130px;
+  left: 9px;
+  right: 251px;
   height: 2px;
   background: linear-gradient(
     90deg,
@@ -74,8 +74,7 @@
 .dot {
   position: absolute;
   top: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 18px;
   height: 18px;
   border-radius: 50%;
