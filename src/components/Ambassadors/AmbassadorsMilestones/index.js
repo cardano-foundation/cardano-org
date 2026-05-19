@@ -4,8 +4,17 @@ import Link from "@docusaurus/Link";
 
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import impactData from "@site/src/data/ambassadorsImpact.json";
+import achievements from "@site/src/data/ambassadorsAchievements.json";
 import styles from "./styles.module.css";
+
+function evidenceLabel(url) {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    return host;
+  } catch {
+    return "Source";
+  }
+}
 
 export default function AmbassadorsMilestones() {
   const creditPrefix = translate({
@@ -36,39 +45,43 @@ export default function AmbassadorsMilestones() {
       />
 
       <ol className={styles.timeline}>
-        {impactData.milestones.map((m) => (
+        {achievements.map((m) => (
           <li key={m.id} className={styles.step}>
             <div className={styles.dot} />
             <div className={styles.year}>{m.year}</div>
             <h3 className={styles.stepTitle}>
-              {translate({ id: `ambassadors.milestone.${m.id}.title`, message: m.titleDefault })}
+              {translate({ id: `ambassadors.milestone.${m.id}.title`, message: m.achievement })}
             </h3>
-            <p className={styles.stepBody}>
-              {translate({ id: `ambassadors.milestone.${m.id}.body`, message: m.bodyDefault })}
-            </p>
-            {m.creditDefault && (
+            {m.bodyDefault && (
+              <p className={styles.stepBody}>
+                {translate({ id: `ambassadors.milestone.${m.id}.body`, message: m.bodyDefault })}
+              </p>
+            )}
+            {m.ambassadorsInvolved && (
               <p className={styles.credit}>
                 {creditPrefix}{" "}
                 <span className={styles.creditName}>
                   {translate({
                     id: `ambassadors.milestone.${m.id}.credit`,
-                    message: m.creditDefault,
+                    message: m.ambassadorsInvolved,
                   })}
                 </span>
               </p>
             )}
-            {m.link && (
-              <Link
-                className={styles.link}
-                to={m.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {translate({
-                  id: `ambassadors.milestone.${m.id}.linkLabel`,
-                  message: m.linkLabelDefault || "Source",
-                })}
-              </Link>
+            {m.evidence && m.evidence.length > 0 && (
+              <div className={styles.evidence}>
+                {m.evidence.map((url) => (
+                  <Link
+                    key={url}
+                    className={styles.link}
+                    to={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {evidenceLabel(url)}
+                  </Link>
+                ))}
+              </div>
             )}
           </li>
         ))}

@@ -85,13 +85,18 @@
   color: #0f172a;
 }
 
+.evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+  margin-top: 0.55rem;
+}
+
 .link {
   font-size: 0.78rem;
   font-weight: 600;
   color: #0033ad;
-  margin-top: 0.5rem;
   text-decoration: none;
-  align-self: flex-start;
 }
 
 .link:hover {

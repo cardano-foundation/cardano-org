@@ -1,0 +1,83 @@
+[
+  {
+    "id": "catalyst-reviewers",
+    "year": "2021-2025",
+    "achievement": "LVL2 Catalyst Reviewers",
+    "bodyDefault": "Sustained, top-tier proposal review across multiple Catalyst funds, shaping how community funding gets allocated.",
+    "ambassadorsInvolved": "20+ Ambassadors",
+    "evidence": [
+      "https://docs.projectcatalyst.io/current-fund/community-review/community-reviewer-levels"
+    ]
+  },
+  {
+    "id": "ledger-live",
+    "year": "2022",
+    "achievement": "Ledger Live Integration",
+    "bodyDefault": "Secure Ada management lands in Ledger's flagship app, driven by an Ambassador-led Catalyst proposal.",
+    "ambassadorsInvolved": "Ambassador Guild",
+    "evidence": [
+      "https://www.ledger.com/cardano-is-here-buy-manage-your-ada-in-ledger-live",
+      "https://projectcatalyst.io/funds/7/open-source-developer-ecosystem/ledger-live-integration"
+    ]
+  },
+  {
+    "id": "summit-events",
+    "year": "2022-2023",
+    "achievement": "30+ Cardano Summit community events",
+    "bodyDefault": "A worldwide network of community-led Summit events extending the official program across continents.",
+    "ambassadorsInvolved": "15+ Ambassadors",
+    "evidence": [
+      "https://forum.cardano.org/t/cardano-summit-2022-community-led-events/107443"
+    ]
+  },
+  {
+    "id": "petrobras",
+    "year": "2024",
+    "achievement": "Petrobras education partnership",
+    "bodyDefault": "A landmark education partnership with one of the world's largest energy companies, opening blockchain training to Petrobras engineers.",
+    "ambassadorsInvolved": "Thiago Nunes",
+    "evidence": [
+      "https://cardanofoundation.org/blog/cardano-foundation-announces-education-partnership-with-petrobras-1"
+    ]
+  },
+  {
+    "id": "utn",
+    "year": "2024",
+    "achievement": "UTN Buenos Aires partnership",
+    "bodyDefault": "Cardano enters Argentina's largest engineering university as an official education partner.",
+    "ambassadorsInvolved": "Jose Iadiccico",
+    "evidence": [
+      "https://cardanofoundation.org/blog/cardano-foundation-reveals-newest-education-partner"
+    ]
+  },
+  {
+    "id": "alba-node",
+    "year": "2024",
+    "achievement": "First Cardano node at a LATAM university",
+    "bodyDefault": "ALBA (Ada Labs for Blockchain Applications) brings the first university-run Cardano node online in Latin America.",
+    "ambassadorsInvolved": "Jose Iadiccico, Martin Ungar",
+    "evidence": [
+      "https://x.com/CardanoSolar/status/1801597418070257894"
+    ]
+  },
+  {
+    "id": "buidler-fest",
+    "year": "2026",
+    "achievement": "Buidler Fest, Buenos Aires",
+    "bodyDefault": "A flagship developer gathering in LATAM, organised and powered by the local Ambassador community.",
+    "ambassadorsInvolved": "9 Ambassadors",
+    "evidence": [
+      "https://x.com/Cardano/status/2041788449892540795"
+    ]
+  },
+  {
+    "id": "org-translation",
+    "year": "2026",
+    "achievement": "cardano.org community translation",
+    "bodyDefault": "Ambassadors localised cardano.org into multiple languages, making the project accessible to non-English audiences.",
+    "ambassadorsInvolved": "5 Ambassadors",
+    "evidence": [
+      "https://cardano.org/translations/"
+    ]
+  }
+]
