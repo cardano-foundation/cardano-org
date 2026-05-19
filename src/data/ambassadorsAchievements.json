@@ -31,6 +31,16 @@
     ]
   },
   {
+    "id": "summit-2021",
+    "year": "2021",
+    "achievement": "Summit 2021 expands to 37 cities",
+    "bodyDefault": "The hybrid Cardano Summit was supported by 38 virtual and live community-led events across 37 cities, hosted by 57+ volunteer organisers including Cardano Ambassadors.",
+    "ambassadorsInvolved": "Cardano Ambassadors and 57+ community volunteers",
+    "evidence": [
+      "https://forum.cardano.org/t/cardano-summit-2021-bringing-our-community-together/73998"
+    ]
+  },
+  {
     "id": "catalyst-reviewers",
     "year": "2021-2025",
     "achievement": "LVL2 Catalyst Reviewers",
@@ -53,12 +63,32 @@
   },
   {
     "id": "summit-events",
-    "year": "2022-2023",
+    "year": "2022",
     "achievement": "30+ Cardano Summit community events",
     "bodyDefault": "A worldwide network of community-led Summit events extending the official program across continents.",
     "ambassadorsInvolved": "15+ Ambassadors",
     "evidence": [
       "https://forum.cardano.org/t/cardano-summit-2022-community-led-events/107443"
+    ]
+  },
+  {
+    "id": "summit-2023",
+    "year": "2023",
+    "achievement": "Summit 2023 satellite events in 25 cities",
+    "bodyDefault": "Around the Dubai main stage, the community organised 25 satellite events worldwide, with hosts in cities like Taipei, Seoul, Kumasi, Buenos Aires and Ho Chi Minh City.",
+    "ambassadorsInvolved": "Cardano community and Ambassadors",
+    "evidence": [
+      "https://adapulse.io/a-summary-of-the-cardano-summit-2023/"
+    ]
+  },
+  {
+    "id": "summit-2024",
+    "year": "2024",
+    "achievement": "Summit 2024 community events in 25+ countries",
+    "bodyDefault": "Community-hosted events accompanied the Dubai Summit across 25+ countries, from Addis Ababa to Amsterdam, Buenos Aires, Sydney, Seoul, Tokyo, New York and London.",
+    "ambassadorsInvolved": "Cardano community and Ambassadors",
+    "evidence": [
+      "https://adapulse.io/cardano-summit-2024-a-global-experience/"
     ]
   },
   {
