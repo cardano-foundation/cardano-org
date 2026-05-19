@@ -3,504 +3,1218 @@
     "name": "Agustin Franchella",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/cardano_agus/"
+    "link": "https://forum.cardano.org/u/cardano_agus/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
+  },
+  {
+    "name": "Andi Schmitt",
+    "role": "Germany",
+    "country": "DE",
+    "link": "https://forum.cardano.org/u/cardandi/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Andreas Sosilo",
     "role": "Indonesia",
     "country": "ID",
-    "link": "https://forum.cardano.org/u/andreassosilo/"
+    "link": "https://forum.cardano.org/u/andreassosilo/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Nori Nishigaya",
     "role": "Canada",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/xeeban/"
+    "link": "https://forum.cardano.org/u/xeeban/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Beatrice Anihiri",
     "role": "Norway",
     "country": "NO",
-    "link": "https://forum.cardano.org/u/bearicea/"
+    "link": "https://forum.cardano.org/u/bearicea/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Benjamin Baani",
     "role": "Ghana",
     "country": "GH",
-    "link": "https://forum.cardano.org/u/benjamin1/"
+    "link": "https://forum.cardano.org/u/benjamin1/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Bernard Sibanda",
     "role": "South Africa",
     "country": "ZA",
-    "link": "https://forum.cardano.org/u/wimscardano/"
+    "link": "https://forum.cardano.org/u/wimscardano/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Glitch",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/glitch_04/"
+    "link": "https://forum.cardano.org/u/glitch_04/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Chris [STR8]",
     "role": "Germany",
     "country": "DE",
-    "link": "https://forum.cardano.org/u/chrisstr8/"
+    "link": "https://forum.cardano.org/u/chrisstr8/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Cristian Jair Rojas Velez",
     "role": "Mexico",
     "country": "MX",
-    "link": "https://forum.cardano.org/u/cristian_jair_rojas/"
+    "link": "https://forum.cardano.org/u/cristian_jair_rojas/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Dan Baruka",
     "role": "Congo, Democratic Republic of the",
     "country": "CD",
-    "link": "https://forum.cardano.org/u/uptodate_developers/"
+    "link": "https://forum.cardano.org/u/uptodate_developers/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Daniel David Lezu",
     "role": "Scotland",
     "country": "_scotland",
-    "link": "https://forum.cardano.org/u/ddlezu/"
+    "link": "https://forum.cardano.org/u/ddlezu/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Darlington Wleh",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/lidonation/"
+    "link": "https://forum.cardano.org/u/lidonation/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Denis Kalinin",
     "role": "Kazakhstan",
     "country": "KZ",
-    "link": "https://forum.cardano.org/u/fell-x27/"
+    "link": "https://forum.cardano.org/u/fell-x27/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Diego Macchi",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/diegomac35"
+    "link": "https://forum.cardano.org/u/diegomac35",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Diego Torres Borda",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/diegotowers/"
+    "link": "https://forum.cardano.org/u/diegotowers/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Dmitry",
     "role": "Poland",
     "country": "PL",
-    "link": "https://forum.cardano.org/u/dmitry.stas/"
+    "link": "https://forum.cardano.org/u/dmitry.stas/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Edickson Rafael Aguilera Ramirez",
     "role": "Venezuela",
     "country": "VE",
-    "link": "https://forum.cardano.org/u/edickson/"
+    "link": "https://forum.cardano.org/u/edickson/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Efe Şafak Şengül",
     "role": "Netherlands",
     "country": "NL",
-    "link": "https://forum.cardano.org/u/hustle/"
+    "link": "https://forum.cardano.org/u/hustle/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Elton Rafael Nápoles Núñez",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/napoles/"
+    "link": "https://forum.cardano.org/u/napoles/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Eric Tsai",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/eric248550/"
+    "link": "https://forum.cardano.org/u/eric248550/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Erick Valadez Hernandez",
     "role": "Mexico",
     "country": "MX",
-    "link": "https://forum.cardano.org/u/jericko/"
+    "link": "https://forum.cardano.org/u/jericko/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Erwin Hagens",
     "role": "Netherlands",
     "country": "NL",
-    "link": "https://forum.cardano.org/u/slight86/"
+    "link": "https://forum.cardano.org/u/slight86/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Evans Kisanga",
     "role": "Tanzania",
     "country": "TZ",
-    "link": "https://forum.cardano.org/u/babaelliot/"
-  },
-  {
-    "name": "Fabian von Bergen",
-    "role": "Switzerland",
-    "country": "CH",
-    "link": "https://forum.cardano.org/u/zyroxa/"
+    "link": "https://forum.cardano.org/u/babaelliot/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Fanny Wijaya",
     "role": "Indonesia",
     "country": "ID",
-    "link": "https://forum.cardano.org/u/fanny_wijaya/"
+    "link": "https://forum.cardano.org/u/fanny_wijaya/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Felix Weber",
     "role": "France",
     "country": "FR",
-    "link": "https://forum.cardano.org/u/felix_weber/"
+    "link": "https://forum.cardano.org/u/felix_weber/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Giannis Mitsios",
     "role": "Greece",
     "country": "GR",
-    "link": "https://forum.cardano.org/u/varavas/"
+    "link": "https://forum.cardano.org/u/varavas/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
+  },
+  {
+    "name": "Gisela Rosa",
+    "role": "Puerto Rico",
+    "country": "PR",
+    "link": "https://forum.cardano.org/u/arcella/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Gonzalo Camps",
     "role": "Chile",
     "country": "CL",
-    "link": "https://forum.cardano.org/u/gonzalocamps/"
+    "link": "https://forum.cardano.org/u/gonzalocamps/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Guillermo Moratorio",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/woodland_pools/"
+    "link": "https://forum.cardano.org/u/woodland_pools/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Hideki Takeshi",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/hidekitakeshi/"
+    "link": "https://forum.cardano.org/u/hidekitakeshi/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Hikaru Nomura",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/hix_coffeepool/"
+    "link": "https://forum.cardano.org/u/hix_coffeepool/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Ilhun Chung",
     "role": "Korea, South",
     "country": "KR",
-    "link": "https://forum.cardano.org/u/cryptoveri/"
+    "link": "https://forum.cardano.org/u/cryptoveri/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Cardisa Latina",
     "role": "Colombia",
     "country": "CO",
-    "link": "https://forum.cardano.org/u/cardisalatina/"
+    "link": "https://forum.cardano.org/u/cardisalatina/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Janice Gu",
     "role": "Korea, South",
     "country": "KR",
-    "link": "https://forum.cardano.org/u/janiceyamgu/"
+    "link": "https://forum.cardano.org/u/janiceyamgu/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jaromír Tesař",
     "role": "Czech Republic",
     "country": "CZ",
-    "link": "https://forum.cardano.org/u/jaromir/"
+    "link": "https://forum.cardano.org/u/jaromir/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jay Hao",
     "role": "China",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/jayhao/"
+    "link": "https://forum.cardano.org/u/jayhao/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jennifer Brito",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/jennycita/"
+    "link": "https://forum.cardano.org/u/jennycita/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jeremiah Baani",
     "role": "Ghana",
     "country": "GH",
-    "link": "https://forum.cardano.org/u/jeremiah/"
+    "link": "https://forum.cardano.org/u/jeremiah/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Le Xuan Linh",
     "role": "Vietnam",
     "country": "VN",
-    "link": "https://forum.cardano.org/u/jimmy_lee_vcoincheck/"
+    "link": "https://forum.cardano.org/u/jimmy_lee_vcoincheck/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jo Allum",
     "role": "New Zealand",
     "country": "NZ",
-    "link": "https://forum.cardano.org/u/yojoflo/"
+    "link": "https://forum.cardano.org/u/yojoflo/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
-    "name": "Bosco Ribeiro ",
+    "name": "Bosco Ribeiro",
     "role": "Brazil",
     "country": "BR",
-    "link": "https://forum.cardano.org/u/boscokim/"
+    "link": "https://forum.cardano.org/u/boscokim/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Jose Iadicicco",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/joseiadicicco/"
+    "link": "https://forum.cardano.org/u/joseiadicicco/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Oscar Hong",
     "role": "Korea, South",
     "country": "KR",
-    "link": "https://forum.cardano.org/u/oscar_west/"
+    "link": "https://forum.cardano.org/u/oscar_west/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Kai Chapell",
     "role": "United Kingdom",
     "country": "GB",
-    "link": "https://forum.cardano.org/u/sl13pnir/"
+    "link": "https://forum.cardano.org/u/sl13pnir/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Cheung King Wang Kinson",
     "role": "Hong Kong",
     "country": "HK",
-    "link": "https://forum.cardano.org/u/kinson_cheung1/"
+    "link": "https://forum.cardano.org/u/kinson_cheung1/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Kornel Gajewski",
     "role": "Poland",
     "country": "PL",
-    "link": "https://forum.cardano.org/u/cornl/"
+    "link": "https://forum.cardano.org/u/cornl/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Lloyd Duhon",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/lloydduhon/"
+    "link": "https://forum.cardano.org/u/lloydduhon/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Lucas Macchiavelli",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/lucas_mac/"
+    "link": "https://forum.cardano.org/u/lucas_mac/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Marcus Vinicius",
     "role": "Brazil",
     "country": "BR",
-    "link": "https://forum.cardano.org/u/marcusoregano/"
+    "link": "https://forum.cardano.org/u/marcusoregano/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Martin Lang",
     "role": "Austria",
     "country": "AT",
-    "link": "https://forum.cardano.org/u/atada/"
+    "link": "https://forum.cardano.org/u/atada/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Mauro Agustín Andreoli",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/mauroandreoli/"
+    "link": "https://forum.cardano.org/u/mauroandreoli/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Metinee Boonrattanaamorn",
     "role": "Thailand",
     "country": "TH",
-    "link": "https://forum.cardano.org/u/metinee/"
+    "link": "https://forum.cardano.org/u/metinee/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Mie Tran",
     "role": "Vietnam",
     "country": "VN",
-    "link": "https://forum.cardano.org/u/mietran/"
+    "link": "https://forum.cardano.org/u/mietran/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Mike Hornan",
     "role": "Canada",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/hornan/"
+    "link": "https://forum.cardano.org/u/hornan/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Mohammed Mustapha Yakubu",
     "role": "Ghana",
     "country": "GH",
-    "link": "https://forum.cardano.org/u/chosenfintech/"
+    "link": "https://forum.cardano.org/u/chosenfintech/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Nguyen Thi Ha",
     "role": "Vietnam",
     "country": "VN",
-    "link": "https://forum.cardano.org/u/hakochan/"
+    "link": "https://forum.cardano.org/u/hakochan/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Otávio Lima",
     "role": "Brazil",
     "country": "BR",
-    "link": "https://forum.cardano.org/u/otaviolima/"
+    "link": "https://forum.cardano.org/u/otaviolima/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Peter Bui",
     "role": "Australia",
     "country": "AU",
-    "link": "https://forum.cardano.org/u/astroboysoup/"
+    "link": "https://forum.cardano.org/u/astroboysoup/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Quentin Kayila",
     "role": "Canada",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/wnipos/"
+    "link": "https://forum.cardano.org/u/wnipos/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Rami Hanania",
     "role": "Lebanon",
     "country": "LB",
-    "link": "https://forum.cardano.org/u/ramih/"
+    "link": "https://forum.cardano.org/u/ramih/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Randy",
     "role": "Indonesia",
     "country": "ID",
-    "link": "https://forum.cardano.org/u/randy/"
+    "link": "https://forum.cardano.org/u/randy/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Rena Oishi",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/myb_rena/"
+    "link": "https://forum.cardano.org/u/myb_rena/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Rengwei Lee",
     "role": "China",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/ninjis/"
+    "link": "https://forum.cardano.org/u/ninjis/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Robert Phair",
     "role": "Ireland",
     "country": "IE",
-    "link": "https://forum.cardano.org/u/cosdpool/"
+    "link": "https://forum.cardano.org/u/cosdpool/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Rodrigo Oyarzun Acuña",
     "role": "Chile",
     "country": "CL",
-    "link": "https://forum.cardano.org/u/rodrigoi/"
+    "link": "https://forum.cardano.org/u/rodrigoi/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Rodrigo Gomez",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/rodrigo_gomez/"
+    "link": "https://forum.cardano.org/u/rodrigo_gomez/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
+  },
+  {
+    "name": "Rodrigo Silva Pacini",
+    "role": "Brazil",
+    "country": "BR",
+    "link": "https://forum.cardano.org/u/rodrigopacini13/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Sebastián Videmato",
     "role": "Argentina",
     "country": "AR",
-    "link": "https://forum.cardano.org/u/cardanocastellano/"
+    "link": "https://forum.cardano.org/u/cardanocastellano/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Seira Yun",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/seirayun/"
+    "link": "https://forum.cardano.org/u/seirayun/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Shusuke Wakuda",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/bakucham/"
+    "link": "https://forum.cardano.org/u/bakucham/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Simon Fleck",
     "role": "Austria",
     "country": "AT",
-    "link": "https://forum.cardano.org/u/seomon_register/"
+    "link": "https://forum.cardano.org/u/seomon_register/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Stephanie King",
     "role": "United States",
     "country": "US",
-    "link": "https://forum.cardano.org/u/stephanie_king/"
+    "link": "https://forum.cardano.org/u/stephanie_king/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Stephen Castermans",
     "role": "Belgium",
     "country": "BE",
-    "link": "https://forum.cardano.org/u/robbyja7/"
+    "link": "https://forum.cardano.org/u/robbyja7/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Taichi Yokoyama",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/taichiyokoyama/"
+    "link": "https://forum.cardano.org/u/taichiyokoyama/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Theodoros Morisis",
     "role": "Canada",
     "country": "CA",
-    "link": "https://forum.cardano.org/u/cardanochefpool/"
+    "link": "https://forum.cardano.org/u/cardanochefpool/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Thiago da Silva Nunes",
     "role": "Brazil",
     "country": "BR",
-    "link": "https://forum.cardano.org/u/tsnnst/"
+    "link": "https://forum.cardano.org/u/tsnnst/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Thomas Lindseth",
     "role": "Norway",
     "country": "NO",
-    "link": "https://forum.cardano.org/u/thomaslindseth/"
+    "link": "https://forum.cardano.org/u/thomaslindseth/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Tien",
     "role": "Vietnam",
     "country": "VN",
-    "link": "https://forum.cardano.org/u/tien_nguyen_anh/"
+    "link": "https://forum.cardano.org/u/tien_nguyen_anh/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Tim Brückmann",
     "role": "Germany",
     "country": "DE",
-    "link": "https://forum.cardano.org/t/ambassador-stories-journal-39-tim-bruckmann/130794"
+    "link": "https://forum.cardano.org/t/ambassador-stories-journal-39-tim-bruckmann/130794",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Tony Chan",
     "role": "China",
     "country": "CN",
-    "link": "https://forum.cardano.org/u/tonychan/"
+    "link": "https://forum.cardano.org/u/tonychan/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Will Huang",
     "role": "Taiwan",
     "country": "TW",
-    "link": "https://forum.cardano.org/u/willhuang0606/"
+    "link": "https://forum.cardano.org/u/willhuang0606/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Neal Lam",
     "role": "Hong Kong",
     "country": "HK",
-    "link": "https://forum.cardano.org/u/nealsidan/"
+    "link": "https://forum.cardano.org/u/nealsidan/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Hinson Wong",
     "role": "Hong Kong",
     "country": "HK",
-    "link": "https://forum.cardano.org/u/hinsonsidan/"
+    "link": "https://forum.cardano.org/u/hinsonsidan/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Yoram Ben Zvi",
     "role": "France",
     "country": "FR",
-    "link": "https://forum.cardano.org/u/yoram_ben-zvi/"
+    "link": "https://forum.cardano.org/u/yoram_ben-zvi/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
   },
   {
     "name": "Paul Ko",
     "role": "Japan",
     "country": "JP",
-    "link": "https://forum.cardano.org/u/haskellcoding/"
+    "link": "https://forum.cardano.org/u/haskellcoding/",
+    "profilePicture": "SOON...",
+    "tagline": "SOON...",
+    "socials": {
+      "x": "",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "SOON..."
+  },
+  {
+    "name": "Sebastian Aravena",
+    "role": "Chile",
+    "country": "CL",
+    "link": "https://forum.cardano.org/u/haskellcoding/",
+    "profilePicture": "https://api.typeform.com/responses/files/cef9364e8ba957c6c84cc8bc450a89e2d46ff4d20d902835526407d19b1aee4d/CIPs_Updates.jpg",
+    "tagline": "YouTube Content Creator for Japanese community",
+    "socials": {
+      "x": "https://www.x.com/indi_gital",
+      "linkedIn": "",
+      "youtube": ""
+    },
+    "areasOfContribution": "Software, Education"
   }
 ]
