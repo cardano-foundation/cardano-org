@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { BsPenFill, BsCodeSlash, BsShieldCheck, BsBriefcaseFill } from "react-icons/bs";
-import { HiUsers, HiTranslate } from "react-icons/hi";
+import { HiUsers } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 
 import styles from "./styles.module.css";
@@ -17,7 +17,7 @@ const ROLES = [
     titleId: "ambassadors.roles.contentCreation.title",
     titleDefault: "Content Creation",
     descId: "ambassadors.roles.contentCreation.description",
-    descDefault: "Articles, videos, podcasts and social media education.",
+    descDefault: "Articles, videos, podcasts and translations across languages.",
   },
   {
     icon: <HiUsers />,
@@ -42,14 +42,6 @@ const ROLES = [
     titleDefault: "Development",
     descId: "ambassadors.roles.software.description",
     descDefault: "Building tools, contributing to open source and technical docs.",
-  },
-  {
-    icon: <HiTranslate />,
-    tone: "teal",
-    titleId: "ambassadors.roles.translations.title",
-    titleDefault: "Translations",
-    descId: "ambassadors.roles.translations.description",
-    descDefault: "Making Cardano accessible in local languages.",
   },
   {
     icon: <BsShieldCheck />,
