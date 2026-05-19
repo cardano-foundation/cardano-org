@@ -4,7 +4,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { HiArrowRight } from "react-icons/hi";
 
-import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
 import impactData from "@site/src/data/ambassadorsImpact.json";
@@ -112,11 +111,7 @@ export default function AmbassadorsImpactStories() {
   const [featured, ...rest] = stories;
 
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.stories.divider", message: "Impact Stories" })}
-        id="stories"
-      />
+    <section id="stories">
       <TitleWithText
         title={translate({
           id: "ambassadors.stories.title",

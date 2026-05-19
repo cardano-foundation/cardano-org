@@ -2,7 +2,6 @@ import React from "react";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 
-import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import achievements from "@site/src/data/ambassadorsAchievements.json";
 import styles from "./styles.module.css";
@@ -23,11 +22,7 @@ export default function AmbassadorsMilestones() {
   });
 
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.milestones.divider", message: "Highlighted Achievements" })}
-        id="milestones"
-      />
+    <section id="milestones">
       <TitleWithText
         title={translate({
           id: "ambassadors.milestones.title",

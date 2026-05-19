@@ -4,7 +4,6 @@ import { translate } from "@docusaurus/Translate";
 import { HiPencil, HiCalendar, HiGlobeAlt, HiChatAlt2, HiArrowRight } from "react-icons/hi";
 import { BsCodeSlash } from "react-icons/bs";
 
-import Divider from "@site/src/components/Layout/Divider";
 import Sparkline from "@site/src/components/Ambassadors/Sparkline";
 import impactData from "@site/src/data/ambassadorsImpact.json";
 import styles from "./styles.module.css";
@@ -50,11 +49,7 @@ function ImpactCard({ entry }) {
 
 export default function AmbassadorsImpactOverview() {
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.impact.divider", message: "Impact Overview" })}
-        id="impact"
-      />
+    <section id="impact">
       <div className={styles.layout}>
         <div className={styles.intro}>
           <h2 className={styles.title}>

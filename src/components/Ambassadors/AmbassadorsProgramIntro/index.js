@@ -1,15 +1,10 @@
 import React from "react";
 import { translate } from "@docusaurus/Translate";
-import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 export default function AmbassadorsProgramIntro() {
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.program.divider", message: "Ambassador Program" })}
-        id="program"
-      />
+    <section id="program">
       <TitleWithText
         title={translate({
           id: "ambassadors.program.title",

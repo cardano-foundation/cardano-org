@@ -5,7 +5,6 @@ import { BsPenFill, BsCodeSlash, BsShieldCheck, BsBriefcaseFill } from "react-ic
 import { HiUsers, HiTranslate, HiArrowRight } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
 
-import Divider from "@site/src/components/Layout/Divider";
 import styles from "./styles.module.css";
 
 const PROGRAM_URL =
@@ -88,11 +87,7 @@ function ContributionTile({ role }) {
 
 export default function AmbassadorsContributions() {
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.roles.divider", message: "Ambassadors Contributions" })}
-        id="contributions"
-      />
+    <section id="contributions">
       <div className={styles.layout}>
         <div className={styles.intro}>
           <h2 className={styles.title}>

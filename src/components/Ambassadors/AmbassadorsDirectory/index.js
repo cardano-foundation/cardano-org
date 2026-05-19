@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import { HiSearch } from "react-icons/hi";
 
-import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AmbassadorCard from "@site/src/components/Ambassadors/AmbassadorCard";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
@@ -74,11 +73,7 @@ export default function AmbassadorsDirectory() {
   }
 
   return (
-    <section>
-      <Divider
-        text={translate({ id: "ambassadors.directory.divider", message: "Ambassador Directory" })}
-        id="directory"
-      />
+    <section id="directory">
       <TitleWithText
         title={translate({
           id: "ambassadors.directory.title",
