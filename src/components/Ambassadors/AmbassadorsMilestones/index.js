@@ -34,9 +34,10 @@ export default function AmbassadorsMilestones() {
             })}
           </p>
         </div>
-        <ol className={styles.timeline}>
-          {achievements.map((m) => (
-            <li key={m.id} className={styles.step}>
+        <div className={styles.timelineWrap}>
+          <ol className={styles.timeline}>
+            {achievements.map((m) => (
+              <li key={m.id} className={styles.step}>
               <div className={styles.dot} />
               <div className={styles.year}>{m.year}</div>
               <h3 className={styles.stepTitle}>
@@ -73,9 +74,10 @@ export default function AmbassadorsMilestones() {
                   ))}
                 </div>
               )}
-            </li>
-          ))}
-        </ol>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

@@ -28,26 +28,31 @@
   margin: 0;
 }
 
+.timelineWrap {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;
+}
+
 .timeline {
   list-style: none;
   margin: 0;
-  padding: 0 130px 0.75rem;
+  padding: 0;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 260px;
   gap: 1.25rem;
   position: relative;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  width: max-content;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
   top: 1.75rem;
-  left: 0;
-  right: 0;
+  left: 130px;
+  right: 130px;
   height: 2px;
   background: linear-gradient(
     90deg,
