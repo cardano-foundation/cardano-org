@@ -11,8 +11,6 @@ import AmbassadorsMap from "@site/src/components/Ambassadors/AmbassadorsMap";
 import AmbassadorsStatsRow from "@site/src/components/Ambassadors/AmbassadorsStatsRow";
 import FeaturedCard from "@site/src/components/Ambassadors/AmbassadorsHero/FeaturedCard";
 
-const USE_RED_AMBASSADORS = true;
-
 function resolveFeatured(featuredHero) {
   if (!featuredHero) return [];
   const entries = featuredHero.ambassadors
@@ -40,19 +38,10 @@ export default function AmbassadorsHero() {
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
             <span className={styles.eyebrow}>
-              {translate({ id: "ambassadors.hero.eyebrow", message: "Cardano Ambassadors" })}
+              {translate({ id: "ambassadors.hero.eyebrow", message: "Since 2018" })}
             </span>
             <h1 className={styles.heroTitle}>
-              {USE_RED_AMBASSADORS ? (
-                <>
-                  {translate({ id: "ambassadors.hero.titlePrefix", message: "Cardano" })}{" "}
-                  <span className={styles.heroTitleRed}>
-                    {translate({ id: "ambassadors.hero.titleHighlight", message: "Ambassadors" })}
-                  </span>
-                </>
-              ) : (
-                translate({ id: "ambassadors.hero.titleNew", message: "Cardano Ambassadors" })
-              )}
+              {translate({ id: "ambassadors.hero.titleNew", message: "Cardano Ambassadors" })}
               <br />
               <span className={styles.heroTitleAccent}>
                 {translate({ id: "ambassadors.hero.titleAccent", message: "in action" })}
