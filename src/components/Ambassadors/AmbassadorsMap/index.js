@@ -6,8 +6,8 @@ import { avatarColor } from "@site/src/utils/ambassadorColors";
 import { project, VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./styles.module.css";
 
-const CARD_CLAMP_MIN_X = 100;
-const CARD_CLAMP_MAX_X = 900;
+const CARD_CLAMP_MIN_X = 200;
+const CARD_CLAMP_MAX_X = 800;
 const CARD_OFFSET_Y = 70;
 
 function cardAnchor(country, centroids) {

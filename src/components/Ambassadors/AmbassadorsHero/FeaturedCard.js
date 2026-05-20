@@ -7,8 +7,8 @@ import { VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./FeaturedCard.module.css";
 
 const ROTATE_MS = 5000;
-const CLAMP_X_MIN_PCT = 10;
-const CLAMP_X_MAX_PCT = 90;
+const CLAMP_X_MIN_PCT = 20;
+const CLAMP_X_MAX_PCT = 80;
 const CARD_OFFSET_PX = 16;
 
 function prefersReducedMotion() {

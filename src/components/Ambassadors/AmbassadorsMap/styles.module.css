@@ -33,10 +33,11 @@
 }
 
 .connector {
-  stroke: rgba(255, 255, 255, 0.5);
-  stroke-width: 1.2;
-  stroke-dasharray: 4 4;
+  stroke: rgba(255, 200, 220, 0.85);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
   pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(255, 120, 160, 0.4));
   transition: x1 0.6s ease, y1 0.6s ease, x2 0.6s ease, y2 0.6s ease;
 }
 
