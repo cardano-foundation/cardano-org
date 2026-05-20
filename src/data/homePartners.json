@@ -1,0 +1,20 @@
+[
+  {
+    "companyName": "Visa",
+    "imageName": "visa-logo",
+    "width": 123,
+    "height": 40
+  },
+  {
+    "companyName": "Wirex",
+    "imageName": "wirex-logo",
+    "width": 720,
+    "height": 156
+  },
+  {
+    "companyName": "Draper Associates",
+    "imageName": "draper-logo",
+    "width": 540,
+    "height": 177
+  }
+]

@@ -1,25 +1,29 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { translate } from '@docusaurus/Translate';
+import partners from '@site/src/data/homePartners.json';
 import styles from './styles.module.css';
 
-const partners = [
-  { name: 'Visa', file: 'visa-logo.png' },
-  { name: 'Wirex', file: 'wirex-logo.png' },
-  { name: 'Draper Associates', file: 'draper-logo.png' },
-];
+function PartnerLogo({ companyName, imageName, width, height }) {
+  const src = useBaseUrl(`/img/partners/${imageName}.png`);
+  const alt = translate(
+    { id: 'home.partners.logoAlt', message: '{name} logo' },
+    { name: companyName }
+  );
+
+  return (
+    <li className={styles.item}>
+      <img src={src} alt={alt} width={width} height={height} />
+    </li>
+  );
+}
 
 export default function HomePartnerLogos() {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.row}>
-        {partners.map(({ name, file }) => (
-          <li key={file} className={styles.item}>
-            <img
-              src={useBaseUrl(`/img/partners/${file}`)}
-              alt={`${name} logo`}
-              loading="lazy"
-            />
-          </li>
+        {partners.map((partner) => (
+          <PartnerLogo key={partner.imageName} {...partner} />
         ))}
       </ul>
     </div>
