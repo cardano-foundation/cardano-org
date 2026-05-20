@@ -8,14 +8,15 @@ import styles from "./styles.module.css";
 
 const CARD_CLAMP_MIN_X = 200;
 const CARD_CLAMP_MAX_X = 800;
-const CARD_OFFSET_Y = 70;
+const CARD_TOP_OFFSET_Y = 50;
+const LINE_GAP_Y = 8;
 
 function cardAnchor(country, centroids) {
   if (!country || !centroids[country]) return null;
   const [lon, lat] = centroids[country];
   const [px, py] = project(lon, lat);
   const cx = Math.max(CARD_CLAMP_MIN_X, Math.min(CARD_CLAMP_MAX_X, px));
-  const cy = Math.min(VIEW_H - 20, py + CARD_OFFSET_Y);
+  const cy = Math.min(VIEW_H - 20, py + CARD_TOP_OFFSET_Y - LINE_GAP_Y);
   return { px, py, cx, cy };
 }
 

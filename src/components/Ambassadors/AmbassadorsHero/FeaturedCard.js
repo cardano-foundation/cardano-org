@@ -9,7 +9,7 @@ import styles from "./FeaturedCard.module.css";
 const ROTATE_MS = 5000;
 const CLAMP_X_MIN_PCT = 20;
 const CLAMP_X_MAX_PCT = 80;
-const CARD_OFFSET_PX = 16;
+const CARD_OFFSET_VIEWBOX_Y = 50;
 
 function prefersReducedMotion() {
   if (typeof window === "undefined" || !window.matchMedia) return false;
@@ -21,10 +21,10 @@ function positionStyle(item) {
     CLAMP_X_MIN_PCT,
     Math.min(CLAMP_X_MAX_PCT, (item.x / VIEW_W) * 100),
   );
-  const yPct = (item.y / VIEW_H) * 100;
+  const yPct = ((item.y + CARD_OFFSET_VIEWBOX_Y) / VIEW_H) * 100;
   return {
     left: `${xPct}%`,
-    top: `calc(${yPct}% + ${CARD_OFFSET_PX}px)`,
+    top: `${yPct}%`,
   };
 }
 
