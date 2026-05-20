@@ -3,16 +3,20 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import worldOutline from "@site/src/data/worldOutline.json";
 import { avatarColor } from "@site/src/utils/ambassadorColors";
+import { project, VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./styles.module.css";
 
-const VIEW_W = 1000;
-const VIEW_H = 500;
-const PAD_X = 30; // keep edge-of-world pins (NZ, Aleutians) clear of hero overflow clipping
+const CARD_CLAMP_MIN_X = 100;
+const CARD_CLAMP_MAX_X = 900;
+const CARD_OFFSET_Y = 70;
 
-function project(lon, lat) {
-  const x = PAD_X + ((lon + 180) / 360) * (VIEW_W - 2 * PAD_X);
-  const y = ((90 - lat) / 180) * VIEW_H;
-  return [x, y];
+function cardAnchor(country, centroids) {
+  if (!country || !centroids[country]) return null;
+  const [lon, lat] = centroids[country];
+  const [px, py] = project(lon, lat);
+  const cx = Math.max(CARD_CLAMP_MIN_X, Math.min(CARD_CLAMP_MAX_X, px));
+  const cy = Math.min(VIEW_H - 20, py + CARD_OFFSET_Y);
+  return { px, py, cx, cy };
 }
 
 const POLYGON_PATHS = worldOutline.map((ring) => {
@@ -71,8 +75,9 @@ function PinTooltip({ entry }) {
   );
 }
 
-export default function AmbassadorsMap({ ambassadors, centroids }) {
+export default function AmbassadorsMap({ ambassadors, centroids, activeCountry }) {
   const [hovered, setHovered] = useState(null);
+  const connector = cardAnchor(activeCountry, centroids);
 
   const pins = useMemo(() => {
     const byCountry = new Map();
@@ -126,6 +131,16 @@ export default function AmbassadorsMap({ ambassadors, centroids }) {
             <path key={i} d={d} className={styles.land} />
           ))}
         </g>
+
+        {connector && (
+          <line
+            x1={connector.px}
+            y1={connector.py}
+            x2={connector.cx}
+            y2={connector.cy}
+            className={styles.connector}
+          />
+        )}
 
         {pins.map((p) => {
           const isHovered = hovered === p.code;

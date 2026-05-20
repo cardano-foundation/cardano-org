@@ -32,6 +32,18 @@
   cursor: pointer;
 }
 
+.connector {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 4;
+  pointer-events: none;
+  transition: x1 0.6s ease, y1 0.6s ease, x2 0.6s ease, y2 0.6s ease;
+}
+
+@media (max-width: 996px) {
+  .connector { display: none; }
+}
+
 .pinHit {
   fill: transparent;
 }

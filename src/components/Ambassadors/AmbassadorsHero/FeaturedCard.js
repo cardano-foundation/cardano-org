@@ -3,16 +3,32 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
+import { VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./FeaturedCard.module.css";
 
 const ROTATE_MS = 5000;
+const CLAMP_X_MIN_PCT = 10;
+const CLAMP_X_MAX_PCT = 90;
+const CARD_OFFSET_PX = 16;
 
 function prefersReducedMotion() {
   if (typeof window === "undefined" || !window.matchMedia) return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export default function FeaturedCard({ items }) {
+function positionStyle(item) {
+  const xPct = Math.max(
+    CLAMP_X_MIN_PCT,
+    Math.min(CLAMP_X_MAX_PCT, (item.x / VIEW_W) * 100),
+  );
+  const yPct = (item.y / VIEW_H) * 100;
+  return {
+    left: `${xPct}%`,
+    top: `calc(${yPct}% + ${CARD_OFFSET_PX}px)`,
+  };
+}
+
+export default function FeaturedCard({ items, onActiveChange }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -20,7 +36,7 @@ export default function FeaturedCard({ items }) {
     if (items.length <= 1 || paused || prefersReducedMotion()) return undefined;
     const id = window.setInterval(
       () => setIndex((n) => (n + 1) % items.length),
-      ROTATE_MS
+      ROTATE_MS,
     );
     return () => window.clearInterval(id);
   }, [items.length, paused]);
@@ -31,6 +47,11 @@ export default function FeaturedCard({ items }) {
     document.addEventListener("visibilitychange", onVis);
     return () => document.removeEventListener("visibilitychange", onVis);
   }, []);
+
+  useEffect(() => {
+    if (!items.length || !onActiveChange) return;
+    onActiveChange(items[index % items.length].country);
+  }, [index, items, onActiveChange]);
 
   const onEnter = useCallback(() => setPaused(true), []);
   const onLeave = useCallback(() => setPaused(false), []);
@@ -43,6 +64,7 @@ export default function FeaturedCard({ items }) {
   return (
     <aside
       className={styles.card}
+      style={positionStyle(current)}
       aria-label={translate({
         id: "ambassadors.hero.featured.aria",
         message: "Featured ambassador",
@@ -78,21 +100,6 @@ export default function FeaturedCard({ items }) {
       <Link to={current.link} className={styles.viewLink} target="_blank" rel="noopener noreferrer">
         {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile →" })}
       </Link>
-      {items.length > 1 && (
-        <div className={styles.dots} role="tablist" aria-label="Rotation indicators">
-          {items.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === index}
-              aria-label={`Show ambassador ${i + 1} of ${items.length}`}
-              className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
-              onClick={() => setIndex(i)}
-            />
-          ))}
-        </div>
-      )}
     </aside>
   );
 }
