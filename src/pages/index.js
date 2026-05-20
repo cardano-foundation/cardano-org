@@ -4,6 +4,7 @@ import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWith
 import Divider from "@site/src/components/Layout/Divider";
 import QuoteBox from "@site/src/components/Layout/QuoteBox";
 import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
+import HomePartnerLogos from "@site/src/components/HomePartnerLogos";
 import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -34,6 +35,7 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <HomePartnerLogos />
             <FeaturedTitleWithText
               title={translate({id: 'home.featured.title', message: 'Our World Is Changing. Together, We Can Change It For The Better.'})}
               description={[
