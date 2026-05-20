@@ -98,7 +98,7 @@ export default function FeaturedCard({ items, onActiveChange }) {
         </div>
       )}
       <Link to={current.link} className={styles.viewLink} target="_blank" rel="noopener noreferrer">
-        {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile →" })}
+        {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile" })}
       </Link>
     </aside>
   );
