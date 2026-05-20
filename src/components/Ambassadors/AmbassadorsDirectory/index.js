@@ -11,17 +11,15 @@ import {
   ambassadorContributions,
   deriveAvailableContributions,
 } from "@site/src/utils/ambassadorLanguages";
-import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
+import {
+  ambassadorElementId,
+  ambassadorSlug,
+  parseAmbassadorHash,
+} from "@site/src/utils/ambassadorSlug";
 import styles from "./styles.module.css";
 
 const PAGE_SIZE = 24;
 const HIGHLIGHT_MS = 1500;
-
-function readAmbassadorHash() {
-  if (typeof window === "undefined") return null;
-  const match = window.location.hash.match(/^#a=([a-z0-9-]+)/i);
-  return match ? match[1].toLowerCase() : null;
-}
 
 function buildCountryOptions(ambassadors) {
   const counts = new Map();
@@ -44,12 +42,20 @@ export default function AmbassadorsDirectory() {
     () => [...ambassadorsData].sort((a, b) => a.name.localeCompare(b.name)),
     []
   );
+  const slugByName = useMemo(
+    () => new Map(sortedData.map((a) => [a.name, ambassadorSlug(a.name)])),
+    [sortedData]
+  );
+  const ambassadorBySlug = useMemo(
+    () => new Map(sortedData.map((a) => [slugByName.get(a.name), a])),
+    [sortedData, slugByName]
+  );
 
   useEffect(() => {
     function applyHash() {
-      const slug = readAmbassadorHash();
+      const slug = parseAmbassadorHash(window.location.hash);
       if (!slug) return;
-      const match = sortedData.find((a) => ambassadorSlug(a.name) === slug);
+      const match = ambassadorBySlug.get(slug);
       if (!match) return;
       setQuery(match.name);
       setCountry("all");
@@ -58,7 +64,7 @@ export default function AmbassadorsDirectory() {
       setVisibleCount(PAGE_SIZE);
       setHighlightSlug(slug);
       window.requestAnimationFrame(() => {
-        const el = document.getElementById(`a-${slug}`);
+        const el = document.getElementById(ambassadorElementId(slug));
         if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
       });
       window.setTimeout(() => setHighlightSlug(null), HIGHLIGHT_MS);
@@ -66,7 +72,7 @@ export default function AmbassadorsDirectory() {
     applyHash();
     window.addEventListener("hashchange", applyHash);
     return () => window.removeEventListener("hashchange", applyHash);
-  }, [sortedData]);
+  }, [ambassadorBySlug]);
 
   const countryOptions = useMemo(() => buildCountryOptions(sortedData), [sortedData]);
   const languageOptions = useMemo(() => deriveAvailableLanguages(sortedData), [sortedData]);
@@ -233,7 +239,7 @@ export default function AmbassadorsDirectory() {
             <AmbassadorCard
               key={ambassador.name + ambassador.country}
               ambassador={ambassador}
-              highlighted={highlightSlug === ambassadorSlug(ambassador.name)}
+              highlighted={highlightSlug === slugByName.get(ambassador.name)}
             />
           ))}
         </div>

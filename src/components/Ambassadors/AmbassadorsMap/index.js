@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import worldOutline from "@site/src/data/worldOutline.json";
 import AmbassadorAvatar from "@site/src/components/Ambassadors/AmbassadorAvatar";
-import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
+import { ambassadorHref } from "@site/src/utils/ambassadorSlug";
 import { project, VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./styles.module.css";
 
@@ -60,7 +60,7 @@ function PinTooltip({ entry }) {
       <ul className={styles.tooltipList}>
         {entry.ambassadors.map((a) => (
           <li key={a.name + a.country}>
-            <Link to={`#a=${ambassadorSlug(a.name)}`} className={styles.tooltipItem}>
+            <Link to={ambassadorHref(a.name)} className={styles.tooltipItem}>
               <AmbassadorAvatar ambassador={a} className={styles.tooltipAvatar} />
               <span className={styles.tooltipName}>{a.name}</span>
             </Link>
@@ -71,7 +71,7 @@ function PinTooltip({ entry }) {
   );
 }
 
-export default function AmbassadorsMap({ ambassadors, centroids, activeCountry, connectorHidden = false }) {
+function AmbassadorsMap({ ambassadors, centroids, activeCountry, connectorHidden = false }) {
   const [hovered, setHovered] = useState(null);
   const connector = cardAnchor(activeCountry, centroids);
 
@@ -168,3 +168,5 @@ export default function AmbassadorsMap({ ambassadors, centroids, activeCountry, 
     </div>
   );
 }
+
+export default React.memo(AmbassadorsMap);

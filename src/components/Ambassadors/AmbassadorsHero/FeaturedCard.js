@@ -4,7 +4,7 @@ import { translate } from "@docusaurus/Translate";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import { present } from "@site/src/utils/ambassadorLanguages";
-import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
+import { ambassadorHref } from "@site/src/utils/ambassadorSlug";
 import { VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./FeaturedCard.module.css";
 
@@ -39,25 +39,30 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
 
   useEffect(() => {
     if (items.length <= 1 || paused || prefersReducedMotion()) return undefined;
-    const timers = [];
+    const pending = new Set();
+    function schedule(fn, delay) {
+      const id = window.setTimeout(() => {
+        pending.delete(id);
+        fn();
+      }, delay);
+      pending.add(id);
+    }
     const tick = window.setInterval(() => {
-      // 1. line fades out first
+      // 4-stage swap so the connector line is gone before the card moves:
+      // line out → card out → snap position+content → line in.
       if (onLineHiddenChange) onLineHiddenChange(true);
-      // 2. card fades out once the line is gone
-      timers.push(window.setTimeout(() => setFading(true), LINE_FADE_MS));
-      // 3. swap content + position while card is invisible (line stays hidden)
-      timers.push(window.setTimeout(() => {
+      schedule(() => setFading(true), LINE_FADE_MS);
+      schedule(() => {
         setIndex((n) => (n + 1) % items.length);
         setFading(false);
-      }, LINE_FADE_MS + FADE_MS));
-      // 4. line fades back in at the new pin after the card has re-appeared
-      timers.push(window.setTimeout(() => {
+      }, LINE_FADE_MS + FADE_MS);
+      schedule(() => {
         if (onLineHiddenChange) onLineHiddenChange(false);
-      }, LINE_FADE_MS + FADE_MS * 2));
+      }, LINE_FADE_MS + FADE_MS * 2);
     }, ROTATE_MS);
     return () => {
       window.clearInterval(tick);
-      timers.forEach((t) => window.clearTimeout(t));
+      pending.forEach((id) => window.clearTimeout(id));
     };
   }, [items.length, paused, onLineHiddenChange]);
 
@@ -111,14 +116,12 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
       </div>
       {tagline && <p className={styles.bio}>{tagline}</p>}
       <div className={styles.footer}>
-        {tags[0] ? (
+        {tags[0] && (
           <span className={`${styles.tag} ${styles[`tone_${tags[0].tone}`] || ""}`}>
             {tags[0].label}
           </span>
-        ) : (
-          <span />
         )}
-        <Link to={`#a=${ambassadorSlug(current.name)}`} className={styles.viewLink}>
+        <Link to={ambassadorHref(current.name)} className={styles.viewLink}>
           {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile" })}
         </Link>
       </div>

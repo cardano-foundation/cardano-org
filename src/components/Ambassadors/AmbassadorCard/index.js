@@ -6,7 +6,7 @@ import { FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import { ambassadorContributions, present } from "@site/src/utils/ambassadorLanguages";
-import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
+import { ambassadorElementId, ambassadorSlug } from "@site/src/utils/ambassadorSlug";
 import styles from "./styles.module.css";
 
 export default function AmbassadorCard({ ambassador, highlighted = false }) {
@@ -20,7 +20,7 @@ export default function AmbassadorCard({ ambassador, highlighted = false }) {
 
   return (
     <div
-      id={`a-${ambassadorSlug(ambassador.name)}`}
+      id={ambassadorElementId(ambassadorSlug(ambassador.name))}
       className={`${styles.card} ${highlighted ? styles.highlight : ""}`}
     >
       <div className={styles.avatarWrap}>

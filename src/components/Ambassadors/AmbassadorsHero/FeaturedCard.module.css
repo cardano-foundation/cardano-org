@@ -91,9 +91,12 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.6rem;
   margin-top: 0.1rem;
+}
+
+.footer .viewLink {
+  margin-left: auto;
 }
 
 .tag {
