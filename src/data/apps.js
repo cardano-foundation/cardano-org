@@ -1893,6 +1893,19 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "surfcardano",
   },
+  {
+    title: "Soracles",
+    description: "Free on-chain price prediction game. Predict ADA/USD against Charli3 oracle data and earn tiered ADA payouts based on accuracy.",
+    tagline: "Predict ADA's price against Charli3 oracle",
+    preview: require("./app-screenshots/soracles.jpg"),
+    website: "https://server-tools.grahamsnumberplus1.com/Oracle_Project/oracle-game.html",
+    source: null,
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "GrahamsNoPlus1",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
