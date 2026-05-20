@@ -59,6 +59,7 @@ const FEATURED_POOL = buildFeaturedPool();
 export default function AmbassadorsHero() {
   const [items, setItems] = useState(FEATURED_POOL);
   const [activeCountry, setActiveCountry] = useState(FEATURED_POOL[0]?.country || null);
+  const [lineHidden, setLineHidden] = useState(false);
 
   useEffect(() => {
     setItems(shuffled(FEATURED_POOL));
@@ -105,9 +106,14 @@ export default function AmbassadorsHero() {
                 ambassadors={ambassadorsData}
                 centroids={centroids}
                 activeCountry={activeCountry}
+                connectorHidden={lineHidden}
               />
               {items.length > 0 && (
-                <FeaturedCard items={items} onActiveChange={setActiveCountry} />
+                <FeaturedCard
+                  items={items}
+                  onActiveChange={setActiveCountry}
+                  onLineHiddenChange={setLineHidden}
+                />
               )}
             </div>
           </div>

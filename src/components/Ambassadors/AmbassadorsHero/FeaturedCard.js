@@ -3,10 +3,14 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
+import { present } from "@site/src/utils/ambassadorLanguages";
+import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
 import { VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./FeaturedCard.module.css";
 
 const ROTATE_MS = 5000;
+const FADE_MS = 350;
+const LINE_FADE_MS = 250;
 const CLAMP_X_MIN_PCT = 20;
 const CLAMP_X_MAX_PCT = 80;
 const CARD_OFFSET_VIEWBOX_Y = 50;
@@ -28,18 +32,34 @@ function positionStyle(item) {
   };
 }
 
-export default function FeaturedCard({ items, onActiveChange }) {
+export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange }) {
   const [index, setIndex] = useState(0);
+  const [fading, setFading] = useState(false);
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (items.length <= 1 || paused || prefersReducedMotion()) return undefined;
-    const id = window.setInterval(
-      () => setIndex((n) => (n + 1) % items.length),
-      ROTATE_MS,
-    );
-    return () => window.clearInterval(id);
-  }, [items.length, paused]);
+    const timers = [];
+    const tick = window.setInterval(() => {
+      // 1. line fades out first
+      if (onLineHiddenChange) onLineHiddenChange(true);
+      // 2. card fades out once the line is gone
+      timers.push(window.setTimeout(() => setFading(true), LINE_FADE_MS));
+      // 3. swap content + position while card is invisible (line stays hidden)
+      timers.push(window.setTimeout(() => {
+        setIndex((n) => (n + 1) % items.length);
+        setFading(false);
+      }, LINE_FADE_MS + FADE_MS));
+      // 4. line fades back in at the new pin after the card has re-appeared
+      timers.push(window.setTimeout(() => {
+        if (onLineHiddenChange) onLineHiddenChange(false);
+      }, LINE_FADE_MS + FADE_MS * 2));
+    }, ROTATE_MS);
+    return () => {
+      window.clearInterval(tick);
+      timers.forEach((t) => window.clearTimeout(t));
+    };
+  }, [items.length, paused, onLineHiddenChange]);
 
   useEffect(() => {
     if (typeof document === "undefined") return undefined;
@@ -60,10 +80,11 @@ export default function FeaturedCard({ items, onActiveChange }) {
 
   const current = items[index % items.length];
   const tags = current.tags || [];
+  const tagline = present(current.tagline) ? current.tagline : null;
 
   return (
     <aside
-      className={styles.card}
+      className={`${styles.card} ${fading ? styles.fading : ""}`}
       style={positionStyle(current)}
       aria-label={translate({
         id: "ambassadors.hero.featured.aria",
@@ -88,18 +109,19 @@ export default function FeaturedCard({ items, onActiveChange }) {
           <div className={styles.role}>{current.role}</div>
         </div>
       </div>
-      {tags.length > 0 && (
-        <div className={styles.tagRow}>
-          {tags.map((t) => (
-            <span key={t.label} className={`${styles.tag} ${styles[`tone_${t.tone}`] || ""}`}>
-              {t.label}
-            </span>
-          ))}
-        </div>
-      )}
-      <Link to={current.link} className={styles.viewLink} target="_blank" rel="noopener noreferrer">
-        {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile" })}
-      </Link>
+      {tagline && <p className={styles.bio}>{tagline}</p>}
+      <div className={styles.footer}>
+        {tags[0] ? (
+          <span className={`${styles.tag} ${styles[`tone_${tags[0].tone}`] || ""}`}>
+            {tags[0].label}
+          </span>
+        ) : (
+          <span />
+        )}
+        <Link to={`#a=${ambassadorSlug(current.name)}`} className={styles.viewLink}>
+          {translate({ id: "ambassadors.hero.featured.viewProfile", message: "View profile" })}
+        </Link>
+      </div>
     </aside>
   );
 }

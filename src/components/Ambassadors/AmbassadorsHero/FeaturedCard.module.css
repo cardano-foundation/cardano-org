@@ -10,12 +10,17 @@
   color: #0f172a;
   z-index: 2;
   backdrop-filter: blur(6px);
-  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.card.fading {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card { transition: none; }
+  .card,
+  .card.fading { transition: none; opacity: 1; }
 }
 
 .head {
@@ -72,11 +77,23 @@
   margin-top: 0.1rem;
 }
 
-.tagRow {
+.bio {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #475569;
+  margin: 0 0 0.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-bottom: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.1rem;
 }
 
 .tag {
@@ -125,6 +142,7 @@
 }
 [data-theme="dark"] .name  { color: #f1f5f9; }
 [data-theme="dark"] .role  { color: #94a3b8; }
+[data-theme="dark"] .bio   { color: #cbd5e1; }
 [data-theme="dark"] .flag  { border-color: #1e293b; background: #1e293b; }
 [data-theme="dark"] .photo,
 [data-theme="dark"] .initial { background: #1e293b; }

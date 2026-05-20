@@ -3671,7 +3671,7 @@
     "message": "Ambassador Directory"
   },
   "ambassadors.directory.title": {
-    "message": "Search and filter our global network of Ambassadors"
+    "message": "Search and filter the global network of Ambassadors"
   },
   "ambassadors.directory.intro": {
     "message": "Discover profiles of {count} Cardano Ambassadors representing {countries} countries."

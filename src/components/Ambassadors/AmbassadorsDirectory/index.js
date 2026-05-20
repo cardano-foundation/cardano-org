@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import { HiSearch } from "react-icons/hi";
 
@@ -11,9 +11,17 @@ import {
   ambassadorContributions,
   deriveAvailableContributions,
 } from "@site/src/utils/ambassadorLanguages";
+import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
 import styles from "./styles.module.css";
 
 const PAGE_SIZE = 24;
+const HIGHLIGHT_MS = 1500;
+
+function readAmbassadorHash() {
+  if (typeof window === "undefined") return null;
+  const match = window.location.hash.match(/^#a=([a-z0-9-]+)/i);
+  return match ? match[1].toLowerCase() : null;
+}
 
 function buildCountryOptions(ambassadors) {
   const counts = new Map();
@@ -30,11 +38,35 @@ export default function AmbassadorsDirectory() {
   const [language, setLanguage] = useState("all");
   const [contribution, setContribution] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [highlightSlug, setHighlightSlug] = useState(null);
 
   const sortedData = useMemo(
     () => [...ambassadorsData].sort((a, b) => a.name.localeCompare(b.name)),
     []
   );
+
+  useEffect(() => {
+    function applyHash() {
+      const slug = readAmbassadorHash();
+      if (!slug) return;
+      const match = sortedData.find((a) => ambassadorSlug(a.name) === slug);
+      if (!match) return;
+      setQuery(match.name);
+      setCountry("all");
+      setLanguage("all");
+      setContribution("all");
+      setVisibleCount(PAGE_SIZE);
+      setHighlightSlug(slug);
+      window.requestAnimationFrame(() => {
+        const el = document.getElementById(`a-${slug}`);
+        if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+      window.setTimeout(() => setHighlightSlug(null), HIGHLIGHT_MS);
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, [sortedData]);
 
   const countryOptions = useMemo(() => buildCountryOptions(sortedData), [sortedData]);
   const languageOptions = useMemo(() => deriveAvailableLanguages(sortedData), [sortedData]);
@@ -77,7 +109,7 @@ export default function AmbassadorsDirectory() {
       <TitleWithText
         title={translate({
           id: "ambassadors.directory.title",
-          message: "Search and filter our global network of Ambassadors",
+          message: "Search and filter the global network of Ambassadors",
         })}
         description={[
           translate(
@@ -198,7 +230,11 @@ export default function AmbassadorsDirectory() {
       ) : (
         <div className={styles.grid}>
           {visible.map((ambassador) => (
-            <AmbassadorCard key={ambassador.name + ambassador.country} ambassador={ambassador} />
+            <AmbassadorCard
+              key={ambassador.name + ambassador.country}
+              ambassador={ambassador}
+              highlighted={highlightSlug === ambassadorSlug(ambassador.name)}
+            />
           ))}
         </div>
       )}

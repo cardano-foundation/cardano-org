@@ -2,7 +2,8 @@ import React, { useMemo, useState } from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import worldOutline from "@site/src/data/worldOutline.json";
-import { avatarColor } from "@site/src/utils/ambassadorColors";
+import AmbassadorAvatar from "@site/src/components/Ambassadors/AmbassadorAvatar";
+import { ambassadorSlug } from "@site/src/utils/ambassadorSlug";
 import { project, VIEW_W, VIEW_H } from "@site/src/utils/mapProjection";
 import styles from "./styles.module.css";
 
@@ -58,15 +59,9 @@ function PinTooltip({ entry }) {
       </div>
       <ul className={styles.tooltipList}>
         {entry.ambassadors.map((a) => (
-          <li key={a.name + a.link}>
-            <Link to={a.link} target="_blank" rel="noopener noreferrer" className={styles.tooltipItem}>
-              <span
-                className={styles.tooltipAvatar}
-                style={{ backgroundColor: avatarColor(a.name) }}
-                aria-hidden="true"
-              >
-                {a.name.charAt(0)}
-              </span>
+          <li key={a.name + a.country}>
+            <Link to={`#a=${ambassadorSlug(a.name)}`} className={styles.tooltipItem}>
+              <AmbassadorAvatar ambassador={a} className={styles.tooltipAvatar} />
               <span className={styles.tooltipName}>{a.name}</span>
             </Link>
           </li>
@@ -76,7 +71,7 @@ function PinTooltip({ entry }) {
   );
 }
 
-export default function AmbassadorsMap({ ambassadors, centroids, activeCountry }) {
+export default function AmbassadorsMap({ ambassadors, centroids, activeCountry, connectorHidden = false }) {
   const [hovered, setHovered] = useState(null);
   const connector = cardAnchor(activeCountry, centroids);
 
@@ -139,7 +134,7 @@ export default function AmbassadorsMap({ ambassadors, centroids, activeCountry }
             y1={connector.py}
             x2={connector.cx}
             y2={connector.cy}
-            className={styles.connector}
+            className={`${styles.connector} ${connectorHidden ? styles.connectorHidden : ""}`}
           />
         )}
 
