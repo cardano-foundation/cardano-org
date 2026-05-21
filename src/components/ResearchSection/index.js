@@ -149,7 +149,7 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "Reward Sharing Schemes for Stake Pools",
-            url: "https://arxiv.org/ftp/arxiv/papers/1807/1807.11218.pdf",
+            url: "https://arxiv.org/pdf/1807.11218",
           },
           {
             title: "Account Management in Proof of Stake Ledgers",
