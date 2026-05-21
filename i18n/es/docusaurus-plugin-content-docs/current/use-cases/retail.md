@@ -9,7 +9,7 @@ sidebar_position: 9
 
 ## El Desafío
 
-La falsificación cuesta a las empresas legítimas cientos de miles de millones de dólares al año y supone riesgos reales para los consumidores. Desde artículos de lujo hasta productos electrónicos y farmacéuticos, los productos falsificados inundan los mercados de todo el mundo. Las medidas tradicionales contra la falsificación, como los hologramas y los números de serie, se pueden replicar fácilmente.
+La falsificación cuesta a las empresas cientos de miles de millones de dólares al año y supone riesgos reales para los consumidores. Desde artículos de lujo hasta productos electrónicos y farmacéuticos, los productos falsificados inundan los mercados de todo el mundo. Las medidas tradicionales contra la falsificación, como los hologramas y los números de serie, se pueden replicar fácilmente.
 
 A los consumidores les cuesta verificar la autenticidad de los productos, especialmente cuando compran en mercados secundarios o en plataformas en línea. Las marcas legítimas se enfrentan a un daño a su reputación cuando las falsificaciones que llevan su nombre causan daños o decepción.
 
