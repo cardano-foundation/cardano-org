@@ -362,5 +362,60 @@
     "image": "oss_nama.jpg",
     "organizer": "Linux Foundation",
     "recapVideo": ""
+  },
+   {
+    "title": "European Blockchain Convention",
+    "description": "European Blockchain Convention brings together the people and companies shaping digital asset markets from exchanges, banks, asset managers and custodians to protocols, infrastructure providers, founders and policymakers.",
+    "startDate": "2026-09-16",
+    "endDate": "2026-09-17",
+    "location": "Barcelona, Spain",
+    "link": "https://eblockchainconvention.com/european-blockchain-convention-12/",
+    "image": "EBC2026_barcelona.png",
+    "organizer": "Cardano Foundation",
+    "recapVideo": ""
+  },
+   {
+    "title": "Wealth Tech Executive Forum",
+    "description": "The Wealth Tech Executive Forum: Zurich Edition is an invite-only executive series for senior leaders in asset and wealth management shaping the future of capital allocation, digital assets, and institutional infrastructure. On the 26th May 2026, in Park Hyatt Zürich, a select group of Switzerland’s leading institutional allocators and technology experts gather to discuss the latest innovations in asset and wealth management, how technology is reshaping the investment stack, and what it takes to stay ahead of the next wave of disruption.",
+    "startDate": "2026-05-26",
+    "endDate": "2026-05-26",
+    "location": "Park Hyatt, Zurich, Switzerland",
+    "link": "https://wealthtech-executiveforum.com/?utm_source=luma",
+    "image": "Wealth-Tech-Executive-Forum.png",
+    "organizer": "CV Labs",
+    "recapVideo": ""
+  },
+   {
+    "title": "Point Zero Forum",
+    "description": "The Point Zero Forum is an initiative of the Global Finance & Technology Network (GFTN) and the Swiss State Secretariat for International Finance to promote a policy and technology dialogue in Financial Services. Held annually in Zurich, Switzerland, the Forum convenes central bankers, regulators, policymakers, and industry leaders to address the latest developments in financial technology and the future of finance.",
+    "startDate": "2026-06-23",
+    "endDate": "2026-06-25",
+    "location": "Kongresshaus, Zurich, Switzerland",
+    "link": "https://www.pointzeroforum.com",
+    "image": "Cardano_Foundation-Point-Zero-Forum.png",
+    "organizer": "Global Finance & Technology Network (GFTN) and the Swiss State Secretariat for International Finance",
+    "recapVideo": ""
+  },
+   {
+    "title": "CV Summit 2026",
+    "description": "CV Summit 2026 is bringing together top financial institutions, investors, and leaders in blockchain and AI in the heart of Switzerland’s financial and business hub.",
+    "startDate": "2026-09-29",
+    "endDate": "2026-09-30",
+    "location": "Kongresshaus, Zurich, Switzerland",
+    "link": "https://www.cvsummit.ch/",
+    "image": "Wealth-Tech-Executive-Forum-partner-Cardano-Foundation2.png",
+    "organizer": "CV Labs",
+    "recapVideo": ""
+  },
+   {
+    "title": "Crypto Valley Conference",
+    "description": "Since its inception in 2018, the Crypto Valley Conference continues to be a constant, meaningful and defining gathering place for the Swiss crypto and blockchain industry. We evolve alongside the ecosystem, staying true to our roots while embracing what’s next.",
+    "startDate": "2026-05-28",
+    "endDate": "2026-05-28",
+    "location": "Rotkreuz, Zug, Switzerland",
+    "link": "https://cryptovalleyconference.com/",
+    "image": "Cardano-Foundation-at-CVC2026-Crypto-Valley-Conference-Rotkreuz-Zug.png",
+    "organizer": "Crypto Valley Association",
+    "recapVideo": ""
   }
 ]
