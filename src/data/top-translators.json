@@ -1,8 +1,18 @@
 {
-  "lastUpdated": "2026-05-12T06:50:31.183Z",
+  "lastUpdated": "2026-05-21T07:08:02.241Z",
   "contributors": [
     {
       "rank": 1,
+      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
+      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
+      "languages": [
+        "Spanish"
+      ],
+      "translated": 6860,
+      "approved": 13575
+    },
+    {
+      "rank": 2,
       "user": "Nápoles (enapoles)",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/14053495/medium/929961300fa5ff67cce99ecffc733830.jpg",
       "languages": [
@@ -12,23 +22,13 @@
       "approved": 6512
     },
     {
-      "rank": 2,
-      "user": "Sebastián Aravena (Individuo Digital) (individuodigital)",
-      "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/17597056/medium/3872cf24838f46e0a505ee1feefe1cfe.png",
-      "languages": [
-        "Spanish"
-      ],
-      "translated": 5145,
-      "approved": 8682
-    },
-    {
       "rank": 3,
       "user": "cardanocastellano",
       "avatarUrl": "https://crowdin-static.cf-downloads.crowdin.com/avatar/13834913/medium/d20d3876df7f9f3c5be7ee78c8af45f5_default.png",
       "languages": [
         "Spanish"
       ],
-      "translated": 4953,
+      "translated": 5478,
       "approved": 0
     },
     {
@@ -49,7 +49,7 @@
         "Japanese",
         "Spanish"
       ],
-      "translated": 1191,
+      "translated": 1816,
       "approved": 0
     },
     {
