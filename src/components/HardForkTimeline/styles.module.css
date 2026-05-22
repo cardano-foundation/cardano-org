@@ -1,0 +1,363 @@
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: var(--hf-line-end, 100%);
+  left: 50%;
+  width: 2px;
+  background-color: var(--ifm-color-primary);
+  transform: translateX(-50%);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.axis {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 24px;
+  background-color: var(--ifm-color-primary);
+  transform: translateY(-50%);
+}
+
+.row.right .connector {
+  left: 50%;
+}
+
+.row.left .connector {
+  right: 50%;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 4px #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.dotActive {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px var(--ifm-color-primary);
+}
+
+.row.left .card {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.row.right .card {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.eraStripe {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.eraLabel {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background-color: #ffffff;
+  padding: 0.9rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ifm-color-primary);
+  border-radius: 4px;
+}
+
+.srEra {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.card {
+  max-width: 420px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 51, 173, 0.08);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.row.right .card::before {
+  left: -8px;
+  border-left: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.row.left .card::before {
+  right: -8px;
+  border-top: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+}
+
+.cardActive::before {
+  border-color: var(--ifm-color-primary);
+}
+
+.cardActive {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(0, 51, 173, 0.16);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cardHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.epochPill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background-color: rgba(0, 51, 173, 0.08);
+  color: var(--ifm-color-primary);
+  font-size: 0.8rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.epochLabel {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+}
+
+.epochValue {
+  font-weight: 700;
+}
+
+[data-theme="dark"] .epochPill {
+  background-color: rgba(102, 132, 206, 0.18);
+}
+
+.date {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 0.25rem 0;
+}
+
+.meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.metaLabel {
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.metaLabel::after {
+  content: ":";
+}
+
+.metaValue {
+  margin: 0;
+  color: #475569;
+  word-break: break-all;
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .cardActive {
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .name {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme="dark"] .description,
+[data-theme="dark"] .metaValue {
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme="dark"] .metaLabel {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme="dark"] .divider {
+  border-top-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .dot,
+[data-theme="dark"] .dotActive {
+  box-shadow: 0 0 0 4px var(--ifm-background-color);
+}
+
+[data-theme="dark"] .dotActive {
+  box-shadow: 0 0 0 4px var(--ifm-background-color), 0 0 0 6px var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .eraLabel {
+  background-color: var(--ifm-background-color);
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    gap: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 16px;
+  }
+
+  .row,
+  .row.left,
+  .row.right {
+    grid-template-columns: 32px 1fr;
+    align-items: center;
+  }
+
+  .axis {
+    grid-column: 1;
+    width: 32px;
+  }
+
+  .row.left .card,
+  .row.right .card,
+  .card {
+    grid-column: 2;
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .row.left .connector,
+  .row.right .connector {
+    left: 50%;
+    right: auto;
+    width: 16px;
+  }
+
+  .row.left .card::before,
+  .row.right .card::before {
+    left: -7px;
+    right: auto;
+  }
+
+  .row.left .card::after,
+  .row.right .card::after {
+    left: -5px;
+    right: auto;
+  }
+
+  .eraStripe {
+    left: 16px;
+  }
+
+  .eraLabel {
+    padding: 0.6rem 0.2rem;
+    font-size: 0.7rem;
+  }
+}
