@@ -3,7 +3,7 @@ slug: 2026-04-17-media-drep-votin-power-concentration
 title: "DRep Voting Power Concentration: The Path Forward"
 description: "How wallet design shapes DRep voting power on Cardano. Panel discusses delegation incentives, voter participation, and institutional DReps in governance."
 authors: [community]
-tags: [media]
+tags: [media,ambassadors]
 ---
 
 This session explores how wallet design influences delegation and voting power concentration in Cardano. Participants discussed DRep accountability, voter participation, and the role of institutional DReps, focusing on identifying healthy dynamics for a balanced and decentralized governance ecosystem.
