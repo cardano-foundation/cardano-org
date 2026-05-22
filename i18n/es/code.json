@@ -1562,7 +1562,7 @@
     "message": "Autenticidad"
   },
   "solutions.data.authenticity.description": {
-    "message": "Combate la falsificación con la autenticidad de productos verificados por blockchain."
+    "message": "Combate la falsificación con la trazabilidad de los productos verificada mediante blockchain en Cardano."
   },
   "solutions.data.sustainability.title": {
     "message": "Sustentabilidad"
@@ -1715,13 +1715,13 @@
     "message": "Los Embajadores de Cardano son fundamentales para aumentar la conciencia global y profundizar la comprensión de nuestro ecosistema. Los Beneficios incluyen:"
   },
   "ambassadors.benefits.benefit1": {
-    "message": "Reconocimiento y visibilidad: Consiga una insignia única y aparezca en los canales oficiales de medios sociales de Cardano, reforzando su reputación en el espacio blockchain."
+    "message": "Reconocimiento y visibilidad: Consigue una insignia única y aparezca en los canales oficiales de medios sociales de Cardano, reforzando tu reputación en el espacio blockchain."
   },
   "ambassadors.benefits.benefit2": {
-    "message": "Acceso e Información Exclusiva: Los embajadores reciben acceso temprano o exclusivo a noticias importantes, actualizaciones y eventos, incluyendo reuniones privadas, seminarios web y sesiones informativas."
+    "message": "Acceso e información exclusiva: Los embajadores reciben acceso temprano o exclusivo a noticias importantes, actualizaciones y eventos, incluyendo reuniones, seminarios web y sesiones informativas."
   },
   "ambassadors.benefits.benefit3": {
-    "message": "Oportunidades de redes: Ser Embajador brinda la oportunidad de conectar con desarrolladores, empresarios y líderes del ecosistema, abriendo puertas a colaboraciones y asociaciones dentro de la comunidad Cardano."
+    "message": "Oportunidades de crear redes: Ser Embajador brinda la oportunidad de conectar con desarrolladores, empresarios y líderes del ecosistema, abriendo puertas a colaboraciones y asociaciones dentro de la comunidad Cardano."
   },
   "ambassadors.benefits.benefit4": {
     "message": "Compromiso y apoyo de la comunidad: Recibe materiales promocionales, oportunidades de financiamiento y herramientas de compromiso diseñadas para ayudarte a impulsar el crecimiento comunitario."
@@ -1733,13 +1733,13 @@
     "message": "Conviértete en un Embajador de Cardano"
   },
   "ambassadors.cta.leftText1": {
-    "message": "El viaje para convertirse en Embajador se basa en la dedicación, la colaboración y las contribuciones significativas. Los embajadores salen de la comunidad participando activamente y haciendo un impacto duradero."
+    "message": "El viaje para convertirse en Embajador se basa en la dedicación, la colaboración y las contribuciones significativas. Los embajadores emergen de la comunidad participando activamente y haciendo un impacto duradero."
   },
   "ambassadors.cta.leftText2": {
-    "message": "Su primer paso comienza en el Foro de Cardano, un espacio dinámico para la colaboración, discusión y intercambio de conocimientos. Al contribuir con información valiosa, entablar conversaciones y apoyar a otros miembros de la comunidad, usted construye una base sólida de confianza e influencia. A medida que avanzan a través de diferentes niveles, se abren nuevas oportunidades para una mayor participación y liderazgo."
+    "message": "El primer paso comienza en el Foro de Cardano, un espacio dinámico para la colaboración, discusión y intercambio de conocimientos. Al contribuir con información valiosa, entablar conversaciones y apoyar a otros miembros de la comunidad, usted construye una base sólida de confianza e influencia. A medida que avanzan a través de diferentes niveles, se abren nuevas oportunidades para una mayor participación y liderazgo."
   },
   "ambassadors.cta.leftText3": {
-    "message": "Ser embajador es un reflejo del compromiso y de la contribución. Quienes apoyan activamente a la comunidad y ayudan a Cardano a crecer naturalmente en este papel."
+    "message": "Ser Embajador es un reflejo del compromiso y de la contribución al ecosistema. Quienes apoyan activamente a la comunidad y ayudan a Cardano a crecer naturalmente en este rol."
   },
   "ambassadors.cta.rightButtonLabel": {
     "message": "Comenzar"
@@ -1772,10 +1772,10 @@
     "message": "La comunidad de Cardano está formada por personas de todo el mundo, que se han unido para crecer y salvaguardar el espíritu y el futuro de Cardano. Se espera que todos los participantes de la comunidad actúen de forma legal, honesta, ética y en el mejor interés del proyecto. Este Código de Conducta ofrece normas y directrices diseñadas para ayudar a juzgar dentro de nuestra comunidad y mantenerlo como un lugar limpio y bien iluminado para el discurso público civilizado sobre el proyecto. Al unirte y participar en cualquiera de los canales oficiales de la comunidad Cardano, confirmas que estás de acuerdo con el Código de conducta."
   },
   "codeOfConduct.improveDiscussion.title": {
-    "message": "Mejorar la discusión"
+    "message": "Mejora la discusión"
   },
   "codeOfConduct.improveDiscussion.description1": {
-    "message": "Ayúdanos a hacer de la comunidad un gran lugar para el debate trabajando siempre para mejorar la discusión de alguna manera, sin embargo pequeña. Si no estás seguro de que tu publicación añada a la conversación, piensa en lo que quieres decir e inténtalo de nuevo más tarde. Los temas discutidos en la comunidad nos importan, y queremos que usted actúe como si también le importan. Sean respetuosos con los temas y con las personas que los discuten, aunque no estén de acuerdo con algunos de los que se están diciendo."
+    "message": "Ayúdanos a hacer de la comunidad un gran lugar para el debate trabajando siempre para mejorar la discusión de alguna manera, hasta la más pequeña. Si no estás seguro de que tu publicación añade valor a la conversación, piensa en lo que quieres decir e inténtalo de nuevo más tarde. Los temas discutidos en la comunidad nos importan y queremos que actúes como si también te importan. Sean respetuosos con los temas y con las personas que los discuten, aunque no estén de acuerdo con algunos de los que se están diciendo."
   },
   "codeOfConduct.improveDiscussion.description2": {
     "message": "Una forma de mejorar el debate es descubriendo aquellos que ya están ocurriendo. Dedique algo de tiempo a buscar en la plataforma de la comunidad antes de responder y tendrá una mejor oportunidad de conocer a otros que comparten sus intereses. Busque siempre para añadir valor. El debate debe ser saludable e informativo y los miembros deben aportar una contribución significativa al desarrollo de Cardano. Esto significa que cualquier contenido compartido o subido en línea debe ser relevante para la comunidad. Por favor, no dude en publicar o difundir información errónea o falsas noticias que intentan crear miedo o dudas."
@@ -1883,7 +1883,7 @@
     "message": "No publicar lo mismo en múltiples canales."
   },
   "codeOfConduct.postOwnStuff.title": {
-    "message": "Publicar sólo tus propias cosas"
+    "message": "Publicar solo tus propias cosas"
   },
   "codeOfConduct.postOwnStuff.description": {
     "message": "No puedes publicar nada digital que pertenezca a otra persona sin permiso. Usted no puede publicar descripciones de, enlaces o métodos para robar la propiedad intelectual de alguien (software, vídeo, audio, imágenes) o para infringir cualquier otra ley. Siempre se debe atribuir crédito al productor de contenido original."
@@ -1925,7 +1925,7 @@
     "message": "(Copia local)"
   },
   "constitution.error.fetchError": {
-    "message": "No se pudo obtener de data.cardano.org:"
+    "message": "No se pudo obtener desde data.cardano.org:"
   },
   "constitution.error.showingLocal": {
     "message": "Mostrando copia local abajo."
@@ -2093,7 +2093,7 @@
     "message": "Comienza a construir sobre Cardano. Accede a las herramientas de desarrollador, lenguajes de contrato inteligentes, APIs, redes de pruebas y tutoriales para lanzar tu primera aplicación descentralizada."
   },
   "developers.divider.resources": {
-    "message": "Recursos de Desarrollador"
+    "message": "Recursos para el Desarrollador"
   },
   "developers.documentation.title": {
     "message": "Documentación"
@@ -2111,10 +2111,10 @@
     "message": "Soporte"
   },
   "developers.support.text": {
-    "message": "Únete a la vibrante comunidad de desarrolladores de Cardano a través de varias plataformas. A continuación encontrará enlaces a la Bolsa de Pila de Cardano, el Foro de Cardano y el grupo oficial de Telegram. Conéctese con otros desarrolladores, haga preguntas y comparta ideas en nuestro ecosistema descentralizado."
+    "message": "Únete a la vibrante comunidad de desarrolladores de Cardano a través de varias plataformas. A continuación encontrará enlaces a la Cardano Stack Exchange, el Foro de Cardano y el grupo oficial de Telegram. Conéctese con otros desarrolladores, haga preguntas y comparta ideas en nuestro ecosistema descentralizado."
   },
   "developers.cta.title": {
-    "message": "Ataca el protocolo, bifurca el blockchain - o no. Explora el protocolo Ouroboros de primera mano en esta simulación interactiva."
+    "message": "Ataca el protocolo, bifurca la blockchain, o no. Explora el protocolo Ouroboros de primera mano en esta simulación interactiva."
   },
   "developers.cta.buttonLabel": {
     "message": "Jugar"
@@ -2126,10 +2126,10 @@
     "message": "Cardano es el nexo de cinco principios: Personas, propósito, tecnología, investigación y oportunidad."
   },
   "discoverCardano.meta.title": {
-    "message": "Qué es Cardano, Blockchain construido para Sostenibilidad"
+    "message": "Qué es Cardano, Blockchain construido para la Sostenibilidad"
   },
   "discoverCardano.meta.description": {
-    "message": "Descubra lo que hace que Cardano sea diferente. Construido en una ciencia revisada por pares, impulsada por una comunidad global y diseñada para un futuro sostenible y descentralizado."
+    "message": "Descubra lo que hace que Cardano sea diferente. Construido en ciencia revisada por pares, impulsada por una comunidad global y diseñada para un futuro sostenible y descentralizado."
   },
   "discoverCardano.people.title": {
     "message": "Personas"
@@ -2138,7 +2138,7 @@
     "message": "Trabajando juntos, conseguimos más para muchos."
   },
   "discoverCardano.people.text1": {
-    "message": "Cardano es construido por una comunidad descentralizada de científicos, ingenieros, y líderes de pensamiento unidos en un propósito común: crear una plataforma tecnológica que genere el cambio positivo que el mundo necesita. Creemos que el futuro no debe ser definido por el pasado, y que más es posible - y, a través de la tecnología, puede hacerse posible para todos. Medimos el valor de una tarea no por su reto, sino por sus resultados."
+    "message": "Cardano es construido por una comunidad descentralizada de científicos, ingenieros y líderes de pensamiento unidos en un propósito común: crear una plataforma tecnológica que genere el cambio positivo que el mundo necesita. Creemos que el futuro no debe ser definido por el pasado, y que más es posible. A través de la tecnología, puede hacerse posible para todos. Medimos el valor de una tarea no por su reto, sino por sus resultados."
   },
   "discoverCardano.people.text2": {
     "message": "Cada titular de ada también tiene una participación en la red de Cardano. El ada almacenado en una cartera puede ser delegado a un \"stake pool\" para ganar recompensas y participar en el seguro funcionamiento de la red o crear y operar su propio \"stake pool\". Con el tiempo, ada también será utilizable para una variedad de aplicaciones y servicios en la plataforma Cardano."
@@ -2150,190 +2150,190 @@
     "message": "Una plataforma construida para un futuro sustentable, para ayudar a la gente a trabajar mejor junta, confiar unos en otros y construir soluciones globales a los problemas globales."
   },
   "discoverCardano.purpose.text1": {
-    "message": "Cardano es un tenedor en el camino. Nos lleva desde donde hemos estado a donde estamos destinados: una sociedad global que es segura, transparente, y justo, y que sirve tanto a los muchos como a unos pocos. Al igual que las revoluciones tecnológicas que se han producido, ofrece una nueva plantilla para cómo trabajamos, relacionamos y creamos, como individuos, empresas y sociedades."
+    "message": "Cardano es una bifurcación en el camino. Nos lleva desde donde hemos estado hacia el lugar al que estamos destinados a ir: una sociedad global segura, transparente y justa, que sirve tanto a las mayorías como a los pocos. Al igual que las revoluciones tecnológicas del pasado, ofrece un nuevo modelo para nuestra forma de trabajar, interactuar y crear, como individuos, empresas y sociedades."
   },
   "discoverCardano.purpose.text2": {
-    "message": "Cardano comenzó con una visión de un mundo sin intermediarios, en el que el poder no está controlado por unos pocos responsables, sino por los muchos. En este mundo, los individuos tienen control sobre sus datos y cómo interactúan y transaccionan. Las empresas tienen la oportunidad de crecer independientemente de las estructuras de poder monopolísticas y burocráticas. La sociedad es capaz de perseguir la verdadera misión: autosuficiencia, justa y responsable, un mundo hecho posible por Cardano."
+    "message": "Cardano comenzó con una visión de un mundo sin intermediarios, en el que el poder no está controlado por unos pocos responsables, sino por muchos. En este mundo, los individuos tienen control sobre sus datos y cómo interactúan y transaccionan. Las empresas tienen la oportunidad de crecer independientemente de las estructuras de poder monopólicas y burocráticas. La sociedad es capaz de perseguir la verdadera misión: autosuficiencia, justa y responsable, un mundo hecho posible por Cardano."
   },
   "discoverCardano.technology.title": {
     "message": "Tecnología"
   },
   "discoverCardano.technology.subtitle": {
-    "message": "Cardano aporta un nuevo estándar en tecnología -abierta e inclusiva- para desafiar a los viejos y activar una nueva era de innovación sostenible y distribuida a nivel global."
+    "message": "Cardano aporta un nuevo estándar en tecnología, abierta e inclusiva, para desafiar a los viejos patrones y activar una nueva era de innovación sostenible y distribuida a nivel global."
   },
   "discoverCardano.technology.text1": {
-    "message": "Desde el incremental hasta el global, Cardano mejora la forma en que interactuamos, comerciamos y creamos, y en última instancia operan como una sociedad global."
+    "message": "Desde el incremental hasta el global, Cardano mejora la forma en que interactuamos, comerciamos y creamos. En última instancia Cardano opera como una sociedad global."
   },
   "discoverCardano.technology.text2": {
-    "message": "Cardano is a blockchain platform built on the groundbreaking Ouroboros proof-of-stake consensus protocol, and developed using the Haskell programming language: a functional programming language that enables Cardano to pursue evidence-based development, for unparalleled security and stability."
+    "message": "Cardano es una plataforma blockchain construida sobre el innovador protocolo de consenso de prueba Ouroboros y desarrollado utilizando el lenguaje de programación Haskell: un lenguaje de programación funcional que permite a Cardano perseguir el desarrollo basado en la evidencia para una seguridad y estabilidad sin precedentes."
   },
   "discoverCardano.technology.text3": {
-    "message": "Our technology is underpinned by [research](/research). We have redefined what it means to create a global software platform through scientific methods. We have not compromised on our belief, or in our approach. To build a better future - secure, sustainable, and governable by the many - we have taken the road less traveled. The result of our efforts is a blockchain platform unparalleled in its capability and performance, and which is truly able to support global applications, systems, and real-life business use cases."
+    "message": "Nuestra tecnología está respaldada por [research](/research). Hemos redefinido lo que significa crear una plataforma global de software a través de métodos científicos. No nos hemos comprometido en nuestra creencia ni en nuestro enfoque. Para construir un futuro mejor, seguro, sostenible y gobernable por muchos, hemos tomado el camino difícil. El resultado de nuestros esfuerzos es una plataforma blockchain incomparable en su capacidad y rendimiento,  que es capaz de soportar aplicaciones globales, sistemas y casos de uso de negocios en la vida real."
   },
   "discoverCardano.research.title": {
     "message": "Investigación"
   },
   "discoverCardano.research.subtitle": {
-    "message": "Pioneering tech begins with groundbreaking research."
+    "message": "La tecnología pionera comienza con una investigación innovadora."
   },
   "discoverCardano.research.text1": {
-    "message": "Cardano began with and has grown through [research](/research). Before any technology we integrate is developed, it is specified. And before it is specified, it is researched. That [research](/research) is peer-reviewed - a unique achievement for a blockchain platform - so that our ideas may be challenged before they are validated."
+    "message": "Cardano comenzó con y ha crecido a través de [research](/research). Antes de que se desarrolle cualquier tecnología, se especifica y antes de que se especifique, se investiga. Esa [research](/research) es revisada por pares, un logro único para una plataforma blockchain, para que nuestras ideas puedan ser desafiadas antes de ser validadas."
   },
   "discoverCardano.research.text2": {
-    "message": "[Our research](/research) - led by leading academics - explores philosophy, sociology, behavior, and game theory. To achieve each outcome, we consider the minutiae of possibilities: the variables that often go unconsidered, but which may ultimately impact the integrity and sustainability of a global, decentralized platform. We take nothing for granted."
+    "message": "[Nuestra investigación](/research) - dirigida por líderes académicos, explora la filosofía, la sociología, el comportamiento y la teoría del juego. Para lograr cada resultado, analizamos las posibilidades hasta el más mínimo detalle: las variables que a menudo pasan desapercibidas, pero que puede afectar en última instancia a la integridad y sostenibilidad de una plataforma global y descentralizada. No damos nada por sentado."
   },
   "discoverCardano.opportunity.title": {
     "message": "Oportunidad"
   },
   "discoverCardano.opportunity.subtitle": {
-    "message": "El punto de partida para cada nueva oportunidad, potenciar su negocio a través de Cardano y descubrir el futuro de la tecnología."
+    "message": "El punto de partida para cada nueva oportunidad. Potencie su negocio a través de Cardano y descubra el futuro de la tecnología."
   },
   "discoverCardano.opportunity.text1": {
-    "message": "Cardano provides the template and toolset to a new age of innovation. It introduces leading-edge technologies, models, and methodologies to help individuals, developers, and enterprises discover a new possible, realize change, and enrich their lives.."
+    "message": "Cardano proporciona las herramientas para una nueva era de innovación. Introduce tecnologías, modelos y metodologías para ayudar a las personas, desarrolladores y empresas a descubrir un nuevo posible, realizar cambios y enriquecer vidas."
   },
   "discoverCardano.opportunity.text2": {
-    "message": "Blockchain technology holds the answer to a number of legacy challenges, whether financial, societal, or technological. It disintermediates essential relationships, and redistributes power to alleviate costly dependencies, restrictive paradigms, and inefficient systems of transaction and exchange. Cardano is a realization of this potential. It is a platform with the security, privacy sustainability, and performance standards required to accelerate the mass adoption of the technology, and support a lasting ecosystem."
+    "message": "La tecnología blockchain ofrece la solución a una serie de retos tradicionales, ya sean financieros, sociales o tecnológicos. Elimina la intermediación en relaciones fundamentales y redistribuye el poder para mitigar las costosas dependencias, los paradigmas restrictivos y los sistemas ineficientes de transacción e intercambio. Cardano es una materialización de este potencial. Se trata de una plataforma que cumple con los estándares de seguridad, privacidad, sostenibilidad y rendimiento necesarios para acelerar la adopción masiva de la tecnología y sustentar un ecosistema duradero."
   },
   "discoverCardano.opportunity.text3": {
-    "message": "Cardano powers new, more secure, and globally scalable solutions. Its technology is continuously improved upon through evidence-based development methods, and guided by a democratic voting system, in which every member has a voice. The opportunity of Cardano is adaptable to your use case. It is an opportunity that creates other opportunities, continuously."
+    "message": "Cardano impulsa soluciones nuevas, más seguras y escalables a nivel mundial. Su tecnología se mejora continuamente mediante métodos de desarrollo basados en la evidencia y se rige por un sistema de votación democrático, en el que todos los miembros tienen voz. Las posibilidades que ofrece Cardano se adaptan a tus necesidades. Es una oportunidad que gcrea otras oportunidades, continuamente."
   },
   "entities.hero.title": {
-    "message": "Entities building on Cardano"
+    "message": "Empresas construyendo en Cardano"
   },
   "entities.hero.description": {
-    "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
+    "message": "Numerosas entidades independientes, incluidas las empresas que trabajan activamente en Cardano, colaboran para avanzar en la plataforma y asegurar que permanezca alineada con su misión."
   },
   "entities.meta.title": {
-    "message": "Organizations Building on Cardano"
+    "message": "Organizaciones construyendo en Cardano"
   },
   "entities.meta.description": {
-    "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
+    "message": "Numerosas entidades independientes, incluidas las empresas que trabajan activamente en Cardano, colaboran para avanzar en la plataforma y asegurar que permanezca alineada con su misión."
   },
   "entities.entitiesSection.divider": {
-    "message": "Entities advancing Cardano"
+    "message": "Entidades que avanzan Cardano"
   },
   "entities.companiesSection.divider": {
-    "message": "Companies, associations, and collaborations building on Cardano"
+    "message": "Empresas, asociaciones, y colaboraciones construyendo en Cardano"
   },
   "entities.companiesSection.description": {
-    "message": "There is a growing number of entities that build on Cardano. Below are a few of them:"
+    "message": "Cada vez son más las entidades que desarrollan proyectos basados en Cardano. A continuación se enumeran algunas de ellas:"
   },
   "entities.companiesSection.addCompanyLink": {
-    "message": "add your company"
+    "message": "añadir tu empresa"
   },
   "events.hero.title": {
-    "message": "Cardano Events"
+    "message": "Eventos de Cardano"
   },
   "events.hero.description": {
-    "message": "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
+    "message": "Los próximos eventos de Cardano, en un mismo lugar, para que nunca te pierdas la oportunidad de conectar, aprender y crecer con la comunidad de Cardano."
   },
   "events.pagination.previous": {
-    "message": "Previous"
+    "message": "Anterior"
   },
   "events.pagination.next": {
-    "message": "Next"
+    "message": "Siguiente"
   },
   "events.meta.title": {
-    "message": "Cardano Events, Conferences and Meetups"
+    "message": "Eventos Cardano, Conferencias y Reuniones"
   },
   "events.meta.description": {
-    "message": "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
+    "message": "Los próximos eventos de Cardano, en un mismo lugar, para que nunca te pierdas la oportunidad de conectar, aprender y crecer con la comunidad de Cardano."
   },
   "events.divider.discoverWorldwide": {
-    "message": "Discover Cardano Events Worldwide"
+    "message": "Descubre eventos de Cardano en todo el mundo"
   },
   "events.platforms.luma": {
-    "message": "Events on Luma.com"
+    "message": "Eventos en Luma.com"
   },
   "events.platforms.meetup": {
-    "message": "Events on Meetup.com"
+    "message": "Eventos en Meetup.com"
   },
   "events.divider.upcomingHighlighted": {
-    "message": "Upcoming highlighted Events"
+    "message": "Próximos eventos destacados"
   },
   "events.divider.pastHighlighted": {
-    "message": "Past Highlighted Events"
+    "message": "Eventos Destacados Pasados"
   },
   "events.recapAvailable": {
-    "message": "Recap available:"
+    "message": "Resumen disponible:"
   },
   "events.watchHere": {
-    "message": "Watch here"
+    "message": "Ver aquí"
   },
   "exchanges.hero.title": {
-    "message": "Integrate Cardano"
+    "message": "Integra Cardano"
   },
   "exchanges.hero.description": {
-    "message": "Easy integration with Cardano. All of the upgrades. None of the maintenance."
+    "message": "Fácil integración con Cardano. Todas las mejoras. Nada de mantenimiento."
   },
   "exchanges.layout.title": {
-    "message": "Integrate Cardano, Exchange and Wallet Partnerships"
+    "message": "Integrar asociaciones con Cardano, plataformas de intercambio y monederos electrónicos"
   },
   "exchanges.layout.description": {
-    "message": "Integrate Cardano into your exchange, wallet, or payment platform. Access documentation, resources, and partnership opportunities for ada support."
+    "message": "Integra Cardano en tu plataforma de intercambio, billetera o plataforma de pago. Accede a la documentación, los recursos y las oportunidades de colaboración para la compatibilidad con ada."
   },
   "exchanges.intro.description": {
-    "message": "There are various [ways to integrate Cardano](https://developers.cardano.org), one of which is Adrestia. The Adrestia team focuses on supporting exchange and developer integrations by providing a wallet SDK and set of APIs that make it easier for developers and exchanges to integrate and interact with Cardano across releases."
+    "message": "Existen varias [formas de integrar Cardano](https://developers.cardano.org), una de las cuales es Adrestia. El equipo de Adrestia se centra en facilitar las integraciones de las plataformas de intercambio y los desarrolladores, proporcionando un SDK para carteras y un conjunto de API que facilitan a los desarrolladores y a las plataformas de intercambio la integración y la interacción con Cardano en todas las versiones."
   },
   "exchanges.whyAdrestia.divider": {
-    "message": "Why Adrestia?"
+    "message": "¿Por qué Adrestia?"
   },
   "exchanges.whyAdrestia.leftText": {
-    "message": "Blockchains - and especially Cardano - are fast developing. Staying up to date with releases can become a maintenance challenge. We're committed to making it as easy as possible to develop and integrate with Cardano. Through Adrestia, Cardano is adaptable to your systems and requirements."
+    "message": "Las cadenas de bloques  y en especial, Cardano, están evolucionando rápidamente. Mantenerse al día de las nuevas versiones puede suponer un reto en cuanto al mantenimiento. Nos comprometemos a facilitar al máximo el desarrollo y la integración con Cardano. Gracias a Adrestia, Cardano se adapta a tus sistemas y necesidades."
   },
   "exchanges.whyAdrestia.rightText": {
-    "message": "Improvements to Cardano should not mean greater complexity or resource overhead. We want to innovate and deploy improvements as they're available, and as they become necessary. This might mean a few updates one month, and many the next. Adrestia is a consistent SDK and set of GraphQL APIs that make it easy for developers to create applications and maintain core compatibility and functionality with the Cardano network across releases."
+    "message": "Las mejoras en Cardano no deberían significar una mayor complejidad o sobrecarga de recursos. Queremos innovar y desplegar mejoras a medida que estén disponibles, y a medida que sean necesarias. Esto podría significar algunas actualizaciones un mes, y muchas el siguiente. Adrestia es un SDK consistente y un conjunto de APIs GraphQL que facilitan a los desarrolladores la creación de aplicaciones y el mantenimiento de la compatibilidad y funcionalidad de núcleo con la red Cardano a través de lanzamientos."
   },
   "exchanges.cta1.title": {
-    "message": "Focus On What Matters. Leave The Rest To Us."
+    "message": "Concéntrate en lo que importa. Déjanos el resto a nosotros."
   },
   "exchanges.cta1.buttonLabel": {
-    "message": "Access Adrestia"
+    "message": "Acceso a Adrestia"
   },
   "exchanges.accessAdrestia.divider": {
-    "message": "Access Adrestia"
+    "message": "Acceso a Adrestia"
   },
   "exchanges.whatMakesDifferent.title": {
-    "message": "What makes Adrestia different?"
+    "message": "¿Qué hace que Adrestia sea diferente?"
   },
   "exchanges.whatMakesDifferent.description1": {
-    "message": "Cardano's architecture is built for modularity and adaptability. Through Adrestia, we're able to save developers and exchanges significant maintenance overhead and, most importantly, time."
+    "message": "La arquitectura de Cardano está construida para modularidad y adaptabilidad. A través de Adrestia, podemos ahorrar desarrolladores e intercambios significativos de mantenimiento y, lo que es más importante, tiempo."
   },
   "exchanges.whatMakesDifferent.description2": {
-    "message": "Unlike most blockchain API suites, Adrestia decouples and splits out key services from the core Cardano node. The new SDK and APIs are consistent across releases, which means developers are not required to re-learn the platform with each release. Adrestia offers a host of self-contained services and ways to query, transact, and extract information."
+    "message": "A diferencia de la mayoría de las suites API de blockchain, Adrestia desconecta y divide los servicios clave del núcleo del nodo Cardano. El nuevo SDK y las APIs son consistentes a través de lanzamientos, lo que significa que los desarrolladores no están obligados a volver a aprender la plataforma con cada lanzamiento. Adrestia ofrece un gran número de servicios autónomos y formas de consultar, transaccionar y extraer información."
   },
   "exchanges.benefits.reduceTime.title": {
-    "message": "Reducir el tiempo a mercado"
+    "message": "Acelerar el tiempo de comercialización"
   },
   "exchanges.benefits.reduceTime.text": {
-    "message": "Develop applications for Cardano without worrying about new releases breaking your code."
+    "message": "Desarrollar aplicaciones para Cardano sin preocuparse por nuevas versiones que rompan tu código."
   },
   "exchanges.benefits.reduceDowntime.title": {
-    "message": "Reduce Downtime"
+    "message": "Reducir el tiempo de inactividad"
   },
   "exchanges.benefits.reduceDowntime.text": {
-    "message": "Fewer backward compatibility issues mean significantly reduced downtime."
+    "message": "Menos cuestiones de compatibilidad hacia atrás significan una reducción significativa del tiempo de inactividad."
   },
   "exchanges.benefits.reduceMaintenance.title": {
-    "message": "Reduce Maintenance Costs"
+    "message": "Reduce los costos de mantenimiento"
   },
   "exchanges.benefits.reduceMaintenance.text": {
-    "message": "Spend less time and resources on maintaining application compatibility across releases."
+    "message": "Emplea menos tiempo y recursos en mantener la compatibilidad de aplicaciones a través de los lanzamientos."
   },
   "exchanges.benefits.increaseProductivity.title": {
-    "message": "Increase Productivity"
+    "message": "Aumenta la productividad"
   },
   "exchanges.benefits.increaseProductivity.text": {
-    "message": "Focus on what matters - application and wallet development - and leave the updates to us."
+    "message": "Concéntrese en lo que importa, desarrollo de aplicaciones y billeteras y déjenos las actualizaciones a nosotros."
   },
   "exchanges.cta2.title": {
-    "message": "Discover how components work and interact with the Cardano core node, and choose the right component to suit your requirements."
+    "message": "Descubra cómo funcionan los componentes e interactúan con el nodo núcleo Cardano y elija el componente adecuado para sus necesidades."
   },
   "exchanges.cta2.buttonLabel": {
-    "message": "Learn the Core Node Architecture"
+    "message": "Aprende la Arquetitura del Nodo Núcleo"
   },
   "exchanges.learnArchitecture.divider": {
-    "message": "Learn the Core Node Architecture"
+    "message": "Aprende la Arquetitura del Nodo Núcleo"
   },
   "exchanges.howDoesItWork.title": {
     "message": "¿Cómo funciona?"
