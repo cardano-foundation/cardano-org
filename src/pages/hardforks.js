@@ -176,7 +176,6 @@ export default function Home() {
                 activeItemIndex={9}
                 disableToolbar={true}
                 disableClickOnCircle={true}
-                disableInteraction={true}
                 disableTimelinePoint={false}
                 theme={{
                   primary: "#093DB0",
