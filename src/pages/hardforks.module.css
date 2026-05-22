@@ -1,0 +1,3 @@
+.timelineWrapper :global([class*="TimelineContentDetailsWrapper"])::after {
+  display: none;
+}

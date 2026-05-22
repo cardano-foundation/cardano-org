@@ -12,6 +12,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { Chrono } from "react-chrono";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { translate } from '@docusaurus/Translate';
+import styles from "./hardforks.module.css";
 
 // Hard Fork List
 function getTimelineItems() {
@@ -169,22 +170,25 @@ export default function Home() {
 
           <BrowserOnly fallback={<div>{translate({ id: 'hardforks.loading', message: 'Loading...' })}</div>}>
             {() => (
-              <Chrono
-                items={getTimelineItems()}
-                mode="VERTICAL_ALTERNATING"
-                cardHeight={280}
-                activeItemIndex={9}
-                disableToolbar={true}
-                disableClickOnCircle={true}
-                disableTimelinePoint={false}
-                theme={{
-                  primary: "#093DB0",
-                  secondary: "#007FFF",
-                  cardBgColor: "white",
-                  titleColor: "#093DB0",
-                  titleColorActive: "#FF7676",
-                }}
-              />
+              <div className={styles.timelineWrapper}>
+                <Chrono
+                  items={getTimelineItems().slice().reverse()}
+                  mode="VERTICAL_ALTERNATING"
+                  cardHeight={280}
+                  activeItemIndex={1}
+                  useReadMore={false}
+                  disableToolbar={true}
+                  disableClickOnCircle={true}
+                  disableTimelinePoint={false}
+                  theme={{
+                    primary: "#093DB0",
+                    secondary: "#007FFF",
+                    cardBgColor: "white",
+                    titleColor: "#093DB0",
+                    titleColorActive: "#FF7676",
+                  }}
+                />
+              </div>
             )}
           </BrowserOnly>
         </BoundaryBox>
