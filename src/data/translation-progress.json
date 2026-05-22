@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-21T07:07:57.753Z",
+  "lastUpdated": "2026-05-22T07:03:52.866Z",
   "languages": [
     {
       "id": "de",
@@ -26,13 +26,13 @@
       "approvalProgress": 50,
       "words": {
         "total": 39146,
-        "translated": 19949,
+        "translated": 19959,
         "preTranslateAppliedTo": 0,
         "approved": 19949
       },
       "phrases": {
         "total": 3786,
-        "translated": 2254,
+        "translated": 2256,
         "preTranslateAppliedTo": 0,
         "approved": 2254
       }
