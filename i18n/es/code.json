@@ -2339,22 +2339,22 @@
     "message": "¿Cómo funciona?"
   },
   "exchanges.howDoesItWork.description": {
-    "message": "Cardano introduces an additional layer between users and developers and the core node. Within this layer, our code node team tracks and manages complex changes, potential issues, and hard forks that arise from protocol improvements. We implement necessary updates across Adrestia libraries and APIs, and take care of the maintenance so you don't have to."
+    "message": "Cardano introduce una capa adicional entre usuarios y desarrolladores y el nodo principal. Dentro de esta capa, nuestro equipo de nodos de código rastrea y administra cambios complejos, problemas potenciales y bifurcaciones duras que surgen de mejoras de protocolo. Implementamos las actualizaciones necesarias a través de las bibliotecas de Adrestia y APIs, y nos encargamos del mantenimiento para que no tengas que hacerlo."
   },
   "exchanges.ctaTwoColumn.leftTitle": {
     "message": "Guía de usuario de Adrestia"
   },
   "exchanges.ctaTwoColumn.leftText": {
-    "message": "Find out more about Adrestia and what it could mean for you. Our user guide is a handy, straight-forward resource to help you determine which actions to take and when."
+    "message": "Averigua más sobre Adrestia y lo que podría significar para ti. Nuestra guía de usuario es un recurso práctico y directo para ayudarle a determinar qué acciones tomar y cuándo."
   },
   "exchanges.ctaTwoColumn.leftButtonLabel": {
     "message": "Dirección de Adrestia"
   },
   "exchanges.ctaTwoColumn.rightTitle": {
-    "message": "Adrestia Component Overview & Flow Chart Guide"
+    "message": "Guía de Gráficos de Flujo y Resumen de Componentes Adrestia"
   },
   "exchanges.ctaTwoColumn.rightText": {
-    "message": "Discover our new, self-contained set of libraries and APIs to decide which is right for you."
+    "message": "Descubra nuestro nuevo conjunto de bibliotecas autónomo y APIs independientes para decidir que es el adecuado para usted."
   },
   "exchanges.ctaTwoColumn.rightButtonLabel": {
     "message": "Descubre más"
