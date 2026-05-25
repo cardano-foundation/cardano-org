@@ -2330,10 +2330,10 @@
     "message": "Descubra cómo funcionan los componentes e interactúan con el nodo núcleo Cardano y elija el componente adecuado para sus necesidades."
   },
   "exchanges.cta2.buttonLabel": {
-    "message": "Aprende la Arquetitura del Nodo Núcleo"
+    "message": "Aprende la Arquitectura del Nodo Núcleo"
   },
   "exchanges.learnArchitecture.divider": {
-    "message": "Aprende la Arquetitura del Nodo Núcleo"
+    "message": "Aprende la Arquitectura del Nodo Núcleo"
   },
   "exchanges.howDoesItWork.title": {
     "message": "¿Cómo funciona?"
@@ -2363,10 +2363,10 @@
     "message": "Génesis"
   },
   "genesis.hero.description": {
-    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+    "message": "Distribución de cupones de ficha de ada, que son parte de la capa de asentamiento de Cardano, tuvo lugar en Asia en cuatro etapas entre octubre de 2015 y principios de enero de 2017."
   },
   "genesis.layout.title": {
-    "message": "Cardano Genesis Distribution, Initial ada Allocation"
+    "message": "Distribución del Génesis Cardano, Asignación Inicial ada"
   },
   "genesis.layout.description": {
     "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
