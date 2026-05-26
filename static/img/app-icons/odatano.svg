@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Icon: Bold O with diagonal split and data stream -->
+  <g transform="translate(100, 100)">
+    <!-- O shape - left half (dark) -->
+    <path d="M-3,-56 C-32,-53 -56,-32 -56,0 C-56,32 -32,56 0,56 L-3,56 L-3,-56 Z M-3,-32 L-3,32 C-17,29 -32,17 -32,0 C-32,-17 -17,-29 -3,-32 Z" fill="#001B5E"/>
+    
+    <!-- O shape - right half (lighter blue) -->
+    <path d="M3,-56 C32,-53 56,-32 56,0 C56,32 32,56 0,56 L3,56 L3,-56 Z M3,-32 L3,32 C17,29 32,17 32,0 C32,-17 17,-29 3,-32 Z" fill="#0C5ECF"/>
+    
+    <!-- Data stream dots in the gap -->
+    <circle cx="0" cy="-28" r="3.2" fill="#3B8EF0" opacity="0.9"/>
+    <circle cx="0" cy="-12" r="2.4" fill="#3B8EF0" opacity="0.7"/>
+    <circle cx="0" cy="4" r="2.4" fill="#3B8EF0" opacity="0.5"/>
+    <circle cx="0" cy="20" r="3.2" fill="#3B8EF0" opacity="0.7"/>
+    <circle cx="0" cy="34" r="2.4" fill="#3B8EF0" opacity="0.4"/>
+  </g>
+</svg>

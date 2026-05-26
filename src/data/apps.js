@@ -282,7 +282,7 @@ export const Showcases = [
   {
     title: "CExplorer",
     description:
-        "Independent Cardano explorer with all-in-one dashboards covering blocks, transactions, stake pools, governance, and asset statistics.",
+      "Independent Cardano explorer with all-in-one dashboards covering blocks, transactions, stake pools, governance, and asset statistics.",
     tagline: "Independent Cardano explorer with dashboards",
     icon: "/img/app-icons/cexplorer.png",
     website: "https://cexplorer.io/",
@@ -1080,7 +1080,7 @@ export const Showcases = [
   {
     title: "Medusa Wallet",
     description:
-        "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
+      "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
     tagline: "Privacy-focused lightweight Cardano wallet",
     icon: "/img/app-icons/medusa.jpg",
     website: "https://adawallet.io",
@@ -1095,7 +1095,7 @@ export const Showcases = [
       features: ["staking"],
       type: "light",
     },
-   },
+  },
   {
     title: "Dano Finance",
     description:
@@ -1194,7 +1194,7 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "BeginWallet",
   },
-    {
+  {
     title: "Stuff.io",
     description:
       "Digital-ownership platform on Cardano letting consumers own, share, gift, or resell their movies, music, ebooks, audiobooks, and podcasts as NFTs.",
@@ -1911,6 +1911,19 @@ export const Showcases = [
     maintainerPick: false,
     beginnerFriendly: false,
     x: "hizz_io",
+  },
+  {
+    title: "ODATANO",
+    description:
+      "Connects enterprise systems to Cardano through a SAP CAP-based OData V4 API for on-chain data access, transaction building, and submission.",
+    tagline: "Enterprise OData V4 bridge for Cardano",
+    icon: "/img/app-icons/odatano.svg",
+    website: "https://odatano.dev",
+    source: "https://github.com/ODATANO",
+    category: "other",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
   },
 ];
 
