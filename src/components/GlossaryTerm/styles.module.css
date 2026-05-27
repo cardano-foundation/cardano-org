@@ -82,6 +82,16 @@
   margin-bottom: 2.5rem;
 }
 
+/* Fallback paragraph for terms whose entire body equals the short — keeps
+ * <main> non-empty without duplicating the SiteHero subtitle visually
+ * (different font weight signals it's a content fallback, not a lead). */
+.bodyFallback {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-900);
+  margin: 0 0 2.5rem;
+}
+
 .body p:first-child {
   margin-top: 0;
 }
