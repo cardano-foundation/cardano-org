@@ -153,36 +153,32 @@ export default function GlossaryTerm({ term }) {
           </p>
         )}
 
-        {term.link && (() => {
-          const isExternal = /^https?:\/\//.test(term.link);
-          const label = (
-            <>
-              <span className={styles.fullPageCtaLabel}>
-                {translate({
-                  id: 'glossary.term.openFullPage',
-                  message: 'Open dedicated page',
-                })}
-              </span>
-              <span className={styles.fullPageCtaArrow} aria-hidden>
-                {isExternal ? '↗' : '→'}
-              </span>
-            </>
-          );
-          return isExternal ? (
-            <a
-              href={term.link}
-              target="_blank"
-              rel="noreferrer"
-              className={styles.fullPageCta}
-            >
-              {label}
-            </a>
-          ) : (
-            <Link to={term.link} className={styles.fullPageCta}>
-              {label}
-            </Link>
-          );
-        })()}
+        {term.link && (/^https?:\/\//.test(term.link) ? (
+          <a
+            href={term.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.fullPageCta}
+          >
+            {translate({
+              id: 'glossary.term.openFullPage',
+              message: 'Open dedicated page',
+            })}
+            <span className={styles.visuallyHidden}>
+              {translate({
+                id: 'glossary.term.opensInNewTab',
+                message: ' (opens in a new tab)',
+              })}
+            </span>
+          </a>
+        ) : (
+          <Link to={term.link} className={styles.fullPageCta}>
+            {translate({
+              id: 'glossary.term.openFullPage',
+              message: 'Open dedicated page',
+            })}
+          </Link>
+        ))}
 
         {term.mentalModel && (
           <aside className={styles.mentalModel} aria-label="Mental model">

@@ -6,4 +6,4 @@ category: general
 link: /ambassadors
 ---
 
-A community member who promotes Cardano education and adoption. See [Cardano Ambassadors](/ambassadors/) for the program.
+A community member who promotes Cardano education and adoption.
