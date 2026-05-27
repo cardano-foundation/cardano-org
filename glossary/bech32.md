@@ -4,6 +4,7 @@ slug: bech32
 short: An address encoding format used for Cardano addresses since the Shelley hard fork.
 category: wallets
 aliases: [Address, "Cardano Address", "addr1", "stake1"]
+mentalModel: "An account number with built-in typo detection. Change one letter by mistake and the address simply rejects itself."
 related: [wallet]
 ---
 

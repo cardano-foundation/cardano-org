@@ -3,6 +3,7 @@ title: redeemer
 slug: redeemer
 short: Data supplied by the spending transaction that tells a smart contract what action is being attempted.
 category: smart-contracts
+mentalModel: "The action you announce when trying to spend a contract-locked UTxO: 'I want to do X.' The script either nods or refuses."
 related: [datum, eutxo, smart-contract]
 ---
 
