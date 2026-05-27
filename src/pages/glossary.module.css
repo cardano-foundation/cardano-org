@@ -82,7 +82,10 @@
   left: 0;
   right: 0;
   z-index: 20;
-  background: var(--ifm-background-color);
+  /* --ifm-background-color is `transparent` in Docusaurus' light theme, so
+   * the dropdown would let page content bleed through. Use the surface var
+   * which is explicitly opaque (#fff light, dark in dark mode). */
+  background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 10px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
