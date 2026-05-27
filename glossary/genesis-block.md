@@ -10,4 +10,4 @@ related: [byron, ada, block]
 
 The very first block of a blockchain. It is not produced like the others; instead it is hard-coded into the protocol and ships with the initial state of the ledger.
 
-Cardano's genesis launched the Byron era in 2017 and defined the initial allocation of ada from voucher sales held in Asia between October 2015 and January 2017, plus the founding entities' share. From that starting point, every block since has extended the same continuous chain.
+Cardano's genesis launched the Byron era on September 29, 2017 and defined the initial allocation of ada from voucher sales held in Asia between October 2015 and January 2017, plus the founding entities' share. From that starting point, every block since has extended the same continuous chain.
