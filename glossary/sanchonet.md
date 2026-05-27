@@ -1,9 +1,9 @@
 ---
 title: SanchoNet
 slug: sanchonet
-short: "A testnet for testing Cardano's governance features introduced by CIP-1694."
+short: A Cardano testnet that hosted CIP-1694 governance trials before the Chang hard fork brought governance to mainnet.
 category: governance
-related: [testnet, cip-1694, drep]
+related: [testnet, cip-1694, chang, drep]
 ---
 
-A testnet for testing Cardano's governance features introduced by CIP-1694. On SanchoNet, stake pool operators, DReps, and developers can experiment with governance actions, voting mechanisms, and related tooling before mainnet deployment. See [sancho.network](https://sancho.network).
+A testnet that ran in the lead-up to the Chang hard fork. On SanchoNet, stake pool operators, DReps, and developers experimented with governance actions, voting mechanisms, and related tooling before CIP-1694 was activated on mainnet on September 1, 2024. With Conway-era governance now live, SanchoNet's role as a pre-launch testbed has largely been retired.

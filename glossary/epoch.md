@@ -7,4 +7,4 @@ mentalModel: "Cardano's 'week': five days during which the stake snapshot is fro
 related: [slot, rewards, delegation]
 ---
 
-A period of five days in the Cardano network during which stake distribution is fixed and rewards are calculated. At each epoch boundary, rewards are distributed to delegators and stake pool operators.
+A period of five days in the Cardano network during which the stake distribution snapshot is fixed and rewards are calculated. Rewards earned in a given epoch are paid out two epochs later, allowing time for calculation and distribution to all delegators and stake pool operators.

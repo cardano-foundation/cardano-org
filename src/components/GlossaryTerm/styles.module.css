@@ -1,6 +1,13 @@
 .detail {
   padding-top: 2.5rem;
   padding-bottom: 4rem;
+  max-width: 1080px;
+}
+
+/* Prose stays narrower than the full container for readability — long lines
+ * (>80ch) hurt scanning. The Related Terms grid below uses the full width. */
+.body,
+.bodyFallback {
   max-width: 760px;
 }
 
