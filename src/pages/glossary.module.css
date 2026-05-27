@@ -322,7 +322,7 @@
 }
 
 /* When filter/search is active, AlphabetBar isn't rendered, so the body
- * is the only child — span the full width instead of squeezing into the
+ * is the only child; span the full width instead of squeezing into the
  * 36px sidebar column. */
 .allTermsBody:only-child {
   grid-column: 1 / -1;

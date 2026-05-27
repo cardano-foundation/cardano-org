@@ -88,8 +88,8 @@ const MARKDOWN_COMPONENTS = {
 
 export default function GlossaryTerm({ term }) {
   // usePluginData returns the plugin's globalData object; null-safe in case the
-  // plugin failed to register (e.g. build error in loadContent — we still want
-  // the page to render rather than crash the whole route).
+  // plugin failed to register (e.g. build error in loadContent); we still want
+  // the page to render rather than crash the whole route.
   const glossaryData = usePluginData('glossary-routes') || {};
   const terms = glossaryData.terms || [];
   const categoryDef = CATEGORIES[term.category];

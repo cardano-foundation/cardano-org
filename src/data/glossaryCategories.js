@@ -18,7 +18,7 @@ export const CATEGORY_ORDER = [
   'network',
 ];
 
-// "Learning paths" surfaced on the index — these are not internal paths through
+// "Learning paths" surfaced on the index. These are not internal paths through
 // the glossary, just curated entry points into existing site sections. Keep the
 // list short and grounded in pages that actually exist.
 export const LEARNING_PATHS = [
