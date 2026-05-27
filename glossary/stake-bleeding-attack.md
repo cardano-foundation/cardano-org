@@ -5,7 +5,7 @@ short: A long-range attack in which a minority adversary slowly drains stake fro
 category: consensus
 aliases: ["Stake Bleeding"]
 link: /research
-related: [proof-of-stake, long-range-attack, ouroboros]
+related: [pos-attacks, proof-of-stake, long-range-attack, ouroboros]
 sources:
   - title: "Stake-Bleeding Attacks on Proof-of-Stake Blockchains"
     url: "https://eprint.iacr.org/2018/248.pdf"
