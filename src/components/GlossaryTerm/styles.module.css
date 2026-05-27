@@ -32,33 +32,14 @@
   font-weight: 500;
 }
 
-.header {
-  margin-bottom: 1.25rem;
-}
-
-.title {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  line-height: 1.15;
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.01em;
-}
-
 .aliases {
-  margin: 0;
+  margin: 0 0 1.5rem;
   font-size: 0.95rem;
   color: var(--ifm-color-emphasis-700);
 }
 
 .aliasesLabel {
   color: var(--ifm-color-emphasis-600);
-}
-
-.short {
-  font-size: 1.2rem;
-  line-height: 1.55;
-  color: var(--ifm-color-emphasis-900);
-  margin: 0 0 2rem;
-  font-weight: 500;
 }
 
 .mentalModel {
