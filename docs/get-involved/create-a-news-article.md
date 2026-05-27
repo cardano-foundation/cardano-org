@@ -267,7 +267,7 @@ Step 4: Summarize. If successful, create the summary according to all rules.
 
 4. REFERENCE & GLOSSARY
 Apply correct terminology consistently based on the official Cardano glossary:
-https://cardano.org/docs/glossary/
+https://cardano.org/glossary/
 
 5. PERFECT SUMMARY EXAMPLE (FEW-SHOT PROMPT)
 Input Link: 

@@ -45,7 +45,7 @@
   },
   "link.item.label.Glossary": {
     "message": "Glossary",
-    "description": "The label of footer link with label=Glossary linking to /docs/glossary#cardano-glossary"
+    "description": "The label of footer link with label=Glossary linking to /glossary"
   },
   "link.item.label.Discord": {
     "message": "Discord",
