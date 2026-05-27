@@ -287,12 +287,17 @@ html[data-theme="dark"] .heroBannerWaves {
 
 /* When the starburst hero hosts children (e.g. the glossary's search +
  * autocomplete dropdown), let it grow with its content and allow positioned
- * descendants to escape the box so the dropdown isn't clipped at 410px. */
+ * descendants to escape the box so the dropdown isn't clipped at 410px.
+ * z-index promotes the entire hero stacking context above the sibling
+ * <main> so the escaping dropdown actually paints on top of the page
+ * content below it (z-index inside hero is otherwise clamped to hero's
+ * own auto stacking context, and <main> paints later in DOM order). */
 .heroBannerStarburst:has(.heroChildren) {
   height: auto;
   min-height: 410px;
   padding-bottom: 3rem;
   overflow: visible;
+  z-index: 10;
 }
 
 .heroBannerStarburst:has(.heroChildren) :global(.sectionCaret) {
