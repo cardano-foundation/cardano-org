@@ -4,6 +4,7 @@ slug: nft
 short: Non-Fungible Token.
 category: tokens
 aliases: [Non-Fungible Token]
+mentalModel: "A digital certificate of authenticity for a unique item. Anyone can copy the picture, but only one wallet holds the original."
 related: [native-token]
 ---
 

@@ -4,6 +4,7 @@ slug: datum
 short: A piece of data attached to a UTxO that a smart contract can read when deciding whether the UTxO can be spent.
 category: smart-contracts
 aliases: [Datums, Inline Datum]
+mentalModel: "A sticky note attached to a UTxO. The smart contract reads what's on it before deciding to spend the UTxO."
 related: [redeemer, eutxo, smart-contract]
 ---
 

@@ -4,6 +4,7 @@ slug: policy-id
 short: The unique on-chain identifier of a native token's minting policy.
 category: tokens
 aliases: ["Token Policy ID", "Minting Policy ID"]
+mentalModel: "A token's fingerprint. Two tokens both called 'GOLD' but with different Policy IDs are completely separate assets, like two banknotes from different countries that happen to share a name."
 related: [native-token, nft, mary]
 ---
 

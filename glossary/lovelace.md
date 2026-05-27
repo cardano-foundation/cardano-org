@@ -10,4 +10,4 @@ related: [ada]
 
 The smallest divisible unit of ada. One ada equals 1,000,000 lovelaces. Named after Ada Lovelace, the same person ada itself is named after, mirroring the satoshi convention from Bitcoin.
 
-On-chain, every amount — fees, balances, transaction outputs — is stored as an integer count of lovelaces. Wallets and explorers usually display values in ada for readability, but under the hood the protocol always works in whole lovelaces.
+On-chain, every amount is stored as an integer count of lovelaces: fees, balances, transaction outputs, everything. Wallets and explorers usually display values in ada for readability, but under the hood the protocol always works in whole lovelaces.

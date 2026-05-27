@@ -7,6 +7,6 @@ mentalModel: "Trying to swing an election by registering hundreds of fake voters
 related: [proof-of-stake, ouroboros, eclipse]
 ---
 
-An attack where a single actor creates many fake identities — nodes, accounts, votes — in an attempt to gain disproportionate control of a distributed system.
+An attack where a single actor creates many fake identities (nodes, accounts, votes) in an attempt to gain disproportionate control of a distributed system.
 
 Cardano's stake-weighted consensus mitigates Sybil attacks by tying influence to ada, not to identity counts. Producing blocks, delegating stake, and voting on governance all scale with how much ada an actor controls, so creating ten thousand empty wallets gives the attacker no more power than creating one.
