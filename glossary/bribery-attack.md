@@ -4,7 +4,7 @@ slug: bribery-attack
 short: An external attacker pays validators to deviate from the protocol, for example by signing conflicting blocks or handing over dormant keys.
 category: consensus
 link: /research
-related: [proof-of-stake, posterior-corruption, kes]
+related: [pos-attacks, proof-of-stake, posterior-corruption, kes]
 ---
 
 An attacker pays current or former validators to misbehave: sign double blocks, censor transactions, hand over keys, vote on a controversial proposal. Bribery is the economic version of corruption attacks, and works wherever stakeholders have keys with residual value.
