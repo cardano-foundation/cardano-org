@@ -87,5 +87,5 @@ These organizations have specific branding requirements:
 
 ## See Also
 
-- [Glossary](/docs/glossary): Definitions of Cardano terminology
+- [Glossary](/glossary): Definitions of Cardano terminology
 - [Create a News Article](/docs/get-involved/create-a-news-article): How to publish news

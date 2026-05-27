@@ -206,6 +206,15 @@ const config = {
       },
     ],
     './plugins/apps-routes',
+    './plugins/glossary-routes',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          { from: '/docs/glossary', to: '/glossary' },
+        ],
+      },
+    ],
     function (context, options) {
       return {
         name: 'custom-webpack-config',
@@ -534,7 +543,7 @@ const config = {
               },
               {
                 label: 'Glossary',
-                to: '/docs/glossary#cardano-glossary',
+                to: '/glossary',
               },
               {
                 label: 'Discord',

@@ -20,7 +20,6 @@ Add Markdown files to `/docs/` subdirectories to create documentation pages that
 Add Markdown files directly to `/docs/` root for standalone pages without a sidebar:
 
 - `/docs/communities/` - the Communities page
-- `/docs/glossary/` - the Glossary page
 
 These pages are independent and don't belong to a specific documentation section.
 

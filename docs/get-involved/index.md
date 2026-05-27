@@ -155,7 +155,7 @@ Before contributing, familiarize yourself with these resources:
 
 ### Style & Quality
 - **[Style Guide](/docs/get-involved/style-guide)** - writing conventions and terminology standards
-- **[Glossary](/docs/glossary)** - definitions of Cardano terms
+- **[Glossary](/glossary)** - definitions of Cardano terms
 - **[Component Docs](/docs/get-involved/components/)** - use existing components correctly
 
 ---
