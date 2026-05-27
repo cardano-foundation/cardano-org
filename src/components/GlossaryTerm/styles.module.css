@@ -227,39 +227,61 @@
 }
 
 .improve {
+  margin-top: 4rem;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  border: 1px dashed var(--ifm-color-emphasis-300);
-  background: var(--ifm-color-emphasis-50);
+}
+
+.improveIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1.5rem;
+}
+
+.improveHeading {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .improveCopy {
-  margin: 0;
-  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+  max-width: 480px;
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--ifm-color-emphasis-700);
 }
 
 .improveButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background: var(--ifm-color-emphasis-200);
+  gap: 0.55rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  background: transparent;
   color: var(--ifm-color-emphasis-900);
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
 .improveButton:hover {
-  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
+  transform: translateY(-1px);
 }
