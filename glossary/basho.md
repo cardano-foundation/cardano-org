@@ -3,6 +3,7 @@ title: Basho
 slug: basho
 short: "The fourth era of Cardano development, focused on scaling and performance optimization."
 category: network
+link: /research#basho
 related: [hydra, shelley, goguen]
 ---
 

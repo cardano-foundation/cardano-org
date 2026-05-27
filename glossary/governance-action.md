@@ -3,6 +3,7 @@ title: Governance Action
 slug: governance-action
 short: A formal proposal submitted on-chain for the Cardano community to vote on.
 category: governance
+link: /governance
 aliases: [Voting, Vote, "Governance Proposal", "On-chain Vote"]
 related: [drep, constitutional-committee, cip-1694, treasury]
 ---

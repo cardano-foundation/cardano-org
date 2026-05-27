@@ -3,6 +3,7 @@ title: Allegra
 slug: allegra
 short: "The hard fork on December 16, 2020 that added token locking capabilities, a prerequisite for smart contract functionality."
 category: network
+link: /hardforks
 related: [hard-fork, mary, native-token]
 ---
 

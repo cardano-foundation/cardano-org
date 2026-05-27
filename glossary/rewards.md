@@ -3,6 +3,7 @@ title: rewards
 slug: rewards
 short: Ada earned by delegators and stake pool operators for participating in the network.
 category: consensus
+link: /calculator
 related: [delegation, epoch, stake-pool]
 ---
 

@@ -153,6 +153,37 @@ export default function GlossaryTerm({ term }) {
           </p>
         )}
 
+        {term.link && (() => {
+          const isExternal = /^https?:\/\//.test(term.link);
+          const label = (
+            <>
+              <span className={styles.fullPageCtaLabel}>
+                {translate({
+                  id: 'glossary.term.openFullPage',
+                  message: 'Open dedicated page',
+                })}
+              </span>
+              <span className={styles.fullPageCtaArrow} aria-hidden>
+                {isExternal ? '↗' : '→'}
+              </span>
+            </>
+          );
+          return isExternal ? (
+            <a
+              href={term.link}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.fullPageCta}
+            >
+              {label}
+            </a>
+          ) : (
+            <Link to={term.link} className={styles.fullPageCta}>
+              {label}
+            </Link>
+          );
+        })()}
+
         {term.mentalModel && (
           <aside className={styles.mentalModel} aria-label="Mental model">
             <div className={styles.mentalModelIcon} aria-hidden>

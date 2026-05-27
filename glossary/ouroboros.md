@@ -3,6 +3,7 @@ title: Ouroboros
 slug: ouroboros
 short: The family of proof-of-stake consensus protocols that power Cardano.
 category: consensus
+link: /ouroboros
 featured: true
 related: [slot, slot-leader, vrf, stake-pool, proof-of-stake]
 ---
