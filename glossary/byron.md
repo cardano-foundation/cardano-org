@@ -3,6 +3,7 @@ title: Byron
 slug: byron
 short: "The first era of Cardano development, establishing the foundation of the network."
 category: network
+link: /research#byron
 related: [shelley, ada]
 ---
 

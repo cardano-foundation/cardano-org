@@ -38,6 +38,34 @@
   color: var(--ifm-color-emphasis-700);
 }
 
+.fullPageCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  margin: 0 0 1.75rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 30%, transparent);
+  border-radius: 8px;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.fullPageCta:hover {
+  background: color-mix(in srgb, var(--ifm-color-primary) 16%, transparent);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.fullPageCtaArrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .aliasesLabel {
   color: var(--ifm-color-emphasis-600);
 }

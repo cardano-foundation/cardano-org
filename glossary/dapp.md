@@ -3,6 +3,7 @@ title: DApp
 slug: dapp
 short: Decentralized Application.
 category: smart-contracts
+link: /apps
 aliases: [DApp, Decentralized Application]
 related: [smart-contract, wallet]
 ---

@@ -3,6 +3,7 @@ title: CEX
 slug: cex
 short: Centralized Exchange.
 category: general
+link: /where-to-get-ada#exchanges
 aliases: [Centralized Exchange]
 ---
 

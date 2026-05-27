@@ -32,6 +32,10 @@ function readTermFile(filepath, slug) {
     mentalModel: fm.mentalModel || null,
     related: fm.related || [],
     sources: fm.sources || [],
+    // Optional cross-link to the canonical cardano.org page that explains
+    // this concept in depth (e.g. stablecoin → /stablecoins). Rendered as a
+    // prominent CTA on the term detail page.
+    link: fm.link || null,
     body,
   };
 }

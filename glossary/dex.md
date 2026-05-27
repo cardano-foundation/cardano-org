@@ -3,6 +3,7 @@ title: DEX
 slug: dex
 short: Decentralized Exchange.
 category: general
+link: /where-to-get-ada#exchanges
 aliases: [Decentralized Exchange]
 related: [cex, wallet]
 ---

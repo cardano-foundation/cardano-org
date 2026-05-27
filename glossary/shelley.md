@@ -3,6 +3,7 @@ title: Shelley
 slug: shelley
 short: "The second era of Cardano development, introducing decentralization and stake pools."
 category: network
+link: /research#shelley
 related: [byron, goguen, delegation]
 ---
 
