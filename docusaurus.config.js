@@ -210,9 +210,23 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          { from: '/docs/glossary', to: '/glossary' },
-        ],
+        // createRedirects is called per-route per-locale-build with the
+        // locale-prefixed route, so a single rule covers all five locales —
+        // generating /docs/glossary → /glossary in EN, /de/docs/glossary →
+        // /de/glossary in DE, etc. Root.js then handles the hash component
+        // (/<locale>/glossary#<old-anchor> → /<locale>/glossary/<slug>).
+        createRedirects(existingPath) {
+          // trailingSlash=true in this site's config; the plugin handles the
+          // canonical trailing-slash variant on its own, so return just the
+          // bare form (returning both /docs/glossary and /docs/glossary/
+          // collides when the plugin writes build/docs/glossary/index.html).
+          const match = existingPath.match(/^(\/(?:ja|de|es|vi))?\/glossary\/?$/);
+          if (match) {
+            const prefix = match[1] || '';
+            return [`${prefix}/docs/glossary`];
+          }
+          return undefined;
+        },
       },
     ],
     function (context, options) {

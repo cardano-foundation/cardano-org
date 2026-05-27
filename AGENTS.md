@@ -26,7 +26,8 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - **[README.md](./README.md):** Project overview, setup, and contribution boundaries.
 - **[CONTRIBUTING.md](./CONTRIBUTING.md):** Contribution guidelines and workflow.
 - **[docs/get-involved/](./docs/get-involved/):** Guides for all types of contributions (content, code, design, data, community).
-- **[docs/glossary.md](./docs/glossary.md):** Editorial style guide and glossary. **Mandatory for all content and code comments.**
+- **[docs/get-involved/style-guide.md](./docs/get-involved/style-guide.md):** Editorial style guide (spelling, capitalisation, brand-name conventions). **Mandatory for all content and code comments.**
+- **[glossary/](./glossary/):** Per-term definitions rendered at `/glossary/<slug>`. Reference these for consistent terminology across docs and UI copy.
 
 ---
 
@@ -73,7 +74,7 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - No new warnings or errors introduced
 - PR must not break local dev or production build
 - All new/changed reusable components must be documented in `docs/get-involved/components/`
-- All content must follow the editorial style guide (`docs/glossary.md`)
+- All content must follow the editorial style guide (`docs/get-involved/style-guide.md`)
 
 ---
 
@@ -102,7 +103,7 @@ Every PR should include:
 ## Content & Editorial Rules
 - **Language:** US English, Oxford comma, gender-inclusive
 - **Claims:** Link to sources for factual statements, or avoid unverifiable claims
-- **Product/brand names:** Only as per `docs/glossary.md`
+- **Product/brand names:** Only as per `docs/get-involved/style-guide.md` (style guide) and `glossary/` (term definitions)
 - **No promo language** without explicit approval
 - **No unreviewed translations**
 

@@ -3,6 +3,8 @@ import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { useHistory, useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
@@ -13,20 +15,24 @@ import SiteHero from '@site/src/components/Layout/SiteHero';
 
 import styles from './glossary.module.css';
 
-const SITE_URL = 'https://cardano.org';
+// Escapes any literal `</` so a future term containing the substring cannot
+// terminate the embedded <script type="application/ld+json"> early.
+function jsonLdString(data) {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
 
-function buildJsonLd(terms) {
-  return JSON.stringify({
+function buildJsonLd(terms, glossaryFullUrl) {
+  return jsonLdString({
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
     name: 'Cardano Glossary',
     description: 'Definitions of key terms and concepts in the Cardano ecosystem.',
-    url: `${SITE_URL}/glossary`,
+    url: glossaryFullUrl,
     hasDefinedTerm: terms.map(t => ({
       '@type': 'DefinedTerm',
       name: t.title,
       description: t.short,
-      url: `${SITE_URL}/glossary/${t.slug}`,
+      url: `${glossaryFullUrl}/${t.slug}`,
       termCode: t.slug,
     })),
   });
@@ -88,9 +94,16 @@ function CategoryChip({ category, label, color, active, count, onClick }) {
 }
 
 export default function GlossaryIndex() {
-  const { terms } = usePluginData('glossary-routes');
+  // Null-safe in case the plugin failed to register; the page still renders an
+  // empty index instead of crashing.
+  const glossaryData = usePluginData('glossary-routes') || {};
+  const terms = glossaryData.terms || [];
   const history = useHistory();
   const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const siteUrl = siteConfig.url.replace(/\/$/, '');
+  const glossaryBaseUrl = useBaseUrl('/glossary');
+  const glossaryFullUrl = `${siteUrl}${glossaryBaseUrl.replace(/\/$/, '')}`;
 
   // Read initial filter state from URL so deep-links (e.g. /glossary?category=consensus)
   // and breadcrumb links from term pages land users on the right view.
@@ -128,6 +141,13 @@ export default function GlossaryIndex() {
 
   const normalizedQuery = normalize(query.trim());
   const featured = useMemo(() => terms.filter(t => t.featured), [terms]);
+
+  // Memoize the JSON-LD payload — it serializes all 87 terms (~18 KB) and is
+  // otherwise rebuilt on every keystroke / category click.
+  const jsonLd = useMemo(
+    () => buildJsonLd(terms, glossaryFullUrl),
+    [terms, glossaryFullUrl],
+  );
 
   const categoryCounts = useMemo(() => {
     const counts = {};
@@ -174,7 +194,7 @@ export default function GlossaryIndex() {
         description={pageDescription}
       />
       <Head>
-        <script type="application/ld+json">{buildJsonLd(terms)}</script>
+        <script type="application/ld+json">{jsonLd}</script>
       </Head>
       <SiteHero
         title={pageTitle}

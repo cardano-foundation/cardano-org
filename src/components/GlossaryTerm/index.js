@@ -2,6 +2,9 @@ import React, { useMemo } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
+import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { translate } from '@docusaurus/Translate';
 import ReactMarkdown from 'react-markdown';
@@ -12,10 +15,14 @@ import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 
 import styles from './styles.module.css';
 
-const SITE_URL = 'https://cardano.org';
+// Escapes any literal `</` in JSON before it is embedded inside a <script>
+// tag so a future term containing the substring cannot terminate the script
+// element early (also covers the XSS shape if data ever becomes user-supplied).
+function jsonLdString(data) {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
 
-function buildJsonLd(term, allTerms) {
-  const termUrl = `${SITE_URL}/glossary/${term.slug}`;
+function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
   const definedTerm = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
@@ -23,26 +30,42 @@ function buildJsonLd(term, allTerms) {
     description: term.short,
     url: termUrl,
     termCode: term.slug,
-    inDefinedTermSet: `${SITE_URL}/glossary`,
+    inDefinedTermSet: glossaryUrl,
     ...(term.aliases && term.aliases.length ? { alternateName: term.aliases } : {}),
   };
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Cardano', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Glossary', item: `${SITE_URL}/glossary` },
+      { '@type': 'ListItem', position: 1, name: 'Cardano', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Glossary', item: glossaryUrl },
       { '@type': 'ListItem', position: 3, name: term.title, item: termUrl },
     ],
   };
   return [
     <script key="defined" type="application/ld+json">
-      {JSON.stringify(definedTerm)}
+      {jsonLdString(definedTerm)}
     </script>,
     <script key="crumb" type="application/ld+json">
-      {JSON.stringify(breadcrumb)}
+      {jsonLdString(breadcrumb)}
     </script>,
   ];
+}
+
+// Returns the body markdown with the leading short sentence stripped if the
+// body verbatim restates it (the migration script extracted `short` from the
+// body's first sentence, so most terms have this duplication). Returns null
+// when the body is just the short with no additional content.
+function getDisplayBody(term) {
+  if (!term.body) return null;
+  const body = term.body.trim();
+  const short = term.short.trim();
+  if (body === short) return null;
+  if (body.startsWith(short)) {
+    const rest = body.slice(short.length).trim();
+    return rest || null;
+  }
+  return body;
 }
 
 function MarkdownLink({ href, children }) {
@@ -63,16 +86,28 @@ const MARKDOWN_COMPONENTS = {
 };
 
 export default function GlossaryTerm({ term }) {
-  const { terms } = usePluginData('glossary-routes');
+  // usePluginData returns the plugin's globalData object; null-safe in case the
+  // plugin failed to register (e.g. build error in loadContent — we still want
+  // the page to render rather than crash the whole route).
+  const glossaryData = usePluginData('glossary-routes') || {};
+  const terms = glossaryData.terms || [];
   const categoryDef = CATEGORIES[term.category];
 
+  const { siteConfig } = useDocusaurusContext();
+  const location = useLocation();
+  const siteUrl = siteConfig.url.replace(/\/$/, '');
+  const termUrl = `${siteUrl}${location.pathname.replace(/\/$/, '')}`;
+  const glossaryUrl = useBaseUrl('/glossary');
+  const glossaryFullUrl = `${siteUrl}${glossaryUrl.replace(/\/$/, '')}`;
+
   const relatedTerms = useMemo(() => {
-    if (!term.related || term.related.length === 0) return [];
-    const bySlug = new Map(terms.map(t => [t.slug, t]));
+    if (!term.related || term.related.length === 0 || terms.length === 0) return [];
     return term.related
-      .map(slug => bySlug.get(slug))
+      .map(slug => terms.find(t => t.slug === slug))
       .filter(Boolean);
   }, [term.related, terms]);
+
+  const displayBody = useMemo(() => getDisplayBody(term), [term]);
 
   const pageTitle = `${term.title} | Cardano Glossary`;
   const pageDescription = term.short;
@@ -85,7 +120,7 @@ export default function GlossaryTerm({ term }) {
         title={pageTitle}
         description={pageDescription}
       />
-      <Head>{buildJsonLd(term, terms)}</Head>
+      <Head>{buildJsonLd(term, siteUrl, termUrl, glossaryFullUrl)}</Head>
       <main className={clsx('container', styles.detail)}>
         <nav className={styles.breadcrumb} aria-label="breadcrumb">
           <Link to="/glossary">
@@ -136,10 +171,10 @@ export default function GlossaryTerm({ term }) {
           </aside>
         )}
 
-        {term.body && term.body !== term.short && (
+        {displayBody && (
           <section className={styles.body}>
             <ReactMarkdown components={MARKDOWN_COMPONENTS}>
-              {term.body}
+              {displayBody}
             </ReactMarkdown>
           </section>
         )}
@@ -186,15 +221,17 @@ export default function GlossaryTerm({ term }) {
               message: 'See an error or want to improve this definition?',
             })}
           </p>
-          <Link
+          <a
             className={styles.improveButton}
             href={`https://github.com/cardano-foundation/cardano-org/edit/staging/glossary/${term.slug}.md`}
+            target="_blank"
+            rel="noreferrer"
           >
             {translate({
               id: 'glossary.term.improveButton',
               message: 'Edit on GitHub',
             })}
-          </Link>
+          </a>
         </aside>
       </main>
     </Layout>
