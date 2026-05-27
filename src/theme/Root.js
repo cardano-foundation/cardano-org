@@ -30,7 +30,7 @@ function GlossaryHashRedirect() {
     try {
       anchor = decodeURIComponent(location.hash.replace(/^#/, ''));
     } catch {
-      // Malformed percent-encoding in the URL fragment — bail rather than
+      // Malformed percent-encoding in the URL fragment; bail rather than
       // crashing the React tree on every page (this effect is mounted globally).
       return;
     }

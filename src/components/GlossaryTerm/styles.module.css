@@ -4,7 +4,7 @@
   max-width: 1080px;
 }
 
-/* Prose stays narrower than the full container for readability — long lines
+/* Prose stays narrower than the full container for readability; long lines
  * (>80ch) hurt scanning. The Related Terms grid below uses the full width. */
 .body,
 .bodyFallback {
@@ -123,7 +123,7 @@
   margin-bottom: 2.5rem;
 }
 
-/* Fallback paragraph for terms whose entire body equals the short — keeps
+/* Fallback paragraph for terms whose entire body equals the short. Keeps
  * <main> non-empty without duplicating the SiteHero subtitle visually
  * (different font weight signals it's a content fallback, not a lead). */
 .bodyFallback {

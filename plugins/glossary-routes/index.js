@@ -63,7 +63,7 @@ module.exports = function glossaryRoutesPlugin(context) {
           : path.join(defaultDir, file);
         return readTermFile(filepath, slug);
       });
-      // Stable alphabetical order by title (case-insensitive) — keeps index
+      // Stable alphabetical order by title (case-insensitive). Keeps index
       // deterministic across builds.
       terms.sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }));
       return terms;
@@ -86,7 +86,7 @@ module.exports = function glossaryRoutesPlugin(context) {
         });
       }
 
-      // Index entries are a slim subset — body is intentionally omitted so the
+      // Index entries are a slim subset; body is intentionally omitted so the
       // globalData blob stays small in the client bundle.
       const indexEntries = content.map(t => ({
         slug: t.slug,

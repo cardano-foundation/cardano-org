@@ -407,7 +407,7 @@ export default function GlossaryIndex() {
 
   const normalizedQuery = normalize(query.trim());
 
-  // Memoize the JSON-LD payload — it serializes all terms (~18 KB) and would
+  // Memoize the JSON-LD payload: it serializes all terms (~18 KB) and would
   // otherwise rebuild on every keystroke / category click.
   const jsonLd = useMemo(
     () => buildJsonLd(terms, glossaryFullUrl),
