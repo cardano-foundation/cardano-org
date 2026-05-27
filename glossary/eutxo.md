@@ -4,7 +4,6 @@ slug: eutxo
 short: Extended UTXO.
 category: general
 aliases: [eUTxO, Extended UTxO]
-featured: true
 mentalModel: "Like a UTxO that can carry a small contract: rules about how the note is allowed to be spent travel with the note itself."
 related: [utxo, smart-contract, native-token]
 ---

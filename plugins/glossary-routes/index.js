@@ -28,7 +28,6 @@ function readTermFile(filepath, slug) {
     short: fm.short,
     category: fm.category,
     aliases: fm.aliases || [],
-    featured: Boolean(fm.featured),
     mentalModel: fm.mentalModel || null,
     related: fm.related || [],
     sources: fm.sources || [],
@@ -95,7 +94,6 @@ module.exports = function glossaryRoutesPlugin(context) {
         short: t.short,
         category: t.category,
         aliases: t.aliases,
-        featured: t.featured,
       }));
 
       // Redirect map: maps the OLD docusaurus-generated anchor IDs from the

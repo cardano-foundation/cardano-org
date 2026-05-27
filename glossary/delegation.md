@@ -4,7 +4,6 @@ slug: delegation
 short: The process of assigning your stake to a stake pool without transferring your ada.
 category: consensus
 link: /stake-pool-delegation
-featured: true
 aliases: [Staking, Stake, "Stake Delegation"]
 mentalModel: "Like loaning out the influence of your ada without giving up the ada itself; you keep custody, the pool gets the chance to produce blocks on your behalf."
 related: [stake-pool, rewards, epoch]

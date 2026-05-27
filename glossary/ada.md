@@ -5,7 +5,6 @@ short: The native cryptocurrency of the Cardano blockchain.
 category: tokens
 link: /what-is-ada
 aliases: [Ada, ADA]
-featured: true
 mentalModel: "The fuel of the Cardano network: it pays for transactions, rewards delegators, and represents stake in the system."
 related: [cardano, delegation, stake-pool]
 ---

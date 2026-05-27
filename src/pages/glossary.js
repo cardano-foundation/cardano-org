@@ -479,7 +479,6 @@ export default function GlossaryIndex() {
 
   return (
     <Layout title={pageTitle} description={pageDescription}>
-      {/* TODO: replace pageName with "glossary" once static/img/og/glossary.jpg exists */}
       <OpenGraphInfo
         pageName="default"
         title={pageTitle}
