@@ -13,4 +13,4 @@ sources:
 
 A long-range attack on naive proof-of-stake systems. The attacker forks the chain into the past, replays every honest transaction onto their private fork, and pockets the transaction fees on the private chain. Over time the attacker accumulates enough stake to keep producing blocks and eventually presents a longer chain to the network.
 
-Cardano counters the attack on two fronts: Ouroboros Genesis's density-based chain-selection rule prevents stake-bleeding chains from being accepted on bootstrapping nodes, and proposals for context-sensitive transactions further break the assumption that transactions can be cleanly replayed across forks.
+Cardano's main defence is Ouroboros Genesis's density-based chain-selection rule, which prevents stake-bleeding chains from being accepted by bootstrapping nodes. Research proposals around context-sensitive transactions go further by breaking the assumption that transactions can be cleanly replayed across forks; those proposals are not deployed on mainnet today.

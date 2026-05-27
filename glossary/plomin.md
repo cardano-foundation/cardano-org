@@ -1,7 +1,7 @@
 ---
 title: Plomin
 slug: plomin
-short: The Conway-era hard fork on January 29, 2025 that turned on the full set of CIP-1694 governance actions.
+short: The Conway-era hard fork on January 29, 2025 that turned on the remaining CIP-1694 governance actions.
 category: governance
 link: /hardforks
 aliases: ["Plomin Hard Fork"]

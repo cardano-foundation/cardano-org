@@ -10,4 +10,4 @@ related: [stake-pool, vrf]
 
 Key Evolving Signatures (KES) are the cryptographic keys a stake pool uses to sign the blocks it produces. The keys evolve forward at the start of each KES period; the previous key state is deleted and cannot be recovered. This limits the damage from a compromised hot key: an attacker who steals it can sign only future blocks within the remaining lifetime, never rewrite history.
 
-Operators rotate KES keys periodically to keep them within the protocol's accepted lifetime.
+Operators rotate KES keys periodically to keep them within the protocol's accepted lifetime. Mainnet currently allows 62 KES periods of about 36 hours each, giving each key set a useful life of roughly 93 days before a fresh one must be issued.
