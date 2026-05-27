@@ -7,4 +7,4 @@ link: /hardforks
 related: [hard-fork, smart-contract]
 ---
 
-The [hard fork on September 22, 2022](/hardforks/) that improved smart contract efficiency and network performance. Named after Vasil Dabov, a beloved Cardano community member.
+The [hard fork on September 22, 2022](/hardforks/) that improved smart contract efficiency and network performance. Named after Vasil Dabov, a Bulgarian mathematician and long-time Cardano Ambassador.
