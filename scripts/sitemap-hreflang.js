@@ -89,6 +89,19 @@ function buildHelpers({ locales, defaultLocale, siteUrl, projectRoot }) {
       ];
     }
 
+    // Glossary terms render markdown bodies from glossary/<slug>.md with a
+    // per-locale fallback to the canonical English file in the glossary-routes
+    // plugin. Declare a translation only when an actual
+    // i18n/<locale>/glossary/<slug>.md exists; otherwise hreflang would
+    // advertise English-fallback content as a translated alternate. The bare
+    // /glossary/ index is a React page (handled by the null-return below) and
+    // is treated as always-translated like the other React pages.
+    const glossaryMatch = trimmed.match(/^\/glossary\/(.+)$/);
+    if (glossaryMatch) {
+      const slug = glossaryMatch[1];
+      return [path.join(projectRoot, 'i18n', locale, 'glossary', `${slug}.md`)];
+    }
+
     const docsMatch = trimmed.match(/^\/docs\/(.+)$/);
     if (docsMatch) {
       const docPath = docsMatch[1];

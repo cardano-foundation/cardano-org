@@ -181,7 +181,6 @@ for (const url of known_translated_docs) {
 
 section('hasTranslation: docs known-untranslated');
 const known_untranslated_docs = [
-  '/docs/glossary/',
   '/docs/get-involved/',
   '/docs/get-involved/style-guide/',
   '/docs/get-involved/add-app/',
@@ -318,10 +317,24 @@ if (!buildDir) {
     expect(`${loc} sitemap contains /docs/communities/`, !!comm, true);
   }
 
-  expect('EN has /docs/glossary/', !!sitemaps.en.find(u => new URL(u.loc).pathname === '/docs/glossary/'), true);
+  // /glossary/ index is a React page → present in every locale's sitemap.
+  for (const loc of locales) {
+    const path = loc === defaultLocale ? '/glossary/' : `/${loc}/glossary/`;
+    const entry = sitemaps[loc].find(u => new URL(u.loc).pathname === path);
+    expect(`${loc} sitemap contains /glossary/ index`, !!entry, true);
+  }
+  // /glossary/<slug> term pages: EN always included; non-EN included only when
+  // i18n/<locale>/glossary/<slug>.md exists. At Phase 1 no per-term translations
+  // exist, so non-EN locales must NOT include the term URL (to avoid hreflang
+  // advertising English-fallback content as a translated alternate).
+  expect(
+    'EN sitemap contains /glossary/ada/',
+    !!sitemaps.en.find(u => new URL(u.loc).pathname === '/glossary/ada/'),
+    true,
+  );
   for (const loc of ['de', 'ja', 'es', 'vi']) {
-    const gloss = sitemaps[loc].find(u => new URL(u.loc).pathname === `/${loc}/docs/glossary/`);
-    expect(`${loc} sitemap does NOT contain glossary`, !!gloss, false);
+    const term = sitemaps[loc].find(u => new URL(u.loc).pathname === `/${loc}/glossary/ada/`);
+    expect(`${loc} sitemap does NOT contain untranslated /glossary/ada/`, !!term, false);
   }
 
   for (const loc of locales) {

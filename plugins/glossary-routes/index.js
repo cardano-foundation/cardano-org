@@ -104,8 +104,12 @@ module.exports = function glossaryRoutesPlugin(context) {
         redirectMap[t.slug] = t.slug;
       }
       // Hand-added: non-ASCII anchor for Jörmungandr is what docusaurus produced
-      // before; map it to the cleaner ASCII slug we use now.
-      redirectMap['jörmungandr'] = 'jormungandr';
+      // before; map it to the cleaner ASCII slug we use now. Guard against
+      // accidentally overwriting a future term that uses the same key as its
+      // canonical slug.
+      if (!('jörmungandr' in redirectMap)) {
+        redirectMap['jörmungandr'] = 'jormungandr';
+      }
 
       setGlobalData({
         terms: indexEntries,
