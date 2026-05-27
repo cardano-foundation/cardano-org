@@ -286,7 +286,13 @@ function PopularPills({ popularTerms, glossaryBaseUrl }) {
 
 function AlphabetBar({ letters, activeLetter, onLetterClick }) {
   return (
-    <nav className={styles.alphabet} aria-label="Jump to letter">
+    <nav
+      className={styles.alphabet}
+      aria-label={translate({
+        id: 'glossary.index.alphabetNav',
+        message: 'Jump to letter',
+      })}
+    >
       {ALPHABET.map(letter => {
         const has = letters.has(letter);
         return (
@@ -300,7 +306,13 @@ function AlphabetBar({ letters, activeLetter, onLetterClick }) {
               activeLetter === letter && styles.alphabetLetterActive,
               !has && styles.alphabetLetterDisabled,
             )}
-            aria-label={`Jump to ${letter}`}
+            aria-label={translate(
+              {
+                id: 'glossary.index.alphabetLetter',
+                message: 'Jump to {letter}',
+              },
+              { letter },
+            )}
           >
             {letter}
           </button>

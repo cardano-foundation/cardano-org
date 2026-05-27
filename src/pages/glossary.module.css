@@ -36,6 +36,15 @@
   font-size: 1rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  appearance: none;
+}
+
+/* Suppress the browser's native clear-X on <input type="search"> so it
+ * doesn't overlap our custom × button. */
+.heroSearchInput::-webkit-search-cancel-button,
+.heroSearchInput::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .heroSearchInput:focus {
@@ -310,6 +319,13 @@
   grid-template-columns: 36px 1fr;
   gap: 1rem;
   align-items: flex-start;
+}
+
+/* When filter/search is active, AlphabetBar isn't rendered, so the body
+ * is the only child — span the full width instead of squeezing into the
+ * 36px sidebar column. */
+.allTermsBody:only-child {
+  grid-column: 1 / -1;
 }
 
 .allTermsBody {

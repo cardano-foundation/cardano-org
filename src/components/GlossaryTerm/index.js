@@ -129,13 +129,13 @@ export default function GlossaryTerm({ term }) {
       />
       <main className={clsx('container', styles.detail)}>
         <nav className={styles.breadcrumb} aria-label="breadcrumb">
-          <Link to="/glossary">
+          <Link to={glossaryUrl}>
             {translate({ id: 'glossary.crumb.index', message: 'Glossary' })}
           </Link>
           {categoryDef && (
             <>
               <span className={styles.crumbSep} aria-hidden>/</span>
-              <Link to={`/glossary?category=${term.category}`}>
+              <Link to={`${glossaryUrl}?category=${term.category}`}>
                 {translate({ id: `glossary.category.${term.category}`, message: categoryDef.label })}
               </Link>
             </>
@@ -172,12 +172,18 @@ export default function GlossaryTerm({ term }) {
           </aside>
         )}
 
-        {displayBody && (
+        {displayBody ? (
           <section className={styles.body}>
             <ReactMarkdown components={MARKDOWN_COMPONENTS}>
               {displayBody}
             </ReactMarkdown>
           </section>
+        ) : (
+          /* When the body is empty or equals the short verbatim (handful of
+           * 1-sentence terms like Hydra, Mainnet), still render the definition
+           * in <main> so the landmark isn't empty for screen readers and the
+           * page has SEO body content beyond breadcrumb + CTA. */
+          <p className={styles.bodyFallback}>{term.short}</p>
         )}
 
         {term.sources && term.sources.length > 0 && (

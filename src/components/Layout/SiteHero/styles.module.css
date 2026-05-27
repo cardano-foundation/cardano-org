@@ -285,6 +285,24 @@ html[data-theme="dark"] .heroBannerWaves {
   height: 410px;
 }
 
+/* When the starburst hero hosts children (e.g. the glossary's search +
+ * autocomplete dropdown), let it grow with its content and allow positioned
+ * descendants to escape the box so the dropdown isn't clipped at 410px. */
+.heroBannerStarburst:has(.heroChildren) {
+  height: auto;
+  min-height: 410px;
+  padding-bottom: 3rem;
+  overflow: visible;
+}
+
+.heroBannerStarburst:has(.heroChildren) :global(.sectionCaret) {
+  display: none;
+}
+
+.heroBannerStarburst:has(.heroChildren) .backgroundBox {
+  padding-bottom: 0;
+}
+
 .heroBannerStarburst::before {
   content: "";
   position: absolute;
