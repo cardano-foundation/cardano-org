@@ -12,6 +12,7 @@ import clsx from 'clsx';
 
 import { CATEGORIES } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
+import SiteHero from '@site/src/components/Layout/SiteHero';
 
 import styles from './styles.module.css';
 
@@ -121,6 +122,11 @@ export default function GlossaryTerm({ term }) {
         description={pageDescription}
       />
       <Head>{buildJsonLd(term, siteUrl, termUrl, glossaryFullUrl)}</Head>
+      <SiteHero
+        title={term.title}
+        description={term.short}
+        bannerType="docs"
+      />
       <main className={clsx('container', styles.detail)}>
         <nav className={styles.breadcrumb} aria-label="breadcrumb">
           <Link to="/glossary">
@@ -138,19 +144,14 @@ export default function GlossaryTerm({ term }) {
           <span className={styles.crumbCurrent}>{term.title}</span>
         </nav>
 
-        <header className={styles.header}>
-          <h1 className={styles.title}>{term.title}</h1>
-          {term.aliases && term.aliases.length > 0 && (
-            <p className={styles.aliases}>
-              <span className={styles.aliasesLabel}>
-                {translate({ id: 'glossary.term.alsoKnownAs', message: 'Also known as' })}:
-              </span>{' '}
-              {term.aliases.join(', ')}
-            </p>
-          )}
-        </header>
-
-        <p className={styles.short}>{term.short}</p>
+        {term.aliases && term.aliases.length > 0 && (
+          <p className={styles.aliases}>
+            <span className={styles.aliasesLabel}>
+              {translate({ id: 'glossary.term.alsoKnownAs', message: 'Also known as' })}:
+            </span>{' '}
+            {term.aliases.join(', ')}
+          </p>
+        )}
 
         {term.mentalModel && (
           <aside className={styles.mentalModel} aria-label="Mental model">
