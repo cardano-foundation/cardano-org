@@ -5,6 +5,7 @@ short: A CIP-1694 governance action that proposes taking funds out of the on-cha
 category: governance
 aliases: ["Treasury Withdrawal Action"]
 link: /governance
+mentalModel: "The on-chain spend mechanism for the community piggy bank. Anyone can propose taking ada out of the treasury and routing it to a stake address; DReps and the Constitutional Committee vote, and if it passes, the protocol pays out directly with no intermediary holding the money."
 related: [governance-action, treasury, drep, cip-1694, project-catalyst, plomin]
 ---
 

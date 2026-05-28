@@ -6,4 +6,4 @@ category: network
 aliases: [Transactions per second]
 ---
 
-A chain that finalises ten complex transactions per second is doing very different work from one that confirms ten simple transfers, so raw TPS comparisons between protocols are rarely apples to apples.
+A chain that finalizes ten complex transactions per second is doing very different work from one that confirms ten simple transfers, so raw TPS comparisons between protocols are rarely apples to apples.
