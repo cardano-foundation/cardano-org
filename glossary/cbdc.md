@@ -6,4 +6,4 @@ category: general
 aliases: [Central Bank Digital Currency]
 ---
 
-Cardano's technology has been studied for CBDC use cases because of its formal verification approach and predictable transaction model.
+Several blockchain architectures, including Cardano, have been explored in CBDC research and pilot discussions, typically for traits like deterministic execution and formal verification of ledger rules.

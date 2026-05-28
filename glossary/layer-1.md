@@ -8,4 +8,4 @@ mentalModel: "The ground floor of a blockchain stack. The rules and finality liv
 related: [layer-2]
 ---
 
-Layer 2 protocols (such as Hydra) build on top of a Layer 1 to add throughput or specialised behaviour without changing the base chain's rules.
+Layer 2 protocols (such as Hydra) build on top of a Layer 1 to add throughput or specialized behavior without changing the base chain's rules.
