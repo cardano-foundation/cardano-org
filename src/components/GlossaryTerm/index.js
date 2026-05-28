@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
@@ -96,12 +96,17 @@ const MARKDOWN_COMPONENTS = {
 
 function CopyLinkButton() {
   const [copied, setCopied] = useState(false);
+  const timerRef = useRef(null);
+  useEffect(() => () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+  }, []);
   const onClick = useCallback(async () => {
     if (typeof window === 'undefined' || !navigator?.clipboard) return;
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setCopied(false), 1800);
     } catch {
       // clipboard blocked; silently ignore
     }
@@ -132,7 +137,7 @@ function CopyLinkButton() {
           d="M10 13a5 5 0 0 0 7.07.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.07-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
         />
       </svg>
-      <span>
+      <span aria-live="polite">
         {copied
           ? translate({ id: 'glossary.term.copied', message: 'Copied' })
           : translate({ id: 'glossary.term.copyLink', message: 'Copy link' })}
@@ -314,18 +319,12 @@ export default function GlossaryTerm({ term }) {
               </aside>
             )}
 
-            {displayBody ? (
+            {displayBody && (
               <section className={styles.body}>
                 <ReactMarkdown components={MARKDOWN_COMPONENTS}>
                   {displayBody}
                 </ReactMarkdown>
               </section>
-            ) : (
-              /* When the body is empty or equals the short verbatim (handful of
-               * 1-sentence terms like Hydra, Mainnet) we already render the
-               * short inside the Definition card above, so no fallback needed
-               * here; main is no longer empty for screen readers. */
-              null
             )}
 
             {term.sources && term.sources.length > 0 && (
@@ -347,42 +346,44 @@ export default function GlossaryTerm({ term }) {
           </div>
 
           <aside className={styles.detailSidebar}>
-            <div className={styles.sideCard}>
-              {categoryDef && (
-                <SidebarRow
-                  icon={ICONS.tag}
-                  label={translate({ id: 'glossary.term.category', message: 'Category' })}
-                >
-                  <Link to={`${glossaryUrl}?category=${term.category}`}>
-                    {translate({
-                      id: `glossary.category.${term.category}`,
-                      message: categoryDef.label,
-                    })}
-                  </Link>
-                </SidebarRow>
-              )}
-              {term.aliases && term.aliases.length > 0 && (
-                <SidebarRow
-                  icon={ICONS.alias}
-                  label={translate({ id: 'glossary.term.alsoKnownAs', message: 'Also known as' })}
-                >
-                  {term.aliases.join(', ')}
-                </SidebarRow>
-              )}
-              {relatedTerms.length > 0 && (
-                <SidebarRow
-                  icon={ICONS.link}
-                  label={translate({ id: 'glossary.term.relatedConcepts', message: 'Related concepts' })}
-                >
-                  {relatedTerms.map((r, i) => (
-                    <React.Fragment key={r.slug}>
-                      {i > 0 && ', '}
-                      <Link to={`${glossaryBaseUrl}/${r.slug}`}>{r.title}</Link>
-                    </React.Fragment>
-                  ))}
-                </SidebarRow>
-              )}
-            </div>
+            {(categoryDef || (term.aliases && term.aliases.length > 0) || relatedTerms.length > 0) && (
+              <div className={styles.sideCard}>
+                {categoryDef && (
+                  <SidebarRow
+                    icon={ICONS.tag}
+                    label={translate({ id: 'glossary.term.category', message: 'Category' })}
+                  >
+                    <Link to={`${glossaryUrl}?category=${term.category}`}>
+                      {translate({
+                        id: `glossary.category.${term.category}`,
+                        message: categoryDef.label,
+                      })}
+                    </Link>
+                  </SidebarRow>
+                )}
+                {term.aliases && term.aliases.length > 0 && (
+                  <SidebarRow
+                    icon={ICONS.alias}
+                    label={translate({ id: 'glossary.term.alsoKnownAs', message: 'Also known as' })}
+                  >
+                    {term.aliases.join(', ')}
+                  </SidebarRow>
+                )}
+                {relatedTerms.length > 0 && (
+                  <SidebarRow
+                    icon={ICONS.link}
+                    label={translate({ id: 'glossary.term.relatedConcepts', message: 'Related concepts' })}
+                  >
+                    {relatedTerms.map((r, i) => (
+                      <React.Fragment key={r.slug}>
+                        {i > 0 && ', '}
+                        <Link to={`${glossaryBaseUrl}/${r.slug}`}>{r.title}</Link>
+                      </React.Fragment>
+                    ))}
+                  </SidebarRow>
+                )}
+              </div>
+            )}
 
             {term.link && (
               <div className={styles.sideCta}>
@@ -409,6 +410,12 @@ export default function GlossaryTerm({ term }) {
                       id: 'glossary.term.readFullArticle',
                       message: 'Read full article',
                     })}
+                    <span className={styles.visuallyHidden}>
+                      {translate({
+                        id: 'glossary.term.opensInNewTab',
+                        message: ' (opens in a new tab)',
+                      })}
+                    </span>
                   </a>
                 ) : (
                   <Link className={styles.sideCtaBtn} to={term.link}>
@@ -466,6 +473,12 @@ export default function GlossaryTerm({ term }) {
               className={styles.cantFindSecondary}
             >
               {translate({ id: 'glossary.term.exploreDocs', message: 'Explore docs' })}
+              <span className={styles.visuallyHidden}>
+                {translate({
+                  id: 'glossary.term.opensInNewTab',
+                  message: ' (opens in a new tab)',
+                })}
+              </span>
             </a>
             <a
               href="https://github.com/cardano-foundation/cardano-org/issues/new?labels=glossary&title=Suggest+glossary+term%3A+"
@@ -474,6 +487,12 @@ export default function GlossaryTerm({ term }) {
               className={styles.cantFindPrimary}
             >
               {translate({ id: 'glossary.term.suggestTerm', message: 'Suggest a term' })}
+              <span className={styles.visuallyHidden}>
+                {translate({
+                  id: 'glossary.term.opensInNewTab',
+                  message: ' (opens in a new tab)',
+                })}
+              </span>
             </a>
           </div>
         </aside>
