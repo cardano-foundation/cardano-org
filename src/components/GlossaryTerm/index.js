@@ -239,8 +239,8 @@ export default function GlossaryTerm({ term }) {
     if (!term.related || term.related.length === 0 || terms.length === 0) return [];
     return term.related
       .map(slug => terms.find(t => t.slug === slug))
-      .filter(Boolean);
-  }, [term.related, terms]);
+      .filter(r => r && r.slug !== term.slug);
+  }, [term.related, term.slug, terms]);
 
   const displayBody = useMemo(() => getDisplayBody(term), [term]);
 

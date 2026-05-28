@@ -9,4 +9,4 @@ mentalModel: "A weekly paycheck from the network. Each epoch the protocol shares
 related: [delegation, epoch, stake-pool, pool-saturation]
 ---
 
-Ada earned by delegators and stake pool operators for participating in the network. Rewards are calculated each epoch based on stake delegation and pool performance. Use the [staking calculator](/calculator/) to estimate returns.
+Rewards are calculated each epoch from the stake snapshot and the producing pool's performance, then paid out two epochs later once the protocol has finished accounting and distribution to every delegator and operator.

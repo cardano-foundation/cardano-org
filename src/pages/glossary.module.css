@@ -566,26 +566,38 @@
 }
 
 .cardLevel_beginner {
+  background: rgba(45, 160, 106, 0.14);
   background: color-mix(in srgb, #2da06a 14%, transparent);
+  color: #248055;
   color: color-mix(in srgb, #2da06a 80%, black);
+  border-color: rgba(45, 160, 106, 0.28);
   border-color: color-mix(in srgb, #2da06a 28%, transparent);
 }
 
 .cardLevel_advanced {
+  background: rgba(217, 119, 6, 0.14);
   background: color-mix(in srgb, #d97706 14%, transparent);
+  color: #ae5f05;
   color: color-mix(in srgb, #d97706 80%, black);
+  border-color: rgba(217, 119, 6, 0.30);
   border-color: color-mix(in srgb, #d97706 30%, transparent);
 }
 
 [data-theme='dark'] .cardLevel_beginner {
+  color: #75dba9;
   color: color-mix(in srgb, #5dd49a 85%, white);
+  background: rgba(45, 160, 106, 0.26);
   background: color-mix(in srgb, #2da06a 26%, transparent);
+  border-color: rgba(45, 160, 106, 0.45);
   border-color: color-mix(in srgb, #2da06a 45%, transparent);
 }
 
 [data-theme='dark'] .cardLevel_advanced {
+  color: #fbc77c;
   color: color-mix(in srgb, #fbbf65 85%, white);
+  background: rgba(217, 119, 6, 0.26);
   background: color-mix(in srgb, #d97706 26%, transparent);
+  border-color: rgba(217, 119, 6, 0.45);
   border-color: color-mix(in srgb, #d97706 45%, transparent);
 }
 

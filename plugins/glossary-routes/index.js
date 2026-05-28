@@ -15,7 +15,10 @@ const GLOSSARY_DIR_NAME = 'glossary';
 
 const VALID_LEVELS = new Set(['beginner', 'intermediate', 'advanced']);
 
-function readTermFile(filepath, slug) {
+// Parses a single term file without applying defaults. Missing optional fields
+// stay undefined so a later baseline-merge can tell "translator omitted this"
+// from "translator wrote an explicit empty value".
+function parseTermFile(filepath, slug) {
   const raw = fs.readFileSync(filepath, 'utf8');
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!match) throw new Error(`Glossary file ${filepath} has no frontmatter block`);
@@ -24,28 +27,39 @@ function readTermFile(filepath, slug) {
   if (!fm.title) throw new Error(`Glossary file ${filepath} missing required 'title'`);
   if (!fm.short) throw new Error(`Glossary file ${filepath} missing required 'short'`);
   if (!fm.category) throw new Error(`Glossary file ${filepath} missing required 'category'`);
-  if (fm.level && !VALID_LEVELS.has(fm.level)) {
-    throw new Error(`Glossary file ${filepath} has invalid 'level': ${fm.level}. Must be beginner, intermediate, or advanced.`);
+  if ('level' in fm && !VALID_LEVELS.has(fm.level)) {
+    throw new Error(`Glossary file ${filepath} has invalid 'level': ${JSON.stringify(fm.level)}. Must be beginner, intermediate, or advanced (or omit the field).`);
   }
+  return { slug, fm, body };
+}
+
+// Builds the final term shape, applying defaults for missing optional fields.
+// When a per-locale file is partial (Crowdin only round-trips user-facing copy),
+// structural fields fall back to the English baseline so e.g. `level: beginner`
+// from ada.md still shows in /de/glossary/ada/ even if the locale file omits it.
+function resolveTerm(localeParse, baselineParse) {
+  const fm = localeParse.fm;
+  const base = baselineParse ? baselineParse.fm : {};
+  const pick = (key) => (key in fm ? fm[key] : base[key]);
   return {
-    slug,
+    slug: localeParse.slug,
     title: fm.title,
     short: fm.short,
     category: fm.category,
-    aliases: fm.aliases || [],
-    mentalModel: fm.mentalModel || null,
-    related: fm.related || [],
-    sources: fm.sources || [],
+    aliases: pick('aliases') || [],
+    mentalModel: pick('mentalModel') || null,
+    related: pick('related') || [],
+    sources: pick('sources') || [],
     // Optional cross-link to the canonical cardano.org page that explains
     // this concept in depth (e.g. stablecoin → /stablecoins). Rendered as a
     // prominent CTA on the term detail page.
-    link: fm.link || null,
+    link: pick('link') || null,
     // Reader-level hint: beginner concepts surface on the index with a chip
     // and advanced concepts are flagged to set expectations for protocol-
     // research-heavy entries. Intermediate is the implicit default and
     // shows no badge.
-    level: fm.level || 'intermediate',
-    body,
+    level: pick('level') || 'intermediate',
+    body: localeParse.body || (baselineParse ? baselineParse.body : ''),
   };
 }
 
@@ -67,11 +81,13 @@ module.exports = function glossaryRoutesPlugin(context) {
       const files = fs.readdirSync(defaultDir).filter(f => f.endsWith('.md'));
       const terms = files.map(file => {
         const slug = path.basename(file, '.md');
+        const baseline = parseTermFile(path.join(defaultDir, file), slug);
         const localePath = path.join(localeDir, file);
-        const filepath = fs.existsSync(localePath)
-          ? localePath
-          : path.join(defaultDir, file);
-        return readTermFile(filepath, slug);
+        if (!fs.existsSync(localePath)) {
+          return resolveTerm(baseline, null);
+        }
+        const locale = parseTermFile(localePath, slug);
+        return resolveTerm(locale, baseline);
       });
       // Stable alphabetical order by title (case-insensitive). Keeps index
       // deterministic across builds.

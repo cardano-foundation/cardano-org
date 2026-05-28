@@ -8,4 +8,4 @@ mentalModel: "A token treated as a first-class citizen by the protocol, like ada
 related: [mary, nft, eutxo, policy-id]
 ---
 
-A token created and managed directly on the Cardano blockchain using its built-in token functionality, without requiring smart contracts. Introduced in the Mary hard fork.
+Introduced in the Mary hard fork. Because native tokens are part of the ledger itself, transfers cost the same as ada transfers and don't depend on a separate smart contract being deployed and audited.

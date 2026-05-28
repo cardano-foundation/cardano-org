@@ -82,13 +82,6 @@ function TermCard({ term, glossaryBaseUrl }) {
           {levelLabel && (
             <span
               className={clsx(styles.cardLevel, styles[`cardLevel_${term.level}`])}
-              aria-label={translate(
-                {
-                  id: 'glossary.index.cardLevelAria',
-                  message: '{level} term',
-                },
-                { level: levelLabel },
-              )}
             >
               {levelLabel}
             </span>
@@ -232,7 +225,7 @@ function GlossarySearch({
           })}
           aria-autocomplete="list"
           aria-expanded={showDropdown}
-          aria-controls="glossary-search-listbox"
+          aria-controls={showDropdown ? 'glossary-search-listbox' : undefined}
           role="combobox"
         />
         {query && (
