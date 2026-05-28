@@ -322,6 +322,35 @@ function AlphabetBar({ letters, activeLetter, onLetterClick }) {
   );
 }
 
+function PathStepsRow({ steps, iconBasePath }) {
+  return (
+    <ol className={styles.pathSteps} aria-hidden>
+      {steps.map((s, i) => (
+        <li
+          key={i}
+          className={clsx(
+            styles.pathStepItem,
+            i === steps.length - 1 && styles.pathStepItemLast,
+          )}
+        >
+          <span
+            className={clsx(
+              styles.pathStep,
+              i === 0 ? styles.pathStepFilled : styles.pathStepOutlined,
+            )}
+          >
+            <span
+              className={styles.pathStepIcon}
+              style={{ '--step-icon-url': `url(${iconBasePath}${s.icon}.svg)` }}
+            />
+          </span>
+          {i < steps.length - 1 && <span className={styles.pathConnector} />}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function LearningPathsSection({ iconBasePath }) {
   return (
     <section className={styles.pathsSection}>
@@ -332,23 +361,64 @@ function LearningPathsSection({ iconBasePath }) {
         <p className={styles.pathsLead}>
           {translate({
             id: 'glossary.index.pathsLead',
-            message: 'Curated entry points into Cardano.',
+            message: 'Curated guides to help you understand Cardano step by step.',
           })}
         </p>
       </div>
       <ul className={styles.pathsGrid}>
         {LEARNING_PATHS.map(p => (
           <li key={p.id}>
-            <Link to={p.href} className={styles.pathCard}>
-              <span className={styles.pathIcon} aria-hidden>
-                <img src={`${iconBasePath}${p.icon}.svg`} alt="" />
-              </span>
-              <span className={styles.pathTitle}>
-                {translate({ id: `glossary.path.${p.id}.title`, message: p.title })}
-              </span>
-              <span className={styles.pathDesc}>
-                {translate({ id: `glossary.path.${p.id}.desc`, message: p.description })}
-              </span>
+            <Link
+              to={p.href}
+              className={styles.pathCard}
+              style={{ '--path-color': p.color }}
+            >
+              <div className={styles.pathHead}>
+                <span className={styles.pathHeadIcon} aria-hidden>
+                  <span
+                    className={styles.pathHeadIconGlyph}
+                    style={{ '--step-icon-url': `url(${iconBasePath}${p.icon}.svg)` }}
+                  />
+                </span>
+                <div className={styles.pathHeadText}>
+                  <span className={styles.pathTitle}>
+                    {translate({ id: `glossary.path.${p.id}.title`, message: p.title })}
+                  </span>
+                  <span className={styles.pathDesc}>
+                    {translate({ id: `glossary.path.${p.id}.desc`, message: p.description })}
+                  </span>
+                </div>
+              </div>
+              <PathStepsRow steps={p.steps} iconBasePath={iconBasePath} />
+              <div className={styles.pathFooter}>
+                <span className={styles.pathMeta}>
+                  {translate(
+                    {
+                      id: 'glossary.path.meta',
+                      message: '{count} steps · {audience}',
+                    },
+                    {
+                      count: p.steps.length,
+                      audience: translate({
+                        id: `glossary.path.${p.id}.audience`,
+                        message: p.audience,
+                      }),
+                    },
+                  )}
+                </span>
+                <span className={styles.pathArrow} aria-hidden>
+                  <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14M13 6l6 6-6 6"
+                    />
+                  </svg>
+                </span>
+              </div>
             </Link>
           </li>
         ))}

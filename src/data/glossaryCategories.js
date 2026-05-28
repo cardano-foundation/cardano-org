@@ -19,8 +19,10 @@ export const CATEGORY_ORDER = [
 ];
 
 // "Learning paths" surfaced on the index. These are not internal paths through
-// the glossary, just curated entry points into existing site sections. Keep the
-// list short and grounded in pages that actually exist.
+// the glossary, just curated entry points into existing site sections. Each
+// path defines a header icon plus a sequence of step icons (rendered as a
+// connected row, first step filled and the rest outlined) and an audience
+// label, mirroring the journey-card pattern in the cardano.org mockup.
 export const LEARNING_PATHS = [
   {
     id: 'new-to-cardano',
@@ -28,13 +30,30 @@ export const LEARNING_PATHS = [
     description: 'Start here if you are new to the ecosystem.',
     href: '/get-started',
     icon: 'shapes-solid',
+    color: '#0033ad',
+    audience: 'Beginner',
+    steps: [
+      { icon: 'wallet-solid' },
+      { icon: 'coins-solid' },
+      { icon: 'handshake-solid' },
+      { icon: 'shapes-solid' },
+      { icon: 'scroll-solid' },
+    ],
   },
   {
     id: 'governance',
     title: 'Governance 101',
     description: 'Understand how governance on Cardano works.',
     href: '/governance',
-    icon: 'scroll-solid',
+    icon: 'users-solid',
+    color: '#10b981',
+    audience: 'Beginner',
+    steps: [
+      { icon: 'users-solid' },
+      { icon: 'scroll-solid' },
+      { icon: 'building-solid' },
+      { icon: 'certificate-solid' },
+    ],
   },
   {
     id: 'explore-apps',
@@ -42,5 +61,15 @@ export const LEARNING_PATHS = [
     description: 'Discover curated wallets, DEXs, governance tools, and more.',
     href: '/apps',
     icon: 'shapes-solid',
+    color: '#8b5cf6',
+    audience: 'Curated picks',
+    steps: [
+      { icon: 'wallet-solid' },
+      { icon: 'coins-solid' },
+      { icon: 'scroll-solid' },
+      { icon: 'shapes-solid' },
+      { icon: 'link-solid' },
+      { icon: 'wrench-solid' },
+    ],
   },
 ];
