@@ -165,6 +165,13 @@ const ICONS = {
       <line x1="7" y1="7" x2="7.01" y2="7"/>
     </svg>
   ),
+  level: (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20V10"/>
+      <path d="M12 20V4"/>
+      <path d="M20 20v-6"/>
+    </svg>
+  ),
   link: (
     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M10 13a5 5 0 0 0 7.07.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
@@ -243,6 +250,13 @@ export default function GlossaryTerm({ term }) {
   const pageDescription = term.short;
 
   const linkIsExternal = term.link && /^https?:\/\//.test(term.link);
+
+  const levelLabel =
+    term.level === 'beginner'
+      ? translate({ id: 'glossary.term.level.beginner', message: 'Beginner' })
+      : term.level === 'advanced'
+        ? translate({ id: 'glossary.term.level.advanced', message: 'Advanced' })
+        : null;
 
   return (
     <Layout title={pageTitle} description={pageDescription}>
@@ -346,7 +360,7 @@ export default function GlossaryTerm({ term }) {
           </div>
 
           <aside className={styles.detailSidebar}>
-            {(categoryDef || (term.aliases && term.aliases.length > 0) || relatedTerms.length > 0) && (
+            {(categoryDef || levelLabel || (term.aliases && term.aliases.length > 0) || relatedTerms.length > 0) && (
               <div className={styles.sideCard}>
                 {categoryDef && (
                   <SidebarRow
@@ -359,6 +373,16 @@ export default function GlossaryTerm({ term }) {
                         message: categoryDef.label,
                       })}
                     </Link>
+                  </SidebarRow>
+                )}
+                {levelLabel && (
+                  <SidebarRow
+                    icon={ICONS.level}
+                    label={translate({ id: 'glossary.term.level', message: 'Reader level' })}
+                  >
+                    <span className={clsx(styles.levelChip, styles[`level_${term.level}`])}>
+                      {levelLabel}
+                    </span>
                   </SidebarRow>
                 )}
                 {term.aliases && term.aliases.length > 0 && (

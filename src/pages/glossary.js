@@ -68,17 +68,39 @@ function getMatchScore(term, normalizedQuery) {
 
 function TermCard({ term, glossaryBaseUrl }) {
   const cat = CATEGORIES[term.category];
+  const levelLabel =
+    term.level === 'beginner'
+      ? translate({ id: 'glossary.term.level.beginner', message: 'Beginner' })
+      : term.level === 'advanced'
+        ? translate({ id: 'glossary.term.level.advanced', message: 'Advanced' })
+        : null;
   return (
     <Link to={`${glossaryBaseUrl}/${term.slug}`} className={styles.card}>
       <div className={styles.cardHeader}>
         <span className={styles.cardTitle}>{term.title}</span>
-        {cat && (
-          <span
-            className={styles.cardCategoryDot}
-            style={{ background: cat.color }}
-            aria-hidden
-          />
-        )}
+        <span className={styles.cardHeaderMeta}>
+          {levelLabel && (
+            <span
+              className={clsx(styles.cardLevel, styles[`cardLevel_${term.level}`])}
+              aria-label={translate(
+                {
+                  id: 'glossary.index.cardLevelAria',
+                  message: '{level} term',
+                },
+                { level: levelLabel },
+              )}
+            >
+              {levelLabel}
+            </span>
+          )}
+          {cat && (
+            <span
+              className={styles.cardCategoryDot}
+              style={{ background: cat.color }}
+              aria-hidden
+            />
+          )}
+        </span>
       </div>
       <span className={styles.cardShort}>{term.short}</span>
     </Link>
@@ -210,6 +232,7 @@ function GlossarySearch({
           })}
           aria-autocomplete="list"
           aria-expanded={showDropdown}
+          aria-controls="glossary-search-listbox"
           role="combobox"
         />
         {query && (
@@ -230,7 +253,11 @@ function GlossarySearch({
         )}
       </div>
       {showDropdown && (
-        <ul className={styles.heroSearchDropdown} role="listbox">
+        <ul
+          id="glossary-search-listbox"
+          className={styles.heroSearchDropdown}
+          role="listbox"
+        >
           {suggestions.map((t, i) => {
             const cat = CATEGORIES[t.category];
             return (

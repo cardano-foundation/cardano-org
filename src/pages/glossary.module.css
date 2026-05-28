@@ -547,6 +547,48 @@
   flex-shrink: 0;
 }
 
+.cardHeaderMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.cardLevel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1.3;
+}
+
+.cardLevel_beginner {
+  background: color-mix(in srgb, #2da06a 14%, transparent);
+  color: color-mix(in srgb, #2da06a 80%, black);
+  border-color: color-mix(in srgb, #2da06a 28%, transparent);
+}
+
+.cardLevel_advanced {
+  background: color-mix(in srgb, #d97706 14%, transparent);
+  color: color-mix(in srgb, #d97706 80%, black);
+  border-color: color-mix(in srgb, #d97706 30%, transparent);
+}
+
+[data-theme='dark'] .cardLevel_beginner {
+  color: color-mix(in srgb, #5dd49a 85%, white);
+  background: color-mix(in srgb, #2da06a 26%, transparent);
+  border-color: color-mix(in srgb, #2da06a 45%, transparent);
+}
+
+[data-theme='dark'] .cardLevel_advanced {
+  color: color-mix(in srgb, #fbbf65 85%, white);
+  background: color-mix(in srgb, #d97706 26%, transparent);
+  border-color: color-mix(in srgb, #d97706 45%, transparent);
+}
+
 .cardShort {
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-700);
