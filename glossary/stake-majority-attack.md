@@ -6,7 +6,7 @@ category: consensus
 level: advanced
 aliases: ["51% Attack", "Stake Takeover"]
 link: /research
-related: [pos-attacks, proof-of-stake, ouroboros, pool-saturation, k-parameter]
+related: [proof-of-stake-attacks, proof-of-stake, ouroboros, pool-saturation, k-parameter]
 ---
 
 The proof-of-stake analogue of the 51% attack from proof-of-work. With more than half of the active stake under one operator's control, that party can outproduce the honest network, refuse to include specific transactions, or produce a competing chain that overtakes the canonical one.

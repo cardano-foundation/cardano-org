@@ -6,7 +6,7 @@ category: consensus
 level: advanced
 aliases: ["Nothing at Stake"]
 link: /research
-related: [pos-attacks, proof-of-stake, ouroboros, grinding-attack]
+related: [proof-of-stake-attacks, proof-of-stake, ouroboros, grinding-attack]
 ---
 
 In a proof-of-stake protocol, signing a block requires no energy spend, so a rational validator could theoretically extend every fork in parallel rather than just the honest one. That would prevent the chain from converging and enable double-spending.

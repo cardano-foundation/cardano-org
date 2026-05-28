@@ -6,7 +6,7 @@ category: consensus
 level: advanced
 aliases: ["Long Range Attack"]
 link: /research
-related: [pos-attacks, proof-of-stake, ouroboros, posterior-corruption, grinding-attack]
+related: [proof-of-stake-attacks, proof-of-stake, ouroboros, posterior-corruption, grinding-attack]
 ---
 
 An attack that exploits the fact that producing old blocks in a proof-of-stake system costs essentially nothing. An adversary collects old signing keys (or buys them), rebuilds a long alternate chain starting far behind the current tip, and presents it to bootstrapping nodes as the "real" history.

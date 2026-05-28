@@ -6,7 +6,7 @@ category: consensus
 level: advanced
 aliases: ["Stake Bleeding"]
 link: /research
-related: [pos-attacks, proof-of-stake, long-range-attack, ouroboros]
+related: [proof-of-stake-attacks, proof-of-stake, long-range-attack, ouroboros]
 sources:
   - title: "Stake-Bleeding Attacks on Proof-of-Stake Blockchains"
     url: "https://eprint.iacr.org/2018/248.pdf"
