@@ -13,6 +13,8 @@ const yaml = require('js-yaml');
 
 const GLOSSARY_DIR_NAME = 'glossary';
 
+const VALID_LEVELS = new Set(['beginner', 'intermediate', 'advanced']);
+
 function readTermFile(filepath, slug) {
   const raw = fs.readFileSync(filepath, 'utf8');
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -22,6 +24,9 @@ function readTermFile(filepath, slug) {
   if (!fm.title) throw new Error(`Glossary file ${filepath} missing required 'title'`);
   if (!fm.short) throw new Error(`Glossary file ${filepath} missing required 'short'`);
   if (!fm.category) throw new Error(`Glossary file ${filepath} missing required 'category'`);
+  if (fm.level && !VALID_LEVELS.has(fm.level)) {
+    throw new Error(`Glossary file ${filepath} has invalid 'level': ${fm.level}. Must be beginner, intermediate, or advanced.`);
+  }
   return {
     slug,
     title: fm.title,
@@ -35,6 +40,11 @@ function readTermFile(filepath, slug) {
     // this concept in depth (e.g. stablecoin → /stablecoins). Rendered as a
     // prominent CTA on the term detail page.
     link: fm.link || null,
+    // Reader-level hint: beginner concepts surface on the index with a chip
+    // and advanced concepts are flagged to set expectations for protocol-
+    // research-heavy entries. Intermediate is the implicit default and
+    // shows no badge.
+    level: fm.level || 'intermediate',
     body,
   };
 }
@@ -94,6 +104,7 @@ module.exports = function glossaryRoutesPlugin(context) {
         short: t.short,
         category: t.category,
         aliases: t.aliases,
+        level: t.level,
       }));
 
       // Redirect map: maps the OLD docusaurus-generated anchor IDs from the

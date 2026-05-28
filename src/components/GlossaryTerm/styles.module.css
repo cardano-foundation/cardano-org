@@ -322,6 +322,43 @@
   border-bottom-color: var(--term-color, var(--ifm-color-primary));
 }
 
+.levelChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  line-height: 1.4;
+}
+
+.level_beginner {
+  background: color-mix(in srgb, #2da06a 14%, transparent);
+  color: color-mix(in srgb, #2da06a 80%, black);
+  border-color: color-mix(in srgb, #2da06a 28%, transparent);
+}
+
+.level_advanced {
+  background: color-mix(in srgb, #d97706 14%, transparent);
+  color: color-mix(in srgb, #d97706 80%, black);
+  border-color: color-mix(in srgb, #d97706 30%, transparent);
+}
+
+[data-theme='dark'] .level_beginner {
+  color: color-mix(in srgb, #5dd49a 85%, white);
+  background: color-mix(in srgb, #2da06a 26%, transparent);
+  border-color: color-mix(in srgb, #2da06a 45%, transparent);
+}
+
+[data-theme='dark'] .level_advanced {
+  color: color-mix(in srgb, #fbbf65 85%, white);
+  background: color-mix(in srgb, #d97706 26%, transparent);
+  border-color: color-mix(in srgb, #d97706 45%, transparent);
+}
+
 .sideCta {
   background: linear-gradient(
     135deg,
