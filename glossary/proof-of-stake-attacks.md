@@ -1,12 +1,12 @@
 ---
 title: Proof-of-Stake Attacks
-slug: pos-attacks
+slug: proof-of-stake-attacks
 short: The set of known attack categories against proof-of-stake blockchains and how Cardano's Ouroboros family defends against each.
 category: consensus
 level: advanced
 aliases: ["PoS Attacks", "Consensus Attacks"]
 link: /research
-related: [proof-of-stake, ouroboros, long-range-attack, nothing-at-stake, grinding-attack, stake-bleeding-attack, posterior-corruption, bribery-attack, adaptive-corruption, stake-majority-attack, sybil-attack, eclipse]
+related: [proof-of-stake, ouroboros, long-range-attack, nothing-at-stake, grinding-attack, stake-bleeding-attack, posterior-corruption, bribery-attack, adaptive-corruption, stake-majority-attack, sybil-attack, eclipse-attack]
 ---
 
 Proof-of-stake blockchains face a specific catalogue of attacks distinct from proof-of-work mining attacks. Cardano's Ouroboros consensus family was designed with each of these categories in mind, and the protocol's security proofs explicitly bound the adversary's success probability under formal models of every threat.
@@ -22,6 +22,6 @@ The named attack categories most often referenced in PoS research:
 - [Adaptive Corruption](/glossary/adaptive-corruption): targeting validators only after seeing who has been elected.
 - [Stake Majority Attack](/glossary/stake-majority-attack): the proof-of-stake analogue of the 51% attack.
 - [Sybil Attack](/glossary/sybil-attack): spinning up many fake identities to gain disproportionate influence.
-- [Eclipse Attack](/glossary/eclipse): isolating a node from the honest network so it sees only attacker-controlled state.
+- [Eclipse Attack](/glossary/eclipse-attack): isolating a node from the honest network so it sees only attacker-controlled state.
 
 The recurring defences across these attacks are stake-weighted influence (creating fake identities does not help), VRF-based hidden leader election (the adversary cannot target who has not yet been announced), key-evolving signatures (old keys cannot retroactively sign), and Ouroboros Genesis's density-based chain selection (bootstrapping nodes can pick the honest chain without external checkpoints).

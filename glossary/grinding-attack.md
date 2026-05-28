@@ -5,7 +5,7 @@ short: An attack on the randomness used to pick proof-of-stake block leaders, wh
 category: consensus
 level: advanced
 link: /research
-related: [pos-attacks, proof-of-stake, ouroboros, vrf]
+related: [proof-of-stake-attacks, proof-of-stake, ouroboros, vrf]
 ---
 
 An attack on the source of randomness that determines which validator gets to produce the next block. By selectively withholding blocks or VRF outputs at the end of an epoch, an adversary tries to nudge the seed of the next epoch toward outcomes that elect its own pools more often.

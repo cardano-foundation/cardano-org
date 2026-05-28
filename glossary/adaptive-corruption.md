@@ -6,7 +6,7 @@ category: consensus
 level: advanced
 aliases: ["Adaptive Adversary"]
 link: /research
-related: [pos-attacks, proof-of-stake, ouroboros, vrf]
+related: [proof-of-stake-attacks, proof-of-stake, ouroboros, vrf]
 ---
 
 A model of adversary that does not commit in advance to which validators it will corrupt. Instead it watches the network, sees which validator has been elected for the next slot, and targets that specific validator for compromise or denial-of-service moments before its turn.
