@@ -1,9 +1,10 @@
 ---
 title: SMASH
 slug: smash
-short: Stakepool Metadata Aggregation Server.
+short: An off-chain service that aggregates stake pool metadata (name, ticker, homepage) for wallets and explorers to display; delisting from a SMASH only changes how a pool appears in apps, not its ability to produce blocks.
 category: consensus
 aliases: [Stakepool Metadata Aggregation Server]
+related: [stake-pool]
 ---
 
-Stakepool Metadata Aggregation Server. An off-chain service that collects and stores stake pool metadata such as name, ticker, and homepage. Wallets and explorers can choose which SMASH server to use for displaying pool information. Delisting a pool from a SMASH server only affects how it appears in applications using that server; it does not prevent the pool from participating in the network or producing blocks.
+Wallets and explorers can choose which SMASH server to follow, which is why a pool delisted by one server can still be shown by another.

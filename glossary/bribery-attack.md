@@ -3,6 +3,7 @@ title: Bribery Attack
 slug: bribery-attack
 short: An external attacker pays validators to deviate from the protocol, for example by signing conflicting blocks or handing over dormant keys.
 category: consensus
+level: advanced
 link: /research
 related: [pos-attacks, proof-of-stake, posterior-corruption, kes]
 ---

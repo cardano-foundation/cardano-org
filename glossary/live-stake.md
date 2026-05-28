@@ -1,5 +1,5 @@
 ---
-title: live stake
+title: Live Stake
 slug: live-stake
 short: The total ada currently delegated to a stake pool right now, before any epoch boundary snapshot.
 category: consensus

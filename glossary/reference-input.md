@@ -1,5 +1,5 @@
 ---
-title: reference input
+title: Reference Input
 slug: reference-input
 short: An input a transaction reads without consuming, letting a smart contract look at on-chain state without locking it out of other transactions.
 category: smart-contracts

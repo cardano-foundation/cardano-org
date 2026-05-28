@@ -3,6 +3,7 @@ title: d parameter
 slug: d-parameter
 short: The Shelley-era protocol parameter that controlled the share of blocks produced by federated genesis nodes versus community stake pools.
 category: consensus
+level: advanced
 aliases: ["Decentralisation Parameter", "d"]
 related: [genesis-keys, byron, shelley, vasil, stake-pool]
 ---

@@ -1,5 +1,5 @@
 ---
-title: controlled stake
+title: Controlled Stake
 slug: controlled-stake
 short: The total ada associated with a stake pool, combining operator pledge and all delegations.
 category: consensus

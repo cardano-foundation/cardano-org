@@ -1,8 +1,9 @@
 ---
-title: active slot coefficient
+title: Active Slot Coefficient
 slug: active-slot-coefficient
 short: The protocol parameter that controls the probability a slot is assigned an elected block-producer. On mainnet it is currently 0.05.
 category: consensus
+level: advanced
 aliases: ["f parameter", "f"]
 related: [slot, block, ouroboros, k-parameter]
 ---

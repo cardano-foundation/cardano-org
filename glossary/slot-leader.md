@@ -1,5 +1,5 @@
 ---
-title: slot leader
+title: Slot Leader
 slug: slot-leader
 short: The stake pool selected by Ouroboros to produce a block in a given time slot.
 category: consensus

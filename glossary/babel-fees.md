@@ -1,5 +1,5 @@
 ---
-title: Babel fees
+title: Babel Fees
 slug: babel-fees
 short: A mechanism that allows users to pay transaction fees using native tokens instead of ada.
 category: tokens

@@ -3,6 +3,7 @@ title: Posterior Corruption
 slug: posterior-corruption
 short: An attack where the adversary buys or steals signing keys from people who held large stake in the past but no longer do.
 category: consensus
+level: advanced
 aliases: ["Past-Majority Attack", "Posterior Attack"]
 link: /research
 related: [pos-attacks, proof-of-stake, long-range-attack, bribery-attack, kes]

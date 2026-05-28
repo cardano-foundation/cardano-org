@@ -1,8 +1,9 @@
 ---
-title: pipelining
+title: Pipelining
 slug: pipelining
 short: A protocol optimization that lets a newly produced block start propagating across the network before validation completes.
 category: consensus
+level: advanced
 aliases: ["Diffusion Pipelining"]
 related: [block, slot, ouroboros]
 ---

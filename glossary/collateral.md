@@ -1,5 +1,5 @@
 ---
-title: collateral
+title: Collateral
 slug: collateral
 short: An ada amount a wallet locks aside when submitting a Plutus transaction, forfeited only if the script's on-chain validation fails.
 category: smart-contracts

@@ -3,6 +3,7 @@ title: Long-Range Attack
 slug: long-range-attack
 short: An attack that tries to rewrite long stretches of blockchain history by building a competing chain from far back in the past.
 category: consensus
+level: advanced
 aliases: ["Long Range Attack"]
 link: /research
 related: [pos-attacks, proof-of-stake, ouroboros, posterior-corruption, grinding-attack]

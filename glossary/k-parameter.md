@@ -3,6 +3,7 @@ title: k parameter
 slug: k-parameter
 short: The protocol parameter that sets the target number of saturated stake pools for healthy decentralization.
 category: consensus
+level: advanced
 aliases: [k, "Desired Pool Count"]
 related: [pool-saturation, stake-pool, delegation, a0]
 ---

@@ -1,8 +1,9 @@
 ---
-title: Sybil attack
+title: Sybil Attack
 slug: sybil-attack
 short: An attack in which one entity creates many fake identities to gain disproportionate influence over a network.
 category: consensus
+level: advanced
 mentalModel: "Trying to swing an election by registering hundreds of fake voters. On Cardano it doesn't work: each vote (block, delegation, governance action) is weighted by real ada, not by how many identities you can spin up."
 related: [pos-attacks, proof-of-stake, ouroboros, eclipse]
 ---

@@ -1,5 +1,5 @@
 ---
-title: stake snapshot
+title: Stake Snapshot
 slug: stake-snapshot
 short: A frozen capture of every account's delegation taken at an epoch boundary; what the protocol actually uses to elect block leaders and pay rewards.
 category: consensus

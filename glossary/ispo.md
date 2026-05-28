@@ -1,10 +1,10 @@
 ---
 title: ISPO
 slug: ispo
-short: Initial Stake Pool Offering.
+short: A fundraising method where supporters delegate ada to a designated stake pool and receive the project's tokens in lieu of staking rewards; participants keep custody of their ada throughout.
 category: consensus
 aliases: [Initial Stake Pool Offering]
 related: [stake-pool, delegation]
 ---
 
-Initial Stake Pool Offering. A fundraising method where delegators support a project by staking their ada to a designated stake pool. Instead of receiving full staking rewards, delegators divert some or all rewards to the project in exchange for the project's tokens. Unlike traditional token sales, participants never lose custody of their ada.
+Because no ada ever leaves the delegator's wallet, ISPOs avoid the custody risk of traditional token sales: the only thing at stake is the staking yield the participant chooses to redirect.

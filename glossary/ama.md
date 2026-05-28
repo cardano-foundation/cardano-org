@@ -1,9 +1,10 @@
 ---
 title: AMA
 slug: ama
-short: Ask Me Anything.
+short: A live Q&A format where community members ask questions directly to project teams, developers, or other notable figures in the Cardano ecosystem.
 category: general
+level: beginner
 aliases: [Ask Me Anything]
 ---
 
-Ask Me Anything. A live Q&A session where community members can ask questions directly to project leaders, developers, or other notable figures in the Cardano ecosystem.
+AMAs are usually hosted on Discord, X/Twitter Spaces, or community forums and announced in advance so participants can submit questions.

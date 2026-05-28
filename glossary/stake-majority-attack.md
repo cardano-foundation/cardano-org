@@ -3,6 +3,7 @@ title: Stake Majority Attack
 slug: stake-majority-attack
 short: An attack where a single party controlling more than half of the staked ada can rewrite recent history, censor transactions, or double-spend.
 category: consensus
+level: advanced
 aliases: ["51% Attack", "Stake Takeover"]
 link: /research
 related: [pos-attacks, proof-of-stake, ouroboros, pool-saturation, k-parameter]
