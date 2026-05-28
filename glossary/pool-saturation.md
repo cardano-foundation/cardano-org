@@ -1,9 +1,10 @@
 ---
-title: pool saturation
+title: Pool Saturation
 slug: pool-saturation
-short: The point at which a stake pool has received more delegation than is optimal for rewards.
+short: The threshold past which extra delegation to a stake pool stops increasing rewards; a built-in incentive to spread stake across many pools rather than concentrate it in a few.
 category: consensus
-related: [stake-pool, delegation, rewards]
+mentalModel: "A bucket with a marked fill line. Once stake reaches the line, any extra poured in spills over: the pool still receives delegation but rewards-per-ada drop, nudging delegators toward emptier buckets."
+related: [stake-pool, delegation, rewards, k-parameter]
 ---
 
-The point at which a stake pool has received more delegation than is optimal for rewards. Beyond saturation, additional delegation yields diminishing returns, encouraging stake distribution across multiple pools.
+The saturation point is derived from the `k` parameter (`total stake / k`). Raising `k` lowers the saturation point per pool and pushes for broader decentralization; lowering `k` allows fewer, larger pools.

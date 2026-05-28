@@ -3,6 +3,7 @@ title: Grinding Attack
 slug: grinding-attack
 short: An attack on the randomness used to pick proof-of-stake block leaders, where the adversary tries to bias the lottery in its own favour.
 category: consensus
+level: advanced
 link: /research
 related: [pos-attacks, proof-of-stake, ouroboros, vrf]
 ---

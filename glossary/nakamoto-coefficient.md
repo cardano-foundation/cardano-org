@@ -3,6 +3,7 @@ title: Nakamoto Coefficient
 slug: nakamoto-coefficient
 short: A measure of how decentralized a blockchain is, expressed as the smallest number of entities that could collude to compromise it.
 category: general
+level: advanced
 related: [edinburgh-decentralisation-index-edi, proof-of-stake, stake-pool]
 ---
 

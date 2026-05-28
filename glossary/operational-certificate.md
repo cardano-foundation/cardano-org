@@ -1,5 +1,5 @@
 ---
-title: operational certificate
+title: Operational Certificate
 slug: operational-certificate
 short: The certificate a stake pool operator signs to authorise a KES key to produce blocks on the pool's behalf.
 category: consensus

@@ -1,5 +1,5 @@
 ---
-title: redeemer
+title: Redeemer
 slug: redeemer
 short: Data supplied by the spending transaction that tells a smart contract what action is being attempted.
 category: smart-contracts

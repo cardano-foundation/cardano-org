@@ -1,5 +1,5 @@
 ---
-title: constitution
+title: Constitution
 slug: constitution
 short: "The foundational document defining Cardano's governance principles, rules, and guardrails."
 category: governance

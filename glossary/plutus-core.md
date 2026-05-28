@@ -3,6 +3,7 @@ title: Plutus Core
 slug: plutus-core
 short: Cardano's on-chain smart-contract runtime. Higher-level languages (Plinth, Aiken) compile down to Plutus Core for execution.
 category: smart-contracts
+level: advanced
 related: [untyped-plutus-core-uplc, plinth, aiken, smart-contract]
 ---
 

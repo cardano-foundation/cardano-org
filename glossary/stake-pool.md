@@ -1,10 +1,11 @@
 ---
-title: stake pool
+title: Stake Pool
 slug: stake-pool
 short: A server node that participates in the Cardano network by validating transactions and producing blocks.
 category: consensus
+level: beginner
 link: /stake-pool-delegation
-aliases: [SPO, "Stake Pool Operator", Pool, Node]
+aliases: [SPO, "Stake Pool Operator", Pool]
 mentalModel: "A node that other ada holders 'follow'. The more stake follows it, the more often it gets a turn to add blocks to the chain."
 related: [delegation, slot-leader, pool-saturation, rewards]
 ---

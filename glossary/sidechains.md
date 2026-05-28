@@ -1,5 +1,5 @@
 ---
-title: sidechains
+title: Sidechains
 slug: sidechains
 short: "Independent blockchains connected to the main Cardano blockchain, enabling interoperability and specialized functionality."
 category: network

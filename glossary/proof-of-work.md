@@ -1,5 +1,5 @@
 ---
-title: proof of work
+title: Proof of Work
 slug: proof-of-work
 short: A consensus mechanism where miners compete to solve computational puzzles to create blocks.
 category: consensus

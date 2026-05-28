@@ -1,5 +1,5 @@
 ---
-title: rollback
+title: Rollback
 slug: rollback
 short: When a Cardano node reverts the most recent blocks because the network has converged on a different fork.
 category: network

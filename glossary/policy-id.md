@@ -1,5 +1,5 @@
 ---
-title: policy ID
+title: Policy ID
 slug: policy-id
 short: The unique on-chain identifier of a native token's minting policy.
 category: tokens

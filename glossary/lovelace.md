@@ -1,8 +1,9 @@
 ---
-title: lovelace
+title: Lovelace
 slug: lovelace
 short: The smallest divisible unit of ada. One ada equals 1,000,000 lovelaces.
 category: tokens
+level: beginner
 aliases: [Lovelaces]
 mentalModel: "Like cents to a dollar, only finer: one ada splits into a million lovelaces. All on-chain amounts are tracked in lovelace; wallet UIs convert to ada for display."
 related: [ada]

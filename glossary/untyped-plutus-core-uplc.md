@@ -3,6 +3,7 @@ title: Untyped Plutus Core (UPLC)
 slug: untyped-plutus-core-uplc
 short: The low-level “machine language” that is executed on-chain by Cardano nodes during transaction validation.
 category: smart-contracts
+level: advanced
 aliases: [UPLC]
 related: [plutus-core, aiken, smart-contract]
 ---

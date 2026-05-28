@@ -1,5 +1,5 @@
 ---
-title: determinism
+title: Determinism
 slug: determinism
 short: The property that given the same inputs, a computation always produces the same outputs.
 category: smart-contracts

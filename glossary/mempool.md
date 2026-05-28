@@ -1,9 +1,10 @@
 ---
-title: mempool
+title: Mempool
 slug: mempool
 short: The pool of pending transactions a Cardano node holds locally before they are included in a block.
 category: network
 aliases: ["Transaction Pool"]
+mentalModel: "A waiting room at each node. Submitted transactions sit here until a stake pool gets a slot, walks through the room, and picks which ones to put into the next block."
 related: [block, stake-pool, ouroboros]
 ---
 

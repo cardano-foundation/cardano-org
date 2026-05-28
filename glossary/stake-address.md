@@ -1,5 +1,5 @@
 ---
-title: stake address
+title: Stake Address
 slug: stake-address
 short: The bech32 address (`stake1...`) that owns delegation rights and receives staking rewards, separate from your payment address.
 category: wallets

@@ -3,6 +3,7 @@ title: Nothing-at-Stake
 slug: nothing-at-stake
 short: The risk that proof-of-stake validators sign every competing fork at once because doing so costs them nothing.
 category: consensus
+level: advanced
 aliases: ["Nothing at Stake"]
 link: /research
 related: [pos-attacks, proof-of-stake, ouroboros, grinding-attack]

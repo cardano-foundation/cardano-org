@@ -1,8 +1,9 @@
 ---
-title: seed phrase
+title: Seed Phrase
 slug: seed-phrase
 short: A sequence of 12 or 24 words that lets any compatible wallet recover access to your accounts on the blockchain.
 category: wallets
+level: beginner
 aliases: [Mnemonic, "Recovery Phrase", "Mnemonic Phrase", "Backup Phrase"]
 mentalModel: "Like signing into your Google account from a new browser brings back your bookmarks: any wallet that knows your seed phrase finds the same accounts on the blockchain."
 related: [wallet, spending-password]

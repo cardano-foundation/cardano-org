@@ -3,7 +3,8 @@ title: Proof-of-Stake Attacks
 slug: pos-attacks
 short: The set of known attack categories against proof-of-stake blockchains and how Cardano's Ouroboros family defends against each.
 category: consensus
-aliases: ["Attacks", "PoS Attacks", "Attack Vectors", "Consensus Attacks"]
+level: advanced
+aliases: ["PoS Attacks", "Consensus Attacks"]
 link: /research
 related: [proof-of-stake, ouroboros, long-range-attack, nothing-at-stake, grinding-attack, stake-bleeding-attack, posterior-corruption, bribery-attack, adaptive-corruption, stake-majority-attack, sybil-attack, eclipse]
 ---

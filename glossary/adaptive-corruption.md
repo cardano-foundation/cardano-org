@@ -3,6 +3,7 @@ title: Adaptive Corruption
 slug: adaptive-corruption
 short: An adversary that picks which validators to attack on the fly, after seeing who has been elected to produce upcoming blocks.
 category: consensus
+level: advanced
 aliases: ["Adaptive Adversary"]
 link: /research
 related: [pos-attacks, proof-of-stake, ouroboros, vrf]

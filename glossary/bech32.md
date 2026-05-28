@@ -1,5 +1,5 @@
 ---
-title: bech32
+title: Bech32
 slug: bech32
 short: An address encoding format used for Cardano addresses since the Shelley hard fork.
 category: wallets

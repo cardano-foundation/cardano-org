@@ -1,5 +1,5 @@
 ---
-title: pledge
+title: Pledge
 slug: pledge
 short: The amount of ada a stake pool operator personally commits to their own pool.
 category: consensus

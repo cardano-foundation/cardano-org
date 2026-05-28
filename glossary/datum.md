@@ -1,5 +1,5 @@
 ---
-title: datum
+title: Datum
 slug: datum
 short: A piece of data attached to a UTxO that a smart contract can read when deciding whether the UTxO can be spent.
 category: smart-contracts

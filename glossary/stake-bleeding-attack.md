@@ -3,6 +3,7 @@ title: Stake-Bleeding Attack
 slug: stake-bleeding-attack
 short: A long-range attack in which a minority adversary slowly drains stake from the honest chain onto its private chain by copying transactions and collecting their fees.
 category: consensus
+level: advanced
 aliases: ["Stake Bleeding"]
 link: /research
 related: [pos-attacks, proof-of-stake, long-range-attack, ouroboros]

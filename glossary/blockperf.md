@@ -1,5 +1,5 @@
 ---
-title: blockperf
+title: Blockperf
 slug: blockperf
 short: An open-source tool stake pool operators use to measure how quickly their nodes receive and forward newly produced blocks.
 category: consensus

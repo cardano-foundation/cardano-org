@@ -1,8 +1,9 @@
 ---
-title: eclipse
+title: Eclipse Attack
 slug: eclipse
 short: A network attack where a node is isolated from honest peers and connected only to attacker-controlled nodes.
 category: network
+level: advanced
 related: [pos-attacks, ouroboros]
 ---
 

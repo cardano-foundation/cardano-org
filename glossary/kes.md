@@ -3,6 +3,7 @@ title: KES
 slug: kes
 short: Key Evolving Signatures. Block-signing keys that move forward in time to limit the damage of a key compromise.
 category: consensus
+level: advanced
 aliases: ["Key Evolving Signatures", "KES Keys"]
 mentalModel: "A one-way ratchet on a signing key. Each period, the key updates so that an older state can no longer be reconstructed; even if today's key leaks, yesterday's blocks remain trustworthy because the earlier key state has been erased."
 related: [stake-pool, vrf]

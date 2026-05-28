@@ -1,5 +1,5 @@
 ---
-title: treasury
+title: Treasury
 slug: treasury
 short: An on-chain fund that accumulates a portion of transaction fees and monetary expansion.
 category: governance

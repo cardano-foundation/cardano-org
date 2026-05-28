@@ -1,5 +1,5 @@
 ---
-title: reference script
+title: Reference Script
 slug: reference-script
 short: A Plutus script attached once to a UTxO and then referenced (not re-included) by later transactions that spend script-locked outputs.
 category: smart-contracts
