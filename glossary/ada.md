@@ -10,4 +10,4 @@ mentalModel: "The fuel of the Cardano network: it pays for transactions, rewards
 related: [cardano, delegation, stake-pool, lovelace]
 ---
 
-Named after Ada Lovelace, the 19th-century mathematician often regarded as the first computer programmer. The smallest unit of ada is the lovelace; one ada equals 1,000,000 lovelace.
+Named after Ada Lovelace, the 19th-century mathematician often regarded as the first computer programmer. The smallest unit of ada is the lovelace; one ada equals 1,000,000 lovelaces.
