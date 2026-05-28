@@ -66,6 +66,18 @@
   outline-offset: 2px;
 }
 
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Two-column body: prose on the left, sticky meta sidebar on the right.
  * Collapses to a single column under 960px so the sidebar drops below the
  * main content rather than getting squeezed. */
@@ -357,6 +369,11 @@
   transform: translateY(-1px);
 }
 
+.sideCtaBtn:focus-visible {
+  outline: 2px solid var(--term-color, var(--ifm-color-primary));
+  outline-offset: 2px;
+}
+
 /* Explore-next section: full-width below the two-column body. Each card
  * inherits its accent from the term's category via the --card-color custom
  * property set inline in JSX. */
@@ -401,6 +418,11 @@
   text-decoration: none;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.exploreCard:focus-visible {
+  outline: 2px solid var(--card-color, var(--ifm-color-primary));
+  outline-offset: 2px;
 }
 
 .exploreCardIcon {
@@ -538,6 +560,12 @@
   background: var(--ifm-color-emphasis-100);
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+.cantFindPrimary:focus-visible,
+.cantFindSecondary:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 @media (max-width: 720px) {
