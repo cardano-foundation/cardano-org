@@ -19,7 +19,7 @@ export default function ProofOfStakeSection() {
   return (
     <BackgroundWrapper backgroundType="solidGrey">
       <BoundaryBox>
-        <Divider text="Proof of stake" />
+        <Divider text="Proof of stake" id="proof-of-stake" />
         <TitleWithText
           title="Proof of stake and proof of work"
           description={[
