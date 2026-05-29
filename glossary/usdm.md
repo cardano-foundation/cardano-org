@@ -1,7 +1,7 @@
 ---
 title: USDM
 slug: usdm
-short: A US-dollar-pegged stablecoin on Cardano issued by Mehen Finance and backed by US-dollar reserves held off-chain rather than by an on-chain crypto collateral pool.
+short: A US-dollar-pegged stablecoin on Cardano issued by Moneta (formerly Mehen Finance) and backed by US-dollar reserves held off-chain rather than by an on-chain crypto collateral pool.
 category: tokens
 related: [stablecoin, djed]
 ---
