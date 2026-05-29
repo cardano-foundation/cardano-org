@@ -8,6 +8,6 @@ aliases: ["Chang 1", "Chang Hard Fork"]
 related: [conway-era, plomin, cip-1694, hard-fork, voltaire]
 ---
 
-The Cardano hard fork that activated the Conway ledger era on September 1, 2024, switching on the first batch of on-chain governance features from CIP-1694: parameter changes and hard-fork-initiation governance actions.
+The Cardano hard fork that activated the Conway ledger era on September 1, 2024, switching on the first batch of on-chain governance features from CIP-1694: protocol parameter changes, hard-fork-initiation, and Info governance actions.
 
 Later Conway-era hard forks, Plomin and the ones planned after it, expand the set of supported governance actions on top of the foundation Chang laid.

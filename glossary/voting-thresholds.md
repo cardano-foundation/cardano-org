@@ -6,7 +6,7 @@ category: governance
 level: advanced
 link: /insights/governance-actions
 aliases: ["DRep Thresholds", "SPO Thresholds", "dvt", "pvt"]
-mentalModel: "The vote-count rules that decide whether each kind of governance action passes. Different action types have different bars; some only need DRep approval, some need both DRep and SPO approval, some additionally need the Constitutional Committee."
+mentalModel: "The vote-count rules that decide whether each kind of governance action passes. Different action types need different combinations of bodies: some pair DReps with the Constitutional Committee (treasury withdrawals, constitution updates, most parameter changes), some pair DReps with SPOs (no confidence, committee changes), and hard forks need all three. No action passes on DReps alone."
 related: [governance-action, drep, constitutional-committee, cip-1694, drep-activity-period, governance-action-lifetime]
 ---
 
