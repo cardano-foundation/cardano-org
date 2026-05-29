@@ -9,6 +9,6 @@ mentalModel: "Storage rent paid up front. Sending an output to the chain locks a
 related: [utxo, eutxo, native-token, ada]
 ---
 
-The minimum-ada rule prevents the ledger from filling up with dust outputs and tiny native-token amounts that would otherwise cost the network more to store than they were worth. Wallets compute the required minimum at transaction-construction time by multiplying `utxoCostPerByte` by the serialized size of the new output, then ensure the output carries at least that much ada alongside any tokens.
+The minimum-ada rule prevents the ledger from filling up with dust outputs and tiny native-token amounts that would otherwise cost the network more to store than they were worth. Wallets compute the required minimum at transaction-construction time as `(160 + serialized size of the output) × utxoCostPerByte`, where the fixed 160-byte overhead accounts for the transaction input and the output's entry in the UTxO map, then ensure the output carries at least that much ada alongside any tokens.
 
 Because the deposit is refundable on spend, holding many small UTxOs simply ties up ada temporarily rather than burning it.
