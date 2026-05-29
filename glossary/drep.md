@@ -1,7 +1,7 @@
 ---
 title: DRep
 slug: drep
-short: A delegate elected by ada holders to vote on Cardano governance actions on their behalf; the on-chain equivalent of electing a representative in parliament.
+short: A representative that ada holders delegate their on-chain voting power to, so the DRep votes on governance actions on their behalf; like choosing someone to represent your interests in parliament.
 category: governance
 link: /governance/delegate
 aliases: [Delegated Representative]

@@ -9,6 +9,6 @@ mentalModel: "A quorum floor on the Constitutional Committee. The committee can 
 related: [constitutional-committee, voting-thresholds, governance-action, cip-1694]
 ---
 
-The parameter is one of the security-critical protocol parameters, so changing it requires DRep, SPO, and Constitutional Committee approval (all three bodies) through an ordinary protocol parameter governance action.
+`committeeMinSize` belongs to the governance group of protocol parameters. Changing it requires ratification by the Constitutional Committee and DReps through a protocol-parameter governance action; stake pool operators do not vote on it, because it is not one of the security-relevant parameters.
 
-If the active committee size ever drops below `committeeMinSize`, the on-chain state is treated as a state of no-confidence until enough new members are confirmed via a committee-update governance action.
+If the number of active committee members ever drops below `committeeMinSize`, the Constitutional Committee becomes unable to ratify governance actions, so any action that needs its approval stalls until enough new members are confirmed via a committee-update governance action. This is distinct from a state of no-confidence, which is reached only through a successful no-confidence governance action.
