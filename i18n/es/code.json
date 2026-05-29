@@ -2369,7 +2369,7 @@
     "message": "Distribución del Génesis Cardano, Asignación Inicial ada"
   },
   "genesis.layout.description": {
-    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+    "message": "Distribución de cupones de tokens de ada, que son parte de la capa de asentamiento de Cardano, tuvo lugar en Asia en cuatro etapas entre octubre de 2015 y principios de enero de 2017."
   },
   "genesis.divider.distribution": {
     "message": "Distribución de Génesis"
@@ -2378,13 +2378,13 @@
     "message": "Distribución"
   },
   "genesis.distribution.paragraph1": {
-    "message": "The initial distribution of ada, essentially a pre-launch sales event, was the first in the cryptocurrency industry to set Know Your Customer guidelines, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Ada Voucher Distribution Stats section."
+    "message": "La distribución inicial de ada, esencialmente un evento de ventas previas al lanzamiento, fue la primera en la industria de criptomonedas en establecer las pautas para conocer sus clientes, y se realizó una auditoría en el proceso de distribución. Información y estadísticas sobre la distribución de cupones se detallan a continuación en la sección Estadísticas de Descubrimiento de cupones Ada."
   },
   "genesis.distribution.paragraph2": {
-    "message": "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool; IOHK, EMURGO, and the Cardano Foundation, as follows:"
+    "message": "Además de esto, la Distribución por Bloques Génesis incluye una cantidad equivalente al 20% de los cupones de ada vendidos durante el período de venta. o **5,185,414,108 ada**. Estos han sido generados y distribuidos a tres grupos de entidades del ecosistema Cardano que forman parte del Grupo de Desarrollo Técnico y Empresarial; IOHK, EMURGO y la Fundación Cardano, de la siguiente manera:"
   },
   "genesis.distribution.cardanoFoundation": {
-    "message": "The Cardano Foundation, Switzerland: **648,176,761 ada**"
+    "message": "La Fundación Cardano, Suiza: **648,176,761 ada**"
   },
   "genesis.distribution.emurgo": {
     "message": "EMURGO: **2,074,165,644 ada**"
@@ -2393,25 +2393,25 @@
     "message": "IOHK: **2,463,071,701 ada**"
   },
   "genesis.distribution.totalAmount": {
-    "message": "The public sales distribution accounts for **25,927,070,538 ada**. The total amount of ada available at launch was therefore equal to **31,112,484,646 ada**."
+    "message": "La distribución de ventas públicas representa **25,927,070,538 ada**. La cantidad total de ada disponible en el lanzamiento fue por lo tanto igual a **31,112,484,646 ada**."
   },
   "genesis.distribution.supplyTracking": {
-    "message": "Since the Genesis Block, and especially since the Shelley phase with staking rewards, Cardano token distribution and supply have been continuously expanding. This can be tracked epoch by epoch on the [Supply Insight page](/insights/supply)."
+    "message": "Desde el Bloque Génesis, y especialmente desde la fase de Shelley con premios acumulados, la distribución y el suministro de tokens de Cardano se han ido expandiendo continuamente. Esto se puede rastrear época a época en la [Página de Información de Suministros](/insights/supply)."
   },
   "genesis.divider.proceeds": {
-    "message": "Genesis Proceeds"
+    "message": "Procedimientos de Génesis"
   },
   "genesis.proceeds.title": {
     "message": "Procedimientos"
   },
   "genesis.proceeds.paragraph1": {
-    "message": "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC. Further information on the sale can be found here."
+    "message": "Los vouchers de ada fueron vendidos por una corporación japonesa y su fuerza de venta en Japón con ventas brutas totales de 108.844.5 BTC Aquí encontrará más información sobre la venta."
   },
   "genesis.proceeds.paragraph2": {
-    "message": "A part of the total sales proceeds were donated to the Cardano Foundation as follows:"
+    "message": "Una parte de los ingresos totales de ventas fueron donados a la Fundación Cardano de la siguiente manera:"
   },
   "genesis.proceeds.isleOfMan": {
-    "message": "Cardano Foundation, Isle of Man (predecessor): **1,090.00 BTC**"
+    "message": "Fundación Cardano, Isla de Man (predecesor): **1,090,00 BTC**"
   },
   "genesis.proceeds.switzerland": {
     "message": "Cardano Foundation, Switzerland: **7,168.00 BTC**"
