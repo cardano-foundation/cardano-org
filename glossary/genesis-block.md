@@ -4,7 +4,7 @@ slug: genesis-block
 short: The very first block of a blockchain, kickstarting the ledger that every subsequent block extends.
 category: general
 link: /genesis
-aliases: [Block 0, "Genesis Distribution"]
+aliases: ["Block 0"]
 related: [byron, ada, block]
 ---
 
