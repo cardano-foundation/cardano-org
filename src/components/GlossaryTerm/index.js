@@ -195,13 +195,11 @@ const ICONS = {
 };
 
 function ExploreNextCard({ term, glossaryBaseUrl, iconBasePath }) {
-  const cat = CATEGORIES[term.category];
   const iconName = pickTermIcon(term);
   return (
     <Link
       to={`${glossaryBaseUrl}/${term.slug}`}
       className={styles.exploreCard}
-      style={{ '--card-color': cat?.color || 'var(--ifm-color-emphasis-600)' }}
     >
       <span className={styles.exploreCardIcon} aria-hidden>
         <span
@@ -271,10 +269,7 @@ export default function GlossaryTerm({ term }) {
         description={term.short}
         bannerType="docs"
       />
-      <main
-        className={clsx('container', styles.detail)}
-        style={{ '--term-color': categoryDef?.color || 'var(--ifm-color-primary)' }}
-      >
+      <main className={clsx('container', styles.detail)}>
         <div className={styles.crumbRow}>
           <nav className={styles.breadcrumb} aria-label="breadcrumb">
             <Link to={glossaryUrl}>

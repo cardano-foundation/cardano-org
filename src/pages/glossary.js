@@ -11,6 +11,7 @@ import clsx from 'clsx';
 
 import {
   CATEGORIES,
+  CATEGORY_CHIP_ICONS,
   CATEGORY_ORDER,
   LEARNING_PATHS,
 } from '@site/src/data/glossaryCategories';
@@ -68,6 +69,9 @@ function getMatchScore(term, normalizedQuery) {
 
 function TermCard({ term, glossaryBaseUrl }) {
   const cat = CATEGORIES[term.category];
+  const categoryLabel = cat
+    ? translate({ id: `glossary.category.${term.category}`, message: cat.label })
+    : null;
   const levelLabel =
     term.level === 'beginner'
       ? translate({ id: 'glossary.term.level.beginner', message: 'Beginner' })
@@ -78,46 +82,39 @@ function TermCard({ term, glossaryBaseUrl }) {
     <Link to={`${glossaryBaseUrl}/${term.slug}`} className={styles.card}>
       <div className={styles.cardHeader}>
         <span className={styles.cardTitle}>{term.title}</span>
-        <span className={styles.cardHeaderMeta}>
-          {levelLabel && (
-            <span
-              className={clsx(styles.cardLevel, styles[`cardLevel_${term.level}`])}
-            >
-              {levelLabel}
-            </span>
-          )}
-          {cat && (
-            <span
-              className={styles.cardCategoryDot}
-              style={{ background: cat.color }}
-              aria-hidden
-            />
-          )}
-        </span>
+        {levelLabel && (
+          <span
+            className={clsx(styles.cardLevel, styles[`cardLevel_${term.level}`])}
+          >
+            {levelLabel}
+          </span>
+        )}
       </div>
       <span className={styles.cardShort}>{term.short}</span>
+      {categoryLabel && (
+        <span className={styles.cardCategory}>
+          <span className={styles.cardCategoryLabel}>{categoryLabel}</span>
+        </span>
+      )}
     </Link>
   );
 }
 
-function CategoryChip({ label, color, active, count, onClick }) {
+function CategoryChip({ label, icon, iconBasePath, active, count, onClick }) {
   return (
     <button
       type="button"
       onClick={onClick}
       className={clsx(styles.chip, active && styles.chipActive)}
-      style={
-        active
-          ? {
-              backgroundColor: `color-mix(in srgb, ${color} 18%, transparent)`,
-              borderColor: color,
-              color: `color-mix(in srgb, ${color} 75%, black)`,
-            }
-          : undefined
-      }
       aria-pressed={active}
     >
-      <span className={styles.chipDot} style={{ background: color }} aria-hidden />
+      {icon && (
+        <span
+          className={styles.chipIcon}
+          style={{ '--chip-icon-url': `url(${iconBasePath}${icon}.svg)` }}
+          aria-hidden
+        />
+      )}
       {label}
       <span className={styles.chipCount}>{count}</span>
     </button>
@@ -251,33 +248,25 @@ function GlossarySearch({
           className={styles.heroSearchDropdown}
           role="listbox"
         >
-          {suggestions.map((t, i) => {
-            const cat = CATEGORIES[t.category];
-            return (
-              <li
-                key={t.slug}
-                role="option"
-                aria-selected={i === highlight}
-                className={clsx(
-                  styles.heroSearchOption,
-                  i === highlight && styles.heroSearchOptionActive,
-                )}
-                onMouseEnter={() => setHighlight(i)}
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  goToTerm(t.slug);
-                }}
-              >
-                <span
-                  className={styles.heroSearchOptionDot}
-                  style={{ background: cat?.color }}
-                  aria-hidden
-                />
-                <span className={styles.heroSearchOptionTitle}>{t.title}</span>
-                <span className={styles.heroSearchOptionShort}>{t.short}</span>
-              </li>
-            );
-          })}
+          {suggestions.map((t, i) => (
+            <li
+              key={t.slug}
+              role="option"
+              aria-selected={i === highlight}
+              className={clsx(
+                styles.heroSearchOption,
+                i === highlight && styles.heroSearchOptionActive,
+              )}
+              onMouseEnter={() => setHighlight(i)}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                goToTerm(t.slug);
+              }}
+            >
+              <span className={styles.heroSearchOptionTitle}>{t.title}</span>
+              <span className={styles.heroSearchOptionShort}>{t.short}</span>
+            </li>
+          ))}
         </ul>
       )}
     </div>
@@ -614,7 +603,8 @@ export default function GlossaryIndex() {
                     id: `glossary.category.${slug}`,
                     message: def.label,
                   })}
-                  color={def.color}
+                  icon={CATEGORY_CHIP_ICONS[slug]}
+                  iconBasePath={iconBasePath}
                   active={activeCategory === slug}
                   count={categoryCounts[slug] || 0}
                   onClick={() => onCategoryClick(slug)}
