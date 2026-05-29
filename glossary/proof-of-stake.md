@@ -1,11 +1,11 @@
 ---
 title: Proof of Stake
 slug: proof-of-stake
-short: "A consensus mechanism where validators are selected to create blocks based on the amount of cryptocurrency they hold and \"stake\" as collateral."
+short: "A consensus mechanism where validators are selected to create blocks based on the amount of cryptocurrency they hold and stake (commit) to the network."
 category: consensus
 level: beginner
 mentalModel: "Trust earned by skin in the game: your influence in the network scales with how much ada you hold and stake, not with how much computing power you can throw at it."
 related: [ouroboros, proof-of-work, stake-pool]
 ---
 
-A consensus mechanism where validators are selected to create blocks based on the amount of cryptocurrency they hold and "stake" as collateral. Cardano uses proof of stake via [Ouroboros](/ouroboros/).
+A consensus mechanism where validators are selected to create blocks based on the amount of cryptocurrency they hold and stake (commit) to the network. Cardano uses proof of stake via [Ouroboros](/ouroboros/), where delegated ada stays liquid in your wallet and is never locked or slashed.

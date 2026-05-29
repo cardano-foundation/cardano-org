@@ -11,4 +11,4 @@ related: [stake-pool, pool-saturation, rewards, k-parameter]
 
 The parameter is part of Cardano's reward sharing scheme. Before delegator rewards are computed, the pool's declared fixed cost (capped below by `minPoolCost`) and margin are deducted from the gross pool reward; what remains is split pro-rata across delegators.
 
-`minPoolCost` is changed via a protocol parameter governance action and is one of the [voting-threshold-protected security parameters](/glossary/voting-thresholds), so a change requires DRep + SPO + Constitutional Committee approval.
+`minPoolCost` is an economic-group protocol parameter. It is changed through a protocol-parameter governance action ratified by the Constitutional Committee and DReps; stake pool operators do not vote on it, because it is not one of the [security-relevant parameters](/glossary/voting-thresholds) that require an additional SPO vote.

@@ -10,4 +10,4 @@ related: [proof-of-stake-attacks, proof-of-stake, ouroboros, vrf]
 
 An attack on the source of randomness that determines which validator gets to produce the next block. By selectively withholding blocks or VRF outputs at the end of an epoch, an adversary tries to nudge the seed of the next epoch toward outcomes that elect its own pools more often.
 
-Ouroboros Praos derives the per-epoch randomness from VRF outputs that the adversary cannot manipulate without controlling a stake majority, and the protocol's security proof bounds the adversary's grinding advantage tightly. Genesis tightens the same bound for the dynamic-availability setting.
+Ouroboros Praos derives the per-epoch randomness from VRF outputs and bounds the adversary's grinding advantage through protocol parameters. Grinding does not require a stake majority: it trades computational effort for a small bias of the leader schedule, and becomes meaningfully feasible once an adversary controls roughly 20% of the stake. That residual sub-majority risk is why a VDF-based mitigation has been proposed in Ouroboros Phalanx. Genesis tightens related bounds for the dynamic-availability setting.

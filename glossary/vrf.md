@@ -1,7 +1,7 @@
 ---
 title: VRF
 slug: vrf
-short: A cryptographic function that produces a verifiably random output; Cardano uses it inside Ouroboros to elect each slot's block leader fairly and unpredictably.
+short: A cryptographic function that produces a verifiably random output; Cardano uses it inside Ouroboros as a private per-slot lottery, letting each pool check whether it won the right to produce a block, fairly and unpredictably.
 category: consensus
 level: advanced
 aliases: [Verifiable Random Function]
