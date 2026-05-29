@@ -426,8 +426,8 @@ export default function GlossaryTerm({ term }) {
                     rel="noopener noreferrer"
                   >
                     {translate({
-                      id: 'glossary.term.readFullArticle',
-                      message: 'Read full article',
+                      id: 'glossary.term.openPage',
+                      message: 'Open the page',
                     })}
                     <span className={styles.visuallyHidden}>
                       {translate({
@@ -439,8 +439,8 @@ export default function GlossaryTerm({ term }) {
                 ) : (
                   <Link className={styles.sideCtaBtn} to={term.link}>
                     {translate({
-                      id: 'glossary.term.readFullArticle',
-                      message: 'Read full article',
+                      id: 'glossary.term.openPage',
+                      message: 'Open the page',
                     })}
                   </Link>
                 )}
