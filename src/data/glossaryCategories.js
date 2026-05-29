@@ -35,6 +35,19 @@ export const CATEGORY_DEFAULT_ICONS = {
   network: 'route-solid',
 };
 
+// Icons for the "Browse by category" chips on the glossary index. These lean
+// more concrete/iconic than CATEGORY_DEFAULT_ICONS (which still drives the
+// term-page surfaces) so the chip row reads at a glance.
+export const CATEGORY_CHIP_ICONS = {
+  general: 'database-solid',
+  tokens: 'coins-solid',
+  consensus: 'shield-solid',
+  'smart-contracts': 'code-solid',
+  wallets: 'key-solid',
+  governance: 'building-columns-solid',
+  network: 'globe-solid',
+};
+
 // Term-specific icons that override the per-category default in surfaces
 // that render an icon next to a term (Definition card, Explore-next cards).
 // Limit to the most recognizable terms to avoid bikeshedding 130+ icons.
