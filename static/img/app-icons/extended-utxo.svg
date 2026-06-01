@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-label="extendedutxo">
+  <defs>
+    <linearGradient id="hex-body-sm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2BD4C0"/>
+      <stop offset="100%" stop-color="#1FBFAE"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 6 L54 18 Q57 20 57 23 L57 41 Q57 44 54 46 L32 58 Q29 60 26 58 L10 46 Q7 44 7 41 L7 23 Q7 20 10 18 Z"
+        fill="url(#hex-body-sm)" stroke="#0E8F7F" stroke-width="1.2" stroke-opacity="0.2" stroke-linejoin="round"/>
+  <path d="M16 22 Q22 17 30 17" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" opacity="0.5" fill="none"/>
+  <ellipse cx="24" cy="30" rx="2.8" ry="3.3" fill="#0E2A2A"/>
+  <ellipse cx="40" cy="30" rx="2.8" ry="3.3" fill="#0E2A2A"/>
+  <ellipse cx="24.7" cy="28.7" rx="0.9" ry="1" fill="#FFFFFF"/>
+  <ellipse cx="40.7" cy="28.7" rx="0.9" ry="1" fill="#FFFFFF"/>
+  <circle cx="18" cy="38" r="2.2" fill="#FF9D7A" opacity="0.55"/>
+  <circle cx="46" cy="38" r="2.2" fill="#FF9D7A" opacity="0.55"/>
+  <path d="M26 40 Q32 46 38 40" stroke="#0E2A2A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+</svg>

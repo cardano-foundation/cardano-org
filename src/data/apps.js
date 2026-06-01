@@ -1912,6 +1912,24 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "hizz_io",
   },
+  {
+    title: "Extended UTxO",
+    description:
+      "An interactive course on Cardano's Extended UTxO model. Work through playgrounds and simulators, then build and validate your own transactions in a sandbox.",
+    tagline: "Interactive course on Cardano's eUTxO model",
+    preview: require("./app-screenshots/extended-utxo.webp"),
+    extraPreviews: [
+      require("./app-screenshots/extended-utxo-journey.webp"),
+      require("./app-screenshots/extended-utxo-builder.webp"),
+    ],
+    icon: "/img/app-icons/extended-utxo.svg",
+    website: "https://extendedutxo.com",
+    source: null,
+    category: "education",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
