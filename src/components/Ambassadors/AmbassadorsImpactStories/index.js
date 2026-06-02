@@ -2,9 +2,10 @@ import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import { FaRedditAlien } from "react-icons/fa";
+import { FaRedditAlien } from "react-icons/fa6";
 
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
 import impactData from "@site/src/data/ambassadorsImpact.json";
 import styles from "./styles.module.css";
@@ -35,13 +36,12 @@ function StoryGradient({ name }) {
 
 function StoryByline({ ambassador }) {
   if (!ambassador) return null;
-  const flag = useBaseUrl(`img/flags/${ambassador.country}.svg`);
   return (
     <div className={styles.byline}>
       <span>
         {translate({ id: "ambassadors.stories.byPrefix", message: "By" })} {ambassador.name}
       </span>
-      <img src={flag} alt="" className={styles.bylineFlag} />
+      <Flag country={ambassador.country} className={styles.bylineFlag} />
     </div>
   );
 }
