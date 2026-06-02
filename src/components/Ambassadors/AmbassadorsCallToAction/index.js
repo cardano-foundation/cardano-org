@@ -6,9 +6,9 @@ import { FiExternalLink } from "react-icons/fi";
 
 import styles from "./styles.module.css";
 
-const FORUM_URL =
+const FORUM_URL = "https://forum.cardano.org/c/ambassador-hub/141";
+const JOIN_URL =
   "https://forum.cardano.org/t/cardano-ambassadors-roles-and-responsibilities/154055";
-const JOIN_URL = "https://cardano.org/community/";
 
 export default function AmbassadorsCallToAction() {
   return (
