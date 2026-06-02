@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "lastUpdated": "2026-05-17T17:24:55.759Z",
+    "lastUpdated": "2026-05-29T21:46:27.425Z",
     "periodCalculated": "Last 12 Months",
     "dateRange": {
-      "from": "2025-05-17",
-      "to": "2026-05-17"
+      "from": "2025-05-29",
+      "to": "2026-05-29"
     }
   },
   "data": {
@@ -26,7 +26,7 @@
       "meetups": [5, 13, 43, 55, 63, 98, 108, 116, 144, 184, 192, 199],
       "developerSoftware": [3, 7, 25, 37, 42, 46, 68, 76, 80, 96, 100, 102]
     },
-    "channelsModerated": "30+",
+    "channelsModerated": "50+",
     "impactPotProposalsFunded": 37
   },
   "stats": {
@@ -75,36 +75,40 @@
   },
   "stories": [
     {
-      "id": "story-latam",
-      "ambassadorRef": "Mauro Agustín Andreoli",
-      "tagDefault": "Events",
-      "titleDefault": "Building a thriving Cardano community in Latin America",
-      "excerptDefault": "How local meetups and education initiatives are driving adoption and empowering thousands.",
-      "link": "https://forum.cardano.org/c/ambassadors/45"
+      "id": "story-governance-ba",
+      "ambassadorRef": "Otávio Lima",
+      "tagDefault": "Governance",
+      "titleDefault": "Driving on-chain governance at Cardano Summit Buenos Aires",
+      "excerptDefault": "Otávio Lima and regional builders led a panel on participatory governance and the road ahead for Cardano in Latin America.",
+      "link": "https://x.com/otaviolima/status/1993462267262746941",
+      "image": "img/ambassadors/stories/story-governance-ba.webp"
     },
     {
-      "id": "story-asia",
-      "ambassadorRef": "Andreas Sosilo",
-      "tagDefault": "Education",
-      "titleDefault": "Teaching blockchain to the next generation",
-      "excerptDefault": "From classroom workshops to nationwide university programs in Indonesia.",
-      "link": "https://forum.cardano.org/c/ambassadors/45"
+      "id": "story-onboarding-resources",
+      "ambassadorRef": "Kai Chapell",
+      "tagDefault": "Moderation",
+      "titleDefault": "Setting the standard for onboarding new Cardano users",
+      "excerptDefault": "As a moderator, Kai Chapell builds the onboarding resources that help newcomers find their footing in the community.",
+      "link": "https://www.reddit.com/user/SL13PNIR",
+      "badge": "reddit"
     },
     {
-      "id": "story-translations",
-      "ambassadorRef": "Hikaru Nomura",
-      "tagDefault": "Translations",
-      "titleDefault": "Breaking language barriers for global access",
-      "excerptDefault": "Localizing Cardano content into Japanese for one of the largest ada communities.",
-      "link": "https://forum.cardano.org/c/ambassadors/45"
-    },
-    {
-      "id": "story-development",
-      "ambassadorRef": "Kornel Gajewski",
+      "id": "story-infrastructure-roadmap",
+      "ambassadorRef": "Peter Bui",
       "tagDefault": "Development",
-      "titleDefault": "Building tools for a better ecosystem",
-      "excerptDefault": "Open-source contributions that make Cardano easier to use for developers everywhere.",
-      "link": "https://forum.cardano.org/c/ambassadors/45"
+      "titleDefault": "Mapping a full-stack infrastructure roadmap for 2026",
+      "excerptDefault": "Peter Bui lays out the infrastructure work driving real ecosystem adoption across Cardano in 2026.",
+      "link": "https://youtu.be/G6wmEu7eyv4",
+      "image": "img/ambassadors/stories/story-infrastructure-roadmap.webp"
+    },
+    {
+      "id": "story-greek-athens",
+      "ambassadorRef": "Giannis Mitsios",
+      "tagDefault": "Events",
+      "titleDefault": "Greek community convenes in Athens for workshops and events",
+      "excerptDefault": "Cardano's Greek community gathered in Athens to coordinate strategic workshops and plan upcoming events.",
+      "link": "https://forum.cardano.org/t/cardano-meeting-in-athens-gr-eng-translation/151265",
+      "image": "img/ambassadors/stories/story-greek-athens.webp"
     }
   ],
   "countryToLanguage": {
