@@ -2,7 +2,7 @@ import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import { HiArrowRight } from "react-icons/hi";
+import { FaRedditAlien } from "react-icons/fa";
 
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
@@ -46,10 +46,23 @@ function StoryByline({ ambassador }) {
   );
 }
 
-function StoryMedia({ image, name }) {
+const STORY_BADGES = {
+  reddit: { Icon: FaRedditAlien, bg: "#FF4500" },
+};
+
+function StoryMedia({ image, badge, name }) {
   const resolved = useBaseUrl(image || "");
-  if (!image) return <StoryGradient name={name} />;
-  return <img src={resolved} alt="" className={styles.storyImg} />;
+  if (image) return <img src={resolved} alt="" className={styles.storyImg} />;
+  const badgeConfig = badge && STORY_BADGES[badge];
+  if (badgeConfig) {
+    const { Icon, bg } = badgeConfig;
+    return (
+      <div className={styles.storyBadge} style={{ backgroundColor: bg }} aria-hidden="true">
+        <Icon className={styles.badgeIcon} />
+      </div>
+    );
+  }
+  return <StoryGradient name={name} />;
 }
 
 function FeaturedStory({ story }) {
@@ -57,7 +70,7 @@ function FeaturedStory({ story }) {
   return (
     <article className={styles.featured}>
       <div className={styles.featuredMedia}>
-        <StoryMedia image={story.image} name={ambassador?.name || story.titleDefault} />
+        <StoryMedia image={story.image} badge={story.badge} name={ambassador?.name || story.titleDefault} />
         {story.tagDefault && (
           <span className={styles.tagPill}>
             {translate({ id: `ambassadors.story.${story.id}.tag`, message: story.tagDefault })}
@@ -74,7 +87,6 @@ function FeaturedStory({ story }) {
         <div className={styles.featuredFooter}>
           <Link to={story.link} className={styles.readMore}>
             {translate({ id: "ambassadors.stories.readMore", message: "Read story" })}
-            <HiArrowRight />
           </Link>
           <StoryByline ambassador={ambassador} />
         </div>
@@ -88,7 +100,7 @@ function ThumbStory({ story }) {
   return (
     <Link to={story.link} className={styles.thumb}>
       <div className={styles.thumbMedia}>
-        <StoryMedia image={story.image} name={ambassador?.name || story.titleDefault} />
+        <StoryMedia image={story.image} badge={story.badge} name={ambassador?.name || story.titleDefault} />
       </div>
       <div className={styles.thumbBody}>
         {story.tagDefault && (
