@@ -10,17 +10,6 @@
     ]
   },
   {
-    "id": "cardano-effect",
-    "year": "2018",
-    "achievement": "The Cardano Effect podcast launches",
-    "bodyDefault": "Rick McCracken and Philippe Pierre-Antoine debut The Cardano Effect, an interview podcast that runs 116 episodes through 2020 with sponsorship from both IOHK and the Cardano Foundation.",
-    "ambassadorsInvolved": "Rick McCracken, Philippe Pierre-Antoine",
-    "evidence": [
-      "https://forum.cardano.org/t/the-cardano-effect-thank-you-philippe-and-rick-for-your-contribution-to-cardano/43273",
-      "https://podcasts.apple.com/us/podcast/the-cardano-effect/id1444527372"
-    ]
-  },
-  {
     "id": "cardano-on-the-rocks",
     "year": "2019",
     "achievement": "Cardano on the Rocks",
@@ -66,7 +55,7 @@
   },
   {
     "id": "catalyst-reviewers",
-    "year": "2021-2025",
+    "year": "2021",
     "achievement": "LVL2 Catalyst Reviewers",
     "bodyDefault": "Sustained, top-tier proposal review across multiple Catalyst funds, shaping how community funding gets allocated.",
     "ambassadorsInvolved": "20+ Ambassadors",
