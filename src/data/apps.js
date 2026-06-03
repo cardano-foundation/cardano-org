@@ -1930,6 +1930,20 @@ export const Showcases = [
     maintainerPick: false,
     beginnerFriendly: false,
   },
+  {
+    title: "Bending AI",
+    description:
+      "Cardano DeFi analytics platform with AI-powered insights, real-time token and wallet tracking, and on-chain data visualization for traders and investors.",
+    tagline: "AI-powered Cardano DeFi analytics and tracking",
+    preview: require("./app-screenshots/bending-ai.jpg"),
+    icon: "/img/app-icons/bending-ai.png",
+    website: "https://bending.ai",
+    source: null,
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
