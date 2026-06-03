@@ -36,6 +36,7 @@ function ProgressBar({ percentage }) {
 }
 
 function LocaleCard({ language }) {
+  const fmt = (n) => new Intl.NumberFormat('en-US').format(n);
   return (
     <div style={{
       border: '1px solid #ddd',
@@ -44,20 +45,18 @@ function LocaleCard({ language }) {
       marginBottom: '20px',
       backgroundColor: 'var(--ifm-card-background-color)',
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-        <h3 style={{ margin: 0 }}>{language.name} ({language.id})</h3>
-        <span style={{ fontSize: '14px', color: '#666' }}>
-          {language.phrases.translated} / {language.phrases.total} phrases
-        </span>
-      </div>
+      <h3 style={{ marginTop: 0, marginBottom: '12px' }}>{language.name} ({language.id})</h3>
 
       <ProgressBar percentage={language.translationProgress} />
 
-      {language.approvalProgress > 0 && (
-        <div style={{ marginTop: '8px', fontSize: '13px', color: '#666' }}>
-          {language.approvalProgress}% approved
-        </div>
-      )}
+      <div style={{ marginTop: '8px', fontSize: '13px', color: '#666' }}>
+        {fmt(language.words.translated)} / {fmt(language.words.total)} words
+        {' · '}
+        {fmt(language.phrases.translated)} / {fmt(language.phrases.total)} phrases
+        {language.approvalProgress > 0 && (
+          <>{' · '}{language.approvalProgress}% approved</>
+        )}
+      </div>
     </div>
   );
 }
