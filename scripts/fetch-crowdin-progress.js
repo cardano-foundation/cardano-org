@@ -13,6 +13,12 @@ const PROJECT_ID = process.env.CROWDIN_PROJECT_ID;
 const TOKEN = process.env.CROWDIN_PERSONAL_TOKEN;
 const OUTPUT = path.join(__dirname, "..", "src", "data", "translation-progress.json");
 
+// Map Crowdin language IDs to the locale codes Docusaurus uses
+// (see docusaurus.config.js i18n.locales). Crowdin reports es-ES, the site uses es.
+const LOCALE_MAP = {
+  "es-ES": "es",
+};
+
 if (!PROJECT_ID || !TOKEN) {
   console.error("Missing CROWDIN_PROJECT_ID or CROWDIN_PERSONAL_TOKEN env vars");
   process.exit(1);
@@ -35,7 +41,7 @@ async function fetchProgress() {
   const languages = json.data.map((entry) => {
     const d = entry.data;
     return {
-      id: d.languageId,
+      id: LOCALE_MAP[d.languageId] || d.languageId,
       name: d.language?.name || d.languageId,
       translationProgress: d.translationProgress,
       approvalProgress: d.approvalProgress,
