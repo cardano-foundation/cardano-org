@@ -1913,6 +1913,38 @@ export const Showcases = [
     x: "hizz_io",
   },
   {
+    title: "Extended UTxO",
+    description:
+      "An interactive course on Cardano's Extended UTxO model. Work through playgrounds and simulators, then build and validate your own transactions in a sandbox.",
+    tagline: "Interactive course on Cardano's eUTxO model",
+    preview: require("./app-screenshots/extended-utxo.webp"),
+    extraPreviews: [
+      require("./app-screenshots/extended-utxo-journey.webp"),
+      require("./app-screenshots/extended-utxo-builder.webp"),
+    ],
+    icon: "/img/app-icons/extended-utxo.svg",
+    website: "https://extendedutxo.com",
+    source: null,
+    category: "education",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
+  {
+    title: "Bending AI",
+    description:
+      "Cardano DeFi analytics platform with AI-powered insights, real-time token and wallet tracking, and on-chain data visualization for traders and investors.",
+    tagline: "AI-powered Cardano DeFi analytics and tracking",
+    preview: require("./app-screenshots/bending-ai.jpg"),
+    icon: "/img/app-icons/bending-ai.png",
+    website: "https://bending.ai",
+    source: null,
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
+  {
     title: "Pyth Pro",
     description:
       "Pull-based oracle delivering low-latency price feeds for crypto, equities, FX, and commodities to Cardano DeFi, sourced directly from institutional data publishers.",
