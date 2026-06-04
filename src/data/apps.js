@@ -1912,6 +1912,20 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "hizz_io",
   },
+  {
+    title: "Pyth Pro",
+    description:
+      "Pull-based oracle delivering low-latency price feeds for crypto, equities, FX, and commodities to Cardano DeFi, sourced directly from institutional data publishers.",
+    tagline: "Low-latency price feeds for Cardano DeFi",
+    icon: "/img/app-icons/pyth.jpg",
+    website: "https://www.pyth.network",
+    source: "https://github.com/pyth-network/pyth-crosschain/tree/main/lazer/contracts/cardano",
+    category: "other",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "PythNetwork",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
