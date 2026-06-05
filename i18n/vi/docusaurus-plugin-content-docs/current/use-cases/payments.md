@@ -38,4 +38,4 @@ Các Token gốc trên Cardano cho phép tạo ra Stablecoin được neo theo c
 - [Tạo ví Cardano](/apps/?tags=wallet)
 - [Nhận ada ở đâu](/where-to-get-ada)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- Xem các giải pháp doanh nghiệp

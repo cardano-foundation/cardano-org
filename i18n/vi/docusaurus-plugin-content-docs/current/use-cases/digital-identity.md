@@ -37,4 +37,4 @@ Với định danh dựa trên Blockchain, người dùng có thể chứng minh
 
 - [Khám phá các ứng dụng định danh trên Cardano](/apps/?tags=identity)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- Xem các giải pháp doanh nghiệp

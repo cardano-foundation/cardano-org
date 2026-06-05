@@ -7,13 +7,13 @@ sidebar_position: 2
 
 # Bằng cấp Giáo dục
 
-## Sự Thử thách
+## Thử thách
 
 Việc cấp chứng chỉ học thuật được thực hiện tập trung cao độ và thường thiếu minh bạch. Các loại giấy tờ tùy thân truyền thống dễ bị làm giả, khó xác minh và có thể bị mất hoặc hư hỏng. Các cơ sở giáo dục đối mặt với nhiều thách thức trong việc duy trì tính toàn vẹn của các chứng chỉ, trong khi các nhà tuyển dụng gặp khó khăn trong việc xác minh tính xác thực về trình độ chuyên môn của ứng viên.
 
 Quá trình xác minh diễn ra chậm và tốn kém, thường đòi hỏi phải liên hệ trực tiếp với các tổ chức cấp phép. Điều này tạo ra khó khăn trong quá trình tuyển dụng và có thể gây bất lợi cho các ứng viên đủ điều kiện nhưng lại có bằng cấp từ các trường khó tiếp cận hoặc không còn tồn tại.
 
-## Blockchain giải quyết vấn đề này như thế nào?
+## Cách Blockchain giải quyết vấn đề
 
 Các giải pháp xác thực và cấp chứng chỉ dựa trên công nghệ blockchain của Cardano cho phép các tổ chức giáo dục cấp chứng chỉ kỹ thuật số với các đặc điểm sau:
 
@@ -32,8 +32,8 @@ Hợp đồng thông minh có thể tự động hóa quy trình cấp phát, đ
 - Hợp đồng thông minh Aiken cung cấp logic xác minh có thể lập trình
 - **Khả năng truy cập toàn cầu** đảm bảo thông tin xác thực có thể được xác minh ở bất kỳ đâu trên thế giới
 
-## Bắt đầu
+## Hãy Bắt Đầu
 
-- [Khám phá các ứng dụng nhận dạng trên Cardano](/apps/?tags=identity)
-- [Tài nguyên dành cho người phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- [Khám phá các ứng dụng định danh trên Cardano](/apps/?tags=identity)
+- [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- Xem các giải pháp doanh nghiệp

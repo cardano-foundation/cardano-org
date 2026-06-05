@@ -37,4 +37,4 @@ Hợp đồng thông minh có thể tự động hóa việc phát hành tài li
 
 - [Khám phá các ứng dụng định danh trên Cardano](/apps/?tags=identity)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- Xem các giải pháp doanh nghiệp

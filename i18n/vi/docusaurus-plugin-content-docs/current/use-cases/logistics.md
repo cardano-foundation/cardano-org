@@ -37,4 +37,4 @@ Các thiết bị IoT có thể tự động ghi lại vị trí, nhiệt độ,
 
 - [Khám phá các giải pháp truy xuất nguồn gốc](/solutions)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- Xem các giải pháp doanh nghiệp
