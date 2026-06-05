@@ -1031,9 +1031,9 @@ export const Showcases = [
     icon: "/img/app-icons/charli3.jpg",
     statsLabel: "charli3",
     website: "https://charli3.io",
-    source: null,
+    source: "https://github.com/Charli3-Official/charli3-pull-oracle-contracts",
     category: "other",
-    properties: [],
+    properties: ["opensource"],
     maintainerPick: false,
     beginnerFriendly: false,
     x: "Oraclecharli3",
@@ -1943,6 +1943,20 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
+  },
+  {
+    title: "Pyth Pro",
+    description:
+      "Pull-based oracle delivering low-latency price feeds for crypto, equities, FX, and commodities to Cardano DeFi, sourced directly from institutional data publishers.",
+    tagline: "Low-latency price feeds for Cardano DeFi",
+    icon: "/img/app-icons/pyth.jpg",
+    website: "https://www.pyth.network",
+    source: "https://github.com/pyth-network/pyth-crosschain/tree/main/lazer/contracts/cardano",
+    category: "other",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "PythNetwork",
   },
 ];
 
