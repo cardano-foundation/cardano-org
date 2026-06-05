@@ -1705,30 +1705,6 @@
   "ambassadors.layout.description": {
     "message": "The Cardano Ambassador Program recognizes community leaders who educate, engage, and raise awareness to drive Cardano's adoption."
   },
-  "ambassadors.benefits.headline": {
-    "message": "Ambassador Status"
-  },
-  "ambassadors.benefits.title": {
-    "message": "Ambassador Status"
-  },
-  "ambassadors.benefits.description": {
-    "message": "Cardano Ambassadors are instrumental in increasing global awareness and deepening understanding of our ecosystem. Benefits include:"
-  },
-  "ambassadors.benefits.benefit1": {
-    "message": "Recognition and Visibility: Earn a unique badge and be featured on official Cardano social media channels, bolstering your reputation in the blockchain space."
-  },
-  "ambassadors.benefits.benefit2": {
-    "message": "Exclusive Access and Information: Ambassadors receive early or exclusive access to important news, updates, and events, including private meetings, webinars, and briefings."
-  },
-  "ambassadors.benefits.benefit3": {
-    "message": "Networking Opportunities: Being an Ambassador provides opportunities to connect with developers, entrepreneurs, and ecosystem leaders, opening doors for collaborations and partnerships within the Cardano community."
-  },
-  "ambassadors.benefits.benefit4": {
-    "message": "Community Engagement & Support: Receive promotional materials, funding opportunities, and engagement tools designed to help you drive community growth."
-  },
-  "ambassadors.benefits.quote": {
-    "message": "Elevating communities, one block at a time."
-  },
   "ambassadors.cta.leftTitle": {
     "message": "Become a Cardano Ambassador"
   },
@@ -3366,21 +3342,6 @@
   },
   "ambassadors.overview.description": {
     "message": "Discover profiles of {count} Cardano Ambassadors representing {countries} countries, each playing a vital part in spreading Cardano's vision worldwide."
-  },
-  "ambassadors.program.divider": {
-    "message": "Ambassador Program"
-  },
-  "ambassadors.program.title": {
-    "message": "The Cardano Community Ambassador Program"
-  },
-  "ambassadors.program.description1": {
-    "message": "The Cardano community is privileged to have committed members who actively contribute to the growth and decentralization of the ecosystem. These dedicated individuals, known as Cardano Ambassadors, play a crucial role in expanding awareness and engagement through their impactful efforts."
-  },
-  "ambassadors.program.description2": {
-    "message": "The Ambassadors come from diverse backgrounds, ages, and professions, representing countries from around the world. They contribute valuable content in more than 17 languages. New Ambassadors are welcomed through a review process that highlights individuals who consistently contribute with impact, dedication, and a commitment to strengthening the ecosystem."
-  },
-  "ambassadors.program.description3": {
-    "message": "Since its inception in 2018, the Ambassador Program has gone through a number of updates. The latest phase now focuses on impact and transparency. This change ensures that contributions are fairly measured and recognized. Ambassadors contributions are recognized through both monetary rewards, and non-financial incentives, including early access to educational resources, networking opportunities, and increased visibility within the community."
   },
   "ambassadors.roles.contentCreation.title": {
     "message": "Content Creation"
