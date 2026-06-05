@@ -61,20 +61,14 @@ Trò chuyện trực tiếp và thảo luận nhanh chóng.
 - :earth_americas: Cardano khu vực Bắc Mỹ:
   https://t.me/CardanoNorthAmericaOfficial
 - :india: Cardano Ấn Độ và  Sri Lanka: https://t.me/cardano_india
-- :earth_asia: Cardano Nam Á:
-  https://t.me/cardanosouthasia
 - :indonesia: Cardano In-đô-nê-xi-a:
   https://t.me/CardanoIndonesiaOfficial
 - :australia: Cardano Australia: https://t.me/CardanoAustralia
-- 🇧🇷 Brazil:  https://t.me/AdaBrasil
-- 🇫🇷 Pháp: https://t.me/CardanoFranceMain
-- 🇲🇽 Mexico: https://t.me/CardanoMexico
 - 🇮🇹 Italy: https://t.me/CardanoIT
 - 🇷🇺 Nga: https://t.me/cardano_rus
 - 🇷🇺 Các nhà phát triển Nga: https://t.me/CardanoRussianMain
 - 🇪🇸 Tây Ban Nha: https://t.me/CardanoEsp
 - 🇹🇷 Thổ Nhĩ Kỳ: https://t.me/CardanoTurk
-- 🇺🇸 Mỹ: https://t.me/CardanoAmerica
 - :uk: Cardano Anh: https://t.me/CardanoUK
 
 ## Hãy thêm cộng đồng của bạn

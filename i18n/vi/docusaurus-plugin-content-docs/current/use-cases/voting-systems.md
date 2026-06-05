@@ -38,4 +38,4 @@ Hệ thống quản trị của Cardano sử dụng bỏ phiếu dựa trên Blo
 - [Tìm hiểu về quản trị Cardano](/governance)
 - [Khám phá các công cụ quản trị](/apps?tags=governance)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- [Xem các giải pháp doanh nghiệp](/solutions)
+- Xem các giải pháp doanh nghiệp
