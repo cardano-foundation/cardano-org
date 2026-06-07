@@ -1958,6 +1958,21 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "PythNetwork",
   },
+  {
+    title: "Skulliance",
+    description:
+      "Play Free Match 3 RPG Games, Embark on Missions, Build your Realm, Raid Rivals, Survive Gauntlets, Stake Cardano NFTs, and Earn Rewards on Mobile and Browser.",
+    tagline: "Match 3 RPG Games, Missions, Raids, Gauntlets & NFT Staking",
+    preview: require("./app-screenshots/skulliance.webp"),
+    icon: "/img/app-icons/skulliance.png",
+    website: "https://www.skulliance.io/",
+    source: null,
+    category: "game",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "skulliance",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
