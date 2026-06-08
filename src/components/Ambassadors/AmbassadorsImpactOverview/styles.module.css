@@ -13,6 +13,14 @@
   padding-top: 0.5rem;
 }
 
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6684ce;
+}
+
 .title {
   font-size: 1.45rem;
   font-weight: 800;

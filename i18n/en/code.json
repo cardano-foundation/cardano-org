@@ -3427,6 +3427,9 @@
   "ambassadors.impact.divider": {
     "message": "Impact Overview"
   },
+  "ambassadors.impact.period": {
+    "message": "Last 12 months"
+  },
   "ambassadors.impact.title": {
     "message": "Impact Overview"
   },

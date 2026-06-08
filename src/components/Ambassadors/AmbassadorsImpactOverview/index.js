@@ -61,6 +61,9 @@ export default function AmbassadorsImpactOverview() {
     <section id="impact">
       <div className={styles.layout}>
         <div className={styles.intro}>
+          <span className={styles.eyebrow}>
+            {translate({ id: "ambassadors.impact.period", message: "Last 12 months" })}
+          </span>
           <h2 className={styles.title}>
             {translate({ id: "ambassadors.impact.title", message: "Impact Overview" })}
           </h2>
