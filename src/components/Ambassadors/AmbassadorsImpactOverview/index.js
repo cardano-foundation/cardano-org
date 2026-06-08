@@ -2,9 +2,8 @@ import React from "react";
 import { translate } from "@docusaurus/Translate";
 import { HiPencil, HiCalendar } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
-import { BsCodeSlash, BsShieldCheck } from "react-icons/bs";
+import { BsCodeSlash } from "react-icons/bs";
 
-import Sparkline from "@site/src/components/Ambassadors/Sparkline";
 import impactData from "@site/src/data/ambassadorsImpact.json";
 import styles from "./styles.module.css";
 
@@ -15,13 +14,6 @@ const CATEGORIES = [
     accent: "blue",
     labelDefault: "Content created",
     captionDefault: "Articles, videos, podcasts and threads",
-  },
-  {
-    key: "moderation",
-    icon: <BsShieldCheck />,
-    accent: "rose",
-    labelDefault: "Moderation",
-    captionDefault: "Channels moderated across platforms",
   },
   {
     key: "education",
@@ -46,7 +38,7 @@ const CATEGORIES = [
   },
 ];
 
-function ImpactCard({ category, value, trend }) {
+function ImpactCard({ category, value }) {
   const labelTranslated = translate(
     { id: `ambassadors.impact.${category.key}.label`, message: category.labelDefault },
   );
@@ -59,18 +51,12 @@ function ImpactCard({ category, value, trend }) {
       <div className={styles.label}>{labelTranslated}</div>
       <div className={styles.value}>{value.toLocaleString()}</div>
       <div className={styles.caption}>{captionTranslated}</div>
-      {trend && trend.length > 0 && (
-        <div className={styles.sparkWrap}>
-          <Sparkline data={trend} ariaLabel={labelTranslated} />
-        </div>
-      )}
     </div>
   );
 }
 
 export default function AmbassadorsImpactOverview() {
   const byCategory = impactData.data.contributionsByCategory;
-  const trends = impactData.data.trendsByCategory || {};
   return (
     <section id="impact">
       <div className={styles.layout}>
@@ -91,7 +77,6 @@ export default function AmbassadorsImpactOverview() {
               key={category.key}
               category={category}
               value={byCategory[category.key] || 0}
-              trend={trends[category.key]}
             />
           ))}
         </div>
