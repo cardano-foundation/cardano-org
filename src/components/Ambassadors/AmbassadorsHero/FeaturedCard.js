@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { HiX } from "react-icons/hi";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import { present } from "@site/src/utils/ambassadorLanguages";
@@ -36,9 +37,10 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
   const [index, setIndex] = useState(0);
   const [fading, setFading] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    if (items.length <= 1 || paused || prefersReducedMotion()) return undefined;
+    if (items.length <= 1 || paused || dismissed || prefersReducedMotion()) return undefined;
     const pending = new Set();
     function schedule(fn, delay) {
       const id = window.setTimeout(() => {
@@ -64,7 +66,7 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
       window.clearInterval(tick);
       pending.forEach((id) => window.clearTimeout(id));
     };
-  }, [items.length, paused, onLineHiddenChange]);
+  }, [items.length, paused, dismissed, onLineHiddenChange]);
 
   useEffect(() => {
     if (typeof document === "undefined") return undefined;
@@ -74,14 +76,19 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
   }, []);
 
   useEffect(() => {
-    if (!items.length || !onActiveChange) return;
+    if (!items.length || !onActiveChange || dismissed) return;
     onActiveChange(items[index % items.length].country);
-  }, [index, items, onActiveChange]);
+  }, [index, items, onActiveChange, dismissed]);
 
   const onEnter = useCallback(() => setPaused(true), []);
   const onLeave = useCallback(() => setPaused(false), []);
+  const onDismiss = useCallback(() => {
+    setDismissed(true);
+    if (onActiveChange) onActiveChange(null);
+    if (onLineHiddenChange) onLineHiddenChange(true);
+  }, [onActiveChange, onLineHiddenChange]);
 
-  if (!items.length) return null;
+  if (!items.length || dismissed) return null;
 
   const current = items[index % items.length];
   const tags = current.tags || [];
@@ -100,6 +107,17 @@ export default function FeaturedCard({ items, onActiveChange, onLineHiddenChange
       onFocus={onEnter}
       onBlur={onLeave}
     >
+      <button
+        type="button"
+        className={styles.closeBtn}
+        onClick={onDismiss}
+        aria-label={translate({
+          id: "ambassadors.hero.featured.dismiss",
+          message: "Dismiss featured ambassador",
+        })}
+      >
+        <HiX aria-hidden="true" />
+      </button>
       <div className={styles.head}>
         <div className={styles.avatarWrap}>
           <AmbassadorAvatar

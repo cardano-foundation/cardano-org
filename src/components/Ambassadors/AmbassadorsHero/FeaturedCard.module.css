@@ -23,6 +23,40 @@
   .card.fading { transition: none; opacity: 1; }
 }
 
+.closeBtn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+[data-theme="dark"] .closeBtn {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .closeBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+}
+
 .head {
   display: flex;
   align-items: center;
@@ -59,6 +93,7 @@
 
 .meta {
   min-width: 0;
+  padding-right: 1rem;
 }
 
 .name {
@@ -130,7 +165,7 @@
 
 @media (max-width: 996px) {
   .card {
-    position: static;
+    position: relative;
     transform: none;
     width: 100%;
     max-width: 320px;
