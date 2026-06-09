@@ -10,7 +10,7 @@ Thank you for considering to contribute to cardano.org. To contribute, you must 
 
 ## What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version >= 18.0 (which can be checked by running `node -v`). You can use [nvm](https://github.com/nvm-sh/nvm) for managing multiple Node versions on a single machine installed.
+- [Node.js](https://nodejs.org/en/download/) version >= 20.19 (which can be checked by running `node -v`). The repository pins `20.19.5` in its `.nvmrc`, and Node 22 LTS works as well. You can use [nvm](https://github.com/nvm-sh/nvm) to manage and switch between Node versions per project; running `nvm use` in the project root picks up the version from `.nvmrc`.
 - [Yarn](https://yarnpkg.com/en/) version >= 1.22 (which can be checked by running `yarn --version`). Yarn is a performant package manager for JavaScript and replaces the `npm` client. It is not strictly necessary but highly encouraged.
 - On macOS you also need Xcode and Command Line Tools.
 
@@ -96,7 +96,7 @@ We list here problems you may run into when running cardano.org locally.
 
 ### Minimum Node.js version not met 
 **Problem:** `yarn start` throws the error `[ERROR] Minimum Node.js version not met :(`.  
-**Solution:** use the node version listed below [requirements](#requirements). If you have different node versions installed for different projects, `nvm` is a neat tool to deal with it. You can switch versions with for example `nvm use 18`.
+**Solution:** use the Node version listed under [What you'll need](#what-youll-need). If you have different Node versions installed for different projects, `nvm` is a neat tool to deal with it. From the project root, `nvm use` reads the version from `.nvmrc`, or switch explicitly with e.g. `nvm use 20.19.5`.
 
 ## Other questions
 Various other questions and answers.
