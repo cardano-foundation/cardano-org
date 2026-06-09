@@ -1,0 +1,132 @@
+.banner {
+  position: relative;
+  margin: 2.5rem 0 1.5rem;
+  padding: 2.25rem 2.5rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.18) 1px, transparent 2px),
+    radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.14) 1px, transparent 2px),
+    radial-gradient(circle at 95% 55%, rgba(255, 255, 255, 0.12) 1px, transparent 2px),
+    linear-gradient(135deg, #002b80 0%, #0033ad 55%, #1f4dc7 100%);
+  background-size:
+    220px 220px,
+    180px 180px,
+    260px 260px,
+    auto;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  overflow: hidden;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.iconWrap {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.body {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.primaryButton:hover {
+  background: #ffffff;
+  color: #0033ad;
+  border-color: #ffffff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primaryButton:hover {
+  background: #eef2ff;
+  color: #002b80;
+}
+
+.secondaryButton,
+.secondaryButton:hover {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+}
+
+.buttonIcon {
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 1.75rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .copy {
+    flex: 1 1 auto;
+  }
+  .actions {
+    width: 100%;
+  }
+  .primaryButton,
+  .secondaryButton {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .copy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+}

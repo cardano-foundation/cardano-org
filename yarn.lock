@@ -2982,6 +2982,11 @@
     "@meshsdk/transaction" "1.9.0-beta.102"
     "@simplewebauthn/browser" "^13.0.0"
 
+"@multiavatar/multiavatar@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@multiavatar/multiavatar/-/multiavatar-1.0.7.tgz#bc2b855bab728a51ee9cee2412ee9f76282b7c78"
+  integrity sha512-Yg9Uw57bmlErsWL0CSv4d6D4ZqVBE00OZmYr9MRgygoXZdboNtsEI6FbBRw1AY8l88Sm1ARcyojtlm2uwUn0Zg==
+
 "@multiformats/dns@^1.0.3", "@multiformats/dns@^1.0.6":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@multiformats/dns/-/dns-1.0.13.tgz#cc8267ee7ee264d0ffcf113a319291f30fdcd982"
