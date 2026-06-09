@@ -1677,6 +1677,7 @@ export const Showcases = [
     description:
       "Decentralized oracle service publishing real-world event data to Cardano. Data is delivered to on-chain Plutus contracts in eUTXO-native format.",
     tagline: "Decentralized oracle for real-world data on Cardano",
+    icon: "/img/app-icons/orcfax.jpg",
     website: "https://orcfax.io",
     source: "https://github.com/orcfax/orcfax-aiken",
     category: "other",
@@ -1690,6 +1691,7 @@ export const Showcases = [
     description:
       "Cardano music ecosystem player. Discover, mint, and play CIP-60 music NFT collections in a custom audio player tuned to consensus and slot timing.",
     tagline: "Music NFT player based on CIP-60 token standard",
+    icon: "/img/app-icons/arp-radio.webp",
     website: "https://arpradio.media",
     source: null,
     category: "other",
