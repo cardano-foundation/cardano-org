@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserWallet } from '@meshsdk/wallet';
+import { detectWallets, enableWallet, firstAddressBech32 } from '@site/src/utils/cardano/wallet';
 import styles from './styles.module.css';
 
 export default function WalletConnect({ onConnect }) {
   const [connected, setConnected] = useState(false);
-  const [wallet, setWallet] = useState(null);
   const [walletName, setWalletName] = useState('');
   const [address, setAddress] = useState(null);
   const [installedWallets, setInstalledWallets] = useState([]);
 
   useEffect(() => {
-    // Get list of installed wallets
-    try {
-      const wallets = BrowserWallet.getInstalledWallets();
-      console.log('Installed wallets:', wallets);
-      setInstalledWallets(wallets || []);
-    } catch (error) {
-      console.error('Error getting installed wallets:', error);
-      setInstalledWallets([]);
-    }
+    let cancelled = false;
+    detectWallets()
+      .then((wallets) => {
+        if (!cancelled) setInstalledWallets(wallets);
+      })
+      .catch((error) => {
+        console.error('Error getting installed wallets:', error);
+        if (!cancelled) setInstalledWallets([]);
+      });
+    return () => { cancelled = true; };
   }, []);
 
   useEffect(() => {
@@ -29,22 +29,16 @@ export default function WalletConnect({ onConnect }) {
 
   const handleConnect = async (walletId, displayName) => {
     try {
-      const wallet = await BrowserWallet.enable(walletId);
-      setWallet(wallet);
+      const api = await enableWallet(walletId);
       setWalletName(displayName);
       setConnected(true);
-
-      const addresses = await wallet.getUsedAddresses();
-      if (addresses && addresses.length > 0) {
-        setAddress(addresses[0]);
-      }
+      setAddress(await firstAddressBech32(api));
     } catch (error) {
       console.error('Failed to connect wallet:', error);
     }
   };
 
   const handleDisconnect = () => {
-    setWallet(null);
     setWalletName('');
     setConnected(false);
     setAddress(null);
