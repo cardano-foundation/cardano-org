@@ -13,8 +13,8 @@ import TermExplainer from "@site/src/components/TermExplainer";
 import {translate} from '@docusaurus/Translate';
 
 // Any fetch problem will result in showing a local copy, we will then let the user know
-const localConstitutionUrl = require('!!file-loader!@site/src/data/constitution-541.md').default;
-const localConstitutionContent = require('!!raw-loader!@site/src/data/constitution-541.md').default;
+const localConstitutionUrl = require('!!file-loader!@site/src/data/constitution-608.md').default;
+const localConstitutionContent = require('!!raw-loader!@site/src/data/constitution-608.md').default;
 
 const ConstitutionList = () => {
   const [proposals, setProposals] = useState([]);
@@ -38,8 +38,15 @@ const ConstitutionList = () => {
       ? latestEnacted.contents.anchor.url.replace('ipfs://', 'https://ipfs.io/ipfs/')
       : latestEnacted.contents.anchor.url;
     axios
-      .get(url, { responseType: 'text' })
-      .then(res => setDocContent(res.data))
+      // Timeout so a hanging gateway falls back instead of spinning forever
+      .get(url, { responseType: 'text', timeout: 15000 })
+      .then(res => {
+        // Guard against empty or non-text responses (e.g. gateway error pages)
+        if (typeof res.data !== 'string' || res.data.trim().length < 200) {
+          throw new Error('Empty or invalid document received');
+        }
+        setDocContent(res.data);
+      })
       .catch(err => {
         console.error('Error loading enacted constitution:', err);
         setDocError(err.message);
@@ -148,9 +155,14 @@ const ConstitutionList = () => {
             </a>
           </div>
           {docError ? (
-            <p style={{ color: 'red' }}>
-              {translate({id: 'constitution.error.loadDocument', message: 'Could not load constitution document:'})} {docError}
-            </p>
+            <>
+              <p style={{ color: 'crimson' }}>
+                {translate({id: 'constitution.error.loadDocument', message: 'Could not load constitution document:'})} {docError}. {translate({id: 'constitution.error.showingLocal', message: 'Showing local copy below.'})}
+              </p>
+              <div style={{ maxHeight: '600px', overflow: 'auto', marginBottom: '1rem' }}>
+                <ReactMarkdown>{localConstitutionContent}</ReactMarkdown>
+              </div>
+            </>
           ) : !docContent ? (
             <p>{translate({id: 'constitution.loading.document', message: 'Loading document...'})}</p>
           ) : (
