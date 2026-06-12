@@ -1960,6 +1960,26 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "PythNetwork",
   },
+  {
+    title: "DRepTalk",
+    description:
+      "Governance tool for Cardano: delegate your voting power to a DRep, register as a DRep, and discuss every on-chain governance action beside live vote data.",
+    tagline: "Delegate, register as a DRep, and discuss governance",
+    preview: require("./app-screenshots/dreptalk-home.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dreptalk.webp"),
+      require("./app-screenshots/dreptalk-discussion.webp"),
+    ],
+    icon: "/img/app-icons/dreptalk.svg",
+    statsLabel: "dreptalk.com",
+    website: "https://dreptalk.com",
+    source: "https://github.com/katomm/dreptalk.com",
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "dreptalkcom",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
