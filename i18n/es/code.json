@@ -199,31 +199,31 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Principal",
     "description": "The ARIA label for the main navigation"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "Idiomas",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "En esta página",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "No pudimos encontrar lo que estabas buscando.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "Por favor, contacta al propietario del sitio que te enlazó a la URL original e infórmale que el enlace está roto.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Leer más",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Leer más sobre {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -3663,6 +3663,9 @@
   },
   "ambassadors.hero.featured.aria": {
     "message": "Featured Ambassador"
+  },
+  "ambassadors.hero.featured.dismiss": {
+    "message": "Dismiss featured ambassador"
   },
   "ambassadors.directory.resultMeta": {
     "message": "Showing {shown} of {total} Ambassadors"

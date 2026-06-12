@@ -3664,6 +3664,9 @@
   "ambassadors.hero.featured.aria": {
     "message": "Featured Ambassador"
   },
+  "ambassadors.hero.featured.dismiss": {
+    "message": "Dismiss featured ambassador"
+  },
   "ambassadors.directory.resultMeta": {
     "message": "Showing {shown} of {total} Ambassadors"
   },
