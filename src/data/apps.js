@@ -1980,6 +1980,20 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "dreptalkcom",
   },
+  {
+  title: "EchoForge",
+  description: "Identity and proof layer on Cardano. Anchor certificates and file hashes on-chain for a flat $1 in ADA, with a tiered wallet identity system built on real usage.",
+  tagline: "On-chain identity and proof layer",
+  preview: require("./app-screenshots/EchoForge.jpg"),
+  icon: "/img/app-icons/EchoForge.svg",
+  website: "https://echoforgellc.tech",
+  source: "https://github.com/EchoForge-Dev/Aiken_Smart-Contract",
+  category: "identity",
+  properties: ["opensource"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "EchoForgeEF",
+},
 ];
 
 export const TagList = Object.keys(Tags);
