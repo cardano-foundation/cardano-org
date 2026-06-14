@@ -1,0 +1,86 @@
+import React from "react";
+import { translate } from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
+
+import achievementsData from "@site/src/data/ambassadorsAchievements.json";
+import styles from "./styles.module.css";
+
+const achievements = [...achievementsData].reverse();
+
+function evidenceLabel(url) {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    return host;
+  } catch {
+    return "Source";
+  }
+}
+
+export default function AmbassadorsMilestones() {
+  const creditPrefix = translate({
+    id: "ambassadors.milestones.creditPrefix",
+    message: "Led by",
+  });
+
+  return (
+    <section id="milestones">
+      <div className={styles.layout}>
+        <div className={styles.intro}>
+          <h2 className={styles.title}>
+            {translate({ id: "ambassadors.milestones.title", message: "Achievements" })}
+          </h2>
+          <p className={styles.description}>
+            {translate({
+              id: "ambassadors.milestones.description",
+              message: "A handpicked timeline of Ambassador wins since 2018.",
+            })}
+          </p>
+        </div>
+        <div className={styles.timelineWrap}>
+          <ol className={styles.timeline}>
+            {achievements.map((m) => (
+              <li key={m.id} className={styles.step}>
+              <div className={styles.dot} />
+              <div className={styles.year}>{m.year}</div>
+              <h3 className={styles.stepTitle}>
+                {translate({ id: `ambassadors.milestone.${m.id}.title`, message: m.achievement })}
+              </h3>
+              {m.bodyDefault && (
+                <p className={styles.stepBody}>
+                  {translate({ id: `ambassadors.milestone.${m.id}.body`, message: m.bodyDefault })}
+                </p>
+              )}
+              {m.ambassadorsInvolved && (
+                <p className={styles.credit}>
+                  {creditPrefix}{" "}
+                  <span className={styles.creditName}>
+                    {translate({
+                      id: `ambassadors.milestone.${m.id}.credit`,
+                      message: m.ambassadorsInvolved,
+                    })}
+                  </span>
+                </p>
+              )}
+              {m.evidence && m.evidence.length > 0 && (
+                <div className={styles.evidence}>
+                  {m.evidence.map((url) => (
+                    <Link
+                      key={url}
+                      className={styles.link}
+                      to={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {evidenceLabel(url)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}

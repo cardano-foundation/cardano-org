@@ -1677,6 +1677,7 @@ export const Showcases = [
     description:
       "Decentralized oracle service publishing real-world event data to Cardano. Data is delivered to on-chain Plutus contracts in eUTXO-native format.",
     tagline: "Decentralized oracle for real-world data on Cardano",
+    icon: "/img/app-icons/orcfax.jpg",
     website: "https://orcfax.io",
     source: "https://github.com/orcfax/orcfax-aiken",
     category: "other",
@@ -1690,6 +1691,7 @@ export const Showcases = [
     description:
       "Cardano music ecosystem player. Discover, mint, and play CIP-60 music NFT collections in a custom audio player tuned to consensus and slot timing.",
     tagline: "Music NFT player based on CIP-60 token standard",
+    icon: "/img/app-icons/arp-radio.webp",
     website: "https://arpradio.media",
     source: null,
     category: "other",
@@ -1972,6 +1974,26 @@ export const Showcases = [
     maintainerPick: false,
     beginnerFriendly: false,
     x: "skulliance",
+  },
+  {
+    title: "DRepTalk",
+    description:
+      "Governance tool for Cardano: delegate your voting power to a DRep, register as a DRep, and discuss every on-chain governance action beside live vote data.",
+    tagline: "Delegate, register as a DRep, and discuss governance",
+    preview: require("./app-screenshots/dreptalk-home.webp"),
+    extraPreviews: [
+      require("./app-screenshots/dreptalk.webp"),
+      require("./app-screenshots/dreptalk-discussion.webp"),
+    ],
+    icon: "/img/app-icons/dreptalk.svg",
+    statsLabel: "dreptalk.com",
+    website: "https://dreptalk.com",
+    source: "https://github.com/katomm/dreptalk.com",
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "dreptalkcom",
   },
 ];
 

@@ -1,0 +1,130 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-top: 0.5rem;
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: #0f172a;
+}
+
+.description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+.learnMore,
+.learnMore:hover {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0033ad;
+  text-decoration: underline;
+}
+
+.learnMore:hover {
+  color: #002b80;
+}
+
+.tilesCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.25rem;
+  box-shadow: 0 4px 16px rgba(0, 51, 173, 0.06);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.6rem 0.4rem;
+  min-width: 0;
+}
+
+.tileIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 0.7rem;
+  background: rgb(var(--tile-tone) / 0.14);
+  color: rgb(var(--tile-tone));
+}
+
+.tileTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.tileDesc {
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+}
+
+.tone_blue   { --tile-tone: 58 95 214; }
+.tone_green  { --tile-tone: 16 185 129; }
+.tone_violet { --tile-tone: 124 58 237; }
+.tone_amber  { --tile-tone: 217 119 6; }
+.tone_teal   { --tile-tone: 13 148 136; }
+.tone_rose   { --tile-tone: 225 29 72; }
+.tone_orange { --tile-tone: 234 88 12; }
+
+@media (max-width: 1080px) {
+  .tilesCard {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem 0.4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .tilesCard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1rem 0.5rem;
+  }
+}
+
+[data-theme="dark"] .title       { color: var(--ifm-color-emphasis-900); }
+[data-theme="dark"] .description { color: var(--ifm-color-emphasis-700); }
+[data-theme="dark"] .tilesCard {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+[data-theme="dark"] .tileTitle   { color: var(--ifm-color-emphasis-900); }
+[data-theme="dark"] .tileDesc    { color: var(--ifm-color-emphasis-600); }
+[data-theme="dark"] .learnMore { color: #6684ce; }
+[data-theme="dark"] .learnMore:hover { color: #b4c4ff; }

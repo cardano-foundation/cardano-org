@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-05-29T21:46:27.425Z",
+    "periodCalculated": "Last 12 Months",
+    "dateRange": {
+      "from": "2025-05-29",
+      "to": "2026-05-29"
+    }
+  },
+  "data": {
+    "totalContributionsLast12Months": 2128,
+    "contributionsByCategory": {
+      "content": 927,
+      "meetups": 199,
+      "developerSoftware": 102,
+      "education": 232,
+      "businessDevelopment": 49,
+      "partnerships": 52,
+      "moderation": 485,
+      "other": 82
+    },
+    "channelsModerated": "50+",
+    "impactPotProposalsFunded": 37
+  },
+  "stats": {
+    "languages": 17,
+    "platforms": 9
+  },
+  "featuredHero": {
+    "ambassadors": [
+      {
+        "ref": "Sebastian Aravena",
+        "tags": [
+          { "label": "Software", "tone": "openSource" },
+          { "label": "Education", "tone": "education" }
+        ]
+      },
+      {
+        "ref": "Mauro Agustín Andreoli",
+        "tags": [
+          { "label": "Content", "tone": "content" },
+          { "label": "Events", "tone": "events" },
+          { "label": "Education", "tone": "education" }
+        ]
+      },
+      {
+        "ref": "Hikaru Nomura",
+        "tags": [
+          { "label": "Translations", "tone": "translations" },
+          { "label": "Content", "tone": "content" }
+        ]
+      },
+      {
+        "ref": "Andreas Sosilo",
+        "tags": [
+          { "label": "Education", "tone": "education" },
+          { "label": "Events", "tone": "events" }
+        ]
+      },
+      {
+        "ref": "Kornel Gajewski",
+        "tags": [
+          { "label": "Development", "tone": "openSource" },
+          { "label": "Translations", "tone": "translations" }
+        ]
+      }
+    ]
+  },
+  "stories": [
+    {
+      "id": "story-governance-ba",
+      "ambassadorRef": "Otávio Lima",
+      "tagDefault": "Governance",
+      "titleDefault": "Driving on-chain governance at Cardano Summit Buenos Aires",
+      "excerptDefault": "Otávio Lima and regional builders led a panel on participatory governance and the road ahead for Cardano in Latin America.",
+      "link": "https://x.com/otaviolima/status/1993462267262746941",
+      "image": "img/ambassadors/stories/story-governance-ba.webp"
+    },
+    {
+      "id": "story-onboarding-resources",
+      "ambassadorRef": "Kai Chapell",
+      "tagDefault": "Moderation",
+      "titleDefault": "Setting the standard for onboarding new Cardano users",
+      "excerptDefault": "As a moderator, Kai Chapell builds the onboarding resources that help newcomers find their footing in the community.",
+      "link": "https://www.reddit.com/user/SL13PNIR",
+      "badge": "reddit"
+    },
+    {
+      "id": "story-infrastructure-roadmap",
+      "ambassadorRef": "Peter Bui",
+      "tagDefault": "Development",
+      "titleDefault": "Mapping a full-stack infrastructure roadmap for 2026",
+      "excerptDefault": "Peter Bui lays out the infrastructure work driving real ecosystem adoption across Cardano in 2026.",
+      "link": "https://youtu.be/G6wmEu7eyv4",
+      "image": "img/ambassadors/stories/story-infrastructure-roadmap.webp"
+    },
+    {
+      "id": "story-greek-athens",
+      "ambassadorRef": "Giannis Mitsios",
+      "tagDefault": "Events",
+      "titleDefault": "Greek community convenes in Athens for workshops and events",
+      "excerptDefault": "Cardano's Greek community gathered in Athens to coordinate strategic workshops and plan upcoming events.",
+      "link": "https://forum.cardano.org/t/cardano-meeting-in-athens-gr-eng-translation/151265",
+      "image": "img/ambassadors/stories/story-greek-athens.webp"
+    }
+  ],
+  "countryToLanguage": {
+    "AR": "Spanish",
+    "AT": "German",
+    "AU": "English",
+    "BE": "French",
+    "BR": "Portuguese",
+    "CA": "English",
+    "CD": "French",
+    "CH": "German",
+    "CL": "Spanish",
+    "CN": "Chinese",
+    "CO": "Spanish",
+    "CZ": "Czech",
+    "DE": "German",
+    "FR": "French",
+    "GB": "English",
+    "GH": "English",
+    "GR": "Greek",
+    "HK": "Chinese",
+    "ID": "Indonesian",
+    "IE": "English",
+    "JP": "Japanese",
+    "KR": "Korean",
+    "KZ": "Russian",
+    "LB": "Arabic",
+    "MX": "Spanish",
+    "NL": "Dutch",
+    "NO": "Norwegian",
+    "NZ": "English",
+    "PL": "Polish",
+    "TH": "Thai",
+    "TW": "Chinese",
+    "TZ": "Swahili",
+    "US": "English",
+    "VE": "Spanish",
+    "VN": "Vietnamese",
+    "ZA": "English",
+    "_scotland": "English",
+    "ES": "Spanish",
+    "IT": "Italian",
+    "PT": "Portuguese",
+    "RU": "Russian",
+    "TR": "Turkish",
+    "UA": "Ukrainian",
+    "RO": "Romanian",
+    "HU": "Hungarian",
+    "FI": "Finnish",
+    "SE": "Swedish",
+    "DK": "Danish",
+    "IL": "Hebrew",
+    "SA": "Arabic",
+    "AE": "Arabic",
+    "EG": "Arabic",
+    "MA": "Arabic",
+    "NG": "English",
+    "KE": "English",
+    "UG": "English",
+    "ET": "Amharic",
+    "IN": "English",
+    "PK": "Urdu",
+    "BD": "Bengali",
+    "PH": "Filipino",
+    "MY": "Malay",
+    "SG": "English",
+    "PE": "Spanish",
+    "EC": "Spanish",
+    "BO": "Spanish",
+    "UY": "Spanish",
+    "CR": "Spanish"
+  }
+}

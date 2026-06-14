@@ -1,0 +1,167 @@
+[
+  {
+    "id": "program-launch",
+    "year": "2018",
+    "achievement": "Ambassador Program launches",
+    "bodyDefault": "The Cardano Foundation formally announces the Cardano Ambassador Program, defining the first four roles: Meetup Organizers, Translators, Content Creators and Moderators.",
+    "ambassadorsInvolved": "Cardano Foundation, founding Ambassador cohort",
+    "evidence": [
+      "https://forum.cardano.org/t/announcing-the-cardano-ambassador-program/19023"
+    ]
+  },
+  {
+    "id": "cardano-on-the-rocks",
+    "year": "2019",
+    "achievement": "Cardano on the Rocks",
+    "bodyDefault": "Markus Gufler demonstrates running a Cardano stake pool on an 18-watt Rock Pi single-board computer. The educational project ships hardware kits, a 3D-printed enclosure and a step-by-step guide for operators.",
+    "ambassadorsInvolved": "Markus Gufler",
+    "evidence": [
+      "https://forum.cardano.org/t/check-this-out-cardano-on-the-rocks/28952",
+      "https://github.com/clio-one/cardano-on-the-rocks"
+    ]
+  },
+  {
+    "id": "phase-2-rewards",
+    "year": "2020",
+    "achievement": "Phase 2 rewards program launches",
+    "bodyDefault": "Phase 2 of the Ambassador Program rolls out ada-denominated rewards. At rollout the program counts 58 Ambassadors across 26 countries and 28 languages.",
+    "ambassadorsInvolved": "Cardano Foundation, 58 Ambassadors at rollout",
+    "evidence": [
+      "https://forum.cardano.org/t/rollout-of-phase-2-rewards-of-the-ambassador-program/32506",
+      "https://cardanofoundation.org/blog/cardano-foundation-launches-phase-2-rewards-of-its-ambassador-program"
+    ]
+  },
+  {
+    "id": "spo-scripts",
+    "year": "2020",
+    "achievement": "SPO Scripts for stake-pool operators",
+    "bodyDefault": "Martin Lang publishes the SPO Scripts, a widely used shell-script toolkit for Cardano stake-pool operators. Covers pool creation, token transfers, Catalyst voter registration and, through the Voltaire era, DRep management and on-chain governance with hardware-wallet support.",
+    "ambassadorsInvolved": "Martin Lang",
+    "evidence": [
+      "https://github.com/gitmachtl/scripts",
+      "https://github.com/gitmachtl/cardano-signer"
+    ]
+  },
+  {
+    "id": "summit-2021",
+    "year": "2021",
+    "achievement": "Summit 2021 expands to 37 cities",
+    "bodyDefault": "The hybrid Cardano Summit was supported by 38 virtual and live community-led events across 37 cities, hosted by 57+ volunteer organisers including Cardano Ambassadors.",
+    "ambassadorsInvolved": "Cardano Ambassadors and 57+ community volunteers",
+    "evidence": [
+      "https://forum.cardano.org/t/cardano-summit-2021-bringing-our-community-together/73998"
+    ]
+  },
+  {
+    "id": "catalyst-reviewers",
+    "year": "2021",
+    "achievement": "LVL2 Catalyst Reviewers",
+    "bodyDefault": "Sustained, top-tier proposal review across multiple Catalyst funds, shaping how community funding gets allocated.",
+    "ambassadorsInvolved": "20+ Ambassadors",
+    "evidence": [
+      "https://docs.projectcatalyst.io/current-fund/community-review/community-reviewer-levels"
+    ]
+  },
+  {
+    "id": "ledger-live",
+    "year": "2022",
+    "achievement": "Ledger Live Integration",
+    "bodyDefault": "Secure Ada management lands in Ledger's flagship app, driven by an Ambassador-led Catalyst proposal.",
+    "ambassadorsInvolved": "Ambassador Guild",
+    "evidence": [
+      "https://www.ledger.com/cardano-is-here-buy-manage-your-ada-in-ledger-live",
+      "https://projectcatalyst.io/funds/7/open-source-developer-ecosystem/ledger-live-integration"
+    ]
+  },
+  {
+    "id": "summit-events",
+    "year": "2022",
+    "achievement": "30+ Cardano Summit community events",
+    "bodyDefault": "A worldwide network of community-led Summit events extending the official program across continents.",
+    "ambassadorsInvolved": "15+ Ambassadors",
+    "evidence": [
+      "https://forum.cardano.org/t/cardano-summit-2022-community-led-events/107443"
+    ]
+  },
+  {
+    "id": "summit-2023",
+    "year": "2023",
+    "achievement": "Summit 2023 satellite events in 25 cities",
+    "bodyDefault": "Around the Dubai main stage, the community organised 25 satellite events worldwide, with hosts in cities like Taipei, Seoul, Kumasi, Buenos Aires and Ho Chi Minh City.",
+    "ambassadorsInvolved": "Cardano community and Ambassadors",
+    "evidence": [
+      "https://adapulse.io/a-summary-of-the-cardano-summit-2023/"
+    ]
+  },
+  {
+    "id": "summit-2024",
+    "year": "2024",
+    "achievement": "Summit 2024 community events in 25+ countries",
+    "bodyDefault": "Community-hosted events accompanied the Dubai Summit across 25+ countries, from Addis Ababa to Amsterdam, Buenos Aires, Sydney, Seoul, Tokyo, New York and London.",
+    "ambassadorsInvolved": "Cardano community and Ambassadors",
+    "evidence": [
+      "https://adapulse.io/cardano-summit-2024-a-global-experience/"
+    ]
+  },
+  {
+    "id": "petrobras",
+    "year": "2024",
+    "achievement": "Petrobras education partnership",
+    "bodyDefault": "A landmark education partnership with one of the world's largest energy companies, opening blockchain training to Petrobras engineers.",
+    "ambassadorsInvolved": "Thiago Nunes",
+    "evidence": [
+      "https://cardanofoundation.org/blog/cardano-foundation-announces-education-partnership-with-petrobras-1"
+    ]
+  },
+  {
+    "id": "utn",
+    "year": "2024",
+    "achievement": "UTN Buenos Aires partnership",
+    "bodyDefault": "Cardano enters Argentina's largest engineering university as an official education partner.",
+    "ambassadorsInvolved": "Jose Iadiccico",
+    "evidence": [
+      "https://cardanofoundation.org/blog/cardano-foundation-reveals-newest-education-partner"
+    ]
+  },
+  {
+    "id": "alba-node",
+    "year": "2024",
+    "achievement": "First Cardano node at a LATAM university",
+    "bodyDefault": "ALBA (Ada Labs for Blockchain Applications) brings the first university-run Cardano node online in Latin America.",
+    "ambassadorsInvolved": "Jose Iadiccico, Martin Ungar",
+    "evidence": [
+      "https://x.com/CardanoSolar/status/1801597418070257894"
+    ]
+  },
+  {
+    "id": "ambassador-retreat-2025",
+    "year": "2025",
+    "achievement": "First Ambassador Retreat in Berlin",
+    "bodyDefault": "The first dedicated Cardano Ambassador workshop gathers around 12 Ambassadors at Projektraum Drahnsdorf the weekend before the Berlin Summit. The retreat is funded by Project Catalyst Fund 13 and focuses on governance, collaboration and program direction.",
+    "ambassadorsInvolved": "Felix Weber, 12 Ambassadors",
+    "evidence": [
+      "https://www.lidonation.com/en/posts/ambassadors-assemble-at-cardanosummit-berlin-2025",
+      "https://x.com/josi_sndnc/status/1987489604702707863"
+    ]
+  },
+  {
+    "id": "buidler-fest",
+    "year": "2026",
+    "achievement": "Buidler Fest, Buenos Aires",
+    "bodyDefault": "A flagship developer gathering in LATAM, organised and powered by the local Ambassador community.",
+    "ambassadorsInvolved": "9 Ambassadors",
+    "evidence": [
+      "https://x.com/Cardano/status/2041788449892540795"
+    ]
+  },
+  {
+    "id": "org-translation",
+    "year": "2026",
+    "achievement": "cardano.org community translation",
+    "bodyDefault": "Ambassadors localised cardano.org into multiple languages, making the project accessible to non-English audiences.",
+    "ambassadorsInvolved": "5 Ambassadors",
+    "evidence": [
+      "https://cardano.org/translations/"
+    ]
+  }
+]

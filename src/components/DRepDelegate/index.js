@@ -2,10 +2,14 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
-import { BrowserWallet } from "@meshsdk/wallet";
-import { MeshTxBuilder } from "@meshsdk/transaction";
-import { KoiosProvider } from "@meshsdk/provider";
 import { makeApiClient } from "@site/src/utils/insights/api";
+import {
+  detectWallets,
+  enableWallet,
+  firstAddressBech32,
+  firstRewardAddressBech32,
+  delegateVote,
+} from "@site/src/utils/cardano/wallet";
 import drepAvatarsManifest from "@site/src/data/drep-avatars.json";
 import styles from "./styles.module.css";
 
@@ -148,24 +152,28 @@ function WalletPicker({ onConnect, busy }) {
   const [pickerError, setPickerError] = useState(null);
 
   useEffect(() => {
-    try {
-      setAvailable(BrowserWallet.getInstalledWallets() || []);
-    } catch (err) {
-      setPickerError(String(err?.message || err));
-    }
+    let cancelled = false;
+    detectWallets()
+      .then((wallets) => {
+        if (!cancelled) setAvailable(wallets);
+      })
+      .catch((err) => {
+        if (!cancelled) setPickerError(String(err?.message || err));
+      });
+    return () => { cancelled = true; };
   }, []);
 
   const connect = async (walletId, displayName) => {
     try {
-      const instance = await BrowserWallet.enable(walletId);
-      const [addresses, networkId] = await Promise.all([
-        instance.getUsedAddresses(),
+      const instance = await enableWallet(walletId);
+      const [address, networkId] = await Promise.all([
+        firstAddressBech32(instance),
         instance.getNetworkId(),
       ]);
       onConnect({
         instance,
         name: displayName,
-        address: addresses?.[0] || null,
+        address,
         networkId,
       });
     } catch (err) {
@@ -554,8 +562,7 @@ export default function DRepDelegate() {
     setStakeRegistered(undefined);
     (async () => {
       try {
-        const rewardAddrs = await wallet.instance.getRewardAddresses();
-        const stakeAddr = rewardAddrs?.[0];
+        const stakeAddr = await firstRewardAddressBech32(wallet.instance);
         if (!stakeAddr) {
           if (!cancelled) { setDelegation(null); setStakeRegistered(false); }
           return;
@@ -602,27 +609,11 @@ export default function DRepDelegate() {
           message: "Wallet is on the wrong network. Switch to Mainnet and try again.",
         }));
       }
-      const provider = new KoiosProvider(API_URL);
-      const [utxos, changeAddress, rewardAddrs] = await Promise.all([
-        wallet.instance.getUtxos(),
-        wallet.instance.getChangeAddress(),
-        wallet.instance.getRewardAddresses(),
-      ]);
-      if (!rewardAddrs?.length) {
-        throw new Error("Wallet did not return a reward address.");
-      }
-      const txBuilder = new MeshTxBuilder({
-        fetcher: provider,
-        submitter: provider,
-        verbose: false,
+      const txHash = await delegateVote({
+        api: wallet.instance,
+        target,
+        koiosUrl: API_URL,
       });
-      const unsignedTx = await txBuilder
-        .voteDelegationCertificate(target, rewardAddrs[0])
-        .changeAddress(changeAddress)
-        .selectUtxosFrom(utxos)
-        .complete();
-      const signedTx = await wallet.instance.signTx(unsignedTx);
-      const txHash = await wallet.instance.submitTx(signedTx);
       setTx({ status: "success", txHash, target: displayName });
     } catch (err) {
       const kind = classifyError(err);

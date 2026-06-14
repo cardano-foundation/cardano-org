@@ -1,0 +1,140 @@
+.hero {
+  position: relative;
+  background: radial-gradient(1200px 600px at 80% -100px, rgba(102, 132, 206, 0.35), transparent 60%),
+              linear-gradient(180deg, #0a1330 0%, #0f1d4a 60%, #112255 100%);
+  color: #ffffff;
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.heroInner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6684ce;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.heroTitleAccent {
+  color: #6684ce;
+}
+
+.heroLede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(220, 230, 255, 0.85);
+  margin: 0 0 1.75rem;
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.primaryCta,
+.primaryCta:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  background: linear-gradient(135deg, #3a5fd6 0%, #5b80ff 100%);
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primaryCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(91, 128, 255, 0.4);
+}
+
+.secondaryCta,
+.secondaryCta:hover {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.heroVisual {
+  position: relative;
+  min-height: 360px;
+  align-self: end;
+}
+
+.heroMap {
+  position: relative;
+  margin: 0 -3rem -1.5rem -5rem;
+}
+
+@media (max-width: 996px) {
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .heroTitle {
+    font-size: 2.4rem;
+  }
+  .heroVisual {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.9rem;
+  }
+}

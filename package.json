@@ -33,9 +33,9 @@
     "@docusaurus/preset-classic": "^3.9.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@evolution-sdk/evolution": "^0.5.9",
     "@mdx-js/react": "^3.0.0",
-    "@meshsdk/provider": "^1.9.0-beta.100",
-    "@meshsdk/wallet": "^1.9.0-beta.90",
+    "@multiavatar/multiavatar": "^1.0.7",
     "@popperjs/core": "^2.11.8",
     "@tippyjs/react": "^4.2.6",
     "@xyflow/react": "^12.5.5",
@@ -91,6 +91,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.19.0"
   }
 }
