@@ -1,0 +1,3 @@
+# Glossary term files are parsed with a strict frontmatter regex; keep LF on all platforms.
+glossary/** text eol=lf
+i18n/**/glossary/** text eol=lf
