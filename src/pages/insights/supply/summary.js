@@ -1047,7 +1047,8 @@ function PageContent() {
           </p>
           <p>
             Stake pool pledge is a separate mechanism where pool operators commit their own ada to their pools. For detailed 
-            information about pledge, see the dedicated pledge page (coming soon).
+            information about pledge, see the dedicated{' '}
+            <Link to="/insights/stakepools/pledge">stake pool pledge insight</Link>.
           </p>
           {depositsChartData && <LineChartEcharts chartData={depositsChartData} title="Deposits" />}
           {depositsStats && (

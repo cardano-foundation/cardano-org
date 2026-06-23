@@ -4321,6 +4321,216 @@
   "insightsTemplate.content.externalLinksLabel": {
     "message": "For external links use:"
   },
+  "epochRangeSlider.start": {
+    "message": "Start:"
+  },
+  "epochRangeSlider.end": {
+    "message": "End:"
+  },
+  "epochRangeSlider.epoch": {
+    "message": "Epoch"
+  },
+  "epochRangeSlider.startAria": {
+    "message": "Start epoch"
+  },
+  "epochRangeSlider.endAria": {
+    "message": "End epoch"
+  },
+  "insightsStakepools.meta.pageTitle": {
+    "message": "Cardano Stake Pool Pledge"
+  },
+  "insightsStakepools.meta.pageDescription": {
+    "message": "How operator pledges change over time and what they mean for delegator rewards."
+  },
+  "insightsStakepools.meta.title": {
+    "message": "Stake Pool Pledge"
+  },
+  "insightsStakepools.og.title": {
+    "message": "Cardano Stake Pool Pledge"
+  },
+  "insightsStakepools.og.description": {
+    "message": "Track stake pool operator pledges across epochs and see how fulfillment affects delegator rewards."
+  },
+  "insightsStakepools.intro.description": {
+    "message": "**Explore stake pool operator pledges** on Cardano: how much ada pool owners commit from their own wallets, and how that shapes rewards for delegators. See the [pledge](/glossary/pledge) and [stake pool](/glossary/stake-pool) glossary entries for background."
+  },
+  "insightsStakepools.freshness": {
+    "message": "Data as of {generatedAt}. Covers epochs {firstEpoch}-{lastEpoch} ({poolCount} pools with promised pledge changes, {activeChangeCount} pledge-active events). Pledge-active changes omit moves below {activeMinDelta} ADA."
+  },
+  "insightsStakepools.controls.title": {
+    "message": "Chart filters"
+  },
+  "insightsStakepools.filter.minPledge": {
+    "message": "Min pledge (ADA)"
+  },
+  "insightsStakepools.filter.maxPledge": {
+    "message": "Max pledge (ADA)"
+  },
+  "insightsStakepools.filter.noMax": {
+    "message": "No max"
+  },
+  "insightsStakepools.filter.yScale": {
+    "message": "Y-axis scale"
+  },
+  "insightsStakepools.filter.pledgeView": {
+    "message": "Pool pledge status"
+  },
+  "insightsStakepools.filter.fulfilled": {
+    "message": "Fulfilled"
+  },
+  "insightsStakepools.filter.fulfilledTitle": {
+    "message": "Pools where pledge active ≥ promised for the whole selected epoch range"
+  },
+  "insightsStakepools.filter.unfulfilled": {
+    "message": "Under-pledged"
+  },
+  "insightsStakepools.filter.unfulfilledTitle": {
+    "message": "Pools under-pledged in at least one epoch of the selected range"
+  },
+  "insightsStakepools.filter.linear": {
+    "message": "Linear"
+  },
+  "insightsStakepools.filter.log": {
+    "message": "Log"
+  },
+  "insightsStakepools.filter.linearTitle": {
+    "message": "Linear scale"
+  },
+  "insightsStakepools.filter.logTitle": {
+    "message": "Log scale: values at or below 0 ADA are shown at 1 ADA"
+  },
+  "insightsStakepools.filter.logNote": {
+    "message": "Log scale (left axis): pledge values at or below 0 ADA are displayed at 1 ADA so they remain visible on the chart."
+  },
+  "insightsStakepools.loading": {
+    "message": "Loading pledge data…"
+  },
+  "insightsStakepools.error.loadTitle": {
+    "message": "Could not load pledge data"
+  },
+  "insightsStakepools.error.loadMessage": {
+    "message": "The pledge changes dataset is unavailable."
+  },
+  "insightsStakepools.toc.title": {
+    "message": "Contents"
+  },
+  "insightsStakepools.toc.pledge": {
+    "message": "Pledge changes"
+  },
+  "insightsStakepools.pledge.divider": {
+    "message": "Pledge changes"
+  },
+  "insightsStakepools.pledge.description1": {
+    "message": "When a pool owner registers a stake pool, one of the parameters they set is their **pledge**: ada from their own wallet committed to that pool. Their wallet must always hold at least that amount. If it does not, the pool earns no staking rewards for its delegators until the balance is restored."
+  },
+  "insightsStakepools.pledge.description2": {
+    "message": "The pledge amount also shapes economics for delegators. The more ada an operator can promise and keep in their wallet, the higher the relative rewards for everyone who stakes with that pool. A fully pledged pool can deliver roughly 30% more rewards than one with a very small pledge. The [a0 parameter](/glossary/a0) defines how this trade-off works."
+  },
+  "insightsStakepools.pledge.description3": {
+    "message": "Green and orange vertical segments mark pledge increases and decreases. In the fulfilled view, grey horizontal lines show stable pledge levels; the dotted blue and dashed teal lines on the right sum wallet balances and declared pledges across reward-eligible pools. Switch to Under-pledged to inspect pools that miss their promise; horizontal lines appear in light red instead of grey."
+  },
+  "insightsStakepools.chart.pledgeAxis": {
+    "message": "Pool pledge (ADA)"
+  },
+  "insightsStakepools.chart.totalPledgeAxis": {
+    "message": "Eligible totals (ADA)"
+  },
+  "insightsStakepools.distribution.titleCompare": {
+    "message": "Pledge distribution, Epoch {current} vs {compare}"
+  },
+  "insightsStakepools.distribution.seriesCurrent": {
+    "message": "Epoch {epoch}"
+  },
+  "insightsStakepools.distribution.seriesCompare": {
+    "message": "Epoch {epoch}"
+  },
+  "insightsStakepools.toc.distribution": {
+    "message": "Pledge distribution"
+  },
+  "insightsStakepools.distribution.divider": {
+    "message": "Pledge distribution"
+  },
+  "insightsStakepools.distribution.compareHint": {
+    "message": "Click an epoch in the chart above to view its distribution here. Click a second epoch to compare both side by side in the chart below (grey and blue bars)."
+  },
+  "insightsStakepools.distribution.description": {
+    "message": "Horizontal bars show how many pools fall into each pledge size band. Bucket widths follow the Y-axis mode above: 5 million ADA steps in linear view, powers of ten in log view."
+  },
+  "insightsStakepools.distribution.title": {
+    "message": "Pledge distribution, Epoch {epoch} ({date})"
+  },
+  "insightsStakepools.distribution.subtitle": {
+    "message": "{count} pools · {bucketMode} buckets"
+  },
+  "insightsStakepools.distribution.logBuckets": {
+    "message": "log-scale"
+  },
+  "insightsStakepools.distribution.linearBuckets": {
+    "message": "5M ADA"
+  },
+  "insightsStakepools.distribution.poolsLabel": {
+    "message": "pools"
+  },
+  "insightsStakepools.distribution.xAxis": {
+    "message": "Pools"
+  },
+  "insightsStakepools.distribution.yAxis": {
+    "message": "Pledge (ADA)"
+  },
+  "insightsStakepools.distribution.empty": {
+    "message": "Click an epoch in the chart above to see how pools are distributed across pledge sizes."
+  },
+  "insightsStakepools.summary.delta": {
+    "message": "Between Epoch {start} ({startDate}) and Epoch {end} ({endDate}), total pledge active among eligible pools {deltaPhrase} ({changeCount} promised-pledge change events across {poolCount} pools: {up} increases and {down} decreases)."
+  },
+  "insightsStakepools.summary.deltaUp": {
+    "message": "increased by {amount} ADA"
+  },
+  "insightsStakepools.summary.deltaDown": {
+    "message": "decreased by {amount} ADA"
+  },
+  "insightsStakepools.summary.deltaFlat": {
+    "message": "did not change"
+  },
+  "insightsStakepools.chart.clickToSelect": {
+    "message": "Click to select epoch"
+  },
+  "insightsStakepools.chart.legendTotalActive": {
+    "message": "Total pledge active"
+  },
+  "insightsStakepools.chart.legendTotalPromised": {
+    "message": "Total promised (eligible)"
+  },
+  "insightsStakepools.chart.legendUp": {
+    "message": "Promised increase"
+  },
+  "insightsStakepools.chart.legendDown": {
+    "message": "Promised decrease"
+  },
+  "insightsStakepools.chart.legendFlat": {
+    "message": "Promised (fulfilled)"
+  },
+  "insightsStakepools.chart.legendFlatUnder": {
+    "message": "Promised (under-pledged)"
+  },
+  "insightsStakepools.chart.epochAxis": {
+    "message": "Epoch"
+  },
+  "insightsStakepools.summary.title": {
+    "message": "Summary"
+  },
+  "insightsStakepools.summary.range": {
+    "message": "Between Epoch {start} ({startDate}) and Epoch {end} ({endDate}), {changeCount} pledge changes across {poolCount} pools."
+  },
+  "insightsStakepools.summary.upDown": {
+    "message": "Increases: {up} · Decreases: {down}"
+  },
+  "insightsStakepools.summary.largestUp": {
+    "message": "Largest single increase: {amount} ADA"
+  },
+  "insightsStakepools.summary.largestDown": {
+    "message": "Largest single decrease: {amount} ADA"
+  },
   "insightsTransactions.meta.pageTitle": {
     "message": "Cardano Transaction Trends"
   },
@@ -4403,7 +4613,7 @@
     "message": "Transactions & Fees Combined"
   },
   "insights.footer.text": {
-    "message": "Last updated: {lastUpdated}. Charts are using real time data."
+    "message": "Last updated: {lastUpdated}. Charts data is updated once an epoch."
   },
   "apps.card.getStarted": {
     "message": "Get Started"
