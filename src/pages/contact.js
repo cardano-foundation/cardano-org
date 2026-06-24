@@ -130,7 +130,7 @@ export default function Home() {
           <select
             className={clsx("selectField", "selectFieldArrow")}
             onChange={handleTopicChange}
-            value={selectedTopic}
+            value={selectedTopic ?? ""}
           >
             <option value="">{translate({id: 'contact.select.placeholder', message: 'not yet decided (please select)'})}</option>
             <option value="iog">
