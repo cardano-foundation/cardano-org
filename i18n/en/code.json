@@ -3691,6 +3691,9 @@
   "ambassadors.directory.socialAria.youtube": {
     "message": "YouTube channel"
   },
+  "ambassadors.directory.socialAria.github": {
+    "message": "GitHub profile"
+  },
   "ambassadors.stories.divider": {
     "message": "Impact Stories"
   },
