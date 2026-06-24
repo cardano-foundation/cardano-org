@@ -147,8 +147,9 @@ function DonutChartEcharts({ chartData }) {
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once via a lazy initializer instead of writing a
+  // ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
   
   const location = useLocation();
   const initialUrlEpoch = new URLSearchParams(location.search).get('epoch');
@@ -179,7 +180,7 @@ function PageContent() {
     }
     setIsLoading(true);
     setErrorInfo(null);
-    const api = apiRef.current ?? makeApiClient(API_URL);
+    const api = apiClient ?? makeApiClient(API_URL);
 	
     try {
       // parse & validate current URL epoch
@@ -271,6 +272,8 @@ function PageContent() {
 
   // first mount: load (uses initialUrlEpoch via window.location since we read inside fetchData)
   useEffect(() => {
+    // Trigger the initial data fetch on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [API_URL, initialUrlEpoch]); // initialUrlEpoch just to fire once with router-provided query

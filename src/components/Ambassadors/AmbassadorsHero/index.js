@@ -62,6 +62,8 @@ export default function AmbassadorsHero() {
   const [lineHidden, setLineHidden] = useState(false);
 
   useEffect(() => {
+    // Shuffle on the client only; shuffling during render would desync SSR markup.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(shuffled(FEATURED_POOL));
   }, []);
 

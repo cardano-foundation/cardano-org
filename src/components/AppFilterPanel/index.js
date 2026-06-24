@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
@@ -22,11 +22,12 @@ export default function AppFilterPanel() {
   const location = useLocation();
   const history = useHistory();
   const [open, setOpen] = useState(false);
-  const [selectedTags, setSelectedTags] = useState([]);
-
-  useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
-  }, [location.search]);
+  // Tags are derived from the URL, the single source of truth, not mirrored
+  // into local state.
+  const selectedTags = useMemo(
+    () => readSearchTags(location.search),
+    [location.search]
+  );
 
   const activeCategory = useMemo(
     () => selectedTags.find((t) => CategoryList.includes(t)) || null,

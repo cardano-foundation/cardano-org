@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { ReactFlowProvider } from "@xyflow/react";
 import GovernanceGraphs from "@site/src/components/GovernanceGraphs";
 import {translate} from '@docusaurus/Translate';
@@ -123,10 +123,24 @@ export default function GovernanceCharts({
     initialCategory || (initialChartId ? initialChartId.split(':')[0] : null)
   );
   const [activeGraphIndex, setActiveGraphIndex] = useState(null);
-  const [graphsData, setGraphsData] = useState({});
-  const [allGraphs, setAllGraphs] = useState([]);
+  // Charts are derived once from the static CATEGORY_DATA, not stored in state.
+  const graphsData = useMemo(() => {
+    const organizedData = {};
+    Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
+      organizedData[category] = data.map((chart) => ({
+        id: `${category}:${chart.title}`,
+        title: chart.title,
+        description: chart.description,
+        parameterDetails: chart.parameterDetails,
+        graphData: chart.graphData,
+        category,
+        parameters: extractParameters(chart.parameterDetails),
+      }));
+    });
+    return organizedData;
+  }, []);
+  const allGraphs = useMemo(() => Object.values(graphsData).flat(), [graphsData]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
   const [selectedParameters, setSelectedParameters] = useState(initialParameters);
   // remember last selection
@@ -155,6 +169,8 @@ export default function GovernanceCharts({
     // only if URL has realy changed
     if (urlSignature !== lastUrlSigRef.current) {
       if (initialCategory !== activeCategory) {
+        // Sync internal selection to external URL changes (back/forward).
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setActiveCategory(initialCategory || null);
         setActiveGraphIndex(null);
         setActiveChartId(null);
@@ -174,34 +190,9 @@ export default function GovernanceCharts({
   }, [urlSignature, initialCategory, initialParameters]);
 
 
-  // Initialize charts data
   useEffect(() => {
-    const organizedData = {};
-    let allGraphsList = [];
-
-    Object.entries(CATEGORY_DATA).forEach(([category, data]) => {
-      const categoryGraphs = data.map((chart) => {
-        const parameters = extractParameters(chart.parameterDetails);
-        const chartId = `${category}:${chart.title}`;
-        return {
-          id: chartId,
-          title: chart.title,
-          description: chart.description,
-          parameterDetails: chart.parameterDetails,
-          graphData: chart.graphData,
-          category: category,
-          parameters: parameters,
-        };
-      });
-      organizedData[category] = categoryGraphs;
-      allGraphsList = [...allGraphsList, ...categoryGraphs];
-    });
-
-    setGraphsData(organizedData);
-    setAllGraphs(allGraphsList);
-  }, []);
-
-  useEffect(() => {
+    // Reset the selected graph whenever the active category changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveGraphIndex(null);
   }, [activeCategory]);
 
@@ -213,15 +204,14 @@ export default function GovernanceCharts({
   }, []);
 
   // Filter charts based on search term and parameters
-  useEffect(() => {
-    let results = [];
+  const searchResults = useMemo(() => {
+    if (!searchTerm && selectedParameters.length === 0) return [];
 
-    if (searchTerm || selectedParameters.length > 0) {
-      const graphsToFilter = activeCategory
-        ? graphsData[activeCategory] || []
-        : allGraphs;
+    const graphsToFilter = activeCategory
+      ? graphsData[activeCategory] || []
+      : allGraphs;
 
-      results = graphsToFilter.filter((graph) => {
+    return graphsToFilter.filter((graph) => {
         const textMatch =
           !searchTerm ||
           graph.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -241,9 +231,6 @@ export default function GovernanceCharts({
 
         return textMatch && paramMatch;
       });
-    }
-
-    setSearchResults(results);
   }, [searchTerm, selectedParameters, allGraphs, activeCategory, graphsData]);
 
   // Close dropdown when clicking outside

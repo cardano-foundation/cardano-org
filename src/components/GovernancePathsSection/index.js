@@ -75,6 +75,8 @@ export default function GovernancePathsSection() {
     const hash = window.location.hash.replace(/^#/, "").toLowerCase();
     const idx = HASH_TO_INDEX[hash];
     if (idx == null) return;
+    // Select the section addressed by the URL hash on mount (client-only).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedIndex(idx);
     wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);

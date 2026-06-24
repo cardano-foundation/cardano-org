@@ -227,7 +227,7 @@ function LineChartEcharts({ chartData, title, yAxisName = '', hasSecondYAxis = f
         };
       })
     };
-  }, [chartData, isDark, yAxisName, hasSecondYAxis, currentEpoch]);
+  }, [chartData, isDark, yAxisName, hasSecondYAxis, currentEpoch, yAxisMin, yAxisMax]);
 
   useEffect(() => {
     if (!chartInstanceRef.current || !option) return;
@@ -261,8 +261,9 @@ function LineChartEcharts({ chartData, title, yAxisName = '', hasSecondYAxis = f
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once via a lazy initializer instead of writing a
+  // ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
 
   const location = useLocation();
 
@@ -273,7 +274,6 @@ function PageContent() {
   const [currentEpochNo, setCurrentEpochNo] = useState(null);
   const [startEpoch, setStartEpoch] = useState(MIN_EPOCH + 1);
   const [endEpoch, setEndEpoch] = useState(null);
-  const [epochData, setEpochData] = useState([]); // Filtered data for selected range
   const [allEpochData, setAllEpochData] = useState({}); // All loaded epoch data (cache)
   const [sliderStart, setSliderStart] = useState(0);
   const [sliderEnd, setSliderEnd] = useState(100);
@@ -294,7 +294,7 @@ function PageContent() {
     const fetchCurrentEpoch = async () => {
       if (!API_URL) return;
       try {
-        const api = apiRef.current ?? makeApiClient(API_URL);
+        const api = apiClient ?? makeApiClient(API_URL);
         const tipRes = await api.get('/tip');
         const tipEpoch = tipRes.data?.[0]?.epoch_no;
         setCurrentEpochNo(tipEpoch);
@@ -338,7 +338,7 @@ function PageContent() {
       }
     };
     fetchCurrentEpoch();
-  }, [API_URL]);
+  }, [API_URL, apiClient]);
 
   // Fetch ALL epoch data once on initial load
   const fetchAllEpochData = async () => {
@@ -347,7 +347,7 @@ function PageContent() {
     setIsLoading(true);
     setIsInitialLoad(true);
     setErrorInfo(null);
-    const api = apiRef.current ?? makeApiClient(API_URL);
+    const api = apiClient ?? makeApiClient(API_URL);
 
     try {
       const minEpoch = MIN_EPOCH + 1;
@@ -424,14 +424,14 @@ function PageContent() {
     return filtered.sort((a, b) => a.epoch - b.epoch);
   }, [startEpoch, endEpoch, allEpochData]);
 
-  // Update filtered data when filter changes
-  useEffect(() => {
-    setEpochData(filterEpochData);
-  }, [filterEpochData]);
+  // Filtered data for the selected range; derived directly from the memo.
+  const epochData = filterEpochData;
 
   // Fetch all data on initial load (only once)
   useEffect(() => {
     if (currentEpochNo && Object.keys(allEpochData).length === 0 && !isLoading && isInitialLoad) {
+      // Trigger the one-time full data fetch once the current epoch is known.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchAllEpochData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -726,7 +726,6 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
-                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();
@@ -777,7 +776,6 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
-                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();

@@ -127,6 +127,7 @@ export default function Home() {
   const [pastPage, setPastPage] = useState(1);
 
   const { upcomingEvents, pastEvents } = useMemo(() => {
+    const todayUTC = new Date(todayTimestamp);
     const sortedEvents = [...events].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
 
     const upcoming = sortedEvents.filter((event) => new Date(event.startDate) >= todayUTC);
@@ -146,6 +147,8 @@ export default function Home() {
   useEffect(() => {
     if (upcomingTotalPages === 0) {
       if (upcomingPage !== 1) {
+        // Clamp pagination when the upcoming list shrinks to empty.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setUpcomingPage(1);
       }
       return;
@@ -159,6 +162,8 @@ export default function Home() {
   useEffect(() => {
     if (pastTotalPages === 0) {
       if (pastPage !== 1) {
+        // Clamp pagination when the past list shrinks to empty.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPastPage(1);
       }
       return;

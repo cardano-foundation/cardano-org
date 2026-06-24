@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useMemo, useCallback } from "react";
 import Layout from "@theme/Layout";
 import {translate} from '@docusaurus/Translate';
 import { useHistory, useLocation } from "@docusaurus/router";
@@ -58,19 +58,8 @@ function useWalletFilters() {
   const location = useLocation();
   const { push } = useHistory();
 
-  const [state, setState] = useState({
-    mode: null,
-    beginnerPlatform: null,
-    platforms: [],
-    features: [],
-    custody: null,
-    type: null,
-    openSource: null,
-  });
-
-  useEffect(() => {
-    setState(readParams(location.search));
-  }, [location]);
+  // Filter state is derived from the URL, the single source of truth.
+  const state = useMemo(() => readParams(location.search), [location.search]);
 
   const updateState = useCallback(
     (newState) => {

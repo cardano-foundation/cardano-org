@@ -22,7 +22,6 @@ export const STATS_GENERATED_AT = appStatsData.metadata?.generated ?? null;
 if (process.env.NODE_ENV !== "production") {
   Object.entries(Categories).forEach(([key, def]) => {
     if (typeof def.trackable !== "boolean") {
-      // eslint-disable-next-line no-console
       console.warn(`[appStats] Category "${key}" is missing the 'trackable' boolean field`);
     }
   });
