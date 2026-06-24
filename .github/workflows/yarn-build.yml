@@ -19,4 +19,6 @@ jobs:
       - run: corepack enable
       - run: yarn install --frozen-lockfile
       - run: yarn lint
-      - run: yarn build
+      # PR check only verifies the build compiles. Build the default locale
+      # only (~5x faster); all locales are built on the production deploy.
+      - run: yarn build --locale en
