@@ -48,6 +48,8 @@
    const timeout = useRef(null);
    const tooltipId = `${id}_tooltip`;
  
+   // Resolve the portal container from the DOM (client-only).
+   /* eslint-disable react-hooks/set-state-in-effect */
    useEffect(() => {
      if (anchorEl) {
        if (typeof anchorEl === 'string') {
@@ -59,6 +61,7 @@
        setContainer(document.body);
      }
    }, [container, anchorEl]);
+   /* eslint-enable react-hooks/set-state-in-effect */
  
    useEffect(() => {
      const showEvents = ['mouseenter', 'focus'];

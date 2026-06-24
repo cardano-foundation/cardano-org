@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
@@ -439,8 +439,9 @@ function SpecialOption({ label, help, onSelect, target, disabled }) {
 export default function DRepDelegate() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once. A lazy useState initializer keeps it stable
+  // across renders without reading a ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
 
   const [pool, setPool] = useState([]);
   const [displayed, setDisplayed] = useState([]);
@@ -453,13 +454,15 @@ export default function DRepDelegate() {
 
   useEffect(() => {
     if (!API_URL) return;
-    const api = apiRef.current;
+    const api = apiClient;
     if (!api) return;
 
     let cancelled = false;
 
     const cached = readPoolCache();
     if (cached) {
+      // Hydrate from the client-only localStorage cache on mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPool(cached);
       setDisplayed(fisherYates(cached).slice(0, DISPLAY_COUNT));
       setLoading(false);
@@ -536,7 +539,7 @@ export default function DRepDelegate() {
 
     fetchDReps();
     return () => { cancelled = true; };
-  }, [API_URL]);
+  }, [API_URL, apiClient]);
 
   const reshuffle = useCallback(() => {
     setDisplayed(fisherYates(pool).slice(0, DISPLAY_COUNT));
@@ -555,9 +558,11 @@ export default function DRepDelegate() {
 
   useEffect(() => {
     if (!wallet) return;
-    const api = apiRef.current;
+    const api = apiClient;
     if (!api) return;
     let cancelled = false;
+    // Reset delegation state when the connected wallet changes, before refetch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDelegation(undefined);
     setStakeRegistered(undefined);
     (async () => {
@@ -585,7 +590,7 @@ export default function DRepDelegate() {
       }
     })();
     return () => { cancelled = true; };
-  }, [wallet, pool, tx.status]);
+  }, [wallet, pool, tx.status, apiClient]);
 
   const handleSelect = useCallback(async (target, displayName) => {
     if (!wallet || wrongNetwork || txBusy) return;

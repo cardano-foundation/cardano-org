@@ -55,6 +55,8 @@ const ConstitutionList = () => {
 
   useEffect(() => {
     if (!API_URL || !API_KEY) {
+      // Surface the missing-config error; this branch runs once, not in a loop.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setError('API URL or API Key is missing!');
       return;
     }

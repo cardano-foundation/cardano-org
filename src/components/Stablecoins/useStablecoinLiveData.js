@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import {
@@ -41,10 +41,10 @@ export default function useStablecoinLiveData() {
   const koiosUrl = customFields.CARDANO_ORG_API_URL;
   const cgUrl = customFields.CARDANO_ORG_CG_API_URL;
 
-  const koiosRef = useRef(null);
-  const cgRef = useRef(null);
-  if (!koiosRef.current && koiosUrl) koiosRef.current = makeApiClient(koiosUrl);
-  if (!cgRef.current && cgUrl) cgRef.current = makeApiClient(cgUrl);
+  // Create the API clients once via lazy initializers instead of writing refs
+  // during render.
+  const [koios] = useState(() => (koiosUrl ? makeApiClient(koiosUrl) : null));
+  const [cg] = useState(() => (cgUrl ? makeApiClient(cgUrl) : null));
 
   const [pricesById, setPricesById] = useState(null);
   const [pricesStatus, setPricesStatus] = useState("loading");
@@ -53,12 +53,12 @@ export default function useStablecoinLiveData() {
 
   useEffect(() => {
     if (!koiosUrl || !cgUrl) {
+      // Missing API config: flag both as errored. One-shot, not a render loop.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPricesStatus("error");
       setFeeStatus("error");
       return undefined;
     }
-    const koios = koiosRef.current;
-    const cg = cgRef.current;
     if (!koios || !cg) {
       setPricesStatus("error");
       setFeeStatus("error");
@@ -101,7 +101,6 @@ export default function useStablecoinLiveData() {
         setPricesStatus("ready");
       } catch (err) {
         if (cancelled) return;
-        // eslint-disable-next-line no-console
         console.error("useStablecoinLiveData: prices fetch failed", err);
         setPricesStatus("error");
       }
@@ -139,7 +138,6 @@ export default function useStablecoinLiveData() {
         }
       } catch (err) {
         if (cancelled) return;
-        // eslint-disable-next-line no-console
         console.error("useStablecoinLiveData: fee fetch failed", err);
         setFeeStatus("error");
       }
@@ -150,7 +148,7 @@ export default function useStablecoinLiveData() {
     return () => {
       cancelled = true;
     };
-  }, [koiosUrl, cgUrl]);
+  }, [koiosUrl, cgUrl, koios, cg]);
 
   return { pricesById, pricesStatus, avgFeeAda, feeStatus };
 }
@@ -189,7 +187,6 @@ async function fetchKoiosMarketCaps(koios, currentPrices) {
     );
     rows = Array.isArray(res?.data) ? res.data : [];
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error("useStablecoinLiveData: Koios asset_info failed", err);
     return {};
   }

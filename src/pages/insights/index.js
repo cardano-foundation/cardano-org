@@ -127,7 +127,11 @@ export default function InsightsIndex() {
     });
   }, [allItems, query, activeTags]);
 
-  useEffect(() => { setPage(0); }, [query, activeTags]);
+  useEffect(() => {
+    // Reset to the first page when the query or active tags change.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPage(0);
+  }, [query, activeTags]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const start = page * PER_PAGE;

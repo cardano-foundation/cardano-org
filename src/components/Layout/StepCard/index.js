@@ -54,11 +54,13 @@ export default function StepCard({ steps = [], initialStep = 1, onStepChange, wa
         console.error('Failed to save step to localStorage', e);
       }
     }
-  }, [currentStep]);
+  }, [currentStep, storageKey]);
 
   // Auto-check the checkbox when wallet is connected on step 4
   React.useEffect(() => {
     if (currentStep === 4 && walletConnected) {
+      // Auto-check once the wallet connects on step 4.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setChecked(true);
     }
   }, [currentStep, walletConnected]);

@@ -32,7 +32,11 @@ export default function InsightsEpochNav({
   const [input, setInput] = useState(String(displayedEpoch));
   const inputRef = useRef(null);
 
-  useEffect(() => { setInput(String(displayedEpoch)); }, [displayedEpoch]);
+  useEffect(() => {
+    // Keep the editable input in sync when the displayed epoch prop changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setInput(String(displayedEpoch));
+  }, [displayedEpoch]);
 
   useEffect(() => {
     if (isJumpMode && inputRef.current) setTimeout(() => inputRef.current?.focus(), 50);

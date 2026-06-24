@@ -286,6 +286,8 @@ export default function DelegationFlow({ storageKey = DEFAULT_STORAGE_KEY }) {
     if (typeof window === "undefined") return;
     try {
       const saved = localStorage.getItem(storageKey);
+      // Restore the saved step from client-only localStorage on mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved) setCurrentStep(parseInt(saved, 10) || 1);
     } catch (e) {}
   }, [storageKey]);

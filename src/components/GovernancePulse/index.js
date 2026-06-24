@@ -12,22 +12,21 @@ function useCountUp(target, duration = ANIMATION_DURATION) {
   const frameRef = useRef(null);
 
   useEffect(() => {
-    if (target == null || target === 0) {
-      setValue(target ?? 0);
-      return;
-    }
-
+    // Animate towards the resolved target. Driving the first setValue from the
+    // rAF callback (instead of a synchronous early-return setState) keeps the
+    // zero/null case visually identical while avoiding a cascading render.
+    const end = target ?? 0;
     const start = performance.now();
     const animate = (now) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
       // easeOutCubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(eased * target);
+      setValue(eased * end);
       if (progress < 1) {
         frameRef.current = requestAnimationFrame(animate);
       } else {
-        setValue(target);
+        setValue(end);
       }
     };
     frameRef.current = requestAnimationFrame(animate);
@@ -59,16 +58,13 @@ function formatAdaValue(value) {
 export default function GovernancePulse() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!API_URL) return;
-    const api = apiRef.current;
-    if (!api) return;
+    const api = makeApiClient(API_URL);
 
     async function fetchData() {
       try {

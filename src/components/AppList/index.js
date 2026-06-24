@@ -81,7 +81,6 @@ export default function AppList({ categories = [], beginnerFriendly = false, slu
         .map((slug) => {
           const found = Showcases.find((app) => app.slug === slug);
           if (!found && process.env.NODE_ENV !== 'production') {
-            // eslint-disable-next-line no-console
             console.warn(`[AppList] Unknown slug "${slug}" — no matching app in Showcases.`);
           }
           return found;

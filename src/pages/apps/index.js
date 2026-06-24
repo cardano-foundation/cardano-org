@@ -227,6 +227,8 @@ function useFilteredProjects() {
   const [sortOption, setSortOption] = useState(DEFAULT_SORT);
 
   useEffect(() => {
+    // Sync filters from the URL; all of these are also user-controlled.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedTags(readSearchTags(location.search));
     setOperator(readOperator(location.search));
     setLatest(readLatestOperator(location.search));
@@ -278,6 +280,8 @@ function SearchBar() {
 
   useEffect(() => {
     const newValue = readSearchName(location.search) || "";
+    // Sync the search box from the URL; it is also user-editable.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setValue(newValue);
     if (
       location.state?.isSearch &&
@@ -288,14 +292,15 @@ function SearchBar() {
     }
   }, [location]);
 
-  const debouncedHistoryPush = useCallback(
-    _debounce((newSearchString) => {
-      history.push({
-        ...location,
-        search: newSearchString,
-        state: { isSearch: true },
-      });
-    }, 300),
+  const debouncedHistoryPush = useMemo(
+    () =>
+      _debounce((newSearchString) => {
+        history.push({
+          ...location,
+          search: newSearchString,
+          state: { isSearch: true },
+        });
+      }, 300),
     [history, location]
   );
 

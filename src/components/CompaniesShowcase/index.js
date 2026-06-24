@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useLocation, useHistory } from "@docusaurus/router";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
@@ -92,9 +92,10 @@ export default function CompaniesShowcase() {
   const params = new URLSearchParams(location.search);
   const activeTab = params.get("tab");
 
-  const activeCompany = activeTab
-    ? companies.find((c) => getCompanyId(c) === activeTab)
-    : null;
+  const activeCompany = useMemo(
+    () => (activeTab ? companies.find((c) => getCompanyId(c) === activeTab) : null),
+    [activeTab]
+  );
 
   useEffect(() => {
     if (activeCompany && spotlightRef.current) {
@@ -103,7 +104,7 @@ export default function CompaniesShowcase() {
         block: "start",
       });
     }
-  }, [activeTab]);
+  }, [activeCompany]);
 
   function handleSelect(company) {
     const id = getCompanyId(company);
