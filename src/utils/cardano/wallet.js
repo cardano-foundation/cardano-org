@@ -6,9 +6,53 @@
 
 let evolutionPromise;
 
+// The SDK's HTTP layer (@effect/platform) adds tracing headers (traceparent, b3)
+// to every request. They aren't CORS-safelisted, so the browser preflights them
+// and the Koios proxy (which allows only Content-Type) rejects it, breaking all
+// SDK Koios calls with "Failed to fetch". We can't disable propagation on the
+// SDK's internal client, so we strip these headers at global fetch; they carry
+// no client-side meaning, so removing them is safe.
+const TRACING_HEADERS = [
+  "traceparent",
+  "tracestate",
+  "b3",
+  "x-b3-traceid",
+  "x-b3-spanid",
+  "x-b3-sampled",
+  "x-b3-parentspanid",
+];
+let fetchPatched = false;
+
+function stripTracingHeadersFromGlobalFetch() {
+  if (fetchPatched) return;
+  if (typeof globalThis === "undefined" || typeof globalThis.fetch !== "function") return;
+  const originalFetch = globalThis.fetch.bind(globalThis);
+  globalThis.fetch = (input, init) => {
+    try {
+      if (typeof Request !== "undefined" && input instanceof Request) {
+        const headers = new Headers(input.headers);
+        let changed = false;
+        for (const name of TRACING_HEADERS) {
+          if (headers.has(name)) { headers.delete(name); changed = true; }
+        }
+        if (changed) input = new Request(input, { headers });
+      } else if (init && init.headers) {
+        const headers = new Headers(init.headers);
+        for (const name of TRACING_HEADERS) headers.delete(name);
+        init = { ...init, headers };
+      }
+    } catch {
+      // Never let header cleanup break a request; fall through to the original.
+    }
+    return originalFetch(input, init);
+  };
+  fetchPatched = true;
+}
+
 // Memoized dynamic import of the Evolution SDK.
 export function loadEvolution() {
   if (!evolutionPromise) {
+    stripTracingHeadersFromGlobalFetch();
     evolutionPromise = import("@evolution-sdk/evolution");
   }
   return evolutionPromise;
