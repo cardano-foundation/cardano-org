@@ -160,3 +160,80 @@ export async function delegateVote({ api, target, koiosUrl }) {
   const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
   return api.submitTx(signedTx);
 }
+
+// Bech32-encode a decoded output address, tolerating exotic address types.
+function tryAddressBech32(Address, address) {
+  try {
+    return Address.toBech32(address);
+  } catch {
+    return null;
+  }
+}
+
+// Build, sign and submit a Conway treasury donation transaction. The builder
+// has no treasury-donation op, so we pay the amount to ourselves to make coin
+// selection reserve the funds and compute fee/change, then rewrite the body:
+// drop that self-payment output and carry the same lovelace as the Conway
+// donation instead (with currentTreasuryValue, which the ledger requires to
+// match the treasury at submission). Returns the submitted tx hash.
+export async function donateToTreasury({ api, amountLovelace, currentTreasuryValue, koiosUrl }) {
+  const { Client, mainnet, Transaction, Address, Assets } = await loadEvolution();
+
+  const donation = BigInt(amountLovelace);
+  if (donation <= 0n) {
+    throw new Error("Donation amount must be greater than zero.");
+  }
+
+  const ownAddress = await firstAddressBech32(api);
+  if (!ownAddress) {
+    throw new Error("Wallet did not return a usable address.");
+  }
+
+  const client = Client.make(mainnet)
+    .withKoios({ baseUrl: koiosUrl })
+    .withCip30(api);
+  // autoMinUtxo:false keeps the output at exactly `donation` lovelace so the
+  // body rewrite below can match and drop it (a bumped output wouldn't match).
+  const built = await client
+    .newTx()
+    .payToAddress({
+      address: Address.fromBech32(ownAddress),
+      assets: Assets.fromLovelace(donation),
+      autoMinUtxo: false,
+    })
+    .build();
+
+  const tx = await built.toTransaction();
+  const body = tx.body;
+
+  let removed = false;
+  const keptOutputs = [];
+  for (const output of body.outputs) {
+    const assets = output.assets;
+    const isSelfPayment =
+      !removed &&
+      assets != null &&
+      assets.multiAsset === undefined &&
+      assets.lovelace === donation &&
+      tryAddressBech32(Address, output.address) === ownAddress;
+    if (isSelfPayment) {
+      removed = true;
+      continue;
+    }
+    keptOutputs.push(output);
+  }
+  if (!removed) {
+    throw new Error("Could not locate the temporary self-payment output for the treasury donation.");
+  }
+
+  // The SDK's body/output objects are plain mutable instances; mutate in place
+  // rather than reconstructing the tagged classes.
+  body.outputs = keptOutputs;
+  body.currentTreasuryValue = BigInt(currentTreasuryValue);
+  body.donation = donation;
+
+  const unsignedTx = Transaction.toCBORHex(tx);
+  const witnessSet = await api.signTx(unsignedTx, false);
+  const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
+  return api.submitTx(signedTx);
+}
