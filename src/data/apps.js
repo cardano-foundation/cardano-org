@@ -395,10 +395,10 @@ export const Showcases = [
     tagline: "Self-custody neofinance, successor to Yoroi",
     icon: "/img/app-icons/secondfi.png",
     website: "https://secondfi.io",
-    source: "https://github.com/Emurgo/yoroi-frontend",
+    source: null,
     category: "wallet",
-    properties: ["nft", "mobile", "opensource"],
-    maintainerPick: true,
+    properties: ["nft", "mobile"],
+    maintainerPick: false,
     beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
