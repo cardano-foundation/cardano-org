@@ -1,19 +1,19 @@
 ---
-title: Music & IP
+title: Musik & geistiges Eigentum
 description: Direct royalty payments to artists through blockchain technology on Cardano
-sidebar_label: Music & IP
+sidebar_label: Musik & geistiges Eigentum
 sidebar_position: 16
 ---
 
 # Music & Intellectual Property
 
-## The Challenge
+## Die Herausforderung
 
 Artists and creators often receive a small fraction of the revenue their work generates. Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
 
 Intellectual property rights are difficult to track and enforce in the digital age. Piracy is rampant, and even legitimate uses often fail to compensate creators fairly.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain technology enables direct relationships between creators and consumers:
 
@@ -25,7 +25,7 @@ Blockchain technology enables direct relationships between creators and consumer
 
 NFTs and native tokens on Cardano enable new models for music distribution, from limited edition releases to ongoing royalty streams that fairly compensate all contributors.
 
-## Why Cardano
+## Warum Cardano
 
 - **Low transaction fees** make micropayments to artists economically viable
 - **Native tokens** enable efficient representation of rights and royalties
@@ -33,8 +33,8 @@ NFTs and native tokens on Cardano enable new models for music distribution, from
 - **Community focus** aligns with artists seeking alternatives to corporate control
 - **Sustainability** through proof of stake appeals to environmentally conscious creators
 
-## Get Started
+## Erste Schritte
 
 - [Explore NFT marketplaces on Cardano](/apps/?tags=nft)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

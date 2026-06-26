@@ -1,19 +1,19 @@
 ---
-title: Retail
+title: Einzelhandel
 description: Combat counterfeiting with blockchain-verified product provenance on Cardano
-sidebar_label: Retail
+sidebar_label: Einzelhandel
 sidebar_position: 9
 ---
 
-# Retail
+# Einzelhandel
 
-## The Challenge
+## Die Herausforderung
 
 Counterfeiting costs legitimate businesses hundreds of billions of dollars annually and poses real risks to consumers. From luxury goods to electronics to pharmaceuticals, fake products flood markets worldwide. Traditional anti-counterfeiting measures like holograms and serial numbers are easily replicated.
 
 Consumers struggle to verify product authenticity, especially when purchasing through secondary markets or online platforms. Legitimate brands face reputational damage when counterfeits bearing their name cause harm or disappointment.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain-based product authentication provides unforgeable proof of origin and ownership:
 
@@ -25,7 +25,7 @@ Blockchain-based product authentication provides unforgeable proof of origin and
 
 Smart contracts can link physical products to digital twins, enabling automated warranty claims, loyalty rewards, and product registration.
 
-## Why Cardano
+## Warum Cardano
 
 - **Native tokens** enable efficient product tokenization without complex smart contracts
 - **Low fees** make tracking individual items economically viable
@@ -33,8 +33,8 @@ Smart contracts can link physical products to digital twins, enabling automated 
 - **Consumer-friendly verification** through mobile applications
 - **Enterprise solutions** proven in real-world retail deployments
 
-## Get Started
+## Erste Schritte
 
 - [Explore authenticity solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)
