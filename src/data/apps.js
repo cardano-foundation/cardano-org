@@ -1065,6 +1065,18 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
+    title: "Treasury Donation",
+    description:
+      "Connect a CIP-30 wallet and donate ada directly to the Cardano treasury in a single, non-custodial transaction. Hosted on cardano.org.",
+    tagline: "Donate ada to the Cardano treasury",
+    website: "https://cardano.org/governance/treasury",
+    source: null,
+    category: "governance",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
+  {
     title: "Chang Watch",
     description:
       "Cardano governance dashboard with donut charts and tables that visualize vote distribution, DRep concentration, and governance action outcomes.",
