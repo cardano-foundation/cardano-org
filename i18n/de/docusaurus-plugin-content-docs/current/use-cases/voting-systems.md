@@ -1,19 +1,19 @@
 ---
-title: Voting Systems
+title: Wahlsysteme
 description: Secure, transparent election systems using Cardano blockchain technology
-sidebar_label: Voting Systems
+sidebar_label: Wahlsysteme
 sidebar_position: 14
 ---
 
-# Voting Systems
+# Wahlsysteme
 
-## The Challenge
+## Die Herausforderung
 
 Election integrity is fundamental to democracy, yet voting systems face persistent challenges. Paper-based systems are slow and error-prone, while electronic systems raise concerns about security, auditability, and trust. Voters often cannot verify that their vote was counted correctly.
 
 Beyond governmental elections, organizations of all types need secure voting mechanisms for governance decisions. Current solutions often lack transparency or are vulnerable to manipulation.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain voting systems provide security, transparency, and verifiability:
 
@@ -25,7 +25,7 @@ Blockchain voting systems provide security, transparency, and verifiability:
 
 Cardano's own governance uses blockchain-based voting, demonstrating the technology's viability for high-stakes decisions affecting billions of dollars in value.
 
-## Why Cardano
+## Warum Cardano
 
 - **Proven governance voting** through Catalyst and on-chain governance
 - **Privacy-preserving options** protect voter anonymity while ensuring integrity
@@ -33,9 +33,9 @@ Cardano's own governance uses blockchain-based voting, demonstrating the technol
 - **Community governance experience** provides real-world insights
 - **Research-driven approach** addresses complex voting system requirements
 
-## Get Started
+## Erste Schritte
 
 - [Learn about Cardano governance](/governance)
 - [Explore governance tools](/apps?tags=governance)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

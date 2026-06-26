@@ -1,19 +1,19 @@
 ---
-title: Payments
+title: Zahlungen
 description: Fast, low-cost cross-border transfers using Cardano blockchain technology
-sidebar_label: Payments
+sidebar_label: Zahlungen
 sidebar_position: 7
 ---
 
-# Payments
+# Zahlungen
 
-## The Challenge
+## Die Herausforderung
 
 Cross-border payments remain slow, expensive, and opaque. Traditional remittance services charge fees averaging 6-7% globally, with some corridors exceeding 10%. Transactions can take days to settle, and recipients often have limited options for accessing funds.
 
 For the millions of migrant workers sending money home to support their families, these fees represent a significant burden. The World Bank estimates that reducing remittance fees to 3% could save senders over $20 billion annually.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Cardano enables fast, low-cost payments that settle in minutes rather than days:
 
@@ -25,7 +25,7 @@ Cardano enables fast, low-cost payments that settle in minutes rather than days:
 
 Native tokens on Cardano enable stablecoins pegged to local currencies, reducing volatility concerns for everyday transactions while maintaining the benefits of blockchain settlement.
 
-## Why Cardano
+## Warum Cardano
 
 - **Scalability** through Hydra and other Layer 2 solutions enables high transaction throughput
 - **Interoperability** allows connection with traditional payment systems
@@ -33,9 +33,9 @@ Native tokens on Cardano enable stablecoins pegged to local currencies, reducing
 - **Low environmental impact** through proof of stake consensus
 - **Growing merchant adoption** expands real-world payment utility
 
-## Get Started
+## Erste Schritte
 
-- [Get a Cardano wallet](/apps/?tags=wallet)
+- [Cardano wallet erstellen](/apps/?tags=wallet)
 - [Where to get ada](/where-to-get-ada)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)
