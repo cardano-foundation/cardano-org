@@ -51,7 +51,8 @@ const steps = (onWalletConnect, images) => [
             {translate({id: 'getStarted.step1.securityNote', message: 'Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism.'})} <Link to="/common-scams">{translate({id: 'getStarted.common.scamLink', message: 'Be aware of the most common scams.'})}</Link>
           </p>
           <p className={styles.stepDescription}>
-            {translate({id: 'getStarted.step1.walletFinderHint', message: 'Need help choosing?'})} <Link to="/wallets">{translate({id: 'getStarted.step1.walletFinderLink', message: 'Try our Wallet Finder'})}</Link>
+            {translate({id: 'getStarted.step1.walletFinderHint', message: 'Need help choosing?'})} <Link to="/wallets">{translate({id: 'getStarted.step1.walletFinderLink', message: 'Try our Wallet Finder'})}</Link>{" "}
+            <Link to="/what-is-a-wallet">{translate({ id: "getStarted.step1.walletLearnLink", message: "Learn what a wallet is." })}</Link>
           </p>
         </div>
       </TwoColumnLayout>
