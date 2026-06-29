@@ -313,6 +313,7 @@ const config = {
                   items: [
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
                     { to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano', icon: 'wallet-solid' },
+                    { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },
                     { to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid' },
                     { to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams', icon: 'shield-solid' },
                   ],
@@ -321,7 +322,6 @@ const config = {
                   title: 'Take part',
                   icon: 'shapes-solid',
                   items: [
-                    { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },
                     { to: '/wallets', label: 'Find a Wallet', description: 'Find the right wallet for you', icon: 'wallet-solid' },
                     { to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards', icon: 'handshake-solid' },
                     { to: '/apps', label: 'Use Cardano Apps', description: 'Explore curated applications', icon: 'shapes-solid' },
