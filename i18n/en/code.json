@@ -3208,8 +3208,8 @@
   "apps.allApps.titleScoped": {
     "message": "All {label}"
   },
-  "apps.allApps.titleOther": {
-    "message": "Other {label}"
+  "apps.allApps.titleMore": {
+    "message": "More {label} apps"
   },
   "apps.mostActive.titleScoped": {
     "message": "Most active {label}"
