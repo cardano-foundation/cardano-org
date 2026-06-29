@@ -88,7 +88,7 @@ export default function WhatIsAWallet() {
             text={translate({
               id: "whatIsAWallet.coldWallet.text",
               message:
-                "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets.",
+                "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.",
             })}
           />
 
@@ -173,7 +173,7 @@ export default function WhatIsAWallet() {
                 translate({
                   id: "whatIsAWallet.security.item2",
                   message:
-                    "For larger amounts, use a hardware wallet such as Ledger or Trezor so your keys never touch an internet-connected device.",
+                    "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.",
                 }),
                 translate({
                   id: "whatIsAWallet.security.item3",
@@ -219,7 +219,7 @@ export default function WhatIsAWallet() {
                   translate({
                     id: "whatIsAWallet.choose.item1",
                     message:
-                      "Does it support hardware wallets? Connecting a device like Ledger or Trezor adds an extra layer of security.",
+                      "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.",
                   }),
                   translate({
                     id: "whatIsAWallet.choose.item2",
