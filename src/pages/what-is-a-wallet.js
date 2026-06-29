@@ -9,6 +9,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import FAQSection from "@site/src/components/FAQSection";
 
 const META_TITLE = translate({
   id: "whatIsAWallet.meta.title",
@@ -129,6 +130,188 @@ export default function WhatIsAWallet() {
             headingDot={true}
           />
           <SpacerBox size="large" />
+        </BoundaryBox>
+
+        <BackgroundWrapper backgroundType="adaLight">
+          <BoundaryBox>
+            <SpacerBox size="large" />
+            <Divider text={translate({ id: "whatIsAWallet.keys.divider", message: "Keys and recovery" })} />
+            <SpacerBox size="medium" />
+            <TitleWithText
+              title={translate({ id: "whatIsAWallet.recovery.title", message: "Your recovery phrase is the master key" })}
+              description={[
+                translate({
+                  id: "whatIsAWallet.recovery.text1",
+                  message:
+                    "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
+                }),
+                translate({
+                  id: "whatIsAWallet.recovery.text2",
+                  message:
+                    "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
+                }),
+              ]}
+              titleType="black"
+              headingDot={true}
+            />
+            <SpacerBox size="medium" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BoundaryBox>
+          <SpacerBox size="large" />
+          <Divider text={translate({ id: "whatIsAWallet.security.divider", message: "Staying secure" })} />
+          <SpacerBox size="medium" />
+          <TitleWithText
+            title={translate({ id: "whatIsAWallet.security.title", message: "Security basics" })}
+            description={{
+              list: [
+                translate({
+                  id: "whatIsAWallet.security.item1",
+                  message: "Keep your recovery phrase offline, on paper or metal, in more than one safe place.",
+                }),
+                translate({
+                  id: "whatIsAWallet.security.item2",
+                  message:
+                    "For larger amounts, use a hardware wallet such as Ledger or Trezor so your keys never touch an internet-connected device.",
+                }),
+                translate({
+                  id: "whatIsAWallet.security.item3",
+                  message:
+                    "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)",
+                }),
+              ],
+            }}
+            titleType="black"
+            headingDot={true}
+          />
+          <SpacerBox size="large" />
+
+          <Divider text={translate({ id: "whatIsAWallet.dapps.divider", message: "Wallets and apps" })} />
+          <SpacerBox size="medium" />
+          <TitleWithText
+            title={translate({ id: "whatIsAWallet.dapps.title", message: "Connecting to apps" })}
+            description={[
+              translate({
+                id: "whatIsAWallet.dapps.text1",
+                message:
+                  "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
+              }),
+              translate({
+                id: "whatIsAWallet.dapps.text2",
+                message:
+                  "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
+              }),
+            ]}
+            titleType="black"
+            headingDot={true}
+          />
+          <SpacerBox size="large" />
+        </BoundaryBox>
+
+        <BackgroundWrapper backgroundType="adaLight">
+          <BoundaryBox>
+            <SpacerBox size="large" />
+            <TitleWithText
+              title={translate({ id: "whatIsAWallet.choose.title", message: "How to choose a wallet" })}
+              description={{
+                list: [
+                  translate({
+                    id: "whatIsAWallet.choose.item1",
+                    message:
+                      "Does it support hardware wallets? Connecting a device like Ledger or Trezor adds an extra layer of security.",
+                  }),
+                  translate({
+                    id: "whatIsAWallet.choose.item2",
+                    message:
+                      "Is it open source? Open-source code lets the community review and verify the wallet's security.",
+                  }),
+                  translate({
+                    id: "whatIsAWallet.choose.item3",
+                    message:
+                      "How long has it been on the market? Established wallets have a longer track record of reliability.",
+                  }),
+                ],
+              }}
+              titleType="black"
+              headingDot={true}
+              buttonLabel={translate({ id: "whatIsAWallet.choose.cta", message: "Open the Wallet Finder" })}
+              buttonLink="/wallets"
+            />
+            <SpacerBox size="medium" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        <BoundaryBox>
+          <SpacerBox size="large" />
+          <FAQSection
+            data={[
+              {
+                question: translate({
+                  id: "whatIsAWallet.faq.q1",
+                  message: "Are my coins stored inside the wallet?",
+                }),
+                answer: [
+                  translate({
+                    id: "whatIsAWallet.faq.a1",
+                    message:
+                      "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.",
+                  }),
+                ],
+              },
+              {
+                question: translate({
+                  id: "whatIsAWallet.faq.q2",
+                  message: "What happens if I lose my recovery phrase?",
+                }),
+                answer: [
+                  translate({
+                    id: "whatIsAWallet.faq.a2",
+                    message:
+                      "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.",
+                  }),
+                ],
+              },
+              {
+                question: translate({
+                  id: "whatIsAWallet.faq.q3",
+                  message: "Do I need ada to set up a wallet?",
+                }),
+                answer: [
+                  translate({
+                    id: "whatIsAWallet.faq.a3",
+                    message: "No. Creating a wallet is free. You only need ada once you want to transact.",
+                  }),
+                ],
+              },
+              {
+                question: translate({
+                  id: "whatIsAWallet.faq.q4",
+                  message: "Should I use a hot or a cold wallet?",
+                }),
+                answer: [
+                  translate({
+                    id: "whatIsAWallet.faq.a4",
+                    message:
+                      "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.",
+                  }),
+                ],
+              },
+            ]}
+          />
+          <SpacerBox size="medium" />
+          <TitleWithText
+            titleType="black"
+            headingDot={false}
+            slightText={[
+              translate({
+                id: "whatIsAWallet.disclaimer",
+                message:
+                  "This page is for educational purposes only and is not financial or security advice. Always do your own research.",
+              }),
+            ]}
+          />
+          <SpacerBox size="medium" />
         </BoundaryBox>
       </main>
     </Layout>
