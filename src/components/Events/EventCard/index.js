@@ -31,7 +31,7 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
   );
   const imgSrc = event.image ? (isExternalImg ? event.image : localImg) : null;
   const dateLabel = formatDateRange(event.startDate, event.endDate);
-  const place = event.online ? onlineLabel : event.location.label;
+  const place = event.online ? onlineLabel : event.location?.label;
 
   return (
     <li className={styles.card}>
