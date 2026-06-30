@@ -24,6 +24,7 @@
     "crowdin:progress": "node scripts/fetch-crowdin-progress.js",
     "test:sitemap": "node scripts/test-sitemap-hreflang.js",
     "test:constitution": "node scripts/test-constitution-toc.js",
+    "test:events": "node scripts/test-events-model.js",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
