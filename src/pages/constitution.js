@@ -8,6 +8,7 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import axios from 'axios';
+import { makeApiClient } from "@site/src/utils/insights/api";
 import ReactMarkdown from 'react-markdown';
 import TermExplainer from "@site/src/components/TermExplainer";
 import {translate} from '@docusaurus/Translate';
@@ -26,7 +27,6 @@ const ConstitutionList = () => {
   // Read environment variables via Docusaurus customFields
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const API_KEY = customFields.CARDANO_ORG_API_KEY;
 
   useEffect(() => {
     if (!proposals.length) return;
@@ -54,24 +54,22 @@ const ConstitutionList = () => {
   }, [proposals]);
 
   useEffect(() => {
-    if (!API_URL || !API_KEY) {
+    if (!API_URL) {
       // Surface the missing-config error; this branch runs once, not in a loop.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setError('API URL or API Key is missing!');
+      setError('API URL is missing!');
       return;
     }
+    // Use the shared headerless client. The data.cardano.org proxy injects the
+    // Koios key server-side, so the browser must not send an Authorization
+    // header: that forces a CORS preflight the proxy rejects (Network Error).
+    const api = makeApiClient(API_URL);
     const fetchConstitutions = async () => {
       try {
-        const response = await axios({
-          method: 'get',
-          baseURL: API_URL,
-          // Thank you Koios Team for providing this 
-          url: '/proposal_list?proposal_type=eq.NewConstitution&ratified_epoch=not.is.null&select=proposal_type,enacted_epoch,ratified_epoch,proposal_description->contents->1',
-          headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${API_KEY}`
-          }
-        });
+        // Thank you Koios Team for providing this
+        const response = await api.get(
+          '/proposal_list?proposal_type=eq.NewConstitution&ratified_epoch=not.is.null&select=proposal_type,enacted_epoch,ratified_epoch,proposal_description->contents->1'
+        );
         // Map API response to usable format
         const data = response.data.map(item => ({
           type: item.proposal_type,
@@ -89,7 +87,7 @@ const ConstitutionList = () => {
     };
 
     fetchConstitutions();
-  }, [API_URL, API_KEY]);
+  }, [API_URL]);
 
   if (error) {
     return (
