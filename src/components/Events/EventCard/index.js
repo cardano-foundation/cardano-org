@@ -10,12 +10,12 @@ function formatDateRange(startDate, endDate) {
   const startStr = start.toLocaleDateString('en-US', opts);
   if (!endDate) return startStr;
   const end = new Date(endDate);
-  if (Number.isNaN(end.getTime()) || start.toDateString() === end.toDateString()) {
+  const sameYear = start.getUTCFullYear() === end.getUTCFullYear();
+  const sameMonth = sameYear && start.getUTCMonth() === end.getUTCMonth();
+  const sameDay = sameMonth && start.getUTCDate() === end.getUTCDate();
+  if (Number.isNaN(end.getTime()) || sameDay) {
     return startStr;
   }
-  const sameMonth =
-    start.getUTCMonth() === end.getUTCMonth() &&
-    start.getUTCFullYear() === end.getUTCFullYear();
   const endStr = sameMonth
     ? String(end.getUTCDate())
     : end.toLocaleDateString('en-US', opts);
@@ -27,7 +27,7 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
   // useBaseUrl must run unconditionally; pass a harmless path when there is no
   // local image. The result is only used for curated (non-http) images.
   const localImg = useBaseUrl(
-    event.image && !isExternalImg ? `/img/events/${event.image}` : '/',
+    event.image && !isExternalImg ? `/img/events/${event.image}` : '',
   );
   const imgSrc = event.image ? (isExternalImg ? event.image : localImg) : null;
   const dateLabel = formatDateRange(event.startDate, event.endDate);

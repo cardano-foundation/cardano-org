@@ -28,8 +28,7 @@ function matchesPlace(event, place) {
 }
 
 function matchesQuery(event, query) {
-  if (!query) return true;
-  const q = query.trim().toLowerCase();
+  const q = (query || "").trim().toLowerCase();
   if (!q) return true;
   const haystack = [event.title, event.location?.label, event.organizer]
     .filter(Boolean)
@@ -67,50 +66,54 @@ export default function Events() {
     [lumaEntries],
   );
 
-  const visibleEvents = useMemo(() => {
+  const isPast = filters.time === "past";
+
+  const orderedEvents = useMemo(() => {
     const todayTs = todayUtcStart();
-    return allEvents.filter((event) => {
+    const filtered = allEvents.filter((event) => {
       const startTs = event.startDate ? new Date(event.startDate).getTime() : 0;
       const isUpcoming = startTs >= todayTs;
-      if (filters.time === "upcoming" && !isUpcoming) return false;
-      if (filters.time === "past" && isUpcoming) return false;
+      if (!isPast && !isUpcoming) return false;
+      if (isPast && isUpcoming) return false;
       return matchesPlace(event, filters.place) && matchesQuery(event, filters.query);
     });
-  }, [allEvents, filters]);
+    // Past events read newest first, upcoming read soonest first. filter()
+    // already returns a fresh array, so reversing in place is safe.
+    return isPast ? filtered.reverse() : filtered;
+  }, [allEvents, filters, isPast]);
 
-  const orderedEvents =
-    filters.time === "past" ? [...visibleEvents].reverse() : visibleEvents;
-
-  const filterLabels = {
-    searchPlaceholder: translate({
-      id: "events.filter.searchPlaceholder",
-      message: "Search events or locations",
+  const filterLabels = useMemo(
+    () => ({
+      searchPlaceholder: translate({
+        id: "events.filter.searchPlaceholder",
+        message: "Search events or locations",
+      }),
+      timeGroup: translate({ id: "events.filter.timeGroup", message: "Time" }),
+      placeGroup: translate({ id: "events.filter.placeGroup", message: "Location" }),
+      timeUpcoming: translate({ id: "events.filter.timeUpcoming", message: "Upcoming" }),
+      timePast: translate({ id: "events.filter.timePast", message: "Past" }),
+      placeAll: translate({ id: "events.filter.placeAll", message: "All" }),
+      placeInPerson: translate({
+        id: "events.filter.placeInPerson",
+        message: "In person",
+      }),
+      placeOnline: translate({ id: "events.filter.placeOnline", message: "Online" }),
     }),
-    timeGroup: translate({ id: "events.filter.timeGroup", message: "Time" }),
-    placeGroup: translate({ id: "events.filter.placeGroup", message: "Location" }),
-    timeUpcoming: translate({ id: "events.filter.timeUpcoming", message: "Upcoming" }),
-    timePast: translate({ id: "events.filter.timePast", message: "Past" }),
-    placeAll: translate({ id: "events.filter.placeAll", message: "All" }),
-    placeInPerson: translate({
-      id: "events.filter.placeInPerson",
-      message: "In person",
-    }),
-    placeOnline: translate({ id: "events.filter.placeOnline", message: "Online" }),
-  };
+    [],
+  );
 
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
-  const emptyLabel =
-    filters.time === "past"
-      ? translate({
-          id: "events.empty.past",
-          message: "No past events match your filters.",
-        })
-      : translate({
-          id: "events.empty.upcoming",
-          message:
-            "No upcoming events match your filters right now. Check the Cardano calendars below for the latest.",
-        });
+  const emptyLabel = isPast
+    ? translate({
+        id: "events.empty.past",
+        message: "No past events match your filters.",
+      })
+    : translate({
+        id: "events.empty.upcoming",
+        message:
+          "No upcoming events match your filters right now. Check the Cardano calendars below for the latest.",
+      });
 
   return (
     <Layout
@@ -131,7 +134,7 @@ export default function Events() {
           <BoundaryBox>
             <Divider
               text={
-                filters.time === "past"
+                isPast
                   ? translate({
                       id: "events.divider.past",
                       message: "Past Events and Recaps",
