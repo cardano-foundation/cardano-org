@@ -31,7 +31,7 @@ function matchesQuery(event, query) {
   if (!query) return true;
   const q = query.trim().toLowerCase();
   if (!q) return true;
-  const haystack = [event.title, event.location.label, event.organizer]
+  const haystack = [event.title, event.location?.label, event.organizer]
     .filter(Boolean)
     .join(" ")
     .toLowerCase();
