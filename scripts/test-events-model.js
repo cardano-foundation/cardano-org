@@ -16,7 +16,12 @@ async function main() {
 
   let passed = 0;
   const check = (name, fn) => {
-    fn();
+    try {
+      fn();
+    } catch (err) {
+      err.message = `FAIL: ${name}\n${err.message}`;
+      throw err;
+    }
     passed += 1;
     console.log(`  ok - ${name}`);
   };

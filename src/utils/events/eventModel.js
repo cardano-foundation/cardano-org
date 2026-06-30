@@ -91,15 +91,11 @@ export function mergeEvents(curatedRaw, lumaRaw) {
   const luma = (lumaRaw || []).map(normalizeLumaEvent).filter(Boolean);
   // Luma first so it wins ties on identical keys.
   const all = [...luma, ...curated].filter((e) => !isPlaceholderEvent(e));
+  // Luma is first in `all`, so first-wins keeps the Luma entry on a collision.
   const byKey = new Map();
   for (const evt of all) {
     const key = dedupKey(evt);
-    const existing = byKey.get(key);
-    if (!existing) {
-      byKey.set(key, evt);
-    } else if (existing.source !== 'luma' && evt.source === 'luma') {
-      byKey.set(key, evt);
-    }
+    if (!byKey.has(key)) byKey.set(key, evt);
   }
   return [...byKey.values()].sort(
     (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
