@@ -48,7 +48,7 @@ Not all applications' transactions are currently being tracked. If your app is n
 
 ## How to Get Your Transactions Tracked
 
-There are two paths to appear on the leaderboard, depending on how your project uses the Cardano blockchain.
+There are three paths to appear on the leaderboard, depending on how your project uses the Cardano blockchain.
 
 ### Path 1: App Tracking (Smart Contracts / Script Hashes)
 
@@ -105,6 +105,31 @@ Key details:
 | 61285 | CIP-15 Catalyst Witness | Governance |
 | 87/88 | Milkomeda Protocol | Bridge |
 | 1226 | Oracle Metadata | Oracle |
+
+### Path 3: CIP-20 Message Allowlist (for apps without smart contracts)
+
+This path is **only for apps whose sole on-chain identifier is a CIP-20 (label 674) message** - for example tools built around certificates plus a message, with no Plutus scripts to register. If you have contracts, use Path 1 instead; it is more complete.
+
+You get per-app attribution by adding an entry to the curated allowlist `data/cip20_apps.json` in the [tx-leaderboard-script](https://github.com/cardano-foundation/tx-leaderboard-script) repository **via a pull request**. Each entry maps a message pattern to your app:
+
+```json
+{
+  "label": "unfrack.it",
+  "displayName": "Unfrack.it",
+  "match": ["unfrack"],
+  "matchType": "substring"
+}
+```
+
+- **`label`** - a stable identifier (lowercase). Used as the appStats label, so it can also be your `statsLabel` in `src/data/apps.js`.
+- **`displayName`** - the name shown on the leaderboard.
+- **`match`** - one or more patterns to look for in your transaction message. A pattern must appear **verbatim** in the message exactly as your app writes it on-chain. Matching is case-insensitive but otherwise literal, so include any punctuation the message contains. Example: unfrack.it tags transactions with `https://unfrack.it`, so `unfrack` or `unfrack.it` both work, but `unfrack it` does not.
+- **`matchType`** - `substring` matches when the pattern appears anywhere in the message (use this for a stable tag, e.g. messages like `[adalink] ...` with pattern `adalink`). `exact` matches only when the whole message equals the pattern.
+
+Guidelines for acceptance:
+- Pick a pattern distinctive to your app. Generic words like `cardano` or `swap` will be rejected - they would falsely match unrelated transactions.
+- Confirm your transactions actually carry the tag, and that it does not collide with another listed app.
+- This list is intentionally limited to contract-less apps. Apps with scripts should use Path 1.
 
 ## How It All Connects
 
