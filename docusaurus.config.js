@@ -59,6 +59,9 @@ const config = {
     // CSP connect-src allowlist. The proxy injects the demo / paid API key
     // server-side, so the public site never sees it.
     CARDANO_ORG_CG_API_URL: 'https://data.cardano.org/cg/api/v3',
+    // Luma events proxy hosted by data.cardano.org. Same host as the page, so
+    // a headerless GET avoids a CORS preflight. The proxy injects the API key.
+    CARDANO_ORG_LUMA_API_URL: 'https://data.cardano.org/luma/v1',
     CARDANO_ORG_API_KEY: 'secret',
   },
   // Even if you don't use internationalization, you can use this field to set
