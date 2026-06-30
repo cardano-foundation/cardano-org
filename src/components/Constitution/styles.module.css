@@ -70,6 +70,9 @@
     position: static;
     max-height: none;
   }
+  .tocTitle {
+    display: none;
+  }
   .tocToggle {
     display: block;
     width: 100%;

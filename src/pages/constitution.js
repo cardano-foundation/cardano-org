@@ -79,14 +79,14 @@ function VerifyBadge({ status }) {
   if (status.state === "match") {
     return (
       <span style={{ color: "var(--ifm-color-success)", fontWeight: 600 }}>
-        &#10003; {translate({ id: "constitution.verify.match", message: "Matches the current on-chain constitution" })}
+        <span aria-hidden="true">&#10003;</span> {translate({ id: "constitution.verify.match", message: "Matches the current on-chain constitution" })}
       </span>
     );
   }
   if (status.state === "newer") {
     return (
       <span style={{ color: "var(--ifm-color-warning-dark)", fontWeight: 600 }}>
-        {translate({ id: "constitution.verify.newer", message: "A newer version (epoch {epoch}) was enacted on-chain; showing the last published copy." }).replace("{epoch}", status.latestEpoch)}
+        {translate({ id: "constitution.verify.newer", message: "A newer version (epoch {epoch}) was enacted on-chain; showing the last published copy." }, { epoch: status.latestEpoch })}
       </span>
     );
   }

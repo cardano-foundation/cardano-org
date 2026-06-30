@@ -40,7 +40,7 @@ export default function ConstitutionToc({ content }) {
   if (!items.length) return null;
 
   return (
-    <nav className={clsx(styles.toc, collapsed && styles.tocCollapsed)} aria-label="Constitution contents">
+    <nav className={clsx(styles.toc, collapsed && styles.tocCollapsed)} aria-label={translate({ id: "constitution.toc.title", message: "Contents" })}>
       <button
         type="button"
         className={styles.tocToggle}

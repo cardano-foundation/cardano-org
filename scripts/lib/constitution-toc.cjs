@@ -9,7 +9,11 @@
 // TOC anchors always match the rendered heading ids.
 
 function stripBold(text) {
-  // Remove markdown bold/italic markers and surrounding whitespace.
+  // Remove markdown bold/italic markers and surrounding whitespace. This
+  // assumes heading text is plain (bold) prose, which holds for the current
+  // constitution. A future heading containing a link or inline code would
+  // need richer flattening here to stay in sync with the document renderer's
+  // childrenToText (which flattens any inline node to plain text).
   return text.replace(/\*\*/g, '').replace(/__/g, '').trim();
 }
 
