@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import { extractToc } from "@site/scripts/lib/constitution-toc.cjs";
@@ -12,8 +12,6 @@ export default function ConstitutionToc({ content }) {
   );
   const [activeSlug, setActiveSlug] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
-  const activeRef = useRef(null);
-  activeRef.current = activeSlug;
 
   useEffect(() => {
     if (!items.length) return undefined;
