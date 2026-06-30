@@ -342,17 +342,6 @@
     "recapVideo": ""
   },
    {
-    "title": "Rare Evo",
-    "description": "A multi-chain blockchain weekend built for founders, builders, investors, creators, and communities focused on real networking, education, and the future of Web3.",
-    "startDate": "2026-07-28",
-    "endDate": "2026-07-31",
-    "location": "Las Vegas, Nevada, United States of America",
-    "link": "https://rareevo.io/",
-    "image": "rare_evo_2026.jpg",
-    "organizer": "Rare Evo",
-    "recapVideo": ""
-  },
-   {
     "title": "Open Source Summit",
     "description": "Open Source Summit is the premier event for open source developers and contributors. It’s where maintainers, technologists, and community leaders come together to share knowledge, collaborate on solutions, and push open source projects forward. It’s the home for code, community, and the people driving the future of open source.",
     "startDate": "2026-05-18",
@@ -416,6 +405,17 @@
     "link": "https://cryptovalleyconference.com/",
     "image": "Cardano-Foundation-at-CVC2026-Crypto-Valley-Conference-Rotkreuz-Zug.png",
     "organizer": "Crypto Valley Association",
+    "recapVideo": ""
+  },
+   {
+    "title": "Rare Evo",
+    "description": "The Cardano Foundation will be joining Rare Evo 2026 as a Featured Exhibitor in Las Vegas! Rare Evo, hosted by Rare Network, is where the blockchain industry shows up in person. The people building the technology, running the networks, and putting it to work in the real world, all together in one place. The conversations cover what's actually moving right now: tokenization, digital identity, stablecoins, governance, and regulation. Less whitepapers, more production. That's the part worth showing up for. We'll be on the floor throughout, and we hope to see you there. Get your complimentary ticket today: https://rareevo.io/",
+    "startDate": "2026-07-28",
+    "endDate": "2026-07-31",
+    "location": "ARIA Resort & Casino, 3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+    "link": "https://rareevo.io/",
+    "image": "rare-evo-2026.jpg",
+    "organizer": "Rare Evo, hosted by Rare Network",
     "recapVideo": ""
   }
 ]
