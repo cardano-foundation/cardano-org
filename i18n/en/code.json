@@ -2256,6 +2256,24 @@
   "events.watchHere": {
     "message": "Watch here"
   },
+  "events.filter.searchPlaceholder": { "message": "Search events or locations" },
+  "events.filter.timeGroup": { "message": "Time" },
+  "events.filter.placeGroup": { "message": "Location" },
+  "events.filter.timeUpcoming": { "message": "Upcoming" },
+  "events.filter.timePast": { "message": "Past" },
+  "events.filter.placeAll": { "message": "All" },
+  "events.filter.placeInPerson": { "message": "In person" },
+  "events.filter.placeOnline": { "message": "Online" },
+  "events.card.register": { "message": "View event" },
+  "events.card.online": { "message": "Online" },
+  "events.divider.upcoming": { "message": "Upcoming Events" },
+  "events.divider.past": { "message": "Past Events and Recaps" },
+  "events.empty.upcoming": { "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest." },
+  "events.empty.past": { "message": "No past events match your filters." },
+  "events.divider.discover": { "message": "Discover Cardano Events Worldwide" },
+  "events.submit.title": { "message": "Want to host a Cardano event?" },
+  "events.submit.description": { "message": "Submit your event to be featured on cardano.org." },
+  "events.submit.cta": { "message": "Submit your event" },
   "exchanges.hero.title": {
     "message": "Integrate Cardano"
   },
