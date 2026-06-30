@@ -1,0 +1,45 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search {
+  flex: 1 1 220px;
+  min-width: 180px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.group {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+}
+
+.chip:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.active {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
