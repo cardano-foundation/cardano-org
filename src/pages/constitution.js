@@ -34,7 +34,12 @@ function useConstitutionProposals() {
   const [apiError, setApiError] = useState(null);
 
   useEffect(() => {
-    if (!API_URL) { setApiError("API URL is missing"); return; }
+    if (!API_URL) {
+      // Surface the missing-config error; this branch runs once, not in a loop.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setApiError("API URL is missing");
+      return;
+    }
     const api = makeApiClient(API_URL);
     // Thank you Koios Team for providing this. No auth header: the proxy
     // injects the key server-side; an Authorization header would trigger a

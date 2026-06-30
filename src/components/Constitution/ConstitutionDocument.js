@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { createSlugger } from "@site/scripts/lib/constitution-toc.cjs";
+import { createSlugger } from "@site/scripts/lib/constitution-toc.js";
 
 // Flatten react-markdown heading children (which may be a <strong> wrapper
 // because heading text is bold) down to plain text for slugging.

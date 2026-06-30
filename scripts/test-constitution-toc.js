@@ -1,7 +1,7 @@
-// Tests for scripts/lib/constitution-toc.cjs (TOC + slug logic for the
+// Tests for scripts/lib/constitution-toc.js (TOC + slug logic for the
 // constitution page). Plain-node assertions, mirroring test-sitemap-hreflang.
 const assert = require('assert');
-const { slugify, createSlugger, extractToc } = require('./lib/constitution-toc.cjs');
+const { slugify, createSlugger, extractToc } = require('./lib/constitution-toc.js');
 
 let passed = 0;
 const check = (name, fn) => { fn(); passed++; console.log('ok -', name); };

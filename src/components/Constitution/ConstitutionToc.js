@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
-import { extractToc } from "@site/scripts/lib/constitution-toc.cjs";
+import { extractToc } from "@site/scripts/lib/constitution-toc.js";
 import styles from "./styles.module.css";
 
 export default function ConstitutionToc({ content }) {

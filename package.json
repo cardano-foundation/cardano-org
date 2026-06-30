@@ -23,7 +23,7 @@
     "crowdin:download": "crowdin download",
     "crowdin:progress": "node scripts/fetch-crowdin-progress.js",
     "test:sitemap": "node scripts/test-sitemap-hreflang.js",
-    "test:constitution": "node scripts/test-constitution-toc.cjs",
+    "test:constitution": "node scripts/test-constitution-toc.js",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
