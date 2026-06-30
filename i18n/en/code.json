@@ -2235,12 +2235,6 @@
   "events.platforms.meetup": {
     "message": "Events on Meetup.com"
   },
-  "events.recapAvailable": {
-    "message": "Recap available:"
-  },
-  "events.watchHere": {
-    "message": "Watch here"
-  },
   "events.filter.searchPlaceholder": { "message": "Search events or locations" },
   "events.filter.timeGroup": { "message": "Time" },
   "events.filter.placeGroup": { "message": "Location" },

@@ -97,7 +97,10 @@ export function mergeEvents(curatedRaw, lumaRaw) {
     const key = dedupKey(evt);
     if (!byKey.has(key)) byKey.set(key, evt);
   }
+  // `|| 0` keeps the comparator deterministic if a date is ever missing
+  // (new Date(undefined) is NaN). Normalized events use null, already epoch
+  // safe, but this hardens against any future caller.
   return [...byKey.values()].sort(
-    (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
+    (a, b) => new Date(a.startDate || 0).getTime() - new Date(b.startDate || 0).getTime(),
   );
 }
