@@ -909,7 +909,7 @@ export const Showcases = [
       "Standardized NFT that maps a Cardano wallet address to a human-readable handle. Used by wallets and dApps as the network's de facto naming layer.",
     tagline: "Human-readable Cardano addresses as NFTs",
     icon: "/img/app-icons/adahandle.jpg",
-    website: "https://adahandle.com",
+    website: "https://handle.me/",
     source: null,
     category: "identity",
     properties: ["nft"],
