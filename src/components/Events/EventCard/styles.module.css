@@ -19,6 +19,25 @@
   display: block;
 }
 
+/* Branded fallback when an event has no cover image, so the card keeps its
+   image column and the layout stays aligned. */
+.placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #0033ad, #1e5fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderLogo {
+  width: 48%;
+  max-width: 88px;
+  opacity: 0.92;
+}
+
 .body {
   flex: 1 1 auto;
   min-width: 0;

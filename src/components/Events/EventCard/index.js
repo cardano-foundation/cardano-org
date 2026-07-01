@@ -30,16 +30,21 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
     event.image && !isExternalImg ? `/img/events/${event.image}` : '',
   );
   const imgSrc = event.image ? (isExternalImg ? event.image : localImg) : null;
+  const fallbackLogo = useBaseUrl('/img/cardano-white.svg');
   const dateLabel = formatDateRange(event.startDate, event.endDate);
   const place = event.online ? onlineLabel : event.location?.label;
 
   return (
     <li className={styles.card}>
-      {imgSrc && (
-        <div className={styles.media}>
+      <div className={styles.media}>
+        {imgSrc ? (
           <img src={imgSrc} alt={event.title} loading="lazy" />
-        </div>
-      )}
+        ) : (
+          <div className={styles.placeholder}>
+            <img src={fallbackLogo} alt="" className={styles.placeholderLogo} />
+          </div>
+        )}
+      </div>
       <div className={styles.body}>
         <div className={styles.meta}>
           {dateLabel && <span className={styles.date}>{dateLabel}</span>}
