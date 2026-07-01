@@ -37,6 +37,30 @@ function matchesQuery(event, query) {
   return haystack.includes(q);
 }
 
+function matchesTag(event, tag) {
+  if (!tag) return true;
+  return Array.isArray(event.tags) && event.tags.includes(tag);
+}
+
+// Tags that make poor filter chips: the guidelines pin and "Virtual", which the
+// in-person/online toggle already covers.
+const EXCLUDED_TAGS = new Set(["\u{1F310} Virtual", "\u{1F4A1} Event Submission Guidelines"]);
+const MAX_TAG_CHIPS = 8;
+
+function collectTags(events) {
+  const counts = new Map();
+  for (const event of events) {
+    for (const tag of event.tags || []) {
+      if (EXCLUDED_TAGS.has(tag)) continue;
+      counts.set(tag, (counts.get(tag) || 0) + 1);
+    }
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, MAX_TAG_CHIPS)
+    .map(([tag]) => tag);
+}
+
 function HomepageHeader() {
   return (
     <SiteHero
@@ -59,12 +83,15 @@ export default function Events() {
     place: "all",
     time: "upcoming",
     query: "",
+    tag: null,
   });
 
   const allEvents = useMemo(
     () => mergeEvents(curatedEvents, lumaEntries),
     [lumaEntries],
   );
+
+  const availableTags = useMemo(() => collectTags(allEvents), [allEvents]);
 
   const isPast = filters.time === "past";
 
@@ -75,7 +102,11 @@ export default function Events() {
       const isUpcoming = startTs >= todayTs;
       if (!isPast && !isUpcoming) return false;
       if (isPast && isUpcoming) return false;
-      return matchesPlace(event, filters.place) && matchesQuery(event, filters.query);
+      return (
+        matchesPlace(event, filters.place) &&
+        matchesQuery(event, filters.query) &&
+        matchesTag(event, filters.tag)
+      );
     });
     // Past events read newest first, upcoming read soonest first. filter()
     // already returns a fresh array, so reversing in place is safe.
@@ -98,6 +129,8 @@ export default function Events() {
         message: "In person",
       }),
       placeOnline: translate({ id: "events.filter.placeOnline", message: "Online" }),
+      tagGroup: translate({ id: "events.filter.tagGroup", message: "Topic" }),
+      tagAll: translate({ id: "events.filter.tagAll", message: "All topics" }),
     }),
     [],
   );
@@ -146,7 +179,12 @@ export default function Events() {
               }
               id="events"
             />
-            <EventFilters value={filters} onChange={setFilters} labels={filterLabels} />
+            <EventFilters
+              value={filters}
+              onChange={setFilters}
+              labels={filterLabels}
+              tags={availableTags}
+            />
             <EventList
               events={orderedEvents}
               emptyLabel={emptyLabel}

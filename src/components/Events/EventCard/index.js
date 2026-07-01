@@ -52,6 +52,15 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
         {event.description && (
           <p className={styles.description}>{event.description}</p>
         )}
+        {Array.isArray(event.tags) && event.tags.length > 0 && (
+          <ul className={styles.tags}>
+            {event.tags.slice(0, 4).map((tag) => (
+              <li key={tag} className={styles.tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
         {event.url && (
           <a
             className={styles.cta}

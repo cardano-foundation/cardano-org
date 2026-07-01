@@ -26,34 +26,70 @@ async function main() {
     console.log(`  ok - ${name}`);
   };
 
-  check('normalizeLumaEvent maps an offline event', () => {
+  check('normalizeLumaEvent maps a get-items meet entry (online, tags, host, slug url)', () => {
     const out = normalizeLumaEvent({
-      name: 'Cardano Summit',
-      description: 'desc',
-      start_at: '2026-09-01T10:00:00.000Z',
-      end_at: '2026-09-02T18:00:00.000Z',
-      location_type: 'offline',
-      geo_address_json: { city: 'Berlin', country: 'DE', city_state: 'Berlin, Berlin' },
-      cover_url: 'https://images.lumacdn.com/x.png',
-      url: 'https://luma.com/abc',
-      tags: [{ name: 'Cardano Summit' }],
+      start_at: '2026-07-02T14:00:00.000Z',
+      tags: [{ name: 'Developers' }, { name: 'Intersect' }],
+      hosts: [{ name: 'Bosko Majdanac' }],
+      event: {
+        name: 'Hard Fork Working Group',
+        start_at: '2026-07-02T14:00:00.000Z',
+        end_at: '2026-07-02T14:30:00.000Z',
+        location_type: 'meet',
+        url: '75xxkmq6',
+        cover_url: 'https://images.lumacdn.com/x.jpg',
+        geo_address_info: null,
+      },
     });
-    assert.strictEqual(out.title, 'Cardano Summit');
-    assert.strictEqual(out.online, false);
-    assert.strictEqual(out.location.label, 'Berlin, Berlin');
-    assert.strictEqual(out.image, 'https://images.lumacdn.com/x.png');
+    assert.strictEqual(out.title, 'Hard Fork Working Group');
+    assert.strictEqual(out.online, true);
+    assert.strictEqual(out.url, 'https://lu.ma/75xxkmq6'); // slug expanded
+    assert.strictEqual(out.organizer, 'Bosko Majdanac');
+    assert.deepStrictEqual(out.tags, ['Developers', 'Intersect']);
+    assert.strictEqual(out.image, 'https://images.lumacdn.com/x.jpg');
     assert.strictEqual(out.source, 'luma');
-    assert.deepStrictEqual(out.tags, ['Cardano Summit']);
   });
 
-  check('normalizeLumaEvent treats zoom as online with no location label', () => {
-    const out = normalizeLumaEvent({
-      name: 'CAP Demo Day',
-      start_at: '2026-06-09T16:00:00.000Z',
-      location_type: 'zoom',
+  check('normalizeLumaEvent: offline url-address skipped, external link and null type handled', () => {
+    const off = normalizeLumaEvent({
+      hosts: [],
+      tags: [{ name: '\u{1F310} Virtual' }],
+      event: {
+        name: 'Intersect Connect',
+        start_at: '2026-07-02T14:00:00.000Z',
+        location_type: 'offline',
+        url: '9jerw8tf',
+        geo_address_info: { type: 'manual', address: 'https://members.intersectmbo.org/' },
+      },
     });
-    assert.strictEqual(out.online, true);
-    assert.strictEqual(out.location.label, null);
+    assert.strictEqual(off.online, false);
+    assert.strictEqual(off.location.label, null); // a URL is not a place
+    const ext = normalizeLumaEvent({
+      event: {
+        name: 'Developers Office Hours',
+        start_at: '2026-07-03T08:00:00.000Z',
+        location_type: null,
+        url: 'https://www.addevent.com/event/abc',
+        cover_url: null,
+      },
+    });
+    assert.strictEqual(ext.online, true); // null location_type is online
+    assert.strictEqual(ext.url, 'https://www.addevent.com/event/abc'); // full url as-is
+    assert.strictEqual(ext.image, null);
+  });
+
+  check('normalizeLumaEvent shows city for a real offline location', () => {
+    const out = normalizeLumaEvent({
+      event: {
+        name: 'Local Meetup',
+        start_at: '2026-08-01T10:00:00.000Z',
+        location_type: 'offline',
+        url: 'abc',
+        geo_address_info: { city: 'Berlin', country: 'DE', city_state: 'Berlin, Berlin' },
+      },
+    });
+    assert.strictEqual(out.online, false);
+    assert.strictEqual(out.location.label, 'Berlin, Berlin');
   });
 
   check('normalizeCuratedEvent maps existing events.json shape', () => {
@@ -98,15 +134,15 @@ async function main() {
       { title: 'Older', startDate: '2025-01-01' },
     ];
     const luma = [
-      { name: 'Shared Event', start_at: '2026-05-01T09:00:00.000Z', url: 'https://luma', location_type: 'offline' },
-      { name: 'Event Submission Guidelines', start_at: '2027-01-01T00:00:00.000Z', location_type: 'offline' },
+      { event: { name: 'Shared Event', start_at: '2026-05-01T09:00:00.000Z', url: 'lumaslug', location_type: 'meet' } },
+      { event: { name: 'Event Submission Guidelines', start_at: '2027-01-01T00:00:00.000Z', url: 'x', location_type: 'offline' } },
     ];
     const merged = mergeEvents(curated, luma);
     assert.strictEqual(merged.length, 2); // placeholder dropped, shared deduped
     assert.strictEqual(merged[0].title, 'Older'); // chronological
     const shared = merged.find((e) => e.title === 'Shared Event');
     assert.strictEqual(shared.source, 'luma'); // Luma wins
-    assert.strictEqual(shared.url, 'https://luma');
+    assert.strictEqual(shared.url, 'https://lu.ma/lumaslug');
   });
 
   console.log(`\n${passed} checks passed`);
