@@ -191,7 +191,7 @@ export default function Events() {
             <Divider
               text={translate({
                 id: "events.featured.title",
-                message: "Featured this month",
+                message: "Featured upcoming events",
               })}
               id="featured"
             />

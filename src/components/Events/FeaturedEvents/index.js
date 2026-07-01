@@ -9,7 +9,7 @@ export default function FeaturedEvents({ events, labels }) {
   if (!events.length) return null;
   return (
     <HorizontalScroller
-      ariaLabel={translate({ id: 'events.featured.title', message: 'Featured this month' })}
+      ariaLabel={translate({ id: 'events.featured.title', message: 'Featured upcoming events' })}
       prevLabel={translate({ id: 'events.carousel.prev', message: 'Previous' })}
       nextLabel={translate({ id: 'events.carousel.next', message: 'Next' })}
     >
