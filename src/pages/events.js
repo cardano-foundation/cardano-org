@@ -17,7 +17,9 @@ import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
 
 const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
 // Curated conference events shown as highlighted cards above the full list.
-const FEATURED_LIMIT = 8;
+// A small rolling set of the next upcoming ones, so the row is never empty or
+// overloaded (not strictly bound to the current calendar month).
+const FEATURED_LIMIT = 4;
 
 function todayUtcStart() {
   const now = new Date();
@@ -189,7 +191,7 @@ export default function Events() {
             <Divider
               text={translate({
                 id: "events.featured.title",
-                message: "Featured events",
+                message: "Featured this month",
               })}
               id="featured"
             />
