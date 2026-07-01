@@ -909,7 +909,7 @@ export const Showcases = [
       "Standardized NFT that maps a Cardano wallet address to a human-readable handle. Used by wallets and dApps as the network's de facto naming layer.",
     tagline: "Human-readable Cardano addresses as NFTs",
     icon: "/img/app-icons/adahandle.jpg",
-    website: "https://adahandle.com",
+    website: "https://handle.me/",
     source: null,
     category: "identity",
     properties: ["nft"],
@@ -1089,25 +1089,7 @@ export const Showcases = [
     maintainerPick: false,
     beginnerFriendly: false,
   },
-  {
-    title: "Medusa Wallet",
-    description:
-        "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
-    tagline: "Privacy-focused lightweight Cardano wallet",
-    icon: "/img/app-icons/medusa.jpg",
-    website: "https://adawallet.io",
-    source: null,
-    category: "wallet",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    walletFeatures: {
-      platforms: ["web"],
-      custody: "non-custodial",
-      features: ["staking"],
-      type: "light",
-    },
-   },
+
   {
     title: "Dano Finance",
     description:
