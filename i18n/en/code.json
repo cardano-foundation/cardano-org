@@ -2247,6 +2247,8 @@
   "events.filter.tagAll": { "message": "All topics" },
   "events.featured.title": { "message": "Featured this month" },
   "events.featured.thisWeek": { "message": "This week" },
+  "events.carousel.prev": { "message": "Previous" },
+  "events.carousel.next": { "message": "Next" },
   "events.card.register": { "message": "View event" },
   "events.card.online": { "message": "Online" },
   "events.divider.upcoming": { "message": "Upcoming Events" },

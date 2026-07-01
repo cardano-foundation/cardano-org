@@ -1,12 +1,18 @@
 import React from 'react';
+import { translate } from '@docusaurus/Translate';
+import HorizontalScroller from '@site/src/components/HorizontalScroller';
 import FeaturedEventCard from '@site/src/components/Events/FeaturedEventCard';
-import styles from './styles.module.css';
 
-// Grid of highlighted (curated) events shown above the full list.
+// Highlighted (curated) events shown as a horizontally scrollable row above the
+// full list.
 export default function FeaturedEvents({ events, labels }) {
   if (!events.length) return null;
   return (
-    <ul className={styles.grid}>
+    <HorizontalScroller
+      ariaLabel={translate({ id: 'events.featured.title', message: 'Featured this month' })}
+      prevLabel={translate({ id: 'events.carousel.prev', message: 'Previous' })}
+      nextLabel={translate({ id: 'events.carousel.next', message: 'Next' })}
+    >
       {events.map((event) => (
         <FeaturedEventCard
           key={`${event.title}-${event.startDate}`}
@@ -14,6 +20,6 @@ export default function FeaturedEvents({ events, labels }) {
           labels={labels}
         />
       ))}
-    </ul>
+    </HorizontalScroller>
   );
 }

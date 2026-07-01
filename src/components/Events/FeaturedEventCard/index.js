@@ -32,7 +32,7 @@ export default function FeaturedEventCard({ event, labels }) {
   const badge = mounted ? badgeFor(event, labels) : null;
 
   return (
-    <li className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.media}>
         {badge && <span className={styles.badge}>{badge}</span>}
         {src ? (
@@ -62,6 +62,6 @@ export default function FeaturedEventCard({ event, labels }) {
           </a>
         )}
       </div>
-    </li>
+    </article>
   );
 }
