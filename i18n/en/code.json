@@ -2245,6 +2245,8 @@
   "events.filter.placeOnline": { "message": "Online" },
   "events.filter.tagGroup": { "message": "Topic" },
   "events.filter.tagAll": { "message": "All topics" },
+  "events.featured.title": { "message": "Featured events" },
+  "events.featured.thisWeek": { "message": "This week" },
   "events.card.register": { "message": "View event" },
   "events.card.online": { "message": "Online" },
   "events.divider.upcoming": { "message": "Upcoming Events" },

@@ -13,8 +13,11 @@ import useLumaEvents from "@site/src/utils/events/useLumaEvents";
 import EventCard from "@site/src/components/Events/EventCard";
 import EventFilters from "@site/src/components/Events/EventFilters";
 import EventList from "@site/src/components/Events/EventList";
+import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
 
 const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
+// Curated conference events shown as highlighted cards above the full list.
+const FEATURED_LIMIT = 8;
 
 function todayUtcStart() {
   const now = new Date();
@@ -93,6 +96,19 @@ export default function Events() {
 
   const availableTags = useMemo(() => collectTags(allEvents), [allEvents]);
 
+  // Highlighted events are the upcoming curated entries (hand-picked
+  // conferences), independent of the filters applied to the full list below.
+  const featuredEvents = useMemo(() => {
+    const todayTs = todayUtcStart();
+    return allEvents
+      .filter(
+        (event) =>
+          event.source === "curated" &&
+          (event.startDate ? new Date(event.startDate).getTime() : 0) >= todayTs,
+      )
+      .slice(0, FEATURED_LIMIT);
+  }, [allEvents]);
+
   const isPast = filters.time === "past";
 
   const orderedEvents = useMemo(() => {
@@ -137,6 +153,11 @@ export default function Events() {
 
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
+  const featuredLabels = {
+    register: registerLabel,
+    online: onlineLabel,
+    thisWeek: translate({ id: "events.featured.thisWeek", message: "This week" }),
+  };
   const emptyLabel = isPast
     ? translate({
         id: "events.empty.past",
@@ -163,6 +184,19 @@ export default function Events() {
       <OpenGraphInfo pageName="events" />
       <HomepageHeader />
       <main>
+        {featuredEvents.length > 0 && (
+          <BoundaryBox>
+            <Divider
+              text={translate({
+                id: "events.featured.title",
+                message: "Featured events",
+              })}
+              id="featured"
+            />
+            <FeaturedEvents events={featuredEvents} labels={featuredLabels} />
+          </BoundaryBox>
+        )}
+
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <Divider

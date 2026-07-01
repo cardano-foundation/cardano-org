@@ -1,36 +1,10 @@
 import React from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useEventImage from '@site/src/components/Events/useEventImage';
+import formatDateRange from '@site/src/components/Events/formatDateRange';
 import styles from './styles.module.css';
 
-function formatDateRange(startDate, endDate) {
-  if (!startDate) return '';
-  const opts = { timeZone: 'UTC', month: 'short', day: 'numeric' };
-  const start = new Date(startDate);
-  if (Number.isNaN(start.getTime())) return '';
-  const startStr = start.toLocaleDateString('en-US', opts);
-  if (!endDate) return startStr;
-  const end = new Date(endDate);
-  const sameYear = start.getUTCFullYear() === end.getUTCFullYear();
-  const sameMonth = sameYear && start.getUTCMonth() === end.getUTCMonth();
-  const sameDay = sameMonth && start.getUTCDate() === end.getUTCDate();
-  if (Number.isNaN(end.getTime()) || sameDay) {
-    return startStr;
-  }
-  const endStr = sameMonth
-    ? String(end.getUTCDate())
-    : end.toLocaleDateString('en-US', opts);
-  return `${startStr} to ${endStr}`;
-}
-
 export default function EventCard({ event, registerLabel, onlineLabel }) {
-  const isExternalImg = Boolean(event.image) && /^https?:\/\//.test(event.image);
-  // useBaseUrl must run unconditionally; pass a harmless path when there is no
-  // local image. The result is only used for curated (non-http) images.
-  const localImg = useBaseUrl(
-    event.image && !isExternalImg ? `/img/events/${event.image}` : '',
-  );
-  const imgSrc = event.image ? (isExternalImg ? event.image : localImg) : null;
-  const fallbackLogo = useBaseUrl('/img/cardano-white.svg');
+  const { src: imgSrc, fallback: fallbackLogo } = useEventImage(event.image);
   const dateLabel = formatDateRange(event.startDate, event.endDate);
   const place = event.online ? onlineLabel : event.location?.label;
 
