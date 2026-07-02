@@ -19,12 +19,17 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  /* Neutral backdrop so contained logos/banners letterbox cleanly. */
+  background: var(--ifm-color-emphasis-100);
 }
 
 .img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* Show the whole image (logos and banners), never crop. */
+  object-fit: contain;
+  padding: 0.6rem;
+  box-sizing: border-box;
   display: block;
 }
 
