@@ -3,10 +3,17 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { makeApiClient } from '@site/src/utils/insights/api';
 
 // Aggregated CardanoEvents feed (all featured working groups etc.), proxied by
-// data.cardano.org. The proxy pins the calendar id, so the client only passes
-// the time window and page size.
+// data.cardano.org. The client passes every query param including the public
+// calendar id, so the proxy can be a plain passthrough (forward + CORS) with
+// no server-side injection. The calendar id is public (shown on
+// luma.com/CardanoEvents).
 const LUMA_EVENTS_PATH = '/calendar/get-items';
-const LUMA_QUERY = { period: 'future', pagination_limit: 100 };
+const LUMA_CALENDAR_ID = 'cal-qmBBkIprsqDgQ5C';
+const LUMA_QUERY = {
+  calendar_api_id: LUMA_CALENDAR_ID,
+  period: 'future',
+  pagination_limit: 100,
+};
 
 // Fetches the Cardano Luma calendar feed through the data.cardano.org proxy.
 // Returns raw entries plus a status; failures degrade silently so the page can
