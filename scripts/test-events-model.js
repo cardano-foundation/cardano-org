@@ -26,70 +26,40 @@ async function main() {
     console.log(`  ok - ${name}`);
   };
 
-  check('normalizeLumaEvent maps a get-items meet entry (online, tags, host, slug url)', () => {
+  check('normalizeLumaEvent maps an official list-events entry (offline, geo, tags)', () => {
     const out = normalizeLumaEvent({
-      start_at: '2026-07-02T14:00:00.000Z',
-      tags: [{ name: 'Developers' }, { name: 'Intersect' }],
-      hosts: [{ name: 'Bosko Majdanac' }],
-      event: {
-        name: 'Hard Fork Working Group',
-        start_at: '2026-07-02T14:00:00.000Z',
-        end_at: '2026-07-02T14:30:00.000Z',
-        location_type: 'meet',
-        url: '75xxkmq6',
-        cover_url: 'https://images.lumacdn.com/x.jpg',
-        geo_address_info: null,
-      },
+      name: 'Rare Dev & Governance Day 2025',
+      description: 'desc',
+      start_at: '2025-08-07T16:00:00.000Z',
+      end_at: '2025-08-08T00:00:00.000Z',
+      location_type: 'offline',
+      url: 'https://luma.com/52rggq6i',
+      cover_url: 'https://images.lumacdn.com/x.png',
+      geo_address_json: { address: 'Topgolf', city: 'Las Vegas', region: 'Nevada', country: 'US' },
+      tags: [{ id: 't1', name: '\u{1F1FA}\u{1F1F8} USA' }],
     });
-    assert.strictEqual(out.title, 'Hard Fork Working Group');
-    assert.strictEqual(out.online, true);
-    assert.strictEqual(out.url, 'https://lu.ma/75xxkmq6'); // slug expanded
-    assert.strictEqual(out.organizer, 'Bosko Majdanac');
-    assert.deepStrictEqual(out.tags, ['Developers', 'Intersect']);
-    assert.strictEqual(out.image, 'https://images.lumacdn.com/x.jpg');
+    assert.strictEqual(out.title, 'Rare Dev & Governance Day 2025');
+    assert.strictEqual(out.online, false);
+    assert.strictEqual(out.location.label, 'Las Vegas, US');
+    assert.strictEqual(out.url, 'https://luma.com/52rggq6i'); // full url as-is
+    assert.strictEqual(out.image, 'https://images.lumacdn.com/x.png');
+    assert.strictEqual(out.description, 'desc');
+    assert.strictEqual(out.organizer, null);
+    assert.deepStrictEqual(out.tags, ['\u{1F1FA}\u{1F1F8} USA']);
     assert.strictEqual(out.source, 'luma');
   });
 
-  check('normalizeLumaEvent: offline url-address skipped, external link and null type handled', () => {
-    const off = normalizeLumaEvent({
-      hosts: [],
-      tags: [{ name: '\u{1F310} Virtual' }],
-      event: {
-        name: 'Intersect Connect',
-        start_at: '2026-07-02T14:00:00.000Z',
-        location_type: 'offline',
-        url: '9jerw8tf',
-        geo_address_info: { type: 'manual', address: 'https://members.intersectmbo.org/' },
-      },
-    });
-    assert.strictEqual(off.online, false);
-    assert.strictEqual(off.location.label, null); // a URL is not a place
-    const ext = normalizeLumaEvent({
-      event: {
-        name: 'Developers Office Hours',
-        start_at: '2026-07-03T08:00:00.000Z',
-        location_type: null,
-        url: 'https://www.addevent.com/event/abc',
-        cover_url: null,
-      },
-    });
-    assert.strictEqual(ext.online, true); // null location_type is online
-    assert.strictEqual(ext.url, 'https://www.addevent.com/event/abc'); // full url as-is
-    assert.strictEqual(ext.image, null);
-  });
-
-  check('normalizeLumaEvent shows city for a real offline location', () => {
+  check('normalizeLumaEvent treats meet/discord as online with no location label', () => {
     const out = normalizeLumaEvent({
-      event: {
-        name: 'Local Meetup',
-        start_at: '2026-08-01T10:00:00.000Z',
-        location_type: 'offline',
-        url: 'abc',
-        geo_address_info: { city: 'Berlin', country: 'DE', city_state: 'Berlin, Berlin' },
-      },
+      name: 'Hard Fork Working Group',
+      start_at: '2026-07-02T14:00:00.000Z',
+      location_type: 'meet',
+      url: 'https://luma.com/75xxkmq6',
+      tags: [{ name: 'Developers' }, { name: 'Intersect' }],
     });
-    assert.strictEqual(out.online, false);
-    assert.strictEqual(out.location.label, 'Berlin, Berlin');
+    assert.strictEqual(out.online, true);
+    assert.strictEqual(out.location.label, null);
+    assert.deepStrictEqual(out.tags, ['Developers', 'Intersect']);
   });
 
   check('normalizeCuratedEvent maps existing events.json shape', () => {
@@ -113,14 +83,15 @@ async function main() {
     assert.strictEqual(out.recapVideo, 'vbWal8A6_lQ');
   });
 
-  check('isPlaceholderEvent flags the guidelines pin and far-future dates', () => {
+  check('isPlaceholderEvent flags the guidelines pin by title, keeps real future events', () => {
     assert.strictEqual(
       isPlaceholderEvent({ title: 'Event Submission Guidelines', startDate: '2027-01-01' }),
       true,
     );
+    // Recurring working groups legitimately run into future years.
     assert.strictEqual(
-      isPlaceholderEvent({ title: 'Real Event', startDate: '2027-05-01' }),
-      true,
+      isPlaceholderEvent({ title: 'DB-Sync TWG Open Session', startDate: '2027-04-22' }),
+      false,
     );
     assert.strictEqual(
       isPlaceholderEvent({ title: 'Real Event', startDate: '2026-05-01' }),
@@ -134,15 +105,15 @@ async function main() {
       { title: 'Older', startDate: '2025-01-01' },
     ];
     const luma = [
-      { event: { name: 'Shared Event', start_at: '2026-05-01T09:00:00.000Z', url: 'lumaslug', location_type: 'meet' } },
-      { event: { name: 'Event Submission Guidelines', start_at: '2027-01-01T00:00:00.000Z', url: 'x', location_type: 'offline' } },
+      { name: 'Shared Event', start_at: '2026-05-01T09:00:00.000Z', url: 'https://luma.com/x', location_type: 'meet' },
+      { name: 'Event Submission Guidelines', start_at: '2027-01-01T00:00:00.000Z', url: 'https://luma.com/g', location_type: 'offline' },
     ];
     const merged = mergeEvents(curated, luma);
     assert.strictEqual(merged.length, 2); // placeholder dropped, shared deduped
     assert.strictEqual(merged[0].title, 'Older'); // chronological
     const shared = merged.find((e) => e.title === 'Shared Event');
     assert.strictEqual(shared.source, 'luma'); // Luma wins
-    assert.strictEqual(shared.url, 'https://lu.ma/lumaslug');
+    assert.strictEqual(shared.url, 'https://luma.com/x');
   });
 
   console.log(`\n${passed} checks passed`);

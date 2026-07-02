@@ -2,23 +2,13 @@
 // can be unit tested with a plain node script.
 
 // Titles that mark non-events pinned on the Luma calendar (e.g. a guidelines
-// card). Matched case-insensitively.
+// card). Matched case-insensitively. Real events legitimately run into future
+// years (recurring working groups), so we key only on the title, not the date.
 const PLACEHOLDER_TITLE_PATTERNS = [/event submission guidelines/i];
-
-// Events at or beyond this year are treated as placeholders/pins, not real
-// events. The Cardano Luma calendar uses a 2027 date for its guidelines pin.
-const FAR_FUTURE_YEAR = 2027;
 
 export function isPlaceholderEvent(evt) {
   if (!evt || !evt.title) return true;
-  if (PLACEHOLDER_TITLE_PATTERNS.some((re) => re.test(evt.title))) return true;
-  if (evt.startDate) {
-    const start = new Date(evt.startDate);
-    if (!Number.isNaN(start.getTime()) && start.getUTCFullYear() >= FAR_FUTURE_YEAR) {
-      return true;
-    }
-  }
-  return false;
+  return PLACEHOLDER_TITLE_PATTERNS.some((re) => re.test(evt.title));
 }
 
 const LUMA_EVENT_BASE_URL = 'https://lu.ma/';
@@ -44,34 +34,30 @@ function lumaLocationLabel(geo, online) {
   return null;
 }
 
-// Maps one entry from the lu.ma aggregated calendar feed (calendar/get-items).
-// The event fields live under entry.event; hosts and tags live on the entry.
-export function normalizeLumaEvent(entry) {
-  const ev = entry && entry.event;
-  if (!ev || !ev.name) return null;
-  // Luma marks in person events as 'offline'; meet/discord/twitter/null are all
-  // treated as online.
-  const online = ev.location_type !== 'offline';
-  const geo = ev.geo_address_info || null;
-  const hosts = Array.isArray(entry.hosts) ? entry.hosts : [];
+// Maps one entry from the official Luma calendar API (calendars/events/list with
+// access=view). Fields are flat on the entry. The API exposes no host name, so
+// organizer is left null.
+export function normalizeLumaEvent(raw) {
+  if (!raw || !raw.name) return null;
+  // Luma marks in person events as 'offline'; meet/discord/twitter are online.
+  const online = raw.location_type !== 'offline';
+  const geo = raw.geo_address_json || null;
   return {
-    title: ev.name,
-    // The aggregated feed carries no descriptions.
-    description: '',
-    startDate: ev.start_at || entry.start_at || null,
-    endDate: ev.end_at || null,
+    title: raw.name,
+    description: raw.description || '',
+    startDate: raw.start_at || null,
+    endDate: raw.end_at || null,
     location: {
       city: (geo && geo.city) || null,
       country: (geo && geo.country) || null,
       label: lumaLocationLabel(geo, online),
     },
     online,
-    url: lumaEventUrl(ev.url),
-    image: ev.cover_url || null,
-    organizer:
-      hosts.map((h) => h && h.name).filter(Boolean).join(', ') || null,
-    tags: Array.isArray(entry.tags)
-      ? entry.tags.map((t) => t && t.name).filter(Boolean)
+    url: lumaEventUrl(raw.url),
+    image: raw.cover_url || null,
+    organizer: null,
+    tags: Array.isArray(raw.tags)
+      ? raw.tags.map((t) => t && t.name).filter(Boolean)
       : [],
     source: 'luma',
     recapVideo: null,
