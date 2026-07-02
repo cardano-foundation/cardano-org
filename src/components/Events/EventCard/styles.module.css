@@ -64,6 +64,12 @@
 
 .description {
   margin: 0 0 0.75rem;
+  /* Clamp long feed descriptions to keep cards uniform. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .tags {
