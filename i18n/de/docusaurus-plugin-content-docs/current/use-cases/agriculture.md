@@ -1,11 +1,11 @@
 ---
 title: Landwirtschaft
-description: Rückverfolgbarkeit mit Cardano Blockchain für die Transparenz der Lebensmittelkette
+description: Rückverfolgbarkeit vom Erzeuger bis auf den Tisch mithilfe der Cardano-Blockchain für mehr Transparenz in der Lebensmittelversorgungskette
 sidebar_label: Landwirtschaft
 sidebar_position: 8
 ---
 
-# Agrarwirtschaft
+# Landwirtschaft
 
 ## Das Problem
 
@@ -33,8 +33,8 @@ Intelligente Verträge (Smart contracts) können Zahlungen an Landwirte automati
 - **Global accessibility** supports smallholder farmers in developing regions
 - **Proven deployments** demonstrate real-world agricultural traceability
 
-## Get Started
+## Erste Schritte
 
-- [Explore supply chain solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Erkunden Sie Lieferketten-Lösungen](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

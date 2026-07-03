@@ -6,9 +6,53 @@
 
 let evolutionPromise;
 
+// The SDK's HTTP layer (@effect/platform) adds tracing headers (traceparent, b3)
+// to every request. They aren't CORS-safelisted, so the browser preflights them
+// and the Koios proxy (which allows only Content-Type) rejects it, breaking all
+// SDK Koios calls with "Failed to fetch". We can't disable propagation on the
+// SDK's internal client, so we strip these headers at global fetch; they carry
+// no client-side meaning, so removing them is safe.
+const TRACING_HEADERS = [
+  "traceparent",
+  "tracestate",
+  "b3",
+  "x-b3-traceid",
+  "x-b3-spanid",
+  "x-b3-sampled",
+  "x-b3-parentspanid",
+];
+let fetchPatched = false;
+
+function stripTracingHeadersFromGlobalFetch() {
+  if (fetchPatched) return;
+  if (typeof globalThis === "undefined" || typeof globalThis.fetch !== "function") return;
+  const originalFetch = globalThis.fetch.bind(globalThis);
+  globalThis.fetch = (input, init) => {
+    try {
+      if (typeof Request !== "undefined" && input instanceof Request) {
+        const headers = new Headers(input.headers);
+        let changed = false;
+        for (const name of TRACING_HEADERS) {
+          if (headers.has(name)) { headers.delete(name); changed = true; }
+        }
+        if (changed) input = new Request(input, { headers });
+      } else if (init && init.headers) {
+        const headers = new Headers(init.headers);
+        for (const name of TRACING_HEADERS) headers.delete(name);
+        init = { ...init, headers };
+      }
+    } catch {
+      // Never let header cleanup break a request; fall through to the original.
+    }
+    return originalFetch(input, init);
+  };
+  fetchPatched = true;
+}
+
 // Memoized dynamic import of the Evolution SDK.
 export function loadEvolution() {
   if (!evolutionPromise) {
+    stripTracingHeadersFromGlobalFetch();
     evolutionPromise = import("@evolution-sdk/evolution");
   }
   return evolutionPromise;
@@ -112,6 +156,83 @@ export async function delegateVote({ api, target, koiosUrl }) {
     .build();
 
   const unsignedTx = Transaction.toCBORHex(await built.toTransaction());
+  const witnessSet = await api.signTx(unsignedTx, false);
+  const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
+  return api.submitTx(signedTx);
+}
+
+// Bech32-encode a decoded output address, tolerating exotic address types.
+function tryAddressBech32(Address, address) {
+  try {
+    return Address.toBech32(address);
+  } catch {
+    return null;
+  }
+}
+
+// Build, sign and submit a Conway treasury donation transaction. The builder
+// has no treasury-donation op, so we pay the amount to ourselves to make coin
+// selection reserve the funds and compute fee/change, then rewrite the body:
+// drop that self-payment output and carry the same lovelace as the Conway
+// donation instead (with currentTreasuryValue, which the ledger requires to
+// match the treasury at submission). Returns the submitted tx hash.
+export async function donateToTreasury({ api, amountLovelace, currentTreasuryValue, koiosUrl }) {
+  const { Client, mainnet, Transaction, Address, Assets } = await loadEvolution();
+
+  const donation = BigInt(amountLovelace);
+  if (donation <= 0n) {
+    throw new Error("Donation amount must be greater than zero.");
+  }
+
+  const ownAddress = await firstAddressBech32(api);
+  if (!ownAddress) {
+    throw new Error("Wallet did not return a usable address.");
+  }
+
+  const client = Client.make(mainnet)
+    .withKoios({ baseUrl: koiosUrl })
+    .withCip30(api);
+  // autoMinUtxo:false keeps the output at exactly `donation` lovelace so the
+  // body rewrite below can match and drop it (a bumped output wouldn't match).
+  const built = await client
+    .newTx()
+    .payToAddress({
+      address: Address.fromBech32(ownAddress),
+      assets: Assets.fromLovelace(donation),
+      autoMinUtxo: false,
+    })
+    .build();
+
+  const tx = await built.toTransaction();
+  const body = tx.body;
+
+  let removed = false;
+  const keptOutputs = [];
+  for (const output of body.outputs) {
+    const assets = output.assets;
+    const isSelfPayment =
+      !removed &&
+      assets != null &&
+      assets.multiAsset === undefined &&
+      assets.lovelace === donation &&
+      tryAddressBech32(Address, output.address) === ownAddress;
+    if (isSelfPayment) {
+      removed = true;
+      continue;
+    }
+    keptOutputs.push(output);
+  }
+  if (!removed) {
+    throw new Error("Could not locate the temporary self-payment output for the treasury donation.");
+  }
+
+  // The SDK's body/output objects are plain mutable instances; mutate in place
+  // rather than reconstructing the tagged classes.
+  body.outputs = keptOutputs;
+  body.currentTreasuryValue = BigInt(currentTreasuryValue);
+  body.donation = donation;
+
+  const unsignedTx = Transaction.toCBORHex(tx);
   const witnessSet = await api.signTx(unsignedTx, false);
   const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
   return api.submitTx(signedTx);

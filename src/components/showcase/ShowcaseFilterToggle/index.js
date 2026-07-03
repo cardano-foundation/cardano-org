@@ -26,6 +26,8 @@ export default function ShowcaseFilterToggle() {
   const [operator, setOperator] = useState(false);
 
   useEffect(() => {
+    // Sync the toggle from the URL; it is also user-togglable, so it stays state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOperator(readOperator(location.search) === "OR");
   }, [location]);
 
@@ -56,7 +58,6 @@ export default function ShowcaseFilterToggle() {
         }}
         checked={!operator}
       />
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label htmlFor={id} className={clsx(styles.checkboxLabel, "shadow--md")}>
         <span className={styles.checkboxLabelOr}>OR</span>
         <span className={styles.checkboxLabelAnd}>AND</span>

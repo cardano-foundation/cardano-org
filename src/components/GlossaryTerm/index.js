@@ -221,7 +221,8 @@ export default function GlossaryTerm({ term }) {
   // plugin failed to register (e.g. build error in loadContent); we still want
   // the page to render rather than crash the whole route.
   const glossaryData = usePluginData('glossary-routes') || {};
-  const terms = glossaryData.terms || [];
+  // Memoize so the fallback [] keeps a stable reference across renders.
+  const terms = useMemo(() => glossaryData.terms || [], [glossaryData.terms]);
   const categoryDef = CATEGORIES[term.category];
 
   const { siteConfig } = useDocusaurusContext();

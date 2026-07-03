@@ -1,19 +1,19 @@
 ---
-title: Data Storage
+title: Datenspeicher
 description: Decentralized, secure data storage solutions on Cardano blockchain
-sidebar_label: Data Storage
+sidebar_label: Datenspeicher
 sidebar_position: 12
 ---
 
-# Data Storage
+# Datenspeicher
 
-## The Challenge
+## Die Herausforderung
 
 Centralized data storage creates single points of failure and concentrates control over sensitive information. Cloud providers can experience outages, change terms of service, or be compelled to provide access to stored data. For sensitive applications, this dependency on third parties creates unacceptable risks.
 
 Data integrity is another concern. How can users verify that stored data hasn't been tampered with, especially over long time periods? Traditional backup systems provide redundancy but not proof of integrity.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain-based storage solutions combine decentralization with cryptographic integrity guarantees:
 
@@ -25,7 +25,7 @@ Blockchain-based storage solutions combine decentralization with cryptographic i
 
 While large files are typically stored off-chain, their cryptographic hashes recorded on Cardano provide proof of existence and integrity that is as permanent as the blockchain itself.
 
-## Why Cardano
+## Warum Cardano
 
 - **Proven security** through rigorous cryptographic protocols
 - **Long-term sustainability** through proof of stake and community governance
@@ -33,8 +33,8 @@ While large files are typically stored off-chain, their cryptographic hashes rec
 - **Low costs** for storing hashes and access control logic
 - **Developer tools** for building storage applications
 
-## Get Started
+## Erste Schritte
 
 - [Explore decentralized storage solutions](/solutions)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

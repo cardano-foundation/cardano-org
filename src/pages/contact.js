@@ -104,6 +104,8 @@ export default function Home() {
     const queryParams = new URLSearchParams(location.search);
     const type = queryParams.get("topic");
     if (type) {
+      // Preselect the topic from the URL query; it is also user-selectable.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedTopic(type);
     }
   }, [location]); // Dependency array, re-run effect if location changes
@@ -128,7 +130,7 @@ export default function Home() {
           <select
             className={clsx("selectField", "selectFieldArrow")}
             onChange={handleTopicChange}
-            value={selectedTopic}
+            value={selectedTopic ?? ""}
           >
             <option value="">{translate({id: 'contact.select.placeholder', message: 'not yet decided (please select)'})}</option>
             <option value="iog">

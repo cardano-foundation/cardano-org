@@ -1,19 +1,19 @@
 ---
-title: Healthcare
+title: Gesundheitswesen
 description: Portable, secure health records using Cardano blockchain technology
-sidebar_label: Healthcare
+sidebar_label: Gesundheitswesen
 sidebar_position: 15
 ---
 
-# Healthcare
+# Gesundheitswesen
 
-## The Challenge
+## Die Herausforderung
 
 Healthcare data is fragmented across providers, making it difficult for patients and doctors to access complete medical histories. This fragmentation leads to repeated tests, dangerous drug interactions, and delayed diagnoses. In emergencies, critical information may be unavailable.
 
 Current systems also create privacy and security risks. Centralized databases are attractive targets for hackers, and patients have limited control over who accesses their sensitive health information.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain-based health records give patients control over their complete medical history:
 
@@ -25,7 +25,7 @@ Blockchain-based health records give patients control over their complete medica
 
 Smart contracts can automate consent management, ensuring providers only access data they're authorized to see while maintaining compliance with healthcare regulations.
 
-## Why Cardano
+## Warum Cardano
 
 - **Privacy features** protect sensitive health information
 - **Security** through proven cryptographic protocols
@@ -33,8 +33,8 @@ Smart contracts can automate consent management, ensuring providers only access 
 - **Global accessibility** supports healthcare across borders
 - **Regulatory compliance** capabilities for HIPAA and similar requirements
 
-## Get Started
+## Erste Schritte
 
 - [Explore Cardano applications](/apps)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)

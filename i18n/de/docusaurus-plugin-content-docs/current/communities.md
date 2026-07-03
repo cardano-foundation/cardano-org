@@ -27,7 +27,7 @@ Lerne die Cardano-Community bei Veranstaltungen vor Ort oder online kennen.
 Echtzeit-Chat und schnelle Diskussionen.
 
 - Cardano Main: https://t.me/Cardano
-- Cardano Developers: https://t.me/CardanoDevelopersOfficial
+- Cardano Entwickler: https://t.me/CardanoDevelopersOfficial
 - Cardano Report to Admin: https://t.me/cardanoreporttoadmin – für Fragen oder Probleme mit Regeln, Nutzern, Admins, Moderatoren oder anderen Themen in unseren Telegram-Kanälen.
 
 ## Cardano auf Discord

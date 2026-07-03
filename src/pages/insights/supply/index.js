@@ -147,8 +147,9 @@ function DonutChartEcharts({ chartData }) {
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once via a lazy initializer instead of writing a
+  // ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
   
   const location = useLocation();
   const initialUrlEpoch = new URLSearchParams(location.search).get('epoch');
@@ -165,11 +166,10 @@ function PageContent() {
   const [withdrawalsCurrRes, setWithdrawalsCurr] = useState([]);
   const [withdrawalsPrevRes, setWithdrawalsPrev] = useState([]);
   const [epochInfoPrev1, setEpochInfoPrev1] = useState(null);
-  const [epochInfoPrev2, setEpochInfoPrev2] = useState(null);
   const [error, setError] = useState(null);  
   //const [withdrawalsCurr, setWithdrawalsCurr] = useState([]);
 
-  const isPrimed = Boolean(totalsCurr && totalsPrev && epochInfoPrev1 && epochInfoPrev2);
+  const isPrimed = Boolean(totalsCurr && totalsPrev && epochInfoPrev1);
 
   const lastScrollYRef = useRef(0);
   
@@ -180,7 +180,7 @@ function PageContent() {
     }
     setIsLoading(true);
     setErrorInfo(null);
-    const api = apiRef.current ?? makeApiClient(API_URL);
+    const api = apiClient ?? makeApiClient(API_URL);
 	
     try {
       // parse & validate current URL epoch
@@ -197,17 +197,15 @@ function PageContent() {
       }
       const displayedEpoch = validEpoch ?? tipEpoch;
 
-      // fetch epoch data in parallel (previous ones for delta calculations) 
-      const [totalsCurrRes, totalsPrevRes, epochInfoPrev1Res, epochInfoPrev2Res] = await Promise.all([
+      // fetch epoch data in parallel (previous ones for delta calculations)
+      const [totalsCurrRes, totalsPrevRes, epochInfoPrev1Res] = await Promise.all([
         api.get(`/totals?_epoch_no=${displayedEpoch}`),
         api.get(`/totals?_epoch_no=${displayedEpoch - 1}`),
         api.get(`/epoch_info?_epoch_no=${displayedEpoch - 1}`),
-        api.get(`/epoch_info?_epoch_no=${displayedEpoch - 2}`),
       ]);
       setTotalsCurr({ epoch_no: displayedEpoch, ...totalsCurrRes.data[0] });
       setTotalsPrev(totalsPrevRes.data[0]);
       setEpochInfoPrev1(epochInfoPrev1Res.data[0]);
-      setEpochInfoPrev2(epochInfoPrev2Res.data[0]);
 
       // fetch treasury withdrawals
       // For epochs >= 571, use governance action proposals (Koios endpoint)
@@ -274,6 +272,8 @@ function PageContent() {
 
   // first mount: load (uses initialUrlEpoch via window.location since we read inside fetchData)
   useEffect(() => {
+    // Trigger the initial data fetch on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [API_URL, initialUrlEpoch]); // initialUrlEpoch just to fire once with router-provided query
@@ -388,7 +388,10 @@ function PageContent() {
   const percentOfTreasury = ((deltaTreasury / totalsCurr.treasury) * 100).toFixed(2);
   const percentOfDeltaReserves = ((deltaTreasury / deltaReserves) * 100).toFixed(2);
   const percentFeesOfDeltaReserves = ((totalsPrev.fees / deltaReserves) * 100).toFixed(2);
-  const averageTxFee = (epochInfoPrev1.fees / epochInfoPrev1.tx_count).toFixed(0);
+  const distributedTxCount = Number(epochInfoPrev1.tx_count || 0);
+  const averageTxFee = distributedTxCount > 0
+    ? (Number(totalsPrev.fees) / distributedTxCount).toFixed(0)
+    : '0';
   // Calculate totals - handle both legacy format (w.amount) and governance format (w.amount as string or number)
   const totalTreasuryWithdrawalsCurr = withdrawalsCurrRes.reduce((sum, w) => {
     const amount = typeof w.amount === 'string' ? parseInt(w.amount, 10) : (w.amount || 0);
@@ -594,8 +597,8 @@ function PageContent() {
               <>A: In epoch {displayedEpoch}, a total of <strong>{convertLovelacesToAda(totalsCurr.fees).toLocaleString()} ada</strong> in transaction fees was collected for a distribution next epoch.&nbsp;</>
             )
           }
-		  <strong>{convertLovelacesToAda(epochInfoPrev2.fees).toLocaleString()} ada</strong> from epoch {displayedEpoch - 1} was distributed as rewards and treasury extension.&nbsp;
-		  These fees came from { (epochInfoPrev2.tx_count).toLocaleString() } transactions, averaging {(averageTxFee / 1_000_000).toFixed(2)} ada per transaction, and accounted for {percentFeesOfDeltaReserves}% of the total rewards distributed
+		  <strong>{convertLovelacesToAda(totalsPrev.fees).toLocaleString()} ada</strong> from epoch {displayedEpoch - 1} was distributed as rewards and treasury extension.&nbsp;
+		  These fees came from {distributedTxCount.toLocaleString()} transactions, averaging {(averageTxFee / 1_000_000).toFixed(2)} ada per transaction, and accounted for {percentFeesOfDeltaReserves}% of the total rewards distributed
         </p>
 
 		{/* #############################  */}

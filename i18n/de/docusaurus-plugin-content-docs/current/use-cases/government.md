@@ -1,19 +1,19 @@
 ---
 title: Government Documents
 description: Tamper-proof official documents and records using Cardano blockchain technology
-sidebar_label: Government
+sidebar_label: Verwaltung
 sidebar_position: 5
 ---
 
 # Government Documents
 
-## The Challenge
+## Die Herausforderung
 
 Government-issued documents form the foundation of civic identity, yet they remain vulnerable to forgery, loss, and bureaucratic inefficiency. Birth certificates, property deeds, business licenses, and other official records are often paper-based, creating challenges for verification and portability.
 
 Citizens frequently face lengthy processes to obtain copies of their own documents, while government agencies struggle with record-keeping across jurisdictions. Document fraud undermines trust in institutions and creates real harm for individuals whose identities are misused.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
 Blockchain technology enables governments to issue and manage official documents with unprecedented security and efficiency:
 
@@ -25,7 +25,7 @@ Blockchain technology enables governments to issue and manage official documents
 
 Smart contracts can automate document issuance when conditions are met, reducing processing times and human error while maintaining security and compliance.
 
-## Why Cardano
+## Warum Cardano
 
 - **Proven security** through peer-reviewed cryptographic protocols
 - **Sustainability** aligns with government environmental commitments
@@ -33,8 +33,8 @@ Smart contracts can automate document issuance when conditions are met, reducing
 - **Scalability** handles document verification at national scale
 - **Interoperability** enables integration with existing government systems
 
-## Get Started
+## Erste Schritte
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise Lösungen anzeigen](/solutions)
