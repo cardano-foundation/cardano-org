@@ -139,6 +139,15 @@ export default function Events() {
 
   const isPast = filters.time === "past";
 
+  // Featured is a highlight of the default view. Once the user searches or
+  // filters, hide it so the (changing) list moves up into view.
+  const isFiltering =
+    filters.query.trim() !== "" ||
+    filters.place !== "all" ||
+    filters.category !== null ||
+    filters.time !== "upcoming" ||
+    view === "calendar";
+
   const orderedEvents = useMemo(() => {
     const todayTs = todayUtcStart();
     const filtered = allEvents.filter((event) => {
@@ -190,7 +199,7 @@ export default function Events() {
       <OpenGraphInfo pageName="events" />
       <HomepageHeader filters={filters} onChange={setFilters} />
       <main>
-        {featuredEvents.length > 0 && (
+        {featuredEvents.length > 0 && !isFiltering && (
           <BoundaryBox>
             <Divider
               text={translate({
