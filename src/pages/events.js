@@ -9,6 +9,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import curatedEvents from "@site/src/data/events.json";
 import { translate } from "@docusaurus/Translate";
 import { mergeEvents } from "@site/src/utils/events/eventModel";
+import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
 import useLumaEvents from "@site/src/utils/events/useLumaEvents";
 import EventCard from "@site/src/components/Events/EventCard";
 import EventFilters from "@site/src/components/Events/EventFilters";
@@ -44,28 +45,20 @@ function matchesQuery(event, query) {
   return haystack.includes(q);
 }
 
-function matchesTag(event, tag) {
-  if (!tag) return true;
-  return Array.isArray(event.tags) && event.tags.includes(tag);
+function matchesCategory(event, category) {
+  if (!category) return true;
+  return event.category === category;
 }
 
-// Tags that make poor filter chips: the guidelines pin and "Virtual", which the
-// in-person/online toggle already covers.
-const EXCLUDED_TAGS = new Set(["\u{1F310} Virtual", "\u{1F4A1} Event Submission Guidelines"]);
-const MAX_TAG_CHIPS = 8;
+// Categories too generic to offer as a topic button (the catch-all buckets).
+const HIDDEN_TOPIC_CATEGORIES = new Set(["Community", "Other"]);
 
-function collectTags(events) {
-  const counts = new Map();
-  for (const event of events) {
-    for (const tag of event.tags || []) {
-      if (EXCLUDED_TAGS.has(tag)) continue;
-      counts.set(tag, (counts.get(tag) || 0) + 1);
-    }
-  }
-  return [...counts.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, MAX_TAG_CHIPS)
-    .map(([tag]) => tag);
+// Distinct categories actually present, in the canonical taxonomy order.
+function collectCategories(events) {
+  const present = new Set(events.map((e) => e.category).filter(Boolean));
+  return Object.keys(EVENT_CATEGORIES).filter(
+    (c) => present.has(c) && !HIDDEN_TOPIC_CATEGORIES.has(c),
+  );
 }
 
 function HomepageHeader() {
@@ -91,7 +84,7 @@ export default function Events() {
     place: "all",
     time: "upcoming",
     query: "",
-    tag: null,
+    category: null,
   });
 
   const allEvents = useMemo(
@@ -99,7 +92,7 @@ export default function Events() {
     [lumaEntries],
   );
 
-  const availableTags = useMemo(() => collectTags(allEvents), [allEvents]);
+  const availableCategories = useMemo(() => collectCategories(allEvents), [allEvents]);
 
   // The calendar spans every month, so it ignores the upcoming/past toggle but
   // still respects place, topic and search.
@@ -109,9 +102,9 @@ export default function Events() {
         (event) =>
           matchesPlace(event, filters.place) &&
           matchesQuery(event, filters.query) &&
-          matchesTag(event, filters.tag),
+          matchesCategory(event, filters.category),
       ),
-    [allEvents, filters.place, filters.query, filters.tag],
+    [allEvents, filters.place, filters.query, filters.category],
   );
 
   // Highlighted events are the upcoming curated entries (hand-picked
@@ -139,7 +132,7 @@ export default function Events() {
       return (
         matchesPlace(event, filters.place) &&
         matchesQuery(event, filters.query) &&
-        matchesTag(event, filters.tag)
+        matchesCategory(event, filters.category)
       );
     });
     // Past events read newest first, upcoming read soonest first. filter()
@@ -163,8 +156,8 @@ export default function Events() {
         message: "In person",
       }),
       placeOnline: translate({ id: "events.filter.placeOnline", message: "Online" }),
-      tagGroup: translate({ id: "events.filter.tagGroup", message: "Topic" }),
-      tagAll: translate({ id: "events.filter.tagAll", message: "All topics" }),
+      topicGroup: translate({ id: "events.filter.topicGroup", message: "Topics" }),
+      allTopics: translate({ id: "events.filter.allTopics", message: "All Topics" }),
     }),
     [],
   );
@@ -245,7 +238,7 @@ export default function Events() {
               value={filters}
               onChange={setFilters}
               labels={filterLabels}
-              tags={availableTags}
+              topics={availableCategories}
               hideTime={view === "calendar"}
             />
             {view === "calendar" ? (

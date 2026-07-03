@@ -1,10 +1,11 @@
 import React from 'react';
+import { categoryLabel } from '@site/src/utils/events/categories';
 import styles from './styles.module.css';
 
-// Controlled filter bar. `value` is { place, time, query, tag }; `onChange`
+// Controlled filter bar. `value` is { place, time, query, category }; `onChange`
 // receives the next value. `labels` carries pre-translated strings from the
-// page. `tags` is the list of topic tags to offer (empty hides the tag row).
-export default function EventFilters({ value, onChange, labels, tags = [], hideTime = false }) {
+// page. `topics` is the list of category keys to offer (empty hides the row).
+export default function EventFilters({ value, onChange, labels, topics = [], hideTime = false }) {
   const set = (patch) => onChange({ ...value, ...patch });
 
   const placeOptions = [
@@ -58,25 +59,25 @@ export default function EventFilters({ value, onChange, labels, tags = [], hideT
         </div>
       </div>
 
-      {tags.length > 0 && (
-        <div className={styles.tagRow} role="group" aria-label={labels.tagGroup}>
+      {topics.length > 0 && (
+        <div className={styles.tagRow} role="group" aria-label={labels.topicGroup}>
           <button
             type="button"
-            className={`${styles.chip} ${!value.tag ? styles.active : ''}`}
-            aria-pressed={!value.tag}
-            onClick={() => set({ tag: null })}
+            className={`${styles.chip} ${!value.category ? styles.active : ''}`}
+            aria-pressed={!value.category}
+            onClick={() => set({ category: null })}
           >
-            {labels.tagAll}
+            {labels.allTopics}
           </button>
-          {tags.map((tag) => (
+          {topics.map((category) => (
             <button
-              key={tag}
+              key={category}
               type="button"
-              className={`${styles.chip} ${value.tag === tag ? styles.active : ''}`}
-              aria-pressed={value.tag === tag}
-              onClick={() => set({ tag: value.tag === tag ? null : tag })}
+              className={`${styles.chip} ${value.category === category ? styles.active : ''}`}
+              aria-pressed={value.category === category}
+              onClick={() => set({ category: value.category === category ? null : category })}
             >
-              {tag}
+              {categoryLabel(category)}
             </button>
           ))}
         </div>

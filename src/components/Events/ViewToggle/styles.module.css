@@ -7,6 +7,9 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   border: none;
   border-radius: 999px;
