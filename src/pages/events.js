@@ -22,9 +22,9 @@ import ViewToggle from "@site/src/components/Events/ViewToggle";
 
 const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
 // Curated conference events shown as highlighted cards above the full list.
-// A small rolling set of the next upcoming ones, so the row is never empty or
-// overloaded (not strictly bound to the current calendar month).
-const FEATURED_LIMIT = 4;
+// The row scrolls horizontally, so we can surface a good number of the next
+// upcoming ones (not strictly bound to the current calendar month).
+const FEATURED_LIMIT = 10;
 
 function todayUtcStart() {
   const now = new Date();
