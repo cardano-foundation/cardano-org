@@ -16,6 +16,7 @@ import EventHeroControls from "@site/src/components/Events/EventHeroControls";
 import TopicFilter from "@site/src/components/Events/TopicFilter";
 import EventList from "@site/src/components/Events/EventList";
 import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
+import RecapEvents from "@site/src/components/Events/RecapEvents";
 import CalendarView from "@site/src/components/Events/CalendarView";
 import ViewToggle from "@site/src/components/Events/ViewToggle";
 
@@ -121,6 +122,19 @@ export default function Events() {
           (event.startDate ? new Date(event.startDate).getTime() : 0) >= todayTs,
       )
       .slice(0, FEATURED_LIMIT);
+  }, [allEvents]);
+
+  // Past curated events that have a recorded recap video.
+  const recapEvents = useMemo(() => {
+    const todayTs = todayUtcStart();
+    return allEvents
+      .filter(
+        (event) =>
+          event.source === "curated" &&
+          event.recapVideo &&
+          (event.startDate ? new Date(event.startDate).getTime() : 0) < todayTs,
+      )
+      .sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
   }, [allEvents]);
 
   const isPast = filters.time === "past";
@@ -240,6 +254,19 @@ export default function Events() {
             )}
           </BoundaryBox>
         </BackgroundWrapper>
+
+        {recapEvents.length > 0 && (
+          <BoundaryBox>
+            <Divider
+              text={translate({
+                id: "events.recaps.title",
+                message: "Recent event recaps",
+              })}
+              id="recaps"
+            />
+            <RecapEvents events={recapEvents} />
+          </BoundaryBox>
+        )}
 
         <BoundaryBox>
           <Divider

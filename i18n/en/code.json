@@ -2245,6 +2245,8 @@
   "events.filter.allTopics": { "message": "All Topics" },
   "events.featured.title": { "message": "Featured upcoming events" },
   "events.featured.thisWeek": { "message": "This week" },
+  "events.recaps.title": { "message": "Recent event recaps" },
+  "events.recaps.watch": { "message": "Watch recap" },
   "events.carousel.prev": { "message": "Previous" },
   "events.carousel.next": { "message": "Next" },
   "events.view.list": { "message": "List" },
