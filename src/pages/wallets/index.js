@@ -2,13 +2,13 @@ import React, { useMemo, useCallback } from "react";
 import Layout from "@theme/Layout";
 import {translate} from '@docusaurus/Translate';
 import { useHistory, useLocation } from "@docusaurus/router";
+import Link from "@docusaurus/Link";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import WalletFinderFilters from "@site/src/components/WalletFinderFilters";
 import WalletFinderCard from "@site/src/components/WalletFinderCard";
 import { getWallets, filterWallets, getBeginnerWallets } from "@site/src/utils/walletFinderUtils";
@@ -202,15 +202,6 @@ function BeginnerFilter({ selected, onSelect, onSwitchMode }) {
   );
 }
 
-function ChecklistItem({ children }) {
-  return (
-    <li className={styles.checklistItem}>
-      <span className={styles.checkIcon}>&#10003;</span>
-      <span>{children}</span>
-    </li>
-  );
-}
-
 export default function WalletFinder() {
   const allWallets = useMemo(() => getWallets(), []);
   const {
@@ -304,50 +295,16 @@ export default function WalletFinder() {
         <SpacerBox size="large" />
 
         <BoundaryBox>
-          <div className={styles.educationSection}>
-            <TitleWithText
-              title={translate({id: 'walletFinder.checklist.title', message: 'How to Choose a Wallet'})}
-              description={[
-                translate({id: 'walletFinder.checklist.description', message: 'Choosing the right wallet is an important step. Here are some things to look for:'}),
-              ]}
-              titleType="black"
-              headingDot={true}
-            />
-
-            <ul className={styles.checklist}>
-              <ChecklistItem>
-                {translate({id: 'walletFinder.checklist.item2', message: 'Does it support hardware wallets? Connecting a hardware wallet like Ledger or Trezor adds an extra layer of security.'})}
-              </ChecklistItem>
-              <ChecklistItem>
-                {translate({id: 'walletFinder.checklist.item3', message: 'Is it open source? Open-source code allows the community to review and verify the wallet\'s security.'})}
-              </ChecklistItem>
-              <ChecklistItem>
-                {translate({id: 'walletFinder.checklist.item4', message: 'How long has it been on the market? Established wallets have a longer track record of reliability.'})}
-              </ChecklistItem>
-            </ul>
-
-            <SpacerBox size="large" />
-
-            <TitleWithText
-              title={translate({id: 'walletFinder.storage.title', message: 'Hot Wallets vs Cold Wallets'})}
-              description={[
-                translate({id: 'walletFinder.storage.description', message: 'There are two main types of wallets based on their internet connectivity.'}),
-              ]}
-              titleType="black"
-              headingDot={true}
-            />
-
-            <DottedImageWithText
-              imageName="wallet-hot"
-              text={translate({id: 'walletFinder.hotWallet.text', message: 'A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples of hot wallets include mobile and software wallets, and funds stored on exchanges.'})}
-            />
-            <DottedImageWithText
-              imageName="wallet-cold"
-              text={translate({id: 'walletFinder.coldWallet.text', message: 'A cold wallet is an offline wallet. It is not connected to the internet and is used for securing storing funds that do not have to be frequently accessed. Examples include hardware wallets, which are secure hardware devices that store the wallet\'s private keys, and paper wallets. Cardano is supported by both Trezor and Ledger hardware wallets.'})}
-            />
-
-            <SpacerBox size="small" />
-
+          <div className={styles.learnTeaser}>
+            <p className={styles.learnTeaserText}>
+              {translate({
+                id: "walletFinder.learnTeaser.text",
+                message: "New to wallets? Learn how they work, the different types, and how to stay secure.",
+              })}
+            </p>
+            <Link className="button button--primary" to="/what-is-a-wallet">
+              {translate({ id: "walletFinder.learnTeaser.cta", message: "What is a Wallet?" })}
+            </Link>
           </div>
         </BoundaryBox>
         <SpacerBox size="medium" />
