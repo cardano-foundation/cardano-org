@@ -1,16 +1,19 @@
 import React from 'react';
 import useEventImage from '@site/src/components/Events/useEventImage';
 import formatDateRange from '@site/src/components/Events/formatDateRange';
+import { categoryColor, categoryLabel } from '@site/src/utils/events/categories';
 import styles from './styles.module.css';
 
+// Compact list row: thumbnail, date, title + organizer, category, location and
+// a register link. No long description, to keep rows uniform.
 export default function EventCard({ event, registerLabel, onlineLabel }) {
   const { src: imgSrc, fallback: fallbackLogo } = useEventImage(event.image);
   const dateLabel = formatDateRange(event.startDate, event.endDate);
   const place = event.online ? onlineLabel : event.location?.label;
 
   return (
-    <li className={styles.card}>
-      <div className={styles.media}>
+    <li className={styles.row}>
+      <div className={styles.thumb}>
         {imgSrc ? (
           <img src={imgSrc} alt={event.title} loading="lazy" />
         ) : (
@@ -19,38 +22,33 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
           </div>
         )}
       </div>
-      <div className={styles.body}>
-        <div className={styles.meta}>
-          {dateLabel && <span className={styles.date}>{dateLabel}</span>}
-          {place && <span className={styles.place}>{place}</span>}
-        </div>
+
+      {dateLabel && <span className={styles.date}>{dateLabel}</span>}
+
+      <div className={styles.main}>
         <h3 className={styles.title}>{event.title}</h3>
-        {event.organizer && (
-          <p className={styles.organizer}>{event.organizer}</p>
-        )}
-        {event.description && (
-          <p className={styles.description}>{event.description}</p>
-        )}
-        {Array.isArray(event.tags) && event.tags.length > 0 && (
-          <ul className={styles.tags}>
-            {event.tags.slice(0, 4).map((tag) => (
-              <li key={tag} className={styles.tag}>
-                {tag}
-              </li>
-            ))}
-          </ul>
-        )}
-        {event.url && (
-          <a
-            className={styles.cta}
-            href={event.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {registerLabel}
-          </a>
-        )}
+        {event.organizer && <p className={styles.org}>{event.organizer}</p>}
       </div>
+
+      {event.category && (
+        <span className={styles.tag}>
+          <span className={styles.dot} style={{ background: categoryColor(event.category) }} />
+          {categoryLabel(event.category)}
+        </span>
+      )}
+
+      {place && <span className={styles.place}>{place}</span>}
+
+      {event.url && (
+        <a
+          className={styles.cta}
+          href={event.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {registerLabel}
+        </a>
+      )}
     </li>
   );
 }

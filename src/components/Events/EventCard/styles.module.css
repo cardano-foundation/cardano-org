@@ -1,106 +1,144 @@
-.card {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
+.row {
+  display: grid;
+  grid-template-columns: 56px 88px 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0.4rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   list-style: none;
 }
 
-.media {
-  flex: 0 0 200px;
-  max-width: 200px;
+.thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
 }
 
-.media img {
+.thumb img,
+.placeholder {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.thumb img {
+  object-fit: cover;
   display: block;
 }
 
-/* Branded fallback when an event has no cover image, so the card keeps its
-   image column and the layout stays aligned. */
 .placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #0033ad, #1e5fff);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #0033ad, #1e5fff);
 }
 
 .placeholderLogo {
-  width: 48%;
-  max-width: 88px;
+  width: 55%;
+  max-width: 34px;
   opacity: 0.92;
 }
 
-.body {
-  flex: 1 1 auto;
+.date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  line-height: 1.25;
+}
+
+.main {
   min-width: 0;
 }
 
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
-  margin-bottom: 0.25rem;
-}
-
 .title {
-  margin: 0 0 0.25rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
 }
 
-.organizer {
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.description {
-  margin: 0 0 0.75rem;
-  /* Clamp long feed descriptions to keep cards uniform. */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  list-style: none;
-  margin: 0 0 0.75rem;
-  padding: 0;
+.org {
+  margin: 0.1rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 .tag {
-  font-size: 0.75rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  background: var(--ifm-color-emphasis-100);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
   color: var(--ifm-color-emphasis-800);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.place {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  white-space: nowrap;
 }
 
 .cta {
+  justify-self: end;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 8px;
   font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  .card {
-    flex-direction: column;
-    gap: 1rem;
+.cta:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 56px 1fr;
+    grid-template-areas:
+      "thumb date"
+      "thumb main"
+      "thumb place"
+      "cta   cta";
+    row-gap: 0.3rem;
+    column-gap: 0.85rem;
   }
 
-  .media {
-    flex-basis: auto;
-    max-width: 100%;
+  .thumb {
+    grid-area: thumb;
+    align-self: start;
+  }
+
+  .date {
+    grid-area: date;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .place {
+    grid-area: place;
+    white-space: normal;
+  }
+
+  .cta {
+    grid-area: cta;
+    justify-self: start;
+    margin-top: 0.35rem;
+  }
+
+  /* Category chip is the least essential column on narrow screens. */
+  .tag {
+    display: none;
   }
 }
