@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 // Controlled filter bar. `value` is { place, time, query, tag }; `onChange`
 // receives the next value. `labels` carries pre-translated strings from the
 // page. `tags` is the list of topic tags to offer (empty hides the tag row).
-export default function EventFilters({ value, onChange, labels, tags = [] }) {
+export default function EventFilters({ value, onChange, labels, tags = [], hideTime = false }) {
   const set = (patch) => onChange({ ...value, ...patch });
 
   const placeOptions = [
@@ -28,19 +28,21 @@ export default function EventFilters({ value, onChange, labels, tags = [] }) {
           value={value.query}
           onChange={(e) => set({ query: e.target.value })}
         />
-        <div className={styles.group} role="group" aria-label={labels.timeGroup}>
-          {timeOptions.map((opt) => (
-            <button
-              key={opt.key}
-              type="button"
-              className={`${styles.chip} ${value.time === opt.key ? styles.active : ''}`}
-              aria-pressed={value.time === opt.key}
-              onClick={() => set({ time: opt.key })}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
+        {!hideTime && (
+          <div className={styles.group} role="group" aria-label={labels.timeGroup}>
+            {timeOptions.map((opt) => (
+              <button
+                key={opt.key}
+                type="button"
+                className={`${styles.chip} ${value.time === opt.key ? styles.active : ''}`}
+                aria-pressed={value.time === opt.key}
+                onClick={() => set({ time: opt.key })}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        )}
         <div className={styles.group} role="group" aria-label={labels.placeGroup}>
           {placeOptions.map((opt) => (
             <button

@@ -1,0 +1,31 @@
+.toggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+}
+
+.btn {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+}
+
+.btn:hover {
+  color: var(--ifm-color-primary);
+}
+
+.active {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.active:hover {
+  color: #fff;
+}

@@ -14,6 +14,8 @@ import EventCard from "@site/src/components/Events/EventCard";
 import EventFilters from "@site/src/components/Events/EventFilters";
 import EventList from "@site/src/components/Events/EventList";
 import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
+import CalendarView from "@site/src/components/Events/CalendarView";
+import ViewToggle from "@site/src/components/Events/ViewToggle";
 
 const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
 // Curated conference events shown as highlighted cards above the full list.
@@ -84,6 +86,7 @@ function HomepageHeader() {
 
 export default function Events() {
   const { entries: lumaEntries } = useLumaEvents();
+  const [view, setView] = useState("list");
   const [filters, setFilters] = useState({
     place: "all",
     time: "upcoming",
@@ -97,6 +100,19 @@ export default function Events() {
   );
 
   const availableTags = useMemo(() => collectTags(allEvents), [allEvents]);
+
+  // The calendar spans every month, so it ignores the upcoming/past toggle but
+  // still respects place, topic and search.
+  const calendarEvents = useMemo(
+    () =>
+      allEvents.filter(
+        (event) =>
+          matchesPlace(event, filters.place) &&
+          matchesQuery(event, filters.query) &&
+          matchesTag(event, filters.tag),
+      ),
+    [allEvents, filters.place, filters.query, filters.tag],
+  );
 
   // Highlighted events are the upcoming curated entries (hand-picked
   // conferences), independent of the filters applied to the full list below.
@@ -203,36 +219,51 @@ export default function Events() {
           <BoundaryBox>
             <Divider
               text={
-                isPast
-                  ? translate({
-                      id: "events.divider.past",
-                      message: "Past Events and Recaps",
-                    })
-                  : translate({
-                      id: "events.divider.upcoming",
-                      message: "Upcoming Events",
-                    })
+                view === "calendar"
+                  ? translate({ id: "events.divider.calendar", message: "Events Calendar" })
+                  : isPast
+                    ? translate({
+                        id: "events.divider.past",
+                        message: "Past Events and Recaps",
+                      })
+                    : translate({
+                        id: "events.divider.upcoming",
+                        message: "Upcoming Events",
+                      })
               }
               id="events"
             />
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
+              <ViewToggle
+                value={view}
+                onChange={setView}
+                listLabel={translate({ id: "events.view.list", message: "List" })}
+                calendarLabel={translate({ id: "events.view.calendar", message: "Calendar" })}
+              />
+            </div>
             <EventFilters
               value={filters}
               onChange={setFilters}
               labels={filterLabels}
               tags={availableTags}
+              hideTime={view === "calendar"}
             />
-            <EventList
-              events={orderedEvents}
-              emptyLabel={emptyLabel}
-              renderCard={(event) => (
-                <EventCard
-                  key={`${event.source}-${event.title}-${event.startDate}`}
-                  event={event}
-                  registerLabel={registerLabel}
-                  onlineLabel={onlineLabel}
-                />
-              )}
-            />
+            {view === "calendar" ? (
+              <CalendarView events={calendarEvents} />
+            ) : (
+              <EventList
+                events={orderedEvents}
+                emptyLabel={emptyLabel}
+                renderCard={(event) => (
+                  <EventCard
+                    key={`${event.source}-${event.title}-${event.startDate}`}
+                    event={event}
+                    registerLabel={registerLabel}
+                    onlineLabel={onlineLabel}
+                  />
+                )}
+              />
+            )}
           </BoundaryBox>
         </BackgroundWrapper>
 
