@@ -60,6 +60,20 @@ async function main() {
     assert.strictEqual(out.online, true);
     assert.strictEqual(out.location.label, null);
     assert.deepStrictEqual(out.tags, ['Developers', 'Intersect']);
+    assert.strictEqual(out.category, 'Developers'); // derived from tags
+  });
+
+  check('event category is derived (curated by title, luma by tags)', () => {
+    const conf = normalizeCuratedEvent({ title: 'Point Zero Forum', startDate: '2026-06-23' });
+    assert.strictEqual(conf.category, 'Conference');
+    const hack = normalizeCuratedEvent({ title: 'Berlin Hackathon 2025', startDate: '2025-06-13' });
+    assert.strictEqual(hack.category, 'Hackathon');
+    const explicit = normalizeCuratedEvent({ title: 'Some Summit', startDate: '2026-01-01', category: 'Workshop' });
+    assert.strictEqual(explicit.category, 'Workshop'); // explicit wins
+    const gov = normalizeLumaEvent({ name: 'Intersect Connect', start_at: '2026-07-02T14:00:00.000Z', location_type: 'meet', url: 'https://luma.com/x', tags: [{ name: 'Intersect' }] });
+    assert.strictEqual(gov.category, 'Governance');
+    const community = normalizeLumaEvent({ name: 'SPO Call', start_at: '2026-07-02T15:00:00.000Z', location_type: 'meet', url: 'https://luma.com/y', tags: [{ name: '\u{1F310} Virtual' }] });
+    assert.strictEqual(community.category, 'Community');
   });
 
   check('normalizeCuratedEvent maps existing events.json shape', () => {

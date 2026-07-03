@@ -1,6 +1,8 @@
 // Pure normalization and merge logic for the /events page. No React here so it
 // can be unit tested with a plain node script.
 
+import { deriveCuratedCategory, deriveLumaCategory } from './categories.js';
+
 // Titles that mark non-events pinned on the Luma calendar (e.g. a guidelines
 // card). Matched case-insensitively. Real events legitimately run into future
 // years (recurring working groups), so we key only on the title, not the date.
@@ -42,6 +44,9 @@ export function normalizeLumaEvent(raw) {
   // Luma marks in person events as 'offline'; meet/discord/twitter are online.
   const online = raw.location_type !== 'offline';
   const geo = raw.geo_address_json || null;
+  const tags = Array.isArray(raw.tags)
+    ? raw.tags.map((t) => t && t.name).filter(Boolean)
+    : [];
   return {
     title: raw.name,
     description: raw.description || '',
@@ -56,9 +61,8 @@ export function normalizeLumaEvent(raw) {
     url: lumaEventUrl(raw.url),
     image: raw.cover_url || null,
     organizer: null,
-    tags: Array.isArray(raw.tags)
-      ? raw.tags.map((t) => t && t.name).filter(Boolean)
-      : [],
+    tags,
+    category: deriveLumaCategory(tags),
     source: 'luma',
     recapVideo: null,
   };
@@ -83,6 +87,7 @@ export function normalizeCuratedEvent(raw) {
     image: raw.image || null,
     organizer: raw.organizer || null,
     tags: Array.isArray(raw.tags) ? raw.tags : [],
+    category: raw.category || deriveCuratedCategory(raw.title),
     source: 'curated',
     recapVideo: raw.recapVideo || null,
   };
