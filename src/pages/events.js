@@ -12,7 +12,8 @@ import { mergeEvents } from "@site/src/utils/events/eventModel";
 import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
 import useLumaEvents from "@site/src/utils/events/useLumaEvents";
 import EventCard from "@site/src/components/Events/EventCard";
-import EventFilters from "@site/src/components/Events/EventFilters";
+import EventHeroControls from "@site/src/components/Events/EventHeroControls";
+import TopicFilter from "@site/src/components/Events/TopicFilter";
 import EventList from "@site/src/components/Events/EventList";
 import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
 import CalendarView from "@site/src/components/Events/CalendarView";
@@ -61,7 +62,7 @@ function collectCategories(events) {
   );
 }
 
-function HomepageHeader() {
+function HomepageHeader({ filters, onChange }) {
   return (
     <SiteHero
       title={translate({ id: "events.hero.title", message: "Cardano Events" })}
@@ -69,11 +70,13 @@ function HomepageHeader() {
         translate({
           id: "events.hero.description",
           message:
-            "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.",
+            "Discover events, meet builders, and grow with the global Cardano community.",
         }),
       ]}
       bannerType="dots"
-    />
+    >
+      <EventHeroControls value={filters} onChange={onChange} />
+    </SiteHero>
   );
 }
 
@@ -127,40 +130,18 @@ export default function Events() {
     const filtered = allEvents.filter((event) => {
       const startTs = event.startDate ? new Date(event.startDate).getTime() : 0;
       const isUpcoming = startTs >= todayTs;
-      if (!isPast && !isUpcoming) return false;
-      if (isPast && isUpcoming) return false;
+      if (filters.time === "upcoming" && !isUpcoming) return false;
+      if (filters.time === "past" && isUpcoming) return false;
       return (
         matchesPlace(event, filters.place) &&
         matchesQuery(event, filters.query) &&
         matchesCategory(event, filters.category)
       );
     });
-    // Past events read newest first, upcoming read soonest first. filter()
-    // already returns a fresh array, so reversing in place is safe.
+    // Past events read newest first; upcoming and all read soonest first.
+    // filter() already returns a fresh array, so reversing in place is safe.
     return isPast ? filtered.reverse() : filtered;
   }, [allEvents, filters, isPast]);
-
-  const filterLabels = useMemo(
-    () => ({
-      searchPlaceholder: translate({
-        id: "events.filter.searchPlaceholder",
-        message: "Search events or locations",
-      }),
-      timeGroup: translate({ id: "events.filter.timeGroup", message: "Time" }),
-      placeGroup: translate({ id: "events.filter.placeGroup", message: "Location" }),
-      timeUpcoming: translate({ id: "events.filter.timeUpcoming", message: "Upcoming" }),
-      timePast: translate({ id: "events.filter.timePast", message: "Past" }),
-      placeAll: translate({ id: "events.filter.placeAll", message: "All" }),
-      placeInPerson: translate({
-        id: "events.filter.placeInPerson",
-        message: "In person",
-      }),
-      placeOnline: translate({ id: "events.filter.placeOnline", message: "Online" }),
-      topicGroup: translate({ id: "events.filter.topicGroup", message: "Topics" }),
-      allTopics: translate({ id: "events.filter.allTopics", message: "All Topics" }),
-    }),
-    [],
-  );
 
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
@@ -193,7 +174,7 @@ export default function Events() {
       })}
     >
       <OpenGraphInfo pageName="events" />
-      <HomepageHeader />
+      <HomepageHeader filters={filters} onChange={setFilters} />
       <main>
         {featuredEvents.length > 0 && (
           <BoundaryBox>
@@ -214,19 +195,26 @@ export default function Events() {
               text={
                 view === "calendar"
                   ? translate({ id: "events.divider.calendar", message: "Events Calendar" })
-                  : isPast
+                  : filters.time === "past"
                     ? translate({
                         id: "events.divider.past",
                         message: "Past Events and Recaps",
                       })
-                    : translate({
-                        id: "events.divider.upcoming",
-                        message: "Upcoming Events",
-                      })
+                    : filters.time === "all"
+                      ? translate({ id: "events.divider.all", message: "All Events" })
+                      : translate({
+                          id: "events.divider.upcoming",
+                          message: "Upcoming Events",
+                        })
               }
               id="events"
             />
-            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
+            <div className="events-toolbar">
+              <TopicFilter
+                value={filters}
+                onChange={setFilters}
+                topics={availableCategories}
+              />
               <ViewToggle
                 value={view}
                 onChange={setView}
@@ -234,13 +222,6 @@ export default function Events() {
                 calendarLabel={translate({ id: "events.view.calendar", message: "Calendar" })}
               />
             </div>
-            <EventFilters
-              value={filters}
-              onChange={setFilters}
-              labels={filterLabels}
-              topics={availableCategories}
-              hideTime={view === "calendar"}
-            />
             {view === "calendar" ? (
               <CalendarView events={calendarEvents} />
             ) : (

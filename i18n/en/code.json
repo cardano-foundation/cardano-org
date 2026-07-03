@@ -2235,12 +2235,10 @@
   "events.platforms.meetup": {
     "message": "Events on Meetup.com"
   },
-  "events.filter.searchPlaceholder": { "message": "Search events or locations" },
-  "events.filter.timeGroup": { "message": "Time" },
-  "events.filter.placeGroup": { "message": "Location" },
+  "events.filter.searchPlaceholder": { "message": "Search events, locations, or topics" },
   "events.filter.timeUpcoming": { "message": "Upcoming" },
   "events.filter.timePast": { "message": "Past" },
-  "events.filter.placeAll": { "message": "All" },
+  "events.filter.timeAll": { "message": "All" },
   "events.filter.placeInPerson": { "message": "In person" },
   "events.filter.placeOnline": { "message": "Online" },
   "events.filter.topicGroup": { "message": "Topics" },
@@ -2258,6 +2256,7 @@
   "events.card.register": { "message": "View event" },
   "events.card.online": { "message": "Online" },
   "events.divider.upcoming": { "message": "Upcoming Events" },
+  "events.divider.all": { "message": "All Events" },
   "events.divider.past": { "message": "Past Events and Recaps" },
   "events.empty.upcoming": { "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest." },
   "events.empty.past": { "message": "No past events match your filters." },

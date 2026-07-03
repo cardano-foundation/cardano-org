@@ -987,6 +987,16 @@ img {
 
 /* End Events platform link cards */
 
+/* Events toolbar: topic filters on the left, list/calendar toggle on the right */
+.events-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
 /* Start insights index list */
 
 /* Search input */
