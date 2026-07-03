@@ -671,14 +671,15 @@ function ShowcaseSections() {
   const scopeLabel = !isUnfiltered && selectedTags.length === 1
     ? Categories[selectedTags[0]]?.label
     : null;
+  // Heading for the apps below the "Most active {label}" leaderboard.
   const restHeadingId = scopeLabel
     ? mostActiveApps.length > 0
-      ? "apps.allApps.titleOther"
+      ? "apps.allApps.titleMore"
       : "apps.allApps.titleScoped"
     : "apps.allApps.title";
   const restHeadingMessage = scopeLabel
     ? mostActiveApps.length > 0
-      ? "Other {label}"
+      ? "More {label} apps"
       : "All {label}"
     : "All apps";
   const restHeading = scopeLabel
