@@ -1960,6 +1960,26 @@
   "constitution.layout.description": {
     "message": "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS."
   },
+  "constitution.history.unavailable": {
+    "message": "Live ratification history is currently unavailable.",
+    "description": "Shown when the live API call for the ratification history fails"
+  },
+  "constitution.meta.enactedAt": {
+    "message": "Enacted at epoch",
+    "description": "Label before the enacted epoch number in the constitution header"
+  },
+  "constitution.toc.title": {
+    "message": "Contents",
+    "description": "Constitution table-of-contents heading"
+  },
+  "constitution.verify.match": {
+    "message": "Matches the current on-chain constitution",
+    "description": "Badge shown when the displayed constitution matches the on-chain enacted version"
+  },
+  "constitution.verify.newer": {
+    "message": "A newer version (epoch {epoch}) was enacted on-chain; showing the last published copy.",
+    "description": "Notice when a newer constitution version exists on-chain; {epoch} is replaced with the epoch number"
+  },
   "contact.hero.title": {
     "message": "Contact"
   },
