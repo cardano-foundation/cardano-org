@@ -27,6 +27,52 @@ function buildGrid(year, month) {
   return Array.from({ length: 42 }, (_, i) => new Date(start.getTime() + i * DAY_MS));
 }
 
+function toDayKey(dateStr) {
+  return String(dateStr).slice(0, 10);
+}
+
+function isMultiDay(event) {
+  return Boolean(
+    event.startDate &&
+      event.endDate &&
+      toDayKey(event.startDate) !== toDayKey(event.endDate),
+  );
+}
+
+// Places a week's multi-day events into non-overlapping horizontal lanes, each
+// bar spanning the columns (0..6) it covers within the week.
+function layoutWeekBars(weekDays, multiDayEvents) {
+  const startKey = dayKey(weekDays[0]);
+  const endKey = dayKey(weekDays[6]);
+  const keys = weekDays.map(dayKey);
+  const bars = [];
+  for (const event of multiDayEvents) {
+    const s = toDayKey(event.startDate);
+    const e = toDayKey(event.endDate);
+    if (e < startKey || s > endKey) continue; // no overlap this week
+    let colStart = s < startKey ? 0 : keys.indexOf(s);
+    let colEnd = e > endKey ? 6 : keys.indexOf(e);
+    if (colStart < 0) colStart = 0;
+    if (colEnd < 0) colEnd = 6;
+    bars.push({ event, colStart, colEnd, startsHere: s >= startKey });
+  }
+  bars.sort((a, b) => a.colStart - b.colStart || b.colEnd - a.colEnd);
+  const laneEnds = [];
+  for (const bar of bars) {
+    let lane = 0;
+    while (lane < laneEnds.length && laneEnds[lane] >= bar.colStart) lane += 1;
+    laneEnds[lane] = bar.colEnd;
+    bar.lane = lane;
+  }
+  return { bars, laneCount: laneEnds.length };
+}
+
+function chunkWeeks(days) {
+  const weeks = [];
+  for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
+  return weeks;
+}
+
 function weekdayLabels() {
   // Locale-aware short weekday names, Monday first. 2024-01-01 is a Monday.
   const fmt = new Intl.DateTimeFormat(undefined, { weekday: 'short', timeZone: 'UTC' });
@@ -83,16 +129,19 @@ export default function CalendarView({ events }) {
   const today = startOfTodayUtc();
   const [cursor, setCursor] = useState({ year: today.getUTCFullYear(), month: today.getUTCMonth() });
 
+  // Single-day events sit in day cells; multi-day events render as spanning bars.
   const eventsByDay = useMemo(() => {
     const map = new Map();
     for (const event of events) {
-      if (!event.startDate) continue;
-      const key = String(event.startDate).slice(0, 10);
+      if (!event.startDate || isMultiDay(event)) continue;
+      const key = toDayKey(event.startDate);
       if (!map.has(key)) map.set(key, []);
       map.get(key).push(event);
     }
     return map;
   }, [events]);
+
+  const multiDayEvents = useMemo(() => events.filter(isMultiDay), [events]);
 
   const upcoming = useMemo(() => {
     const todayTs = today.getTime();
@@ -157,26 +206,60 @@ export default function CalendarView({ events }) {
         </div>
 
         <div className={styles.grid}>
-          {grid.map((date) => {
-            const key = dayKey(date);
-            const inMonth = date.getUTCMonth() === cursor.month;
-            const dayEvents = eventsByDay.get(key) || [];
+          {chunkWeeks(grid).map((weekDays) => {
+            const { bars, laneCount } = layoutWeekBars(weekDays, multiDayEvents);
             return (
               <div
-                key={key}
-                className={`${styles.cell} ${inMonth ? '' : styles.outside} ${
-                  key === todayKey ? styles.today : ''
-                }`}
+                key={dayKey(weekDays[0])}
+                className={styles.week}
+                style={{ '--lanes': laneCount }}
               >
-                <span className={styles.dayNum}>{dayNumber(date)}</span>
-                <div className={styles.entries}>
-                  {dayEvents.slice(0, MAX_PER_DAY).map((event) => (
-                    <CalendarEntry key={`${event.title}-${event.source}`} event={event} />
-                  ))}
-                  {dayEvents.length > MAX_PER_DAY && (
-                    <span className={styles.more}>+{dayEvents.length - MAX_PER_DAY}</span>
-                  )}
+                <div className={styles.days}>
+                  {weekDays.map((date) => {
+                    const key = dayKey(date);
+                    const inMonth = date.getUTCMonth() === cursor.month;
+                    const dayEvents = eventsByDay.get(key) || [];
+                    return (
+                      <div
+                        key={key}
+                        className={`${styles.cell} ${inMonth ? '' : styles.outside} ${
+                          key === todayKey ? styles.today : ''
+                        }`}
+                      >
+                        <span className={styles.dayNum}>{dayNumber(date)}</span>
+                        <div className={styles.entries}>
+                          {dayEvents.slice(0, MAX_PER_DAY).map((event) => (
+                            <CalendarEntry key={`${event.title}-${event.source}`} event={event} />
+                          ))}
+                          {dayEvents.length > MAX_PER_DAY && (
+                            <span className={styles.more}>+{dayEvents.length - MAX_PER_DAY}</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
+                {bars.length > 0 && (
+                  <div className={styles.bars}>
+                    {bars.map((bar) => (
+                      <a
+                        key={`${bar.event.title}-${bar.event.startDate}`}
+                        className={styles.bar}
+                        href={bar.event.url || undefined}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={bar.event.title}
+                        style={{
+                          gridColumn: `${bar.colStart + 1} / ${bar.colEnd + 2}`,
+                          gridRow: bar.lane + 1,
+                          background: categoryColor(bar.event.category),
+                        }}
+                      >
+                        {bar.startsHere ? bar.event.title : `… ${bar.event.title}`}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
