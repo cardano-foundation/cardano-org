@@ -198,7 +198,7 @@ export default function Events() {
     >
       <OpenGraphInfo pageName="events" />
       <HomepageHeader filters={filters} onChange={setFilters} />
-      <main>
+      <main className="events-main">
         {featuredEvents.length > 0 && !isFiltering && (
           <BoundaryBox>
             <Divider

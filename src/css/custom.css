@@ -997,6 +997,13 @@ img {
   margin-bottom: 1.5rem;
 }
 
+/* The shared Divider adds a 2rem spacer plus a line break at the top of the
+   first section. Right under the events hero caret that reads as too much gap,
+   so pull the content block up a touch. Scoped to /events only. */
+.events-main {
+  margin-top: -5rem;
+}
+
 /* Start insights index list */
 
 /* Search input */
