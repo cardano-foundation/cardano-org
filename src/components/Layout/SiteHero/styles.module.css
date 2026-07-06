@@ -226,6 +226,14 @@ html[data-theme="dark"] .heroBannerFluidRed {
   padding-bottom: 0;
 }
 
+/* With the search + filter controls in the slot, the fixed 410px height would
+   trap the pills against the bottom edge. Let the hero grow to fit them; the
+   caret stays pinned to the bottom as on every other dots hero. */
+.heroBannerDots:has(.heroChildren) {
+  height: auto;
+  min-height: 410px;
+}
+
 /** heroBannerOverlap **/
 
 .heroBannerOverlap {
