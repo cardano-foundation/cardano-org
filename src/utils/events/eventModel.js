@@ -93,10 +93,18 @@ export function normalizeCuratedEvent(raw) {
   };
 }
 
+// Normalized title, shared by the day-level dedup and the recurring collapse.
+function titleKey(evt) {
+  return (evt.title || '').toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
 function dedupKey(evt) {
-  const title = (evt.title || '').toLowerCase().replace(/\s+/g, ' ').trim();
   const day = evt.startDate ? String(evt.startDate).slice(0, 10) : '';
-  return `${title}|${day}`;
+  return `${titleKey(evt)}|${day}`;
+}
+
+function startMs(evt) {
+  return new Date(evt.startDate || 0).getTime();
 }
 
 export function mergeEvents(curatedRaw, lumaRaw) {
@@ -113,7 +121,32 @@ export function mergeEvents(curatedRaw, lumaRaw) {
   // `|| 0` keeps the comparator deterministic if a date is ever missing
   // (new Date(undefined) is NaN). Normalized events use null, already epoch
   // safe, but this hardens against any future caller.
-  return [...byKey.values()].sort(
-    (a, b) => new Date(a.startDate || 0).getTime() - new Date(b.startDate || 0).getTime(),
-  );
+  return [...byKey.values()].sort((a, b) => startMs(a) - startMs(b));
+}
+
+// Recurring series (e.g. the weekly working-group calls from Luma) repeat under
+// the same title on many dates and would otherwise flood the list. Keep one row
+// per title: the next occurrence from `nowMs` onward, or the most recent past
+// one if the whole series is over. The kept row carries `recurring` and
+// `occurrences` so the UI can flag it. Single events pass through untouched.
+export function collapseRecurringSeries(events, nowMs) {
+  const byTitle = new Map();
+  for (const evt of events || []) {
+    const key = titleKey(evt);
+    const group = byTitle.get(key);
+    if (group) group.push(evt);
+    else byTitle.set(key, [evt]);
+  }
+  const collapsed = [];
+  for (const group of byTitle.values()) {
+    if (group.length === 1) {
+      collapsed.push(group[0]);
+      continue;
+    }
+    const sorted = [...group].sort((a, b) => startMs(a) - startMs(b));
+    const next = sorted.find((e) => startMs(e) >= nowMs);
+    const chosen = next || sorted[sorted.length - 1];
+    collapsed.push({ ...chosen, recurring: true, occurrences: group.length });
+  }
+  return collapsed.sort((a, b) => startMs(a) - startMs(b));
 }

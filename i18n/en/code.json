@@ -2257,6 +2257,7 @@
   "events.calendar.tzNote": { "message": "Dates are shown in UTC and events may change. Check the event page for the latest details." },
   "events.card.register": { "message": "View event" },
   "events.card.online": { "message": "Online" },
+  "events.card.recurring": { "message": "Recurring" },
   "events.divider.upcoming": { "message": "Upcoming Events" },
   "events.divider.all": { "message": "All Events" },
   "events.divider.past": { "message": "Past Events and Recaps" },

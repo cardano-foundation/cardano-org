@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 // Compact list row: thumbnail, date, title + organizer, category, location and
 // a register link. No long description, to keep rows uniform.
-export default function EventCard({ event, registerLabel, onlineLabel }) {
+export default function EventCard({ event, registerLabel, onlineLabel, recurringLabel }) {
   const { src: imgSrc, fallback: fallbackLogo } = useEventImage(event.image);
   const date = formatDateParts(event.startDate, event.endDate);
   const place = event.online ? onlineLabel : event.location?.label;
@@ -32,7 +32,11 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
 
       <div className={styles.main}>
         <h3 className={styles.title}>{event.title}</h3>
-        {event.organizer && <p className={styles.org}>{event.organizer}</p>}
+        {event.organizer ? (
+          <p className={styles.org}>{event.organizer}</p>
+        ) : event.recurring ? (
+          <p className={styles.org}>{recurringLabel}</p>
+        ) : null}
       </div>
 
       {event.category && (

@@ -8,7 +8,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import curatedEvents from "@site/src/data/events.json";
 import { translate } from "@docusaurus/Translate";
-import { mergeEvents } from "@site/src/utils/events/eventModel";
+import { mergeEvents, collapseRecurringSeries } from "@site/src/utils/events/eventModel";
 import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
 import useLumaEvents from "@site/src/utils/events/useLumaEvents";
 import EventCard from "@site/src/components/Events/EventCard";
@@ -92,7 +92,11 @@ export default function Events() {
   });
 
   const allEvents = useMemo(
-    () => mergeEvents(curatedEvents, lumaEntries),
+    () =>
+      collapseRecurringSeries(
+        mergeEvents(curatedEvents, lumaEntries),
+        todayUtcStart(),
+      ),
     [lumaEntries],
   );
 
@@ -168,6 +172,7 @@ export default function Events() {
 
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
+  const recurringLabel = translate({ id: "events.card.recurring", message: "Recurring" });
   const featuredLabels = {
     register: registerLabel,
     online: onlineLabel,
@@ -257,6 +262,7 @@ export default function Events() {
                     event={event}
                     registerLabel={registerLabel}
                     onlineLabel={onlineLabel}
+                    recurringLabel={recurringLabel}
                   />
                 )}
               />

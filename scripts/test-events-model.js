@@ -12,6 +12,7 @@ async function main() {
     normalizeCuratedEvent,
     isPlaceholderEvent,
     mergeEvents,
+    collapseRecurringSeries,
   } = await import('../src/utils/events/eventModel.js');
 
   let passed = 0;
@@ -128,6 +129,36 @@ async function main() {
     const shared = merged.find((e) => e.title === 'Shared Event');
     assert.strictEqual(shared.source, 'luma'); // Luma wins
     assert.strictEqual(shared.url, 'https://luma.com/x');
+  });
+
+  check('collapseRecurringSeries keeps next occurrence per title, flags it, leaves singles', () => {
+    const now = Date.UTC(2026, 6, 7); // 2026-07-07
+    const events = [
+      { title: 'Weekly Call', startDate: '2026-06-30', source: 'luma' }, // past
+      { title: 'Weekly Call', startDate: '2026-07-07', source: 'luma' }, // next
+      { title: 'Weekly Call', startDate: '2026-07-14', source: 'luma' }, // later
+      { title: 'One Off', startDate: '2026-08-01', source: 'curated' },
+    ];
+    const out = collapseRecurringSeries(events, now);
+    assert.strictEqual(out.length, 2); // series collapsed to one + the single
+    const call = out.find((e) => e.title === 'Weekly Call');
+    assert.strictEqual(call.startDate, '2026-07-07'); // next from now, not the past one
+    assert.strictEqual(call.recurring, true);
+    assert.strictEqual(call.occurrences, 3);
+    const single = out.find((e) => e.title === 'One Off');
+    assert.strictEqual(single.recurring, undefined); // singles untouched
+  });
+
+  check('collapseRecurringSeries falls back to the latest past occurrence when all are over', () => {
+    const now = Date.UTC(2026, 6, 7);
+    const events = [
+      { title: 'Old Series', startDate: '2026-05-01' },
+      { title: 'Old Series', startDate: '2026-05-08' },
+    ];
+    const out = collapseRecurringSeries(events, now);
+    assert.strictEqual(out.length, 1);
+    assert.strictEqual(out[0].startDate, '2026-05-08'); // most recent past
+    assert.strictEqual(out[0].recurring, true);
   });
 
   console.log(`\n${passed} checks passed`);
