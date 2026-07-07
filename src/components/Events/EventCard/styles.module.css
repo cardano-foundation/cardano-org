@@ -1,6 +1,6 @@
 .row {
   display: grid;
-  grid-template-columns: 56px 88px 1fr auto auto auto;
+  grid-template-columns: 200px 88px 1fr auto auto auto;
   align-items: center;
   gap: 1rem;
   padding: 0.9rem 0.4rem;
@@ -8,9 +8,11 @@
   list-style: none;
 }
 
+/* Thumb fills its grid column; the column width (below and in the media query)
+   is the single knob for its size, the 16:9 ratio drives the height. */
 .thumb {
-  width: 56px;
-  height: 56px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
   background: var(--ifm-color-emphasis-100);
@@ -103,7 +105,7 @@
 
 @media (max-width: 800px) {
   .row {
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 120px 1fr;
     grid-template-areas:
       "thumb date"
       "thumb main"
