@@ -1,6 +1,6 @@
 import React from 'react';
 import useEventImage from '@site/src/components/Events/useEventImage';
-import formatDateRange from '@site/src/components/Events/formatDateRange';
+import { formatDateParts } from '@site/src/components/Events/formatDateRange';
 import { categoryColor, categoryLabel } from '@site/src/utils/events/categories';
 import styles from './styles.module.css';
 
@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 // a register link. No long description, to keep rows uniform.
 export default function EventCard({ event, registerLabel, onlineLabel }) {
   const { src: imgSrc, fallback: fallbackLogo } = useEventImage(event.image);
-  const dateLabel = formatDateRange(event.startDate, event.endDate);
+  const date = formatDateParts(event.startDate, event.endDate);
   const place = event.online ? onlineLabel : event.location?.label;
 
   return (
@@ -23,7 +23,12 @@ export default function EventCard({ event, registerLabel, onlineLabel }) {
         )}
       </div>
 
-      {dateLabel && <span className={styles.date}>{dateLabel}</span>}
+      {date && (
+        <span className={styles.date}>
+          <span className={styles.dateMonth}>{date.month}</span>
+          <span className={styles.dateDay}>{date.day}</span>
+        </span>
+      )}
 
       <div className={styles.main}>
         <h3 className={styles.title}>{event.title}</h3>

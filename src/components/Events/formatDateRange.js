@@ -19,3 +19,26 @@ export default function formatDateRange(startDate, endDate) {
     : end.toLocaleDateString('en-US', opts);
   return `${startStr} to ${endStr}`;
 }
+
+// Structured variant for the stacked date badge in the list: an uppercase month
+// on top, the day (or day range) below, e.g. { month: 'JUN', day: '23-25' }.
+// A cross-month range carries the second month in the day line ("30 - JUL 2").
+// UTC throughout, matching formatDateRange.
+export function formatDateParts(startDate, endDate) {
+  if (!startDate) return null;
+  const start = new Date(startDate);
+  if (Number.isNaN(start.getTime())) return null;
+  const monthOf = (d) =>
+    d.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short' }).toUpperCase();
+  const month = monthOf(start);
+  const startDay = start.getUTCDate();
+  if (!endDate) return { month, day: String(startDay) };
+  const end = new Date(endDate);
+  if (Number.isNaN(end.getTime())) return { month, day: String(startDay) };
+  const sameYear = start.getUTCFullYear() === end.getUTCFullYear();
+  const sameMonth = sameYear && start.getUTCMonth() === end.getUTCMonth();
+  const endDay = end.getUTCDate();
+  if (sameMonth && startDay === endDay) return { month, day: String(startDay) };
+  if (sameMonth) return { month, day: `${startDay}-${endDay}` };
+  return { month, day: `${startDay} - ${monthOf(end)} ${endDay}` };
+}
