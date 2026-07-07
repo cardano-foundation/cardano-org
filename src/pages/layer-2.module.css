@@ -1,0 +1,212 @@
+/*
+ * Hero sizing to match Figma (node 154:270): 440px tall, 40px horizontal
+ * padding, a ~700px description column, and the scalable hero graphic over the
+ * Figma blue gradient. Scoped to this page so the shared SiteHero is unchanged.
+ */
+.hero :global(.hero) {
+  height: 440px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #0033ad;
+  background-image:
+    url("/img/layer-2/hero-graphic.svg"),
+    linear-gradient(180deg, #0033ad 0%, #1d4dc2 100%);
+  background-repeat: no-repeat;
+  background-position:
+    center 56px,
+    center;
+  background-size:
+    clamp(560px, 62vw, 900px) auto,
+    cover;
+}
+
+.hero :global(.sectionCaret) {
+  display: none;
+}
+
+.hero :global(.hero__subtitle) {
+  max-width: 700px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/*
+ * Inverted header for sections rendered on a coloured (blue) background.
+ * TitleWithText renders dark text by default, so we force white for contrast.
+ * The headingDot indicator keeps its own accent colour.
+ */
+.invertedHeader h1,
+.invertedHeader p,
+.invertedHeader li {
+  color: #ffffff !important;
+}
+
+/*
+ * Rollups section: deep Cardano blue (#0033AD, from Figma) with the shared
+ * "Cardano zoom" starburst asset centred on top. Sized to ~150% of the section
+ * height so the burst fills the band and bleeds off all edges like the design,
+ * rather than the smaller, clipped zoomBlueCenter preset.
+ */
+.rollupsBackground {
+  background-color: #0033ad;
+  background-image: url("/img/hero-cardano-zoom-blue-light.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 115%; /* sized to the section height so the burst only bleeds a little top/bottom */
+  /* real padding (not SpacerBox) so it can't collapse out of the section */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.ctaSection {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #000629;
+}
+
+.ctaSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("/img/layer-2/noise.png");
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+}
+
+.ctaGraphic {
+  position: absolute;
+  top: 50%;
+  right: -236px;
+  z-index: 0;
+  width: 1373px;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  transform: translateY(-46.5%);
+  user-select: none;
+}
+
+/*
+ * CTA section — matches Figma (node 351:4047): left-aligned, two-line heading
+ * (36px, light + medium weight), 32px gap to a white pill button, ~524px tall
+ * with the content vertically centred.
+ */
+.ctaContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: calc(100% - 120px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  min-height: 524px;
+  padding: 96px 0;
+  box-sizing: border-box;
+}
+
+.ctaText {
+  display: flex;
+  flex-direction: column;
+  max-width: 840px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.ctaLine1 {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 48px;
+}
+
+.ctaLine2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #0033ad;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  background: #eef1f8;
+  color: #0033ad;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .hero :global(.hero) {
+    padding-left: 24px;
+    padding-right: 24px;
+    background-position:
+      right -210px bottom -230px,
+      center;
+    background-size:
+      540px auto,
+      cover;
+  }
+
+  .ctaSection::after {
+    inset: 0;
+    width: auto;
+    height: auto;
+    background-size: cover;
+  }
+
+  .ctaGraphic {
+    right: -420px;
+    width: 900px;
+    transform: translateY(-46.5%);
+  }
+
+  .ctaContainer {
+    width: calc(100% - 60px);
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .cta {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .ctaLine1,
+  .ctaLine2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
