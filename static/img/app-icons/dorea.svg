@@ -1,0 +1,29 @@
+<svg viewBox="80 150 340 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dorea">
+  <title>Dorea</title>
+  <desc>The official Dorea logo: two interlocking hearts in Dorea orange and green forming a bow, with a bull's-eye center (cream, green ring, orange ring, cream dot) and a cream divider.</desc>
+  <defs>
+    <clipPath id="dorea-bow-clip">
+      <path d="M 262,250 C 244,226 206,192 168,172 C 144,158 110,158 98,182 C 86,206 100,234 130,247 C 147,254 168,250 168,250 Z"/>
+      <path d="M 262,250 C 244,274 206,308 168,328 C 144,342 110,342 98,318 C 86,294 100,266 130,253 C 147,246 168,250 168,250 Z"/>
+      <path d="M 238,250 C 256,226 294,192 332,172 C 356,158 390,158 402,182 C 414,206 400,234 370,247 C 353,254 332,250 332,250 Z"/>
+      <path d="M 238,250 C 256,274 294,308 332,328 C 356,342 390,342 402,318 C 414,294 400,266 370,253 C 353,246 332,250 332,250 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Left heart upper (orange) -->
+  <path d="M 262,250 C 244,226 206,192 168,172 C 144,158 110,158 98,182 C 86,206 100,234 130,247 C 147,254 168,250 168,250 Z" fill="#E8450A"/>
+  <!-- Left heart lower (green) -->
+  <path d="M 262,250 C 244,274 206,308 168,328 C 144,342 110,342 98,318 C 86,294 100,266 130,253 C 147,246 168,250 168,250 Z" fill="#1B3818"/>
+  <!-- Right heart upper (green) -->
+  <path d="M 238,250 C 256,226 294,192 332,172 C 356,158 390,158 402,182 C 414,206 400,234 370,247 C 353,254 332,250 332,250 Z" fill="#1B3818"/>
+  <!-- Right heart lower (orange) -->
+  <path d="M 238,250 C 256,274 294,308 332,328 C 356,342 390,342 402,318 C 414,294 400,266 370,253 C 353,246 332,250 332,250 Z" fill="#E8450A"/>
+
+  <!-- Cream divider, clipped to the heart shapes so it never extends past the bow -->
+  <rect x="62" y="247" width="376" height="6" fill="#FAF3E5" clip-path="url(#dorea-bow-clip)"/>
+  <!-- Bull's-eye rings: cream → green → orange → cream (center) -->
+  <circle cx="250" cy="250" r="34" fill="#FAF3E5"/>
+  <circle cx="250" cy="250" r="27" fill="#1B3818"/>
+  <circle cx="250" cy="250" r="19" fill="#E8450A"/>
+  <circle cx="250" cy="250" r="11" fill="#FAF3E5"/>
+</svg>
