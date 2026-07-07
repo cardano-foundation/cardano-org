@@ -32,11 +32,9 @@ export default function EventCard({ event, registerLabel, onlineLabel, recurring
 
       <div className={styles.main}>
         <h3 className={styles.title}>{event.title}</h3>
-        {event.organizer ? (
-          <p className={styles.org}>{event.organizer}</p>
-        ) : event.recurring ? (
-          <p className={styles.org}>{recurringLabel}</p>
-        ) : null}
+        {(event.organizer || event.recurring) && (
+          <p className={styles.org}>{event.organizer || recurringLabel}</p>
+        )}
       </div>
 
       {event.category && (

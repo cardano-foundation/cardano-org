@@ -997,9 +997,10 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* The shared Divider adds a 2rem spacer plus a line break at the top of the
-   first section. Right under the events hero caret that reads as too much gap,
-   so pull the content block up a touch. Scoped to /events only. */
+/* The shared Divider adds a leading spacer that reads as too much gap right
+   under the events hero caret. Rather than change the shared component, pull the
+   whole content block up so the first section sits closer to the caret. The
+   value is tuned to the dots-hero geometry by eye. Scoped to /events only. */
 .events-main {
   margin-top: -5rem;
 }

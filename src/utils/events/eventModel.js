@@ -133,9 +133,9 @@ export function collapseRecurringSeries(events, nowMs) {
   const byTitle = new Map();
   for (const evt of events || []) {
     const key = titleKey(evt);
-    const group = byTitle.get(key);
-    if (group) group.push(evt);
-    else byTitle.set(key, [evt]);
+    const group = byTitle.get(key) ?? [];
+    group.push(evt);
+    byTitle.set(key, group);
   }
   const collapsed = [];
   for (const group of byTitle.values()) {

@@ -32,13 +32,14 @@ export function formatDateParts(startDate, endDate) {
     d.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short' }).toUpperCase();
   const month = monthOf(start);
   const startDay = start.getUTCDate();
-  if (!endDate) return { month, day: String(startDay) };
+  const single = { month, day: String(startDay) };
+  if (!endDate) return single;
   const end = new Date(endDate);
-  if (Number.isNaN(end.getTime())) return { month, day: String(startDay) };
+  if (Number.isNaN(end.getTime())) return single;
   const sameYear = start.getUTCFullYear() === end.getUTCFullYear();
   const sameMonth = sameYear && start.getUTCMonth() === end.getUTCMonth();
   const endDay = end.getUTCDate();
-  if (sameMonth && startDay === endDay) return { month, day: String(startDay) };
+  if (sameMonth && startDay === endDay) return single;
   if (sameMonth) return { month, day: `${startDay}-${endDay}` };
   return { month, day: `${startDay} - ${monthOf(end)} ${endDay}` };
 }
