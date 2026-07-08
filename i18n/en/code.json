@@ -2223,20 +2223,11 @@
   "events.hero.description": {
     "message": "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
   },
-  "events.pagination.previous": {
-    "message": "Previous"
-  },
-  "events.pagination.next": {
-    "message": "Next"
-  },
   "events.meta.title": {
     "message": "Cardano Events, Conferences and Meetups"
   },
   "events.meta.description": {
     "message": "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
-  },
-  "events.divider.discoverWorldwide": {
-    "message": "Discover Cardano Events Worldwide"
   },
   "events.platforms.luma": {
     "message": "Events on Luma.com"
@@ -2244,18 +2235,38 @@
   "events.platforms.meetup": {
     "message": "Events on Meetup.com"
   },
-  "events.divider.upcomingHighlighted": {
-    "message": "Upcoming highlighted Events"
-  },
-  "events.divider.pastHighlighted": {
-    "message": "Past Highlighted Events"
-  },
-  "events.recapAvailable": {
-    "message": "Recap available:"
-  },
-  "events.watchHere": {
-    "message": "Watch here"
-  },
+  "events.filter.searchPlaceholder": { "message": "Search events, locations, or topics" },
+  "events.filter.timeUpcoming": { "message": "Upcoming" },
+  "events.filter.timePast": { "message": "Past" },
+  "events.filter.timeAll": { "message": "All" },
+  "events.filter.placeInPerson": { "message": "In person" },
+  "events.filter.placeOnline": { "message": "Online" },
+  "events.filter.topicGroup": { "message": "Topics" },
+  "events.filter.allTopics": { "message": "All Topics" },
+  "events.featured.title": { "message": "Featured upcoming events" },
+  "events.featured.thisWeek": { "message": "This week" },
+  "events.recaps.title": { "message": "Recent event recaps" },
+  "events.recaps.watch": { "message": "Watch recap" },
+  "events.carousel.prev": { "message": "Previous" },
+  "events.carousel.next": { "message": "Next" },
+  "events.view.list": { "message": "List" },
+  "events.view.calendar": { "message": "Calendar" },
+  "events.divider.calendar": { "message": "Events Calendar" },
+  "events.calendar.today": { "message": "Today" },
+  "events.calendar.upcoming": { "message": "Upcoming events" },
+  "events.calendar.tzNote": { "message": "Dates are shown in UTC and events may change. Check the event page for the latest details." },
+  "events.card.register": { "message": "View event" },
+  "events.card.online": { "message": "Online" },
+  "events.card.recurring": { "message": "Recurring" },
+  "events.divider.upcoming": { "message": "Upcoming Events" },
+  "events.divider.all": { "message": "All Events" },
+  "events.divider.past": { "message": "Past Events and Recaps" },
+  "events.empty.upcoming": { "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest." },
+  "events.empty.past": { "message": "No past events match your filters." },
+  "events.divider.discover": { "message": "Discover Cardano Events Worldwide" },
+  "events.submit.title": { "message": "Want to host a Cardano event?" },
+  "events.submit.description": { "message": "Submit your event to be featured on cardano.org." },
+  "events.submit.cta": { "message": "Submit your event" },
   "exchanges.hero.title": {
     "message": "Integrate Cardano"
   },

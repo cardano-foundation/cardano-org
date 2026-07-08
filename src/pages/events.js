@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -6,363 +6,341 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import events from "@site/src/data/events.json";
-import {translate} from '@docusaurus/Translate';
+import curatedEvents from "@site/src/data/events.json";
+import { translate } from "@docusaurus/Translate";
+import { mergeEvents, collapseRecurringSeries } from "@site/src/utils/events/eventModel";
+import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
+import useLumaEvents from "@site/src/utils/events/useLumaEvents";
+import EventCard from "@site/src/components/Events/EventCard";
+import EventHeroControls from "@site/src/components/Events/EventHeroControls";
+import TopicFilter from "@site/src/components/Events/TopicFilter";
+import EventList from "@site/src/components/Events/EventList";
+import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
+import RecapEvents from "@site/src/components/Events/RecapEvents";
+import CalendarView from "@site/src/components/Events/CalendarView";
+import ViewToggle from "@site/src/components/Events/ViewToggle";
 
-const EVENTS_PER_PAGE = 5;
+const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
+// Curated conference events shown as highlighted cards above the full list.
+// The row scrolls horizontally, so we can surface a good number of the next
+// upcoming ones (not strictly bound to the current calendar month).
+const FEATURED_LIMIT = 10;
 
-function Pagination({ currentPage, totalPages, onPageChange, anchorId, previousLabel, nextLabel }) {
-  if (totalPages <= 1) {
-    return null;
-  }
+function todayUtcStart() {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+}
 
-  const go = (page) => {
-    const clamped = Math.max(1, Math.min(totalPages, page));
-    if (clamped === currentPage) return;
-    onPageChange(clamped);
+function matchesPlace(event, place) {
+  if (place === "online") return event.online;
+  if (place === "inperson") return !event.online;
+  return true;
+}
 
-    if (typeof window !== 'undefined') {
-      const hash = anchorId ? `#${anchorId}` : '';
-      const el = anchorId ? document.getElementById(anchorId) : null;
-      if (el && el.scrollIntoView) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (history && history.replaceState) {
-          history.replaceState(null, '', hash);
-        } else if (hash) {
-          window.location.hash = hash;
-        }
-      } else if (hash) {
-        window.location.hash = hash;
-      }
-    }
-  };
+function matchesQuery(event, query) {
+  const q = (query || "").trim().toLowerCase();
+  if (!q) return true;
+  const haystack = [event.title, event.location?.label, event.organizer]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  return haystack.includes(q);
+}
 
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+function matchesCategory(event, category) {
+  if (!category) return true;
+  return event.category === category;
+}
 
-  return (
-    <nav
-  className="events-pagination"
-  aria-label="Events pagination"
->
-  <button
-    type="button"
-    onClick={() => go(currentPage - 1)}
-    disabled={currentPage === 1}
-    className="events-pagination__nav"
-  >
-    {previousLabel}
-  </button>
+// Categories too generic to offer as a topic button (the catch-all buckets).
+const HIDDEN_TOPIC_CATEGORIES = new Set(["Community", "Other"]);
 
-  <ul className="events-pagination__list">
-    {pageNumbers.map((pageNumber) => (
-      <li key={pageNumber}>
-        <button
-          type="button"
-          onClick={() => go(pageNumber)}
-          className={`events-pagination__page ${pageNumber === currentPage ? 'is-active' : ''}`}
-          disabled={pageNumber === currentPage}
-        >
-          {pageNumber}
-        </button>
-      </li>
-    ))}
-  </ul>
-
-  <button
-    type="button"
-    onClick={() => go(currentPage + 1)}
-    disabled={currentPage === totalPages}
-    className="events-pagination__nav"
-  >
-    {nextLabel}
-  </button>
-</nav>
+// Distinct categories actually present, in the canonical taxonomy order.
+function collectCategories(events) {
+  const present = new Set(events.map((e) => e.category).filter(Boolean));
+  return Object.keys(EVENT_CATEGORIES).filter(
+    (c) => present.has(c) && !HIDDEN_TOPIC_CATEGORIES.has(c),
   );
 }
 
-function EventDateTitle({ startDate, endDate, title, link }) {
-  const options = { timeZone: 'UTC', month: 'long' };
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : null;
-  const startMonthStr = start.toLocaleDateString('en-US', options);
-  const startDay = start.getUTCDate();
-  // Create a consistent date string like "August 6" or "August 6-7"
-  const range = end 
-    ? `${startMonthStr} ${startDay}-${end.getUTCDate()}` 
-    : `${startMonthStr} ${startDay}`;
-
-  return (
-    <>
-      <span style={{ color: "#666" }}>{range}, </span>
-      {link ? (
-        <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#0056D2" }}>
-          {title}
-        </a>
-      ) : (
-        title
-      )}
-    </>
-  );
-}
-
-function HomepageHeader() {
+function HomepageHeader({ filters, onChange }) {
   return (
     <SiteHero
-      title={translate({id: 'events.hero.title', message: 'Cardano Events'})}
+      title={translate({ id: "events.hero.title", message: "Cardano Events" })}
       description={[
-        translate({id: 'events.hero.description', message: 'Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.'})
+        translate({
+          id: "events.hero.description",
+          message:
+            "Discover events, meet builders, and grow with the global Cardano community.",
+        }),
       ]}
       bannerType="dots"
-    />
+    >
+      <EventHeroControls value={filters} onChange={onChange} />
+    </SiteHero>
   );
 }
 
-export default function Home() {
-  const today = new Date();
-  // Create a new date object representing the start of today in UTC
-  const todayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-  const todayTimestamp = todayUTC.getTime();
+export default function Events() {
+  const { entries: lumaEntries } = useLumaEvents();
+  const [view, setView] = useState("list");
+  const [filters, setFilters] = useState({
+    place: "all",
+    time: "upcoming",
+    query: "",
+    category: null,
+  });
 
-  const [upcomingPage, setUpcomingPage] = useState(1);
-  const [pastPage, setPastPage] = useState(1);
+  const allEvents = useMemo(
+    () =>
+      collapseRecurringSeries(
+        mergeEvents(curatedEvents, lumaEntries),
+        todayUtcStart(),
+      ),
+    [lumaEntries],
+  );
 
-  const { upcomingEvents, pastEvents } = useMemo(() => {
-    const todayUTC = new Date(todayTimestamp);
-    const sortedEvents = [...events].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+  const availableCategories = useMemo(() => collectCategories(allEvents), [allEvents]);
 
-    const upcoming = sortedEvents.filter((event) => new Date(event.startDate) >= todayUTC);
-    const past = sortedEvents
-      .filter((event) => new Date(event.startDate) < todayUTC && event.recapVideo)
-      .reverse();
+  // The calendar spans every month, so it ignores the upcoming/past toggle but
+  // still respects place, topic and search.
+  const calendarEvents = useMemo(
+    () =>
+      allEvents.filter(
+        (event) =>
+          matchesPlace(event, filters.place) &&
+          matchesQuery(event, filters.query) &&
+          matchesCategory(event, filters.category),
+      ),
+    [allEvents, filters.place, filters.query, filters.category],
+  );
 
-    return {
-      upcomingEvents: upcoming,
-      pastEvents: past,
-    };
-  }, [todayTimestamp]);
+  // Highlighted events are the upcoming curated entries (hand-picked
+  // conferences), independent of the filters applied to the full list below.
+  const featuredEvents = useMemo(() => {
+    const todayTs = todayUtcStart();
+    return allEvents
+      .filter(
+        (event) =>
+          event.source === "curated" &&
+          (event.startDate ? new Date(event.startDate).getTime() : 0) >= todayTs,
+      )
+      .slice(0, FEATURED_LIMIT);
+  }, [allEvents]);
 
-  const upcomingTotalPages = Math.ceil(upcomingEvents.length / EVENTS_PER_PAGE);
-  const pastTotalPages = Math.ceil(pastEvents.length / EVENTS_PER_PAGE);
+  // Past curated events that have a recorded recap video.
+  const recapEvents = useMemo(() => {
+    const todayTs = todayUtcStart();
+    return allEvents
+      .filter(
+        (event) =>
+          event.source === "curated" &&
+          event.recapVideo &&
+          (event.startDate ? new Date(event.startDate).getTime() : 0) < todayTs,
+      )
+      .sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+  }, [allEvents]);
 
-  useEffect(() => {
-    if (upcomingTotalPages === 0) {
-      if (upcomingPage !== 1) {
-        // Clamp pagination when the upcoming list shrinks to empty.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setUpcomingPage(1);
-      }
-      return;
-    }
+  const isPast = filters.time === "past";
 
-    if (upcomingPage > upcomingTotalPages) {
-      setUpcomingPage(upcomingTotalPages);
-    }
-  }, [upcomingEvents, upcomingPage, upcomingTotalPages]);
+  // Featured is a highlight of the default view. Once the user searches or
+  // filters, hide it so the (changing) list moves up into view.
+  const isFiltering =
+    filters.query.trim() !== "" ||
+    filters.place !== "all" ||
+    filters.category !== null ||
+    filters.time !== "upcoming" ||
+    view === "calendar";
 
-  useEffect(() => {
-    if (pastTotalPages === 0) {
-      if (pastPage !== 1) {
-        // Clamp pagination when the past list shrinks to empty.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setPastPage(1);
-      }
-      return;
-    }
+  const orderedEvents = useMemo(() => {
+    const todayTs = todayUtcStart();
+    const filtered = allEvents.filter((event) => {
+      const startTs = event.startDate ? new Date(event.startDate).getTime() : 0;
+      const isUpcoming = startTs >= todayTs;
+      if (filters.time === "upcoming" && !isUpcoming) return false;
+      if (filters.time === "past" && isUpcoming) return false;
+      return (
+        matchesPlace(event, filters.place) &&
+        matchesQuery(event, filters.query) &&
+        matchesCategory(event, filters.category)
+      );
+    });
+    // Past events read newest first; upcoming and all read soonest first.
+    // filter() already returns a fresh array, so reversing in place is safe.
+    return isPast ? filtered.reverse() : filtered;
+  }, [allEvents, filters, isPast]);
 
-    if (pastPage > pastTotalPages) {
-      setPastPage(pastTotalPages);
-    }
-  }, [pastEvents, pastPage, pastTotalPages]);
-
-  const paginatedUpcomingEvents = useMemo(() => {
-    const startIndex = (upcomingPage - 1) * EVENTS_PER_PAGE;
-    return upcomingEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
-  }, [upcomingEvents, upcomingPage]);
-
-  const paginatedPastEvents = useMemo(() => {
-    const startIndex = (pastPage - 1) * EVENTS_PER_PAGE;
-    return pastEvents.slice(startIndex, startIndex + EVENTS_PER_PAGE);
-  }, [pastEvents, pastPage]);
-
-  const previousLabel = translate({id: 'events.pagination.previous', message: 'Previous'});
-  const nextLabel = translate({id: 'events.pagination.next', message: 'Next'});
+  const registerLabel = translate({ id: "events.card.register", message: "View event" });
+  const onlineLabel = translate({ id: "events.card.online", message: "Online" });
+  const recurringLabel = translate({ id: "events.card.recurring", message: "Recurring" });
+  const featuredLabels = {
+    register: registerLabel,
+    online: onlineLabel,
+    thisWeek: translate({ id: "events.featured.thisWeek", message: "This week" }),
+  };
+  const emptyLabel = isPast
+    ? translate({
+        id: "events.empty.past",
+        message: "No past events match your filters.",
+      })
+    : translate({
+        id: "events.empty.upcoming",
+        message:
+          "No upcoming events match your filters right now. Check the Cardano calendars below for the latest.",
+      });
 
   return (
     <Layout
-    title={translate({id: 'events.meta.title', message: 'Cardano Events, Conferences and Meetups'})}
-    description={translate({id: 'events.meta.description', message: 'Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.'})}
+      title={translate({
+        id: "events.meta.title",
+        message: "Cardano Events, Conferences and Meetups",
+      })}
+      description={translate({
+        id: "events.meta.description",
+        message:
+          "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community.",
+      })}
     >
-      <OpenGraphInfo pageName="events" /> 
-      <HomepageHeader />
-      <main>
-      
-      <BoundaryBox>
-        <Divider text={translate({id: 'events.divider.discoverWorldwide', message: 'Discover Cardano Events Worldwide'})} id ="worldwide"/>
-        <div className="event-platforms">
-          <a
-            className="platform-card"
-            href="https://luma.com/CardanoEvents"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Luma.com"
-          >
-            <figure>
-              <img
-                src={`/img/events/platform-luma.png`}
-                alt="Luma.com"
-              />
-              <figcaption>{translate({id: 'events.platforms.luma', message: 'Events on Luma.com'})}</figcaption>
-            </figure>
-          </a>
-          <a
-            className="platform-card"
-            href="https://www.meetup.com/pro/cardano"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Meetup.com"
-          >
-            <figure>
-              <img
-                src={`/img/events/platform-meetup.png`}
-                alt="Meetup.com"
-              />
-              <figcaption>{translate({id: 'events.platforms.meetup', message: 'Events on Meetup.com'})}</figcaption>
-            </figure>
-          </a>
-        </div>
-      </BoundaryBox>
-
-      <BackgroundWrapper backgroundType={"zoom"}>
-      <BoundaryBox>
-            <Divider text={translate({id: 'events.divider.upcomingHighlighted', message: 'Upcoming highlighted Events'})} id ="upcoming"/>
-            <ul>
-              {paginatedUpcomingEvents.map(event => (
-                <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
-                  <h3>
-                    <EventDateTitle
-                      startDate={event.startDate}
-                      endDate={event.endDate}
-                      title={event.title}
-                      link={event.link}
-                    />
-                  </h3>
-                  <div className="event-content">
-                    {event.image && (
-                      <img
-                        src={`/img/events/${event.image}`}
-                        alt={event.title}
-                        style={{
-                          width: "240px",
-                          maxWidth: "100%",
-                          height: "auto",
-                          borderRadius: "8px",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-                        }}
-                      />
-                    )}
-                    <div>
-                      <p>{event.description}</p>
-                      <p>
-                        <span title="Event Location">📍 {event.location}</span><br />
-                        <span title="Event Organiser">👥 {event.organizer}</span>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <Pagination
-              currentPage={upcomingPage}
-              totalPages={upcomingTotalPages}
-              onPageChange={setUpcomingPage}
-              anchorId="upcoming"
-              previousLabel={previousLabel}
-              nextLabel={nextLabel}
+      <OpenGraphInfo pageName="events" />
+      <HomepageHeader filters={filters} onChange={setFilters} />
+      <main className="events-main">
+        {featuredEvents.length > 0 && !isFiltering && (
+          <BoundaryBox>
+            <Divider
+              text={translate({
+                id: "events.featured.title",
+                message: "Featured upcoming events",
+              })}
+              id="featured"
             />
-        </BoundaryBox>
+            <FeaturedEvents events={featuredEvents} labels={featuredLabels} />
+          </BoundaryBox>
+        )}
 
+        <BackgroundWrapper backgroundType={"zoom"}>
+          <BoundaryBox>
+            <Divider
+              text={
+                view === "calendar"
+                  ? translate({ id: "events.divider.calendar", message: "Events Calendar" })
+                  : filters.time === "past"
+                    ? translate({
+                        id: "events.divider.past",
+                        message: "Past Events and Recaps",
+                      })
+                    : filters.time === "all"
+                      ? translate({ id: "events.divider.all", message: "All Events" })
+                      : translate({
+                          id: "events.divider.upcoming",
+                          message: "Upcoming Events",
+                        })
+              }
+              id="events"
+            />
+            <div className="events-toolbar">
+              <TopicFilter
+                value={filters}
+                onChange={setFilters}
+                topics={availableCategories}
+              />
+              <ViewToggle
+                value={view}
+                onChange={setView}
+                listLabel={translate({ id: "events.view.list", message: "List" })}
+                calendarLabel={translate({ id: "events.view.calendar", message: "Calendar" })}
+              />
+            </div>
+            {view === "calendar" ? (
+              <CalendarView events={calendarEvents} />
+            ) : (
+              <EventList
+                events={orderedEvents}
+                emptyLabel={emptyLabel}
+                renderCard={(event) => (
+                  <EventCard
+                    key={`${event.source}-${event.title}-${event.startDate}`}
+                    event={event}
+                    registerLabel={registerLabel}
+                    onlineLabel={onlineLabel}
+                    recurringLabel={recurringLabel}
+                  />
+                )}
+              />
+            )}
+          </BoundaryBox>
+        </BackgroundWrapper>
+
+        {recapEvents.length > 0 && (
+          <BoundaryBox>
+            <Divider
+              text={translate({
+                id: "events.recaps.title",
+                message: "Recent event recaps",
+              })}
+              id="recaps"
+            />
+            <RecapEvents events={recapEvents} />
+          </BoundaryBox>
+        )}
 
         <BoundaryBox>
-            <Divider text={translate({id: 'events.divider.pastHighlighted', message: 'Past Highlighted Events'})} id="past"/>
-            <ul>
-              {paginatedPastEvents.map(event => (
-                <li key={event.title} style={{ borderBottom: "1px solid #eee", paddingBottom: "2rem", marginBottom: "2rem" }}>
-                  <h3>
-                    <EventDateTitle
-                      startDate={event.startDate}
-                      endDate={event.endDate}
-                      title={event.title}
-                      link={event.link}
-                    />
-                  </h3>
-                  <div className="event-content">
-                    {event.recapVideo ? (
-                      <div style={{ marginTop: "1rem" }}>
-                        <a
-                          href={`https://www.youtube.com/watch?v=${event.recapVideo}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ textDecoration: "none", color: "inherit" }}
-                        >
-                          <img
-                            src={`https://img.youtube.com/vi/${event.recapVideo}/hqdefault.jpg`}
-                            alt={`Recap thumbnail for ${event.title}`}
-                            style={{
-                              width: "520px",
-                              maxWidth: "100%",
-                              height: "auto",
-                              borderRadius: "8px",
-                              boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
-                            }}
-                          />
-                        </a>
-                      </div>
-                    ) : event.image && (
-                      <img
-                        src={`/img/events/${event.image}`}
-                        alt={event.title}
-                        style={{
-                          width: "240px",
-                          maxWidth: "100%",
-                          height: "auto",
-                          borderRadius: "8px",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-                        }}
-                      />
-                    )}
-                    <div>
-                      {event.recapVideo && (
-                        <p>
-                          <strong>{translate({id: 'events.recapAvailable', message: 'Recap available:'})}</strong> <a
-                            href={`https://www.youtube.com/watch?v=${event.recapVideo}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >{translate({id: 'events.watchHere', message: 'Watch here'})}</a>
-                        </p>
-                      )}
-                      <p>{event.description}</p>
-                      <p>
-                        <span title="Event Location">📍 {event.location}</span><br />
-                        <span title="Event Organiser">👥 {event.organizer}</span>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <Pagination
-              currentPage={pastPage}
-              totalPages={pastTotalPages}
-              onPageChange={setPastPage}
-              anchorId="past"
-              previousLabel={previousLabel}
-              nextLabel={nextLabel}
-            />
-         </BoundaryBox>
-      </BackgroundWrapper>
+          <Divider
+            text={translate({
+              id: "events.divider.discover",
+              message: "Discover Cardano Events Worldwide",
+            })}
+            id="worldwide"
+          />
+          <div className="event-platforms">
+            <a
+              className="platform-card"
+              href="https://luma.com/CardanoEvents"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Luma.com"
+            >
+              <figure>
+                <img src={`/img/events/platform-luma.png`} alt="Luma.com" />
+                <figcaption>
+                  {translate({ id: "events.platforms.luma", message: "Events on Luma.com" })}
+                </figcaption>
+              </figure>
+            </a>
+            <a
+              className="platform-card"
+              href="https://www.meetup.com/pro/cardano"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Meetup.com"
+            >
+              <figure>
+                <img src={`/img/events/platform-meetup.png`} alt="Meetup.com" />
+                <figcaption>
+                  {translate({ id: "events.platforms.meetup", message: "Events on Meetup.com" })}
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+          <p style={{ textAlign: "center", marginTop: "2rem" }}>
+            <strong>
+              {translate({
+                id: "events.submit.title",
+                message: "Want to host a Cardano event?",
+              })}
+            </strong>
+            <br />
+            {translate({
+              id: "events.submit.description",
+              message: "Submit your event to be featured on cardano.org.",
+            })}
+            <br />
+            <a href={SUBMIT_EVENT_URL} target="_blank" rel="noopener noreferrer">
+              {translate({ id: "events.submit.cta", message: "Submit your event" })}
+            </a>
+          </p>
+        </BoundaryBox>
 
-      
-        <SpacerBox size="medium"/>
+        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

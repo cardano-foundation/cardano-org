@@ -985,78 +985,25 @@ img {
   color: var(--ifm-color-primary);
 }
 
-/* Event pagination */
-.events-pagination {
+/* End Events platform link cards */
+
+/* Events toolbar: topic filters on the left, list/calendar toggle on the right */
+.events-toolbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* List reset */
-.events-pagination__list {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* The shared Divider adds a leading spacer that reads as too much gap right
+   under the events hero caret. Rather than change the shared component, pull the
+   whole content block up so the first section sits closer to the caret. The
+   value is tuned to the dots-hero geometry by eye. Scoped to /events only. */
+.events-main {
+  margin-top: -5rem;
 }
-
-/* Shared button base – use theme tokens */
-.events-pagination__nav,
-.events-pagination__page {
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-font-color-base);
-  cursor: pointer;
-  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-/* Hover/active/focus states */
-.events-pagination__nav:hover,
-.events-pagination__page:hover {
-  border-color: var(--ifm-color-emphasis-400);
-  transform: translateY(-1px);
-}
-
-.events-pagination__nav:active,
-.events-pagination__page:active {
-  transform: translateY(0);
-}
-
-.events-pagination__nav:focus-visible,
-.events-pagination__page:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-/* Current page */
-.events-pagination__page.is-active {
-  background: var(--ifm-color-primary);
-  color: #fff;
-  border-color: var(--ifm-color-primary);
-  cursor: default;
-}
-
-/* Disabled */
-.events-pagination__nav[disabled],
-.events-pagination__page[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Optional: slight dark-mode border tuning */
-[data-theme='dark'] .events-pagination__nav,
-[data-theme='dark'] .events-pagination__page {
-  border-color: var(--ifm-color-emphasis-200);
-}
-
-/* End Events platform link cards */
 
 /* Start insights index list */
 
