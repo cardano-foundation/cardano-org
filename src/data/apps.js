@@ -1994,8 +1994,8 @@ export const Showcases = [
   },
 {
   title: "EchoForge",
-  description: "EchoForge is a B2B2C identity and proof layer on Cardano, built around one principle: keep it simple. Its live products let anyone prove things on-chain for a flat $1 in ADA. EchoCert anchors certificates and credentials so they can be independently verified on-chain. EchoUploader anchors a file's SHA-256 hash as a permanent proof of existence; the file itself never leaves the user's device. EchoID, a wallet-based identity and tiering layer, has its backend live; it has no standalone public frontend and is currently rendered through EchoDash and the ForgeCard kiosk route. All USD prices settle in ADA via an on-chain oracle.",
-  tagline: "Anchoring and proof, building toward an identity layer, building toward an identity layer",
+  description: "EchoForge is a B2B2C identity and proof layer on Cardano. EchoCert verifies credentials, EchoUploader proves file, EchoID adds wallet identity through EchoDash.",
+  tagline: "Anchoring and proof, building toward an identity layer",
   preview: require("./app-screenshots/EchoForge.jpg"),
   extraPreviews: [
     require("./app-screenshots/EchoCert.png"),
