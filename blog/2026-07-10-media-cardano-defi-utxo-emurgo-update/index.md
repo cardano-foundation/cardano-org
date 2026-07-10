@@ -1,8 +1,8 @@
 ---
 slug: 2026-07-10-media-cardano-defi-utxo-emurgo-update
-title: "Cardano's 120M ADA DeFi Bet, Ethereum UTXO Shift and EMURGO Exit"
+title: "Cardano's 120M ada DeFi Bet, Ethereum UTXO Shift and EMURGO Exit"
 description: "Cardano news update on AlphaGrowth's 120 million ada DeFi proposal, Ethereum UTXO research, RealFi testnet, SecondFi guidance and EMURGO's Pentad exit."
-authors: [community]
+authors: [learncardano]
 tags: [media]
 ---
 
