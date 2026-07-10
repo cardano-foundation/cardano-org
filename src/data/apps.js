@@ -1992,6 +1992,25 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "dreptalkcom",
   },
+{
+  title: "EchoForge",
+  description: "EchoForge is a B2B2C identity and proof layer on Cardano. EchoCert verifies credentials, EchoUploader proves file, EchoID adds wallet identity through EchoDash.",
+  tagline: "Anchoring and proof, building toward an identity layer",
+  preview: require("./app-screenshots/EchoForge.jpg"),
+  extraPreviews: [
+    require("./app-screenshots/EchoCert.png"),
+    require("./app-screenshots/EchoUploader.png"),
+    require("./app-screenshots/EchoDash.png"),
+  ],
+  icon: "/img/app-icons/EchoForge.svg",
+  website: "https://echoforgellc.tech",
+  source: "https://github.com/EchoForge-Dev/Aiken_Smart-Contract",
+  category: "notary",
+  properties: ["opensource"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "EchoForgeEF",
+},
 ];
 
 export const TagList = Object.keys(Tags);
