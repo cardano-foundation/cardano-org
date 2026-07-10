@@ -3,7 +3,7 @@ slug: 2026-07-04-media-cardano-ecosystem-updates
 title: "SecondFi Recovery, Midnight Pause, Open USD and Cardano's DeFi Funding Debate"
 description: "Video covering the SecondFi asset recovery process, paused Midnight Glacier Drop redemptions, the Open USD stablecoin standard, and Cardano treasury funding for DeFi growth."
 authors: [learncardano]
-tags: [media, defi, stablecoins, governance, security]
+tags: [media]
 ---
 
 Learn Cardano examines the SecondFi asset recovery checker and its 16 million ada recovery fund, the precautionary pause on Midnight Glacier Drop redemptions, and how the Open USD stablecoin standard connects to Cardano through Brale. The episode also explores the proposed 500 million ada net change limit and what treasury funding means for DeFi and infrastructure growth.
