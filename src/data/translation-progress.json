@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-07-03T06:59:05.089Z",
+  "lastUpdated": "2026-07-10T07:04:14.627Z",
   "languages": [
     {
       "id": "ja",
       "name": "Japanese",
       "translationProgress": 83,
-      "approvalProgress": 83,
+      "approvalProgress": 82,
       "words": {
-        "total": 20529,
-        "translated": 17186,
+        "total": 20618,
+        "translated": 17170,
         "preTranslateAppliedTo": 66,
-        "approved": 17120
+        "approved": 17104
       },
       "phrases": {
-        "total": 2047,
-        "translated": 1614,
+        "total": 2072,
+        "translated": 1607,
         "preTranslateAppliedTo": 28,
-        "approved": 1586
+        "approved": 1579
       }
     },
     {
@@ -25,16 +25,16 @@
       "translationProgress": 62,
       "approvalProgress": 62,
       "words": {
-        "total": 20529,
-        "translated": 12874,
-        "preTranslateAppliedTo": 4941,
-        "approved": 12874
+        "total": 20618,
+        "translated": 12858,
+        "preTranslateAppliedTo": 4925,
+        "approved": 12858
       },
       "phrases": {
-        "total": 2047,
-        "translated": 1356,
-        "preTranslateAppliedTo": 402,
-        "approved": 1356
+        "total": 2072,
+        "translated": 1349,
+        "preTranslateAppliedTo": 395,
+        "approved": 1349
       }
     },
     {
@@ -43,14 +43,14 @@
       "translationProgress": 54,
       "approvalProgress": 0,
       "words": {
-        "total": 20529,
-        "translated": 11272,
+        "total": 20618,
+        "translated": 11256,
         "preTranslateAppliedTo": 660,
         "approved": 13
       },
       "phrases": {
-        "total": 2047,
-        "translated": 1133,
+        "total": 2072,
+        "translated": 1126,
         "preTranslateAppliedTo": 173,
         "approved": 5
       }
@@ -61,15 +61,15 @@
       "translationProgress": 27,
       "approvalProgress": 0,
       "words": {
-        "total": 20529,
-        "translated": 5574,
-        "preTranslateAppliedTo": 5436,
+        "total": 20618,
+        "translated": 5573,
+        "preTranslateAppliedTo": 5435,
         "approved": 0
       },
       "phrases": {
-        "total": 2047,
-        "translated": 780,
-        "preTranslateAppliedTo": 715,
+        "total": 2072,
+        "translated": 779,
+        "preTranslateAppliedTo": 714,
         "approved": 0
       }
     }
