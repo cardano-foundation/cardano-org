@@ -1992,6 +1992,21 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "dreptalkcom",
   },
+  {
+    title: "Dorea",
+    description:
+      "Social media network for creative freedom and market research. Post any format, keep 100% of tip earnings, and connect a Cardano wallet to manage assets alongside your feed.",
+    tagline: "Social media network to create, share, and earn",
+    preview: require("./app-screenshots/dorea.jpg"),
+    icon: "/img/app-icons/dorea.svg",
+    website: "https://dorea.io",
+    source: null,
+    category: "other",
+    properties: [],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "doreaio",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
