@@ -17,15 +17,9 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './styles.module.css';
-
-// Escapes any literal `</` in JSON before it is embedded inside a <script>
-// tag so a future term containing the substring cannot terminate the script
-// element early (also covers the XSS shape if data ever becomes user-supplied).
-function jsonLdString(data) {
-  return JSON.stringify(data).replace(/</g, '\\u003c');
-}
 
 function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
   const definedTerm = {

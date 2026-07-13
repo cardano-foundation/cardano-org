@@ -15,6 +15,7 @@ import {
 } from "@site/src/utils/appStats";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile from "@site/src/components/AppTile";
+import { jsonLdString } from "@site/src/utils/jsonLd";
 
 import styles from "./styles.module.css";
 
@@ -22,7 +23,7 @@ const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
 
 function buildJsonLd(app) {
-  return JSON.stringify({
+  return jsonLdString({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: app.title,
