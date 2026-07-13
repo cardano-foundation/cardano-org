@@ -37,6 +37,12 @@
   transition: background 0.15s ease;
 }
 
+.media:focus-visible,
+.watch:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 .media:hover .play {
   background: var(--ifm-color-primary);
 }

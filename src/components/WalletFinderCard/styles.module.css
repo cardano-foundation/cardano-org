@@ -182,6 +182,11 @@
   transition: color 0.2s ease;
 }
 
+.link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 .link:hover {
   color: var(--ifm-color-primary-dark);
   text-decoration: underline;
