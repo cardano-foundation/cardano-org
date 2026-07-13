@@ -6,16 +6,19 @@
   [headers.values]
     # Prevents the site from being framed by other sites, protecting against clickjacking.
     X-Frame-Options = "DENY"
-    # Activates the browser's built-in cross-site scripting (XSS) filter and blocks responses if an attack is detected.
-    X-XSS-Protection = "1; mode=block"
+    # Stops browsers from MIME-sniffing a response away from its declared Content-Type.
+    X-Content-Type-Options = "nosniff"
+    # Disabled: the legacy XSS auditor is deprecated and can introduce vulnerabilities;
+    # the Content-Security-Policy below is the real protection.
+    X-XSS-Protection = "0"
     # Ensures that only trusted content is executed and styled. TODO: Consider using nonces or hashes for inline scripts instead of unsafe-inline.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cardano.org https://hey.cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com https://js.hsforms.net https://forms.hsforms.com https://www.google.com https://www.gstatic.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app https://forms.hsforms.com https://forms-eu1.hsforms.com data: https://*.ytimg.com https://img.youtube.com https://ipfs.io https://crowdin-static.cf-downloads.crowdin.com https://*.lumacdn.com; style-src 'self' 'unsafe-inline' https://hey.cardano.org; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://*.hsforms.com https://new-cardano-org-staging.netlify.app/reward-calculator/ https://cardano.org/reward-calculator/ https://hey.cardano.org; media-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://hubspot-forms-static-embed.s3.amazonaws.com https://*.hsforms.com https://*.google-analytics.com https://data.cardano.org https://ipfs.io https://*.algolianet.com https://*.algolia.net;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cardano.org https://hey.cardano.org https://new-cardano-org-staging.netlify.app https://www.googletagmanager.com https://js.hsforms.net https://forms.hsforms.com https://www.google.com https://www.gstatic.com; img-src 'self' https://cardano.org https://new-cardano-org-staging.netlify.app https://forms.hsforms.com https://forms-eu1.hsforms.com data: https://*.ytimg.com https://img.youtube.com https://ipfs.io https://crowdin-static.cf-downloads.crowdin.com https://*.lumacdn.com; style-src 'self' 'unsafe-inline' https://hey.cardano.org; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://*.hsforms.com https://new-cardano-org-staging.netlify.app/reward-calculator/ https://cardano.org/reward-calculator/ https://hey.cardano.org; media-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://hubspot-forms-static-embed.s3.amazonaws.com https://*.hsforms.com https://*.google-analytics.com https://data.cardano.org https://ipfs.io https://*.algolianet.com https://*.algolia.net; base-uri 'self'; object-src 'none';"
     # Enforces secure connections via HTTPS, protecting against certain types of man-in-the-middle attacks.
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     # Controls information provided as the HTTP Referer header when navigating from your site, enhancing privacy and security.
-    Referrer-Policy = "no-referrer-when-downgrade"
-    # Allows you to explicitly enable or disable various browser features and APIs for your site, enhancing security.
-    Feature-Policy = "geolocation 'none'; microphone 'none';"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Disables browser features the site does not use (Permissions-Policy supersedes the deprecated Feature-Policy).
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 # Specific header configuration for iframe exceptions
 [[headers]]
