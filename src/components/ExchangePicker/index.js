@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import data from "@site/src/data/exchanges.json";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 const { regions, countries } = data;
@@ -104,7 +105,7 @@ function ExchangeCard({ exchange }) {
       </div>
 
       <a 
-        href={exchange.link} 
+        href={safeUrl(exchange.link)}
         target="_blank" 
         rel="noopener noreferrer"
         className={styles.exchangeLink}

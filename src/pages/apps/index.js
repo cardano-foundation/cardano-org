@@ -36,6 +36,7 @@ import {
   isTrackable,
   compareByTxDesc,
 } from "@site/src/utils/appStats";
+import { jsonLdString } from "@site/src/utils/jsonLd";
 
 import styles from "./styles.module.css";
 
@@ -158,7 +159,7 @@ const STATS_GENERATED_AT_LABEL = STATS_GENERATED_AT
 const LIVE_TRACKING_COUNT = countLiveTracking(Showcases);
 
 const ITEM_LIST_LIMIT = 30;
-const APPS_ITEM_LIST_JSON_LD = JSON.stringify({
+const APPS_ITEM_LIST_JSON_LD = jsonLdString({
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Cardano apps and dApps",

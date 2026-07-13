@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
 import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "@site/src/utils/appStats";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
@@ -31,7 +32,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
 
   return (
     <a 
-      href={app.website} 
+      href={safeUrl(app.website)}
       target="_blank" 
       rel="noopener noreferrer"
       className={styles.appListItem}

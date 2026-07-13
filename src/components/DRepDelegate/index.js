@@ -292,7 +292,7 @@ function WalletStatus({ wallet, delegation, onDisconnect }) {
 
 function NetworkWarning() {
   return (
-    <div className={`${styles.banner} ${styles.bannerWarning}`}>
+    <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
       {translate({
         id: "governance.delegate.networkWarning",
         message: "Your wallet is on the wrong network. Switch to Mainnet to delegate.",
@@ -304,7 +304,7 @@ function NetworkWarning() {
 function TxBanner({ state }) {
   if (state.status === "building") {
     return (
-      <div className={`${styles.banner} ${styles.bannerInfo}`}>
+      <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">
         {translate(
           { id: "governance.delegate.tx.building", message: "Preparing delegation to {target}. Please confirm in your wallet…" },
           { target: state.target }
@@ -314,7 +314,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "success") {
     return (
-      <div className={`${styles.banner} ${styles.bannerSuccess}`}>
+      <div className={`${styles.banner} ${styles.bannerSuccess}`} role="status">
         <p style={{ margin: 0 }}>
           {translate(
             { id: "governance.delegate.tx.success", message: "Delegation submitted to {target}." },
@@ -329,7 +329,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "error") {
     return (
-      <div className={`${styles.banner} ${styles.bannerError}`}>
+      <div className={`${styles.banner} ${styles.bannerError}`} role="alert">
         {state.message}
       </div>
     );

@@ -5,6 +5,7 @@ import ThemedImage from "@theme/ThemedImage";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
 import companies from "@site/src/data/logosCompanies.json";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 function getCompanyId(company) {
@@ -46,7 +47,7 @@ function SpotlightPanel({ company, onClose }) {
           Known for: {company.knownFor}
         </p>
       )}
-      <Link className={styles.spotlightLink} href={company.link}>
+      <Link className={styles.spotlightLink} href={safeUrl(company.link)}>
         Visit website
       </Link>
     </div>

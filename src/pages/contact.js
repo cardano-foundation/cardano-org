@@ -131,6 +131,7 @@ export default function Home() {
             className={clsx("selectField", "selectFieldArrow")}
             onChange={handleTopicChange}
             value={selectedTopic ?? ""}
+            aria-label={translate({id: 'contact.select.label', message: 'What can we help you with?'})}
           >
             <option value="">{translate({id: 'contact.select.placeholder', message: 'not yet decided (please select)'})}</option>
             <option value="iog">

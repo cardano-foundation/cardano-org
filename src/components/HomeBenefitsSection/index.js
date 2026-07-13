@@ -12,6 +12,20 @@ import {translate} from '@docusaurus/Translate';
 // This component:
 // Shows a tab list on the left with some swapable content on the right.
 
+// The benefit copy is translator-supplied (Crowdin) and uses "<br />" for its
+// paragraph breaks. Render it as escaped text with real <br /> elements rather
+// than dangerouslySetInnerHTML, so a malicious translation cannot inject markup.
+const BR_TAG = /<br\s*\/?>/i;
+function renderWithLineBreaks(text) {
+  const segments = String(text ?? "").split(BR_TAG);
+  return segments.map((segment, index) => (
+    <React.Fragment key={index}>
+      {index > 0 && <br />}
+      {segment}
+    </React.Fragment>
+  ));
+}
+
 function getBenefitsData() {
   return [
     {
@@ -106,11 +120,7 @@ export default function HomeBenefitsSection() {
                 }`}
               >
                 <h2>{benefit.benefits_item_title}</h2>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: benefit.benefits_item_body,
-                  }}
-                />
+                <p>{renderWithLineBreaks(benefit.benefits_item_body)}</p>
                 <p className={styles.buttonWrap}>
                   <Link
                     className="button button--primary button--lg"

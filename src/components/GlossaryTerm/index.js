@@ -17,15 +17,10 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
+import { safeUrl } from '@site/src/utils/safeUrl';
 import styles from './styles.module.css';
-
-// Escapes any literal `</` in JSON before it is embedded inside a <script>
-// tag so a future term containing the substring cannot terminate the script
-// element early (also covers the XSS shape if data ever becomes user-supplied).
-function jsonLdString(data) {
-  return JSON.stringify(data).replace(/</g, '\\u003c');
-}
 
 function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
   const definedTerm = {
@@ -345,7 +340,7 @@ export default function GlossaryTerm({ term }) {
                 <ul className={styles.sourcesList}>
                   {term.sources.map(source => (
                     <li key={source.url}>
-                      <a href={source.url} target="_blank" rel="noopener noreferrer">
+                      <a href={safeUrl(source.url)} target="_blank" rel="noopener noreferrer">
                         {source.title}
                       </a>
                     </li>
@@ -438,7 +433,7 @@ export default function GlossaryTerm({ term }) {
                     </span>
                   </a>
                 ) : (
-                  <Link className={styles.sideCtaBtn} to={term.link}>
+                  <Link className={styles.sideCtaBtn} to={safeUrl(term.link)}>
                     {translate({
                       id: 'glossary.term.openPage',
                       message: 'Open the page',
