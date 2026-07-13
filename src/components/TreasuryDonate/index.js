@@ -167,7 +167,7 @@ function WalletStatus({ wallet, onDisconnect }) {
 
 function NetworkWarning() {
   return (
-    <div className={`${styles.banner} ${styles.bannerWarning}`}>
+    <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
       {translate({
         id: "governance.treasury.networkWarning",
         message: "Your wallet is on the wrong network. Switch to Mainnet to donate.",
@@ -179,7 +179,7 @@ function NetworkWarning() {
 function TxBanner({ state }) {
   if (state.status === "building") {
     return (
-      <div className={`${styles.banner} ${styles.bannerInfo}`}>
+      <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">
         {translate({
           id: "governance.treasury.tx.building",
           message: "Building the treasury donation. Please confirm in your wallet…",
@@ -189,7 +189,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "success") {
     return (
-      <div className={`${styles.banner} ${styles.bannerSuccess}`}>
+      <div className={`${styles.banner} ${styles.bannerSuccess}`} role="status">
         <p style={{ margin: 0 }}>
           {translate(
             { id: "governance.treasury.tx.success", message: "Donation of {amount} submitted to the treasury." },
@@ -204,7 +204,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "error") {
     return (
-      <div className={`${styles.banner} ${styles.bannerError}`}>
+      <div className={`${styles.banner} ${styles.bannerError}`} role="alert">
         {state.message}
       </div>
     );
@@ -385,6 +385,9 @@ export default function TreasuryDonate() {
             className="button button--primary"
             disabled={!canDonate}
             onClick={handleDonate}
+            aria-describedby={
+              !canDonate && !txBusy && disabledReason ? "treasury-donate-hint" : undefined
+            }
           >
             {txBusy
               ? translate({ id: "governance.treasury.amount.ctaBusy", message: "Building…" })
@@ -392,7 +395,7 @@ export default function TreasuryDonate() {
           </button>
         </div>
         {!canDonate && !txBusy && disabledReason && (
-          <p className={styles.donateHint}>{disabledReason}</p>
+          <p className={styles.donateHint} id="treasury-donate-hint">{disabledReason}</p>
         )}
         <p className={styles.footnote}>
           {translate({

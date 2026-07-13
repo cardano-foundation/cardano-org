@@ -16,6 +16,7 @@ function FilterPill({ label, active, onClick }) {
       className={`${styles.pill} ${active ? styles.pillActive : ""}`}
       onClick={onClick}
       type="button"
+      aria-pressed={active}
     >
       {label}
     </button>
