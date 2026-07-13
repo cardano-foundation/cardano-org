@@ -65,6 +65,10 @@ scaling:
   url: https://cardano-scaling.org/
   image_url: /img/authors/cardano-scaling.png
 
+learncardano:
+  name: Learn Cardano
+  url: https://learncardano.io
+  image_url: /img/authors/learncardano.jpg
 # note: don't use relative links here, as this data is built into different paths
 #       for example /news/tags/developers vs /news
 #

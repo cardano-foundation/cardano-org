@@ -65,5 +65,10 @@
     "name": "Cardano Scaling",
     "url": "https://cardano-scaling.org/",
     "image_url": "/img/authors/cardano-scaling.png"
+  },
+  "learncardano": {
+    "name": "Learn Cardano",
+    "url": "https://learncardano.io",
+    "image_url": "/img/authors/learncardano.jpg"
   }
 }
