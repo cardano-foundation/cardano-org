@@ -639,7 +639,7 @@ export default function AiPage() {
               className={styles.specsLink}
               to="https://github.com/x402-foundation/x402/blob/main/specs/schemes/exact/scheme_exact_cardano.md"
             >
-              Read the exact scheme specs ↗
+              Read the exact scheme specs ↗︎
             </Link>
           </div>
         </section>
@@ -658,7 +658,7 @@ export default function AiPage() {
             <div className={styles.mCards}>
               <Link className={styles.mCard} to="https://www.masumi.network">
                 <p className={styles.mCardTitle}>
-                  Agent Payment Network <span className={styles.mCardArrow}>↗</span>
+                  Agent Payment Network <span className={styles.mCardArrow}>↗︎</span>
                 </p>
                 <p className={styles.mCardDesc}>
                   Escrowed agent-to-agent payments with automatic refunds and on-chain decision
@@ -667,7 +667,7 @@ export default function AiPage() {
               </Link>
               <Link className={styles.mCard} to="https://www.masumi.network/explorer">
                 <p className={styles.mCardTitle}>
-                  Decentralized Agent Registry <span className={styles.mCardArrow}>↗</span>
+                  Decentralized Agent Registry <span className={styles.mCardArrow}>↗︎</span>
                 </p>
                 <p className={styles.mCardDesc}>
                   Every agent is registered on-chain and discoverable by anyone. Browse the live
@@ -676,7 +676,7 @@ export default function AiPage() {
               </Link>
               <Link className={styles.mCard} to="https://www.veridian.id">
                 <p className={styles.mCardTitle}>
-                  Agent Identity with Veridian Wallet <span className={styles.mCardArrow}>↗</span>
+                  Agent Identity with Veridian Wallet <span className={styles.mCardArrow}>↗︎</span>
                 </p>
                 <p className={styles.mCardDesc}>
                   Decentralized identifiers and verifiable credentials for agents.
@@ -684,7 +684,7 @@ export default function AiPage() {
               </Link>
               <Link className={styles.mCard} to="https://hydra.family">
                 <p className={styles.mCardTitle}>
-                  High-Speed Transactions with Hydra <span className={styles.mCardArrow}>↗</span>
+                  High-Speed Transactions with Hydra <span className={styles.mCardArrow}>↗︎</span>
                 </p>
                 <p className={styles.mCardDesc}>
                   Sub-second, sub-cent payments between agents.
