@@ -164,6 +164,11 @@
   height: 14px;
 }
 
+.exchangeLink:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 .exchangeLink {
   display: inline-block;
   margin-top: 0.5rem;
@@ -199,6 +204,11 @@
   transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
+}
+
+.addExchangeCard:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 .addExchangeCard:hover {
