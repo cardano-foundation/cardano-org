@@ -9,6 +9,8 @@
 export function safeUrl(url) {
   if (typeof url !== "string") return "#";
   const trimmed = url.trim();
+  // Reject protocol-relative "//host" (resolves off-site); allow on-site "/path".
+  if (trimmed.startsWith("//")) return "#";
   if (trimmed.startsWith("/") || trimmed.startsWith("#")) return trimmed;
   if (/^https?:\/\//i.test(trimmed)) return trimmed;
   return "#";
