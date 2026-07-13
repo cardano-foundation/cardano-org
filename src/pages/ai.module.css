@@ -1,4 +1,4 @@
-/* Cardano × AI — hero designed, content sections still structural. */
+/* Cardano × AI: hero designed, content sections still structural. */
 
 /* ------------------------------------------------------------------ */
 /* Page-scoped navbar recolor (class set on <html> by the page)        */
@@ -251,7 +251,7 @@
 }
 
 /* both snippets occupy the same grid cell so the box height
-   is always that of the tallest variant — no jump on tab switch */
+   is always that of the tallest variant: no jump on tab switch */
 .snipBodies {
   display: grid;
 }
@@ -411,7 +411,7 @@
   --ill-soft: rgba(143, 177, 255, 0.16);
 }
 
-/* 01 — trust: shield pixels shimmer, proof check draws */
+/* 01: trust: shield pixels shimmer, proof check draws */
 .shieldPix {
   fill: var(--ill-accent);
   opacity: 0.12;
@@ -440,7 +440,7 @@
   92%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
-/* 02 — identity: scan beam sweeps the passport, badge confirms */
+/* 02: identity: scan beam sweeps the passport, badge confirms */
 .idCard {
   fill: var(--ifm-background-surface-color, #fff);
   stroke: var(--ill-line);
@@ -480,7 +480,7 @@
   100% { transform: scale(0); }
 }
 
-/* 03 — assets: three native pixel tokens travel wallet to wallet */
+/* 03: assets: three native pixel tokens travel wallet to wallet */
 .walletPix {
   fill: var(--ill-accent);
 }
@@ -502,7 +502,7 @@
   100% { transform: translateX(176px); opacity: 0; }
 }
 
-/* 04 — eUTxO: pixel pulses flow through the transaction at a steady beat */
+/* 04: eUTxO: pixel pulses flow through the transaction at a steady beat */
 .uPixIn {
   fill: var(--ill-accent);
   opacity: 0.75;
@@ -819,20 +819,10 @@
 }
 
 .mCardTitle {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--ifm-heading-color);
   margin: 0 0 0.45rem;
-}
-
-.mCardArrow {
-  color: var(--ai-blue, #1132a8);
-  font-size: 0.9rem;
-  flex-shrink: 0;
 }
 
 .mCardDesc {
@@ -840,6 +830,12 @@
   line-height: 1.55;
   color: var(--ifm-color-emphasis-700);
   margin: 0;
+}
+
+.mNote {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 1.5rem 0 0;
 }
 
 /* ---------------- closing CTA band ---------------- */

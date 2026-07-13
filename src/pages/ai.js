@@ -2,17 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import { HtmlClassNameProvider } from "@docusaurus/theme-common";
+import Translate, { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./ai.module.css";
 
 const SNIPPETS = {
   claude: {
-    label: "Claude Code (recommended)",
+    label: translate({ id: "ai.getStarted.tabClaude", message: "Claude Code (recommended)" }),
     code: `/plugin marketplace add cardano-foundation/cardano-dev-skills
 /plugin install cardano-dev-skills@cardano-dev-skills
 curl -s https://www.masumi.network/skill.md`,
   },
   other: {
-    label: "Codex / other agents",
+    label: translate({ id: "ai.getStarted.tabOther", message: "Codex / other agents" }),
     code: `git clone https://github.com/cardano-foundation/cardano-dev-skills.git
 cd your-project
 ln -s ../cardano-dev-skills/skills .agents/skills
@@ -23,35 +25,109 @@ curl -s https://www.masumi.network/skill.md`,
 const PILLARS = [
   {
     num: "01",
-    title: "Trust & Security",
-    items: ["Formal methods", "Secure smart contracts", "High assurance infrastructure"],
-    why: "Agents need infrastructure they can rely on when handling money and agreements.",
+    title: translate({ id: "ai.why.p1.title", message: "Trust & Security" }),
+    items: [
+      translate({ id: "ai.why.p1.item1", message: "Formal methods" }),
+      translate({ id: "ai.why.p1.item2", message: "Secure smart contracts" }),
+      translate({ id: "ai.why.p1.item3", message: "High assurance infrastructure" }),
+    ],
+    why: translate({
+      id: "ai.why.p1.why",
+      message: "Agents need infrastructure they can rely on when handling money and agreements.",
+    }),
     ill: "trust",
   },
   {
     num: "02",
-    title: "Decentralized Identity",
-    items: ["DIDs", "Verifiable Credentials", "Reputation & attestations"],
-    why: "Agents need to prove who they are, what they're allowed to do, and build reputation over time.",
+    title: translate({ id: "ai.why.p2.title", message: "Decentralized Identity" }),
+    items: [
+      translate({ id: "ai.why.p2.item1", message: "DIDs" }),
+      translate({ id: "ai.why.p2.item2", message: "Verifiable Credentials" }),
+      translate({ id: "ai.why.p2.item3", message: "Reputation & attestations" }),
+    ],
+    why: translate({
+      id: "ai.why.p2.why",
+      message:
+        "Agents need to prove who they are, what they're allowed to do, and build reputation over time.",
+    }),
     ill: "identity",
   },
   {
     num: "03",
-    title: "Native Assets & Tokenization",
+    title: translate({ id: "ai.why.p3.title", message: "Native Assets & Tokenization" }),
     items: [
-      "Native assets without smart contracts",
-      "Tokenized money, RWAs, memberships, licenses",
-      "Efficient asset transfers",
+      translate({ id: "ai.why.p3.item1", message: "Native assets without smart contracts" }),
+      translate({ id: "ai.why.p3.item2", message: "Tokenized money, RWAs, memberships, licenses" }),
+      translate({ id: "ai.why.p3.item3", message: "Efficient asset transfers" }),
     ],
-    why: "Agents need to own, exchange, and manage digital assets, not just send payments.",
+    why: translate({
+      id: "ai.why.p3.why",
+      message: "Agents need to own, exchange, and manage digital assets, not just send payments.",
+    }),
     ill: "assets",
   },
   {
     num: "04",
-    title: "Predictable & Decentralized Infrastructure",
-    items: ["eUTxO", "Predictable fees and execution", "Permissionless, censorship-resistant network"],
-    why: "Autonomous systems need infrastructure that's reliable, open, and economically predictable.",
+    title: translate({ id: "ai.why.p4.title", message: "Predictable & Decentralized Infrastructure" }),
+    items: [
+      translate({ id: "ai.why.p4.item1", message: "eUTxO" }),
+      translate({ id: "ai.why.p4.item2", message: "Predictable fees and execution" }),
+      translate({ id: "ai.why.p4.item3", message: "Permissionless, censorship-resistant network" }),
+    ],
+    why: translate({
+      id: "ai.why.p4.why",
+      message:
+        "Autonomous systems need infrastructure that's reliable, open, and economically predictable.",
+    }),
     ill: "eutxo",
+  },
+];
+
+const COMPARE_ROWS = [
+  {
+    name: translate({ id: "ai.x402.row1.name", message: "Normal Address Payments" }),
+    desc: translate({
+      id: "ai.x402.row1.desc",
+      message: "A direct payment to a wallet address. The baseline every chain supports.",
+    }),
+    cols: [true, true, true],
+  },
+  {
+    name: translate({ id: "ai.x402.row2.name", message: "Refunds" }),
+    desc: translate({
+      id: "ai.x402.row2.desc",
+      message: "Nothing delivered? The escrowed payment goes back to the client automatically.",
+    }),
+    cols: [false, false, true],
+  },
+  {
+    name: translate({ id: "ai.x402.row3.name", message: "Decision Logging" }),
+    desc: translate({
+      id: "ai.x402.row3.desc",
+      message: "Payment decisions are recorded on-chain, decentralised and auditable.",
+    }),
+    cols: [false, false, true],
+  },
+];
+
+const COMPARE_ROWS_EXTRA = [
+  {
+    name: translate({ id: "ai.x402.row4.name", message: "Discovery" }),
+    desc: translate({
+      id: "ai.x402.row4.desc",
+      message:
+        "A public registry of every agent: search by what they do, check their track record, and call them through the API.",
+    }),
+    cols: [false, false, true],
+  },
+  {
+    name: translate({ id: "ai.x402.row5.name", message: "Identity" }),
+    desc: translate({
+      id: "ai.x402.row5.desc",
+      message:
+        "Every agent gets a decentralized ID and a reputation score, so you can verify who you are working with.",
+    }),
+    cols: [false, false, true],
   },
 ];
 
@@ -59,7 +135,7 @@ const PILLARS = [
 // Animated pillar illustrations (pure SVG + CSS)
 // ---------------------------------------------------------------------------
 
-// 01 — a shield assembled from pixels; a proof-check draws itself
+// 01: a shield assembled from pixels; a proof-check draws itself
 const SHIELD_ROWS = [
   [0, 6],
   [0, 6],
@@ -99,7 +175,7 @@ function IllTrust() {
   );
 }
 
-// 02 — an agent passport being scanned, then verified
+// 02: an agent passport being scanned, then verified
 function IllIdentity() {
   return (
     <svg viewBox="0 0 320 220" className={styles.ill} aria-hidden="true">
@@ -141,7 +217,7 @@ function IllIdentity() {
   );
 }
 
-// pixel-block helper: a rows×cols grid of squares with checkered opacity
+// pixel-block helper: a rows-by-cols grid of squares with checkered opacity
 function PixBlock({ x, y, rows = 3, cols = 3, cell = 11, gap = 3, className, opacities }) {
   const rects = [];
   for (let r = 0; r < rows; r += 1) {
@@ -163,7 +239,7 @@ function PixBlock({ x, y, rows = 3, cols = 3, cell = 11, gap = 3, className, opa
   return <g>{rects}</g>;
 }
 
-// 03 — native pixel tokens (money, assets, licenses) moving wallet to wallet
+// 03: native pixel tokens (money, assets, licenses) moving wallet to wallet
 function IllAssets() {
   const rail = [];
   for (let x = 80; x <= 240; x += 16) {
@@ -187,7 +263,7 @@ function IllAssets() {
       <g className={`${styles.token} ${styles.tokenB}`} style={{ animationDelay: "1.4s" }}>
         <rect x="65" y="104" width="14" height="14" transform="rotate(45 72 111)" />
       </g>
-      {/* 2×2 cluster token */}
+      {/* 2x2 cluster token */}
       <g className={`${styles.token} ${styles.tokenC}`} style={{ animationDelay: "2.8s" }}>
         <rect x="65" y="104" width="6" height="6" />
         <rect x="73" y="104" width="6" height="6" />
@@ -198,7 +274,7 @@ function IllAssets() {
   );
 }
 
-// 04 — eUTxO: pixel inputs → pixel transaction → pixel outputs, steady beat
+// 04: eUTxO, pixel inputs to pixel transaction to pixel outputs on a steady beat
 const EDGE_TRAILS = [
   [[79, 75], [94, 82], [109, 89], [124, 96]],
   [[79, 147], [94, 140], [109, 133], [124, 126]],
@@ -217,7 +293,7 @@ function IllEutxo() {
       {/* inputs: solid pixel clusters */}
       <PixBlock x={32} y={52} rows={2} cols={2} cell={13} className={styles.uPixIn} opacities={[0.9, 0.55, 0.55, 0.9]} />
       <PixBlock x={32} y={140} rows={2} cols={2} cell={13} className={styles.uPixIn} opacities={[0.55, 0.9, 0.9, 0.55]} />
-      {/* the transaction: a 3×3 pixel cluster with a solid core */}
+      {/* the transaction: a 3x3 pixel cluster with a solid core */}
       <g className={styles.txNode}>
         <PixBlock
           x={146}
@@ -229,7 +305,7 @@ function IllEutxo() {
           opacities={[0.45, 0.65, 0.45, 0.65, 1, 0.65, 0.45, 0.65, 0.45]}
         />
       </g>
-      {/* outputs: faint pixel clusters — the new UTXOs */}
+      {/* outputs: faint pixel clusters, the new UTXOs */}
       <PixBlock x={258} y={52} rows={2} cols={2} cell={13} className={styles.uPixOut} opacities={[1]} />
       <PixBlock x={258} y={140} rows={2} cols={2} cell={13} className={styles.uPixOut} opacities={[1]} />
       {/* moving pixel pulses */}
@@ -247,37 +323,6 @@ const ILLUSTRATIONS = {
   assets: IllAssets,
   eutxo: IllEutxo,
 };
-
-const COMPARE_ROWS = [
-  {
-    name: "Normal Address Payments",
-    desc: "A direct payment to a wallet address. The baseline every chain supports.",
-    cols: [true, true, true],
-  },
-  {
-    name: "Refunds",
-    desc: "Nothing delivered? The escrowed payment goes back to the client automatically.",
-    cols: [false, false, true],
-  },
-  {
-    name: "Decision Logging",
-    desc: "Payment decisions are recorded on-chain, decentralised and auditable.",
-    cols: [false, false, true],
-  },
-];
-
-const COMPARE_ROWS_EXTRA = [
-  {
-    name: "Discovery",
-    desc: "A public registry of every agent: search by what they do, check their track record, and call them through the API.",
-    cols: [false, false, true],
-  },
-  {
-    name: "Identity",
-    desc: "Every agent gets a decentralized ID and a reputation score, so you can verify who you are working with.",
-    cols: [false, false, true],
-  },
-];
 
 // ---------------------------------------------------------------------------
 // Animated pixel field
@@ -308,10 +353,10 @@ function PixelField() {
     let raf = 0;
 
     const weight = (x, y) => {
-      // a pixel cloud anchored to the top-right corner, clear of the content
-      const wx = Math.pow(x / Math.max(cols - 1, 1), 2.6);
-      const wy = Math.pow(1 - y / Math.max(rows - 1, 1), 1.15);
-      return Math.min(1, wx * wy + 0.015);
+      // denser toward the top-right, sparse where the headline sits
+      const wx = Math.pow(x / Math.max(cols - 1, 1), 2.2);
+      const wy = 1 - 0.55 * (y / Math.max(rows - 1, 1));
+      return Math.min(1, wx * wy + 0.03);
     };
 
     const initCells = () => {
@@ -411,7 +456,9 @@ function CopyCta() {
 
   return (
     <div className={styles.ctaCol} id="get-started">
-      <p className={styles.ctaLabel}>Give your coding agent Cardano skills</p>
+      <p className={styles.ctaLabel}>
+        <Translate id="ai.getStarted.label">Give your coding agent Cardano skills</Translate>
+      </p>
       <div className={styles.snipBox}>
         <div className={styles.snipHead}>
           <div className={styles.snipTabs} role="tablist">
@@ -436,7 +483,9 @@ function CopyCta() {
             className={`${styles.snipCopy} ${copied ? styles.snipCopyDone : ""}`}
             onClick={copy}
           >
-            {copied ? "Copied ✓" : "Copy"}
+            {copied
+              ? translate({ id: "ai.getStarted.copied", message: "Copied ✓" })
+              : translate({ id: "ai.getStarted.copy", message: "Copy" })}
           </button>
         </div>
         <div className={styles.snipBodies}>
@@ -465,9 +514,19 @@ function CopyCta() {
 // ---------------------------------------------------------------------------
 
 function Mark({ on, hl }) {
-  if (!on) return <span className={styles.ckNo} aria-label="not supported" />;
+  if (!on) {
+    return (
+      <span
+        className={styles.ckNo}
+        aria-label={translate({ id: "ai.x402.notSupported", message: "not supported" })}
+      />
+    );
+  }
   return (
-    <span className={`${styles.ckYes} ${hl ? styles.ckYesHl : ""}`} aria-label="supported">
+    <span
+      className={`${styles.ckYes} ${hl ? styles.ckYesHl : ""}`}
+      aria-label={translate({ id: "ai.x402.supported", message: "supported" })}
+    >
       ✓
     </span>
   );
@@ -478,11 +537,18 @@ function Mark({ on, hl }) {
 // ---------------------------------------------------------------------------
 
 export default function AiPage() {
+  const x402Logo = useBaseUrl("/img/ai/x402-logo.svg");
+  const masumiLogo = useBaseUrl("/img/ai/masumi-wordmark.png");
+
   return (
     <HtmlClassNameProvider className="cardano-ai-page">
     <Layout
-      title="Why AI Needs Cardano"
-      description="AI agents need identity, secure payments, and infrastructure they can rely on. Cardano was built for this: formal methods, decentralized identity, native assets, and predictable infrastructure."
+      title={translate({ id: "ai.meta.title", message: "Why AI Needs Cardano" })}
+      description={translate({
+        id: "ai.meta.description",
+        message:
+          "AI agents need identity, secure payments, and infrastructure they can rely on. Cardano was built for this: formal methods, decentralized identity, native assets, and predictable infrastructure.",
+      })}
     >
       <main>
         {/* ------------------------------------------------ HERO */}
@@ -491,19 +557,29 @@ export default function AiPage() {
           <div className="container">
             <div className={styles.heroInner}>
               <div>
-                <span className={styles.heroEyebrow}>Cardano × AI</span>
-                <h1 className={styles.heroTitle}>Why AI Needs Cardano</h1>
+                <span className={styles.heroEyebrow}>
+                  <Translate id="ai.hero.eyebrow">Cardano × AI</Translate>
+                </span>
+                <h1 className={styles.heroTitle}>
+                  <Translate id="ai.hero.title">Why AI Needs Cardano</Translate>
+                </h1>
                 <p className={styles.heroSub}>
-                  Agents are starting to move real money. Cardano gives them what's missing:{" "}
-                  <strong>verifiable identity, secure payments, and rails that behave
-                  predictably</strong>.
+                  <Translate id="ai.hero.subLead">
+                    Agents are starting to move real money. Cardano gives them what's missing:
+                  </Translate>{" "}
+                  <strong>
+                    <Translate id="ai.hero.subStrong">
+                      verifiable identity, secure payments, and rails that behave predictably
+                    </Translate>
+                  </strong>
+                  .
                 </p>
                 <div className={styles.heroLinks}>
                   <Link className={styles.heroLink} to="#why-cardano">
-                    Why Cardano for AI ↓
+                    <Translate id="ai.hero.linkWhy">Why Cardano for AI</Translate>
                   </Link>
                   <Link className={styles.heroLink} to="#agent-economy">
-                    Explore the agent economy ↓
+                    <Translate id="ai.hero.linkEconomy">Explore the agent economy</Translate>
                   </Link>
                 </div>
               </div>
@@ -515,18 +591,24 @@ export default function AiPage() {
         {/* ------------------------------------------------ WHY AI ON CARDANO */}
         <section className={styles.section} id="why-cardano">
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>Why AI on Cardano</p>
-            <h2 className={styles.sectionTitle}>What agents need, Cardano was built on.</h2>
+            <p className={styles.eyebrow}>
+              <Translate id="ai.why.eyebrow">Why AI on Cardano</Translate>
+            </p>
+            <h2 className={styles.sectionTitle}>
+              <Translate id="ai.why.title">What agents need, Cardano was built on.</Translate>
+            </h2>
             <p className={styles.sectionSub}>
-              Autonomous agents handle money, identity, and assets at machine speed, with no human
-              double-checking each step. That only works on infrastructure with four properties.
+              <Translate id="ai.why.sub">
+                Autonomous agents handle money, identity, and assets at machine speed, with no human
+                double-checking each step. That only works on infrastructure with four properties.
+              </Translate>
             </p>
             <div className={styles.whyRows}>
               {PILLARS.map((p, i) => {
                 const Ill = ILLUSTRATIONS[p.ill];
                 return (
                   <div
-                    key={p.title}
+                    key={p.num}
                     className={`${styles.whyRow} ${i % 2 === 1 ? styles.whyRowFlip : ""}`}
                   >
                     <div className={styles.illPanel}>
@@ -541,7 +623,9 @@ export default function AiPage() {
                         ))}
                       </ul>
                       <p className={styles.whyCares}>
-                        <strong>Why AI cares</strong>
+                        <strong>
+                          <Translate id="ai.why.caresLabel">Why AI cares</Translate>
+                        </strong>
                         {p.why}
                       </p>
                     </div>
@@ -555,40 +639,61 @@ export default function AiPage() {
         {/* ------------------------------------------------ X402 ON CARDANO */}
         <section className={styles.section} id="x402">
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>x402 on Cardano</p>
+            <p className={styles.eyebrow}>
+              <Translate id="ai.x402.eyebrow">x402 on Cardano</Translate>
+            </p>
             <h2 className={styles.sectionTitle}>
-              x402 on Cardano is more powerful than x402 anywhere else.
+              <Translate id="ai.x402.title">
+                x402 on Cardano is more powerful than x402 anywhere else.
+              </Translate>
             </h2>
 
             <div className={styles.x402Banner}>
               <div className={styles.x402Logos}>
-                <img src="/img/ai/x402-logo.svg" alt="x402" className={styles.logoX402} />
+                <img src={x402Logo} alt="x402" className={styles.logoX402} />
                 <span className={styles.logoPlus}>+</span>
-                <img src="/img/ai/masumi-wordmark.png" alt="Masumi" className={styles.logoMasumi} />
+                <img src={masumiLogo} alt="Masumi" className={styles.logoMasumi} />
               </div>
               <div>
                 <p className={styles.eyebrow} style={{ marginBottom: 0 }}>
-                  Native support
+                  <Translate id="ai.x402.native">Native support</Translate>
                 </p>
                 <p className={styles.x402BannerLine}>
-                  x402 on Cardano natively supports the{" "}
-                  <Link to="https://www.masumi.network">Masumi Smart Contract</Link>.
+                  <Translate id="ai.x402.bannerLead">
+                    x402 on Cardano natively supports the
+                  </Translate>{" "}
+                  <Link to="https://github.com/x402-foundation/x402/blob/main/specs/schemes/exact/scheme_exact_cardano.md">
+                    <Translate id="ai.x402.bannerLink">Masumi Smart Contract</Translate>
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
 
             <p className={styles.memberNote}>
-              The Cardano Foundation is a member of the{" "}
-              <Link to="https://x402.org/members/">x402 Foundation</Link>, the industry body
-              behind the x402 standard, alongside Coinbase, Cloudflare, Google, Visa, and
-              Mastercard.
+              <Translate id="ai.x402.memberLead">The Cardano Foundation is a member of the</Translate>{" "}
+              <Link to="https://x402.org/members/">
+                <Translate id="ai.x402.memberLink">x402 Foundation</Translate>
+              </Link>
+              <Translate id="ai.x402.memberRest">
+                , the industry body behind the x402 standard, alongside Coinbase, Cloudflare,
+                Google, Visa, and Mastercard.
+              </Translate>
             </p>
 
             <p className={styles.sectionSub}>
-              The Masumi Smart Contract is the escrow at the core of Masumi, the payment network
-              for AI agents: funds are locked in the contract, released when the work is delivered,
-              and refunded when it isn't. Every decision is logged on-chain. Plugged into x402,
-              every HTTP payment gets that protection built in.
+              <Translate id="ai.x402.escrow1">
+                The Masumi Smart Contract is the escrow at the core of the payment standard for AI
+                agents on Cardano: funds are locked in the contract, released when the work is
+                delivered, and refunded when it isn't. Every decision is logged on-chain.
+              </Translate>
+            </p>
+            <p className={styles.sectionSub}>
+              <Translate id="ai.x402.escrow2">
+                It is an open standard, not a product: a plain escrow contract with no fees and no
+                owner, specified as part of the official x402 scheme for Cardano. Plugged into x402,
+                every HTTP payment gets that protection built in.
+              </Translate>
             </p>
 
             <div className={styles.tblWrap}>
@@ -596,9 +701,15 @@ export default function AiPage() {
                 <thead>
                   <tr>
                     <th> </th>
-                    <th>Standard x402</th>
-                    <th>Cardano x402</th>
-                    <th className={styles.thHl}>Cardano + Masumi x402</th>
+                    <th>
+                      <Translate id="ai.x402.colStandard">Standard x402</Translate>
+                    </th>
+                    <th>
+                      <Translate id="ai.x402.colCardano">Cardano x402</Translate>
+                    </th>
+                    <th className={styles.thHl}>
+                      <Translate id="ai.x402.colMasumi">Cardano + Masumi x402</Translate>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -616,7 +727,11 @@ export default function AiPage() {
                     </tr>
                   ))}
                   <tr className={styles.rowDivider}>
-                    <td colSpan={4}>+ interoperable with other Masumi features</td>
+                    <td colSpan={4}>
+                      <Translate id="ai.x402.divider">
+                        + interoperable with other Masumi features
+                      </Translate>
+                    </td>
                   </tr>
                   {COMPARE_ROWS_EXTRA.map((row) => (
                     <tr key={row.name}>
@@ -639,7 +754,7 @@ export default function AiPage() {
               className={styles.specsLink}
               to="https://github.com/x402-foundation/x402/blob/main/specs/schemes/exact/scheme_exact_cardano.md"
             >
-              Read the exact scheme specs ↗︎
+              <Translate id="ai.x402.specs">Read the exact scheme specs</Translate>
             </Link>
           </div>
         </section>
@@ -647,50 +762,75 @@ export default function AiPage() {
         {/* ------------------------------------------------ AGENT ECONOMY */}
         <section className={styles.section} id="agent-economy">
           <div className={styles.wrap}>
-            <p className={styles.eyebrow}>Agent Economy</p>
-            <h2 className={styles.sectionTitle}>The agent economy, running on Cardano</h2>
+            <p className={styles.eyebrow}>
+              <Translate id="ai.economy.eyebrow">Agent Economy</Translate>
+            </p>
+            <h2 className={styles.sectionTitle}>
+              <Translate id="ai.economy.title">The agent economy, running on Cardano</Translate>
+            </h2>
             <p className={styles.sectionSub}>
-              A real agent economy is taking shape on Cardano: autonomous agents with verifiable
-              identities, payment rails built for machines, and marketplaces where anyone can hire
-              them. The building blocks are live today.
+              <Translate id="ai.economy.sub">
+                A real agent economy is taking shape on Cardano: autonomous agents with verifiable
+                identities, payment rails built for machines, and marketplaces where anyone can hire
+                them. The building blocks are live today.
+              </Translate>
             </p>
 
             <div className={styles.mCards}>
-              <Link className={styles.mCard} to="https://www.masumi.network">
+              <Link className={styles.mCard} to="https://docs.masumi.network">
                 <p className={styles.mCardTitle}>
-                  Agent Payment Network <span className={styles.mCardArrow}>↗︎</span>
+                  <Translate id="ai.economy.card1.title">Agent Payment Network</Translate>
                 </p>
                 <p className={styles.mCardDesc}>
-                  Escrowed agent-to-agent payments with automatic refunds and on-chain decision
-                  logging, powered by Masumi.
+                  <Translate id="ai.economy.card1.desc">
+                    Escrowed agent-to-agent payments with automatic refunds and on-chain decision
+                    logging, based on the open Masumi standard.
+                  </Translate>
                 </p>
               </Link>
               <Link className={styles.mCard} to="https://www.masumi.network/explorer">
                 <p className={styles.mCardTitle}>
-                  Decentralized Agent Registry <span className={styles.mCardArrow}>↗︎</span>
+                  <Translate id="ai.economy.card2.title">Decentralized Agent Registry</Translate>
                 </p>
                 <p className={styles.mCardDesc}>
-                  Every agent is registered on-chain and discoverable by anyone. Browse the live
-                  registry.
+                  <Translate id="ai.economy.card2.desc">
+                    Every agent is registered on-chain and discoverable by anyone. Browse the live
+                    registry.
+                  </Translate>
                 </p>
               </Link>
               <Link className={styles.mCard} to="https://www.veridian.id">
                 <p className={styles.mCardTitle}>
-                  Agent Identity with Veridian Wallet <span className={styles.mCardArrow}>↗︎</span>
+                  <Translate id="ai.economy.card3.title">Agent Identity with Veridian Wallet</Translate>
                 </p>
                 <p className={styles.mCardDesc}>
-                  Decentralized identifiers and verifiable credentials for agents.
+                  <Translate id="ai.economy.card3.desc">
+                    Decentralized identifiers and verifiable credentials for agents.
+                  </Translate>
                 </p>
               </Link>
               <Link className={styles.mCard} to="https://hydra.family">
                 <p className={styles.mCardTitle}>
-                  High-Speed Transactions with Hydra <span className={styles.mCardArrow}>↗︎</span>
+                  <Translate id="ai.economy.card4.title">High-Speed Transactions with Hydra</Translate>
                 </p>
                 <p className={styles.mCardDesc}>
-                  Sub-second, sub-cent payments between agents.
+                  <Translate id="ai.economy.card4.desc">
+                    Sub-second, sub-cent payments between agents.
+                  </Translate>
                 </p>
               </Link>
             </div>
+
+            <p className={styles.mNote}>
+              <Translate
+                id="ai.economy.example"
+                values={{
+                  sokosumi: <Link to="https://sokosumi.com">Sokosumi</Link>,
+                }}
+              >
+                {"Live today: anyone can hire working agents on marketplaces like {sokosumi}."}
+              </Translate>
+            </p>
           </div>
         </section>
 
@@ -698,17 +838,20 @@ export default function AiPage() {
         <section className={styles.closing}>
           <PixelField />
           <div className={`${styles.wrap} ${styles.closingInner}`}>
-            <h2 className={styles.closingTitle}>Ready to hire your first AI agent on Cardano?</h2>
+            <h2 className={styles.closingTitle}>
+              <Translate id="ai.closing.title">Ready to build the agent economy?</Translate>
+            </h2>
             <p className={styles.closingSub}>
-              Working agents are one click away on Sokosumi, the agent marketplace built on
-              Cardano.
+              <Translate id="ai.closing.sub">
+                The standards are open, the rails are live, and your agent can join today.
+              </Translate>
             </p>
             <div className={`${styles.ctaRow} ${styles.ctaCenter}`}>
-              <Link className={styles.btnLight} to="https://sokosumi.com">
-                Explore the Agent Marketplace: Sokosumi
+              <Link className={styles.btnLight} to="https://developers.cardano.org">
+                <Translate id="ai.closing.build">Start building</Translate>
               </Link>
-              <Link className={styles.btnOutline} to="https://www.masumi.network">
-                Visit the Masumi Website
+              <Link className={styles.btnOutline} to="#get-started">
+                <Translate id="ai.closing.skills">Give your agent Cardano skills</Translate>
               </Link>
             </div>
           </div>
