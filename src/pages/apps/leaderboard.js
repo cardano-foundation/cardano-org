@@ -20,6 +20,7 @@ import { Showcases, Tags, Categories } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
 import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./leaderboard.module.css";
 
 const CIP20_LABEL = 674;
@@ -498,7 +499,7 @@ function AppRow({ app, rank, appDetails }) {
       </div>
       {appDetails?.website ? (
         <a
-          href={appDetails.website}
+          href={safeUrl(appDetails.website)}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.visitLink}
