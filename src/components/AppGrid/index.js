@@ -1,6 +1,7 @@
 import React from "react";
 import { Showcases } from "@site/src/data/apps";
 import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 function AppCard({ app, stats, appRank, ctaText }) {
@@ -71,7 +72,7 @@ function AppCard({ app, stats, appRank, ctaText }) {
       )}
 
       <a
-        href={app.website}
+        href={safeUrl(app.website)}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.appLink}

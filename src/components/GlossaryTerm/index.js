@@ -19,6 +19,7 @@ import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
+import { safeUrl } from '@site/src/utils/safeUrl';
 import styles from './styles.module.css';
 
 function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
@@ -339,7 +340,7 @@ export default function GlossaryTerm({ term }) {
                 <ul className={styles.sourcesList}>
                   {term.sources.map(source => (
                     <li key={source.url}>
-                      <a href={source.url} target="_blank" rel="noopener noreferrer">
+                      <a href={safeUrl(source.url)} target="_blank" rel="noopener noreferrer">
                         {source.title}
                       </a>
                     </li>
@@ -432,7 +433,7 @@ export default function GlossaryTerm({ term }) {
                     </span>
                   </a>
                 ) : (
-                  <Link className={styles.sideCtaBtn} to={term.link}>
+                  <Link className={styles.sideCtaBtn} to={safeUrl(term.link)}>
                     {translate({
                       id: 'glossary.term.openPage',
                       message: 'Open the page',
