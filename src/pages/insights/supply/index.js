@@ -12,6 +12,7 @@ import {translate} from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 import { convertLovelacesToAda, toAdaIfMoney, LOVELACE_KEY, sumWithdrawalAmounts } from '@site/src/utils/insights/numbers';
 import { MIN_EPOCH, GOVERNANCE_EPOCH_THRESHOLD, getEpochDate } from '@site/src/utils/insights/epochs';
 
@@ -212,7 +213,8 @@ function PageContent() {
         setIsLoading(false);
         return;
       }
-      const validEpoch = urlEpochNow && !Number.isNaN(parsed) ? parsed : null;
+      // parsed is a valid in-range number here (outOfRange returned otherwise).
+      const validEpoch = urlEpochNow ? parsed : null;
       const displayedEpoch = validEpoch ?? tipEpoch;
 
       // fetch epoch data in parallel (previous ones for delta calculations)
@@ -470,15 +472,13 @@ function PageContent() {
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{`
-        {
+        <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "${pageTitle}",
-          "description": "${pageDescription}",
-          "url": "${canonicalUrl}"
-        }
-        `}</script>
+          headline: pageTitle,
+          description: pageDescription,
+          url: canonicalUrl,
+        })}</script>
       </Head>
 
       <div className={navStickyClass}>

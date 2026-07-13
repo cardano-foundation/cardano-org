@@ -21,9 +21,9 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
       </button>
 
       {isOpen && (
-        // Backdrop click-outside-to-close. Keyboard equivalent is the
-        // document-level Escape handler above plus the dedicated close
-        // button, both of which are accessible to keyboard users.
+        // Backdrop click-outside-to-close. Keyboard equivalents (Escape to
+        // close, focus trap and restore) live in useModalA11y, alongside the
+        // dedicated close button.
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
           className={styles.modalOverlay}

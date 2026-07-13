@@ -15,8 +15,9 @@ import {translate} from '@docusaurus/Translate';
 // The benefit copy is translator-supplied (Crowdin) and uses "<br />" for its
 // paragraph breaks. Render it as escaped text with real <br /> elements rather
 // than dangerouslySetInnerHTML, so a malicious translation cannot inject markup.
+const BR_TAG = /<br\s*\/?>/i;
 function renderWithLineBreaks(text) {
-  const segments = String(text ?? "").split(/<br\s*\/?>/i);
+  const segments = String(text ?? "").split(BR_TAG);
   return segments.map((segment, index) => (
     <React.Fragment key={index}>
       {index > 0 && <br />}
