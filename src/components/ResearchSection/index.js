@@ -2,7 +2,7 @@ import clsx from "clsx";
 import useBaseUrl, { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import {translate} from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider";
@@ -44,7 +44,7 @@ function Category({
         {/* Papers section */}
         {papers && papers.length > 0 && (
           <div className={styles.papers}>
-            <h3>{translate({id: 'research.headings.papers', message: 'Papers'})}</h3>
+            <h3>{translate({ id: 'research.headings.papers', message: 'Papers' })}</h3>
             <ul>
               {papers.map((paper, index) => (
                 <li key={index}>
@@ -57,7 +57,7 @@ function Category({
         {/* Specifications section */}
         {specifications && specifications.length > 0 && (
           <div className={styles.specifications}>
-            <h3>{translate({id: 'research.headings.specifications', message: 'Specifications'})}</h3>
+            <h3>{translate({ id: 'research.headings.specifications', message: 'Specifications' })}</h3>
             <ul>
               {specifications.map((specification, index) => (
                 <li key={index}>
@@ -78,7 +78,7 @@ Category.defaultProps = {
   isImageRight: false, // Default layout will have the image on the left
 };
 
-export default function EnterpriseSection({}) {
+export default function EnterpriseSection({ }) {
 
   return (
     <div>
@@ -87,9 +87,9 @@ export default function EnterpriseSection({}) {
         title="Byron"
         imageName="byron"
         isImageRight={false}
-        subtitle={translate({id: 'research.byron.subtitle', message: 'Foundation'})}
+        subtitle={translate({ id: 'research.byron.subtitle', message: 'Foundation' })}
         description={[
-          translate({id: 'research.byron.description', message: 'A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol.'}),
+          translate({ id: 'research.byron.description', message: 'A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol.' }),
         ]}
         papers={[
           {
@@ -128,9 +128,9 @@ export default function EnterpriseSection({}) {
         title="Shelley"
         imageName="shelley"
         isImageRight={true}
-        subtitle={translate({id: 'research.shelley.subtitle', message: 'Decentralization'})}
+        subtitle={translate({ id: 'research.shelley.subtitle', message: 'Decentralization' })}
         description={[
-          translate({id: 'research.shelley.description', message: 'A period of growth and development occurred for the network, focusing on ensuring greater decentralization. This phase led to enhanced security and a more robust environment, following the transition where the majority of nodes became operated by network participants.'}),
+          translate({ id: 'research.shelley.description', message: 'A period of growth and development occurred for the network, focusing on ensuring greater decentralization. This phase led to enhanced security and a more robust environment, following the transition where the majority of nodes became operated by network participants.' }),
         ]}
         papers={[
           {
@@ -184,9 +184,9 @@ export default function EnterpriseSection({}) {
         title="Goguen"
         imageName="goguen"
         isImageRight={false}
-        subtitle={translate({id: 'research.goguen.subtitle', message: 'Smart Contracts'})}
+        subtitle={translate({ id: 'research.goguen.subtitle', message: 'Smart Contracts' })}
         description={[
-          translate({id: 'research.goguen.description', message: 'The Goguen era introduced smart-contract functionality, enabling the construction of decentralized applications while supporting multifunctional assets, fungible, and non-fungible token standards.'}),
+          translate({ id: 'research.goguen.description', message: 'The Goguen era introduced smart-contract functionality, enabling the construction of decentralized applications while supporting multifunctional assets, fungible, and non-fungible token standards.' }),
         ]}
         papers={[
           {
@@ -195,7 +195,7 @@ export default function EnterpriseSection({}) {
           },
           {
             title: "UTXOma: UTXO with Multi-Asset Support",
-            url: "https://www.iog.io/papers/utxomautxo-with-multi-asset-support",
+            url: "https://omelkonian.github.io/data/publications/utxoma.pdf",
           },
           {
             title: "Native Custom Tokens in the Extended UTXO Model",
@@ -247,14 +247,14 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-    <Divider id="basho" />
+      <Divider id="basho" />
       <Category
         title="Basho"
         imageName="basho"
         isImageRight={true}
-        subtitle={translate({id: 'research.basho.subtitle', message: 'Scaling'})}
+        subtitle={translate({ id: 'research.basho.subtitle', message: 'Scaling' })}
         description={[
-          translate({id: 'research.basho.description', message: "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with immense potential to extend the network's capabilities."}),
+          translate({ id: 'research.basho.description', message: "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with immense potential to extend the network's capabilities." }),
         ]}
         papers={[
           {
@@ -297,14 +297,14 @@ export default function EnterpriseSection({}) {
         ]}
       />
 
-    <Divider id="voltaire" />
+      <Divider id="voltaire" />
       <Category
         title="Voltaire"
         imageName="voltaire"
         isImageRight={false}
-        subtitle={translate({id: 'research.voltaire.subtitle', message: 'Governance'})}
+        subtitle={translate({ id: 'research.voltaire.subtitle', message: 'Governance' })}
         description={[
-          translate({id: 'research.voltaire.description', message: 'The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is introducing a voting and treasury system that allows network participants to use their stake and voting rights to influence the future development of the blockchain.'}),
+          translate({ id: 'research.voltaire.description', message: 'The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is introducing a voting and treasury system that allows network participants to use their stake and voting rights to influence the future development of the blockchain.' }),
         ]}
         papers={[
           {
@@ -331,7 +331,7 @@ export default function EnterpriseSection({}) {
           },
         ]}
       />
-        
+
     </div>
   );
 }
