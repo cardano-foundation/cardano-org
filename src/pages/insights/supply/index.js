@@ -172,7 +172,10 @@ function PageContent() {
   const isPrimed = Boolean(totalsCurr && totalsPrev && epochInfoPrev1);
 
   const lastScrollYRef = useRef(0);
-  
+  // Monotonic id so out-of-order fetches (rapid epoch nav, back/forward) can be
+  // discarded: only the most recent call is allowed to commit state.
+  const latestReqId = useRef(0);
+
   const fetchData = async () => {
     if (!API_URL) {
       setErrorInfo({ kind: 'config', title: translate({id: 'insightsSupply.error.configTitle', message: 'Missing configuration'}), message: translate({id: 'insightsSupply.error.configMessage', message: 'API URL is missing.'}) });
@@ -182,19 +185,34 @@ function PageContent() {
     setErrorInfo(null);
     const api = apiClient ?? makeApiClient(API_URL);
 	
+    const reqId = ++latestReqId.current;
     try {
       // parse & validate current URL epoch
       const tipRes = await api.get('/tip');
+      if (reqId !== latestReqId.current) return;
       const tipEpoch = tipRes.data?.[0]?.epoch_no;
       setCurrentEpochNo(tipEpoch);
       const urlEpochNow = new URLSearchParams(window.location.search).get('epoch');
       const parsed = parseInt(urlEpochNow, 10);
-      const validEpoch = urlEpochNow && !Number.isNaN(parsed) && parsed >= MIN_EPOCH ? parsed : null;
-      if (urlEpochNow && (Number.isNaN(parsed) || parsed < MIN_EPOCH)) {
-        setErrorInfo({ kind: 'input', title: translate({id: 'insightsSupply.error.invalidEpochTitle', message: 'Invalid epoch'}), message: translate({id: 'insightsSupply.error.invalidEpochMessage', message: 'Epoch must be ≥ {minEpoch}.'}, {minEpoch: MIN_EPOCH}) });
+      // Reject an epoch below MIN_EPOCH or above the chain tip. Without a tip we
+      // cannot bound the upper end, so skip that half of the check rather than
+      // reject everything.
+      const hasTip = Number.isFinite(tipEpoch);
+      const outOfRange =
+        urlEpochNow &&
+        (Number.isNaN(parsed) || parsed < MIN_EPOCH || (hasTip && parsed > tipEpoch));
+      if (outOfRange) {
+        setErrorInfo({
+          kind: 'input',
+          title: translate({id: 'insightsSupply.error.invalidEpochTitle', message: 'Invalid epoch'}),
+          message: hasTip
+            ? translate({id: 'insightsSupply.error.epochRangeMessage', message: 'Epoch must be between {minEpoch} and {maxEpoch}.'}, {minEpoch: MIN_EPOCH, maxEpoch: tipEpoch})
+            : translate({id: 'insightsSupply.error.invalidEpochMessage', message: 'Epoch must be ≥ {minEpoch}.'}, {minEpoch: MIN_EPOCH}),
+        });
         setIsLoading(false);
         return;
       }
+      const validEpoch = urlEpochNow && !Number.isNaN(parsed) ? parsed : null;
       const displayedEpoch = validEpoch ?? tipEpoch;
 
       // fetch epoch data in parallel (previous ones for delta calculations)
@@ -203,6 +221,19 @@ function PageContent() {
         api.get(`/totals?_epoch_no=${displayedEpoch - 1}`),
         api.get(`/epoch_info?_epoch_no=${displayedEpoch - 1}`),
       ]);
+      if (reqId !== latestReqId.current) return;
+      // An epoch at/after the chain tip (or otherwise without data) returns empty
+      // rows. Surface it as an input error rather than priming the page with
+      // undefined values (which render as NaN) or hanging on the loader forever.
+      if (!totalsCurrRes.data?.[0] || !totalsPrevRes.data?.[0] || !epochInfoPrev1Res.data?.[0]) {
+        setErrorInfo({
+          kind: 'input',
+          title: translate({id: 'insightsSupply.error.noEpochDataTitle', message: 'No data for this epoch'}),
+          message: translate({id: 'insightsSupply.error.noEpochDataMessage', message: 'No supply data is available for that epoch yet. Choose an epoch up to the current one.'}),
+        });
+        setIsLoading(false);
+        return;
+      }
       setTotalsCurr({ epoch_no: displayedEpoch, ...totalsCurrRes.data[0] });
       setTotalsPrev(totalsPrevRes.data[0]);
       setEpochInfoPrev1(epochInfoPrev1Res.data[0]);
@@ -260,13 +291,15 @@ function PageContent() {
         }
       }
       
+      if (reqId !== latestReqId.current) return;
       setWithdrawalsCurr(withdrawalsCurr);
       setWithdrawalsPrev(withdrawalsPrev);
 		
     } catch (err) {
+      if (reqId !== latestReqId.current) return;
       setErrorInfo(parseApiError(err));
     } finally {
-      setIsLoading(false);
+      if (reqId === latestReqId.current) setIsLoading(false);
     }
   }
 
