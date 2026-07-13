@@ -1,48 +1,6 @@
 /* Cardano × AI: hero designed, content sections still structural. */
 
 /* ------------------------------------------------------------------ */
-/* Page-scoped navbar recolor (class set on <html> by the page)        */
-/* ------------------------------------------------------------------ */
-
-:global(html.cardano-ai-page) {
-  --ai-blue: #1132a8;
-}
-:global(html.cardano-ai-page .navbar) {
-  background: var(--ai-blue, #1132a8);
-  box-shadow: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-}
-:global(html.cardano-ai-page .navbar .navbar__link),
-:global(html.cardano-ai-page .navbar .navbar__brand),
-:global(html.cardano-ai-page .navbar .navbar__toggle) {
-  color: #ffffff;
-}
-:global(html.cardano-ai-page .navbar .navbar__link:hover),
-:global(html.cardano-ai-page .navbar .navbar__link--active) {
-  color: #8fb1ff;
-}
-:global(html.cardano-ai-page .navbar .navbar__logo img) {
-  filter: brightness(0) invert(1);
-}
-:global(html.cardano-ai-page) {
-  --docsearch-searchbox-background: rgba(255, 255, 255, 0.08);
-  --docsearch-searchbox-focus-background: rgba(255, 255, 255, 0.12);
-  --docsearch-text-color: #ffffff;
-  --docsearch-muted-color: rgba(255, 255, 255, 0.7);
-}
-:global(html.cardano-ai-page .navbar .DocSearch-Button) {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-:global(html.cardano-ai-page .navbar .DocSearch-Button-Placeholder),
-:global(html.cardano-ai-page .navbar .DocSearch-Search-Icon) {
-  color: rgba(255, 255, 255, 0.75);
-}
-:global(html.cardano-ai-page .navbar button) {
-  color: #ffffff;
-}
-
-/* ------------------------------------------------------------------ */
 /* Layout primitives                                                   */
 /* ------------------------------------------------------------------ */
 

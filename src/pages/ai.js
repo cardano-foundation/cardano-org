@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import { HtmlClassNameProvider } from "@docusaurus/theme-common";
 import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./ai.module.css";
@@ -541,7 +540,6 @@ export default function AiPage() {
   const masumiLogo = useBaseUrl("/img/ai/masumi-wordmark.png");
 
   return (
-    <HtmlClassNameProvider className="cardano-ai-page">
     <Layout
       title={translate({ id: "ai.meta.title", message: "Why AI Needs Cardano" })}
       description={translate({
@@ -858,6 +856,5 @@ export default function AiPage() {
         </section>
       </main>
     </Layout>
-    </HtmlClassNameProvider>
   );
 }
