@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Survey from '../Survey';
+import useModalA11y from '@site/src/utils/useModalA11y';
 import styles from './styles.module.css';
 
 const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonClassName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
+  const handleClose = () => setIsOpen(false);
 
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen]);
+  // Locks scroll, moves + traps + restores focus, and closes on Escape.
+  const dialogRef = useModalA11y(isOpen, handleClose);
 
   return (
     <>
@@ -42,16 +27,18 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
           className={styles.modalOverlay}
-          onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
+          onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
         >
           <div
             className={styles.modalContent}
             role="dialog"
             aria-modal="true"
             aria-label="Survey"
+            ref={dialogRef}
+            tabIndex={-1}
           >
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className={styles.closeButton}
               aria-label="Close survey"
             >

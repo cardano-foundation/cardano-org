@@ -1,35 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Quiz from '../Quiz';
+import useModalA11y from '@site/src/utils/useModalA11y';
 import styles from './styles.module.css';
 
 const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount = 5, allowRetry = true, passingScore = 60 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
-  // Close on Escape key
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen]);
-
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
+
+  // Locks scroll, moves + traps + restores focus, and closes on Escape.
+  const dialogRef = useModalA11y(isOpen, handleClose);
 
   return (
     <>
@@ -51,6 +32,8 @@ const QuizModal = ({ quizData, buttonText = "Test Your Knowledge", questionCount
             role="dialog"
             aria-modal="true"
             aria-label="Quiz"
+            ref={dialogRef}
+            tabIndex={-1}
           >
             <button
               onClick={handleClose}
