@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo, useId } from "react";
 import clsx from "clsx";
 import {
   FaArrowRight,
@@ -51,15 +51,34 @@ function getCategoryMeta() {
 }
 
 function AccordionItem({ question, answer, isOpen, onToggle, itemRef }) {
+  const baseId = useId();
+  const triggerId = `${baseId}trigger`;
+  const panelId = `${baseId}panel`;
   return (
     <div ref={itemRef} className={clsx(styles.accordion, isOpen && styles.accordionOpen)}>
-      <button type="button" className={styles.accordionTrigger} onClick={onToggle}>
+      <button
+        type="button"
+        id={triggerId}
+        className={styles.accordionTrigger}
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+      >
         <span className={styles.accordionIcon} aria-hidden="true">
           {isOpen ? <FaMinus /> : <FaPlus />}
         </span>
         <span className={styles.accordionQuestion}>{question}</span>
       </button>
-      {isOpen && <div className={styles.accordionAnswer}>{renderAnswerArray(answer)}</div>}
+      {isOpen && (
+        <div
+          id={panelId}
+          role="region"
+          aria-labelledby={triggerId}
+          className={styles.accordionAnswer}
+        >
+          {renderAnswerArray(answer)}
+        </div>
+      )}
     </div>
   );
 }

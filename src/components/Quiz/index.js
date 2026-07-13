@@ -145,7 +145,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
       <div className={`${styles.questionCard} ${isCorrect ? styles.correct : ''} ${isIncorrect ? styles.incorrect : ''}`}>
         {/* Status Message */}
         {isAnswered && (
-          <div className={styles.statusMessage}>
+          <div className={styles.statusMessage} role="status">
             <div className={styles.statusIcon}>
               {isCorrect ? (
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -202,6 +202,7 @@ const Quiz = ({ quizData, questionCount = 5, allowRetry = true, passingScore = 6
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
                 disabled={isAnswered}
+                aria-pressed={isSelected}
                 className={`${styles.optionButton} ${
                   isSelected && !isAnswered ? styles.selected : ''
                 } ${showAsCorrect ? styles.correctOption : ''} ${

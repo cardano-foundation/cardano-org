@@ -351,6 +351,8 @@ export default function GovernanceCharts({
             className={styles.parametersButton}
             onClick={toggleParametersDropdown}
             ref={parametersButtonRef}
+            aria-haspopup="true"
+            aria-expanded={parametersDropdownOpen}
           >
             {translate({id: 'governanceCharts.parametersButton', message: 'Parameters ▼'})}
           </button>

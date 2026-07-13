@@ -109,7 +109,21 @@
        }
      };
    }, [referenceElement, text, delay]);
- 
+
+   // WCAG 1.4.13: let keyboard users dismiss the tooltip with Escape while it is open.
+   useEffect(() => {
+     if (!open) {
+       return undefined;
+     }
+     const onKeyDown = (e) => {
+       if (e.key === 'Escape') {
+         setOpen(false);
+       }
+     };
+     document.addEventListener('keydown', onKeyDown);
+     return () => document.removeEventListener('keydown', onKeyDown);
+   }, [open]);
+
    return (
      <>
        {React.cloneElement(children, {
