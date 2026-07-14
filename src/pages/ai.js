@@ -632,6 +632,81 @@ export default function AiPage() {
           </div>
         </section>
 
+        {/* ------------------------------------------------ AGENT ECONOMY */}
+        <section className={styles.section} id="agent-economy">
+          <div className={styles.wrap}>
+            <p className={styles.eyebrow}>
+              <Translate id="ai.economy.eyebrow">Agent Economy</Translate>
+            </p>
+            <h2 className={styles.sectionTitle}>
+              <Translate id="ai.economy.title">The agent economy, running on Cardano</Translate>
+            </h2>
+            <p className={styles.sectionSub}>
+              <Translate id="ai.economy.sub">
+                A real agent economy is taking shape on Cardano: autonomous agents with verifiable
+                identities, payment rails built for machines, and marketplaces where anyone can hire
+                them. The building blocks are live today.
+              </Translate>
+            </p>
+
+            <div className={styles.mCards}>
+              <Link className={styles.mCard} to="https://docs.masumi.network">
+                <p className={styles.mCardTitle}>
+                  <Translate id="ai.economy.card1.title">Agent Payment Network</Translate>
+                </p>
+                <p className={styles.mCardDesc}>
+                  <Translate id="ai.economy.card1.desc">
+                    Escrowed agent-to-agent payments with automatic refunds and on-chain decision
+                    logging, based on the open Masumi standard.
+                  </Translate>
+                </p>
+              </Link>
+              <Link className={styles.mCard} to="https://www.masumi.network/explorer">
+                <p className={styles.mCardTitle}>
+                  <Translate id="ai.economy.card2.title">Decentralized Agent Registry</Translate>
+                </p>
+                <p className={styles.mCardDesc}>
+                  <Translate id="ai.economy.card2.desc">
+                    Every agent is registered on-chain and discoverable by anyone. Browse the live
+                    registry.
+                  </Translate>
+                </p>
+              </Link>
+              <Link className={styles.mCard} to="https://www.veridian.id">
+                <p className={styles.mCardTitle}>
+                  <Translate id="ai.economy.card3.title">Agent Identity with Veridian Wallet</Translate>
+                </p>
+                <p className={styles.mCardDesc}>
+                  <Translate id="ai.economy.card3.desc">
+                    Decentralized identifiers and verifiable credentials for agents.
+                  </Translate>
+                </p>
+              </Link>
+              <Link className={styles.mCard} to="https://hydra.family">
+                <p className={styles.mCardTitle}>
+                  <Translate id="ai.economy.card4.title">High-Speed Transactions with Hydra</Translate>
+                </p>
+                <p className={styles.mCardDesc}>
+                  <Translate id="ai.economy.card4.desc">
+                    Sub-second, sub-cent payments between agents.
+                  </Translate>
+                </p>
+              </Link>
+            </div>
+
+            <p className={styles.mNote}>
+              <Translate
+                id="ai.economy.example"
+                values={{
+                  sokosumi: <Link to="https://sokosumi.com">Sokosumi</Link>,
+                }}
+              >
+                {"Live today: anyone can hire working agents on marketplaces like {sokosumi}."}
+              </Translate>
+            </p>
+          </div>
+        </section>
+
         {/* ------------------------------------------------ X402 ON CARDANO */}
         <section className={styles.section} id="x402">
           <div className={styles.wrap}>
@@ -752,81 +827,6 @@ export default function AiPage() {
             >
               <Translate id="ai.x402.specs">Read the exact scheme specs</Translate>
             </Link>
-          </div>
-        </section>
-
-        {/* ------------------------------------------------ AGENT ECONOMY */}
-        <section className={styles.section} id="agent-economy">
-          <div className={styles.wrap}>
-            <p className={styles.eyebrow}>
-              <Translate id="ai.economy.eyebrow">Agent Economy</Translate>
-            </p>
-            <h2 className={styles.sectionTitle}>
-              <Translate id="ai.economy.title">The agent economy, running on Cardano</Translate>
-            </h2>
-            <p className={styles.sectionSub}>
-              <Translate id="ai.economy.sub">
-                A real agent economy is taking shape on Cardano: autonomous agents with verifiable
-                identities, payment rails built for machines, and marketplaces where anyone can hire
-                them. The building blocks are live today.
-              </Translate>
-            </p>
-
-            <div className={styles.mCards}>
-              <Link className={styles.mCard} to="https://docs.masumi.network">
-                <p className={styles.mCardTitle}>
-                  <Translate id="ai.economy.card1.title">Agent Payment Network</Translate>
-                </p>
-                <p className={styles.mCardDesc}>
-                  <Translate id="ai.economy.card1.desc">
-                    Escrowed agent-to-agent payments with automatic refunds and on-chain decision
-                    logging, based on the open Masumi standard.
-                  </Translate>
-                </p>
-              </Link>
-              <Link className={styles.mCard} to="https://www.masumi.network/explorer">
-                <p className={styles.mCardTitle}>
-                  <Translate id="ai.economy.card2.title">Decentralized Agent Registry</Translate>
-                </p>
-                <p className={styles.mCardDesc}>
-                  <Translate id="ai.economy.card2.desc">
-                    Every agent is registered on-chain and discoverable by anyone. Browse the live
-                    registry.
-                  </Translate>
-                </p>
-              </Link>
-              <Link className={styles.mCard} to="https://www.veridian.id">
-                <p className={styles.mCardTitle}>
-                  <Translate id="ai.economy.card3.title">Agent Identity with Veridian Wallet</Translate>
-                </p>
-                <p className={styles.mCardDesc}>
-                  <Translate id="ai.economy.card3.desc">
-                    Decentralized identifiers and verifiable credentials for agents.
-                  </Translate>
-                </p>
-              </Link>
-              <Link className={styles.mCard} to="https://hydra.family">
-                <p className={styles.mCardTitle}>
-                  <Translate id="ai.economy.card4.title">High-Speed Transactions with Hydra</Translate>
-                </p>
-                <p className={styles.mCardDesc}>
-                  <Translate id="ai.economy.card4.desc">
-                    Sub-second, sub-cent payments between agents.
-                  </Translate>
-                </p>
-              </Link>
-            </div>
-
-            <p className={styles.mNote}>
-              <Translate
-                id="ai.economy.example"
-                values={{
-                  sokosumi: <Link to="https://sokosumi.com">Sokosumi</Link>,
-                }}
-              >
-                {"Live today: anyone can hire working agents on marketplaces like {sokosumi}."}
-              </Translate>
-            </p>
           </div>
         </section>
 
