@@ -47,7 +47,12 @@ export default function useAccountabilityStats() {
     api.get("/committee_info")
       .then((r) => {
         const members = r.data?.[0]?.members;
-        settle("committee", Array.isArray(members) ? members.length : null);
+        // Count only seated members. committee_info also returns members whose
+        // status is "resigned", who are no longer part of the committee.
+        const seated = Array.isArray(members)
+          ? members.filter((m) => m.status !== "resigned").length
+          : null;
+        settle("committee", seated);
       })
       .catch(() => settle("committee", null));
 
