@@ -4016,6 +4016,21 @@
   "governance.accountability.neutralityNote": {
     "message": "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools."
   },
+  "governance.accountability.divider.roles": {
+    "message": "Standards by role"
+  },
+  "governance.accountability.label.accountableFor": {
+    "message": "Accountable for"
+  },
+  "governance.accountability.label.goodLooksLike": {
+    "message": "What good looks like"
+  },
+  "governance.accountability.label.benchmarks": {
+    "message": "Benchmarks"
+  },
+  "governance.accountability.label.verifyAndAct": {
+    "message": "Verify and act"
+  },
   "governance.accountability.dreps.title": {
     "message": "Delegated Representatives"
   },
