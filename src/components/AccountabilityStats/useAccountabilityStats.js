@@ -5,6 +5,9 @@ import { convertLovelacesToAda } from "@site/src/utils/insights/numbers";
 
 const PAGE_SIZE = 1000;
 const MAX_PAGES = 20;
+// The data.cardano.org proxy caps POST bodies (about 80 drep ids max), so
+// drep_info is queried in small batches. 50 is the safe size used elsewhere.
+const DREP_INFO_BATCH = 50;
 
 // Sum a paginated PostgREST list endpoint by walking limit/offset pages until
 // a short page is returned (fewer rows than the page size) or the iteration
@@ -25,6 +28,41 @@ async function countAll(api, path, isCancelled) {
   return total;
 }
 
+// Collect all registered DRep ids by walking the paginated list.
+async function fetchRegisteredDrepIds(api, isCancelled) {
+  const ids = [];
+  for (let page = 0; page < MAX_PAGES; page += 1) {
+    if (isCancelled()) break;
+    const offset = page * PAGE_SIZE;
+    const { data } = await api.get(
+      `/drep_list?registered=eq.true&select=drep_id&order=drep_id&limit=${PAGE_SIZE}&offset=${offset}`
+    );
+    const rows = Array.isArray(data) ? data : [];
+    for (const r of rows) if (r.drep_id) ids.push(r.drep_id);
+    if (rows.length < PAGE_SIZE) break;
+  }
+  return ids;
+}
+
+// Count DReps whose voting power currently counts. The "active" flag lives on
+// drep_info (a POST), so registered ids are fetched first, then queried in
+// small batches, and the active ones are tallied.
+async function countActiveDreps(api, isCancelled) {
+  const ids = await fetchRegisteredDrepIds(api, isCancelled);
+  const batches = [];
+  for (let i = 0; i < ids.length; i += DREP_INFO_BATCH) {
+    batches.push(ids.slice(i, i + DREP_INFO_BATCH));
+  }
+  const results = await Promise.all(
+    batches.map((b) => api.post("/drep_info", { _drep_ids: b }))
+  );
+  let active = 0;
+  for (const res of results) {
+    for (const d of res.data || []) if (d.active === true) active += 1;
+  }
+  return active;
+}
+
 export default function useAccountabilityStats() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
@@ -40,7 +78,7 @@ export default function useAccountabilityStats() {
       if (!cancelled) setState((s) => ({ ...s, [key]: value }));
     };
 
-    countAll(api, "/drep_list?registered=eq.true&select=drep_id&order=drep_id", () => cancelled)
+    countActiveDreps(api, () => cancelled)
       .then((count) => settle("dreps", count))
       .catch(() => settle("dreps", null));
 

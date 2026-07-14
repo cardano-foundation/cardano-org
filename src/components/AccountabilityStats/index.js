@@ -33,7 +33,7 @@ export default function AccountabilityStats() {
       <IntFigure
         target={dreps}
         href="#dreps"
-        label={translate({ id: "governance.accountability.stat.dreps", message: "Registered DReps" })}
+        label={translate({ id: "governance.accountability.stat.dreps", message: "Active DReps" })}
       />
       <IntFigure
         target={committee}

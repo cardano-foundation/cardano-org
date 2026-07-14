@@ -4020,7 +4020,7 @@
     "message": "Standards by role"
   },
   "governance.accountability.stat.dreps": {
-    "message": "Registered DReps"
+    "message": "Active DReps"
   },
   "governance.accountability.stat.committee": {
     "message": "Committee members"
