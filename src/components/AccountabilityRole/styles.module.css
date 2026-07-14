@@ -5,11 +5,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1.75rem 1.75rem 1.75rem 2rem;
+  padding: 1.75rem;
   margin-bottom: 1.5rem;
   background-color: var(--ifm-background-surface-color, #fff);
   border: 1px solid var(--ifm-color-emphasis-200);
-  border-left: 4px solid rgb(var(--role-accent));
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -146,9 +145,7 @@
 
 [data-theme='dark'] .role {
   --role-accent-tile-alpha: 0.18;
-  border-top-color: var(--ifm-color-emphasis-300);
-  border-right-color: var(--ifm-color-emphasis-300);
-  border-bottom-color: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-300);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -159,7 +156,7 @@
 
 @media (max-width: 768px) {
   .role {
-    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    padding: 1.25rem;
   }
 
   .head h2 {
