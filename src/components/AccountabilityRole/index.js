@@ -29,9 +29,9 @@ export default function AccountabilityRole({ role, liveValue }) {
 
       <h3>{translate({ id: "governance.accountability.label.benchmarks", message: "Benchmarks" })}</h3>
       <div className={styles.benchmarks}>
-        {role.benchmarks.liveKey && (
+        {role.benchmarks.liveKey && liveValue != null && (
           <div className={styles.liveStat}>
-            <span className={styles.liveValue}>{liveValue ?? "..."}</span>
+            <span className={styles.liveValue}>{liveValue}</span>
           </div>
         )}
         <ul className={styles.curated}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
-import { convertLovelacesToAda } from "@site/src/utils/insights/numbers";
+import { convertLovelacesToAda, formatAdaValue } from "@site/src/utils/insights/numbers";
 import useCountUp from "@site/src/utils/useCountUp";
 import styles from "./styles.module.css";
 
@@ -14,13 +14,6 @@ function AnimatedStat({ target, format, label }) {
       <span className={styles.statLabel}>{label}</span>
     </div>
   );
-}
-
-function formatAdaValue(value) {
-  if (value == null) return "...";
-  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B ada`;
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M ada`;
-  return `${Math.round(value).toLocaleString()} ada`;
 }
 
 export default function GovernancePulse() {

@@ -3,13 +3,15 @@ import { useEffect, useRef, useState } from "react";
 const DEFAULT_DURATION = 1500;
 
 // Animate a numeric value from 0 to target with an easeOutCubic curve.
-// Returns the current animated value; safe when target is null (treats as 0).
+// Returns the current animated value; skips the animation when target is null.
 export default function useCountUp(target, duration = DEFAULT_DURATION) {
   const [value, setValue] = useState(0);
   const frameRef = useRef(null);
 
   useEffect(() => {
-    const end = target ?? 0;
+    if (target == null) return undefined;
+
+    const end = target;
     const start = performance.now();
     const animate = (now) => {
       const elapsed = now - start;

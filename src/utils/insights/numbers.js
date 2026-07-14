@@ -1,5 +1,13 @@
 export const convertLovelacesToAda = (lovelaces) => Math.round(Number(lovelaces) / 1_000_000);
 
+// Format an ada amount for display, abbreviating large values (e.g. 1.2B ada).
+export function formatAdaValue(value) {
+  if (value == null) return "...";
+  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B ada`;
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M ada`;
+  return `${Math.round(value).toLocaleString()} ada`;
+}
+
 export const isNumberish = (v) => v !== null && v !== '' && !Number.isNaN(Number(v));
 export const toNumber = (v) => (isNumberish(v) ? Number(v) : NaN);
 
