@@ -6,10 +6,10 @@ import styles from "./styles.module.css";
 
 export default function AccountabilityRole({ role, liveValue }) {
   return (
-    <section id={role.id} className={clsx(styles.role, styles[`accent_${role.accent}`])}>
+    <section id={role.id} aria-labelledby={`${role.id}-title`} className={clsx(styles.role, styles[`accent_${role.accent}`])}>
       <header className={styles.head}>
         <span className={styles.icon} aria-hidden="true">{role.icon}</span>
-        <h2>{role.title}</h2>
+        <h2 id={`${role.id}-title`}>{role.title}</h2>
       </header>
       <p className={styles.power}>{role.power}</p>
 
