@@ -21,7 +21,7 @@ export function toAdaIfMoney(key, v) {
 }
 
 // Koios returns `withdrawal` on a TreasuryWithdrawals proposal as an array of
-// {amount, stake_address} objects — one entry per recipient. Sum them up to
+// {amount, stake_address} objects, one entry per recipient. Sum them up to
 // get the total payout in lovelace.
 export function sumWithdrawalAmounts(withdrawal) {
   if (!Array.isArray(withdrawal)) return 0;

@@ -38,7 +38,15 @@ export default function AccountabilityPage() {
           "Community standards, expectations, and aggregate on-chain benchmarks for DReps, the Constitutional Committee, SPOs, and treasury-funded work on Cardano.",
       })}
     >
-      <OpenGraphInfo pageName="governance" />
+      <OpenGraphInfo
+        pageName="governance"
+        title={translate({ id: "governance.accountability.hero.title", message: "What the community expects" })}
+        description={translate({
+          id: "governance.accountability.meta.description",
+          message:
+            "Community standards, expectations, and aggregate on-chain benchmarks for DReps, the Constitutional Committee, SPOs, and treasury-funded work on Cardano.",
+        })}
+      />
       <AccountabilityHero />
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
