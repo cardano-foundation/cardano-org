@@ -51,12 +51,12 @@ export function getAccountabilityRoles() {
         curated: [
           {
             label: translate({ id: "governance.accountability.dreps.curated.1.label", message: "Participation on recent actions" }),
-            value: translate({ id: "governance.accountability.dreps.curated.1.value", message: "See gov.tools" }),
+            value: translate({ id: "governance.accountability.dreps.curated.1.value", message: "See governance tools" }),
           },
         ],
         checkIndividuals: {
           label: translate({ id: "governance.accountability.dreps.check", message: "Explore individual DReps" }),
-          href: "https://gov.tools/drep_directory",
+          href: "/apps?tags=governance",
         },
       },
       verifyAndAct: [
@@ -108,12 +108,12 @@ export function getAccountabilityRoles() {
         curated: [
           {
             label: translate({ id: "governance.accountability.committee.curated.1.label", message: "Published decisions and votes" }),
-            value: translate({ id: "governance.accountability.committee.curated.1.value", message: "See gov.tools" }),
+            value: translate({ id: "governance.accountability.committee.curated.1.value", message: "See governance tools" }),
           },
         ],
         checkIndividuals: {
           label: translate({ id: "governance.accountability.committee.check", message: "See how the committee has voted" }),
-          href: "https://gov.tools/outcomes",
+          href: "/apps?tags=governance",
         },
       },
       verifyAndAct: [
@@ -157,12 +157,12 @@ export function getAccountabilityRoles() {
         curated: [
           {
             label: translate({ id: "governance.accountability.spos.curated.1.label", message: "Registered stake pools" }),
-            value: translate({ id: "governance.accountability.spos.curated.1.value", message: "See adastat.net" }),
+            value: translate({ id: "governance.accountability.spos.curated.1.value", message: "See pool tools" }),
           },
         ],
         checkIndividuals: {
           label: translate({ id: "governance.accountability.spos.check", message: "Explore individual stake pools" }),
-          href: "https://adastat.net/pools",
+          href: "/apps?tags=pooltool",
         },
       },
       verifyAndAct: [
@@ -222,12 +222,12 @@ export function getAccountabilityRoles() {
         curated: [
           {
             label: translate({ id: "governance.accountability.funding.curated.1.label", message: "Treasury withdrawals enacted on-chain" }),
-            value: translate({ id: "governance.accountability.funding.curated.1.value", message: "See gov.tools" }),
+            value: translate({ id: "governance.accountability.funding.curated.1.value", message: "See governance tools" }),
           },
         ],
         checkIndividuals: {
           label: translate({ id: "governance.accountability.funding.check", message: "Explore treasury-funded proposals" }),
-          href: "https://gov.tools/outcomes",
+          href: "/apps?tags=governance",
         },
       },
       verifyAndAct: [

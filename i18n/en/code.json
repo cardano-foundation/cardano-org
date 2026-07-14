@@ -4074,7 +4074,7 @@
     "message": "Participation on recent actions"
   },
   "governance.accountability.dreps.curated.1.value": {
-    "message": "See gov.tools"
+    "message": "See governance tools"
   },
   "governance.accountability.dreps.check": {
     "message": "Explore individual DReps"
@@ -4119,7 +4119,7 @@
     "message": "Published decisions and votes"
   },
   "governance.accountability.committee.curated.1.value": {
-    "message": "See gov.tools"
+    "message": "See governance tools"
   },
   "governance.accountability.committee.check": {
     "message": "See how the committee has voted"
@@ -4158,7 +4158,7 @@
     "message": "Registered stake pools"
   },
   "governance.accountability.spos.curated.1.value": {
-    "message": "See adastat.net"
+    "message": "See pool tools"
   },
   "governance.accountability.spos.check": {
     "message": "Explore individual stake pools"
@@ -4209,7 +4209,7 @@
     "message": "Treasury withdrawals enacted on-chain"
   },
   "governance.accountability.funding.curated.1.value": {
-    "message": "See gov.tools"
+    "message": "See governance tools"
   },
   "governance.accountability.funding.check": {
     "message": "Explore treasury-funded proposals"
