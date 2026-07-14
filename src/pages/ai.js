@@ -9,15 +9,13 @@ const SNIPPETS = {
   claude: {
     label: translate({ id: "ai.getStarted.tabClaude", message: "Claude Code (recommended)" }),
     code: `/plugin marketplace add cardano-foundation/cardano-dev-skills
-/plugin install cardano-dev-skills@cardano-dev-skills
-curl -s https://www.masumi.network/skill.md`,
+/plugin install cardano-dev-skills@cardano-dev-skills`,
   },
   other: {
     label: translate({ id: "ai.getStarted.tabOther", message: "Codex / other agents" }),
     code: `git clone https://github.com/cardano-foundation/cardano-dev-skills.git
 cd your-project
-ln -s ../cardano-dev-skills/skills .agents/skills
-curl -s https://www.masumi.network/skill.md`,
+ln -s ../cardano-dev-skills/skills .agents/skills`,
   },
 };
 
