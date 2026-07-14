@@ -1,42 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import { convertLovelacesToAda } from "@site/src/utils/insights/numbers";
+import useCountUp from "@site/src/utils/useCountUp";
 import styles from "./styles.module.css";
-
-const ANIMATION_DURATION = 1500;
-
-function useCountUp(target, duration = ANIMATION_DURATION) {
-  const [value, setValue] = useState(0);
-  const frameRef = useRef(null);
-
-  useEffect(() => {
-    // Animate towards the resolved target. Driving the first setValue from the
-    // rAF callback (instead of a synchronous early-return setState) keeps the
-    // zero/null case visually identical while avoiding a cascading render.
-    const end = target ?? 0;
-    const start = performance.now();
-    const animate = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(eased * end);
-      if (progress < 1) {
-        frameRef.current = requestAnimationFrame(animate);
-      } else {
-        setValue(end);
-      }
-    };
-    frameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-    };
-  }, [target, duration]);
-
-  return value;
-}
 
 function AnimatedStat({ target, format, label }) {
   const animated = useCountUp(target);
