@@ -3998,6 +3998,24 @@
   "governance.delegate.alt.cgov": {
     "message": "Dashboard to monitor DReps and governance actions."
   },
+  "governance.accountability.hero.title": {
+    "message": "What the community expects"
+  },
+  "governance.accountability.hero.description": {
+    "message": "The standards, expectations, and health signals for the people Cardano empowers: DReps, the Constitutional Committee, stake pool operators, and treasury-funded work."
+  },
+  "governance.accountability.meta.title": {
+    "message": "Governance Accountability - Cardano"
+  },
+  "governance.accountability.meta.description": {
+    "message": "Community standards, expectations, and aggregate on-chain benchmarks for DReps, the Constitutional Committee, SPOs, and treasury-funded work on Cardano."
+  },
+  "governance.accountability.intro": {
+    "message": "Cardano is governed by its community. This page documents the standards those roles already answer to, drawn from the Constitution and established rules, and shows network-wide health signals. It restates and aggregates; it does not set new rules or grade individuals."
+  },
+  "governance.accountability.neutralityNote": {
+    "message": "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools."
+  },
   "quiz.ui.noQuestions": {
     "message": "No quiz questions available."
   },
