@@ -362,6 +362,7 @@ const config = {
               { to: '/governance#lead', label: 'Become a DRep' },
               { to: '/governance#tools', label: 'Governance Tools' },
               { to: '/constitution', label: 'Cardano Constitution' },
+              { to: '/governance/accountability', label: 'Governance Accountability' },
             ],
             // The mega menu full version for "Participate"
             mega: true,
@@ -395,6 +396,7 @@ const config = {
                     { to: '/governance/delegate', label: 'Delegate your vote', description: 'Lend your voting power to a DRep', icon: 'scroll-solid' },
                     { to: '/governance#lead', label: 'Become a DRep', description: 'Represent your community', icon: 'scroll-solid' },
                     { to: '/governance#tools', label: 'Governance Tools', description: 'Tools for governance participation', icon: 'scroll-solid' },
+                    { to: '/governance/accountability', label: 'Accountability', description: 'Standards and benchmarks by role', icon: 'scroll-solid' },
                   ],
                 },
               ],

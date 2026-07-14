@@ -6,6 +6,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
+import Link from "@docusaurus/Link";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AccountabilityRole from "@site/src/components/AccountabilityRole";
 import AccountabilityStats from "@site/src/components/AccountabilityStats";
@@ -71,6 +72,22 @@ export default function AccountabilityPage() {
           ))}
           <SpacerBox size="medium" />
         </BoundaryBox>
+
+        <BackgroundWrapper backgroundType={"gradientLight"}>
+          <BoundaryBox>
+            <div className={styles.crossLinks}>
+              <Link className={styles.crossLinkCard} to="/constitution">
+                {translate({ id: "governance.accountability.out.constitution", message: "Read the full Constitution" })}
+              </Link>
+              <Link className={styles.crossLinkCard} to="/governance/delegate">
+                {translate({ id: "governance.accountability.out.delegate", message: "Choose or change your DRep" })}
+              </Link>
+              <Link className={styles.crossLinkCard} to="/insights/governance-actions">
+                {translate({ id: "governance.accountability.out.charts", message: "Explore governance action charts" })}
+              </Link>
+            </div>
+          </BoundaryBox>
+        </BackgroundWrapper>
       </main>
     </Layout>
   );

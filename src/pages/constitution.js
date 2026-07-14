@@ -1,10 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { FaClipboardList } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
+import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -129,6 +132,15 @@ function ConstitutionContent() {
           {translate({ id: "constitution.link.download", message: "Download Constitution" })}
         </a>
       </div>
+
+      <HighlightCallout icon={<FaClipboardList />}>
+        <p>
+          <Link to="/governance/accountability">
+            {translate({ id: "governance.accountability.link.plainLanguage", message: "See these obligations in plain language" })}
+          </Link>
+        </p>
+      </HighlightCallout>
+      <SpacerBox size="small" />
 
       <div className={styles.layout}>
         <ConstitutionToc content={localConstitutionContent} />

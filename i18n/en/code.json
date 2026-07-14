@@ -4217,6 +4217,24 @@
   "governance.accountability.funding.act.1": {
     "message": "How treasury withdrawals must be justified"
   },
+  "governance.accountability.link.expectations": {
+    "message": "What is expected of them"
+  },
+  "governance.accountability.link.plainLanguage": {
+    "message": "See these obligations in plain language"
+  },
+  "governance.accountability.link.judgeDrep": {
+    "message": "How to judge a DRep"
+  },
+  "governance.accountability.out.constitution": {
+    "message": "Read the full Constitution"
+  },
+  "governance.accountability.out.delegate": {
+    "message": "Choose or change your DRep"
+  },
+  "governance.accountability.out.charts": {
+    "message": "Explore governance action charts"
+  },
   "quiz.ui.noQuestions": {
     "message": "No quiz questions available."
   },

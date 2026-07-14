@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "@docusaurus/Head";
+import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -43,6 +44,9 @@ function GovernanceRolesSection() {
       title={translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}
     >
       {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
+      <Link to="/governance/accountability#dreps" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
   const spo = (
@@ -52,6 +56,9 @@ function GovernanceRolesSection() {
       title={translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}
     >
       {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
+      <Link to="/governance/accountability#spos" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
   const committee = (
@@ -61,6 +68,9 @@ function GovernanceRolesSection() {
       title={translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}
     >
       {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
+      <Link to="/governance/accountability#committee" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
 

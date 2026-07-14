@@ -100,6 +100,11 @@ export default function DelegatePage() {
               message: "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics.",
             })}
           </p>
+          <p className="black-text">
+            <Link to="/governance/accountability#dreps">
+              {translate({ id: "governance.accountability.link.judgeDrep", message: "How to judge a DRep" })}
+            </Link>
+          </p>
           <SpacerBox size="small" />
           <div className={styles.altGrid}>
             {ALTERNATIVES.map((tool) => (
