@@ -4019,6 +4019,18 @@
   "governance.accountability.divider.roles": {
     "message": "Standards by role"
   },
+  "governance.accountability.stat.dreps": {
+    "message": "Registered DReps"
+  },
+  "governance.accountability.stat.committee": {
+    "message": "Committee members"
+  },
+  "governance.accountability.stat.spos": {
+    "message": "Active stake pools"
+  },
+  "governance.accountability.stat.treasury": {
+    "message": "Treasury"
+  },
   "governance.accountability.label.accountableFor": {
     "message": "Accountable for"
   },

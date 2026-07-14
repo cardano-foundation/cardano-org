@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -7,6 +8,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AccountabilityRole from "@site/src/components/AccountabilityRole";
+import AccountabilityStats from "@site/src/components/AccountabilityStats";
 import { getAccountabilityRoles } from "@site/src/data/governanceAccountability";
 import { translate } from "@docusaurus/Translate";
 import styles from "./accountability.module.css";
@@ -59,6 +61,9 @@ export default function AccountabilityPage() {
           </BoundaryBox>
         </BackgroundWrapper>
         <BoundaryBox>
+          <BrowserOnly fallback={<div style={{ minHeight: 96 }} />}>
+            {() => <AccountabilityStats />}
+          </BrowserOnly>
           <Divider text={translate({ id: "governance.accountability.divider.roles", message: "Standards by role" })} id="roles" />
           <SpacerBox size="small" />
           {getAccountabilityRoles().map((role) => (
