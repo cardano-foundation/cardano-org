@@ -9,10 +9,12 @@ const MAX_PAGES = 20;
 // Sum a paginated PostgREST list endpoint by walking limit/offset pages until
 // a short page is returned (fewer rows than the page size) or the iteration
 // cap is hit. The API does not expose a count header we can rely on in the
-// browser, so counting rows page by page is the verified approach.
-async function countAll(api, path) {
+// browser, so counting rows page by page is the verified approach. The path
+// must include an explicit order clause so row order is stable across pages.
+async function countAll(api, path, isCancelled) {
   let total = 0;
   for (let page = 0; page < MAX_PAGES; page += 1) {
+    if (isCancelled()) break;
     const offset = page * PAGE_SIZE;
     const separator = path.includes("?") ? "&" : "?";
     const { data } = await api.get(`${path}${separator}limit=${PAGE_SIZE}&offset=${offset}`);
@@ -38,7 +40,7 @@ export default function useAccountabilityStats() {
       if (!cancelled) setState((s) => ({ ...s, [key]: value }));
     };
 
-    countAll(api, "/drep_list?registered=eq.true&select=drep_id")
+    countAll(api, "/drep_list?registered=eq.true&select=drep_id&order=drep_id", () => cancelled)
       .then((count) => settle("dreps", count))
       .catch(() => settle("dreps", null));
 
@@ -49,7 +51,7 @@ export default function useAccountabilityStats() {
       })
       .catch(() => settle("committee", null));
 
-    countAll(api, "/pool_list?pool_status=eq.registered&select=pool_id_bech32")
+    countAll(api, "/pool_list?pool_status=eq.registered&select=pool_id_bech32&order=pool_id_bech32", () => cancelled)
       .then((count) => settle("spos", count))
       .catch(() => settle("spos", null));
 
