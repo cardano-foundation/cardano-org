@@ -27,9 +27,9 @@ export function getAccountabilityRoles() {
         {
           text: translate({
             id: "governance.accountability.dreps.obl.1",
-            message: "Vote in the interest of their delegators and stay active in governance.",
+            message: "Publicly disclose any compensation received as a DRep in a timely manner, and never pay ada owners in exchange for delegation or their votes. A DRep may act in the interest of the ada owners who delegate to them.",
           }),
-          source: translate({ id: "governance.accountability.dreps.obl.1.src", message: "Constitution, Article II Section 4" }),
+          source: translate({ id: "governance.accountability.dreps.obl.1.src", message: "Constitution, Article II Sections 2 and 4" }),
           href: "/constitution",
         },
         {
@@ -141,17 +141,9 @@ export function getAccountabilityRoles() {
         {
           text: translate({
             id: "governance.accountability.spos.obl.2",
-            message: "Publicly disclose if the same operator also holds another governance role, such as acting as a DRep or committee member.",
+            message: "Stay within the Cardano Guardrails when voting on security-relevant changes.",
           }),
-          source: translate({ id: "governance.accountability.spos.obl.2.src", message: "Constitution, Article II Section 3" }),
-          href: "/constitution",
-        },
-        {
-          text: translate({
-            id: "governance.accountability.spos.obl.3",
-            message: "Help secure the network through reliable block production and stay within the Cardano Guardrails when voting on security-relevant changes.",
-          }),
-          source: translate({ id: "governance.accountability.spos.obl.3.src", message: "Constitution, Article I Section 2" }),
+          source: translate({ id: "governance.accountability.spos.obl.2.src", message: "Constitution, Article I Section 2" }),
           href: "/constitution",
         },
       ],
