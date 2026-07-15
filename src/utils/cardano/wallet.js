@@ -121,6 +121,14 @@ export async function firstRewardAddressBech32(api) {
   return RewardAccount.toBech32(RewardAccount.fromHex(hex));
 }
 
+// CIP-20 transaction message (metadata label 674) that tags every transaction
+// cardano.org builds with its origin. The value follows the CIP-20 shape
+// { "msg": [<lines>] }, where each line is a string of at most 64 bytes.
+const CIP20_MSG_LABEL = 674n;
+function cardanoOrgMessage() {
+  return new Map([["msg", ["cardano.org"]]]);
+}
+
 // Map the UI's delegation target to an Evolution SDK DRep.
 // DRep IDs follow CIP-129 (bech32 "drep1..." or hex); the two protocol
 // options map to the AlwaysAbstain / AlwaysNoConfidence variants.
@@ -153,6 +161,7 @@ export async function delegateVote({ api, target, koiosUrl }) {
   const built = await client
     .newTx()
     .delegateToDRep({ stakeCredential, drep })
+    .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
     .build();
 
   const unsignedTx = Transaction.toCBORHex(await built.toTransaction());
@@ -201,6 +210,7 @@ export async function donateToTreasury({ api, amountLovelace, currentTreasuryVal
       assets: Assets.fromLovelace(donation),
       autoMinUtxo: false,
     })
+    .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
     .build();
 
   const tx = await built.toTransaction();
