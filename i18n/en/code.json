@@ -4016,6 +4016,9 @@
   "governance.accountability.neutralityNote": {
     "message": "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools."
   },
+  "governance.accountability.quickNav.label": {
+    "message": "Jump to a role"
+  },
   "governance.accountability.divider.roles": {
     "message": "Standards by role"
   },

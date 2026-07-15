@@ -67,7 +67,10 @@ export default function AccountabilityPage() {
                   "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools.",
               })}
             </p>
-            <nav className={styles.quickNav} aria-label="Jump to a role">
+            <nav
+              className={styles.quickNav}
+              aria-label={translate({ id: "governance.accountability.quickNav.label", message: "Jump to a role" })}
+            >
               {getAccountabilityRoles().map((role) => (
                 <a key={role.id} href={`#${role.id}`} className={styles.quickNavPill}>
                   {role.title}
