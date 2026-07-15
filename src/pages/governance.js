@@ -55,7 +55,7 @@ function GovernanceRolesSection() {
       icon={<FaServer />}
       title={translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}
     >
-      {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
+      {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-relevant parameters, and no-confidence motions.'})}
       <Link to="/governance/accountability#spos" className={styles.roleLink}>
         {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
       </Link>

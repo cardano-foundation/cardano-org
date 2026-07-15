@@ -8,6 +8,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
 import Link from "@docusaurus/Link";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import TermExplainer from "@site/src/components/TermExplainer";
 import AccountabilityRole from "@site/src/components/AccountabilityRole";
 import AccountabilityStats from "@site/src/components/AccountabilityStats";
 import { getAccountabilityRoles } from "@site/src/data/governanceAccountability";
@@ -21,7 +22,7 @@ function AccountabilityHero() {
       description={translate({
         id: "governance.accountability.hero.description",
         message:
-          "The standards, expectations, and health signals for the people Cardano empowers: DReps, the Constitutional Committee, stake pool operators, and treasury-funded work.",
+          "The standards, expectations, and health signals for the roles Cardano empowers: DReps, the Constitutional Committee, stake pool operators, and treasury-funded work.",
       })}
       bannerType="braidBlue"
     />
@@ -66,6 +67,13 @@ export default function AccountabilityPage() {
                   "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools.",
               })}
             </p>
+            <nav className={styles.quickNav} aria-label="Jump to a role">
+              {getAccountabilityRoles().map((role) => (
+                <a key={role.id} href={`#${role.id}`} className={styles.quickNavPill}>
+                  {role.title}
+                </a>
+              ))}
+            </nav>
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
@@ -80,6 +88,12 @@ export default function AccountabilityPage() {
           ))}
           <SpacerBox size="medium" />
         </BoundaryBox>
+
+        <BackgroundWrapper backgroundType={"gradientLight"}>
+          <BoundaryBox>
+            <TermExplainer category="governance" />
+          </BoundaryBox>
+        </BackgroundWrapper>
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
