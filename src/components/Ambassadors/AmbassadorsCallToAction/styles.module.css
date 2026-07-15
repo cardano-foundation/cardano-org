@@ -7,7 +7,7 @@
     radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.18) 1px, transparent 2px),
     radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.14) 1px, transparent 2px),
     radial-gradient(circle at 95% 55%, rgba(255, 255, 255, 0.12) 1px, transparent 2px),
-    linear-gradient(135deg, #002b80 0%, #0033ad 55%, #1f4dc7 100%);
+    linear-gradient(135deg, #3f356b 0%, #675b9a 55%, #968cc3 100%);
   background-size:
     220px 220px,
     180px 180px,
@@ -67,7 +67,7 @@
 .primaryButton,
 .primaryButton:hover {
   background: #ffffff;
-  color: #0033ad;
+  color: #504583;
   border-color: #ffffff;
   font-weight: 600;
   display: inline-flex;
@@ -76,8 +76,8 @@
 }
 
 .primaryButton:hover {
-  background: #eef2ff;
-  color: #002b80;
+  background: #f5f3ff;
+  color: #3f356b;
 }
 
 .secondaryButton,
