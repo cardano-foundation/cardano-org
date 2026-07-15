@@ -38,7 +38,7 @@ export function getAccountabilityRoles() {
             message: "Act within the Cardano Tenets and Guardrails.",
           }),
           source: translate({ id: "governance.accountability.dreps.obl.2.src", message: "Constitution, Article I" }),
-          href: "/constitution",
+          href: "/constitution#section-1-guiding-tenets",
         },
       ],
       expectations: [
@@ -79,7 +79,7 @@ export function getAccountabilityRoles() {
             message: "Judge governance actions only on whether they are constitutional, so that what is enacted on-chain stays consistent with the Constitution.",
           }),
           source: translate({ id: "governance.accountability.committee.obl.1.src", message: "Constitution, Article III Section 1" }),
-          href: "/constitution",
+          href: "/constitution#section-1-role-and-scope",
         },
         {
           text: translate({
@@ -87,7 +87,7 @@ export function getAccountabilityRoles() {
             message: "Work transparently, publish every decision, and cite the specific parts of the Constitution behind any vote that an action is unconstitutional.",
           }),
           source: translate({ id: "governance.accountability.committee.obl.2.src", message: "Constitution, Article III Section 4" }),
-          href: "/constitution",
+          href: "/constitution#section-4-transparency-and-conduct",
         },
         {
           text: translate({
@@ -95,7 +95,7 @@ export function getAccountabilityRoles() {
             message: "Disclose any compensation received for committee work in a timely manner.",
           }),
           source: translate({ id: "governance.accountability.committee.obl.3.src", message: "Constitution, Article III Section 4" }),
-          href: "/constitution",
+          href: "/constitution#section-4-transparency-and-conduct",
         },
       ],
       expectations: [
@@ -117,7 +117,7 @@ export function getAccountabilityRoles() {
         },
       },
       verifyAndAct: [
-        { label: translate({ id: "governance.accountability.committee.act.1", message: "How a no-confidence vote or removal works" }), href: "/constitution" },
+        { label: translate({ id: "governance.accountability.committee.act.1", message: "How a no-confidence vote or removal works" }), href: "/constitution#section-3-election-process-no-confidence-and-removal" },
       ],
     },
     {
@@ -136,7 +136,7 @@ export function getAccountabilityRoles() {
             message: "Vote on the actions reserved to stake pools: no confidence, committee updates, hard fork initiations, security-relevant parameter changes, and info actions.",
           }),
           source: translate({ id: "governance.accountability.spos.obl.1.src", message: "Constitution, Article II Section 5" }),
-          href: "/constitution",
+          href: "/constitution#section-5-stake-pool-operators",
         },
         {
           text: translate({
@@ -144,7 +144,7 @@ export function getAccountabilityRoles() {
             message: "Stay within the Cardano Guardrails when voting on security-relevant changes.",
           }),
           source: translate({ id: "governance.accountability.spos.obl.2.src", message: "Constitution, Article I Section 2" }),
-          href: "/constitution",
+          href: "/constitution#section-2-implementation-of-guardrails",
         },
       ],
       expectations: [
@@ -185,7 +185,7 @@ export function getAccountabilityRoles() {
             message: "Present the funding request in the standardized, transparent format, with a permanent rationale document anyone can review.",
           }),
           source: translate({ id: "governance.accountability.funding.obl.1.src", message: "Constitution, Article II Section 6" }),
-          href: "/constitution",
+          href: "/constitution#section-6-governance-action-standards",
         },
         {
           text: translate({
@@ -193,7 +193,7 @@ export function getAccountabilityRoles() {
             message: "State the purpose, timeline, costs, and refund conditions of the withdrawal, and disclose any treasury funding received in the previous 24 months.",
           }),
           source: translate({ id: "governance.accountability.funding.obl.2.src", message: "Constitution, Article II Section 7" }),
-          href: "/constitution",
+          href: "/constitution#section-7-treasury-withdrawals-action-standards",
         },
         {
           text: translate({
@@ -201,7 +201,7 @@ export function getAccountabilityRoles() {
             message: "Fund independent audits and name administrators who track how the ada is spent and whether the deliverables are met.",
           }),
           source: translate({ id: "governance.accountability.funding.obl.3.src", message: "Constitution, Article II Section 7" }),
-          href: "/constitution",
+          href: "/constitution#section-7-treasury-withdrawals-action-standards",
         },
         {
           text: translate({
@@ -209,7 +209,7 @@ export function getAccountabilityRoles() {
             message: "Stay within the treasury's Net Change Limit, the cap on how much ada can leave the treasury in a given period.",
           }),
           source: translate({ id: "governance.accountability.funding.obl.4.src", message: "Constitution, Article II Section 7" }),
-          href: "/constitution",
+          href: "/constitution#section-7-treasury-withdrawals-action-standards",
         },
       ],
       expectations: [
