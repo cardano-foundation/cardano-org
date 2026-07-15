@@ -100,8 +100,9 @@
   color: var(--ifm-font-color-base);
 }
 
-.curated strong {
-  color: var(--ifm-font-color-base);
+.curatedValue {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
 }
 
 .checkLink {

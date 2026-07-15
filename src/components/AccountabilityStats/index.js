@@ -43,7 +43,7 @@ export default function AccountabilityStats() {
       <IntFigure
         target={spos}
         href="#spos"
-        label={translate({ id: "governance.accountability.stat.spos", message: "Active stake pools" })}
+        label={translate({ id: "governance.accountability.stat.spos", message: "Registered stake pools" })}
       />
       <TreasuryFigure
         target={treasury}

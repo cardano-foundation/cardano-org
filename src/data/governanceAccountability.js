@@ -55,7 +55,7 @@ export function getAccountabilityRoles() {
           },
         ],
         checkIndividuals: {
-          label: translate({ id: "governance.accountability.dreps.check", message: "Explore individual DReps" }),
+          label: translate({ id: "governance.accountability.dreps.check", message: "Find tools to explore DReps" }),
           href: "/apps?tags=governance",
         },
       },
@@ -112,7 +112,7 @@ export function getAccountabilityRoles() {
           },
         ],
         checkIndividuals: {
-          label: translate({ id: "governance.accountability.committee.check", message: "See how the committee has voted" }),
+          label: translate({ id: "governance.accountability.committee.check", message: "Find governance tools" }),
           href: "/apps?tags=governance",
         },
       },
@@ -161,7 +161,7 @@ export function getAccountabilityRoles() {
           },
         ],
         checkIndividuals: {
-          label: translate({ id: "governance.accountability.spos.check", message: "Explore individual stake pools" }),
+          label: translate({ id: "governance.accountability.spos.check", message: "Find pool tools" }),
           href: "/apps?tags=pooltool",
         },
       },
@@ -226,7 +226,7 @@ export function getAccountabilityRoles() {
           },
         ],
         checkIndividuals: {
-          label: translate({ id: "governance.accountability.funding.check", message: "Explore treasury-funded proposals" }),
+          label: translate({ id: "governance.accountability.funding.check", message: "Explore governance tools" }),
           href: "/apps?tags=governance",
         },
       },

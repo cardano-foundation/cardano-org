@@ -117,6 +117,17 @@ function GovernanceRolesSection() {
 
 const milestones = [
   {
+    titleId: "governance.impact.params.title",
+    title: "SPOs and DReps voted on Plutus limits",
+    textId: "governance.impact.params.text",
+    text: "The community voted on raising Plutus execution limits to expand smart contract capacity, letting DApps run more logic per transaction.",
+    date: "February 2026",
+    blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
+    banner: "/img/governance/params.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
+  },
+  {
     titleId: "governance.impact.constitution.title",
     title: "Constitution updated with 79% support",
     textId: "governance.impact.constitution.text",
@@ -126,6 +137,17 @@ const milestones = [
     banner: "/img/governance/constitution.webp",
     categoryId: "governance.impact.category.constitution",
     category: "Constitution",
+  },
+  {
+    titleId: "governance.impact.hardfork.title",
+    title: "Hard fork to Protocol v11 proposed",
+    textId: "governance.impact.hardfork.text",
+    text: "The community began coordinating the next protocol upgrade to Protocol Version 11 through the governance process, forming a working group to gather feedback before any formal governance action.",
+    date: "November 2025",
+    blog: "/news/2025-11-20-hard-fork-proposal",
+    banner: "/img/governance/hardfork.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
   },
   {
     titleId: "governance.impact.committee.title",
@@ -148,28 +170,6 @@ const milestones = [
     banner: "/img/governance/treasury.webp",
     categoryId: "governance.impact.category.treasury",
     category: "Treasury",
-  },
-  {
-    titleId: "governance.impact.hardfork.title",
-    title: "Hard fork proposals approved",
-    textId: "governance.impact.hardfork.text",
-    text: "Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance.",
-    date: "November 2025",
-    blog: "/news/2025-11-20-hard-fork-proposal",
-    banner: "/img/governance/hardfork.webp",
-    categoryId: "governance.impact.category.protocol",
-    category: "Protocol",
-  },
-  {
-    titleId: "governance.impact.params.title",
-    title: "Protocol parameters changed",
-    textId: "governance.impact.params.text",
-    text: "SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds.",
-    date: "February 2026",
-    blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
-    banner: "/img/governance/params.webp",
-    categoryId: "governance.impact.category.protocol",
-    category: "Protocol",
   },
 ];
 

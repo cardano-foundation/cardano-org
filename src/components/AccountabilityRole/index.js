@@ -36,7 +36,7 @@ export default function AccountabilityRole({ role, liveValue }) {
         )}
         <ul className={styles.curated}>
           {role.benchmarks.curated.map((c, i) => (
-            <li key={i}><strong>{c.value}</strong> {c.label}</li>
+            <li key={i}>{c.label}: <span className={styles.curatedValue}>{c.value}</span></li>
           ))}
         </ul>
         {role.benchmarks.checkIndividuals && (

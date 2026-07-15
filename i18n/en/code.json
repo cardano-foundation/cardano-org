@@ -4026,7 +4026,7 @@
     "message": "Committee members"
   },
   "governance.accountability.stat.spos": {
-    "message": "Active stake pools"
+    "message": "Registered stake pools"
   },
   "governance.accountability.stat.treasury": {
     "message": "Treasury"
@@ -4077,7 +4077,7 @@
     "message": "See governance tools"
   },
   "governance.accountability.dreps.check": {
-    "message": "Explore individual DReps"
+    "message": "Find tools to explore DReps"
   },
   "governance.accountability.dreps.act.1": {
     "message": "Choose or change your DRep"
@@ -4122,7 +4122,7 @@
     "message": "See governance tools"
   },
   "governance.accountability.committee.check": {
-    "message": "See how the committee has voted"
+    "message": "Find governance tools"
   },
   "governance.accountability.committee.act.1": {
     "message": "How a no-confidence vote or removal works"
@@ -4161,7 +4161,7 @@
     "message": "See pool tools"
   },
   "governance.accountability.spos.check": {
-    "message": "Explore individual stake pools"
+    "message": "Find pool tools"
   },
   "governance.accountability.spos.act.1": {
     "message": "Choose or change your stake pool"
@@ -4212,7 +4212,7 @@
     "message": "See governance tools"
   },
   "governance.accountability.funding.check": {
-    "message": "Explore treasury-funded proposals"
+    "message": "Explore governance tools"
   },
   "governance.accountability.funding.act.1": {
     "message": "How treasury withdrawals must be justified"
