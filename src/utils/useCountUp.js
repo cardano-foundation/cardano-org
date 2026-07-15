@@ -12,6 +12,17 @@ export default function useCountUp(target, duration = DEFAULT_DURATION) {
     if (target == null) return undefined;
 
     const end = target;
+
+    // Skip the tween entirely for users who asked for reduced motion.
+    const reduceMotion =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setValue(end);
+      return undefined;
+    }
+
     const start = performance.now();
     const animate = (now) => {
       const elapsed = now - start;
