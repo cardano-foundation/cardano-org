@@ -256,3 +256,13 @@
     font-size: 1.5rem;
   }
 }
+
+.sidebarFooterLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sidebarFooterLink:hover {
+  color: rgb(var(--role-accent-text));
+}

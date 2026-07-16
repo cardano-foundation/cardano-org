@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { translate } from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
 
 export default function AccountabilityRole({ role, liveValue }) {
@@ -74,10 +74,18 @@ export default function AccountabilityRole({ role, liveValue }) {
           </div>
 
           <p className={styles.sidebarFooter}>
-            {translate(
-              { id: "governance.accountability.label.groundedIn", message: "Grounded in {groundedIn}." },
-              { groundedIn: role.groundedIn },
-            )}
+            <Translate
+              id="governance.accountability.label.groundedIn"
+              values={{
+                groundedIn: (
+                  <Link to={role.groundedInHref ?? "/constitution"} className={styles.sidebarFooterLink}>
+                    {role.groundedIn}
+                  </Link>
+                ),
+              }}
+            >
+              {"Grounded in {groundedIn}."}
+            </Translate>
           </p>
         </aside>
       </div>
