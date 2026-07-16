@@ -4016,8 +4016,11 @@
   "governance.accountability.neutralityNote": {
     "message": "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools."
   },
-  "governance.accountability.quickNav.label": {
-    "message": "Jump to a role"
+  "governance.accountability.roles.title": {
+    "message": "Who keeps Cardano governance accountable?"
+  },
+  "governance.accountability.roles.subtitle": {
+    "message": "Select a role to understand its mandate, responsibilities, and how the community can verify its work."
   },
   "governance.accountability.divider.roles": {
     "message": "Standards by role"
@@ -4046,8 +4049,26 @@
   "governance.accountability.label.verifyAndAct": {
     "message": "Verify and act"
   },
+  "governance.accountability.label.evidence": {
+    "message": "Evidence"
+  },
+  "governance.accountability.label.benchmark": {
+    "message": "Benchmark"
+  },
+  "governance.accountability.label.groundedIn": {
+    "message": "Grounded in {groundedIn}."
+  },
   "governance.accountability.dreps.title": {
     "message": "Delegated Representatives"
+  },
+  "governance.accountability.dreps.teaser": {
+    "message": "Represent ada holders"
+  },
+  "governance.accountability.dreps.evidence": {
+    "message": "Voting history"
+  },
+  "governance.accountability.dreps.groundedIn": {
+    "message": "Constitution, Article II Sections 2 and 4"
   },
   "governance.accountability.dreps.power": {
     "message": "Vote on governance actions on behalf of the ada holders who delegate to them."
@@ -4087,6 +4108,15 @@
   },
   "governance.accountability.committee.title": {
     "message": "Constitutional Committee"
+  },
+  "governance.accountability.committee.teaser": {
+    "message": "Checks constitutionality"
+  },
+  "governance.accountability.committee.evidence": {
+    "message": "Published decisions"
+  },
+  "governance.accountability.committee.groundedIn": {
+    "message": "Constitution, Article III Sections 1, 3 and 4"
   },
   "governance.accountability.committee.power": {
     "message": "Rules on whether governance actions are constitutional; most actions cannot take effect on-chain without the committee's affirmation."
@@ -4133,6 +4163,15 @@
   "governance.accountability.spos.title": {
     "message": "Stake Pool Operators"
   },
+  "governance.accountability.spos.teaser": {
+    "message": "Secure and vote"
+  },
+  "governance.accountability.spos.evidence": {
+    "message": "Pool record"
+  },
+  "governance.accountability.spos.groundedIn": {
+    "message": "Constitution, Articles I and II"
+  },
   "governance.accountability.spos.power": {
     "message": "Run the block-producing nodes that secure the network and vote on the governance actions reserved to stake pools."
   },
@@ -4171,6 +4210,15 @@
   },
   "governance.accountability.funding.title": {
     "message": "Treasury-Funded Work"
+  },
+  "governance.accountability.funding.teaser": {
+    "message": "Delivers public value"
+  },
+  "governance.accountability.funding.evidence": {
+    "message": "Milestones and reports"
+  },
+  "governance.accountability.funding.groundedIn": {
+    "message": "Constitution, Article II Sections 6 and 7"
   },
   "governance.accountability.funding.power": {
     "message": "Receive ada from the Cardano Treasury to carry out work for the ecosystem, under the terms approved on-chain."

@@ -19,6 +19,9 @@ export function getAccountabilityRoles() {
       accent: "blue",
       icon: <FaUsers />,
       title: translate({ id: "governance.accountability.dreps.title", message: "Delegated Representatives" }),
+      teaser: translate({ id: "governance.accountability.dreps.teaser", message: "Represent ada holders" }),
+      evidence: translate({ id: "governance.accountability.dreps.evidence", message: "Voting history" }),
+      groundedIn: translate({ id: "governance.accountability.dreps.groundedIn", message: "Constitution, Article II Sections 2 and 4" }),
       power: translate({
         id: "governance.accountability.dreps.power",
         message: "Vote on governance actions on behalf of the ada holders who delegate to them.",
@@ -68,6 +71,9 @@ export function getAccountabilityRoles() {
       accent: "teal",
       icon: <FaUniversity />,
       title: translate({ id: "governance.accountability.committee.title", message: "Constitutional Committee" }),
+      teaser: translate({ id: "governance.accountability.committee.teaser", message: "Checks constitutionality" }),
+      evidence: translate({ id: "governance.accountability.committee.evidence", message: "Published decisions" }),
+      groundedIn: translate({ id: "governance.accountability.committee.groundedIn", message: "Constitution, Article III Sections 1, 3 and 4" }),
       power: translate({
         id: "governance.accountability.committee.power",
         message: "Rules on whether governance actions are constitutional; most actions cannot take effect on-chain without the committee's affirmation.",
@@ -125,6 +131,9 @@ export function getAccountabilityRoles() {
       accent: "violet",
       icon: <FaServer />,
       title: translate({ id: "governance.accountability.spos.title", message: "Stake Pool Operators" }),
+      teaser: translate({ id: "governance.accountability.spos.teaser", message: "Secure and vote" }),
+      evidence: translate({ id: "governance.accountability.spos.evidence", message: "Pool record" }),
+      groundedIn: translate({ id: "governance.accountability.spos.groundedIn", message: "Constitution, Articles I and II" }),
       power: translate({
         id: "governance.accountability.spos.power",
         message: "Run the block-producing nodes that secure the network and vote on the governance actions reserved to stake pools.",
@@ -174,6 +183,9 @@ export function getAccountabilityRoles() {
       accent: "green",
       icon: <FaHandHoldingUsd />,
       title: translate({ id: "governance.accountability.funding.title", message: "Treasury-Funded Work" }),
+      teaser: translate({ id: "governance.accountability.funding.teaser", message: "Delivers public value" }),
+      evidence: translate({ id: "governance.accountability.funding.evidence", message: "Milestones and reports" }),
+      groundedIn: translate({ id: "governance.accountability.funding.groundedIn", message: "Constitution, Article II Sections 6 and 7" }),
       power: translate({
         id: "governance.accountability.funding.power",
         message: "Receive ada from the Cardano Treasury to carry out work for the ecosystem, under the terms approved on-chain.",
