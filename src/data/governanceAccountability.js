@@ -248,6 +248,7 @@ export function getAccountabilityRoles() {
       },
       verifyAndAct: [
         { label: translate({ id: "governance.accountability.funding.act.1", message: "How treasury withdrawals must be justified" }), href: "/constitution#section-7-treasury-withdrawals-action-standards" },
+        { label: translate({ id: "governance.accountability.funding.act.2", message: "See the treasury balance and outflows" }), href: "/insights/supply/summary/#treasury" },
       ],
     },
   ];

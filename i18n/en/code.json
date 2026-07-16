@@ -4253,6 +4253,9 @@
   "governance.accountability.funding.act.1": {
     "message": "How treasury withdrawals must be justified"
   },
+  "governance.accountability.funding.act.2": {
+    "message": "See the treasury balance and outflows"
+  },
   "governance.accountability.link.expectations": {
     "message": "What is expected of them"
   },
