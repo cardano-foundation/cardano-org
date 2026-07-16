@@ -3984,19 +3984,7 @@
     "message": "Prefer another tool?"
   },
   "governance.delegate.alt.intro": {
-    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
-  },
-  "governance.delegate.alt.govtool": {
-    "message": "Intersect's full-feature governance interface."
-  },
-  "governance.delegate.alt.tempo": {
-    "message": "Browse, compare, and follow DReps with rich profiles."
-  },
-  "governance.delegate.alt.adastat": {
-    "message": "Track every governance action and DRep on-chain."
-  },
-  "governance.delegate.alt.cgov": {
-    "message": "Dashboard to monitor DReps and governance actions."
+    "message": "These community tools also support delegating your voting power to a DRep."
   },
   "governance.accountability.hero.title": {
     "message": "What the community expects"
