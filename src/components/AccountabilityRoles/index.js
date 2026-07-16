@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import clsx from "clsx";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -9,11 +9,21 @@ import styles from "./styles.module.css";
 
 // Map the deep-link hashes (also used by the top stat strip) to tab indexes.
 const HASH_TO_INDEX = { dreps: 0, committee: 1, spos: 2, funding: 3 };
+const INDEX_TO_ID = ["dreps", "committee", "spos", "funding"];
+const STORAGE_KEY = "cardano-accountability-role";
 
 export default function AccountabilityRoles() {
   const roles = getAccountabilityRoles();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const wrapperRef = useRef(null);
+
+  // Remember the chosen role in client-only localStorage (stored by role id so
+  // it survives any reordering of the roles).
+  const persist = useCallback((index) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, INDEX_TO_ID[index] ?? "");
+    } catch (e) {}
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -21,21 +31,37 @@ export default function AccountabilityRoles() {
     const applyHash = (scroll) => {
       const hash = window.location.hash.replace(/^#/, "").toLowerCase();
       const idx = HASH_TO_INDEX[hash];
-      if (idx == null) return;
+      if (idx == null) return false;
       setSelectedIndex(idx);
+      persist(idx);
       if (scroll) {
         wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+      return true;
     };
 
-    // Select the tab addressed by the URL hash on mount (client-only).
-    applyHash(true);
+    // Priority on mount: a URL hash (deep link) always wins and scrolls into
+    // view. Otherwise restore the last chosen role from localStorage without
+    // scrolling, so a normal page load stays at the top.
+    if (!applyHash(true)) {
+      try {
+        const idx = HASH_TO_INDEX[localStorage.getItem(STORAGE_KEY)];
+        // Restore the saved role on mount (client-only).
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        if (idx != null) setSelectedIndex(idx);
+      } catch (e) {}
+    }
 
     // Incoming hash changes (stat strip links, in-page anchors) switch tabs.
     const onHashChange = () => applyHash(true);
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
+  }, [persist]);
+
+  const handleSelect = (index) => {
+    setSelectedIndex(index);
+    persist(index);
+  };
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
@@ -57,7 +83,7 @@ export default function AccountabilityRoles() {
 
       <Tabs
         selectedIndex={selectedIndex}
-        onSelect={(index) => setSelectedIndex(index)}
+        onSelect={handleSelect}
         forceRenderTabPanel
       >
         <TabList className={styles.tabList}>
