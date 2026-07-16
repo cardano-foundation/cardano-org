@@ -389,25 +389,6 @@ export const Showcases = [
     },
   },
   {
-    title: "SecondFi",
-    description:
-      "Self-custody neofinance platform on Cardano for spending, trading, earning, and saving. The successor to Yoroi, built by EMURGO.",
-    tagline: "Self-custody neofinance, successor to Yoroi",
-    icon: "/img/app-icons/secondfi.png",
-    website: "https://secondfi.io",
-    source: null,
-    category: "wallet",
-    properties: ["nft", "mobile"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    walletFeatures: {
-      platforms: ["ios", "android", "browser"],
-      custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "hardware-wallet", "governance", "qr-claim"],
-      type: "light",
-    },
-  },
-  {
     title: "Cardano Updates",
     description:
       "Tracks Cardano development progress in real time, surfacing pull-request activity and release status without needing to dig through GitHub.",
