@@ -5,37 +5,6 @@
   margin-top: 0.5rem;
 }
 
-.quickNav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-.quickNavPill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ifm-font-color-base);
-  background-color: var(--ifm-background-surface-color, #fff);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.quickNavPill:hover {
-  border-color: var(--ifm-color-primary);
-  text-decoration: none;
-  color: var(--ifm-font-color-base);
-}
-
-[data-theme='dark'] .quickNavPill {
-  border-color: var(--ifm-color-emphasis-300);
-}
-
 .crossLinks {
   display: flex;
   flex-wrap: wrap;

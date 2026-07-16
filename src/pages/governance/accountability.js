@@ -9,9 +9,8 @@ import Divider from "@site/src/components/Layout/Divider";
 import Link from "@docusaurus/Link";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TermExplainer from "@site/src/components/TermExplainer";
-import AccountabilityRole from "@site/src/components/AccountabilityRole";
+import AccountabilityRoles from "@site/src/components/AccountabilityRoles";
 import AccountabilityStats from "@site/src/components/AccountabilityStats";
-import { getAccountabilityRoles } from "@site/src/data/governanceAccountability";
 import { translate } from "@docusaurus/Translate";
 import styles from "./accountability.module.css";
 
@@ -67,16 +66,6 @@ export default function AccountabilityPage() {
                   "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools.",
               })}
             </p>
-            <nav
-              className={styles.quickNav}
-              aria-label={translate({ id: "governance.accountability.quickNav.label", message: "Jump to a role" })}
-            >
-              {getAccountabilityRoles().map((role) => (
-                <a key={role.id} href={`#${role.id}`} className={styles.quickNavPill}>
-                  {role.title}
-                </a>
-              ))}
-            </nav>
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
@@ -86,9 +75,7 @@ export default function AccountabilityPage() {
           </BrowserOnly>
           <Divider text={translate({ id: "governance.accountability.divider.roles", message: "Standards by role" })} id="roles" />
           <SpacerBox size="small" />
-          {getAccountabilityRoles().map((role) => (
-            <AccountabilityRole key={role.id} role={role} liveValue={null} />
-          ))}
+          <AccountabilityRoles />
           <SpacerBox size="medium" />
         </BoundaryBox>
 
