@@ -34,7 +34,7 @@ export function getAccountabilityRoles() {
             message: "Publicly disclose any compensation received as a DRep in a timely manner, and never pay ada owners in exchange for delegation or their votes. A DRep may act in the interest of the ada owners who delegate to them.",
           }),
           source: translate({ id: "governance.accountability.dreps.obl.1.src", message: "Constitution, Article II Sections 2 and 4" }),
-          href: "/constitution",
+          href: "/constitution#section-4-delegated-representatives",
         },
         {
           text: translate({
@@ -247,7 +247,7 @@ export function getAccountabilityRoles() {
         },
       },
       verifyAndAct: [
-        { label: translate({ id: "governance.accountability.funding.act.1", message: "How treasury withdrawals must be justified" }), href: "/constitution" },
+        { label: translate({ id: "governance.accountability.funding.act.1", message: "How treasury withdrawals must be justified" }), href: "/constitution#section-7-treasury-withdrawals-action-standards" },
       ],
     },
   ];
