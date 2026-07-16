@@ -112,6 +112,12 @@ function GovernanceRolesSection() {
           {translate({id: 'governance.onboarding.together', message: 'Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone.'})}
         </HighlightCallout>
       </div>
+      <SpacerBox size="small" />
+      <p className={styles.accountabilityCta}>
+        <Link to="/governance/accountability" className="button button--primary">
+          {translate({id: 'governance.onboarding.accountabilityCta', message: 'See what the community expects of them'})}
+        </Link>
+      </p>
     </>
   );
 }

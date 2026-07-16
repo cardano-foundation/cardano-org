@@ -295,3 +295,9 @@
   gap: 1rem;
   align-items: stretch;
 }
+
+/* Centered CTA below the roles section pointing to the accountability hub */
+.accountabilityCta {
+  text-align: center;
+  margin: 0;
+}
