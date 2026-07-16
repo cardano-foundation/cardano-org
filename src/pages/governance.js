@@ -15,7 +15,10 @@ import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
-import AppGrid from "@site/src/components/AppGrid";
+import AppTileCarousel from "@site/src/components/AppTileCarousel";
+import { StarBadge } from "@site/src/components/AppTile";
+import { Showcases } from "@site/src/data/apps";
+import { compareByTxDesc } from "@site/src/utils/appStats";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -207,6 +210,16 @@ function ImpactTimeline() {
 }
 
 function ToolsGrid() {
+  // Same tiles as /apps: maintainer picks lead (star badge), then most active
+  // by on-chain transactions, then alphabetically.
+  const governanceApps = Showcases
+    .filter((app) => app.category === 'governance')
+    .sort((a, b) => {
+      const pickDiff = (b.maintainerPick ? 1 : 0) - (a.maintainerPick ? 1 : 0);
+      if (pickDiff !== 0) return pickDiff;
+      return compareByTxDesc(a, b) || a.title.localeCompare(b.title);
+    });
+
   return (
     <>
       <Divider text={translate({id: 'governance.divider.tools', message: 'Governance tools'})} id="tools" />
@@ -215,14 +228,17 @@ function ToolsGrid() {
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      <AppGrid
-        categories={['governance']}
-        showRank={false}
-        showStats={false}
-        prioritizeMaintainerPicks
-        ctaText={translate({id: 'governance.tools.cta', message: 'Visit'})}
-        moreTitle={translate({id: 'governance.tools.more', message: 'More tools'})}
+      <AppTileCarousel
+        apps={governanceApps}
+        ariaLabel={translate({id: 'governance.divider.tools', message: 'Governance tools'})}
+        renderBadge={(app) => (app.maintainerPick ? <StarBadge /> : null)}
       />
+      <SpacerBox size="small" />
+      <p>
+        <Link to="/apps?tags=governance">
+          {translate({id: 'governance.tools.more', message: 'More tools'})}
+        </Link>
+      </p>
     </>
   );
 }
