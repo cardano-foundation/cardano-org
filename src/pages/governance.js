@@ -15,8 +15,7 @@ import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
-import AppTileCarousel from "@site/src/components/AppTileCarousel";
-import { StarBadge } from "@site/src/components/AppTile";
+import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import { compareByTxDesc } from "@site/src/utils/appStats";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -210,14 +209,16 @@ function ImpactTimeline() {
 }
 
 function ToolsGrid() {
-  // Same tiles as /apps: maintainer picks lead (star badge), then most active
-  // by on-chain transactions, then alphabetically.
+  // Same tiles and ordering as the /apps category panels: most active by
+  // on-chain transactions first, maintainer pick as tiebreaker (star badge),
+  // then alphabetically for a stable order.
   const governanceApps = Showcases
     .filter((app) => app.category === 'governance')
     .sort((a, b) => {
-      const pickDiff = (b.maintainerPick ? 1 : 0) - (a.maintainerPick ? 1 : 0);
-      if (pickDiff !== 0) return pickDiff;
-      return compareByTxDesc(a, b) || a.title.localeCompare(b.title);
+      const txDiff = compareByTxDesc(a, b);
+      if (txDiff !== 0) return txDiff;
+      if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
+      return a.title.localeCompare(b.title);
     });
 
   return (
@@ -228,11 +229,11 @@ function ToolsGrid() {
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      <AppTileCarousel
-        apps={governanceApps}
-        ariaLabel={translate({id: 'governance.divider.tools', message: 'Governance tools'})}
-        renderBadge={(app) => (app.maintainerPick ? <StarBadge /> : null)}
-      />
+      <div className={styles.toolsGrid}>
+        {governanceApps.map((app) => (
+          <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
+        ))}
+      </div>
       <SpacerBox size="small" />
       <p>
         <Link to="/apps?tags=governance">

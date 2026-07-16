@@ -287,3 +287,11 @@
     margin-top: 0.75rem;
   }
 }
+
+/* Governance tools as a wrapping tile grid (same tiles as /apps, no carousel) */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
