@@ -125,7 +125,7 @@ export function getAccountabilityRoles() {
         },
       },
       verifyAndAct: [
-        { label: translate({ id: "governance.accountability.committee.act.1", message: "How a no-confidence vote or removal works" }), href: "/constitution#section-3-election-process-no-confidence-and-removal" },
+        { label: translate({ id: "governance.accountability.committee.act.1", message: "No-confidence and removal" }), href: "/constitution#section-3-election-process-no-confidence-and-removal" },
       ],
     },
     {
@@ -247,7 +247,7 @@ export function getAccountabilityRoles() {
         },
       },
       verifyAndAct: [
-        { label: translate({ id: "governance.accountability.funding.act.1", message: "How treasury withdrawals must be justified" }), href: "/constitution#section-7-treasury-withdrawals-action-standards" },
+        { label: translate({ id: "governance.accountability.funding.act.1", message: "How withdrawals are justified" }), href: "/constitution#section-7-treasury-withdrawals-action-standards" },
         { label: translate({ id: "governance.accountability.funding.act.2", message: "See the treasury balance and outflows" }), href: "/insights/supply/summary/#treasury" },
       ],
     },

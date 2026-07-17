@@ -4143,7 +4143,7 @@
     "message": "Find governance tools"
   },
   "governance.accountability.committee.act.1": {
-    "message": "How a no-confidence vote or removal works"
+    "message": "No-confidence and removal"
   },
   "governance.accountability.spos.title": {
     "message": "Stake Pool Operators"
@@ -4251,7 +4251,7 @@
     "message": "Explore governance tools"
   },
   "governance.accountability.funding.act.1": {
-    "message": "How treasury withdrawals must be justified"
+    "message": "How withdrawals are justified"
   },
   "governance.accountability.funding.act.2": {
     "message": "See the treasury balance and outflows"
