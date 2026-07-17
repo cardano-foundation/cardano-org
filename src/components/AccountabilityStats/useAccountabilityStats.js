@@ -8,7 +8,7 @@ const MAX_PAGES = 20;
 // The data.cardano.org proxy caps POST bodies (about 80 drep ids max), so
 // drep_info is queried in small batches. 50 is the safe size used elsewhere.
 const DREP_INFO_BATCH = 50;
-const STATS_CACHE_KEY = "cardano-accountability-stats-v1";
+const STATS_CACHE_KEY = "cardano-accountability-stats-v2";
 const STATS_CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 function readStatsCache() {
@@ -30,25 +30,6 @@ function writeStatsCache(figures) {
   } catch {
     // Quota exceeded or storage disabled - cache is best-effort.
   }
-}
-
-// Sum a paginated PostgREST list endpoint by walking limit/offset pages until
-// a short page is returned (fewer rows than the page size) or the iteration
-// cap is hit. The API does not expose a count header we can rely on in the
-// browser, so counting rows page by page is the verified approach. The path
-// must include an explicit order clause so row order is stable across pages.
-async function countAll(api, path, isCancelled) {
-  let total = 0;
-  for (let page = 0; page < MAX_PAGES; page += 1) {
-    if (isCancelled()) break;
-    const offset = page * PAGE_SIZE;
-    const separator = path.includes("?") ? "&" : "?";
-    const { data } = await api.get(`${path}${separator}limit=${PAGE_SIZE}&offset=${offset}`);
-    const rows = Array.isArray(data) ? data.length : 0;
-    total += rows;
-    if (rows < PAGE_SIZE) break;
-  }
-  return total;
 }
 
 // Collect all registered DRep ids by walking the paginated list.
@@ -90,20 +71,19 @@ async function countActiveDreps(api, isCancelled) {
 export default function useAccountabilityStats() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const [state, setState] = useState({ dreps: null, committee: null, spos: null, treasury: null });
+  const [state, setState] = useState({ dreps: null, committee: null, treasury: null });
 
   useEffect(() => {
     if (!API_URL) return undefined;
 
     const cached = readStatsCache();
     if (cached) {
-      // Hydrate all four figures from the client-only sessionStorage cache
-      // and skip fetching entirely.
+      // Hydrate the figures from the client-only sessionStorage cache and skip
+      // fetching entirely.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setState({
         dreps: cached.dreps ?? null,
         committee: cached.committee ?? null,
-        spos: cached.spos ?? null,
         treasury: cached.treasury ?? null,
       });
       return undefined;
@@ -113,10 +93,10 @@ export default function useAccountabilityStats() {
     let cancelled = false;
 
     // Track resolution of each figure separately from state so a fresh
-    // cache write only happens once all four have settled, and only when
-    // none of them came back null (a partial/failed result is never cached).
-    const resolved = { dreps: false, committee: false, spos: false, treasury: false };
-    const values = { dreps: null, committee: null, spos: null, treasury: null };
+    // cache write only happens once all have settled, and only when none of
+    // them came back null (a partial/failed result is never cached).
+    const resolved = { dreps: false, committee: false, treasury: false };
+    const values = { dreps: null, committee: null, treasury: null };
 
     // Each figure resolves independently: one call failing must not blank the others.
     const settle = (key, value) => {
@@ -144,10 +124,6 @@ export default function useAccountabilityStats() {
         settle("committee", seated);
       })
       .catch(() => settle("committee", null));
-
-    countAll(api, "/pool_list?pool_status=eq.registered&active_stake=gt.0&select=pool_id_bech32&order=pool_id_bech32", () => cancelled)
-      .then((count) => settle("spos", count))
-      .catch(() => settle("spos", null));
 
     api.get("/tip")
       .then(async (tip) => {

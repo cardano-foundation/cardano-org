@@ -26,8 +26,17 @@ function TreasuryFigure({ target, href, label }) {
   );
 }
 
+function StaticFigure({ value, href, label }) {
+  return (
+    <Link href={href} className={styles.figure}>
+      <span className={styles.value}>{value}</span>
+      <span className={styles.label}>{label}</span>
+    </Link>
+  );
+}
+
 export default function AccountabilityStats() {
-  const { dreps, committee, spos, treasury } = useAccountabilityStats();
+  const { dreps, committee, treasury } = useAccountabilityStats();
   return (
     <div className={styles.strip}>
       <IntFigure
@@ -40,8 +49,8 @@ export default function AccountabilityStats() {
         href="#committee"
         label={translate({ id: "governance.accountability.stat.committee", message: "Committee members" })}
       />
-      <IntFigure
-        target={spos}
+      <StaticFigure
+        value="1000+"
         href="#spos"
         label={translate({ id: "governance.accountability.stat.spos", message: "Active stake pools" })}
       />
