@@ -98,13 +98,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.popularArrow {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  color: var(--ifm-color-primary);
-  font-size: 0.9rem;
-}
 
 .row {
   position: relative;

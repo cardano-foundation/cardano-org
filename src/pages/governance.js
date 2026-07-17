@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "@docusaurus/Head";
+import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -14,7 +15,9 @@ import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
-import AppGrid from "@site/src/components/AppGrid";
+import AppTile, { StarBadge } from "@site/src/components/AppTile";
+import { Showcases } from "@site/src/data/apps";
+import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -43,6 +46,9 @@ function GovernanceRolesSection() {
       title={translate({id: 'governance.onboarding.dreps.title', message: 'Delegated Representatives'})}
     >
       {translate({id: 'governance.onboarding.dreps.text', message: 'DReps vote on governance proposals on behalf of ada holders who delegate to them.'})}
+      <Link to="/governance/accountability#dreps" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
   const spo = (
@@ -51,7 +57,10 @@ function GovernanceRolesSection() {
       icon={<FaServer />}
       title={translate({id: 'governance.onboarding.spos.title', message: 'Stake Pool Operators'})}
     >
-      {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-critical parameters, and no-confidence motions.'})}
+      {translate({id: 'governance.onboarding.spos.text', message: 'SPOs validate transactions and vote on hard forks, security-relevant parameters, and no-confidence motions.'})}
+      <Link to="/governance/accountability#spos" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
   const committee = (
@@ -61,6 +70,9 @@ function GovernanceRolesSection() {
       title={translate({id: 'governance.onboarding.cc.title', message: 'Constitutional Committee'})}
     >
       {translate({id: 'governance.onboarding.cc.text', message: 'The Constitutional Committee ensures that governance proposals align with Cardano\'s constitution.'})}
+      <Link to="/governance/accountability#committee" className={styles.roleLink}>
+        {translate({id: 'governance.accountability.link.expectations', message: 'What is expected of them'})}
+      </Link>
     </RoleCard>
   );
 
@@ -100,12 +112,29 @@ function GovernanceRolesSection() {
           {translate({id: 'governance.onboarding.together', message: 'Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone.'})}
         </HighlightCallout>
       </div>
+      <SpacerBox size="small" />
+      <p className={styles.accountabilityCta}>
+        <Link to="/governance/accountability" className="button button--primary">
+          {translate({id: 'governance.onboarding.accountabilityCta', message: 'See what the community expects of them'})}
+        </Link>
+      </p>
     </>
   );
 }
 
 
 const milestones = [
+  {
+    titleId: "governance.impact.params.title",
+    title: "SPOs and DReps voted on Plutus limits",
+    textId: "governance.impact.params.text",
+    text: "The community voted on raising Plutus execution limits to expand smart contract capacity, letting DApps run more logic per transaction.",
+    date: "February 2026",
+    blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
+    banner: "/img/governance/params.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
+  },
   {
     titleId: "governance.impact.constitution.title",
     title: "Constitution updated with 79% support",
@@ -116,6 +145,17 @@ const milestones = [
     banner: "/img/governance/constitution.webp",
     categoryId: "governance.impact.category.constitution",
     category: "Constitution",
+  },
+  {
+    titleId: "governance.impact.hardfork.title",
+    title: "Hard fork to Protocol v11 proposed",
+    textId: "governance.impact.hardfork.text",
+    text: "The community began coordinating the next protocol upgrade to Protocol Version 11 through the governance process, forming a working group to gather feedback before any formal governance action.",
+    date: "November 2025",
+    blog: "/news/2025-11-20-hard-fork-proposal",
+    banner: "/img/governance/hardfork.webp",
+    categoryId: "governance.impact.category.protocol",
+    category: "Protocol",
   },
   {
     titleId: "governance.impact.committee.title",
@@ -138,28 +178,6 @@ const milestones = [
     banner: "/img/governance/treasury.webp",
     categoryId: "governance.impact.category.treasury",
     category: "Treasury",
-  },
-  {
-    titleId: "governance.impact.hardfork.title",
-    title: "Hard fork proposals approved",
-    textId: "governance.impact.hardfork.text",
-    text: "Protocol upgrades including the Plomin hard fork were proposed and ratified through community governance.",
-    date: "November 2025",
-    blog: "/news/2025-11-20-hard-fork-proposal",
-    banner: "/img/governance/hardfork.webp",
-    categoryId: "governance.impact.category.protocol",
-    category: "Protocol",
-  },
-  {
-    titleId: "governance.impact.params.title",
-    title: "Protocol parameters changed",
-    textId: "governance.impact.params.text",
-    text: "SPOs and DReps voted on protocol parameter changes, including stake pool economics and governance thresholds.",
-    date: "February 2026",
-    blog: "/news/2026-02-10-call-to-action-spo-parameter-changes",
-    banner: "/img/governance/params.webp",
-    categoryId: "governance.impact.category.protocol",
-    category: "Protocol",
   },
 ];
 
@@ -196,6 +214,13 @@ function ImpactTimeline() {
   );
 }
 
+// Same tiles and ordering as the /apps category panels: most active by
+// on-chain transactions first, maintainer pick as tiebreaker (star badge),
+// then alphabetically for a stable order.
+const GOVERNANCE_TOOLS = Showcases
+  .filter((app) => app.category === 'governance')
+  .sort(compareByActivityThenPick);
+
 function ToolsGrid() {
   return (
     <>
@@ -205,14 +230,17 @@ function ToolsGrid() {
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      <AppGrid
-        categories={['governance']}
-        showRank={false}
-        showStats={false}
-        prioritizeMaintainerPicks
-        ctaText={translate({id: 'governance.tools.cta', message: 'Visit'})}
-        moreTitle={translate({id: 'governance.tools.more', message: 'More tools'})}
-      />
+      <div className={styles.toolsGrid}>
+        {GOVERNANCE_TOOLS.map((app) => (
+          <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
+        ))}
+      </div>
+      <SpacerBox size="small" />
+      <p>
+        <Link to="/apps?tags=governance">
+          {translate({id: 'governance.tools.more', message: 'More tools'})}
+        </Link>
+      </p>
     </>
   );
 }

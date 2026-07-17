@@ -159,6 +159,11 @@ export const Properties = {
     description: "Open-source code is available and can be inspected, forked, or contributed to.",
     color: '#8C2F00',  // Dark Orange-Red
   },
+  drepdelegation: {
+    label: "DRep Delegation",
+    description: "You can delegate your voting power to a DRep directly in this app.",
+    color: '#0B6E4F',  // Dark Green
+  },
 };
 
 // Backwards-compat union for components that look up tag metadata by name without
@@ -1014,7 +1019,7 @@ export const Showcases = [
     website: "https://gov.tools",
     source: null,
     category: "governance",
-    properties: [],
+    properties: ["drepdelegation"],
     maintainerPick: false,
     beginnerFriendly: false,
   },
@@ -1109,7 +1114,7 @@ export const Showcases = [
     website: "https://tempo.vote",
     source: null,
     category: "governance",
-    properties: [],
+    properties: ["drepdelegation"],
     maintainerPick: false,
     beginnerFriendly: false,
   },
@@ -1915,7 +1920,7 @@ export const Showcases = [
     website: "https://dreptalk.com",
     source: "https://github.com/katomm/dreptalk.com",
     category: "governance",
-    properties: ["opensource"],
+    properties: ["opensource", "drepdelegation"],
     maintainerPick: false,
     beginnerFriendly: false,
     x: "dreptalkcom",

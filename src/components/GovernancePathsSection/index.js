@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { FaArrowRight, FaBookOpen, FaVoteYea, FaBullhorn } from "react-icons/fa";
+import { FaBookOpen, FaVoteYea, FaBullhorn } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { translate } from "@docusaurus/Translate";
@@ -107,9 +107,6 @@ export default function GovernancePathsSection() {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    {isSelected && (
-                      <FaArrowRight className={styles.stepArrow} aria-hidden="true" />
-                    )}
                     <div className={styles.stepText}>
                       <div className={styles.tabLabel}>{path.label}</div>
                       <div className={styles.tabSubtitle}>{path.subtitle}</div>

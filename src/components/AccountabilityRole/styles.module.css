@@ -1,0 +1,257 @@
+.role {
+  --role-accent: 0 51 173;
+  --role-accent-text: var(--role-accent);
+  --role-accent-tile-alpha: 0.1;
+  position: relative;
+  background-color: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.75rem;
+}
+
+.detailMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: rgb(var(--role-accent));
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  background-color: rgb(var(--role-accent) / var(--role-accent-tile-alpha));
+  color: rgb(var(--role-accent));
+}
+
+.power {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.role h3 {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.obligations,
+.expectations {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+}
+
+.source {
+  font-size: 0.85rem;
+  color: rgb(var(--role-accent-text));
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background-color: rgb(var(--role-accent) / 0.05);
+  border: 1px solid rgb(var(--role-accent) / 0.18);
+  align-self: start;
+}
+
+.sidebarTitle {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgb(var(--role-accent-text));
+}
+
+.sidebarRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sidebarLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.sidebarValue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-base);
+}
+
+.benchmarkItem {
+  line-height: 1.45;
+}
+
+.curatedValue {
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.sidebarButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgb(var(--role-accent));
+  border: 1px solid rgb(var(--role-accent));
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.primaryBtn:hover {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(var(--role-accent-text));
+  background-color: transparent;
+  border: 1px solid rgb(var(--role-accent) / 0.45);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  color: rgb(var(--role-accent-text));
+  background-color: rgb(var(--role-accent) / var(--role-accent-tile-alpha));
+  border-color: rgb(var(--role-accent) / 0.6);
+  text-decoration: none;
+}
+
+.sidebarFooter {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.accent_blue   { --role-accent: 0 51 173; }
+.accent_teal   { --role-accent: 0 163 163; --role-accent-text: 0 122 122; }
+.accent_violet { --role-accent: 91 77 240; }
+.accent_green  { --role-accent: 16 161 122; --role-accent-text: 11 122 92; }
+
+[data-theme='dark'] .role {
+  --role-accent-tile-alpha: 0.18;
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme='dark'] .sidebar {
+  background-color: rgb(var(--role-accent) / 0.1);
+  border-color: rgb(var(--role-accent) / 0.28);
+}
+
+/* Keep the primary button text readable on the lighter dark-mode accents. */
+[data-theme='dark'] .primaryBtn {
+  color: #06122b;
+}
+
+[data-theme='dark'] .primaryBtn:hover {
+  color: #06122b;
+}
+
+[data-theme='dark'] .accent_blue   { --role-accent: 143 177 255; }
+[data-theme='dark'] .accent_teal   { --role-accent: 80 207 207; --role-accent-text: 80 207 207; }
+[data-theme='dark'] .accent_violet { --role-accent: 146 134 255; }
+[data-theme='dark'] .accent_green  { --role-accent: 52 211 153; --role-accent-text: 52 211 153; }
+
+@media (max-width: 996px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailGrid {
+    padding: 1.25rem;
+  }
+
+  .head h2 {
+    font-size: 1.15rem;
+  }
+
+  .icon {
+    width: 2.15rem;
+    height: 2.15rem;
+    font-size: 1rem;
+  }
+}
+
+.sidebarFooterLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sidebarFooterLink:hover {
+  color: rgb(var(--role-accent-text));
+}

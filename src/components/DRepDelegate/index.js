@@ -15,7 +15,7 @@ import styles from "./styles.module.css";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
 
-const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
+const VP_MIN_LOVELACE = 100_000_000_000;     // 100k ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
 const DISPLAY_COUNT = 8;
 // data.cardano.org proxy caps POST bodies at 5120 bytes — ~80 drep_ids max per batch.

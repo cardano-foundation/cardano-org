@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo, useId } from "react";
 import clsx from "clsx";
 import {
-  FaArrowRight,
   FaBullhorn,
   FaCog,
   FaPlus,
@@ -169,7 +168,6 @@ export default function GovernanceFAQ({ data }) {
                 <span className={styles.popularNumber}>{String(i + 1).padStart(2, "0")}</span>
                 <span className={styles.popularQuestion}>{entry.question}</span>
                 <span className={styles.popularSummary}>{entry.popular}</span>
-                <FaArrowRight className={styles.popularArrow} aria-hidden="true" />
               </button>
             ))}
           </div>

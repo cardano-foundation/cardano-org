@@ -76,6 +76,14 @@
   margin: 0 auto;
 }
 
+.roleLink {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--role-accent-solid);
+}
+
 @media (max-width: 768px) {
   .rolesTriangle {
     grid-template-columns: 1fr;
@@ -278,4 +286,18 @@
     display: inline-block;
     margin-top: 0.75rem;
   }
+}
+
+/* Governance tools as a wrapping tile grid (same tiles as /apps, no carousel) */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Centered CTA below the roles section pointing to the accountability hub */
+.accountabilityCta {
+  text-align: center;
+  margin: 0;
 }

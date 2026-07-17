@@ -285,11 +285,6 @@
   color: var(--ifm-color-emphasis-900);
 }
 
-.walletChipArrow {
-  color: var(--ifm-color-primary);
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
 
 .browseAll {
   display: inline-flex;
@@ -359,10 +354,6 @@
   margin-top: 0.15rem;
 }
 
-.featureTileArrow {
-  color: var(--ifm-color-primary);
-  font-size: 0.9rem;
-}
 
 .reassurance {
   display: inline-flex;
