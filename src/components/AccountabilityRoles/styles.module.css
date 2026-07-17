@@ -95,12 +95,15 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-/* Panels: keep all in the DOM (forceRenderTabPanel) but only show the selected one. */
+/* Panels: keep all in the DOM (forceRenderTabPanel) but only show the selected one.
+   The selected rule needs higher specificity than .panel: the production CSS
+   optimizer merges equal-specificity rules by declaration and can reorder them,
+   which would otherwise let .panel (display:none) win over .panelSelected. */
 .panel {
   display: none;
 }
 
-.panelSelected {
+.panel.panelSelected {
   display: block;
 }
 
