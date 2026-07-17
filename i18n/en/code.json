@@ -4179,7 +4179,10 @@
     "message": "Publishes contact details and keeps pool metadata current."
   },
   "governance.accountability.spos.exp.3": {
-    "message": "Takes part in the governance votes open to stake pools."
+    "message": "Takes part in the votes open to stake pools, sharing arguments and reasoning, not just casting a vote."
+  },
+  "governance.accountability.spos.exp.4": {
+    "message": "Understands running online infrastructure and Cardano's parameters and mechanisms."
   },
   "governance.accountability.spos.curated.1.label": {
     "message": "Registered stake pools"
