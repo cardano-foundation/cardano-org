@@ -242,13 +242,12 @@ export function getAccountabilityRoles() {
           },
         ],
         checkIndividuals: {
-          label: translate({ id: "governance.accountability.funding.check", message: "Explore governance tools" }),
-          href: "/apps?tags=governance",
+          label: translate({ id: "governance.accountability.funding.check", message: "Treasury balance and outflows" }),
+          href: "/insights/supply/summary/#treasury",
         },
       },
       verifyAndAct: [
         { label: translate({ id: "governance.accountability.funding.act.1", message: "How withdrawals are justified" }), href: "/constitution#section-7-treasury-withdrawals-action-standards" },
-        { label: translate({ id: "governance.accountability.funding.act.2", message: "See the treasury balance and outflows" }), href: "/insights/supply/summary/#treasury" },
       ],
     },
   ];

@@ -4248,13 +4248,10 @@
     "message": "See governance tools"
   },
   "governance.accountability.funding.check": {
-    "message": "Explore governance tools"
+    "message": "Treasury balance and outflows"
   },
   "governance.accountability.funding.act.1": {
     "message": "How withdrawals are justified"
-  },
-  "governance.accountability.funding.act.2": {
-    "message": "See the treasury balance and outflows"
   },
   "governance.accountability.link.expectations": {
     "message": "What is expected of them"
