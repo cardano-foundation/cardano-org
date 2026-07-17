@@ -144,7 +144,7 @@ export default function useAccountabilityStats() {
       })
       .catch(() => settle("committee", null));
 
-    countAll(api, "/pool_list?pool_status=eq.registered&select=pool_id_bech32&order=pool_id_bech32", () => cancelled)
+    countAll(api, "/pool_list?pool_status=eq.registered&active_stake=gt.0&select=pool_id_bech32&order=pool_id_bech32", () => cancelled)
       .then((count) => settle("spos", count))
       .catch(() => settle("spos", null));
 

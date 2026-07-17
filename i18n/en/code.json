@@ -4020,7 +4020,7 @@
     "message": "Committee members"
   },
   "governance.accountability.stat.spos": {
-    "message": "Registered stake pools"
+    "message": "Active stake pools"
   },
   "governance.accountability.stat.treasury": {
     "message": "Treasury"
@@ -4185,7 +4185,7 @@
     "message": "Understands running online infrastructure and Cardano's parameters and mechanisms."
   },
   "governance.accountability.spos.curated.1.label": {
-    "message": "Registered stake pools"
+    "message": "Active stake pools"
   },
   "governance.accountability.spos.curated.1.value": {
     "message": "See pool tools"

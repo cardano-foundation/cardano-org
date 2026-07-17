@@ -169,7 +169,7 @@ export function getAccountabilityRoles() {
         liveKey: "spos",
         curated: [
           {
-            label: translate({ id: "governance.accountability.spos.curated.1.label", message: "Registered stake pools" }),
+            label: translate({ id: "governance.accountability.spos.curated.1.label", message: "Active stake pools" }),
             value: translate({ id: "governance.accountability.spos.curated.1.value", message: "See pool tools" }),
           },
         ],
