@@ -163,7 +163,7 @@ export function getAccountabilityRoles() {
         translate({ id: "governance.accountability.spos.exp.1", message: "Runs reliable, well-configured infrastructure with high uptime." }),
         translate({ id: "governance.accountability.spos.exp.4", message: "Understands running online infrastructure and Cardano's parameters and mechanisms." }),
         translate({ id: "governance.accountability.spos.exp.2", message: "Publishes contact details and keeps pool metadata current." }),
-        translate({ id: "governance.accountability.spos.exp.3", message: "Takes part in the votes open to stake pools, sharing arguments and reasoning, not just casting a vote." }),
+        translate({ id: "governance.accountability.spos.exp.3", message: "Takes part in the votes open to stake pools, sharing arguments and reasoning, on top of casting a vote." }),
       ],
       benchmarks: {
         liveKey: "spos",
