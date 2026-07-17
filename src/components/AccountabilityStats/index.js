@@ -26,10 +26,12 @@ function TreasuryFigure({ target, href, label }) {
   );
 }
 
-function StaticFigure({ value, href, label }) {
+// Counts up to an approximate floor and keeps the "+" suffix (e.g. "1000+").
+function ApproxFigure({ target, href, label }) {
+  const animated = useCountUp(target);
   return (
     <Link href={href} className={styles.figure}>
-      <span className={styles.value}>{value}</span>
+      <span className={styles.value}>{Math.round(animated)}+</span>
       <span className={styles.label}>{label}</span>
     </Link>
   );
@@ -49,8 +51,8 @@ export default function AccountabilityStats() {
         href="#committee"
         label={translate({ id: "governance.accountability.stat.committee", message: "Committee members" })}
       />
-      <StaticFigure
-        value="1000+"
+      <ApproxFigure
+        target={1000}
         href="#spos"
         label={translate({ id: "governance.accountability.stat.spos", message: "Active stake pools" })}
       />
