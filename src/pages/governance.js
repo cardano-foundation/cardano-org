@@ -17,7 +17,7 @@ import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
-import { compareByTxDesc } from "@site/src/utils/appStats";
+import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -214,19 +214,14 @@ function ImpactTimeline() {
   );
 }
 
-function ToolsGrid() {
-  // Same tiles and ordering as the /apps category panels: most active by
-  // on-chain transactions first, maintainer pick as tiebreaker (star badge),
-  // then alphabetically for a stable order.
-  const governanceApps = Showcases
-    .filter((app) => app.category === 'governance')
-    .sort((a, b) => {
-      const txDiff = compareByTxDesc(a, b);
-      if (txDiff !== 0) return txDiff;
-      if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
-      return a.title.localeCompare(b.title);
-    });
+// Same tiles and ordering as the /apps category panels: most active by
+// on-chain transactions first, maintainer pick as tiebreaker (star badge),
+// then alphabetically for a stable order.
+const GOVERNANCE_TOOLS = Showcases
+  .filter((app) => app.category === 'governance')
+  .sort(compareByActivityThenPick);
 
+function ToolsGrid() {
   return (
     <>
       <Divider text={translate({id: 'governance.divider.tools', message: 'Governance tools'})} id="tools" />
@@ -236,7 +231,7 @@ function ToolsGrid() {
       </p>
       <SpacerBox size="small" />
       <div className={styles.toolsGrid}>
-        {governanceApps.map((app) => (
+        {GOVERNANCE_TOOLS.map((app) => (
           <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
         ))}
       </div>

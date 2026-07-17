@@ -51,7 +51,6 @@ export function getAccountabilityRoles() {
         translate({ id: "governance.accountability.dreps.exp.3", message: "Votes consistently and discloses conflicts of interest." }),
       ],
       benchmarks: {
-        liveKey: "dreps",
         curated: [
           {
             label: translate({ id: "governance.accountability.dreps.curated.1.label", message: "Participation on recent actions" }),
@@ -112,7 +111,6 @@ export function getAccountabilityRoles() {
         translate({ id: "governance.accountability.committee.exp.3", message: "Members disclose potential conflicts of interest." }),
       ],
       benchmarks: {
-        liveKey: "committee",
         curated: [
           {
             label: translate({ id: "governance.accountability.committee.curated.1.label", message: "Published decisions and votes" }),
@@ -166,7 +164,6 @@ export function getAccountabilityRoles() {
         translate({ id: "governance.accountability.spos.exp.3", message: "Takes part in the votes open to stake pools, sharing arguments and reasoning, on top of casting a vote." }),
       ],
       benchmarks: {
-        liveKey: "spos",
         curated: [
           {
             label: translate({ id: "governance.accountability.spos.curated.1.label", message: "Active stake pools" }),
@@ -235,7 +232,6 @@ export function getAccountabilityRoles() {
         translate({ id: "governance.accountability.funding.exp.3", message: "Delivers what was proposed and returns unused funds where applicable." }),
       ],
       benchmarks: {
-        liveKey: "treasury",
         curated: [
           {
             label: translate({ id: "governance.accountability.funding.curated.1.label", message: "Treasury withdrawals enacted on-chain" }),

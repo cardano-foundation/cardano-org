@@ -11,7 +11,7 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { translate } from "@docusaurus/Translate";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
-import { compareByTxDesc } from "@site/src/utils/appStats";
+import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./delegate.module.css";
 
 // Apps carrying the drepdelegation property support delegating voting power
@@ -19,12 +19,7 @@ import styles from "./delegate.module.css";
 // maintainer pick as tiebreaker, then alphabetical for a stable order.
 const DELEGATION_APPS = Showcases
   .filter((app) => app.properties.includes("drepdelegation"))
-  .sort((a, b) => {
-    const txDiff = compareByTxDesc(a, b);
-    if (txDiff !== 0) return txDiff;
-    if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
-    return a.title.localeCompare(b.title);
-  });
+  .sort(compareByActivityThenPick);
 
 const DRepDelegate = lazy(() =>
   import(/* webpackChunkName: "drep-delegate" */ "@site/src/components/DRepDelegate")

@@ -72,6 +72,7 @@ async function fetchRegisteredDrepIds(api, isCancelled) {
 // small batches, and the active ones are tallied.
 async function countActiveDreps(api, isCancelled) {
   const ids = await fetchRegisteredDrepIds(api, isCancelled);
+  if (isCancelled()) return 0;
   const batches = [];
   for (let i = 0; i < ids.length; i += DREP_INFO_BATCH) {
     batches.push(ids.slice(i, i + DREP_INFO_BATCH));

@@ -54,6 +54,16 @@ export function compareByTxDesc(a, b) {
   return getTxCount(b) - getTxCount(a);
 }
 
+// Rank showcase apps like the /apps category panels: most active by on-chain
+// transactions first, maintainer pick as the tiebreak, then title for a stable
+// alphabetical order.
+export function compareByActivityThenPick(a, b) {
+  const txDiff = compareByTxDesc(a, b);
+  if (txDiff !== 0) return txDiff;
+  if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
+  return a.title.localeCompare(b.title);
+}
+
 export function isTrackable(app) {
   return Categories[app.category]?.trackable ?? false;
 }

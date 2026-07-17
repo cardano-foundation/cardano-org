@@ -134,13 +134,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.liveValue {
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: rgb(var(--role-accent));
-}
-
 .sidebarButtons {
   display: flex;
   flex-direction: column;
@@ -250,10 +243,6 @@
     width: 2.15rem;
     height: 2.15rem;
     font-size: 1rem;
-  }
-
-  .liveValue {
-    font-size: 1.5rem;
   }
 }
 

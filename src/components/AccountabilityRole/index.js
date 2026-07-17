@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
 
-export default function AccountabilityRole({ role, liveValue }) {
+export default function AccountabilityRole({ role }) {
   return (
     <section
       id={role.id}
@@ -51,9 +51,6 @@ export default function AccountabilityRole({ role, liveValue }) {
               {translate({ id: "governance.accountability.label.benchmark", message: "Benchmark" })}
             </span>
             <span className={styles.sidebarValue}>
-              {role.benchmarks.liveKey && liveValue != null && (
-                <span className={styles.liveValue}>{liveValue}</span>
-              )}
               {role.benchmarks.curated.map((c, i) => (
                 <span key={i} className={styles.benchmarkItem}>
                   {c.label}: <span className={styles.curatedValue}>{c.value}</span>
