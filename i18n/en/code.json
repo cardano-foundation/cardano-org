@@ -2541,7 +2541,7 @@
     "message": "Cardano Hard Forks, Network Upgrade History"
   },
   "hardforks.layout.description": {
-    "message": "A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved."
+    "message": "A complete timeline of Cardano hard forks from Byron to van Rossem. Explore each network upgrade, what changed, and how the protocol has evolved."
   },
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
