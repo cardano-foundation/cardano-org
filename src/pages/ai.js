@@ -767,6 +767,38 @@ export default function AiPage() {
               </Translate>
             </p>
 
+            <p className={styles.methodsIntro}>
+              <Translate id="ai.x402.methodsIntro">
+                The exact scheme on Cardano supports three asset transfer methods:
+              </Translate>
+            </p>
+            <ul className={styles.methodsList}>
+              <li>
+                <strong>
+                  <Translate id="ai.x402.method1.title">Address-to-address payments</Translate>
+                </strong>{" "}
+                <Translate id="ai.x402.method1.desc">
+                  similar to the regular x402 specification on other chains.
+                </Translate>
+              </li>
+              <li>
+                <strong>
+                  <Translate id="ai.x402.method2.title">The Masumi Smart Protocol</Translate>
+                </strong>{" "}
+                <Translate id="ai.x402.method2.desc">
+                  which adds decentralised refund mechanics and decision logging.
+                </Translate>
+              </li>
+              <li>
+                <strong>
+                  <Translate id="ai.x402.method3.title">Script payments</Translate>
+                </strong>{" "}
+                <Translate id="ai.x402.method3.desc">
+                  paying to scripts with parameters applied while building the transaction.
+                </Translate>
+              </li>
+            </ul>
+
             <div className={styles.tblWrap}>
               <table className={styles.cmpTable}>
                 <thead>
@@ -779,7 +811,7 @@ export default function AiPage() {
                       <Translate id="ai.x402.colCardano">Cardano x402</Translate>
                     </th>
                     <th className={styles.thHl}>
-                      <Translate id="ai.x402.colMasumi">Cardano + Masumi x402</Translate>
+                      <Translate id="ai.x402.colMasumi">Cardano Masumi x402</Translate>
                     </th>
                   </tr>
                 </thead>

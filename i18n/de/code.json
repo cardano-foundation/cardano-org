@@ -4562,7 +4562,7 @@
     "message": "Cardano x402"
   },
   "ai.x402.colMasumi": {
-    "message": "Cardano + Masumi x402"
+    "message": "Cardano Masumi x402"
   },
   "ai.x402.row1.name": {
     "message": "Normale Adress-Zahlungen"
@@ -4659,5 +4659,26 @@
   },
   "navbar.mega.description.AI Agents": {
     "message": "Warum KI Cardano braucht"
+  },
+  "ai.x402.methodsIntro": {
+    "message": "Das exact-Schema auf Cardano unterstützt drei Methoden für den Werttransfer:"
+  },
+  "ai.x402.method1.title": {
+    "message": "Adresse-zu-Adresse-Zahlungen"
+  },
+  "ai.x402.method1.desc": {
+    "message": "ähnlich der regulären x402-Spezifikation auf anderen Chains."
+  },
+  "ai.x402.method2.title": {
+    "message": "Das Masumi Smart Protocol"
+  },
+  "ai.x402.method2.desc": {
+    "message": "das dezentrale Rückerstattungsmechaniken und Entscheidungsprotokolle ergänzt."
+  },
+  "ai.x402.method3.title": {
+    "message": "Script-Zahlungen"
+  },
+  "ai.x402.method3.desc": {
+    "message": "Zahlungen an Scripts, deren Parameter beim Erstellen der Transaktion angewendet werden."
   }
 }
