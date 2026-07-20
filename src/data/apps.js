@@ -1906,6 +1906,21 @@ export const Showcases = [
     x: "PythNetwork",
   },
   {
+    title: "Skulliance",
+    description:
+      "Play Free Match 3 RPG Games, Embark on Missions, Build your Realm, Raid Rivals, Survive Gauntlets, Stake Cardano NFTs, and Earn Rewards on Mobile and Browser.",
+    tagline: "Match 3 RPG Games, Missions, Raids, Gauntlets & NFT Staking",
+    preview: require("./app-screenshots/skulliance.webp"),
+    icon: "/img/app-icons/skulliance.png",
+    website: "https://www.skulliance.io/",
+    source: null,
+    category: "game",
+    properties: ["nft"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "skulliance",
+  },
+  {
     title: "DRepTalk",
     description:
       "Governance tool for Cardano: delegate your voting power to a DRep, register as a DRep, and discuss every on-chain governance action beside live vote data.",
