@@ -23,19 +23,23 @@ function getTimelineItems() {
   return [
     {
       era: "Conway Era",
-      date: "June, 2026 (tentative)",
+      date: "July 18, 2026",
       name: "van Rossem",
       description: translate({
         id: "hardforks.timeline.vanrossem.description",
         message:
-          "Inter-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins",
+          "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins",
       }),
       epochLabel: labelEpoch(),
-      epoch: "tbd",
+      epoch: "644",
       meta: [
         { label: labelProtocolVersion(), value: "11.0" },
-        { label: labelTransactionIds(), value: "tbd" },
+        {
+          label: labelTransactionId(),
+          value: "fdd468da5cc4ac8431dcd7e2b3211666c73bc229f85879469f67f1d9d51d344d",
+        },
       ],
+      active: true,
     },
     {
       era: "Conway Era",
@@ -51,11 +55,10 @@ function getTimelineItems() {
       meta: [
         { label: labelProtocolVersion(), value: "10.0" },
         {
-          label: labelTransactionIds(),
-          value: "0b19476e40bbbb5e1e8ce153523762e2b6859e7ecacbaf06eaa0ee6a447e79b9",
+          label: labelTransactionId(),
+          value: "0b19476e40bbbb5e1e8ce153523762e2b6859e7ecacbaf06eae0ee6a447e79b9",
         },
       ],
-      active: true,
     },
     {
       era: "Conway Era",
@@ -239,7 +242,7 @@ export default function Home() {
       description={translate({
         id: "hardforks.layout.description",
         message:
-          "A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved.",
+          "A complete timeline of Cardano hard forks from Byron to van Rossem. Explore each network upgrade, what changed, and how the protocol has evolved.",
       })}
     >
       <OpenGraphInfo pageName="hard-forks" />
