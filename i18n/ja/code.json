@@ -1960,6 +1960,26 @@
   "constitution.layout.description": {
     "message": "Cardano憲法を探索しましょう：Cardanoブロックチェーンのガバナンスフレームワーク。現在制定されている憲章を読み、批准の経緯をたどり、IPFS経由で全文をダウンロードできます。"
   },
+  "constitution.history.unavailable": {
+    "message": "Live ratification history is currently unavailable.",
+    "description": "Shown when the live API call for the ratification history fails"
+  },
+  "constitution.meta.enactedAt": {
+    "message": "Enacted at epoch",
+    "description": "Label before the enacted epoch number in the constitution header"
+  },
+  "constitution.toc.title": {
+    "message": "Contents",
+    "description": "Constitution table-of-contents heading"
+  },
+  "constitution.verify.match": {
+    "message": "Matches the current on-chain constitution",
+    "description": "Badge shown when the displayed constitution matches the on-chain enacted version"
+  },
+  "constitution.verify.newer": {
+    "message": "A newer version (epoch {epoch}) was enacted on-chain; showing the last published copy.",
+    "description": "Notice when a newer constitution version exists on-chain; {epoch} is replaced with the epoch number"
+  },
   "contact.hero.title": {
     "message": "Contact | cardano.org"
   },
@@ -2203,20 +2223,11 @@
   "events.hero.description": {
     "message": "今後のCardanoイベントをまとめてチェック。コミュニティとつながり、学び、共に成長するチャンスを見逃さないで。"
   },
-  "events.pagination.previous": {
-    "message": "前へ"
-  },
-  "events.pagination.next": {
-    "message": "次へ"
-  },
   "events.meta.title": {
     "message": "Cardano Events | cardano.org"
   },
   "events.meta.description": {
     "message": "今後のCardanoイベントをまとめてチェック。コミュニティとつながり、学び、共に成長するチャンスを見逃さないで。"
-  },
-  "events.divider.discoverWorldwide": {
-    "message": "世界中のCardanoイベントを発見"
   },
   "events.platforms.luma": {
     "message": "Luma.comのイベント"
@@ -2224,17 +2235,101 @@
   "events.platforms.meetup": {
     "message": "Meetup.comのイベント"
   },
-  "events.divider.upcomingHighlighted": {
-    "message": "今後の注目イベント"
+  "events.filter.searchPlaceholder": {
+    "message": "Search events, locations, or topics"
   },
-  "events.divider.pastHighlighted": {
-    "message": "過去の注目イベント"
+  "events.filter.timeUpcoming": {
+    "message": "Upcoming"
   },
-  "events.recapAvailable": {
-    "message": "まとめあり："
+  "events.filter.timePast": {
+    "message": "Past"
   },
-  "events.watchHere": {
-    "message": "こちらで視聴"
+  "events.filter.timeAll": {
+    "message": "All"
+  },
+  "events.filter.placeInPerson": {
+    "message": "In person"
+  },
+  "events.filter.placeOnline": {
+    "message": "Online"
+  },
+  "events.filter.topicGroup": {
+    "message": "Topics"
+  },
+  "events.filter.allTopics": {
+    "message": "All Topics"
+  },
+  "events.featured.title": {
+    "message": "Featured upcoming events"
+  },
+  "events.featured.thisWeek": {
+    "message": "This week"
+  },
+  "events.recaps.title": {
+    "message": "Recent event recaps"
+  },
+  "events.recaps.watch": {
+    "message": "Watch recap"
+  },
+  "events.carousel.prev": {
+    "message": "Previous"
+  },
+  "events.carousel.next": {
+    "message": "Next"
+  },
+  "events.view.list": {
+    "message": "List"
+  },
+  "events.view.calendar": {
+    "message": "Calendar"
+  },
+  "events.divider.calendar": {
+    "message": "Events Calendar"
+  },
+  "events.calendar.today": {
+    "message": "Today"
+  },
+  "events.calendar.upcoming": {
+    "message": "Upcoming events"
+  },
+  "events.calendar.tzNote": {
+    "message": "Dates are shown in UTC and events may change. Check the event page for the latest details."
+  },
+  "events.card.register": {
+    "message": "View event"
+  },
+  "events.card.online": {
+    "message": "Online"
+  },
+  "events.card.recurring": {
+    "message": "Recurring"
+  },
+  "events.divider.upcoming": {
+    "message": "Upcoming Events"
+  },
+  "events.divider.all": {
+    "message": "All Events"
+  },
+  "events.divider.past": {
+    "message": "Past Events and Recaps"
+  },
+  "events.empty.upcoming": {
+    "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest."
+  },
+  "events.empty.past": {
+    "message": "No past events match your filters."
+  },
+  "events.divider.discover": {
+    "message": "Discover Cardano Events Worldwide"
+  },
+  "events.submit.title": {
+    "message": "Want to host a Cardano event?"
+  },
+  "events.submit.description": {
+    "message": "Submit your event to be featured on cardano.org."
+  },
+  "events.submit.cta": {
+    "message": "Submit your event"
   },
   "exchanges.hero.title": {
     "message": "Cardanoを統合する"
@@ -2510,7 +2605,7 @@
     "message": "Which hard forks have occurred? | cardano.org"
   },
   "hardforks.layout.description": {
-    "message": "An environmentally sustainable, verifiably secure proof-of-stake protocol with rigorous security guarantees."
+    "message": "A complete timeline of Cardano hard forks from Byron to van Rossem. Explore each network upgrade, what changed, and how the protocol has evolved."
   },
   "hardforks.content.title": {
     "message": "Cardanoのハードフォーク"
@@ -3208,8 +3303,8 @@
   "apps.allApps.titleScoped": {
     "message": "All {label}"
   },
-  "apps.allApps.titleOther": {
-    "message": "Other {label}"
+  "apps.allApps.titleMore": {
+    "message": "More {label} apps"
   },
   "apps.mostActive.titleScoped": {
     "message": "Most active {label}"
@@ -3953,19 +4048,295 @@
     "message": "Prefer another tool?"
   },
   "governance.delegate.alt.intro": {
-    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
+    "message": "These community tools also support delegating your voting power to a DRep."
   },
-  "governance.delegate.alt.govtool": {
-    "message": "Intersect's full-feature governance interface."
+  "governance.accountability.hero.title": {
+    "message": "What the community expects"
   },
-  "governance.delegate.alt.tempo": {
-    "message": "Browse, compare, and follow DReps with rich profiles."
+  "governance.accountability.hero.description": {
+    "message": "The standards, expectations, and health signals for the roles Cardano empowers: DReps, the Constitutional Committee, stake pool operators, and treasury-funded work."
   },
-  "governance.delegate.alt.adastat": {
-    "message": "Track every governance action and DRep on-chain."
+  "governance.accountability.meta.title": {
+    "message": "Governance Accountability - Cardano"
   },
-  "governance.delegate.alt.cgov": {
-    "message": "Dashboard to monitor DReps and governance actions."
+  "governance.accountability.meta.description": {
+    "message": "Community standards, expectations, and aggregate on-chain benchmarks for DReps, the Constitutional Committee, SPOs, and treasury-funded work on Cardano."
+  },
+  "governance.accountability.intro": {
+    "message": "Cardano is governed by its community. This page documents the standards those roles already answer to, drawn from the Constitution and established rules, and shows network-wide health signals. It restates and aggregates; it does not set new rules or grade individuals."
+  },
+  "governance.accountability.neutralityNote": {
+    "message": "Benchmarks here are ecosystem-wide. For data on specific DReps, committee members, or pools, follow the linked tools."
+  },
+  "governance.accountability.roles.title": {
+    "message": "Who keeps Cardano governance accountable?"
+  },
+  "governance.accountability.roles.subtitle": {
+    "message": "Select a role to understand its mandate, responsibilities, and how the community can verify its work."
+  },
+  "governance.accountability.divider.roles": {
+    "message": "Standards by role"
+  },
+  "governance.accountability.stat.dreps": {
+    "message": "Active DReps"
+  },
+  "governance.accountability.stat.committee": {
+    "message": "Committee members"
+  },
+  "governance.accountability.stat.spos": {
+    "message": "Active stake pools"
+  },
+  "governance.accountability.stat.treasury": {
+    "message": "Treasury"
+  },
+  "governance.accountability.label.accountableFor": {
+    "message": "Accountable for"
+  },
+  "governance.accountability.label.goodLooksLike": {
+    "message": "What good looks like"
+  },
+  "governance.accountability.label.verifyAndAct": {
+    "message": "Verify and act"
+  },
+  "governance.accountability.label.evidence": {
+    "message": "Evidence"
+  },
+  "governance.accountability.label.benchmark": {
+    "message": "Benchmark"
+  },
+  "governance.accountability.label.groundedIn": {
+    "message": "Grounded in {groundedIn}."
+  },
+  "governance.accountability.dreps.title": {
+    "message": "Delegated Representatives"
+  },
+  "governance.accountability.dreps.teaser": {
+    "message": "Represent ada holders"
+  },
+  "governance.accountability.dreps.evidence": {
+    "message": "Voting history"
+  },
+  "governance.accountability.dreps.groundedIn": {
+    "message": "Constitution, Article II Sections 2 and 4"
+  },
+  "governance.accountability.dreps.power": {
+    "message": "Vote on governance actions on behalf of the ada holders who delegate to them."
+  },
+  "governance.accountability.dreps.obl.1": {
+    "message": "Publicly disclose any compensation received as a DRep in a timely manner, and never pay ada owners in exchange for delegation or their votes. A DRep may act in the interest of the ada owners who delegate to them."
+  },
+  "governance.accountability.dreps.obl.1.src": {
+    "message": "Constitution, Article II Sections 2 and 4"
+  },
+  "governance.accountability.dreps.obl.2": {
+    "message": "Act within the Cardano Tenets and Guardrails."
+  },
+  "governance.accountability.dreps.obl.2.src": {
+    "message": "Constitution, Article I"
+  },
+  "governance.accountability.dreps.exp.1": {
+    "message": "Publishes a rationale for how it votes."
+  },
+  "governance.accountability.dreps.exp.2": {
+    "message": "Keeps an up-to-date public profile."
+  },
+  "governance.accountability.dreps.exp.3": {
+    "message": "Votes consistently and discloses conflicts of interest."
+  },
+  "governance.accountability.dreps.curated.1.label": {
+    "message": "Participation on recent actions"
+  },
+  "governance.accountability.dreps.curated.1.value": {
+    "message": "See governance tools"
+  },
+  "governance.accountability.dreps.check": {
+    "message": "Find tools to explore DReps"
+  },
+  "governance.accountability.dreps.act.1": {
+    "message": "Choose or change your DRep"
+  },
+  "governance.accountability.committee.title": {
+    "message": "Constitutional Committee"
+  },
+  "governance.accountability.committee.teaser": {
+    "message": "Checks constitutionality"
+  },
+  "governance.accountability.committee.evidence": {
+    "message": "Published decisions"
+  },
+  "governance.accountability.committee.groundedIn": {
+    "message": "Constitution, Article III Sections 1, 3 and 4"
+  },
+  "governance.accountability.committee.power": {
+    "message": "Rules on whether governance actions are constitutional; most actions cannot take effect on-chain without the committee's affirmation."
+  },
+  "governance.accountability.committee.obl.1": {
+    "message": "Judge governance actions only on whether they are constitutional, so that what is enacted on-chain stays consistent with the Constitution."
+  },
+  "governance.accountability.committee.obl.1.src": {
+    "message": "Constitution, Article III Section 1"
+  },
+  "governance.accountability.committee.obl.2": {
+    "message": "Work transparently, publish every decision, and cite the specific parts of the Constitution behind any vote that an action is unconstitutional."
+  },
+  "governance.accountability.committee.obl.2.src": {
+    "message": "Constitution, Article III Section 4"
+  },
+  "governance.accountability.committee.obl.3": {
+    "message": "Disclose any compensation received for committee work in a timely manner."
+  },
+  "governance.accountability.committee.obl.3.src": {
+    "message": "Constitution, Article III Section 4"
+  },
+  "governance.accountability.committee.exp.1": {
+    "message": "Explains the reasoning behind each constitutionality decision."
+  },
+  "governance.accountability.committee.exp.2": {
+    "message": "Engages openly with the community about its process."
+  },
+  "governance.accountability.committee.exp.3": {
+    "message": "Members disclose potential conflicts of interest."
+  },
+  "governance.accountability.committee.curated.1.label": {
+    "message": "Published decisions and votes"
+  },
+  "governance.accountability.committee.curated.1.value": {
+    "message": "See governance tools"
+  },
+  "governance.accountability.committee.check": {
+    "message": "Find governance tools"
+  },
+  "governance.accountability.committee.act.1": {
+    "message": "No-confidence and removal"
+  },
+  "governance.accountability.spos.title": {
+    "message": "Stake Pool Operators"
+  },
+  "governance.accountability.spos.teaser": {
+    "message": "Secure and vote"
+  },
+  "governance.accountability.spos.evidence": {
+    "message": "Pool record"
+  },
+  "governance.accountability.spos.groundedIn": {
+    "message": "Constitution, Articles I and II"
+  },
+  "governance.accountability.spos.power": {
+    "message": "Run the block-producing nodes that secure the network and vote on the governance actions reserved to stake pools."
+  },
+  "governance.accountability.spos.obl.1": {
+    "message": "Vote on the actions reserved to stake pools: no confidence, committee updates, hard fork initiations, security-relevant parameter changes, and info actions."
+  },
+  "governance.accountability.spos.obl.1.src": {
+    "message": "Constitution, Article II Section 5"
+  },
+  "governance.accountability.spos.obl.2": {
+    "message": "Stay within the Cardano Guardrails when voting on security-relevant changes."
+  },
+  "governance.accountability.spos.obl.2.src": {
+    "message": "Constitution, Article I Section 2"
+  },
+  "governance.accountability.spos.exp.1": {
+    "message": "Runs reliable, well-configured infrastructure with high uptime."
+  },
+  "governance.accountability.spos.exp.2": {
+    "message": "Publishes contact details and keeps pool metadata current."
+  },
+  "governance.accountability.spos.exp.3": {
+    "message": "Takes part in the votes open to stake pools, sharing arguments and reasoning, on top of casting a vote."
+  },
+  "governance.accountability.spos.exp.4": {
+    "message": "Understands running online infrastructure and Cardano's parameters and mechanisms."
+  },
+  "governance.accountability.spos.curated.1.label": {
+    "message": "Active stake pools"
+  },
+  "governance.accountability.spos.curated.1.value": {
+    "message": "See pool tools"
+  },
+  "governance.accountability.spos.check": {
+    "message": "Find pool tools"
+  },
+  "governance.accountability.spos.act.1": {
+    "message": "Choose or change your stake pool"
+  },
+  "governance.accountability.funding.title": {
+    "message": "Treasury-Funded Work"
+  },
+  "governance.accountability.funding.teaser": {
+    "message": "Delivers public value"
+  },
+  "governance.accountability.funding.evidence": {
+    "message": "Milestones and reports"
+  },
+  "governance.accountability.funding.groundedIn": {
+    "message": "Constitution, Article II Sections 6 and 7"
+  },
+  "governance.accountability.funding.power": {
+    "message": "Receive ada from the Cardano Treasury to carry out work for the ecosystem, under the terms approved on-chain."
+  },
+  "governance.accountability.funding.obl.1": {
+    "message": "Present the funding request in the standardized, transparent format, with a permanent rationale document anyone can review."
+  },
+  "governance.accountability.funding.obl.1.src": {
+    "message": "Constitution, Article II Section 6"
+  },
+  "governance.accountability.funding.obl.2": {
+    "message": "State the purpose, timeline, costs, and refund conditions of the withdrawal, and disclose any treasury funding received in the previous 24 months."
+  },
+  "governance.accountability.funding.obl.2.src": {
+    "message": "Constitution, Article II Section 7"
+  },
+  "governance.accountability.funding.obl.3": {
+    "message": "Fund independent audits and name administrators who track how the ada is spent and whether the deliverables are met."
+  },
+  "governance.accountability.funding.obl.3.src": {
+    "message": "Constitution, Article II Section 7"
+  },
+  "governance.accountability.funding.obl.4": {
+    "message": "Stay within the treasury's Net Change Limit, the cap on how much ada can leave the treasury in a given period."
+  },
+  "governance.accountability.funding.obl.4.src": {
+    "message": "Constitution, Article II Section 7"
+  },
+  "governance.accountability.funding.exp.1": {
+    "message": "Reports progress against milestones openly."
+  },
+  "governance.accountability.funding.exp.2": {
+    "message": "Publishes how the funds were spent."
+  },
+  "governance.accountability.funding.exp.3": {
+    "message": "Delivers what was proposed and returns unused funds where applicable."
+  },
+  "governance.accountability.funding.curated.1.label": {
+    "message": "Treasury withdrawals enacted on-chain"
+  },
+  "governance.accountability.funding.curated.1.value": {
+    "message": "See governance tools"
+  },
+  "governance.accountability.funding.check": {
+    "message": "Treasury balance and outflows"
+  },
+  "governance.accountability.funding.act.1": {
+    "message": "How withdrawals are justified"
+  },
+  "governance.accountability.link.expectations": {
+    "message": "What is expected of them"
+  },
+  "governance.accountability.link.plainLanguage": {
+    "message": "See these obligations in plain language"
+  },
+  "governance.accountability.link.judgeDrep": {
+    "message": "How to judge a DRep"
+  },
+  "governance.accountability.out.constitution": {
+    "message": "Read the full Constitution"
+  },
+  "governance.accountability.out.delegate": {
+    "message": "Choose or change your DRep"
+  },
+  "governance.accountability.out.charts": {
+    "message": "Explore governance action charts"
   },
   "quiz.ui.noQuestions": {
     "message": "クイズの質問がありません。"
@@ -4413,5 +4784,197 @@
   },
   "apps.card.source": {
     "message": "ソース"
+  },
+  "whatIsAWallet.meta.title": {
+    "message": "What is a Cardano Wallet? Types, Keys, and Security Explained",
+    "description": "Meta title for the wallet explainer page"
+  },
+  "whatIsAWallet.meta.description": {
+    "message": "Learn what a Cardano wallet is, how hot, cold, custodial, and non-custodial wallets differ, how keys and recovery phrases work, and how to keep your ada safe.",
+    "description": "Meta description for the wallet explainer page"
+  },
+  "whatIsAWallet.hero.title": {
+    "message": "What is a Wallet?",
+    "description": "Hero title"
+  },
+  "whatIsAWallet.hero.description": {
+    "message": "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.",
+    "description": "Hero description"
+  },
+  "whatIsAWallet.intro.title": {
+    "message": "Your keys, not your coins",
+    "description": "Intro section title"
+  },
+  "whatIsAWallet.intro.text1": {
+    "message": "A wallet does not actually store your ada. Your coins live on the Cardano blockchain. What a wallet stores are the **keys** that prove the coins are yours and let you spend them.",
+    "description": "Intro paragraph 1"
+  },
+  "whatIsAWallet.intro.text2": {
+    "message": "Each wallet has a **public key**, used to receive funds, much like an account number you can share, and a **private key**, used to sign transactions and spend funds. Anyone who holds the private key controls the funds, so keeping it secret is everything.",
+    "description": "Intro paragraph 2"
+  },
+  "whatIsAWallet.types.divider": {
+    "message": "Wallet types",
+    "description": "Divider label for wallet types"
+  },
+  "whatIsAWallet.hotcold.title": {
+    "message": "Hot wallets vs cold wallets",
+    "description": "Hot/cold section title"
+  },
+  "whatIsAWallet.hotcold.description": {
+    "message": "Wallets differ by whether they are connected to the internet.",
+    "description": "Hot/cold intro"
+  },
+  "whatIsAWallet.hotWallet.text": {
+    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges. They are convenient for everyday use.",
+    "description": "Hot wallet explanation"
+  },
+  "whatIsAWallet.coldWallet.text": {
+    "message": "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.",
+    "description": "Cold wallet explanation"
+  },
+  "whatIsAWallet.custody.title": {
+    "message": "Custodial vs non-custodial",
+    "description": "Custody section title"
+  },
+  "whatIsAWallet.custody.text1": {
+    "message": "With a **custodial** wallet, a third party such as an exchange holds your private keys for you. It is convenient, but you are trusting that party with your funds.",
+    "description": "Custodial paragraph"
+  },
+  "whatIsAWallet.custody.text2": {
+    "message": "With a **non-custodial** wallet, you alone hold the keys. No company can freeze your funds or lose them for you, but no one can recover them for you either. As the saying goes: not your keys, not your coins.",
+    "description": "Non-custodial paragraph"
+  },
+  "whatIsAWallet.nodetype.title": {
+    "message": "Light wallets vs full-node wallets",
+    "description": "Node type section title"
+  },
+  "whatIsAWallet.nodetype.text1": {
+    "message": "A **light** wallet connects to the blockchain through a remote service, so it is quick to install and runs on phones and browsers.",
+    "description": "Light wallet paragraph"
+  },
+  "whatIsAWallet.nodetype.text2": {
+    "message": "A **full-node** wallet downloads and verifies a copy of the blockchain itself. It needs more disk space and time, but it relies on no third party to read the chain.",
+    "description": "Full-node wallet paragraph"
+  },
+  "whatIsAWallet.keys.divider": {
+    "message": "Keys and recovery",
+    "description": "Divider label for keys"
+  },
+  "whatIsAWallet.recovery.title": {
+    "message": "Your recovery phrase is the master key",
+    "description": "Recovery section title"
+  },
+  "whatIsAWallet.recovery.text1": {
+    "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
+    "description": "Recovery paragraph 1"
+  },
+  "whatIsAWallet.recovery.text2": {
+    "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
+    "description": "Recovery paragraph 2"
+  },
+  "whatIsAWallet.security.divider": {
+    "message": "Staying secure",
+    "description": "Divider label for security"
+  },
+  "whatIsAWallet.security.title": {
+    "message": "Security basics",
+    "description": "Security section title"
+  },
+  "whatIsAWallet.security.item1": {
+    "message": "Keep your recovery phrase offline, on paper or metal, in more than one safe place.",
+    "description": "Security checklist item 1"
+  },
+  "whatIsAWallet.security.item2": {
+    "message": "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.",
+    "description": "Security checklist item 2"
+  },
+  "whatIsAWallet.security.item3": {
+    "message": "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)",
+    "description": "Security checklist item 3, contains a link to the scams page"
+  },
+  "whatIsAWallet.dapps.divider": {
+    "message": "Wallets and apps",
+    "description": "Divider label for dApps"
+  },
+  "whatIsAWallet.dapps.title": {
+    "message": "Connecting to apps",
+    "description": "dApps section title"
+  },
+  "whatIsAWallet.dapps.text1": {
+    "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
+    "description": "dApps paragraph 1"
+  },
+  "whatIsAWallet.dapps.text2": {
+    "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
+    "description": "dApps paragraph 2"
+  },
+  "whatIsAWallet.choose.title": {
+    "message": "How to choose a wallet",
+    "description": "Choose section title"
+  },
+  "whatIsAWallet.choose.item1": {
+    "message": "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.",
+    "description": "Choose checklist item 1"
+  },
+  "whatIsAWallet.choose.item2": {
+    "message": "Is it open source? Open-source code lets the community review and verify the wallet's security.",
+    "description": "Choose checklist item 2"
+  },
+  "whatIsAWallet.choose.item3": {
+    "message": "How long has it been on the market? Established wallets have a longer track record of reliability.",
+    "description": "Choose checklist item 3"
+  },
+  "whatIsAWallet.choose.cta": {
+    "message": "Open the Wallet Finder",
+    "description": "CTA button to the wallet finder"
+  },
+  "whatIsAWallet.faq.q1": {
+    "message": "Are my coins stored inside the wallet?",
+    "description": "FAQ question 1"
+  },
+  "whatIsAWallet.faq.a1": {
+    "message": "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.",
+    "description": "FAQ answer 1"
+  },
+  "whatIsAWallet.faq.q2": {
+    "message": "What happens if I lose my recovery phrase?",
+    "description": "FAQ question 2"
+  },
+  "whatIsAWallet.faq.a2": {
+    "message": "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.",
+    "description": "FAQ answer 2"
+  },
+  "whatIsAWallet.faq.q3": {
+    "message": "Do I need ada to set up a wallet?",
+    "description": "FAQ question 3"
+  },
+  "whatIsAWallet.faq.a3": {
+    "message": "No. Creating a wallet is free. You only need ada once you want to transact.",
+    "description": "FAQ answer 3"
+  },
+  "whatIsAWallet.faq.q4": {
+    "message": "Should I use a hot or a cold wallet?",
+    "description": "FAQ question 4"
+  },
+  "whatIsAWallet.faq.a4": {
+    "message": "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.",
+    "description": "FAQ answer 4"
+  },
+  "whatIsAWallet.disclaimer": {
+    "message": "This page is for educational purposes only and is not financial or security advice. Always do your own research.",
+    "description": "Educational disclaimer at the bottom of the page"
+  },
+  "walletFinder.learnTeaser.text": {
+    "message": "New to wallets? Learn how they work, the different types, and how to stay secure.",
+    "description": "Teaser text on the wallet finder linking to the explainer"
+  },
+  "walletFinder.learnTeaser.cta": {
+    "message": "What is a Wallet?",
+    "description": "Teaser button on the wallet finder"
+  },
+  "getStarted.step1.walletLearnLink": {
+    "message": "Learn what a wallet is.",
+    "description": "Get-started step 1 link to the wallet explainer"
   }
 }
