@@ -96,10 +96,13 @@
   flex: 0 0 auto;
 }
 
+/* Cap the location column and let it wrap: a long address on a single nowrap
+   line would otherwise starve the flexible title column (min-width: 0), which
+   then collapses to one character per line. */
 .place {
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-700);
-  white-space: nowrap;
+  max-width: 240px;
 }
 
 .cta {
@@ -123,7 +126,9 @@
   color: #fff;
 }
 
-@media (max-width: 800px) {
+/* The six-column single-row layout needs room; below this the columns get too
+   cramped (the title collapses), so switch to the stacked card earlier. */
+@media (max-width: 1024px) {
   /* Thumbnail spans only the date + title block so it never leaves a void; the
      location and CTA drop to full-width rows below, where the address has room
      to breathe and the button stays attached to its event. */
