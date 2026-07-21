@@ -983,21 +983,6 @@ export const Showcases = [
     x: "liqwidfinance",
   },
   {
-    title: "Charli3",
-    description:
-      "Charli3 is a decentralized Oracle solution on Cardano, built natively for the chain, producing fully auditable data records on Cardano ledger.",
-    tagline: "Native decentralized oracle on Cardano",
-    icon: "/img/app-icons/charli3.jpg",
-    statsLabel: "charli3",
-    website: "https://charli3.io",
-    source: "https://github.com/Charli3-Official/charli3-pull-oracle-contracts",
-    category: "other",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "Oraclecharli3",
-  },
-  {
     title: "Cardano Academy",
     description:
       "Online courses on blockchain fundamentals, consensus algorithms, transaction models, scaling, and Cardano governance, staking, and dApp development.",
@@ -1631,20 +1616,6 @@ export const Showcases = [
     x: "indigo_protocol",
   },
   {
-    title: "Orcfax",
-    description:
-      "Decentralized oracle service publishing real-world event data to Cardano. Data is delivered to on-chain Plutus contracts in eUTXO-native format.",
-    tagline: "Decentralized oracle for real-world data on Cardano",
-    icon: "/img/app-icons/orcfax.jpg",
-    website: "https://orcfax.io",
-    source: "https://github.com/orcfax/orcfax-aiken",
-    category: "other",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "orcfax",
-  },
-  {
     title: "Arp Radio",
     description:
       "Cardano music ecosystem player. Discover, mint, and play CIP-60 music NFT collections in a custom audio player tuned to consensus and slot timing.",
@@ -1890,20 +1861,6 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     beginnerFriendly: false,
-  },
-  {
-    title: "Pyth Pro",
-    description:
-      "Pull-based oracle delivering low-latency price feeds for crypto, equities, FX, and commodities to Cardano DeFi, sourced directly from institutional data publishers.",
-    tagline: "Low-latency price feeds for Cardano DeFi",
-    icon: "/img/app-icons/pyth.jpg",
-    website: "https://www.pyth.network",
-    source: "https://github.com/pyth-network/pyth-crosschain/tree/main/lazer/contracts/cardano",
-    category: "other",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "PythNetwork",
   },
   {
     title: "DRepTalk",
