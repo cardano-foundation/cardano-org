@@ -124,15 +124,19 @@
 }
 
 @media (max-width: 800px) {
+  /* Thumbnail spans only the date + title block so it never leaves a void; the
+     location and CTA drop to full-width rows below, where the address has room
+     to breathe and the button stays attached to its event. */
   .row {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 96px 1fr;
     grid-template-areas:
       "thumb date"
       "thumb main"
-      "thumb place"
+      "place place"
       "cta   cta";
-    row-gap: 0.3rem;
+    row-gap: 0.2rem;
     column-gap: 0.85rem;
+    padding: 1rem 0.4rem;
   }
 
   .thumb {
@@ -140,8 +144,18 @@
     align-self: start;
   }
 
+  /* Inline, left-aligned date label above the title (the desktop calendar-style
+     vertical stack reads as disconnected once the row is stacked). */
   .date {
     grid-area: date;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.4rem;
+  }
+
+  .dateDay {
+    font-size: 0.95rem;
   }
 
   .main {
@@ -151,12 +165,13 @@
   .place {
     grid-area: place;
     white-space: normal;
+    margin-top: 0.4rem;
   }
 
   .cta {
     grid-area: cta;
     justify-self: start;
-    margin-top: 0.35rem;
+    margin-top: 0.65rem;
   }
 
   /* Category chip is the least essential column on narrow screens. */
