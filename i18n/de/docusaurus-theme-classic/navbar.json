@@ -1,6 +1,6 @@
 {
   "logo.alt": {
-    "message": "Cardano Logo",
+    "message": "Cardano-Logo",
     "description": "The alt text of navbar logo"
   },
   "item.label.Learn": {
@@ -40,7 +40,7 @@
     "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Delegate your vote": {
-    "message": "Delegate your vote",
+    "message": "Deine Stimme delegieren",
     "description": "Navbar item with label Delegate your vote"
   },
   "item.label.Use Cardano Apps": {
@@ -72,7 +72,7 @@
     "description": "Navbar item with label Online Communities"
   },
   "item.label.Cardano Ambassadors": {
-    "message": "Cardano Ambassadors",
+    "message": "Cardano-Botschafter",
     "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
@@ -80,7 +80,7 @@
     "description": "Navbar item with label Cardano Events"
   },
   "item.label.Cardano Forum": {
-    "message": "Cardano Forum",
+    "message": "Cardano-Forum",
     "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
@@ -96,7 +96,7 @@
     "description": "Navbar item with label Governance Tools"
   },
   "item.label.Cardano Constitution": {
-    "message": "Cardano Constitution",
+    "message": "Cardano-Verfassung",
     "description": "Navbar item with label Cardano Constitution"
   },
   "item.label.Start building on Cardano": {
@@ -142,9 +142,5 @@
   "item.label.Supply Chain": {
     "message": "Lieferkette",
     "description": "Navbar item with label Supply Chain"
-  },
-  "item.label.AI Agents": {
-    "message": "KI-Agenten",
-    "description": "Navbar item with label AI Agents"
   }
 }

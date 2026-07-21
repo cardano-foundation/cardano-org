@@ -8,11 +8,11 @@
     "description": "The title of the footer links column with title=Support in the footer"
   },
   "link.title.Legal": {
-    "message": "Legal",
+    "message": "Rechtliches",
     "description": "The title of the footer links column with title=Legal in the footer"
   },
   "link.title.More": {
-    "message": "More",
+    "message": "Mehr",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Cardano Foundation": {
@@ -36,7 +36,7 @@
     "description": "The label of footer link with label=PRAGMA linking to /entities?tab=pragma"
   },
   "link.item.label.More entities": {
-    "message": "More entities",
+    "message": "Weitere Organisationen",
     "description": "The label of footer link with label=More entities linking to /entities/#companies"
   },
   "link.item.label.Brand Assets": {
@@ -44,7 +44,7 @@
     "description": "The label of footer link with label=Brand Assets linking to /brand-assets"
   },
   "link.item.label.Glossary": {
-    "message": "Glossary",
+    "message": "Glossar",
     "description": "The label of footer link with label=Glossary linking to /glossary"
   },
   "link.item.label.Discord": {
@@ -60,15 +60,15 @@
     "description": "The label of footer link with label=Contact linking to /contact"
   },
   "link.item.label.Terms": {
-    "message": "Terms",
+    "message": "Nutzungsbedingungen",
     "description": "The label of footer link with label=Terms linking to https://cardanofoundation.org/en/terms-and-conditions"
   },
   "link.item.label.Privacy Policy": {
-    "message": "Privacy Policy",
+    "message": "Datenschutz",
     "description": "The label of footer link with label=Privacy Policy linking to https://cardanofoundation.org/en/privacy"
   },
   "link.item.label.Cardano News": {
-    "message": "Cardano News",
+    "message": "Cardano-News",
     "description": "The label of footer link with label=Cardano News linking to /news"
   },
   "link.item.label.Get Involved": {
