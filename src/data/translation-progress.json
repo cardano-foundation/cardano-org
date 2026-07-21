@@ -1,6 +1,42 @@
 {
-  "lastUpdated": "2026-07-21T06:45:45.862Z",
+  "lastUpdated": "2026-07-21T09:32:57.152Z",
   "languages": [
+    {
+      "id": "vi",
+      "name": "Vietnamese",
+      "translationProgress": 99,
+      "approvalProgress": 0,
+      "words": {
+        "total": 21322,
+        "translated": 21290,
+        "preTranslateAppliedTo": 5435,
+        "approved": 0
+      },
+      "phrases": {
+        "total": 2164,
+        "translated": 2144,
+        "preTranslateAppliedTo": 714,
+        "approved": 0
+      }
+    },
+    {
+      "id": "de",
+      "name": "German",
+      "translationProgress": 85,
+      "approvalProgress": 0,
+      "words": {
+        "total": 21322,
+        "translated": 18289,
+        "preTranslateAppliedTo": 660,
+        "approved": 13
+      },
+      "phrases": {
+        "total": 2164,
+        "translated": 1800,
+        "preTranslateAppliedTo": 173,
+        "approved": 5
+      }
+    },
     {
       "id": "ja",
       "name": "Japanese",
@@ -35,42 +71,6 @@
         "translated": 1349,
         "preTranslateAppliedTo": 395,
         "approved": 1349
-      }
-    },
-    {
-      "id": "de",
-      "name": "German",
-      "translationProgress": 52,
-      "approvalProgress": 0,
-      "words": {
-        "total": 21322,
-        "translated": 11256,
-        "preTranslateAppliedTo": 660,
-        "approved": 13
-      },
-      "phrases": {
-        "total": 2164,
-        "translated": 1126,
-        "preTranslateAppliedTo": 173,
-        "approved": 5
-      }
-    },
-    {
-      "id": "vi",
-      "name": "Vietnamese",
-      "translationProgress": 26,
-      "approvalProgress": 0,
-      "words": {
-        "total": 21322,
-        "translated": 5573,
-        "preTranslateAppliedTo": 5435,
-        "approved": 0
-      },
-      "phrases": {
-        "total": 2164,
-        "translated": 779,
-        "preTranslateAppliedTo": 714,
-        "approved": 0
       }
     }
   ]
