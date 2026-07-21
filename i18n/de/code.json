@@ -4413,5 +4413,272 @@
   },
   "apps.card.source": {
     "message": "Quellcode"
+  },
+  "ai.meta.title": {
+    "message": "Warum KI Cardano braucht"
+  },
+  "ai.meta.description": {
+    "message": "KI-Agenten brauchen Identität, sichere Zahlungen und Infrastruktur, auf die sie sich verlassen können. Cardano wurde genau dafür gebaut: formale Methoden, dezentrale Identität, native Assets und berechenbare Infrastruktur."
+  },
+  "ai.hero.eyebrow": {
+    "message": "Cardano × KI"
+  },
+  "ai.hero.title": {
+    "message": "Warum KI Cardano braucht"
+  },
+  "ai.hero.subLead": {
+    "message": "Agenten beginnen, echtes Geld zu bewegen. Cardano gibt ihnen, was fehlt:"
+  },
+  "ai.hero.subStrong": {
+    "message": "überprüfbare Identität, sichere Zahlungen und Infrastruktur, die sich berechenbar verhält"
+  },
+  "ai.hero.linkWhy": {
+    "message": "Warum Cardano für KI"
+  },
+  "ai.hero.linkEconomy": {
+    "message": "Die Agent Economy entdecken"
+  },
+  "ai.getStarted.label": {
+    "message": "Gib deinem Coding-Agenten Cardano-Skills"
+  },
+  "ai.getStarted.tabClaude": {
+    "message": "Claude Code (empfohlen)"
+  },
+  "ai.getStarted.tabOther": {
+    "message": "Codex / andere Agenten"
+  },
+  "ai.getStarted.copy": {
+    "message": "Kopieren"
+  },
+  "ai.getStarted.copied": {
+    "message": "Kopiert ✓"
+  },
+  "ai.why.eyebrow": {
+    "message": "Warum KI auf Cardano"
+  },
+  "ai.why.title": {
+    "message": "Was Agenten brauchen, ist Cardanos Fundament."
+  },
+  "ai.why.sub": {
+    "message": "Autonome Agenten verwalten Geld, Identität und Assets in Maschinengeschwindigkeit, ohne dass ein Mensch jeden Schritt prüft. Das funktioniert nur auf Infrastruktur mit vier Eigenschaften."
+  },
+  "ai.why.caresLabel": {
+    "message": "Warum das für KI zählt"
+  },
+  "ai.why.p1.title": {
+    "message": "Vertrauen & Sicherheit"
+  },
+  "ai.why.p1.item1": {
+    "message": "Formale Methoden"
+  },
+  "ai.why.p1.item2": {
+    "message": "Sichere Smart Contracts"
+  },
+  "ai.why.p1.item3": {
+    "message": "Hochsichere Infrastruktur"
+  },
+  "ai.why.p1.why": {
+    "message": "Agenten brauchen Infrastruktur, auf die sie sich verlassen können, wenn sie mit Geld und Verträgen umgehen."
+  },
+  "ai.why.p2.title": {
+    "message": "Dezentrale Identität"
+  },
+  "ai.why.p2.item1": {
+    "message": "DIDs"
+  },
+  "ai.why.p2.item2": {
+    "message": "Verifiable Credentials"
+  },
+  "ai.why.p2.item3": {
+    "message": "Reputation & Attestierungen"
+  },
+  "ai.why.p2.why": {
+    "message": "Agenten müssen nachweisen, wer sie sind und was sie dürfen, und über Zeit Reputation aufbauen."
+  },
+  "ai.why.p3.title": {
+    "message": "Native Assets & Tokenisierung"
+  },
+  "ai.why.p3.item1": {
+    "message": "Native Assets ohne Smart Contracts"
+  },
+  "ai.why.p3.item2": {
+    "message": "Tokenisiertes Geld, RWAs, Mitgliedschaften, Lizenzen"
+  },
+  "ai.why.p3.item3": {
+    "message": "Effiziente Asset-Transfers"
+  },
+  "ai.why.p3.why": {
+    "message": "Agenten müssen digitale Assets besitzen, tauschen und verwalten, nicht nur Zahlungen senden."
+  },
+  "ai.why.p4.title": {
+    "message": "Berechenbare & dezentrale Infrastruktur"
+  },
+  "ai.why.p4.item1": {
+    "message": "eUTxO"
+  },
+  "ai.why.p4.item2": {
+    "message": "Berechenbare Gebühren und Ausführung"
+  },
+  "ai.why.p4.item3": {
+    "message": "Erlaubnisfreies, zensurresistentes Netzwerk"
+  },
+  "ai.why.p4.why": {
+    "message": "Autonome Systeme brauchen Infrastruktur, die zuverlässig, offen und wirtschaftlich berechenbar ist."
+  },
+  "ai.x402.eyebrow": {
+    "message": "x402 auf Cardano"
+  },
+  "ai.x402.title": {
+    "message": "x402 auf Cardano ist mächtiger als x402 auf jeder anderen Chain."
+  },
+  "ai.x402.native": {
+    "message": "Native Unterstützung"
+  },
+  "ai.x402.bannerLead": {
+    "message": "x402 auf Cardano unterstützt nativ den"
+  },
+  "ai.x402.bannerLink": {
+    "message": "Masumi Smart Contract"
+  },
+  "ai.x402.memberLead": {
+    "message": "Die Cardano Foundation ist Mitglied der"
+  },
+  "ai.x402.memberLink": {
+    "message": "x402 Foundation"
+  },
+  "ai.x402.memberRest": {
+    "message": ", der Branchenorganisation hinter dem x402-Standard, neben Coinbase, Cloudflare, Google, Visa und Mastercard."
+  },
+  "ai.x402.escrow1": {
+    "message": "Der Masumi Smart Contract ist das Treuhandkonto im Kern des Zahlungsstandards für KI-Agenten auf Cardano: Gelder werden im Contract gesperrt, bei gelieferter Arbeit freigegeben und andernfalls zurückerstattet. Jede Entscheidung wird on-chain protokolliert."
+  },
+  "ai.x402.escrow2": {
+    "message": "Es ist ein offener Standard, kein Produkt: ein einfacher Treuhand-Contract ohne Gebühren und ohne Eigentümer, spezifiziert als Teil des offiziellen x402-Schemas für Cardano. In x402 eingebunden erhält jede HTTP-Zahlung diesen Schutz automatisch."
+  },
+  "ai.x402.colStandard": {
+    "message": "Standard x402"
+  },
+  "ai.x402.colCardano": {
+    "message": "Cardano x402"
+  },
+  "ai.x402.colMasumi": {
+    "message": "Cardano Masumi x402"
+  },
+  "ai.x402.row1.name": {
+    "message": "Normale Adress-Zahlungen"
+  },
+  "ai.x402.row1.desc": {
+    "message": "Eine direkte Zahlung an eine Wallet-Adresse. Die Basis, die jede Chain unterstützt."
+  },
+  "ai.x402.row2.name": {
+    "message": "Rückerstattungen"
+  },
+  "ai.x402.row2.desc": {
+    "message": "Nichts geliefert? Die treuhänderisch verwahrte Zahlung geht automatisch an den Kunden zurück."
+  },
+  "ai.x402.row3.name": {
+    "message": "Entscheidungsprotokoll"
+  },
+  "ai.x402.row3.desc": {
+    "message": "Zahlungsentscheidungen werden on-chain aufgezeichnet, dezentral und prüfbar."
+  },
+  "ai.x402.divider": {
+    "message": "+ interoperabel mit weiteren Masumi-Funktionen"
+  },
+  "ai.x402.row4.name": {
+    "message": "Auffindbarkeit"
+  },
+  "ai.x402.row4.desc": {
+    "message": "Ein öffentliches Register aller Agenten: Suche nach Fähigkeiten, prüfe die Historie und rufe sie über die API auf."
+  },
+  "ai.x402.row5.name": {
+    "message": "Identität"
+  },
+  "ai.x402.row5.desc": {
+    "message": "Jeder Agent erhält eine dezentrale ID und einen Reputations-Score, damit du weißt, mit wem du arbeitest."
+  },
+  "ai.x402.specs": {
+    "message": "Die vollständige Spezifikation lesen"
+  },
+  "ai.x402.supported": {
+    "message": "unterstützt"
+  },
+  "ai.x402.notSupported": {
+    "message": "nicht unterstützt"
+  },
+  "ai.economy.eyebrow": {
+    "message": "Agent Economy"
+  },
+  "ai.economy.title": {
+    "message": "Die Agent Economy, live auf Cardano"
+  },
+  "ai.economy.sub": {
+    "message": "Auf Cardano entsteht eine echte Agent Economy: autonome Agenten mit überprüfbaren Identitäten, Zahlungsschienen für Maschinen und Marktplätze, auf denen jeder sie beauftragen kann. Die Bausteine sind heute schon live."
+  },
+  "ai.economy.card1.title": {
+    "message": "Agent Payment Network"
+  },
+  "ai.economy.card1.desc": {
+    "message": "Treuhänderische Zahlungen zwischen Agenten mit automatischen Rückerstattungen und On-Chain-Entscheidungsprotokoll, basierend auf dem offenen Masumi-Standard."
+  },
+  "ai.economy.card2.title": {
+    "message": "Dezentrales Agenten-Register"
+  },
+  "ai.economy.card2.desc": {
+    "message": "Jeder Agent ist on-chain registriert und für alle auffindbar. Durchsuche das Live-Register."
+  },
+  "ai.economy.card3.title": {
+    "message": "Agenten-Identität mit Veridian Wallet"
+  },
+  "ai.economy.card3.desc": {
+    "message": "Dezentrale Identifikatoren und Verifiable Credentials für Agenten."
+  },
+  "ai.economy.card4.title": {
+    "message": "Hochgeschwindigkeits-Transaktionen mit Hydra"
+  },
+  "ai.economy.card4.desc": {
+    "message": "Zahlungen zwischen Agenten in unter einer Sekunde und für weniger als einen Cent."
+  },
+  "ai.economy.example": {
+    "message": "Schon heute live: Auf Marktplätzen wie {sokosumi} kann jeder arbeitende Agenten beauftragen."
+  },
+  "ai.closing.title": {
+    "message": "Bereit, die Agent Economy mitzubauen?"
+  },
+  "ai.closing.sub": {
+    "message": "Die Standards sind offen, die Infrastruktur ist live, und dein Agent kann heute loslegen."
+  },
+  "ai.closing.build": {
+    "message": "Jetzt bauen"
+  },
+  "ai.closing.skills": {
+    "message": "Gib deinem Agenten Cardano-Skills"
+  },
+  "navbar.mega.label.AI Agents": {
+    "message": "KI-Agenten"
+  },
+  "navbar.mega.description.AI Agents": {
+    "message": "Warum KI Cardano braucht"
+  },
+  "ai.x402.methodsIntro": {
+    "message": "Das exact-Schema auf Cardano unterstützt drei Methoden für den Werttransfer:"
+  },
+  "ai.x402.method1.title": {
+    "message": "Adresse-zu-Adresse-Zahlungen"
+  },
+  "ai.x402.method1.desc": {
+    "message": "ähnlich der regulären x402-Spezifikation auf anderen Chains."
+  },
+  "ai.x402.method2.title": {
+    "message": "Das Masumi Smart Protocol"
+  },
+  "ai.x402.method2.desc": {
+    "message": "das dezentrale Rückerstattungsmechaniken und Entscheidungsprotokolle ergänzt."
+  },
+  "ai.x402.method3.title": {
+    "message": "Script-Zahlungen"
+  },
+  "ai.x402.method3.desc": {
+    "message": "Zahlungen an Scripts, deren Parameter beim Erstellen der Transaktion angewendet werden."
   }
 }

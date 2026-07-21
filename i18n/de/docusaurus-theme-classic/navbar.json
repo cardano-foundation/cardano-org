@@ -142,5 +142,9 @@
   "item.label.Supply Chain": {
     "message": "Lieferkette",
     "description": "Navbar item with label Supply Chain"
+  },
+  "item.label.AI Agents": {
+    "message": "KI-Agenten",
+    "description": "Navbar item with label AI Agents"
   }
 }

@@ -458,6 +458,7 @@ const config = {
               { to: '/use-cases#identity', label: 'Identity' },
               { to: '/use-cases#finance', label: 'Finance' },
               { to: '/use-cases#supply-chain', label: 'Supply Chain' },
+              { to: '/ai', label: 'AI Agents' },
             ],
             // The mega menu full version for "Solutions"
             mega: true,
@@ -479,6 +480,7 @@ const config = {
                     { to: '/use-cases', label: 'All Use Cases', description: 'Explore blockchain applications', icon: 'shapes-solid' },
                     { to: '/use-cases#identity', label: 'Identity', description: 'Credentials & verification', icon: 'users-solid' },
                     { to: '/use-cases#supply-chain', label: 'Supply Chain', description: 'Traceability & provenance', icon: 'route-solid' },
+                    { to: '/ai', label: 'AI Agents', description: 'Why AI needs Cardano', icon: 'robot-solid' },
                   ],
                 },
               ],
