@@ -1901,6 +1901,26 @@ export const Showcases = [
   beginnerFriendly: false,
   x: "EchoForgeEF",
 },
+{
+  title: "Coin Wallet",
+  description:"Self-custodial multicurrency wallet with Cardano support. Send, receive and manage ADA and other assets across web, mobile and desktop.",
+  tagline: "Multicurrency self-custodial wallet",
+  preview: require("./app-screenshots/coinwallet.png"),
+  icon: "/img/app-icons/coinwallet.svg",
+  website: "https://coin.space",
+  source: "https://github.com/CoinSpace/CoinSpace",
+  category: "wallet",
+  properties: ["opensource","mobile"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "CoinAppWallet",
+  walletFeatures: {
+    platforms: ["ios", "android", "desktop"],
+    custody: "non-custodial",
+    features: ["multi-asset"],
+    type: "light",
+  },
+},
 ];
 
 export const TagList = Object.keys(Tags);
