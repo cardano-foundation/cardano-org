@@ -32,6 +32,13 @@ const EXCHANGE_LOGOS = {
   "OKX": "/img/exchanges/okx.jpg",
   "Paribu": "/img/exchanges/paribu.png",
   "CoinEx": "/img/exchanges/CoinEx.svg",
+  "MAX (MaiCoin)": "/img/exchanges/max.png",
+  "BitoPro": "/img/exchanges/bitopro.png",
+  "Hoyabit": "/img/exchanges/hoyabit.png",
+  "BingX": "/img/exchanges/bingx.png",
+  "Bybit": "/img/exchanges/bybit.jpeg",
+  "Kucoin": "/img/exchanges/kucoin.png",
+  "Pionex": "/img/exchanges/pionex.jpg",
 };
 
 function getExchangesForCountry(countryName) {
