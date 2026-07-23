@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -55,6 +56,24 @@ function matchesCategory(event, category) {
 // Categories too generic to offer as a topic button (the catch-all buckets).
 const HIDDEN_TOPIC_CATEGORIES = new Set(["Community", "Other"]);
 
+// Topic filter <-> URL sync. Each linkable category maps to a lowercase slug so
+// a filtered view can be shared, e.g. /events?topic=developers. The catch-all
+// buckets have no chip and are not linkable.
+const TOPIC_PARAM = "topic";
+const LINKABLE_TOPICS = Object.keys(EVENT_CATEGORIES).filter(
+  (c) => !HIDDEN_TOPIC_CATEGORIES.has(c),
+);
+
+function slugToCategory(slug) {
+  if (!slug) return null;
+  return LINKABLE_TOPICS.find((c) => c.toLowerCase() === slug.toLowerCase()) || null;
+}
+
+function readTopicFromUrl() {
+  if (!ExecutionEnvironment.canUseDOM) return null;
+  return slugToCategory(new URLSearchParams(window.location.search).get(TOPIC_PARAM));
+}
+
 // Distinct categories actually present, in the canonical taxonomy order.
 function collectCategories(events) {
   const present = new Set(events.map((e) => e.category).filter(Boolean));
@@ -84,12 +103,22 @@ function HomepageHeader({ filters, onChange }) {
 export default function Events() {
   const { entries: lumaEntries } = useLumaEvents();
   const [view, setView] = useState("list");
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState(() => ({
     place: "all",
     time: "upcoming",
     query: "",
-    category: null,
-  });
+    category: readTopicFromUrl(),
+  }));
+
+  // Keep the URL in sync with the topic chip so a filtered view is shareable.
+  // replaceState (not push) keeps filter toggles out of the back-button history.
+  useEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    const url = new URL(window.location.href);
+    if (filters.category) url.searchParams.set(TOPIC_PARAM, filters.category.toLowerCase());
+    else url.searchParams.delete(TOPIC_PARAM);
+    window.history.replaceState(null, "", url.toString());
+  }, [filters.category]);
 
   const allEvents = useMemo(
     () =>
