@@ -618,52 +618,10 @@
           "cnt": false
         },
         {
-          "name": "Hoyabit",
+          "name": "HOYA BIT",
           "link": "https://hoyabit.com/",
           "ada": true,
           "cnt": false
-        },
-        {
-          "name": "Binance",
-          "link": "https://www.binance.com",
-          "ada": true,
-          "cnt": true
-        },
-        {
-          "name": "OKX",
-          "link": "https://www.okx.com",
-          "ada": true,
-          "cnt": true
-        },
-        {
-          "name": "BingX",
-          "link": "https://www.bingx.com",
-          "ada": true,
-          "cnt": false
-        },
-        {
-          "name": "Bybit",
-          "link": "https://www.bybit.com",
-          "ada": true,
-          "cnt": true
-        },
-        {
-          "name": "Kucoin",
-          "link": "https://www.kucoin.com",
-          "ada": true,
-          "cnt": true
-        },
-        {
-          "name": "MEXC",
-          "link": "https://www.mexc.com",
-          "ada": true,
-          "cnt": true
-        },
-        {
-          "name": "Pionex",
-          "link": "https://www.pionex.com/",
-          "ada": true,
-          "cnt": true
         }
       ]
     }
