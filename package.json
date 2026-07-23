@@ -60,6 +60,7 @@
     "react-popper": "^2.3.0",
     "react-tabs": "^6.0.2",
     "reactflow": "11.7.0",
+    "shell-quote": "1.8.4",
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.1.2"
   },
