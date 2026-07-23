@@ -61,8 +61,7 @@
     "react-tabs": "^6.0.2",
     "reactflow": "11.7.0",
     "stream-browserify": "^3.0.0",
-    "vm-browserify": "^1.1.2",
-    "websocket-driver": "0.7.5"
+    "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
@@ -79,7 +78,8 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "websocket-driver": "0.7.5"
   },
   "browserslist": {
     "production": [
@@ -95,6 +95,5 @@
   },
   "engines": {
     "node": ">=20.19.0"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
