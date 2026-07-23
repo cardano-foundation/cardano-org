@@ -302,6 +302,7 @@ const config = {
               { to: '/common-scams', label: 'Protect your ada' },
               { to: '/stake-pool-delegation', label: 'Delegate your ada' },
               { to: '/apps', label: 'Use Cardano Apps' },
+              { to: '/fees-and-transactions', label: 'Cardano Fees & Transactions' },
               { to: '/research', label: 'Cardano Research' },
               { href: '/insights', label: 'Cardano Insights' },
               { to: '/hardforks', label: 'Hard Forks' },
@@ -319,6 +320,7 @@ const config = {
                     { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },
                     { to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid' },
                     { to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams', icon: 'shield-solid' },
+                    { to: '/fees-and-transactions', label: 'Cardano Fees & Transactions', description: 'How fees and min-ada work', icon: 'coins-solid' },
                   ],
                 },
                 {
