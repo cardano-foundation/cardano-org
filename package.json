@@ -60,7 +60,6 @@
     "react-popper": "^2.3.0",
     "react-tabs": "^6.0.2",
     "reactflow": "11.7.0",
-    "shell-quote": "1.8.4",
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.1.2"
   },
@@ -79,7 +78,8 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "shell-quote": "^1.8.4"
   },
   "browserslist": {
     "production": [
