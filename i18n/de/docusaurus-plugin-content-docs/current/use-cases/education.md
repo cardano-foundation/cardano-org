@@ -1,39 +1,39 @@
 ---
-title: Education Credentials
-description: Blockchain-verified academic credentials on Cardano provide tamper-proof, instantly verifiable certifications
+title: Bildungsnachweise
+description: Blockchain-verifizierte akademische Nachweise auf Cardano sind fälschungssicher und sofort überprüfbar
 sidebar_label: Bildung
 sidebar_position: 2
 ---
 
-# Education Credentials
+# Bildungsnachweise
 
 ## Die Herausforderung
 
-The issuance of academic certifications is heavily centralized and often opaque. Traditional paper-based credentials are easily forged, difficult to verify, and can be lost or damaged. Educational institutions face challenges in maintaining the integrity of their certifications, while employers struggle to verify the authenticity of candidates' qualifications.
+Die Ausstellung akademischer Zeugnisse ist stark zentralisiert und oft intransparent. Klassische Papierzeugnisse lassen sich leicht fälschen, sind schwer zu überprüfen und können verloren gehen oder beschädigt werden. Bildungseinrichtungen müssen die Integrität ihrer Abschlüsse schützen, während Arbeitgeber Mühe haben, die Echtheit der Qualifikationen von Bewerbern zu prüfen.
 
-The verification process is slow and costly, often requiring direct contact with issuing institutions. This creates friction in hiring processes and can disadvantage qualified candidates who obtained credentials from institutions that are difficult to reach or no longer exist.
+Die Überprüfung ist langsam und teuer und erfordert oft den direkten Kontakt zur ausstellenden Einrichtung. Das bremst Einstellungsprozesse und benachteiligt qualifizierte Bewerber, deren Einrichtung schwer erreichbar ist oder nicht mehr existiert.
 
 ## Wie Blockchain dies löst
 
-Cardano's blockchain-based identity and credentials solutions enable educational institutions to issue digital credentials that are:
+Mit Cardanos Identitäts- und Nachweislösungen können Bildungseinrichtungen digitale Zeugnisse ausstellen, die:
 
-- **Tamper-proof**: Once recorded on the blockchain, credentials cannot be altered or forged
-- **Instantly verifiable**: Anyone can verify a credential's authenticity without contacting the issuing institution
+- **Fälschungssicher** sind: Einmal auf der Blockchain festgehalten, lassen sich Nachweise weder verändern noch fälschen
+- **Sofort überprüfbar** sind: Jeder kann die Echtheit eines Nachweises prüfen, ohne die ausstellende Einrichtung zu kontaktieren
 - **Portable**: Students own their credentials and can share them with any employer or institution
-- **Persistent**: Credentials remain valid and verifiable even if the issuing institution closes
+- **Dauerhaft gültig** sind: Nachweise bleiben überprüfbar, selbst wenn die ausstellende Einrichtung schließt
 
-Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
+Smart Contracts können die Ausstellung automatisieren, sodass Nachweise nur vergeben werden, wenn die Voraussetzungen erfüllt sind. So entsteht eine nachvollziehbare Historie akademischer Leistungen, von der Studierende, Einrichtungen und Arbeitgeber gleichermaßen profitieren.
 
 ## Warum Cardano
 
-- **Low transaction fees** make credential issuance economically viable at scale
-- **Energy-efficient proof of stake** aligns with educational institutions' sustainability goals
-- **Native token support** enables certification NFTs without additional smart contract complexity
-- **Aiken smart contracts** provide programmable verification logic
-- **Global accessibility** ensures credentials can be verified anywhere in the world
+- **Niedrige Transaktionsgebühren** machen die Ausstellung von Nachweisen auch in großem Umfang wirtschaftlich
+- **Energieeffizientes Proof of Stake** passt zu den Nachhaltigkeitszielen von Bildungseinrichtungen
+- **Native Token** ermöglichen Zertifikats-NFTs ohne zusätzliche Smart-Contract-Komplexität
+- **Aiken Smart Contracts** erlauben programmierbare Prüflogik
+- **Globale Zugänglichkeit** stellt sicher, dass Nachweise überall auf der Welt überprüfbar sind
 
 ## Erste Schritte
 
 - [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

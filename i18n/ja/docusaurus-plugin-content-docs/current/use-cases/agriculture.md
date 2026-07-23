@@ -11,7 +11,7 @@ sidebar_position: 8
 
 Modern food supply chains are complex and opaque. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
 
-For farmers and producers, proving the quality and origin of their products is difficult and expensive. Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
+農家や生産者にとって、自らの製品の品質や産地を証明することは難しく、コストもかかります。価値の多くは仲介業者に取られ、生産者は市場で自らの製品を差別化することに苦労しています。 Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
 
 ## ブロックチェーンによる解決策
 

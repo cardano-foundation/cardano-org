@@ -1,6 +1,6 @@
 ---
 title: Wahlsysteme
-description: Secure, transparent election systems using Cardano blockchain technology
+description: Sichere, transparente Wahlsysteme mit der Cardano-Blockchain
 sidebar_label: Wahlsysteme
 sidebar_position: 14
 ---
@@ -9,33 +9,33 @@ sidebar_position: 14
 
 ## Die Herausforderung
 
-Election integrity is fundamental to democracy, yet voting systems face persistent challenges. Paper-based systems are slow and error-prone, while electronic systems raise concerns about security, auditability, and trust. Voters often cannot verify that their vote was counted correctly.
+Die Integrität von Wahlen ist das Fundament der Demokratie, und doch stehen Wahlsysteme vor hartnäckigen Problemen. Papierbasierte Verfahren sind langsam und fehleranfällig, elektronische Systeme werfen Fragen zu Sicherheit, Nachprüfbarkeit und Vertrauen auf. Wähler können meist nicht überprüfen, ob ihre Stimme korrekt gezählt wurde.
 
-Beyond governmental elections, organizations of all types need secure voting mechanisms for governance decisions. Current solutions often lack transparency or are vulnerable to manipulation.
+Auch jenseits staatlicher Wahlen brauchen Organisationen aller Art sichere Abstimmungsverfahren für ihre Entscheidungen. Bestehende Lösungen sind oft intransparent oder anfällig für Manipulation.
 
 ## Wie Blockchain dies löst
 
-Blockchain voting systems provide security, transparency, and verifiability:
+Blockchain-Wahlsysteme bieten Sicherheit, Transparenz und Nachprüfbarkeit:
 
-- **Voter verification**: Cryptographic identity ensures only eligible voters participate
-- **Vote integrity**: Once cast, votes cannot be altered or deleted
-- **Auditability**: Anyone can verify the vote count while maintaining ballot secrecy
-- **Transparency**: The entire process is publicly auditable
-- **Accessibility**: Secure remote voting can increase participation
+- **Wählerverifizierung**: Kryptografische Identität stellt sicher, dass nur Berechtigte abstimmen
+- **Stimmintegrität**: Einmal abgegebene Stimmen lassen sich weder ändern noch löschen
+- **Nachprüfbarkeit**: Jeder kann die Auszählung überprüfen, das Wahlgeheimnis bleibt gewahrt
+- **Transparenz**: Der gesamte Prozess ist öffentlich nachvollziehbar
+- **Zugänglichkeit**: Sichere Fernabstimmung kann die Beteiligung erhöhen
 
-Cardano's own governance uses blockchain-based voting, demonstrating the technology's viability for high-stakes decisions affecting billions of dollars in value.
+Cardanos eigene Governance nutzt Blockchain-Abstimmungen und beweist damit, dass die Technologie auch für weitreichende Entscheidungen über Milliardenwerte trägt.
 
 ## Warum Cardano
 
-- **Proven governance voting** through Catalyst and on-chain governance
-- **Privacy-preserving options** protect voter anonymity while ensuring integrity
-- **Scalability** supports large-scale elections
-- **Community governance experience** provides real-world insights
-- **Research-driven approach** addresses complex voting system requirements
+- **Bewährte Governance-Abstimmungen** durch Catalyst und On-Chain-Governance
+- **Optionen zum Schutz der Privatsphäre** wahren die Anonymität der Wähler bei voller Integrität
+- **Skalierbarkeit** trägt auch große Wahlen
+- **Erfahrung mit Community-Governance** liefert Erkenntnisse aus der Praxis
+- **Forschungsbasierter Ansatz** wird den komplexen Anforderungen von Wahlsystemen gerecht
 
 ## Erste Schritte
 
-- [Learn about Cardano governance](/governance)
-- [Explore governance tools](/apps?tags=governance)
+- [Mehr über Cardano-Governance erfahren](/governance)
+- [Governance-Tools entdecken](/apps?tags=governance)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

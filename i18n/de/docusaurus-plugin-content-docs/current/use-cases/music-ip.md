@@ -1,40 +1,40 @@
 ---
 title: Musik & geistiges Eigentum
-description: Direct royalty payments to artists through blockchain technology on Cardano
+description: Tantiemen direkt an die Künstler dank Blockchain-Technologie auf Cardano
 sidebar_label: Musik & geistiges Eigentum
 sidebar_position: 16
 ---
 
-# Music & Intellectual Property
+# Musik & geistiges Eigentum
 
 ## Die Herausforderung
 
-Artists and creators often receive a small fraction of the revenue their work generates. Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
+Künstler und Kreative erhalten oft nur einen Bruchteil der Einnahmen, die ihre Werke erzielen. Komplexe Lizenzkonstrukte, undurchsichtige Tantiemenabrechnungen und zahlreiche Zwischenstationen sorgen dafür, dass Zahlungen bei jedem Schritt später ankommen und kleiner werden. Viele Kreative können von ihrer Arbeit kaum leben, obwohl ihre Werke millionenfach konsumiert werden.
 
-Intellectual property rights are difficult to track and enforce in the digital age. Piracy is rampant, and even legitimate uses often fail to compensate creators fairly.
+Rechte an geistigem Eigentum sind im digitalen Zeitalter schwer nachzuverfolgen und durchzusetzen. Piraterie ist allgegenwärtig, und selbst legale Nutzungen vergüten die Urheber oft nicht fair.
 
 ## Wie Blockchain dies löst
 
-Blockchain technology enables direct relationships between creators and consumers:
+Blockchain-Technologie ermöglicht direkte Beziehungen zwischen Kreativen und ihrem Publikum:
 
-- **Direct payments**: Fans can support artists without intermediaries taking large cuts
-- **Transparent royalties**: Smart contracts automatically distribute payments to all rights holders
-- **Immutable ownership**: Prove creation and ownership of intellectual property
-- **Fractional rights**: Enable investment in creative works through tokenization
-- **Programmable licenses**: Smart contracts can enforce usage terms automatically
+- **Direkte Zahlungen**: Fans unterstützen Künstler, ohne dass Zwischenhändler große Anteile einbehalten
+- **Transparente Tantiemen**: Smart Contracts verteilen Zahlungen automatisch an alle Rechteinhaber
+- **Unveränderliches Eigentum**: Urheberschaft und Eigentum an geistigem Eigentum lassen sich belegen
+- **Anteilige Rechte**: Tokenisierung ermöglicht Investitionen in kreative Werke
+- **Programmierbare Lizenzen**: Smart Contracts setzen Nutzungsbedingungen automatisch durch
 
-NFTs and native tokens on Cardano enable new models for music distribution, from limited edition releases to ongoing royalty streams that fairly compensate all contributors.
+NFTs und native Token auf Cardano eröffnen neue Modelle für den Musikvertrieb: von limitierten Editionen bis zu laufenden Tantiemenströmen, die alle Beteiligten fair vergüten.
 
 ## Warum Cardano
 
-- **Low transaction fees** make micropayments to artists economically viable
-- **Native tokens** enable efficient representation of rights and royalties
-- **Smart contracts** automate fair distribution to all collaborators
-- **Community focus** aligns with artists seeking alternatives to corporate control
-- **Sustainability** through proof of stake appeals to environmentally conscious creators
+- **Niedrige Transaktionsgebühren** machen Kleinstzahlungen an Künstler wirtschaftlich
+- **Native Token** bilden Rechte und Tantiemen effizient ab
+- **Smart Contracts** automatisieren die faire Verteilung an alle Mitwirkenden
+- **Community-Fokus** passt zu Künstlern, die Alternativen zur Kontrolle durch Konzerne suchen
+- **Nachhaltigkeit** durch Proof of Stake überzeugt umweltbewusste Kreative
 
 ## Erste Schritte
 
-- [Explore NFT marketplaces on Cardano](/apps/?tags=nft)
+- [NFT-Marktplätze auf Cardano entdecken](/apps/?tags=nft)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

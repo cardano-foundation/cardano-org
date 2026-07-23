@@ -15,7 +15,7 @@ Intellectual property rights are difficult to track and enforce in the digital a
 
 ## ブロックチェーンによる解決策
 
-Blockchain technology enables direct relationships between creators and consumers:
+ブロックチェーン技術は、クリエイターと消費者の直接的な関係を可能にします。
 
 - **ダイレクトペイメント**: 仲介業者に大きなマージンを取られることなく、ファンがアーティストを直接支援
 - **透明なロイヤリティ**: スマートコントラクトがすべての権利者に自動的に収益を分配

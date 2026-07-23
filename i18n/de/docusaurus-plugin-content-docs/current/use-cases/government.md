@@ -1,40 +1,40 @@
 ---
-title: Government Documents
-description: Tamper-proof official documents and records using Cardano blockchain technology
+title: Behördendokumente
+description: Fälschungssichere amtliche Dokumente und Register mit der Cardano-Blockchain
 sidebar_label: Verwaltung
 sidebar_position: 5
 ---
 
-# Government Documents
+# Behördendokumente
 
 ## Die Herausforderung
 
-Government-issued documents form the foundation of civic identity, yet they remain vulnerable to forgery, loss, and bureaucratic inefficiency. Birth certificates, property deeds, business licenses, and other official records are often paper-based, creating challenges for verification and portability.
+Amtliche Dokumente bilden das Fundament der bürgerlichen Identität, und doch bleiben sie anfällig für Fälschung, Verlust und bürokratische Ineffizienz. Geburtsurkunden, Grundbucheinträge, Gewerbescheine und andere offizielle Unterlagen existieren oft nur auf Papier, was Überprüfung und Mitnahme erschwert.
 
-Citizens frequently face lengthy processes to obtain copies of their own documents, while government agencies struggle with record-keeping across jurisdictions. Document fraud undermines trust in institutions and creates real harm for individuals whose identities are misused.
+Bürger warten oft lange, um Kopien ihrer eigenen Dokumente zu erhalten, während Behörden mit der Aktenführung über Zuständigkeitsgrenzen hinweg kämpfen. Dokumentenbetrug untergräbt das Vertrauen in Institutionen und schadet ganz real den Menschen, deren Identität missbraucht wird.
 
 ## Wie Blockchain dies löst
 
-Blockchain technology enables governments to issue and manage official documents with unprecedented security and efficiency:
+Mit Blockchain-Technologie können Behörden amtliche Dokumente so sicher und effizient ausstellen und verwalten wie nie zuvor:
 
-- **Immutable records**: Once issued, documents cannot be altered without detection
-- **Instant verification**: Third parties can verify document authenticity without contacting issuing agencies
-- **Citizen control**: Individuals can access and share their documents securely
-- **Cross-border recognition**: Standardized digital documents facilitate international verification
+- **Unveränderliche Einträge**: Einmal ausgestellte Dokumente lassen sich nicht unbemerkt verändern
+- **Sofortige Überprüfung**: Dritte können die Echtheit prüfen, ohne die ausstellende Behörde zu kontaktieren
+- **Kontrolle durch die Bürger**: Jeder kann sicher auf die eigenen Dokumente zugreifen und sie teilen
+- **Grenzüberschreitende Anerkennung**: Standardisierte digitale Dokumente erleichtern die internationale Überprüfung
 - **Audit trails**: Complete history of document issuance and verification
 
-Smart contracts can automate document issuance when conditions are met, reducing processing times and human error while maintaining security and compliance.
+Smart Contracts können die Ausstellung automatisieren, sobald die Voraussetzungen erfüllt sind. Das verkürzt Bearbeitungszeiten und reduziert menschliche Fehler, ohne Sicherheit und Compliance zu gefährden.
 
 ## Warum Cardano
 
-- **Proven security** through peer-reviewed cryptographic protocols
-- **Sustainability** aligns with government environmental commitments
-- **Transparency** supports public accountability requirements
-- **Scalability** handles document verification at national scale
-- **Interoperability** enables integration with existing government systems
+- **Bewährte Sicherheit** durch wissenschaftlich begutachtete kryptografische Protokolle
+- **Nachhaltigkeit** passt zu den Umweltzielen öffentlicher Verwaltungen
+- **Transparenz** unterstützt die öffentliche Rechenschaftspflicht
+- **Skalierbarkeit** bewältigt Dokumentenprüfung im nationalen Maßstab
+- **Interoperabilität** ermöglicht die Anbindung bestehender Verwaltungssysteme
 
 ## Erste Schritte
 
 - [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

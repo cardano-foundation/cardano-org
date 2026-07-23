@@ -115,7 +115,7 @@
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Für die aktuellste Dokumentation bitte auf {latestVersionLink} ({versionLabel}) gehen.",
+    "message": "Die aktuelle Dokumentation findest du unter {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
@@ -1109,7 +1109,7 @@
     "message": "Unsere Welt verändert sich. Gemeinsam können wir sie zum Besseren verändern."
   },
   "home.featured.description1": {
-    "message": "Cardano ist eine Proof-of-Stake-Blockchain-Plattform: die erste, die auf [Peer-reviewter Forschung](/research) basiert und mit evidenzbasierten Methoden entwickelt wurde. Sie kombiniert wegweisende Technologien, um dezentralen Anwendungen, Systemen und Gesellschaften beispiellose Sicherheit und Nachhaltigkeit zu bieten."
+    "message": "Cardano ist eine Proof-of-Stake-Blockchain-Plattform: die erste, die auf [wissenschaftlich begutachteter Forschung](/research) basiert und mit evidenzbasierten Methoden entwickelt wurde. Sie kombiniert wegweisende Technologien, um dezentralen Anwendungen, Systemen und Gesellschaften beispiellose Sicherheit und Nachhaltigkeit zu bieten."
   },
   "home.featured.description2": {
     "message": "Getragen von einem erstklassigen Ingenieurteam gibt Cardano Macht aus undurchsichtigen Strukturen zurück an die Menschen – und ist damit eine treibende Kraft für positiven Wandel und Fortschritt."
@@ -1187,7 +1187,7 @@
     "message": "Offene und anreizbasierte Beteiligung"
   },
   "home.benefits.participation.body": {
-    "message": "Mit einer engagierten Community im Kern ist Cardano ein Open-Source-Projekt, das durch offene Beteiligung weiterentwickelt wird. Um die Langlebigkeit und Gesundheit des Netzwerks zu sichern, belohnt ein Anreizmechanismus die Nutzer – ob als Stake-Pool-Betreiber oder Stake-Delegierende – für ihre Teilnahme. Die Plattform wächst durch Verbesserungs- und Erweiterungsvorschläge. Cardanos Governance-System gibt jedem eine demokratische Stimme: Ada-Inhaber können Vorschläge einreichen oder darüber abstimmen, die Plattform weiterzuentwickeln oder die Richtung mitzubestimmen. Dieses Modell verschafft Cardano eine einzigartige Ausgangslage für künftiges Wachstum und ermöglicht es, neue Funktionen gezielt auf die Bedürfnisse der Nutzer zuzuschneiden. So können Cardano und seine Community dauerhaft über Verbesserungen entscheiden und diese finanzieren."
+    "message": "Mit einer engagierten Community im Kern ist Cardano ein Open-Source-Projekt, das durch offene Beteiligung weiterentwickelt wird. Um die Langlebigkeit und Gesundheit des Netzwerks zu sichern, belohnt ein Anreizmechanismus die Nutzer – ob als Stake-Pool-Betreiber oder Stake-Delegierende – für ihre Teilnahme. Die Plattform wächst durch Verbesserungs- und Erweiterungsvorschläge. Cardanos Governance-System gibt jedem eine demokratische Stimme: Ada-Halter können Vorschläge einreichen oder darüber abstimmen, die Plattform weiterzuentwickeln oder die Richtung mitzubestimmen. Dieses Modell verschafft Cardano eine einzigartige Ausgangslage für künftiges Wachstum und ermöglicht es, neue Funktionen gezielt auf die Bedürfnisse der Nutzer zuzuschneiden. So können Cardano und seine Community dauerhaft über Verbesserungen entscheiden und diese finanzieren."
   },
   "home.benefits.participation.cta": {
     "message": "Mehr über Governance erfahren"
@@ -1220,7 +1220,7 @@
     "message": "Cardano entdecken"
   },
   "home.discover.description": {
-    "message": "Cardano ist die erste Blockchain-Plattform, die auf [Peer-reviewter Forschung](/research) aufgebaut wurde – sicher genug, um die Daten von Milliarden zu schützen, skalierbar genug, um globale Systeme zu bedienen, und robust genug, um grundlegenden Wandel zu unterstützen."
+    "message": "Cardano ist die erste Blockchain-Plattform, die auf [wissenschaftlich begutachteter Forschung](/research) aufbaut, sicher genug, um die Daten von Milliarden zu schützen, skalierbar genug, um globale Systeme zu bedienen, und robust genug, um grundlegenden Wandel zu unterstützen."
   },
   "home.discover.people": {
     "message": "Menschen"
@@ -2119,7 +2119,7 @@
     "message": "Cardano entdecken"
   },
   "discoverCardano.hero.description": {
-    "message": "Cardano ist das Zusammenspiel von fünf Prinzipien: Menschen, Sinn, Technologie, Forschung und Chancen. Entdecke und erkunde diese neue Konstellation des Wissens."
+    "message": "Cardano vereint fünf Prinzipien: Menschen, Sinn, Technologie, Forschung und Chancen. Entdecke, wie sie zusammenwirken."
   },
   "discoverCardano.meta.title": {
     "message": "Was ist Cardano, eine Blockchain für Nachhaltigkeit"
@@ -2134,7 +2134,7 @@
     "message": "Gemeinsam erreichen wir mehr für die vielen."
   },
   "discoverCardano.people.text1": {
-    "message": "Cardano wird von einer dezentralen Community aus Wissenschaftlern, Ingenieuren und Vordenkern gebaut, die ein gemeinsames Ziel eint: eine Technologieplattform zu schaffen, die den positiven Wandel entzündet, den die Welt braucht. Wir glauben, dass die Zukunft nicht von der Vergangenheit bestimmt sein sollte und dass mehr möglich ist, für alle möglich gemacht werden kann, durch Technologie. Wir messen den Wert einer Aufgabe nicht an ihrer Schwierigkeit, sondern an ihren Ergebnissen."
+    "message": "Cardano wird von einer dezentralen Community aus Wissenschaftlern, Ingenieuren und Vordenkern gebaut, die ein gemeinsames Ziel eint: eine Technologieplattform, die den positiven Wandel anstößt, den die Welt braucht. Wir glauben, dass die Vergangenheit nicht die Zukunft bestimmen muss und dass Technologie mehr möglich macht, und zwar für alle. Den Wert einer Aufgabe messen wir nicht an ihrer Schwierigkeit, sondern an ihren Ergebnissen."
   },
   "discoverCardano.people.text2": {
     "message": "Jede Person, die Ada hält, hält auch einen Anteil am Cardano-Netzwerk. In einer Wallet verwahrte Ada kann an einen Stake Pool delegiert werden, um Belohnungen zu verdienen, also am erfolgreichen Betrieb des Netzwerks mitzuwirken, oder einem Stake Pool zugesagt werden, um die Chance des Pools auf Belohnungen zu erhöhen. Mit der Zeit wird Ada auch für eine Vielzahl von Anwendungen und Diensten auf der Cardano-Plattform nutzbar sein."
@@ -2146,10 +2146,10 @@
     "message": "Eine Plattform für eine nachhaltige Zukunft, die Menschen hilft, besser zusammenzuarbeiten, einander zu vertrauen und globale Lösungen für globale Probleme zu entwickeln."
   },
   "discoverCardano.purpose.text1": {
-    "message": "Cardano ist eine Weggabelung. Es führt uns von dort, wo wir waren, dorthin, wohin wir bestimmt sind: zu einer globalen Gesellschaft, die sicher, transparent und gerecht ist und den vielen ebenso dient wie den wenigen. Wie die technologischen Umbrüche zuvor bietet es eine neue Vorlage dafür, wie wir arbeiten, miteinander umgehen und schaffen, als Einzelne, Unternehmen und Gesellschaften."
+    "message": "Cardano ist eine Weggabelung. Es führt uns von dort, wo wir heute stehen, dorthin, wo wir hinwollen: zu einer globalen Gesellschaft, die sicher, transparent und gerecht ist und den vielen ebenso dient wie den wenigen. Wie die technologischen Umbrüche zuvor verändert es grundlegend, wie wir arbeiten, zusammenwirken und Neues schaffen: als Einzelne, als Unternehmen, als Gesellschaft."
   },
   "discoverCardano.purpose.text2": {
-    "message": "Cardano begann mit der Vision einer Welt ohne Mittelsmänner, in der die Macht nicht von wenigen Verantwortlichen kontrolliert wird, sondern von den vielen, die sie in der Hand haben. In dieser Welt haben Menschen die Kontrolle über ihre Daten und darüber, wie sie interagieren und handeln. Unternehmen haben die Chance zu wachsen, unabhängig von monopolistischen und bürokratischen Machtstrukturen. Gesellschaften können echte Demokratie leben: selbstbestimmt, gerecht und rechenschaftspflichtig. Es ist eine Welt, die Cardano möglich macht."
+    "message": "Cardano begann mit der Vision einer Welt ohne Mittelsmänner: einer Welt, in der die Macht nicht bei wenigen liegt, die niemandem Rechenschaft schulden, sondern bei den vielen. In dieser Welt bestimmen Menschen selbst über ihre Daten und darüber, wie sie interagieren und handeln. Unternehmen können wachsen, unabhängig von monopolistischen und bürokratischen Machtstrukturen. Gesellschaften können echte Demokratie leben: selbstbestimmt, gerecht und rechenschaftspflichtig. Cardano macht diese Welt möglich."
   },
   "discoverCardano.technology.title": {
     "message": "Technologie"
@@ -2161,10 +2161,10 @@
     "message": "Vom kleinen Schritt bis zum globalen Maßstab verbessert Cardano, wie wir interagieren, handeln und schaffen, und letztlich, wie wir als globale Gesellschaft funktionieren."
   },
   "discoverCardano.technology.text2": {
-    "message": "Cardano ist eine Blockchain-Plattform, die auf dem bahnbrechenden Proof-of-Stake-Konsensprotokoll Ouroboros aufbaut und mit der Programmiersprache Haskell entwickelt wurde: einer funktionalen Programmiersprache, die es Cardano ermöglicht, evidenzbasiert zu entwickeln, für unvergleichliche Sicherheit und Stabilität."
+    "message": "Cardano ist eine Blockchain-Plattform, die auf dem bahnbrechenden Proof-of-Stake-Konsensprotokoll Ouroboros aufbaut und mit der Programmiersprache Haskell entwickelt wurde: einer funktionalen Programmiersprache, die evidenzbasierte Entwicklung ermöglicht. Das Ergebnis: unvergleichliche Sicherheit und Stabilität."
   },
   "discoverCardano.technology.text3": {
-    "message": "Unsere Technologie beruht auf [Forschung](/research). Wir haben mit wissenschaftlichen Methoden neu definiert, was es bedeutet, eine globale Softwareplattform zu schaffen. Wir haben weder bei unserer Überzeugung noch bei unserem Ansatz Kompromisse gemacht. Um eine bessere Zukunft zu bauen, sicher, nachhaltig und von den vielen regierbar, haben wir den weniger begangenen Weg gewählt. Das Ergebnis unserer Arbeit ist eine Blockchain-Plattform, die in ihrer Leistungsfähigkeit ihresgleichen sucht und wirklich in der Lage ist, globale Anwendungen, Systeme und reale geschäftliche Anwendungsfälle zu tragen."
+    "message": "Unsere Technologie beruht auf [Forschung](/research). Wir haben mit wissenschaftlichen Methoden neu definiert, was es bedeutet, eine globale Softwareplattform zu schaffen. Wir haben weder bei unserer Überzeugung noch bei unserem Ansatz Kompromisse gemacht. Um eine bessere Zukunft zu bauen, sicher, nachhaltig und demokratisch gestaltet, haben wir bewusst den unbequemeren Weg gewählt. Das Ergebnis unserer Arbeit ist eine Blockchain-Plattform, die in ihrer Leistungsfähigkeit ihresgleichen sucht und globale Anwendungen, Systeme und reale geschäftliche Anwendungsfälle tragen kann."
   },
   "discoverCardano.research.title": {
     "message": "Forschung"
@@ -2173,7 +2173,7 @@
     "message": "Wegweisende Technologie beginnt mit bahnbrechender Forschung."
   },
   "discoverCardano.research.text1": {
-    "message": "Cardano begann mit [Forschung](/research) und ist durch sie gewachsen. Bevor wir eine Technologie einbinden, wird sie spezifiziert. Und bevor sie spezifiziert wird, wird sie erforscht. Diese [Forschung](/research) ist wissenschaftlich begutachtet, eine für eine Blockchain-Plattform einzigartige Leistung, damit sich unsere Ideen bewähren müssen, bevor wir sie bestätigen."
+    "message": "Cardano begann mit [Forschung](/research) und ist durch sie gewachsen. Bevor wir eine Technologie einbinden, wird sie spezifiziert. Und bevor sie spezifiziert wird, wird sie erforscht. Diese [Forschung](/research) ist wissenschaftlich begutachtet, für eine Blockchain-Plattform eine einzigartige Leistung. So müssen sich unsere Ideen der Kritik stellen, bevor wir sie umsetzen."
   },
   "discoverCardano.research.text2": {
     "message": "[Unsere Forschung](/research), geleitet von führenden Wissenschaftlern, untersucht Philosophie, Soziologie, Verhalten und Spieltheorie. Für jedes Ergebnis betrachten wir jedes noch so kleine Detail: die Variablen, die oft übersehen werden, aber am Ende die Integrität und Nachhaltigkeit einer globalen, dezentralen Plattform beeinflussen können. Wir setzen nichts als selbstverständlich voraus."
@@ -2185,10 +2185,10 @@
     "message": "Der Ausgangspunkt für jede neue Chance. Bring dein Geschäft mit Cardano voran und entdecke die Zukunft der Technologie."
   },
   "discoverCardano.opportunity.text1": {
-    "message": "Cardano liefert die Vorlage und das Werkzeug für ein neues Zeitalter der Innovation. Es bringt modernste Technologien, Modelle und Methoden mit, damit Menschen, Entwickler und Unternehmen neue Möglichkeiten entdecken, Veränderung bewirken und ihr Leben bereichern."
+    "message": "Cardano legt das Fundament für ein neues Zeitalter der Innovation. Es bringt modernste Technologien, Modelle und Methoden mit, damit Menschen, Entwickler und Unternehmen neue Möglichkeiten entdecken, Veränderung bewirken und ihr Leben bereichern."
   },
   "discoverCardano.opportunity.text2": {
-    "message": "Die Blockchain-Technologie hat die Antwort auf viele altbekannte Herausforderungen, ob finanziell, gesellschaftlich oder technologisch. Sie schaltet unnötige Vermittler aus und verteilt Macht neu, um teure Abhängigkeiten, einschränkende Denkmuster und ineffiziente Systeme des Handels und Austauschs aufzulösen. Cardano macht dieses Potenzial wahr. Es ist eine Plattform mit den Standards für Sicherheit, Privatsphäre, Nachhaltigkeit und Leistung, die es braucht, um die breite Akzeptanz der Technologie zu beschleunigen und ein dauerhaftes Ökosystem zu tragen."
+    "message": "Die Blockchain-Technologie beantwortet viele altbekannte Herausforderungen, ob finanzielle, gesellschaftliche oder technologische. Sie schaltet unnötige Vermittler aus und verteilt Macht neu: weg von teuren Abhängigkeiten, einschränkenden Denkmustern und ineffizientem Handel und Austausch. Cardano macht dieses Potenzial wahr. Es ist eine Plattform mit den Standards für Sicherheit, Privatsphäre, Nachhaltigkeit und Leistung, die es braucht, um die breite Akzeptanz der Technologie zu beschleunigen und ein dauerhaftes Ökosystem zu tragen."
   },
   "discoverCardano.opportunity.text3": {
     "message": "Cardano treibt neue, sicherere und global skalierbare Lösungen an. Seine Technologie wird durch faktenbasierte Entwicklungsmethoden laufend verbessert und von einem demokratischen Abstimmungssystem geleitet, in dem jedes Mitglied eine Stimme hat. Die Chance von Cardano passt sich deinem Anwendungsfall an. Es ist eine Chance, die immer wieder neue Chancen schafft."
@@ -2449,7 +2449,7 @@
     "message": "Verteilung"
   },
   "genesis.distribution.paragraph1": {
-    "message": "Die anfängliche Verteilung von Ada, im Grunde ein Verkauf vor dem Start, war die erste in der Krypto-Branche, die Know-Your-Customer-Richtlinien festlegte, und der Verteilungsprozess wurde geprüft. Informationen und Statistiken zur Gutschein-Verteilung findest du weiter unten im Abschnitt zu den Statistiken der Ada-Gutschein-Verteilung."
+    "message": "Die anfängliche Verteilung von Ada, im Grunde ein Vorverkauf, war die erste in der Krypto-Branche mit Know-Your-Customer-Richtlinien; der Verteilungsprozess wurde zudem unabhängig geprüft. Informationen und Statistiken zur Gutschein-Verteilung findest du weiter unten im Abschnitt zu den Statistiken der Ada-Gutschein-Verteilung."
   },
   "genesis.distribution.paragraph2": {
     "message": "Zusätzlich zu diesen Ada umfasst die Genesis-Block-Verteilung einen Betrag in Höhe von 20 % der während der Verkaufsphase verkauften Ada-Gutscheine, also **5.185.414.108 Ada**. Diese wurden erzeugt und an drei Gruppen von Organisationen des Cardano-Ökosystems verteilt, die zum Technical and Business Development Pool gehören: IOHK, EMURGO und die Cardano Foundation, und zwar wie folgt:"
@@ -2497,7 +2497,7 @@
     "message": "Cardano Governance, von der Community getragene Entscheidungen"
   },
   "governance.meta.description": {
-    "message": "Cardano Governance gibt jedem Ada-Besitzer eine Stimme. Delegiere an einen DRep, stimme über Vorschläge ab oder registriere dich als Delegate Representative, um das Netzwerk mitzugestalten."
+    "message": "Cardano Governance gibt jedem Ada-Halter eine Stimme. Delegiere an einen DRep, stimme über Vorschläge ab oder registriere dich als Delegate Representative, um das Netzwerk mitzugestalten."
   },
   "governance.divider.withinCardano": {
     "message": "Governance bei Cardano"
@@ -2518,7 +2518,7 @@
     "message": "Stimmrecht delegieren"
   },
   "governance.delegateVoting.text": {
-    "message": "Delegation bedeutet, dein Stimmrecht – entsprechend deinem Ada-Guthaben – einem Delegate Representative (DRep) zu übertragen, der in deinem Namen abstimmt, ähnlich einem Parlamentsabgeordneten. Alternativ kannst du automatisch abstimmen: Enthaltung oder ‚Kein Vertrauen' bei allen Vorschlägen."
+    "message": "Delegation bedeutet, dein Stimmrecht, entsprechend deinem Ada-Guthaben, einem Delegate Representative (DRep) zu übertragen, der in deinem Namen abstimmt, ähnlich einem Parlamentsabgeordneten. Alternativ kannst du automatisch abstimmen lassen: Enthaltung oder Misstrauen bei allen Vorschlägen."
   },
   "governance.delegateVoting.buttonText": {
     "message": "DRep finden"
@@ -2605,7 +2605,7 @@
     "message": "Cardano Hard Forks, Verlauf der Netzwerk-Upgrades"
   },
   "hardforks.layout.description": {
-    "message": "A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved."
+    "message": "Die komplette Zeitleiste der Cardano Hard Forks von Byron bis van Rossem. Entdecke jedes Netzwerk-Upgrade: was sich geändert hat und wie sich das Protokoll weiterentwickelt hat."
   },
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
@@ -2725,7 +2725,7 @@
     "message": "Ouroboros ist ein Proof-of-Stake-Protokoll. Es verteilt die Kontrolle über das Netzwerk auf Stake Pools: Node-Betreiber mit der Infrastruktur, die für eine stabile und zuverlässige Verbindung zum Netzwerk nötig ist."
   },
   "ouroboros.features.stakeDelegation.text2": {
-    "message": "Für jeden Slot wird ein Stake Pool zum Slot Leader bestimmt und dafür belohnt, dass er einen Block zur Chain hinzufügt. Ada-Inhaber können ihren Stake an einen bestimmten Stake Pool delegieren. So steigt dessen Chance, als Slot Leader ausgewählt zu werden, und sie erhalten einen Anteil an den Belohnungen des Stake Pools."
+    "message": "Für jeden Slot wird ein Stake Pool zum Slot Leader bestimmt und dafür belohnt, dass er einen Block zur Chain hinzufügt. Ada-Halter können ihren Stake an einen bestimmten Stake Pool delegieren. So steigt dessen Chance, als Slot Leader ausgewählt zu werden, und sie erhalten einen Anteil an den Belohnungen des Stake Pools."
   },
   "ouroboros.features.energyEfficient.title": {
     "message": "Energieeffizient"
@@ -2965,7 +2965,7 @@
     "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
   },
   "stakePoolDelegation.whatIsStake.text2": {
-    "message": "Ada-Inhaber können auf zwei Wegen Belohnungen verdienen: indem sie ihren Stake an einen Stake Pool delegieren, der von jemand anderem betrieben wird, oder indem sie einen eigenen Stake Pool betreiben. Die Menge des an einen Pool delegierten Stakes bestimmt maßgeblich, wen das Ouroboros-Protokoll auswählt, den nächsten Block zur Blockchain hinzuzufügen – und dafür eine Belohnung zu erhalten."
+    "message": "Ada-Halter können auf zwei Wegen Belohnungen verdienen: indem sie ihren Stake an einen Stake Pool delegieren, der von jemand anderem betrieben wird, oder indem sie einen eigenen Stake Pool betreiben. Die Menge des an einen Pool delegierten Stakes bestimmt maßgeblich, wen das Ouroboros-Protokoll auswählt, den nächsten Block zur Blockchain hinzuzufügen – und dafür eine Belohnung zu erhalten."
   },
   "stakePoolDelegation.whatIsStake.text3": {
     "message": "Je mehr Stake an einen Pool delegiert wird (bis zu einem bestimmten Punkt), desto wahrscheinlicher erzeugt er den nächsten Block – und die Belohnungen werden unter allen aufgeteilt, die ihren Stake an diesen Pool delegiert haben."
@@ -2974,7 +2974,7 @@
     "message": "Was ist Stake-Delegation?"
   },
   "stakePoolDelegation.whatIsDelegation.text": {
-    "message": "Delegation ist der Vorgang, bei dem Ada-Inhaber den mit ihrer Ada verbundenen Stake an einen Stake Pool übertragen. So können auch Nutzer am Netzwerk teilnehmen und proportional zu ihrem delegierten Stake Belohnungen verdienen – ohne selbst einen Node betreiben zu müssen."
+    "message": "Delegation ist der Vorgang, bei dem Ada-Halter den mit ihrer Ada verbundenen Stake an einen Stake Pool übertragen. So können auch Nutzer am Netzwerk teilnehmen und proportional zu ihrem delegierten Stake Belohnungen verdienen – ohne selbst einen Node betreiben zu müssen."
   },
   "stakePoolDelegation.whyIncentives.divider": {
     "message": "Warum Anreize?"
@@ -3019,7 +3019,7 @@
     "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
   },
   "stakePoolOperation.whatIsStaking.rightText1": {
-    "message": "Ein Ada-Inhaber hat zwei Möglichkeiten, Belohnungen zu verdienen: Er delegiert seinen Stake an einen Stake Pool, den jemand anderes betreibt, oder er betreibt seinen eigenen Stake Pool."
+    "message": "Ein Ada-Halter hat zwei Möglichkeiten, Belohnungen zu verdienen: Er delegiert seinen Stake an einen Stake Pool, den jemand anderes betreibt, oder er betreibt seinen eigenen Stake Pool."
   },
   "stakePoolOperation.whatIsStaking.rightText2": {
     "message": "Wie viel Stake an einen bestimmten Stake Pool delegiert wird, ist das wichtigste Kriterium, nach dem das Ouroboros-Protokoll entscheidet, wer den nächsten Block zur Blockchain hinzufügen darf und dafür eine finanzielle Belohnung erhält."
@@ -3034,7 +3034,7 @@
     "message": "Stake Pools können öffentlich oder privat sein. Ein öffentlicher Stake Pool ist ein Node im Cardano-Netzwerk mit einer öffentlichen Adresse, an den andere Nutzer delegieren und dafür Belohnungen erhalten können. Private Stake Pools zahlen Belohnungen nur an ihre Eigentümer aus."
   },
   "stakePoolOperation.whatIsStakePool.text2": {
-    "message": "Stake Pools werden von einem zuverlässigen Betreiber geführt: einer Person oder einem Unternehmen mit dem Wissen und den Ressourcen, um den Node dauerhaft zu betreiben. Ada-Inhaber können an öffentliche Stake Pools delegieren, wenn sie am Protokoll teilnehmen und Belohnungen erhalten, aber nicht selbst einen Node im Cardano-Netzwerk betreiben wollen."
+    "message": "Stake Pools werden von einem zuverlässigen Betreiber geführt: einer Person oder einem Unternehmen mit dem Wissen und den Ressourcen, um den Node dauerhaft zu betreiben. Ada-Halter können an öffentliche Stake Pools delegieren, wenn sie am Protokoll teilnehmen und Belohnungen erhalten, aber nicht selbst einen Node im Cardano-Netzwerk betreiben wollen."
   },
   "stakePoolOperation.whatIsStakePool.text3": {
     "message": "Je mehr Stake an einen Stake Pool delegiert wird, desto größer ist seine Chance, als Slot Leader ausgewählt zu werden. Jedes Mal, wenn er ausgewählt wird und einen Block erzeugt, der in die Blockchain aufgenommen wird, erhält er eine Belohnung. Diese Belohnungen werden zwischen dem Stake-Pool-Betreiber und den Delegatoren aufgeteilt."
@@ -3052,19 +3052,19 @@
     "message": "Desirability-Index"
   },
   "stakePoolOperation.desirability.text": {
-    "message": "Die Desirability eines Pools wird aus dem Pledge des Eigentümers, den Kosten und der Marge berechnet, kombiniert mit einem Einfluss aus Sättigung und Pool-Leistung. Dieser Wert dient dazu, Pools in Wallets zu bewerten, und zeigt an, wie 'begehrenswert' oder 'attraktiv' der Pool für mögliche Delegatoren ist."
+    "message": "Die Attraktivität eines Pools wird aus dem Pledge des Eigentümers, den Kosten und der Marge berechnet, kombiniert mit Einflüssen aus Sättigung und Pool-Performance. Dieser Wert dient dazu, Pools in Wallets zu ranken, und zeigt, wie attraktiv der Pool für mögliche Delegierende ist."
   },
   "stakePoolOperation.saturation.title": {
     "message": "Sättigungsparameter (K)"
   },
   "stakePoolOperation.saturation.text": {
-    "message": "Sättigung beschreibt, dass ein bestimmter Stake Pool mehr Stake delegiert bekommen hat, als für das Netzwerk ideal ist. k ist dabei die angestrebte Anzahl gewünschter Pools. Sobald ein Pool die Sättigung erreicht, sinken seine Belohnungen. Der Sättigungsmechanismus wurde entwickelt, um Zentralisierung zu verhindern: Er ermutigt Delegatoren, an verschiedene Stake Pools zu delegieren, und motiviert Betreiber, zusätzliche Pools aufzusetzen, damit sie weiterhin maximale Belohnungen verdienen. Sättigung schützt also die Interessen von Ada-Inhabern, die ihren Stake delegieren, ebenso wie die der Stake-Pool-Betreiber, und verhindert, dass ein einzelner Pool zu groß wird."
+    "message": "Sättigung beschreibt, dass ein bestimmter Stake Pool mehr Stake delegiert bekommen hat, als für das Netzwerk ideal ist. k ist dabei die angestrebte Anzahl gewünschter Pools. Sobald ein Pool die Sättigung erreicht, sinken seine Belohnungen. Der Sättigungsmechanismus wurde entwickelt, um Zentralisierung zu verhindern: Er ermutigt Delegatoren, an verschiedene Stake Pools zu delegieren, und motiviert Betreiber, zusätzliche Pools aufzusetzen, damit sie weiterhin maximale Belohnungen verdienen. Sättigung schützt also die Interessen von Ada-Haltern, die ihren Stake delegieren, ebenso wie die der Stake-Pool-Betreiber, und verhindert, dass ein einzelner Pool zu groß wird."
   },
   "stakePoolOperation.setupCta.title": {
     "message": "Wie richte ich einen Stake Pool ein?"
   },
   "stakePoolOperation.setupCta.text1": {
-    "message": "Wichtig ist die Rolle eines Stake-Pool-Betreibers: den zuverlässigen Betrieb eines Netzwerk-Nodes rund um die Uhr sicherzustellen. Als Stake-Pool-Betreiber trägst du Verantwortung gegenüber den Ada-Inhabern, die an dich delegieren, aber auch für die Gesundheit des Netzwerks selbst. Das erfordert eine stabile und zuverlässige Netzwerk-Infrastruktur und idealerweise Kenntnisse in Systembetrieb und Serveradministration sowie Erfahrung in Entwicklung und Betrieb."
+    "message": "Wichtig ist die Rolle eines Stake-Pool-Betreibers: den zuverlässigen Betrieb eines Netzwerk-Nodes rund um die Uhr sicherzustellen. Als Stake-Pool-Betreiber trägst du Verantwortung gegenüber den Ada-Haltern, die an dich delegieren, aber auch für die Gesundheit des Netzwerks selbst. Das erfordert eine stabile und zuverlässige Netzwerk-Infrastruktur und idealerweise Kenntnisse in Systembetrieb und Serveradministration sowie Erfahrung in Entwicklung und Betrieb."
   },
   "stakePoolOperation.setupCta.text2": {
     "message": "Jeder kann lernen, einen Stake Pool zu betreiben, aber ein gewisses technisches Grundverständnis und Wissen sind nötig."
@@ -3880,7 +3880,7 @@
     "message": "Parameter-Details"
   },
   "governanceCharts.noResults.searchAndParams": {
-    "message": "Keine Charts gefunden für ‚{searchTerm}' mit den gewählten Parametern."
+    "message": "Keine Charts für „{searchTerm}“ mit den gewählten Parametern gefunden."
   },
   "governanceCharts.noResults.search": {
     "message": "Keine Charts gefunden für ‚{searchTerm}'"
@@ -4042,19 +4042,19 @@
     "message": "Kein Vertrauen"
   },
   "governance.delegate.noConfidence.help": {
-    "message": "Stimme immer mit kein Vertrauen gegen das aktuelle Constitutional Committee."
+    "message": "Stimmt immer für Misstrauen gegen das aktuelle Constitutional Committee."
   },
   "governance.delegate.alt.heading": {
     "message": "Lieber ein anderes Tool?"
   },
   "governance.delegate.alt.intro": {
-    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
+    "message": "Auch diese Community-Tools unterstützen dich dabei, deine Stimmkraft an einen DRep zu delegieren."
   },
   "governance.accountability.hero.title": {
     "message": "Was die Community erwartet"
   },
   "governance.accountability.hero.description": {
-    "message": "Die Standards, Erwartungen und Gesundheitssignale für die Rollen, denen Cardano Verantwortung gibt: DReps, das Constitutional Committee, Stake-Pool-Betreiber und aus der Treasury finanzierte Arbeit."
+    "message": "Die Standards, Erwartungen und netzwerkweiten Kennzahlen für die Rollen, denen Cardano Verantwortung überträgt: DReps, das Constitutional Committee, Stake-Pool-Betreiber und aus der Treasury finanzierte Arbeit."
   },
   "governance.accountability.meta.title": {
     "message": "Governance-Rechenschaft - Cardano"
@@ -4063,7 +4063,7 @@
     "message": "Community-Standards, Erwartungen und aggregierte On-Chain-Benchmarks für DReps, das Constitutional Committee, SPOs und aus der Treasury finanzierte Arbeit auf Cardano."
   },
   "governance.accountability.intro": {
-    "message": "Cardano wird von seiner Community regiert. Diese Seite dokumentiert die Standards, denen diese Rollen bereits verpflichtet sind, hergeleitet aus der Verfassung und den etablierten Regeln, und zeigt netzwerkweite Gesundheitssignale. Sie fasst zusammen und aggregiert; sie stellt keine neuen Regeln auf und bewertet keine Einzelpersonen."
+    "message": "Cardano wird von seiner Community regiert. Diese Seite dokumentiert die Standards, an die diese Rollen schon heute gebunden sind, hergeleitet aus der Verfassung und den etablierten Regeln, und zeigt Kennzahlen zur Gesundheit des Netzwerks. Sie trägt Bestehendes zusammen; sie stellt keine neuen Regeln auf und bewertet keine Einzelpersonen."
   },
   "governance.accountability.neutralityNote": {
     "message": "Die Benchmarks hier gelten für das gesamte Ökosystem. Für Daten zu einzelnen DReps, Committee-Mitgliedern oder Pools folge den verlinkten Tools."
@@ -4072,7 +4072,7 @@
     "message": "Wer sorgt für Rechenschaft in der Cardano-Governance?"
   },
   "governance.accountability.roles.subtitle": {
-    "message": "Wähle eine Rolle, um ihr Mandat, ihre Aufgaben und die Möglichkeiten der Community zu verstehen, ihre Arbeit zu überprüfen."
+    "message": "Wähle eine Rolle und erfahre, welches Mandat sie hat, welche Pflichten damit einhergehen und wie die Community ihre Arbeit überprüfen kann."
   },
   "governance.accountability.divider.roles": {
     "message": "Standards nach Rolle"
@@ -4141,7 +4141,7 @@
     "message": "Pflegt ein aktuelles öffentliches Profil."
   },
   "governance.accountability.dreps.exp.3": {
-    "message": "Stimmt konsequent ab und legt Interessenkonflikte offen."
+    "message": "Stimmt regelmäßig ab und legt Interessenkonflikte offen."
   },
   "governance.accountability.dreps.curated.1.label": {
     "message": "Beteiligung an aktuellen Aktionen"
@@ -4177,7 +4177,7 @@
     "message": "Verfassung, Artikel III Abschnitt 1"
   },
   "governance.accountability.committee.obl.2": {
-    "message": "Transparent arbeiten, jede Entscheidung veröffentlichen und die konkreten Teile der Verfassung nennen, auf die sich jede Abstimmung stützt, dass eine Aktion verfassungswidrig ist."
+    "message": "Transparent arbeiten, jede Entscheidung veröffentlichen und bei jedem Votum, das eine Aktion für verfassungswidrig erklärt, die konkreten Stellen der Verfassung nennen, auf die es sich stützt."
   },
   "governance.accountability.committee.obl.2.src": {
     "message": "Verfassung, Artikel III Abschnitt 4"
@@ -4189,7 +4189,7 @@
     "message": "Verfassung, Artikel III Abschnitt 4"
   },
   "governance.accountability.committee.exp.1": {
-    "message": "Erläutert die Begründung hinter jeder Verfassungsmäßigkeits-Entscheidung."
+    "message": "Erläutert die Gründe hinter jeder Entscheidung zur Verfassungsmäßigkeit."
   },
   "governance.accountability.committee.exp.2": {
     "message": "Tauscht sich offen mit der Community über seine Arbeitsweise aus."
@@ -4225,7 +4225,7 @@
     "message": "Betreiben die blockproduzierenden Nodes, die das Netzwerk sichern, und stimmen bei den Governance-Aktionen ab, die den Stake Pools vorbehalten sind."
   },
   "governance.accountability.spos.obl.1": {
-    "message": "Über die den Stake Pools vorbehaltenen Aktionen abstimmen: kein Vertrauen, Committee-Änderungen, Hard-Fork-Auslösungen, sicherheitsrelevante Parameteränderungen und Info-Aktionen."
+    "message": "Über die den Stake Pools vorbehaltenen Aktionen abstimmen: Misstrauensanträge, Committee-Änderungen, Hard-Fork-Auslösungen, sicherheitsrelevante Parameteränderungen und Info-Aktionen."
   },
   "governance.accountability.spos.obl.1.src": {
     "message": "Verfassung, Artikel II Abschnitt 5"
@@ -4300,13 +4300,13 @@
     "message": "Verfassung, Artikel II Abschnitt 7"
   },
   "governance.accountability.funding.exp.1": {
-    "message": "Berichtet offen über den Fortschritt gegenüber den Meilensteinen."
+    "message": "Berichtet offen, wie weit die zugesagten Meilensteine erreicht sind."
   },
   "governance.accountability.funding.exp.2": {
     "message": "Veröffentlicht, wie die Mittel verwendet wurden."
   },
   "governance.accountability.funding.exp.3": {
-    "message": "Liefert das Vorgeschlagene und gibt nicht verwendete Mittel zurück, wo zutreffend."
+    "message": "Liefert, was zugesagt war, und gibt nicht verwendete Mittel zurück, sofern vorgesehen."
   },
   "governance.accountability.funding.curated.1.label": {
     "message": "On-Chain umgesetzte Treasury-Auszahlungen"
@@ -4459,7 +4459,7 @@
     "message": "Cardano-Angebotsübersicht"
   },
   "insightsSupply.meta.pageDescription": {
-    "message": "Visuelle Darstellung der Ada-Angebotsverteilung in den wichtigsten Kategorien des Cardano-Netzwerks."
+    "message": "Visuelle Darstellung der Verteilung der Ada-Menge in den wichtigsten Kategorien des Cardano-Netzwerks."
   },
   "insightsSupply.meta.title": {
     "message": "Cardano-Angebotsübersicht"
@@ -4543,7 +4543,7 @@
     "message": "Reserven"
   },
   "insightsSupply.chart.reservesInfo": {
-    "message": "Differenz zwischen maximalem und Gesamtangebot"
+    "message": "Differenz zwischen Maximalmenge und Gesamtmenge"
   },
   "insightsSupply.chart.maximumSupply": {
     "message": "Maximales Angebot"
@@ -4585,7 +4585,7 @@
     "message": "Cardano Supply-Übersicht"
   },
   "insightsSupplySummary.meta.pageDescription": {
-    "message": "Historische Analyse der Verteilung des Cardano-Ada-Umlaufs über Reserven, Belohnungen, Treasury und Einlagen."
+    "message": "Historische Analyse der Verteilung der Ada-Menge auf Reserven, Belohnungen, Treasury und Einlagen im Cardano-Netzwerk."
   },
   "insightsSupplySummary.meta.title": {
     "message": "Cardano Supply-Übersicht"
@@ -4594,10 +4594,10 @@
     "message": "Cardano Supply-Übersicht"
   },
   "insightsSupplySummary.og.description": {
-    "message": "Entdecke historische Trends in der Verteilung des Cardano-Umlaufs, bei Reserven, Belohnungen, Treasury und Einlagen."
+    "message": "Entdecke historische Trends in der Verteilung der Ada-Menge: Reserven, Belohnungen, Treasury und Einlagen."
   },
   "insightsSupplySummary.intro.description": {
-    "message": "**Entdecke historische Trends in der Verteilung des Cardano-Ada-Umlaufs** über Reserven, Belohnungen, Treasury und Einlagen. Wähle einen Epochenbereich, um zu analysieren, wie sich diese zentralen Kennzahlen im Lauf der Zeit entwickelt haben."
+    "message": "**Entdecke historische Trends in der Verteilung der Ada-Menge** auf Reserven, Belohnungen, Treasury und Einlagen. Wähle einen Epochenbereich, um zu analysieren, wie sich diese zentralen Kennzahlen im Lauf der Zeit entwickelt haben."
   },
   "insightsSupplySummary.epochSelect.title": {
     "message": "Epochenbereich wählen"
@@ -4810,7 +4810,7 @@
     "description": "Intro paragraph 1"
   },
   "whatIsAWallet.intro.text2": {
-    "message": "Jede Wallet hat einen **öffentlichen Schlüssel**, mit dem du Gelder empfängst, ähnlich einer Kontonummer, die du teilen kannst, und einen **privaten Schlüssel**, mit dem du Transaktionen signierst und Gelder ausgibst. Wer den privaten Schlüssel besitzt, kontrolliert die Gelder. Ihn geheim zu halten ist deshalb alles.",
+    "message": "Jede Wallet hat einen **öffentlichen Schlüssel**, mit dem du Gelder empfängst, ähnlich einer Kontonummer, die du teilen kannst, und einen **privaten Schlüssel**, mit dem du Transaktionen signierst und Gelder ausgibst. Wer den privaten Schlüssel besitzt, kontrolliert die Gelder. Deshalb ist es entscheidend, ihn geheim zu halten.",
     "description": "Intro paragraph 2"
   },
   "whatIsAWallet.types.divider": {
@@ -4870,7 +4870,7 @@
     "description": "Recovery paragraph 1"
   },
   "whatIsAWallet.recovery.text2": {
-    "message": "Wer diese Wörter hat, kann deine Wallet auf jedem beliebigen Gerät wiederherstellen und deine Gelder nehmen. Schreibe die Phrase auf und bewahre sie offline auf. Tippe sie nie auf einer Website ein, speichere sie nie in einem Foto oder einer Cloud-Notiz und teile sie mit niemandem.",
+    "message": "Wer diese Wörter hat, kann deine Wallet auf jedem beliebigen Gerät wiederherstellen und deine Gelder stehlen. Schreibe die Phrase auf und bewahre sie offline auf. Tippe sie nie auf einer Website ein, speichere sie nie in einem Foto oder einer Cloud-Notiz und teile sie mit niemandem.",
     "description": "Recovery paragraph 2"
   },
   "whatIsAWallet.security.divider": {

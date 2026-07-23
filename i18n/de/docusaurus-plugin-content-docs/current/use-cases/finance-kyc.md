@@ -1,6 +1,6 @@
 ---
 title: Finanz-KYC
-description: Streamlined Know Your Customer verification using blockchain technology on Cardano
+description: Vereinfachte Know-Your-Customer-Prüfung mit Blockchain-Technologie auf Cardano
 sidebar_label: Finanz-KYC
 sidebar_position: 4
 ---
@@ -9,32 +9,32 @@ sidebar_position: 4
 
 ## Die Herausforderung
 
-Know Your Customer (KYC) processes are essential for financial compliance but create significant friction for both institutions and customers. Users must repeatedly submit the same documents to different institutions, leading to duplicated effort and increased exposure of sensitive data. Financial institutions spend billions annually on KYC compliance, with much of that cost passed on to customers.
+Know-Your-Customer-Prozesse (KYC) sind für die Compliance im Finanzwesen unverzichtbar, erzeugen aber erheblichen Aufwand für Institute wie Kunden. Nutzer müssen dieselben Dokumente immer wieder bei verschiedenen Instituten einreichen. Finanzinstitute geben jährlich Milliarden für KYC-Compliance aus, und ein Großteil dieser Kosten landet bei den Kunden.
 
-The current system is also exclusionary. The estimated 1.4 billion adults worldwide without formal identity documents are effectively locked out of the financial system, unable to access basic services like bank accounts or loans.
+The current system is also exclusionary. Das heutige System grenzt zudem aus: Schätzungsweise 1,4 Milliarden Erwachsene weltweit besitzen keine offiziellen Ausweisdokumente und bleiben damit vom Finanzsystem ausgeschlossen, ohne Zugang zu Basisdiensten wie Bankkonten oder Krediten.
 
 ## Wie Blockchain dies löst
 
-Blockchain-based KYC solutions create a more efficient and inclusive verification system:
+Blockchain-basierte KYC-Lösungen machen die Identitätsprüfung effizienter und inklusiver:
 
-- **Reusable verification**: Complete KYC once, use it across multiple institutions
-- **Reduced data exposure**: Share only verification status, not underlying documents
-- **Faster onboarding**: Instant verification of pre-validated credentials
-- **Cost reduction**: Shared verification infrastructure reduces compliance costs
-- **Inclusion**: Alternative identity verification methods can bring the unbanked into the financial system
+- **Wiederverwendbare Prüfung**: KYC einmal durchlaufen und bei mehreren Instituten nutzen
+- **Weniger offengelegte Daten**: Geteilt wird nur der Prüfstatus, nicht die zugrunde liegenden Dokumente
+- **Schnelleres Onboarding**: Bereits validierte Nachweise werden sofort bestätigt
+- **Geringere Kosten**: Eine gemeinsame Prüfinfrastruktur senkt die Compliance-Kosten
+- **Inklusion**: Alternative Prüfverfahren holen Menschen ohne Bankzugang ins Finanzsystem
 
-Smart contracts can automate compliance checks, ensuring only verified users can access specific financial services while maintaining privacy and reducing manual review requirements.
+Smart Contracts können Compliance-Prüfungen automatisieren: Nur verifizierte Nutzer erhalten Zugang zu bestimmten Finanzdiensten, die Privatsphäre bleibt gewahrt und manuelle Prüfungen werden seltener nötig.
 
 ## Warum Cardano
 
-- **Regulatory awareness** built into platform development from the start
-- **Privacy features** enable compliant verification without unnecessary data exposure
-- **Global reach** supports financial inclusion across borders
-- **Low fees** make micro-transactions and small account verification economically viable
-- **Enterprise partnerships** demonstrate real-world financial sector adoption
+- **Regulatorisches Bewusstsein** ist seit Beginn Teil der Plattformentwicklung
+- **Privatsphäre-Funktionen** ermöglichen regelkonforme Prüfungen ohne unnötige Datenpreisgabe
+- **Globale Reichweite** fördert finanzielle Teilhabe über Grenzen hinweg
+- **Niedrige Gebühren** machen Kleinsttransaktionen und die Verifizierung kleiner Konten wirtschaftlich
+- **Enterprise-Partnerschaften** belegen den Einsatz im realen Finanzsektor
 
 ## Erste Schritte
 
 - [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

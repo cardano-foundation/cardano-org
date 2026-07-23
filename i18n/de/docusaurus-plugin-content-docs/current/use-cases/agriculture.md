@@ -9,32 +9,32 @@ sidebar_position: 8
 
 ## Das Problem
 
-Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Verbraucher möchten zunehmend wissen, woher ihre Lebensmittel stammen, wie sie produziert wurden und ob Angaben zu Bio-, Fair-Trade- oder nachhaltigen Praktiken tatsächlich zutreffen. Food fraud costs the global industry an estimated $40 billion annually.
+Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Verbraucher möchten zunehmend wissen, woher ihre Lebensmittel stammen, wie sie produziert wurden und ob Angaben zu Bio-, Fair-Trade- oder nachhaltigen Praktiken tatsächlich zutreffen. Lebensmittelbetrug kostet die Branche weltweit schätzungsweise 40 Milliarden Dollar pro Jahr.
 
-For farmers and producers, proving the quality and origin of their products is difficult and expensive. Zwischenhändler schöpfen einen Großteil des Gewinns ab, während die Hersteller Schwierigkeiten haben, sich mit ihren Produkten auf dem Markt von der Konkurrenz abzuheben.
+Für Landwirte und Erzeuger ist es schwierig und teuer, die Qualität und Herkunft ihrer Produkte nachzuweisen. Zwischenhändler schöpfen einen Großteil des Gewinns ab, während die Hersteller Schwierigkeiten haben, sich mit ihren Produkten auf dem Markt von der Konkurrenz abzuheben.
 
 ## Wie Blockchain dies löst
 
-Blockchain technology creates an immutable record of a product's journey from farm to table:
+Die Blockchain hält den Weg eines Produkts vom Hof bis auf den Tisch unveränderlich fest:
 
-- **Origin verification**: Prove exactly where products come from and how they were produced
-- **Qualitätssicherung**: Erfasst Temperatur, Verarbeitung und andere qualitätsrelevanten Kennzahlen entlang der gesamten Lieferkette
-- **Zertifizierungsnachverfolgung**: Stellt Bio, fair trade und andere Zertifizierungen in jedem Schritt sicher
-- **Fraud prevention**: Immutable records make it difficult to substitute or mislabel products
-- **Consumer transparency**: End consumers can scan a product and see its complete history
+- **Herkunftsnachweis**: Belegt genau, woher Produkte stammen und wie sie erzeugt wurden
+- **Qualitätssicherung**: Erfasst Temperatur, Verarbeitung und andere qualitätsrelevante Kennzahlen entlang der gesamten Lieferkette
+- **Zertifizierungsnachverfolgung**: Dokumentiert Bio-, Fair-Trade- und andere Zertifizierungen bei jedem Schritt
+- **Betrugsprävention**: Unveränderliche Aufzeichnungen erschweren es, Produkte auszutauschen oder falsch zu deklarieren
+- **Transparenz für Verbraucher**: Endkunden können ein Produkt scannen und seine komplette Historie einsehen
 
-Intelligente Verträge (Smart contracts) können Zahlungen an Landwirte automatisieren, wenn die Produkte die Qualitätsstandards erfüllen. Verzögerungen und Streitigkeiten werden verringert und gleichzeitig eine faire Entlohnung gewährleisten.
+Smart Contracts können Zahlungen an Landwirte automatisieren, sobald die Produkte die Qualitätsstandards erfüllen. Das verringert Verzögerungen und Streitigkeiten und sorgt zugleich für eine faire Entlohnung.
 
 ## Warum Cardano
 
-- **Low transaction costs** make tracking even low-value agricultural products economically viable
-- **Sustainability credentials** align with environmental claims in the agriculture sector
-- **Interoperability** enables integration with existing agricultural management systems
-- **Global accessibility** supports smallholder farmers in developing regions
-- **Proven deployments** demonstrate real-world agricultural traceability
+- **Niedrige Transaktionskosten** machen die Nachverfolgung auch günstiger Agrarprodukte wirtschaftlich
+- **Nachhaltigkeitsbilanz** passt zu den Umweltversprechen der Agrarbranche
+- **Interoperabilität** ermöglicht die Anbindung bestehender Agrarmanagementsysteme
+- **Globale Zugänglichkeit** unterstützt Kleinbauern in Entwicklungsregionen
+- **Erprobte Praxiseinsätze** belegen Rückverfolgbarkeit in der Landwirtschaft unter realen Bedingungen
 
 ## Erste Schritte
 
-- [Erkunden Sie Lieferketten-Lösungen](/solutions)
+- [Lieferketten-Lösungen entdecken](/solutions)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)
