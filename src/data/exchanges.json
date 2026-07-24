@@ -601,6 +601,29 @@
           "cnt": false
         }
       ]
+    },
+    "Taiwan": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "MAX (MaiCoin)",
+          "link": "https://max.maicoin.com/",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "BitoPro",
+          "link": "https://www.bitopro.com/ns/home",
+          "ada": true,
+          "cnt": false
+        },
+        {
+          "name": "HOYA BIT",
+          "link": "https://hoyabit.com/",
+          "ada": true,
+          "cnt": false
+        }
+      ]
     }
   }
 }
