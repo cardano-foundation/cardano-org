@@ -78,7 +78,8 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "shell-quote": "^1.8.4"
   },
   "browserslist": {
     "production": [
