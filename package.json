@@ -78,7 +78,8 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "websocket-driver": "0.7.5"
   },
   "browserslist": {
     "production": [
