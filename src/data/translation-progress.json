@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-23T06:45:04.303Z",
+  "lastUpdated": "2026-07-24T06:44:52.214Z",
   "languages": [
     {
       "id": "vi",
@@ -22,37 +22,37 @@
     {
       "id": "de",
       "name": "German",
-      "translationProgress": 85,
-      "approvalProgress": 85,
+      "translationProgress": 98,
+      "approvalProgress": 98,
       "words": {
         "total": 21322,
-        "translated": 18289,
+        "translated": 21061,
         "preTranslateAppliedTo": 660,
-        "approved": 18263
+        "approved": 21035
       },
       "phrases": {
         "total": 2164,
-        "translated": 1800,
+        "translated": 2060,
         "preTranslateAppliedTo": 173,
-        "approved": 1782
+        "approved": 2042
       }
     },
     {
       "id": "ja",
       "name": "Japanese",
-      "translationProgress": 80,
-      "approvalProgress": 80,
+      "translationProgress": 94,
+      "approvalProgress": 94,
       "words": {
         "total": 21322,
-        "translated": 17147,
+        "translated": 20092,
         "preTranslateAppliedTo": 66,
-        "approved": 17081
+        "approved": 20085
       },
       "phrases": {
         "total": 2164,
-        "translated": 1606,
+        "translated": 2032,
         "preTranslateAppliedTo": 28,
-        "approved": 1578
+        "approved": 2025
       }
     },
     {
