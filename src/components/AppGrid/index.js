@@ -2,6 +2,7 @@ import React from "react";
 import { Showcases } from "@site/src/data/apps";
 import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import { resolveIconSrc } from "@site/src/utils/appIcon";
 import styles from "./styles.module.css";
 
 function AppCard({ app, stats, appRank, ctaText }) {
@@ -9,24 +10,7 @@ function AppCard({ app, stats, appRank, ctaText }) {
   const showRank = appRank !== null && appRank !== undefined;
   const isTop3 = showRank && appRank <= 3;
 
-  // Get the image source, handling both require() objects and string URLs
-  const getIconSrc = () => {
-    if (!app.icon) return null;
-
-    // Handle string URLs (for SVGs in static directory)
-    if (typeof app.icon === 'string') {
-      return app.icon;
-    }
-
-    // Handle require() objects (for PNG/WebP in src directory)
-    if (typeof app.icon === 'object') {
-      return app.icon.default || app.icon.src || null;
-    }
-
-    return null;
-  };
-
-  const iconSrc = getIconSrc();
+  const iconSrc = resolveIconSrc(app);
 
   // Get initial letter for fallback
   const initial = app.title.charAt(0).toUpperCase();
