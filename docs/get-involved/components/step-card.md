@@ -55,6 +55,8 @@ Each step object in the `steps` array can have these properties:
 | `content` | React.ReactNode | Yes | Any React component(s) to display in the step |
 | `checkboxLabel` | string | No | Text for the checkbox. Omit for final step |
 | `finalStep` | boolean | No | Set to `true` to hide checkbox and continue button |
+| `hideHeader` | boolean | No | Hide this step's title and description |
+| `hideActions` | boolean | No | Hide this step's checkbox and continue button |
 
 ## Props
 
@@ -63,6 +65,12 @@ Each step object in the `steps` array can have these properties:
 | `steps` | array | `[]` | Array of step objects (see above) |
 | `initialStep` | number | `1` | Which step to start on (1-indexed) |
 | `onStepChange` | function | - | Callback fired when step changes. Receives new step number |
+| `walletConnected` | boolean | - | Pass a wallet-connection flag through to steps that depend on it |
+| `storageKey` | string | `'cardano-get-started-step'` | localStorage key used to persist progress (see below) |
+
+:::info Progress is persisted
+`StepCard` saves the current step to `localStorage` under `storageKey`. On mount, a saved value overrides `initialStep`, so a returning visitor resumes where they left off. Use a distinct `storageKey` per instance to keep them independent.
+:::
 
 
 ## Live Demo

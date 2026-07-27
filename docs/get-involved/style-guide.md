@@ -1,10 +1,9 @@
 ---
 sidebar_label: Style Guide
+sidebar_position: 12
 title: Editorial Style Guide
 description: Writing conventions and terminology standards for cardano.org content.
 ---
-
-# Editorial Style Guide
 
 This guide ensures consistency across all cardano.org content. Use it when writing or editing pages, news articles, and documentation.
 
