@@ -1,7 +1,7 @@
 ---
 slug: 2026-06-19-cardano-vision-2026
 title: "Cardano Vision 2026"
-description: "The first R&D session of 2026 unveiled the Cardano Vision 2026 research program – spanning post-quantum security, multi-layer scalability, decentralized identity, and zero-knowledge verification"
+description: "The first R&D session of 2026 unveiled the Cardano Vision 2026 research program, spanning post-quantum security, multi-layer scalability, decentralized identity, and zero-knowledge verification"
 authors: [iog]
 tags: [development]
 ---

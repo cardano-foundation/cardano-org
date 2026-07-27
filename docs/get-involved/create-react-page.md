@@ -12,9 +12,9 @@ For more complex layouts and interactive features, you can create pages using Re
 
 Add React (`.js` or `.jsx`) files to `/src/pages/` to create standalone pages:
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.js` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+- `src/pages/index.js` maps to `localhost:3000/`
+- `src/pages/foo.js` maps to `localhost:3000/foo`
+- `src/pages/foo/bar.js` maps to `localhost:3000/foo/bar`
 
 ## Create a simple React page
 

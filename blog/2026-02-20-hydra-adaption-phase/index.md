@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-20-hydra-adaption-phase
-title: "Hydra – adoption phase"
+title: "Hydra: adoption phase"
 authors: [iog]
 tags: [development]
 ---
