@@ -12,12 +12,12 @@
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
 }
 
 .startButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  opacity: 0.9;
 }
 
 .startButton:active {
@@ -42,8 +42,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modalContent {
@@ -59,8 +63,14 @@
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .closeButton {
@@ -94,11 +104,12 @@
   color: white;
 }
 
-.surveyWrapper {
+.wrapper {
   padding: 1rem;
   clear: both;
 }
 
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .modalContent {
     max-height: 95vh;
@@ -106,11 +117,23 @@
     margin-top: auto;
   }
 
-  .surveyWrapper {
+  .wrapper {
     padding: 0.5rem;
   }
 }
 
+/* Dark mode adjustments */
 html[data-theme='dark'] .modalOverlay {
   background: rgba(0, 0, 0, 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modalOverlay,
+  .modalContent {
+    animation: none;
+  }
+  .startButton,
+  .closeButton {
+    transition: none;
+  }
 }
