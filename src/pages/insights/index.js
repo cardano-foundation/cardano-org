@@ -11,6 +11,7 @@ import {translate} from '@docusaurus/Translate';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import {InsightsTags} from '@site/src/data/insights-tags';
+import './index.css';
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
 const req = require.context('./', true, /\.(md|mdx|js|jsx|ts|tsx)$/);
