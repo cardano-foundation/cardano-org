@@ -7,7 +7,7 @@ import AppList from "@site/src/components/AppList";
 
 ## App List
 
-The [`<AppList>`](/docs/get-involved/components/app-list) component displays a compact, ranked list of Cardano apps filtered by category tags. Apps are sorted by transaction count (when available), then by favorites, and finally alphabetically.
+The [`<AppList>`](/docs/get-involved/components/app-list) component displays a compact, ranked list of Cardano apps filtered by category tags. Apps are sorted by transaction count (when available), then by maintainer picks, and finally alphabetically.
 
 ## Basic Usage
 
@@ -36,13 +36,17 @@ The [`<AppList>`](/docs/get-involved/components/app-list) component displays a c
 | `limit` | `number` | `5` | Maximum number of apps to display. Set to `null` to show all. |
 | `categoryTitle` | `string` | `"Apps"` | Title displayed in the component header. |
 | `showTxCount` | `boolean` | `false` | Whether to display transaction counts next to each app. |
+| `slugs` | `string[]` | `null` | Explicit list of app slugs to show, in order. Overrides category filtering. |
+| `hideHeader` | `boolean` | `false` | Hide the component header (title and "See all" link). |
+| `showTags` | `boolean` | `false` | Show category tags on each row. |
+| `showDescription` | `boolean` | `true` | Show the app description on each row. |
 
 ## Ranking Logic
 
 Apps are sorted in the following order:
 
 1. **Apps with transaction data** (sorted by transaction count, descending)
-2. **Favorite apps** (among apps without transaction data)
+2. **Maintainer-picked apps** (apps with `maintainerPick: true`, among those without transaction data)
 3. **Alphabetically** (as final tiebreaker)
 
 ## Examples
@@ -167,7 +171,7 @@ The component is fully responsive:
 
 ## Transaction Data
 
-Transaction counts are sourced from `/src/data/app-stats.json` and matched to apps using fuzzy title matching. Apps without transaction data are still displayed but ranked lower (unless marked as favorites).
+Transaction counts are sourced from `/src/data/tx-stats.json` and matched to apps using fuzzy title matching. Apps without transaction data are still displayed but ranked lower (unless marked as maintainer picks).
 
 :::info Want to see your app ranked by transactions?
 

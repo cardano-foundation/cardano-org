@@ -10,7 +10,16 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 
 ## Site Hero
 
-The [`<SiteHero>`](/docs/get-involved/components/site-hero) component is used to define the header banner and title of each page. You can configure it by passing the following properties: a title, a description, and a banner type.
+The [`<SiteHero>`](/docs/get-involved/components/site-hero) component is used to define the header banner and title of each page.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | | The hero heading. |
+| `description` | `string` \| `node` | | Supporting text below the title. |
+| `bannerType` | `string` | `starburst` | One of the banner types below. An unrecognized or missing value falls back to `starburst`. Documentation pages use `docs`. |
+| `children` | `node` | | Optional content rendered inside the hero, below the title and description. |
 
 ## Banner Types
 
