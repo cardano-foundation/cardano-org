@@ -3,6 +3,13 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import {
+  EXPECTED_NETWORK_ID,
+  EXPLORER_TX_BASE,
+  shortAddress,
+  stringifyError,
+  classifyError,
+} from "@site/src/utils/walletTx";
+import {
   detectWallets,
   enableWallet,
   firstAddressBech32,
@@ -10,8 +17,6 @@ import {
 } from "@site/src/utils/cardano/wallet";
 import styles from "./styles.module.css";
 
-const EXPECTED_NETWORK_ID = 1; // mainnet
-const EXPLORER_TX_BASE = "https://explorer.cardano.org/transaction/";
 const DEFAULT_AMOUNT_ADA = "10";
 const LOVELACE_PER_ADA = 1_000_000n;
 
@@ -31,35 +36,6 @@ function formatAda(lovelace) {
   if (ada >= 1_000_000_000) return `${(ada / 1_000_000_000).toFixed(2)}B ada`;
   if (ada >= 1_000_000) return `${(ada / 1_000_000).toFixed(2)}M ada`;
   return `${Math.round(ada).toLocaleString()} ada`;
-}
-
-function shortAddress(addr) {
-  if (!addr) return "";
-  return `${addr.slice(0, 12)}…${addr.slice(-8)}`;
-}
-
-function stringifyError(err) {
-  if (!err) return "";
-  if (typeof err === "string") return err;
-  if (err instanceof Error) return err.message || err.toString();
-  const parts = [];
-  if (err.message) parts.push(String(err.message));
-  if (err.info) parts.push(String(err.info));
-  if (err.code != null) parts.push(`code=${err.code}`);
-  if (!parts.length) {
-    try { return JSON.stringify(err); } catch { return String(err); }
-  }
-  return parts.join(" · ");
-}
-
-function classifyError(err) {
-  const msg = stringifyError(err);
-  // CIP-30 signTx throws code 2 for UserDeclined; only treat as a cancel when
-  // the message corroborates it so we don't swallow genuine failures.
-  if (/user\s*(declined|rejected|cancel)|declined\s*by\s*user|rejected\s*by\s*user/i.test(msg)) {
-    return "userCancelled";
-  }
-  return "generic";
 }
 
 // Read the current treasury balance from Koios; /totals lists the current epoch first.
