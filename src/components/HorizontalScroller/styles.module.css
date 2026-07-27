@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0.25rem 0.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--hs-gap, 1.5rem);
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
@@ -27,8 +27,8 @@
 }
 
 .item {
-  flex: 0 0 300px;
-  max-width: 300px;
+  flex: 0 0 var(--hs-item-width, 300px);
+  max-width: var(--hs-item-width, 300px);
   scroll-snap-align: start;
 }
 
@@ -135,8 +135,8 @@
   }
 
   .item {
-    flex: 0 0 260px;
-    max-width: 260px;
+    flex: 0 0 var(--hs-item-width-mobile, 260px);
+    max-width: var(--hs-item-width-mobile, 260px);
   }
 
   .dots {
