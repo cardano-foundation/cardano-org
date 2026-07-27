@@ -60,7 +60,7 @@ html[data-theme="dark"] .iconWrapper {
 }
 
 /* screen size changes */
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .taglineContainer {
     width: 100%;
   }

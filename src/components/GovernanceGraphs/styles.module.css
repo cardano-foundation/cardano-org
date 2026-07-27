@@ -8,6 +8,11 @@
   transition: all 0.3s ease;
 }
 
+/* The graph nodes recolor via useColorMode(); keep the container in step. */
+html[data-theme='dark'] .flowContainer {
+  background-color: var(--ifm-background-surface-color);
+}
+
 .flowError {
   padding: 20px;
   color: #ff5252;
@@ -51,6 +56,15 @@
 :global(.react-flow__controls-button) {
   border-bottom: 1px solid #eee !important;
   background: white !important;
+}
+
+html[data-theme='dark'] :global(.react-flow__controls-button) {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300) !important;
+  background: var(--ifm-background-surface-color) !important;
+}
+
+html[data-theme='dark'] :global(.react-flow__controls-button svg) {
+  fill: var(--ifm-color-content);
 }
 
 :global(.react-flow__minimap) {
