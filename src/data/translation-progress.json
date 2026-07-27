@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-24T06:44:52.214Z",
+  "lastUpdated": "2026-07-27T06:59:18.044Z",
   "languages": [
     {
       "id": "vi",
@@ -62,13 +62,13 @@
       "approvalProgress": 60,
       "words": {
         "total": 21322,
-        "translated": 12858,
+        "translated": 12862,
         "preTranslateAppliedTo": 4925,
         "approved": 12858
       },
       "phrases": {
         "total": 2164,
-        "translated": 1349,
+        "translated": 1352,
         "preTranslateAppliedTo": 395,
         "approved": 1349
       }
