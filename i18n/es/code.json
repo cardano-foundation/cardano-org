@@ -2281,13 +2281,13 @@
     "message": "List"
   },
   "events.view.calendar": {
-    "message": "Calendar"
+    "message": "Calendario"
   },
   "events.divider.calendar": {
     "message": "Events Calendar"
   },
   "events.calendar.today": {
-    "message": "Today"
+    "message": "Hoy"
   },
   "events.calendar.upcoming": {
     "message": "Upcoming events"
@@ -2296,7 +2296,7 @@
     "message": "Dates are shown in UTC and events may change. Check the event page for the latest details."
   },
   "events.card.register": {
-    "message": "View event"
+    "message": "Ver evento"
   },
   "events.card.online": {
     "message": "Online"
