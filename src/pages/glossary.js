@@ -727,7 +727,7 @@ export default function GlossaryIndex() {
             <a
               href="https://github.com/cardano-foundation/cardano-org/issues/new?labels=glossary&title=Suggest+glossary+term%3A+"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={styles.cantFindPrimary}
             >
               {translate({ id: 'glossary.index.suggestTerm', message: 'Suggest a term' })}

@@ -194,7 +194,7 @@ function ImpactTimeline() {
 
       <div className={styles.timeline}>
         {milestones.map((m) => (
-          <a href={m.blog} key={m.titleId} className={styles.milestoneCard}>
+          <Link to={m.blog} key={m.titleId} className={styles.milestoneCard}>
             <span className={styles.timelineDot} aria-hidden="true" />
             <div className={styles.milestoneBanner}>
               <img src={withBaseUrl(m.banner)} alt={translate({id: m.titleId, message: m.title})} />
@@ -207,7 +207,7 @@ function ImpactTimeline() {
                 {translate({id: m.categoryId, message: m.category})}
               </span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </>

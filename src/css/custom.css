@@ -22,11 +22,17 @@
   --ifm-color-primary-light: #325cbd;
   --ifm-color-primary-lighter: #325cbd;
   --ifm-color-primary-lightest: #325cbd;
+  /* RGB triple for rgba() usage; Infima does not define this by default. */
+  --ifm-color-primary-rgb: 0, 51, 173;
   --ifm-code-font-size: 95%;
   --ifm-footer-link-hover-color: #6684ce;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-link-color: #0033AD;
   /* navbar in light mode */
+  /* Showcase component variables (carried over from the Docusaurus showcase). */
+  --site-color-tooltip: #ffffff;
+  --site-color-tooltip-background: #353738;
+  --site-color-checkbox-checked-bg: rgba(0, 51, 173, 0.08);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -38,9 +44,13 @@
   --ifm-color-primary-light: #6684ce;
   --ifm-color-primary-lighter: #6684ce;
   --ifm-color-primary-lightest: #6684ce;
+  --ifm-color-primary-rgb: 102, 132, 206;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-navbar-link-color: var(--ifm-font-color-base);
   /* navbar in dark mode */
+  --site-color-tooltip: #1c1e21;
+  --site-color-tooltip-background: #f5f6f7;
+  --site-color-checkbox-checked-bg: rgba(102, 132, 206, 0.18);
 }
 
 .header-discord-link:before {
@@ -139,90 +149,60 @@ body {
   /* Replace with your font name */
 }
 
+/*
+ * NOTE: h1-h5 intentionally carry no font-size here. The previous values
+ * (font-size: 3.4 etc.) were unit-less and therefore invalid, so headings
+ * already fall back to the Infima defaults. A real typographic scale should
+ * be introduced as design tokens rather than reinstated ad hoc.
+ */
 h1 {
   font-family: Chivo, sans-serif;
-  /*font-size: 6.8rem;*/
   font-weight: 700;
   line-height: 1.1;
-  -webkit-letter-spacing: 0;
-  -moz-letter-spacing: 0;
-  -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-size: 3.4;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h2 {
   font-family: Chivo, sans-serif;
-  /*font-size: 3.6rem;*/
   font-weight: 700;
   line-height: 1.2;
-  -webkit-letter-spacing: 0.05rem;
-  -moz-letter-spacing: 0.05rem;
-  -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  font-size: 2.8;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h3 {
   font-family: Chivo, sans-serif;
-  /*font-size: 2.88rem;*/
   font-weight: 700;
   line-height: 1.2;
-  -webkit-letter-spacing: 0.05rem;
-  -moz-letter-spacing: 0.05rem;
-  -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  font-size: 1.44;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h4 {
   font-family: Chivo, sans-serif;
-  /*font-size: 2.2rem;*/
   font-weight: 700;
   line-height: 1.2;
 }
 
-/*!sc*/
-
 h5 {
   font-family: Chivo, sans-serif;
-  /*font-size: 1.4rem;*/
   font-weight: 700;
   line-height: 1.4;
-  -webkit-letter-spacing: 0.15rem;
-  -moz-letter-spacing: 0.15rem;
-  -ms-letter-spacing: 0.15rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
-  font-size: 0.7;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h6 {
   font-family: Chivo, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1.4;
-  -webkit-letter-spacing: 0.1rem;
-  -moz-letter-spacing: 0.1rem;
-  -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 a {
   outline-width: 0.5rem;

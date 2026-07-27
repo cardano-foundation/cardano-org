@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import data from "@site/src/data/exchanges.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
@@ -59,6 +60,7 @@ function getExchangesForCountry(countryName) {
 }
 
 function ExchangeCard({ exchange }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   const logoUrl = EXCHANGE_LOGOS[exchange.name];
   const initial = exchange.name.charAt(0).toUpperCase();
 
@@ -66,8 +68,8 @@ function ExchangeCard({ exchange }) {
     <div className={styles.exchangeCard}>
       <div className={styles.exchangeHeader}>
         {logoUrl ? (
-          <img 
-            src={logoUrl} 
+          <img
+            src={withBaseUrl(logoUrl)}
             alt={exchange.name} 
             className={styles.exchangeLogo}
             onError={(e) => {
