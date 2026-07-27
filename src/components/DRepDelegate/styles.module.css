@@ -129,7 +129,7 @@
   font-family: var(--ifm-font-family-monospace);
   border: 1px solid var(--ifm-color-emphasis-400);
   border-radius: 8px;
-  background: white;
+  background: var(--ifm-background-surface-color);
   color: var(--ifm-color-emphasis-900);
 }
 
@@ -180,7 +180,7 @@
   gap: 0.5rem;
   padding: 0.5rem 0.85rem;
   font-size: 0.9rem;
-  background: white;
+  background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-400);
   border-radius: 999px;
   cursor: pointer;

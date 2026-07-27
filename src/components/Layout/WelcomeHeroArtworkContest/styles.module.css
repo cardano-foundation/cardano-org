@@ -55,7 +55,7 @@ html[data-theme="dark"] .heroBanner {
 
 /* screen size changes */
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
     background-size: cover;
