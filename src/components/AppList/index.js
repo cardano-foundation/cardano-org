@@ -4,27 +4,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
 import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import { resolveIconSrc } from "@site/src/utils/appIcon";
 import styles from "./styles.module.css";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
 
-  // Get the image source
-  const getIconSrc = () => {
-    if (!app.icon) return null;
-
-    if (typeof app.icon === 'string') {
-      return app.icon;
-    }
-
-    if (typeof app.icon === 'object') {
-      return app.icon.default || app.icon.src || null;
-    }
-
-    return null;
-  };
-
-  const rawIconSrc = getIconSrc();
+  const rawIconSrc = resolveIconSrc(app);
   const iconSrc = useBaseUrl(rawIconSrc || '');
   const initial = app.title.charAt(0).toUpperCase();
   
