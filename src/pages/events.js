@@ -20,6 +20,7 @@ import FeaturedEvents from "@site/src/components/Events/FeaturedEvents";
 import RecapEvents from "@site/src/components/Events/RecapEvents";
 import CalendarView from "@site/src/components/Events/CalendarView";
 import ViewToggle from "@site/src/components/Events/ViewToggle";
+import "./events.css";
 
 const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
 // Curated conference events shown as highlighted cards above the full list.
