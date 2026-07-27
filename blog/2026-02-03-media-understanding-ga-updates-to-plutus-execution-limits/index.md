@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-03-media-understanding-ga-updates-to-plutus-execution-limits
-title: "SPO Table Talk: Understanding GA – Updates to Plutus execution limits"
+title: "SPO Table Talk: Understanding GA, Updates to Plutus execution limits"
 authors: [community]
 tags: [media]
 ---
