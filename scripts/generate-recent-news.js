@@ -27,12 +27,16 @@ const dirs = fs
   .sort()
   .reverse();
 
+// Return the markdown body after the YAML frontmatter.
+function getPostBody(content) {
+  const parts = content.split('---');
+  return parts.length >= 3 ? parts.slice(2).join('---') : '';
+}
+
 // Extract first paragraph from markdown content (after frontmatter)
 function extractDescription(content) {
-  // Remove frontmatter
-  const parts = content.split('---');
-  if (parts.length < 3) return '';
-  const body = parts.slice(2).join('---').trim();
+  const body = getPostBody(content).trim();
+  if (!body) return '';
 
   // Find first non-empty paragraph (skip images, HTML blocks, empty lines)
   const lines = body.split('\n');
@@ -60,9 +64,7 @@ function extractDescription(content) {
 // thumbnail under static/. Returns a web URL usable as a card thumbnail, or
 // null when the post has no usable image (component falls back to default).
 async function resolveThumbnail(dir, content, slug) {
-  // Body after frontmatter
-  const parts = content.split('---');
-  const body = parts.length >= 3 ? parts.slice(2).join('---') : content;
+  const body = getPostBody(content);
 
   // First inline markdown image, e.g. ![alt](./banner.webp "title")
   const imgMatch = body.match(/!\[[^\]]*\]\(([^)]+)\)/);
@@ -72,8 +74,7 @@ async function resolveThumbnail(dir, content, slug) {
   const rawUrl = imgMatch[1].trim().split(/\s+/)[0];
 
   // Remote or already-public paths can be used as-is
-  if (/^https?:\/\//.test(rawUrl)) return rawUrl;
-  if (rawUrl.startsWith('/')) return rawUrl;
+  if (/^https?:\/\//.test(rawUrl) || rawUrl.startsWith('/')) return rawUrl;
 
   // In-post relative asset: resolve on disk and emit a small WebP thumbnail
   const rel = rawUrl.replace(/^\.\//, '');

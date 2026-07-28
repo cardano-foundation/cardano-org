@@ -19,8 +19,7 @@ const CATEGORY_LABELS = {
 };
 
 // On-brand category tiles (the site's Open Graph images) used as the thumbnail
-// when a post has no banner of its own. Each tile already names its category,
-// so the badge is suppressed for these (see below).
+// when a post has no banner of its own.
 const CATEGORY_IMAGES = {
   development: "/img/og/developers.jpg",
   research: "/img/og/research.jpg",
