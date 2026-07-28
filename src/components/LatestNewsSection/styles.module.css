@@ -23,8 +23,52 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   text-decoration: none;
   color: inherit;
+  overflow: hidden; /* clip the full-bleed thumbnail to the card radius */
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
+
+.cardImageWrapper {
+  position: relative;
+  margin: -1.5rem -1.5rem 1.25rem; /* bleed to the card edges */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.categoryBadge {
+  flex-shrink: 0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--ifm-color-primary);
+}
+
+.categoryBadge[data-category="development"] { background: #2563a8; }
+.categoryBadge[data-category="research"] { background: #6b46c1; }
+.categoryBadge[data-category="governance"] { background: #2f855a; }
+.categoryBadge[data-category="community"] { background: #c05621; }
+.categoryBadge[data-category="ecosystem"] { background: #2c5282; }
+.categoryBadge[data-category="education"] { background: #b7791f; }
+.categoryBadge[data-category="events"] { background: #b83280; }
 
 .newsCard:hover {
   transform: translateY(-4px);
@@ -37,7 +81,6 @@
 .cardDate {
   font-size: 0.8rem;
   color: var(--ifm-color-emphasis-600);
-  margin-bottom: 0.5rem;
 }
 
 .cardTitle {
