@@ -8,8 +8,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 //
 // This component can be used to only add the open graph image like <OpenGraphInfo pageName="imagename" />
 // Or with image and title and description <OpenGraphInfo pageName="imagename" title="Your title" description="The description.">
+// Pages without a dedicated image can omit pageName and get the site-wide default image.
 
-const OpenGraphInfo = ({ pageName, title, description }) => {
+const OpenGraphInfo = ({ pageName = 'default', title, description }) => {
   const { siteConfig } = useDocusaurusContext();
   const { pathname } = useLocation();
   const siteUrl = siteConfig.url.replace(/\/$/, '');
