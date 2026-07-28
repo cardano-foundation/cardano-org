@@ -3,7 +3,7 @@ slug: 2026-03-18-media-debate-on-ncl
 title: "Cardano Governance - A Debate on NCL & Constitutional Clarity"
 description: "Panel debates Cardano's Net Change Limit and treasury sustainability: constitutional interpretations of fund approval and the Constitutional Committee's role."
 authors: [community]
-tags: [ecosystem]
+tags: [governance]
 ---
 
 This session explores the Net Change Limit (NCL) and its role in Cardano’s treasury sustainability. Participants discussed constitutional interpretations regarding fund approval and the role of the Constitutional Committee, focusing on clarifying governance rules to ensure responsible spending and transparency within the ecosystem.
