@@ -2,7 +2,7 @@
 slug: 2025-09-23-cardano-foundation-roadmap
 title: "Cardano Foundation Roadmap"
 authors: [cf]
-tags: [development]
+tags: [ecosystem]
 ---
 
 
