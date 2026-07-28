@@ -2,7 +2,7 @@
 slug: 2024-05-27-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [governance, community]
+tags: [community, governance]
 ---
 
 On May 23, 2024, Cardano’s SanchoNet achieved a historic milestone by initiating its first hard fork using CIP-1694 governance. Intersect seeks community input for drafting the Cardano Constitution with workshops worldwide. The Cardano Foundation introduced the MACS algorithm for efficient coin selection on UTxO blockchains at the IEEE conference. Other news includes updates from Dr. Lars Brünjes, CNTools, RealFi, leaderlogs, Catalyst Working Group, and SanchoNet.
