@@ -3,7 +3,7 @@ slug: 2026-06-10-media-examining-cardano-critical
 title: "Examining Cardano Critical Integrations V2 with the Pentad"
 description: "The CCI V2 Roundtable gathers Pentad representatives to objectively dissect a joint proposal for core infrastructure maintenance, explaining its strict scope, steering committee oversight, and treasury mechanisms."
 authors: [community]
-tags: [media]
+tags: [development]
 ---
 
 The CCI V2 Roundtable Talk gathers Pentad representatives to review a joint proposal focused strictly on maintaining critical core infrastructure and establishing an upgrade framework. The session covers the role of the new Steering Committee, treasury oversight, and how operational choices were prioritized. Notably, the proposal excludes funding for DApps, liquidity, or marketing, and serves as an objective, auto-dubbed review rather than a promotional event.

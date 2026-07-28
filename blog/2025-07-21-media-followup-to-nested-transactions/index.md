@@ -2,7 +2,7 @@
 slug: 2025-07-21-media-followup-to-nested-transactions
 title: "Roundtable Talk: A Followup to Nested Transactions"
 authors: [community]
-tags: [media]
+tags: [ecosystem]
 ---
 
 A Roundtable Talk, features a deep-dive discussion on the evolution and implementation of Nested Transactions within the Cardano ledger. Participants discussed the technical readiness of the protocol, the potential for Babel fees, and the introduction of new programmability layers. The conversation also addressed risks regarding system complexity and censorship resistance, emphasizing the role of community consensus in navigating alternative paths for Cardano’s future governance and technical direction.

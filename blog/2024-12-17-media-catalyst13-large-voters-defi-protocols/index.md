@@ -2,7 +2,7 @@
 slug: 2024-12-17-media-catalyst13-large-voters-defi-protocols
 title: "Roundtable Talk: Large Voters and DeFi Protocols in Catalyst F13"
 authors: [community]
-tags: [media]
+tags: [ecosystem]
 ---
 
 A Roundtable Talk on December 17, 2024, explored the role of large voters and DeFi protocols in Project Catalyst F13. The discussion featured insights on how major stakeholders like Minswap, Liqwid, and the Cardano Foundation evaluate and vote on proposals. It delved into the challenges and impact of stake-based governance and DeFi protocols borrowing voting power, examining the lessons shaping Cardano's one-ada-one-vote framework.

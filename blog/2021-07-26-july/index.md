@@ -2,7 +2,7 @@
 slug: 2021-07-26-july-developer-portal
 title: "Interview: NMKR"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 ![title image](./nmkr_preview.png)

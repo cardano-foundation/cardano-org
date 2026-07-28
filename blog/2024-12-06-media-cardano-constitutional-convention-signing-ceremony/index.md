@@ -2,7 +2,7 @@
 slug: 2024-12-06-media-cardano-constitutional-convention-signing-ceremony
 title: "Cardano Constitutional Convention 2024 - Day 3 Signing Ceremony"
 authors: [iog]
-tags: [media, governance, events]
+tags: [governance, events, ecosystem]
 ---
 
 The final day celebrated the signing of the Cardano constitution, a milestone in decentralized governance. The event featured a governance exhibition and media highlights. Delegates formalized the constitution, symbolizing Cardano’s commitment to transparent and inclusive decision-making. The day concluded with a sense of accomplishment, paving the way for a resilient and decentralized future.

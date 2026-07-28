@@ -2,7 +2,7 @@
 slug: 2025-07-08-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [community digest, governance]
+tags: [governance, community]
 ---
 
 

@@ -2,7 +2,7 @@
 slug: 2024-07-30-6-things-to-look-forward-intersect
 title: 6 Things to Look Forward to From Intersect
 authors: [emurgo]
-tags: [education, governance]
+tags: [governance, education]
 ---
 
 In 2024, Cardano is transitioning to a fully community-run governance structure, with Intersect playing a crucial supporting role. Six key developments to expect include:

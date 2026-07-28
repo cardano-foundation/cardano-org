@@ -2,7 +2,7 @@
 slug: 2024-10-26-media-cardano-summit-2024-day2
 title: "Cardano Summit 2024 - Day 2 Highlights"
 authors: [cf]
-tags: [media, summit, events]
+tags: [events, ecosystem]
 ---
 
 Explore the highlights, major announcements, and engaging discussions from day two of the Cardano Summit 2024.

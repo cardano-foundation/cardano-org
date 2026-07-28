@@ -2,7 +2,7 @@
 slug: 2025-03-28-ecosystem-engineering
 title: "Cardano Ecosystem Engineering"
 authors: [cf]
-tags: [media]
+tags: [ecosystem]
 ---
 
 Giovanni Gargiulo, Senior Software Engineer at the Cardano Foundation, shares how ecosystem engineering supports Cardano’s growth. The session covers DevOps practices behind scalability, security, and uptime, along with challenges of running decentralized infrastructure. Giovanni also touches on infrastructure evolution, global adoption, and what’s ahead for Cardano engineering.

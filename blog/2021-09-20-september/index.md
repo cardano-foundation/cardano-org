@@ -2,7 +2,7 @@
 slug: 2021-09-20-september-developer-portal
 title: "Interview: NOWPayments"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

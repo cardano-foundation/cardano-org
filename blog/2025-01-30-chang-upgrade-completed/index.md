@@ -2,7 +2,7 @@
 slug: 2025-01-30-chang-upgrade-completed
 title: "Chang upgrade completed - Plomin hard fork achieved!"
 authors: [intersect]
-tags: [community digest, governance]
+tags: [governance, community]
 ---
 
 

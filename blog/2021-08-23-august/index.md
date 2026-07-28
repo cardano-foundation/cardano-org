@@ -2,7 +2,7 @@
 slug: 2021-08-23-august-developer-portal
 title: "Interview: Mercury for WooCommerce"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 ![title image](./mercury-logo.jpg)

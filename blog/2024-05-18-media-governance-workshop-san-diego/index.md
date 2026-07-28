@@ -2,7 +2,7 @@
 slug: 2024-05-18-media-governance-workshop-san-diego
 title: Governance Workshop San Diego with Adam Dean
 authors: [community]
-tags: [media, governance]
+tags: [governance, ecosystem]
 ---
 
 Video of the Governance Workshop held in San Diego, focusing on best practices and strategies for effective governance in organizations. Key topics include the importance of transparency, stakeholder engagement, and the implementation of robust governance frameworks. The workshop also covers case studies and real-world examples to illustrate successful governance practices. The session aims to provide actionable insights for enhancing governance in various organizational contexts.

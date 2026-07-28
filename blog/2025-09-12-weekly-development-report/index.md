@@ -2,7 +2,7 @@
 slug: 2025-09-12-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [weekly development report, development]
+tags: [development]
 ---
 
 The ledger team's progress on CIP-112 and features for the next intra-era hard fork. A major Voltaire milestone was reached with the first fully community-elected constitutional committee now in place. In scaling, the Mithril team updated the DMQ protocol CIP. Ecosystem news includes the release of Yoroi Extension v.5.13.0 and new partnerships for Sundial Protocol and Midnight Network.

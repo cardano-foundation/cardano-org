@@ -2,7 +2,7 @@
 slug: 2023-03-21-march-developer-portal
 title: "Interview: Mesh"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

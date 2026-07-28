@@ -2,7 +2,7 @@
 slug: 2024-08-06-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [community digest, governance]
+tags: [governance, community]
 ---
 
 Cardano is strengthening its presence in Argentina through key initiatives, including developer workshops, the ADN event, and discussions with government officials. The ALBA program at UTN is advancing blockchain education, and a recent workshop led by IOG culminated in a graduation event attended by Charles Hoskinson. The ADN event showcased blockchain innovations, while government talks explored blockchain's potential in Argentina. Additionally, Cardano's first community-driven Constitutional Workshop was held in Argentina. These activities highlight Cardano's commitment to local engagement and blockchain innovation. The Cardano Foundation also launched the SSI Wallet Alpha Program, inviting users to test and contribute to its development.

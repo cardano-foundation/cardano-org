@@ -3,7 +3,7 @@ slug: 2026-06-10-community-digest
 title: "Community Digest"
 description: "Budget voting is live via Hydra; the Van Rossem hard fork is active on PreProd; new CIPs target pool pledges and L2 voting; the Cardano Foundation partners with the Brazilian Olympic Committee."
 authors: [cf]
-tags: [community digest]
+tags: [community]
 ---
 
 
