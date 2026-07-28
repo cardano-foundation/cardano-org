@@ -2110,10 +2110,10 @@
     "message": "Join the vibrant Cardano developer community through various platforms. Below you'll find links to the Cardano Stack Exchange, the Cardano Forum, and the official Telegram group. Connect with fellow developers, ask questions, and share insights in our decentralized ecosystem."
   },
   "developers.cta.title": {
-    "message": "Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
+    "message": "Ready to start building?"
   },
   "developers.cta.buttonLabel": {
-    "message": "Play the game"
+    "message": "Visit Developer Portal"
   },
   "discoverCardano.hero.title": {
     "message": "Discover Cardano"
