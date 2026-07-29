@@ -2110,10 +2110,10 @@
     "message": "さまざまなプラットフォームを通じて、活気あるCardano開発者コミュニティに参加しましょう。以下には、Cardano Stack Exchange、Cardano Forum、公式Telegramグループへのリンクがあります。分散型エコシステムで仲間の開発者とつながり、質問し、知見を共有しましょう。"
   },
   "developers.cta.title": {
-    "message": "プロトコルを攻撃するか、ブロックチェーンをフォークするか。このインタラクティブシミュレーションでOuroborosプロトコルを直接体験しましょう。"
+    "message": "Ready to start building?"
   },
   "developers.cta.buttonLabel": {
-    "message": "ゲームをプレイ"
+    "message": "Visit Developer Portal"
   },
   "discoverCardano.hero.title": {
     "message": "Cardanoを知る"
