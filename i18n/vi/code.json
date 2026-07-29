@@ -2110,10 +2110,10 @@
     "message": "Tham gia cộng đồng nhà phát triển Cardano sôi động qua nhiều nền tảng khác nhau. Bên dưới, bạn sẽ tìm thấy các liên kết đến Cardano Stack Exchange, Cardano Forum và nhóm Telegram chính thức. Kết nối với các nhà phát triển khác, đặt câu hỏi và chia sẻ hiểu biết trong hệ sinh thái phi tập trung của chúng ta."
   },
   "developers.cta.title": {
-    "message": "Tấn công giao thức, phân nhánh blockchain, hoặc không. Trải nghiệm trực tiếp giao thức Ouroboros trong mô phỏng tương tác này."
+    "message": "Ready to start building?"
   },
   "developers.cta.buttonLabel": {
-    "message": "Chơi thử"
+    "message": "Visit Developer Portal"
   },
   "discoverCardano.hero.title": {
     "message": "Khám phá Cardano"
