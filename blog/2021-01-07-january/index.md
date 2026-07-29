@@ -2,7 +2,7 @@
 slug: january-spotlight-2021-developer-portal
 title: "Spotlight: ADATools.io and Pool.pm"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 Welcome to the January Developer Spotlight 2021. This month, we will focus on pool tools. Read on to learn about the **ADATools.io** and the **Pool.pm**.  

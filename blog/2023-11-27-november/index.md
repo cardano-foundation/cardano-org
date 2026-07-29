@@ -2,7 +2,7 @@
 slug: 2023-11-27-november-developer-portal
 title: "Interview: Mainstreet"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

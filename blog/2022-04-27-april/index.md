@@ -2,7 +2,7 @@
 slug: 2022-04-27-april-developer-portal
 title: "Interview: Minswap"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

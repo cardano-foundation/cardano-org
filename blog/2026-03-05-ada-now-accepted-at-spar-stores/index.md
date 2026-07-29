@@ -2,7 +2,7 @@
 slug: 2026-03-05-ada-now-accepted-at-spar-stores
 title: "ADA Now Accepted at 137 SPAR Stores across Switzerland"
 authors: [cf]
-tags: [development]
+tags: [ecosystem]
 ---
 
 

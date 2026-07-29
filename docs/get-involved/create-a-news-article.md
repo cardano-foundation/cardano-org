@@ -65,7 +65,7 @@ Every news article must declare the following fields at the top of its `index.md
 | `title` | The headline shown on the article page, in listings, and in social cards. |
 | `description` | A 140-160 character meta description used by search engines and social previews (Google snippet, OG card, Twitter card). This is **not** the same as the in-post summary. |
 | `authors` | One or more author handles defined in `/blog/authors.yml`. |
-| `tags` | Topical labels (specific to broad). |
+| `tags` | One or more categories from the fixed set (see [News Article Tags](#news-article-tags)). Any tag outside that set fails the build. |
 
 ### Writing a good `description`
 
@@ -99,7 +99,7 @@ slug: hello-world
 title: Hello World!
 description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest]
-tags: [greetings]
+tags: [community]
 ---
 
 Congratulations, you have made your first news article!
@@ -121,7 +121,7 @@ slug: hello-world
 title: Hello World!
 description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest, taptools]
-tags: [greetings]
+tags: [community]
 ---
 
 Congratulations, you have made your first news article!
@@ -133,6 +133,12 @@ Feel free to play around and edit this post as much as you like.
 For banners and other graphic media, please use the following file formats:
 
 Images: `.png`, `.jpg` (or `.jpeg`), `.webp`, and `.svg`.
+
+:::tip
+
+The first image in the post is also used as the article's thumbnail in the homepage news section. Articles without an image fall back to an on-brand image for their category.
+
+:::
 
 :::tip
 
@@ -155,7 +161,7 @@ slug: hello-world
 title: Hello World!
 description: A short greeting and our first post on cardano.org, demonstrating how the news system works for new contributors.
 authors: [builderfest, taptools]
-tags: [greetings]
+tags: [community]
 ---
 
 Congratulations, you have made your first news article!
@@ -202,7 +208,7 @@ slug: 2024-10-25-media-cardano-summit-2024-day1
 title: "Cardano Summit 2024 - Day 1 Highlights"
 description: "Recap of day one at the Cardano Summit 2024 in Dubai: keynotes, panels, the Cardano Market, and community highlights from across the ecosystem."
 authors: [cf]
-tags: [media, summit, events]
+tags: [events]
 ---
 
 An amazing first day at the Cardano Summit 2024 in Dubai! Keynotes: Unveiling the latest in blockchain innovation and envisioning Cardano’s future. Panels: Delving into real-world applications with insights from industry leaders and experts. Cardano Market: Exploring groundbreaking projects, startups, and connecting with the vibrant Cardano community. Community: Meeting passionate people from all corners of the world, exchanging ideas and experiences.
@@ -216,11 +222,23 @@ An amazing first day at the Cardano Summit 2024 in Dubai! Keynotes: Unveiling th
 
 ## News Article Tags
 
-Tags are labels assigned to articles, allowing multiple tags per article and enabling flexible categorization and search. You should always use tags so that there are several hits per tag and they are not too specific. You can find an overview of all tags on https://cardano.org/news/tags
+cardano.org uses a **fixed set of seven categories**, defined in `/blog/tags.yml`. Only these tags may be used; any other tag fails the build.
+
+| Tag | Use for |
+|---|---|
+| `development` | Development reports, protocol and node progress, tooling, integrations, releases |
+| `research` | Peer-reviewed research, Ouroboros, and scaling work |
+| `governance` | On-chain governance, Project Catalyst, Intersect, the Constitution, voting, treasury |
+| `community` | Community digests, ambassadors, and grassroots initiatives |
+| `ecosystem` | Ecosystem news, partnerships, adoption, and Cardano Foundation updates |
+| `education` | Guides, tutorials, and explainers |
+| `events` | Summits, hackathons, meetups, and event recaps |
+
+An article may carry more than one tag. **List the most relevant category first** because it is shown as the article's badge in the homepage news section and is used as its main category. You can browse the category pages at https://cardano.org/news/tags
 
 :::tip
 
-When tagging go from specific to broad. Example: weekly development report, development. Not: development, weekly development report.
+If an article fits none of the seven categories well, pick the closest one rather than inventing a new tag. To propose a new category, add it to `/blog/tags.yml` in the same pull request.
 
 :::
 

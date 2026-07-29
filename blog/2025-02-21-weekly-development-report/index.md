@@ -2,7 +2,7 @@
 slug: 2025-02-21-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [weekly development report, development]
+tags: [development]
 ---
 
 

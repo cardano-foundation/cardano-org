@@ -2,7 +2,7 @@
 slug: 2024-12-04-media-cardano-constitutional-convention-delegate-discussions
 title: "Cardano Constitutional Convention 2024 - Day 1 Delegate Discussions"
 authors: [intersect]
-tags: [media, governance, events]
+tags: [governance, events, ecosystem]
 ---
 
 The Cardano Constitutional Convention began with global participants collaborating to shape the ecosystem’s governance principles. Delegates in Nairobi and Buenos Aires engaged in thoughtful discussions to refine the draft constitution, balancing ideals of decentralization, inclusivity, and practicality. Keynotes from Charles Hoskinson and Dr. Silvia Nonna inspired a shared vision for Cardano’s future, setting the stage for a pivotal weekend in blockchain governance.

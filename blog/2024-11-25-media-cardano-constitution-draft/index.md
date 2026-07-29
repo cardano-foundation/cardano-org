@@ -2,7 +2,7 @@
 slug: 2024-11-25-media-cardano-constitution-draft
 title: "Roundtable Talk: Cardano Constitution Draft"
 authors: [community]
-tags: [media]
+tags: [governance]
 ---
 
 A Roundtable Talk, streamed live on November 25, 2024, featured a discussion on the drafts of the Cardano Constitution. Key ecosystem actors delved into the document's core ideas and its role in guiding community governance. The conversation served as a constructive forum to share insights and align on the community's vision ahead of the subsequent ratification process in Buenos Aires.

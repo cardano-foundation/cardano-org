@@ -2,7 +2,7 @@
 slug: 2025-12-02-what-is-cardano-net-change-limit
 title: "What is Cardano’s Net Change Limit?"
 authors: [intersect]
-tags: [development]
+tags: [governance]
 ---
 
 

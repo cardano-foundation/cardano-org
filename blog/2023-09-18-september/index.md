@@ -2,7 +2,7 @@
 slug: 2023-09-18-august-developer-portal
 title: "Interview: Adastat.net"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

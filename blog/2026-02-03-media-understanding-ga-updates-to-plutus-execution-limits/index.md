@@ -2,7 +2,7 @@
 slug: 2026-02-03-media-understanding-ga-updates-to-plutus-execution-limits
 title: "SPO Table Talk: Understanding GA, Updates to Plutus execution limits"
 authors: [community]
-tags: [media]
+tags: [governance]
 ---
 
 A Roundtable Talk, features a discussion on increasing Plutus memory units to enhance throughput and developer flexibility. Participants addressed node performance, constitutional guardrails, and the vital role of SPO participation under CIP-1694. The session aimed to provide SPOs with the technical clarity needed for informed voting on protocol scaling.

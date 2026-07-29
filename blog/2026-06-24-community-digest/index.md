@@ -3,7 +3,7 @@ slug: 2026-06-24-community-digest
 title: "Community Digest"
 description: "The Ouroboros Leios scaling testnet (Musashi Dojo) has launched; applications are opening for the $80M Orion Fund cohort and a board seat; Pyth Network oracles are live; and Fortune recognized the Cardano Foundation."
 authors: [cf]
-tags: [community digest]
+tags: [community]
 ---
 
 

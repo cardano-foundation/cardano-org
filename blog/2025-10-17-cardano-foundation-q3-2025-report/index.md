@@ -2,7 +2,7 @@
 slug: 2025-10-17-cardano-foundation-q3-2025-report
 title: "Cardano Foundation Quarterly: Q3 2025"
 authors: [cf]
-tags: [development]
+tags: [ecosystem]
 ---
 
 

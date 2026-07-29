@@ -2,7 +2,7 @@
 slug: 2021-11-23-november-developer-portal
 title: "Interview: Nami Wallet"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 For the November edition of the Developer Spotlight, we will interview Alessandro, the creator of the Nami Wallet, co-founder of SpaceBudz, and Cardano stake pool operator.

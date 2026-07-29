@@ -3,7 +3,7 @@ slug: 2026-06-11-unifying-cardano-for-extra-impact
 title: "Unifying Cardano for Extra Impact"
 description: "The unified marketing campaign by the Cardano Foundation, EMURGO, and Rare Network maximized global brand footprint across 20 events, giving 76 ecosystem projects a stage and sparking key institutional connections."
 authors: [cf]
-tags: [adoption]
+tags: [events]
 ---
 
 

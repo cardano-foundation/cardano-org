@@ -2,7 +2,7 @@
 slug: 2026-03-09-programmable-tokens-for-cardano
 title: "Programmable Tokens for Cardano"
 authors: [cf]
-tags: [development, developers]
+tags: [development]
 ---
 
 

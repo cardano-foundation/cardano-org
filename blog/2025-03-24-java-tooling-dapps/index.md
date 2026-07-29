@@ -2,7 +2,7 @@
 slug: 2025-03-24-java-tooling-dapps
 title: "Java Tooling for dApps Development"
 authors: [cf]
-tags: [media]
+tags: [ecosystem]
 ---
 
 Satya Ranjan, Lead Blockchain Architect at the Cardano Foundation, presents Java tools for building on Cardano. The session covers cardano-client-lib, writing off-chain code, building transactions, and integrating governance and staking. Satya also demos Yaci DevKit for local dev environments, Yaci Store for indexing, and shows how to build lightweight apps using tailored data. Ideal for developers and exchanges exploring Java’s role in Cardano infrastructure.

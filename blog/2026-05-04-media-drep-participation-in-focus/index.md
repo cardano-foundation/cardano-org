@@ -3,7 +3,7 @@ slug: 2026-05-04-media-drep-participation-in-focus
 title: "DRep Participation in Focus: Power Is One Thing. Participation Is Another"
 description: "Exploring DRep participation and accountability in Cardano governance to address fatigue and improve voting consistency."
 authors: [community]
-tags: [media]
+tags: [governance]
 ---
 
 This Roundtable examines DRep participation and accountability in Cardano governance. Discussants focused on overcoming inconsistency and "DRep fatigue" through better voting rationales and sustainable role definitions. The goal is a robust framework that keeps DReps active and accountable, ensuring long-term decentralized alignment.

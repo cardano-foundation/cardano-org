@@ -2,7 +2,7 @@
 slug: 2023-08-07-august-developer-portal
 title: "Interview: DEMU"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';
