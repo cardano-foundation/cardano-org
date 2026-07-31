@@ -1901,6 +1901,20 @@ export const Showcases = [
   beginnerFriendly: false,
   x: "EchoForgeEF",
 },
+{
+  title: "reed",
+  description: "Permissionless, immutable stablecoin protocol on Cardano. Lock ADA, mint USDR with a 1% one-off fee, zero interest, and zero governance.",
+  tagline: "simply stable",
+  preview: require("./app-screenshots/reed.webp"),
+  icon: "/img/app-icons/reed.png",
+  website: "https://reed.finance",
+  source: "https://github.com/reedprotocol",
+  category: "other",
+  properties: ["opensource"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "reedprotocol",
+},
 ];
 
 export const TagList = Object.keys(Tags);
