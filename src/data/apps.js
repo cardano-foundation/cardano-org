@@ -1901,6 +1901,19 @@ export const Showcases = [
   beginnerFriendly: false,
   x: "EchoForgeEF",
 },
+{
+  title: "PoolTerminal",
+  description: "A read-only desktop dashboard for Cardano stake pool operators. Connects to your own node over SSH and surfaces live chain, KES, block propagation, delegator and reward data.",
+  tagline: "Real-time operational dashboard for stake pool operators",
+  preview: require("./app-screenshots/poolterminal.webp"),
+  website: "https://server-tools.grahamsnumberplus1.com/PoolTerminal/",
+  source: "https://github.com/GNP1-dev/PoolTerminal",
+  category: "analytics",
+  properties: ["opensource"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "GrahamsNoPlus1",
+},
 ];
 
 export const TagList = Object.keys(Tags);
