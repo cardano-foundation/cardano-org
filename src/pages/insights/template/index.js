@@ -11,6 +11,7 @@ import axios from 'axios';
 import * as echarts from 'echarts';
 import authors from '@site/src/data/authors.json';
 import { useLocation } from '@docusaurus/router';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
 // 🔹 Export meta so the indexer (mod.meta) can read it, even though indexed=false
 export const meta = {
@@ -91,7 +92,7 @@ function PageContent() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify({
+        <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": pageTitle,
