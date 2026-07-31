@@ -18,6 +18,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import GovernanceCharts from "@site/src/components/GovernanceCharts";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import authors from '@site/src/data/authors.json';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
 // ────────────────────────────────────────────────────────────────────────────
 //  Page Meta
@@ -100,15 +101,13 @@ function PageContent() {
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
         <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
-        <script type="application/ld+json">{`
-        {
+        <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "${pageTitle}",
-          "description": "${pageDescription}",
-          "url": "${canonicalUrl}"
-        }
-        `}</script>
+          headline: pageTitle,
+          description: pageDescription,
+          url: canonicalUrl,
+        })}</script>
       </Head>
 
       <TitleWithText

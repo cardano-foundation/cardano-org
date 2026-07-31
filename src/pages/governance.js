@@ -27,6 +27,7 @@ import {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
 import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
 import governanceFAQ from "@site/src/data/governanceFAQ.json";
+import { jsonLdString } from "@site/src/utils/jsonLd";
 
 function GovernanceHero() {
   return (
@@ -254,7 +255,7 @@ export default function Governance() {
       <OpenGraphInfo pageName="governance" />
       <Head>
         <script type="application/ld+json">
-          {JSON.stringify({
+          {jsonLdString({
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": governanceFAQ.map((faq) => ({
