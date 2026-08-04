@@ -1901,6 +1901,26 @@ export const Showcases = [
   beginnerFriendly: false,
   x: "EchoForgeEF",
 },
+  {
+    title: "Vultisig",
+    description:
+      "The crypto wallet with no seed phrase. Your crypto stays safe across your own devices, and only you can move it. 30+ chains including Cardano.",
+    tagline: "Multi-chain wallet with no seed phrase",
+    icon: "/img/app-icons/vultisig.svg",
+    website: "https://vultisig.com",
+    source: "https://github.com/vultisig",
+    category: "wallet",
+    properties: ["opensource", "mobile"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+    x: "vultisig",
+    walletFeatures: {
+      platforms: ["ios", "android", "desktop", "browser"],
+      custody: "non-custodial",
+      features: [],
+      type: "light",
+    },
+  },
 ];
 
 export const TagList = Object.keys(Tags);
