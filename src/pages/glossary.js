@@ -17,18 +17,13 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './glossary.module.css';
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const POPULAR_PILL_SLUGS = ['eutxo', 'stake-pool', 'drep', 'governance-action', 'smart-contract', 'treasury'];
 const SEARCH_DROPDOWN_LIMIT = 6;
-
-// Escapes any literal `</` so a future term containing the substring cannot
-// terminate the embedded <script type="application/ld+json"> early.
-function jsonLdString(data) {
-  return JSON.stringify(data).replace(/</g, '\\u003c');
-}
 
 function buildJsonLd(terms, glossaryFullUrl) {
   return jsonLdString({
@@ -150,6 +145,8 @@ function GlossarySearch({
   }, [normalizedQuery, terms]);
 
   useEffect(() => {
+    // Reset the highlighted result when the query changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHighlight(0);
   }, [normalizedQuery]);
 
@@ -440,7 +437,8 @@ export default function GlossaryIndex() {
   // Null-safe in case the plugin failed to register; the page still renders an
   // empty index instead of crashing.
   const glossaryData = usePluginData('glossary-routes') || {};
-  const terms = glossaryData.terms || [];
+  // Memoize so the fallback [] keeps a stable reference across renders.
+  const terms = useMemo(() => glossaryData.terms || [], [glossaryData.terms]);
   const history = useHistory();
   const location = useLocation();
   const { siteConfig } = useDocusaurusContext();
@@ -456,6 +454,8 @@ export default function GlossaryIndex() {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
+    // Sync query and category from the URL; both are also user-editable.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setQuery(params.get('q') || '');
     setActiveCategory(params.get('category') || null);
   }, [location.search]);
@@ -727,7 +727,7 @@ export default function GlossaryIndex() {
             <a
               href="https://github.com/cardano-foundation/cardano-org/issues/new?labels=glossary&title=Suggest+glossary+term%3A+"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={styles.cantFindPrimary}
             >
               {translate({ id: 'glossary.index.suggestTerm', message: 'Suggest a term' })}

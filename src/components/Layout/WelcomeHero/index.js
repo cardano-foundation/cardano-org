@@ -25,6 +25,8 @@ function WelcomeHero({ title, description }) {
     const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 
     if (isOldDevice || !gl) {
+      // Disable WebGL after client-only capability detection.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setWebglSupported(false);
       return;
     }

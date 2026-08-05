@@ -2,7 +2,7 @@
 slug: 2022-03-30-march-developer-portal
 title: "Interview: Lovelace Academy"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
  ![title image](./lovelace.png)

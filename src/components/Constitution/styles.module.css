@@ -1,0 +1,89 @@
+.layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.tocTitle {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.tocList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.tocItem {
+  margin: 0;
+}
+
+.tocLink {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+
+.tocLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+.tocLinkSection {
+  padding-left: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.tocLinkActive {
+  color: var(--ifm-color-primary);
+  border-left-color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.tocToggle {
+  display: none;
+}
+
+.document {
+  min-width: 0;
+}
+
+@media (max-width: 996px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .toc {
+    position: static;
+    max-height: none;
+  }
+  .tocTitle {
+    display: none;
+  }
+  .tocToggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .tocCollapsed .tocList {
+    display: none;
+  }
+}

@@ -12,6 +12,8 @@ export default function TermExplainer({ category }) {
     if (category && termsData.categories[category]) {
       const categoryTerms = termsData.categories[category];
       const randomTerms = categoryTerms.sort(() => 0.5 - Math.random()).slice(0, 2);
+      // Pick random terms on the client only to avoid an SSR hydration mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTerms(randomTerms);
     }
   }, [category]);

@@ -16,31 +16,104 @@
   --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
   --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, 0.4);
   --ifm-color-primary: #0033AD;
-  --ifm-color-primary-dark: #325cbd;
-  --ifm-color-primary-darker: #325cbd;
-  --ifm-color-primary-darkest: #325cbd;
-  --ifm-color-primary-light: #325cbd;
-  --ifm-color-primary-lighter: #325cbd;
-  --ifm-color-primary-lightest: #325cbd;
+  /* Proper mono-hue ramp around the brand blue (darker for active/hover). */
+  --ifm-color-primary-dark: #002a8e;
+  --ifm-color-primary-darker: #00257d;
+  --ifm-color-primary-darkest: #001f68;
+  --ifm-color-primary-light: #0038be;
+  --ifm-color-primary-lighter: #003bc7;
+  --ifm-color-primary-lightest: #0042e1;
+  /* RGB triple for rgba() usage; Infima does not define this by default. */
+  --ifm-color-primary-rgb: 0, 51, 173;
   --ifm-code-font-size: 95%;
   --ifm-footer-link-hover-color: #6684ce;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-link-color: #0033AD;
   /* navbar in light mode */
+  /* Showcase component variables (carried over from the Docusaurus showcase). */
+  --site-color-tooltip: #ffffff;
+  --site-color-tooltip-background: #353738;
+  --site-color-checkbox-checked-bg: rgba(0, 51, 173, 0.08);
+
+  /* ===================== Design tokens (Phase 1) =====================
+   * New site vocabulary. Categories Infima already owns (brand ramp,
+   * neutrals, surfaces) stay on --ifm-*; everything below is --site-*.
+   * Neutrals: use Infima's --ifm-color-emphasis-* and
+   * --ifm-background-surface-color, do NOT add a parallel grey scale.
+   * Canonical breakpoints (docs only, CSS vars cannot be used in @media):
+   *   996px primary (navbar/sidebar collapse) · 768px tablet · 480px mobile
+   * ================================================================== */
+
+  /* Semantic status (dark-mode overrides in the [data-theme] block) */
+  --site-success: #2da06a;
+  --site-warning: #d97706;
+  --site-danger: #dc3545;
+  --site-info: var(--ifm-color-primary);
+
+  /* Brand tints: translucent primary for soft fills and hovers */
+  --site-tint-weak: rgba(var(--ifm-color-primary-rgb), 0.06);
+  --site-tint-strong: rgba(var(--ifm-color-primary-rgb), 0.12);
+
+  /* Spacing scale (8px base) */
+  --site-space-3xs: 0.25rem;
+  --site-space-2xs: 0.5rem;
+  --site-space-xs: 0.75rem;
+  --site-space-sm: 1rem;
+  --site-space-md: 1.5rem;
+  --site-space-lg: 2rem;
+  --site-space-xl: 3rem;
+  --site-space-2xl: 4rem;
+  --site-space-3xl: 6rem;
+
+  /* Corner radius */
+  --site-radius-sm: 6px;
+  --site-radius-md: 8px;
+  --site-radius-lg: 12px;
+  --site-radius-xl: 16px;
+  --site-radius-pill: 999px;
+
+  /* Elevation (dark-mode overrides in the [data-theme] block) */
+  --site-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --site-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --site-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* Motion */
+  --site-duration-fast: 150ms;
+  --site-duration-base: 200ms;
+  --site-duration-slow: 300ms;
+  --site-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --site-lift: -2px;
+
+  /* Focus ring (box-shadow variant; outline baseline is global below) */
+  --site-focus-ring: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.5);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #6684ce;
-  --ifm-color-primary-dark: #6684ce;
-  --ifm-color-primary-darker: #6684ce;
-  --ifm-color-primary-darkest: #6684ce;
-  --ifm-color-primary-light: #6684ce;
-  --ifm-color-primary-lighter: #6684ce;
-  --ifm-color-primary-lightest: #6684ce;
+  --ifm-color-primary-dark: #3d63bf;
+  --ifm-color-primary-darker: #3657a8;
+  --ifm-color-primary-darkest: #2d488c;
+  --ifm-color-primary-light: #7d97d5;
+  --ifm-color-primary-lighter: #89a0d9;
+  --ifm-color-primary-lightest: #acbce4;
+  --ifm-color-primary-rgb: 102, 132, 206;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-navbar-link-color: var(--ifm-font-color-base);
   /* navbar in dark mode */
+  --site-color-tooltip: #1c1e21;
+  --site-color-tooltip-background: #f5f6f7;
+  --site-color-checkbox-checked-bg: rgba(102, 132, 206, 0.18);
+
+  /* Dark-mode token overrides */
+  --site-success: #46b883;
+  --site-warning: #e0932a;
+  --site-danger: #e5686d;
+  --site-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --site-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --site-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.55);
 }
 
 .header-discord-link:before {
@@ -61,6 +134,12 @@ html[data-theme='dark'] .header-discord-link:before {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Global keyboard-focus baseline (Phase 1). Components may override. */
+:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 /* buttons */
@@ -139,90 +218,60 @@ body {
   /* Replace with your font name */
 }
 
+/*
+ * NOTE: h1-h5 intentionally carry no font-size here. The previous values
+ * (font-size: 3.4 etc.) were unit-less and therefore invalid, so headings
+ * already fall back to the Infima defaults. A real typographic scale should
+ * be introduced as design tokens rather than reinstated ad hoc.
+ */
 h1 {
   font-family: Chivo, sans-serif;
-  /*font-size: 6.8rem;*/
   font-weight: 700;
   line-height: 1.1;
-  -webkit-letter-spacing: 0;
-  -moz-letter-spacing: 0;
-  -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-size: 3.4;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h2 {
   font-family: Chivo, sans-serif;
-  /*font-size: 3.6rem;*/
   font-weight: 700;
   line-height: 1.2;
-  -webkit-letter-spacing: 0.05rem;
-  -moz-letter-spacing: 0.05rem;
-  -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  font-size: 2.8;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h3 {
   font-family: Chivo, sans-serif;
-  /*font-size: 2.88rem;*/
   font-weight: 700;
   line-height: 1.2;
-  -webkit-letter-spacing: 0.05rem;
-  -moz-letter-spacing: 0.05rem;
-  -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
-  font-size: 1.44;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h4 {
   font-family: Chivo, sans-serif;
-  /*font-size: 2.2rem;*/
   font-weight: 700;
   line-height: 1.2;
 }
 
-/*!sc*/
-
 h5 {
   font-family: Chivo, sans-serif;
-  /*font-size: 1.4rem;*/
   font-weight: 700;
   line-height: 1.4;
-  -webkit-letter-spacing: 0.15rem;
-  -moz-letter-spacing: 0.15rem;
-  -ms-letter-spacing: 0.15rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
-  font-size: 0.7;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 h6 {
   font-family: Chivo, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1.4;
-  -webkit-letter-spacing: 0.1rem;
-  -moz-letter-spacing: 0.1rem;
-  -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin: 2.75rem 0 1.05rem;
 }
-
-/*!sc*/
 
 a {
   outline-width: 0.5rem;
@@ -746,587 +795,6 @@ img {
   inset: 0;
 }
 
-
-.event-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .event-content {
-    flex-direction: column;
-  }
-}
-
-/* Start: Insights Supply epoch prev/next navigation buttons */
-.epochNavSticky {
-  position: sticky;
-  top: calc(var(--ifm-navbar-height, 60px) + 22px);
-  z-index: 20;
-}
-
-.epochNavSticky nav {
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 999px;
-  padding: 6px 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 8px;
-}
-
-@media (max-width: 768px) {
-  .epochNavSticky {
-    position: fixed;
-    top: auto;
-    right: 12px;
-    bottom: 12px;
-  }
-}
-
-/* Container + main row */
-.epochNav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.epochNavMain {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.epochNavLeft {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-/* Larger center label (desktop/tablet) */
-.epochNavLabel {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding: 6px 12px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 999px;
-  background: var(--ifm-background-surface-color);
-  font-size: 1rem;
-}
-
-.epochNavLabel strong {
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-/* Desktop jump input aligned right */
-.epochJump--desktop {
-  margin-left: auto;
-  display: flex;
-  /* desktop default: visible */
-  align-items: center;
-}
-
-.epochJumpRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.epochJumpInput {
-  width: 8ch;
-  /* roomy for 4 digits */
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background: var(--ifm-background-surface-color);
-  font-variant-numeric: tabular-nums;
-}
-
-.epochJumpGo {
-  padding-inline: 12px;
-}
-
-.epochJumpCancel {
-  display: none;
-}
-
-/* never on desktop */
-
-.epochJumpHint {
-  font-size: 11px;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.epochJumpHint.is-invalid {
-  color: var(--ifm-color-danger);
-}
-
-/* Hide “Jump…” button on desktop */
-.epochJumpLink {
-  display: none;
-}
-
-/* -------- Mobile behavior -------- */
-@media (max-width: 768px) {
-  .epochNav {
-    gap: 0.5rem;
-  }
-
-  /* Keep Prev/Next tap-friendly */
-  .epochNav .button {
-    min-height: 36px;
-  }
-
-  /* On mobile, hide desktop input by default */
-  .epochJump--desktop {
-    display: none;
-  }
-
-  /* Show “Jump…” trigger on the right */
-  .epochJumpLink {
-    display: inline-flex;
-    background: transparent;
-    border: 1px dashed var(--ifm-color-emphasis-300);
-    border-radius: 999px;
-    padding: 4px 8px;
-    font-size: 0.9rem;
-    margin-left: auto;
-  }
-
-  /* Mobile jump block is hidden by default */
-  .epochJump--mobile {
-    display: none;
-  }
-
-  /* When jump mode is active, hide main row and show mobile jump */
-  .epochNav.is-jump .epochNavMain {
-    display: none;
-  }
-
-  .epochNav.is-jump .epochJump--mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.25rem;
-    width: 100%;
-  }
-
-  .epochNav.is-jump .epochJumpInput {
-    width: 6ch;
-    /* compact but fits 4 digits */
-    padding: 4px 8px;
-    font-size: 0.95rem;
-  }
-
-  .epochNav.is-jump .epochJumpGo {
-    padding: 4px 10px;
-  }
-
-  .epochNav.is-jump .epochJumpCancel {
-    display: inline-flex;
-  }
-}
-
-/* end Insights page epoch navigation */
-
-/* Start Events platform link cards */
-.event-platforms {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-.platform-card {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  width: 260px;
-}
-
-.platform-card figure {
-  margin: 0;
-}
-
-.platform-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: block;
-}
-
-.platform-card figcaption {
-  margin-top: 0.5rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* Interactive hover/focus states for platform cards */
-.platform-card img {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.platform-card:hover img,
-.platform-card:focus-visible img {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.platform-card figcaption {
-  transition: color 0.15s ease;
-}
-
-.platform-card:hover figcaption,
-.platform-card:focus-visible figcaption {
-  color: var(--ifm-color-primary);
-}
-
-/* Event pagination */
-.events-pagination {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-/* List reset */
-.events-pagination__list {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Shared button base – use theme tokens */
-.events-pagination__nav,
-.events-pagination__page {
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-font-color-base);
-  cursor: pointer;
-  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-/* Hover/active/focus states */
-.events-pagination__nav:hover,
-.events-pagination__page:hover {
-  border-color: var(--ifm-color-emphasis-400);
-  transform: translateY(-1px);
-}
-
-.events-pagination__nav:active,
-.events-pagination__page:active {
-  transform: translateY(0);
-}
-
-.events-pagination__nav:focus-visible,
-.events-pagination__page:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-/* Current page */
-.events-pagination__page.is-active {
-  background: var(--ifm-color-primary);
-  color: #fff;
-  border-color: var(--ifm-color-primary);
-  cursor: default;
-}
-
-/* Disabled */
-.events-pagination__nav[disabled],
-.events-pagination__page[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Optional: slight dark-mode border tuning */
-[data-theme='dark'] .events-pagination__nav,
-[data-theme='dark'] .events-pagination__page {
-  border-color: var(--ifm-color-emphasis-200);
-}
-
-/* End Events platform link cards */
-
-/* Start insights index list */
-
-/* Search input */
-.insights-search-container {
-  margin-bottom: 1.25rem;
-}
-
-.insights-search-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-font-color-base);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.insights-search-input:focus {
-  outline: none;
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 0 3px rgba(5, 56, 175, 0.1);
-}
-
-[data-theme='dark'] .insights-search-input:focus {
-  box-shadow: 0 0 0 3px rgba(102, 132, 206, 0.2);
-}
-
-/* Filter tags */
-.insights-filter-label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--ifm-color-emphasis-600);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.insights-filter-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.insight-filter-tag {
-  font-size: 0.675rem;
-  border: 1px solid var(--ifm-color-secondary-darkest);
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  background: transparent;
-  color: var(--ifm-font-color-base);
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.insight-filter-tag:hover {
-  background: var(--ifm-color-emphasis-100);
-}
-
-.insight-filter-tag.is-active {
-  background: var(--ifm-color-emphasis-200);
-  border-color: var(--ifm-color-emphasis-400);
-}
-
-.insight-filter-clear {
-  padding: 0 10px;
-  color: var(--ifm-color-emphasis-600);
-}
-
-.insights-list {
-  display: block;
-}
-
-/* Row layout: image left, text right, separator line */
-.insight-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.insight-row:last-child {
-  border-bottom: 0;
-}
-
-/* Thumbnail */
-.insight-thumb {
-  flex: 0 0 240px;
-  max-width: 280px;
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.insight-thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: transform .15s ease, opacity .15s ease;
-}
-
-.insight-thumb:hover img,
-.insight-thumb:focus-visible img {
-  transform: translateY(-1px);
-  opacity: 0.98;
-}
-
-/* Text area */
-.insight-body {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.insight-title {
-  margin: 0 0 0.25rem;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.insight-desc {
-  margin: 0.35rem 0 0.5rem;
-  opacity: 0.9;
-}
-
-/* Tags — matching ShowcaseCard tag style with colored dots */
-.insight-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0.15rem 0 0.3rem;
-  list-style: none;
-  padding: 0;
-}
-
-.insight-tag {
-  font-size: 0.675rem;
-  border: 1px solid var(--ifm-color-secondary-darkest);
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  cursor: default;
-}
-
-.insight-tag-label {
-  margin-left: 8px;
-}
-
-.insight-tag-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-/* CTA link */
-.insight-cta {
-  margin-top: 0.25rem;
-}
-
-.insight-link {
-  font-weight: 600;
-}
-
-/* Mobile stacking */
-@media (max-width: 768px) {
-  .insight-row {
-    flex-direction: column;
-  }
-
-  .insight-thumb {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-/* Grid layout enabling different orders per viewport */
-.insight-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  grid-template-areas:
-    "thumb title"
-    "thumb tags"
-    "thumb desc"
-    "thumb cta";
-  column-gap: 1rem;
-  row-gap: 0.35rem;
-  align-items: start;
-}
-
-/* Assign areas */
-.insight-thumb {
-  grid-area: thumb;
-}
-
-.insight-title {
-  grid-area: title;
-  margin: 0;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.insight-tags {
-  grid-area: tags;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.insight-desc {
-  grid-area: desc;
-  margin: 0.25rem 0 0.25rem;
-  opacity: 0.9;
-}
-
-.insight-cta {
-  grid-area: cta;
-  margin-top: 0.1rem;
-}
-
-/* Keep your existing thumbnail and tag pill visuals */
-.insight-thumb {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.insight-thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: transform .15s ease, opacity .15s ease;
-}
-
-.insight-thumb:hover img,
-.insight-thumb:focus-visible img {
-  transform: translateY(-1px);
-  opacity: 0.98;
-}
-
-/* Mobile: Title → Thumbnail → Description (then CTA), as requested */
-@media (max-width: 768px) {
-  .insight-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "thumb"
-      "tags"
-      "desc"
-      "cta";
-  }
-}
-
-/* End insights index list */
 
 /* DocSearch button styling - rounded corners */
 .DocSearch-Button {

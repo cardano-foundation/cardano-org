@@ -1,61 +1,61 @@
 ---
-title: Use Cases Overview
-description: Explore how Cardano blockchain technology solves real-world problems across industries
-sidebar_label: Overview
+title: Anwendungsfälle
+description: Entdecke, wie die Cardano-Blockchain reale Probleme in allen Branchen löst
+sidebar_label: Anwendungsfälle
 sidebar_position: 1
 ---
 
-# Cardano Use Cases
+# Cardano Anwendungsfälle
 
-Cardano is a public, permissionless Layer 1 blockchain, perfect for enterprises and individuals seeking secure, scalable, and transparent solutions. Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage.
+Cardano ist eine öffentliche, frei zugängliche Layer-1-Blockchain, die sich ideal für Unternehmen und Privatpersonen eignet, die nach sicheren, skalierbaren und transparenten Lösungen suchen. Ob es um die Optimierung von Lieferketten, die Abwicklung globaler Zahlungen oder die Tokenisierung von Vermögenswerten geht: Cardano bietet dezentrale Innovationen mit hoher Sicherheit und geringem Energieverbrauch.
 
-## Identity
+## Identität
 
-Blockchain-based identity solutions provide secure, verifiable credentials that users control.
+Blockchain-basierte Identitätslösungen bieten sichere, überprüfbare Identitätsnachweise, über die die Nutzer selbst die Kontrolle haben.
 
-- **[Education Credentials](./education)** - Blockchain-verified academic credentials
-- **[Digital Identity](./digital-identity)** - Self-sovereign identity solutions
-- **[Finance KYC](./finance-kyc)** - Streamlined identity verification for financial services
-- **[Government Documents](./government)** - Tamper-proof official documents
+- **[Bildungsnachweise](./education)**: Blockchain-verifizierte akademische Zeugnisse
+- **[Digitale Identität](./digital-identity)**: Lösungen für selbstbestimmte Identität
+- **[Finance KYC](./finance-kyc)**: Optimierte Identitätsprüfung für Finanzdienstleistungen
+- **[Behördendokumente](./government)**: Fälschungssichere amtliche Dokumente
 
-## Finance
+## Finanzwirtschaft
 
-Decentralized financial applications that provide transparency and accessibility.
+Dezentrale Finanzanwendungen, die für Transparenz und offenen Zugang sorgen.
 
-- **[DeFi](./defi)** - Decentralized lending, borrowing, and exchanges
-- **[Payments](./payments)** - Fast, low-cost cross-border transfers
+- **[DeFi](./defi)**: Dezentrales Verleihen, Leihen und Handeln
+- **[Zahlungen](./payments)**: Schnelle, günstige Überweisungen über Grenzen hinweg
 
-## Supply Chain
+## Lieferketten
 
-End-to-end traceability and verification for products and goods.
+Lückenlose Rückverfolgbarkeit und Verifizierung für Produkte und Waren.
 
-- **[Agriculture](./agriculture)** - Farm-to-table traceability
-- **[Retail](./retail)** - Combat counterfeiting with provenance tracking
-- **[Logistics](./logistics)** - Real-time tracking and verification
+- **[Landwirtschaft](./agriculture)**: Rückverfolgbarkeit vom Hof bis auf den Tisch
+- **[Einzelhandel](./retail)**: Fälschungen bekämpfen durch Herkunftsnachweise
+- **[Logistik](./logistics)**: Verfolgung und Verifizierung in Echtzeit
 
-## Social Impact
+## Soziale Wirkung
 
-Blockchain solutions for transparency and accountability in social programs.
+Blockchain-Lösungen für Transparenz und Rechenschaft in Sozialprogrammen.
 
-- **[Social Programs](./social-programs)** - Transparent fund distribution
+- **[Sozialprogramme](./social-programs)**: Transparente Verteilung von Fördermitteln
 
-## Data & Technology
+## Daten & Technologie
 
-Decentralized approaches to data management and asset ownership.
+Dezentrale Ansätze für Datenverwaltung und Vermögenswerte.
 
-- **[Data Storage](./data-storage)** - Decentralized, secure storage solutions
-- **[Tokenized Assets](./tokenized-assets)** - Fractional ownership of real-world assets
+- **[Datenspeicherung](./data-storage)**: Dezentrale, sichere Speicherlösungen
+- **[Tokenisierte Vermögenswerte](./tokenized-assets)**: Anteiliges Eigentum an realen Vermögenswerten
 
-## Emerging Applications
+## Neue Anwendungsbereiche
 
-New and developing use cases for blockchain technology.
+Neue und wachsende Einsatzgebiete der Blockchain-Technologie.
 
-- **[Voting Systems](./voting-systems)** - Secure, transparent elections
-- **[Healthcare](./healthcare)** - Portable, secure health records
-- **[Music & IP](./music-ip)** - Direct royalty payments to artists
+- **[Wahlsysteme](./voting-systems)**: Sichere, transparente Abstimmungen
+- **[Gesundheitswesen](./healthcare)**: Portable, sichere Gesundheitsdaten
+- **[Musik & Urheberrechte](./music-ip)**: Tantiemen direkt an die Künstler
 
 ---
 
-## Enterprise Solutions
+## Unternehmenslösungen
 
-Looking for proven enterprise deployments and case studies? Visit our [Enterprise Solutions](/solutions) page to explore real-world implementations by the Cardano Foundation and partners.
+Du suchst erprobte Enterprise-Einsätze und Fallstudien? Auf unserer Seite [Enterprise-Lösungen](/solutions) findest du Praxisbeispiele der Cardano Foundation und ihrer Partner.

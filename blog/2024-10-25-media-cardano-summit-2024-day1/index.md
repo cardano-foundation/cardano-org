@@ -2,7 +2,7 @@
 slug: 2024-10-25-media-cardano-summit-2024-day1
 title: "Cardano Summit 2024 - Day 1 Highlights"
 authors: [cf]
-tags: [media, summit, events]
+tags: [events, ecosystem]
 ---
 
 An amazing first day at the Cardano Summit 2024 in Dubai! Keynotes: Unveiling the latest in blockchain innovation and envisioning Cardano’s future. Panels: Delving into real-world applications with insights from industry leaders and experts. Cardano Market: Exploring groundbreaking projects, startups, and connecting with the vibrant Cardano community. Community: Meeting passionate people from all corners of the world, exchanging ideas and experiences.

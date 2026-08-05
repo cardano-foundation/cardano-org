@@ -22,7 +22,6 @@ export const STATS_GENERATED_AT = appStatsData.metadata?.generated ?? null;
 if (process.env.NODE_ENV !== "production") {
   Object.entries(Categories).forEach(([key, def]) => {
     if (typeof def.trackable !== "boolean") {
-      // eslint-disable-next-line no-console
       console.warn(`[appStats] Category "${key}" is missing the 'trackable' boolean field`);
     }
   });
@@ -53,6 +52,16 @@ export function getTxCount(app) {
 
 export function compareByTxDesc(a, b) {
   return getTxCount(b) - getTxCount(a);
+}
+
+// Rank showcase apps like the /apps category panels: most active by on-chain
+// transactions first, maintainer pick as the tiebreak, then title for a stable
+// alphabetical order.
+export function compareByActivityThenPick(a, b) {
+  const txDiff = compareByTxDesc(a, b);
+  if (txDiff !== 0) return txDiff;
+  if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
+  return a.title.localeCompare(b.title);
 }
 
 export function isTrackable(app) {

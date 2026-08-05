@@ -113,13 +113,9 @@ Add a new condition for your page's path to set custom hero values.
 
 ### Available banner types
 
-Choose from these banner designs:
-- `braidBlack` (default for docs)
-- `braidBlue`
-- `ada`
-- `waves`
-- `starburst`
-- `fluid`
+Choose from these banner designs: `ada`, `dots`, `fluidBlue`, `fluidRed`, `overlap`, `zoomRedWhite`, `zoomRedWhiteDark`, `zoomBlueRed`, `waves`, `starburst`, `braidBlue`, `braidRedBlue`, `braidBlack`, `docs`, `ouroboros`.
+
+Documentation pages default to `docs`. Any unrecognized value falls back to `starburst`.
 
 See the [SiteHero component documentation](/docs/get-involved/components/site-hero) for examples of each banner type.
 

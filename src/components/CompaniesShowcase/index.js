@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useLocation, useHistory } from "@docusaurus/router";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import Link from "@docusaurus/Link";
 import {translate} from '@docusaurus/Translate';
 import companies from "@site/src/data/logosCompanies.json";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 function getCompanyId(company) {
@@ -46,7 +47,7 @@ function SpotlightPanel({ company, onClose }) {
           Known for: {company.knownFor}
         </p>
       )}
-      <Link className={styles.spotlightLink} href={company.link}>
+      <Link className={styles.spotlightLink} href={safeUrl(company.link)}>
         Visit website
       </Link>
     </div>
@@ -92,9 +93,10 @@ export default function CompaniesShowcase() {
   const params = new URLSearchParams(location.search);
   const activeTab = params.get("tab");
 
-  const activeCompany = activeTab
-    ? companies.find((c) => getCompanyId(c) === activeTab)
-    : null;
+  const activeCompany = useMemo(
+    () => (activeTab ? companies.find((c) => getCompanyId(c) === activeTab) : null),
+    [activeTab]
+  );
 
   useEffect(() => {
     if (activeCompany && spotlightRef.current) {
@@ -103,7 +105,7 @@ export default function CompaniesShowcase() {
         block: "start",
       });
     }
-  }, [activeTab]);
+  }, [activeCompany]);
 
   function handleSelect(company) {
     const id = getCompanyId(company);

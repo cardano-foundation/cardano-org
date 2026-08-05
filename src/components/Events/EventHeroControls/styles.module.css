@@ -1,0 +1,60 @@
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+.search {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+  color: #1c1e21;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pill {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+}
+
+.pill:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.active {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.active:hover {
+  background: #fff;
+}
+
+.divider {
+  width: 1px;
+  height: 1.4rem;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 0 0.25rem;
+}

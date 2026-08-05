@@ -51,12 +51,13 @@ After creating your JSON file, you'll need to add a static import for it in the 
 
 Before you can use your new FAQ data, you need to add it to the `FAQSection` component. Open `src/components/FAQSection/index.js` and add an import for your JSON file:
 
-```js {6,11} title="src/components/FAQSection/index.js"
+```js title="src/components/FAQSection/index.js"
 import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
-import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import { renderAnswerArray } from "@site/src/utils/textUtils";
 import delegationFAQ from "@site/src/data/delegationFAQ.json";
+import operationFAQ from "@site/src/data/operationFAQ.json";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 const faqData = {
@@ -65,6 +66,10 @@ const faqData = {
   pineappleFAQ,
 };
 ```
+
+:::tip Passing data directly
+If you would rather not register a JSON file, `FAQSection` also accepts a `data` prop with the array inline: `<FAQSection data={myFaqArray} />`. When `data` is given it takes precedence over `jsonFileName`.
+:::
 
 This registers your JSON file so it can be referenced by name when using the component.
 
@@ -83,7 +88,6 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import FAQSection from "@site/src/components/FAQSection";
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title="FAQ Component"

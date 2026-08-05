@@ -2,7 +2,7 @@
 slug: 2022-08-11-august-developer-portal
 title: "Interview: Strica"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

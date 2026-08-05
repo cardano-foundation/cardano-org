@@ -2,7 +2,7 @@
 slug: 2024-06-24-media-cardano-interim-constitution-explained-lloyd-duhon
 title: Cardano's Interim Constitution Explained
 authors: [community]
-tags: [media, governance]
+tags: [governance, ecosystem]
 ---
 
 Lloyd Duhon breaks down the Cardano Blockchain Interim Constitution, covering its preamble, core principles, community members’ rights and responsibilities, and the transition plan to the Final Constitution. Discover how this document paves the way for a fully decentralized, community-governed blockchain. Essential insights for Cardano enthusiasts, blockchain developers, and those curious about crypto governance.

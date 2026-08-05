@@ -23,6 +23,11 @@
     "crowdin:download": "crowdin download",
     "crowdin:progress": "node scripts/fetch-crowdin-progress.js",
     "test:sitemap": "node scripts/test-sitemap-hreflang.js",
+    "test:constitution": "node scripts/test-constitution-toc.js",
+    "test:events": "node scripts/test-events-model.js",
+    "test:css": "node scripts/check-css.js",
+    "test:docs-style": "node scripts/check-docs-style.js",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
@@ -76,7 +81,9 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "shell-quote": "1.8.4",
+    "websocket-driver": "0.7.5"
   },
   "browserslist": {
     "production": [

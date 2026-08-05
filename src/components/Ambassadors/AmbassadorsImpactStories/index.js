@@ -136,7 +136,7 @@ export default function AmbassadorsImpactStories() {
       <div className={styles.layout}>
         <FeaturedStory story={featured} />
         <div className={styles.thumbs}>
-          {rest.slice(0, 3).map((story) => (
+          {rest.slice(0, 4).map((story) => (
             <ThumbStory key={story.id} story={story} />
           ))}
         </div>

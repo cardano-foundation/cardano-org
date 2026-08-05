@@ -35,15 +35,17 @@ import AppGrid from '@site/src/components/AppGrid';
 | `ctaText` | `string` | `"Visit"` | Text for the call-to-action button on each card. |
 | `moreLink` | `string` | `null` | Custom link for the "More Apps" card. Defaults to `/apps?tags=...` |
 | `moreTitle` | `string` | `"More Apps"` | Title for the "More Apps" card. |
+| `excludeSlug` | `string` | `null` | Slug of an app to exclude from the grid (e.g. to omit the current app). |
+| `prioritizeMaintainerPicks` | `boolean` | `false` | When true, maintainer-picked apps are sorted ahead of others. |
 
 ---
 
 ## Features
 
-### Flexible Tag Filtering
-Filter apps by any tag or combination of tags:
-- Single tag: `tags={['dex']}` or `tags={['lending']}`
-- Multiple tags: `tags={['dex', 'lending']}` (shows apps with ANY of these tags)
+### Flexible Category Filtering
+Filter apps by any category or combination of categories:
+- Single category: `categories={['dex']}` or `categories={['lending']}`
+- Multiple categories: `categories={['dex', 'lending']}` (shows apps in ANY of these categories)
 
 ### Automatic Ranking
 Apps are automatically ranked by their 30-day transaction volume:
@@ -275,7 +277,7 @@ title: Cardano DeFi Ecosystem
 
 import AppGrid from '@site/src/components/AppGrid';
 
-# Decentralized Finance on Cardano
+## Decentralized Finance on Cardano
 
 Explore the growing DeFi ecosystem on Cardano, ranked by real transaction volume.
 
@@ -305,25 +307,3 @@ Explore the growing DeFi ecosystem on Cardano, ranked by real transaction volume
 - Ranking is category-specific (not global app ranking)
 - Handles missing icons gracefully with fallback badges
 - Supports both `require()` and string URL paths for icons
-
----
-
-## Migration from DexGrid
-
-The `AppGrid` component replaces the previous `DexGrid` component. To migrate:
-
-```jsx
-// Before (DexGrid)
-import DexGrid from '@site/src/components/DexGrid';
-<DexGrid limit={5} showRank={false} />
-
-// After (AppGrid)
-import AppGrid from '@site/src/components/AppGrid';
-<AppGrid categories={['dex']} limit={5} showRank={false} ctaText="Visit DEX" moreTitle="More DEXes" />
-```
-
-Key differences:
-- `categories` prop is now required (defaults to `['dex']`)
-- `ctaText` prop allows customizing the button text (was hardcoded as "Visit DEX")
-- `moreTitle` prop allows customizing the "more" card title
-- `moreLink` prop allows customizing the "more" card link

@@ -22,6 +22,10 @@ export default [
   react.configs.flat['jsx-runtime'],
   jsxA11y.flatConfigs.recommended,
 
+  // Pin the React version globally so the recommended config above does not
+  // emit a "React version not specified" meta-warning.
+  { settings: { react: { version: '18.3' } } },
+
   {
     files: ['src/**/*.{js,jsx}', 'scripts/**/*.js', 'docusaurus.config.js'],
     languageOptions: {

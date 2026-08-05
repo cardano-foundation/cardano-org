@@ -8,6 +8,7 @@ import * as echarts from 'echarts';
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { dateToEpoch } from '@site/src/utils/insights/epochs';
+import { resolveIconSrc } from '@site/src/utils/appIcon';
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
@@ -20,6 +21,7 @@ import { Showcases, Tags, Categories } from "@site/src/data/apps";
 import appStats from "@site/src/data/tx-stats.json";
 import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./leaderboard.module.css";
 
 const CIP20_LABEL = 674;
@@ -63,13 +65,6 @@ function findAppDetails(statEntry) {
   return appOverrides[statEntry.label] || null;
 }
 
-// Get the image source, handling both require() objects and string URLs
-function getIconSrc(app) {
-  if (!app?.icon) return null;
-  if (typeof app.icon === 'string') return app.icon;
-  if (typeof app.icon === 'object') return app.icon.default || app.icon.src || null;
-  return null;
-}
 
 function getCategoryForApp(app) {
   if (!app) return 'Not Listed';
@@ -456,7 +451,7 @@ function MetadataTreemap({ data }) {
 
 // App Row Component for the leaderboard list
 function AppRow({ app, rank, appDetails }) {
-  const iconSrc = getIconSrc(appDetails);
+  const iconSrc = resolveIconSrc(appDetails);
   const initial = app.displayName.charAt(0).toUpperCase();
   const category = getCategoryForEntry(app, appDetails);
   const isTop3 = rank <= 3;
@@ -498,7 +493,7 @@ function AppRow({ app, rank, appDetails }) {
       </div>
       {appDetails?.website ? (
         <a
-          href={appDetails.website}
+          href={safeUrl(appDetails.website)}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.visitLink}

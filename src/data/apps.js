@@ -159,6 +159,11 @@ export const Properties = {
     description: "Open-source code is available and can be inspected, forked, or contributed to.",
     color: '#8C2F00',  // Dark Orange-Red
   },
+  drepdelegation: {
+    label: "DRep Delegation",
+    description: "You can delegate your voting power to a DRep directly in this app.",
+    color: '#0B6E4F',  // Dark Green
+  },
 };
 
 // Backwards-compat union for components that look up tag metadata by name without
@@ -228,7 +233,7 @@ export const Showcases = [
       "Demonstrates use cases for Cardano transaction metadata. Sign messages, anchor files as proof of existence, and verify them on-chain.",
     tagline: "Sign messages and create proof of existence",
     icon: "/img/app-icons/cardano-wall.jpg",
-    website: "https://cardanowall.com/en/explore/",
+    website: "https://cardanowall.com",
     source: null,
     category: "notary",
     properties: [],
@@ -282,7 +287,7 @@ export const Showcases = [
   {
     title: "CExplorer",
     description:
-        "Independent Cardano explorer with all-in-one dashboards covering blocks, transactions, stake pools, governance, and asset statistics.",
+      "Independent Cardano explorer with all-in-one dashboards covering blocks, transactions, stake pools, governance, and asset statistics.",
     tagline: "Independent Cardano explorer with dashboards",
     icon: "/img/app-icons/cexplorer.png",
     website: "https://cexplorer.io/",
@@ -386,25 +391,6 @@ export const Showcases = [
       custody: "non-custodial",
       features: ["staking", "multi-account"],
       type: "full-node",
-    },
-  },
-  {
-    title: "SecondFi",
-    description:
-      "Self-custody neofinance platform on Cardano for spending, trading, earning, and saving. The successor to Yoroi, built by EMURGO.",
-    tagline: "Self-custody neofinance, successor to Yoroi",
-    icon: "/img/app-icons/secondfi.png",
-    website: "https://secondfi.io",
-    source: "https://github.com/Emurgo/yoroi-frontend",
-    category: "wallet",
-    properties: ["nft", "mobile", "opensource"],
-    maintainerPick: true,
-    beginnerFriendly: false,
-    walletFeatures: {
-      platforms: ["ios", "android", "browser"],
-      custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "hardware-wallet", "governance", "qr-claim"],
-      type: "light",
     },
   },
   {
@@ -680,27 +666,13 @@ export const Showcases = [
       "Curated directory of 650+ projects building on Cardano, organized by category with filters for DeFi, NFTs, governance, infrastructure, and more.",
     tagline: "Directory of 650+ projects building on Cardano",
     icon: "/img/app-icons/cardanocube.png",
-    website: "https://www.cardanocube.io",
+    website: "https://www.cardanocube.com/",
     source: null,
     category: "ecosystem",
     properties: [],
     maintainerPick: true,
     beginnerFriendly: false,
     x: "CardanoCube",
-  },
-  {
-    title: "Pavia",
-    description:
-      "User-owned virtual world on Cardano where players buy land NFTs, build experiences, and trade assets with other residents of the metaverse.",
-    tagline: "User-owned virtual world on Cardano",
-    icon: "/img/app-icons/pavia.svg",
-    website: "https://www.pavia.io",
-    source: null,
-    category: "game",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "Pavia_io",
   },
   {
     title: "WingRiders",
@@ -865,19 +837,6 @@ export const Showcases = [
     x: "cardano_studio",
   },
   {
-    title: "Cardano Relay Map",
-    description:
-      "Geographic map of Cardano stake-pool relay nodes with filters for region, pool, and operator. Useful for monitoring decentralization in real time.",
-    tagline: "Geographic map of Cardano stake-pool relays",
-    icon: "/img/app-icons/cardano-relay-map.png",
-    website: "https://monadpool.com/cardano.html",
-    source: null,
-    category: "pooltool",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
     title: "Finitum Bridge",
     description:
       "Cross-chain bridge for moving supported tokens between Cardano and BSC. Wraps assets on the destination chain with custodian-backed reserves.",
@@ -909,7 +868,7 @@ export const Showcases = [
       "Standardized NFT that maps a Cardano wallet address to a human-readable handle. Used by wallets and dApps as the network's de facto naming layer.",
     tagline: "Human-readable Cardano addresses as NFTs",
     icon: "/img/app-icons/adahandle.jpg",
-    website: "https://adahandle.com",
+    website: "https://handle.me/",
     source: null,
     category: "identity",
     properties: ["nft"],
@@ -1024,27 +983,12 @@ export const Showcases = [
     x: "liqwidfinance",
   },
   {
-    title: "Charli3",
-    description:
-      "Charli3 is a decentralized Oracle solution on Cardano, built natively for the chain, producing fully auditable data records on Cardano ledger.",
-    tagline: "Native decentralized oracle on Cardano",
-    icon: "/img/app-icons/charli3.jpg",
-    statsLabel: "charli3",
-    website: "https://charli3.io",
-    source: "https://github.com/Charli3-Official/charli3-pull-oracle-contracts",
-    category: "other",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "Oraclecharli3",
-  },
-  {
     title: "Cardano Academy",
     description:
       "Online courses on blockchain fundamentals, consensus algorithms, transaction models, scaling, and Cardano governance, staking, and dApp development.",
     tagline: "Online courses on Cardano and blockchain basics",
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
-    website: "https://learn.academy.cardanofoundation.org",
+    website: "https://cardanofoundation.org/en/academy",
     source: null,
     category: "education",
     properties: [],
@@ -1058,6 +1002,18 @@ export const Showcases = [
     tagline: "Delegate, register as DRep, and vote on proposals",
     icon: "/img/app-icons/govtools.svg",
     website: "https://gov.tools",
+    source: null,
+    category: "governance",
+    properties: ["drepdelegation"],
+    maintainerPick: false,
+    beginnerFriendly: false,
+  },
+  {
+    title: "Treasury Donation",
+    description:
+      "Connect a CIP-30 wallet and donate ada directly to the Cardano treasury in a single, non-custodial transaction. Hosted on cardano.org.",
+    tagline: "Donate ada to the Cardano treasury",
+    website: "https://cardano.org/governance/treasury",
     source: null,
     category: "governance",
     properties: [],
@@ -1080,7 +1036,7 @@ export const Showcases = [
   {
     title: "Medusa Wallet",
     description:
-        "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
+      "A lightweight Cardano wallet focused on privacy and user protection, enabling easy and secure access to funds even in untrusted or compromised environments. ",
     tagline: "Privacy-focused lightweight Cardano wallet",
     icon: "/img/app-icons/medusa.jpg",
     website: "https://adawallet.io",
@@ -1095,7 +1051,7 @@ export const Showcases = [
       features: ["staking"],
       type: "light",
     },
-   },
+  },
   {
     title: "Dano Finance",
     description:
@@ -1143,7 +1099,7 @@ export const Showcases = [
     website: "https://tempo.vote",
     source: null,
     category: "governance",
-    properties: [],
+    properties: ["drepdelegation"],
     maintainerPick: false,
     beginnerFriendly: false,
   },
@@ -1194,7 +1150,7 @@ export const Showcases = [
     beginnerFriendly: false,
     x: "BeginWallet",
   },
-    {
+  {
     title: "Stuff.io",
     description:
       "Digital-ownership platform on Cardano letting consumers own, share, gift, or resell their movies, music, ebooks, audiobooks, and podcasts as NFTs.",
@@ -1627,19 +1583,6 @@ export const Showcases = [
     beginnerFriendly: false,
   },
   {
-    title: "Mynth",
-    description:
-      "Cross-chain swap network bridging Cardano with any-token-to-any-token routes across multiple chains. Settles cross-chain trades through audited relays.",
-    tagline: "Cross-chain swap network for any token pair",
-    icon: "/img/app-icons/mynth.png",
-    website: "https://mynth.ai",
-    source: null,
-    category: "bridge",
-    properties: [],
-    maintainerPick: false,
-    beginnerFriendly: false,
-  },
-  {
     title: "Clarity Protocol",
     description:
       "Community governance and management toolkit usable by any Cardano project. Provides proposal flows, voting, treasury controls, and member registries.",
@@ -1673,20 +1616,6 @@ export const Showcases = [
     x: "indigo_protocol",
   },
   {
-    title: "Orcfax",
-    description:
-      "Decentralized oracle service publishing real-world event data to Cardano. Data is delivered to on-chain Plutus contracts in eUTXO-native format.",
-    tagline: "Decentralized oracle for real-world data on Cardano",
-    icon: "/img/app-icons/orcfax.jpg",
-    website: "https://orcfax.io",
-    source: "https://github.com/orcfax/orcfax-aiken",
-    category: "other",
-    properties: ["opensource"],
-    maintainerPick: false,
-    beginnerFriendly: false,
-    x: "orcfax",
-  },
-  {
     title: "Arp Radio",
     description:
       "Cardano music ecosystem player. Discover, mint, and play CIP-60 music NFT collections in a custom audio player tuned to consensus and slot timing.",
@@ -1710,19 +1639,6 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: true,
-    beginnerFriendly: false,
-  },
-  {
-    title: "Cardano Treasury Explorer",
-    description:
-      "A dashboard for exploring and analyzing Cardano's treasury data, providing insights into treasury balance, withdrawals, and funding allocations.",
-    tagline: "Cardano treasury balance and outflows dashboard",
-    icon: "/img/app-icons/cardano-treasury.png",
-    website: "https://cardanotreasury.fi/",
-    source: null,
-    category: "governance",
-    properties: [],
-    maintainerPick: false,
     beginnerFriendly: false,
   },
   {
@@ -1990,11 +1906,30 @@ export const Showcases = [
     website: "https://dreptalk.com",
     source: "https://github.com/katomm/dreptalk.com",
     category: "governance",
-    properties: ["opensource"],
+    properties: ["opensource", "drepdelegation"],
     maintainerPick: false,
     beginnerFriendly: false,
     x: "dreptalkcom",
   },
+{
+  title: "EchoForge",
+  description: "EchoForge is a B2B2C identity and proof layer on Cardano. EchoCert verifies credentials, EchoUploader proves file, EchoID adds wallet identity through EchoDash.",
+  tagline: "Anchoring and proof, building toward an identity layer",
+  preview: require("./app-screenshots/EchoForge.jpg"),
+  extraPreviews: [
+    require("./app-screenshots/EchoCert.png"),
+    require("./app-screenshots/EchoUploader.png"),
+    require("./app-screenshots/EchoDash.png"),
+  ],
+  icon: "/img/app-icons/EchoForge.svg",
+  website: "https://echoforgellc.tech",
+  source: "https://github.com/EchoForge-Dev/Aiken_Smart-Contract",
+  category: "notary",
+  properties: ["opensource"],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "EchoForgeEF",
+},
 ];
 
 export const TagList = Object.keys(Tags);

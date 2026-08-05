@@ -100,6 +100,7 @@ const Survey = ({ surveyData, questionCount }) => {
             <button
               key={index}
               onClick={() => handleSelect(index)}
+              aria-pressed={selectedAnswer === index}
               className={`${styles.optionButton} ${selectedAnswer === index ? styles.selected : ''}`}
             >
               <span className={styles.optionLabel}>

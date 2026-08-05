@@ -39,7 +39,8 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - `scripts/` – Utility scripts
 - `docusaurus.config.js` – Docusaurus site config
 - `sidebars.js` – Sidebar/navigation config
-- `variables.js` – Design tokens, theme variables
+- `variables.js` – Repository and branch URLs used by build scripts
+- `src/css/custom.css` – Global styles and design tokens (see `docs/get-involved/design-tokens.md`)
 - `package.json` – Scripts, dependencies
 - `netlify.toml` – Netlify build/deploy config
 

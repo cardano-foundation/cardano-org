@@ -165,7 +165,7 @@ Before contributing, familiarize yourself with these resources:
 Every contribution follows this lifecycle:
 
 ```
-Idea → Discussion → Issue → Implementation → PR → Review → Preview → Merge
+Idea -> Discussion -> Issue -> Implementation -> PR -> Review -> Preview -> Merge
 ```
 
 1. **Idea**: Start with a concept or problem to solve

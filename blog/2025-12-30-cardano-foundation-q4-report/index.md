@@ -2,7 +2,7 @@
 slug: 2025-12-30-cardano-foundation-q4-report
 title: "Cardano Foundation Quarterly: Q4 2025"
 authors: [cf]
-tags: [report]
+tags: [ecosystem]
 ---
 
 

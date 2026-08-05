@@ -1,23 +1,23 @@
 {
   "metadata": {
-    "lastUpdated": "2026-05-29T21:46:27.425Z",
+    "lastUpdated": "2026-07-15T18:33:22.858Z",
     "periodCalculated": "Last 12 Months",
     "dateRange": {
-      "from": "2025-05-29",
-      "to": "2026-05-29"
+      "from": "2025-07-15",
+      "to": "2026-07-15"
     }
   },
   "data": {
-    "totalContributionsLast12Months": 2128,
+    "totalContributionsLast12Months": 2268,
     "contributionsByCategory": {
-      "content": 927,
-      "meetups": 199,
-      "developerSoftware": 102,
-      "education": 232,
-      "businessDevelopment": 49,
-      "partnerships": 52,
-      "moderation": 485,
-      "other": 82
+      "content": 981,
+      "meetups": 212,
+      "developerSoftware": 117,
+      "education": 247,
+      "businessDevelopment": 43,
+      "partnerships": 46,
+      "moderation": 486,
+      "other": 136
     },
     "channelsModerated": "50+",
     "impactPotProposalsFunded": 37
@@ -26,49 +26,9 @@
     "languages": 17,
     "platforms": 9
   },
-  "featuredHero": {
-    "ambassadors": [
-      {
-        "ref": "Sebastian Aravena",
-        "tags": [
-          { "label": "Software", "tone": "openSource" },
-          { "label": "Education", "tone": "education" }
-        ]
-      },
-      {
-        "ref": "Mauro Agustín Andreoli",
-        "tags": [
-          { "label": "Content", "tone": "content" },
-          { "label": "Events", "tone": "events" },
-          { "label": "Education", "tone": "education" }
-        ]
-      },
-      {
-        "ref": "Hikaru Nomura",
-        "tags": [
-          { "label": "Translations", "tone": "translations" },
-          { "label": "Content", "tone": "content" }
-        ]
-      },
-      {
-        "ref": "Andreas Sosilo",
-        "tags": [
-          { "label": "Education", "tone": "education" },
-          { "label": "Events", "tone": "events" }
-        ]
-      },
-      {
-        "ref": "Kornel Gajewski",
-        "tags": [
-          { "label": "Development", "tone": "openSource" },
-          { "label": "Translations", "tone": "translations" }
-        ]
-      }
-    ]
-  },
   "stories": [
     {
-      "id": "story-governance-ba",
+      "id": "story-driving-on-chain-governance-at-cardano-summit-buenos-aires",
       "ambassadorRef": "Otávio Lima",
       "tagDefault": "Governance",
       "titleDefault": "Driving on-chain governance at Cardano Summit Buenos Aires",
@@ -77,7 +37,7 @@
       "image": "img/ambassadors/stories/story-governance-ba.webp"
     },
     {
-      "id": "story-onboarding-resources",
+      "id": "story-setting-the-standard-for-onboarding-new-cardano-users",
       "ambassadorRef": "Kai Chapell",
       "tagDefault": "Moderation",
       "titleDefault": "Setting the standard for onboarding new Cardano users",
@@ -86,7 +46,7 @@
       "badge": "reddit"
     },
     {
-      "id": "story-infrastructure-roadmap",
+      "id": "story-mapping-a-full-stack-infrastructure-roadmap-for-2026",
       "ambassadorRef": "Peter Bui",
       "tagDefault": "Development",
       "titleDefault": "Mapping a full-stack infrastructure roadmap for 2026",
@@ -95,13 +55,22 @@
       "image": "img/ambassadors/stories/story-infrastructure-roadmap.webp"
     },
     {
-      "id": "story-greek-athens",
+      "id": "story-greek-community-convenes-in-athens-for-workshops-and-events",
       "ambassadorRef": "Giannis Mitsios",
       "tagDefault": "Events",
       "titleDefault": "Greek community convenes in Athens for workshops and events",
       "excerptDefault": "Cardano's Greek community gathered in Athens to coordinate strategic workshops and plan upcoming events.",
       "link": "https://forum.cardano.org/t/cardano-meeting-in-athens-gr-eng-translation/151265",
       "image": "img/ambassadors/stories/story-greek-athens.webp"
+    },
+    {
+      "id": "story-positioning-cardano-as-a-solution-to-systemic-economic-challenges",
+      "ambassadorRef": "Mauro Agustín Andreoli",
+      "tagDefault": "Education",
+      "titleDefault": "Positioning Cardano as a solution to systemic economic challenges",
+      "excerptDefault": "Mauro Andreoli educates the broader public through an article on how technological frameworks and blockchain can offer structural solutions to ongoing economic challenges.",
+      "link": "https://www.infobae.com/opinion/2026/06/25/soluciones-tecnologicas-a-nuestros-crisis-economicas/",
+      "image": "img/ambassadors/stories/story-mauro-infobae.webp"
     }
   ],
   "countryToLanguage": {

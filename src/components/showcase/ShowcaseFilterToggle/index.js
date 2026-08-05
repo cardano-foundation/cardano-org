@@ -10,6 +10,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 
 import styles from "./styles.module.css";
 import clsx from "clsx";
+import { translate } from "@docusaurus/Translate";
 
 export const Operator = "OR" | "AND";
 
@@ -26,6 +27,8 @@ export default function ShowcaseFilterToggle() {
   const [operator, setOperator] = useState(false);
 
   useEffect(() => {
+    // Sync the toggle from the URL; it is also user-togglable, so it stays state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOperator(readOperator(location.search) === "OR");
   }, [location]);
 
@@ -48,6 +51,10 @@ export default function ShowcaseFilterToggle() {
         type="checkbox"
         id={id}
         className={styles.screenReader}
+        aria-label={translate({
+          id: "showcase.filterToggle.label",
+          message: "Match all selected tags (AND). Leave unchecked to match any tag (OR).",
+        })}
         onChange={toggleOperator}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -56,7 +63,6 @@ export default function ShowcaseFilterToggle() {
         }}
         checked={!operator}
       />
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label htmlFor={id} className={clsx(styles.checkboxLabel, "shadow--md")}>
         <span className={styles.checkboxLabelOr}>OR</span>
         <span className={styles.checkboxLabelAnd}>AND</span>

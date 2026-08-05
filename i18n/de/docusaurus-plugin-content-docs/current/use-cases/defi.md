@@ -9,33 +9,33 @@ sidebar_position: 6
 
 ## Die Herausforderung
 
-Traditionelle Finanzsysteme schließen Milliarden von Menschen weltweit aus, die keinen Zugang zu Bankdienstleistungen haben. Selbst für diejenigen, die Zugang dazu haben, sind Finanzdienstleistungen oft mit hohen Gebühren, undurchsichtigen Bedingungen und einer zentralisierten Kontrolle verbunden, die dazu führen kann, dass Vermögenswerte eingefroren oder Dienstleistungen willkürlich verweigert werden.
+Traditionelle Finanzsysteme schließen Milliarden von Menschen weltweit aus, die keinen Zugang zu Bankdienstleistungen haben. Selbst wer Zugang hat, kämpft oft mit hohen Gebühren, undurchsichtigen Bedingungen und zentralisierter Kontrolle, die dazu führen kann, dass Vermögenswerte eingefroren oder Dienstleistungen willkürlich verweigert werden.
 
-Die Finanzkrise von 2008 hat gezeigt, welche Risiken zentralisierte Finanzsysteme bergen, bei denen Ausfälle großer Institute eine Kettenreaktion in der gesamten Wirtschaft auslösen können. Die Nutzer haben kaum Einblick darin, wie ihre Einlagen verwendet werden oder welchen Risiken sie ausgesetzt sind.
+Die Finanzkrise von 2008 hat gezeigt, welche Risiken zentralisierte Finanzsysteme bergen: Der Ausfall großer Institute kann eine Kettenreaktion in der gesamten Wirtschaft auslösen. Nutzer haben kaum Einblick, wie ihre Einlagen verwendet werden oder welchen Risiken sie ausgesetzt sind.
 
 ## Wie Blockchain dies löst
 
-Dezentrale Finanzierung auf Cardano bietet offene, transparente Finanzdienstleistungen, die jedem mit einer Internetverbindung zugänglich sind:
+DeFi auf Cardano bietet offene, transparente Finanzdienstleistungen, die jedem mit einer Internetverbindung offenstehen:
 
-- **Freier Zugang**: Jeder kann ohne Genehmigung durch zentrale Instanz teilnehmen
+- **Freier Zugang**: Jeder kann teilnehmen, ohne die Erlaubnis einer zentralen Instanz zu brauchen
 - **Transparente Abläufe**: Alle Transaktionen und Smart Contracts sind öffentlich überprüfbar
-- **Verwahrung durch den Nutzer**: Die Nutzer behalten die Kontrolle über ihre Vermögenswerte, ohne auf Zwischenhändler angewiesen zu sein
+- **Verwahrung durch den Nutzer**: Nutzer behalten die Kontrolle über ihre Vermögenswerte, ohne auf Zwischenhändler angewiesen zu sein
 - **Kombinierbarkeit**: DeFi-Protokolle lassen sich miteinander kombinieren, um neue Finanzprodukte zu schaffen
-- **24/7 Verfügbarkeit**: Services funktionieren kontinuierlich ohne Ausfallzeiten oder Geschäftszeiten
+- **Rund um die Uhr verfügbar**: Die Dienste laufen ununterbrochen, ohne Ausfallzeiten oder Öffnungszeiten
 
-Das DeFi-Ökosystem von Cardano umfasst dezentralisierte Börsen (DEX), Kreditvergabe- und Kreditaufnahmeplattformen, Stablecoins sowie Protokolle zur Renditeoptimierung, die alle auf sicheren, geprüften Smart Contracts basieren.
+Das DeFi-Ökosystem von Cardano umfasst dezentrale Börsen (DEXs), Lending-Plattformen, Stablecoins sowie Protokolle zur Renditeoptimierung, alle auf Basis sicherer, geprüfter Smart Contracts.
 
 ## Warum Cardano
 
-- **Vorhersehbare Gebühren** dank des erweiterten UTXO-Modells das eine genaue Kostenplanung ermöglicht
-- **Formale Überprüfung** bietet mathematische Garantien über das Verhalten von Smart Contracts
+- **Vorhersehbare Gebühren** dank des erweiterten UTXO-Modells, das eine genaue Kostenplanung ermöglicht
+- **Formale Verifikation** liefert mathematische Garantien für das Verhalten von Smart Contracts
 - **Native Assets** verringern die Komplexität und die Angriffsfläche bei Token-Vorgängen
-- **Nachhaltigkeit** durch Proof-of-Stake steht im Einklang mit langfristiger Wertschöpfung
-- **Starke Community** von Entwicklern, die innovative Finanzanwendungen entwickeln
+- **Nachhaltigkeit** durch Proof-of-Stake, im Einklang mit langfristiger Wertschöpfung
+- **Starke Community** von Entwicklern, die innovative Finanzanwendungen bauen
 
 ## Erste Schritte
 
-- [Entdecken Sie DeFi-Anwendungen auf Cardano](/apps/?operator=OR&tags=lending&tags=dex)
-- [Cardano wallet erstellen](/apps/?tags=wallet)
+- [DeFi-Apps auf Cardano entdecken](/apps/?operator=OR&tags=lending&tags=dex)
+- [Cardano-Wallet erstellen](/apps/?tags=wallet)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

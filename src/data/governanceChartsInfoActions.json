@@ -194,7 +194,7 @@
   },
   {
     "title": "Net Change Limit",
-    "description": "An action that has no effect on-chain, other than an on-chain record.",
+    "description": "The Net Change Limit sets the maximum amount of ada that can be withdrawn from the Cardano treasury during a defined period. It acts as a treasury guardrail: once approved, budget proposals and treasury withdrawals must stay within that limit for the period.",
     "graphData": {
       "nodes": [
         {
@@ -204,7 +204,7 @@
             "y": 40
           },
           "data": {
-            "label": "Cardano minnet"
+            "label": "Cardano mainnet"
           },
           "style": {
             "width": 180,
@@ -305,7 +305,7 @@
             "y": 550
           },
           "data": {
-            "label": "If the limit meets the approval thresholds, the limit will best set and Budget Proposal GAs can be submitted based on this Limit"
+            "label": "If the limit meets the approval thresholds, it will be set, and budget proposal governance actions can be submitted within this limit"
           },
           "style": {
             "backgroundColor": "#d9f7be",
@@ -320,7 +320,7 @@
             "y": -35
           },
           "data": {
-            "label": "ada token holder submit GA to Mainnet\ndeposit 100k ada"
+            "label": "Ada token holder submits a governance action to mainnet\ndeposit 100k ada"
           },
           "style": {
             "width": 180,

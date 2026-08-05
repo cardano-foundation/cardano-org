@@ -2,7 +2,7 @@
 slug: 2024-12-05-media-cardano-constitutional-convention-delegate-voting
 title: "Cardano Constitutional Convention 2024 - Day 2 Delegate Voting"
 authors: [intersect]
-tags: [media, governance, events]
+tags: [governance, events, ecosystem]
 ---
 
 Day 2 marked a historic moment as delegates concluded their discussions and participated in the voting process on the Cardano constitution. Key decisions were made through transparent, democratic deliberation, culminating in a voting ceremony that underscored the community's collective commitment to decentralized governance. The day's outcome highlighted the unity and determination of Cardano’s global ecosystem.

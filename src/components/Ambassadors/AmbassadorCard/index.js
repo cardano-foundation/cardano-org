@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { BsChatLeftTextFill } from "react-icons/bs";
-import { FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn, FaYoutube, FaGithub } from "react-icons/fa6";
 
 import AmbassadorAvatar, { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import { ambassadorContributions, present } from "@site/src/utils/ambassadorLanguages";
@@ -14,6 +14,7 @@ export default function AmbassadorCard({ ambassador, highlighted = false }) {
   const xUrl = present(socials.x) ? socials.x : null;
   const linkedinUrl = present(socials.linkedIn) ? socials.linkedIn : null;
   const youtubeUrl = present(socials.youtube) ? socials.youtube : null;
+  const githubUrl = present(socials.github) ? socials.github : null;
 
   const tagline = present(ambassador.tagline) ? ambassador.tagline : null;
   const areas = ambassadorContributions(ambassador);
@@ -78,6 +79,17 @@ export default function AmbassadorCard({ ambassador, highlighted = false }) {
                 aria-label={translate({ id: "ambassadors.directory.socialAria.youtube", message: "YouTube channel" })}
               >
                 <FaYoutube />
+              </Link>
+            )}
+            {githubUrl && (
+              <Link
+                to={githubUrl}
+                className={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={translate({ id: "ambassadors.directory.socialAria.github", message: "GitHub profile" })}
+              >
+                <FaGithub />
               </Link>
             )}
           </div>

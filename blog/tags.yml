@@ -1,0 +1,41 @@
+# Canonical tag taxonomy for Cardano News.
+#
+# These are the ONLY tags posts may use. The blog plugin is configured with
+# onInlineTags: 'throw', so a post referencing any tag not listed here fails
+# the build. Keep this list short and meaningful; do not add narrow one-off
+# tags. When a post spans several topics, list the most specific tag first.
+
+development:
+  label: Development
+  permalink: /development
+  description: Weekly development reports, protocol progress, tooling, and developer resources.
+
+research:
+  label: Research
+  permalink: /research
+  description: Peer-reviewed research, Ouroboros, and scaling work behind Cardano.
+
+governance:
+  label: Governance
+  permalink: /governance
+  description: On-chain governance, Project Catalyst, Intersect, and stake pool operations.
+
+community:
+  label: Community
+  permalink: /community
+  description: Community digests, ambassadors, and grassroots initiatives.
+
+ecosystem:
+  label: Ecosystem
+  permalink: /ecosystem
+  description: Ecosystem news, partnerships, adoption, and Cardano Foundation updates.
+
+education:
+  label: Education
+  permalink: /education
+  description: Guides, tutorials, and learning resources for Cardano.
+
+events:
+  label: Events
+  permalink: /events
+  description: Summits, hackathons, meetups, and community events.

@@ -4,7 +4,7 @@ displayed_sidebar: null
 description: Cardano Online-Communities
 ---
 
-Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv – jeder hat seinen eigenen Charakter. Jeder davon ist anders und auf seine Weise einzigartig. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
+Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv, jeder davon hat seinen eigenen Charakter. Jeder davon ist anders und auf seine Weise einzigartig. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
 
 ## Foren
 
@@ -27,7 +27,7 @@ Lerne die Cardano-Community bei Veranstaltungen vor Ort oder online kennen.
 Echtzeit-Chat und schnelle Diskussionen.
 
 - Cardano Main: https://t.me/Cardano
-- Cardano Developers: https://t.me/CardanoDevelopersOfficial
+- Cardano Entwickler: https://t.me/CardanoDevelopersOfficial
 - Cardano Report to Admin: https://t.me/cardanoreporttoadmin – für Fragen oder Probleme mit Regeln, Nutzern, Admins, Moderatoren oder anderen Themen in unseren Telegram-Kanälen.
 
 ## Cardano auf Discord

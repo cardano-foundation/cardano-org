@@ -36,6 +36,7 @@ export default function FAQSection({ jsonFileName = "delegationFAQ", data }) {
         >
           <Collapsible
             trigger={faq.question}
+            tabIndex={0}
             onOpening={() => setActiveIndex(index)}
             onClosing={() => setActiveIndex((current) => (current === index ? null : current))}
           >

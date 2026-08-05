@@ -2,7 +2,7 @@
 slug: 2021-12-20-december-developer-portal
 title: "Interview: ADApools"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 For the December edition of the Spotlight article, we interviewed Josef from [ADApools](https://adapools.org/).

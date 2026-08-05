@@ -9,7 +9,8 @@
     "socials": {
       "x": "https://x.com/agustinenada",
       "linkedIn": "https://www.linkedin.com/in/afranchella/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Partnerships"
   },
@@ -23,7 +24,8 @@
     "socials": {
       "x": "https://x.com/cardandi__",
       "linkedIn": "",
-      "youtube": "www.youtube.com/@lightup.kryptos"
+      "youtube": "https://www.youtube.com/@lightup.kryptos",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -37,7 +39,8 @@
     "socials": {
       "x": "https://x.com/andreassosilo",
       "linkedIn": "https://www.linkedin.com/in/andreassosilo",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Other, Meetup"
   },
@@ -51,7 +54,8 @@
     "socials": {
       "x": "https://x.com/xeeban",
       "linkedIn": "https://www.linkedin.com/in/nishigaya/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Other"
   },
@@ -65,7 +69,8 @@
     "socials": {
       "x": "https://x.com/BeatriceAnihiri",
       "linkedIn": "https://www.linkedin.com/in/beatrice-anihiri-182b15219/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other"
   },
@@ -74,12 +79,13 @@
     "role": "Ghana",
     "country": "GH",
     "link": "https://forum.cardano.org/u/benjamin1/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/benjamin-baani.webp",
     "tagline": "Hosting governance meetups and reviewing ambassador applications in Ghana.",
     "socials": {
       "x": "https://x.com/BaaniBenjamin",
       "linkedIn": "https://www.linkedin.com/in/benjamin-baani-058a892b4/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Meetup"
   },
@@ -88,12 +94,13 @@
     "role": "South Africa",
     "country": "ZA",
     "link": "https://forum.cardano.org/u/wimscardano/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/bernard-sibanda.webp",
     "tagline": "Coding student platforms and running Plutus training across universities.",
     "socials": {
       "x": "https://x.com/wimscardano",
       "linkedIn": "https://www.linkedin.com/in/bernard-sibanda-954563243",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Software, Meetup"
   },
@@ -107,7 +114,8 @@
     "socials": {
       "x": "https://x.com/lovelacepool1",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -121,7 +129,8 @@
     "socials": {
       "x": "https://x.com/Straightpool4",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -135,7 +144,8 @@
     "socials": {
       "x": "https://x.com/CrisRo0787",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Content, Partnerships"
   },
@@ -149,21 +159,23 @@
     "socials": {
       "x": "https://x.com/danamphred",
       "linkedIn": "https://www.linkedin.com/in/danbaruka/",
-      "youtube": "https://www.youtube.com/@catalystafricatownhall1239"
+      "youtube": "https://www.youtube.com/@catalystafricatownhall1239",
+      "github": "https://github.com/danbaruka"
     },
     "areasOfContribution": "Software, Content, Moderation"
   },
   {
     "name": "Darlington Wleh",
-    "role": "United States",
-    "country": "US",
+    "role": "Kenya",
+    "country": "KE",
     "link": "https://forum.cardano.org/u/lidonation/",
     "profilePicture": "SOON...",
     "tagline": "Hosting Cardano Over Coffee Spaces and writing technical parameter guides.",
     "socials": {
       "x": "https://x.com/profd2004",
       "linkedIn": "https://www.linkedin.com/in/profd2004/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education"
   },
@@ -177,7 +189,8 @@
     "socials": {
       "x": "https://x.com/MedusaAdaWallet",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": "https://github.com/Fell-x27"
     },
     "areasOfContribution": "Software, Partnerships, Other"
   },
@@ -186,12 +199,13 @@
     "role": "Argentina",
     "country": "AR",
     "link": "https://forum.cardano.org/u/diegomac35",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/diego-macchi.webp",
     "tagline": "Business development for TxPipe and co-organizing Builder Fest.",
     "socials": {
       "x": "https://x.com/diegomac35",
       "linkedIn": "https://www.linkedin.com/in/diego-macchi-web3-cardano/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup"
   },
@@ -205,7 +219,8 @@
     "socials": {
       "x": "https://x.com/Diego_Torres_",
       "linkedIn": "https://www.linkedin.com/in/diego-torres-borda-94b70912/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education"
   },
@@ -219,7 +234,8 @@
     "socials": {
       "x": "https://x.com/ada_stat",
       "linkedIn": "https://www.linkedin.com/in/dmytro-stashenko/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Software"
   },
@@ -231,9 +247,10 @@
     "profilePicture": "SOON...",
     "tagline": "Moderating official Spanish developer chats and running a YouTube channel.",
     "socials": {
-      "x": "https://x.com/Edickson23",
+      "x": "",
       "linkedIn": "https://www.linkedin.com/in/edickson-aguilera-b3960b86",
-      "youtube": "https://www.youtube.com/@EmbajadorCripto"
+      "youtube": "https://www.youtube.com/@EmbajadorCripto",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Content"
   },
@@ -247,7 +264,8 @@
     "socials": {
       "x": "https://x.com/hustle_bloom",
       "linkedIn": "https://www.linkedin.com/in/efesengul/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Content"
   },
@@ -261,7 +279,8 @@
     "socials": {
       "x": "https://x.com/Cardano_Goguen",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -275,21 +294,23 @@
     "socials": {
       "x": "https://x.com/eric248550",
       "linkedIn": "https://www.linkedin.com/in/erictsai-/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other, Moderation"
   },
   {
-    "name": "Erick Valadez Hernandez",
+    "name": "Erick Valadez",
     "role": "Mexico",
     "country": "MX",
     "link": "https://forum.cardano.org/u/jericko/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/erick-valadez.webp",
     "tagline": "Co-organizing Catalyst Ideas Fests and teaching cyber students.",
     "socials": {
       "x": "https://x.com/FilozoFlow",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Content, Partnerships"
   },
@@ -303,7 +324,8 @@
     "socials": {
       "x": "",
       "linkedIn": "https://www.linkedin.com/in/erwin-hagens-8a217627b/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -317,7 +339,8 @@
     "socials": {
       "x": "https://x.com/baba_elliot",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education"
   },
@@ -329,37 +352,25 @@
     "profilePicture": "SOON...",
     "tagline": "Running Cardano Woman Indonesia and bridging ITB university partnerships.",
     "socials": {
-      "x": "https://x.com/FannyFN",
+      "x": "https://x.com/FannyFNY_",
       "linkedIn": "https://www.linkedin.com/in/fanny-wijaya-fny/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Partnerships, Education"
-  },
-  {
-    "name": "Felix Weber",
-    "role": "France",
-    "country": "FR",
-    "link": "https://forum.cardano.org/u/felix_weber/",
-    "profilePicture": "SOON...",
-    "tagline": "Developing MeshJS libraries and coordinating summits in Berlin.",
-    "socials": {
-      "x": "",
-      "linkedIn": "",
-      "youtube": ""
-    },
-    "areasOfContribution": "Software"
   },
   {
     "name": "Giannis Mitsios",
     "role": "Greece",
     "country": "GR",
     "link": "https://forum.cardano.org/u/varavas/",
-    "profilePicture": "SOON...",
-    "tagline": "Establishing the Athens Community Hub and creating Greek YouTube videos.",
+    "profilePicture": "/img/ambassadors/giannis-mitsios.webp",
+    "tagline": "Establishing the Greek Community Hub and creating Greek YouTube videos.",
     "socials": {
       "x": "https://x.com/Varavas9",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Content, Education"
   },
@@ -368,12 +379,13 @@
     "role": "Puerto Rico",
     "country": "PR",
     "link": "https://forum.cardano.org/u/arcella/",
-    "profilePicture": "SOON...",
-    "tagline": "Advocating for Cardano and Midnight as a GUAVA co-founder and musician.",
+    "profilePicture": "/img/ambassadors/gisela-rosa.webp",
+    "tagline": "Artist and musician driving awareness and adoption of the Cardano ecosystem through AdaLink and Explore Cardano.",
     "socials": {
       "x": "https://x.com/GR_JSAT",
       "linkedIn": "",
-      "youtube": "https://www.youtube.com/@ExploreCardano"
+      "youtube": "https://www.youtube.com/@ExploreCardano",
+      "github": ""
     },
     "areasOfContribution": "Content, Partnerships"
   },
@@ -387,7 +399,8 @@
     "socials": {
       "x": "https://x.com/gon369xyz",
       "linkedIn": "https://www.linkedin.com/in/gonzalocamps",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Partnerships, Business Development"
   },
@@ -401,7 +414,8 @@
     "socials": {
       "x": "https://x.com/WoodlandPools",
       "linkedIn": "https://www.linkedin.com/in/gmoratorio/",
-      "youtube": "https://www.youtube.com/@WoodlandPools"
+      "youtube": "https://www.youtube.com/@WoodlandPools",
+      "github": ""
     },
     "areasOfContribution": "Education"
   },
@@ -415,7 +429,8 @@
     "socials": {
       "x": "https://x.com/Hideki_Takeshi",
       "linkedIn": "https://www.linkedin.com/in/hideki-takeshi-a268791a7/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other"
   },
@@ -429,7 +444,8 @@
     "socials": {
       "x": "https://x.com/hix_coffeepool",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -443,7 +459,8 @@
     "socials": {
       "x": "https://x.com/CryptoVeri_",
       "linkedIn": "https://www.linkedin.com/in/ilhunchung/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -457,7 +474,8 @@
     "socials": {
       "x": "https://x.com/CardisaLatina",
       "linkedIn": "https://www.linkedin.com/in/isfrancori/",
-      "youtube": "https://www.youtube.com/@cardisalatina"
+      "youtube": "https://www.youtube.com/@cardisalatina",
+      "github": ""
     },
     "areasOfContribution": "Content, Education, Other"
   },
@@ -469,9 +487,10 @@
     "profilePicture": "SOON...",
     "tagline": "Writing articles on USDCx mainnet launches and Midnight banking cases.",
     "socials": {
-      "x": "https://x.com/yamgu",
+      "x": "",
       "linkedIn": "https://www.linkedin.com/in/janice-gu-311038236/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -485,7 +504,8 @@
     "socials": {
       "x": "https://x.com/JaromirTesar",
       "linkedIn": "https://www.linkedin.com/in/jaromir-tesar-2432a537/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education"
   },
@@ -499,7 +519,8 @@
     "socials": {
       "x": "",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -513,7 +534,8 @@
     "socials": {
       "x": "https://x.com/Jennycitalinda",
       "linkedIn": "https://www.linkedin.com/in/jenny-brito-6064311b/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Education"
   },
@@ -522,12 +544,13 @@
     "role": "Ghana",
     "country": "GH",
     "link": "https://forum.cardano.org/u/jeremiah/",
-    "profilePicture": "SOON...",
-    "tagline": "Hosting Web3 workshops for health students and creating Yoroi tutorials.",
+    "profilePicture": "/img/ambassadors/jeremiah-baani.webp",
+    "tagline": "Hosting Web3 workshops for students and creating Cardano tutorials.",
     "socials": {
-      "x": "",
+      "x": "https://x.com/jerrybnj",
       "linkedIn": "https://www.linkedin.com/in/jeremiahbaani/",
-      "youtube": "https://www.youtube.com/@cardanoafricaacademy"
+      "youtube": "https://www.youtube.com/@cardanoafricaacademy",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Content"
   },
@@ -541,7 +564,8 @@
     "socials": {
       "x": "https://x.com/lelinh31916987",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other"
   },
@@ -555,7 +579,8 @@
     "socials": {
       "x": "https://x.com/yojoflo",
       "linkedIn": "https://www.linkedin.com/in/joallum/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Business Development, Other"
   },
@@ -569,7 +594,8 @@
     "socials": {
       "x": "https://x.com/bosconfts",
       "linkedIn": "https://www.linkedin.com/in/bosco-ribeiro-4475513a0/",
-      "youtube": "https://www.youtube.com/@BoscoBlockchainPORT/videos"
+      "youtube": "https://www.youtube.com/@BoscoBlockchainPORT/videos",
+      "github": "https://github.com/bosconfts"
     },
     "areasOfContribution": "Content, Business Development"
   },
@@ -583,7 +609,8 @@
     "socials": {
       "x": "https://x.com/cardanoSolar",
       "linkedIn": "https://www.linkedin.com/in/joseiadicicco/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Partnerships, Education"
   },
@@ -597,7 +624,8 @@
     "socials": {
       "x": "https://x.com/oscarw3st",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": "https://github.com/OscarW3st"
     },
     "areasOfContribution": "Meetup, Education, Content"
   },
@@ -611,7 +639,8 @@
     "socials": {
       "x": "",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Moderation"
   },
@@ -623,9 +652,10 @@
     "profilePicture": "SOON...",
     "tagline": "Building developer tooling at SIDAN Lab and mentoring Hong Kong devs.",
     "socials": {
-      "x": "https://x.com/KinsonSIDAN",
+      "x": "https://x.com/KinsonGOV",
       "linkedIn": "https://www.linkedin.com/in/kinson-cheung-166979103/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Software"
   },
@@ -639,7 +669,8 @@
     "socials": {
       "x": "",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Other"
   },
@@ -653,7 +684,8 @@
     "socials": {
       "x": "https://x.com/radioastro",
       "linkedIn": "https://www.linkedin.com/in/lloyd-duhon/?skipRedirect=true",
-      "youtube": "https://www.youtube.com/@gmcardano"
+      "youtube": "https://www.youtube.com/@gmcardano",
+      "github": ""
     },
     "areasOfContribution": "Education"
   },
@@ -667,7 +699,8 @@
     "socials": {
       "x": "https://x.com/LucasMacchia2",
       "linkedIn": "https://www.linkedin.com/in/lucasmacchiavelli/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -681,7 +714,8 @@
     "socials": {
       "x": "https://x.com/CardanoBR",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Moderation, Other"
   },
@@ -695,7 +729,8 @@
     "socials": {
       "x": "https://x.com/ATADA_Stakepool",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": "https://github.com/gitmachtl"
     },
     "areasOfContribution": "Software"
   },
@@ -709,7 +744,8 @@
     "socials": {
       "x": "https://x.com/MauroAndreoliA",
       "linkedIn": "https://www.linkedin.com/in/mauro-agust%C3%ADn-andreoli-7b58621a0/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Content, Meetup"
   },
@@ -723,7 +759,8 @@
     "socials": {
       "x": "",
       "linkedIn": "https://www.linkedin.com/in/metinee-boonrattanaamorn-50904b39/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Business Development, Meetup"
   },
@@ -737,7 +774,8 @@
     "socials": {
       "x": "https://x.com/mietran0407",
       "linkedIn": "https://www.linkedin.com/in/ngocmytranle0407/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -751,7 +789,8 @@
     "socials": {
       "x": "https://x.com/Hornan7",
       "linkedIn": "https://www.linkedin.com/in/mike-hornan-945b16386/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Software"
   },
@@ -765,7 +804,8 @@
     "socials": {
       "x": "https://x.com/mmustaphayakubu",
       "linkedIn": "https://www.linkedin.com/in/mmustaphayakubu/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Moderation, Content"
   },
@@ -779,7 +819,8 @@
     "socials": {
       "x": "https://x.com/Hahero7",
       "linkedIn": "https://www.linkedin.com/in/nguyen-thi-ha-45b108233/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Content, Business Development"
   },
@@ -789,11 +830,12 @@
     "country": "BR",
     "link": "https://forum.cardano.org/u/otaviolima/",
     "profilePicture": "SOON...",
-    "tagline": "Running CardanoFeed and hosting RWA panels at the Rio Summit.",
+    "tagline": "Running CardanoFeed and hosting discussion panels in Brazil.",
     "socials": {
       "x": "https://x.com/otaviolima",
       "linkedIn": "https://www.linkedin.com/in/otavioaclima/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Other, Meetup"
   },
@@ -807,7 +849,8 @@
     "socials": {
       "x": "https://x.com/patryk_karter",
       "linkedIn": "",
-      "youtube": "https://www.youtube.com/@LearnCardano"
+      "youtube": "https://www.youtube.com/@LearnCardano",
+      "github": ""
     },
     "areasOfContribution": "Content, Meetup"
   },
@@ -821,7 +864,8 @@
     "socials": {
       "x": "https://x.com/wnipos",
       "linkedIn": "https://www.linkedin.com/in/quentin-kayila-massamba-133327aa/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -835,7 +879,8 @@
     "socials": {
       "x": "",
       "linkedIn": "https://www.linkedin.com/in/rami-hanania-87742a119/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other"
   },
@@ -849,7 +894,8 @@
     "socials": {
       "x": "https://x.com/plugnplay88",
       "linkedIn": "https://www.linkedin.com/in/einreinrandy/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education, Meetup"
   },
@@ -863,7 +909,8 @@
     "socials": {
       "x": "https://x.com/MYB_ArtWork",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -873,11 +920,12 @@
     "country": "CN",
     "link": "https://forum.cardano.org/u/ninjis/",
     "profilePicture": "SOON...",
-    "tagline": "Moderating daily chats and writing summaries on the Glacier Airdrop.",
+    "tagline": "Moderating daily chats and writing summaries on the Cardano Forum.",
     "socials": {
-      "x": "https://x.com/rengweilee",
+      "x": "",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Content"
   },
@@ -886,12 +934,13 @@
     "role": "Ireland",
     "country": "IE",
     "link": "https://forum.cardano.org/u/cosdpool/",
-    "profilePicture": "SOON...",
-    "tagline": "Editing Cardano Improvement Proposals and writing Frankenwallet guides.",
+    "profilePicture": "/img/ambassadors/robert-phair.webp",
+    "tagline": "CIP editor, docs author & reviewer, SPO & security advocate.",
     "socials": {
-      "x": "https://x.com/rxphair",
+      "x": "https://x.com/COSDpool",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": "https://github.com/rphair"
     },
     "areasOfContribution": "Software, Meetup, Education"
   },
@@ -905,7 +954,8 @@
     "socials": {
       "x": "https://x.com/Chilestakepo",
       "linkedIn": "https://www.linkedin.com/in/rodrigo-oyarzun-chil/",
-      "youtube": "https://www.youtube.com/@chilpoolchilestakeporodrig8937"
+      "youtube": "https://www.youtube.com/@chilpoolchilestakeporodrig8937",
+      "github": ""
     },
     "areasOfContribution": "Content, Meetup, Education"
   },
@@ -917,9 +967,10 @@
     "profilePicture": "SOON...",
     "tagline": "Producing and hosting weekly Cardano Ministry podcast episodes.",
     "socials": {
-      "x": "https://x.com/rodg_drmz",
+      "x": "https://x.com/rod_drmz",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Meetup"
   },
@@ -928,12 +979,13 @@
     "role": "Brazil",
     "country": "BR",
     "link": "https://forum.cardano.org/u/rodrigopacini13/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/rodrigo-silva-pacini.webp",
     "tagline": "Analyzing Project Catalyst and Agora governance setups for Brazil.",
     "socials": {
       "x": "https://x.com/RodrigoPacini",
       "linkedIn": "https://www.linkedin.com/in/rodrigopacini/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Education"
   },
@@ -943,11 +995,12 @@
     "country": "AR",
     "link": "https://forum.cardano.org/u/cardanocastellano/",
     "profilePicture": "SOON...",
-    "tagline": "Dubbing and translating Charles Hoskinson video content into Spanish.",
+    "tagline": "Dubbing and translating Cardano video content into Spanish.",
     "socials": {
       "x": "https://x.com/CardanoenCast",
       "linkedIn": "",
-      "youtube": "https://www.youtube.com/@CardanoCastellano"
+      "youtube": "https://www.youtube.com/@CardanoCastellano",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -961,7 +1014,8 @@
     "socials": {
       "x": "https://x.com/seira_yun",
       "linkedIn": "https://www.linkedin.com/in/seirayun/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Business Development"
   },
@@ -975,7 +1029,8 @@
     "socials": {
       "x": "https://x.com/shuwaku2",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup"
   },
@@ -989,7 +1044,8 @@
     "socials": {
       "x": "https://x.com/Seomon4u",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup"
   },
@@ -1003,7 +1059,8 @@
     "socials": {
       "x": "https://x.com/Lido_Phuffy",
       "linkedIn": "https://www.linkedin.com/in/phuffyking/",
-      "youtube": "https://www.youtube.com/@lidonation"
+      "youtube": "https://www.youtube.com/@lidonation",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -1017,7 +1074,8 @@
     "socials": {
       "x": "https://x.com/atriumlab",
       "linkedIn": "https://www.linkedin.com/in/stephencastermans/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Moderation, Education"
   },
@@ -1030,8 +1088,9 @@
     "tagline": "Coordinating marketing campaigns and community meetups in Japan.",
     "socials": {
       "x": "https://x.com/taichiyokoyama_",
-      "linkedIn": "https://www.linkedin.com/in/mryokoyama",
-      "youtube": ""
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content"
   },
@@ -1045,7 +1104,8 @@
     "socials": {
       "x": "https://x.com/CardanoChefPool",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -1059,7 +1119,8 @@
     "socials": {
       "x": "https://x.com/tsnnst",
       "linkedIn": "https://www.linkedin.com/in/thiago-s-nunes/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Business Development, Meetup"
   },
@@ -1073,7 +1134,8 @@
     "socials": {
       "x": "https://x.com/ThomasNordicADA",
       "linkedIn": "https://www.linkedin.com/in/thomas-lindseth/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Other"
   },
@@ -1087,7 +1149,8 @@
     "socials": {
       "x": "https://x.com/TienNgAnh",
       "linkedIn": "https://www.linkedin.com/in/tienna/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Meetup, Education"
   },
@@ -1096,12 +1159,13 @@
     "role": "Germany",
     "country": "DE",
     "link": "https://forum.cardano.org/t/ambassador-stories-journal-39-tim-bruckmann/130794",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/tim-bruckmann.webp",
     "tagline": "Pitching microcredits at summit panels and boarding local Swiss firms.",
     "socials": {
       "x": "https://x.com/Tim38300817",
       "linkedIn": "https://www.linkedin.com/in/tim-b-7864a284/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Education, Business Development, Partnerships"
   },
@@ -1115,7 +1179,8 @@
     "socials": {
       "x": "",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation"
   },
@@ -1129,7 +1194,8 @@
     "socials": {
       "x": "",
       "linkedIn": "https://www.linkedin.com/in/will-huang-759639238/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Software"
   },
@@ -1143,7 +1209,8 @@
     "socials": {
       "x": "https://x.com/NealSIDAN",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Content, Moderation"
   },
@@ -1157,7 +1224,8 @@
     "socials": {
       "x": "https://x.com/hinsonsidan",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": "https://github.com/HinsonSIDAN"
     },
     "areasOfContribution": "Software, Content, Education"
   },
@@ -1171,7 +1239,8 @@
     "socials": {
       "x": "https://x.com/YoramBenzvi",
       "linkedIn": "https://www.linkedin.com/in/yoram-ben-zvi/",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Business Development"
   },
@@ -1180,12 +1249,13 @@
     "role": "Japan",
     "country": "JP",
     "link": "https://forum.cardano.org/u/haskellcoding/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/paul-ko.webp",
     "tagline": "Scrutinizing potential scams and tracking the Midnight Japan tour.",
     "socials": {
       "x": "https://x.com/haskellcoding29",
       "linkedIn": "",
-      "youtube": ""
+      "youtube": "",
+      "github": ""
     },
     "areasOfContribution": "Moderation, Other"
   }

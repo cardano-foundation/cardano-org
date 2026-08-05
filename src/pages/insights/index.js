@@ -11,6 +11,7 @@ import {translate} from '@docusaurus/Translate';
 import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import {InsightsTags} from '@site/src/data/insights-tags';
+import './index.css';
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
 const req = require.context('./', true, /\.(md|mdx|js|jsx|ts|tsx)$/);
@@ -127,7 +128,11 @@ export default function InsightsIndex() {
     });
   }, [allItems, query, activeTags]);
 
-  useEffect(() => { setPage(0); }, [query, activeTags]);
+  useEffect(() => {
+    // Reset to the first page when the query or active tags change.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPage(0);
+  }, [query, activeTags]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const start = page * PER_PAGE;

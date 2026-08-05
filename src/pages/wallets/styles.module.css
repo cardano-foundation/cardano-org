@@ -19,37 +19,6 @@
   margin-bottom: 0.5rem;
 }
 
-.educationSection {
-  margin-top: 2rem;
-}
-
-.checklist {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-}
-
-.checklistItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.checklistItem:last-child {
-  border-bottom: none;
-}
-
-.checkIcon {
-  color: var(--ifm-color-primary);
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
 /* Mode selector */
 .modeSelector {
   display: flex;
@@ -149,6 +118,21 @@
 
 .modeSwitch:hover {
   color: var(--ifm-color-primary);
+}
+
+/* Learn teaser */
+.learnTeaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.learnTeaserText {
+  margin: 0;
+  max-width: 40rem;
 }
 
 @media (max-width: 768px) {

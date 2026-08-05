@@ -2,7 +2,7 @@
 slug: 2022-09-23-september-developer-portal
 title: "Interview: ADAO"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

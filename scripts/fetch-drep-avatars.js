@@ -21,7 +21,7 @@ const OUT_DIR = path.join(__dirname, '../static/img/dreps');
 const MANIFEST_PATH = path.join(__dirname, '../src/data/drep-avatars.json');
 
 // Mirrors the runtime VP gates in src/components/DRepDelegate/index.js.
-const VP_MIN_LOVELACE = 1_000_000_000_000; //  1M ada
+const VP_MIN_LOVELACE = 100_000_000_000; // 100k ada
 const VP_MAX_LOVELACE = 50_000_000_000_000; // 50M ada
 // Smaller pages than the runtime (component uses 600); the API proxy occasionally
 // resets connections on larger paginated GETs.

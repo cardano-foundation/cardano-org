@@ -1,43 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
-import { convertLovelacesToAda } from "@site/src/utils/insights/numbers";
+import { convertLovelacesToAda, formatAdaValue } from "@site/src/utils/insights/numbers";
+import useCountUp from "@site/src/utils/useCountUp";
 import styles from "./styles.module.css";
-
-const ANIMATION_DURATION = 1500;
-
-function useCountUp(target, duration = ANIMATION_DURATION) {
-  const [value, setValue] = useState(0);
-  const frameRef = useRef(null);
-
-  useEffect(() => {
-    if (target == null || target === 0) {
-      setValue(target ?? 0);
-      return;
-    }
-
-    const start = performance.now();
-    const animate = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(eased * target);
-      if (progress < 1) {
-        frameRef.current = requestAnimationFrame(animate);
-      } else {
-        setValue(target);
-      }
-    };
-    frameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (frameRef.current) cancelAnimationFrame(frameRef.current);
-    };
-  }, [target, duration]);
-
-  return value;
-}
 
 function AnimatedStat({ target, format, label }) {
   const animated = useCountUp(target);
@@ -49,26 +16,16 @@ function AnimatedStat({ target, format, label }) {
   );
 }
 
-function formatAdaValue(value) {
-  if (value == null) return "...";
-  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B ada`;
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M ada`;
-  return `${Math.round(value).toLocaleString()} ada`;
-}
-
 export default function GovernancePulse() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!API_URL) return;
-    const api = apiRef.current;
-    if (!api) return;
+    const api = makeApiClient(API_URL);
 
     async function fetchData() {
       try {

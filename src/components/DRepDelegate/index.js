@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
@@ -11,17 +11,22 @@ import {
   delegateVote,
 } from "@site/src/utils/cardano/wallet";
 import drepAvatarsManifest from "@site/src/data/drep-avatars.json";
+import {
+  EXPECTED_NETWORK_ID,
+  EXPLORER_TX_BASE,
+  shortAddress,
+  stringifyError,
+  classifyError,
+} from "@site/src/utils/walletTx";
 import styles from "./styles.module.css";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
 
-const VP_MIN_LOVELACE = 1_000_000_000_000;   // 1M ada
+const VP_MIN_LOVELACE = 100_000_000_000;     // 100k ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
 const DISPLAY_COUNT = 8;
 // data.cardano.org proxy caps POST bodies at 5120 bytes — ~80 drep_ids max per batch.
 const BATCH_SIZE = 50;
-const EXPECTED_NETWORK_ID = 1; // mainnet
-const EXPLORER_TX_BASE = "https://explorer.cardano.org/transaction/";
 const POOL_CACHE_KEY = "cardano-org.drep-pool.v2";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
@@ -115,36 +120,6 @@ function isValidDRepId(input) {
   if (/^drep(_script)?1[a-z0-9]{40,}$/.test(t)) return true;
   if (/^[0-9a-f]{56,64}$/i.test(t)) return true;
   return false;
-}
-
-function shortAddress(addr) {
-  if (!addr) return "";
-  return `${addr.slice(0, 12)}…${addr.slice(-8)}`;
-}
-
-function stringifyError(err) {
-  if (!err) return "";
-  if (typeof err === "string") return err;
-  if (err instanceof Error) return err.message || err.toString();
-  const parts = [];
-  if (err.message) parts.push(String(err.message));
-  if (err.info) parts.push(String(err.info));
-  if (err.code != null) parts.push(`code=${err.code}`);
-  if (!parts.length) {
-    try { return JSON.stringify(err); } catch { return String(err); }
-  }
-  return parts.join(" · ");
-}
-
-function classifyError(err) {
-  const msg = stringifyError(err);
-  if (/StakeKeyNotRegistered|StakeNotRegistered/i.test(msg)) return "stakeNotRegistered";
-  // CIP-30 signTx throws code 2 for UserDeclined; submitTx code 2 means Failure.
-  // Only classify as cancel when the message corroborates it.
-  if (/user\s*(declined|rejected|cancel)|declined\s*by\s*user|rejected\s*by\s*user/i.test(msg)) {
-    return "userCancelled";
-  }
-  return "generic";
 }
 
 function WalletPicker({ onConnect, busy }) {
@@ -292,7 +267,7 @@ function WalletStatus({ wallet, delegation, onDisconnect }) {
 
 function NetworkWarning() {
   return (
-    <div className={`${styles.banner} ${styles.bannerWarning}`}>
+    <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
       {translate({
         id: "governance.delegate.networkWarning",
         message: "Your wallet is on the wrong network. Switch to Mainnet to delegate.",
@@ -304,7 +279,7 @@ function NetworkWarning() {
 function TxBanner({ state }) {
   if (state.status === "building") {
     return (
-      <div className={`${styles.banner} ${styles.bannerInfo}`}>
+      <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">
         {translate(
           { id: "governance.delegate.tx.building", message: "Preparing delegation to {target}. Please confirm in your wallet…" },
           { target: state.target }
@@ -314,7 +289,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "success") {
     return (
-      <div className={`${styles.banner} ${styles.bannerSuccess}`}>
+      <div className={`${styles.banner} ${styles.bannerSuccess}`} role="status">
         <p style={{ margin: 0 }}>
           {translate(
             { id: "governance.delegate.tx.success", message: "Delegation submitted to {target}." },
@@ -329,7 +304,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "error") {
     return (
-      <div className={`${styles.banner} ${styles.bannerError}`}>
+      <div className={`${styles.banner} ${styles.bannerError}`} role="alert">
         {state.message}
       </div>
     );
@@ -439,8 +414,9 @@ function SpecialOption({ label, help, onSelect, target, disabled }) {
 export default function DRepDelegate() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once. A lazy useState initializer keeps it stable
+  // across renders without reading a ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
 
   const [pool, setPool] = useState([]);
   const [displayed, setDisplayed] = useState([]);
@@ -453,13 +429,15 @@ export default function DRepDelegate() {
 
   useEffect(() => {
     if (!API_URL) return;
-    const api = apiRef.current;
+    const api = apiClient;
     if (!api) return;
 
     let cancelled = false;
 
     const cached = readPoolCache();
     if (cached) {
+      // Hydrate from the client-only localStorage cache on mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPool(cached);
       setDisplayed(fisherYates(cached).slice(0, DISPLAY_COUNT));
       setLoading(false);
@@ -536,7 +514,7 @@ export default function DRepDelegate() {
 
     fetchDReps();
     return () => { cancelled = true; };
-  }, [API_URL]);
+  }, [API_URL, apiClient]);
 
   const reshuffle = useCallback(() => {
     setDisplayed(fisherYates(pool).slice(0, DISPLAY_COUNT));
@@ -555,9 +533,11 @@ export default function DRepDelegate() {
 
   useEffect(() => {
     if (!wallet) return;
-    const api = apiRef.current;
+    const api = apiClient;
     if (!api) return;
     let cancelled = false;
+    // Reset delegation state when the connected wallet changes, before refetch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDelegation(undefined);
     setStakeRegistered(undefined);
     (async () => {
@@ -585,7 +565,7 @@ export default function DRepDelegate() {
       }
     })();
     return () => { cancelled = true; };
-  }, [wallet, pool, tx.status]);
+  }, [wallet, pool, tx.status, apiClient]);
 
   const handleSelect = useCallback(async (target, displayName) => {
     if (!wallet || wrongNetwork || txBusy) return;

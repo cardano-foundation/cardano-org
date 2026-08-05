@@ -120,6 +120,11 @@
   margin: 0;
 }
 
+.learnMore:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 .learnMore {
   margin-top: auto;
   align-self: flex-end;

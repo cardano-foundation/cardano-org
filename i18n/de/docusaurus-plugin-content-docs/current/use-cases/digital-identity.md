@@ -1,40 +1,40 @@
 ---
-title: Digital Identity
-description: Self-sovereign identity solutions on Cardano give users control over their personal data
-sidebar_label: Digital Identity
+title: Digitale Identität
+description: Selbstbestimmte Identitätslösungen auf Cardano geben den Nutzern die Kontrolle über ihre persönlichen Daten
+sidebar_label: Digitale Identität
 sidebar_position: 3
 ---
 
-# Digital Identity
+# Digitale Identität
 
-## The Challenge
+## Die Herausforderung
 
-In today's digital world, our identities are fragmented across countless platforms, each holding pieces of our personal information. Users have little control over how their data is used, shared, or monetized. Data breaches expose millions of records, identity theft is rampant, and proving who you are online remains cumbersome and privacy-invasive.
+In der heutigen digitalen Welt ist unsere Identität auf unzählige Plattformen verteilt, von denen jede Teile unserer persönlichen Daten speichert. Die Nutzer haben kaum Einfluss darauf, wie ihre Daten genutzt, weitergegeben oder verkauft werden. Durch Datenlecks werden Millionen von Datensätzen offengelegt. Identitätsdiebstahl ist weit verbreitet, und der Nachweis der eigenen Identität im Internet ist nach wie vor umständlich und stellt einen Eingriff in die Privatsphäre dar.
 
-Centralized identity systems create single points of failure and give disproportionate power to identity providers. Users must repeatedly share sensitive information, creating unnecessary exposure and friction in digital interactions.
+Zentralisierte Identitätssysteme schaffen zentralisierte Fehlerquellen und verleihen Identitätsanbietern unverhältnismäßig große Macht. Nutzer müssen immer wieder sensible Daten preisgeben, was zu unnötigen Risiken und Hindernissen bei digitalen Interaktionen führt.
 
-## How Blockchain Solves This
+## Wie Blockchain dies löst
 
-Self-sovereign identity (SSI) on Cardano puts users in control of their digital identity. Key features include:
+Selbstbestimmte Identität (Self-Sovereign Identity, SSI) auf Cardano verleiht den Nutzern die Kontrolle über ihre digitale Identität. Die wichtigsten Merkmale sind:
 
-- **User ownership**: Individuals control their identity data and decide what to share
-- **Selective disclosure**: Share only the information needed for a specific transaction
-- **Verifiable credentials**: Third parties can cryptographically verify claims without accessing underlying data
-- **Decentralized identifiers (DIDs)**: Persistent identifiers that don't depend on any central authority
-- **Privacy preservation**: Zero-knowledge proofs can verify attributes without revealing them
+- **Eigentum der Nutzer**: Jeder kontrolliert seine Identitätsdaten selbst und entscheidet, was er teilt
+- **Selektive Freigabe**: Es werden nur die Informationen geteilt, die für einen konkreten Vorgang nötig sind
+- **Verifizierbare Nachweise**: Dritte können Angaben kryptografisch prüfen, ohne Zugriff auf die zugrunde liegenden Daten
+- **Dezentrale Identifikatoren (DIDs)**: Dauerhafte Kennungen, die von keiner zentralen Instanz abhängen
+- **Schutz der Privatsphäre**: Zero-Knowledge-Beweise bestätigen Eigenschaften, ohne sie offenzulegen
 
-With blockchain-based identity, users can prove they're over 18 without revealing their birthdate, or prove they live in a certain country without revealing their address.
+Mit blockchainbasierter Identität können Nutzer etwa belegen, dass sie über 18 sind, ohne ihr Geburtsdatum zu verraten, oder dass sie in einem bestimmten Land leben, ohne ihre Adresse preiszugeben.
 
-## Why Cardano
+## Warum Cardano
 
-- **Formal verification methods** ensure identity smart contracts behave as intended
-- **Extended UTXO model** provides predictable transaction costs for identity operations
-- **Interoperability focus** enables identity credentials to work across different systems
-- **Strong governance** ensures the platform evolves with community input
-- **Scalability roadmap** supports identity solutions at global scale
+- **Formale Verifikationsmethoden** stellen sicher, dass sich Identitäts-Smart-Contracts wie vorgesehen verhalten
+- **Erweitertes UTXO-Modell** bietet vorhersehbare Transaktionskosten für Identitätsvorgänge
+- **Interoperabilitätsfokus** ermöglicht Identitätsnachweise über verschiedene Systeme hinweg
+- **Starke Governance** sorgt dafür, dass sich die Plattform mit der Community weiterentwickelt
+- **Skalierbarkeits-Roadmap** unterstützt Identitätslösungen im globalen Maßstab
 
-## Get Started
+## Erste Schritte
 
-- [Explore identity applications on Cardano](/apps/?tags=identity)
-- [Developer resources for building on Cardano](https://developers.cardano.org)
-- [View Enterprise Solutions](/solutions)
+- [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
+- [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
+- [Enterprise-Lösungen ansehen](/solutions)

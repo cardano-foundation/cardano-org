@@ -111,7 +111,7 @@ html[data-theme="dark"] .button {
   margin-bottom: 3rem;
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
     background-size: cover;
     background-position: 50% 50%;
@@ -225,7 +225,7 @@ html[data-theme='dark'] .heroCtaButton:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .vizBadge {
     bottom: 30px;
     right: 0.75rem;

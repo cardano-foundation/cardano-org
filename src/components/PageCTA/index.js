@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import Link from "@docusaurus/Link";
 
 import styles from "./styles.module.css";
 
@@ -21,27 +22,27 @@ export default function PageCTA({
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.description}>{description}</p>
           <div className={styles.buttonRow}>
-            <a
+            <Link
               className={clsx(
                 "button button--lg",
                 isPrimary ? "button--primary" : "button--secondary",
                 styles.button
               )}
-              href={href}
+              to={href}
             >
               {buttonText}
-            </a>
+            </Link>
             {secondaryButton && (
-              <a
+              <Link
                 className={clsx(
                   "button button--lg button--outline",
                   isPrimary ? "button--primary" : "button--secondary",
                   styles.button
                 )}
-                href={secondaryButton.href}
+                to={secondaryButton.href}
               >
                 {secondaryButton.label}
-              </a>
+              </Link>
             )}
           </div>
         </div>

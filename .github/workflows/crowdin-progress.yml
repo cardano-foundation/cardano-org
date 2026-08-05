@@ -32,7 +32,7 @@ jobs:
           git add src/data/translation-progress.json src/data/top-translators.json
           git diff --cached --quiet && echo "No changes" && exit 0
           git checkout -b chore/update-crowdin-data
-          git commit -m "chore: update translation progress from Crowdin [skip ci]"
+          git commit -m "chore: update translation progress from Crowdin [skip actions]"
           git push -f origin chore/update-crowdin-data
           gh pr list --head chore/update-crowdin-data --state open | grep -q . || \
             gh pr create --base staging \

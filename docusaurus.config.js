@@ -59,6 +59,9 @@ const config = {
     // CSP connect-src allowlist. The proxy injects the demo / paid API key
     // server-side, so the public site never sees it.
     CARDANO_ORG_CG_API_URL: 'https://data.cardano.org/cg/api/v3',
+    // Luma events proxy hosted by data.cardano.org. Same host as the page, so
+    // a headerless GET avoids a CORS preflight. The proxy injects the API key.
+    CARDANO_ORG_LUMA_API_URL: 'https://data.cardano.org/luma/v1',
     CARDANO_ORG_API_KEY: 'secret',
   },
   // Even if you don't use internationalization, you can use this field to set
@@ -167,6 +170,9 @@ const config = {
           showReadingTime: false,
           routeBasePath: 'news',
           blogSidebarCount: 50,
+          // Only tags defined in blog/tags.yml may be used; any other tag
+          // fails the build. Keeps the tag taxonomy from drifting over time.
+          onInlineTags: 'throw',
           editUrl: `${vars.repository}/edit/${vars.branch}`,
           onUntruncatedBlogPosts: 'ignore',
           // Replaces the default "Blog | Cardano" page title and missing
@@ -225,6 +231,34 @@ const config = {
             const prefix = match[1] || '';
             return [`${prefix}/docs/glossary`];
           }
+
+          // The blog tag taxonomy was consolidated to the 7 tags in
+          // blog/tags.yml. Redirect the retired tag pages to the tag they were
+          // folded into so old links and search results keep working.
+          const tagMerges = {
+            development: ['weekly-development-report', 'developers', 'interoperability'],
+            research: ['ouroboros', 'scaling'],
+            governance: ['catalyst', 'mbo', 'spo'],
+            community: ['community-digest', 'ambassadors'],
+            ecosystem: ['media', 'adoption', 'report', 'activity-report', 'strategy'],
+            events: ['summit', 'buidler-fest', 'hackathons'],
+          };
+          const tagMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/tags\/([a-z-]+)\/?$/);
+          if (tagMatch) {
+            const prefix = tagMatch[1] || '';
+            const retired = tagMerges[tagMatch[2]];
+            if (retired) {
+              return retired.map((slug) => `${prefix}/news/tags/${slug}`);
+            }
+          }
+
+          // Dropped tags (format modifiers) point at the news index.
+          const newsIndex = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/?$/);
+          if (newsIndex) {
+            const prefix = newsIndex[1] || '';
+            return ['recap', 'survey'].map((slug) => `${prefix}/news/tags/${slug}`);
+          }
+
           return undefined;
         },
       },
@@ -293,6 +327,7 @@ const config = {
             items: [
               { to: '/what-is-ada', label: 'What is ada?' },
               { to: '/get-started', label: 'Get started with Cardano' },
+              { to: '/what-is-a-wallet', label: 'What is a Wallet?' },
               { to: '/wallets', label: 'Find a Wallet' },
               { to: '/where-to-get-ada', label: 'Where to get ada?' },
               { to: '/common-scams', label: 'Protect your ada' },
@@ -312,6 +347,7 @@ const config = {
                   items: [
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
                     { to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano', icon: 'wallet-solid' },
+                    { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },
                     { to: '/where-to-get-ada', label: 'Where to get ada?', description: 'Obtain ada to use Cardano', icon: 'coins-solid' },
                     { to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams', icon: 'shield-solid' },
                   ],
@@ -453,6 +489,7 @@ const config = {
               { to: '/use-cases#identity', label: 'Identity' },
               { to: '/use-cases#finance', label: 'Finance' },
               { to: '/use-cases#supply-chain', label: 'Supply Chain' },
+              { to: '/ai', label: 'AI Agents' },
             ],
             // The mega menu full version for "Solutions"
             mega: true,
@@ -474,6 +511,7 @@ const config = {
                     { to: '/use-cases', label: 'All Use Cases', description: 'Explore blockchain applications', icon: 'shapes-solid' },
                     { to: '/use-cases#identity', label: 'Identity', description: 'Credentials & verification', icon: 'users-solid' },
                     { to: '/use-cases#supply-chain', label: 'Supply Chain', description: 'Traceability & provenance', icon: 'route-solid' },
+                    { to: '/ai', label: 'AI Agents', description: 'Why AI needs Cardano', icon: 'robot-solid' },
                   ],
                 },
               ],

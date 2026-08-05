@@ -2,7 +2,7 @@
 slug: 2022-05-30-may-developer-portal
 title: "Interview: Milkomeda"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

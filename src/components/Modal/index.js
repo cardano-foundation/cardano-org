@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import useModalA11y from '@site/src/utils/useModalA11y';
+import styles from './styles.module.css';
+
+// Shared modal shell: a trigger button plus an accessible dialog with a
+// backdrop, close button, and open/close state. Content goes in `children`.
+// Scroll lock, focus trap/restore, and Escape-to-close live in useModalA11y.
+const Modal = ({ label, buttonText, buttonClassName, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => setIsOpen(false);
+  const dialogRef = useModalA11y(isOpen, handleClose);
+
+  return (
+    <>
+      <button
+        onClick={() => setIsOpen(true)}
+        className={buttonClassName || styles.startButton}
+      >
+        {buttonText}
+      </button>
+
+      {isOpen && (
+        // Backdrop click-outside-to-close. Keyboard equivalents (Escape to
+        // close, focus trap and restore) live in useModalA11y, alongside the
+        // dedicated close button.
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
+          className={styles.modalOverlay}
+          onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
+        >
+          <div
+            className={styles.modalContent}
+            role="dialog"
+            aria-modal="true"
+            aria-label={label}
+            ref={dialogRef}
+            tabIndex={-1}
+          >
+            <button
+              onClick={handleClose}
+              className={styles.closeButton}
+              aria-label={`Close ${label.toLowerCase()}`}
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+            <div className={styles.wrapper}>{children}</div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Modal;

@@ -2,7 +2,7 @@
 slug: 2025-04-25-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [weekly development report, development]
+tags: [development]
 ---
 
 The report highlights core technology updates, including ledger team work preparing for future eras and the pre-release of node v.10.3.1 focusing on performance improvements and lightweight checkpointing support. Ecosystem growth continued, and key updates include DRep delegation going live on Yoroi Wallet, Kinka minting its first XNK tokens on Cardano, a new EMURGO partnership announcement, and the launch of ChadSwap.

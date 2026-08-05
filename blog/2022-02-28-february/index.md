@@ -2,7 +2,7 @@
 slug: 2022-02-28-february-developer-portal
 title: "Interview: COTI"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

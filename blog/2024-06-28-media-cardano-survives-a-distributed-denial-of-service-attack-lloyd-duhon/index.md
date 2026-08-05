@@ -2,7 +2,7 @@
 slug: 2024-06-28-media-cardano-survives-a-distributed-denial-of-service-attack-lloyd-duhon
 title: Cardano Survives a Denial of Service Attack
 authors: [community]
-tags: [media, governance]
+tags: [ecosystem]
 ---
 
 Lloyd Duhon discusses the recent attack on Cardano. Despite the attack, the network only slowed down slightly, with most services unaffected. The attacker used spam transactions, but Cardano’s structure made it complex and costly. A flaw in the attacker’s contract allowed Phil from Anastasia Labs to counter with a “deregistration attack,” stopping the hacker and retrieving ada. Staked ada was never at risk. Cardano’s design ensures resilience, requiring significant resources to sustain such attacks. The community’s quick response and Cardano’s robust design minimized the impact.

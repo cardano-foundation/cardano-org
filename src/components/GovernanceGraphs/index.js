@@ -271,7 +271,7 @@ export default function FlowChart({
           });
       }, 500);
     },
-    [reactFlowInstance, title, isDarkMode]
+    [reactFlowInstance, title, isDarkMode, downloading]
   );
 
   // Initialize the ReactFlow instance

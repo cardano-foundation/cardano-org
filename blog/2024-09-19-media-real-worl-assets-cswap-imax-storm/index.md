@@ -2,7 +2,7 @@
 slug: 2024-09-19-media-real-worl-assets-cswap-imax-storm
 title: "Roundtable Talk: Real World Assets, with Jon Kravetz, Tim Brückmann & Nicola Massella"
 authors: [community]
-tags: [media]
+tags: [ecosystem]
 ---
 
 In a Roundtable Talk, Jon Kravetz of CSWAP DEX, Tim Brückmann of IAMX, and Nicola Massella of STORM Partners discussed Real World Assets (RWAs) on Cardano. They explored the definition and types of RWAs, the benefits and legal challenges of tokenization, and fractional ownership models. The conversation also covered the role of tokenized assets and stablecoins within the DeFi ecosystem and the future use cases for bringing real-world value on-chain.

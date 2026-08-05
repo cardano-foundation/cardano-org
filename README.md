@@ -10,7 +10,7 @@ cardano.org follows an incremental evolution model. This repository avoids full 
 
 Suitable contributions include:  
 - Content fixes, clarity, translations (once established), link hygiene. 
-- UI/UX improvements that follow existing design tokens. 
+- UI/UX improvements that follow the [design tokens](docs/get-involved/design-tokens.md). 
 - Component or navigation improvements backed by discussion. 
 - Docs, accessibility, performance and “paper cut” improvements. 
 

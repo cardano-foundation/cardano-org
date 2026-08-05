@@ -415,8 +415,6 @@ export default function Home() {
             />
           </BoundaryBox>
         </BackgroundWrapper>
-
-        <SpacerBox size="medium" />
       </main>
     </Layout>
   );

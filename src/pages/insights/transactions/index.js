@@ -7,7 +7,7 @@ import * as echarts from 'echarts';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 import Divider from "@site/src/components/Layout/Divider";
-import {translate} from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
@@ -49,13 +49,13 @@ import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 // ────────────────────────────────────────────────────────────────────────────
 export const meta = {
   pageName: 'transaction-trends',
-  pageTitle: translate({id: 'insightsTransactions.meta.pageTitle', message: 'Cardano Transaction Trends'}),
-  pageDescription: translate({id: 'insightsTransactions.meta.pageDescription', message: 'Historical analysis of Cardano transaction counts, fees, and block production across epochs.'}),
-  title: translate({id: 'insightsTransactions.meta.title', message: 'Cardano Transaction Trends'}),
+  pageTitle: translate({ id: 'insightsTransactions.meta.pageTitle', message: 'Cardano Transaction Trends' }),
+  pageDescription: translate({ id: 'insightsTransactions.meta.pageDescription', message: 'Historical analysis of Cardano transaction counts, fees, and block production across epochs.' }),
+  title: translate({ id: 'insightsTransactions.meta.title', message: 'Cardano Transaction Trends' }),
   date: '',
   og: {
-    title: translate({id: 'insightsTransactions.og.title', message: 'Cardano Transaction Trends'}),
-    description: translate({id: 'insightsTransactions.og.description', message: 'Explore historical trends in Cardano transactions, fees collected, and block production over time.'})
+    title: translate({ id: 'insightsTransactions.og.title', message: 'Cardano Transaction Trends' }),
+    description: translate({ id: 'insightsTransactions.og.description', message: 'Explore historical trends in Cardano transactions, fees collected, and block production over time.' })
   },
   tags: ['transactions', 'fees', 'blocks'],
   indexed: true
@@ -227,7 +227,7 @@ function LineChartEcharts({ chartData, title, yAxisName = '', hasSecondYAxis = f
         };
       })
     };
-  }, [chartData, isDark, yAxisName, hasSecondYAxis, currentEpoch]);
+  }, [chartData, isDark, yAxisName, hasSecondYAxis, currentEpoch, yAxisMin, yAxisMax]);
 
   useEffect(() => {
     if (!chartInstanceRef.current || !option) return;
@@ -261,8 +261,9 @@ function LineChartEcharts({ chartData, title, yAxisName = '', hasSecondYAxis = f
 function PageContent() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
-  const apiRef = useRef(null);
-  if (!apiRef.current && API_URL) apiRef.current = makeApiClient(API_URL);
+  // Create the API client once via a lazy initializer instead of writing a
+  // ref during render.
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
 
   const location = useLocation();
 
@@ -273,7 +274,6 @@ function PageContent() {
   const [currentEpochNo, setCurrentEpochNo] = useState(null);
   const [startEpoch, setStartEpoch] = useState(MIN_EPOCH + 1);
   const [endEpoch, setEndEpoch] = useState(null);
-  const [epochData, setEpochData] = useState([]); // Filtered data for selected range
   const [allEpochData, setAllEpochData] = useState({}); // All loaded epoch data (cache)
   const [sliderStart, setSliderStart] = useState(0);
   const [sliderEnd, setSliderEnd] = useState(100);
@@ -294,7 +294,7 @@ function PageContent() {
     const fetchCurrentEpoch = async () => {
       if (!API_URL) return;
       try {
-        const api = apiRef.current ?? makeApiClient(API_URL);
+        const api = apiClient ?? makeApiClient(API_URL);
         const tipRes = await api.get('/tip');
         const tipEpoch = tipRes.data?.[0]?.epoch_no;
         setCurrentEpochNo(tipEpoch);
@@ -308,8 +308,8 @@ function PageContent() {
               const parsed = JSON.parse(savedRange);
               // Validate the saved values are within valid range
               if (parsed.startEpoch >= MIN_EPOCH + 1 &&
-                  parsed.endEpoch <= tipEpoch &&
-                  parsed.startEpoch < parsed.endEpoch) {
+                parsed.endEpoch <= tipEpoch &&
+                parsed.startEpoch < parsed.endEpoch) {
                 startEpochValue = parsed.startEpoch;
                 endEpochValue = parsed.endEpoch;
               }
@@ -338,7 +338,7 @@ function PageContent() {
       }
     };
     fetchCurrentEpoch();
-  }, [API_URL]);
+  }, [API_URL, apiClient]);
 
   // Fetch ALL epoch data once on initial load
   const fetchAllEpochData = async () => {
@@ -347,27 +347,51 @@ function PageContent() {
     setIsLoading(true);
     setIsInitialLoad(true);
     setErrorInfo(null);
-    const api = apiRef.current ?? makeApiClient(API_URL);
+    const api = apiClient ?? makeApiClient(API_URL);
 
     try {
       const minEpoch = MIN_EPOCH + 1;
       const maxEpoch = currentEpochNo;
 
-      console.log(`Fetching all epoch info from ${minEpoch} to ${maxEpoch}...`);
+      console.log(`Fetching epoch data from ${minEpoch} to ${maxEpoch}...`);
 
-      // Fetch all epoch info (contains tx_count, fees, blk_count)
+      // epoch_info: tx_count, blk_count; 
+      // totals: accurate fees from totals endpoint (fee pool snapshot)
       const allInfo = {};
 
-      try {
-        const epochInfoRes = await api.get('/epoch_info');
-        epochInfoRes.data.forEach(item => {
+      const [epochInfoResult, totalsResult] = await Promise.allSettled([
+        api.get('/epoch_info'),
+        api.get('/totals?order=epoch_no.asc'),
+      ]);
+
+      if (epochInfoResult.status === 'fulfilled') {
+        epochInfoResult.value.data.forEach(item => {
           if (item.epoch_no) {
             allInfo[item.epoch_no] = item;
           }
         });
-        console.log(`Fetched epoch info (${epochInfoRes.data.length} epochs)`);
-      } catch (err) {
-        console.warn('Error fetching epoch info:', err);
+        console.log(`Fetched epoch info (${epochInfoResult.value.data.length} epochs)`);
+      } else {
+        console.warn('Error fetching epoch info:', epochInfoResult.reason);
+      }
+
+      if (totalsResult.status === 'fulfilled') {
+        let feesMerged = 0;
+        totalsResult.value.data.forEach(item => {
+          if (item.epoch_no && allInfo[item.epoch_no] && item.fees != null) {
+            allInfo[item.epoch_no].fees = item.fees;
+            feesMerged++;
+          }
+        });
+        console.log(`Merged fees from totals (${feesMerged} epochs)`);
+      } else {
+        console.warn('Error fetching totals:', totalsResult.reason);
+      }
+
+      if (Object.keys(allInfo).length === 0) {
+        throw epochInfoResult.status === 'rejected'
+          ? epochInfoResult.reason
+          : new Error('No epoch data available');
       }
 
       setAllEpochData(allInfo);
@@ -400,14 +424,14 @@ function PageContent() {
     return filtered.sort((a, b) => a.epoch - b.epoch);
   }, [startEpoch, endEpoch, allEpochData]);
 
-  // Update filtered data when filter changes
-  useEffect(() => {
-    setEpochData(filterEpochData);
-  }, [filterEpochData]);
+  // Filtered data for the selected range; derived directly from the memo.
+  const epochData = filterEpochData;
 
   // Fetch all data on initial load (only once)
   useEffect(() => {
     if (currentEpochNo && Object.keys(allEpochData).length === 0 && !isLoading && isInitialLoad) {
+      // Trigger the one-time full data fetch once the current epoch is known.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchAllEpochData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -577,28 +601,28 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          translate({id: 'insightsTransactions.intro.description', message: '**Explore historical trends in Cardano transactions** including transaction counts, fees collected, and block production. Select an epoch range to analyze how network activity evolved over time.'})
+          translate({ id: 'insightsTransactions.intro.description', message: '**Explore historical trends in Cardano transactions** including transaction counts, fees collected, and block production. Select an epoch range to analyze how network activity evolved over time.' })
         ]}
         headingDot
       />
 
       {/* Epoch Selection */}
       <div style={{ margin: '2rem 0', padding: '1.5rem', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: 8 }}>
-        <h3 style={{ marginTop: 0 }}>{translate({id: 'insightsTransactions.epochSelect.title', message: 'Select Epoch Range'})}</h3>
+        <h3 style={{ marginTop: 0 }}>{translate({ id: 'insightsTransactions.epochSelect.title', message: 'Select Epoch Range' })}</h3>
         {currentEpochNo && (
           <>
             <div style={{ marginBottom: '1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'center' }}>
                 <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({id: 'insightsTransactions.epochSelect.start', message: 'Start:'})}{' '}</span>
-                  <strong style={{ fontSize: '1.1rem' }}>{translate({id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch'})}{' '}{startEpoch}</strong>
+                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({ id: 'insightsTransactions.epochSelect.start', message: 'Start:' })}{' '}</span>
+                  <strong style={{ fontSize: '1.1rem' }}>{translate({ id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch' })}{' '}{startEpoch}</strong>
                   <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
                     ({getEpochDate(startEpoch)})
                   </span>
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({id: 'insightsTransactions.epochSelect.end', message: 'End:'})}{' '}</span>
-                  <strong style={{ fontSize: '1.1rem' }}>{translate({id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch'})}{' '}{endEpoch}</strong>
+                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({ id: 'insightsTransactions.epochSelect.end', message: 'End:' })}{' '}</span>
+                  <strong style={{ fontSize: '1.1rem' }}>{translate({ id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch' })}{' '}{endEpoch}</strong>
                   <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
                     ({getEpochDate(endEpoch)})
                   </span>
@@ -702,7 +726,6 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
-                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();
@@ -753,7 +776,6 @@ function PageContent() {
                     cursor: 'pointer',
                     zIndex: 4
                   }}
-                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                   onMouseDown={(e) => {
                     if (!sliderContainerRef.current) return;
                     const containerRect = sliderContainerRef.current.getBoundingClientRect();
@@ -797,17 +819,17 @@ function PageContent() {
             </div>
             {isLoading && (
               <p style={{ margin: 0, color: '#666' }}>
-                {isInitialLoad ? translate({id: 'insightsTransactions.loading.initial', message: 'Loading all epoch data (this may take a moment)...'}) : translate({id: 'insightsTransactions.loading.data', message: 'Loading data...'})}
+                {isInitialLoad ? translate({ id: 'insightsTransactions.loading.initial', message: 'Loading all epoch data (this may take a moment)...' }) : translate({ id: 'insightsTransactions.loading.data', message: 'Loading data...' })}
               </p>
             )}
             {!isLoading && Object.keys(allEpochData).length > 0 && (
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#666', marginTop: '0.5rem' }}>
-                {translate({id: 'insightsTransactions.loading.loaded', message: 'Loaded {count} epochs. Adjust the slider to filter the range.'}, {count: Object.keys(allEpochData).length})}
+                {translate({ id: 'insightsTransactions.loading.loaded', message: 'Loaded {count} epochs. Adjust the slider to filter the range.' }, { count: Object.keys(allEpochData).length })}
               </p>
             )}
           </>
         )}
-        {!currentEpochNo && <p>{translate({id: 'insightsTransactions.loading.currentEpoch', message: 'Loading current epoch...'})}</p>}
+        {!currentEpochNo && <p>{translate({ id: 'insightsTransactions.loading.currentEpoch', message: 'Loading current epoch...' })}</p>}
       </div>
 
       {/* Current Epoch Notice */}
@@ -824,9 +846,9 @@ function PageContent() {
         }}>
           <span style={{ fontSize: '1.5rem' }}>&#9888;</span>
           <div>
-            <strong style={{ color: '#ffa500' }}>{translate({id: 'insightsTransactions.notice.inProgressTitle', message: 'Current Epoch In Progress'})}</strong>
+            <strong style={{ color: '#ffa500' }}>{translate({ id: 'insightsTransactions.notice.inProgressTitle', message: 'Current Epoch In Progress' })}</strong>
             <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem' }}>
-              {translate({id: 'insightsTransactions.notice.inProgressDescription', message: 'Epoch {epoch} is currently in progress. Data for this epoch is incomplete and will appear lower than completed epochs. The final values will be available once the epoch ends. In-progress data points are marked with an orange indicator on the charts.'}, {epoch: currentEpochNo})}
+              {translate({ id: 'insightsTransactions.notice.inProgressDescription', message: 'Epoch {epoch} is currently in progress. Data for this epoch is incomplete and will appear lower than completed epochs. The final values will be available once the epoch ends. In-progress data points are marked with an orange indicator on the charts.' }, { epoch: currentEpochNo })}
             </p>
           </div>
         </div>
@@ -835,13 +857,13 @@ function PageContent() {
       {/* Table of Contents */}
       {epochData.length > 0 && (
         <div style={{ margin: '2rem 0' }}>
-          <Heading as="h2">{translate({id: 'insightsTransactions.toc.title', message: 'Contents'})}</Heading>
+          <Heading as="h2">{translate({ id: 'insightsTransactions.toc.title', message: 'Contents' })}</Heading>
           <ul>
-            <li><Link href="#transactions">{translate({id: 'insightsTransactions.toc.transactions', message: 'Transaction Volume'})}</Link></li>
-            <li><Link href="#fees">{translate({id: 'insightsTransactions.toc.fees', message: 'Transaction Fees'})}</Link></li>
-            <li><Link href="#avg-fee">{translate({id: 'insightsTransactions.toc.avgFee', message: 'Average Fee per Transaction'})}</Link></li>
-            <li><Link href="#blocks">{translate({id: 'insightsTransactions.toc.blocks', message: 'Block Production'})}</Link></li>
-            <li><Link href="#combined">{translate({id: 'insightsTransactions.toc.combined', message: 'Transactions & Fees Combined'})}</Link></li>
+            <li><Link href="#transactions">{translate({ id: 'insightsTransactions.toc.transactions', message: 'Transaction Volume' })}</Link></li>
+            <li><Link href="#fees">{translate({ id: 'insightsTransactions.toc.fees', message: 'Transaction Fees' })}</Link></li>
+            <li><Link href="#avg-fee">{translate({ id: 'insightsTransactions.toc.avgFee', message: 'Average Fee per Transaction' })}</Link></li>
+            <li><Link href="#blocks">{translate({ id: 'insightsTransactions.toc.blocks', message: 'Block Production' })}</Link></li>
+            <li><Link href="#combined">{translate({ id: 'insightsTransactions.toc.combined', message: 'Transactions & Fees Combined' })}</Link></li>
           </ul>
         </div>
       )}
@@ -849,7 +871,7 @@ function PageContent() {
       {/* Transaction Count Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text={translate({id: 'insightsTransactions.transactions.divider', message: 'Transaction Volume'})} id="transactions" />
+          <Divider text={translate({ id: 'insightsTransactions.transactions.divider', message: 'Transaction Volume' })} id="transactions" />
           <p>
             Transaction volume measures the total number of transactions processed by the Cardano network each epoch.
             Higher transaction counts indicate increased network utilization, which can result from various activities
@@ -875,7 +897,7 @@ function PageContent() {
       {/* Fees Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text={translate({id: 'insightsTransactions.fees.divider', message: 'Transaction Fees'})} id="fees" />
+          <Divider text={translate({ id: 'insightsTransactions.fees.divider', message: 'Transaction Fees' })} id="fees" />
           <p>
             Transaction fees are paid by users to have their transactions included in blocks. On Cardano, fees are
             calculated deterministically based on transaction size and complexity. These fees contribute to the
@@ -901,7 +923,7 @@ function PageContent() {
       {/* Average Fee per Transaction Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text={translate({id: 'insightsTransactions.avgFee.divider', message: 'Average Fee per Transaction'})} id="avg-fee" />
+          <Divider text={translate({ id: 'insightsTransactions.avgFee.divider', message: 'Average Fee per Transaction' })} id="avg-fee" />
           <p>
             The average fee per transaction shows how much users pay on average for each transaction.
             This metric helps identify fee trends independent of transaction volume. Lower average fees
@@ -927,7 +949,7 @@ function PageContent() {
       {/* Block Count Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text={translate({id: 'insightsTransactions.blocks.divider', message: 'Block Production'})} id="blocks" />
+          <Divider text={translate({ id: 'insightsTransactions.blocks.divider', message: 'Block Production' })} id="blocks" />
           <p>
             Blocks are produced by stake pools every 20 seconds on average (one slot leader per slot). Each epoch
             consists of 432,000 slots (5 days), though not every slot results in a block due to the probabilistic
@@ -953,7 +975,7 @@ function PageContent() {
       {/* Combined Chart Section */}
       {epochData.length > 0 && (
         <div style={{ marginTop: '3rem' }}>
-          <Divider text={translate({id: 'insightsTransactions.combined.divider', message: 'Transactions & Fees Combined'})} id="combined" />
+          <Divider text={translate({ id: 'insightsTransactions.combined.divider', message: 'Transactions & Fees Combined' })} id="combined" />
           <p>
             This chart shows transaction volume and fees collected together, allowing you to observe the relationship
             between network activity and fee collection. Generally, higher transaction volumes correlate with higher

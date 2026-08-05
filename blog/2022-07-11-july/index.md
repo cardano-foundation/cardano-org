@@ -2,7 +2,7 @@
 slug: 2022-07-11-july-developer-portal
 title: "Interview: Koios"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';
