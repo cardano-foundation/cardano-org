@@ -1961,23 +1961,23 @@
     "message": "Descubra la Constitución de Cardano: el marco de gobernanza de la blockchain de Cardano. Lea la carta promulgada actualmente, explore su historial de ratificación y descargue el texto completo a través de IPFS."
   },
   "constitution.history.unavailable": {
-    "message": "Live ratification history is currently unavailable.",
+    "message": "El historial de ratificación no está disponible actualmente.",
     "description": "Shown when the live API call for the ratification history fails"
   },
   "constitution.meta.enactedAt": {
-    "message": "Enacted at epoch",
+    "message": "Promulgada en epoch",
     "description": "Label before the enacted epoch number in the constitution header"
   },
   "constitution.toc.title": {
-    "message": "Contents",
+    "message": "Contenidos",
     "description": "Constitution table-of-contents heading"
   },
   "constitution.verify.match": {
-    "message": "Matches the current on-chain constitution",
+    "message": "Coincide con la constitución actual en cadena",
     "description": "Badge shown when the displayed constitution matches the on-chain enacted version"
   },
   "constitution.verify.newer": {
-    "message": "A newer version (epoch {epoch}) was enacted on-chain; showing the last published copy.",
+    "message": "Una versión más reciente (epoch {epoch}) fue implementada en la cadena; mostrando la última copia publicada.",
     "description": "Notice when a newer constitution version exists on-chain; {epoch} is replaced with the epoch number"
   },
   "contact.hero.title": {
@@ -2110,10 +2110,10 @@
     "message": "Únete a la vibrante comunidad de desarrolladores de Cardano a través de varias plataformas. A continuación encontrará enlaces a la Cardano Stack Exchange, el Foro de Cardano y el grupo oficial de Telegram. Conéctese con otros desarrolladores, haga preguntas y comparta ideas en nuestro ecosistema descentralizado."
   },
   "developers.cta.title": {
-    "message": "Ready to start building?"
+    "message": "¿Listo para empezar a construir?"
   },
   "developers.cta.buttonLabel": {
-    "message": "Visit Developer Portal"
+    "message": "Portal para Desarrolladores"
   },
   "discoverCardano.hero.title": {
     "message": "Descubra Cardano"
@@ -2236,16 +2236,16 @@
     "message": "Eventos en Meetup.com"
   },
   "events.filter.searchPlaceholder": {
-    "message": "Search events, locations, or topics"
+    "message": "Buscar eventos, ubicaciones o temas"
   },
   "events.filter.timeUpcoming": {
-    "message": "Upcoming"
+    "message": "Próximamente"
   },
   "events.filter.timePast": {
-    "message": "Past"
+    "message": "Finalizados"
   },
   "events.filter.timeAll": {
-    "message": "All"
+    "message": "Todo"
   },
   "events.filter.placeInPerson": {
     "message": "En persona"
@@ -2254,82 +2254,82 @@
     "message": "En línea"
   },
   "events.filter.topicGroup": {
-    "message": "Topics"
+    "message": "Temas"
   },
   "events.filter.allTopics": {
-    "message": "All Topics"
+    "message": "Todos los temas"
   },
   "events.featured.title": {
-    "message": "Featured upcoming events"
+    "message": "Eventos próximos destacados"
   },
   "events.featured.thisWeek": {
-    "message": "This week"
+    "message": "Esta semana"
   },
   "events.recaps.title": {
-    "message": "Recent event recaps"
+    "message": "Resúmenes de eventos recientes"
   },
   "events.recaps.watch": {
-    "message": "Watch recap"
+    "message": "Ver resumen"
   },
   "events.carousel.prev": {
-    "message": "Previous"
+    "message": "Anterior"
   },
   "events.carousel.next": {
-    "message": "Next"
+    "message": "Siguiente"
   },
   "events.view.list": {
-    "message": "List"
+    "message": "Lista"
   },
   "events.view.calendar": {
     "message": "Calendario"
   },
   "events.divider.calendar": {
-    "message": "Events Calendar"
+    "message": "Calendario de eventos"
   },
   "events.calendar.today": {
     "message": "Hoy"
   },
   "events.calendar.upcoming": {
-    "message": "Upcoming events"
+    "message": "Próximos eventos"
   },
   "events.calendar.tzNote": {
-    "message": "Dates are shown in UTC and events may change. Check the event page for the latest details."
+    "message": "Las fechas se muestran en UTC y los eventos pueden cambiar. Revisa la página del evento para los últimos detalles."
   },
   "events.card.register": {
     "message": "Ver evento"
   },
   "events.card.online": {
-    "message": "Online"
+    "message": "En línea"
   },
   "events.card.recurring": {
-    "message": "Recurring"
+    "message": "Recurrente"
   },
   "events.divider.upcoming": {
-    "message": "Upcoming Events"
+    "message": "Próximos eventos"
   },
   "events.divider.all": {
-    "message": "All Events"
+    "message": "Todos los eventos"
   },
   "events.divider.past": {
-    "message": "Past Events and Recaps"
+    "message": "Eventos y Recaps pasados"
   },
   "events.empty.upcoming": {
-    "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest."
+    "message": "No hay eventos próximos que coincidan con tus filtros en este momento. Revisa los calendarios de Cardano a continuación para más tarde."
   },
   "events.empty.past": {
-    "message": "No past events match your filters."
+    "message": "No hay eventos pasados que coincidan con sus filtros."
   },
   "events.divider.discover": {
-    "message": "Discover Cardano Events Worldwide"
+    "message": "Descubre eventos de Cardano en todo el mundo"
   },
   "events.submit.title": {
-    "message": "Want to host a Cardano event?"
+    "message": "¿Quieres organizar un evento de Cardano?"
   },
   "events.submit.description": {
-    "message": "Submit your event to be featured on cardano.org."
+    "message": "Envía tu evento para ser destacado en cardano.org."
   },
   "events.submit.cta": {
-    "message": "Submit your event"
+    "message": "Envía tu evento"
   },
   "exchanges.hero.title": {
     "message": "Integra Cardano"
@@ -2530,55 +2530,55 @@
     "message": "Los DReps son participantes clave en el gobierno de la red de Cardano, participan activamente en el gobierno y representan a otros miembros del Cardano. Los DReps deben mantenerse informados sobre las acciones de gobierno para tomar decisiones sabias."
   },
   "governance.becomeDRep.text2": {
-    "message": "If you have the time and commitment to contribute to Cardano's governance, register as a DRep. A refundable deposit of 500 ada is required and will be returned upon retirement."
+    "message": "Si usted tiene el tiempo y el compromiso de contribuir a la gobernanza de Cardano, regístrese como un DRep. Se requiere un depósito reembolsable de 500 ada y se devolverá al momento de la jubilación."
   },
   "governance.becomeDRep.buttonText": {
-    "message": "Become a DRep"
+    "message": "Conviértete en un DRep"
   },
   "governance.divider.viewActions": {
-    "message": "View Governance Actions on Cardano"
+    "message": "Ver Acciones de Gobernanza en Cardano"
   },
   "governance.viewActions.text": {
-    "message": "Stay informed and participate in Cardano's decentralized governance. View all on-chain actions, including those recently submitted, ratified, enacted, expired, or dropped. Engage with ongoing proposals, track their progress, and understand their impact on the network. Your involvement helps shape the future of Cardano. Click below to see all current and past governance actions and make your voice heard."
+    "message": "Manténgase informado y participe en el gobierno descentralizado de Cardano. Vea todas las acciones en cadena, incluyendo las que recientemente se presentaron, ratificaron, aprobaron, expiraron o retiraron. Incorporar propuestas en curso, rastrear su progreso y entender su impacto en la red. Su participación ayuda a dar forma al futuro de Cardano. Haga clic a continuación para ver todas las acciones de gobierno actuales y pasadas y hacer que su voz se oiga."
   },
   "governance.viewActions.buttonText": {
-    "message": "Governance Actions"
+    "message": "Acciones de gobernanza"
   },
   "governance.divider.whyVoltaire": {
-    "message": "Why Voltaire"
+    "message": "Por qué Voltaire"
   },
   "governance.divider.actionCharts": {
-    "message": "Governance Action Charts"
+    "message": "Gráficos de acción de gobernanza"
   },
   "governance.actionCharts.text": {
-    "message": "Discover how Cardano governance works with an interactive set of charts that illuminate each governance action. Navigate processes, rules, and thresholds at a glance, with visual explanations that make exploration fast and practical."
+    "message": "Descubra cómo funciona la gobernanza de Cardano con un conjunto interactivo de gráficos que iluminan cada acción de gobernanza. Navegar procesos, reglas y umbrales de un vistazo, con explicaciones visuales que hacen que la exploración sea rápida y práctica."
   },
   "governance.actionCharts.buttonText": {
-    "message": "Governance Action Charts"
+    "message": "Gráficos de acción de gobernanza"
   },
   "hardforks.timeline.byron.description": {
-    "message": "The launch of the Cardano mainnet and introduction of the ada cryptocurrency."
+    "message": "El lanzamiento de la red principal de Cardano y la introducción de la ada criptomoneda."
   },
   "hardforks.timeline.label.epoch": {
     "message": "Epoch"
   },
   "hardforks.timeline.label.protocolVersion": {
-    "message": "Protocol Version"
+    "message": "Versión de Protocolo"
   },
   "hardforks.timeline.label.transactionId": {
-    "message": "Transaction ID"
+    "message": "ID de Transacción"
   },
   "hardforks.timeline.shelley.description": {
-    "message": "Introduced staking and decentralization features, transitioning from a federated to a decentralized system."
+    "message": "Se introdujeron características de staking y descentralización, pasando de una federada a un sistema descentralizado."
   },
   "hardforks.timeline.allegra.description": {
-    "message": "Added token locking capabilities, which was a prerequisite for the smart contract functionality."
+    "message": "Se añadieron capacidades de bloqueo de tokens, lo que era un requisito previo para la funcionalidad del contrato inteligente."
   },
   "hardforks.timeline.mary.description": {
-    "message": "Brought native token functionality to Cardano, allowing users to create and transact with custom tokens."
+    "message": "Proporcionó funcionalidad nativa de token a Cardano, permitiendo a los usuarios crear y transaccionar con tokens personalizados."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps)."
+    "message": "Introducidas capacidades de contratos inteligentes usando Plutus, permitiendo el despliegue de aplicaciones descentralizadas (dApps)."
   },
   "hardforks.timeline.vasil.description": {
     "message": "Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member."
