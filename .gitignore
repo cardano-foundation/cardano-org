@@ -15,6 +15,7 @@ static/img/news-thumbs/
 
 # Misc
 .DS_Store
+.worktrees/
 .env
 .env.local
 .env.development.local
