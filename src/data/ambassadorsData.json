@@ -15,6 +15,21 @@
     "areasOfContribution": "Education, Partnerships"
   },
   {
+    "name": "Alexander Nadem",
+    "role": "Canada",
+    "country": "CA",
+    "link": "https://forum.cardano.org/u/angrycryptoshow",
+    "profilePicture": "/img/ambassadors/alexander-nadem.webp",
+    "tagline": "Producing daily Cardano and Midnight news for the Angry Crypto Show.",
+    "socials": {
+      "x": "https://x.com/angrycryptoshow",
+      "linkedIn": "",
+      "youtube": "https://www.youtube.com/@AngryCryptoShow",
+      "github": ""
+    },
+    "areasOfContribution": "Content"
+  },
+  {
     "name": "Andi Schmitt",
     "role": "Germany",
     "country": "DE",
@@ -34,15 +49,15 @@
     "role": "Indonesia",
     "country": "ID",
     "link": "https://forum.cardano.org/u/andreassosilo/",
-    "profilePicture": "SOON...",
-    "tagline": "Moderating channels and hosting DeFi workshops for Indonesian builders.",
+    "profilePicture": "/img/ambassadors/andreas-sosilo.webp",
+    "tagline": "Moderating channels, translating content and hosting workshops for Indonesian builders.",
     "socials": {
       "x": "https://x.com/andreassosilo",
       "linkedIn": "https://www.linkedin.com/in/andreassosilo",
       "youtube": "",
       "github": ""
     },
-    "areasOfContribution": "Moderation, Other, Meetup"
+    "areasOfContribution": "Moderation, Meetup, Translations"
   },
   {
     "name": "Nori Nishigaya",
@@ -58,6 +73,21 @@
       "github": ""
     },
     "areasOfContribution": "Education, Other"
+  },
+  {
+    "name": "Ayomide Osemene",
+    "role": "Nigeria",
+    "country": "NG",
+    "link": "https://forum.cardano.org/u/ayomishuga/",
+    "profilePicture": "/img/ambassadors/ayomide-osemene.webp",
+    "tagline": "Educating newcomers through Cardano Academy and the Newcomers Support X Space while helping launch the Cardano Bounties beta.",
+    "socials": {
+      "x": "https://x.com/ShugaAyomi",
+      "linkedIn": "https://www.linkedin.com/in/ayomishuga",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Education"
   },
   {
     "name": "Beatrice Anihiri",
@@ -124,7 +154,7 @@
     "role": "Germany",
     "country": "DE",
     "link": "https://forum.cardano.org/u/chrisstr8/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/chris-str8.webp",
     "tagline": "Moderating official German channels and stake pool workgroups on Telegram.",
     "socials": {
       "x": "https://x.com/Straightpool4",
@@ -308,7 +338,7 @@
     "tagline": "Co-organizing Catalyst Ideas Fests and teaching cyber students.",
     "socials": {
       "x": "https://x.com/FilozoFlow",
-      "linkedIn": "",
+      "linkedIn": "https://www.linkedin.com/in/erick-valadez-hernandez-940229309/",
       "youtube": "",
       "github": ""
     },
@@ -450,12 +480,27 @@
     "areasOfContribution": "Content"
   },
   {
+    "name": "Ian McCullough",
+    "role": "United States",
+    "country": "US",
+    "link": "https://forum.cardano.org/u/cullah/",
+    "profilePicture": "/img/ambassadors/ian-mccullough.webp",
+    "tagline": "Growing Cardano through Awen, his creative dev shop and marketing agency, and contributing to the Intersect Membership and Community Committee.",
+    "socials": {
+      "x": "https://x.com/cullahmusic",
+      "linkedIn": "https://www.linkedin.com/in/cullah/",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content"
+  },
+  {
     "name": "Ilhun Chung",
     "role": "Korea, South",
     "country": "KR",
     "link": "https://forum.cardano.org/u/cryptoveri/",
-    "profilePicture": "SOON...",
-    "tagline": "Translating core news and introducing open-source authentication tools.",
+    "profilePicture": "/img/ambassadors/ilhun-chung.webp",
+    "tagline": "Writing on core news, Cardano's underlying mechanics, tokenomics, and security-related topics.",
     "socials": {
       "x": "https://x.com/CryptoVeri_",
       "linkedIn": "https://www.linkedin.com/in/ilhunchung/",
@@ -615,12 +660,12 @@
     "areasOfContribution": "Meetup, Partnerships, Education"
   },
   {
-    "name": "Oscar Hong",
+    "name": "Jungi (Oscar) Hong",
     "role": "Korea, South",
     "country": "KR",
     "link": "https://forum.cardano.org/u/oscar_west/",
-    "profilePicture": "SOON...",
-    "tagline": "Translating the draft constitution and budget proposals into Korean.",
+    "profilePicture": "/img/ambassadors/jungi-hong.webp",
+    "tagline": "Active Constitutional Committee member contributing to governance, and organizing Korean meetups and workshops.",
     "socials": {
       "x": "https://x.com/oscarw3st",
       "linkedIn": "",
@@ -643,6 +688,21 @@
       "github": ""
     },
     "areasOfContribution": "Content, Moderation"
+  },
+  {
+    "name": "Baudouin Muvunga",
+    "role": "Congo, Democratic Republic of the",
+    "country": "CD",
+    "link": "https://forum.cardano.org/u/baudouin_augustin/",
+    "profilePicture": "/img/ambassadors/baudouin-muvunga.webp",
+    "tagline": "Building the Nyiragongo Hub and bringing Cardano first steps to francophone communities across North-Kivu, Ituri and Katanga.",
+    "socials": {
+      "x": "https://x.com/BaudouinMuv",
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Education"
   },
   {
     "name": "Cheung King Wang Kinson",
@@ -1114,7 +1174,7 @@
     "role": "Brazil",
     "country": "BR",
     "link": "https://forum.cardano.org/u/tsnnst/",
-    "profilePicture": "SOON...",
+    "profilePicture": "/img/ambassadors/thiago-da-silva-nunes.webp",
     "tagline": "Implementing Petrobras pilots and structuring Cardano Hubs guidelines.",
     "socials": {
       "x": "https://x.com/tsnnst",
