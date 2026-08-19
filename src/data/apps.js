@@ -1910,7 +1910,7 @@ export const Showcases = [
   icon: "/img/app-icons/adalink.png",
   website: "https://www.adalink.io",
   source: null,
-  category: "distribution",
+  category: "marketplace",
   properties: [],
   maintainerPick: false,
   beginnerFriendly: false,
