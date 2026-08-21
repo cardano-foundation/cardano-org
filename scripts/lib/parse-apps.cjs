@@ -16,7 +16,7 @@ function parseShowcases(source) {
   if (closeIdx < 0) throw new Error('Cannot find end of Showcases array');
   const block = source.slice(blockStart, closeIdx);
 
-  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:tagline:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?(?:metadataLabel:\s*(\d+),[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?beginnerFriendly:\s*(true|false),[\s\S]*?(?:x:\s*"([^"]+)",[\s\S]*?)?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
+  const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:tagline:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?(?:metadataLabel:\s*(\d+),[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?(?:x:\s*"([^"]+)",[\s\S]*?)?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
 
   // Preview is a webpack require() expression — not captured by the main regex
   // because group ordering is too brittle to extend. Searched per-entry so missing
@@ -56,13 +56,12 @@ function parseShowcases(source) {
         .map((t) => t.trim().replace(/^"|"$/g, ''))
         .filter(Boolean),
       maintainerPick: m[11] === 'true',
-      beginnerFriendly: m[12] === 'true',
-      x: m[13] || null,
-      spotlight: m[14]
+      x: m[12] || null,
+      spotlight: m[13]
         ? {
-            url: m[14],
-            title: parseStringValue(`"${m[15]}"`),
-            date: m[16],
+            url: m[13],
+            title: parseStringValue(`"${m[14]}"`),
+            date: m[15],
           }
         : null,
       previewFile: previewMatch ? previewMatch[1] : null,

@@ -191,8 +191,7 @@ const steps = (onWalletConnect, images) => [
         centerVertically={false}
       >
         <AppList
-              beginnerFriendly
-              limit={5}
+              slugs={["minswap", "liqwid", "strike-finance", "bodega-market", "wayup"]}
               showTags={true}
               categoryTitle="Popular Apps"
               showTxCount={false}

@@ -15,7 +15,6 @@
 - [ ] I have run `yarn build` after adding my changes **without getting any errors**.
 - [ ] I have not committed any changes to `yarn.lock`.
 - [ ] I have left `maintainerPick: false` on my entry. `maintainerPick` is set by page maintainers through the [Maintainer picks](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/maintainer-picks.md) process, not by submitters.
-- [ ] I have left `beginnerFriendly: false` unless the app is verifiably newcomer-friendly (clear onboarding, low jargon, working defaults).
 - [ ] My screenshot follows the [screenshot guidelines](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/add-app.md#step-by-step-process): around 1280×720 (16:9) JPEG, under 500 KB, light theme, app UI not a marketing page. The build's screenshot size check will reject anything over 500 KB.
 - [ ] My `title` is ≤ 25 characters (ideally 15-20). The build's schema validator rejects anything longer. Drop a redundant `Cardano` prefix where the bare project name still reads cleanly.
 - [ ] My `tagline` is ≤ 60 characters and describes what the app **is**, not what it promises (e.g. "Multi-pool DEX with deepest liquidity", not "Best DEX on Cardano!"). The build's schema validator rejects anything longer.

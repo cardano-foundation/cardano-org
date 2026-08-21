@@ -81,7 +81,6 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      category: "dex",                  // exactly one (see categories below)
      properties: ["opensource"],       // zero or more (see properties below)
      maintainerPick: false,            // leave false; maintainers set this
-     beginnerFriendly: false,          // leave false unless verifiably beginner-friendly
      x: "yourproject",                 // OPTIONAL - X (Twitter) handle without @, shown on detail page
    }
    ```
@@ -99,11 +98,9 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - `nft`: supports or uses NFTs (do not use for image-based NFT collections)
    - `opensource`: public source repository; you must also fill in `source`
 
-7. **`maintainerPick` and `beginnerFriendly`**
+7. **`maintainerPick`**
 
-   Both default to `false` for new submissions.
-   - `maintainerPick: true` is set only by page maintainers via the [Maintainer picks](/docs/get-involved/maintainer-picks) process.
-   - `beginnerFriendly: true` should only be set if onboarding is genuinely smooth for newcomers (no jargon walls, sensible defaults, working out of the box). Reviewers may push back if this looks promotional.
+   Defaults to `false` for new submissions. `maintainerPick: true` is set only by page maintainers via the [Maintainer picks](/docs/get-involved/maintainer-picks) process.
 
 8. **Optional Fields Explained**
 

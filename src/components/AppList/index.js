@@ -58,8 +58,8 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   );
 }
 
-export default function AppList({ categories = [], beginnerFriendly = false, slugs = null, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
-  // Explicit slug list (used by curated Collections) bypasses category/beginner filtering
+export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
+  // Explicit slug list (used by curated Collections) bypasses category filtering
   // and preserves the curator's chosen order.
   const isExplicit = Array.isArray(slugs) && slugs.length > 0;
 
@@ -75,7 +75,6 @@ export default function AppList({ categories = [], beginnerFriendly = false, slu
         .filter(Boolean)
     : Showcases.filter((app) => {
         if (categories.length > 0 && !categories.includes(app.category)) return false;
-        if (beginnerFriendly && !app.beginnerFriendly) return false;
         return true;
       });
 
