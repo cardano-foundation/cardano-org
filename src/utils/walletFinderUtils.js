@@ -40,26 +40,22 @@ export function filterWallets(wallets, { platforms = [], features = [], custody 
 }
 
 // Filter wallets for beginner mode
-// Mobile: wallets with easy-setup feature + mobile platforms
-// Desktop: favorite wallets + browser/desktop platforms
+// Beginner suggestions are the maintainer picks that run on the selected device.
+// Curation happens once, via the Maintainer picks process, instead of being
+// re-derived per platform from individual feature flags.
 export function getBeginnerWallets(wallets, platform) {
-  if (platform === "mobile") {
-    return wallets.filter((w) => {
-      const wf = w.walletFeatures;
-      return (
-        wf.features.includes("easy-setup") &&
-        wf.platforms.some((p) => p === "ios" || p === "android")
-      );
-    });
+  const platformsFor = {
+    mobile: ["ios", "android"],
+    desktop: ["browser", "desktop"],
+  }[platform];
+
+  if (!platformsFor) {
+    return wallets;
   }
-  if (platform === "desktop") {
-    return wallets.filter((w) => {
-      const wf = w.walletFeatures;
-      return (
-        w.maintainerPick &&
-        wf.platforms.some((p) => p === "browser" || p === "desktop")
-      );
-    });
-  }
-  return wallets;
+
+  return wallets.filter(
+    (w) =>
+      w.maintainerPick &&
+      w.walletFeatures.platforms.some((p) => platformsFor.includes(p))
+  );
 }
