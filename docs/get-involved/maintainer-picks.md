@@ -10,6 +10,15 @@ The **Maintainer picks** section on [/apps](/apps) is a curated shortlist of app
 
 Picks are visible at the top of `/apps` and are the first thing a newcomer sees. The bar for inclusion is therefore higher than for the broader showcase.
 
+## Where picks show up
+
+Picks drive two places on the site, not one:
+
+- The **Maintainer picks** section at the top of [/apps](/apps).
+- The beginner mode of the [wallet finder](/wallets). When a visitor chooses "I'm new to Cardano" and names their device, the suggestions are exactly the wallet picks available on that device. There is no separate beginner flag on wallet entries.
+
+The coupling is deliberate, so that newcomer guidance stays in one curated list instead of drifting away from the picks over time. It also means every wallet pick decision changes what a newcomer sees first. Weigh criterion 4 below with that in mind whenever the candidate is a wallet.
+
 ## Selection criteria
 
 A pick must meet all four:
@@ -25,7 +34,7 @@ A pick must meet all four:
 2. State which category the app fits into, and which criterion above carries it (especially criterion 4: write the one-liner).
 3. If the category cap (one to two picks) is already full, name which existing pick should be replaced and why.
 4. Wait for one other maintainer to second the proposal.
-5. If no maintainer raises a blocking objection within **7 days**, the pick is merged into `apps.js` (`favorite` tag set on the entry).
+5. If no maintainer raises a blocking objection within **7 days**, the pick is merged into `apps.js` (`maintainerPick: true` set on the entry).
 
 ## Removing a pick
 
