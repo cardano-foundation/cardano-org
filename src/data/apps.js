@@ -490,7 +490,7 @@ export const Showcases = [
     source: null,
     category: "wallet",
     properties: ["nft"],
-    maintainerPick: false,
+    maintainerPick: true,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
