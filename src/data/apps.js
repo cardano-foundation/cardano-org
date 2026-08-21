@@ -1799,6 +1799,22 @@ export const Showcases = [
   maintainerPick: false,
   x: "EchoForgeEF",
 },
+  {
+    title: "Cardano Observer",
+    description: "Live Cardano network insights: block times and propagation, mempool load, Plutus costs, staking stats and market sentiment, in one dashboard.",
+    tagline: "Understand Cardano's network in real time",
+    preview: require("./app-screenshots/cardano-observer.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cardano-observer-mempool.webp"),
+      require("./app-screenshots/cardano-observer-propagation.webp"),
+    ],
+    icon: "/img/app-icons/cardano-observer.svg",
+    website: "https://cardano.observer",
+    source: null,
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
