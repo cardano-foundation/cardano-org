@@ -10,6 +10,12 @@
 
 import React from "react";
 import { sortBy, difference } from "../utils/jsUtils";
+import {
+  WalletPlatformList,
+  WalletFeatureList,
+  WalletCustodyList,
+  WalletNodeTypeList,
+} from "./walletFeatures";
 
 // Primary categories — each Showcase has exactly one. Answers: "what is this app?".
 // `trackable: true` means on-chain tx count is a meaningful usage signal for that category;
@@ -1994,6 +2000,70 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
+  // walletFeatures drives the filters on /wallets. Unknown values used to build
+  // fine and just dropped the wallet out of the matching filter without a word,
+  // so every value is checked against the lists in walletFeatures.js.
+  function checkWalletFeatures() {
+    const wf = showcase.walletFeatures;
+    if (wf === undefined) {
+      if (showcase.category === "wallet") {
+        throw new Error(
+          "Wallet entries must define walletFeatures {platforms, custody, features, type}.\nWithout it the wallet never appears in the wallet finder on /wallets."
+        );
+      }
+      return;
+    }
+    if (!wf || typeof wf !== "object" || Array.isArray(wf)) {
+      throw new Error(
+        "walletFeatures must be an object {platforms, custody, features, type}"
+      );
+    }
+    const unknownKeys = difference(Object.keys(wf), [
+      "platforms",
+      "custody",
+      "features",
+      "type",
+    ]);
+    if (unknownKeys.length > 0) {
+      throw new Error(
+        `walletFeatures contains unknown attribute names=[${unknownKeys.join(",")}]`
+      );
+    }
+
+    // platforms must name at least one, features may legitimately be empty
+    for (const [key, allowed, required] of [
+      ["platforms", WalletPlatformList, true],
+      ["features", WalletFeatureList, false],
+    ]) {
+      const value = wf[key];
+      if (!Array.isArray(value)) {
+        throw new Error(
+          `walletFeatures.${key} must be an array, got ${typeof value}`
+        );
+      }
+      if (required && value.length === 0) {
+        throw new Error(`walletFeatures.${key} must list at least one value`);
+      }
+      const unknown = difference(value, allowed);
+      if (unknown.length > 0) {
+        throw new Error(
+          `Unknown walletFeatures.${key}=[${unknown.join(",")}]\nAvailable ${key}: ${allowed.join(", ")}`
+        );
+      }
+    }
+
+    for (const [key, allowed] of [
+      ["custody", WalletCustodyList],
+      ["type", WalletNodeTypeList],
+    ]) {
+      if (!allowed.includes(wf[key])) {
+        throw new Error(
+          `Unknown walletFeatures.${key}=${JSON.stringify(wf[key])}\nAvailable ${key}: ${allowed.join(", ")}`
+        );
+      }
+    }
+  }
+
   function checkSpotlight() {
     if (showcase.spotlight === undefined) return;
     const s = showcase.spotlight;
@@ -2024,6 +2094,7 @@ function ensureShowcaseValid(showcase) {
     checkMetadataLabel();
     checkX();
     checkSpotlight();
+    checkWalletFeatures();
   } catch (e) {
     throw new Error(
       `Showcase site with title=${showcase.title} contains errors:\n${e.message}`,
