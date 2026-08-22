@@ -23,10 +23,10 @@ const MANIFEST_PATH = path.join(__dirname, '../src/data/drep-avatars.json');
 // Mirrors the runtime VP gates in src/components/DRepDelegate/index.js.
 const VP_MIN_LOVELACE = 50_000_000_000; // 50k ada
 const VP_MAX_LOVELACE = 50_000_000_000_000; // 50M ada
-// Smaller pages than the runtime (component uses 600); the API proxy occasionally
-// resets connections on larger paginated GETs.
+// Smaller pages than the runtime, which uses 600.
 const PAGE_SIZE = 300;
 const BATCH_SIZE = 50;
+const METADATA_PASSES = 4;
 const AVATAR_SIZE = 256;
 const JPEG_QUALITY = 70;
 const FETCH_TIMEOUT_MS = 15_000;
@@ -37,6 +37,11 @@ const api = axios.create({
   baseURL: API_URL,
   timeout: 20_000,
   validateStatus: (s) => s >= 200 && s < 300,
+  // The proxy sometimes caches a gzip response whose chunked HTTP/1.1 framing is
+  // truncated, which Node surfaces as ECONNRESET "aborted" while inflating. Browsers
+  // reach the same endpoint over HTTP/2 and never see it. Ask for identity so this
+  // script reads the uncompressed cache variant instead.
+  headers: { 'Accept-Encoding': 'identity' },
 });
 
 function chunk(arr, size) {
@@ -95,14 +100,24 @@ async function fetchInfo(ids) {
   return results.flatMap((r) => r.data || []);
 }
 
+// /drep_metadata answers for every id but leaves meta_json null for a varying subset on
+// each call, so a single pass sees anywhere from 85% to 98% of the metadata. Re-ask for
+// the stragglers instead of treating a null as "this DRep has no avatar".
 async function fetchMetadata(ids) {
-  const results = await Promise.all(
-    chunk(ids, BATCH_SIZE).map((b) => api.post('/drep_metadata', { _drep_ids: b }))
-  );
   const byId = new Map();
-  for (const r of results) {
-    for (const m of r.data || []) {
-      if (m.meta_json) byId.set(m.drep_id, m.meta_json);
+  let missing = ids;
+  for (let pass = 0; pass < METADATA_PASSES && missing.length; pass++) {
+    const results = await Promise.all(
+      chunk(missing, BATCH_SIZE).map((b) => api.post('/drep_metadata', { _drep_ids: b }))
+    );
+    for (const r of results) {
+      for (const m of r.data || []) {
+        if (m.meta_json) byId.set(m.drep_id, m.meta_json);
+      }
+    }
+    missing = missing.filter((id) => !byId.has(id));
+    if (missing.length) {
+      console.log(`  metadata pass ${pass + 1}: ${byId.size}/${ids.length}, retrying ${missing.length}`);
     }
   }
   return byId;
@@ -156,6 +171,13 @@ async function runWithConcurrency(tasks, limit) {
   return results;
 }
 
+function listAvatarIds() {
+  return fs
+    .readdirSync(OUT_DIR)
+    .filter((name) => name.endsWith('.jpg'))
+    .map((name) => name.slice(0, -4));
+}
+
 function pruneStaleFiles(keepIds) {
   const keep = new Set(keepIds.map((id) => `${id}.jpg`));
   let removed = 0;
@@ -187,17 +209,23 @@ async function main() {
 
   const metaById = await fetchMetadata(inRange.map((i) => i.drep_id));
 
+  const inRangeIds = new Set(inRange.map((i) => i.drep_id));
+  // Only DReps whose metadata actually arrived and carries no usable avatar. Anything we
+  // simply failed to read this run stays out of this set so its snapshot survives.
+  const withoutAvatar = new Set();
   const tasks = [];
-  let skippedNoImage = 0;
+  let unresolved = 0;
   for (const info of inRange) {
     const meta = metaById.get(info.drep_id);
-    if (!meta) continue;
-    if (!extractName(meta)) continue;
-    const url = extractImage(meta);
-    if (!url) { skippedNoImage++; continue; }
+    if (!meta) { unresolved++; continue; }
+    const url = extractName(meta) ? extractImage(meta) : null;
+    if (!url) { withoutAvatar.add(info.drep_id); continue; }
     tasks.push({ drepId: info.drep_id, url });
   }
-  console.log(`  ${tasks.length} DReps have an image URL (${skippedNoImage} without)`);
+  console.log(
+    `  ${tasks.length} DReps have an image URL ` +
+    `(${withoutAvatar.size} without, ${unresolved} metadata unavailable)`
+  );
 
   console.log(`Downloading + normalizing to ${AVATAR_SIZE}×${AVATAR_SIZE} JPEG q${JPEG_QUALITY}…`);
   const results = await runWithConcurrency(tasks, FETCH_CONCURRENCY);
@@ -206,18 +234,26 @@ async function main() {
   const failed = results.filter((r) => !r.ok);
   const totalBytes = succeeded.reduce((sum, r) => sum + r.bytes, 0);
 
-  const removed = pruneStaleFiles(succeeded.map((r) => r.drepId));
+  // Keep what we just wrote plus every snapshot whose DRep is still eligible and did not
+  // report an empty avatar. A download that 403s or metadata that did not resolve is a bad
+  // reason to throw away a good image, so only genuinely stale files go.
+  const keep = new Set(succeeded.map((r) => r.drepId));
+  for (const id of listAvatarIds()) {
+    if (inRangeIds.has(id) && !withoutAvatar.has(id)) keep.add(id);
+  }
+  const removed = pruneStaleFiles([...keep]);
 
   const manifest = {
     generated: new Date().toISOString(),
     apiUrl: API_URL,
-    ids: succeeded.map((r) => r.drepId).sort(),
+    ids: listAvatarIds().sort(),
   };
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
 
   console.log(
     `\nDone: ${succeeded.length} saved (${(totalBytes / 1024).toFixed(0)} KB total), ` +
-    `${failed.length} failed, ${removed} stale files removed.`
+    `${failed.length} failed, ${removed} stale files removed, ` +
+    `${manifest.ids.length} avatars in the manifest.`
   );
   if (failed.length) {
     console.log('\nFailures (first 10):');
