@@ -14,7 +14,7 @@ import styles from './quiz.module.css';
 // /quiz: the knowledge quiz hub. All progress lives in the visitor's
 // localStorage, nothing is sent anywhere (see concept in the project notes).
 export default function QuizPage() {
-  const academy = getAcademyCta('basics', 'hub-banner');
+  const academy = getAcademyCta('landing', 'hub-banner');
   return (
     <Layout
       title={translate({id: 'quiz.page.title', message: 'Cardano Quiz: Test Your Knowledge'})}
