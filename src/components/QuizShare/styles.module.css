@@ -13,6 +13,6 @@
 }
 
 .shareButton:hover {
-  background: var(--ifm-color-primary);
-  color: var(--ifm-color-white);
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
 }
