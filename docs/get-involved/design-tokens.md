@@ -77,7 +77,7 @@ Badge colors for the bronze/silver/gold results on the [quiz hub](/quiz). Both t
 |-------|-------|------|-----|
 | `--site-tier-gold` | `#c9a227` | `#d9b345` | Gold tier badge fill, perfect score |
 | `--site-tier-silver` | `#8e9aab` | `#a3aebf` | Silver tier badge fill |
-| `--site-tier-bronze` | `#a5673f` | `#c98b5e` | Bronze tier badge fill |
+| `--site-tier-bronze` | `#c98b5e` | `#c98b5e` | Bronze tier badge fill |
 | `--site-tier-ink` | `#1b2333` | `#1b2333` | Text and icon color on top of the tier fills, fixed across themes on purpose |
 
 ## Spacing

@@ -311,7 +311,7 @@ yarn test:quiz-data
 
 - `id` is a lowercase slug and matches the filename
 - `difficulty` is one of `beginner`, `intermediate`, `advanced`
-- the question pool is at least twice `questionCount`, so retries and hub replays draw a genuinely different set of questions
+- the question pool is at least twice `questionCount`, so retries and hub replays draw a fresh sample from the pool, and repeat runs usually differ
 - each question has 3 to 4 options and a `correctAnswer` index in range
 - `explanation` is at least 30 characters long
 - `sourceUrl` is present and its hostname is on an allowlist (`cardano.org`, `docs.cardano.org`, `developers.cardano.org`, `cips.cardano.org`, `essentialcardano.io`, `cardanofoundation.org`), so every explanation links back only to trusted, first-party sources

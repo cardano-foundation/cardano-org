@@ -302,7 +302,7 @@ const Quiz = ({
             <h4 className={styles.explanationTitle}>{translate({id: 'quiz.ui.explanation', message: 'Explanation'})}</h4>
             <p className={styles.explanationText}>{currentQuestion.explanation}</p>
             {currentQuestion.sourceUrl && (
-              <Link to={currentQuestion.sourceUrl} className={styles.sourceLink}>
+              <Link to={currentQuestion.sourceUrl} className={styles.sourceLink} target="_blank" rel="noopener noreferrer">
                 {translate({id: 'quiz.ui.learnMore', message: 'Learn more'})}
               </Link>
             )}

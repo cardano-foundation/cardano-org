@@ -30,7 +30,6 @@ const ProgressPanel = ({ progress, onReset }) => {
       </p>
       <button
         onClick={() => {
-          // eslint-disable-next-line no-alert
           if (window.confirm(translate({id: 'quiz.hub.resetConfirm', message: 'Delete your quiz progress? This cannot be undone.'}))) {
             onReset();
           }

@@ -20,13 +20,13 @@
   padding: var(--site-space-2xs) var(--site-space-md);
   border-radius: var(--site-radius-pill);
   background: var(--ifm-color-primary);
-  color: white;
+  color: var(--ifm-color-white);
   font-weight: 600;
   white-space: nowrap;
 }
 
 .academyBannerButton:hover {
   background: var(--ifm-color-primary-dark);
-  color: white;
+  color: var(--ifm-color-white);
   text-decoration: none;
 }

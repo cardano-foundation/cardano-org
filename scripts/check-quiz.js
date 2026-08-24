@@ -26,7 +26,13 @@ const files = fs.readdirSync(QUIZ_DIR).filter((f) => f.endsWith('.json'));
 if (files.length === 0) fail('src/data/quiz', 'no quiz source files found');
 
 for (const file of files) {
-  const quiz = JSON.parse(fs.readFileSync(path.join(QUIZ_DIR, file), 'utf8'));
+  let quiz;
+  try {
+    quiz = JSON.parse(fs.readFileSync(path.join(QUIZ_DIR, file), 'utf8'));
+  } catch (e) {
+    fail(file, `invalid JSON: ${e.message}`);
+    continue;
+  }
   const strings = [];
 
   if (!SLUG_RE.test(quiz.id || '')) fail(file, 'id must be a lowercase slug');
