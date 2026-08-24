@@ -85,11 +85,14 @@ html[data-theme='dark'] .quizHeader {
 }
 
 .questionCard.correct .statusMessage {
-  color: var(--site-success);
+  /* Text on the success tint: deepen the ink toward the body text color
+     (near-black in light, near-white in dark) instead of the mid-tone fill,
+     which does not hold enough contrast on its own tint background. */
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .questionCard.incorrect .statusMessage {
-  color: var(--site-danger);
+  color: color-mix(in srgb, var(--site-danger) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .progressBar {
@@ -377,11 +380,11 @@ html[data-theme='dark'] .explanation {
 }
 
 .resultCard.success .scoreNumber {
-  color: var(--site-success);
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .resultCard.failure .scoreNumber {
-  color: var(--site-danger);
+  color: color-mix(in srgb, var(--site-danger) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .scoreText {
@@ -502,9 +505,9 @@ html[data-theme='dark'] .explanation {
   margin-bottom: var(--site-space-xs);
 }
 
-.tier_gold { background: var(--site-tier-gold); color: var(--ifm-color-emphasis-900); }
-.tier_silver { background: var(--site-tier-silver); color: var(--ifm-color-emphasis-900); }
-.tier_bronze { background: var(--site-tier-bronze); color: var(--ifm-color-white); }
+.tier_gold { background: var(--site-tier-gold); color: var(--site-tier-ink); }
+.tier_silver { background: var(--site-tier-silver); color: var(--site-tier-ink); }
+.tier_bronze { background: var(--site-tier-bronze); color: var(--site-tier-ink); }
 .tier_learning { background: var(--ifm-color-emphasis-200); color: var(--ifm-color-emphasis-800); }
 
 .emojiGrid {

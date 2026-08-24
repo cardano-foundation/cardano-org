@@ -92,6 +92,7 @@
   --site-tier-gold: #c9a227;
   --site-tier-silver: #8e9aab;
   --site-tier-bronze: #a5673f;
+  --site-tier-ink: #1b2333;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -124,6 +125,9 @@
   --site-tier-gold: #d9b345;
   --site-tier-silver: #a3aebf;
   --site-tier-bronze: #c98b5e;
+  /* Tier fills are light in both themes, so the ink stays the same dark
+     value here instead of inverting with the rest of the dark palette. */
+  --site-tier-ink: #1b2333;
 }
 
 .header-discord-link:before {
