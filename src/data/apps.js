@@ -1799,6 +1799,21 @@ export const Showcases = [
   maintainerPick: false,
   x: "EchoForgeEF",
 },
+  {
+  title: "AdaLink",
+  description:
+    "Affiliate marketing platform on Cardano where projects launch performance-based campaigns and creators earn ADA for verified actions with on-chain tracking.",
+  tagline: "Affiliate campaigns with on-chain ADA rewards",
+  preview: require("./app-screenshots/adalink.webp"),
+  icon: "/img/app-icons/adalink.png",
+  website: "https://www.adalink.io",
+  source: null,
+  category: "marketplace",
+  properties: [],
+  maintainerPick: false,
+  beginnerFriendly: false,
+  x: "AdaLink_io",
+},
 ];
 
 export const TagList = Object.keys(Tags);
