@@ -12,15 +12,15 @@ export function getQuizData() {
     questions: [
     {
       id: "security-1",
-      question: translate({id: "quiz.security.security-1.question", message: "What should you do if someone contacts you claiming to be official Cardano support?"}),
+      question: translate({id: "quiz.security.security-1.question", message: "What is one common way the fake tech support scam begins, according to Cardano's own scam-awareness guidance?"}),
       options: [
-        translate({id: "quiz.security.security-1.option0", message: "Ignore them and never share your recovery phrase or private keys"}),
-        translate({id: "quiz.security.security-1.option1", message: "Share your recovery phrase so they can help fix your wallet"}),
-        translate({id: "quiz.security.security-1.option2", message: "Send them ada to verify your wallet ownership"}),
-        translate({id: "quiz.security.security-1.option3", message: "Trust them if they have a verified-looking profile picture"}),
+        translate({id: "quiz.security.security-1.option0", message: "A newcomer asks a wallet question in a chat channel, and a scammer replies first, posing as official support"}),
+        translate({id: "quiz.security.security-1.option1", message: "A newcomer receives an unsolicited phone call from a number claiming to be Cardano Foundation support"}),
+        translate({id: "quiz.security.security-1.option2", message: "A newcomer's wallet app shows an in-app pop-up asking them to verify their identity"}),
+        translate({id: "quiz.security.security-1.option3", message: "A newcomer receives a letter in the mail claiming to be from IOG support"}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.security.security-1.explanation", message: "Legitimate support staff will never contact you first in a private message and will never ask for your recovery phrase, passwords, or private keys. Anyone asking for this information is a scammer."}),
+      explanation: translate({id: "quiz.security.security-1.explanation", message: "Cardano's common scams page describes this pattern under its Fake Tech Support section: scammers watch for a new user entering a channel and asking a question about a wallet, then quickly respond, pretending to be official support. The page also notes fraudsters often reach out via social media, forums, or email, so this is one common way the scam begins, not the only one. The tell is a stranger racing to post the first reply to a genuine question, before any real support has a chance to answer."}),
       sourceUrl: "https://cardano.org/common-scams",
     },
     {
@@ -33,7 +33,7 @@ export function getQuizData() {
         translate({id: "quiz.security.security-2.option3", message: "A normal way to earn more ada"}),
       ],
       correctAnswer: 1,
-      explanation: translate({id: "quiz.security.security-2.explanation", message: "This is the classic Ada Giveaway Scam. Legitimate giveaways never ask you to send money first. Even if the stream shows Charles Hoskinson or other well-known figures, it's fake. Once you send your ada, it's gone forever."}),
+      explanation: translate({id: "quiz.security.security-2.explanation", message: "This is the classic ada giveaway scam. Legitimate giveaways never ask you to send money first. Even if the stream shows Charles Hoskinson or other well-known figures, it's fake. Once you send your ada, it's gone forever."}),
       sourceUrl: "https://cardano.org/common-scams",
     },
     {
@@ -93,7 +93,7 @@ export function getQuizData() {
       question: translate({id: "quiz.security.security-7.question", message: "A moderator in a Cardano forum sends you a private message offering help with your wallet. What should you do?"}),
       options: [
         translate({id: "quiz.security.security-7.option0", message: "Share your recovery phrase so they can diagnose the problem"}),
-        translate({id: "quiz.security.security-7.option1", message: "Never engage - legitimate moderators don't contact users first via private messages"}),
+        translate({id: "quiz.security.security-7.option1", message: "Never engage, legitimate moderators don't contact users first via private messages"}),
         translate({id: "quiz.security.security-7.option2", message: "Send them ada to verify your identity"}),
         translate({id: "quiz.security.security-7.option3", message: "Trust them because they have a moderator badge"}),
       ],
@@ -131,13 +131,13 @@ export function getQuizData() {
       id: "security-10",
       question: translate({id: "quiz.security.security-10.question", message: "Once you send ada to a scammer, what are your chances of recovery?"}),
       options: [
-        translate({id: "quiz.security.security-10.option0", message: "High - you can contact Cardano support to reverse the transaction"}),
-        translate({id: "quiz.security.security-10.option1", message: "Medium - the blockchain will automatically refund you"}),
-        translate({id: "quiz.security.security-10.option2", message: "Zero - once sent, the ada is gone forever with no way to recover it"}),
-        translate({id: "quiz.security.security-10.option3", message: "Good - if you report it quickly enough"}),
+        translate({id: "quiz.security.security-10.option0", message: "High: you can contact Cardano support to reverse the transaction"}),
+        translate({id: "quiz.security.security-10.option1", message: "Medium: the blockchain will automatically refund you"}),
+        translate({id: "quiz.security.security-10.option2", message: "Zero: once sent, the ada is gone forever with no way to recover it"}),
+        translate({id: "quiz.security.security-10.option3", message: "Good: if you report it quickly enough"}),
       ],
       correctAnswer: 2,
-      explanation: translate({id: "quiz.security.security-10.explanation", message: "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical - there is no safety net or customer service to help you."}),
+      explanation: translate({id: "quiz.security.security-10.explanation", message: "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical: there is no safety net or customer service to help you."}),
       sourceUrl: "https://cardano.org/common-scams",
     },
     ],
