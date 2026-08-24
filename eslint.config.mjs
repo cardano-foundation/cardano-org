@@ -27,7 +27,7 @@ export default [
   { settings: { react: { version: '18.3' } } },
 
   {
-    files: ['src/**/*.{js,jsx}', 'scripts/**/*.js', 'docusaurus.config.js'],
+    files: ['src/**/*.{js,jsx,mjs}', 'scripts/**/*.{js,mjs}', 'docusaurus.config.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -65,7 +65,7 @@ export default [
   },
 
   {
-    files: ['scripts/**/*.js', 'docusaurus.config.js'],
+    files: ['scripts/**/*.{js,mjs}', 'docusaurus.config.js'],
     languageOptions: { globals: { ...globals.node } },
   },
 ];
