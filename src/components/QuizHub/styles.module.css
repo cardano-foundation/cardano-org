@@ -1,0 +1,99 @@
+.hub {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.progressPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--site-space-xs);
+  padding: var(--site-space-sm) var(--site-space-md);
+  margin-bottom: var(--site-space-md);
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.points {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.resetButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.resetButton:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--site-space-md);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--site-space-md);
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.tierChip {
+  align-self: flex-start;
+  display: inline-block;
+  padding: var(--site-space-3xs) var(--site-space-sm);
+  margin-bottom: var(--site-space-xs);
+  border-radius: var(--site-radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.tier_gold {
+  background: var(--site-tier-gold);
+  color: var(--site-tier-ink);
+}
+
+.tier_silver {
+  background: var(--site-tier-silver);
+  color: var(--site-tier-ink);
+}
+
+.tier_bronze {
+  background: var(--site-tier-bronze);
+  color: var(--site-tier-ink);
+}
+
+.cardTitle {
+  margin: 0 0 var(--site-space-3xs);
+  font-size: 1.125rem;
+  color: var(--ifm-heading-color);
+}
+
+.cardMeta {
+  margin: 0 0 var(--site-space-xs);
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.cardDescription {
+  flex: 1;
+  margin: 0 0 var(--site-space-sm);
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
