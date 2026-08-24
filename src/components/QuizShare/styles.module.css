@@ -1,0 +1,18 @@
+.share {
+  margin-top: var(--site-space-sm);
+}
+
+.shareButton {
+  padding: var(--site-space-2xs) var(--site-space-md);
+  border-radius: var(--site-radius-pill);
+  border: 1px solid var(--ifm-color-primary);
+  background: transparent;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shareButton:hover {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
