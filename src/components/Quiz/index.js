@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
 import { computeTier } from '@site/src/utils/quizProgress.mjs';
-import QuizShare from '../QuizShare';
+import { getTierLabels } from '@site/src/data/quiz/tierLabels';
+import QuizShare, { buildEmojiGrid } from '../QuizShare';
 import styles from './styles.module.css';
 
 // Unbiased Fisher-Yates shuffle (replaces the biased sort-by-random trick)
@@ -35,13 +36,7 @@ const sampleQuestions = (quizData, questionCount) => {
     .map(shuffleOptions);
 };
 
-const tierLabel = (tier) =>
-  ({
-    learning: translate({id: 'quiz.tier.learning', message: 'Keep learning'}),
-    bronze: translate({id: 'quiz.tier.bronze', message: 'Bronze'}),
-    silver: translate({id: 'quiz.tier.silver', message: 'Silver'}),
-    gold: translate({id: 'quiz.tier.gold', message: 'Gold'}),
-  })[tier];
+const tierLabel = (tier) => getTierLabels()[tier];
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor">
@@ -191,7 +186,7 @@ const Quiz = ({
           </div>
           {isHubMode && !isPractice && (
             <div className={styles.emojiGrid} aria-hidden="true">
-              {answerResults.map((r) => (r ? '🔵' : '⚪')).join('')}
+              {buildEmojiGrid(answerResults)}
             </div>
           )}
           <div className={styles.resultActions}>

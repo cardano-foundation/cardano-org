@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
+// Wordle-style emoji row: one filled circle per correct answer, in order.
+export function buildEmojiGrid(results) {
+  return results.map((r) => (r ? '🔵' : '⚪')).join('');
+}
+
 export function buildShareText({ quizTitle, results, score, total, tierLabel, url }) {
-  const grid = results.map((r) => (r ? '🔵' : '⚪')).join('');
+  const grid = buildEmojiGrid(results);
   const headline = translate({id: 'quiz.share.headline', message: 'Cardano Quiz: {quizTitle}'}, {quizTitle});
   const cta = translate({id: 'quiz.share.cta', message: 'Can you get gold? {url}'}, {url});
   return `${headline}\n${grid} ${score}/${total}, ${tierLabel}\n${cta}`;

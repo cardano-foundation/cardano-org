@@ -5,14 +5,11 @@ import useQuizProgress from '@site/src/utils/useQuizProgress';
 import { totalPoints } from '@site/src/utils/quizProgress.mjs';
 import { getQuizCatalog } from '@site/src/data/quiz/catalog';
 import { getAcademyCta } from '@site/src/data/quiz/academy';
+import { getTierLabels } from '@site/src/data/quiz/tierLabels';
 import styles from './styles.module.css';
 
-const tierLabels = () => ({
-  bronze: translate({id: 'quiz.tier.bronze', message: 'Bronze'}),
-  silver: translate({id: 'quiz.tier.silver', message: 'Silver'}),
-  gold: translate({id: 'quiz.tier.gold', message: 'Gold'}),
-});
-
+// Only bronze/silver/gold ever appear here, "learning" progress is not
+// tier-badged on the hub cards.
 const difficultyLabels = () => ({
   beginner: translate({id: 'quiz.difficulty.beginner', message: 'Beginner'}),
   intermediate: translate({id: 'quiz.difficulty.intermediate', message: 'Intermediate'}),
@@ -48,7 +45,7 @@ const ProgressPanel = ({ progress, onReset }) => {
 const QuizHub = () => {
   const { progress, record, reset } = useQuizProgress();
   const catalog = getQuizCatalog();
-  const tiers = tierLabels();
+  const tiers = getTierLabels();
   const difficulties = difficultyLabels();
 
   return (
