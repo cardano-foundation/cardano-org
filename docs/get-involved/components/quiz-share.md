@@ -81,8 +81,8 @@ buildShareText({
 
 Clicking the button follows a short fallback chain:
 
-1. **Web Share API**: if `navigator.share` is available, typically on mobile, it opens the device's native share sheet with the summary text pre-filled.
-2. **Clipboard**: if the Web Share API is unavailable, for example on most desktop browsers, or the user cancels the share sheet, the component falls back to `navigator.clipboard.writeText` and the button label changes to `Copied!` for two seconds.
+1. **Web Share API**: if `navigator.share` is available, typically on mobile, it opens the device's native share sheet with the summary text pre-filled. If the user cancels the share sheet, the interaction just ends there, there is no clipboard fallback for a cancel.
+2. **Clipboard**: if the Web Share API is unavailable, for example on most desktop browsers, or the share call fails for a reason other than the user cancelling, the component falls back to `navigator.clipboard.writeText` and the button label changes to `Copied!` for two seconds.
 3. **No-op**: if the clipboard is also unavailable, for example permissions denied or a non-HTTPS context, the click quietly does nothing rather than showing an error.
 
 ---

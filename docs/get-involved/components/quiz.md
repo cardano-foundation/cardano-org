@@ -318,7 +318,7 @@ yarn test:quiz-data
 - no typographic dashes appear in any question, option, or explanation text
 - the generated module in `src/data/quiz/generated/` matches its JSON source (run `yarn build-quiz` again if it has drifted)
 
-Both `yarn build-quiz` and `yarn test:quiz-data` also run automatically as part of `yarn start`, `yarn build`, and `yarn test`, so an out-of-sync generated module or an invalid source file fails the build.
+`yarn build-quiz` also runs automatically as part of `yarn start` and `yarn build`. `yarn test:quiz-data` runs as part of `yarn test`, where its sync check fails the build if the generated module is out of date rather than regenerating it, so `yarn build-quiz` still needs to be run and committed by hand after a source change.
 
 ---
 
