@@ -69,6 +69,17 @@ Translucent primary, for soft fills and hover backgrounds (prefer these over a h
 - `--site-tint-weak`: `rgba(var(--ifm-color-primary-rgb), 0.06)`
 - `--site-tint-strong`: `rgba(var(--ifm-color-primary-rgb), 0.12)`
 
+### Quiz result tiers
+
+Badge colors for the bronze/silver/gold results on the [quiz hub](/quiz). Both theme values are listed here, unlike the semantic status tokens above, because `--site-tier-ink` is deliberately not inverted: the tier fills stay light in both themes, so the text and icon color sitting on top of them stays the same dark value in light and dark mode instead of flipping with the rest of the palette.
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `--site-tier-gold` | `#c9a227` | `#d9b345` | Gold tier badge fill, perfect score |
+| `--site-tier-silver` | `#8e9aab` | `#a3aebf` | Silver tier badge fill |
+| `--site-tier-bronze` | `#a5673f` | `#c98b5e` | Bronze tier badge fill |
+| `--site-tier-ink` | `#1b2333` | `#1b2333` | Text and icon color on top of the tier fills, fixed across themes on purpose |
+
 ## Spacing
 
 An 8px-based scale. Use it for padding, margins, and gaps.
