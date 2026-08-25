@@ -105,7 +105,7 @@ export const Categories = {
   },
   marketplace: {
     label: "Marketplace",
-    description: "Marketplace where you can buy or sell NFTs.",
+    description: "Platforms where you buy, sell, or trade assets and services, including NFTs, tokenized real-world assets, storage and compute, and prediction outcomes.",
     color: '#E53935',  // Bright Red
     trackable: true,
     prominent: true,
@@ -1372,7 +1372,7 @@ export const Showcases = [
     icon: "/img/app-icons/xerberus.jpg",
     website: "https://www.xerberus.io/",
     source: null,
-    category: "marketplace",
+    category: "analytics",
     properties: [],
     maintainerPick: false,
     x: "Xerberus",
@@ -1781,24 +1781,24 @@ export const Showcases = [
     maintainerPick: false,
     x: "dreptalkcom",
   },
-{
-  title: "EchoForge",
-  description: "EchoForge is a B2B2C identity and proof layer on Cardano. EchoCert verifies credentials, EchoUploader proves file, EchoID adds wallet identity through EchoDash.",
-  tagline: "Anchoring and proof, building toward an identity layer",
-  preview: require("./app-screenshots/EchoForge.jpg"),
-  extraPreviews: [
-    require("./app-screenshots/EchoCert.png"),
-    require("./app-screenshots/EchoUploader.png"),
-    require("./app-screenshots/EchoDash.png"),
-  ],
-  icon: "/img/app-icons/EchoForge.svg",
-  website: "https://echoforgellc.tech",
-  source: "https://github.com/EchoForge-Dev/Aiken_Smart-Contract",
-  category: "notary",
-  properties: ["opensource"],
-  maintainerPick: false,
-  x: "EchoForgeEF",
-},
+  {
+    title: "EchoForge",
+    description: "EchoForge is a B2B2C identity and proof layer on Cardano. EchoCert verifies credentials, EchoUploader proves file, EchoID adds wallet identity through EchoDash.",
+    tagline: "Anchoring and proof, building toward an identity layer",
+    preview: require("./app-screenshots/EchoForge.jpg"),
+    extraPreviews: [
+      require("./app-screenshots/EchoCert.png"),
+      require("./app-screenshots/EchoUploader.png"),
+      require("./app-screenshots/EchoDash.png"),
+    ],
+    icon: "/img/app-icons/EchoForge.svg",
+    website: "https://echoforgellc.tech",
+    source: "https://github.com/EchoForge-Dev/Aiken_Smart-Contract",
+    category: "notary",
+    properties: ["opensource"],
+    maintainerPick: false,
+    x: "EchoForgeEF",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
