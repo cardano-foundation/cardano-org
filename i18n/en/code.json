@@ -3861,7 +3861,7 @@
     "message": "Read the research"
   },
   "governance.delegate.layout.title": {
-    "message": "Delegate to a DRep — Cardano Governance"
+    "message": "Delegate to a DRep - Cardano Governance"
   },
   "governance.delegate.layout.description": {
     "message": "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps."
@@ -3888,7 +3888,7 @@
     "message": "Could not load DReps right now. Please refresh in a moment."
   },
   "governance.delegate.noResults": {
-    "message": "No DReps in the curated range right now. Try one of the alternative tools below."
+    "message": "No active DReps available right now. Try one of the alternative tools below."
   },
   "governance.delegate.poolIntro": {
     "message": "{count} active DReps with mid-tier voting power. Refresh for a different selection."
@@ -3953,17 +3953,35 @@
   "governance.delegate.error.wrongNetwork": {
     "message": "Wallet is on the wrong network. Switch to Mainnet and try again."
   },
-  "governance.delegate.custom.heading": {
-    "message": "Already know your DRep?"
+  "governance.delegate.search.heading": {
+    "message": "Find a DRep"
   },
-  "governance.delegate.custom.placeholder": {
-    "message": "drep1… or hex DRep ID"
+  "governance.delegate.search.placeholder": {
+    "message": "Search by name, or paste a DRep ID"
   },
-  "governance.delegate.custom.label": {
-    "message": "Custom DRep ID"
+  "governance.delegate.search.label": {
+    "message": "Search DReps by name or DRep ID"
   },
-  "governance.delegate.custom.cta": {
-    "message": "Delegate"
+  "governance.delegate.search.clear": {
+    "message": "Clear"
+  },
+  "governance.delegate.search.resultCount": {
+    "message": "{count} matching DReps."
+  },
+  "governance.delegate.search.resultCountOne": {
+    "message": "One matching DRep."
+  },
+  "governance.delegate.search.resultCountCapped": {
+    "message": "Showing the first {shown} of {total} matching DReps. Refine your search to narrow it down."
+  },
+  "governance.delegate.search.noResults": {
+    "message": "No DRep found under that name. If you have the DRep ID, paste it here instead."
+  },
+  "governance.delegate.search.unknownId.name": {
+    "message": "Unlisted DRep"
+  },
+  "governance.delegate.search.unknownId.help": {
+    "message": "This DRep is not active or has published no metadata, so we cannot show a name. You can still delegate to this ID."
   },
   "governance.delegate.special.heading": {
     "message": "Or pick a protocol option"

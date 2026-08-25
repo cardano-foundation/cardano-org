@@ -1,10 +1,11 @@
 //
 // Snapshots DRep avatar images for /governance/delegate/.
 //
-// Mirrors the runtime fetch flow in src/components/DRepDelegate/index.js but writes the
-// resulting images to static/img/dreps/{drepId}.jpg + a manifest the component reads at
-// load time. Production CSP blocks the heterogeneous CIP-119 image hosts, so the
-// component renders self-hosted images (or the Initials fallback) only.
+// Mirrors the runtime pool in src/components/DRepDelegate/index.js (every active DRep
+// with metadata) but writes the resulting images to static/img/dreps/{drepId}.jpg + a
+// manifest the component reads at load time. Production CSP blocks the heterogeneous
+// CIP-119 image hosts, so the component renders self-hosted images (or the Initials
+// fallback) only.
 //
 // Run manually before a release: `yarn fetch-drep-avatars`.
 //
@@ -20,9 +21,6 @@ const OUT_DIR = path.join(__dirname, '../static/img/dreps');
 // (no runtime fetch, no first-render flicker). JPEGs stay under static/.
 const MANIFEST_PATH = path.join(__dirname, '../src/data/drep-avatars.json');
 
-// Mirrors the runtime VP gates in src/components/DRepDelegate/index.js.
-const VP_MIN_LOVELACE = 50_000_000_000; // 50k ada
-const VP_MAX_LOVELACE = 50_000_000_000_000; // 50M ada
 // Smaller pages than the runtime, which uses 600.
 const PAGE_SIZE = 300;
 const BATCH_SIZE = 50;
@@ -200,22 +198,21 @@ async function main() {
   console.log(`  ${ids.length} registered DReps`);
 
   const infos = await fetchInfo(ids);
-  const inRange = infos.filter((i) => {
-    if (!i.active || !i.meta_url) return false;
-    const vp = Number(i.amount || 0);
-    return vp >= VP_MIN_LOVELACE && vp <= VP_MAX_LOVELACE;
-  });
-  console.log(`  ${inRange.length} active DReps in VP range`);
+  // No voting-power bounds: name search can surface any active DRep as a card, so every
+  // one of them needs a picture. The VP range in the component only narrows which cards
+  // are shuffled onto the page by default.
+  const eligible = infos.filter((i) => i.active && i.meta_url);
+  console.log(`  ${eligible.length} active DReps with metadata`);
 
-  const metaById = await fetchMetadata(inRange.map((i) => i.drep_id));
+  const metaById = await fetchMetadata(eligible.map((i) => i.drep_id));
 
-  const inRangeIds = new Set(inRange.map((i) => i.drep_id));
+  const eligibleIds = new Set(eligible.map((i) => i.drep_id));
   // Only DReps whose metadata actually arrived and carries no usable avatar. Anything we
   // simply failed to read this run stays out of this set so its snapshot survives.
   const withoutAvatar = new Set();
   const tasks = [];
   let unresolved = 0;
-  for (const info of inRange) {
+  for (const info of eligible) {
     const meta = metaById.get(info.drep_id);
     if (!meta) { unresolved++; continue; }
     const url = extractName(meta) ? extractImage(meta) : null;
@@ -239,7 +236,7 @@ async function main() {
   // reason to throw away a good image, so only genuinely stale files go.
   const keep = new Set(succeeded.map((r) => r.drepId));
   for (const id of listAvatarIds()) {
-    if (inRangeIds.has(id) && !withoutAvatar.has(id)) keep.add(id);
+    if (eligibleIds.has(id) && !withoutAvatar.has(id)) keep.add(id);
   }
   const removed = pruneStaleFiles([...keep]);
 
