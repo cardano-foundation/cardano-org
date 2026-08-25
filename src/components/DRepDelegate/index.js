@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
@@ -22,12 +22,13 @@ import styles from "./styles.module.css";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
 
-const VP_MIN_LOVELACE = 100_000_000_000;     // 100k ada
+const VP_MIN_LOVELACE = 50_000_000_000;      // 50k ada
 const VP_MAX_LOVELACE = 50_000_000_000_000;  // 50M ada
 const DISPLAY_COUNT = 8;
-// data.cardano.org proxy caps POST bodies at 5120 bytes — ~80 drep_ids max per batch.
+const SEARCH_RESULT_LIMIT = 12;
+// data.cardano.org proxy caps POST bodies at 5120 bytes, ~80 drep_ids max per batch.
 const BATCH_SIZE = 50;
-const POOL_CACHE_KEY = "cardano-org.drep-pool.v2";
+const POOL_CACHE_KEY = "cardano-org.drep-pool.v3";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 function readPoolCache() {
@@ -46,7 +47,7 @@ function writePoolCache(pool) {
   try {
     sessionStorage.setItem(POOL_CACHE_KEY, JSON.stringify({ ts: Date.now(), pool }));
   } catch {
-    // Quota exceeded or storage disabled — cache is best-effort.
+    // Quota exceeded or storage disabled, cache is best-effort.
   }
 }
 
@@ -120,6 +121,34 @@ function isValidDRepId(input) {
   if (/^drep(_script)?1[a-z0-9]{40,}$/.test(t)) return true;
   if (/^[0-9a-f]{56,64}$/i.test(t)) return true;
   return false;
+}
+
+// Fold case and strip combining accents so "Muller" also finds "Müller".
+function normalizeForSearch(value) {
+  return (value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function searchByName(pool, rawQuery) {
+  const needle = normalizeForSearch(rawQuery);
+  return pool
+    .map((drep) => ({ drep, haystack: normalizeForSearch(drep.name) }))
+    .filter(({ haystack }) => haystack.includes(needle))
+    .sort((a, b) => {
+      // A DRep whose full name is exactly the query always stays visible,
+      // however small it is against the rest of the matches.
+      const aExact = a.haystack === needle;
+      const bExact = b.haystack === needle;
+      if (aExact !== bExact) return aExact ? -1 : 1;
+      return Number(b.drep.votingPower || 0) - Number(a.drep.votingPower || 0);
+    })
+    .map(({ drep }) => drep);
+}
+
+function pickCurated(pool) {
+  return fisherYates(pool.filter((d) => d.curated)).slice(0, DISPLAY_COUNT);
 }
 
 function WalletPicker({ onConnect, busy }) {
@@ -360,36 +389,69 @@ function DRepCard({ drep, onSelect, disabled }) {
   );
 }
 
-function CustomDelegateRow({ onSelect, disabled }) {
-  const [value, setValue] = useState("");
-  const trimmed = value.trim();
-  const valid = isValidDRepId(trimmed);
+function SearchRow({ value, onChange }) {
   return (
-    <div className={styles.customRow}>
+    <div className={styles.searchRow}>
       <input
-        type="text"
+        type="search"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
         placeholder={translate({
-          id: "governance.delegate.custom.placeholder",
-          message: "drep1… or hex DRep ID",
+          id: "governance.delegate.search.placeholder",
+          message: "Search by name, or paste a DRep ID",
         })}
-        className={styles.customInput}
+        className={styles.searchInput}
         spellCheck={false}
         autoCorrect="off"
         autoCapitalize="off"
         aria-label={translate({
-          id: "governance.delegate.custom.label",
-          message: "Custom DRep ID",
+          id: "governance.delegate.search.label",
+          message: "Search DReps by name or DRep ID",
         })}
       />
+      {value && (
+        <button
+          type="button"
+          className={styles.searchClear}
+          onClick={() => onChange("")}
+        >
+          {translate({ id: "governance.delegate.search.clear", message: "Clear" })}
+        </button>
+      )}
+    </div>
+  );
+}
+
+// A DRep ID that is not in the pool is either inactive or has no published
+// metadata. Delegation still works, so offer it with the bare ID.
+function UnknownIdCard({ drepId, onSelect, disabled }) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <Initials name="?" />
+        <div className={styles.cardIdentity}>
+          <h3 className={styles.cardName}>
+            {translate({
+              id: "governance.delegate.search.unknownId.name",
+              message: "Unlisted DRep",
+            })}
+          </h3>
+          <span className={styles.cardId}>{shortAddress(drepId)}</span>
+        </div>
+      </div>
+      <p className={styles.cardBio}>
+        {translate({
+          id: "governance.delegate.search.unknownId.help",
+          message: "This DRep is not active or has published no metadata, so we cannot show a name. You can still delegate to this ID.",
+        })}
+      </p>
       <button
         type="button"
-        className="button button--primary"
-        disabled={!valid || disabled}
-        onClick={() => onSelect({ dRepId: trimmed }, trimmed)}
+        className={`button button--primary ${styles.cardCta}`}
+        disabled={disabled}
+        onClick={() => onSelect({ dRepId: drepId }, drepId)}
       >
-        {translate({ id: "governance.delegate.custom.cta", message: "Delegate" })}
+        {translate({ id: "governance.delegate.card.cta", message: "Delegate" })}
       </button>
     </div>
   );
@@ -420,6 +482,7 @@ export default function DRepDelegate() {
 
   const [pool, setPool] = useState([]);
   const [displayed, setDisplayed] = useState([]);
+  const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [wallet, setWallet] = useState(null);
@@ -439,7 +502,7 @@ export default function DRepDelegate() {
       // Hydrate from the client-only localStorage cache on mount.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setPool(cached);
-      setDisplayed(fisherYates(cached).slice(0, DISPLAY_COUNT));
+      setDisplayed(pickCurated(cached));
       setLoading(false);
       return () => { cancelled = true; };
     }
@@ -456,14 +519,11 @@ export default function DRepDelegate() {
         );
         const infos = infoResults.flatMap((r) => r.data || []);
 
-        const inRange = infos.filter((i) => {
-          if (!i.active) return false;
-          if (!i.meta_url) return false;
-          const vp = Number(i.amount || 0);
-          return vp >= VP_MIN_LOVELACE && vp <= VP_MAX_LOVELACE;
-        });
+        // Everything active and self-described is searchable by name. The
+        // curated voting-power range only narrows the randomly shown cards.
+        const searchable = infos.filter((i) => i.active && i.meta_url);
 
-        if (!inRange.length) {
+        if (!searchable.length) {
           if (!cancelled) {
             setPool([]);
             setDisplayed([]);
@@ -473,7 +533,7 @@ export default function DRepDelegate() {
         }
 
         const metaResults = await Promise.all(
-          chunk(inRange.map((i) => i.drep_id), BATCH_SIZE).map((b) =>
+          chunk(searchable.map((i) => i.drep_id), BATCH_SIZE).map((b) =>
             api.post("/drep_metadata", { _drep_ids: b })
           )
         );
@@ -484,17 +544,21 @@ export default function DRepDelegate() {
           }
         }
 
-        const enriched = inRange
+        const enriched = searchable
           .map((i) => {
             const meta = metaById.get(i.drep_id);
             if (!meta) return null;
             const name = extractName(meta);
             if (!name) return null;
+            const vp = Number(i.amount || 0);
             return {
               drepId: i.drep_id,
+              // Kept so a pasted hex ID resolves to the same DRep as bech32.
+              hex: i.hex || null,
               votingPower: i.amount,
               name,
               bio: extractBio(meta),
+              curated: vp >= VP_MIN_LOVELACE && vp <= VP_MAX_LOVELACE,
             };
           })
           .filter(Boolean);
@@ -502,7 +566,7 @@ export default function DRepDelegate() {
         if (cancelled) return;
         writePoolCache(enriched);
         setPool(enriched);
-        setDisplayed(fisherYates(enriched).slice(0, DISPLAY_COUNT));
+        setDisplayed(pickCurated(enriched));
         setLoading(false);
       } catch (err) {
         if (cancelled) return;
@@ -517,8 +581,66 @@ export default function DRepDelegate() {
   }, [API_URL, apiClient]);
 
   const reshuffle = useCallback(() => {
-    setDisplayed(fisherYates(pool).slice(0, DISPLAY_COUNT));
+    setDisplayed(pickCurated(pool));
   }, [pool]);
+
+  const curatedCount = useMemo(
+    () => pool.filter((d) => d.curated).length,
+    [pool]
+  );
+
+  const trimmedQuery = query.trim();
+
+  // One field serves both lookups: anything shaped like a DRep ID resolves to
+  // that single DRep, everything else is a name search across the whole pool.
+  const search = useMemo(() => {
+    if (!trimmedQuery) return null;
+    if (isValidDRepId(trimmedQuery)) {
+      const wanted = trimmedQuery.toLowerCase();
+      const match = pool.find(
+        (d) => d.drepId.toLowerCase() === wanted || d.hex?.toLowerCase() === wanted
+      );
+      return { byId: trimmedQuery, matches: match ? [match] : [] };
+    }
+    return { byId: null, matches: searchByName(pool, trimmedQuery) };
+  }, [trimmedQuery, pool]);
+
+  const visible = search
+    ? search.matches.slice(0, SEARCH_RESULT_LIMIT)
+    : displayed;
+
+  const listStatus = (() => {
+    if (!search) {
+      return translate(
+        {
+          id: "governance.delegate.poolIntro",
+          message: "{count} active DReps with mid-tier voting power. Refresh for a different selection.",
+        },
+        { count: curatedCount }
+      );
+    }
+    // An ID card and the empty state both speak for themselves.
+    if (search.byId || !search.matches.length) return null;
+    if (search.matches.length > SEARCH_RESULT_LIMIT) {
+      return translate(
+        {
+          id: "governance.delegate.search.resultCountCapped",
+          message: "Showing the first {shown} of {total} matching DReps. Refine your search to narrow it down.",
+        },
+        { shown: SEARCH_RESULT_LIMIT, total: search.matches.length }
+      );
+    }
+    if (search.matches.length === 1) {
+      return translate({
+        id: "governance.delegate.search.resultCountOne",
+        message: "One matching DRep.",
+      });
+    }
+    return translate(
+      { id: "governance.delegate.search.resultCount", message: "{count} matching DReps." },
+      { count: search.matches.length }
+    );
+  })();
 
   const wrongNetwork = wallet && wallet.networkId !== EXPECTED_NETWORK_ID;
   const txBusy = tx.status === "building";
@@ -640,13 +762,13 @@ export default function DRepDelegate() {
     );
   }
 
-  if (!displayed.length) {
+  if (!pool.length) {
     return (
       <div className={styles.container}>
         <div className={styles.statusLine}>
           {translate({
             id: "governance.delegate.noResults",
-            message: "No DReps in the curated range right now. Try one of the alternative tools below.",
+            message: "No active DReps available right now. Try one of the alternative tools below.",
           })}
         </div>
       </div>
@@ -671,44 +793,58 @@ export default function DRepDelegate() {
 
       <TxBanner state={tx} />
 
-      <div className={styles.poolHeader}>
-        <p className={styles.poolIntro}>
-          {translate(
-            {
-              id: "governance.delegate.poolIntro",
-              message: "{count} active DReps with mid-tier voting power. Refresh for a different selection.",
-            },
-            { count: pool.length }
-          )}
-        </p>
-        <button
-          type="button"
-          className={`button button--secondary ${styles.shuffleButton}`}
-          onClick={reshuffle}
-        >
-          {translate({ id: "governance.delegate.shuffle", message: "Shuffle DReps" })}
-        </button>
+      <div className={styles.searchSection}>
+        <h3 className={styles.sectionHeading}>
+          {translate({
+            id: "governance.delegate.search.heading",
+            message: "Find a DRep",
+          })}
+        </h3>
+        <SearchRow value={query} onChange={setQuery} />
       </div>
-      <div className={styles.cardGrid}>
-        {displayed.map((drep) => (
-          <DRepCard
-            key={drep.drepId}
-            drep={drep}
+
+      {(listStatus || !search) && (
+        <div className={styles.poolHeader}>
+          {listStatus && <p className={styles.poolIntro}>{listStatus}</p>}
+          {!search && (
+            <button
+              type="button"
+              className={`button button--secondary ${styles.shuffleButton}`}
+              onClick={reshuffle}
+            >
+              {translate({ id: "governance.delegate.shuffle", message: "Shuffle DReps" })}
+            </button>
+          )}
+        </div>
+      )}
+
+      {search?.byId && !search.matches.length ? (
+        <div className={styles.cardGrid}>
+          <UnknownIdCard
+            drepId={search.byId}
             onSelect={handleSelect}
             disabled={!canDelegate}
           />
-        ))}
-      </div>
-
-      <div className={styles.customSection}>
-        <h3 className={styles.sectionHeading}>
+        </div>
+      ) : search && !search.matches.length ? (
+        <p className={styles.searchEmpty}>
           {translate({
-            id: "governance.delegate.custom.heading",
-            message: "Already know your DRep?",
+            id: "governance.delegate.search.noResults",
+            message: "No DRep found under that name. If you have the DRep ID, paste it here instead.",
           })}
-        </h3>
-        <CustomDelegateRow onSelect={handleSelect} disabled={!canDelegate} />
-      </div>
+        </p>
+      ) : (
+        <div className={styles.cardGrid}>
+          {visible.map((drep) => (
+            <DRepCard
+              key={drep.drepId}
+              drep={drep}
+              onSelect={handleSelect}
+              disabled={!canDelegate}
+            />
+          ))}
+        </div>
+      )}
 
       <div className={styles.specialSection}>
         <h3 className={styles.sectionHeading}>

@@ -10,6 +10,12 @@
 
 import React from "react";
 import { sortBy, difference } from "../utils/jsUtils";
+import {
+  WalletPlatformList,
+  WalletFeatureList,
+  WalletCustodyList,
+  WalletNodeTypeList,
+} from "./walletFeatures";
 
 // Primary categories — each Showcase has exactly one. Answers: "what is this app?".
 // `trackable: true` means on-chain tx count is a meaningful usage signal for that category;
@@ -211,7 +217,6 @@ export const PropertyList = Object.keys(Properties);
 //   category: "dex",                  // exactly one — see Categories above
 //   properties: ["opensource"],       // zero or more — see Properties above
 //   maintainerPick: false,
-//   beginnerFriendly: false,
 // }
 export const Showcases = [
   {
@@ -225,7 +230,6 @@ export const Showcases = [
     category: "other",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Cardano Wall",
@@ -238,7 +242,6 @@ export const Showcases = [
     category: "notary",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "NMKR",
@@ -251,7 +254,6 @@ export const Showcases = [
     category: "minting",
     properties: ["nft"],
     maintainerPick: true,
-    beginnerFriendly: false,
     x: "nmkr_io",
     spotlight: {
       url: "https://developers.cardano.org/blog/2021-07-26-july/",
@@ -270,7 +272,6 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Cardano Explorer Index",
@@ -282,7 +283,6 @@ export const Showcases = [
     category: "explorer",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "CExplorer",
@@ -295,7 +295,6 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Cardano Scan",
@@ -308,7 +307,6 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Pool PM",
@@ -321,7 +319,6 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "PoolTool",
@@ -334,7 +331,6 @@ export const Showcases = [
     category: "pooltool",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "AdaLite",
@@ -347,7 +343,6 @@ export const Showcases = [
     category: "wallet",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -366,7 +361,6 @@ export const Showcases = [
     category: "wallet",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "desktop"],
       custody: "non-custodial",
@@ -385,7 +379,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["desktop"],
       custody: "non-custodial",
@@ -404,7 +397,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Pool Stats",
@@ -416,7 +408,6 @@ export const Showcases = [
     category: "pooltool",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "NOWPayments",
@@ -429,7 +420,6 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "NOWPayments_io",
   },
   {
@@ -443,7 +433,6 @@ export const Showcases = [
     category: "education",
     properties: ["opensource"],
     maintainerPick: true,
-    beginnerFriendly: false,
     x: "gimbalabs",
     spotlight: {
       url: "https://developers.cardano.org/blog/2023-01-02-january/",
@@ -467,7 +456,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft", "mobile"],
     maintainerPick: true,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -485,7 +473,6 @@ export const Showcases = [
     category: "minting",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "cardano-tools.io",
@@ -498,7 +485,6 @@ export const Showcases = [
     category: "minting",
     properties: ["nft", "opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Typhon",
@@ -510,8 +496,7 @@ export const Showcases = [
     source: null,
     category: "wallet",
     properties: ["nft"],
-    maintainerPick: false,
-    beginnerFriendly: false,
+    maintainerPick: true,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -535,7 +520,6 @@ export const Showcases = [
     category: "pooltool",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "MuesliSwap",
@@ -549,7 +533,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "SundaeSwap",
@@ -567,7 +550,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "DripDropz",
@@ -581,7 +563,6 @@ export const Showcases = [
     category: "distribution",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Minswap",
@@ -600,7 +581,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: true,
     x: "MinswapDEX",
     spotlight: {
       url: "https://developers.cardano.org/blog/2022-04-27-april/",
@@ -619,7 +599,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser", "web"],
       custody: "non-custodial",
@@ -638,7 +617,6 @@ export const Showcases = [
     category: "wallet",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -657,7 +635,6 @@ export const Showcases = [
     category: "ecosystem",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "gerowallet",
   },
   {
@@ -671,7 +648,6 @@ export const Showcases = [
     category: "ecosystem",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
     x: "CardanoCube",
   },
   {
@@ -690,7 +666,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "wingriderscom",
   },
   {
@@ -704,7 +679,6 @@ export const Showcases = [
     category: "ecosystem",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "eUTxO",
@@ -717,7 +691,6 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Vibrant",
@@ -730,7 +703,6 @@ export const Showcases = [
     category: "other",
     properties: ["nft", "opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "VibrantNet_io",
   },
   {
@@ -748,7 +720,6 @@ export const Showcases = [
     category: "marketplace",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "NuFi Wallet",
@@ -761,7 +732,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -780,7 +750,6 @@ export const Showcases = [
     category: "minting",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "nufiwallet",
   },
   {
@@ -794,7 +763,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Dune",
@@ -806,7 +774,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Chainport",
@@ -819,7 +786,6 @@ export const Showcases = [
     category: "bridge",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "chain_port",
   },
   {
@@ -833,7 +799,6 @@ export const Showcases = [
     category: "minting",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "cardano_studio",
   },
   {
@@ -847,7 +812,6 @@ export const Showcases = [
     category: "bridge",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "BALANCE Analytics",
@@ -860,7 +824,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "adahandle",
@@ -873,7 +836,6 @@ export const Showcases = [
     category: "identity",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Lace",
@@ -886,7 +848,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft", "opensource"],
     maintainerPick: true,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["browser"],
       custody: "non-custodial",
@@ -905,7 +866,6 @@ export const Showcases = [
     category: "notary",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "lace_io",
   },
   {
@@ -925,7 +885,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft", "mobile"],
     maintainerPick: true,
-    beginnerFriendly: false,
     spotlight: {
       url: "https://developers.cardano.org/blog/2024-01-22-january/",
       title: "Cardano Developer Spotlight: January 2024",
@@ -954,7 +913,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "dexhunterio",
     spotlight: {
       url: "https://developers.cardano.org/blog/2024-12-09-december/",
@@ -979,7 +937,6 @@ export const Showcases = [
     category: "lending",
     properties: ["opensource"],
     maintainerPick: true,
-    beginnerFriendly: true,
     x: "liqwidfinance",
   },
   {
@@ -993,7 +950,6 @@ export const Showcases = [
     category: "education",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Cardano Governance Tool",
@@ -1006,7 +962,6 @@ export const Showcases = [
     category: "governance",
     properties: ["drepdelegation"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Treasury Donation",
@@ -1018,7 +973,6 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Chang Watch",
@@ -1031,7 +985,6 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Medusa Wallet",
@@ -1044,7 +997,6 @@ export const Showcases = [
     category: "wallet",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -1069,7 +1021,6 @@ export const Showcases = [
     category: "lending",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Multisig Wallet",
@@ -1082,7 +1033,6 @@ export const Showcases = [
     category: "wallet",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["web"],
       custody: "non-custodial",
@@ -1101,7 +1051,6 @@ export const Showcases = [
     category: "governance",
     properties: ["drepdelegation"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Nio",
@@ -1114,7 +1063,6 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "NioApp",
   },
   {
@@ -1128,7 +1076,6 @@ export const Showcases = [
     category: "wallet",
     properties: ["nft", "mobile"],
     maintainerPick: false,
-    beginnerFriendly: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
@@ -1147,7 +1094,6 @@ export const Showcases = [
     category: "distribution",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "BeginWallet",
   },
   {
@@ -1161,7 +1107,6 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "stuff_io",
   },
   {
@@ -1175,7 +1120,6 @@ export const Showcases = [
     category: "identity",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-11-07-media-cardano-developer-office-hours/",
       title: "Cardano Developer Office Hours",
@@ -1193,7 +1137,6 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Adastack.io",
@@ -1206,7 +1149,6 @@ export const Showcases = [
     category: "ecosystem",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "adastackio",
   },
   {
@@ -1220,7 +1162,6 @@ export const Showcases = [
     category: "other",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Governance Voting Tool",
@@ -1233,7 +1174,6 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Andamio",
@@ -1246,7 +1186,6 @@ export const Showcases = [
     category: "identity",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "andamio_teams",
   },
   {
@@ -1265,7 +1204,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "FluidTokens",
@@ -1283,7 +1221,6 @@ export const Showcases = [
     category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "FluidTokens",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-02-03-february/",
@@ -1303,7 +1240,6 @@ export const Showcases = [
     category: "dex",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "GeniusyieldO",
   },
   {
@@ -1317,7 +1253,6 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "IagonOfficial",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-09-29-september/",
@@ -1337,7 +1272,6 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Splash",
@@ -1351,7 +1285,6 @@ export const Showcases = [
     category: "dex",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Palmyra",
@@ -1364,7 +1297,6 @@ export const Showcases = [
     category: "marketplace",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "palmeconomy",
   },
   {
@@ -1378,7 +1310,6 @@ export const Showcases = [
     category: "lending",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "OptimFi",
   },
   {
@@ -1392,7 +1323,6 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Empowa",
@@ -1405,7 +1335,6 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Strike Finance",
@@ -1420,7 +1349,6 @@ export const Showcases = [
     category: "dex",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: true,
     x: "strikeperps",
   },
   {
@@ -1434,7 +1362,6 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "snekdotfun",
   },
   {
@@ -1448,7 +1375,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "Xerberus",
   },
   {
@@ -1463,7 +1389,6 @@ export const Showcases = [
     category: "marketplace",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "MasumiNetwork",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-06-24-june/",
@@ -1482,7 +1407,6 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Butane",
@@ -1495,7 +1419,6 @@ export const Showcases = [
     category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Bodega Market",
@@ -1513,7 +1436,6 @@ export const Showcases = [
     category: "marketplace",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: true,
   },
   {
     title: "Infinity Rising",
@@ -1526,7 +1448,6 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "InfinityRisingX",
   },
   {
@@ -1540,7 +1461,6 @@ export const Showcases = [
     category: "notary",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Ascent Rivals",
@@ -1553,7 +1473,6 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "AscentRivals",
   },
   {
@@ -1567,7 +1486,6 @@ export const Showcases = [
     category: "game",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Ale & Axes",
@@ -1580,7 +1498,6 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Clarity Protocol",
@@ -1593,7 +1510,6 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Indigo",
@@ -1612,7 +1528,6 @@ export const Showcases = [
     category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "indigo_protocol",
   },
   {
@@ -1626,7 +1541,6 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "CGOV",
@@ -1639,7 +1553,6 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: true,
-    beginnerFriendly: false,
   },
   {
     title: "Sundae Treasury Dashboard",
@@ -1652,7 +1565,6 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Supply Summary",
@@ -1665,7 +1577,6 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "WanBridge",
@@ -1680,7 +1591,6 @@ export const Showcases = [
     category: "bridge",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "UVerify",
@@ -1698,7 +1608,6 @@ export const Showcases = [
     category: "notary",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "uvfyhq",
     spotlight: {
       url: "https://developers.cardano.org/blog/2025-06-13-media-cardano-developer-office-hours/",
@@ -1723,7 +1632,6 @@ export const Showcases = [
     category: "notary",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "CommitProof",
   },
   {
@@ -1738,7 +1646,6 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "TapDano",
@@ -1751,7 +1658,6 @@ export const Showcases = [
     category: "identity",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Claimpaign",
@@ -1771,7 +1677,6 @@ export const Showcases = [
     category: "distribution",
     properties: ["nft"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "claimpaign",
   },
   {
@@ -1790,7 +1695,6 @@ export const Showcases = [
     category: "marketplace",
     properties: ["nft"],
     maintainerPick: true,
-    beginnerFriendly: true,
     x: "wayupio",
   },
   {
@@ -1808,7 +1712,6 @@ export const Showcases = [
     category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "surfcardano",
   },
   {
@@ -1827,7 +1730,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "hizz_io",
   },
   {
@@ -1846,7 +1748,6 @@ export const Showcases = [
     category: "education",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "Bending AI",
@@ -1860,7 +1761,6 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
-    beginnerFriendly: false,
   },
   {
     title: "DRepTalk",
@@ -1879,7 +1779,6 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource", "drepdelegation"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "dreptalkcom",
   },
   {
@@ -1898,7 +1797,6 @@ export const Showcases = [
     category: "notary",
     properties: ["opensource"],
     maintainerPick: false,
-    beginnerFriendly: false,
     x: "EchoForgeEF",
   },
 ];
@@ -1957,7 +1855,6 @@ function ensureShowcaseValid(showcase) {
       "category",
       "properties",
       "maintainerPick",
-      "beginnerFriendly",
       "icon",
       "statsLabel",
       "metadataLabel",
@@ -2047,7 +1944,7 @@ function ensureShowcaseValid(showcase) {
   }
 
   function checkBooleanFlags() {
-    for (const key of ["maintainerPick", "beginnerFriendly"]) {
+    for (const key of ["maintainerPick"]) {
       if (typeof showcase[key] !== "boolean") {
         throw new Error(`${key} must be a boolean, got ${typeof showcase[key]}`);
       }
@@ -2103,6 +2000,70 @@ function ensureShowcaseValid(showcase) {
     }
   }
 
+  // walletFeatures drives the filters on /wallets. Unknown values used to build
+  // fine and just dropped the wallet out of the matching filter without a word,
+  // so every value is checked against the lists in walletFeatures.js.
+  function checkWalletFeatures() {
+    const wf = showcase.walletFeatures;
+    if (wf === undefined) {
+      if (showcase.category === "wallet") {
+        throw new Error(
+          "Wallet entries must define walletFeatures {platforms, custody, features, type}.\nWithout it the wallet never appears in the wallet finder on /wallets."
+        );
+      }
+      return;
+    }
+    if (!wf || typeof wf !== "object" || Array.isArray(wf)) {
+      throw new Error(
+        "walletFeatures must be an object {platforms, custody, features, type}"
+      );
+    }
+    const unknownKeys = difference(Object.keys(wf), [
+      "platforms",
+      "custody",
+      "features",
+      "type",
+    ]);
+    if (unknownKeys.length > 0) {
+      throw new Error(
+        `walletFeatures contains unknown attribute names=[${unknownKeys.join(",")}]`
+      );
+    }
+
+    // platforms must name at least one, features may legitimately be empty
+    for (const [key, allowed, required] of [
+      ["platforms", WalletPlatformList, true],
+      ["features", WalletFeatureList, false],
+    ]) {
+      const value = wf[key];
+      if (!Array.isArray(value)) {
+        throw new Error(
+          `walletFeatures.${key} must be an array, got ${typeof value}`
+        );
+      }
+      if (required && value.length === 0) {
+        throw new Error(`walletFeatures.${key} must list at least one value`);
+      }
+      const unknown = difference(value, allowed);
+      if (unknown.length > 0) {
+        throw new Error(
+          `Unknown walletFeatures.${key}=[${unknown.join(",")}]\nAvailable ${key}: ${allowed.join(", ")}`
+        );
+      }
+    }
+
+    for (const [key, allowed] of [
+      ["custody", WalletCustodyList],
+      ["type", WalletNodeTypeList],
+    ]) {
+      if (!allowed.includes(wf[key])) {
+        throw new Error(
+          `Unknown walletFeatures.${key}=${JSON.stringify(wf[key])}\nAvailable ${key}: ${allowed.join(", ")}`
+        );
+      }
+    }
+  }
+
   function checkSpotlight() {
     if (showcase.spotlight === undefined) return;
     const s = showcase.spotlight;
@@ -2133,6 +2094,7 @@ function ensureShowcaseValid(showcase) {
     checkMetadataLabel();
     checkX();
     checkSpotlight();
+    checkWalletFeatures();
   } catch (e) {
     throw new Error(
       `Showcase site with title=${showcase.title} contains errors:\n${e.message}`,

@@ -47,7 +47,7 @@ const loadingFallback = (
 export default function DelegatePage() {
   return (
     <Layout
-      title={translate({ id: "governance.delegate.layout.title", message: "Delegate to a DRep — Cardano Governance" })}
+      title={translate({ id: "governance.delegate.layout.title", message: "Delegate to a DRep - Cardano Governance" })}
       description={translate({
         id: "governance.delegate.layout.description",
         message: "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps.",
