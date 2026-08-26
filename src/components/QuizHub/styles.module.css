@@ -83,12 +83,11 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  /* Without this, grid's default stretch makes every card in a row match
-     the tallest one, which then feeds extra height into the flex-grown
-     description below and defeats its two-line clamp. Each card sizes to
-     its own content instead, and the clamp is what keeps them close in
-     height. */
-  align-items: start;
+  /* Default stretch: every card in a row matches the tallest one. The
+     description no longer has flex-grow (see .cardDescription), so it
+     can't be inflated past its own two-line clamp by that extra height,
+     and .cardCta's margin-top: auto absorbs the leftover space instead,
+     keeping CTAs aligned across the row. */
   gap: var(--site-space-md);
 }
 
@@ -186,7 +185,6 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex: 1;
   margin: 0 0 var(--site-space-xs);
   line-height: 1.5;
   color: var(--ifm-color-emphasis-700);
@@ -228,7 +226,12 @@
 .cardCta {
   display: block;
   width: 100%;
-  margin: 0;
+  /* Pins the CTA to the bottom of the card: with the grid back on default
+     stretch, every card in a row shares the tallest card's height, and this
+     auto margin absorbs whatever space the shorter content above leaves,
+     so CTAs line up across the row regardless of description or progress
+     line length. */
+  margin: auto 0 0;
   padding: var(--site-space-xs) var(--site-space-sm);
   background: var(--ifm-color-primary);
   color: var(--ifm-color-white);
