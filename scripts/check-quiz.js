@@ -13,6 +13,7 @@ const ALLOWED_SOURCE_HOSTS = [
   'developers.cardano.org',
   'cips.cardano.org',
   'essentialcardano.io',
+  'roadmap.cardano.org',
   'cardanofoundation.org',
 ];
 const TYPOGRAPHIC_DASH = /[–—―]|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;/i;
