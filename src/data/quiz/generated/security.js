@@ -5,7 +5,7 @@ import {translate} from '@docusaurus/Translate';
 export function getQuizData() {
   return {
     id: "security",
-    title: translate({id: "quiz.security.title", message: "Common Scams Awareness Quiz"}),
+    title: translate({id: "quiz.security.title", message: "Scams and Security"}),
     description: translate({id: "quiz.security.description", message: "Test your knowledge about common scams in the blockchain space and how to protect yourself."}),
     questionCount: 5,
     difficulty: "beginner",
