@@ -120,10 +120,7 @@ const QuizCard = ({ entry, saved, tiers, difficulties, onRecord }) => {
           {translate({id: 'quiz.hub.timeEstimate', message: '~{minutes} min'}, {minutes})}
         </span>
         <span className={clsx(styles.badge, styles.badgeNeutral)}>
-          {translate(
-            {id: 'quiz.hub.questionsFromPool', message: '{count} of {pool} questions'},
-            {count: data.questionCount, pool: data.questions.length},
-          )}
+          {translate({id: 'quiz.hub.questionCount', message: '{count} questions'}, {count: data.questionCount})}
         </span>
       </div>
       <p className={styles.cardDescription}>{data.description}</p>
