@@ -3,20 +3,64 @@
   margin: 0 auto;
 }
 
-.progressPanel {
+/* Reserve enough room for the taller "played" variant (medal row, summary
+   line, reset button) so swapping in from the shorter invitation line after
+   mount never shifts the card grid below it. */
+.progressBand {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--site-space-xs);
+  min-height: calc(var(--site-space-3xl) + var(--site-space-lg));
   padding: var(--site-space-sm) var(--site-space-md);
   margin-bottom: var(--site-space-md);
   background: var(--ifm-background-surface-color);
   border-radius: var(--site-radius-lg);
   box-shadow: var(--site-shadow-sm);
+  text-align: center;
 }
 
-.points {
+.progressInvite {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.medalRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--site-space-md);
+}
+
+.medal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-3xs);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.medalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.medal_gold .medalDot {
+  background: var(--site-tier-gold);
+}
+
+.medal_silver .medalDot {
+  background: var(--site-tier-silver);
+}
+
+.medal_bronze .medalDot {
+  background: var(--site-tier-bronze);
+}
+
+.progressSummary {
   margin: 0;
   font-weight: 600;
   color: var(--ifm-heading-color);

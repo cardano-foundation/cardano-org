@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
 import QuizModal from '@site/src/components/QuizModal';
 import useQuizProgress from '@site/src/utils/useQuizProgress';
@@ -6,6 +7,7 @@ import { totalPoints } from '@site/src/utils/quizProgress.mjs';
 import { getQuizCatalog } from '@site/src/data/quiz/catalog';
 import { getAcademyCta } from '@site/src/data/quiz/academy';
 import { getTierLabels } from '@site/src/data/quiz/tierLabels';
+import { getCatalogStats } from './catalogStats';
 import styles from './styles.module.css';
 
 // Only bronze/silver/gold ever appear here, "learning" progress is not
@@ -16,16 +18,61 @@ const difficultyLabels = () => ({
   advanced: translate({id: 'quiz.difficulty.advanced', message: 'Advanced'}),
 });
 
-const ProgressPanel = ({ progress, onReset }) => {
-  const points = totalPoints(progress);
+// Sits directly under the hero, above the card grid. Always renders (never
+// null) so its footprint never appears out of nowhere: on the server and on
+// the very first client render `progress` is the empty default from
+// useLocalStorage, the real value swaps in after mount. The min-height on
+// the wrapping styles.progressBand covers that swap without shifting the
+// grid below it.
+const ProgressBand = ({ progress, catalogStats, onReset }) => {
+  const tiers = getTierLabels();
   const played = Object.keys(progress.quizzes).length;
-  if (played === 0) return null;
+
+  if (played === 0) {
+    return (
+      <div className={styles.progressBand}>
+        <p className={styles.progressInvite}>
+          {translate({id: 'quiz.hub.progressInvite', message: 'Play a quiz to start earning medals. Your progress stays in this browser.'})}
+        </p>
+      </div>
+    );
+  }
+
+  const tierCounts = { gold: 0, silver: 0, bronze: 0 };
+  Object.values(progress.quizzes).forEach((quiz) => {
+    if (quiz.tier in tierCounts) tierCounts[quiz.tier] += 1;
+  });
+  const scored = totalPoints(progress).scored;
+
   return (
-    <div className={styles.progressPanel}>
-      <p className={styles.points}>
-        {translate({id: 'quiz.hub.points', message: '{scored} of {possible} points earned'}, points)}
+    <div className={styles.progressBand}>
+      <div className={styles.medalRow}>
+        <span className={clsx(styles.medal, styles.medal_gold)}>
+          <span className={styles.medalDot} aria-hidden="true" />
+          {translate({id: 'quiz.hub.medalsGold', message: '{count} gold'}, {count: tierCounts.gold})}
+        </span>
+        <span className={clsx(styles.medal, styles.medal_silver)}>
+          <span className={styles.medalDot} aria-hidden="true" />
+          {translate({id: 'quiz.hub.medalsSilver', message: '{count} silver'}, {count: tierCounts.silver})}
+        </span>
+        <span className={clsx(styles.medal, styles.medal_bronze)}>
+          <span className={styles.medalDot} aria-hidden="true" />
+          {translate({id: 'quiz.hub.medalsBronze', message: '{count} bronze'}, {count: tierCounts.bronze})}
+        </span>
+      </div>
+      <p className={styles.progressSummary}>
+        {translate(
+          {id: 'quiz.hub.quizzesCompleted', message: '{count} of {total} quizzes completed'},
+          {count: played, total: catalogStats.quizCount},
+        )}
+        {' · '}
+        {translate(
+          {id: 'quiz.hub.points', message: '{scored} of {possible} points earned'},
+          {scored, possible: catalogStats.totalRunQuestions},
+        )}
       </p>
       <button
+        type="button"
         onClick={() => {
           if (window.confirm(translate({id: 'quiz.hub.resetConfirm', message: 'Delete your quiz progress? This cannot be undone.'}))) {
             onReset();
@@ -45,12 +92,13 @@ const ProgressPanel = ({ progress, onReset }) => {
 const QuizHub = () => {
   const { progress, record, reset } = useQuizProgress();
   const catalog = getQuizCatalog();
+  const catalogStats = getCatalogStats();
   const tiers = getTierLabels();
   const difficulties = difficultyLabels();
 
   return (
     <div className={styles.hub}>
-      <ProgressPanel progress={progress} onReset={reset} />
+      <ProgressBand progress={progress} catalogStats={catalogStats} onReset={reset} />
       <div className={styles.grid}>
         {catalog.map((entry) => {
           const data = entry.getData();
