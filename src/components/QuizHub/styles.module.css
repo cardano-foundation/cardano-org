@@ -93,9 +93,18 @@
 
 .card {
   position: relative;
+  /* z-index: 0 (not just position: relative) is what makes .card establish
+     its own stacking context, so .cardWatermark's negative z-index is
+     scoped locally and paints above .card's own background instead of
+     escaping to whatever ancestor context happens to be next, where it
+     would be hidden behind an unrelated opaque background. */
+  z-index: 0;
   display: flex;
   flex-direction: column;
-  padding: var(--site-space-md);
+  overflow: hidden;
+  /* Tighter top padding than the other three sides: the title leads now
+     that the icon moved off the layout flow and into the background. */
+  padding: var(--site-space-sm) var(--site-space-md) var(--site-space-md);
   background: var(--ifm-background-surface-color);
   border-radius: var(--site-radius-lg);
   box-shadow: var(--site-shadow-sm);
@@ -118,22 +127,29 @@
   }
 }
 
-/* Doubled selector beats IconHero's own single-class specificity so the
-   default 120px/52px hero tile shrinks to fit a compact card, regardless of
-   stylesheet load order. IconHero always renders a single child div for the
-   inner tile, so ">div" reaches it without needing its (module-hashed)
-   class name. */
-.cardIcon.cardIcon {
-  width: var(--site-space-xl);
-  height: var(--site-space-xl);
-  margin-bottom: var(--site-space-2xs);
+/* Icon experiment: a quiet identity mark rather than a badge. Absolutely
+   positioned behind the card's own content (negative z-index, scoped to
+   the stacking context .card's position: relative establishes) and bled
+   slightly past the padding box, clipped by .card's overflow: hidden so it
+   never breaks the rounded corners. Opacity is low enough that it reads as
+   texture, not an icon competing with the title. Revert: delete this rule
+   and the two below it, restore the IconHero usage removed from index.js. */
+.cardWatermark {
+  position: absolute;
+  top: calc(-1 * var(--site-space-sm));
+  left: calc(-1 * var(--site-space-sm));
+  z-index: -1;
+  width: calc(var(--site-space-3xl) + var(--site-space-2xs));
+  height: calc(var(--site-space-3xl) + var(--site-space-2xs));
+  color: var(--ifm-color-primary);
+  opacity: 0.07;
 }
 
-.cardIcon.cardIcon > div {
-  width: var(--site-space-lg);
-  height: var(--site-space-lg);
-  border-radius: var(--site-radius-md);
-  font-size: 1.1rem;
+/* Dark surfaces need a stronger tint for the same mark to stay visible at
+   all; still faint enough that text stays fully legible on top (see the
+   contrast ratios in the redesign report). */
+[data-theme='dark'] .cardWatermark {
+  opacity: 0.14;
 }
 
 .cardTitle {

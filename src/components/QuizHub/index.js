@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
 import { FaNetworkWired, FaKey, FaLayerGroup, FaUniversity, FaMicrochip } from 'react-icons/fa';
 import { BsShieldExclamation } from 'react-icons/bs';
-import IconHero from '@site/src/components/Layout/IconHero';
 import QuizModal from '@site/src/components/QuizModal';
 import useQuizProgress from '@site/src/utils/useQuizProgress';
 import { totalPoints } from '@site/src/utils/quizProgress.mjs';
@@ -108,9 +107,7 @@ const QuizCard = ({ entry, saved, tiers, difficulties, onRecord }) => {
 
   return (
     <div className={styles.card}>
-      <IconHero withHalo={false} className={styles.cardIcon}>
-        <Icon />
-      </IconHero>
+      <Icon className={styles.cardWatermark} aria-hidden="true" />
       <h3 className={styles.cardTitle}>{data.title}</h3>
       <div className={styles.badgeRow}>
         <span className={clsx(styles.badge, styles[`badge_${data.difficulty}`])}>
