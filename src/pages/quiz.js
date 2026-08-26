@@ -18,7 +18,7 @@ export default function QuizPage() {
   return (
     <Layout
       title={translate({id: 'quiz.page.title', message: 'Cardano Quiz: Test Your Knowledge'})}
-      description={translate({id: 'quiz.page.description', message: 'How well do you know Cardano? Take a free quiz on wallet security and common scams. No sign-up, your progress stays in your browser.'})}
+      description={translate({id: 'quiz.page.description', message: 'How well do you know Cardano? Take free quizzes on the basics, wallets, security, staking, governance and the tech underneath. No sign-up, your progress stays in your browser.'})}
     >
       <OpenGraphInfo pageName="quiz" />
       <SiteHero
