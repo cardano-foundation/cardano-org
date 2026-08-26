@@ -14,3 +14,9 @@ export function getCatalogStats() {
   const estimatedMinutes = Math.round((totalRunQuestions * 30) / 60 / 5) * 5;
   return { quizCount, totalPoolQuestions, totalRunQuestions, estimatedMinutes };
 }
+
+// Per-quiz time estimate for the card badge row, rounded to the nearest
+// minute (unlike the coarser 5-minute rounding used for the hero total).
+export function estimateQuizMinutes(questionCount) {
+  return Math.max(1, Math.round((questionCount * 30) / 60));
+}

@@ -1,14 +1,28 @@
 import React from 'react';
 import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
+import { FaNetworkWired, FaKey, FaLayerGroup, FaUniversity, FaMicrochip } from 'react-icons/fa';
+import { BsShieldExclamation } from 'react-icons/bs';
+import IconHero from '@site/src/components/Layout/IconHero';
 import QuizModal from '@site/src/components/QuizModal';
 import useQuizProgress from '@site/src/utils/useQuizProgress';
 import { totalPoints } from '@site/src/utils/quizProgress.mjs';
 import { getQuizCatalog } from '@site/src/data/quiz/catalog';
 import { getAcademyCta } from '@site/src/data/quiz/academy';
 import { getTierLabels } from '@site/src/data/quiz/tierLabels';
-import { getCatalogStats } from './catalogStats';
+import { getCatalogStats, estimateQuizMinutes } from './catalogStats';
 import styles from './styles.module.css';
+
+// One topic icon per quiz id, all rendered in brand blue through IconHero's
+// own tile styling, never one color per topic.
+const TOPIC_ICONS = {
+  basics: FaNetworkWired,
+  wallets: FaKey,
+  security: BsShieldExclamation,
+  staking: FaLayerGroup,
+  governance: FaUniversity,
+  technical: FaMicrochip,
+};
 
 // Only bronze/silver/gold ever appear here, "learning" progress is not
 // tier-badged on the hub cards.
@@ -86,6 +100,56 @@ const ProgressBand = ({ progress, catalogStats, onReset }) => {
   );
 };
 
+const QuizCard = ({ entry, saved, tiers, difficulties, onRecord }) => {
+  const data = entry.getData();
+  const Icon = TOPIC_ICONS[entry.id];
+  const savedTier = saved && saved.tier !== 'learning' ? saved.tier : null;
+  const minutes = estimateQuizMinutes(data.questionCount);
+
+  return (
+    <div className={styles.card}>
+      <IconHero withHalo={false} className={styles.cardIcon}>
+        <Icon />
+      </IconHero>
+      <h3 className={styles.cardTitle}>{data.title}</h3>
+      <div className={styles.badgeRow}>
+        <span className={clsx(styles.badge, styles[`badge_${data.difficulty}`])}>
+          {difficulties[data.difficulty]}
+        </span>
+        <span className={clsx(styles.badge, styles.badgeNeutral)}>
+          {translate({id: 'quiz.hub.timeEstimate', message: '~{minutes} min'}, {minutes})}
+        </span>
+        <span className={clsx(styles.badge, styles.badgeNeutral)}>
+          {translate(
+            {id: 'quiz.hub.questionsFromPool', message: '{count} of {pool} questions'},
+            {count: data.questionCount, pool: data.questions.length},
+          )}
+        </span>
+      </div>
+      <p className={styles.cardDescription}>{data.description}</p>
+      {saved && (
+        <p className={styles.cardProgress}>
+          {savedTier && (
+            <span className={clsx(styles.tierChip, styles[`tier_${savedTier}`])}>
+              {tiers[savedTier]}
+            </span>
+          )}
+          {translate({id: 'quiz.hub.bestScore', message: 'Best {best} of {outOf}'}, {best: saved.best, outOf: saved.outOf})}
+        </p>
+      )}
+      <QuizModal
+        quizData={data}
+        questionCount={data.questionCount}
+        allowRetry={false}
+        onRecord={onRecord}
+        academyCta={getAcademyCta(entry.academyKey, entry.id)}
+        buttonText={translate({id: 'quiz.hub.start', message: 'Start quiz'})}
+        buttonClassName={styles.cardCta}
+      />
+    </div>
+  );
+};
+
 // Owns the single quiz progress instance for the page. Every quiz gets a
 // scoped record callback, so finishing a run updates the hub immediately
 // (tier chips and points re-render without a reload).
@@ -100,35 +164,16 @@ const QuizHub = () => {
     <div className={styles.hub}>
       <ProgressBand progress={progress} catalogStats={catalogStats} onReset={reset} />
       <div className={styles.grid}>
-        {catalog.map((entry) => {
-          const data = entry.getData();
-          const saved = progress.quizzes[entry.id];
-          const savedTier = saved && saved.tier !== 'learning' ? saved.tier : null;
-          return (
-            <div key={entry.id} className={styles.card}>
-              {savedTier && (
-                <span className={`${styles.tierChip} ${styles[`tier_${savedTier}`]}`}>
-                  {tiers[savedTier]}
-                </span>
-              )}
-              <h3 className={styles.cardTitle}>{data.title}</h3>
-              <p className={styles.cardMeta}>
-                {difficulties[data.difficulty]}
-                {' · '}
-                {translate({id: 'quiz.hub.questionCount', message: '{count} questions'}, {count: data.questionCount})}
-              </p>
-              <p className={styles.cardDescription}>{data.description}</p>
-              <QuizModal
-                quizData={data}
-                questionCount={data.questionCount}
-                allowRetry={false}
-                onRecord={(correct, total) => record(entry.id, correct, total)}
-                academyCta={getAcademyCta(entry.academyKey, entry.id)}
-                buttonText={translate({id: 'quiz.hub.start', message: 'Start quiz'})}
-              />
-            </div>
-          );
-        })}
+        {catalog.map((entry) => (
+          <QuizCard
+            key={entry.id}
+            entry={entry}
+            saved={progress.quizzes[entry.id]}
+            tiers={tiers}
+            difficulties={difficulties}
+            onRecord={(correct, total) => record(entry.id, correct, total)}
+          />
+        ))}
       </div>
     </div>
   );

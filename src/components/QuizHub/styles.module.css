@@ -83,6 +83,12 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Without this, grid's default stretch makes every card in a row match
+     the tallest one, which then feeds extra height into the flex-grown
+     description below and defeats its two-line clamp. Each card sizes to
+     its own content instead, and the clamp is what keeps them close in
+     height. */
+  align-items: start;
   gap: var(--site-space-md);
 }
 
@@ -94,13 +100,111 @@
   background: var(--ifm-background-surface-color);
   border-radius: var(--site-radius-lg);
   box-shadow: var(--site-shadow-sm);
+  transition: transform var(--site-duration-base) var(--site-ease),
+    box-shadow var(--site-duration-base) var(--site-ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--site-shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Doubled selector beats IconHero's own single-class specificity so the
+   default 120px/52px hero tile shrinks to fit a compact card, regardless of
+   stylesheet load order. IconHero always renders a single child div for the
+   inner tile, so ">div" reaches it without needing its (module-hashed)
+   class name. */
+.cardIcon.cardIcon {
+  width: var(--site-space-xl);
+  height: var(--site-space-xl);
+  margin-bottom: var(--site-space-2xs);
+}
+
+.cardIcon.cardIcon > div {
+  width: var(--site-space-lg);
+  height: var(--site-space-lg);
+  border-radius: var(--site-radius-md);
+  font-size: 1.1rem;
+}
+
+.cardTitle {
+  margin: 0 0 var(--site-space-2xs);
+  font-size: 1.125rem;
+  color: var(--ifm-heading-color);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-3xs);
+  margin-bottom: var(--site-space-2xs);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--site-space-3xs) var(--site-space-2xs);
+  border-radius: var(--site-radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badgeNeutral {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+.badge_beginner {
+  background: color-mix(in srgb, var(--site-success) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.badge_intermediate {
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--ifm-color-primary) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.badge_advanced {
+  background: color-mix(in srgb, var(--site-warning) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--site-warning) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.cardDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  margin: 0 0 var(--site-space-xs);
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.cardProgress {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-xs);
+  margin: 0 0 var(--site-space-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
 }
 
 .tierChip {
-  align-self: flex-start;
   display: inline-block;
   padding: var(--site-space-3xs) var(--site-space-sm);
-  margin-bottom: var(--site-space-xs);
   border-radius: var(--site-radius-pill);
   font-size: 0.8125rem;
   font-weight: 700;
@@ -121,23 +225,26 @@
   color: var(--site-tier-ink);
 }
 
-.cardTitle {
-  margin: 0 0 var(--site-space-3xs);
-  font-size: 1.125rem;
-  color: var(--ifm-heading-color);
+.cardCta {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: var(--site-space-xs) var(--site-space-sm);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  border: none;
+  border-radius: var(--site-radius-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--site-duration-base) var(--site-ease);
 }
 
-.cardMeta {
-  margin: 0 0 var(--site-space-xs);
-  font-size: 0.8125rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--ifm-color-emphasis-600);
+.cardCta:hover {
+  background: var(--ifm-color-primary-dark);
 }
 
-.cardDescription {
-  flex: 1;
-  margin: 0 0 var(--site-space-sm);
-  line-height: 1.5;
-  color: var(--ifm-color-emphasis-700);
+.card:hover .cardCta {
+  background: var(--ifm-color-primary-dark);
 }
