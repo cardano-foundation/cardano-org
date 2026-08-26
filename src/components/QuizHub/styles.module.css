@@ -131,13 +131,16 @@
    positioned behind the card's own content (negative z-index, scoped to
    the stacking context .card's position: relative establishes) and bled
    slightly past the padding box, clipped by .card's overflow: hidden so it
-   never breaks the rounded corners. Opacity is low enough that it reads as
+   never breaks the rounded corners. Top right on purpose: title and badge
+   text both start at the left edge, so anchoring there would sit directly
+   behind their leading characters. Top right only ever sits behind the
+   shorter trailing end of a line. Opacity is low enough that it reads as
    texture, not an icon competing with the title. Revert: delete this rule
    and the two below it, restore the IconHero usage removed from index.js. */
 .cardWatermark {
   position: absolute;
   top: calc(-1 * var(--site-space-sm));
-  left: calc(-1 * var(--site-space-sm));
+  right: calc(-1 * var(--site-space-sm));
   z-index: -1;
   width: calc(var(--site-space-3xl) + var(--site-space-2xs));
   height: calc(var(--site-space-3xl) + var(--site-space-2xs));
