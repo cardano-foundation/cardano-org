@@ -4311,7 +4311,7 @@
     "message": "Cardano Quiz: Test Your Knowledge"
   },
   "quiz.page.description": {
-    "message": "How well do you know Cardano? Take a free quiz on wallet security and common scams. No sign-up, your progress stays in your browser."
+    "message": "How well do you know Cardano? Take free quizzes on the basics, wallets, security, staking, governance and the tech underneath. No sign-up, your progress stays in your browser."
   },
   "quiz.hero.title": {
     "message": "Test your knowledge"
@@ -4401,22 +4401,22 @@
     "message": "Test your knowledge about common scams in the blockchain space and how to protect yourself."
   },
   "quiz.security.security-1.question": {
-    "message": "What should you do if someone contacts you claiming to be official Cardano support?"
+    "message": "What is one common way the fake tech support scam begins, according to Cardano's own scam-awareness guidance?"
   },
   "quiz.security.security-1.option0": {
-    "message": "Ignore them and never share your recovery phrase or private keys"
+    "message": "A newcomer asks a wallet question in a chat channel, and a scammer replies first, posing as official support"
   },
   "quiz.security.security-1.option1": {
-    "message": "Share your recovery phrase so they can help fix your wallet"
+    "message": "A newcomer receives an unsolicited phone call from a number claiming to be Cardano Foundation support"
   },
   "quiz.security.security-1.option2": {
-    "message": "Send them ada to verify your wallet ownership"
+    "message": "A newcomer's wallet app shows an in-app pop-up asking them to verify their identity"
   },
   "quiz.security.security-1.option3": {
-    "message": "Trust them if they have a verified-looking profile picture"
+    "message": "A newcomer receives a letter in the mail claiming to be from IOG support"
   },
   "quiz.security.security-1.explanation": {
-    "message": "Legitimate support staff will never contact you first in a private message and will never ask for your recovery phrase, passwords, or private keys. Anyone asking for this information is a scammer."
+    "message": "Cardano's common scams page describes this pattern under its Fake Tech Support section: scammers watch for a new user entering a channel and asking a question about a wallet, then quickly respond, pretending to be official support. The page also notes fraudsters often reach out via social media, forums, or email, so this is one common way the scam begins, not the only one. The tell is a stranger racing to post the first reply to a genuine question, before any real support has a chance to answer."
   },
   "quiz.security.security-2.question": {
     "message": "A live stream promises to double your ada if you send it to a specific wallet. What is this?"
@@ -4434,7 +4434,7 @@
     "message": "A normal way to earn more ada"
   },
   "quiz.security.security-2.explanation": {
-    "message": "This is the classic Ada Giveaway Scam. Legitimate giveaways never ask you to send money first. Even if the stream shows Charles Hoskinson or other well-known figures, it's fake. Once you send your ada, it's gone forever."
+    "message": "This is the classic ada giveaway scam. Legitimate giveaways never ask you to send money first. Even if the stream shows Charles Hoskinson or other well-known figures, it's fake. Once you send your ada, it's gone forever."
   },
   "quiz.security.security-3.question": {
     "message": "What happens if someone gains access to your recovery phrase (seed words)?"
@@ -4515,7 +4515,7 @@
     "message": "Share your recovery phrase so they can diagnose the problem"
   },
   "quiz.security.security-7.option1": {
-    "message": "Never engage - legitimate moderators don't contact users first via private messages"
+    "message": "Never engage, legitimate moderators don't contact users first via private messages"
   },
   "quiz.security.security-7.option2": {
     "message": "Send them ada to verify your identity"
@@ -4566,19 +4566,19 @@
     "message": "Once you send ada to a scammer, what are your chances of recovery?"
   },
   "quiz.security.security-10.option0": {
-    "message": "High - you can contact Cardano support to reverse the transaction"
+    "message": "High: you can contact Cardano support to reverse the transaction"
   },
   "quiz.security.security-10.option1": {
-    "message": "Medium - the blockchain will automatically refund you"
+    "message": "Medium: the blockchain will automatically refund you"
   },
   "quiz.security.security-10.option2": {
-    "message": "Zero - once sent, the ada is gone forever with no way to recover it"
+    "message": "Zero: once sent, the ada is gone forever with no way to recover it"
   },
   "quiz.security.security-10.option3": {
-    "message": "Good - if you report it quickly enough"
+    "message": "Good: if you report it quickly enough"
   },
   "quiz.security.security-10.explanation": {
-    "message": "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical - there is no safety net or customer service to help you."
+    "message": "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical: there is no safety net or customer service to help you."
   },
   "quiz.basics.title": {
     "message": "Cardano Basics"
