@@ -39,12 +39,12 @@ html[data-theme='dark'] .quizHeader {
 }
 
 .questionCard.correct {
-  background: color-mix(in srgb, var(--site-success) 10%, transparent);
+  background: color-mix(in srgb, var(--site-success) 10%, var(--ifm-background-surface-color));
   border-color: var(--site-success);
 }
 
 .questionCard.incorrect {
-  background: color-mix(in srgb, var(--site-danger) 10%, transparent);
+  background: color-mix(in srgb, var(--site-danger) 10%, var(--ifm-background-surface-color));
   border-color: var(--site-danger);
 }
 
@@ -181,20 +181,20 @@ html[data-theme='dark'] .optionButton.selected {
 
 .optionButton.correctOption {
   border-color: var(--site-success);
-  background: color-mix(in srgb, var(--site-success) 12%, transparent);
+  background: color-mix(in srgb, var(--site-success) 12%, var(--ifm-background-surface-color));
 }
 
 html[data-theme='dark'] .optionButton.correctOption {
-  background: color-mix(in srgb, var(--site-success) 20%, transparent);
+  background: color-mix(in srgb, var(--site-success) 20%, var(--ifm-background-surface-color));
 }
 
 .optionButton.incorrectOption {
   border-color: var(--site-danger);
-  background: color-mix(in srgb, var(--site-danger) 12%, transparent);
+  background: color-mix(in srgb, var(--site-danger) 12%, var(--ifm-background-surface-color));
 }
 
 html[data-theme='dark'] .optionButton.incorrectOption {
-  background: color-mix(in srgb, var(--site-danger) 20%, transparent);
+  background: color-mix(in srgb, var(--site-danger) 20%, var(--ifm-background-surface-color));
 }
 
 .optionLabel {
@@ -326,12 +326,12 @@ html[data-theme='dark'] .explanation {
 }
 
 .resultCard.success {
-  background: color-mix(in srgb, var(--site-success) 10%, transparent);
+  background: color-mix(in srgb, var(--site-success) 10%, var(--ifm-background-surface-color));
   border-color: var(--site-success);
 }
 
 .resultCard.failure {
-  background: color-mix(in srgb, var(--site-danger) 10%, transparent);
+  background: color-mix(in srgb, var(--site-danger) 10%, var(--ifm-background-surface-color));
   border-color: var(--site-danger);
 }
 
