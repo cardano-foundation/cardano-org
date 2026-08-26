@@ -243,7 +243,9 @@
 }
 
 .cardCta {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   /* Pins the CTA to the bottom of the card: with the grid back on default
      stretch, every card in a row shares the tallest card's height, and this
@@ -251,6 +253,9 @@
      so CTAs line up across the row regardless of description or progress
      line length. */
   margin: auto 0 0;
+  /* 44px meets the mobile touch-target minimum, the padding alone was a
+     couple pixels short. */
+  min-height: 44px;
   padding: var(--site-space-xs) var(--site-space-sm);
   background: var(--ifm-color-primary);
   color: var(--ifm-color-white);

@@ -273,6 +273,13 @@ html[data-theme='dark'] .explanation {
 .checkButton,
 .primaryButton,
 .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px meets the mobile touch-target minimum for all four quiz action
+     buttons (Check answer, Next question/Finish quiz, Try again, and the
+     review-mistakes button), which otherwise land a couple pixels short. */
+  min-height: 44px;
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
