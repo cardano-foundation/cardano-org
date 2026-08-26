@@ -4379,6 +4379,45 @@
   "quiz.hub.start": {
     "message": "Start quiz"
   },
+  "quiz.hub.statQuizzesLabel": {
+    "message": "Quizzes"
+  },
+  "quiz.hub.statQuestionsLabel": {
+    "message": "Questions"
+  },
+  "quiz.hub.timeEstimate": {
+    "message": "~{minutes} min"
+  },
+  "quiz.hub.statTimeLabel": {
+    "message": "Total time"
+  },
+  "quiz.hub.statPrivacyValue": {
+    "message": "100% local"
+  },
+  "quiz.hub.statPrivacyLabel": {
+    "message": "Progress stays in your browser"
+  },
+  "quiz.hub.progressInvite": {
+    "message": "Play a quiz to start earning medals. Your progress stays in this browser."
+  },
+  "quiz.hub.medalsGold": {
+    "message": "{count} gold"
+  },
+  "quiz.hub.medalsSilver": {
+    "message": "{count} silver"
+  },
+  "quiz.hub.medalsBronze": {
+    "message": "{count} bronze"
+  },
+  "quiz.hub.quizzesCompleted": {
+    "message": "{count} of {total} quizzes completed"
+  },
+  "quiz.hub.questionsFromPool": {
+    "message": "{count} of {pool} questions"
+  },
+  "quiz.hub.bestScore": {
+    "message": "Best {best} of {outOf}"
+  },
   "quiz.share.headline": {
     "message": "Cardano Quiz: {quizTitle}"
   },
