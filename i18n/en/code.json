@@ -4580,6 +4580,1224 @@
   "quiz.security.security-10.explanation": {
     "message": "Blockchain transactions are irreversible. Once you send ada to a scammer, it's gone forever with no way to recover it. This is why prevention and awareness are so critical - there is no safety net or customer service to help you."
   },
+  "quiz.basics.title": {
+    "message": "Cardano Basics"
+  },
+  "quiz.basics.description": {
+    "message": "How well do you know the fundamentals? Ada, lovelace, Ouroboros, and Cardano's development phases."
+  },
+  "quiz.basics.basics-1.question": {
+    "message": "What is Cardano?"
+  },
+  "quiz.basics.basics-1.option0": {
+    "message": "A decentralized proof-of-stake blockchain platform"
+  },
+  "quiz.basics.basics-1.option1": {
+    "message": "A centralized payment company that issues its own bank cards"
+  },
+  "quiz.basics.basics-1.option2": {
+    "message": "A proof-of-work cryptocurrency mining network"
+  },
+  "quiz.basics.basics-1.option3": {
+    "message": "A single smartphone wallet app for storing cryptocurrencies"
+  },
+  "quiz.basics.basics-1.explanation": {
+    "message": "Cardano is described in its own documentation as \"a decentralized third-generation proof-of-stake blockchain platform,\" meaning no single company or authority controls it. It secures the network through staked ada rather than the energy-intensive mining used by proof-of-work systems like Bitcoin. The \"third-generation\" label reflects that Cardano was built after Bitcoin and Ethereum, incorporating lessons from both, and it is a platform, not a company, a mining network, or a single app."
+  },
+  "quiz.basics.basics-2.question": {
+    "message": "What is ada?"
+  },
+  "quiz.basics.basics-2.option0": {
+    "message": "Cardano's native cryptocurrency, used for fees, deposits, and staking rewards"
+  },
+  "quiz.basics.basics-2.option1": {
+    "message": "A separate blockchain that runs alongside Cardano"
+  },
+  "quiz.basics.basics-2.option2": {
+    "message": "The name of Cardano's official mobile wallet app"
+  },
+  "quiz.basics.basics-2.option3": {
+    "message": "A stablecoin pegged to the US dollar"
+  },
+  "quiz.basics.basics-2.explanation": {
+    "message": "Cardano's documentation calls ada \"the native, or principal currency on Cardano,\" the main payment unit used to pay transaction fees, make deposits, and pay out staking rewards. It is not a separate chain, a wallet app, or a stablecoin, it is Cardano's own built-in currency."
+  },
+  "quiz.basics.basics-3.question": {
+    "message": "What is a \"lovelace\" on Cardano?"
+  },
+  "quiz.basics.basics-3.option0": {
+    "message": "The smallest subunit of ada, where 1 ada equals 1,000,000 lovelace"
+  },
+  "quiz.basics.basics-3.option1": {
+    "message": "A larger denomination equal to 1,000 ada"
+  },
+  "quiz.basics.basics-3.option2": {
+    "message": "The official name of Cardano's block explorer"
+  },
+  "quiz.basics.basics-3.option3": {
+    "message": "A type of Cardano stake pool"
+  },
+  "quiz.basics.basics-3.explanation": {
+    "message": "Just as a bitcoin splits into 100 million satoshis, ada splits into lovelace, its smallest unit, with one ada equal to 1,000,000 lovelace. This fine granularity, six decimal places, lets Cardano handle very small payments and fees precisely. The unit is named after Ada Lovelace, the same person ada itself is named after."
+  },
+  "quiz.basics.basics-4.question": {
+    "message": "What makes native tokens on Cardano different from tokens like Ethereum's ERC-20?"
+  },
+  "quiz.basics.basics-4.option0": {
+    "message": "Native tokens are handled directly by the Cardano ledger and don't require a smart contract to exist or transfer"
+  },
+  "quiz.basics.basics-4.option1": {
+    "message": "Native tokens can only be created by the Cardano Foundation"
+  },
+  "quiz.basics.basics-4.option2": {
+    "message": "Native tokens automatically expire after one year"
+  },
+  "quiz.basics.basics-4.option3": {
+    "message": "Native tokens can only be traded on a single official Cardano exchange"
+  },
+  "quiz.basics.basics-4.explanation": {
+    "message": "On Cardano, custom tokens are a built-in ledger feature, so creating and moving them needs no smart contract. That is unlike ERC-20 tokens on Ethereum, which rely entirely on smart contract code for accounting and transfers. This removes a layer of complexity and reduces the risk of smart contract bugs affecting a simple token transfer. Native tokens can still be used inside smart contracts for things like DeFi, but they don't require one just to exist."
+  },
+  "quiz.basics.basics-5.question": {
+    "message": "The name \"Ouroboros\" for Cardano's consensus protocol comes from what?"
+  },
+  "quiz.basics.basics-5.option0": {
+    "message": "An ancient symbol of a serpent or dragon eating its own tail"
+  },
+  "quiz.basics.basics-5.option1": {
+    "message": "The surname of the engineer who wrote the first Cardano whitepaper"
+  },
+  "quiz.basics.basics-5.option2": {
+    "message": "A Greek word meaning \"unbreakable chain\""
+  },
+  "quiz.basics.basics-5.option3": {
+    "message": "The name of the first Cardano stake pool"
+  },
+  "quiz.basics.basics-5.explanation": {
+    "message": "Cardano's documentation explains that the protocol is named after the ancient symbol, usually a serpent or dragon eating its own tail in a closed circle, with the word itself deriving from Ancient Greek for \"tail eating.\" It is a fitting image for a blockchain: a continuous, self-sustaining cycle. The name is symbolic, not a person's surname or a made-up marketing term, and its real Greek meaning is \"tail eating,\" not \"unbreakable chain.\""
+  },
+  "quiz.basics.basics-6.question": {
+    "message": "What is Ouroboros?"
+  },
+  "quiz.basics.basics-6.option0": {
+    "message": "Cardano's proof-of-stake consensus protocol"
+  },
+  "quiz.basics.basics-6.option1": {
+    "message": "Cardano's official hardware wallet"
+  },
+  "quiz.basics.basics-6.option2": {
+    "message": "The programming language used to write Cardano smart contracts"
+  },
+  "quiz.basics.basics-6.option3": {
+    "message": "A Cardano-based decentralized exchange"
+  },
+  "quiz.basics.basics-6.explanation": {
+    "message": "Ouroboros is the name of the consensus protocol underlying Cardano, described in Cardano's documentation as \"the first provably secure proof-of-stake protocol.\" It is the mechanism that decides which stake pool gets to create the next block, not a wallet, a programming language, or an exchange. Charles Hoskinson adopted the name in 2017 for this specific protocol."
+  },
+  "quiz.basics.basics-7.question": {
+    "message": "How does Cardano's proof-of-stake consensus differ from Bitcoin-style proof-of-work?"
+  },
+  "quiz.basics.basics-7.option0": {
+    "message": "Block creators are chosen based on stake rather than by winning a computational mining race"
+  },
+  "quiz.basics.basics-7.option1": {
+    "message": "Proof-of-stake requires more electricity than proof-of-work"
+  },
+  "quiz.basics.basics-7.option2": {
+    "message": "Proof-of-stake blocks are created by a single central server"
+  },
+  "quiz.basics.basics-7.option3": {
+    "message": "Proof-of-stake has no way to select who creates the next block"
+  },
+  "quiz.basics.basics-7.explanation": {
+    "message": "In proof-of-work, miners compete to solve a computational puzzle first, which uses large amounts of electricity and hardware. In Cardano's proof-of-stake system, the creator of a new block is instead chosen through a combination of random selection and how much stake, meaning ada, they control. Cardano's documentation cites this as far more energy efficient than mining. Selection is distributed across many independent stake pools, not a single central server."
+  },
+  "quiz.basics.basics-8.question": {
+    "message": "What did the Byron development phase establish for Cardano?"
+  },
+  "quiz.basics.basics-8.option0": {
+    "message": "The foundational proof-of-stake network that allowed users to buy and sell ada"
+  },
+  "quiz.basics.basics-8.option1": {
+    "message": "Smart contract support for building decentralized apps"
+  },
+  "quiz.basics.basics-8.option2": {
+    "message": "A treasury system for community-funded proposals"
+  },
+  "quiz.basics.basics-8.option3": {
+    "message": "Interoperable sidechains connected to the main Cardano chain"
+  },
+  "quiz.basics.basics-8.explanation": {
+    "message": "Byron laid the technical foundation, later phases brought stronger decentralization and smart contract functionality. Cardano's documentation states that Byron \"set the foundation for Cardano development allowing users to buy and sell ada on a proof-of-stake blockchain network.\" Stronger decentralization came with Shelley, which \"introduced a decentralized ledger creating a completely new economic system,\" and smart contract functionality came with Goguen. Neither of those capabilities existed yet in Byron."
+  },
+  "quiz.basics.basics-9.question": {
+    "message": "What was the main focus of the Shelley development phase?"
+  },
+  "quiz.basics.basics-9.option0": {
+    "message": "Decentralizing the network by shifting block production to community-run stake pools"
+  },
+  "quiz.basics.basics-9.option1": {
+    "message": "Adding smart contract functionality"
+  },
+  "quiz.basics.basics-9.option2": {
+    "message": "Launching Cardano's official mobile wallet app"
+  },
+  "quiz.basics.basics-9.option3": {
+    "message": "Introducing native tokens"
+  },
+  "quiz.basics.basics-9.explanation": {
+    "message": "Cardano's documentation describes Shelley as the theme that \"introduced a decentralized ledger creating a completely new economic system,\" moving block production from centrally run nodes to a network of independent, community-run stake pools. Smart contracts and native tokens arrived later, in Goguen. Shelley is the development phase most closely tied to staking and delegation as they exist today."
+  },
+  "quiz.basics.basics-10.question": {
+    "message": "What capability did the Goguen development phase bring to Cardano?"
+  },
+  "quiz.basics.basics-10.option0": {
+    "message": "Smart contract support and custom token issuance"
+  },
+  "quiz.basics.basics-10.option1": {
+    "message": "The original proof-of-stake network launch"
+  },
+  "quiz.basics.basics-10.option2": {
+    "message": "A community-controlled treasury and voting system"
+  },
+  "quiz.basics.basics-10.option3": {
+    "message": "Decentralization of block production across stake pools"
+  },
+  "quiz.basics.basics-10.explanation": {
+    "message": "Cardano's documentation describes Goguen as focused \"on the establishment of a global, financial, and multi-functional system for decentralized application (DApp) building, smart contract support, and custom token issuance.\" That is when developers gained the tools to build DeFi apps and other smart-contract-based projects on Cardano. Decentralization of block production had already happened in the earlier Shelley phase."
+  },
+  "quiz.basics.basics-11.question": {
+    "message": "Cardano's development phases (Byron, Shelley, Goguen, Basho, Voltaire) are named after what, with one exception?"
+  },
+  "quiz.basics.basics-11.option0": {
+    "message": "Poets and writers, except for Goguen, which is named after a computer scientist"
+  },
+  "quiz.basics.basics-11.option1": {
+    "message": "Ancient Greek gods"
+  },
+  "quiz.basics.basics-11.option2": {
+    "message": "The people who founded Cardano"
+  },
+  "quiz.basics.basics-11.option3": {
+    "message": "Cities where Cardano conferences were held"
+  },
+  "quiz.basics.basics-11.explanation": {
+    "message": "Cardano's documentation states that its development phases are \"all named after poets except for Goguen, a computer scientist.\" The page draws this poets-versus-scientist distinction as the naming pattern across the five phases, without naming the individual poets or the computer scientist involved. None of the phases are named after Cardano's founders or Greek gods. Cardano's public roadmap site refers to these same five names as \"eras\" (for example \"the Shelley era\")."
+  },
+  "quiz.basics.basics-12.question": {
+    "message": "Who is the ada cryptocurrency named after?"
+  },
+  "quiz.basics.basics-12.option0": {
+    "message": "Ada Lovelace, a 19th-century mathematician regarded as the first computer programmer"
+  },
+  "quiz.basics.basics-12.option1": {
+    "message": "Charles Hoskinson, one of Cardano's co-founders"
+  },
+  "quiz.basics.basics-12.option2": {
+    "message": "A figure from Greek mythology"
+  },
+  "quiz.basics.basics-12.option3": {
+    "message": "The Cardano Foundation's first chairperson"
+  },
+  "quiz.basics.basics-12.explanation": {
+    "message": "Cardano's own materials state that ada \"is named after Ada Lovelace: a 19th-century mathematician who is recognized as the first computer programmer, and is the daughter of the poet Lord Byron.\" This is a different namesake from the Cardano platform itself, which honors a different historical figure, Gerolamo Cardano. None of the other options had any role in choosing ada's name."
+  },
+  "quiz.basics.basics-13.question": {
+    "message": "The name \"Cardano\" comes from which historical figure?"
+  },
+  "quiz.basics.basics-13.option0": {
+    "message": "Gerolamo Cardano, a 16th-century Italian physician and mathematician"
+  },
+  "quiz.basics.basics-13.option1": {
+    "message": "Ada Lovelace, a 19th-century mathematician"
+  },
+  "quiz.basics.basics-13.option2": {
+    "message": "Charles Hoskinson, Cardano's co-founder"
+  },
+  "quiz.basics.basics-13.option3": {
+    "message": "A fictional character invented for marketing purposes"
+  },
+  "quiz.basics.basics-13.explanation": {
+    "message": "According to Essential Cardano, the platform's \"name derives from Gerolamo Cardano, a mid-16th-century Italian physician and mathematician.\" This is distinct from ada, which is named after a different mathematician, Ada Lovelace. The blockchain platform simply borrows his name, he lived centuries before it existed."
+  },
+  "quiz.basics.basics-14.question": {
+    "message": "Which three organizations are referred to as Cardano's pioneer entities?"
+  },
+  "quiz.basics.basics-14.option0": {
+    "message": "Input Output, the Cardano Foundation, and EMURGO"
+  },
+  "quiz.basics.basics-14.option1": {
+    "message": "The Cardano Foundation, the Ethereum Foundation, and Bitcoin Core"
+  },
+  "quiz.basics.basics-14.option2": {
+    "message": "Google, IBM, and Microsoft"
+  },
+  "quiz.basics.basics-14.option3": {
+    "message": "A single company called Cardano Inc."
+  },
+  "quiz.basics.basics-14.explanation": {
+    "message": "Cardano's own governance documentation calls these three the \"pioneer entities\" of Cardano, describing them as having relinquished the genesis keys of the blockchain to hand a more mature governance system to the community. Essential Cardano separately fills in each one's role, \"Charles Hoskinson and Jeremy Wood founded Input Output (initially, IOHK) to design and implement Cardano,\" \"the Cardano Foundation was set up to oversee and supervise the development of Cardano and to act as an advocate for its users,\" and \"a third entity, Emurgo, was created to pursue commercial activities on behalf of the ecosystem and community,\" adding that \"the three entities have separate ownerships and leadership.\" Cardano was never the product of a single company, and none of the other listed organizations were involved."
+  },
+  "quiz.basics.basics-15.question": {
+    "message": "In what year did the Cardano blockchain and ada launch?"
+  },
+  "quiz.basics.basics-15.option0": {
+    "message": "2017"
+  },
+  "quiz.basics.basics-15.option1": {
+    "message": "2009"
+  },
+  "quiz.basics.basics-15.option2": {
+    "message": "2015"
+  },
+  "quiz.basics.basics-15.option3": {
+    "message": "2021"
+  },
+  "quiz.basics.basics-15.explanation": {
+    "message": "Essential Cardano states that \"the Cardano blockchain and ada, its founding native cryptocurrency, was launched in 2017.\" That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."
+  },
+  "quiz.governance.title": {
+    "message": "Governance and Voltaire"
+  },
+  "quiz.governance.description": {
+    "message": "DReps, governance actions, and how decisions are made on Cardano."
+  },
+  "quiz.governance.governance-1.question": {
+    "message": "What is a DRep?"
+  },
+  "quiz.governance.governance-1.option0": {
+    "message": "A representative that ada holders can delegate their on-chain voting power to"
+  },
+  "quiz.governance.governance-1.option1": {
+    "message": "A type of Cardano stake pool that only accepts delegation from other pools"
+  },
+  "quiz.governance.governance-1.option2": {
+    "message": "The technical name for a Cardano hardware wallet"
+  },
+  "quiz.governance.governance-1.option3": {
+    "message": "A native token used exclusively to pay governance fees"
+  },
+  "quiz.governance.governance-1.explanation": {
+    "message": "Cardano's glossary defines a DRep, short for Delegated Representative, as \"a representative that ada holders delegate their on-chain voting power to, so the DRep votes on governance actions on their behalf,\" comparing it to choosing someone to represent your interests in parliament. A DRep is a role in the governance system, not a type of stake pool, a wallet, or a token."
+  },
+  "quiz.governance.governance-2.question": {
+    "message": "According to CIP-1694, how does registering as a DRep or delegating your vote compare to the existing stake pool system?"
+  },
+  "quiz.governance.governance-2.option0": {
+    "message": "It follows the same basic pattern, an ada holder can register to represent themselves, or instead delegate that role to someone else"
+  },
+  "quiz.governance.governance-2.option1": {
+    "message": "It replaces stake pool delegation entirely, one certificate now controls both block production and voting"
+  },
+  "quiz.governance.governance-2.option2": {
+    "message": "It is only available to people who already operate a stake pool"
+  },
+  "quiz.governance.governance-2.option3": {
+    "message": "It requires first deregistering from any stake pool before it can be used"
+  },
+  "quiz.governance.governance-2.explanation": {
+    "message": "CIP-1694's own abstract draws the comparison directly, \"as with stake pools, any Ada holder may register to be a DRep and so choose to represent themselves and/or others. Also, as with stake pools, Ada holders may, instead, delegate their voting rights to any other DRep.\" The same two options that exist for stake, running your own pool or delegating to one, exist for voting, registering as a DRep yourself or delegating to one, the proposal deliberately draws that comparison to explain the new system. As with registering a stake pool, registering as a DRep isn't free of cost either, CIP-1694 states that \"DRep registration certificates include... a deposit,\" a refundable amount whose size is a governance-set parameter rather than a fixed protocol constant."
+  },
+  "quiz.governance.governance-3.question": {
+    "message": "Which three governance bodies can vote on Cardano governance actions?"
+  },
+  "quiz.governance.governance-3.option0": {
+    "message": "Delegated representatives (DReps), the Constitutional Committee, and stake pool operators (SPOs)"
+  },
+  "quiz.governance.governance-3.option1": {
+    "message": "The Cardano Foundation, IOG, and EMURGO"
+  },
+  "quiz.governance.governance-3.option2": {
+    "message": "Ada holders, exchanges, and hardware wallet manufacturers"
+  },
+  "quiz.governance.governance-3.option3": {
+    "message": "The core developers, the marketing team, and the community moderators"
+  },
+  "quiz.governance.governance-3.explanation": {
+    "message": "Cardano's governance documentation names these three groups as the voting bodies, \"delegated representatives (DReps), the constitutional committee, and stake pool operators (SPOs).\" Which of them must approve a given governance action depends on its type, CIP-1694 states that \"different kinds of governance actions have different ratification requirements but always involve two of the three governance bodies, with the exception of a hard-fork initiation and security-relevant protocol parameters, which requires ratification by all governance bodies.\" This is a different set of three from EMURGO, Input Output, and the Cardano Foundation, which the same governance documentation calls the \"pioneer entities\" of Cardano, governance voting roles are open to participation by ada holders generally, not tied to any single pioneer entity."
+  },
+  "quiz.governance.governance-4.question": {
+    "message": "What is a governance action?"
+  },
+  "quiz.governance.governance-4.option0": {
+    "message": "A proposal submitted on-chain, as a transaction, for the community to vote on"
+  },
+  "quiz.governance.governance-4.option1": {
+    "message": "A change to the Cardano source code made directly by developers without any vote"
+  },
+  "quiz.governance.governance-4.option2": {
+    "message": "An automatic adjustment the protocol makes on its own each epoch"
+  },
+  "quiz.governance.governance-4.option3": {
+    "message": "A private discussion between the Cardano Foundation and IOG"
+  },
+  "quiz.governance.governance-4.explanation": {
+    "message": "Essential Cardano's glossary describes it plainly, \"a governance action is a proposal that gets submitted on-chain for voting. It is an on-chain event triggered by a transaction.\" It is a formal, public, on-chain proposal, not a behind-the-scenes code change, an automatic protocol adjustment, or a private conversation between organizations."
+  },
+  "quiz.governance.governance-5.question": {
+    "message": "Who is allowed to submit a governance action for a vote?"
+  },
+  "quiz.governance.governance-5.option0": {
+    "message": "Any ada holder"
+  },
+  "quiz.governance.governance-5.option1": {
+    "message": "Only registered DReps"
+  },
+  "quiz.governance.governance-5.option2": {
+    "message": "Only the Constitutional Committee"
+  },
+  "quiz.governance.governance-5.option3": {
+    "message": "Only stake pool operators"
+  },
+  "quiz.governance.governance-5.explanation": {
+    "message": "CIP-1694 confirms that \"any Ada holder can submit a governance action to the chain,\" so no special role, such as being a DRep, an SPO, or a Constitutional Committee member, is required to propose one. It also states that the submitter \"must provide a deposit of govActionDeposit Lovelace, which will be returned when the action is finalized (whether it is ratified or has expired),\" a refundable deposit whose exact size is a governance-set parameter, not a fixed protocol cost. Submitting is still open to any ada holder in that sense, it just isn't free of that refundable deposit, and it remains separate from the three bodies that vote on whether a submitted action passes."
+  },
+  "quiz.governance.governance-6.question": {
+    "message": "What is the role of the Constitutional Committee in Cardano governance?"
+  },
+  "quiz.governance.governance-6.option0": {
+    "message": "To check whether governance actions comply with the Cardano Constitution, not to judge whether they are good ideas"
+  },
+  "quiz.governance.governance-6.option1": {
+    "message": "To write and personally approve every new line of Cardano's source code"
+  },
+  "quiz.governance.governance-6.option2": {
+    "message": "To set the exchange rate at which ada is bought and sold"
+  },
+  "quiz.governance.governance-6.option3": {
+    "message": "To act as the sole body allowed to propose governance actions"
+  },
+  "quiz.governance.governance-6.explanation": {
+    "message": "Cardano's governance documentation describes the Constitutional Committee as \"the elected representatives who ensure governance actions comply with the Cardano constitution.\" Their role is to check governance actions against the constitution's rules, they don't write Cardano's code, set ada's price, or hold exclusive rights to submit governance actions themselves, any ada holder can do that."
+  },
+  "quiz.governance.governance-7.question": {
+    "message": "What is the Cardano Constitution?"
+  },
+  "quiz.governance.governance-7.option0": {
+    "message": "The founding document that puts the community's shared values and vision into a set of rules and principles"
+  },
+  "quiz.governance.governance-7.option1": {
+    "message": "A single stake pool that only wealthy ada holders can join"
+  },
+  "quiz.governance.governance-7.option2": {
+    "message": "The legal name of the smart contract platform used to write Plutus scripts"
+  },
+  "quiz.governance.governance-7.option3": {
+    "message": "A private contract between the Cardano Foundation and each individual DRep"
+  },
+  "quiz.governance.governance-7.explanation": {
+    "message": "Cardano's governance overview describes the constitution as \"designed to be the founding document that brings together the community's values and vision and puts them into text as a set of rules and principles to abide by to maintain the sustainability of the Cardano network.\" It's a shared reference document for the whole governance system, not a stake pool, a smart contract platform, or a private agreement limited to any one group."
+  },
+  "quiz.governance.governance-8.question": {
+    "message": "What did CIP-1694 do to Cardano's earlier, more limited governance mechanism?"
+  },
+  "quiz.governance.governance-8.option0": {
+    "message": "It removed the existing MIR and genesis certificate-based governance support, replacing it with on-chain governance actions and votes"
+  },
+  "quiz.governance.governance-8.option1": {
+    "message": "It left the previous mechanism fully in place, running permanently alongside the new one"
+  },
+  "quiz.governance.governance-8.option2": {
+    "message": "It applied only on testnets, mainnet kept using the older mechanism indefinitely"
+  },
+  "quiz.governance.governance-8.option3": {
+    "message": "It required every existing genesis certificate to be individually reissued by IOG before the new system would take effect"
+  },
+  "quiz.governance.governance-8.explanation": {
+    "message": "CIP-1694's own text states that \"the existing specialized governance support for protocol parameter updates and MIR certificates will be removed, and two new fields will be added to normal transaction bodies for: 1. governance actions 2. votes,\" and separately confirms that \"the current MIR and genesis certificates will be removed.\" The older, more limited mechanism wasn't kept running in parallel, restricted to testnets, or handled through case-by-case reissuance, it was removed and replaced outright by the new governance action and voting system."
+  },
+  "quiz.governance.governance-9.question": {
+    "message": "What principle does CIP-1694 use to determine how much voting power an ada holder or their DRep has?"
+  },
+  "quiz.governance.governance-9.option0": {
+    "message": "\"One Lovelace = one vote,\" voting power is proportional to the ada delegated"
+  },
+  "quiz.governance.governance-9.option1": {
+    "message": "\"One wallet = one vote,\" regardless of how much ada that wallet holds"
+  },
+  "quiz.governance.governance-9.option2": {
+    "message": "\"One DRep = one vote,\" regardless of how many people delegate to them"
+  },
+  "quiz.governance.governance-9.option3": {
+    "message": "Voting power is assigned randomly to a subset of ada holders each epoch"
+  },
+  "quiz.governance.governance-9.explanation": {
+    "message": "CIP-1694's abstract states, \"the most crucial aspect of this proposal is therefore the notion of 'one Lovelace = one vote.'\" This means voting power scales with the amount of ada someone has delegated to their choice, rather than being a flat one-per-wallet or one-per-DRep count, or something assigned at random."
+  },
+  "quiz.governance.governance-11.question": {
+    "message": "What happens to a governance action if it is not ratified before it expires?"
+  },
+  "quiz.governance.governance-11.option0": {
+    "message": "It cannot be enacted"
+  },
+  "quiz.governance.governance-11.option1": {
+    "message": "It is automatically resubmitted for another vote the following epoch"
+  },
+  "quiz.governance.governance-11.option2": {
+    "message": "It is enacted anyway, since submitting it already counts as approval"
+  },
+  "quiz.governance.governance-11.option3": {
+    "message": "The ada holder who submitted it is barred from submitting future actions"
+  },
+  "quiz.governance.governance-11.explanation": {
+    "message": "Essential Cardano's glossary is direct about this, \"governance actions have an expiration period, after which the action cannot be enacted.\" An action that runs out its window without being ratified simply cannot be enacted, it is not automatically resubmitted, and it does not count as approved by default. CIP-1694 confirms that the submitter still gets their deposit back even when this happens, the governance action deposit is returned \"when the action is finalized (whether it is ratified or has expired).\""
+  },
+  "quiz.governance.governance-12.question": {
+    "message": "What was the purpose of Cardano's Interim Constitution when on-chain governance first launched?"
+  },
+  "quiz.governance.governance-12.option0": {
+    "message": "To serve as an initial governance framework and foundational structure for the community to develop further"
+  },
+  "quiz.governance.governance-12.option1": {
+    "message": "To permanently replace the need for any future constitution"
+  },
+  "quiz.governance.governance-12.option2": {
+    "message": "To give the Cardano Foundation sole and final authority over all governance actions"
+  },
+  "quiz.governance.governance-12.option3": {
+    "message": "To set the exact ada price for the following year"
+  },
+  "quiz.governance.governance-12.explanation": {
+    "message": "Essential Cardano's glossary describes it as serving \"as an initial governance framework, providing necessary guardrails and a foundational structure that the Cardano community can develop further.\" It was explicitly a starting point meant to be built on through further community work, not a permanent replacement for a future constitution, a grant of sole authority to any one organization, or anything related to ada's price."
+  },
+  "quiz.governance.governance-13.question": {
+    "message": "What was the Voltaire phase designed to bring to Cardano's governance?"
+  },
+  "quiz.governance.governance-13.option0": {
+    "message": "The ability for network participants to propose and vote on improvement proposals, making the network self-sustaining"
+  },
+  "quiz.governance.governance-13.option1": {
+    "message": "A rule that only the original founding organizations may ever vote"
+  },
+  "quiz.governance.governance-13.option2": {
+    "message": "The removal of stake pools from the network entirely"
+  },
+  "quiz.governance.governance-13.option3": {
+    "message": "A fixed, unchangeable set of protocol parameters that no vote could ever alter"
+  },
+  "quiz.governance.governance-13.explanation": {
+    "message": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to founding organizations, removing stake pools, or freezing parameters against future votes."
+  },
+  "quiz.staking.title": {
+    "message": "Staking and Delegation"
+  },
+  "quiz.staking.description": {
+    "message": "Test what you know about delegating ada, epochs, stake pools, and rewards."
+  },
+  "quiz.staking.staking-1.question": {
+    "message": "When you delegate your ada to a stake pool, what happens to the ada itself?"
+  },
+  "quiz.staking.staking-1.option0": {
+    "message": "It stays in your own wallet, you only issue a certificate that assigns your stake to a pool"
+  },
+  "quiz.staking.staking-1.option1": {
+    "message": "It is transferred to the stake pool operator's wallet"
+  },
+  "quiz.staking.staking-1.option2": {
+    "message": "It is converted into a new token controlled by the pool"
+  },
+  "quiz.staking.staking-1.option3": {
+    "message": "It is sent to a smart contract that holds it until you withdraw"
+  },
+  "quiz.staking.staking-1.explanation": {
+    "message": "Delegating is not a transfer of funds. Essential Cardano states that \"when a delegator stakes their ada on Cardano their funds do not leave their wallet.\" You submit an on-chain certificate that counts your stake toward a chosen pool, while you keep full custody and spending control of the ada itself. The pool operator never receives or controls your funds, and no smart contract is involved."
+  },
+  "quiz.staking.staking-2.question": {
+    "message": "Can you spend your ada while it is delegated to a stake pool?"
+  },
+  "quiz.staking.staking-2.option0": {
+    "message": "Yes, delegated ada stays fully liquid and can be spent at any time"
+  },
+  "quiz.staking.staking-2.option1": {
+    "message": "No, delegated ada is locked for a fixed period before it can be spent"
+  },
+  "quiz.staking.staking-2.option2": {
+    "message": "Only after formally \"unstaking\" through a multi-day withdrawal process"
+  },
+  "quiz.staking.staking-2.option3": {
+    "message": "Only if the stake pool operator approves the transaction"
+  },
+  "quiz.staking.staking-2.explanation": {
+    "message": "Unlike some other proof-of-stake networks, Cardano imposes no lockup period. Cardano's documentation notes that \"you can spend your ada normally at any time, regardless of how you delegated it.\" There is no unstaking cooldown and no operator approval needed. Delegating simply assigns your stake's reward rights to a pool without restricting the ada in any way."
+  },
+  "quiz.staking.staking-3.question": {
+    "message": "What happens to your staked ada if the stake pool you delegated to underperforms or goes offline?"
+  },
+  "quiz.staking.staking-3.option0": {
+    "message": "You may miss out on some rewards, but your ada itself is never at risk"
+  },
+  "quiz.staking.staking-3.option1": {
+    "message": "A portion of your staked ada is automatically slashed as a penalty"
+  },
+  "quiz.staking.staking-3.option2": {
+    "message": "Your wallet is locked until you switch to a different pool"
+  },
+  "quiz.staking.staking-3.option3": {
+    "message": "You permanently lose the ability to delegate again"
+  },
+  "quiz.staking.staking-3.explanation": {
+    "message": "Cardano has no slashing mechanism for delegators. Essential Cardano states that \"the worst thing that could happen is that a stake pool underperforms, in which case a delegator may not receive all of the staking rewards,\" but the ada in the wallet \"is not at risk of being slashed or penalized in any way.\" This is a key difference from proof-of-stake systems that do use slashing, where validators can lose part of their stake for misbehavior."
+  },
+  "quiz.staking.staking-4.question": {
+    "message": "What is an epoch on Cardano?"
+  },
+  "quiz.staking.staking-4.option0": {
+    "message": "A recurring period during which stake distribution is snapshotted and staking rewards are calculated"
+  },
+  "quiz.staking.staking-4.option1": {
+    "message": "A single block added to the chain"
+  },
+  "quiz.staking.staking-4.option2": {
+    "message": "A type of Cardano wallet"
+  },
+  "quiz.staking.staking-4.option3": {
+    "message": "A governance vote on a protocol upgrade"
+  },
+  "quiz.staking.staking-4.explanation": {
+    "message": "Cardano's glossary, in its expanded explanation of the term, defines an epoch as a period \"during which the stake distribution snapshot is fixed and rewards are calculated.\" Epochs are Cardano's basic recurring unit of time for staking, pool performance is measured and rewards are calculated once per epoch, not per individual block. It has nothing to do with wallet types or governance votes."
+  },
+  "quiz.staking.staking-5.question": {
+    "message": "What is a stake pool?"
+  },
+  "quiz.staking.staking-5.option0": {
+    "message": "A server node that combines the stake of an operator and delegators to participate in block production"
+  },
+  "quiz.staking.staking-5.option1": {
+    "message": "A smart contract that automatically trades ada for profit"
+  },
+  "quiz.staking.staking-5.option2": {
+    "message": "A wallet that only stores non-fungible tokens"
+  },
+  "quiz.staking.staking-5.option3": {
+    "message": "A group of validators who compete to lower each other's rewards"
+  },
+  "quiz.staking.staking-5.explanation": {
+    "message": "Cardano's documentation defines a stake pool as \"a reliable server node that focuses on ledger maintenance and holds the combined resources, the stake, of various stakeholders in a single entity.\" One person, the stake pool operator, runs the node, while everyone else who delegates to it is a delegator. It is infrastructure for block production, not a trading contract or an NFT wallet."
+  },
+  "quiz.staking.staking-6.question": {
+    "message": "What is the difference between a stake pool operator and a delegator?"
+  },
+  "quiz.staking.staking-6.option0": {
+    "message": "The operator runs the server node, while delegators take a more passive role and don't need to run anything"
+  },
+  "quiz.staking.staking-6.option1": {
+    "message": "Delegators run the server node, while the operator only holds ada"
+  },
+  "quiz.staking.staking-6.option2": {
+    "message": "There is no real difference, the terms are interchangeable"
+  },
+  "quiz.staking.staking-6.option3": {
+    "message": "An operator must delegate to another pool before they can run their own"
+  },
+  "quiz.staking.staking-6.explanation": {
+    "message": "Cardano's documentation states that in a stake pool \"one holder is the operator of the pool and the rest are delegators,\" with the operator installing and running the actual node software while \"delegators take a more passive role.\" That means anyone can earn staking rewards by delegating, without buying hardware or maintaining a server. Running a pool and delegating to one are two different activities with different responsibilities."
+  },
+  "quiz.staking.staking-7.question": {
+    "message": "What happens to a stake pool's rewards once it becomes \"saturated\"?"
+  },
+  "quiz.staking.staking-7.option0": {
+    "message": "Rewards stop increasing even if more ada is delegated to the pool"
+  },
+  "quiz.staking.staking-7.option1": {
+    "message": "The pool is automatically shut down by the protocol"
+  },
+  "quiz.staking.staking-7.option2": {
+    "message": "The pool operator's pledge is returned to them"
+  },
+  "quiz.staking.staking-7.option3": {
+    "message": "All existing delegators immediately lose their earned rewards"
+  },
+  "quiz.staking.staking-7.explanation": {
+    "message": "Cardano's documentation on pledging and rewards states that pool \"rewards increase with... stake, but stop increasing once... the pool becomes saturated.\" Saturation discourages stake from concentrating in a handful of very large pools, since delegating more to an already-saturated pool stops paying off proportionally. It does not shut the pool down or touch anyone's existing rewards, it just caps further reward growth from additional stake."
+  },
+  "quiz.staking.staking-8.question": {
+    "message": "What is \"pledge\" in the context of a Cardano stake pool?"
+  },
+  "quiz.staking.staking-8.option0": {
+    "message": "Ada that the pool operator commits from their own funds to make the pool more attractive to delegators"
+  },
+  "quiz.staking.staking-8.option1": {
+    "message": "A fee delegators must pay upfront before they can delegate"
+  },
+  "quiz.staking.staking-8.option2": {
+    "message": "A promise from the Cardano Foundation to cover a pool's losses"
+  },
+  "quiz.staking.staking-8.option3": {
+    "message": "The minimum amount every delegator must contribute"
+  },
+  "quiz.staking.staking-8.explanation": {
+    "message": "Cardano's documentation explains that \"when you register a stake pool you can choose to pledge some, or all, of your ada to the pool, to make it more attractive to people who want to delegate.\" Pledge is the operator's own funds committed to the pool, not something delegators pay or are required to contribute. It signals commitment and can influence how the pool's rewards are calculated."
+  },
+  "quiz.staking.staking-9.question": {
+    "message": "Where do staking rewards on Cardano ultimately come from?"
+  },
+  "quiz.staking.staking-9.option0": {
+    "message": "Transaction fees and a portion of the protocol's remaining ada reserve, distributed each epoch"
+  },
+  "quiz.staking.staking-9.option1": {
+    "message": "A fee charged directly to every other ada holder in the network"
+  },
+  "quiz.staking.staking-9.option2": {
+    "message": "New ada mined through computational competition"
+  },
+  "quiz.staking.staking-9.option3": {
+    "message": "A subscription fee the delegator pays to the Cardano Foundation"
+  },
+  "quiz.staking.staking-9.explanation": {
+    "message": "Cardano's documentation on monetary policy states that staking rewards \"come from two sources,\" transaction fees collected during the epoch, plus a fixed percentage of the remaining ada reserve added to the reward pot each epoch. There is no mining involved, since Cardano is proof-of-stake, and delegators do not pay a subscription or fee to the Cardano Foundation to receive rewards."
+  },
+  "quiz.staking.staking-10.question": {
+    "message": "Why don't staking rewards appear immediately after you first delegate?"
+  },
+  "quiz.staking.staking-10.option0": {
+    "message": "Delegation takes effect through epoch snapshots, and rewards are calculated and distributed in later epochs"
+  },
+  "quiz.staking.staking-10.option1": {
+    "message": "Because the pool operator must manually approve each new delegator before any rewards begin"
+  },
+  "quiz.staking.staking-10.option2": {
+    "message": "Because Cardano only pays out rewards once per year, on a fixed annual date"
+  },
+  "quiz.staking.staking-10.option3": {
+    "message": "Because new delegators must first pass an identity verification check with the Cardano Foundation"
+  },
+  "quiz.staking.staking-10.explanation": {
+    "message": "Staking rewards are not instant because delegation takes effect through Cardano's epoch-based snapshot system, not the moment you delegate. Essential Cardano explains that after you delegate, your stake first needs a new snapshot before the pool can use it, then a further epoch passes to calculate rewards, and only then are those rewards distributed, so that \"you need to wait 15-20 days (at least 3 epochs) before you receive your first reward.\" After that initial delay, rewards are calculated and distributed on an epoch basis, with no manual approval needed from the pool operator, but that is not a promise of a payout every single epoch. Cardano's own documentation on pledging and rewards notes that the actual amount \"will fluctuate due to the stochastic nature, or random process of the Ouroboros Praos consensus algorithm,\" and depends on \"the actual stake pool performance, that is, the number of blocks a stake pool is observed to produce in a given epoch versus the number it was expected to produce.\" None of the other options match what the source describes, there is no manual pool-operator approval step, no fixed annual payout date, and no identity-verification requirement."
+  },
+  "quiz.staking.staking-11.question": {
+    "message": "What happens if you decide to switch your delegation from one stake pool to another?"
+  },
+  "quiz.staking.staking-11.option0": {
+    "message": "The switch is seamless, you keep rewards already earned and don't need to withdraw them first"
+  },
+  "quiz.staking.staking-11.option1": {
+    "message": "You permanently forfeit all rewards earned from the original pool"
+  },
+  "quiz.staking.staking-11.option2": {
+    "message": "You must wait a full year before you are allowed to redelegate"
+  },
+  "quiz.staking.staking-11.option3": {
+    "message": "Switching pools requires closing your wallet and creating a new one"
+  },
+  "quiz.staking.staking-11.explanation": {
+    "message": "Essential Cardano confirms that \"the switchover is seamless when you move from one stake pool to another,\" and that \"you do not need to withdraw your staking rewards before switching stake pools.\" You simply submit a new delegation certificate, there is no waiting period measured in years and no need to create a new wallet."
+  },
+  "quiz.staking.staking-12.question": {
+    "message": "When a stake credential is used for delegation for the first time, what must happen on-chain?"
+  },
+  "quiz.staking.staking-12.option0": {
+    "message": "The stake credential is registered and a delegation certificate assigns it to a stake pool"
+  },
+  "quiz.staking.staking-12.option1": {
+    "message": "Deploy a custom smart contract for every delegation"
+  },
+  "quiz.staking.staking-12.option2": {
+    "message": "Mine a block yourself to prove ownership of your ada"
+  },
+  "quiz.staking.staking-12.option3": {
+    "message": "Physically mail a signed form to the Cardano Foundation"
+  },
+  "quiz.staking.staking-12.explanation": {
+    "message": "Cardano's documentation on delegation states that \"delegating stake requires posting two certificates to the chain: a staking address registration, and a delegation certificate,\" the first time a stake credential is used to delegate. After that, the documentation notes, \"once a stake address is registered, the stakeholder will only pay fees to set the delegation choice,\" so switching to a different pool later reuses the same registered credential and only needs a new delegation certificate, not a second registration. Modern wallets bundle the first-time registration and delegation into a single easy transaction for the user, but under the hood these are the two steps that link a stake credential to a pool. It requires no smart contract, no mining, and no paperwork."
+  },
+  "quiz.staking.staking-13.question": {
+    "message": "How does Ouroboros select stake pools for block production?"
+  },
+  "quiz.staking.staking-13.option0": {
+    "message": "Through random leader selection weighted by the stake controlled by each pool"
+  },
+  "quiz.staking.staking-13.option1": {
+    "message": "Whichever pool operator has been active on Cardano the longest"
+  },
+  "quiz.staking.staking-13.option2": {
+    "message": "Pools take strict turns in a fixed, unchanging order"
+  },
+  "quiz.staking.staking-13.option3": {
+    "message": "Whichever pool solves a cryptographic puzzle fastest"
+  },
+  "quiz.staking.staking-13.explanation": {
+    "message": "Cardano's documentation on Ouroboros explains that it \"selects participants, stake pools in this case, to create new blocks based on the stake they control in the network,\" combined with unbiased random selection. A pool's controlled stake is more than just what delegators assign to it, Cardano's documentation on pledging and rewards defines a pool's stake as including \"stake pledged by the owners and stake delegated by others.\" So pools with more total stake, pledge plus delegation, are chosen more often, proportionally, not because they have existed longest or won a computational race. Puzzle-solving is a proof-of-work concept and is not part of Cardano's proof-of-stake design."
+  },
+  "quiz.staking.staking-14.question": {
+    "message": "Does Cardano's protocol set a minimum amount of ada that must be delegated for it to count toward a stake pool?"
+  },
+  "quiz.staking.staking-14.option0": {
+    "message": "No. Any amount of delegated ada counts toward the pool."
+  },
+  "quiz.staking.staking-14.option1": {
+    "message": "Yes, you must delegate at least 1,000 ada before it counts toward a pool"
+  },
+  "quiz.staking.staking-14.option2": {
+    "message": "Yes, only whole numbers of ada can be delegated, fractions are not allowed"
+  },
+  "quiz.staking.staking-14.option3": {
+    "message": "Yes, but only stake pool operators can set that minimum themselves"
+  },
+  "quiz.staking.staking-14.explanation": {
+    "message": "Cardano's developer documentation states, \"No minimum to delegate. Any amount counts toward the pool.\" There is no protocol-enforced floor on how much ada you delegate for it to count toward a pool. The same documentation separately notes that registering your stake key for the first time costs a refundable deposit, called stakeAddressDeposit, returned when you deregister. That one-time deposit registers your ability to delegate at all, it is not a minimum on the stake amount itself, its exact size is a protocol parameter rather than a fixed constant, and it is paid back to you later regardless of that size."
+  },
+  "quiz.technical.title": {
+    "message": "Technology Deep Dive"
+  },
+  "quiz.technical.description": {
+    "message": "The eUTXO model, native tokens, UPLC, and how Cardano works under the hood."
+  },
+  "quiz.technical.technical-1.question": {
+    "message": "What is a UTXO?"
+  },
+  "quiz.technical.technical-1.option0": {
+    "message": "An unspent output from a previous transaction, used as an input to a new one"
+  },
+  "quiz.technical.technical-1.option1": {
+    "message": "A special type of Cardano wallet used only by developers"
+  },
+  "quiz.technical.technical-1.option2": {
+    "message": "The fee charged for submitting a smart contract"
+  },
+  "quiz.technical.technical-1.option3": {
+    "message": "A synonym for an epoch in Cardano's ledger"
+  },
+  "quiz.technical.technical-1.explanation": {
+    "message": "Cardano's documentation explains the model directly, \"in the UTXO model, a transaction has inputs and outputs, where the inputs are outputs from previous transactions.\" A UTXO, an unspent transaction output, is the basic unit of value on the ledger, closer to a discrete coin than to a line in an account balance. It has nothing to do with a wallet type, a fee, or an epoch."
+  },
+  "quiz.technical.technical-2.question": {
+    "message": "How does Cardano's extended UTXO (eUTXO) model extend the basic UTXO model used by Bitcoin?"
+  },
+  "quiz.technical.technical-2.option0": {
+    "message": "It lets addresses contain scripts with arbitrary logic, instead of only public keys, deciding who can spend an output"
+  },
+  "quiz.technical.technical-2.option1": {
+    "message": "It removes the concept of an address entirely"
+  },
+  "quiz.technical.technical-2.option2": {
+    "message": "It requires every transaction to have exactly one input and one output"
+  },
+  "quiz.technical.technical-2.option3": {
+    "message": "It replaces transaction fees with a fixed annual subscription"
+  },
+  "quiz.technical.technical-2.explanation": {
+    "message": "Cardano's documentation describes this generalization directly, \"it generalizes the concept of 'address' by using the lock-and-key analogy. Instead of restricting locks to public keys and keys to signatures, addresses in the EUTXO model can contain arbitrary logic in the form of scripts.\" That's what makes smart contracts possible on a UTXO-style ledger, addresses aren't removed, transactions aren't limited to one input and one output, and fees aren't replaced by a subscription."
+  },
+  "quiz.technical.technical-3.question": {
+    "message": "Besides an address and a value, what else can an eUTXO output carry?"
+  },
+  "quiz.technical.technical-3.option0": {
+    "message": "Arbitrary data, letting scripts store and access state attached to that output"
+  },
+  "quiz.technical.technical-3.option1": {
+    "message": "A copy of the sender's recovery phrase"
+  },
+  "quiz.technical.technical-3.option2": {
+    "message": "A list of every other transaction ever made by the sender"
+  },
+  "quiz.technical.technical-3.option3": {
+    "message": "The sender's physical location at the time of the transaction"
+  },
+  "quiz.technical.technical-3.explanation": {
+    "message": "Cardano's documentation states, \"the second difference between UTXO and EUTXO is that outputs can carry (almost) arbitrary data in addition to an address and value.\" This extra data field is what lets a smart contract keep track of its own state from one transaction to the next, it is not a recovery phrase, a transaction history log, or location information."
+  },
+  "quiz.technical.technical-4.question": {
+    "message": "In Cardano's eUTXO model, what determines whether a transaction's scripts validate?"
+  },
+  "quiz.technical.technical-4.option0": {
+    "message": "The transaction and the inputs it consumes"
+  },
+  "quiz.technical.technical-4.option1": {
+    "message": "The entire history of every transaction ever made on the network"
+  },
+  "quiz.technical.technical-4.option2": {
+    "message": "Whichever stake pool happens to produce the block that includes it"
+  },
+  "quiz.technical.technical-4.option3": {
+    "message": "A central approval decision made by IOG before the transaction is broadcast"
+  },
+  "quiz.technical.technical-4.explanation": {
+    "message": "Cardano's documentation states directly that \"the success or failure of transaction validation depends only on the transaction itself and its inputs, and not on anything else on the blockchain.\" That is a local, self-contained fact, no other transaction's history, no future block producer's identity, and no central approval decides it. A separate caveat on Cardano's Plutus documentation adds an important nuance, \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting,\" so while script validation itself only looks at the transaction and its own inputs, whether those specific inputs are still there when the transaction reaches the chain is a separate, timing-dependent question."
+  },
+  "quiz.technical.technical-5.question": {
+    "message": "What does it mean for a Cardano transaction to be \"deterministic\"?"
+  },
+  "quiz.technical.technical-5.option0": {
+    "message": "The validation outcome, fees, and resulting state changes can be predicted locally before submission"
+  },
+  "quiz.technical.technical-5.option1": {
+    "message": "The transaction is processed at exactly the same time every day"
+  },
+  "quiz.technical.technical-5.option2": {
+    "message": "The transaction always costs exactly the same fee as every other transaction on the network"
+  },
+  "quiz.technical.technical-5.option3": {
+    "message": "The transaction can be resubmitted an unlimited number of times with different outcomes"
+  },
+  "quiz.technical.technical-5.explanation": {
+    "message": "Cardano's documentation defines this as being able to \"predict locally (off-chain) how their transaction will impact the on-chain state of the ledger, without encountering... unexpected script validation outcomes or failures, unexpected fees, unexpected ledger or script state updates.\" Determinism does not mean a transaction is guaranteed to be included on-chain, Cardano's Plutus documentation separately notes, \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting.\" What determinism guarantees is that the outcome, the fees, and the resulting state changes can all be worked out locally in advance, not a fixed daily schedule, a single flat fee for every transaction, or being resubmittable with varying results."
+  },
+  "quiz.technical.technical-6.question": {
+    "message": "What lets Cardano's ledger guarantee that a transaction's script validation result is predictable in advance?"
+  },
+  "quiz.technical.technical-6.option0": {
+    "message": "A transaction fixes all the arguments passed to the script interpreter in advance, so the same arguments always produce the same result"
+  },
+  "quiz.technical.technical-6.option1": {
+    "message": "A central server pre-approves every transaction before it can be broadcast"
+  },
+  "quiz.technical.technical-6.option2": {
+    "message": "Scripts are only allowed to run once per day across the entire network"
+  },
+  "quiz.technical.technical-6.option3": {
+    "message": "Every script is manually reviewed by IOG before being deployed"
+  },
+  "quiz.technical.technical-6.explanation": {
+    "message": "The documentation explains the mechanism, \"the script interpreter will always terminate and return the same validation result when applied to the same arguments,\" and \"a transaction necessarily fixes all arguments that will be passed to the script interpreter during validation.\" Because the inputs to validation are locked in by the transaction itself, the script's own result can be worked out beforehand, no central approval step, daily run limit, or manual review process decides what a script computes. Cardano's Plutus documentation notes separately that \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting.\" This statement concerns script evaluation, not guaranteed transaction inclusion, whether the transaction is ultimately accepted onto the chain still depends on those inputs still being available."
+  },
+  "quiz.technical.technical-7.question": {
+    "message": "What is a minting policy for a Cardano native token?"
+  },
+  "quiz.technical.technical-7.option0": {
+    "message": "The set of rules that govern the conditions under which tokens under that policy can be minted or burned"
+  },
+  "quiz.technical.technical-7.option1": {
+    "message": "The exchange rate at which the token trades against ada"
+  },
+  "quiz.technical.technical-7.option2": {
+    "message": "A subscription fee paid to keep the token listed on exchanges"
+  },
+  "quiz.technical.technical-7.option3": {
+    "message": "The maximum number of wallets allowed to hold the token"
+  },
+  "quiz.technical.technical-7.explanation": {
+    "message": "Cardano's documentation defines it directly, \"a minting policy is the set of rules that govern the minting and burning of assets scoped under that policy,\" adding that \"the point of a minting policy is to specify the conditions under which tokens are minted (or burned).\" It's a rule set enforced by the ledger, not an exchange rate, a listing fee, or a cap on how many wallets can hold the token."
+  },
+  "quiz.technical.technical-8.question": {
+    "message": "What is a Policy ID?"
+  },
+  "quiz.technical.technical-8.option0": {
+    "message": "A unique identifier for a minting policy, computed by hashing the policy itself"
+  },
+  "quiz.technical.technical-8.option1": {
+    "message": "The wallet address of the person who first created the token"
+  },
+  "quiz.technical.technical-8.option2": {
+    "message": "A number assigned sequentially, starting from 1, to every token ever minted on Cardano"
+  },
+  "quiz.technical.technical-8.option3": {
+    "message": "The name the token's creator chooses to display in wallets"
+  },
+  "quiz.technical.technical-8.explanation": {
+    "message": "Cardano's documentation states, \"PolicyID, the unique identifier that is associated with a minting policy,\" and explains that \"the ID is computed by applying a hash function to the policy itself, and is thus a sequence of letters and numbers.\" It's derived mathematically from the policy's own rules, not tied to a creator's wallet address, a simple incrementing number, or a display name."
+  },
+  "quiz.technical.technical-9.question": {
+    "message": "What do Cardano smart contract languages like Aiken, Plinth, Plutarch, and OpShin all have in common?"
+  },
+  "quiz.technical.technical-9.option0": {
+    "message": "They all compile down to UPLC, the single bytecode every Cardano node executes on-chain"
+  },
+  "quiz.technical.technical-9.option1": {
+    "message": "They are all dialects of Solidity adapted for Cardano"
+  },
+  "quiz.technical.technical-9.option2": {
+    "message": "Each one runs on a separate, incompatible version of the Cardano blockchain"
+  },
+  "quiz.technical.technical-9.option3": {
+    "message": "Only one of them is allowed to be used at a time across the whole network"
+  },
+  "quiz.technical.technical-9.explanation": {
+    "message": "Cardano's developer curriculum explains that \"you write a validator in a high-level language, and it compiles down to UPLC (Untyped Plutus Core), the one bytecode every Cardano node executes,\" adding that \"the on-chain target is the same regardless of source language.\" Multiple languages, including Aiken, Plinth, Plutarch, and OpShin, can all target that same compiled output, \"because UPLC is a clean compilation target, many languages can target it (much as Rust, Go, and C++ all target WebAssembly).\" None of them are Solidity dialects, none run on a separate incompatible chain, and nothing restricts the network to using only one at a time."
+  },
+  "quiz.technical.technical-10.question": {
+    "message": "How does the current Cardano developer curriculum describe the relationship between on-chain and off-chain smart contract code?"
+  },
+  "quiz.technical.technical-10.option0": {
+    "message": "On-chain validator code and the off-chain code that builds transactions can be written in entirely different languages or technology stacks"
+  },
+  "quiz.technical.technical-10.option1": {
+    "message": "Both must always be written in the exact same language, no mixing is allowed"
+  },
+  "quiz.technical.technical-10.option2": {
+    "message": "Off-chain code is optional, a Cardano dApp can run using only on-chain validators"
+  },
+  "quiz.technical.technical-10.option3": {
+    "message": "On-chain code is written by the user, while off-chain code is generated automatically by the Cardano node"
+  },
+  "quiz.technical.technical-10.explanation": {
+    "message": "The curriculum describes this explicitly using Aiken as an example, \"Aiken is on-chain only. Off-chain code stays in whatever language your app uses (TypeScript, Python, Rust), which reinforces the on-chain/off-chain split Cardano's architecture wants.\" The validator that runs on-chain and the application code that constructs and submits transactions off-chain don't need to share a language or stack at all. They are not required to match, off-chain code is not optional if a transaction is going to be built and submitted, and on-chain code is written by the developer, not generated automatically by the node."
+  },
+  "quiz.technical.technical-11.question": {
+    "message": "What is a \"slot\" on the Cardano blockchain?"
+  },
+  "quiz.technical.technical-11.option0": {
+    "message": "An opportunity for a block to be produced by an elected slot leader, not a guarantee that every slot gets one"
+  },
+  "quiz.technical.technical-11.option1": {
+    "message": "A guaranteed container that always holds exactly one new block"
+  },
+  "quiz.technical.technical-11.option2": {
+    "message": "A fixed allocation of disk space reserved on every stake pool's server"
+  },
+  "quiz.technical.technical-11.option3": {
+    "message": "A synonym for a native token's minting policy"
+  },
+  "quiz.technical.technical-11.explanation": {
+    "message": "Cardano's glossary defines it directly, \"each slot represents an opportunity for a block to be produced by an elected slot leader.\" The word \"opportunity\" is deliberate, a slot is a chance for a block to appear, produced by whichever slot leader is elected for it, not a guarantee that one will. It has nothing to do with disk space or minting policies."
+  },
+  "quiz.technical.technical-12.question": {
+    "message": "What does Cardano's documentation say about Ouroboros' research foundation?"
+  },
+  "quiz.technical.technical-12.option0": {
+    "message": "It was delivered with peer-reviewed papers presented at top-tier conferences and publications in the area of cybersecurity and cryptography"
+  },
+  "quiz.technical.technical-12.option1": {
+    "message": "It was designed in a single afternoon by one anonymous developer"
+  },
+  "quiz.technical.technical-12.option2": {
+    "message": "It has never been described in any academic publication"
+  },
+  "quiz.technical.technical-12.option3": {
+    "message": "It was adapted directly from Bitcoin's original whitepaper without changes"
+  },
+  "quiz.technical.technical-12.explanation": {
+    "message": "Cardano's documentation states that the Ouroboros consensus protocol \"was delivered with several peer-reviewed papers presented at top-tier conferences and publications in the area of cybersecurity and cryptography.\" It wasn't undocumented, wasn't a same-day improvisation, and isn't simply Bitcoin's proof-of-work design carried over unchanged, Ouroboros is a proof-of-stake protocol built on its own line of published research."
+  },
+  "quiz.technical.technical-13.question": {
+    "message": "What can a node do with transactions that do not try to consume the same inputs?"
+  },
+  "quiz.technical.technical-13.option0": {
+    "message": "Validate those transactions in parallel"
+  },
+  "quiz.technical.technical-13.option1": {
+    "message": "Skip validating them and record them on the blockchain anyway"
+  },
+  "quiz.technical.technical-13.option2": {
+    "message": "Let a single one of them spend more ada than the sender actually owns"
+  },
+  "quiz.technical.technical-13.option3": {
+    "message": "Produce blocks containing them without running any consensus protocol at all"
+  },
+  "quiz.technical.technical-13.explanation": {
+    "message": "Cardano's documentation states, \"a node could, in principle, validate transactions in parallel, if those transactions do not try to consume the same input.\" Because each eUTXO transaction's validity depends only on itself and its own inputs, independent transactions don't need to be checked one after another in sequence, a node can validate them at the same time instead. This is about parallel validation, not about skipping validation, overspending, or removing the consensus protocol."
+  },
+  "quiz.wallets.title": {
+    "message": "Wallets and Keys"
+  },
+  "quiz.wallets.description": {
+    "message": "Custody, recovery phrases, hardware wallets, and how to keep your ada safe."
+  },
+  "quiz.wallets.wallets-1.question": {
+    "message": "When people say they \"have ada in a wallet,\" what does the wallet actually store?"
+  },
+  "quiz.wallets.wallets-1.option0": {
+    "message": "The private keys that grant the right to access and spend the ada, the ada's own record lives on the blockchain"
+  },
+  "quiz.wallets.wallets-1.option1": {
+    "message": "The actual ada coins themselves, held inside the wallet like cash in a physical purse"
+  },
+  "quiz.wallets.wallets-1.option2": {
+    "message": "A copy of the entire Cardano blockchain that only that wallet can read"
+  },
+  "quiz.wallets.wallets-1.option3": {
+    "message": "A digital certificate issued once by the Cardano Foundation for each ada holder"
+  },
+  "quiz.wallets.wallets-1.explanation": {
+    "message": "Cardano's own wallet documentation makes clear that assets are not stored in the wallet, their records live on the blockchain and can be accessed using unique private keys, which grant the right to make transactions. A wallet is really a keychain for private keys, not a container for coins, the ledger itself is what records how much ada belongs to which address. Losing the wallet app doesn't destroy the ada, but losing the keys means losing the ability to use it."
+  },
+  "quiz.wallets.wallets-2.question": {
+    "message": "What defines a \"hot wallet\"?"
+  },
+  "quiz.wallets.wallets-2.option0": {
+    "message": "It is a wallet whose keys are kept on a device connected to the internet, which makes it convenient but more exposed to risk"
+  },
+  "quiz.wallets.wallets-2.option1": {
+    "message": "It only works while the user's computer is powered off"
+  },
+  "quiz.wallets.wallets-2.option2": {
+    "message": "It is a wallet that automatically stakes ada the moment it is created"
+  },
+  "quiz.wallets.wallets-2.option3": {
+    "message": "It is a wallet issued exclusively by centralized exchanges"
+  },
+  "quiz.wallets.wallets-2.explanation": {
+    "message": "Essential Cardano defines hot wallets as wallets whose keys sit on a device with an internet connection, \"hot wallets are always connected to the internet, allowing users to easily access and transact their assets.\" That constant connectivity, the keys residing on a device reachable over the internet, is what makes them convenient for everyday use, and it's also the tradeoff that cold storage options like hardware or paper wallets avoid by keeping keys on a device that stays offline."
+  },
+  "quiz.wallets.wallets-3.question": {
+    "message": "What is the main purpose of a hardware wallet?"
+  },
+  "quiz.wallets.wallets-3.option0": {
+    "message": "To keep private keys isolated on a secure physical device while allowing the user to approve transactions"
+  },
+  "quiz.wallets.wallets-3.option1": {
+    "message": "To automatically convert ada into other cryptocurrencies for the user"
+  },
+  "quiz.wallets.wallets-3.option2": {
+    "message": "To replace the need for a recovery phrase entirely"
+  },
+  "quiz.wallets.wallets-3.option3": {
+    "message": "To let a third party manage the user's keys on their behalf"
+  },
+  "quiz.wallets.wallets-3.explanation": {
+    "message": "Cardano's developer documentation describes this hardware-wallet property directly, \"keys never leave a secure device,\" noting that this gives the \"strongest theft protection.\" That is what sets a hardware wallet apart, the private keys are generated and stored inside dedicated, purpose-built hardware and never touch an internet-connected computer or phone, rather than converting currencies, replacing a recovery phrase, or handing key management to a third party."
+  },
+  "quiz.wallets.wallets-4.question": {
+    "message": "What extra step does Cardano's developer curriculum recommend when using a hardware wallet?"
+  },
+  "quiz.wallets.wallets-4.option0": {
+    "message": "Confirm the transaction details on the hardware wallet's own screen, not just in the connected app"
+  },
+  "quiz.wallets.wallets-4.option1": {
+    "message": "Re-enter your recovery phrase into the connected computer before every transaction"
+  },
+  "quiz.wallets.wallets-4.option2": {
+    "message": "Disconnect from the internet entirely before the hardware wallet can be used"
+  },
+  "quiz.wallets.wallets-4.option3": {
+    "message": "Manually calculate the transaction fee before the wallet will allow you to sign"
+  },
+  "quiz.wallets.wallets-4.explanation": {
+    "message": "Cardano's developer curriculum instructs users to \"confirm transaction details on the hardware wallet screen, not just the app.\" The connected computer's screen shows what the software claims the transaction contains, but only the hardware wallet's own screen reflects what the device is actually about to sign, checking there catches cases where the two don't match. The same page separately recommends keeping certain keys off the internet entirely, \"cold-key custody: for keys that sign high-value or governance transactions, keep them off internet-connected machines.\" That is a distinct practice for that specific class of high-value or governance keys, not a general precondition for using a hardware wallet, which is why disconnecting from the internet entirely (option C) is still the wrong answer, ordinary hardware wallet use keeps the connected computer online and isolates only the signing itself on the device. Re-entering a recovery phrase and manually computing a fee are not part of what the page describes for this step either."
+  },
+  "quiz.wallets.wallets-5.question": {
+    "message": "What is a recovery phrase (seed phrase)?"
+  },
+  "quiz.wallets.wallets-5.option0": {
+    "message": "A list of words that can be used to restore access to a wallet and its funds"
+  },
+  "quiz.wallets.wallets-5.option1": {
+    "message": "A short numeric PIN chosen by the user when opening the wallet app"
+  },
+  "quiz.wallets.wallets-5.option2": {
+    "message": "A confirmation code sent by the Cardano Foundation after each transaction"
+  },
+  "quiz.wallets.wallets-5.option3": {
+    "message": "The transaction ID of the wallet's very first payment"
+  },
+  "quiz.wallets.wallets-5.explanation": {
+    "message": "Essential Cardano's glossary defines it as \"a list of words (usually 12, 15, or 24 words)\" that \"can be used to restore access to the wallet and its associated funds.\" It is generated when a wallet is created and is not the same thing as a PIN, a confirmation code, or a transaction record, it is the master backup for the wallet's keys."
+  },
+  "quiz.wallets.wallets-7.question": {
+    "message": "What happens if you lose access to your wallet and have no recovery phrase or other backup of its signing keys?"
+  },
+  "quiz.wallets.wallets-7.option0": {
+    "message": "You cannot recover access to the funds"
+  },
+  "quiz.wallets.wallets-7.option1": {
+    "message": "The Cardano Foundation can reissue a new recovery phrase after identity verification"
+  },
+  "quiz.wallets.wallets-7.option2": {
+    "message": "The funds automatically transfer back to the exchange where the ada was originally bought"
+  },
+  "quiz.wallets.wallets-7.option3": {
+    "message": "The wallet app can regenerate the same phrase if you answer security questions"
+  },
+  "quiz.wallets.wallets-7.explanation": {
+    "message": "Essential Cardano's FAQ addresses exactly this combination, no wallet access and no backup of the signing keys, stating plainly, \"if you have lost your seed phrase and do not have access to your wallet there is no way to retrieve your funds.\" None of the other options match what the source says, it does not mention the Cardano Foundation reissuing a phrase, funds automatically returning to an exchange, or a wallet app regenerating the phrase through security questions."
+  },
+  "quiz.wallets.wallets-8.question": {
+    "message": "When ada is sitting in an account on a centralized exchange (CEX), who actually has custody of it?"
+  },
+  "quiz.wallets.wallets-8.option0": {
+    "message": "The exchange, until the ada is withdrawn to a wallet the user controls"
+  },
+  "quiz.wallets.wallets-8.option1": {
+    "message": "No one, it is held automatically in a neutral smart contract"
+  },
+  "quiz.wallets.wallets-8.option2": {
+    "message": "The user, in exactly the same way as if it were in their own wallet"
+  },
+  "quiz.wallets.wallets-8.option3": {
+    "message": "The Cardano network's validator set collectively"
+  },
+  "quiz.wallets.wallets-8.explanation": {
+    "message": "Cardano's own guidance on getting ada is explicit, \"note that CEXs have custody over ada and other native tokens until you send them to a wallet that you control.\" That means the exchange, not the user, holds the private keys while the ada sits in an exchange account, only withdrawing it to a personal wallet moves custody to the user."
+  },
+  "quiz.wallets.wallets-10.question": {
+    "message": "Unlike a recovery phrase, what is a Cardano receiving address meant for?"
+  },
+  "quiz.wallets.wallets-10.option0": {
+    "message": "Sharing with others so they can send ada or native tokens directly to the wallet"
+  },
+  "quiz.wallets.wallets-10.option1": {
+    "message": "Keeping completely secret, since it also grants spending access"
+  },
+  "quiz.wallets.wallets-10.option2": {
+    "message": "Submitting to the Cardano Foundation once per year for tax reasons"
+  },
+  "quiz.wallets.wallets-10.option3": {
+    "message": "Generating a new recovery phrase whenever it is shared"
+  },
+  "quiz.wallets.wallets-10.explanation": {
+    "message": "Cardano's guidance on getting ada describes exactly this, \"once you have a Cardano wallet, all you need to do is share your address to start sending and receiving ada (and other native tokens) peer-to-peer.\" A receiving address is designed to be handed out, the opposite of a recovery phrase, which must stay private, sharing an address does not give anyone spending access to the wallet."
+  },
+  "quiz.wallets.wallets-11.question": {
+    "message": "What is a Cardano address, technically?"
+  },
+  "quiz.wallets.wallets-11.option0": {
+    "message": "A data structure attached to transaction outputs that carries a network tag and proof of ownership"
+  },
+  "quiz.wallets.wallets-11.option1": {
+    "message": "A secret password that must never be revealed to anyone"
+  },
+  "quiz.wallets.wallets-11.option2": {
+    "message": "A record kept only by the wallet developer, not by the blockchain itself"
+  },
+  "quiz.wallets.wallets-11.option3": {
+    "message": "A type of native token used to pay transaction fees"
+  },
+  "quiz.wallets.wallets-11.explanation": {
+    "message": "Essential Cardano's glossary defines an address as \"a data structure used in transaction outputs to convey various pieces of information,\" noting that all addresses carry a network-discriminant tag and a proof of ownership. It is a piece of information attached to the ledger itself, not a secret, not something only the wallet developer keeps, and not a token in its own right."
+  },
+  "quiz.wallets.wallets-12.question": {
+    "message": "What makes Daedalus different from most other Cardano wallets?"
+  },
+  "quiz.wallets.wallets-12.option0": {
+    "message": "It is a full node wallet that validates the blockchain locally instead of relying on a third party"
+  },
+  "quiz.wallets.wallets-12.option1": {
+    "message": "It is the only wallet that can hold native tokens"
+  },
+  "quiz.wallets.wallets-12.option2": {
+    "message": "It can only be used on mobile phones"
+  },
+  "quiz.wallets.wallets-12.option3": {
+    "message": "It requires no recovery phrase to restore"
+  },
+  "quiz.wallets.wallets-12.explanation": {
+    "message": "Cardano's own page for the app describes Daedalus as a wallet that \"validates the chain locally rather than trusting third parties,\" since it is a full node wallet, meaning it downloads and checks the blockchain itself rather than asking a remote server for that information. Most other Cardano wallets are lighter clients that rely on a server for that data instead, which is faster to set up but shifts that trust elsewhere."
+  },
+  "quiz.wallets.wallets-13.question": {
+    "message": "What are the two general categories of exchange described for getting ada, and what limits one of them for a first-time buyer?"
+  },
+  "quiz.wallets.wallets-13.option0": {
+    "message": "Centralized exchanges (CEXs) and decentralized exchanges (DEXs), DEXs are not beginner-friendly because using one already requires holding some ada or crypto"
+  },
+  "quiz.wallets.wallets-13.option1": {
+    "message": "Domestic exchanges and international exchanges, international ones cannot legally sell ada"
+  },
+  "quiz.wallets.wallets-13.option2": {
+    "message": "Retail exchanges and wholesale exchanges, wholesale ones require a minimum purchase of 100,000 ada"
+  },
+  "quiz.wallets.wallets-13.option3": {
+    "message": "Spot exchanges and futures exchanges, futures ones never deliver actual ada"
+  },
+  "quiz.wallets.wallets-13.explanation": {
+    "message": "Cardano's guidance on getting ada distinguishes centralized exchanges, \"platforms where cryptocurrencies and other digital assets are traded,\" from decentralized exchanges, \"platforms for trading cryptocurrencies that operate without a central authority,\" then adds that \"DEXs are not suitable for beginners, as you must already have ada to use them.\" A CEX is typically where someone converts fiat currency into ada for the first time, a DEX assumes the user already holds crypto to trade with."
+  },
+  "quiz.wallets.wallets-14.question": {
+    "message": "What is a paper wallet?"
+  },
+  "quiz.wallets.wallets-14.option0": {
+    "message": "A paper document containing a wallet's public and private key details, used as offline cold storage"
+  },
+  "quiz.wallets.wallets-14.option1": {
+    "message": "A printed receipt confirming a completed ada transaction"
+  },
+  "quiz.wallets.wallets-14.option2": {
+    "message": "A physical membership card issued by a Cardano stake pool"
+  },
+  "quiz.wallets.wallets-14.option3": {
+    "message": "A backup copy of the Daedalus application installer"
+  },
+  "quiz.wallets.wallets-14.explanation": {
+    "message": "Cardano's documentation describes paper wallets as \"paper documents that contain public and private key details,\" a form of storage that keeps the keys entirely offline. It's a different thing from a transaction receipt, a stake pool membership card, or a backup of wallet software, it is the keys themselves, written down instead of stored digitally."
+  },
   "research.headings.papers": {
     "message": "Papers"
   },
