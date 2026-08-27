@@ -30,6 +30,11 @@ export function getAcademyCta(academyKey, quizId) {
   url.searchParams.set('utm_content', quizId);
   return {
     href: url.toString(),
-    label: translate({id: 'quiz.academy.cta', message: 'Go deeper with the Cardano Academy'}),
+    // Short label for the result screen link, where the surrounding card
+    // already makes the destination context clear. ariaLabel names the
+    // destination explicitly for assistive tech, since the link leaves the
+    // site and the short visible text alone does not say where it goes.
+    label: translate({id: 'quiz.academy.cta', message: 'Go deeper'}),
+    ariaLabel: translate({id: 'quiz.academy.ctaAriaLabel', message: 'Go deeper at the Cardano Academy'}),
   };
 }
