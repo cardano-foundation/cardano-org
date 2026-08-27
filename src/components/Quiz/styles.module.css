@@ -330,7 +330,10 @@ html[data-theme='dark'] .explanation {
   text-align: center;
   padding: 3rem 2rem;
   border-radius: 16px;
-  border: 2px solid;
+  /* The state classes only set border-color, so the surface has to live
+     here: it used to come from the success/failure tint that was removed. */
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
 }
 
 .resultCard.success {
