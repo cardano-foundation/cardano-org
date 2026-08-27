@@ -209,6 +209,7 @@ const Quiz = ({
               results={answerResults}
               score={score}
               total={totalQuestions}
+              tierKey={tier}
               tierLabel={tierLabel(tier)}
             />
           )}
