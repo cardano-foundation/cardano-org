@@ -142,8 +142,8 @@
   top: calc(-1 * var(--site-space-sm));
   right: calc(-1 * var(--site-space-sm));
   z-index: -1;
-  width: calc(var(--site-space-xl) + var(--site-space-lg));
-  height: calc(var(--site-space-xl) + var(--site-space-lg));
+  width: var(--site-space-xl);
+  height: var(--site-space-xl);
   color: var(--ifm-color-primary);
   opacity: 0.07;
 }
