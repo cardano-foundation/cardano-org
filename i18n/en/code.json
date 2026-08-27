@@ -4428,7 +4428,16 @@
     "message": "Self-test · cardano.org/quiz"
   },
   "quiz.academy.cta": {
+    "message": "Go deeper"
+  },
+  "quiz.academy.ctaAriaLabel": {
+    "message": "Go deeper at the Cardano Academy"
+  },
+  "quiz.hub.academyBannerCta": {
     "message": "Go deeper with the Cardano Academy"
+  },
+  "quiz.ui.badgeAlt": {
+    "message": "{tierLabel} badge for {quizTitle}: {score} out of {totalQuestions} correct"
   },
   "quiz.tierPage.bronze.title": {
     "message": "Bronze in the Cardano quiz"
