@@ -7,6 +7,18 @@ import styles from './styles.module.css';
 
 const RESET_DELAY = 2000;
 
+// Each tier links to its own prebuilt share page (its own OG image), so a
+// shared Gold result at least previews as Gold instead of the generic hub.
+const TIER_SHARE_PATHS = {
+  bronze: '/quiz/share/bronze',
+  silver: '/quiz/share/silver',
+  gold: '/quiz/share/gold',
+};
+
+function defaultShareUrl(tierKey) {
+  return `https://cardano.org${TIER_SHARE_PATHS[tierKey] || '/quiz'}`;
+}
+
 // Wordle-style emoji row: one filled circle per correct answer, in order.
 export function buildEmojiGrid(results) {
   return results.map((r) => (r ? '🔵' : '⚪')).join('');
@@ -42,7 +54,7 @@ const STATUS_LABEL = {
 // path the browser supports: the native share sheet with a real image file
 // on mobile, a clipboard image paste on desktop, or a plain download as the
 // last resort before falling back to the original text-only share.
-const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = 'https://cardano.org/quiz' }) => {
+const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey) }) => {
   const [status, setStatus] = useState('idle');
   const starburstUrl = useBaseUrl('/img/brand-assets/cardano-starburst-blue.svg');
   const {i18n} = useDocusaurusContext();

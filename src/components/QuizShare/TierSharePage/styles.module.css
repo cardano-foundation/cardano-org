@@ -1,0 +1,42 @@
+.tierPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--site-space-sm);
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--site-space-xl) var(--site-space-md);
+  text-align: center;
+}
+
+.tierBadge {
+  display: inline-block;
+  padding: var(--site-space-2xs) var(--site-space-lg);
+  border-radius: var(--site-radius-pill);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.tier_gold { background: var(--site-tier-gold); color: var(--site-tier-ink); }
+.tier_silver { background: var(--site-tier-silver); color: var(--site-tier-ink); }
+.tier_bronze { background: var(--site-tier-bronze); color: var(--site-tier-ink); }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px meets the mobile touch-target minimum, matching the rest of the
+     quiz hub's buttons and links. */
+  min-height: 44px;
+  padding: var(--site-space-2xs) var(--site-space-lg);
+  border-radius: var(--site-radius-pill);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  font-weight: 600;
+}
+
+.cta:hover {
+  background: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-white);
+  text-decoration: none;
+}
