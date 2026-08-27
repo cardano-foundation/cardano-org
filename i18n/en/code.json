@@ -4430,6 +4430,27 @@
   "quiz.academy.cta": {
     "message": "Go deeper with the Cardano Academy"
   },
+  "quiz.tierPage.bronze.title": {
+    "message": "Bronze in the Cardano quiz"
+  },
+  "quiz.tierPage.bronze.lead": {
+    "message": "Someone earned Bronze in the Cardano quiz. How well do you know Cardano?"
+  },
+  "quiz.tierPage.silver.title": {
+    "message": "Silver in the Cardano quiz"
+  },
+  "quiz.tierPage.silver.lead": {
+    "message": "Someone earned Silver in the Cardano quiz. How well do you know Cardano?"
+  },
+  "quiz.tierPage.gold.title": {
+    "message": "Gold in the Cardano quiz"
+  },
+  "quiz.tierPage.gold.lead": {
+    "message": "Someone earned Gold in the Cardano quiz. How well do you know Cardano?"
+  },
+  "quiz.tierPage.cta": {
+    "message": "Take the Cardano quiz"
+  },
   "quiz.security.title": {
     "message": "Scams and Security"
   },
