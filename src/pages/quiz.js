@@ -16,7 +16,6 @@ import styles from './quiz.module.css';
 // localStorage, nothing is sent anywhere (see concept in the project notes).
 export default function QuizPage() {
   const academy = getAcademyCta('landing', 'hub-banner');
-  const stats = getCatalogStats();
   return (
     <Layout
       title={translate({id: 'quiz.page.title', message: 'Cardano Quiz: Test Your Knowledge'})}
@@ -27,28 +26,7 @@ export default function QuizPage() {
         title={translate({id: 'quiz.hero.title', message: 'Test your knowledge'})}
         description={translate({id: 'quiz.hero.description', message: 'How well do you know Cardano? Pick a quiz and find out. No sign-up needed, everything stays in your browser.'})}
         bannerType="starburst"
-      >
-        <div className={styles.heroStats}>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>{stats.quizCount}</span>
-            <span className={styles.heroStatLabel}>{translate({id: 'quiz.hub.statQuizzesLabel', message: 'Quizzes'})}</span>
-          </div>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>{stats.totalPoolQuestions}</span>
-            <span className={styles.heroStatLabel}>{translate({id: 'quiz.hub.statQuestionsLabel', message: 'Questions'})}</span>
-          </div>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>
-              {translate({id: 'quiz.hub.timeEstimate', message: '~{minutes} min'}, {minutes: stats.estimatedMinutes})}
-            </span>
-            <span className={styles.heroStatLabel}>{translate({id: 'quiz.hub.statTimeLabel', message: 'Total time'})}</span>
-          </div>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>{translate({id: 'quiz.hub.statPrivacyValue', message: '100% local'})}</span>
-            <span className={styles.heroStatLabel}>{translate({id: 'quiz.hub.statPrivacyLabel', message: 'Progress stays in your browser'})}</span>
-          </div>
-        </div>
-      </SiteHero>
+      />
       <BackgroundWrapper backgroundType="zoom">
         <BoundaryBox>
           <QuizHub />

@@ -4379,23 +4379,8 @@
   "quiz.hub.start": {
     "message": "Start quiz"
   },
-  "quiz.hub.statQuizzesLabel": {
-    "message": "Quizzes"
-  },
-  "quiz.hub.statQuestionsLabel": {
-    "message": "Questions"
-  },
   "quiz.hub.timeEstimate": {
     "message": "~{minutes} min"
-  },
-  "quiz.hub.statTimeLabel": {
-    "message": "Total time"
-  },
-  "quiz.hub.statPrivacyValue": {
-    "message": "100% local"
-  },
-  "quiz.hub.statPrivacyLabel": {
-    "message": "Progress stays in your browser"
   },
   "quiz.hub.progressInvite": {
     "message": "Play a quiz to start earning medals. Your progress stays in this browser."
