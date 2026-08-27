@@ -4412,6 +4412,21 @@
   "quiz.share.button": {
     "message": "Share your result"
   },
+  "quiz.share.pending": {
+    "message": "Sharing..."
+  },
+  "quiz.share.imageCopied": {
+    "message": "Image copied!"
+  },
+  "quiz.share.downloaded": {
+    "message": "Downloaded!"
+  },
+  "quiz.share.badge.brand": {
+    "message": "Cardano Quiz"
+  },
+  "quiz.share.badge.footer": {
+    "message": "Self-test · cardano.org/quiz"
+  },
   "quiz.academy.cta": {
     "message": "Go deeper with the Cardano Academy"
   },
