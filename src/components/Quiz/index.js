@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { computeTier } from '@site/src/utils/quizProgress.mjs';
 import { getTierLabels } from '@site/src/data/quiz/tierLabels';
-import QuizShare, { buildEmojiGrid } from '../QuizShare';
+import QuizShare from '../QuizShare';
+import { renderBadgePng } from '../QuizShare/renderBadge';
 import styles from './styles.module.css';
 
 // Unbiased Fisher-Yates shuffle (replaces the biased sort-by-random trick)
@@ -74,6 +77,89 @@ const Quiz = ({
   const isHubMode = typeof onRecord === 'function';
   const currentQuestion = questions[currentQuestionIndex];
   const totalQuestions = questions.length;
+
+  // Computed unconditionally (not just inside the result branch below) so
+  // the badge effect's hook order never depends on whether the quiz has
+  // data yet or has been completed.
+  const tier = computeTier(score, totalQuestions);
+  const isPractice = mode === 'practice';
+  // The badge only appears for a scored hub run above the learning tier,
+  // never for practice rounds or classic (non-hub) embeds like /common-scams.
+  const showBadge = isQuizComplete && isHubMode && !isPractice && tier !== 'learning';
+
+  // Renders the shareable result badge once per finished, badge-eligible
+  // run and holds an object URL for the inline <img>. The underlying
+  // promise is exposed via getBadgeBlob() below so the share button reuses
+  // this exact render instead of producing a second image.
+  const [badgeUrl, setBadgeUrl] = useState(null);
+  const [badgeStatus, setBadgeStatus] = useState('idle');
+  const badgePromiseRef = useRef(null);
+  const starburstUrl = useBaseUrl('/img/brand-assets/cardano-starburst-blue.svg');
+  const {i18n} = useDocusaurusContext();
+
+  useEffect(() => {
+    if (!showBadge) {
+      // Nothing to clean up in state here: the badge markup below is
+      // already gated on showBadge, so a stale badgeStatus/badgeUrl from a
+      // previous run simply never renders. The next eligible run resets
+      // both to 'pending' itself, below.
+      badgePromiseRef.current = null;
+      return undefined;
+    }
+
+    setBadgeStatus('pending');
+    // Spelled-out month: a purely numeric date is ambiguous across locales
+    // on an image that travels internationally.
+    const dateLabel = new Date().toLocaleDateString(i18n.currentLocale, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+    const promise = renderBadgePng({
+      quizTitle: quizData.title,
+      results: answerResults,
+      score,
+      total: totalQuestions,
+      tierKey: tier,
+      tierLabel: tierLabel(tier),
+      dateLabel,
+      starburstUrl,
+    });
+    badgePromiseRef.current = promise;
+
+    let cancelled = false;
+    promise
+      .then((blob) => {
+        if (cancelled) return;
+        setBadgeStatus('ready');
+        setBadgeUrl(URL.createObjectURL(blob));
+      })
+      .catch(() => {
+        // Badge rendering failed (fonts, canvas, image load): the result
+        // screen keeps working without it, see the badgeStatus === 'error'
+        // check below.
+        if (cancelled) return;
+        setBadgeStatus('error');
+      });
+
+    return () => {
+      cancelled = true;
+    };
+    // showBadge only flips from false to true when a newly finished run
+    // becomes eligible for a badge, and the values closed over here
+    // (score, tier, answerResults...) are already current at that point,
+    // so showBadge alone is the correct trigger for a single render per run.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showBadge]);
+
+  // Revoke the previous object URL whenever a new one replaces it, and on
+  // unmount, so repeated runs never leak blob URLs.
+  useEffect(() => {
+    if (!badgeUrl) return undefined;
+    return () => URL.revokeObjectURL(badgeUrl);
+  }, [badgeUrl]);
+
+  const getBadgeBlob = () => badgePromiseRef.current;
 
   const resetRunState = () => {
     setCurrentQuestionIndex(0);
@@ -155,8 +241,6 @@ const Quiz = ({
   if (isQuizComplete) {
     const percentage = Math.round((score / totalQuestions) * 100);
     const isPassing = percentage >= passingScore;
-    const tier = computeTier(score, totalQuestions);
-    const isPractice = mode === 'practice';
     const practiceCleared = isPractice && missedQuestions.length === 0;
     const showSuccess = isPractice ? practiceCleared : isPassing;
 
@@ -175,20 +259,54 @@ const Quiz = ({
                 ? translate({id: 'quiz.ui.greatJob', message: 'Great job!'})
                 : translate({id: 'quiz.ui.keepLearning', message: 'Keep learning!'})}
           </h2>
-          {isHubMode && !isPractice && (
+
+          {/* Same segmented bar the quiz uses while answering questions,
+              now showing the whole finished run at a glance. */}
+          <div className={styles.progressBar} aria-hidden="true">
+            {questions.map((_, index) => {
+              const wasCorrect = answerResults[index] === true;
+              return (
+                <div
+                  key={index}
+                  className={`${styles.progressSegment} ${wasCorrect ? styles.correct : styles.incorrect}`}
+                />
+              );
+            })}
+          </div>
+
+          {/* The badge below already carries the tier, so the pill only
+              appears for the no-badge cases (practice, classic embeds, and
+              the learning tier), matching today's layout there. */}
+          {isHubMode && !isPractice && !showBadge && (
             <div className={`${styles.tierBadge} ${styles[`tier_${tier}`]}`}>{tierLabel(tier)}</div>
           )}
-          <div className={styles.scoreDisplay}>
-            <span className={styles.scoreNumber}>{percentage}%</span>
-            <span className={styles.scoreText}>
-              {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
-            </span>
-          </div>
-          {isHubMode && !isPractice && (
-            <div className={styles.emojiGrid} aria-hidden="true">
-              {buildEmojiGrid(answerResults)}
+
+          {!showBadge && (
+            <div className={styles.scoreDisplay}>
+              <span className={styles.scoreNumber}>{percentage}%</span>
+              <span className={styles.scoreText}>
+                {translate({id: 'quiz.ui.scoreText', message: 'You scored {score} out of {totalQuestions}'}, {score, totalQuestions})}
+              </span>
             </div>
           )}
+
+          {showBadge && badgeStatus !== 'error' && (
+            <div className={styles.badgeWrap}>
+              {badgeStatus === 'ready' && badgeUrl ? (
+                <img
+                  src={badgeUrl}
+                  alt={translate(
+                    {id: 'quiz.ui.badgeAlt', message: '{tierLabel} badge for {quizTitle}: {score} out of {totalQuestions} correct'},
+                    {tierLabel: tierLabel(tier), quizTitle: quizData.title, score, totalQuestions},
+                  )}
+                  className={styles.badgeImage}
+                />
+              ) : (
+                <div className={styles.badgePlaceholder} aria-hidden="true" />
+              )}
+            </div>
+          )}
+
           <div className={styles.resultActions}>
             {isHubMode && missedQuestions.length > 0 && (
               <button onClick={handlePracticeMistakes} className={styles.secondaryButton}>
@@ -203,7 +321,7 @@ const Quiz = ({
                 : translate({id: 'quiz.ui.tryAgain', message: 'Try again'})}
             </button>
           </div>
-          {isHubMode && !isPractice && tier !== 'learning' && (
+          {showBadge && (
             <QuizShare
               quizTitle={quizData.title}
               results={answerResults}
@@ -211,10 +329,11 @@ const Quiz = ({
               total={totalQuestions}
               tierKey={tier}
               tierLabel={tierLabel(tier)}
+              getBadgeBlob={getBadgeBlob}
             />
           )}
           {isHubMode && !isPractice && academyCta && (
-            <Link to={academyCta.href} className={styles.academyCta}>
+            <Link to={academyCta.href} className={styles.academyCta} aria-label={academyCta.ariaLabel}>
               {academyCta.label}
             </Link>
           )}

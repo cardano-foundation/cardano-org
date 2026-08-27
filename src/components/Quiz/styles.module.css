@@ -523,10 +523,31 @@ html[data-theme='dark'] .explanation {
 .tier_bronze { background: var(--site-tier-bronze); color: var(--site-tier-ink); }
 .tier_learning { background: var(--ifm-color-emphasis-200); color: var(--ifm-color-emphasis-800); }
 
-.emojiGrid {
-  font-size: 1.4rem;
-  letter-spacing: 0.15em;
-  margin: var(--site-space-xs) 0;
+.badgeWrap {
+  display: flex;
+  justify-content: center;
+  margin: var(--site-space-sm) 0;
+}
+
+.badgeWrap > * {
+  width: 100%;
+  max-width: 320px;
+}
+
+.badgeImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+}
+
+/* Reserves the badge's square footprint while it renders, so the card does
+   not jump once the image swaps in. */
+.badgePlaceholder {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-color-emphasis-200);
 }
 
 .resultActions {

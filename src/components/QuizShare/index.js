@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import {translate} from '@docusaurus/Translate';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { renderBadgePng } from './renderBadge';
 import styles from './styles.module.css';
 
 const RESET_DELAY = 2000;
@@ -50,14 +47,15 @@ const STATUS_LABEL = {
   copiedText: () => translate({id: 'quiz.share.copied', message: 'Copied!'}),
 };
 
-// Renders a shareable result badge (PNG) and hands it to the best sharing
-// path the browser supports: the native share sheet with a real image file
-// on mobile, a clipboard image paste on desktop, or a plain download as the
+// Hands the already-rendered result badge (PNG) to the best sharing path
+// the browser supports: the native share sheet with a real image file on
+// mobile, a clipboard image paste on desktop, or a plain download as the
 // last resort before falling back to the original text-only share.
-const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey) }) => {
+//
+// getBadgeBlob reuses the single render the result screen already produced
+// (see Quiz/index.js) instead of rendering a second badge here.
+const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey), getBadgeBlob }) => {
   const [status, setStatus] = useState('idle');
-  const starburstUrl = useBaseUrl('/img/brand-assets/cardano-starburst-blue.svg');
-  const {i18n} = useDocusaurusContext();
   const text = buildShareText({ quizTitle, results, score, total, tierLabel, url });
 
   const showStatus = (next) => {
@@ -94,28 +92,18 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
     if (status === 'pending') return;
     setStatus('pending');
 
-    // Spelled-out month: a purely numeric date is ambiguous across locales
-    // on an image that travels internationally.
-    const dateLabel = new Date().toLocaleDateString(i18n.currentLocale, {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    });
     let blob;
     try {
-      blob = await renderBadgePng({
-        quizTitle,
-        results,
-        score,
-        total,
-        tierKey,
-        tierLabel,
-        dateLabel,
-        starburstUrl,
-      });
+      // The badge promise comes from the result screen, which starts the
+      // render as soon as it appears. Awaiting it here reuses that single
+      // render instead of producing a second badge image.
+      const badgePromise = getBadgeBlob && getBadgeBlob();
+      if (!badgePromise) throw new Error('Badge is not ready to share');
+      blob = await badgePromise;
     } catch (e) {
-      // Badge rendering failed (fonts, canvas, image load): fall back to
-      // the text-only share rather than leaving the user stuck.
+      // Badge rendering failed (fonts, canvas, image load) or was not ready
+      // yet: fall back to the text-only share rather than leaving the user
+      // stuck.
       await shareTextOnly();
       return;
     }
