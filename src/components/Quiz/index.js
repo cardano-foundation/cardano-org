@@ -107,6 +107,7 @@ const Quiz = ({
       return undefined;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the badge is rendered from an external canvas API, this marks that async work as started
     setBadgeStatus('pending');
     // Spelled-out month: a purely numeric date is ambiguous across locales
     // on an image that travels internationally.
