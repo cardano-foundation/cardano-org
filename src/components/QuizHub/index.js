@@ -1,8 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
-import { FaNetworkWired, FaKey, FaLayerGroup, FaUniversity, FaMicrochip } from 'react-icons/fa';
-import { BsShieldExclamation } from 'react-icons/bs';
 import QuizModal from '@site/src/components/QuizModal';
 import useQuizProgress from '@site/src/utils/useQuizProgress';
 import { totalPoints } from '@site/src/utils/quizProgress.mjs';
@@ -11,17 +9,6 @@ import { getAcademyCta } from '@site/src/data/quiz/academy';
 import { getTierLabels } from '@site/src/data/quiz/tierLabels';
 import { getCatalogStats, estimateQuizMinutes } from './catalogStats';
 import styles from './styles.module.css';
-
-// One topic icon per quiz id, all rendered in brand blue through IconHero's
-// own tile styling, never one color per topic.
-const TOPIC_ICONS = {
-  basics: FaNetworkWired,
-  wallets: FaKey,
-  security: BsShieldExclamation,
-  staking: FaLayerGroup,
-  governance: FaUniversity,
-  technical: FaMicrochip,
-};
 
 // Only bronze/silver/gold ever appear here, "learning" progress is not
 // tier-badged on the hub cards.
@@ -101,13 +88,11 @@ const ProgressBand = ({ progress, catalogStats, onReset }) => {
 
 const QuizCard = ({ entry, saved, tiers, difficulties, onRecord }) => {
   const data = entry.getData();
-  const Icon = TOPIC_ICONS[entry.id];
   const savedTier = saved && saved.tier !== 'learning' ? saved.tier : null;
   const minutes = estimateQuizMinutes(data.questionCount);
 
   return (
     <div className={styles.card}>
-      <Icon className={styles.cardWatermark} aria-hidden="true" />
       <h3 className={styles.cardTitle}>{data.title}</h3>
       <div className={styles.badgeRow}>
         <span className={clsx(styles.badge, styles[`badge_${data.difficulty}`])}>
