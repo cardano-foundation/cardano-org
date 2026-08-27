@@ -271,7 +271,9 @@ const Quiz = ({
             const isCorrectOption = index === currentQuestion.correctAnswer;
             const showAsCorrect = isAnswered && isCorrectOption;
             const showAsIncorrect = isAnswered && isSelected && !isCorrectOption;
-            const shouldShow = !isAnswered || isSelected;
+            // After answering, keep the picked option visible and always reveal the
+            // correct one, so a wrong pick teaches which answer was right.
+            const shouldShow = !isAnswered || isSelected || isCorrectOption;
             if (!shouldShow) return null;
             return (
               <button
