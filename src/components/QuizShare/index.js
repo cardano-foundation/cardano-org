@@ -82,7 +82,13 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
     if (status === 'pending') return;
     setStatus('pending');
 
-    const dateLabel = new Date().toLocaleDateString(i18n.currentLocale);
+    // Spelled-out month: a purely numeric date is ambiguous across locales
+    // on an image that travels internationally.
+    const dateLabel = new Date().toLocaleDateString(i18n.currentLocale, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
     let blob;
     try {
       blob = await renderBadgePng({
