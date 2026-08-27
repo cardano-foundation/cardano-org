@@ -4434,7 +4434,7 @@
     "message": "Go deeper at the Cardano Academy"
   },
   "quiz.hub.academyBannerCta": {
-    "message": "Go deeper with the Cardano Academy"
+    "message": "Go deeper"
   },
   "quiz.ui.badgeAlt": {
     "message": "{tierLabel} badge for {quizTitle}: {score} out of {totalQuestions} correct"

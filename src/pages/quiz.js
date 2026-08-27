@@ -33,11 +33,11 @@ export default function QuizPage() {
           <SpacerBox size="medium" />
           <div className={styles.academyBanner}>
             <p>{translate({id: 'quiz.hub.academyBanner', message: 'Ready for the next step? The Cardano Academy offers free courses with real certificates.'})}</p>
-            {/* Keeps the longer wording here (unlike the short result-screen
-                CTA) since the visible text alone should already name the
-                destination, no aria-label override needed. */}
-            <Link to={academy.href} className={styles.academyBannerButton}>
-              {translate({id: 'quiz.hub.academyBannerCta', message: 'Go deeper with the Cardano Academy'})}
+            {/* The paragraph above already names the Academy, so the button
+                stays short. aria-label carries the destination for anyone
+                reading links out of context. */}
+            <Link to={academy.href} className={styles.academyBannerButton} aria-label={academy.ariaLabel}>
+              {translate({id: 'quiz.hub.academyBannerCta', message: 'Go deeper'})}
             </Link>
           </div>
         </BoundaryBox>
