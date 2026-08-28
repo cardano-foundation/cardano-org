@@ -4448,6 +4448,9 @@
   "quiz.academy.cta": {
     "message": "Go deeper"
   },
+  "quiz.academy.ctaCertified": {
+    "message": "Get certified at the Cardano Academy"
+  },
   "quiz.academy.ctaAriaLabel": {
     "message": "Go deeper at the Cardano Academy"
   },

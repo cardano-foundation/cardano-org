@@ -166,6 +166,11 @@ const Quiz = ({
 
   const getBadgeBlob = () => badgePromiseRef.current;
 
+  // Silver and gold mean at least 80% correct. At that point the useful next
+  // step is the certificate the Academy hands out, not another invitation to
+  // read up on the topic, so the CTA leads with it.
+  const showCertifiedCta = tier === 'gold' || tier === 'silver';
+
   const resetRunState = () => {
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);
@@ -344,8 +349,12 @@ const Quiz = ({
             />
           )}
           {isHubMode && !isPractice && academyCta && (
-            <Link to={academyCta.href} className={styles.academyCta} aria-label={academyCta.ariaLabel}>
-              {academyCta.label}
+            <Link
+              to={academyCta.href}
+              className={styles.academyCta}
+              aria-label={showCertifiedCta ? undefined : academyCta.ariaLabel}
+            >
+              {showCertifiedCta ? academyCta.certifiedLabel : academyCta.label}
             </Link>
           )}
         </div>
