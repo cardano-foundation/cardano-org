@@ -12,7 +12,6 @@ const ALLOWED_SOURCE_HOSTS = [
   'docs.cardano.org',
   'developers.cardano.org',
   'cips.cardano.org',
-  'essentialcardano.io',
   'roadmap.cardano.org',
   'cardanofoundation.org',
 ];
