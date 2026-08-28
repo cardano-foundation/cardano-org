@@ -179,7 +179,7 @@ import scamQuiz from '@site/src/data/quiz-scams.json';
 
 ## Hub Mode
 
-Passing an `onRecord` function switches `Quiz` into hub mode. The results screen always shows the segmented green and red progress bar every result screen uses. On top of that, a run scoring 60 percent or higher also gets a rendered result badge image (bronze, silver, or gold), a [share button](./quiz-share.md) for that badge, and an optional academy call-to-action. A run below 60 percent lands in a fourth "learning" state instead: no badge and no share button, just the bar, the score text, and an encouragement to try again.
+Passing an `onRecord` function switches `Quiz` into hub mode. The results screen always shows the segmented green and red progress bar every result screen uses. On top of that, a run scoring 60 percent or higher also gets a rendered result badge image (bronze, silver, or gold), a [share button](./quiz-share.md) for that badge, and an optional academy call-to-action. A run below 60 percent gets a fourth "learning" state instead: no badge and no share button, but the "Keep learning" tier pill, the score text, the bar, and an encouragement to try again.
 
 ```jsx
 import Quiz from '@site/src/components/Quiz';
