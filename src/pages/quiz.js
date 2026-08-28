@@ -9,7 +9,6 @@ import SpacerBox from '@site/src/components/Layout/SpacerBox';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import QuizHub from '@site/src/components/QuizHub';
 import { getAcademyCta } from '@site/src/data/quiz/academy';
-import { getCatalogStats } from '@site/src/components/QuizHub/catalogStats';
 import styles from './quiz.module.css';
 
 // /quiz: the knowledge quiz hub. All progress lives in the visitor's

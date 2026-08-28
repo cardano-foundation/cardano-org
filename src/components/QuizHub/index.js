@@ -10,8 +10,6 @@ import { getTierLabels } from '@site/src/data/quiz/tierLabels';
 import { getCatalogStats, estimateQuizMinutes } from './catalogStats';
 import styles from './styles.module.css';
 
-// Only bronze/silver/gold ever appear here, "learning" progress is not
-// tier-badged on the hub cards.
 const difficultyLabels = () => ({
   beginner: translate({id: 'quiz.difficulty.beginner', message: 'Beginner'}),
   intermediate: translate({id: 'quiz.difficulty.intermediate', message: 'Intermediate'}),
@@ -88,6 +86,8 @@ const ProgressBand = ({ progress, catalogStats, onReset }) => {
 
 const QuizCard = ({ entry, saved, tiers, difficulties, onRecord }) => {
   const data = entry.getData();
+  // Only bronze/silver/gold ever appear as a tier chip here, "learning"
+  // progress is not tier-badged on the hub cards.
   const savedTier = saved && saved.tier !== 'learning' ? saved.tier : null;
   const minutes = estimateQuizMinutes(data.questionCount);
 

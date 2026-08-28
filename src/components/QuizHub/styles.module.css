@@ -67,6 +67,12 @@
 }
 
 .resetButton {
+  display: inline-flex;
+  align-items: center;
+  /* 44px meets the mobile touch-target minimum, matching the other
+     controls, while padding (not a taller box) absorbs the extra height so
+     the button keeps its quiet text-only look. */
+  min-height: 44px;
   background: transparent;
   border: none;
   padding: 0;

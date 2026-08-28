@@ -99,10 +99,6 @@ const Quiz = ({
 
   useEffect(() => {
     if (!showBadge) {
-      // Nothing to clean up in state here: the badge markup below is
-      // already gated on showBadge, so a stale badgeStatus/badgeUrl from a
-      // previous run simply never renders. The next eligible run resets
-      // both to 'pending' itself, below.
       badgePromiseRef.current = null;
       return undefined;
     }
@@ -145,6 +141,14 @@ const Quiz = ({
 
     return () => {
       cancelled = true;
+      // Reset here, not just on the next eligible run: without this, a
+      // second finished run repaints the result screen with badgeStatus
+      // still 'ready' and badgeUrl still pointing at the first run's badge
+      // for one frame, before this same effect re-fires and replaces it.
+      // Clearing both as soon as this run stops being badge-eligible (on
+      // restart) means the next run starts from 'idle', not a stale 'ready'.
+      setBadgeStatus('idle');
+      setBadgeUrl(null);
     };
     // showBadge only flips from false to true when a newly finished run
     // becomes eligible for a badge, and the values closed over here
@@ -244,6 +248,11 @@ const Quiz = ({
     const isPassing = percentage >= passingScore;
     const practiceCleared = isPractice && missedQuestions.length === 0;
     const showSuccess = isPractice ? practiceCleared : isPassing;
+    // showBadge alone is not enough to hide the tier pill and score text:
+    // when the badge is eligible but failed to render (badgeStatus ===
+    // 'error'), nothing below shows it, so the text layout has to take
+    // over instead of leaving the result screen with just a heading.
+    const badgeVisible = showBadge && badgeStatus !== 'error';
 
     return (
       <div className={styles.quizContainer}>
@@ -276,13 +285,14 @@ const Quiz = ({
           </div>
 
           {/* The badge below already carries the tier, so the pill only
-              appears for the no-badge cases (practice, classic embeds, and
-              the learning tier), matching today's layout there. */}
-          {isHubMode && !isPractice && !showBadge && (
+              appears for the no-badge cases (practice, classic embeds, the
+              learning tier, and a badge that failed to render), matching
+              today's layout there. */}
+          {isHubMode && !isPractice && !badgeVisible && (
             <div className={`${styles.tierBadge} ${styles[`tier_${tier}`]}`}>{tierLabel(tier)}</div>
           )}
 
-          {!showBadge && (
+          {!badgeVisible && (
             <div className={styles.scoreDisplay}>
               <span className={styles.scoreNumber}>{percentage}%</span>
               <span className={styles.scoreText}>
@@ -291,7 +301,7 @@ const Quiz = ({
             </div>
           )}
 
-          {showBadge && badgeStatus !== 'error' && (
+          {badgeVisible && (
             <div className={styles.badgeWrap}>
               {badgeStatus === 'ready' && badgeUrl ? (
                 <img

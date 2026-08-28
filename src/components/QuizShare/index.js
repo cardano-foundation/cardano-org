@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
@@ -57,10 +57,18 @@ const STATUS_LABEL = {
 const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey), getBadgeBlob }) => {
   const [status, setStatus] = useState('idle');
   const text = buildShareText({ quizTitle, results, score, total, tierLabel, url });
+  const resetTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => clearTimeout(resetTimeoutRef.current);
+  }, []);
 
   const showStatus = (next) => {
     setStatus(next);
-    setTimeout(() => setStatus('idle'), RESET_DELAY);
+    // Clear any earlier reset still pending, otherwise it can fire after
+    // this one and flip a later 'pending' share back to 'idle' mid-flight.
+    clearTimeout(resetTimeoutRef.current);
+    resetTimeoutRef.current = setTimeout(() => setStatus('idle'), RESET_DELAY);
   };
 
   // The original text-only path, kept as the fallback for whenever badge
