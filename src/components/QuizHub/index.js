@@ -140,7 +140,7 @@ const QuizHub = () => {
   const difficulties = difficultyLabels();
 
   return (
-    <div className={styles.hub}>
+    <>
       <ProgressBand progress={progress} catalogStats={catalogStats} onReset={reset} />
       <div className={styles.grid}>
         {catalog.map((entry) => (
@@ -154,7 +154,7 @@ const QuizHub = () => {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
