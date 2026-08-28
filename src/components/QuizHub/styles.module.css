@@ -1,8 +1,3 @@
-.hub {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 /* Reserve enough room for the taller "played" variant (medal row, summary
    line, reset button) so swapping in from the shorter invitation line after
    mount never shifts the card grid below it. */
@@ -88,13 +83,28 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Fixed three columns rather than auto-fill: at the full BoundaryBox
+     width the cards would otherwise flow into four columns and leave the
+     six quizzes as an uneven 4 + 2. */
+  grid-template-columns: repeat(3, 1fr);
   /* Default stretch: every card in a row matches the tallest one. The
      description no longer has flex-grow (see .cardDescription), so it
-     can't be inflated past its own two-line clamp by that extra height,
+     can't be inflated past its own three-line clamp by that extra height,
      and .cardCta's margin-top: auto absorbs the leftover space instead,
      keeping CTAs aligned across the row. */
   gap: var(--site-space-md);
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
@@ -170,7 +180,7 @@
 
 .cardDescription {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0 0 var(--site-space-xs);

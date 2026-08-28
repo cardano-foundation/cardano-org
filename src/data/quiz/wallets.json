@@ -28,8 +28,8 @@
         "It is a wallet issued exclusively by centralized exchanges"
       ],
       "correctAnswer": 0,
-      "explanation": "Essential Cardano defines hot wallets as wallets whose keys sit on a device with an internet connection, \"hot wallets are always connected to the internet, allowing users to easily access and transact their assets.\" That constant connectivity, the keys residing on a device reachable over the internet, is what makes them convenient for everyday use, and it's also the tradeoff that cold storage options like hardware or paper wallets avoid by keeping keys on a device that stays offline.",
-      "sourceUrl": "https://www.essentialcardano.io/article/wallets"
+      "explanation": "cardano.org's wallet explainer defines it by connectivity, \"a hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges.\" That constant connectivity is what makes them convenient for everyday use, and it is exactly the tradeoff cold storage avoids by keeping keys on a device that stays offline.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
     },
     {
       "id": "wallets-3",
@@ -67,8 +67,8 @@
         "The transaction ID of the wallet's very first payment"
       ],
       "correctAnswer": 0,
-      "explanation": "Essential Cardano's glossary defines it as \"a list of words (usually 12, 15, or 24 words)\" that \"can be used to restore access to the wallet and its associated funds.\" It is generated when a wallet is created and is not the same thing as a PIN, a confirmation code, or a transaction record, it is the master backup for the wallet's keys.",
-      "sourceUrl": "https://www.essentialcardano.io/glossary/recovery-phrase"
+      "explanation": "cardano.org's wallet explainer describes it as the master key: \"when you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is a human-readable form of your private key.\" It is generated when the wallet is created and is not the same thing as a PIN, a confirmation code, or a transaction record.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
     },
     {
       "id": "wallets-7",
@@ -80,8 +80,8 @@
         "The wallet app can regenerate the same phrase if you answer security questions"
       ],
       "correctAnswer": 0,
-      "explanation": "Essential Cardano's FAQ addresses exactly this combination, no wallet access and no backup of the signing keys, stating plainly, \"if you have lost your seed phrase and do not have access to your wallet there is no way to retrieve your funds.\" None of the other options match what the source says, it does not mention the Cardano Foundation reissuing a phrase, funds automatically returning to an exchange, or a wallet app regenerating the phrase through security questions.",
-      "sourceUrl": "https://www.essentialcardano.io/faq/ive-lost-the-seed-or-recovery-phrase-for-my-wallet-what-can-i-do"
+      "explanation": "cardano.org's wallet explainer addresses exactly this combination, no wallet access and no backup of the keys, \"with a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone.\" None of the other options match, there is no Cardano Foundation reissuing a phrase, no automatic return of funds to an exchange, and no wallet app that can regenerate the phrase through security questions.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
     },
     {
       "id": "wallets-8",
@@ -119,8 +119,8 @@
         "A type of native token used to pay transaction fees"
       ],
       "correctAnswer": 0,
-      "explanation": "Essential Cardano's glossary defines an address as \"a data structure used in transaction outputs to convey various pieces of information,\" noting that all addresses carry a network-discriminant tag and a proof of ownership. It is a piece of information attached to the ledger itself, not a secret, not something only the wallet developer keeps, and not a token in its own right.",
-      "sourceUrl": "https://www.essentialcardano.io/glossary/address"
+      "explanation": "Cardano addresses are defined by CIP-19, which sets out their byte-level layout: \"a header that encodes the address type and network (mainnet or testnet), followed by a payment credential (a key hash or script hash that controls spending) and, for most everyday addresses, a staking credential that points to the stake key earning rewards.\" It is a piece of information attached to the ledger itself, not a secret, not something only the wallet developer keeps, and not a token in its own right.",
+      "sourceUrl": "https://cardano.org/glossary/cip-19/"
     },
     {
       "id": "wallets-12",

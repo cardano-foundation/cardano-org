@@ -35,6 +35,12 @@ export function getAcademyCta(academyKey, quizId) {
     // destination explicitly for assistive tech, since the link leaves the
     // site and the short visible text alone does not say where it goes.
     label: translate({id: 'quiz.academy.cta', message: 'Go deeper'}),
+    // Alternative label for a strong result. Someone who just answered
+    // nearly everything correctly does not need the generic invitation to
+    // learn more, so the CTA names the concrete payoff instead: the
+    // Academy's courses end in a real certificate. Naming the destination
+    // makes this label self-explanatory, so it needs no separate aria-label.
+    certifiedLabel: translate({id: 'quiz.academy.ctaCertified', message: 'Get certified at the Cardano Academy'}),
     ariaLabel: translate({id: 'quiz.academy.ctaAriaLabel', message: 'Go deeper at the Cardano Academy'}),
   };
 }

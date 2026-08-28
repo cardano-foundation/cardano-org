@@ -15,8 +15,8 @@
         "It is sent to a smart contract that holds it until you withdraw"
       ],
       "correctAnswer": 0,
-      "explanation": "Delegating is not a transfer of funds. Essential Cardano states that \"when a delegator stakes their ada on Cardano their funds do not leave their wallet.\" You submit an on-chain certificate that counts your stake toward a chosen pool, while you keep full custody and spending control of the ada itself. The pool operator never receives or controls your funds, and no smart contract is involved.",
-      "sourceUrl": "https://www.essentialcardano.io/faq/is-my-ada-safe-when-staking"
+      "explanation": "Delegating is not a transfer of funds. Cardano's developer portal is explicit that your ada \"never leaves your wallet,\" you issue an on-chain certificate that counts your stake toward a pool and you keep full spending control. The pool operator never receives or controls your funds, and no smart contract is involved.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/staking-governance/staking/"
     },
     {
       "id": "staking-2",
@@ -41,8 +41,8 @@
         "You permanently lose the ability to delegate again"
       ],
       "correctAnswer": 0,
-      "explanation": "Cardano has no slashing mechanism for delegators. Essential Cardano states that \"the worst thing that could happen is that a stake pool underperforms, in which case a delegator may not receive all of the staking rewards,\" but the ada in the wallet \"is not at risk of being slashed or penalized in any way.\" This is a key difference from proof-of-stake systems that do use slashing, where validators can lose part of their stake for misbehavior.",
-      "sourceUrl": "https://www.essentialcardano.io/faq/is-my-ada-safe-when-staking"
+      "explanation": "Cardano has no slashing mechanism for delegators. The developer portal states it plainly, \"no slashing,\" delegated ada is never at risk, and if a pool underperforms you simply miss rewards for that epoch, \"you never lose principal.\" This is a key difference from proof-of-stake systems that do use slashing, where validators can lose part of their stake for misbehavior.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/staking-governance/staking/"
     },
     {
       "id": "staking-4",
@@ -132,8 +132,8 @@
         "Because new delegators must first pass an identity verification check with the Cardano Foundation"
       ],
       "correctAnswer": 0,
-      "explanation": "Staking rewards are not instant because delegation takes effect through Cardano's epoch-based snapshot system, not the moment you delegate. Essential Cardano explains that after you delegate, your stake first needs a new snapshot before the pool can use it, then a further epoch passes to calculate rewards, and only then are those rewards distributed, so that \"you need to wait 15-20 days (at least 3 epochs) before you receive your first reward.\" After that initial delay, rewards are calculated and distributed on an epoch basis, with no manual approval needed from the pool operator, but that is not a promise of a payout every single epoch. Cardano's own documentation on pledging and rewards notes that the actual amount \"will fluctuate due to the stochastic nature, or random process of the Ouroboros Praos consensus algorithm,\" and depends on \"the actual stake pool performance, that is, the number of blocks a stake pool is observed to produce in a given epoch versus the number it was expected to produce.\" None of the other options match what the source describes, there is no manual pool-operator approval step, no fixed annual payout date, and no identity-verification requirement.",
-      "sourceUrl": "https://www.essentialcardano.io/article/epochs-in-cardano"
+      "explanation": "Staking rewards are not instant because delegation takes effect through Cardano's epoch-based snapshot system, not the moment you delegate. The developer portal walks through the schedule: you delegate in one epoch, your stake enters the next snapshot, the epoch after that it counts toward block production, and the rewards it earned are paid out two epochs later again, roughly 15 to 20 days from delegating to the first reward. After that initial delay, rewards are calculated and distributed on an epoch basis, with no manual approval needed from the pool operator, but that is not a promise of a payout every single epoch. Cardano's own documentation on pledging and rewards notes that the actual amount \"will fluctuate due to the stochastic nature, or random process of the Ouroboros Praos consensus algorithm,\" and depends on \"the actual stake pool performance, that is, the number of blocks a stake pool is observed to produce in a given epoch versus the number it was expected to produce.\" None of the other options match, there is no manual pool-operator approval step, no fixed annual payout date, and no identity-verification requirement.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/staking-governance/staking/"
     },
     {
       "id": "staking-11",
@@ -145,8 +145,8 @@
         "Switching pools requires closing your wallet and creating a new one"
       ],
       "correctAnswer": 0,
-      "explanation": "Essential Cardano confirms that \"the switchover is seamless when you move from one stake pool to another,\" and that \"you do not need to withdraw your staking rewards before switching stake pools.\" You simply submit a new delegation certificate, there is no waiting period measured in years and no need to create a new wallet.",
-      "sourceUrl": "https://www.essentialcardano.io/faq/what-happens-when-i-move-to-a-new-stake-pool-will-i-loose-rewards"
+      "explanation": "cardano.org's delegation FAQ is clear that \"delegated stake can be re-delegated to another pool at any time.\" The switch is seamless but not instant, \"re-delegated stake will remain in the current pool until the epoch after next,\" so you keep earning from the original pool for two more epochs before the new preference applies. You submit a new delegation certificate and keep the rewards you already earned, there is no need to withdraw them first, no waiting period measured in years, and no need to create a new wallet.",
+      "sourceUrl": "https://cardano.org/stake-pool-delegation/"
     },
     {
       "id": "staking-12",

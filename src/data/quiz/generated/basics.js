@@ -176,8 +176,8 @@ export function getQuizData() {
         translate({id: "quiz.basics.basics-13.option3", message: "A fictional character invented for marketing purposes"}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.basics.basics-13.explanation", message: "According to Essential Cardano, the platform's \"name derives from Gerolamo Cardano, a mid-16th-century Italian physician and mathematician.\" This is distinct from ada, which is named after a different mathematician, Ada Lovelace. The blockchain platform simply borrows his name, he lived centuries before it existed."}),
-      sourceUrl: "https://www.essentialcardano.io/article/what-is-cardano-cardano-101",
+      explanation: translate({id: "quiz.basics.basics-13.explanation", message: "The platform is named after Gerolamo Cardano, a 16th-century Italian physician and mathematician. That is a different namesake from ada, which is named after Ada Lovelace. The blockchain simply borrows his name, he lived centuries before it existed."}),
+      sourceUrl: "https://cardano.org/glossary/cardano/",
     },
     {
       id: "basics-14",
@@ -189,7 +189,7 @@ export function getQuizData() {
         translate({id: "quiz.basics.basics-14.option3", message: "A single company called Cardano Inc."}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.basics.basics-14.explanation", message: "Cardano's own governance documentation calls these three the \"pioneer entities\" of Cardano, describing them as having relinquished the genesis keys of the blockchain to hand a more mature governance system to the community. Essential Cardano separately fills in each one's role, \"Charles Hoskinson and Jeremy Wood founded Input Output (initially, IOHK) to design and implement Cardano,\" \"the Cardano Foundation was set up to oversee and supervise the development of Cardano and to act as an advocate for its users,\" and \"a third entity, Emurgo, was created to pursue commercial activities on behalf of the ecosystem and community,\" adding that \"the three entities have separate ownerships and leadership.\" Cardano was never the product of a single company, and none of the other listed organizations were involved."}),
+      explanation: translate({id: "quiz.basics.basics-14.explanation", message: "Cardano's own governance documentation calls EMURGO, Input Output, and the Cardano Foundation the pioneer entities of Cardano, describing them as having \"relinquished the genesis keys of the blockchain, handing a more mature governance system to the community.\" The three are independent organizations, Cardano was never the product of a single company, and none of the other listed organizations were involved."}),
       sourceUrl: "https://docs.cardano.org/about-cardano/governance-overview",
     },
     {
@@ -202,8 +202,8 @@ export function getQuizData() {
         translate({id: "quiz.basics.basics-15.option3", message: "2021"}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.basics.basics-15.explanation", message: "Essential Cardano states that \"the Cardano blockchain and ada, its founding native cryptocurrency, was launched in 2017.\" That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."}),
-      sourceUrl: "https://www.essentialcardano.io/article/what-is-cardano-cardano-101",
+      explanation: translate({id: "quiz.basics.basics-15.explanation", message: "Cardano's genesis block \"launched the Byron era on September 29, 2017,\" which is when the blockchain and ada went live. That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."}),
+      sourceUrl: "https://cardano.org/glossary/genesis-block/",
     },
     ],
   };
