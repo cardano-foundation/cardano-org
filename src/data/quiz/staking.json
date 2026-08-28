@@ -1,0 +1,191 @@
+{
+  "id": "staking",
+  "title": "Staking and Delegation",
+  "description": "Test what you know about delegating ada, epochs, stake pools, and rewards.",
+  "questionCount": 6,
+  "difficulty": "intermediate",
+  "questions": [
+    {
+      "id": "staking-1",
+      "question": "When you delegate your ada to a stake pool, what happens to the ada itself?",
+      "options": [
+        "It stays in your own wallet, you only issue a certificate that assigns your stake to a pool",
+        "It is transferred to the stake pool operator's wallet",
+        "It is converted into a new token controlled by the pool",
+        "It is sent to a smart contract that holds it until you withdraw"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Delegating is not a transfer of funds. Essential Cardano states that \"when a delegator stakes their ada on Cardano their funds do not leave their wallet.\" You submit an on-chain certificate that counts your stake toward a chosen pool, while you keep full custody and spending control of the ada itself. The pool operator never receives or controls your funds, and no smart contract is involved.",
+      "sourceUrl": "https://www.essentialcardano.io/faq/is-my-ada-safe-when-staking"
+    },
+    {
+      "id": "staking-2",
+      "question": "Can you spend your ada while it is delegated to a stake pool?",
+      "options": [
+        "Yes, delegated ada stays fully liquid and can be spent at any time",
+        "No, delegated ada is locked for a fixed period before it can be spent",
+        "Only after formally \"unstaking\" through a multi-day withdrawal process",
+        "Only if the stake pool operator approves the transaction"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Unlike some other proof-of-stake networks, Cardano imposes no lockup period. Cardano's documentation notes that \"you can spend your ada normally at any time, regardless of how you delegated it.\" There is no unstaking cooldown and no operator approval needed. Delegating simply assigns your stake's reward rights to a pool without restricting the ada in any way.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/delegation"
+    },
+    {
+      "id": "staking-3",
+      "question": "What happens to your staked ada if the stake pool you delegated to underperforms or goes offline?",
+      "options": [
+        "You may miss out on some rewards, but your ada itself is never at risk",
+        "A portion of your staked ada is automatically slashed as a penalty",
+        "Your wallet is locked until you switch to a different pool",
+        "You permanently lose the ability to delegate again"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano has no slashing mechanism for delegators. Essential Cardano states that \"the worst thing that could happen is that a stake pool underperforms, in which case a delegator may not receive all of the staking rewards,\" but the ada in the wallet \"is not at risk of being slashed or penalized in any way.\" This is a key difference from proof-of-stake systems that do use slashing, where validators can lose part of their stake for misbehavior.",
+      "sourceUrl": "https://www.essentialcardano.io/faq/is-my-ada-safe-when-staking"
+    },
+    {
+      "id": "staking-4",
+      "question": "What is an epoch on Cardano?",
+      "options": [
+        "A recurring period during which stake distribution is snapshotted and staking rewards are calculated",
+        "A single block added to the chain",
+        "A type of Cardano wallet",
+        "A governance vote on a protocol upgrade"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's glossary, in its expanded explanation of the term, defines an epoch as a period \"during which the stake distribution snapshot is fixed and rewards are calculated.\" Epochs are Cardano's basic recurring unit of time for staking, pool performance is measured and rewards are calculated once per epoch, not per individual block. It has nothing to do with wallet types or governance votes.",
+      "sourceUrl": "https://cardano.org/glossary/epoch/"
+    },
+    {
+      "id": "staking-5",
+      "question": "What is a stake pool?",
+      "options": [
+        "A server node that combines the stake of an operator and delegators to participate in block production",
+        "A smart contract that automatically trades ada for profit",
+        "A wallet that only stores non-fungible tokens",
+        "A group of validators who compete to lower each other's rewards"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation defines a stake pool as \"a reliable server node that focuses on ledger maintenance and holds the combined resources, the stake, of various stakeholders in a single entity.\" One person, the stake pool operator, runs the node, while everyone else who delegates to it is a delegator. It is infrastructure for block production, not a trading contract or an NFT wallet.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/stake-pools"
+    },
+    {
+      "id": "staking-6",
+      "question": "What is the difference between a stake pool operator and a delegator?",
+      "options": [
+        "The operator runs the server node, while delegators take a more passive role and don't need to run anything",
+        "Delegators run the server node, while the operator only holds ada",
+        "There is no real difference, the terms are interchangeable",
+        "An operator must delegate to another pool before they can run their own"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states that in a stake pool \"one holder is the operator of the pool and the rest are delegators,\" with the operator installing and running the actual node software while \"delegators take a more passive role.\" That means anyone can earn staking rewards by delegating, without buying hardware or maintaining a server. Running a pool and delegating to one are two different activities with different responsibilities.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/stake-pools"
+    },
+    {
+      "id": "staking-7",
+      "question": "What happens to a stake pool's rewards once it becomes \"saturated\"?",
+      "options": [
+        "Rewards stop increasing even if more ada is delegated to the pool",
+        "The pool is automatically shut down by the protocol",
+        "The pool operator's pledge is returned to them",
+        "All existing delegators immediately lose their earned rewards"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation on pledging and rewards states that pool \"rewards increase with... stake, but stop increasing once... the pool becomes saturated.\" Saturation discourages stake from concentrating in a handful of very large pools, since delegating more to an already-saturated pool stops paying off proportionally. It does not shut the pool down or touch anyone's existing rewards, it just caps further reward growth from additional stake.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/pledging-rewards"
+    },
+    {
+      "id": "staking-8",
+      "question": "What is \"pledge\" in the context of a Cardano stake pool?",
+      "options": [
+        "Ada that the pool operator commits from their own funds to make the pool more attractive to delegators",
+        "A fee delegators must pay upfront before they can delegate",
+        "A promise from the Cardano Foundation to cover a pool's losses",
+        "The minimum amount every delegator must contribute"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation explains that \"when you register a stake pool you can choose to pledge some, or all, of your ada to the pool, to make it more attractive to people who want to delegate.\" Pledge is the operator's own funds committed to the pool, not something delegators pay or are required to contribute. It signals commitment and can influence how the pool's rewards are calculated.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/pledging-rewards"
+    },
+    {
+      "id": "staking-9",
+      "question": "Where do staking rewards on Cardano ultimately come from?",
+      "options": [
+        "Transaction fees and a portion of the protocol's remaining ada reserve, distributed each epoch",
+        "A fee charged directly to every other ada holder in the network",
+        "New ada mined through computational competition",
+        "A subscription fee the delegator pays to the Cardano Foundation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation on monetary policy states that staking rewards \"come from two sources,\" transaction fees collected during the epoch, plus a fixed percentage of the remaining ada reserve added to the reward pot each epoch. There is no mining involved, since Cardano is proof-of-stake, and delegators do not pay a subscription or fee to the Cardano Foundation to receive rewards.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/explore-more/monetary-policy"
+    },
+    {
+      "id": "staking-10",
+      "question": "Why don't staking rewards appear immediately after you first delegate?",
+      "options": [
+        "Delegation takes effect through epoch snapshots, and rewards are calculated and distributed in later epochs",
+        "Because the pool operator must manually approve each new delegator before any rewards begin",
+        "Because Cardano only pays out rewards once per year, on a fixed annual date",
+        "Because new delegators must first pass an identity verification check with the Cardano Foundation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Staking rewards are not instant because delegation takes effect through Cardano's epoch-based snapshot system, not the moment you delegate. Essential Cardano explains that after you delegate, your stake first needs a new snapshot before the pool can use it, then a further epoch passes to calculate rewards, and only then are those rewards distributed, so that \"you need to wait 15-20 days (at least 3 epochs) before you receive your first reward.\" After that initial delay, rewards are calculated and distributed on an epoch basis, with no manual approval needed from the pool operator, but that is not a promise of a payout every single epoch. Cardano's own documentation on pledging and rewards notes that the actual amount \"will fluctuate due to the stochastic nature, or random process of the Ouroboros Praos consensus algorithm,\" and depends on \"the actual stake pool performance, that is, the number of blocks a stake pool is observed to produce in a given epoch versus the number it was expected to produce.\" None of the other options match what the source describes, there is no manual pool-operator approval step, no fixed annual payout date, and no identity-verification requirement.",
+      "sourceUrl": "https://www.essentialcardano.io/article/epochs-in-cardano"
+    },
+    {
+      "id": "staking-11",
+      "question": "What happens if you decide to switch your delegation from one stake pool to another?",
+      "options": [
+        "The switch is seamless, you keep rewards already earned and don't need to withdraw them first",
+        "You permanently forfeit all rewards earned from the original pool",
+        "You must wait a full year before you are allowed to redelegate",
+        "Switching pools requires closing your wallet and creating a new one"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Essential Cardano confirms that \"the switchover is seamless when you move from one stake pool to another,\" and that \"you do not need to withdraw your staking rewards before switching stake pools.\" You simply submit a new delegation certificate, there is no waiting period measured in years and no need to create a new wallet.",
+      "sourceUrl": "https://www.essentialcardano.io/faq/what-happens-when-i-move-to-a-new-stake-pool-will-i-loose-rewards"
+    },
+    {
+      "id": "staking-12",
+      "question": "When a stake credential is used for delegation for the first time, what must happen on-chain?",
+      "options": [
+        "The stake credential is registered and a delegation certificate assigns it to a stake pool",
+        "Deploy a custom smart contract for every delegation",
+        "Mine a block yourself to prove ownership of your ada",
+        "Physically mail a signed form to the Cardano Foundation"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation on delegation states that \"delegating stake requires posting two certificates to the chain: a staking address registration, and a delegation certificate,\" the first time a stake credential is used to delegate. After that, the documentation notes, \"once a stake address is registered, the stakeholder will only pay fees to set the delegation choice,\" so switching to a different pool later reuses the same registered credential and only needs a new delegation certificate, not a second registration. Modern wallets bundle the first-time registration and delegation into a single easy transaction for the user, but under the hood these are the two steps that link a stake credential to a pool. It requires no smart contract, no mining, and no paperwork.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/delegation"
+    },
+    {
+      "id": "staking-13",
+      "question": "How does Ouroboros select stake pools for block production?",
+      "options": [
+        "Through random leader selection weighted by the stake controlled by each pool",
+        "Whichever pool operator has been active on Cardano the longest",
+        "Pools take strict turns in a fixed, unchanging order",
+        "Whichever pool solves a cryptographic puzzle fastest"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation on Ouroboros explains that it \"selects participants, stake pools in this case, to create new blocks based on the stake they control in the network,\" combined with unbiased random selection. A pool's controlled stake is more than just what delegators assign to it, Cardano's documentation on pledging and rewards defines a pool's stake as including \"stake pledged by the owners and stake delegated by others.\" So pools with more total stake, pledge plus delegation, are chosen more often, proportionally, not because they have existed longest or won a computational race. Puzzle-solving is a proof-of-work concept and is not part of Cardano's proof-of-stake design.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/ouroboros-overview"
+    },
+    {
+      "id": "staking-14",
+      "question": "Does Cardano's protocol set a minimum amount of ada that must be delegated for it to count toward a stake pool?",
+      "options": [
+        "No. Any amount of delegated ada counts toward the pool.",
+        "Yes, you must delegate at least 1,000 ada before it counts toward a pool",
+        "Yes, only whole numbers of ada can be delegated, fractions are not allowed",
+        "Yes, but only stake pool operators can set that minimum themselves"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's developer documentation states, \"No minimum to delegate. Any amount counts toward the pool.\" There is no protocol-enforced floor on how much ada you delegate for it to count toward a pool. The same documentation separately notes that registering your stake key for the first time costs a refundable deposit, called stakeAddressDeposit, returned when you deregister. That one-time deposit registers your ability to delegate at all, it is not a minimum on the stake amount itself, its exact size is a protocol parameter rather than a fixed constant, and it is paid back to you later regardless of that size.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/staking-governance/staking/"
+    }
+  ]
+}

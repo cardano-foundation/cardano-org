@@ -4,15 +4,15 @@
   "questions": [
     {
       "id": 1,
-      "question": "Was solltest du tun, wenn dich jemand kontaktiert und behauptet, vom offiziellen Cardano-Support zu sein?",
+      "question": "Wie beginnt der Fake-Tech-Support-Betrug laut Cardanos eigener Seite zu gängigen Betrugsmaschen typischerweise?",
       "options": [
-        "Ignorieren und niemals deine Wiederherstellungsphrase oder privaten Schlüssel teilen",
-        "Wiederherstellungsphrase teilen, damit das Wallet repariert werden kann",
-        "Ada senden, um den Wallet-Besitz zu bestätigen",
-        "Vertrauen, wenn das Profilbild seriös aussieht"
+        "Ein Neuling stellt in einem Chat-Kanal eine Frage zu seinem Wallet, und ein Betrüger meldet sich als Erster und gibt sich als offizieller Support aus",
+        "Ein Neuling erhält einen unerwarteten Anruf von einer Nummer, die angeblich zum Support der Cardano Foundation gehört",
+        "Die Wallet-App eines Neulings zeigt ein Pop-up, das zur Identitätsprüfung auffordert",
+        "Ein Neuling bekommt einen Brief per Post, der angeblich vom IOG-Support stammt"
       ],
       "correctAnswer": 0,
-      "explanation": "Seriöser Support kontaktiert dich niemals zuerst per Privatnachricht und fragt niemals nach deiner Wiederherstellungsphrase, Passwörtern oder privaten Schlüsseln. Wer das tut, ist ein Betrüger."
+      "explanation": "Cardanos Seite zu gängigen Betrugsmaschen beschreibt dieses Muster im Abschnitt zum Fake Tech Support: Betrüger beobachten Chat-Kanäle, warten auf einen Neuling mit einer Wallet-Frage und antworten dann als Erste, indem sie sich als offizieller Support ausgeben. Die Seite weist außerdem darauf hin, dass Betrüger oft über soziale Medien, Foren oder E-Mail Kontakt aufnehmen. Diese Masche ist also ein häufiger Einstieg, aber nicht der einzige. Das Erkennungsmerkmal: Ein Fremder postet als Erster eine Antwort auf eine echte Frage, noch bevor der echte Support überhaupt reagieren kann."
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
         "Ein normaler Weg, mehr Ada zu verdienen"
       ],
       "correctAnswer": 1,
-      "explanation": "Das ist der klassische Ada-Giveaway-Betrug. Seriöse Giveaways verlangen niemals, dass du zuerst Geld sendest. Auch wenn im Stream Charles Hoskinson oder andere bekannte Persönlichkeiten zu sehen sind – es ist eine Fälschung. Einmal gesendete Ada sind unwiederbringlich verloren."
+      "explanation": "Das ist der klassische Ada-Giveaway-Betrug. Seriöse Giveaways verlangen niemals, dass du zuerst Geld sendest. Auch wenn im Stream Charles Hoskinson oder andere bekannte Persönlichkeiten zu sehen sind: Es ist eine Fälschung. Einmal gesendete Ada sind unwiederbringlich verloren."
     },
     {
       "id": 3,
@@ -48,7 +48,7 @@
         "Jeder Website vertrauen, die wie dein Wallet aussieht"
       ],
       "correctAnswer": 2,
-      "explanation": "Prüfe URLs immer sorgfältig und stelle sicher, dass sie zur offiziellen Wallet-Website gehören. Teile deine Wiederherstellungsphrase mit niemandem – auch nicht mit \u201ESupport-Mitarbeitern\u201C. Hardware-Wallets und Zwei-Faktor-Authentifizierung bieten zusätzlichen Schutz."
+      "explanation": "Prüfe URLs immer sorgfältig und stelle sicher, dass sie zur offiziellen Wallet-Website gehören. Teile deine Wiederherstellungsphrase mit niemandem, auch nicht mit \u201ESupport-Mitarbeitern\u201C. Hardware-Wallets und Zwei-Faktor-Authentifizierung bieten zusätzlichen Schutz."
     },
     {
       "id": 5,
@@ -79,7 +79,7 @@
       "question": "Ein Moderator in einem Cardano-Forum schreibt dir eine Privatnachricht und bietet Hilfe mit deinem Wallet an. Was tust du?",
       "options": [
         "Wiederherstellungsphrase teilen, damit das Problem analysiert werden kann",
-        "Nicht darauf eingehen – seriöse Moderatoren kontaktieren dich nie zuerst per Privatnachricht",
+        "Nicht darauf eingehen, seriöse Moderatoren kontaktieren dich nie zuerst per Privatnachricht",
         "Ada senden, um deine Identität zu bestätigen",
         "Vertrauen, weil die Person ein Moderator-Abzeichen hat"
       ],
@@ -112,15 +112,15 @@
     },
     {
       "id": 10,
-      "question": "Wenn du Ada an einen Betrüger sendest – wie stehen die Chancen, sie zurückzubekommen?",
+      "question": "Wenn du Ada an einen Betrüger sendest: wie stehen die Chancen, sie zurückzubekommen?",
       "options": [
-        "Hoch – du kannst den Cardano-Support kontaktieren, um die Transaktion rückgängig zu machen",
-        "Mittel – die Blockchain erstattet dir automatisch den Betrag",
-        "Null – einmal gesendet, sind die Ada für immer verloren",
-        "Gut – wenn du es schnell genug meldest"
+        "Hoch: du kannst den Cardano-Support kontaktieren, um die Transaktion rückgängig zu machen",
+        "Mittel: die Blockchain erstattet dir automatisch den Betrag",
+        "Null: einmal gesendet, sind die Ada für immer verloren",
+        "Gut: wenn du es schnell genug meldest"
       ],
       "correctAnswer": 2,
-      "explanation": "Blockchain-Transaktionen sind unumkehrbar. Einmal an einen Betrüger gesendete Ada sind für immer verloren. Deshalb sind Prävention und Aufklärung so wichtig – es gibt kein Sicherheitsnetz und keinen Kundenservice, der dir helfen kann."
+      "explanation": "Blockchain-Transaktionen sind unumkehrbar. Einmal an einen Betrüger gesendete Ada sind für immer verloren. Deshalb sind Prävention und Aufklärung so wichtig: es gibt kein Sicherheitsnetz und keinen Kundenservice, der dir helfen kann."
     }
   ]
 }
