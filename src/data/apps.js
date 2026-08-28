@@ -944,6 +944,11 @@ export const Showcases = [
     description:
       "Online courses on blockchain fundamentals, consensus algorithms, transaction models, scaling, and Cardano governance, staking, and dApp development.",
     tagline: "Online courses on Cardano and blockchain basics",
+    preview: require("./app-screenshots/cardano-academy.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cardano-academy-dashboard.webp"),
+      require("./app-screenshots/cardano-academy-course.webp"),
+    ],
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
     website: "https://cardanofoundation.org/en/academy",
     source: null,
