@@ -136,8 +136,9 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
 
   // Hover-intent opening is a mouse behavior; on touch the synthetic
   // mouseenter that precedes each tap would re-arm the open timer and
-  // fight the click toggle.
-  const hoverIntent = (next, delay) => (event) => {
+  // fight the click toggle. Only ever called from event handlers, so the
+  // timer ref is never touched during render.
+  const armHoverIntent = (event, next, delay) => {
     if (event.pointerType !== 'mouse') {
       return;
     }
@@ -171,8 +172,8 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
       className={clsx('navbar__item', 'navbar__item--mega', className)}
       data-open={open || undefined}
       data-columns={columns.length}
-      onPointerEnter={hoverIntent(true, HOVER_OPEN_DELAY)}
-      onPointerLeave={hoverIntent(false, HOVER_CLOSE_DELAY)}>
+      onPointerEnter={(event) => armHoverIntent(event, true, HOVER_OPEN_DELAY)}
+      onPointerLeave={(event) => armHoverIntent(event, false, HOVER_CLOSE_DELAY)}>
       <button
         ref={triggerRef}
         className="navbar__link megaMenuTrigger"
@@ -191,6 +192,10 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
         {label}
       </button>
 
+      {/* Delegated convenience handler: closes the panel when any link in it
+          is clicked. Keyboard users are covered because activating a link
+          with Enter fires a click event, the div itself is not interactive. */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
       <div
         id={panelId}
         ref={panelRef}
