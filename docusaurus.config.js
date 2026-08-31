@@ -443,6 +443,10 @@ const config = {
                 to: '/docs/get-involved',
               },
               {
+                label: 'Code of Conduct',
+                to: '/community-code-of-conduct',
+              },
+              {
                 label: 'Contributors',
                 href: 'https://github.com/cardano-foundation/cardano-org/graphs/contributors',
               },

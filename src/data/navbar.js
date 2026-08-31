@@ -57,6 +57,7 @@ function getNavbarItems() {
             {to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security'},
             {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},
             {to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano'},
+            {to: '/quiz', label: 'Cardano Quiz', description: 'Test your knowledge and earn a badge'},
           ],
         },
         {
@@ -65,6 +66,7 @@ function getNavbarItems() {
             {href: 'https://academy.cardanofoundation.org/', label: 'Cardano Academy', description: 'Free, self-paced blockchain courses'},
             {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
             {href: '/insights', label: 'Cardano Insights', description: 'On-chain or regularly refreshed data'},
+            {to: '/ouroboros', label: 'Ouroboros', description: 'Cardano\'s proof-of-stake consensus protocol'},
             {to: '/hardforks', label: 'Hard Forks', description: 'Implemented Upgrades'},
           ],
         },
@@ -92,8 +94,8 @@ function getNavbarItems() {
           title: 'Do more',
           items: [
             {to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards'},
+            {to: '/governance/delegate', label: 'Delegate your vote', description: 'Lend your voting power to a DRep'},
             {to: '/stablecoins', label: 'Stablecoins', description: 'Stablecoins on Cardano and their live data'},
-            {to: '/apps', label: 'Use Cardano Apps', description: 'Explore curated applications'},
           ],
         },
       ],
@@ -129,11 +131,11 @@ function getNavbarItems() {
     megaMenu({
       label: 'Participate',
       featured: {
-        title: 'Become a DRep',
-        description: 'Represent your community in Cardano governance.',
+        title: 'Delegate your voting power',
+        description: 'Your ada is your voice. Choose a DRep to represent you in Cardano governance.',
         image: '/img/nav/participate.webp',
-        to: '/governance#lead',
-        cta: 'Learn how',
+        to: '/governance/delegate',
+        cta: 'Choose a DRep',
         placement: 'end',
       },
       columns: [
@@ -143,6 +145,7 @@ function getNavbarItems() {
             {to: '/news', label: 'News', description: 'Latest Cardano news and updates'},
             {to: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels'},
             {to: '/ambassadors', label: 'Ambassador Program', description: 'Meet Cardano Ambassadors'},
+            {to: '/signal-operator-notification', label: 'Operator Notifications', description: 'Technical updates for stake pool operators'},
           ],
         },
         {
@@ -151,14 +154,13 @@ function getNavbarItems() {
             {to: '/events', label: 'Cardano Events', description: 'Join Cardano community events'},
             {href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Structured long-format discussions'},
             {to: '/docs/get-involved', label: 'Get involved in cardano.org', description: 'If you\'d like to participate, this will get you started'},
-            {to: '/community-code-of-conduct', label: 'Code of Conduct', description: 'Community standards and values'},
+            {to: '/stake-pool-operation', label: 'Run a Stake Pool', description: 'Operate a pool and help secure the network'},
           ],
         },
         {
           title: 'Governance',
           items: [
             {to: '/governance', label: 'Governance Overview', description: 'How Cardano governance works'},
-            {to: '/governance/delegate', label: 'Delegate your vote', description: 'Lend your voting power to a DRep'},
             {to: '/governance#tools', label: 'Governance Tools', description: 'Tools for governance participation'},
             {to: '/constitution', label: 'Cardano Constitution', description: 'The ratified Cardano Constitution'},
           ],
