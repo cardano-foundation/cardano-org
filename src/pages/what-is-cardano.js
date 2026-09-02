@@ -4,6 +4,7 @@ import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import clsx from "clsx";
 import { FaInfoCircle, FaUser, FaBuilding, FaLandmark, FaWallet, FaShoppingCart, FaLayerGroup, FaVoteYea, FaCode, FaBitcoin, FaEthereum } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -174,10 +175,11 @@ function DifferentSection() {
         id="what-makes-it-different"
         text={translate({ id: "whatIsCardano.divider.different", message: "Why Cardano" })}
       />
-      <ProofPointsList
+      <TitleWithText
         title={translate({ id: "whatIsCardano.different.title", message: "What makes Cardano different?" })}
-        points={getProofPoints()}
+        headingDot={true}
       />
+      <ProofPointsList points={getProofPoints()} />
     </>
   );
 }
@@ -259,7 +261,7 @@ function GetStartedSection() {
         title={translate({ id: "whatIsCardano.start.title", message: "How do I start using Cardano?" })}
         headingDot={true}
       />
-      <div className={styles.cardGrid}>
+      <div className={clsx(styles.cardGrid, styles.cardGridFive)}>
         {steps.map((step) => (
           <RoleCard key={step.key} accent={step.accent} icon={step.icon} title={step.title} href={step.to || step.href}>
             {step.text}
