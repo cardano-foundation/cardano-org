@@ -232,6 +232,14 @@ const config = {
             return [`${prefix}/docs/glossary`];
           }
 
+          // /why and /discover-cardano were folded into /what-is-cardano.
+          // Locale-aware, same pattern as the glossary rule above.
+          const wic = existingPath.match(/^(\/(?:ja|de|es|vi))?\/what-is-cardano\/?$/);
+          if (wic) {
+            const prefix = wic[1] || '';
+            return [`${prefix}/why`, `${prefix}/discover-cardano`];
+          }
+
           // The blog tag taxonomy was consolidated to the 7 tags in
           // blog/tags.yml. Redirect the retired tag pages to the tag they were
           // folded into so old links and search results keep working.
@@ -325,6 +333,7 @@ const config = {
             type: 'dropdown',
             position: 'left',
             items: [
+              { to: '/what-is-cardano', label: 'What is Cardano?' },
               { to: '/what-is-ada', label: 'What is ada?' },
               { to: '/get-started', label: 'Get started with Cardano' },
               { to: '/what-is-a-wallet', label: 'What is a Wallet?' },
@@ -345,6 +354,7 @@ const config = {
                   title: 'Get to know',
                   icon: 'book-solid',
                   items: [
+                    { to: '/what-is-cardano', label: 'What is Cardano?', description: 'The platform, how it works and why it is different', icon: 'ada' },
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
                     { to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano', icon: 'wallet-solid' },
                     { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },
