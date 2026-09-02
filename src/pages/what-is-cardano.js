@@ -4,7 +4,7 @@ import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { FaInfoCircle, FaUser, FaBuilding, FaLandmark, FaWallet, FaShoppingCart, FaLayerGroup, FaVoteYea, FaCode } from "react-icons/fa";
+import { FaInfoCircle, FaUser, FaBuilding, FaLandmark, FaWallet, FaShoppingCart, FaLayerGroup, FaVoteYea, FaCode, FaBitcoin, FaEthereum } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -271,6 +271,78 @@ function GetStartedSection() {
   );
 }
 
+function ComparedSection() {
+  const cardanoLogo = useBaseUrl("/img/cardano-logo-blue.svg");
+  return (
+    <>
+      <Divider id="compared" text={translate({ id: "whatIsCardano.divider.compared", message: "Compared" })} />
+      <TitleWithText
+        title={translate({ id: "whatIsCardano.compared.title", message: "How does Cardano compare to Bitcoin and Ethereum?" })}
+        description={translate({
+          id: "whatIsCardano.compared.intro",
+          message: "Cardano is often described as a third-generation blockchain. The label is a simplification, but it explains the design goals.",
+        })}
+        headingDot={true}
+      />
+      <div className={styles.cardGrid}>
+        <RoleCard accent="blue" icon={<FaBitcoin />} title={translate({ id: "whatIsCardano.compared.bitcoin.title", message: "Bitcoin, first generation" })}>
+          {translate({
+            id: "whatIsCardano.compared.bitcoin.text",
+            message: "Digital money with a fixed supply, secured by proof of work. Deliberately limited to transfers of value.",
+          })}
+        </RoleCard>
+        <RoleCard accent="violet" icon={<FaEthereum />} title={translate({ id: "whatIsCardano.compared.ethereum.title", message: "Ethereum, second generation" })}>
+          {translate({
+            id: "whatIsCardano.compared.ethereum.text",
+            message: "Added programmable smart contracts, which made decentralized applications possible. Moved from proof of work to proof of stake in 2022.",
+          })}
+        </RoleCard>
+        <RoleCard accent="teal" icon={<img src={cardanoLogo} alt="" width="20" height="20" />} title={translate({ id: "whatIsCardano.compared.cardano.title", message: "Cardano, third generation" })}>
+          {translate({
+            id: "whatIsCardano.compared.cardano.text",
+            message:
+              "Started with the questions the first two raised: how to secure proof of stake with a proof, how to keep fees predictable under load, how to fund and govern a network for decades. Cardano's answers are Ouroboros, the eUTXO model, a treasury and on-chain governance.",
+          })}
+        </RoleCard>
+      </div>
+      <TitleWithText
+        description={translate({
+          id: "whatIsCardano.compared.outro",
+          message: "Each network makes different trade-offs, and they increasingly work together through bridges and shared standards. The comparison is about design goals, not a ranking.",
+        })}
+      />
+    </>
+  );
+}
+
+function HistorySection() {
+  return (
+    <>
+      <Divider id="history" text={translate({ id: "whatIsCardano.divider.history", message: "History" })} />
+      <TitleWithText
+        title={translate({ id: "whatIsCardano.history.title", message: "Who created Cardano and who runs it now?" })}
+        description={translate({
+          id: "whatIsCardano.history.p1",
+          message:
+            "Cardano was started in 2015 by Charles Hoskinson and Jeremy Wood and launched in September 2017. Three organizations shared the work at genesis: IOHK (now IOG) built the software, the Cardano Foundation was set up to oversee and promote the ecosystem, and Emurgo focused on commercial adoption.",
+        })}
+        headingDot={true}
+        buttonLabel={translate({ id: "whatIsCardano.history.genesisButton", message: "Read about the genesis" })}
+        buttonLink="/genesis"
+      />
+      <TitleWithText
+        description={translate({
+          id: "whatIsCardano.history.p2",
+          message:
+            "Today no single organization runs Cardano. Since the governance upgrades of 2024 and 2025, ada holders, delegated representatives, stake pool operators and a constitutional committee decide on protocol changes and treasury spending under a community-ratified [constitution](/constitution). Intersect, a member-based organization, coordinates development and maintenance. The network's evolution is recorded as a series of hard forks, each one an upgrade agreed by the community.",
+        })}
+        buttonLabel={translate({ id: "whatIsCardano.history.forksButton", message: "See every upgrade" })}
+        buttonLink="/hardforks"
+      />
+    </>
+  );
+}
+
 export default function WhatIsCardano() {
   return (
     <Layout
@@ -295,6 +367,8 @@ export default function WhatIsCardano() {
             <DifferentSection />
             <UsedForSection />
             <GetStartedSection />
+            <ComparedSection />
+            <HistorySection />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
