@@ -5,10 +5,6 @@
   margin: 1.5rem 0;
 }
 
-.cardGridFive {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
 .cardLink {
   display: inline-block;
   margin-top: 0.5rem;

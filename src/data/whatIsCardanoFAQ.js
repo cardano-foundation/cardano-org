@@ -55,32 +55,12 @@ export function getWhatIsCardanoFAQ() {
       ],
     },
     {
-      question: translate({ id: "whatIsCardano.faq.mica.q", message: "Is Cardano regulated in the EU?" }),
-      answer: [
-        translate({
-          id: "whatIsCardano.faq.mica.a",
-          message:
-            "Ada is covered by white papers that follow the EU's Markets in Crypto-Assets regulation (MiCA), which is what exchanges and service providers need to offer it to customers in the EU. The network itself is open software that anyone can run.",
-        }),
-      ],
-    },
-    {
       question: translate({ id: "whatIsCardano.faq.build.q", message: "What can I build on Cardano?" }),
       answer: [
         translate({
           id: "whatIsCardano.faq.build.a",
           message:
-            "Anything from a token or an NFT collection (no contract needed) to full applications with smart contracts written in Plutus, Aiken or Marlowe. The [developer portal](https://developers.cardano.org) has starter guides.",
-        }),
-      ],
-    },
-    {
-      question: translate({ id: "whatIsCardano.faq.ethereum.q", message: "How is Cardano different from Ethereum?" }),
-      answer: [
-        translate({
-          id: "whatIsCardano.faq.ethereum.a",
-          message:
-            "Both run smart contracts and use proof of stake. Cardano tracks ownership with the extended UTXO model instead of accounts, which makes fees and outcomes predictable before you sign, handles tokens natively without contracts, and decides upgrades and treasury spending through on-chain governance.",
+            "Anything from a token or an NFT collection (no contract needed) to full applications with smart contracts written in Plutus or Aiken. The [developer portal](https://developers.cardano.org) has starter guides.",
         }),
       ],
     },

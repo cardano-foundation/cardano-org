@@ -6420,7 +6420,7 @@
     "message": "Programs: native tokens and smart contracts"
   },
   "whatIsCardano.how.programs.text": {
-    "message": "Tokens on Cardano are built into the ledger. Creating or transferring a token uses the same rules as ada, with no smart contract needed. Smart contracts are validator scripts that approve or reject a transaction someone has already built, written in languages such as Plutus, Aiken and Marlowe."
+    "message": "Tokens on Cardano are built into the ledger. Creating or transferring a token uses the same rules as ada, with no smart contract needed. Smart contracts are validator scripts that approve or reject a transaction someone has already built, written in languages such as Plutus and Aiken."
   },
   "whatIsCardano.how.outro": {
     "message": "Want the full picture, from slot leaders to the energy footprint? Start with the consensus protocol."
@@ -6515,36 +6515,6 @@
   "whatIsCardano.start.button": {
     "message": "Start step by step"
   },
-  "whatIsCardano.divider.compared": {
-    "message": "Compared"
-  },
-  "whatIsCardano.compared.title": {
-    "message": "How does Cardano compare to Bitcoin and Ethereum?"
-  },
-  "whatIsCardano.compared.intro": {
-    "message": "Cardano is often described as a third-generation blockchain. The label is a simplification, but it explains the design goals."
-  },
-  "whatIsCardano.compared.bitcoin.title": {
-    "message": "Bitcoin, first generation"
-  },
-  "whatIsCardano.compared.bitcoin.text": {
-    "message": "Digital money with a fixed supply, secured by proof of work. Deliberately limited to transfers of value."
-  },
-  "whatIsCardano.compared.ethereum.title": {
-    "message": "Ethereum, second generation"
-  },
-  "whatIsCardano.compared.ethereum.text": {
-    "message": "Added programmable smart contracts, which made decentralized applications possible. Moved from proof of work to proof of stake in 2022."
-  },
-  "whatIsCardano.compared.cardano.title": {
-    "message": "Cardano, third generation"
-  },
-  "whatIsCardano.compared.cardano.text": {
-    "message": "Started with the questions the first two raised: how to secure proof of stake with a proof, how to keep fees predictable under load, how to fund and govern a network for decades. Cardano's answers are Ouroboros, the eUTXO model, a treasury and on-chain governance."
-  },
-  "whatIsCardano.compared.outro": {
-    "message": "Each network makes different trade-offs, and they increasingly work together through bridges and shared standards. The comparison is about design goals, not a ranking."
-  },
   "whatIsCardano.divider.history": {
     "message": "History"
   },
@@ -6605,23 +6575,11 @@
   "whatIsCardano.faq.control.a": {
     "message": "Nobody controls it alone. Ada holders and their delegated representatives, stake pool operators and a constitutional committee vote on-chain on changes and spending. The Cardano Foundation, IOG, Emurgo and Intersect contribute, but none of them can change the protocol by themselves."
   },
-  "whatIsCardano.faq.mica.q": {
-    "message": "Is Cardano regulated in the EU?"
-  },
-  "whatIsCardano.faq.mica.a": {
-    "message": "Ada is covered by white papers that follow the EU's Markets in Crypto-Assets regulation (MiCA), which is what exchanges and service providers need to offer it to customers in the EU. The network itself is open software that anyone can run."
-  },
   "whatIsCardano.faq.build.q": {
     "message": "What can I build on Cardano?"
   },
   "whatIsCardano.faq.build.a": {
-    "message": "Anything from a token or an NFT collection (no contract needed) to full applications with smart contracts written in Plutus, Aiken or Marlowe. The [developer portal](https://developers.cardano.org) has starter guides."
-  },
-  "whatIsCardano.faq.ethereum.q": {
-    "message": "How is Cardano different from Ethereum?"
-  },
-  "whatIsCardano.faq.ethereum.a": {
-    "message": "Both run smart contracts and use proof of stake. Cardano tracks ownership with the extended UTXO model instead of accounts, which makes fees and outcomes predictable before you sign, handles tokens natively without contracts, and decides upgrades and treasury spending through on-chain governance."
+    "message": "Anything from a token or an NFT collection (no contract needed) to full applications with smart contracts written in Plutus or Aiken. The [developer portal](https://developers.cardano.org) has starter guides."
   },
   "whatIsCardano.proof.staking.title": {
     "message": "Staking without strings"
@@ -6666,7 +6624,7 @@
     "message": "Peer review and formal methods"
   },
   "whatIsCardano.proof.research.text": {
-    "message": "Cardano's core protocols were designed as academic research first, reviewed by other cryptographers, then implemented. The node is written in Haskell and parts of the ledger are specified formally, so the code can be checked against the specification."
+    "message": "Cardano's core protocols were designed as academic research first, reviewed by other cryptographers, then implemented. The node is written in Haskell and the ledger is built with formal methods, so the code can be checked against its specification."
   },
   "whatIsCardano.proof.governance.title": {
     "message": "Governed on the chain itself"

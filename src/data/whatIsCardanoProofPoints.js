@@ -65,7 +65,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.research.text",
         message:
-          "Cardano's core protocols were designed as academic research first, reviewed by other cryptographers, then implemented. The node is written in Haskell and parts of the ledger are specified formally, so the code can be checked against the specification.",
+          "Cardano's core protocols were designed as academic research first, reviewed by other cryptographers, then implemented. The node is written in Haskell and the ledger is built with formal methods, so the code can be checked against its specification.",
       }),
     },
     {
