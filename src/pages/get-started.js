@@ -4,6 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import StepCard from "@site/src/components/Layout/StepCard";
 import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
@@ -229,6 +230,9 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <TitleWithText
+              description={translate({id: 'getStarted.intro.overviewLink', message: 'Not sure what Cardano is yet? [Start with the overview](/what-is-cardano).'})}
+            />
             <SpacerBox size="small" />
             <StepCard steps={steps(handleWalletConnect, images)} walletConnected={walletConnected} />
             <SpacerBox size="medium" />
