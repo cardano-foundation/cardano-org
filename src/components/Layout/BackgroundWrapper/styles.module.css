@@ -92,6 +92,10 @@
 /** backgroundZoomMini */
 
 .backgroundGradientDark {
+  /* flow-root keeps the children's margins (SpacerBox, CtaOneColumn) inside
+     the gradient instead of collapsing through and leaving a page-colored
+     strip above the footer. */
+  display: flow-root;
   background-image: linear-gradient(315deg, #0133ae, #335cbe);
 }
 
