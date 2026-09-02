@@ -7,7 +7,7 @@ import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
 import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
+import HomeProofPointsSection from "@site/src/components/HomeProofPointsSection";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import LatestNewsSection from "@site/src/components/LatestNewsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -81,17 +81,7 @@ export default function Home() {
         </BoundaryBox>
 
         <BoundaryBox>
-          <Divider text={translate({id: 'home.divider.makeTheChange', message: 'Make the Change'})} />
-          <TitleWithText
-            title={translate({id: 'home.discover.title', message: 'Discover Cardano'})}
-            description={[
-              translate({id: 'home.discover.description', message: 'Cardano is the first blockchain platform to be built through [peer-reviewed research](/research), to be secure enough to protect the data of billions, scalable enough to accommodate global systems, and robust enough to support foundational change.'}),
-            ]}
-            titleType="black"
-            headingDot={true}
-          />
-
-          <HomeDiscoverSection />
+          <HomeProofPointsSection />
         </BoundaryBox>
 
 
