@@ -1,0 +1,370 @@
+/*
+ * NetworkDistribution: section header, stake pool bubble map with legend, and
+ * the top 10 countries table for the /sustainability page.
+ *
+ * The five-step data-viz ramp is defined once on the root class. The
+ * .bucket1 to .bucket5 classes map a step onto --sustainability-bucket, which
+ * the map bubbles (fill), the legend (background), and the table swatches
+ * (background) all read, so the three stay in sync.
+ */
+
+.root {
+  --sustainability-ramp-1: #d6dff3;
+  --sustainability-ramp-2: #afc1e8;
+  --sustainability-ramp-3: #7c97d7;
+  --sustainability-ramp-4: #3159c0;
+  --sustainability-ramp-5: #0033ad;
+  --sustainability-bucket: var(--sustainability-ramp-1);
+}
+
+/* In dark mode the ramp runs dim to bright so "more" still reads as stronger. */
+html[data-theme="dark"] .root {
+  --sustainability-ramp-1: #2c3c66;
+  --sustainability-ramp-2: #3b5aa6;
+  --sustainability-ramp-3: #4f7ae0;
+  --sustainability-ramp-4: #7ea0f2;
+  --sustainability-ramp-5: #b3c8ff;
+}
+
+.bucket1 {
+  --sustainability-bucket: var(--sustainability-ramp-1);
+}
+
+.bucket2 {
+  --sustainability-bucket: var(--sustainability-ramp-2);
+}
+
+.bucket3 {
+  --sustainability-bucket: var(--sustainability-ramp-3);
+}
+
+.bucket4 {
+  --sustainability-bucket: var(--sustainability-ramp-4);
+}
+
+.bucket5 {
+  --sustainability-bucket: var(--sustainability-ramp-5);
+}
+
+/* Header: two-line title on the left, scope note on the right */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: var(--site-space-xl);
+  margin-bottom: var(--site-space-lg);
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.titleLine {
+  display: block;
+}
+
+.scopeNote {
+  max-width: 430px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Body: map column and table column */
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 58%) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--site-space-xl);
+}
+
+.mapColumn,
+.tableColumn {
+  min-width: 0;
+}
+
+/* Map */
+
+.mapWrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1000 / 420;
+  padding: var(--site-space-2xs);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: var(--site-radius-sm);
+}
+
+.mapSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.landGroup {
+  pointer-events: none;
+}
+
+.land {
+  fill: var(--ifm-color-emphasis-200);
+  stroke: none;
+}
+
+html[data-theme="dark"] .land {
+  fill: var(--ifm-color-emphasis-300);
+}
+
+.bubbleGroup:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.bubble {
+  fill: var(--sustainability-bucket);
+  stroke: var(--ifm-background-surface-color);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    stroke var(--site-duration-base) var(--site-ease),
+    stroke-width var(--site-duration-base) var(--site-ease);
+}
+
+.bubbleActive {
+  stroke: var(--ifm-color-primary);
+  stroke-width: 2.5;
+  transform: scale(1.12);
+}
+
+/* Legend */
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-2xs);
+  margin-top: var(--site-space-xs);
+}
+
+.legendLabel {
+  flex-shrink: 0;
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.ramp {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+}
+
+.rampStep {
+  flex: 1;
+  height: 10px;
+  border-radius: 1px;
+  background: var(--sustainability-bucket);
+}
+
+/* Table */
+
+.eyebrow {
+  margin: 0 0 var(--site-space-2xs);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Reset the global Infima table styles (block display, stripes, cell borders). */
+.table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.table thead {
+  background: transparent;
+}
+
+.table thead tr {
+  border-top: 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.table tbody tr {
+  border-top: 0;
+}
+
+.table tr:nth-child(2n) {
+  background: transparent;
+}
+
+.table th,
+.table td {
+  padding: var(--site-space-xs) var(--site-space-2xs);
+  border: 0;
+  text-align: right;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+  white-space: normal;
+}
+
+.table thead th {
+  padding: var(--site-space-2xs);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.thPools {
+  width: 70px;
+}
+
+.thStake {
+  width: 96px;
+}
+
+.row {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  transition: background-color var(--site-duration-base) var(--site-ease);
+}
+
+.rowActive {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.cellCountry {
+  font-weight: 600;
+}
+
+.countryName {
+  transition: color var(--site-duration-base) var(--site-ease);
+}
+
+.rowActive .countryName {
+  color: var(--ifm-color-primary);
+}
+
+.swatch {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-right: var(--site-space-2xs);
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--sustainability-bucket);
+}
+
+.cellPools {
+  font-weight: 600;
+}
+
+.cellStake {
+  font-weight: 400;
+}
+
+.totalRow {
+  border-top: 1.5px solid var(--ifm-color-emphasis-900);
+}
+
+.totalRow th,
+.totalRow td {
+  padding: var(--site-space-2xs);
+}
+
+.totalLabel {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.totalValue {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Source line */
+
+.source {
+  margin: var(--site-space-lg) 0 0;
+  font-size: 11px;
+  line-height: 17px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.source strong {
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble,
+  .row,
+  .countryName {
+    transition: none;
+  }
+
+  .bubbleActive {
+    transform: none;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 996px) {
+  .header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-sm);
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thPools {
+    width: 56px;
+  }
+
+  .thStake {
+    width: 80px;
+  }
+}

@@ -2235,7 +2235,9 @@
   "events.platforms.meetup": {
     "message": "Events on Meetup.com"
   },
-  "events.filter.searchPlaceholder": { "message": "Search events, locations, or topics" },
+  "events.filter.searchPlaceholder": {
+    "message": "Search events, locations, or topics"
+  },
   "events.filter.timeUpcoming": { "message": "Upcoming" },
   "events.filter.timePast": { "message": "Past" },
   "events.filter.timeAll": { "message": "All" },
@@ -2254,18 +2256,24 @@
   "events.divider.calendar": { "message": "Events Calendar" },
   "events.calendar.today": { "message": "Today" },
   "events.calendar.upcoming": { "message": "Upcoming events" },
-  "events.calendar.tzNote": { "message": "Dates are shown in UTC and events may change. Check the event page for the latest details." },
+  "events.calendar.tzNote": {
+    "message": "Dates are shown in UTC and events may change. Check the event page for the latest details."
+  },
   "events.card.register": { "message": "View event" },
   "events.card.online": { "message": "Online" },
   "events.card.recurring": { "message": "Recurring" },
   "events.divider.upcoming": { "message": "Upcoming Events" },
   "events.divider.all": { "message": "All Events" },
   "events.divider.past": { "message": "Past Events and Recaps" },
-  "events.empty.upcoming": { "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest." },
+  "events.empty.upcoming": {
+    "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest."
+  },
   "events.empty.past": { "message": "No past events match your filters." },
   "events.divider.discover": { "message": "Discover Cardano Events Worldwide" },
   "events.submit.title": { "message": "Want to host a Cardano event?" },
-  "events.submit.description": { "message": "Submit your event to be featured on cardano.org." },
+  "events.submit.description": {
+    "message": "Submit your event to be featured on cardano.org."
+  },
   "events.submit.cta": { "message": "Submit your event" },
   "exchanges.hero.title": {
     "message": "Integrate Cardano"
@@ -6299,54 +6307,543 @@
   "apps.card.source": {
     "message": "Source"
   },
-  "whatIsAWallet.meta.title": { "message": "What is a Cardano Wallet? Types, Keys, and Security Explained", "description": "Meta title for the wallet explainer page" },
-  "whatIsAWallet.meta.description": { "message": "Learn what a Cardano wallet is, how hot, cold, custodial, and non-custodial wallets differ, how keys and recovery phrases work, and how to keep your ada safe.", "description": "Meta description for the wallet explainer page" },
-  "whatIsAWallet.hero.title": { "message": "What is a Wallet?", "description": "Hero title" },
-  "whatIsAWallet.hero.description": { "message": "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.", "description": "Hero description" },
-  "whatIsAWallet.intro.title": { "message": "Your keys, not your coins", "description": "Intro section title" },
-  "whatIsAWallet.intro.text1": { "message": "A wallet does not actually store your ada. Your coins live on the Cardano blockchain. What a wallet stores are the **keys** that prove the coins are yours and let you spend them.", "description": "Intro paragraph 1" },
-  "whatIsAWallet.intro.text2": { "message": "Each wallet has a **public key**, used to receive funds, much like an account number you can share, and a **private key**, used to sign transactions and spend funds. Anyone who holds the private key controls the funds, so keeping it secret is everything.", "description": "Intro paragraph 2" },
-  "whatIsAWallet.types.divider": { "message": "Wallet types", "description": "Divider label for wallet types" },
-  "whatIsAWallet.hotcold.title": { "message": "Hot wallets vs cold wallets", "description": "Hot/cold section title" },
-  "whatIsAWallet.hotcold.description": { "message": "Wallets differ by whether they are connected to the internet.", "description": "Hot/cold intro" },
-  "whatIsAWallet.hotWallet.text": { "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges. They are convenient for everyday use.", "description": "Hot wallet explanation" },
-  "whatIsAWallet.coldWallet.text": { "message": "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.", "description": "Cold wallet explanation" },
-  "whatIsAWallet.custody.title": { "message": "Custodial vs non-custodial", "description": "Custody section title" },
-  "whatIsAWallet.custody.text1": { "message": "With a **custodial** wallet, a third party such as an exchange holds your private keys for you. It is convenient, but you are trusting that party with your funds.", "description": "Custodial paragraph" },
-  "whatIsAWallet.custody.text2": { "message": "With a **non-custodial** wallet, you alone hold the keys. No company can freeze your funds or lose them for you, but no one can recover them for you either. As the saying goes: not your keys, not your coins.", "description": "Non-custodial paragraph" },
-  "whatIsAWallet.nodetype.title": { "message": "Light wallets vs full-node wallets", "description": "Node type section title" },
-  "whatIsAWallet.nodetype.text1": { "message": "A **light** wallet connects to the blockchain through a remote service, so it is quick to install and runs on phones and browsers.", "description": "Light wallet paragraph" },
-  "whatIsAWallet.nodetype.text2": { "message": "A **full-node** wallet downloads and verifies a copy of the blockchain itself. It needs more disk space and time, but it relies on no third party to read the chain.", "description": "Full-node wallet paragraph" },
-  "whatIsAWallet.keys.divider": { "message": "Keys and recovery", "description": "Divider label for keys" },
-  "whatIsAWallet.recovery.title": { "message": "Your recovery phrase is the master key", "description": "Recovery section title" },
-  "whatIsAWallet.recovery.text1": { "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.", "description": "Recovery paragraph 1" },
-  "whatIsAWallet.recovery.text2": { "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.", "description": "Recovery paragraph 2" },
-  "whatIsAWallet.security.divider": { "message": "Staying secure", "description": "Divider label for security" },
-  "whatIsAWallet.security.title": { "message": "Security basics", "description": "Security section title" },
-  "whatIsAWallet.security.item1": { "message": "Keep your recovery phrase offline, on paper or metal, in more than one safe place.", "description": "Security checklist item 1" },
-  "whatIsAWallet.security.item2": { "message": "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.", "description": "Security checklist item 2" },
-  "whatIsAWallet.security.item3": { "message": "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)", "description": "Security checklist item 3, contains a link to the scams page" },
-  "whatIsAWallet.dapps.divider": { "message": "Wallets and apps", "description": "Divider label for dApps" },
-  "whatIsAWallet.dapps.title": { "message": "Connecting to apps", "description": "dApps section title" },
-  "whatIsAWallet.dapps.text1": { "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.", "description": "dApps paragraph 1" },
-  "whatIsAWallet.dapps.text2": { "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.", "description": "dApps paragraph 2" },
-  "whatIsAWallet.choose.title": { "message": "How to choose a wallet", "description": "Choose section title" },
-  "whatIsAWallet.choose.item1": { "message": "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.", "description": "Choose checklist item 1" },
-  "whatIsAWallet.choose.item2": { "message": "Is it open source? Open-source code lets the community review and verify the wallet's security.", "description": "Choose checklist item 2" },
-  "whatIsAWallet.choose.item3": { "message": "How long has it been on the market? Established wallets have a longer track record of reliability.", "description": "Choose checklist item 3" },
-  "whatIsAWallet.choose.cta": { "message": "Open the Wallet Finder", "description": "CTA button to the wallet finder" },
-  "whatIsAWallet.faq.q1": { "message": "Are my coins stored inside the wallet?", "description": "FAQ question 1" },
-  "whatIsAWallet.faq.a1": { "message": "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.", "description": "FAQ answer 1" },
-  "whatIsAWallet.faq.q2": { "message": "What happens if I lose my recovery phrase?", "description": "FAQ question 2" },
-  "whatIsAWallet.faq.a2": { "message": "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.", "description": "FAQ answer 2" },
-  "whatIsAWallet.faq.q3": { "message": "Do I need ada to set up a wallet?", "description": "FAQ question 3" },
-  "whatIsAWallet.faq.a3": { "message": "No. Creating a wallet is free. You only need ada once you want to transact.", "description": "FAQ answer 3" },
-  "whatIsAWallet.faq.q4": { "message": "Should I use a hot or a cold wallet?", "description": "FAQ question 4" },
-  "whatIsAWallet.faq.a4": { "message": "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.", "description": "FAQ answer 4" },
-  "whatIsAWallet.disclaimer": { "message": "This page is for educational purposes only and is not financial or security advice. Always do your own research.", "description": "Educational disclaimer at the bottom of the page" },
-  "walletFinder.learnTeaser.text": { "message": "New to wallets? Learn how they work, the different types, and how to stay secure.", "description": "Teaser text on the wallet finder linking to the explainer" },
-  "walletFinder.learnTeaser.cta": { "message": "What is a Wallet?", "description": "Teaser button on the wallet finder" },
-  "getStarted.step1.walletLearnLink": { "message": "Learn what a wallet is.", "description": "Get-started step 1 link to the wallet explainer" },
+  "whatIsAWallet.meta.title": {
+    "message": "What is a Cardano Wallet? Types, Keys, and Security Explained",
+    "description": "Meta title for the wallet explainer page"
+  },
+  "whatIsAWallet.meta.description": {
+    "message": "Learn what a Cardano wallet is, how hot, cold, custodial, and non-custodial wallets differ, how keys and recovery phrases work, and how to keep your ada safe.",
+    "description": "Meta description for the wallet explainer page"
+  },
+  "whatIsAWallet.hero.title": {
+    "message": "What is a Wallet?",
+    "description": "Hero title"
+  },
+  "whatIsAWallet.hero.description": {
+    "message": "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.",
+    "description": "Hero description"
+  },
+  "whatIsAWallet.intro.title": {
+    "message": "Your keys, not your coins",
+    "description": "Intro section title"
+  },
+  "whatIsAWallet.intro.text1": {
+    "message": "A wallet does not actually store your ada. Your coins live on the Cardano blockchain. What a wallet stores are the **keys** that prove the coins are yours and let you spend them.",
+    "description": "Intro paragraph 1"
+  },
+  "whatIsAWallet.intro.text2": {
+    "message": "Each wallet has a **public key**, used to receive funds, much like an account number you can share, and a **private key**, used to sign transactions and spend funds. Anyone who holds the private key controls the funds, so keeping it secret is everything.",
+    "description": "Intro paragraph 2"
+  },
+  "whatIsAWallet.types.divider": {
+    "message": "Wallet types",
+    "description": "Divider label for wallet types"
+  },
+  "whatIsAWallet.hotcold.title": {
+    "message": "Hot wallets vs cold wallets",
+    "description": "Hot/cold section title"
+  },
+  "whatIsAWallet.hotcold.description": {
+    "message": "Wallets differ by whether they are connected to the internet.",
+    "description": "Hot/cold intro"
+  },
+  "whatIsAWallet.hotWallet.text": {
+    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges. They are convenient for everyday use.",
+    "description": "Hot wallet explanation"
+  },
+  "whatIsAWallet.coldWallet.text": {
+    "message": "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.",
+    "description": "Cold wallet explanation"
+  },
+  "whatIsAWallet.custody.title": {
+    "message": "Custodial vs non-custodial",
+    "description": "Custody section title"
+  },
+  "whatIsAWallet.custody.text1": {
+    "message": "With a **custodial** wallet, a third party such as an exchange holds your private keys for you. It is convenient, but you are trusting that party with your funds.",
+    "description": "Custodial paragraph"
+  },
+  "whatIsAWallet.custody.text2": {
+    "message": "With a **non-custodial** wallet, you alone hold the keys. No company can freeze your funds or lose them for you, but no one can recover them for you either. As the saying goes: not your keys, not your coins.",
+    "description": "Non-custodial paragraph"
+  },
+  "whatIsAWallet.nodetype.title": {
+    "message": "Light wallets vs full-node wallets",
+    "description": "Node type section title"
+  },
+  "whatIsAWallet.nodetype.text1": {
+    "message": "A **light** wallet connects to the blockchain through a remote service, so it is quick to install and runs on phones and browsers.",
+    "description": "Light wallet paragraph"
+  },
+  "whatIsAWallet.nodetype.text2": {
+    "message": "A **full-node** wallet downloads and verifies a copy of the blockchain itself. It needs more disk space and time, but it relies on no third party to read the chain.",
+    "description": "Full-node wallet paragraph"
+  },
+  "whatIsAWallet.keys.divider": {
+    "message": "Keys and recovery",
+    "description": "Divider label for keys"
+  },
+  "whatIsAWallet.recovery.title": {
+    "message": "Your recovery phrase is the master key",
+    "description": "Recovery section title"
+  },
+  "whatIsAWallet.recovery.text1": {
+    "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
+    "description": "Recovery paragraph 1"
+  },
+  "whatIsAWallet.recovery.text2": {
+    "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
+    "description": "Recovery paragraph 2"
+  },
+  "whatIsAWallet.security.divider": {
+    "message": "Staying secure",
+    "description": "Divider label for security"
+  },
+  "whatIsAWallet.security.title": {
+    "message": "Security basics",
+    "description": "Security section title"
+  },
+  "whatIsAWallet.security.item1": {
+    "message": "Keep your recovery phrase offline, on paper or metal, in more than one safe place.",
+    "description": "Security checklist item 1"
+  },
+  "whatIsAWallet.security.item2": {
+    "message": "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.",
+    "description": "Security checklist item 2"
+  },
+  "whatIsAWallet.security.item3": {
+    "message": "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)",
+    "description": "Security checklist item 3, contains a link to the scams page"
+  },
+  "whatIsAWallet.dapps.divider": {
+    "message": "Wallets and apps",
+    "description": "Divider label for dApps"
+  },
+  "whatIsAWallet.dapps.title": {
+    "message": "Connecting to apps",
+    "description": "dApps section title"
+  },
+  "whatIsAWallet.dapps.text1": {
+    "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
+    "description": "dApps paragraph 1"
+  },
+  "whatIsAWallet.dapps.text2": {
+    "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
+    "description": "dApps paragraph 2"
+  },
+  "whatIsAWallet.choose.title": {
+    "message": "How to choose a wallet",
+    "description": "Choose section title"
+  },
+  "whatIsAWallet.choose.item1": {
+    "message": "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.",
+    "description": "Choose checklist item 1"
+  },
+  "whatIsAWallet.choose.item2": {
+    "message": "Is it open source? Open-source code lets the community review and verify the wallet's security.",
+    "description": "Choose checklist item 2"
+  },
+  "whatIsAWallet.choose.item3": {
+    "message": "How long has it been on the market? Established wallets have a longer track record of reliability.",
+    "description": "Choose checklist item 3"
+  },
+  "whatIsAWallet.choose.cta": {
+    "message": "Open the Wallet Finder",
+    "description": "CTA button to the wallet finder"
+  },
+  "whatIsAWallet.faq.q1": {
+    "message": "Are my coins stored inside the wallet?",
+    "description": "FAQ question 1"
+  },
+  "whatIsAWallet.faq.a1": {
+    "message": "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.",
+    "description": "FAQ answer 1"
+  },
+  "whatIsAWallet.faq.q2": {
+    "message": "What happens if I lose my recovery phrase?",
+    "description": "FAQ question 2"
+  },
+  "whatIsAWallet.faq.a2": {
+    "message": "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.",
+    "description": "FAQ answer 2"
+  },
+  "whatIsAWallet.faq.q3": {
+    "message": "Do I need ada to set up a wallet?",
+    "description": "FAQ question 3"
+  },
+  "whatIsAWallet.faq.a3": {
+    "message": "No. Creating a wallet is free. You only need ada once you want to transact.",
+    "description": "FAQ answer 3"
+  },
+  "whatIsAWallet.faq.q4": {
+    "message": "Should I use a hot or a cold wallet?",
+    "description": "FAQ question 4"
+  },
+  "whatIsAWallet.faq.a4": {
+    "message": "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.",
+    "description": "FAQ answer 4"
+  },
+  "whatIsAWallet.disclaimer": {
+    "message": "This page is for educational purposes only and is not financial or security advice. Always do your own research.",
+    "description": "Educational disclaimer at the bottom of the page"
+  },
+  "walletFinder.learnTeaser.text": {
+    "message": "New to wallets? Learn how they work, the different types, and how to stay secure.",
+    "description": "Teaser text on the wallet finder linking to the explainer"
+  },
+  "walletFinder.learnTeaser.cta": {
+    "message": "What is a Wallet?",
+    "description": "Teaser button on the wallet finder"
+  },
+  "getStarted.step1.walletLearnLink": {
+    "message": "Learn what a wallet is.",
+    "description": "Get-started step 1 link to the wallet explainer"
+  },
+  "sustainability.meta.title": {
+    "message": "Cardano Sustainability: Energy Consumption and Carbon Footprint"
+  },
+  "sustainability.meta.description": {
+    "message": "Cardano's proof-of-stake network consumes {mwh} MWh of electricity per year with a carbon footprint of {tco2e} tCO2e, independently verified by the Crypto Carbon Ratings Institute (CCRI) and reported under MiCA."
+  },
+  "sustainability.hero.tag": {
+    "message": "Independently verified"
+  },
+  "sustainability.hero.title": {
+    "message": "Cardano Among the Most Energy Efficient Blockchains by Right"
+  },
+  "sustainability.hero.description": {
+    "message": "Cardano's Ouroboros proof of stake was designed for low energy consumption from day one. It's a proven fact. The Crypto Carbon Ratings Institute (CCRI) verified the numbers and ranked Cardano's energy consumption among the lowest of any major layer 1 blockchains in operation: just {mwh} MWh per year, with a carbon footprint of {tco2e} tCO2e."
+  },
+  "sustainability.hero.stat.electricity": {
+    "message": "annual network electricity consumption"
+  },
+  "sustainability.hero.stat.carbon": {
+    "message": "annual network carbon footprint"
+  },
+  "sustainability.hero.stat.perTps": {
+    "message": "power per transaction/sec"
+  },
+  "sustainability.hero.stat.perNode": {
+    "message": "average power per node"
+  },
+  "sustainability.hero.statsAriaLabel": {
+    "message": "Key sustainability indicators"
+  },
+  "sustainability.hero.footnote": {
+    "message": "Updated Network Assessment and MiCA Sustainability Indicators for ADA, Crypto Carbon Ratings Institute (CCRI), June 2026"
+  },
+  "sustainability.differentiation.title": {
+    "message": "How Cardano Achieves Low Energy Consumption"
+  },
+  "sustainability.differentiation.intro1": {
+    "message": "Cardano's blockchain energy consumption is a property of the protocol itself."
+  },
+  "sustainability.differentiation.intro2": {
+    "message": "The network runs on Ouroboros, the first blockchain consensus mechanism based on peer-reviewed research. **Secure, sustainable, and scalable** to meet the needs of builders, companies, public institutions, and individual users."
+  },
+  "sustainability.differentiation.cardsHeading": {
+    "message": "What Makes Cardano Different"
+  },
+  "sustainability.differentiation.card1.title": {
+    "message": "Proof of stake instead of proof of work"
+  },
+  "sustainability.differentiation.card1.body": {
+    "message": "Ouroboros energy efficiency was built into the protocol from the get-go. Cardano's proof-of-stake protocol selects validators based on the amount of tokens they have, not their processing power like proof-of-work networks. Ouroboros does away with the proof of work needs for increasingly higher energy consumption to ensure consensus, resulting in a more energy efficient blockchain and a better fit for scalable projects."
+  },
+  "sustainability.differentiation.card2.title": {
+    "message": "Decentralized network, minimal energy footprint"
+  },
+  "sustainability.differentiation.card2.body": {
+    "message": "Cardano is secured by over 3000 operators running nodes and producing blocks across more than 70 countries. High decentralization increases security, and Cardano achieves it using just every day hardware and an average power consumption of {watts} W per node. Lower than a traditional incandescent bulb, and only a little above two typical LED bulbs."
+  },
+  "sustainability.differentiation.card3.title": {
+    "message": "The EUTXO model brings transaction efficiency"
+  },
+  "sustainability.differentiation.card3.body": {
+    "message": "Cardano created a special transaction model: the Extended UTXO (EUTXO), an improved version of the UTXO model first introduced by Bitcoin. Thanks to the EUTXO model, Cardano can batch multiple transactions into a single one, reducing costs as well as energy needs. And a growing ecosystem of scaling solutions increases performance even more."
+  },
+  "sustainability.comparison.title": {
+    "message": "Blockchain Energy Consumption Comparison"
+  },
+  "sustainability.comparison.subtitle": {
+    "message": "The data is clear: Cardano belongs among the most sustainable and most energy efficient blockchains."
+  },
+  "sustainability.comparison.caption": {
+    "message": "Annual energy consumption and emissions of major blockchain networks"
+  },
+  "sustainability.comparison.col.network": {
+    "message": "Network"
+  },
+  "sustainability.comparison.col.consensus": {
+    "message": "Consensus Mechanism"
+  },
+  "sustainability.comparison.col.electricity": {
+    "message": "Annual Electricity Consumption (kWh)"
+  },
+  "sustainability.comparison.col.power": {
+    "message": "Electric Power (kW)"
+  },
+  "sustainability.comparison.col.co2": {
+    "message": "Annual CO2 emissions (Mt)"
+  },
+  "sustainability.comparison.consensus.pos": {
+    "message": "Proof of Stake"
+  },
+  "sustainability.comparison.consensus.pohPos": {
+    "message": "Proof of History & Proof of Stake"
+  },
+  "sustainability.comparison.consensus.npos": {
+    "message": "Nominated Proof of Stake"
+  },
+  "sustainability.comparison.consensus.ppos": {
+    "message": "Pure Proof of Stake"
+  },
+  "sustainability.comparison.network.ethereum": {
+    "message": "Ethereum (post-merge)"
+  },
+  "sustainability.comparison.consensus.pow": {
+    "message": "Proof of Work"
+  },
+  "sustainability.comparison.notAvailable": {
+    "message": "Not available"
+  },
+  "sustainability.network.titleLine1": {
+    "message": "{count} countries."
+  },
+  "sustainability.network.titleLine2": {
+    "message": "{count} stake pools."
+  },
+  "sustainability.network.scopeNote": {
+    "message": "Block-producing nodes reported to the Cardano Foundation's monitoring project, by country, for epoch {epoch}. Hover any country or row to highlight it."
+  },
+  "sustainability.network.mapAriaLabel": {
+    "message": "World map of Cardano stake pools by country"
+  },
+  "sustainability.network.legend.less": {
+    "message": "Less"
+  },
+  "sustainability.network.legend.more": {
+    "message": "More"
+  },
+  "sustainability.network.legend.ariaLabel": {
+    "message": "Shading from fewer to more stake pools"
+  },
+  "sustainability.network.tableEyebrow": {
+    "message": "Top 10 by stake pool count"
+  },
+  "sustainability.network.col.country": {
+    "message": "Country"
+  },
+  "sustainability.network.col.pools": {
+    "message": "Pools"
+  },
+  "sustainability.network.col.stake": {
+    "message": "Stake (M ADA)"
+  },
+  "sustainability.network.country.DE": {
+    "message": "Germany"
+  },
+  "sustainability.network.country.US": {
+    "message": "United States"
+  },
+  "sustainability.network.country.JP": {
+    "message": "Japan"
+  },
+  "sustainability.network.country.FR": {
+    "message": "France"
+  },
+  "sustainability.network.country.NL": {
+    "message": "Netherlands"
+  },
+  "sustainability.network.country.FI": {
+    "message": "Finland"
+  },
+  "sustainability.network.country.IN": {
+    "message": "India"
+  },
+  "sustainability.network.country.CA": {
+    "message": "Canada"
+  },
+  "sustainability.network.country.KR": {
+    "message": "South Korea"
+  },
+  "sustainability.network.country.GB": {
+    "message": "United Kingdom"
+  },
+  "sustainability.network.totalLabel": {
+    "message": "All {count} countries"
+  },
+  "sustainability.network.sourceLabel": {
+    "message": "Source."
+  },
+  "sustainability.network.source": {
+    "message": "Cardano Foundation block-performance dataset ({dataset}), aggregated from monitoring nodes and participating community pools. Snapshot for epoch {epoch}."
+  },
+  "sustainability.mica.title": {
+    "message": "The MiCA Framework"
+  },
+  "sustainability.mica.p1": {
+    "message": "Metrics for blockchain and crypto's environmental impact used to just talk about proof of work and Bitcoin's energy consumption. That's no longer the case. Proof of stake introduced much more energy efficient protocols, and the European Union's MiCA regulations ensured blockchains track and disclose their energy consumption."
+  },
+  "sustainability.mica.p2": {
+    "message": "Making the relevant data publicly available then added extra relevance for the public and enterprises: It increased transparency, letting users verify the information and enabling market participants to meet MiCA disclosure requirements efficiently while reducing compliance costs and barriers to market entry."
+  },
+  "sustainability.mica.p3": {
+    "message": "For Cardano, the MiCA environmental and sustainability indicators were made available almost half a year before the late 2024 deadline. Through an open API, everyone can access and use the data to ensure their compliance with MiCA's disclosure requirements. The reporting is clear, transparent and based on a robust methodology by one of the leading MiCA data providers: CCRI."
+  },
+  "sustainability.mica.methodologyAriaLabel": {
+    "message": "CCRI methodology"
+  },
+  "sustainability.mica.m1.title": {
+    "message": "Hardware selection"
+  },
+  "sustainability.mica.m1.body": {
+    "message": "CCRI looked into Cardano's minimum hardware requirements. They used a survey of stake pool operators (SPOs), drawing on actual operational data from network participants, which reflects real-world conditions and provides a more representative and accurate picture of deployed hardware."
+  },
+  "sustainability.mica.m2.title": {
+    "message": "Hardware measurement"
+  },
+  "sustainability.mica.m2.body": {
+    "message": "CCRI measured the electricity consumption of one Cardano node, plus gave upper and lower bounds for Cardano network nodes. They also adapted the variables to coincide with Cardano's block production times."
+  },
+  "sustainability.mica.m3.title": {
+    "message": "Electricity consumption"
+  },
+  "sustainability.mica.m3.body": {
+    "message": "CCRI gathered information on the size of Cardano's network and calculated the network's full electricity consumption by taking into account those values, plus the hardware used by SPOs and the individual nodes' energy consumption."
+  },
+  "sustainability.mica.m4.title": {
+    "message": "Performance metrics"
+  },
+  "sustainability.mica.m4.body": {
+    "message": "CCRI considered extra data like block formation and transactions processed to calculate a node's power demand as transaction volume changes."
+  },
+  "sustainability.mica.m5.title": {
+    "message": "Carbon footprint"
+  },
+  "sustainability.mica.m5.body": {
+    "message": "CCRI takes into account the regional grid emissions that apply to the SPOs' locations and calculates Cardano's CO2 emissions by multiplying the network's electricity consumption by its carbon intensity."
+  },
+  "sustainability.results.title": {
+    "message": "Key Cardano CCRI Results"
+  },
+  "sustainability.results.subtitle": {
+    "message": "Cardano provides data for all mandatory sustainability indicators as required by the European Securities and Markets Authority (ESMA)."
+  },
+  "sustainability.results.groupA": {
+    "message": "Electricity"
+  },
+  "sustainability.results.perNode": {
+    "message": "Average electrical power per node"
+  },
+  "sustainability.results.networkPower": {
+    "message": "Electrical power of network"
+  },
+  "sustainability.results.annualElectricity": {
+    "message": "Annualized electricity consumption"
+  },
+  "sustainability.results.perTps": {
+    "message": "Marginal power consumption per TPS"
+  },
+  "sustainability.results.groupB": {
+    "message": "Carbon"
+  },
+  "sustainability.results.annualCo2": {
+    "message": "Annualized CO2 emissions"
+  },
+  "sustainability.results.perTx": {
+    "message": "Marginal CO2 emissions per tx"
+  },
+  "sustainability.results.intensity": {
+    "message": "Applied CO2 emission intensity"
+  },
+  "sustainability.resources.title": {
+    "message": "Cardano Sustainability Resources"
+  },
+  "sustainability.resources.ariaLabel": {
+    "message": "Sustainability resources"
+  },
+  "sustainability.resources.prev": {
+    "message": "Previous resources"
+  },
+  "sustainability.resources.next": {
+    "message": "Next resources"
+  },
+  "sustainability.resources.ouroboros.title": {
+    "message": "What makes Ouroboros unique?"
+  },
+  "sustainability.resources.ouroboros.description": {
+    "message": "How Cardano's consensus protocol achieves security with minimal energy"
+  },
+  "sustainability.resources.posPow.title": {
+    "message": "Proof of stake and proof of work at a glance"
+  },
+  "sustainability.resources.posPow.description": {
+    "message": "A side-by-side comparison of the two main consensus approaches"
+  },
+  "sustainability.resources.posTypes.title": {
+    "message": "The different types of proof-of-stake mechanisms"
+  },
+  "sustainability.resources.posTypes.description": {
+    "message": "Understanding delegated, nominated, and bonded staking designs"
+  },
+  "sustainability.resources.layer2.title": {
+    "message": "Cardano's layer 2 solutions"
+  },
+  "sustainability.resources.layer2.description": {
+    "message": "Scaling throughput without increasing the chain's energy footprint"
+  },
+  "sustainability.resources.eutxo.title": {
+    "message": "Core concepts: the EUTXO"
+  },
+  "sustainability.resources.eutxo.description": {
+    "message": "Why Cardano's transaction model is both efficient and deterministic"
+  },
+  "sustainability.faq.title": {
+    "message": "Energy Efficient Blockchains: Frequently Asked Questions"
+  },
+  "sustainability.faq.q1": {
+    "message": "Is Cardano environmentally friendly?"
+  },
+  "sustainability.faq.a1": {
+    "message": "Yes, Cardano is environmentally friendly by design. Cardano's Ouroboros proof-of-stake protocol consumes {mwh} MWh of electricity annually and has a carbon footprint of just {tco2e} tCO2e, both verified by the Crypto Carbon Ratings Institute (CCRI) in a 2026 report. These figures place Cardano among the lowest-impact layer 1 blockchains currently in operation."
+  },
+  "sustainability.faq.q2": {
+    "message": "What is the carbon footprint of Cardano?"
+  },
+  "sustainability.faq.a2": {
+    "message": "The CCRI's 2026 network assessment puts the annualized carbon footprint of the Cardano network at {tco2e} tCO2e. It is calculated by multiplying the network's annual electricity consumption of {mwh} MWh by an applied emission intensity of {intensity} kg CO2 per kWh, which reflects the regional grids where stake pool operators run their nodes."
+  },
+  "sustainability.faq.q3": {
+    "message": "What is the energy consumption of proof of stake vs proof of work?"
+  },
+  "sustainability.faq.a3": {
+    "message": "Proof-of-work networks secure the chain through mining, a competition that rewards computing power and therefore electricity use. Proof-of-stake networks select block producers in proportion to the stake they hold, so ordinary hardware is enough. The comparison above shows the gap: Bitcoin's proof-of-work network is estimated at 138,000,000,000 kWh per year, while proof-of-stake networks such as Cardano ({mwh} MWh) and Ethereum (2,600,863 kWh) use several orders of magnitude less."
+  },
+  "sustainability.faq.q4": {
+    "message": "What is the energy consumption of Cardano vs Bitcoin?"
+  },
+  "sustainability.faq.a4": {
+    "message": "Cardano's proof-of-stake network consumes {mwh} MWh of electricity per year, according to the CCRI. Bitcoin's proof-of-work network is estimated at 138,000,000,000 kWh (138 TWh) per year, with an electric power demand of 15,753,425 kW against Cardano's {networkKw} kW."
+  },
+  "sustainability.faq.q5": {
+    "message": "What is the energy consumption of Cardano vs Ethereum?"
+  },
+  "sustainability.faq.a5": {
+    "message": "Both networks run proof of stake. The CCRI assessed Cardano at {mwh} MWh of electricity per year, while Ethereum (post-merge) was assessed at 2,600,863 kWh per year, roughly six and a half times Cardano's consumption, with annual CO2 emissions of 0.00086978 Mt compared with Cardano's {tco2e} tCO2e."
+  },
+  "sustainability.cta.heading": {
+    "message": "Verified by CCRI. Backed by Science."
+  },
+  "sustainability.cta.supporting": {
+    "message": "Download the full sustainability report to see how Cardano measures up."
+  },
+  "sustainability.cta.button": {
+    "message": "Read the CCRI Report"
+  },
+  "sustainability.network.bubbleTitle": {
+    "message": "{name}: {pools} pools"
+  },
   "getStarted.intro.overviewLink": {
     "message": "Not sure what Cardano is yet? [Start with the overview](/what-is-cardano)."
   },
