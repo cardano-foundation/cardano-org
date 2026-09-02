@@ -2046,36 +2046,6 @@
   "contact.select.option.different": {
     "message": "another inquiry"
   },
-  "artworkContest.hero.title": {
-    "message": "Making the World Work Better for All"
-  },
-  "artworkContest.hero.description": {
-    "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."
-  },
-  "artworkContest.imagePreview.alt": {
-    "message": "Preview"
-  },
-  "artworkContest.layout.title": {
-    "message": "Cardano Artwork Contest"
-  },
-  "artworkContest.layout.description": {
-    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
-  },
-  "artworkContest.content.title": {
-    "message": "Artwork Contest Test Page"
-  },
-  "artworkContest.content.description1": {
-    "message": "Upload your image here to see how it would look like."
-  },
-  "artworkContest.content.description2": {
-    "message": "Toggle dark mode and resize the browser to see how it adapts."
-  },
-  "artworkContest.content.quote1": {
-    "message": "Image will not be submitted,"
-  },
-  "artworkContest.content.quote2": {
-    "message": "This happens on your machine only"
-  },
   "developers.hero.title": {
     "message": "Start Building on Cardano"
   },
