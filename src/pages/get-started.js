@@ -230,11 +230,11 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
+            <SpacerBox size="small" />
+            <StepCard steps={steps(handleWalletConnect, images)} walletConnected={walletConnected} />
             <TitleWithText
               description={translate({id: 'getStarted.intro.overviewLink', message: 'Not sure what Cardano is yet? [Start with the overview](/what-is-cardano).'})}
             />
-            <SpacerBox size="small" />
-            <StepCard steps={steps(handleWalletConnect, images)} walletConnected={walletConnected} />
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>

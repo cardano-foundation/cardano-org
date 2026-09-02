@@ -6360,7 +6360,7 @@
     "message": "What is Cardano?"
   },
   "whatIsCardano.hero.description": {
-    "message": "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand stake pools around the world and governed by the people who hold ada."
+    "message": "A proof-of-stake blockchain built on peer-reviewed research, run by stake pools around the world and governed by the people who hold ada."
   },
   "whatIsCardano.divider.intro": {
     "message": "In short"
@@ -6408,7 +6408,7 @@
     "message": "Consensus: Ouroboros"
   },
   "whatIsCardano.how.consensus.text": {
-    "message": "Time on Cardano is divided into slots of one second and epochs of five days. For each slot, the protocol picks one stake pool at random, weighted by how much ada is delegated to it, to produce the next block. Because the choice is based on stake rather than computing power, running the network needs ordinary servers, not warehouses of mining hardware."
+    "message": "Time on Cardano is divided into slots of one second and epochs of five days. Slots are assigned at random to stake pools, weighted by how much ada is delegated to them, and the chosen pool produces the next block. Most slots stay empty, so a block appears roughly every 20 seconds. Because the choice is based on stake rather than computing power, running the network needs ordinary servers, not warehouses of mining hardware."
   },
   "whatIsCardano.how.eutxo.title": {
     "message": "Accounting: the extended UTXO model"
@@ -6468,7 +6468,7 @@
     "message": "Explore use cases"
   },
   "whatIsCardano.usedFor.outro": {
-    "message": "Hundreds of applications already run on Cardano: wallets, exchanges, lending, identity, games and more."
+    "message": "More than a hundred applications already run on Cardano: wallets, exchanges, lending, identity, games and more."
   },
   "whatIsCardano.usedFor.button": {
     "message": "Browse Cardano apps"
@@ -6675,7 +6675,7 @@
     "message": "On-chain governance and treasury"
   },
   "whatIsCardano.proof.governance.text": {
-    "message": "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative, stake pool operators and a constitutional committee provide checks and balances."
+    "message": "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative. Stake pool operators and a constitutional committee provide checks and balances."
   },
   "whatIsCardano.proof.regulation.title": {
     "message": "Ready for regulation"

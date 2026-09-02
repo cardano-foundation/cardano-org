@@ -354,7 +354,7 @@ const config = {
                   title: 'Get to know',
                   icon: 'book-solid',
                   items: [
-                    { to: '/what-is-cardano', label: 'What is Cardano?', description: 'The platform, how it works and why it is different', icon: 'ada' },
+                    { to: '/what-is-cardano', label: 'What is Cardano?', description: 'The platform, how it works and why it is different', icon: 'globe-solid' },
                     { to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token', icon: 'ada' },
                     { to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano', icon: 'wallet-solid' },
                     { to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security', icon: 'wallet-solid' },

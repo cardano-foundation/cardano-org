@@ -76,7 +76,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.governance.text",
         message:
-          "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative, stake pool operators and a constitutional committee provide checks and balances.",
+          "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative. Stake pool operators and a constitutional committee provide checks and balances.",
       }),
     },
     {

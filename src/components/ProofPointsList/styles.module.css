@@ -1,11 +1,3 @@
-.wrap {
-  margin: 0 auto;
-}
-
-.title {
-  margin-bottom: 1.5rem;
-}
-
 .list {
   list-style: none;
   padding: 0;
@@ -31,9 +23,14 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-darkest);
+  background-color: rgba(0, 51, 173, 0.1);
+  color: #0033AD;
   font-size: 1.4rem;
+}
+
+[data-theme='dark'] .icon {
+  background-color: rgba(119, 161, 255, 0.18);
+  color: #8FB1FF;
 }
 
 .rowTitle {

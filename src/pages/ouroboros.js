@@ -40,10 +40,6 @@ export default function Home() {
               description={translate({id: 'ouroboros.vision.description', message: 'A proof-of-stake protocol that provides and improves the security guarantees of proof-of-work at a fraction of the energy cost. Ouroboros applies cryptography, combinatorics, and mathematical game theory to guarantee the protocol\'s integrity, longevity, and performance, and that of the distributed networks that depend upon it.'})}
               headingDot={true}
             />
-            <TitleWithText
-              description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano)'})}
-            />
-
         <FeaturedTitleWithText
             title={translate({id: 'ouroboros.whatIs.title', message: 'What Is Ouroboros?'})}
             description={[
@@ -93,6 +89,9 @@ export default function Home() {
                 ]}
                 headingDot={true}
               />
+        <TitleWithText
+          description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano)'})}
+        />
         </BoundaryBox>
       </BackgroundWrapper>
 

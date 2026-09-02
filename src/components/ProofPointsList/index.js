@@ -5,14 +5,10 @@ import styles from "./styles.module.css";
 
 // Alternating rows of icon, title, tagline and text. Used on /what-is-cardano
 // (all points) and on the homepage (a subset plus a CTA into the full page).
-export default function ProofPointsList({ points, title, cta }) {
+// Callers render the section title through TitleWithText, which owns the h1.
+export default function ProofPointsList({ points, cta }) {
   return (
-    <section className={styles.wrap}>
-      {title && (
-        <Heading as="h2" className={styles.title}>
-          {title}
-        </Heading>
-      )}
+    <section>
       <ul className={styles.list}>
         {points.map((point) => (
           <li key={point.key} className={styles.row}>
@@ -20,7 +16,7 @@ export default function ProofPointsList({ points, title, cta }) {
               {point.icon}
             </span>
             <div className={styles.body}>
-              <Heading as="h3" className={styles.rowTitle}>
+              <Heading as="h2" className={styles.rowTitle}>
                 {point.title}
               </Heading>
               <p className={styles.tagline}>{point.tagline}</p>

@@ -31,7 +31,7 @@ function HomepageHeader() {
       description={translate({
         id: "whatIsCardano.hero.description",
         message:
-          "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand stake pools around the world and governed by the people who hold ada.",
+          "A proof-of-stake blockchain built on peer-reviewed research, run by stake pools around the world and governed by the people who hold ada.",
       })}
       bannerType="starburst"
     />
@@ -127,7 +127,7 @@ function HowItWorksSection() {
           translate({
             id: "whatIsCardano.how.consensus.text",
             message:
-              "Time on Cardano is divided into slots of one second and epochs of five days. For each slot, the protocol picks one stake pool at random, weighted by how much ada is delegated to it, to produce the next block. Because the choice is based on stake rather than computing power, running the network needs ordinary servers, not warehouses of mining hardware.",
+              "Time on Cardano is divided into slots of one second and epochs of five days. Slots are assigned at random to stake pools, weighted by how much ada is delegated to them, and the chosen pool produces the next block. Most slots stay empty, so a block appears roughly every 20 seconds. Because the choice is based on stake rather than computing power, running the network needs ordinary servers, not warehouses of mining hardware.",
           }),
         ]}
         headingDot={true}
@@ -227,7 +227,7 @@ function UsedForSection() {
       <TitleWithText
         description={translate({
           id: "whatIsCardano.usedFor.outro",
-          message: "Hundreds of applications already run on Cardano: wallets, exchanges, lending, identity, games and more.",
+          message: "More than a hundred applications already run on Cardano: wallets, exchanges, lending, identity, games and more.",
         })}
         buttonLabel={translate({ id: "whatIsCardano.usedFor.button", message: "Browse Cardano apps" })}
         buttonLink="/apps"
@@ -238,16 +238,16 @@ function UsedForSection() {
 
 function GetStartedSection() {
   const steps = [
-    { key: "wallet", icon: <FaWallet />, accent: "blue", to: "/what-is-a-wallet",
+    { key: "wallet", icon: <FaWallet />, accent: "blue", href: "/what-is-a-wallet",
       title: translate({ id: "whatIsCardano.start.wallet.title", message: "Get a wallet" }),
       text: translate({ id: "whatIsCardano.start.wallet.text", message: "Your keys, your ada. Learn what a wallet is and pick one that fits you." }) },
-    { key: "ada", icon: <FaShoppingCart />, accent: "violet", to: "/where-to-get-ada",
+    { key: "ada", icon: <FaShoppingCart />, accent: "violet", href: "/where-to-get-ada",
       title: translate({ id: "whatIsCardano.start.ada.title", message: "Get ada" }),
       text: translate({ id: "whatIsCardano.start.ada.text", message: "Find trusted exchanges and other ways to get your first ada." }) },
-    { key: "stake", icon: <FaLayerGroup />, accent: "teal", to: "/stake-pool-delegation",
+    { key: "stake", icon: <FaLayerGroup />, accent: "teal", href: "/stake-pool-delegation",
       title: translate({ id: "whatIsCardano.start.stake.title", message: "Stake your ada" }),
       text: translate({ id: "whatIsCardano.start.stake.text", message: "Delegate to a stake pool, help secure the network, earn rewards." }) },
-    { key: "vote", icon: <FaVoteYea />, accent: "blue", to: "/governance",
+    { key: "vote", icon: <FaVoteYea />, accent: "blue", href: "/governance",
       title: translate({ id: "whatIsCardano.start.vote.title", message: "Have your say" }),
       text: translate({ id: "whatIsCardano.start.vote.text", message: "Take part in governance and shape where Cardano goes next." }) },
     { key: "build", icon: <FaCode />, accent: "violet", href: "https://developers.cardano.org",
@@ -263,7 +263,7 @@ function GetStartedSection() {
       />
       <div className={clsx(styles.cardGrid, styles.cardGridFive)}>
         {steps.map((step) => (
-          <RoleCard key={step.key} accent={step.accent} icon={step.icon} title={step.title} href={step.to || step.href}>
+          <RoleCard key={step.key} accent={step.accent} icon={step.icon} title={step.title} href={step.href}>
             {step.text}
           </RoleCard>
         ))}
@@ -371,12 +371,13 @@ export default function WhatIsCardano() {
             "mainEntity": faq.map((item) => ({
               "@type": "Question",
               "name": item.question,
-              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ") },
+              // Structured data must be plain text, so strip markdown links before joining.
+              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
             })),
           })}
         </script>
       </Head>
-      <OpenGraphInfo pageName="what-is-cardano" />
+      <OpenGraphInfo />
       <HomepageHeader />
       <main>
         <BackgroundWrapper backgroundType="zoom">
