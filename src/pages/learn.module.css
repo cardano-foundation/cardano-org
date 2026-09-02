@@ -1,0 +1,25 @@
+/* src/pages/learn.module.css */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stageMeta {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  background: rgba(0, 51, 173, 0.1);
+}
+
+[data-theme='dark'] .stageMeta {
+  color: #8fb1ff;
+  background: rgba(119, 161, 255, 0.18);
+}
