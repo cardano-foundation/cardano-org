@@ -65,6 +65,7 @@ function getNavbarItems() {
         {
           title: 'Go deeper',
           items: [
+            {to: '/how-cardano-works', label: 'How Cardano works', description: 'Consensus, ledger, tokens and upgrades in plain terms'},
             {href: 'https://academy.cardanofoundation.org/', label: 'Cardano Academy', description: 'Free, self-paced blockchain courses'},
             {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
             {href: '/insights', label: 'Cardano Insights', description: 'On-chain or regularly refreshed data'},

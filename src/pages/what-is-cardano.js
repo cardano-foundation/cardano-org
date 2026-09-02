@@ -18,7 +18,7 @@ import ProofPointsList from "@site/src/components/ProofPointsList";
 import FAQSection from "@site/src/components/FAQSection";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
-import { jsonLdString } from "@site/src/utils/jsonLd";
+import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getWhatIsCardanoFAQ } from "@site/src/data/whatIsCardanoFAQ";
 import styles from "./what-is-cardano.module.css";
 
@@ -157,10 +157,10 @@ function HowItWorksSection() {
       <TitleWithText
         description={translate({
           id: "whatIsCardano.how.outro",
-          message: "Want the full picture, from slot leaders to the energy footprint? Start with the consensus protocol.",
+          message: "Want the full picture, from slots to hard forks? Read how Cardano works step by step.",
         })}
-        buttonLabel={translate({ id: "whatIsCardano.how.button", message: "Explore Ouroboros" })}
-        buttonLink="/ouroboros"
+        buttonLabel={translate({ id: "whatIsCardano.how.button", message: "Read how Cardano works" })}
+        buttonLink="/how-cardano-works"
       />
     </>
   );
@@ -313,18 +313,7 @@ export default function WhatIsCardano() {
       })}
     >
       <Head>
-        <script type="application/ld+json">
-          {jsonLdString({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faq.map((item) => ({
-              "@type": "Question",
-              "name": item.question,
-              // Structured data must be plain text, so strip markdown links before joining.
-              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
-            })),
-          })}
-        </script>
+        <script type="application/ld+json">{faqJsonLd(faq)}</script>
       </Head>
       <OpenGraphInfo />
       <HomepageHeader />

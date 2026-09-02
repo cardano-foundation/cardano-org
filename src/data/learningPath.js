@@ -3,7 +3,7 @@ import { academyUrl } from "@site/src/data/quiz/academy";
 import {
   FaInfoCircle, FaCoins, FaWallet, FaPlay,
   FaSearch, FaShoppingCart, FaShieldAlt, FaHandshake, FaLayerGroup, FaThLarge,
-  FaCog, FaBalanceScale, FaCodeBranch, FaBook,
+  FaCog, FaProjectDiagram, FaBalanceScale, FaCodeBranch, FaBook,
   FaVoteYea, FaUsers, FaPiggyBank, FaScroll, FaServer, FaCalculator,
   FaFlask, FaChartLine, FaHistory, FaBuilding, FaGraduationCap, FaCode,
 } from "react-icons/fa";
@@ -56,6 +56,7 @@ export function getLearningPath() {
       intro: translate({ id: "learn.stage.technology.intro", message: "How the network reaches agreement, how it scales and how it changes over time." }),
       quiz: translate({ id: "learn.stage.technology.quiz", message: "Check what you learned with the [technical quiz](/quiz)." }),
       items: [
+        { key: "how-cardano-works", href: "/how-cardano-works", icon: <FaProjectDiagram />, title: translate({ id: "learn.item.howCardanoWorks.title", message: "How Cardano works" }), text: translate({ id: "learn.item.howCardanoWorks.text", message: "Consensus, ledger, tokens, programs and upgrades, step by step." }) },
         { key: "ouroboros", href: "/ouroboros", icon: <FaCog />, title: translate({ id: "learn.item.ouroboros.title", message: "Ouroboros" }), text: translate({ id: "learn.item.ouroboros.text", message: "The proof-of-stake protocol behind every block." }) },
         { key: "stablecoins", href: "/stablecoins", icon: <FaBalanceScale />, title: translate({ id: "learn.item.stablecoins.title", message: "Stablecoins" }), text: translate({ id: "learn.item.stablecoins.text", message: "Stable value on Cardano: how the main stablecoins work and where to use them." }) },
         { key: "layer-2", href: "/layer-2", icon: <FaLayerGroup />, title: translate({ id: "learn.item.layer2.title", message: "Layer 2" }), text: translate({ id: "learn.item.layer2.text", message: "Hydra, Midnight and the other networks that extend Cardano." }) },
