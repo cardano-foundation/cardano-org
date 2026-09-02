@@ -157,10 +157,10 @@ function HowItWorksSection() {
       <TitleWithText
         description={translate({
           id: "whatIsCardano.how.outro",
-          message: "Want the full picture, from slot leaders to the energy footprint? Start with the consensus protocol.",
+          message: "Want the full picture, from slots to hard forks? Read how Cardano works step by step.",
         })}
-        buttonLabel={translate({ id: "whatIsCardano.how.button", message: "Explore Ouroboros" })}
-        buttonLink="/ouroboros"
+        buttonLabel={translate({ id: "whatIsCardano.how.button", message: "Read how Cardano works" })}
+        buttonLink="/how-cardano-works"
       />
     </>
   );

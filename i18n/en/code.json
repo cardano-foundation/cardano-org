@@ -6423,10 +6423,10 @@
     "message": "Tokens on Cardano are built into the ledger. Creating or transferring a token uses the same rules as ada, with no smart contract needed. Smart contracts are validator scripts that approve or reject a transaction someone has already built, written in languages such as Plutus and Aiken."
   },
   "whatIsCardano.how.outro": {
-    "message": "Want the full picture, from slot leaders to the energy footprint? Start with the consensus protocol."
+    "message": "Want the full picture, from slots to hard forks? Read how Cardano works step by step."
   },
   "whatIsCardano.how.button": {
-    "message": "Explore Ouroboros"
+    "message": "Read how Cardano works"
   },
   "whatIsCardano.divider.different": {
     "message": "Why Cardano"
