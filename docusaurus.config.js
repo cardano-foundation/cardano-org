@@ -235,6 +235,14 @@ const config = {
             return [`${prefix}/docs/glossary`];
           }
 
+          // /why and /discover-cardano were folded into /what-is-cardano.
+          // Locale-aware, same pattern as the glossary rule above.
+          const wic = existingPath.match(/^(\/(?:ja|de|es|vi))?\/what-is-cardano\/?$/);
+          if (wic) {
+            const prefix = wic[1] || '';
+            return [`${prefix}/why`, `${prefix}/discover-cardano`];
+          }
+
           // The blog tag taxonomy was consolidated to the 7 tags in
           // blog/tags.yml. Redirect the retired tag pages to the tag they were
           // folded into so old links and search results keep working.

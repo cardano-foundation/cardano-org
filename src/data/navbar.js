@@ -43,17 +43,18 @@ function getNavbarItems() {
     megaMenu({
       label: 'Learn',
       featured: {
-        title: 'What is ada?',
-        description: 'A new type of currency. Direct, secure, for everyone.',
+        title: 'What is Cardano?',
+        description: 'The platform, how it works and why it is different.',
         image: '/img/nav/learn.webp',
-        to: '/what-is-ada',
-        cta: 'Learn about ada',
+        to: '/what-is-cardano',
+        cta: 'Start here',
         placement: 'start',
       },
       columns: [
         {
           title: 'Get to know',
           items: [
+            {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token'},
             {to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security'},
             {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},
             {to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano'},
