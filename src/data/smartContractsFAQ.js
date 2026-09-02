@@ -52,7 +52,7 @@ export function getSmartContractsFAQ() {
         translate({
           id: "smartContracts.faq.approvals.a",
           message:
-            "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything later on your behalf.",
+            "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything else from your wallet afterwards.",
         }),
       ],
     },

@@ -118,7 +118,7 @@ function HowSection() {
           translate({
             id: "smartContracts.how.cost.text",
             message:
-              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a small collateral covers the network's work. Wallets set aside a few ada for that.",
+              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a collateral of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that.",
           }),
         ]}
         headingDot={true}
@@ -181,7 +181,7 @@ function DappsSection() {
           translate({
             id: "smartContracts.dapps.p2",
             message:
-              "You use a dApp with your own wallet. The app asks to connect, which lets it see your address and ask you to sign transactions, and nothing more: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps.",
+              "You use a dApp with your own wallet. The app asks to connect, which lets it see your addresses and balance and ask you to sign transactions: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps.",
           }),
         ]}
         headingDot={true}
@@ -205,7 +205,7 @@ function SafetySection() {
           translate({
             id: "smartContracts.safety.p1",
             message:
-              "Read what you are about to sign. Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later.",
+              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until they release it.",
           }),
           translate({
             id: "smartContracts.safety.p2",
@@ -239,7 +239,7 @@ function BuiltSection() {
         description={translate({
           id: "smartContracts.built.intro",
           message:
-            "Most of what people do on Cardano beyond sending ada runs on contracts: trading, lending, stablecoins, NFT marketplaces, identity and games. A few examples from the app showcase, ranked by on-chain activity where we have it.",
+            "Trading, lending, stablecoins, NFT marketplaces, identity and games all run on contracts. A few examples from the app showcase, ranked by on-chain activity where we have it.",
         })}
         headingDot={true}
       />
@@ -287,7 +287,7 @@ function BuildSection() {
           translate({
             id: "smartContracts.build.p1",
             message:
-              "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. Contracts are deployed by including their script in a transaction, there is no separate deployment step or registry.",
+              "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or stored once in an output that later transactions point to. There is no separate deployment step or registry.",
           }),
         ]}
         headingDot={true}

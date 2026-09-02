@@ -7176,7 +7176,7 @@
     "message": "The cost is known before you sign"
   },
   "smartContracts.how.cost.text": {
-    "message": "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a small collateral covers the network's work. Wallets set aside a few ada for that."
+    "message": "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a collateral of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that."
   },
   "smartContracts.how.outro": {
     "message": "The full mechanics, from slots to ledger, are on the [how Cardano works](/how-cardano-works#smart-contracts) page."
@@ -7206,7 +7206,7 @@
     "message": "A decentralized application, or dApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices."
   },
   "smartContracts.dapps.p2": {
-    "message": "You use a dApp with your own wallet. The app asks to connect, which lets it see your address and ask you to sign transactions, and nothing more: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps."
+    "message": "You use a dApp with your own wallet. The app asks to connect, which lets it see your addresses and balance and ask you to sign transactions: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps."
   },
   "smartContracts.dapps.button": {
     "message": "Browse Cardano apps"
@@ -7218,7 +7218,7 @@
     "message": "How do I use a dApp safely?"
   },
   "smartContracts.safety.p1": {
-    "message": "Read what you are about to sign. Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later."
+    "message": "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until they release it."
   },
   "smartContracts.safety.p2": {
     "message": "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no dApp needs it."
@@ -7233,7 +7233,7 @@
     "message": "What runs on Cardano smart contracts today?"
   },
   "smartContracts.built.intro": {
-    "message": "Most of what people do on Cardano beyond sending ada runs on contracts: trading, lending, stablecoins, NFT marketplaces, identity and games. A few examples from the app showcase, ranked by on-chain activity where we have it."
+    "message": "Trading, lending, stablecoins, NFT marketplaces, identity and games all run on contracts. A few examples from the app showcase, ranked by on-chain activity where we have it."
   },
   "smartContracts.built.list.dex": {
     "message": "Decentralized exchanges"
@@ -7257,7 +7257,7 @@
     "message": "How do I build one?"
   },
   "smartContracts.build.p1": {
-    "message": "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. Contracts are deployed by including their script in a transaction, there is no separate deployment step or registry."
+    "message": "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or stored once in an output that later transactions point to. There is no separate deployment step or registry."
   },
   "smartContracts.build.button": {
     "message": "Developer portal"
@@ -7299,7 +7299,7 @@
     "message": "Do I need to approve tokens for a dApp?"
   },
   "smartContracts.faq.approvals.a": {
-    "message": "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything later on your behalf."
+    "message": "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything else from your wallet afterwards."
   },
   "smartContracts.faq.upgrades.q": {
     "message": "Can a smart contract be changed after it is deployed?"
