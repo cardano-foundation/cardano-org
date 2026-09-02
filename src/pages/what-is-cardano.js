@@ -30,7 +30,7 @@ function HomepageHeader() {
       description={translate({
         id: "whatIsCardano.hero.description",
         message:
-          "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand independent stake pools and governed by the people who hold ada.",
+          "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand stake pools around the world and governed by the people who hold ada.",
       })}
       bannerType="starburst"
     />
@@ -63,7 +63,7 @@ function WhatIsCardanoSection() {
           translate({
             id: "whatIsCardano.intro.p2",
             message:
-              "Two things set Cardano apart from the start. Its consensus protocol, [Ouroboros](/ouroboros), was the first proof-of-stake protocol to be published and peer-reviewed at a major cryptography conference before it was deployed. And since 2025 the protocol's own rules, upgrades and treasury are decided on the chain itself by ada holders, stake pool operators and an elected committee, not by a foundation or a company.",
+              "Two things set Cardano apart from the start. Its consensus protocol, [Ouroboros](/ouroboros), was the first provably secure proof-of-stake protocol, published and peer-reviewed before it was deployed. And since 2025 the protocol's own rules, upgrades and treasury are decided on the chain itself by ada holders, stake pool operators and an elected committee, not by a foundation or a company.",
           }),
           translate({
             id: "whatIsCardano.intro.p3",
@@ -87,7 +87,7 @@ function AdaSection() {
           translate({
             id: "whatIsCardano.ada.p1",
             message:
-              "Ada is the currency of the Cardano network, named after Ada Lovelace, the 19th-century mathematician often called the first computer programmer. You use ada to pay transaction fees, to stake and earn rewards, to vote in governance and to pay for services in applications built on Cardano. The supply is capped at 45 billion ada, and new ada enters circulation only as staking rewards drawn from a fixed reserve.",
+              "Ada is the currency of the Cardano network, named after Ada Lovelace, the 19th-century mathematician often called the first computer programmer. You use ada to pay transaction fees, to stake and earn rewards, to vote in governance and to pay for services in applications built on Cardano. The supply is capped at 45 billion ada, and new ada enters circulation only from a fixed reserve, as staking rewards and treasury funding.",
           }),
           translate({
             id: "whatIsCardano.ada.p2",
@@ -138,7 +138,7 @@ function HowItWorksSection() {
           translate({
             id: "whatIsCardano.how.eutxo.text",
             message:
-              "Cardano tracks ownership the way cash works, not the way a bank balance works. Your wallet holds a set of unspent notes (UTXOs), and a transaction consumes some notes and creates new ones. The model, called extended UTXO or eUTXO, lets your wallet work out exactly what a transaction will do and what it will cost before you sign it. There is no bidding for block space, and a transaction that would fail is rejected before it is submitted, so you do not pay for failures.",
+              "Cardano tracks ownership the way cash works, not the way a bank balance works. Your wallet holds a set of unspent notes (UTXOs), and a transaction consumes some notes and creates new ones. The model, called extended UTXO or eUTXO, lets your wallet work out exactly what a transaction will do and what it will cost before you sign it. There is no bidding for block space, and a simple transfer that would fail is rejected before it is submitted, so you do not pay for failures.",
           }),
         ]}
         headingDot={true}

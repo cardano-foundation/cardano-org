@@ -54,7 +54,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.decentralized.text",
         message:
-          "Blocks are produced by more than a thousand independent stake pools run by individuals, companies and communities around the world. The protocol rewards pools for staying below a saturation point, which discourages any single operator from growing too large.",
+          "Blocks are produced by around a thousand stake pools, run by hundreds of independent operators: individuals, companies and communities around the world. The protocol rewards pools for staying below a saturation point, which discourages any single operator from growing too large.",
       }),
     },
     {

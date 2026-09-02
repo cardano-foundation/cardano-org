@@ -6360,7 +6360,7 @@
     "message": "What is Cardano?"
   },
   "whatIsCardano.hero.description": {
-    "message": "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand independent stake pools and governed by the people who hold ada."
+    "message": "A proof-of-stake blockchain built on peer-reviewed research, run by more than a thousand stake pools around the world and governed by the people who hold ada."
   },
   "whatIsCardano.divider.intro": {
     "message": "In short"
@@ -6375,7 +6375,7 @@
     "message": "Cardano is a blockchain platform: a shared, public ledger that thousands of independent computers keep in sync without a company in the middle. It records who owns what, runs programs called smart contracts, and settles transactions in its own currency, ada. Development began in 2015 and the network went live in September 2017."
   },
   "whatIsCardano.intro.p2": {
-    "message": "Two things set Cardano apart from the start. Its consensus protocol, [Ouroboros](/ouroboros), was the first proof-of-stake protocol to be published and peer-reviewed at a major cryptography conference before it was deployed. And since 2025 the protocol's own rules, upgrades and treasury are decided on the chain itself by ada holders, stake pool operators and an elected committee, not by a foundation or a company."
+    "message": "Two things set Cardano apart from the start. Its consensus protocol, [Ouroboros](/ouroboros), was the first provably secure proof-of-stake protocol, published and peer-reviewed before it was deployed. And since 2025 the protocol's own rules, upgrades and treasury are decided on the chain itself by ada holders, stake pool operators and an elected committee, not by a foundation or a company."
   },
   "whatIsCardano.intro.p3": {
     "message": "In plain terms: Cardano is a technology that lets people manage and exchange value, identity and governance over the internet, with rules that everyone can inspect and nobody can quietly change."
@@ -6387,7 +6387,7 @@
     "message": "What is ada?"
   },
   "whatIsCardano.ada.p1": {
-    "message": "Ada is the currency of the Cardano network, named after Ada Lovelace, the 19th-century mathematician often called the first computer programmer. You use ada to pay transaction fees, to stake and earn rewards, to vote in governance and to pay for services in applications built on Cardano. The supply is capped at 45 billion ada, and new ada enters circulation only as staking rewards drawn from a fixed reserve."
+    "message": "Ada is the currency of the Cardano network, named after Ada Lovelace, the 19th-century mathematician often called the first computer programmer. You use ada to pay transaction fees, to stake and earn rewards, to vote in governance and to pay for services in applications built on Cardano. The supply is capped at 45 billion ada, and new ada enters circulation only from a fixed reserve, as staking rewards and treasury funding."
   },
   "whatIsCardano.ada.p2": {
     "message": "Every ada also carries a stake in the network. You do not need to send it anywhere or lock it up to use that stake, which is one of the differences explained below."
@@ -6414,7 +6414,7 @@
     "message": "Accounting: the extended UTXO model"
   },
   "whatIsCardano.how.eutxo.text": {
-    "message": "Cardano tracks ownership the way cash works, not the way a bank balance works. Your wallet holds a set of unspent notes (UTXOs), and a transaction consumes some notes and creates new ones. The model, called extended UTXO or eUTXO, lets your wallet work out exactly what a transaction will do and what it will cost before you sign it. There is no bidding for block space, and a transaction that would fail is rejected before it is submitted, so you do not pay for failures."
+    "message": "Cardano tracks ownership the way cash works, not the way a bank balance works. Your wallet holds a set of unspent notes (UTXOs), and a transaction consumes some notes and creates new ones. The model, called extended UTXO or eUTXO, lets your wallet work out exactly what a transaction will do and what it will cost before you sign it. There is no bidding for block space, and a simple transfer that would fail is rejected before it is submitted, so you do not pay for failures."
   },
   "whatIsCardano.how.programs.title": {
     "message": "Programs: native tokens and smart contracts"
@@ -6657,7 +6657,7 @@
     "message": "Independent stake pools"
   },
   "whatIsCardano.proof.decentralized.text": {
-    "message": "Blocks are produced by more than a thousand independent stake pools run by individuals, companies and communities around the world. The protocol rewards pools for staying below a saturation point, which discourages any single operator from growing too large."
+    "message": "Blocks are produced by around a thousand stake pools, run by hundreds of independent operators: individuals, companies and communities around the world. The protocol rewards pools for staying below a saturation point, which discourages any single operator from growing too large."
   },
   "whatIsCardano.proof.research.title": {
     "message": "Backed by research"
