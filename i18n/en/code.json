@@ -2005,16 +2005,16 @@
     "message": "Raise Ticket"
   },
   "contact.sponsorship.title": {
-    "message": "Cardano Summit Sponsorship"
+    "message": "Event sponsorship"
   },
   "contact.sponsorship.description1": {
-    "message": "Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we're excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization's needs and goals."
+    "message": "Thank you for your interest in sponsoring Cardano events. The Cardano Summit 2026 will not take place, the community voted against funding it from the treasury. The Cardano Foundation still hosts and attends events around the world, and sponsorship opportunities can be tailored to your organization's goals."
   },
   "contact.sponsorship.description2": {
-    "message": "Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event."
+    "message": "Use the Cardano Foundation contact form to tell the events team about your organization and the kind of event or sponsorship you have in mind. They will get back to you to discuss options."
   },
   "contact.sponsorship.buttonLabel": {
-    "message": "Sponsorship Request"
+    "message": "Contact the Cardano Foundation"
   },
   "contact.meta.title": {
     "message": "Contact Cardano, Get in Touch"
@@ -2035,46 +2035,16 @@
     "message": "not yet decided (please select)"
   },
   "contact.select.option.technicalIssue": {
-    "message": "a technical issue with Daedalus, Nami or Lace"
+    "message": "a technical issue with Daedalus or Lace"
   },
   "contact.select.option.intersect": {
     "message": "the intention to join Intersect"
   },
   "contact.select.option.sponsor": {
-    "message": "the desire to sponsor the Cardano Summit"
+    "message": "the desire to sponsor a Cardano event"
   },
   "contact.select.option.different": {
     "message": "another inquiry"
-  },
-  "artworkContest.hero.title": {
-    "message": "Making the World Work Better for All"
-  },
-  "artworkContest.hero.description": {
-    "message": "Cardano is a blockchain platform for changemakers, innovators, and visionaries, with the tools and technologies required to create possibility for the many, as well as the few, and bring about positive global change."
-  },
-  "artworkContest.imagePreview.alt": {
-    "message": "Preview"
-  },
-  "artworkContest.layout.title": {
-    "message": "Cardano Artwork Contest"
-  },
-  "artworkContest.layout.description": {
-    "message": "An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
-  },
-  "artworkContest.content.title": {
-    "message": "Artwork Contest Test Page"
-  },
-  "artworkContest.content.description1": {
-    "message": "Upload your image here to see how it would look like."
-  },
-  "artworkContest.content.description2": {
-    "message": "Toggle dark mode and resize the browser to see how it adapts."
-  },
-  "artworkContest.content.quote1": {
-    "message": "Image will not be submitted,"
-  },
-  "artworkContest.content.quote2": {
-    "message": "This happens on your machine only"
   },
   "developers.hero.title": {
     "message": "Build on Cardano"
@@ -4054,7 +4024,7 @@
     "message": "Abstain"
   },
   "governance.delegate.abstain.help": {
-    "message": "Always abstain. Your stake counts toward turnout but never picks a side on any proposal."
+    "message": "Always abstain. Your stake is left out of the vote count, so it never counts for or against any proposal."
   },
   "governance.delegate.noConfidence.label": {
     "message": "No Confidence"
@@ -5218,7 +5188,7 @@
     "message": "The ability for network participants to propose and vote on improvement proposals, making the network self-sustaining"
   },
   "quiz.governance.governance-13.option1": {
-    "message": "A rule that only the original founding organizations may ever vote"
+    "message": "A rule that only the genesis entities may ever vote"
   },
   "quiz.governance.governance-13.option2": {
     "message": "The removal of stake pools from the network entirely"
@@ -5227,7 +5197,7 @@
     "message": "A fixed, unchangeable set of protocol parameters that no vote could ever alter"
   },
   "quiz.governance.governance-13.explanation": {
-    "message": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to founding organizations, removing stake pools, or freezing parameters against future votes."
+    "message": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to the genesis entities, removing stake pools, or freezing parameters against future votes."
   },
   "quiz.staking.title": {
     "message": "Staking and Delegation"
@@ -7630,13 +7600,13 @@
     "message": "Institutional grade"
   },
   "stablecoins.usda.tagline": {
-    "message": "USDA — Institutional-grade stability, backed by a Cardano founding entity."
+    "message": "USDA: institutional-grade stability, backed by one of the organizations that launched Cardano."
   },
   "stablecoins.usda.body1": {
     "message": "US Treasury-backed reserves. EMURGO issuer credibility. Available in 80+ countries."
   },
   "stablecoins.usda.body2": {
-    "message": "USDA is the stablecoin built by Anzens in collaboration with EMURGO — one of Cardano's three founding entities. Secured by BitGo custody and available to users across more than 80 countries, its reserves are backed by US Treasury instruments, bringing a world's best in class stable asset to Cardano."
+    "message": "USDA is the stablecoin built by Anzens in collaboration with EMURGO, one of the three organizations that launched Cardano. Secured by BitGo custody and available to users across more than 80 countries, its reserves are backed by US Treasury instruments, bringing a world's best in class stable asset to Cardano."
   },
   "stablecoins.usda.body3": {
     "message": "For businesses and institutions looking to move dollars on-chain without counterparty exposure to volatile assets, USDA offers sovereign-grade backing with the programmability of Cardano's blockchain."
@@ -7766,15 +7736,6 @@
   },
   "stablecoins.whyCardano.fees.body3": {
     "message": "For businesses processing payroll, settlements, or high-volume payments, that predictability means assurance and peace of mind."
-  },
-  "stablecoins.whyCardano.outages.title": {
-    "message": "Nine years, zero outages"
-  },
-  "stablecoins.whyCardano.outages.body1": {
-    "message": "Cardano's Mainnet has never gone down. Since launch in 2017, it has maintained continuous operation through every market cycle, network stress event, and technical upgrade."
-  },
-  "stablecoins.whyCardano.outages.body2": {
-    "message": "For institutional settlement, cross-border payment, or any application where availability isn't optional, this track record is not just unmatched in the industry but a key value proposition."
   },
   "stablecoins.whyCardano.governance.title": {
     "message": "Finance strategy backed by governance"
@@ -9536,5 +9497,32 @@
   "notFound.button.homepage": {
     "message": "Go to Homepage",
     "description": "404 page homepage button"
+  },
+  "governance.impact.hardfork.title": {
+    "message": "Hard fork to Protocol v11 enacted"
+  },
+  "governance.impact.hardfork.text": {
+    "message": "The van Rossem hard fork moved Cardano to Protocol Version 11 on 18 July 2026 after DReps, SPOs and the Constitutional Committee approved the hard fork initiation action on-chain."
+  },
+  "governance.impact.amendmentPortal.title": {
+    "message": "Constitutional Amendment Portal opened"
+  },
+  "governance.impact.amendmentPortal.text": {
+    "message": "Intersect opened the Constitutional Amendment Portal for alpha testing, giving the community a structured place to propose, discuss and refine changes to the Cardano Constitution."
+  },
+  "governance.impact.committee2026.title": {
+    "message": "Second Constitutional Committee election"
+  },
+  "governance.impact.committee2026.text": {
+    "message": "DReps and SPOs ratified the 2026 committee update in epoch 653, filling four seats of the Constitutional Committee. The new members take office in epoch 654."
+  },
+  "stablecoins.whyCardano.uptime.title": {
+    "message": "{years} years, never halted"
+  },
+  "stablecoins.whyCardano.uptime.body1": {
+    "message": "Cardano's mainnet has produced blocks without interruption since September 2017. The chain has never been halted or restarted, and every protocol upgrade, from Shelley to van Rossem, went live through the hard fork combinator while the network kept running."
+  },
+  "stablecoins.whyCardano.uptime.body2": {
+    "message": "For institutional settlement, cross-border payment, or any application where availability is not optional, {years} years of uninterrupted block production is a key part of the value proposition."
   }
 }
