@@ -54,6 +54,7 @@ function getNavbarItems() {
         {
           title: 'Get to know',
           items: [
+            {to: '/learn', label: 'Learn step by step', description: 'A guided path from beginner to advanced'},
             {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token'},
             {to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security'},
             {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},

@@ -443,6 +443,10 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'Learn Cardano',
+                to: '/learn',
+              },
+              {
                 label: 'Cardano News',
                 to: '/news',
               },

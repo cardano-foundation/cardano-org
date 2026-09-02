@@ -6510,7 +6510,7 @@
     "message": "How do I start using Cardano?"
   },
   "whatIsCardano.start.outro": {
-    "message": "Prefer a guided walk-through? The getting started page takes you from download to first transaction."
+    "message": "Prefer a guided walk-through? The getting started page takes you from download to first transaction, and the [learning path](/learn) continues from there."
   },
   "whatIsCardano.start.button": {
     "message": "Start step by step"

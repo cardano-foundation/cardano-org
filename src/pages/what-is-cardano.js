@@ -261,7 +261,7 @@ function GetStartedSection() {
         headingDot={true}
       />
       <TitleWithText
-        description={translate({ id: "whatIsCardano.start.outro", message: "Prefer a guided walk-through? The getting started page takes you from download to first transaction." })}
+        description={translate({ id: "whatIsCardano.start.outro", message: "Prefer a guided walk-through? The getting started page takes you from download to first transaction, and the [learning path](/learn) continues from there." })}
         buttonLabel={translate({ id: "whatIsCardano.start.button", message: "Start step by step" })}
         buttonLink="/get-started"
       />
