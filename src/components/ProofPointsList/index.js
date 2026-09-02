@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
@@ -32,7 +31,7 @@ export default function ProofPointsList({ points, title, cta }) {
       </ul>
       {cta && (
         <div className={styles.ctaRow}>
-          <Link className={clsx("button button--primary button--lg")} to={cta.to}>
+          <Link className="button button--primary button--lg" to={cta.to}>
             {cta.label}
           </Link>
         </div>

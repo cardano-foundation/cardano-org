@@ -8,8 +8,8 @@ import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
 const HOME_KEYS = ["staking", "fees", "governance", "research"];
 
 export default function HomeProofPointsSection() {
-  const byKey = new Map(getProofPoints().map((point) => [point.key, point]));
-  const points = HOME_KEYS.map((key) => byKey.get(key)).filter(Boolean);
+  const allPoints = getProofPoints();
+  const points = HOME_KEYS.map((key) => allPoints.find((point) => point.key === key)).filter(Boolean);
   return (
     <ProofPointsList
       title={translate({ id: "home.proofPoints.title", message: "What makes Cardano different?" })}
