@@ -86,7 +86,7 @@ function ConsensusSection() {
           translate({
             id: "howCardanoWorks.consensus.slots.text",
             message:
-              "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake. On average one pool in twenty slots wins, so a new block appears roughly every 20 seconds, and most slots pass without a block.",
+              "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake. On average only one slot in twenty has a winner, so a new block appears roughly every 20 seconds, and most slots pass without a block.",
           }),
         ]}
         headingDot={true}
@@ -144,7 +144,7 @@ function LedgerSection() {
           translate({
             id: "howCardanoWorks.ledger.p2",
             message:
-              "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so two transactions cannot both spend the same note in the same block. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one.",
+              "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed and the other is rejected. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one.",
           }),
           translate({
             id: "howCardanoWorks.ledger.p3",
@@ -186,7 +186,7 @@ function TransactionsSection() {
           translate({
             id: "howCardanoWorks.transactions.p3",
             message:
-              "A transaction usually appears in a block within about 20 seconds. Wallets and exchanges then wait for more blocks on top before treating it as settled, typically a few minutes for everyday use and longer for large transfers.",
+              "A block is produced roughly every 20 seconds, so a transaction usually appears on the chain within a minute. Wallets and exchanges then wait for more blocks on top before treating it as settled, typically a few minutes for everyday use and longer for large transfers.",
           }),
         ]}
         headingDot={true}
