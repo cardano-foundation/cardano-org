@@ -16,7 +16,11 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ProofPointsList from "@site/src/components/ProofPointsList";
+import FAQSection from "@site/src/components/FAQSection";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
+import { jsonLdString } from "@site/src/utils/jsonLd";
+import { getWhatIsCardanoFAQ } from "@site/src/data/whatIsCardanoFAQ";
 import styles from "./what-is-cardano.module.css";
 
 function HomepageHeader() {
@@ -344,6 +348,7 @@ function HistorySection() {
 }
 
 export default function WhatIsCardano() {
+  const faq = getWhatIsCardanoFAQ();
   return (
     <Layout
       title={translate({
@@ -356,6 +361,19 @@ export default function WhatIsCardano() {
           "Cardano is a proof-of-stake blockchain platform for money, identity and governance. Learn how it works, what makes it different, what it is used for and how to get started.",
       })}
     >
+      <Head>
+        <script type="application/ld+json">
+          {jsonLdString({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faq.map((item) => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ") },
+            })),
+          })}
+        </script>
+      </Head>
       <OpenGraphInfo pageName="what-is-cardano" />
       <HomepageHeader />
       <main>
@@ -369,6 +387,18 @@ export default function WhatIsCardano() {
             <GetStartedSection />
             <ComparedSection />
             <HistorySection />
+            <FAQSection data={faq} />
+            <SpacerBox size="medium" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+        <BackgroundWrapper backgroundType="gradientDark">
+          <BoundaryBox>
+            <CtaOneColumn
+              title={translate({ id: "whatIsCardano.cta.title", message: "Think you have the basics down? Take the Cardano basics quiz." })}
+              buttonLabel={translate({ id: "whatIsCardano.cta.button", message: "Take the quiz" })}
+              buttonLink="/quiz"
+            />
+            <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
