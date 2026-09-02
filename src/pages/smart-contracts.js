@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import { FaFileContract } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
@@ -12,6 +13,10 @@ import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import AppList from "@site/src/components/AppList";
+import FAQSection from "@site/src/components/FAQSection";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import { faqJsonLd } from "@site/src/utils/jsonLd";
+import { getSmartContractsFAQ } from "@site/src/data/smartContractsFAQ";
 
 function HomepageHeader() {
   return (
@@ -294,6 +299,7 @@ function BuildSection() {
 }
 
 export default function SmartContracts() {
+  const faq = getSmartContractsFAQ();
   return (
     <Layout
       title={translate({
@@ -306,6 +312,9 @@ export default function SmartContracts() {
           "What a smart contract is, how Cardano runs them as validator scripts on the eUTXO ledger, which languages developers use, what a dApp is, how to use one safely and what is already built.",
       })}
     >
+      <Head>
+        <script type="application/ld+json">{faqJsonLd(faq)}</script>
+      </Head>
       <OpenGraphInfo />
       <HomepageHeader />
       <main>
@@ -326,6 +335,18 @@ export default function SmartContracts() {
             <SafetySection />
             <BuiltSection />
             <BuildSection />
+            <FAQSection data={faq} />
+            <SpacerBox size="medium" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+        <BackgroundWrapper backgroundType="gradientDark">
+          <BoundaryBox>
+            <CtaOneColumn
+              title={translate({ id: "smartContracts.cta.title", message: "Ready to test yourself? Take the technical quiz." })}
+              buttonLabel={translate({ id: "smartContracts.cta.button", message: "Take the quiz" })}
+              buttonLink="/quiz"
+            />
+            <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
