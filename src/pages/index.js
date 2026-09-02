@@ -8,6 +8,7 @@ import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeProofPointsSection from "@site/src/components/HomeProofPointsSection";
+import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import LatestNewsSection from "@site/src/components/LatestNewsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -82,8 +83,8 @@ export default function Home() {
 
         <BoundaryBox>
           <HomeProofPointsSection />
+          <SpacerBox size="medium" />
         </BoundaryBox>
-
 
         <FollowCardanoSection />
       </main>
