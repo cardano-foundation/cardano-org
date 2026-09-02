@@ -46,13 +46,13 @@ export function getSmartContractsFAQ() {
     {
       question: translate({
         id: "smartContracts.faq.approvals.q",
-        message: "Do I need to approve tokens for a dApp?",
+        message: "Do I need to approve tokens for a DApp?",
       }),
       answer: [
         translate({
           id: "smartContracts.faq.approvals.a",
           message:
-            "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything else from your wallet afterwards.",
+            "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet afterwards.",
         }),
       ],
     },

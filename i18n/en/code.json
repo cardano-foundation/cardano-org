@@ -7128,7 +7128,7 @@
     "message": "How Cardano works"
   },
   "smartContracts.hero.title": {
-    "message": "Smart contracts and dApps"
+    "message": "Smart contracts and DApps"
   },
   "smartContracts.hero.description": {
     "message": "What a smart contract is, how Cardano runs it, and what people build with it."
@@ -7197,16 +7197,16 @@
     "message": "Start building on Cardano"
   },
   "smartContracts.divider.dapps": {
-    "message": "dApps"
+    "message": "DApps"
   },
   "smartContracts.dapps.title": {
-    "message": "What is a dApp?"
+    "message": "What is a DApp?"
   },
   "smartContracts.dapps.p1": {
-    "message": "A decentralized application, or dApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices."
+    "message": "A decentralized application, or DApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices."
   },
   "smartContracts.dapps.p2": {
-    "message": "You use a dApp with your own wallet. Connecting lets the app see your addresses and balance and ask you to sign transactions. It never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, [CIP-30](/glossary/cip-30), which is why one wallet works with many apps."
+    "message": "You use a DApp with your own wallet. Connecting lets the app see your addresses and balance and ask you to sign transactions. It never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, [CIP-30](/glossary/cip-30), which is why one wallet works with many apps."
   },
   "smartContracts.dapps.button": {
     "message": "Browse Cardano apps"
@@ -7215,13 +7215,13 @@
     "message": "Safety"
   },
   "smartContracts.safety.title": {
-    "message": "How do I use a dApp safely?"
+    "message": "How do I use a DApp safely?"
   },
   "smartContracts.safety.p1": {
-    "message": "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it."
+    "message": "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it."
   },
   "smartContracts.safety.p2": {
-    "message": "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no dApp needs it."
+    "message": "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no DApp needs it."
   },
   "smartContracts.safety.button": {
     "message": "Common scams and how to spot them"
@@ -7266,7 +7266,7 @@
     "message": "Smart Contracts on Cardano: How They Work and What They Power"
   },
   "smartContracts.meta.description": {
-    "message": "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a dApp is and how to use one safely."
+    "message": "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a DApp is and how to use one safely."
   },
   "smartContracts.intro.callout": {
     "message": "A smart contract on Cardano is a script that decides whether a transaction may spend the funds it guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no."
@@ -7296,10 +7296,10 @@
     "message": "Your wallet runs the script before submitting, so a failing transaction is normally never sent. If a transaction is submitted and its script fails on chain anyway, the collateral your wallet set aside covers the network's work, and the rest of the transaction does not happen."
   },
   "smartContracts.faq.approvals.q": {
-    "message": "Do I need to approve tokens for a dApp?"
+    "message": "Do I need to approve tokens for a DApp?"
   },
   "smartContracts.faq.approvals.a": {
-    "message": "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a dApp cannot spend anything else from your wallet afterwards."
+    "message": "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet afterwards."
   },
   "smartContracts.faq.upgrades.q": {
     "message": "Can a smart contract be changed after it is deployed?"
@@ -7314,9 +7314,9 @@
     "message": "Aiken is the fastest way in for most developers, with a familiar syntax and good tooling. Plutus is the choice if you already know Haskell or want the deepest control. Both compile to the same on-chain language."
   },
   "learn.item.smartContracts.title": {
-    "message": "Smart contracts and dApps"
+    "message": "Smart contracts and DApps"
   },
   "learn.item.smartContracts.text": {
-    "message": "What a contract is, how Cardano runs it and how to use a dApp safely."
+    "message": "What a contract is, how Cardano runs it and how to use a DApp safely."
   }
 }

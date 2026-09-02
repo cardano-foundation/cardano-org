@@ -21,7 +21,7 @@ import { getSmartContractsFAQ } from "@site/src/data/smartContractsFAQ";
 function HomepageHeader() {
   return (
     <SiteHero
-      title={translate({ id: "smartContracts.hero.title", message: "Smart contracts and dApps" })}
+      title={translate({ id: "smartContracts.hero.title", message: "Smart contracts and DApps" })}
       description={translate({
         id: "smartContracts.hero.description",
         message: "What a smart contract is, how Cardano runs it, and what people build with it.",
@@ -168,20 +168,20 @@ function DappsSection() {
     <>
       <Divider
         id="dapps"
-        text={translate({ id: "smartContracts.divider.dapps", message: "dApps" })}
+        text={translate({ id: "smartContracts.divider.dapps", message: "DApps" })}
       />
       <TitleWithText
-        title={translate({ id: "smartContracts.dapps.title", message: "What is a dApp?" })}
+        title={translate({ id: "smartContracts.dapps.title", message: "What is a DApp?" })}
         description={[
           translate({
             id: "smartContracts.dapps.p1",
             message:
-              "A decentralized application, or dApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices.",
+              "A decentralized application, or DApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices.",
           }),
           translate({
             id: "smartContracts.dapps.p2",
             message:
-              "You use a dApp with your own wallet. Connecting lets the app see your addresses and balance and ask you to sign transactions. It never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, [CIP-30](/glossary/cip-30), which is why one wallet works with many apps.",
+              "You use a DApp with your own wallet. Connecting lets the app see your addresses and balance and ask you to sign transactions. It never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, [CIP-30](/glossary/cip-30), which is why one wallet works with many apps.",
           }),
         ]}
         headingDot={true}
@@ -200,17 +200,17 @@ function SafetySection() {
         text={translate({ id: "smartContracts.divider.safety", message: "Safety" })}
       />
       <TitleWithText
-        title={translate({ id: "smartContracts.safety.title", message: "How do I use a dApp safely?" })}
+        title={translate({ id: "smartContracts.safety.title", message: "How do I use a DApp safely?" })}
         description={[
           translate({
             id: "smartContracts.safety.p1",
             message:
-              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it.",
+              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it.",
           }),
           translate({
             id: "smartContracts.safety.p2",
             message:
-              "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no dApp needs it.",
+              "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no DApp needs it.",
           }),
         ]}
         headingDot={true}
@@ -309,7 +309,7 @@ export default function SmartContracts() {
       description={translate({
         id: "smartContracts.meta.description",
         message:
-          "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a dApp is and how to use one safely.",
+          "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a DApp is and how to use one safely.",
       })}
     >
       <Head>
