@@ -193,6 +193,203 @@ function TransactionsSection() {
   );
 }
 
+function TokensSection() {
+  return (
+    <>
+      <Divider
+        id="tokens"
+        text={translate({ id: "howCardanoWorks.divider.tokens", message: "Tokens" })}
+      />
+      <TitleWithText
+        title={translate({ id: "howCardanoWorks.tokens.title", message: "How are tokens created?" })}
+        description={[
+          translate({
+            id: "howCardanoWorks.tokens.p1",
+            message:
+              "Tokens on Cardano are native: the ledger handles them with the same rules as ada, so no smart contract is needed to create, send or hold them. A token is defined by a minting policy, a small script or key that says who may create or destroy it. Once minted, tokens travel inside ordinary transaction outputs, alongside ada, and a single transaction can carry many different assets.",
+          }),
+          translate({
+            id: "howCardanoWorks.tokens.p2",
+            message:
+              "An NFT is simply a token minted with a quantity of one under a policy that will not mint it again, plus metadata that describes it. Standards such as CIP-25 and CIP-68 define how wallets and marketplaces read that metadata.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "howCardanoWorks.tokens.button", message: "Native tokens in the docs" })}
+        buttonLink="https://docs.cardano.org/developer-resources/native-tokens"
+      />
+    </>
+  );
+}
+
+function SmartContractsSection() {
+  return (
+    <>
+      <Divider
+        id="smart-contracts"
+        text={translate({ id: "howCardanoWorks.divider.contracts", message: "Smart contracts" })}
+      />
+      <TitleWithText
+        title={translate({ id: "howCardanoWorks.contracts.title", message: "How do smart contracts run?" })}
+        description={[
+          translate({
+            id: "howCardanoWorks.contracts.p1",
+            message:
+              "A smart contract on Cardano is a validator: a script that guards outputs and answers one question for each transaction that tries to spend them, valid or not. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable.",
+          }),
+          translate({
+            id: "howCardanoWorks.contracts.p2",
+            message:
+              "Scripts are written in languages such as Plutus and Aiken and compiled to Plutus Core, the language the node executes. Their execution is paid for with a separate budget of memory and steps that is priced in advance, so the cost is known before submission, exactly like the base fee. If a script fails on chain despite the wallet's own check, a small collateral covers the network's work, which is why wallets set aside a few ada for that purpose.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "howCardanoWorks.contracts.button", message: "Build on Cardano" })}
+        buttonLink="https://developers.cardano.org"
+      />
+    </>
+  );
+}
+
+function NetworkSection() {
+  return (
+    <>
+      <Divider
+        id="network"
+        text={translate({ id: "howCardanoWorks.divider.network", message: "Network" })}
+      />
+      <TitleWithText
+        title={translate({ id: "howCardanoWorks.network.title", message: "Who runs the network?" })}
+        description={[
+          translate({
+            id: "howCardanoWorks.network.p1",
+            message:
+              "Anyone can run a Cardano node. Stake pools are nodes that produce blocks, operated by individuals, companies and communities. Delegating ada to a pool increases its chance of being chosen and earns you a share of its rewards, without moving your ada anywhere. Rewards are paid every epoch from newly released reserve ada and from transaction fees.",
+          }),
+          translate({
+            id: "howCardanoWorks.network.p2",
+            message:
+              "The protocol rewards pools most when they stay below a saturation point, which discourages any single pool from growing too large, and pool operators pledge some of their own ada as a commitment. Around three thousand pools are registered, and roughly a thousand produce blocks in a given epoch.",
+          }),
+          translate({
+            id: "howCardanoWorks.network.p3",
+            message:
+              "New nodes catch up with the chain either by replaying its full history or by starting from a signed snapshot produced by Mithril, a network of signers backed by the same stake distribution. Or [run a stake pool yourself](/stake-pool-operation).",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "howCardanoWorks.network.button", message: "Delegate your ada" })}
+        buttonLink="/stake-pool-delegation"
+      />
+    </>
+  );
+}
+
+function UpgradesSection() {
+  return (
+    <>
+      <Divider
+        id="upgrades"
+        text={translate({ id: "howCardanoWorks.divider.upgrades", message: "Upgrades" })}
+      />
+      <TitleWithText
+        title={translate({ id: "howCardanoWorks.upgrades.title", message: "How does Cardano change?" })}
+        description={[
+          translate({
+            id: "howCardanoWorks.upgrades.p1",
+            message:
+              "Cardano upgrades through hard forks, but without the chain splits the term usually implies. The hard fork combinator lets a single node understand every era of the protocol, so the switch from one set of rules to the next happens at an epoch boundary that everyone knows in advance. Each era added something: staking, native tokens, smart contracts, cheaper scripts, and on-chain governance.",
+          }),
+          translate({
+            id: "howCardanoWorks.upgrades.p2",
+            message:
+              "Since 2025 an upgrade is itself a governance action: it is proposed on chain, voted on by delegated representatives, stake pool operators and the constitutional committee, and only then enacted. The same process changes protocol parameters such as fees and block size. See [how governance works](/governance).",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "howCardanoWorks.upgrades.button", message: "Every upgrade so far" })}
+        buttonLink="/hardforks"
+      />
+    </>
+  );
+}
+
+function TerminologySection() {
+  return (
+    <>
+      <Divider
+        id="terminology"
+        text={translate({ id: "howCardanoWorks.divider.terminology", message: "Terminology" })}
+      />
+      <TitleWithText
+        title={translate({ id: "howCardanoWorks.terminology.title", message: "Terminology" })}
+        description={[
+          translate({
+            id: "howCardanoWorks.terminology.intro",
+            message: "The words this page uses, each linked to its glossary entry.",
+          }),
+          {
+            list: [
+              translate({
+                id: "howCardanoWorks.terminology.item.utxo",
+                message: "[UTXO](/glossary/utxo): an unspent output, one note of value.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.eutxo",
+                message: "[eUTXO](/glossary/eutxo): the extended model with data and scripts on outputs.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.epoch",
+                message: "[Epoch](/glossary/epoch): five days, 432,000 slots.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.slot",
+                message: "[Slot](/glossary/slot): one second, the unit of time.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.slotLeader",
+                message: "[Slot leader](/glossary/slot-leader): the pool chosen to produce a block.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.stakePool",
+                message: "[Stake pool](/glossary/stake-pool): a block-producing node with delegated stake.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.nativeToken",
+                message: "[Native token](/glossary/native-token): an asset the ledger handles like ada.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.plutusCore",
+                message: "[Plutus Core](/glossary/plutus-core): the on-chain script language.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.collateral",
+                message: "[Collateral](/glossary/collateral): ada set aside in case a script fails on chain.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.hardForkCombinator",
+                message:
+                  "[Hard fork combinator](/glossary/hard-fork-combinator): the mechanism that lets one node run every era.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.mithril",
+                message: "[Mithril](/glossary/mithril): signed snapshots for fast node bootstrap.",
+              }),
+              translate({
+                id: "howCardanoWorks.terminology.item.drep",
+                message: "[DRep](/glossary/drep): a delegated representative in governance.",
+              }),
+            ],
+          },
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "howCardanoWorks.terminology.button", message: "Open the glossary" })}
+        buttonLink="/glossary"
+      />
+    </>
+  );
+}
+
 export default function HowCardanoWorks() {
   return (
     <Layout
@@ -223,6 +420,11 @@ export default function HowCardanoWorks() {
             <ConsensusSection />
             <LedgerSection />
             <TransactionsSection />
+            <TokensSection />
+            <SmartContractsSection />
+            <NetworkSection />
+            <UpgradesSection />
+            <TerminologySection />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
