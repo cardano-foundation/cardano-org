@@ -32,7 +32,7 @@ export default function Home() {
     <Layout
       title={translate({
         id: "brandAssets.layout.title",
-        message: "Cardano Logo Download — Brand Assets, Colors & Guidelines",
+        message: "Cardano Logo Download: Brand Assets, Colors and Guidelines",
       })}
       description={translate({
         id: "brandAssets.layout.description",
@@ -42,7 +42,7 @@ export default function Home() {
     >
       <OpenGraphInfo
         pageName="brand-assets"
-        title="Cardano Logo Download — Brand Assets, Colors & Guidelines"
+        title="Cardano Logo Download: Brand Assets, Colors and Guidelines"
         description="Download the official Cardano logo in SVG format. Starburst icon, stacked and horizontal wordmarks in multiple colors, plus brand colors, typography and usage guidelines."
       />
       <Head>

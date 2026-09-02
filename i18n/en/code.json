@@ -1727,10 +1727,10 @@
     "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
   },
   "brandAssets.layout.title": {
-    "message": "Cardano Brand Assets, Logos and Guidelines"
+    "message": "Cardano Logo Download: Brand Assets, Colors and Guidelines"
   },
   "brandAssets.layout.description": {
-    "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
+    "message": "Download the official Cardano logo in SVG format. Starburst icon, stacked and horizontal wordmarks in multiple colors, plus brand colors, typography and usage guidelines."
   },
   "codeOfConduct.hero.title": {
     "message": "Community Code Of Conduct"
@@ -2077,10 +2077,10 @@
     "message": "This happens on your machine only"
   },
   "developers.hero.title": {
-    "message": "Start Building on Cardano"
+    "message": "Build on Cardano"
   },
   "developers.hero.description": {
-    "message": "A curated list of resources and entry points to help you get started with building on Cardano."
+    "message": "Everything you need, from your first transaction to production DApps."
   },
   "developers.meta.title": {
     "message": "Build on Cardano, Developer Tools and Documentation"
@@ -2206,7 +2206,7 @@
     "message": "Numerous independent entities, including companies actively building on Cardano, collaborate to advance the platform and ensure it remains aligned with its mission."
   },
   "entities.entitiesSection.divider": {
-    "message": "Entities advancing Cardano"
+    "message": "Entities building on Cardano"
   },
   "entities.companiesSection.divider": {
     "message": "Companies, associations, and collaborations building on Cardano"
@@ -2221,7 +2221,7 @@
     "message": "Cardano Events"
   },
   "events.hero.description": {
-    "message": "Upcoming Cardano events in one place, so you never miss a chance to connect, learn, and grow with the Cardano Community."
+    "message": "Discover events, meet builders, and grow with the global Cardano community."
   },
   "events.meta.title": {
     "message": "Cardano Events, Conferences and Meetups"
@@ -2235,38 +2235,102 @@
   "events.platforms.meetup": {
     "message": "Events on Meetup.com"
   },
-  "events.filter.searchPlaceholder": { "message": "Search events, locations, or topics" },
-  "events.filter.timeUpcoming": { "message": "Upcoming" },
-  "events.filter.timePast": { "message": "Past" },
-  "events.filter.timeAll": { "message": "All" },
-  "events.filter.placeInPerson": { "message": "In person" },
-  "events.filter.placeOnline": { "message": "Online" },
-  "events.filter.topicGroup": { "message": "Topics" },
-  "events.filter.allTopics": { "message": "All Topics" },
-  "events.featured.title": { "message": "Featured upcoming events" },
-  "events.featured.thisWeek": { "message": "This week" },
-  "events.recaps.title": { "message": "Recent event recaps" },
-  "events.recaps.watch": { "message": "Watch recap" },
-  "events.carousel.prev": { "message": "Previous" },
-  "events.carousel.next": { "message": "Next" },
-  "events.view.list": { "message": "List" },
-  "events.view.calendar": { "message": "Calendar" },
-  "events.divider.calendar": { "message": "Events Calendar" },
-  "events.calendar.today": { "message": "Today" },
-  "events.calendar.upcoming": { "message": "Upcoming events" },
-  "events.calendar.tzNote": { "message": "Dates are shown in UTC and events may change. Check the event page for the latest details." },
-  "events.card.register": { "message": "View event" },
-  "events.card.online": { "message": "Online" },
-  "events.card.recurring": { "message": "Recurring" },
-  "events.divider.upcoming": { "message": "Upcoming Events" },
-  "events.divider.all": { "message": "All Events" },
-  "events.divider.past": { "message": "Past Events and Recaps" },
-  "events.empty.upcoming": { "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest." },
-  "events.empty.past": { "message": "No past events match your filters." },
-  "events.divider.discover": { "message": "Discover Cardano Events Worldwide" },
-  "events.submit.title": { "message": "Want to host a Cardano event?" },
-  "events.submit.description": { "message": "Submit your event to be featured on cardano.org." },
-  "events.submit.cta": { "message": "Submit your event" },
+  "events.filter.searchPlaceholder": {
+    "message": "Search events, locations, or topics"
+  },
+  "events.filter.timeUpcoming": {
+    "message": "Upcoming"
+  },
+  "events.filter.timePast": {
+    "message": "Past"
+  },
+  "events.filter.timeAll": {
+    "message": "All"
+  },
+  "events.filter.placeInPerson": {
+    "message": "In person"
+  },
+  "events.filter.placeOnline": {
+    "message": "Online"
+  },
+  "events.filter.topicGroup": {
+    "message": "Topics"
+  },
+  "events.filter.allTopics": {
+    "message": "All Topics"
+  },
+  "events.featured.title": {
+    "message": "Featured upcoming events"
+  },
+  "events.featured.thisWeek": {
+    "message": "This week"
+  },
+  "events.recaps.title": {
+    "message": "Recent event recaps"
+  },
+  "events.recaps.watch": {
+    "message": "Watch recap"
+  },
+  "events.carousel.prev": {
+    "message": "Previous"
+  },
+  "events.carousel.next": {
+    "message": "Next"
+  },
+  "events.view.list": {
+    "message": "List"
+  },
+  "events.view.calendar": {
+    "message": "Calendar"
+  },
+  "events.divider.calendar": {
+    "message": "Events Calendar"
+  },
+  "events.calendar.today": {
+    "message": "Today"
+  },
+  "events.calendar.upcoming": {
+    "message": "Upcoming events"
+  },
+  "events.calendar.tzNote": {
+    "message": "Dates are shown in UTC and events may change. Check the event page for the latest details."
+  },
+  "events.card.register": {
+    "message": "View event"
+  },
+  "events.card.online": {
+    "message": "Online"
+  },
+  "events.card.recurring": {
+    "message": "Recurring"
+  },
+  "events.divider.upcoming": {
+    "message": "Upcoming Events"
+  },
+  "events.divider.all": {
+    "message": "All Events"
+  },
+  "events.divider.past": {
+    "message": "Past Events and Recaps"
+  },
+  "events.empty.upcoming": {
+    "message": "No upcoming events match your filters right now. Check the Cardano calendars below for the latest."
+  },
+  "events.empty.past": {
+    "message": "No past events match your filters."
+  },
+  "events.divider.discover": {
+    "message": "Discover Cardano Events Worldwide"
+  },
+  "events.submit.title": {
+    "message": "Want to host a Cardano event?"
+  },
+  "events.submit.description": {
+    "message": "Submit your event to be featured on cardano.org."
+  },
+  "events.submit.cta": {
+    "message": "Submit your event"
+  },
   "exchanges.hero.title": {
     "message": "Integrate Cardano"
   },
@@ -2424,13 +2488,13 @@
     "message": "Cardano Foundation, Switzerland: **7,168.00 BTC**"
   },
   "governance.hero.title": {
-    "message": "Governance on Cardano"
+    "message": "Your ada, your voice"
   },
   "governance.hero.description": {
-    "message": "Cardano runs on a secure, decentralized system where ada holders shape the platform's development and influence the ecosystem's direction."
+    "message": "Every ada in your wallet is a vote. Thousands of people are already shaping Cardano's future. Join them."
   },
   "governance.meta.title": {
-    "message": "Cardano Governance, Community-Driven Decision Making"
+    "message": "Cardano Governance - Your ada, your voice"
   },
   "governance.meta.description": {
     "message": "Cardano governance gives every ada holder a voice. Delegate to a DRep, vote on proposals, or register as a delegate representative to shape the network."
@@ -2667,7 +2731,7 @@
     "message": "Energy Efficient"
   },
   "ouroboros.features.energyEfficient.text1": {
-    "message": "Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://iohk.io/en/blog/posts/2020/03/23/from-classic-to-hydra-the-implementations-of-ouroboros-explained/)."
+    "message": "Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol)."
   },
   "ouroboros.cta.title": {
     "message": "Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
@@ -3693,7 +3757,7 @@
     "message": "View profile"
   },
   "ambassadors.hero.featured.aria": {
-    "message": "Featured Ambassador"
+    "message": "Featured ambassador"
   },
   "ambassadors.hero.featured.dismiss": {
     "message": "Dismiss featured ambassador"
@@ -3786,7 +3850,7 @@
     "message": "A Model To Marginalize None, And Give Power To All."
   },
   "governance.blue.text": {
-    "message": "Our current systems do not work for everyone. A better, more positive future is possible. If the world is to serve the many, it must be agreed to by the many. Consensus must drive progress and where disagreement occurs, it must drive creative solutions."
+    "message": "Cardano governance has moved from vision to reality. With a ratified constitution, active DReps, and a funded treasury, the community now directs the network's future. This is decentralization not as a promise, but as practice."
   },
   "governanceCharts.searchPlaceholder": {
     "message": "Search for charts or parameters..."
@@ -6299,54 +6363,198 @@
   "apps.card.source": {
     "message": "Source"
   },
-  "whatIsAWallet.meta.title": { "message": "What is a Cardano Wallet? Types, Keys, and Security Explained", "description": "Meta title for the wallet explainer page" },
-  "whatIsAWallet.meta.description": { "message": "Learn what a Cardano wallet is, how hot, cold, custodial, and non-custodial wallets differ, how keys and recovery phrases work, and how to keep your ada safe.", "description": "Meta description for the wallet explainer page" },
-  "whatIsAWallet.hero.title": { "message": "What is a Wallet?", "description": "Hero title" },
-  "whatIsAWallet.hero.description": { "message": "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.", "description": "Hero description" },
-  "whatIsAWallet.intro.title": { "message": "Your keys, not your coins", "description": "Intro section title" },
-  "whatIsAWallet.intro.text1": { "message": "A wallet does not actually store your ada. Your coins live on the Cardano blockchain. What a wallet stores are the **keys** that prove the coins are yours and let you spend them.", "description": "Intro paragraph 1" },
-  "whatIsAWallet.intro.text2": { "message": "Each wallet has a **public key**, used to receive funds, much like an account number you can share, and a **private key**, used to sign transactions and spend funds. Anyone who holds the private key controls the funds, so keeping it secret is everything.", "description": "Intro paragraph 2" },
-  "whatIsAWallet.types.divider": { "message": "Wallet types", "description": "Divider label for wallet types" },
-  "whatIsAWallet.hotcold.title": { "message": "Hot wallets vs cold wallets", "description": "Hot/cold section title" },
-  "whatIsAWallet.hotcold.description": { "message": "Wallets differ by whether they are connected to the internet.", "description": "Hot/cold intro" },
-  "whatIsAWallet.hotWallet.text": { "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges. They are convenient for everyday use.", "description": "Hot wallet explanation" },
-  "whatIsAWallet.coldWallet.text": { "message": "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.", "description": "Cold wallet explanation" },
-  "whatIsAWallet.custody.title": { "message": "Custodial vs non-custodial", "description": "Custody section title" },
-  "whatIsAWallet.custody.text1": { "message": "With a **custodial** wallet, a third party such as an exchange holds your private keys for you. It is convenient, but you are trusting that party with your funds.", "description": "Custodial paragraph" },
-  "whatIsAWallet.custody.text2": { "message": "With a **non-custodial** wallet, you alone hold the keys. No company can freeze your funds or lose them for you, but no one can recover them for you either. As the saying goes: not your keys, not your coins.", "description": "Non-custodial paragraph" },
-  "whatIsAWallet.nodetype.title": { "message": "Light wallets vs full-node wallets", "description": "Node type section title" },
-  "whatIsAWallet.nodetype.text1": { "message": "A **light** wallet connects to the blockchain through a remote service, so it is quick to install and runs on phones and browsers.", "description": "Light wallet paragraph" },
-  "whatIsAWallet.nodetype.text2": { "message": "A **full-node** wallet downloads and verifies a copy of the blockchain itself. It needs more disk space and time, but it relies on no third party to read the chain.", "description": "Full-node wallet paragraph" },
-  "whatIsAWallet.keys.divider": { "message": "Keys and recovery", "description": "Divider label for keys" },
-  "whatIsAWallet.recovery.title": { "message": "Your recovery phrase is the master key", "description": "Recovery section title" },
-  "whatIsAWallet.recovery.text1": { "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.", "description": "Recovery paragraph 1" },
-  "whatIsAWallet.recovery.text2": { "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.", "description": "Recovery paragraph 2" },
-  "whatIsAWallet.security.divider": { "message": "Staying secure", "description": "Divider label for security" },
-  "whatIsAWallet.security.title": { "message": "Security basics", "description": "Security section title" },
-  "whatIsAWallet.security.item1": { "message": "Keep your recovery phrase offline, on paper or metal, in more than one safe place.", "description": "Security checklist item 1" },
-  "whatIsAWallet.security.item2": { "message": "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.", "description": "Security checklist item 2" },
-  "whatIsAWallet.security.item3": { "message": "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)", "description": "Security checklist item 3, contains a link to the scams page" },
-  "whatIsAWallet.dapps.divider": { "message": "Wallets and apps", "description": "Divider label for dApps" },
-  "whatIsAWallet.dapps.title": { "message": "Connecting to apps", "description": "dApps section title" },
-  "whatIsAWallet.dapps.text1": { "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.", "description": "dApps paragraph 1" },
-  "whatIsAWallet.dapps.text2": { "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.", "description": "dApps paragraph 2" },
-  "whatIsAWallet.choose.title": { "message": "How to choose a wallet", "description": "Choose section title" },
-  "whatIsAWallet.choose.item1": { "message": "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.", "description": "Choose checklist item 1" },
-  "whatIsAWallet.choose.item2": { "message": "Is it open source? Open-source code lets the community review and verify the wallet's security.", "description": "Choose checklist item 2" },
-  "whatIsAWallet.choose.item3": { "message": "How long has it been on the market? Established wallets have a longer track record of reliability.", "description": "Choose checklist item 3" },
-  "whatIsAWallet.choose.cta": { "message": "Open the Wallet Finder", "description": "CTA button to the wallet finder" },
-  "whatIsAWallet.faq.q1": { "message": "Are my coins stored inside the wallet?", "description": "FAQ question 1" },
-  "whatIsAWallet.faq.a1": { "message": "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.", "description": "FAQ answer 1" },
-  "whatIsAWallet.faq.q2": { "message": "What happens if I lose my recovery phrase?", "description": "FAQ question 2" },
-  "whatIsAWallet.faq.a2": { "message": "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.", "description": "FAQ answer 2" },
-  "whatIsAWallet.faq.q3": { "message": "Do I need ada to set up a wallet?", "description": "FAQ question 3" },
-  "whatIsAWallet.faq.a3": { "message": "No. Creating a wallet is free. You only need ada once you want to transact.", "description": "FAQ answer 3" },
-  "whatIsAWallet.faq.q4": { "message": "Should I use a hot or a cold wallet?", "description": "FAQ question 4" },
-  "whatIsAWallet.faq.a4": { "message": "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.", "description": "FAQ answer 4" },
-  "whatIsAWallet.disclaimer": { "message": "This page is for educational purposes only and is not financial or security advice. Always do your own research.", "description": "Educational disclaimer at the bottom of the page" },
-  "walletFinder.learnTeaser.text": { "message": "New to wallets? Learn how they work, the different types, and how to stay secure.", "description": "Teaser text on the wallet finder linking to the explainer" },
-  "walletFinder.learnTeaser.cta": { "message": "What is a Wallet?", "description": "Teaser button on the wallet finder" },
-  "getStarted.step1.walletLearnLink": { "message": "Learn what a wallet is.", "description": "Get-started step 1 link to the wallet explainer" },
+  "whatIsAWallet.meta.title": {
+    "message": "What is a Cardano Wallet? Types, Keys, and Security Explained",
+    "description": "Meta title for the wallet explainer page"
+  },
+  "whatIsAWallet.meta.description": {
+    "message": "Learn what a Cardano wallet is, how hot, cold, custodial, and non-custodial wallets differ, how keys and recovery phrases work, and how to keep your ada safe.",
+    "description": "Meta description for the wallet explainer page"
+  },
+  "whatIsAWallet.hero.title": {
+    "message": "What is a Wallet?",
+    "description": "Hero title"
+  },
+  "whatIsAWallet.hero.description": {
+    "message": "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.",
+    "description": "Hero description"
+  },
+  "whatIsAWallet.intro.title": {
+    "message": "Your keys, not your coins",
+    "description": "Intro section title"
+  },
+  "whatIsAWallet.intro.text1": {
+    "message": "A wallet does not actually store your ada. Your coins live on the Cardano blockchain. What a wallet stores are the **keys** that prove the coins are yours and let you spend them.",
+    "description": "Intro paragraph 1"
+  },
+  "whatIsAWallet.intro.text2": {
+    "message": "Each wallet has a **public key**, used to receive funds, much like an account number you can share, and a **private key**, used to sign transactions and spend funds. Anyone who holds the private key controls the funds, so keeping it secret is everything.",
+    "description": "Intro paragraph 2"
+  },
+  "whatIsAWallet.types.divider": {
+    "message": "Wallet types",
+    "description": "Divider label for wallet types"
+  },
+  "whatIsAWallet.hotcold.title": {
+    "message": "Hot wallets vs cold wallets",
+    "description": "Hot/cold section title"
+  },
+  "whatIsAWallet.hotcold.description": {
+    "message": "Wallets differ by whether they are connected to the internet.",
+    "description": "Hot/cold intro"
+  },
+  "whatIsAWallet.hotWallet.text": {
+    "message": "A hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges. They are convenient for everyday use.",
+    "description": "Hot wallet explanation"
+  },
+  "whatIsAWallet.coldWallet.text": {
+    "message": "A cold wallet is offline. It is not connected to the internet and is used for securely storing funds that do not need to be accessed frequently. Examples include hardware wallets, secure devices that store the private keys, and paper wallets. Cardano is supported by hardware wallets such as Ledger, Trezor, and Keystone.",
+    "description": "Cold wallet explanation"
+  },
+  "whatIsAWallet.custody.title": {
+    "message": "Custodial vs non-custodial",
+    "description": "Custody section title"
+  },
+  "whatIsAWallet.custody.text1": {
+    "message": "With a **custodial** wallet, a third party such as an exchange holds your private keys for you. It is convenient, but you are trusting that party with your funds.",
+    "description": "Custodial paragraph"
+  },
+  "whatIsAWallet.custody.text2": {
+    "message": "With a **non-custodial** wallet, you alone hold the keys. No company can freeze your funds or lose them for you, but no one can recover them for you either. As the saying goes: not your keys, not your coins.",
+    "description": "Non-custodial paragraph"
+  },
+  "whatIsAWallet.nodetype.title": {
+    "message": "Light wallets vs full-node wallets",
+    "description": "Node type section title"
+  },
+  "whatIsAWallet.nodetype.text1": {
+    "message": "A **light** wallet connects to the blockchain through a remote service, so it is quick to install and runs on phones and browsers.",
+    "description": "Light wallet paragraph"
+  },
+  "whatIsAWallet.nodetype.text2": {
+    "message": "A **full-node** wallet downloads and verifies a copy of the blockchain itself. It needs more disk space and time, but it relies on no third party to read the chain.",
+    "description": "Full-node wallet paragraph"
+  },
+  "whatIsAWallet.keys.divider": {
+    "message": "Keys and recovery",
+    "description": "Divider label for keys"
+  },
+  "whatIsAWallet.recovery.title": {
+    "message": "Your recovery phrase is the master key",
+    "description": "Recovery section title"
+  },
+  "whatIsAWallet.recovery.text1": {
+    "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
+    "description": "Recovery paragraph 1"
+  },
+  "whatIsAWallet.recovery.text2": {
+    "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
+    "description": "Recovery paragraph 2"
+  },
+  "whatIsAWallet.security.divider": {
+    "message": "Staying secure",
+    "description": "Divider label for security"
+  },
+  "whatIsAWallet.security.title": {
+    "message": "Security basics",
+    "description": "Security section title"
+  },
+  "whatIsAWallet.security.item1": {
+    "message": "Keep your recovery phrase offline, on paper or metal, in more than one safe place.",
+    "description": "Security checklist item 1"
+  },
+  "whatIsAWallet.security.item2": {
+    "message": "For larger amounts, use a hardware wallet such as Ledger, Trezor, or Keystone so your keys never touch an internet-connected device.",
+    "description": "Security checklist item 2"
+  },
+  "whatIsAWallet.security.item3": {
+    "message": "No legitimate person or support team will ever ask for your recovery phrase. [Be aware of the most common scams.](/common-scams)",
+    "description": "Security checklist item 3, contains a link to the scams page"
+  },
+  "whatIsAWallet.dapps.divider": {
+    "message": "Wallets and apps",
+    "description": "Divider label for dApps"
+  },
+  "whatIsAWallet.dapps.title": {
+    "message": "Connecting to apps",
+    "description": "dApps section title"
+  },
+  "whatIsAWallet.dapps.text1": {
+    "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
+    "description": "dApps paragraph 1"
+  },
+  "whatIsAWallet.dapps.text2": {
+    "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
+    "description": "dApps paragraph 2"
+  },
+  "whatIsAWallet.choose.title": {
+    "message": "How to choose a wallet",
+    "description": "Choose section title"
+  },
+  "whatIsAWallet.choose.item1": {
+    "message": "Does it support hardware wallets? Connecting a device like Ledger, Trezor, or Keystone adds an extra layer of security.",
+    "description": "Choose checklist item 1"
+  },
+  "whatIsAWallet.choose.item2": {
+    "message": "Is it open source? Open-source code lets the community review and verify the wallet's security.",
+    "description": "Choose checklist item 2"
+  },
+  "whatIsAWallet.choose.item3": {
+    "message": "How long has it been on the market? Established wallets have a longer track record of reliability.",
+    "description": "Choose checklist item 3"
+  },
+  "whatIsAWallet.choose.cta": {
+    "message": "Open the Wallet Finder",
+    "description": "CTA button to the wallet finder"
+  },
+  "whatIsAWallet.faq.q1": {
+    "message": "Are my coins stored inside the wallet?",
+    "description": "FAQ question 1"
+  },
+  "whatIsAWallet.faq.a1": {
+    "message": "No. Your ada lives on the Cardano blockchain. The wallet stores the keys that let you access and spend it.",
+    "description": "FAQ answer 1"
+  },
+  "whatIsAWallet.faq.q2": {
+    "message": "What happens if I lose my recovery phrase?",
+    "description": "FAQ question 2"
+  },
+  "whatIsAWallet.faq.a2": {
+    "message": "With a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone. Back the phrase up offline in more than one place.",
+    "description": "FAQ answer 2"
+  },
+  "whatIsAWallet.faq.q3": {
+    "message": "Do I need ada to set up a wallet?",
+    "description": "FAQ question 3"
+  },
+  "whatIsAWallet.faq.a3": {
+    "message": "No. Creating a wallet is free. You only need ada once you want to transact.",
+    "description": "FAQ answer 3"
+  },
+  "whatIsAWallet.faq.q4": {
+    "message": "Should I use a hot or a cold wallet?",
+    "description": "FAQ question 4"
+  },
+  "whatIsAWallet.faq.a4": {
+    "message": "Use a hot wallet for small amounts you spend often, and a cold or hardware wallet for larger savings you rarely touch. Many people use both.",
+    "description": "FAQ answer 4"
+  },
+  "whatIsAWallet.disclaimer": {
+    "message": "This page is for educational purposes only and is not financial or security advice. Always do your own research.",
+    "description": "Educational disclaimer at the bottom of the page"
+  },
+  "walletFinder.learnTeaser.text": {
+    "message": "New to wallets? Learn how they work, the different types, and how to stay secure.",
+    "description": "Teaser text on the wallet finder linking to the explainer"
+  },
+  "walletFinder.learnTeaser.cta": {
+    "message": "What is a Wallet?",
+    "description": "Teaser button on the wallet finder"
+  },
+  "getStarted.step1.walletLearnLink": {
+    "message": "Learn what a wallet is.",
+    "description": "Get-started step 1 link to the wallet explainer"
+  },
   "getStarted.intro.overviewLink": {
     "message": "Not sure what Cardano is yet? [Start with the overview](/what-is-cardano)."
   },
@@ -7309,5 +7517,2024 @@
   },
   "learn.item.smartContracts.text": {
     "message": "What a contract is, how Cardano runs it and how to use a DApp safely."
+  },
+  "layer2.stateChannels.title": {
+    "message": "State Channels"
+  },
+  "layer2.stateChannels.description": {
+    "message": "Peer-to-peer solutions to execute numerous transactions in a private channel before finalizing them on-chain. State channels provide cost-effectiveness while maintaining security."
+  },
+  "layer2.data.hydra.description": {
+    "message": "Hydra processes transactions in off-chain mini-ledgers called Heads, which use the same ledger rules as Cardano's layer 1 chain. The same security as Cardano's mainchain but with more capacity, lower costs, and higher throughput."
+  },
+  "layer2.cta.repository": {
+    "message": "Go to Repository"
+  },
+  "layer2.data.hydrozoa.description": {
+    "message": "Lightweight and dynamic payment channels for transactions among multiple parties. Peers minimize costs and activity on layer 1 without compromising on security. Ability to add more peers if all involved parties agree."
+  },
+  "layer2.data.gummiworm.description": {
+    "message": "Optimized for finance and built on Hydra for infinite scalability, Gummiworm promises milliseconds transaction speeds with just a few cents for fees."
+  },
+  "layer2.cta.website": {
+    "message": "Go to Website"
+  },
+  "layer2.rollups.title": {
+    "message": "Rollups"
+  },
+  "layer2.rollups.description": {
+    "message": "Options to compile several transactions into one single piece of data, saving on costs and time. Rollups are processed off-chain before being added back into Cardano's layer 1 chain."
+  },
+  "layer2.data.midgard.description": {
+    "message": "No tokens required for using Cardano's first optimistic rollup. Off-chain transactions are assumed as valid and published to mainnet without publishing proofs of validity. Fraud proofs maintain security by establishing a challenge period to contest transactions."
+  },
+  "layer2.data.sundial.description": {
+    "message": "High-performance cross-chain transactions for institutional users. Built in collaboration with Midgard, Sundial provides interoperability and zero-knowledge proof validation for Bitcoin."
+  },
+  "layer2.data.zkfold.description": {
+    "message": "A single zero-knowledge proof verifies multiple transactions compressed into batches — a general-purpose scaling solution."
+  },
+  "layer2.sidechains.title": {
+    "message": "Sidechains and Private Chains"
+  },
+  "layer2.sidechains.description": {
+    "message": "Public and closed-access chains bridged to Cardano give users the possibility to keep data public or restricted depending on their needs."
+  },
+  "layer2.data.midnight.description": {
+    "message": "A partner chain to Cardano, Midnight focuses on data protection and programmable privacy. This chain follows its own consensus mechanism and requires the use of the native token Night. Midnight uses Hydra as a scaling solution."
+  },
+  "layer2.data.vola.description": {
+    "message": "Private chain providing decentralized cloud storage for governments, enterprises, and individuals. The Vola Network delivers security without demanding private-key management from users or relying on centralized structures."
+  },
+  "layer2.data.strike.description": {
+    "message": "Network layer built on top of Cardano. From order placements, cancellations, and modifications to balance updates, all trading activities happen in an execution level separate from the mainchain. Settlement then happens on Cardano's mainnet to make records verifiable by anyone."
+  },
+  "layer2.data.materios.description": {
+    "message": "Partner chain optimized for AI verification and high-throughput storage of AI receipts. Materios uses a dual-token system and batches transactions together via Merkle-hashing with a root periodically anchored to Cardano's main chain."
+  },
+  "layer2.cta.documentation": {
+    "message": "Go to Documentation"
+  },
+  "stablecoins.tag.fiatBacked": {
+    "message": "Fiat-backed"
+  },
+  "stablecoins.usdcx.tag.launched": {
+    "message": "Launched Feb 2026"
+  },
+  "stablecoins.usdcx.tagline": {
+    "message": "USDCx — The world's most trusted stablecoin, now on Cardano."
+  },
+  "stablecoins.usdcx.body1": {
+    "message": "1:1 backed by USDC. Cross-chain liquidity."
+  },
+  "stablecoins.usdcx.body2": {
+    "message": "USDCx arrived on Cardano in February 2026, brought by Circle, the very company behind USDC, the world's second-largest stablecoin. It's backed 1:1 by Circle's USDC reserves and accessible via Circle's xReserve bridge."
+  },
+  "stablecoins.usdcx.body3": {
+    "message": "For both institutions and individuals, USDCx means accessing the liquidity and trust of USDC while transacting on Cardano's low-fee, high-security network. Within days of launch, USDCx became the largest stablecoin on Cardano by market cap."
+  },
+  "stablecoins.meta.backing": {
+    "message": "Backing"
+  },
+  "stablecoins.usdcx.learnMore": {
+    "message": "Learn more about USDCx"
+  },
+  "stablecoins.tag.cardanoNative": {
+    "message": "Cardano-native"
+  },
+  "stablecoins.usdm.tag.launched": {
+    "message": "Launched March 2024"
+  },
+  "stablecoins.usdm.tagline": {
+    "message": "USDM — Cardano's original fiat-backed stablecoin."
+  },
+  "stablecoins.usdm.body1": {
+    "message": "Regulated, reserve-backed, and built from the ground up for the Cardano ecosystem."
+  },
+  "stablecoins.usdm.body2": {
+    "message": "Issued by Moneta and launched in March 2024, USDM was the first fiat-backed stablecoin native to Cardano. Every USDM is backed 1:1 by US dollars held at regulated financial institutions, including Fidelity and Western Asset Management. Cardano's native oracle network Charli3 delivers on-chain proof of reserves."
+  },
+  "stablecoins.usdm.body3": {
+    "message": "USDM is registered with FinCEN and compliant with MiCA, making it one of the few stablecoins that meets both US and European regulatory frameworks simultaneously."
+  },
+  "stablecoins.meta.custodians": {
+    "message": "Custodians"
+  },
+  "stablecoins.meta.compliance": {
+    "message": "Compliance"
+  },
+  "stablecoins.usdm.learnMore": {
+    "message": "Learn more about USDM"
+  },
+  "stablecoins.usda.tag.institutional": {
+    "message": "Institutional grade"
+  },
+  "stablecoins.usda.tagline": {
+    "message": "USDA — Institutional-grade stability, backed by a Cardano founding entity."
+  },
+  "stablecoins.usda.body1": {
+    "message": "US Treasury-backed reserves. EMURGO issuer credibility. Available in 80+ countries."
+  },
+  "stablecoins.usda.body2": {
+    "message": "USDA is the stablecoin built by Anzens in collaboration with EMURGO — one of Cardano's three founding entities. Secured by BitGo custody and available to users across more than 80 countries, its reserves are backed by US Treasury instruments, bringing a world's best in class stable asset to Cardano."
+  },
+  "stablecoins.usda.body3": {
+    "message": "For businesses and institutions looking to move dollars on-chain without counterparty exposure to volatile assets, USDA offers sovereign-grade backing with the programmability of Cardano's blockchain."
+  },
+  "stablecoins.meta.reserves": {
+    "message": "Reserves"
+  },
+  "stablecoins.meta.custody": {
+    "message": "Custody"
+  },
+  "stablecoins.meta.issuerPartner": {
+    "message": "Issuer partner"
+  },
+  "stablecoins.usda.learnMore": {
+    "message": "Learn more about USDA"
+  },
+  "stablecoins.djed.tag.overcoll": {
+    "message": "Overcollateralised"
+  },
+  "stablecoins.djed.tag.formal": {
+    "message": "Formally verified"
+  },
+  "stablecoins.djed.tag.launched": {
+    "message": "Launched Jan 2023"
+  },
+  "stablecoins.djed.tagline": {
+    "message": "DJED — The first mathematically proven stablecoin in history."
+  },
+  "stablecoins.djed.body1": {
+    "message": "No bank. No custodian. Just cryptography, collateral, and mathematics you can verify yourself."
+  },
+  "stablecoins.djed.body2": {
+    "message": "DJED is unlike any other stablecoin. There simply is no company holding your dollars. Instead, every DJED is backed by ada collateral held in a smart contract at a ratio between 400% and 800% of DJED's face value. An over-collateralization that mathematically prevents the collapse seen in other algorithmic stablecoins."
+  },
+  "stablecoins.djed.body3": {
+    "message": "DJED's stability properties are formally verified. The protocol was published as a peer-reviewed paper and mathematically proven to be immune to bank run dynamics and reserve draining attacks. It launched on Cardano's Mainnet in January 2023 and has maintained its peg through every market condition since."
+  },
+  "stablecoins.meta.collateral": {
+    "message": "Collateral"
+  },
+  "stablecoins.meta.reserve": {
+    "message": "Reserve"
+  },
+  "stablecoins.djed.learnMore": {
+    "message": "Learn more about DJED"
+  },
+  "stablecoins.iusd.tag.synthetic": {
+    "message": "Synthetic"
+  },
+  "stablecoins.iusd.tag.defiNative": {
+    "message": "DeFi-native"
+  },
+  "stablecoins.iusd.tagline": {
+    "message": "iUSD — Earn yield while your collateral stays on-chain."
+  },
+  "stablecoins.iusd.body1": {
+    "message": "A synthetic dollar minted by Cardano's DeFi community, for Cardano's DeFi community."
+  },
+  "stablecoins.iusd.body2": {
+    "message": "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol — Cardano's synthetic asset platform — it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD."
+  },
+  "stablecoins.iusd.body3": {
+    "message": "For experienced DeFi participants, iUSD opens strategies that fiat-backed stablecoins can't maintain: ada exposure while generating stablecoin liquidity, or provide iUSD to lending protocols to earn yield on both sides."
+  },
+  "stablecoins.meta.type": {
+    "message": "Type"
+  },
+  "stablecoins.meta.issuer": {
+    "message": "Issuer"
+  },
+  "stablecoins.iusd.learnMore": {
+    "message": "Learn more about iUSD"
+  },
+  "stablecoins.bridge.pyusd.body": {
+    "message": "Backed by dollar deposits, US treasuries, and cash equivalents, PayPal gives its millions of users access to Cardano."
+  },
+  "stablecoins.bridge.usdc.body": {
+    "message": "Launched by Circle and Coinbase, fully regulated, redeemable 1:1 for U.S. dollars, and used on Cardano."
+  },
+  "stablecoins.bridge.eurc.body": {
+    "message": "Circle's professionalism, Cardano supported, but now redeemable 1:1 for euros."
+  },
+  "stablecoins.bridge.usdt.body": {
+    "message": "The Tether tokens that pioneered the stablecoin model also have a bridge to Cardano."
+  },
+  "stablecoins.bridge.dai.body": {
+    "message": "Soft-pegged to the US Dollar and supported on Cardano."
+  },
+  "stablecoins.type.fiatBacked.title": {
+    "message": "Fiat-backed"
+  },
+  "stablecoins.type.fiatBacked.body": {
+    "message": "The simplest kind. For every stablecoin in circulation, a real dollar is held in reserve at a regulated financial institution. When you hold a fiat-backed stablecoin, you're holding a claim on that real dollar. USDM, USDA, and USDCx on Cardano all work this way."
+  },
+  "stablecoins.type.cryptoBacked.title": {
+    "message": "Crypto-backed (overcollateralized)"
+  },
+  "stablecoins.type.cryptoBacked.body": {
+    "message": "No bank is involved, so there is no custodian. Instead, the stablecoin is backed by cryptocurrency locked in a smart contract, usually above 100% collateral to absorb market volatility. On Cardano, DJED is overcollateralized, meaning every DJED is backed by significantly more ada than its face value. The maths is formally proven."
+  },
+  "stablecoins.type.synthetic.title": {
+    "message": "Synthetic (CDP)"
+  },
+  "stablecoins.type.synthetic.body": {
+    "message": "Users lock collateral to mint a stablecoin that tracks the dollar's price through a combination of incentives and market mechanisms. iUSD on Cardano works this way through the Indigo Protocol."
+  },
+  "stablecoins.whyCardano.nativeTokens.title": {
+    "message": "Native tokens, not smart contracts"
+  },
+  "stablecoins.whyCardano.nativeTokens.body1": {
+    "message": "On other blockchains, stablecoins are second-class citizens. They depend on a smart contract that's not native to the network and doesn't benefit from the network's usual security. Every transfer executes code, all code can have bugs, and any bug can be exploited."
+  },
+  "stablecoins.whyCardano.nativeTokens.body2": {
+    "message": "On Cardano, stablecoins are native tokens. They live at the protocol level, treated by the ledger exactly like ada itself. A basic transfer doesn't run any code, and there's nothing to exploit."
+  },
+  "stablecoins.whyCardano.nativeTokens.body3": {
+    "message": "This fundamental design difference eliminates an entire category of risk. For anyone holding or moving significant value, that matters."
+  },
+  "stablecoins.whyCardano.fees.title": {
+    "message": "Fees you can predict before you pay"
+  },
+  "stablecoins.whyCardano.fees.body1": {
+    "message": "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee — or watch transactions fail while still paying the cost."
+  },
+  "stablecoins.whyCardano.fees.body2": {
+    "message": "Cardano transactions are deterministic. Before you submit a transaction, you know exactly what it will cost. There are no hidden execution charges, no fee auctions, no failed transactions that still cost money."
+  },
+  "stablecoins.whyCardano.fees.body3": {
+    "message": "For businesses processing payroll, settlements, or high-volume payments, that predictability means assurance and peace of mind."
+  },
+  "stablecoins.whyCardano.outages.title": {
+    "message": "Nine years, zero outages"
+  },
+  "stablecoins.whyCardano.outages.body1": {
+    "message": "Cardano's Mainnet has never gone down. Since launch in 2017, it has maintained continuous operation through every market cycle, network stress event, and technical upgrade."
+  },
+  "stablecoins.whyCardano.outages.body2": {
+    "message": "For institutional settlement, cross-border payment, or any application where availability isn't optional, this track record is not just unmatched in the industry but a key value proposition."
+  },
+  "stablecoins.whyCardano.governance.title": {
+    "message": "Finance strategy backed by governance"
+  },
+  "stablecoins.whyCardano.governance.body1": {
+    "message": "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves — transparently, on-chain, and with verifiable results."
+  },
+  "stablecoins.whyCardano.governance.body2": {
+    "message": "The stablecoin ecosystem on Cardano isn't shaped by a single entity's unilateral interests. It's backed by the community that uses it and aimed towards long-term longevity."
+  },
+  "stablecoins.step.1.title": {
+    "message": "Set up a Cardano wallet"
+  },
+  "stablecoins.step.1.body": {
+    "message": "You'll need a non-custodial wallet to hold and manage your stablecoins. Popular options: Eternl, Lace, Vespr."
+  },
+  "stablecoins.step.2.title": {
+    "message": "Get some ada"
+  },
+  "stablecoins.step.2.body": {
+    "message": "You'll need ada in your wallet to then purchase your chosen stablecoin, plus a small extra amount to cover fees. Acquire from Coinbase, Kraken, Binance, etc."
+  },
+  "stablecoins.step.3.title": {
+    "message": "Swap the ada for stablecoins"
+  },
+  "stablecoins.step.3.body": {
+    "message": "Use a decentralized exchange like Minswap, WingRiders, or MuesliSwap to swap ada for your preferred stablecoin."
+  },
+  "stablecoins.step.4.title": {
+    "message": "All done"
+  },
+  "stablecoins.step.4.body": {
+    "message": "Your stablecoins sit in your wallet, under your control, ready to use, invest, or hold."
+  },
+  "stablecoins.directMint.bridge.title": {
+    "message": "From Ethereum or Solana"
+  },
+  "stablecoins.directMint.bridge.body": {
+    "message": "Use a cross-chain bridge to bring USDC or USDT to Cardano and swap for USDCx or other stablecoins."
+  },
+  "stablecoins.directMint.usdm.title": {
+    "message": "Mint USDM directly"
+  },
+  "stablecoins.directMint.usdm.body": {
+    "message": "Go to moneta.global to mint USDM with fiat via bank transfer (available in eligible jurisdictions)."
+  },
+  "stablecoins.directMint.usda.title": {
+    "message": "Mint USDA"
+  },
+  "stablecoins.directMint.usda.body": {
+    "message": "Access Anzens.com to onramp directly to USDA."
+  },
+  "stablecoins.directMint.djed.title": {
+    "message": "Mint DJED"
+  },
+  "stablecoins.directMint.djed.body": {
+    "message": "Visit djed.xyz to deposit ada as collateral and mint DJED."
+  },
+  "walletFinder.platforms.ios": {
+    "message": "iOS"
+  },
+  "walletFinder.platforms.ios.desc": {
+    "message": "Available on iPhone and iPad"
+  },
+  "walletFinder.platforms.android": {
+    "message": "Android"
+  },
+  "walletFinder.platforms.android.desc": {
+    "message": "Available on Android devices"
+  },
+  "walletFinder.platforms.browser": {
+    "message": "Browser Extension"
+  },
+  "walletFinder.platforms.browser.desc": {
+    "message": "Available as a browser extension"
+  },
+  "walletFinder.platforms.desktop": {
+    "message": "Desktop"
+  },
+  "walletFinder.platforms.desktop.desc": {
+    "message": "Available for Windows, macOS, or Linux"
+  },
+  "walletFinder.platforms.web": {
+    "message": "Web App"
+  },
+  "walletFinder.platforms.web.desc": {
+    "message": "Accessible via web browser without installation"
+  },
+  "walletFinder.features.staking": {
+    "message": "Staking"
+  },
+  "walletFinder.features.staking.desc": {
+    "message": "Delegate ada to a stake pool and earn rewards"
+  },
+  "walletFinder.features.nft": {
+    "message": "NFT Support"
+  },
+  "walletFinder.features.nft.desc": {
+    "message": "View, send, and manage NFTs"
+  },
+  "walletFinder.features.dappConnector": {
+    "message": "DApp Connector"
+  },
+  "walletFinder.features.dappConnector.desc": {
+    "message": "Connect to decentralized applications"
+  },
+  "walletFinder.features.multiAsset": {
+    "message": "Multi-Asset"
+  },
+  "walletFinder.features.multiAsset.desc": {
+    "message": "Manage native tokens beyond ada"
+  },
+  "walletFinder.features.hardwareWallet": {
+    "message": "Hardware Wallet"
+  },
+  "walletFinder.features.hardwareWallet.desc": {
+    "message": "Connect Ledger or Trezor for extra security"
+  },
+  "walletFinder.features.multiAccount": {
+    "message": "Multi-Account"
+  },
+  "walletFinder.features.multiAccount.desc": {
+    "message": "Manage multiple accounts in one wallet"
+  },
+  "walletFinder.features.dex": {
+    "message": "DEX Integration"
+  },
+  "walletFinder.features.dex.desc": {
+    "message": "Built-in token swaps"
+  },
+  "walletFinder.features.governance": {
+    "message": "Governance"
+  },
+  "walletFinder.features.governance.desc": {
+    "message": "Participate in on-chain voting"
+  },
+  "walletFinder.features.qrClaim": {
+    "message": "QR Claim"
+  },
+  "walletFinder.features.qrClaim.desc": {
+    "message": "Claim tokens via QR codes or claim links (CIP-0099)"
+  },
+  "walletFinder.features.easySetup": {
+    "message": "Easy Setup"
+  },
+  "walletFinder.features.easySetup.desc": {
+    "message": "Get started quickly with deferred seed backup"
+  },
+  "walletFinder.custody.nonCustodial": {
+    "message": "Non-Custodial"
+  },
+  "walletFinder.custody.nonCustodial.desc": {
+    "message": "You control your own keys"
+  },
+  "walletFinder.custody.custodial": {
+    "message": "Custodial"
+  },
+  "walletFinder.custody.custodial.desc": {
+    "message": "A third party manages your keys"
+  },
+  "walletFinder.type.light": {
+    "message": "Light Wallet"
+  },
+  "walletFinder.type.light.desc": {
+    "message": "Connects to the network via a server"
+  },
+  "walletFinder.type.fullNode": {
+    "message": "Full Node"
+  },
+  "walletFinder.type.fullNode.desc": {
+    "message": "Downloads and verifies the entire blockchain"
+  },
+  "ai.getStarted.tabClaude": {
+    "message": "Claude Code (recommended)"
+  },
+  "ai.getStarted.tabOther": {
+    "message": "Codex / other agents"
+  },
+  "ai.why.p1.title": {
+    "message": "Trust & Security"
+  },
+  "ai.why.p1.item1": {
+    "message": "Formal methods"
+  },
+  "ai.why.p1.item2": {
+    "message": "Secure smart contracts"
+  },
+  "ai.why.p1.item3": {
+    "message": "High assurance infrastructure"
+  },
+  "ai.why.p1.why": {
+    "message": "Agents need infrastructure they can rely on when handling money and agreements."
+  },
+  "ai.why.p2.title": {
+    "message": "Decentralized Identity"
+  },
+  "ai.why.p2.item1": {
+    "message": "DIDs"
+  },
+  "ai.why.p2.item2": {
+    "message": "Verifiable Credentials"
+  },
+  "ai.why.p2.item3": {
+    "message": "Reputation & attestations"
+  },
+  "ai.why.p2.why": {
+    "message": "Agents need to prove who they are, what they're allowed to do, and build reputation over time."
+  },
+  "ai.why.p3.title": {
+    "message": "Native Assets & Tokenization"
+  },
+  "ai.why.p3.item1": {
+    "message": "Native assets without smart contracts"
+  },
+  "ai.why.p3.item2": {
+    "message": "Tokenized money, RWAs, memberships, licenses"
+  },
+  "ai.why.p3.item3": {
+    "message": "Efficient asset transfers"
+  },
+  "ai.why.p3.why": {
+    "message": "Agents need to own, exchange, and manage digital assets, not just send payments."
+  },
+  "ai.why.p4.title": {
+    "message": "Predictable & Decentralized Infrastructure"
+  },
+  "ai.why.p4.item1": {
+    "message": "eUTxO"
+  },
+  "ai.why.p4.item2": {
+    "message": "Predictable fees and execution"
+  },
+  "ai.why.p4.item3": {
+    "message": "Permissionless, censorship-resistant network"
+  },
+  "ai.why.p4.why": {
+    "message": "Autonomous systems need infrastructure that's reliable, open, and economically predictable."
+  },
+  "ai.x402.row1.name": {
+    "message": "Normal Address Payments"
+  },
+  "ai.x402.row1.desc": {
+    "message": "A direct payment to a wallet address. The baseline every chain supports."
+  },
+  "ai.x402.row2.name": {
+    "message": "Refunds"
+  },
+  "ai.x402.row2.desc": {
+    "message": "Nothing delivered? The escrowed payment goes back to the client automatically."
+  },
+  "ai.x402.row3.name": {
+    "message": "Decision Logging"
+  },
+  "ai.x402.row3.desc": {
+    "message": "Payment decisions are recorded on-chain, decentralised and auditable."
+  },
+  "ai.x402.row4.name": {
+    "message": "Discovery"
+  },
+  "ai.x402.row4.desc": {
+    "message": "A public registry of every agent: search by what they do, check their track record, and call them through the API."
+  },
+  "ai.x402.row5.name": {
+    "message": "Identity"
+  },
+  "ai.x402.row5.desc": {
+    "message": "Every agent gets a decentralized ID and a reputation score, so you can verify who you are working with."
+  },
+  "ai.getStarted.label": {
+    "message": "Give your coding agent Cardano skills"
+  },
+  "ai.getStarted.copied": {
+    "message": "Copied ✓"
+  },
+  "ai.getStarted.copy": {
+    "message": "Copy"
+  },
+  "ai.x402.notSupported": {
+    "message": "not supported"
+  },
+  "ai.x402.supported": {
+    "message": "supported"
+  },
+  "ai.meta.title": {
+    "message": "Why AI Needs Cardano"
+  },
+  "ai.meta.description": {
+    "message": "AI agents need identity, secure payments, and infrastructure they can rely on. Cardano was built for this: formal methods, decentralized identity, native assets, and predictable infrastructure."
+  },
+  "ai.hero.eyebrow": {
+    "message": "Cardano × AI"
+  },
+  "ai.hero.title": {
+    "message": "Why AI Needs Cardano"
+  },
+  "ai.hero.subLead": {
+    "message": "Agents are starting to move real money. Cardano gives them what's missing:"
+  },
+  "ai.hero.subStrong": {
+    "message": "verifiable identity, secure payments, and rails that behave predictably"
+  },
+  "ai.hero.linkWhy": {
+    "message": "Why Cardano for AI"
+  },
+  "ai.hero.linkEconomy": {
+    "message": "Explore the agent economy"
+  },
+  "ai.why.eyebrow": {
+    "message": "Why AI on Cardano"
+  },
+  "ai.why.title": {
+    "message": "What agents need, Cardano was built on."
+  },
+  "ai.why.sub": {
+    "message": "Autonomous agents handle money, identity, and assets at machine speed, with no human double-checking each step. That only works on infrastructure with four properties."
+  },
+  "ai.why.caresLabel": {
+    "message": "Why AI cares"
+  },
+  "ai.economy.eyebrow": {
+    "message": "Agent Economy"
+  },
+  "ai.economy.title": {
+    "message": "The agent economy, running on Cardano"
+  },
+  "ai.economy.sub": {
+    "message": "A real agent economy is taking shape on Cardano: autonomous agents with verifiable identities, payment rails built for machines, and marketplaces where anyone can hire them. The building blocks are live today."
+  },
+  "ai.economy.card1.title": {
+    "message": "Agent Payment Network"
+  },
+  "ai.economy.card1.desc": {
+    "message": "Escrowed agent-to-agent payments with automatic refunds and on-chain decision logging, based on the open Masumi standard."
+  },
+  "ai.economy.card2.title": {
+    "message": "Decentralized Agent Registry"
+  },
+  "ai.economy.card2.desc": {
+    "message": "Every agent is registered on-chain and discoverable by anyone. Browse the live registry."
+  },
+  "ai.economy.card3.title": {
+    "message": "Agent Identity with Veridian Wallet"
+  },
+  "ai.economy.card3.desc": {
+    "message": "Decentralized identifiers and verifiable credentials for agents."
+  },
+  "ai.economy.card4.title": {
+    "message": "High-Speed Transactions with Hydra"
+  },
+  "ai.economy.card4.desc": {
+    "message": "Sub-second, sub-cent payments between agents."
+  },
+  "ai.economy.example": {
+    "message": "Live today: anyone can hire working agents on marketplaces like {sokosumi}."
+  },
+  "ai.x402.eyebrow": {
+    "message": "x402 on Cardano"
+  },
+  "ai.x402.title": {
+    "message": "x402 on Cardano is more powerful than x402 anywhere else."
+  },
+  "ai.x402.native": {
+    "message": "Native support"
+  },
+  "ai.x402.bannerLead": {
+    "message": "x402 on Cardano natively supports the"
+  },
+  "ai.x402.bannerLink": {
+    "message": "Masumi Smart Contract"
+  },
+  "ai.x402.memberLead": {
+    "message": "The Cardano Foundation is a member of the"
+  },
+  "ai.x402.memberLink": {
+    "message": "x402 Foundation"
+  },
+  "ai.x402.memberRest": {
+    "message": ", the industry body behind the x402 standard, alongside Coinbase, Cloudflare, Google, Visa, and Mastercard."
+  },
+  "ai.x402.escrow1": {
+    "message": "The Masumi Smart Contract is the escrow at the core of the payment standard for AI agents on Cardano: funds are locked in the contract, released when the work is delivered, and refunded when it isn't. Every decision is logged on-chain."
+  },
+  "ai.x402.escrow2": {
+    "message": "It is an open standard, not a product: a plain escrow contract with no fees and no owner, specified as part of the official x402 scheme for Cardano. Plugged into x402, every HTTP payment gets that protection built in."
+  },
+  "ai.x402.methodsIntro": {
+    "message": "The exact scheme on Cardano supports three asset transfer methods:"
+  },
+  "ai.x402.method1.title": {
+    "message": "Address-to-address payments"
+  },
+  "ai.x402.method1.desc": {
+    "message": "similar to the regular x402 specification on other chains."
+  },
+  "ai.x402.method2.title": {
+    "message": "The Masumi Smart Protocol"
+  },
+  "ai.x402.method2.desc": {
+    "message": "which adds decentralised refund mechanics and decision logging."
+  },
+  "ai.x402.method3.title": {
+    "message": "Script payments"
+  },
+  "ai.x402.method3.desc": {
+    "message": "paying to scripts with parameters applied while building the transaction."
+  },
+  "ai.x402.colStandard": {
+    "message": "Standard x402"
+  },
+  "ai.x402.colCardano": {
+    "message": "Cardano x402"
+  },
+  "ai.x402.colMasumi": {
+    "message": "Cardano Masumi x402"
+  },
+  "ai.x402.divider": {
+    "message": "+ interoperable with other Masumi features"
+  },
+  "ai.x402.specs": {
+    "message": "Read the exact scheme specs"
+  },
+  "ai.closing.title": {
+    "message": "Ready to build the agent economy?"
+  },
+  "ai.closing.sub": {
+    "message": "The standards are open, the rails are live, and your agent can join today."
+  },
+  "ai.closing.build": {
+    "message": "Start building"
+  },
+  "ai.closing.skills": {
+    "message": "Give your agent Cardano skills"
+  },
+  "contact.select.label": {
+    "message": "What can we help you with?"
+  },
+  "developers.showcase.heading": {
+    "message": "Developer Portal"
+  },
+  "developers.showcase.tagline": {
+    "message": "Your central hub for building on Cardano. Documentation, tutorials, tools, and SDKs all in one place."
+  },
+  "developers.showcase.cta": {
+    "message": "Explore Developer Portal"
+  },
+  "developers.features.label": {
+    "message": "What You'll Find"
+  },
+  "developers.features.startBuilding.title": {
+    "message": "Start Building"
+  },
+  "developers.features.startBuilding.description": {
+    "message": "Production-ready SDKs for every stack. Bootstrap a dApp in seconds, build in your language, and spin up a local devnet with one command."
+  },
+  "developers.features.startBuilding.linkLabel": {
+    "message": "Browse SDKs and tools"
+  },
+  "developers.features.smartContracts.title": {
+    "message": "Smart Contracts"
+  },
+  "developers.features.smartContracts.description": {
+    "message": "Digital agreements defined in code that automate and enforce contract terms without intermediaries. Leverage the eUTXO model for deterministic execution."
+  },
+  "developers.features.smartContracts.linkLabel": {
+    "message": "Start with smart contracts"
+  },
+  "developers.features.firstLine.title": {
+    "message": "From First Line to Production"
+  },
+  "developers.features.firstLine.description": {
+    "message": "Interactive courses, hands-on challenges, and step-by-step guides to go from zero to deploying on mainnet."
+  },
+  "developers.features.firstLine.linkLabel": {
+    "message": "Explore courses"
+  },
+  "developers.explore.label": {
+    "message": "Explore"
+  },
+  "developers.explore.builderTools.title": {
+    "message": "Builder Tools"
+  },
+  "developers.explore.builderTools.description": {
+    "message": "APIs, indexers, and utilities"
+  },
+  "developers.explore.hackathons.title": {
+    "message": "Hackathons & Challenges"
+  },
+  "developers.explore.hackathons.description": {
+    "message": "Build, compete, and earn rewards"
+  },
+  "developers.explore.officeHours.title": {
+    "message": "Developer Office Hours"
+  },
+  "developers.explore.officeHours.description": {
+    "message": "Weekly live Q&A with engineers"
+  },
+  "developers.community.allCommunities": {
+    "message": "Developer Communities"
+  },
+  "developers.explore.updateTracker.title": {
+    "message": "Technical Update Tracker"
+  },
+  "exchanges.hero.heading": {
+    "message": "Integrate Cardano"
+  },
+  "exchanges.hero.tagline": {
+    "message": "A starting point for exchanges, custodians, and listing platforms adding support for ada and native assets."
+  },
+  "exchanges.meta.title": {
+    "message": "Integrate Cardano, a guide for exchanges and custodians"
+  },
+  "exchanges.meta.description": {
+    "message": "Integrate ada and native assets into your exchange, custodial wallet, or payment platform. A non-technical introduction linking to the full developer documentation."
+  },
+  "exchanges.intro.p1": {
+    "message": "Integrating Cardano means accepting ada deposits, processing withdrawals, and monitoring the chain for customer activity. Cardano also supports [native tokens](https://developers.cardano.org/docs/build/integrate/exchange-integrations/#native-assets) directly at the ledger level, so an integration covers both ada and a wide range of other assets."
+  },
+  "exchanges.movingParts.divider": {
+    "message": "The moving parts"
+  },
+  "exchanges.components.node.title": {
+    "message": "cardano-node"
+  },
+  "exchanges.components.node.text": {
+    "message": "The underlying Cardano node that participates in the network. Every integration runs on top of it, directly or through a managed provider."
+  },
+  "exchanges.components.rosetta.title": {
+    "message": "cardano-rosetta-java"
+  },
+  "exchanges.components.rosetta.text": {
+    "message": "The Cardano Foundation's recommended path for exchanges. A standardized Mesh API that bundles the node, submit API, and indexer in one package. cardano-wallet is an alternative for smaller operators but is currently in maintenance-only mode."
+  },
+  "exchanges.components.dbgraphql.title": {
+    "message": "cardano-db-sync and cardano-graphql"
+  },
+  "exchanges.components.dbgraphql.text": {
+    "message": "Queryable blockchain data for balances, transaction history, and confirmations. Useful for dashboards, monitoring, and back-office reporting."
+  },
+  "exchanges.components.registry.title": {
+    "message": "Cardano Token Registry"
+  },
+  "exchanges.components.registry.text": {
+    "message": "Off-chain metadata for native assets, including ticker, decimals, and logo. Needed for accurate display and correct fractional accounting."
+  },
+  "exchanges.flow.title": {
+    "message": "How the flow looks"
+  },
+  "exchanges.flow.description": {
+    "message": "A typical exchange keeps individual deposit addresses per customer and consolidates funds into a centralized withdrawal wallet. Four phases summarize the lifecycle."
+  },
+  "exchanges.flow.step1.title": {
+    "message": "1. Generate deposit addresses"
+  },
+  "exchanges.flow.step1.text": {
+    "message": "One address per customer, created from the exchange's own keys, so every incoming transaction maps to a single account."
+  },
+  "exchanges.flow.step2.title": {
+    "message": "2. Monitor the chain"
+  },
+  "exchanges.flow.step2.text": {
+    "message": "Watch for incoming transactions to those addresses, wait for the expected confirmation depth, and credit customer balances."
+  },
+  "exchanges.flow.step3.title": {
+    "message": "3. Consolidate funds"
+  },
+  "exchanges.flow.step3.text": {
+    "message": "Periodically move deposits into a centralized withdrawal wallet, so outgoing traffic can be served from a single, well-controlled location."
+  },
+  "exchanges.flow.step4.title": {
+    "message": "4. Process withdrawals"
+  },
+  "exchanges.flow.step4.text": {
+    "message": "Build, sign, and submit outgoing transactions on customer request. Signing stays offline when using cardano-rosetta-java together with a dedicated signing library."
+  },
+  "exchanges.flow.learnMore": {
+    "message": "Read the wallet management workflow in detail"
+  },
+  "exchanges.nativeAssets.text": {
+    "message": "Cardano supports native tokens directly at the ledger level, with no smart contract required. Deposit addresses can receive ada and tokens in the same transaction, so an integration should be ready to recognize and credit both. "
+  },
+  "exchanges.nativeAssets.linkLabel": {
+    "message": "Learn how to handle native assets"
+  },
+  "exchanges.learnMore.leftTitle": {
+    "message": "Exchange integration guide"
+  },
+  "exchanges.learnMore.leftText": {
+    "message": "Step-by-step guidance for custodians and listing platforms. Covers the accounting model, transaction handling, native assets, and upgrade practices."
+  },
+  "exchanges.learnMore.leftButtonLabel": {
+    "message": "Read the full guide"
+  },
+  "exchanges.learnMore.rightTitle": {
+    "message": "Integration components overview"
+  },
+  "exchanges.learnMore.rightText": {
+    "message": "A shorter reference listing the components used to integrate Cardano into websites, services, and back-office systems."
+  },
+  "exchanges.learnMore.rightButtonLabel": {
+    "message": "Browse the components"
+  },
+  "exchanges.exploreMore.title": {
+    "message": "Explore more integrations"
+  },
+  "exchanges.exploreMore.description": {
+    "message": "Exchange integration is one of several paths. The developer portal also covers adjacent use cases that often come up alongside custody."
+  },
+  "exchanges.exploreMore.payments.title": {
+    "message": "Payments"
+  },
+  "exchanges.exploreMore.payments.text": {
+    "message": "Accepting ada and tokens at the point of sale, in-app, or through a merchant gateway."
+  },
+  "exchanges.exploreMore.auth.title": {
+    "message": "Wallet authentication"
+  },
+  "exchanges.exploreMore.auth.text": {
+    "message": "Using a Cardano wallet to sign in to applications without storing passwords."
+  },
+  "exchanges.exploreMore.oracles.title": {
+    "message": "Oracles"
+  },
+  "exchanges.exploreMore.oracles.text": {
+    "message": "Bringing off-chain data, such as prices and events, on-chain for smart contracts to consume."
+  },
+  "exchanges.support.title": {
+    "message": "Talk to the Cardano Foundation's Core Integrations team"
+  },
+  "exchanges.support.text": {
+    "message": "Reach out for tailored support, real-time updates, and integration queries."
+  },
+  "exchanges.support.buttonLabel": {
+    "message": "Contact the Core Integrations team"
+  },
+  "getStarted.step1.walletFinderHint": {
+    "message": "Need help choosing?"
+  },
+  "getStarted.step1.walletFinderLink": {
+    "message": "Try our Wallet Finder"
+  },
+  "getStarted.stepDelegate.title": {
+    "message": "Delegate your stake and your vote"
+  },
+  "getStarted.stepDelegate.description": {
+    "message": "Put your ada to work. Delegation happens directly from your wallet, your ada never leaves it and stays spendable at any time."
+  },
+  "getStarted.stepDelegate.heading": {
+    "message": "Two delegations, one wallet"
+  },
+  "getStarted.stepDelegate.stakeLabel": {
+    "message": "Delegate your stake:"
+  },
+  "getStarted.stepDelegate.stakeText": {
+    "message": "Choose a stake pool to help secure the network and earn rewards on your ada."
+  },
+  "getStarted.stepDelegate.voteLabel": {
+    "message": "Delegate your vote:"
+  },
+  "getStarted.stepDelegate.voteText": {
+    "message": "Give your ada a voice in Cardano governance by choosing a DRep. An active vote delegation is also required before staking rewards can be withdrawn."
+  },
+  "getStarted.stepDelegate.stakeButton": {
+    "message": "Delegate your ada"
+  },
+  "getStarted.stepDelegate.voteButton": {
+    "message": "Delegate your vote"
+  },
+  "getStarted.stepDelegate.checkbox": {
+    "message": "I've delegated my stake and my vote."
+  },
+  "glossary.term.level.beginner": {
+    "message": "Beginner"
+  },
+  "glossary.term.level.advanced": {
+    "message": "Advanced"
+  },
+  "glossary.index.searchPlaceholder": {
+    "message": "Search terms, concepts, or topics…"
+  },
+  "glossary.index.searchAria": {
+    "message": "Search glossary terms"
+  },
+  "glossary.index.searchClear": {
+    "message": "Clear search"
+  },
+  "glossary.index.popularSearches": {
+    "message": "Popular:"
+  },
+  "glossary.index.alphabetNav": {
+    "message": "Jump to letter"
+  },
+  "glossary.index.alphabetLetter": {
+    "message": "Jump to {letter}"
+  },
+  "glossary.index.pathsHeading": {
+    "message": "Learning paths"
+  },
+  "glossary.index.pathsLead": {
+    "message": "Curated guides to help you understand Cardano step by step."
+  },
+  "glossary.path.meta": {
+    "message": "{count} steps · {audience}"
+  },
+  "glossary.index.pageTitle": {
+    "message": "Cardano Glossary"
+  },
+  "glossary.index.pageDescription": {
+    "message": "Definitions of key terms and concepts in the Cardano ecosystem."
+  },
+  "glossary.index.lead": {
+    "message": "Definitions of key terms and concepts in the Cardano ecosystem."
+  },
+  "glossary.index.browseHeading": {
+    "message": "Browse by category"
+  },
+  "glossary.index.resultsCount": {
+    "message": "{count} terms"
+  },
+  "glossary.index.allTerms": {
+    "message": "All terms"
+  },
+  "glossary.index.noResults": {
+    "message": "No terms match your search."
+  },
+  "glossary.index.cantFindTitle": {
+    "message": "Can't find what you're looking for?"
+  },
+  "glossary.index.cantFindLead": {
+    "message": "Suggest a term or explore the documentation for in-depth guides."
+  },
+  "glossary.index.suggestTerm": {
+    "message": "Suggest a term"
+  },
+  "governance.onboarding.dreps.title": {
+    "message": "Delegated Representatives"
+  },
+  "governance.onboarding.dreps.text": {
+    "message": "DReps vote on governance proposals on behalf of ada holders who delegate to them."
+  },
+  "governance.onboarding.spos.title": {
+    "message": "Stake Pool Operators"
+  },
+  "governance.onboarding.spos.text": {
+    "message": "SPOs validate transactions and vote on hard forks, security-relevant parameters, and no-confidence motions."
+  },
+  "governance.onboarding.cc.title": {
+    "message": "Constitutional Committee"
+  },
+  "governance.onboarding.cc.text": {
+    "message": "The Constitutional Committee ensures that governance proposals align with Cardano's constitution."
+  },
+  "governance.divider.howItWorks": {
+    "message": "How Cardano governance works"
+  },
+  "governance.onboarding.intro": {
+    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding."
+  },
+  "governance.onboarding.together": {
+    "message": "Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone."
+  },
+  "governance.onboarding.accountabilityCta": {
+    "message": "See what the community expects of them"
+  },
+  "governance.divider.impact": {
+    "message": "What governance has achieved"
+  },
+  "governance.impact.intro": {
+    "message": "Cardano governance is not theoretical. Real decisions are being made by the community every epoch."
+  },
+  "governance.divider.tools": {
+    "message": "Governance tools"
+  },
+  "governance.tools.intro": {
+    "message": "Tools to help you participate in Cardano governance."
+  },
+  "governance.tools.more": {
+    "message": "More tools"
+  },
+  "governance.divider.paths": {
+    "message": "Choose your path"
+  },
+  "governance.survey.title": {
+    "message": "Not sure where to start?"
+  },
+  "governance.survey.description": {
+    "message": "Take a short guided path to understand your options and find the governance role that fits you best."
+  },
+  "governance.survey.buttonText": {
+    "message": "Find your role"
+  },
+  "governance.divider.delegation": {
+    "message": "How to delegate"
+  },
+  "hardforks.timeline.vanrossem.description": {
+    "message": "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins"
+  },
+  "home.divider.news": {
+    "message": "News"
+  },
+  "home.news.title": {
+    "message": "Latest News"
+  },
+  "home.news.description": {
+    "message": "Stay up to date with the latest developments, announcements, and community updates from the Cardano ecosystem."
+  },
+  "layer2.layout.title": {
+    "message": "Cardano Layer 2 Landscape"
+  },
+  "layer2.layout.description": {
+    "message": "Discover the growing ecosystem of state channels, rollups, and partner chains that enhance Cardano's performance with resilience, data flexibility, and higher rates of transaction speed."
+  },
+  "layer2.hero.title": {
+    "message": "Cardano Layer 2 Landscape"
+  },
+  "layer2.hero.description": {
+    "message": "Discover the growing ecosystem of state channels, rollups, and partner chains that enhance Cardano's performance. These scaling solutions offer resilience, data flexibility, and lower costs together with higher rates of transaction speed."
+  },
+  "layer2.cta.line1": {
+    "message": "Build the future of trustless infrastructure."
+  },
+  "layer2.cta.line2": {
+    "message": "Use Cardano."
+  },
+  "layer2.cta.button": {
+    "message": "Start Today"
+  },
+  "stablecoins.hero.title": {
+    "message": "Stablecoins on Cardano"
+  },
+  "stablecoins.hero.subtitle": {
+    "message": "The dollar-pegged assets you need. All built on the most secure, predictable foundations in crypto."
+  },
+  "stablecoins.layout.title": {
+    "message": "Stablecoins on Cardano"
+  },
+  "stablecoins.layout.description": {
+    "message": "Discover the stablecoins available on Cardano — fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference."
+  },
+  "stablecoins.ecosystem.title": {
+    "message": "The Cardano Stablecoin Ecosystem"
+  },
+  "stablecoins.ecosystem.subtitle": {
+    "message": "Five stablecoins. One ecosystem. Choose yours."
+  },
+  "stablecoins.ecosystem.intro": {
+    "message": "Whether you're looking for the trusted name of Circle, the transparency of on-chain reserves, or the clear decentralization of a formally verified algorithm, you'll find a stablecoin on Cardano built for your preferences and needs."
+  },
+  "stablecoins.bridges.title": {
+    "message": "Stablecoins With Bridges to Cardano"
+  },
+  "stablecoins.bridges.subtitle": {
+    "message": "Five extra stablecoins. The same ecosystem. Even more options."
+  },
+  "stablecoins.bridges.intro": {
+    "message": "The future is interoperable, and so are stablecoins. From PayPal to MakerDAO, several bridges allow you to access Cardano's advantages."
+  },
+  "stablecoins.getStarted.title": {
+    "message": "How to Get Stablecoins on Cardano"
+  },
+  "stablecoins.getStarted.subtitle": {
+    "message": "Ready to start? You only need four simple steps."
+  },
+  "stablecoins.explainer.title": {
+    "message": "Understand Stablecoins"
+  },
+  "stablecoins.explainer.intro1": {
+    "message": "Cardano supports five active stablecoins issued natively on the chain — USDCx, USDM, USDA, DJED, and iUSD — alongside several more that reach Cardano via bridges from other ecosystems."
+  },
+  "stablecoins.explainer.intro2": {
+    "message": "Unlike most blockchains, Cardano stablecoins are native tokens, not smart contracts. They get treated as first-class citizens, similar to Cardano’s very own native asset, ada. This means lower fees, no hidden risk, and transfers that work as you expect, every time."
+  },
+  "stablecoins.explainer.whatIs.title": {
+    "message": "What is a Stablecoin?"
+  },
+  "stablecoins.explainer.whatIs.eyebrow": {
+    "message": "New to stablecoins? Start here."
+  },
+  "stablecoins.explainer.whatIs.body1": {
+    "message": "A stablecoin is a type of cryptocurrency designed to hold a steady value and typically pegged 1:1 to the US dollar. Whereas Bitcoin, Ether, or ada can rise and fall with the market, a stablecoin is engineered to stay put."
+  },
+  "stablecoins.explainer.whatIs.body2": {
+    "message": "That stability makes them useful in ways that other assets can’t match. For example, when sending money across borders, the receiver doesn’t get less than the original amount sent. Stablecoins also provide some protection from market volatility and quick price drops. This means DeFi users can lend, earn yield, and provide liquidity while limiting their exposure to price swings."
+  },
+  "stablecoins.explainer.whatIs.body3": {
+    "message": "Think of a stablecoin as digital cash: spendable, moveable, and programmable, but without the volatility."
+  },
+  "stablecoins.explainer.pullQuote": {
+    "message": "A stablecoin lets you move the value of a dollar at the speed of the internet, without asking permission from a bank, and without the fees banks usually charge."
+  },
+  "stablecoins.explainer.threeTypes.title": {
+    "message": "The three types of stablecoins"
+  },
+  "stablecoins.explainer.bridgesQ.title": {
+    "message": "What are stablecoin bridges?"
+  },
+  "stablecoins.explainer.bridgesQ.body": {
+    "message": "Stablecoin bridges give you the possibility of moving your assets across chains, without losing value, and without complication. One authoritative entity oversees the stablecoin's minting process, everything else flows naturally."
+  },
+  "stablecoins.whyCardano.title": {
+    "message": "Why Cardano is a Perfect Fit for Stablecoins and Finance"
+  },
+  "stablecoins.whyCardano.subtitle": {
+    "message": "Because how financial assets move matters as much as what they’re worth."
+  },
+  "stablecoins.whyCardano.intro": {
+    "message": "Cardano's built for resilience, freedom, and simplicity. From liquid staking to interoperability and no slashing because of validator errors, Cardano makes a difference where it matters most."
+  },
+  "stablecoins.attribution.market": {
+    "message": "Market data powered by {coingecko}."
+  },
+  "stablecoins.attribution.freshness": {
+    "message": "Values update automatically and may lag exchange tickers by a few minutes."
+  },
+  "useCases.divider.identity": {
+    "message": "Identity"
+  },
+  "useCases.education.title": {
+    "message": "Education"
+  },
+  "useCases.education.description1": {
+    "message": "The issuance of academic certifications is heavily centralized. If diplomas, degrees, or other credentials are damaged or lost, the re-issue process is often costly, and the issuing institution might no longer exist. Sharing these credentials is also difficult, as academic achievements are traditionally issued in physical form, which makes it almost impossible to share when and where needed."
+  },
+  "useCases.education.description2": {
+    "message": "Cardano's blockchain-based identity and credentials solutions address these challenges by securing academic certifications within an immutable and tamper-proof ecosystem. These solutions empower students to take ownership of their achievements, enabling them to instantly share verifiable credentials with institutions or employers."
+  },
+  "useCases.education.description3": {
+    "message": "With this approach, students maintain full control of their academic records without relying on third-party intermediaries. Institutions can verify credentials instantly, eliminating delays and reducing costs. This creates a seamless and efficient way for students and job seekers to prove their qualifications and achievements with confidence."
+  },
+  "useCases.digitalIdentity.title": {
+    "message": "Digital Identity Management"
+  },
+  "useCases.digitalIdentity.description1": {
+    "message": "Identity systems today are often centralized, making them vulnerable to breaches and fraud. Individuals have limited control over their personal data, and verification processes can be slow and expensive."
+  },
+  "useCases.digitalIdentity.description2": {
+    "message": "Cardano's blockchain allows individuals to own and control their digital identities. With tamper-proof and easily verifiable credentials on the blockchain, this solution reduces fraud, ensures privacy, and streamlines verification processes for governments and businesses alike."
+  },
+  "useCases.identityFinance.title": {
+    "message": "Finance"
+  },
+  "useCases.identityFinance.description": {
+    "message": "Identity verification is a critical step in onboarding new clients for financial institutions and agencies. However, the process is often slow, resource-intensive, and reliant on multiple third parties."
+  },
+  "useCases.government.title": {
+    "message": "Government"
+  },
+  "useCases.government.description1": {
+    "message": "Current systems for issuing and verifying credentials are inefficient and centralized. Control over important documents often remains with the issuing authority rather than the individual, creating a reliance on third-party agencies for verification."
+  },
+  "useCases.government.description2": {
+    "message": "Cardano's blockchain technology offers a decentralized solution to this problem. By enabling secure, tamper-proof digital credentials, individuals can take full control of their documents. These credentials can be shared and verified instantly, eliminating delays and reducing administrative costs while improving accessibility and trust."
+  },
+  "useCases.divider.finance": {
+    "message": "Finance"
+  },
+  "useCases.defi.title": {
+    "message": "Decentralized Finance (DeFi)"
+  },
+  "useCases.defi.description1": {
+    "message": "Access to financial services remains limited for millions worldwide. Centralized institutions control financial systems, leading to inefficiencies, high fees, and restricted inclusivity."
+  },
+  "useCases.defi.description2": {
+    "message": "Cardano's DeFi ecosystem offers decentralized lending platforms, stablecoins, and decentralized exchanges. By leveraging smart contracts, Cardano provides secure, scalable, and inclusive financial services for users across the globe."
+  },
+  "useCases.defi.description3": {
+    "message": "[Explore DeFi on Cardano in the showcase.](/apps/?operator=OR&tags=lending&tags=dex)"
+  },
+  "useCases.payments.title": {
+    "message": "Payment Methods"
+  },
+  "useCases.payments.description1": {
+    "message": "International payments often face high fees, long processing times, and dependency on intermediaries. These barriers make cross-border transactions inefficient and costly."
+  },
+  "useCases.payments.description2": {
+    "message": "Cardano enables fast, low-cost, and secure payments using its native token, ada. By eliminating intermediaries, Cardano reduces transaction fees and settlement times, making it ideal for remittances and peer-to-peer transfers."
+  },
+  "useCases.payments.description3": {
+    "message": "[Browse wallets, gateways and bridges in the showcase.](https://developers.cardano.org/showcase/?operator=OR&tags=gateway&tags=wallet&tags=bridge)"
+  },
+  "useCases.divider.supplyChain": {
+    "message": "Supply Chain"
+  },
+  "useCases.agriculture.title": {
+    "message": "Agriculture"
+  },
+  "useCases.agriculture.description1": {
+    "message": "The pandemic has highlighted the critical importance of maintaining resilient and transparent supply chains, especially in agriculture. As a primary source of food and sustenance, agriculture's supply chain must remain operational to support livelihoods and ensure the well-being of populations worldwide."
+  },
+  "useCases.agriculture.description2": {
+    "message": "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders—including farmers, transporters, and retailers—can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."
+  },
+  "useCases.retail.title": {
+    "message": "Retail"
+  },
+  "useCases.retail.description1": {
+    "message": "[Counterfeit goods pose a significant challenge to the global economy](https://www.visualcapitalist.com/300-billion-counterfeit-goods-problem/), causing financial losses, eroding brand reputation, and reducing customer trust."
+  },
+  "useCases.retail.description2": {
+    "message": "Cardano's blockchain offers a tamper-proof solution to combat counterfeiting by providing secure, immutable systems for tracking product provenance and ensuring authenticity. Businesses can certify the originality of their products, enabling consumers to verify authenticity instantly and building confidence in the supply chain."
+  },
+  "useCases.supplyChainManagement.title": {
+    "message": "Supply Chain Management"
+  },
+  "useCases.supplyChainManagement.description1": {
+    "message": "Supply chains often lack transparency and efficiency, leading to counterfeit goods, poor quality control, and increased costs."
+  },
+  "useCases.supplyChainManagement.description2": {
+    "message": "Cardano's blockchain enables real-time tracking and verification of goods. Companies can record every step of a product's journey, from origin to destination, ensuring authenticity and improving logistical processes."
+  },
+  "useCases.divider.socialImpact": {
+    "message": "Social Impact"
+  },
+  "useCases.socialPrograms.title": {
+    "message": "Social Programs"
+  },
+  "useCases.socialPrograms.description1": {
+    "message": "Social and public programs often suffer from inefficiencies, fraud, and lack of transparency. Donors and beneficiaries lack visibility into how funds are allocated and spent."
+  },
+  "useCases.socialPrograms.description2": {
+    "message": "Cardano's blockchain can track donations and fund distributions immutably, ensuring accountability. It also facilitates microfinance solutions for unbanked populations, empowering them with access to financial tools."
+  },
+  "useCases.divider.dataTechnology": {
+    "message": "Data and Technology"
+  },
+  "useCases.dataStorage.title": {
+    "message": "Data Storage"
+  },
+  "useCases.dataStorage.description1": {
+    "message": "Centralized data storage solutions, like server farms, are prone to failures, breaches, and inefficiencies. Storing vast amounts of data in a few physical locations creates vulnerabilities and increases costs."
+  },
+  "useCases.dataStorage.description2": {
+    "message": "Cardano's blockchain enables decentralized data storage, distributing information across a global network. This approach enhances security, reduces costs, and ensures efficient access and sharing of encrypted data."
+  },
+  "useCases.tokenizedAssets.title": {
+    "message": "Tokenized Assets"
+  },
+  "useCases.tokenizedAssets.description1": {
+    "message": "Investing in traditional assets often requires intermediaries and incurs high fees. Transparency and liquidity are also limited, restricting broader participation."
+  },
+  "useCases.tokenizedAssets.description2": {
+    "message": "Cardano supports the tokenization of assets like real estate, art, and financial instruments. Blockchain-based tokens allow for fractional ownership, enhanced transparency, and secure transactions."
+  },
+  "useCases.divider.diverseOpportunities": {
+    "message": "Diverse Opportunities"
+  },
+  "useCases.votingSystems.title": {
+    "message": "Voting Systems"
+  },
+  "useCases.votingSystems.description1": {
+    "message": "Election systems often face issues such as fraud, manipulation, and lack of transparency. Traditional voting methods are costly to implement and challenging to audit."
+  },
+  "useCases.votingSystems.description2": {
+    "message": "Cardano's blockchain can facilitate a secure, tamper-proof voting system. Each vote is recorded immutably, ensuring transparency and eliminating the risk of manipulation."
+  },
+  "useCases.healthCare.title": {
+    "message": "Health Care"
+  },
+  "useCases.healthCare.description1": {
+    "message": "The healthcare industry faces significant challenges in managing patient data securely and efficiently. Patient records are often siloed in centralized systems, leading to delays and inefficiencies. Sharing medical data across institutions and regions is cumbersome, increasing risks to patient care."
+  },
+  "useCases.healthCare.description2": {
+    "message": "Cardano's blockchain can create a secure, decentralized network for health records. This allows medical professionals to access patient data instantly, no matter where they are. Wearable devices can also integrate with the blockchain, enabling real-time health monitoring and proactive medical interventions."
+  },
+  "useCases.musicIndustry.title": {
+    "message": "Music Industry"
+  },
+  "useCases.musicIndustry.description1": {
+    "message": "Artists and content creators often face challenges in tracking royalties, managing copyright, and ensuring fair revenue distribution. The current systems are opaque and prone to disputes, leaving artists with little transparency or control."
+  },
+  "useCases.musicIndustry.description2": {
+    "message": "Cardano can transform the music industry by enabling direct, transparent payments to artists through smart contracts. Additionally, a blockchain-based system can manage copyright records, ensuring accurate and immutable tracking of intellectual property."
+  },
+  "apps.detail.share": {
+    "message": "Share"
+  },
+  "apps.detail.crumbApps": {
+    "message": "Apps"
+  },
+  "apps.detail.screenshots": {
+    "message": "Screenshots"
+  },
+  "apps.detail.relatedMore": {
+    "message": "View all {category} apps"
+  },
+  "apps.detail.improveHeading": {
+    "message": "Spotted something off?"
+  },
+  "apps.detail.improveCopy": {
+    "message": "This catalog is open source. Submit a pull request to update or correct this entry."
+  },
+  "apps.detail.improveButton": {
+    "message": "Edit {title} on GitHub"
+  },
+  "apps.maintainerPick": {
+    "message": "Maintainer picks"
+  },
+  "brandAssets.colors.copyHex": {
+    "message": "Copy hex value"
+  },
+  "brandAssets.colors.copied": {
+    "message": "Copied!"
+  },
+  "brandAssets.colors.coreTitle": {
+    "message": "Core Colors"
+  },
+  "brandAssets.colors.secondaryTitle": {
+    "message": "Secondary Colors"
+  },
+  "brandAssets.typography.title": {
+    "message": "Typography"
+  },
+  "brandAssets.typography.sample": {
+    "message": "The quick brown fox jumps over the lazy dog"
+  },
+  "brandAssets.typography.credit": {
+    "message": "by Omnibus-Type —"
+  },
+  "brandAssets.typography.fallback": {
+    "message": "Fallback: Arial, sans-serif"
+  },
+  "brandAssets.usage.do1": {
+    "message": "Use only the specified brand colors"
+  },
+  "brandAssets.usage.do2": {
+    "message": "Maintain the safe area around the logo"
+  },
+  "brandAssets.usage.do3": {
+    "message": "The icon can be used as a standalone element"
+  },
+  "brandAssets.usage.dont1": {
+    "message": "Do not stretch, rotate, or distort the logo"
+  },
+  "brandAssets.usage.dont2": {
+    "message": "Do not recolor the logo outside brand colors"
+  },
+  "brandAssets.usage.dont3": {
+    "message": "Do not use the wordmark without the icon"
+  },
+  "brandAssets.usage.title": {
+    "message": "Usage Guidelines"
+  },
+  "brandAssets.usage.minSizes": {
+    "message": "Minimum Sizes"
+  },
+  "brandAssets.usage.safeArea": {
+    "message": "Safe Area"
+  },
+  "brandAssets.usage.safeAreaDesc": {
+    "message": "Always maintain a clear space around the logo equal to the width of six dots from the starburst icon. This ensures the logo remains legible and visually distinct in all applications."
+  },
+  "brandAssets.usage.dosDonts": {
+    "message": "Do's & Don'ts"
+  },
+  "brandAssets.usage.cobranding": {
+    "message": "Co-branding"
+  },
+  "brandAssets.usage.cobrandingDesc": {
+    "message": "When the Cardano logo appears alongside a partner logo, the Cardano logo should be displayed at an equal or larger size to maintain brand prominence."
+  },
+  "brandAssets.logos.downloadSvg": {
+    "message": "Download SVG"
+  },
+  "brandAssets.logos.download": {
+    "message": "Download"
+  },
+  "brandAssets.logos.downloadAll": {
+    "message": "Download all Cardano brand assets from this page."
+  },
+  "brandAssets.logos.desc1": {
+    "message": "Our logo is at the heart of the brand identity. While it is the most recognizable part of the brand identity it is not the only component. The horizontal logo (shown here) is the primary version and should be used as the default version."
+  },
+  "brandAssets.logos.desc2": {
+    "message": "Please note the [Cardano Foundation Trademark Policy](https://cardanofoundation.org/en/trademark-policy)."
+  },
+  "apps.browseByCategory.seeAll": {
+    "message": "See all"
+  },
+  "entities.addCompany": {
+    "message": "Add your company"
+  },
+  "governance.delegation.step1.stepperLabel": {
+    "message": "Wallet"
+  },
+  "governance.delegation.stepper.hint.wallet": {
+    "message": "Get a compatible wallet"
+  },
+  "governance.delegation.step2.stepperLabel": {
+    "message": "DRep"
+  },
+  "governance.delegation.stepper.hint.drep": {
+    "message": "Choose a DRep"
+  },
+  "governance.delegation.step3.stepperLabel": {
+    "message": "Delegate"
+  },
+  "governance.delegation.stepper.hint.delegate": {
+    "message": "Sign delegation transaction"
+  },
+  "governance.delegation.step4.stepperLabel": {
+    "message": "Done"
+  },
+  "governance.delegation.stepper.hint.done": {
+    "message": "Your delegation is active"
+  },
+  "governance.delegation.startOver": {
+    "message": "Start over"
+  },
+  "governance.delegation.step1.browseAll": {
+    "message": "Browse all wallets"
+  },
+  "governance.delegation.step1.text": {
+    "message": "Most popular Cardano wallets support governance delegation. If you already have a wallet with ada, you are ready to go."
+  },
+  "governance.delegation.step2.text": {
+    "message": "DReps publish their positions and voting intentions. Choose one whose priorities match yours, or pick an automatic option (Abstain or No Confidence)."
+  },
+  "governance.delegation.step2.featureTitle": {
+    "message": "Browse DReps"
+  },
+  "governance.delegation.step2.featureHint": {
+    "message": "Compare positions, voting power and activity"
+  },
+  "governance.delegation.step3.text": {
+    "message": "Connect your wallet, pick your DRep, and sign one transaction. Your ada stays in your wallet at all times."
+  },
+  "governance.delegation.reassurance": {
+    "message": "Your ada never leaves your wallet"
+  },
+  "governance.delegation.step3.featureTitle": {
+    "message": "Open delegation tool"
+  },
+  "governance.delegation.step3.featureHint": {
+    "message": "Connect wallet and sign one transaction"
+  },
+  "governance.delegation.step4.text": {
+    "message": "Your voting power is now represented by your DRep. You can change your delegation at any time — your ada stays fully under your control."
+  },
+  "governance.delegation.done.thanks": {
+    "message": "Thank you for participating in on-chain governance and helping shape Cardano's future."
+  },
+  "governance.delegation.done.cta.delegation": {
+    "message": "View my delegation"
+  },
+  "governance.delegation.done.cta.explore": {
+    "message": "Explore governance"
+  },
+  "governance.delegation.step1.title": {
+    "message": "Get a compatible wallet"
+  },
+  "governance.delegation.step1.checkbox": {
+    "message": "I have a wallet with ada"
+  },
+  "governance.delegation.step1.ready": {
+    "message": "Wallet ready"
+  },
+  "governance.delegation.step2.title": {
+    "message": "Find a DRep"
+  },
+  "governance.delegation.step2.checkbox": {
+    "message": "I have chosen a DRep"
+  },
+  "governance.delegation.step2.ready": {
+    "message": "DRep chosen"
+  },
+  "governance.delegation.step3.title": {
+    "message": "Delegate your voting power"
+  },
+  "governance.delegation.step3.checkbox": {
+    "message": "I have delegated my voting power"
+  },
+  "governance.delegation.step3.ready": {
+    "message": "Delegation signed"
+  },
+  "governance.delegation.step4.title": {
+    "message": "You're done!"
+  },
+  "governance.delegation.heading": {
+    "message": "Delegate in 4 steps"
+  },
+  "governance.delegation.tagline": {
+    "message": "You delegate. DReps represent. The community decides."
+  },
+  "governance.delegation.eyebrow": {
+    "message": "Step {current} of {total}"
+  },
+  "governance.delegation.continue": {
+    "message": "Continue"
+  },
+  "governance.delegation.footer.text": {
+    "message": "On-chain governance is how Cardano evolves."
+  },
+  "governance.delegation.footer.link": {
+    "message": "Learn more about governance"
+  },
+  "glossary.term.copyLinkAria": {
+    "message": "Copy link to this term"
+  },
+  "glossary.term.copied": {
+    "message": "Copied"
+  },
+  "glossary.term.copyLink": {
+    "message": "Copy link"
+  },
+  "glossary.term.viewTerm": {
+    "message": "View term"
+  },
+  "glossary.crumb.index": {
+    "message": "Glossary"
+  },
+  "glossary.term.definition": {
+    "message": "Definition"
+  },
+  "glossary.term.mentalModel": {
+    "message": "Mental model"
+  },
+  "glossary.term.sources": {
+    "message": "Sources"
+  },
+  "glossary.term.category": {
+    "message": "Category"
+  },
+  "glossary.term.level": {
+    "message": "Reader level"
+  },
+  "glossary.term.alsoKnownAs": {
+    "message": "Also known as"
+  },
+  "glossary.term.relatedConcepts": {
+    "message": "Related concepts"
+  },
+  "glossary.term.learnMoreTitle": {
+    "message": "Learn more on Cardano.org"
+  },
+  "glossary.term.learnMoreCopy": {
+    "message": "Open the dedicated page that goes deeper on this topic."
+  },
+  "glossary.term.openPage": {
+    "message": "Open the page"
+  },
+  "glossary.term.opensInNewTab": {
+    "message": " (opens in a new tab)"
+  },
+  "glossary.term.exploreNext": {
+    "message": "Explore next"
+  },
+  "glossary.term.cantFindTitle": {
+    "message": "Can't find what you're looking for?"
+  },
+  "glossary.term.cantFindLead": {
+    "message": "Suggest a term or explore the documentation for in-depth guides."
+  },
+  "glossary.term.exploreDocs": {
+    "message": "Explore docs"
+  },
+  "glossary.term.suggestTerm": {
+    "message": "Suggest a term"
+  },
+  "glossary.term.improveHeading": {
+    "message": "Spotted something off?"
+  },
+  "glossary.term.improveCopy": {
+    "message": "This glossary is open source. Submit a pull request to update or correct this definition."
+  },
+  "glossary.term.improveButton": {
+    "message": "Edit {title} on GitHub"
+  },
+  "governance.faq.category.getting-started": {
+    "message": "Getting started"
+  },
+  "governance.faq.category.delegation": {
+    "message": "Delegation"
+  },
+  "governance.faq.category.technical": {
+    "message": "Technical"
+  },
+  "governance.faq.category.drep-role": {
+    "message": "DRep role"
+  },
+  "governance.faq.category.governance-basics": {
+    "message": "Governance basics"
+  },
+  "governance.faq.divider": {
+    "message": "FAQ"
+  },
+  "governance.faq.title": {
+    "message": "Answers to common questions about delegation and governance."
+  },
+  "governance.faq.subtitle": {
+    "message": "Everything you need to know to participate with confidence."
+  },
+  "governance.faq.popular": {
+    "message": "Popular questions"
+  },
+  "governance.faq.categoriesNav": {
+    "message": "FAQ categories"
+  },
+  "governance.faq.questionCount.one": {
+    "message": "1 question"
+  },
+  "governance.faq.questionCount.other": {
+    "message": "{count} questions"
+  },
+  "governance.paths.understand.label": {
+    "message": "Understand"
+  },
+  "governance.paths.understand.subtitle": {
+    "message": "Learn how governance works"
+  },
+  "governance.paths.understand.title": {
+    "message": "Learn how governance works"
+  },
+  "governance.paths.understand.body": {
+    "message": "New to Cardano governance? Read the constitution, explore governance action charts, or browse the governance tools to understand how proposals move from submission to enactment."
+  },
+  "governance.paths.understand.buttonText2": {
+    "message": "Action Charts"
+  },
+  "governance.paths.understand.buttonText": {
+    "message": "Read the Constitution"
+  },
+  "governance.paths.delegate.label": {
+    "message": "Delegate"
+  },
+  "governance.paths.delegate.subtitle": {
+    "message": "Give voting power to a DRep"
+  },
+  "governance.paths.delegate.title": {
+    "message": "Delegate your voting power"
+  },
+  "governance.paths.delegate.body": {
+    "message": "You already have voting power. Delegation lends your vote to a Delegated Representative (DRep) who votes on your behalf. Your ada never leaves your wallet, only a small transaction fee applies, and you can change your DRep at any time."
+  },
+  "governance.paths.delegate.buttonText": {
+    "message": "Choose a DRep"
+  },
+  "governance.paths.lead.label": {
+    "message": "Lead"
+  },
+  "governance.paths.lead.subtitle": {
+    "message": "Run for a governance role"
+  },
+  "governance.paths.lead.title": {
+    "message": "Become a DRep"
+  },
+  "governance.paths.lead.body": {
+    "message": "Represent your community and shape Cardano policy. DReps actively engage in governance, stay informed on proposals, and vote on behalf of those who delegate to them. A refundable deposit of 500 ada is required and will be returned upon retirement."
+  },
+  "governance.paths.lead.buttonText": {
+    "message": "Register as a DRep"
+  },
+  "governance.pulse.treasury": {
+    "message": "Treasury"
+  },
+  "governance.pulse.activeProposals": {
+    "message": "Active proposals"
+  },
+  "governance.pulse.epoch": {
+    "message": "Current epoch"
+  },
+  "governance.pulse.enacted": {
+    "message": "Actions enacted"
+  },
+  "governance.pulse.liveLine": {
+    "message": "Epoch {epoch} is live. {count} proposals are being voted on right now."
+  },
+  "latestNews.readMore": {
+    "message": "Read more"
+  },
+  "latestNews.viewAll": {
+    "message": "View all news"
+  },
+  "layer2.status.productionReady": {
+    "message": "Production-ready"
+  },
+  "layer2.status.inProduction": {
+    "message": "In production"
+  },
+  "layer2.status.deployed": {
+    "message": "Deployed"
+  },
+  "layer2.status.mainnet": {
+    "message": "Mainnet"
+  },
+  "layer2.status.inDevelopment": {
+    "message": "In development"
+  },
+  "layer2.status.proofOfConcept": {
+    "message": "Proof of concept"
+  },
+  "layer2.status.tbc": {
+    "message": "Status TBC"
+  },
+  "stablecoins.meta.marketCap": {
+    "message": "Market cap"
+  },
+  "survey.ui.startOver": {
+    "message": "Start over"
+  },
+  "survey.ui.next": {
+    "message": "Next"
+  },
+  "survey.ui.seeResult": {
+    "message": "See your result"
+  },
+  "governance.treasury.wallet.error": {
+    "message": "Wallet error: {error}"
+  },
+  "governance.treasury.wallet.empty": {
+    "message": "No Cardano wallet detected. Install Eternl, Typhon, Begin or another CIP-30 wallet to continue."
+  },
+  "governance.treasury.wallet.connected": {
+    "message": "Connected: {name} · {addr}"
+  },
+  "governance.treasury.wallet.disconnect": {
+    "message": "Disconnect"
+  },
+  "governance.treasury.networkWarning": {
+    "message": "Your wallet is on the wrong network. Switch to Mainnet to donate."
+  },
+  "governance.treasury.tx.building": {
+    "message": "Building the treasury donation. Please confirm in your wallet…"
+  },
+  "governance.treasury.tx.success": {
+    "message": "Donation of {amount} submitted to the treasury."
+  },
+  "governance.treasury.tx.viewOnExplorer": {
+    "message": "View on explorer"
+  },
+  "governance.treasury.disabled.wallet": {
+    "message": "Connect a wallet above to donate."
+  },
+  "governance.treasury.disabled.network": {
+    "message": "Switch your wallet to Mainnet to donate."
+  },
+  "governance.treasury.disabled.amount": {
+    "message": "Enter a positive ADA amount (up to 6 decimal places)."
+  },
+  "governance.treasury.error.amount": {
+    "message": "Enter a positive ADA amount (up to 6 decimal places)."
+  },
+  "governance.treasury.error.wrongNetwork": {
+    "message": "Wallet is on the wrong network. Switch to Mainnet and try again."
+  },
+  "governance.treasury.error.treasury": {
+    "message": "Could not read the current treasury value. Please try again in a moment."
+  },
+  "governance.treasury.error.generic": {
+    "message": "Donation failed: {error}"
+  },
+  "governance.treasury.intro": {
+    "message": "This builds a real Conway treasury donation, not a payment to an address. Your wallet selects the inputs, signs the transaction, and submits it. The ada leaves your wallet and is added directly to the Cardano treasury."
+  },
+  "governance.treasury.balanceLabel": {
+    "message": "Current treasury balance"
+  },
+  "governance.treasury.balanceLoading": {
+    "message": "Loading…"
+  },
+  "governance.treasury.balanceUnavailable": {
+    "message": "Unavailable"
+  },
+  "governance.treasury.wallet.heading": {
+    "message": "Connect a wallet to donate"
+  },
+  "governance.treasury.amount.heading": {
+    "message": "Donation amount"
+  },
+  "governance.treasury.amount.label": {
+    "message": "Donation amount in ADA"
+  },
+  "governance.treasury.amount.ctaBusy": {
+    "message": "Building…"
+  },
+  "governance.treasury.amount.cta": {
+    "message": "Donate to treasury"
+  },
+  "governance.treasury.footnote": {
+    "message": "Treasury donations are irreversible and must be submitted in the same epoch they are built."
+  },
+  "walletFinder.card.openSource": {
+    "message": "Open Source"
+  },
+  "walletFinder.card.visitWebsite": {
+    "message": "Visit Website"
+  },
+  "walletFinder.filters.title": {
+    "message": "Filters"
+  },
+  "walletFinder.results.wallet": {
+    "message": "wallet"
+  },
+  "walletFinder.results.wallets": {
+    "message": "wallets"
+  },
+  "walletFinder.filters.clearAll": {
+    "message": "Clear filters"
+  },
+  "walletFinder.filters.platforms": {
+    "message": "Platform"
+  },
+  "walletFinder.filters.features": {
+    "message": "Features"
+  },
+  "walletFinder.filters.type": {
+    "message": "Wallet Type"
+  },
+  "walletFinder.filters.openSource": {
+    "message": "Open Source"
+  },
+  "walletSection.cta.title": {
+    "message": "Find the Right Wallet for You"
+  },
+  "walletSection.cta.description": {
+    "message": "A wallet lets you store, send, and receive ada. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best."
+  },
+  "walletSection.cta.button": {
+    "message": "Find a Wallet"
+  },
+  "apps.guidedPaths.stablecoins": {
+    "message": "Use stablecoins"
+  },
+  "governance.treasury.hero.title": {
+    "message": "Donate to the treasury"
+  },
+  "governance.treasury.hero.description": {
+    "message": "Connect your wallet and add ada directly to the Cardano treasury. A real Conway treasury donation, signed and submitted by your wallet, with no recipient address."
+  },
+  "governance.treasury.loading": {
+    "message": "Loading donation tool…"
+  },
+  "governance.treasury.layout.title": {
+    "message": "Donate to the Treasury - Cardano Governance"
+  },
+  "governance.treasury.layout.description": {
+    "message": "Make a Conway treasury donation directly from cardano.org. Connect your wallet and add ada to the Cardano treasury in one transaction."
+  },
+  "governance.treasury.og.title": {
+    "message": "Donate to the treasury"
+  },
+  "governance.treasury.og.description": {
+    "message": "Connect your wallet and add ada directly to the Cardano treasury in one transaction."
+  },
+  "walletFinder.hero.title": {
+    "message": "Find a Cardano Wallet"
+  },
+  "walletFinder.hero.description": {
+    "message": "Compare Cardano wallets by platform, features, and security to find the one that fits your needs"
+  },
+  "walletFinder.meta.title": {
+    "message": "Cardano Wallet Finder, Compare and Choose the Best Wallet"
+  },
+  "walletFinder.meta.description": {
+    "message": "Find the best Cardano wallet for you. Filter by platform, staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
+  },
+  "walletFinder.mode.beginner.title": {
+    "message": "I'm new to Cardano"
+  },
+  "walletFinder.mode.beginner.description": {
+    "message": "Show me the easiest options"
+  },
+  "walletFinder.mode.advanced.title": {
+    "message": "I know what I need"
+  },
+  "walletFinder.mode.advanced.description": {
+    "message": "Filter by platform, features, and more"
+  },
+  "walletFinder.beginner.label": {
+    "message": "What device will you use?"
+  },
+  "walletFinder.beginner.mobile": {
+    "message": "Mobile"
+  },
+  "walletFinder.beginner.desktop": {
+    "message": "Desktop"
+  },
+  "walletFinder.beginner.showAllFilters": {
+    "message": "Show all filters"
+  },
+  "walletFinder.advanced.simplify": {
+    "message": "Simplify filters"
+  },
+  "walletFinder.noResults.title": {
+    "message": "No wallets match your criteria"
+  },
+  "walletFinder.noResults.description": {
+    "message": "Try adjusting your filters to see more results."
+  },
+  "walletFinder.disclaimer": {
+    "message": "The wallets listed are provided for informational purposes only and are not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams."
+  },
+  "ambassadors.map.countLabel": {
+    "message": "{n} Ambassadors"
+  },
+  "home.hero.vizBadge.description": {
+    "message": "This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders."
+  },
+  "home.hero.vizBadge.interaction": {
+    "message": "Drag to rotate."
+  },
+  "home.hero.vizBadge.link": {
+    "message": "Learn more about Ouroboros"
+  },
+  "home.hero.vizBadge.ariaLabel": {
+    "message": "Information about this visualization"
+  },
+  "home.hero.vizBadge.label": {
+    "message": "Visualizing ouroboros-consensus"
+  },
+  "stablecoins.getStarted.scratch.title": {
+    "message": "Starting from scratch?"
+  },
+  "stablecoins.getStarted.alreadyOn.title": {
+    "message": "Already on a blockchain ecosystem?"
+  },
+  "stablecoins.getStarted.alreadyOn.lead": {
+    "message": "Bridge or buy directly."
+  },
+  "stablecoins.hero.cta.understand": {
+    "message": "Understand stablecoins"
+  },
+  "stablecoins.hero.cta.wallet": {
+    "message": "Get started with a wallet"
+  },
+  "stablecoins.hero.cta.ecosystem": {
+    "message": "Explore the ecosystem"
+  },
+  "stablecoins.stats.averageFee": {
+    "message": "Average Fee"
+  },
+  "stablecoins.stats.nativeCount": {
+    "message": "Native Stablecoins"
+  },
+  "stablecoins.stats.combinedCap": {
+    "message": "Combined Market Cap"
+  },
+  "stablecoins.stats.ariaLabel": {
+    "message": "Stablecoin ecosystem stats"
+  },
+  "showcase.filterToggle.label": {
+    "message": "Match all selected tags (AND). Leave unchecked to match any tag (OR)."
+  },
+  "insightsSupply.error.epochRangeMessage": {
+    "message": "Epoch must be between {minEpoch} and {maxEpoch}."
+  },
+  "insightsSupply.error.noEpochDataTitle": {
+    "message": "No data for this epoch"
+  },
+  "insightsSupply.error.noEpochDataMessage": {
+    "message": "No supply data is available for that epoch yet. Choose an epoch up to the current one."
+  },
+  "notFound.description": {
+    "message": "The page you're looking for doesn't exist or may have been moved.",
+    "description": "404 page description text"
+  },
+  "notFound.hint": {
+    "message": "Try the search bar above or head back to familiar ground.",
+    "description": "404 page hint text"
+  },
+  "notFound.button.homepage": {
+    "message": "Go to Homepage",
+    "description": "404 page homepage button"
   }
 }
