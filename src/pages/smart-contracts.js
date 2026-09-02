@@ -11,6 +11,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import AppList from "@site/src/components/AppList";
 
 function HomepageHeader() {
   return (
@@ -157,6 +158,141 @@ function LanguagesSection() {
   );
 }
 
+function DappsSection() {
+  return (
+    <>
+      <Divider
+        id="dapps"
+        text={translate({ id: "smartContracts.divider.dapps", message: "dApps" })}
+      />
+      <TitleWithText
+        title={translate({ id: "smartContracts.dapps.title", message: "What is a dApp?" })}
+        description={[
+          translate({
+            id: "smartContracts.dapps.p1",
+            message:
+              "A decentralized application, or dApp, is a website or app whose important actions run through smart contracts instead of a company's database. A decentralized exchange, for example, is a front end that builds swap transactions for you, plus the scripts on chain that hold the liquidity and enforce the prices.",
+          }),
+          translate({
+            id: "smartContracts.dapps.p2",
+            message:
+              "You use a dApp with your own wallet. The app asks to connect, which lets it see your address and ask you to sign transactions, and nothing more: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "smartContracts.dapps.button", message: "Browse Cardano apps" })}
+        buttonLink="/apps"
+      />
+    </>
+  );
+}
+
+function SafetySection() {
+  return (
+    <>
+      <Divider
+        id="safety"
+        text={translate({ id: "smartContracts.divider.safety", message: "Safety" })}
+      />
+      <TitleWithText
+        title={translate({ id: "smartContracts.safety.title", message: "How do I use a dApp safely?" })}
+        description={[
+          translate({
+            id: "smartContracts.safety.p1",
+            message:
+              "Read what you are about to sign. Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later.",
+          }),
+          translate({
+            id: "smartContracts.safety.p2",
+            message:
+              "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no dApp needs it.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({
+          id: "smartContracts.safety.button",
+          message: "Common scams and how to spot them",
+        })}
+        buttonLink="/common-scams"
+      />
+    </>
+  );
+}
+
+function BuiltSection() {
+  return (
+    <>
+      <Divider
+        id="built"
+        text={translate({ id: "smartContracts.divider.built", message: "Built on Cardano" })}
+      />
+      <TitleWithText
+        title={translate({
+          id: "smartContracts.built.title",
+          message: "What runs on Cardano smart contracts today?",
+        })}
+        description={translate({
+          id: "smartContracts.built.intro",
+          message:
+            "Most of what people do on Cardano beyond sending ada runs on contracts: trading, lending, stablecoins, NFT marketplaces, identity and games. A few examples from the app showcase, ranked by on-chain activity where we have it.",
+        })}
+        headingDot={true}
+      />
+      <AppList
+        categories={["dex"]}
+        limit={3}
+        categoryTitle={translate({ id: "smartContracts.built.list.dex", message: "Decentralized exchanges" })}
+        showTxCount={true}
+      />
+      <AppList
+        categories={["lending"]}
+        limit={3}
+        categoryTitle={translate({ id: "smartContracts.built.list.lending", message: "Lending and borrowing" })}
+        showTxCount={true}
+      />
+      <AppList
+        categories={["marketplace"]}
+        limit={3}
+        categoryTitle={translate({ id: "smartContracts.built.list.marketplace", message: "NFT marketplaces" })}
+        showTxCount={true}
+      />
+      <TitleWithText
+        description={translate({
+          id: "smartContracts.built.outro",
+          message:
+            "[Stablecoins](/stablecoins) have their own page, and the showcase lists more than a hundred apps across every category.",
+        })}
+        buttonLabel={translate({ id: "smartContracts.built.button", message: "Explore all apps" })}
+        buttonLink="/apps"
+      />
+    </>
+  );
+}
+
+function BuildSection() {
+  return (
+    <>
+      <Divider
+        id="build"
+        text={translate({ id: "smartContracts.divider.build", message: "Build" })}
+      />
+      <TitleWithText
+        title={translate({ id: "smartContracts.build.title", message: "How do I build one?" })}
+        description={[
+          translate({
+            id: "smartContracts.build.p1",
+            message:
+              "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. Contracts are deployed by including their script in a transaction, there is no separate deployment step or registry.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "smartContracts.build.button", message: "Developer portal" })}
+        buttonLink="https://developers.cardano.org"
+      />
+    </>
+  );
+}
+
 export default function SmartContracts() {
   return (
     <Layout
@@ -186,6 +322,10 @@ export default function SmartContracts() {
             <WhatSection />
             <HowSection />
             <LanguagesSection />
+            <DappsSection />
+            <SafetySection />
+            <BuiltSection />
+            <BuildSection />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
