@@ -3,7 +3,7 @@ title: Cardano
 slug: cardano
 short: "A public, permissionless Layer 1 blockchain built on peer-reviewed research."
 category: general
-link: /discover-cardano
+link: /what-is-cardano
 related: [ada, ouroboros, eutxo]
 ---
 
