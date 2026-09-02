@@ -8,3 +8,21 @@
 export function jsonLdString(data) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
+
+// FAQPage structured data for the FAQSection shape ({question, answer[]}).
+// Structured data must be plain text, so markdown links in answers are
+// reduced to their label before joining.
+export function faqJsonLd(faq) {
+  return jsonLdString({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer.join(" ").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"),
+      },
+    })),
+  });
+}

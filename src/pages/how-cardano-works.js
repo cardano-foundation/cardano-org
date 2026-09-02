@@ -14,7 +14,7 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FAQSection from "@site/src/components/FAQSection";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
-import { jsonLdString } from "@site/src/utils/jsonLd";
+import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getHowCardanoWorksFAQ } from "@site/src/data/howCardanoWorksFAQ";
 
 function HomepageHeader() {
@@ -409,18 +409,7 @@ export default function HowCardanoWorks() {
       })}
     >
       <Head>
-        <script type="application/ld+json">
-          {jsonLdString({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faq.map((item) => ({
-              "@type": "Question",
-              "name": item.question,
-              // Structured data must be plain text, so strip markdown links before joining.
-              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
-            })),
-          })}
-        </script>
+        <script type="application/ld+json">{faqJsonLd(faq)}</script>
       </Head>
       <OpenGraphInfo />
       <HomepageHeader />
