@@ -248,8 +248,8 @@ function SmartContractsSection() {
           }),
         ]}
         headingDot={true}
-        buttonLabel={translate({ id: "howCardanoWorks.contracts.button", message: "Build on Cardano" })}
-        buttonLink="https://developers.cardano.org"
+        buttonLabel={translate({ id: "howCardanoWorks.contracts.button", message: "Smart contracts explained" })}
+        buttonLink="/smart-contracts"
       />
     </>
   );
