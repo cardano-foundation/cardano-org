@@ -22,14 +22,23 @@ const COURSE_URLS = {
   landing: ACADEMY_LANDING,
 };
 
-export function getAcademyCta(academyKey, quizId) {
+// Academy link with the site's UTM scheme. Every funnel into the Academy
+// (quiz result screens, the learn hub) builds its URL here so the campaign
+// parameters cannot drift between pages.
+export function academyUrl(academyKey, {medium, campaign, content} = {}) {
   const url = new URL(COURSE_URLS[academyKey] || ACADEMY_LANDING);
   url.searchParams.set('utm_source', 'cardano_org');
-  url.searchParams.set('utm_medium', 'quiz');
-  url.searchParams.set('utm_campaign', 'quiz_hub');
-  url.searchParams.set('utm_content', quizId);
+  url.searchParams.set('utm_medium', medium);
+  url.searchParams.set('utm_campaign', campaign);
+  if (content) {
+    url.searchParams.set('utm_content', content);
+  }
+  return url.toString();
+}
+
+export function getAcademyCta(academyKey, quizId) {
   return {
-    href: url.toString(),
+    href: academyUrl(academyKey, {medium: 'quiz', campaign: 'quiz_hub', content: quizId}),
     // Short label for the result screen link, where the surrounding card
     // already makes the destination context clear. ariaLabel names the
     // destination explicitly for assistive tech, since the link leaves the
