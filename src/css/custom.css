@@ -535,66 +535,141 @@ img {
 }
 
 
+/* Panel: centered under its trigger, kept in the DOM so it can animate.
+   Width comes from its content (tile plus fixed-width columns).
+   --mega-menu-shift is set by the React component when the centered
+   position would push the panel past a viewport edge. */
 .megaMenuPanel {
   position: absolute;
-  top: var(--ifm-navbar-height);
-  left: 10%;
-  transform: translateX(-50%);
-  margin: 2px 0 0 0;
-  padding: 16px 24px 24px;
-  background: var(--ifm-background-surface-color);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
+  top: calc(100% + 8px);
+  left: 50%;
   z-index: 1000;
-  display: none;
+  width: max-content;
+  /* 32px = 2 * VIEWPORT_MARGIN in DropdownNavbarItem/index.js */
+  max-width: min(1160px, calc(100vw - 32px));
+  padding: 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-lg);
   box-sizing: border-box;
-  /* Width is set by data-column-count variant rules below */
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(calc(-50% + var(--mega-menu-shift, 0px)), 6px);
+  pointer-events: none;
+  transition: opacity var(--site-duration-fast) var(--site-ease),
+    transform var(--site-duration-fast) var(--site-ease),
+    visibility var(--site-duration-fast);
 }
 
-/* Invisible hover zone below panel to prevent closing when moving mouse down */
-.megaMenuPanel::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -20px;
-  right: -20px;
-  height: 10px;
+.navbar__item--mega[data-open] .megaMenuPanel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(calc(-50% + var(--mega-menu-shift, 0px)), 0);
   pointer-events: auto;
 }
 
-.navbar__item--mega:hover .megaMenuPanel,
-.navbar__item--mega:focus-within .megaMenuPanel {
-  display: block;
+@media (prefers-reduced-motion: reduce) {
+  .megaMenuPanel {
+    transition: none;
+  }
+}
+
+/* Invisible bridge over the trigger-to-panel gap so the pointer can travel
+   down without the hover-close timer firing mid-way */
+.megaMenuPanel::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .megaMenuInner {
-  display: grid;
-  /* ensure each column has a reasonable minimum width so labels don't
-     wrap into vertical stacks on narrow viewports */
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 24px;
+  display: flex;
+  gap: 20px;
 }
 
-/* Dynamic width based on column count */
-.navbar__item--mega[data-column-count="2"] .megaMenuPanel {
-  width: min(600px, calc(100vw - 48px));
-  max-width: 600px;
-  min-width: 480px;
+.megaMenuColumn {
+  width: 260px;
 }
 
-.navbar__item--mega[data-column-count="2"] .megaMenuInner {
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+/* Featured tile: one per panel, image behind a darkening gradient with a
+   pill CTA. The card stays dark in both themes since the artwork fills it. */
+.megaMenuFeatured {
+  /* One scrim color feeds the tile background and the gradient stops */
+  --mega-scrim-rgb: 11, 18, 38;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 252px;
+  min-height: 252px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgb(var(--mega-scrim-rgb));
+  text-decoration: none !important;
+  transition: transform var(--site-duration-fast) var(--site-ease);
 }
 
-.navbar__item--mega[data-column-count="3"] .megaMenuPanel {
-  width: min(800px, calc(100vw - 48px));
-  max-width: 800px;
-  min-width: 720px;
+.megaMenuFeatured:hover {
+  transform: translateY(var(--site-lift));
 }
 
-.navbar__item--mega[data-column-count="3"] .megaMenuInner {
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
+.megaMenuFeaturedArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.megaMenuFeaturedBody {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 48px 14px 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--mega-scrim-rgb), 0) 0%,
+    rgba(var(--mega-scrim-rgb), 0.85) 45%,
+    rgba(var(--mega-scrim-rgb), 0.97) 100%
+  );
+}
+
+.megaMenuFeaturedTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-white);
+}
+
+.megaMenuFeaturedDescription {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.megaMenuFeaturedCta {
+  margin-top: 6px;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  border-radius: var(--site-radius-pill);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  transition: filter var(--site-duration-fast) var(--site-ease);
+}
+
+.megaMenuFeatured:hover .megaMenuFeaturedCta {
+  filter: brightness(1.15);
+}
+
 
 .megaMenuColumnTitle {
   font-size: 0.85rem;
@@ -607,24 +682,10 @@ img {
   gap: 6px;
 }
 
-.megaMenuColumnIcon {
-  width: 1rem;
-  height: 1rem;
-  object-fit: contain;
-  opacity: 0.7;
-  filter: none;
-}
-
-/* Improve contrast for column icons in dark mode */
-[data-theme="dark"] .megaMenuColumnIcon {
-  /* invert black icons to light, then tone down to a soft grey */
-  filter: invert(1) brightness(1.05) contrast(0.9) saturate(0.6);
-  opacity: 0.85;
-}
 
 .megaMenuItemLink {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 8px 12px;
   margin: 0 -12px;
   border-radius: 4px;
@@ -639,15 +700,10 @@ img {
   text-decoration: none;
 }
 
-/* (focus visible outlines intentionally omitted in original version) */
-
 .megaMenuItemLabel {
   font-weight: 500;
   display: block;
   font-size: 1.05rem;
-  /* force horizontal text flow */
-  writing-mode: horizontal-tb;
-  white-space: normal;
   color: var(--ifm-color-primary);
 }
 
@@ -663,7 +719,6 @@ img {
   display: block;
 }
 
-/* Replace default list bullets with Font Awesome icons */
 .megaMenuColumnList {
   list-style: none;
   margin: 0;
@@ -674,31 +729,19 @@ img {
   display: block;
 }
 
-.megaMenuItemIcon {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: 4px;
-  object-fit: contain;
-  opacity: 0.6;
-  transition: opacity 0.15s ease;
-  filter: grayscale(5%) brightness(0) saturate(100%) invert(21%) sepia(78%) saturate(2273%) hue-rotate(222deg);
+/* Hairline dividers separate rows without adding visual weight */
+.megaMenuItem + .megaMenuItem {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.megaMenuItemLink:hover .megaMenuItemIcon {
-  opacity: 0.95;
-}
-
-/* Strong reset for text orientation inside the mega menu to avoid
-   inherited or theme rules that could produce vertical text. */
-.navbar__item--mega,
-.navbar__item--mega * {
-  writing-mode: horizontal-tb !important;
-  text-orientation: mixed !important;
-  transform: none !important;
-  white-space: normal !important;
-  word-break: normal !important;
-  letter-spacing: normal !important;
+/* Below 1166px the widest panel cannot fit, so its featured tile yields
+   and the columns keep their width. Derivation: 252 tile + 3*260 columns
+   + 3*20 gaps + 2*20 padding + 2 border = 1134 content px, plus 2*16
+   viewport margin (VIEWPORT_MARGIN in DropdownNavbarItem/index.js) */
+@media (max-width: 1165px) {
+  .navbar__item--mega[data-columns="3"] .megaMenuFeatured {
+    display: none;
+  }
 }
 
 /* Reclaim horizontal space on medium-width screens where the
