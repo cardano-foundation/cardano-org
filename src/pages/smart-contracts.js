@@ -49,7 +49,7 @@ function WhatSection() {
           translate({
             id: "smartContracts.what.p2",
             message:
-              "Take two friends betting on a race. Without a contract they either trust each other or pay a bookmaker. With a contract they lock their stakes in a script that pays out to whoever the recorded result favors. Neither can back out, and nobody in the middle takes a cut or changes the terms.",
+              "Take a buyer and a seller who do not know each other. Without a contract they either trust each other or pay an escrow agent. With a contract the payment sits in a script that releases it once the agreed condition is recorded. Neither can back out, and nobody in the middle takes a cut or changes the terms.",
           }),
           translate({
             id: "smartContracts.what.p3",
@@ -91,7 +91,7 @@ function HowSection() {
           translate({
             id: "smartContracts.how.guard.text",
             message:
-              "When someone sends ada or tokens to a contract, the funds sit in an output locked by the script instead of by a key. The output can carry a piece of data, the datum, that records the state of the agreement, for example who bet on what. To spend that output, a transaction presents an argument, the redeemer, and the script checks whether the transaction is allowed.",
+              "When someone sends ada or tokens to a contract, the funds sit in an output, a chunk of value on the ledger, locked by the script instead of by a key. The output can carry a piece of data, the [datum](/glossary/datum), that records the state of the agreement, for example who owes what. To spend that output, a transaction presents an argument, the [redeemer](/glossary/redeemer), and the script checks whether the transaction is allowed.",
           }),
         ]}
         headingDot={true}
@@ -118,7 +118,7 @@ function HowSection() {
           translate({
             id: "smartContracts.how.cost.text",
             message:
-              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a collateral of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that.",
+              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a [collateral](/glossary/collateral) of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that.",
           }),
         ]}
         headingDot={true}
@@ -127,7 +127,7 @@ function HowSection() {
         description={translate({
           id: "smartContracts.how.outro",
           message:
-            "The full mechanics, from slots to ledger, are on the [how Cardano works](/how-cardano-works#smart-contracts) page.",
+            "The full mechanics, from slots to ledger, are on the [how Cardano works](/how-cardano-works) page.",
         })}
       />
     </>
@@ -181,7 +181,7 @@ function DappsSection() {
           translate({
             id: "smartContracts.dapps.p2",
             message:
-              "You use a dApp with your own wallet. The app asks to connect, which lets it see your addresses and balance and ask you to sign transactions: it never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, CIP-30, which is why one wallet works with many apps.",
+              "You use a dApp with your own wallet. Connecting lets the app see your addresses and balance and ask you to sign transactions. It never holds your keys and it cannot move funds without a signature you give in your wallet. That connection follows a standard, [CIP-30](/glossary/cip-30), which is why one wallet works with many apps.",
           }),
         ]}
         headingDot={true}
@@ -205,7 +205,7 @@ function SafetySection() {
           translate({
             id: "smartContracts.safety.p1",
             message:
-              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until they release it.",
+              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a dApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it.",
           }),
           translate({
             id: "smartContracts.safety.p2",
@@ -239,7 +239,7 @@ function BuiltSection() {
         description={translate({
           id: "smartContracts.built.intro",
           message:
-            "Trading, lending, stablecoins, NFT marketplaces, identity and games all run on contracts. A few examples from the app showcase, ranked by on-chain activity where we have it.",
+            "Trading, lending, stablecoins, marketplaces and games all run on contracts, and identity projects use them too. These are a few examples from the app showcase, ranked by on-chain activity where that data exists.",
         })}
         headingDot={true}
       />
@@ -258,7 +258,7 @@ function BuiltSection() {
       <AppList
         categories={["marketplace"]}
         limit={3}
-        categoryTitle={translate({ id: "smartContracts.built.list.marketplace", message: "NFT marketplaces" })}
+        categoryTitle={translate({ id: "smartContracts.built.list.marketplace", message: "Marketplaces" })}
         showTxCount={true}
       />
       <TitleWithText
@@ -309,7 +309,7 @@ export default function SmartContracts() {
       description={translate({
         id: "smartContracts.meta.description",
         message:
-          "What a smart contract is, how Cardano runs them as validator scripts on the eUTXO ledger, which languages developers use, what a dApp is, how to use one safely and what is already built.",
+          "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a dApp is and how to use one safely.",
       })}
     >
       <Head>
