@@ -1,17 +1,10 @@
 
 
-# AGENTS.md – AI Agent Onboarding for cardano.org
+# AGENTS.md - AI Agent Onboarding for cardano.org
 
-> **Important:** Use only `yarn` for all dependency and script management. Do not use `npm`.
+> Use `yarn` for all dependency and script management, not `npm`: the repo is pinned to `yarn.lock`, and PRs must not modify that file.
 
-Welcome! This guide enables AI agents (and their operators) to contribute productively and safely to cardano.org. It covers philosophy, repo map, quickstart, quality gates, guardrails, and content rules. **Read carefully before making changes.**
-
----
-
-## Scope and intent
-- Prefer small, reviewable changes that can be shipped continuously.
-- For non-trivial changes, start with a discussion or issue before implementation.
-- Optimize for correctness, consistency, and maintainability over novelty.
+Welcome! This guide enables AI agents (and their operators) to contribute productively and safely to cardano.org. It covers philosophy, repo map, quickstart, quality gates, guardrails, and content rules.
 
 ---
 
@@ -32,17 +25,17 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 ---
 
 ## Repository Map (Key Folders)
-- `src/` – Source code (React components, logic)
-- `docs/` – Documentation, guides, editorial content
-- `blog/` – Blog posts
-- `static/` – Static assets (images, downloads)
-- `scripts/` – Utility scripts
-- `docusaurus.config.js` – Docusaurus site config
-- `sidebars.js` – Sidebar/navigation config
-- `variables.js` – Repository and branch URLs used by build scripts
-- `src/css/custom.css` – Global styles and design tokens (see `docs/get-involved/design-tokens.md`)
-- `package.json` – Scripts, dependencies
-- `netlify.toml` – Netlify build/deploy config
+- `src/` - Source code (React components, logic)
+- `docs/` - Documentation, guides, editorial content
+- `blog/` - Blog posts
+- `static/` - Static assets (images, downloads)
+- `scripts/` - Utility scripts
+- `docusaurus.config.js` - Docusaurus site config
+- `sidebars.js` - Sidebar/navigation config
+- `variables.js` - Repository and branch URLs used by build scripts
+- `src/css/custom.css` - Global styles and design tokens (see `docs/get-involved/design-tokens.md`)
+- `package.json` - Scripts, dependencies
+- `netlify.toml` - Netlify build/deploy config
 
 ---
 
@@ -71,7 +64,8 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 ---
 
 ## Quality Gates (Before PR)
-- All code must pass: **build**
+- CI runs `yarn lint`, `yarn test`, and `yarn build --locale en` on every PR against `staging`. Run the same locally before opening a PR.
+- `yarn test` includes an editorial guard (`scripts/check-docs-style.js`) that fails on typographic dashes and arrow glyphs in `docs/` and `blog/`.
 - No new warnings or errors introduced
 - PR must not break local dev or production build
 - All new/changed reusable components must be documented in `docs/get-involved/components/`
@@ -84,20 +78,21 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - **No secrets or real keys** in code, config, or examples
 - **No mass-rewrites** (format all, wide refactor) without explicit OK
 - **No changes to build/CI** without clear motivation and approval
-- **No changes outside documented scope** (see CONTRIBUTING.md)
-- **No promo/marketing language** without prior discussion
+- **No changes outside documented scope** (see "Contribution boundaries" in README.md)
+- **No promo/marketing language** without prior discussion (the site is community-run, not a marketing channel)
+- **No changes to `yarn.lock`** (the PR template requires this)
 
 ---
 
 ## Pull Request (PR) Checklist
 Every PR should include:
 
-1. **Problem statement** – What is being solved/changed?
-2. **Approach** – How was it solved? (summary)
+1. **Problem statement** - What is being solved/changed?
+2. **Approach** - How was it solved? (summary)
 3. **Screenshots** (for UI/UX changes)
-4. **How to test** – Steps to verify
-5. **Related issue/discussion** – Link if available
-6. **Docs updated** – Yes/No (and where)
+4. **How to test** - Steps to verify
+5. **Related issue/discussion** - Link if available
+6. **Docs updated** - Yes/No (and where)
 
 ---
 
@@ -105,17 +100,7 @@ Every PR should include:
 - **Language:** US English, Oxford comma, gender-inclusive
 - **Claims:** Link to sources for factual statements, or avoid unverifiable claims
 - **Product/brand names:** Only as per `docs/get-involved/style-guide.md` (style guide) and `glossary/` (term definitions)
-- **No promo language** without explicit approval
 - **No unreviewed translations**
-
----
-
-## Best Practices for AI Agents
-- **Check for existing work:** Search issues/discussions before starting
-- **Document everything:** All reusable code/components/layouts/utilities must be documented in `docs/get-involved/`
-- **Consistency:** Follow style guide and glossary for all content and code comments
-- **Transparency:** PRs must clearly describe changes and link to related issues/discussions
-- **Collaboration:** Engage in discussions for feedback and alignment
 
 ---
 
