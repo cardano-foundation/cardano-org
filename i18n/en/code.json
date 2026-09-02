@@ -2561,16 +2561,16 @@
   "hardforks.transactionIds.description": {
     "message": "Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks."
   },
-  "learn.hero.title": {
+  "learn.hero.heading": {
     "message": "Learn Cardano"
   },
-  "learn.hero.description": {
+  "learn.hero.tagline": {
     "message": "From your first wallet to on-chain governance, one stage at a time."
   },
-  "learn.layout.title": {
+  "learn.meta.title": {
     "message": "Learn Cardano, a Guided Path from Beginner to Advanced"
   },
-  "learn.layout.description": {
+  "learn.meta.description": {
     "message": "A five-stage learning path through cardano.org: understand the basics, use Cardano safely, learn how the technology works, take part in governance and go deeper with research and courses."
   },
   "newsletter.hero.title": {
@@ -6654,7 +6654,7 @@
     "message": "Stage {number}"
   },
   "learn.intro.callout": {
-    "message": "Five stages, each with a handful of pages and a quiz. Read them in order if you are new, or jump in where you already are."
+    "message": "Five stages, each with a handful of pages, and a quiz to check the first four."
   },
   "learn.cta.title": {
     "message": "Want a certificate at the end? The Cardano Academy offers free courses on everything above."
@@ -6714,7 +6714,7 @@
     "message": "Where to get ada"
   },
   "learn.item.whereToGetAda.text": {
-    "message": "Trusted exchanges and other ways to get ada."
+    "message": "Centralized and decentralized exchanges, and other ways to get ada."
   },
   "learn.item.commonScams.title": {
     "message": "Protect your ada"
@@ -6771,7 +6771,7 @@
     "message": "Glossary"
   },
   "learn.item.glossary.text": {
-    "message": "Every term, explained, with mental models and sources."
+    "message": "Every Cardano term, explained in plain language, with mental models where they help."
   },
   "learn.stage.takePart.title": {
     "message": "Take part"
@@ -6834,19 +6834,19 @@
     "message": "Insights"
   },
   "learn.item.insights.text": {
-    "message": "Live and regularly refreshed on-chain data."
+    "message": "On-chain or regularly refreshed data."
   },
   "learn.item.genesis.title": {
     "message": "Genesis"
   },
   "learn.item.genesis.text": {
-    "message": "How Cardano started and who launched it."
+    "message": "The genesis distribution: how ada was first allocated."
   },
   "learn.item.entities.title": {
     "message": "Entities"
   },
   "learn.item.entities.text": {
-    "message": "The organizations that contribute to Cardano today."
+    "message": "Organizations building on Cardano today."
   },
   "learn.item.academy.title": {
     "message": "Cardano Academy"
@@ -6868,5 +6868,8 @@
   },
   "learn.level.beginner": {
     "message": "Beginner"
+  },
+  "learn.level.ariaLabel": {
+    "message": "Level: {label}"
   }
 }

@@ -25,7 +25,7 @@ const COURSE_URLS = {
 // Academy link with the site's UTM scheme. Every funnel into the Academy
 // (quiz result screens, the learn hub) builds its URL here so the campaign
 // parameters cannot drift between pages.
-export function academyUrl(academyKey, {medium, campaign, content}) {
+export function academyUrl(academyKey, {medium, campaign, content} = {}) {
   const url = new URL(COURSE_URLS[academyKey] || ACADEMY_LANDING);
   url.searchParams.set('utm_source', 'cardano_org');
   url.searchParams.set('utm_medium', medium);

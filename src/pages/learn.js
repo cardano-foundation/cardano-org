@@ -1,9 +1,9 @@
-// src/pages/learn.js
 import React from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { FaRoute } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -16,7 +16,7 @@ import RoleCard from "@site/src/components/Layout/RoleCard";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { jsonLdString } from "@site/src/utils/jsonLd";
-import { getLearningPath, getLevelLabel, ACADEMY_URL } from "@site/src/data/learningPath";
+import { getLearningPath, getLevelLabel, ACADEMY_CTA_URL } from "@site/src/data/learningPath";
 import styles from "./learn.module.css";
 
 const ACCENT_BY_LEVEL = { beginner: "blue", intermediate: "violet", advanced: "teal" };
@@ -24,8 +24,8 @@ const ACCENT_BY_LEVEL = { beginner: "blue", intermediate: "violet", advanced: "t
 function LearnHero() {
   return (
     <SiteHero
-      title={translate({ id: "learn.hero.title", message: "Learn Cardano" })}
-      description={translate({ id: "learn.hero.description", message: "From your first wallet to on-chain governance, one stage at a time." })}
+      title={translate({ id: "learn.hero.heading", message: "Learn Cardano" })}
+      description={translate({ id: "learn.hero.tagline", message: "From your first wallet to on-chain governance, one stage at a time." })}
       bannerType="dots"
     />
   );
@@ -35,7 +35,12 @@ function Stage({ stage, index }) {
   return (
     <>
       <Divider id={stage.anchor} text={translate({ id: "learn.stage.dividerLabel", message: "Stage {number}" }, { number: index + 1 })} />
-      <span className={styles.stageMeta}>{getLevelLabel(stage.level)}</span>
+      <span
+        className={styles.stageMeta}
+        aria-label={translate({ id: "learn.level.ariaLabel", message: "Level: {label}" }, { label: getLevelLabel(stage.level) })}
+      >
+        {getLevelLabel(stage.level)}
+      </span>
       <TitleWithText title={stage.title} description={stage.intro} headingDot={true} />
       <div className={styles.cardGrid}>
         {stage.items.map((item) => (
@@ -54,10 +59,11 @@ export default function Learn() {
   const { siteConfig } = useDocusaurusContext();
   const stages = getLearningPath();
   const siteUrl = siteConfig.url.replace(/\/$/, "");
+  const learnBaseUrl = useBaseUrl("/learn").replace(/\/$/, "");
   return (
     <Layout
-      title={translate({ id: "learn.layout.title", message: "Learn Cardano, a Guided Path from Beginner to Advanced" })}
-      description={translate({ id: "learn.layout.description", message: "A five-stage learning path through cardano.org: understand the basics, use Cardano safely, learn how the technology works, take part in governance and go deeper with research and courses." })}
+      title={translate({ id: "learn.meta.title", message: "Learn Cardano, a Guided Path from Beginner to Advanced" })}
+      description={translate({ id: "learn.meta.description", message: "A five-stage learning path through cardano.org: understand the basics, use Cardano safely, learn how the technology works, take part in governance and go deeper with research and courses." })}
     >
       <Head>
         <script type="application/ld+json">
@@ -69,7 +75,7 @@ export default function Learn() {
               "@type": "ListItem",
               "position": index + 1,
               "name": stage.title,
-              "url": `${siteUrl}/learn/#${stage.anchor}`,
+              "url": `${siteUrl}${learnBaseUrl}/#${stage.anchor}`,
             })),
           })}
         </script>
@@ -81,7 +87,7 @@ export default function Learn() {
           <BoundaryBox>
             <SpacerBox size="small" />
             <HighlightCallout icon={<FaRoute />}>
-              {translate({ id: "learn.intro.callout", message: "Five stages, each with a handful of pages and a quiz. Read them in order if you are new, or jump in where you already are." })}
+              {translate({ id: "learn.intro.callout", message: "Five stages, each with a handful of pages, and a quiz to check the first four." })}
             </HighlightCallout>
             {stages.map((stage, index) => (
               <Stage key={stage.key} stage={stage} index={index} />
@@ -93,7 +99,7 @@ export default function Learn() {
             <CtaOneColumn
               title={translate({ id: "learn.cta.title", message: "Want a certificate at the end? The Cardano Academy offers free courses on everything above." })}
               buttonLabel={translate({ id: "learn.cta.button", message: "Explore the Academy" })}
-              buttonLink={ACADEMY_URL}
+              buttonLink={ACADEMY_CTA_URL}
             />
             <SpacerBox size="small" />
           </BoundaryBox>

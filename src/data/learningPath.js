@@ -2,13 +2,17 @@ import { translate } from "@docusaurus/Translate";
 import { academyUrl } from "@site/src/data/quiz/academy";
 import {
   FaInfoCircle, FaCoins, FaWallet, FaPlay,
-  FaSearch, FaShoppingCart, FaShieldAlt, FaLayerGroup, FaThLarge,
+  FaSearch, FaShoppingCart, FaShieldAlt, FaHandshake, FaLayerGroup, FaThLarge,
   FaCog, FaBalanceScale, FaCodeBranch, FaBook,
   FaVoteYea, FaUsers, FaPiggyBank, FaScroll, FaServer, FaCalculator,
   FaFlask, FaChartLine, FaHistory, FaBuilding, FaGraduationCap, FaCode,
 } from "react-icons/fa";
 
-export const ACADEMY_URL = academyUrl("landing", { medium: "learn", campaign: "learn_hub" });
+// The Cardano Academy item in the go-deeper stage and the bottom-of-page CTA
+// link to the same landing page but need distinct utm_content values so
+// analytics can tell the two entry points apart.
+export const ACADEMY_CARD_URL = academyUrl("landing", { medium: "learn", campaign: "learn_hub", content: "go-deeper-card" });
+export const ACADEMY_CTA_URL = academyUrl("landing", { medium: "learn", campaign: "learn_hub", content: "page-cta" });
 
 // The five stages of /learn. Only routes that exist may appear here, the
 // site build fails on broken links. New explainer pages join a stage by
@@ -38,9 +42,9 @@ export function getLearningPath() {
       quiz: translate({ id: "learn.stage.use.quiz", message: "Check what you learned with the [wallets and security quizzes](/quiz)." }),
       items: [
         { key: "wallets", href: "/wallets", icon: <FaSearch />, title: translate({ id: "learn.item.wallets.title", message: "Find a wallet" }), text: translate({ id: "learn.item.wallets.text", message: "Compare wallets by platform, features and hardware support." }) },
-        { key: "where-to-get-ada", href: "/where-to-get-ada", icon: <FaShoppingCart />, title: translate({ id: "learn.item.whereToGetAda.title", message: "Where to get ada" }), text: translate({ id: "learn.item.whereToGetAda.text", message: "Trusted exchanges and other ways to get ada." }) },
+        { key: "where-to-get-ada", href: "/where-to-get-ada", icon: <FaShoppingCart />, title: translate({ id: "learn.item.whereToGetAda.title", message: "Where to get ada" }), text: translate({ id: "learn.item.whereToGetAda.text", message: "Centralized and decentralized exchanges, and other ways to get ada." }) },
         { key: "common-scams", href: "/common-scams", icon: <FaShieldAlt />, title: translate({ id: "learn.item.commonScams.title", message: "Protect your ada" }), text: translate({ id: "learn.item.commonScams.text", message: "The scams that catch newcomers, and how to spot them." }) },
-        { key: "delegation", href: "/stake-pool-delegation", icon: <FaLayerGroup />, title: translate({ id: "learn.item.delegation.title", message: "Delegate your ada" }), text: translate({ id: "learn.item.delegation.text", message: "Earn rewards by delegating to a stake pool, without giving up custody." }) },
+        { key: "delegation", href: "/stake-pool-delegation", icon: <FaHandshake />, title: translate({ id: "learn.item.delegation.title", message: "Delegate your ada" }), text: translate({ id: "learn.item.delegation.text", message: "Earn rewards by delegating to a stake pool, without giving up custody." }) },
         { key: "apps", href: "/apps", icon: <FaThLarge />, title: translate({ id: "learn.item.apps.title", message: "Explore apps" }), text: translate({ id: "learn.item.apps.text", message: "Curated wallets, exchanges, DeFi, identity and more." }) },
       ],
     },
@@ -56,7 +60,7 @@ export function getLearningPath() {
         { key: "stablecoins", href: "/stablecoins", icon: <FaBalanceScale />, title: translate({ id: "learn.item.stablecoins.title", message: "Stablecoins" }), text: translate({ id: "learn.item.stablecoins.text", message: "Stable value on Cardano: how the main stablecoins work and where to use them." }) },
         { key: "layer-2", href: "/layer-2", icon: <FaLayerGroup />, title: translate({ id: "learn.item.layer2.title", message: "Layer 2" }), text: translate({ id: "learn.item.layer2.text", message: "Hydra, Midnight and the other networks that extend Cardano." }) },
         { key: "hardforks", href: "/hardforks", icon: <FaCodeBranch />, title: translate({ id: "learn.item.hardforks.title", message: "Hard forks" }), text: translate({ id: "learn.item.hardforks.text", message: "Every protocol upgrade since launch, and how upgrades happen." }) },
-        { key: "glossary", href: "/glossary", icon: <FaBook />, title: translate({ id: "learn.item.glossary.title", message: "Glossary" }), text: translate({ id: "learn.item.glossary.text", message: "Every term, explained, with mental models and sources." }) },
+        { key: "glossary", href: "/glossary", icon: <FaBook />, title: translate({ id: "learn.item.glossary.title", message: "Glossary" }), text: translate({ id: "learn.item.glossary.text", message: "Every Cardano term, explained in plain language, with mental models where they help." }) },
       ],
     },
     {
@@ -83,10 +87,10 @@ export function getLearningPath() {
       intro: translate({ id: "learn.stage.goDeeper.intro", message: "Research, data and courses for people who want the full picture." }),
       items: [
         { key: "research", href: "/research", icon: <FaFlask />, title: translate({ id: "learn.item.research.title", message: "Research" }), text: translate({ id: "learn.item.research.text", message: "The peer-reviewed papers Cardano is built on." }) },
-        { key: "insights", href: "/insights", icon: <FaChartLine />, title: translate({ id: "learn.item.insights.title", message: "Insights" }), text: translate({ id: "learn.item.insights.text", message: "Live and regularly refreshed on-chain data." }) },
-        { key: "genesis", href: "/genesis", icon: <FaHistory />, title: translate({ id: "learn.item.genesis.title", message: "Genesis" }), text: translate({ id: "learn.item.genesis.text", message: "How Cardano started and who launched it." }) },
-        { key: "entities", href: "/entities", icon: <FaBuilding />, title: translate({ id: "learn.item.entities.title", message: "Entities" }), text: translate({ id: "learn.item.entities.text", message: "The organizations that contribute to Cardano today." }) },
-        { key: "academy", href: ACADEMY_URL, icon: <FaGraduationCap />, title: translate({ id: "learn.item.academy.title", message: "Cardano Academy" }), text: translate({ id: "learn.item.academy.text", message: "Free, self-paced courses with certificates." }) },
+        { key: "insights", href: "/insights", icon: <FaChartLine />, title: translate({ id: "learn.item.insights.title", message: "Insights" }), text: translate({ id: "learn.item.insights.text", message: "On-chain or regularly refreshed data." }) },
+        { key: "genesis", href: "/genesis", icon: <FaHistory />, title: translate({ id: "learn.item.genesis.title", message: "Genesis" }), text: translate({ id: "learn.item.genesis.text", message: "The genesis distribution: how ada was first allocated." }) },
+        { key: "entities", href: "/entities", icon: <FaBuilding />, title: translate({ id: "learn.item.entities.title", message: "Entities" }), text: translate({ id: "learn.item.entities.text", message: "Organizations building on Cardano today." }) },
+        { key: "academy", href: ACADEMY_CARD_URL, icon: <FaGraduationCap />, title: translate({ id: "learn.item.academy.title", message: "Cardano Academy" }), text: translate({ id: "learn.item.academy.text", message: "Free, self-paced courses with certificates." }) },
         { key: "developers", href: "https://developers.cardano.org", icon: <FaCode />, title: translate({ id: "learn.item.developers.title", message: "Developer portal" }), text: translate({ id: "learn.item.developers.text", message: "Build on Cardano, from first transaction to smart contracts." }) },
       ],
     },
