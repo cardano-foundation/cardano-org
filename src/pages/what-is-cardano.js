@@ -2,7 +2,9 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
-import { FaInfoCircle } from "react-icons/fa";
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { FaInfoCircle, FaUser, FaBuilding, FaLandmark, FaWallet, FaShoppingCart, FaLayerGroup, FaVoteYea, FaCode } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -12,6 +14,10 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import RoleCard from "@site/src/components/Layout/RoleCard";
+import ProofPointsList from "@site/src/components/ProofPointsList";
+import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
+import styles from "./what-is-cardano.module.css";
 
 function HomepageHeader() {
   return (
@@ -157,6 +163,114 @@ function HowItWorksSection() {
   );
 }
 
+function DifferentSection() {
+  return (
+    <>
+      <Divider
+        id="what-makes-it-different"
+        text={translate({ id: "whatIsCardano.divider.different", message: "Why Cardano" })}
+      />
+      <ProofPointsList
+        title={translate({ id: "whatIsCardano.different.title", message: "What makes Cardano different?" })}
+        points={getProofPoints()}
+      />
+    </>
+  );
+}
+
+function UsedForSection() {
+  return (
+    <>
+      <Divider id="used-for" text={translate({ id: "whatIsCardano.divider.usedFor", message: "Use cases" })} />
+      <TitleWithText
+        title={translate({ id: "whatIsCardano.usedFor.title", message: "What is Cardano used for?" })}
+        headingDot={true}
+      />
+      <div className={styles.cardGrid}>
+        <RoleCard accent="blue" icon={<FaUser />} title={translate({ id: "whatIsCardano.usedFor.individuals.title", message: "For individuals" })}>
+          {translate({
+            id: "whatIsCardano.usedFor.individuals.text",
+            message:
+              "Send and receive value anywhere, hold stablecoins, stake ada for rewards, collect and trade digital assets, and vote on how the network is run. Everything from a wallet you control.",
+          })}
+          <Link to="/get-started" className={styles.cardLink}>
+            {translate({ id: "whatIsCardano.usedFor.individuals.link", message: "See what you can do" })}
+          </Link>
+        </RoleCard>
+        <RoleCard accent="violet" icon={<FaBuilding />} title={translate({ id: "whatIsCardano.usedFor.business.title", message: "For businesses" })}>
+          {translate({
+            id: "whatIsCardano.usedFor.business.text",
+            message:
+              "Issue tokens without writing a contract, settle payments with predictable fees, anchor documents and supply-chain data on a public ledger, and build applications on an open platform.",
+          })}
+          <Link to="/solutions" className={styles.cardLink}>
+            {translate({ id: "whatIsCardano.usedFor.business.link", message: "Solutions for enterprise" })}
+          </Link>
+        </RoleCard>
+        <RoleCard accent="teal" icon={<FaLandmark />} title={translate({ id: "whatIsCardano.usedFor.public.title", message: "For the public sector" })}>
+          {translate({
+            id: "whatIsCardano.usedFor.public.text",
+            message:
+              "Digital identity, verifiable credentials, transparent distribution of public funds and tamper-evident records, built on infrastructure no single vendor controls.",
+          })}
+          <Link to="/use-cases" className={styles.cardLink}>
+            {translate({ id: "whatIsCardano.usedFor.public.link", message: "Explore use cases" })}
+          </Link>
+        </RoleCard>
+      </div>
+      <TitleWithText
+        description={translate({
+          id: "whatIsCardano.usedFor.outro",
+          message: "Hundreds of applications already run on Cardano: wallets, exchanges, lending, identity, games and more.",
+        })}
+        buttonLabel={translate({ id: "whatIsCardano.usedFor.button", message: "Browse Cardano apps" })}
+        buttonLink="/apps"
+      />
+    </>
+  );
+}
+
+function GetStartedSection() {
+  const steps = [
+    { key: "wallet", icon: <FaWallet />, accent: "blue", to: "/what-is-a-wallet",
+      title: translate({ id: "whatIsCardano.start.wallet.title", message: "Get a wallet" }),
+      text: translate({ id: "whatIsCardano.start.wallet.text", message: "Your keys, your ada. Learn what a wallet is and pick one that fits you." }) },
+    { key: "ada", icon: <FaShoppingCart />, accent: "violet", to: "/where-to-get-ada",
+      title: translate({ id: "whatIsCardano.start.ada.title", message: "Get ada" }),
+      text: translate({ id: "whatIsCardano.start.ada.text", message: "Find trusted exchanges and other ways to get your first ada." }) },
+    { key: "stake", icon: <FaLayerGroup />, accent: "teal", to: "/stake-pool-delegation",
+      title: translate({ id: "whatIsCardano.start.stake.title", message: "Stake your ada" }),
+      text: translate({ id: "whatIsCardano.start.stake.text", message: "Delegate to a stake pool, help secure the network, earn rewards." }) },
+    { key: "vote", icon: <FaVoteYea />, accent: "blue", to: "/governance",
+      title: translate({ id: "whatIsCardano.start.vote.title", message: "Have your say" }),
+      text: translate({ id: "whatIsCardano.start.vote.text", message: "Take part in governance and shape where Cardano goes next." }) },
+    { key: "build", icon: <FaCode />, accent: "violet", href: "https://developers.cardano.org",
+      title: translate({ id: "whatIsCardano.start.build.title", message: "Build on Cardano" }),
+      text: translate({ id: "whatIsCardano.start.build.text", message: "Head to the developer portal and ship your first project." }) },
+  ];
+  return (
+    <>
+      <Divider id="get-started" text={translate({ id: "whatIsCardano.divider.start", message: "Get started" })} />
+      <TitleWithText
+        title={translate({ id: "whatIsCardano.start.title", message: "How do I start using Cardano?" })}
+        headingDot={true}
+      />
+      <div className={styles.cardGrid}>
+        {steps.map((step) => (
+          <RoleCard key={step.key} accent={step.accent} icon={step.icon} title={step.title} href={step.to || step.href}>
+            {step.text}
+          </RoleCard>
+        ))}
+      </div>
+      <TitleWithText
+        description={translate({ id: "whatIsCardano.start.outro", message: "Prefer a guided walk-through? The getting started page takes you from download to first transaction." })}
+        buttonLabel={translate({ id: "whatIsCardano.start.button", message: "Start step by step" })}
+        buttonLink="/get-started"
+      />
+    </>
+  );
+}
+
 export default function WhatIsCardano() {
   return (
     <Layout
@@ -178,6 +292,9 @@ export default function WhatIsCardano() {
             <WhatIsCardanoSection />
             <AdaSection />
             <HowItWorksSection />
+            <DifferentSection />
+            <UsedForSection />
+            <GetStartedSection />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
