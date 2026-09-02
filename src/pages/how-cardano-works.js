@@ -16,7 +16,6 @@ import FAQSection from "@site/src/components/FAQSection";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { getHowCardanoWorksFAQ } from "@site/src/data/howCardanoWorksFAQ";
-import styles from "./how-cardano-works.module.css";
 
 function HomepageHeader() {
   return (
