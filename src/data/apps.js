@@ -371,7 +371,7 @@ export const Showcases = [
   {
     title: "Daedalus",
     description:
-      "Full-node Cardano wallet developed by IOG, one of Cardano's founding entities. Validates the chain locally rather than trusting third parties.",
+      "Full-node Cardano wallet developed by IOG, one of the three organizations that launched Cardano. Validates the chain locally rather than trusting third parties.",
     tagline: "Full-node Cardano wallet by IOG",
     icon: "/img/app-icons/daedalus.svg",
     website: "https://daedaluswallet.io",
