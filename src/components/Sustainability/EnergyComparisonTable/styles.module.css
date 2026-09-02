@@ -1,0 +1,173 @@
+/*
+ * EnergyComparisonTable: card-wrapped, horizontally scrollable comparison
+ * table with an inline electricity bar per row. Infima's global table styles
+ * (block display, striped rows, cell borders) are reset here so the rows match
+ * the /sustainability design: 1px row dividers only, no backgrounds.
+ */
+
+.card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-xl);
+  padding: 8px 28px;
+}
+
+.scroll {
+  /* Positioned so the visually hidden captions and cells inside the table are
+     clipped by this scroll container instead of widening the page. */
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table reset (Infima renders tables as striped, bordered blocks) */
+
+.table {
+  display: table;
+  width: 100%;
+  min-width: 900px;
+  margin: 0;
+  border-collapse: collapse;
+  overflow: visible;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.table thead,
+.table tr,
+.table tr:nth-child(2n) {
+  background: transparent;
+  border-top: 0;
+}
+
+.table th,
+.table td {
+  border: 0;
+  padding: 14px 5px;
+  vertical-align: middle;
+  background: transparent;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+/* Visually hidden, still read by assistive technology (caption, empty cells) */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header row */
+
+.th {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  text-align: left;
+}
+
+.colNetwork {
+  width: 200px;
+}
+
+.colConsensus {
+  width: 260px;
+}
+
+.colPower {
+  width: 180px;
+}
+
+.colCo2 {
+  width: 180px;
+}
+
+/* Body cells */
+
+.num {
+  text-align: right;
+}
+
+.table td.num {
+  white-space: nowrap;
+}
+
+.network {
+  font-weight: 600;
+  text-align: left;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.rowHighlight .network {
+  font-weight: 700;
+}
+
+.consensus {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.electricityValue {
+  display: block;
+  font-weight: 600;
+}
+
+/* Electricity bar: a 6px track under the value with a right-aligned fill */
+
+.track {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  margin-top: 6px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 3px;
+  background: var(--ifm-color-emphasis-400);
+}
+
+.barHighlight {
+  background: var(--ifm-color-primary);
+}
+
+/* Rows that exceed the axis: full width, fading in from the left */
+.barOverflow {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--ifm-color-emphasis-900) 30%,
+    var(--ifm-color-emphasis-900) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 8px 16px;
+  }
+}

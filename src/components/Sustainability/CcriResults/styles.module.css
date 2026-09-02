@@ -1,0 +1,103 @@
+/*
+ * CcriResults: lettered indicator groups for the /sustainability page.
+ * Each group is a row (letter + group name | indicators grid) closed by a
+ * hairline, matching the "Key Cardano CCRI Results" section of the design.
+ * Every color comes from the Infima neutral scale so the block inverts in
+ * dark mode without extra rules.
+ */
+
+.results {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Group row: 120px label column + fluid indicators column (28px from the design) */
+
+.group {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: var(--site-space-lg);
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.groupLabel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-3xs);
+}
+
+.letter {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ifm-color-primary);
+}
+
+.groupName {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Indicators: definition list laid out as a responsive grid */
+
+.indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--site-space-lg);
+  margin: 0;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-2xs);
+  min-width: 0;
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Value + unit share a baseline; the unit wraps under the value if space runs out */
+
+.valueRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+  margin: 0;
+  margin-top: auto;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.unit {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 768px) {
+  .group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-md);
+  }
+}

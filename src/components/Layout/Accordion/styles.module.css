@@ -1,0 +1,116 @@
+/*
+ * Accordion: plain rows on the page background, separated by hairlines.
+ * Matches the FAQ block of the /sustainability design (Figma node 544:337):
+ * 14px semibold question, plus / minus icon on the right, 14px / 23px muted
+ * answer capped at 940px. No card surface, so it inverts for free in dark mode.
+ */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.item {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* The h3 is only there for document structure; the button carries the type. */
+.heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--site-space-sm);
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-900);
+  transition: color var(--site-duration-base) var(--site-ease);
+}
+
+.trigger:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Expanded row: pull the answer closer to its question (the design shows a
+   14px gap between the two rather than the full row padding). */
+.itemOpen .trigger {
+  padding-bottom: var(--site-space-xs);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.question {
+  flex: 1;
+  min-width: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--ifm-color-emphasis-700);
+  transition: color var(--site-duration-base) var(--site-ease);
+}
+
+.trigger:hover .icon {
+  color: var(--ifm-color-primary);
+}
+
+.panel {
+  max-width: 940px;
+  padding: 0 0 22px;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.panel p {
+  margin: 0 0 var(--site-space-xs);
+}
+
+.panel ul {
+  margin: 0 0 var(--site-space-xs);
+  padding-left: 1.25rem;
+}
+
+.panel p:last-child,
+.panel ul:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .trigger {
+    padding: var(--site-space-sm) 0;
+  }
+
+  .panel {
+    padding-bottom: var(--site-space-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger,
+  .icon {
+    transition: none;
+  }
+}

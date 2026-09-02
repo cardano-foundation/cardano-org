@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-sm);
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: var(--site-space-md);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-xl);
+  background: var(--ifm-background-surface-color);
+  color: inherit;
+}
+
+/*
+ * Index tile: fixed light-blue tint with a translucent brand-blue variant in
+ * dark mode, matching the Layer2Card logo tile. The 10px radius comes from the
+ * design and sits between the md (8px) and lg (12px) radius tokens.
+ */
+.index {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e0f0ff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme="dark"] .index {
+  background: rgba(0, 51, 173, 0.25);
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.body {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.body p {
+  margin: 0;
+}
+
+.body p + p {
+  margin-top: var(--site-space-2xs);
+}
