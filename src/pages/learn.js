@@ -4,6 +4,7 @@ import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 import { FaRoute } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -12,14 +13,25 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
-import RoleCard from "@site/src/components/Layout/RoleCard";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { getLearningPath, getLevelLabel, ACADEMY_CTA_URL } from "@site/src/data/learningPath";
 import styles from "./learn.module.css";
 
-const ACCENT_BY_LEVEL = { beginner: "blue", intermediate: "violet", advanced: "teal" };
+// Compact link card for the stage grids. RoleCard's large icon halo leaves
+// too little room for text in a dense three-column directory.
+function PathCard({ item }) {
+  return (
+    <Link to={item.href} className={styles.card}>
+      <span className={styles.cardIcon} aria-hidden="true">
+        {item.icon}
+      </span>
+      <span className={styles.cardTitle}>{item.title}</span>
+      <span className={styles.cardText}>{item.text}</span>
+    </Link>
+  );
+}
 
 function LearnHero() {
   return (
@@ -44,9 +56,7 @@ function Stage({ stage, index }) {
       <TitleWithText title={stage.title} description={stage.intro} headingDot={true} />
       <div className={styles.cardGrid}>
         {stage.items.map((item) => (
-          <RoleCard key={item.key} accent={ACCENT_BY_LEVEL[stage.level]} icon={item.icon} title={item.title} href={item.href}>
-            {item.text}
-          </RoleCard>
+          <PathCard key={item.key} item={item} />
         ))}
       </div>
       {stage.quiz && <TitleWithText description={stage.quiz} />}
