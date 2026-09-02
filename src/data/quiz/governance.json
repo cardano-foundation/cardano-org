@@ -1,0 +1,165 @@
+{
+  "id": "governance",
+  "title": "Governance and Voltaire",
+  "description": "DReps, governance actions, and how decisions are made on Cardano.",
+  "questionCount": 6,
+  "difficulty": "intermediate",
+  "questions": [
+    {
+      "id": "governance-1",
+      "question": "What is a DRep?",
+      "options": [
+        "A representative that ada holders can delegate their on-chain voting power to",
+        "A type of Cardano stake pool that only accepts delegation from other pools",
+        "The technical name for a Cardano hardware wallet",
+        "A native token used exclusively to pay governance fees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's glossary defines a DRep, short for Delegated Representative, as \"a representative that ada holders delegate their on-chain voting power to, so the DRep votes on governance actions on their behalf,\" comparing it to choosing someone to represent your interests in parliament. A DRep is a role in the governance system, not a type of stake pool, a wallet, or a token.",
+      "sourceUrl": "https://cardano.org/glossary/drep/"
+    },
+    {
+      "id": "governance-2",
+      "question": "According to CIP-1694, how does registering as a DRep or delegating your vote compare to the existing stake pool system?",
+      "options": [
+        "It follows the same basic pattern, an ada holder can register to represent themselves, or instead delegate that role to someone else",
+        "It replaces stake pool delegation entirely, one certificate now controls both block production and voting",
+        "It is only available to people who already operate a stake pool",
+        "It requires first deregistering from any stake pool before it can be used"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694's own abstract draws the comparison directly, \"as with stake pools, any Ada holder may register to be a DRep and so choose to represent themselves and/or others. Also, as with stake pools, Ada holders may, instead, delegate their voting rights to any other DRep.\" The same two options that exist for stake, running your own pool or delegating to one, exist for voting, registering as a DRep yourself or delegating to one, the proposal deliberately draws that comparison to explain the new system. As with registering a stake pool, registering as a DRep isn't free of cost either, CIP-1694 states that \"DRep registration certificates include... a deposit,\" a refundable amount whose size is a governance-set parameter rather than a fixed protocol constant.",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-3",
+      "question": "Which three governance bodies can vote on Cardano governance actions?",
+      "options": [
+        "Delegated representatives (DReps), the Constitutional Committee, and stake pool operators (SPOs)",
+        "The Cardano Foundation, IOG, and EMURGO",
+        "Ada holders, exchanges, and hardware wallet manufacturers",
+        "The core developers, the marketing team, and the community moderators"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's governance documentation names these three groups as the voting bodies, \"delegated representatives (DReps), the constitutional committee, and stake pool operators (SPOs).\" Which of them must approve a given governance action depends on its type, CIP-1694 states that \"different kinds of governance actions have different ratification requirements but always involve two of the three governance bodies, with the exception of a hard-fork initiation and security-relevant protocol parameters, which requires ratification by all governance bodies.\" This is a different set of three from EMURGO, Input Output, and the Cardano Foundation, which the same governance documentation calls the \"pioneer entities\" of Cardano, governance voting roles are open to participation by ada holders generally, not tied to any single pioneer entity.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/governance-overview"
+    },
+    {
+      "id": "governance-4",
+      "question": "What is a governance action?",
+      "options": [
+        "A proposal submitted on-chain, as a transaction, for the community to vote on",
+        "A change to the Cardano source code made directly by developers without any vote",
+        "An automatic adjustment the protocol makes on its own each epoch",
+        "A private discussion between the Cardano Foundation and IOG"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694 defines it directly, \"a governance action is an on-chain event that is triggered by a transaction and has a deadline after which it cannot be enacted.\" It is a formal, public, on-chain proposal, not a behind-the-scenes code change, an automatic protocol adjustment, or a private conversation between organizations.",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-5",
+      "question": "Who is allowed to submit a governance action for a vote?",
+      "options": [
+        "Any ada holder",
+        "Only registered DReps",
+        "Only the Constitutional Committee",
+        "Only stake pool operators"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694 confirms that \"any Ada holder can submit a governance action to the chain,\" so no special role, such as being a DRep, an SPO, or a Constitutional Committee member, is required to propose one. It also states that the submitter \"must provide a deposit of govActionDeposit Lovelace, which will be returned when the action is finalized (whether it is ratified or has expired),\" a refundable deposit whose exact size is a governance-set parameter, not a fixed protocol cost. Submitting is still open to any ada holder in that sense, it just isn't free of that refundable deposit, and it remains separate from the three bodies that vote on whether a submitted action passes.",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-6",
+      "question": "What is the role of the Constitutional Committee in Cardano governance?",
+      "options": [
+        "To check whether governance actions comply with the Cardano Constitution, not to judge whether they are good ideas",
+        "To write and personally approve every new line of Cardano's source code",
+        "To set the exchange rate at which ada is bought and sold",
+        "To act as the sole body allowed to propose governance actions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's governance documentation describes the Constitutional Committee as \"the elected representatives who ensure governance actions comply with the Cardano constitution.\" Their role is to check governance actions against the constitution's rules, they don't write Cardano's code, set ada's price, or hold exclusive rights to submit governance actions themselves, any ada holder can do that.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/governance-overview"
+    },
+    {
+      "id": "governance-7",
+      "question": "What is the Cardano Constitution?",
+      "options": [
+        "The founding document that puts the community's shared values and vision into a set of rules and principles",
+        "A single stake pool that only wealthy ada holders can join",
+        "The legal name of the smart contract platform used to write Plutus scripts",
+        "A private contract between the Cardano Foundation and each individual DRep"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's governance overview describes the constitution as \"designed to be the founding document that brings together the community's values and vision and puts them into text as a set of rules and principles to abide by to maintain the sustainability of the Cardano network.\" It's a shared reference document for the whole governance system, not a stake pool, a smart contract platform, or a private agreement limited to any one group.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/governance-overview"
+    },
+    {
+      "id": "governance-8",
+      "question": "What did CIP-1694 do to Cardano's earlier, more limited governance mechanism?",
+      "options": [
+        "It removed the existing MIR and genesis certificate-based governance support, replacing it with on-chain governance actions and votes",
+        "It left the previous mechanism fully in place, running permanently alongside the new one",
+        "It applied only on testnets, mainnet kept using the older mechanism indefinitely",
+        "It required every existing genesis certificate to be individually reissued by IOG before the new system would take effect"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694's own text states that \"the existing specialized governance support for protocol parameter updates and MIR certificates will be removed, and two new fields will be added to normal transaction bodies for: 1. governance actions 2. votes,\" and separately confirms that \"the current MIR and genesis certificates will be removed.\" The older, more limited mechanism wasn't kept running in parallel, restricted to testnets, or handled through case-by-case reissuance, it was removed and replaced outright by the new governance action and voting system.",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-9",
+      "question": "What principle does CIP-1694 use to determine how much voting power an ada holder or their DRep has?",
+      "options": [
+        "\"One Lovelace = one vote,\" voting power is proportional to the ada delegated",
+        "\"One wallet = one vote,\" regardless of how much ada that wallet holds",
+        "\"One DRep = one vote,\" regardless of how many people delegate to them",
+        "Voting power is assigned randomly to a subset of ada holders each epoch"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694's abstract states, \"the most crucial aspect of this proposal is therefore the notion of 'one Lovelace = one vote.'\" This means voting power scales with the amount of ada someone has delegated to their choice, rather than being a flat one-per-wallet or one-per-DRep count, or something assigned at random.",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-11",
+      "question": "What happens to a governance action if it is not ratified before it expires?",
+      "options": [
+        "It cannot be enacted",
+        "It is automatically resubmitted for another vote the following epoch",
+        "It is enacted anyway, since submitting it already counts as approval",
+        "The ada holder who submitted it is barred from submitting future actions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CIP-1694 builds the deadline into the definition itself, a governance action \"has a deadline after which it cannot be enacted.\" An action that runs out its window without being ratified simply cannot be enacted, it is not automatically resubmitted, and it does not count as approved by default. The submitter still gets their deposit back even then, it \"will be returned when the action is finalized (whether it is ratified or has expired).\"",
+      "sourceUrl": "https://cips.cardano.org/cip/CIP-1694"
+    },
+    {
+      "id": "governance-12",
+      "question": "What does an info action do in Cardano governance?",
+      "options": [
+        "It records a community vote on a topic without changing anything on-chain",
+        "It withdraws ada from the treasury once a majority approves it",
+        "It changes a protocol parameter automatically at the end of the epoch",
+        "It removes a DRep who has been inactive for too long"
+      ],
+      "correctAnswer": 0,
+      "explanation": "An info action is information only. It lets DReps, the Constitutional Committee, and stake pool operators vote on any topic of community interest \"without that vote making any direct change to the ledger or treasury.\" Info actions were the only type DReps could vote on during the bootstrap phase between the Chang and Plomin hard forks, which made them an on-ramp for governance participation. Treasury withdrawals, parameter changes, and committee updates are separate action types that do change something on-chain.",
+      "sourceUrl": "https://cardano.org/glossary/info-action/"
+    },
+    {
+      "id": "governance-13",
+      "question": "What was the Voltaire phase designed to bring to Cardano's governance?",
+      "options": [
+        "The ability for network participants to propose and vote on improvement proposals, making the network self-sustaining",
+        "A rule that only the original founding organizations may ever vote",
+        "The removal of stake pools from the network entirely",
+        "A fixed, unchangeable set of protocol parameters that no vote could ever alter"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to founding organizations, removing stake pools, or freezing parameters against future votes.",
+      "sourceUrl": "https://roadmap.cardano.org/en/voltaire/"
+    }
+  ]
+}

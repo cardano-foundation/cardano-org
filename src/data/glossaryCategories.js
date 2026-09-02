@@ -103,7 +103,7 @@ export const LEARNING_PATHS = [
     id: 'new-to-cardano',
     title: 'New to Cardano?',
     description: 'Start here if you are new to the ecosystem.',
-    href: '/get-started',
+    href: '/learn',
     icon: 'shapes-solid',
     color: '#0033ad',
     audience: 'Beginner',

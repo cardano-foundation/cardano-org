@@ -32,7 +32,6 @@ The [`<AppList>`](/docs/get-involved/components/app-list) component displays a c
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `categories` | `string[]` | `[]` | Array of category ids to filter apps (e.g., `['dex']`, `['wallet']`). Empty array shows all apps. |
-| `beginnerFriendly` | `boolean` | `false` | When true, only apps with `beginnerFriendly: true` are shown. |
 | `limit` | `number` | `5` | Maximum number of apps to display. Set to `null` to show all. |
 | `categoryTitle` | `string` | `"Apps"` | Title displayed in the component header. |
 | `showTxCount` | `boolean` | `false` | Whether to display transaction counts next to each app. |

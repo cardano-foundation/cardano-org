@@ -81,7 +81,6 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      category: "dex",                  // exactly one (see categories below)
      properties: ["opensource"],       // zero or more (see properties below)
      maintainerPick: false,            // leave false; maintainers set this
-     beginnerFriendly: false,          // leave false unless verifiably beginner-friendly
      x: "yourproject",                 // OPTIONAL - X (Twitter) handle without @, shown on detail page
    }
    ```
@@ -98,14 +97,55 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - `mobile`: first-class native mobile app (not a responsive site)
    - `nft`: supports or uses NFTs (do not use for image-based NFT collections)
    - `opensource`: public source repository; you must also fill in `source`
+   - `drepdelegation`: voting power can be delegated to a DRep directly inside the app. Entries carrying this flag are listed on [/governance/delegate](/governance/delegate)
 
-7. **`maintainerPick` and `beginnerFriendly`**
+7. **`maintainerPick`**
 
-   Both default to `false` for new submissions.
-   - `maintainerPick: true` is set only by page maintainers via the [Maintainer picks](/docs/get-involved/maintainer-picks) process.
-   - `beginnerFriendly: true` should only be set if onboarding is genuinely smooth for newcomers (no jargon walls, sensible defaults, working out of the box). Reviewers may push back if this looks promotional.
+   Defaults to `false` for new submissions. `maintainerPick: true` is set only by page maintainers via the [Maintainer picks](/docs/get-involved/maintainer-picks) process.
 
-8. **Optional Fields Explained**
+8. **Wallets only: `walletFeatures`** ⚠️
+
+   Entries with `category: "wallet"` must carry a `walletFeatures` object. It powers the [wallet finder](/wallets) filters, and the build rejects a wallet entry that leaves it out, because such an entry would be invisible on `/wallets`.
+
+   ```javascript
+   walletFeatures: {
+     platforms: ["ios", "android"],   // one or more
+     custody: "non-custodial",        // exactly one
+     features: ["staking", "nft"],    // zero or more
+     type: "light",                   // exactly one
+   },
+   ```
+
+   **`platforms`** (one or more):
+   - `ios`, `android`: native mobile apps
+   - `browser`: browser extension
+   - `desktop`: installable Windows, macOS, or Linux application
+   - `web`: usable in a browser without installing anything
+
+   **`custody`** (exactly one): `non-custodial` (the user holds the keys) or `custodial` (a third party holds them).
+
+   **`type`** (exactly one): `light` (talks to the network through a server) or `full-node` (downloads and verifies the chain itself).
+
+   **`features`** (zero or more), claim only what ships today:
+   - `staking`: delegate ada to a stake pool from inside the wallet
+   - `governance`: on-chain voting or DRep delegation
+   - `nft`: view, send, and manage NFTs
+   - `multi-asset`: manage native tokens beyond ada
+   - `dapp-connector`: connect to DApps (CIP-30)
+   - `hardware-wallet`: pair a Ledger or Trezor
+   - `multi-account`: several accounts in one wallet
+   - `dex`: built-in token swaps
+   - `qr-claim`: claim tokens via QR codes or claim links ([CIP-0099](https://cips.cardano.org/cip/CIP-0099))
+   - `easy-setup`: a new user can start using the wallet before writing down a seed phrase, with the backup deferred to later
+
+   Every value is validated against the lists above, so copy the identifiers exactly as written. A typo such as `easy_setup` fails the build and names the offending value:
+
+   ```
+   Showcase site with title=Your Wallet contains errors:
+   Unknown walletFeatures.features=[easy_setup]
+   ```
+
+9. **Optional Fields Explained**
 
    **icon field:**
    - Path to your logo/icon for display in component grids
@@ -134,12 +174,12 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - All three fields required if set; URL must be `http(s)://`
    - Submitters: leave omitted. Maintainers add this when a Spotlight is published.
 
-9. **Test your submission**
-   - Run `yarn build` (must complete without errors). The schema validator will reject unknown categories or properties.
+10. **Test your submission**
+   - Run `yarn build` (must complete without errors). The schema validator will reject unknown categories, properties, or wallet features.
    - Check that your project displays correctly
    - Verify your icon appears if you added one
    - Ensure category is the most specific match and properties are minimal
 
-10. **Submit your pull request**
+11. **Submit your pull request**
    - Use the "Add Your App" GitHub PR template
    - Fill out the checklist in the template 

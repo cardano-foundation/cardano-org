@@ -1,0 +1,256 @@
+/* Reserve enough room for the taller "played" variant (medal row, summary
+   line, reset button) so swapping in from the shorter invitation line after
+   mount never shifts the card grid below it. */
+.progressBand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--site-space-xs);
+  min-height: calc(var(--site-space-3xl) + var(--site-space-lg));
+  padding: var(--site-space-sm) var(--site-space-md);
+  margin-bottom: var(--site-space-md);
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-sm);
+  text-align: center;
+}
+
+.progressInvite {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.medalRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--site-space-md);
+}
+
+.medal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-3xs);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.medalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.medal_gold .medalDot {
+  background: var(--site-tier-gold);
+}
+
+.medal_silver .medalDot {
+  background: var(--site-tier-silver);
+}
+
+.medal_bronze .medalDot {
+  background: var(--site-tier-bronze);
+}
+
+.progressSummary {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.resetButton {
+  display: inline-flex;
+  align-items: center;
+  /* 44px meets the mobile touch-target minimum, matching the other
+     controls, while padding (not a taller box) absorbs the extra height so
+     the button keeps its quiet text-only look. */
+  min-height: 44px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.resetButton:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.grid {
+  display: grid;
+  /* Fixed three columns rather than auto-fill: at the full BoundaryBox
+     width the cards would otherwise flow into four columns and leave the
+     six quizzes as an uneven 4 + 2. */
+  grid-template-columns: repeat(3, 1fr);
+  /* Default stretch: every card in a row matches the tallest one. The
+     description no longer has flex-grow (see .cardDescription), so it
+     can't be inflated past its own three-line clamp by that extra height,
+     and .cardCta's margin-top: auto absorbs the leftover space instead,
+     keeping CTAs aligned across the row. */
+  gap: var(--site-space-md);
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: var(--site-space-md);
+  background: var(--ifm-background-surface-color);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-sm);
+  transition: transform var(--site-duration-base) var(--site-ease),
+    box-shadow var(--site-duration-base) var(--site-ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--site-shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+.cardTitle {
+  margin: 0 0 var(--site-space-2xs);
+  font-size: 1.125rem;
+  color: var(--ifm-heading-color);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-3xs);
+  margin-bottom: var(--site-space-2xs);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--site-space-3xs) var(--site-space-2xs);
+  border-radius: var(--site-radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badgeNeutral {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 500;
+}
+
+.badge_beginner {
+  background: color-mix(in srgb, var(--site-success) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.badge_intermediate {
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--ifm-color-primary) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.badge_advanced {
+  background: color-mix(in srgb, var(--site-warning) 12%, var(--ifm-background-surface-color));
+  color: color-mix(in srgb, var(--site-warning) 55%, var(--ifm-font-color-base) 45%);
+}
+
+.cardDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 var(--site-space-xs);
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.cardProgress {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-xs);
+  margin: 0 0 var(--site-space-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.tierChip {
+  display: inline-block;
+  padding: var(--site-space-3xs) var(--site-space-sm);
+  border-radius: var(--site-radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.tier_gold {
+  background: var(--site-tier-gold);
+  color: var(--site-tier-ink);
+}
+
+.tier_silver {
+  background: var(--site-tier-silver);
+  color: var(--site-tier-ink);
+}
+
+.tier_bronze {
+  background: var(--site-tier-bronze);
+  color: var(--site-tier-ink);
+}
+
+.cardCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Pins the CTA to the bottom of the card: with the grid back on default
+     stretch, every card in a row shares the tallest card's height, and this
+     auto margin absorbs whatever space the shorter content above leaves,
+     so CTAs line up across the row regardless of description or progress
+     line length. */
+  margin: auto 0 0;
+  /* 44px meets the mobile touch-target minimum, the padding alone was a
+     couple pixels short. */
+  min-height: 44px;
+  padding: var(--site-space-xs) var(--site-space-sm);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  border: none;
+  border-radius: var(--site-radius-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--site-duration-base) var(--site-ease);
+}
+
+.cardCta:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.card:hover .cardCta {
+  background: var(--ifm-color-primary-dark);
+}

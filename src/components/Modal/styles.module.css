@@ -83,6 +83,11 @@
   justify-content: center;
   width: 40px;
   height: 40px;
+  /* 44px meets the touch-target minimum in both dimensions for this round
+     button, min-width/min-height override the smaller width/height above
+     without changing the icon itself. */
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   background: var(--ifm-color-primary);
   border: none;
@@ -90,7 +95,9 @@
   transition: all 0.2s ease;
   z-index: 10;
   float: right;
-  margin-bottom: -40px;
+  /* Must match the button's rendered height (44px) so the float trick
+     below doesn't leave a gap or overlap the content that follows. */
+  margin-bottom: -44px;
 }
 
 .closeButton:hover {

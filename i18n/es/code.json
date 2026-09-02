@@ -3925,7 +3925,7 @@
     "message": "Read the research"
   },
   "governance.delegate.layout.title": {
-    "message": "Delegate to a DRep — Cardano Governance"
+    "message": "Delegate to a DRep - Cardano Governance"
   },
   "governance.delegate.layout.description": {
     "message": "Delegate your Cardano voting power to a Delegated Representative directly from cardano.org. Connect your wallet and choose from curated active DReps."

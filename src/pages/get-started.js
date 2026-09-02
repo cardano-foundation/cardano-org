@@ -4,6 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import StepCard from "@site/src/components/Layout/StepCard";
 import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
@@ -176,6 +177,34 @@ const steps = (onWalletConnect, images) => [
     checkboxLabel: translate({id: 'getStarted.step5.checkbox', message: 'I have ada in my wallet.'}),
   },
   {
+    // Stable non-numeric id: this step was inserted later, and renumbering
+    // the surrounding steps would orphan their existing translations.
+    title: translate({id: 'getStarted.stepDelegate.title', message: 'Delegate your stake and your vote'}),
+    description: translate({id: 'getStarted.stepDelegate.description', message: 'Put your ada to work. Delegation happens directly from your wallet, your ada never leaves it and stays spendable at any time.'}),
+    content: (
+      <TwoColumnLayout
+        sidebar={
+          <div className={styles.centeredSidebar}>
+            <img src={images.braidRed} alt="Cardano decorative braid pattern" className={styles.sidebarImage} />
+          </div>
+        }
+        sidebarSticky={false}
+        ratio="1:1"
+      >
+        <div className={styles.stepContent}>
+          <h3>{translate({id: 'getStarted.stepDelegate.heading', message: 'Two delegations, one wallet'})}</h3>
+          <p><strong>{translate({id: 'getStarted.stepDelegate.stakeLabel', message: 'Delegate your stake:'})}</strong> {translate({id: 'getStarted.stepDelegate.stakeText', message: 'Choose a stake pool to help secure the network and earn rewards on your ada.'})}</p>
+          <p><strong>{translate({id: 'getStarted.stepDelegate.voteLabel', message: 'Delegate your vote:'})}</strong> {translate({id: 'getStarted.stepDelegate.voteText', message: 'Give your ada a voice in Cardano governance by choosing a DRep. An active vote delegation is also required before staking rewards can be withdrawn.'})}</p>
+          <p>
+            <Link to="/stake-pool-delegation" className="button button--primary">{translate({id: 'getStarted.stepDelegate.stakeButton', message: 'Delegate your ada'})}</Link>{' '}
+            <Link to="/governance/delegate" className="button button--outline button--primary">{translate({id: 'getStarted.stepDelegate.voteButton', message: 'Delegate your vote'})}</Link>
+          </p>
+        </div>
+      </TwoColumnLayout>
+    ),
+    checkboxLabel: translate({id: 'getStarted.stepDelegate.checkbox', message: 'I\'ve delegated my stake and my vote.'}),
+  },
+  {
     title: translate({id: 'getStarted.step6.title', message: 'Explore the ecosystem'}),
     description: translate({id: 'getStarted.step6.description', message: 'Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps.'}),
     content: (
@@ -191,8 +220,7 @@ const steps = (onWalletConnect, images) => [
         centerVertically={false}
       >
         <AppList
-              beginnerFriendly
-              limit={5}
+              slugs={["minswap", "liqwid", "strike-finance", "bodega-market", "wayup"]}
               showTags={true}
               categoryTitle="Popular Apps"
               showTxCount={false}
@@ -215,6 +243,7 @@ export default function Home() {
   const images = {
     braidBlack: useBaseUrl('/img/hero-header-braid-black.svg'),
     braidBlue: useBaseUrl('/img/hero-header-braid-blue.svg'),
+    braidRed: useBaseUrl('/img/hero-header-braid-red.svg'),
     braidRedBlue: useBaseUrl('/img/hero-header-braid-red-blue.svg'),
     adaRound: useBaseUrl('/img/ada-round.webp'),
     adaRoundDark: useBaseUrl('/img/ada-round-dark.webp'),
@@ -232,6 +261,9 @@ export default function Home() {
           <BoundaryBox>
             <SpacerBox size="small" />
             <StepCard steps={steps(handleWalletConnect, images)} walletConnected={walletConnected} />
+            <TitleWithText
+              description={translate({id: 'getStarted.intro.overviewLink', message: 'Not sure what Cardano is yet? [Start with the overview](/what-is-cardano).'})}
+            />
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>

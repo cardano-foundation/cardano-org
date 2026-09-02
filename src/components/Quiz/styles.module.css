@@ -8,7 +8,7 @@
   text-align: center;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  background: var(--ifm-background-surface-color);
+  background: var(--ifm-color-emphasis-100);
   border-radius: 12px;
 }
 
@@ -25,12 +25,8 @@
   line-height: 1.4;
 }
 
-html[data-theme='light'] .quizHeader {
-  background: #f8f9fa;
-}
-
 html[data-theme='dark'] .quizHeader {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--ifm-color-emphasis-200);
 }
 
 .questionCard {
@@ -42,22 +38,15 @@ html[data-theme='dark'] .quizHeader {
   transition: all 0.3s ease;
 }
 
+/* Feedback is carried by the border, the status message and the option
+   colors. The card keeps its normal surface: tinting the whole panel on
+   every single question reads as heavy-handed. */
 .questionCard.correct {
-  background: #e8f5e9;
-  border-color: #4caf50;
+  border-color: var(--site-success);
 }
 
 .questionCard.incorrect {
-  background: #ffebee;
-  border-color: #f44336;
-}
-
-html[data-theme='dark'] .questionCard.correct {
-  background: rgba(76, 175, 80, 0.1);
-}
-
-html[data-theme='dark'] .questionCard.incorrect {
-  background: rgba(244, 67, 54, 0.1);
+  border-color: var(--site-danger);
 }
 
 .statusIcon {
@@ -67,17 +56,17 @@ html[data-theme='dark'] .questionCard.incorrect {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: white;
+  background: var(--ifm-color-white);
   flex-shrink: 0;
 }
 
 .questionCard.correct .statusIcon {
-  background: #4caf50;
+  background: var(--site-success);
   color: white;
 }
 
 .questionCard.incorrect .statusIcon {
-  background: #f44336;
+  background: var(--site-danger);
   color: white;
 }
 
@@ -97,19 +86,14 @@ html[data-theme='dark'] .questionCard.incorrect {
 }
 
 .questionCard.correct .statusMessage {
-  color: #2e7d32;
+  /* Deepen the ink toward the body text color (near-black in light,
+     near-white in dark): the mid-tone fill color alone is too light to
+     read as body copy. */
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .questionCard.incorrect .statusMessage {
-  color: #c62828;
-}
-
-html[data-theme='dark'] .questionCard.correct .statusMessage {
-  color: #81c784;
-}
-
-html[data-theme='dark'] .questionCard.incorrect .statusMessage {
-  color: #e57373;
+  color: color-mix(in srgb, var(--site-danger) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .progressBar {
@@ -127,11 +111,11 @@ html[data-theme='dark'] .questionCard.incorrect .statusMessage {
 }
 
 .progressSegment.correct {
-  background: #4caf50;
+  background: var(--site-success);
 }
 
 .progressSegment.incorrect {
-  background: #f44336;
+  background: var(--site-danger);
 }
 
 .progressSegment.active {
@@ -197,21 +181,21 @@ html[data-theme='dark'] .optionButton.selected {
 }
 
 .optionButton.correctOption {
-  border-color: #4caf50;
-  background: #e8f5e9;
+  border-color: var(--site-success);
+  background: color-mix(in srgb, var(--site-success) 12%, var(--ifm-background-surface-color));
 }
 
 html[data-theme='dark'] .optionButton.correctOption {
-  background: rgba(76, 175, 80, 0.2);
+  background: color-mix(in srgb, var(--site-success) 20%, var(--ifm-background-surface-color));
 }
 
 .optionButton.incorrectOption {
-  border-color: #f44336;
-  background: #ffebee;
+  border-color: var(--site-danger);
+  background: color-mix(in srgb, var(--site-danger) 12%, var(--ifm-background-surface-color));
 }
 
 html[data-theme='dark'] .optionButton.incorrectOption {
-  background: rgba(244, 67, 54, 0.2);
+  background: color-mix(in srgb, var(--site-danger) 20%, var(--ifm-background-surface-color));
 }
 
 .optionLabel {
@@ -229,22 +213,22 @@ html[data-theme='dark'] .optionButton.incorrectOption {
 }
 
 .optionButton:hover:not(:disabled) .optionLabel {
-  background: white;
+  background: var(--ifm-color-white);
   color: var(--ifm-color-primary);
 }
 
 .optionButton.selected .optionLabel {
-  background: white;
+  background: var(--ifm-color-white);
   color: var(--ifm-color-primary);
 }
 
 .optionButton.correctOption .optionLabel {
-  background: #4caf50;
+  background: var(--site-success);
   color: white;
 }
 
 .optionButton.incorrectOption .optionLabel {
-  background: #f44336;
+  background: var(--site-danger);
   color: white;
 }
 
@@ -290,6 +274,13 @@ html[data-theme='dark'] .explanation {
 .checkButton,
 .primaryButton,
 .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px meets the mobile touch-target minimum for all four quiz action
+     buttons (Check answer, Next question/Finish quiz, Try again, and the
+     review-mistakes button), which otherwise land a couple pixels short. */
+  min-height: 44px;
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
@@ -339,25 +330,22 @@ html[data-theme='dark'] .explanation {
   text-align: center;
   padding: 3rem 2rem;
   border-radius: 16px;
-  border: 2px solid;
+  /* The state classes only set border-color, so the surface has to live
+     here: it used to come from the success/failure tint that was removed. */
+  background: var(--ifm-background-surface-color);
+  border: 2px solid var(--ifm-color-emphasis-200);
 }
 
+/* The result screen keeps its tint: it appears once per run, so the color
+   is a moment rather than the constant wash the question card had. */
 .resultCard.success {
-  background: #e8f5e9;
-  border-color: #4caf50;
+  background: color-mix(in srgb, var(--site-success) 10%, var(--ifm-background-surface-color));
+  border-color: var(--site-success);
 }
 
 .resultCard.failure {
-  background: #ffebee;
-  border-color: #f44336;
-}
-
-html[data-theme='dark'] .resultCard.success {
-  background: rgba(76, 175, 80, 0.1);
-}
-
-html[data-theme='dark'] .resultCard.failure {
-  background: rgba(244, 67, 54, 0.1);
+  background: color-mix(in srgb, var(--site-danger) 10%, var(--ifm-background-surface-color));
+  border-color: var(--site-danger);
 }
 
 .resultIcon {
@@ -371,12 +359,12 @@ html[data-theme='dark'] .resultCard.failure {
 }
 
 .resultCard.success .resultIcon {
-  background: #4caf50;
+  background: var(--site-success);
   color: white;
 }
 
 .resultCard.failure .resultIcon {
-  background: #f44336;
+  background: var(--site-danger);
   color: white;
 }
 
@@ -405,19 +393,11 @@ html[data-theme='dark'] .resultCard.failure {
 }
 
 .resultCard.success .scoreNumber {
-  color: #2e7d32;
+  color: color-mix(in srgb, var(--site-success) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .resultCard.failure .scoreNumber {
-  color: #c62828;
-}
-
-html[data-theme='dark'] .resultCard.success .scoreNumber {
-  color: #81c784;
-}
-
-html[data-theme='dark'] .resultCard.failure .scoreNumber {
-  color: #e57373;
+  color: color-mix(in srgb, var(--site-danger) 55%, var(--ifm-font-color-base) 45%);
 }
 
 .scoreText {
@@ -528,4 +508,64 @@ html[data-theme='dark'] .resultCard.failure .scoreNumber {
   .secondaryButton {
     width: 100%;
   }
+}
+
+.tierBadge {
+  display: inline-block;
+  padding: var(--site-space-3xs) var(--site-space-sm);
+  border-radius: var(--site-radius-pill);
+  font-weight: 700;
+  margin-bottom: var(--site-space-xs);
+}
+
+.tier_gold { background: var(--site-tier-gold); color: var(--site-tier-ink); }
+.tier_silver { background: var(--site-tier-silver); color: var(--site-tier-ink); }
+.tier_bronze { background: var(--site-tier-bronze); color: var(--site-tier-ink); }
+.tier_learning { background: var(--ifm-color-emphasis-200); color: var(--ifm-color-emphasis-800); }
+
+.badgeWrap {
+  display: flex;
+  justify-content: center;
+  margin: var(--site-space-sm) 0;
+}
+
+.badgeWrap > * {
+  width: 100%;
+  max-width: 320px;
+}
+
+.badgeImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+}
+
+/* Reserves the badge's square footprint while it renders, so the card does
+   not jump once the image swaps in. */
+.badgePlaceholder {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-color-emphasis-200);
+}
+
+.resultActions {
+  display: flex;
+  gap: var(--site-space-xs);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: var(--site-space-sm) 0;
+}
+
+.sourceLink {
+  display: inline-block;
+  margin-top: var(--site-space-3xs);
+  font-weight: 600;
+}
+
+.academyCta {
+  display: inline-block;
+  margin-top: var(--site-space-sm);
+  font-weight: 600;
 }

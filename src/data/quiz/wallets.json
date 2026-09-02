@@ -1,0 +1,165 @@
+{
+  "id": "wallets",
+  "title": "Wallets and Keys",
+  "description": "Custody, recovery phrases, hardware wallets, and how to keep your ada safe.",
+  "questionCount": 6,
+  "difficulty": "beginner",
+  "questions": [
+    {
+      "id": "wallets-1",
+      "question": "When people say they \"have ada in a wallet,\" what does the wallet actually store?",
+      "options": [
+        "The private keys that grant the right to access and spend the ada, the ada's own record lives on the blockchain",
+        "The actual ada coins themselves, held inside the wallet like cash in a physical purse",
+        "A copy of the entire Cardano blockchain that only that wallet can read",
+        "A digital certificate issued once by the Cardano Foundation for each ada holder"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's own wallet documentation makes clear that assets are not stored in the wallet, their records live on the blockchain and can be accessed using unique private keys, which grant the right to make transactions. A wallet is really a keychain for private keys, not a container for coins, the ledger itself is what records how much ada belongs to which address. Losing the wallet app doesn't destroy the ada, but losing the keys means losing the ability to use it.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/new-to-cardano/types-of-wallets"
+    },
+    {
+      "id": "wallets-2",
+      "question": "What defines a \"hot wallet\"?",
+      "options": [
+        "It is a wallet whose keys are kept on a device connected to the internet, which makes it convenient but more exposed to risk",
+        "It only works while the user's computer is powered off",
+        "It is a wallet that automatically stakes ada the moment it is created",
+        "It is a wallet issued exclusively by centralized exchanges"
+      ],
+      "correctAnswer": 0,
+      "explanation": "cardano.org's wallet explainer defines it by connectivity, \"a hot wallet is connected to the internet and can be accessed at any time with the requisite keys. Examples include mobile and software wallets, and funds stored on exchanges.\" That constant connectivity is what makes them convenient for everyday use, and it is exactly the tradeoff cold storage avoids by keeping keys on a device that stays offline.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
+    },
+    {
+      "id": "wallets-3",
+      "question": "What is the main purpose of a hardware wallet?",
+      "options": [
+        "To keep private keys isolated on a secure physical device while allowing the user to approve transactions",
+        "To automatically convert ada into other cryptocurrencies for the user",
+        "To replace the need for a recovery phrase entirely",
+        "To let a third party manage the user's keys on their behalf"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's developer documentation describes this hardware-wallet property directly, \"keys never leave a secure device,\" noting that this gives the \"strongest theft protection.\" That is what sets a hardware wallet apart, the private keys are generated and stored inside dedicated, purpose-built hardware and never touch an internet-connected computer or phone, rather than converting currencies, replacing a recovery phrase, or handing key management to a third party.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/fundamentals/core-concepts/wallets-and-keys/"
+    },
+    {
+      "id": "wallets-4",
+      "question": "What extra step does Cardano's developer curriculum recommend when using a hardware wallet?",
+      "options": [
+        "Confirm the transaction details on the hardware wallet's own screen, not just in the connected app",
+        "Re-enter your recovery phrase into the connected computer before every transaction",
+        "Disconnect from the internet entirely before the hardware wallet can be used",
+        "Manually calculate the transaction fee before the wallet will allow you to sign"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's developer curriculum instructs users to \"confirm transaction details on the hardware wallet screen, not just the app.\" The connected computer's screen shows what the software claims the transaction contains, but only the hardware wallet's own screen reflects what the device is actually about to sign, checking there catches cases where the two don't match. The same page separately recommends keeping certain keys off the internet entirely, \"cold-key custody: for keys that sign high-value or governance transactions, keep them off internet-connected machines.\" That is a distinct practice for that specific class of high-value or governance keys, not a general precondition for using a hardware wallet, which is why disconnecting from the internet entirely (option C) is still the wrong answer, ordinary hardware wallet use keeps the connected computer online and isolates only the signing itself on the device. Re-entering a recovery phrase and manually computing a fee are not part of what the page describes for this step either.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/fundamentals/core-concepts/wallets-and-keys/"
+    },
+    {
+      "id": "wallets-5",
+      "question": "What is a recovery phrase (seed phrase)?",
+      "options": [
+        "A list of words that can be used to restore access to a wallet and its funds",
+        "A short numeric PIN chosen by the user when opening the wallet app",
+        "A confirmation code sent by the Cardano Foundation after each transaction",
+        "The transaction ID of the wallet's very first payment"
+      ],
+      "correctAnswer": 0,
+      "explanation": "cardano.org's wallet explainer describes it as the master key: \"when you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is a human-readable form of your private key.\" It is generated when the wallet is created and is not the same thing as a PIN, a confirmation code, or a transaction record.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
+    },
+    {
+      "id": "wallets-7",
+      "question": "What happens if you lose access to your wallet and have no recovery phrase or other backup of its signing keys?",
+      "options": [
+        "You cannot recover access to the funds",
+        "The Cardano Foundation can reissue a new recovery phrase after identity verification",
+        "The funds automatically transfer back to the exchange where the ada was originally bought",
+        "The wallet app can regenerate the same phrase if you answer security questions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "cardano.org's wallet explainer addresses exactly this combination, no wallet access and no backup of the keys, \"with a non-custodial wallet there is no help desk and no reset. If you lose the recovery phrase and the device, the funds are gone.\" None of the other options match, there is no Cardano Foundation reissuing a phrase, no automatic return of funds to an exchange, and no wallet app that can regenerate the phrase through security questions.",
+      "sourceUrl": "https://cardano.org/what-is-a-wallet/"
+    },
+    {
+      "id": "wallets-8",
+      "question": "When ada is sitting in an account on a centralized exchange (CEX), who actually has custody of it?",
+      "options": [
+        "The exchange, until the ada is withdrawn to a wallet the user controls",
+        "No one, it is held automatically in a neutral smart contract",
+        "The user, in exactly the same way as if it were in their own wallet",
+        "The Cardano network's validator set collectively"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's own guidance on getting ada is explicit, \"note that CEXs have custody over ada and other native tokens until you send them to a wallet that you control.\" That means the exchange, not the user, holds the private keys while the ada sits in an exchange account, only withdrawing it to a personal wallet moves custody to the user.",
+      "sourceUrl": "https://cardano.org/where-to-get-ada/"
+    },
+    {
+      "id": "wallets-10",
+      "question": "Unlike a recovery phrase, what is a Cardano receiving address meant for?",
+      "options": [
+        "Sharing with others so they can send ada or native tokens directly to the wallet",
+        "Keeping completely secret, since it also grants spending access",
+        "Submitting to the Cardano Foundation once per year for tax reasons",
+        "Generating a new recovery phrase whenever it is shared"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's guidance on getting ada describes exactly this, \"once you have a Cardano wallet, all you need to do is share your address to start sending and receiving ada (and other native tokens) peer-to-peer.\" A receiving address is designed to be handed out, the opposite of a recovery phrase, which must stay private, sharing an address does not give anyone spending access to the wallet.",
+      "sourceUrl": "https://cardano.org/where-to-get-ada/"
+    },
+    {
+      "id": "wallets-11",
+      "question": "What is a Cardano address, technically?",
+      "options": [
+        "A data structure attached to transaction outputs that carries a network tag and proof of ownership",
+        "A secret password that must never be revealed to anyone",
+        "A record kept only by the wallet developer, not by the blockchain itself",
+        "A type of native token used to pay transaction fees"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano addresses are defined by CIP-19, which sets out their byte-level layout: \"a header that encodes the address type and network (mainnet or testnet), followed by a payment credential (a key hash or script hash that controls spending) and, for most everyday addresses, a staking credential that points to the stake key earning rewards.\" It is a piece of information attached to the ledger itself, not a secret, not something only the wallet developer keeps, and not a token in its own right.",
+      "sourceUrl": "https://cardano.org/glossary/cip-19/"
+    },
+    {
+      "id": "wallets-12",
+      "question": "What makes Daedalus different from most other Cardano wallets?",
+      "options": [
+        "It is a full node wallet that validates the blockchain locally instead of relying on a third party",
+        "It is the only wallet that can hold native tokens",
+        "It can only be used on mobile phones",
+        "It requires no recovery phrase to restore"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's own page for the app describes Daedalus as a wallet that \"validates the chain locally rather than trusting third parties,\" since it is a full node wallet, meaning it downloads and checks the blockchain itself rather than asking a remote server for that information. Most other Cardano wallets are lighter clients that rely on a server for that data instead, which is faster to set up but shifts that trust elsewhere.",
+      "sourceUrl": "https://cardano.org/apps/daedalus/"
+    },
+    {
+      "id": "wallets-13",
+      "question": "What are the two general categories of exchange described for getting ada, and what limits one of them for a first-time buyer?",
+      "options": [
+        "Centralized exchanges (CEXs) and decentralized exchanges (DEXs), DEXs are not beginner-friendly because using one already requires holding some ada or crypto",
+        "Domestic exchanges and international exchanges, international ones cannot legally sell ada",
+        "Retail exchanges and wholesale exchanges, wholesale ones require a minimum purchase of 100,000 ada",
+        "Spot exchanges and futures exchanges, futures ones never deliver actual ada"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's guidance on getting ada distinguishes centralized exchanges, \"platforms where cryptocurrencies and other digital assets are traded,\" from decentralized exchanges, \"platforms for trading cryptocurrencies that operate without a central authority,\" then adds that \"DEXs are not suitable for beginners, as you must already have ada to use them.\" A CEX is typically where someone converts fiat currency into ada for the first time, a DEX assumes the user already holds crypto to trade with.",
+      "sourceUrl": "https://cardano.org/where-to-get-ada/"
+    },
+    {
+      "id": "wallets-14",
+      "question": "What is a paper wallet?",
+      "options": [
+        "A paper document containing a wallet's public and private key details, used as offline cold storage",
+        "A printed receipt confirming a completed ada transaction",
+        "A physical membership card issued by a Cardano stake pool",
+        "A backup copy of the Daedalus application installer"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation describes paper wallets as \"paper documents that contain public and private key details,\" a form of storage that keeps the keys entirely offline. It's a different thing from a transaction receipt, a stake pool membership card, or a backup of wallet software, it is the keys themselves, written down instead of stored digitally.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/new-to-cardano/types-of-wallets"
+    }
+  ]
+}
