@@ -6912,7 +6912,7 @@
     "message": "How does Cardano reach agreement?"
   },
   "howCardanoWorks.contracts.button": {
-    "message": "Build on Cardano"
+    "message": "Smart contracts explained"
   },
   "howCardanoWorks.contracts.p1": {
     "message": "A smart contract on Cardano is a validator: a script that guards outputs and answers one question for each transaction that tries to spend them, valid or not. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable."
