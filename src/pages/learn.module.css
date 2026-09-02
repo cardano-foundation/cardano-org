@@ -1,4 +1,3 @@
-/* src/pages/learn.module.css */
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -10,7 +9,7 @@
   display: inline-block;
   margin-bottom: 0.75rem;
   padding: 0.2rem 0.7rem;
-  border-radius: 999px;
+  border-radius: var(--site-radius-pill);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;

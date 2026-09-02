@@ -1,5 +1,5 @@
-// src/data/learningPath.js
 import { translate } from "@docusaurus/Translate";
+import { academyUrl } from "@site/src/data/quiz/academy";
 import {
   FaInfoCircle, FaCoins, FaWallet, FaPlay,
   FaSearch, FaShoppingCart, FaShieldAlt, FaLayerGroup, FaThLarge,
@@ -8,8 +8,7 @@ import {
   FaFlask, FaChartLine, FaHistory, FaBuilding, FaGraduationCap, FaCode,
 } from "react-icons/fa";
 
-const ACADEMY_URL =
-  "https://cardanofoundation.org/en/academy?utm_source=cardano_org&utm_medium=learn&utm_campaign=learn_hub";
+export const ACADEMY_URL = academyUrl("landing", { medium: "learn", campaign: "learn_hub" });
 
 // The five stages of /learn. Only routes that exist may appear here, the
 // site build fails on broken links. New explainer pages join a stage by
@@ -94,15 +93,12 @@ export function getLearningPath() {
   ];
 }
 
-export function getLevelLabel(level) {
-  switch (level) {
-    case "advanced":
-      return translate({ id: "learn.level.advanced", message: "Advanced" });
-    case "intermediate":
-      return translate({ id: "learn.level.intermediate", message: "Intermediate" });
-    default:
-      return translate({ id: "learn.level.beginner", message: "Beginner" });
-  }
-}
+const LEVEL_LABELS = {
+  beginner: () => translate({ id: "learn.level.beginner", message: "Beginner" }),
+  intermediate: () => translate({ id: "learn.level.intermediate", message: "Intermediate" }),
+  advanced: () => translate({ id: "learn.level.advanced", message: "Advanced" }),
+};
 
-export { ACADEMY_URL };
+export function getLevelLabel(level) {
+  return (LEVEL_LABELS[level] || LEVEL_LABELS.beginner)();
+}
