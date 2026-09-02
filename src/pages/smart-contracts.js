@@ -12,7 +12,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import AppList from "@site/src/components/AppList";
+import CategoryPanelsCarousel from "@site/src/components/CategoryPanelsCarousel";
 import FAQSection from "@site/src/components/FAQSection";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import { faqJsonLd } from "@site/src/utils/jsonLd";
@@ -224,6 +224,10 @@ function SafetySection() {
   );
 }
 
+// Showcase categories whose apps run on smart contracts, in the order the
+// intro paragraph names them. Same carousel as the /apps browse section.
+const BUILT_CATEGORIES = ["dex", "lending", "marketplace", "game", "identity"];
+
 function BuiltSection() {
   return (
     <>
@@ -243,23 +247,9 @@ function BuiltSection() {
         })}
         headingDot={true}
       />
-      <AppList
-        categories={["dex"]}
-        limit={3}
-        categoryTitle={translate({ id: "smartContracts.built.list.dex", message: "Decentralized exchanges" })}
-        showTxCount={true}
-      />
-      <AppList
-        categories={["lending"]}
-        limit={3}
-        categoryTitle={translate({ id: "smartContracts.built.list.lending", message: "Lending and borrowing" })}
-        showTxCount={true}
-      />
-      <AppList
-        categories={["marketplace"]}
-        limit={3}
-        categoryTitle={translate({ id: "smartContracts.built.list.marketplace", message: "Marketplaces" })}
-        showTxCount={true}
+      <CategoryPanelsCarousel
+        categories={BUILT_CATEGORIES}
+        ariaLabel={translate({ id: "smartContracts.built.title", message: "What runs on Cardano smart contracts today?" })}
       />
       <TitleWithText
         description={translate({

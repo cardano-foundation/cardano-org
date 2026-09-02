@@ -7235,15 +7235,6 @@
   "smartContracts.built.intro": {
     "message": "Trading, lending, stablecoins, marketplaces and games all run on contracts, and identity projects use them too. These are a few examples from the app showcase, ranked by on-chain activity where that data exists."
   },
-  "smartContracts.built.list.dex": {
-    "message": "Decentralized exchanges"
-  },
-  "smartContracts.built.list.lending": {
-    "message": "Lending and borrowing"
-  },
-  "smartContracts.built.list.marketplace": {
-    "message": "Marketplaces"
-  },
   "smartContracts.built.outro": {
     "message": "[Stablecoins](/stablecoins) have their own page, and the showcase lists more than a hundred apps across every category."
   },
