@@ -6351,7 +6351,7 @@
     "message": "Not sure what Cardano is yet? [Start with the overview](/what-is-cardano)."
   },
   "ouroboros.vision.backLink": {
-    "message": "Back to the big picture: [What is Cardano?](/what-is-cardano)"
+    "message": "Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end."
   },
   "whatIsAda.section.platformLink": {
     "message": "New to the platform itself? Read [what Cardano is](/what-is-cardano)."
@@ -6885,7 +6885,7 @@
     "message": "What is a blockchain?"
   },
   "howCardanoWorks.consensus.blocks.text": {
-    "message": "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and provably final after a longer window that the protocol's security proofs define."
+    "message": "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and irreversible in the protocol's own terms after a longer window that its security parameters define."
   },
   "howCardanoWorks.consensus.blocks.title": {
     "message": "Blocks"
@@ -6963,16 +6963,16 @@
     "message": "Does Cardano have gas?"
   },
   "howCardanoWorks.faq.haskell.a": {
-    "message": "The node and ledger are written in Haskell, a functional language that lets the code stay close to the formal specifications the protocol is based on. Applications on Cardano can be written in many languages, and the on-chain scripts in Plutus or Aiken."
+    "message": "Cardano's reference node and its ledger rules are written in Haskell, a functional language that lets the code stay close to the formal specifications the protocol is based on. Applications on Cardano can be written in many languages, and the on-chain scripts in Plutus or Aiken."
   },
   "howCardanoWorks.faq.haskell.q": {
     "message": "Why is Cardano written in Haskell?"
   },
   "howCardanoWorks.faq.pos.a": {
-    "message": "Yes. Blocks are produced by stake pools chosen in proportion to the ada delegated to them, through the Ouroboros protocol. Cardano has never used mining."
+    "message": "Through Ouroboros, its proof-of-stake protocol. Blocks are produced by stake pools chosen in proportion to the ada delegated to them. Cardano has never used mining."
   },
   "howCardanoWorks.faq.pos.q": {
-    "message": "Is Cardano proof of stake?"
+    "message": "How does Cardano choose who produces the next block?"
   },
   "howCardanoWorks.faq.slashing.a": {
     "message": "No. Cardano has no slashing. Delegated ada stays in your wallet, and a badly run pool only costs you rewards."
@@ -6990,7 +6990,7 @@
     "message": "A block is produced roughly every 20 seconds, so a transaction normally appears on the chain within a minute. Services wait for several more blocks before treating it as final."
   },
   "howCardanoWorks.faq.speed.q": {
-    "message": "How long does a transaction take?"
+    "message": "How many confirmations does a Cardano transaction need?"
   },
   "howCardanoWorks.hero.description": {
     "message": "Blocks, ledger, tokens, programs and upgrades, explained step by step."
@@ -7005,7 +7005,7 @@
     "message": "The eUTXO model explained"
   },
   "howCardanoWorks.ledger.p1": {
-    "message": "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in must cover the total out plus the fee. Your wallet balance is simply the sum of the notes you can unlock."
+    "message": "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. Your wallet balance is simply the sum of the notes you can unlock."
   },
   "howCardanoWorks.ledger.p2": {
     "message": "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed and the other is rejected. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one."
@@ -7017,10 +7017,10 @@
     "message": "How does Cardano keep track of who owns what?"
   },
   "howCardanoWorks.meta.description": {
-    "message": "A plain-language tour of the Cardano blockchain: how blocks are produced, how the extended UTXO ledger tracks ownership, what transactions cost, how native tokens and smart contracts run, who operates the network and how it upgrades."
+    "message": "How Cardano works, in plain language: block production, the eUTXO ledger, transaction costs, native tokens, smart contracts and protocol upgrades."
   },
   "howCardanoWorks.meta.title": {
-    "message": "How Cardano Works: Consensus, Ledger, Tokens and Upgrades Explained"
+    "message": "How Cardano Works: Consensus, Ledger and Upgrades"
   },
   "howCardanoWorks.network.button": {
     "message": "Delegate your ada"
@@ -7029,10 +7029,10 @@
     "message": "Anyone can run a Cardano node. Stake pools are nodes that produce blocks, operated by individuals, companies and communities. Delegating ada to a pool increases its chance of being chosen and earns you a share of its rewards, without moving your ada anywhere. Rewards are paid every epoch from newly released reserve ada and from transaction fees."
   },
   "howCardanoWorks.network.p2": {
-    "message": "The protocol rewards pools most when they stay below a saturation point, which discourages any single pool from growing too large, and pool operators pledge some of their own ada as a commitment. Around three thousand pools are registered, and roughly a thousand produce blocks in a given epoch."
+    "message": "The protocol rewards pools most when they stay below a saturation point, which discourages any single pool from growing too large, and pool operators pledge some of their own ada as a commitment. Close to three thousand pools are registered, and roughly a thousand produce blocks in a given epoch."
   },
   "howCardanoWorks.network.p3": {
-    "message": "New nodes catch up with the chain either by replaying its full history or by starting from a signed snapshot produced by Mithril, a network of signers backed by the same stake distribution. Or [run a stake pool yourself](/stake-pool-operation)."
+    "message": "New nodes catch up with the chain either by replaying its full history or by starting from a signed snapshot produced by Mithril, a network of signers backed by the same stake distribution. If you would rather help produce blocks than delegate, you can [run a stake pool yourself](/stake-pool-operation)."
   },
   "howCardanoWorks.network.title": {
     "message": "Who runs the network?"
@@ -7080,7 +7080,7 @@
     "message": "[UTXO](/glossary/utxo): an unspent output, one note of value."
   },
   "howCardanoWorks.terminology.title": {
-    "message": "Terminology"
+    "message": "What do these words mean?"
   },
   "howCardanoWorks.tokens.button": {
     "message": "Native tokens in the docs"

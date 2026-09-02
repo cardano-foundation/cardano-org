@@ -98,7 +98,7 @@ function ConsensusSection() {
           translate({
             id: "howCardanoWorks.consensus.blocks.text",
             message:
-              "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and provably final after a longer window that the protocol's security proofs define.",
+              "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and irreversible in the protocol's own terms after a longer window that its security parameters define.",
           }),
         ]}
         headingDot={true}
@@ -139,7 +139,7 @@ function LedgerSection() {
           translate({
             id: "howCardanoWorks.ledger.p1",
             message:
-              "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in must cover the total out plus the fee. Your wallet balance is simply the sum of the notes you can unlock.",
+              "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. Your wallet balance is simply the sum of the notes you can unlock.",
           }),
           translate({
             id: "howCardanoWorks.ledger.p2",
@@ -273,12 +273,12 @@ function NetworkSection() {
           translate({
             id: "howCardanoWorks.network.p2",
             message:
-              "The protocol rewards pools most when they stay below a saturation point, which discourages any single pool from growing too large, and pool operators pledge some of their own ada as a commitment. Around three thousand pools are registered, and roughly a thousand produce blocks in a given epoch.",
+              "The protocol rewards pools most when they stay below a saturation point, which discourages any single pool from growing too large, and pool operators pledge some of their own ada as a commitment. Close to three thousand pools are registered, and roughly a thousand produce blocks in a given epoch.",
           }),
           translate({
             id: "howCardanoWorks.network.p3",
             message:
-              "New nodes catch up with the chain either by replaying its full history or by starting from a signed snapshot produced by Mithril, a network of signers backed by the same stake distribution. Or [run a stake pool yourself](/stake-pool-operation).",
+              "New nodes catch up with the chain either by replaying its full history or by starting from a signed snapshot produced by Mithril, a network of signers backed by the same stake distribution. If you would rather help produce blocks than delegate, you can [run a stake pool yourself](/stake-pool-operation).",
           }),
         ]}
         headingDot={true}
@@ -326,7 +326,7 @@ function TerminologySection() {
         text={translate({ id: "howCardanoWorks.divider.terminology", message: "Terminology" })}
       />
       <TitleWithText
-        title={translate({ id: "howCardanoWorks.terminology.title", message: "Terminology" })}
+        title={translate({ id: "howCardanoWorks.terminology.title", message: "What do these words mean?" })}
         description={[
           translate({
             id: "howCardanoWorks.terminology.intro",
@@ -400,12 +400,12 @@ export default function HowCardanoWorks() {
     <Layout
       title={translate({
         id: "howCardanoWorks.meta.title",
-        message: "How Cardano Works: Consensus, Ledger, Tokens and Upgrades Explained",
+        message: "How Cardano Works: Consensus, Ledger and Upgrades",
       })}
       description={translate({
         id: "howCardanoWorks.meta.description",
         message:
-          "A plain-language tour of the Cardano blockchain: how blocks are produced, how the extended UTXO ledger tracks ownership, what transactions cost, how native tokens and smart contracts run, who operates the network and how it upgrades.",
+          "How Cardano works, in plain language: block production, the eUTXO ledger, transaction costs, native tokens, smart contracts and protocol upgrades.",
       })}
     >
       <Head>

@@ -90,7 +90,7 @@ export default function Home() {
                 headingDot={true}
               />
         <TitleWithText
-          description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano)'})}
+          description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end.'})}
         />
         </BoundaryBox>
       </BackgroundWrapper>

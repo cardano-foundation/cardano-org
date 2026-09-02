@@ -5,17 +5,17 @@ import { translate } from "@docusaurus/Translate";
 export function getHowCardanoWorksFAQ() {
   return [
     {
-      question: translate({ id: "howCardanoWorks.faq.pos.q", message: "Is Cardano proof of stake?" }),
+      question: translate({ id: "howCardanoWorks.faq.pos.q", message: "How does Cardano choose who produces the next block?" }),
       answer: [
         translate({
           id: "howCardanoWorks.faq.pos.a",
           message:
-            "Yes. Blocks are produced by stake pools chosen in proportion to the ada delegated to them, through the Ouroboros protocol. Cardano has never used mining.",
+            "Through Ouroboros, its proof-of-stake protocol. Blocks are produced by stake pools chosen in proportion to the ada delegated to them. Cardano has never used mining.",
         }),
       ],
     },
     {
-      question: translate({ id: "howCardanoWorks.faq.speed.q", message: "How long does a transaction take?" }),
+      question: translate({ id: "howCardanoWorks.faq.speed.q", message: "How many confirmations does a Cardano transaction need?" }),
       answer: [
         translate({
           id: "howCardanoWorks.faq.speed.a",
@@ -60,7 +60,7 @@ export function getHowCardanoWorksFAQ() {
         translate({
           id: "howCardanoWorks.faq.haskell.a",
           message:
-            "The node and ledger are written in Haskell, a functional language that lets the code stay close to the formal specifications the protocol is based on. Applications on Cardano can be written in many languages, and the on-chain scripts in Plutus or Aiken.",
+            "Cardano's reference node and its ledger rules are written in Haskell, a functional language that lets the code stay close to the formal specifications the protocol is based on. Applications on Cardano can be written in many languages, and the on-chain scripts in Plutus or Aiken.",
         }),
       ],
     },
