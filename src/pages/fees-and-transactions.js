@@ -7,7 +7,6 @@ import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWith
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 
@@ -41,7 +40,6 @@ export default function Home() {
           "Learn how Cardano transaction fees are calculated from transaction size, how the minimum ada (min-UTxO) requirement works, and how the eUTXO model compares to account-based fee models.",
       })}
     >
-      <OpenGraphInfo pageName="fees-and-transactions" />
       <HomepageHeader />
 
       <BackgroundWrapper backgroundType="none">
@@ -81,12 +79,12 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.how.description1",
                 message:
-                  "The minimum fee for a transaction is: **fee = a + b × size**, where *size* is the transaction's serialized size in bytes.",
+                  "The minimum fee for a transaction is: **fee = a × size + b**, where *size* is the transaction's serialized size in bytes.",
               }),
               translate({
                 id: "feesAndTransactions.how.description2",
                 message:
-                  "On mainnet, *a* (the fixed component, protocol parameter `minFeeB` / `txFeeFixed`) is **155,381 lovelace**. *b* (the per-byte component, protocol parameter `minFeeA` / `txFeePerByte`) is **44 lovelace per byte**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.20 ada.",
+                  "On mainnet, *a* (the per-byte component, protocol parameter `minFeeA` / `txFeePerByte`) is **44 lovelace per byte**, and *b* (the fixed component, protocol parameter `minFeeB` / `txFeeFixed`) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.20 ada.",
               }),
               translate({
                 id: "feesAndTransactions.how.description3",
@@ -135,9 +133,12 @@ export default function Home() {
 
           <HighlightCallout>
             <p>
-              <strong>Why it matters:</strong> predictable fees mean no
-              surprise overpayment, no bidding war to get included in a block,
-              and a calmer user experience, especially for everyday payments.
+              <strong>{translate({id: "feesAndTransactions.callout.why.label", message: "Why it matters:"})}</strong>{" "}
+              {translate({
+                id: "feesAndTransactions.callout.why.text",
+                message:
+                  "predictable fees mean no surprise overpayment, no bidding war to get included in a block, and a calmer user experience, especially for everyday payments.",
+              })}
             </p>
           </HighlightCallout>
 
@@ -237,9 +238,12 @@ export default function Home() {
 
           <HighlightCallout>
             <p>
-              <strong>Size, not steps:</strong> a large but simple transaction
-              can cost more than a small transaction that runs a script, because
-              the fee formula weights the bytes you add to the ledger.
+              <strong>{translate({id: "feesAndTransactions.callout.size.label", message: "Size, not steps:"})}</strong>{" "}
+              {translate({
+                id: "feesAndTransactions.callout.size.text",
+                message:
+                  "a large but simple transaction can cost more than a small transaction that runs a script, because the fee formula weights the bytes you add to the ledger.",
+              })}
             </p>
           </HighlightCallout>
 
@@ -269,7 +273,7 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.markets.description2",
                 message:
-                  "Some [maximal extractable value (MEV)](/glossary/mev) still exists. Stake pools order the transactions in the blocks they produce, and arbitrage or liquidation opportunities can be captured by reordering or inserting transactions. The eUTXO concurrency model and more deterministic ordering keep this more limited than on account-based chains, but it is not zero.",
+                  "Some [maximal extractable value (MEV)](/glossary/mev) still exists. The protocol does not enforce any transaction order within a block, and the stock node simply fills blocks in mempool arrival order. Reordering transactions would require a modified block producer, while back-running (adding your own transaction after one you see in the mempool) needs no modification at all. What actually keeps MEV limited on Cardano is that a transaction's inputs and outputs are fixed when it is built: a reordered transaction cannot be made to execute at a worse price, it either goes through as written or fails.",
               }),
             ]}
             headingDot={true}
