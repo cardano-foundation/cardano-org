@@ -46,9 +46,11 @@ export default function DropdownNavbarItemDesktop({
         {...props}
         onClick={props.to ? undefined : (e) => e.preventDefault()}
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+          if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             setShowDropdown(!showDropdown);
+          } else if (e.key === 'Escape') {
+            setShowDropdown(false);
           }
         }}>
         {props.children ?? props.label}

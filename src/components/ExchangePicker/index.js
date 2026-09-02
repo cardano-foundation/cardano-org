@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import data from "@site/src/data/exchanges.json";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 const { regions, countries } = data;
@@ -31,6 +33,9 @@ const EXCHANGE_LOGOS = {
   "OKX": "/img/exchanges/okx.jpg",
   "Paribu": "/img/exchanges/paribu.png",
   "CoinEx": "/img/exchanges/CoinEx.svg",
+  "MAX (MaiCoin)": "/img/exchanges/max.png",
+  "BitoPro": "/img/exchanges/bitopro.png",
+  "HOYA BIT": "/img/exchanges/hoyabit.png"
 };
 
 function getExchangesForCountry(countryName) {
@@ -58,6 +63,7 @@ function getExchangesForCountry(countryName) {
 }
 
 function ExchangeCard({ exchange }) {
+  const { withBaseUrl } = useBaseUrlUtils();
   const logoUrl = EXCHANGE_LOGOS[exchange.name];
   const initial = exchange.name.charAt(0).toUpperCase();
 
@@ -65,8 +71,8 @@ function ExchangeCard({ exchange }) {
     <div className={styles.exchangeCard}>
       <div className={styles.exchangeHeader}>
         {logoUrl ? (
-          <img 
-            src={logoUrl} 
+          <img
+            src={withBaseUrl(logoUrl)}
             alt={exchange.name} 
             className={styles.exchangeLogo}
             onError={(e) => {
@@ -104,7 +110,7 @@ function ExchangeCard({ exchange }) {
       </div>
 
       <a 
-        href={exchange.link} 
+        href={safeUrl(exchange.link)}
         target="_blank" 
         rel="noopener noreferrer"
         className={styles.exchangeLink}

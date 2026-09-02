@@ -2,7 +2,7 @@
 slug: 2023-08-21-august-developer-portal
 title: "Interview: W3:Ride"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

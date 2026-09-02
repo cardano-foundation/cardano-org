@@ -2,7 +2,7 @@
 slug: launch-of-the-developer-portal-2021-developer-portal
 title: "Cardano Developer Portal launch"
 authors: [cf]
-tags: [development, developers]
+tags: [development]
 ---
 
 ![title image](./developer-portal-launch.jpeg)

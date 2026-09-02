@@ -4,11 +4,11 @@
     "description": "The label for version current"
   },
   "sidebar.getInvolvedSidebar.category.Site Components": {
-    "message": "Site Components",
+    "message": "Seiten-Komponenten",
     "description": "The label for category 'Site Components' in sidebar 'getInvolvedSidebar'"
   },
   "sidebar.getInvolvedSidebar.category.Site Components.link.generated-index.description": {
-    "message": "Get to know the components with which you can create pages.",
+    "message": "Lerne die Komponenten kennen, mit denen du Seiten erstellen kannst.",
     "description": "The generated-index page description for category 'Site Components' in sidebar 'getInvolvedSidebar'"
   }
 }

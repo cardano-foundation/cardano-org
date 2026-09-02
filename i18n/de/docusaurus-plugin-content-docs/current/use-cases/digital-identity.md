@@ -1,6 +1,6 @@
 ---
 title: Digitale Identität
-description: Selbstsouveräne Identitätslösungen für Cardano geben den Nutzern die Kontrolle über ihre persönlichen Daten
+description: Selbstbestimmte Identitätslösungen auf Cardano geben den Nutzern die Kontrolle über ihre persönlichen Daten
 sidebar_label: Digitale Identität
 sidebar_position: 3
 ---
@@ -15,26 +15,26 @@ Zentralisierte Identitätssysteme schaffen zentralisierte Fehlerquellen und verl
 
 ## Wie Blockchain dies löst
 
-Selbstsouveräne Identität (SSI) auf Cardano verleiht den Nutzern die Kontrolle über ihre digitale Identität. Die wichtigsten Merkmale sind:
+Selbstbestimmte Identität (Self-Sovereign Identity, SSI) auf Cardano verleiht den Nutzern die Kontrolle über ihre digitale Identität. Die wichtigsten Merkmale sind:
 
-- **User ownership**: Individuals control their identity data and decide what to share
-- **Selective disclosure**: Share only the information needed for a specific transaction
-- **Verifiable credentials**: Third parties can cryptographically verify claims without accessing underlying data
-- **Decentralized identifiers (DIDs)**: Persistent identifiers that don't depend on any central authority
-- **Privacy preservation**: Zero-knowledge proofs can verify attributes without revealing them
+- **Eigentum der Nutzer**: Jeder kontrolliert seine Identitätsdaten selbst und entscheidet, was er teilt
+- **Selektive Freigabe**: Es werden nur die Informationen geteilt, die für einen konkreten Vorgang nötig sind
+- **Verifizierbare Nachweise**: Dritte können Angaben kryptografisch prüfen, ohne Zugriff auf die zugrunde liegenden Daten
+- **Dezentrale Identifikatoren (DIDs)**: Dauerhafte Kennungen, die von keiner zentralen Instanz abhängen
+- **Schutz der Privatsphäre**: Zero-Knowledge-Beweise bestätigen Eigenschaften, ohne sie offenzulegen
 
-With blockchain-based identity, users can prove they're over 18 without revealing their birthdate, or prove they live in a certain country without revealing their address.
+Mit blockchainbasierter Identität können Nutzer etwa belegen, dass sie über 18 sind, ohne ihr Geburtsdatum zu verraten, oder dass sie in einem bestimmten Land leben, ohne ihre Adresse preiszugeben.
 
 ## Warum Cardano
 
-- **Formale Verifizierungsmethoden** stellen sicher, dass sich Identitäts-Smart-Contracts wie vorgesehen verhalten
+- **Formale Verifikationsmethoden** stellen sicher, dass sich Identitäts-Smart-Contracts wie vorgesehen verhalten
 - **Erweitertes UTXO-Modell** bietet vorhersehbare Transaktionskosten für Identitätsvorgänge
 - **Interoperabilitätsfokus** ermöglicht Identitätsnachweise über verschiedene Systeme hinweg
-- **Strong governance** ensures the platform evolves with community input
+- **Starke Governance** sorgt dafür, dass sich die Plattform mit der Community weiterentwickelt
 - **Skalierbarkeits-Roadmap** unterstützt Identitätslösungen im globalen Maßstab
 
 ## Erste Schritte
 
 - [Entdecke Identitätsanwendungen auf Cardano](/apps/?tags=identity)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

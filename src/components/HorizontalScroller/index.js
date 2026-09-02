@@ -34,8 +34,21 @@ function ChevronRight() {
 // Generic horizontal scroll-snap track with prev/next arrows (desktop) and
 // progress dots (mobile), mirroring the /apps category carousel. Each child is
 // rendered as one snap item.
-function HorizontalScroller({ children, ariaLabel, prevLabel, nextLabel }) {
+function HorizontalScroller({
+  children,
+  ariaLabel,
+  prevLabel,
+  nextLabel,
+  gap,
+  itemWidth,
+  itemWidthMobile,
+}) {
   const items = React.Children.toArray(children);
+  // Optional sizing overrides, applied as CSS custom properties (see styles).
+  const sizeVars = {};
+  if (gap) sizeVars["--hs-gap"] = gap;
+  if (itemWidth) sizeVars["--hs-item-width"] = itemWidth;
+  if (itemWidthMobile) sizeVars["--hs-item-width-mobile"] = itemWidthMobile;
   const scrollerRef = useRef(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -82,7 +95,12 @@ function HorizontalScroller({ children, ariaLabel, prevLabel, nextLabel }) {
   };
 
   return (
-    <div className={styles.carousel} aria-label={ariaLabel} role="region">
+    <div
+      className={styles.carousel}
+      style={sizeVars}
+      aria-label={ariaLabel}
+      role="region"
+    >
       <button
         type="button"
         className={clsx(styles.arrow, styles.arrowPrev)}

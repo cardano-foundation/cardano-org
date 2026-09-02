@@ -2,7 +2,7 @@
 slug: 2025-06-06-cardano-node-evolution
 title: "Cardano node's evolution towards diversity and modular design"
 authors: [iog]
-tags: [development, Ouroboros]
+tags: [development, research]
 ---
 
 A blog post by Input Output Global (IOG), details the evolution of the Cardano node from a monolithic application into a modular framework. This transformation breaks the node into smaller, independent components for aspects like consensus, ledger, and networking. The post explains that this modular design enhances flexibility for developers, simplifies updates, and critically, fosters client diversity. By enabling the creation of alternative node clients, this evolution aims to improve the overall resilience of the Cardano network.

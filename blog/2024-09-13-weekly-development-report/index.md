@@ -2,7 +2,7 @@
 slug: 2024-09-13-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [weekly development report, development]
+tags: [development]
 ---
 
 The ledger team introduced a Conway feature restricting reward withdrawals without DRep delegation post-bootstrap, fixed bugs, and improved testing. Performance benchmarks for node v.9.1.1 were released, setting a new baseline. Mithril advanced decentralization and transaction handling. Voltaire's committee applications are open, Catalyst prepped Fund13 categories, and Fund12 onboarding nears completion. Education updated 'Mastering Cardano' and prepared content for Cardano Days events.

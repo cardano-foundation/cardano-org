@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 title: Create a React Page
-description: Build a custom React page on cardano.org with full layout freedom, using the shared component library and Docusaurus i18n helpers.
+description: Build a custom React page on cardano.org with full layout freedom, using the shared component library.
 ---
 
 ## Create a React Page
@@ -12,9 +12,9 @@ For more complex layouts and interactive features, you can create pages using Re
 
 Add React (`.js` or `.jsx`) files to `/src/pages/` to create standalone pages:
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.js` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+- `src/pages/index.js` maps to `localhost:3000/`
+- `src/pages/foo.js` maps to `localhost:3000/foo`
+- `src/pages/foo/bar.js` maps to `localhost:3000/foo/bar`
 
 ## Create a simple React page
 
@@ -50,7 +50,6 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title="Hello World"
@@ -135,7 +134,6 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title="Hello World"

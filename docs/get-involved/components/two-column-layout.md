@@ -35,6 +35,7 @@ import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
 | `sidebarSticky` | `boolean` | `true` | Whether the sidebar should stick when scrolling |
 | `sidebarTop` | `string` | `'2rem'` | Top offset for sticky sidebar (CSS value) |
 | `ratio` | `string` | `'2:1'` | Column width ratio (e.g., '2:1', '3:1') |
+| `centerVertically` | `boolean` | `false` | Vertically center the two columns relative to each other |
 
 ## Examples
 

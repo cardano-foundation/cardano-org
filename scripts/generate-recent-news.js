@@ -7,10 +7,13 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const sharp = require('sharp');
 
 const blogDir = path.join(__dirname, '../blog');
 const outputPath = path.join(__dirname, '../src/data/recentNews.json');
 const authorsPath = path.join(__dirname, '../blog/authors.yml');
+const thumbsDir = path.join(__dirname, '../static/img/news-thumbs');
+const thumbsPublicBase = '/img/news-thumbs';
 
 // Load authors for resolving author keys
 const authorsYaml = fs.readFileSync(authorsPath, 'utf8');
@@ -24,12 +27,16 @@ const dirs = fs
   .sort()
   .reverse();
 
+// Return the markdown body after the YAML frontmatter.
+function getPostBody(content) {
+  const parts = content.split('---');
+  return parts.length >= 3 ? parts.slice(2).join('---') : '';
+}
+
 // Extract first paragraph from markdown content (after frontmatter)
 function extractDescription(content) {
-  // Remove frontmatter
-  const parts = content.split('---');
-  if (parts.length < 3) return '';
-  const body = parts.slice(2).join('---').trim();
+  const body = getPostBody(content).trim();
+  if (!body) return '';
 
   // Find first non-empty paragraph (skip images, HTML blocks, empty lines)
   const lines = body.split('\n');
@@ -53,6 +60,35 @@ function extractDescription(content) {
     .replace(/`([^`]+)`/g, '$1'); // `code` -> code
 }
 
+// Find the post banner image and, for in-post files, emit a downscaled WebP
+// thumbnail under static/. Returns a web URL usable as a card thumbnail, or
+// null when the post has no usable image (component falls back to default).
+async function resolveThumbnail(dir, content, slug) {
+  const body = getPostBody(content);
+
+  // First inline markdown image, e.g. ![alt](./banner.webp "title")
+  const imgMatch = body.match(/!\[[^\]]*\]\(([^)]+)\)/);
+  if (!imgMatch) return null;
+
+  // Drop an optional title after the URL, and any surrounding whitespace
+  const rawUrl = imgMatch[1].trim().split(/\s+/)[0];
+
+  // Remote or already-public paths can be used as-is
+  if (/^https?:\/\//.test(rawUrl) || rawUrl.startsWith('/')) return rawUrl;
+
+  // In-post relative asset: resolve on disk and emit a small WebP thumbnail
+  const rel = rawUrl.replace(/^\.\//, '');
+  const srcPath = path.join(blogDir, dir, rel);
+  if (!fs.existsSync(srcPath)) return null;
+
+  const destName = `${slug}.webp`;
+  await sharp(srcPath)
+    .resize({ width: 800, withoutEnlargement: true })
+    .webp({ quality: 80 })
+    .toFile(path.join(thumbsDir, destName));
+  return `${thumbsPublicBase}/${destName}`;
+}
+
 // Resolve author keys to name + imageUrl
 function resolveAuthors(authorKeys) {
   if (!authorKeys) return [];
@@ -65,38 +101,47 @@ function resolveAuthors(authorKeys) {
     }));
 }
 
-const recentNews = [];
+async function main() {
+  // Start from a clean thumbnails directory so stale banners don't linger
+  fs.rmSync(thumbsDir, { recursive: true, force: true });
+  fs.mkdirSync(thumbsDir, { recursive: true });
 
-for (const dir of dirs) {
-  if (recentNews.length >= 6) break;
+  const recentNews = [];
 
-  const indexPath = path.join(blogDir, dir, 'index.md');
-  if (!fs.existsSync(indexPath)) continue;
+  for (const dir of dirs) {
+    if (recentNews.length >= 6) break;
 
-  const content = fs.readFileSync(indexPath, 'utf8');
+    const indexPath = path.join(blogDir, dir, 'index.md');
+    if (!fs.existsSync(indexPath)) continue;
 
-  // Parse frontmatter
-  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!fmMatch) continue;
+    const content = fs.readFileSync(indexPath, 'utf8');
 
-  const frontmatter = yaml.load(fmMatch[1]);
+    // Parse frontmatter
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!fmMatch) continue;
 
-  // Extract date from directory name
-  const dateMatch = dir.match(/^(\d{4}-\d{2}-\d{2})/);
-  if (!dateMatch) continue;
+    const frontmatter = yaml.load(fmMatch[1]);
 
-  const slug = frontmatter.slug || dir;
-  const description = frontmatter.description || extractDescription(content);
+    // Extract date from directory name
+    const dateMatch = dir.match(/^(\d{4}-\d{2}-\d{2})/);
+    if (!dateMatch) continue;
 
-  recentNews.push({
-    title: frontmatter.title,
-    permalink: `/news/${slug}`,
-    date: dateMatch[1],
-    description,
-    authors: resolveAuthors(frontmatter.authors),
-    tags: frontmatter.tags || [],
-  });
+    const slug = frontmatter.slug || dir;
+    const description = frontmatter.description || extractDescription(content);
+
+    recentNews.push({
+      title: frontmatter.title,
+      permalink: `/news/${slug}`,
+      date: dateMatch[1],
+      description,
+      image: await resolveThumbnail(dir, content, slug),
+      authors: resolveAuthors(frontmatter.authors),
+      tags: frontmatter.tags || [],
+    });
+  }
+
+  fs.writeFileSync(outputPath, JSON.stringify(recentNews, null, 2));
+  console.log(`✅ Generated recentNews.json with ${recentNews.length} posts`);
 }
 
-fs.writeFileSync(outputPath, JSON.stringify(recentNews, null, 2));
-console.log(`✅ Generated recentNews.json with ${recentNews.length} posts`);
+main();

@@ -2,7 +2,7 @@
 slug: 2024-02-19-february-developer-portal
 title: "Interview: Rejuve.AI"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

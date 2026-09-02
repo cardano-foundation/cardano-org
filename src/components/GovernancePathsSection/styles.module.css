@@ -102,12 +102,6 @@
   color: #fff;
 }
 
-.stepArrow {
-  flex-shrink: 0;
-  color: var(--ifm-color-primary);
-  font-size: 0.95rem;
-  margin: 0 -0.25rem 0 -0.35rem;
-}
 
 .stepText {
   display: flex;

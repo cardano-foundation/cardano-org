@@ -15,6 +15,8 @@ import {
 } from "@site/src/utils/appStats";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile from "@site/src/components/AppTile";
+import { jsonLdString } from "@site/src/utils/jsonLd";
+import { safeUrl } from "@site/src/utils/safeUrl";
 
 import styles from "./styles.module.css";
 
@@ -22,7 +24,7 @@ const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
 
 function buildJsonLd(app) {
-  return JSON.stringify({
+  return jsonLdString({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: app.title,
@@ -390,7 +392,7 @@ export default function AppDetail({ app }) {
 
         {app.spotlight && (
           <Link
-            href={app.spotlight.url}
+            href={safeUrl(app.spotlight.url)}
             className={styles.spotlight}
             aria-label={translate({
               id: "apps.detail.spotlight.aria",
@@ -418,7 +420,7 @@ export default function AppDetail({ app }) {
         )}
 
         <div className={styles.actions}>
-          <Link href={app.website} className={styles.visitButton}>
+          <Link href={safeUrl(app.website)} className={styles.visitButton}>
             {translate(
               { id: "apps.detail.visit", message: "Visit {title}" },
               { title: app.title }
@@ -456,7 +458,7 @@ export default function AppDetail({ app }) {
           )}
           {app.source && (
             <Link
-              href={app.source}
+              href={safeUrl(app.source)}
               className={styles.iconButton}
               aria-label={translate({
                 id: "apps.detail.viewSource",

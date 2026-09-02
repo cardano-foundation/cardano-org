@@ -2,7 +2,7 @@
 slug: 2025-08-15-weekly-development-report
 title: "Weekly Development Report"
 authors: [iog]
-tags: [weekly development report, development]
+tags: [development]
 ---
 
 The development report highlights the ledger team beginning work on CIP-112, known as 'Required Guards,' and refactoring the stake pool state. The performance team released benchmarks for Cardano node v.10.5. On the scaling front, the Leios team advanced its CIP documentation and demonstrated Linear Leios performance under various Plutus workloads, resolving key simulation discrepancies.

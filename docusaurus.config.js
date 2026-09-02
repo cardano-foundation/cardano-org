@@ -170,6 +170,9 @@ const config = {
           showReadingTime: false,
           routeBasePath: 'news',
           blogSidebarCount: 50,
+          // Only tags defined in blog/tags.yml may be used; any other tag
+          // fails the build. Keeps the tag taxonomy from drifting over time.
+          onInlineTags: 'throw',
           editUrl: `${vars.repository}/edit/${vars.branch}`,
           onUntruncatedBlogPosts: 'ignore',
           // Replaces the default "Blog | Cardano" page title and missing
@@ -228,6 +231,34 @@ const config = {
             const prefix = match[1] || '';
             return [`${prefix}/docs/glossary`];
           }
+
+          // The blog tag taxonomy was consolidated to the 7 tags in
+          // blog/tags.yml. Redirect the retired tag pages to the tag they were
+          // folded into so old links and search results keep working.
+          const tagMerges = {
+            development: ['weekly-development-report', 'developers', 'interoperability'],
+            research: ['ouroboros', 'scaling'],
+            governance: ['catalyst', 'mbo', 'spo'],
+            community: ['community-digest', 'ambassadors'],
+            ecosystem: ['media', 'adoption', 'report', 'activity-report', 'strategy'],
+            events: ['summit', 'buidler-fest', 'hackathons'],
+          };
+          const tagMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/tags\/([a-z-]+)\/?$/);
+          if (tagMatch) {
+            const prefix = tagMatch[1] || '';
+            const retired = tagMerges[tagMatch[2]];
+            if (retired) {
+              return retired.map((slug) => `${prefix}/news/tags/${slug}`);
+            }
+          }
+
+          // Dropped tags (format modifiers) point at the news index.
+          const newsIndex = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/?$/);
+          if (newsIndex) {
+            const prefix = newsIndex[1] || '';
+            return ['recap', 'survey'].map((slug) => `${prefix}/news/tags/${slug}`);
+          }
+
           return undefined;
         },
       },
@@ -460,6 +491,7 @@ const config = {
               { to: '/use-cases#identity', label: 'Identity' },
               { to: '/use-cases#finance', label: 'Finance' },
               { to: '/use-cases#supply-chain', label: 'Supply Chain' },
+              { to: '/ai', label: 'AI Agents' },
             ],
             // The mega menu full version for "Solutions"
             mega: true,
@@ -481,6 +513,7 @@ const config = {
                     { to: '/use-cases', label: 'All Use Cases', description: 'Explore blockchain applications', icon: 'shapes-solid' },
                     { to: '/use-cases#identity', label: 'Identity', description: 'Credentials & verification', icon: 'users-solid' },
                     { to: '/use-cases#supply-chain', label: 'Supply Chain', description: 'Traceability & provenance', icon: 'route-solid' },
+                    { to: '/ai', label: 'AI Agents', description: 'Why AI needs Cardano', icon: 'robot-solid' },
                   ],
                 },
               ],

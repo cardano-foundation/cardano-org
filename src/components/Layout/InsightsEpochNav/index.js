@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
+import './nav.css';
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);

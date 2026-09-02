@@ -2,10 +2,10 @@
 slug: 2025-06-27-media-cardano-developer-office-hours
 title: "Token Registry API v2"
 authors: [cf]
-tags: [media]
+tags: [ecosystem]
 ---
 
-In this session of the Cardano Developer Office Hours, Giovanni Gargiulo, Senior Software Engineer – DevOps at the Cardano Foundation, presents the new Token Registry API v2 with full CIP-68 support. He demonstrates API endpoints, explains best practices for using the query_priority parameter, and covers support for tokens under both CIP-26 and CIP-68. A live demo shows practical use cases and integration opportunities for developers.
+In this session of the Cardano Developer Office Hours, Giovanni Gargiulo, Senior Software Engineer, DevOps at the Cardano Foundation, presents the new Token Registry API v2 with full CIP-68 support. He demonstrates API endpoints, explains best practices for using the query_priority parameter, and covers support for tokens under both CIP-26 and CIP-68. A live demo shows practical use cases and integration opportunities for developers.
 
 <div style={{ textAlign: 'right' }}>
 [**Watch now**](https://www.youtube.com/watch?v=R9Qjn4pFIf8)

@@ -2,7 +2,7 @@
 slug: 2024-07-09-media-dreps-and-the-future-of-blockchain-governance-lloyd-duhon
 title: DReps and the Future of Blockchain Governance with Lloyd Duhon
 authors: [community]
-tags: [media, governance]
+tags: [governance, ecosystem]
 ---
 
 Discover the future of Cardano governance with Lloyd Duhon, covering the Chang upgrade, Delegated Representatives (DReps), and the DRep Pioneer Workshop Leaders Program. Learn how these innovations will empower ada holders in decision-making, from protocol parameters to treasury management. A comprehensive guide to Cardano’s Voltaire era and decentralized blockchain governance.

@@ -2,7 +2,7 @@
 slug: 2024-12-23-community-digest
 title: "Community Digest"
 authors: [cf]
-tags: [community digest, governance]
+tags: [community, governance]
 ---
 
 

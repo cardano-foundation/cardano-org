@@ -33,30 +33,24 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 
    | Item | Recommendation |
    |---|---|
-   | Resolution | **1280×720 px** (1280 wide, 16:9), downscales cleanly |
+   | Resolution | **2048×1440 px** source (displays at 1024×720 @2x), downscales cleanly |
    | Aspect ratio | **16:9 or 16:10** landscape; anything taller gets cropped on the card |
-   | Format | **JPEG** (quality 80) for UI screenshots; PNG only when pixel-perfect text or transparency matters; WebP welcome |
-   | File size | **Under 500 KB** (build will fail otherwise; limit enforced by `scripts/check-app-screenshots.js`) |
+   | Format | **WebP** (quality 80) for UI screenshots; PNG only when pixel-perfect text or transparency matters |
+   | File size | **Under 500 KB** (build will fail otherwise; the only spec enforced by `scripts/check-app-screenshots.js`) |
    | Content | the actual app UI, cropped to the meaningful area. Not a marketing landing page. |
    | Theme | prefer **light theme** for visual consistency with the grid |
    | Browser chrome | omit URL bar and tabs unless intentional (use a clean window or crop them out) |
 
-   One-liner to resize and re-encode an oversized PNG (macOS, ships with `sips`):
+   One-liner to resize and re-encode an oversized PNG to WebP (`cwebp`, cross-platform, part of the `webp` package):
 
    ```bash
-   sips -Z 1280 -s formatOptions 80 -s format jpeg input.png --out your-project-name.jpg
+   cwebp -q 80 -resize 2048 0 input.png -o your-project-name.webp
    ```
 
-   Equivalent on Linux (with ImageMagick):
-
-   ```bash
-   convert input.png -resize 1280x -quality 80 your-project-name.jpg
-   ```
-
-   Name the file descriptively, lowercase, hyphens (e.g. `minswap.jpg`, not `Screenshot 2026-04-19.png`).
+   Name the file descriptively, lowercase, hyphens (e.g. `minswap.webp`, not `Screenshot 2026-04-19.png`).
 
 2. **Add your screenshot to the repository**
-   - Place it in: `src/data/app-screenshots/your-project-name.jpg`
+   - Place it in: `src/data/app-screenshots/your-project-name.webp`
 
 3. **(Optional) Add your project icon/logo**
    - Icons are displayed in specialized components like the DEX grid and app lists
@@ -79,7 +73,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      title: "Your Project Name",
      description: "Brief description of what your project does (120-180 chars; avoid 'best/first/only' claims)",
      tagline: "Multi-pool DEX with deepest liquidity",  // max 60 chars; shown on /apps tiles
-     preview: require("./app-screenshots/your-project-name.jpg"),
+     preview: require("./app-screenshots/your-project-name.webp"),
      icon: "/img/app-icons/your-project-name.svg", // OPTIONAL - for logo display in components
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",

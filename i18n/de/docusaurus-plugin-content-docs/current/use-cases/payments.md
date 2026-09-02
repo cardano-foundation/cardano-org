@@ -1,6 +1,6 @@
 ---
 title: Zahlungen
-description: Fast, low-cost cross-border transfers using Cardano blockchain technology
+description: Schnelle, günstige Überweisungen über Grenzen hinweg mit der Cardano-Blockchain
 sidebar_label: Zahlungen
 sidebar_position: 7
 ---
@@ -9,33 +9,33 @@ sidebar_position: 7
 
 ## Die Herausforderung
 
-Cross-border payments remain slow, expensive, and opaque. Traditional remittance services charge fees averaging 6-7% globally, with some corridors exceeding 10%. Transactions can take days to settle, and recipients often have limited options for accessing funds.
+Grenzüberschreitende Zahlungen sind nach wie vor langsam, teuer und intransparent. Klassische Überweisungsdienste verlangen weltweit im Schnitt 6 bis 7 % Gebühren, auf manchen Strecken über 10 %. Transaktionen brauchen oft Tage bis zur Gutschrift, und die Empfänger haben nur begrenzte Möglichkeiten, an ihr Geld zu kommen.
 
-For the millions of migrant workers sending money home to support their families, these fees represent a significant burden. The World Bank estimates that reducing remittance fees to 3% could save senders over $20 billion annually.
+Für die Millionen von Arbeitsmigranten, die Geld an ihre Familien schicken, sind diese Gebühren eine erhebliche Last. Die Weltbank schätzt: Würden die Überweisungsgebühren auf 3 % sinken, könnten die Absender jährlich über 20 Milliarden Dollar sparen.
 
 ## Wie Blockchain dies löst
 
-Cardano enables fast, low-cost payments that settle in minutes rather than days:
+Cardano ermöglicht schnelle, günstige Zahlungen, die in Minuten statt Tagen abgewickelt sind:
 
-- **Low fees**: Transaction costs of fractions of a cent make small payments viable
-- **Fast settlement**: Transactions confirm in minutes, not days
-- **Global reach**: Anyone with internet access can send or receive payments
-- **Transparent pricing**: No hidden fees or unfavorable exchange rates
-- **24/7 availability**: Payments process any time, regardless of banking hours or holidays
+- **Niedrige Gebühren**: Transaktionskosten von Bruchteilen eines Cents machen auch kleine Zahlungen praktikabel
+- **Schnelle Abwicklung**: Transaktionen sind in Minuten bestätigt, nicht in Tagen
+- **Globale Reichweite**: Jeder mit Internetzugang kann Zahlungen senden und empfangen
+- **Transparente Preise**: Keine versteckten Gebühren oder ungünstigen Wechselkurse
+- **Rund um die Uhr verfügbar**: Zahlungen laufen jederzeit, unabhängig von Banköffnungszeiten und Feiertagen
 
-Native tokens on Cardano enable stablecoins pegged to local currencies, reducing volatility concerns for everyday transactions while maintaining the benefits of blockchain settlement.
+Native Token auf Cardano ermöglichen Stablecoins, die an lokale Währungen gekoppelt sind. Das nimmt Alltagszahlungen die Volatilität, ohne auf die Vorteile der Blockchain-Abwicklung zu verzichten.
 
 ## Warum Cardano
 
-- **Scalability** through Hydra and other Layer 2 solutions enables high transaction throughput
-- **Interoperability** allows connection with traditional payment systems
-- **Security** protects against fraud and unauthorized transactions
-- **Low environmental impact** through proof of stake consensus
-- **Growing merchant adoption** expands real-world payment utility
+- **Skalierbarkeit** durch Hydra und andere Layer-2-Lösungen ermöglicht hohen Transaktionsdurchsatz
+- **Interoperabilität** erlaubt die Anbindung klassischer Zahlungssysteme
+- **Sicherheit** schützt vor Betrug und unautorisierten Transaktionen
+- **Geringe Umweltbelastung** dank Proof-of-Stake-Konsens
+- **Wachsende Händlerakzeptanz** macht Zahlungen im Alltag immer nützlicher
 
 ## Erste Schritte
 
-- [Cardano wallet erstellen](/apps/?tags=wallet)
-- [Where to get ada](/where-to-get-ada)
+- [Cardano-Wallet erstellen](/apps/?tags=wallet)
+- [Wo du Ada bekommst](/where-to-get-ada)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

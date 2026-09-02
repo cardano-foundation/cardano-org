@@ -2,7 +2,7 @@
 slug: 2023-10-16-october-developer-portal
 title: "Interview: Lenfi"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

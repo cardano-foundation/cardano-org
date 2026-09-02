@@ -17,18 +17,13 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './glossary.module.css';
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const POPULAR_PILL_SLUGS = ['eutxo', 'stake-pool', 'drep', 'governance-action', 'smart-contract', 'treasury'];
 const SEARCH_DROPDOWN_LIMIT = 6;
-
-// Escapes any literal `</` so a future term containing the substring cannot
-// terminate the embedded <script type="application/ld+json"> early.
-function jsonLdString(data) {
-  return JSON.stringify(data).replace(/</g, '\\u003c');
-}
 
 function buildJsonLd(terms, glossaryFullUrl) {
   return jsonLdString({
@@ -732,7 +727,7 @@ export default function GlossaryIndex() {
             <a
               href="https://github.com/cardano-foundation/cardano-org/issues/new?labels=glossary&title=Suggest+glossary+term%3A+"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={styles.cantFindPrimary}
             >
               {translate({ id: 'glossary.index.suggestTerm', message: 'Suggest a term' })}

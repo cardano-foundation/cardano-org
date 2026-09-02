@@ -16,6 +16,7 @@ function FilterPill({ label, active, onClick }) {
       className={`${styles.pill} ${active ? styles.pillActive : ""}`}
       onClick={onClick}
       type="button"
+      aria-pressed={active}
     >
       {label}
     </button>
@@ -46,7 +47,7 @@ export default function WalletFinderFilters({
         <h2 className={styles.filterTitle}>
           {translate({id: 'walletFinder.filters.title', message: 'Filters'})}
           {hasFilters && (
-            <span className={styles.filterCount}>
+            <span className={styles.filterCount} aria-live="polite" aria-atomic="true">
               {" "}
               ({resultCount}{" "}
               {resultCount === 1

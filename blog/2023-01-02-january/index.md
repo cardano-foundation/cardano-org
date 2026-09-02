@@ -2,7 +2,7 @@
 slug: 2023-01-02-january-developer-portal
 title: "Interview: Gimbalabs"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

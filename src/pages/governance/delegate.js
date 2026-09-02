@@ -9,34 +9,17 @@ import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { translate } from "@docusaurus/Translate";
+import AppTile, { StarBadge } from "@site/src/components/AppTile";
+import { Showcases } from "@site/src/data/apps";
+import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./delegate.module.css";
 
-const ALTERNATIVES = [
-  {
-    name: "GovTool",
-    url: "https://gov.tools",
-    descId: "governance.delegate.alt.govtool",
-    desc: "Intersect's full-feature governance interface.",
-  },
-  {
-    name: "Tempo",
-    url: "https://tempo.vote/dreps",
-    descId: "governance.delegate.alt.tempo",
-    desc: "Browse, compare, and follow DReps with rich profiles.",
-  },
-  {
-    name: "AdaStat",
-    url: "https://adastat.net/dreps",
-    descId: "governance.delegate.alt.adastat",
-    desc: "Track every governance action and DRep on-chain.",
-  },
-  {
-    name: "CGOV",
-    url: "https://app.cgov.io/drep",
-    descId: "governance.delegate.alt.cgov",
-    desc: "Dashboard to monitor DReps and governance actions.",
-  },
-];
+// Apps carrying the drepdelegation property support delegating voting power
+// directly. Same ordering as the /apps category panels: most active first,
+// maintainer pick as tiebreaker, then alphabetical for a stable order.
+const DELEGATION_APPS = Showcases
+  .filter((app) => app.properties.includes("drepdelegation"))
+  .sort(compareByActivityThenPick);
 
 const DRepDelegate = lazy(() =>
   import(/* webpackChunkName: "drep-delegate" */ "@site/src/components/DRepDelegate")
@@ -97,21 +80,26 @@ export default function DelegatePage() {
           <p className="black-text">
             {translate({
               id: "governance.delegate.alt.intro",
-              message: "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics.",
+              message: "These community tools also support delegating your voting power to a DRep.",
             })}
+          </p>
+          <p className="black-text">
+            <Link to="/governance/accountability#dreps">
+              {translate({ id: "governance.accountability.link.judgeDrep", message: "How to judge a DRep" })}
+            </Link>
           </p>
           <SpacerBox size="small" />
           <div className={styles.altGrid}>
-            {ALTERNATIVES.map((tool) => (
-              <Link key={tool.name} to={tool.url} className={styles.altCard}>
-                <h3 className={styles.altName}>{tool.name}</h3>
-                <p className={styles.altDesc}>
-                  {translate({ id: tool.descId, message: tool.desc })}
-                </p>
-              </Link>
+            {DELEGATION_APPS.map((app) => (
+              <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
             ))}
           </div>
           <SpacerBox size="small" />
+          <p>
+            <Link to="/apps?tags=governance">
+              {translate({ id: "governance.tools.more", message: "More tools" })}
+            </Link>
+          </p>
         </BoundaryBox>
       </BackgroundWrapper>
     </Layout>

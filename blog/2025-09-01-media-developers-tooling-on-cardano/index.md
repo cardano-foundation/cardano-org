@@ -2,7 +2,7 @@
 slug: 2025-09-01-media-developers-tooling-on-cardano
 title: "Roundtable Talk: Developers Tooling on Cardano"
 authors: [community]
-tags: [media]
+tags: [ecosystem]
 ---
 
 A Roundtable Talk, features a discussion from the Cardano Berlin Hackathon on the evolution of developer tooling. Participants discussed the shift from early limitations to modern solutions like Aiken and open-source SDKs. The conversation also covered the role of the Plutus Pioneer Program and the importance of developer onboarding in securing Cardano’s long-term accessibility and global adoption.

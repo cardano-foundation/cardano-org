@@ -11,6 +11,7 @@ src/data/recentNews.json
 src/data/apps-metadata.json
 static/apps.llms.txt
 static/img/app-screenshots/
+static/img/news-thumbs/
 
 # Misc
 .DS_Store

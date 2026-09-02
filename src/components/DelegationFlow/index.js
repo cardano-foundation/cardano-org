@@ -4,7 +4,6 @@ import Link from "@docusaurus/Link";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import {
-  FaArrowRight,
   FaCheck,
   FaLock,
   FaPenNib,
@@ -127,13 +126,11 @@ function WalletChips() {
           <Link key={w.id} to="/wallets" className={styles.walletChip}>
             <img src={withBaseUrl(w.icon)} alt="" className={styles.walletChipIcon} />
             <span className={styles.walletChipName}>{w.name}</span>
-            <FaArrowRight className={styles.walletChipArrow} aria-hidden="true" />
           </Link>
         ))}
       </div>
       <Link to="/wallets" className={styles.browseAll}>
         {translate({ id: "governance.delegation.step1.browseAll", message: "Browse all wallets" })}
-        <FaArrowRight size={12} aria-hidden="true" />
       </Link>
     </>
   );
@@ -149,7 +146,6 @@ function FeatureTile({ Icon, title, hint, to }) {
         <span className={styles.featureTileTitle}>{title}</span>
         <span className={styles.featureTileHint}>{hint}</span>
       </span>
-      <FaArrowRight className={styles.featureTileArrow} aria-hidden="true" />
     </Link>
   );
 }
@@ -385,7 +381,6 @@ export default function DelegationFlow({ storageKey = DEFAULT_STORAGE_KEY }) {
                   onClick={handleContinue}
                 >
                   {translate({ id: "governance.delegation.continue", message: "Continue" })}
-                  <FaArrowRight size={12} aria-hidden="true" />
                 </button>
               </div>
             )}

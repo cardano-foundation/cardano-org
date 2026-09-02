@@ -2,7 +2,7 @@
 slug: nft-minting-standard-developer-portal
 title: "How we minted the NFTAs, and why we went for this standard"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 ![title image](./nfta.jpg)

@@ -2,7 +2,7 @@
 slug: 2023-02-16-february-developer-portal
 title: "Interview: NEWM"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

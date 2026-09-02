@@ -2,7 +2,7 @@
 slug: 2026-03-03-cardano-summit-2025-journey-and-results
 title: "Cardano Summit 2025: The Journey and the Results"
 authors: [cf]
-tags: [recap,report,events]
+tags: [events, ecosystem]
 ---
 
 

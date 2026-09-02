@@ -2,7 +2,7 @@
 slug: 2025-07-08-reeve-enterprise-financial-reporting
 title: "Cardano Foundation Unveils Reeve for Enterprise Financial Reporting"
 authors: [cf]
-tags: [development]
+tags: [ecosystem]
 ---
 
 

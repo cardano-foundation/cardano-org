@@ -1,0 +1,273 @@
+/* Insights index list (rows, filters, tags)
+ * Moved out of src/css/custom.css (Phase 1 de-clutter). Global class
+ * names preserved; imported by the single page/component that uses them. */
+
+/* Start insights index list */
+
+/* Search input */
+.insights-search-container {
+  margin-bottom: 1.25rem;
+}
+
+.insights-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.insights-search-input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(5, 56, 175, 0.1);
+}
+
+[data-theme='dark'] .insights-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(102, 132, 206, 0.2);
+}
+
+/* Filter tags */
+.insights-filter-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.insights-filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.insight-filter-tag {
+  font-size: 0.675rem;
+  border: 1px solid var(--ifm-color-secondary-darkest);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.insight-filter-tag:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.insight-filter-tag.is-active {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.insight-filter-clear {
+  padding: 0 10px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.insights-list {
+  display: block;
+}
+
+/* Row layout: image left, text right, separator line */
+.insight-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-row:last-child {
+  border-bottom: 0;
+}
+
+/* Thumbnail */
+.insight-thumb {
+  flex: 0 0 240px;
+  max-width: 280px;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Text area */
+.insight-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.insight-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.insight-desc {
+  margin: 0.35rem 0 0.5rem;
+  opacity: 0.9;
+}
+
+/* Tags — matching ShowcaseCard tag style with colored dots */
+.insight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.15rem 0 0.3rem;
+  list-style: none;
+  padding: 0;
+}
+
+.insight-tag {
+  font-size: 0.675rem;
+  border: 1px solid var(--ifm-color-secondary-darkest);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  cursor: default;
+}
+
+.insight-tag-label {
+  margin-left: 8px;
+}
+
+.insight-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+/* CTA link */
+.insight-cta {
+  margin-top: 0.25rem;
+}
+
+.insight-link {
+  font-weight: 600;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .insight-row {
+    flex-direction: column;
+  }
+
+  .insight-thumb {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Grid layout enabling different orders per viewport */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "thumb title"
+    "thumb tags"
+    "thumb desc"
+    "thumb cta";
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: start;
+}
+
+/* Assign areas */
+.insight-thumb {
+  grid-area: thumb;
+}
+
+.insight-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.insight-tags {
+  grid-area: tags;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.insight-desc {
+  grid-area: desc;
+  margin: 0.25rem 0 0.25rem;
+  opacity: 0.9;
+}
+
+.insight-cta {
+  grid-area: cta;
+  margin-top: 0.1rem;
+}
+
+/* Keep your existing thumbnail and tag pill visuals */
+.insight-thumb {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.insight-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.insight-thumb:hover img,
+.insight-thumb:focus-visible img {
+  transform: translateY(-1px);
+  opacity: 0.98;
+}
+
+/* Mobile: Title → Thumbnail → Description (then CTA), as requested */
+@media (max-width: 768px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "thumb"
+      "tags"
+      "desc"
+      "cta";
+  }
+}
+
+/* End insights index list */

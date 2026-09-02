@@ -3,7 +3,7 @@ slug: 2026-05-26-community-digest
 title: "Community Digest"
 description: "Gimbalabs hosts public hackathon; Aiken v1.1.22 delivers compiler upgrades; revised Cardano Summit 2026 proposal features a 22% budget cut; new CIPs target mobile deep-linking."
 authors: [cf]
-tags: [community digest]
+tags: [community]
 ---
 
 

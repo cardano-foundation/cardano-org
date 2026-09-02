@@ -25,12 +25,16 @@
     "test:sitemap": "node scripts/test-sitemap-hreflang.js",
     "test:constitution": "node scripts/test-constitution-toc.js",
     "test:events": "node scripts/test-events-model.js",
+    "test:css": "node scripts/check-css.js",
+    "test:docs-style": "node scripts/check-docs-style.js",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
     "@docusaurus/core": "^3.9.2",
-    "@docusaurus/plugin-client-redirects": "3.9.2",
+    "@docusaurus/plugin-client-redirects": "^3.9.2",
     "@docusaurus/plugin-ideal-image": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
     "@emotion/react": "^11.11.3",
@@ -41,12 +45,12 @@
     "@popperjs/core": "^2.11.8",
     "@tippyjs/react": "^4.2.6",
     "@xyflow/react": "^12.5.5",
-    "axios": "1.13.2",
+    "axios": "1.19.0",
     "buffer": "^6.0.3",
     "clsx": "^2.0.0",
     "crypto-browserify": "^3.12.1",
     "dotenv": "^16.4.5",
-    "echarts": "^5.6.0",
+    "echarts": "^6.1.0",
     "html-to-image": "^1.11.13",
     "js-yaml": "^4.1.0",
     "prism-react-renderer": "^2.3.0",
@@ -74,11 +78,17 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.5.0",
-    "sharp": "^0.34.5"
+    "sharp": "^0.35.3"
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
-    "libsodium-wrappers-sumo": "0.7.15"
+    "libsodium-wrappers-sumo": "0.7.15",
+    "qs": "^6.15.3",
+    "serialize-javascript": "^7.1.0",
+    "sharp": "^0.35.3",
+    "shell-quote": "1.9.0",
+    "uuid": "^11.1.1",
+    "websocket-driver": "0.7.5"
   },
   "browserslist": {
     "production": [

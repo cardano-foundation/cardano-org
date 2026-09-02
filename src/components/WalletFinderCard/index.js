@@ -7,6 +7,7 @@ import {
   WalletCustodyTypes,
   WalletNodeTypes,
 } from "@site/src/data/walletFeatures";
+import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
 
 export default function WalletFinderCard({ wallet }) {
@@ -79,7 +80,7 @@ export default function WalletFinderCard({ wallet }) {
       </div>
 
       <a
-        href={wallet.website}
+        href={safeUrl(wallet.website)}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.link}

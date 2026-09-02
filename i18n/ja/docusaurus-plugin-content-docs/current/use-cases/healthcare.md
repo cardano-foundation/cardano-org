@@ -11,7 +11,7 @@ sidebar_position: 15
 
 Healthcare data is fragmented across providers, making it difficult for patients and doctors to access complete medical histories. This fragmentation leads to repeated tests, dangerous drug interactions, and delayed diagnoses. In emergencies, critical information may be unavailable.
 
-Current systems also create privacy and security risks. Centralized databases are attractive targets for hackers, and patients have limited control over who accesses their sensitive health information.
+Current systems also create privacy and security risks. 現行のシステムはプライバシーとセキュリティのリスクも生んでいます。中央集権型のデータベースはハッカーにとって格好の標的であり、患者は自分の機密性の高い健康情報に誰がアクセスするかをほとんどコントロールできません。
 
 ## ブロックチェーンによる解決策
 

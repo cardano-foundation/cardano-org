@@ -2,7 +2,7 @@
 slug: 2024-01-22-january-developer-portal
 title: "Interview: VESPR Wallet"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

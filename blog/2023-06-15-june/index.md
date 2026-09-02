@@ -2,7 +2,7 @@
 slug: 2023-06-15-june-developer-portal
 title: "Interview: Mandala Metaverse"
 authors: [devportal]
-tags: [development, developers]
+tags: [development]
 ---
 
 import ThemedImage from '@theme/ThemedImage';

@@ -1,6 +1,6 @@
 ---
 title: Tokenisierte Assets
-description: Fractional ownership of real-world assets through tokenization on Cardano
+description: Anteiliges Eigentum an realen Vermögenswerten durch Tokenisierung auf Cardano
 sidebar_label: Tokenisierte Assets
 sidebar_position: 13
 ---
@@ -9,32 +9,32 @@ sidebar_position: 13
 
 ## Die Herausforderung
 
-Traditional investment in real-world assets like real estate, art, or commodities requires significant capital and involves complex legal and administrative processes. This excludes most people from wealth-building opportunities that have historically been reserved for the wealthy.
+Wer klassisch in reale Vermögenswerte wie Immobilien, Kunst oder Rohstoffe investieren will, braucht viel Kapital und muss sich durch komplexe rechtliche und administrative Prozesse arbeiten. Das schließt die meisten Menschen von Anlagechancen aus, die historisch den Wohlhabenden vorbehalten waren.
 
-Even for those who can invest, assets are often illiquid, making it difficult to access funds when needed. The overhead of buying, selling, and managing these assets further reduces returns.
+Und selbst wer investieren kann, sitzt oft auf illiquiden Anlagen, an deren Wert er im Bedarfsfall nur schwer herankommt. Der Aufwand für Kauf, Verkauf und Verwaltung schmälert die Rendite zusätzlich.
 
 ## Wie Blockchain dies löst
 
-Asset tokenization divides ownership of real-world assets into digital tokens that can be easily traded:
+Die Tokenisierung teilt das Eigentum an realen Vermögenswerten in digitale Token auf, die sich einfach handeln lassen:
 
-- **Fractional ownership**: Own a piece of a building, artwork, or other valuable asset
-- **Increased liquidity**: Trade tokens 24/7 on decentralized exchanges
-- **Reduced barriers**: Lower minimum investments open opportunities to more people
-- **Automated compliance**: Smart contracts can enforce regulatory requirements
-- **Transparent ownership**: All ownership records are publicly verifiable
+- **Anteiliges Eigentum**: Besitze einen Anteil an einem Gebäude, Kunstwerk oder anderen Wertgegenstand
+- **Mehr Liquidität**: Token lassen sich rund um die Uhr auf dezentralen Börsen handeln
+- **Niedrigere Hürden**: Geringere Mindestanlagen öffnen die Chancen für mehr Menschen
+- **Automatisierte Compliance**: Smart Contracts können regulatorische Vorgaben durchsetzen
+- **Transparentes Eigentum**: Alle Eigentumsverhältnisse sind öffentlich überprüfbar
 
-Tokenization can apply to virtually any asset class: real estate, infrastructure, commodities, collectibles, intellectual property, and more.
+Tokenisierung eignet sich für praktisch jede Anlageklasse: Immobilien, Infrastruktur, Rohstoffe, Sammlerstücke, geistiges Eigentum und mehr.
 
 ## Warum Cardano
 
-- **Native tokens** provide efficient, secure asset representation
-- **Low transaction fees** make small trades economically viable
-- **Regulatory awareness** supports compliant tokenization schemes
-- **Smart contract security** through formal verification methods
-- **Global accessibility** enables worldwide participation
+- **Native Token** bilden Vermögenswerte effizient und sicher ab
+- **Niedrige Transaktionsgebühren** machen auch kleine Trades wirtschaftlich
+- **Regulatorisches Bewusstsein** unterstützt regelkonforme Tokenisierungsmodelle
+- **Smart-Contract-Sicherheit** durch formale Verifikationsmethoden
+- **Globale Zugänglichkeit** ermöglicht weltweite Teilnahme
 
 ## Erste Schritte
 
-- [Explore Cardano applications](/apps)
+- [Cardano-Anwendungen entdecken](/apps)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Enterprise Lösungen anzeigen](/solutions)
+- [Enterprise-Lösungen ansehen](/solutions)

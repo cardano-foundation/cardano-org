@@ -3,7 +3,7 @@ slug: 2026-06-25-cf-senai-partnership
 title: "Cardano Foundation and SENAI São Paulo Forge Strategic Partnership"
 description: "The Cardano Foundation partnered with SENAI São Paulo to integrate blockchain technology into Brazilian industry through comprehensive training, certifications, and real-world industrial traceability pilots."
 authors: [cf]
-tags: [adoption]
+tags: [ecosystem]
 ---
 
 

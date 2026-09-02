@@ -2,7 +2,7 @@
 slug: 2026-02-10-call-to-action-spo-parameter-changes
 title: "Action Required: Vote on Plutus Execution Limit Changes"
 authors: [cf]
-tags: [spo]
+tags: [governance]
 ---
 
 

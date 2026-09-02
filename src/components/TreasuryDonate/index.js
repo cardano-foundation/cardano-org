@@ -3,6 +3,13 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import {
+  EXPECTED_NETWORK_ID,
+  EXPLORER_TX_BASE,
+  shortAddress,
+  stringifyError,
+  classifyError,
+} from "@site/src/utils/walletTx";
+import {
   detectWallets,
   enableWallet,
   firstAddressBech32,
@@ -10,8 +17,6 @@ import {
 } from "@site/src/utils/cardano/wallet";
 import styles from "./styles.module.css";
 
-const EXPECTED_NETWORK_ID = 1; // mainnet
-const EXPLORER_TX_BASE = "https://explorer.cardano.org/transaction/";
 const DEFAULT_AMOUNT_ADA = "10";
 const LOVELACE_PER_ADA = 1_000_000n;
 
@@ -31,35 +36,6 @@ function formatAda(lovelace) {
   if (ada >= 1_000_000_000) return `${(ada / 1_000_000_000).toFixed(2)}B ada`;
   if (ada >= 1_000_000) return `${(ada / 1_000_000).toFixed(2)}M ada`;
   return `${Math.round(ada).toLocaleString()} ada`;
-}
-
-function shortAddress(addr) {
-  if (!addr) return "";
-  return `${addr.slice(0, 12)}…${addr.slice(-8)}`;
-}
-
-function stringifyError(err) {
-  if (!err) return "";
-  if (typeof err === "string") return err;
-  if (err instanceof Error) return err.message || err.toString();
-  const parts = [];
-  if (err.message) parts.push(String(err.message));
-  if (err.info) parts.push(String(err.info));
-  if (err.code != null) parts.push(`code=${err.code}`);
-  if (!parts.length) {
-    try { return JSON.stringify(err); } catch { return String(err); }
-  }
-  return parts.join(" · ");
-}
-
-function classifyError(err) {
-  const msg = stringifyError(err);
-  // CIP-30 signTx throws code 2 for UserDeclined; only treat as a cancel when
-  // the message corroborates it so we don't swallow genuine failures.
-  if (/user\s*(declined|rejected|cancel)|declined\s*by\s*user|rejected\s*by\s*user/i.test(msg)) {
-    return "userCancelled";
-  }
-  return "generic";
 }
 
 // Read the current treasury balance from Koios; /totals lists the current epoch first.
@@ -167,7 +143,7 @@ function WalletStatus({ wallet, onDisconnect }) {
 
 function NetworkWarning() {
   return (
-    <div className={`${styles.banner} ${styles.bannerWarning}`}>
+    <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
       {translate({
         id: "governance.treasury.networkWarning",
         message: "Your wallet is on the wrong network. Switch to Mainnet to donate.",
@@ -179,7 +155,7 @@ function NetworkWarning() {
 function TxBanner({ state }) {
   if (state.status === "building") {
     return (
-      <div className={`${styles.banner} ${styles.bannerInfo}`}>
+      <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">
         {translate({
           id: "governance.treasury.tx.building",
           message: "Building the treasury donation. Please confirm in your wallet…",
@@ -189,7 +165,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "success") {
     return (
-      <div className={`${styles.banner} ${styles.bannerSuccess}`}>
+      <div className={`${styles.banner} ${styles.bannerSuccess}`} role="status">
         <p style={{ margin: 0 }}>
           {translate(
             { id: "governance.treasury.tx.success", message: "Donation of {amount} submitted to the treasury." },
@@ -204,7 +180,7 @@ function TxBanner({ state }) {
   }
   if (state.status === "error") {
     return (
-      <div className={`${styles.banner} ${styles.bannerError}`}>
+      <div className={`${styles.banner} ${styles.bannerError}`} role="alert">
         {state.message}
       </div>
     );
@@ -385,6 +361,9 @@ export default function TreasuryDonate() {
             className="button button--primary"
             disabled={!canDonate}
             onClick={handleDonate}
+            aria-describedby={
+              !canDonate && !txBusy && disabledReason ? "treasury-donate-hint" : undefined
+            }
           >
             {txBusy
               ? translate({ id: "governance.treasury.amount.ctaBusy", message: "Building…" })
@@ -392,7 +371,7 @@ export default function TreasuryDonate() {
           </button>
         </div>
         {!canDonate && !txBusy && disabledReason && (
-          <p className={styles.donateHint}>{disabledReason}</p>
+          <p className={styles.donateHint} id="treasury-donate-hint">{disabledReason}</p>
         )}
         <p className={styles.footnote}>
           {translate({
