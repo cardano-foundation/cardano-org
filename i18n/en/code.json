@@ -2005,16 +2005,16 @@
     "message": "Raise Ticket"
   },
   "contact.sponsorship.title": {
-    "message": "Cardano Summit Sponsorship"
+    "message": "Event sponsorship"
   },
   "contact.sponsorship.description1": {
-    "message": "Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we're excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization's needs and goals."
+    "message": "Thank you for your interest in sponsoring Cardano events. The Cardano Summit 2026 will not take place, the community voted against funding it from the treasury. The Cardano Foundation still hosts and attends events around the world, and sponsorship opportunities can be tailored to your organization's goals."
   },
   "contact.sponsorship.description2": {
-    "message": "Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event."
+    "message": "Use the Cardano Foundation contact form to tell the events team about your organization and the kind of event or sponsorship you have in mind. They will get back to you to discuss options."
   },
   "contact.sponsorship.buttonLabel": {
-    "message": "Sponsorship Request"
+    "message": "Contact the Cardano Foundation"
   },
   "contact.meta.title": {
     "message": "Contact Cardano, Get in Touch"
@@ -2035,13 +2035,13 @@
     "message": "not yet decided (please select)"
   },
   "contact.select.option.technicalIssue": {
-    "message": "a technical issue with Daedalus, Nami or Lace"
+    "message": "a technical issue with Daedalus or Lace"
   },
   "contact.select.option.intersect": {
     "message": "the intention to join Intersect"
   },
   "contact.select.option.sponsor": {
-    "message": "the desire to sponsor the Cardano Summit"
+    "message": "the desire to sponsor a Cardano event"
   },
   "contact.select.option.different": {
     "message": "another inquiry"
