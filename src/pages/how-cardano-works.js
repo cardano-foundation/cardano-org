@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import { FaCogs } from "react-icons/fa";
 import SiteHero from "@site/src/components/Layout/SiteHero";
@@ -11,6 +12,10 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import FAQSection from "@site/src/components/FAQSection";
+import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import { jsonLdString } from "@site/src/utils/jsonLd";
+import { getHowCardanoWorksFAQ } from "@site/src/data/howCardanoWorksFAQ";
 import styles from "./how-cardano-works.module.css";
 
 function HomepageHeader() {
@@ -391,6 +396,7 @@ function TerminologySection() {
 }
 
 export default function HowCardanoWorks() {
+  const faq = getHowCardanoWorksFAQ();
   return (
     <Layout
       title={translate({
@@ -403,6 +409,20 @@ export default function HowCardanoWorks() {
           "A plain-language tour of the Cardano blockchain: how blocks are produced, how the extended UTXO ledger tracks ownership, what transactions cost, how native tokens and smart contracts run, who operates the network and how it upgrades.",
       })}
     >
+      <Head>
+        <script type="application/ld+json">
+          {jsonLdString({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faq.map((item) => ({
+              "@type": "Question",
+              "name": item.question,
+              // Structured data must be plain text, so strip markdown links before joining.
+              "acceptedAnswer": { "@type": "Answer", "text": item.answer.join(" ").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
+            })),
+          })}
+        </script>
+      </Head>
       <OpenGraphInfo />
       <HomepageHeader />
       <main>
@@ -425,6 +445,18 @@ export default function HowCardanoWorks() {
             <NetworkSection />
             <UpgradesSection />
             <TerminologySection />
+            <FAQSection data={faq} />
+            <SpacerBox size="medium" />
+          </BoundaryBox>
+        </BackgroundWrapper>
+        <BackgroundWrapper backgroundType="gradientDark">
+          <BoundaryBox>
+            <CtaOneColumn
+              title={translate({ id: "howCardanoWorks.cta.title", message: "Ready to test yourself? Take the technical quiz." })}
+              buttonLabel={translate({ id: "howCardanoWorks.cta.button", message: "Take the quiz" })}
+              buttonLink="/quiz"
+            />
+            <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
