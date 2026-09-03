@@ -1,34 +1,13 @@
 import React from "react";
-import Layout from "@theme/Layout";
-import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import { FaCogs } from "react-icons/fa";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import ExplainerPage from "@site/src/components/Layout/ExplainerPage";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
-import FAQSection from "@site/src/components/FAQSection";
-import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
-import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getHowCardanoWorksFAQ } from "@site/src/data/howCardanoWorksFAQ";
-
-function HomepageHeader() {
-  return (
-    <SiteHero
-      title={translate({ id: "howCardanoWorks.hero.title", message: "How Cardano works" })}
-      description={translate({
-        id: "howCardanoWorks.hero.description",
-        message: "Blocks, ledger, tokens, programs and upgrades, explained step by step.",
-      })}
-      bannerType="waves"
-    />
-  );
-}
 
 function BlockchainSection() {
   return (
@@ -397,7 +376,7 @@ function TerminologySection() {
 export default function HowCardanoWorks() {
   const faq = getHowCardanoWorksFAQ();
   return (
-    <Layout
+    <ExplainerPage
       title={translate({
         id: "howCardanoWorks.meta.title",
         message: "How Cardano Works: Consensus, Ledger and Upgrades",
@@ -407,47 +386,38 @@ export default function HowCardanoWorks() {
         message:
           "How Cardano works, in plain language: block production, the eUTXO ledger, transaction costs, native tokens, smart contracts and protocol upgrades.",
       })}
+      hero={{
+        title: translate({ id: "howCardanoWorks.hero.title", message: "How Cardano works" }),
+        description: translate({
+          id: "howCardanoWorks.hero.description",
+          message: "Blocks, ledger, tokens, programs and upgrades, explained step by step.",
+        }),
+        bannerType: "waves",
+      }}
+      faq={faq}
+      cta={{
+        title: translate({ id: "howCardanoWorks.cta.title", message: "Ready to test yourself? Take the technical quiz." }),
+        buttonLabel: translate({ id: "howCardanoWorks.cta.button", message: "Take the quiz" }),
+        buttonLink: "/quiz",
+      }}
     >
-      <Head>
-        <script type="application/ld+json">{faqJsonLd(faq)}</script>
-      </Head>
-      <OpenGraphInfo />
-      <HomepageHeader />
-      <main>
-        <BackgroundWrapper backgroundType="zoom">
-          <BoundaryBox>
-            <HighlightCallout icon={<FaCogs />}>
-              {translate({
-                id: "howCardanoWorks.intro.callout",
-                message:
-                  "Stake pools produce the blocks, a UTXO ledger records who owns what, tokens and smart contracts run on that ledger, and the whole system upgrades through hard forks that the community decides on.",
-              })}
-            </HighlightCallout>
-            <SpacerBox size="small" />
-            <BlockchainSection />
-            <ConsensusSection />
-            <LedgerSection />
-            <TransactionsSection />
-            <TokensSection />
-            <SmartContractsSection />
-            <NetworkSection />
-            <UpgradesSection />
-            <TerminologySection />
-            <FAQSection data={faq} />
-            <SpacerBox size="medium" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-        <BackgroundWrapper backgroundType="gradientDark">
-          <BoundaryBox>
-            <CtaOneColumn
-              title={translate({ id: "howCardanoWorks.cta.title", message: "Ready to test yourself? Take the technical quiz." })}
-              buttonLabel={translate({ id: "howCardanoWorks.cta.button", message: "Take the quiz" })}
-              buttonLink="/quiz"
-            />
-            <SpacerBox size="small" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-      </main>
-    </Layout>
+      <HighlightCallout icon={<FaCogs />}>
+        {translate({
+          id: "howCardanoWorks.intro.callout",
+          message:
+            "Stake pools produce the blocks, a UTXO ledger records who owns what, tokens and smart contracts run on that ledger, and the whole system upgrades through hard forks that the community decides on.",
+        })}
+      </HighlightCallout>
+      <SpacerBox size="small" />
+      <BlockchainSection />
+      <ConsensusSection />
+      <LedgerSection />
+      <TransactionsSection />
+      <TokensSection />
+      <SmartContractsSection />
+      <NetworkSection />
+      <UpgradesSection />
+      <TerminologySection />
+    </ExplainerPage>
   );
 }

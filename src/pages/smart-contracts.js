@@ -1,35 +1,14 @@
 import React from "react";
-import Layout from "@theme/Layout";
-import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import { FaFileContract } from "react-icons/fa";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import ExplainerPage from "@site/src/components/Layout/ExplainerPage";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import CategoryPanelsCarousel from "@site/src/components/CategoryPanelsCarousel";
-import FAQSection from "@site/src/components/FAQSection";
-import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
-import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getSmartContractsFAQ } from "@site/src/data/smartContractsFAQ";
-
-function HomepageHeader() {
-  return (
-    <SiteHero
-      title={translate({ id: "smartContracts.hero.title", message: "Smart contracts and DApps" })}
-      description={translate({
-        id: "smartContracts.hero.description",
-        message: "What a smart contract is, how Cardano runs it, and what people build with it.",
-      })}
-      bannerType="braidBlue"
-    />
-  );
-}
 
 function WhatSection() {
   return (
@@ -291,7 +270,7 @@ function BuildSection() {
 export default function SmartContracts() {
   const faq = getSmartContractsFAQ();
   return (
-    <Layout
+    <ExplainerPage
       title={translate({
         id: "smartContracts.meta.title",
         message: "Smart Contracts on Cardano: How They Work and What They Power",
@@ -301,45 +280,36 @@ export default function SmartContracts() {
         message:
           "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a DApp is and how to use one safely.",
       })}
+      hero={{
+        title: translate({ id: "smartContracts.hero.title", message: "Smart contracts and DApps" }),
+        description: translate({
+          id: "smartContracts.hero.description",
+          message: "What a smart contract is, how Cardano runs it, and what people build with it.",
+        }),
+        bannerType: "braidBlue",
+      }}
+      faq={faq}
+      cta={{
+        title: translate({ id: "smartContracts.cta.title", message: "Ready to test yourself? Take the technical quiz." }),
+        buttonLabel: translate({ id: "smartContracts.cta.button", message: "Take the quiz" }),
+        buttonLink: "/quiz",
+      }}
     >
-      <Head>
-        <script type="application/ld+json">{faqJsonLd(faq)}</script>
-      </Head>
-      <OpenGraphInfo />
-      <HomepageHeader />
-      <main>
-        <BackgroundWrapper backgroundType="zoom">
-          <BoundaryBox>
-            <HighlightCallout icon={<FaFileContract />}>
-              {translate({
-                id: "smartContracts.intro.callout",
-                message:
-                  "A smart contract on Cardano is a script that decides whether a transaction may spend the funds it guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no.",
-              })}
-            </HighlightCallout>
-            <SpacerBox size="small" />
-            <WhatSection />
-            <HowSection />
-            <LanguagesSection />
-            <DappsSection />
-            <SafetySection />
-            <BuiltSection />
-            <BuildSection />
-            <FAQSection data={faq} />
-            <SpacerBox size="medium" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-        <BackgroundWrapper backgroundType="gradientDark">
-          <BoundaryBox>
-            <CtaOneColumn
-              title={translate({ id: "smartContracts.cta.title", message: "Ready to test yourself? Take the technical quiz." })}
-              buttonLabel={translate({ id: "smartContracts.cta.button", message: "Take the quiz" })}
-              buttonLink="/quiz"
-            />
-            <SpacerBox size="small" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-      </main>
-    </Layout>
+      <HighlightCallout icon={<FaFileContract />}>
+        {translate({
+          id: "smartContracts.intro.callout",
+          message:
+            "A smart contract on Cardano is a script that decides whether a transaction may spend the funds it guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no.",
+        })}
+      </HighlightCallout>
+      <SpacerBox size="small" />
+      <WhatSection />
+      <HowSection />
+      <LanguagesSection />
+      <DappsSection />
+      <SafetySection />
+      <BuiltSection />
+      <BuildSection />
+    </ExplainerPage>
   );
 }
