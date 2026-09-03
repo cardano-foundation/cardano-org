@@ -3,19 +3,18 @@
   text-align: center;
 }
 
+/* Fixed icon size, same as DottedImageWithText, so the icon does not follow the width of the button label */
 .imageWrap {
   width: 8rem;
-  max-width: 100%;
   padding: 10px 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-/* Fixed size, same as DottedImageWithText, so the icon does not follow the width of the button label */
+/* All dotted icons share a 120 x 110 viewBox, reserving the ratio avoids a layout shift while the SVG loads */
 .imageWrap img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 12 / 11;
 }
 
 .buttonWrap {
