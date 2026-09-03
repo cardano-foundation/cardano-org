@@ -4,10 +4,18 @@
 }
 
 .imageWrap {
-  max-width: 10rem;
-  padding: 10px;
+  width: 8rem;
+  max-width: 100%;
+  padding: 10px 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Fixed size, same as DottedImageWithText, so the icon does not follow the width of the button label */
+.imageWrap img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .buttonWrap {
