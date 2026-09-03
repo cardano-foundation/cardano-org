@@ -858,7 +858,7 @@ export default function DRepDelegate() {
             label={translate({ id: "governance.delegate.abstain.label", message: "Abstain" })}
             help={translate({
               id: "governance.delegate.abstain.help",
-              message: "Always abstain. Your stake counts toward turnout but never picks a side on any proposal.",
+              message: "Always abstain. Your stake is left out of the vote count, so it never counts for or against any proposal.",
             })}
             target={{ alwaysAbstain: null }}
             onSelect={handleSelect}

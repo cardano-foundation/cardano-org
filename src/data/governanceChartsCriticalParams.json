@@ -330,7 +330,7 @@
   {
     "title": "committeeMaxTermLength",
     "description": "committeeMaxTermLength.",
-    "parameterDetails": "## Committee Maximum Term Length\nThe **committeeMaxTermLength** parameter defines the maximum number of epochs that a Constitutional Committee member can serve before requiring reauthorization.\n\nThis is a critical parameter change requiring DRep approval with ≥ 67% threshold.",
+    "parameterDetails": "## Committee Maximum Term Length\nThe **committeeMaxTermLength** parameter defines the maximum number of epochs that a Constitutional Committee member can serve before requiring reauthorization.\n\nIt belongs to the governance parameter group. A change needs DRep approval with a threshold of at least 75% of the active voting stake, plus approval by at least two thirds of the Constitutional Committee.",
     "graphData": {
       "nodes": [
         {
@@ -351,7 +351,7 @@
         {
           "id": "2",
           "position": {
-            "x": 415,
+            "x": 200,
             "y": 150
           },
           "data": {
@@ -363,13 +363,27 @@
           }
         },
         {
+          "id": "3",
+          "position": {
+            "x": 600,
+            "y": 150
+          },
+          "data": {
+            "label": "CC Members"
+          },
+          "style": {
+            "backgroundColor": "#f6ffed",
+            "border": "1px solid #52c41a"
+          }
+        },
+        {
           "id": "5",
           "position": {
-            "x": 415,
+            "x": 200,
             "y": 250
           },
           "data": {
-            "label": "≥ 67%"
+            "label": "≥ 75%"
           },
           "style": {
             "backgroundColor": "#fff7e6",
@@ -377,10 +391,40 @@
           }
         },
         {
+          "id": "6",
+          "position": {
+            "x": 600,
+            "y": 250
+          },
+          "data": {
+            "label": "2/3"
+          },
+          "style": {
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
+          }
+        },
+        {
+          "id": "8",
+          "position": {
+            "x": 330,
+            "y": 340
+          },
+          "data": {
+            "label": "Votes for each voting group are counted separately per applicable threshold"
+          },
+          "style": {
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
+            "height": 80,
+            "width": 300
+          }
+        },
+        {
           "id": "9",
           "position": {
             "x": 150,
-            "y": 350
+            "y": 460
           },
           "data": {
             "label": "Some votes pass: Refused"
@@ -396,7 +440,7 @@
           "id": "10",
           "position": {
             "x": 650,
-            "y": 350
+            "y": 460
           },
           "data": {
             "label": "All votes pass: Approved"
@@ -437,6 +481,15 @@
           }
         },
         {
+          "id": "e1-3",
+          "source": "1",
+          "target": "3",
+          "label": "6 epoch timeframe for voting",
+          "style": {
+            "stroke": "#1890ff"
+          }
+        },
+        {
           "id": "e2-5",
           "source": "2",
           "target": "5",
@@ -446,19 +499,46 @@
           }
         },
         {
-          "id": "e5-9",
+          "id": "e3-6",
+          "source": "3",
+          "target": "6",
+          "label": "Voting threshold",
+          "style": {
+            "stroke": "#52c41a"
+          }
+        },
+        {
+          "id": "e5-8",
           "source": "5",
-          "target": "9",
+          "target": "8",
           "style": {
             "stroke": "#fa8c16"
           }
         },
         {
-          "id": "e5-10",
-          "source": "5",
-          "target": "10",
+          "id": "e6-8",
+          "source": "6",
+          "target": "8",
           "style": {
             "stroke": "#fa8c16"
+          }
+        },
+        {
+          "id": "e8-9",
+          "source": "8",
+          "target": "9",
+          "targetPosition": "left",
+          "sourcePosition": "right",
+          "style": {
+            "stroke": "#722ed1"
+          }
+        },
+        {
+          "id": "e8-10",
+          "source": "8",
+          "target": "10",
+          "style": {
+            "stroke": "#722ed1"
           }
         },
         {

@@ -1,0 +1,24 @@
+.share {
+  margin-top: var(--site-space-sm);
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px meets the mobile touch-target minimum, keep it even though the
+     padding below looks like it would already be enough on its own. */
+  min-height: 44px;
+  padding: var(--site-space-2xs) var(--site-space-md);
+  border-radius: var(--site-radius-pill);
+  border: 1px solid var(--ifm-color-primary);
+  background: transparent;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shareButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+}

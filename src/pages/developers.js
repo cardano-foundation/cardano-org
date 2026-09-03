@@ -22,7 +22,7 @@ function HomepageHeader() {
       description={translate({
         id: "developers.hero.description",
         message:
-          "Everything you need, from your first transaction to production dApps.",
+          "Everything you need, from your first transaction to production DApps.",
       })}
       bannerType="fluidBlue"
     />

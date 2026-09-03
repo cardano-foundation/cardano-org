@@ -1,0 +1,178 @@
+{
+  "id": "technical",
+  "title": "Technology Deep Dive",
+  "description": "The eUTXO model, native tokens, UPLC, and how Cardano works under the hood.",
+  "questionCount": 6,
+  "difficulty": "advanced",
+  "questions": [
+    {
+      "id": "technical-1",
+      "question": "What is a UTXO?",
+      "options": [
+        "An unspent output from a previous transaction, used as an input to a new one",
+        "A special type of Cardano wallet used only by developers",
+        "The fee charged for submitting a smart contract",
+        "A synonym for an epoch in Cardano's ledger"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation explains the model directly, \"in the UTXO model, a transaction has inputs and outputs, where the inputs are outputs from previous transactions.\" A UTXO, an unspent transaction output, is the basic unit of value on the ledger, closer to a discrete coin than to a line in an account balance. It has nothing to do with a wallet type, a fee, or an epoch.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/eutxo-explainer"
+    },
+    {
+      "id": "technical-2",
+      "question": "How does Cardano's extended UTXO (eUTXO) model extend the basic UTXO model used by Bitcoin?",
+      "options": [
+        "It lets addresses contain scripts with arbitrary logic, instead of only public keys, deciding who can spend an output",
+        "It removes the concept of an address entirely",
+        "It requires every transaction to have exactly one input and one output",
+        "It replaces transaction fees with a fixed annual subscription"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation describes this generalization directly, \"it generalizes the concept of 'address' by using the lock-and-key analogy. Instead of restricting locks to public keys and keys to signatures, addresses in the EUTXO model can contain arbitrary logic in the form of scripts.\" That's what makes smart contracts possible on a UTXO-style ledger, addresses aren't removed, transactions aren't limited to one input and one output, and fees aren't replaced by a subscription.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/eutxo-explainer"
+    },
+    {
+      "id": "technical-3",
+      "question": "Besides an address and a value, what else can an eUTXO output carry?",
+      "options": [
+        "Arbitrary data, letting scripts store and access state attached to that output",
+        "A copy of the sender's recovery phrase",
+        "A list of every other transaction ever made by the sender",
+        "The sender's physical location at the time of the transaction"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states, \"the second difference between UTXO and EUTXO is that outputs can carry (almost) arbitrary data in addition to an address and value.\" This extra data field is what lets a smart contract keep track of its own state from one transaction to the next, it is not a recovery phrase, a transaction history log, or location information.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/eutxo-explainer"
+    },
+    {
+      "id": "technical-4",
+      "question": "In Cardano's eUTXO model, what determines whether a transaction's scripts validate?",
+      "options": [
+        "The transaction and the inputs it consumes",
+        "The entire history of every transaction ever made on the network",
+        "Whichever stake pool happens to produce the block that includes it",
+        "A central approval decision made by IOG before the transaction is broadcast"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states directly that \"the success or failure of transaction validation depends only on the transaction itself and its inputs, and not on anything else on the blockchain.\" That is a local, self-contained fact, no other transaction's history, no future block producer's identity, and no central approval decides it. A separate caveat on Cardano's Plutus documentation adds an important nuance, \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting,\" so while script validation itself only looks at the transaction and its own inputs, whether those specific inputs are still there when the transaction reaches the chain is a separate, timing-dependent question.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/eutxo-explainer"
+    },
+    {
+      "id": "technical-5",
+      "question": "What does it mean for a Cardano transaction to be \"deterministic\"?",
+      "options": [
+        "The validation outcome, fees, and resulting state changes can be predicted locally before submission",
+        "The transaction is processed at exactly the same time every day",
+        "The transaction always costs exactly the same fee as every other transaction on the network",
+        "The transaction can be resubmitted an unlimited number of times with different outcomes"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation defines this as being able to \"predict locally (off-chain) how their transaction will impact the on-chain state of the ledger, without encountering... unexpected script validation outcomes or failures, unexpected fees, unexpected ledger or script state updates.\" Determinism does not mean a transaction is guaranteed to be included on-chain, Cardano's Plutus documentation separately notes, \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting.\" What determinism guarantees is that the outcome, the fees, and the resulting state changes can all be worked out locally in advance, not a fixed daily schedule, a single flat fee for every transaction, or being resubmittable with varying results.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/transaction-costs-determinism"
+    },
+    {
+      "id": "technical-6",
+      "question": "What lets Cardano's ledger guarantee that a transaction's script validation result is predictable in advance?",
+      "options": [
+        "A transaction fixes all the arguments passed to the script interpreter in advance, so the same arguments always produce the same result",
+        "A central server pre-approves every transaction before it can be broadcast",
+        "Scripts are only allowed to run once per day across the entire network",
+        "Every script is manually reviewed by IOG before being deployed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The documentation explains the mechanism, \"the script interpreter will always terminate and return the same validation result when applied to the same arguments,\" and \"a transaction necessarily fixes all arguments that will be passed to the script interpreter during validation.\" Because the inputs to validation are locked in by the transaction itself, the script's own result can be worked out beforehand, no central approval step, daily run limit, or manual review process decides what a script computes. Cardano's Plutus documentation notes separately that \"a transaction can still fail if some other transaction concurrently consumes an input that the transaction is expecting.\" This statement concerns script evaluation, not guaranteed transaction inclusion, whether the transaction is ultimately accepted onto the chain still depends on those inputs still being available.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/transaction-costs-determinism"
+    },
+    {
+      "id": "technical-7",
+      "question": "What is a minting policy for a Cardano native token?",
+      "options": [
+        "The set of rules that govern the conditions under which tokens under that policy can be minted or burned",
+        "The exchange rate at which the token trades against ada",
+        "A subscription fee paid to keep the token listed on exchanges",
+        "The maximum number of wallets allowed to hold the token"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation defines it directly, \"a minting policy is the set of rules that govern the minting and burning of assets scoped under that policy,\" adding that \"the point of a minting policy is to specify the conditions under which tokens are minted (or burned).\" It's a rule set enforced by the ledger, not an exchange rate, a listing fee, or a cap on how many wallets can hold the token.",
+      "sourceUrl": "https://docs.cardano.org/developer-resources/native-tokens"
+    },
+    {
+      "id": "technical-8",
+      "question": "What is a Policy ID?",
+      "options": [
+        "A unique identifier for a minting policy, computed by hashing the policy itself",
+        "The wallet address of the person who first created the token",
+        "A number assigned sequentially, starting from 1, to every token ever minted on Cardano",
+        "The name the token's creator chooses to display in wallets"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states, \"PolicyID, the unique identifier that is associated with a minting policy,\" and explains that \"the ID is computed by applying a hash function to the policy itself, and is thus a sequence of letters and numbers.\" It's derived mathematically from the policy's own rules, not tied to a creator's wallet address, a simple incrementing number, or a display name.",
+      "sourceUrl": "https://docs.cardano.org/developer-resources/native-tokens"
+    },
+    {
+      "id": "technical-9",
+      "question": "What do Cardano smart contract languages like Aiken, Plinth, Plutarch, and OpShin all have in common?",
+      "options": [
+        "They all compile down to UPLC, the single bytecode every Cardano node executes on-chain",
+        "They are all dialects of Solidity adapted for Cardano",
+        "Each one runs on a separate, incompatible version of the Cardano blockchain",
+        "Only one of them is allowed to be used at a time across the whole network"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's developer curriculum explains that \"you write a validator in a high-level language, and it compiles down to UPLC (Untyped Plutus Core), the one bytecode every Cardano node executes,\" adding that \"the on-chain target is the same regardless of source language.\" Multiple languages, including Aiken, Plinth, Plutarch, and OpShin, can all target that same compiled output, \"because UPLC is a clean compilation target, many languages can target it (much as Rust, Go, and C++ all target WebAssembly).\" None of them are Solidity dialects, none run on a separate incompatible chain, and nothing restricts the network to using only one at a time.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/smart-contracts/choose-a-language/"
+    },
+    {
+      "id": "technical-10",
+      "question": "How does the current Cardano developer curriculum describe the relationship between on-chain and off-chain smart contract code?",
+      "options": [
+        "On-chain validator code and the off-chain code that builds transactions can be written in entirely different languages or technology stacks",
+        "Both must always be written in the exact same language, no mixing is allowed",
+        "Off-chain code is optional, a Cardano dApp can run using only on-chain validators",
+        "On-chain code is written by the user, while off-chain code is generated automatically by the Cardano node"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The curriculum describes this explicitly using Aiken as an example, \"Aiken is on-chain only. Off-chain code stays in whatever language your app uses (TypeScript, Python, Rust), which reinforces the on-chain/off-chain split Cardano's architecture wants.\" The validator that runs on-chain and the application code that constructs and submits transactions off-chain don't need to share a language or stack at all. They are not required to match, off-chain code is not optional if a transaction is going to be built and submitted, and on-chain code is written by the developer, not generated automatically by the node.",
+      "sourceUrl": "https://developers.cardano.org/docs/developers/curriculum/smart-contracts/choose-a-language/"
+    },
+    {
+      "id": "technical-11",
+      "question": "What is a \"slot\" on the Cardano blockchain?",
+      "options": [
+        "An opportunity for a block to be produced by an elected slot leader, not a guarantee that every slot gets one",
+        "A guaranteed container that always holds exactly one new block",
+        "A fixed allocation of disk space reserved on every stake pool's server",
+        "A synonym for a native token's minting policy"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's glossary defines it directly, \"each slot represents an opportunity for a block to be produced by an elected slot leader.\" The word \"opportunity\" is deliberate, a slot is a chance for a block to appear, produced by whichever slot leader is elected for it, not a guarantee that one will. It has nothing to do with disk space or minting policies.",
+      "sourceUrl": "https://cardano.org/glossary/slot/"
+    },
+    {
+      "id": "technical-12",
+      "question": "What does Cardano's documentation say about Ouroboros' research foundation?",
+      "options": [
+        "It was delivered with peer-reviewed papers presented at top-tier conferences and publications in the area of cybersecurity and cryptography",
+        "It was designed in a single afternoon by one anonymous developer",
+        "It has never been described in any academic publication",
+        "It was adapted directly from Bitcoin's original whitepaper without changes"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states that the Ouroboros consensus protocol \"was delivered with several peer-reviewed papers presented at top-tier conferences and publications in the area of cybersecurity and cryptography.\" It wasn't undocumented, wasn't a same-day improvisation, and isn't simply Bitcoin's proof-of-work design carried over unchanged, Ouroboros is a proof-of-stake protocol built on its own line of published research.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/consensus-explained"
+    },
+    {
+      "id": "technical-13",
+      "question": "What can a node do with transactions that do not try to consume the same inputs?",
+      "options": [
+        "Validate those transactions in parallel",
+        "Skip validating them and record them on the blockchain anyway",
+        "Let a single one of them spend more ada than the sender actually owns",
+        "Produce blocks containing them without running any consensus protocol at all"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cardano's documentation states, \"a node could, in principle, validate transactions in parallel, if those transactions do not try to consume the same input.\" Because each eUTXO transaction's validity depends only on itself and its own inputs, independent transactions don't need to be checked one after another in sequence, a node can validate them at the same time instead. This is about parallel validation, not about skipping validation, overspending, or removing the consensus protocol.",
+      "sourceUrl": "https://docs.cardano.org/about-cardano/learn/eutxo-explainer"
+    }
+  ]
+}

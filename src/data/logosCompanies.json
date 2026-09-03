@@ -149,7 +149,7 @@
     "link": "https://emurgo.io",
     "knownFor": "Driving adoption of Cardano's Web3 ecosystem",
     "category": "For-profit arm of Cardano",
-    "description": "EMURGO is a blockchain technology company and a founding entity of the Cardano blockchain that provides products and services to drive the adoption of Cardano's Web3 ecosystem. Established in 2015 in Japan, EMURGO's mission is to facilitate commercial adoption through dynamic partnerships with existing ecosystem members and the seamless integration of new entrants.<br /><br />By prioritizing investments, delivering continuous education, and providing infrastructure services, EMURGO aims to unlock the full potential of the Cardano ecosystem.",
+    "description": "EMURGO is a blockchain technology company and one of the three organizations that launched Cardano. It provides products and services to drive the adoption of Cardano's Web3 ecosystem. Established in 2015 in Japan, EMURGO's mission is to facilitate commercial adoption through dynamic partnerships with existing ecosystem members and the seamless integration of new entrants.<br /><br />By prioritizing investments, delivering continuous education, and providing infrastructure services, EMURGO aims to unlock the full potential of the Cardano ecosystem.",
     "showCompanyName": false
   },
   {
@@ -205,13 +205,6 @@
     "knownFor": "Empowering distributed development on Cardano",
     "category": "Member based organization",
     "description": "Intersect is a not-for-profit member-based organization for the Cardano ecosystem. Intersect acts as a champion for distributed development and is committed to empowering the Cardano community to build together and drive the blockchain forward. Our mission is to ensure, through our members, the lasting continuity and progressive development of Cardano - fostering a self-sustaining ecosystem that's fit-for-purpose, perpetually future-proof, resilient, secure, and transparent.<br /><br />Enablement is a key foundation of this work, providing the necessary inclusive contributory opportunities to allow every member of Intersect to have their voice heard. By providing additional governance processes and structure, from maintenance to development and testing to fundraising, Intersect enables the community to continue to advance the protocol.",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "jpg.store",
-    "imageName": "jpgstore",
-    "link": "https://www.jpg.store/team",
-    "knownFor": "NFT market place",
     "showCompanyName": false
   },
   {

@@ -4,6 +4,7 @@ import WhatIsAda from "@site/src/components/WhatIsAda";
 import HowToBuyAdaSection from "@site/src/components/HowToBuyAdaSection";
 import WalletSection from "@site/src/components/WalletSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import {translate} from '@docusaurus/Translate';
@@ -42,6 +43,9 @@ export default function Home() {
               translate({id: 'whatIsAda.section.description3', message: 'Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or found and run your own stake pool to increase the pool\'s likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform.'}),
             ]}
             quote={translate({id: 'whatIsAda.section.quote', message: 'What can I do with ada?'})}
+          />
+          <TitleWithText
+            description={translate({id: 'whatIsAda.section.platformLink', message: 'New to the platform itself? Read [what Cardano is](/what-is-cardano).'})}
           />
         </BoundaryBox>
         <HowToBuyAdaSection />
