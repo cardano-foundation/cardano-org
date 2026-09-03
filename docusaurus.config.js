@@ -195,7 +195,7 @@ const config = {
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**'],
+          ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**', '**/insights/template/**'],
           // Hook implementation lives in scripts/sitemap-hreflang.js so it can be
           // unit-tested without spinning up a Docusaurus build. See the JSDoc there.
           createSitemapItems: createSitemapItemsHook({ projectRoot: __dirname }),
@@ -423,20 +423,6 @@ const config = {
                 label: 'Privacy Policy',
                 href: 'https://cardanofoundation.org/en/privacy',
               },
-              /* TODO: once we have these files, link locally not to the cf page 
-              {
-                label: 'Terms',
-                to: '/terms-and-conditions',
-              },
-              {
-                label: 'Privacy Policy',
-                to: '/privacy-policy',
-              },
-              {
-                label: 'Cookie Policy',
-                to: '/cookie-policy',
-              },
-              */
             ],
           },
           {
