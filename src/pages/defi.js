@@ -174,6 +174,133 @@ function UsesSection() {
   );
 }
 
+function CardanoSection() {
+  return (
+    <>
+      <Divider id="cardano" text={translate({ id: "defi.divider.cardano", message: "On Cardano" })} />
+      <TitleWithText
+        title={translate({
+          id: "defi.cardano.title",
+          message: "How is DeFi on Cardano different?",
+        })}
+        description={[
+          translate({
+            id: "defi.cardano.p1",
+            message:
+              "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so a swap cannot execute at a worse price than the one you saw, it either goes through as signed or fails.",
+          }),
+          translate({
+            id: "defi.cardano.p2",
+            message:
+              "Tokens are native to the ledger, so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition.",
+          }),
+          translate({
+            id: "defi.cardano.p3",
+            message:
+              "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set.",
+          }),
+        ]}
+        headingDot={true}
+        buttonLabel={translate({ id: "defi.cardano.button", message: "The eUTXO model explained" })}
+        buttonLink="/how-cardano-works#ledger"
+      />
+    </>
+  );
+}
+
+function RisksSection() {
+  return (
+    <>
+      <Divider id="risks" text={translate({ id: "defi.divider.risks", message: "Risks" })} />
+      <TitleWithText
+        title={translate({ id: "defi.risks.title", message: "What are the risks?" })}
+        description={[
+          translate({
+            id: "defi.risks.intro",
+            message:
+              "DeFi removes the middleman and, with it, the safety net. These are the risks to understand before you put in more than you can afford to lose.",
+          }),
+          {
+            list: [
+              translate({
+                id: "defi.risks.bugs",
+                message:
+                  "**Contract bugs.** A flaw in a protocol's code can lose funds for every user at once. Audits reduce the risk, they do not remove it.",
+              }),
+              translate({
+                id: "defi.risks.price",
+                message:
+                  "**Price risk.** Tokens can lose most of their value quickly. Providing liquidity adds the risk of ending up with less than holding, and borrowing adds the risk of liquidation when your collateral drops.",
+              }),
+              translate({
+                id: "defi.risks.depeg",
+                message:
+                  "**Depegs.** A stablecoin can trade below the currency it tracks if its reserves or its mechanism come under pressure.",
+              }),
+              translate({
+                id: "defi.risks.oracles",
+                message:
+                  "**Oracles and bridges.** Protocols that rely on outside price feeds or on bridged tokens inherit the risks of those systems.",
+              }),
+              translate({
+                id: "defi.risks.scams",
+                message:
+                  "**Scams.** Fake DApps, fake tokens with a real name, and links from strangers. The usual rules on [protecting your ada](/common-scams) apply twice here.",
+              }),
+              translate({
+                id: "defi.risks.reversal",
+                message: "**No reversal.** A transaction you signed is final, and there is no support line that can undo it.",
+              }),
+            ],
+          },
+          translate({
+            id: "defi.risks.disclaimer",
+            message:
+              "This page is educational, not financial advice. Nothing here is a recommendation to use any protocol or to buy any asset.",
+          }),
+        ]}
+        headingDot={true}
+      />
+    </>
+  );
+}
+
+function StartSection() {
+  return (
+    <>
+      <Divider id="start" text={translate({ id: "defi.divider.start", message: "Get started" })} />
+      <TitleWithText
+        title={translate({ id: "defi.start.title", message: "How do I start?" })}
+        description={{
+          list: [
+            translate({
+              id: "defi.start.wallet",
+              message: "[Set up a wallet](/what-is-a-wallet) you control and back up the recovery phrase.",
+            }),
+            translate({
+              id: "defi.start.ada",
+              message:
+                "[Get some ada](/where-to-get-ada). Every transaction needs a little for fees, and most DeFi is priced against ada or a stablecoin.",
+            }),
+            translate({
+              id: "defi.start.dapp",
+              message: "Pick a DApp from the [showcase](/apps), reach it through its official link, and connect your wallet.",
+            }),
+            translate({
+              id: "defi.start.care",
+              message:
+                "Start with an amount you can afford to lose, read every transaction before you sign, and look for audits and open code.",
+            }),
+          ],
+        }}
+        headingDot={true}
+        buttonLabel={translate({ id: "defi.start.button", message: "Learn to spot scams" })}
+        buttonLink="/common-scams"
+      />
+    </>
+  );
+}
+
 export default function Defi() {
   return (
     <ExplainerPage
@@ -206,6 +333,9 @@ export default function Defi() {
       <WhatSection />
       <ComparedSection />
       <UsesSection />
+      <CardanoSection />
+      <RisksSection />
+      <StartSection />
     </ExplainerPage>
   );
 }
