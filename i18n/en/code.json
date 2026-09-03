@@ -7309,5 +7309,8 @@
   },
   "learn.item.smartContracts.text": {
     "message": "What a contract is, how Cardano runs it and how to use a DApp safely."
+  },
+  "stablecoins.ecosystem.defiLink": {
+    "message": "Stablecoins are one building block of [DeFi on Cardano](/defi)."
   }
 }
