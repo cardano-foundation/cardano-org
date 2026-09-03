@@ -14,7 +14,7 @@ import { faqJsonLd } from "@site/src/utils/jsonLd";
 // /smart-contracts, /defi): meta, FAQPage structured data, hero, the zoom
 // background with the page sections, the FAQ and a dark call-to-action band.
 // Pages pass translated strings, the shell never calls translate() itself.
-export default function ExplainerPage({ title, description, hero, faq, cta, pageName, children }) {
+export default function ExplainerPage({ title, description, hero = {}, faq, cta, pageName, children }) {
   return (
     <Layout title={title} description={description}>
       {faq && (

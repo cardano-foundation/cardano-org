@@ -7311,7 +7311,7 @@
     "message": "What a contract is, how Cardano runs it and how to use a DApp safely."
   },
   "stablecoins.ecosystem.defiLink": {
-    "message": "Stablecoins are one building block of [DeFi on Cardano](/defi)."
+    "message": "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them."
   },
   "defi.divider.what": {
     "message": "Basics"
@@ -7338,13 +7338,13 @@
     "message": "**Custody.** A bank holds your money in its books and owes it to you. In DeFi the funds sit in your wallet or in a contract whose rules you can read, and only your signature moves them."
   },
   "defi.compared.access": {
-    "message": "**Access.** Opening an account needs an application and an approval. Using a DeFi protocol needs a wallet and some ada, whoever and wherever you are."
+    "message": "**Access.** Opening an account needs an application and an approval. A DeFi protocol asks for neither, only a wallet and some ada. The rules where you live still apply."
   },
   "defi.compared.hours": {
-    "message": "**Hours.** Markets on chain never close. There is no cut-off time, no settlement day and no bank holiday."
+    "message": "**Hours.** Markets on chain have no opening hours. There is no cut-off time, no settlement day and no bank holiday."
   },
   "defi.compared.transparency": {
-    "message": "**Transparency.** Every rate, every reserve and every transaction is on the ledger for anyone to check, instead of in a quarterly report."
+    "message": "**Transparency.** Every rate, every pool and every transaction is on the ledger for anyone to check, instead of in a quarterly report. Reserves held off chain, such as the bank deposits behind a fiat-backed stablecoin, still depend on the issuer's own reporting."
   },
   "defi.compared.recourse": {
     "message": "**Recourse.** If a bank makes a mistake, there is a complaints process and, in many countries, deposit insurance. If you sign the wrong transaction or a contract has a bug, there is usually no one to call. That trade-off is the heart of DeFi, and the reason to understand it before using it."
@@ -7368,7 +7368,7 @@
     "message": "Lend and borrow"
   },
   "defi.uses.lend.text": {
-    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion."
+    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as loan collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion."
   },
   "defi.uses.stable.title": {
     "message": "Hold stable value"
@@ -7380,7 +7380,7 @@
     "message": "Provide liquidity"
   },
   "defi.uses.liquidity.text": {
-    "message": "Depositing a pair of tokens into a DEX pool earns you a share of the trading fees. In return you take on the risk that the two tokens move apart in price, which can leave you with less than if you had simply held them."
+    "message": "Depositing a pair of tokens into a DEX pool earns you a share of the trading fees. In return you take on the risk that the two tokens move apart in price, which can leave you with less than if you had simply held them, an effect usually called impermanent loss."
   },
   "defi.uses.bridge.title": {
     "message": "Move assets across chains"
@@ -7401,13 +7401,13 @@
     "message": "How is DeFi on Cardano different?"
   },
   "defi.cardano.p1": {
-    "message": "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails."
+    "message": "Cardano tracks value with the [extended UTXO model](/glossary/eutxo) instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails. What that means for a swap price comes below."
   },
   "defi.cardano.p2": {
-    "message": "Tokens are native to the ledger, so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition."
+    "message": "Tokens are [native to the ledger](/glossary/native-token), so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition."
   },
   "defi.cardano.p3": {
-    "message": "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set."
+    "message": "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set. On a batched DEX the batcher also decides the order in which queued swaps settle, within the limits each user set."
   },
   "defi.cardano.button": {
     "message": "The eUTXO model explained"
@@ -7431,7 +7431,7 @@
     "message": "**Depegs.** A stablecoin can trade below the currency it tracks if its reserves or its mechanism come under pressure."
   },
   "defi.risks.oracles": {
-    "message": "**Oracles and bridges.** Protocols that rely on outside price feeds or on bridged tokens inherit the risks of those systems."
+    "message": "**Oracles and bridges.** Protocols that rely on [outside price feeds](/glossary/oracle) or on bridged tokens inherit the risks of those systems."
   },
   "defi.risks.scams": {
     "message": "**Scams.** Fake DApps, fake tokens with a real name, and links from strangers. The usual rules on [protecting your ada](/common-scams) apply twice here."
@@ -7494,7 +7494,7 @@
     "message": "Do I need to approve tokens for a DApp on Cardano?"
   },
   "defi.faq.approvals.a": {
-    "message": "No. Cardano has no allowance system. Each transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet later."
+    "message": "No. Cardano has no allowance system, so the revoke-approvals housekeeping you may know from other chains does not exist here. Each transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet later."
   },
   "defi.faq.yields.q": {
     "message": "Are DeFi yields guaranteed?"
@@ -7525,5 +7525,8 @@
   },
   "learn.item.defi.text": {
     "message": "Swap, lend, borrow and earn with open applications, and the risks to know."
+  },
+  "defi.risks.keys": {
+    "message": "**Key loss.** Your recovery phrase is the only way back into your wallet. Lose it and no one can restore it, share it and anyone can empty the wallet."
   }
 }

@@ -58,17 +58,17 @@ function ComparedSection() {
             translate({
               id: "defi.compared.access",
               message:
-                "**Access.** Opening an account needs an application and an approval. Using a DeFi protocol needs a wallet and some ada, whoever and wherever you are.",
+                "**Access.** Opening an account needs an application and an approval. A DeFi protocol asks for neither, only a wallet and some ada. The rules where you live still apply.",
             }),
             translate({
               id: "defi.compared.hours",
               message:
-                "**Hours.** Markets on chain never close. There is no cut-off time, no settlement day and no bank holiday.",
+                "**Hours.** Markets on chain have no opening hours. There is no cut-off time, no settlement day and no bank holiday.",
             }),
             translate({
               id: "defi.compared.transparency",
               message:
-                "**Transparency.** Every rate, every reserve and every transaction is on the ledger for anyone to check, instead of in a quarterly report.",
+                "**Transparency.** Every rate, every pool and every transaction is on the ledger for anyone to check, instead of in a quarterly report. Reserves held off chain, such as the bank deposits behind a fiat-backed stablecoin, still depend on the issuer's own reporting.",
             }),
             translate({
               id: "defi.compared.recourse",
@@ -83,8 +83,7 @@ function ComparedSection() {
   );
 }
 
-// Showcase categories the uses section walks through in prose (swap, lend,
-// bridge), same carousel pattern as /smart-contracts.
+// Showcase categories for the three use cases that have apps in the showcase (swap, lend, bridge).
 const USE_CATEGORIES = ["dex", "lending", "bridge"];
 
 function UsesSection() {
@@ -120,7 +119,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.lend.text",
             message:
-              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion.",
+              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as loan collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion.",
           }),
         ]}
         headingDot={true}
@@ -144,7 +143,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.liquidity.text",
             message:
-              "Depositing a pair of tokens into a DEX pool earns you a share of the trading fees. In return you take on the risk that the two tokens move apart in price, which can leave you with less than if you had simply held them.",
+              "Depositing a pair of tokens into a DEX pool earns you a share of the trading fees. In return you take on the risk that the two tokens move apart in price, which can leave you with less than if you had simply held them, an effect usually called impermanent loss.",
           }),
         ]}
         headingDot={true}
@@ -188,17 +187,17 @@ function CardanoSection() {
           translate({
             id: "defi.cardano.p1",
             message:
-              "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails.",
+              "Cardano tracks value with the [extended UTXO model](/glossary/eutxo) instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails. What that means for a swap price comes below.",
           }),
           translate({
             id: "defi.cardano.p2",
             message:
-              "Tokens are native to the ledger, so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition.",
+              "Tokens are [native to the ledger](/glossary/native-token), so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition.",
           }),
           translate({
             id: "defi.cardano.p3",
             message:
-              "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set.",
+              "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set. On a batched DEX the batcher also decides the order in which queued swaps settle, within the limits each user set.",
           }),
         ]}
         headingDot={true}
@@ -241,7 +240,7 @@ function RisksSection() {
               translate({
                 id: "defi.risks.oracles",
                 message:
-                  "**Oracles and bridges.** Protocols that rely on outside price feeds or on bridged tokens inherit the risks of those systems.",
+                  "**Oracles and bridges.** Protocols that rely on [outside price feeds](/glossary/oracle) or on bridged tokens inherit the risks of those systems.",
               }),
               translate({
                 id: "defi.risks.scams",
@@ -251,6 +250,11 @@ function RisksSection() {
               translate({
                 id: "defi.risks.reversal",
                 message: "**No reversal.** A transaction you signed is final, and there is no support line that can undo it.",
+              }),
+              translate({
+                id: "defi.risks.keys",
+                message:
+                  "**Key loss.** Your recovery phrase is the only way back into your wallet. Lose it and no one can restore it, share it and anyone can empty the wallet.",
               }),
             ],
           },
@@ -330,7 +334,7 @@ export default function Defi() {
           message: "Ready to look around? Browse the DeFi apps in the showcase.",
         }),
         buttonLabel: translate({ id: "defi.cta.button", message: "Explore DeFi apps" }),
-        buttonLink: "/apps?tags=dex",
+        buttonLink: "/apps?tags=dex&tags=lending&tags=bridge",
       }}
     >
       <HighlightCallout icon={<FaCoins />}>

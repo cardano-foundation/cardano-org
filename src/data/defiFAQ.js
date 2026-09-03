@@ -26,7 +26,7 @@ export function getDefiFAQ() {
         translate({
           id: "defi.faq.approvals.a",
           message:
-            "No. Cardano has no allowance system. Each transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet later.",
+            "No. Cardano has no allowance system, so the revoke-approvals housekeeping you may know from other chains does not exist here. Each transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet later.",
         }),
       ],
     },

@@ -93,13 +93,11 @@ export default function Stablecoins() {
               </div>
             </div>
             <TitleWithText
-              description={[
-                translate({
-                  id: "stablecoins.ecosystem.defiLink",
-                  message:
-                    "Stablecoins are one building block of [DeFi on Cardano](/defi).",
-                }),
-              ]}
+              description={translate({
+                id: "stablecoins.ecosystem.defiLink",
+                message:
+                  "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them.",
+              })}
             />
             <StablecoinGrid liveData={liveData} />
             <SpacerBox size="medium" />
