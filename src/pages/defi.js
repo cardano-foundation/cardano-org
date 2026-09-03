@@ -120,7 +120,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.lend.text",
             message:
-              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, on the rules the contract enforces rather than at someone's discretion.",
+              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion.",
           }),
         ]}
         headingDot={true}

@@ -51,4 +51,5 @@ export default function MyExplainerPage() {
 | `hero` | `{ title, description, bannerType }` | - | Strings and banner for the `SiteHero` at the top of the page. `bannerType` takes the same banner names as `SiteHero` (`starburst`, `waves`, `braidBlue`, `fluidBlue`, and so on). |
 | `faq` | `Array<{ question, answer }>` | - | Optional. When passed, renders the FAQPage JSON-LD in `Head` and a `FAQSection` below the children. Omit it on pages without an FAQ. |
 | `cta` | `{ title, buttonLabel, buttonLink }` | - | Optional. When passed, renders a `CtaOneColumn` in a dark background band after the main content. Omit it on pages without a closing call to action. |
+| `pageName` | `string` | - | Optional, the OG image name under static/img/og, defaults to the site image. |
 | `children` | `ReactNode` | - | The page's own sections, rendered inside the zoom background before the FAQ. |

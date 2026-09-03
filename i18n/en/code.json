@@ -7236,7 +7236,7 @@
     "message": "Trading, lending, stablecoins, marketplaces and games all run on contracts, and identity projects use them too. These are a few examples from the app showcase, ranked by on-chain activity where that data exists."
   },
   "smartContracts.built.outro": {
-    "message": "[Stablecoins](/stablecoins) have their own page, and the showcase lists more than a hundred apps across every category."
+    "message": "[Stablecoins](/stablecoins) and [DeFi](/defi) have their own pages, and the showcase lists more than a hundred apps across every category."
   },
   "smartContracts.built.button": {
     "message": "Explore all apps"
@@ -7368,7 +7368,7 @@
     "message": "Lend and borrow"
   },
   "defi.uses.lend.text": {
-    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, on the rules the contract enforces rather than at someone's discretion."
+    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion."
   },
   "defi.uses.stable.title": {
     "message": "Hold stable value"

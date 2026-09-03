@@ -208,6 +208,7 @@ function SafetySection() {
 const BUILT_CATEGORIES = ["dex", "lending", "marketplace", "game", "identity"];
 
 function BuiltSection() {
+  const builtTitle = translate({ id: "smartContracts.built.title", message: "What runs on Cardano smart contracts today?" });
   return (
     <>
       <Divider
@@ -215,10 +216,7 @@ function BuiltSection() {
         text={translate({ id: "smartContracts.divider.built", message: "Built on Cardano" })}
       />
       <TitleWithText
-        title={translate({
-          id: "smartContracts.built.title",
-          message: "What runs on Cardano smart contracts today?",
-        })}
+        title={builtTitle}
         description={translate({
           id: "smartContracts.built.intro",
           message:
@@ -226,15 +224,12 @@ function BuiltSection() {
         })}
         headingDot={true}
       />
-      <CategoryPanelsCarousel
-        categories={BUILT_CATEGORIES}
-        ariaLabel={translate({ id: "smartContracts.built.title", message: "What runs on Cardano smart contracts today?" })}
-      />
+      <CategoryPanelsCarousel categories={BUILT_CATEGORIES} ariaLabel={builtTitle} />
       <TitleWithText
         description={translate({
           id: "smartContracts.built.outro",
           message:
-            "[Stablecoins](/stablecoins) have their own page, and the showcase lists more than a hundred apps across every category.",
+            "[Stablecoins](/stablecoins) and [DeFi](/defi) have their own pages, and the showcase lists more than a hundred apps across every category.",
         })}
         buttonLabel={translate({ id: "smartContracts.built.button", message: "Explore all apps" })}
         buttonLink="/apps"
