@@ -108,7 +108,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.swap.text",
             message:
-              "A decentralized exchange, a [DEX](/glossary/dex), lets you trade ada for other native tokens without an order book run by a company. Prices come from liquidity pools that other users fund, and the swap settles in a single transaction you sign.",
+              "A decentralized exchange, a [DEX](/glossary/dex), lets you trade ada for other native tokens without an order book run by a company. On most DEXs prices come from liquidity pools that other users fund, and a swap starts with a single transaction you sign.",
           }),
         ]}
         headingDot={true}
@@ -120,7 +120,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.lend.text",
             message:
-              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement is liquidated by the protocol, not by a person.",
+              "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, on the rules the contract enforces rather than at someone's discretion.",
           }),
         ]}
         headingDot={true}
@@ -132,7 +132,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.stable.text",
             message:
-              "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit most DeFi trading and lending is priced in. Cardano has several, each with a different backing model.",
+              "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit most DeFi trading and lending is priced in. Cardano has several, built on different backing models.",
           }),
         ]}
         headingDot={true}
@@ -188,7 +188,7 @@ function CardanoSection() {
           translate({
             id: "defi.cardano.p1",
             message:
-              "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so a swap cannot execute at a worse price than the one you saw, it either goes through as signed or fails.",
+              "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails.",
           }),
           translate({
             id: "defi.cardano.p2",

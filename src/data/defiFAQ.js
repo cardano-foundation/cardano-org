@@ -52,7 +52,7 @@ export function getDefiFAQ() {
         translate({
           id: "defi.faq.loss.a",
           message:
-            "Not with swaps or lending deposits. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated, but a protocol cannot claim funds you did not lock.",
+            "You cannot owe more than you put in. With a swap or a lending deposit the most at stake is the amount you sent, and a contract bug can still cost you all of it. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated, but a protocol cannot claim funds you did not lock.",
         }),
       ],
     },
@@ -78,7 +78,7 @@ export function getDefiFAQ() {
         translate({
           id: "defi.faq.stablecoins.a",
           message:
-            "Several, with different backing models: fiat-backed, crypto-backed and algorithmic designs. The [stablecoins page](/stablecoins) lists each one with how it keeps its value.",
+            "Several, with different backing models: fiat-backed, crypto-backed and synthetic designs. The [stablecoins page](/stablecoins) lists each one with how it keeps its value.",
         }),
       ],
     },

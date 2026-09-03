@@ -7362,19 +7362,19 @@
     "message": "Swap tokens"
   },
   "defi.uses.swap.text": {
-    "message": "A decentralized exchange, a [DEX](/glossary/dex), lets you trade ada for other native tokens without an order book run by a company. Prices come from liquidity pools that other users fund, and the swap settles in a single transaction you sign."
+    "message": "A decentralized exchange, a [DEX](/glossary/dex), lets you trade ada for other native tokens without an order book run by a company. On most DEXs prices come from liquidity pools that other users fund, and a swap starts with a single transaction you sign."
   },
   "defi.uses.lend.title": {
     "message": "Lend and borrow"
   },
   "defi.uses.lend.text": {
-    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement is liquidated by the protocol, not by a person."
+    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, on the rules the contract enforces rather than at someone's discretion."
   },
   "defi.uses.stable.title": {
     "message": "Hold stable value"
   },
   "defi.uses.stable.text": {
-    "message": "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit most DeFi trading and lending is priced in. Cardano has several, each with a different backing model."
+    "message": "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit most DeFi trading and lending is priced in. Cardano has several, built on different backing models."
   },
   "defi.uses.liquidity.title": {
     "message": "Provide liquidity"
@@ -7401,7 +7401,7 @@
     "message": "How is DeFi on Cardano different?"
   },
   "defi.cardano.p1": {
-    "message": "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so a swap cannot execute at a worse price than the one you saw, it either goes through as signed or fails."
+    "message": "Cardano tracks value with the extended UTXO model instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails."
   },
   "defi.cardano.p2": {
     "message": "Tokens are native to the ledger, so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition."
@@ -7506,7 +7506,7 @@
     "message": "Can I lose more than I put in?"
   },
   "defi.faq.loss.a": {
-    "message": "Not with swaps or lending deposits. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated, but a protocol cannot claim funds you did not lock."
+    "message": "You cannot owe more than you put in. With a swap or a lending deposit the most at stake is the amount you sent, and a contract bug can still cost you all of it. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated, but a protocol cannot claim funds you did not lock."
   },
   "defi.faq.staking.q": {
     "message": "Do I keep earning staking rewards while I use DeFi?"
@@ -7518,7 +7518,7 @@
     "message": "Which stablecoins exist on Cardano?"
   },
   "defi.faq.stablecoins.a": {
-    "message": "Several, with different backing models: fiat-backed, crypto-backed and algorithmic designs. The [stablecoins page](/stablecoins) lists each one with how it keeps its value."
+    "message": "Several, with different backing models: fiat-backed, crypto-backed and synthetic designs. The [stablecoins page](/stablecoins) lists each one with how it keeps its value."
   },
   "learn.item.defi.title": {
     "message": "DeFi on Cardano"
