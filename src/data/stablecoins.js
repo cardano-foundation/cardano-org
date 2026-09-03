@@ -1,4 +1,7 @@
 import { translate } from "@docusaurus/Translate";
+import { yearsSinceMainnetLaunch } from "@site/src/utils/mainnetAge";
+
+const mainnetYears = yearsSinceMainnetLaunch();
 
 export const NATIVE_STABLECOINS = [
   {
@@ -133,7 +136,7 @@ export const NATIVE_STABLECOINS = [
     tagline: translate({
       id: "stablecoins.usda.tagline",
       message:
-        "USDA — Institutional-grade stability, backed by a Cardano founding entity.",
+        "USDA: institutional-grade stability, backed by one of the organizations that launched Cardano.",
     }),
     body: [
       translate({
@@ -144,7 +147,7 @@ export const NATIVE_STABLECOINS = [
       translate({
         id: "stablecoins.usda.body2",
         message:
-          "USDA is the stablecoin built by Anzens in collaboration with EMURGO — one of Cardano's three founding entities. Secured by BitGo custody and available to users across more than 80 countries, its reserves are backed by US Treasury instruments, bringing a world's best in class stable asset to Cardano.",
+          "USDA is the stablecoin built by Anzens in collaboration with EMURGO, one of the three organizations that launched Cardano. Secured by BitGo custody and available to users across more than 80 countries, its reserves are backed by US Treasury instruments, bringing a world's best in class stable asset to Cardano.",
       }),
       translate({
         id: "stablecoins.usda.body3",
@@ -456,22 +459,28 @@ export const WHY_CARDANO_REASONS = [
     ],
   },
   {
-    id: "zero-outages",
-    title: translate({
-      id: "stablecoins.whyCardano.outages.title",
-      message: "Nine years, zero outages",
-    }),
+    id: "never-halted",
+    title: translate(
+      {
+        id: "stablecoins.whyCardano.uptime.title",
+        message: "{years} years, never halted",
+      },
+      { years: mainnetYears }
+    ),
     body: [
       translate({
-        id: "stablecoins.whyCardano.outages.body1",
+        id: "stablecoins.whyCardano.uptime.body1",
         message:
-          "Cardano's Mainnet has never gone down. Since launch in 2017, it has maintained continuous operation through every market cycle, network stress event, and technical upgrade.",
+          "Cardano's mainnet has produced blocks without interruption since September 2017. The chain has never been halted or restarted, and every protocol upgrade, from Shelley to van Rossem, went live through the hard fork combinator while the network kept running.",
       }),
-      translate({
-        id: "stablecoins.whyCardano.outages.body2",
-        message:
-          "For institutional settlement, cross-border payment, or any application where availability isn't optional, this track record is not just unmatched in the industry but a key value proposition.",
-      }),
+      translate(
+        {
+          id: "stablecoins.whyCardano.uptime.body2",
+          message:
+            "For institutional settlement, cross-border payment, or any application where availability is not optional, {years} years of uninterrupted block production is a key part of the value proposition.",
+        },
+        { years: mainnetYears }
+      ),
     ],
   },
   {
