@@ -8,6 +8,7 @@ import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import CategoryPanelsCarousel from "@site/src/components/CategoryPanelsCarousel";
+import { getDefiFAQ } from "@site/src/data/defiFAQ";
 
 function WhatSection() {
   return (
@@ -302,6 +303,7 @@ function StartSection() {
 }
 
 export default function Defi() {
+  const faq = getDefiFAQ();
   return (
     <ExplainerPage
       title={translate({
@@ -320,6 +322,15 @@ export default function Defi() {
           message: "Trade, lend, borrow and earn with open applications, from a wallet you control.",
         }),
         bannerType: "fluidBlue",
+      }}
+      faq={faq}
+      cta={{
+        title: translate({
+          id: "defi.cta.title",
+          message: "Ready to look around? Browse the DeFi apps in the showcase.",
+        }),
+        buttonLabel: translate({ id: "defi.cta.button", message: "Explore DeFi apps" }),
+        buttonLink: "/apps?tags=dex",
       }}
     >
       <HighlightCallout icon={<FaCoins />}>
