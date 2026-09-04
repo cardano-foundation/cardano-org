@@ -5,7 +5,7 @@ short: A CIP-1694 governance action type that schedules and triggers a Cardano h
 category: governance
 aliases: ["Hard Fork Action"]
 link: /governance
-related: [governance-action, hard-fork, cip-1694, drep, chang]
+related: [governance-action, hard-fork, cip-1694, drep, chang, van-rossem, dijkstra]
 ---
 
 A governance action type that proposes scheduling a hard fork at a specific epoch. Like other Conway actions it goes through DRep, Constitutional Committee, and stake pool operator voting; once it passes, the protocol switches to the new major version at the chosen epoch, provided node operators have already installed the required software upgrade beforehand.
