@@ -55,11 +55,8 @@ function getNavbarItems() {
           title: 'Get to know',
           items: [
             {to: '/learn', label: 'Learn step by step', description: 'A guided path from beginner to advanced'},
-            {to: '/what-is-ada', label: 'What is ada?', description: 'Cardano\'s native token'},
             {to: '/what-is-a-wallet', label: 'What is a Wallet?', description: 'Understand wallet types and security'},
             {to: '/common-scams', label: 'Protect your ada', description: 'Don\'t fall for scams'},
-            {to: '/get-started', label: 'Get started with Cardano', description: 'Learn the basics and start using Cardano'},
-            {to: '/quiz', label: 'Cardano Quiz', description: 'Test your knowledge and earn a badge'},
           ],
         },
         {
@@ -67,11 +64,8 @@ function getNavbarItems() {
           items: [
             {to: '/how-cardano-works', label: 'How Cardano works', description: 'Consensus, ledger, tokens and upgrades in plain terms'},
             {to: '/smart-contracts', label: 'Smart contracts and DApps', description: 'How contracts run on Cardano and how to use apps safely'},
-            {href: 'https://academy.cardanofoundation.org/', label: 'Cardano Academy', description: 'Free, self-paced blockchain courses'},
             {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
             {href: '/insights', label: 'Cardano Insights', description: 'On-chain or regularly refreshed data'},
-            {to: '/ouroboros', label: 'Ouroboros', description: 'Cardano\'s proof-of-stake consensus protocol'},
-            {to: '/hardforks', label: 'Hard Forks', description: 'Implemented Upgrades'},
           ],
         },
       ],
