@@ -6,6 +6,8 @@ import { UNKNOWN, emptyStatus, deriveStatus, drepKind, withWalletBalance } from 
 import { isValidAccount, emptyLocal, isValidLocal, ACCOUNT_KEY, LOCAL_KEY, LEGACY_STEP_KEY } from '../src/utils/getStarted/storage.mjs';
 import { STATION_KEYS, computeStations, firstOpenIndex, allDone, doneCount } from '../src/utils/getStarted/stations.mjs';
 import { detectDevice, pickWalletsForDevice } from '../src/utils/getStarted/devices.mjs';
+import { wordlist as BIP39_ENGLISH } from '@scure/bip39/wordlists/english.js';
+import { DEMO_PHRASE, makeExercise } from '../src/utils/getStarted/demoPhrase.mjs';
 
 test('parseLovelace accepts only non-negative decimal integers', () => {
   assert.equal(parseLovelace('0'), 0n);
@@ -240,4 +242,30 @@ test('pickWalletsForDevice filters maintainer picks by platform and caps at thre
   assert.deepEqual(pickWalletsForDevice(WALLETS, 'desktop').map((w) => w.title), ['Eternl', 'Typhon', 'Lace']);
   assert.deepEqual(pickWalletsForDevice(WALLETS, null).map((w) => w.title), ['Eternl', 'Typhon', 'Lace']);
   assert.deepEqual(pickWalletsForDevice(WALLETS, 'desktop', 1).map((w) => w.title), ['Eternl']);
+});
+
+test('the demo phrase can never derive a real wallet', () => {
+  assert.equal(DEMO_PHRASE.length, 12);
+  assert.equal(new Set(DEMO_PHRASE).size, 12);
+  for (const word of DEMO_PHRASE) {
+    assert.match(word, /^[a-z]+$/);
+    assert.equal(BIP39_ENGLISH.includes(word), false, `${word} is a BIP39 word`);
+  }
+});
+
+test('makeExercise builds distinct rounds with four unique options each', () => {
+  let seed = 42;
+  const random = () => {
+    seed = (seed * 1103515245 + 12345) % 2147483648;
+    return seed / 2147483648;
+  };
+  const rounds = makeExercise(random, 3);
+  assert.equal(rounds.length, 3);
+  assert.equal(new Set(rounds.map((r) => r.position)).size, 3);
+  for (const round of rounds) {
+    assert.ok(round.position >= 1 && round.position <= 12);
+    assert.equal(round.options.length, 4);
+    assert.equal(new Set(round.options).size, 4);
+    assert.equal(round.options[round.answer], DEMO_PHRASE[round.position - 1]);
+  }
 });
