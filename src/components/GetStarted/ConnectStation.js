@@ -155,7 +155,7 @@ export default function ConnectStation({ account, setAccount, forget, status, la
   const privacy = (
     <p className={styles.fieldNote}>
       {translate({ id: 'getStarted.connect.privacy', message: "Your address is stored only in this browser. To check its public on-chain activity, it is sent to cardano.org's chain-data service, the same way an explorer works." })}{' '}
-      <Link to="/privacy-policy">{translate({ id: 'getStarted.connect.privacyLink', message: 'Privacy policy' })}</Link>
+      <Link href="https://cardanofoundation.org/en/privacy" target="_blank" rel="noopener noreferrer">{translate({ id: 'getStarted.connect.privacyLink', message: 'Privacy policy' })}</Link>
     </p>
   );
 
