@@ -4,6 +4,9 @@
 // browser the moment it is actually needed. This keeps the initial bundle
 // small and the modules out of the server-side render.
 
+import { DelegationGuardError, EXPECTED_NETWORK_ID } from "../walletTx.js";
+import { rewardAddressFromHex } from "./bech32.mjs";
+
 let evolutionPromise;
 
 // The SDK's HTTP layer (@effect/platform) adds tracing headers (traceparent, b3)
@@ -121,6 +124,20 @@ export async function firstRewardAddressBech32(api) {
   return RewardAccount.toBech32(RewardAccount.fromHex(hex));
 }
 
+// All reward addresses the wallet exposes (CIP-30 allows several), each as
+// the raw hex the SDK wants and the bech32 form the UI shows and Koios takes.
+// Decoded without the SDK so it stays cheap and testable. An address that
+// does not decode is a wallet bug we surface, never silently drop.
+export async function rewardAddressesBech32(api) {
+  const rewards = await api.getRewardAddresses();
+  if (!Array.isArray(rewards)) throw new Error("Wallet returned no reward address list.");
+  return rewards.map((hex) => {
+    const bech32 = rewardAddressFromHex(hex);
+    if (!bech32) throw new Error("Wallet returned an unreadable reward address.");
+    return { hex, bech32 };
+  });
+}
+
 // CIP-20 transaction message (metadata label 674) that tags every transaction
 // cardano.org builds with its origin. The value follows the CIP-20 shape
 // { "msg": [<lines>] }, where each line is a string of at most 64 bytes.
@@ -161,6 +178,48 @@ export async function delegateVote({ api, target, koiosUrl }) {
   const built = await client
     .newTx()
     .delegateToDRep({ stakeCredential, drep })
+    .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
+    .build();
+
+  const unsignedTx = Transaction.toCBORHex(await built.toTransaction());
+  const witnessSet = await api.signTx(unsignedTx, false);
+  const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
+  return api.submitTx(signedTx);
+}
+
+// Build, sign (via the connected wallet) and submit a stake pool delegation.
+// registrationStatus must be fresh (the caller reloads account_info right
+// before) and decides between a plain delegation certificate and a combined
+// registration plus delegation (Conway, deposit from the protocol
+// parameters). The guards run right before the build because the user may
+// have switched network or account in the wallet since connecting. loadSdk
+// is injectable so tests can fake the builder.
+export async function delegateStake({
+  api, poolId, stakeAddress, registrationStatus, koiosUrl, loadSdk = loadEvolution,
+}) {
+  if (registrationStatus !== "registered" && registrationStatus !== "unregistered") {
+    throw new DelegationGuardError("statusUnknown", "Stake key status is unknown.");
+  }
+  if ((await api.getNetworkId()) !== EXPECTED_NETWORK_ID) {
+    throw new DelegationGuardError("wrongNetwork", "Wallet is on the wrong network.");
+  }
+  const addresses = await rewardAddressesBech32(api);
+  const chosen = addresses.find((a) => a.bech32 === stakeAddress);
+  if (!chosen) {
+    throw new DelegationGuardError(
+      addresses.length ? "accountChanged" : "noRewardAddress",
+      "The wallet account changed since connecting."
+    );
+  }
+
+  const { Client, mainnet, RewardAccount, PoolKeyHash, Transaction } = await loadSdk();
+  const stakeCredential = RewardAccount.fromHex(chosen.hex).stakeCredential;
+  const poolKeyHash = PoolKeyHash.fromBech32(poolId);
+  const tx = Client.make(mainnet).withKoios({ baseUrl: koiosUrl }).withCip30(api).newTx();
+  const delegated = registrationStatus === "unregistered"
+    ? tx.registerAndDelegateTo({ stakeCredential, poolKeyHash })
+    : tx.delegateToPool({ stakeCredential, poolKeyHash });
+  const built = await delegated
     .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
     .build();
 
