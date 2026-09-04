@@ -37,6 +37,19 @@ export function drepLabel(status, names) {
   return names.drepName || shortenAddress(status.drepId);
 }
 
+// Full sentences for the delegate station and the completion card, so both
+// say what the thing is (a pool, a DRep, a protocol vote option), not only its name.
+export function poolSentence(status, names) {
+  return translate({ id: 'getStarted.done.pool', message: 'Your stake pool: {pool}' }, { pool: poolLabel(status, names) });
+}
+
+export function voteSentence(status, names) {
+  if (status.drepKind === 'drep') {
+    return translate({ id: 'getStarted.done.drep', message: 'Your DRep: {drep}' }, { drep: drepLabel(status, names) });
+  }
+  return translate({ id: 'getStarted.done.voteOption', message: 'Your vote: {option}' }, { option: drepLabel(status, names) });
+}
+
 export function poolLabel(status, names) {
   return names.poolTicker ? `${names.poolTicker} ${names.poolName || ''}`.trim() : (names.poolName || shortenAddress(status.poolId));
 }
@@ -62,7 +75,6 @@ export default function Completion({ stations, account, status, names }) {
   }
 
   const confirmed = account.ownership === 'wallet-confirmed';
-  const pool = poolLabel(status, names);
   const onShare = async () => {
     const result = await shareText(translate({
       id: 'getStarted.done.shareText',
@@ -85,8 +97,8 @@ export default function Completion({ stations, account, status, names }) {
           </span>
         </p>
         <p className={styles.completionRow}>
-          <span>{translate({ id: 'getStarted.done.pool', message: 'Staked with {pool}' }, { pool })}</span>
-          <span>{translate({ id: 'getStarted.done.drep', message: 'Voting through {drep}' }, { drep: drepLabel(status, names) })}</span>
+          <span>{poolSentence(status, names)}</span>
+          <span>{voteSentence(status, names)}</span>
         </p>
         <div className={styles.completionActions}>
           {confirmed ? (

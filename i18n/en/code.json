@@ -9356,6 +9356,9 @@
   "stablecoins.whyCardano.uptime.body2": {
     "message": "For institutional settlement, cross-border payment, or any application where availability is not optional, {years} years of uninterrupted block production is a key part of the value proposition."
   },
+  "getStarted.connect.detected": {
+    "message": "These wallets are installed in this browser. Pick the one you set up in step 1:"
+  },
   "getStarted.connect.detecting": {
     "message": "Looking for wallets in this browser."
   },
@@ -9444,7 +9447,10 @@
     "message": "Copied to clipboard"
   },
   "getStarted.done.drep": {
-    "message": "Voting through {drep}"
+    "message": "Your DRep: {drep}"
+  },
+  "getStarted.done.voteOption": {
+    "message": "Your vote: {option}"
   },
   "getStarted.done.drepAbstain": {
     "message": "Always abstain"
@@ -9456,7 +9462,7 @@
     "message": "Continue on the learning path"
   },
   "getStarted.done.pool": {
-    "message": "Staked with {pool}"
+    "message": "Your stake pool: {pool}"
   },
   "getStarted.done.popularApps": {
     "message": "Popular apps"
@@ -9505,7 +9511,7 @@
     "message": "Practise again"
   },
   "getStarted.phrase.demoBanner": {
-    "message": "Demo only."
+    "message": "Demo only"
   },
   "getStarted.phrase.demoBannerText": {
     "message": "cardano.org will never ask for a real phrase, and neither will anyone honest. These twelve words are not a real phrase."
@@ -9651,9 +9657,6 @@
   "getStarted.station.delegate.stakeOpen": {
     "message": "Not staked yet."
   },
-  "getStarted.station.delegate.stakeProof": {
-    "message": "Staked with {pool}"
-  },
   "getStarted.station.delegate.stakeUnknown": {
     "message": "Could not check the stake delegation yet."
   },
@@ -9665,9 +9668,6 @@
   },
   "getStarted.station.delegate.voteOpen": {
     "message": "No vote delegation yet."
-  },
-  "getStarted.station.delegate.voteProof": {
-    "message": "Voting through {drep}"
   },
   "getStarted.station.delegate.voteUnknown": {
     "message": "Could not check the vote delegation yet."

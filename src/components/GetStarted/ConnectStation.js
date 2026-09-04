@@ -8,8 +8,9 @@ import styles from './styles.module.css';
 
 const MAINNET = 1;
 const CIP30_REFUSED = -3;
-// Confirmed in the Task 0 spike, adjust if the spike note says otherwise.
-export const EXPLORER_STAKE_URL = 'https://cexplorer.io/stake/';
+// cardano.org always links the Foundation's explorer hub, which lets the user pick an
+// explorer. The hub has no dedicated stake route, its address route accepts stake addresses.
+export const EXPLORER_STAKE_URL = 'https://explorer.cardano.org/address/';
 
 function errorMessage(code) {
   switch (code) {
@@ -183,6 +184,11 @@ export default function ConnectStation({ account, setAccount, forget, status, la
           {wallets === null && <p>{translate({ id: 'getStarted.connect.detecting', message: 'Looking for wallets in this browser.' })}</p>}
           {wallets && wallets.length === 0 && (
             <p>{translate({ id: 'getStarted.connect.noWallet', message: "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address." })}</p>
+          )}
+          {wallets && wallets.length > 0 && (
+            <p className={styles.fieldNote}>
+              {translate({ id: 'getStarted.connect.detected', message: 'These wallets are installed in this browser. Pick the one you set up in step 1:' })}
+            </p>
           )}
           {wallets && wallets.length > 0 && (
             <div className={styles.walletButtons}>

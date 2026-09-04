@@ -23,7 +23,7 @@ import ConnectStation from '@site/src/components/GetStarted/ConnectStation';
 import WalletPicker from '@site/src/components/GetStarted/WalletPicker';
 import PhraseSimulator from '@site/src/components/GetStarted/PhraseSimulator';
 import CheckQuestion from '@site/src/components/GetStarted/CheckQuestion';
-import Completion, { drepLabel, poolLabel } from '@site/src/components/GetStarted/Completion';
+import Completion, { poolSentence, voteSentence } from '@site/src/components/GetStarted/Completion';
 import gs from '@site/src/components/GetStarted/styles.module.css';
 import styles from './get-started.module.css';
 
@@ -199,12 +199,12 @@ export default function GetStarted() {
               proof={chain.account && (
                 <div>
                   <p>
-                    {chain.status.stake === true && translate({ id: 'getStarted.station.delegate.stakeProof', message: 'Staked with {pool}' }, { pool: poolLabel(chain.status, chain.names) })}
+                    {chain.status.stake === true && poolSentence(chain.status, chain.names)}
                     {chain.status.stake === false && translate({ id: 'getStarted.station.delegate.stakeOpen', message: 'Not staked yet.' })}
                     {chain.status.stake === UNKNOWN && translate({ id: 'getStarted.station.delegate.stakeUnknown', message: 'Could not check the stake delegation yet.' })}
                   </p>
                   <p>
-                    {chain.status.vote === true && translate({ id: 'getStarted.station.delegate.voteProof', message: 'Voting through {drep}' }, { drep: drepLabel(chain.status, chain.names) })}
+                    {chain.status.vote === true && voteSentence(chain.status, chain.names)}
                     {chain.status.vote === false && translate({ id: 'getStarted.station.delegate.voteOpen', message: 'No vote delegation yet.' })}
                     {chain.status.vote === UNKNOWN && translate({ id: 'getStarted.station.delegate.voteUnknown', message: 'Could not check the vote delegation yet.' })}
                   </p>

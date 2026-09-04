@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
+import Admonition from '@theme/Admonition';
 import { DEMO_PHRASE, makeExercise } from '@site/src/utils/getStarted/demoPhrase.mjs';
 import styles from './styles.module.css';
 
@@ -34,10 +35,9 @@ export default function PhraseSimulator({ passed, onPassed }) {
 
   return (
     <div>
-      <div className={styles.phraseBanner} role="note">
-        <strong>{translate({ id: 'getStarted.phrase.demoBanner', message: 'Demo only.' })}</strong>{' '}
+      <Admonition type="warning" title={translate({ id: 'getStarted.phrase.demoBanner', message: 'Demo only' })}>
         {translate({ id: 'getStarted.phrase.demoBannerText', message: 'cardano.org will never ask for a real phrase, and neither will anyone honest. These twelve words are not a real phrase.' })}
-      </div>
+      </Admonition>
       <ol className={styles.phraseGrid} aria-label={translate({ id: 'getStarted.phrase.demoLabel', message: 'Demo recovery phrase' })}>
         {DEMO_PHRASE.map((word, i) => (
           <li key={word} className={styles.phraseWord}><small>{i + 1}</small>{word}</li>

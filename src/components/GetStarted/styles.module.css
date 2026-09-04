@@ -76,13 +76,15 @@
 .liveTip { margin-top: var(--site-space-sm); font-size: 1rem; opacity: 0.9; }
 
 /* Tabs (connect station) */
-.tabs { display: flex; gap: var(--site-space-2xs); margin-bottom: var(--site-space-md); }
+/* Tabs look like tabs, not like buttons: underline for the selected one, muted text for the other. */
+.tabs { display: flex; gap: var(--site-space-md); margin-bottom: var(--site-space-md); border-bottom: 1px solid var(--ifm-color-emphasis-200); }
 .tab {
-  font: inherit; padding: var(--site-space-2xs) var(--site-space-sm); border-radius: var(--site-radius-pill);
-  border: 1px solid var(--ifm-color-emphasis-300); background: transparent; color: var(--ifm-font-color-base); cursor: pointer;
+  font: inherit; font-weight: 600; padding: var(--site-space-2xs) 0 var(--site-space-xs); margin-bottom: -1px;
+  border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ifm-color-emphasis-600); cursor: pointer;
 }
-.tab[aria-selected="true"] { background: var(--ifm-color-primary); border-color: var(--ifm-color-primary); color: var(--ifm-color-white); }
-.tab:focus-visible { box-shadow: var(--site-focus-ring); }
+.tab:hover { color: var(--ifm-font-color-base); }
+.tab[aria-selected="true"] { color: var(--ifm-color-primary); border-bottom-color: var(--ifm-color-primary); cursor: default; }
+.tab:focus-visible { outline: none; box-shadow: var(--site-focus-ring); border-radius: var(--site-radius-sm); }
 .walletButtons { display: flex; flex-wrap: wrap; gap: var(--site-space-xs); }
 .walletButton {
   display: inline-flex; align-items: center; gap: var(--site-space-2xs); font: inherit; padding: var(--site-space-xs) var(--site-space-sm);
@@ -105,10 +107,6 @@
 .checkboxRow { display: flex; align-items: center; gap: var(--site-space-2xs); }
 
 /* Phrase simulator */
-.phraseBanner {
-  padding: var(--site-space-xs) var(--site-space-sm); border-radius: var(--site-radius-md);
-  background: var(--site-tint-weak); border-left: 4px solid var(--site-warning); margin-bottom: var(--site-space-sm);
-}
 .phraseGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--site-space-2xs); margin-bottom: var(--site-space-md); list-style: none; padding: 0; }
 .phraseWord {
   padding: var(--site-space-2xs) var(--site-space-xs); border-radius: var(--site-radius-sm);
