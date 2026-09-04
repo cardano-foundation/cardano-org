@@ -931,12 +931,8 @@
   "whereToGetAda.staking.title": {
     "message": "Staking rewards"
   },
-  "whereToGetAda.staking.description1": {
-    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
-  },
-  "whereToGetAda.staking.description2": {
-    "message": "Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
-  },
+  "whereToGetAda.staking.description1": {"message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."},
+  "whereToGetAda.staking.description2": {"message": "Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."},
   "commonScams.hero.title": {
     "message": "Common Cardano scams"
   },
@@ -6413,10 +6409,7 @@
     "message": "Your recovery phrase is the master key",
     "description": "Recovery section title"
   },
-  "whatIsAWallet.recovery.text1": {
-    "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
-    "description": "Recovery paragraph 1"
-  },
+  "whatIsAWallet.recovery.text1": {"message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a [seed phrase](/glossary/seed-phrase). It is a human-readable form of your private key.", "description": "Recovery paragraph 1"},
   "whatIsAWallet.recovery.text2": {
     "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
     "description": "Recovery paragraph 2"
@@ -6449,10 +6442,7 @@
     "message": "Connecting to apps",
     "description": "dApps section title"
   },
-  "whatIsAWallet.dapps.text1": {
-    "message": "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
-    "description": "dApps paragraph 1"
-  },
+  "whatIsAWallet.dapps.text1": {"message": "Most Cardano wallets include a **DApp connector**. It lets a website or [DApp](/glossary/dapp) ask your wallet to sign a transaction without ever seeing your private keys.", "description": "dApps paragraph 1"},
   "whatIsAWallet.dapps.text2": {
     "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
     "description": "dApps paragraph 2"
@@ -9743,5 +9733,16 @@
   },
   "stablecoins.ecosystem.defiLink": {
     "message": "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them."
-  }
+  },
+  "whereToGetAda.learn.description": {"message": "New to Cardano? [What is Cardano](/what-is-cardano#get-started) explains the platform in plain terms, and the [learning path](/learn) takes you on from there step by step."},
+  "whereToGetAda.quiz.title": {"message": "Test what you learned"},
+  "whereToGetAda.quiz.buttonText": {"message": "Start quiz"},
+  "whatIsAWallet.dapps.text3": {"message": "How DApps work, and how to use them safely, is explained in the [smart contracts](/smart-contracts#safety) explainer."},
+  "whatIsAWallet.next.description": {"message": "Next step: find out [where to get ada](/where-to-get-ada). New to Cardano altogether? Start with [what Cardano is](/what-is-cardano#get-started) and follow the [learning path](/learn)."},
+  "whatIsAWallet.quiz.title": {"message": "Test what you learned"},
+  "whatIsAWallet.quiz.buttonText": {"message": "Start quiz"},
+  "walletFinder.nextTeaser.text": {"message": "Already have a wallet? The next step is getting some ada into it."},
+  "walletFinder.nextTeaser.cta": {"message": "Where to get ada"},
+  "whatIsAda.quiz.title": {"message": "Test what you learned"},
+  "whatIsAda.quiz.buttonText": {"message": "Start quiz"}
 }

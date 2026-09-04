@@ -306,6 +306,17 @@ export default function WalletFinder() {
               {translate({ id: "walletFinder.learnTeaser.cta", message: "What is a Wallet?" })}
             </Link>
           </div>
+          <div className={styles.learnTeaser}>
+            <p className={styles.learnTeaserText}>
+              {translate({
+                id: "walletFinder.nextTeaser.text",
+                message: "Already have a wallet? The next step is getting some ada into it.",
+              })}
+            </p>
+            <Link className="button button--primary" to="/where-to-get-ada">
+              {translate({ id: "walletFinder.nextTeaser.cta", message: "Where to get ada" })}
+            </Link>
+          </div>
         </BoundaryBox>
         <SpacerBox size="medium" />
       </main>
