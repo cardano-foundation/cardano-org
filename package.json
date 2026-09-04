@@ -30,7 +30,8 @@
     "test:docs-style": "node scripts/check-docs-style.js",
     "test:quiz-logic": "node --test scripts/test-quiz-progress.mjs",
     "test:quiz-data": "node scripts/check-quiz.js",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data",
+    "test:get-started": "node --test scripts/test-get-started.mjs",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
@@ -74,6 +75,7 @@
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/types": "^3.9.2",
     "@eslint/js": "^10.0.1",
+    "@scure/bip39": "2.3.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^10.2.1",

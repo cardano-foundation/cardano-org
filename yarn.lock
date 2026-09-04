@@ -3124,7 +3124,7 @@
     "@noble/hashes" "2.3.0"
     "@scure/base" "2.3.0"
 
-"@scure/bip39@^2.0.1":
+"@scure/bip39@2.3.0", "@scure/bip39@^2.0.1":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@scure/bip39/-/bip39-2.3.0.tgz#38da3f75760e8b599eb0bfd4e52ed491e5ba4fff"
   integrity sha512-qdyWuxoYwi3+YmqIsfkpz1I029m980WkVPilj+kG7VxSm+gKQ2BmQru3nv3LbMtpSUXuyZwdFT65JkpKu5OHOQ==
