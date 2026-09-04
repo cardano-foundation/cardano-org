@@ -31,7 +31,12 @@
     "test:quiz-logic": "node --test scripts/test-quiz-progress.mjs",
     "test:quiz-data": "node scripts/check-quiz.js",
     "test:get-started": "node --test scripts/test-get-started.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started",
+    "test:medusa-groups": "node scripts/test-medusa-groups.js",
+    "test:medusa-history": "node scripts/test-medusa-history.js",
+    "test:medusa-playback": "node scripts/test-medusa-playback.js",
+    "test:medusa-graph": "node scripts/test-medusa-graph.js",
+    "test:medusa-layout": "node scripts/test-medusa-layout.js",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:medusa-groups && yarn test:medusa-history && yarn test:medusa-playback && yarn test:medusa-graph && yarn test:medusa-layout",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
@@ -53,6 +58,7 @@
     "buffer": "^6.0.3",
     "clsx": "^2.0.0",
     "crypto-browserify": "^3.12.1",
+    "d3-force": "3.0.0",
     "dotenv": "^16.4.5",
     "echarts": "^6.1.0",
     "html-to-image": "^1.11.13",
@@ -69,6 +75,7 @@
     "react-tabs": "^6.0.2",
     "reactflow": "11.7.0",
     "stream-browserify": "^3.0.0",
+    "three": "0.185.1",
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
