@@ -1,4 +1,14 @@
 /* Page-level layout for /get-started, component styles live in GetStarted/styles.module.css */
+/* The stations sit on the site's dark "zoom" background, so they get their own surface card. */
+.journey {
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+  padding: var(--site-space-md) var(--site-space-lg);
+}
+.journey > section:first-child { border-top: 0; padding-top: var(--site-space-sm); }
+@media (max-width: 767px) { .journey { padding: var(--site-space-sm) var(--site-space-md); } }
 .continueLink { margin-top: var(--site-space-xs); }
 .continueLink a { color: inherit; text-decoration: underline; }
 .overviewLink { margin-top: var(--site-space-xl); color: var(--ifm-color-emphasis-700); }

@@ -109,6 +109,7 @@ export default function GetStarted() {
         <BackgroundWrapper backgroundType="zoom">
           <BoundaryBox>
             <SpacerBox size="small" />
+            <div className={styles.journey}>
 
             <Station anchor={ANCHORS.wallet} number={1} title={labels.wallet} state={state('wallet')} nextAnchor={ANCHORS.phrase}
               why={(
@@ -224,6 +225,7 @@ export default function GetStarted() {
               {translate({ id: 'getStarted.intro.overviewLinkText', message: 'Not sure what Cardano is yet?' })}{' '}
               <Link to="/what-is-cardano">{translate({ id: 'getStarted.intro.overviewLinkLabel', message: 'Start with the overview.' })}</Link>
             </p>
+            </div>
             <SpacerBox size="medium" />
           </BoundaryBox>
         </BackgroundWrapper>

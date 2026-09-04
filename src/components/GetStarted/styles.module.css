@@ -26,13 +26,14 @@
 }
 .stationFooter { display: flex; justify-content: flex-end; }
 @media (min-width: 768px) {
-  .why { grid-template-columns: 200px minmax(0, 1fr); }
+  /* Two columns only when the block carries an illustration, text-only blocks keep the full width. */
+  .why:has(> img) { grid-template-columns: 200px minmax(0, 1fr); }
 }
 
 /* Sticky rail */
 .rail {
   position: sticky; top: var(--ifm-navbar-height); z-index: 10;
-  background: var(--ifm-background-color); border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color); border-bottom: 1px solid var(--ifm-color-emphasis-200);
   padding: var(--site-space-xs) 0;
 }
 .railSteps { display: flex; gap: var(--site-space-xs); overflow-x: auto; }
