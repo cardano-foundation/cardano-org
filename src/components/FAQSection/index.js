@@ -18,7 +18,7 @@ const faqData = {
   pineappleFAQ,
 };
 
-export default function FAQSection({ jsonFileName = "operationFAQ", data }) {
+export default function FAQSection({ jsonFileName, data }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqList = data || faqData[jsonFileName] || [];
 

@@ -120,26 +120,29 @@ function Hero() {
   );
 }
 
-export default function StakePoolDelegationPage() {
-  const steps = [
-    {
-      label: translate({ id: "stakePoolDelegation.how.wallet.label", message: "Wallet" }),
-      text: translate({ id: "stakePoolDelegation.how.wallet.text", message: "Most current self-custody Cardano wallets support delegation. Connect one above or delegate directly inside your wallet app." }),
-    },
-    {
-      label: translate({ id: "stakePoolDelegation.how.pool.label", message: "Pool" }),
-      text: translate({ id: "stakePoolDelegation.how.pool.text", message: "Small pools mint blocks less often, so their rewards vary more from epoch to epoch. Compare performance, fees, pledge and saturation before choosing." }),
-    },
-    {
-      label: translate({ id: "stakePoolDelegation.how.sign.label", message: "Sign" }),
-      text: translate({ id: "stakePoolDelegation.how.sign.text", message: "One transaction with a small fee. If your stake key is new, it also includes a refundable stake key deposit." }),
-    },
-    {
-      label: translate({ id: "stakePoolDelegation.how.rewards.label", message: "Rewards" }),
-      text: translate({ id: "stakePoolDelegation.how.rewards.text", message: "Your delegation becomes active in the epoch after next. If the pool mints blocks, first rewards arrive about 15 to 20 days later and are paid every epoch after that. Rewards compound automatically." }),
-    },
-  ];
+// Static copy, resolved once per locale bundle rather than on every render.
+const DELEGATION_FAQ = getDelegationFAQData();
 
+const STEPS = [
+  {
+    label: translate({ id: "stakePoolDelegation.how.wallet.label", message: "Wallet" }),
+    text: translate({ id: "stakePoolDelegation.how.wallet.text", message: "Most current self-custody Cardano wallets support delegation. Connect one above or delegate directly inside your wallet app." }),
+  },
+  {
+    label: translate({ id: "stakePoolDelegation.how.pool.label", message: "Pool" }),
+    text: translate({ id: "stakePoolDelegation.how.pool.text", message: "Small pools mint blocks less often, so their rewards vary more from epoch to epoch. Compare performance, fees, pledge and saturation before choosing." }),
+  },
+  {
+    label: translate({ id: "stakePoolDelegation.how.sign.label", message: "Sign" }),
+    text: translate({ id: "stakePoolDelegation.how.sign.text", message: "One transaction with a small fee. If your stake key is new, it also includes a refundable stake key deposit." }),
+  },
+  {
+    label: translate({ id: "stakePoolDelegation.how.rewards.label", message: "Rewards" }),
+    text: translate({ id: "stakePoolDelegation.how.rewards.text", message: "Your delegation becomes active in the epoch after next. If the pool mints blocks, first rewards arrive about 15 to 20 days later and are paid every epoch after that. Rewards compound automatically." }),
+  },
+];
+
+export default function StakePoolDelegationPage() {
   return (
     <Layout
       title={translate({ id: "stakePoolDelegation.meta.title", message: "Delegate ada to a Stake Pool" })}
@@ -161,7 +164,7 @@ export default function StakePoolDelegationPage() {
 
             <Divider text={translate({ id: "stakePoolDelegation.how.divider", message: "How delegation works" })} id="how-it-works" />
             <ol className={styles.steps}>
-              {steps.map((step) => (
+              {STEPS.map((step) => (
                 <li key={step.label}><strong>{step.label}</strong> {step.text}</li>
               ))}
             </ol>
@@ -212,7 +215,7 @@ export default function StakePoolDelegationPage() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <FAQSection data={getDelegationFAQData()} />
+          <FAQSection data={DELEGATION_FAQ} />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>
