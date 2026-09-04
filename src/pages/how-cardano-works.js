@@ -223,7 +223,7 @@ function SmartContractsSection() {
           translate({
             id: "howCardanoWorks.contracts.p2",
             message:
-              "Scripts are written in languages such as Plutus and Aiken and compiled to Plutus Core, the language the node executes. Their execution is paid for with a separate budget of memory and steps that is priced in advance, so the cost is known before submission, exactly like the base fee. If a script fails on chain despite the wallet's own check, a small collateral covers the network's work, which is why wallets set aside a few ada for that purpose.",
+              "Scripts are written in languages such as Aiken and Plinth and compiled to Plutus Core, the language the node executes. Their execution is paid for with a separate budget of memory and steps that is priced in advance, so the cost is known before submission, exactly like the base fee. The app or wallet normally evaluates a script before asking for a signature, so failures on chain are rare. If a script still fails there, a small collateral covers the network's work, which is why wallets that connect to DApps set aside some ada for that purpose.",
           }),
         ]}
         headingDot={true}
