@@ -742,6 +742,367 @@
   "getStarted.meta.description": {
     "message": "Set up a Cardano wallet, back up your recovery phrase, get your first ada and delegate your stake and vote. Five guided steps, with your wallet activity confirmed on the chain."
   },
+  "getStarted.connect.detected": {
+    "message": "These wallets are installed in this browser. Pick the one you set up in step 1:"
+  },
+  "getStarted.connect.detecting": {
+    "message": "Looking for wallets in this browser."
+  },
+  "getStarted.connect.error.cancelled": {
+    "message": "Connection cancelled."
+  },
+  "getStarted.connect.error.failed": {
+    "message": "Could not connect to the wallet. Try again, or paste your address."
+  },
+  "getStarted.connect.error.invalid": {
+    "message": "That does not look like a Cardano address."
+  },
+  "getStarted.connect.error.noReward": {
+    "message": "This wallet did not return a stake address. Try pasting a receiving address instead."
+  },
+  "getStarted.connect.error.noStake": {
+    "message": "This address has no stake part. Use another receiving address from the same wallet."
+  },
+  "getStarted.connect.error.sdk": {
+    "message": "Could not check the address in this browser. Reload the page and try again."
+  },
+  "getStarted.connect.error.testnet": {
+    "message": "This is a test network address. Paste a mainnet address."
+  },
+  "getStarted.connect.error.wrongNetwork": {
+    "message": "Your wallet is on a test network. Switch it to mainnet and connect again."
+  },
+  "getStarted.connect.noWallet": {
+    "message": "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address."
+  },
+  "getStarted.connect.pasteButton": {
+    "message": "Track this address"
+  },
+  "getStarted.connect.pasteLabel": {
+    "message": "Receiving address or stake address"
+  },
+  "getStarted.connect.privacy": {
+    "message": "Your address is stored only in this browser. To check its public on-chain activity, it is sent to cardano.org's chain-data service, the same way an explorer works."
+  },
+  "getStarted.connect.privacyLink": {
+    "message": "Privacy policy"
+  },
+  "getStarted.connect.result.balance": {
+    "message": "{amount} ada found."
+  },
+  "getStarted.connect.result.change": {
+    "message": "Use a different address"
+  },
+  "getStarted.connect.result.checking": {
+    "message": "Checking this address on the chain."
+  },
+  "getStarted.connect.result.explorer": {
+    "message": "View on an explorer"
+  },
+  "getStarted.connect.result.noActivity": {
+    "message": "No on-chain activity found for this address yet. That changes in the next step."
+  },
+  "getStarted.connect.result.tracking": {
+    "message": "Tracking this address"
+  },
+  "getStarted.connect.result.unknown": {
+    "message": "Could not check this address yet. Refresh to try again."
+  },
+  "getStarted.connect.result.unverified": {
+    "message": "Pasting an address does not prove it is yours. Connect the wallet to confirm."
+  },
+  "getStarted.connect.result.you": {
+    "message": "This is you"
+  },
+  "getStarted.connect.result.zero": {
+    "message": "Nothing here yet. That changes in the next step."
+  },
+  "getStarted.connect.tab.paste": {
+    "message": "Paste address"
+  },
+  "getStarted.connect.tab.wallet": {
+    "message": "Connect wallet"
+  },
+  "getStarted.connect.tabsLabel": {
+    "message": "How to identify your account"
+  },
+  "getStarted.done.address": {
+    "message": "Stake address"
+  },
+  "getStarted.done.copied": {
+    "message": "Copied to clipboard"
+  },
+  "getStarted.done.drep": {
+    "message": "Your DRep: {drep}"
+  },
+  "getStarted.done.voteOption": {
+    "message": "Your vote: {option}"
+  },
+  "getStarted.done.drepAbstain": {
+    "message": "Always abstain"
+  },
+  "getStarted.done.drepNoConfidence": {
+    "message": "No confidence"
+  },
+  "getStarted.done.learn": {
+    "message": "Continue on the learning path"
+  },
+  "getStarted.done.pool": {
+    "message": "Your stake pool: {pool}"
+  },
+  "getStarted.done.popularApps": {
+    "message": "Popular apps"
+  },
+  "getStarted.done.progress": {
+    "message": "{done} of 5 done"
+  },
+  "getStarted.done.quiz": {
+    "message": "Test what you learned"
+  },
+  "getStarted.done.sectionTitle": {
+    "message": "Summary"
+  },
+  "getStarted.done.share": {
+    "message": "Share"
+  },
+  "getStarted.done.shareFailed": {
+    "message": "Sharing is not available in this browser."
+  },
+  "getStarted.done.shareText": {
+    "message": "I just set up my first Cardano wallet and delegated my stake and my vote. Start here: {url}"
+  },
+  "getStarted.done.shareUnverified": {
+    "message": "Connect the wallet that owns this address to share your progress."
+  },
+  "getStarted.done.titleAddress": {
+    "message": "This address is all set"
+  },
+  "getStarted.done.titleYou": {
+    "message": "You are in"
+  },
+  "getStarted.hero.continue": {
+    "message": "Continue at step {number}"
+  },
+  "getStarted.hero.liveTip": {
+    "message": "Block {block} was produced {seconds} seconds ago.",
+    "description": "Live line under the hero, {block} is the block number, {seconds} the block age"
+  },
+  "getStarted.intro.overviewLinkLabel": {
+    "message": "Start with the overview."
+  },
+  "getStarted.intro.overviewLinkText": {
+    "message": "Not sure what Cardano is yet?"
+  },
+  "getStarted.phrase.again": {
+    "message": "Practise again"
+  },
+  "getStarted.phrase.demoBanner": {
+    "message": "Demo only"
+  },
+  "getStarted.phrase.demoBannerText": {
+    "message": "cardano.org will never ask for a real phrase, and neither will anyone honest. These twelve words are not a real phrase."
+  },
+  "getStarted.phrase.demoLabel": {
+    "message": "Demo recovery phrase"
+  },
+  "getStarted.phrase.finish": {
+    "message": "Finish"
+  },
+  "getStarted.phrase.next": {
+    "message": "Next word"
+  },
+  "getStarted.phrase.passed": {
+    "message": "Passed. Now do the same with your real phrase, on paper."
+  },
+  "getStarted.phrase.question": {
+    "message": "Which is word {position}?"
+  },
+  "getStarted.phrase.right": {
+    "message": "Correct. {done} of {total} checked."
+  },
+  "getStarted.phrase.start": {
+    "message": "Start the check"
+  },
+  "getStarted.phrase.wrong": {
+    "message": "Not quite. Look at the numbered list above and try again."
+  },
+  "getStarted.question.correct": {
+    "message": "Correct."
+  },
+  "getStarted.question.kicker": {
+    "message": "Quick check"
+  },
+  "getStarted.question.source": {
+    "message": "Source"
+  },
+  "getStarted.question.wrong": {
+    "message": "Not quite."
+  },
+  "getStarted.rail.checking": {
+    "message": "Checking"
+  },
+  "getStarted.rail.chip.ada": {
+    "message": "Ada"
+  },
+  "getStarted.rail.chip.confirmed": {
+    "message": "confirmed"
+  },
+  "getStarted.rail.chip.notYet": {
+    "message": "not yet"
+  },
+  "getStarted.rail.chip.stake": {
+    "message": "Stake"
+  },
+  "getStarted.rail.chip.unknown": {
+    "message": "unknown"
+  },
+  "getStarted.rail.chip.vote": {
+    "message": "Vote"
+  },
+  "getStarted.rail.error": {
+    "message": "Chain check unavailable, try again."
+  },
+  "getStarted.rail.forget": {
+    "message": "Forget address"
+  },
+  "getStarted.rail.hint": {
+    "message": "Connect in step 3 to see your on-chain status"
+  },
+  "getStarted.rail.label": {
+    "message": "Your progress"
+  },
+  "getStarted.rail.lastChecked": {
+    "message": "last checked {time}"
+  },
+  "getStarted.rail.notConnected": {
+    "message": "Not connected"
+  },
+  "getStarted.rail.refresh": {
+    "message": "Refresh"
+  },
+  "getStarted.rail.stepsLabel": {
+    "message": "Steps"
+  },
+  "getStarted.rail.tracking": {
+    "message": "Tracking address"
+  },
+  "getStarted.rail.walletConnected": {
+    "message": "Wallet connected"
+  },
+  "getStarted.station.ada.action": {
+    "message": "Choose a way to get ada, then send it to your own address."
+  },
+  "getStarted.station.ada.button": {
+    "message": "See where to get ada"
+  },
+  "getStarted.station.ada.checking": {
+    "message": "Checking the balance on the chain."
+  },
+  "getStarted.station.ada.none": {
+    "message": "No ada yet. Once your transfer arrives, refresh to see it here."
+  },
+  "getStarted.station.ada.noneAddress": {
+    "message": "No ada in this account yet. Once a transfer arrives, refresh to see it here."
+  },
+  "getStarted.station.ada.proofAddress": {
+    "message": "{amount} ada in this account."
+  },
+  "getStarted.station.ada.proofWallet": {
+    "message": "{amount} ada in your wallet."
+  },
+  "getStarted.station.ada.title": {
+    "message": "Your first ada"
+  },
+  "getStarted.station.ada.unknown": {
+    "message": "Could not check the balance yet. Refresh to try again."
+  },
+  "getStarted.station.ada.why": {
+    "message": "Most people buy their first ada on an exchange. On the exchange it is theirs, in your wallet it is yours."
+  },
+  "getStarted.station.connect.action": {
+    "message": "Connect your wallet, or paste a receiving address."
+  },
+  "getStarted.station.connect.title": {
+    "message": "You, on the chain"
+  },
+  "getStarted.station.connect.why": {
+    "message": "Your address is public, like an account number. You can share it with anyone. Your phrase you share with no one."
+  },
+  "getStarted.station.continue": {
+    "message": "Continue"
+  },
+  "getStarted.station.delegate.action": {
+    "message": "Delegate to a stake pool and to a DRep, both from your wallet, in either order."
+  },
+  "getStarted.station.delegate.notRegistered": {
+    "message": "Your stake key is not registered yet. Your wallet registers it with your first delegation, stake or vote."
+  },
+  "getStarted.station.delegate.stakeButton": {
+    "message": "Delegate your ada"
+  },
+  "getStarted.station.delegate.stakeOpen": {
+    "message": "Not staked yet."
+  },
+  "getStarted.station.delegate.stakeUnknown": {
+    "message": "Could not check the stake delegation yet."
+  },
+  "getStarted.station.delegate.title": {
+    "message": "Stake and vote"
+  },
+  "getStarted.station.delegate.voteButton": {
+    "message": "Delegate your vote"
+  },
+  "getStarted.station.delegate.voteOpen": {
+    "message": "No vote delegation yet."
+  },
+  "getStarted.station.delegate.voteUnknown": {
+    "message": "Could not check the vote delegation yet."
+  },
+  "getStarted.station.delegate.why": {
+    "message": "Delegation moves rights, not ada. Your ada stays spendable, the pool produces blocks with it, your DRep votes with it. A vote delegation is also required before staking rewards can be withdrawn."
+  },
+  "getStarted.station.phrase.action": {
+    "message": "Practise the check your wallet will ask for, with a demo phrase. Then write your real one on paper and keep it offline."
+  },
+  "getStarted.station.phrase.scamLink": {
+    "message": "Be aware of the most common scams."
+  },
+  "getStarted.station.phrase.title": {
+    "message": "Your recovery phrase"
+  },
+  "getStarted.station.phrase.why": {
+    "message": "Twelve to twenty-four words are the only backup. There is no company, no support desk and no reset. Whoever has the words has the ada."
+  },
+  "getStarted.station.state.done": {
+    "message": "Done"
+  },
+  "getStarted.station.state.open": {
+    "message": "Open"
+  },
+  "getStarted.station.state.unknown": {
+    "message": "Could not check yet"
+  },
+  "getStarted.station.stepOf": {
+    "message": "Step {number} of 5"
+  },
+  "getStarted.station.wallet.action": {
+    "message": "Install one of these wallets for your device, or compare them all in the Wallet Finder."
+  },
+  "getStarted.station.wallet.title": {
+    "message": "Your wallet"
+  },
+  "getStarted.station.wallet.why": {
+    "message": "A wallet holds keys, not coins. Your ada lives on the chain, and the wallet is how you prove it is yours."
+  },
+  "getStarted.wallet.finderLink": {
+    "message": "Compare all wallets in the Wallet Finder"
+  },
+  "getStarted.wallet.installedCheckbox": {
+    "message": "I have installed a wallet."
+  },
+  "getStarted.wallet.learnLink": {
+    "message": "What is a wallet?"
+  },
   "whereToGetAda.hero.title": {
     "message": "Where to get ada?"
   },
@@ -973,8 +1334,8 @@
   "home.hero.description": {
     "message": "Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future."
   },
-  "home.hero.ctaWhatIsAda": {
-    "message": "What is ada?"
+  "home.hero.ctaWhatIsCardano": {
+    "message": "What is Cardano?"
   },
   "home.hero.ctaGetStarted": {
     "message": "Get Started"
@@ -6693,7 +7054,7 @@
     "message": "What makes Cardano different?"
   },
   "home.proofPoints.cta": {
-    "message": "What is Cardano?"
+    "message": "See all differences"
   },
   "learn.stage.dividerLabel": {
     "message": "Stage {number}"
@@ -6930,7 +7291,7 @@
     "message": "What is a blockchain?"
   },
   "howCardanoWorks.consensus.blocks.text": {
-    "message": "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and irreversible in the protocol's own terms after a longer window that its security parameters define."
+    "message": "The slot leader bundles pending transactions into a block of up to about 88 KB under current parameters, signs it and sends it to its peers, who verify every transaction before passing it on. Every block built on top makes a rollback less likely, which is why wallets and exchanges treat a transaction as settled after a handful of blocks. The protocol itself only rules out a rollback once a block is deep enough in the chain, a window of about 36 hours on mainnet set by its security parameters."
   },
   "howCardanoWorks.consensus.blocks.title": {
     "message": "Blocks"
@@ -6948,7 +7309,7 @@
     "message": "Why it is secure"
   },
   "howCardanoWorks.consensus.slots.text": {
-    "message": "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake. On average only one slot in twenty has a winner, so a new block appears roughly every 20 seconds, and most slots pass without a block."
+    "message": "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake, and any pool that wins becomes a slot leader. On average only one slot in twenty has a leader at all, so a new block appears roughly every 20 seconds and most slots pass without a block. Now and then two pools qualify for the same slot, and only one of their blocks stays in the chain."
   },
   "howCardanoWorks.consensus.slots.title": {
     "message": "Slots and epochs"
@@ -6960,10 +7321,10 @@
     "message": "Smart contracts explained"
   },
   "howCardanoWorks.contracts.p1": {
-    "message": "A smart contract on Cardano is a validator: a script that guards outputs and answers one question for each transaction that tries to spend them, valid or not. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable."
+    "message": "A smart contract on Cardano is a validator: a script that checks a transaction and answers one question, valid or not. Most often it guards outputs and decides whether a transaction may spend them, but scripts also govern minting and burning tokens, withdrawing rewards, certificates and, since the Chang upgrade, governance votes and proposals. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable."
   },
   "howCardanoWorks.contracts.p2": {
-    "message": "Scripts are written in languages such as Plutus and Aiken and compiled to Plutus Core, the language the node executes. Their execution is paid for with a separate budget of memory and steps that is priced in advance, so the cost is known before submission, exactly like the base fee. If a script fails on chain despite the wallet's own check, a small collateral covers the network's work, which is why wallets set aside a few ada for that purpose."
+    "message": "Scripts are written in languages such as Aiken and Plinth and compiled to Plutus Core, the language the node executes. Their execution is paid for with a separate budget of memory and steps that is priced in advance, so the cost is known before submission, exactly like the base fee. The app or wallet normally evaluates a script before asking for a signature, so failures on chain are rare. If a script still fails there, a small collateral covers the network's work, which is why wallets that connect to DApps set aside some ada for that purpose."
   },
   "howCardanoWorks.contracts.title": {
     "message": "How do smart contracts run?"
@@ -7032,7 +7393,7 @@
     "message": "What is the difference between a slot and a block?"
   },
   "howCardanoWorks.faq.speed.a": {
-    "message": "A block is produced roughly every 20 seconds, so a transaction normally appears on the chain within a minute. Services wait for several more blocks before treating it as final."
+    "message": "A block is produced roughly every 20 seconds, so a transaction normally appears on the chain within a minute. Services wait for several more blocks before treating it as settled, and the protocol itself only rules out a rollback after a much longer window."
   },
   "howCardanoWorks.faq.speed.q": {
     "message": "How many confirmations does a Cardano transaction need?"
@@ -7050,10 +7411,10 @@
     "message": "The eUTXO model explained"
   },
   "howCardanoWorks.ledger.p1": {
-    "message": "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. Your wallet balance is simply the sum of the notes you can unlock."
+    "message": "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. The spendable balance your wallet shows is simply the sum of the notes it can unlock. Staking rewards are the one exception: they accumulate in a separate reward account, and withdrawing them into a note is itself a transaction."
   },
   "howCardanoWorks.ledger.p2": {
-    "message": "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed and the other is rejected. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one."
+    "message": "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed. The other is rejected as a whole, even if it passed every check when it was built, and nothing is half-applied. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one."
   },
   "howCardanoWorks.ledger.p3": {
     "message": "The extended part is what makes programs possible: an output can carry data and be locked by a script instead of a key, and the script decides whether a transaction may spend it."
@@ -7107,7 +7468,7 @@
     "message": "[Mithril](/glossary/mithril): signed snapshots for fast node bootstrap."
   },
   "howCardanoWorks.terminology.item.nativeToken": {
-    "message": "[Native token](/glossary/native-token): an asset the ledger handles like ada."
+    "message": "[Native token](/glossary/native-token): an asset the ledger tracks directly, alongside ada."
   },
   "howCardanoWorks.terminology.item.plutusCore": {
     "message": "[Plutus Core](/glossary/plutus-core): the on-chain script language."
@@ -7116,7 +7477,7 @@
     "message": "[Slot](/glossary/slot): one second, the unit of time."
   },
   "howCardanoWorks.terminology.item.slotLeader": {
-    "message": "[Slot leader](/glossary/slot-leader): the pool chosen to produce a block."
+    "message": "[Slot leader](/glossary/slot-leader): a pool that qualifies to produce the block for a slot."
   },
   "howCardanoWorks.terminology.item.stakePool": {
     "message": "[Stake pool](/glossary/stake-pool): a block-producing node with delegated stake."
@@ -7131,10 +7492,10 @@
     "message": "Native tokens in the docs"
   },
   "howCardanoWorks.tokens.p1": {
-    "message": "Tokens on Cardano are native: the ledger handles them with the same rules as ada, so no smart contract is needed to create, send or hold them. A token is defined by a minting policy, a small script or key that says who may create or destroy it. Once minted, tokens travel inside ordinary transaction outputs, alongside ada, and a single transaction can carry many different assets."
+    "message": "Tokens on Cardano are native: the ledger tracks them directly, much as it tracks ada, so no smart contract is needed to create, send or hold them. A token is defined by a minting policy, a small script or key that says who may create or destroy it. Once minted, tokens travel inside ordinary transaction outputs, alongside ada, and a single transaction can carry many different assets. Ada keeps its special roles: only ada pays fees and deposits, only ada is paid out as staking rewards, and every output that carries tokens has to hold some ada as well."
   },
   "howCardanoWorks.tokens.p2": {
-    "message": "An NFT is simply a token minted with a quantity of one under a policy that will not mint it again, plus metadata that describes it. Standards such as CIP-25 and CIP-68 define how wallets and marketplaces read that metadata."
+    "message": "An NFT is simply a token minted with a quantity of one under a policy that will never mint that asset again. What the token stands for, an image or a name for example, is usually described by metadata, and standards such as CIP-25 and CIP-68 define how wallets and marketplaces read it."
   },
   "howCardanoWorks.tokens.title": {
     "message": "How are tokens created?"
@@ -7143,10 +7504,10 @@
     "message": "Fee structure in the docs"
   },
   "howCardanoWorks.transactions.p1": {
-    "message": "A fee is a formula, not an auction: a fixed part plus a per-byte part, both set by protocol parameters. On mainnet today that is 155,381 lovelace plus 44 lovelace per byte, so a typical transfer of a few hundred bytes costs around 0.17 ada. Fees do not rise when the network is busy, transactions simply wait a little longer."
+    "message": "A fee is a formula, not an auction: a fixed part plus a per-byte part, both set by protocol parameters. On mainnet, as of 2026, that is 155,381 lovelace plus 44 lovelace per byte, so a typical transfer of a few hundred bytes costs around 0.17 ada. Like every protocol parameter, these values can change through governance. Fees do not rise when the network is busy, transactions simply wait a little longer."
   },
   "howCardanoWorks.transactions.p2": {
-    "message": "Every output also has to hold a minimum amount of ada, roughly one ada for a simple output, so that the ledger does not fill up with dust. That ada is not a fee: it stays in the output and comes back when the output is spent. Registering a stake key takes a refundable 2 ada deposit for the same reason."
+    "message": "Every output also has to hold a minimum amount of ada, so that the ledger does not fill up with dust. The minimum depends on the size of the output: roughly one ada for a plain ada-only output, more when it carries tokens or data. That ada is not a fee: it stays in the output and comes back when the output is spent. Registering a stake key takes a refundable deposit, currently 2 ada, for the same reason."
   },
   "howCardanoWorks.transactions.p3": {
     "message": "A block is produced roughly every 20 seconds, so a transaction usually appears on the chain within a minute. Wallets and exchanges then wait for more blocks on top before treating it as settled, typically a few minutes for everyday use and longer for large transfers."
@@ -7161,7 +7522,7 @@
     "message": "Cardano upgrades through hard forks, but without the chain splits the term usually implies. The hard fork combinator lets a single node understand every era of the protocol, so the switch from one set of rules to the next happens at an epoch boundary that everyone knows in advance. Each era added something: staking, native tokens, smart contracts, cheaper scripts, and on-chain governance."
   },
   "howCardanoWorks.upgrades.p2": {
-    "message": "Since 2025 an upgrade is itself a governance action: it is proposed on chain, voted on by delegated representatives, stake pool operators and the constitutional committee, and only then enacted. The same process changes protocol parameters such as fees and block size. See [how governance works](/governance)."
+    "message": "Since 2025 a hard fork is itself a governance action: it is proposed on chain and enacted only after the constitutional committee, delegated representatives and stake pool operators have each approved it. Protocol parameters such as fees and block size change through the same on-chain process, though which of the three bodies has to vote depends on the type of action. See [how governance works](/governance)."
   },
   "howCardanoWorks.upgrades.title": {
     "message": "How does Cardano change?"
@@ -7188,7 +7549,7 @@
     "message": "A smart contract is a program stored on a blockchain that enforces an agreement without a middleman. The classic picture is a vending machine: you put in coins, you pick a product, and the machine hands it over. Nobody behind a counter decides whether you deserve the snack, the rules are built into the machine, and they work the same for everyone."
   },
   "smartContracts.what.p2": {
-    "message": "Take a buyer and a seller who do not know each other. Without a contract they either trust each other or pay an escrow agent. With a contract the payment sits in a script that releases it once the agreed condition is recorded. Neither can back out, and nobody in the middle takes a cut or changes the terms."
+    "message": "Take a buyer and a seller who do not know each other. Without a contract they either trust each other or pay an escrow agent. With a contract the payment sits in a script that releases it only once the agreed condition is recorded. Whether either side can cancel, whether a fee is taken and who can change the terms is fixed by the script's rules rather than decided by someone in the middle."
   },
   "smartContracts.what.p3": {
     "message": "A contract only sees what is inside the transaction that calls it and what is already on the chain. Facts from the outside world, such as a race result or an exchange rate, have to be brought on chain by a service called an oracle, and the contract can only be as reliable as that feed."
@@ -7203,7 +7564,7 @@
     "message": "How does Cardano run smart contracts?"
   },
   "smartContracts.how.intro": {
-    "message": "On Cardano a contract is a validator: a script attached to funds on the ledger. Three things follow from that."
+    "message": "On Cardano a contract is a validator: a script that a transaction has to satisfy. Most validators are attached to funds on the ledger, and a script can also authorize minting, reward withdrawals, certificates and governance votes. Three things follow from that."
   },
   "smartContracts.how.guard.title": {
     "message": "The script guards the funds"
@@ -7215,13 +7576,13 @@
     "message": "The transaction is built before it runs"
   },
   "smartContracts.how.built.text": {
-    "message": "Your wallet or the app builds the complete transaction first, including every input, output and the data the script needs, and runs the script locally. Only a transaction that passes is signed and sent. The network then runs the same check, and because the inputs are fixed, the result is the same."
+    "message": "Your wallet or the app builds the complete transaction first, including every input, output and the data the script needs, and can evaluate the script before asking you to sign. The network then runs the same check on the same inputs and gets the same result. The transaction can still be rejected if one of its inputs was spent in the meantime, in which case nothing happens."
   },
   "smartContracts.how.cost.title": {
     "message": "The cost is known before you sign"
   },
   "smartContracts.how.cost.text": {
-    "message": "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a [collateral](/glossary/collateral) of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that."
+    "message": "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which evaluating it before signing makes rare, a [collateral](/glossary/collateral) covers the network's work. Its minimum is a share of the fee set by a protocol parameter, currently one and a half times the fee, and wallets that connect to DApps set aside some ada for it."
   },
   "smartContracts.how.outro": {
     "message": "The full mechanics, from slots to ledger, are on the [how Cardano works](/how-cardano-works) page."
@@ -7233,7 +7594,7 @@
     "message": "Which languages do developers use?"
   },
   "smartContracts.languages.p1": {
-    "message": "Contracts are written in a high-level language and compiled to Plutus Core, the small language the Cardano node executes. Plutus, embedded in Haskell, was the first and is still used for protocols that want the full power of Haskell's type system. Aiken is a newer language built only for Cardano, with a simpler syntax and tooling that most new projects now pick. Both produce the same kind of on-chain script."
+    "message": "Contracts are written in a high-level language and compiled to Plutus Core, the small language the Cardano node executes. Plinth, formerly called Plutus Tx, is embedded in Haskell, was the first and is still used by teams that want the full power of Haskell's type system. Aiken is a newer language built only for Cardano, with a simpler syntax and tooling that most new projects now pick. Plutarch, a Haskell library that stays close to the compiled code, is chosen when execution cost matters most. All of them produce the same kind of on-chain script."
   },
   "smartContracts.languages.p2": {
     "message": "Not everything needs a full contract. Native scripts handle common cases such as multi-signature wallets and time locks without any Plutus code, and native tokens can be minted under such a script as well."
@@ -7263,7 +7624,7 @@
     "message": "How do I use a DApp safely?"
   },
   "smartContracts.safety.p1": {
-    "message": "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it."
+    "message": "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. Your signature commits to the exact transaction, so check the inputs, outputs and any warnings your wallet shows. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it."
   },
   "smartContracts.safety.p2": {
     "message": "Beyond that, the usual rules apply. Reach the app through a bookmark or the link on its official channels, not through a search ad or a message. Prefer apps whose contracts have been audited and whose code is public. Try a small amount first. And treat any request to enter your recovery phrase as an attack, no DApp needs it."
@@ -7281,7 +7642,7 @@
     "message": "Trading, lending, stablecoins, marketplaces and games all run on contracts, and identity projects use them too. These are a few examples from the app showcase, ranked by on-chain activity where that data exists."
   },
   "smartContracts.built.outro": {
-    "message": "[Stablecoins](/stablecoins) have their own page, and the showcase lists more than a hundred apps across every category."
+    "message": "[Stablecoins](/stablecoins) and [DeFi](/defi) have their own pages, and the showcase lists more than a hundred apps across every category."
   },
   "smartContracts.built.button": {
     "message": "Explore all apps"
@@ -7293,7 +7654,7 @@
     "message": "How do I build one?"
   },
   "smartContracts.build.p1": {
-    "message": "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or stored once in an output that later transactions point to. There is no separate deployment step or registry."
+    "message": "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or published once in an output that later transactions reference. There is no global contract registry."
   },
   "smartContracts.build.button": {
     "message": "Developer portal"
@@ -7305,7 +7666,7 @@
     "message": "What a smart contract is, how Cardano runs contracts as validator scripts on the eUTXO ledger, which languages developers use, what a DApp is and how to use one safely."
   },
   "smartContracts.intro.callout": {
-    "message": "A smart contract on Cardano is a script that decides whether a transaction may spend the funds it guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no."
+    "message": "A smart contract on Cardano is a script that approves or rejects a transaction, most often one that spends the funds the script guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no."
   },
   "smartContracts.cta.title": {
     "message": "Ready to test yourself? Take the technical quiz."
@@ -7317,7 +7678,7 @@
     "message": "Are smart contracts on Cardano the same as on Ethereum?"
   },
   "smartContracts.faq.ethereum.a": {
-    "message": "They solve the same problem but work differently. On Ethereum a contract is an account with its own state that executes when called. On Cardano a contract is a validator that guards outputs on the ledger and approves or rejects transactions that spend them. The Cardano model gives you the exact outcome and cost before you sign, at the price of designing around outputs rather than shared state."
+    "message": "They solve the same problem but work differently. On Ethereum a contract is an account with its own state that executes when called. On Cardano a contract is a validator that approves or rejects a transaction, most often one that spends outputs the script guards. The Cardano model tells you the script result and the cost before you sign, though the transaction can still be rejected if an input it needs was spent first. The price is designing around outputs rather than shared state."
   },
   "smartContracts.faq.signature.q": {
     "message": "Can a smart contract take my ada without my signature?"
@@ -7329,13 +7690,13 @@
     "message": "What happens if a script fails?"
   },
   "smartContracts.faq.failure.a": {
-    "message": "Your wallet runs the script before submitting, so a failing transaction is normally never sent. If a transaction is submitted and its script fails on chain anyway, the collateral your wallet set aside covers the network's work, and the rest of the transaction does not happen."
+    "message": "The app or wallet normally evaluates the script before you sign, so a failing transaction is rarely sent. If a transaction is submitted and its script fails on chain anyway, the collateral your wallet set aside covers the network's work, and the rest of the transaction does not happen."
   },
   "smartContracts.faq.approvals.q": {
     "message": "Do I need to approve tokens for a DApp?"
   },
   "smartContracts.faq.approvals.a": {
-    "message": "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet afterwards."
+    "message": "No. Cardano has no allowance system. Your signature commits to the exact transaction you sign and nothing more, so review the inputs, outputs and warnings your wallet shows. A DApp cannot spend anything else from your wallet afterwards."
   },
   "smartContracts.faq.upgrades.q": {
     "message": "Can a smart contract be changed after it is deployed?"
@@ -7347,7 +7708,7 @@
     "message": "Which language should I learn?"
   },
   "smartContracts.faq.language.a": {
-    "message": "Aiken is the fastest way in for most developers, with a familiar syntax and good tooling. Plutus is the choice if you already know Haskell or want the deepest control. Both compile to the same on-chain language."
+    "message": "Aiken is the fastest way in for most developers, with a familiar syntax and good tooling. Plinth, formerly Plutus Tx, is the choice if you already know Haskell, and Plutarch if you want fine control over execution cost. All of them compile to the same on-chain language."
   },
   "learn.item.smartContracts.title": {
     "message": "Smart contracts and DApps"
@@ -9356,365 +9717,223 @@
   "stablecoins.whyCardano.uptime.body2": {
     "message": "For institutional settlement, cross-border payment, or any application where availability is not optional, {years} years of uninterrupted block production is a key part of the value proposition."
   },
-  "getStarted.connect.detected": {
-    "message": "These wallets are installed in this browser. Pick the one you set up in step 1:"
+  "defi.divider.what": {
+    "message": "Basics"
   },
-  "getStarted.connect.detecting": {
-    "message": "Looking for wallets in this browser."
+  "defi.what.title": {
+    "message": "What is DeFi?"
   },
-  "getStarted.connect.error.cancelled": {
-    "message": "Connection cancelled."
+  "defi.what.p1": {
+    "message": "Decentralized finance, DeFi for short, is the collection of financial services that run as smart contracts on a public blockchain: exchanges, lending markets, stablecoins, and the tools built on top of them. Instead of a company holding your money and deciding who may trade, a script holds the funds and enforces the same rules for everyone."
   },
-  "getStarted.connect.error.failed": {
-    "message": "Could not connect to the wallet. Try again, or paste your address."
+  "defi.what.p2": {
+    "message": "You use DeFi through DApps with your own wallet. The DApp builds the transaction, you check what it does and sign it, and the contract on chain settles it. That takes the bank out of the middle, though not every gatekeeper: a DApp's website can still refuse or delay service, and a trade can carry protocol, liquidity provider or batcher fees on top of the network fee. On Cardano that is also why the rest of this page keeps coming back to the wallet: it is your account, your login and your signature in one."
   },
-  "getStarted.connect.error.invalid": {
-    "message": "That does not look like a Cardano address."
+  "defi.what.button": {
+    "message": "How smart contracts work on Cardano"
   },
-  "getStarted.connect.error.noReward": {
-    "message": "This wallet did not return a stake address. Try pasting a receiving address instead."
+  "defi.divider.compared": {
+    "message": "Compared"
   },
-  "getStarted.connect.error.noStake": {
-    "message": "This address has no stake part. Use another receiving address from the same wallet."
+  "defi.compared.title": {
+    "message": "How does DeFi differ from a bank or an exchange?"
   },
-  "getStarted.connect.error.sdk": {
-    "message": "Could not check the address in this browser. Reload the page and try again."
+  "defi.compared.custody": {
+    "message": "**Custody.** A bank holds your money in its books and owes it to you. In DeFi the funds sit in your wallet, where only your signature moves them, or in a contract whose rules you can read, where those rules decide."
   },
-  "getStarted.connect.error.testnet": {
-    "message": "This is a test network address. Paste a mainnet address."
+  "defi.compared.access": {
+    "message": "**Access.** Opening an account needs an application and an approval. A DeFi protocol asks for neither, only a wallet and some ada. The rules where you live still apply."
   },
-  "getStarted.connect.error.wrongNetwork": {
-    "message": "Your wallet is on a test network. Switch it to mainnet and connect again."
+  "defi.compared.hours": {
+    "message": "**Hours.** Markets on chain have no opening hours. There is no cut-off time, no settlement day and no bank holiday."
   },
-  "getStarted.connect.noWallet": {
-    "message": "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address."
+  "defi.compared.transparency": {
+    "message": "**Transparency.** Every rate, every pool and every transaction is on the ledger for anyone to check, instead of in a quarterly report. Reserves held off chain, such as the bank deposits behind a fiat-backed stablecoin, still depend on the issuer's own reporting."
   },
-  "getStarted.connect.pasteButton": {
-    "message": "Track this address"
+  "defi.compared.recourse": {
+    "message": "**Recourse.** If a bank makes a mistake, there is a complaints process and, in many countries, deposit insurance. If you sign the wrong transaction or a contract has a bug, there is usually no one to call. That trade-off is the heart of DeFi, and the reason to understand it before using it."
   },
-  "getStarted.connect.pasteLabel": {
-    "message": "Receiving address or stake address"
+  "defi.uses.title": {
+    "message": "What can you do with DeFi on Cardano?"
   },
-  "getStarted.connect.privacy": {
-    "message": "Your address is stored only in this browser. To check its public on-chain activity, it is sent to cardano.org's chain-data service, the same way an explorer works."
+  "defi.divider.uses": {
+    "message": "What you can do"
   },
-  "getStarted.connect.privacyLink": {
-    "message": "Privacy policy"
+  "defi.uses.intro": {
+    "message": "The building blocks are the same as anywhere else in DeFi. What differs is how they run on Cardano, which the next section explains."
   },
-  "getStarted.connect.result.balance": {
-    "message": "{amount} ada found."
+  "defi.uses.swap.title": {
+    "message": "Swap tokens"
   },
-  "getStarted.connect.result.change": {
-    "message": "Use a different address"
+  "defi.uses.swap.text": {
+    "message": "A decentralized exchange, a [DEX](/glossary/dex), lets you trade ada for other native tokens without an order book run by a company. On most DEXs prices come from liquidity pools that other users fund, and a swap starts with a single transaction you sign."
   },
-  "getStarted.connect.result.checking": {
-    "message": "Checking this address on the chain."
+  "defi.uses.lend.title": {
+    "message": "Lend and borrow"
   },
-  "getStarted.connect.result.explorer": {
-    "message": "View on an explorer"
+  "defi.uses.lend.text": {
+    "message": "Lending protocols let you deposit tokens to earn interest paid by borrowers, or borrow against tokens you lock as loan collateral. Rates move with supply and demand, and a loan that falls below its collateral requirement can be liquidated by anyone, under the rules the contract enforces rather than at someone's discretion."
   },
-  "getStarted.connect.result.noActivity": {
-    "message": "No on-chain activity found for this address yet. That changes in the next step."
+  "defi.uses.stable.title": {
+    "message": "Hold stable value"
   },
-  "getStarted.connect.result.tracking": {
-    "message": "Tracking this address"
+  "defi.uses.stable.text": {
+    "message": "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit trading and lending is commonly priced in. Cardano has several, built on different backing models."
   },
-  "getStarted.connect.result.unknown": {
-    "message": "Could not check this address yet. Refresh to try again."
+  "defi.uses.liquidity.title": {
+    "message": "Provide liquidity"
   },
-  "getStarted.connect.result.unverified": {
-    "message": "Pasting an address does not prove it is yours. Connect the wallet to confirm."
+  "defi.uses.liquidity.text": {
+    "message": "Depositing a pair of tokens into a DEX pool earns you a share of the trading fees. In return you take on the risk that the two tokens move apart in price, which can leave you with less than if you had simply held them, an effect usually called impermanent loss."
   },
-  "getStarted.connect.result.you": {
-    "message": "This is you"
+  "defi.uses.bridge.title": {
+    "message": "Move assets across chains"
   },
-  "getStarted.connect.result.zero": {
-    "message": "Nothing here yet. That changes in the next step."
+  "defi.uses.bridge.text": {
+    "message": "A [bridge](/glossary/bridge) locks a token on one chain and issues a matching one on another, so value from other networks can be used on Cardano and back. Bridges are among the most attacked pieces of DeFi anywhere, so the choice of bridge matters as much as the token."
   },
-  "getStarted.connect.tab.paste": {
-    "message": "Paste address"
+  "defi.uses.outro": {
+    "message": "[Stablecoins](/stablecoins) have their own page with the backing model of each one. The showcase lists every app we track, with on-chain activity where we have it."
   },
-  "getStarted.connect.tab.wallet": {
-    "message": "Connect wallet"
+  "defi.uses.button": {
+    "message": "Explore all apps"
   },
-  "getStarted.connect.tabsLabel": {
-    "message": "How to identify your account"
+  "defi.divider.cardano": {
+    "message": "On Cardano"
   },
-  "getStarted.done.address": {
-    "message": "Stake address"
+  "defi.cardano.title": {
+    "message": "How is DeFi on Cardano different?"
   },
-  "getStarted.done.copied": {
-    "message": "Copied to clipboard"
+  "defi.cardano.p1": {
+    "message": "Cardano tracks value with the [extended UTXO model](/glossary/eutxo) instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The contents, the fee and the script result of a transaction are known before you sign, so nothing about it can change afterwards. It can still be rejected if a coin it planned to spend was spent first, in which case nothing happens, and a script that fails on chain costs the [collateral](/glossary/collateral) your wallet set aside. What that means for a swap price comes below."
   },
-  "getStarted.done.drep": {
-    "message": "Your DRep: {drep}"
+  "defi.cardano.p2": {
+    "message": "Tokens are [native to the ledger](/glossary/native-token), so a stablecoin or a DEX token is handled by the ledger itself, without a wrapper contract that could fail. Ada in your wallet keeps earning staking rewards while you use DApps, delegation never locks it. Ada you send into a contract follows that contract's rules, and whether it still earns rewards for you depends on the protocol."
   },
-  "getStarted.done.voteOption": {
-    "message": "Your vote: {option}"
+  "defi.cardano.p3": {
+    "message": "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot be used by many separate transactions in the same block. Cardano DEXs solve this by collecting orders and settling them in batches, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set. On a batched DEX the batcher also decides the order in which queued swaps settle, within the limits each user set."
   },
-  "getStarted.done.drepAbstain": {
-    "message": "Always abstain"
+  "defi.cardano.button": {
+    "message": "The eUTXO model explained"
   },
-  "getStarted.done.drepNoConfidence": {
-    "message": "No confidence"
+  "defi.divider.risks": {
+    "message": "Risks"
   },
-  "getStarted.done.learn": {
-    "message": "Continue on the learning path"
+  "defi.risks.title": {
+    "message": "What are the risks?"
   },
-  "getStarted.done.pool": {
-    "message": "Your stake pool: {pool}"
+  "defi.risks.intro": {
+    "message": "DeFi removes the middleman and, with it, the safety net. These are the risks to understand before you put in more than you can afford to lose."
   },
-  "getStarted.done.popularApps": {
-    "message": "Popular apps"
+  "defi.risks.bugs": {
+    "message": "**Contract bugs.** A flaw in a protocol's code can lose funds for every user at once. Audits reduce the risk, they do not remove it."
   },
-  "getStarted.done.progress": {
-    "message": "{done} of 5 done"
+  "defi.risks.price": {
+    "message": "**Price risk.** Tokens can lose most of their value quickly. Providing liquidity adds the risk of ending up with less than holding, and borrowing adds the risk of liquidation when your collateral drops."
   },
-  "getStarted.done.quiz": {
-    "message": "Test what you learned"
+  "defi.risks.depeg": {
+    "message": "**Depegs.** A stablecoin can trade below the currency it tracks if its reserves or its mechanism come under pressure."
   },
-  "getStarted.done.sectionTitle": {
-    "message": "Summary"
+  "defi.risks.oracles": {
+    "message": "**Oracles and bridges.** Protocols that rely on [outside price feeds](/glossary/oracle) or on bridged tokens inherit the risks of those systems."
   },
-  "getStarted.done.share": {
-    "message": "Share"
+  "defi.risks.scams": {
+    "message": "**Scams.** Fake DApps, fake tokens with a real name, and links from strangers. The usual rules on [protecting your ada](/common-scams) apply twice here."
   },
-  "getStarted.done.shareFailed": {
-    "message": "Sharing is not available in this browser."
+  "defi.risks.reversal": {
+    "message": "**No reversal.** Once a transaction is on chain, there is no support line that can undo it."
   },
-  "getStarted.done.shareText": {
-    "message": "I just set up my first Cardano wallet and delegated my stake and my vote. Start here: {url}"
+  "defi.risks.keys": {
+    "message": "**Key loss.** Your recovery phrase is the only way back into your wallet. Lose it and no one can restore it, share it and anyone can empty the wallet."
   },
-  "getStarted.done.shareUnverified": {
-    "message": "Connect the wallet that owns this address to share your progress."
+  "defi.risks.disclaimer": {
+    "message": "This page is educational, not financial advice. Nothing here is a recommendation to use any protocol or to buy any asset."
   },
-  "getStarted.done.titleAddress": {
-    "message": "This address is all set"
+  "defi.divider.start": {
+    "message": "Get started"
   },
-  "getStarted.done.titleYou": {
-    "message": "You are in"
+  "defi.start.title": {
+    "message": "How do I start?"
   },
-  "getStarted.hero.continue": {
-    "message": "Continue at step {number}"
+  "defi.start.wallet": {
+    "message": "[Set up a wallet](/what-is-a-wallet) you control and back up the recovery phrase."
   },
-  "getStarted.hero.liveTip": {
-    "message": "Block {block} was produced {seconds} seconds ago.",
-    "description": "Live line under the hero, {block} is the block number, {seconds} the block age"
+  "defi.start.ada": {
+    "message": "[Get some ada](/where-to-get-ada). Every transaction needs a little for fees, and most DeFi is priced against ada or a stablecoin."
   },
-  "getStarted.intro.overviewLinkLabel": {
-    "message": "Start with the overview."
+  "defi.start.dapp": {
+    "message": "Pick a DApp from the [showcase](/apps), reach it through its official link, and connect your wallet."
   },
-  "getStarted.intro.overviewLinkText": {
-    "message": "Not sure what Cardano is yet?"
+  "defi.start.care": {
+    "message": "Start with an amount you can afford to lose, read every transaction before you sign, and look for audits and open code."
   },
-  "getStarted.phrase.again": {
-    "message": "Practise again"
+  "defi.start.button": {
+    "message": "Learn to spot scams"
   },
-  "getStarted.phrase.demoBanner": {
-    "message": "Demo only"
+  "defi.meta.title": {
+    "message": "DeFi on Cardano: Decentralized Finance Explained"
   },
-  "getStarted.phrase.demoBannerText": {
-    "message": "cardano.org will never ask for a real phrase, and neither will anyone honest. These twelve words are not a real phrase."
+  "defi.meta.description": {
+    "message": "What decentralized finance is, how it compares to banks and exchanges, what you can do with DeFi on Cardano, how the eUTXO ledger changes it, the risks to understand and how to start."
   },
-  "getStarted.phrase.demoLabel": {
-    "message": "Demo recovery phrase"
+  "defi.hero.title": {
+    "message": "DeFi on Cardano"
   },
-  "getStarted.phrase.finish": {
-    "message": "Finish"
+  "defi.hero.description": {
+    "message": "Trade, lend, borrow and earn with open applications, from a wallet you control."
   },
-  "getStarted.phrase.next": {
-    "message": "Next word"
+  "defi.cta.title": {
+    "message": "Ready to look around? Browse the DeFi apps in the showcase."
   },
-  "getStarted.phrase.passed": {
-    "message": "Passed. Now do the same with your real phrase, on paper."
+  "defi.cta.button": {
+    "message": "Explore DeFi apps"
   },
-  "getStarted.phrase.question": {
-    "message": "Which is word {position}?"
+  "defi.intro.callout": {
+    "message": "DeFi is finance run by smart contracts instead of companies. Anyone with a wallet can use it, the rules are public, and nobody can freeze your account. It also means nobody can undo your mistakes."
   },
-  "getStarted.phrase.right": {
-    "message": "Correct. {done} of {total} checked."
+  "defi.faq.safe.q": {
+    "message": "Is DeFi safe?"
   },
-  "getStarted.phrase.start": {
-    "message": "Start the check"
+  "defi.faq.safe.a": {
+    "message": "It is as safe as the contract you use and the care you take. Well-audited protocols with open code and a long track record have held up for years, and new or unaudited ones fail regularly. Never put in more than you can afford to lose, and treat every transaction you sign as final."
   },
-  "getStarted.phrase.wrong": {
-    "message": "Not quite. Look at the numbered list above and try again."
+  "defi.faq.approvals.q": {
+    "message": "Do I need to approve tokens for a DApp on Cardano?"
   },
-  "getStarted.question.correct": {
-    "message": "Correct."
+  "defi.faq.approvals.a": {
+    "message": "No. Cardano has no allowance system, so the revoke-approvals housekeeping you may know from other chains does not exist here. Your signature commits to the exact transaction you sign and nothing more, so review the inputs, outputs and warnings your wallet shows. A DApp cannot spend anything else from your wallet later."
   },
-  "getStarted.question.kicker": {
-    "message": "Quick check"
+  "defi.faq.yields.q": {
+    "message": "Are DeFi yields guaranteed?"
   },
-  "getStarted.question.source": {
-    "message": "Source"
+  "defi.faq.yields.a": {
+    "message": "No. Yields come from trading fees, borrower interest or token rewards, all of which change with demand and can drop to zero. A yield that looks far above the rest usually carries a risk that is not on the label."
   },
-  "getStarted.question.wrong": {
-    "message": "Not quite."
+  "defi.faq.loss.q": {
+    "message": "Can I lose more than I put in?"
   },
-  "getStarted.rail.checking": {
-    "message": "Checking"
+  "defi.faq.loss.a": {
+    "message": "A protocol cannot take funds you did not lock into it. With a swap or a lending deposit the most at stake is the amount you sent, and a contract bug can still cost you all of it. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated."
   },
-  "getStarted.rail.chip.ada": {
-    "message": "Ada"
+  "defi.faq.staking.q": {
+    "message": "Do I keep earning staking rewards while I use DeFi?"
   },
-  "getStarted.rail.chip.confirmed": {
-    "message": "confirmed"
+  "defi.faq.staking.a": {
+    "message": "Ada in your wallet keeps earning rewards from the pool you delegate to, and using it in a DApp does not undo the delegation. Ada you send into a contract is controlled by that contract's rules, and whether it still earns rewards for you depends on how the protocol handles staking."
   },
-  "getStarted.rail.chip.notYet": {
-    "message": "not yet"
+  "defi.faq.stablecoins.q": {
+    "message": "Which stablecoins exist on Cardano?"
   },
-  "getStarted.rail.chip.stake": {
-    "message": "Stake"
+  "defi.faq.stablecoins.a": {
+    "message": "Several, with different backing models: fiat-backed, crypto-backed and synthetic designs. The [stablecoins page](/stablecoins) lists each one with how it keeps its value."
   },
-  "getStarted.rail.chip.unknown": {
-    "message": "unknown"
+  "learn.item.defi.title": {
+    "message": "DeFi on Cardano"
   },
-  "getStarted.rail.chip.vote": {
-    "message": "Vote"
+  "learn.item.defi.text": {
+    "message": "Swap, lend, borrow and earn with open applications, and the risks to know."
   },
-  "getStarted.rail.error": {
-    "message": "Chain check unavailable, try again."
-  },
-  "getStarted.rail.forget": {
-    "message": "Forget address"
-  },
-  "getStarted.rail.hint": {
-    "message": "Connect in step 3 to see your on-chain status"
-  },
-  "getStarted.rail.label": {
-    "message": "Your progress"
-  },
-  "getStarted.rail.lastChecked": {
-    "message": "last checked {time}"
-  },
-  "getStarted.rail.notConnected": {
-    "message": "Not connected"
-  },
-  "getStarted.rail.refresh": {
-    "message": "Refresh"
-  },
-  "getStarted.rail.stepsLabel": {
-    "message": "Steps"
-  },
-  "getStarted.rail.tracking": {
-    "message": "Tracking address"
-  },
-  "getStarted.rail.walletConnected": {
-    "message": "Wallet connected"
-  },
-  "getStarted.station.ada.action": {
-    "message": "Choose a way to get ada, then send it to your own address."
-  },
-  "getStarted.station.ada.button": {
-    "message": "See where to get ada"
-  },
-  "getStarted.station.ada.checking": {
-    "message": "Checking the balance on the chain."
-  },
-  "getStarted.station.ada.none": {
-    "message": "No ada yet. Once your transfer arrives, refresh to see it here."
-  },
-  "getStarted.station.ada.noneAddress": {
-    "message": "No ada in this account yet. Once a transfer arrives, refresh to see it here."
-  },
-  "getStarted.station.ada.proofAddress": {
-    "message": "{amount} ada in this account."
-  },
-  "getStarted.station.ada.proofWallet": {
-    "message": "{amount} ada in your wallet."
-  },
-  "getStarted.station.ada.title": {
-    "message": "Your first ada"
-  },
-  "getStarted.station.ada.unknown": {
-    "message": "Could not check the balance yet. Refresh to try again."
-  },
-  "getStarted.station.ada.why": {
-    "message": "Most people buy their first ada on an exchange. On the exchange it is theirs, in your wallet it is yours."
-  },
-  "getStarted.station.connect.action": {
-    "message": "Connect your wallet, or paste a receiving address."
-  },
-  "getStarted.station.connect.title": {
-    "message": "You, on the chain"
-  },
-  "getStarted.station.connect.why": {
-    "message": "Your address is public, like an account number. You can share it with anyone. Your phrase you share with no one."
-  },
-  "getStarted.station.continue": {
-    "message": "Continue"
-  },
-  "getStarted.station.delegate.action": {
-    "message": "Delegate to a stake pool and to a DRep, both from your wallet, in either order."
-  },
-  "getStarted.station.delegate.notRegistered": {
-    "message": "Your stake key is not registered yet. Your wallet registers it with your first delegation, stake or vote."
-  },
-  "getStarted.station.delegate.stakeButton": {
-    "message": "Delegate your ada"
-  },
-  "getStarted.station.delegate.stakeOpen": {
-    "message": "Not staked yet."
-  },
-  "getStarted.station.delegate.stakeUnknown": {
-    "message": "Could not check the stake delegation yet."
-  },
-  "getStarted.station.delegate.title": {
-    "message": "Stake and vote"
-  },
-  "getStarted.station.delegate.voteButton": {
-    "message": "Delegate your vote"
-  },
-  "getStarted.station.delegate.voteOpen": {
-    "message": "No vote delegation yet."
-  },
-  "getStarted.station.delegate.voteUnknown": {
-    "message": "Could not check the vote delegation yet."
-  },
-  "getStarted.station.delegate.why": {
-    "message": "Delegation moves rights, not ada. Your ada stays spendable, the pool produces blocks with it, your DRep votes with it. A vote delegation is also required before staking rewards can be withdrawn."
-  },
-  "getStarted.station.phrase.action": {
-    "message": "Practise the check your wallet will ask for, with a demo phrase. Then write your real one on paper and keep it offline."
-  },
-  "getStarted.station.phrase.scamLink": {
-    "message": "Be aware of the most common scams."
-  },
-  "getStarted.station.phrase.title": {
-    "message": "Your recovery phrase"
-  },
-  "getStarted.station.phrase.why": {
-    "message": "Twelve to twenty-four words are the only backup. There is no company, no support desk and no reset. Whoever has the words has the ada."
-  },
-  "getStarted.station.state.done": {
-    "message": "Done"
-  },
-  "getStarted.station.state.open": {
-    "message": "Open"
-  },
-  "getStarted.station.state.unknown": {
-    "message": "Could not check yet"
-  },
-  "getStarted.station.stepOf": {
-    "message": "Step {number} of 5"
-  },
-  "getStarted.station.wallet.action": {
-    "message": "Install one of these wallets for your device, or compare them all in the Wallet Finder."
-  },
-  "getStarted.station.wallet.title": {
-    "message": "Your wallet"
-  },
-  "getStarted.station.wallet.why": {
-    "message": "A wallet holds keys, not coins. Your ada lives on the chain, and the wallet is how you prove it is yours."
-  },
-  "getStarted.wallet.finderLink": {
-    "message": "Compare all wallets in the Wallet Finder"
-  },
-  "getStarted.wallet.installedCheckbox": {
-    "message": "I have installed a wallet."
-  },
-  "getStarted.wallet.learnLink": {
-    "message": "What is a wallet?"
+  "stablecoins.ecosystem.defiLink": {
+    "message": "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them."
   }
 }
