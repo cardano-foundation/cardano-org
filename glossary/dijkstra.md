@@ -11,8 +11,6 @@ sources:
     url: "https://www.iog.io/news/cardano-is-ready-to-grow"
   - title: "Hard Fork Working Group minutes, August 11, 2026"
     url: "https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes/11th-august-2026"
-  - title: "Cardano outlines two-phase Dijkstra upgrade for 2026 and 2027"
-    url: "https://cryptobriefing.com/cardano-dijkstra-upgrade-q4-2026/"
 ---
 
 The ledger era that follows [Conway](/glossary/conway-era), named after the Dutch computer scientist Edsger Dijkstra. Where Conway was about governance, Dijkstra is about scaling: it changes how blocks are produced and how quickly transactions settle. Because it opens a new era, every node, wallet and indexer has to support the new block and transaction formats before the hard fork can be enacted.
