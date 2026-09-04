@@ -100,25 +100,26 @@ export default function Explorer() {
     ref.current?.setHighlightSet(graph.subtree(id));
   }, []);
 
-  const jumpToMilestone = useCallback((n) => {
-    const key = HARD_FORK_KEYS[n];
-    const m = MILESTONES.find((x) => x.key === key);
-    if (!m) return;
-    ref.current?.seekToDate(m.date);
-    ref.current?.pause();
-    setCard(m);
-  }, []);
-
-  const fullscreen = useCallback(() => {
-    if (document.fullscreenElement) document.exitFullscreen();
-    else containerRef.current?.requestFullscreen?.();
-  }, []);
-
   // play(), pause() and the end of the timeline emit no frame, so the button
   // state is read back from the clock after every command that changes it.
   const syncPaused = useCallback(() => {
     const s = ref.current?.getState();
     if (s) setState((st) => ({ ...st, paused: s.paused }));
+  }, []);
+
+  const jumpToMilestone = useCallback((n) => {
+    const key = HARD_FORK_KEYS[n];
+    const m = MILESTONES.find((x) => x.key === key);
+    if (!m) return;
+    ref.current?.pause();
+    ref.current?.seekToDate(m.date);
+    syncPaused();
+    setCard(m);
+  }, [syncPaused]);
+
+  const fullscreen = useCallback(() => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else containerRef.current?.requestFullscreen?.();
   }, []);
 
   const seekTo = useCallback((i) => {
