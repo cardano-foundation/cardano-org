@@ -1,12 +1,14 @@
 // Small utilities shared by the wallet delegation tools (DRep and stake pool).
 
-// Unbiased in-place shuffle, returns the same array.
+// Unbiased shuffle of a copy, the input array is left untouched so callers
+// can pass arrays they still need in their original order.
 export function fisherYates(arr) {
-  for (let i = arr.length - 1; i > 0; i -= 1) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return arr;
+  return a;
 }
 
 export function chunk(arr, size) {
