@@ -28,7 +28,7 @@ function WhatSection() {
           translate({
             id: "smartContracts.what.p2",
             message:
-              "Take a buyer and a seller who do not know each other. Without a contract they either trust each other or pay an escrow agent. With a contract the payment sits in a script that releases it once the agreed condition is recorded. Neither can back out, and nobody in the middle takes a cut or changes the terms.",
+              "Take a buyer and a seller who do not know each other. Without a contract they either trust each other or pay an escrow agent. With a contract the payment sits in a script that releases it only once the agreed condition is recorded. Whether either side can cancel, whether a fee is taken and who can change the terms is fixed by the script's rules rather than decided by someone in the middle.",
           }),
           translate({
             id: "smartContracts.what.p3",
@@ -59,7 +59,7 @@ function HowSection() {
         description={translate({
           id: "smartContracts.how.intro",
           message:
-            "On Cardano a contract is a validator: a script attached to funds on the ledger. Three things follow from that.",
+            "On Cardano a contract is a validator: a script that a transaction has to satisfy. Most validators are attached to funds on the ledger, and a script can also authorize minting, reward withdrawals, certificates and governance votes. Three things follow from that.",
         })}
         headingDot={true}
       />
@@ -85,7 +85,7 @@ function HowSection() {
           translate({
             id: "smartContracts.how.built.text",
             message:
-              "Your wallet or the app builds the complete transaction first, including every input, output and the data the script needs, and runs the script locally. Only a transaction that passes is signed and sent. The network then runs the same check, and because the inputs are fixed, the result is the same.",
+              "Your wallet or the app builds the complete transaction first, including every input, output and the data the script needs, and can evaluate the script before asking you to sign. The network then runs the same check on the same inputs and gets the same result. The transaction can still be rejected if one of its inputs was spent in the meantime, in which case nothing happens.",
           }),
         ]}
         headingDot={true}
@@ -97,7 +97,7 @@ function HowSection() {
           translate({
             id: "smartContracts.how.cost.text",
             message:
-              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which the wallet's own check makes rare, a [collateral](/glossary/collateral) of one and a half times the fee covers the network's work. Wallets typically set aside a few ada for that.",
+              "Script execution is paid for with a budget of memory and processing steps that is priced by protocol parameters, so the fee is fixed when the transaction is built, not discovered afterwards. If a script still fails on chain, which evaluating it before signing makes rare, a [collateral](/glossary/collateral) covers the network's work. Its minimum is a share of the fee set by a protocol parameter, currently one and a half times the fee, and wallets that connect to DApps set aside some ada for it.",
           }),
         ]}
         headingDot={true}
@@ -126,7 +126,7 @@ function LanguagesSection() {
           translate({
             id: "smartContracts.languages.p1",
             message:
-              "Contracts are written in a high-level language and compiled to Plutus Core, the small language the Cardano node executes. Plutus, embedded in Haskell, was the first and is still used for protocols that want the full power of Haskell's type system. Aiken is a newer language built only for Cardano, with a simpler syntax and tooling that most new projects now pick. Both produce the same kind of on-chain script.",
+              "Contracts are written in a high-level language and compiled to Plutus Core, the small language the Cardano node executes. Plinth, formerly called Plutus Tx, is embedded in Haskell, was the first and is still used by teams that want the full power of Haskell's type system. Aiken is a newer language built only for Cardano, with a simpler syntax and tooling that most new projects now pick. Plutarch, a Haskell library that stays close to the compiled code, is chosen when execution cost matters most. All of them produce the same kind of on-chain script.",
           }),
           translate({
             id: "smartContracts.languages.p2",
@@ -184,7 +184,7 @@ function SafetySection() {
           translate({
             id: "smartContracts.safety.p1",
             message:
-              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it.",
+              "Read what you are about to sign. Most Cardano wallets show the outputs of a transaction, that is, where ada and tokens will go, so a swap that suddenly sends your whole balance to an unknown address is visible before you confirm. Your signature commits to the exact transaction, so check the inputs, outputs and any warnings your wallet shows. There are no open-ended token approvals on Cardano: a DApp can only spend what the transaction you sign spends, and there is nothing to revoke later. What you do send to a contract stays under that contract's rules until those rules release it.",
           }),
           translate({
             id: "smartContracts.safety.p2",
@@ -251,7 +251,7 @@ function BuildSection() {
           translate({
             id: "smartContracts.build.p1",
             message:
-              "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or stored once in an output that later transactions point to. There is no separate deployment step or registry.",
+              "The developer portal walks you from a first transaction to a deployed contract, with tutorials for Aiken and Plutus, the test networks to try things safely, and the tooling most teams use. A contract reaches the chain as part of a transaction, either attached to the transaction that uses it or published once in an output that later transactions reference. There is no global contract registry.",
           }),
         ]}
         headingDot={true}
@@ -294,7 +294,7 @@ export default function SmartContracts() {
         {translate({
           id: "smartContracts.intro.callout",
           message:
-            "A smart contract on Cardano is a script that decides whether a transaction may spend the funds it guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no.",
+            "A smart contract on Cardano is a script that approves or rejects a transaction, most often one that spends the funds the script guards. It cannot act on its own and it cannot reach outside the chain. It can only say yes or no.",
         })}
       </HighlightCallout>
       <SpacerBox size="small" />
