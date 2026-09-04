@@ -76,7 +76,6 @@ export default function ConnectStation({ account, setAccount, forget, status, la
     let cancelled = false;
     detectWallets().then((found) => {
       if (cancelled) return;
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- wallet detection is async client-only work started after mount
       setWallets(found);
       if (found.length === 0) setTab('paste');
     });
