@@ -65,7 +65,7 @@ function ConsensusSection() {
           translate({
             id: "howCardanoWorks.consensus.slots.text",
             message:
-              "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake. On average only one slot in twenty has a winner, so a new block appears roughly every 20 seconds, and most slots pass without a block.",
+              "Time is divided into slots of one second and epochs of 432,000 slots, five days. For every slot, each stake pool runs a private lottery whose odds match its share of the delegated stake, and any pool that wins becomes a slot leader. On average only one slot in twenty has a leader at all, so a new block appears roughly every 20 seconds and most slots pass without a block. Now and then two pools qualify for the same slot, and only one of their blocks stays in the chain.",
           }),
         ]}
         headingDot={true}
@@ -77,7 +77,7 @@ function ConsensusSection() {
           translate({
             id: "howCardanoWorks.consensus.blocks.text",
             message:
-              "The winning pool bundles pending transactions into a block of up to about 88 KB, signs it and sends it to its peers, who verify every transaction before passing it on. Blocks are final in practice after a few more blocks have been built on top, and irreversible in the protocol's own terms after a longer window that its security parameters define.",
+              "The slot leader bundles pending transactions into a block of up to about 88 KB under current parameters, signs it and sends it to its peers, who verify every transaction before passing it on. Every block built on top makes a rollback less likely, which is why wallets and exchanges treat a transaction as settled after a handful of blocks. The protocol itself only rules out a rollback once a block is deep enough in the chain, a window of about 36 hours on mainnet set by its security parameters.",
           }),
         ]}
         headingDot={true}
@@ -118,12 +118,12 @@ function LedgerSection() {
           translate({
             id: "howCardanoWorks.ledger.p1",
             message:
-              "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. Your wallet balance is simply the sum of the notes you can unlock.",
+              "Cardano uses the extended UTXO model, eUTXO for short. Instead of accounts with running balances, the ledger holds unspent transaction outputs: individual notes of value, each locked to an address. A transaction consumes whole notes as inputs and creates new notes as outputs, and the total in has to equal the total out plus the fee, with any remainder coming back to you as change. The spendable balance your wallet shows is simply the sum of the notes it can unlock. Staking rewards are the one exception: they accumulate in a separate reward account, and withdrawing them into a note is itself a transaction.",
           }),
           translate({
             id: "howCardanoWorks.ledger.p2",
             message:
-              "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed and the other is rejected. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one.",
+              "Two consequences matter for users. First, everything a transaction will do is fixed when it is built, so your wallet can tell you the exact outcome and fee before you sign. Second, a note can only be spent once, so if two transactions try to spend the same note, only one of them can succeed. The other is rejected as a whole, even if it passed every check when it was built, and nothing is half-applied. Applications design around this by splitting value across many notes or by batching, which is why some Cardano apps process orders in rounds rather than one by one.",
           }),
           translate({
             id: "howCardanoWorks.ledger.p3",
@@ -155,12 +155,12 @@ function TransactionsSection() {
           translate({
             id: "howCardanoWorks.transactions.p1",
             message:
-              "A fee is a formula, not an auction: a fixed part plus a per-byte part, both set by protocol parameters. On mainnet today that is 155,381 lovelace plus 44 lovelace per byte, so a typical transfer of a few hundred bytes costs around 0.17 ada. Fees do not rise when the network is busy, transactions simply wait a little longer.",
+              "A fee is a formula, not an auction: a fixed part plus a per-byte part, both set by protocol parameters. On mainnet, as of 2026, that is 155,381 lovelace plus 44 lovelace per byte, so a typical transfer of a few hundred bytes costs around 0.17 ada. Like every protocol parameter, these values can change through governance. Fees do not rise when the network is busy, transactions simply wait a little longer.",
           }),
           translate({
             id: "howCardanoWorks.transactions.p2",
             message:
-              "Every output also has to hold a minimum amount of ada, roughly one ada for a simple output, so that the ledger does not fill up with dust. That ada is not a fee: it stays in the output and comes back when the output is spent. Registering a stake key takes a refundable 2 ada deposit for the same reason.",
+              "Every output also has to hold a minimum amount of ada, so that the ledger does not fill up with dust. The minimum depends on the size of the output: roughly one ada for a plain ada-only output, more when it carries tokens or data. That ada is not a fee: it stays in the output and comes back when the output is spent. Registering a stake key takes a refundable deposit, currently 2 ada, for the same reason.",
           }),
           translate({
             id: "howCardanoWorks.transactions.p3",
@@ -189,12 +189,12 @@ function TokensSection() {
           translate({
             id: "howCardanoWorks.tokens.p1",
             message:
-              "Tokens on Cardano are native: the ledger handles them with the same rules as ada, so no smart contract is needed to create, send or hold them. A token is defined by a minting policy, a small script or key that says who may create or destroy it. Once minted, tokens travel inside ordinary transaction outputs, alongside ada, and a single transaction can carry many different assets.",
+              "Tokens on Cardano are native: the ledger tracks them directly, much as it tracks ada, so no smart contract is needed to create, send or hold them. A token is defined by a minting policy, a small script or key that says who may create or destroy it. Once minted, tokens travel inside ordinary transaction outputs, alongside ada, and a single transaction can carry many different assets. Ada keeps its special roles: only ada pays fees and deposits, only ada is paid out as staking rewards, and every output that carries tokens has to hold some ada as well.",
           }),
           translate({
             id: "howCardanoWorks.tokens.p2",
             message:
-              "An NFT is simply a token minted with a quantity of one under a policy that will not mint it again, plus metadata that describes it. Standards such as CIP-25 and CIP-68 define how wallets and marketplaces read that metadata.",
+              "An NFT is simply a token minted with a quantity of one under a policy that will never mint that asset again. What the token stands for, an image or a name for example, is usually described by metadata, and standards such as CIP-25 and CIP-68 define how wallets and marketplaces read it.",
           }),
         ]}
         headingDot={true}
@@ -218,7 +218,7 @@ function SmartContractsSection() {
           translate({
             id: "howCardanoWorks.contracts.p1",
             message:
-              "A smart contract on Cardano is a validator: a script that guards outputs and answers one question for each transaction that tries to spend them, valid or not. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable.",
+              "A smart contract on Cardano is a validator: a script that checks a transaction and answers one question, valid or not. Most often it guards outputs and decides whether a transaction may spend them, but scripts also govern minting and burning tokens, withdrawing rewards, certificates and, since the Chang upgrade, governance votes and proposals. The transaction itself is built by the user's wallet or the app, including every input, output and piece of data the script needs. The script cannot call other services or change its mind later, which keeps outcomes predictable.",
           }),
           translate({
             id: "howCardanoWorks.contracts.p2",
@@ -286,7 +286,7 @@ function UpgradesSection() {
           translate({
             id: "howCardanoWorks.upgrades.p2",
             message:
-              "Since 2025 an upgrade is itself a governance action: it is proposed on chain, voted on by delegated representatives, stake pool operators and the constitutional committee, and only then enacted. The same process changes protocol parameters such as fees and block size. See [how governance works](/governance).",
+              "Since 2025 a hard fork is itself a governance action: it is proposed on chain and enacted only after the constitutional committee, delegated representatives and stake pool operators have each approved it. Protocol parameters such as fees and block size change through the same on-chain process, though which of the three bodies has to vote depends on the type of action. See [how governance works](/governance).",
           }),
         ]}
         headingDot={true}
@@ -331,7 +331,7 @@ function TerminologySection() {
               }),
               translate({
                 id: "howCardanoWorks.terminology.item.slotLeader",
-                message: "[Slot leader](/glossary/slot-leader): the pool chosen to produce a block.",
+                message: "[Slot leader](/glossary/slot-leader): a pool that qualifies to produce the block for a slot.",
               }),
               translate({
                 id: "howCardanoWorks.terminology.item.stakePool",
@@ -339,7 +339,7 @@ function TerminologySection() {
               }),
               translate({
                 id: "howCardanoWorks.terminology.item.nativeToken",
-                message: "[Native token](/glossary/native-token): an asset the ledger handles like ada.",
+                message: "[Native token](/glossary/native-token): an asset the ledger tracks directly, alongside ada.",
               }),
               translate({
                 id: "howCardanoWorks.terminology.item.plutusCore",
