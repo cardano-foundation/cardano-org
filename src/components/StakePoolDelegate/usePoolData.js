@@ -198,7 +198,7 @@ export function useProtocolParams(api) {
   return useResource(
     api
       ? async () => {
-          const res = await api.get("/epoch_params?limit=1&order=epoch_no.desc&select=min_pool_cost,key_deposit");
+          const res = await api.get("/epoch_params?limit=1&order=epoch_no.desc&select=epoch_no,min_pool_cost,key_deposit");
           const row = Array.isArray(res.data) ? res.data[0] : null;
           if (!row || parseLovelace(row.key_deposit) === null || parseLovelace(row.min_pool_cost) === null) {
             throw new Error("epoch_params returned no usable row");
