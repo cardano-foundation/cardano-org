@@ -26,7 +26,7 @@ export default function LiveTip({ apiUrl, locale }) {
         if (!cancelled && row?.block_no && row?.block_time) {
           setTip({ blockNo: row.block_no, blockTime: row.block_time, fetchedAt: Date.now() });
         }
-      } catch (e) {
+      } catch {
         // The line simply stays hidden while the tip is unavailable.
       }
     }

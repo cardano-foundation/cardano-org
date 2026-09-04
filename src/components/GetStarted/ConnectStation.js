@@ -3,7 +3,6 @@ import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import { detectWallets, enableWallet, firstRewardAddressBech32, firstAddressBech32, loadEvolution } from '@site/src/utils/cardano/wallet';
 import { parseCardanoAddress, shortenAddress } from '@site/src/utils/cardano/address.mjs';
-import { UNKNOWN } from '@site/src/utils/getStarted/status.mjs';
 import { formatAda } from '@site/src/utils/cardano/lovelace.mjs';
 import styles from './styles.module.css';
 
@@ -120,11 +119,11 @@ export default function ConnectStation({ account, setAccount, forget, status, la
       let baseAddress = null;
       try {
         baseAddress = await firstAddressBech32(api);
-      } catch (e) {
+      } catch {
         baseAddress = null;
       }
       setAccount({ stakeAddress, baseAddress, ownership: 'wallet-confirmed' }, api);
-    } catch (e) {
+    } catch {
       setWalletError(translate({ id: 'getStarted.connect.error.failed', message: 'Could not connect to the wallet. Try again, or paste your address.' }));
     } finally {
       setBusy(false);
@@ -144,7 +143,7 @@ export default function ConnectStation({ account, setAccount, forget, status, la
       }
       setAccount({ stakeAddress: result.stakeAddress, baseAddress: result.baseAddress || null, ownership: 'unverified' }, null);
       setInput('');
-    } catch (err) {
+    } catch {
       setInputError(translate({ id: 'getStarted.connect.error.sdk', message: 'Could not check the address in this browser. Reload the page and try again.' }));
     } finally {
       setBusy(false);

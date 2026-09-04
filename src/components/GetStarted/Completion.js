@@ -30,10 +30,14 @@ async function shareText(text) {
   }
 }
 
-function drepLabel(status, names) {
+export function drepLabel(status, names) {
   if (status.drepKind === 'abstain') return translate({ id: 'getStarted.done.drepAbstain', message: 'Always abstain' });
   if (status.drepKind === 'noConfidence') return translate({ id: 'getStarted.done.drepNoConfidence', message: 'No confidence' });
   return names.drepName || shortenAddress(status.drepId);
+}
+
+export function poolLabel(status, names) {
+  return names.poolTicker ? `${names.poolTicker} ${names.poolName || ''}`.trim() : (names.poolName || shortenAddress(status.poolId));
 }
 
 export default function Completion({ stations, account, status, names }) {
@@ -57,7 +61,7 @@ export default function Completion({ stations, account, status, names }) {
   }
 
   const confirmed = account.ownership === 'wallet-confirmed';
-  const pool = names.poolTicker ? `${names.poolTicker} ${names.poolName || ''}`.trim() : (names.poolName || shortenAddress(status.poolId));
+  const pool = poolLabel(status, names);
   const onShare = async () => {
     const result = await shareText(translate({
       id: 'getStarted.done.shareText',
