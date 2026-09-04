@@ -734,139 +734,13 @@
     "message": "Get started with Cardano"
   },
   "getStarted.hero.description": {
-    "message": "Step into the new world yourself and learn all the basics in just few steps."
+    "message": "Set up a wallet, get your first ada and put it to work. About 20 minutes to set up, plus transfer time. Your wallet activity is confirmed on the chain."
   },
   "getStarted.meta.title": {
     "message": "Get Started with Cardano, Your First Steps"
   },
   "getStarted.meta.description": {
-    "message": "Set up a Cardano wallet, get ada, and start exploring DApps and staking in a few simple steps. Your beginner's guide to the Cardano ecosystem."
-  },
-  "getStarted.step1.title": {
-    "message": "Download a wallet"
-  },
-  "getStarted.step1.description": {
-    "message": "A wallet is an app that allows you to receive, send cryptocurrencies and manage your Cardano account."
-  },
-  "getStarted.step1.heading": {
-    "message": "Download a wallet"
-  },
-  "getStarted.step1.text1": {
-    "message": "A Cardano wallet is your personal interface to the blockchain, much like a web browser is your interface to the internet. It lets you securely manage your ada, use dApps, and interact with the network."
-  },
-  "getStarted.step1.text2": {
-    "message": "You will create your wallet in the next steps. Downloading alone does not create one."
-  },
-  "getStarted.step1.securityNote": {
-    "message": "Your recovery phrase is required to regain access to your wallet. Cardano wallets are non-custodial, which means there is no central service, help desk, or recovery mechanism."
-  },
-  "getStarted.step1.checkbox": {
-    "message": "I downloaded a wallet."
-  },
-  "getStarted.common.scamLink": {
-    "message": "Be aware of the most common scams."
-  },
-  "getStarted.step2.title": {
-    "message": "Backup your recovery phrase"
-  },
-  "getStarted.step2.description": {
-    "message": "When you create a new wallet, you'll receive a set of 12, 15, or 24 words. This is your recovery phrase, also called a seed phrase. It is the master key to your wallet. Keep it safe!"
-  },
-  "getStarted.step2.heading": {
-    "message": "Save your recovery phrase"
-  },
-  "getStarted.step2.whatToDo": {
-    "message": "What to do:"
-  },
-  "getStarted.step2.tip1": {
-    "message": "Write it down on paper and store it securely offline"
-  },
-  "getStarted.step2.tip2": {
-    "message": "Never share it with anyone or store it digitally"
-  },
-  "getStarted.step2.tip3": {
-    "message": "Anyone with your recovery phrase can access your funds"
-  },
-  "getStarted.step2.tip4": {
-    "message": "Keep multiple copies in different secure locations"
-  },
-  "getStarted.step2.checkbox": {
-    "message": "I've backed up my recovery phrase."
-  },
-  "getStarted.step3.title": {
-    "message": "Complete wallet setup"
-  },
-  "getStarted.step3.description": {
-    "message": "Finish setting up your wallet with a password and verification."
-  },
-  "getStarted.step3.heading": {
-    "message": "Final setup steps"
-  },
-  "getStarted.step3.intro": {
-    "message": "After backing up your recovery phrase, complete these two important steps:"
-  },
-  "getStarted.step3.passwordLabel": {
-    "message": "Spending password:"
-  },
-  "getStarted.step3.passwordText": {
-    "message": "Create a strong password to protect everyday transactions. This password is different from your recovery phrase and secures your wallet on this device."
-  },
-  "getStarted.step3.verifyLabel": {
-    "message": "Verify your backup:"
-  },
-  "getStarted.step3.verifyText": {
-    "message": "Most wallets will ask you to confirm your recovery phrase by selecting words in order. This ensures you've correctly saved it."
-  },
-  "getStarted.step3.ready": {
-    "message": "Once these steps are complete, your wallet is ready to use!"
-  },
-  "getStarted.step3.securityNote": {
-    "message": "If you forget your spending password, you can restore your wallet using your recovery phrase."
-  },
-  "getStarted.step3.securityWarning": {
-    "message": "However, anyone who obtains your recovery phrase can fully access and empty your wallet without needing the spending password."
-  },
-  "getStarted.step3.checkbox": {
-    "message": "I've completed the wallet setup."
-  },
-  "getStarted.step4.title": {
-    "message": "Connect your wallet"
-  },
-  "getStarted.step4.description": {
-    "message": "Use your wallet as a single account for apps and projects on Cardano. A wallet connector, like the one shown below, lets websites securely connect to your wallet so you can interact without creating separate accounts or passwords."
-  },
-  "getStarted.step4.securityNote": {
-    "message": "When you approve a connection or transaction, you are granting that site specific permissions. Always check the website address and review what you are asked to approve before continuing."
-  },
-  "getStarted.step4.checkbox": {
-    "message": "I've connected my wallet."
-  },
-  "getStarted.step5.title": {
-    "message": "Get ada"
-  },
-  "getStarted.step5.description": {
-    "message": "Obtain ada, Cardano's native cryptocurrency, to start using the blockchain."
-  },
-  "getStarted.step5.heading": {
-    "message": "Where to get ada"
-  },
-  "getStarted.step5.text": {
-    "message": "There are several ways to obtain ada, but the most common method is buying it on cryptocurrency exchanges using fiat currency or other cryptocurrencies."
-  },
-  "getStarted.step5.button": {
-    "message": "View all options"
-  },
-  "getStarted.step5.securityNote": {
-    "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers."
-  },
-  "getStarted.step5.checkbox": {
-    "message": "I have ada in my wallet."
-  },
-  "getStarted.step6.title": {
-    "message": "Explore the ecosystem"
-  },
-  "getStarted.step6.description": {
-    "message": "Now that you have a wallet and ada, you are ready to explore everything Cardano has to offer. A good place to start is by exploring popular apps."
+    "message": "Set up a Cardano wallet, back up your recovery phrase, get your first ada and delegate your stake and vote. Five guided steps, with your wallet activity confirmed on the chain."
   },
   "whereToGetAda.hero.title": {
     "message": "Where to get ada?"
@@ -6521,13 +6395,6 @@
     "message": "What is a Wallet?",
     "description": "Teaser button on the wallet finder"
   },
-  "getStarted.step1.walletLearnLink": {
-    "message": "Learn what a wallet is.",
-    "description": "Get-started step 1 link to the wallet explainer"
-  },
-  "getStarted.intro.overviewLink": {
-    "message": "Not sure what Cardano is yet? [Start with the overview](/what-is-cardano)."
-  },
   "ouroboros.vision.backLink": {
     "message": "Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end."
   },
@@ -8370,42 +8237,6 @@
   "exchanges.support.buttonLabel": {
     "message": "Contact the Core Integrations team"
   },
-  "getStarted.step1.walletFinderHint": {
-    "message": "Need help choosing?"
-  },
-  "getStarted.step1.walletFinderLink": {
-    "message": "Try our Wallet Finder"
-  },
-  "getStarted.stepDelegate.title": {
-    "message": "Delegate your stake and your vote"
-  },
-  "getStarted.stepDelegate.description": {
-    "message": "Put your ada to work. Delegation happens directly from your wallet, your ada never leaves it and stays spendable at any time."
-  },
-  "getStarted.stepDelegate.heading": {
-    "message": "Two delegations, one wallet"
-  },
-  "getStarted.stepDelegate.stakeLabel": {
-    "message": "Delegate your stake:"
-  },
-  "getStarted.stepDelegate.stakeText": {
-    "message": "Choose a stake pool to help secure the network and earn rewards on your ada."
-  },
-  "getStarted.stepDelegate.voteLabel": {
-    "message": "Delegate your vote:"
-  },
-  "getStarted.stepDelegate.voteText": {
-    "message": "Give your ada a voice in Cardano governance by choosing a DRep. An active vote delegation is also required before staking rewards can be withdrawn."
-  },
-  "getStarted.stepDelegate.stakeButton": {
-    "message": "Delegate your ada"
-  },
-  "getStarted.stepDelegate.voteButton": {
-    "message": "Delegate your vote"
-  },
-  "getStarted.stepDelegate.checkbox": {
-    "message": "I've delegated my stake and my vote."
-  },
   "glossary.term.level.beginner": {
     "message": "Beginner"
   },
@@ -9524,5 +9355,357 @@
   },
   "stablecoins.whyCardano.uptime.body2": {
     "message": "For institutional settlement, cross-border payment, or any application where availability is not optional, {years} years of uninterrupted block production is a key part of the value proposition."
+  },
+  "getStarted.connect.detecting": {
+    "message": "Looking for wallets in this browser."
+  },
+  "getStarted.connect.error.cancelled": {
+    "message": "Connection cancelled."
+  },
+  "getStarted.connect.error.failed": {
+    "message": "Could not connect to the wallet. Try again, or paste your address."
+  },
+  "getStarted.connect.error.invalid": {
+    "message": "That does not look like a Cardano address."
+  },
+  "getStarted.connect.error.noReward": {
+    "message": "This wallet did not return a stake address. Try pasting a receiving address instead."
+  },
+  "getStarted.connect.error.noStake": {
+    "message": "This address has no stake part. Use another receiving address from the same wallet."
+  },
+  "getStarted.connect.error.sdk": {
+    "message": "Could not check the address in this browser. Reload the page and try again."
+  },
+  "getStarted.connect.error.testnet": {
+    "message": "This is a test network address. Paste a mainnet address."
+  },
+  "getStarted.connect.error.wrongNetwork": {
+    "message": "Your wallet is on a test network. Switch it to mainnet and connect again."
+  },
+  "getStarted.connect.noWallet": {
+    "message": "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address."
+  },
+  "getStarted.connect.pasteButton": {
+    "message": "Track this address"
+  },
+  "getStarted.connect.pasteLabel": {
+    "message": "Receiving address or stake address"
+  },
+  "getStarted.connect.privacy": {
+    "message": "Your address is stored only in this browser. To check its public on-chain activity, it is sent to cardano.org's chain-data service, the same way an explorer works."
+  },
+  "getStarted.connect.privacyLink": {
+    "message": "Privacy policy"
+  },
+  "getStarted.connect.result.balance": {
+    "message": "{amount} ada found."
+  },
+  "getStarted.connect.result.change": {
+    "message": "Use a different address"
+  },
+  "getStarted.connect.result.explorer": {
+    "message": "View on an explorer"
+  },
+  "getStarted.connect.result.noActivity": {
+    "message": "No on-chain activity found for this address yet. That changes in the next step."
+  },
+  "getStarted.connect.result.tracking": {
+    "message": "Tracking this address"
+  },
+  "getStarted.connect.result.unknown": {
+    "message": "Could not check this address yet. Refresh to try again."
+  },
+  "getStarted.connect.result.unverified": {
+    "message": "Pasting an address does not prove it is yours. Connect the wallet to confirm."
+  },
+  "getStarted.connect.result.you": {
+    "message": "This is you"
+  },
+  "getStarted.connect.result.zero": {
+    "message": "Nothing here yet. That changes in the next step."
+  },
+  "getStarted.connect.tab.paste": {
+    "message": "Paste address"
+  },
+  "getStarted.connect.tab.wallet": {
+    "message": "Connect wallet"
+  },
+  "getStarted.connect.tabsLabel": {
+    "message": "How to identify your account"
+  },
+  "getStarted.done.address": {
+    "message": "Stake address"
+  },
+  "getStarted.done.copied": {
+    "message": "Copied to clipboard"
+  },
+  "getStarted.done.drep": {
+    "message": "Voting through {drep}"
+  },
+  "getStarted.done.drepAbstain": {
+    "message": "Always abstain"
+  },
+  "getStarted.done.drepNoConfidence": {
+    "message": "No confidence"
+  },
+  "getStarted.done.learn": {
+    "message": "Continue on the learning path"
+  },
+  "getStarted.done.pool": {
+    "message": "Staked with {pool}"
+  },
+  "getStarted.done.popularApps": {
+    "message": "Popular apps"
+  },
+  "getStarted.done.progress": {
+    "message": "{done} of 5 done"
+  },
+  "getStarted.done.quiz": {
+    "message": "Test what you learned"
+  },
+  "getStarted.done.sectionTitle": {
+    "message": "Summary"
+  },
+  "getStarted.done.share": {
+    "message": "Share"
+  },
+  "getStarted.done.shareFailed": {
+    "message": "Sharing is not available in this browser."
+  },
+  "getStarted.done.shareText": {
+    "message": "I just set up my first Cardano wallet and delegated my stake and my vote. Start here: {url}"
+  },
+  "getStarted.done.shareUnverified": {
+    "message": "Connect the wallet that owns this address to share your progress."
+  },
+  "getStarted.done.titleAddress": {
+    "message": "This address is all set"
+  },
+  "getStarted.done.titleYou": {
+    "message": "You are in"
+  },
+  "getStarted.hero.continue": {
+    "message": "Continue at step {number}"
+  },
+  "getStarted.hero.liveTip": {
+    "message": "Block {block} was produced {seconds} seconds ago.",
+    "description": "Live line under the hero, {block} is the block number, {seconds} the block age"
+  },
+  "getStarted.intro.overviewLinkLabel": {
+    "message": "Start with the overview."
+  },
+  "getStarted.intro.overviewLinkText": {
+    "message": "Not sure what Cardano is yet?"
+  },
+  "getStarted.phrase.again": {
+    "message": "Practise again"
+  },
+  "getStarted.phrase.demoBanner": {
+    "message": "Demo only."
+  },
+  "getStarted.phrase.demoBannerText": {
+    "message": "cardano.org will never ask for a real phrase, and neither will anyone honest. These twelve words are not a real phrase."
+  },
+  "getStarted.phrase.demoLabel": {
+    "message": "Demo recovery phrase"
+  },
+  "getStarted.phrase.finish": {
+    "message": "Finish"
+  },
+  "getStarted.phrase.next": {
+    "message": "Next word"
+  },
+  "getStarted.phrase.passed": {
+    "message": "Passed. Now do the same with your real phrase, on paper."
+  },
+  "getStarted.phrase.question": {
+    "message": "Which is word {position}?"
+  },
+  "getStarted.phrase.right": {
+    "message": "Correct. {done} of {total} checked."
+  },
+  "getStarted.phrase.start": {
+    "message": "Start the check"
+  },
+  "getStarted.phrase.wrong": {
+    "message": "Not quite. Look at the numbered list above and try again."
+  },
+  "getStarted.question.correct": {
+    "message": "Correct."
+  },
+  "getStarted.question.kicker": {
+    "message": "Quick check"
+  },
+  "getStarted.question.source": {
+    "message": "Source"
+  },
+  "getStarted.question.wrong": {
+    "message": "Not quite."
+  },
+  "getStarted.rail.checking": {
+    "message": "Checking"
+  },
+  "getStarted.rail.chip.ada": {
+    "message": "Ada"
+  },
+  "getStarted.rail.chip.confirmed": {
+    "message": "confirmed"
+  },
+  "getStarted.rail.chip.notYet": {
+    "message": "not yet"
+  },
+  "getStarted.rail.chip.stake": {
+    "message": "Stake"
+  },
+  "getStarted.rail.chip.unknown": {
+    "message": "unknown"
+  },
+  "getStarted.rail.chip.vote": {
+    "message": "Vote"
+  },
+  "getStarted.rail.error": {
+    "message": "Chain check unavailable, try again."
+  },
+  "getStarted.rail.forget": {
+    "message": "Forget address"
+  },
+  "getStarted.rail.hint": {
+    "message": "Connect in step 3 to see your on-chain status"
+  },
+  "getStarted.rail.label": {
+    "message": "Your progress"
+  },
+  "getStarted.rail.lastChecked": {
+    "message": "last checked {time}"
+  },
+  "getStarted.rail.notConnected": {
+    "message": "Not connected"
+  },
+  "getStarted.rail.refresh": {
+    "message": "Refresh"
+  },
+  "getStarted.rail.stepsLabel": {
+    "message": "Steps"
+  },
+  "getStarted.rail.tracking": {
+    "message": "Tracking address"
+  },
+  "getStarted.rail.walletConnected": {
+    "message": "Wallet connected"
+  },
+  "getStarted.station.ada.action": {
+    "message": "Choose a way to get ada, then send it to your own address."
+  },
+  "getStarted.station.ada.button": {
+    "message": "See where to get ada"
+  },
+  "getStarted.station.ada.none": {
+    "message": "No ada yet. Once your transfer arrives, refresh to see it here."
+  },
+  "getStarted.station.ada.noneAddress": {
+    "message": "No ada at this address yet. Other addresses of the same wallet are not counted."
+  },
+  "getStarted.station.ada.proofAddress": {
+    "message": "{amount} ada at this address."
+  },
+  "getStarted.station.ada.proofWallet": {
+    "message": "{amount} ada in your wallet."
+  },
+  "getStarted.station.ada.title": {
+    "message": "Your first ada"
+  },
+  "getStarted.station.ada.unknown": {
+    "message": "Could not check the balance yet. Refresh to try again."
+  },
+  "getStarted.station.ada.why": {
+    "message": "Most people buy their first ada on an exchange. On the exchange it is theirs, in your wallet it is yours."
+  },
+  "getStarted.station.connect.action": {
+    "message": "Connect your wallet, or paste a receiving address."
+  },
+  "getStarted.station.connect.title": {
+    "message": "You, on the chain"
+  },
+  "getStarted.station.connect.why": {
+    "message": "Your address is public, like an account number. You can share it with anyone. Your phrase you share with no one."
+  },
+  "getStarted.station.continue": {
+    "message": "Continue"
+  },
+  "getStarted.station.delegate.action": {
+    "message": "Delegate to a stake pool and to a DRep, both from your wallet, in either order."
+  },
+  "getStarted.station.delegate.notRegistered": {
+    "message": "Your stake key is not registered yet. Your wallet registers it with your first delegation, stake or vote."
+  },
+  "getStarted.station.delegate.stakeButton": {
+    "message": "Delegate your ada"
+  },
+  "getStarted.station.delegate.stakeOpen": {
+    "message": "Not staked yet."
+  },
+  "getStarted.station.delegate.stakeProof": {
+    "message": "Staked with {pool}"
+  },
+  "getStarted.station.delegate.stakeUnknown": {
+    "message": "Could not check the stake delegation yet."
+  },
+  "getStarted.station.delegate.title": {
+    "message": "Stake and vote"
+  },
+  "getStarted.station.delegate.voteButton": {
+    "message": "Delegate your vote"
+  },
+  "getStarted.station.delegate.voteOpen": {
+    "message": "No vote delegation yet."
+  },
+  "getStarted.station.delegate.voteProof": {
+    "message": "Voting through {drep}"
+  },
+  "getStarted.station.delegate.voteUnknown": {
+    "message": "Could not check the vote delegation yet."
+  },
+  "getStarted.station.delegate.why": {
+    "message": "Delegation moves rights, not ada. Your ada stays spendable, the pool produces blocks with it, your DRep votes with it. A vote delegation is also required before staking rewards can be withdrawn."
+  },
+  "getStarted.station.phrase.action": {
+    "message": "Practise the check your wallet will ask for, with a demo phrase. Then write your real one on paper and keep it offline."
+  },
+  "getStarted.station.phrase.title": {
+    "message": "Your recovery phrase"
+  },
+  "getStarted.station.phrase.why": {
+    "message": "Twelve to twenty-four words are the only backup. There is no company, no support desk and no reset. Whoever has the words has the ada."
+  },
+  "getStarted.station.state.done": {
+    "message": "Done"
+  },
+  "getStarted.station.state.open": {
+    "message": "Open"
+  },
+  "getStarted.station.state.unknown": {
+    "message": "Could not check yet"
+  },
+  "getStarted.station.stepOf": {
+    "message": "Step {number} of 5"
+  },
+  "getStarted.station.wallet.action": {
+    "message": "Install one of these wallets for your device, or compare them all in the Wallet Finder."
+  },
+  "getStarted.station.wallet.title": {
+    "message": "Your wallet"
+  },
+  "getStarted.station.wallet.why": {
+    "message": "A wallet holds keys, not coins. Your ada lives on the chain, and the wallet is how you prove it is yours."
+  },
+  "getStarted.wallet.finderLink": {
+    "message": "Compare all wallets in the Wallet Finder"
+  },
+  "getStarted.wallet.installedCheckbox": {
+    "message": "I have installed a wallet."
+  },
+  "getStarted.wallet.learnLink": {
+    "message": "What is a wallet?"
   }
 }
