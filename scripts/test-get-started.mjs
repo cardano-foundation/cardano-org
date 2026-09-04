@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { parseLovelace, isPositiveLovelace, formatAda } from '../src/utils/cardano/lovelace.mjs';
 import { decodeBech32, isValidStakeAddress, isValidBaseAddress } from '../src/utils/cardano/bech32.mjs';
 import { UNKNOWN, emptyStatus, deriveStatus, drepKind, withWalletBalance } from '../src/utils/getStarted/status.mjs';
@@ -8,6 +9,7 @@ import { STATION_KEYS, computeStations, firstOpenIndex, allDone, doneCount } fro
 import { detectDevice, pickWalletsForDevice } from '../src/utils/getStarted/devices.mjs';
 import { wordlist as BIP39_ENGLISH } from '@scure/bip39/wordlists/english.js';
 import { DEMO_PHRASE, makeExercise } from '../src/utils/getStarted/demoPhrase.mjs';
+import { STATION_QUESTIONS } from '../src/utils/getStarted/questions.mjs';
 
 test('parseLovelace accepts only non-negative decimal integers', () => {
   assert.equal(parseLovelace('0'), 0n);
@@ -267,5 +269,16 @@ test('makeExercise builds distinct rounds with four unique options each', () => 
     assert.equal(round.options.length, 4);
     assert.equal(new Set(round.options).size, 4);
     assert.equal(round.options[round.answer], DEMO_PHRASE[round.position - 1]);
+  }
+});
+
+test('every curated station question exists in its quiz source', () => {
+  for (const [station, refs] of Object.entries(STATION_QUESTIONS)) {
+    assert.ok(refs.length >= 1, `${station} has no question`);
+    for (const { quiz, id } of refs) {
+      const source = JSON.parse(readFileSync(new URL(`../src/data/quiz/${quiz}.json`, import.meta.url), 'utf8'));
+      const questions = source.questions || source;
+      assert.ok(questions.some((q) => q.id === id), `${id} missing in ${quiz}.json`);
+    }
   }
 });
