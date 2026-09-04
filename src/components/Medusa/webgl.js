@@ -8,9 +8,12 @@ export function medusaFlag(name) {
   return new URLSearchParams(window.location.search).get('medusa') === name;
 }
 
+let webglResult = null;
+
 export function canRunWebGL() {
   if (typeof window === 'undefined') return false;
   if (medusaFlag('fallback')) return false;
+  if (webglResult !== null) return webglResult;
   const ua = navigator.userAgent || '';
   // Devices known to struggle with WebGL point clouds.
   const isOldDevice =
@@ -18,10 +21,16 @@ export function canRunWebGL() {
     /iPhone OS [5-9]_/i.test(ua) ||
     /OS [5-9]_\d/i.test(ua) ||
     /BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  if (isOldDevice) return false;
+  if (isOldDevice) {
+    webglResult = false;
+    return webglResult;
+  }
   const canvas = document.createElement('canvas');
   const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
-  return Boolean(gl);
+  webglResult = Boolean(gl);
+  const lose = gl && gl.getExtension('WEBGL_lose_context');
+  if (lose) lose.loseContext();
+  return webglResult;
 }
 
 export function prefersReducedMotion() {

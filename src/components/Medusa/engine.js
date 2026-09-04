@@ -113,7 +113,7 @@ function smoothstep(edge0, edge1, x) {
 
 export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reducedMotion = false }) {
   const params = { ...ENGINE_DEFAULTS };
-  const groupColors = GROUPS.map((g) => new Color(g.color));
+  const groupColors = GROUPS.map((g) => new Color(g.color).convertLinearToSRGB());
 
   const renderer = new WebGLRenderer({ canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -167,7 +167,9 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     depthWrite: false,
     depthTest: false,
   });
-  scene.add(new Points(pointGeo, pointMat));
+  const points = new Points(pointGeo, pointMat);
+  points.frustumCulled = false;
+  scene.add(points);
 
   const linePos = new Float32Array(capacity * 2 * 3);
   const lineColor = new Float32Array(capacity * 2 * 3);
@@ -185,10 +187,13 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     depthWrite: false,
     depthTest: false,
   });
-  scene.add(new LineSegments(lineGeo, lineMat));
+  const lines = new LineSegments(lineGeo, lineMat);
+  lines.frustumCulled = false;
+  scene.add(lines);
 
   const composer = new EffectComposer(renderer);
-  composer.addPass(new RenderPass(scene, camera));
+  const renderPass = new RenderPass(scene, camera);
+  composer.addPass(renderPass);
   const afterimage = new AfterimagePass(params.trailDamp);
   afterimage.enabled = !reducedMotion;
   composer.addPass(afterimage);
@@ -238,6 +243,7 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
   }
 
   function screenOf(slot, width, height) {
+    camera.updateMatrixWorld();
     tmp.set(position[3 * slot], position[3 * slot + 1], position[3 * slot + 2]).project(camera);
     return { x: ((tmp.x + 1) / 2) * width, y: ((1 - tmp.y) / 2) * height };
   }
@@ -263,11 +269,14 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       size[slot] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
       birth[slot] = time;
       death[slot] = -1;
-      highlight[slot] = 0;
+      const active = highlightGroup >= 0 || highlightSet !== null;
+      highlight[slot] =
+        active && ((highlightGroup >= 0 && node.group === highlightGroup) || (highlightSet && highlightSet.has(node.id))) ? 1 : 0;
       pointGeo.attributes.color.needsUpdate = true;
       pointGeo.attributes.size.needsUpdate = true;
       pointGeo.attributes.birth.needsUpdate = true;
       pointGeo.attributes.death.needsUpdate = true;
+      pointGeo.attributes.highlight.needsUpdate = true;
     },
     removeNode(id) {
       const slot = slotOf.get(id);
@@ -402,7 +411,9 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       pointMat.uniforms.uAlpha.value = params.pointAlpha;
       lineMat.uniforms.uLineAlpha.value = params.lineAlpha;
       afterimage.uniforms.damp.value = params.trailDamp;
-      if (next.cameraDistance !== undefined) view.distance = params.cameraDistance;
+      if (next.cameraDistance !== undefined) {
+        view.distance = Math.min(params.maxDistance, Math.max(params.minDistance, params.cameraDistance));
+      }
       for (let s = 0; s < capacity; s += 1) {
         const node = nodeAtSlot[s];
         if (node) size[s] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
@@ -411,13 +422,18 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     },
     getParams: () => ({ ...params }),
     dispose() {
+      scene.remove(points);
+      scene.remove(lines);
       pointGeo.dispose();
       lineGeo.dispose();
       pointMat.uniforms.uSprite.value.dispose();
       pointMat.dispose();
       lineMat.dispose();
+      afterimage.dispose();
+      renderPass.dispose();
       composer.dispose();
       renderer.dispose();
+      renderer.forceContextLoss();
     },
   };
 }
