@@ -25,6 +25,7 @@ async function main() {
     assert.strictEqual(groupForPath('shelley/chain-and-ledger/executable-spec/src/STS.hs'), 'shelley');
     assert.strictEqual(groupForPath('byron/ledger/impl/src/Cardano/Chain/Block.hs'), 'byron');
     assert.strictEqual(groupForPath('eras/conway/impl/cddl-files/conway.cddl'), 'conway');
+    assert.strictEqual(groupForPath('eras/dijkstra/impl/src/Cardano/Ledger/Dijkstra.hs'), 'dijkstra');
   });
 
   check('first era segment wins when several appear', () => {
@@ -51,7 +52,7 @@ async function main() {
 
   check('GROUPS lists eras first, then libs, docs, other', () => {
     assert.deepStrictEqual(GROUPS.map((g) => g.key), [...ERA_KEYS, 'libs', 'docs', 'other']);
-    assert.deepStrictEqual(ERA_KEYS, ['byron', 'shelley', 'allegra', 'mary', 'alonzo', 'babbage', 'conway', 'dickson']);
+    assert.deepStrictEqual(ERA_KEYS, ['byron', 'shelley', 'allegra', 'mary', 'alonzo', 'babbage', 'conway', 'dijkstra']);
   });
 
   check('groupIndex and groupColor are consistent with GROUPS', () => {

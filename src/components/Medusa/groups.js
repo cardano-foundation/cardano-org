@@ -4,7 +4,7 @@
  * names, order and colors have a single source.
  */
 
-export const ERA_KEYS = ['byron', 'shelley', 'allegra', 'mary', 'alonzo', 'babbage', 'conway', 'dickson'];
+export const ERA_KEYS = ['byron', 'shelley', 'allegra', 'mary', 'alonzo', 'babbage', 'conway', 'dijkstra'];
 
 // Directory names that are not an era name but belong to one.
 const ERA_ALIASES = { 'shelley-ma': 'mary' };
@@ -17,7 +17,7 @@ const ERA_COLORS = {
   alonzo: '#ff5a5f',
   babbage: '#b98cff',
   conway: '#ffffff',
-  dickson: '#7dffa1',
+  dijkstra: '#7dffa1',
 };
 
 export const GROUPS = [
