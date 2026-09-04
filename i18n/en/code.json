@@ -9738,5 +9738,6 @@
   "research.intro.description": {"message": "Cardano's design rests on peer-reviewed research, from the [Ouroboros](/ouroboros) family of [proof-of-stake](/glossary/proof-of-stake) protocols to the on-chain [governance](/governance) model. The papers and specifications below are grouped by development era. For a plain-language account of what they add up to, read [how Cardano works](/how-cardano-works)."},
   "governance.onboarding.background": {"message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."},
   "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
-  "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."}
+  "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."},
+  "quiz.hub.backToLearn": {"message": "Back to the learning path"}
 }
