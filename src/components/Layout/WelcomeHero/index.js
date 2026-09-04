@@ -1,51 +1,43 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
-import {translate} from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import Medusa from "@site/src/components/Medusa";
+import DevPanel from "@site/src/components/Medusa/DevPanel";
+import { canRunWebGL } from "@site/src/components/Medusa/webgl";
 
 function WelcomeHero({ title, description }) {
-  const containerRef = useRef(null);
   const [webglSupported, setWebglSupported] = useState(true);
+  const [year, setYear] = useState("");
+  const medusaRef = useRef(null);
 
   useEffect(() => {
-    const ua = navigator.userAgent || "";
+    // Client-only capability detection, the server assumes WebGL.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setWebglSupported(canRunWebGL());
+  }, []);
 
-    // Block only devices known to have poor WebGL performance
-    const isOldDevice =
-      /Android [1-7]\./i.test(ua) ||              // Android < 8
-      /iPhone OS [5-9]_/i.test(ua) ||             // iOS < 10
-      /OS [5-9]_\d/i.test(ua) ||                  // iPad iOS < 10
-      /BlackBerry|IEMobile|Opera Mini/i.test(ua); // Legacy mobile browsers
-
-    // webgl test
-    const canvas = document.createElement("canvas");
-    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-
-    if (isOldDevice || !gl) {
-      // Disable WebGL after client-only capability detection.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setWebglSupported(false);
-      return;
-    }
-  
-    const script = document.createElement("script");
-    script.src = "/img/headers/medusa.bundle.js";
-    script.async = true;
-    document.body.appendChild(script);
-  
-    return () => {
-      document.body.removeChild(script);
-    };
+  const handleFrame = useCallback((info) => {
+    setYear(info.phase === "fade" || info.phase === "fadein" ? "" : info.date.slice(0, 4));
   }, []);
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       {webglSupported ? (
         <div className={styles.heroBackground}>
-          <div id="medusa-root" />
+          <Medusa
+            ref={medusaRef}
+            mode="ambient"
+            className={styles.medusaCanvas}
+            onFrame={handleFrame}
+            ariaLabel={translate({
+              id: 'home.hero.vizBadge.ariaLabel',
+              message: 'File tree of the cardano-ledger repository growing month by month',
+            })}
+          />
           <div className={styles.overlay} />
         </div>
       ) : (
@@ -75,51 +67,51 @@ function WelcomeHero({ title, description }) {
             </Link>
           </div>
         </div>
-
       </div>
 
       {webglSupported && (
-        <Tippy
-          content={
-            <div className={styles.vizPopover}>
-              <p>
-                {translate({
-                  id: 'home.hero.vizBadge.description',
-                  message: 'This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders.',
-                })}
-              </p>
-              <p>
-                {translate({
-                  id: 'home.hero.vizBadge.interaction',
-                  message: 'Drag to rotate.',
-                })}
-              </p>
-              <Link to="/ouroboros" className={styles.vizPopoverLink}>
-                {translate({
-                  id: 'home.hero.vizBadge.link',
-                  message: 'Learn more about Ouroboros',
-                })}
-              </Link>
-            </div>
-          }
-          interactive={true}
-          trigger="click"
-          placement="top-end"
-          maxWidth={320}
-          appendTo={() => document.body}
-        >
-          <button className={styles.vizBadge} aria-label={translate({
-            id: 'home.hero.vizBadge.ariaLabel',
-            message: 'Information about this visualization',
-          })}>
-            {translate({
-              id: 'home.hero.vizBadge.label',
-              message: 'Visualizing ouroboros-consensus',
-            })}
-            <span className={styles.vizBadgeIcon}>ⓘ</span>
-          </button>
-        </Tippy>
+        <div className={styles.vizCorner}>
+          <span className={clsx(styles.vizYear, !year && styles.vizYearHidden)} aria-hidden="true">
+            {year}
+          </span>
+          <Tippy
+            content={
+              <div className={styles.vizPopover}>
+                <p>
+                  {translate({
+                    id: 'home.hero.vizBadge.description',
+                    message: 'Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Each hard fork appears as a new cluster.',
+                  })}
+                </p>
+                <Link to="/medusa" className={styles.vizPopoverLink}>
+                  {translate({
+                    id: 'home.hero.vizBadge.link',
+                    message: 'Explore the history',
+                  })}
+                </Link>
+              </div>
+            }
+            interactive={true}
+            trigger="click"
+            placement="top-end"
+            maxWidth={320}
+            appendTo={() => document.body}
+          >
+            <button className={styles.vizBadge} aria-label={translate({
+              id: 'home.hero.vizBadge.buttonLabel',
+              message: 'Information about this visualization',
+            })}>
+              {translate({
+                id: 'home.hero.vizBadge.label',
+                message: 'Visualizing cardano-ledger, 2018 to today',
+              })}
+              <span className={styles.vizBadgeIcon}>ⓘ</span>
+            </button>
+          </Tippy>
+        </div>
       )}
+
+      {webglSupported && <DevPanel target={medusaRef} />}
 
       <div className="sectionCaret">
         <svg x="0px" y="0px" viewBox="0 0 2000 30">

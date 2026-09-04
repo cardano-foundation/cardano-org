@@ -1340,6 +1340,21 @@
   "home.hero.ctaGetStarted": {
     "message": "Get Started"
   },
+  "home.hero.vizBadge.label": {
+    "message": "Visualizing cardano-ledger, 2018 to today"
+  },
+  "home.hero.vizBadge.description": {
+    "message": "Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Each hard fork appears as a new cluster."
+  },
+  "home.hero.vizBadge.link": {
+    "message": "Explore the history"
+  },
+  "home.hero.vizBadge.buttonLabel": {
+    "message": "Information about this visualization"
+  },
+  "home.hero.vizBadge.ariaLabel": {
+    "message": "File tree of the cardano-ledger repository growing month by month"
+  },
   "home.featured.title": {
     "message": "Our World Is Changing. Together, We Can Change It For The Better."
   },
@@ -9620,21 +9635,6 @@
   },
   "ambassadors.map.countLabel": {
     "message": "{n} Ambassadors"
-  },
-  "home.hero.vizBadge.description": {
-    "message": "This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders."
-  },
-  "home.hero.vizBadge.interaction": {
-    "message": "Drag to rotate."
-  },
-  "home.hero.vizBadge.link": {
-    "message": "Learn more about Ouroboros"
-  },
-  "home.hero.vizBadge.ariaLabel": {
-    "message": "Information about this visualization"
-  },
-  "home.hero.vizBadge.label": {
-    "message": "Visualizing ouroboros-consensus"
   },
   "stablecoins.getStarted.scratch.title": {
     "message": "Starting from scratch?"
