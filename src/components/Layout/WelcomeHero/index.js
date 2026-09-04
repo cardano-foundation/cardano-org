@@ -63,9 +63,9 @@ function WelcomeHero({ title, description }) {
           <div className={styles.cta}>
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
-              to="/what-is-ada"
+              to="/what-is-cardano"
             >
-              {translate({id: 'home.hero.ctaWhatIsAda', message: 'What is ada?'})}
+              {translate({id: 'home.hero.ctaWhatIsCardano', message: 'What is Cardano?'})}
             </Link>
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}

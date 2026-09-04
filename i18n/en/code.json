@@ -1099,8 +1099,8 @@
   "home.hero.description": {
     "message": "Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future."
   },
-  "home.hero.ctaWhatIsAda": {
-    "message": "What is ada?"
+  "home.hero.ctaWhatIsCardano": {
+    "message": "What is Cardano?"
   },
   "home.hero.ctaGetStarted": {
     "message": "Get Started"
@@ -6826,7 +6826,7 @@
     "message": "What makes Cardano different?"
   },
   "home.proofPoints.cta": {
-    "message": "What is Cardano?"
+    "message": "See all differences"
   },
   "learn.stage.dividerLabel": {
     "message": "Stage {number}"
