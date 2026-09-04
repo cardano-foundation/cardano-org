@@ -40,7 +40,7 @@ export default function LiveTip({ apiUrl, locale }) {
       timer = null;
     }
     const onVisibility = () => (document.visibilityState === 'visible' ? start() : stop());
-    start();
+    if (document.visibilityState === 'visible') start();
     document.addEventListener('visibilitychange', onVisibility);
     return () => {
       cancelled = true;
