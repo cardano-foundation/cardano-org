@@ -30,6 +30,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     let last = performance.now();
     let api = null;
     let hiddenPause = false;
+    let workerPaused = false;
     const still = medusaFlag('still');
     const reduced = (prefersReducedMotion() && !medusaFlag('panel')) || still;
     reducedRef.current = reduced;
@@ -70,6 +71,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       playback.seekTo(startIndex);
       if (reduced) playback.pause();
       worker.postMessage({ type: 'init', history, params: LAYOUT_DEFAULTS, frameIndex: startIndex });
+      const startedAt = performance.now();
       worker.onmessage = (event) => {
         if (event.data.type !== 'positions') return;
         engine.updatePositions(event.data.ids, event.data.xy);
@@ -94,6 +96,12 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         last = now;
         playback.tick(dt);
         engine.setOpacity(playback.getState().opacity);
+        // Reduced motion: once the layout has settled, stop the worker so it
+        // no longer keeps the render window alive, then let the loop idle.
+        if (reduced && !workerPaused && performance.now() > startedAt + 3000) {
+          worker.postMessage({ type: 'pause' });
+          workerPaused = true;
+        }
         if (!reduced || now < renderUntil) engine.render(dt);
         raf = requestAnimationFrame(loop);
       };
@@ -114,7 +122,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         api.playback.pause();
         api.worker.postMessage({ type: 'pause' });
       } else {
-        api.worker.postMessage({ type: 'resume' });
+        if (!reduced) api.worker.postMessage({ type: 'resume' });
         if (hiddenPause) api.playback.play();
         last = performance.now();
       }
