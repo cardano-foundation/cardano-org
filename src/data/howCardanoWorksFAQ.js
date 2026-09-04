@@ -20,7 +20,7 @@ export function getHowCardanoWorksFAQ() {
         translate({
           id: "howCardanoWorks.faq.speed.a",
           message:
-            "A block is produced roughly every 20 seconds, so a transaction normally appears on the chain within a minute. Services wait for several more blocks before treating it as final.",
+            "A block is produced roughly every 20 seconds, so a transaction normally appears on the chain within a minute. Services wait for several more blocks before treating it as settled, and the protocol itself only rules out a rollback after a much longer window.",
         }),
       ],
     },
