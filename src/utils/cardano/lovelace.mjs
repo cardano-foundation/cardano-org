@@ -30,3 +30,24 @@ export function formatAda(value, locale = 'en') {
   const decimal = parts.find((p) => p.type === 'decimal')?.value ?? '.';
   return `${new Intl.NumberFormat(locale).format(whole)}${decimal}${String(cents).padStart(2, '0')}`;
 }
+
+// Whole ada with grouping and no fraction (pool fees, deposits). null for
+// anything parseLovelace rejects so callers can show "unknown".
+export function formatAdaWhole(value, locale = 'en') {
+  const n = parseLovelace(value);
+  if (n === null) return null;
+  return new Intl.NumberFormat(locale).format(n / LOVELACE_PER_ADA);
+}
+
+// "6.63M" style for stake-sized values, whole ada below 10k. Arithmetic
+// stays in BigInt, only the final short mantissa becomes a Number.
+export function formatAdaCompact(value, locale = 'en') {
+  const n = parseLovelace(value);
+  if (n === null) return null;
+  const ada = n / LOVELACE_PER_ADA;
+  const twoDigits = new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  if (ada >= 1000000000n) return `${twoDigits.format(Number(ada / 10000000n) / 100)}B`;
+  if (ada >= 1000000n) return `${twoDigits.format(Number(ada / 10000n) / 100)}M`;
+  if (ada >= 10000n) return `${new Intl.NumberFormat(locale).format(Math.round(Number(ada) / 1000))}k`;
+  return new Intl.NumberFormat(locale).format(ada);
+}
