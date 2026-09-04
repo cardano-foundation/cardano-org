@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { createEngine } from './engine.js';
 import { createPlayback } from './playback.js';
 import { createGraph } from './graph.js';
-import { LAYOUT_DEFAULTS } from './layout.js';
+import { LAYOUT_DEFAULTS } from './defaults.js';
 import { groupIndex } from './groups.js';
 import { prefersReducedMotion, medusaFlag } from './webgl.js';
 import { MILESTONES } from '@site/src/data/medusa/milestones.js';
@@ -21,6 +21,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
   callbacks.current = { onFrame, onHover, onSelect, onMilestone, onReady };
   const highlightRef = useRef(highlightGroup);
   highlightRef.current = highlightGroup;
+  const reducedRef = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,6 +32,14 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     let hiddenPause = false;
     const still = medusaFlag('still');
     const reduced = (prefersReducedMotion() && !medusaFlag('panel')) || still;
+    reducedRef.current = reduced;
+    // In reduced motion the loop keeps running but only draws while something
+    // can still change: the settle after new positions, a resize, the flash of
+    // freshly born nodes.
+    let renderUntil = performance.now() + 2500;
+    const keepDrawing = () => {
+      renderUntil = performance.now() + 2500;
+    };
 
     import('@site/src/data/medusa/ledger-history.json').then((mod) => {
       if (disposed) return;
@@ -40,7 +49,11 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       engine.resize();
       const graph = createGraph(history);
       const playback = createPlayback({ frameDates, milestones: MILESTONES, mode });
-      const worker = new Worker(new URL('./layout.worker.js', import.meta.url), { type: 'module' });
+      // Classic worker on purpose: the bundler splits d3-force into a vendor
+      // chunk that the worker pulls in with importScripts, which a module
+      // worker refuses to run.
+      const worker = new Worker(new URL('./layout.worker.js', import.meta.url));
+      worker.onerror = (e) => console.error('medusa layout worker', e.message);
       api = { engine, playback, graph, worker, frameDates };
       apiRef.current = api;
 
@@ -58,7 +71,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       if (reduced) playback.pause();
       worker.postMessage({ type: 'init', history, params: LAYOUT_DEFAULTS, frameIndex: startIndex });
       worker.onmessage = (event) => {
-        if (event.data.type === 'positions') engine.updatePositions(event.data.ids, event.data.xy);
+        if (event.data.type !== 'positions') return;
+        engine.updatePositions(event.data.ids, event.data.xy);
+        keepDrawing();
       };
 
       playback.on('frame', (index, meta) => {
@@ -79,13 +94,17 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         last = now;
         playback.tick(dt);
         engine.setOpacity(playback.getState().opacity);
-        engine.render(dt);
+        if (!reduced || now < renderUntil) engine.render(dt);
         raf = requestAnimationFrame(loop);
       };
       raf = requestAnimationFrame(loop);
     });
 
-    const observer = new ResizeObserver(() => api && api.engine.resize());
+    const observer = new ResizeObserver(() => {
+      if (!api) return;
+      api.engine.resize();
+      keepDrawing();
+    });
     observer.observe(canvas);
 
     const onVisibility = () => {
@@ -134,18 +153,39 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       const r = canvas.getBoundingClientRect();
       return { x: e.clientX - r.left, y: e.clientY - r.top, w: r.width, h: r.height };
     };
+    // Pointer capture is best effort, a stale or already released id throws.
+    const capture = (id) => {
+      try {
+        canvas.setPointerCapture(id);
+      } catch (err) {
+        void err;
+      }
+    };
+    const release = (id) => {
+      try {
+        canvas.releasePointerCapture(id);
+      } catch (err) {
+        void err;
+      }
+    };
 
     const onMove = (e) => {
       const api = apiRef.current;
       if (!api) return;
       const p = local(e);
-      api.engine.setPointer((p.x / p.w) * 2 - 1, -((p.y / p.h) * 2 - 1));
+      if (!reducedRef.current) api.engine.setPointer((p.x / p.w) * 2 - 1, -((p.y / p.h) * 2 - 1));
       if (!interactive) return;
-      if (pointers.has(e.pointerId)) pointers.set(e.pointerId, p);
+      const prev = pointers.get(e.pointerId);
+      if (prev) pointers.set(e.pointerId, p);
       if (pointers.size === 1 && e.buttons === 1) {
+        // movementX/Y is missing on touch derived events, so the delta comes
+        // from the previous point of this pointer.
+        if (!prev) return;
         const view = api.engine.getView();
         const worldPerPx = (2 * view.distance * Math.tan((45 * Math.PI) / 360)) / p.h;
-        api.engine.setView({ panX: view.panX - e.movementX * worldPerPx, panY: view.panY + e.movementY * worldPerPx });
+        const dx = p.x - prev.x;
+        const dy = p.y - prev.y;
+        api.engine.setView({ panX: view.panX - dx * worldPerPx, panY: view.panY + dy * worldPerPx });
         dragged = true;
         return;
       }
@@ -157,6 +197,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
           pinchDistance = d;
           pinchStart = api.engine.getView().distance;
         }
+        dragged = true;
         return;
       }
       const id = api.engine.pick(p.x, p.y);
@@ -169,8 +210,10 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       pointers.set(e.pointerId, local(e));
       dragged = false;
       pinchDistance = 0;
+      capture(e.pointerId);
     };
     const onUp = (e) => {
+      release(e.pointerId);
       pointers.delete(e.pointerId);
       pinchDistance = 0;
       const api = apiRef.current;
@@ -179,6 +222,8 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       callbacks.current.onSelect?.(api.engine.pick(p.x, p.y));
     };
     const onLeave = () => {
+      pointers.clear();
+      pinchDistance = 0;
       const api = apiRef.current;
       if (api) api.engine.setPointer(0, 0);
       if (hovered !== null) {
@@ -226,7 +271,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     setParams: (p) => apiRef.current?.engine.setParams(p),
     setLayoutParams: (p) => apiRef.current?.worker.postMessage({ type: 'params', params: p }),
     getParams: () => apiRef.current?.engine.getParams() ?? null,
-  }));
+  }), []);
 
   return (
     <canvas

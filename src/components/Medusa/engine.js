@@ -22,25 +22,9 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { AfterimagePass } from 'three/addons/postprocessing/AfterimagePass.js';
 import { makeSpriteTexture } from './sprite.js';
 import { GROUPS } from './groups.js';
+import { ENGINE_DEFAULTS } from './defaults.js';
 
-export const ENGINE_DEFAULTS = {
-  background: '#0b1030',
-  pointSizeFile: 3.0,
-  pointSizeDir: 7.0,
-  pointAlpha: 0.9,
-  lineAlpha: 0.22,
-  trailDamp: 0.88,
-  flashDuration: 1.5,
-  fadeOutDuration: 0.8,
-  cameraDistance: 1300,
-  minDistance: 500,
-  maxDistance: 2600,
-  zSpread: 120,
-  parallax: 40,
-  ambientOffsetX: -0.28,
-  dimFactor: 0.15,
-  smoothing: 10,
-};
+export { ENGINE_DEFAULTS };
 
 const FREE_BIRTH = 1e9;
 

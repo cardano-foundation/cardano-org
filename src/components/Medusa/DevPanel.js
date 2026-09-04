@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ENGINE_DEFAULTS } from './engine.js';
-import { LAYOUT_DEFAULTS } from './layout.js';
+import { ENGINE_DEFAULTS, LAYOUT_DEFAULTS } from './defaults.js';
 import { medusaFlag } from './webgl.js';
 import styles from './styles.module.css';
 

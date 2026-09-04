@@ -5,20 +5,9 @@
  */
 import { forceSimulation, forceManyBody, forceLink, forceX, forceY } from 'd3-force';
 import { createGraph } from './graph.js';
+import { LAYOUT_DEFAULTS } from './defaults.js';
 
-export const LAYOUT_DEFAULTS = {
-  chargeDir: -60,
-  chargeFile: -10,
-  linkDir: 42,
-  linkFile: 14,
-  center: 0.01,
-  velocityDecay: 0.45,
-  theta: 0.9,
-  distanceMax: 700,
-  spawnJitter: 10,
-  reheat: 0.4,
-  settleTicks: 300,
-};
+export { LAYOUT_DEFAULTS };
 
 export function createLayout(history, params = {}) {
   const p = { ...LAYOUT_DEFAULTS, ...params };
