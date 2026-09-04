@@ -103,7 +103,7 @@ export default function GetStarted() {
           lastChecked={chain.lastChecked}
           onRefresh={chain.refresh}
           onForget={chain.forget}
-          nextIndex={openIndex ?? stations.length - 1}
+          nextIndex={openIndex}
           locale={currentLocale}
         />
         <BackgroundWrapper backgroundType="zoom">
@@ -126,6 +126,11 @@ export default function GetStarted() {
                 <div>
                   <p>{translate({ id: 'getStarted.station.phrase.why', message: 'Twelve to twenty-four words are the only backup. There is no company, no support desk and no reset. Whoever has the words has the ada.' })}</p>
                   <p>{translate({ id: 'getStarted.station.phrase.action', message: 'Practise the check your wallet will ask for, with a demo phrase. Then write your real one on paper and keep it offline.' })}</p>
+                  <p>
+                    <Link to="/common-scams">
+                      {translate({ id: 'getStarted.station.phrase.scamLink', message: 'Be aware of the most common scams.' })}
+                    </Link>
+                  </p>
                 </div>
               )}
               action={<PhraseSimulator passed={local.phrasePracticePassed} onPassed={() => setLocal({ ...local, phrasePracticePassed: true })} />}
@@ -139,7 +144,7 @@ export default function GetStarted() {
                   <p>{translate({ id: 'getStarted.station.connect.action', message: 'Connect your wallet, or paste a receiving address.' })}</p>
                 </WhyBlock>
               )}
-              action={<ConnectStation account={chain.account} setAccount={chain.setAccount} forget={chain.forget} status={chain.status} lastResult={chain.lastResult} locale={currentLocale} />}
+              action={<ConnectStation account={chain.account} setAccount={chain.setAccount} forget={chain.forget} status={chain.status} lastResult={chain.lastResult} checking={chain.checking} locale={currentLocale} />}
               question={<Questions station="connect" />}
             />
 
@@ -161,11 +166,13 @@ export default function GetStarted() {
                 <p>
                   {chain.status.ada === true && (confirmed
                     ? translate({ id: 'getStarted.station.ada.proofWallet', message: '{amount} ada in your wallet.' }, { amount: formatAda(chain.status.balanceLovelace, currentLocale) })
-                    : translate({ id: 'getStarted.station.ada.proofAddress', message: '{amount} ada at this address.' }, { amount: formatAda(chain.status.balanceLovelace, currentLocale) }))}
+                    : translate({ id: 'getStarted.station.ada.proofAddress', message: '{amount} ada in this account.' }, { amount: formatAda(chain.status.balanceLovelace, currentLocale) }))}
                   {chain.status.ada === false && (confirmed
                     ? translate({ id: 'getStarted.station.ada.none', message: 'No ada yet. Once your transfer arrives, refresh to see it here.' })
-                    : translate({ id: 'getStarted.station.ada.noneAddress', message: 'No ada at this address yet. Other addresses of the same wallet are not counted.' }))}
-                  {chain.status.ada === UNKNOWN && translate({ id: 'getStarted.station.ada.unknown', message: 'Could not check the balance yet. Refresh to try again.' })}
+                    : translate({ id: 'getStarted.station.ada.noneAddress', message: 'No ada in this account yet. Once a transfer arrives, refresh to see it here.' }))}
+                  {chain.status.ada === UNKNOWN && (chain.checking && chain.lastResult === null
+                    ? translate({ id: 'getStarted.station.ada.checking', message: 'Checking the balance on the chain.' })
+                    : translate({ id: 'getStarted.station.ada.unknown', message: 'Could not check the balance yet. Refresh to try again.' }))}
                 </p>
               )}
               question={<Questions station="ada" />}

@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const MAINNET = 1;
 const CIP30_REFUSED = -3;
 // Confirmed in the Task 0 spike, adjust if the spike note says otherwise.
-const EXPLORER_STAKE_URL = 'https://cexplorer.io/stake/';
+export const EXPLORER_STAKE_URL = 'https://cexplorer.io/stake/';
 
 function errorMessage(code) {
   switch (code) {
@@ -24,7 +24,7 @@ function errorMessage(code) {
   }
 }
 
-function activityText(status, lastResult, locale) {
+function activityText(status, lastResult, locale, checking) {
   if (status.ada === true) {
     return translate({ id: 'getStarted.connect.result.balance', message: '{amount} ada found.' }, { amount: formatAda(status.balanceLovelace, locale) });
   }
@@ -34,10 +34,14 @@ function activityText(status, lastResult, locale) {
   if (lastResult === 'empty') {
     return translate({ id: 'getStarted.connect.result.noActivity', message: 'No on-chain activity found for this address yet. That changes in the next step.' });
   }
+  // The very first request is still running, nothing has failed yet.
+  if (checking && lastResult === null) {
+    return translate({ id: 'getStarted.connect.result.checking', message: 'Checking this address on the chain.' });
+  }
   return translate({ id: 'getStarted.connect.result.unknown', message: 'Could not check this address yet. Refresh to try again.' });
 }
 
-function ResultCard({ account, status, lastResult, locale, forget }) {
+function ResultCard({ account, status, lastResult, locale, checking, forget }) {
   const confirmed = account.ownership === 'wallet-confirmed';
   return (
     <div className={styles.proof}>
@@ -48,7 +52,7 @@ function ResultCard({ account, status, lastResult, locale, forget }) {
       {!confirmed && (
         <p>{translate({ id: 'getStarted.connect.result.unverified', message: 'Pasting an address does not prove it is yours. Connect the wallet to confirm.' })}</p>
       )}
-      <p>{activityText(status, lastResult, locale)}</p>
+      <p>{activityText(status, lastResult, locale, checking)}</p>
       <p>
         <Link href={`${EXPLORER_STAKE_URL}${account.stakeAddress}`} target="_blank" rel="noopener noreferrer">
           {translate({ id: 'getStarted.connect.result.explorer', message: 'View on an explorer' })}
@@ -62,7 +66,7 @@ function ResultCard({ account, status, lastResult, locale, forget }) {
   );
 }
 
-export default function ConnectStation({ account, setAccount, forget, status, lastResult, locale }) {
+export default function ConnectStation({ account, setAccount, forget, status, lastResult, checking, locale }) {
   const [tab, setTab] = useState('wallet');
   const [wallets, setWallets] = useState(null);
   const [walletError, setWalletError] = useState(null);
@@ -150,7 +154,7 @@ export default function ConnectStation({ account, setAccount, forget, status, la
     }
   };
 
-  if (account) return <ResultCard account={account} status={status} lastResult={lastResult} locale={locale} forget={forget} />;
+  if (account) return <ResultCard account={account} status={status} lastResult={lastResult} locale={locale} checking={checking} forget={forget} />;
 
   const privacy = (
     <p className={styles.fieldNote}>

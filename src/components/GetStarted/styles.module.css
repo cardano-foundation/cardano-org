@@ -134,6 +134,8 @@
 }
 .explanation { margin-top: var(--site-space-sm); padding: var(--site-space-sm); border-radius: var(--site-radius-md); background: var(--ifm-background-surface-color); border: 1px solid var(--ifm-color-emphasis-200); }
 .explanation p { margin-bottom: var(--site-space-2xs); }
+/* The live region is always rendered, an empty one must not show as a box. */
+.explanation:empty { padding: 0; border: 0; margin: 0; }
 .questionTitle { font-size: 1.05rem; margin-bottom: var(--site-space-xs); }
 
 /* Completion */

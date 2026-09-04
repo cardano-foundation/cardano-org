@@ -3,12 +3,15 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLocalStorage from '@site/src/utils/useLocalStorage';
 import { makeApiClient } from '@site/src/utils/insights/api';
 import { loadEvolution } from '@site/src/utils/cardano/wallet';
+import { isValidBaseAddress } from '@site/src/utils/cardano/bech32.mjs';
 import { ACCOUNT_KEY, isValidAccount } from '@site/src/utils/getStarted/storage.mjs';
 import { emptyStatus } from '@site/src/utils/getStarted/status.mjs';
 import { createLatest, checkAccount, EMPTY_NAMES } from '@site/src/utils/getStarted/check.mjs';
 
-// Manual refresh and visibility refresh share this throttle. There is no
-// automatic account polling, the hero's chain tip line polls on its own.
+// Throttles the visibility refresh. A deliberate Refresh click bypasses it,
+// it is only guarded against starting a second request while one is running.
+// There is no automatic account polling, the hero's chain tip line polls on
+// its own.
 const MIN_INTERVAL_MS = 10000;
 
 // CIP-30 getBalance() returns a CBOR-encoded Value as hex. Only the coin
@@ -119,7 +122,9 @@ export default function useAccountStatus() {
     walletApiRef.current = walletApi || null;
     setAccountValue({
       stakeAddress: entry.stakeAddress,
-      baseAddress: entry.baseAddress || null,
+      // A wallet or a paste can hand back anything, and isValidAccount would
+      // drop the whole entry on the next load over an invalid base address.
+      baseAddress: isValidBaseAddress(entry.baseAddress) ? entry.baseAddress : null,
       ownership: entry.ownership,
       savedAt: new Date().toISOString(),
     });
@@ -132,7 +137,11 @@ export default function useAccountStatus() {
     resetAccount();
   }, [clearDerived, resetAccount]);
 
-  const refresh = useCallback(() => runCheck(false), [runCheck]);
+  // A click skips the throttle, but never starts a second parallel request.
+  const refresh = useCallback(() => {
+    if (checking) return;
+    runCheck(true);
+  }, [checking, runCheck]);
 
   return { account, setAccount, forget, status, names, checking, error, lastResult, lastChecked, refresh };
 }

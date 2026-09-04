@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import { DEMO_PHRASE, makeExercise } from '@site/src/utils/getStarted/demoPhrase.mjs';
@@ -14,6 +14,13 @@ export default function PhraseSimulator({ passed, onPassed }) {
   const start = () => { setRounds(makeExercise()); setRound(0); setPicked(null); };
   const current = rounds ? rounds[round] : null;
   const isCorrect = current && picked !== null && picked === current.answer;
+  const nextRef = useRef(null);
+
+  // A correct pick disables the button that had focus, so focus moves on to
+  // the button that continues the exercise.
+  useEffect(() => {
+    if (isCorrect) nextRef.current?.focus();
+  }, [isCorrect]);
 
   const next = () => {
     if (round + 1 >= rounds.length) {
@@ -76,7 +83,7 @@ export default function PhraseSimulator({ passed, onPassed }) {
             {isCorrect && translate({ id: 'getStarted.phrase.right', message: 'Correct. {done} of {total} checked.' }, { done: round + 1, total: rounds.length })}
           </p>
           {isCorrect && (
-            <button type="button" className="button button--primary" onClick={next}>
+            <button type="button" className="button button--primary" onClick={next} ref={nextRef}>
               {round + 1 >= rounds.length
                 ? translate({ id: 'getStarted.phrase.finish', message: 'Finish' })
                 : translate({ id: 'getStarted.phrase.next', message: 'Next word' })}

@@ -5,6 +5,7 @@ import AppList from '@site/src/components/AppList';
 import { allDone, doneCount } from '@site/src/utils/getStarted/stations.mjs';
 import { shortenAddress } from '@site/src/utils/cardano/address.mjs';
 import { scrollToAnchor } from './Station';
+import { EXPLORER_STAKE_URL } from './ConnectStation';
 import styles from './styles.module.css';
 
 const SHARE_URL = 'https://cardano.org/get-started';
@@ -77,7 +78,11 @@ export default function Completion({ stations, account, status, names }) {
           ? translate({ id: 'getStarted.done.titleYou', message: 'You are in' })
           : translate({ id: 'getStarted.done.titleAddress', message: 'This address is all set' })}</h2>
         <p className={styles.completionRow}>
-          <span>{translate({ id: 'getStarted.done.address', message: 'Stake address' })}: <span className={styles.mono}>{shortenAddress(account.stakeAddress)}</span></span>
+          <span>{translate({ id: 'getStarted.done.address', message: 'Stake address' })}:{' '}
+            <Link className={styles.mono} href={`${EXPLORER_STAKE_URL}${account.stakeAddress}`} target="_blank" rel="noopener noreferrer">
+              {shortenAddress(account.stakeAddress)}
+            </Link>
+          </span>
         </p>
         <p className={styles.completionRow}>
           <span>{translate({ id: 'getStarted.done.pool', message: 'Staked with {pool}' }, { pool })}</span>

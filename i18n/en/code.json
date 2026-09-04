@@ -9404,6 +9404,9 @@
   "getStarted.connect.result.change": {
     "message": "Use a different address"
   },
+  "getStarted.connect.result.checking": {
+    "message": "Checking this address on the chain."
+  },
   "getStarted.connect.result.explorer": {
     "message": "View on an explorer"
   },
@@ -9600,14 +9603,17 @@
   "getStarted.station.ada.button": {
     "message": "See where to get ada"
   },
+  "getStarted.station.ada.checking": {
+    "message": "Checking the balance on the chain."
+  },
   "getStarted.station.ada.none": {
     "message": "No ada yet. Once your transfer arrives, refresh to see it here."
   },
   "getStarted.station.ada.noneAddress": {
-    "message": "No ada at this address yet. Other addresses of the same wallet are not counted."
+    "message": "No ada in this account yet. Once a transfer arrives, refresh to see it here."
   },
   "getStarted.station.ada.proofAddress": {
-    "message": "{amount} ada at this address."
+    "message": "{amount} ada in this account."
   },
   "getStarted.station.ada.proofWallet": {
     "message": "{amount} ada in your wallet."
@@ -9671,6 +9677,9 @@
   },
   "getStarted.station.phrase.action": {
     "message": "Practise the check your wallet will ask for, with a demo phrase. Then write your real one on paper and keep it offline."
+  },
+  "getStarted.station.phrase.scamLink": {
+    "message": "Be aware of the most common scams."
   },
   "getStarted.station.phrase.title": {
     "message": "Your recovery phrase"

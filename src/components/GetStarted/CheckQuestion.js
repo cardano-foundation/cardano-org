@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
@@ -16,6 +16,14 @@ function findQuestion(quizId, questionId) {
 export default function CheckQuestion({ quiz, id }) {
   const question = findQuestion(quiz, id);
   const [picked, setPicked] = useState(null);
+  const explanationRef = useRef(null);
+
+  // Answering disables the button that had focus, so focus moves to the
+  // explanation, which is also where the answer is.
+  useEffect(() => {
+    if (picked !== null) explanationRef.current?.focus();
+  }, [picked]);
+
   if (!question) return null;
   const answered = picked !== null;
   const groupId = `check-${id}`;
@@ -43,18 +51,21 @@ export default function CheckQuestion({ quiz, id }) {
           );
         })}
       </div>
-      {answered && (
-        <div className={styles.explanation} aria-live="polite">
-          <p><strong>{picked === question.correctAnswer
-            ? translate({ id: 'getStarted.question.correct', message: 'Correct.' })
-            : translate({ id: 'getStarted.question.wrong', message: 'Not quite.' })}</strong>{' '}{question.explanation}</p>
-          {question.sourceUrl && (
-            <Link href={question.sourceUrl} target="_blank" rel="noopener noreferrer">
-              {translate({ id: 'getStarted.question.source', message: 'Source' })}
-            </Link>
-          )}
-        </div>
-      )}
+      {/* Stays in the DOM while empty, a live region has to exist before it fills. */}
+      <div className={styles.explanation} aria-live="polite" tabIndex={-1} ref={explanationRef}>
+        {answered && (
+          <>
+            <p><strong>{picked === question.correctAnswer
+              ? translate({ id: 'getStarted.question.correct', message: 'Correct.' })
+              : translate({ id: 'getStarted.question.wrong', message: 'Not quite.' })}</strong>{' '}{question.explanation}</p>
+            {question.sourceUrl && (
+              <Link href={question.sourceUrl} target="_blank" rel="noopener noreferrer">
+                {translate({ id: 'getStarted.question.source', message: 'Source' })}
+              </Link>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

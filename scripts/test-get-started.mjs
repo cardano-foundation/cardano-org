@@ -364,3 +364,8 @@ test('checkAccount rejects when the account query fails', async () => {
   const api = { post: async () => { throw new Error('timeout'); } };
   await assert.rejects(checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true }));
 });
+
+test('checkAccount rejects when the account response is not an array', async () => {
+  const api = { post: async () => ({ data: { oops: true } }) };
+  await assert.rejects(checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true }));
+});

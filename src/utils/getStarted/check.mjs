@@ -43,7 +43,9 @@ async function fetchDrepName(api, drepId, kind) {
 export async function checkAccount({ api, stakeAddress, readWalletBalance = null, isCurrent }) {
   const res = await api.post('/account_info', { _stake_addresses: [stakeAddress] });
   if (!isCurrent()) return null;
-  const row = Array.isArray(res.data) ? res.data[0] : undefined;
+  // A body that is not an array is a broken response, not an empty account.
+  if (!Array.isArray(res.data)) throw new Error('account_info returned no array');
+  const row = res.data[0];
   let status = deriveStatus(row);
   if (status.ada === UNKNOWN && readWalletBalance) {
     status = withWalletBalance(status, await readWalletBalance());
