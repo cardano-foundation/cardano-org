@@ -104,7 +104,6 @@ export function useResource(loader, deps) {
   }, deps);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     run();
     return () => { seq.current += 1; };
   }, [run]);
