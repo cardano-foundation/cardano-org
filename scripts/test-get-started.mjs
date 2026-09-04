@@ -5,6 +5,7 @@ import { decodeBech32, isValidStakeAddress, isValidBaseAddress } from '../src/ut
 import { UNKNOWN, emptyStatus, deriveStatus, drepKind, withWalletBalance } from '../src/utils/getStarted/status.mjs';
 import { isValidAccount, emptyLocal, isValidLocal, ACCOUNT_KEY, LOCAL_KEY, LEGACY_STEP_KEY } from '../src/utils/getStarted/storage.mjs';
 import { STATION_KEYS, computeStations, firstOpenIndex, allDone, doneCount } from '../src/utils/getStarted/stations.mjs';
+import { detectDevice, pickWalletsForDevice } from '../src/utils/getStarted/devices.mjs';
 
 test('parseLovelace accepts only non-negative decimal integers', () => {
   assert.equal(parseLovelace('0'), 0n);
@@ -214,4 +215,29 @@ test('computeStations: delegate is false when one half is confirmed missing, unk
   assert.equal(computeStations({ local: emptyLocal(), account, status: half })[4].done, false);
   const unknownVote = { ...deriveStatus({ total_balance: '5', delegated_pool: 'p' }), vote: UNKNOWN };
   assert.equal(computeStations({ local: emptyLocal(), account, status: unknownVote })[4].done, UNKNOWN);
+});
+
+const WALLETS = [
+  { title: 'Eternl', maintainerPick: true, walletFeatures: { platforms: ['ios', 'android', 'browser'] } },
+  { title: 'Typhon', maintainerPick: true, walletFeatures: { platforms: ['browser'] } },
+  { title: 'Lace', maintainerPick: true, walletFeatures: { platforms: ['browser'] } },
+  { title: 'VESPR', maintainerPick: true, walletFeatures: { platforms: ['ios', 'android'] } },
+  { title: 'Multisig', maintainerPick: true, walletFeatures: { platforms: ['web'] } },
+  { title: 'Other', maintainerPick: false, walletFeatures: { platforms: ['ios'] } },
+];
+
+test('detectDevice reads the user agent', () => {
+  assert.equal(detectDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)'), 'ios');
+  assert.equal(detectDevice('Mozilla/5.0 (Linux; Android 14; Pixel 8)'), 'android');
+  assert.equal(detectDevice('Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)'), 'desktop');
+  assert.equal(detectDevice(''), 'desktop');
+  assert.equal(detectDevice(undefined), 'desktop');
+});
+
+test('pickWalletsForDevice filters maintainer picks by platform and caps at three', () => {
+  assert.deepEqual(pickWalletsForDevice(WALLETS, 'ios').map((w) => w.title), ['Eternl', 'VESPR']);
+  assert.deepEqual(pickWalletsForDevice(WALLETS, 'android').map((w) => w.title), ['Eternl', 'VESPR']);
+  assert.deepEqual(pickWalletsForDevice(WALLETS, 'desktop').map((w) => w.title), ['Eternl', 'Typhon', 'Lace']);
+  assert.deepEqual(pickWalletsForDevice(WALLETS, null).map((w) => w.title), ['Eternl', 'Typhon', 'Lace']);
+  assert.deepEqual(pickWalletsForDevice(WALLETS, 'desktop', 1).map((w) => w.title), ['Eternl']);
 });
