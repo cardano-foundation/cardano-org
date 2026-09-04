@@ -1,0 +1,285 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionHeading {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.walletSection,
+.searchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.95rem;
+}
+
+.retryButton {
+  margin-left: 0.5rem;
+}
+
+.paramsLine {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.poolHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poolIntro {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  flex: 1 1 auto;
+}
+
+.shuffleButton {
+  flex: 0 0 auto;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.skeleton {
+  min-height: 260px;
+  border-radius: 12px;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--ifm-card-background-color, white);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardCurrent {
+  border-color: var(--ifm-color-primary);
+}
+
+.cardHeader {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.cardIdentity {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cardTicker {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.cardName,
+.cardGroup {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  word-break: break-word;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(0, 127, 255, 0.12);
+  color: #093db0;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.metrics dt {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.metrics dd {
+  margin: 0;
+  color: var(--ifm-color-emphasis-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.saturationTrack {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.saturationFill {
+  height: 100%;
+  background: #2ea44f;
+}
+
+.saturationWarn {
+  background: #e0a800;
+}
+
+.saturationOver {
+  background: var(--ifm-color-danger);
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b5200;
+  background: rgba(255, 193, 7, 0.15);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+.cardLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.poolId {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.copyButton {
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.cardCta {
+  margin-top: auto;
+  align-self: stretch;
+}
+
+.accountStatus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.accountLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.accountDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ea44f;
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+}
+
+.accountText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.accountDetail {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.accountSelect {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 6px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.disconnectButton {
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.disconnectButton:disabled,
+.accountSelect:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.voteCta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 12px;
+}
+
+.voteCta h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.voteCta p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.voteCta a {
+  align-self: flex-start;
+}
