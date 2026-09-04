@@ -46,6 +46,11 @@ function expandTree(files) {
   return { paths, dirs };
 }
 
+// Parents must be born before their children and die after them, so additions
+// go from the root down and removals from the leaves up.
+const shallowestFirst = (a, b) => depthOf(a) - depthOf(b) || (a < b ? -1 : 1);
+const deepestFirst = (a, b) => depthOf(b) - depthOf(a) || (a < b ? -1 : 1);
+
 function pruneFiles(files) {
   return files.filter((f) => !PRUNE_PATTERNS.some((re) => re.test(f)));
 }
@@ -64,8 +69,8 @@ function buildHistory({ months, treeFor, commitFor, groupIndexForPath, limit }) 
       return;
     }
     const { paths: next, dirs } = expandTree(files);
-    const added = [...next].filter((p) => !prev.has(p)).sort((a, b) => depthOf(a) - depthOf(b) || (a < b ? -1 : 1));
-    const removed = [...prev].filter((p) => !next.has(p)).sort((a, b) => depthOf(b) - depthOf(a) || (a < b ? -1 : 1));
+    const added = [...next].filter((p) => !prev.has(p)).sort(shallowestFirst);
+    const removed = [...prev].filter((p) => !next.has(p)).sort(deepestFirst);
 
     const rm = removed.map((p) => {
       const id = idByPath.get(p);

@@ -44,13 +44,9 @@ export function createGraph(history) {
     get frameIndex() {
       return frameIndex;
     },
-    get frameCount() {
-      return frames.length;
-    },
     get: (id) => nodes.get(id),
     alive: () => nodes.values(),
     aliveCount: () => nodes.size,
-    reset,
     step,
     seek(i) {
       if (i === frameIndex) return { added: [], removed: [] };

@@ -9,6 +9,9 @@ import { prefersReducedMotion, medusaFlag } from './webgl.js';
 import { MILESTONES } from '@site/src/data/medusa/milestones.js';
 import styles from './styles.module.css';
 
+// The engine takes -1 for "no era highlighted".
+const highlightIndexOf = (key) => (key === null ? -1 : groupIndex(key));
+
 // The only React component that knows about the engine, the worker and the
 // clock. Everything else talks to it through props and the ref API.
 const MedusaCanvas = forwardRef(function MedusaCanvas(
@@ -88,8 +91,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       // the paused state has to be reported on its own.
       playback.on('end', () => report(frameDates.length - 1));
       playback.on('milestone', (m) => callbacks.current.onMilestone?.(m));
-      const key = highlightRef.current;
-      engine.setHighlightGroup(key === null ? -1 : groupIndex(key));
+      engine.setHighlightGroup(highlightIndexOf(highlightRef.current));
       report(startIndex);
       callbacks.current.onReady?.({ frameDates });
 
@@ -147,7 +149,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
 
   useEffect(() => {
     const api = apiRef.current;
-    if (api) api.engine.setHighlightGroup(highlightGroup === null ? -1 : groupIndex(highlightGroup));
+    if (api) api.engine.setHighlightGroup(highlightIndexOf(highlightGroup));
   }, [highlightGroup]);
 
   // Pointer handling: parallax always, hover, click, wheel zoom, drag pan and
@@ -277,11 +279,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     getState: () => apiRef.current?.playback.getState() ?? null,
     project: (id) => apiRef.current?.engine.project(id) ?? null,
     getGraph: () => apiRef.current?.graph ?? null,
-    getFrameDates: () => apiRef.current?.frameDates ?? [],
     setHighlightSet: (set) => apiRef.current?.engine.setHighlightSet(set),
     setParams: (p) => apiRef.current?.engine.setParams(p),
     setLayoutParams: (p) => apiRef.current?.worker.postMessage({ type: 'params', params: p }),
-    getParams: () => apiRef.current?.engine.getParams() ?? null,
   }), []);
 
   return (

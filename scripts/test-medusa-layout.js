@@ -3,6 +3,7 @@
  * worker wraps. Runs the simulation in Node without a Worker. No framework.
  */
 const assert = require('node:assert');
+const { createChecker } = require('./lib/medusa-test-check.js');
 
 const history = {
   paths: ['/', 'a', 'a/x.hs', 'a/y.hs', 'b', 'b/z.hs'],
@@ -17,17 +18,7 @@ const history = {
 async function main() {
   const { createLayout, LAYOUT_DEFAULTS } = await import('../src/components/Medusa/layout.js');
 
-  let passed = 0;
-  const check = (name, fn) => {
-    try {
-      fn();
-    } catch (err) {
-      err.message = `FAIL: ${name}\n${err.message}`;
-      throw err;
-    }
-    passed += 1;
-    console.log(`  ok - ${name}`);
-  };
+  const { check, done } = createChecker('medusa layout');
 
   const finite = (xy) => xy.every((v) => Number.isFinite(v));
 
@@ -89,7 +80,7 @@ async function main() {
     assert.strictEqual(l.count(), 4);
   });
 
-  console.log(`\n${passed} medusa layout tests passed`);
+  done();
 }
 
 main().catch((err) => {

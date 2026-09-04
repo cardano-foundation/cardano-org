@@ -7,20 +7,11 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const core = require('./lib/medusa-history-core.js');
+const { createChecker } = require('./lib/medusa-test-check.js');
 
 const DATA = path.join(__dirname, '..', 'src', 'data', 'medusa', 'ledger-history.json');
 
-let passed = 0;
-const check = (name, fn) => {
-  try {
-    fn();
-  } catch (err) {
-    err.message = `FAIL: ${name}\n${err.message}`;
-    throw err;
-  }
-  passed += 1;
-  console.log(`  ok - ${name}`);
-};
+const { check, done } = createChecker('medusa history');
 
 const groupOf = (p) => (p.includes('shelley') ? 1 : 0);
 
@@ -136,4 +127,4 @@ if (fs.existsSync(DATA)) {
   console.log('  skip - src/data/medusa/ledger-history.json not generated yet');
 }
 
-console.log(`\n${passed} medusa history tests passed`);
+done();

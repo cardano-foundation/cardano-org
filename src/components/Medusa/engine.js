@@ -24,8 +24,6 @@ import { makeSpriteTexture } from './sprite.js';
 import { GROUPS } from './groups.js';
 import { ENGINE_DEFAULTS } from './defaults.js';
 
-export { ENGINE_DEFAULTS };
-
 const FREE_BIRTH = 1e9;
 
 const POINT_VERT = `
@@ -191,22 +189,26 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
   const fading = [];
   const tmp = new Vector3();
 
+  // A highlight is active while an era chip or a pinned subtree is set, and
+  // then everything outside it is dimmed.
+  const highlightActive = () => highlightGroup >= 0 || highlightSet !== null;
+  const isHighlighted = (node) =>
+    (highlightGroup >= 0 && node.group === highlightGroup) || (highlightSet !== null && highlightSet.has(node.id));
+
+  const clampDistance = (distance) => Math.min(params.maxDistance, Math.max(params.minDistance, distance));
+
   function nodeAlpha(slot) {
     let a = smoothstep(0, params.flashDuration, time - birth[slot]);
     if (death[slot] >= 0) a *= 1 - smoothstep(0, params.fadeOutDuration, time - death[slot]);
-    if (highlightGroup >= 0 || highlightSet) a *= highlight[slot] ? 1 : params.dimFactor;
+    if (highlightActive()) a *= highlight[slot] ? 1 : params.dimFactor;
     return a;
   }
 
   function recomputeHighlight() {
-    const active = highlightGroup >= 0 || highlightSet !== null;
+    const active = highlightActive();
     for (let s = 0; s < capacity; s += 1) {
       const node = nodeAtSlot[s];
-      let h = 0;
-      if (node && active) {
-        h = (highlightGroup >= 0 && node.group === highlightGroup) || (highlightSet && highlightSet.has(node.id)) ? 1 : 0;
-      }
-      highlight[s] = h;
+      highlight[s] = node && active && isHighlighted(node) ? 1 : 0;
     }
     pointMat.uniforms.uHasHighlight.value = active ? 1 : 0;
     pointGeo.attributes.highlight.needsUpdate = true;
@@ -253,9 +255,7 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       size[slot] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
       birth[slot] = time;
       death[slot] = -1;
-      const active = highlightGroup >= 0 || highlightSet !== null;
-      highlight[slot] =
-        active && ((highlightGroup >= 0 && node.group === highlightGroup) || (highlightSet && highlightSet.has(node.id))) ? 1 : 0;
+      highlight[slot] = highlightActive() && isHighlighted(node) ? 1 : 0;
       pointGeo.attributes.color.needsUpdate = true;
       pointGeo.attributes.size.needsUpdate = true;
       pointGeo.attributes.birth.needsUpdate = true;
@@ -295,7 +295,7 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     },
     setView(next) {
       Object.assign(view, next);
-      view.distance = Math.min(params.maxDistance, Math.max(params.minDistance, view.distance));
+      view.distance = clampDistance(view.distance);
     },
     getView: () => ({ ...view }),
     pick(px, py) {
@@ -395,16 +395,13 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       pointMat.uniforms.uAlpha.value = params.pointAlpha;
       lineMat.uniforms.uLineAlpha.value = params.lineAlpha;
       afterimage.uniforms.damp.value = params.trailDamp;
-      if (next.cameraDistance !== undefined) {
-        view.distance = Math.min(params.maxDistance, Math.max(params.minDistance, params.cameraDistance));
-      }
+      if (next.cameraDistance !== undefined) view.distance = clampDistance(params.cameraDistance);
       for (let s = 0; s < capacity; s += 1) {
         const node = nodeAtSlot[s];
         if (node) size[s] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
       }
       pointGeo.attributes.size.needsUpdate = true;
     },
-    getParams: () => ({ ...params }),
     dispose() {
       scene.remove(points);
       scene.remove(lines);

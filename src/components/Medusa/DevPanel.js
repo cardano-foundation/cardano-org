@@ -39,8 +39,7 @@ export default function DevPanel({ target }) {
   if (!visible) return null;
 
   const updateEngine = (key, value) => {
-    const next = { ...engine, [key]: value };
-    setEngine(next);
+    setEngine((current) => ({ ...current, [key]: value }));
     target.current?.setParams({ [key]: value });
   };
   const updateLayout = (key, value) => {

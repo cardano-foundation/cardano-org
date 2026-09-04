@@ -3,23 +3,14 @@
  * visualization) and the milestone data file. Run with `node`, no framework.
  */
 const assert = require('node:assert');
+const { createChecker } = require('./lib/medusa-test-check.js');
 
 async function main() {
   const { createPlayback, frameIndexForDate } = await import('../src/components/Medusa/playback.js');
   const { MILESTONES, HARD_FORK_KEYS } = await import('../src/data/medusa/milestones.js');
   const { GROUPS } = await import('../src/components/Medusa/groups.js');
 
-  let passed = 0;
-  const check = (name, fn) => {
-    try {
-      fn();
-    } catch (err) {
-      err.message = `FAIL: ${name}\n${err.message}`;
-      throw err;
-    }
-    passed += 1;
-    console.log(`  ok - ${name}`);
-  };
+  const { check, done } = createChecker('medusa playback');
 
   const dates = ['2020-01', '2020-02', '2020-03', '2020-04'];
   const milestones = [{ key: 'm1', date: '2020-03-15', group: 'shelley', kind: 'hardfork', link: '/hardforks' }];
@@ -146,7 +137,7 @@ async function main() {
     assert.deepStrictEqual(HARD_FORK_KEYS, ['shelley', 'allegra', 'mary', 'alonzo', 'vasil', 'chang', 'plomin', 'vanRossem']);
   });
 
-  console.log(`\n${passed} medusa playback tests passed`);
+  done();
 }
 
 main().catch((err) => {

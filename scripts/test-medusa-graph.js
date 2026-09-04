@@ -3,6 +3,7 @@
  * monthly delta frames. Run with `node`, no framework.
  */
 const assert = require('node:assert');
+const { createChecker } = require('./lib/medusa-test-check.js');
 
 const history = {
   paths: ['/', 'a', 'a/x.hs', 'b', 'b/y.hs', 'a/z.hs'],
@@ -17,17 +18,7 @@ const history = {
 async function main() {
   const { createGraph } = await import('../src/components/Medusa/graph.js');
 
-  let passed = 0;
-  const check = (name, fn) => {
-    try {
-      fn();
-    } catch (err) {
-      err.message = `FAIL: ${name}\n${err.message}`;
-      throw err;
-    }
-    passed += 1;
-    console.log(`  ok - ${name}`);
-  };
+  const { check, done } = createChecker('medusa graph');
 
   check('step applies frames in order with depth and path', () => {
     const g = createGraph(history);
@@ -72,7 +63,7 @@ async function main() {
     assert.deepStrictEqual([...g.subtree(2)], [2]);
   });
 
-  console.log(`\n${passed} medusa graph tests passed`);
+  done();
 }
 
 main().catch((err) => {

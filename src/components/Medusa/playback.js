@@ -3,6 +3,9 @@
  * runs in scripts/test-medusa-playback.js. Time is fed in through tick(dt).
  */
 
+// Playback speeds the explorer offers, in the order the controls show them.
+export const SPEEDS = [1, 2, 4];
+
 export function frameIndexForDate(frameDates, isoDate) {
   const month = isoDate.slice(0, 7);
   return frameDates.indexOf(month);
@@ -83,17 +86,21 @@ export function createPlayback({
     }
   }
 
+  function play() {
+    state.paused = false;
+    if (mode === 'explore' && state.frameIndex >= lastIndex) seekTo(0);
+  }
+
+  function pause() {
+    state.paused = true;
+  }
+
   return {
-    play() {
-      state.paused = false;
-      if (mode === 'explore' && state.frameIndex >= lastIndex) seekTo(0);
-    },
-    pause() {
-      state.paused = true;
-    },
+    play,
+    pause,
     toggle() {
-      if (state.paused) this.play();
-      else this.pause();
+      if (state.paused) play();
+      else pause();
     },
     seekTo,
     seekToDate(isoDate) {

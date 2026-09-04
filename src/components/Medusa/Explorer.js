@@ -12,9 +12,9 @@ import useMedusaKeys from './useMedusaKeys.js';
 import { MILESTONES, HARD_FORK_KEYS } from '@site/src/data/medusa/milestones.js';
 import { GROUPS } from './groups.js';
 import { canRunWebGL, medusaFlag } from './webgl.js';
+import { SPEEDS } from './playback.js';
 import styles from './explorer.module.css';
 
-const SPEEDS = [1, 2, 4];
 const HASH = /^#(\d{4}-\d{2})$/;
 const HASH_DELAY = 250;
 
@@ -84,7 +84,7 @@ export default function Explorer() {
   }, []);
 
   const onMilestone = useCallback((m) => {
-    setCard((current) => (cardsEnabled ? m : current));
+    if (cardsEnabled) setCard(m);
   }, [cardsEnabled]);
 
   const dismissCard = useCallback(() => setCard(null), []);
@@ -128,6 +128,11 @@ export default function Explorer() {
     syncPaused();
   }, [syncPaused]);
 
+  const setSpeed = useCallback((n) => {
+    ref.current?.setSpeed(n);
+    setState((s) => ({ ...s, speed: n }));
+  }, []);
+
   const handlers = useMemo(() => ({
     toggle: () => {
       ref.current?.toggle();
@@ -140,9 +145,7 @@ export default function Explorer() {
     },
     speed: (dir) => {
       const i = SPEEDS.indexOf(ref.current?.getState()?.speed ?? 1);
-      const next = SPEEDS[Math.max(0, Math.min(SPEEDS.length - 1, i + dir))];
-      ref.current?.setSpeed(next);
-      setState((s) => ({ ...s, speed: next }));
+      setSpeed(SPEEDS[Math.max(0, Math.min(SPEEDS.length - 1, i + dir))]);
     },
     milestone: jumpToMilestone,
     toggleLabels: () => setLabels((v) => !v),
@@ -156,7 +159,7 @@ export default function Explorer() {
       onSelect(null);
       setHighlightGroup(null);
     },
-  }), [jumpToMilestone, fullscreen, onSelect, syncPaused, cardsEnabled]);
+  }), [jumpToMilestone, fullscreen, onSelect, syncPaused, setSpeed, cardsEnabled]);
   useMedusaKeys(handlers, supported, containerRef);
 
   if (!supported) {
@@ -206,10 +209,7 @@ export default function Explorer() {
           onSeek={seekTo}
           onToggle={handlers.toggle}
           onStep={handlers.step}
-          onSpeed={(s) => {
-            ref.current?.setSpeed(s);
-            setState((st) => ({ ...st, speed: s }));
-          }}
+          onSpeed={setSpeed}
           onFullscreen={fullscreen}
         />
         <p className={styles.hint}>

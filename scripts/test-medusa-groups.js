@@ -3,22 +3,13 @@
  * by the data script and the legend. Run with `node`, no framework.
  */
 const assert = require('node:assert');
+const { createChecker } = require('./lib/medusa-test-check.js');
 
 async function main() {
   const { GROUPS, ERA_KEYS, groupForPath, groupIndex, groupColor } =
     await import('../src/components/Medusa/groups.js');
 
-  let passed = 0;
-  const check = (name, fn) => {
-    try {
-      fn();
-    } catch (err) {
-      err.message = `FAIL: ${name}\n${err.message}`;
-      throw err;
-    }
-    passed += 1;
-    console.log(`  ok - ${name}`);
-  };
+  const { check, done } = createChecker('medusa groups');
 
   check('era segment anywhere in the path wins', () => {
     assert.strictEqual(groupForPath('eras/shelley/impl/src/Cardano/Ledger/Shelley.hs'), 'shelley');
@@ -63,7 +54,7 @@ async function main() {
     assert.strictEqual(groupIndex('nope'), groupIndex('other'));
   });
 
-  console.log(`\n${passed} medusa groups tests passed`);
+  done();
 }
 
 main().catch((err) => {
