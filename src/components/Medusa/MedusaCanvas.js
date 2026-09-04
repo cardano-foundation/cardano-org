@@ -84,6 +84,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         report(index);
       });
       playback.on('phase', (state) => report(state.frameIndex));
+      // The clock stops itself at the end of the timeline without a frame, so
+      // the paused state has to be reported on its own.
+      playback.on('end', () => report(frameDates.length - 1));
       playback.on('milestone', (m) => callbacks.current.onMilestone?.(m));
       const key = highlightRef.current;
       engine.setHighlightGroup(key === null ? -1 : groupIndex(key));

@@ -29,6 +29,11 @@
   text-align: center;
 }
 
+.noWebgl a {
+  color: #9ec5fe;
+  text-decoration: underline;
+}
+
 .ui {
   position: absolute;
   inset: 0;
@@ -156,6 +161,7 @@
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.72rem;
   text-align: center;
+  pointer-events: none;
 }
 
 .label {
@@ -169,6 +175,7 @@
   white-space: nowrap;
   pointer-events: none;
   will-change: transform;
+  z-index: 3;
 }
 
 .labelPinned {

@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,10 +16,13 @@ import styles from './explorer.module.css';
 
 const SPEEDS = [1, 2, 4];
 const HASH = /^#(\d{4}-\d{2})$/;
+const HASH_DELAY = 250;
 
 export default function Explorer() {
   const ref = useRef(null);
   const containerRef = useRef(null);
+  const hashTimer = useRef(0);
+  const lastHash = useRef(null);
   const [supported, setSupported] = useState(true);
   const [frameDates, setFrameDates] = useState([]);
   const [state, setState] = useState({ index: 0, date: '', paused: true, speed: 1 });
@@ -47,6 +49,8 @@ export default function Explorer() {
     setSupported(canRunWebGL());
   }, []);
 
+  useEffect(() => () => clearTimeout(hashTimer.current), []);
+
   const onReady = useCallback(({ frameDates: dates }) => {
     setFrameDates(dates);
     if (initialDate) ref.current?.seekToDate(initialDate);
@@ -58,14 +62,32 @@ export default function Explorer() {
     if (graph) {
       const groups = new Set();
       for (const node of graph.alive()) groups.add(node.group);
-      setPresent(new Set([...groups].map((i) => GROUPS[i].key)));
+      const nextPresent = new Set([...groups].map((i) => GROUPS[i].key));
+      setPresent(nextPresent);
+      // An era that is no longer in the frame has no chip left to switch off,
+      // so its highlight would dim everything for good.
+      setHighlightGroup((k) => (k !== null && !nextPresent.has(k) ? null : k));
     }
-    if (info.date) window.history.replaceState(null, '', `#${info.date}`);
+    // Safari refuses more than about a hundred replaceState calls per half
+    // minute, and a throw in the frame callback would stop the animation.
+    if (info.date && info.date !== lastHash.current) {
+      lastHash.current = info.date;
+      clearTimeout(hashTimer.current);
+      hashTimer.current = setTimeout(() => {
+        try {
+          window.history.replaceState(null, '', `#${info.date}`);
+        } catch (err) {
+          void err;
+        }
+      }, HASH_DELAY);
+    }
   }, []);
 
   const onMilestone = useCallback((m) => {
     setCard((current) => (cardsEnabled ? m : current));
   }, [cardsEnabled]);
+
+  const dismissCard = useCallback(() => setCard(null), []);
 
   const onSelect = useCallback((id) => {
     const graph = ref.current?.getGraph();
@@ -92,11 +114,28 @@ export default function Explorer() {
     else containerRef.current?.requestFullscreen?.();
   }, []);
 
+  // play(), pause() and the end of the timeline emit no frame, so the button
+  // state is read back from the clock after every command that changes it.
+  const syncPaused = useCallback(() => {
+    const s = ref.current?.getState();
+    if (s) setState((st) => ({ ...st, paused: s.paused }));
+  }, []);
+
+  const seekTo = useCallback((i) => {
+    ref.current?.pause();
+    ref.current?.seekTo(i);
+    syncPaused();
+  }, [syncPaused]);
+
   const handlers = useMemo(() => ({
-    toggle: () => ref.current?.toggle(),
+    toggle: () => {
+      ref.current?.toggle();
+      syncPaused();
+    },
     step: (d) => {
       ref.current?.pause();
       ref.current?.step(d);
+      syncPaused();
     },
     speed: (dir) => {
       const i = SPEEDS.indexOf(ref.current?.getState()?.speed ?? 1);
@@ -108,10 +147,16 @@ export default function Explorer() {
     toggleLabels: () => setLabels((v) => !v),
     fullscreen,
     toggleUi: () => setUiHidden((v) => !v),
-    toggleCards: () => setCardsEnabled((v) => !v),
-    clear: () => onSelect(null),
-  }), [jumpToMilestone, fullscreen, onSelect]);
-  useMedusaKeys(handlers);
+    toggleCards: () => {
+      setCardsEnabled(!cardsEnabled);
+      if (cardsEnabled) setCard(null);
+    },
+    clear: () => {
+      onSelect(null);
+      setHighlightGroup(null);
+    },
+  }), [jumpToMilestone, fullscreen, onSelect, syncPaused, cardsEnabled]);
+  useMedusaKeys(handlers, supported, containerRef);
 
   if (!supported) {
     return (
@@ -134,7 +179,7 @@ export default function Explorer() {
   const labelPath = labelId !== null && graph ? graph.get(labelId)?.path : null;
 
   return (
-    <div ref={containerRef} className={clsx(styles.explorer, uiHidden && styles.uiHidden)}>
+    <div ref={containerRef} className={styles.explorer}>
       <Medusa
         ref={ref}
         mode="explore"
@@ -149,7 +194,7 @@ export default function Explorer() {
         ariaLabel={translate({ id: 'medusa.page.canvasLabel', message: 'Interactive file tree of the cardano-ledger repository over time' })}
       />
       {labelPath && <HoverLabel id={labelId} path={labelPath} target={ref} pinned={pinned !== null} />}
-      {card && cardsEnabled && <MilestoneCard milestone={card} onDismiss={() => setCard(null)} />}
+      {card && cardsEnabled && <MilestoneCard milestone={card} onDismiss={dismissCard} />}
       <div className={styles.ui} hidden={uiHidden}>
         <Legend present={present} active={highlightGroup} onToggle={(key) => setHighlightGroup((k) => (k === key ? null : key))} />
         <Controls
@@ -157,10 +202,7 @@ export default function Explorer() {
           index={state.index}
           paused={state.paused}
           speed={state.speed}
-          onSeek={(i) => {
-            ref.current?.pause();
-            ref.current?.seekTo(i);
-          }}
+          onSeek={seekTo}
           onToggle={handlers.toggle}
           onStep={handlers.step}
           onSpeed={(s) => {

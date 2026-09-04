@@ -9,21 +9,30 @@ function shorten(path, max = 40) {
 }
 
 // Follows a node on screen. Position is read from the engine every animation
-// frame so the label sticks to the moving point.
+// frame so the label sticks to the moving point. It stays invisible until the
+// first projection, otherwise it would flash in the top left corner.
 export default function HoverLabel({ id, path, target, pinned }) {
   const ref = useRef(null);
   useEffect(() => {
     let raf = 0;
     const update = () => {
       const p = target.current?.project(id);
-      if (ref.current && p) ref.current.style.transform = `translate(${p.x + 10}px, ${p.y - 10}px)`;
+      if (ref.current && p) {
+        ref.current.style.transform = `translate(${p.x + 10}px, ${p.y - 10}px)`;
+        ref.current.style.visibility = 'visible';
+      }
       raf = requestAnimationFrame(update);
     };
     raf = requestAnimationFrame(update);
     return () => cancelAnimationFrame(raf);
   }, [id, target]);
   return (
-    <div ref={ref} className={clsx(styles.label, pinned && styles.labelPinned)} aria-live="polite">
+    <div
+      ref={ref}
+      className={clsx(styles.label, pinned && styles.labelPinned)}
+      style={{ visibility: 'hidden' }}
+      aria-live="polite"
+    >
       {shorten(path)}
     </div>
   );

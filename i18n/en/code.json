@@ -10078,6 +10078,6 @@
     "message": "van Rossem hard fork"
   },
   "medusa.milestone.vanRossem.description": {
-    "message": "The latest Conway era upgrade, see the hard forks page for details."
+    "message": "An intra-era upgrade of the Conway era, see the hard forks page for details."
   }
 }

@@ -52,7 +52,7 @@ export function milestoneText(key) {
     case 'vanRossem':
       return {
         name: translate({ id: 'medusa.milestone.vanRossem.name', message: 'van Rossem hard fork' }),
-        description: translate({ id: 'medusa.milestone.vanRossem.description', message: 'The latest Conway era upgrade, see the hard forks page for details.' }),
+        description: translate({ id: 'medusa.milestone.vanRossem.description', message: 'An intra-era upgrade of the Conway era, see the hard forks page for details.' }),
       };
     default:
       return { name: key, description: '' };
