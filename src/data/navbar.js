@@ -93,7 +93,7 @@ function getNavbarItems() {
           items: [
             {to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards'},
             {to: '/governance/delegate', label: 'Delegate your vote', description: 'Lend your voting power to a DRep'},
-            {to: '/stablecoins', label: 'Stablecoins', description: 'Stablecoins on Cardano and their live data'},
+            {to: '/defi', label: 'DeFi', description: 'Swap, lend and earn with open applications'},
           ],
         },
       ],
