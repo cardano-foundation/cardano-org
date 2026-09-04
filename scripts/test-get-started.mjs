@@ -10,6 +10,7 @@ import { detectDevice, pickWalletsForDevice } from '../src/utils/getStarted/devi
 import { wordlist as BIP39_ENGLISH } from '@scure/bip39/wordlists/english.js';
 import { DEMO_PHRASE, makeExercise } from '../src/utils/getStarted/demoPhrase.mjs';
 import { STATION_QUESTIONS } from '../src/utils/getStarted/questions.mjs';
+import { createLatest, checkAccount, EMPTY_NAMES } from '../src/utils/getStarted/check.mjs';
 
 test('parseLovelace accepts only non-negative decimal integers', () => {
   assert.equal(parseLovelace('0'), 0n);
@@ -281,4 +282,85 @@ test('every curated station question exists in its quiz source', () => {
       assert.ok(questions.some((q) => q.id === id), `${id} missing in ${quiz}.json`);
     }
   }
+});
+
+function deferred() {
+  let resolve;
+  let reject;
+  const promise = new Promise((res, rej) => { resolve = res; reject = rej; });
+  return { promise, resolve, reject };
+}
+
+test('createLatest: only the newest id is current', () => {
+  const latest = createLatest();
+  const a = latest.next();
+  const b = latest.next();
+  assert.equal(latest.isCurrent(a), false);
+  assert.equal(latest.isCurrent(b), true);
+  latest.invalidate();
+  assert.equal(latest.isCurrent(b), false);
+});
+
+test('checkAccount returns status, names and result', async () => {
+  const api = {
+    post: async (path) => {
+      if (path === '/account_info') return { data: [{ status: 'registered', total_balance: '3000000', delegated_pool: 'pool1abc', delegated_drep: 'drep1xyz' }] };
+      if (path === '/pool_info') return { data: [{ meta_json: { name: 'Example Pool', ticker: 'EXMPL' } }] };
+      if (path === '/drep_metadata') return { data: [{ meta_json: { body: { givenName: { '@value': 'Alice' } } } }] };
+      throw new Error(`unexpected ${path}`);
+    },
+  };
+  const out = await checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true });
+  assert.equal(out.result, 'ok');
+  assert.equal(out.status.ada, true);
+  assert.deepEqual(out.names, { poolName: 'Example Pool', poolTicker: 'EXMPL', drepName: 'Alice' });
+});
+
+test('checkAccount: empty array is result empty, wallet balance fills the unknown ada flag', async () => {
+  const api = { post: async () => ({ data: [] }) };
+  const out = await checkAccount({ api, stakeAddress: 'stake1u9abc', readWalletBalance: async () => '5000000', isCurrent: () => true });
+  assert.equal(out.result, 'empty');
+  assert.equal(out.status.ada, true);
+  assert.equal(out.status.stake, UNKNOWN);
+  assert.deepEqual(out.names, EMPTY_NAMES);
+});
+
+test('checkAccount: failing name lookups do not fail the check', async () => {
+  const api = {
+    post: async (path) => {
+      if (path === '/account_info') return { data: [{ delegated_pool: 'pool1abc', delegated_drep: 'drep1xyz', total_balance: '1' }] };
+      throw new Error('down');
+    },
+  };
+  const out = await checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true });
+  assert.equal(out.status.stake, true);
+  assert.deepEqual(out.names, EMPTY_NAMES);
+});
+
+test('checkAccount: a superseded request resolves to null even when it finishes last', async () => {
+  const latest = createLatest();
+  const first = deferred();
+  const second = deferred();
+  let calls = 0;
+  const api = {
+    post: async (path) => {
+      if (path !== '/account_info') return { data: [] };
+      calls += 1;
+      return calls === 1 ? first.promise : second.promise;
+    },
+  };
+  const idA = latest.next();
+  const runA = checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => latest.isCurrent(idA) });
+  const idB = latest.next();
+  const runB = checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => latest.isCurrent(idB) });
+  second.resolve({ data: [{ total_balance: '2' }] });
+  first.resolve({ data: [{ total_balance: '1' }] });
+  const [a, b] = await Promise.all([runA, runB]);
+  assert.equal(a, null);
+  assert.equal(b.status.balanceLovelace, '2');
+});
+
+test('checkAccount rejects when the account query fails', async () => {
+  const api = { post: async () => { throw new Error('timeout'); } };
+  await assert.rejects(checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true }));
 });
