@@ -4214,7 +4214,16 @@
     "message": "View on explorer"
   },
   "governance.delegate.error.stakeNotRegistered": {
-    "message": "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote."
+    "message": "This tool needs a registered stake key. You can register yours by delegating to a stake pool first."
+  },
+  "governance.delegate.error.stakeNotRegistered.link": {
+    "message": "Delegate your ada"
+  },
+  "governance.delegate.wallet.detecting": {
+    "message": "Looking for Cardano wallets…"
+  },
+  "governance.delegate.wallet.connecting": {
+    "message": "Waiting for your wallet…"
   },
   "governance.delegate.error.generic": {
     "message": "Delegation failed: {error}"
