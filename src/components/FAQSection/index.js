@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
 import { renderAnswerArray } from "@site/src/utils/textUtils";
-import delegationFAQ from "@site/src/data/delegationFAQ.json";
 import operationFAQ from "@site/src/data/operationFAQ.json";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
@@ -15,12 +14,11 @@ import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 // FIXME: need to make clear that protocol distributes rewards and pools do not have custody
 
 const faqData = {
-  delegationFAQ,
   operationFAQ,
   pineappleFAQ,
 };
 
-export default function FAQSection({ jsonFileName = "delegationFAQ", data }) {
+export default function FAQSection({ jsonFileName = "operationFAQ", data }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqList = data || faqData[jsonFileName] || [];
 

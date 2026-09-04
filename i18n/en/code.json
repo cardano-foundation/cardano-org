@@ -3053,7 +3053,7 @@
     "message": "What is a stake pool?"
   },
   "delegation.faq.a1.p1": {
-    "message": "Stake pools are run by stake pool operators. These are network participants with the skills to reliably ensure consistent uptime of a node, which is essential in ensuring the success of the Ouroboros protocol and the Cardano network as a whole."
+    "message": "Stake pools are run by stake pool operators, network participants who keep a node online around the clock. The protocol picks a slot leader for each block at random, and the chance of a pool being picked grows with the stake delegated to it. Each block a pool makes earns rewards, which the protocol shares with everyone delegating to that pool in proportion to their stake. Operators deduct their fixed cost and margin from the pool's share before the rest is distributed."
   },
   "delegation.faq.a1.p2": {
     "message": "The protocol uses a probabilistic mechanism to select a leader for each slot, who will be expected to create the next block in the chain. The chance of a stake pool node being selected as slot leader increases proportionately to the amount of stake delegated to that node. Each time a stake pool node is selected as a slot leader and successfully creates a block, it receives a reward, which is shared with the pool proportionate to the amount each member has delegated. Stake pool operators can deduct their running costs from the awarded ada, as well as specify a profit margin for providing the service."
@@ -3062,31 +3062,43 @@
     "message": "Can I re-delegate my stake to another pool?"
   },
   "delegation.faq.a2.p1": {
-    "message": "Delegated stake can be re-delegated to another pool at any time. Re-delegated stake will remain in the current pool until the epoch after next (from the point of re-delegation), after which your delegation preferences will be updated on the chain and your stake moved to the new stake pool. Rewards are distributed from the end of each epoch, so you'll continue to receive rewards from your original stake pool for two epochs before your new delegation preferences are applied."
+    "message": "Yes, at any time. A re-delegation becomes active in the epoch after next. Your old pool still earns you rewards for three more payouts, and the new pool takes over from the fourth. There is no gap and nothing is lost."
+  },
+  "delegation.faq.qFirstRewards": {
+    "message": "When do my first rewards arrive?"
+  },
+  "delegation.faq.aFirstRewards.p1": {
+    "message": "About 15 to 20 days after you delegate, provided the pool mints blocks. If you delegate in epoch N, your stake is counted in the snapshot at the start of epoch N+1, becomes active in epoch N+2, the rewards for that epoch are calculated during N+3 and paid at the start of N+4. From then on rewards arrive every epoch and are automatically part of your delegated stake."
+  },
+  "delegation.faq.qVote": {
+    "message": "Do I also need to delegate my vote?"
+  },
+  "delegation.faq.aVote.p1": {
+    "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active vote delegation. You can delegate to a DRep, or choose abstain or no confidence, on the [vote delegation page](/governance/delegate). Rewards keep accumulating either way."
   },
   "delegation.faq.q3": {
     "message": "Can I delegate to multiple stake pools?"
   },
   "delegation.faq.a3.p1": {
-    "message": "Some wallets offer different solutions for delegating to different stake pools at the same time. [Discover wallets](/what-is-ada#wallets)."
+    "message": "Some wallets let you split your ada across several accounts and delegate each to a different pool. [Discover wallets](/wallets)."
   },
   "delegation.faq.q4": {
     "message": "What is stake pool performance?"
   },
   "delegation.faq.a4.p1": {
-    "message": "The performance metric is an indicator of how well a stake pool is performing. Considering that the slot leader election process is private, it is only possible to estimate how often the stake pool should be elected based on the number of actually produced blocks. A pool can be nominated more often than expected based on its stake. For example, if a pool only produces half the number of blocks that it was nominated for, its performance rating is 50%. This could happen because the pool has a poor network connection, or has been turned off by its operator."
+    "message": "Performance compares the blocks a pool actually made with the blocks it was expected to make given its stake. The slot leader election is private, so this can only be estimated over time. A pool that has not been picked yet in the current epoch shows a low performance for that epoch even if it is running fine."
   },
   "delegation.faq.a4.p2": {
-    "message": "Performance ratings make more sense over a longer period of time. If a pool has not yet been selected to produce a block in the current epoch, its performance rating will be 0%, even if it is likely to produce blocks later in the epoch. Performance ratings of over 100% are possible if a pool creates more blocks than it was nominated to produce."
+    "message": "Performance ratings make more sense over a longer period of time. Pool explorers show lifetime and recent performance side by side."
   },
   "delegation.faq.q5": {
     "message": "What is stake pool saturation?"
   },
   "delegation.faq.a5.p1": {
-    "message": "Saturation is a term used to indicate that a particular stake pool has more stake delegated to it than is ideal for the network, and once a pool reaches the point of saturation it will offer diminishing rewards. The saturation mechanism was designed to prevent centralization by encouraging delegators to delegate to different stake pools, and operators to set up alternative pools so that they can continue earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their stake and stake pool operators."
+    "message": "A pool is saturated once it holds more stake than the protocol considers ideal. Beyond that point the rewards for everyone in the pool shrink. The limit is set by a protocol parameter and applies to every pool equally."
   },
   "delegation.faq.a5.p2": {
-    "message": "The goal is to avoid any single pool becoming too large – thereby disincentivizing delegation to other pools – and receiving a disproportionate amount of the rewards. The health of the network is partly determined by having a high number of active stake pools with a balanced amount of stake delegated to them. The more numerous and geographically diverse the network's pools, the better. Each stake pool's saturation percentage is shown within the Daedalus stake pool selection menu."
+    "message": "The goal is to keep any single pool from growing too large, which keeps the network decentralized. Each pool's saturation is shown in most wallets and pool explorers, and in the delegation tool above."
   },
   "delegation.faq.q6": {
     "message": "What is stake pool desirability?"
@@ -3104,10 +3116,10 @@
     "message": "How should I choose a stake pool?"
   },
   "delegation.faq.a8.p1": {
-    "message": "Choosing a stake pool involves several factors to consider to ensure you make a well-informed decision. So-called [pool tools](/apps?tags=pooltool) can help you choose a stake pool. Points to consider:"
+    "message": "Choosing a stake pool involves several factors. So-called [pool tools](/apps?tags=pooltool) can help you compare them."
   },
   "delegation.faq.a8.p2": {
-    "message": "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of the pool's reliability and effective operation."
+    "message": "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of a well-run pool."
   },
   "delegation.faq.a8.p3": {
     "message": "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block."
@@ -3116,28 +3128,31 @@
     "message": "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance."
   },
   "delegation.faq.a8.p5": {
-    "message": "**Fixed Fees:** There is often a minimum fixed fee (set by the protocol) that pools will charge. Check what fixed fee the pool charges."
+    "message": "**Fixed Fees:** Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost). The current minimum is shown in the delegation tool above. Check what a pool charges."
   },
   "delegation.faq.a8.p6": {
-    "message": "**Saturation Point:** A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards, so it's advisable to choose a pool below this threshold."
+    "message": "**Saturation Point:** A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards."
+  },
+  "delegation.faq.a8.p9": {
+    "message": "**Pledge:** Operators commit some of their own ada to their pool. A pool that does not meet its declared [pledge](/glossary/pledge) earns no rewards for that epoch."
   },
   "delegation.faq.a8.p7": {
-    "message": "**Community Engagement:** Look for pools that actively engage with the Cardano community. This can be through educational content, community support, or contributions to the Cardano ecosystem."
+    "message": "**Community Engagement:** Look for pools that actively engage with the Cardano community. This can be through educational content, community support, or contributions to the ecosystem."
   },
   "delegation.faq.a8.p8": {
-    "message": "**Mission-Driven Pools:** Some pools donate a portion of their fees to charitable causes or are dedicated to specific missions like environmental sustainability or education. If this aligns with your values, it might influence your choice."
+    "message": "**Mission-Driven Pools:** Some pools donate a portion of their fees to charitable causes or are dedicated to specific missions like environmental sustainability or social impact."
   },
   "delegation.faq.q9": {
     "message": "How much will I earn in rewards?"
   },
   "delegation.faq.a9.p1": {
-    "message": "You can use the [rewards calculator](/calculator) to get an idea of how much you will earn in rewards. It's important to note that the calculator produces only reward estimates and shouldn't be considered definitive or a guarantee of reward amounts. In the future, we will likely test different parameters that may affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return."
+    "message": "The [rewards calculator](/calculator/?calculator=delegator) gives you an estimate. It cannot predict the future: rewards depend on the pool's performance, its fees and the total stake in the network. Protocol parameters can change through on-chain governance, so estimates are subject to change."
   },
   "delegation.faq.q10": {
     "message": "What wallets are supported and where do I find them?"
   },
   "delegation.faq.a10.p1": {
-    "message": "There are various wallets to choose from. Please make sure that you only download wallets from trustworthy sites. [Discover wallets](/what-is-ada#wallets)."
+    "message": "Most current self-custody Cardano wallets support delegation. Only download wallets from trustworthy sites. [Discover wallets](/wallets)."
   },
   "delegation.faq.q11": {
     "message": "Can I restore an ada balance from a hardware wallet?"
@@ -3149,19 +3164,82 @@
     "message": "Will the ada rewards I earn be added to my delegated stake?"
   },
   "delegation.faq.a12.p1": {
-    "message": "Yes. Rewards earned accrue with your original stake. When rewards are received, the balance of your reward account increases – and, consequently, the delegated stake is increased."
+    "message": "Yes. Rewards accrue in your reward account and count towards your delegated stake automatically, so they compound without any action on your part. You can withdraw them to your spending balance at any time once your stake key also has an active vote delegation (see above)."
   },
   "stakePoolDelegation.hero.title": {
     "message": "Delegate Your Stake"
   },
   "stakePoolDelegation.hero.description": {
-    "message": "To build the network, earn rewards, and become part of the Cardano journey."
+    "message": "Connect your wallet, choose a stake pool, and become eligible for staking rewards. Non-custodial, no lock-up, your ada never leaves your wallet and stays spendable."
+  },
+  "stakePoolDelegation.delegate.loading": {
+    "message": "Loading delegation tool…"
+  },
+  "stakePoolDelegation.how.wallet.label": {
+    "message": "Wallet"
+  },
+  "stakePoolDelegation.how.wallet.text": {
+    "message": "Most current self-custody Cardano wallets support delegation. Connect one above or delegate directly inside your wallet app."
+  },
+  "stakePoolDelegation.how.pool.label": {
+    "message": "Pool"
+  },
+  "stakePoolDelegation.how.pool.text": {
+    "message": "Small pools mint blocks less often, so their rewards vary more from epoch to epoch. Compare performance, fees, pledge and saturation before choosing."
+  },
+  "stakePoolDelegation.how.sign.label": {
+    "message": "Sign"
+  },
+  "stakePoolDelegation.how.sign.text": {
+    "message": "One transaction with a small fee. If your stake key is new, it also includes a refundable stake key deposit."
+  },
+  "stakePoolDelegation.how.rewards.label": {
+    "message": "Rewards"
+  },
+  "stakePoolDelegation.how.rewards.text": {
+    "message": "Your delegation becomes active in the epoch after next. If the pool mints blocks, first rewards arrive about 15 to 20 days later and are paid every epoch after that. Rewards compound automatically."
   },
   "stakePoolDelegation.meta.title": {
-    "message": "Delegate ada, Cardano Staking Made Simple"
+    "message": "Delegate ada to a Stake Pool"
   },
   "stakePoolDelegation.meta.description": {
-    "message": "Delegate your stake to build the network, earn rewards, and become part of the Cardano journey."
+    "message": "Delegate your ada to a Cardano stake pool directly from cardano.org. Connect your wallet, pick a pool, and become eligible for staking rewards."
+  },
+  "stakePoolDelegation.how.divider": {
+    "message": "How delegation works"
+  },
+  "stakePoolDelegation.how.key": {
+    "message": "Your ada stays in your wallet and remains spendable at any time. There is no lock-up, and you can switch pools whenever you like."
+  },
+  "stakePoolDelegation.how.networkLink": {
+    "message": "How staking secures the network"
+  },
+  "stakePoolDelegation.how.glossary.snapshot": {
+    "message": "Stake snapshot"
+  },
+  "stakePoolDelegation.how.glossary.rewards": {
+    "message": "Rewards"
+  },
+  "stakePoolDelegation.how.glossary.saturation": {
+    "message": "Pool saturation"
+  },
+  "stakePoolDelegation.how.glossary.minCost": {
+    "message": "Minimum pool cost"
+  },
+  "stakePoolDelegation.alt.heading": {
+    "message": "Prefer another tool?"
+  },
+  "stakePoolDelegation.alt.intro": {
+    "message": "These community pool explorers help you compare stake pools in depth."
+  },
+  "stakePoolDelegation.alt.wallets": {
+    "message": "Most wallets can delegate on their own."
+  },
+  "stakePoolDelegation.alt.walletsLink": {
+    "message": "Find a wallet"
+  },
+  "stakePoolDelegation.alt.more": {
+    "message": "More tools"
   },
   "stakePoolDelegation.whatIsStake.divider": {
     "message": "What is stake?"
@@ -9944,5 +10022,215 @@
   },
   "stablecoins.ecosystem.defiLink": {
     "message": "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them."
+  },
+  "stakePoolDelegation.delegate.account.walletError": {
+    "message": "Could not read the stake key from this wallet. Disconnect and try again."
+  },
+  "stakePoolDelegation.delegate.account.noStakeKey": {
+    "message": "This wallet has no stake key. Delegation needs a Shelley-era wallet or account."
+  },
+  "stakePoolDelegation.delegate.account.checking": {
+    "message": "Checking your stake key…"
+  },
+  "stakePoolDelegation.delegate.account.unknown": {
+    "message": "Could not check your stake key."
+  },
+  "stakePoolDelegation.delegate.account.unregistered": {
+    "message": "Not yet delegated. Your first delegation also registers your stake key ({deposit} deposit, refunded when you deregister)."
+  },
+  "stakePoolDelegation.delegate.account.unregisteredNoAmount": {
+    "message": "Not yet delegated. Your first delegation also registers your stake key (refundable deposit)."
+  },
+  "stakePoolDelegation.delegate.account.notDelegated": {
+    "message": "Not delegated to a stake pool"
+  },
+  "stakePoolDelegation.delegate.account.delegated": {
+    "message": "Delegated to {pool}"
+  },
+  "stakePoolDelegation.delegate.account.connected": {
+    "message": "Connected: {name} · {addr}"
+  },
+  "stakePoolDelegation.delegate.account.stakeKey": {
+    "message": "Stake key"
+  },
+  "stakePoolDelegation.delegate.account.selectLabel": {
+    "message": "Choose the stake key to delegate"
+  },
+  "stakePoolDelegation.delegate.retry": {
+    "message": "Retry"
+  },
+  "stakePoolDelegation.delegate.account.rewardsUnavailable": {
+    "message": "Rewards available: not available right now"
+  },
+  "stakePoolDelegation.delegate.account.rewards": {
+    "message": "Rewards available: {amount} ada"
+  },
+  "stakePoolDelegation.delegate.account.disconnect": {
+    "message": "Disconnect"
+  },
+  "stakePoolDelegation.delegate.card.group": {
+    "message": "Part of a multi-pool operator ({group})"
+  },
+  "stakePoolDelegation.delegate.card.current": {
+    "message": "Your current pool"
+  },
+  "stakePoolDelegation.delegate.card.saturation": {
+    "message": "Saturation"
+  },
+  "stakePoolDelegation.delegate.card.margin": {
+    "message": "Margin"
+  },
+  "stakePoolDelegation.delegate.card.fixedCost": {
+    "message": "Fixed cost per epoch"
+  },
+  "stakePoolDelegation.delegate.card.pledge": {
+    "message": "Pledge"
+  },
+  "stakePoolDelegation.delegate.card.liveStake": {
+    "message": "Live stake"
+  },
+  "stakePoolDelegation.delegate.card.delegators": {
+    "message": "Delegators"
+  },
+  "stakePoolDelegation.delegate.card.blocks": {
+    "message": "Lifetime blocks"
+  },
+  "stakePoolDelegation.delegate.card.saturated": {
+    "message": "Saturated: rewards for all delegators are reduced."
+  },
+  "stakePoolDelegation.delegate.card.pledgeNotMet": {
+    "message": "Pledge not met: the pool earns no rewards for epochs in which its pledge is not met."
+  },
+  "stakePoolDelegation.delegate.card.retiring": {
+    "message": "Retiring in epoch {epoch}. New delegations to this pool are not possible here."
+  },
+  "stakePoolDelegation.delegate.card.homepage": {
+    "message": "Homepage"
+  },
+  "stakePoolDelegation.delegate.card.explorer": {
+    "message": "View on explorer"
+  },
+  "stakePoolDelegation.delegate.card.copied": {
+    "message": "Copied"
+  },
+  "stakePoolDelegation.delegate.card.copy": {
+    "message": "Copy ID"
+  },
+  "stakePoolDelegation.delegate.card.ctaBusy": {
+    "message": "Preparing…"
+  },
+  "stakePoolDelegation.delegate.card.cta": {
+    "message": "Delegate"
+  },
+  "stakePoolDelegation.delegate.error.poolUnavailable": {
+    "message": "This pool is retiring or no longer registered. Pick another pool."
+  },
+  "stakePoolDelegation.delegate.error.statusUnknown": {
+    "message": "Your stake key status could not be checked. Try again in a moment."
+  },
+  "stakePoolDelegation.delegate.error.wrongNetwork": {
+    "message": "Your wallet is on the wrong network. Switch to Mainnet and try again."
+  },
+  "stakePoolDelegation.delegate.error.accountChanged": {
+    "message": "The wallet account changed. Reconnect and try again."
+  },
+  "stakePoolDelegation.delegate.error.statusChanged": {
+    "message": "Your stake key status changed. Reconnect and try again."
+  },
+  "stakePoolDelegation.delegate.error.insufficientFunds": {
+    "message": "Not enough ada to cover the fee and the stake key deposit."
+  },
+  "stakePoolDelegation.delegate.error.generic": {
+    "message": "Delegation failed: {error}"
+  },
+  "stakePoolDelegation.delegate.tx.building": {
+    "message": "Preparing delegation of {stake} to {pool}. Please confirm in your wallet…"
+  },
+  "stakePoolDelegation.delegate.tx.success": {
+    "message": "Delegation to {pool} submitted. It becomes active in the epoch after next."
+  },
+  "stakePoolDelegation.delegate.unavailable": {
+    "message": "The delegation tool is unavailable right now. You can delegate directly inside your wallet app."
+  },
+  "stakePoolDelegation.delegate.blocked.noWallet": {
+    "message": "Connect a wallet to delegate."
+  },
+  "stakePoolDelegation.delegate.blocked.walletError": {
+    "message": "The stake key could not be read from this wallet, so delegation is off. Disconnect and try again."
+  },
+  "stakePoolDelegation.delegate.blocked.noStakeKey": {
+    "message": "This wallet has no stake key. Delegation needs a Shelley-era wallet or account."
+  },
+  "stakePoolDelegation.delegate.blocked.checking": {
+    "message": "Checking your stake key before you can delegate…"
+  },
+  "stakePoolDelegation.delegate.blocked.unknown": {
+    "message": "Your stake key could not be checked. Retry above before delegating."
+  },
+  "stakePoolDelegation.delegate.wallet.heading": {
+    "message": "Connect a wallet to delegate"
+  },
+  "stakePoolDelegation.delegate.wallet.empty": {
+    "message": "No Cardano wallet detected. Install Eternl, Lace, VESPR or another CIP-30 wallet, or delegate directly inside your wallet app."
+  },
+  "stakePoolDelegation.delegate.wallet.findWallet": {
+    "message": "Find a wallet"
+  },
+  "stakePoolDelegation.delegate.params": {
+    "message": "Current protocol values: stake key deposit {deposit} (refundable), minimum fixed fee per epoch {minCost}."
+  },
+  "stakePoolDelegation.delegate.paramsUnavailable": {
+    "message": "Current protocol values (stake key deposit, minimum fixed fee) could not be loaded."
+  },
+  "stakePoolDelegation.delegate.vote.title": {
+    "message": "One more step: delegate your vote"
+  },
+  "stakePoolDelegation.delegate.vote.text": {
+    "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active vote delegation. Delegate to a DRep, or choose abstain or no confidence, in one more transaction."
+  },
+  "stakePoolDelegation.delegate.vote.cta": {
+    "message": "Delegate your vote"
+  },
+  "stakePoolDelegation.delegate.search.heading": {
+    "message": "Find a stake pool"
+  },
+  "stakePoolDelegation.delegate.search.placeholder": {
+    "message": "Search by ticker or paste a pool ID"
+  },
+  "stakePoolDelegation.delegate.search.label": {
+    "message": "Search stake pools by ticker or pool ID"
+  },
+  "stakePoolDelegation.delegate.search.tooShort": {
+    "message": "Type at least two characters of a ticker, or paste a full pool ID."
+  },
+  "stakePoolDelegation.delegate.search.invalidId": {
+    "message": "This does not look like a valid pool ID. Check the ID."
+  },
+  "stakePoolDelegation.delegate.search.failed": {
+    "message": "Search failed."
+  },
+  "stakePoolDelegation.delegate.search.noIndex": {
+    "message": "The pool list is not available, so ticker search is off. Paste a pool ID instead."
+  },
+  "stakePoolDelegation.delegate.search.unknownId": {
+    "message": "This pool is retired or unknown. Check the ID."
+  },
+  "stakePoolDelegation.delegate.search.noResults": {
+    "message": "No pool with that ticker. Try the pool ID instead."
+  },
+  "stakePoolDelegation.delegate.sampleIntro": {
+    "message": "A random selection of registered pools with at least {stake} of active stake, a margin below {margin}%, not saturated, pledge met and at least one block minted. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID."
+  },
+  "stakePoolDelegation.delegate.shuffle": {
+    "message": "Shuffle pools"
+  },
+  "stakePoolDelegation.delegate.index.failed": {
+    "message": "Could not load the pool list. You can still delegate by pasting a pool ID."
+  },
+  "stakePoolDelegation.delegate.sample.failed": {
+    "message": "Could not load pool details."
+  },
+  "stakePoolDelegation.delegate.sample.empty": {
+    "message": "No pool matched the criteria right now. Search by ticker or pool ID."
   }
 }
