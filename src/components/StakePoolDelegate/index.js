@@ -38,11 +38,25 @@ class PoolUnavailableError extends Error {
   }
 }
 
+// Thrown when the preflight itself (fetchPoolInfo or fetchAccounts) fails,
+// for example a network or 5xx error, as opposed to a preflight that
+// succeeds but finds the pool unavailable. Mapped to the same message as a
+// wallet-side status check failure, since neither preflight result is known.
+class PreflightError extends Error {
+  constructor() {
+    super("Could not verify the pool or the stake key before building the transaction.");
+    this.name = "PreflightError";
+  }
+}
+
 // Maps a thrown error to the translated banner message, or null when the
 // user simply cancelled in the wallet.
 function errorMessage(err) {
   if (err instanceof PoolUnavailableError) {
     return translate({ id: "stakePoolDelegation.delegate.error.poolUnavailable", message: "This pool is retiring or no longer registered. Pick another pool." });
+  }
+  if (err instanceof PreflightError) {
+    return translate({ id: "stakePoolDelegation.delegate.error.statusUnknown", message: "Your stake key status could not be checked. Try again in a moment." });
   }
   switch (classifyError(err)) {
     case "userCancelled":
@@ -171,11 +185,19 @@ export default function StakePoolDelegate() {
     try {
       // Preflight: fresh pool row (must be this exact pool, registered, not
       // retiring) and a fresh registration status for the chosen stake key.
-      // The tx uses only these fresh values, never the rendered state.
-      const [infos, freshAccounts] = await Promise.all([
-        fetchPoolInfo(apiClient, [pool.id]),
-        fetchAccounts(apiClient, [stakeAddress]),
-      ]);
+      // The tx uses only these fresh values, never the rendered state. A
+      // failure of the preflight calls themselves (network, 5xx) is a
+      // PreflightError, distinct from a preflight that succeeds but finds
+      // the pool gone (PoolUnavailableError below).
+      let infos, freshAccounts;
+      try {
+        [infos, freshAccounts] = await Promise.all([
+          fetchPoolInfo(apiClient, [pool.id]),
+          fetchAccounts(apiClient, [stakeAddress]),
+        ]);
+      } catch {
+        throw new PreflightError();
+      }
       if (!live()) return;
       const fresh = infos.find((row) => row?.pool_id_bech32 === pool.id);
       if (!fresh || fresh.pool_status !== "registered" || fresh.retiring_epoch != null) {
@@ -357,7 +379,10 @@ export default function StakePoolDelegate() {
               : search.status === "ready" && search.data.indexMissing
                 ? translate({ id: "stakePoolDelegation.delegate.search.noIndex", message: "The pool list is not available, so ticker search is off. Paste a pool ID instead." })
                 : null,
-            search.retry,
+            // indexMissing only happens because the pool index itself failed to
+            // load, so retrying the search would just reproduce it. Retry the
+            // index instead, the other search error keeps retrying the search.
+            search.status === "ready" && search.data.indexMissing ? index.retry : search.retry,
             search.kind === "id"
               ? translate({ id: "stakePoolDelegation.delegate.search.unknownId", message: "This pool is retired or unknown. Check the ID." })
               : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool with that ticker. Try the pool ID instead." })
@@ -375,7 +400,7 @@ export default function StakePoolDelegate() {
             <button
               type="button"
               className={`button button--secondary ${styles.shuffleButton}`}
-              disabled={sample.status !== "ready"}
+              disabled={sample.status !== "ready" || txBusy}
               onClick={sample.shuffle}
             >
               {translate({ id: "stakePoolDelegation.delegate.shuffle", message: "Shuffle pools" })}

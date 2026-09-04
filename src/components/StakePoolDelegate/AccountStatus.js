@@ -122,7 +122,8 @@ export default function AccountStatus({
           )}
         </div>
       </div>
-      <button type="button" onClick={onDisconnect} className={styles.disconnectButton} disabled={busy}>
+      {/* Disconnect stays enabled while busy: it is the escape hatch out of a wallet prompt that never settles. */}
+      <button type="button" onClick={onDisconnect} className={styles.disconnectButton}>
         {translate({ id: "stakePoolDelegation.delegate.account.disconnect", message: "Disconnect" })}
       </button>
     </div>
