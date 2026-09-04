@@ -15,6 +15,7 @@ import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
@@ -84,6 +85,9 @@ function GovernanceRolesSection() {
       <p className="black-text">
         {translate({id: 'governance.onboarding.intro', message: 'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding.'})}
       </p>
+      <TitleWithText
+        description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}
+      />
       <SpacerBox size="small" />
 
       <div className={styles.rolesTriangle}>

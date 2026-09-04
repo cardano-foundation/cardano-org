@@ -85,6 +85,15 @@ export default function Layer2() {
             <CategoryHeader category={Sidechains} />
             <CardGrid projects={Sidechains.projects} />
           </BoundaryBox>
+          <BoundaryBox>
+            <TitleWithText
+              description={translate({
+                id: "layer2.context.description",
+                message:
+                  "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works).",
+              })}
+            />
+          </BoundaryBox>
           <SpacerBox size="medium" />
         </BackgroundWrapper>
 

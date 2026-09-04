@@ -2576,9 +2576,7 @@
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
   },
-  "hardforks.content.description": {
-    "message": "Hard forks in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time (slot) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
-  },
+  "hardforks.content.description": {"message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."},
   "hardforks.divider.timeline": {
     "message": "Timeline"
   },
@@ -9735,5 +9733,10 @@
   "stakePoolDelegation.quiz.title": {"message": "Test what you learned"},
   "stakePoolDelegation.quiz.buttonText": {"message": "Start quiz"},
   "stakePoolOperation.goDeeper.description": {"message": "How a pool is chosen to produce a block, and how rewards are calculated and paid out, is explained step by step in [how Cardano works](/how-cardano-works#consensus)."},
-  "calculator.context.description": {"message": "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."}
+  "calculator.context.description": {"message": "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."},
+  "hardforks.upgrades.description": {"message": "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."},
+  "research.intro.description": {"message": "Cardano's design rests on peer-reviewed research, from the [Ouroboros](/ouroboros) family of [proof-of-stake](/glossary/proof-of-stake) protocols to the on-chain [governance](/governance) model. The papers and specifications below are grouped by development era. For a plain-language account of what they add up to, read [how Cardano works](/how-cardano-works)."},
+  "governance.onboarding.background": {"message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."},
+  "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
+  "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."}
 }
