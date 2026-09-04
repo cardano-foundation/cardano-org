@@ -9935,5 +9935,149 @@
   },
   "stablecoins.ecosystem.defiLink": {
     "message": "Stablecoins are one building block of [DeFi on Cardano](/defi), and most trading and lending on Cardano is priced in them."
+  },
+  "medusa.page.title": {
+    "message": "Medusa, the cardano-ledger history"
+  },
+  "medusa.page.description": {
+    "message": "Watch the cardano-ledger repository grow month by month since 2018, hard fork by hard fork, in an interactive 3D visualization."
+  },
+  "medusa.page.noWebgl": {
+    "message": "This visualization needs WebGL, which your browser or device does not provide."
+  },
+  "medusa.page.noWebglLink": {
+    "message": "Read about the hard forks instead."
+  },
+  "medusa.page.canvasLabel": {
+    "message": "Interactive file tree of the cardano-ledger repository over time"
+  },
+  "medusa.page.hint": {
+    "message": "Space plays and pauses, arrows step, 1 to 9 jump to hard forks, L labels, F fullscreen, H hides this bar."
+  },
+  "medusa.controls.play": {
+    "message": "Play"
+  },
+  "medusa.controls.pause": {
+    "message": "Pause"
+  },
+  "medusa.controls.back": {
+    "message": "One month back"
+  },
+  "medusa.controls.forward": {
+    "message": "One month forward"
+  },
+  "medusa.controls.timeline": {
+    "message": "Timeline"
+  },
+  "medusa.controls.speed": {
+    "message": "Speed"
+  },
+  "medusa.controls.fullscreen": {
+    "message": "Fullscreen"
+  },
+  "medusa.legend.title": {
+    "message": "Eras"
+  },
+  "medusa.legend.byron": {
+    "message": "Byron"
+  },
+  "medusa.legend.shelley": {
+    "message": "Shelley"
+  },
+  "medusa.legend.allegra": {
+    "message": "Allegra"
+  },
+  "medusa.legend.mary": {
+    "message": "Mary"
+  },
+  "medusa.legend.alonzo": {
+    "message": "Alonzo"
+  },
+  "medusa.legend.babbage": {
+    "message": "Babbage"
+  },
+  "medusa.legend.conway": {
+    "message": "Conway"
+  },
+  "medusa.legend.dijkstra": {
+    "message": "Dijkstra"
+  },
+  "medusa.legend.libs": {
+    "message": "Shared libraries"
+  },
+  "medusa.legend.docs": {
+    "message": "Documentation"
+  },
+  "medusa.legend.other": {
+    "message": "Everything else"
+  },
+  "medusa.card.close": {
+    "message": "Dismiss"
+  },
+  "medusa.card.link": {
+    "message": "About this hard fork"
+  },
+  "medusa.card.repoLink": {
+    "message": "View repository"
+  },
+  "medusa.milestone.repoStart.name": {
+    "message": "Repository created"
+  },
+  "medusa.milestone.repoStart.description": {
+    "message": "The ledger rules start life as cardano-ledger-specs, with the Byron rules and the first Shelley drafts."
+  },
+  "medusa.milestone.shelley.name": {
+    "message": "Shelley hard fork"
+  },
+  "medusa.milestone.shelley.description": {
+    "message": "Stake pools and delegation arrive, block production moves to the community."
+  },
+  "medusa.milestone.allegra.name": {
+    "message": "Allegra hard fork"
+  },
+  "medusa.milestone.allegra.description": {
+    "message": "Token locking and validity intervals, the groundwork for smart contracts."
+  },
+  "medusa.milestone.mary.name": {
+    "message": "Mary hard fork"
+  },
+  "medusa.milestone.mary.description": {
+    "message": "Native multi-asset support, tokens on the ledger without smart contracts."
+  },
+  "medusa.milestone.restructure.name": {
+    "message": "Repository restructured"
+  },
+  "medusa.milestone.restructure.description": {
+    "message": "The code moves into the eras and libs layout still used today, most files change their place."
+  },
+  "medusa.milestone.alonzo.name": {
+    "message": "Alonzo hard fork"
+  },
+  "medusa.milestone.alonzo.description": {
+    "message": "Plutus smart contracts go live on mainnet."
+  },
+  "medusa.milestone.vasil.name": {
+    "message": "Vasil hard fork"
+  },
+  "medusa.milestone.vasil.description": {
+    "message": "The Babbage era brings reference inputs, inline datums and reference scripts."
+  },
+  "medusa.milestone.chang.name": {
+    "message": "Chang hard fork"
+  },
+  "medusa.milestone.chang.description": {
+    "message": "The Conway era opens and on-chain governance begins."
+  },
+  "medusa.milestone.plomin.name": {
+    "message": "Plomin hard fork"
+  },
+  "medusa.milestone.plomin.description": {
+    "message": "Full on-chain governance: DRep voting, treasury withdrawals and constitutional changes."
+  },
+  "medusa.milestone.vanRossem.name": {
+    "message": "van Rossem hard fork"
+  },
+  "medusa.milestone.vanRossem.description": {
+    "message": "The latest Conway era upgrade, see the hard forks page for details."
   }
 }

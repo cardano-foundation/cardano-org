@@ -1,0 +1,241 @@
+.explorer {
+  position: relative;
+  height: calc(100vh - var(--ifm-navbar-height));
+  min-height: 480px;
+  background: #0b1030;
+  color: #fff;
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.noWebgl {
+  position: relative;
+  max-width: 32rem;
+  margin: 4rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ui > * {
+  pointer-events: auto;
+}
+
+.legend {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(11, 16, 48, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.legendItemActive {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.legendDot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.controls {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(11, 16, 48, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.controlButton {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.controlButton[aria-pressed='true'] {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.timeline {
+  position: relative;
+  flex: 1;
+  height: 2rem;
+}
+
+.timeline input {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.markers {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.4rem;
+}
+
+.marker {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 0.4rem;
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateX(-1px);
+}
+
+.date {
+  min-width: 9rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.speeds {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.hint {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.6rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.3rem;
+  background: rgba(0, 0, 0, 0.7);
+  font: 0.75rem/1.4 monospace;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.labelPinned {
+  background: rgba(0, 51, 173, 0.85);
+}
+
+.card {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: min(22rem, calc(100% - 2rem));
+  padding: 1rem 2.2rem 1rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(11, 16, 48, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.card p {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.cardDate {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cardClose {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .controls {
+    flex-wrap: wrap;
+    bottom: 3.2rem;
+  }
+  .timeline {
+    flex-basis: 100%;
+    order: 10;
+  }
+  .date {
+    /* Natural width and no growing, so a long month name neither wraps into
+       several lines nor runs over the speed buttons. */
+    min-width: max-content;
+    flex: 0 0 auto;
+    margin-left: auto;
+    text-align: right;
+  }
+  .hint {
+    display: none;
+  }
+  .legend {
+    top: auto;
+    bottom: 8.5rem;
+    right: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 100%;
+  }
+}
