@@ -32,7 +32,7 @@ export default function ProgressRail({ stations, account, status, checking, erro
       : translate({ id: 'getStarted.rail.tracking', message: 'Tracking address' });
 
   return (
-    <div className={styles.rail} role="region" aria-label={translate({ id: 'getStarted.rail.label', message: 'Your progress' })}>
+    <div className={styles.rail} data-get-started-rail="" role="region" aria-label={translate({ id: 'getStarted.rail.label', message: 'Your progress' })}>
       <BoundaryBox>
         <nav aria-label={translate({ id: 'getStarted.rail.stepsLabel', message: 'Steps' })} className={styles.railSteps}>
           {stations.map((s, i) => (

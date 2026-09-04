@@ -10,7 +10,13 @@ export function scrollToAnchor(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  // The sticky rail wraps to several rows on narrow screens, so the offset is
+  // measured from the live rail height instead of a fixed scroll-margin.
+  const rail = document.querySelector('[data-get-started-rail]');
+  const navbar = document.querySelector('.navbar');
+  const offset = (rail ? rail.getBoundingClientRect().height : 0) + (navbar ? navbar.getBoundingClientRect().height : 0) + 16;
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
   // pushState keeps every station in the history, so the back button walks
   // back through the stations the way plain anchor links would.
   if (window.location.hash !== `#${id}`) window.history.pushState(null, '', `#${id}`);
