@@ -80,6 +80,15 @@ async function main() {
     assert.ok(finite(l.positions().xy));
   });
 
+  check('seek to the current frame is a no-op', () => {
+    const l = createLayout(history);
+    l.seek(0);
+    const before = l.positions().xy.slice();
+    l.seek(0);
+    assert.deepStrictEqual(l.positions().xy, before);
+    assert.strictEqual(l.count(), 4);
+  });
+
   console.log(`\n${passed} medusa layout tests passed`);
 }
 

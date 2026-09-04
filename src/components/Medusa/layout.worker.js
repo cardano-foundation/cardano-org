@@ -37,8 +37,10 @@ self.onmessage = (event) => {
     return;
   }
   if (!layout) return;
-  if (msg.type === 'step') layout.step();
-  else if (msg.type === 'seek') {
+  if (msg.type === 'step') {
+    layout.step();
+    send();
+  } else if (msg.type === 'seek') {
     layout.seek(msg.frameIndex);
     send();
   } else if (msg.type === 'params') layout.setParams(msg.params);

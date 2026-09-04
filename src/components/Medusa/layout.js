@@ -93,6 +93,7 @@ export function createLayout(history, params = {}) {
       apply(graph.step(), p.reheat);
     },
     seek(i) {
+      if (i === graph.frameIndex) return;
       const incremental = i === graph.frameIndex + 1;
       const delta = graph.seek(i);
       apply(delta, incremental ? p.reheat : 1);
