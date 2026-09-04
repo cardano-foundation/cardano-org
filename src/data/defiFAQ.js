@@ -52,7 +52,7 @@ export function getDefiFAQ() {
         translate({
           id: "defi.faq.loss.a",
           message:
-            "You cannot owe more than you put in. With a swap or a lending deposit the most at stake is the amount you sent, and a contract bug can still cost you all of it. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated, but a protocol cannot claim funds you did not lock.",
+            "A protocol cannot take funds you did not lock into it. With a swap or a lending deposit the most at stake is the amount you sent, and a contract bug can still cost you all of it. With borrowing you can lose the collateral you locked if its price falls and the position is liquidated.",
         }),
       ],
     },

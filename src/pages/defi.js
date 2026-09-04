@@ -25,7 +25,7 @@ function WhatSection() {
           translate({
             id: "defi.what.p2",
             message:
-              "You use DeFi through DApps with your own wallet. The DApp builds the transaction, you check what it does and sign it, and the contract on chain settles it. Nobody in between can reject you, delay you or take a cut beyond the fee the contract charges. On Cardano that is also why the rest of this page keeps coming back to the wallet: it is your account, your login and your signature in one.",
+              "You use DeFi through DApps with your own wallet. The DApp builds the transaction, you check what it does and sign it, and the contract on chain settles it. That takes the bank out of the middle, though not every gatekeeper: a DApp's website can still refuse or delay service, and a trade can carry protocol, liquidity provider or batcher fees on top of the network fee. On Cardano that is also why the rest of this page keeps coming back to the wallet: it is your account, your login and your signature in one.",
           }),
         ]}
         headingDot={true}
@@ -53,7 +53,7 @@ function ComparedSection() {
             translate({
               id: "defi.compared.custody",
               message:
-                "**Custody.** A bank holds your money in its books and owes it to you. In DeFi the funds sit in your wallet or in a contract whose rules you can read, and only your signature moves them.",
+                "**Custody.** A bank holds your money in its books and owes it to you. In DeFi the funds sit in your wallet, where only your signature moves them, or in a contract whose rules you can read, where those rules decide.",
             }),
             translate({
               id: "defi.compared.access",
@@ -131,7 +131,7 @@ function UsesSection() {
           translate({
             id: "defi.uses.stable.text",
             message:
-              "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit most DeFi trading and lending is priced in. Cardano has several, built on different backing models.",
+              "Stablecoins are tokens designed to track a currency such as the US dollar, backed by reserves or by locked crypto. They are the unit trading and lending is commonly priced in. Cardano has several, built on different backing models.",
           }),
         ]}
         headingDot={true}
@@ -187,17 +187,17 @@ function CardanoSection() {
           translate({
             id: "defi.cardano.p1",
             message:
-              "Cardano tracks value with the [extended UTXO model](/glossary/eutxo) instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The fee and the outcome of a transaction are fixed when it is built, so nothing about it can change after you sign: it either goes through as signed or fails. What that means for a swap price comes below.",
+              "Cardano tracks value with the [extended UTXO model](/glossary/eutxo) instead of account balances, and that changes a few things a DeFi user notices. There are no token approvals: a DApp can only spend what the transaction you sign spends, so there is no standing permission to revoke and no risk of an old approval being drained later. The contents, the fee and the script result of a transaction are known before you sign, so nothing about it can change afterwards. It can still be rejected if a coin it planned to spend was spent first, in which case nothing happens, and a script that fails on chain costs the [collateral](/glossary/collateral) your wallet set aside. What that means for a swap price comes below.",
           }),
           translate({
             id: "defi.cardano.p2",
             message:
-              "Tokens are [native to the ledger](/glossary/native-token), so a stablecoin or a DEX token is handled with the same rules as ada, without a wrapper contract that could fail. And ada delegated to a stake pool keeps earning rewards in your wallet, delegation never locks it, so holding ada and using DeFi are not in competition.",
+              "Tokens are [native to the ledger](/glossary/native-token), so a stablecoin or a DEX token is handled by the ledger itself, without a wrapper contract that could fail. Ada in your wallet keeps earning staking rewards while you use DApps, delegation never locks it. Ada you send into a contract follows that contract's rules, and whether it still earns rewards for you depends on the protocol.",
           }),
           translate({
             id: "defi.cardano.p3",
             message:
-              "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot process every order in the same block. Cardano DEXs solve this by batching orders and settling them in rounds, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set. On a batched DEX the batcher also decides the order in which queued swaps settle, within the limits each user set.",
+              "The model also has a cost. A UTXO can be spent only once, so a pool that everyone wants to trade against cannot be used by many separate transactions in the same block. Cardano DEXs solve this by collecting orders and settling them in batches, or by splitting liquidity across many outputs. In practice that means a swap can take a block or two longer than you might expect, and the price you get is the price at settlement, within the limit you set. On a batched DEX the batcher also decides the order in which queued swaps settle, within the limits each user set.",
           }),
         ]}
         headingDot={true}
@@ -249,7 +249,7 @@ function RisksSection() {
               }),
               translate({
                 id: "defi.risks.reversal",
-                message: "**No reversal.** A transaction you signed is final, and there is no support line that can undo it.",
+                message: "**No reversal.** Once a transaction is on chain, there is no support line that can undo it.",
               }),
               translate({
                 id: "defi.risks.keys",
