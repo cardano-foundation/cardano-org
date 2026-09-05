@@ -135,7 +135,6 @@
 }
 
 .saturationTrack {
-  grid-column: 1 / -1;
   height: 6px;
   border-radius: 3px;
   background: var(--ifm-color-emphasis-200);

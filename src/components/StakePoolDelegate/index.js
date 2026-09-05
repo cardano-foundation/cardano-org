@@ -103,7 +103,7 @@ export default function StakePoolDelegate() {
   const index = usePoolIndex(apiClient);
   const indexRows = index.status === "ready" ? index.data : null;
   const sample = useRandomSample(apiClient, indexRows);
-  const search = usePoolSearch(apiClient, indexRows, query);
+  const search = usePoolSearch(apiClient, indexRows, query, index.status);
   const params = useProtocolParams(apiClient);
   const stakeAddresses = useMemo(
     () => (wallet ? wallet.rewardAddresses.map((a) => a.bech32) : null),

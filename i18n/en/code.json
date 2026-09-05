@@ -3167,7 +3167,7 @@
     "message": "Yes. Rewards accrue in your reward account and count towards your delegated stake automatically, so they compound without any action on your part. You can withdraw them to your spending balance at any time once your stake key also has an active vote delegation (see above)."
   },
   "stakePoolDelegation.hero.title": {
-    "message": "Delegate Your Stake"
+    "message": "Delegate your ada"
   },
   "stakePoolDelegation.hero.description": {
     "message": "Connect your wallet, choose a stake pool, and become eligible for staking rewards. Non-custodial, no lock-up, your ada never leaves your wallet and stays spendable."

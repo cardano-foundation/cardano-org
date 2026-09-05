@@ -113,7 +113,7 @@ function getDelegationFAQData() {
 function Hero() {
   return (
     <SiteHero
-      title={[translate({ id: "stakePoolDelegation.hero.title", message: "Delegate Your Stake" })]}
+      title={[translate({ id: "stakePoolDelegation.hero.title", message: "Delegate your ada" })]}
       description={translate({ id: "stakePoolDelegation.hero.description", message: "Connect your wallet, choose a stake pool, and become eligible for staking rewards. Non-custodial, no lock-up, your ada never leaves your wallet and stays spendable." })}
       bannerType="overlap"
     />

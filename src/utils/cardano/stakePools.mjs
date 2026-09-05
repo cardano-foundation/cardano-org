@@ -4,12 +4,12 @@
 import { isValidPoolId, poolIdFromHex } from './bech32.mjs';
 import { parseLovelace } from './lovelace.mjs';
 
-// Minimum criteria for the random selection (spec 1 and 3.6). Tommy,
-// 2026-09-04: active stake from 1M ada (about one block per epoch, keeps
-// dormant pools out while small active pools stay in) and margin below 5
-// percent (keeps private 100 percent pools and expensive pools out). Ticker
-// and ID search never apply these, only the random sample does, and the UI
-// states both thresholds next to the sample.
+// Minimum criteria for the random selection: active stake from 1M ada
+// (roughly one block per epoch, which keeps dormant pools out while small
+// active pools stay in) and margin below 5 percent (which keeps private 100
+// percent pools and expensive pools out). Ticker and ID search never apply
+// these, only the random sample does, and the UI states both thresholds
+// next to the sample.
 export const MIN_ACTIVE_STAKE = 1000000000000n; // lovelace, 1M ada
 export const MAX_MARGIN = 0.05;
 // Candidates loaded per pool_info batch, cards shown, and how often we top up

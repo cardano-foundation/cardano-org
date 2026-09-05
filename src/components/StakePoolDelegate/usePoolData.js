@@ -126,7 +126,7 @@ export function usePoolIndex(api) {
   );
 }
 
-// Random selection (spec 3.6): shuffle the index candidates, load pool_info
+// Random selection: shuffle the index candidates, load pool_info
 // in SAMPLE_SIZE batches and keep what passes the fine filter, topping up at
 // most MAX_RESAMPLES times. Nothing about the sample is cached, every visit
 // and every shuffle draws fresh.
@@ -160,7 +160,9 @@ export function useRandomSample(api, indexRows) {
   return { ...resource, shuffle };
 }
 
-export function usePoolSearch(api, indexRows, query) {
+// Ticker search waits for the index: while it is still loading, the ticker
+// branch stays idle instead of reporting the list as unavailable.
+export function usePoolSearch(api, indexRows, query, indexStatus) {
   const [debounced, setDebounced] = useState(query);
   useEffect(() => {
     const t = setTimeout(() => setDebounced(query), SEARCH_DEBOUNCE_MS);
@@ -168,7 +170,7 @@ export function usePoolSearch(api, indexRows, query) {
   }, [query]);
 
   const parsed = classifyQuery(debounced);
-  const active = api && (parsed.kind === "id" || parsed.kind === "ticker" || parsed.kind === "invalidId");
+  const active = api && (parsed.kind === "id" || parsed.kind === "invalidId" || (parsed.kind === "ticker" && (indexRows || indexStatus === "error")));
   const resource = useResource(
     active
       ? async () => {
@@ -189,7 +191,7 @@ export function usePoolSearch(api, indexRows, query) {
           return { kind: "ticker", pools };
         }
       : null,
-    [api, indexRows, parsed.kind, parsed.value]
+    [api, indexRows, parsed.kind, parsed.value, indexStatus]
   );
   return { ...resource, kind: parsed.kind, query: debounced };
 }

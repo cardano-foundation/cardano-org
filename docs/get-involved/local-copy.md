@@ -49,7 +49,6 @@ cardano-org
 │   │   └── custom.css
 │   ├── data
 │   │   ├── ambassadorsData.json
-│   │   ├── delegationFAQ.json
 │   │   ├── logosCompanies.json
 │   │   ├── operationFAQ.json
 │   │   ├── pineappleFAQ.json
@@ -76,7 +75,6 @@ cardano-org
 - `/docs/` - Contains the Markdown files for the documentation of the components (like this page). Customize the order of the docs sidebar in `sidebars.js`.
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
-  - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/.
   - `/src/data/logosCompanies.json` - Entity and company data for https://cardano.org/entities/.
   - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
   - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/get-involved/faq-component).

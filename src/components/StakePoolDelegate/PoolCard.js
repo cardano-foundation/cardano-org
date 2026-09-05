@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import { Initials } from "@site/src/components/WalletDelegation";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
@@ -18,6 +18,8 @@ function Metric({ label, value }) {
 
 export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDelegate }) {
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef(null);
+  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
   const saturation = pool.saturation;
   const pledgeMet = BigInt(pool.livePledge) >= BigInt(pool.pledge);
   const retired = pool.status === "retired";
@@ -29,7 +31,8 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
     try {
       await navigator.clipboard.writeText(pool.id);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
     } catch {
       // Clipboard can be unavailable, the full id is still in the explorer link.
     }
@@ -68,12 +71,6 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
           label={translate({ id: "stakePoolDelegation.delegate.card.margin", message: "Margin" })}
           value={pool.margin == null ? "?" : `${num(pool.margin * 100, 1)}%`}
         />
-        <div className={styles.saturationTrack} aria-hidden="true">
-          <div
-            className={`${styles.saturationFill} ${fillClass}`}
-            style={{ width: `${Math.min(100, Math.max(0, saturation ?? 0))}%` }}
-          />
-        </div>
         <Metric
           label={translate({ id: "stakePoolDelegation.delegate.card.fixedCost", message: "Fixed cost per epoch" })}
           value={`${formatAdaWhole(pool.fixedCost, locale)} ada`}
@@ -95,6 +92,13 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
           value={num(pool.blocks)}
         />
       </dl>
+
+      <div className={styles.saturationTrack} aria-hidden="true">
+        <div
+          className={`${styles.saturationFill} ${fillClass}`}
+          style={{ width: `${Math.min(100, Math.max(0, saturation ?? 0))}%` }}
+        />
+      </div>
 
       {saturation != null && saturation >= 100 && (
         <p className={styles.hint}>
