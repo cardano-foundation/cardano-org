@@ -4,7 +4,7 @@
  */
 import { createLayout } from './layout.js';
 
-const TICK_MS = 33;
+let tickMs = 33;
 // d3's alphaMin: below it the simulation no longer moves, so ticking and
 // posting positions would only burn a core. Steps and seeks reheat.
 const ALPHA_MIN = 0.001;
@@ -25,7 +25,7 @@ function start() {
     if (layout.alpha() < ALPHA_MIN) return;
     layout.tick(1);
     send();
-  }, TICK_MS);
+  }, tickMs);
 }
 
 function stop() {
@@ -37,6 +37,7 @@ function stop() {
 self.onmessage = (event) => {
   const msg = event.data;
   if (msg.type === 'init') {
+    if (typeof msg.tickMs === 'number' && msg.tickMs > 0) tickMs = msg.tickMs;
     layout = createLayout(msg.history, msg.params);
     layout.seek(msg.frameIndex || 0);
     send();

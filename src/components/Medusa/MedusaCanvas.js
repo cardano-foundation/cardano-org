@@ -5,7 +5,7 @@ import { createPlayback } from './playback.js';
 import { createGraph } from './graph.js';
 import { LAYOUT_DEFAULTS } from './defaults.js';
 import { groupIndex } from './groups.js';
-import { prefersReducedMotion, medusaFlag } from './webgl.js';
+import { prefersReducedMotion, medusaFlag, isSmallViewport } from './webgl.js';
 import { MILESTONES } from '@site/src/data/medusa/milestones.js';
 import styles from './styles.module.css';
 
@@ -32,7 +32,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     let raf = 0;
     let last = performance.now();
     let api = null;
-    let hiddenPause = false;
+    let suspended = false;
+    let offscreen = false;
+    let resumeOnWake = false;
     let workerPaused = false;
     const still = medusaFlag('still');
     const reduced = (prefersReducedMotion() && !medusaFlag('panel')) || still;
@@ -43,6 +45,26 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     let renderUntil = performance.now() + 2500;
     const keepDrawing = () => {
       renderUntil = performance.now() + 2500;
+    };
+
+    // Combines the two reasons to stop rendering: the tab is hidden, or the
+    // canvas has scrolled out of the viewport. Transitions exactly once per
+    // change so the two sources cannot double pause or resume a clock the
+    // user paused themselves.
+    const updateSuspended = () => {
+      if (!api) return;
+      const next = document.hidden || offscreen;
+      if (next === suspended) return;
+      suspended = next;
+      if (suspended) {
+        resumeOnWake = !api.playback.getState().paused;
+        api.playback.pause();
+        api.worker.postMessage({ type: 'pause' });
+      } else {
+        if (!reduced) api.worker.postMessage({ type: 'resume' });
+        if (resumeOnWake) api.playback.play();
+        last = performance.now();
+      }
     };
 
     import('@site/src/data/medusa/ledger-history.json').then((mod) => {
@@ -88,7 +110,15 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       applyDelta(graph.seek(startIndex));
       playback.seekTo(startIndex);
       if (reduced) playback.pause();
-      worker.postMessage({ type: 'init', history, params: LAYOUT_DEFAULTS, frameIndex: startIndex });
+      worker.postMessage({
+        type: 'init',
+        history,
+        params: LAYOUT_DEFAULTS,
+        frameIndex: startIndex,
+        // Small viewports get a slower tick, the layout is offscreen or tiny
+        // often enough on mobile that the extra precision is not worth the cost.
+        tickMs: isSmallViewport() ? 50 : 33,
+      });
       const startedAt = performance.now();
       worker.onmessage = (event) => {
         if (event.data.type !== 'positions') return;
@@ -123,6 +153,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       engine.setHighlightGroup(highlightIndexOf(highlightRef.current));
       report(startIndex);
       callbacks.current.onReady?.({ frameDates });
+      // Apply whatever suspension state already accumulated (hidden tab or
+      // an offscreen canvas) while the ledger history was still loading.
+      updateSuspended();
 
       const loop = (now) => {
         if (disposed) return;
@@ -136,7 +169,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
           worker.postMessage({ type: 'pause' });
           workerPaused = true;
         }
-        if (!reduced || now < renderUntil) engine.render(dt);
+        if (!suspended && (!reduced || now < renderUntil)) engine.render(dt);
         raf = requestAnimationFrame(loop);
       };
       raf = requestAnimationFrame(loop);
@@ -149,24 +182,25 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     });
     observer.observe(canvas);
 
-    const onVisibility = () => {
-      if (!api) return;
-      if (document.hidden) {
-        hiddenPause = !api.playback.getState().paused;
-        api.playback.pause();
-        api.worker.postMessage({ type: 'pause' });
-      } else {
-        if (!reduced) api.worker.postMessage({ type: 'resume' });
-        if (hiddenPause) api.playback.play();
-        last = performance.now();
-      }
-    };
+    // The hero scrolls out of view while the reader keeps scrolling the page,
+    // so a canvas that is not on screen must pause just like a hidden tab.
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        offscreen = !entry.isIntersecting;
+        updateSuspended();
+      },
+      { threshold: 0 },
+    );
+    intersectionObserver.observe(canvas);
+
+    const onVisibility = () => updateSuspended();
     document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
       disposed = true;
       cancelAnimationFrame(raf);
       observer.disconnect();
+      intersectionObserver.disconnect();
       document.removeEventListener('visibilitychange', onVisibility);
       if (api) {
         api.worker.terminate();
