@@ -1804,6 +1804,30 @@ export const Showcases = [
     maintainerPick: false,
     x: "EchoForgeEF",
   },
+  {
+    title: "Gem Wallet",
+    description:
+      "Open-source, self-custodial mobile wallet for storing, sending, receiving, buying, and swapping ada across native iOS and Android apps.",
+    tagline: "Open-source mobile wallet with built-in ada swaps",
+    preview: require("./app-screenshots/gem-wallet.webp"),
+    extraPreviews: [
+      require("./app-screenshots/gem-wallet-swap.webp"),
+      require("./app-screenshots/gem-wallet-buy.webp"),
+    ],
+    icon: "/img/app-icons/gem-wallet.png",
+    website: "https://gemwallet.com",
+    source: "https://github.com/gemwalletcom/wallet",
+    category: "wallet",
+    properties: ["mobile", "opensource"],
+    maintainerPick: false,
+    x: "GemWallet",
+    walletFeatures: {
+      platforms: ["ios", "android"],
+      custody: "non-custodial",
+      features: ["dex"],
+      type: "light",
+    },
+  },
 ];
 
 export const TagList = Object.keys(Tags);
