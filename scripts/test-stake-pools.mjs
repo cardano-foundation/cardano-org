@@ -9,7 +9,7 @@ import {
 } from '../src/utils/cardano/bech32.mjs';
 import { formatAdaWhole, formatAdaCompact } from '../src/utils/cardano/lovelace.mjs';
 import {
-  MIN_ACTIVE_STAKE, MAX_MARGIN, isValidIndexRow, eligibleFromIndex, eligibleFromInfo,
+  MIN_ACTIVE_STAKE, MAX_MARGIN, MIN_PLEDGE, isValidIndexRow, eligibleFromIndex, eligibleFromInfo,
   classifyQuery, searchTicker, toPoolModel,
 } from '../src/utils/cardano/stakePools.mjs';
 
@@ -117,6 +117,12 @@ test('eligibleFromIndex applies the thresholds exactly at the boundary', () => {
   assert.deepEqual(eligibleFromIndex([belowStake]), []);
   assert.deepEqual(eligibleFromIndex([atMargin]), []);
   assert.deepEqual(eligibleFromIndex([belowMargin]), [belowMargin]);
+  const atPledge = indexRow({ pledge: MIN_PLEDGE.toString() });
+  const belowPledge = indexRow({ pledge: (MIN_PLEDGE - 1n).toString() });
+  assert.deepEqual(eligibleFromIndex([atPledge]), [atPledge]);
+  assert.deepEqual(eligibleFromIndex([belowPledge]), []);
+  assert.deepEqual(eligibleFromIndex([indexRow({ pledge: '0' })]), []);
+  assert.deepEqual(eligibleFromIndex([indexRow({ pledge: 'lots' })]), []);
 });
 
 test('eligibleFromIndex drops retiring pools, missing tickers and invalid values', () => {
