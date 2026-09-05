@@ -5,7 +5,7 @@ import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import { delegateStake, rewardAddressesBech32 } from "@site/src/utils/cardano/wallet";
 import { EXPECTED_NETWORK_ID, classifyError, shortAddress, stringifyError } from "@site/src/utils/walletTx";
-import { DISPLAY_COUNT, MAX_MARGIN, MIN_ACTIVE_STAKE } from "@site/src/utils/cardano/stakePools.mjs";
+import { DISPLAY_COUNT, MAX_MARGIN, MIN_ACTIVE_STAKE, MIN_PLEDGE } from "@site/src/utils/cardano/stakePools.mjs";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { NetworkWarning, SearchRow, TxBanner, WalletPicker } from "@site/src/components/WalletDelegation";
 import {
@@ -402,8 +402,8 @@ export default function StakePoolDelegate() {
           <div className={styles.poolHeader}>
             <p className={styles.poolIntro}>
               {translate(
-                { id: "stakePoolDelegation.delegate.sampleIntro", message: "A random selection of registered pools with at least {stake} of active stake, a margin below {margin}%, not saturated, pledge met and at least one block minted. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID." },
-                { stake: `${formatAdaCompact(MIN_ACTIVE_STAKE, locale)} ada`, margin: (MAX_MARGIN * 100).toLocaleString(locale) }
+                { id: "stakePoolDelegation.delegate.sampleIntro", message: "A random selection of registered pools with at least {stake} of active stake, a declared pledge of at least {pledge} that is met, a margin below {margin}%, not saturated and at least one block minted. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID." },
+                { stake: `${formatAdaCompact(MIN_ACTIVE_STAKE, locale)} ada`, pledge: `${formatAdaCompact(MIN_PLEDGE, locale)} ada`, margin: (MAX_MARGIN * 100).toLocaleString(locale) }
               )}
             </p>
             <button
