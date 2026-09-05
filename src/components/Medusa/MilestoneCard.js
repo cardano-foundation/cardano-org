@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { milestoneText } from './milestoneText.js';
+import { formatDay } from './formatDate.js';
 import styles from './explorer.module.css';
 
 const SHOW_MS = 6000;
 
 export default function MilestoneCard({ milestone, onDismiss }) {
+  const { i18n } = useDocusaurusContext();
   useEffect(() => {
     const t = setTimeout(onDismiss, SHOW_MS);
     return () => clearTimeout(t);
@@ -18,7 +21,7 @@ export default function MilestoneCard({ milestone, onDismiss }) {
       <button type="button" className={styles.cardClose} onClick={onDismiss} aria-label={translate({ id: 'medusa.card.close', message: 'Dismiss' })}>
         ×
       </button>
-      <div className={styles.cardDate}>{milestone.date}</div>
+      <div className={styles.cardDate}>{formatDay(milestone.date, i18n.currentLocale)}</div>
       <strong>{text.name}</strong>
       <p>{text.description}</p>
       {external ? (

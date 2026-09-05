@@ -5,6 +5,12 @@
 import { createLayout } from './layout.js';
 
 const TICK_MS = 33;
+// d3's alphaMin: below it the simulation no longer moves, so ticking and
+// posting positions would only burn a core. Steps and seeks reheat.
+const ALPHA_MIN = 0.001;
+// Bounded settle for an incremental step that arrives while the timer is
+// stopped, otherwise the new nodes would stay on top of their parent.
+const PAUSED_STEP_TICKS = 120;
 let layout = null;
 let timer = null;
 
@@ -16,6 +22,7 @@ function send() {
 function start() {
   if (timer) return;
   timer = setInterval(() => {
+    if (layout.alpha() < ALPHA_MIN) return;
     layout.tick(1);
     send();
   }, TICK_MS);
@@ -40,6 +47,7 @@ self.onmessage = (event) => {
   switch (msg.type) {
     case 'step':
       layout.step();
+      if (!timer) layout.tick(PAUSED_STEP_TICKS);
       send();
       break;
     case 'seek':

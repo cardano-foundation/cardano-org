@@ -23,6 +23,12 @@ export default function useMedusaKeys(handlers, enabled = true, containerRef = n
     };
     const onKey = (e) => {
       if (EDITABLE.test(e.target?.tagName) || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+      // The browser already activates a focused button on space, so handling
+      // it here as well would toggle playback twice.
+      if (e.key === ' ' && e.target?.tagName === 'BUTTON') return;
+      // Key repeat would queue one seek per repeat and the worker cannot keep
+      // up, so a held arrow steps once and waits for the next press.
+      if (e.repeat && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) return;
       const box = containerRef?.current?.getBoundingClientRect();
       // A viewport height of zero means the page is not laid out yet or is not
       // being displayed, and then the box says nothing about visibility.

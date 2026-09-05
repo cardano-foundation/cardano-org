@@ -20,6 +20,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  /* Same colour the canvas clears to, so the hero does not flash the Infima
+     blue gradient while the visualization chunk is still loading. */
+  background: #0b1030;
 }
 
 .medusaCanvas {

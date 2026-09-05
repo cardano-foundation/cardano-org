@@ -4,12 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { MILESTONES } from '@site/src/data/medusa/milestones.js';
 import { frameIndexForDate, SPEEDS } from './playback.js';
 import { milestoneText } from './milestoneText.js';
+import { formatMonth } from './formatDate.js';
 import styles from './explorer.module.css';
-
-function formatMonth(date, locale) {
-  const [y, m] = date.split('-').map(Number);
-  return new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, 1)));
-}
 
 export default function Controls({ frameDates, index, paused, speed, onSeek, onToggle, onStep, onSpeed, onFullscreen }) {
   const { i18n } = useDocusaurusContext();

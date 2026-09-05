@@ -31,7 +31,7 @@ export default function HoverLabel({ id, path, target, pinned }) {
       ref={ref}
       className={clsx(styles.label, pinned && styles.labelPinned)}
       style={{ visibility: 'hidden' }}
-      aria-live="polite"
+      aria-live={pinned ? 'polite' : undefined}
     >
       {shorten(path)}
     </div>

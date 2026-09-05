@@ -27,7 +27,7 @@ export const LAYOUT_DEFAULTS = {
   chargeDir: -70,
   chargeFile: -5,
   linkDir: 15,
-  linkFile: 8,
+  linkFile: 15,
   center: 0.05,
   velocityDecay: 0.45,
   theta: 0.9,

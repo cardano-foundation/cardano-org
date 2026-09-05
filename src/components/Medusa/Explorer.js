@@ -63,7 +63,9 @@ export default function Explorer() {
       const groups = new Set();
       for (const node of graph.alive()) groups.add(node.group);
       const nextPresent = new Set([...groups].map((i) => GROUPS[i].key));
-      setPresent(nextPresent);
+      // The eras rarely change from one frame to the next, and a fresh Set
+      // every frame would rerender the legend sixty times a second.
+      setPresent((prev) => (prev.size === nextPresent.size && [...nextPresent].every((k) => prev.has(k)) ? prev : nextPresent));
       // An era that is no longer in the frame has no chip left to switch off,
       // so its highlight would dim everything for good.
       setHighlightGroup((k) => (k !== null && !nextPresent.has(k) ? null : k));
@@ -158,6 +160,9 @@ export default function Explorer() {
     clear: () => {
       onSelect(null);
       setHighlightGroup(null);
+      // Escape also gives the keyboard back to the page, otherwise a control
+      // button keeps the focus ring and swallows the next space.
+      document.activeElement?.blur?.();
     },
   }), [jumpToMilestone, fullscreen, onSelect, syncPaused, setSpeed, cardsEnabled]);
   useMedusaKeys(handlers, supported, containerRef);

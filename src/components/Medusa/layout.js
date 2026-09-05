@@ -39,7 +39,9 @@ export function createLayout(history, params = {}) {
         'link',
         forceLink(links)
           .id((d) => d.id)
-          .distance((l) => (l.target.isDir ? p.linkDir : p.linkFile))
+          // Every link points from a child to its parent, so the target is
+          // always a directory. The child decides the distance.
+          .distance((l) => (l.source.isDir ? p.linkDir : p.linkFile))
           .strength((l) => 1 / (1 + 0.25 * l.target.depth)),
       )
       .force('x', forceX(0).strength(p.center))
@@ -106,6 +108,9 @@ export function createLayout(history, params = {}) {
       applyForces();
       sim.alpha(Math.max(sim.alpha(), p.reheat));
     },
+    // Current simulation temperature, so the worker can stop ticking once the
+    // layout has cooled down below d3's alphaMin.
+    alpha: () => sim.alpha(),
     count: () => simNodes.length,
   };
 }

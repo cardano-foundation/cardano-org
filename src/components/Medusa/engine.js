@@ -182,7 +182,11 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
 
   let time = 0;
   let opacity = 1;
+  // Nothing is drawn before the first positions arrive, otherwise the whole
+  // tree would show as a single dot on the origin and then fly apart.
+  let hasPositions = false;
   const pointer = { x: 0, y: 0 };
+  const pointerTarget = { x: 0, y: 0 };
   const view = { distance: params.cameraDistance, panX: 0, panY: 0 };
   let highlightGroup = -1;
   let highlightSet = null;
@@ -228,8 +232,17 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     camera.lookAt(look.x, look.y, 0);
   }
 
+  // Hands a slot back to the pool. The caller decides whether the slot is
+  // reused right away or pushed onto freeSlots.
+  function releaseSlot(slot) {
+    nodeAtSlot[slot] = null;
+    birth[slot] = FREE_BIRTH;
+    death[slot] = -1;
+  }
+
+  // The camera matrix is shared by every projection, so callers update it once
+  // before a batch instead of per slot.
   function screenOf(slot, width, height) {
-    camera.updateMatrixWorld();
     tmp.set(position[3 * slot], position[3 * slot + 1], position[3 * slot + 2]).project(camera);
     return { x: ((tmp.x + 1) / 2) * width, y: ((1 - tmp.y) / 2) * height };
   }
@@ -237,7 +250,14 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
   return {
     addNode(node) {
       if (slotOf.has(node.id)) return;
-      const slot = freeSlots.pop();
+      let slot = freeSlots.pop();
+      if (slot === undefined) {
+        // A fast scrub can remove thousands of nodes at once, and every one of
+        // them holds its slot until the fade out is over. Cut the oldest fade
+        // short instead of dropping the new node for good.
+        slot = fading.shift();
+        if (slot !== undefined) releaseSlot(slot);
+      }
       if (slot === undefined) return;
       slotOf.set(node.id, slot);
       nodeAtSlot[slot] = node;
@@ -253,7 +273,8 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       color[3 * slot + 1] = c.g;
       color[3 * slot + 2] = c.b;
       size[slot] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
-      birth[slot] = time;
+      // Reduced motion gets no birth flash: the node starts fully grown.
+      birth[slot] = reducedMotion ? time - params.flashDuration : time;
       death[slot] = -1;
       highlight[slot] = highlightActive() && isHighlighted(node) ? 1 : 0;
       pointGeo.attributes.color.needsUpdate = true;
@@ -276,7 +297,24 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
         if (slot === undefined) continue;
         target[2 * slot] = xy[2 * i];
         target[2 * slot + 1] = xy[2 * i + 1];
+        // Reduced motion snaps to the layout instead of easing into it.
+        if (reducedMotion) {
+          position[3 * slot] = xy[2 * i];
+          position[3 * slot + 1] = xy[2 * i + 1];
+        }
       }
+      hasPositions = true;
+    },
+    // Ends every fade at once and returns the slots to the pool. Used before a
+    // non-incremental seek, where the outgoing tree is gone anyway.
+    flushFading() {
+      fading.forEach((slot) => {
+        releaseSlot(slot);
+        freeSlots.push(slot);
+      });
+      fading.length = 0;
+      pointGeo.attributes.birth.needsUpdate = true;
+      pointGeo.attributes.death.needsUpdate = true;
     },
     setHighlightGroup(index) {
       highlightGroup = index;
@@ -290,8 +328,8 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       opacity = o;
     },
     setPointer(nx, ny) {
-      pointer.x = nx;
-      pointer.y = ny;
+      pointerTarget.x = nx;
+      pointerTarget.y = ny;
     },
     setView(next) {
       Object.assign(view, next);
@@ -301,6 +339,7 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     pick(px, py) {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
+      camera.updateMatrixWorld();
       let best = null;
       let bestDist = Infinity;
       slotOf.forEach((slot, id) => {
@@ -317,24 +356,26 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     project(id) {
       const slot = slotOf.get(id);
       if (slot === undefined) return null;
+      camera.updateMatrixWorld();
       return screenOf(slot, canvas.clientWidth, canvas.clientHeight);
     },
     render(dt) {
       time += dt;
-      const k = Math.min(1, dt * params.smoothing);
-      for (let s = 0; s < capacity; s += 1) {
-        if (birth[s] === FREE_BIRTH) continue;
-        position[3 * s] += (target[2 * s] - position[3 * s]) * k;
-        position[3 * s + 1] += (target[2 * s + 1] - position[3 * s + 1]) * k;
+      // Reduced motion already holds the layout positions, nothing to ease.
+      if (!reducedMotion) {
+        const k = Math.min(1, dt * params.smoothing);
+        for (let s = 0; s < capacity; s += 1) {
+          if (birth[s] === FREE_BIRTH) continue;
+          position[3 * s] += (target[2 * s] - position[3 * s]) * k;
+          position[3 * s + 1] += (target[2 * s + 1] - position[3 * s + 1]) * k;
+        }
       }
       // Free slots whose fade out finished
       for (let i = fading.length - 1; i >= 0; i -= 1) {
         const slot = fading[i];
         if (time - death[slot] > params.fadeOutDuration) {
           fading.splice(i, 1);
-          nodeAtSlot[slot] = null;
-          birth[slot] = FREE_BIRTH;
-          death[slot] = -1;
+          releaseSlot(slot);
           freeSlots.push(slot);
         }
       }
@@ -369,8 +410,14 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       lineGeo.attributes.color.needsUpdate = true;
       lineGeo.attributes.alpha.needsUpdate = true;
       pointMat.uniforms.uTime.value = time;
-      pointMat.uniforms.uOpacity.value = opacity;
-      lineMat.uniforms.uOpacity.value = opacity;
+      const visible = opacity * (hasPositions ? 1 : 0);
+      pointMat.uniforms.uOpacity.value = visible;
+      lineMat.uniforms.uOpacity.value = visible;
+      // The parallax follows the pointer with a little inertia, so leaving the
+      // canvas eases back to the centre instead of snapping.
+      const pk = Math.min(1, dt * 4);
+      pointer.x += (pointerTarget.x - pointer.x) * pk;
+      pointer.y += (pointerTarget.y - pointer.y) * pk;
       updateCamera();
       composer.render();
     },
@@ -380,7 +427,10 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       const ratio = Math.min(window.devicePixelRatio || 1, width < 768 ? 1 : 2);
       renderer.setPixelRatio(ratio);
       renderer.setSize(width, height, false);
-      composer.setPixelRatio(ratio);
+      // The afterimage pass keeps two full size render targets, which costs a
+      // lot of memory at device pixel ratio 2 for no visible gain.
+      const composerRatio = Math.min(ratio, 1.5);
+      composer.setPixelRatio(composerRatio);
       composer.setSize(width, height);
       pointMat.uniforms.uPixelRatio.value = ratio;
       camera.aspect = width / height;

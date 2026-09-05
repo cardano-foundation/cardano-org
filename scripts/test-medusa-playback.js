@@ -3,7 +3,11 @@
  * visualization) and the milestone data file. Run with `node`, no framework.
  */
 const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 const { createChecker } = require('./lib/medusa-test-check.js');
+
+const DATA = path.join(__dirname, '..', 'src', 'data', 'medusa', 'ledger-history.json');
 
 async function main() {
   const { createPlayback, frameIndexForDate } = await import('../src/components/Medusa/playback.js');
@@ -136,6 +140,19 @@ async function main() {
     });
     assert.deepStrictEqual(HARD_FORK_KEYS, ['shelley', 'allegra', 'mary', 'alonzo', 'vasil', 'chang', 'plomin', 'vanRossem']);
   });
+
+  // A milestone whose month is outside the generated timeline never fires and
+  // gets no marker, which is silent in the browser.
+  if (fs.existsSync(DATA)) {
+    const frameDates = JSON.parse(fs.readFileSync(DATA, 'utf8')).frames.map((f) => f.date);
+    check('generated data: every milestone has a frame', () => {
+      MILESTONES.forEach((m) => {
+        assert.notStrictEqual(frameIndexForDate(frameDates, m.date), -1, `${m.key} (${m.date}) has no frame`);
+      });
+    });
+  } else {
+    console.log('  skip - src/data/medusa/ledger-history.json not generated yet');
+  }
 
   done();
 }

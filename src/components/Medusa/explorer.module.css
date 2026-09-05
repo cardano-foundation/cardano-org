@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+/* Fullscreen drops the navbar, so the reserved height would leave a black
+   strip at the bottom. */
+.explorer:fullscreen {
+  height: 100vh;
+}
+
 .canvas {
   position: absolute;
   inset: 0;
@@ -131,13 +137,25 @@
   height: 0.4rem;
 }
 
+/* A 2 px line is impossible to hit with a mouse, so the marker is a 10 px wide
+   transparent box with the visible line centred inside it. */
 .marker {
   position: absolute;
   bottom: 0;
-  width: 2px;
+  width: 10px;
   height: 0.4rem;
+  transform: translateX(-5px);
+}
+
+.marker::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
   background: rgba(255, 255, 255, 0.7);
-  transform: translateX(-1px);
 }
 
 .date {
@@ -158,7 +176,7 @@
   right: 1rem;
   bottom: 0.6rem;
   margin: 0;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.72rem;
   text-align: center;
   pointer-events: none;

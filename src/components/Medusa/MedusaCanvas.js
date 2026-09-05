@@ -69,6 +69,21 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         callbacks.current.onFrame?.({ index, date: frameDates[index], ...playback.getState() });
       };
 
+      // A non incremental seek settles the simulation synchronously in the
+      // worker, and the worker handles messages in order. Dragging the slider
+      // would queue one such seek per pixel, so only one seek is in flight at
+      // a time and the newest target replaces the waiting one.
+      let awaitingSeek = null;
+      let pendingSeek = null;
+      const postSeek = (index) => {
+        if (awaitingSeek !== null) {
+          pendingSeek = index;
+          return;
+        }
+        worker.postMessage({ type: 'seek', frameIndex: index });
+        awaitingSeek = index;
+      };
+
       const startIndex = reduced ? frameDates.length - 1 : 0;
       applyDelta(graph.seek(startIndex));
       playback.seekTo(startIndex);
@@ -79,11 +94,25 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         if (event.data.type !== 'positions') return;
         engine.updatePositions(event.data.ids, event.data.xy);
         keepDrawing();
+        if (awaitingSeek === null || event.data.frameIndex !== awaitingSeek) return;
+        awaitingSeek = null;
+        if (pendingSeek !== null) {
+          const next = pendingSeek;
+          pendingSeek = null;
+          postSeek(next);
+        }
       };
 
       playback.on('frame', (index, meta) => {
+        const incremental = meta.kind === 'step';
+        // A seek throws the old tree away, so the fades of the removed nodes
+        // must not keep holding on to their slots.
+        if (!incremental) engine.flushFading();
         applyDelta(graph.seek(index));
-        worker.postMessage(meta.kind === 'step' ? { type: 'step' } : { type: 'seek', frameIndex: index });
+        // The worker must not step from a frame it has not reached yet, so a
+        // step during an unacknowledged seek becomes a seek as well.
+        if (incremental && awaitingSeek === null) worker.postMessage({ type: 'step' });
+        else postSeek(index);
         report(index);
       });
       playback.on('phase', (state) => report(state.frameIndex));
@@ -223,7 +252,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       pointers.set(e.pointerId, local(e));
       dragged = false;
       pinchDistance = 0;
-      capture(e.pointerId);
+      // The ambient hero neither pans nor picks, so it must not swallow the
+      // pointer of a page scroll or a click on the buttons above it.
+      if (interactive) capture(e.pointerId);
     };
     const onUp = (e) => {
       release(e.pointerId);
