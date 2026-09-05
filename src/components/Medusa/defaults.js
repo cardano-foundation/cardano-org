@@ -6,14 +6,14 @@
 
 export const ENGINE_DEFAULTS = {
   background: '#0b1030',
-  pointSizeFile: 3.0,
-  pointSizeDir: 7.0,
+  pointSizeFile: 7.0,
+  pointSizeDir: 16.0,
   pointAlpha: 0.9,
   lineAlpha: 0.22,
   trailDamp: 0.88,
   flashDuration: 1.5,
   fadeOutDuration: 0.8,
-  cameraDistance: 1300,
+  cameraDistance: 1725,
   minDistance: 500,
   maxDistance: 2600,
   zSpread: 120,
@@ -24,14 +24,14 @@ export const ENGINE_DEFAULTS = {
 };
 
 export const LAYOUT_DEFAULTS = {
-  chargeDir: -60,
-  chargeFile: -10,
-  linkDir: 42,
-  linkFile: 14,
-  center: 0.01,
+  chargeDir: -70,
+  chargeFile: -5,
+  linkDir: 15,
+  linkFile: 8,
+  center: 0.05,
   velocityDecay: 0.45,
   theta: 0.9,
-  distanceMax: 700,
+  distanceMax: 550,
   spawnJitter: 10,
   reheat: 0.4,
   settleTicks: 300,
