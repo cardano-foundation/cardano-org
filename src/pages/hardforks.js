@@ -254,7 +254,7 @@ export default function Home() {
             description={translate({
               id: "hardforks.content.description",
               message:
-                "Hard forks in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time (slot) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution.",
+                "Hard forks in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time (slot) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution. See [how network upgrades fit into the protocol](/how-cardano-works#upgrades) for more detail.",
             })}
             headingDot={true}
           />
