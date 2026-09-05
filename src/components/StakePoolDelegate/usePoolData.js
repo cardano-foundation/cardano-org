@@ -12,8 +12,12 @@ import {
 export const INDEX_CACHE_KEY = "cardano-org.pool-index.v1";
 export const INDEX_CACHE_TTL_MS = 15 * 60 * 1000;
 const INDEX_PAGE_SIZE = 1000;
-// data.cardano.org proxy caps POST bodies at 5120 bytes, 50 bech32 ids fit.
-const INFO_BATCH_SIZE = 50;
+// pool_info is expensive on the Koios side (live saturation and pledge per
+// pool), an uncached batch of 24 ids took up to 8 seconds through the proxy.
+// Small batches run in parallel and each stays well inside the client
+// timeout. The proxy caps POST bodies at 5120 bytes, so 50 ids would be the
+// upper bound anyway.
+const INFO_BATCH_SIZE = 8;
 const INDEX_SELECT = [
   "pool_id_bech32", "ticker", "pool_status", "pool_group",
   "active_stake", "margin", "fixed_cost", "pledge", "retiring_epoch",

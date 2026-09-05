@@ -15,6 +15,8 @@ import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
 import styles from "./styles.module.css";
 
+const POOL_API_TIMEOUT_MS = 30000;
+
 function Retry({ onClick }) {
   return (
     <button type="button" className={`button button--sm button--outline button--primary ${styles.retryButton}`} onClick={onClick}>
@@ -85,7 +87,14 @@ export default function StakePoolDelegate() {
   const { siteConfig: { customFields }, i18n: { currentLocale } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const locale = currentLocale || "en";
-  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
+  // Uncached pool_info answers can take several seconds at the proxy, so this
+  // tool allows more than the site-wide default before giving up.
+  const [apiClient] = useState(() => {
+    if (!API_URL) return null;
+    const client = makeApiClient(API_URL);
+    client.defaults.timeout = POOL_API_TIMEOUT_MS;
+    return client;
+  });
 
   // wallet: { instance, name, address, networkId, rewardAddresses, rewardAddressesError }
   const [wallet, setWallet] = useState(null);
