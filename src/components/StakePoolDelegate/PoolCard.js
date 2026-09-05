@@ -5,7 +5,10 @@ import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovela
 import { shortAddress } from "@site/src/utils/walletTx";
 import styles from "./styles.module.css";
 
-const EXPLORER_POOL_BASE = "https://explorer.cardano.org/stake-pool/";
+// The explorer.cardano.org hub has no pool route (it only resolves
+// transaction, block, epoch, address, governance-action and drep), so pool
+// pages link to Cexplorer, which is listed on the hub and takes bech32 ids.
+const EXPLORER_POOL_BASE = "https://cexplorer.io/pool/";
 
 function Metric({ label, value }) {
   return (
@@ -135,7 +138,7 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
           </a>
         )}
         <a href={EXPLORER_POOL_BASE + pool.id} target="_blank" rel="noopener noreferrer">
-          {translate({ id: "stakePoolDelegation.delegate.card.explorer", message: "View on explorer" })}
+          {translate({ id: "stakePoolDelegation.delegate.card.explorer", message: "View on Cexplorer" })}
         </a>
         <span className={styles.poolId}>
           {shortAddress(pool.id)}
