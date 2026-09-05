@@ -1550,6 +1550,9 @@
     "message": "Delegate your ada",
     "description": "Mega menu item label"
   },
+  "navbar.mega.label.Stake your ada": {
+    "message": "Stake your ada"
+  },
   "navbar.mega.label.Delegate your vote": {
     "message": "Delegate your vote",
     "description": "Mega menu item label"
@@ -1673,6 +1676,9 @@
   "navbar.mega.description.Delegate your ada": {
     "message": "Be a part of it and earn rewards",
     "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Stake your ada": {
+    "message": "Delegate to a stake pool and earn rewards"
   },
   "navbar.mega.description.Delegate your vote": {
     "message": "Lend your voting power to a DRep",
@@ -3167,10 +3173,10 @@
     "message": "Yes. Rewards accrue in your reward account and count towards your delegated stake automatically, so they compound without any action on your part. You can withdraw them to your spending balance at any time once your stake key also has an active vote delegation (see above)."
   },
   "stakePoolDelegation.hero.title": {
-    "message": "Delegate your ada"
+    "message": "Stake your ada on Cardano"
   },
   "stakePoolDelegation.hero.description": {
-    "message": "Connect your wallet, choose a stake pool, and become eligible for staking rewards. Non-custodial, no lock-up, your ada never leaves your wallet and stays spendable."
+    "message": "Staking on Cardano means delegating your ada to a stake pool. Connect your wallet, pick a pool, and become eligible for rewards. Non-custodial, no lock-up, your ada stays spendable."
   },
   "stakePoolDelegation.delegate.loading": {
     "message": "Loading delegation tool…"
@@ -3200,10 +3206,10 @@
     "message": "Your delegation becomes active in the epoch after next. If the pool mints blocks, first rewards arrive about 15 to 20 days later and are paid every epoch after that. Rewards compound automatically."
   },
   "stakePoolDelegation.meta.title": {
-    "message": "Delegate ada to a Stake Pool"
+    "message": "Stake ada on Cardano: Delegate to a Stake Pool"
   },
   "stakePoolDelegation.meta.description": {
-    "message": "Delegate your ada to a Cardano stake pool directly from cardano.org. Connect your wallet, pick a pool, and become eligible for staking rewards."
+    "message": "Stake ada by delegating to a Cardano stake pool right on cardano.org. Connect your wallet, pick a pool, become eligible for staking rewards. Non-custodial, no lock-up."
   },
   "stakePoolDelegation.how.divider": {
     "message": "How delegation works"

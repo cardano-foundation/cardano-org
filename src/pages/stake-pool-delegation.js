@@ -113,9 +113,9 @@ function getDelegationFAQData() {
 function Hero() {
   return (
     <SiteHero
-      title={[translate({ id: "stakePoolDelegation.hero.title", message: "Delegate your ada" })]}
-      description={translate({ id: "stakePoolDelegation.hero.description", message: "Connect your wallet, choose a stake pool, and become eligible for staking rewards. Non-custodial, no lock-up, your ada never leaves your wallet and stays spendable." })}
-      bannerType="overlap"
+      title={[translate({ id: "stakePoolDelegation.hero.title", message: "Stake your ada on Cardano" })]}
+      description={translate({ id: "stakePoolDelegation.hero.description", message: "Staking on Cardano means delegating your ada to a stake pool. Connect your wallet, pick a pool, and become eligible for rewards. Non-custodial, no lock-up, your ada stays spendable." })}
+      bannerType="fluidBlue"
     />
   );
 }
@@ -145,8 +145,8 @@ const STEPS = [
 export default function StakePoolDelegationPage() {
   return (
     <Layout
-      title={translate({ id: "stakePoolDelegation.meta.title", message: "Delegate ada to a Stake Pool" })}
-      description={translate({ id: "stakePoolDelegation.meta.description", message: "Delegate your ada to a Cardano stake pool directly from cardano.org. Connect your wallet, pick a pool, and become eligible for staking rewards." })}
+      title={translate({ id: "stakePoolDelegation.meta.title", message: "Stake ada on Cardano: Delegate to a Stake Pool" })}
+      description={translate({ id: "stakePoolDelegation.meta.description", message: "Stake ada by delegating to a Cardano stake pool right on cardano.org. Connect your wallet, pick a pool, become eligible for staking rewards. Non-custodial, no lock-up." })}
     >
       <OpenGraphInfo pageName="stake-pool-delegation" />
       <Hero />
