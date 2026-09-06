@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Initials } from "@site/src/components/WalletDelegation";
+import poolLogosManifest from "@site/src/data/pool-logos.json";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { shortAddress } from "@site/src/utils/walletTx";
 import { poolIdToHex } from "@site/src/utils/cardano/bech32.mjs";
@@ -11,6 +13,18 @@ import styles from "./styles.module.css";
 // cards link to PoolTool, the pool explorer among the maintainer picks on
 // /apps. PoolTool addresses pools by the hex key hash.
 const POOLTOOL_POOL_BASE = "https://pooltool.io/pool/";
+
+// Pool ids with a self-hosted logo, see scripts/fetch-pool-logos.js.
+const LOGO_SET = new Set(poolLogosManifest.ids);
+
+// Logo when the snapshot has one, initials otherwise. The img falls back to
+// initials as well if the file is missing at runtime.
+function PoolLogo({ pool }) {
+  const [imgError, setImgError] = useState(false);
+  const src = useBaseUrl(`/img/pools/${pool.id}.webp`);
+  if (!LOGO_SET.has(pool.id) || imgError) return <Initials name={pool.ticker || pool.name} />;
+  return <img src={src} alt="" className={styles.logo} width="48" height="48" loading="lazy" onError={() => setImgError(true)} />;
+}
 
 function Metric({ label, value }) {
   return (
@@ -46,7 +60,7 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
   return (
     <div className={`${styles.card} ${isCurrent ? styles.cardCurrent : ""}`}>
       <div className={styles.cardHeader}>
-        <Initials name={pool.ticker || pool.name} />
+        <PoolLogo pool={pool} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardTicker}>{pool.ticker || shortAddress(pool.id)}</h3>
           {pool.name && <span className={styles.cardName}>{pool.name}</span>}
