@@ -5,11 +5,11 @@
 // shuffle instantly. scripts/test-pool-loading.mjs drives it with fakes.
 import { DISPLAY_COUNT, eligibleFromInfo, toPoolModel } from './stakePools.mjs';
 
-export const MAX_IN_FLIGHT = 8;
-export const SPARE_TARGET = DISPLAY_COUNT;
+const MAX_IN_FLIGHT = 8;
+const SPARE_TARGET = DISPLAY_COUNT;
 // Consecutive failed requests after which drawing stops. A general outage
 // then costs one wave of requests instead of walking the whole index.
-export const MAX_CONSECUTIVE_FAILURES = 8;
+const MAX_CONSECUTIVE_FAILURES = 8;
 
 export function createPoolSampler({
   candidates, fetchOne, onChange,
@@ -31,21 +31,29 @@ export function createPoolSampler({
     return 'ready';
   }
 
-  function snapshot() {
-    const s = status();
-    return { status: s, pools: shown.slice(), spare: spare.length, inFlight, error: s === 'error' ? lastError : null };
-  }
-
+  // Only status and the shown pools reach the UI, so answers that land in
+  // the spare pool or get skipped do not trigger a render.
+  let lastKey = null;
   function emit() {
-    if (!stopped) onChange(snapshot());
-  }
-
-  function fillFromSpare() {
-    while (shown.length < displayCount && spare.length) shown.push(spare.shift());
+    if (stopped) return;
+    const s = status();
+    const key = `${s}:${shown.map((p) => p.id).join(',')}`;
+    if (key === lastKey) return;
+    lastKey = key;
+    onChange({ status: s, pools: shown.slice(), error: s === 'error' ? lastError : null });
   }
 
   function need() {
     return (displayCount - shown.length) + (spareTarget - spare.length) - inFlight;
+  }
+
+  // Runs after every answer, whether it succeeded or not.
+  function settle(apply) {
+    inFlight -= 1;
+    if (stopped) return;
+    apply();
+    pump();
+    emit();
   }
 
   function pump() {
@@ -60,45 +68,36 @@ export function createPoolSampler({
       } catch (error) {
         request = Promise.reject(error);
       }
-      request
-        .then(
-          (info) => {
-            inFlight -= 1;
-            if (stopped) return;
-            failures = 0;
-            const model = info && eligibleFromInfo(info) ? toPoolModel(row, info) : null;
-            if (model) (shown.length < displayCount ? shown : spare).push(model);
-            pump();
-            emit();
-          },
-          (error) => {
-            inFlight -= 1;
-            if (stopped) return;
-            failures += 1;
-            lastError = error;
-            pump();
-            emit();
-          }
-        );
+      request.then(
+        (info) => settle(() => {
+          failures = 0;
+          const model = info && eligibleFromInfo(info) ? toPoolModel(row, info) : null;
+          if (model) (shown.length < displayCount ? shown : spare).push(model);
+        }),
+        (error) => settle(() => {
+          failures += 1;
+          lastError = error;
+        })
+      );
     }
   }
 
+  // Fills the display from the spare pool first, then draws the rest.
+  function kick() {
+    while (shown.length < displayCount && spare.length) shown.push(spare.shift());
+    pump();
+    emit();
+  }
+
   return {
-    start() {
-      fillFromSpare();
-      pump();
-      emit();
-    },
+    start: kick,
     shuffle() {
       shown = [];
       failures = 0;
-      fillFromSpare();
-      pump();
-      emit();
+      kick();
     },
     stop() {
       stopped = true;
     },
-    snapshot,
   };
 }

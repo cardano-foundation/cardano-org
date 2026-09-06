@@ -90,14 +90,16 @@ test('fetchPoolInfoOne returns the row, null for an unknown pool and throws on f
   await assert.rejects(() => fetchPoolInfoOne(api, 'pool1slow'), /timeout/);
 });
 
-test('fetchPoolInfoSettled drops failed pools, keeps the others and requests each pool on its own', async () => {
+test('fetchPoolInfoSettled drops a failed batch and keeps the others', async () => {
   const api = infoApi({ failing: ['pool1slow'] });
-  const rows = await fetchPoolInfoSettled(api, ['pool1a', 'pool1slow', 'pool1b']);
-  assert.deepEqual(rows.map((r) => r.pool_id_bech32), ['pool1a', 'pool1b']);
-  assert.deepEqual(api.calls.map((c) => c.ids), [['pool1a'], ['pool1slow'], ['pool1b']]);
+  const ids = Array.from({ length: 9 }, (_, i) => `pool1a${i}`);
+  ids[8] = 'pool1slow';
+  const rows = await fetchPoolInfoSettled(api, ids);
+  assert.deepEqual(rows.map((r) => r.pool_id_bech32), ids.slice(0, 8));
+  assert.deepEqual(api.calls.map((c) => c.ids.length), [8, 1]);
 });
 
-test('fetchPoolInfoSettled throws only when every pool failed and returns [] for no ids', async () => {
+test('fetchPoolInfoSettled throws only when every batch failed and returns [] for no ids', async () => {
   const api = infoApi({ failing: ['pool1x', 'pool1y'] });
   await assert.rejects(() => fetchPoolInfoSettled(api, ['pool1x', 'pool1y']), /timeout/);
   assert.deepEqual(await fetchPoolInfoSettled(api, []), []);
@@ -155,7 +157,7 @@ test('sampler serves a shuffle from the spare pool and refills it', async () => 
   const { s, snapshots, last } = sampler(fetch);
   s.start();
   for (const id of [IDS[0], IDS[1], IDS[2], IDS[3], IDS[4]]) await fetch.settle(id, infoRow(id));
-  assert.equal(last().spare, 2);
+  // Two answers went to the spare pool and no request is left running.
   assert.equal(fetch.pending.size, 0);
   const before = snapshots.length;
   s.shuffle();
@@ -205,6 +207,17 @@ test('sampler is ready with fewer pools when the candidates run out', async () =
   await fetch.settle(IDS[1], infoRow(IDS[1]));
   assert.equal(last().status, 'ready');
   assert.equal(last().pools.length, 2);
+});
+
+test('sampler does not report answers that change nothing visible', async () => {
+  const fetch = manualFetch();
+  const { s, snapshots } = sampler(fetch);
+  s.start();
+  for (const id of [IDS[0], IDS[1], IDS[2]]) await fetch.settle(id, infoRow(id));
+  const count = snapshots.length;
+  await fetch.settle(IDS[3], infoRow(IDS[3]));
+  await fetch.settle(IDS[4], null);
+  assert.equal(snapshots.length, count);
 });
 
 test('sampler ignores answers after stop', async () => {

@@ -4,13 +4,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { fisherYates, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
 import { parseLovelace } from "@site/src/utils/cardano/lovelace.mjs";
-import { fetchPoolIndex, fetchPoolInfo, fetchPoolInfoOne, fetchPoolInfoSettled } from "@site/src/utils/cardano/koiosPools.mjs";
+import { fetchPoolIndex, fetchPoolInfoOne, fetchPoolInfoSettled } from "@site/src/utils/cardano/koiosPools.mjs";
 import { createPoolSampler } from "@site/src/utils/cardano/poolSampler.mjs";
 import {
   SEARCH_RESULT_LIMIT, classifyQuery, eligibleFromIndex, searchTicker, toPoolModel,
 } from "@site/src/utils/cardano/stakePools.mjs";
-
-export { fetchPoolIndex, fetchPoolInfo };
 
 export const INDEX_CACHE_KEY = "cardano-org.pool-index.v1";
 export const INDEX_CACHE_TTL_MS = 15 * 60 * 1000;
@@ -27,8 +25,8 @@ export async function fetchAccounts(api, stakeAddresses) {
   if (!Array.isArray(res.data)) throw new Error("account_info returned no array");
   const byAddr = new Map(res.data.map((r) => [r?.stake_address, r]));
   const poolIds = [...new Set(res.data.map((r) => r?.delegated_pool).filter(Boolean))];
-  const infos = await fetchPoolInfo(api, poolIds);
-  const poolById = new Map(infos.map((i) => [i.pool_id_bech32, toPoolModel(null, i)]));
+  const infos = await Promise.all(poolIds.map((id) => fetchPoolInfoOne(api, id)));
+  const poolById = new Map(infos.filter(Boolean).map((i) => [i.pool_id_bech32, toPoolModel(null, i)]));
   const accounts = {};
   for (const addr of stakeAddresses) {
     const row = byAddr.get(addr);
@@ -129,14 +127,13 @@ export function useRandomSample(api, indexRows) {
       sampler.stop();
       controller.abort();
       samplerRef.current = null;
+      setState(IDLE_STATE);
     };
   }, [api, indexRows, nonce]);
 
   const shuffle = useCallback(() => samplerRef.current?.shuffle(), []);
   const retry = useCallback(() => setNonce((n) => n + 1), []);
-  // Without an api or index there is no sampler, so the resource reads idle
-  // no matter what an earlier sampler left behind.
-  return { ...(api && indexRows ? state : IDLE_STATE), shuffle, retry };
+  return { ...state, shuffle, retry };
 }
 
 // Ticker search waits for the index: while it is still loading, the ticker

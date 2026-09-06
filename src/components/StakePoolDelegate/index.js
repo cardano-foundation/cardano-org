@@ -3,13 +3,14 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
+import { fetchPoolInfoOne } from "@site/src/utils/cardano/koiosPools.mjs";
 import { delegateStake, rewardAddressesBech32 } from "@site/src/utils/cardano/wallet";
 import { EXPECTED_NETWORK_ID, classifyError, shortAddress, stringifyError } from "@site/src/utils/walletTx";
 import { DISPLAY_COUNT, MAX_MARGIN, MIN_ACTIVE_STAKE, MIN_PLEDGE } from "@site/src/utils/cardano/stakePools.mjs";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { NetworkWarning, SearchRow, TxBanner, WalletPicker } from "@site/src/components/WalletDelegation";
 import {
-  fetchAccounts, fetchPoolInfo, useAccounts, usePoolIndex, usePoolSearch, useProtocolParams, useRandomSample,
+  fetchAccounts, useAccounts, usePoolIndex, usePoolSearch, useProtocolParams, useRandomSample,
 } from "./usePoolData";
 import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
@@ -34,7 +35,7 @@ class PoolUnavailableError extends Error {
   }
 }
 
-// Thrown when the preflight itself (fetchPoolInfo or fetchAccounts) fails,
+// Thrown when the preflight itself (fetchPoolInfoOne or fetchAccounts) fails,
 // for example a network or 5xx error, as opposed to a preflight that
 // succeeds but finds the pool unavailable. Mapped to the same message as a
 // wallet-side status check failure, since neither preflight result is known.
@@ -185,17 +186,16 @@ export default function StakePoolDelegate() {
       // failure of the preflight calls themselves (network, 5xx) is a
       // PreflightError, distinct from a preflight that succeeds but finds
       // the pool gone (PoolUnavailableError below).
-      let infos, freshAccounts;
+      let fresh, freshAccounts;
       try {
-        [infos, freshAccounts] = await Promise.all([
-          fetchPoolInfo(apiClient, [pool.id]),
+        [fresh, freshAccounts] = await Promise.all([
+          fetchPoolInfoOne(apiClient, pool.id),
           fetchAccounts(apiClient, [stakeAddress]),
         ]);
       } catch {
         throw new PreflightError();
       }
       if (!live()) return;
-      const fresh = infos.find((row) => row?.pool_id_bech32 === pool.id);
       if (!fresh || fresh.pool_status !== "registered" || fresh.retiring_epoch != null) {
         throw new PoolUnavailableError();
       }
@@ -418,7 +418,7 @@ export default function StakePoolDelegate() {
           ) : (
             renderPools(
               sample.data || [],
-              index.status !== "ready" || sample.status === "loading" || sample.status === "idle",
+              sample.status === "loading" || sample.status === "idle",
               sample.status === "error"
                 ? translate({ id: "stakePoolDelegation.delegate.sample.failed", message: "Could not load pool details." })
                 : null,

@@ -8,14 +8,14 @@ export const INDEX_PAGE_SIZE = 1000;
 // seconds. Mainnet has just under 3000 non-retired pools, so one wave of four
 // parallel pages covers the whole index in the time one page used to take.
 export const INDEX_PARALLEL_PAGES = 4;
-// Batch size for the strict loader used by the preflight and account calls.
-// The proxy caps POST bodies at 5120 bytes, 50 ids would be the upper bound.
-export const INFO_BATCH_SIZE = 8;
+// Batch size for the search, which renders all results at once anyway. The
+// proxy caps POST bodies at 5120 bytes, 50 ids would be the upper bound.
+const INFO_BATCH_SIZE = 8;
 // pool_info is expensive on the Koios side (live stake, pledge and delegator
 // counts per pool). Measured 2026-09-06 through the proxy: a single pool took
 // 0.6 to 9.5 seconds and occasionally more than 30. The selection and the
-// search load pools one by one, so a slow pool only holds its own slot.
-export const POOL_INFO_TIMEOUT_MS = 30000;
+// search load pools in small units, so a slow pool only holds its own slot.
+const POOL_INFO_TIMEOUT_MS = 30000;
 
 const INDEX_SELECT = [
   "pool_id_bech32", "ticker", "pool_status", "pool_group",
@@ -59,17 +59,6 @@ export async function fetchPoolIndex(api) {
   return rows;
 }
 
-// Strict loader: every batch must succeed. Used where a missing answer must
-// not be mistaken for a missing pool (delegation preflight, account lookup).
-export async function fetchPoolInfo(api, ids) {
-  if (!ids.length) return [];
-  const results = await Promise.all(
-    chunk(ids, INFO_BATCH_SIZE).map((batch) =>
-      api.post("/pool_info", { _pool_bech32_ids: batch }, { timeout: POOL_INFO_TIMEOUT_MS }))
-  );
-  return results.flatMap((r) => (Array.isArray(r.data) ? r.data : []));
-}
-
 // One pool per request so a slow pool only delays itself. Resolves null when
 // Koios does not know the id (retired long ago or never registered), rejects
 // on a transport error or timeout so callers can tell the two apart.
@@ -79,13 +68,15 @@ export async function fetchPoolInfoOne(api, id, { signal } = {}) {
   return row || null;
 }
 
-// Tolerant loader for the search: pools whose request failed are left out.
-// Rejects with the first error only when no request succeeded, so a general
-// outage still surfaces as an error instead of an empty result.
+// Tolerant loader for the search: pools in a batch whose request failed are
+// left out. Rejects with the first error only when no batch succeeded, so a
+// general outage still surfaces as an error instead of an empty result.
 export async function fetchPoolInfoSettled(api, ids, { signal } = {}) {
   if (!ids.length) return [];
-  const settled = await Promise.allSettled(ids.map((id) => fetchPoolInfoOne(api, id, { signal })));
-  const rows = settled.filter((s) => s.status === "fulfilled" && s.value).map((s) => s.value);
-  if (!rows.length && settled.every((s) => s.status === "rejected")) throw settled[0].reason;
-  return rows;
+  const settled = await Promise.allSettled(
+    chunk(ids, INFO_BATCH_SIZE).map((batch) =>
+      api.post("/pool_info", { _pool_bech32_ids: batch }, { timeout: POOL_INFO_TIMEOUT_MS, signal }))
+  );
+  if (settled.every((s) => s.status === "rejected")) throw settled[0].reason;
+  return settled.flatMap((s) => (s.status === "fulfilled" && Array.isArray(s.value.data) ? s.value.data : []));
 }
