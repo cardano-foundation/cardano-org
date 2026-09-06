@@ -25,7 +25,7 @@ yarn install
 yarn start
 ```
 
-Open `docs/index.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes http://localhost:3000/docs/ in the moment you save your file.
+Open `docs/get-involved/local-copy.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes at http://localhost:3000/docs/get-involved/local-copy the moment you save your file.
 
 ## Folder structure
 
@@ -40,8 +40,13 @@ cardano-org
 ├── build
 │   └── ...
 ├── docs
-│   ├── index.md (this page)
-│   └── ...
+│   ├── communities.md
+│   ├── get-involved
+│   │   ├── index.md
+│   │   ├── local-copy.md (this page)
+│   │   └── ...
+│   └── use-cases
+│       └── ...
 ├── src
 │   ├── components
 │   │   └── ...
@@ -73,7 +78,7 @@ cardano-org
 ### Folder structure rundown
 
 - `/blog/` - Contains the Markdown files for the news section.
-- `/docs/` - Contains the Markdown files for the documentation of the components (like this page). Customize the order of the docs sidebar in `sidebars.js`.
+- `/docs/` - Contains the Markdown files that Docusaurus renders as documentation: the contributor guides in `docs/get-involved/` (like this page, including the component docs in `docs/get-involved/components/`), the use case pages in `docs/use-cases/`, and the community channel list in `docs/communities.md`. Customize the order of the docs sidebars in `sidebars.js`.
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
   - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/.
@@ -88,7 +93,7 @@ cardano-org
   - `/static/img` - All kinds of images. To highlight a few: `authors` are logos for `authors.yml`, `logos` are entity and company logos, `og` are open graph images.
 - `/docusaurus.config.js` - A config file containing the site configuration.
 - `/package.json` - A Docusaurus website is a React app. You can install and use any npm packages you like in them.
-- `/sidebar.js` - Used by the documentation to specify the order of documents in the sidebar.
+- `/sidebars.js` - Used by the documentation to specify the order of documents in the sidebar.
 
 
 ## Known problems that may arise
