@@ -4,7 +4,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
-  safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools,
+  safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools, logoIdsToKeep,
 } = require('./lib/pool-logos.js');
 
 test('safeHttpUrl accepts absolute http and https urls only', () => {
@@ -86,5 +86,16 @@ test('splitPools keeps every registered id and picks only resolvable, non-retiri
     { pool_id_bech32: 'pool1nometa', ticker: 'E', meta_url: null, retiring_epoch: null },
   ]);
   assert.deepEqual([...registeredIds].sort(), [ID_A, ID_B, ID_C, 'pool1nometa', 'pool1noturl'].sort());
-  assert.deepEqual(candidates, [{ poolId: ID_A, ticker: 'A', metaUrl: 'https://a.example/m.json' }]);
+  assert.deepEqual(candidates, [{ poolId: ID_A, metaUrl: 'https://a.example/m.json' }]);
+});
+
+test('logoIdsToKeep prunes only on positive evidence', () => {
+  const keep = logoIdsToKeep({
+    existingIds: ['saved', 'gone', 'noicon', 'failed', 'unresolved'],
+    savedIds: ['saved', 'new'],
+    noneIds: new Set(['noicon']),
+    // 'gone' is retired, 'failed' had a fetch error, 'unresolved' had no ticker this run.
+    registeredIds: new Set(['saved', 'noicon', 'failed', 'unresolved', 'new']),
+  });
+  assert.deepEqual([...keep].sort(), ['failed', 'new', 'saved', 'unresolved']);
 });

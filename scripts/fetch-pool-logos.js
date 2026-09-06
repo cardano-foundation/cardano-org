@@ -23,7 +23,7 @@ const dns = require('dns');
 const axios = require('axios');
 const sharp = require('sharp');
 const {
-  safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools,
+  safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools, logoIdsToKeep,
 } = require('./lib/pool-logos.js');
 
 const API_URL = process.env.CARDANO_ORG_API_URL || 'https://data.cardano.org/k/api/v1';
@@ -127,8 +127,14 @@ async function fetchImage(url) {
   return Buffer.from(data);
 }
 
-// One download and one encode per distinct icon URL, multi-pool operators
-// share a logo across their pools.
+// Multi-pool operators point all their pools at one extended file and one
+// icon, so both are fetched (and the icon encoded) once per distinct URL.
+const extendedByUrl = new Map();
+function extendedJson(url) {
+  if (!extendedByUrl.has(url)) extendedByUrl.set(url, fetchJson(url, EXTENDED_MAX_BYTES));
+  return extendedByUrl.get(url);
+}
+
 const encodedByUrl = new Map();
 function encodedLogo(url) {
   if (!encodedByUrl.has(url)) {
@@ -154,7 +160,7 @@ async function processOne({ poolId, metaUrl }) {
     const extendedUrl = extendedUrlFromMeta(meta);
     if (!extendedUrl) return { poolId, outcome: 'none' };
     stage = 'extended';
-    const extended = await fetchJson(extendedUrl, EXTENDED_MAX_BYTES);
+    const extended = await extendedJson(extendedUrl);
     const iconUrl = iconUrlFromExtended(extended);
     if (!iconUrl) return { poolId, outcome: 'none' };
     stage = 'image';
@@ -186,17 +192,6 @@ function listLogoIds() {
   return fs.readdirSync(OUT_DIR).filter((n) => n.endsWith('.webp')).map((n) => n.slice(0, -5));
 }
 
-function pruneStaleFiles(keepIds) {
-  const keep = new Set(keepIds.map((id) => `${id}.webp`));
-  let removed = 0;
-  for (const name of fs.readdirSync(OUT_DIR)) {
-    if (!name.endsWith('.webp') || keep.has(name)) continue;
-    fs.unlinkSync(path.join(OUT_DIR, name));
-    removed++;
-  }
-  return removed;
-}
-
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
@@ -216,17 +211,20 @@ async function main() {
   const blocked = failed.filter((r) => r.blocked);
   const totalBytes = saved.reduce((sum, r) => sum + r.bytes, 0);
 
-  // Prune only on positive evidence: the pool is no longer registered, or its
-  // metadata was read cleanly and points to no icon. A failed fetch and a
-  // pool Koios could not resolve this time keep their snapshot.
-  const noneIds = new Set(none.map((r) => r.poolId));
-  const keep = new Set(saved.map((r) => r.poolId));
+  const keep = logoIdsToKeep({
+    existingIds: listLogoIds(),
+    savedIds: saved.map((r) => r.poolId),
+    noneIds: new Set(none.map((r) => r.poolId)),
+    registeredIds,
+  });
+  let removed = 0;
   for (const id of listLogoIds()) {
-    if (registeredIds.has(id) && !noneIds.has(id)) keep.add(id);
+    if (keep.has(id)) continue;
+    fs.unlinkSync(path.join(OUT_DIR, `${id}.webp`));
+    removed++;
   }
-  const removed = pruneStaleFiles([...keep]);
 
-  const manifest = { generated: new Date().toISOString(), apiUrl: API_URL, ids: listLogoIds().sort() };
+  const manifest = { generated: new Date().toISOString(), apiUrl: API_URL, ids: [...keep].sort() };
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
 
   console.log(

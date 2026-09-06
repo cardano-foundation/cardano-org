@@ -62,13 +62,12 @@ function isPublicAddress(ip) {
   const lower = ip.toLowerCase();
   const mapped = lower.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/);
   if (mapped) return isPublicIPv4(mapped[1]);
-  if (lower === '::' || lower === '::1') return false;
   const first = parseInt(lower.split(':')[0] || '0', 16);
   if ((first & 0xfe00) === 0xfc00) return false; // fc00::/7 unique local
   if ((first & 0xffc0) === 0xfe80) return false; // fe80::/10 link local
   if ((first & 0xff00) === 0xff00) return false; // multicast
   if (first === 0x2001 && lower.startsWith('2001:db8')) return false; // documentation
-  if (lower.startsWith('::')) return false; // any other IPv4-compatible form
+  if (lower.startsWith('::')) return false; // ::, ::1 and IPv4-compatible forms
   return true;
 }
 
@@ -86,7 +85,7 @@ function parseIndexPage(data) {
 
 // Every registered id is the base for pruning. Candidates for a download are
 // the pools whose metadata Koios resolved (ticker present), with an http(s)
-// metadata URL and no retirement announced.
+// metadata URL and no retirement announced. The ticker itself is not needed.
 function splitPools(rows) {
   const registeredIds = new Set();
   const candidates = [];
@@ -94,10 +93,24 @@ function splitPools(rows) {
     registeredIds.add(row.pool_id_bech32);
     const metaUrl = safeHttpUrl(row.meta_url);
     if (row.ticker && metaUrl && row.retiring_epoch == null) {
-      candidates.push({ poolId: row.pool_id_bech32, ticker: row.ticker, metaUrl });
+      candidates.push({ poolId: row.pool_id_bech32, metaUrl });
     }
   }
   return { registeredIds, candidates };
 }
 
-module.exports = { safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools };
+// The only destructive decision of a run. A snapshot is kept when it was
+// written this run, or when its pool is still registered and this run did not
+// read its metadata cleanly and find no icon. A failed fetch and a pool Koios
+// could not resolve this time are not evidence, their snapshot survives.
+function logoIdsToKeep({ existingIds, savedIds, noneIds, registeredIds }) {
+  const keep = new Set(savedIds);
+  for (const id of existingIds) {
+    if (registeredIds.has(id) && !noneIds.has(id)) keep.add(id);
+  }
+  return keep;
+}
+
+module.exports = {
+  safeHttpUrl, extendedUrlFromMeta, iconUrlFromExtended, isPublicAddress, parseIndexPage, splitPools, logoIdsToKeep,
+};

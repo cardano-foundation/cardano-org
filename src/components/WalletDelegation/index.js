@@ -3,6 +3,7 @@
 // strings keep working for both pages.
 import React, { useEffect, useState } from "react";
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { detectWallets, enableWallet, firstAddressBech32 } from "@site/src/utils/cardano/wallet";
 import { classifyError, EXPLORER_TX_BASE } from "@site/src/utils/walletTx";
 import styles from "./styles.module.css";
@@ -144,6 +145,16 @@ export function TxBanner({ state }) {
 export function Initials({ name }) {
   const text = (name || "?").split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
   return <div className={styles.initials} aria-hidden="true">{text}</div>;
+}
+
+// Self-hosted snapshot image (DRep avatar, pool logo) with the Initials
+// fallback. `ids` is the Set from the snapshot manifest, `path` the site
+// relative image path. A file missing at runtime falls back as well.
+export function SnapshotImage({ ids, id, path, name, className }) {
+  const [imgError, setImgError] = useState(false);
+  const src = useBaseUrl(path);
+  if (!ids.has(id) || imgError) return <Initials name={name} />;
+  return <img src={src} alt="" className={className} width="48" height="48" loading="lazy" onError={() => setImgError(true)} />;
 }
 
 export function SearchRow({ value, onChange, placeholder, label }) {
