@@ -54,7 +54,6 @@ cardano-org
 │   │   └── custom.css
 │   ├── data
 │   │   ├── ambassadorsData.json
-│   │   ├── delegationFAQ.json
 │   │   ├── logosCompanies.json
 │   │   ├── operationFAQ.json
 │   │   ├── pineappleFAQ.json
@@ -81,7 +80,6 @@ cardano-org
 - `/docs/` - Contains the Markdown files that Docusaurus renders as documentation: the contributor guides in `docs/get-involved/` (like this page, including the component docs in `docs/get-involved/components/`), the use case pages in `docs/use-cases/`, and the community channel list in `docs/communities.md`. Customize the order of the docs sidebars in `sidebars.js`.
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
-  - `/src/data/delegationFAQ.json` - FAQ data for https://cardano.org/stake-pool-delegation/.
   - `/src/data/logosCompanies.json` - Entity and company data for https://cardano.org/entities/.
   - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
   - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/get-involved/faq-component).

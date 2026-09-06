@@ -91,7 +91,7 @@ function getNavbarItems() {
         {
           title: 'Do more',
           items: [
-            {to: '/stake-pool-delegation', label: 'Delegate your ada', description: 'Be a part of it and earn rewards'},
+            {to: '/stake-pool-delegation', label: 'Stake your ada', description: 'Delegate to a stake pool and earn rewards'},
             {to: '/governance/delegate', label: 'Delegate your vote', description: 'Lend your voting power to a DRep'},
             {to: '/defi', label: 'DeFi', description: 'Swap, lend and earn with open applications'},
           ],

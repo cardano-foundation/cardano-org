@@ -56,12 +56,10 @@ import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
 import { renderAnswerArray } from "@site/src/utils/textUtils";
-import delegationFAQ from "@site/src/data/delegationFAQ.json";
 import operationFAQ from "@site/src/data/operationFAQ.json";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 const faqData = {
-  delegationFAQ,
   operationFAQ,
   pineappleFAQ,
 };
