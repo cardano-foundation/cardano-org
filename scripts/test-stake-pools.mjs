@@ -121,14 +121,13 @@ test('eligibleFromIndex applies the thresholds exactly at the boundary', () => {
   const belowPledge = indexRow({ pledge: (MIN_PLEDGE - 1n).toString() });
   assert.deepEqual(eligibleFromIndex([atPledge]), [atPledge]);
   assert.deepEqual(eligibleFromIndex([belowPledge]), []);
-  assert.deepEqual(eligibleFromIndex([indexRow({ pledge: '0' })]), []);
-  assert.deepEqual(eligibleFromIndex([indexRow({ pledge: 'lots' })]), []);
 });
 
 test('eligibleFromIndex drops retiring pools, missing tickers and invalid values', () => {
   for (const o of [
     { pool_status: 'retiring', retiring_epoch: 700 }, { retiring_epoch: 700 }, { ticker: null },
     { ticker: '' }, { active_stake: 'lots' }, { margin: null }, { pool_id_bech32: BROKEN_ID },
+    { pledge: '0' }, { pledge: 'lots' },
   ]) assert.deepEqual(eligibleFromIndex([indexRow(o)]), [], JSON.stringify(o));
 });
 

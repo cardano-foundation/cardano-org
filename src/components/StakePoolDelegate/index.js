@@ -15,8 +15,6 @@ import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
 import styles from "./styles.module.css";
 
-const POOL_API_TIMEOUT_MS = 30000;
-
 function Retry({ onClick }) {
   return (
     <button type="button" className={`button button--sm button--outline button--primary ${styles.retryButton}`} onClick={onClick}>
@@ -87,14 +85,7 @@ export default function StakePoolDelegate() {
   const { siteConfig: { customFields }, i18n: { currentLocale } } = useDocusaurusContext();
   const API_URL = customFields.CARDANO_ORG_API_URL;
   const locale = currentLocale || "en";
-  // Uncached pool_info answers can take several seconds at the proxy, so this
-  // tool allows more than the site-wide default before giving up.
-  const [apiClient] = useState(() => {
-    if (!API_URL) return null;
-    const client = makeApiClient(API_URL);
-    client.defaults.timeout = POOL_API_TIMEOUT_MS;
-    return client;
-  });
+  const [apiClient] = useState(() => (API_URL ? makeApiClient(API_URL) : null));
 
   // wallet: { instance, name, address, networkId, rewardAddresses, rewardAddressesError }
   const [wallet, setWallet] = useState(null);
@@ -400,12 +391,17 @@ export default function StakePoolDelegate() {
       ) : (
         <>
           <div className={styles.poolHeader}>
-            <p className={styles.poolIntro}>
-              {translate(
-                { id: "stakePoolDelegation.delegate.sampleIntro", message: "A random selection of registered pools with at least {stake} of active stake, a declared pledge of at least {pledge} that is met, a margin below {margin}%, not saturated and at least one block minted. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID." },
-                { stake: `${formatAdaCompact(MIN_ACTIVE_STAKE, locale)} ada`, pledge: `${formatAdaCompact(MIN_PLEDGE, locale)} ada`, margin: (MAX_MARGIN * 100).toLocaleString(locale) }
-              )}
-            </p>
+            <div className={styles.poolIntro}>
+              <p className={styles.poolIntroText}>
+                {translate({ id: "stakePoolDelegation.delegate.sampleIntro", message: "A random selection of registered pools that meet these minimums. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID." })}
+              </p>
+              <p className={styles.poolCriteria}>
+                {translate(
+                  { id: "stakePoolDelegation.delegate.sampleCriteria", message: "Active stake at least {stake} · declared pledge at least {pledge} and met · margin below {margin}% · not saturated · at least one block minted" },
+                  { stake: `${formatAdaCompact(MIN_ACTIVE_STAKE, locale)} ada`, pledge: `${formatAdaCompact(MIN_PLEDGE, locale)} ada`, margin: (MAX_MARGIN * 100).toLocaleString(locale) }
+                )}
+              </p>
+            </div>
             <button
               type="button"
               className={`button button--secondary ${styles.shuffleButton}`}

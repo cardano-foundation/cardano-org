@@ -45,9 +45,21 @@
 }
 
 .poolIntro {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.poolIntroText {
   margin: 0;
   color: var(--ifm-color-emphasis-800);
-  flex: 1 1 auto;
+}
+
+.poolCriteria {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
 .shuffleButton {

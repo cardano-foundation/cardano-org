@@ -10225,7 +10225,10 @@
     "message": "No pool with that ticker. Try the pool ID instead."
   },
   "stakePoolDelegation.delegate.sampleIntro": {
-    "message": "A random selection of registered pools with at least {stake} of active stake, a declared pledge of at least {pledge} that is met, a margin below {margin}%, not saturated and at least one block minted. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID."
+    "message": "A random selection of registered pools that meet these minimums. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID."
+  },
+  "stakePoolDelegation.delegate.sampleCriteria": {
+    "message": "Active stake at least {stake} · declared pledge at least {pledge} and met · margin below {margin}% · not saturated · at least one block minted"
   },
   "stakePoolDelegation.delegate.shuffle": {
     "message": "Shuffle pools"

@@ -4,12 +4,12 @@
 import { isValidPoolId, poolIdFromHex } from './bech32.mjs';
 import { parseLovelace } from './lovelace.mjs';
 
-// Minimum criteria for the random selection: declared pledge from 25k ada, active stake from 1M ada
+// Minimum criteria for the random selection. Active stake from 1M ada
 // (roughly one block per epoch, which keeps dormant pools out while small
-// active pools stay in) and margin below 5 percent (which keeps private 100
-// percent pools and expensive pools out). Ticker and ID search never apply
-// these, only the random sample does, and the UI states both thresholds
-// next to the sample.
+// active pools stay in), margin below 5 percent (which keeps private 100
+// percent pools and expensive pools out) and a declared pledge from 25k ada
+// (see MIN_PLEDGE). Ticker and ID search never apply these, only the random
+// sample does, and the UI states all three thresholds next to the sample.
 export const MIN_ACTIVE_STAKE = 1000000000000n; // lovelace, 1M ada
 export const MAX_MARGIN = 0.05;
 // A declared pledge below this is not real skin in the game ("pledge met" is
