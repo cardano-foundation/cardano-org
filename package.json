@@ -10,6 +10,7 @@
     "build-quiz": "node scripts/generate-quiz-modules.js",
     "check-app-screenshots": "node scripts/check-app-screenshots.js",
     "fetch-drep-avatars": "node scripts/fetch-drep-avatars.js",
+    "fetch-pool-logos": "node scripts/fetch-pool-logos.js",
     "docusaurus": "docusaurus",
     "start": "yarn check-app-screenshots && yarn build-authors && yarn build-news && yarn build-apps-meta && yarn build-quiz && yarn build-llms && docusaurus start",
     "build": "yarn check-app-screenshots && yarn build-authors && yarn build-news && yarn build-apps-meta && yarn build-quiz && yarn build-llms && docusaurus build",
@@ -33,8 +34,9 @@
     "test:get-started": "node --test scripts/test-get-started.mjs",
     "test:stake-pools": "node --test scripts/test-stake-pools.mjs",
     "test:pool-loading": "node --test scripts/test-pool-loading.mjs",
+    "test:pool-logos": "node --test scripts/test-pool-logos.js",
     "test:wallet-tx": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test scripts/test-wallet-tx.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:wallet-tx",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
