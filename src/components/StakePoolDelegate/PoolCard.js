@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { translate } from "@docusaurus/Translate";
-import { Initials } from "@site/src/components/WalletDelegation";
+import { SnapshotImage } from "@site/src/components/WalletDelegation";
+import poolLogosManifest from "@site/src/data/pool-logos.json";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { shortAddress } from "@site/src/utils/walletTx";
 import { poolIdToHex } from "@site/src/utils/cardano/bech32.mjs";
@@ -11,6 +12,9 @@ import styles from "./styles.module.css";
 // cards link to PoolTool, the pool explorer among the maintainer picks on
 // /apps. PoolTool addresses pools by the hex key hash.
 const POOLTOOL_POOL_BASE = "https://pooltool.io/pool/";
+
+// Pool ids with a self-hosted logo, see scripts/fetch-pool-logos.js.
+const LOGO_SET = new Set(poolLogosManifest.ids);
 
 function Metric({ label, value }) {
   return (
@@ -46,7 +50,7 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
   return (
     <div className={`${styles.card} ${isCurrent ? styles.cardCurrent : ""}`}>
       <div className={styles.cardHeader}>
-        <Initials name={pool.ticker || pool.name} />
+        <SnapshotImage ids={LOGO_SET} id={pool.id} path={`/img/pools/${pool.id}.webp`} name={pool.ticker || pool.name} className={styles.logo} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardTicker}>{pool.ticker || shortAddress(pool.id)}</h3>
           {pool.name && <span className={styles.cardName}>{pool.name}</span>}

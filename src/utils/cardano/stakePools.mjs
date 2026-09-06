@@ -15,11 +15,9 @@ export const MAX_MARGIN = 0.05;
 // A declared pledge below this is not real skin in the game ("pledge met" is
 // trivially true for a pledge of zero), so the sample requires 25k ada.
 export const MIN_PLEDGE = 25000000000n; // lovelace, 25k ada
-// Candidates loaded per pool_info batch, cards shown, and how often we top up
-// when the fine filter leaves fewer than DISPLAY_COUNT.
-export const SAMPLE_SIZE = 24;
+// Cards shown in the random selection. How they are loaded lives in
+// poolSampler.mjs.
 export const DISPLAY_COUNT = 6;
-export const MAX_RESAMPLES = 2;
 export const SEARCH_RESULT_LIMIT = 12;
 
 const POOL_STATUSES = new Set(['registered', 'retiring', 'retired']);

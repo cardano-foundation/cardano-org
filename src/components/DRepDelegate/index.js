@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { makeApiClient } from "@site/src/utils/insights/api";
@@ -15,7 +14,7 @@ import {
   stringifyError,
   classifyError,
 } from "@site/src/utils/walletTx";
-import { WalletPicker, NetworkWarning, TxBanner, Initials, SearchRow } from "@site/src/components/WalletDelegation";
+import { WalletPicker, NetworkWarning, TxBanner, Initials, SearchRow, SnapshotImage } from "@site/src/components/WalletDelegation";
 import { fisherYates, chunk, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
 import styles from "./styles.module.css";
 
@@ -178,24 +177,10 @@ function WalletStatus({ wallet, delegation, onDisconnect }) {
 }
 
 function DRepCard({ drep, onSelect, disabled }) {
-  const [imgError, setImgError] = useState(false);
-  const hasLocalAvatar = AVATAR_SET.has(drep.drepId);
-  const localAvatar = useBaseUrl(`/img/dreps/${drep.drepId}.jpg`);
-  const showImage = hasLocalAvatar && !imgError;
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        {showImage ? (
-          <img
-            src={localAvatar}
-            alt=""
-            className={styles.avatar}
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <Initials name={drep.name} />
-        )}
+        <SnapshotImage ids={AVATAR_SET} id={drep.drepId} path={`/img/dreps/${drep.drepId}.jpg`} name={drep.name} className={styles.avatar} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardName}>{drep.name}</h3>
           <span className={styles.cardVp}>{formatVotingPower(drep.votingPower)}</span>
