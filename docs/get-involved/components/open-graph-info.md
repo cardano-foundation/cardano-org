@@ -11,7 +11,13 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 
 ## Basic Usage
 
-Image only:
+Site-wide default image only:
+
+```jsx
+<OpenGraphInfo />
+```
+
+Page-specific image:
 
 ```jsx
 <OpenGraphInfo pageName="apps" />
@@ -29,15 +35,16 @@ With title and description:
 
 ## Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `pageName` | `string` | Yes | Base name of the preview image. Resolves to `static/img/og/<pageName>.jpg`. |
-| `title` | `string` | No | Sets `og:title` and `twitter:title`. Omit to leave the page's own title. |
-| `description` | `string` | No | Sets `og:description` and `twitter:description`. |
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `pageName` | `string` | `default` | Base name of the preview image. Resolves to `static/img/og/<pageName>.jpg`. Pages without a dedicated image omit it and get the site-wide `static/img/og/default.jpg`. |
+| `title` | `string` | none | Sets `og:title` and `twitter:title`. Omit to leave the page's own title. |
+| `description` | `string` | none | Sets `og:description` and `twitter:description`. |
 
 ## Notes
 
 - The preview image **must** live in `static/img/og/` and be a `.jpg` named exactly `<pageName>.jpg`.
-- `og:image` and `twitter:image` use the same file; there is no separate Twitter image.
+- `og:image` and `twitter:image` use the same file, there is no separate Twitter image.
+- `og:type` is always `website` and `twitter:card` is always `summary_large_image`. Neither is configurable.
 - The canonical `og:url` is derived automatically from the current path, and `og:site_name` from the site config. You do not set these.
 - Use `summary_large_image` previews, so design the image for a wide 1.91:1 crop.

@@ -6,7 +6,7 @@ description: Use the FAQSection component on cardano.org. Data sources, JSON fil
 
 ## Create a FAQ Section
 
-You can use the component `<FAQSection>` to create your own FAQ sections by passing a JSON file. This example is based on the [Hello World Page](/docs/get-involved/create-a-page#add-more-components) from the previous tutorial.
+You can use the component `<FAQSection>` to create your own FAQ sections by passing a JSON file. This example is based on the [Hello World Page](/docs/get-involved/create-react-page#add-more-components) from the previous tutorial.
 
 ## Prepare the JSON file
 
@@ -65,17 +65,24 @@ const faqData = {
 };
 ```
 
-:::tip Passing data directly
-If you would rather not register a JSON file, `FAQSection` also accepts a `data` prop with the array inline: `<FAQSection data={myFaqArray} />`. When `data` is given it takes precedence over `jsonFileName`.
-:::
-
 This registers your JSON file so it can be referenced by name when using the component.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `jsonFileName` | `string` | none | Key of a registered JSON file in `faqData`. There is no default, and an unregistered name renders an empty section (just the divider), so always pass one of the registered keys or use `data`. |
+| `data` | `array` | none | The question array inline, for example `<FAQSection data={myFaqArray} />`. When `data` is given it takes precedence over `jsonFileName`. |
+
+:::note Built-in divider
+`FAQSection` renders its own `<Divider text="FAQ" id="faq" />` above the questions, so the section already has a heading and a `#faq` anchor. Do not add another `Divider` in front of it.
+:::
 
 ## Add the FAQ component
 
 Based on the Hello World example from the basic tutorial, we have imported the FAQ component here and provided the JSON file name as a parameter. Please see the highlighted changes below:
 
-```jsx {8,43} title="src/pages/pinapple-on-pizza.js"
+```jsx {8,43} title="src/pages/pineapple-on-pizza.js"
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";

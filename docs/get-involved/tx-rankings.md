@@ -68,7 +68,10 @@ To appear on the leaderboard with your app's icon and details:
 
 1. Add your application to `src/data/apps.js` (see [Add your Application](/docs/get-involved/add-app))
 2. Include a `statsLabel` field in your entry that matches your `label` in the stats data
-3. The matching logic checks for an exact match on `statsLabel`, with a fallback to normalized title matching
+3. The matching logic (`src/utils/appStats.js`) resolves in this order:
+   1. An exact match of `statsLabel` against the `label` values in `appStats`
+   2. If that finds nothing and the entry has a `metadataLabel` (set by maintainers, see Path 2), the entry for that label in `metadataLabelStats`. Nothing else is tried after this step
+   3. Otherwise the normalized title: lowercased, whitespace removed, a trailing `dex` stripped (so `Minswap Dex` becomes `minswap`), matched against `appStats`
 
 Example:
 ```javascript
@@ -102,19 +105,21 @@ Key details:
 - Messages are stored permanently on-chain
 - See the official spec: [CIP-20 - Transaction message/comment metadata](https://cips.cardano.org/cip/CIP-20)
 
-A metadata label counts as verified when it is registered in the [CIP-0010 registry](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0010/registry.json). **Other verified metadata standards** that are automatically tracked include:
+A metadata label counts as verified when it is registered in the [CIP-0010 registry](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0010/registry.json). There is no fixed list: every registered label that carried transactions in the reporting window appears in `metadataLabelStats` with `verified: true`, and the leaderboard shows the verified ones. A label with no activity in the last 30 days is absent from `src/data/tx-stats.json` but can still be in the 1-year file `src/data/tx-stats-73epochs.json`. Examples of verified labels in the current reports:
 
-| Label | Standard | Category |
-|-------|----------|----------|
-| 674 | CIP-20 Transaction Messages | General |
-| 721 | CIP-25 NFT Token Standard | Minting |
-| 777 | CIP-27 Royalties Standard | Minting |
-| 94 | CIP-94 Governance Polls | Governance |
-| 1694 | Voltaire Governance | Governance |
-| 61284 | CIP-15 Catalyst Registration | Governance |
-| 61285 | CIP-15 Catalyst Witness | Governance |
-| 87/88 | Milkomeda Protocol | Bridge |
-| 1226 | Oracle Metadata | Oracle |
+| Label | Standard | Category on the leaderboard | In the current 30-day file |
+|-------|----------|-----------------------------|----------------------------|
+| 674 | CIP-20 Transaction Messages | none, shown as "Not Listed" | yes |
+| 721 | CIP-25 NFT Token Standard | Minting | yes |
+| 777 | CIP-27 Royalties Standard | Minting | yes |
+| 1694 | Voltaire Governance | Governance | yes |
+| 3692 | CIP-149 DRep Compensation | Governance | yes |
+| 61284, 61285, 61286 | CIP-15 Catalyst Registration, Witness, Deregistration | Governance (grouped as Catalyst Voting) | 61284 and 61285 |
+| 94 | CIP-94 On-chain Governance Polls | Governance | no, 1-year file only |
+| 87, 88 | Milkomeda Protocol and Sidechain | Bridge (grouped as Milkomeda Bridge) | no, 1-year file only |
+| 1226 | Oracle Metadata | Oracle | no, 1-year file only |
+
+Project-specific registered labels (for example 8413 CommitProof, 544 TapDano) are tracked the same way. The display names and categories come from the `metadataInfo` table in `src/pages/apps/leaderboard.js`, an unlisted label falls back to the first part of its CIP-0010 description.
 
 ### Path 3: CIP-20 Message Allowlist (for apps without smart contracts)
 
@@ -151,7 +156,7 @@ The data flow from blockchain to leaderboard:
    - `metadataLabelStats`: transactions using registered metadata labels
 3. The **leaderboard page** merges both arrays (verified metadata only) and ranks everything by transaction count
 4. `appStats` entries are matched to `src/data/apps.js` via the `statsLabel` field to display icons, descriptions, and website links
-5. `metadataLabelStats` entries are verified against the CIP-0010 registry, shown with their CIP description, and mapped to existing categories (Governance, Bridge, Minting, etc.)
+5. `metadataLabelStats` entries are verified against the CIP-0010 registry, shown with their CIP description, and mapped to existing categories (Governance, Bridge, Minting, etc.). An entry in `apps.js` that carries both `statsLabel` and `metadataLabel` is linked from the label's leaderboard row, so the row shows the app's icon and website
 
 Both types of entries are ranked together in a single unified leaderboard, giving a complete picture of what is driving on-chain activity on Cardano.
 

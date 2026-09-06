@@ -90,6 +90,7 @@ We have a growing library of reusable components. Check out:
 - **[AppList Component](/docs/get-involved/components/app-list)** - compact app listing
 - **[AppGrid Component](/docs/get-involved/components/app-grid)** - app showcase grid with transaction stats
 - **[FAQ Component](/docs/get-involved/faq-component)** - collapsible Q&A sections
+- **[Navigation Menu](/docs/get-involved/navbar)** - how the five navbar menus are defined and translated
 
 ### Getting Started as a Developer
 1. **[Install locally](/docs/get-involved/local-copy)** - set up your development environment

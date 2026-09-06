@@ -1,11 +1,11 @@
 ---
 title: App Grid
-description: Render a filtered grid of Cardano applications from src/data/apps.js with tag filters and search using the AppGrid component.
+description: Render a grid of Cardano applications from src/data/apps.js filtered by category and ranked by transaction volume using the AppGrid component.
 ---
 
 ## AppGrid
 
-The `AppGrid` component displays a responsive grid of Cardano applications, with transaction statistics and rankings. It can filter apps by any tag (or multiple tags) and sorts them by transaction volume.
+The `AppGrid` component displays a responsive grid of Cardano applications, with transaction statistics and rankings. It filters apps by their primary category (one or several) and sorts them by transaction volume.
 
 ## Basic Usage
 
@@ -29,8 +29,8 @@ import AppGrid from '@site/src/components/AppGrid';
 |------|------|---------|-------------|
 | `categories` | `string[]` | `['dex']` | Array of category ids to filter apps. Apps whose primary category matches any of these are shown. |
 | `limit` | `number` | `null` | Maximum number of apps to display. Shows all if not specified. |
-| `showRank` | `boolean` | `true` | Whether to display rank badges (#1, #2, etc.) on app cards. |
-| `showStats` | `boolean` | `true` | Whether to display transaction statistics on app cards. |
+| `showRank` | `boolean` | `true` | Whether to display rank badges (#1, #2, etc.) on app cards. The badge is part of the statistics block, so it only appears together with `showStats` and only on apps that have transaction data. |
+| `showStats` | `boolean` | `true` | Whether to display transaction statistics on app cards. `false` also hides the rank badges. |
 | `gridTitle` | `string` | `null` | Optional title to display above the grid. |
 | `ctaText` | `string` | `"Visit"` | Text for the call-to-action button on each card. |
 | `moreLink` | `string` | `null` | Custom link for the "More Apps" card. Defaults to `/apps?tags=...` |
@@ -175,7 +175,7 @@ Clean display focusing only on app information:
 
 ---
 
-### Multiple Tags (DeFi)
+### Multiple Categories (DeFi)
 
 Show apps from multiple categories:
 
@@ -201,9 +201,9 @@ Show apps from multiple categories:
 
 ### Filtering & Sorting
 
-1. **Filters** all apps with ANY of the specified tags from `apps.js`
-2. **Sorts** by transaction count (descending)
-3. **Assigns** category-specific ranks (1, 2, 3, etc.)
+1. **Filters** all apps from `apps.js` whose primary `category` is one of the specified categories. Properties (`opensource`, `nft`, ...) are not considered
+2. **Sorts** by transaction count (descending), then by title. With `prioritizeMaintainerPicks`, maintainer picks come first regardless of their count
+3. **Assigns** category-specific ranks (1, 2, 3, etc.) in that order
 4. **Applies** limit if specified
 5. **Displays** "More Apps" card when limited
 
@@ -216,7 +216,8 @@ The component uses the `statsLabel` field from `apps.js` to match apps with thei
   title: "Minswap Dex",
   icon: "/img/app-icons/minswap.svg",
   statsLabel: "minswap",  // Matches label in tx-stats.json
-  tags: ["dex"],
+  category: "dex",        // exactly one, this is what AppGrid filters on
+  properties: ["opensource"],
   // ...
 }
 ```
