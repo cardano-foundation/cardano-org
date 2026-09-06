@@ -3,12 +3,14 @@ import { translate } from "@docusaurus/Translate";
 import { Initials } from "@site/src/components/WalletDelegation";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { shortAddress } from "@site/src/utils/walletTx";
+import { poolIdToHex } from "@site/src/utils/cardano/bech32.mjs";
 import styles from "./styles.module.css";
 
 // The explorer.cardano.org hub has no pool route (it only resolves
 // transaction, block, epoch, address, governance-action and drep), so pool
-// pages link to Cexplorer, which is listed on the hub and takes bech32 ids.
-const EXPLORER_POOL_BASE = "https://cexplorer.io/pool/";
+// cards link to PoolTool, the pool explorer among the maintainer picks on
+// /apps. PoolTool addresses pools by the hex key hash.
+const POOLTOOL_POOL_BASE = "https://pooltool.io/pool/";
 
 function Metric({ label, value }) {
   return (
@@ -137,8 +139,8 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
             {translate({ id: "stakePoolDelegation.delegate.card.homepage", message: "Homepage" })}
           </a>
         )}
-        <a href={EXPLORER_POOL_BASE + pool.id} target="_blank" rel="noopener noreferrer">
-          {translate({ id: "stakePoolDelegation.delegate.card.explorer", message: "View on Cexplorer" })}
+        <a href={POOLTOOL_POOL_BASE + (poolIdToHex(pool.id) || pool.id)} target="_blank" rel="noopener noreferrer">
+          {translate({ id: "stakePoolDelegation.delegate.card.explorer", message: "View on PoolTool" })}
         </a>
         <span className={styles.poolId}>
           {shortAddress(pool.id)}

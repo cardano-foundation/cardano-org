@@ -115,6 +115,16 @@ export function isValidPoolId(str) {
   return Array.isArray(bytes) && bytes.length === POOL_HASH_BYTES;
 }
 
+// The 28-byte key hash of a bech32 pool id as lowercase hex, null when the
+// id is not a valid pool id. PoolTool addresses pools by this hex form.
+export function poolIdToHex(str) {
+  const decoded = decodeBech32(str);
+  if (!decoded || decoded.hrp !== POOL_HRP) return null;
+  const bytes = wordsToBytes(decoded.words);
+  if (!Array.isArray(bytes) || bytes.length !== POOL_HASH_BYTES) return null;
+  return bytes.map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
 export function poolIdFromHex(hex) {
   const bytes = hexToBytes(hex, POOL_HASH_BYTES);
   return bytes ? encodeBech32(POOL_HRP, bytes) : null;

@@ -5,7 +5,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  decodeBech32, encodeBech32, wordsToBytes, isValidPoolId, poolIdFromHex, rewardAddressFromHex,
+  decodeBech32, encodeBech32, wordsToBytes, isValidPoolId, poolIdFromHex, poolIdToHex, rewardAddressFromHex,
 } from '../src/utils/cardano/bech32.mjs';
 import { formatAdaWhole, formatAdaCompact } from '../src/utils/cardano/lovelace.mjs';
 import {
@@ -49,6 +49,15 @@ test('encodeBech32 round-trips through decodeBech32 and wordsToBytes', () => {
 test('poolIdFromHex matches Koios for the NUTS pool', () => {
   assert.equal(poolIdFromHex(NUTS_HEX), NUTS_BECH32);
   assert.equal(poolIdFromHex(NUTS_HEX.toUpperCase()), NUTS_BECH32);
+});
+
+test('poolIdToHex is the inverse of poolIdFromHex and rejects other ids', () => {
+  assert.equal(poolIdToHex(NUTS_BECH32), NUTS_HEX);
+  assert.equal(poolIdToHex(NUTS_BECH32.toUpperCase()), NUTS_HEX);
+  assert.equal(poolIdToHex(poolIdFromHex(NUTS_HEX)), NUTS_HEX);
+  assert.equal(poolIdToHex(BROKEN_ID), null);
+  assert.equal(poolIdToHex(NUTS_STAKE), null);
+  assert.equal(poolIdToHex(undefined), null);
 });
 
 test('poolIdFromHex rejects wrong length and non-hex', () => {
