@@ -23,12 +23,8 @@ function Retry({ onClick }) {
   );
 }
 
-function Skeletons({ count }) {
-  return (
-    <div className={styles.cardGrid} aria-hidden="true">
-      {Array.from({ length: count }, (_, i) => <div key={i} className={styles.skeleton} />)}
-    </div>
-  );
+function Skeleton() {
+  return <div className={styles.skeleton} aria-hidden="true" />;
 }
 
 class PoolUnavailableError extends Error {
@@ -262,8 +258,9 @@ export default function StakePoolDelegate() {
               ? translate({ id: "stakePoolDelegation.delegate.blocked.unknown", message: "Your stake key could not be checked. Retry above before delegating." })
               : null;
 
+  // While loading, cards that already arrived render in front of skeletons
+  // for the remaining slots, so the grid fills in instead of appearing at once.
   const renderPools = (pools, isLoading, error, onRetry, emptyText) => {
-    if (isLoading) return <Skeletons count={DISPLAY_COUNT} />;
     if (error) {
       return (
         <p className={styles.notice}>
@@ -272,7 +269,8 @@ export default function StakePoolDelegate() {
         </p>
       );
     }
-    if (!pools.length) return <p className={styles.notice}>{emptyText}</p>;
+    if (!pools.length && !isLoading) return <p className={styles.notice}>{emptyText}</p>;
+    const placeholders = isLoading ? Math.max(0, DISPLAY_COUNT - pools.length) : 0;
     return (
       <div className={styles.cardGrid}>
         {pools.map((pool) => (
@@ -286,6 +284,7 @@ export default function StakePoolDelegate() {
             onDelegate={handleDelegate}
           />
         ))}
+        {Array.from({ length: placeholders }, (_, i) => <Skeleton key={`skeleton-${i}`} />)}
       </div>
     );
   };
@@ -418,7 +417,7 @@ export default function StakePoolDelegate() {
             </p>
           ) : (
             renderPools(
-              sample.status === "ready" ? sample.data : [],
+              sample.data || [],
               index.status !== "ready" || sample.status === "loading" || sample.status === "idle",
               sample.status === "error"
                 ? translate({ id: "stakePoolDelegation.delegate.sample.failed", message: "Could not load pool details." })

@@ -2,57 +2,22 @@
 // resource is idle | loading | ready | error with a retry, and a sequence
 // number drops responses that arrive after a newer request started.
 import { useCallback, useEffect, useRef, useState } from "react";
-import { chunk, fisherYates, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
+import { fisherYates, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
 import { parseLovelace } from "@site/src/utils/cardano/lovelace.mjs";
+import { fetchPoolIndex, fetchPoolInfo, fetchPoolInfoOne, fetchPoolInfoSettled } from "@site/src/utils/cardano/koiosPools.mjs";
+import { createPoolSampler } from "@site/src/utils/cardano/poolSampler.mjs";
 import {
-  DISPLAY_COUNT, MAX_RESAMPLES, SAMPLE_SIZE, SEARCH_RESULT_LIMIT,
-  classifyQuery, eligibleFromIndex, eligibleFromInfo, isValidIndexRow, searchTicker, toPoolModel,
+  SEARCH_RESULT_LIMIT, classifyQuery, eligibleFromIndex, searchTicker, toPoolModel,
 } from "@site/src/utils/cardano/stakePools.mjs";
+
+export { fetchPoolIndex, fetchPoolInfo };
 
 export const INDEX_CACHE_KEY = "cardano-org.pool-index.v1";
 export const INDEX_CACHE_TTL_MS = 15 * 60 * 1000;
-const INDEX_PAGE_SIZE = 1000;
-// pool_info is expensive on the Koios side (live saturation and pledge per
-// pool). Small batches run in parallel so one slow pool does not hold up the
-// whole sample. The proxy caps POST bodies at 5120 bytes, so 50 ids would be
-// the upper bound anyway.
-const INFO_BATCH_SIZE = 8;
-// Measured 2026-09-06 through the proxy: three parallel batches of 8 ids took
-// 6.2 seconds cold (one slow batch dominates), a single batch of 24 took up
-// to 13 seconds. Only pool_info gets this generous per-request budget, the
-// account and parameter calls keep the site default.
-const POOL_INFO_TIMEOUT_MS = 30000;
-const INDEX_SELECT = [
-  "pool_id_bech32", "ticker", "pool_status", "pool_group",
-  "active_stake", "margin", "fixed_cost", "pledge", "retiring_epoch",
-].join(",");
 const SEARCH_DEBOUNCE_MS = 250;
 // Koios account_info status values. Anything else is treated as an error so
 // the UI never guesses a certificate path from an unknown value.
 const ACCOUNT_STATUS = { registered: "registered", "not registered": "unregistered" };
-
-export async function fetchPoolIndex(api) {
-  const rows = [];
-  for (let offset = 0; ; offset += INDEX_PAGE_SIZE) {
-    const page = await api.get(
-      `/pool_list?pool_status=neq.retired&select=${INDEX_SELECT}&limit=${INDEX_PAGE_SIZE}&offset=${offset}`
-    );
-    const data = Array.isArray(page.data) ? page.data : [];
-    rows.push(...data.filter(isValidIndexRow));
-    if (data.length < INDEX_PAGE_SIZE) break;
-  }
-  if (!rows.length) throw new Error("pool_list returned no usable rows");
-  return rows;
-}
-
-export async function fetchPoolInfo(api, ids) {
-  if (!ids.length) return [];
-  const results = await Promise.all(
-    chunk(ids, INFO_BATCH_SIZE).map((batch) =>
-      api.post("/pool_info", { _pool_bech32_ids: batch }, { timeout: POOL_INFO_TIMEOUT_MS }))
-  );
-  return results.flatMap((r) => (Array.isArray(r.data) ? r.data : []));
-}
 
 // account_info for the given reward addresses in one POST. Koios omits
 // addresses it has never seen, which means an unregistered stake key. A row
@@ -135,38 +100,43 @@ export function usePoolIndex(api) {
   );
 }
 
-// Random selection: shuffle the index candidates, load pool_info
-// in SAMPLE_SIZE batches and keep what passes the fine filter, topping up at
-// most MAX_RESAMPLES times. Nothing about the sample is cached, every visit
-// and every shuffle draws fresh.
+// Random selection: the sampler loads pool_info one pool at a time and
+// reports every arrival, so cards render as they come in. It keeps a spare
+// pool so a shuffle shows the next set at once. Nothing is cached across
+// visits, every mount draws fresh. retry starts a new sampler, which is also
+// the way out of the error state.
+const IDLE_STATE = { status: "idle", data: null, error: null };
+
 export function useRandomSample(api, indexRows) {
   const [nonce, setNonce] = useState(0);
-  const resource = useResource(
-    api && indexRows
-      ? async () => {
-          const candidates = fisherYates(eligibleFromIndex(indexRows));
-          const byId = new Map(indexRows.map((r) => [r.pool_id_bech32, r]));
-          const picked = [];
-          let offset = 0;
-          for (let round = 0; round <= MAX_RESAMPLES; round += 1) {
-            if (picked.length >= DISPLAY_COUNT || offset >= candidates.length) break;
-            const batch = candidates.slice(offset, offset + SAMPLE_SIZE);
-            offset += SAMPLE_SIZE;
-            const infos = await fetchPoolInfo(api, batch.map((r) => r.pool_id_bech32));
-            for (const info of infos) {
-              if (picked.length >= DISPLAY_COUNT) break;
-              if (!eligibleFromInfo(info)) continue;
-              const model = toPoolModel(byId.get(info.pool_id_bech32) || null, info);
-              if (model) picked.push(model);
-            }
-          }
-          return picked;
-        }
-      : null,
-    [api, indexRows, nonce]
-  );
-  const shuffle = useCallback(() => setNonce((n) => n + 1), []);
-  return { ...resource, shuffle };
+  const [state, setState] = useState(IDLE_STATE);
+  const samplerRef = useRef(null);
+
+  useEffect(() => {
+    if (!api || !indexRows) return undefined;
+    const controller = new AbortController();
+    const sampler = createPoolSampler({
+      candidates: fisherYates(eligibleFromIndex(indexRows)),
+      fetchOne: (id) => fetchPoolInfoOne(api, id, { signal: controller.signal }),
+      onChange: (snap) => {
+        if (snap.status === "error") console.error("StakePoolDelegate: resource failed", snap.error);
+        setState({ status: snap.status, data: snap.pools, error: snap.error });
+      },
+    });
+    samplerRef.current = sampler;
+    sampler.start();
+    return () => {
+      sampler.stop();
+      controller.abort();
+      samplerRef.current = null;
+    };
+  }, [api, indexRows, nonce]);
+
+  const shuffle = useCallback(() => samplerRef.current?.shuffle(), []);
+  const retry = useCallback(() => setNonce((n) => n + 1), []);
+  // Without an api or index there is no sampler, so the resource reads idle
+  // no matter what an earlier sampler left behind.
+  return { ...(api && indexRows ? state : IDLE_STATE), shuffle, retry };
 }
 
 // Ticker search waits for the index: while it is still loading, the ticker
@@ -186,13 +156,13 @@ export function usePoolSearch(api, indexRows, query, indexStatus) {
           if (parsed.kind === "invalidId") return { kind: "invalidId", pools: [] };
           const byId = new Map((indexRows || []).map((r) => [r.pool_id_bech32, r]));
           if (parsed.kind === "id") {
-            const infos = await fetchPoolInfo(api, [parsed.value]);
+            const infos = await fetchPoolInfoSettled(api, [parsed.value]);
             const pools = infos.map((info) => toPoolModel(byId.get(info.pool_id_bech32) || null, info)).filter(Boolean);
             return { kind: "id", pools };
           }
           if (!indexRows) return { kind: "ticker", pools: [], indexMissing: true };
           const matches = searchTicker(indexRows, parsed.value, SEARCH_RESULT_LIMIT);
-          const infos = await fetchPoolInfo(api, matches.map((r) => r.pool_id_bech32));
+          const infos = await fetchPoolInfoSettled(api, matches.map((r) => r.pool_id_bech32));
           const infoById = new Map(infos.map((i) => [i.pool_id_bech32, i]));
           const pools = matches
             .map((row) => { const info = infoById.get(row.pool_id_bech32); return info ? toPoolModel(row, info) : null; })
