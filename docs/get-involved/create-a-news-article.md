@@ -48,12 +48,16 @@ Have a relevant news article, meetup recap, or blog post but not the technical k
 
 Every news article needs an author. You can find the authors file in `/blog/authors.yml`. An example entry looks like:
 
-```
+```yml title="blog/authors.yml"
 builderfest:
   name: Buidler Fest
   url: https://buidl.2024.cardano.org
-  image_url: ../img/authors/builderfest.png
+  image_url: /img/authors/builderfest.png
 ```
+
+Use an absolute `image_url` starting with `/img/authors/` (the file lives in `static/img/authors/`). Relative paths break because the author data is rendered on several routes, for example `/news` and `/news/tags/<tag>`. The optional `title` field adds a one-line role or tagline under the name.
+
+`src/data/authors.json` is generated from `authors.yml` by `yarn build-authors`, which runs as part of `yarn start` and `yarn build`, so other pages can import the same author data. Edit `authors.yml` only, never the JSON.
 
 ## Required Frontmatter
 
@@ -93,7 +97,7 @@ Examples:
 
 Create a new folder in `/blog` with the name `2024-04-14-hello-world`. Then create an `index.md` in this folder with the following content:
 
-```md title="blog/2024-04-14-hello-world.md.md"
+```md title="blog/2024-04-14-hello-world/index.md"
 ---
 slug: hello-world
 title: Hello World!
@@ -115,7 +119,7 @@ As you can see, we have used `builderfest` as the author and the news article us
 
 Copy an image into the 2024-04-14-hello-world folder, then follow the highlighted instructions to add another author and to incorporate the image into the news article: 
 
-```md {4,5,13} title="blog/2024-04-14-hello-world.md.md"
+```md {4,5,13} title="blog/2024-04-14-hello-world/index.md"
 ---
 slug: hello-world
 title: Hello World!
@@ -136,13 +140,13 @@ Images: `.png`, `.jpg` (or `.jpeg`), `.webp`, and `.svg`.
 
 :::tip
 
-The first image in the post is also used as the article's thumbnail in the homepage news section. Articles without an image fall back to an on-brand image for their category.
+The first inline image in the post (`![...](...)`) is also used as the article's thumbnail in the homepage news section. A relative image from the post folder is downscaled to an 800 px wide WebP at build time, an absolute `/img/...` path or a remote URL is used as is. Articles without an image fall back to an on-brand image for their primary category.
 
 :::
 
 :::tip
 
-Unfortunately you can not reference themend images(with dark and light mode) like this. Please put them in /img/news.
+Themed images (separate light and dark mode versions) cannot be referenced from the post folder like this. Put them in `static/img/news/` and reference them as `/img/news/<file>`.
 :::
 
 The result should look like this:
@@ -155,7 +159,7 @@ Cardano.org serves as a hub rather than a primary platform for publishing articl
 
 Additionally, include a `Read more` link directing readers to the full article on its original website. If the article has an image, add the `Read more` link above it:
 
-```md {11} title="blog/2024-04-14-hello-world.md.md"
+```md {11} title="blog/2024-04-14-hello-world/index.md"
 ---
 slug: hello-world
 title: Hello World!
@@ -238,7 +242,7 @@ An article may carry more than one tag. **List the most relevant category first*
 
 :::tip
 
-If an article fits none of the seven categories well, pick the closest one rather than inventing a new tag. To propose a new category, add it to `/blog/tags.yml` in the same pull request.
+If an article fits none of the seven categories well, pick the closest one rather than inventing a new tag. The list in `/blog/tags.yml` is meant to stay short, so a new category needs a [discussion](https://github.com/cardano-foundation/cardano-org/discussions) first, not a tag added alongside an article.
 
 :::
 
