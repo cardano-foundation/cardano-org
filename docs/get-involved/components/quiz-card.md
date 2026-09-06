@@ -1,6 +1,6 @@
 ---
 title: Quiz Card
-description: Embed a single quiz question card with answer feedback using the QuizCard component on cardano.org.
+description: Promote a quiz with a call-to-action card that opens the Quiz in a modal, using the QuizCard component on cardano.org.
 ---
 
 ## Quiz Card
@@ -193,15 +193,16 @@ The component uses CSS modules for scoped styling. Default styles include:
 - **Border**: 2px solid with emphasis color
 - **Border Radius**: 16px
 - **Padding**: 1.5rem
+- **Max Width**: 400px, the card never grows wider than that, even in a full-width container
 - **Title Font Size**: 1.25rem
 - **Description Color**: Emphasis color with proper contrast
 
 ### Custom Styling
 
-Wrap the component in a div to add custom styles:
+Wrap the component in a div to add custom styles, for example to center the 400px card:
 
 ```jsx
-<div style={{ maxWidth: '400px', margin: '2rem auto' }}>
+<div style={{ margin: '2rem auto', maxWidth: '400px' }}>
   <QuizCard
     quizData={quizData}
     title="Centered Quiz Card"
@@ -215,7 +216,7 @@ Wrap the component in a div to add custom styles:
 - **Keyboard Navigation**: All interactive elements are keyboard accessible
 - **Screen Reader Friendly**: Clear text labels and structure
 - **Focus Management**: Modal quiz handles focus appropriately
-- **Motion**: Animation can be disabled via CSS `prefers-reduced-motion`
+- **Motion**: The attention dots are hidden below 996px. There is no `prefers-reduced-motion` handling, so leave `showDot` off where motion would be a problem
 
 ## Real-World Example
 
@@ -271,7 +272,7 @@ The inner `Quiz` component UI strings (buttons, labels, feedback messages) are a
 
 ### With QuizModal
 
-`QuizCard` uses `QuizModal` internally, so all quiz functionality (modal overlay, question flow, scoring) is included automatically.
+`QuizCard` uses `QuizModal` internally, so all quiz functionality (modal overlay, question flow, scoring) is included automatically. It forwards only `quizData`, `buttonText`, `questionCount`, `passingScore`, and `allowRetry`. It cannot pass `onRecord` or `academyCta`, so for [hub mode](./quiz.md#hub-mode) use `QuizModal` or `Quiz` directly, as `QuizHub` does.
 
 ### With TwoColumnLayout
 
@@ -307,8 +308,6 @@ Can be used independently anywhere on a page:
 
 - **Lightweight**: Minimal CSS and no heavy dependencies
 - **Efficient Animation**: CSS-only animations (no JavaScript)
-- **Lazy Loading**: Quiz modal only loads when opened
-- **No Layout Shift**: Fixed dimensions prevent content jumps
 
 ## Browser Support
 
