@@ -70,6 +70,11 @@ export default function InsightsEpochNav({
     if (e.key === 'Escape') { setIsJumpMode(false); }
   };
 
+  // Defensively strip any non-digit characters so state always holds a
+  // plain numeric string, regardless of client-side input constraints
+  // (type="number"/pattern) being bypassed.
+  const onInputChange = (e) => setInput(e.target.value.replace(/[^0-9]/g, ''));
+
   return (
     <nav className={`epochNav ${isJumpMode ? 'is-jump' : ''}`}>
       {/* Main row */}
@@ -115,7 +120,7 @@ export default function InsightsEpochNav({
                 min={minEpoch}
                 max={maxEpoch}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={onInputChange}
                 onKeyDown={onKeyDown}
                 className="epochJumpInput"
                 aria-label="Jump to epoch"
@@ -156,7 +161,7 @@ export default function InsightsEpochNav({
               min={minEpoch}
               max={maxEpoch}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={onInputChange}
               onKeyDown={onKeyDown}
               className="epochJumpInput"
               aria-label="Jump to epoch"
