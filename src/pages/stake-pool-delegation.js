@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import Divider from "@site/src/components/Layout/Divider";
 import OneColumnBox from "@site/src/components/Layout/OneColumnBox";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import TwoColumnBox from "@site/src/components/Layout/TwoColumnBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
@@ -11,6 +12,9 @@ import FAQSection from "@site/src/components/FAQSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
+import QuizCard from "@site/src/components/QuizCard";
+import { getQuizData as getStakingQuiz } from "@site/src/data/quiz/generated/staking";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import {translate} from '@docusaurus/Translate';
 
 function getDelegationFAQData() {
@@ -112,6 +116,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const stakingQuiz = getStakingQuiz();
 
   return (
     <Layout
@@ -124,12 +129,13 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"solidGrey"}>
           <BoundaryBox>
             <Divider text={translate({id: 'stakePoolDelegation.whatIsStake.divider', message: 'What is stake?'})} />
+            {/* OneColumnBox renders plain strings, so the glossary links are parsed here */}
             <OneColumnBox
-              text={[
-                translate({id: 'stakePoolDelegation.whatIsStake.text1', message: 'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works.'}),
-                translate({id: 'stakePoolDelegation.whatIsStake.text2', message: 'There are two ways an ada holder can earn rewards: by delegating their stake to a stake pool run by someone else, or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the Ouroboros protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.'}),
+              text={parseMarkdownLikeText([
+                translate({id: 'stakePoolDelegation.whatIsStake.text1', message: 'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to [delegate](/glossary/delegation) or pledge a stake is fundamental to how Cardano works.'}),
+                translate({id: 'stakePoolDelegation.whatIsStake.text2', message: 'There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.'}),
                 translate({id: 'stakePoolDelegation.whatIsStake.text3', message: 'The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards are shared between everyone who delegated their stake to that stake pool.'}),
-              ]}
+              ])}
             />
           </BoundaryBox>
         </BackgroundWrapper>
@@ -148,6 +154,9 @@ export default function Home() {
               leftText={[
                 translate({id: 'stakePoolDelegation.whyIncentives.text', message: 'Incentives are used to ensure the longevity and health of the Cardano network and ecosystem. The incentive mechanism is underpinned by scientific research that combines mathematics, economic theory, and game theory.'}),
               ]}
+            />
+            <TitleWithText
+              description={translate({id: 'stakePoolDelegation.goDeeper.description', message: "Go deeper: [how the protocol picks who produces the next block](/how-cardano-works#consensus) and [how rewards flow through the network](/how-cardano-works#network)."})}
             />
           </BoundaryBox>
         </BackgroundWrapper>
@@ -177,6 +186,15 @@ export default function Home() {
 
         <BoundaryBox>
           <FAQSection data={getDelegationFAQData()} />
+          <SpacerBox size="medium" />
+          <QuizCard
+            quizData={stakingQuiz}
+            title={translate({id: 'stakePoolDelegation.quiz.title', message: "Test what you learned"})}
+            description={stakingQuiz.description}
+            buttonText={translate({id: 'stakePoolDelegation.quiz.buttonText', message: "Start quiz"})}
+            questionCount={stakingQuiz.questionCount}
+            allowRetry={false}
+          />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>
