@@ -29,8 +29,8 @@ Not suitable (without prior discussion):
 ### Start here
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- [AGENTS.md](AGENTS.md) – Onboarding & Guardrails for AI agents
-- [docs/](https://cardano.org/docs/) for content
+- [AGENTS.md](AGENTS.md) for onboarding and guardrails for AI agents
+- [docs/get-involved/](https://cardano.org/docs/get-involved/) for the contributor guides. The `docs/` folder also holds the use case pages (`docs/use-cases/`) and the community channel list (`docs/communities.md`)
 - [Discussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
 
 
@@ -67,7 +67,7 @@ yarn start
 
 This command starts a local development server and opens up a browser window to http://localhost:3000. Most changes are reflected live without having to restart the server.
 
-To browse the documentation visit http://localhost:3000/docs/.
+To browse the contributor guides visit http://localhost:3000/docs/get-involved/.
 
 ## Build
 
@@ -85,7 +85,7 @@ With this command you are making it listen on all network interfaces (IP address
 
 ## Internationalization (i18n)
 
-The site supports multiple locales: English (default), Japanese (`ja`), and German (`de`).
+The site supports five locales: English (default), Japanese (`ja`), German (`de`), Spanish (`es`), and Vietnamese (`vi`). The list lives in the `i18n` block of `docusaurus.config.js`.
 
 ### Testing a specific locale in development
 
@@ -94,13 +94,15 @@ The dev server only serves one locale at a time. To test a specific locale:
 ```bash
 yarn start --locale ja   # Japanese
 yarn start --locale de   # German
+yarn start --locale es   # Spanish
+yarn start --locale vi   # Vietnamese
 ```
 
 This serves the locale at `http://localhost:3000/` (without a locale prefix).
 
 ### Testing multi-locale URL structure
 
-The `/ja/` and `/de/` URL prefixes only work in production builds. To test the full structure:
+The locale URL prefixes (`/ja/`, `/de/`, `/es/`, `/vi/`) only work in production builds. To test the full structure:
 
 ```bash
 yarn build && yarn serve
@@ -110,3 +112,5 @@ Then access:
 - `http://localhost:3000/` - English
 - `http://localhost:3000/ja/` - Japanese
 - `http://localhost:3000/de/` - German
+- `http://localhost:3000/es/` - Spanish
+- `http://localhost:3000/vi/` - Vietnamese

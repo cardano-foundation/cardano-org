@@ -12,6 +12,8 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
+import QuizCard from "@site/src/components/QuizCard";
+import { getQuizData as getStakingQuiz } from "@site/src/data/quiz/generated/staking";
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./stake-pool-delegation.module.css";
@@ -122,6 +124,7 @@ function Hero() {
 
 // Static copy, resolved once per locale bundle rather than on every render.
 const DELEGATION_FAQ = getDelegationFAQData();
+const STAKING_QUIZ = getStakingQuiz();
 
 const STEPS = [
   {
@@ -216,6 +219,15 @@ export default function StakePoolDelegationPage() {
 
         <BoundaryBox>
           <FAQSection data={DELEGATION_FAQ} />
+          <SpacerBox size="medium" />
+          <QuizCard
+            quizData={STAKING_QUIZ}
+            title={translate({ id: "stakePoolDelegation.quiz.title", message: "Test what you learned" })}
+            description={STAKING_QUIZ.description}
+            buttonText={translate({ id: "stakePoolDelegation.quiz.buttonText", message: "Start quiz" })}
+            questionCount={STAKING_QUIZ.questionCount}
+            allowRetry={false}
+          />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>

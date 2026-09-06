@@ -30,6 +30,11 @@ export default function QuizPage() {
         <BoundaryBox>
           <QuizHub />
           <SpacerBox size="medium" />
+          <p className={styles.learnLink}>
+            <Link to="/learn">
+              {translate({id: 'quiz.hub.backToLearn', message: 'Back to the learning path'})}
+            </Link>
+          </p>
           <div className={styles.academyBanner}>
             <p>{translate({id: 'quiz.hub.academyBanner', message: 'Ready for the next step? The Cardano Academy offers free courses with real certificates.'})}</p>
             {/* The paragraph above already names the Academy, so the button

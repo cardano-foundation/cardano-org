@@ -466,6 +466,13 @@ function GuidedPathsBanner() {
       }),
     },
     {
+      to: "/smart-contracts#dapps",
+      label: translate({
+        id: "apps.guidedPaths.smartContracts",
+        message: "How DApps work",
+      }),
+    },
+    {
       to: "/governance#paths",
       label: translate({
         id: "apps.guidedPaths.governance",

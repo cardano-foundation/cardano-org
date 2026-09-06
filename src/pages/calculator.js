@@ -5,6 +5,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import React, { useEffect, useRef } from "react";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { translate } from '@docusaurus/Translate';
 
 // Translation dictionary for calculator-specific content
 const translations = {
@@ -84,6 +85,9 @@ export default function Home() {
             titleType="black"
             description={t.rewardDescription}
             headingDot={true}
+          />
+          <TitleWithText
+            description={translate({id: 'calculator.context.description', message: "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."})}
           />
         </BoundaryBox>
         {/* Pass the lang parameter dynamically */}

@@ -8,6 +8,8 @@ import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import ExchangePicker from "@site/src/components/ExchangePicker";
 import AppGrid from "@site/src/components/AppGrid";
+import QuizCard from "@site/src/components/QuizCard";
+import { getQuizData as getSecurityQuiz } from "@site/src/data/quiz/generated/security";
 import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
@@ -23,6 +25,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const securityQuiz = getSecurityQuiz();
 
   return (
     <Layout
@@ -125,12 +128,27 @@ export default function Home() {
                 title={translate({id: 'whereToGetAda.staking.title', message: 'Staking rewards'})}
                 description={[
 
-                 translate({id: 'whereToGetAda.staking.description1', message: 'If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network\'s proof-of-stake system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding.'}),
-                 translate({id: 'whereToGetAda.staking.description2', message: 'Cardano offers several advantages for staking: there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process.'})
+                 translate({id: 'whereToGetAda.staking.description1', message: 'If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network\'s [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding.'}),
+                 translate({id: 'whereToGetAda.staking.description2', message: 'Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process.'})
 
                 ]}
                 headingDot={true}
               />
+        </BoundaryBox>
+
+        <BoundaryBox>
+            <TitleWithText
+              description={translate({id: 'whereToGetAda.learn.description', message: "New to Cardano? [What is Cardano](/what-is-cardano#get-started) explains the platform in plain terms, and the [learning path](/learn) takes you on from there step by step."})}
+            />
+            <SpacerBox size="small"/>
+            <QuizCard
+              quizData={securityQuiz}
+              title={translate({id: 'whereToGetAda.quiz.title', message: "Test what you learned"})}
+              description={securityQuiz.description}
+              buttonText={translate({id: 'whereToGetAda.quiz.buttonText', message: "Start quiz"})}
+              questionCount={securityQuiz.questionCount}
+              allowRetry={false}
+            />
         </BoundaryBox>
         <SpacerBox size="medium"/>
       </main>

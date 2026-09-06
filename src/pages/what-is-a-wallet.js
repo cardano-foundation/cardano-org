@@ -10,6 +10,8 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FAQSection from "@site/src/components/FAQSection";
+import QuizCard from "@site/src/components/QuizCard";
+import { getQuizData as getWalletsQuiz } from "@site/src/data/quiz/generated/wallets";
 
 const META_TITLE = translate({
   id: "whatIsAWallet.meta.title",
@@ -22,6 +24,7 @@ const META_DESCRIPTION = translate({
 });
 
 export default function WhatIsAWallet() {
+  const walletsQuiz = getWalletsQuiz();
   return (
     <Layout title={META_TITLE} description={META_DESCRIPTION}>
       <OpenGraphInfo pageName="what-is-a-wallet" />
@@ -143,7 +146,7 @@ export default function WhatIsAWallet() {
                 translate({
                   id: "whatIsAWallet.recovery.text1",
                   message:
-                    "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a seed phrase. It is a human-readable form of your private key.",
+                    "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a [seed phrase](/glossary/seed-phrase). It is a human-readable form of your private key.",
                 }),
                 translate({
                   id: "whatIsAWallet.recovery.text2",
@@ -195,12 +198,17 @@ export default function WhatIsAWallet() {
               translate({
                 id: "whatIsAWallet.dapps.text1",
                 message:
-                  "Most Cardano wallets include a **dApp connector**. It lets a website ask your wallet to sign a transaction without ever seeing your private keys.",
+                  "Most Cardano wallets include a **DApp connector**. It lets a website or [DApp](/glossary/dapp) ask your wallet to sign a transaction without ever seeing your private keys.",
               }),
               translate({
                 id: "whatIsAWallet.dapps.text2",
                 message:
                   "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
+              }),
+              translate({
+                id: "whatIsAWallet.dapps.text3",
+                message:
+                  "How DApps work, and how to use them safely, is explained in the [smart contracts](/smart-contracts#safety) explainer.",
               }),
             ]}
             titleType="black"
@@ -298,6 +306,23 @@ export default function WhatIsAWallet() {
                 ],
               },
             ]}
+          />
+          <SpacerBox size="medium" />
+          <TitleWithText
+            description={translate({
+              id: "whatIsAWallet.next.description",
+              message:
+                "Next step: find out [where to get ada](/where-to-get-ada). New to Cardano altogether? Start with [what Cardano is](/what-is-cardano#get-started) and follow the [learning path](/learn).",
+            })}
+          />
+          <SpacerBox size="small" />
+          <QuizCard
+            quizData={walletsQuiz}
+            title={translate({ id: "whatIsAWallet.quiz.title", message: "Test what you learned" })}
+            description={walletsQuiz.description}
+            buttonText={translate({ id: "whatIsAWallet.quiz.buttonText", message: "Start quiz" })}
+            questionCount={walletsQuiz.questionCount}
+            allowRetry={false}
           />
           <SpacerBox size="medium" />
           <TitleWithText
