@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { translate } from '@docusaurus/Translate';
+import { usePluralForm } from '@docusaurus/theme-common';
 import { GROUPS } from './groups.js';
 import { splitPath } from './nodeText.js';
 import styles from './explorer.module.css';
@@ -18,8 +19,10 @@ function shortenLeft(dir, max = DIR_MAX) {
     if (next.length + 4 > max) break;
     tail = next;
   }
-  // A single segment longer than the budget still has to be cut somewhere.
-  if (!tail) tail = dir.slice(-(max - 4));
+  // Not even the deepest segment fits, and cutting inside it would leave a
+  // truncated name that reads as a different one. The label keeps the whole
+  // directory and the CSS ellipsis trims the overflow.
+  if (!tail) return dir;
   return `.../${tail}`;
 }
 
@@ -39,6 +42,7 @@ function FolderGlyph() {
 // first projection, otherwise it would flash in the top left corner.
 export default function HoverLabel({ node, childCount, target }) {
   const ref = useRef(null);
+  const { selectMessage } = usePluralForm();
   const id = node.id;
   useEffect(() => {
     let raf = 0;
@@ -54,9 +58,12 @@ export default function HoverLabel({ node, childCount, target }) {
     return () => cancelAnimationFrame(raf);
   }, [id, target]);
   const { dir, name } = splitPath(node.path);
+  // currentColor drives the dot glow, so the era color has to be set as the
+  // text color too, not only as the background.
+  const eraColor = GROUPS[node.group]?.color;
   return (
     <div ref={ref} className={styles.label} style={{ visibility: 'hidden' }}>
-      <span className={styles.labelDot} style={{ background: GROUPS[node.group]?.color }} />
+      <span className={styles.labelDot} style={{ background: eraColor, color: eraColor }} />
       <span className={styles.labelBody}>
         {dir && <span className={styles.labelDir}>{shortenLeft(dir)}</span>}
         <span className={styles.labelName}>
@@ -65,7 +72,10 @@ export default function HoverLabel({ node, childCount, target }) {
         </span>
         {node.isDir && (
           <span className={styles.labelCount}>
-            {translate({ id: 'medusa.node.files', message: '{count} files' }, { count: childCount })}
+            {selectMessage(
+              childCount,
+              translate({ id: 'medusa.node.items', message: '{count} item|{count} items' }, { count: childCount }),
+            )}
           </span>
         )}
       </span>

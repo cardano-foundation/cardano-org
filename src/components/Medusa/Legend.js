@@ -16,7 +16,8 @@ export default function Legend({ present, active, onToggle }) {
           aria-pressed={active === g.key}
           onClick={() => onToggle(g.key)}
         >
-          <span className={styles.legendDot} style={{ background: g.color }} />
+          {/* currentColor drives the dot glow, so the era color is set as the text color too. */}
+          <span className={styles.legendDot} style={{ background: g.color, color: g.color }} />
           {groupLabel(g.key)}
         </button>
       ))}

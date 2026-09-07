@@ -40,6 +40,9 @@ export default function Explorer() {
   const [cardsEnabled, setCardsEnabled] = useState(true);
   const [hovered, setHovered] = useState(null);
   const [pinned, setPinned] = useState(null);
+  // The frame callback never rerenders with fresh state, so it reads the pin
+  // from a ref that every write to the state keeps in sync.
+  const pinnedRef = useRef(null);
   const [card, setCard] = useState(null);
   // The first frame report already rewrites the hash, so the shared date has to
   // be read before the canvas mounts.
@@ -82,6 +85,13 @@ export default function Explorer() {
       // An era that is no longer in the frame has no chip left to switch off,
       // so its highlight would dim everything for good.
       setHighlightGroup((k) => (k !== null && !nextPresent.has(k) ? null : k));
+      // A pinned file can be deleted a few months later. Without this the card
+      // sticks to a node that is gone, together with its subtree highlight.
+      if (pinnedRef.current !== null && !graph.get(pinnedRef.current)) {
+        pinnedRef.current = null;
+        setPinned(null);
+        ref.current?.setHighlightSet(null);
+      }
     }
     // Safari refuses more than about a hundred replaceState calls per half
     // minute, and a throw in the frame callback would stop the animation.
@@ -107,10 +117,12 @@ export default function Explorer() {
   const onSelect = useCallback((id) => {
     const graph = ref.current?.getGraph();
     if (id === null || !graph) {
+      pinnedRef.current = null;
       setPinned(null);
       ref.current?.setHighlightSet(null);
       return;
     }
+    pinnedRef.current = id;
     setPinned(id);
     ref.current?.setHighlightSet(graph.subtree(id));
   }, []);

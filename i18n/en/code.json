@@ -10020,8 +10020,8 @@
   "medusa.card.repoLink": {
     "message": "View repository"
   },
-  "medusa.node.files": {
-    "message": "{count} files"
+  "medusa.node.items": {
+    "message": "{count} item|{count} items"
   },
   "medusa.node.file": {
     "message": "File"

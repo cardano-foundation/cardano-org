@@ -193,6 +193,9 @@
   border-radius: 0.35rem;
   background: rgba(0, 0, 0, 0.72);
   font-family: monospace;
+  /* A deep path or a very long file name would otherwise stretch the label off
+     the canvas, the rows inside it get an ellipsis instead. */
+  max-width: min(22rem, calc(100vw - 2rem));
   white-space: nowrap;
   pointer-events: none;
   will-change: transform;
@@ -211,26 +214,35 @@
 .labelBody {
   display: flex;
   flex-direction: column;
+  /* Flex items refuse to shrink below their content, which would defeat the
+     max-width on the label. */
+  min-width: 0;
 }
 
 .labelDir {
+  display: block;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.68rem;
   line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .labelName {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  display: block;
+  overflow: hidden;
   color: #fff;
   font-size: 0.85rem;
   line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .labelIcon {
-  flex: 0 0 auto;
+  margin-right: 0.3rem;
   color: rgba(255, 255, 255, 0.65);
+  vertical-align: -0.1em;
 }
 
 .labelCount {
