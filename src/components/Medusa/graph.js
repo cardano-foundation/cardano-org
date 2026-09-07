@@ -58,6 +58,13 @@ export function createGraph(history) {
       const removed = [...before].filter((id) => !nodes.has(id));
       return { added, removed };
     },
+    childCount(id) {
+      let count = 0;
+      nodes.forEach((n) => {
+        if (n.parent === id) count += 1;
+      });
+      return count;
+    },
     subtree(id) {
       const children = new Map();
       nodes.forEach((n) => {

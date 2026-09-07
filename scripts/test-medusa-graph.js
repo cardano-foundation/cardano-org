@@ -63,6 +63,14 @@ async function main() {
     assert.deepStrictEqual([...g.subtree(2)], [2]);
   });
 
+  check('childCount counts the living direct children', () => {
+    const g = createGraph(history);
+    g.seek(2);
+    assert.strictEqual(g.childCount(0), 1);
+    assert.strictEqual(g.childCount(1), 2);
+    assert.strictEqual(g.childCount(2), 0);
+  });
+
   done();
 }
 

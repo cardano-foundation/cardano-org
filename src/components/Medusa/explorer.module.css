@@ -186,18 +186,116 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.15rem 0.45rem;
-  border-radius: 0.3rem;
-  background: rgba(0, 0, 0, 0.7);
-  font: 0.75rem/1.4 monospace;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.72);
+  font-family: monospace;
   white-space: nowrap;
   pointer-events: none;
   will-change: transform;
   z-index: 3;
 }
 
-.labelPinned {
-  background: rgba(0, 51, 173, 0.85);
+.labelDot {
+  flex: 0 0 auto;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.labelBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelDir {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.labelName {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.labelIcon {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.labelCount {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.nodeCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(20rem, calc(100% - 2rem));
+  padding: 0.7rem 2rem 0.8rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.6rem;
+  background: rgba(11, 16, 48, 0.92);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+  will-change: transform;
+  z-index: 4;
+}
+
+.nodeEra {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.72rem;
+}
+
+.nodeEra .labelDot {
+  margin-top: 0;
+}
+
+.nodePath {
+  margin: 0.4rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font: 0.78rem/1.45 monospace;
+  overflow-wrap: anywhere;
+}
+
+.nodePath strong {
+  color: #fff;
+}
+
+.nodeType {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+}
+
+.nodeCount {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.nodeLink {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: #9ec5fe;
+  font-size: 0.75rem;
+  text-decoration: underline;
 }
 
 .card {

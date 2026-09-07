@@ -7,6 +7,7 @@ import DevPanel from './DevPanel.js';
 import Controls from './Controls.js';
 import Legend from './Legend.js';
 import HoverLabel from './HoverLabel.js';
+import NodeCard from './NodeCard.js';
 import MilestoneCard from './MilestoneCard.js';
 import useMedusaKeys from './useMedusaKeys.js';
 import { MILESTONES, HARD_FORK_KEYS } from '@site/src/data/medusa/milestones.js';
@@ -114,6 +115,8 @@ export default function Explorer() {
     ref.current?.setHighlightSet(graph.subtree(id));
   }, []);
 
+  const clearPin = useCallback(() => onSelect(null), [onSelect]);
+
   // play(), pause() and the end of the timeline emit no frame, so the button
   // state is read back from the clock after every command that changes it.
   const syncPaused = useCallback(() => {
@@ -192,12 +195,18 @@ export default function Explorer() {
   }
 
   // The canvas fills the ref long before a hover or a pin can happen, and every
-  // render that needs a path is driven by hover or pin state, so reading the
-  // graph here always sees the live instance.
-  // eslint-disable-next-line react-hooks/refs
-  const graph = ref.current?.getGraph();
+  // render that needs a node is driven by hover or pin state, so reading the
+  // graph here always sees the live instance. The commit follows the frame,
+  // which rerenders this component anyway.
+  /* eslint-disable react-hooks/refs */
+  const api = ref.current;
+  const graph = api?.getGraph();
+  const repo = api?.getRepo();
+  const commit = api?.getFrameCommit();
+  /* eslint-enable react-hooks/refs */
   const labelId = pinned ?? (labels ? hovered : null);
-  const labelPath = labelId !== null && graph ? graph.get(labelId)?.path : null;
+  const labelNode = labelId !== null && graph ? graph.get(labelId) : null;
+  const childCount = labelNode?.isDir ? graph.childCount(labelNode.id) : 0;
 
   return (
     <div ref={containerRef} className={styles.explorer}>
@@ -214,7 +223,19 @@ export default function Explorer() {
         onSelect={onSelect}
         ariaLabel={translate({ id: 'medusa.page.canvasLabel', message: 'Interactive file tree of the cardano-ledger repository over time' })}
       />
-      {labelPath && <HoverLabel id={labelId} path={labelPath} target={ref} pinned={pinned !== null} />}
+      {labelNode && (pinned !== null ? (
+        <NodeCard
+          node={labelNode}
+          childCount={childCount}
+          target={ref}
+          containerRef={containerRef}
+          repo={repo}
+          commit={commit}
+          onClose={clearPin}
+        />
+      ) : (
+        <HoverLabel node={labelNode} childCount={childCount} target={ref} />
+      ))}
       {card && cardsEnabled && <MilestoneCard milestone={card} onDismiss={dismissCard} />}
       <div className={styles.ui} hidden={uiHidden}>
         <Legend present={present} active={highlightGroup} onToggle={(key) => setHighlightGroup((k) => (k === key ? null : key))} />

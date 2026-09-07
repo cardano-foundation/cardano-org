@@ -89,7 +89,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       // worker refuses to run.
       const worker = new Worker(new URL('./layout.worker.js', import.meta.url));
       worker.onerror = (e) => console.error('medusa layout worker', e.message);
-      api = { engine, playback, graph, worker, frameDates };
+      api = { engine, playback, graph, worker, frameDates, history };
       apiRef.current = api;
 
       const applyDelta = (delta) => {
@@ -352,6 +352,13 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     getState: () => apiRef.current?.playback.getState() ?? null,
     project: (id) => apiRef.current?.engine.project(id) ?? null,
     getGraph: () => apiRef.current?.graph ?? null,
+    getRepo: () => apiRef.current?.history.repo ?? null,
+    // The commit of the month on screen, so a link can point at the tree as it
+    // looked then. An empty frame carries none.
+    getFrameCommit: () => {
+      const a = apiRef.current;
+      return a ? a.history.frames[a.playback.getState().frameIndex]?.commit ?? null : null;
+    },
     setHighlightSet: (set) => apiRef.current?.engine.setHighlightSet(set),
     setParams: (p) => apiRef.current?.engine.setParams(p),
     setLayoutParams: (p) => apiRef.current?.worker.postMessage({ type: 'params', params: p }),

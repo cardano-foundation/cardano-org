@@ -10020,6 +10020,18 @@
   "medusa.card.repoLink": {
     "message": "View repository"
   },
+  "medusa.node.files": {
+    "message": "{count} files"
+  },
+  "medusa.node.file": {
+    "message": "File"
+  },
+  "medusa.node.folder": {
+    "message": "Folder"
+  },
+  "medusa.node.github": {
+    "message": "View on GitHub at this month"
+  },
   "medusa.milestone.repoStart.name": {
     "message": "Repository created"
   },
