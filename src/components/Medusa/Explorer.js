@@ -11,7 +11,7 @@ import MilestoneCard from './MilestoneCard.js';
 import useMedusaKeys from './useMedusaKeys.js';
 import { MILESTONES, HARD_FORK_KEYS } from '@site/src/data/medusa/milestones.js';
 import { GROUPS } from './groups.js';
-import { canRunWebGL, medusaFlag } from './webgl.js';
+import { canRunWebGL, medusaFlag, prefersReducedMotion } from './webgl.js';
 import { SPEEDS } from './playback.js';
 import styles from './explorer.module.css';
 
@@ -59,7 +59,13 @@ export default function Explorer() {
 
   const onReady = useCallback(({ frameDates: dates }) => {
     setFrameDates(dates);
-    if (initialDate) ref.current?.seekToDate(initialDate);
+    // A shared moment stays put, a plain visit starts the story right away.
+    if (initialDate) {
+      ref.current?.seekToDate(initialDate);
+    } else if (!prefersReducedMotion() && !medusaFlag('still')) {
+      ref.current?.play();
+      setState((st) => ({ ...st, paused: false }));
+    }
   }, [initialDate]);
 
   const onFrame = useCallback((info) => {
