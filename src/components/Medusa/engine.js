@@ -94,7 +94,9 @@ function smoothstep(edge0, edge1, x) {
 }
 
 export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reducedMotion = false }) {
-  const params = { ...ENGINE_DEFAULTS };
+  // Reduced motion is a parameter set, not a code path: instant easing and a
+  // flash too short to see let the normal loop produce a still image.
+  const params = { ...ENGINE_DEFAULTS, ...(reducedMotion ? { smoothing: 1e6, flashDuration: 0.001 } : {}) };
   const groupColors = GROUPS.map((g) => new Color(g.color).convertLinearToSRGB());
 
   const renderer = new WebGLRenderer({ canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
@@ -253,9 +255,9 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       let slot = freeSlots.pop();
       if (slot === undefined) {
         // A fast scrub can remove thousands of nodes at once, and every one of
-        // them holds its slot until the fade out is over. Cut the oldest fade
-        // short instead of dropping the new node for good.
-        slot = fading.shift();
+        // them holds its slot until the fade out is over. Cut a fade short
+        // instead of dropping the new node for good.
+        slot = fading.pop();
         if (slot !== undefined) releaseSlot(slot);
       }
       if (slot === undefined) return;
@@ -273,8 +275,7 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
       color[3 * slot + 1] = c.g;
       color[3 * slot + 2] = c.b;
       size[slot] = node.isDir ? params.pointSizeDir : params.pointSizeFile;
-      // Reduced motion gets no birth flash: the node starts fully grown.
-      birth[slot] = reducedMotion ? time - params.flashDuration : time;
+      birth[slot] = time;
       death[slot] = -1;
       highlight[slot] = highlightActive() && isHighlighted(node) ? 1 : 0;
       pointGeo.attributes.color.needsUpdate = true;
@@ -297,11 +298,6 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
         if (slot === undefined) continue;
         target[2 * slot] = xy[2 * i];
         target[2 * slot + 1] = xy[2 * i + 1];
-        // Reduced motion snaps to the layout instead of easing into it.
-        if (reducedMotion) {
-          position[3 * slot] = xy[2 * i];
-          position[3 * slot + 1] = xy[2 * i + 1];
-        }
       }
       hasPositions = true;
     },
@@ -361,14 +357,11 @@ export function createEngine({ canvas, mode = 'ambient', capacity = 4096, reduce
     },
     render(dt) {
       time += dt;
-      // Reduced motion already holds the layout positions, nothing to ease.
-      if (!reducedMotion) {
-        const k = Math.min(1, dt * params.smoothing);
-        for (let s = 0; s < capacity; s += 1) {
-          if (birth[s] === FREE_BIRTH) continue;
-          position[3 * s] += (target[2 * s] - position[3 * s]) * k;
-          position[3 * s + 1] += (target[2 * s + 1] - position[3 * s + 1]) * k;
-        }
+      const k = Math.min(1, dt * params.smoothing);
+      for (let s = 0; s < capacity; s += 1) {
+        if (birth[s] === FREE_BIRTH) continue;
+        position[3 * s] += (target[2 * s] - position[3 * s]) * k;
+        position[3 * s + 1] += (target[2 * s + 1] - position[3 * s + 1]) * k;
       }
       // Free slots whose fade out finished
       for (let i = fading.length - 1; i >= 0; i -= 1) {

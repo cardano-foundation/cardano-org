@@ -16,6 +16,12 @@ import { SPEEDS } from './playback.js';
 import styles from './explorer.module.css';
 
 const HASH = /^#(\d{4}-\d{2})$/;
+
+function sameSet(a, b) {
+  if (a.size !== b.size) return false;
+  for (const key of b) if (!a.has(key)) return false;
+  return true;
+}
 const HASH_DELAY = 250;
 
 export default function Explorer() {
@@ -65,7 +71,7 @@ export default function Explorer() {
       const nextPresent = new Set([...groups].map((i) => GROUPS[i].key));
       // The eras rarely change from one frame to the next, and a fresh Set
       // every frame would rerender the legend sixty times a second.
-      setPresent((prev) => (prev.size === nextPresent.size && [...nextPresent].every((k) => prev.has(k)) ? prev : nextPresent));
+      setPresent((prev) => (sameSet(prev, nextPresent) ? prev : nextPresent));
       // An era that is no longer in the frame has no chip left to switch off,
       // so its highlight would dim everything for good.
       setHighlightGroup((k) => (k !== null && !nextPresent.has(k) ? null : k));

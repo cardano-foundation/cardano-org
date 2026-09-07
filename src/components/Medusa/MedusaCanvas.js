@@ -76,10 +76,14 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       const graph = createGraph(history);
       // Reduced motion shows the final state, otherwise the optional start date
       // lets the ambient header skip the erratic first months of the repository.
-      const startIndex = reduced
-        ? frameDates.length - 1
-        : Math.max(0, startDate ? frameIndexForDate(frameDates, startDate) : 0);
-      const playback = createPlayback({ frameDates, milestones: MILESTONES, mode, startIndex });
+      const playback = createPlayback({
+        frameDates,
+        milestones: MILESTONES,
+        mode,
+        startIndex: reduced ? frameDates.length - 1 : startDate ? frameIndexForDate(frameDates, startDate) : 0,
+      });
+      // The clock clamps the start frame, so it is the single source for it.
+      const startIndex = playback.getState().frameIndex;
       // Classic worker on purpose: the bundler splits d3-force into a vendor
       // chunk that the worker pulls in with importScripts, which a module
       // worker refuses to run.
