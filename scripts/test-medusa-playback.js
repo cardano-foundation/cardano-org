@@ -127,6 +127,21 @@ async function main() {
     assert.strictEqual(p.getState().opacity, 1);
   });
 
+  check('ambient mode starts at startIndex and loops back to it', () => {
+    const p = make('ambient', { startIndex: 1 });
+    assert.strictEqual(p.getState().frameIndex, 1);
+    const frames = [];
+    p.on('frame', (i, meta) => frames.push([i, meta.kind]));
+    p.tick(3);
+    assert.strictEqual(p.getState().phase, 'hold');
+    p.tick(1);
+    assert.strictEqual(p.getState().phase, 'fade');
+    p.tick(1);
+    assert.strictEqual(p.getState().phase, 'fadein');
+    assert.strictEqual(p.getState().frameIndex, 1);
+    assert.deepStrictEqual(frames[frames.length - 1], [1, 'seek']);
+  });
+
   check('milestone data is well formed and sorted', () => {
     const keys = GROUPS.map((g) => g.key);
     let last = '';

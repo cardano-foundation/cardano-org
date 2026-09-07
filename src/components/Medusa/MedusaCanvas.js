@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import clsx from 'clsx';
 import { createEngine } from './engine.js';
-import { createPlayback } from './playback.js';
+import { createPlayback, frameIndexForDate } from './playback.js';
 import { createGraph } from './graph.js';
 import { LAYOUT_DEFAULTS } from './defaults.js';
 import { groupIndex } from './groups.js';
@@ -15,7 +15,7 @@ const highlightIndexOf = (key) => (key === null ? -1 : groupIndex(key));
 // The only React component that knows about the engine, the worker and the
 // clock. Everything else talks to it through props and the ref API.
 const MedusaCanvas = forwardRef(function MedusaCanvas(
-  { mode = 'ambient', className, ariaLabel, onFrame, onHover, onSelect, onMilestone, onReady, highlightGroup = null, interactive = false },
+  { mode = 'ambient', startDate = null, className, ariaLabel, onFrame, onHover, onSelect, onMilestone, onReady, highlightGroup = null, interactive = false },
   ref,
 ) {
   const canvasRef = useRef(null);
@@ -74,7 +74,12 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       const engine = createEngine({ canvas, mode, reducedMotion: reduced });
       engine.resize();
       const graph = createGraph(history);
-      const playback = createPlayback({ frameDates, milestones: MILESTONES, mode });
+      // Reduced motion shows the final state, otherwise the optional start date
+      // lets the ambient header skip the erratic first months of the repository.
+      const startIndex = reduced
+        ? frameDates.length - 1
+        : Math.max(0, startDate ? frameIndexForDate(frameDates, startDate) : 0);
+      const playback = createPlayback({ frameDates, milestones: MILESTONES, mode, startIndex });
       // Classic worker on purpose: the bundler splits d3-force into a vendor
       // chunk that the worker pulls in with importScripts, which a module
       // worker refuses to run.
@@ -106,7 +111,6 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
         awaitingSeek = index;
       };
 
-      const startIndex = reduced ? frameDates.length - 1 : 0;
       applyDelta(graph.seek(startIndex));
       playback.seekTo(startIndex);
       if (reduced) playback.pause();
@@ -208,7 +212,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       }
       apiRef.current = null;
     };
-  }, [mode]);
+  }, [mode, startDate]);
 
   useEffect(() => {
     const api = apiRef.current;

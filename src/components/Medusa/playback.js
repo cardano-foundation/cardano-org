@@ -19,8 +19,12 @@ export function createPlayback({
   holdDuration = 30,
   fadeDuration = 2,
   fadeInDuration = 1,
+  startIndex = 0,
 }) {
   const lastIndex = frameDates.length - 1;
+  // First frame shown and the frame the ambient loop returns to. The early
+  // months of a repository can be erratic, so the header may start later.
+  const firstIndex = Math.max(0, Math.min(lastIndex, startIndex));
   const frameDuration = ambientDuration / frameDates.length;
   const milestonesByFrame = new Map();
   milestones.forEach((m) => {
@@ -31,7 +35,7 @@ export function createPlayback({
   });
 
   const state = {
-    frameIndex: 0,
+    frameIndex: firstIndex,
     progress: 0,
     speed: 1,
     paused: mode === 'explore',
@@ -88,7 +92,7 @@ export function createPlayback({
 
   function play() {
     state.paused = false;
-    if (mode === 'explore' && state.frameIndex >= lastIndex) seekTo(0);
+    if (mode === 'explore' && state.frameIndex >= lastIndex) seekTo(firstIndex);
   }
 
   function pause() {
@@ -132,9 +136,9 @@ export function createPlayback({
       } else if (state.phase === 'fade') {
         state.opacity = Math.max(0, 1 - phaseTime / fadeDuration);
         if (phaseTime >= fadeDuration) {
-          state.frameIndex = 0;
+          state.frameIndex = firstIndex;
           state.progress = 0;
-          emit('frame', 0, { kind: 'seek' });
+          emit('frame', firstIndex, { kind: 'seek' });
           setPhase('fadein');
           state.opacity = 0;
         }

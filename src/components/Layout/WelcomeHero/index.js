@@ -31,6 +31,7 @@ function WelcomeHero({ title, description }) {
           <Medusa
             ref={medusaRef}
             mode="ambient"
+            startDate="2019-02-01"
             className={styles.medusaCanvas}
             onFrame={handleFrame}
             ariaLabel={translate({
