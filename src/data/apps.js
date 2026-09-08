@@ -1812,7 +1812,7 @@ export const Showcases = [
     preview: require("./app-screenshots/1694-io.webp"),
     icon: "/img/app-icons/1694-io.svg",
     website: "https://www.1694.io",
-    source: "https://github.com/IntersectMBO/drep-campaign-platform",
+    source: "https://github.com/lidonation/www.1694.io",
     category: "governance",
     properties: ["opensource", "drepdelegation"],
     maintainerPick: false,
