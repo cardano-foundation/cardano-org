@@ -1,6 +1,6 @@
 ---
 slug: 2026-01-06-community-digest
-title: "Buidler Fest 3 heads to Buenos Aires; Critical Integrations Budget executes"
+title: "Buidler Fest 3 heads to Buenos Aires as the Critical Integrations Budget executes"
 authors: [cf]
 tags: [community]
 ---

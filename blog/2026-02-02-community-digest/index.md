@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-02-community-digest
-title: "USDCx partner integration; Mesh launches CGOV governance platform"
+title: "USDCx partner integration and Mesh's new CGOV governance platform"
 authors: [cf]
 tags: [community]
 ---

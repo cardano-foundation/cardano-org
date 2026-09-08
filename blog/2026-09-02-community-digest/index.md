@@ -1,6 +1,6 @@
 ---
 slug: 2026-09-02-community-digest
-title: "Board seat applications open; Constitutional Amendment Portal enters alpha"
+title: "Board seat applications open and the Constitutional Amendment Portal enters alpha"
 description: Intersect opened applications for two Board seats, the Constitutional Amendment Portal entered alpha, and Daedalus 11.3.0 added a DRep directory.
 authors: [community]
 tags: [community]

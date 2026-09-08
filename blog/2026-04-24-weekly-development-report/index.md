@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-24-weekly-development-report
-title: "Treasury proposals live; Plutus UPLC cuts costs by 10%"
+title: "Treasury proposals live, Plutus UPLC cuts costs by 10%"
 description: "2026 Treasury proposals live; Leios & Mithril SNARK progress; Plutus UPLC reduces costs by 10%; Intersect committee voting open with 105 candidates."
 authors: [iog]
 tags: [development]

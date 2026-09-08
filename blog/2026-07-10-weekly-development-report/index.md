@@ -1,6 +1,6 @@
 ---
 slug: 2026-07-10-weekly-development-report
-title: "Legacy tracing backend removed; Lace 2.1 ships security check"
+title: "Legacy tracing backend removed and Lace 2.1 ships a wallet security check"
 description: "The legacy iohk-monitoring tracing backend and RTView were removed from cardano-node, Lace shipped browser extension 2.1 with a wallet security check, and DRep voting opened in the Constitutional Committee election."
 authors: [iog]
 tags: [development]

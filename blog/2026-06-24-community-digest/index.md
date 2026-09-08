@@ -1,6 +1,6 @@
 ---
 slug: 2026-06-24-community-digest
-title: "Ouroboros Leios testnet launches; Orion Fund applications open"
+title: "Ouroboros Leios testnet launches and Orion Fund applications open"
 description: "The Ouroboros Leios scaling testnet (Musashi Dojo) has launched; applications are opening for the $80M Orion Fund cohort and a board seat; Pyth Network oracles are live; and Fortune recognized the Cardano Foundation."
 authors: [cf]
 tags: [community]

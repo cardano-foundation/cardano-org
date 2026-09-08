@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-26-community-digest
-title: "Gimbalabs hackathon; revised Summit 2026 proposal with 22% budget cut"
+title: "Gimbalabs hackathon and revised Summit 2026 proposal with 22% budget cut"
 description: "Gimbalabs hosts public hackathon; Aiken v1.1.22 delivers compiler upgrades; revised Cardano Summit 2026 proposal features a 22% budget cut; new CIPs target mobile deep-linking."
 authors: [cf]
 tags: [community]

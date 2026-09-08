@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-01-weekly-development-report
-title: "IO treasury proposals live; Q4/Q1 delivery report published"
+title: "IO treasury proposals live with Q4/Q1 delivery report published"
 description: "IO’s 2026 treasury proposals live; Q4/Q1 delivery report published; Leios & Mithril SNARK progress; Intersect committee voting concludes today."
 authors: [iog]
 tags: [development]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-01-23-weekly-development-report
-title: "Constitution takes effect; nested transactions and Mithril SNARK work advance"
+title: "Constitution takes effect as nested transactions and Mithril SNARK work advance"
 authors: [iog]
 tags: [development]
 ---

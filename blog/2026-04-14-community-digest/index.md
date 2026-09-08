@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-14-community-digest
-title: "Gerolamo TypeScript node debuts; network hits 120M transactions"
+title: "Gerolamo TypeScript node debuts as the network hits 120M transactions"
 description: "Pragma opens infrastructure project applications, Gerolamo TypeScript node debuts, Cardano hits 120M transactions, Van Rossem hard fork on track for June."
 authors: [cf]
 tags: [community]

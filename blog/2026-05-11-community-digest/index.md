@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-11-community-digest
-title: "Pyth Pro feeds live; Yoroi rebrands to SecondFi"
+title: "Pyth Pro feeds live as Yoroi rebrands to SecondFi"
 description: "Pyth Pro feeds live; Yoroi rebrands to SecondFi; Intersect confirms elections and Node v11.0.1 readiness; Cardano Foundation launches Brazil lab."
 authors: [cf]
 tags: [community]

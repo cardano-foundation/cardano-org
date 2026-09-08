@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-17-community-digest
-title: "LayerZero integration approved; Midnight mainnet launch approaches"
+title: "LayerZero integration approved as Midnight mainnet launch approaches"
 authors: [cf]
 tags: [community]
 ---

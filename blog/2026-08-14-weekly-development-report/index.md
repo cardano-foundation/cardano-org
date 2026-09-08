@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-14-weekly-development-report
-title: "Consensus enables the Dijkstra hard fork; Plutus opens CIP-0194"
+title: "Consensus enables the Dijkstra hard fork and Plutus opens CIP-0194"
 description: Consensus released prototype-2026w32 with endorser-block announcements, ouroboros-consensus enabled the Dijkstra hard fork, and Plutus opened CIP-0194.
 authors: [iog]
 tags: [development]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-03-community-digest
-title: "USDCx live on mainnet; Foundation takes on Project Catalyst"
+title: "USDCx live on mainnet as the Foundation takes on Project Catalyst"
 authors: [cf]
 tags: [community]
 ---

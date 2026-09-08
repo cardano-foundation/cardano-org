@@ -1,6 +1,6 @@
 ---
 slug: 2026-06-10-community-digest
-title: "Budget voting live via Hydra; van Rossem active on PreProd"
+title: "Budget voting live via Hydra, van Rossem active on PreProd"
 description: "Budget voting is live via Hydra; the Van Rossem hard fork is active on PreProd; new CIPs target pool pledges and L2 voting; the Cardano Foundation partners with the Brazilian Olympic Committee."
 authors: [cf]
 tags: [community]
