@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="56" fill="#0F1B2D"/>
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="none" stroke="#F7931A" stroke-width="0"/>
+  <!-- orange accent bar -->
+  <rect x="36" y="52" width="72" height="14" rx="7" fill="#F7931A"/>
+  <text x="36" y="150" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="76" fill="#FFFFFF" letter-spacing="-2">1694</text>
+  <text x="38" y="192" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="40" fill="#F7931A" letter-spacing="6">.IO</text>
+  <!-- governance check / vote mark -->
+  <circle cx="198" cy="178" r="30" fill="#F7931A"/>
+  <path d="M186 178 l9 9 l18 -20" stroke="#0F1B2D" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
