@@ -1,6 +1,6 @@
 ---
 slug: 2026-07-22-community-digest
-title: Community Digest
+title: "Van Rossem activates as first community-governed upgrade"
 description: The Van Rossem hard fork activated as Cardano's first fully community-governed protocol upgrade, the Constitutional Committee election entered its final voting days, and new CIPs entered review.
 authors: [community]
 tags: [community]

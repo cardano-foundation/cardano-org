@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-20-weekly-development-report
-title: "Weekly Development Report"
+title: "Node v10.7 packages ready for the protocol v11 hard fork"
 description: "Cardano Node v10.7 packages ready for the intra-era hard fork to protocol v11. Hydra v1.3.0 ships partial fanout work; team prepares for the Dijkstra era."
 authors: [iog]
 tags: [development]

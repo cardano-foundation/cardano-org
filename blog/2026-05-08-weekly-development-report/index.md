@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-08-weekly-development-report
-title: "Weekly Development Report"
+title: "Leios testnet active; Node v11.0 pre-released"
 description: "Leios testnet active & Node v11.0 pre-released; Hydra optimizes high-volume benchmarks; Mithril SNARK tests finish; research proposal goes on-chain."
 authors: [iog]
 tags: [development]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-21-weekly-development-report
-title: Weekly Development Report
+title: "MusashiNet testnet Earth phase closes after 41 days"
 description: The Leios team closed the Earth phase of the MusashiNet testnet after 41 days, 127,000 blocks and pool participation growing from three to 63.
 authors: [iog]
 tags: [development]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-01-19-community-digest
-title: "Community Digest"
+title: "Amplify Cardano funding; van Rossem hard fork announced"
 authors: [cf]
 tags: [community]
 ---

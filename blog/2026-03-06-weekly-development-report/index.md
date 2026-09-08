@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-06-weekly-development-report
-title: "Weekly Development Report"
+title: "Leios scaling testnet and Dijkstra era preparations"
 authors: [iog]
 tags: [development]
 ---

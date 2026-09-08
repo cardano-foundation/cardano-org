@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-05-community-digest
-title: Community Digest
+title: "Cardano and Injective connect via IBC; CC election concludes"
 description: Cardano and Injective connected via IBC on testnet, the Constitutional Committee election concluded, and Musashi Dojo prepared for its water phase.
 authors: [community]
 tags: [community]

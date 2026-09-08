@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-03-weekly-development-report
-title: "Weekly Development Report"
+title: "Lace integrates Midnight mainnet; Mithril activates SNARK prover"
 description: "Lace integrates Midnight mainnet for private assets, Mithril activates SNARK prover on devnet, tx-centrifuge benchmarks land for node v10.6.2."
 authors: [iog]
 tags: [development]

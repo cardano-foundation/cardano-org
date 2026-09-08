@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-19-community-digest
-title: Community Digest
+title: "TOKEN2049 applications open; two votes due before September 1"
 description: Cardano opened applications for its TOKEN2049 booth, two on-chain votes needed action before September 1, and a Catalyst pilot awards usage-based grants.
 authors: [community]
 tags: [community]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-13-weekly-development-report
-title: "Weekly Development Report"
+title: "Node v10.5.4 patch release and Leios parameter research"
 authors: [iog]
 tags: [development]
 ---

@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-28-community-digest
-title: "Community Digest"
+title: "Cardano joins x402 for AI; Blockfrost adds Filecoin"
 description: "Cardano joins x402 for AI; Blockfrost adds Filecoin; Van Rossem upgrade nears; JuLC for Java devs; new 21M ADA marketing proposal for enterprise growth."
 authors: [cf]
 tags: [community]

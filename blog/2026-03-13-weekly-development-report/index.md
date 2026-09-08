@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-13-weekly-development-report
-title: "Weekly Development Report"
+title: "Hydra, Mithril and node work feed the Dijkstra roadmap"
 authors: [iog]
 tags: [development]
 ---

@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-16-community-digest
-title: "Community Digest"
+title: "Community readies for the van Rossem upgrade"
 authors: [cf]
 tags: [community]
 ---

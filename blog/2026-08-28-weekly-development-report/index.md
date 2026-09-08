@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-28-weekly-development-report
-title: Weekly Development Report
+title: "Lace adds Keystone support; Plutus releases v1.68.0.0"
 description: Lace added Keystone hardware wallet support, Plutus published release 1.68.0.0 with V4 ledger API types, and Hydra moved persisted payloads to CBOR.
 authors: [iog]
 tags: [development]
