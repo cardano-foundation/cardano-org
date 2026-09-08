@@ -1804,6 +1804,20 @@ export const Showcases = [
     maintainerPick: false,
     x: "EchoForgeEF",
   },
+  {
+    title: "Catalyst Explorer",
+    description:
+      "Explore Project Catalyst proposals, funds, reviews and voting outcomes with search, fund charts and side-by-side proposal comparisons.",
+    tagline: "Research proposals, funds, votes and outcomes",
+    preview: require("./app-screenshots/catalyst-explorer.webp"),
+    icon: "/img/app-icons/catalyst-explorer.svg",
+    website: "https://www.catalystexplorer.com",
+    source: "https://github.com/lidonation/catalystexplorer",
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    x: "LidoNation",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
