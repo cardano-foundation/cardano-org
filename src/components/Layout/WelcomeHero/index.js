@@ -35,9 +35,17 @@ function WelcomeHero({ title, description }) {
     script.src = "/img/headers/medusa.bundle.js";
     script.async = true;
     document.body.appendChild(script);
-  
+
     return () => {
-      document.body.removeChild(script);
+      // The bundle mounts its own React root into #medusa-root, so removing
+      // the script tag does not stop it. React runs this cleanup after it has
+      // already detached the container, which is fine: the bundle keeps its
+      // own reference and unmounts off the detached node. Without this its
+      // render loop keeps drawing into a zero-sized canvas on every later page.
+      if (typeof window.__medusaUnmount === "function") {
+        window.__medusaUnmount();
+      }
+      script.remove();
     };
   }, []);
 
