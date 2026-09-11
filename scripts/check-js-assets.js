@@ -9,6 +9,15 @@
  * where Terser had already unquoted that name, so only `de` broke and only that
  * one object key. webpack#14058 / webpack#19110.
  *
+ * Parses as a classic script: that is what webpack emits and what the files in
+ * static/ are today. A future ES module (top-level import/export) would be
+ * reported here even though it is valid, and .mjs is not covered at all. Teach
+ * this script about module syntax before adding either.
+ *
+ * Runs as the postbuild step, not appended to the build chain: yarn passes extra
+ * arguments to the last command of a script, so `yarn build --locale en` has to
+ * keep reaching `docusaurus build`.
+ *
  * Exits non-zero on any violation so CI blocks it. Run with `node`, no framework.
  */
 const { existsSync, readFileSync, readdirSync } = require('node:fs');
