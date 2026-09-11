@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-20-weekly-development-report
-title: "Weekly Development Report"
+title: "Node v10.6.2 readies the network for the v11 hard fork"
 authors: [iog]
 tags: [development]
 ---

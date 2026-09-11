@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-06-weekly-development-report
-title: "Weekly Development Report"
+title: "Ada payments reach 137 SPAR stores as nested transactions advance"
 authors: [iog]
 tags: [development]
 ---

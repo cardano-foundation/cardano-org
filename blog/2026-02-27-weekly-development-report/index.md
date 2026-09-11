@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-27-weekly-development-report
-title: "Weekly Development Report"
+title: "MoneyGram joins Midnight as a federated node operator"
 authors: [iog]
 tags: [development]
 ---
