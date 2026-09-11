@@ -294,6 +294,20 @@ const config = {
                 Buffer: ['buffer', 'Buffer'],
               }),
             ],
+            // Webpack replaces content hashes by plain string replacement in every
+            // emitted asset (RealContentHashPlugin). Docusaurus names route chunks
+            // `simpleHash(modulePath, 8)`, the same shape as a content hash, so a
+            // chunk name can collide with one and get rewritten as well. Terser has
+            // long dropped the quotes around such a name (it is a valid
+            // identifier), which turns the rewritten literal into an invalid object
+            // key - `4003635d:"13401"` - and the whole bundle fails to parse: no
+            // React hydration, so dead menu and dead hero animation, while the
+            // build stays green. That is what shipped for /de, the only locale
+            // whose chunk name collided. scripts/check-js-assets.js now fails the
+            // build on any asset that does not parse.
+            optimization: {
+              realContentHash: false,
+            },
             node: {
               __dirname: true,
             },
