@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-13-weekly-development-report
-title: "Hydra, Mithril and node work feed the Dijkstra roadmap"
+title: "Binance lists NIGHT as Sandstone ships the Torsten Rust node"
 authors: [iog]
 tags: [development]
 ---

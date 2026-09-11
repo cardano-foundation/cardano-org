@@ -1,6 +1,6 @@
 ---
 slug: 2026-03-16-community-digest
-title: "Community readies for the van Rossem upgrade"
+title: "Programmable Tokens go live as cardano.org adds Spanish support"
 authors: [cf]
 tags: [community]
 ---
