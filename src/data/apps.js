@@ -671,14 +671,16 @@ export const Showcases = [
   {
     title: "Lido Nation",
     description:
-      "Aggregator for Project Catalyst that surfaces proposals, voting results, community feedback, and DRep activity in a single dashboard.",
-    tagline: "Aggregator for Project Catalyst proposals",
+      "Community learning hub for Cardano and Project Catalyst with guides, explainers, proposal reviews, and voter tools that help newcomers participate.",
+    tagline: "Cardano education, news, and community tools",
+    preview: require("./app-screenshots/lido-nation.webp"),
     icon: "/img/app-icons/lido-nation.png",
-    website: "https://www.lidonation.com/en/catalyst-explorer",
+    website: "https://www.lidonation.com",
     source: null,
-    category: "ecosystem",
+    category: "education",
     properties: [],
     maintainerPick: false,
+    x: "LidoNation",
   },
   {
     title: "eUTxO",
@@ -1803,6 +1805,20 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     x: "EchoForgeEF",
+  },
+  {
+    title: "Catalyst Explorer",
+    description:
+      "Explore Project Catalyst proposals, funds, reviews and voting outcomes with search, fund charts and side-by-side proposal comparisons.",
+    tagline: "Research proposals, funds, votes and outcomes",
+    preview: require("./app-screenshots/catalyst-explorer.webp"),
+    icon: "/img/app-icons/catalyst-explorer.jpg",
+    website: "https://www.catalystexplorer.com",
+    source: "https://github.com/lidonation/catalystexplorer",
+    category: "governance",
+    properties: ["opensource"],
+    maintainerPick: false,
+    x: "LidoNation",
   },
 ];
 
