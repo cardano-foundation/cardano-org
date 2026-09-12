@@ -1804,6 +1804,19 @@ export const Showcases = [
     maintainerPick: false,
     x: "EchoForgeEF",
   },
+  {
+    title: "1694.io",
+    description:
+      "DRep campaign platform on Cardano where DReps build profiles, share updates, and connect with delegators, with live voting history and CIP-1694 resources.",
+    tagline: "DRep campaign profiles and delegator connection hub",
+    preview: require("./app-screenshots/1694-io.webp"),
+    icon: "/img/app-icons/1694-io.png",
+    website: "https://www.1694.io",
+    source: "https://github.com/lidonation/www.1694.io",
+    category: "governance",
+    properties: ["opensource", "drepdelegation"],
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
