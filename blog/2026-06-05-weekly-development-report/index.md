@@ -1,6 +1,6 @@
 ---
 slug: 2026-06-05-weekly-development-report
-title: "Weekly Development Report"
+title: "Lace 2.0.6 and Leios prototype advance into the Dijkstra era"
 description: "Lace 2.0.6 fixes DRep signing; Leios prototype advances to the Dijkstra era; Hydra removes UTXO head limits via partial fanout; Mithril optimizes SNARK circuit caching."
 authors: [iog]
 tags: [development]

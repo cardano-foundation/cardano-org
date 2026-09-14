@@ -1,6 +1,6 @@
 ---
 slug: 2026-01-30-weekly-development-report
-title: "Weekly Development Report"
+title: "Node v10.7 and Leios endorser-block prototyping make progress"
 authors: [iog]
 tags: [development]
 ---
