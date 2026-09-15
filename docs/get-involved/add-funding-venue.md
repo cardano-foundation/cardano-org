@@ -21,7 +21,7 @@ The [grants and funding page](/grants-funding) lists ways to get funded to build
 |-------|----------|-------------|
 | `key` | yes | Stable identifier, kebab-case. Also the card's anchor: `#program-<key>` opens its tab and scrolls to it. |
 | `group` | yes | Which tab the card sits in: `grants` ("I have an idea"), `accelerators` ("I have a product"), or `contributors` ("I contribute to open source"). |
-| `type` | yes | What kind of money it is: `community-vote`, `treasury`, `grant`, `retainer`, `accelerator`, `venture`, or `event`. Shown as a tag. |
+| `type` | yes | What kind of money it is: `grant`, `treasury`, `retainer`, `accelerator`, `venture`, or `event`. Shown as a tag. |
 | `name` | yes | Program name. Brand names are plain strings; descriptive names go through `translate()`. |
 | `logo` | no | Path under `/img/` to a square mark for the tile, for example `/img/funding/orion-fund.jpg`. Without it the tile shows the first letter of the name. Program marks first; the running entity's mark if the program has none. |
 | `logoDark` | no | Alternative mark for dark mode, for single-colour SVGs. |

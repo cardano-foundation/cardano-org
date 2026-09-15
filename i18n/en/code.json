@@ -10264,9 +10264,6 @@
   "funding.group.contributors.intro": {
     "message": "Get paid to maintain the software Cardano runs on, or build something at a hackathon."
   },
-  "funding.type.communityVote": {
-    "message": "Community vote"
-  },
   "funding.type.treasury": {
     "message": "Treasury proposal"
   },
@@ -10301,13 +10298,13 @@
     "message": "Recurring"
   },
   "funding.venue.catalyst.tagline": {
-    "message": "Community-voted grants for new ideas"
+    "message": "Grants from Cardano's community innovation fund"
   },
   "funding.venue.catalyst.audience": {
-    "message": "New ideas and community projects"
+    "message": "Builders at any stage, per the round's brief"
   },
   "funding.venue.catalyst.description": {
-    "message": "Cardano's community innovation fund. Builders submit proposals, ada holders vote on which ones get funded, and funded projects deliver against milestones."
+    "message": "Cardano's innovation fund, paid from the treasury. Each round sets its own rules for who can apply and how proposals are chosen, from ada-holder votes to expert panels, and funded projects deliver against milestones."
   },
   "funding.venue.genesis.tagline": {
     "message": "Four weeks in Silicon Valley to turn a concept into a product"
@@ -10493,7 +10490,7 @@
     "message": "Who decides what gets funded?"
   },
   "funding.faq.decides.a": {
-    "message": "It depends on the program. Catalyst proposals are voted on by ada holders. Treasury proposals go to DReps and the Constitutional Committee under the [constitution](/constitution). Accelerators, funds, and Intersect committees have their own selection processes, described on their pages."
+    "message": "It depends on the program. Catalyst rounds are decided by ada-holder vote or, as in the current pilot, by a panel of community experts. Treasury proposals go to DReps and the Constitutional Committee under the [constitution](/constitution). Accelerators, funds, and Intersect committees have their own selection processes, described on their pages."
   },
   "developers.funding.text": {
     "message": "Looking for funding? Grants, accelerators, and venture funding for Cardano builders are listed in one place."

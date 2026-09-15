@@ -34,7 +34,6 @@ export function getFundingGroups() {
 
 // Tag on the card: what kind of money it is.
 export const FundingTypes = {
-  "community-vote": translate({ id: "funding.type.communityVote", message: "Community vote" }),
   treasury: translate({ id: "funding.type.treasury", message: "Treasury proposal" }),
   grant: translate({ id: "funding.type.grant", message: "Grant" }),
   retainer: translate({ id: "funding.type.retainer", message: "Retainer" }),
@@ -73,16 +72,16 @@ export function getFundingVenues() {
     {
       key: "catalyst",
       group: "grants",
-      type: "community-vote",
+      type: "grant",
       name: "Project Catalyst",
       logo: "/img/funding/project-catalyst.png",
       cadence: "recurring",
-      tagline: translate({ id: "funding.venue.catalyst.tagline", message: "Community-voted grants for new ideas" }),
-      audience: translate({ id: "funding.venue.catalyst.audience", message: "New ideas and community projects" }),
+      tagline: translate({ id: "funding.venue.catalyst.tagline", message: "Grants from Cardano's community innovation fund" }),
+      audience: translate({ id: "funding.venue.catalyst.audience", message: "Builders at any stage, per the round's brief" }),
       description: translate({
         id: "funding.venue.catalyst.description",
         message:
-          "Cardano's community innovation fund. Builders submit proposals, ada holders vote on which ones get funded, and funded projects deliver against milestones.",
+          "Cardano's innovation fund, paid from the treasury. Each round sets its own rules for who can apply and how proposals are chosen, from ada-holder votes to expert panels, and funded projects deliver against milestones.",
       }),
       runBy: "Cardano Foundation",
       link: { href: "https://projectcatalyst.io/" },
@@ -336,7 +335,7 @@ export function getFundingFAQ() {
         translate({
           id: "funding.faq.decides.a",
           message:
-            "It depends on the program. Catalyst proposals are voted on by ada holders. Treasury proposals go to DReps and the Constitutional Committee under the [constitution](/constitution). Accelerators, funds, and Intersect committees have their own selection processes, described on their pages.",
+            "It depends on the program. Catalyst rounds are decided by ada-holder vote or, as in the current pilot, by a panel of community experts. Treasury proposals go to DReps and the Constitutional Committee under the [constitution](/constitution). Accelerators, funds, and Intersect committees have their own selection processes, described on their pages.",
         }),
       ],
     },
