@@ -1,0 +1,53 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--site-radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Tints are mixed from the semantic tokens so no new colours are introduced.
+   Light-mode text is darkened for contrast on the pale tint; the dark-mode
+   token values are already light enough to use as-is. */
+
+.info {
+  color: var(--ifm-color-primary);
+  background: var(--site-tint-strong);
+}
+
+.success {
+  color: color-mix(in srgb, var(--site-success) 72%, black);
+  background: color-mix(in srgb, var(--site-success) 14%, transparent);
+}
+
+.warning {
+  color: color-mix(in srgb, var(--site-warning) 72%, black);
+  background: color-mix(in srgb, var(--site-warning) 14%, transparent);
+}
+
+.neutral {
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme="dark"] .success {
+  color: var(--site-success);
+  background: color-mix(in srgb, var(--site-success) 18%, transparent);
+}
+
+[data-theme="dark"] .warning {
+  color: var(--site-warning);
+  background: color-mix(in srgb, var(--site-warning) 18%, transparent);
+}
