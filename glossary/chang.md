@@ -3,7 +3,7 @@ title: Chang
 slug: chang
 short: The hard fork on September 1, 2024 that activated the Conway era and brought CIP-1694 governance live on Cardano.
 category: governance
-link: /hardforks
+link: /roadmap
 aliases: ["Chang 1", "Chang Hard Fork"]
 related: [conway-era, plomin, van-rossem, cip-1694, hard-fork, hard-fork-initiation, voltaire]
 ---

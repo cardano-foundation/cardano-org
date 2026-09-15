@@ -3,7 +3,7 @@ title: Conway Era
 slug: conway-era
 short: The Cardano ledger era that brought on-chain governance under CIP-1694 to mainnet.
 category: governance
-link: /hardforks
+link: /roadmap
 aliases: ["Conway Ledger Era"]
 related: [chang, plomin, van-rossem, dijkstra, cip-1694, voltaire, governance-action, drep]
 ---
