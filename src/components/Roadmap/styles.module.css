@@ -1,0 +1,155 @@
+/* Rows of RoleCards: the three outcomes and the three readers */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--site-space-sm);
+  margin: var(--site-space-md) 0 var(--site-space-lg);
+}
+
+.readerList {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.readerList li + li {
+  margin-top: var(--site-space-2xs);
+}
+
+/* Timeline: one card shape for every upgrade */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-3xs);
+  height: 100%;
+  padding: var(--site-space-md);
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-color-emphasis-100);
+  scroll-margin-top: var(--site-space-2xl);
+}
+
+/* The dark emphasis scale starts at the page colour, so use the surface. */
+[data-theme="dark"] .card {
+  background: var(--ifm-background-surface-color);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--site-space-2xs);
+  min-height: 1.6rem;
+}
+
+.cardWhen {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.pill {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cardName {
+  margin: var(--site-space-2xs) 0 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.cardEra {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.cardText {
+  margin: var(--site-space-2xs) 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* The one figure or headline content worth knowing, upcoming only */
+.cardFact {
+  margin: var(--site-space-2xs) 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.cardLink {
+  margin-top: auto;
+  padding-top: var(--site-space-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* The five phases in one row, aligned at the top */
+.phases {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: start;
+  gap: var(--site-space-sm);
+  margin: var(--site-space-md) 0 var(--site-space-sm);
+}
+
+.phase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-3xs);
+  padding: var(--site-space-sm);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-background-surface-color);
+}
+
+.phaseImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--site-radius-md);
+  margin-bottom: var(--site-space-3xs);
+}
+
+.phaseName {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.phaseTheme {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.phaseList {
+  margin: var(--site-space-3xs) 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.phaseList li + li {
+  margin-top: 0.2rem;
+}
+
+.phaseLink {
+  color: inherit;
+}
+
+.phaseLink:hover {
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 996px) {
+  .phases {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
