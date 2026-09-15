@@ -10,12 +10,12 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import Steps from "@site/src/components/Layout/Steps";
 import FAQSection from "@site/src/components/FAQSection";
 import FundingPrograms from "@site/src/components/FundingPrograms";
 import FundingStats from "@site/src/components/FundingPrograms/FundingStats";
 import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getApplySteps, getFundingFAQ } from "@site/src/data/funding";
-import styles from "./grants-funding.module.css";
 
 function FundingHero() {
   return (
@@ -55,14 +55,7 @@ function ApplySection() {
         title={translate({ id: "funding.apply.title", message: "Three steps, whichever program you choose" })}
         headingDot={true}
       />
-      <ol className={styles.steps}>
-        {getApplySteps().map((step) => (
-          <li key={step.title} className={styles.step}>
-            <span className={styles.stepTitle}>{step.title}</span>
-            <p className={styles.stepText}>{step.text}</p>
-          </li>
-        ))}
-      </ol>
+      <Steps items={getApplySteps()} />
     </>
   );
 }

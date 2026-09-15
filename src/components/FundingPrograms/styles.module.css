@@ -1,48 +1,3 @@
-.bar {
-  display: flex;
-  margin: var(--site-space-md) 0 var(--site-space-lg);
-  align-items: stretch;
-  justify-content: space-between;
-  gap: var(--site-space-md);
-  padding: var(--site-space-lg) var(--site-space-xl);
-  border-radius: var(--site-radius-xl);
-  background: var(--ifm-background-surface-color);
-  box-shadow: var(--site-shadow-md);
-}
-
-.barDivider {
-  flex-shrink: 0;
-  width: 1px;
-  margin: var(--site-space-2xs) 0;
-  background: var(--ifm-color-emphasis-300);
-}
-
-.figure {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--site-space-3xs);
-  text-align: center;
-}
-
-.figureValue {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--site-space-2xs);
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--ifm-color-primary);
-  white-space: nowrap;
-}
-
-.figureLabel {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: var(--ifm-color-emphasis-700);
-}
-
 .infoButton {
   appearance: none;
   display: inline-flex;
@@ -395,18 +350,6 @@
 }
 
 @media (max-width: 768px) {
-  .bar {
-    flex-direction: column;
-    gap: var(--site-space-sm);
-    padding: var(--site-space-md);
-  }
-
-  .barDivider {
-    width: 60%;
-    height: 1px;
-    margin: 0 auto;
-  }
-
   .tabList {
     width: 100%;
     border-radius: var(--site-radius-lg);
