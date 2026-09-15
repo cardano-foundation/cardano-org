@@ -10548,5 +10548,392 @@
   },
   "funding.details.runBy": {
     "message": "Run by"
+  },
+  "learn.item.roadmap.title": {
+    "message": "Roadmap"
+  },
+  "learn.item.roadmap.text": {
+    "message": "What is being built, how an upgrade gets decided, and every upgrade so far."
+  },
+  "roadmap.reader.users": {
+    "message": "If you use Cardano"
+  },
+  "roadmap.reader.builders": {
+    "message": "If you build on Cardano"
+  },
+  "roadmap.reader.operators": {
+    "message": "If you run a stake pool"
+  },
+  "roadmap.stage.development": {
+    "message": "In development"
+  },
+  "roadmap.stage.testnets": {
+    "message": "On testnets"
+  },
+  "roadmap.stage.vote": {
+    "message": "Up for vote"
+  },
+  "roadmap.stage.scheduled": {
+    "message": "Scheduled"
+  },
+  "roadmap.stage.live": {
+    "message": "Live"
+  },
+  "roadmap.upcoming.dijkstra1.name": {
+    "message": "Dijkstra, phase 1"
+  },
+  "roadmap.upcoming.dijkstra1.era": {
+    "message": "Dijkstra era, protocol version 12"
+  },
+  "roadmap.upcoming.dijkstra1.target": {
+    "message": "Targeted Q4 2026"
+  },
+  "roadmap.upcoming.dijkstra1.outcome": {
+    "message": "More transactions per block with Ouroboros Linear Leios, and transactions that can pay for each other."
+  },
+  "roadmap.upcoming.dijkstra1.users": {
+    "message": "More room in every block, so busy periods clear faster. Nothing to do on your side."
+  },
+  "roadmap.upcoming.dijkstra1.builders": {
+    "message": "Nested transactions, Plutus V4, and a new block and transaction format: indexers and wallets need an update."
+  },
+  "roadmap.upcoming.dijkstra1.operators": {
+    "message": "A new node release, and BLS keys to register so your pool can vote on Leios blocks."
+  },
+  "roadmap.link.dijkstraOverview": {
+    "message": "Upgrade overview (Intersect)"
+  },
+  "roadmap.link.leiosTracker": {
+    "message": "Leios tracker (Input Output)"
+  },
+  "roadmap.link.dijkstraGlossary": {
+    "message": "Dijkstra in the glossary"
+  },
+  "roadmap.upcoming.dijkstra2.name": {
+    "message": "Dijkstra, phase 2: Peras"
+  },
+  "roadmap.upcoming.dijkstra2.era": {
+    "message": "Dijkstra era, intra-era hard fork"
+  },
+  "roadmap.upcoming.dijkstra2.target": {
+    "message": "Targeted Q2 2027"
+  },
+  "roadmap.upcoming.dijkstra2.outcome": {
+    "message": "Transactions settle in minutes instead of hours, with Ouroboros Peras."
+  },
+  "roadmap.upcoming.dijkstra2.users": {
+    "message": "Exchanges and bridges can treat a deposit as final within minutes."
+  },
+  "roadmap.upcoming.dijkstra2.builders": {
+    "message": "Apps that wait for confirmations can act on a block after a few minutes rather than hours."
+  },
+  "roadmap.upcoming.dijkstra2.operators": {
+    "message": "Pools vote on recent blocks. A node release and an intra-era hard fork, no new era."
+  },
+  "roadmap.link.perasTracker": {
+    "message": "Peras tracker (Tweag)"
+  },
+  "roadmap.link.perasExplained": {
+    "message": "Peras explained"
+  },
+  "roadmap.era.conway": {
+    "message": "Conway era"
+  },
+  "roadmap.era.babbage": {
+    "message": "Babbage era"
+  },
+  "roadmap.upgrade.alonzoUpdate.name": {
+    "message": "Alonzo update"
+  },
+  "roadmap.era.alonzo": {
+    "message": "Alonzo era"
+  },
+  "roadmap.upgrade.alonzoUpdate.summary": {
+    "message": "Intra-era hard fork to protocol version 6."
+  },
+  "roadmap.era.mary": {
+    "message": "Mary era"
+  },
+  "roadmap.era.allegra": {
+    "message": "Allegra era"
+  },
+  "roadmap.era.shelley": {
+    "message": "Shelley era"
+  },
+  "roadmap.era.byron": {
+    "message": "Byron era"
+  },
+  "roadmap.phase.byron.theme": {
+    "message": "Foundation"
+  },
+  "roadmap.phase.byron.d1": {
+    "message": "Mainnet and ada"
+  },
+  "roadmap.phase.byron.d2": {
+    "message": "Ouroboros, the first provably secure proof-of-stake protocol"
+  },
+  "roadmap.phase.shelley.theme": {
+    "message": "Decentralization"
+  },
+  "roadmap.phase.shelley.d1": {
+    "message": "Stake pools, delegation and rewards"
+  },
+  "roadmap.phase.shelley.d2": {
+    "message": "Block production moved to community-run pools"
+  },
+  "roadmap.phase.goguen.theme": {
+    "message": "Smart contracts"
+  },
+  "roadmap.phase.goguen.d1": {
+    "message": "Native tokens"
+  },
+  "roadmap.phase.goguen.d2": {
+    "message": "Plutus smart contracts"
+  },
+  "roadmap.phase.basho.theme": {
+    "message": "Scaling"
+  },
+  "roadmap.phase.basho.d1": {
+    "message": "Reference inputs, inline datums and reference scripts"
+  },
+  "roadmap.phase.basho.d2": {
+    "message": "Hydra and Mithril; Leios and Peras continue it in Dijkstra"
+  },
+  "roadmap.phase.voltaire.theme": {
+    "message": "Governance"
+  },
+  "roadmap.phase.voltaire.d1": {
+    "message": "On-chain governance actions"
+  },
+  "roadmap.phase.voltaire.d2": {
+    "message": "DReps and the full set of governance actions"
+  },
+  "roadmap.steps.proposal.title": {
+    "message": "Proposal"
+  },
+  "roadmap.steps.proposal.text": {
+    "message": "A change is written up as a [Cardano Improvement Proposal](/glossary/cip) and discussed in public. Intersect's hard fork working group scopes what goes into the next upgrade."
+  },
+  "roadmap.steps.development.title": {
+    "message": "Development"
+  },
+  "roadmap.steps.development.text": {
+    "message": "The node, ledger and Plutus teams build and test it, with formal specifications and audits where they apply, and ship it in a node release."
+  },
+  "roadmap.steps.testnets.title": {
+    "message": "Testnets"
+  },
+  "roadmap.steps.testnets.text": {
+    "message": "The hard fork runs on Preview and Preprod first, so wallets, exchanges and apps can adapt before mainnet."
+  },
+  "roadmap.steps.vote.title": {
+    "message": "On-chain vote"
+  },
+  "roadmap.steps.vote.text": {
+    "message": "A [hard fork initiation action](/glossary/hard-fork-initiation) is submitted and voted on by [DReps](/glossary/drep), stake pool operators and the [Constitutional Committee](/glossary/constitutional-committee)."
+  },
+  "roadmap.steps.readiness.title": {
+    "message": "Pool readiness"
+  },
+  "roadmap.steps.readiness.text": {
+    "message": "Stake pool operators install the release before the epoch the vote names. Intersect tracks readiness across pools, exchanges and wallets."
+  },
+  "roadmap.steps.enactment.title": {
+    "message": "Enactment"
+  },
+  "roadmap.steps.enactment.text": {
+    "message": "At the [epoch](/glossary/epoch) boundary the vote chose, every node switches to the new rules at once. The chain keeps running; nothing splits."
+  },
+  "roadmap.faq.official.q": {
+    "message": "Is this the official Cardano roadmap?"
+  },
+  "roadmap.faq.official.a": {
+    "message": "Cardano has no single official roadmap, because development is coordinated by several organizations. This page follows the network upgrades: the public plans of Intersect, Input Output, and the Cardano Foundation, with a link to the source on every entry. The original five-phase roadmap was published by Input Output at [roadmap.cardano.org]({originalRoadmap}), the research behind it is on the [research page](/research), and the long-term direction is now set through [Vision 2030]({vision}). After Dijkstra, Cardano documentation pencils in an era named Euler, with no scope yet."
+  },
+  "roadmap.faq.action.q": {
+    "message": "Do I need to do anything when an upgrade happens?"
+  },
+  "roadmap.faq.action.a": {
+    "message": "If you hold or use ada: no. Your funds and delegation carry over, and wallets and apps update behind you. If you run a stake pool, a relay or an indexer, you install the node release before the hard fork; the [Intersect upgrade hub]({hub}) lists what each upgrade needs."
+  },
+  "roadmap.faq.decides.q": {
+    "message": "Who decides when an upgrade happens, and why do dates move?"
+  },
+  "roadmap.faq.decides.a": {
+    "message": "Every hard fork since Chang has been enacted by on-chain vote: DReps, stake pool operators and the Constitutional Committee ratify a hard fork initiation action, and the network switches at the epoch it names. The quarters on this page are engineering targets from the teams doing the work; they move when testing takes longer, and the vote only happens once the release is ready. The [weekly development reports](/news/tags/development/) show where things stand."
+  },
+  "roadmap.hero.title": {
+    "message": "Network upgrades"
+  },
+  "roadmap.hero.description": {
+    "message": "How Cardano changes: what runs today, what comes next, and how an upgrade gets decided."
+  },
+  "roadmap.today.era": {
+    "message": "Ledger era on mainnet"
+  },
+  "roadmap.today.versionValue": {
+    "message": "v{version}"
+  },
+  "roadmap.today.version": {
+    "message": "Protocol version"
+  },
+  "roadmap.today.last": {
+    "message": "Live since {date}"
+  },
+  "roadmap.today.next": {
+    "message": "Next upgrade"
+  },
+  "roadmap.today.ariaLabel": {
+    "message": "Cardano today"
+  },
+  "roadmap.divider.steps": {
+    "message": "How an upgrade happens"
+  },
+  "roadmap.steps.title": {
+    "message": "From proposal to mainnet"
+  },
+  "roadmap.steps.description": {
+    "message": "Every protocol change takes the same public path, and the last word is an on-chain vote."
+  },
+  "roadmap.divider.phases": {
+    "message": "Development phases"
+  },
+  "roadmap.phases.title": {
+    "message": "The five phases behind the upgrades"
+  },
+  "roadmap.phases.description": {
+    "message": "The original roadmap grouped Cardano's development into five phases named after Byron, Shelley, Goguen, Basho and Voltaire. They overlap in time rather than follow one another, and each upgrade above delivered part of one or more of them."
+  },
+  "roadmap.phases.outro": {
+    "message": "The research papers and specifications behind each phase are collected on the research page."
+  },
+  "roadmap.phases.button": {
+    "message": "Read the research"
+  },
+  "roadmap.meta.title": {
+    "message": "Cardano Network Upgrades and Roadmap"
+  },
+  "roadmap.meta.description": {
+    "message": "What runs on Cardano mainnet today, what the Dijkstra upgrade changes (more capacity with Leios, faster settlement with Peras, better programmability), how a hard fork is decided by on-chain vote, and every upgrade from Byron to van Rossem."
+  },
+  "roadmap.cta.title": {
+    "message": "Want to understand what a hard fork changes under the hood, from consensus to the ledger?"
+  },
+  "roadmap.cta.button": {
+    "message": "Read how Cardano works"
+  },
+  "roadmap.history.live": {
+    "message": "Live now"
+  },
+  "roadmap.history.readMore": {
+    "message": "Read more"
+  },
+  "roadmap.upcoming.dijkstra1.fact": {
+    "message": "Linear Leios, nested transactions, and Plutus V4"
+  },
+  "roadmap.upcoming.dijkstra2.fact": {
+    "message": "About 2 minutes to settle, down from hours"
+  },
+  "roadmap.upgrade.van-rossem.summary": {
+    "message": "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote."
+  },
+  "roadmap.upgrade.plomin.summary": {
+    "message": "Full on-chain governance: DReps, treasury withdrawals, and every governance action."
+  },
+  "roadmap.upgrade.chang.summary": {
+    "message": "The first on-chain governance actions: parameter changes and hard fork initiations."
+  },
+  "roadmap.upgrade.valentine.summary": {
+    "message": "New cryptographic primitives for cross-chain use in Plutus."
+  },
+  "roadmap.upgrade.vasil.summary": {
+    "message": "Reference inputs, inline datums, and reference scripts for cheaper, faster smart contracts."
+  },
+  "roadmap.upgrade.alonzo.summary": {
+    "message": "Plutus smart contracts arrive on mainnet."
+  },
+  "roadmap.upgrade.mary.summary": {
+    "message": "Native tokens, minted and moved without smart contracts."
+  },
+  "roadmap.upgrade.allegra.summary": {
+    "message": "Token locking, the groundwork for smart contracts."
+  },
+  "roadmap.upgrade.shelley.summary": {
+    "message": "Stake pools, delegation, and rewards: block production moves to the community."
+  },
+  "roadmap.upgrade.byron.summary": {
+    "message": "Mainnet launch and ada."
+  },
+  "roadmap.outcome.capacity.title": {
+    "message": "More capacity"
+  },
+  "roadmap.outcome.capacity.text": {
+    "message": "Linear Leios lets every block carry more transactions, raised step by step after it activates, so busy periods clear faster."
+  },
+  "roadmap.outcome.settlement.title": {
+    "message": "Faster settlement"
+  },
+  "roadmap.outcome.settlement.text": {
+    "message": "Peras lets stake pools vote on recent blocks, so a transaction counts as final in about two minutes instead of hours."
+  },
+  "roadmap.outcome.programmability.title": {
+    "message": "Better programmability"
+  },
+  "roadmap.outcome.programmability.text": {
+    "message": "Nested transactions let one transaction cover fees or collateral for others, and Plutus V4 gives scripts a new context."
+  },
+  "roadmap.divider.outcomes": {
+    "message": "What's changing"
+  },
+  "roadmap.outcomes.title": {
+    "message": "What the next upgrade brings"
+  },
+  "roadmap.outcomes.description": {
+    "message": "Dijkstra, the next ledger era, is built by the core teams within the community's [Vision 2030](https://product.cardano.intersectmbo.org/vision/). Three things change for the people using the network."
+  },
+  "roadmap.divider.timeline": {
+    "message": "Upgrades"
+  },
+  "roadmap.timeline.title": {
+    "message": "Every upgrade, one timeline"
+  },
+  "roadmap.timeline.description": {
+    "message": "The upgrades being built come first, then every upgrade so far. Targets are the teams' estimates; the on-chain vote sets the date."
+  },
+  "roadmap.divider.readers": {
+    "message": "What it means for you"
+  },
+  "roadmap.readers.title": {
+    "message": "If you use, build on, or run Cardano"
+  },
+  "roadmap.readers.description": {
+    "message": "If you hold or use ada there is nothing to do: wallets and apps upgrade behind you. Builders and stake pool operators have a little more to prepare."
+  },
+  "roadmap.history.eraVersion": {
+    "message": "{era}, protocol version {version}"
+  },
+  "roadmap.timeline.ariaLabel": {
+    "message": "Upgrades"
+  },
+  "roadmap.timeline.prev": {
+    "message": "Newer upgrades"
+  },
+  "roadmap.timeline.next": {
+    "message": "Older upgrades"
+  },
+  "roadmap.history.aboutHardForks": {
+    "message": "About hard forks"
+  },
+  "roadmap.divider.why": {
+    "message": "Why Cardano upgrades"
+  },
+  "roadmap.why.title": {
+    "message": "Improvements are proposed in the open and enacted by vote"
+  },
+  "roadmap.why.p1": {
+    "message": "Cardano changes through scheduled [hard forks](/glossary/hard-fork): at an agreed epoch boundary every node switches to the new rules at once, and the chain never splits. Since 2024 each one is enacted by an on-chain vote of DReps, stake pool operators, and the Constitutional Committee."
+  },
+  "roadmap.why.p2": {
+    "message": "Improvements start as [Cardano Improvement Proposals](/glossary/cip), drafted and debated in public on [GitHub](https://github.com/cardano-foundation/CIPs) and in the [CIP community on Discord](https://discord.com/invite/Jy9YM69Ezf). Intersect's hard fork working group scopes what goes into the next upgrade. Anyone can take part."
   }
 }
