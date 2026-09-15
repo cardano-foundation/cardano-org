@@ -3,7 +3,7 @@ title: Dijkstra
 slug: dijkstra
 short: The next Cardano ledger era and hard fork, named after Edsger Dijkstra. Its first phase, targeted for late 2026, brings Linear Leios and nested transactions, a second phase adds Peras.
 category: network
-link: /hardforks
+link: /roadmap
 aliases: ["Dijkstra Era", "Dijkstra Hard Fork", "Protocol Version 12"]
 related: [hard-fork, leios, ouroboros, conway-era, van-rossem, amaru, hard-fork-initiation]
 sources:
