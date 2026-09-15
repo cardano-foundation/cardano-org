@@ -270,7 +270,7 @@ function HistorySection() {
             "Today no single organization runs Cardano. Since the governance upgrades of 2024 and 2025, ada holders, delegated representatives, stake pool operators and a constitutional committee decide on protocol changes and treasury spending under a community-ratified [constitution](/constitution). Intersect, a member-based organization, coordinates development and maintenance. The network's evolution is recorded as a series of hard forks, each one an upgrade agreed by the community.",
         })}
         buttonLabel={translate({ id: "whatIsCardano.history.forksButton", message: "See every upgrade" })}
-        buttonLink="/hardforks"
+        buttonLink="/roadmap"
       />
     </>
   );

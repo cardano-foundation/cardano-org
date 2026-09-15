@@ -291,7 +291,7 @@ function UpgradesSection() {
         ]}
         headingDot={true}
         buttonLabel={translate({ id: "howCardanoWorks.upgrades.button", message: "Every upgrade so far" })}
-        buttonLink="/hardforks"
+        buttonLink="/roadmap"
       />
     </>
   );
