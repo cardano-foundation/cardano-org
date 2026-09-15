@@ -293,14 +293,17 @@ export function getFundingStats() {
 export function getApplySteps() {
   return [
     {
+      key: "pick",
       title: translate({ id: "funding.steps.pick.title", message: "Pick a program that fits" }),
       text: translate({ id: "funding.steps.pick.text", message: "Ideas go to Catalyst or a hackathon, products to an accelerator, and infrastructure work to Intersect or the treasury." }),
     },
     {
+      key: "prepare",
       title: translate({ id: "funding.steps.prepare.title", message: "Plan your milestones and budget" }),
       text: translate({ id: "funding.steps.prepare.text", message: "Every program here pays against results, so be clear about what you'll ship, when, and what it costs." }),
     },
     {
+      key: "apply",
       title: translate({ id: "funding.steps.apply.title", message: "Apply on the official site" }),
       text: translate({ id: "funding.steps.apply.text", message: "Only use the links in the program details. No real program will ever ask for your recovery phrase." }),
     },
