@@ -48,7 +48,16 @@ function WelcomeHero({ title, description }) {
       <div className={styles.heroForeground}>
         <div className="container">
           <div className={styles.taglineContainer}>
-            <h1 className={clsx("hero__title", styles.heroTitle)}>{title}</h1>
+            <h1 className={clsx("hero__title", styles.heroTitle)}>
+              {Array.isArray(title)
+                ? title.map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      {index < title.length - 1 && <br />}
+                    </React.Fragment>
+                  ))
+                : title}
+            </h1>
             <p className={clsx("hero__subtitle", styles.heroSubtitle)}>
               {description}
             </p>
