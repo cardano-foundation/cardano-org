@@ -245,6 +245,14 @@ const config = {
             return [`${prefix}/why`, `${prefix}/discover-cardano`];
           }
 
+          // /hardforks was folded into /roadmap, which lists the same enacted
+          // upgrades plus the ones being built. Locale-aware, same pattern as above.
+          const roadmap = existingPath.match(/^(\/(?:ja|de|es|vi))?\/roadmap\/?$/);
+          if (roadmap) {
+            const prefix = roadmap[1] || '';
+            return [`${prefix}/hardforks`];
+          }
+
           // The blog tag taxonomy was consolidated to the 7 tags in
           // blog/tags.yml. Redirect the retired tag pages to the tag they were
           // folded into so old links and search results keep working.

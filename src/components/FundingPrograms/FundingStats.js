@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { FaCircleInfo } from "react-icons/fa6";
 import Modal from "@site/src/components/Modal";
+import StatsBar from "@site/src/components/Layout/StatsBar";
 import { getFundingStats } from "@site/src/data/funding";
 import styles from "./styles.module.css";
 
@@ -37,42 +38,25 @@ function Breakdown({ breakdown }) {
 // Each figure is a static string, so it is in the server HTML. The first
 // carries an info button that opens its breakdown dialog, which is also
 // where the sources and the rounding are explained.
-function Figure({ item }) {
-  return (
-    <div className={styles.figure}>
-      <span className={styles.figureValue}>
-        {item.value}
-        {item.breakdown && (
-          <Modal
-            label={item.breakdown.title}
-            buttonText={
-              <>
-                <FaCircleInfo aria-hidden="true" />
-                <span className={styles.srOnly}>{translate({ id: "funding.stats.infoLabel", message: "How this is counted" })}</span>
-              </>
-            }
-            buttonClassName={styles.infoButton}
-          >
-            <Breakdown breakdown={item.breakdown} />
-          </Modal>
-        )}
-      </span>
-      <span className={styles.figureLabel}>{item.label}</span>
-    </div>
-  );
-}
-
 export default function FundingStats() {
-  return (
-    <div className={styles.stats}>
-      <div className={styles.bar} role="group" aria-label={translate({ id: "funding.stats.ariaLabel", message: "Funding at a glance" })}>
-        {getFundingStats().map((item, index) => (
-          <React.Fragment key={item.key}>
-            {index > 0 && <span className={styles.barDivider} aria-hidden="true" />}
-            <Figure item={item} />
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  );
+  const items = getFundingStats().map((item) => ({
+    key: item.key,
+    value: item.value,
+    label: item.label,
+    extra: item.breakdown && (
+      <Modal
+        label={item.breakdown.title}
+        buttonText={
+          <>
+            <FaCircleInfo aria-hidden="true" />
+            <span className={styles.srOnly}>{translate({ id: "funding.stats.infoLabel", message: "How this is counted" })}</span>
+          </>
+        }
+        buttonClassName={styles.infoButton}
+      >
+        <Breakdown breakdown={item.breakdown} />
+      </Modal>
+    ),
+  }));
+  return <StatsBar items={items} ariaLabel={translate({ id: "funding.stats.ariaLabel", message: "Funding at a glance" })} />;
 }

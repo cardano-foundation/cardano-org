@@ -7,7 +7,7 @@ import StatusPill from '@site/src/components/Layout/StatusPill';
 
 ## StatusPill
 
-A compact, rounded label with a leading dot, for states such as "Open", "Recurring", or "Live on mainnet". The `tone` picks the colour from the semantic tokens; the text is whatever you pass in, already translated. Used by the program cards and dialog on the [grants and funding page](/grants-funding).
+A compact, rounded label with a leading dot, for states such as "Open", "Recurring", or "Live on mainnet". The `tone` picks the colour from the semantic tokens; the text is whatever you pass in, already translated. Used by the program cards and dialog on the [grants and funding page](/grants-funding) and by the upgrade cards and the "live today" strip on the [roadmap](/roadmap).
 
 ## Basic Usage
 

@@ -3,7 +3,7 @@ title: van Rossem
 slug: van-rossem
 short: The Conway-era hard fork on July 18, 2026 (protocol version 11) that added new Plutus builtins and was the first Cardano upgrade ratified entirely through on-chain governance.
 category: network
-link: /hardforks
+link: /roadmap
 aliases: ["van Rossem Hard Fork", "Protocol Version 11"]
 related: [hard-fork, hard-fork-initiation, conway-era, chang, plomin, dijkstra, plutus-core, plutus]
 sources:

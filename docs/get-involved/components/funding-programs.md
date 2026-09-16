@@ -5,7 +5,7 @@ description: A persona switcher of program cards that open a details dialog, plu
 
 ## FundingPrograms
 
-The building blocks of the [grants and funding page](/grants-funding). `FundingPrograms` renders the persona switcher: one tab per group ("I have an idea", "I have a product", "I contribute to open source") above one grid of program cards, with the group's title and one-line intro. Clicking a card's Details button opens the shared [Modal](https://github.com/cardano-foundation/cardano-org/tree/staging/src/components/Modal) with the program's details. `FundingStats` renders the headline numbers above it.
+The building blocks of the [grants and funding page](/grants-funding). `FundingPrograms` renders the persona switcher: one tab per group ("I have an idea", "I have a product", "I contribute to open source") above one grid of program cards, with the group's title and one-line intro. Clicking a card's Details button opens the shared [Modal](https://github.com/cardano-foundation/cardano-org/tree/staging/src/components/Modal) with the program's details. `FundingStats` renders the headline numbers above it in the shared `StatsBar` (`src/components/Layout/StatsBar`), which the roadmap page uses for its "live today" strip.
 
 All content comes from `src/data/funding.js`; see [Add a funding venue](../add-funding-venue.md) for the fields.
 
@@ -24,7 +24,7 @@ import FundingStats from '@site/src/components/FundingPrograms/FundingStats';
 | Component | Prop | Type | Description |
 |-----------|------|------|-------------|
 | `FundingPrograms` | none | | The switcher. Groups come from `getFundingGroups()` (tab order, persona label, title, intro), cards from `getVenuesByGroup()`. |
-| `FundingStats` | none | | One elevated bar with three figures from `getFundingStats()`. The first figure carries an info button that opens the "How we count" breakdown in the shared Modal. |
+| `FundingStats` | none | | A `StatsBar` with three figures from `getFundingStats()`. The first figure carries an info button that opens the "How we count" breakdown in the shared Modal. |
 | `ProgramLogo` | `venue`, `size` | object, `'card' \| 'dialog'` | Square tile with the program's `logo` (`logoDark` in dark mode) or a monogram fallback. |
 | `ProgramCard` | `venue` | object | One program: tile and name, status and type tags, tagline, check facts (`audience`, `funding`), and the Details button. |
 | `ProgramDetails` | `venue` | object | The modal body: pills, run by, description and the apply button. |
@@ -51,4 +51,4 @@ The switcher uses `react-tabs`, the same library as the governance page's "Choos
 | `src/components/FundingPrograms/FundingStats.js` | Stats bar with the breakdown dialog. |
 | `src/components/FundingPrograms/ProgramLogo.js` | Logo tile with monogram fallback. |
 | `src/components/FundingPrograms/useFundingStatus.js` | Build date and locale, then `describeStatus`. |
-| `src/components/FundingPrograms/styles.module.css` | Tokens only; also holds the "How to apply" step styles used by the page. |
+| `src/components/FundingPrograms/styles.module.css` | Tokens only. The "How to apply" steps use the shared `Steps` component (`src/components/Layout/Steps`). |
