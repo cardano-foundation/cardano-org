@@ -53,6 +53,11 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
         <SnapshotImage ids={LOGO_SET} id={pool.id} path={`/img/pools/${pool.id}.webp`} name={pool.ticker || pool.name} className={styles.logo} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardTicker}>{pool.ticker || shortAddress(pool.id)}</h3>
+          {pool.tickerFromHistory && (
+            <span className={styles.cardName}>
+              {translate({ id: "stakePoolDelegation.delegate.card.oldTicker", message: "Ticker from earlier metadata. The metadata of this pool's current registration could not be read." })}
+            </span>
+          )}
           {pool.name && <span className={styles.cardName}>{pool.name}</span>}
           {pool.group && (
             <span className={styles.cardGroup}>

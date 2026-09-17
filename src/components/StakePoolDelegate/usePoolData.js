@@ -1,16 +1,20 @@
 // Koios access and the async state machines behind StakePoolDelegate. Every
 // resource is idle | loading | ready | error with a retry, and a sequence
 // number drops responses that arrive after a newer request started.
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { fisherYates, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
 import { parseLovelace } from "@site/src/utils/cardano/lovelace.mjs";
-import { fetchPoolIndex, fetchPoolInfoOne, fetchPoolInfoSettled } from "@site/src/utils/cardano/koiosPools.mjs";
+import {
+  fetchPoolIndex, fetchPoolInfoOne, fetchPoolInfoSettled, fetchPoolsByTicker, fetchTickerAliases,
+} from "@site/src/utils/cardano/koiosPools.mjs";
 import { createPoolSampler } from "@site/src/utils/cardano/poolSampler.mjs";
 import {
-  SEARCH_RESULT_LIMIT, classifyQuery, eligibleFromIndex, searchTicker, toPoolModel,
+  SEARCH_RESULT_LIMIT, classifyQuery, eligibleFromIndex, hasExactTicker, mergeTickerMatches,
+  remoteTickerPrefix, searchTicker, toPoolModel, withTickerAliases,
 } from "@site/src/utils/cardano/stakePools.mjs";
 
 export const INDEX_CACHE_KEY = "cardano-org.pool-index.v1";
+export const ALIAS_CACHE_KEY = "cardano-org.pool-tickers.v1";
 export const INDEX_CACHE_TTL_MS = 15 * 60 * 1000;
 const SEARCH_DEBOUNCE_MS = 250;
 // Koios account_info status values. Anything else is treated as an error so
@@ -52,15 +56,23 @@ export async function fetchAccounts(api, stakeAddresses) {
 export function useResource(loader, deps) {
   const [state, setState] = useState({ status: "idle", data: null, error: null });
   const seq = useRef(0);
+  // Every run gets a signal, and starting or ending a run aborts the one
+  // before it. Loaders that chain several requests then stop after the
+  // current one instead of finishing work nobody waits for any more.
+  const controller = useRef(null);
   const run = useCallback(() => {
     const id = ++seq.current;
+    controller.current?.abort();
+    controller.current = null;
     if (!loader) {
       setState({ status: "idle", data: null, error: null });
       return;
     }
+    const aborter = new AbortController();
+    controller.current = aborter;
     setState({ status: "loading", data: null, error: null });
     Promise.resolve()
-      .then(loader)
+      .then(() => loader({ signal: aborter.signal }))
       .then(
         (data) => {
           if (seq.current === id) setState({ status: "ready", data, error: null });
@@ -77,7 +89,11 @@ export function useResource(loader, deps) {
 
   useEffect(() => {
     run();
-    return () => { seq.current += 1; };
+    return () => {
+      seq.current += 1;
+      controller.current?.abort();
+      controller.current = null;
+    };
   }, [run]);
 
   return { ...state, retry: run };
@@ -92,6 +108,25 @@ export function usePoolIndex(api) {
           const rows = await fetchPoolIndex(api);
           writeCache(INDEX_CACHE_KEY, rows);
           return rows;
+        }
+      : null,
+    [api]
+  );
+}
+
+// Ticker fallbacks, loaded on their own so nothing waits for them. The
+// search uses them where the index has no ticker, the random sample never
+// sees them: it draws from the untouched index, where a missing ticker is
+// one of its criteria.
+export function usePoolTickerAliases(api) {
+  return useResource(
+    api
+      ? async ({ signal }) => {
+          const cached = readCache(ALIAS_CACHE_KEY, INDEX_CACHE_TTL_MS);
+          if (Array.isArray(cached) && cached.length) return new Map(cached);
+          const aliases = await fetchTickerAliases(api, { signal });
+          writeCache(ALIAS_CACHE_KEY, [...aliases]);
+          return aliases;
         }
       : null,
     [api]
@@ -138,36 +173,57 @@ export function useRandomSample(api, indexRows) {
 
 // Ticker search waits for the index: while it is still loading, the ticker
 // branch stays idle instead of reporting the list as unavailable.
-export function usePoolSearch(api, indexRows, query, indexStatus) {
+export function usePoolSearch(api, indexRows, query, indexStatus, aliases) {
   const [debounced, setDebounced] = useState(query);
   useEffect(() => {
     const t = setTimeout(() => setDebounced(query), SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(t);
   }, [query]);
 
+  const searchRows = useMemo(() => withTickerAliases(indexRows, aliases), [indexRows, aliases]);
   const parsed = classifyQuery(debounced);
   const active = api && (parsed.kind === "id" || parsed.kind === "invalidId" || (parsed.kind === "ticker" && (indexRows || indexStatus === "error")));
   const resource = useResource(
     active
-      ? async () => {
+      ? async ({ signal }) => {
           if (parsed.kind === "invalidId") return { kind: "invalidId", pools: [] };
-          const byId = new Map((indexRows || []).map((r) => [r.pool_id_bech32, r]));
+          const byId = new Map(searchRows.map((r) => [r.pool_id_bech32, r]));
           if (parsed.kind === "id") {
-            const infos = await fetchPoolInfoSettled(api, [parsed.value]);
+            const infos = await fetchPoolInfoSettled(api, [parsed.value], { signal });
             const pools = infos.map((info) => toPoolModel(byId.get(info.pool_id_bech32) || null, info)).filter(Boolean);
             return { kind: "id", pools };
           }
           if (!indexRows) return { kind: "ticker", pools: [], indexMissing: true };
-          const matches = searchTicker(indexRows, parsed.value, SEARCH_RESULT_LIMIT);
-          const infos = await fetchPoolInfoSettled(api, matches.map((r) => r.pool_id_bech32));
+          let matches = searchTicker(searchRows, parsed.value, SEARCH_RESULT_LIMIT);
+          // Without an exact hit the cached index may simply be missing this
+          // ticker: Koios instances differ in how much pool metadata they
+          // hold, and the proxy caches a page for two hours. A prefix hit is
+          // not good enough here, "BROCK2" must not hide "BROCK". Failure is
+          // fine, the local matches still render.
+          const prefix = hasExactTicker(matches, parsed.value) ? null : remoteTickerPrefix(parsed.value);
+          if (prefix) {
+            try {
+              const remote = await fetchPoolsByTicker(api, prefix, SEARCH_RESULT_LIMIT, { signal });
+              matches = mergeTickerMatches(matches, remote, parsed.value, SEARCH_RESULT_LIMIT);
+            } catch (error) {
+              // With local matches in hand the lookup was a bonus. Without
+              // them it was the whole search, and a failed request must not
+              // read as "no pool has this ticker".
+              if (!matches.length) throw error;
+              console.error("StakePoolDelegate: ticker lookup failed", error);
+            }
+          }
+          const infos = await fetchPoolInfoSettled(api, matches.map((r) => r.pool_id_bech32), { signal });
           const infoById = new Map(infos.map((i) => [i.pool_id_bech32, i]));
           const pools = matches
             .map((row) => { const info = infoById.get(row.pool_id_bech32); return info ? toPoolModel(row, info) : null; })
             .filter(Boolean);
-          return { kind: "ticker", pools };
+          // matched tells the empty state apart: no pool carries this ticker,
+          // or pool_info did not return usable rows for the pools that do.
+          return { kind: "ticker", pools, matched: matches.length };
         }
       : null,
-    [api, indexRows, parsed.kind, parsed.value, indexStatus]
+    [api, indexRows, searchRows, parsed.kind, parsed.value, indexStatus]
   );
   return { ...resource, kind: parsed.kind, query: debounced };
 }

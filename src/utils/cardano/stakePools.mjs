@@ -93,6 +93,53 @@ export function searchTicker(rows, query, limit = SEARCH_RESULT_LIMIT) {
   return [...exact, ...prefix].slice(0, limit);
 }
 
+// Koios leaves pool_list.ticker empty whenever the metadata of the current
+// registration cannot be fetched or does not match its registered hash. The
+// pool then has no searchable ticker at all, even though it had one before
+// (a pool whose file drifted out of sync) or has one on another Koios
+// instance. aliases fills those gaps from the last metadata Koios did
+// accept, see fetchTickerAliases. Rows are copied, never mutated, so the
+// random sample keeps working on the untouched index.
+export function withTickerAliases(rows, aliases) {
+  if (!aliases || !aliases.size) return rows || [];
+  return (rows || []).map((row) => {
+    if (hasText(row?.ticker)) return row;
+    const alias = aliases.get(row?.pool_id_bech32);
+    return hasText(alias) ? { ...row, ticker: alias.trim(), tickerFromHistory: true } : row;
+  });
+}
+
+// A ticker the search may hand to Koios as a filter value. Anything outside
+// this shape (punctuation, PostgREST wildcards, overlong input) stays local,
+// which costs nothing: the index already holds every ticker Koios knows.
+const REMOTE_TICKER = /^[A-Z0-9]{2,16}$/;
+
+export function remoteTickerPrefix(query) {
+  const wanted = normalizeTicker(query);
+  return REMOTE_TICKER.test(wanted) ? wanted : null;
+}
+
+export function hasExactTicker(rows, query) {
+  const wanted = normalizeTicker(query);
+  return (rows || []).some((row) => hasText(row?.ticker) && normalizeTicker(row.ticker) === wanted);
+}
+
+// Local and freshly fetched rows in one list, one row per pool id, then
+// exact tickers before prefix ones. A row Koios just sent wins over an alias
+// for the same pool: the alias is only there because the ticker was missing,
+// and a current ticker is the better answer as soon as one arrives.
+export function mergeTickerMatches(localRows, remoteRows, query, limit = SEARCH_RESULT_LIMIT) {
+  const byId = new Map();
+  for (const row of [...(localRows || []), ...(remoteRows || [])]) {
+    if (!isValidIndexRow(row) || !hasText(row.ticker)) continue;
+    const kept = byId.get(row.pool_id_bech32);
+    if (!kept || (kept.tickerFromHistory === true && row.tickerFromHistory !== true)) {
+      byId.set(row.pool_id_bech32, row);
+    }
+  }
+  return searchTicker([...byId.values()], query, limit);
+}
+
 // Only a parseable absolute https URL with a host survives.
 function httpsOnly(value) {
   if (typeof value !== 'string') return null;
@@ -124,10 +171,15 @@ export function toPoolModel(indexRow, infoRow) {
     lovelace[key] = parsed.toString();
   }
   const meta = infoRow.meta_json && typeof infoRow.meta_json === 'object' ? infoRow.meta_json : {};
-  const ticker = hasText(meta.ticker) ? meta.ticker.trim() : hasText(indexRow?.ticker) ? indexRow.ticker.trim() : null;
+  const currentTicker = hasText(meta.ticker) ? meta.ticker.trim() : null;
+  const ticker = currentTicker || (hasText(indexRow?.ticker) ? indexRow.ticker.trim() : null);
   return {
     id: id.toLowerCase(),
     ticker,
+    // True when the only ticker we have comes from metadata Koios accepted
+    // for an earlier registration. The card says so, because that ticker is
+    // not what this pool currently publishes on chain.
+    tickerFromHistory: !currentTicker && !!ticker && indexRow?.tickerFromHistory === true,
     name: hasText(meta.name) ? meta.name.trim() : null,
     homepage: httpsOnly(meta.homepage),
     group: hasText(indexRow?.pool_group) ? indexRow.pool_group : null,

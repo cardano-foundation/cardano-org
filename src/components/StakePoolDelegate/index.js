@@ -10,7 +10,8 @@ import { DISPLAY_COUNT, MAX_MARGIN, MIN_ACTIVE_STAKE, MIN_PLEDGE } from "@site/s
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { NetworkWarning, SearchRow, TxBanner, WalletPicker } from "@site/src/components/WalletDelegation";
 import {
-  fetchAccounts, useAccounts, usePoolIndex, usePoolSearch, useProtocolParams, useRandomSample,
+  fetchAccounts, useAccounts, usePoolIndex, usePoolSearch, usePoolTickerAliases, useProtocolParams,
+  useRandomSample,
 } from "./usePoolData";
 import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
@@ -99,8 +100,10 @@ export default function StakePoolDelegate() {
 
   const index = usePoolIndex(apiClient);
   const indexRows = index.status === "ready" ? index.data : null;
+  // Loaded in parallel, the search uses it once it is there.
+  const tickerAliases = usePoolTickerAliases(apiClient);
   const sample = useRandomSample(apiClient, indexRows);
-  const search = usePoolSearch(apiClient, indexRows, query, index.status);
+  const search = usePoolSearch(apiClient, indexRows, query, index.status, tickerAliases.data);
   const params = useProtocolParams(apiClient);
   const stakeAddresses = useMemo(
     () => (wallet ? wallet.rewardAddresses.map((a) => a.bech32) : null),
@@ -377,14 +380,19 @@ export default function StakePoolDelegate() {
               ? translate({ id: "stakePoolDelegation.delegate.search.failed", message: "Search failed." })
               : search.status === "ready" && search.data.indexMissing
                 ? translate({ id: "stakePoolDelegation.delegate.search.noIndex", message: "The pool list is not available, so ticker search is off. Paste a pool ID instead." })
-                : null,
+                // Pools carry this ticker, their details did not arrive. That
+                // is worth a retry, so it renders with one instead of as an
+                // empty result.
+                : search.status === "ready" && search.data.matched > 0 && !search.data.pools.length
+                  ? translate({ id: "stakePoolDelegation.delegate.search.noDetails", message: "Pools with this ticker exist, but their details did not load." })
+                  : null,
             // indexMissing only happens because the pool index itself failed to
             // load, so retrying the search would just reproduce it. Retry the
             // index instead, the other search error keeps retrying the search.
             search.status === "ready" && search.data.indexMissing ? index.retry : search.retry,
             search.kind === "id"
               ? translate({ id: "stakePoolDelegation.delegate.search.unknownId", message: "This pool is retired or unknown. Check the ID." })
-              : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool with that ticker. Try the pool ID instead." })
+              : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool found with that ticker. Some pools have no readable metadata, those are only reachable by pool ID." })
           )
         )
       ) : (
