@@ -380,19 +380,19 @@ export default function StakePoolDelegate() {
               ? translate({ id: "stakePoolDelegation.delegate.search.failed", message: "Search failed." })
               : search.status === "ready" && search.data.indexMissing
                 ? translate({ id: "stakePoolDelegation.delegate.search.noIndex", message: "The pool list is not available, so ticker search is off. Paste a pool ID instead." })
-                : null,
+                // Pools carry this ticker, their details did not arrive. That
+                // is worth a retry, so it renders with one instead of as an
+                // empty result.
+                : search.status === "ready" && search.data.matched > 0 && !search.data.pools.length
+                  ? translate({ id: "stakePoolDelegation.delegate.search.noDetails", message: "Pools with this ticker exist, but their details did not load." })
+                  : null,
             // indexMissing only happens because the pool index itself failed to
             // load, so retrying the search would just reproduce it. Retry the
             // index instead, the other search error keeps retrying the search.
             search.status === "ready" && search.data.indexMissing ? index.retry : search.retry,
             search.kind === "id"
               ? translate({ id: "stakePoolDelegation.delegate.search.unknownId", message: "This pool is retired or unknown. Check the ID." })
-              // A ticker can match pools whose details pool_info did not
-              // return. That is a different problem from a ticker nobody
-              // uses, and only one of the two is worth retrying.
-              : search.status === "ready" && search.data.matched > 0
-                ? translate({ id: "stakePoolDelegation.delegate.search.noDetails", message: "Pools with this ticker exist, but their details did not load. Try again." })
-                : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool found with that ticker. Some pools have no readable metadata, those are only reachable by pool ID." })
+              : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool found with that ticker. Some pools have no readable metadata, those are only reachable by pool ID." })
           )
         )
       ) : (

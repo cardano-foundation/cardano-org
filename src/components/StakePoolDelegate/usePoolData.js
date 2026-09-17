@@ -56,15 +56,23 @@ export async function fetchAccounts(api, stakeAddresses) {
 export function useResource(loader, deps) {
   const [state, setState] = useState({ status: "idle", data: null, error: null });
   const seq = useRef(0);
+  // Every run gets a signal, and starting or ending a run aborts the one
+  // before it. Loaders that chain several requests then stop after the
+  // current one instead of finishing work nobody waits for any more.
+  const controller = useRef(null);
   const run = useCallback(() => {
     const id = ++seq.current;
+    controller.current?.abort();
+    controller.current = null;
     if (!loader) {
       setState({ status: "idle", data: null, error: null });
       return;
     }
+    const aborter = new AbortController();
+    controller.current = aborter;
     setState({ status: "loading", data: null, error: null });
     Promise.resolve()
-      .then(loader)
+      .then(() => loader({ signal: aborter.signal }))
       .then(
         (data) => {
           if (seq.current === id) setState({ status: "ready", data, error: null });
@@ -81,7 +89,11 @@ export function useResource(loader, deps) {
 
   useEffect(() => {
     run();
-    return () => { seq.current += 1; };
+    return () => {
+      seq.current += 1;
+      controller.current?.abort();
+      controller.current = null;
+    };
   }, [run]);
 
   return { ...state, retry: run };
@@ -109,10 +121,10 @@ export function usePoolIndex(api) {
 export function usePoolTickerAliases(api) {
   return useResource(
     api
-      ? async () => {
+      ? async ({ signal }) => {
           const cached = readCache(ALIAS_CACHE_KEY, INDEX_CACHE_TTL_MS);
           if (Array.isArray(cached) && cached.length) return new Map(cached);
-          const aliases = await fetchTickerAliases(api);
+          const aliases = await fetchTickerAliases(api, { signal });
           writeCache(ALIAS_CACHE_KEY, [...aliases]);
           return aliases;
         }
@@ -173,11 +185,11 @@ export function usePoolSearch(api, indexRows, query, indexStatus, aliases) {
   const active = api && (parsed.kind === "id" || parsed.kind === "invalidId" || (parsed.kind === "ticker" && (indexRows || indexStatus === "error")));
   const resource = useResource(
     active
-      ? async () => {
+      ? async ({ signal }) => {
           if (parsed.kind === "invalidId") return { kind: "invalidId", pools: [] };
           const byId = new Map(searchRows.map((r) => [r.pool_id_bech32, r]));
           if (parsed.kind === "id") {
-            const infos = await fetchPoolInfoSettled(api, [parsed.value]);
+            const infos = await fetchPoolInfoSettled(api, [parsed.value], { signal });
             const pools = infos.map((info) => toPoolModel(byId.get(info.pool_id_bech32) || null, info)).filter(Boolean);
             return { kind: "id", pools };
           }
@@ -191,13 +203,17 @@ export function usePoolSearch(api, indexRows, query, indexStatus, aliases) {
           const prefix = hasExactTicker(matches, parsed.value) ? null : remoteTickerPrefix(parsed.value);
           if (prefix) {
             try {
-              const remote = await fetchPoolsByTicker(api, prefix, SEARCH_RESULT_LIMIT);
+              const remote = await fetchPoolsByTicker(api, prefix, SEARCH_RESULT_LIMIT, { signal });
               matches = mergeTickerMatches(matches, remote, parsed.value, SEARCH_RESULT_LIMIT);
             } catch (error) {
+              // With local matches in hand the lookup was a bonus. Without
+              // them it was the whole search, and a failed request must not
+              // read as "no pool has this ticker".
+              if (!matches.length) throw error;
               console.error("StakePoolDelegate: ticker lookup failed", error);
             }
           }
-          const infos = await fetchPoolInfoSettled(api, matches.map((r) => r.pool_id_bech32));
+          const infos = await fetchPoolInfoSettled(api, matches.map((r) => r.pool_id_bech32), { signal });
           const infoById = new Map(infos.map((i) => [i.pool_id_bech32, i]));
           const pools = matches
             .map((row) => { const info = infoById.get(row.pool_id_bech32); return info ? toPoolModel(row, info) : null; })

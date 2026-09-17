@@ -12,6 +12,8 @@ import { createPoolSampler } from '../src/utils/cardano/poolSampler.mjs';
 import { encodeBech32 } from '../src/utils/cardano/bech32.mjs';
 
 const NUTS_BECH32 = 'pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy';
+// A second valid id, so two rows can stand for two different pools.
+const OTHER_BECH32 = encodeBech32('pool', [...Buffer.from('ab'.padEnd(56, '0'), 'hex')]);
 
 function indexRow(overrides = {}) {
   return {
@@ -94,19 +96,40 @@ test('fetchPoolsByTicker draws a second time when the first answer misses the ex
   const api = {
     async get(p) {
       paths.push(p);
-      // First instance only knows the decoy, the second one has the pool.
-      return { data: paths.length === 1 ? [indexRow({ ticker: 'NUTS2' })] : [indexRow({ ticker: 'NUTS' })] };
+      // First answer only carries the decoy, the second one has the pool.
+      return { data: paths.length === 1 ? [indexRow({ pool_id_bech32: OTHER_BECH32, ticker: 'NUTS2' })] : [indexRow({ ticker: 'NUTS' })] };
     },
   };
   const rows = await fetchPoolsByTicker(api, 'NUTS', 12);
   assert.equal(paths.length, 2);
   assert.match(paths[0], /limit=12/);
-  assert.match(paths[1], /limit=13/); // different URL, so the proxy cache cannot repeat the miss
-  assert.deepEqual(rows.map((r) => r.ticker), ['NUTS']);
+  assert.match(paths[1], /limit=13/); // a second cache entry, the first one would only repeat the miss
+  // Both answers count, the decoy from the first one is not thrown away.
+  assert.deepEqual(rows.map((r) => r.ticker).sort(), ['NUTS', 'NUTS2']);
+});
 
+test('fetchPoolsByTicker keeps what it already found when the second draw is empty or fails', async () => {
+  const hitThen = (second) => {
+    let call = 0;
+    return {
+      async get() {
+        call += 1;
+        if (call === 1) return { data: [indexRow({ pool_id_bech32: OTHER_BECH32, ticker: 'NUTS2' })] };
+        return second();
+      },
+    };
+  };
+  const afterEmpty = await fetchPoolsByTicker(hitThen(() => ({ data: [] })), 'NUTS', 12);
+  assert.deepEqual(afterEmpty.map((r) => r.ticker), ['NUTS2']);
+  const afterError = await fetchPoolsByTicker(hitThen(() => { throw new Error('boom'); }), 'NUTS', 12);
+  assert.deepEqual(afterError.map((r) => r.ticker), ['NUTS2']);
+});
+
+test('fetchPoolsByTicker reports an error when it has nothing to show', async () => {
   const empty = { calls: 0, async get() { this.calls += 1; return { data: [] }; } };
   assert.deepEqual(await fetchPoolsByTicker(empty, 'NUTS', 12), []);
   assert.equal(empty.calls, 2); // two misses stay possible, they just cost one extra request
+  await assert.rejects(() => fetchPoolsByTicker({ async get() { throw new Error('boom'); } }, 'NUTS', 12), /boom/);
 });
 
 test('fetchPoolIndex drops malformed rows and throws when nothing usable comes back', async () => {

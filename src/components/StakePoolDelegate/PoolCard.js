@@ -55,7 +55,7 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
           <h3 className={styles.cardTicker}>{pool.ticker || shortAddress(pool.id)}</h3>
           {pool.tickerFromHistory && (
             <span className={styles.cardName}>
-              {translate({ id: "stakePoolDelegation.delegate.card.oldTicker", message: "Ticker from older metadata. The file this pool currently points to does not match its registration." })}
+              {translate({ id: "stakePoolDelegation.delegate.card.oldTicker", message: "Ticker from earlier metadata. The metadata of this pool's current registration could not be read." })}
             </span>
           )}
           {pool.name && <span className={styles.cardName}>{pool.name}</span>}

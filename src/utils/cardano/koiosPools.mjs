@@ -93,24 +93,35 @@ export async function fetchTickerAliases(api, { signal } = {}) {
 // is validated by remoteTickerPrefix before it gets here.
 //
 // Measured 2026-09-17 on BROCK, a pool whose metadata is in order: 6 of 8
-// fresh queries returned it, 2 came back empty. The instances behind the
-// proxy hold different amounts of pool metadata, and an empty answer is
-// cached like any other, so repeating the same URL only repeats the miss.
-// The second attempt therefore asks for one row more, which is a different
-// cache key and a fresh draw. Two misses in a row stay possible.
+// fresh queries returned it, 2 came back empty. How much pool metadata an
+// answer carries varies between requests, and an empty answer is cached like
+// any other, so repeating the same URL only repeats the miss. The second
+// attempt therefore asks for one row more: a second cache entry, and with it
+// a second chance at a complete answer. Both can miss.
 const TICKER_ATTEMPTS = 2;
 
 export async function fetchPoolsByTicker(api, prefix, limit, { signal } = {}) {
-  let rows = [];
+  const byId = new Map();
   for (let attempt = 0; attempt < TICKER_ATTEMPTS; attempt += 1) {
-    const res = await api.get(
-      `/pool_list?pool_status=neq.retired&ticker=ilike.${encodeURIComponent(prefix)}*&select=${INDEX_SELECT}&order=pool_id_bech32.asc&limit=${limit + attempt}`,
-      { signal }
-    );
-    rows = (Array.isArray(res.data) ? res.data : []).filter(isValidIndexRow);
+    let rows;
+    try {
+      const res = await api.get(
+        `/pool_list?pool_status=neq.retired&ticker=ilike.${encodeURIComponent(prefix)}*&select=${INDEX_SELECT}&order=pool_id_bech32.asc&limit=${limit + attempt}`,
+        { signal }
+      );
+      rows = (Array.isArray(res.data) ? res.data : []).filter(isValidIndexRow);
+    } catch (error) {
+      // Whatever the first attempt found is worth more than this error. With
+      // nothing in hand the caller needs to hear about it.
+      if (!byId.size) throw error;
+      break;
+    }
+    // Attempts add up, they do not replace each other: an answer that missed
+    // the exact ticker can still be the only one carrying a prefix match.
+    for (const row of rows) if (!byId.has(row.pool_id_bech32)) byId.set(row.pool_id_bech32, row);
     if (rows.some((row) => normalizeTicker(row.ticker) === prefix)) break;
   }
-  return rows;
+  return [...byId.values()];
 }
 
 // One pool per request so a slow pool only delays itself. Resolves null when

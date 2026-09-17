@@ -10052,7 +10052,7 @@
     "message": "Part of a multi-pool operator ({group})"
   },
   "stakePoolDelegation.delegate.card.oldTicker": {
-    "message": "Ticker from older metadata. The file this pool currently points to does not match its registration."
+    "message": "Ticker from earlier metadata. The metadata of this pool's current registration could not be read."
   },
   "stakePoolDelegation.delegate.card.current": {
     "message": "Your current pool"
@@ -10202,7 +10202,7 @@
     "message": "No pool found with that ticker. Some pools have no readable metadata, those are only reachable by pool ID."
   },
   "stakePoolDelegation.delegate.search.noDetails": {
-    "message": "Pools with this ticker exist, but their details did not load. Try again."
+    "message": "Pools with this ticker exist, but their details did not load."
   },
   "stakePoolDelegation.delegate.sampleIntro": {
     "message": "A random selection of registered pools that meet these minimums. This is not a recommendation. Shuffle for a new set or search by ticker or pool ID."

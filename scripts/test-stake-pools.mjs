@@ -228,6 +228,16 @@ test('mergeTickerMatches keeps local rows, adds remote ones and reranks', () => 
   assert.deepEqual(mergeTickerMatches(local, [], 'BROCK', 10).map((r) => r.pool_id_bech32), [other]);
 });
 
+test('mergeTickerMatches lets a current ticker replace the alias of the same pool', () => {
+  const alias = [{ ...indexRow({ ticker: 'BROCK2' }), tickerFromHistory: true }];
+  const current = [indexRow({ ticker: 'BROCK' })];
+  const merged = mergeTickerMatches(alias, current, 'BROCK', 10);
+  assert.deepEqual(merged.map((r) => r.ticker), ['BROCK']); // exact, and no longer flagged as old
+  assert.equal(merged[0].tickerFromHistory, undefined);
+  // The other way round the alias stays, it is all there is.
+  assert.equal(mergeTickerMatches(alias, [], 'BROCK', 10)[0].ticker, 'BROCK2');
+});
+
 test('toPoolModel maps the reference rows', () => {
   assert.deepEqual(toPoolModel(indexRow(), infoRow()), {
     id: NUTS_BECH32, ticker: 'NUTS', tickerFromHistory: false, name: 'StakeNuts', homepage: 'https://stakenuts.com/', group: '5BINARIES',

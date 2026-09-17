@@ -124,13 +124,18 @@ export function hasExactTicker(rows, query) {
   return (rows || []).some((row) => hasText(row?.ticker) && normalizeTicker(row.ticker) === wanted);
 }
 
-// Local and freshly fetched rows in one list: first come, first kept per
-// pool id, then exact tickers before prefix ones.
+// Local and freshly fetched rows in one list, one row per pool id, then
+// exact tickers before prefix ones. A row Koios just sent wins over an alias
+// for the same pool: the alias is only there because the ticker was missing,
+// and a current ticker is the better answer as soon as one arrives.
 export function mergeTickerMatches(localRows, remoteRows, query, limit = SEARCH_RESULT_LIMIT) {
   const byId = new Map();
   for (const row of [...(localRows || []), ...(remoteRows || [])]) {
     if (!isValidIndexRow(row) || !hasText(row.ticker)) continue;
-    if (!byId.has(row.pool_id_bech32)) byId.set(row.pool_id_bech32, row);
+    const kept = byId.get(row.pool_id_bech32);
+    if (!kept || (kept.tickerFromHistory === true && row.tickerFromHistory !== true)) {
+      byId.set(row.pool_id_bech32, row);
+    }
   }
   return searchTicker([...byId.values()], query, limit);
 }
