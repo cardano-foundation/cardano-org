@@ -1,6 +1,6 @@
 ---
 slug: 2026-06-12-weekly-development-report
-title: "Weekly Development Report"
+title: "Smart-contract testing beta and Mithril SNARK genesis certificate"
 description: "A smart contract testing beta was launched, Mithril finalized its SNARK genesis certificate, the Constitutional Committee called for more election candidates, and the Cardano Vision 2026 proposal passed."
 authors: [iog]
 tags: [development]

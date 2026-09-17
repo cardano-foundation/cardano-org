@@ -1,6 +1,6 @@
 ---
 slug: 2026-07-31-weekly-development-report
-title: Weekly Development Report
+title: "New Leios prototype and Lace 2.2 adds Bitcoin hardware wallet support"
 description: A new Leios prototype enables endorser block certification, Lace 2.2 adds Bitcoin hardware wallet support, and Plutus work continued on new built-ins.
 authors: [iog]
 tags: [development]
