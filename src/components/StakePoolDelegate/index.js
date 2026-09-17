@@ -10,7 +10,8 @@ import { DISPLAY_COUNT, MAX_MARGIN, MIN_ACTIVE_STAKE, MIN_PLEDGE } from "@site/s
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { NetworkWarning, SearchRow, TxBanner, WalletPicker } from "@site/src/components/WalletDelegation";
 import {
-  fetchAccounts, useAccounts, usePoolIndex, usePoolSearch, useProtocolParams, useRandomSample,
+  fetchAccounts, useAccounts, usePoolIndex, usePoolSearch, usePoolTickerAliases, useProtocolParams,
+  useRandomSample,
 } from "./usePoolData";
 import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
@@ -99,8 +100,10 @@ export default function StakePoolDelegate() {
 
   const index = usePoolIndex(apiClient);
   const indexRows = index.status === "ready" ? index.data : null;
+  // Loaded in parallel, the search uses it once it is there.
+  const tickerAliases = usePoolTickerAliases(apiClient);
   const sample = useRandomSample(apiClient, indexRows);
-  const search = usePoolSearch(apiClient, indexRows, query, index.status);
+  const search = usePoolSearch(apiClient, indexRows, query, index.status, tickerAliases.data);
   const params = useProtocolParams(apiClient);
   const stakeAddresses = useMemo(
     () => (wallet ? wallet.rewardAddresses.map((a) => a.bech32) : null),
@@ -384,7 +387,12 @@ export default function StakePoolDelegate() {
             search.status === "ready" && search.data.indexMissing ? index.retry : search.retry,
             search.kind === "id"
               ? translate({ id: "stakePoolDelegation.delegate.search.unknownId", message: "This pool is retired or unknown. Check the ID." })
-              : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool with that ticker. Try the pool ID instead." })
+              // A ticker can match pools whose details pool_info did not
+              // return. That is a different problem from a ticker nobody
+              // uses, and only one of the two is worth retrying.
+              : search.status === "ready" && search.data.matched > 0
+                ? translate({ id: "stakePoolDelegation.delegate.search.noDetails", message: "Pools with this ticker exist, but their details did not load. Try again." })
+                : translate({ id: "stakePoolDelegation.delegate.search.noResults", message: "No pool found with that ticker. Some pools have no readable metadata, those are only reachable by pool ID." })
           )
         )
       ) : (

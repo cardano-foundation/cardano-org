@@ -10,7 +10,8 @@ import {
 import { formatAdaWhole, formatAdaCompact } from '../src/utils/cardano/lovelace.mjs';
 import {
   MIN_ACTIVE_STAKE, MAX_MARGIN, MIN_PLEDGE, isValidIndexRow, eligibleFromIndex, eligibleFromInfo,
-  classifyQuery, searchTicker, toPoolModel,
+  classifyQuery, hasExactTicker, mergeTickerMatches, remoteTickerPrefix, searchTicker, toPoolModel,
+  withTickerAliases,
 } from '../src/utils/cardano/stakePools.mjs';
 
 // Known mainnet values taken from Koios: the NUTS pool and its reward address.
@@ -186,9 +187,50 @@ test('searchTicker ranks exact matches before prefix matches and caps results', 
   assert.deepEqual(searchTicker(rows, 'zzz', 10), []);
 });
 
+test('withTickerAliases fills empty tickers only, without touching the input rows', () => {
+  const rows = [indexRow({ pool_id_bech32: 'a', ticker: null }), indexRow({ pool_id_bech32: 'b', ticker: 'NUTS' })];
+  const aliases = new Map([['a', ' GNP1 '], ['b', 'OLD']]); // ids stay short here, aliases are matched, not validated
+  const filled = withTickerAliases(rows, aliases);
+  assert.equal(filled[0].ticker, 'GNP1');
+  assert.equal(filled[0].tickerFromHistory, true);
+  assert.equal(filled[1].ticker, 'NUTS');
+  assert.equal(filled[1].tickerFromHistory, undefined);
+  assert.equal(rows[0].ticker, null); // the index the sampler draws from stays as it was
+  assert.equal(withTickerAliases(rows, new Map()), rows);
+});
+
+test('remoteTickerPrefix only passes plain tickers to Koios', () => {
+  assert.equal(remoteTickerPrefix(' gnp1 '), 'GNP1');
+  assert.equal(remoteTickerPrefix('a*'), null);
+  assert.equal(remoteTickerPrefix('a%b'), null);
+  assert.equal(remoteTickerPrefix('a,b'), null);
+  assert.equal(remoteTickerPrefix('n'), null);
+  assert.equal(remoteTickerPrefix('X'.repeat(17)), null);
+});
+
+test('hasExactTicker tells an exact hit from a prefix hit', () => {
+  const rows = [indexRow({ ticker: 'BROCK2' })];
+  assert.equal(hasExactTicker(rows, 'BROCK'), false);
+  assert.equal(hasExactTicker([...rows, indexRow({ ticker: 'brock' })], 'BROCK'), true);
+  assert.equal(hasExactTicker([], 'BROCK'), false);
+});
+
+test('mergeTickerMatches keeps local rows, adds remote ones and reranks', () => {
+  const other = poolIdFromHex(`ab${NUTS_HEX.slice(2)}`);
+  const local = [indexRow({ pool_id_bech32: other, ticker: 'BROCK2' })];
+  const remote = [
+    indexRow({ ticker: 'BROCK' }),
+    indexRow({ pool_id_bech32: other, ticker: 'BROCK2' }), // same pool twice, kept once
+    indexRow({ ticker: null }),
+    indexRow({ pool_id_bech32: BROKEN_ID, ticker: 'BROCK' }), // remote rows are checked like index rows
+  ];
+  assert.deepEqual(mergeTickerMatches(local, remote, 'BROCK', 10).map((r) => r.pool_id_bech32), [NUTS_BECH32, other]);
+  assert.deepEqual(mergeTickerMatches(local, [], 'BROCK', 10).map((r) => r.pool_id_bech32), [other]);
+});
+
 test('toPoolModel maps the reference rows', () => {
   assert.deepEqual(toPoolModel(indexRow(), infoRow()), {
-    id: NUTS_BECH32, ticker: 'NUTS', name: 'StakeNuts', homepage: 'https://stakenuts.com/', group: '5BINARIES',
+    id: NUTS_BECH32, ticker: 'NUTS', tickerFromHistory: false, name: 'StakeNuts', homepage: 'https://stakenuts.com/', group: '5BINARIES',
     status: 'registered', retiringEpoch: null, saturation: 8.53, margin: 0.049, fixedCost: '340000000',
     pledge: '250000000000', livePledge: '253973151490', liveStake: '6630721844585', delegators: 291, blocks: 3767,
   });
@@ -200,6 +242,16 @@ test('toPoolModel works without an index row and falls back to the index ticker'
   const noTicker = toPoolModel(null, infoRow({ meta_json: { name: 'X' } }));
   assert.equal(noTicker.ticker, null);
   assert.equal(noTicker.name, 'X');
+});
+
+test('toPoolModel marks a ticker that only an alias supplied', () => {
+  const alias = { ...indexRow({ ticker: 'GNP1' }), tickerFromHistory: true };
+  const stale = toPoolModel(alias, infoRow({ meta_json: null }));
+  assert.equal(stale.ticker, 'GNP1');
+  assert.equal(stale.tickerFromHistory, true);
+  // Current metadata wins and is not marked, even next to an alias row.
+  assert.equal(toPoolModel(alias, infoRow()).tickerFromHistory, false);
+  assert.equal(toPoolModel(indexRow(), infoRow({ meta_json: null })).tickerFromHistory, false);
 });
 
 test('toPoolModel rejects bad rows instead of throwing', () => {
