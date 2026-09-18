@@ -1461,6 +1461,7 @@ export const Showcases = [
       "Project (also known as Ledger on the Blockchain or LOB) developing a Cardano-based decentralized ledger for digital recording of accounting data.",
     tagline: "Decentralized ledger for accounting records",
     icon: "/img/brand-assets/cardano-starburst-blue.svg",
+    metadataLabel: 1447,
     website: "https://www.cardanofoundation.org/reeve#mission",
     source: "https://github.com/cardano-foundation/cf-reeve-platform",
     category: "notary",
