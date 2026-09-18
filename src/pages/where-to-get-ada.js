@@ -113,6 +113,7 @@ export default function Home() {
                 description={[
 
                  translate({id: 'whereToGetAda.funding.description', message: 'Discover Cardano\'s innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal.'}),
+                 translate({id: 'whereToGetAda.funding.directory', message: 'Catalyst is one of several routes. The [grants and funding page](/grants-funding) lists grants, treasury proposals, accelerators, and venture funds, and says who each one is for.'}),
 
                 ]}
                 headingDot={true}
