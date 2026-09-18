@@ -365,6 +365,13 @@
     "showCompanyName": true
   },
   {
+  "companyName": "Tweag by Modus Create",
+  "imageName": "Tweag logo Black",
+  "link": "https://tweag.io",
+  "knownFor": "Ouroboros Peras",
+  "showCompanyName": false
+  },
+  {
     "companyName": "TxPipe",
     "imageName": "txpipe",
     "link": "https://txpipe.io",
