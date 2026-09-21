@@ -43,6 +43,13 @@
   background: var(--ifm-color-emphasis-100);
   border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* Link variant (homepage): match the button chip box model. */
+a.intentChip {
+  display: inline-block;
+  line-height: normal;
 }
 
 .intentChip:focus-visible {

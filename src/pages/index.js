@@ -1,18 +1,20 @@
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
-import FeaturedTitleWithText from "@site/src/components/Layout/FeaturedTitleWithText";
 import Divider from "@site/src/components/Layout/Divider";
-import QuoteBox from "@site/src/components/Layout/QuoteBox";
 import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
-import VisionBox from "@site/src/components/Layout/VisionBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import HomeProofPointsSection from "@site/src/components/HomeProofPointsSection";
+import IntentChips from "@site/src/components/showcase/IntentChips";
+import HomeTracking from "@site/src/components/HomeTracking";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import LatestNewsSection from "@site/src/components/LatestNewsSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import {translate} from '@docusaurus/Translate';
+
+// Entry intents surfaced on the homepage, a subset of the /apps chips.
+const HOME_INTENTS = ["useWallet", "stake", "trade", "vote", "play"];
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -24,6 +26,9 @@ function HomepageHeader() {
   );
 }
 
+// Section order is under test (see HomeTracking): the differentiation block
+// and the entry intents sit directly below the hero, the benefits tabs follow
+// the news. Only links inside a data-section wrapper are tracked.
 export default function Home() {
 
   return (
@@ -31,42 +36,23 @@ export default function Home() {
       title={translate({id: 'home.meta.title', message: 'Cardano, Secure Decentralized Blockchain Platform'})}
       description={translate({id: 'home.meta.description', message: 'Cardano is a decentralized blockchain platform built through peer-reviewed research. Explore ada, staking, governance, DApps, and a global open-source community.'})}
     >
-      <HomepageHeader />
+      <HomeTracking />
+      <div data-section="hero">
+        <HomepageHeader />
+      </div>
       <main>
-        <BackgroundWrapper backgroundType={"zoom"}>
-          <BoundaryBox>
-            <FeaturedTitleWithText
-              title={translate({id: 'home.featured.title', message: 'Our World Is Changing. Together, We Can Change It For The Better.'})}
-              description={[
-                translate({id: 'home.featured.description1', message: 'Cardano is a proof-of-stake blockchain platform: the first to be founded on [peer-reviewed research](/research) and developed through evidence-based methods. It combines pioneering technologies to provide unparalleled security and sustainability to decentralized applications, systems, and societies.'}),
-                translate({id: 'home.featured.description2', message: 'With a leading team of engineers, Cardano exists to redistribute power from unaccountable structures to the margins – to individuals – and be an enabling force for positive change and progress.'}),
-              ]}
-              quote={[
-                translate({id: 'home.featured.quote1', message: 'A History Of Impossible,'}),
-                <br key="line1" />,
-                translate({id: 'home.featured.quote2', message: 'Made Possible'}),
-              ]}
-              buttonLabel={translate({id: 'home.featured.buttonLabel', message: 'Use Cardano Apps'})}
-              buttonLink="/apps"
-              headingDot={true}
-            />
-
-            <Divider text={translate({id: 'home.divider.benefits', message: 'Benefits'})} />
-            <QuoteBox
-              description={translate({id: 'home.quoteBox.description', message: 'Cardano restores trust to global systems – creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow.'})}
-              quote={translate({id: 'home.quoteBox.quote', message: 'Cardano brings a new standard in technology – open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation.'})}
-            />
-            <HomeBenefitsSection />
-          </BoundaryBox>
-        </BackgroundWrapper>
-
-
-          <VisionBox
-            title={[
-              translate({id: 'home.vision.title1', message: 'Define Your Possible.'}),
-              translate({id: 'home.vision.title2', message: 'Change Your World.'}),
-            ]}
-          />
+        <BoundaryBox>
+          <HomeProofPointsSection />
+          <div data-section="intents">
+            <IntentChips ids={HOME_INTENTS} linkTo="/apps" headingId="home-intent-title" />
+            <p className="container">
+              <Link className="button button--primary button--lg" to="/apps">
+                {translate({id: 'home.featured.buttonLabel', message: 'Use Cardano Apps'})}
+              </Link>
+            </p>
+          </div>
+          <SpacerBox size="medium" />
+        </BoundaryBox>
 
         <BoundaryBox>
           <Divider text={translate({id: 'home.divider.news', message: 'News'})} />
@@ -82,7 +68,7 @@ export default function Home() {
         </BoundaryBox>
 
         <BoundaryBox>
-          <HomeProofPointsSection />
+          <HomeBenefitsSection />
           <SpacerBox size="medium" />
         </BoundaryBox>
 
