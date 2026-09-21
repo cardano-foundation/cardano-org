@@ -840,19 +840,6 @@ img {
   }
 }
 
-/* Medusa header */
-#medusa-root {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-#medusa-root > div {
-  position: absolute;
-  inset: 0;
-}
-
-
 /* DocSearch button styling - rounded corners */
 .DocSearch-Button {
   border-radius: 30px !important;

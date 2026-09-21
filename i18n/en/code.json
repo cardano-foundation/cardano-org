@@ -1325,16 +1325,34 @@
     "message": "Cardano is a decentralized blockchain platform built through peer-reviewed research. Explore ada, staking, governance, DApps, and a global open-source community."
   },
   "home.hero.title": {
-    "message": "Making the World Work Better for All"
+    "message": "Made for Trust."
+  },
+  "home.hero.title2": {
+    "message": "Reliable by Design."
   },
   "home.hero.description": {
-    "message": "Cardano is the most secure, reliable and censorship-resistant blockchain for mission critical applications to power economies and societies of the future."
+    "message": "Cardano is a decentralized blockchain ecosystem built on solid scientific research. It focuses on providing a secure, scalable and sustainable public digital platform for individual and enterprise projects to build real-world solutions of trust."
   },
   "home.hero.ctaWhatIsCardano": {
     "message": "What is Cardano?"
   },
   "home.hero.ctaGetStarted": {
     "message": "Get Started"
+  },
+  "home.hero.vizBadge.label": {
+    "message": "Visualizing cardano-ledger, 2018 to today"
+  },
+  "home.hero.vizBadge.description": {
+    "message": "Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Each hard fork appears as a new cluster."
+  },
+  "home.hero.vizBadge.link": {
+    "message": "Explore the history"
+  },
+  "home.hero.vizBadge.buttonLabel": {
+    "message": "Information about this visualization"
+  },
+  "home.hero.vizBadge.ariaLabel": {
+    "message": "File tree of the cardano-ledger repository growing month by month"
   },
   "home.featured.title": {
     "message": "Our World Is Changing. Together, We Can Change It For The Better."
@@ -9688,21 +9706,6 @@
   "ambassadors.map.countLabel": {
     "message": "{n} Ambassadors"
   },
-  "home.hero.vizBadge.description": {
-    "message": "This 3D visualization shows the file structure of the ouroboros-consensus repository. Each dot represents a file or directory, and lines connect files to their parent folders."
-  },
-  "home.hero.vizBadge.interaction": {
-    "message": "Drag to rotate."
-  },
-  "home.hero.vizBadge.link": {
-    "message": "Learn more about Ouroboros"
-  },
-  "home.hero.vizBadge.ariaLabel": {
-    "message": "Information about this visualization"
-  },
-  "home.hero.vizBadge.label": {
-    "message": "Visualizing ouroboros-consensus"
-  },
   "stablecoins.getStarted.scratch.title": {
     "message": "Starting from scratch?"
   },
@@ -10242,5 +10245,161 @@
   "governance.onboarding.background": {"message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."},
   "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
   "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."},
-  "quiz.hub.backToLearn": {"message": "Back to the learning path"}
+  "quiz.hub.backToLearn": {"message": "Back to the learning path"},
+  "medusa.page.title": {
+    "message": "Medusa, the cardano-ledger history"
+  },
+  "medusa.page.description": {
+    "message": "Watch the cardano-ledger repository grow month by month since 2018, hard fork by hard fork, in an interactive 3D visualization."
+  },
+  "medusa.page.noWebgl": {
+    "message": "This visualization needs WebGL, which your browser or device does not provide."
+  },
+  "medusa.page.noWebglLink": {
+    "message": "Read about the hard forks instead."
+  },
+  "medusa.page.canvasLabel": {
+    "message": "Interactive file tree of the cardano-ledger repository over time"
+  },
+  "medusa.page.hint": {
+    "message": "Space plays and pauses, arrows step, 1 to 9 jump to hard forks, L labels, F fullscreen, H hides this bar."
+  },
+  "medusa.controls.play": {
+    "message": "Play"
+  },
+  "medusa.controls.pause": {
+    "message": "Pause"
+  },
+  "medusa.controls.back": {
+    "message": "One month back"
+  },
+  "medusa.controls.forward": {
+    "message": "One month forward"
+  },
+  "medusa.controls.timeline": {
+    "message": "Timeline"
+  },
+  "medusa.controls.speed": {
+    "message": "Speed"
+  },
+  "medusa.controls.fullscreen": {
+    "message": "Fullscreen"
+  },
+  "medusa.legend.title": {
+    "message": "Eras"
+  },
+  "medusa.legend.byron": {
+    "message": "Byron"
+  },
+  "medusa.legend.shelley": {
+    "message": "Shelley"
+  },
+  "medusa.legend.allegra": {
+    "message": "Allegra"
+  },
+  "medusa.legend.mary": {
+    "message": "Mary"
+  },
+  "medusa.legend.alonzo": {
+    "message": "Alonzo"
+  },
+  "medusa.legend.babbage": {
+    "message": "Babbage"
+  },
+  "medusa.legend.conway": {
+    "message": "Conway"
+  },
+  "medusa.legend.dijkstra": {
+    "message": "Dijkstra"
+  },
+  "medusa.legend.libs": {
+    "message": "Shared libraries"
+  },
+  "medusa.legend.docs": {
+    "message": "Documentation"
+  },
+  "medusa.legend.other": {
+    "message": "Everything else"
+  },
+  "medusa.card.close": {
+    "message": "Dismiss"
+  },
+  "medusa.card.link": {
+    "message": "About this hard fork"
+  },
+  "medusa.card.repoLink": {
+    "message": "View repository"
+  },
+  "medusa.node.items": {
+    "message": "{count} item|{count} items"
+  },
+  "medusa.node.file": {
+    "message": "File"
+  },
+  "medusa.node.folder": {
+    "message": "Folder"
+  },
+  "medusa.node.github": {
+    "message": "View on GitHub at this month"
+  },
+  "medusa.milestone.repoStart.name": {
+    "message": "Repository created"
+  },
+  "medusa.milestone.repoStart.description": {
+    "message": "The ledger rules start life as cardano-ledger-specs, with the Byron rules and the first Shelley drafts."
+  },
+  "medusa.milestone.shelley.name": {
+    "message": "Shelley hard fork"
+  },
+  "medusa.milestone.shelley.description": {
+    "message": "Stake pools and delegation arrive, block production moves to the community."
+  },
+  "medusa.milestone.allegra.name": {
+    "message": "Allegra hard fork"
+  },
+  "medusa.milestone.allegra.description": {
+    "message": "Token locking and validity intervals, the groundwork for smart contracts."
+  },
+  "medusa.milestone.mary.name": {
+    "message": "Mary hard fork"
+  },
+  "medusa.milestone.mary.description": {
+    "message": "Native multi-asset support, tokens on the ledger without smart contracts."
+  },
+  "medusa.milestone.restructure.name": {
+    "message": "Repository restructured"
+  },
+  "medusa.milestone.restructure.description": {
+    "message": "The code moves into the eras and libs layout still used today, most files change their place."
+  },
+  "medusa.milestone.alonzo.name": {
+    "message": "Alonzo hard fork"
+  },
+  "medusa.milestone.alonzo.description": {
+    "message": "Plutus smart contracts go live on mainnet."
+  },
+  "medusa.milestone.vasil.name": {
+    "message": "Vasil hard fork"
+  },
+  "medusa.milestone.vasil.description": {
+    "message": "The Babbage era brings reference inputs, inline datums and reference scripts."
+  },
+  "medusa.milestone.chang.name": {
+    "message": "Chang hard fork"
+  },
+  "medusa.milestone.chang.description": {
+    "message": "The Conway era opens and on-chain governance begins."
+  },
+  "medusa.milestone.plomin.name": {
+    "message": "Plomin hard fork"
+  },
+  "medusa.milestone.plomin.description": {
+    "message": "Full on-chain governance: DRep voting, treasury withdrawals and constitutional changes."
+  },
+  "medusa.milestone.vanRossem.name": {
+    "message": "van Rossem hard fork"
+  },
+  "medusa.milestone.vanRossem.description": {
+    "message": "An intra-era upgrade of the Conway era, see the hard forks page for details."
+  }
 }
