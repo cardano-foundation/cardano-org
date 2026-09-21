@@ -8,12 +8,14 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const sharp = require('sharp');
+const { selectFeed } = require('./lib/news-feed.js');
 
 const blogDir = path.join(__dirname, '../blog');
 const outputPath = path.join(__dirname, '../src/data/recentNews.json');
 const authorsPath = path.join(__dirname, '../blog/authors.yml');
 const thumbsDir = path.join(__dirname, '../static/img/news-thumbs');
 const thumbsPublicBase = '/img/news-thumbs';
+
 
 // Load authors for resolving author keys
 const authorsYaml = fs.readFileSync(authorsPath, 'utf8');
@@ -101,16 +103,10 @@ function resolveAuthors(authorKeys) {
     }));
 }
 
-async function main() {
-  // Start from a clean thumbnails directory so stale banners don't linger
-  fs.rmSync(thumbsDir, { recursive: true, force: true });
-  fs.mkdirSync(thumbsDir, { recursive: true });
-
-  const recentNews = [];
-
+// Read frontmatter and body of all posts, newest first.
+function loadCandidates() {
+  const candidates = [];
   for (const dir of dirs) {
-    if (recentNews.length >= 6) break;
-
     const indexPath = path.join(blogDir, dir, 'index.md');
     if (!fs.existsSync(indexPath)) continue;
 
@@ -120,23 +116,35 @@ async function main() {
     const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
     if (!fmMatch) continue;
 
-    const frontmatter = yaml.load(fmMatch[1]);
-
     // Extract date from directory name
     const dateMatch = dir.match(/^(\d{4}-\d{2}-\d{2})/);
     if (!dateMatch) continue;
 
+    const frontmatter = yaml.load(fmMatch[1]);
+    candidates.push({ dir, content, date: dateMatch[1], frontmatter, tags: frontmatter.tags || [] });
+  }
+  return candidates;
+}
+
+async function main() {
+  // Start from a clean thumbnails directory so stale banners don't linger
+  fs.rmSync(thumbsDir, { recursive: true, force: true });
+  fs.mkdirSync(thumbsDir, { recursive: true });
+
+  const recentNews = [];
+
+  for (const { dir, content, date, frontmatter, tags } of selectFeed(loadCandidates())) {
     const slug = frontmatter.slug || dir;
     const description = frontmatter.description || extractDescription(content);
 
     recentNews.push({
       title: frontmatter.title,
       permalink: `/news/${slug}`,
-      date: dateMatch[1],
+      date,
       description,
       image: await resolveThumbnail(dir, content, slug),
       authors: resolveAuthors(frontmatter.authors),
-      tags: frontmatter.tags || [],
+      tags,
     });
   }
 
