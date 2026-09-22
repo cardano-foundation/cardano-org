@@ -753,18 +753,6 @@ export const Showcases = [
     x: "nufiwallet",
   },
   {
-    title: "TapTools",
-    description:
-      "All-in-one Cardano portfolio tracker and market analytics with token charts, NFT generation tools, and on-chain activity dashboards.",
-    tagline: "Cardano portfolio tracker and market analytics",
-    icon: "/img/app-icons/taptools.jpg",
-    website: "https://www.taptools.io",
-    source: null,
-    category: "analytics",
-    properties: [],
-    maintainerPick: true,
-  },
-  {
     title: "Dune",
     description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
     tagline: "On-chain data analysis with community dashboards",
