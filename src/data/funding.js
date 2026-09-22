@@ -1,12 +1,6 @@
 import { translate } from "@docusaurus/Translate";
 
-// Data for /grants-funding. The card shows tagline, audience, and funding;
-// the dialog adds who runs it, a description that does not repeat the card,
-// and the link. Nothing dated except the optional `window`, so entries do
-// not go stale. Brand names are not translated. Field reference in
-// docs/get-involved/add-funding-venue.md.
-
-const REVIEWED = "September 2026";
+// Data for /grants-funding. Fields and rules: docs/get-involved/add-funding-program.md.
 
 // The three groups, in tab order. `key` is also the URL anchor (#grants).
 export function getFundingGroups() {
@@ -43,7 +37,9 @@ export const FundingTypes = {
 };
 
 // Button label in the dialog unless the entry sets its own.
-export const defaultLinkLabel = () => translate({ id: "funding.link.default", message: "Program page" });
+export function defaultLinkLabel() {
+  return translate({ id: "funding.link.default", message: "Program page" });
+}
 
 // Can I apply today? Derived from `cadence` and the optional `window` against
 // the build date, so a label never goes stale by hand. Returns the pill tone
@@ -52,22 +48,22 @@ export const defaultLinkLabel = () => translate({ id: "funding.link.default", me
 //   Open until <date>    inside a window; the closing day counts
 //   Open                 rolling: apply any time
 //   Recurring            recurring: rounds or cohorts, between windows
-export function describeStatus(venue, today, formatDate) {
-  const w = venue.window || {};
+export function describeStatus(program, today, formatDate) {
+  const w = program.window || {};
   if (w.opens && w.opens > today) {
     return { tone: "warning", label: translate({ id: "funding.status.opens", message: "Opens {date}" }, { date: formatDate(w.opens) }) };
   }
   if (w.closes && w.closes >= today) {
     return { tone: "success", label: translate({ id: "funding.status.openUntil", message: "Open until {date}" }, { date: formatDate(w.closes) }) };
   }
-  if (venue.cadence === "rolling") {
+  if (program.cadence === "rolling") {
     return { tone: "success", label: translate({ id: "funding.status.open", message: "Open" }) };
   }
   return { tone: "info", label: translate({ id: "funding.status.recurring", message: "Recurring" }) };
 }
 
 // Cards keep the order of this list: the most accessible program first.
-export function getFundingVenues() {
+export function getFundingPrograms() {
   return [
     {
       key: "catalyst",
@@ -76,14 +72,14 @@ export function getFundingVenues() {
       name: "Project Catalyst",
       logo: "/img/funding/project-catalyst.png",
       cadence: "recurring",
-      tagline: translate({ id: "funding.venue.catalyst.tagline", message: "Grants from Cardano's community innovation fund" }),
-      audience: translate({ id: "funding.venue.catalyst.audience", message: "Builders at any stage, per the round's brief" }),
+      tagline: translate({ id: "funding.program.catalyst.tagline", message: "Grants from Cardano's community innovation fund" }),
+      audience: translate({ id: "funding.program.catalyst.audience", message: "Builders at any stage, per the round's brief" }),
       description: translate({
-        id: "funding.venue.catalyst.description",
+        id: "funding.program.catalyst.description",
         message:
           "Cardano's innovation fund, paid from the treasury. Each round sets its own rules for who can apply and how proposals are chosen, from ada-holder votes to expert panels, and funded projects deliver against milestones.",
       }),
-      runBy: "Cardano Foundation",
+      runBy: "the Cardano Foundation",
       link: { href: "https://projectcatalyst.io/" },
     },
     {
@@ -93,11 +89,11 @@ export function getFundingVenues() {
       name: "Genesis Pre-Accelerator",
       logo: "/img/funding/orion-fund.jpg",
       cadence: "recurring",
-      tagline: translate({ id: "funding.venue.genesis.tagline", message: "Four weeks in Silicon Valley to turn a concept into a product" }),
-      audience: translate({ id: "funding.venue.genesis.audience", message: "Early-stage technical builders" }),
-      funding: translate({ id: "funding.venue.genesis.funding", message: "Up to $20,000 per team" }),
+      tagline: translate({ id: "funding.program.genesis.tagline", message: "Four weeks in Silicon Valley to turn a concept into a product" }),
+      audience: translate({ id: "funding.program.genesis.audience", message: "Early-stage technical builders" }),
+      funding: translate({ id: "funding.program.genesis.funding", message: "Up to $20,000 per team" }),
       description: translate({
-        id: "funding.venue.genesis.description",
+        id: "funding.program.genesis.description",
         message:
           "A residency at Draper University for technical founders at the concept stage: build and validate a product, learn to think like a founder, and pitch angels and early-stage funds on a Demo Day. The investment is made for a target of 2% equity, and graduates can go on to Apex, the growth accelerator.",
       }),
@@ -111,35 +107,35 @@ export function getFundingVenues() {
       name: "Cardano PRIME",
       logo: "/img/funding/alpha-growth.jpg",
       cadence: "rolling",
-      tagline: translate({ id: "funding.venue.prime.tagline", message: "Grants and incentives for DeFi protocols" }),
-      audience: translate({ id: "funding.venue.prime.audience", message: "Live DeFi protocols on Cardano" }),
-      funding: translate({ id: "funding.venue.prime.funding", message: "$5.6M in ecosystem grants" }),
+      tagline: translate({ id: "funding.program.alphagrowth-prime.tagline", message: "Grants and incentives for DeFi protocols" }),
+      audience: translate({ id: "funding.program.alphagrowth-prime.audience", message: "Live DeFi protocols on Cardano" }),
+      funding: translate({ id: "funding.program.alphagrowth-prime.funding", message: "$5.6M in ecosystem grants" }),
       description: translate({
-        id: "funding.venue.prime.description",
+        id: "funding.program.alphagrowth-prime.description",
         message:
           "A 12-month program to grow DeFi liquidity on Cardano: an audit and gap-analysis phase, then milestone-based grants, liquidity provider incentives, and marketing support for qualifying protocols. Eligibility criteria are on the program page.",
       }),
       runBy: "AlphaGrowth",
-      link: { label: translate({ id: "funding.venue.prime.link", message: "Apply for a grant" }), href: "https://alphagrowth.typeform.com/to/mcF9pnCF" },
+      link: { label: translate({ id: "funding.program.alphagrowth-prime.link", message: "Apply for a grant" }), href: "https://alphagrowth.typeform.com/to/mcF9pnCF" },
     },
     {
       key: "treasury",
       group: "grants",
       type: "treasury",
-      name: translate({ id: "funding.venue.treasury.name", message: "Cardano Treasury" }),
+      name: translate({ id: "funding.program.treasury.name", message: "Cardano Treasury" }),
       logo: "/img/brand-assets/cardano-starburst-blue.svg",
       logoDark: "/img/brand-assets/cardano-starburst-white.svg",
       cadence: "rolling",
-      tagline: translate({ id: "funding.venue.treasury.tagline", message: "Larger projects, funded by on-chain vote" }),
-      audience: translate({ id: "funding.venue.treasury.audience", message: "Mature projects and shared infrastructure" }),
-      funding: translate({ id: "funding.venue.treasury.funding", message: "100,000 ada deposit, refunded after the vote" }),
+      tagline: translate({ id: "funding.program.treasury.tagline", message: "Larger projects, funded by on-chain vote" }),
+      audience: translate({ id: "funding.program.treasury.audience", message: "Mature projects and shared infrastructure" }),
+      funding: translate({ id: "funding.program.treasury.funding", message: "100,000 ada deposit, refunded after the vote" }),
       description: translate({
-        id: "funding.venue.treasury.description",
+        id: "funding.program.treasury.description",
         message:
           "The on-chain treasury funds work directly through governance actions under CIP-1694. A withdrawal proposal is submitted on-chain, DReps and the Constitutional Committee vote, and approved funds are disbursed, usually through an administrator such as Intersect that handles contracts and milestones.",
       }),
-      runBy: translate({ id: "funding.venue.treasury.runBy", message: "Cardano's on-chain governance" }),
-      link: { label: translate({ id: "funding.venue.treasury.link", message: "Open GovTool" }), href: "https://gov.tools/" },
+      runBy: translate({ id: "funding.program.treasury.runBy", message: "Cardano's on-chain governance" }),
+      link: { label: translate({ id: "funding.program.treasury.link", message: "Open GovTool" }), href: "https://gov.tools/" },
     },
     {
       key: "cap",
@@ -148,14 +144,14 @@ export function getFundingVenues() {
       name: "Cardano Accelerator Program",
       logo: "/img/funding/cardano-foundation.png",
       cadence: "recurring",
-      tagline: translate({ id: "funding.venue.cap.tagline", message: "A cohort, mentorship, and a Demo Day for early startups" }),
-      audience: translate({ id: "funding.venue.cap.audience", message: "Registered startups with a live product" }),
+      tagline: translate({ id: "funding.program.cap.tagline", message: "A cohort, mentorship, and a Demo Day for early startups" }),
+      audience: translate({ id: "funding.program.cap.audience", message: "Registered startups with a live product" }),
       description: translate({
-        id: "funding.venue.cap.description",
+        id: "funding.program.cap.description",
         message:
           "A cohort program for early-stage startups building on Cardano: technical sessions, go-to-market and regulatory guidance, mentorship from operators and investors, and a Demo Day in front of investors. Each team receives a milestone-based contribution alongside hands-on support.",
       }),
-      runBy: "Cardano Foundation",
+      runBy: "the Cardano Foundation",
       link: { href: "https://cardanofoundation.org/venture-hub/cardano-accelerator-program" },
     },
     {
@@ -165,11 +161,11 @@ export function getFundingVenues() {
       name: "Apex Growth Accelerator",
       logo: "/img/funding/orion-fund.jpg",
       cadence: "recurring",
-      tagline: translate({ id: "funding.venue.apex.tagline", message: "Ten weeks in Silicon Valley, up to $70,000" }),
-      audience: translate({ id: "funding.venue.apex.audience", message: "Founders with a live product" }),
-      funding: translate({ id: "funding.venue.apex.funding", message: "Up to $70,000 per team" }),
+      tagline: translate({ id: "funding.program.apex.tagline", message: "Ten weeks in Silicon Valley, up to $70,000" }),
+      audience: translate({ id: "funding.program.apex.audience", message: "Founders with a live product" }),
+      funding: translate({ id: "funding.program.apex.funding", message: "Up to $70,000 per team" }),
       description: translate({
-        id: "funding.venue.apex.description",
+        id: "funding.program.apex.description",
         message:
           "A residency at Draper University for Cardano startups that want to become investor-ready: mentorship, fundraising and go-to-market support, access to the Orion Fund, and a Demo Day with investors. The investment is made for a target of 3.5% equity.",
       }),
@@ -184,10 +180,10 @@ export function getFundingVenues() {
       logo: "/img/funding/sdg-accelerator.png",
       cadence: "recurring",
       window: { closes: "2026-09-30" },
-      tagline: translate({ id: "funding.venue.sdg.tagline", message: "Put your solution to work with UNDP country teams" }),
-      audience: translate({ id: "funding.venue.sdg.audience", message: "Working solutions for public-sector needs" }),
+      tagline: translate({ id: "funding.program.sdg-accelerator.tagline", message: "Put your solution to work with UNDP country teams" }),
+      audience: translate({ id: "funding.program.sdg-accelerator.audience", message: "Working solutions for public-sector needs" }),
       description: translate({
-        id: "funding.venue.sdg.description",
+        id: "funding.program.sdg-accelerator.description",
         message:
           "Connects UN teams facing development challenges with technology partners. Selected solutions are matched to UNDP country offices and deployed with technical expertise and implementation support. Suitable projects can also receive catalytic funding.",
       }),
@@ -201,27 +197,27 @@ export function getFundingVenues() {
       name: "Orion Fund",
       logo: "/img/funding/orion-fund.jpg",
       cadence: "rolling",
-      tagline: translate({ id: "funding.venue.orion.tagline", message: "An $80M fund investing from acceleration to Series A" }),
-      audience: translate({ id: "funding.venue.orion.audience", message: "Startups ready to raise" }),
+      tagline: translate({ id: "funding.program.orion.tagline", message: "An $80M fund investing from acceleration to Series A" }),
+      audience: translate({ id: "funding.program.orion.audience", message: "Startups ready to raise" }),
       description: translate({
-        id: "funding.venue.orion.description",
+        id: "funding.program.orion.description",
         message:
           "An ecosystem fund for Cardano-native and Cardano-integrated startups, aimed at the $500K to $5M gap between grants and Series A, with a focus on real-world assets, DeFi, and bringing Bitcoin liquidity to Cardano. The Cardano Foundation is constitutional administrator and takes no part in investment decisions; returns flow back to the Cardano Treasury. There is no application form; founders come in through Draper's accelerator cohorts.",
       }),
       runBy: "Draper Dragon",
-      link: { label: translate({ id: "funding.venue.orion.link", message: "Fund dashboard" }), href: "https://orion.draperdragon.com/" },
+      link: { label: translate({ id: "funding.program.orion.link", message: "Fund dashboard" }), href: "https://orion.draperdragon.com/" },
     },
     {
       key: "maintainer-retainer",
       group: "contributors",
       type: "retainer",
-      name: translate({ id: "funding.venue.retainer.name", message: "Maintainer Retainer Program" }),
+      name: translate({ id: "funding.program.maintainer-retainer.name", message: "Maintainer Retainer Program" }),
       logo: "/img/funding/intersect.png",
       cadence: "rolling",
-      tagline: translate({ id: "funding.venue.retainer.tagline", message: "Ongoing pay for the people who maintain core repositories" }),
-      audience: translate({ id: "funding.venue.retainer.audience", message: "Maintainers of established tools" }),
+      tagline: translate({ id: "funding.program.maintainer-retainer.tagline", message: "Ongoing pay for the people who maintain core repositories" }),
+      audience: translate({ id: "funding.program.maintainer-retainer.audience", message: "Maintainers of established tools" }),
       description: translate({
-        id: "funding.venue.retainer.description",
+        id: "funding.program.maintainer-retainer.description",
         message:
           "Part of Intersect's Paid Open Source Model. Ongoing funding, per maintainer role, for the people who maintain the repositories the ecosystem depends on, with core and community maintainer roles overseen by the Open Source and Technical Steering committees.",
       }),
@@ -232,25 +228,25 @@ export function getFundingVenues() {
       key: "hackathons",
       group: "contributors",
       type: "event",
-      name: translate({ id: "funding.venue.hackathons.name", message: "Hackathons and bounties" }),
+      name: translate({ id: "funding.program.hackathons.name", message: "Hackathons and bounties" }),
       logo: "/img/brand-assets/cardano-starburst-blue.svg",
       logoDark: "/img/brand-assets/cardano-starburst-white.svg",
       cadence: "rolling",
-      tagline: translate({ id: "funding.venue.hackathons.tagline", message: "Build something in a weekend and win prizes" }),
-      audience: translate({ id: "funding.venue.hackathons.audience", message: "Individuals and small teams" }),
+      tagline: translate({ id: "funding.program.hackathons.tagline", message: "Build something in a weekend and win prizes" }),
+      audience: translate({ id: "funding.program.hackathons.audience", message: "Individuals and small teams" }),
       description: translate({
-        id: "funding.venue.hackathons.description",
+        id: "funding.program.hackathons.description",
         message:
-          "Hackathons, builder festivals, and bounty programs run through the year, and prizes vary by event. Winning teams get introduced to the accelerators and funds on this page and a chance to pitch them. A fast way to ship something and meet other builders.",
+          "Hackathons, builder festivals, and bounty programs run through the year, and prizes vary by event. Winning teams get introduced to the accelerators and funds on this page and a chance to pitch them.",
       }),
-      runBy: translate({ id: "funding.venue.hackathons.runBy", message: "Cardano Foundation, Intersect, and community organizers" }),
-      link: { label: translate({ id: "funding.venue.hackathons.link", message: "Get hackathon alerts" }), href: "https://developers.cardano.org/talent/" },
+      runBy: translate({ id: "funding.program.hackathons.runBy", message: "the Cardano Foundation, Intersect, and community organizers" }),
+      link: { label: translate({ id: "funding.program.hackathons.link", message: "Get hackathon alerts" }), href: "https://developers.cardano.org/talent/" },
     },
   ];
 }
 
-export function getVenuesByGroup(group) {
-  return getFundingVenues().filter((venue) => venue.group === group);
+export function getProgramsByGroup(group) {
+  return getFundingPrograms().filter((program) => program.group === group);
 }
 
 // Headline figures, static strings rounded down and reviewed by hand. The
@@ -282,11 +278,11 @@ export function getFundingStats() {
             source: { label: translate({ id: "funding.stats.breakdown.treasury.source", message: "Enacted governance actions" }), href: "/insights/supply/summary/#treasury" },
           },
         ],
-        reviewed: translate({ id: "funding.stats.breakdown.reviewed", message: "Reviewed {date}." }, { date: REVIEWED }),
+        reviewed: translate({ id: "funding.stats.breakdown.reviewed", message: "Reviewed September 2026." }),
       },
     },
     { key: "projects", value: "2,200+", label: translate({ id: "funding.stats.projects", message: "projects funded" }) },
-    { key: "programs", value: String(getFundingVenues().length), label: translate({ id: "funding.stats.programs", message: "programs to apply to" }) },
+    { key: "programs", value: String(getFundingPrograms().length), label: translate({ id: "funding.stats.programs", message: "programs listed" }) },
   ];
 }
 
@@ -325,7 +321,7 @@ export function getFundingFAQ() {
         translate({
           id: "funding.faq.equity.a",
           message:
-            "Not for grants, Catalyst, treasury proposals, retainers, or bounties. Venture funds and some accelerators do take equity. Where the terms are public they are in the program details, for example Apex's $70,000 for about 3.5%.",
+            "Not for grants, Catalyst, treasury proposals, retainers, or hackathon prizes. Venture funds and some accelerators do take equity. Where the terms are public they are in the program details, for example Apex's $70,000 for about 3.5%.",
         }),
       ],
     },

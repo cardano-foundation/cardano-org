@@ -6,8 +6,9 @@ import Modal from "@site/src/components/Modal";
 import { getFundingStats } from "@site/src/data/funding";
 import styles from "./styles.module.css";
 
+const isExternal = (href) => /^https?:\/\//.test(href);
+
 function Breakdown({ breakdown }) {
-  const isExternal = (href) => /^https?:\/\//.test(href);
   return (
     <div className={styles.details}>
       <h2 className={styles.detailsTitle}>{breakdown.title}</h2>
@@ -34,9 +35,6 @@ function Breakdown({ breakdown }) {
   );
 }
 
-// Each figure is a static string, so it is in the server HTML. The first
-// carries an info button that opens its breakdown dialog, which is also
-// where the sources and the rounding are explained.
 function Figure({ item }) {
   return (
     <div className={styles.figure}>
@@ -64,15 +62,13 @@ function Figure({ item }) {
 
 export default function FundingStats() {
   return (
-    <div className={styles.stats}>
-      <div className={styles.bar} role="group" aria-label={translate({ id: "funding.stats.ariaLabel", message: "Funding at a glance" })}>
-        {getFundingStats().map((item, index) => (
-          <React.Fragment key={item.key}>
-            {index > 0 && <span className={styles.barDivider} aria-hidden="true" />}
-            <Figure item={item} />
-          </React.Fragment>
-        ))}
-      </div>
+    <div className={styles.bar} role="group" aria-label={translate({ id: "funding.stats.ariaLabel", message: "Funding at a glance" })}>
+      {getFundingStats().map((item, index) => (
+        <React.Fragment key={item.key}>
+          {index > 0 && <span className={styles.barDivider} aria-hidden="true" />}
+          <Figure item={item} />
+        </React.Fragment>
+      ))}
     </div>
   );
 }

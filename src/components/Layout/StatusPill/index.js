@@ -2,14 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
-// Small colour-coded label for a lifecycle or availability state, for example
-// "In development", "Open now" or "Live on mainnet". The tone drives the
-// colour only; the label is whatever the caller passes, already translated.
-//
-// Props:
-//   label     - visible text (required)
-//   tone      - "info" | "success" | "warning" | "neutral" (default "neutral")
-//   className - extra class for layout tweaks
+// Small color-coded label for a state such as "Open" or "Live". The tone
+// drives the color only; the label is whatever the caller passes, translated.
 
 const TONES = {
   info: styles.info,

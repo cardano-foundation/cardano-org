@@ -18,7 +18,7 @@
   flex-shrink: 0;
 }
 
-/* Tints are mixed from the semantic tokens so no new colours are introduced.
+/* Tints are mixed from the semantic tokens so no new colors are introduced.
    Light-mode text is darkened for contrast on the pale tint; the dark-mode
    token values are already light enough to use as-is. */
 

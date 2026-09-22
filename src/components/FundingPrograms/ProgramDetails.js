@@ -7,30 +7,29 @@ import ProgramLogo from "./ProgramLogo";
 import useFundingStatus from "./useFundingStatus";
 import styles from "./styles.module.css";
 
-// Body of the program modal: what the program is, who runs it, and the way
-// in. Everything else lives on the official page the button leads to.
-export default function ProgramDetails({ venue }) {
-  const status = useFundingStatus(venue);
+// Modal body: who runs the program, what it is, and the way in.
+export default function ProgramDetails({ program }) {
+  const status = useFundingStatus(program);
   return (
     <div className={styles.details}>
       <div className={styles.detailsHeader}>
-        <ProgramLogo venue={venue} size="dialog" />
+        <ProgramLogo program={program} size="dialog" />
         <div className={styles.detailsHeaderText}>
           <div className={styles.detailsPills}>
             <StatusPill tone={status.tone} label={status.label} />
-            {FundingTypes[venue.type] && <StatusPill tone="neutral" label={FundingTypes[venue.type]} />}
+            {FundingTypes[program.type] && <StatusPill tone="neutral" label={FundingTypes[program.type]} />}
           </div>
-          <h2 className={styles.detailsTitle}>{venue.name}</h2>
+          <h2 className={styles.detailsTitle}>{program.name}</h2>
         </div>
       </div>
       <p className={styles.detailsRunBy}>
-        <span className={styles.detailsLabel}>{translate({ id: "funding.details.runBy", message: "Run by" })}</span> {venue.runBy}
+        <span className={styles.detailsLabel}>{translate({ id: "funding.details.runBy", message: "Run by" })}</span> {program.runBy}
       </p>
-      <p className={styles.detailsText}>{venue.description}</p>
-      {venue.link && (
+      <p className={styles.detailsText}>{program.description}</p>
+      {program.link && (
         <div className={styles.detailsActions}>
-          <Link to={venue.link.href} className="button button--primary" target="_blank" rel="noopener noreferrer">
-            {venue.link.label || defaultLinkLabel()}
+          <Link to={program.link.href} className="button button--primary" target="_blank" rel="noopener noreferrer">
+            {program.link.label || defaultLinkLabel()}
           </Link>
         </div>
       )}

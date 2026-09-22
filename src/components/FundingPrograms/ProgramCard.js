@@ -10,26 +10,25 @@ import ProgramLogo from "./ProgramLogo";
 import useFundingStatus from "./useFundingStatus";
 import styles from "./styles.module.css";
 
-// One program: logo and name, status and type tags, tagline, one or two
-// check facts, and a Details button that opens the shared Modal. The button
-// is the Modal's own trigger, so focus returns to it when the dialog closes.
-export default function ProgramCard({ venue }) {
-  const status = useFundingStatus(venue);
-  const facts = [venue.audience, venue.funding].filter(Boolean);
+// The Details button is the Modal's own trigger, so focus returns to it when
+// the dialog closes.
+export default function ProgramCard({ program }) {
+  const status = useFundingStatus(program);
+  const facts = [program.audience, program.funding].filter(Boolean);
   return (
-    <article id={`program-${venue.key}`} className={styles.card}>
+    <article id={`program-${program.key}`} className={styles.card}>
       <div className={styles.cardHeader}>
-        <ProgramLogo venue={venue} />
-        <h4 className={styles.cardName}>{venue.name}</h4>
+        <ProgramLogo program={program} />
+        <h4 className={styles.cardName}>{program.name}</h4>
       </div>
       <div className={styles.cardTags}>
         <StatusPill tone={status.tone} label={status.label} className={styles.tagStatus} />
-        {FundingTypes[venue.type] && <span className={styles.tag}>{FundingTypes[venue.type]}</span>}
+        {FundingTypes[program.type] && <span className={styles.tag}>{FundingTypes[program.type]}</span>}
       </div>
-      <p className={styles.cardTagline}>{venue.tagline}</p>
+      <p className={styles.cardTagline}>{program.tagline}</p>
       <ul className={styles.cardFacts}>
         {facts.map((fact, index) => (
-          <li key={`${venue.key}-${index}`} className={styles.cardFact}>
+          <li key={index} className={styles.cardFact}>
             <span className={styles.factIcon} aria-hidden="true">
               <FaCheck />
             </span>
@@ -38,11 +37,11 @@ export default function ProgramCard({ venue }) {
         ))}
       </ul>
       <Modal
-        label={typeof venue.name === "string" ? venue.name : translate({ id: "funding.card.dialogLabel", message: "Program" })}
+        label={program.name}
         buttonText={translate({ id: "funding.card.details", message: "Details" })}
         buttonClassName={clsx("button button--outline button--primary", styles.cardButton)}
       >
-        <ProgramDetails venue={venue} />
+        <ProgramDetails program={program} />
       </Modal>
     </article>
   );
