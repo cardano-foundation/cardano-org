@@ -1,10 +1,7 @@
 /* Stats bar */
-.stats {
-  margin: var(--site-space-md) 0 var(--site-space-lg);
-}
-
 .bar {
   display: flex;
+  margin: var(--site-space-md) 0 var(--site-space-lg);
   align-items: stretch;
   justify-content: space-between;
   gap: var(--site-space-md);
@@ -177,8 +174,6 @@
   margin: var(--site-space-md) 0 var(--site-space-lg);
 }
 
-/* Program card: static box; the Details button at the bottom is the Modal
-   trigger. */
 .card {
   display: flex;
   flex-direction: column;
@@ -189,7 +184,7 @@
   scroll-margin-top: var(--site-space-2xl);
 }
 
-/* The dark emphasis scale starts at the page colour, so use the surface. */
+/* The dark emphasis scale starts at the page color, so use the surface. */
 [data-theme="dark"] .card {
   background: var(--ifm-background-surface-color);
 }
@@ -227,7 +222,7 @@
 .logoImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .monogram {
@@ -266,8 +261,10 @@
   gap: var(--site-space-2xs);
 }
 
+/* Descendant selector so the size wins over StatusPill's own .pill rule
+   regardless of stylesheet order. */
 .tag,
-.tagStatus {
+.cardTags .tagStatus {
   padding: 0.15rem 0.5rem;
   font-size: 0.65rem;
   font-weight: 600;
@@ -389,72 +386,6 @@
   text-decoration: underline;
 }
 
-/* How to apply */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--site-space-sm);
-  margin: var(--site-space-md) 0 var(--site-space-lg);
-  padding: 0;
-  list-style: none;
-  counter-reset: step;
-}
-
-.step {
-  counter-increment: step;
-  padding: var(--site-space-md);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--site-radius-lg);
-  background: var(--ifm-background-surface-color);
-}
-
-.step::before {
-  content: counter(step);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: var(--site-space-xs);
-  border-radius: 50%;
-  background: var(--ifm-color-primary);
-  color: var(--ifm-color-white);
-  font-weight: 700;
-}
-
-.stepTitle {
-  display: block;
-  margin-bottom: var(--site-space-3xs);
-  font-weight: 700;
-}
-
-.stepText {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--ifm-color-emphasis-800);
-}
-
-@media (max-width: 996px) {
-  .steps {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .bar {
-    flex-direction: column;
-    gap: var(--site-space-sm);
-    padding: var(--site-space-md);
-  }
-
-  .barDivider {
-    width: 60%;
-    height: 1px;
-    margin: 0 auto;
-  }
-}
-
 /* Visually hidden text for icon-only controls */
 .srOnly {
   position: absolute;
@@ -469,6 +400,18 @@
 }
 
 @media (max-width: 768px) {
+  .bar {
+    flex-direction: column;
+    gap: var(--site-space-sm);
+    padding: var(--site-space-md);
+  }
+
+  .barDivider {
+    width: 60%;
+    height: 1px;
+    margin: 0 auto;
+  }
+
   .tabList {
     width: 100%;
     border-radius: var(--site-radius-lg);
