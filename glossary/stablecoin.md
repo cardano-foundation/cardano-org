@@ -6,7 +6,7 @@ category: tokens
 level: beginner
 link: /stablecoins
 mentalModel: "A digital IOU pegged to a real-world currency. Some stablecoins hold actual dollars in a bank to back the peg (fiat-backed), others lock up crypto as collateral and use code to hold the price in line (crypto-backed). The peg only holds as long as the backing mechanism does."
-related: [djed, usdm]
+related: [djed, usdm, programmable-token]
 ---
 
 On Cardano, USDM is a fiat-backed stablecoin while Djed is crypto-backed, holding an overcollateralized ada reserve; together with synthetic designs like iUSD they show the main families of stablecoin in use.
