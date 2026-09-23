@@ -464,17 +464,6 @@ export const Showcases = [
     },
   },
   {
-    title: "Token & NFT Builder",
-    description:
-      "Create your own native Cardano tokens and NFTs without writing any code, with policy management and metadata templates handled in-app.",
-    tagline: "No-code native token and NFT minting tool",
-    website: "https://cardano-native-token.com/",
-    source: null,
-    category: "minting",
-    properties: ["nft"],
-    maintainerPick: false,
-  },
-  {
     title: "cardano-tools.io",
     description:
       "Open-source CNFT minting toolkit. Configure metadata, royalties, and minting policies entirely client-side; you only pay network fees.",
@@ -1032,31 +1021,6 @@ export const Showcases = [
       features: ["governance", "multi-asset"],
       type: "light",
     },
-  },
-  {
-    title: "Tempo",
-    description:
-      "Governance tool that streamlines Cardano's decision making. Helps DReps register, gain delegations, and engage delegators; supports DAOs and SPOs too.",
-    tagline: "Governance tool for DReps to register and engage",
-    icon: "/img/app-icons/tempo.png",
-    website: "https://tempo.vote",
-    source: null,
-    category: "governance",
-    properties: ["drepdelegation"],
-    maintainerPick: false,
-  },
-  {
-    title: "Nio",
-    description:
-      "Tracks and monitors all assets across Cardano wallets and DeFi smart contracts in one dashboard. Surfaces lending positions, LP shares, and yields.",
-    tagline: "Track wallets and DeFi smart contract assets",
-    icon: "/img/app-icons/nio.png",
-    website: "https://nioapp.io",
-    source: null,
-    category: "other",
-    properties: [],
-    maintainerPick: false,
-    x: "NioApp",
   },
   {
     title: "Begin Wallet",
