@@ -457,6 +457,10 @@ const config = {
                 to: '/docs/get-involved',
               },
               {
+                label: 'Grants and Funding',
+                to: '/grants-funding',
+              },
+              {
                 label: 'Code of Conduct',
                 to: '/community-code-of-conduct',
               },

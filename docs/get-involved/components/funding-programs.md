@@ -33,13 +33,9 @@ import FundingStats from '@site/src/components/FundingPrograms/FundingStats';
 
 `describeStatus(program, today, formatDate)` in `src/data/funding.js` is the single place that turns `cadence` and `window` into the pill tone and label. `useFundingStatus(program)` is the only hook: it reads `customFields.BUILD_DATE` (so server and client agree on "today") and the current locale (for the date in "Open until") and calls that function. The components render what they get.
 
-## Details button
+## Anchors
 
-`Modal` owns its trigger button and renders `buttonText` inside it. `ProgramCard` is a static `article` with the Modal's button pinned to the bottom as a full-width outlined "Details" button: reachable with Tab, opened with Enter or Space, closed with Escape, and focus returns to the button.
-
-## Tabs and anchors
-
-The switcher uses `react-tabs`, the same library as the governance page's "Choose your path", so it comes with tab roles and arrow-key navigation. All panels render (`forceRenderTabPanel`), so every program is in the HTML; CSS hides the inactive panels. On load and on every hash change the component reads the URL hash: a group key such as `#accelerators` selects that tab, and `#program-<key>` selects the program's tab and scrolls to its card.
+All panels render (`forceRenderTabPanel`), so every program is in the HTML and CSS hides the inactive panels. A URL hash selects a tab: `#accelerators` opens that group, and `#program-<key>` opens the program's group and scrolls to its card.
 
 ## Files
 

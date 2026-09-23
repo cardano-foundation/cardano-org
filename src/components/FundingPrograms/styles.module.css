@@ -1,4 +1,3 @@
-/* Stats bar */
 .bar {
   display: flex;
   margin: var(--site-space-md) 0 var(--site-space-lg);
@@ -199,7 +198,6 @@
   gap: var(--site-space-xs);
 }
 
-/* Logo tile, shared by the card and the dialog header */
 .logoTile,
 .logoTileLarge {
   flex-shrink: 0;
@@ -331,7 +329,6 @@
   margin-top: auto;
 }
 
-/* Modal body */
 .details {
   display: flex;
   flex-direction: column;
@@ -371,7 +368,6 @@
   padding-top: var(--site-space-2xs);
 }
 
-/* Sources and review line of the stats breakdown dialog */
 .detailsFooter {
   margin: 0;
   padding-top: var(--site-space-2xs);
@@ -386,7 +382,6 @@
   text-decoration: underline;
 }
 
-/* Visually hidden text for icon-only controls */
 .srOnly {
   position: absolute;
   width: 1px;

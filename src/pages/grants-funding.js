@@ -81,7 +81,7 @@ export default function GrantsFunding() {
       <Head>
         <script type="application/ld+json">{faqJsonLd(faq)}</script>
       </Head>
-      <OpenGraphInfo pageName="grants-funding" />
+      <OpenGraphInfo />
       <FundingHero />
       <main>
         <BackgroundWrapper backgroundType="zoom">
