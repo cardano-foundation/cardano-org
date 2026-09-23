@@ -160,13 +160,6 @@
     "showCompanyName": false
   },
   {
-    "companyName": "Genius Yield",
-    "imageName": "genius-yield",
-    "link": "https://www.geniusyield.co/",
-    "knownFor": "Genius Yield DEX",
-    "showCompanyName": false
-  },
-  {
     "companyName": "Guild Operators",
     "imageName": "guild",
     "link": "https://cardano-community.github.io/guild-operators/contributors/",

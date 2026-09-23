@@ -1186,20 +1186,6 @@ export const Showcases = [
     },
   },
   {
-    title: "Genius Yield",
-    description:
-      "All-in-one Cardano DeFi platform combining a fully on-chain order-book DEX with an automated yield optimizer that compounds positions.",
-    tagline: "Order-book DEX with built-in yield optimizer",
-    icon: "/img/app-icons/genius-yield.jpg",
-    statsLabel: "geniusyield",
-    website: "https://www.geniusyield.co/",
-    source: "https://github.com/geniusyield",
-    category: "dex",
-    properties: ["opensource"],
-    maintainerPick: false,
-    x: "GeniusyieldO",
-  },
-  {
     title: "Iagon",
     description:
       "Iagon is an AI-driven shared storage and compute economy. Bridging decentralization with compliance to revolutionize cloud services.",
