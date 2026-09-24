@@ -420,8 +420,10 @@ export default function DRepDelegate() {
     if (!trimmedQuery) return null;
     if (isValidDRepId(trimmedQuery)) {
       const wanted = trimmedQuery.toLowerCase();
+      // CIP-105 and hex spellings of a listed DRep resolve to its pool entry too.
+      const canonical = canonicalDRepId(trimmedQuery);
       const match = pool.find(
-        (d) => d.drepId.toLowerCase() === wanted || d.hex?.toLowerCase() === wanted
+        (d) => d.drepId === canonical || d.drepId.toLowerCase() === wanted || d.hex?.toLowerCase() === wanted
       );
       return { byId: trimmedQuery, matches: match ? [match] : [] };
     }
