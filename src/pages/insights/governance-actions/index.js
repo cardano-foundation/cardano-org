@@ -29,6 +29,7 @@ export const meta = {
   pageDescription: translate({id: 'insightsGovernance.meta.pageDescription', message: 'Visual representation of Cardano Governance Action process flows.'}),
   title: translate({id: 'insightsGovernance.meta.title', message: 'Cardano Governance Actions'}),
   date: '2025-04-09',
+  updated: '2026-09-24',
   og: {
     title: translate({id: 'insightsGovernance.og.title', message: 'Cardano Governance Actions'}),
     description: translate({id: 'insightsGovernance.og.description', message: 'Explore the Cardano Governance Action flow logic.'})
@@ -56,7 +57,7 @@ function PageContent() {
     .filter(Boolean);
 
   // Build query string deterministically from selection
-  const buildSearchFromSelection = ({ category, parameters }) => {
+  const buildSearchFromSelection = ({ category, parameters, chart }) => {
     const params = new URLSearchParams();
     if (category) params.set('category', category);
     if (parameters && parameters.length) {
@@ -64,6 +65,7 @@ function PageContent() {
       const normalized = Array.from(new Set(parameters)).sort();
       params.set('parameter', normalized.join(SEPARATOR));
     }
+    if (chart) params.set('chart', chart);
     const s = params.toString();
     return s ? `?${s}` : '';
   };
@@ -76,8 +78,8 @@ function PageContent() {
   const canonicalUrl = canonicalUrlBase;
   
   // Push selection back to URL (without scroll jump or page reload)
-  const handleSelectionChange = ({ category, parameters }) => {
-    const nextSearch = buildSearchFromSelection({ category, parameters });
+  const handleSelectionChange = ({ category, parameters, chart }) => {
+    const nextSearch = buildSearchFromSelection({ category, parameters, chart });
     // update only if different
     if (nextSearch === (location.search || '')) return;
     history.replace(`${location.pathname}${nextSearch}${location.hash || ''}`);
@@ -112,9 +114,9 @@ function PageContent() {
 
       <TitleWithText
         description={[
-          translate({id: 'insightsGovernance.intro.paragraph1', message: '**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle (submission → ratification → enactment), who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies; some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/governance/cardano-governance/governance-actions/).'}),
-          translate({id: 'insightsGovernance.intro.paragraph2', message: 'Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes; **purple boxes** indicate thresholds and enactment order. You can **download** the diagram or simply **share the URL**, the address bar updates to the chart you\'re viewing. For the formal basis, see the **Cardano Constitution – Appendix I: Guardrails** [constitution](/constitution).'}),
-          translate({id: 'insightsGovernance.intro.paragraph3', message: 'For **Protocol Parameter Changes**, the charts separate routine updates (typically **DReps + CC**) from **security-critical parameters**, which also need **SPO approval**, i.e., all three bodies. Appendix I lists the critical parameters and their permitted ranges/scope.'})
+          translate({id: 'insightsGovernance.intro.paragraph1', message: '**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle from submission through ratification to enactment, who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies, some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/developers/curriculum/staking-governance/governance/#the-seven-governance-action-types).'}),
+          translate({id: 'insightsGovernance.intro.paragraph2', message: 'Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes: **orange boxes** show the deposit and the voting thresholds, **purple boxes** explain how the votes are counted. You can **download** the diagram or **share the URL**, the address bar keeps the category, the parameter filter and the open chart. For the formal basis, see Appendix I: Guardrails of the [Cardano Constitution](/constitution).'}),
+          translate({id: 'insightsGovernance.intro.paragraph3', message: '**Critical Parameter Changes** follow Appendix I, section 2.1, of the Constitution. Parameters critical to the operation of the blockchain also need **SPO approval**, so all three bodies vote. Parameters critical to the governance system need the DReps and the Constitutional Committee, like routine **Protocol Parameter Changes**. For both, at least 90 days should normally pass between the off-chain proposal and the on-chain action. The DRep threshold follows the parameter group: 67% for network, economic and technical parameters, 75% for governance parameters.'})
         ]}
         headingDot
       />
@@ -131,7 +133,7 @@ function PageContent() {
         <SpacerBox size="medium" />
       </BoundaryBox>
 
-      <InsightsFooter lastUpdated={meta.date} />
+      <InsightsFooter lastUpdated={meta.updated} liveData={false} />
     </>
   );
 }

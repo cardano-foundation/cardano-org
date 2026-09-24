@@ -41,22 +41,22 @@ const CATEGORY_DATA = {
   [CATEGORIES.CRITICAL_PARAMETER_CHANGES]: criticalParamCharts,
 };
 
-// Cardano governance parameters list
+// Cardano governance parameters list, grouped as in CIP-1694
 const manualParametersList = [
-  // Network Parameters
+  // Network group
   "maxBlockBodySize",
   "maxTxSize",
   "maxBlockHeaderSize",
   "maxValueSize",
   "maxBlockExecutionUnits",
   "maxTxExecutionUnits",
+  "maxCollateralInputs",
 
-  // Economic Parameters
+  // Economic group
   "txFeePerByte",
   "txFeeFixed",
   "minFeeRefScriptCoinsPerByte",
   "utxoCostPerByte",
-  "govDeposit",
   "minPoolCost",
   "stakeAddressDeposit",
   "stakePoolDeposit",
@@ -64,15 +64,15 @@ const manualParametersList = [
   "monetaryExpansion",
   "executionUnitPrices",
 
-  // Technical Parameters
+  // Technical group
   "stakePoolTargetNum",
   "poolPledgeInfluence",
   "poolRetireMaxEpoch",
   "collateralPercentage",
-  "maxCollateralInputs",
   "costModels",
 
-  // Governance Parameters
+  // Governance group
+  "govDeposit",
   "dRepDeposit",
   "committeeMinSize",
   "committeeMaxTermLength",
@@ -144,10 +144,15 @@ export default function GovernanceCharts({
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
   const [selectedParameters, setSelectedParameters] = useState(initialParameters);
   // remember last selection
-  const lastReportedRef = useRef({ category: initialCategory || null, parameters: [...initialParameters].sort() });
+  const lastReportedRef = useRef({
+    category: initialCategory || null,
+    parameters: [...initialParameters].sort(),
+    chart: initialChartId || null,
+  });
 
   const sameSelection = (a, b) => {
     if ((a.category || null) !== (b.category || null)) return false;
+    if ((a.chart || null) !== (b.chart || null)) return false;
     const ap = [...(a.parameters || [])].sort();
     const bp = [...(b.parameters || [])].sort();
     if (ap.length !== bp.length) return false;
@@ -180,14 +185,18 @@ export default function GovernanceCharts({
         setActiveGraphIndex(null);
         setActiveChartId(null);
       }
+      if ((initialChartId || null) !== (activeChartId || null)) {
+        setActiveChartId(initialChartId || null);
+      }
       lastUrlSigRef.current = urlSignature;
       lastReportedRef.current = {
         category: initialCategory || null,
         parameters: [...(initialParameters || [])].sort(),
+        chart: initialChartId || null,
       };
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlSignature, initialCategory, initialParameters]);
+  }, [urlSignature, initialCategory, initialParameters, initialChartId]);
 
 
   useEffect(() => {
@@ -260,16 +269,25 @@ export default function GovernanceCharts({
   // URL sync: report selection changes upward
   // ────────────────────────────────────────────────────────────────────────
   useEffect(() => {
-    const current = { category: activeCategory || null, parameters: selectedParameters };
+    const current = {
+      category: activeCategory || null,
+      parameters: selectedParameters,
+      chart: activeChartId || null,
+    };
     if (!sameSelection(current, lastReportedRef.current)) {
-      lastReportedRef.current = { category: current.category, parameters: [...current.parameters].sort() };
+      lastReportedRef.current = {
+        category: current.category,
+        parameters: [...current.parameters].sort(),
+        chart: current.chart,
+      };
       onSelectionChange?.(current);
     }
-  }, [activeCategory, selectedParameters, onSelectionChange]);
+  }, [activeCategory, selectedParameters, activeChartId, onSelectionChange]);
 
   // Event handlers
   const handleCategorySelect = (category) => {
     setActiveCategory(category === activeCategory ? null : category);
+    setActiveChartId(null);
     setSearchTerm("");
   };
 
@@ -323,6 +341,7 @@ export default function GovernanceCharts({
     setSelectedParameters([]);
     setSearchTerm("");
     setActiveCategory(null);
+    setActiveChartId(null);
   };
 
   const toggleParametersDropdown = () => {
