@@ -161,9 +161,10 @@ async function toDRep(target) {
 
 // Build, sign (via the connected wallet) and submit a vote-delegation
 // transaction. Coin selection and change come from the wallet; Koios
-// supplies the protocol parameters. Returns the submitted tx hash.
-export async function delegateVote({ api, target, koiosUrl }) {
-  const { Client, mainnet, RewardAccount, Transaction } = await loadEvolution();
+// supplies the protocol parameters. Returns the submitted tx hash. loadSdk
+// is injectable so a test harness can swap the chain.
+export async function delegateVote({ api, target, koiosUrl, loadSdk = loadEvolution }) {
+  const { Client, mainnet, RewardAccount, Transaction } = await loadSdk();
 
   const rewards = await api.getRewardAddresses();
   if (!rewards?.length) {
@@ -242,10 +243,12 @@ function tryAddressBech32(Address, address) {
 // has no treasury-donation op, so we pay the amount to ourselves to make coin
 // selection reserve the funds and compute fee/change, then rewrite the body:
 // drop that self-payment output and carry the same lovelace as the Conway
-// donation instead (with currentTreasuryValue, which the ledger requires to
-// match the treasury at submission). Returns the submitted tx hash.
-export async function donateToTreasury({ api, amountLovelace, currentTreasuryValue, koiosUrl }) {
-  const { Client, mainnet, Transaction, Address, Assets } = await loadEvolution();
+// donation instead. The optional currentTreasuryValue field stays unset: the
+// ledger only checks it when present, and a value from an indexer can be one
+// epoch behind, which would reject the donation. Returns the submitted tx hash.
+// loadSdk is injectable so a test harness can swap the chain.
+export async function donateToTreasury({ api, amountLovelace, koiosUrl, loadSdk = loadEvolution }) {
+  const { Client, mainnet, Transaction, Address, Assets } = await loadSdk();
 
   const donation = BigInt(amountLovelace);
   if (donation <= 0n) {
@@ -298,7 +301,6 @@ export async function donateToTreasury({ api, amountLovelace, currentTreasuryVal
   // The SDK's body/output objects are plain mutable instances; mutate in place
   // rather than reconstructing the tagged classes.
   body.outputs = keptOutputs;
-  body.currentTreasuryValue = BigInt(currentTreasuryValue);
   body.donation = donation;
 
   const unsignedTx = Transaction.toCBORHex(tx);

@@ -16,6 +16,7 @@ import {
 } from "@site/src/utils/walletTx";
 import { WalletPicker, NetworkWarning, TxBanner, Initials, SearchRow, SnapshotImage } from "@site/src/components/WalletDelegation";
 import { fisherYates, chunk, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
+import { canonicalDRepId, fetchDRepIdStatus } from "@site/src/utils/cardano/drepIdStatus.mjs";
 import styles from "./styles.module.css";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
@@ -199,9 +200,47 @@ function DRepCard({ drep, onSelect, disabled }) {
   );
 }
 
-// A DRep ID that is not in the pool is either inactive or has no published
-// metadata. Delegation still works, so offer it with the bare ID.
-function UnknownIdCard({ drepId, onSelect, disabled }) {
+function unknownIdHelp(status) {
+  switch (status) {
+    case "active":
+      return translate({
+        id: "governance.delegate.search.unknownId.active",
+        message: "This DRep is registered and active but has published no name. You can delegate to this ID.",
+      });
+    case "inactive":
+      return translate({
+        id: "governance.delegate.search.unknownId.inactive",
+        message: "This DRep is registered but inactive, so it has not voted for a while. Your stake only counts toward votes again once the DRep is active. You can still delegate to this ID.",
+      });
+    case "unregistered":
+      return translate({
+        id: "governance.delegate.search.unknownId.unregistered",
+        message: "This DRep ID is not registered, or the DRep has retired. A delegation to it would fail, so check the ID.",
+      });
+    case "invalid":
+      return translate({
+        id: "governance.delegate.search.unknownId.invalid",
+        message: "This is not a valid DRep ID. Check it and paste it again.",
+      });
+    case "unknown":
+      return translate({
+        id: "governance.delegate.search.unknownId.unknown",
+        message: "Could not check this DRep ID right now. A delegation only works if the DRep is registered.",
+      });
+    default:
+      return translate({
+        id: "governance.delegate.search.unknownId.checking",
+        message: "Checking this DRep ID on the chain…",
+      });
+  }
+}
+
+// A pasted DRep ID outside the pool of active, named DReps. Its on-chain
+// status decides whether a delegation can work at all. The wallet only takes
+// the canonical CIP-129 ID, so without one the button stays disabled.
+function UnknownIdCard({ drepId, canonicalId, status, onSelect, disabled }) {
+  const blocked =
+    !canonicalId || status === "loading" || status === "unregistered" || status === "invalid";
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
@@ -216,17 +255,12 @@ function UnknownIdCard({ drepId, onSelect, disabled }) {
           <span className={styles.cardId}>{shortAddress(drepId)}</span>
         </div>
       </div>
-      <p className={styles.cardBio}>
-        {translate({
-          id: "governance.delegate.search.unknownId.help",
-          message: "This DRep is not active or has published no metadata, so we cannot show a name. You can still delegate to this ID.",
-        })}
-      </p>
+      <p className={styles.cardBio} aria-live="polite">{unknownIdHelp(status)}</p>
       <button
         type="button"
         className={`button button--primary ${styles.cardCta}`}
-        disabled={disabled}
-        onClick={() => onSelect({ dRepId: drepId }, drepId)}
+        disabled={disabled || blocked}
+        onClick={() => onSelect({ dRepId: canonicalId }, drepId)}
       >
         {translate({ id: "governance.delegate.card.cta", message: "Delegate" })}
       </button>
@@ -394,6 +428,36 @@ export default function DRepDelegate() {
     }
     return { byId: null, matches: searchByName(pool, trimmedQuery) };
   }, [trimmedQuery, pool]);
+
+  // A pasted ID outside the pool is checked on chain before it can be used.
+  const unknownId = search?.byId && !search.matches.length ? search.byId : null;
+  const [idCheck, setIdCheck] = useState({ id: null, status: null, drepId: null });
+  useEffect(() => {
+    if (!unknownId || !apiClient) return;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      fetchDRepIdStatus(apiClient, unknownId)
+        .then(({ status, drepId }) => {
+          if (!cancelled) setIdCheck({ id: unknownId, status, drepId });
+        })
+        .catch((err) => {
+          console.error("DRepDelegate: DRep ID check failed", err);
+          if (!cancelled) setIdCheck({ id: unknownId, status: "unknown", drepId: null });
+        });
+    }, 300);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [unknownId, apiClient]);
+  const idChecked = idCheck.id === unknownId;
+  const unknownIdStatus = idChecked ? idCheck.status : "loading";
+  // A changed search starts a fresh check, so pasting an ID again never reuses
+  // an old result. Whitespace-only edits keep the result, the lookup stays the same.
+  const handleQueryChange = useCallback((value) => {
+    setQuery(value);
+    if (value.trim() !== trimmedQuery) setIdCheck({ id: null, status: null, drepId: null });
+  }, [trimmedQuery]);
 
   const visible = search
     ? search.matches.slice(0, SEARCH_RESULT_LIMIT)
@@ -596,7 +660,7 @@ export default function DRepDelegate() {
         </h3>
         <SearchRow
           value={query}
-          onChange={setQuery}
+          onChange={handleQueryChange}
           placeholder={translate({ id: "governance.delegate.search.placeholder", message: "Search by name, or paste a DRep ID" })}
           label={translate({ id: "governance.delegate.search.label", message: "Search DReps by name or DRep ID" })}
         />
@@ -621,6 +685,8 @@ export default function DRepDelegate() {
         <div className={styles.cardGrid}>
           <UnknownIdCard
             drepId={search.byId}
+            canonicalId={(idChecked && idCheck.drepId) || canonicalDRepId(search.byId)}
+            status={unknownIdStatus}
             onSelect={handleSelect}
             disabled={!canDelegate}
           />
@@ -667,7 +733,7 @@ export default function DRepDelegate() {
             label={translate({ id: "governance.delegate.noConfidence.label", message: "No Confidence" })}
             help={translate({
               id: "governance.delegate.noConfidence.help",
-              message: "Always vote no confidence in the current Constitutional Committee.",
+              message: "Counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes.",
             })}
             target={{ alwaysNoConfidence: null }}
             onSelect={handleSelect}
