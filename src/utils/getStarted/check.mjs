@@ -1,4 +1,4 @@
-import { UNKNOWN, emptyStatus, deriveStatus, withWalletBalance } from './status.mjs';
+import { UNKNOWN, deriveStatus, noAccountStatus, withWalletBalance } from './status.mjs';
 
 export const EMPTY_NAMES = { poolName: null, poolTicker: null, drepName: null };
 
@@ -46,11 +46,7 @@ export async function checkAccount({ api, stakeAddress, readWalletBalance = null
   // A body that is not an array is a broken response, not an empty account.
   if (!Array.isArray(res.data)) throw new Error('account_info returned no array');
   const row = res.data[0];
-  // No row means the stake key never appeared on chain, so it cannot be
-  // registered or delegated yet. The balance stays unknown, see below.
-  let status = row
-    ? deriveStatus(row)
-    : { ...emptyStatus(), stake: false, vote: false, stakeRegistered: false };
+  let status = row ? deriveStatus(row) : noAccountStatus();
   if (status.ada === UNKNOWN && readWalletBalance) {
     status = withWalletBalance(status, await readWalletBalance());
     if (!isCurrent()) return null;

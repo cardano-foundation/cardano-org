@@ -29,6 +29,7 @@ const SEARCH_RESULT_LIMIT = 12;
 const BATCH_SIZE = 50;
 const POOL_CACHE_KEY = "cardano-org.drep-pool.v4";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+const NO_ID_CHECK = { id: null, status: null, drepId: null };
 
 async function fetchAllDRepIds(api) {
   const PAGE_SIZE = 600;
@@ -239,8 +240,6 @@ function unknownIdHelp(status) {
 // status decides whether a delegation can work at all. The wallet only takes
 // the canonical CIP-129 ID, so without one the button stays disabled.
 function UnknownIdCard({ drepId, canonicalId, status, onSelect, disabled }) {
-  const blocked =
-    !canonicalId || status === "loading" || status === "unregistered" || status === "invalid";
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
@@ -259,7 +258,7 @@ function UnknownIdCard({ drepId, canonicalId, status, onSelect, disabled }) {
       <button
         type="button"
         className={`button button--primary ${styles.cardCta}`}
-        disabled={disabled || blocked}
+        disabled={disabled || !canonicalId}
         onClick={() => onSelect({ dRepId: canonicalId }, drepId)}
       >
         {translate({ id: "governance.delegate.card.cta", message: "Delegate" })}
@@ -431,7 +430,9 @@ export default function DRepDelegate() {
 
   // A pasted ID outside the pool is checked on chain before it can be used.
   const unknownId = search?.byId && !search.matches.length ? search.byId : null;
-  const [idCheck, setIdCheck] = useState({ id: null, status: null, drepId: null });
+  // drepId is the ID the wallet may receive, null while loading and whenever
+  // a delegation cannot work (unregistered, invalid, unresolved bare hash).
+  const [idCheck, setIdCheck] = useState(NO_ID_CHECK);
   useEffect(() => {
     if (!unknownId || !apiClient) return;
     let cancelled = false;
@@ -442,7 +443,8 @@ export default function DRepDelegate() {
         })
         .catch((err) => {
           console.error("DRepDelegate: DRep ID check failed", err);
-          if (!cancelled) setIdCheck({ id: unknownId, status: "unknown", drepId: null });
+          // Offline, a typed ID can still be converted locally, a bare hash cannot.
+          if (!cancelled) setIdCheck({ id: unknownId, status: "unknown", drepId: canonicalDRepId(unknownId) });
         });
     }, 300);
     return () => {
@@ -456,7 +458,7 @@ export default function DRepDelegate() {
   // an old result. Whitespace-only edits keep the result, the lookup stays the same.
   const handleQueryChange = useCallback((value) => {
     setQuery(value);
-    if (value.trim() !== trimmedQuery) setIdCheck({ id: null, status: null, drepId: null });
+    if (value.trim() !== trimmedQuery) setIdCheck(NO_ID_CHECK);
   }, [trimmedQuery]);
 
   const visible = search
@@ -681,11 +683,11 @@ export default function DRepDelegate() {
         </div>
       )}
 
-      {search?.byId && !search.matches.length ? (
+      {unknownId ? (
         <div className={styles.cardGrid}>
           <UnknownIdCard
-            drepId={search.byId}
-            canonicalId={(idChecked && idCheck.drepId) || canonicalDRepId(search.byId)}
+            drepId={unknownId}
+            canonicalId={idChecked ? idCheck.drepId : null}
             status={unknownIdStatus}
             onSelect={handleSelect}
             disabled={!canDelegate}
