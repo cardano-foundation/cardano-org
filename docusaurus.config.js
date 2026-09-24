@@ -51,6 +51,8 @@ const config = {
   },
 
   customFields: {
+    // Date of this build (YYYY-MM-DD); used to derive date-based labels so server and client agree.
+    BUILD_DATE: new Date().toISOString().slice(0, 10),
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
 
@@ -453,6 +455,10 @@ const config = {
               {
                 label: 'Get Involved',
                 to: '/docs/get-involved',
+              },
+              {
+                label: 'Grants and Funding',
+                to: '/grants-funding',
               },
               {
                 label: 'Code of Conduct',

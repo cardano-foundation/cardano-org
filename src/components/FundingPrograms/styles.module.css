@@ -1,0 +1,434 @@
+.bar {
+  display: flex;
+  margin: var(--site-space-md) 0 var(--site-space-lg);
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--site-space-md);
+  padding: var(--site-space-lg) var(--site-space-xl);
+  border-radius: var(--site-radius-xl);
+  background: var(--ifm-background-surface-color);
+  box-shadow: var(--site-shadow-md);
+}
+
+.barDivider {
+  flex-shrink: 0;
+  width: 1px;
+  margin: var(--site-space-2xs) 0;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.figure {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--site-space-3xs);
+  text-align: center;
+}
+
+.figureValue {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-2xs);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ifm-color-primary);
+  white-space: nowrap;
+}
+
+.figureLabel {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.infoButton {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--site-tint-weak);
+  color: var(--ifm-color-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--site-duration-fast) var(--site-ease);
+}
+
+.infoButton:hover,
+.infoButton:focus-visible {
+  background: var(--site-tint-strong);
+}
+
+.infoButton:focus-visible {
+  outline: none;
+  box-shadow: var(--site-focus-ring);
+}
+
+.breakdownList {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-xs);
+}
+
+.breakdownItem dd {
+  margin: 0;
+}
+
+.breakdownText {
+  color: var(--ifm-color-emphasis-800);
+  line-height: 1.55;
+}
+
+/* Persona switcher: a pill-shaped segmented control above one card grid.
+   react-tabs supplies the roles and keyboard handling; these classes replace
+   its default styles. */
+.tabList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-3xs);
+  width: fit-content;
+  margin: var(--site-space-md) auto;
+  padding: var(--site-space-3xs);
+  list-style: none;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-pill);
+  background: var(--ifm-background-surface-color);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-2xs);
+  padding: var(--site-space-2xs) var(--site-space-sm);
+  border-radius: var(--site-radius-pill);
+  color: var(--ifm-font-color-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--site-duration-fast) var(--site-ease),
+    color var(--site-duration-fast) var(--site-ease);
+}
+
+.tab:hover {
+  background: var(--site-tint-weak);
+}
+
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--site-focus-ring);
+}
+
+.tabSelected {
+  background: var(--site-tint-strong);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.tabIcon {
+  display: inline-flex;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.tabSelected .tabIcon {
+  color: var(--ifm-color-primary);
+}
+
+.panel {
+  display: none;
+}
+
+.panelSelected {
+  display: block;
+}
+
+.panelAnchor {
+  scroll-margin-top: var(--site-space-2xl);
+}
+
+.panelTitle {
+  margin: 0 0 var(--site-space-3xs);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.panelIntro {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--site-space-md);
+  margin: var(--site-space-md) 0 var(--site-space-lg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-sm);
+  padding: var(--site-space-md);
+  border-radius: var(--site-radius-xl);
+  background: var(--ifm-color-emphasis-100);
+  scroll-margin-top: var(--site-space-2xl);
+}
+
+/* The dark emphasis scale starts at the page color, so use the surface. */
+[data-theme="dark"] .card {
+  background: var(--ifm-background-surface-color);
+}
+
+/* Logo on its own row, name below it with the full card width; name and
+   tagline reserve two lines and the facts list two rows, so tags, facts and
+   the button sit at the same height on every card in a row. */
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--site-space-xs);
+}
+
+.logoTile,
+.logoTileLarge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--site-radius-md);
+  background: var(--site-tint-weak);
+}
+
+.logoTileLarge {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--site-radius-lg);
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.monogram {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ifm-color-primary);
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-sm);
+}
+
+.detailsHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-3xs);
+  min-width: 0;
+}
+
+.cardName {
+  display: flex;
+  align-items: flex-end;
+  min-height: calc(2 * 1.3em);
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-2xs);
+}
+
+/* Descendant selector so the size wins over StatusPill's own .pill rule
+   regardless of stylesheet order. */
+.tag,
+.cardTags .tagStatus {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--site-radius-pill);
+  background: var(--site-tint-weak);
+  color: var(--ifm-color-primary);
+}
+
+.cardTagline {
+  min-height: calc(2 * 1.55em);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.cardFacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-2xs);
+  min-height: calc(2 * 1.45em + var(--site-space-2xs));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardFact {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--site-space-2xs);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.factIcon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--site-success) 14%, transparent);
+  color: color-mix(in srgb, var(--site-success) 72%, black);
+  font-size: 0.65rem;
+}
+
+[data-theme="dark"] .factIcon {
+  background: color-mix(in srgb, var(--site-success) 18%, transparent);
+  color: var(--site-success);
+}
+
+.cardButton {
+  width: 100%;
+  margin-top: auto;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-xs);
+  padding: var(--site-space-sm) var(--site-space-sm) var(--site-space-xs);
+}
+
+.detailsPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-2xs);
+}
+
+.detailsTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.detailsRunBy,
+.detailsText {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.detailsLabel {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.detailsActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--site-space-sm);
+  padding-top: var(--site-space-2xs);
+}
+
+.detailsFooter {
+  margin: 0;
+  padding-top: var(--site-space-2xs);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.detailsSource {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    flex-direction: column;
+    gap: var(--site-space-sm);
+    padding: var(--site-space-md);
+  }
+
+  .barDivider {
+    width: 60%;
+    height: 1px;
+    margin: 0 auto;
+  }
+
+  .tabList {
+    width: 100%;
+    border-radius: var(--site-radius-lg);
+  }
+
+  .tab {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  /* Logo above the pills and name, and room on the right for the modal's
+     floating close button. */
+  .detailsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* One column: no row to line up with, so let each card take its own height. */
+  .grid {
+    grid-auto-rows: auto;
+  }
+}

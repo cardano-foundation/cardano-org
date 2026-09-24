@@ -10242,5 +10242,314 @@
   "governance.onboarding.background": {"message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."},
   "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
   "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."},
-  "quiz.hub.backToLearn": {"message": "Back to the learning path"}
+  "quiz.hub.backToLearn": {"message": "Back to the learning path"},
+  "funding.group.grants.persona": {
+    "message": "I have an idea"
+  },
+  "funding.group.grants.title": {
+    "message": "Grants and early funding"
+  },
+  "funding.group.grants.intro": {
+    "message": "Grants and first checks for getting an idea off the ground."
+  },
+  "funding.group.accelerators.persona": {
+    "message": "I have a product"
+  },
+  "funding.group.accelerators.title": {
+    "message": "Accelerators and investment"
+  },
+  "funding.group.accelerators.intro": {
+    "message": "Programs and capital for teams with something to show."
+  },
+  "funding.group.contributors.persona": {
+    "message": "I contribute to open source"
+  },
+  "funding.group.contributors.title": {
+    "message": "For contributors"
+  },
+  "funding.group.contributors.intro": {
+    "message": "Get paid to maintain the software Cardano runs on, or build something at a hackathon."
+  },
+  "funding.type.treasury": {
+    "message": "Treasury proposal"
+  },
+  "funding.type.grant": {
+    "message": "Grant"
+  },
+  "funding.type.retainer": {
+    "message": "Retainer"
+  },
+  "funding.type.accelerator": {
+    "message": "Accelerator"
+  },
+  "funding.type.venture": {
+    "message": "Venture capital"
+  },
+  "funding.type.event": {
+    "message": "Hackathon"
+  },
+  "funding.link.default": {
+    "message": "Program page"
+  },
+  "funding.status.opens": {
+    "message": "Opens {date}"
+  },
+  "funding.status.openUntil": {
+    "message": "Open until {date}"
+  },
+  "funding.status.open": {
+    "message": "Open"
+  },
+  "funding.status.recurring": {
+    "message": "Recurring"
+  },
+  "funding.stats.total": {
+    "message": "in grants and funding"
+  },
+  "funding.stats.breakdown.title": {
+    "message": "How we count"
+  },
+  "funding.stats.breakdown.intro": {
+    "message": "The headline number adds up what has actually been paid out or committed to builders, rounded down so it stays accurate as the sources update."
+  },
+  "funding.stats.breakdown.catalyst": {
+    "message": "About $160M awarded across 2,200+ funded proposals since 2020, $135M of it paid out so far."
+  },
+  "funding.stats.breakdown.treasury.name": {
+    "message": "Cardano Treasury"
+  },
+  "funding.stats.breakdown.treasury": {
+    "message": "About 800 million ada committed through on-chain withdrawal actions since governance went live in 2025, valued at a conservative ada price. Part of it funds programs listed here, such as Cardano PRIME and Catalyst rounds."
+  },
+  "funding.stats.breakdown.treasury.source": {
+    "message": "Enacted governance actions"
+  },
+  "funding.stats.breakdown.reviewed": {
+    "message": "Reviewed September 2026."
+  },
+  "funding.stats.projects": {
+    "message": "projects funded"
+  },
+  "funding.stats.programs": {
+    "message": "programs listed"
+  },
+  "funding.steps.pick.title": {
+    "message": "Pick a program that fits"
+  },
+  "funding.steps.pick.text": {
+    "message": "Ideas go to Catalyst or a hackathon, products to an accelerator, and infrastructure work to Intersect or the treasury."
+  },
+  "funding.steps.prepare.title": {
+    "message": "Plan your milestones and budget"
+  },
+  "funding.steps.prepare.text": {
+    "message": "Every program here pays against results, so be clear about what you'll ship, when, and what it costs."
+  },
+  "funding.steps.apply.title": {
+    "message": "Apply on the official site"
+  },
+  "funding.steps.apply.text": {
+    "message": "Only use the links in the program details. No real program will ever ask for your recovery phrase."
+  },
+  "funding.faq.complete.q": {
+    "message": "Is anything missing?"
+  },
+  "funding.faq.complete.a": {
+    "message": "Possibly. This page lists the programs we know about, and terms change, so always confirm the details on the program's own site. If something is missing or out of date, [open an issue or a pull request](/docs/get-involved)."
+  },
+  "funding.faq.equity.q": {
+    "message": "Do I have to give up equity?"
+  },
+  "funding.faq.equity.a": {
+    "message": "Not for grants, Catalyst, treasury proposals, retainers, or hackathon prizes. Venture funds and some accelerators do take equity. Where the terms are public they are in the program details, for example Apex's $70,000 for about 3.5%."
+  },
+  "funding.faq.decides.q": {
+    "message": "Who decides what gets funded?"
+  },
+  "funding.faq.decides.a": {
+    "message": "It depends on the program. Catalyst rounds are decided by ada-holder vote or, as in the current pilot, by a panel of community experts. Treasury proposals go to DReps and the Constitutional Committee under the [constitution](/constitution). Accelerators, funds, and Intersect committees have their own selection processes, described on their pages."
+  },
+  "developers.funding.text": {
+    "message": "Looking for funding? Grants, accelerators, and venture funding for Cardano builders are listed in one place."
+  },
+  "developers.funding.link": {
+    "message": "See grants and funding"
+  },
+  "funding.hero.title": {
+    "message": "Grants and Funding"
+  },
+  "funding.hero.description": {
+    "message": "Grants, accelerators, and investment for teams building on Cardano, in one place."
+  },
+  "funding.divider.programs": {
+    "message": "Programs"
+  },
+  "funding.programs.title": {
+    "message": "Apply for funding"
+  },
+  "funding.programs.description": {
+    "message": "Tell us where you are, and we'll show the programs that fit."
+  },
+  "funding.divider.apply": {
+    "message": "How to apply"
+  },
+  "funding.apply.title": {
+    "message": "Three steps, whichever program you choose"
+  },
+  "funding.meta.title": {
+    "message": "Grants and Funding on Cardano"
+  },
+  "funding.meta.description": {
+    "message": "Grants, accelerators, venture funding, and paid open-source work for people building on Cardano: Project Catalyst, the Cardano Treasury, Intersect, the Cardano Accelerator Program, the Orion Fund, and more."
+  },
+  "funding.cta.title": {
+    "message": "Not building yet? The developer portal is the place to start."
+  },
+  "funding.cta.button": {
+    "message": "Go to the developer portal"
+  },
+  "whereToGetAda.funding.directory": {
+    "message": "Catalyst is one of several routes. The [grants and funding page](/grants-funding) lists grants, treasury proposals, accelerators, and venture funds, and says who each one is for."
+  },
+  "funding.stats.infoLabel": {
+    "message": "How this is counted"
+  },
+  "funding.stats.ariaLabel": {
+    "message": "Funding at a glance"
+  },
+  "funding.card.details": {
+    "message": "Details"
+  },
+  "funding.details.runBy": {
+    "message": "Run by"
+  },
+  "funding.program.catalyst.tagline": {
+    "message": "Grants from Cardano's community innovation fund"
+  },
+  "funding.program.catalyst.audience": {
+    "message": "Builders at any stage, per the round's brief"
+  },
+  "funding.program.catalyst.description": {
+    "message": "Cardano's innovation fund, paid from the treasury. Each round sets its own rules for who can apply and how proposals are chosen, from ada-holder votes to expert panels, and funded projects deliver against milestones."
+  },
+  "funding.program.genesis.tagline": {
+    "message": "Four weeks in Silicon Valley to turn a concept into a product"
+  },
+  "funding.program.genesis.audience": {
+    "message": "Early-stage technical builders"
+  },
+  "funding.program.genesis.funding": {
+    "message": "Up to $20,000 per team"
+  },
+  "funding.program.genesis.description": {
+    "message": "A residency at Draper University for technical founders at the concept stage: build and validate a product, learn to think like a founder, and pitch angels and early-stage funds on a Demo Day. The investment is made for a target of 2% equity, and graduates can go on to Apex, the growth accelerator."
+  },
+  "funding.program.alphagrowth-prime.tagline": {
+    "message": "Grants and incentives for DeFi protocols"
+  },
+  "funding.program.alphagrowth-prime.audience": {
+    "message": "Live DeFi protocols on Cardano"
+  },
+  "funding.program.alphagrowth-prime.funding": {
+    "message": "$5.6M in ecosystem grants"
+  },
+  "funding.program.alphagrowth-prime.description": {
+    "message": "A 12-month program to grow DeFi liquidity on Cardano: an audit and gap-analysis phase, then milestone-based grants, liquidity provider incentives, and marketing support for qualifying protocols. Eligibility criteria are on the program page."
+  },
+  "funding.program.alphagrowth-prime.link": {
+    "message": "Apply for a grant"
+  },
+  "funding.program.treasury.name": {
+    "message": "Cardano Treasury"
+  },
+  "funding.program.treasury.tagline": {
+    "message": "Larger projects, funded by on-chain vote"
+  },
+  "funding.program.treasury.audience": {
+    "message": "Mature projects and shared infrastructure"
+  },
+  "funding.program.treasury.funding": {
+    "message": "100,000 ada deposit, refunded after the vote"
+  },
+  "funding.program.treasury.description": {
+    "message": "The on-chain treasury funds work directly through governance actions under CIP-1694. A withdrawal proposal is submitted on-chain, DReps and the Constitutional Committee vote, and approved funds are disbursed, usually through an administrator such as Intersect that handles contracts and milestones."
+  },
+  "funding.program.treasury.runBy": {
+    "message": "Cardano's on-chain governance"
+  },
+  "funding.program.treasury.link": {
+    "message": "Open GovTool"
+  },
+  "funding.program.cap.tagline": {
+    "message": "A cohort, mentorship, and a Demo Day for early startups"
+  },
+  "funding.program.cap.audience": {
+    "message": "Registered startups with a live product"
+  },
+  "funding.program.cap.description": {
+    "message": "A cohort program for early-stage startups building on Cardano: technical sessions, go-to-market and regulatory guidance, mentorship from operators and investors, and a Demo Day in front of investors. Each team receives a milestone-based contribution alongside hands-on support."
+  },
+  "funding.program.apex.tagline": {
+    "message": "Ten weeks in Silicon Valley, up to $70,000"
+  },
+  "funding.program.apex.audience": {
+    "message": "Founders with a live product"
+  },
+  "funding.program.apex.funding": {
+    "message": "Up to $70,000 per team"
+  },
+  "funding.program.apex.description": {
+    "message": "A residency at Draper University for Cardano startups that want to become investor-ready: mentorship, fundraising and go-to-market support, access to the Orion Fund, and a Demo Day with investors. The investment is made for a target of 3.5% equity."
+  },
+  "funding.program.sdg-accelerator.tagline": {
+    "message": "Put your solution to work with UNDP country teams"
+  },
+  "funding.program.sdg-accelerator.audience": {
+    "message": "Working solutions for public-sector needs"
+  },
+  "funding.program.sdg-accelerator.description": {
+    "message": "Connects UN teams facing development challenges with technology partners. Selected solutions are matched to UNDP country offices and deployed with technical expertise and implementation support. Suitable projects can also receive catalytic funding."
+  },
+  "funding.program.orion.tagline": {
+    "message": "An $80M fund investing from acceleration to Series A"
+  },
+  "funding.program.orion.audience": {
+    "message": "Startups ready to raise"
+  },
+  "funding.program.orion.description": {
+    "message": "An ecosystem fund for Cardano-native and Cardano-integrated startups, aimed at the $500K to $5M gap between grants and Series A, with a focus on real-world assets, DeFi, and bringing Bitcoin liquidity to Cardano. The Cardano Foundation is constitutional administrator and takes no part in investment decisions; returns flow back to the Cardano Treasury. There is no application form; founders come in through Draper's accelerator cohorts."
+  },
+  "funding.program.orion.link": {
+    "message": "Fund dashboard"
+  },
+  "funding.program.maintainer-retainer.name": {
+    "message": "Maintainer Retainer Program"
+  },
+  "funding.program.maintainer-retainer.tagline": {
+    "message": "Ongoing pay for the people who maintain core repositories"
+  },
+  "funding.program.maintainer-retainer.audience": {
+    "message": "Maintainers of established tools"
+  },
+  "funding.program.maintainer-retainer.description": {
+    "message": "Part of Intersect's Paid Open Source Model. Ongoing funding, per maintainer role, for the people who maintain the repositories the ecosystem depends on, with core and community maintainer roles overseen by the Open Source and Technical Steering committees."
+  },
+  "funding.program.hackathons.name": {
+    "message": "Hackathons and bounties"
+  },
+  "funding.program.hackathons.tagline": {
+    "message": "Build something in a weekend and win prizes"
+  },
+  "funding.program.hackathons.audience": {
+    "message": "Individuals and small teams"
+  },
+  "funding.program.hackathons.description": {
+    "message": "Hackathons, builder festivals, and bounty programs run through the year, and prizes vary by event. Winning teams get introduced to the accelerators and funds on this page and a chance to pitch them."
+  },
+  "funding.program.hackathons.runBy": {
+    "message": "the Cardano Foundation, Intersect, and community organizers"
+  },
+  "funding.program.hackathons.link": {
+    "message": "Get hackathon alerts"
+  }
 }
