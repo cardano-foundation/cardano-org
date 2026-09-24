@@ -40,7 +40,7 @@ import contentMap from '../data/signal-contentmap.js';
           <TitleWithText
             title={translate({id: 'signal.topics.title', message: 'Available Topics'})}
             description={Object.values(contentMap).map(item => ({
-              list: [`**[${item.title}](${item.openGraph})** – ${item.description}`],
+              list: [`**[${item.title}](${item.path})**: ${item.description}`],
             }))}
             titleType="black"
             headingDot={true}
