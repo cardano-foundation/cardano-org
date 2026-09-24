@@ -483,7 +483,7 @@ const config = {
       announcementBar: isAnnouncementActive ? {
         id: "announcement_index6", // Any value that will identify this message + increment the number every time to be unique
         content:
-          `<strong>Cardano turns 9</strong> 🎉 Watch the community highlights video ➡️ <strong><a href="https://youtu.be/qTJaTArwyeM" target="_blank" rel="noopener noreferrer" style="color:white; font-weight:bold; text-decoration:underline;">Watch on YouTube</a></strong>`,
+          `<strong>Cardano turns 9</strong>. Watch the community highlights video on <strong><a href="https://youtu.be/qTJaTArwyeM" target="_blank" rel="noopener noreferrer" style="color:white; font-weight:bold; text-decoration:underline;">YouTube</a></strong>`,
         backgroundColor: "#1442B3",
         textColor: "#FFFFFF", // Use #FFFFFF
         isCloseable: true, // Use true
