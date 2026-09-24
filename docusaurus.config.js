@@ -19,7 +19,7 @@ const { createSitemapItemsHook } = require('./scripts/sitemap-hreflang');
 const getNavbarItems = require('./src/data/navbar');
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = false;
+const isAnnouncementActive = true;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -481,9 +481,9 @@ const config = {
       // id: always change it when changing the announcement
       // backgroundColor: use #1442B3 for announcements
       announcementBar: isAnnouncementActive ? {
-        id: "announcement_index5", // Any value that will identify this message + increment the number every time to be unique
+        id: "announcement_index6", // Any value that will identify this message + increment the number every time to be unique
         content:
-          `<strong>Cardano Summit 2025 Berlin</strong> 🎟️ Secure your pass now ➡️ <strong><a href="https://summit.cardano.org/page/5056323/tickets#section-6268783" style="color:white; font-weight:bold; text-decoration:underline;">Visit the ticket shop</a></strong>`,
+          `<strong>Cardano turns 9</strong>. Watch the community highlights video on <strong><a href="https://youtu.be/qTJaTArwyeM" target="_blank" rel="noopener noreferrer" style="color:white; font-weight:bold; text-decoration:underline;">YouTube</a></strong>`,
         backgroundColor: "#1442B3",
         textColor: "#FFFFFF", // Use #FFFFFF
         isCloseable: true, // Use true
