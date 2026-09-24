@@ -78,8 +78,8 @@ function PageContent() {
   const canonicalUrl = canonicalUrlBase;
   
   // Push selection back to URL (without scroll jump or page reload)
-  const handleSelectionChange = ({ category, parameters, chart }) => {
-    const nextSearch = buildSearchFromSelection({ category, parameters, chart });
+  const handleSelectionChange = (selection) => {
+    const nextSearch = buildSearchFromSelection(selection);
     // update only if different
     if (nextSearch === (location.search || '')) return;
     history.replace(`${location.pathname}${nextSearch}${location.hash || ''}`);

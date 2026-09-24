@@ -1032,10 +1032,10 @@
     "message": "Continue"
   },
   "getStarted.station.delegate.action": {
-    "message": "Delegate to a stake pool and to a DRep, both from your wallet, in either order."
+    "message": "Start with the stake pool: that delegation also registers your stake key. Then delegate your vote to a DRep. Both happen in your wallet."
   },
   "getStarted.station.delegate.notRegistered": {
-    "message": "Your stake key is not registered yet. Your wallet registers it with your first delegation, stake or vote."
+    "message": "Your stake key is not registered yet. Your first stake pool delegation registers it and takes a small refundable deposit."
   },
   "getStarted.station.delegate.stakeButton": {
     "message": "Delegate your ada"
@@ -3122,7 +3122,7 @@
     "message": "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of a well-run pool."
   },
   "delegation.faq.a8.p3": {
-    "message": "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block."
+    "message": "**Uptime:** Ensure the pool has high uptime. The chance of being elected to produce a block depends only on the pool's share of the active stake, but a pool that is offline when it is elected misses that block and the rewards that come with it."
   },
   "delegation.faq.a8.p4": {
     "message": "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance."
@@ -4322,8 +4322,23 @@
   "governance.delegate.search.unknownId.name": {
     "message": "Unlisted DRep"
   },
-  "governance.delegate.search.unknownId.help": {
-    "message": "This DRep is not active or has published no metadata, so we cannot show a name. You can still delegate to this ID."
+  "governance.delegate.search.unknownId.active": {
+    "message": "This DRep is registered and active but has published no name. You can delegate to this ID."
+  },
+  "governance.delegate.search.unknownId.inactive": {
+    "message": "This DRep is registered but inactive, so it has not voted for a while. Your stake only counts toward votes again once the DRep is active. You can still delegate to this ID."
+  },
+  "governance.delegate.search.unknownId.unregistered": {
+    "message": "This DRep ID is not registered, or the DRep has retired. A delegation to it would fail, so check the ID."
+  },
+  "governance.delegate.search.unknownId.invalid": {
+    "message": "This is not a valid DRep ID. Check it and paste it again."
+  },
+  "governance.delegate.search.unknownId.unknown": {
+    "message": "Could not check this DRep ID right now. A delegation only works if the DRep is registered."
+  },
+  "governance.delegate.search.unknownId.checking": {
+    "message": "Checking this DRep ID on the chain…"
   },
   "governance.delegate.special.heading": {
     "message": "Or pick a protocol option"
@@ -4338,7 +4353,7 @@
     "message": "No Confidence"
   },
   "governance.delegate.noConfidence.help": {
-    "message": "Always vote no confidence in the current Constitutional Committee."
+    "message": "Counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes."
   },
   "governance.delegate.alt.heading": {
     "message": "Prefer another tool?"
@@ -5709,7 +5724,7 @@
     "message": "Switching pools requires closing your wallet and creating a new one"
   },
   "quiz.staking.staking-11.explanation": {
-    "message": "cardano.org's delegation FAQ is clear that \"delegated stake can be re-delegated to another pool at any time.\" The switch is seamless but not instant, \"re-delegated stake will remain in the current pool until the epoch after next,\" so you keep earning from the original pool for two more epochs before the new preference applies. You submit a new delegation certificate and keep the rewards you already earned, there is no need to withdraw them first, no waiting period measured in years, and no need to create a new wallet."
+    "message": "cardano.org's delegation FAQ says you can re-delegate \"at any time\" and \"There is no gap and nothing is lost.\" The switch is seamless but not instant: a re-delegation becomes active in the epoch after next, and the old pool still earns you rewards for three more payouts before the new pool takes over. You submit a new delegation certificate and keep the rewards you already earned, there is no need to withdraw them first, no waiting period measured in years, and no need to create a new wallet."
   },
   "quiz.staking.staking-12.question": {
     "message": "When a stake credential is used for delegation for the first time, what must happen on-chain?"
@@ -9541,14 +9556,11 @@
   "governance.treasury.error.wrongNetwork": {
     "message": "Wallet is on the wrong network. Switch to Mainnet and try again."
   },
-  "governance.treasury.error.treasury": {
-    "message": "Could not read the current treasury value. Please try again in a moment."
-  },
   "governance.treasury.error.generic": {
     "message": "Donation failed: {error}"
   },
   "governance.treasury.intro": {
-    "message": "This builds a real Conway treasury donation, not a payment to an address. Your wallet selects the inputs, signs the transaction, and submits it. The ada leaves your wallet and is added directly to the Cardano treasury."
+    "message": "This builds a real Conway treasury donation, not a payment to an address. Your wallet selects the inputs, signs the transaction, and submits it. The ada leaves your wallet right away and reaches the Cardano treasury at the next epoch boundary."
   },
   "governance.treasury.balanceLabel": {
     "message": "Current treasury balance"
@@ -9575,7 +9587,7 @@
     "message": "Donate to treasury"
   },
   "governance.treasury.footnote": {
-    "message": "Treasury donations are irreversible and must be submitted in the same epoch they are built."
+    "message": "Treasury donations are irreversible."
   },
   "walletFinder.card.openSource": {
     "message": "Open Source"

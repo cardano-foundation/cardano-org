@@ -112,6 +112,10 @@ const sameSet = (a = [], b = []) => {
   return true;
 };
 
+// Order-insensitive fingerprint of the selection mirrored in the URL
+const selectionKey = ({ category, parameters, chart }) =>
+  [category || "", [...(parameters || [])].sort().join(","), chart || ""].join("|");
+
 export default function GovernanceCharts({
   initialCategory = null,
   initialChartId = null,
@@ -144,21 +148,11 @@ export default function GovernanceCharts({
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
   const [selectedParameters, setSelectedParameters] = useState(initialParameters);
   // remember last selection
-  const lastReportedRef = useRef({
-    category: initialCategory || null,
-    parameters: [...initialParameters].sort(),
-    chart: initialChartId || null,
-  });
-
-  const sameSelection = (a, b) => {
-    if ((a.category || null) !== (b.category || null)) return false;
-    if ((a.chart || null) !== (b.chart || null)) return false;
-    const ap = [...(a.parameters || [])].sort();
-    const bp = [...(b.parameters || [])].sort();
-    if (ap.length !== bp.length) return false;
-    for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
-    return true;
-  };
+  const lastReportedRef = useRef(selectionKey({
+    category: initialCategory,
+    parameters: initialParameters,
+    chart: initialChartId,
+  }));
   const [activeChartId, setActiveChartId] = useState(initialChartId);
 
   const parametersDropdownRef = useRef(null);
@@ -166,6 +160,10 @@ export default function GovernanceCharts({
   const activeChartRef = useRef(null);
 
   const lastUrlSigRef = useRef(urlSignature);
+  // Set when the URL changed from outside. The state updates it triggers land
+  // in the next render, so the report effect in this commit must not write
+  // the old selection back into the URL.
+  const skipReportRef = useRef(false);
 
   //useEffect(() => { console.log('PARAMS', selectedParameters) }, [selectedParameters]);
 
@@ -178,22 +176,20 @@ export default function GovernanceCharts({
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setActiveCategory(initialCategory || null);
         setActiveGraphIndex(null);
-        setActiveChartId(null);
       }
       if (!sameSet(initialParameters, selectedParameters)) {
         setSelectedParameters(initialParameters || []);
         setActiveGraphIndex(null);
-        setActiveChartId(null);
       }
-      if ((initialChartId || null) !== (activeChartId || null)) {
-        setActiveChartId(initialChartId || null);
-      }
+      // The URL is the source of truth for the open chart as well.
+      setActiveChartId(initialChartId || null);
       lastUrlSigRef.current = urlSignature;
-      lastReportedRef.current = {
-        category: initialCategory || null,
-        parameters: [...(initialParameters || [])].sort(),
-        chart: initialChartId || null,
-      };
+      skipReportRef.current = true;
+      lastReportedRef.current = selectionKey({
+        category: initialCategory,
+        parameters: initialParameters,
+        chart: initialChartId,
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlSignature, initialCategory, initialParameters, initialChartId]);
@@ -269,17 +265,18 @@ export default function GovernanceCharts({
   // URL sync: report selection changes upward
   // ────────────────────────────────────────────────────────────────────────
   useEffect(() => {
+    if (skipReportRef.current) {
+      skipReportRef.current = false;
+      return;
+    }
     const current = {
       category: activeCategory || null,
       parameters: selectedParameters,
       chart: activeChartId || null,
     };
-    if (!sameSelection(current, lastReportedRef.current)) {
-      lastReportedRef.current = {
-        category: current.category,
-        parameters: [...current.parameters].sort(),
-        chart: current.chart,
-      };
+    const key = selectionKey(current);
+    if (key !== lastReportedRef.current) {
+      lastReportedRef.current = key;
       onSelectionChange?.(current);
     }
   }, [activeCategory, selectedParameters, activeChartId, onSelectionChange]);

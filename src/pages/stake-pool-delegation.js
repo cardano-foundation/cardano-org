@@ -82,7 +82,7 @@ function getDelegationFAQData() {
       answer: [
         translate({ id: "delegation.faq.a8.p1", message: "Choosing a stake pool involves several factors. So-called [pool tools](/apps?tags=pooltool) can help you compare them." }),
         translate({ id: "delegation.faq.a8.p2", message: "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of a well-run pool." }),
-        translate({ id: "delegation.faq.a8.p3", message: "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block." }),
+        translate({ id: "delegation.faq.a8.p3", message: "**Uptime:** Ensure the pool has high uptime. The chance of being elected to produce a block depends only on the pool's share of the active stake, but a pool that is offline when it is elected misses that block and the rewards that come with it." }),
         translate({ id: "delegation.faq.a8.p4", message: "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance." }),
         translate({ id: "delegation.faq.a8.p5", message: "**Fixed Fees:** Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost). The current minimum is shown in the delegation tool above. Check what a pool charges." }),
         translate({ id: "delegation.faq.a8.p6", message: "**Saturation Point:** A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards." }),

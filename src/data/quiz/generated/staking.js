@@ -150,7 +150,7 @@ export function getQuizData() {
         translate({id: "quiz.staking.staking-11.option3", message: "Switching pools requires closing your wallet and creating a new one"}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.staking.staking-11.explanation", message: "cardano.org's delegation FAQ is clear that \"delegated stake can be re-delegated to another pool at any time.\" The switch is seamless but not instant, \"re-delegated stake will remain in the current pool until the epoch after next,\" so you keep earning from the original pool for two more epochs before the new preference applies. You submit a new delegation certificate and keep the rewards you already earned, there is no need to withdraw them first, no waiting period measured in years, and no need to create a new wallet."}),
+      explanation: translate({id: "quiz.staking.staking-11.explanation", message: "cardano.org's delegation FAQ says you can re-delegate \"at any time\" and \"There is no gap and nothing is lost.\" The switch is seamless but not instant: a re-delegation becomes active in the epoch after next, and the old pool still earns you rewards for three more payouts before the new pool takes over. You submit a new delegation certificate and keep the rewards you already earned, there is no need to withdraw them first, no waiting period measured in years, and no need to create a new wallet."}),
       sourceUrl: "https://cardano.org/stake-pool-delegation/",
     },
     {
