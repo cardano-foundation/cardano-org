@@ -227,7 +227,7 @@ export default function WalletFinder() {
 
   return (
     <Layout title={META_TITLE} description={META_DESCRIPTION}>
-      <OpenGraphInfo pageName="wallets" />
+      <OpenGraphInfo />
       <WalletFinderHeader />
       <main>
         <BackgroundWrapper backgroundType="adaLight">
