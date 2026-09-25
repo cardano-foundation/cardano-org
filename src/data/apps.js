@@ -1743,6 +1743,19 @@ export const Showcases = [
     maintainerPick: false,
     x: "EchoForgeEF",
   },
+  {
+    title: "Adapools",
+    description:
+      "Adapools is a Cardano stake pool explorer with live block updates, epoch progress, pool metrics, delegation activity, and retirement filings.",
+    tagline: "Live Cardano stake pool blocks and metrics",
+    preview: require("./app-screenshots/adapools.webp"),
+    icon: "/img/app-icons/adapools.png",
+    website: "https://adapools.xyz",
+    source: "https://github.com/schmidko/adapools",
+    category: "pooltool",
+    properties: ["opensource"],
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
