@@ -1,73 +1,73 @@
 {
-  "lastUpdated": "2026-09-22T06:01:26.766Z",
+  "lastUpdated": "2026-09-26T06:01:10.204Z",
   "languages": [
-    {
-      "id": "de",
-      "name": "German",
-      "translationProgress": 40,
-      "approvalProgress": 39,
-      "words": {
-        "total": 46311,
-        "translated": 18528,
-        "preTranslateAppliedTo": 603,
-        "approved": 18502
-      },
-      "phrases": {
-        "total": 3965,
-        "translated": 1940,
-        "preTranslateAppliedTo": 169,
-        "approved": 1922
-      }
-    },
     {
       "id": "vi",
       "name": "Vietnamese",
-      "translationProgress": 40,
-      "approvalProgress": 37,
+      "translationProgress": 39,
+      "approvalProgress": 36,
       "words": {
-        "total": 46311,
-        "translated": 18757,
+        "total": 47682,
+        "translated": 18607,
         "preTranslateAppliedTo": 5374,
-        "approved": 17457
+        "approved": 17307
       },
       "phrases": {
-        "total": 3965,
-        "translated": 2024,
+        "total": 4082,
+        "translated": 2021,
         "preTranslateAppliedTo": 709,
-        "approved": 1912
+        "approved": 1909
+      }
+    },
+    {
+      "id": "de",
+      "name": "German",
+      "translationProgress": 38,
+      "approvalProgress": 38,
+      "words": {
+        "total": 47682,
+        "translated": 18378,
+        "preTranslateAppliedTo": 603,
+        "approved": 18352
+      },
+      "phrases": {
+        "total": 4082,
+        "translated": 1937,
+        "preTranslateAppliedTo": 169,
+        "approved": 1919
       }
     },
     {
       "id": "ja",
       "name": "Japanese",
-      "translationProgress": 37,
-      "approvalProgress": 37,
+      "translationProgress": 36,
+      "approvalProgress": 36,
       "words": {
-        "total": 46311,
-        "translated": 17559,
+        "total": 47682,
+        "translated": 17409,
         "preTranslateAppliedTo": 63,
-        "approved": 17552
+        "approved": 17402
       },
       "phrases": {
-        "total": 3965,
-        "translated": 1912,
+        "total": 4082,
+        "translated": 1909,
         "preTranslateAppliedTo": 27,
-        "approved": 1905
+        "approved": 1902
       }
     },
     {
       "id": "es",
       "name": "Spanish",
-      "translationProgress": 26,
-      "approvalProgress": 25,
+      "translationProgress": 25,
+      "approvalProgress": 24,
       "words": {
-        "total": 46311,
+        "total": 47682,
         "translated": 12204,
         "preTranslateAppliedTo": 4608,
         "approved": 11854
       },
       "phrases": {
-        "total": 3965,
+        "total": 4082,
         "translated": 1330,
         "preTranslateAppliedTo": 370,
         "approved": 1274
