@@ -10766,7 +10766,7 @@
     "message": "Who decides when an upgrade happens, and why do dates move?"
   },
   "roadmap.faq.decides.a": {
-    "message": "Every hard fork since Chang has been enacted by on-chain vote: DReps, stake pool operators and the Constitutional Committee ratify a hard fork initiation action, and the network switches at the epoch it names. The quarters on this page are engineering targets from the teams doing the work; they move when testing takes longer, and the vote only happens once the release is ready. The [weekly development reports](/news/tags/development/) show where things stand."
+    "message": "Since Plomin, hard forks are enacted by on-chain vote. DReps, stake pool operators, and the Constitutional Committee ratify a hard fork initiation action, and the network switches to the new rules at the next epoch boundary. The quarters on this page are engineering targets from the teams doing the work; they move when testing takes longer, and the vote only happens once the release is ready. The [weekly development reports](/news/tags/development/) show where things stand."
   },
   "roadmap.hero.title": {
     "message": "Network upgrades"
@@ -10838,7 +10838,7 @@
     "message": "Linear Leios, nested transactions, and Plutus V4"
   },
   "roadmap.upcoming.dijkstra2.fact": {
-    "message": "About 2 minutes to settle, down from hours"
+    "message": "Settlement in minutes, down from hours"
   },
   "roadmap.upgrade.van-rossem.summary": {
     "message": "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote."
@@ -10880,7 +10880,7 @@
     "message": "Faster settlement"
   },
   "roadmap.outcome.settlement.text": {
-    "message": "Peras lets stake pools vote on recent blocks, so a transaction counts as final in about two minutes instead of hours."
+    "message": "Peras lets stake pools vote on recent blocks, so a transaction counts as final in minutes instead of hours."
   },
   "roadmap.outcome.programmability.title": {
     "message": "Better programmability"
@@ -10937,9 +10937,15 @@
     "message": "Improvements are proposed in the open and enacted by vote"
   },
   "roadmap.why.p1": {
-    "message": "Cardano changes through scheduled [hard forks](/glossary/hard-fork): at an agreed epoch boundary every node switches to the new rules at once, and the chain never splits. Since 2024 each one is enacted by an on-chain vote of DReps, stake pool operators, and the Constitutional Committee."
+    "message": "Cardano changes through scheduled [hard forks](/glossary/hard-fork): at an agreed epoch boundary every node switches to the new rules at once, and the chain never splits. Since Plomin in 2025 each one is enacted by on-chain vote, and [van Rossem](/glossary/van-rossem) in 2026 was the first ratified by DReps, stake pool operators, and the Constitutional Committee together."
   },
   "roadmap.why.p2": {
     "message": "Improvements start as [Cardano Improvement Proposals](/glossary/cip), drafted and debated in public on [GitHub](https://github.com/cardano-foundation/CIPs) and in the [CIP community on Discord](https://discord.com/invite/Jy9YM69Ezf). Intersect's hard fork working group scopes what goes into the next upgrade. Anyone can take part."
+  },
+  "roadmap.upgrade.obft.name": {
+    "message": "Ouroboros BFT"
+  },
+  "roadmap.upgrade.obft.summary": {
+    "message": "Block production moves from Ouroboros Classic to Ouroboros BFT, the bridge to Shelley."
   }
 }

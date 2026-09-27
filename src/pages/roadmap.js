@@ -71,7 +71,7 @@ function WhySection() {
           translate({
             id: "roadmap.why.p1",
             message:
-              "Cardano changes through scheduled [hard forks](/glossary/hard-fork): at an agreed epoch boundary every node switches to the new rules at once, and the chain never splits. Since 2024 each one is enacted by an on-chain vote of DReps, stake pool operators, and the Constitutional Committee.",
+              "Cardano changes through scheduled [hard forks](/glossary/hard-fork): at an agreed epoch boundary every node switches to the new rules at once, and the chain never splits. Since Plomin in 2025 each one is enacted by on-chain vote, and [van Rossem](/glossary/van-rossem) in 2026 was the first ratified by DReps, stake pool operators, and the Constitutional Committee together.",
           }),
           translate({
             id: "roadmap.why.p2",

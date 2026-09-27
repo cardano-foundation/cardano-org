@@ -63,7 +63,7 @@ export function getOutcomes() {
       title: translate({ id: "roadmap.outcome.settlement.title", message: "Faster settlement" }),
       text: translate({
         id: "roadmap.outcome.settlement.text",
-        message: "Peras lets stake pools vote on recent blocks, so a transaction counts as final in about two minutes instead of hours.",
+        message: "Peras lets stake pools vote on recent blocks, so a transaction counts as final in minutes instead of hours.",
       }),
     },
     {
@@ -127,7 +127,7 @@ export function getUpcoming() {
         id: "roadmap.upcoming.dijkstra2.outcome",
         message: "Transactions settle in minutes instead of hours, with Ouroboros Peras.",
       }),
-      fact: translate({ id: "roadmap.upcoming.dijkstra2.fact", message: "About 2 minutes to settle, down from hours" }),
+      fact: translate({ id: "roadmap.upcoming.dijkstra2.fact", message: "Settlement in minutes, down from hours" }),
       forReaders: {
         users: translate({
           id: "roadmap.upcoming.dijkstra2.users",
@@ -247,11 +247,22 @@ export function getUpgrades() {
       glossary: "/glossary/shelley",
     },
     {
+      key: "obft",
+      name: translate({ id: "roadmap.upgrade.obft.name", message: "Ouroboros BFT" }),
+      era: translate({ id: "roadmap.era.byron", message: "Byron era" }),
+      date: "2020-02-20",
+      version: 1,
+      summary: translate({
+        id: "roadmap.upgrade.obft.summary",
+        message: "Block production moves from Ouroboros Classic to Ouroboros BFT, the bridge to Shelley.",
+      }),
+    },
+    {
       key: "byron",
       name: "Byron",
       era: translate({ id: "roadmap.era.byron", message: "Byron era" }),
       date: "2017-09-29",
-      version: 1,
+      version: 0,
       summary: translate({ id: "roadmap.upgrade.byron.summary", message: "Mainnet launch and ada." }),
       glossary: "/glossary/byron",
     },
@@ -393,7 +404,7 @@ export function getRoadmapFAQ() {
         translate({
           id: "roadmap.faq.decides.a",
           message:
-            "Every hard fork since Chang has been enacted by on-chain vote: DReps, stake pool operators and the Constitutional Committee ratify a hard fork initiation action, and the network switches at the epoch it names. The quarters on this page are engineering targets from the teams doing the work; they move when testing takes longer, and the vote only happens once the release is ready. The [weekly development reports](/news/tags/development/) show where things stand.",
+            "Since Plomin, hard forks are enacted by on-chain vote. DReps, stake pool operators, and the Constitutional Committee ratify a hard fork initiation action, and the network switches to the new rules at the next epoch boundary. The quarters on this page are engineering targets from the teams doing the work; they move when testing takes longer, and the vote only happens once the release is ready. The [weekly development reports](/news/tags/development/) show where things stand.",
         }),
       ],
     },
