@@ -161,7 +161,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.conway", message: "Conway era" }),
       date: "2026-07-18",
       version: 11,
-      summary: translate({ id: "roadmap.upgrade.van-rossem.summary", message: "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote." }),
+      summary: translate({ id: "hardforks.timeline.vanrossem.description", message: "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote." }),
       glossary: "/glossary/van-rossem",
     },
     {
@@ -170,7 +170,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.conway", message: "Conway era" }),
       date: "2025-01-29",
       version: 10,
-      summary: translate({ id: "roadmap.upgrade.plomin.summary", message: "Full on-chain governance: DReps, treasury withdrawals, and every governance action." }),
+      summary: translate({ id: "hardforks.timeline.plomin.description", message: "Full on-chain governance: DReps, treasury withdrawals, and every governance action." }),
       glossary: "/glossary/plomin",
     },
     {
@@ -179,7 +179,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.conway", message: "Conway era" }),
       date: "2024-09-01",
       version: 9,
-      summary: translate({ id: "roadmap.upgrade.chang.summary", message: "The first on-chain governance actions: parameter changes and hard fork initiations." }),
+      summary: translate({ id: "hardforks.timeline.chang1.description", message: "The first on-chain governance actions: parameter changes and hard fork initiations." }),
       glossary: "/glossary/chang",
     },
     {
@@ -188,7 +188,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.babbage", message: "Babbage era" }),
       date: "2023-02-14",
       version: 8,
-      summary: translate({ id: "roadmap.upgrade.valentine.summary", message: "New cryptographic primitives for cross-chain use in Plutus." }),
+      summary: translate({ id: "hardforks.timeline.valentine.description", message: "New cryptographic primitives for cross-chain use in Plutus." }),
     },
     {
       key: "vasil",
@@ -196,7 +196,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.babbage", message: "Babbage era" }),
       date: "2022-09-22",
       version: 7,
-      summary: translate({ id: "roadmap.upgrade.vasil.summary", message: "Reference inputs, inline datums, and reference scripts for cheaper, faster smart contracts." }),
+      summary: translate({ id: "hardforks.timeline.vasil.description", message: "Reference inputs, inline datums, and reference scripts for cheaper, faster smart contracts." }),
       glossary: "/glossary/vasil",
     },
     {
@@ -216,7 +216,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.alonzo", message: "Alonzo era" }),
       date: "2021-09-12",
       version: 5,
-      summary: translate({ id: "roadmap.upgrade.alonzo.summary", message: "Plutus smart contracts arrive on mainnet." }),
+      summary: translate({ id: "hardforks.timeline.alonzo.description", message: "Plutus smart contracts arrive on mainnet." }),
       glossary: "/glossary/alonzo",
     },
     {
@@ -225,7 +225,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.mary", message: "Mary era" }),
       date: "2021-03-01",
       version: 4,
-      summary: translate({ id: "roadmap.upgrade.mary.summary", message: "Native tokens, minted and moved without smart contracts." }),
+      summary: translate({ id: "hardforks.timeline.mary.description", message: "Native tokens, minted and moved without smart contracts." }),
       glossary: "/glossary/mary",
     },
     {
@@ -234,7 +234,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.allegra", message: "Allegra era" }),
       date: "2020-12-16",
       version: 3,
-      summary: translate({ id: "roadmap.upgrade.allegra.summary", message: "Token locking, the groundwork for smart contracts." }),
+      summary: translate({ id: "hardforks.timeline.allegra.description", message: "Token locking, the groundwork for smart contracts." }),
       glossary: "/glossary/allegra",
     },
     {
@@ -243,7 +243,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.shelley", message: "Shelley era" }),
       date: "2020-07-29",
       version: 2,
-      summary: translate({ id: "roadmap.upgrade.shelley.summary", message: "Stake pools, delegation, and rewards: block production moves to the community." }),
+      summary: translate({ id: "hardforks.timeline.shelley.description", message: "Stake pools, delegation, and rewards: block production moves to the community." }),
       glossary: "/glossary/shelley",
     },
     {
@@ -263,7 +263,7 @@ export function getUpgrades() {
       era: translate({ id: "roadmap.era.byron", message: "Byron era" }),
       date: "2017-09-29",
       version: 0,
-      summary: translate({ id: "roadmap.upgrade.byron.summary", message: "Mainnet launch and ada." }),
+      summary: translate({ id: "hardforks.timeline.byron.description", message: "Mainnet launch and ada." }),
       glossary: "/glossary/byron",
     },
   ];

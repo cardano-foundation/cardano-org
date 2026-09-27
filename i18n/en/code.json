@@ -2764,7 +2764,7 @@
     "message": "Governance Action Charts"
   },
   "hardforks.timeline.byron.description": {
-    "message": "The launch of the Cardano mainnet and introduction of the ada cryptocurrency."
+    "message": "Mainnet launch and ada."
   },
   "hardforks.timeline.label.epoch": {
     "message": "Epoch"
@@ -2776,31 +2776,31 @@
     "message": "Transaction ID"
   },
   "hardforks.timeline.shelley.description": {
-    "message": "Introduced staking and decentralization features, transitioning from a federated to a decentralized system."
+    "message": "Stake pools, delegation, and rewards: block production moves to the community."
   },
   "hardforks.timeline.allegra.description": {
-    "message": "Added token locking capabilities, which was a prerequisite for the smart contract functionality."
+    "message": "Token locking, the groundwork for smart contracts."
   },
   "hardforks.timeline.mary.description": {
-    "message": "Brought native token functionality to Cardano, allowing users to create and transact with custom tokens."
+    "message": "Native tokens, minted and moved without smart contracts."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps)."
+    "message": "Plutus smart contracts arrive on mainnet."
   },
   "hardforks.timeline.vasil.description": {
-    "message": "Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member."
+    "message": "Reference inputs, inline datums, and reference scripts for cheaper, faster smart contracts."
   },
   "hardforks.timeline.label.transactionIds": {
     "message": "Transaction IDs"
   },
   "hardforks.timeline.valentine.description": {
-    "message": "Introduced further improvements to Plutus smart contract functionality and overall network performance."
+    "message": "New cryptographic primitives for cross-chain use in Plutus."
   },
   "hardforks.timeline.chang1.description": {
-    "message": "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations."
+    "message": "The first on-chain governance actions: parameter changes and hard fork initiations."
   },
   "hardforks.timeline.plomin.description": {
-    "message": "Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role."
+    "message": "Full on-chain governance: DReps, treasury withdrawals, and every governance action."
   },
   "hardforks.hero.title": {
     "message": "Hard forks"
@@ -8792,7 +8792,7 @@
     "message": "How to delegate"
   },
   "hardforks.timeline.vanrossem.description": {
-    "message": "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins"
+    "message": "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote."
   },
   "home.divider.news": {
     "message": "News"
@@ -10839,36 +10839,6 @@
   },
   "roadmap.upcoming.dijkstra2.fact": {
     "message": "Settlement in minutes, down from hours"
-  },
-  "roadmap.upgrade.van-rossem.summary": {
-    "message": "New Plutus builtins, and the first upgrade ratified entirely by on-chain vote."
-  },
-  "roadmap.upgrade.plomin.summary": {
-    "message": "Full on-chain governance: DReps, treasury withdrawals, and every governance action."
-  },
-  "roadmap.upgrade.chang.summary": {
-    "message": "The first on-chain governance actions: parameter changes and hard fork initiations."
-  },
-  "roadmap.upgrade.valentine.summary": {
-    "message": "New cryptographic primitives for cross-chain use in Plutus."
-  },
-  "roadmap.upgrade.vasil.summary": {
-    "message": "Reference inputs, inline datums, and reference scripts for cheaper, faster smart contracts."
-  },
-  "roadmap.upgrade.alonzo.summary": {
-    "message": "Plutus smart contracts arrive on mainnet."
-  },
-  "roadmap.upgrade.mary.summary": {
-    "message": "Native tokens, minted and moved without smart contracts."
-  },
-  "roadmap.upgrade.allegra.summary": {
-    "message": "Token locking, the groundwork for smart contracts."
-  },
-  "roadmap.upgrade.shelley.summary": {
-    "message": "Stake pools, delegation, and rewards: block production moves to the community."
-  },
-  "roadmap.upgrade.byron.summary": {
-    "message": "Mainnet launch and ada."
   },
   "roadmap.outcome.capacity.title": {
     "message": "More capacity"
