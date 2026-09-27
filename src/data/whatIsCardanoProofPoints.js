@@ -1,13 +1,11 @@
 import { translate } from "@docusaurus/Translate";
-import {
-  FaLock,
-  FaCalculator,
-  FaCoins,
-  FaNetworkWired,
-  FaFlask,
-  FaVoteYea,
-  FaBalanceScale,
-} from "react-icons/fa";
+import DottedLockOpen from "@site/src/components/DottedIcons/DottedLockOpen";
+import DottedCalculator from "@site/src/components/DottedIcons/DottedCalculator";
+import DottedBallot from "@site/src/components/DottedIcons/DottedBallot";
+import DottedFlask from "@site/src/components/DottedIcons/DottedFlask";
+import DottedCoins from "@site/src/components/DottedIcons/DottedCoins";
+import DottedNetwork from "@site/src/components/DottedIcons/DottedNetwork";
+import DottedScale from "@site/src/components/DottedIcons/DottedScale";
 
 // Shared between /what-is-cardano (all seven) and the homepage (a subset).
 // Strings are literal translate() calls so Crowdin can extract them.
@@ -15,7 +13,7 @@ export function getProofPoints() {
   return [
     {
       key: "staking",
-      icon: <FaLock />,
+      icon: <DottedLockOpen />,
       title: translate({ id: "whatIsCardano.proof.staking.title", message: "Staking without strings" }),
       tagline: translate({ id: "whatIsCardano.proof.staking.tagline", message: "Non-custodial, liquid staking" }),
       text: translate({
@@ -26,7 +24,7 @@ export function getProofPoints() {
     },
     {
       key: "fees",
-      icon: <FaCalculator />,
+      icon: <DottedCalculator />,
       title: translate({ id: "whatIsCardano.proof.fees.title", message: "Fees you can predict" }),
       tagline: translate({ id: "whatIsCardano.proof.fees.tagline", message: "Deterministic transactions" }),
       text: translate({
@@ -37,7 +35,7 @@ export function getProofPoints() {
     },
     {
       key: "tokens",
-      icon: <FaCoins />,
+      icon: <DottedCoins />,
       title: translate({ id: "whatIsCardano.proof.tokens.title", message: "Tokens built into the chain" }),
       tagline: translate({ id: "whatIsCardano.proof.tokens.tagline", message: "Native assets" }),
       text: translate({
@@ -48,7 +46,7 @@ export function getProofPoints() {
     },
     {
       key: "decentralized",
-      icon: <FaNetworkWired />,
+      icon: <DottedNetwork />,
       title: translate({ id: "whatIsCardano.proof.decentralized.title", message: "Decentralized by design" }),
       tagline: translate({ id: "whatIsCardano.proof.decentralized.tagline", message: "Independent stake pools" }),
       text: translate({
@@ -59,7 +57,7 @@ export function getProofPoints() {
     },
     {
       key: "research",
-      icon: <FaFlask />,
+      icon: <DottedFlask />,
       title: translate({ id: "whatIsCardano.proof.research.title", message: "Backed by research" }),
       tagline: translate({ id: "whatIsCardano.proof.research.tagline", message: "Peer review and formal methods" }),
       text: translate({
@@ -70,7 +68,7 @@ export function getProofPoints() {
     },
     {
       key: "governance",
-      icon: <FaVoteYea />,
+      icon: <DottedBallot />,
       title: translate({ id: "whatIsCardano.proof.governance.title", message: "Governed on the chain itself" }),
       tagline: translate({ id: "whatIsCardano.proof.governance.tagline", message: "On-chain governance and treasury" }),
       text: translate({
@@ -81,7 +79,7 @@ export function getProofPoints() {
     },
     {
       key: "regulation",
-      icon: <FaBalanceScale />,
+      icon: <DottedScale />,
       title: translate({ id: "whatIsCardano.proof.regulation.title", message: "Ready for regulation" }),
       tagline: translate({ id: "whatIsCardano.proof.regulation.tagline", message: "MiCA-conform disclosures" }),
       text: translate({
