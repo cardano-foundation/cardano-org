@@ -1,10 +1,9 @@
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import WelcomeHero from "@site/src/components/Layout/WelcomeHero";
 import Divider from "@site/src/components/Layout/Divider";
-import HomeBenefitsSection from "@site/src/components/HomeBenefitsSection";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HomeProofPointsSection from "@site/src/components/HomeProofPointsSection";
+import HomeActivitySection from "@site/src/components/HomeActivitySection";
 import IntentChips from "@site/src/components/showcase/IntentChips";
 import HomeTracking from "@site/src/components/HomeTracking";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
@@ -16,22 +15,9 @@ import {translate} from '@docusaurus/Translate';
 // Entry intents surfaced on the homepage, a subset of the /apps chips.
 const HOME_INTENTS = ["useWallet", "stake", "trade", "vote", "play"];
 
-function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
-  return (
-    <WelcomeHero
-      title={[
-        translate({id: 'home.hero.title', message: 'Made for Trust.'}),
-        translate({id: 'home.hero.title2', message: 'Reliable by Design.'}),
-      ]}
-      description={translate({id: 'home.hero.description', message: 'Cardano is a decentralized blockchain ecosystem built on solid scientific research. It focuses on providing a secure, scalable and sustainable public digital platform for individual and enterprise projects to build real-world solutions of trust.'})}
-    />
-  );
-}
-
-// Section order is under test (see HomeTracking): the differentiation block
-// and the entry intents sit directly below the hero, the benefits tabs follow
-// the news. Only links inside a data-section wrapper are tracked.
+// Order: one entry decision in the hero (Get Started or an intent), then proof
+// that the network is in use, then the explanation, then news. Only links
+// inside a data-section wrapper are tracked (see HomeTracking).
 export default function Home() {
 
   return (
@@ -41,18 +27,30 @@ export default function Home() {
     >
       <HomeTracking />
       <div data-section="hero">
-        <HomepageHeader />
+        <WelcomeHero
+          title={[
+            translate({id: 'home.hero.title', message: 'Made for Trust.'}),
+            translate({id: 'home.hero.title2', message: 'Reliable by Design.'}),
+          ]}
+          description={translate({id: 'home.hero.description', message: 'Cardano is a public blockchain built on peer-reviewed research. Secure, scalable and sustainable, it powers real-world solutions for people and enterprises.'})}
+          showWhatIsCardano={false}
+        >
+          <div data-section="intents">
+            <IntentChips ids={HOME_INTENTS} linkTo="/apps" headingId="home-intent-title" variant="hero" />
+          </div>
+        </WelcomeHero>
       </div>
       <main>
         <BoundaryBox>
-          <HomeProofPointsSection />
-          <div data-section="intents">
-            <IntentChips ids={HOME_INTENTS} linkTo="/apps" headingId="home-intent-title" />
-            <p className="container">
-              <Link className="button button--primary button--lg" to="/apps">
-                {translate({id: 'home.featured.buttonLabel', message: 'Use Cardano Apps'})}
-              </Link>
-            </p>
+          <div data-section="activity">
+            <HomeActivitySection />
+          </div>
+          <SpacerBox size="medium" />
+        </BoundaryBox>
+
+        <BoundaryBox>
+          <div data-section="proof-points">
+            <HomeProofPointsSection />
           </div>
           <SpacerBox size="medium" />
         </BoundaryBox>
@@ -68,10 +66,6 @@ export default function Home() {
             headingDot={true}
           />
           <LatestNewsSection count={6} />
-        </BoundaryBox>
-
-        <BoundaryBox>
-          <HomeBenefitsSection />
           <SpacerBox size="medium" />
         </BoundaryBox>
 

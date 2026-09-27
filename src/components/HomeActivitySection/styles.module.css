@@ -1,0 +1,59 @@
+.section {
+  padding-top: 2rem;
+}
+
+/* Figures read value first, label below, although the dl keeps the label
+   first for screen readers. */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.figureValue {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme="dark"] .figureValue {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.figureLabel {
+  margin-top: 0.4rem;
+  font-weight: normal;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.ctaRow {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 996px) {
+  .figures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .figures {
+    grid-template-columns: 1fr;
+  }
+
+  .figureValue {
+    font-size: 1.8rem;
+  }
+}

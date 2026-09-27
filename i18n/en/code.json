@@ -1331,7 +1331,7 @@
     "message": "Reliable by Design."
   },
   "home.hero.description": {
-    "message": "Cardano is a decentralized blockchain ecosystem built on solid scientific research. It focuses on providing a secure, scalable and sustainable public digital platform for individual and enterprise projects to build real-world solutions of trust."
+    "message": "Cardano is a public blockchain built on peer-reviewed research. Secure, scalable and sustainable, it powers real-world solutions for people and enterprises."
   },
   "home.hero.ctaWhatIsCardano": {
     "message": "What is Cardano?"
@@ -5301,7 +5301,7 @@
     "message": "2021"
   },
   "quiz.basics.basics-15.explanation": {
-    "message": "Cardano's genesis block \"launched the Byron era on September 29, 2017,\" which is when the blockchain and ada went live. That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."
+    "message": "Cardano's genesis block \"launched the Byron era on September 23, 2017,\" which is when the blockchain and ada went live. That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."
   },
   "quiz.governance.title": {
     "message": "Governance and Voltaire"
@@ -10401,5 +10401,41 @@
   },
   "medusa.milestone.vanRossem.description": {
     "message": "An intra-era upgrade of the Conway era, see the hard forks page for details."
+  },
+  "home.activity.title": {
+    "message": "Cardano in use"
+  },
+  "home.activity.figure.chainTx": {
+    "message": "transactions on Cardano in the last 30 days"
+  },
+  "home.activity.figure.tx": {
+    "message": "of them by apps listed here"
+  },
+  "home.activity.figure.apps": {
+    "message": "apps in the directory"
+  },
+  "home.activity.figure.years": {
+    "message": "years on mainnet"
+  },
+  "latestNews.category.development": {
+    "message": "Development"
+  },
+  "latestNews.category.research": {
+    "message": "Research"
+  },
+  "latestNews.category.governance": {
+    "message": "Governance"
+  },
+  "latestNews.category.community": {
+    "message": "Community"
+  },
+  "latestNews.category.ecosystem": {
+    "message": "Ecosystem"
+  },
+  "latestNews.category.education": {
+    "message": "Education"
+  },
+  "latestNews.category.events": {
+    "message": "Events"
   }
 }

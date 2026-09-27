@@ -203,7 +203,7 @@ function getTimelineItems() {
     },
     {
       era: "Byron Era",
-      date: "September 29, 2017",
+      date: "September 23, 2017",
       name: "Byron",
       description: translate({
         id: "hardforks.timeline.byron.description",

@@ -115,7 +115,8 @@ html[data-theme="dark"] .button {
   .heroBanner {
     background-size: cover;
     background-position: 50% 50%;
-    height: 620px;
+    /* min-height so the intent chips never overflow on narrow phones */
+    min-height: 620px;
   }
   .heroForeground {
     pointer-events: auto;

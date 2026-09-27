@@ -9,7 +9,10 @@ import Medusa from "@site/src/components/Medusa";
 import DevPanel from "@site/src/components/Medusa/DevPanel";
 import { canRunWebGL } from "@site/src/components/Medusa/webgl";
 
-function WelcomeHero({ title, description }) {
+// `children` renders below the CTA row (the homepage puts the entry intents
+// there). `showWhatIsCardano` drops the explainer CTA when the page links to
+// it further down.
+function WelcomeHero({ title, description, children, showWhatIsCardano = true }) {
   const [webglSupported, setWebglSupported] = useState(true);
   const [year, setYear] = useState("");
   const medusaRef = useRef(null);
@@ -63,12 +66,14 @@ function WelcomeHero({ title, description }) {
             </p>
           </div>
           <div className={styles.cta}>
-            <Link
-              className={clsx("button button--primary button--lg", styles.heroCtaButton)}
-              to="/what-is-cardano"
-            >
-              {translate({id: 'home.hero.ctaWhatIsCardano', message: 'What is Cardano?'})}
-            </Link>
+            {showWhatIsCardano && (
+              <Link
+                className={clsx("button button--primary button--lg", styles.heroCtaButton)}
+                to="/what-is-cardano"
+              >
+                {translate({id: 'home.hero.ctaWhatIsCardano', message: 'What is Cardano?'})}
+              </Link>
+            )}
             <Link
               className={clsx("button button--primary button--lg", styles.heroCtaButton)}
               to="/get-started"
@@ -76,6 +81,7 @@ function WelcomeHero({ title, description }) {
               {translate({id: 'home.hero.ctaGetStarted', message: 'Get Started'})}
             </Link>
           </div>
+          {children}
         </div>
       </div>
 

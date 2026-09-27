@@ -78,8 +78,10 @@ function arraysEqualUnordered(a, b) {
 
 // On /apps the chips toggle the filter of the current list. With `linkTo`
 // (e.g. the homepage) they become plain links into that list instead.
-// `ids` limits the rendered chips to a subset of INTENTS.
-export default function IntentChips({ ids, linkTo, headingId = "apps-intent-title" }) {
+// `ids` limits the rendered chips to a subset of INTENTS. The "hero" variant
+// sits inside an existing container on a dark background.
+export default function IntentChips({ ids, linkTo, headingId = "apps-intent-title", variant }) {
+  const isHero = variant === "hero";
   const location = useLocation();
   const history = useHistory();
   const intents = ids
@@ -116,10 +118,10 @@ export default function IntentChips({ ids, linkTo, headingId = "apps-intent-titl
 
   return (
     <section
-      className={styles.intentSection}
+      className={clsx(styles.intentSection, { [styles.intentSectionHero]: isHero })}
       aria-labelledby={headingId}
     >
-      <div className="container">
+      <div className={isHero ? undefined : "container"}>
         <h2 id={headingId} className={styles.intentTitle}>
           {translate({ id: "apps.intent.label", message: "I want to" })}
         </h2>

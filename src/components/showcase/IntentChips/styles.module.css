@@ -70,6 +70,29 @@ a.intentChip {
   color: var(--ifm-color-primary-contrast-background);
 }
 
+/* Hero variant: translucent chips on the dark homepage header. */
+.intentSectionHero {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.intentSectionHero .intentTitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.intentSectionHero .intentChip {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.intentSectionHero .intentChip:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ifm-color-primary);
+}
+
 @media (max-width: 600px) {
   .intentList {
     overflow-x: auto;
