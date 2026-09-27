@@ -196,7 +196,7 @@ export default function Roadmap() {
       <Head>
         <script type="application/ld+json">{faqJsonLd(faq)}</script>
       </Head>
-      <OpenGraphInfo pageName="roadmap" />
+      <OpenGraphInfo />
       <RoadmapHero />
       <main>
         <BackgroundWrapper backgroundType="zoom">
