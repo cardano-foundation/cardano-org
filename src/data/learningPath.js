@@ -62,7 +62,7 @@ export function getLearningPath() {
         { key: "stablecoins", href: "/stablecoins", icon: <FaBalanceScale />, title: translate({ id: "learn.item.stablecoins.title", message: "Stablecoins" }), text: translate({ id: "learn.item.stablecoins.text", message: "Stable value on Cardano: how the main stablecoins work and where to use them." }) },
         { key: "ouroboros", href: "/ouroboros", icon: <FaCog />, title: translate({ id: "learn.item.ouroboros.title", message: "Ouroboros" }), text: translate({ id: "learn.item.ouroboros.text", message: "The proof-of-stake protocol behind every block." }) },
         { key: "layer-2", href: "/layer-2", icon: <FaLayerGroup />, title: translate({ id: "learn.item.layer2.title", message: "Layer 2" }), text: translate({ id: "learn.item.layer2.text", message: "Hydra, Midnight and the other networks that extend Cardano." }) },
-        { key: "hardforks", href: "/hardforks", icon: <FaCodeBranch />, title: translate({ id: "learn.item.hardforks.title", message: "Hard forks" }), text: translate({ id: "learn.item.hardforks.text", message: "Every protocol upgrade since launch, and how upgrades happen." }) },
+        { key: "roadmap", href: "/roadmap", icon: <FaCodeBranch />, title: translate({ id: "learn.item.roadmap.title", message: "Roadmap" }), text: translate({ id: "learn.item.roadmap.text", message: "What is being built, how an upgrade gets decided, and every upgrade so far." }) },
         { key: "glossary", href: "/glossary", icon: <FaBook />, title: translate({ id: "learn.item.glossary.title", message: "Glossary" }), text: translate({ id: "learn.item.glossary.text", message: "Every Cardano term, explained in plain language, with mental models where they help." }) },
       ],
     },
