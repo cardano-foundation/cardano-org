@@ -59,13 +59,13 @@ export default function HomeActivitySection() {
       value: number.format(LISTED_APP_TX),
       label: translate({
         id: "home.activity.figure.tx",
-        message: "of them by apps listed here",
+        message: "of them by showcased apps",
       }),
     },
     {
       key: "apps",
       value: number.format(Showcases.length),
-      label: translate({ id: "home.activity.figure.apps", message: "apps in the directory" }),
+      label: translate({ id: "home.activity.figure.apps", message: "curated apps to explore" }),
     },
     {
       key: "years",

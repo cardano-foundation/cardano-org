@@ -10409,10 +10409,10 @@
     "message": "transactions on Cardano in the last 30 days"
   },
   "home.activity.figure.tx": {
-    "message": "of them by apps listed here"
+    "message": "of them by showcased apps"
   },
   "home.activity.figure.apps": {
-    "message": "apps in the directory"
+    "message": "curated apps to explore"
   },
   "home.activity.figure.years": {
     "message": "years on mainnet"
