@@ -1023,6 +1023,18 @@ export const Showcases = [
     },
   },
   {
+    title: "Tempo",
+    description:
+      "Governance tool that streamlines Cardano's decision making. Helps DReps register, gain delegations, and engage delegators; supports DAOs and SPOs too.",
+    tagline: "Governance tool for DReps to register and engage",
+    icon: "/img/app-icons/tempo.png",
+    website: "https://tempo.vote",
+    source: null,
+    category: "governance",
+    properties: ["drepdelegation"],
+    maintainerPick: false,
+  },
+  {
     title: "Begin Wallet",
     description:
       "Non-custodial Cardano wallet for browser and mobile with payment links, deep-link support, Begin ID usernames (ENS-style), and Ledger and Keystone hardware support.",
