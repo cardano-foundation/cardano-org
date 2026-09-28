@@ -31,7 +31,7 @@ const interestId = "operator";
       title={siteTitle}
       description={translate({id: 'signalOperator.layout.description', message: 'Stay informed about everything related to running a Stake Pool and technical updates.'})}
     >
-      <OpenGraphInfo pageName={content.openGraph} title={translate({id: 'signalOperator.openGraph.title', message: 'Signal your interest in Stake Pool Operations'})} description={translate({id: 'signalOperator.openGraph.description', message: 'Stay informed about everything related to running a Stake Pool and technical updates.'})} />
+      <OpenGraphInfo pageName={content.slug} title={translate({id: 'signalOperator.openGraph.title', message: 'Signal your interest in Stake Pool Operations'})} description={translate({id: 'signalOperator.openGraph.description', message: 'Stay informed about everything related to running a Stake Pool and technical updates.'})} />
       <SiteHero
         title={translate({id: 'signalOperator.hero.title', message: 'Signal your interest in Stake Pool Operations'})}
         description={translate({id: 'signalOperator.hero.description', message: 'Stay informed about everything related to running a Stake Pool and technical updates.'})}
