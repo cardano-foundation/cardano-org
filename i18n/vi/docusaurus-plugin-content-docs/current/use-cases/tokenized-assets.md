@@ -25,6 +25,14 @@ Token hóa tài sản chia quyền sở hữu các tài sản trong thế giới
 
 Token hóa có thể áp dụng cho hầu hết mọi loại tài sản: bất động sản, cơ sở hạ tầng, hàng hóa, đồ sưu tầm, sở hữu trí tuệ, và nhiều hơn nữa.
 
+## Compliance Rules on Token Transfers
+
+Tokenized assets can fall under financial regulation. Depending on the asset and the jurisdiction, their issuers may need to limit transfers to verified investors, or freeze and recover tokens for legal reasons. An ordinary native token cannot enforce this, because once minted it follows whoever controls the address it sits at.
+
+[Programmable tokens](/glossary/programmable-token/) add that layer. They are native tokens that holders can only send when the issuer's transfer rules approve, for example an allowlist of verified holders or a limit per transfer. CIP-113, the proposed standard for them on Cardano, is still under review, and the Cardano Foundation maintains an open-source reference implementation.
+
+What an issuer can do beyond that depends on the scripts the token's registry entry names. Some let authorized parties freeze or seize holdings. A substandard can also limit third-party actions to ones that never reduce a holder's balance. The issuer may be able to swap these scripts later, and the shared contracts can be upgraded by whoever holds the upgrade authority of that deployment. Investors should know who can change the rules before they buy.
+
 ## Tại sao chọn Cardano
 
 - **Các Token gốc** cung cấp khả năng thể hiện tài sản một cách hiệu quả và an toàn
@@ -37,4 +45,5 @@ Token hóa có thể áp dụng cho hầu hết mọi loại tài sản: bất �
 
 - [Khám phá các ứng dụng Cardano](/apps)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
+- [Developer guide to programmable tokens](https://developers.cardano.org/docs/developers/curriculum/native-tokens/programmable-tokens/)
 - Xem các giải pháp doanh nghiệp
