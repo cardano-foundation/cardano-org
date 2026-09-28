@@ -142,11 +142,13 @@
   color: var(--ifm-color-primary);
 }
 
+/* Higher specificity than .panel: the production CSS optimizer merges
+   equal-specificity rules and can reorder them, letting display:none win. */
 .panel {
   display: none;
 }
 
-.panelSelected {
+.panel.panelSelected {
   display: block;
 }
 
