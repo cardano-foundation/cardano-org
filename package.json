@@ -38,7 +38,8 @@
     "test:pool-loading": "node --test scripts/test-pool-loading.mjs",
     "test:pool-logos": "node --test scripts/test-pool-logos.js",
     "test:wallet-tx": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test scripts/test-wallet-tx.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx",
+    "test:drep-id-status": "node --test scripts/test-drep-id-status.mjs",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:drep-id-status",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
