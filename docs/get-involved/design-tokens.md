@@ -80,6 +80,19 @@ Badge colors for the bronze/silver/gold results on the [quiz hub](/quiz). Both t
 | `--site-tier-bronze` | `#c98b5e` | `#c98b5e` | Bronze tier badge fill |
 | `--site-tier-ink` | `#1b2333` | `#1b2333` | Text and icon color on top of the tier fills, fixed across themes on purpose |
 
+### Governance roles
+
+One accent per group that takes part in governance, so charts, diagrams, and legends tell the groups apart the same way on every page. The values match the accents `RoleCard` and the accountability hub already use locally. Use the `-text` variants for small text on light backgrounds, where the base teal and green fall below a 4.5:1 contrast ratio.
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `--site-role-drep` | `#0033ad` | `#8fb1ff` | DReps |
+| `--site-role-committee` | `#00a3a3` | `#50cfcf` | Constitutional Committee: dots, fills, strokes |
+| `--site-role-committee-text` | `#007a7a` | `#50cfcf` | Constitutional Committee: small text |
+| `--site-role-pool` | `#5b4df0` | `#9286ff` | Stake pools and their operators |
+| `--site-role-funding` | `#10a17a` | `#34d399` | Treasury-funded work: dots, fills, strokes |
+| `--site-role-funding-text` | `#0b7a5c` | `#34d399` | Treasury-funded work: small text |
+
 ## Spacing
 
 An 8px-based scale. Use it for padding, margins, and gaps.
