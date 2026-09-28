@@ -22,6 +22,7 @@ const ROOT = path.join(__dirname, '..');
 const CODE_JSON = path.join(ROOT, 'i18n/en/code.json');
 const NAVBAR_JSON = path.join(ROOT, 'i18n/en/docusaurus-theme-classic/navbar.json');
 const WRITE = process.argv.includes('--write');
+const NAVBAR_ITEMS = require(path.join(ROOT, 'src/data/navbar.js'))();
 
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 
@@ -84,9 +85,8 @@ function megaMenu() {
     '`navbar.mega.label.${item.label}`',
     '`navbar.mega.description.${item.label}`',
   ]);
-  const getNavbarItems = require(path.join(ROOT, 'src/data/navbar.js'));
   const out = [];
-  for (const menu of getNavbarItems()) {
+  for (const menu of NAVBAR_ITEMS) {
     if (!menu.mega) continue;
     const { featured, columns } = menu.customProps;
     if (featured) {
@@ -181,29 +181,26 @@ const DYNAMIC_PREFIXES = [
 // never count as dead.
 function literalIds() {
   const ids = new Set();
-  const walk = (dir) => {
-    for (const name of fs.readdirSync(dir)) {
-      const file = path.join(dir, name);
-      if (fs.statSync(file).isDirectory()) walk(file);
-      else if (/\.(js|jsx|mjs)$/.test(name)) {
-        const ast = parser.parse(fs.readFileSync(file, 'utf8'), { sourceType: 'module', plugins: ['jsx'] });
-        traverse(ast, {
-          ObjectProperty(p) {
-            const key = p.node.key.type === 'Identifier' ? p.node.key.name : p.node.key.value;
-            if (key === 'id' && p.node.value.type === 'StringLiteral') ids.add(p.node.value.value);
-          },
-          JSXAttribute(p) {
-            if (p.node.name.name === 'id' && p.node.value?.type === 'StringLiteral') ids.add(p.node.value.value);
-          },
-          StringLiteral(p) {
-            // Ids kept in data tables before they reach translate(), e.g. titleId.
-            if (/^[a-zA-Z]+\.[\w.-]+$/.test(p.node.value)) ids.add(p.node.value);
-          },
-        });
-      }
-    }
-  };
-  walk(path.join(ROOT, 'src'));
+  const files = fs
+    .readdirSync(path.join(ROOT, 'src'), { recursive: true, withFileTypes: true })
+    .filter((entry) => entry.isFile() && /\.(js|jsx|mjs)$/.test(entry.name))
+    .map((entry) => path.join(entry.parentPath ?? entry.path, entry.name));
+  for (const file of files) {
+    const ast = parser.parse(fs.readFileSync(file, 'utf8'), { sourceType: 'module', plugins: ['jsx'] });
+    traverse(ast, {
+      ObjectProperty(p) {
+        const key = p.node.key.type === 'Identifier' ? p.node.key.name : p.node.key.value;
+        if (key === 'id' && p.node.value.type === 'StringLiteral') ids.add(p.node.value.value);
+      },
+      JSXAttribute(p) {
+        if (p.node.name.name === 'id' && p.node.value?.type === 'StringLiteral') ids.add(p.node.value.value);
+      },
+      StringLiteral(p) {
+        // Ids kept in data tables before they reach translate(), e.g. titleId.
+        if (/^[a-zA-Z]+\.[\w.-]+$/.test(p.node.value)) ids.add(p.node.value);
+      },
+    });
+  }
   return ids;
 }
 const LITERAL_IDS = literalIds();
@@ -211,9 +208,8 @@ const LITERAL_IDS = literalIds();
 // The mobile drawer translates navbar labels through the theme's navbar.json
 // (item.label.<label>), which write-translations only fills on a full run.
 function navbarLabels() {
-  const getNavbarItems = require(path.join(ROOT, 'src/data/navbar.js'));
   const labels = new Set();
-  for (const item of getNavbarItems()) {
+  for (const item of NAVBAR_ITEMS) {
     labels.add(item.label);
     for (const child of item.items || []) labels.add(child.label);
   }
