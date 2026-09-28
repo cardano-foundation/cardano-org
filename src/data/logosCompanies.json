@@ -9,7 +9,7 @@
   {
     "companyName": "Agrow Labs",
     "imageName": "agrowlabs",
-    "link": "https://www.agrowlabs.xyz",
+    "link": "https://agrowlabs.xyz",
     "knownFor": "Onboard Ninja",
     "showCompanyName": false
   },
@@ -103,15 +103,8 @@
   {
     "companyName": "Dano Finance",
     "imageName": "dano-finance",
-    "link": "https://app.danogo.io/about-us",
+    "link": "https://docs.dano.finance/",
     "knownFor": "Dano Finance",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "DCOne Crypto",
-    "imageName": "dcone",
-    "link": "https://dconecrypto.finance/",
-    "knownFor": "DCOne Crypto Webhook",
     "showCompanyName": false
   },
   {

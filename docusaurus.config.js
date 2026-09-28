@@ -265,6 +265,16 @@ const config = {
             }
           }
 
+          // Renamed apps keep their old detail URL, keyed by the new slug.
+          const appRenames = {
+            'cardano-govscope': ['chang-watch'],
+          };
+          const appMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/apps\/([a-z0-9-]+)\/?$/);
+          if (appMatch && appRenames[appMatch[2]]) {
+            const prefix = appMatch[1] || '';
+            return appRenames[appMatch[2]].map((slug) => `${prefix}/apps/${slug}`);
+          }
+
           // Dropped tags (format modifiers) point at the news index.
           const newsIndex = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/?$/);
           if (newsIndex) {
