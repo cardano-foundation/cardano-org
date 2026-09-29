@@ -34,7 +34,7 @@ export function incomeOption({ income, isDark, labels }) {
     },
     // Single scrollable row so a narrow screen never wraps it over the axis names.
     legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
-    grid: { left: "3%", right: "6%", bottom: "3%", top: 40, containLabel: true },
+    grid: { left: "3%", right: "6%", bottom: "3%", top: 64, containLabel: true },
     xAxis: { type: "category", data: income.map((e) => e.epoch), axisLabel: { color: c } },
     yAxis: [
       { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => v.toLocaleString() } },
@@ -69,7 +69,7 @@ export function outlookOption({ points, projection, isDark, labels }) {
       },
     },
     legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
-    grid: { left: "3%", right: "4%", bottom: "3%", top: 40, containLabel: true },
+    grid: { left: "3%", right: "4%", bottom: "3%", top: 64, containLabel: true },
     xAxis: {
       type: "value",
       min: points[0]?.epoch,
