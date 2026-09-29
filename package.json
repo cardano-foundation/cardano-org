@@ -65,7 +65,7 @@
     "dotenv": "^16.4.5",
     "echarts": "^6.1.0",
     "html-to-image": "^1.11.13",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.3.2",
     "prism-react-renderer": "^2.3.0",
     "process": "^0.11.10",
     "raw-loader": "^4.0.2",
@@ -92,14 +92,14 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.5.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   },
   "resolutions": {
     "@babel/runtime": "^7.26.10",
     "libsodium-wrappers-sumo": "0.7.15",
-    "qs": "^6.15.3",
+    "qs": "^6.16.0",
     "serialize-javascript": "^7.1.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "shell-quote": "1.9.0",
     "uuid": "^11.1.1",
     "websocket-driver": "0.7.5"
