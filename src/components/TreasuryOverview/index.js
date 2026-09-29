@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
 import { scrollToElement } from "@site/src/utils/jsUtils";
+import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
 import useCountUp from "@site/src/utils/useCountUp";
 import { formatAdaValue } from "@site/src/utils/insights/numbers";
 import {
@@ -136,8 +137,9 @@ export default function TreasuryOverview() {
   // The boards push the donation tool down once they render. Deep links such
   // as /governance/treasury#donate scrolled before that, so scroll once more.
   useEffect(() => {
-    if (status === "loading" || !window.location.hash) return;
-    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (status === "loading") return;
+    const id = hashTargetId(window.location.hash);
+    const target = id && document.getElementById(id);
     if (target) scrollToElement(target);
   }, [status]);
 
