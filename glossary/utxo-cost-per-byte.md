@@ -4,7 +4,7 @@ slug: utxo-cost-per-byte
 short: The protocol parameter that prices each byte of on-chain storage a UTxO occupies, used to derive the minimum ada that must accompany any new output.
 category: general
 level: intermediate
-aliases: ["utxoCostPerByte", "Min UTxO", "Min-Ada"]
+aliases: ["utxoCostPerByte", "Min UTxO", "min-UTxO", "minUTxO", "Min-Ada", "minimum ada", "min lovelace"]
 mentalModel: "Storage rent paid up front. Sending an output to the chain locks a small amount of ada proportional to its serialized size; that ada is fully returned the moment the output is later spent."
 related: [utxo, eutxo, native-token, ada, transaction-fee]
 ---

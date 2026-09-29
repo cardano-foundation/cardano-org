@@ -79,7 +79,7 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.how.description1",
                 message:
-                  "The minimum fee for a transaction is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes.",
+                  "The minimum [transaction fee](/glossary/transaction-fee) is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes.",
               }),
               translate({
                 id: "feesAndTransactions.how.description2",

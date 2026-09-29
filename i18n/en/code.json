@@ -10603,7 +10603,7 @@
     "message": "How the fee is calculated"
   },
   "feesAndTransactions.how.description1": {
-    "message": "The minimum fee for a transaction is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes."
+    "message": "The minimum [transaction fee](/glossary/transaction-fee) is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes."
   },
   "feesAndTransactions.how.description2": {
     "message": "On mainnet, **a** (the per-byte component, protocol parameter minFeeA / txFeePerByte) is **44 lovelace per byte**, and **b** (the fixed component, protocol parameter minFeeB / txFeeFixed) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.17 ada."
