@@ -454,7 +454,7 @@ export const Showcases = [
     website: "https://eternl.io",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: true,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
@@ -826,9 +826,9 @@ export const Showcases = [
     properties: ["nft", "opensource"],
     maintainerPick: true,
     walletFeatures: {
-      platforms: ["browser"],
+      platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "governance"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "dex", "hardware-wallet", "governance"],
       type: "light",
     },
   },
@@ -860,7 +860,7 @@ export const Showcases = [
     website: "https://www.vespr.xyz/#/",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: true,
     spotlight: {
       url: "https://developers.cardano.org/blog/2024-01-22-january/",
@@ -1043,7 +1043,7 @@ export const Showcases = [
     website: "https://begin.is",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
@@ -1793,6 +1793,23 @@ function slugifyTitle(title) {
 }
 Showcases.forEach((showcase) => {
   showcase.slug = slugifyTitle(showcase.title);
+});
+
+// Wallets declare their platforms in walletFeatures, so the "mobile" property is
+// derived from ios/android instead of being maintained by hand next to it.
+// Mirrors isMobileWallet() in scripts/lib/parse-apps.cjs.
+const MOBILE_PLATFORMS = ["ios", "android"];
+Showcases.forEach((showcase) => {
+  const platforms = showcase.walletFeatures?.platforms;
+  if (!Array.isArray(platforms) || !Array.isArray(showcase.properties)) return;
+  if (showcase.properties.includes("mobile")) {
+    throw new Error(
+      `Showcase site with title=${showcase.title} contains errors:\nDo not set the mobile property on a wallet. It is derived from walletFeatures.platforms (ios, android).`
+    );
+  }
+  if (platforms.some((p) => MOBILE_PLATFORMS.includes(p))) {
+    showcase.properties = [...showcase.properties, "mobile"];
+  }
 });
 
 function sortShowcases() {
