@@ -6,8 +6,19 @@ import snapshot from "@site/src/data/treasury-donations.json";
 import styles from "./styles.module.css";
 
 // Static figures from the committed snapshot, no network request.
+const s = summarizeDonations(snapshot);
+
+function Figure({ value, label, children }) {
+  return (
+    <div className={styles.figure}>
+      <span className={styles.value}>{value}</span>
+      <span className={styles.label}>{label}</span>
+      {children}
+    </div>
+  );
+}
+
 export default function TreasuryDonations() {
-  const s = summarizeDonations(snapshot);
   return (
     <section id="donations" className={styles.board}>
       <h2>{translate({ id: "governance.treasury.donations.title", message: "Returned funds and donations" })}</h2>
@@ -18,27 +29,26 @@ export default function TreasuryDonations() {
         })}
       </p>
       <div className={styles.grid}>
-        <div className={styles.figure}>
-          <span className={styles.value}>{formatAdaValue(s.totalAda)}</span>
-          <span className={styles.label}>{translate({ id: "governance.treasury.donations.total", message: "Received in total" })}</span>
-        </div>
-        <div className={styles.figure}>
-          <span className={styles.value}>{s.epochCount.toLocaleString()}</span>
-          <span className={styles.label}>{translate({ id: "governance.treasury.donations.epochs", message: "Epochs with donations" })}</span>
-        </div>
+        <Figure
+          value={formatAdaValue(s.totalAda)}
+          label={translate({ id: "governance.treasury.donations.total", message: "Received in total" })}
+        />
+        <Figure
+          value={s.epochCount.toLocaleString()}
+          label={translate({ id: "governance.treasury.donations.epochs", message: "Epochs with donations" })}
+        />
         {s.largest && (
-          <div className={styles.figure}>
-            <span className={styles.value}>{formatAdaValue(s.largest.ada)}</span>
-            <span className={styles.label}>
-              {translate({ id: "governance.treasury.donations.largest", message: "Largest in one epoch" })}
-            </span>
+          <Figure
+            value={formatAdaValue(s.largest.ada)}
+            label={translate({ id: "governance.treasury.donations.largest", message: "Largest in one epoch" })}
+          >
             <span className={styles.sub}>
               {translate(
                 { id: "governance.treasury.donations.largestDetail", message: "Epoch {epoch}, {share}% of the total" },
                 { epoch: s.largest.epoch, share: Math.round(s.largest.sharePercent) }
               )}
             </span>
-          </div>
+          </Figure>
         )}
       </div>
       {s.updatedEpoch != null && (

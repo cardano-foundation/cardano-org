@@ -7,6 +7,7 @@ import useCountUp from "@site/src/utils/useCountUp";
 import { formatAdaValue } from "@site/src/utils/insights/numbers";
 import {
   TREASURY_PARAMS,
+  EPOCHS_PER_YEAR,
   incomeBySource,
   inEpochWindow,
   feeSharePercent,
@@ -22,7 +23,8 @@ import TreasuryChart from "./TreasuryChart";
 import { incomeOption, outlookOption } from "./chartOptions";
 import styles from "./styles.module.css";
 
-const CHART_RANGE = 146;
+// Two years of epochs for the default income chart range.
+const CHART_RANGE = 2 * EPOCHS_PER_YEAR;
 const OUTLOOK_YEARS = [2030, 2035, 2040];
 
 // "..." while loading, "n/a" only when the data is there but the figure
@@ -82,9 +84,38 @@ export default function TreasuryOverview() {
       feeShare: feeSharePercent(income, latest.epoch),
       ratio: reserveToFeeRatio(income, latest.epoch),
       feesNeeded: feesNeededToReplace(income, latest.epoch),
-      latestFees: latest.fees,
     };
   }, [status, points]);
+
+  // Rebuilt only when data, range or theme change, so re-renders do not
+  // redraw the charts.
+  const incomeChart = useMemo(() => {
+    if (!model) return null;
+    return incomeOption({
+      income: showAll ? model.income : inEpochWindow(model.income, model.latest.epoch, CHART_RANGE),
+      isDark,
+      labels: {
+        epoch: translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" }),
+        reserves: translate({ id: "governance.treasury.overview.income.series.reserves", message: "From reserves" }),
+        fees: translate({ id: "governance.treasury.overview.income.series.fees", message: "From fees" }),
+        feeShare: translate({ id: "governance.treasury.overview.income.series.feeShare", message: "Fee share (%)" }),
+      },
+    });
+  }, [model, showAll, isDark]);
+
+  const outlookChart = useMemo(() => {
+    if (!model) return null;
+    return outlookOption({
+      points,
+      projection: model.projection,
+      isDark,
+      labels: {
+        epoch: translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" }),
+        history: translate({ id: "governance.treasury.overview.outlook.series.history", message: "Reserves" }),
+        projection: translate({ id: "governance.treasury.overview.outlook.series.projection", message: "Projection at the recent pace" }),
+      },
+    });
+  }, [model, points, isDark]);
 
   // The boards push the donation tool down once they render. Deep links such
   // as /governance/treasury#donate scrolled before that, so scroll once more.
@@ -105,9 +136,7 @@ export default function TreasuryOverview() {
     );
   }
 
-  const epochLabel = translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" });
   const loading = !model;
-  const incomeShown = model ? (showAll ? model.income : inEpochWindow(model.income, model.latest.epoch, CHART_RANGE)) : [];
 
   return (
     <>
@@ -159,16 +188,7 @@ export default function TreasuryOverview() {
         {model ? (
           <TreasuryChart
             ariaLabel={translate({ id: "governance.treasury.overview.income.aria", message: "Treasury income per epoch from reserves and from fees" })}
-            option={incomeOption({
-              income: incomeShown,
-              isDark,
-              labels: {
-                epoch: epochLabel,
-                reserves: translate({ id: "governance.treasury.overview.income.series.reserves", message: "From reserves" }),
-                fees: translate({ id: "governance.treasury.overview.income.series.fees", message: "From fees" }),
-                feeShare: translate({ id: "governance.treasury.overview.income.series.feeShare", message: "Fee share (%)" }),
-              },
-            })}
+            option={incomeChart}
           />
         ) : (
           <Skeleton />
@@ -202,16 +222,7 @@ export default function TreasuryOverview() {
         {model ? (
           <TreasuryChart
             ariaLabel={translate({ id: "governance.treasury.overview.outlook.aria", message: "Reserves over time with a projection" })}
-            option={outlookOption({
-              points,
-              projection: model.projection,
-              isDark,
-              labels: {
-                epoch: epochLabel,
-                history: translate({ id: "governance.treasury.overview.outlook.series.history", message: "Reserves" }),
-                projection: translate({ id: "governance.treasury.overview.outlook.series.projection", message: "Projection at the recent pace" }),
-              },
-            })}
+            option={outlookChart}
           />
         ) : (
           <Skeleton />
@@ -235,7 +246,7 @@ export default function TreasuryOverview() {
           />
           <AdaFigure
             loading={loading}
-            value={model?.latestFees}
+            value={model?.latest.fees}
             label={translate({ id: "governance.treasury.overview.outlook.actualFees", message: "Actual fees in the last completed epoch" })}
           />
         </div>

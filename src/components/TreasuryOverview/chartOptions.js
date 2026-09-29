@@ -1,4 +1,4 @@
-import { epochStartMs } from "@site/src/utils/insights/treasuryMath.mjs";
+import { epochStartMs, EPOCHS_PER_YEAR } from "@site/src/utils/insights/treasuryMath.mjs";
 
 const RESERVE_COLOR = "#9a60b4";
 const FEE_COLOR = "#91cc75";
@@ -15,8 +15,16 @@ function yearOf(epoch) {
 
 const fmtAda = (v) => `${Math.round(v).toLocaleString()} ada`;
 
-// 73 epochs per year, labels every second year.
-const EPOCHS_PER_TICK = 146;
+// Labels every second year on the outlook axis.
+const EPOCHS_PER_TICK = 2 * EPOCHS_PER_YEAR;
+
+// Room above the plot for the one-row legend plus the y axis name.
+const GRID_TOP = 64;
+
+// Single scrollable row so a narrow screen never wraps it over the axis names.
+function legend(color) {
+  return { type: "scroll", top: 0, textStyle: { color }, pageTextStyle: { color } };
+}
 
 // Stacked bars for the two sources plus the fee share as a line on its own axis.
 export function incomeOption({ income, isDark, labels }) {
@@ -32,9 +40,8 @@ export function incomeOption({ income, isDark, labels }) {
         return [`${labels.epoch} ${epoch}`, ...lines].join("<br/>");
       },
     },
-    // Single scrollable row so a narrow screen never wraps it over the axis names.
-    legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
-    grid: { left: "3%", right: "6%", bottom: "3%", top: 64, containLabel: true },
+    legend: legend(c),
+    grid: { left: "3%", right: "6%", bottom: "3%", top: GRID_TOP, containLabel: true },
     xAxis: { type: "category", data: income.map((e) => e.epoch), axisLabel: { color: c } },
     yAxis: [
       { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => v.toLocaleString() } },
@@ -68,8 +75,8 @@ export function outlookOption({ points, projection, isDark, labels }) {
         return [`${labels.epoch} ${epoch} (${yearOf(epoch)})`, ...lines].join("<br/>");
       },
     },
-    legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
-    grid: { left: "3%", right: "4%", bottom: "3%", top: 64, containLabel: true },
+    legend: legend(c),
+    grid: { left: "3%", right: "4%", bottom: "3%", top: GRID_TOP, containLabel: true },
     xAxis: {
       type: "value",
       min: points[0]?.epoch,

@@ -6,7 +6,8 @@ import { parseLovelace } from '../cardano/lovelace.mjs';
 // on mainnet from epoch 208 to at least epoch 658 (db-sync epoch_param).
 // If governance ever changes one, turn this into a list with epoch bounds.
 export const TREASURY_PARAMS = { tau: 0.2, rho: 0.003 };
-export const DEFAULT_WINDOW = 73;
+export const EPOCHS_PER_YEAR = 73;
+export const DEFAULT_WINDOW = EPOCHS_PER_YEAR;
 
 // Same reference point as src/utils/insights/epochs.js, repeated here because
 // that file cannot be loaded by node --test.
@@ -160,6 +161,8 @@ export function summarizeDonations(snapshot) {
     total += n;
     if (!largest || n > largest.lovelace) largest = { epoch: entry.epoch, lovelace: n };
   }
+  // Exact conversion here. lovelaceToAda truncates to three decimals, which
+  // would hide donations below 0.001 ada.
   const toAda = (n) => Number(n) / 1e6;
   const updatedEpoch = Number.isInteger(snapshot?.updatedEpoch) ? snapshot.updatedEpoch : null;
   return {

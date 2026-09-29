@@ -1,6 +1,22 @@
+/* Board and figure styles come from the overview so both boards look alike. */
 .board {
-  margin-top: 3rem;
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+  composes: board from "../TreasuryOverview/styles.module.css";
+}
+
+.figure {
+  composes: figure from "../TreasuryOverview/styles.module.css";
+}
+
+.value {
+  composes: value from "../TreasuryOverview/styles.module.css";
+}
+
+.label {
+  composes: label from "../TreasuryOverview/styles.module.css";
+}
+
+.note {
+  composes: note from "../TreasuryOverview/styles.module.css";
 }
 
 .grid {
@@ -10,30 +26,7 @@
   margin: 1rem 0;
 }
 
-.figure {
-  text-align: center;
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.value {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--ifm-color-primary);
-  line-height: 1.2;
-}
-
-.label {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sub,
-.note {
+.sub {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
 }
@@ -41,9 +34,5 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .value {
-    font-size: 1.5rem;
   }
 }
