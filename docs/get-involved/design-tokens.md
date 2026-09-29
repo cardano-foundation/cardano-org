@@ -82,16 +82,26 @@ Badge colors for the bronze/silver/gold results on the [quiz hub](/quiz). Both t
 
 ### Governance roles
 
-One accent per group that takes part in governance, so charts, diagrams, and legends tell the groups apart the same way on every page. The values match the accents `RoleCard` and the accountability hub already use locally. Use the `-text` variants for small text on light backgrounds, where the base teal and green fall below a 4.5:1 contrast ratio.
+One accent per group that takes part in governance, so charts, diagrams, and legends tell the groups apart the same way on every page. The values are tuned so the four roles stay distinguishable under protanopia, deuteranopia, and tritanopia (they differ in lightness as well as hue), and each meets a 4.5:1 contrast ratio against its theme background, so small text can use the base token. Do not rely on color alone: pair every role and vote color with a label, icon, or pattern.
 
 | Token | Light | Dark | Use |
 |-------|-------|------|-----|
 | `--site-role-drep` | `#0033ad` | `#8fb1ff` | DReps |
-| `--site-role-committee` | `#00a3a3` | `#50cfcf` | Constitutional Committee: dots, fills, strokes |
-| `--site-role-committee-text` | `#007a7a` | `#50cfcf` | Constitutional Committee: small text |
-| `--site-role-pool` | `#5b4df0` | `#9286ff` | Stake pools and their operators |
-| `--site-role-funding` | `#10a17a` | `#34d399` | Treasury-funded work: dots, fills, strokes |
-| `--site-role-funding-text` | `#0b7a5c` | `#34d399` | Treasury-funded work: small text |
+| `--site-role-committee` | `#0077cc` | `#089667` | Constitutional Committee: dots, fills, strokes |
+| `--site-role-committee-text` | `#0077cc` | `#089667` | Constitutional Committee: small text |
+| `--site-role-pool` | `#d6336c` | `#ff8fb8` | Stake pools and their operators |
+| `--site-role-funding` | `#a16207` | `#f0c040` | Treasury-funded work: dots, fills, strokes |
+| `--site-role-funding-text` | `#a16207` | `#f0c040` | Treasury-funded work: small text |
+
+### Governance votes
+
+Vote outcomes on the governance explainer. Yes and No differ in lightness as well as hue so they remain distinguishable with red-green color blindness. Prefer these over `--site-success` and `--site-danger` when the colors represent votes.
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `--site-vote-yes` | `#075e35` | `#8ff0b8` | Yes votes and passing checks |
+| `--site-vote-no` | `#d1440c` | `#e5683d` | No votes and failing checks |
+| `--site-vote-abstain` | `#6b7280` | `#9aa1ad` | Abstain |
 
 ## Spacing
 

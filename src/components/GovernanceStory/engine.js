@@ -29,9 +29,9 @@ const PALETTE = [
   ["cct", "--site-role-committee-text"],
   ["fund", "--site-role-funding"],
   ["fundt", "--site-role-funding-text"],
-  ["yes", "--site-success"],
-  ["no", "--site-danger"],
-  ["abstain", "--ifm-color-emphasis-500"],
+  ["yes", "--site-vote-yes"],
+  ["no", "--site-vote-no"],
+  ["abstain", "--site-vote-abstain"],
   ["pmuted", "--ifm-color-emphasis-400"],
   ["ink", "--ifm-color-emphasis-900"],
   ["ink2", "--ifm-color-emphasis-800"],
@@ -204,6 +204,8 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   if (!ctx) return { destroy() {}, refresh() {} };
   const doc = document.documentElement;
   const numFmt = new Intl.NumberFormat(locale);
+  const decFmt = [1, 2].map((d) => new Intl.NumberFormat(locale, { minimumFractionDigits: d, maximumFractionDigits: d }));
+  const dec = (v, d) => decFmt[d - 1].format(v);
   const dayFmt = new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", timeZone: "UTC" });
   const dateFmt = new Intl.DateTimeFormat(locale, { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -882,12 +884,12 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     });
     const xA = x0 + Math.floor(starts[3] / R) * cell;
     const big = { f: "num", s: narrow ? 28 : 40, c: "ink" };
-    const bigText = fill(lab.billions, { amount: total.toFixed(2) });
+    const bigText = fill(lab.billions, { amount: dec(total, 2) });
     return {
       labels: [
         L(lab.delegatedForGovernance, x0, yT, { f: "mono", s: 11, c: "muted", ls: 1.6 }),
         L(bigText, x0, yBig, big),
-        L(fill(lab.perDot, { amount: ((total * 1000) / N).toFixed(1) }), x0 + textW(bigText, big) + 14, yBig - 3, {
+        L(fill(lab.perDot, { amount: dec((total * 1000) / N, 1) }), x0 + textW(bigText, big) + 14, yBig - 3, {
           f: "sans",
           s: 12,
           c: "muted",
@@ -1164,7 +1166,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     hideFrom(i);
     const narrow = W <= BP_NARROW || r.w < 560;
     const head = { f: "mono", s: 10.5, c: "ink", ls: 1.6, w: 600 };
-    const balance = fill(lab.treasuryBalance, { amount: (counts().treasury / 1e9).toFixed(2) });
+    const balance = fill(lab.treasuryBalance, { amount: dec(counts().treasury / 1e9, 2) });
     return {
       labels: [
         L(lab.epochRewards, band.x, band.y - 12, head),

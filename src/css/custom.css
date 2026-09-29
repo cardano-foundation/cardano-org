@@ -98,14 +98,22 @@
   --site-tier-ink: #1b2333;
 
   /* Governance roles. One accent per group that votes, used wherever the
-   * site tells the groups apart (charts, diagrams, legends). The -text
-   * variants meet 4.5:1 on light backgrounds for small type. */
+   * site tells the groups apart (charts, diagrams, legends). Hues and
+   * lightness are chosen so the four stay apart under protanopia,
+   * deuteranopia and tritanopia, and every value meets 4.5:1 on white, so
+   * the -text variants match the base color. */
   --site-role-drep: #0033ad;
-  --site-role-committee: #00a3a3;
-  --site-role-committee-text: #007a7a;
-  --site-role-pool: #5b4df0;
-  --site-role-funding: #10a17a;
-  --site-role-funding-text: #0b7a5c;
+  --site-role-committee: #0077cc;
+  --site-role-committee-text: #0077cc;
+  --site-role-pool: #d6336c;
+  --site-role-funding: #a16207;
+  --site-role-funding-text: #a16207;
+
+  /* Governance votes. Yes and No differ in lightness as well as hue, so
+   * they stay apart for red-green color blindness. Abstain is a neutral. */
+  --site-vote-yes: #075e35;
+  --site-vote-no: #d1440c;
+  --site-vote-abstain: #6b7280;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -144,13 +152,16 @@
      value here instead of inverting with the rest of the dark palette. */
   --site-tier-ink: #1b2333;
 
-  /* Governance roles, lifted for dark backgrounds */
+  /* Governance roles and votes, lifted for dark backgrounds */
   --site-role-drep: #8fb1ff;
-  --site-role-committee: #50cfcf;
-  --site-role-committee-text: #50cfcf;
-  --site-role-pool: #9286ff;
-  --site-role-funding: #34d399;
-  --site-role-funding-text: #34d399;
+  --site-role-committee: #089667;
+  --site-role-committee-text: #089667;
+  --site-role-pool: #ff8fb8;
+  --site-role-funding: #f0c040;
+  --site-role-funding-text: #f0c040;
+  --site-vote-yes: #8ff0b8;
+  --site-vote-no: #e5683d;
+  --site-vote-abstain: #9aa1ad;
 }
 
 .header-discord-link:before {

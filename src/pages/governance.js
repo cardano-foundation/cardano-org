@@ -134,6 +134,9 @@ function GovernanceRolesSection() {
         <Link to="/governance/accountability" className="button button--primary">
           {translate({id: 'governance.onboarding.accountabilityCta', message: 'See what the community expects of them'})}
         </Link>
+        <Link to="/governance/how-it-works" className="button button--secondary">
+          {translate({id: 'governance.onboarding.howItWorksCta', message: 'See how every vote is counted'})}
+        </Link>
       </p>
     </>
   );

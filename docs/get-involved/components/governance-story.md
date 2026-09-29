@@ -44,7 +44,7 @@ Each chapter is a `section` with a `data-scene` attribute naming the picture to 
 
 ## Styling
 
-Colors come from design tokens only, including the governance role tokens (`--site-role-*`) described in [Design tokens](/docs/get-involved/design-tokens). The canvas reads the same tokens at runtime and redraws when the theme changes. Breakpoints are 996px, 768px, and 480px.
+Colors come from design tokens only, including the governance role tokens (`--site-role-*`) and vote tokens (`--site-vote-*`) described in [Design tokens](/docs/get-involved/design-tokens). The canvas reads the same tokens at runtime and redraws when the theme changes. Breakpoints are 996px, 768px, and 480px.
 
 ## Accessibility
 

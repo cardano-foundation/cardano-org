@@ -36,9 +36,6 @@ export const SNAPSHOT = {
   },
 };
 
-// Thresholds per action type. Shares are of voting stake; the committee votes
-// one member, one vote. `spo: "sec"` means pools only vote when the change
-// touches a security-relevant parameter.
 // Live figures from useAccountabilityStats, checked against sane ranges, with
 // the snapshot as the fallback. Shared by the chapter text and the canvas so
 // both always show the same numbers.
@@ -52,6 +49,9 @@ export function storyCounts(live = {}) {
   };
 }
 
+// Thresholds per action type. Shares are of voting stake; the committee votes
+// one member, one vote. `spo: "sec"` means pools only vote when the change
+// touches a security-relevant parameter.
 export const ACTION_RULES = {
   hardfork: { drep: 0.6, spo: 0.51, cc: true },
   treasury: { drep: 0.67, spo: null, cc: true },

@@ -8054,6 +8054,9 @@
   "governance.onboarding.accountabilityCta": {
     "message": "See what the community expects of them"
   },
+  "governance.onboarding.howItWorksCta": {
+    "message": "See how every vote is counted"
+  },
   "governance.divider.impact": {
     "message": "What governance has achieved"
   },

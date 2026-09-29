@@ -843,20 +843,20 @@
 }
 
 .stackYes {
-  background: var(--site-success);
+  background: var(--site-vote-yes);
 }
 
 .stackNo {
-  background: var(--site-danger);
+  background: var(--site-vote-no);
 }
 
 .stackSilent,
 .silent i {
-  background: repeating-linear-gradient(135deg, var(--site-danger) 0 2px, transparent 2px 5px);
+  background: repeating-linear-gradient(135deg, var(--site-vote-no) 0 2px, transparent 2px 5px);
 }
 
 .stackAbstain {
-  background: var(--ifm-color-emphasis-500);
+  background: var(--site-vote-abstain);
 }
 
 .sliders {
@@ -915,7 +915,7 @@
 .silent i {
   width: 12px;
   height: 8px;
-  border: 1px solid var(--site-danger);
+  border: 1px solid var(--site-vote-no);
   border-radius: var(--site-radius-sm);
 }
 
@@ -992,11 +992,11 @@
 }
 
 .pillOk {
-  color: var(--site-success);
+  color: var(--site-vote-yes);
 }
 
 .pillBad {
-  color: var(--site-danger);
+  color: var(--site-vote-no);
 }
 
 .seats {
@@ -1020,21 +1020,21 @@
 }
 
 .seatY {
-  border-color: var(--site-success);
-  background: var(--site-success);
-  color: var(--ifm-color-white);
+  border-color: var(--site-vote-yes);
+  background: var(--site-vote-yes);
+  color: var(--ifm-background-color);
 }
 
 .seatN {
-  border-color: var(--site-danger);
-  background: var(--site-danger);
-  color: var(--ifm-color-white);
+  border-color: var(--site-vote-no);
+  background: var(--site-vote-no);
+  color: var(--ifm-background-color);
 }
 
 .seatA {
-  border-color: var(--ifm-color-emphasis-500);
-  background: var(--ifm-color-emphasis-500);
-  color: var(--ifm-color-white);
+  border-color: var(--site-vote-abstain);
+  background: var(--site-vote-abstain);
+  color: var(--ifm-background-color);
 }
 
 .seatD {
@@ -1070,19 +1070,19 @@
 }
 
 .verdictPass {
-  border-color: var(--site-success);
+  border-color: var(--site-vote-yes);
 }
 
 .verdictPass .verdictSig {
-  color: var(--site-success);
+  color: var(--site-vote-yes);
 }
 
 .verdictFail {
-  border-color: var(--site-danger);
+  border-color: var(--site-vote-no);
 }
 
 .verdictFail .verdictSig {
-  color: var(--site-danger);
+  color: var(--site-vote-no);
 }
 
 /* Guardrails */
@@ -1133,11 +1133,11 @@
 }
 
 .zoneBad {
-  background: color-mix(in srgb, var(--site-danger) 22%, transparent);
+  background: color-mix(in srgb, var(--site-vote-no) 22%, transparent);
 }
 
 .zoneOk {
-  background: color-mix(in srgb, var(--site-success) 30%, transparent);
+  background: color-mix(in srgb, var(--site-vote-yes) 30%, transparent);
 }
 
 .mark,
@@ -1215,11 +1215,11 @@
 }
 
 .conOk {
-  color: var(--site-success);
+  color: var(--site-vote-yes);
 }
 
 .conBad {
-  color: var(--site-danger);
+  color: var(--site-vote-no);
 }
 
 .conHi {

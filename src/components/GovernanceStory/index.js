@@ -146,9 +146,10 @@ export default function GovernanceStory() {
   const ownRef = useRef(own);
 
   const num = useMemo(() => new Intl.NumberFormat(locale), [locale]);
+  const num2 = useMemo(() => new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }), [locale]);
   const counts = storyCounts(live);
   const drepCount = counts.dreps;
-  const treasuryB = (counts.treasury / 1e9).toFixed(2);
+  const treasuryB = num2.format(counts.treasury / 1e9);
 
   useEffect(() => {
     ownRef.current = own;

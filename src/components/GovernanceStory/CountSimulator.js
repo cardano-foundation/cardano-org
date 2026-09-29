@@ -43,9 +43,9 @@ function StakeGroup({ id, title, colorVar, need, shares, onShare, pct }) {
   const approval = counted > 0.0001 ? shares.y / counted : 0;
   const ok = counted > 0.0001 && approval >= need - 1e-9;
   const sliders = [
-    ["y", translate({ id: "governance.howItWorks.sim.yes", message: "Yes" }), "var(--site-success)"],
-    ["n", translate({ id: "governance.howItWorks.sim.no", message: "No" }), "var(--site-danger)"],
-    ["a", translate({ id: "governance.howItWorks.sim.abstain", message: "Abstain" }), "var(--ifm-color-emphasis-500)"],
+    ["y", translate({ id: "governance.howItWorks.sim.yes", message: "Yes" }), "var(--site-vote-yes)"],
+    ["n", translate({ id: "governance.howItWorks.sim.no", message: "No" }), "var(--site-vote-no)"],
+    ["a", translate({ id: "governance.howItWorks.sim.abstain", message: "Abstain" }), "var(--site-vote-abstain)"],
   ];
   return (
     <article className={styles.house} style={{ "--gs-house": colorVar }}>
@@ -159,7 +159,7 @@ export default function CountSimulator() {
     if (!(c > 0.0001 && a >= spoNeed - 1e-9)) fails.push({ name: "spo", val: a, need: spoNeed });
   }
   const ccYes = st.cc.filter((v) => v === "Y").length;
-  const ccDen = 7 - st.cc.filter((v) => v === "A").length;
+  const ccDen = st.cc.length - st.cc.filter((v) => v === "A").length;
   const ccRatio = ccDen > 0 ? ccYes / ccDen : 0;
   const ccOk = ccDen > 0 && ccRatio >= 2 / 3 - 1e-9;
   if (rule.cc && !ccOk) fails.push({ name: "cc" });

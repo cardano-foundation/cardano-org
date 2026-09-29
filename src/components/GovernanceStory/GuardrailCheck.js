@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 // Treasury cut guardrails TC-01 and TC-02 from the constitution's appendix.
@@ -7,6 +8,11 @@ const TODAY = 20;
 const PER_EPOCH_TODAY = 3.66; // million ada reaching the treasury per epoch at 20%
 
 export default function GuardrailCheck() {
+  const { i18n } = useDocusaurusContext();
+  const oneDecimal = useMemo(
+    () => new Intl.NumberFormat(i18n.currentLocale, { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
+    [i18n.currentLocale]
+  );
   const [v, setV] = useState(TODAY);
   const ok1 = v >= 10;
   const ok2 = v <= 30;
@@ -58,7 +64,7 @@ export default function GuardrailCheck() {
             id: "governance.howItWorks.rail.estimate",
             message: "Estimate: about {amount} million ada per epoch to the treasury, against about 3.7 million today.",
           },
-          { amount: ((PER_EPOCH_TODAY * v) / TODAY).toFixed(1) }
+          { amount: oneDecimal.format((PER_EPOCH_TODAY * v) / TODAY) }
         )}
       </span>
     );
