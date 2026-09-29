@@ -10390,5 +10390,11 @@
   },
   "governance.treasury.donations.cta": {
     "message": "Donate ada"
+  },
+  "governance.treasury.overview.feeShare.title": {
+    "message": "Share of each epoch's treasury income that came from fees"
+  },
+  "governance.treasury.overview.feeShare.aria": {
+    "message": "Fee share of the treasury's income per epoch, in percent"
   }
 }

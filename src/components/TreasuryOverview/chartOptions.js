@@ -1,9 +1,15 @@
 import { epochStartMs, EPOCHS_PER_YEAR } from "@site/src/utils/insights/treasuryMath.mjs";
 
-const RESERVE_COLOR = "#9a60b4";
-const FEE_COLOR = "#91cc75";
-const SHARE_COLOR = "#fac858";
-const HISTORY_COLOR = "#5470c6";
+// Slots 1 and 2 of the validated categorical palette (blue, orange), stepped
+// per mode. Reserves are blue in every chart, fees orange.
+const COLORS = {
+  light: { reserves: "#2a78d6", fees: "#eb6834", grid: "#e5e5e3" },
+  dark: { reserves: "#3987e5", fees: "#d95926", grid: "#3a3a38" },
+};
+
+function palette(isDark) {
+  return isDark ? COLORS.dark : COLORS.light;
+}
 
 function axisColor(isDark) {
   return isDark ? "#fff" : "#000";
@@ -26,37 +32,63 @@ function legend(color) {
   return { type: "scroll", top: 0, textStyle: { color }, pageTextStyle: { color } };
 }
 
-// Stacked bars for the two sources plus the fee share as a line on its own axis.
+// Stacked bars for the two sources, one axis in ada.
 export function incomeOption({ income, isDark, labels }) {
   const c = axisColor(isDark);
+  const colors = palette(isDark);
   return {
     tooltip: {
       trigger: "axis",
       formatter: (params) => {
         const epoch = params[0]?.axisValue;
-        const lines = params.map((p) =>
-          `${p.marker}${p.seriesName}: ${p.seriesIndex === 2 ? `${p.value.toFixed(3)}%` : fmtAda(p.value)}`
-        );
+        const lines = params.map((p) => `${p.marker}${p.seriesName}: ${fmtAda(p.value)}`);
         return [`${labels.epoch} ${epoch}`, ...lines].join("<br/>");
       },
     },
     legend: legend(c),
-    grid: { left: "3%", right: "6%", bottom: "3%", top: GRID_TOP, containLabel: true },
+    grid: { left: "3%", right: "4%", bottom: "3%", top: GRID_TOP, containLabel: true },
     xAxis: { type: "category", data: income.map((e) => e.epoch), axisLabel: { color: c } },
-    yAxis: [
-      { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => v.toLocaleString() } },
-      { type: "value", name: "%", position: "right", nameTextStyle: { color: SHARE_COLOR }, axisLabel: { color: SHARE_COLOR, formatter: (v) => `${v.toFixed(2)}%` }, splitLine: { show: false } },
-    ],
+    yAxis: {
+      type: "value",
+      name: "ada",
+      nameTextStyle: { color: c },
+      axisLabel: { color: c, formatter: (v) => v.toLocaleString() },
+      splitLine: { lineStyle: { color: colors.grid } },
+    },
     series: [
-      { name: labels.reserves, type: "bar", stack: "income", data: income.map((e) => e.reserveShare), itemStyle: { color: RESERVE_COLOR } },
-      { name: labels.fees, type: "bar", stack: "income", data: income.map((e) => e.feeShare), itemStyle: { color: FEE_COLOR } },
+      { name: labels.reserves, type: "bar", stack: "income", data: income.map((e) => e.reserveShare), itemStyle: { color: colors.reserves } },
+      { name: labels.fees, type: "bar", stack: "income", data: income.map((e) => e.feeShare), itemStyle: { color: colors.fees } },
+    ],
+  };
+}
+
+// Fee share of each epoch's treasury income in percent, its own chart so it
+// never shares an axis with the ada bars.
+export function feeShareOption({ income, isDark, labels }) {
+  const c = axisColor(isDark);
+  const colors = palette(isDark);
+  return {
+    tooltip: {
+      trigger: "axis",
+      formatter: (params) => `${labels.epoch} ${params[0]?.axisValue}<br/>${params[0].marker}${labels.feeShare}: ${params[0].value.toFixed(3)}%`,
+    },
+    grid: { left: "3%", right: "4%", bottom: "3%", top: 32, containLabel: true },
+    xAxis: { type: "category", data: income.map((e) => e.epoch), axisLabel: { color: c } },
+    yAxis: {
+      type: "value",
+      name: "%",
+      nameTextStyle: { color: c },
+      axisLabel: { color: c, formatter: (v) => `${v.toFixed(2)}%` },
+      splitLine: { lineStyle: { color: colors.grid } },
+    },
+    series: [
       {
         name: labels.feeShare,
         type: "line",
-        yAxisIndex: 1,
         showSymbol: false,
+        lineStyle: { width: 2 },
         data: income.map((e) => (e.feeShare / (e.feeShare + e.reserveShare)) * 100),
-        itemStyle: { color: SHARE_COLOR },
+        itemStyle: { color: colors.fees },
       },
     ],
   };
@@ -66,6 +98,7 @@ export function incomeOption({ income, isDark, labels }) {
 // labelled with calendar years.
 export function outlookOption({ points, projection, isDark, labels }) {
   const c = axisColor(isDark);
+  const colors = palette(isDark);
   return {
     tooltip: {
       trigger: "axis",
@@ -86,16 +119,22 @@ export function outlookOption({ points, projection, isDark, labels }) {
       interval: EPOCHS_PER_TICK,
       axisLabel: { color: c, formatter: (v) => String(yearOf(v)), showMaxLabel: false, hideOverlap: true },
     },
-    yAxis: { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => `${(v / 1e9).toFixed(1)}B` } },
+    yAxis: {
+      type: "value",
+      name: "ada",
+      nameTextStyle: { color: c },
+      axisLabel: { color: c, formatter: (v) => `${(v / 1e9).toFixed(1)}B` },
+      splitLine: { lineStyle: { color: colors.grid } },
+    },
     series: [
-      { name: labels.history, type: "line", showSymbol: false, data: points.map((p) => [p.epoch, p.reserves]), itemStyle: { color: HISTORY_COLOR } },
+      { name: labels.history, type: "line", showSymbol: false, data: points.map((p) => [p.epoch, p.reserves]), itemStyle: { color: colors.reserves } },
       {
         name: labels.projection,
         type: "line",
         showSymbol: false,
         data: projection.map((p) => [p.epoch, p.reserves]),
         lineStyle: { type: "dashed" },
-        itemStyle: { color: HISTORY_COLOR },
+        itemStyle: { color: colors.reserves },
       },
     ],
   };

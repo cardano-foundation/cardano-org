@@ -20,7 +20,7 @@ import {
 } from "@site/src/utils/insights/treasuryMath.mjs";
 import useTreasuryTotals from "./useTreasuryTotals";
 import TreasuryChart from "./TreasuryChart";
-import { incomeOption, outlookOption } from "./chartOptions";
+import { incomeOption, feeShareOption, outlookOption } from "./chartOptions";
 import styles from "./styles.module.css";
 
 // Two years of epochs for the default income chart range.
@@ -53,8 +53,8 @@ function TextFigure({ loading, value, label }) {
   );
 }
 
-function Skeleton() {
-  return <div className={styles.skeleton} aria-busy="true" />;
+function Skeleton({ height = 380 }) {
+  return <div className={styles.skeleton} style={{ height }} aria-busy="true" />;
 }
 
 export default function TreasuryOverview() {
@@ -89,19 +89,35 @@ export default function TreasuryOverview() {
 
   // Rebuilt only when data, range or theme change, so re-renders do not
   // redraw the charts.
+  const incomeShown = useMemo(() => {
+    if (!model) return [];
+    return showAll ? model.income : inEpochWindow(model.income, model.latest.epoch, CHART_RANGE);
+  }, [model, showAll]);
+
   const incomeChart = useMemo(() => {
     if (!model) return null;
     return incomeOption({
-      income: showAll ? model.income : inEpochWindow(model.income, model.latest.epoch, CHART_RANGE),
+      income: incomeShown,
       isDark,
       labels: {
         epoch: translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" }),
         reserves: translate({ id: "governance.treasury.overview.income.series.reserves", message: "From reserves" }),
         fees: translate({ id: "governance.treasury.overview.income.series.fees", message: "From fees" }),
+      },
+    });
+  }, [model, incomeShown, isDark]);
+
+  const feeShareChart = useMemo(() => {
+    if (!model) return null;
+    return feeShareOption({
+      income: incomeShown,
+      isDark,
+      labels: {
+        epoch: translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" }),
         feeShare: translate({ id: "governance.treasury.overview.income.series.feeShare", message: "Fee share (%)" }),
       },
     });
-  }, [model, showAll, isDark]);
+  }, [model, incomeShown, isDark]);
 
   const outlookChart = useMemo(() => {
     if (!model) return null;
@@ -203,6 +219,18 @@ export default function TreasuryOverview() {
               { ratio: Math.round(model.ratio).toLocaleString() }
             )}
         </p>
+        <h3 className={styles.subTitle}>
+          {translate({ id: "governance.treasury.overview.feeShare.title", message: "Share of each epoch's treasury income that came from fees" })}
+        </h3>
+        {model ? (
+          <TreasuryChart
+            height={240}
+            ariaLabel={translate({ id: "governance.treasury.overview.feeShare.aria", message: "Fee share of the treasury's income per epoch, in percent" })}
+            option={feeShareChart}
+          />
+        ) : (
+          <Skeleton height={240} />
+        )}
         <p className={styles.note}>
           {translate({
             id: "governance.treasury.overview.income.method",
