@@ -1,6 +1,24 @@
 {
-  "lastUpdated": "2026-09-29T21:45:36.292Z",
+  "lastUpdated": "2026-09-29T22:06:51.586Z",
   "languages": [
+    {
+      "id": "es",
+      "name": "Spanish",
+      "translationProgress": 99,
+      "approvalProgress": 99,
+      "words": {
+        "total": 45524,
+        "translated": 45506,
+        "preTranslateAppliedTo": 2784,
+        "approved": 45506
+      },
+      "phrases": {
+        "total": 3972,
+        "translated": 3969,
+        "preTranslateAppliedTo": 248,
+        "approved": 3969
+      }
+    },
     {
       "id": "de",
       "name": "German",
@@ -17,24 +35,6 @@
         "translated": 3915,
         "preTranslateAppliedTo": 159,
         "approved": 3914
-      }
-    },
-    {
-      "id": "es",
-      "name": "Spanish",
-      "translationProgress": 97,
-      "approvalProgress": 34,
-      "words": {
-        "total": 45524,
-        "translated": 44521,
-        "preTranslateAppliedTo": 2784,
-        "approved": 15859
-      },
-      "phrases": {
-        "total": 3972,
-        "translated": 3920,
-        "preTranslateAppliedTo": 248,
-        "approved": 1430
       }
     },
     {
