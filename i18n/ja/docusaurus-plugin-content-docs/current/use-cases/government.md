@@ -33,8 +33,8 @@ sidebar_position: 5
 - **スケーラビリティ**: 国家規模の文書検証に対応可能
 - **相互運用性**: 既存の行政システムとの連携が可能
 
-## はじめる
+## はじめよう
 
 - [Cardano上のIDアプリケーションを探す](/apps/?tags=identity)
-- [開発者向けリソース](https://developers.cardano.org)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
 - [エンタープライズソリューションを見る](/solutions)

@@ -44,11 +44,11 @@
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Blog Post Seiten Navigation",
+    "message": "Navigation der Blogbeitragsseite",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Neuer Post",
+    "message": "Neuerer Post",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
@@ -76,7 +76,7 @@
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Brotkrümel",
+    "message": "Pfadnavigation",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -84,7 +84,7 @@
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Dokumentation Seiten",
+    "message": "Dokumentationsseiten",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
@@ -96,7 +96,7 @@
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Ein doc getaggt|{count} docs getaggt",
+    "message": "Ein Dokument getaggt|{count} Dokumente getaggt",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -111,7 +111,7 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Das ist die Dokumentation für {siteTitle} {versionLabel} und wird nicht weiter gewartet.",
+    "message": "Das ist die Dokumentation für {siteTitle} {versionLabel}, die nicht mehr aktiv gepflegt wird.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
@@ -119,7 +119,7 @@
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "letzte Version",
+    "message": "neueste Version",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
@@ -127,7 +127,7 @@
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Direkter Link zur {heading}",
+    "message": "Direkter Link zu {heading}",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
@@ -155,11 +155,11 @@
     "description": "The label alongside a tag list"
   },
   "theme.admonition.caution": {
-    "message": "vorsicht",
+    "message": "Vorsicht",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.admonition.danger": {
-    "message": "gefahr",
+    "message": "Gefahr",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
@@ -167,15 +167,15 @@
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
-    "message": "hinweis",
+    "message": "Hinweis",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "tipp",
+    "message": "Tipp",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
-    "message": "warnung",
+    "message": "Warnung",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
@@ -223,7 +223,7 @@
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Mehr lesen über {title}",
+    "message": "Mehr über {title} lesen",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -306,7 +306,7 @@
     "description": "The paragraph for empty search result"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "Neue Ergebnisse abrufen...",
+    "message": "Neue Ergebnisse werden geladen...",
     "description": "The paragraph for fetching new search results"
   },
   "theme.SearchBar.label": {
@@ -334,11 +334,11 @@
     "description": "The placeholder text for search box when AI is streaming an answer"
   },
   "theme.SearchModal.searchBox.enterKeyHint": {
-    "message": "suchen",
+    "message": "search",
     "description": "The hint for the search box enter key text"
   },
   "theme.SearchModal.searchBox.enterKeyHintAskAi": {
-    "message": "eingeben",
+    "message": "enter",
     "description": "The hint for the Ask AI search box enter key text"
   },
   "theme.SearchModal.searchBox.searchInputLabel": {
@@ -430,7 +430,7 @@
     "description": "The title for dislike button"
   },
   "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
-    "message": "Danke für Ihr Feedback!",
+    "message": "Danke für dein Feedback!",
     "description": "The text for thanks for feedback"
   },
   "theme.SearchModal.askAiScreen.preToolCallText": {
@@ -446,7 +446,7 @@
     "description": "The text after tool call"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "to select",
+    "message": "Auswählen",
     "description": "The select text for footer"
   },
   "theme.SearchModal.footer.submitQuestionText": {
@@ -458,7 +458,7 @@
     "description": "The ARIA label for select key in footer"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "to navigate",
+    "message": "Navigieren",
     "description": "The navigate text for footer"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
@@ -470,7 +470,7 @@
     "description": "The ARIA label for navigate down key in footer"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "to close",
+    "message": "Schließen",
     "description": "The close text for footer"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
@@ -486,7 +486,7 @@
     "description": "The back to search text for footer"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "No results for",
+    "message": "Keine Ergebnisse für",
     "description": "The text when there are no results"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
@@ -522,7 +522,7 @@
     "description": "When the image is not found"
   },
   "theme.IdealImageMessage.error": {
-    "message": "Fehler. Zum neu laden klicken",
+    "message": "Fehler. Zum Neuladen klicken",
     "description": "When the image fails to load for unknown error"
   },
   "theme.blog.post.plurals": {
@@ -542,7 +542,7 @@
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View All Authors",
+    "message": "Alle Autoren anzeigen",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
@@ -562,7 +562,7 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "Diese Seite ist ein Entwurf. Sie wird nur im Entwicklungsmodus sichtbar und wird von der Produktionsseite ausgeschlossen.",
+    "message": "Diese Seite ist ein Entwurf. Sie ist nur im Entwicklungsmodus sichtbar und nicht im Produktions-Build enthalten.",
     "description": "The draft content banner message"
   },
   "theme.ErrorPageContent.tryAgain": {
@@ -1011,7 +1011,7 @@
     "message": "Es gibt viele Wege, Ada zu bekommen und Cardano zu nutzen."
   },
   "whereToGetAda.meta.title": {
-    "message": "Ada kaufen, wo du Cardanos nativen Token bekommst"
+    "message": "Ada kaufen: So bekommst du Cardanos nativen Token"
   },
   "whereToGetAda.meta.description": {
     "message": "Kaufe Ada an zentralen oder dezentralen Börsen, verdiene Staking-Belohnungen oder lass sie dir direkt schicken. Finde den besten Weg, an Cardanos nativen Token zu kommen."
@@ -1125,7 +1125,7 @@
     "message": "Denk daran: Einmal gesendete Ada sind für immer weg."
   },
   "commonScams.giveaway.tip4": {
-    "message": "Lies Berichte und Betrugsmeldungen anderer Nutzer im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
+    "message": "Lies Berichte und Betrugsmeldungen anderer Nutzer im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184)."
   },
   "commonScams.divider.phishing": {
     "message": "Phishing"
@@ -1221,7 +1221,7 @@
     "message": "Kaufe Utility-Token nur, wenn du die Utility auch tatsächlich nutzen willst."
   },
   "commonScams.rug.tip5": {
-    "message": "Informiere dich im [Cardano Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
+    "message": "Informiere dich im [Cardano-Forum](https://forum.cardano.org/c/english/report-a-scam/184), was andere über Projekte denken."
   },
   "home.meta.title": {
     "message": "Cardano, sichere dezentrale Blockchain-Plattform"
@@ -1248,7 +1248,7 @@
     "message": "Cardano ist eine Proof-of-Stake-Blockchain-Plattform: die erste, die auf [wissenschaftlich begutachteter Forschung](/research) basiert und mit evidenzbasierten Methoden entwickelt wurde. Sie kombiniert wegweisende Technologien, um dezentralen Anwendungen, Systemen und Gesellschaften beispiellose Sicherheit und Nachhaltigkeit zu bieten."
   },
   "home.featured.description2": {
-    "message": "Getragen von einem erstklassigen Ingenieurteam gibt Cardano Macht aus undurchsichtigen Strukturen zurück an die Menschen – und ist damit eine treibende Kraft für positiven Wandel und Fortschritt."
+    "message": "Mit einem erstklassigen Ingenieurteam verlagert Cardano Macht von Strukturen, die niemandem Rechenschaft schulden, zu den einzelnen Menschen. So wird Cardano zur treibenden Kraft für positiven Wandel und Fortschritt."
   },
   "home.featured.quote1": {
     "message": "Eine Geschichte des Unmöglichen,"
@@ -1263,7 +1263,7 @@
     "message": "Vorteile"
   },
   "home.quoteBox.description": {
-    "message": "Cardano stellt das Vertrauen in globale Systeme wieder her – und schafft durch Wissenschaft eine sicherere, transparentere und nachhaltigere Grundlage, damit Menschen handeln, Systeme gesteuert und Unternehmen wachsen können."
+    "message": "Cardano stellt das Vertrauen in globale Systeme wieder her. Mit wissenschaftlichen Methoden schafft es eine sicherere, transparentere und nachhaltigere Grundlage, auf der Menschen handeln, Systeme sich selbst verwalten und Unternehmen wachsen können."
   },
   "home.quoteBox.quote": {
     "message": "Cardano setzt einen neuen Technologiestandard – offen und inklusiv –, um Bestehendes herauszufordern und ein neues Zeitalter nachhaltiger, weltweit verteilter Innovation einzuläuten."
@@ -1278,7 +1278,7 @@
     "message": "Proof-of-Stake und Ouroboros: Das umweltfreundlichste Blockchain-Protokoll"
   },
   "home.benefits.ouroboros.body": {
-    "message": "Ouroboros ist das erste wissenschaftlich geprüfte und nachweislich sichere Blockchain-Protokoll – und Cardano die erste Blockchain, die es einsetzt. Ouroboros ermöglicht Dezentralisierung im Cardano-Netzwerk in einem Maßstab, der globalen Anforderungen standhält, und das ohne Kompromisse bei der Sicherheit.<br /><br />Das Protokoll ist das Ergebnis intensiver Forschungsarbeit, angetrieben von der Vision sicherer und transparenter Zahlungssysteme weltweit – und bietet die Grundlage, Macht und Kontrolle gerechter zu verteilen."
+    "message": "Ouroboros ist das erste wissenschaftlich begutachtete und nachweislich sichere Blockchain-Protokoll, und Cardano ist die erste Blockchain, die es einsetzt. Ouroboros ermöglicht Dezentralisierung im Cardano-Netzwerk in einem Maßstab, der globalen Anforderungen standhält, und das ohne Kompromisse bei der Sicherheit.<br /><br />Das Protokoll ist das Ergebnis intensiver Forschungsarbeit, angetrieben von der Vision sicherer und transparenter Zahlungssysteme weltweit. Es bietet die Grundlage, Macht und Kontrolle gerechter zu verteilen."
   },
   "home.benefits.ouroboros.cta": {
     "message": "Mehr über Ouroboros erfahren"
@@ -1311,7 +1311,7 @@
     "message": "Cardano ermöglicht es Parteien, die sich nicht kennen und keinen Grund haben, einander zu vertrauen, sicher miteinander zu interagieren und Transaktionen abzuwickeln. Eine Plattform, die Vertrauen schafft, wo keines existiert – und so völlig neue Märkte und Möglichkeiten eröffnet. Dank Ouroboros ist Cardano nachweislich geschützt gegen böswillige Akteure und Sybil-Angriffe. Jede Transaktion, jede Interaktion wird unveränderlich und transparent festgehalten und sicher validiert – mit Mehrfachsignaturen und einem wegweisenden erweiterten UTXO-Modell."
   },
   "home.benefits.secure.cta": {
-    "message": "Die Roadmap besuchen"
+    "message": "Zur Roadmap"
   },
   "home.benefits.participation.label": {
     "message": "Anreizbasierte Beteiligung"
@@ -1344,7 +1344,7 @@
     "message": "Mehr über Hydra erfahren"
   },
   "home.vision.title1": {
-    "message": "Definiere dein Mögliches."
+    "message": "Entdecke, was für dich möglich ist."
   },
   "home.vision.title2": {
     "message": "Verändere deine Welt."
@@ -1398,12 +1398,16 @@
     "message": "Stimme delegieren",
     "description": "Mega menu item label"
   },
+  "navbar.mega.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Mega menu item label"
+  },
   "navbar.mega.label.Cardano Research": {
-    "message": "Cardano Forschung",
+    "message": "Cardano-Forschung",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Insights": {
-    "message": "Cardano Einblicke",
+    "message": "Cardano-Einblicke",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.News": {
@@ -1490,11 +1494,15 @@
     "message": "Delegate to a stake pool and earn rewards"
   },
   "navbar.mega.description.Delegate your vote": {
-    "message": "Übertrage deine Stimmkraft an eine DRep",
+    "message": "Übertrage deine Stimmkraft an einen DRep",
+    "description": "Mega menu item description"
+  },
+  "navbar.mega.description.Cardano Fees & Transactions": {
+    "message": "How fees are calculated and why they are predictable",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Research": {
-    "message": "Peer-reviewte Forschung und Publikationen",
+    "message": "Wissenschaftlich begutachtete Forschung und Publikationen",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Insights": {
@@ -1558,7 +1566,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Contact the Foundation": {
-    "message": "Kontakt zur Cardano Foundation",
+    "message": "Partner der Cardano Foundation werden",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.All Use Cases": {
@@ -1649,7 +1657,7 @@
     "message": "Finanzen"
   },
   "useCases.card.defi.summary": {
-    "message": "Dezentrales Leihen und Handeln"
+    "message": "Dezentrale Kredite und Börsen"
   },
   "useCases.card.payments.title": {
     "message": "Zahlungen"
@@ -1727,13 +1735,13 @@
     "message": "Botschafter"
   },
   "ambassadors.layout.title": {
-    "message": "Cardano Ambassador Program, werde Teil der Community"
+    "message": "Cardano-Ambassador-Programm, werde Teil der Community"
   },
   "ambassadors.layout.description": {
     "message": "Das Cardano-Ambassador-Programm zeichnet Community-Mitglieder aus, die durch Aufklärung, Engagement und Öffentlichkeitsarbeit die Verbreitung von Cardano vorantreiben."
   },
   "brandAssets.hero.title": {
-    "message": "Asset-Sammlung"
+    "message": "Markenmaterialien"
   },
   "brandAssets.hero.description": {
     "message": "Unsere Marke spiegelt alles wider, was wir schaffen. Hier sind einige der Elemente, die unsere Marke ausmachen, und wie du sie verwenden kannst."
@@ -1790,7 +1798,7 @@
     "message": "Impulsive Reaktionen"
   },
   "codeOfConduct.beAgreeable.list5": {
-    "message": "Feststelltaste. Wir betrachten das als elektronisches Anschreien"
+    "message": "Durchgehende Großschreibung. Das gilt bei uns als Schreien im Netz"
   },
   "codeOfConduct.beAgreeable.description2": {
     "message": "Bringe stattdessen sachliche Gegenargumente, die die Diskussion bereichern. Denke auch an die oben genannte Regel, Mehrwert und sinnvolle Diskussionen einzubringen. Die Cardano-Community-Kanäle sollten nicht für persönliche Streitigkeiten zwischen Community-Mitgliedern genutzt werden."
@@ -1808,7 +1816,7 @@
     "message": "Moderatoren haben besondere Befugnisse in der Community – sie sorgen dafür, dass sich alle an diesen Verhaltenskodex halten. Aber das gilt auch für dich. Mit deiner Hilfe können Moderatoren als Community-Vermittler wirken. Wenn du schlechtes Verhalten siehst, antworte nicht darauf. Das ermutigt nur zum Fehlverhalten, verbraucht deine Energie und verschwendet die Zeit aller. Melde es einfach! Hier sind spezifische Anweisungen zum Melden von Verstößen in den einzelnen Kanälen."
   },
   "codeOfConduct.reportProblem.list1": {
-    "message": "[Cardano Forum](https://forum.cardano.org): Wenn du einen Beitrag siehst, der gegen den Cardano-Community-Verhaltenskodex verstößt, klicke auf die Optionsschaltfläche und markiere ihn als unangemessen oder hinterlasse eine detailliertere Nachricht für die Moderatoren."
+    "message": "[Cardano-Forum](https://forum.cardano.org): Wenn du einen Beitrag siehst, der gegen den Cardano-Community-Verhaltenskodex verstößt, klicke auf die Optionsschaltfläche und markiere ihn als unangemessen oder hinterlasse eine detailliertere Nachricht für die Moderatoren."
   },
   "codeOfConduct.reportProblem.list2": {
     "message": "[Reddit](https://www.reddit.com/r/cardano): Du kannst jeden Beitrag auf Reddit melden, indem du auf den 'Report'-Button unter dem Beitrag klickst. Du musst angeben, gegen welche Regeln oder Gesetze der Beitrag verstößt. Reddit-Moderatoren prüfen dann deine Meldung."
@@ -1838,7 +1846,7 @@
     "message": "Sei höflich. Poste nichts, was ein vernünftiger Mensch als beleidigend, missbräuchlich oder als Hassrede betrachten würde."
   },
   "codeOfConduct.beCivil.list2": {
-    "message": "Halte es sauber. Poste nichts Obszönes oder sexuell Explizites."
+    "message": "Bleib anständig. Poste nichts Obszönes oder sexuell Explizites."
   },
   "codeOfConduct.beCivil.list3": {
     "message": "Respektiere einander. Belästige oder mobbe niemanden, gib dich nicht als andere Person aus und veröffentliche keine privaten Informationen anderer."
@@ -1847,7 +1855,7 @@
     "message": "Respektiere unsere Community. Poste keinen Spam und vandaliere das Forum nicht."
   },
   "codeOfConduct.beCivil.list5": {
-    "message": "Wir nehmen Belästigung ernst. Belästigung umfasst beleidigende Kommentare zu Geschlecht, Alter, sexueller Orientierung, Behinderung, Aussehen, Körperbau, Ethnizität oder Religion, aber auch vorsätzliche Einschüchterung, Stalking, Verfolgen und nachhaltige Störung von Gesprächen. Belästigung von Mitgliedern, Admins oder Moderatoren wird nicht toleriert."
+    "message": "Wir nehmen Belästigung ernst. Belästigung umfasst beleidigende Kommentare zu Geschlecht, Alter, sexueller Orientierung, Behinderung, Aussehen, Körperbau, Ethnizität oder Religion, aber auch vorsätzliche Einschüchterung, Stalking, Verfolgen und anhaltendes Stören von Gesprächen. Belästigung von Mitgliedern, Admins oder Moderatoren wird nicht toleriert."
   },
   "codeOfConduct.beCivil.list6": {
     "message": "Veröffentliche keine persönlichen Informationen anderer Community-Mitglieder – einschließlich, aber nicht beschränkt auf Name, Adresse, Telefonnummer oder Social-Media-Konten."
@@ -1856,7 +1864,7 @@
     "message": "Veröffentliche keine entfernten oder gelöschten Informationen erneut."
   },
   "codeOfConduct.beCivil.description2": {
-    "message": "Das sind keine festen Begriffe mit exakten Definitionen – vermeide auch den Anschein eines solchen Verhaltens. Wenn du dir unsicher bist, frage dich, wie du dich fühlen würdest, wenn dein Beitrag auf der Titelseite einer internationalen Nachrichtenwebsite erscheinen würde. Das ist eine öffentliche Community, und Suchmaschinen indizieren diese Diskussionen. Halte Sprache, Links und Bilder familien- und freundschaftstauglich."
+    "message": "Das sind keine festen Begriffe mit exakten Definitionen. Vermeide schon den Anschein eines solchen Verhaltens. Wenn du dir unsicher bist, frage dich, wie du dich fühlen würdest, wenn dein Beitrag auf der Titelseite einer internationalen Nachrichtenwebsite erscheinen würde. Das ist eine öffentliche Community, und Suchmaschinen indizieren diese Diskussionen. Wähle Sprache, Links und Bilder so, dass du sie auch Familie und Freunden zeigen würdest."
   },
   "codeOfConduct.keepTidy.title": {
     "message": "Ordnung halten"
@@ -1972,7 +1980,7 @@
     "description": "Notice when a newer constitution version exists on-chain; {epoch} is replaced with the epoch number"
   },
   "contact.hero.title": {
-    "message": "Kontakte"
+    "message": "Kontakt"
   },
   "contact.hero.description": {
     "message": "Cardano wird von der Cardano Foundation, IOG, EMURGO, Intersect, PRAGMA und weiteren unterstützt. Fülle das Kontaktformular unten aus, und wir bringen dich mit dem Team zusammen, das dir am besten weiterhelfen kann."
@@ -2008,7 +2016,7 @@
     "message": "Contact the Cardano Foundation"
   },
   "contact.meta.title": {
-    "message": "Cardano kontaktieren, nimm Kontakt auf"
+    "message": "Cardano kontaktieren, so erreichst du uns"
   },
   "contact.meta.description": {
     "message": "Nimm Kontakt zum Cardano-Ökosystem auf. Erreiche die Cardano Foundation, Intersect, IOG oder EMURGO für Partnerschaften, Support oder Sponsoring-Anfragen."
@@ -2194,7 +2202,7 @@
     "message": "Die Verteilung der Ada-Token-Gutscheine, die Teil des Cardano-Settlement-Layers sind, fand in Asien in vier Phasen zwischen Oktober 2015 und Anfang Januar 2017 statt."
   },
   "genesis.layout.title": {
-    "message": "Cardano Genesis-Verteilung, erste Ada-Zuteilung"
+    "message": "Cardano-Genesis-Verteilung, erste Ada-Zuteilung"
   },
   "genesis.layout.description": {
     "message": "Die Verteilung der Ada-Token-Gutscheine, die Teil des Cardano-Settlement-Layers sind, fand in Asien in vier Phasen zwischen Oktober 2015 und Anfang Januar 2017 statt."
@@ -2206,7 +2214,7 @@
     "message": "Verteilung"
   },
   "genesis.distribution.paragraph1": {
-    "message": "Die anfängliche Verteilung von Ada, im Grunde ein Vorverkauf, war die erste in der Krypto-Branche mit Know-Your-Customer-Richtlinien; der Verteilungsprozess wurde zudem unabhängig geprüft. Informationen und Statistiken zur Gutschein-Verteilung findest du weiter unten im Abschnitt zu den Statistiken der Ada-Gutschein-Verteilung."
+    "message": "Die erste Verteilung von Ada, im Grunde ein Vorverkauf, setzte als erste in der Kryptobranche Know-Your-Customer-Richtlinien um. Der Verteilungsprozess wurde zudem geprüft. Informationen und Statistiken zur Gutschein-Verteilung findest du weiter unten im Abschnitt zu den Statistiken der Ada-Gutschein-Verteilung."
   },
   "genesis.distribution.paragraph2": {
     "message": "Zusätzlich zu diesen Ada umfasst die Genesis-Block-Verteilung einen Betrag in Höhe von 20 % der während der Verkaufsphase verkauften Ada-Gutscheine, also **5.185.414.108 Ada**. Diese wurden erzeugt und an drei Gruppen von Organisationen des Cardano-Ökosystems verteilt, die zum Technical and Business Development Pool gehören: IOHK, EMURGO und die Cardano Foundation, und zwar wie folgt:"
@@ -2254,7 +2262,7 @@
     "message": "Cardano Governance - Your ada, your voice"
   },
   "governance.meta.description": {
-    "message": "Cardano Governance gibt jedem Ada-Halter eine Stimme. Delegiere an einen DRep, stimme über Vorschläge ab oder registriere dich als Delegate Representative, um das Netzwerk mitzugestalten."
+    "message": "Cardano-Governance gibt jedem Ada-Halter eine Stimme. Delegiere an einen DRep, stimme über Vorschläge ab oder registriere dich als Delegate Representative, um das Netzwerk mitzugestalten."
   },
   "hardforks.timeline.byron.description": {
     "message": "Start des Cardano-Mainnets und Einführung der Kryptowährung Ada."
@@ -2278,7 +2286,7 @@
     "message": "Native-Token-Funktionalität für Cardano – Nutzer können eigene Token erstellen und damit handeln."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Smart-Contract-Fähigkeiten mit Plutus – und damit die Möglichkeit, dezentrale Anwendungen (dApps) zu erstellen."
+    "message": "Smart-Contract-Fähigkeiten mit Plutus und damit die Möglichkeit, dezentrale Anwendungen (DApps) zu erstellen."
   },
   "hardforks.timeline.vasil.description": {
     "message": "Verbesserung der Skalierbarkeit und Performance des Netzwerks – benannt nach Vasil Dabov, einem Mitglied der Cardano-Community."
@@ -2302,10 +2310,10 @@
     "message": "Welche Hard Forks gab es bisher – und welche Neuerungen haben sie gebracht?"
   },
   "hardforks.layout.title": {
-    "message": "Cardano Hard Forks, Verlauf der Netzwerk-Upgrades"
+    "message": "Cardano-Hard-Forks, Verlauf der Netzwerk-Upgrades"
   },
   "hardforks.layout.description": {
-    "message": "Die komplette Zeitleiste der Cardano Hard Forks von Byron bis van Rossem. Entdecke jedes Netzwerk-Upgrade: was sich geändert hat und wie sich das Protokoll weiterentwickelt hat."
+    "message": "Die komplette Zeitleiste der Cardano-Hard-Forks von Byron bis van Rossem. Entdecke jedes Netzwerk-Upgrade: was sich geändert hat und wie sich das Protokoll weiterentwickelt hat."
   },
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
@@ -2338,13 +2346,13 @@
     "message": "Bleib informiert"
   },
   "newsletter.hero.description": {
-    "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
+    "message": "Die neuesten Cardano-News und die heißesten Themen rund um das Cardano-Ökosystem."
   },
   "newsletter.layout.title": {
     "message": "Cardano Community Digest, wöchentliche News und Updates"
   },
   "newsletter.layout.description": {
-    "message": "Erhalte Zugang zu den neuesten Cardano-Neuigkeiten und den heißesten Themen rund um das Cardano-Ökosystem."
+    "message": "Die neuesten Cardano-News und die heißesten Themen rund um das Cardano-Ökosystem."
   },
   "newsletter.divider.text": {
     "message": "Bleib informiert"
@@ -2383,13 +2391,13 @@
     "message": "Ouroboros ist das erste beweisbar sichere Proof-of-Stake-Protokoll und das erste Blockchain-Protokoll, das auf wissenschaftlich begutachteter Forschung beruht. Ouroboros verbindet einzigartige Technologie mit mathematisch verifizierten Mechanismen, die wiederum Verhaltenspsychologie und Wirtschaftsphilosophie vereinen, um die Sicherheit und Nachhaltigkeit der davon abhängigen Blockchains zu gewährleisten. Das Ergebnis ist ein Protokoll mit bewiesenen Sicherheitsgarantien, das die Ausbreitung globaler, erlaubnisfreier Netzwerke mit minimalem Energiebedarf ermöglicht, und Cardano ist das erste davon."
   },
   "ouroboros.whatIs.description2": {
-    "message": "Im Herzen von Ouroboros steht der Gedanke der Unendlichkeit. Globale Netzwerke müssen nachhaltig und ethisch wachsen können: um der Welt mehr Chancen zu bieten und sie zugleich zu bewahren. Mit Ouroboros wird das möglich."
+    "message": "Im Zentrum von Ouroboros steht der Gedanke der Unendlichkeit. Globale Netzwerke müssen nachhaltig und ethisch wachsen können: um der Welt mehr Chancen zu bieten und sie zugleich zu bewahren. Mit Ouroboros wird das möglich."
   },
   "ouroboros.whatIs.description3": {
     "message": "Ouroboros ermöglicht die Entstehung und Entfaltung verteilter, erlaubnisfreier Netzwerke, die neue Märkte nachhaltig tragen können."
   },
   "ouroboros.whatIs.quote": {
-    "message": "Ouroboros gibt es, um die Parameter der neuen Welt zu bestimmen: ein Protokoll, das sicherer, skalierbarer und energieeffizienter ist als alles davor."
+    "message": "Ouroboros soll die Parameter der neuen Welt bestimmen: ein Protokoll, das sicherer, skalierbarer und energieeffizienter ist als alles davor."
   },
   "ouroboros.whatIs.buttonLabel": {
     "message": "Die Forschung entdecken"
@@ -2443,13 +2451,13 @@
     "message": "Forschungspapiere und Spezifikationen rund um Cardano."
   },
   "research.meta.title": {
-    "message": "Cardano Research, wissenschaftlich begutachtete Blockchain-Wissenschaft"
+    "message": "Cardano-Forschung, wissenschaftlich begutachtete Blockchain-Studien"
   },
   "research.meta.description": {
     "message": "Entdecke die wissenschaftlich begutachteten Papers und formalen Spezifikationen hinter der Cardano-Blockchain, von Kryptografie über Konsens und Smart Contracts bis zur Governance."
   },
   "signalGovernance.layout.title": {
-    "message": "Zeige dein Interesse an Cardano Governance"
+    "message": "Zeige dein Interesse an Cardano-Governance"
   },
   "signalGovernance.layout.description": {
     "message": "Wir halten dich über DReps, Proposals und Beteiligungsmöglichkeiten auf dem Laufenden."
@@ -2518,13 +2526,13 @@
     "message": "Erprobte Blockchain-Lösungen für Lieferketten, Identität und mehr."
   },
   "solutions.layout.title": {
-    "message": "Cardano Enterprise-Lösungen, Blockchain für Unternehmen"
+    "message": "Cardano-Enterprise-Lösungen, Blockchain für Unternehmen"
   },
   "solutions.layout.description": {
     "message": "Erprobte Enterprise-Blockchain-Lösungen auf Cardano entdecken – von Lieferketten-Rückverfolgbarkeit bis zu digitalen Produktpässen."
   },
   "solutions.intro.description": {
-    "message": "Cardano treibt Enterprise-Lösungen in verschiedensten Branchen voran – mit der Sicherheit und Transparenz der Blockchain kombiniert mit praxisnahen Geschäftsanwendungen. Unsere erprobten Einsätze zeigen, wie Organisationen dezentrale Technologie für Lieferkettenmanagement, Produktauthentifizierung und Nachhaltigkeitsmonitoring nutzen."
+    "message": "Cardano ist die Basis für Enterprise-Lösungen in vielen Branchen und verbindet die Sicherheit und Transparenz der Blockchain mit praxisnahen Geschäftsanwendungen. Unsere erprobten Einsätze zeigen, wie Organisationen dezentrale Technologie für Lieferkettenmanagement, Produktauthentifizierung und Nachhaltigkeitsmonitoring nutzen."
   },
   "solutions.divider.explore": {
     "message": "Anwendungsfälle entdecken"
@@ -2548,7 +2556,7 @@
     "message": "Stake pools are run by stake pool operators, network participants who keep a node online around the clock. The protocol picks a slot leader for each block at random, and the chance of a pool being picked grows with the stake delegated to it. Each block a pool makes earns rewards, which the protocol shares with everyone delegating to that pool in proportion to their stake. Operators deduct their fixed cost and margin from the pool's share before the rest is distributed."
   },
   "delegation.faq.q2": {
-    "message": "Kann ich meinen Stake an einen anderen Pool übertragen?"
+    "message": "Kann ich meinen Stake an einen anderen Pool umdelegieren?"
   },
   "delegation.faq.a2.p1": {
     "message": "Yes, at any time. A re-delegation becomes active in the epoch after next. Your old pool still earns you rewards for three more payouts, and the new pool takes over from the fourth. There is no gap and nothing is lost."
@@ -2602,7 +2610,7 @@
     "message": "**Uptime:** Ensure the pool has high uptime. The chance of being elected to produce a block depends only on the pool's share of the active stake, but a pool that is offline when it is elected misses that block and the rewards that come with it."
   },
   "delegation.faq.a8.p4": {
-    "message": "**Marge:** Stake Pools erheben eine prozentuale Gebühr auf die Belohnungen. Niedrigere Gebühren bedeuten mehr Ertrag – aber achte auf das Verhältnis zu Performance und Zuverlässigkeit."
+    "message": "**Marge:** Stake Pools erheben eine prozentuale Gebühr auf die Belohnungen. Niedrigere Gebühren können mehr Ertrag bedeuten. Achte aber auch auf das Verhältnis zu Performance und Zuverlässigkeit."
   },
   "delegation.faq.a8.p5": {
     "message": "**Fixed Fees:** Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost). The current minimum is shown in the delegation tool above. Check what a pool charges."
@@ -2620,7 +2628,7 @@
     "message": "**Mission-Driven Pools:** Some pools donate a portion of their fees to charitable causes or are dedicated to specific missions like environmental sustainability or social impact."
   },
   "delegation.faq.q9": {
-    "message": "Wie viel verdiene ich an Belohnungen?"
+    "message": "Wie hoch fallen meine Belohnungen aus?"
   },
   "delegation.faq.a9.p1": {
     "message": "The [rewards calculator](/calculator/?calculator=delegator) gives you an estimate. It cannot predict the future: rewards depend on the pool's performance, its fees and the total stake in the network. Protocol parameters can change through on-chain governance, so estimates are subject to change."
@@ -2758,7 +2766,7 @@
     "message": "Was ist Staking?"
   },
   "stakePoolOperation.whatIsStaking.leftText": {
-    "message": "Ada auf dem Cardano-Netzwerk repräsentiert einen Anteil (Stake) am Netzwerk – proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
+    "message": "Ada im Cardano-Netzwerk steht für einen Anteil (Stake) am Netzwerk, proportional zur Menge der gehaltenen Ada. Die Möglichkeit, Stake zu delegieren oder zu pledgen, ist grundlegend für die Funktionsweise von Cardano."
   },
   "stakePoolOperation.whatIsStaking.rightText1": {
     "message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool."
@@ -2782,7 +2790,7 @@
     "message": "The more stake that is delegated to a stake pool, the greater chance it has of being selected as a [slot leader](/glossary/slot-leader). Each time it is selected and produces a block that is accepted onto the blockchain, it is rewarded, and these rewards are shared between the stake pool operator and stake pool delegators."
   },
   "stakePoolOperation.whatIsStakePool.text4": {
-    "message": "In umfangreicher Forschung und Entwicklung wurde ein fairer, wettbewerbsfähiger Marktplatz geschaffen, der die Teilnahme angemessen fördert und den Einsatz von Zeit, Energie und Ressourcen belohnt. Die wichtigsten technischen Parameter, die Stake Pools und ihre Belohnungen beeinflussen, sind:"
+    "message": "In umfangreicher Forschung und Entwicklung wurde ein fairer Markt mit echtem Wettbewerb geschaffen, der die Teilnahme angemessen fördert und den Einsatz von Zeit, Energie und Ressourcen belohnt. Die wichtigsten technischen Parameter, die Stake Pools und ihre Belohnungen beeinflussen, sind:"
   },
   "stakePoolOperation.pledging.title": {
     "message": "Pledging-Mechanismus"
@@ -2827,7 +2835,7 @@
     "message": "Wie die Cardano-Blockchain reale Probleme branchenübergreifend löst."
   },
   "useCases.layout.title": {
-    "message": "Cardano Enterprise-Lösungen und Anwendungsfälle aus der Praxis"
+    "message": "Cardano-Enterprise-Lösungen und Anwendungsfälle aus der Praxis"
   },
   "useCases.layout.description": {
     "message": "Entdecke echte Cardano-Anwendungsfälle in Lieferkette, Identität, Finanzen und Bildung. Sieh, wie Unternehmen Blockchain für Transparenz und Effizienz nutzen."
@@ -2836,16 +2844,16 @@
     "message": "Blockchain-Anwendungen aus verschiedenen Branchen entdecken – von Identitätsprüfung bis Lieferkettenverfolgung. Cardano bietet sichere, skalierbare Lösungen für reale Herausforderungen."
   },
   "apps.hero.title": {
-    "message": "Cardano Apps und dApps"
+    "message": "Cardano-Apps und DApps"
   },
   "apps.hero.description": {
     "message": "Entdecke handverlesene Apps, die heute live im Cardano-Mainnet laufen. Wallets, DEXes, NFTs, Lending und mehr."
   },
   "apps.seo.title": {
-    "message": "Cardano Apps-Verzeichnis: Wallets, DEXes, NFTs und mehr"
+    "message": "Cardano-App-Verzeichnis: Wallets, DEXes, NFTs und mehr"
   },
   "apps.seo.description": {
-    "message": "Durchstöbere {count} handverlesene Cardano Apps, die live im Mainnet laufen. Wallets, DEXes, NFT-Marktplätze, Lending, Governance und Spiele. Filtere nach Kategorie oder Aktivität."
+    "message": "Durchstöbere {count} handverlesene Cardano-Apps, die live im Mainnet laufen. Wallets, DEXes, NFT-Marktplätze, Lending, Governance und Spiele. Filtere nach Kategorie oder Aktivität."
   },
   "apps.noResult": {
     "message": "Keine Ergebnisse"
@@ -2854,7 +2862,7 @@
     "message": "Empfehlungen der Maintainer"
   },
   "apps.maintainerPicks.subtitle": {
-    "message": "Von den Maintainern der Seite als starke Startpunkte ausgewählt. Auswahlkriterien: siehe /docs/get-involved/maintainer-picks."
+    "message": "Von den Maintainern der Seite als gute Einstiegspunkte ausgewählt. Auswahlkriterien: siehe /docs/get-involved/maintainer-picks."
   },
   "apps.searchPlaceholder": {
     "message": "Apps suchen..."
@@ -3070,7 +3078,7 @@
     "message": "Weiter"
   },
   "insights.noResults": {
-    "message": "Keine Insights gefunden."
+    "message": "Keine Insights passen zu deinen Filtern."
   },
   "ambassadors.roles.contentCreation.title": {
     "message": "Content-Erstellung"
@@ -3172,7 +3180,7 @@
     "message": "Bildung"
   },
   "ambassadors.impact.education.caption": {
-    "message": "Wissen vermitteln, an Bord holen und aufklären"
+    "message": "Lehre, Onboarding und Aufklärung"
   },
   "ambassadors.impact.meetups.label": {
     "message": "Veranstaltete Events"
@@ -3241,16 +3249,16 @@
     "message": "Partnerschaft mit der UTN Buenos Aires"
   },
   "ambassadors.milestone.utn.body": {
-    "message": "Cardano hält Einzug in Argentiniens größte Ingenieursuniversität als offizieller Bildungspartner."
+    "message": "Cardano wird offizieller Bildungspartner der größten Ingenieursuniversität Argentiniens."
   },
   "ambassadors.milestone.utn.credit": {
     "message": "Jose Iadiccico"
   },
   "ambassadors.milestone.alba-node.title": {
-    "message": "Erste Cardano-Node an einer Uni in Lateinamerika"
+    "message": "Erster Cardano-Node an einer Uni in Lateinamerika"
   },
   "ambassadors.milestone.alba-node.body": {
-    "message": "ALBA (Ada Labs for Blockchain Applications) bringt die erste von einer Universität betriebene Cardano-Node in Lateinamerika ans Netz."
+    "message": "ALBA (Ada Labs for Blockchain Applications) bringt den ersten von einer Universität betriebenen Cardano-Node in Lateinamerika ans Netz."
   },
   "ambassadors.milestone.alba-node.credit": {
     "message": "Jose Iadiccico, Martin Ungar"
@@ -3379,28 +3387,28 @@
     "message": "Cardano governance has moved from vision to reality. With a ratified constitution, active DReps, and a funded treasury, the community now directs the network's future. This is decentralization not as a promise, but as practice."
   },
   "governanceCharts.searchPlaceholder": {
-    "message": "Charts durchsuchen ..."
+    "message": "Charts oder Parameter suchen ..."
   },
   "governanceCharts.parametersButton": {
-    "message": "Parameter"
+    "message": "Parameter ▼"
   },
   "governanceCharts.availableParameters": {
-    "message": "Verfügbare Parameter"
+    "message": "Verfügbare Parameter:"
   },
   "governanceCharts.clearAll": {
     "message": "Alle zurücksetzen"
   },
   "governanceCharts.selectCategory": {
-    "message": "Kategorie wählen"
+    "message": "Kategorie wählen:"
   },
   "governanceCharts.searchAndParamResults": {
-    "message": "Such- & Parameter-gefilterte Charts"
+    "message": "Suchergebnisse und nach Parametern gefilterte Charts:"
   },
   "governanceCharts.searchResults": {
-    "message": "Suchergebnisse"
+    "message": "Suchergebnisse:"
   },
   "governanceCharts.paramFilteredCharts": {
-    "message": "Parameter-gefilterte Charts"
+    "message": "Nach Parametern gefilterte Charts:"
   },
   "governanceCharts.parameterDetails": {
     "message": "Parameter-Details"
@@ -3409,7 +3417,7 @@
     "message": "Keine Charts für „{searchTerm}“ mit den gewählten Parametern gefunden."
   },
   "governanceCharts.noResults.search": {
-    "message": "Keine Charts gefunden für ‚{searchTerm}'"
+    "message": "Keine Charts für „{searchTerm}“ gefunden"
   },
   "governanceCharts.noResults.params": {
     "message": "Keine Charts mit den gewählten Parametern gefunden."
@@ -3421,7 +3429,7 @@
     "message": "Noch keine Charts für diese Kategorie verfügbar."
   },
   "governanceCharts.initialPrompt": {
-    "message": "Wähle eine Kategorie, um Governance Charts anzuzeigen, oder nutze die Suche."
+    "message": "Wähle eine Kategorie, um die verfügbaren Governance-Charts anzuzeigen, oder nutze die Suche, um bestimmte Charts zu finden."
   },
   "governanceGraphs.fallback.unavailable": {
     "message": "Diagramm-Darstellung nicht verfügbar"
@@ -3466,7 +3474,7 @@
     "message": "No active DReps available right now. Try one of the alternative tools below."
   },
   "governance.delegate.poolIntro": {
-    "message": "{count} aktive DReps mit mittlerer Stimmkraft. Lade neu für eine andere Auswahl."
+    "message": "{count} aktive DReps mit mittlerer Stimmkraft. Lade die Seite neu, um eine andere Auswahl zu sehen."
   },
   "governance.delegate.shuffle": {
     "message": "DReps mischen"
@@ -3487,10 +3495,10 @@
     "message": "Noch nicht delegiert"
   },
   "governance.delegate.wallet.delegationAbstain": {
-    "message": "Delegiert: Immer enthalten"
+    "message": "Delegiert: Immer Enthaltung"
   },
   "governance.delegate.wallet.delegationNoConfidence": {
-    "message": "Delegiert: Immer kein Vertrauen"
+    "message": "Delegiert: Immer Misstrauen"
   },
   "governance.delegate.wallet.delegationNamed": {
     "message": "An {name} delegiert"
@@ -3586,13 +3594,13 @@
     "message": "Oder wähle eine Protokoll-Option"
   },
   "governance.delegate.abstain.label": {
-    "message": "Enthalten"
+    "message": "Enthaltung"
   },
   "governance.delegate.abstain.help": {
     "message": "Always abstain. Your stake is left out of the vote count, so it never counts for or against any proposal."
   },
   "governance.delegate.noConfidence.label": {
-    "message": "Kein Vertrauen"
+    "message": "Misstrauen"
   },
   "governance.delegate.noConfidence.help": {
     "message": "Counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes."
@@ -3760,13 +3768,13 @@
     "message": "Governance-Tools finden"
   },
   "governance.accountability.committee.act.1": {
-    "message": "Kein Vertrauen und Abberufung"
+    "message": "Misstrauensvotum und Abberufung"
   },
   "governance.accountability.spos.title": {
     "message": "Stake-Pool-Betreiber"
   },
   "governance.accountability.spos.teaser": {
-    "message": "Sichern und stimmen ab"
+    "message": "Sichern das Netzwerk und stimmen ab"
   },
   "governance.accountability.spos.evidence": {
     "message": "Pool-Historie"
@@ -3898,7 +3906,7 @@
     "message": "Gut gemacht!"
   },
   "quiz.ui.keepLearning": {
-    "message": "Weiter lernen!"
+    "message": "Lern weiter!"
   },
   "quiz.ui.scoreText": {
     "message": "Du hast {score} von {totalQuestions} richtig"
@@ -5530,25 +5538,25 @@
     "message": "{category}-Begriffe, die du kennen solltest"
   },
   "insightsGovernance.meta.pageTitle": {
-    "message": "Cardano Governance-Aktions-Charts"
+    "message": "Cardano-Governance-Aktions-Charts"
   },
   "insightsGovernance.meta.pageDescription": {
-    "message": "Visuelle Darstellung der Cardano Governance Action-Prozessabläufe."
+    "message": "Visuelle Darstellung der Prozessabläufe von Cardano-Governance-Aktionen."
   },
   "insightsGovernance.meta.title": {
-    "message": "Cardano Governance-Aktionen"
+    "message": "Cardano-Governance-Aktionen"
   },
   "insightsGovernance.og.title": {
-    "message": "Cardano Governance-Aktionen"
+    "message": "Cardano-Governance-Aktionen"
   },
   "insightsGovernance.og.description": {
-    "message": "Die Ablauflogik der Cardano Governance Actions erkunden."
+    "message": "Die Ablauflogik der Cardano-Governance-Aktionen erkunden."
   },
   "insightsGovernance.page.title": {
-    "message": "Cardano Governance-Action-Charts"
+    "message": "Cardano-Governance-Aktions-Charts"
   },
   "insightsGovernance.page.description": {
-    "message": "Cardano Governance Action-Abläufe als visuelle Charts erkunden"
+    "message": "Die Abläufe der Cardano-Governance-Aktionen als Charts erkunden"
   },
   "insightsGovernance.page.keywords": {
     "message": "Cardano, Governance, Action, DRep, SPO, Abstimmung, Schwellenwert"
@@ -5566,19 +5574,19 @@
     "message": "Governance-Action-Charts"
   },
   "insightsSupply.meta.pageTitle": {
-    "message": "Cardano-Angebotsübersicht"
+    "message": "Cardano-Supply im Überblick"
   },
   "insightsSupply.meta.pageDescription": {
     "message": "Visuelle Darstellung der Verteilung der Ada-Menge in den wichtigsten Kategorien des Cardano-Netzwerks."
   },
   "insightsSupply.meta.title": {
-    "message": "Cardano-Angebotsübersicht"
+    "message": "Cardano-Supply im Überblick"
   },
   "insightsSupply.og.title": {
-    "message": "Cardano-Angebotsverteilung"
+    "message": "Verteilung des Cardano-Supply"
   },
   "insightsSupply.og.description": {
-    "message": "Erfahre, wie Ada auf Reserven, Umlauf, Treasury und Rewards verteilt ist."
+    "message": "Erfahre, wie Ada auf Reserven, Umlauf, Treasury und Belohnungen verteilt ist."
   },
   "insightsSupply.error.configTitle": {
     "message": "Fehlende Konfiguration"
@@ -5617,7 +5625,7 @@
     "message": "Belohnungen"
   },
   "insightsSupply.chart.rewardsInfo": {
-    "message": "Alle nicht abgehobenen Rewards"
+    "message": "Alle nicht abgehobenen Belohnungen"
   },
   "insightsSupply.chart.depositsStake": {
     "message": "Stake-Einlagen"
@@ -5644,10 +5652,10 @@
     "message": "Eingenommene Gebühren"
   },
   "insightsSupply.chart.totalSupply": {
-    "message": "Gesamtangebot"
+    "message": "Gesamtmenge"
   },
   "insightsSupply.chart.totalSupplyInfo": {
-    "message": "Gesamte Ada im Umlauf + nicht abgehobene Rewards + Deposits + Gebühren + Treasury"
+    "message": "Gesamte Ada im Umlauf + nicht abgehobene Belohnungen + Einlagen + Gebühren + Treasury"
   },
   "insightsSupply.chart.reserves": {
     "message": "Reserven"
@@ -5656,7 +5664,7 @@
     "message": "Differenz zwischen Maximalmenge und Gesamtmenge"
   },
   "insightsSupply.chart.maximumSupply": {
-    "message": "Maximales Angebot"
+    "message": "Maximalmenge"
   },
   "insightsSupply.chart.maximumSupplyInfo": {
     "message": "Die maximale Menge an Ada, die jemals existieren kann – definiert im Genesis-Block."
@@ -5677,31 +5685,31 @@
     "message": "F: Wie haben sich die Werte im Vergleich zur vorherigen Epoche verändert?"
   },
   "insightsSupply.faq.q2.question": {
-    "message": "F: Wie viel Ada wurde dem Treasury hinzugefügt?"
+    "message": "F: Wie viel Ada wurde der Treasury hinzugefügt?"
   },
   "insightsSupply.faq.q3.question": {
-    "message": "F: Wie viele Gebühren wurden eingenommen und verteilt?"
+    "message": "F: Wie viel an Gebühren wurde eingenommen und verteilt?"
   },
   "insightsSupply.faq.q4.question": {
-    "message": "F: Gab es in Epoche {epoch} Auszahlungen aus dem Treasury?"
+    "message": "F: Gab es in Epoche {epoch} Auszahlungen aus der Treasury?"
   },
   "insightsSupply.faq.q4.noWithdrawals": {
     "message": "A: In dieser Epoche gab es keine Treasury-Auszahlungen."
   },
   "insightsSupply.faq.q5.question": {
-    "message": "F: Wo erfahre ich mehr über die Cardano-Mainnet-Reward-Berechnung?"
+    "message": "F: Wo erfahre ich mehr über die Berechnung der Belohnungen im Cardano-Mainnet?"
   },
   "insightsSupplySummary.meta.pageTitle": {
-    "message": "Cardano Supply-Übersicht"
+    "message": "Cardano-Supply-Zusammenfassung"
   },
   "insightsSupplySummary.meta.pageDescription": {
     "message": "Historische Analyse der Verteilung der Ada-Menge auf Reserven, Belohnungen, Treasury und Einlagen im Cardano-Netzwerk."
   },
   "insightsSupplySummary.meta.title": {
-    "message": "Cardano Supply-Übersicht"
+    "message": "Cardano-Supply-Zusammenfassung"
   },
   "insightsSupplySummary.og.title": {
-    "message": "Cardano Supply-Übersicht"
+    "message": "Cardano-Supply-Zusammenfassung"
   },
   "insightsSupplySummary.og.description": {
     "message": "Entdecke historische Trends in der Verteilung der Ada-Menge: Reserven, Belohnungen, Treasury und Einlagen."
@@ -5776,7 +5784,7 @@
     "message": "Einlagen"
   },
   "insightsTemplate.meta.pageTitle": {
-    "message": "Cardano Insights-Vorlage"
+    "message": "Cardano-Insights-Vorlage"
   },
   "insightsTemplate.meta.pageDescription": {
     "message": "Insights-Vorlage"
@@ -5997,7 +6005,7 @@
     "description": "Security checklist item 2"
   },
   "whatIsAWallet.security.item3": {
-    "message": "Keine seriöse Person und kein seriöses Support-Team wird jemals nach deiner Wiederherstellungsphrase fragen. [Kenne die häufigsten Betrugsmaschen.](/common-scams)",
+    "message": "Keine seriöse Person und kein seriöses Support-Team wird jemals nach deiner Wiederherstellungsphrase fragen. [Informiere dich über die häufigsten Betrugsmaschen.](/common-scams)",
     "description": "Security checklist item 3, contains a link to the scams page"
   },
   "whatIsAWallet.dapps.divider": {
@@ -10165,5 +10173,131 @@
   },
   "ambassadors.milestone.ambassador-retreat-2025.credit": {
     "message": "Felix Weber, 12 Ambassadors"
+  },
+  "feesAndTransactions.hero.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.hero.description": {
+    "message": "How transaction fees are calculated, why they are predictable, what the minimum ada requirement means, and how Cardano's accounting model compares to account-based blockchains."
+  },
+  "feesAndTransactions.meta.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.meta.description": {
+    "message": "Learn how Cardano transaction fees are calculated from transaction size, how the minimum ada (min-UTxO) requirement works, and how the eUTXO model compares to account-based fee models."
+  },
+  "feesAndTransactions.divider.overview": {
+    "message": "Overview"
+  },
+  "feesAndTransactions.overview.title": {
+    "message": "What you pay for on Cardano"
+  },
+  "feesAndTransactions.overview.description1": {
+    "message": "Every transaction on Cardano pays a small fee. The fee is not set by block producers in an open auction, and it does not depend on how much ada you move. Instead, it is calculated from the **size of the transaction in bytes** using public, network-wide protocol parameters."
+  },
+  "feesAndTransactions.overview.description2": {
+    "message": "Because the size of a transaction is known before you submit it, the exact fee is knowable in advance. That predictability is one of Cardano's defining user-experience properties: you see the price before you sign."
+  },
+  "feesAndTransactions.how.title": {
+    "message": "How the fee is calculated"
+  },
+  "feesAndTransactions.how.description1": {
+    "message": "The minimum [transaction fee](/glossary/transaction-fee) is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes."
+  },
+  "feesAndTransactions.how.description2": {
+    "message": "On mainnet, **a** (the per-byte component, protocol parameter minFeeA / txFeePerByte) is **44 lovelace per byte**, and **b** (the fixed component, protocol parameter minFeeB / txFeeFixed) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.17 ada."
+  },
+  "feesAndTransactions.how.description3": {
+    "message": "Both **a** and **b** are protocol parameters. They are not hardcoded constants, and they can be changed through the network's governance and parameter-update process."
+  },
+  "feesAndTransactions.how.quote": {
+    "message": "You pay for the space your transaction takes up on the chain, not for the value it moves."
+  },
+  "feesAndTransactions.how.buttonLabel": {
+    "message": "Explore the protocol parameters (CIPs)"
+  },
+  "feesAndTransactions.divider.deterministic": {
+    "message": "Predictable by design"
+  },
+  "feesAndTransactions.deterministic.title": {
+    "message": "Determinism: you know the price before you sign"
+  },
+  "feesAndTransactions.deterministic.description1": {
+    "message": "Cardano's fee depends only on transaction size and two public parameters. The size is fixed at construction time, so the wallet can compute the exact fee and show it to you before you authorize the transaction."
+  },
+  "feesAndTransactions.deterministic.description2": {
+    "message": "This contrasts with account-based models such as Ethereum, where fees are driven by computation (gas) inside the virtual machine (the on-chain execution environment) rather than by transaction size. There, the exact cost can depend on contract execution paths, so it is less directly tied to the bytes you publish."
+  },
+  "feesAndTransactions.callout.why.label": {
+    "message": "Why it matters:"
+  },
+  "feesAndTransactions.callout.why.text": {
+    "message": "predictable fees mean no surprise overpayment, no bidding war to get included in a block, and a calmer user experience, especially for everyday payments."
+  },
+  "feesAndTransactions.divider.minutxo": {
+    "message": "Minimum ada (min-UTxO)"
+  },
+  "feesAndTransactions.minutxo.title": {
+    "message": "The minimum ada requirement"
+  },
+  "feesAndTransactions.minutxo.description1": {
+    "message": "Cardano uses the [UTXO model](/glossary/utxo) (extended, or [eUTXO](/glossary/eutxo)), where value lives in discrete outputs rather than in accounts with running balances. To stop the ledger from filling up with tiny dust outputs, every output must contain a minimum amount of ada."
+  },
+  "feesAndTransactions.minutxo.description2": {
+    "message": "Since the Babbage era, that minimum is calculated as **(160 + serialized output size in bytes) × utxoCostPerByte**, where utxoCostPerByte (the coinsPerUTxOByte parameter) is **4,310 lovelace per byte** on mainnet. The fixed 160-byte overhead covers the transaction input and the output's entry in the UTxO set."
+  },
+  "feesAndTransactions.minutxo.description3": {
+    "message": "A simple ada-only output therefore carries roughly **1 ada** as its minimum. Outputs that hold [native tokens](/glossary/native-token), a Plutus script (Cardano's smart contract language), or an inline datum (data attached directly to the output) are larger, so their minimum ada is higher. The ada is locked, not burned: it is returned in full when the output is later spent."
+  },
+  "feesAndTransactions.minutxo.calc.title": {
+    "message": "Worked example"
+  },
+  "feesAndTransactions.minutxo.calc.description1": {
+    "message": "A basic ada-only output serializes to about 67 bytes. At 4,310 lovelace per byte the locked minimum is (160 + 67) × 4,310 = 978,370 lovelace, or about **1 ada**."
+  },
+  "feesAndTransactions.minutxo.calc.description2": {
+    "message": "Add a [native token](/glossary/native-token) or an inline datum (data attached directly to the output) and the serialized size grows, so the required minimum ada grows in step. This is the [UTxO cost per byte](/glossary/utxo-cost-per-byte) rule in action."
+  },
+  "feesAndTransactions.minutxo.calc.quote": {
+    "message": "Minimum ada is a refundable deposit that scales with how much space your output occupies."
+  },
+  "feesAndTransactions.divider.model": {
+    "message": "UTxO vs account"
+  },
+  "feesAndTransactions.model.title": {
+    "message": "Why the accounting model shapes fees"
+  },
+  "feesAndTransactions.model.description1": {
+    "message": "In an account-based model, the chain tracks each address's balance and a transaction mutates it. Fees there are driven mainly by computation: the more work a transaction does inside the virtual machine (the on-chain execution environment), the more it costs."
+  },
+  "feesAndTransactions.model.description2": {
+    "message": "In Cardano's extended UTxO model, a transaction consumes whole inputs and creates new outputs. Fees are driven by the **size** of what you publish to the chain. Scripts still have their own execution budget and cost (priced through separate protocol parameters), but the base fee reflects footprint, not the script's execution cost."
+  },
+  "feesAndTransactions.callout.size.label": {
+    "message": "Size, not steps:"
+  },
+  "feesAndTransactions.callout.size.text": {
+    "message": "a large but simple transaction can cost more than a small transaction that runs a script, because the fee formula weights the bytes you add to the ledger."
+  },
+  "feesAndTransactions.divider.markets": {
+    "message": "Fee markets & MEV"
+  },
+  "feesAndTransactions.markets.title": {
+    "message": "Fee markets and maximal extractable value"
+  },
+  "feesAndTransactions.markets.description1": {
+    "message": "Unlike account-based chains with open gas bidding, Cardano has no general fee market where users outbid each other to be included. The per-byte fee plus the configurable minimum is the price; there is no auction for block space in the usual sense."
+  },
+  "feesAndTransactions.markets.description2": {
+    "message": "Some [maximal extractable value (MEV)](/glossary/mev) still exists. The protocol does not enforce any transaction order within a block, and the stock node simply fills blocks in mempool arrival order. Reordering transactions would require a modified block producer, while back-running (adding your own transaction after one you see in the mempool) needs no modification at all. What actually keeps MEV limited on Cardano is that a transaction's inputs and outputs are fixed when it is built: a reordered transaction cannot be made to execute at a worse price, it either goes through as written or fails."
+  },
+  "feesAndTransactions.cta.title": {
+    "message": "Practical guidance: what to expect"
+  },
+  "feesAndTransactions.cta.text": {
+    "message": "For a typical ada transfer, expect to pay a tiny, predictable fee, a fraction of an ada (around 0.16–0.17 ada at current mainnet parameters), plus the refundable minimum-ada deposit on any new output. Your wallet shows the exact fee before you sign."
+  },
+  "feesAndTransactions.cta.buttonLabel": {
+    "message": "Explore the UTXO model"
   }
 }

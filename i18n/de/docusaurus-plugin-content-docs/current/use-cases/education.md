@@ -19,7 +19,7 @@ Mit Cardanos Identitäts- und Nachweislösungen können Bildungseinrichtungen di
 
 - **Fälschungssicher** sind: Einmal auf der Blockchain festgehalten, lassen sich Nachweise weder verändern noch fälschen
 - **Sofort überprüfbar** sind: Jeder kann die Echtheit eines Nachweises prüfen, ohne die ausstellende Einrichtung zu kontaktieren
-- **Portable**: Students own their credentials and can share them with any employer or institution
+- **Portabel** sind: Studierende besitzen ihre Nachweise selbst und können sie mit jedem Arbeitgeber und jeder Einrichtung teilen
 - **Dauerhaft gültig** sind: Nachweise bleiben überprüfbar, selbst wenn die ausstellende Einrichtung schließt
 
 Smart Contracts können die Ausstellung automatisieren, sodass Nachweise nur vergeben werden, wenn die Voraussetzungen erfüllt sind. So entsteht eine nachvollziehbare Historie akademischer Leistungen, von der Studierende, Einrichtungen und Arbeitgeber gleichermaßen profitieren.
@@ -29,7 +29,7 @@ Smart Contracts können die Ausstellung automatisieren, sodass Nachweise nur ver
 - **Niedrige Transaktionsgebühren** machen die Ausstellung von Nachweisen auch in großem Umfang wirtschaftlich
 - **Energieeffizientes Proof of Stake** passt zu den Nachhaltigkeitszielen von Bildungseinrichtungen
 - **Native Token** ermöglichen Zertifikats-NFTs ohne zusätzliche Smart-Contract-Komplexität
-- **Aiken Smart Contracts** erlauben programmierbare Prüflogik
+- **Aiken-Smart-Contracts** erlauben programmierbare Prüflogik
 - **Globale Zugänglichkeit** stellt sicher, dass Nachweise überall auf der Welt überprüfbar sind
 
 ## Erste Schritte

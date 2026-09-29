@@ -32,11 +32,11 @@
     "description": "Navbar item with label Delegate your vote"
   },
   "item.label.Cardano Research": {
-    "message": "Cardano Forschung",
+    "message": "Cardano-Forschung",
     "description": "Navbar item with label Cardano Research"
   },
   "item.label.Cardano Insights": {
-    "message": "Cardano Einblicke",
+    "message": "Cardano-Einblicke",
     "description": "Navbar item with label Cardano Insights"
   },
   "item.label.Online Communities": {
@@ -178,5 +178,9 @@
   "item.label.DeFi": {
     "message": "DeFi",
     "description": "Navbar item with label DeFi"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
   }
 }

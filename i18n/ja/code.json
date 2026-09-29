@@ -334,11 +334,11 @@
     "description": "The placeholder text for search box when AI is streaming an answer"
   },
   "theme.SearchModal.searchBox.enterKeyHint": {
-    "message": "検索",
+    "message": "search",
     "description": "The hint for the search box enter key text"
   },
   "theme.SearchModal.searchBox.enterKeyHintAskAi": {
-    "message": "確定",
+    "message": "enter",
     "description": "The hint for the Ask AI search box enter key text"
   },
   "theme.SearchModal.searchBox.searchInputLabel": {
@@ -446,7 +446,7 @@
     "description": "The text after tool call"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "選ぶ",
+    "message": "選択",
     "description": "The select text for footer"
   },
   "theme.SearchModal.footer.submitQuestionText": {
@@ -478,7 +478,7 @@
     "description": "The ARIA label for close key in footer"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "検索",
+    "message": "提供：",
     "description": "The 'Powered by' text for footer"
   },
   "theme.SearchModal.footer.backToSearchText": {
@@ -486,7 +486,7 @@
     "description": "The back to search text for footer"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "見つかりませんでした",
+    "message": "検索結果なし：",
     "description": "The text when there are no results"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
@@ -494,7 +494,7 @@
     "description": "The text for suggested query"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "よりよい検索結果がありますか?",
+    "message": "この検索で結果が表示されるべきだと思いますか？",
     "description": "The text for reporting missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
@@ -522,7 +522,7 @@
     "description": "When the image is not found"
   },
   "theme.IdealImageMessage.error": {
-    "message": "画像の読み込みに失敗しました",
+    "message": "エラーが発生しました。クリックして再読み込み",
     "description": "When the image fails to load for unknown error"
   },
   "theme.blog.post.plurals": {
@@ -620,7 +620,7 @@
     "message": "ADAの入手方法"
   },
   "howToBuyAda.description2": {
-    "message": "ADA保有者として、資産を安全に保つことが重要です。秘密鍵は必ず自分だけのものにしてください。暗号資産を取引所に必要以上に長く置かず、暗号資産ウォレットの利用を強くお勧めします。"
+    "message": "ADAを保有するなら、資産を安全に保つことが重要です。そのためには秘密鍵を誰にも知られないよう管理する必要があります。暗号資産を必要以上に長く取引所に置いたままにせず、暗号資産ウォレットを利用することを強くお勧めします。"
   },
   "walletSection.divider": {
     "message": "Cardanoウォレット"
@@ -1059,7 +1059,7 @@
     "message": "Project Catalyst"
   },
   "whereToGetAda.funding.description": {
-    "message": "画期的なプロジェクトやアイデアを支援するCardanoのイノベーションファンドを発見しましょう。参加することで、ビジョンを実現するための[ADA](/what-is-ada/)資金を受け取ることができます。[Project Catalyst](https://projectcatalyst.io)にアクセスして、提案の作成方法を学びましょう。"
+    "message": "Cardanoには、画期的なプロジェクトやアイデアを支援するイノベーションファンドがあります。参加すれば、ビジョンの実現に必要な資金を[ADA](/what-is-ada/)で受け取れます。[Project Catalyst](https://projectcatalyst.io)で提案の作り方を確認しましょう。"
   },
   "whereToGetAda.divider.rewards": {
     "message": "ステーキング報酬"
@@ -1167,7 +1167,7 @@
     "message": "正当なプロジェクトは**絶対に**リターンを保証しません。"
   },
   "commonScams.investment.tip2": {
-    "message": "不審な投資提案には懐疑的になりましょう。"
+    "message": "突然の投資勧誘には警戒しましょう。"
   },
   "commonScams.investment.tip3": {
     "message": "プロジェクトを徹底的に調査し、透明性と信頼できるチームを確認しましょう。"
@@ -1224,10 +1224,10 @@
     "message": "[Cardanoフォーラム](https://forum.cardano.org/c/english/report-a-scam/184)で他の人がプロジェクトについてどう思っているか確認しましょう。"
   },
   "home.meta.title": {
-    "message": "ホーム | cardano.org"
+    "message": "Cardano：安全な分散型ブロックチェーンプラットフォーム"
   },
   "home.meta.description": {
-    "message": "経済的なアイデンティティを持たない数十億の人々に、分散型アプリケーションによるID管理・価値移転・ガバナンスの手段を提供するオープンプラットフォーム。"
+    "message": "Cardanoは、査読済みの研究に基づいて構築された分散型ブロックチェーンプラットフォームです。ADA、ステーキング、ガバナンス、DApps、そして世界規模のオープンソースコミュニティをご紹介します。"
   },
   "home.hero.title": {
     "message": "すべての人のために、より良く機能する世界へ"
@@ -1245,7 +1245,7 @@
     "message": "世界は変わりつつあります。共に、より良い方向へ変えていきましょう。"
   },
   "home.featured.description1": {
-    "message": "Cardanoはプルーフ・オブ・ステーク型のブロックチェーンプラットフォームです。[peer-reviewされた研究](/research)に基づき、エビデンスに基づく手法で開発された初のプラットフォームとして、最先端テクノロジーを組み合わせ、分散型アプリケーション・システム・社会に比類ない安全性と持続可能性を提供します。"
+    "message": "Cardanoはプルーフ・オブ・ステーク型のブロックチェーンプラットフォームです。[査読済みの研究](/research)を基盤とし、エビデンスに基づく手法で開発された初のプラットフォームです。先進的な技術を組み合わせ、分散型アプリケーション、システム、社会に比類ない安全性と持続可能性を提供します。"
   },
   "home.featured.description2": {
     "message": "優秀なエンジニアチームとともに、Cardanoは不透明な権力構造から個人へと力を再分配し、ポジティブな変化と進歩を実現する原動力となることを目指しています。"
@@ -1266,7 +1266,7 @@
     "message": "Cardanoは科学の力でグローバルシステムに信頼を取り戻します。個人が安全に取引し、システムが効果的に機能し、企業が成長するための、より安全で透明性のある持続可能な基盤を構築します。"
   },
   "home.quoteBox.quote": {
-    "message": "Cardanoはテクノロジーに新たな基準をもたらします — オープンでインクルーシブ — 既存の常識に挑み、持続可能でグローバルに分散されたイノベーションの新時代を切り開きます。"
+    "message": "Cardanoは、オープンでインクルーシブな新しい技術基準をもたらします。既存の常識に挑み、持続可能でグローバルに分散されたイノベーションの新時代を切り開きます。"
   },
   "home.benefits.ouroboros.label": {
     "message": "プルーフ・オブ・ステークとOuroboros"
@@ -1278,7 +1278,7 @@
     "message": "プルーフ・オブ・ステークとOuroboros：最も環境に優しいブロックチェーンプロトコル"
   },
   "home.benefits.ouroboros.body": {
-    "message": "Ouroborosは、peer-reviewされ検証可能な安全性を持つ初のブロックチェーンプロトコルであり、Cardanoはそれを実装した最初のブロックチェーンです。セキュリティを犠牲にすることなく、グローバル規模での持続可能な分散化を実現します。<br /><br />このプロトコルは、より安全で透明性の高いグローバル決済システムを目指す基礎研究に基づく絶え間ない努力の成果です。権力と支配を公平に再分配する手段を提供します。"
+    "message": "Ouroborosは、査読を経て安全性が検証可能であることが示された初のブロックチェーンプロトコルであり、Cardanoはそれを実装した最初のブロックチェーンです。セキュリティを犠牲にすることなく、グローバルな要件に応える持続可能な規模での分散化を実現します。<br /><br />このプロトコルは、より安全で透明性の高いグローバル決済システムを目指す基礎研究に基づく絶え間ない努力の成果です。権力と支配を公平に再分配する手段を提供します。"
   },
   "home.benefits.ouroboros.cta": {
     "message": "Ouroborosについて"
@@ -1305,7 +1305,7 @@
     "message": "トランザクション"
   },
   "home.benefits.secure.title": {
-    "message": "比類ないセキュリティ — トラストレスな世界の実現"
+    "message": "比類ないセキュリティ：トラストレスな世界の基盤"
   },
   "home.benefits.secure.body": {
     "message": "Cardanoは、互いに面識がなく信頼関係もない当事者同士が安全にやり取りや取引を行うことを可能にします。信頼が自然には存在しない場面で信頼を構築するプラットフォームであり、まったく新しい市場と機会を切り開きます。Ouroborosにより、悪意ある攻撃やシビル攻撃に対して証明可能なセキュリティを実現しています。すべてのトランザクションは不変かつ透明に記録され、マルチシグネチャと革新的な拡張UTXOモデルによって安全に検証されます。"
@@ -1335,7 +1335,7 @@
     "message": "エコシステム"
   },
   "home.benefits.scalable.title": {
-    "message": "高いスケーラビリティと環境への持続可能性"
+    "message": "高いスケーラビリティと環境面での持続可能性"
   },
   "home.benefits.scalable.body": {
     "message": "Ouroborosにより、Cardanoは最小限のエネルギー消費でグローバル規模にスケールできます。他のブロックチェーンとは異なり、パフォーマンスの向上やブロック追加に指数関数的なエネルギー増加を必要としません。パフォーマンスと持続可能性のバランスは、マルチレジャー、サイドチェーン、マルチパーティステートチャネルによる並列トランザクション処理など、革新的なアプローチの組み合わせで達成されています。<br /><br />ステークプール数の増加とともにネットワークは拡大し、各プールの魅力度を測るパラメータが設定・調整されます。参加に直接報酬を与えるネットワークです。Cardanoは、ネットワークの利益のために行動する者が自身の利益のためにも行動するよう設計されています。これにより、耐久性のある健全で堅牢なネットワークとエコシステムの発展が確保されます。持続可能性とスケーラビリティの組み合わせにより、金融・物流・アイデンティティ・社会に関わるグローバルシステムの進化する需要に対応するスループットを実現します。"
@@ -1398,6 +1398,10 @@
     "message": "投票の委任",
     "description": "Mega menu item label"
   },
+  "navbar.mega.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Mega menu item label"
+  },
   "navbar.mega.label.Cardano Research": {
     "message": "Cardanoリサーチ",
     "description": "Mega menu item label"
@@ -1455,7 +1459,7 @@
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Companies building on Cardano": {
-    "message": "Cardano上の企業",
+    "message": "Cardanoで開発する企業",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Enterprise Solutions": {
@@ -1493,6 +1497,10 @@
     "message": "あなたの投票権をDRepに託す",
     "description": "Mega menu item description"
   },
+  "navbar.mega.description.Cardano Fees & Transactions": {
+    "message": "How fees are calculated and why they are predictable",
+    "description": "Mega menu item description"
+  },
   "navbar.mega.description.Cardano Research": {
     "message": "査読済みの研究と論文",
     "description": "Mega menu item description"
@@ -1518,7 +1526,7 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Forum": {
-    "message": "体系的なロングフォーマットのディスカッション",
+    "message": "テーマ別にじっくり議論できる場",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get involved in cardano.org": {
@@ -1616,7 +1624,7 @@
     "message": "導入事例"
   },
   "solutions.data.caseStudies.description": {
-    "message": "Cardanoブロックチェーンソリューションの実際の導入事例を探索。"
+    "message": "Cardanoブロックチェーンを活用したソリューションの実際の導入事例をご覧ください。"
   },
   "useCases.category.identity": {
     "message": "アイデンティティ"
@@ -1730,7 +1738,7 @@
     "message": "Cardanoアンバサダープログラム: コミュニティに参加しよう"
   },
   "ambassadors.layout.description": {
-    "message": "Cardanoアンバサダープログラムは、Cardanoの普及を促進するために教育、参加、意識向上を行うコミュニティリーダーを認定します。"
+    "message": "Cardanoアンバサダープログラムは、教育活動や交流、認知拡大を通じてCardanoの普及を推進するコミュニティリーダーを認定します。"
   },
   "brandAssets.hero.title": {
     "message": "ブランドアセット"
@@ -1757,16 +1765,16 @@
     "message": "Cardanoコミュニティは世界中の人々で構成されており、Cardanoの精神と未来を守り育てるために集まっています。"
   },
   "codeOfConduct.intro.description": {
-    "message": "Cardanoコミュニティは世界中の人々で構成されており、Cardanoの精神と未来を守り育てるために集まっています。コミュニティのすべての参加者は、合法的、誠実、倫理的に、プロジェクトの最善の利益のために行動することが求められます。この行動規範は、コミュニティ内の判断を助け、プロジェクトについての文明的な公開議論の場を清潔で明るく保つためのルールとガイドラインを提供します。公式のCardanoコミュニティチャンネルに参加することで、この行動規範に同意したものとみなされます。"
+    "message": "Cardanoコミュニティは世界中の人々で構成されており、Cardanoの精神と未来を守り育てるために集まっています。コミュニティのすべての参加者は、合法的、誠実、倫理的に、プロジェクトの最善の利益のために行動することが求められます。この行動規範は、コミュニティ内での判断の助けとなり、プロジェクトについて節度ある公開議論ができる健全な場を保つためのルールとガイドラインを定めています。公式のCardanoコミュニティチャンネルに参加することで、この行動規範に同意したものとみなされます。"
   },
   "codeOfConduct.improveDiscussion.title": {
     "message": "議論を改善する"
   },
   "codeOfConduct.improveDiscussion.description1": {
-    "message": "常に何らかの形で議論を改善することに努め、コミュニティを素晴らしいディスカッションの場にしましょう。投稿が会話に貢献するか確信が持てない場合は、言いたいことをよく考えて後で再試行してください。コミュニティで議論されるトピックは私たちにとって重要であり、あなたにとっても同様であってほしいと思います。"
+    "message": "どんなに小さなことでも、常に議論をより良くするよう心がけ、コミュニティを素晴らしい議論の場にしていきましょう。投稿が会話に貢献するか確信が持てない場合は、言いたいことをよく考えてから改めて投稿してください。コミュニティで議論されるトピックは私たちにとって大切なものであり、あなたにも同じように大切に扱ってほしいと考えています。発言の一部に賛同できない場合でも、トピックと議論している人々に敬意を払ってください。"
   },
   "codeOfConduct.improveDiscussion.description2": {
-    "message": "議論を改善する一つの方法は、すでに進行中のものを発見することです。返信する前にコミュニティプラットフォームを検索する時間を取れば、同じ興味を持つ人に出会える可能性が高まります。常に価値を付加しましょう。議論は健全で有益であるべきで、メンバーはCardanoの発展に向けた意味のある貢献をすべきです。投稿されるコンテンツはコミュニティに関連するものにしてください。また、恐怖や疑念を煽る誤情報やフェイクニュースの投稿や拡散は控えてください。"
+    "message": "議論を改善する一つの方法は、すでに進行中の議論を見つけることです。返信する前にコミュニティプラットフォームを検索する時間を取れば、同じ興味を持つ人に出会える可能性が高まります。常に価値ある投稿を心がけましょう。議論は健全で有益であるべきで、メンバーはCardanoの発展に向けた意味のある貢献をすべきです。投稿されるコンテンツはコミュニティに関連するものにしてください。また、恐怖や疑念を煽る誤情報やフェイクニュースの投稿や拡散は控えてください。"
   },
   "codeOfConduct.improveDiscussion.description3": {
     "message": "ADAやその他のトークン、商品、サービスの取引や宣伝も許可されていません。"
@@ -1790,22 +1798,22 @@
     "message": "感情的な反射反応"
   },
   "codeOfConduct.beAgreeable.list5": {
-    "message": "全角大文字の使用。電子的な叫びとみなされます"
+    "message": "すべて大文字で書くこと。大声で叫んでいるのと同じとみなします"
   },
   "codeOfConduct.beAgreeable.description2": {
-    "message": "代わりに、会話を改善する理にかなった反論を提供してください。価値のある意味のある議論を加えるという上記のルールも覚えておいてください。Cardanoコミュニティチャンネルは、コミュニティメンバー間の個人的な紛争に使用すべきではありません。"
+    "message": "代わりに、会話を深める筋の通った反論を示してください。価値ある有意義な議論を心がけるという上記のルールも忘れないでください。Cardanoコミュニティチャンネルを、コミュニティメンバー間の個人的な争いに使用しないでください。"
   },
   "codeOfConduct.participation.title": {
     "message": "あなたの参加が大切"
   },
   "codeOfConduct.participation.description": {
-    "message": "コミュニティでの会話が、新しく参加する人すべてのトーンを決定します。このフォーラムを興味深い場所にするディスカッションに参加し、そうでないものは避けることで、コミュニティの未来に影響を与えましょう。"
+    "message": "コミュニティでの会話は、新しく参加する人が感じる雰囲気を左右します。このフォーラムを魅力ある場にする議論に参加し、そうでない議論は避けることで、コミュニティの未来を一緒に形づくりましょう。"
   },
   "codeOfConduct.reportProblem.title": {
     "message": "問題を見つけたら報告を"
   },
   "codeOfConduct.reportProblem.description1": {
-    "message": "モデレーターはコミュニティ内で特別な権限を持ち、メンバーがこの行動規範を守ることを確認する責任があります。しかし、あなたもそうです。あなたの協力があれば、モデレーターはコミュニティのファシリテーターになれます。悪い行動を見たら、返信しないでください。返信は悪い行動を認めることになり、あなたのエネルギーを消費し、皆の時間を無駄にします。報告してください！各チャンネルでの違反報告の具体的な方法を以下に示します。"
+    "message": "モデレーターはコミュニティ内で特別な権限を持ち、メンバーがこの行動規範を守るよう見守る責任があります。そしてその責任は、あなたにもあります。あなたの協力があれば、モデレーターはコミュニティの進行役として力を発揮できます。問題のある行動を見かけても、返信はしないでください。返信するとその行動を認めて助長することになり、あなたの労力も皆の時間も無駄になります。報告してください！各チャンネルでの違反の報告方法は以下のとおりです。"
   },
   "codeOfConduct.reportProblem.list1": {
     "message": "[Cardano Forum](https://forum.cardano.org)：行動規範に違反していると思う投稿を見つけたら、オプションボタンをクリックして不適切としてフラグを立てるか、モデレーターへの詳細メッセージを残してください。"
@@ -1826,19 +1834,19 @@
     "message": "コミュニティを維持するために、モデレーターはいつでも理由を問わずコンテンツやユーザーアカウントを削除する権利を有します。モデレーターは新しい投稿をプレビューしません。モデレーターとサイト運営者は、コミュニティが投稿したコンテンツに対して一切の責任を負いません。"
   },
   "codeOfConduct.reportProblem.description3": {
-    "message": "一方、コンテンツが不正確に削除されたと感じる場合は、コミュニティチームがセカンドレビューを行うことができます。投稿の詳細をcommunity *at* cardano *dot* orgにお送りください。セカンドレビューへのエスカレーションは重大な懸念のみに限り、コミュニティチームの返答には時間がかかる場合があります。"
+    "message": "一方、コンテンツが誤って削除されたと感じる場合は、コミュニティチームが再審査を行います。投稿の詳細をcommunity *at* cardano *dot* orgにお送りください。再審査の依頼は重大な懸念がある場合に限り、コミュニティチームの返答には時間がかかる場合があることにご留意ください。"
   },
   "codeOfConduct.beCivil.title": {
     "message": "常に礼儀正しく"
   },
   "codeOfConduct.beCivil.description1": {
-    "message": "健全な会話を台無しにするものはありません。無礼な振る舞いほど："
+    "message": "無礼な振る舞いほど健全な会話を台無しにするものはありません："
   },
   "codeOfConduct.beCivil.list1": {
-    "message": "礼儀正しくしましょう。合理的な人が不快、侮辱的、またはヘイトスピーチと見なすような投稿はしないでください。"
+    "message": "礼儀正しくしましょう。常識ある人が不快、侮辱的、またはヘイトスピーチと見なすような投稿はしないでください。"
   },
   "codeOfConduct.beCivil.list2": {
-    "message": "清潔に保ちましょう。わいせつまたは性的に露骨なものは投稿しないでください。"
+    "message": "節度を守りましょう。わいせつまたは性的に露骨なものは投稿しないでください。"
   },
   "codeOfConduct.beCivil.list3": {
     "message": "互いを尊重しましょう。嫌がらせや攻撃をしたり、なりすましたり、個人情報を公開したりしないでください。"
@@ -1856,13 +1864,13 @@
     "message": "削除された情報を再投稿しないでください。"
   },
   "codeOfConduct.beCivil.description2": {
-    "message": "これらは正確な定義を持つ具体的な用語ではありません。これらに見えるようなことも避けてください。確信が持てない場合は、自分の投稿が世界的なニュースサイトのトップページに掲載されたらどう感じるか考えてみてください。これは公開コミュニティであり、検索エンジンがこれらの議論をインデックスします。言語、リンク、画像は家族や友人にとっても安全なものにしてください。"
+    "message": "これらは厳密に定義された用語ではありません。該当すると受け取られかねない行為も避けてください。迷ったときは、自分の投稿が世界的なニュースサイトのトップページに掲載されたらどう感じるかを考えてみてください。ここは公開コミュニティであり、議論は検索エンジンにインデックスされます。言葉づかい、リンク、画像は、家族や友人に見られても問題のないものにしてください。"
   },
   "codeOfConduct.keepTidy.title": {
     "message": "整理整頓を心がけて"
   },
   "codeOfConduct.keepTidy.description": {
-    "message": "物事を適切な場所に置く努力をして、整理ではなくディスカッションにより多くの時間を費やせるようにしましょう。健全なコミュニティには会話が構造化されカテゴリ分けされていることが必要です。だから："
+    "message": "投稿は適切な場所に行いましょう。そうすれば片付けに費やす時間を減らし、議論により多くの時間を使えます。健全なコミュニティには、会話が整理され、カテゴリ分けされていることが欠かせません。そのため："
   },
   "codeOfConduct.keepTidy.list1": {
     "message": "間違ったカテゴリやチャンネルで会話を始めないでください。"
@@ -1874,7 +1882,7 @@
     "message": "自分のコンテンツだけを投稿"
   },
   "codeOfConduct.postOwnStuff.description": {
-    "message": "他人のものを許可なくデジタルで投稿することはできません。知的財産（ソフトウェア、動画、音声、画像）の窃取方法やその他の法律違反の方法の説明、リンク、手段を投稿することはできません。クレジットは常に元のコンテンツ制作者に帰属させるべきです。"
+    "message": "他人に帰属するデジタルコンテンツを許可なく投稿することはできません。他人の知的財産（ソフトウェア、動画、音声、画像）を盗む方法や、その他の法律に違反する方法について、説明やリンク、手順を投稿することもできません。引用する際は、必ず元の制作者のクレジットを明記してください。"
   },
   "codeOfConduct.multipleAccounts.title": {
     "message": "複数アカウント"
@@ -1904,7 +1912,7 @@
     "message": "あなたの力で"
   },
   "codeOfConduct.poweredByYou.description": {
-    "message": "このコミュニティはコミュニティスタッフとあなた、コミュニティによって運営されています。ここでの運営方法についてさらに質問がある場合は、フォーラムの[コミュニティフィードバックカテゴリ](https://forum.cardano.org/c/english/community-feedback/16)で新しいトピックを開いて議論しましょう！重要または緊急の問題がある場合は、community *at* cardano *dot* orgに直接ご連絡ください。"
+    "message": "このコミュニティは、コミュニティスタッフと、コミュニティの一員であるあなたによって運営されています。ここでの運営方法についてさらに質問がある場合は、フォーラムの[コミュニティフィードバックカテゴリ](https://forum.cardano.org/c/english/community-feedback/16)で新しいトピックを立てて議論しましょう！重要または緊急の問題がある場合は、community *at* cardano *dot* orgに直接ご連絡ください。"
   },
   "constitution.link.download": {
     "message": "憲法をダウンロード"
@@ -1916,7 +1924,7 @@
     "message": "現在制定されているCardano憲法"
   },
   "constitution.enacted.description": {
-    "message": "Cardano憲法を探索しましょう：Cardanoブロックチェーンのガバナンスフレームワーク。現在制定されている憲章を読み、批准の経緯をたどり、IPFS経由で全文をダウンロードできます。"
+    "message": "Cardanoブロックチェーンのガバナンスの枠組みであるCardano憲法をご紹介します。現在制定されている憲章を読み、批准の経緯をたどり、IPFS経由で全文をダウンロードできます。"
   },
   "constitution.link.viewOnIPFS": {
     "message": "IPFSで表示"
@@ -1949,7 +1957,7 @@
     "message": "Cardano憲法：オンチェーンガバナンスの枠組み"
   },
   "constitution.layout.description": {
-    "message": "Cardano憲法を探索しましょう：Cardanoブロックチェーンのガバナンスフレームワーク。現在制定されている憲章を読み、批准の経緯をたどり、IPFS経由で全文をダウンロードできます。"
+    "message": "Cardanoブロックチェーンのガバナンスの枠組みであるCardano憲法をご紹介します。現在制定されている憲章を読み、批准の経緯をたどり、IPFS経由で全文をダウンロードできます。"
   },
   "constitution.history.unavailable": {
     "message": "現在、批准履歴のライブデータを取得できません。",
@@ -2020,10 +2028,10 @@
     "message": "何かお手伝いできることはありますか？"
   },
   "contact.select.prefix": {
-    "message": "私は"
+    "message": "お問い合わせ内容："
   },
   "contact.select.placeholder": {
-    "message": "まだ選択していません（選択してください）"
+    "message": "選択してください"
   },
   "contact.select.option.technicalIssue": {
     "message": "a technical issue with Daedalus or Lace"
@@ -2056,13 +2064,13 @@
     "message": "Visit Developer Portal"
   },
   "entities.hero.title": {
-    "message": "Cardanoを構築する組織"
+    "message": "Cardano上で開発する組織"
   },
   "entities.hero.description": {
     "message": "Cardano上で活発に開発を行う企業を含む多数の独立した組織が連携し、プラットフォームの発展とミッションとの整合性を維持しています。"
   },
   "entities.meta.title": {
-    "message": "Cardanoを築く組織"
+    "message": "Cardano上で開発する組織"
   },
   "entities.meta.description": {
     "message": "Cardano上で活発に開発を行う企業を含む多数の独立した組織が連携し、プラットフォームの発展とミッションとの整合性を維持しています。"
@@ -2278,7 +2286,7 @@
     "message": "Cardanoにネイティブトークン機能を導入し、カスタムトークンの作成と取引を可能に。"
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Plutusを使用したスマートコントラクト機能を導入し、分散型アプリケーション（dApps）のデプロイを可能に。"
+    "message": "Plutusを使用したスマートコントラクト機能を導入し、分散型アプリケーション（DApps）のデプロイを可能に。"
   },
   "hardforks.timeline.vasil.description": {
     "message": "ネットワークのスケーラビリティとパフォーマンスを向上。Cardanoコミュニティメンバーのヴァシル・ダボフにちなんで命名。"
@@ -2362,10 +2370,10 @@
     "message": "環境に配慮し、検証可能なセキュリティを備えた、厳格なセキュリティ保証を持つプルーフ・オブ・ステーク・プロトコル。"
   },
   "ouroboros.meta.title": {
-    "message": "Ouroboros：Cardanoのプルーフオブステークプロトコル"
+    "message": "Ouroboros：Cardanoのプルーフ・オブ・ステーク・プロトコル"
   },
   "ouroboros.meta.description": {
-    "message": "Ouroborosは、査読を経て安全性が証明された世界初のプルーフオブステーク・コンセンサスプロトコル。最小限のエネルギーでCardanoブロックチェーンを支える仕組みを解説します。"
+    "message": "Ouroborosは、査読を経て安全性が証明された世界初のプルーフ・オブ・ステーク・コンセンサスプロトコル。最小限のエネルギーでCardanoブロックチェーンを支える仕組みを解説します。"
   },
   "ouroboros.divider.vision": {
     "message": "ビジョン"
@@ -2374,13 +2382,13 @@
     "message": "ブロックチェーン革命はBitcoinで始まった。今、Ouroborosで続く："
   },
   "ouroboros.vision.description": {
-    "message": "プルーフ・オブ・ワークのセキュリティ保証を維持しながら、そのエネルギーコストのごく一部で改善を実現するプルーフ・オブ・ステーク・プロトコルです。Ouroborosは暗号学、組合せ論、数学的ゲーム理論を適用して、プロトコルとそれに依存する分散型ネットワークの整合性、長寿、パフォーマンスを保証します。"
+    "message": "プルーフ・オブ・ワークのセキュリティ保証を維持しながら、そのエネルギーコストのごく一部で改善を実現するプルーフ・オブ・ステーク・プロトコルです。Ouroborosは暗号学、組合せ論、数学的ゲーム理論を適用して、プロトコルとそれに依存する分散型ネットワークの完全性、持続性、パフォーマンスを保証します。"
   },
   "ouroboros.whatIs.title": {
     "message": "Ouroborosとは？"
   },
   "ouroboros.whatIs.description1": {
-    "message": "Ouroborosは、初の証明可能に安全なプルーフ・オブ・ステーク・プロトコルであり、査読済み研究に基づく初のブロックチェーンプロトコルです。独自のテクノロジーと数学的に検証されたメカニズム（行動心理学と経済哲学を組み合わせた）を統合し、それに依存するブロックチェーンのセキュリティと持続可能性を保証します。その結果、最小限のエネルギー要件でグローバルなパーミッションレスネットワークの伝播を促進できる、証明されたセキュリティ保証を持つプロトコルが生まれました。Cardanoがその最初の例です。"
+    "message": "Ouroborosは、初の証明可能に安全なプルーフ・オブ・ステーク・プロトコルであり、査読済み研究に基づく初のブロックチェーンプロトコルです。独自のテクノロジーと数学的に検証されたメカニズム（行動心理学と経済哲学を組み合わせた）を統合し、それに依存するブロックチェーンのセキュリティと持続可能性を保証します。その結果、最小限のエネルギー要件でグローバルなパーミッションレスネットワークの普及を後押しできる、証明されたセキュリティ保証を持つプロトコルが生まれました。Cardanoがその最初の例です。"
   },
   "ouroboros.whatIs.description2": {
     "message": "Ouroborosの中核には無限の概念があります。グローバルネットワークは持続的かつ倫理的に成長できなければなりません。世界を守りながら、より大きな機会を提供する必要があります。これがOuroborosで可能になります。"
@@ -2392,7 +2400,7 @@
     "message": "Ouroborosは新しい世界のパラメータを定義するために存在します。これまでのどれよりも安全で、スケーラブルで、エネルギー効率の高いプロトコルです。"
   },
   "ouroboros.whatIs.buttonLabel": {
-    "message": "研究を探索"
+    "message": "研究を見る"
   },
   "ouroboros.divider.features": {
     "message": "特徴"
@@ -2419,10 +2427,10 @@
     "message": "ステーク委任とステークプール"
   },
   "ouroboros.features.stakeDelegation.text1": {
-    "message": "Ouroborosはプルーフ・オブ・ステーク・プロトコルです。ネットワークの安定した信頼性の高い接続を確保するために必要なインフラを持つノードオペレーターであるステークプールにネットワーク制御を分配します。"
+    "message": "Ouroborosはプルーフ・オブ・ステーク・プロトコルです。ネットワークの制御をステークプールに分散させます。ステークプールとは、ネットワークへの安定した信頼性の高い接続を確保するのに必要なインフラを備えたノードオペレーターです。"
   },
   "ouroboros.features.stakeDelegation.text2": {
-    "message": "各スロットでステークプールがスロットリーダーとして割り当てられ、チェーンにブロックを追加することで報酬が与えられます。ADA保有者は特定のステークプールにステークを委任して、スロットリーダーに選ばれる確率を高め、ステークプールの報酬を分配できます。"
+    "message": "各スロットでステークプールがスロットリーダーとして割り当てられ、チェーンにブロックを追加することで報酬が与えられます。ADA保有者は特定のステークプールにステークを委任して、スロットリーダーに選ばれる確率を高め、そのプールの報酬の分配を受けられます。"
   },
   "ouroboros.features.energyEfficient.title": {
     "message": "エネルギー効率"
@@ -2431,7 +2439,7 @@
     "message": "Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol)."
   },
   "ouroboros.cta.title": {
-    "message": "プロトコルを攻撃するか、ブロックチェーンをフォークするか。このインタラクティブシミュレーションでOuroborosプロトコルを直接体験しましょう。"
+    "message": "プロトコルを攻撃するか、ブロックチェーンをフォークするか、それとも何もしないか。このインタラクティブなシミュレーションで、Ouroborosプロトコルを実際に体験しましょう。"
   },
   "ouroboros.cta.buttonLabel": {
     "message": "ゲームをプレイ"
@@ -2521,16 +2529,16 @@
     "message": "Cardanoエンタープライズソリューション：ビジネスのためのブロックチェーン"
   },
   "solutions.layout.description": {
-    "message": "Cardano上に構築された実証済みエンタープライズブロックチェーンソリューションを発見しましょう。サプライチェーンのトレーサビリティからデジタルプロダクトパスポートまで、実際の導入事例を探索できます。"
+    "message": "Cardano上に構築された実証済みのエンタープライズ向けブロックチェーンソリューションをご紹介します。サプライチェーンのトレーサビリティからデジタルプロダクトパスポートまで、実際の導入事例をご覧ください。"
   },
   "solutions.intro.description": {
     "message": "Cardanoは業界をまたいだエンタープライズソリューションを提供し、ブロックチェーンのセキュリティと透明性を実用的なビジネスアプリケーションと組み合わせています。実証済みの導入により、組織がサプライチェーン管理、製品認証、サステナビリティトラッキングに分散型テクノロジーを活用する方法を示しています。"
   },
   "solutions.divider.explore": {
-    "message": "ユースケースを探索"
+    "message": "ユースケースを見る"
   },
   "solutions.explore.description": {
-    "message": "特定のブロックチェーンアプリケーションをお探しですか？アイデンティティ、金融、サプライチェーンなどを網羅するユースケースライブラリを探索しましょう。"
+    "message": "特定のブロックチェーンアプリケーションをお探しですか？アイデンティティ、金融、サプライチェーンなどを網羅するユースケース集をご覧ください。"
   },
   "solutions.explore.button": {
     "message": "すべてのユースケースを見る"
@@ -2722,7 +2730,7 @@
     "message": "ステーク委任とは？"
   },
   "stakePoolDelegation.whatIsDelegation.text": {
-    "message": "委任とは、ADA保有者がADAに関連するステークをステークプールに委任するプロセスです。ノードを運営するスキルや意欲のないADA保有者がプロトコルに参加し、委任量に応じた報酬を得ることを可能にします。"
+    "message": "委任とは、ADA保有者がADAに関連するステークをステークプールに委任するプロセスです。ノードを運営するスキルや意欲のないADA保有者も、ネットワークに参加し、委任量に応じた報酬を得ることができます。"
   },
   "stakePoolDelegation.walletsCta.title": {
     "message": "Cardanoウォレット"
@@ -2758,7 +2766,7 @@
     "message": "ステーキングとは？"
   },
   "stakePoolOperation.whatIsStaking.leftText": {
-    "message": "Cardanoネットワーク上で保有されるADAはネットワークにおけるステークを表し、ステークのサイズは保有するADAの量に比例します。ステークを委任または誓約する能力は、Cardanoの仕組みの基本です。"
+    "message": "Cardanoネットワーク上で保有されるADAはネットワークにおけるステークを表し、その大きさは保有するADAの量に比例します。ステークを委任または誓約できることは、Cardanoの仕組みの根幹です。"
   },
   "stakePoolOperation.whatIsStaking.rightText1": {
     "message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool."
@@ -2767,7 +2775,7 @@
     "message": "The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."
   },
   "stakePoolOperation.whatIsStaking.rightText3": {
-    "message": "ステークプールに委任されたステークが多いほど（一定のポイントまで）、次のブロックを作成する可能性が高くなり、報酬はそのプールにステークを委任した全員で分配されます。"
+    "message": "ステークプールに委任されたステークが多いほど（一定の上限まで）、次のブロックを作成する可能性が高くなり、報酬はそのプールにステークを委任した全員で分配されます。"
   },
   "stakePoolOperation.whatIsStakePool.divider": {
     "message": "ステークプールとは？"
@@ -2782,7 +2790,7 @@
     "message": "The more stake that is delegated to a stake pool, the greater chance it has of being selected as a [slot leader](/glossary/slot-leader). Each time it is selected and produces a block that is accepted onto the blockchain, it is rewarded, and these rewards are shared between the stake pool operator and stake pool delegators."
   },
   "stakePoolOperation.whatIsStakePool.text4": {
-    "message": "公平で競争力のある市場を確保し、参加を比例的にインセンティブ化し、時間・エネルギー・リソースの投資に報いるために、広範な研究開発が行われてきました。ステークプールと受け取る報酬に影響を与える主な技術パラメータは以下の通りです："
+    "message": "公平で競争力のある市場を確保し、参加の度合いに応じてインセンティブを与え、時間・エネルギー・リソースの投資に報いるために、広範な研究開発が行われてきました。ステークプールと受け取る報酬に影響を与える主な技術パラメータは以下の通りです："
   },
   "stakePoolOperation.pledging.title": {
     "message": "誓約メカニズム"
@@ -2791,10 +2799,10 @@
     "message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward."
   },
   "stakePoolOperation.desirability.title": {
-    "message": "デザイラビリティインデックス"
+    "message": "望ましさ指標"
   },
   "stakePoolOperation.desirability.text": {
-    "message": "プールのデザイラビリティは、誓約されたオーナーのステーク、コスト、マージンを考慮し、飽和度とプールパフォーマンスの影響を組み合わせて計算されます。この数値はウォレット内でプールをランク付けするために使用され、潜在的な委任者にとってプールがどれだけ「望ましい」または「魅力的」かを示します。"
+    "message": "プールの望ましさは、誓約されたオーナーのステーク、コスト、マージンを考慮し、飽和度とプールパフォーマンスの影響を組み合わせて計算されます。この数値はウォレット内でプールをランク付けするために使用され、潜在的な委任者にとってプールがどれだけ「望ましい」または「魅力的」かを示します。"
   },
   "stakePoolOperation.saturation.title": {
     "message": "飽和パラメータ（K）"
@@ -2833,10 +2841,10 @@
     "message": "サプライチェーン、アイデンティティ、金融、教育など、Cardanoの実世界での活用例を紹介。企業が透明性と効率化のためにブロックチェーンをどう活かしているかをご覧ください。"
   },
   "useCases.intro.description": {
-    "message": "アイデンティティ検証からサプライチェーントラッキングまで、業界をまたいだブロックチェーンアプリケーションを探索しましょう。Cardanoは現実世界の課題に対する安全でスケーラブルなソリューションを提供します。"
+    "message": "アイデンティティ検証からサプライチェーンの追跡まで、業界を問わず活用されるブロックチェーンアプリケーションをご紹介します。Cardanoは現実世界の課題に対する安全でスケーラブルなソリューションを提供します。"
   },
   "apps.hero.title": {
-    "message": "CardanoのアプリとdApps"
+    "message": "CardanoのアプリとDApps"
   },
   "apps.hero.description": {
     "message": "Cardanoメインネットで今すぐ使える厳選アプリが見つかります。ウォレット、DEX、NFT、レンディングなど盛りだくさんです。"
@@ -2956,7 +2964,7 @@
     "message": "カテゴリーからアプリを探す"
   },
   "apps.browseByCategory.subtitle": {
-    "message": "各カテゴリーをひと足先にご紹介。トラッキング上位のアプリ、メンテナーのおすすめ、残りからのランダム表示の順に並んでいます。"
+    "message": "各カテゴリーのアプリを少しずつご紹介します。トラッキング上位のアプリ、メンテナーのおすすめ、残りからのランダム表示の順に並んでいます。"
   },
   "apps.toolsAndInsights.title": {
     "message": "カテゴリーからツールを探す"
@@ -3016,7 +3024,7 @@
     "message": "Cardanoの意思決定に参加"
   },
   "apps.guidedPaths.developers": {
-    "message": "Cardanoでビルド"
+    "message": "Cardanoで開発"
   },
   "apps.submit.enableTracking": {
     "message": "トラッキングを有効化"
@@ -3031,16 +3039,16 @@
     "message": "インサイトを開く"
   },
   "insights.layout.title": {
-    "message": "Insights"
+    "message": "Cardanoインサイト：データと分析"
   },
   "insights.layout.description": {
-    "message": "ガバナンス、ステーキング、コンセンサス、経済などのインタラクティブなCardanoインサイトを探索。"
+    "message": "ガバナンス、ステーキング、コンセンサス、経済などに関するCardanoのインタラクティブなインサイトをご覧ください。"
   },
   "insights.hero.title": {
     "message": "インサイト"
   },
   "insights.hero.description": {
-    "message": "オンチェーンデータとビジュアルチャートでCardanoのトピックを探索。"
+    "message": "オンチェーンデータとチャートで、Cardanoのさまざまなトピックを読み解きます。"
   },
   "insights.search.placeholder": {
     "message": "検索またはタグでフィルター..."
@@ -3250,7 +3258,7 @@
     "message": "ラテンアメリカの大学初のCardanoノード"
   },
   "ambassadors.milestone.alba-node.body": {
-    "message": "ALBA（ADA Labs for Blockchain Applications）が、ラテンアメリカ初となる大学運営のCardanoノードを稼働させました。"
+    "message": "ALBA（Ada Labs for Blockchain Applications）が、ラテンアメリカ初となる大学運営のCardanoノードを稼働させました。"
   },
   "ambassadors.milestone.alba-node.credit": {
     "message": "Jose Iadiccico, Martin Ungar"
@@ -3394,13 +3402,13 @@
     "message": "カテゴリを選択："
   },
   "governanceCharts.searchAndParamResults": {
-    "message": "検索結果＆パラメータフィルターチャート："
+    "message": "検索結果とパラメータで絞り込んだチャート："
   },
   "governanceCharts.searchResults": {
     "message": "検索結果："
   },
   "governanceCharts.paramFilteredCharts": {
-    "message": "パラメータフィルターチャート："
+    "message": "パラメータで絞り込んだチャート："
   },
   "governanceCharts.parameterDetails": {
     "message": "パラメータ詳細"
@@ -5506,19 +5514,19 @@
     "message": "スマートコントラクト"
   },
   "research.goguen.description": {
-    "message": "Goguenエラではスマートコントラクト機能が導入され、分散型アプリケーションの構築が可能になり、多機能資産、ファンジブルトークン、非代替性トークン（NFT）規格がサポートされました。"
+    "message": "Goguen時代にはスマートコントラクト機能が導入され、分散型アプリケーションの構築が可能になり、多機能資産、ファンジブルトークン、非代替性トークン（NFT）規格がサポートされました。"
   },
   "research.basho.subtitle": {
     "message": "スケーリング"
   },
   "research.basho.description": {
-    "message": "最適化のエラ。ネットワークのスケーラビリティと相互運用性を向上させます。Bashoではサイドチェーン（メインのCardanoチェーンと相互運用可能な新しいブロックチェーン）が導入され、ネットワークの機能を拡張する大きな可能性を持っています。"
+    "message": "最適化の時代。ネットワークのスケーラビリティと相互運用性を向上させます。Bashoではサイドチェーン（メインのCardanoチェーンと相互運用可能な新しいブロックチェーン）が導入され、ネットワークの機能を拡張する大きな可能性を持っています。"
   },
   "research.voltaire.subtitle": {
     "message": "ガバナンス"
   },
   "research.voltaire.description": {
-    "message": "現在の開発エラは、Cardanoネットワークを自立型システムにすることを目指しています。Voltaireでは、ネットワーク参加者がステークと投票権を使ってブロックチェーンの将来の開発に影響を与えることができる投票・トレジャリーシステムが導入されています。"
+    "message": "現在の開発時代は、Cardanoネットワークを自立型システムにすることを目指しています。Voltaireでは、ネットワーク参加者がステークと投票権を使ってブロックチェーンの将来の開発に影響を与えることができる投票・トレジャリーシステムが導入されています。"
   },
   "solutions.card.learnMore": {
     "message": "詳しく見る"
@@ -5542,13 +5550,13 @@
     "message": "Cardanoガバナンスアクション"
   },
   "insightsGovernance.og.description": {
-    "message": "Cardanoガバナンスアクションのフローロジックを探索。"
+    "message": "Cardanoガバナンスアクションのフローロジックを確認できます。"
   },
   "insightsGovernance.page.title": {
     "message": "Cardanoガバナンスアクションチャート"
   },
   "insightsGovernance.page.description": {
-    "message": "Cardanoガバナンスアクションフローをビジュアルチャートで探索"
+    "message": "Cardanoガバナンスアクションのフローをチャートでわかりやすく確認できます"
   },
   "insightsGovernance.page.keywords": {
     "message": "Cardano, ガバナンス, アクション, DRep, SPO, 投票, 閾値"
@@ -5578,7 +5586,7 @@
     "message": "Cardano供給分布"
   },
   "insightsSupply.og.description": {
-    "message": "リザーブ、流通、トレジャリー、報酬にわたるADAの分布を探索。"
+    "message": "ADAがリザーブ、流通、トレジャリー、報酬にどのように分布しているかを確認できます。"
   },
   "insightsSupply.error.configTitle": {
     "message": "設定が見つかりません"
@@ -5659,7 +5667,7 @@
     "message": "最大供給量"
   },
   "insightsSupply.chart.maximumSupplyInfo": {
-    "message": "ジェネシスブロックの定義に基づく、これまでに存在できるADAの最大量。"
+    "message": "ジェネシスブロックの定義に基づく、存在しうるADAの最大量。"
   },
   "insightsSupply.table.category": {
     "message": "カテゴリ"
@@ -5671,7 +5679,7 @@
     "message": "説明"
   },
   "insightsSupply.faq.heading": {
-    "message": "エポック{epoch}のファクト："
+    "message": "エポック{epoch}の主なデータ："
   },
   "insightsSupply.faq.q1.question": {
     "message": "Q: 前のエポックと比較して、数値はどう変わりましたか？"
@@ -5704,10 +5712,10 @@
     "message": "Cardano供給サマリー"
   },
   "insightsSupplySummary.og.description": {
-    "message": "Cardano供給分布、リザーブ、報酬、トレジャリー、デポジットの履歴トレンドを探索。"
+    "message": "Cardanoの供給分布、リザーブ、報酬、トレジャリー、デポジットの推移を確認できます。"
   },
   "insightsSupplySummary.intro.description": {
-    "message": "**Cardano ADA供給分布の履歴トレンドを探索**しましょう。リザーブ、報酬、トレジャリー、デポジットの推移を分析できます。エポック範囲を選択して、主要指標の時間的な変化を確認しましょう。"
+    "message": "**Cardano ADA供給分布の推移をたどりましょう**。リザーブ、報酬、トレジャリー、デポジットの推移を分析できます。エポック範囲を選択して、主要指標の時間的な変化を確認しましょう。"
   },
   "insightsSupplySummary.epochSelect.title": {
     "message": "エポック範囲を選択"
@@ -5818,10 +5826,10 @@
     "message": "Cardanoトランザクショントレンド"
   },
   "insightsTransactions.og.description": {
-    "message": "Cardanoトランザクション、徴収された手数料、ブロック生成の履歴トレンドを探索。"
+    "message": "Cardanoのトランザクション数、徴収された手数料、ブロック生成の推移を確認できます。"
   },
   "insightsTransactions.intro.description": {
-    "message": "**Cardanoトランザクションの履歴トレンドを探索**しましょう。トランザクション数、徴収された手数料、ブロック生成などを含みます。エポック範囲を選択して、ネットワーク活動の時間的な変化を分析しましょう。"
+    "message": "**Cardanoトランザクションの推移をたどりましょう**。トランザクション数、徴収された手数料、ブロック生成などを確認できます。エポック範囲を選択して、ネットワーク活動の時間的な変化を分析しましょう。"
   },
   "insightsTransactions.epochSelect.title": {
     "message": "エポック範囲を選択"
@@ -5909,7 +5917,7 @@
     "description": "Hero description"
   },
   "whatIsAWallet.intro.title": {
-    "message": "コインではなく、鍵を持ち歩く",
+    "message": "ウォレットが管理するのは鍵",
     "description": "Intro section title"
   },
   "whatIsAWallet.intro.text1": {
@@ -10165,5 +10173,131 @@
   },
   "ambassadors.milestone.ambassador-retreat-2025.credit": {
     "message": "Felix Weber, 12 Ambassadors"
+  },
+  "feesAndTransactions.hero.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.hero.description": {
+    "message": "How transaction fees are calculated, why they are predictable, what the minimum ada requirement means, and how Cardano's accounting model compares to account-based blockchains."
+  },
+  "feesAndTransactions.meta.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.meta.description": {
+    "message": "Learn how Cardano transaction fees are calculated from transaction size, how the minimum ada (min-UTxO) requirement works, and how the eUTXO model compares to account-based fee models."
+  },
+  "feesAndTransactions.divider.overview": {
+    "message": "Overview"
+  },
+  "feesAndTransactions.overview.title": {
+    "message": "What you pay for on Cardano"
+  },
+  "feesAndTransactions.overview.description1": {
+    "message": "Every transaction on Cardano pays a small fee. The fee is not set by block producers in an open auction, and it does not depend on how much ada you move. Instead, it is calculated from the **size of the transaction in bytes** using public, network-wide protocol parameters."
+  },
+  "feesAndTransactions.overview.description2": {
+    "message": "Because the size of a transaction is known before you submit it, the exact fee is knowable in advance. That predictability is one of Cardano's defining user-experience properties: you see the price before you sign."
+  },
+  "feesAndTransactions.how.title": {
+    "message": "How the fee is calculated"
+  },
+  "feesAndTransactions.how.description1": {
+    "message": "The minimum [transaction fee](/glossary/transaction-fee) is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes."
+  },
+  "feesAndTransactions.how.description2": {
+    "message": "On mainnet, **a** (the per-byte component, protocol parameter minFeeA / txFeePerByte) is **44 lovelace per byte**, and **b** (the fixed component, protocol parameter minFeeB / txFeeFixed) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.17 ada."
+  },
+  "feesAndTransactions.how.description3": {
+    "message": "Both **a** and **b** are protocol parameters. They are not hardcoded constants, and they can be changed through the network's governance and parameter-update process."
+  },
+  "feesAndTransactions.how.quote": {
+    "message": "You pay for the space your transaction takes up on the chain, not for the value it moves."
+  },
+  "feesAndTransactions.how.buttonLabel": {
+    "message": "Explore the protocol parameters (CIPs)"
+  },
+  "feesAndTransactions.divider.deterministic": {
+    "message": "Predictable by design"
+  },
+  "feesAndTransactions.deterministic.title": {
+    "message": "Determinism: you know the price before you sign"
+  },
+  "feesAndTransactions.deterministic.description1": {
+    "message": "Cardano's fee depends only on transaction size and two public parameters. The size is fixed at construction time, so the wallet can compute the exact fee and show it to you before you authorize the transaction."
+  },
+  "feesAndTransactions.deterministic.description2": {
+    "message": "This contrasts with account-based models such as Ethereum, where fees are driven by computation (gas) inside the virtual machine (the on-chain execution environment) rather than by transaction size. There, the exact cost can depend on contract execution paths, so it is less directly tied to the bytes you publish."
+  },
+  "feesAndTransactions.callout.why.label": {
+    "message": "Why it matters:"
+  },
+  "feesAndTransactions.callout.why.text": {
+    "message": "predictable fees mean no surprise overpayment, no bidding war to get included in a block, and a calmer user experience, especially for everyday payments."
+  },
+  "feesAndTransactions.divider.minutxo": {
+    "message": "Minimum ada (min-UTxO)"
+  },
+  "feesAndTransactions.minutxo.title": {
+    "message": "The minimum ada requirement"
+  },
+  "feesAndTransactions.minutxo.description1": {
+    "message": "Cardano uses the [UTXO model](/glossary/utxo) (extended, or [eUTXO](/glossary/eutxo)), where value lives in discrete outputs rather than in accounts with running balances. To stop the ledger from filling up with tiny dust outputs, every output must contain a minimum amount of ada."
+  },
+  "feesAndTransactions.minutxo.description2": {
+    "message": "Since the Babbage era, that minimum is calculated as **(160 + serialized output size in bytes) × utxoCostPerByte**, where utxoCostPerByte (the coinsPerUTxOByte parameter) is **4,310 lovelace per byte** on mainnet. The fixed 160-byte overhead covers the transaction input and the output's entry in the UTxO set."
+  },
+  "feesAndTransactions.minutxo.description3": {
+    "message": "A simple ada-only output therefore carries roughly **1 ada** as its minimum. Outputs that hold [native tokens](/glossary/native-token), a Plutus script (Cardano's smart contract language), or an inline datum (data attached directly to the output) are larger, so their minimum ada is higher. The ada is locked, not burned: it is returned in full when the output is later spent."
+  },
+  "feesAndTransactions.minutxo.calc.title": {
+    "message": "Worked example"
+  },
+  "feesAndTransactions.minutxo.calc.description1": {
+    "message": "A basic ada-only output serializes to about 67 bytes. At 4,310 lovelace per byte the locked minimum is (160 + 67) × 4,310 = 978,370 lovelace, or about **1 ada**."
+  },
+  "feesAndTransactions.minutxo.calc.description2": {
+    "message": "Add a [native token](/glossary/native-token) or an inline datum (data attached directly to the output) and the serialized size grows, so the required minimum ada grows in step. This is the [UTxO cost per byte](/glossary/utxo-cost-per-byte) rule in action."
+  },
+  "feesAndTransactions.minutxo.calc.quote": {
+    "message": "Minimum ada is a refundable deposit that scales with how much space your output occupies."
+  },
+  "feesAndTransactions.divider.model": {
+    "message": "UTxO vs account"
+  },
+  "feesAndTransactions.model.title": {
+    "message": "Why the accounting model shapes fees"
+  },
+  "feesAndTransactions.model.description1": {
+    "message": "In an account-based model, the chain tracks each address's balance and a transaction mutates it. Fees there are driven mainly by computation: the more work a transaction does inside the virtual machine (the on-chain execution environment), the more it costs."
+  },
+  "feesAndTransactions.model.description2": {
+    "message": "In Cardano's extended UTxO model, a transaction consumes whole inputs and creates new outputs. Fees are driven by the **size** of what you publish to the chain. Scripts still have their own execution budget and cost (priced through separate protocol parameters), but the base fee reflects footprint, not the script's execution cost."
+  },
+  "feesAndTransactions.callout.size.label": {
+    "message": "Size, not steps:"
+  },
+  "feesAndTransactions.callout.size.text": {
+    "message": "a large but simple transaction can cost more than a small transaction that runs a script, because the fee formula weights the bytes you add to the ledger."
+  },
+  "feesAndTransactions.divider.markets": {
+    "message": "Fee markets & MEV"
+  },
+  "feesAndTransactions.markets.title": {
+    "message": "Fee markets and maximal extractable value"
+  },
+  "feesAndTransactions.markets.description1": {
+    "message": "Unlike account-based chains with open gas bidding, Cardano has no general fee market where users outbid each other to be included. The per-byte fee plus the configurable minimum is the price; there is no auction for block space in the usual sense."
+  },
+  "feesAndTransactions.markets.description2": {
+    "message": "Some [maximal extractable value (MEV)](/glossary/mev) still exists. The protocol does not enforce any transaction order within a block, and the stock node simply fills blocks in mempool arrival order. Reordering transactions would require a modified block producer, while back-running (adding your own transaction after one you see in the mempool) needs no modification at all. What actually keeps MEV limited on Cardano is that a transaction's inputs and outputs are fixed when it is built: a reordered transaction cannot be made to execute at a worse price, it either goes through as written or fails."
+  },
+  "feesAndTransactions.cta.title": {
+    "message": "Practical guidance: what to expect"
+  },
+  "feesAndTransactions.cta.text": {
+    "message": "For a typical ada transfer, expect to pay a tiny, predictable fee, a fraction of an ada (around 0.16–0.17 ada at current mainnet parameters), plus the refundable minimum-ada deposit on any new output. Your wallet shows the exact fee before you sign."
+  },
+  "feesAndTransactions.cta.buttonLabel": {
+    "message": "Explore the UTXO model"
   }
 }

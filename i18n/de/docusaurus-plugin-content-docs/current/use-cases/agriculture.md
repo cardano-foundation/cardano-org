@@ -11,14 +11,14 @@ sidebar_position: 8
 
 Moderne Lebensmittelversorgungsketten sind komplex und undurchsichtig. Verbraucher möchten zunehmend wissen, woher ihre Lebensmittel stammen, wie sie produziert wurden und ob Angaben zu Bio-, Fair-Trade- oder nachhaltigen Praktiken tatsächlich zutreffen. Lebensmittelbetrug kostet die Branche weltweit schätzungsweise 40 Milliarden Dollar pro Jahr.
 
-Für Landwirte und Erzeuger ist es schwierig und teuer, die Qualität und Herkunft ihrer Produkte nachzuweisen. Zwischenhändler schöpfen einen Großteil des Gewinns ab, während die Hersteller Schwierigkeiten haben, sich mit ihren Produkten auf dem Markt von der Konkurrenz abzuheben.
+Für Landwirte und Erzeuger ist es schwierig und teuer, die Qualität und Herkunft ihrer Produkte nachzuweisen. Zwischenhändler schöpfen einen Großteil des Gewinns ab, während es den Erzeugern schwerfällt, sich mit ihren Produkten von der Konkurrenz abzuheben.
 
 ## Wie Blockchain dies löst
 
 Die Blockchain hält den Weg eines Produkts vom Hof bis auf den Tisch unveränderlich fest:
 
 - **Herkunftsnachweis**: Belegt genau, woher Produkte stammen und wie sie erzeugt wurden
-- **Qualitätssicherung**: Erfasst Temperatur, Verarbeitung und andere qualitätsrelevante Kennzahlen entlang der gesamten Lieferkette
+- **Qualitätssicherung**: Erfasst Temperatur, Handhabung und andere qualitätsrelevante Kennzahlen entlang der gesamten Lieferkette
 - **Zertifizierungsnachverfolgung**: Dokumentiert Bio-, Fair-Trade- und andere Zertifizierungen bei jedem Schritt
 - **Betrugsprävention**: Unveränderliche Aufzeichnungen erschweren es, Produkte auszutauschen oder falsch zu deklarieren
 - **Transparenz für Verbraucher**: Endkunden können ein Produkt scannen und seine komplette Historie einsehen

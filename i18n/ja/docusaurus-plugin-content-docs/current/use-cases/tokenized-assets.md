@@ -25,7 +25,7 @@ Even for those who can invest, assets are often illiquid, making it difficult to
 
 Tokenization can apply to virtually any asset class: real estate, infrastructure, commodities, collectibles, intellectual property, and more.
 
-## Compliance Rules on Token Transfers
+## トークン移転のコンプライアンスルール
 
 Tokenized assets can fall under financial regulation. Depending on the asset and the jurisdiction, their issuers may need to limit transfers to verified investors, or freeze and recover tokens for legal reasons. An ordinary native token cannot enforce this, because once minted it follows whoever controls the address it sits at.
 
@@ -37,7 +37,7 @@ What an issuer can do beyond that depends on the scripts the token's registry en
 
 - **ネイティブトークン**: 効率的で安全な資産のデジタル表現を実現
 - **低トランザクション手数料**: 小口取引も経済的に成立
-- **規制への意識**: コンプライアンスに対応したトークン化スキームをサポート
+- **規制への配慮**: コンプライアンスに対応したトークン化スキームをサポート
 - **スマートコントラクトの安全性**: 形式検証手法による堅牢性の確保
 - **グローバルなアクセス**: 世界中から誰でも参加可能
 
@@ -45,5 +45,5 @@ What an issuer can do beyond that depends on the scripts the token's registry en
 
 - [Cardanoアプリケーションを探す](/apps)
 - [Cardano開発者向けリソース](https://developers.cardano.org)
-- [Developer guide to programmable tokens](https://developers.cardano.org/docs/developers/curriculum/native-tokens/programmable-tokens/)
+- [プログラマブルトークン開発者ガイド](https://developers.cardano.org/docs/developers/curriculum/native-tokens/programmable-tokens/)
 - [エンタープライズソリューションを見る](/solutions)

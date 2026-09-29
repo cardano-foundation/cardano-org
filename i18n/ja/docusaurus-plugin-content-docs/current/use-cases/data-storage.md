@@ -25,7 +25,7 @@ Data integrity is another concern. How can users verify that stored data hasn't 
 
 大容量ファイルは通常オフチェーンに保存されますが、そのハッシュ値をCardano上に記録することで、ブロックチェーンと同等の永続性を持つ存在証明と完全性の証明が得られます。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **実証済みのセキュリティ**：厳格な暗号プロトコルによる保護
 - **長期的な持続可能性**：プルーフ・オブ・ステークとコミュニティガバナンスによる運営

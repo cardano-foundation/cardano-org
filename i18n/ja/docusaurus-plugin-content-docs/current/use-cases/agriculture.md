@@ -25,7 +25,7 @@ Blockchain technology creates an immutable record of a product's journey from fa
 
 スマートコントラクトにより、製品が品質基準を満たした際に農家への支払いを自動化し、遅延や紛争を減らして公正な報酬を確保できます。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **低い取引コスト**により、低価格の農産物でも経済的に追跡が可能
 - **サステナビリティへの取り組み**が農業分野の環境配慮と整合

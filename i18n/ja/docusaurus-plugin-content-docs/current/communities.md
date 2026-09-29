@@ -28,7 +28,7 @@ The Cardano community has many different social channels. They’re all differen
 
 - Cardano Main: https://t.me/Cardano
 - Cardano Developers: https://t.me/CardanoDevelopersOfficial
-- Cardano Report to Admin: https://t.me/cardanoreporttoadmin は、Telegramチャンネルでの判定、ユーザー、管理者、モデレーターなどに問題がある場合にご利用ください。
+- Cardano Report to Admin: https://t.me/cardanoreporttoadmin は、Telegramチャンネルでの運営判断、ユーザー、管理者、モデレーターなどに問題がある場合にご利用ください。
 
 ## Cardano on Discord
 

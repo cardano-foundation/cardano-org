@@ -5,15 +5,15 @@ sidebar_label: Almacenamiento de datos
 sidebar_position: 12
 ---
 
-# Almacenamiento de Datos
+# Almacenamiento de datos
 
-## El Desafío
+## El desafío
 
 El almacenamiento de datos centralizado crea puntos únicos de fallo y concentra el control sobre la información sensible. Los proveedores de la nube pueden experimentar interrupciones, cambiar los términos de servicio o verse obligados a facilitar el acceso a los datos almacenados. Para aplicaciones sensibles, esta dependencia de terceros crea riesgos inaceptables.
 
 La integridad de los datos es otra preocupación. ¿Cómo pueden los usuarios verificar que los datos almacenados no han sido manipulados, especialmente durante largos periodos de tiempo? Los sistemas de respaldo tradicionales proporcionan redundancia, pero no pruebas de integridad.
 
-## Cómo la Blockchain resuelve esto
+## Cómo lo resuelve la blockchain
 
 Las soluciones de almacenamiento basadas en blockchain combinan la descentralización con garantías de integridad criptográfica:
 
@@ -25,9 +25,9 @@ Las soluciones de almacenamiento basadas en blockchain combinan la descentraliza
 
 Si bien los archivos grandes suelen almacenarse fuera de la cadena (off-chain), sus hashes criptográficos registrados en Cardano proporcionan una prueba de existencia e integridad tan permanente como la propia blockchain.
 
-## Porqué Cardano
+## Por qué Cardano
 
-- **Seguridad** mediante rigurosos protocolos criptográficos
+- **Seguridad probada** mediante rigurosos protocolos criptográficos
 - **Sostenibilidad a largo plazo** mediante prueba de participación (proof of stake) y gobernanza comunitaria
 - **Interoperabilidad** con redes de almacenamiento descentralizadas
 - **Bajos costos** para el almacenamiento de hashes y lógica de control de acceso
@@ -37,4 +37,4 @@ Si bien los archivos grandes suelen almacenarse fuera de la cadena (off-chain), 
 
 - [Explora las soluciones de almacenamiento descentralizado](/solutions)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)
-- [Vea las soluciones para empresas](/solutions)
+- [Ver soluciones para empresas](/solutions)

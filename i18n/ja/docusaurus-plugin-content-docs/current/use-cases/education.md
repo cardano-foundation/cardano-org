@@ -24,7 +24,7 @@ Cardanoのブロックチェーンベースのアイデンティティ・資格�
 
 Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **低い取引手数料**により大規模な資格発行も経済的に実現可能
 - **省エネルギーなプルーフ・オブ・ステーク**が教育機関のサステナビリティ目標と整合

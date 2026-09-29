@@ -23,7 +23,7 @@ Blockchain-basierte Gesundheitsakten geben Patienten die Kontrolle über ihre ko
 - **Audit trails**: Track who accessed records and when
 - **Selektive Freigabe**: Jeder Behandler sieht nur die für ihn relevanten Informationen
 
-Smart Contracts können das Einwilligungsmanagement automatisieren: Behandler greifen nur auf freigegebene Daten zu, und die Vorgaben des Gesundheitsrechts bleiben eingehalten.
+Smart Contracts können das Einwilligungsmanagement automatisieren: Behandler greifen nur auf freigegebene Daten zu, und die Vorgaben des Gesundheitsrechts werden eingehalten.
 
 ## Warum Cardano
 
