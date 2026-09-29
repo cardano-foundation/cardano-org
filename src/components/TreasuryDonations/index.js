@@ -10,11 +10,11 @@ export default function TreasuryDonations() {
   const s = summarizeDonations(snapshot);
   return (
     <section id="donations" className={styles.board}>
-      <h2>{translate({ id: "governance.treasury.donations.title", message: "Donations" })}</h2>
+      <h2>{translate({ id: "governance.treasury.donations.title", message: "Returned funds and donations" })}</h2>
       <p>
         {translate({
           id: "governance.treasury.donations.intro",
-          message: "Since the Conway era, anyone can add ada to the treasury directly with a treasury donation.",
+          message: "Since the Conway era, a treasury donation sends ada straight back into the treasury. Most of it so far has been money returned from treasury-funded work: budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved.",
         })}
       </p>
       <div className={styles.grid}>

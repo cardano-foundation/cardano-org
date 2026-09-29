@@ -32,7 +32,7 @@ function TreasuryHero() {
       title={translate({ id: "governance.treasury.overview.hero.title", message: "The Cardano treasury" })}
       description={translate({
         id: "governance.treasury.overview.hero.description",
-        message: "How the community fund is filled and spent, where its income comes from, and how you can add to it.",
+        message: "How the community fund is filled and spent, and where its income comes from.",
       })}
       bannerType="braidBlue"
     />
@@ -47,7 +47,7 @@ function Explainer() {
         <p>
           {translate({
             id: "governance.treasury.explainer.income.body",
-            message: "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. On top of that, anyone can donate ada directly to the treasury.",
+            message: "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, usually when funded work returns money it did not use.",
           })}
         </p>
       </div>
@@ -74,7 +74,7 @@ function Explainer() {
         <p>
           {translate({
             id: "governance.treasury.explainer.shift.body",
-            message: "The reserves are finite. Each epoch releases a fixed percentage of what is left, so the amount paid out from them shrinks every year. Fees and donations are the sources that do not depend on the reserves.",
+            message: "The reserves are finite. Each epoch releases a fixed percentage of what is left, so the amount paid out from them shrinks every year. Transaction fees are the part of the treasury's income that does not depend on the reserves.",
           })}
         </p>
       </div>
@@ -106,7 +106,7 @@ export default function TreasuryPage() {
         title={translate({ id: "governance.treasury.overview.og.title", message: "The Cardano treasury" })}
         description={translate({
           id: "governance.treasury.overview.og.description",
-          message: "Where the treasury's income comes from, how it is spent, and how to donate.",
+          message: "Where the treasury's income comes from, how it is spent, and how ada flows back into it.",
         })}
       />
       <TreasuryHero />
