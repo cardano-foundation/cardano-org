@@ -32,7 +32,8 @@ export function incomeOption({ income, isDark, labels }) {
         return [`${labels.epoch} ${epoch}`, ...lines].join("<br/>");
       },
     },
-    legend: { top: 0, textStyle: { color: c } },
+    // Single scrollable row so a narrow screen never wraps it over the axis names.
+    legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
     grid: { left: "3%", right: "6%", bottom: "3%", top: 40, containLabel: true },
     xAxis: { type: "category", data: income.map((e) => e.epoch), axisLabel: { color: c } },
     yAxis: [
@@ -67,7 +68,7 @@ export function outlookOption({ points, projection, isDark, labels }) {
         return [`${labels.epoch} ${epoch} (${yearOf(epoch)})`, ...lines].join("<br/>");
       },
     },
-    legend: { top: 0, textStyle: { color: c } },
+    legend: { type: "scroll", top: 0, textStyle: { color: c }, pageTextStyle: { color: c } },
     grid: { left: "3%", right: "4%", bottom: "3%", top: 40, containLabel: true },
     xAxis: {
       type: "value",
@@ -76,7 +77,7 @@ export function outlookOption({ points, projection, isDark, labels }) {
       // Ticks every two years of epochs, the partial last step is not labelled
       // so it cannot collide with the one before it.
       interval: EPOCHS_PER_TICK,
-      axisLabel: { color: c, formatter: (v) => String(yearOf(v)), showMaxLabel: false },
+      axisLabel: { color: c, formatter: (v) => String(yearOf(v)), showMaxLabel: false, hideOverlap: true },
     },
     yAxis: { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => `${(v / 1e9).toFixed(1)}B` } },
     series: [
