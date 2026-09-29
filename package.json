@@ -41,7 +41,8 @@
     "test:i18n-dynamic": "node scripts/check-dynamic-translations.js",
     "test:drep-id-status": "node --test scripts/test-drep-id-status.mjs",
     "test:treasury-math": "node --test scripts/test-treasury-math.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math",
+    "test:timed-cache": "node --test scripts/test-timed-cache.mjs",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math && yarn test:timed-cache",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
