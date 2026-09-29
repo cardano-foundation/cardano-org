@@ -26,9 +26,7 @@ const PALETTE = [
   ["drep", "--site-role-drep"],
   ["spo", "--site-role-pool"],
   ["cc", "--site-role-committee"],
-  ["cct", "--site-role-committee-text"],
   ["fund", "--site-role-funding"],
-  ["fundt", "--site-role-funding-text"],
   ["yes", "--site-vote-yes"],
   ["no", "--site-vote-no"],
   ["abstain", "--site-vote-abstain"],
@@ -42,8 +40,6 @@ const K = {};
 PALETTE.forEach((d, i) => {
   K[d[0]] = i;
 });
-// Small text uses the higher-contrast variant of a role color.
-const TEXT_KEY = { cc: "cct", fund: "fundt" };
 
 function rnd(i, k) {
   const x = Math.sin(i * 127.1 + k * 311.7 + 0.5) * 43758.5453;
@@ -1285,9 +1281,8 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
 
   /* ---------- drawing ---------- */
   const rgb = (c) => `rgb(${c[0]},${c[1]},${c[2]})`;
-  function colorOf(key, text) {
-    const k = text && TEXT_KEY[key] ? TEXT_KEY[key] : key;
-    return C[K[k]] || C[K.ink];
+  function colorOf(key) {
+    return C[K[key]] || C[K.ink];
   }
   function drawLabel(l, a) {
     if (!l.t || a <= 0) return;
@@ -1306,7 +1301,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
       else ctx.rect(x - 7, l.y - s * 1.05, tw + 14, s * 1.6);
       ctx.fill();
     }
-    ctx.fillStyle = rgb(colorOf(l.c || "ink", true));
+    ctx.fillStyle = rgb(colorOf(l.c || "ink"));
     ctx.fillText(l.t, x, l.y);
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
   }

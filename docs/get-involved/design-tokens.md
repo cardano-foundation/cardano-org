@@ -87,11 +87,9 @@ One accent per group that takes part in governance, so charts, diagrams, and leg
 | Token | Light | Dark | Use |
 |-------|-------|------|-----|
 | `--site-role-drep` | `#0033ad` | `#8fb1ff` | DReps |
-| `--site-role-committee` | `#0077cc` | `#089667` | Constitutional Committee: dots, fills, strokes |
-| `--site-role-committee-text` | `#0077cc` | `#089667` | Constitutional Committee: small text |
+| `--site-role-committee` | `#0077cc` | `#089667` | Constitutional Committee |
 | `--site-role-pool` | `#d6336c` | `#ff8fb8` | Stake pools and their operators |
-| `--site-role-funding` | `#a16207` | `#f0c040` | Treasury-funded work: dots, fills, strokes |
-| `--site-role-funding-text` | `#a16207` | `#f0c040` | Treasury-funded work: small text |
+| `--site-role-funding` | `#a16207` | `#f0c040` | Treasury-funded work |
 
 ### Governance votes
 

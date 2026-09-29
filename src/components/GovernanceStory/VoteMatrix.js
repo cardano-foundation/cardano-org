@@ -5,9 +5,9 @@ import { getVoteMatrix } from "@site/src/data/governanceStory";
 import styles from "./styles.module.css";
 
 const GROUPS = [
-  { key: "drep", color: "var(--site-role-drep)", text: "var(--site-role-drep)" },
-  { key: "spo", color: "var(--site-role-pool)", text: "var(--site-role-pool)" },
-  { key: "cc", color: "var(--site-role-committee)", text: "var(--site-role-committee-text)" },
+  { key: "drep", color: "var(--site-role-drep)" },
+  { key: "spo", color: "var(--site-role-pool)" },
+  { key: "cc", color: "var(--site-role-committee)" },
 ];
 
 function Gauge({ frac, color, center, off }) {
@@ -125,7 +125,7 @@ export default function VoteMatrix() {
               <div key={g.key} className={clsx(styles.gauge, (off || d.info) && styles.gaugeOff)}>
                 <Gauge frac={rule ? rule.v : 0} color={g.color} center={center} off={off || d.info} />
                 <div className={styles.gaugeText2}>
-                  <span className={styles.gaugeName} style={off ? undefined : { color: g.text }}>
+                  <span className={styles.gaugeName} style={off ? undefined : { color: g.color }}>
                     {groupNames[g.key]}
                   </span>
                   <span className={styles.gaugeRule}>

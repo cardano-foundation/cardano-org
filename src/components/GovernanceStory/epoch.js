@@ -1,23 +1,24 @@
-// Epoch arithmetic for the governance story. Mainnet epochs are exactly five
-// days long; epoch 507 (the Chang hard fork) began on September 1, 2024 at
-// 21:44:51 UTC. Everything here is computed locally, no network needed.
+import { MAINNET_LAUNCH } from "@site/src/utils/mainnetAge";
 
-export const EPOCH_ANCHOR = 507;
-export const EPOCH_ANCHOR_START = Date.UTC(2024, 8, 1, 21, 44, 51);
-export const EPOCH_LENGTH_MS = 5 * 24 * 60 * 60 * 1000;
+// Epoch arithmetic for the governance story. Every mainnet epoch, Byron and
+// Shelley alike, is exactly five days long, so epoch n starts n * 5 days after
+// the genesis block. Everything here is computed locally, no network needed.
+
+const GENESIS = MAINNET_LAUNCH.getTime();
+const EPOCH_LENGTH_MS = 5 * 24 * 60 * 60 * 1000;
 
 export function epochInfo(now = Date.now()) {
-  const k = (now - EPOCH_ANCHOR_START) / EPOCH_LENGTH_MS;
+  const k = (now - GENESIS) / EPOCH_LENGTH_MS;
   const n = Math.floor(k);
   return {
-    epoch: EPOCH_ANCHOR + n,
+    epoch: n,
     frac: k - n,
-    end: EPOCH_ANCHOR_START + (n + 1) * EPOCH_LENGTH_MS,
+    end: GENESIS + (n + 1) * EPOCH_LENGTH_MS,
   };
 }
 
 export function epochStart(epoch) {
-  return new Date(EPOCH_ANCHOR_START + (epoch - EPOCH_ANCHOR) * EPOCH_LENGTH_MS);
+  return new Date(GENESIS + epoch * EPOCH_LENGTH_MS);
 }
 
 const pad = (n) => (n < 10 ? `0${n}` : String(n));

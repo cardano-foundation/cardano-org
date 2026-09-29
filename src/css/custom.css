@@ -101,13 +101,11 @@
    * site tells the groups apart (charts, diagrams, legends). Hues and
    * lightness are chosen so the four stay apart under protanopia,
    * deuteranopia and tritanopia, and every value meets 4.5:1 on white, so
-   * the -text variants match the base color. */
+   * small text can use them too. */
   --site-role-drep: #0033ad;
   --site-role-committee: #0077cc;
-  --site-role-committee-text: #0077cc;
   --site-role-pool: #d6336c;
   --site-role-funding: #a16207;
-  --site-role-funding-text: #a16207;
 
   /* Governance votes. Yes and No differ in lightness as well as hue, so
    * they stay apart for red-green color blindness. Abstain is a neutral. */
@@ -155,10 +153,8 @@
   /* Governance roles and votes, lifted for dark backgrounds */
   --site-role-drep: #8fb1ff;
   --site-role-committee: #089667;
-  --site-role-committee-text: #089667;
   --site-role-pool: #ff8fb8;
   --site-role-funding: #f0c040;
-  --site-role-funding-text: #f0c040;
   --site-vote-yes: #8ff0b8;
   --site-vote-no: #e5683d;
   --site-vote-abstain: #9aa1ad;
