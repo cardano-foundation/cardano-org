@@ -950,7 +950,7 @@ export const Showcases = [
     description:
       "Connect a CIP-30 wallet and donate ada directly to the Cardano treasury in a single, non-custodial transaction. Hosted on cardano.org.",
     tagline: "Donate ada to the Cardano treasury",
-    website: "https://cardano.org/governance/treasury",
+    website: "https://cardano.org/governance/treasury#donate",
     source: null,
     category: "governance",
     properties: [],
