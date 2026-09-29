@@ -33,7 +33,7 @@ Los dispositivos IoT pueden registrar automáticamente la ubicación, la tempera
 - La **baja latencia** permite actualizaciones oportunas para la toma de decisiones operativas
 - Seguridad y confiabilidad preparadas para **entornos empresariales**
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explorar soluciones de trazabilidad](/solutions)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

@@ -9,9 +9,9 @@ sidebar_position: 9
 
 ## 課題
 
-Counterfeiting costs legitimate businesses hundreds of billions of dollars annually and poses real risks to consumers. From luxury goods to electronics to pharmaceuticals, fake products flood markets worldwide. Traditional anti-counterfeiting measures like holograms and serial numbers are easily replicated.
+偽造品は正規の事業者に年間数千億ドルの損失を与え、消費者にも現実的なリスクをもたらしています。高級品から電子機器、医薬品に至るまで、偽造品が世界中の市場に出回っています。ホログラムやシリアル番号といった従来の偽造防止策は簡単に複製されてしまいます。
 
-Consumers struggle to verify product authenticity, especially when purchasing through secondary markets or online platforms. Legitimate brands face reputational damage when counterfeits bearing their name cause harm or disappointment.
+消費者にとって、製品が本物かどうかを確かめるのは容易ではなく、中古市場やオンラインプラットフォームで購入する場合はなおさらです。正規ブランドも、自社の名前を冠した偽造品が被害や失望を招けば、評判に傷がつきます。
 
 ## ブロックチェーンによる解決策
 

@@ -9,7 +9,7 @@ sidebar_position: 8
 
 ## Thách thức
 
-Chuỗi cung ứng thực phẩm hiện đại rất phức tạp và thiếu minh bạch. Người tiêu dùng ngày càng muốn biết thực phẩm của họ đến từ đâu, cách thức sản xuất, những tuyên bố về thực phẩm hữu cơ, thương mại công bằng, hoặc các hoạt động bền vững là có thật. Gian lận thực phẩm gây thiệt hại cho ngành công nghiệp toàn cầu ước tính khoảng 40 tỷ đô la mỗi năm.
+Chuỗi cung ứng thực phẩm hiện đại rất phức tạp và thiếu minh bạch. Người tiêu dùng ngày càng muốn biết thực phẩm của họ đến từ đâu, được sản xuất như thế nào, và liệu những tuyên bố về thực phẩm hữu cơ, thương mại công bằng hay canh tác bền vững có đúng sự thật hay không. Gian lận thực phẩm gây thiệt hại cho ngành công nghiệp toàn cầu ước tính khoảng 40 tỷ đô la mỗi năm.
 
 Đối với nông dân và nhà sản xuất, việc chứng minh chất lượng và nguồn gốc sản phẩm của họ rất khó khăn và tốn kém. Các bên trung gian chiếm phần lớn giá trị, trong khi các nhà sản xuất phải vật lộn để tạo sự khác biệt cho sản phẩm của mình trên thị trường.
 

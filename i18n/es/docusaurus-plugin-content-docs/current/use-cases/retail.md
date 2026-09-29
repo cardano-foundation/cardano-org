@@ -33,7 +33,7 @@ Los contratos inteligentes pueden vincular productos físicos con gemelos digita
 - **Verificación sencilla para el consumidor** a través de aplicaciones móviles
 - **Soluciones empresariales** probadas en implementaciones reales en el sector minorista
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explorar soluciones de autenticidad](/solutions)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

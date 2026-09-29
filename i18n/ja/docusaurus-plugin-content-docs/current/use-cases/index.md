@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Cardanoのユースケース
 
-Cardanoはパブリックでパーミッションレスなレイヤー1ブロックチェーンであり、安全でスケーラブルかつ透明性の高いソリューションを求める企業や個人に最適です。サプライチェーンの効率化からグローバル決済、資産のトークン化まで、Cardanoは堅牢なセキュリティと低い消費電力で分散型のイノベーションを提供します。 Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage.
+Cardanoはパブリックでパーミッションレスなレイヤー1ブロックチェーンであり、安全でスケーラブルかつ透明性の高いソリューションを求める企業や個人に最適です。サプライチェーンの効率化からグローバル決済、資産のトークン化まで、Cardanoは堅牢なセキュリティと低い消費電力で分散型のイノベーションを提供します。
 
 ## アイデンティティ
 
@@ -58,4 +58,4 @@ Cardanoはパブリックでパーミッションレスなレイヤー1ブロッ
 
 ## エンタープライズソリューション
 
-Looking for proven enterprise deployments and case studies? 実績のあるエンタープライズ導入事例やケーススタディをお探しですか？[エンタープライズソリューション](/solutions)ページで、Cardano Foundationとパートナーによる実際の導入事例をご覧ください。
+実績のあるエンタープライズ導入事例やケーススタディをお探しですか？[エンタープライズソリューション](/solutions)ページで、Cardano Foundationとパートナーによる実際の導入事例をご覧ください。

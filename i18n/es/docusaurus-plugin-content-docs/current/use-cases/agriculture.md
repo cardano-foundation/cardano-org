@@ -33,7 +33,7 @@ Los contratos inteligentes pueden automatizar los pagos a los agricultores cuand
 - La **accesibilidad global** apoya a los pequeños agricultores de las regiones en desarrollo
 - Las **implementaciones probadas** demuestran la trazabilidad agrícola en casos reales
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explorar soluciones para la cadena de suministro](/solutions)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

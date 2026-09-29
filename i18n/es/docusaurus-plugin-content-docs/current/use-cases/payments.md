@@ -33,7 +33,7 @@ Los tokens nativos en Cardano permiten monedas estables vinculadas a las monedas
 - **Bajo impacto ambiental** gracias al consenso de prueba de participación
 - La **creciente adopción por parte de los comercios** amplía los usos reales como medio de pago
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Obtén una billetera de Cardano](/apps/?tags=wallet)
 - [Dónde obtener ada](/where-to-get-ada)

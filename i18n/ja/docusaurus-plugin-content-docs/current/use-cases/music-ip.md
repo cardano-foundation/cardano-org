@@ -9,9 +9,9 @@ sidebar_position: 16
 
 ## 課題
 
-アーティストやクリエイターは、自身の作品が生み出す収益のごく一部しか受け取れないことが少なくありません。複雑なライセンス契約、不透明なロイヤリティ計算、多数の仲介業者の存在により、支払いはあらゆる段階で遅延・減額されます。作品が広く消費されているにもかかわらず、生計を立てるのに苦労しているクリエイターは数多くいます。 Complex licensing arrangements, opaque royalty calculations, and numerous intermediaries mean that payments are delayed and reduced at every step. Many creators struggle to make a living despite their work being widely consumed.
+アーティストやクリエイターは、自身の作品が生み出す収益のごく一部しか受け取れないことが少なくありません。複雑なライセンス契約、不透明なロイヤリティ計算、多数の仲介業者の存在により、支払いはあらゆる段階で遅延・減額されます。作品が広く消費されているにもかかわらず、生計を立てるのに苦労しているクリエイターは数多くいます。
 
-Intellectual property rights are difficult to track and enforce in the digital age. デジタル時代において、知的財産権の追跡と執行は非常に困難です。海賊版は横行しており、正規の利用であってもクリエイターに適正な対価が支払われないケースが多いのが現状です。
+デジタル時代において、知的財産権の追跡と執行は非常に困難です。海賊版は横行しており、正規の利用であってもクリエイターに適正な対価が支払われないケースが多いのが現状です。
 
 ## ブロックチェーンによる解決策
 

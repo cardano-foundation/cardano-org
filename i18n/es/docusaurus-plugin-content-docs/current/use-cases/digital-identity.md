@@ -33,7 +33,7 @@ Con la identidad basada en blockchain, los usuarios pueden demostrar que son may
 - La **gobernanza sólida** garantiza que la plataforma evolucione con la participación de la comunidad
 - La **hoja de ruta de escalabilidad** respalda las soluciones de identidad a escala global
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de identidad en Cardano](/apps/?tags=identity)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

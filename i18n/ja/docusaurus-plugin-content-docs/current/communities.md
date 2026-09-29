@@ -4,11 +4,11 @@ displayed_sidebar: null
 description: Cardanoオンラインコミュニティ
 ---
 
-The Cardano community has many different social channels. They’re all different and unique in their own way. Cardanoコミュニティにはさまざまなソーシャルチャンネルがあります。それぞれに個性があり、ユニークな特徴を持っています。おすすめのコミュニティチャンネルをまとめましたので、気になるものに参加して、世界中のCardanoコミュニティメンバーとつながりましょう！
+Cardanoコミュニティにはさまざまなソーシャルチャンネルがあります。それぞれに個性があり、ユニークな特徴を持っています。おすすめのコミュニティチャンネルをまとめましたので、気になるものに参加して、世界中のCardanoコミュニティメンバーとつながりましょう！
 
 ## フォーラム
 
-体系的なロングフォーマットのディスカッションを楽しめます。
+テーマごとに整理された場で、じっくり議論を楽しめます。
 
 - [r/Cardano](https://www.reddit.com/r/cardano/) - Reddit上のCardanoコミュニティ
 - [forum.cardano.org](https://forum.cardano.org) - Cardanoフォーラム
@@ -65,6 +65,6 @@ The Cardano community has many different social channels. They’re all differen
 
 ## コミュニティを追加する
 
-Want to see your community listed here? あなたのコミュニティをここに掲載しませんか？素晴らしいCardanoコミュニティをもっと紹介したいです！
+あなたのコミュニティをここに掲載しませんか？素晴らしいCardanoコミュニティをもっと紹介したいです！
 
 要件やプルリクエストによるコミュニティの申請方法については、[コミュニティの追加](/docs/get-involved/add-community)ガイドをお読みください。

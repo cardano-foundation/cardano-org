@@ -9,9 +9,9 @@ sidebar_position: 2
 
 ## Thách thức
 
-Việc cấp chứng chỉ học thuật được thực hiện tập trung cao độ và thường thiếu minh bạch. Các loại giấy tờ tùy thân truyền thống dễ bị làm giả, khó xác minh và có thể bị mất hoặc hư hỏng. Các cơ sở giáo dục đối mặt với nhiều thách thức trong việc duy trì tính toàn vẹn của các chứng chỉ, trong khi các nhà tuyển dụng gặp khó khăn trong việc xác minh tính xác thực về trình độ chuyên môn của ứng viên.
+Việc cấp chứng chỉ học thuật được thực hiện tập trung cao độ và thường thiếu minh bạch. Bằng cấp giấy truyền thống dễ bị làm giả, khó xác minh và có thể bị mất hoặc hư hỏng. Các cơ sở giáo dục đối mặt với nhiều thách thức trong việc duy trì tính toàn vẹn của các chứng chỉ, trong khi các nhà tuyển dụng gặp khó khăn trong việc xác minh tính xác thực về trình độ chuyên môn của ứng viên.
 
-Quá trình xác minh diễn ra chậm và tốn kém, thường đòi hỏi phải liên hệ trực tiếp với các tổ chức cấp phép. Điều này tạo ra khó khăn trong quá trình tuyển dụng và có thể gây bất lợi cho các ứng viên đủ điều kiện nhưng lại có bằng cấp từ các trường khó tiếp cận hoặc không còn tồn tại.
+Quá trình xác minh diễn ra chậm và tốn kém, thường đòi hỏi phải liên hệ trực tiếp với cơ sở cấp bằng. Điều này tạo ra khó khăn trong quá trình tuyển dụng và có thể gây bất lợi cho các ứng viên đủ điều kiện nhưng lại có bằng cấp từ các trường khó tiếp cận hoặc không còn tồn tại.
 
 ## Cách Blockchain giải quyết vấn đề
 
@@ -22,7 +22,7 @@ Các giải pháp xác thực và cấp chứng chỉ dựa trên công nghệ b
 - **Có thể mang đi khắp nơi**: Sinh viên sở hữu chứng chỉ của mình và có thể chia sẻ chúng với bất kỳ nhà tuyển dụng hoặc tổ chức nào
 - **Lưu giữ lâu dài**: Chứng chỉ vẫn có giá trị và có thể xác minh được ngay cả khi tổ chức cấp chứng chỉ đóng cửa
 
-Hợp đồng thông minh có thể tự động hóa quy trình cấp phát, đảm bảo rằng chứng chỉ được cấp khi đáp ứng các yêu cầu cụ thể. Điều này tạo ra một hồ sơ có thể kiểm chứng về thành tích học tập, mang lại lợi ích cho sinh viên, các trường học và nhà tuyển dụng.
+Hợp đồng thông minh có thể tự động hóa quy trình cấp phát, đảm bảo rằng chứng chỉ chỉ được cấp khi đáp ứng các yêu cầu cụ thể. Điều này tạo ra một hồ sơ có thể kiểm chứng về thành tích học tập, mang lại lợi ích cho sinh viên, các trường học và nhà tuyển dụng.
 
 ## Tại sao chọn Cardano
 

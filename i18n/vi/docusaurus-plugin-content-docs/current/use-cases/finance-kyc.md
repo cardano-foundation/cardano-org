@@ -9,7 +9,7 @@ sidebar_position: 4
 
 ## Thách thức
 
-Quy trình Xác minh danh tính khách hàng (KYC) rất cần thiết cho việc tuân thủ các quy định tài chính nhưng lại tạo ra nhiều khó khăn đáng kể cho cả các tổ chức và khách hàng. Người dùng phải liên tục gửi cùng một loại tài liệu đến các tổ chức khác nhau, dẫn đến việc lãng phí công sức và làm tăng nguy cơ lộ thông tin nhạy cảm. Các tổ chức tài chính chi hàng tỉ đô la mỗi năm cho việc tuân thủ quy định KYC, và phần lớn chi phí đó được chuyển sang cho khách hàng.
+Quy trình xác minh danh tính khách hàng (KYC) rất cần thiết cho việc tuân thủ các quy định tài chính nhưng lại tạo ra nhiều khó khăn đáng kể cho cả các tổ chức và khách hàng. Người dùng phải liên tục gửi cùng một loại tài liệu đến các tổ chức khác nhau, dẫn đến việc lãng phí công sức và làm tăng nguy cơ lộ thông tin nhạy cảm. Các tổ chức tài chính chi hàng tỷ đô la mỗi năm cho việc tuân thủ quy định KYC, và phần lớn chi phí đó được chuyển sang cho khách hàng.
 
 Hệ thống hiện tại cũng mang tính loại trừ. Ước tính có khoảng 1,4 tỷ người trưởng thành trên toàn thế giới không có giấy tờ tùy thân chính thức, do đó họ bị loại khỏi hệ thống tài chính, không thể tiếp cận các dịch vụ cơ bản như tài khoản ngân hàng hoặc các khoản vay.
 

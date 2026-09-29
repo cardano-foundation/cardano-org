@@ -33,7 +33,7 @@ Los contratos inteligentes pueden automatizar la emisión de documentos cuando s
 - La **escalabilidad** gestiona la verificación de documentos a escala nacional
 - La **interoperabilidad** permite la integración con sistemas gubernamentales existentes
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de identidad en Cardano](/apps/?tags=identity)
 - [Recursos para desarrolladores para construir en Cardano](https://developers.cardano.org)

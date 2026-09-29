@@ -9,9 +9,9 @@ sidebar_position: 11
 
 ## 課題
 
-Social programs aimed at poverty reduction, disaster relief, and development face persistent challenges with fund distribution. Corruption siphons resources away from intended beneficiaries, while administrative inefficiencies add costs and delays. Donors and taxpayers often lack visibility into how funds are actually used.
+貧困削減、災害救援、開発支援を目的とした社会プログラムは、資金の配分に根強い課題を抱えています。汚職によって本来の受益者に届くはずの資源が流用され、事務の非効率がコストと遅延を増やしています。寄付者や納税者は、資金が実際にどう使われているのかを把握できないことが少なくありません。
 
-For beneficiaries, accessing aid can involve bureaucratic hurdles, intermediaries who extract fees, and delays that undermine the program's effectiveness. Proving eligibility and preventing duplicate claims adds further complexity.
+受益者にとっては、支援を受けるまでに煩雑な手続き、手数料を取る仲介者、遅延といった壁があり、プログラムの効果が損なわれています。受給資格の証明や二重受給の防止も、仕組みをさらに複雑にしています。
 
 ## ブロックチェーンによる解決策
 

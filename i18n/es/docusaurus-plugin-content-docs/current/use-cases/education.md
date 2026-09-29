@@ -32,7 +32,7 @@ Los contratos inteligentes pueden automatizar el proceso de emisión, asegurando
 - Los **contratos inteligentes de Aiken** proporcionan lógica de verificación programable
 - La **accesibilidad global** asegura que las credenciales puedan ser verificadas en cualquier parte del mundo
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de identidad en Cardano](/apps/?tags=identity)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

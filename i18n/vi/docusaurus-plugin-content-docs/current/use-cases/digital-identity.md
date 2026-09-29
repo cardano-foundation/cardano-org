@@ -11,7 +11,7 @@ sidebar_position: 3
 
 Trong thế giới kỹ thuật số ngày nay, danh tính của mỗi người bị phân mảnh trên vô số nền tảng, mỗi nền tảng đều lưu giữ những mẩu thông tin cá nhân của chúng ta. Người dùng hầu như không có quyền kiểm soát việc dữ liệu của mình được sử dụng, chia sẻ hoặc kiếm tiền như thế nào. Các vụ rò rỉ dữ liệu làm lộ hàng triệu hồ sơ, nạn đánh cắp danh tính hoành hành, và việc chứng minh danh tính trực tuyến vẫn còn rườm rà và xâm phạm quyền riêng tư.
 
-Các hệ thống định danh tập trung tạo ra các điểm yếu dễ bị tổn thương và trao quyền lực không cân xứng cho các nhà cung cấp dịch vụ định danh. Người dùng phải liên tục chia sẻ thông tin nhạy cảm, tạo ra rủi ro không cần thiết và gây ra mâu thuẫn trong các tương tác kỹ thuật số.
+Các hệ thống định danh tập trung tạo ra các điểm lỗi đơn lẻ và trao quyền lực không cân xứng cho các nhà cung cấp dịch vụ định danh. Người dùng phải liên tục chia sẻ thông tin nhạy cảm, tạo ra rủi ro không cần thiết và gây phiền toái trong các tương tác kỹ thuật số.
 
 ## Cách Blockchain giải quyết vấn đề
 

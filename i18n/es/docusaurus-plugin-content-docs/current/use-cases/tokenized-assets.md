@@ -41,7 +41,7 @@ Lo que un emisor pueda hacer más allá de eso depende de los scripts indicados 
 - La **seguridad de los contratos inteligentes** mediante métodos de verificación formal
 - La **accesibilidad global** permite la participación en todo el mundo
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de Cardano](/apps)
 - [Recursos para desarrolladores en Cardano](https://developers.cardano.org)

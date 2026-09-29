@@ -33,7 +33,7 @@ Si bien los archivos grandes suelen almacenarse fuera de la cadena (off-chain), 
 - **Bajos costos** para el almacenamiento de hashes y lógica de control de acceso
 - **Herramientas para desarrolladores** para crear aplicaciones de almacenamiento
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las soluciones de almacenamiento descentralizado](/solutions)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)
