@@ -79,17 +79,17 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.how.description1",
                 message:
-                  "The minimum fee for a transaction is: **fee = a × size + b**, where *size* is the transaction's serialized size in bytes.",
+                  "The minimum fee for a transaction is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes.",
               }),
               translate({
                 id: "feesAndTransactions.how.description2",
                 message:
-                  "On mainnet, *a* (the per-byte component, protocol parameter `minFeeA` / `txFeePerByte`) is **44 lovelace per byte**, and *b* (the fixed component, protocol parameter `minFeeB` / `txFeeFixed`) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.20 ada.",
+                  "On mainnet, **a** (the per-byte component, protocol parameter minFeeA / txFeePerByte) is **44 lovelace per byte**, and **b** (the fixed component, protocol parameter minFeeB / txFeeFixed) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.17 ada.",
               }),
               translate({
                 id: "feesAndTransactions.how.description3",
                 message:
-                  "Both *a* and *b* are protocol parameters. They are not hardcoded constants, and they can be changed through the network's governance and parameter-update process.",
+                  "Both **a** and **b** are protocol parameters. They are not hardcoded constants, and they can be changed through the network's governance and parameter-update process.",
               }),
             ]}
             quote={translate({
@@ -168,7 +168,7 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.minutxo.description2",
                 message:
-                  "Since the Babbage era, that minimum is calculated as **(160 + serialized output size in bytes) × utxoCostPerByte**, where `utxoCostPerByte` (the `coinsPerUTxOByte` parameter) is **4,310 lovelace per byte** on mainnet. The fixed 160-byte overhead covers the transaction input and the output's entry in the UTxO set.",
+                  "Since the Babbage era, that minimum is calculated as **(160 + serialized output size in bytes) × utxoCostPerByte**, where utxoCostPerByte (the coinsPerUTxOByte parameter) is **4,310 lovelace per byte** on mainnet. The fixed 160-byte overhead covers the transaction input and the output's entry in the UTxO set.",
               }),
               translate({
                 id: "feesAndTransactions.minutxo.description3",
@@ -290,7 +290,7 @@ export default function Home() {
               translate({
                 id: "feesAndTransactions.cta.text",
                 message:
-                  "For a typical ada transfer, expect to pay a tiny, predictable fee, a fraction of an ada (around 0.16–0.20 ada at current mainnet parameters), plus the refundable minimum-ada deposit on any new output. Your wallet shows the exact fee before you sign.",
+                  "For a typical ada transfer, expect to pay a tiny, predictable fee, a fraction of an ada (around 0.16–0.17 ada at current mainnet parameters), plus the refundable minimum-ada deposit on any new output. Your wallet shows the exact fee before you sign.",
               }),
             ]}
             buttonLabel={translate({

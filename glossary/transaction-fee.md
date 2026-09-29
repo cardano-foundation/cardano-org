@@ -14,4 +14,4 @@ sources:
     url: "https://github.com/cardano-foundation/CIPs/tree/master/CIP-0028"
 ---
 
-On Cardano the minimum fee for a transaction is `a + b × size`, where *size* is the transaction's serialized size in bytes. On mainnet, *a* (the fixed component, `minFeeB` / `txFeeFixed`) is 155,381 lovelace and *b* (the per-byte component, `minFeeA` / `txFeePerByte`) is 44 lovelace per byte. Both are protocol parameters and can be changed through governance and parameter updates. Because the size is known before submission, the exact fee is knowable in advance.
+On Cardano the minimum fee for a transaction is `a × size + b`, where `size` is the transaction's serialized size in bytes. On mainnet, `a` (the per-byte component, `minFeeA` / `txFeePerByte`) is 44 lovelace per byte and `b` (the fixed component, `minFeeB` / `txFeeFixed`) is 155,381 lovelace. Both are protocol parameters and can be changed through governance and parameter updates. Because the size is known before submission, the exact fee is knowable in advance.

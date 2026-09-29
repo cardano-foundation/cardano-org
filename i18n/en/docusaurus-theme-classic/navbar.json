@@ -142,5 +142,9 @@
   "item.label.Supply Chain": {
     "message": "Supply Chain",
     "description": "Navbar item with label Supply Chain"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
   }
 }
