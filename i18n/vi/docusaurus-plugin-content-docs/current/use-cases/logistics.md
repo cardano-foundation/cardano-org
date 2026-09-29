@@ -9,7 +9,7 @@ sidebar_position: 10
 
 ## Thách thức
 
-Logistic toàn cầu bao gồm vô số khâu trung gian giữa các hãng vận chuyển, kho bãi và cơ quan hải quan. Mỗi lần chuyển giao đều tạo ra cơ hội cho sai sót, chậm trễ, tranh chấp và gian lận. Việc sử dụng hồ sơ giấy dẫn đến thiếu hiệu quả và tranh chấp, gây ra thiệt hại hàng tỷ đô la mỗi năm cho ngành công nghiệp này.
+Logistics toàn cầu bao gồm vô số lần chuyển giao giữa các hãng vận chuyển, kho bãi và cơ quan hải quan. Mỗi lần chuyển giao đều tạo ra cơ hội cho sai sót, chậm trễ, tranh chấp và gian lận. Việc sử dụng hồ sơ giấy dẫn đến thiếu hiệu quả và tranh chấp, gây ra thiệt hại hàng tỷ đô la mỗi năm cho ngành công nghiệp này.
 
 Việc thiếu khả năng theo dõi thời gian thực gây ra khó khăn trong việc tối ưu hóa tuyến đường, dự đoán sự chậm trễ hoặc phản ứng nhanh chóng trước các sự cố. Khi vấn đề phát sinh, việc xác định trách nhiệm giữa các bên trở nên phức tạp và tốn thời gian.
 

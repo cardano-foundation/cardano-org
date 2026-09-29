@@ -9,7 +9,7 @@ sidebar_position: 12
 
 ## Thách thức
 
-Việc lưu trữ dữ liệu tập trung tạo ra các điểm yếu dễ bị lỗi và tập trung quyền kiểm soát đối với thông tin nhạy cảm. Các nhà cung cấp dịch vụ đám mây có thể gặp sự cố ngừng hoạt động, thay đổi điều khoản dịch vụ hoặc bị buộc phải cung cấp quyền truy cập vào dữ liệu đã lưu trữ. Đối với các ứng dụng nhạy cảm, sự phụ thuộc vào bên thứ ba này tạo ra những rủi ro không thể chấp nhận.
+Việc lưu trữ dữ liệu tập trung tạo ra các điểm lỗi đơn lẻ và tập trung quyền kiểm soát đối với thông tin nhạy cảm. Các nhà cung cấp dịch vụ đám mây có thể gặp sự cố ngừng hoạt động, thay đổi điều khoản dịch vụ hoặc bị buộc phải cung cấp quyền truy cập vào dữ liệu đã lưu trữ. Đối với các ứng dụng nhạy cảm, sự phụ thuộc vào bên thứ ba này tạo ra những rủi ro không thể chấp nhận.
 
 Tính toàn vẹn dữ liệu là một mối quan ngại khác. Người dùng có thể xác minh dữ liệu đã lưu trữ không bị giả mạo bằng cách nào, đặc biệt là trong thời gian dài? Các hệ thống sao lưu truyền thống cung cấp khả năng dự phòng nhưng không đảm bảo tính toàn vẹn dữ liệu.
 

@@ -1,5 +1,5 @@
 ---
-title: Sistemas de Salud
+title: Sistemas de salud
 description: Historiales médicos seguros y portátiles con la tecnología blockchain de Cardano
 sidebar_label: Sistemas de Salud
 sidebar_position: 15
@@ -33,7 +33,7 @@ Los contratos inteligentes pueden automatizar la gestión del consentimiento, ga
 - **La accesibilidad global** favorece la asistencia sanitaria más allá de las fronteras
 - Capacidades de **cumplimiento normativo** para HIPAA y requisitos similares
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explorar aplicaciones de Cardano](/apps)
 - [Recursos para desarrolladores para construir en Cardano](https://developers.cardano.org)

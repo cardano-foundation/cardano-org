@@ -9,9 +9,9 @@ sidebar_position: 4
 
 ## Die Herausforderung
 
-Know-Your-Customer-Prozesse (KYC) sind für die Compliance im Finanzwesen unverzichtbar, erzeugen aber erheblichen Aufwand für Institute wie Kunden. Nutzer müssen dieselben Dokumente immer wieder bei verschiedenen Instituten einreichen. Finanzinstitute geben jährlich Milliarden für KYC-Compliance aus, und einen Großteil davon zahlen die Kunden.
+Know-Your-Customer-Prozesse (KYC) sind für die Compliance im Finanzwesen unverzichtbar, erzeugen aber erheblichen Aufwand für Institute wie Kunden. Nutzer müssen dieselben Dokumente immer wieder bei verschiedenen Instituten einreichen, was doppelte Mühe kostet und sensible Daten an immer mehr Stellen verteilt. Finanzinstitute geben jährlich Milliarden für KYC-Compliance aus, und einen Großteil davon zahlen die Kunden.
 
-The current system is also exclusionary. Das heutige System grenzt zudem aus: Schätzungsweise 1,4 Milliarden Erwachsene weltweit besitzen keine offiziellen Ausweisdokumente und bleiben damit vom Finanzsystem ausgeschlossen, ohne Zugang zu Basisdiensten wie Bankkonten oder Krediten.
+Das heutige System grenzt zudem aus. Schätzungsweise 1,4 Milliarden Erwachsene weltweit besitzen keine offiziellen Ausweisdokumente und bleiben damit vom Finanzsystem ausgeschlossen, ohne Zugang zu Basisdiensten wie Bankkonten oder Krediten.
 
 ## Wie Blockchain dies löst
 

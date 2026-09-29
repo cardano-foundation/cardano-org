@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Các trường hợp sử dụng Cardano
 
-Cardano là một blockchain Layer 1 công khai, không cần cấp phép, hoàn hảo cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay mã hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
+Cardano là một blockchain Layer 1 công khai, không cần cấp phép, rất phù hợp cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay token hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
 
 ## Danh tính
 

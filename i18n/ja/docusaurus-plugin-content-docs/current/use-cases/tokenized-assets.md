@@ -9,9 +9,9 @@ sidebar_position: 13
 
 ## 課題
 
-Traditional investment in real-world assets like real estate, art, or commodities requires significant capital and involves complex legal and administrative processes. This excludes most people from wealth-building opportunities that have historically been reserved for the wealthy.
+不動産、美術品、コモディティといった実物資産への従来型の投資には、多額の資金と複雑な法的・事務的手続きが必要です。そのため、これまで富裕層に限られてきた資産形成の機会から、ほとんどの人が締め出されています。
 
-Even for those who can invest, assets are often illiquid, making it difficult to access funds when needed. The overhead of buying, selling, and managing these assets further reduces returns.
+投資できる人にとっても、こうした資産は流動性が低いことが多く、必要なときに現金化するのは困難です。売買や管理にかかる諸経費も、リターンをさらに押し下げます。
 
 ## ブロックチェーンによる解決策
 
@@ -23,15 +23,15 @@ Even for those who can invest, assets are often illiquid, making it difficult to
 - **コンプライアンスの自動化**: スマートコントラクトにより規制要件を自動的に適用
 - **透明な所有記録**: すべての所有記録が公開検証可能
 
-Tokenization can apply to virtually any asset class: real estate, infrastructure, commodities, collectibles, intellectual property, and more.
+トークン化は、不動産、インフラ、コモディティ、コレクターズアイテム、知的財産など、ほぼあらゆる資産クラスに適用できます。
 
 ## トークン移転のコンプライアンスルール
 
-Tokenized assets can fall under financial regulation. Depending on the asset and the jurisdiction, their issuers may need to limit transfers to verified investors, or freeze and recover tokens for legal reasons. An ordinary native token cannot enforce this, because once minted it follows whoever controls the address it sits at.
+トークン化資産は金融規制の対象になる場合があります。資産の種類や法域によっては、発行者が移転先を確認済みの投資家に限定したり、法的な理由でトークンを凍結・回収したりする必要があります。通常のネイティブトークンは、一度発行されるとそれが置かれたアドレスを管理する人の意のままに動くため、こうした制限をかけられません。
 
-[Programmable tokens](/glossary/programmable-token/) add that layer. They are native tokens that holders can only send when the issuer's transfer rules approve, for example an allowlist of verified holders or a limit per transfer. CIP-113, the proposed standard for them on Cardano, is still under review, and the Cardano Foundation maintains an open-source reference implementation.
+[プログラマブルトークン](/glossary/programmable-token/)は、この仕組みを加えます。発行者の移転ルールが承認した場合にのみ保有者が送付できるネイティブトークンで、ルールには確認済み保有者の許可リストや1回あたりの送付上限などがあります。 Cardanoでの標準案であるCIP-113はまだ審査中で、Cardano Foundationがオープンソースのリファレンス実装を管理しています。
 
-What an issuer can do beyond that depends on the scripts the token's registry entry names. Some let authorized parties freeze or seize holdings. A substandard can also limit third-party actions to ones that never reduce a holder's balance. The issuer may be able to swap these scripts later, and the shared contracts can be upgraded by whoever holds the upgrade authority of that deployment. Investors should know who can change the rules before they buy.
+発行者がそれ以上に何をできるかは、トークンのレジストリエントリに指定されたスクリプトによって決まります。権限を持つ者が保有分を凍結または差し押さえできるものもあります。また、サブスタンダードによって、第三者の操作を保有者の残高を減らさないものだけに限定することもできます。発行者が後からこれらのスクリプトを差し替えられる場合もあり、共有コントラクトは、そのデプロイのアップグレード権限を持つ者がアップグレードできます。投資家は購入前に、誰がルールを変更できるのかを確認しておきましょう。
 
 ## なぜCardanoなのか
 

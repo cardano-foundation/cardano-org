@@ -11,7 +11,7 @@ sidebar_position: 9
 
 Hàng giả gây thiệt hại hàng trăm tỉ đô la mỗi năm cho các doanh nghiệp chính thống và tiềm ẩn những rủi ro thực tiễn đối với người tiêu dùng. Từ hàng xa xỉ đến đồ điện tử và dược phẩm, hàng giả tràn lan trên thị trường toàn cầu. Các biện pháp chống hàng giả truyền thống như hình ba chiều và số seri rất dễ bị làm giả.
 
-Người tiêu dùng gặp khó khăn trong việc xác minh tính xác thực của sản phẩm, đặc biệt là khi mua hàng qua thị trường thứ cấp hoặc các nền tảng trực tuyến. .
+Người tiêu dùng gặp khó khăn trong việc xác minh tính xác thực của sản phẩm, đặc biệt là khi mua hàng qua thị trường thứ cấp hoặc các nền tảng trực tuyến. Các thương hiệu chính hãng bị tổn hại uy tín khi hàng giả mang tên họ gây hại hoặc khiến khách hàng thất vọng.
 
 ## Cách Blockchain giải quyết vấn đề
 

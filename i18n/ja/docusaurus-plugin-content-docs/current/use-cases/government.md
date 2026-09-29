@@ -9,9 +9,9 @@ sidebar_position: 5
 
 ## 課題
 
-政府が発行する文書は市民のアイデンティティの基盤ですが、偽造、紛失、行政の非効率性に対して依然として脆弱です。出生証明書、不動産登記、事業許可証などの公文書は紙ベースであることが多く、その確認や持ち運びに課題があります。 Birth certificates, property deeds, business licenses, and other official records are often paper-based, creating challenges for verification and portability.
+政府が発行する文書は市民のアイデンティティの基盤ですが、偽造、紛失、行政の非効率性に対して依然として脆弱です。出生証明書、不動産登記、事業許可証などの公文書は紙ベースであることが多く、その確認や持ち運びに課題があります。
 
-市民は自分自身の書類のコピーを取得するために長い手続きを強いられ、行政機関は管轄をまたぐ記録管理に苦労しています。文書の偽造は制度への信頼を損ない、不正利用された個人には深刻な被害をもたらします。 Document fraud undermines trust in institutions and creates real harm for individuals whose identities are misused.
+市民は自分自身の書類のコピーを取得するために長い手続きを強いられ、行政機関は管轄をまたぐ記録管理に苦労しています。文書の偽造は制度への信頼を損ない、不正利用された個人には深刻な被害をもたらします。
 
 ## ブロックチェーンによる解決策
 

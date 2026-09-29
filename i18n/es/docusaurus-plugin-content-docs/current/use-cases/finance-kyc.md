@@ -33,7 +33,7 @@ Los contratos inteligentes pueden automatizar las comprobaciones de cumplimiento
 - Las **comisiones bajas** hacen económicamente viables las microtransacciones y la verificación de cuentas pequeñas
 - Las **alianzas empresariales** demuestran la adopción real en el sector financiero
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de identidad en Cardano](/apps/?tags=identity)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

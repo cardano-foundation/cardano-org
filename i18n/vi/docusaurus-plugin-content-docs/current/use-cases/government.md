@@ -9,9 +9,9 @@ sidebar_position: 5
 
 ## Thách thức
 
-Các giấy tờ do Chính phủ cấp tạo nên nền tảng của danh tính công dân, nhưng chúng vẫn dễ bị làm giả, thất lạc và gặp phải sự kém hiệu quả trong khâu hành chính. Giấy khai sinh, giấy chứng nhận quyền sở hữu nhà đất, giấy phép kinh doanh và các giấy tờ chính thức khác thường được lưu trữ trên giấy, gây khó khăn cho việc xác minh và chuyển đổi.
+Các giấy tờ do Chính phủ cấp tạo nên nền tảng của danh tính công dân, nhưng chúng vẫn dễ bị làm giả, thất lạc và gặp phải sự kém hiệu quả trong khâu hành chính. Giấy khai sinh, giấy chứng nhận quyền sở hữu nhà đất, giấy phép kinh doanh và các giấy tờ chính thức khác thường được lưu trữ trên giấy, gây khó khăn cho việc xác minh và sử dụng ở nơi khác.
 
-Người dân thường phải trải qua các thủ tục kéo dài để nhận được bản sao các giấy tờ của chính mình, trong khi các cơ quan Chính phủ lại gặp khó khăn trong việc lưu trữ hồ sơ trên các khu vực pháp lý. Gian lận giấy tờ làm suy giảm lòng tin vào các tổ chức và gây ra thiệt hại thực sự cho những cá nhân bị lạm dụng danh tính.
+Người dân thường phải trải qua các thủ tục kéo dài để nhận được bản sao các giấy tờ của chính mình, trong khi các cơ quan Chính phủ lại gặp khó khăn trong việc quản lý hồ sơ giữa các khu vực pháp lý khác nhau. Gian lận giấy tờ làm suy giảm lòng tin vào các tổ chức và gây ra thiệt hại thực sự cho những cá nhân bị lạm dụng danh tính.
 
 ## Cách Blockchain giải quyết vấn đề
 

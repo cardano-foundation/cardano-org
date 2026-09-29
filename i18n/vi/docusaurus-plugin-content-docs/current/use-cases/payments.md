@@ -9,7 +9,7 @@ sidebar_position: 7
 
 ## Thách thức
 
-Thanh toán xuyên biên giới vẫn còn chậm, tốn kém và thiếu minh bạch. Các dịch vụ chuyển tiền truyền thống tính phí trung bình từ 6-7% trên toàn cầu, với một số tuyến chuyển tiền vượt quá 10%. Các giao dịch có thể mất nhiều ngày để hoàn tất, và người nhận thường có rất ít lựa chọn để tiếp cận số tiền đó.
+Thanh toán xuyên biên giới vẫn còn chậm, tốn kém và thiếu minh bạch. Các dịch vụ chuyển tiền truyền thống tính phí trung bình từ 6 đến 7% trên toàn cầu, với một số tuyến chuyển tiền vượt quá 10%. Các giao dịch có thể mất nhiều ngày để hoàn tất, và người nhận thường có rất ít lựa chọn để tiếp cận số tiền đó.
 
 Đối với hàng triệu lao động nhập cư gửi tiền về nhà để hỗ trợ gia đình, những khoản phí này gây ra một gánh nặng đáng kể. Ngân hàng Thế giới ước tính rằng việc giảm phí chuyển tiền xuống còn 3% có thể giúp người gửi tiết kiệm hơn 20 tỉ đô la mỗi năm.
 

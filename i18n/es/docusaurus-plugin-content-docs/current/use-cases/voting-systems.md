@@ -33,7 +33,7 @@ La propia gobernanza de Cardano utiliza la votación basada en blockchain, lo qu
 - La **experiencia de gobernanza de la comunidad** aporta conocimientos prácticos
 - El **enfoque basado en la investigación** aborda los complejos requisitos de los sistemas de votación
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Aprende sobre la gobernanza de Cardano](/governance)
 - [Explorar herramientas de gobernanza](/apps?tags=governance)

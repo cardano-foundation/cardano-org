@@ -33,7 +33,7 @@ Los NFTs y los tokens nativos de Cardano permiten nuevos modelos de distribució
 - **Enfoque comunitario**: se alinea con los artistas que buscan alternativas al control corporativo
 - **Sostenibilidad**: mediante el proof of stake, atrae a los creadores comprometidos con el medio ambiente
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora los mercados de NFT en Cardano](/apps/?tags=nft)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

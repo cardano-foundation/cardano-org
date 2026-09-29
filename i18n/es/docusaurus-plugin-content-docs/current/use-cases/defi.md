@@ -33,7 +33,7 @@ El ecosistema DeFi de Cardano incluye intercambios descentralizados (DEXs), plat
 - **Sostenibilidad** mediante el sistema de prueba de participación (proof of stake) que se alinea con la creación de valor a largo plazo
 - **Una comunidad fuerte** de desarrolladores que construyen aplicaciones financieras innovadoras
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explorar aplicaciones DeFi en Cardano](/apps/?operator=OR&tags=lending&tags=dex)
 - [Obtén una billetera de Cardano](/apps/?tags=wallet)

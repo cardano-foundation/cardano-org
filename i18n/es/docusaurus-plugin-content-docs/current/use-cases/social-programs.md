@@ -33,7 +33,7 @@ Las stablecoins y las billeteras digitales permiten a los beneficiarios recibir 
 - La **accesibilidad** permite operar en áreas con infraestructura bancaria limitada
 - **Gobernanza** permite la participación de la comunidad en el diseño del programa
 
-## Primeros Pasos
+## Primeros pasos
 
 - [Explora las aplicaciones de Cardano](/apps)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)

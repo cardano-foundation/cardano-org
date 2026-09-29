@@ -9,9 +9,9 @@ sidebar_position: 12
 
 ## 課題
 
-Centralized data storage creates single points of failure and concentrates control over sensitive information. Cloud providers can experience outages, change terms of service, or be compelled to provide access to stored data. For sensitive applications, this dependency on third parties creates unacceptable risks.
+中央集権型のデータストレージは単一障害点を生み、機密情報の管理権限を一か所に集中させます。クラウド事業者では障害が起きることもあれば、利用規約が変更されたり、保存データへのアクセス提供を強制されたりすることもあります。機密性の高い用途では、こうした第三者への依存は許容できないリスクになります。
 
-Data integrity is another concern. How can users verify that stored data hasn't been tampered with, especially over long time periods? データの完全性も課題です。保存されたデータが改ざんされていないことを、特に長期間にわたってどう検証するのでしょうか。従来のバックアップシステムは冗長性を提供しますが、完全性の証明はできません。
+データの完全性も課題です。保存されたデータが改ざんされていないことを、特に長期間にわたってどう検証するのでしょうか。従来のバックアップシステムは冗長性を提供しますが、完全性の証明はできません。
 
 ## ブロックチェーンによる解決策
 

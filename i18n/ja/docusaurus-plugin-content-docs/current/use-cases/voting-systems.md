@@ -9,9 +9,9 @@ sidebar_position: 14
 
 ## 課題
 
-選挙の公正性は民主主義の根幹ですが、投票システムには根強い課題があります。紙ベースの方式は時間がかかりミスが起きやすく、電子投票はセキュリティ、監査可能性、信頼性に対する懸念があります。有権者は自分の票が正しく集計されたかを確認できないことがほとんどです。 Paper-based systems are slow and error-prone, while electronic systems raise concerns about security, auditability, and trust. Voters often cannot verify that their vote was counted correctly.
+選挙の公正性は民主主義の根幹ですが、投票システムには根強い課題があります。紙ベースの方式は時間がかかりミスが起きやすく、電子投票はセキュリティ、監査可能性、信頼性に対する懸念があります。有権者は自分の票が正しく集計されたかを確認できないことがほとんどです。
 
-政府の選挙に限らず、あらゆる組織がガバナンス上の意思決定のために安全な投票の仕組みを必要としています。現在のソリューションは透明性に欠けていたり、不正操作に弱かったりすることが少なくありません。 Current solutions often lack transparency or are vulnerable to manipulation.
+政府の選挙に限らず、あらゆる組織がガバナンス上の意思決定のために安全な投票の仕組みを必要としています。現在のソリューションは透明性に欠けていたり、不正操作に弱かったりすることが少なくありません。
 
 ## ブロックチェーンによる解決策
 

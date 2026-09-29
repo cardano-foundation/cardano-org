@@ -9,7 +9,7 @@ sidebar_position: 6
 
 ## Thách thức
 
-Các hệ thống tài chính truyền thống không bao gồm hàng tỷ người trên thế giới, những người không được tiếp cận với những dịch vụ ngân hàng. Kể cả với những người được tiếp cận, các dịch vụ tài chính thường đi kèm với phí cao, các điều khoản không rõ ràng và sự kiểm soát tập trung có thể đóng băng tài sản hoặc từ chối dịch vụ một cách tùy tiện.
+Các hệ thống tài chính truyền thống bỏ ngoài lề hàng tỷ người trên thế giới không có quyền tiếp cận dịch vụ ngân hàng. Kể cả với những người được tiếp cận, các dịch vụ tài chính thường đi kèm với phí cao, các điều khoản không rõ ràng và sự kiểm soát tập trung có thể đóng băng tài sản hoặc từ chối dịch vụ một cách tùy tiện.
 
 Khủng hoảng tài chính năm 2008 đã minh chứng cho các rủi ro của các hệ thống tài chính tập trung, nơi mà những thất bại tại các tổ chức lớn có thể gây ra hậu quả lan rộng khắp toàn bộ nền kinh tế. Những người dùng hầu như không biết tiền gửi của họ được sử dụng như thế nào hoặc họ đang phải đối mặt với các rủi ro nào.
 

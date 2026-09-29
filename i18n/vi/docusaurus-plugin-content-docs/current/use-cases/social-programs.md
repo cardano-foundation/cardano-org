@@ -11,7 +11,7 @@ sidebar_position: 11
 
 Các chương trình xã hội hướng đến giảm nghèo, cứu trợ thiên tai và phát triển vẫn phải đối mặt với những thử thách dai dẳng trong việc phân bổ quỹ. Tham nhũng làm thất thoát nguồn lực đáng lẽ dành cho người thụ hưởng, trong khi sự thiếu hiệu quả trong quản lý lại làm tăng chi phí và gây chậm trễ. Nhà tài trợ và người nộp thuế thường thiếu thông tin về cách sử dụng quỹ trên thực tế.
 
-Đối với người thụ hưởng, việc tiếp cận viện trợ có thể gặp phải những rào cản về thủ tục hành chính, các bên trung gian thu phí và sự chậm trễ làm suy yếu hiệu quả của chương trình. Việc chứng minh đủ điều kiện và ngăn chặn các yêu cầu bồi thường trùng lặp càng làm tăng thêm sự phức tạp.
+Đối với người thụ hưởng, việc tiếp cận viện trợ có thể gặp phải những rào cản về thủ tục hành chính, các bên trung gian thu phí và sự chậm trễ làm suy yếu hiệu quả của chương trình. Việc chứng minh đủ điều kiện và ngăn chặn việc nhận hỗ trợ trùng lặp càng làm tăng thêm sự phức tạp.
 
 ## Cách Blockchain giải quyết vấn đề
 
