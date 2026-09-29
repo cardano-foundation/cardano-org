@@ -144,31 +144,31 @@
     "description": "Navbar item with label Supply Chain"
   },
   "item.label.Use": {
-    "message": "Use",
+    "message": "Uso",
     "description": "Navbar item with label Use"
   },
   "item.label.What is Cardano?": {
-    "message": "What is Cardano?",
+    "message": "¿Qué es Cardano?",
     "description": "Navbar item with label What is Cardano?"
   },
   "item.label.Learn step by step": {
-    "message": "Learn step by step",
+    "message": "Aprende paso a paso",
     "description": "Navbar item with label Learn step by step"
   },
   "item.label.What is a Wallet?": {
-    "message": "What is a Wallet?",
+    "message": "¿Qué es una cartera?",
     "description": "Navbar item with label What is a Wallet?"
   },
   "item.label.Cardano Quiz": {
-    "message": "Cardano Quiz",
+    "message": "Quiz de Cardano",
     "description": "Navbar item with label Cardano Quiz"
   },
   "item.label.How Cardano works": {
-    "message": "How Cardano works",
+    "message": "Cómo funciona Cardano",
     "description": "Navbar item with label How Cardano works"
   },
   "item.label.Smart contracts and DApps": {
-    "message": "Smart contracts and DApps",
+    "message": "Contratos inteligentes y DApps",
     "description": "Navbar item with label Smart contracts and DApps"
   },
   "item.label.Cardano Academy": {
@@ -180,11 +180,11 @@
     "description": "Navbar item with label Ouroboros"
   },
   "item.label.Cardano Apps": {
-    "message": "Cardano Apps",
+    "message": "Aplicaciones de Cardano",
     "description": "Navbar item with label Cardano Apps"
   },
   "item.label.Find a Wallet": {
-    "message": "Find a Wallet",
+    "message": "Buscar una cartera",
     "description": "Navbar item with label Find a Wallet"
   },
   "item.label.Stablecoins": {
@@ -192,39 +192,39 @@
     "description": "Navbar item with label Stablecoins"
   },
   "item.label.Start Here": {
-    "message": "Start Here",
+    "message": "Comienza aquí",
     "description": "Navbar item with label Start Here"
   },
   "item.label.Ambassador Program": {
-    "message": "Ambassador Program",
+    "message": "Programa de Embajadores",
     "description": "Navbar item with label Ambassador Program"
   },
   "item.label.Operator Notifications": {
-    "message": "Operator Notifications",
+    "message": "Notificaciones para operadores",
     "description": "Navbar item with label Operator Notifications"
   },
   "item.label.Run a Stake Pool": {
-    "message": "Run a Stake Pool",
+    "message": "Operar un stake pool",
     "description": "Navbar item with label Run a Stake Pool"
   },
   "item.label.Governance Overview": {
-    "message": "Governance Overview",
+    "message": "Visión general de gobernanza",
     "description": "Navbar item with label Governance Overview"
   },
   "item.label.Delegate your voting power": {
-    "message": "Delegate your voting power",
+    "message": "Delega tu poder de voto",
     "description": "Navbar item with label Delegate your voting power"
   },
   "item.label.AI Agents": {
-    "message": "AI Agents",
+    "message": "Agentes de IA",
     "description": "Navbar item with label AI Agents"
   },
   "item.label.Contact the Foundation": {
-    "message": "Contact the Foundation",
+    "message": "Contactar con la Fundación",
     "description": "Navbar item with label Contact the Foundation"
   },
   "item.label.All Use Cases": {
-    "message": "All Use Cases",
+    "message": "Todos los casos de uso",
     "description": "Navbar item with label All Use Cases"
   }
 }
