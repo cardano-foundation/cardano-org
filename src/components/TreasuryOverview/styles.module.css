@@ -1,0 +1,101 @@
+.strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.figure {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  line-height: 1.2;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.board {
+  margin-top: 3rem;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.toggleButton,
+.toggleActive {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+}
+
+.toggleActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.outlookGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.method {
+  margin-top: 1rem;
+}
+
+.ratio {
+  min-height: 1.6em;
+}
+
+.skeleton {
+  height: 380px;
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.errorBox {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .strip,
+  .outlookGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+}
