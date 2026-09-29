@@ -39,6 +39,8 @@ export function incomeOption({ income, isDark, labels }) {
   return {
     tooltip: {
       trigger: "axis",
+      // Keep the box inside the chart so it is never cut off on narrow screens.
+      confine: true,
       formatter: (params) => {
         const epoch = params[0]?.axisValue;
         const lines = params.map((p) => `${p.marker}${p.seriesName}: ${fmtAda(p.value)}`);
@@ -70,6 +72,8 @@ export function feeShareOption({ income, isDark, labels }) {
   return {
     tooltip: {
       trigger: "axis",
+      // Keep the box inside the chart so it is never cut off on narrow screens.
+      confine: true,
       formatter: (params) => `${labels.epoch} ${params[0]?.axisValue}<br/>${params[0].marker}${labels.feeShare}: ${params[0].value.toFixed(3)}%`,
     },
     grid: { left: "3%", right: "4%", bottom: "3%", top: 32, containLabel: true },
@@ -102,6 +106,8 @@ export function outlookOption({ points, projection, isDark, labels }) {
   return {
     tooltip: {
       trigger: "axis",
+      // Keep the box inside the chart so it is never cut off on narrow screens.
+      confine: true,
       formatter: (params) => {
         const epoch = params[0]?.value?.[0];
         const lines = params.map((p) => `${p.marker}${p.seriesName}: ${fmtAda(p.value[1])}`);
