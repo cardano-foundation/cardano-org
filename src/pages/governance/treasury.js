@@ -47,7 +47,7 @@ function Explainer() {
         <p>
           {translate({
             id: "governance.treasury.explainer.income.body",
-            message: "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, usually when funded work returns money it did not use.",
+            message: "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, for example when funded work returns money it did not use.",
           })}
         </p>
       </div>

@@ -25,7 +25,7 @@ export default function TreasuryDonations() {
       <p>
         {translate({
           id: "governance.treasury.donations.intro",
-          message: "Since the Conway era, a treasury donation sends ada straight back into the treasury. Most of it so far has been money returned from treasury-funded work: budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved.",
+          message: "Since the Conway era, a treasury donation sends ada straight back into the treasury. It is mainly used to return money from treasury-funded work, for example budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved.",
         })}
       </p>
       <div className={styles.grid}>

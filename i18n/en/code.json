@@ -10224,7 +10224,7 @@
     "message": "Where the money comes from"
   },
   "governance.treasury.explainer.income.body": {
-    "message": "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, usually when funded work returns money it did not use."
+    "message": "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, for example when funded work returns money it did not use."
   },
   "governance.treasury.explainer.spending.title": {
     "message": "How it is spent"
@@ -10371,7 +10371,7 @@
     "message": "Returned funds and donations"
   },
   "governance.treasury.donations.intro": {
-    "message": "Since the Conway era, a treasury donation sends ada straight back into the treasury. Most of it so far has been money returned from treasury-funded work: budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved."
+    "message": "Since the Conway era, a treasury donation sends ada straight back into the treasury. It is mainly used to return money from treasury-funded work, for example budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved."
   },
   "governance.treasury.donations.total": {
     "message": "Received in total"
