@@ -15,6 +15,9 @@ function yearOf(epoch) {
 
 const fmtAda = (v) => `${Math.round(v).toLocaleString()} ada`;
 
+// 73 epochs per year, labels every second year.
+const EPOCHS_PER_TICK = 146;
+
 // Stacked bars for the two sources plus the fee share as a line on its own axis.
 export function incomeOption({ income, isDark, labels }) {
   const c = axisColor(isDark);
@@ -70,8 +73,10 @@ export function outlookOption({ points, projection, isDark, labels }) {
       type: "value",
       min: points[0]?.epoch,
       max: projection[projection.length - 1]?.epoch,
-      axisLabel: { color: c, formatter: (v) => String(yearOf(v)) },
-      splitNumber: 8,
+      // Ticks every two years of epochs, the partial last step is not labelled
+      // so it cannot collide with the one before it.
+      interval: EPOCHS_PER_TICK,
+      axisLabel: { color: c, formatter: (v) => String(yearOf(v)), showMaxLabel: false },
     },
     yAxis: { type: "value", name: "ada", nameTextStyle: { color: c }, axisLabel: { color: c, formatter: (v) => `${(v / 1e9).toFixed(1)}B` } },
     series: [
