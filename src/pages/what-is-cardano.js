@@ -1,13 +1,8 @@
 import React from "react";
-import Layout from "@theme/Layout";
-import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { FaInfoCircle, FaUser, FaBuilding, FaLandmark } from "react-icons/fa";
-import SiteHero from "@site/src/components/Layout/SiteHero";
-import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
-import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import ExplainerPage from "@site/src/components/Layout/ExplainerPage";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
@@ -15,26 +10,9 @@ import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ProofPointsList from "@site/src/components/ProofPointsList";
-import FAQSection from "@site/src/components/FAQSection";
-import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
-import { faqJsonLd } from "@site/src/utils/jsonLd";
 import { getWhatIsCardanoFAQ } from "@site/src/data/whatIsCardanoFAQ";
 import styles from "./what-is-cardano.module.css";
-
-function HomepageHeader() {
-  return (
-    <SiteHero
-      title={translate({ id: "whatIsCardano.hero.title", message: "What is Cardano?" })}
-      description={translate({
-        id: "whatIsCardano.hero.description",
-        message:
-          "A proof-of-stake blockchain built on peer-reviewed research, run by stake pools around the world and governed by the people who hold ada.",
-      })}
-      bannerType="starburst"
-    />
-  );
-}
 
 function WhatIsCardanoSection() {
   return (
@@ -301,7 +279,7 @@ function HistorySection() {
 export default function WhatIsCardano() {
   const faq = getWhatIsCardanoFAQ();
   return (
-    <Layout
+    <ExplainerPage
       title={translate({
         id: "whatIsCardano.meta.title",
         message: "What Is Cardano? A Beginner's Guide to the Cardano Blockchain",
@@ -311,37 +289,29 @@ export default function WhatIsCardano() {
         message:
           "Cardano is a proof-of-stake blockchain platform for money, identity and governance. Learn how it works, what makes it different, what it is used for and how to get started.",
       })}
+      hero={{
+        title: translate({ id: "whatIsCardano.hero.title", message: "What is Cardano?" }),
+        description: translate({
+          id: "whatIsCardano.hero.description",
+          message:
+            "A proof-of-stake blockchain built on peer-reviewed research, run by stake pools around the world and governed by the people who hold ada.",
+        }),
+        bannerType: "starburst",
+      }}
+      faq={faq}
+      cta={{
+        title: translate({ id: "whatIsCardano.cta.title", message: "Think you have the basics down? Take the Cardano basics quiz." }),
+        buttonLabel: translate({ id: "whatIsCardano.cta.button", message: "Take the quiz" }),
+        buttonLink: "/quiz",
+      }}
     >
-      <Head>
-        <script type="application/ld+json">{faqJsonLd(faq)}</script>
-      </Head>
-      <OpenGraphInfo />
-      <HomepageHeader />
-      <main>
-        <BackgroundWrapper backgroundType="zoom">
-          <BoundaryBox>
-            <WhatIsCardanoSection />
-            <AdaSection />
-            <HowItWorksSection />
-            <DifferentSection />
-            <UsedForSection />
-            <GetStartedSection />
-            <HistorySection />
-            <FAQSection data={faq} />
-            <SpacerBox size="medium" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-        <BackgroundWrapper backgroundType="gradientDark">
-          <BoundaryBox>
-            <CtaOneColumn
-              title={translate({ id: "whatIsCardano.cta.title", message: "Think you have the basics down? Take the Cardano basics quiz." })}
-              buttonLabel={translate({ id: "whatIsCardano.cta.button", message: "Take the quiz" })}
-              buttonLink="/quiz"
-            />
-            <SpacerBox size="small" />
-          </BoundaryBox>
-        </BackgroundWrapper>
-      </main>
-    </Layout>
+      <WhatIsCardanoSection />
+      <AdaSection />
+      <HowItWorksSection />
+      <DifferentSection />
+      <UsedForSection />
+      <GetStartedSection />
+      <HistorySection />
+    </ExplainerPage>
   );
 }

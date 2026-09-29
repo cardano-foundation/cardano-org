@@ -92,6 +92,7 @@ function PageContent() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="noindex" />
         <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",

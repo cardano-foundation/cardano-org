@@ -49,6 +49,8 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
 
    Name the file descriptively, lowercase, hyphens (e.g. `minswap.webp`, not `Screenshot 2026-04-19.png`).
 
+   You can add more screenshots for the detail page `/apps/<slug>` (see `extraPreviews` in step 9). Name them with the primary file name plus a suffix describing the view, e.g. `minswap-analytics.webp`. Every file in the folder is checked against the 500 KB limit.
+
 2. **Add your screenshot to the repository**
    - Place it in: `src/data/app-screenshots/your-project-name.webp`
 
@@ -74,6 +76,9 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
      description: "Brief description of what your project does (120-180 chars; avoid 'best/first/only' claims)",
      tagline: "Multi-pool DEX with deepest liquidity",  // max 60 chars; shown on /apps tiles
      preview: require("./app-screenshots/your-project-name.webp"),
+     extraPreviews: [                  // OPTIONAL - more screenshots for the detail page
+       require("./app-screenshots/your-project-name-analytics.webp"),
+     ],
      icon: "/img/app-icons/your-project-name.svg", // OPTIONAL - for logo display in components
      statsLabel: "yourprojectlabel", // OPTIONAL - for transaction statistics mapping
      website: "https://your-project.com",
@@ -153,13 +158,30 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - Example: `icon: "/img/app-icons/minswap.svg"`
    - If omitted, components will show a fallback badge with your app's first letter
 
+   **extraPreviews field:**
+   - Array of additional screenshots, each a `require("./app-screenshots/<file>")` like `preview`
+   - Shown together with `preview` on the detail page `/apps/<slug>`: a single image when there is only `preview`, a carousel when there are more
+   - Same size, format, and 500 KB rules as the primary screenshot
+   - Example: `extraPreviews: [require("./app-screenshots/minswap-analytics.webp")]`
+
    **statsLabel field:**
    - Used to map your app to transaction statistics data
    - Only needed if your app has on-chain transaction metrics
    - Must match the exact label in `/src/data/tx-stats.json`
    - See [Transaction Rankings Guide](/docs/get-involved/tx-rankings) for details on getting your app tracked
    - Example: `statsLabel: "minswap"`
-   - If omitted, the system will attempt normalized matching on your title
+   - If omitted, the system will attempt normalized matching on your title (unless `metadataLabel` is set, see below)
+
+   **metadataLabel field (set by maintainers):**
+   - A positive integer, the transaction metadata label your app writes on-chain (see [Path 2](/docs/get-involved/tx-rankings#path-2-metadata-based-tracking-cip-20-and-other-cips) in the Transaction Rankings Guide)
+   - When `statsLabel` finds no match, the app's transaction count is taken from that metadata label instead, and the title fallback is skipped
+   - Together with `statsLabel`, it links the label's row on the [leaderboard](/apps/leaderboard) to your app entry
+   - The build's schema validator rejects anything that is not a positive integer
+   - Submitters: leave omitted. Maintainers add this when a label is verified
+
+   **statsNote field (set by maintainers):**
+   - A short free-text note shown under the transaction count on the app's leaderboard row, e.g. to explain what is being counted
+   - Not shown anywhere else. Submitters: leave omitted
 
    **x field:**
    - X (Twitter) handle for the project, used on the `/apps/<slug>` detail page and as `sameAs` in the JSON-LD

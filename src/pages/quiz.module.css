@@ -1,3 +1,9 @@
+.learnLink {
+  margin: 0 0 var(--site-space-md);
+  text-align: center;
+  font-weight: 600;
+}
+
 .academyBanner {
   display: flex;
   flex-wrap: wrap;

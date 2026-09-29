@@ -37,7 +37,7 @@
   },
   "link.item.label.More entities": {
     "message": "Các tổ chức khác",
-    "description": "The label of footer link with label=More entities linking to /entities/#companies"
+    "description": "The label of footer link with label=More entities linking to /entities/"
   },
   "link.item.label.Brand Assets": {
     "message": "Tài sản thương hiệu",
@@ -82,5 +82,17 @@
   "copyright": {
     "message": "® Cardano",
     "description": "The footer copyright"
+  },
+  "link.item.label.Learn Cardano": {
+    "message": "Learn Cardano",
+    "description": "The label of footer link with label=Learn Cardano linking to /learn"
+  },
+  "link.item.label.Code of Conduct": {
+    "message": "Code of Conduct",
+    "description": "The label of footer link with label=Code of Conduct linking to /community-code-of-conduct"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/cardano-foundation/cardano-org"
   }
 }

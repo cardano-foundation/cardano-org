@@ -14,7 +14,7 @@ function HomepageHeader() {
   return (
     <SiteHero
       title={translate({id: 'useCases.hero.title', message: 'Use Cases'})}
-      description={translate({id: 'useCases.hero.description', message: 'Cardano: A developing platform built to support enterprises and a wide range of use cases, solving challenges across multiple industries.'})}
+      description={translate({id: 'useCases.hero.description', message: 'How Cardano blockchain solves real-world problems across industries.'})}
       bannerType="fluidBlue"
     />
   );
@@ -33,7 +33,7 @@ export default function Home() {
           <BoundaryBox>
           <TitleWithText
               description={[
-                translate({id: 'useCases.intro.description', message: "Cardano is a public, permissionless Layer 1 blockchain, perfect for enterprises seeking secure, scalable, and transparent solutions. Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage. Empower your business with a blockchain built for trust, collaboration, and global impact."}),
+                translate({id: 'useCases.intro.description', message: "Explore blockchain applications across industries. From identity verification to supply chain tracking, Cardano provides secure, scalable solutions for real-world challenges."}),
               ]}
             />
 

@@ -21,7 +21,7 @@ export default function HomeProofPointsSection() {
       <ProofPointsList
         points={points}
         cta={{
-          label: translate({ id: "home.proofPoints.cta", message: "What is Cardano?" }),
+          label: translate({ id: "home.proofPoints.cta", message: "See all differences" }),
           to: "/what-is-cardano",
         }}
       />

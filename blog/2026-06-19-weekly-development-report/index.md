@@ -1,6 +1,6 @@
 ---
 slug: 2026-06-19-weekly-development-report
-title: "Weekly Development Report"
+title: "Lace Carbon testing and Hydra v2.2.0"
 description: "Lace Carbon entered internal testing, Hydra v2.2.0 launched, Mithril advanced recursive SNARKs, and the Constitutional Committee election officially became competitive with five candidates."
 authors: [iog]
 tags: [development]

@@ -1,6 +1,6 @@
 ---
 slug: 2026-07-08-community-digest
-title: "Community Digest"
+title: "Genesis Hacker House opens and RealFi Phase 1 testnet goes live"
 description: "Genesis Hacker House applications opened for Cardano builders, the State of Cardano Governance 2026 report was released, RealFi launched its Phase 1 testnet, and several CIPs advanced through review."
 authors: [community]
 tags: [community]

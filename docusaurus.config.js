@@ -19,7 +19,7 @@ const { createSitemapItemsHook } = require('./scripts/sitemap-hreflang');
 const getNavbarItems = require('./src/data/navbar');
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = false;
+const isAnnouncementActive = true;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -51,6 +51,8 @@ const config = {
   },
 
   customFields: {
+    // Date of this build (YYYY-MM-DD); used to derive date-based labels so server and client agree.
+    BUILD_DATE: new Date().toISOString().slice(0, 10),
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
 
@@ -195,7 +197,7 @@ const config = {
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**'],
+          ignorePatterns: ['**/tags/**', '**/news/tags/**', '**/news/page/**', '**/insights/template/**'],
           // Hook implementation lives in scripts/sitemap-hreflang.js so it can be
           // unit-tested without spinning up a Docusaurus build. See the JSDoc there.
           createSitemapItems: createSitemapItemsHook({ projectRoot: __dirname }),
@@ -263,6 +265,16 @@ const config = {
             }
           }
 
+          // Renamed apps keep their old detail URL, keyed by the new slug.
+          const appRenames = {
+            'cardano-govscope': ['chang-watch'],
+          };
+          const appMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/apps\/([a-z0-9-]+)\/?$/);
+          if (appMatch && appRenames[appMatch[2]]) {
+            const prefix = appMatch[1] || '';
+            return appRenames[appMatch[2]].map((slug) => `${prefix}/apps/${slug}`);
+          }
+
           // Dropped tags (format modifiers) point at the news index.
           const newsIndex = existingPath.match(/^(\/(?:ja|de|es|vi))?\/news\/?$/);
           if (newsIndex) {
@@ -294,6 +306,20 @@ const config = {
                 Buffer: ['buffer', 'Buffer'],
               }),
             ],
+            // Webpack replaces content hashes by plain string replacement in every
+            // emitted asset (RealContentHashPlugin). Docusaurus names route chunks
+            // `simpleHash(modulePath, 8)`, the same shape as a content hash, so a
+            // chunk name can collide with one and get rewritten as well. Terser has
+            // long dropped the quotes around such a name (it is a valid
+            // identifier), which turns the rewritten literal into an invalid object
+            // key - `4003635d:"13401"` - and the whole bundle fails to parse: no
+            // React hydration, so dead menu and dead hero animation, while the
+            // build stays green. That is what shipped for /de, the only locale
+            // whose chunk name collided. scripts/check-js-assets.js now fails the
+            // build on any asset that does not parse.
+            optimization: {
+              realContentHash: false,
+            },
             node: {
               __dirname: true,
             },
@@ -423,20 +449,6 @@ const config = {
                 label: 'Privacy Policy',
                 href: 'https://cardanofoundation.org/en/privacy',
               },
-              /* TODO: once we have these files, link locally not to the cf page 
-              {
-                label: 'Terms',
-                to: '/terms-and-conditions',
-              },
-              {
-                label: 'Privacy Policy',
-                to: '/privacy-policy',
-              },
-              {
-                label: 'Cookie Policy',
-                to: '/cookie-policy',
-              },
-              */
             ],
           },
           {
@@ -453,6 +465,10 @@ const config = {
               {
                 label: 'Get Involved',
                 to: '/docs/get-involved',
+              },
+              {
+                label: 'Grants and Funding',
+                to: '/grants-funding',
               },
               {
                 label: 'Code of Conduct',
@@ -481,9 +497,9 @@ const config = {
       // id: always change it when changing the announcement
       // backgroundColor: use #1442B3 for announcements
       announcementBar: isAnnouncementActive ? {
-        id: "announcement_index5", // Any value that will identify this message + increment the number every time to be unique
+        id: "announcement_index6", // Any value that will identify this message + increment the number every time to be unique
         content:
-          `<strong>Cardano Summit 2025 Berlin</strong> 🎟️ Secure your pass now ➡️ <strong><a href="https://summit.cardano.org/page/5056323/tickets#section-6268783" style="color:white; font-weight:bold; text-decoration:underline;">Visit the ticket shop</a></strong>`,
+          `<strong>Cardano turned 9</strong>. Watch the community highlights video on <strong><a href="https://youtu.be/qTJaTArwyeM" target="_blank" rel="noopener noreferrer" style="color:white; font-weight:bold; text-decoration:underline;">YouTube</a></strong>`,
         backgroundColor: "#1442B3",
         textColor: "#FFFFFF", // Use #FFFFFF
         isCloseable: true, // Use true

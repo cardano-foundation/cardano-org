@@ -17,7 +17,16 @@ Before submitting your community, please ensure it meets all of the following cr
 - **Accessible**: No paywalls, registration walls, or private-only access
 - **Well-moderated**: Reliable moderation by a team (not just one person) to maintain a healthy and safe space
 - **Code of Conduct**: All community members should adhere to the [Community Code of Conduct](/community-code-of-conduct). Communities may have additional specific rules, but must align with these core principles
- 
+
+## How to submit
+
+The communities page is a single Markdown file: `docs/communities.md`. Open a pull request that adds one line to the section your community belongs to:
+
+- **Forums** and **Events and local gatherings**: a link with a short description, `- [Name](https://...) - one line about the community`
+- **Cardano on Telegram** and **Cardano on Discord**: the channel name and its invite link, following the lines already there
+- **Language specific discussions**: a flag emoji shortcode, the group name, and the link, e.g. `- :de: Cardano German: https://t.me/...`
+
+Keep the description to one line and do not add new sections. In the pull request, say briefly how the community meets the requirements above (moderation team, size, activity).
 
 ## Need help?
 

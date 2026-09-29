@@ -1,6 +1,6 @@
 ---
 slug: 2026-08-07-weekly-development-report
-title: Weekly Development Report
+title: "Hydra 2.3.0 and Dijkstra nested transactions advance"
 description: Hydra released 2.3.0 with snapshot-processing speedups, the ledger advanced Dijkstra nested transactions, and Van Rossem benchmarks completed.
 authors: [iog]
 tags: [development]

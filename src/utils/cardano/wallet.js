@@ -4,6 +4,10 @@
 // browser the moment it is actually needed. This keeps the initial bundle
 // small and the modules out of the server-side render.
 
+import { DelegationGuardError, EXPECTED_NETWORK_ID } from "../walletTx.js";
+import { rewardAddressFromHex } from "./bech32.mjs";
+import { canonicalDRepId } from "./drepIdStatus.mjs";
+
 let evolutionPromise;
 
 // The SDK's HTTP layer (@effect/platform) adds tracing headers (traceparent, b3)
@@ -121,6 +125,20 @@ export async function firstRewardAddressBech32(api) {
   return RewardAccount.toBech32(RewardAccount.fromHex(hex));
 }
 
+// All reward addresses the wallet exposes (CIP-30 allows several), each as
+// the raw hex the SDK wants and the bech32 form the UI shows and Koios takes.
+// Decoded without the SDK so it stays cheap and testable. An address that
+// does not decode is a wallet bug we surface, never silently drop.
+export async function rewardAddressesBech32(api) {
+  const rewards = await api.getRewardAddresses();
+  if (!Array.isArray(rewards)) throw new Error("Wallet returned no reward address list.");
+  return rewards.map((hex) => {
+    const bech32 = rewardAddressFromHex(hex);
+    if (!bech32) throw new Error("Wallet returned an unreadable reward address.");
+    return { hex, bech32 };
+  });
+}
+
 // CIP-20 transaction message (metadata label 674) that tags every transaction
 // cardano.org builds with its origin. The value follows the CIP-20 shape
 // { "msg": [<lines>] }, where each line is a string of at most 64 bytes.
@@ -129,31 +147,32 @@ function cardanoOrgMessage() {
   return new Map([["msg", ["cardano.org"]]]);
 }
 
-// Map the UI's delegation target to an Evolution SDK DRep.
-// DRep IDs follow CIP-129 (bech32 "drep1..." or hex); the two protocol
-// options map to the AlwaysAbstain / AlwaysNoConfidence variants.
-async function toDRep(target) {
-  const { DRep, Schema } = await loadEvolution();
+// Map the UI's delegation target to an Evolution SDK DRep. The SDK only reads
+// CIP-129 IDs, so typed CIP-105 and hex IDs are converted first. A bare hash
+// has no type and must be resolved by the caller. The two protocol options
+// map to the AlwaysAbstain / AlwaysNoConfidence variants.
+function toDRep({ DRep, Schema }, target) {
   if ("alwaysAbstain" in target) return DRep.alwaysAbstain();
   if ("alwaysNoConfidence" in target) return DRep.alwaysNoConfidence();
-  const id = target.dRepId;
-  return id.startsWith("drep")
-    ? Schema.decodeSync(DRep.FromBech32)(id)
-    : Schema.decodeSync(DRep.FromHex)(id);
+  const id = canonicalDRepId(target.dRepId);
+  if (!id) throw new Error("Not a usable DRep ID.");
+  return Schema.decodeSync(DRep.FromBech32)(id);
 }
 
 // Build, sign (via the connected wallet) and submit a vote-delegation
 // transaction. Coin selection and change come from the wallet; Koios
-// supplies the protocol parameters. Returns the submitted tx hash.
-export async function delegateVote({ api, target, koiosUrl }) {
-  const { Client, mainnet, RewardAccount, Transaction } = await loadEvolution();
+// supplies the protocol parameters. Returns the submitted tx hash. loadSdk
+// is injectable so a test harness can swap the chain.
+export async function delegateVote({ api, target, koiosUrl, loadSdk = loadEvolution }) {
+  const sdk = await loadSdk();
+  const { Client, mainnet, RewardAccount, Transaction } = sdk;
 
   const rewards = await api.getRewardAddresses();
   if (!rewards?.length) {
     throw new Error("Wallet did not return a reward address.");
   }
   const stakeCredential = RewardAccount.fromHex(rewards[0]).stakeCredential;
-  const drep = await toDRep(target);
+  const drep = toDRep(sdk, target);
 
   const client = Client.make(mainnet)
     .withKoios({ baseUrl: koiosUrl })
@@ -161,6 +180,48 @@ export async function delegateVote({ api, target, koiosUrl }) {
   const built = await client
     .newTx()
     .delegateToDRep({ stakeCredential, drep })
+    .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
+    .build();
+
+  const unsignedTx = Transaction.toCBORHex(await built.toTransaction());
+  const witnessSet = await api.signTx(unsignedTx, false);
+  const signedTx = Transaction.addVKeyWitnessesHex(unsignedTx, witnessSet);
+  return api.submitTx(signedTx);
+}
+
+// Build, sign (via the connected wallet) and submit a stake pool delegation.
+// registrationStatus must be fresh (the caller reloads account_info right
+// before) and decides between a plain delegation certificate and a combined
+// registration plus delegation (Conway, deposit from the protocol
+// parameters). The guards run right before the build because the user may
+// have switched network or account in the wallet since connecting. loadSdk
+// is injectable so tests can fake the builder.
+export async function delegateStake({
+  api, poolId, stakeAddress, registrationStatus, koiosUrl, loadSdk = loadEvolution,
+}) {
+  if (registrationStatus !== "registered" && registrationStatus !== "unregistered") {
+    throw new DelegationGuardError("statusUnknown", "Stake key status is unknown.");
+  }
+  if ((await api.getNetworkId()) !== EXPECTED_NETWORK_ID) {
+    throw new DelegationGuardError("wrongNetwork", "Wallet is on the wrong network.");
+  }
+  const addresses = await rewardAddressesBech32(api);
+  const chosen = addresses.find((a) => a.bech32 === stakeAddress);
+  if (!chosen) {
+    throw new DelegationGuardError(
+      addresses.length ? "accountChanged" : "noRewardAddress",
+      "The wallet account changed since connecting."
+    );
+  }
+
+  const { Client, mainnet, RewardAccount, PoolKeyHash, Transaction } = await loadSdk();
+  const stakeCredential = RewardAccount.fromHex(chosen.hex).stakeCredential;
+  const poolKeyHash = PoolKeyHash.fromBech32(poolId);
+  const tx = Client.make(mainnet).withKoios({ baseUrl: koiosUrl }).withCip30(api).newTx();
+  const delegated = registrationStatus === "unregistered"
+    ? tx.registerAndDelegateTo({ stakeCredential, poolKeyHash })
+    : tx.delegateToPool({ stakeCredential, poolKeyHash });
+  const built = await delegated
     .attachMetadata({ label: CIP20_MSG_LABEL, metadata: cardanoOrgMessage() })
     .build();
 
@@ -183,10 +244,12 @@ function tryAddressBech32(Address, address) {
 // has no treasury-donation op, so we pay the amount to ourselves to make coin
 // selection reserve the funds and compute fee/change, then rewrite the body:
 // drop that self-payment output and carry the same lovelace as the Conway
-// donation instead (with currentTreasuryValue, which the ledger requires to
-// match the treasury at submission). Returns the submitted tx hash.
-export async function donateToTreasury({ api, amountLovelace, currentTreasuryValue, koiosUrl }) {
-  const { Client, mainnet, Transaction, Address, Assets } = await loadEvolution();
+// donation instead. The optional currentTreasuryValue field stays unset: the
+// ledger only checks it when present, and a value from an indexer can be one
+// epoch behind, which would reject the donation. Returns the submitted tx hash.
+// loadSdk is injectable so a test harness can swap the chain.
+export async function donateToTreasury({ api, amountLovelace, koiosUrl, loadSdk = loadEvolution }) {
+  const { Client, mainnet, Transaction, Address, Assets } = await loadSdk();
 
   const donation = BigInt(amountLovelace);
   if (donation <= 0n) {
@@ -239,7 +302,6 @@ export async function donateToTreasury({ api, amountLovelace, currentTreasuryVal
   // The SDK's body/output objects are plain mutable instances; mutate in place
   // rather than reconstructing the tagged classes.
   body.outputs = keptOutputs;
-  body.currentTreasuryValue = BigInt(currentTreasuryValue);
   body.donation = donation;
 
   const unsignedTx = Transaction.toCBORHex(tx);

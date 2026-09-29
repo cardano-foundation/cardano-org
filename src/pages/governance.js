@@ -15,6 +15,7 @@ import DelegationFlow from "@site/src/components/DelegationFlow";
 import RoleCard from "@site/src/components/Layout/RoleCard";
 import ConnectionLine from "@site/src/components/Layout/ConnectionLine";
 import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
+import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
@@ -84,6 +85,9 @@ function GovernanceRolesSection() {
       <p className="black-text">
         {translate({id: 'governance.onboarding.intro', message: 'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding.'})}
       </p>
+      <TitleWithText
+        description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}
+      />
       <SpacerBox size="small" />
 
       <div className={styles.rolesTriangle}>
@@ -126,6 +130,28 @@ function GovernanceRolesSection() {
 
 const milestones = [
   {
+    titleId: "governance.impact.amendmentPortal.title",
+    title: "Constitutional Amendment Portal opened",
+    textId: "governance.impact.amendmentPortal.text",
+    text: "Intersect opened the Constitutional Amendment Portal for alpha testing, giving the community a structured place to propose, discuss and refine changes to the Cardano Constitution.",
+    date: "August 2026",
+    blog: "/news/2026-08-07-constitutional-amendment-portal",
+    banner: "/img/governance/constitution.webp",
+    categoryId: "governance.impact.category.constitution",
+    category: "Constitution",
+  },
+  {
+    titleId: "governance.impact.committee2026.title",
+    title: "Second Constitutional Committee election",
+    textId: "governance.impact.committee2026.text",
+    text: "DReps and SPOs ratified the 2026 committee update in epoch 653, filling four seats of the Constitutional Committee. The new members take office in epoch 654.",
+    date: "September 2026",
+    blog: "/news/2026-07-16-media-constitutional-committee-election-2026",
+    banner: "/img/governance/committee.webp",
+    categoryId: "governance.impact.category.committee",
+    category: "Committee",
+  },
+  {
     titleId: "governance.impact.params.title",
     title: "SPOs and DReps voted on Plutus limits",
     textId: "governance.impact.params.text",
@@ -149,11 +175,11 @@ const milestones = [
   },
   {
     titleId: "governance.impact.hardfork.title",
-    title: "Hard fork to Protocol v11 proposed",
+    title: "Hard fork to Protocol v11 enacted",
     textId: "governance.impact.hardfork.text",
-    text: "The community began coordinating the next protocol upgrade to Protocol Version 11 through the governance process, forming a working group to gather feedback before any formal governance action.",
-    date: "November 2025",
-    blog: "/news/2025-11-20-hard-fork-proposal",
+    text: "The van Rossem hard fork moved Cardano to Protocol Version 11 on 18 July 2026 after DReps, SPOs and the Constitutional Committee approved the hard fork initiation action on-chain.",
+    date: "July 2026",
+    blog: "/news/2026-07-17-weekly-development-report",
     banner: "/img/governance/hardfork.webp",
     categoryId: "governance.impact.category.protocol",
     category: "Protocol",

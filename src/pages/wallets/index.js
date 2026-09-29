@@ -227,7 +227,7 @@ export default function WalletFinder() {
 
   return (
     <Layout title={META_TITLE} description={META_DESCRIPTION}>
-      <OpenGraphInfo pageName="wallets" />
+      <OpenGraphInfo />
       <WalletFinderHeader />
       <main>
         <BackgroundWrapper backgroundType="adaLight">
@@ -304,6 +304,17 @@ export default function WalletFinder() {
             </p>
             <Link className="button button--primary" to="/what-is-a-wallet">
               {translate({ id: "walletFinder.learnTeaser.cta", message: "What is a Wallet?" })}
+            </Link>
+          </div>
+          <div className={styles.learnTeaser}>
+            <p className={styles.learnTeaserText}>
+              {translate({
+                id: "walletFinder.nextTeaser.text",
+                message: "Already have a wallet? The next step is getting some ada into it.",
+              })}
+            </p>
+            <Link className="button button--primary" to="/where-to-get-ada">
+              {translate({ id: "walletFinder.nextTeaser.cta", message: "Where to get ada" })}
             </Link>
           </div>
         </BoundaryBox>

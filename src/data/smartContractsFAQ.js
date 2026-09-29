@@ -13,7 +13,7 @@ export function getSmartContractsFAQ() {
         translate({
           id: "smartContracts.faq.ethereum.a",
           message:
-            "They solve the same problem but work differently. On Ethereum a contract is an account with its own state that executes when called. On Cardano a contract is a validator that guards outputs on the ledger and approves or rejects transactions that spend them. The Cardano model gives you the exact outcome and cost before you sign, at the price of designing around outputs rather than shared state.",
+            "They solve the same problem but work differently. On Ethereum a contract is an account with its own state that executes when called. On Cardano a contract is a validator that approves or rejects a transaction, most often one that spends outputs the script guards. The Cardano model tells you the script result and the cost before you sign, though the transaction can still be rejected if an input it needs was spent first. The price is designing around outputs rather than shared state.",
         }),
       ],
     },
@@ -39,7 +39,7 @@ export function getSmartContractsFAQ() {
         translate({
           id: "smartContracts.faq.failure.a",
           message:
-            "Your wallet runs the script before submitting, so a failing transaction is normally never sent. If a transaction is submitted and its script fails on chain anyway, the collateral your wallet set aside covers the network's work, and the rest of the transaction does not happen.",
+            "The app or wallet normally evaluates the script before you sign, so a failing transaction is rarely sent. If a transaction is submitted and its script fails on chain anyway, the collateral your wallet set aside covers the network's work, and the rest of the transaction does not happen.",
         }),
       ],
     },
@@ -52,7 +52,7 @@ export function getSmartContractsFAQ() {
         translate({
           id: "smartContracts.faq.approvals.a",
           message:
-            "No. Cardano has no allowance system. Every transaction you sign spends exactly what it shows, and a DApp cannot spend anything else from your wallet afterwards.",
+            "No. Cardano has no allowance system. Your signature commits to the exact transaction you sign and nothing more, so review the inputs, outputs and warnings your wallet shows. A DApp cannot spend anything else from your wallet afterwards.",
         }),
       ],
     },
@@ -78,7 +78,7 @@ export function getSmartContractsFAQ() {
         translate({
           id: "smartContracts.faq.language.a",
           message:
-            "Aiken is the fastest way in for most developers, with a familiar syntax and good tooling. Plutus is the choice if you already know Haskell or want the deepest control. Both compile to the same on-chain language.",
+            "Aiken is the fastest way in for most developers, with a familiar syntax and good tooling. Plinth, formerly Plutus Tx, is the choice if you already know Haskell, and Plutarch if you want fine control over execution cost. All of them compile to the same on-chain language.",
         }),
       ],
     },

@@ -7,6 +7,8 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
+import QuizCard from "@site/src/components/QuizCard";
+import { getQuizData as getBasicsQuiz } from "@site/src/data/quiz/generated/basics";
 import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
@@ -24,6 +26,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
+  const basicsQuiz = getBasicsQuiz();
 
   return (
     <Layout
@@ -51,6 +54,16 @@ export default function Home() {
         <HowToBuyAdaSection />
         <BoundaryBox>
           <WalletSection />
+        </BoundaryBox>
+        <BoundaryBox>
+          <QuizCard
+            quizData={basicsQuiz}
+            title={translate({id: 'whatIsAda.quiz.title', message: "Test what you learned"})}
+            description={basicsQuiz.description}
+            buttonText={translate({id: 'whatIsAda.quiz.buttonText', message: "Start quiz"})}
+            questionCount={basicsQuiz.questionCount}
+            allowRetry={false}
+          />
         </BoundaryBox>
         <SpacerBox size="medium" />
       </main>

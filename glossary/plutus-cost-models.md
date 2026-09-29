@@ -6,7 +6,7 @@ category: smart-contracts
 level: advanced
 aliases: ["costModels", "Cost Models"]
 mentalModel: "A rulebook that puts a price tag on every Plutus VM operation. Smart contract execution fees come from summing the cost of every step a script actually ran, not from a flat per-call rate."
-related: [plutus-core, smart-contract, collateral, untyped-plutus-core-uplc]
+related: [plutus, plutus-core, smart-contract, collateral, untyped-plutus-core-uplc]
 ---
 
 Each Plutus language version (Plutus V1, V2, V3) has its own cost model. When a new Plutus version ships, its cost model is added through a protocol parameter update so wallets and nodes can price scripts written against it deterministically.

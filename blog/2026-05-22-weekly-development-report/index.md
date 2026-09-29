@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-22-weekly-development-report
-title: "Weekly Development Report"
+title: "Leios prototype adds voting and Lace launches on iOS"
 description: "Leios prototype adds first voting features; Lace launches on iOS; Mithril completes SNARK circuit refactoring; legacy V1 LedgerDB removed."
 authors: [iog]
 tags: [development]

@@ -34,7 +34,7 @@ import quizData from '@site/src/data/quiz-demo.json';
 | `allowRetry` | `boolean` | `true` | Whether users can retry an incorrect answer before moving to the next question |
 | `passingScore` | `number` | `60` | Minimum percentage required to pass (0-100) |
 | `onRecord` | `function` | `null` | `(correct, total) => void`, called once when the quiz finishes. Passing a function switches the component into hub mode, see [Hub Mode](#hub-mode) below |
-| `academyCta` | `object` | `null` | `{href, label}` shown as a follow-up link on the hub mode result screen. Ignored outside hub mode |
+| `academyCta` | `object` | `null` | `{href, label, certifiedLabel, ariaLabel}` shown as a follow-up link on the hub mode result screen. Build it with `getAcademyCta(academyKey, quizId)` from `src/data/quiz/academy.js`. `label` (with `ariaLabel` naming the destination) is used for a learning or bronze result, `certifiedLabel` for silver and gold. Ignored outside hub mode |
 
 ---
 
@@ -70,9 +70,10 @@ The quiz component expects a JSON file with the following structure:
 - **questions** (array, required): Array of question objects
   - **id** (number): Unique identifier for the question
   - **question** (string): The question text
-  - **options** (array of strings): 4 answer choices (displayed as A, B, C, D)
-  - **correctAnswer** (number): Index of the correct option (0-3)
+  - **options** (array of strings): 3 to 4 answer choices (displayed as A, B, C, D)
+  - **correctAnswer** (number): Index of the correct option, 0-based
   - **explanation** (string, optional): Explanation shown after answering
+  - **sourceUrl** (string, optional): Link rendered as "Learn more" under the explanation, opens in a new tab. Required for hub quizzes, see the [pipeline](#hub-quiz-data-pipeline) for the allowed hosts
 
 ---
 
@@ -314,7 +315,7 @@ yarn test:quiz-data
 - the question pool is at least twice `questionCount`, so retries and hub replays draw a fresh sample from the pool, and repeat runs usually differ
 - each question has 3 to 4 options and a `correctAnswer` index in range
 - `explanation` is at least 30 characters long
-- `sourceUrl` is present and its hostname is on an allowlist (`cardano.org`, `docs.cardano.org`, `developers.cardano.org`, `cips.cardano.org`, `essentialcardano.io`, `cardanofoundation.org`), so every explanation links back only to trusted, first-party sources
+- `sourceUrl` is present and its hostname is on an allowlist (`cardano.org`, `docs.cardano.org`, `developers.cardano.org`, `cips.cardano.org`, `roadmap.cardano.org`, `cardanofoundation.org`, a leading `www.` is ignored), so every explanation links back only to trusted, first-party sources
 - no typographic dashes appear in any question, option, or explanation text
 - the generated module in `src/data/quiz/generated/` matches its JSON source (run `yarn build-quiz` again if it has drifted)
 
@@ -382,8 +383,17 @@ Hub mode adds a further set of keys, for the tier badge, and for the practice-yo
 | `quiz.ui.practiceMistakes` | Review your mistakes |
 | `quiz.ui.backToQuiz` | Take the full quiz again |
 | `quiz.ui.practiceIntro` | Practice round: these are the questions you missed. This round does not change your score. |
+| `quiz.ui.badgeAlt` | \{tierLabel\} badge for \{quizTitle\}: \{score\} out of \{totalQuestions\} correct |
 
-The [`QuizShare`](./quiz-share.md) component shown on the hub results screen and the academy call-to-action text carry their own keys, documented on their respective pages.
+The academy call-to-action built by `getAcademyCta()` in `src/data/quiz/academy.js` uses these keys:
+
+| Key | English Default |
+|-----|----------------|
+| `quiz.academy.cta` | Go deeper |
+| `quiz.academy.ctaCertified` | Get certified at the Cardano Academy |
+| `quiz.academy.ctaAriaLabel` | Go deeper at the Cardano Academy |
+
+The [`QuizShare`](./quiz-share.md) component shown on the hub results screen carries its own keys, documented on its page.
 
 ---
 

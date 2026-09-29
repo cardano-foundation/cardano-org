@@ -907,3 +907,11 @@ img {
   order: 10;
 }
 
+/* Footer columns: Infima stacks every column full width below 996px,
+   which wastes space on foldables and large phones. Two columns fit
+   the longest localized link labels from 480px up */
+@media (min-width: 480px) and (max-width: 996px) {
+  .footer__links > .footer__col {
+    --ifm-col-width: 50%;
+  }
+}

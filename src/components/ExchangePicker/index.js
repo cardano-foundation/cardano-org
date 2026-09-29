@@ -203,7 +203,7 @@ export default function ExchangePicker() {
                 <ExchangeCard key={ex.name} exchange={ex} />
               ))}
               <a 
-                href="https://github.com/cardano-foundation/cardano-org/issues/355" 
+                href="https://github.com/cardano-foundation/cardano-org/issues/new?title=Add%20exchange%3A%20" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.addExchangeCard}

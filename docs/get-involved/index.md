@@ -26,7 +26,7 @@ These contributions require no technical skills - perfect for getting started:
 #### Add Your Project to the Ecosystem
 - **[Add your application](/docs/get-involved/add-app)** - showcase your dApp, wallet, or tool running on Cardano
 - **[Add your company](/docs/get-involved/add-company)** - list your organization building on Cardano
-- **[Add your exchange](https://github.com/cardano-foundation/cardano-org/issues/355)** - help crowdsource the exchange database
+- **[Add your exchange](https://github.com/cardano-foundation/cardano-org/issues/new?title=Add%20exchange%3A%20)** - suggest an exchange and the countries where it serves Cardano users
 - **[Create an event highlight](/docs/get-involved/create-a-event)** - promote your Cardano event
 - **[Create a news article](/docs/get-involved/create-a-news-article)** - share important ecosystem news
 
@@ -90,6 +90,7 @@ We have a growing library of reusable components. Check out:
 - **[AppList Component](/docs/get-involved/components/app-list)** - compact app listing
 - **[AppGrid Component](/docs/get-involved/components/app-grid)** - app showcase grid with transaction stats
 - **[FAQ Component](/docs/get-involved/faq-component)** - collapsible Q&A sections
+- **[Navigation Menu](/docs/get-involved/navbar)** - how the five navbar menus are defined and translated
 
 ### Getting Started as a Developer
 1. **[Install locally](/docs/get-involved/local-copy)** - set up your development environment

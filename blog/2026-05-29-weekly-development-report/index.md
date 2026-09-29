@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-29-weekly-development-report
-title: "Weekly Development Report"
+title: "Leios funding approved and Constitutional Committee registration opens"
 description: "Leios funding approved with 88% support and certificate size reduced 40x; Plutus optimizations completed; Constitutional Committee registration opens."
 authors: [iog]
 tags: [development]

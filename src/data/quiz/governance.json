@@ -153,12 +153,12 @@
       "question": "What was the Voltaire phase designed to bring to Cardano's governance?",
       "options": [
         "The ability for network participants to propose and vote on improvement proposals, making the network self-sustaining",
-        "A rule that only the original founding organizations may ever vote",
+        "A rule that only the genesis entities may ever vote",
         "The removal of stake pools from the network entirely",
         "A fixed, unchangeable set of protocol parameters that no vote could ever alter"
       ],
       "correctAnswer": 0,
-      "explanation": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to founding organizations, removing stake pools, or freezing parameters against future votes.",
+      "explanation": "Cardano's own roadmap describes Voltaire's goal as adding \"the ability for network participants to present Cardano improvement proposals that can be voted on by stakeholders, leveraging the already existing staking and delegation process,\" so that the network could become \"a self-sustaining system\" no longer dependent on any single company's management. That is the opposite of restricting voting to the genesis entities, removing stake pools, or freezing parameters against future votes.",
       "sourceUrl": "https://roadmap.cardano.org/en/voltaire/"
     }
   ]

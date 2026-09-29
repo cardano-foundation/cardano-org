@@ -526,6 +526,23 @@
         }
       ]
     },
+    "Canada": {
+      "regions": [],
+      "exchanges": [
+        {
+          "name": "Kraken",
+          "link": "https://www.kraken.com/en-ca",
+          "ada": true,
+          "cnt": true
+        },
+        {
+          "name": "Coinbase",
+          "link": "https://www.coinbase.com/en-ca",
+          "ada": true,
+          "cnt": false
+        }
+      ]
+    },
     "China": {
       "regions": [],
       "exchanges": [

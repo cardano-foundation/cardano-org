@@ -1,23 +1,22 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import {
-  detectWallets,
-  enableWallet,
-  firstAddressBech32,
   firstRewardAddressBech32,
   delegateVote,
 } from "@site/src/utils/cardano/wallet";
 import drepAvatarsManifest from "@site/src/data/drep-avatars.json";
 import {
   EXPECTED_NETWORK_ID,
-  EXPLORER_TX_BASE,
   shortAddress,
   stringifyError,
   classifyError,
 } from "@site/src/utils/walletTx";
+import { WalletPicker, NetworkWarning, TxBanner, Initials, SearchRow, SnapshotImage } from "@site/src/components/WalletDelegation";
+import { fisherYates, chunk, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
+import { canonicalDRepId, fetchDRepIdStatus } from "@site/src/utils/cardano/drepIdStatus.mjs";
 import styles from "./styles.module.css";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
@@ -28,43 +27,9 @@ const DISPLAY_COUNT = 8;
 const SEARCH_RESULT_LIMIT = 12;
 // data.cardano.org proxy caps POST bodies at 5120 bytes, ~80 drep_ids max per batch.
 const BATCH_SIZE = 50;
-const POOL_CACHE_KEY = "cardano-org.drep-pool.v3";
+const POOL_CACHE_KEY = "cardano-org.drep-pool.v4";
 const POOL_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
-
-function readPoolCache() {
-  try {
-    const raw = sessionStorage.getItem(POOL_CACHE_KEY);
-    if (!raw) return null;
-    const { ts, pool } = JSON.parse(raw);
-    if (Date.now() - ts > POOL_CACHE_TTL_MS) return null;
-    return Array.isArray(pool) ? pool : null;
-  } catch {
-    return null;
-  }
-}
-
-function writePoolCache(pool) {
-  try {
-    sessionStorage.setItem(POOL_CACHE_KEY, JSON.stringify({ ts: Date.now(), pool }));
-  } catch {
-    // Quota exceeded or storage disabled, cache is best-effort.
-  }
-}
-
-function fisherYates(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function chunk(arr, size) {
-  const out = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
+const NO_ID_CHECK = { id: null, status: null, drepId: null };
 
 async function fetchAllDRepIds(api) {
   const PAGE_SIZE = 600;
@@ -151,87 +116,6 @@ function pickCurated(pool) {
   return fisherYates(pool.filter((d) => d.curated)).slice(0, DISPLAY_COUNT);
 }
 
-function WalletPicker({ onConnect, busy }) {
-  const [available, setAvailable] = useState([]);
-  const [pickerError, setPickerError] = useState(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    detectWallets()
-      .then((wallets) => {
-        if (!cancelled) setAvailable(wallets);
-      })
-      .catch((err) => {
-        if (!cancelled) setPickerError(String(err?.message || err));
-      });
-    return () => { cancelled = true; };
-  }, []);
-
-  const connect = async (walletId, displayName) => {
-    try {
-      const instance = await enableWallet(walletId);
-      const [address, networkId] = await Promise.all([
-        firstAddressBech32(instance),
-        instance.getNetworkId(),
-      ]);
-      onConnect({
-        instance,
-        name: displayName,
-        address,
-        networkId,
-      });
-    } catch (err) {
-      if (classifyError(err) !== "userCancelled") {
-        setPickerError(String(err?.message || err));
-      }
-    }
-  };
-
-  if (pickerError) {
-    return (
-      <p className={styles.walletError}>
-        {translate(
-          { id: "governance.delegate.wallet.error", message: "Wallet error: {error}" },
-          { error: pickerError }
-        )}
-      </p>
-    );
-  }
-
-  if (!available.length) {
-    return (
-      <p className={styles.walletEmpty}>
-        {translate({
-          id: "governance.delegate.wallet.empty",
-          message: "No Cardano wallet detected. Install Eternl, Typhon, Begin or another CIP-30 wallet to continue.",
-        })}
-      </p>
-    );
-  }
-
-  return (
-    <div className={styles.walletPicker}>
-      {available.map((w) => {
-        const id = w?.id || w?.name;
-        const name = w?.name || String(w);
-        const icon = w?.icon;
-        return (
-          <button
-            key={id}
-            type="button"
-            disabled={busy}
-            onClick={() => connect(id, name)}
-            className={styles.walletButton}
-          >
-            {icon && <img src={icon} alt="" className={styles.walletIcon} />}
-            <span>{name}</span>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 function formatDelegationLabel(delegation) {
   if (delegation === undefined) {
     return translate({
@@ -294,83 +178,11 @@ function WalletStatus({ wallet, delegation, onDisconnect }) {
   );
 }
 
-function NetworkWarning() {
-  return (
-    <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
-      {translate({
-        id: "governance.delegate.networkWarning",
-        message: "Your wallet is on the wrong network. Switch to Mainnet to delegate.",
-      })}
-    </div>
-  );
-}
-
-function TxBanner({ state }) {
-  if (state.status === "building") {
-    return (
-      <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">
-        {translate(
-          { id: "governance.delegate.tx.building", message: "Preparing delegation to {target}. Please confirm in your wallet…" },
-          { target: state.target }
-        )}
-      </div>
-    );
-  }
-  if (state.status === "success") {
-    return (
-      <div className={`${styles.banner} ${styles.bannerSuccess}`} role="status">
-        <p style={{ margin: 0 }}>
-          {translate(
-            { id: "governance.delegate.tx.success", message: "Delegation submitted to {target}." },
-            { target: state.target }
-          )}
-        </p>
-        <a href={EXPLORER_TX_BASE + state.txHash} target="_blank" rel="noopener noreferrer">
-          {translate({ id: "governance.delegate.tx.viewOnExplorer", message: "View on explorer" })}
-        </a>
-      </div>
-    );
-  }
-  if (state.status === "error") {
-    return (
-      <div className={`${styles.banner} ${styles.bannerError}`} role="alert">
-        {state.message}
-      </div>
-    );
-  }
-  return null;
-}
-
-function Initials({ name }) {
-  const text = (name || "?")
-    .split(/\s+/)
-    .map((w) => w[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-  return <div className={styles.initials} aria-hidden="true">{text}</div>;
-}
-
 function DRepCard({ drep, onSelect, disabled }) {
-  const [imgError, setImgError] = useState(false);
-  const hasLocalAvatar = AVATAR_SET.has(drep.drepId);
-  const localAvatar = useBaseUrl(`/img/dreps/${drep.drepId}.jpg`);
-  const showImage = hasLocalAvatar && !imgError;
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        {showImage ? (
-          <img
-            src={localAvatar}
-            alt=""
-            className={styles.avatar}
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <Initials name={drep.name} />
-        )}
+        <SnapshotImage ids={AVATAR_SET} id={drep.drepId} path={`/img/dreps/${drep.drepId}.jpg`} name={drep.name} className={styles.avatar} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardName}>{drep.name}</h3>
           <span className={styles.cardVp}>{formatVotingPower(drep.votingPower)}</span>
@@ -389,42 +201,45 @@ function DRepCard({ drep, onSelect, disabled }) {
   );
 }
 
-function SearchRow({ value, onChange }) {
-  return (
-    <div className={styles.searchRow}>
-      <input
-        type="search"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={translate({
-          id: "governance.delegate.search.placeholder",
-          message: "Search by name, or paste a DRep ID",
-        })}
-        className={styles.searchInput}
-        spellCheck={false}
-        autoCorrect="off"
-        autoCapitalize="off"
-        aria-label={translate({
-          id: "governance.delegate.search.label",
-          message: "Search DReps by name or DRep ID",
-        })}
-      />
-      {value && (
-        <button
-          type="button"
-          className={styles.searchClear}
-          onClick={() => onChange("")}
-        >
-          {translate({ id: "governance.delegate.search.clear", message: "Clear" })}
-        </button>
-      )}
-    </div>
-  );
+function unknownIdHelp(status) {
+  switch (status) {
+    case "active":
+      return translate({
+        id: "governance.delegate.search.unknownId.active",
+        message: "This DRep is registered and active but has published no name. You can delegate to this ID.",
+      });
+    case "inactive":
+      return translate({
+        id: "governance.delegate.search.unknownId.inactive",
+        message: "This DRep is registered but inactive, so it has not voted for a while. Your stake only counts toward votes again once the DRep is active. You can still delegate to this ID.",
+      });
+    case "unregistered":
+      return translate({
+        id: "governance.delegate.search.unknownId.unregistered",
+        message: "This DRep ID is not registered, or the DRep has retired. A delegation to it would fail, so check the ID.",
+      });
+    case "invalid":
+      return translate({
+        id: "governance.delegate.search.unknownId.invalid",
+        message: "This is not a valid DRep ID. Check it and paste it again.",
+      });
+    case "unknown":
+      return translate({
+        id: "governance.delegate.search.unknownId.unknown",
+        message: "Could not check this DRep ID right now. A delegation only works if the DRep is registered.",
+      });
+    default:
+      return translate({
+        id: "governance.delegate.search.unknownId.checking",
+        message: "Checking this DRep ID on the chain…",
+      });
+  }
 }
 
-// A DRep ID that is not in the pool is either inactive or has no published
-// metadata. Delegation still works, so offer it with the bare ID.
-function UnknownIdCard({ drepId, onSelect, disabled }) {
+// A pasted DRep ID outside the pool of active, named DReps. Its on-chain
+// status decides whether a delegation can work at all. The wallet only takes
+// the canonical CIP-129 ID, so without one the button stays disabled.
+function UnknownIdCard({ drepId, canonicalId, status, onSelect, disabled }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
@@ -439,17 +254,12 @@ function UnknownIdCard({ drepId, onSelect, disabled }) {
           <span className={styles.cardId}>{shortAddress(drepId)}</span>
         </div>
       </div>
-      <p className={styles.cardBio}>
-        {translate({
-          id: "governance.delegate.search.unknownId.help",
-          message: "This DRep is not active or has published no metadata, so we cannot show a name. You can still delegate to this ID.",
-        })}
-      </p>
+      <p className={styles.cardBio} aria-live="polite">{unknownIdHelp(status)}</p>
       <button
         type="button"
         className={`button button--primary ${styles.cardCta}`}
-        disabled={disabled}
-        onClick={() => onSelect({ dRepId: drepId }, drepId)}
+        disabled={disabled || !canonicalId}
+        onClick={() => onSelect({ dRepId: canonicalId }, drepId)}
       >
         {translate({ id: "governance.delegate.card.cta", message: "Delegate" })}
       </button>
@@ -472,6 +282,19 @@ function SpecialOption({ label, help, onSelect, target, disabled }) {
     </div>
   );
 }
+
+// The tool cannot register a stake key itself, so point to the page that can.
+const stakeNotRegisteredMessage = () => (
+  <>
+    {translate({
+      id: "governance.delegate.error.stakeNotRegistered",
+      message: "This tool needs a registered stake key. You can register yours by delegating to a stake pool first.",
+    })}{" "}
+    <Link to="/stake-pool-delegation">
+      {translate({ id: "governance.delegate.error.stakeNotRegistered.link", message: "Delegate your ada" })}
+    </Link>
+  </>
+);
 
 export default function DRepDelegate() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
@@ -497,7 +320,7 @@ export default function DRepDelegate() {
 
     let cancelled = false;
 
-    const cached = readPoolCache();
+    const cached = readCache(POOL_CACHE_KEY, POOL_CACHE_TTL_MS);
     if (cached) {
       // Hydrate from the client-only localStorage cache on mount.
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -564,7 +387,7 @@ export default function DRepDelegate() {
           .filter(Boolean);
 
         if (cancelled) return;
-        writePoolCache(enriched);
+        writeCache(POOL_CACHE_KEY, enriched);
         setPool(enriched);
         setDisplayed(pickCurated(enriched));
         setLoading(false);
@@ -597,13 +420,48 @@ export default function DRepDelegate() {
     if (!trimmedQuery) return null;
     if (isValidDRepId(trimmedQuery)) {
       const wanted = trimmedQuery.toLowerCase();
+      // CIP-105 and hex spellings of a listed DRep resolve to its pool entry too.
+      const canonical = canonicalDRepId(trimmedQuery);
       const match = pool.find(
-        (d) => d.drepId.toLowerCase() === wanted || d.hex?.toLowerCase() === wanted
+        (d) => d.drepId === canonical || d.drepId.toLowerCase() === wanted || d.hex?.toLowerCase() === wanted
       );
       return { byId: trimmedQuery, matches: match ? [match] : [] };
     }
     return { byId: null, matches: searchByName(pool, trimmedQuery) };
   }, [trimmedQuery, pool]);
+
+  // A pasted ID outside the pool is checked on chain before it can be used.
+  const unknownId = search?.byId && !search.matches.length ? search.byId : null;
+  // drepId is the ID the wallet may receive, null while loading and whenever
+  // a delegation cannot work (unregistered, invalid, unresolved bare hash).
+  const [idCheck, setIdCheck] = useState(NO_ID_CHECK);
+  useEffect(() => {
+    if (!unknownId || !apiClient) return;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      fetchDRepIdStatus(apiClient, unknownId)
+        .then(({ status, drepId }) => {
+          if (!cancelled) setIdCheck({ id: unknownId, status, drepId });
+        })
+        .catch((err) => {
+          console.error("DRepDelegate: DRep ID check failed", err);
+          // Offline, a typed ID can still be converted locally, a bare hash cannot.
+          if (!cancelled) setIdCheck({ id: unknownId, status: "unknown", drepId: canonicalDRepId(unknownId) });
+        });
+    }, 300);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [unknownId, apiClient]);
+  const idChecked = idCheck.id === unknownId;
+  const unknownIdStatus = idChecked ? idCheck.status : "loading";
+  // A changed search starts a fresh check, so pasting an ID again never reuses
+  // an old result. Whitespace-only edits keep the result, the lookup stays the same.
+  const handleQueryChange = useCallback((value) => {
+    setQuery(value);
+    if (value.trim() !== trimmedQuery) setIdCheck(NO_ID_CHECK);
+  }, [trimmedQuery]);
 
   const visible = search
     ? search.matches.slice(0, SEARCH_RESULT_LIMIT)
@@ -692,16 +550,16 @@ export default function DRepDelegate() {
   const handleSelect = useCallback(async (target, displayName) => {
     if (!wallet || wrongNetwork || txBusy) return;
     if (stakeRegistered === false) {
-      setTx({
-        status: "error",
-        message: translate({
-          id: "governance.delegate.error.stakeNotRegistered",
-          message: "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote.",
-        }),
-      });
+      setTx({ status: "error", message: stakeNotRegisteredMessage() });
       return;
     }
-    setTx({ status: "building", target: displayName });
+    setTx({
+      status: "building",
+      message: translate(
+        { id: "governance.delegate.tx.building", message: "Preparing delegation to {target}. Please confirm in your wallet…" },
+        { target: displayName }
+      ),
+    });
     try {
       // Re-check network live in case user switched wallet network since connect.
       const liveNetworkId = await wallet.instance.getNetworkId();
@@ -716,7 +574,14 @@ export default function DRepDelegate() {
         target,
         koiosUrl: API_URL,
       });
-      setTx({ status: "success", txHash, target: displayName });
+      setTx({
+        status: "success",
+        txHash,
+        message: translate(
+          { id: "governance.delegate.tx.success", message: "Delegation submitted to {target}." },
+          { target: displayName }
+        ),
+      });
     } catch (err) {
       const kind = classifyError(err);
       if (kind === "userCancelled") {
@@ -725,10 +590,7 @@ export default function DRepDelegate() {
       }
       console.error("DRepDelegate: delegation failed", err);
       const message = kind === "stakeNotRegistered"
-        ? translate({
-            id: "governance.delegate.error.stakeNotRegistered",
-            message: "Your stake key isn't registered yet. Delegate to any stake pool once to register it, then come back to delegate your vote.",
-          })
+        ? stakeNotRegisteredMessage()
         : translate(
             { id: "governance.delegate.error.generic", message: "Delegation failed: {error}" },
             { error: stringifyError(err) }
@@ -800,7 +662,12 @@ export default function DRepDelegate() {
             message: "Find a DRep",
           })}
         </h3>
-        <SearchRow value={query} onChange={setQuery} />
+        <SearchRow
+          value={query}
+          onChange={handleQueryChange}
+          placeholder={translate({ id: "governance.delegate.search.placeholder", message: "Search by name, or paste a DRep ID" })}
+          label={translate({ id: "governance.delegate.search.label", message: "Search DReps by name or DRep ID" })}
+        />
       </div>
 
       {(listStatus || !search) && (
@@ -818,10 +685,12 @@ export default function DRepDelegate() {
         </div>
       )}
 
-      {search?.byId && !search.matches.length ? (
+      {unknownId ? (
         <div className={styles.cardGrid}>
           <UnknownIdCard
-            drepId={search.byId}
+            drepId={unknownId}
+            canonicalId={idChecked ? idCheck.drepId : null}
+            status={unknownIdStatus}
             onSelect={handleSelect}
             disabled={!canDelegate}
           />
@@ -858,7 +727,7 @@ export default function DRepDelegate() {
             label={translate({ id: "governance.delegate.abstain.label", message: "Abstain" })}
             help={translate({
               id: "governance.delegate.abstain.help",
-              message: "Always abstain. Your stake counts toward turnout but never picks a side on any proposal.",
+              message: "Always abstain. Your stake is left out of the vote count, so it never counts for or against any proposal.",
             })}
             target={{ alwaysAbstain: null }}
             onSelect={handleSelect}
@@ -868,7 +737,7 @@ export default function DRepDelegate() {
             label={translate({ id: "governance.delegate.noConfidence.label", message: "No Confidence" })}
             help={translate({
               id: "governance.delegate.noConfidence.help",
-              message: "Always vote no confidence in the current Constitutional Committee.",
+              message: "Counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes.",
             })}
             target={{ alwaysNoConfidence: null }}
             onSelect={handleSelect}

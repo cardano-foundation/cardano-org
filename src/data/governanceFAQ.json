@@ -58,8 +58,8 @@
     "question": "What are the alternatives to delegating to a DRep?",
     "answer": [
       "Instead of delegating to a specific DRep, you can choose one of two automatic voting options:",
-      "- **Abstain** automatically abstains from all governance votes",
-      "- **No Confidence** signals no confidence in all proposals"
+      "- **Abstain** keeps your stake out of every vote, it is not counted for or against any proposal",
+      "- **No Confidence** counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes"
     ],
     "category": "governance-basics"
   },

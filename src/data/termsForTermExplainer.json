@@ -43,7 +43,7 @@
       },
       {
         "term": "Constitution",
-        "description": "A [constitution](/constitution) establishes rules for creating, managing, and interpreting laws, defining government structure, and outlining the powers of different branches. Historically, constitutions have structured governments and reduced decision-making costs. For Cardano, a community-led ecosystem, enacting a constitution is crucial for its benefit and protection. It will guide collective decision-making, define participants' rights and principles, and provide a foundation to address the evolving needs of the ecosystem."
+        "description": "The [Cardano Constitution](/constitution) sets the rules for how the community makes collective decisions, defines the rights and principles of participants, and gives the Constitutional Committee the yardstick for judging governance actions. It was ratified on-chain in February 2025 and updated by community vote in January 2026, and it can be amended again through the same process."
       },
       {
         "term": "Governance Action",

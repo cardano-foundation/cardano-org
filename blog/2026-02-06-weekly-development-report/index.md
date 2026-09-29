@@ -1,6 +1,6 @@
 ---
 slug: 2026-02-06-weekly-development-report
-title: "Weekly Development Report"
+title: "High-assurance verification tool enters early access"
 authors: [iog]
 tags: [development]
 ---

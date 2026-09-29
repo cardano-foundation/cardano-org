@@ -39,7 +39,7 @@ function JoinIntersect() {
       <br />
       <Link
         className="button button--primary button--lg"
-        href="https://members.intersectmbo.org/de/registration"
+        href="https://members.intersectmbo.org/registration"
       >
         {translate({id: 'contact.intersect.buttonLabel', message: 'Join Intersect'})}
       </Link>
@@ -55,7 +55,7 @@ function TechnicalIssueForm() {
         description={[
           translate({id: 'contact.technicalIssue.description', message: 'To get help for one of the following wallets, please raise a support ticket.'}),
           {
-            list: ["Daedalus", "Nami", "Lace"],
+            list: ["Daedalus", "Lace"],
           },
         ]}
         titleType="black"
@@ -77,17 +77,17 @@ function SponsorshipForm() {
     <div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/LNXdLDhsQmA?si=1Q3HejtLiyfAoPY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <TitleWithText
-        title={translate({id: 'contact.sponsorship.title', message: 'Cardano Summit Sponsorship'})}
+        title={translate({id: 'contact.sponsorship.title', message: 'Event sponsorship'})}
         description={[
-          translate({id: 'contact.sponsorship.description1', message: 'Thank you for your interest in sponsoring our annual Cardano Summit! Your support is crucial to the success of our summit, and we\'re excited about the possibility of partnering with you. Sponsorship opportunities provide significant exposure and can be tailored to meet your organization\'s needs and goals.'}),
-          translate({id: 'contact.sponsorship.description2', message: 'Please fill out the form below to express your interest and provide us with more details about your organization and sponsorship preferences. Our team will review your submission and get in touch with you to discuss potential sponsorship packages and how we can best collaborate for the upcoming event.'}),
+          translate({id: 'contact.sponsorship.description1', message: 'Thank you for your interest in sponsoring Cardano events. The Cardano Summit 2026 will not take place, the community voted against funding it from the treasury. The Cardano Foundation still hosts and attends events around the world, and sponsorship opportunities can be tailored to your organization\'s goals.'}),
+          translate({id: 'contact.sponsorship.description2', message: 'Use the Cardano Foundation contact form to tell the events team about your organization and the kind of event or sponsorship you have in mind. They will get back to you to discuss options.'}),
         ]}
         titleType="black"
         headingDot={false}
       />
       <br />
-      <Link className="button button--primary button--lg" href="https://summit.cardano.org/sponsor/#become-a-sponsor">
-        {translate({id: 'contact.sponsorship.buttonLabel', message: 'Sponsorship Request'})}
+      <Link className="button button--primary button--lg" href="https://cardanofoundation.org/contact">
+        {translate({id: 'contact.sponsorship.buttonLabel', message: 'Contact the Cardano Foundation'})}
       </Link>
     </div>
   );
@@ -135,11 +135,11 @@ export default function Home() {
           >
             <option value="">{translate({id: 'contact.select.placeholder', message: 'not yet decided (please select)'})}</option>
             <option value="iog">
-              {translate({id: 'contact.select.option.technicalIssue', message: 'a technical issue with Daedalus, Nami or Lace'})}
+              {translate({id: 'contact.select.option.technicalIssue', message: 'a technical issue with Daedalus or Lace'})}
             </option>
             <option value="intersect">{translate({id: 'contact.select.option.intersect', message: 'the intention to join Intersect'})}</option>
             <option value="sponsor">
-              {translate({id: 'contact.select.option.sponsor', message: 'the desire to sponsor the Cardano Summit'})}
+              {translate({id: 'contact.select.option.sponsor', message: 'the desire to sponsor a Cardano event'})}
             </option>
             <option value="different">{translate({id: 'contact.select.option.different', message: 'another inquiry'})}</option>
           </select>

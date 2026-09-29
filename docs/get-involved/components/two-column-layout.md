@@ -1,6 +1,6 @@
 ---
 title: Two Column Layout
-description: Arrange content in a responsive two-column layout with optional reverse order using the TwoColumnLayout component.
+description: Arrange content in a responsive two-column layout with an optional sticky sidebar and adjustable column ratio using the TwoColumnLayout component.
 ---
 
 ## Two Column Layout
@@ -182,24 +182,21 @@ You can add custom styles to your sidebar or main content:
 
 ## Example
 
-The [Common Scams](/common-scams) page uses this component to display scam information with a quiz sidebar that stays visible as users learn about different threats.
+The [Common Scams](/common-scams) page uses this component to display scam information with a quiz sidebar that stays visible as users learn about different threats. The sidebar is a [Quiz Card](./quiz-card.md), which brings its own card styling, so no wrapper is needed:
 
 ```jsx title="src/pages/common-scams.js"
 <TwoColumnLayout
   sidebar={
-    <div style={{ 
-      background: 'var(--ifm-background-surface-color)', 
-      padding: '1.5rem', 
-      borderRadius: '16px',
-      border: '2px solid var(--ifm-color-emphasis-200)'
-    }}>
-      <h3>Test Your Knowledge</h3>
-      <p>Take our quiz to see how well you can identify scams.</p>
-      <QuizModal 
-        quizData={scamsQuizData} 
-        buttonText="Start Quiz"
-      />
-    </div>
+    <QuizCard
+      quizData={scamsQuizData}
+      title={translate({id: 'commonScams.quiz.title', message: 'Test Your Knowledge'})}
+      description={translate({id: 'commonScams.quiz.description', message: 'Take the 5-question quiz to see how well you can identify and avoid common blockchain scams.'})}
+      buttonText={translate({id: 'commonScams.quiz.buttonText', message: 'Start Quiz'})}
+      questionCount={5}
+      passingScore={80}
+      allowRetry={false}
+      showDot={true}
+    />
   }
 >
   {/* All scam information content */}
