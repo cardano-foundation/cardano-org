@@ -278,7 +278,7 @@
     "message": "Xem tất cả {count} kết quả"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "Đã tìm thấy một tài liệu | {count} đã tìm thấy tài liệu",
+    "message": "Đã tìm thấy một tài liệu|Đã tìm thấy {count} tài liệu",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
@@ -334,7 +334,7 @@
     "description": "The placeholder text for search box when AI is streaming an answer"
   },
   "theme.SearchModal.searchBox.enterKeyHint": {
-    "message": "tìm kiếm",
+    "message": "search",
     "description": "The hint for the search box enter key text"
   },
   "theme.SearchModal.searchBox.enterKeyHintAskAi": {
@@ -1116,7 +1116,7 @@
     "message": "Cách tự bảo vệ mình:"
   },
   "commonScams.giveaway.tip1": {
-    "message": "Các chương trình tặng quà hợp pháp **không bao giờ** yêu cầu gửi tiền trước."
+    "message": "Các chương trình tặng quà thật **không bao giờ** yêu cầu gửi tiền trước."
   },
   "commonScams.giveaway.tip2": {
     "message": "Tránh nhấp vào các liên kết trong tin nhắn không mong muốn hoặc các buổi phát trực tiếp."
@@ -1188,13 +1188,13 @@
     "message": "Cách tự bảo vệ bản thân:"
   },
   "commonScams.support.tip1": {
-    "message": "Những người chính thống trên [diễn đàn và các kênh](/docs/communities) sẽ **không bao giờ** hỏi mật khẩu, cụm từ khôi phục hoặc khóa riêng tư của bạn."
+    "message": "Những người đáng tin cậy trên [diễn đàn và các kênh](/docs/communities) sẽ **không bao giờ** hỏi mật khẩu, cụm từ khôi phục hoặc khóa riêng tư của bạn."
   },
   "commonScams.support.tip2": {
     "message": "Đừng bao giờ tương tác với những tin nhắn không mong muốn tự nhận là từ bộ phận hỗ trợ."
   },
   "commonScams.support.tip3": {
-    "message": "Những người chính thống trên diễn đàn và các kênh sẽ **không bao giờ** chủ động nhắn tin riêng cho bạn trước."
+    "message": "Những người đáng tin cậy trên diễn đàn và các kênh sẽ **không bao giờ** chủ động nhắn tin riêng cho bạn trước."
   },
   "commonScams.divider.rug": {
     "message": "Rug Pull"
@@ -1245,7 +1245,7 @@
     "message": "Thế giới đang thay đổi. Cùng nhau, chúng ta có thể thay đổi nó theo hướng tốt hơn."
   },
   "home.featured.description1": {
-    "message": "Cardano là nền tảng blockchain proof-of-stake: nền tảng đầu tiên được xây dựng dựa trên [nghiên cứu peer-reviewed](/research) và phát triển bằng phương pháp dựa trên bằng chứng. Cardano kết hợp các công nghệ tiên phong để mang đến sự bảo mật và tính bền vững chưa từng có cho các ứng dụng, hệ thống và xã hội phi tập trung."
+    "message": "Cardano là nền tảng blockchain proof-of-stake: nền tảng đầu tiên được xây dựng dựa trên [nghiên cứu được bình duyệt](/research) và phát triển bằng phương pháp dựa trên bằng chứng. Cardano kết hợp các công nghệ tiên phong để mang đến sự bảo mật và tính bền vững chưa từng có cho các ứng dụng, hệ thống và xã hội phi tập trung."
   },
   "home.featured.description2": {
     "message": "Với đội ngũ kỹ sư hàng đầu, Cardano tồn tại để phân phối lại quyền lực từ các cấu trúc thiếu trách nhiệm đến từng cá nhân – và trở thành động lực cho sự thay đổi và tiến bộ tích cực."
@@ -1278,7 +1278,7 @@
     "message": "Proof-of-Stake và Ouroboros: Giao thức blockchain bền vững nhất với môi trường"
   },
   "home.benefits.ouroboros.body": {
-    "message": "Ouroboros là giao thức blockchain peer-reviewed đầu tiên, được xác minh an toàn, và Cardano là blockchain đầu tiên triển khai nó. Ouroboros cho phép phi tập trung hóa mạng lưới Cardano ở quy mô bền vững cho các yêu cầu toàn cầu, và quan trọng nhất là không ảnh hưởng đến bảo mật.<br /><br />Giao thức này là kết quả của nỗ lực không ngừng, dựa trên nghiên cứu nền tảng, được thúc đẩy bởi tầm nhìn về hệ thống thanh toán toàn cầu an toàn và minh bạch hơn, đồng thời cung cấp phương tiện để phân phối lại quyền lực và quyền kiểm soát một cách công bằng."
+    "message": "Ouroboros là giao thức blockchain đầu tiên được bình duyệt và được xác minh an toàn, và Cardano là blockchain đầu tiên triển khai nó. Ouroboros cho phép phi tập trung hóa mạng lưới Cardano ở quy mô bền vững cho các yêu cầu toàn cầu, và quan trọng nhất là không ảnh hưởng đến bảo mật.<br /><br />Giao thức này là kết quả của nỗ lực không ngừng, dựa trên nghiên cứu nền tảng, được thúc đẩy bởi tầm nhìn về hệ thống thanh toán toàn cầu an toàn và minh bạch hơn, đồng thời cung cấp phương tiện để phân phối lại quyền lực và quyền kiểm soát một cách công bằng."
   },
   "home.benefits.ouroboros.cta": {
     "message": "Tìm hiểu về Ouroboros"
@@ -1293,7 +1293,7 @@
     "message": "Tiêu chuẩn phát triển cao nhất, bắt nguồn từ khoa học"
   },
   "home.benefits.research.body": {
-    "message": "Cardano được phát triển bằng phương pháp dựa trên bằng chứng – sự kết hợp mới lạ giữa phương pháp hình thức, thường thấy trong các ứng dụng quan trọng có rủi ro cao, và phương pháp linh hoạt (agile), giúp dự án luôn thích ứng và phản hồi nhanh với các yêu cầu mới. Để hỗ trợ các ứng dụng, hệ thống và giải pháp toàn cầu, chúng tôi tin rằng đảm bảo bảo mật không phải là lựa chọn mà là yêu cầu bắt buộc. Các giao thức và tích hợp nền tảng được nghiên cứu, thử thách và mô hình hóa toán học trước khi được đặc tả. Các đặc tả này sau đó định hướng quá trình phát triển, và kết quả được kiểm toán độc lập. Kết quả là một mã nguồn với mức độ đảm bảo chưa từng có."
+    "message": "Cardano được phát triển bằng phương pháp dựa trên bằng chứng: sự kết hợp mới lạ giữa phương pháp hình thức, thường thấy trong các ứng dụng quan trọng có rủi ro cao, và phương pháp linh hoạt (agile), giúp dự án luôn thích ứng và phản hồi nhanh với các yêu cầu mới và những đổi mới xuất hiện. Để hỗ trợ các ứng dụng, hệ thống và giải pháp toàn cầu, chúng tôi coi việc đảm bảo bảo mật là một yêu cầu bắt buộc. Các giao thức và tích hợp nền tảng trước hết được nghiên cứu, thử thách, mô hình hóa bằng toán học và kiểm thử rồi mới được đặc tả. Các đặc tả này sau đó định hướng quá trình phát triển, và đến lượt mình, quá trình phát triển được kiểm toán độc lập. Kết quả là một mã nguồn với mức độ đảm bảo chưa từng có."
   },
   "home.benefits.research.cta": {
     "message": "Khám phá nghiên cứu"
@@ -1308,7 +1308,7 @@
     "message": "Bảo mật vượt trội – Nền tảng của thế giới không cần tin cậy"
   },
   "home.benefits.secure.body": {
-    "message": "Cardano cho phép các bên không quen biết nhau – và không có lý do để tin tưởng lẫn nhau – tương tác và giao dịch một cách an toàn. Đây là nền tảng xây dựng niềm tin nơi vốn không tồn tại, mở ra thị trường và cơ hội hoàn toàn mới. Thông qua Ouroboros, Cardano được bảo vệ trước các tác nhân xấu và tấn công Sybil. Mỗi giao dịch, tương tác và trao đổi đều được ghi lại bất biến và minh bạch, được xác thực an toàn bằng đa chữ ký và mô hình UTXO mở rộng tiên phong."
+    "message": "Cardano cho phép các bên không quen biết nhau, và không có lý do để tin tưởng lẫn nhau, tương tác và giao dịch một cách an toàn. Đây là nền tảng xây dựng niềm tin ở nơi vốn không có niềm tin, mở ra những thị trường và cơ hội hoàn toàn mới. Nhờ Ouroboros, Cardano được chứng minh là an toàn trước các tác nhân xấu và tấn công Sybil. Mỗi giao dịch, tương tác và trao đổi đều được ghi lại bất biến và minh bạch, được xác thực an toàn bằng đa chữ ký và mô hình UTXO mở rộng tiên phong."
   },
   "home.benefits.secure.cta": {
     "message": "Xem lộ trình"
@@ -1396,6 +1396,10 @@
   },
   "navbar.mega.label.Delegate your vote": {
     "message": "Ủy quyền lá phiếu của bạn",
+    "description": "Mega menu item label"
+  },
+  "navbar.mega.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Research": {
@@ -1493,12 +1497,16 @@
     "message": "Trao quyền bỏ phiếu của bạn cho một DRep",
     "description": "Mega menu item description"
   },
+  "navbar.mega.description.Cardano Fees & Transactions": {
+    "message": "How fees are calculated and why they are predictable",
+    "description": "Mega menu item description"
+  },
   "navbar.mega.description.Cardano Research": {
-    "message": "Nghiên cứu và bài báo peer-reviewed",
+    "message": "Nghiên cứu và bài báo được bình duyệt",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Insights": {
-    "message": "Dữ liệu on-chain và cập nhật định kỳ",
+    "message": "Dữ liệu on-chain hoặc cập nhật định kỳ",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.News": {
@@ -1673,7 +1681,7 @@
     "message": "Chống hàng giả bằng nguồn gốc xuất xứ"
   },
   "useCases.card.logistics.title": {
-    "message": "Logistic"
+    "message": "Logistics"
   },
   "useCases.card.logistics.summary": {
     "message": "Theo dõi và xác minh theo thời gian thực"
@@ -1715,7 +1723,7 @@
     "message": "Chăm sóc sức khỏe"
   },
   "useCases.card.healthcare.summary": {
-    "message": "Hồ sơ sức khỏe di động, an toàn"
+    "message": "Hồ sơ sức khỏe an toàn, dùng được ở mọi nơi"
   },
   "useCases.card.musicIp.title": {
     "message": "Âm nhạc và sở hữu trí tuệ"
@@ -1778,7 +1786,7 @@
     "message": "Bạn có thể muốn phản hồi một điều gì đó bằng cách bày tỏ sự không đồng tình. Điều đó không sao cả. Nhưng hãy nhớ phê phán ý tưởng, không phải con người. Xin hãy tránh:"
   },
   "codeOfConduct.beAgreeable.list1": {
-    "message": "Gọi tên miệt thị"
+    "message": "Chửi bới, lăng mạ"
   },
   "codeOfConduct.beAgreeable.list2": {
     "message": "Công kích cá nhân"
@@ -1790,7 +1798,7 @@
     "message": "Phản ứng bột phát thiếu suy nghĩ"
   },
   "codeOfConduct.beAgreeable.list5": {
-    "message": "Viết in hoa toàn bộ. Chúng tôi xem đây là hành động la hét trên môi trường điện tử"
+    "message": "Viết in hoa toàn bộ. Chúng tôi xem đây là hành vi la hét trên mạng"
   },
   "codeOfConduct.beAgreeable.description2": {
     "message": "Thay vào đó, hãy đưa ra những lập luận phản biện có lý lẽ giúp cải thiện cuộc trò chuyện. Cũng xin nhớ quy tắc ở trên là tạo ra giá trị và thảo luận có ý nghĩa. Các kênh cộng đồng Cardano không nên bị dùng cho những tranh chấp cá nhân giữa các thành viên."
@@ -1874,7 +1882,7 @@
     "message": "Chỉ đăng nội dung của chính bạn"
   },
   "codeOfConduct.postOwnStuff.description": {
-    "message": "Bạn không được đăng bất kỳ nội dung số nào thuộc về người khác khi chưa được phép. Bạn không được đăng mô tả, liên kết hay cách thức đánh cắp tài sản trí tuệ của người khác (phần mềm, video, âm thanh, hình ảnh), hoặc vi phạm bất kỳ luật lệ nào khác. Nguồn gốc luôn phải được ghi công cho người tạo ra nội dung gốc."
+    "message": "Bạn không được đăng bất kỳ nội dung số nào thuộc về người khác khi chưa được phép. Bạn không được đăng mô tả, liên kết hay cách thức đánh cắp tài sản trí tuệ của người khác (phần mềm, video, âm thanh, hình ảnh), hoặc vi phạm bất kỳ luật lệ nào khác. Luôn ghi nguồn cho người tạo ra nội dung gốc."
   },
   "codeOfConduct.multipleAccounts.title": {
     "message": "Nhiều tài khoản"
@@ -1913,7 +1921,7 @@
     "message": "Đang tải các phiên bản hiến pháp..."
   },
   "constitution.enacted.title": {
-    "message": "Hiến pháp Cardano Đang Có Hiệu lực"
+    "message": "Hiến pháp Cardano hiện hành"
   },
   "constitution.enacted.description": {
     "message": "Khám phá Hiến pháp Cardano: khung quản trị của blockchain Cardano. Đọc hiến chương đang có hiệu lực, tìm hiểu lịch sử phê chuẩn của nó và tải toàn văn qua IPFS."
@@ -1922,7 +1930,7 @@
     "message": "Xem trên IPFS"
   },
   "constitution.history.title": {
-    "message": "Lịch sử Phê chuẩn Hiến pháp"
+    "message": "Lịch sử phê chuẩn Hiến pháp"
   },
   "constitution.history.description": {
     "message": "Dưới đây bạn có thể tìm thấy Hiến pháp Cardano và lịch sử phê chuẩn của nó. Nhấn vào bất kỳ phiên bản nào để xem toàn văn trên IPFS."
@@ -1993,7 +2001,7 @@
     "message": "Để được trợ giúp với một trong các ví sau, vui lòng gửi yêu cầu hỗ trợ."
   },
   "contact.technicalIssue.buttonLabel": {
-    "message": "Gửi Yêu cầu"
+    "message": "Gửi yêu cầu"
   },
   "contact.sponsorship.title": {
     "message": "Event sponsorship"
@@ -2278,7 +2286,7 @@
     "message": "Mang tính năng token gốc đến Cardano, cho phép người dùng tạo và giao dịch bằng các token tùy chỉnh."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Giới thiệu khả năng hợp đồng thông minh sử dụng Plutus, cho phép triển khai các ứng dụng phi tập trung (dApp)."
+    "message": "Giới thiệu khả năng hợp đồng thông minh sử dụng Plutus, cho phép triển khai các ứng dụng phi tập trung (DApp)."
   },
   "hardforks.timeline.vasil.description": {
     "message": "Cải thiện khả năng mở rộng và hiệu năng của mạng lưới, được đặt tên theo Vasil Dabov, một thành viên trong cộng đồng Cardano."
@@ -2305,7 +2313,7 @@
     "message": "Hard Fork của Cardano, Lịch sử nâng cấp mạng lưới"
   },
   "hardforks.layout.description": {
-    "message": "A complete timeline of Cardano hard forks from Byron to Chang. Explore each network upgrade, what changed, and how the protocol has evolved."
+    "message": "Dòng thời gian đầy đủ các hard fork của Cardano, từ Byron đến van Rossem. Khám phá từng đợt nâng cấp mạng lưới, những gì đã thay đổi và giao thức đã phát triển ra sao."
   },
   "hardforks.content.title": {
     "message": "Hard Fork của Cardano"
@@ -2353,7 +2361,7 @@
     "message": "Bản tin cộng đồng Cardano"
   },
   "newsletter.content.description": {
-    "message": "Nhận liều thông tin hai tuần một lần về những chủ đề nóng nhất, các cập nhật phát triển, danh sách những buổi gặp mặt sắp tới, cập nhật chiến lược ủy quyền, hoạt động mới nhất của các Đại sứ Cardano, và nhiều điều khác nữa."
+    "message": "Hai tuần một lần, nhận tổng hợp những chủ đề nóng nhất, các cập nhật phát triển, danh sách những buổi gặp mặt sắp tới, cập nhật chiến lược ủy quyền, hoạt động mới nhất của các Đại sứ Cardano, và nhiều điều khác nữa."
   },
   "ouroboros.hero.title": {
     "message": "Ouroboros"
@@ -2470,7 +2478,7 @@
     "message": "quản trị"
   },
   "signalOperator.layout.title": {
-    "message": "Bày tỏ sự quan tâm của bạn đến việc Vận hành Stake Pool trên Cardano"
+    "message": "Bày tỏ sự quan tâm của bạn đến việc vận hành Stake Pool trên Cardano"
   },
   "signalOperator.layout.description": {
     "message": "Luôn cập nhật mọi thông tin liên quan đến việc vận hành một Stake Pool và các cập nhật kỹ thuật."
@@ -2836,7 +2844,7 @@
     "message": "Khám phá các ứng dụng blockchain trong nhiều ngành khác nhau. Từ xác minh danh tính đến theo dõi chuỗi cung ứng, Cardano mang đến những giải pháp an toàn và có khả năng mở rộng cho các thách thức thực tế."
   },
   "apps.hero.title": {
-    "message": "Ứng dụng và dApp trên Cardano"
+    "message": "Ứng dụng và DApp trên Cardano"
   },
   "apps.hero.description": {
     "message": "Khám phá các ứng dụng được tuyển chọn đang hoạt động trên mainnet Cardano ngay hôm nay. Ví, sàn DEX, NFT, cho vay và nhiều hơn nữa."
@@ -2905,7 +2913,7 @@
     "message": "Hoạt động nhiều nhất"
   },
   "apps.mostActive.subtitle": {
-    "message": "Các ứng dụng hàng đầu theo số giao dịch on-chain trong 30 ngày qua. Ảnh chụp từ {date}."
+    "message": "Các ứng dụng hàng đầu theo số giao dịch on-chain trong 30 ngày qua. Số liệu tính đến {date}."
   },
   "apps.detail.maintainerPick": {
     "message": "Lựa chọn của người quản lý"
@@ -2923,7 +2931,7 @@
     "message": "Hoạt động"
   },
   "apps.detail.activityBody": {
-    "message": "{count} giao dịch on-chain trong 30 ngày qua (ảnh chụp {date})."
+    "message": "{count} giao dịch on-chain trong 30 ngày qua (số liệu tính đến {date})."
   },
   "apps.detail.related": {
     "message": "Thêm trong danh mục này"
@@ -2956,7 +2964,7 @@
     "message": "Duyệt ứng dụng theo danh mục"
   },
   "apps.browseByCategory.subtitle": {
-    "message": "Nếm thử mỗi danh mục. Các ứng dụng được theo dõi hàng đầu trước, rồi đến lựa chọn của người quản lý, sau cùng là một lựa chọn ngẫu nhiên trong số còn lại."
+    "message": "Một vài ứng dụng tiêu biểu của mỗi danh mục. Các ứng dụng được theo dõi hàng đầu trước, rồi đến lựa chọn của người quản lý, sau cùng là một lựa chọn ngẫu nhiên trong số còn lại."
   },
   "apps.toolsAndInsights.title": {
     "message": "Duyệt công cụ theo danh mục"
@@ -3115,7 +3123,7 @@
     "message": "Đại sứ Cardano"
   },
   "ambassadors.hero.titleAccent": {
-    "message": "trong hành động"
+    "message": "đang hành động"
   },
   "ambassadors.hero.lede": {
     "message": "Một mạng lưới toàn cầu gồm những người dẫn dắt cộng đồng, cùng nhau giáo dục, tổ chức, điều hành, xây dựng và hỗ trợ Cardano trên khắp thế giới."
@@ -3259,7 +3267,7 @@
     "message": "Buidler Fest, Buenos Aires"
   },
   "ambassadors.milestone.buidler-fest.body": {
-    "message": "Sự kiện quy tụ các nhà phát triển hàng đầu tại LATAM, được tổ chức và vận hành bởi cộng đồng Đại sứ địa phương."
+    "message": "Sự kiện chủ lực dành cho nhà phát triển tại LATAM, được tổ chức và vận hành bởi cộng đồng Đại sứ địa phương."
   },
   "ambassadors.milestone.buidler-fest.credit": {
     "message": "9 Đại sứ"
@@ -3601,19 +3609,19 @@
     "message": "Muốn dùng công cụ khác?"
   },
   "governance.delegate.alt.intro": {
-    "message": "Specialized governance tools offer deeper DRep research, vote tracking, and proposal analytics."
+    "message": "Các công cụ cộng đồng này cũng hỗ trợ ủy quyền quyền biểu quyết của bạn cho một DRep."
   },
   "governance.accountability.hero.title": {
     "message": "Điều cộng đồng mong đợi"
   },
   "governance.accountability.hero.description": {
-    "message": "Các tiêu chuẩn, kỳ vọng và tín hiệu về mức độ lành mạnh đối với những vai trò mà Cardano trao quyền: DRep, Ủy ban Hiến pháp, các nhà vận hành stake pool và những công việc được ngân khố tài trợ."
+    "message": "Các tiêu chuẩn, kỳ vọng và tín hiệu về mức độ lành mạnh đối với những vai trò mà Cardano trao quyền: DRep, Ủy ban Hiến pháp, các nhà vận hành stake pool và những công việc được treasury tài trợ."
   },
   "governance.accountability.meta.title": {
     "message": "Trách nhiệm giải trình trong quản trị - Cardano"
   },
   "governance.accountability.meta.description": {
-    "message": "Các tiêu chuẩn cộng đồng, kỳ vọng và các chỉ số tổng hợp trên chuỗi dành cho DRep, Ủy ban Hiến pháp, các SPO và những công việc được ngân khố tài trợ trên Cardano."
+    "message": "Các tiêu chuẩn cộng đồng, kỳ vọng và các chỉ số tổng hợp trên chuỗi dành cho DRep, Ủy ban Hiến pháp, các SPO và những công việc được treasury tài trợ trên Cardano."
   },
   "governance.accountability.intro": {
     "message": "Cardano được quản trị bởi chính cộng đồng của mình. Trang này ghi lại các tiêu chuẩn mà những vai trò đó vốn phải tuân theo, dựa trên Hiến pháp và các quy tắc đã được thiết lập, đồng thời cho thấy các tín hiệu về mức độ lành mạnh của toàn mạng lưới. Trang này chỉ trình bày lại và tổng hợp; nó không đặt ra quy tắc mới hay đánh giá từng cá nhân."
@@ -3640,7 +3648,7 @@
     "message": "Stake pool đang hoạt động"
   },
   "governance.accountability.stat.treasury": {
-    "message": "Ngân khố"
+    "message": "Treasury"
   },
   "governance.accountability.label.accountableFor": {
     "message": "Chịu trách nhiệm về"
@@ -5527,7 +5535,7 @@
     "message": "Giải pháp doanh nghiệp"
   },
   "termExplainer.divider": {
-    "message": "{category} Những thuật ngữ bạn nên biết"
+    "message": "Những thuật ngữ {category} bạn nên biết"
   },
   "insightsGovernance.meta.pageTitle": {
     "message": "Biểu đồ Hành động Quản trị Cardano"
@@ -5698,16 +5706,16 @@
     "message": "Phân tích lịch sử sự phân bổ nguồn cung ada của Cardano trên các khoản dự trữ, phần thưởng, treasury và tiền đặt cọc."
   },
   "insightsSupplySummary.meta.title": {
-    "message": "Tổng quan nguồn cung Cardano"
+    "message": "Tóm tắt nguồn cung Cardano"
   },
   "insightsSupplySummary.og.title": {
-    "message": "Tổng quan nguồn cung Cardano"
+    "message": "Tóm tắt nguồn cung Cardano"
   },
   "insightsSupplySummary.og.description": {
-    "message": "Khám phá các xu hướng lịch sử trong phân bổ nguồn cung Cardano, gồm dự trữ, phần thưởng, ngân quỹ và tiền đặt cọc."
+    "message": "Khám phá các xu hướng lịch sử trong phân bổ nguồn cung Cardano, gồm dự trữ, phần thưởng, treasury và tiền đặt cọc."
   },
   "insightsSupplySummary.intro.description": {
-    "message": "**Khám phá các xu hướng lịch sử trong phân bổ nguồn cung ada của Cardano** qua dự trữ, phần thưởng, ngân quỹ và tiền đặt cọc. Chọn một khoảng epoch để phân tích cách các chỉ số quan trọng này thay đổi theo thời gian."
+    "message": "**Khám phá các xu hướng lịch sử trong phân bổ nguồn cung ada của Cardano** qua dự trữ, phần thưởng, treasury và tiền đặt cọc. Chọn một khoảng epoch để phân tích cách các chỉ số quan trọng này thay đổi theo thời gian."
   },
   "insightsSupplySummary.epochSelect.title": {
     "message": "Chọn khoảng epoch"
@@ -5740,7 +5748,7 @@
     "message": "Phần thưởng đã phân phối"
   },
   "insightsSupplySummary.toc.treasury": {
-    "message": "Diễn biến ngân quỹ"
+    "message": "Diễn biến treasury"
   },
   "insightsSupplySummary.toc.deposits": {
     "message": "Tiền đặt cọc"
@@ -5752,10 +5760,10 @@
     "message": "Phần thưởng đã phân phối"
   },
   "insightsSupplySummary.treasury.divider": {
-    "message": "Diễn biến ngân quỹ"
+    "message": "Diễn biến treasury"
   },
   "insightsSupplySummary.treasuryWithdrawals.divider": {
-    "message": "Các khoản rút từ ngân quỹ trong khoảng đã chọn"
+    "message": "Các khoản rút từ treasury trong khoảng đã chọn"
   },
   "insightsSupplySummary.treasuryWithdrawals.table.epoch": {
     "message": "Epoch"
@@ -5851,7 +5859,7 @@
     "message": "Epoch hiện tại đang diễn ra"
   },
   "insightsTransactions.notice.inProgressDescription": {
-    "message": "Epoch {epoch} hiện đang diễn ra. Dữ liệu của epoch này chưa hoàn chỉnh và sẽ hiển thị thấp hơn so với các epoch đã hoàn thành. Các giá trị cuối cùng sẽ có khi epoch kết thúc. Các điểm dữ liệu đang diễn ra được đánh dấu bằng chỉ báo màu cam trên biểu đồ."
+    "message": "Epoch {epoch} hiện đang diễn ra. Dữ liệu của epoch này chưa hoàn chỉnh và sẽ hiển thị thấp hơn so với các epoch đã hoàn thành. Các giá trị cuối cùng sẽ có khi epoch kết thúc. Các điểm dữ liệu của epoch đang diễn ra được đánh dấu bằng chỉ báo màu cam trên biểu đồ."
   },
   "insightsTransactions.toc.title": {
     "message": "Nội dung"
@@ -5997,7 +6005,7 @@
     "description": "Security checklist item 2"
   },
   "whatIsAWallet.security.item3": {
-    "message": "Không có cá nhân hay đội ngũ hỗ trợ chính thống nào lại hỏi cụm từ khôi phục của bạn. [Hãy lưu ý những chiêu lừa đảo phổ biến nhất.](/common-scams)",
+    "message": "Không một người đáng tin cậy hay đội ngũ hỗ trợ thật sự nào lại hỏi cụm từ khôi phục của bạn. [Hãy lưu ý những chiêu lừa đảo phổ biến nhất.](/common-scams)",
     "description": "Security checklist item 3, contains a link to the scams page"
   },
   "whatIsAWallet.dapps.divider": {
@@ -6029,7 +6037,7 @@
     "description": "Choose checklist item 2"
   },
   "whatIsAWallet.choose.item3": {
-    "message": "Nó đã có mặt trên thị trường bao lâu? Các ví lâu đời có bề dày đáng tin cậy hơn.",
+    "message": "Nó đã có mặt trên thị trường bao lâu? Các ví lâu đời có quá trình hoạt động đáng tin cậy lâu hơn.",
     "description": "Choose checklist item 3"
   },
   "whatIsAWallet.choose.cta": {
@@ -10165,5 +10173,131 @@
   },
   "ambassadors.milestone.ambassador-retreat-2025.credit": {
     "message": "Felix Weber, 12 Ambassadors"
+  },
+  "feesAndTransactions.hero.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.hero.description": {
+    "message": "How transaction fees are calculated, why they are predictable, what the minimum ada requirement means, and how Cardano's accounting model compares to account-based blockchains."
+  },
+  "feesAndTransactions.meta.title": {
+    "message": "Cardano Fees & Transaction Model"
+  },
+  "feesAndTransactions.meta.description": {
+    "message": "Learn how Cardano transaction fees are calculated from transaction size, how the minimum ada (min-UTxO) requirement works, and how the eUTXO model compares to account-based fee models."
+  },
+  "feesAndTransactions.divider.overview": {
+    "message": "Overview"
+  },
+  "feesAndTransactions.overview.title": {
+    "message": "What you pay for on Cardano"
+  },
+  "feesAndTransactions.overview.description1": {
+    "message": "Every transaction on Cardano pays a small fee. The fee is not set by block producers in an open auction, and it does not depend on how much ada you move. Instead, it is calculated from the **size of the transaction in bytes** using public, network-wide protocol parameters."
+  },
+  "feesAndTransactions.overview.description2": {
+    "message": "Because the size of a transaction is known before you submit it, the exact fee is knowable in advance. That predictability is one of Cardano's defining user-experience properties: you see the price before you sign."
+  },
+  "feesAndTransactions.how.title": {
+    "message": "How the fee is calculated"
+  },
+  "feesAndTransactions.how.description1": {
+    "message": "The minimum [transaction fee](/glossary/transaction-fee) is **fee = a × size + b**, where **size** is the transaction's serialized size in bytes."
+  },
+  "feesAndTransactions.how.description2": {
+    "message": "On mainnet, **a** (the per-byte component, protocol parameter minFeeA / txFeePerByte) is **44 lovelace per byte**, and **b** (the fixed component, protocol parameter minFeeB / txFeeFixed) is **155,381 lovelace**. A simple ada transfer is typically 200–300 bytes, so the fee works out to a fraction of an ada, roughly 0.16–0.17 ada."
+  },
+  "feesAndTransactions.how.description3": {
+    "message": "Both **a** and **b** are protocol parameters. They are not hardcoded constants, and they can be changed through the network's governance and parameter-update process."
+  },
+  "feesAndTransactions.how.quote": {
+    "message": "You pay for the space your transaction takes up on the chain, not for the value it moves."
+  },
+  "feesAndTransactions.how.buttonLabel": {
+    "message": "Explore the protocol parameters (CIPs)"
+  },
+  "feesAndTransactions.divider.deterministic": {
+    "message": "Predictable by design"
+  },
+  "feesAndTransactions.deterministic.title": {
+    "message": "Determinism: you know the price before you sign"
+  },
+  "feesAndTransactions.deterministic.description1": {
+    "message": "Cardano's fee depends only on transaction size and two public parameters. The size is fixed at construction time, so the wallet can compute the exact fee and show it to you before you authorize the transaction."
+  },
+  "feesAndTransactions.deterministic.description2": {
+    "message": "This contrasts with account-based models such as Ethereum, where fees are driven by computation (gas) inside the virtual machine (the on-chain execution environment) rather than by transaction size. There, the exact cost can depend on contract execution paths, so it is less directly tied to the bytes you publish."
+  },
+  "feesAndTransactions.callout.why.label": {
+    "message": "Why it matters:"
+  },
+  "feesAndTransactions.callout.why.text": {
+    "message": "predictable fees mean no surprise overpayment, no bidding war to get included in a block, and a calmer user experience, especially for everyday payments."
+  },
+  "feesAndTransactions.divider.minutxo": {
+    "message": "Minimum ada (min-UTxO)"
+  },
+  "feesAndTransactions.minutxo.title": {
+    "message": "The minimum ada requirement"
+  },
+  "feesAndTransactions.minutxo.description1": {
+    "message": "Cardano uses the [UTXO model](/glossary/utxo) (extended, or [eUTXO](/glossary/eutxo)), where value lives in discrete outputs rather than in accounts with running balances. To stop the ledger from filling up with tiny dust outputs, every output must contain a minimum amount of ada."
+  },
+  "feesAndTransactions.minutxo.description2": {
+    "message": "Since the Babbage era, that minimum is calculated as **(160 + serialized output size in bytes) × utxoCostPerByte**, where utxoCostPerByte (the coinsPerUTxOByte parameter) is **4,310 lovelace per byte** on mainnet. The fixed 160-byte overhead covers the transaction input and the output's entry in the UTxO set."
+  },
+  "feesAndTransactions.minutxo.description3": {
+    "message": "A simple ada-only output therefore carries roughly **1 ada** as its minimum. Outputs that hold [native tokens](/glossary/native-token), a Plutus script (Cardano's smart contract language), or an inline datum (data attached directly to the output) are larger, so their minimum ada is higher. The ada is locked, not burned: it is returned in full when the output is later spent."
+  },
+  "feesAndTransactions.minutxo.calc.title": {
+    "message": "Worked example"
+  },
+  "feesAndTransactions.minutxo.calc.description1": {
+    "message": "A basic ada-only output serializes to about 67 bytes. At 4,310 lovelace per byte the locked minimum is (160 + 67) × 4,310 = 978,370 lovelace, or about **1 ada**."
+  },
+  "feesAndTransactions.minutxo.calc.description2": {
+    "message": "Add a [native token](/glossary/native-token) or an inline datum (data attached directly to the output) and the serialized size grows, so the required minimum ada grows in step. This is the [UTxO cost per byte](/glossary/utxo-cost-per-byte) rule in action."
+  },
+  "feesAndTransactions.minutxo.calc.quote": {
+    "message": "Minimum ada is a refundable deposit that scales with how much space your output occupies."
+  },
+  "feesAndTransactions.divider.model": {
+    "message": "UTxO vs account"
+  },
+  "feesAndTransactions.model.title": {
+    "message": "Why the accounting model shapes fees"
+  },
+  "feesAndTransactions.model.description1": {
+    "message": "In an account-based model, the chain tracks each address's balance and a transaction mutates it. Fees there are driven mainly by computation: the more work a transaction does inside the virtual machine (the on-chain execution environment), the more it costs."
+  },
+  "feesAndTransactions.model.description2": {
+    "message": "In Cardano's extended UTxO model, a transaction consumes whole inputs and creates new outputs. Fees are driven by the **size** of what you publish to the chain. Scripts still have their own execution budget and cost (priced through separate protocol parameters), but the base fee reflects footprint, not the script's execution cost."
+  },
+  "feesAndTransactions.callout.size.label": {
+    "message": "Size, not steps:"
+  },
+  "feesAndTransactions.callout.size.text": {
+    "message": "a large but simple transaction can cost more than a small transaction that runs a script, because the fee formula weights the bytes you add to the ledger."
+  },
+  "feesAndTransactions.divider.markets": {
+    "message": "Fee markets & MEV"
+  },
+  "feesAndTransactions.markets.title": {
+    "message": "Fee markets and maximal extractable value"
+  },
+  "feesAndTransactions.markets.description1": {
+    "message": "Unlike account-based chains with open gas bidding, Cardano has no general fee market where users outbid each other to be included. The per-byte fee plus the configurable minimum is the price; there is no auction for block space in the usual sense."
+  },
+  "feesAndTransactions.markets.description2": {
+    "message": "Some [maximal extractable value (MEV)](/glossary/mev) still exists. The protocol does not enforce any transaction order within a block, and the stock node simply fills blocks in mempool arrival order. Reordering transactions would require a modified block producer, while back-running (adding your own transaction after one you see in the mempool) needs no modification at all. What actually keeps MEV limited on Cardano is that a transaction's inputs and outputs are fixed when it is built: a reordered transaction cannot be made to execute at a worse price, it either goes through as written or fails."
+  },
+  "feesAndTransactions.cta.title": {
+    "message": "Practical guidance: what to expect"
+  },
+  "feesAndTransactions.cta.text": {
+    "message": "For a typical ada transfer, expect to pay a tiny, predictable fee, a fraction of an ada (around 0.16–0.17 ada at current mainnet parameters), plus the refundable minimum-ada deposit on any new output. Your wallet shows the exact fee before you sign."
+  },
+  "feesAndTransactions.cta.buttonLabel": {
+    "message": "Explore the UTXO model"
   }
 }

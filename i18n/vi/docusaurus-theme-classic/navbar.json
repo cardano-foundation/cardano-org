@@ -28,7 +28,7 @@
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your vote": {
-    "message": "Ủy quyền phiếu bầu của bạn",
+    "message": "Ủy quyền lá phiếu của bạn",
     "description": "Navbar item with label Delegate your vote"
   },
   "item.label.Cardano Research": {
@@ -178,5 +178,9 @@
   "item.label.DeFi": {
     "message": "DeFi",
     "description": "Navbar item with label DeFi"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
   }
 }

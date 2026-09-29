@@ -9,9 +9,9 @@ sidebar_position: 3
 
 ## Die Herausforderung
 
-In der heutigen digitalen Welt ist unsere Identität auf unzählige Plattformen verteilt, von denen jede Teile unserer persönlichen Daten speichert. Die Nutzer haben kaum Einfluss darauf, wie ihre Daten genutzt, weitergegeben oder verkauft werden. Durch Datenlecks werden Millionen von Datensätzen offengelegt. Identitätsdiebstahl ist weit verbreitet, und der Nachweis der eigenen Identität im Internet ist nach wie vor umständlich und stellt einen Eingriff in die Privatsphäre dar.
+In der heutigen digitalen Welt ist unsere Identität auf unzählige Plattformen verteilt, von denen jede Teile unserer persönlichen Daten speichert. Die Nutzer haben kaum Einfluss darauf, wie ihre Daten genutzt, weitergegeben oder verkauft werden. Datenlecks legen Millionen von Datensätzen offen. Identitätsdiebstahl ist weit verbreitet, und wer online nachweisen will, wer er ist, hat es nach wie vor umständlich und muss dabei viel von sich preisgeben.
 
-Zentralisierte Identitätssysteme schaffen zentralisierte Fehlerquellen und verleihen Identitätsanbietern unverhältnismäßig große Macht. Nutzer müssen immer wieder sensible Daten preisgeben, was zu unnötigen Risiken und Hindernissen bei digitalen Interaktionen führt.
+Zentralisierte Identitätssysteme haben einzelne Schwachstellen, an denen alles hängt, und verleihen Identitätsanbietern unverhältnismäßig große Macht. Nutzer müssen immer wieder sensible Daten preisgeben, was zu unnötigen Risiken und Hindernissen bei digitalen Interaktionen führt.
 
 ## Wie Blockchain dies löst
 
@@ -19,7 +19,7 @@ Selbstbestimmte Identität (Self-Sovereign Identity, SSI) auf Cardano verleiht d
 
 - **Eigentum der Nutzer**: Jeder kontrolliert seine Identitätsdaten selbst und entscheidet, was er teilt
 - **Selektive Freigabe**: Es werden nur die Informationen geteilt, die für einen konkreten Vorgang nötig sind
-- **Verifizierbare Nachweise**: Dritte können Angaben kryptografisch prüfen, ohne Zugriff auf die zugrunde liegenden Daten
+- **Verifizierbare Nachweise**: Dritte können Angaben kryptografisch prüfen, ohne die zugrunde liegenden Daten einzusehen
 - **Dezentrale Identifikatoren (DIDs)**: Dauerhafte Kennungen, die von keiner zentralen Instanz abhängen
 - **Schutz der Privatsphäre**: Zero-Knowledge-Beweise bestätigen Eigenschaften, ohne sie offenzulegen
 

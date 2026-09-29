@@ -33,8 +33,8 @@ Current systems also create privacy and security risks. 現行のシステムは
 - **グローバルなアクセス性**: 国境を越えた医療を支援
 - **規制準拠**: HIPAAなどの規制要件への対応力
 
-## はじめる
+## はじめよう
 
 - [Cardanoのアプリケーションを探す](/apps)
-- [開発者向けリソース](https://developers.cardano.org)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
 - [エンタープライズソリューションを見る](/solutions)

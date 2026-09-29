@@ -20,11 +20,11 @@
     "description": "Navbar item with label News"
   },
   "item.label.Where to get ada?": {
-    "message": "adaの入手方法",
+    "message": "ADAの入手方法",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "adaを守る",
+    "message": "ADAを守る",
     "description": "Navbar item with label Protect your ada"
   },
   "item.label.Delegate your vote": {
@@ -80,7 +80,7 @@
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
-    "message": "Cardano上の企業",
+    "message": "Cardanoで開発する企業",
     "description": "Navbar item with label Companies building on Cardano"
   },
   "item.label.Solutions": {
@@ -178,5 +178,9 @@
   "item.label.DeFi": {
     "message": "DeFi",
     "description": "Navbar item with label DeFi"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
   }
 }

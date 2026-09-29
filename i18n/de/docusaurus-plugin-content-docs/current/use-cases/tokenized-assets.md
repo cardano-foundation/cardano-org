@@ -25,19 +25,19 @@ Die Tokenisierung teilt das Eigentum an realen Vermögenswerten in digitale Toke
 
 Tokenisierung eignet sich für praktisch jede Anlageklasse: Immobilien, Infrastruktur, Rohstoffe, Sammlerstücke, geistiges Eigentum und mehr.
 
-## Compliance Rules on Token Transfers
+## Compliance-Regeln für Token-Transfers
 
-Tokenized assets can fall under financial regulation. Depending on the asset and the jurisdiction, their issuers may need to limit transfers to verified investors, or freeze and recover tokens for legal reasons. An ordinary native token cannot enforce this, because once minted it follows whoever controls the address it sits at.
+Tokenisierte Assets können unter die Finanzmarktregulierung fallen. Je nach Asset und Rechtsraum müssen Emittenten Transfers dann auf verifizierte Investoren beschränken oder Token aus rechtlichen Gründen einfrieren und zurückholen. Ein gewöhnlicher Native Token kann das nicht durchsetzen: Einmal geprägt, gehorcht er allein dem, der die Adresse kontrolliert, auf der er liegt.
 
-[Programmable tokens](/glossary/programmable-token/) add that layer. They are native tokens that holders can only send when the issuer's transfer rules approve, for example an allowlist of verified holders or a limit per transfer. CIP-113, the proposed standard for them on Cardano, is still under review, and the Cardano Foundation maintains an open-source reference implementation.
+[Programmierbare Token](/glossary/programmable-token/) ergänzen genau diese Ebene. Es sind Native Token, die ihre Inhaber nur versenden können, wenn die Transferregeln des Emittenten es erlauben, etwa eine Allowlist verifizierter Inhaber oder ein Limit pro Transfer. CIP-113, der vorgeschlagene Standard dafür auf Cardano, wird noch geprüft. Die Cardano Foundation pflegt eine Open-Source-Referenzimplementierung.
 
-What an issuer can do beyond that depends on the scripts the token's registry entry names. Some let authorized parties freeze or seize holdings. A substandard can also limit third-party actions to ones that never reduce a holder's balance. The issuer may be able to swap these scripts later, and the shared contracts can be upgraded by whoever holds the upgrade authority of that deployment. Investors should know who can change the rules before they buy.
+Was ein Emittent darüber hinaus tun kann, hängt von den Skripten ab, die im Registry-Eintrag des Tokens genannt sind. Manche erlauben berechtigten Parteien, Bestände einzufrieren oder einzuziehen. Ein Substandard kann Aktionen Dritter außerdem auf solche beschränken, die das Guthaben eines Inhabers nie verringern. Der Emittent kann diese Skripte unter Umständen später austauschen, und wer die Upgrade-Berechtigung für das jeweilige Deployment hält, kann die gemeinsam genutzten Contracts aktualisieren. Investoren sollten vor dem Kauf wissen, wer die Regeln ändern kann.
 
 ## Warum Cardano
 
 - **Native Token** bilden Vermögenswerte effizient und sicher ab
 - **Niedrige Transaktionsgebühren** machen auch kleine Trades wirtschaftlich
-- **Regulatorisches Bewusstsein** unterstützt regelkonforme Tokenisierungsmodelle
+- **Blick auf die Regulierung** unterstützt regelkonforme Tokenisierungsmodelle
 - **Smart-Contract-Sicherheit** durch formale Verifikationsmethoden
 - **Globale Zugänglichkeit** ermöglicht weltweite Teilnahme
 
@@ -45,5 +45,5 @@ What an issuer can do beyond that depends on the scripts the token's registry en
 
 - [Cardano-Anwendungen entdecken](/apps)
 - [Ressourcen für Entwickler zur Programmierung auf Cardano](https://developers.cardano.org)
-- [Developer guide to programmable tokens](https://developers.cardano.org/docs/developers/curriculum/native-tokens/programmable-tokens/)
+- [Entwicklerleitfaden zu programmierbaren Token](https://developers.cardano.org/docs/developers/curriculum/native-tokens/programmable-tokens/)
 - [Enterprise-Lösungen ansehen](/solutions)

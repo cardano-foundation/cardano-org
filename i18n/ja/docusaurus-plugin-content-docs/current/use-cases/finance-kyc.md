@@ -23,7 +23,7 @@ The current system is also exclusionary. The estimated 1.4 billion adults worldw
 - **コスト削減**: 共有型の本人確認インフラにより、コンプライアンスコストを低減
 - **金融包摂**: 代替的な本人確認手段により、銀行口座を持たない人々も金融システムに参加可能
 
-Smart contracts can automate compliance checks, ensuring only verified users can access specific financial services while maintaining privacy and reducing manual review requirements.
+スマートコントラクトでコンプライアンスチェックを自動化すれば、プライバシーを守り、手作業による審査を減らしながら、確認済みのユーザーだけが特定の金融サービスを利用できるようにできます。
 
 ## なぜCardanoなのか
 
@@ -33,8 +33,8 @@ Smart contracts can automate compliance checks, ensuring only verified users can
 - **低い手数料**: 少額取引や小規模口座の本人確認も経済的に実現
 - **企業パートナーシップ**: 金融セクターでの実際の導入実績
 
-## はじめる
+## はじめよう
 
 - [Cardano上のIDアプリケーションを探す](/apps/?tags=identity)
-- [開発者向けリソース](https://developers.cardano.org)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
 - [エンタープライズソリューションを見る](/solutions)

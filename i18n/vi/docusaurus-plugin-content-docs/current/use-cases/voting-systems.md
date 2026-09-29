@@ -7,7 +7,7 @@ sidebar_position: 14
 
 # Hệ thống bỏ phiếu
 
-## Thử thách
+## Thách thức
 
 Tính toàn vẹn của bầu cử là nền tảng của nền dân chủ, tuy nhiên các hệ thống bỏ phiếu vẫn phải đối mặt với những thử thách dai dẳng. Các hệ thống dựa trên giấy tờ chậm và dễ xảy ra lỗi, trong khi các hệ thống điện tử lại gây ra những lo ngại về bảo mật, khả năng kiểm toán và độ tin cậy. Cử tri thường không thể xác minh liệu phiếu bầu của mình đã được kiểm đếm chính xác hay chưa.
 
@@ -17,7 +17,7 @@ Ngoài các cuộc bầu cử chính phủ, những tổ chức thuộc mọi lo
 
 Hệ thống bỏ phiếu dựa trên Blockchain mang lại tính bảo mật, minh bạch và khả năng xác minh:
 
-- **Xác minh cử tri**: Mã hóa danh tính đảm bảo chỉ những cử tri đủ điều kiện mới được tham gia
+- **Xác minh cử tri**: Danh tính được xác thực bằng mật mã đảm bảo chỉ những cử tri đủ điều kiện mới được tham gia
 - **Tính toàn vẹn của phiếu bầu**: Sau khi đã bỏ phiếu, phiếu bầu không thể bị thay đổi hoặc xóa
 - **Khả năng kiểm toán**: Bất kỳ ai cũng có thể xác minh số phiếu bầu mà vẫn đảm bảo tính bí mật của lá phiếu
 - **Tính minh bạch**: Toàn bộ quy trình đều được kiểm toán công khai
@@ -33,9 +33,9 @@ Hệ thống quản trị của Cardano sử dụng bỏ phiếu dựa trên Blo
 - **Kinh nghiệm quản trị cộng đồng** mang lại những hiểu biết thực tiễn
 - **Phương pháp tiếp cận dựa trên nghiên cứu** giải quyết các yêu cầu phức tạp của hệ thống bỏ phiếu
 
-## Hãy Bắt Đầu
+## Hãy bắt đầu
 
 - [Tìm hiểu về quản trị Cardano](/governance)
 - [Khám phá các công cụ quản trị](/apps?tags=governance)
 - [Tài nguyên dành cho nhà phát triển xây dựng trên nền tảng Cardano](https://developers.cardano.org)
-- Xem các giải pháp doanh nghiệp
+- [Xem các giải pháp doanh nghiệp](/solutions)
