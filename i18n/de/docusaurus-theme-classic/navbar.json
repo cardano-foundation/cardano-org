@@ -19,14 +19,6 @@
     "message": "Neues",
     "description": "Navbar item with label News"
   },
-  "item.label.What is ada?": {
-    "message": "Was ist Ada?",
-    "description": "Navbar item with label What is ada?"
-  },
-  "item.label.Get started with Cardano": {
-    "message": "Erste Schritte mit Cardano",
-    "description": "Navbar item with label Get started with Cardano"
-  },
   "item.label.Where to get ada?": {
     "message": "Wo bekommt man Ada?",
     "description": "Navbar item with label Where to get ada?"
@@ -35,17 +27,9 @@
     "message": "Schütze deine Ada",
     "description": "Navbar item with label Protect your ada"
   },
-  "item.label.Delegate your ada": {
-    "message": "Delegiere deine Ada",
-    "description": "Navbar item with label Delegate your ada"
-  },
   "item.label.Delegate your vote": {
     "message": "Deine Stimme delegieren",
     "description": "Navbar item with label Delegate your vote"
-  },
-  "item.label.Use Cardano Apps": {
-    "message": "Cardano Apps nutzen",
-    "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
     "message": "Cardano Forschung",
@@ -55,25 +39,9 @@
     "message": "Cardano Einblicke",
     "description": "Navbar item with label Cardano Insights"
   },
-  "item.label.Hard Forks": {
-    "message": "Hard Forks",
-    "description": "Navbar item with label Hard Forks"
-  },
-  "item.label.Follow Cardano": {
-    "message": "Folge Cardano",
-    "description": "Navbar item with label Follow Cardano"
-  },
-  "item.label.Newsletter": {
-    "message": "Newsletter",
-    "description": "Navbar item with label Newsletter"
-  },
   "item.label.Online Communities": {
     "message": "Online-Communities",
     "description": "Navbar item with label Online Communities"
-  },
-  "item.label.Cardano Ambassadors": {
-    "message": "Cardano-Botschafter",
-    "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
     "message": "Cardano-Events",
@@ -86,10 +54,6 @@
   "item.label.Get involved in cardano.org": {
     "message": "Bei cardano.org mitmachen",
     "description": "Navbar item with label Get involved in cardano.org"
-  },
-  "item.label.Participate in governance": {
-    "message": "An Governance teilnehmen",
-    "description": "Navbar item with label Participate in governance"
   },
   "item.label.Governance Tools": {
     "message": "Governance-Tools",
@@ -127,10 +91,6 @@
     "message": "Enterprise-Lösungen",
     "description": "Navbar item with label Enterprise Solutions"
   },
-  "item.label.Use Cases": {
-    "message": "Anwendungsfälle",
-    "description": "Navbar item with label Use Cases"
-  },
   "item.label.Identity": {
     "message": "Identität",
     "description": "Navbar item with label Identity"
@@ -159,10 +119,6 @@
     "message": "What is a Wallet?",
     "description": "Navbar item with label What is a Wallet?"
   },
-  "item.label.Cardano Quiz": {
-    "message": "Cardano Quiz",
-    "description": "Navbar item with label Cardano Quiz"
-  },
   "item.label.How Cardano works": {
     "message": "How Cardano works",
     "description": "Navbar item with label How Cardano works"
@@ -171,14 +127,6 @@
     "message": "Smart contracts and DApps",
     "description": "Navbar item with label Smart contracts and DApps"
   },
-  "item.label.Cardano Academy": {
-    "message": "Cardano Academy",
-    "description": "Navbar item with label Cardano Academy"
-  },
-  "item.label.Ouroboros": {
-    "message": "Ouroboros",
-    "description": "Navbar item with label Ouroboros"
-  },
   "item.label.Cardano Apps": {
     "message": "Cardano Apps",
     "description": "Navbar item with label Cardano Apps"
@@ -186,10 +134,6 @@
   "item.label.Find a Wallet": {
     "message": "Find a Wallet",
     "description": "Navbar item with label Find a Wallet"
-  },
-  "item.label.Stablecoins": {
-    "message": "Stablecoins",
-    "description": "Navbar item with label Stablecoins"
   },
   "item.label.Start Here": {
     "message": "Start Here",
@@ -226,5 +170,13 @@
   "item.label.All Use Cases": {
     "message": "All Use Cases",
     "description": "Navbar item with label All Use Cases"
+  },
+  "item.label.Stake your ada": {
+    "message": "Stake your ada",
+    "description": "Navbar item with label Stake your ada"
+  },
+  "item.label.DeFi": {
+    "message": "DeFi",
+    "description": "Navbar item with label DeFi"
   }
 }
