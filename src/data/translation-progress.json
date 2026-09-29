@@ -1,76 +1,76 @@
 {
-  "lastUpdated": "2026-09-29T08:33:39.763Z",
+  "lastUpdated": "2026-09-29T11:26:16.703Z",
   "languages": [
     {
       "id": "es",
       "name": "Spanish",
-      "translationProgress": 99,
-      "approvalProgress": 24,
+      "translationProgress": 98,
+      "approvalProgress": 21,
       "words": {
-        "total": 47791,
-        "translated": 47748,
-        "preTranslateAppliedTo": 4608,
-        "approved": 11854
+        "total": 44543,
+        "translated": 43722,
+        "preTranslateAppliedTo": 2784,
+        "approved": 9370
       },
       "phrases": {
-        "total": 4086,
-        "translated": 4059,
-        "preTranslateAppliedTo": 370,
-        "approved": 1274
+        "total": 3927,
+        "translated": 3789,
+        "preTranslateAppliedTo": 248,
+        "approved": 1102
       }
     },
     {
       "id": "de",
       "name": "German",
-      "translationProgress": 38,
-      "approvalProgress": 38,
+      "translationProgress": 32,
+      "approvalProgress": 32,
       "words": {
-        "total": 47791,
-        "translated": 18343,
-        "preTranslateAppliedTo": 603,
-        "approved": 18317
+        "total": 44543,
+        "translated": 14331,
+        "preTranslateAppliedTo": 590,
+        "approved": 14313
       },
       "phrases": {
-        "total": 4086,
-        "translated": 1935,
-        "preTranslateAppliedTo": 169,
-        "approved": 1917
+        "total": 3927,
+        "translated": 1674,
+        "preTranslateAppliedTo": 159,
+        "approved": 1661
       }
     },
     {
       "id": "vi",
       "name": "Vietnamese",
-      "translationProgress": 38,
-      "approvalProgress": 36,
+      "translationProgress": 32,
+      "approvalProgress": 29,
       "words": {
-        "total": 47791,
-        "translated": 18572,
-        "preTranslateAppliedTo": 5374,
-        "approved": 17272
+        "total": 44543,
+        "translated": 14546,
+        "preTranslateAppliedTo": 5157,
+        "approved": 13246
       },
       "phrases": {
-        "total": 4086,
-        "translated": 2019,
-        "preTranslateAppliedTo": 709,
-        "approved": 1907
+        "total": 3927,
+        "translated": 1749,
+        "preTranslateAppliedTo": 663,
+        "approved": 1637
       }
     },
     {
       "id": "ja",
       "name": "Japanese",
-      "translationProgress": 36,
-      "approvalProgress": 36,
+      "translationProgress": 29,
+      "approvalProgress": 29,
       "words": {
-        "total": 47791,
-        "translated": 17374,
+        "total": 44543,
+        "translated": 13348,
         "preTranslateAppliedTo": 63,
-        "approved": 17367
+        "approved": 13341
       },
       "phrases": {
-        "total": 4086,
-        "translated": 1907,
+        "total": 3927,
+        "translated": 1637,
         "preTranslateAppliedTo": 27,
-        "approved": 1900
+        "approved": 1630
       }
     }
   ]
