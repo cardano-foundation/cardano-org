@@ -20,7 +20,7 @@ export default function TreasuryDonations() {
       <div className={styles.grid}>
         <div className={styles.figure}>
           <span className={styles.value}>{formatAdaValue(s.totalAda)}</span>
-          <span className={styles.label}>{translate({ id: "governance.treasury.donations.total", message: "Donated in total" })}</span>
+          <span className={styles.label}>{translate({ id: "governance.treasury.donations.total", message: "Received in total" })}</span>
         </div>
         <div className={styles.figure}>
           <span className={styles.value}>{s.epochCount.toLocaleString()}</span>

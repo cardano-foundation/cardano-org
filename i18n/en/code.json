@@ -10374,7 +10374,7 @@
     "message": "Since the Conway era, a treasury donation sends ada straight back into the treasury. Most of it so far has been money returned from treasury-funded work: budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved."
   },
   "governance.treasury.donations.total": {
-    "message": "Donated in total"
+    "message": "Received in total"
   },
   "governance.treasury.donations.epochs": {
     "message": "Epochs with donations"
