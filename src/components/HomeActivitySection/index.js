@@ -133,7 +133,7 @@ export default function HomeActivitySection() {
       >
         {TOP_APPS.map((app) => (
           <li key={app.slug}>
-            <AppTile app={app} />
+            <AppTile app={app} showProperties={false} />
           </li>
         ))}
       </ul>
