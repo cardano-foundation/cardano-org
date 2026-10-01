@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
 import { renderAnswerArray } from "@site/src/utils/textUtils";
-import operationFAQ from "@site/src/data/operationFAQ.json";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 //
 // This component:
-// shows a collapsible menu and takes a json file to fill it.
-// in the json file you can use markdown for urls, bold text and bullet points with "- this notation"
-//
-// FIXME: some answers seem to be very outdated, also needs more links
-// FIXME: need to make clear that protocol distributes rewards and pools do not have custody
+// shows a collapsible menu filled from a data array or a registered json file.
+// in the answers you can use markdown for urls, bold text and bullet points with "- this notation"
 
 const faqData = {
-  operationFAQ,
   pineappleFAQ,
 };
 

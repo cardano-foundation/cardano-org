@@ -26,7 +26,7 @@ import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-icons/fa";
 import Translate, {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
-import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
+import { getGovernanceRoleSurvey } from "@site/src/data/governanceRoleSurvey";
 import governanceFAQ from "@site/src/data/governanceFAQ.json";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 
@@ -324,7 +324,7 @@ export default function Governance() {
           <GovernanceFAQ data={governanceFAQ} />
           <SpacerBox size="medium" />
           <SurveyCard
-            surveyData={governanceRoleSurvey}
+            surveyData={getGovernanceRoleSurvey()}
             icon={<FaCompass />}
             title={translate({id: 'governance.survey.title', message: 'Not sure where to start?'})}
             description={translate({id: 'governance.survey.description', message: 'Take a short guided path to understand your options and find the governance role that fits you best.'})}

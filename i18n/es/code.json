@@ -1534,11 +1534,11 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Governance Tools": {
-    "message": "Tools for governance participation",
+    "message": "Herramientas para participar en la gobernanza",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Constitution": {
-    "message": "The ratified Cardano Constitution",
+    "message": "La Constitución de Cardano ratificada",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Start building on Cardano": {
@@ -1574,11 +1574,11 @@
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Identity": {
-    "message": "Credentials and verification",
+    "message": "Credenciales y verificación",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Supply Chain": {
-    "message": "Traceability and provenance",
+    "message": "Trazabilidad y procedencia",
     "description": "Mega menu item description"
   },
   "solutions.data.dpp.title": {
@@ -3174,7 +3174,7 @@
     "message": "Contenido creado"
   },
   "ambassadors.impact.content.caption": {
-    "message": "Articles, videos, podcasts and threads"
+    "message": "Artículos, videos, pódcasts e hilos"
   },
   "ambassadors.impact.education.label": {
     "message": "Educación"
@@ -9857,322 +9857,322 @@
     "message": "Recibir avisos de hackatones"
   },
   "navbar.mega.featured.title.What is Cardano?": {
-    "message": "What is Cardano?"
+    "message": "¿Qué es Cardano?"
   },
   "navbar.mega.featured.description.What is Cardano?": {
-    "message": "The platform, how it works and why it is different."
+    "message": "La plataforma, cómo funciona y qué la hace diferente."
   },
   "navbar.mega.featured.cta.What is Cardano?": {
-    "message": "Start here"
+    "message": "Empieza aquí"
   },
   "navbar.mega.label.Learn step by step": {
-    "message": "Learn step by step"
+    "message": "Aprende paso a paso"
   },
   "navbar.mega.description.Learn step by step": {
-    "message": "A guided path from beginner to advanced"
+    "message": "Un recorrido guiado de principiante a avanzado"
   },
   "navbar.mega.label.What is a Wallet?": {
-    "message": "What is a Wallet?"
+    "message": "¿Qué es una cartera?"
   },
   "navbar.mega.description.What is a Wallet?": {
-    "message": "Understand wallet types and security"
+    "message": "Conoce los tipos de cartera y su seguridad"
   },
   "navbar.mega.column.Go deeper": {
-    "message": "Go deeper"
+    "message": "Profundiza"
   },
   "navbar.mega.label.How Cardano works": {
-    "message": "How Cardano works"
+    "message": "Cómo funciona Cardano"
   },
   "navbar.mega.description.How Cardano works": {
-    "message": "Consensus, ledger, tokens and upgrades in plain terms"
+    "message": "Consenso, libro mayor, tokens y actualizaciones explicados con claridad"
   },
   "navbar.mega.label.Smart contracts and DApps": {
-    "message": "Smart contracts and DApps"
+    "message": "Contratos inteligentes y DApps"
   },
   "navbar.mega.description.Smart contracts and DApps": {
-    "message": "How contracts run on Cardano and how to use apps safely"
+    "message": "Cómo se ejecutan los contratos en Cardano y cómo usar las apps de forma segura"
   },
   "navbar.mega.featured.title.Cardano Apps": {
-    "message": "Cardano Apps"
+    "message": "Apps de Cardano"
   },
   "navbar.mega.featured.description.Cardano Apps": {
-    "message": "Explore curated applications built on Cardano."
+    "message": "Explora una selección de aplicaciones construidas sobre Cardano."
   },
   "navbar.mega.featured.cta.Cardano Apps": {
-    "message": "Explore apps"
+    "message": "Explorar apps"
   },
   "navbar.mega.column.Get set up": {
-    "message": "Get set up"
+    "message": "Primeros pasos"
   },
   "navbar.mega.label.Find a Wallet": {
-    "message": "Find a Wallet"
+    "message": "Encuentra una cartera"
   },
   "navbar.mega.description.Find a Wallet": {
-    "message": "Find the right wallet for you"
+    "message": "Encuentra la cartera adecuada para ti"
   },
   "navbar.mega.column.Do more": {
-    "message": "Do more"
+    "message": "Haz más"
   },
   "navbar.mega.label.DeFi": {
     "message": "DeFi"
   },
   "navbar.mega.description.DeFi": {
-    "message": "Swap, lend and earn with open applications"
+    "message": "Intercambia, presta y gana con aplicaciones abiertas"
   },
   "navbar.mega.featured.title.Start Here": {
-    "message": "Start Here"
+    "message": "Empieza aquí"
   },
   "navbar.mega.featured.description.Start Here": {
-    "message": "The 7-module path from zero to shipping, fundamentals through production."
+    "message": "El recorrido de 7 módulos para pasar de cero a producción, desde los fundamentos hasta el despliegue."
   },
   "navbar.mega.featured.cta.Start Here": {
-    "message": "Start the curriculum"
+    "message": "Empezar el programa"
   },
   "navbar.mega.column.Tools & Ecosystem": {
-    "message": "Tools & Ecosystem"
+    "message": "Herramientas y ecosistema"
   },
   "navbar.mega.featured.title.Delegate your voting power": {
-    "message": "Delegate your voting power"
+    "message": "Delega tu poder de voto"
   },
   "navbar.mega.featured.description.Delegate your voting power": {
-    "message": "Your ada is your voice. Choose a DRep to represent you in Cardano governance."
+    "message": "Tu ada es tu voz. Elige un DRep que te represente en la gobernanza de Cardano."
   },
   "navbar.mega.featured.cta.Delegate your voting power": {
-    "message": "Choose a DRep"
+    "message": "Elige un DRep"
   },
   "navbar.mega.label.Operator Notifications": {
-    "message": "Operator Notifications"
+    "message": "Avisos para operadores"
   },
   "navbar.mega.description.Operator Notifications": {
-    "message": "Technical updates for stake pool operators"
+    "message": "Novedades técnicas para operadores de stake pools"
   },
   "navbar.mega.label.Run a Stake Pool": {
-    "message": "Run a Stake Pool"
+    "message": "Opera un stake pool"
   },
   "navbar.mega.description.Run a Stake Pool": {
-    "message": "Operate a pool and help secure the network"
+    "message": "Gestiona un pool y ayuda a proteger la red"
   },
   "navbar.mega.label.Governance Overview": {
-    "message": "Governance Overview"
+    "message": "Gobernanza en resumen"
   },
   "navbar.mega.description.Governance Overview": {
-    "message": "How Cardano governance works"
+    "message": "Cómo funciona la gobernanza de Cardano"
   },
   "navbar.mega.featured.title.AI Agents": {
-    "message": "AI Agents"
+    "message": "Agentes de IA"
   },
   "navbar.mega.featured.description.AI Agents": {
-    "message": "Why AI needs Cardano."
+    "message": "Por qué la IA necesita Cardano."
   },
   "navbar.mega.featured.cta.AI Agents": {
-    "message": "Explore AI on Cardano"
+    "message": "Descubre la IA en Cardano"
   },
   "navbar.mega.label.Finance": {
-    "message": "Finance"
+    "message": "Finanzas"
   },
   "navbar.mega.description.Finance": {
-    "message": "DeFi and stablecoins"
+    "message": "DeFi y stablecoins"
   },
   "glossary.category.general": {
-    "message": "General Blockchain"
+    "message": "Blockchain en general"
   },
   "glossary.category.tokens": {
-    "message": "Tokens & Assets"
+    "message": "Tokens y activos"
   },
   "glossary.category.consensus": {
-    "message": "Consensus & Staking"
+    "message": "Consenso y staking"
   },
   "glossary.category.smart-contracts": {
-    "message": "Smart Contracts"
+    "message": "Contratos inteligentes"
   },
   "glossary.category.wallets": {
-    "message": "Wallets & Keys"
+    "message": "Carteras y claves"
   },
   "glossary.category.governance": {
-    "message": "Governance"
+    "message": "Gobernanza"
   },
   "glossary.category.network": {
-    "message": "Network & Protocol"
+    "message": "Red y protocolo"
   },
   "glossary.path.new-to-cardano.title": {
-    "message": "New to Cardano?"
+    "message": "¿Nuevo en Cardano?"
   },
   "glossary.path.new-to-cardano.desc": {
-    "message": "Start here if you are new to the ecosystem."
+    "message": "Empieza aquí si acabas de llegar al ecosistema."
   },
   "glossary.path.new-to-cardano.audience": {
-    "message": "Beginner"
+    "message": "Principiante"
   },
   "glossary.path.governance.title": {
-    "message": "Governance 101"
+    "message": "Gobernanza básica"
   },
   "glossary.path.governance.desc": {
-    "message": "Understand how governance on Cardano works."
+    "message": "Entiende cómo funciona la gobernanza en Cardano."
   },
   "glossary.path.governance.audience": {
-    "message": "Beginner"
+    "message": "Principiante"
   },
   "glossary.path.explore-apps.title": {
-    "message": "Explore Cardano Apps"
+    "message": "Explora las apps de Cardano"
   },
   "glossary.path.explore-apps.desc": {
-    "message": "Discover curated wallets, DEXs, governance tools, and more."
+    "message": "Descubre una selección de carteras, DEX, herramientas de gobernanza y mucho más."
   },
   "glossary.path.explore-apps.audience": {
-    "message": "Curated picks"
+    "message": "Selección recomendada"
   },
   "governance.impact.category.constitution": {
-    "message": "Constitution"
+    "message": "Constitución"
   },
   "governance.impact.category.committee": {
-    "message": "Committee"
+    "message": "Comité"
   },
   "governance.impact.params.title": {
-    "message": "SPOs and DReps voted on Plutus limits"
+    "message": "SPOs y DReps votaron los límites de Plutus"
   },
   "governance.impact.params.text": {
-    "message": "The community voted on raising Plutus execution limits to expand smart contract capacity, letting DApps run more logic per transaction."
+    "message": "La comunidad votó sobre el aumento de los límites de ejecución de Plutus para ampliar la capacidad de los contratos inteligentes, de modo que las DApps puedan ejecutar más lógica por transacción."
   },
   "governance.impact.category.protocol": {
-    "message": "Protocol"
+    "message": "Protocolo"
   },
   "governance.impact.constitution.title": {
-    "message": "Constitution updated with 79% support"
+    "message": "Constitución actualizada con un 79 % de apoyo"
   },
   "governance.impact.constitution.text": {
-    "message": "The Cardano community ratified an updated constitution through on-chain governance, introducing stricter standards for transparency and standalone accountability."
+    "message": "La comunidad de Cardano ratificó una constitución actualizada mediante la gobernanza on-chain, con normas más estrictas de transparencia y de rendición de cuentas independiente."
   },
   "governance.impact.committee.title": {
-    "message": "Constitutional Committee elected"
+    "message": "Comité Constitucional elegido"
   },
   "governance.impact.committee.text": {
-    "message": "The first Constitutional Committee was elected by the community through an on-chain governance action."
+    "message": "La comunidad eligió el primer Comité Constitucional mediante una acción de gobernanza on-chain."
   },
   "governance.impact.treasury.title": {
-    "message": "Treasury withdrawals enacted"
+    "message": "Retiros de la tesorería ejecutados"
   },
   "governance.impact.treasury.text": {
-    "message": "The community voted to fund projects directly from the Cardano treasury, directing resources toward ecosystem growth."
+    "message": "La comunidad votó para financiar proyectos directamente desde la tesorería de Cardano y destinar recursos al crecimiento del ecosistema."
   },
   "governance.impact.category.treasury": {
-    "message": "Treasury"
+    "message": "Tesorería"
   },
   "ambassadors.story.story-driving-on-chain-governance-at-cardano-summit-buenos-aires.tag": {
-    "message": "Governance"
+    "message": "Gobernanza"
   },
   "ambassadors.story.story-driving-on-chain-governance-at-cardano-summit-buenos-aires.title": {
-    "message": "Driving on-chain governance at Cardano Tech Summit LATAM, Buenos Aires"
+    "message": "Impulsando la gobernanza on-chain en el Cardano Tech Summit LATAM, Buenos Aires"
   },
   "ambassadors.story.story-driving-on-chain-governance-at-cardano-summit-buenos-aires.excerpt": {
-    "message": "Otávio Lima and regional builders led a panel on participatory governance and the road ahead for Cardano in Latin America."
+    "message": "Otávio Lima y desarrolladores de la región encabezaron un panel sobre gobernanza participativa y el camino que tiene Cardano por delante en América Latina."
   },
   "ambassadors.story.story-setting-the-standard-for-onboarding-new-cardano-users.tag": {
-    "message": "Moderation"
+    "message": "Moderación"
   },
   "ambassadors.story.story-setting-the-standard-for-onboarding-new-cardano-users.title": {
-    "message": "Setting the standard for onboarding new Cardano users"
+    "message": "Un referente para dar la bienvenida a los nuevos usuarios de Cardano"
   },
   "ambassadors.story.story-setting-the-standard-for-onboarding-new-cardano-users.excerpt": {
-    "message": "As a moderator, Kai Chapell builds the onboarding resources that help newcomers find their footing in the community."
+    "message": "Como moderador, Kai Chapell crea los recursos de bienvenida que ayudan a los recién llegados a orientarse en la comunidad."
   },
   "ambassadors.story.story-mapping-a-full-stack-infrastructure-roadmap-for-2026.tag": {
-    "message": "Development"
+    "message": "Desarrollo"
   },
   "ambassadors.story.story-mapping-a-full-stack-infrastructure-roadmap-for-2026.title": {
-    "message": "Mapping a full-stack infrastructure roadmap for 2026"
+    "message": "Una hoja de ruta de infraestructura full-stack para 2026"
   },
   "ambassadors.story.story-mapping-a-full-stack-infrastructure-roadmap-for-2026.excerpt": {
-    "message": "Peter Bui lays out the infrastructure work driving real ecosystem adoption across Cardano in 2026."
+    "message": "Peter Bui presenta el trabajo de infraestructura que impulsa una adopción real del ecosistema de Cardano en 2026."
   },
   "ambassadors.story.story-greek-community-convenes-in-athens-for-workshops-and-events.tag": {
-    "message": "Events"
+    "message": "Eventos"
   },
   "ambassadors.story.story-greek-community-convenes-in-athens-for-workshops-and-events.title": {
-    "message": "Greek community convenes in Athens for workshops and events"
+    "message": "La comunidad griega se reúne en Atenas para talleres y eventos"
   },
   "ambassadors.story.story-greek-community-convenes-in-athens-for-workshops-and-events.excerpt": {
-    "message": "Cardano's Greek community gathered in Athens to coordinate strategic workshops and plan upcoming events."
+    "message": "La comunidad griega de Cardano se reunió en Atenas para coordinar talleres estratégicos y planificar sus próximos eventos."
   },
   "ambassadors.story.story-positioning-cardano-as-a-solution-to-systemic-economic-challenges.tag": {
-    "message": "Education"
+    "message": "Educación"
   },
   "ambassadors.story.story-positioning-cardano-as-a-solution-to-systemic-economic-challenges.title": {
-    "message": "Positioning Cardano as a solution to systemic economic challenges"
+    "message": "Cardano como solución a los desafíos económicos sistémicos"
   },
   "ambassadors.story.story-positioning-cardano-as-a-solution-to-systemic-economic-challenges.excerpt": {
-    "message": "Mauro Andreoli educates the broader public through an article on how technological frameworks and blockchain can offer structural solutions to ongoing economic challenges."
+    "message": "Con un artículo dirigido al gran público, Mauro Andreoli explica cómo los marcos tecnológicos y la blockchain pueden ofrecer soluciones estructurales a los desafíos económicos persistentes."
   },
   "ambassadors.milestone.program-launch.title": {
-    "message": "Ambassador Program launches"
+    "message": "Nace el Programa de Embajadores"
   },
   "ambassadors.milestone.program-launch.body": {
-    "message": "The Cardano Foundation formally announces the Cardano Ambassador Program, defining the first four roles: Meetup Organizers, Translators, Content Creators and Moderators."
+    "message": "La Cardano Foundation anuncia oficialmente el Programa de Embajadores de Cardano y define los cuatro primeros roles: organizadores de meetups, traductores, creadores de contenido y moderadores."
   },
   "ambassadors.milestone.program-launch.credit": {
-    "message": "Cardano Foundation, founding Ambassador cohort"
+    "message": "Cardano Foundation, primera generación de embajadores"
   },
   "ambassadors.milestone.cardano-on-the-rocks.title": {
     "message": "Cardano on the Rocks"
   },
   "ambassadors.milestone.cardano-on-the-rocks.body": {
-    "message": "Markus Gufler demonstrates running a Cardano stake pool on an 18-watt Rock Pi single-board computer. The educational project ships hardware kits, a 3D-printed enclosure and a step-by-step guide for operators."
+    "message": "Markus Gufler demuestra cómo operar un stake pool de Cardano en un ordenador de placa única Rock Pi de 18 vatios. El proyecto educativo ofrece kits de hardware, una carcasa impresa en 3D y una guía paso a paso para operadores."
   },
   "ambassadors.milestone.cardano-on-the-rocks.credit": {
     "message": "Markus Gufler"
   },
   "ambassadors.milestone.phase-2-rewards.title": {
-    "message": "Phase 2 rewards program launches"
+    "message": "Arranca el programa de recompensas de la fase 2"
   },
   "ambassadors.milestone.phase-2-rewards.body": {
-    "message": "Phase 2 of the Ambassador Program rolls out ada-denominated rewards. At rollout the program counts 58 Ambassadors across 26 countries and 28 languages."
+    "message": "La fase 2 del Programa de Embajadores introduce recompensas en ada. Al ponerse en marcha, el programa cuenta con 58 embajadores en 26 países y 28 idiomas."
   },
   "ambassadors.milestone.phase-2-rewards.credit": {
-    "message": "Cardano Foundation, 58 Ambassadors at rollout"
+    "message": "Cardano Foundation, 58 embajadores al inicio"
   },
   "ambassadors.milestone.spo-scripts.title": {
-    "message": "SPO Scripts for stake-pool operators"
+    "message": "SPO Scripts para operadores de stake pools"
   },
   "ambassadors.milestone.spo-scripts.body": {
-    "message": "Martin Lang publishes the SPO Scripts, a widely used shell-script toolkit for Cardano stake-pool operators. Covers pool creation, token transfers, Catalyst voter registration and, through the Voltaire era, DRep management and on-chain governance with hardware-wallet support."
+    "message": "Martin Lang publica los SPO Scripts, un conjunto de scripts de shell muy utilizado por los operadores de stake pools de Cardano. Abarca la creación de pools, las transferencias de tokens y el registro de votantes en Catalyst, y desde la era Voltaire también la gestión de DReps y la gobernanza on-chain con soporte para carteras de hardware."
   },
   "ambassadors.milestone.spo-scripts.credit": {
     "message": "Martin Lang"
   },
   "ambassadors.milestone.summit-2021.title": {
-    "message": "Summit 2021 expands to 37 cities"
+    "message": "El Summit 2021 llega a 37 ciudades"
   },
   "ambassadors.milestone.summit-2021.body": {
-    "message": "The hybrid Cardano Summit was supported by 38 virtual and live community-led events across 37 cities, hosted by 57+ volunteer organisers including Cardano Ambassadors."
+    "message": "El Cardano Summit híbrido contó con el apoyo de 38 eventos comunitarios, virtuales y presenciales, en 37 ciudades, organizados por más de 57 voluntarios, entre ellos embajadores de Cardano."
   },
   "ambassadors.milestone.summit-2021.credit": {
-    "message": "Cardano Ambassadors and 57+ community volunteers"
+    "message": "Embajadores de Cardano y más de 57 voluntarios de la comunidad"
   },
   "ambassadors.milestone.summit-2023.title": {
-    "message": "Summit 2023 satellite events in 25 cities"
+    "message": "Summit 2023: eventos satélite en 25 ciudades"
   },
   "ambassadors.milestone.summit-2023.body": {
-    "message": "Around the Dubai main stage, the community organised 25 satellite events worldwide, with hosts in cities like Taipei, Seoul, Kumasi, Buenos Aires and Ho Chi Minh City."
+    "message": "En torno al escenario principal de Dubái, la comunidad organizó 25 eventos satélite en todo el mundo, con sedes en ciudades como Taipéi, Seúl, Kumasi, Buenos Aires y Ciudad Ho Chi Minh."
   },
   "ambassadors.milestone.summit-2023.credit": {
-    "message": "Cardano community and Ambassadors"
+    "message": "Comunidad de Cardano y embajadores"
   },
   "ambassadors.milestone.summit-2024.title": {
-    "message": "Summit 2024 community events in 25+ countries"
+    "message": "Summit 2024: eventos comunitarios en más de 25 países"
   },
   "ambassadors.milestone.summit-2024.body": {
-    "message": "Community-hosted events accompanied the Dubai Summit across 25+ countries, from Addis Ababa to Amsterdam, Buenos Aires, Sydney, Seoul, Tokyo, New York and London."
+    "message": "Eventos organizados por la comunidad acompañaron el Summit de Dubái en más de 25 países, desde Adís Abeba hasta Ámsterdam, Buenos Aires, Sídney, Seúl, Tokio, Nueva York y Londres."
   },
   "ambassadors.milestone.summit-2024.credit": {
-    "message": "Cardano community and Ambassadors"
+    "message": "Comunidad de Cardano y embajadores"
   },
   "ambassadors.milestone.ambassador-retreat-2025.title": {
-    "message": "First Ambassador Retreat in Berlin"
+    "message": "Primer retiro de embajadores en Berlín"
   },
   "ambassadors.milestone.ambassador-retreat-2025.body": {
-    "message": "The first dedicated Cardano Ambassador workshop gathers around 12 Ambassadors at Projektraum Drahnsdorf the weekend before the Berlin Summit. The retreat is funded by Project Catalyst Fund 13 and focuses on governance, collaboration and program direction."
+    "message": "El primer taller dedicado a los embajadores de Cardano reúne a unos 12 embajadores en el Projektraum Drahnsdorf el fin de semana previo al Summit de Berlín. El retiro está financiado por el Fund 13 de Project Catalyst y se centra en la gobernanza, la colaboración y el rumbo del programa."
   },
   "ambassadors.milestone.ambassador-retreat-2025.credit": {
-    "message": "Felix Weber, 12 Ambassadors"
+    "message": "Felix Weber, 12 embajadores"
   },
   "feesAndTransactions.hero.title": {
     "message": "Cardano Fees & Transaction Model"

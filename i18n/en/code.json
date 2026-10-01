@@ -10522,5 +10522,281 @@
   },
   "navbar.mega.description.The Cardano Treasury": {
     "message": "How the community fund is filled and spent"
+  },
+  "governance.survey.outcome.delegate.title": {
+    "message": "Delegate your voting power"
+  },
+  "governance.survey.outcome.delegate.description": {
+    "message": "Delegation is the easiest way to participate. A DRep votes on proposals on your behalf while your ada stays safely in your wallet. It takes just a few minutes to set up and you can change your DRep at any time."
+  },
+  "governance.survey.outcome.delegate.ctaText": {
+    "message": "Choose a DRep"
+  },
+  "governance.survey.outcome.drep.title": {
+    "message": "Become a DRep"
+  },
+  "governance.survey.outcome.drep.description": {
+    "message": "You have the time and motivation to actively shape Cardano. As a DRep you review governance proposals, vote on behalf of your delegators, and help steer the network's future. A refundable deposit of 500 ada is required."
+  },
+  "governance.survey.outcome.drep.ctaText": {
+    "message": "Register as a DRep"
+  },
+  "governance.survey.outcome.learn.title": {
+    "message": "Start by learning more"
+  },
+  "governance.survey.outcome.learn.description": {
+    "message": "Governance is new to you and that's perfectly fine. Take your time to understand how it works, read the constitution, and explore governance actions before choosing your role."
+  },
+  "governance.survey.outcome.learn.ctaText": {
+    "message": "Explore governance actions"
+  },
+  "governance.survey.question.time": {
+    "message": "How much time can you dedicate to Cardano governance?"
+  },
+  "governance.survey.question.time.option1": {
+    "message": "A few minutes to set it up, then I'm done"
+  },
+  "governance.survey.question.time.option2": {
+    "message": "I can check in occasionally"
+  },
+  "governance.survey.question.time.option3": {
+    "message": "I want to stay informed and vote regularly"
+  },
+  "governance.survey.question.time.option4": {
+    "message": "I'm ready to make it a regular commitment"
+  },
+  "governance.survey.question.voteSelf": {
+    "message": "Do you want to vote on every governance proposal yourself?"
+  },
+  "governance.survey.question.voteSelf.option1": {
+    "message": "No, I'd rather have someone knowledgeable vote on my behalf"
+  },
+  "governance.survey.question.voteSelf.option2": {
+    "message": "Not yet, I want to understand the process first"
+  },
+  "governance.survey.question.voteSelf.option3": {
+    "message": "Yes, I want to review and vote on proposals myself"
+  },
+  "governance.survey.question.voteSelf.option4": {
+    "message": "Yes, and I want to represent others too"
+  },
+  "governance.survey.question.familiarity": {
+    "message": "How familiar are you with Cardano's governance processes?"
+  },
+  "governance.survey.question.familiarity.option1": {
+    "message": "I'm completely new to this"
+  },
+  "governance.survey.question.familiarity.option2": {
+    "message": "I understand the basics"
+  },
+  "governance.survey.question.familiarity.option3": {
+    "message": "I'm comfortable with most governance concepts"
+  },
+  "governance.survey.question.familiarity.option4": {
+    "message": "I have deep knowledge and can explain them to others"
+  },
+  "governance.survey.question.responsibility": {
+    "message": "Would you be comfortable making decisions that affect the entire Cardano network?"
+  },
+  "governance.survey.question.responsibility.option1": {
+    "message": "I'd rather leave that to people who know more"
+  },
+  "governance.survey.question.responsibility.option2": {
+    "message": "Maybe in the future, once I learn more"
+  },
+  "governance.survey.question.responsibility.option3": {
+    "message": "Yes, I'm ready to take on that responsibility"
+  },
+  "governance.survey.question.responsibility.option4": {
+    "message": "Yes, and I want to advocate for specific policy directions"
+  },
+  "governance.survey.question.motivation": {
+    "message": "What motivates you most about Cardano governance?"
+  },
+  "governance.survey.question.motivation.option1": {
+    "message": "Making sure my ada has a voice without extra effort"
+  },
+  "governance.survey.question.motivation.option2": {
+    "message": "Understanding how decentralized decision-making works"
+  },
+  "governance.survey.question.motivation.option3": {
+    "message": "Actively shaping the future direction of Cardano"
+  },
+  "governance.survey.question.motivation.option4": {
+    "message": "Representing my community and building trust"
+  },
+  "stakePoolOperation.faq.profit.q": {
+    "message": "How much money will a stake pool operator make? Will it be profitable?"
+  },
+  "stakePoolOperation.faq.profit.a": {
+    "message": "You can use the [rewards calculator](/calculator) to get an idea of the rewards you will earn. It’s important to note that the calculator produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. Over time, parameters may be changed that could affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return."
+  },
+  "stakePoolOperation.faq.skills.q": {
+    "message": "What skills do stake pool operators require?"
+  },
+  "stakePoolOperation.faq.skills.a1": {
+    "message": "As a stake pool operator, you will typically have:"
+  },
+  "stakePoolOperation.faq.skills.a2": {
+    "message": "Operational knowledge of how to run and maintain a Cardano node on a 24/7 basis."
+  },
+  "stakePoolOperation.faq.skills.a3": {
+    "message": "System operation skills."
+  },
+  "stakePoolOperation.faq.skills.a4": {
+    "message": "Experience of development and operations. (DevOps)"
+  },
+  "stakePoolOperation.faq.skills.a5": {
+    "message": "Server administration skills. (operational and maintenance)"
+  },
+  "stakePoolOperation.faq.os.q": {
+    "message": "Which operating system do you support?"
+  },
+  "stakePoolOperation.faq.os.a1": {
+    "message": "We support Linux, Berkeley Software Distribution (BSD), Mac, and Windows platforms. The following versions are required:"
+  },
+  "stakePoolOperation.faq.os.a2": {
+    "message": "Linux (2.6.18 or later)"
+  },
+  "stakePoolOperation.faq.os.a3": {
+    "message": "BSD (NetBSD 8.x and FreeBSD 12.x)"
+  },
+  "stakePoolOperation.faq.os.a4": {
+    "message": "OSX (10.7 Lion or later)"
+  },
+  "stakePoolOperation.faq.os.a5": {
+    "message": "Windows 10"
+  },
+  "stakePoolOperation.faq.private.q": {
+    "message": "Can I run a private stake pool?"
+  },
+  "stakePoolOperation.faq.private.a": {
+    "message": "Yes, this is technically possible. It can be achieved by registering a stake pool and setting the operator rewards percentage to 100%, so that anybody that delegates to your stake pool will not receive any rewards. This will disincentivize delegators from delegating to you, but provide you with the ability to stake your ada and singly reap the rewards, while testing your stake pool operations."
+  },
+  "stakePoolOperation.faq.attract.q": {
+    "message": "How should I attract ada holders to my pool?"
+  },
+  "stakePoolOperation.faq.attract.a1": {
+    "message": "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:"
+  },
+  "stakePoolOperation.faq.attract.a2": {
+    "message": "Security: details of how a stake pool has been secured against hackers"
+  },
+  "stakePoolOperation.faq.attract.a3": {
+    "message": "Team: information on the operator’s team and experience in managing stake pools"
+  },
+  "stakePoolOperation.faq.attract.a4": {
+    "message": "Communication and social media: regular updates and support for delegators"
+  },
+  "stakePoolOperation.faq.attract.a5": {
+    "message": "Website: stake pool information and marketing"
+  },
+  "stakePoolOperation.faq.pledging.q": {
+    "message": "What is pledging?"
+  },
+  "stakePoolOperation.faq.pledging.a": {
+    "message": "Pledging refers to stake pool owners’ ability to delegate personal stake to their pool. While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
+  },
+  "stakePoolOperation.faq.bugs.q": {
+    "message": "How will my pool be affected by bugs?"
+  },
+  "stakePoolOperation.faq.bugs.a": {
+    "message": "Stake pool operators will need to be available as much as possible to respond to any network or performance alerts. It is important that pools ensure their node is running the latest software. This will be important both for testnet and mainnet operations."
+  },
+  "stakePoolOperation.faq.goodPool.q": {
+    "message": "What makes a good stake pool?"
+  },
+  "stakePoolOperation.faq.goodPool.a": {
+    "message": "Stake pools are ranked based on their overall performance and other key information. The performance metric is a calculation based on the number of blocks the pool was tasked to create compared with the number of blocks it actually created, and is recorded over time. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
+  },
+  "stakePoolOperation.faq.notifications.q": {
+    "message": "Will I be notified of network changes?"
+  },
+  "stakePoolOperation.faq.notifications.a": {
+    "message": "Updates and releases for the network will follow proper release schedules. We recommend operators follow our social media accounts for the latest updates."
+  },
+  "stakePoolOperation.faq.rewards.q": {
+    "message": "Are rewards guaranteed?"
+  },
+  "stakePoolOperation.faq.rewards.a": {
+    "message": "Rewards for delegation can be earned if you delegate to a stake pool that is sharing rewards. The amount you earn cannot be guaranteed and will ultimately depend on the stake pool, the amount of rewards shared, and its performance. It is worth noting that rewards will only begin to be granted from the end of the epoch in which the associated stake was delegated."
+  },
+  "termExplainer.staking.delegation.term": {
+    "message": "Delegation"
+  },
+  "termExplainer.staking.delegation.description": {
+    "message": "Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded in proportion to the amount of stake delegated."
+  },
+  "termExplainer.staking.stakePool.term": {
+    "message": "Stake Pool"
+  },
+  "termExplainer.staking.stakePool.description": {
+    "message": "A network node with a public address that ada holders can delegate to for earning rewards."
+  },
+  "termExplainer.staking.epoch.term": {
+    "message": "Epoch"
+  },
+  "termExplainer.staking.epoch.description": {
+    "message": "A period of time in the Cardano network after which staking rewards are calculated and distributed. One epoch are 5 days."
+  },
+  "termExplainer.staking.staking.term": {
+    "message": "Staking"
+  },
+  "termExplainer.staking.staking.description": {
+    "message": "Staking refers to the entire process of both delegating and setting up a pool. It is often confused with `delegating`."
+  },
+  "termExplainer.catalyst.fundingProposal.term": {
+    "message": "Funding Proposal"
+  },
+  "termExplainer.catalyst.fundingProposal.description": {
+    "message": "A formal request or proposal to build something that is not yet covered by the Cardano protocol."
+  },
+  "termExplainer.catalyst.votingPower.term": {
+    "message": "Voting Power"
+  },
+  "termExplainer.catalyst.votingPower.description": {
+    "message": "The influence an ada holder has in Project Catalyst, determined by the amount of ada they hold."
+  },
+  "termExplainer.catalyst.milestoneEvidence.term": {
+    "message": "Evidence of milestone completion"
+  },
+  "termExplainer.catalyst.milestoneEvidence.description": {
+    "message": "The evidence clearly and visibly shows that the milestone has been completed."
+  },
+  "termExplainer.catalyst.statementOfMilestones.term": {
+    "message": "Statement of Milestones (SoM)"
+  },
+  "termExplainer.catalyst.statementOfMilestones.description": {
+    "message": "A list of milestones in the project created by Funded Project in the Milestone Module with the schedule, deliverables, milestone achievement dates, milestone funding amounts, and the expected PoA."
+  },
+  "termExplainer.governance.cip1694.term": {
+    "message": "CIP-1694"
+  },
+  "termExplainer.governance.cip1694.description": {
+    "message": "CIP-1694 introduces a new on-chain governance model for Cardano, aiming to give every ada holder a voice in governance. It proposes a tricameral system with three groups: stake pool operators (SPOs), Delegated Representatives (DReps), and a Constitutional Committee (CC), each with distinct roles."
+  },
+  "termExplainer.governance.constitution.term": {
+    "message": "Constitution"
+  },
+  "termExplainer.governance.constitution.description": {
+    "message": "The [Cardano Constitution](/constitution) sets the rules for how the community makes collective decisions, defines the rights and principles of participants, and gives the Constitutional Committee the yardstick for judging governance actions. It was ratified on-chain in February 2025 and updated by community vote in January 2026, and it can be amended again through the same process."
+  },
+  "termExplainer.governance.governanceAction.term": {
+    "message": "Governance Action"
+  },
+  "termExplainer.governance.governanceAction.description": {
+    "message": "A Governance Action is an on-chain proposal for voting, triggered by a transaction, with an expiration period after which it can’t be enacted. Any ada holder can submit a Governance Action, and voters then submit voting transactions. CIP-1694 describes seven types of Governance Actions: Motion of no-confidence, New constitutional committee or Quorum size, Updates to Constitution, Hard-Fork Initiation, Protocol Parameter Changes, Treasury Withdrawals, and Info."
+  },
+  "termExplainer.cip.cip.term": {
+    "message": "Cardano Improvement Proposal (CIP)"
+  },
+  "termExplainer.cip.cip.description": {
+    "message": "CIPs are a way of formally proposing ideas in an agreed-upon fashion. However, they are often used for more than just finding standards. They are not binding in any way. CIPs are publicly visible to the community for discussion, and are located in the Cardano Foundation GitHub CIP repository."
+  },
+  "termExplainer.cip.cipEditors.term": {
+    "message": "CIP Editors"
+  },
+  "termExplainer.cip.cipEditors.description": {
+    "message": "CIP Editors safeguard the CIP process: they form a group enforcing the process described in this document and facilitating conversations between community actors. CIP editors should strive to keep up to date with general technical discussions and Cardano proposals."
   }
 }

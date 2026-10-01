@@ -1734,7 +1734,7 @@ export const Showcases = [
     source: "https://github.com/katomm/dreptalk.com",
     category: "governance",
     properties: ["opensource", "drepdelegation"],
-    maintainerPick: false,
+    maintainerPick: true,
     x: "dreptalkcom",
   },
   {
