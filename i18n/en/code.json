@@ -10437,5 +10437,8 @@
   },
   "latestNews.category.events": {
     "message": "Events"
+  },
+  "home.activity.adopters.title": {
+    "message": "Working with Cardano"
   }
 }

@@ -1,0 +1,58 @@
+.bar {
+  margin: 0 0 2.5rem;
+}
+
+.title {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Flex wrap keeps a short last row centred instead of left aligned. */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  width: 9rem;
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 9rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.link {
+  display: block;
+  width: 100%;
+  opacity: 0.85;
+  transition: opacity 150ms ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .item {
+    width: calc(50% - 0.75rem);
+  }
+}

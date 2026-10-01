@@ -4,6 +4,7 @@ import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTileCarousel from "@site/src/components/AppTileCarousel";
+import AdopterLogos from "@site/src/components/AdopterLogos";
 import { Showcases } from "@site/src/data/apps";
 import appStatsData from "@site/src/data/tx-stats.json";
 import {
@@ -103,6 +104,8 @@ export default function HomeActivitySection() {
           </div>
         ))}
       </dl>
+
+      <AdopterLogos />
 
       <AppTileCarousel
         apps={TOP_APPS}
