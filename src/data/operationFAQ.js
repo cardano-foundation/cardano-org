@@ -90,7 +90,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.attract.a1",
           message:
-            "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge – through delegation – their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:",
+            "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:",
         }),
         "- " + translate({
           id: "stakePoolOperation.faq.attract.a2",
