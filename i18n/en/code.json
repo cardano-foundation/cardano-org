@@ -10449,5 +10449,8 @@
   },
   "home.activity.topApps.note": {
     "message": "Most active app per category, by on-chain transactions in the same period."
+  },
+  "home.activity.topApps.noteMixed": {
+    "message": "Most active apps, by on-chain transactions in the same period."
   }
 }

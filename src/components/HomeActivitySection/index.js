@@ -6,7 +6,13 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import appStatsData from "@site/src/data/tx-stats.json";
-import { getAppStats, getTopAppPerCategory, getTxCount } from "@site/src/utils/appStats";
+import {
+  compareByTxDesc,
+  getAppStats,
+  getTopAppPerCategory,
+  getTxCount,
+  isTrackable,
+} from "@site/src/utils/appStats";
 import { yearsSinceMainnetLaunch } from "@site/src/utils/mainnetAge";
 import styles from "./styles.module.css";
 
@@ -14,14 +20,27 @@ import styles from "./styles.module.css";
 // from the build-time transaction snapshot and the most active app of each
 // category. No live requests, everything comes from src/data.
 
-// Most active app per trackable category, like the unfiltered /apps view.
-// Only categories whose leader clears MIN_CATEGORY_TX in the snapshot, and at
-// most three of them: smaller counts do not make the point. With a thin
-// snapshot fewer than three cards are shown.
+// Always three app cards. First the most active app of each trackable
+// category whose leader clears MIN_CATEGORY_TX in the snapshot. If fewer
+// than three categories qualify, the strongest remaining apps fill up,
+// also from a category already shown: weak numbers are worse than a
+// repeated category.
 const MIN_CATEGORY_TX = 3000;
-const TOP_APPS = getTopAppPerCategory(Showcases)
-  .filter((app) => getTxCount(app) >= MIN_CATEGORY_TX)
-  .slice(0, 3);
+const TOP_APP_COUNT = 3;
+
+function pickTopApps() {
+  const picks = getTopAppPerCategory(Showcases)
+    .filter((app) => getTxCount(app) >= MIN_CATEGORY_TX)
+    .slice(0, TOP_APP_COUNT);
+  const fill = Showcases.filter((app) => isTrackable(app) && getTxCount(app) > 0 && !picks.includes(app))
+    .sort(compareByTxDesc)
+    .slice(0, TOP_APP_COUNT - picks.length);
+  return [...picks, ...fill].sort(compareByTxDesc);
+}
+
+const TOP_APPS = pickTopApps();
+// The note above the cards may only claim "per category" while it holds.
+const ONE_PER_CATEGORY = new Set(TOP_APPS.map((app) => app.category)).size === TOP_APPS.length;
 
 // All mainnet transactions in the snapshot window (six full epochs). Shown
 // next to the app figure so the app share is not read as the whole chain.
@@ -121,10 +140,15 @@ export default function HomeActivitySection() {
       )}
 
       <p className={styles.carouselNote}>
-        {translate({
-          id: "home.activity.topApps.note",
-          message: "Most active app per category, by on-chain transactions in the same period.",
-        })}
+        {ONE_PER_CATEGORY
+          ? translate({
+              id: "home.activity.topApps.note",
+              message: "Most active app per category, by on-chain transactions in the same period.",
+            })
+          : translate({
+              id: "home.activity.topApps.noteMixed",
+              message: "Most active apps, by on-chain transactions in the same period.",
+            })}
       </p>
 
       <ul
