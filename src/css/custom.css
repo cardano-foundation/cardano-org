@@ -797,7 +797,8 @@ img {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
-  margin-left: -1000px;
+  /* Half the width, so the caret tip sits exactly in the middle. */
+  margin-left: -1024px;
 }
 
 
