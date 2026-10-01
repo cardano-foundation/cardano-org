@@ -14,7 +14,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import {translate} from '@docusaurus/Translate';
 
 // Entry intents surfaced on the homepage, a subset of the /apps chips.
-const HOME_INTENTS = ["useWallet", "stake", "trade", "vote", "play"];
+const HOME_INTENTS = ["useWallet", "stake", "trade", "lend", "vote"];
 
 // Order: one entry decision in the hero (Get Started or an intent), then proof
 // that the network is in use, then the explanation, then news. Only links

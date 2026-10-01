@@ -31,6 +31,12 @@ export const INTENTS = [
     label: translate({ id: "apps.intent.trade", message: "Trade" }),
   },
   {
+    id: "lend",
+    tags: ["lending"],
+    sort: SORT_IDS.MOST_ACTIVE,
+    label: translate({ id: "apps.intent.lend", message: "Lend & borrow" }),
+  },
+  {
     id: "vote",
     tags: ["governance"],
     sort: SORT_IDS.MOST_ACTIVE,

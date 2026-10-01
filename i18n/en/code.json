@@ -10440,5 +10440,8 @@
   },
   "home.activity.adopters.title": {
     "message": "Working with Cardano"
+  },
+  "apps.intent.lend": {
+    "message": "Lend & borrow"
   }
 }
