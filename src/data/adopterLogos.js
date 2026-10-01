@@ -4,9 +4,9 @@
 // (news post, case study, press release). Entries without a source render as
 // plain logos without a link.
 //
-// Logo files: static/img/adopters/<id>.svg (light theme) and <id>-dark.svg
-// (dark theme), monochrome, transparent background. The current files are
-// placeholders with the organization's short name.
+// Logo files: static/img/adopters/<id>.svg in the original brand colours on a
+// transparent background, the bar renders them monochrome. Draper and PUC-Rio
+// are still placeholders with the short name, no official SVG was available.
 export const ADOPTERS = [
   { id: "cob", name: "Brazilian Olympic Committee", source: null },
   { id: "petrobras", name: "Petrobras", source: null },

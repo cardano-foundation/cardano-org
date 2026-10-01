@@ -31,24 +31,42 @@
   margin: 0;
 }
 
+/* Monochrome by default, original brand colours on hover or focus. */
 .logo {
   display: block;
   width: 100%;
   max-width: 9rem;
   height: 2.75rem;
   object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.item:hover .logo,
+.link:focus-visible .logo {
+  filter: none;
+  opacity: 1;
+}
+
+/* Many logos rely on black, dark blue or filled shapes, which neither
+   survive the dark background nor a white silhouette. Dark mode puts each
+   logo on a light tile and keeps the light mode behaviour. */
+html[data-theme="dark"] .item {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--ifm-global-radius);
+  background: #eef0f3;
 }
 
 .link {
   display: block;
   width: 100%;
-  opacity: 0.85;
-  transition: opacity 150ms ease;
 }
 
-.link:hover,
-.link:focus-visible {
-  opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    transition: none;
+  }
 }
 
 @media (max-width: 480px) {
