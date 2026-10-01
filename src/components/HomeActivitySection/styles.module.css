@@ -7,17 +7,21 @@
 .figures {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
+/* Thin dividers between the figures instead of filled boxes. */
 .figure {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  padding: 1.25rem 1.5rem;
-  border-radius: var(--ifm-global-radius);
-  background: var(--ifm-color-emphasis-100);
+  padding: 0.25rem 1.5rem;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.figure:first-child {
+  padding-left: 0;
+  border-left: none;
 }
 
 .figureValue {
@@ -65,9 +69,25 @@ html[data-theme="dark"] .figureValue {
   margin-top: 1.5rem;
 }
 
+/* Below desktop width the figures form a two by two grid with a cross of
+   dividers, also on phones: stacking four rows would cost too much height. */
 @media (max-width: 996px) {
   .figures {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .figure:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .figure:nth-child(-n + 2) {
+    padding-bottom: 1.25rem;
+  }
+
+  .figure:nth-child(n + 3) {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ifm-color-emphasis-300);
   }
 }
 
@@ -78,11 +98,12 @@ html[data-theme="dark"] .figureValue {
 }
 
 @media (max-width: 480px) {
-  .figures {
-    grid-template-columns: 1fr;
+  .figure {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
   }
 
   .figureValue {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
