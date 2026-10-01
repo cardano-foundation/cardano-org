@@ -30,10 +30,10 @@ export default function Home() {
       <div data-section="hero">
         <WelcomeHero
           title={[
-            translate({id: 'home.hero.title', message: 'Made for Trust.'}),
-            translate({id: 'home.hero.title2', message: 'Reliable by Design.'}),
+            translate({id: 'home.hero.title', message: 'Made for trust.'}),
+            translate({id: 'home.hero.title2', message: 'Built to last.'}),
           ]}
-          description={translate({id: 'home.hero.description', message: 'Cardano is a public blockchain bringing assurance to critical operations. Secure, sustainable, and with predictable costs to scale with confidence. Built on peer-reviewed research.'})}
+          description={translate({id: 'home.hero.description', message: 'Cardano is a public blockchain bringing assurance to critical operations. Secure, scalable, and sustainable. Ready for the needs of today and tomorrow.'})}
           showWhatIsCardano={false}
         >
           <div data-section="intents">
