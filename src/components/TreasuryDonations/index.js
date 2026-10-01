@@ -60,7 +60,7 @@ export default function TreasuryDonations() {
         </p>
       )}
       <a className="button button--primary" href="#donate">
-        {translate({ id: "governance.treasury.donations.cta", message: "Donate ada" })}
+        {translate({ id: "governance.treasury.donations.cta", message: "Return unused funds or contribute" })}
       </a>
     </section>
   );

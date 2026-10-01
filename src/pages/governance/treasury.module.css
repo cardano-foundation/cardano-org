@@ -32,16 +32,16 @@
   border-color: var(--ifm-color-emphasis-300);
 }
 
-.explainer {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.block h2 {
-  margin-bottom: 0.5rem;
-}
-
 .terms {
   font-size: 0.95rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
 }

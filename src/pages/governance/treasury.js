@@ -12,19 +12,17 @@ import TreasuryDonations from "@site/src/components/TreasuryDonations";
 import { translate } from "@docusaurus/Translate";
 import styles from "./treasury.module.css";
 
-const TreasuryOverview = lazy(() =>
-  import(/* webpackChunkName: "treasury-overview" */ "@site/src/components/TreasuryOverview")
-);
-const TreasuryDonate = lazy(() =>
-  import(/* webpackChunkName: "treasury-donate" */ "@site/src/components/TreasuryDonate")
-);
+const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-flows" */ "@site/src/components/TreasuryOverview/TreasuryFlows"));
+const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-funded" */ "@site/src/components/TreasuryOverview/TreasuryFunded"));
+const TreasuryFunding = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasuryOverview/TreasuryFunding"));
+const DonateSection = lazy(() => import(/* webpackChunkName: "treasury-donate-section" */ "@site/src/components/TreasuryDonations/DonateSection"));
 
-const overviewFallback = <div style={{ minHeight: 480 }} />;
-const donateFallback = (
-  <div style={{ textAlign: "center", padding: "3rem 0" }}>
-    {translate({ id: "governance.treasury.loading", message: "Loading donation tool…" })}
-  </div>
-);
+// Client-only island. One fallback serves SSR and the lazy chunk, and its
+// height keeps the layout steady while the live data loads.
+function ClientOnly({ minHeight, children }) {
+  const fallback = <div style={{ minHeight }} />;
+  return <BrowserOnly fallback={fallback}>{() => <Suspense fallback={fallback}>{children()}</Suspense>}</BrowserOnly>;
+}
 
 function TreasuryHero() {
   return (
@@ -32,63 +30,10 @@ function TreasuryHero() {
       title={translate({ id: "governance.treasury.overview.hero.title", message: "The Cardano treasury" })}
       description={translate({
         id: "governance.treasury.overview.hero.description",
-        message: "How the community fund is filled and spent, and where its income comes from.",
+        message: "What the treasury is for, how spending is decided, and where its income comes from.",
       })}
       bannerType="braidBlue"
     />
-  );
-}
-
-function Explainer() {
-  return (
-    <div className={styles.explainer}>
-      <div className={styles.block}>
-        <h2>{translate({ id: "governance.treasury.explainer.income.title", message: "Where the money comes from" })}</h2>
-        <p>
-          {translate({
-            id: "governance.treasury.explainer.income.body",
-            message: "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation.",
-          })}
-        </p>
-      </div>
-      <div className={styles.block}>
-        <h2>{translate({ id: "governance.treasury.explainer.spending.title", message: "How it is spent" })}</h2>
-        <p>
-          {translate({
-            id: "governance.treasury.explainer.spending.body",
-            message: "Ada only leaves the treasury through treasury withdrawal actions. Anyone can propose one, and DReps and the Constitutional Committee must approve it under the rules of the Constitution.",
-          })}
-        </p>
-        <p>
-          <Link to="/constitution#section-7-treasury-withdrawals-action-standards">
-            {translate({ id: "governance.treasury.explainer.spending.constitution", message: "Treasury rules in the Constitution" })}
-          </Link>
-          {" · "}
-          <Link to="/governance/accountability#funding">
-            {translate({ id: "governance.treasury.explainer.spending.accountability", message: "Standards for treasury-funded work" })}
-          </Link>
-        </p>
-      </div>
-      <div className={styles.block}>
-        <h2>{translate({ id: "governance.treasury.explainer.shift.title", message: "How reserves affect treasury income" })}</h2>
-        <p>
-          {translate({
-            id: "governance.treasury.explainer.shift.body",
-            message: "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used.",
-          })}
-        </p>
-      </div>
-      <p className={styles.terms}>
-        {translate({ id: "governance.treasury.explainer.terms", message: "Related terms:" })}{" "}
-        <Link to="/glossary/treasury">{translate({ id: "governance.treasury.explainer.term.treasury", message: "Treasury" })}</Link>
-        {" · "}
-        <Link to="/glossary/treasury-cut">{translate({ id: "governance.treasury.explainer.term.cut", message: "Treasury cut" })}</Link>
-        {" · "}
-        <Link to="/glossary/treasury-withdrawal">{translate({ id: "governance.treasury.explainer.term.withdrawal", message: "Treasury withdrawal" })}</Link>
-        {" · "}
-        <Link to="/glossary/treasury-donation">{translate({ id: "governance.treasury.explainer.term.donation", message: "Treasury donation" })}</Link>
-      </p>
-    </div>
   );
 }
 
@@ -98,7 +43,7 @@ export default function TreasuryPage() {
       title={translate({ id: "governance.treasury.overview.layout.title", message: "The Cardano Treasury - Cardano Governance" })}
       description={translate({
         id: "governance.treasury.overview.layout.description",
-        message: "How the Cardano treasury is funded and spent, how its income is split between reserves and fees, and how to donate ada directly from cardano.org.",
+        message: "What the Cardano treasury is for, how spending is decided, what it has funded recently and how it is funded.",
       })}
     >
       <OpenGraphInfo
@@ -106,34 +51,102 @@ export default function TreasuryPage() {
         title={translate({ id: "governance.treasury.overview.og.title", message: "The Cardano treasury" })}
         description={translate({
           id: "governance.treasury.overview.og.description",
-          message: "Where the treasury's income comes from, how it is spent, and how ada flows back into it.",
+          message: "What the Cardano treasury is for, how spending is decided and how it is funded.",
         })}
       />
       <TreasuryHero />
       <main>
         <BoundaryBox>
           <SpacerBox size="small" />
-          <Explainer />
-          <BrowserOnly fallback={overviewFallback}>
-            {() => (
-              <Suspense fallback={overviewFallback}>
-                <TreasuryOverview />
-              </Suspense>
-            )}
-          </BrowserOnly>
+          <section id="purpose" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.purpose.title", message: "What the treasury is for" })}</h2>
+            <p>
+              {translate({
+                id: "governance.treasury.purpose.body",
+                message: "The Cardano treasury is a pool of ada held by the protocol itself. Ada only leaves it when the community approves it on chain.",
+              })}
+            </p>
+            <p>
+              {translate({
+                id: "governance.treasury.purpose.uses",
+                message: "It can fund any work the community approves, such as development of the protocol and its tools, research, and programs for the community and the ecosystem.",
+              })}
+            </p>
+          </section>
+
+          <section id="flows" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.flows.title", message: "Balance and flows over the last 12 months" })}</h2>
+            <ClientOnly minHeight={220}>{() => <TreasuryFlows />}</ClientOnly>
+          </section>
+
+          <section id="funded" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.funded.title", message: "What the treasury funds" })}</h2>
+            <p>{translate({ id: "governance.treasury.funded.intro", message: "The most recent treasury withdrawals that took effect:" })}</p>
+            <ClientOnly minHeight={320}>{() => <TreasuryFunded />}</ClientOnly>
+            <p className={styles.note}>
+              {translate({
+                id: "governance.treasury.funded.note",
+                message: "An approved withdrawal shows what the community agreed to fund. How the money is paid out and what the work delivers is reported separately.",
+              })}{" "}
+              <Link to="/governance/accountability#funding">
+                {translate({ id: "governance.treasury.explainer.spending.accountability", message: "Standards for treasury-funded work" })}
+              </Link>
+            </p>
+          </section>
+
+          <section id="decisions" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.decisions.title", message: "How spending is decided" })}</h2>
+            <p>
+              {translate({
+                id: "governance.treasury.decisions.body",
+                message: "Anyone can propose a treasury withdrawal. It needs approval from DReps and the Constitutional Committee, has to follow the Constitution and has to stay within the net change limit, the cap on how much ada can leave the treasury in a period.",
+              })}
+            </p>
+            <p>
+              <Link to="/constitution#section-7-treasury-withdrawals-action-standards">
+                {translate({ id: "governance.treasury.explainer.spending.constitution", message: "Treasury rules in the Constitution" })}
+              </Link>
+              {" · "}
+              <Link to="/governance/accountability#funding">
+                {translate({ id: "governance.treasury.explainer.spending.accountability", message: "Standards for treasury-funded work" })}
+              </Link>
+            </p>
+          </section>
+
+          <section id="funding" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.funding.title", message: "How the treasury is funded" })}</h2>
+            <p>
+              {translate({
+                id: "governance.treasury.explainer.income.body",
+                message: "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation.",
+              })}
+            </p>
+            <p>
+              {translate({
+                id: "governance.treasury.explainer.shift.body",
+                message: "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used.",
+              })}
+            </p>
+            <ClientOnly minHeight={900}>{() => <TreasuryFunding />}</ClientOnly>
+          </section>
+
           <TreasuryDonations />
+          <p className={styles.terms}>
+            {translate({ id: "governance.treasury.explainer.terms", message: "Related terms:" })}{" "}
+            <Link to="/glossary/treasury">{translate({ id: "governance.treasury.explainer.term.treasury", message: "Treasury" })}</Link>
+            {" · "}
+            <Link to="/glossary/treasury-cut">{translate({ id: "governance.treasury.explainer.term.cut", message: "Treasury cut" })}</Link>
+            {" · "}
+            <Link to="/glossary/treasury-withdrawal">{translate({ id: "governance.treasury.explainer.term.withdrawal", message: "Treasury withdrawal" })}</Link>
+            {" · "}
+            <Link to="/glossary/treasury-donation">{translate({ id: "governance.treasury.explainer.term.donation", message: "Treasury donation" })}</Link>
+          </p>
           <SpacerBox size="medium" />
         </BoundaryBox>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <Divider text={translate({ id: "governance.treasury.donate.divider", message: "Donate to the treasury" })} id="donate" />
-            <BrowserOnly fallback={donateFallback}>
-              {() => (
-                <Suspense fallback={donateFallback}>
-                  <TreasuryDonate />
-                </Suspense>
-              )}
-            </BrowserOnly>
+            <ClientOnly minHeight={120}>{() => <DonateSection />}</ClientOnly>
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>

@@ -84,13 +84,6 @@ export function feeSharePercent(income, latestEpoch, window = DEFAULT_WINDOW) {
   return (sums.fee / (sums.reserve + sums.fee)) * 100;
 }
 
-// How many times more the reserves contributed than fees in the window.
-export function reserveToFeeRatio(income, latestEpoch, window = DEFAULT_WINDOW) {
-  const sums = windowSums(income, latestEpoch, window);
-  if (!sums || sums.fee <= 0) return null;
-  return sums.reserve / sums.fee;
-}
-
 export function median(values) {
   if (!values.length) return null;
   const sorted = [...values].sort((a, b) => a - b);
@@ -139,14 +132,6 @@ export function firstEpochOfYear(year) {
 
 export function projectedReserveIncome(reserves, params = TREASURY_PARAMS) {
   return params.tau * params.rho * reserves;
-}
-
-// Fees per epoch that would give the treasury as much as the reserves do in
-// latestEpoch. null when that exact epoch has no income point.
-export function feesNeededToReplace(income, latestEpoch, params = TREASURY_PARAMS) {
-  const entry = income.find((e) => e.epoch === latestEpoch);
-  if (!entry) return null;
-  return entry.reserveShare / params.tau;
 }
 
 // Sums in BigInt lovelace so tiny donations are never rounded away. Only

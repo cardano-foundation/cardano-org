@@ -1,10 +1,3 @@
-.strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 1.5rem 0 0.5rem;
-}
-
 .figure {
   text-align: center;
   padding: 1.25rem 1rem;
@@ -36,6 +29,59 @@
 .board {
   margin-top: 3rem;
   scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.flowGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.fundingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+}
+
+/* Reserves its line so the sentence appearing after load does not shift the page. */
+.context {
+  min-height: 3em;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.fundedList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.fundedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.fundedTitle {
+  font-weight: 600;
+}
+
+.fundedMeta {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.outlook {
+  margin-top: 2rem;
+}
+
+.outlook > summary {
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .toggle {
@@ -77,10 +123,6 @@
   font-size: 1rem;
 }
 
-.ratio {
-  min-height: 1.6em;
-}
-
 .skeleton {
   border-radius: var(--ifm-global-radius);
   background: var(--ifm-color-emphasis-100);
@@ -94,7 +136,8 @@
 }
 
 @media (max-width: 768px) {
-  .strip,
+  .flowGrid,
+  .fundingGrid,
   .outlookGrid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -36,3 +36,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.donateClosed {
+  padding: 1rem 0 2rem;
+}
