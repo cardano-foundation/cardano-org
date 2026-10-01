@@ -40,7 +40,7 @@ export default function TreasuryDonations({ donateAnchor }) {
         {s.largest && (
           <Figure
             value={formatAdaValue(s.largest.ada)}
-            label={translate({ id: "governance.treasury.donations.largest", message: "Highest total in a single epoch" })}
+            label={translate({ id: "governance.treasury.donations.largest", message: "Highest single epoch" })}
           >
             <span className={styles.sub}>
               {translate(

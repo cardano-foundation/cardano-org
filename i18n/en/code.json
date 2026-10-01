@@ -10317,7 +10317,7 @@
     "message": "Projection based on the past 12 months"
   },
   "governance.treasury.overview.outlook.yearIncome": {
-    "message": "Estimated treasury income from reserves per epoch at the start of {year}"
+    "message": "Estimated income from reserves per epoch"
   },
   "governance.treasury.overview.outlook.method.body": {
     "message": "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are."
@@ -10335,7 +10335,7 @@
     "message": "Epochs with donations"
   },
   "governance.treasury.donations.largest": {
-    "message": "Highest total in a single epoch"
+    "message": "Highest single epoch"
   },
   "governance.treasury.donations.largestDetail": {
     "message": "Epoch {epoch}, {share}% of the total"
@@ -10398,16 +10398,16 @@
     "message": "Treasury balance"
   },
   "governance.treasury.flows.change": {
-    "message": "Change over 12 months"
+    "message": "12-month change"
   },
   "governance.treasury.flows.income": {
-    "message": "Income from reserves and fees (estimated)"
+    "message": "Income"
   },
   "governance.treasury.flows.withdrawn": {
-    "message": "Withdrawn from the treasury"
+    "message": "Withdrawn"
   },
   "governance.treasury.flows.received": {
-    "message": "Received through treasury donations"
+    "message": "Received"
   },
   "governance.treasury.funded.all": {
     "message": "Browse treasury withdrawals by epoch"
@@ -10428,10 +10428,10 @@
     "message": "Withdrawals that took effect in the last 12 months: {count}, worth {amount} in total."
   },
   "governance.treasury.funding.feeShare": {
-    "message": "Share of treasury income from fees, last 12 months"
+    "message": "Fee share"
   },
   "governance.treasury.funding.reserves": {
-    "message": "Protocol reserves, not part of the treasury"
+    "message": "Protocol reserves"
   },
   "governance.treasury.funding.context": {
     "message": "This share reflects how rewards are funded. Fees per transaction on Cardano are low by design, so the share says little about how much the network is used."
@@ -10452,6 +10452,21 @@
     "message": "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
   },
   "governance.treasury.flows.receivedUpTo": {
-    "message": "Received through treasury donations, up to epoch {epoch}"
+    "message": "Through treasury donations, up to epoch {epoch}"
+  },
+  "governance.treasury.flows.receivedSub": {
+    "message": "Through treasury donations"
+  },
+  "governance.treasury.flows.incomeSub": {
+    "message": "From reserves and fees, estimated"
+  },
+  "governance.treasury.flows.withdrawnSub": {
+    "message": "Through treasury withdrawals"
+  },
+  "governance.treasury.funding.feeShareSub": {
+    "message": "Of treasury income, last 12 months"
+  },
+  "governance.treasury.funding.reservesSub": {
+    "message": "Not part of the treasury"
   }
 }

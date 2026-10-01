@@ -13,7 +13,9 @@ function display(loading, value, format) {
 }
 
 // The count-up animates the magnitude, a signed figure adds "+" or "-" in front.
-export function AdaFigure({ loading, value, label, signed = false }) {
+// Labels stay short (one to three words, uppercase like the other stat strips
+// on the site), qualifiers go into the sentence-case `sub` line below.
+export function AdaFigure({ loading, value, label, sub, signed = false }) {
   const animated = useCountUp(value == null ? null : Math.abs(value));
   return (
     <div className={styles.figure}>
@@ -21,15 +23,17 @@ export function AdaFigure({ loading, value, label, signed = false }) {
         {display(loading, value, (v) => `${signed && v > 0 ? "+" : ""}${signed && v < 0 ? "-" : ""}${formatAdaValue(animated)}`)}
       </span>
       <span className={styles.label}>{label}</span>
+      {sub && <span className={styles.sub}>{sub}</span>}
     </div>
   );
 }
 
-export function TextFigure({ loading, value, label }) {
+export function TextFigure({ loading, value, label, sub }) {
   return (
     <div className={styles.figure}>
       <span className={styles.value}>{display(loading, value, (v) => v)}</span>
       <span className={styles.label}>{label}</span>
+      {sub && <span className={styles.sub}>{sub}</span>}
     </div>
   );
 }

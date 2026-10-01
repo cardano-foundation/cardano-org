@@ -104,12 +104,14 @@ export default function TreasuryFunding() {
         <TextFigure
           loading={loading}
           value={model?.feeShare == null ? null : `${model.feeShare.toFixed(2)}%`}
-          label={translate({ id: "governance.treasury.funding.feeShare", message: "Share of treasury income from fees, last 12 months" })}
+          label={translate({ id: "governance.treasury.funding.feeShare", message: "Fee share" })}
+          sub={translate({ id: "governance.treasury.funding.feeShareSub", message: "Of treasury income, last 12 months" })}
         />
         <AdaFigure
           loading={loading}
           value={model?.latest.reserves}
-          label={translate({ id: "governance.treasury.funding.reserves", message: "Protocol reserves, not part of the treasury" })}
+          label={translate({ id: "governance.treasury.funding.reserves", message: "Protocol reserves" })}
+          sub={translate({ id: "governance.treasury.funding.reservesSub", message: "Not part of the treasury" })}
         />
       </div>
       <p className={styles.note}>
@@ -186,10 +188,8 @@ export default function TreasuryFunding() {
               key={year}
               loading={loading}
               value={income}
-              label={translate(
-                { id: "governance.treasury.overview.outlook.yearIncome", message: "Estimated treasury income from reserves per epoch at the start of {year}" },
-                { year }
-              )}
+              label={String(year)}
+              sub={translate({ id: "governance.treasury.overview.outlook.yearIncome", message: "Estimated income from reserves per epoch" })}
             />
           ))}
         </div>

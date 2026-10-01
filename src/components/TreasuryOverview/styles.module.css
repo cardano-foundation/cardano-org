@@ -21,6 +21,11 @@
   letter-spacing: 0.05em;
 }
 
+.sub {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .note {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
