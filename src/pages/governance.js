@@ -24,7 +24,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-icons/fa";
-import {translate} from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
 import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
 import governanceFAQ from "@site/src/data/governanceFAQ.json";
@@ -83,7 +83,18 @@ function GovernanceRolesSection() {
       <Divider text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
       <SpacerBox size="small" />
       <p className="black-text">
-        {translate({id: 'governance.onboarding.intro', message: 'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding.'})}
+        <Translate
+          id="governance.onboarding.intro"
+          values={{
+            treasuryFunding: (
+              <Link to="/governance/treasury">
+                {translate({id: 'governance.onboarding.introTreasuryLink', message: 'treasury funding'})}
+              </Link>
+            ),
+          }}
+        >
+          {'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}.'}
+        </Translate>
       </p>
       <TitleWithText
         description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}

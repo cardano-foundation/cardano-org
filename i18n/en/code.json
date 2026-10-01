@@ -7989,7 +7989,7 @@
     "message": "How Cardano governance works"
   },
   "governance.onboarding.intro": {
-    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding."
+    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}."
   },
   "governance.onboarding.together": {
     "message": "Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone."
@@ -10510,5 +10510,17 @@
   },
   "insightsTreasury.donations.toolLink": {
     "message": "Return funds or contribute"
+  },
+  "governance.accountability.funding.act.2": {
+    "message": "How the treasury works"
+  },
+  "governance.onboarding.introTreasuryLink": {
+    "message": "treasury funding"
+  },
+  "navbar.mega.label.The Cardano Treasury": {
+    "message": "The Cardano Treasury"
+  },
+  "navbar.mega.description.The Cardano Treasury": {
+    "message": "How the community fund is filled and spent"
   }
 }
