@@ -6,7 +6,7 @@ import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
 
 // The homepage shows the four strongest points, the full list lives on
 // /what-is-cardano. Keys are looked up so the order here is explicit.
-const HOME_KEYS = ["staking", "fees", "governance", "research"];
+const HOME_KEYS = ["eutxo", "staking", "governance", "research"];
 
 export default function HomeProofPointsSection() {
   const allPoints = getProofPoints();

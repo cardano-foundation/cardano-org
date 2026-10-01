@@ -7081,14 +7081,14 @@
   "whatIsCardano.proof.staking.text": {
     "message": "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum beyond a small deposit, and no slashing: the protocol cannot take your ada as a penalty. You can spend or re-delegate at any time."
   },
-  "whatIsCardano.proof.fees.title": {
-    "message": "Fees you can predict"
+  "whatIsCardano.proof.eutxo.title": {
+    "message": "Predictable by design"
   },
-  "whatIsCardano.proof.fees.tagline": {
-    "message": "Deterministic transactions"
+  "whatIsCardano.proof.eutxo.tagline": {
+    "message": "Extended UTXO model"
   },
-  "whatIsCardano.proof.fees.text": {
-    "message": "A fee on Cardano is a simple formula of a fixed part plus the transaction size, set by protocol parameters rather than an auction. A typical simple transfer costs a fraction of one ada, and you see the exact amount before you sign."
+  "whatIsCardano.proof.eutxo.text": {
+    "message": "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee are known before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction."
   },
   "whatIsCardano.proof.tokens.title": {
     "message": "Tokens built into the chain"

@@ -23,14 +23,16 @@ export function getProofPoints() {
       }),
     },
     {
-      key: "fees",
+      // Merges the former "Fees you can predict" point with the extended UTXO
+      // model, the property both follow from.
+      key: "eutxo",
       icon: <DottedCalculator />,
-      title: translate({ id: "whatIsCardano.proof.fees.title", message: "Fees you can predict" }),
-      tagline: translate({ id: "whatIsCardano.proof.fees.tagline", message: "Deterministic transactions" }),
+      title: translate({ id: "whatIsCardano.proof.eutxo.title", message: "Predictable by design" }),
+      tagline: translate({ id: "whatIsCardano.proof.eutxo.tagline", message: "Extended UTXO model" }),
       text: translate({
-        id: "whatIsCardano.proof.fees.text",
+        id: "whatIsCardano.proof.eutxo.text",
         message:
-          "A fee on Cardano is a simple formula of a fixed part plus the transaction size, set by protocol parameters rather than an auction. A typical simple transfer costs a fraction of one ada, and you see the exact amount before you sign.",
+          "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee are known before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction.",
       }),
     },
     {
