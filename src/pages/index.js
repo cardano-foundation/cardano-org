@@ -33,7 +33,7 @@ export default function Home() {
             translate({id: 'home.hero.title', message: 'Made for Trust.'}),
             translate({id: 'home.hero.title2', message: 'Reliable by Design.'}),
           ]}
-          description={translate({id: 'home.hero.description', message: 'Cardano is a public blockchain bringing assurance to critical operations. Secure, sustainable, and with predictable costs to scale with confidence. Created on peer-reviewed research, ready for the needs of today and tomorrow.'})}
+          description={translate({id: 'home.hero.description', message: 'Cardano is a public blockchain bringing assurance to critical operations. Secure, sustainable, and with predictable costs to scale with confidence. Built on peer-reviewed research, ready for the needs of today and tomorrow.'})}
           showWhatIsCardano={false}
         >
           <div data-section="intents">
