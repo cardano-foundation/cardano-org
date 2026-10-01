@@ -31,18 +31,19 @@
 
 .item {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 9rem;
   margin: 0;
 }
 
 /* Monochrome by default, original brand colours on hover or focus. */
+/* Width comes inline from the optical sizing, the height follows the
+   logo's own aspect ratio. */
 .logo {
   display: block;
-  width: 100%;
-  max-width: 9rem;
-  height: 2.75rem;
-  object-fit: contain;
+  max-width: 100%;
+  height: auto;
   filter: grayscale(1);
   opacity: 0.65;
   transition: filter 200ms ease, opacity 200ms ease;
@@ -58,6 +59,8 @@
    survive the dark background nor a white silhouette. Dark mode puts each
    logo on a light tile and keeps the light mode behaviour. */
 html[data-theme="dark"] .item {
+  /* Same tile height for every logo, whatever its proportions. */
+  height: 4rem;
   padding: 0.5rem 0.75rem;
   border-radius: var(--ifm-global-radius);
   background: #eef0f3;
