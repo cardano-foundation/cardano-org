@@ -42,7 +42,7 @@ export default function TreasuryPage() {
       })}
     >
       <OpenGraphInfo
-        pageName="governance"
+        pageName="treasury"
         title={translate({ id: "governance.treasury.overview.og.title", message: "The Cardano treasury" })}
         description={translate({
           id: "governance.treasury.overview.og.description",
