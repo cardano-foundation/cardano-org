@@ -35,7 +35,7 @@ export default function AdopterLogos() {
               className={styles.logo}
               src={withBaseUrl(`/img/adopters/${org.id}.svg`)}
               alt={org.name}
-              style={{ width: `${logoWidth(org).toFixed(2)}rem` }}
+              style={{ "--logo-width": `${logoWidth(org).toFixed(2)}rem` }}
               loading="lazy"
             />
           );
