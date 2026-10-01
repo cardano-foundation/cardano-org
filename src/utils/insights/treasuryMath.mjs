@@ -128,6 +128,13 @@ export function epochStartMs(epoch) {
   return REFERENCE_START_MS + (epoch - REFERENCE_EPOCH) * EPOCH_MS;
 }
 
+// Epoch running at the given time. Epochs are fixed at five days since
+// Shelley, so this matches the chain tip except in the minutes around a
+// boundary, which is enough for 12-month windows.
+export function currentEpoch(now = Date.now()) {
+  return REFERENCE_EPOCH + Math.floor((now - REFERENCE_START_MS) / EPOCH_MS);
+}
+
 // First epoch that starts on or after 1 January of the given year (UTC).
 export function firstEpochOfYear(year) {
   const target = Date.UTC(year, 0, 1);

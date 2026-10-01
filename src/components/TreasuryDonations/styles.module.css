@@ -1,18 +1,18 @@
-/* Board and figure styles come from the overview so both boards look alike. */
+/* Figure styles come from the treasury sections so all figures look alike. */
 .figure {
-  composes: figure from "../TreasuryOverview/styles.module.css";
+  composes: figure from "../TreasurySections/styles.module.css";
 }
 
 .value {
-  composes: value from "../TreasuryOverview/styles.module.css";
+  composes: value from "../TreasurySections/styles.module.css";
 }
 
 .label {
-  composes: label from "../TreasuryOverview/styles.module.css";
+  composes: label from "../TreasurySections/styles.module.css";
 }
 
 .note {
-  composes: note from "../TreasuryOverview/styles.module.css";
+  composes: note from "../TreasurySections/styles.module.css";
 }
 
 .grid {
@@ -23,8 +23,7 @@
 }
 
 .sub {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-700);
+  composes: note from "../TreasurySections/styles.module.css";
 }
 
 @media (max-width: 768px) {

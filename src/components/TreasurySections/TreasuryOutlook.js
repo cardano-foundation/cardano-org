@@ -35,12 +35,6 @@ export default function TreasuryOutlook() {
 
   return (
     <>
-      <p>
-        {translate({
-          id: "governance.treasury.overview.outlook.intro",
-          message: "The reserves shrink a little every epoch. The dashed line shows where they would be if the pace of the last 12 months continued.",
-        })}
-      </p>
       {model ? (
         <TreasuryChart
           ariaLabel={translate({ id: "governance.treasury.overview.outlook.aria", message: "Reserves over time with a projection" })}

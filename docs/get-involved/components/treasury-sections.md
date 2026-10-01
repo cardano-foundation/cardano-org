@@ -7,14 +7,14 @@ description: Building blocks for the treasury explainer and the treasury insight
 
 The treasury explainer (`/governance/treasury`) and the treasury insights page (`/insights/treasury`) share a set of section components. Each component renders only its figures, list or charts. The page around it provides the section heading, the explanatory text and any links, so the same block can sit on both pages with different context.
 
-All live components need the browser. Wrap them in `BrowserOnly` and load them with `React.lazy`, as both pages do with a small `ClientOnly` helper. They share one request per Koios endpoint, no matter how many of them are on the page.
+All live components need the browser. Load them with `React.lazy` and wrap them in `ClientOnly` from `src/components/TreasurySections/ClientOnly.js`, which combines `BrowserOnly`, `Suspense` and a fallback with a fixed `minHeight`. They share one request per Koios endpoint, no matter how many of them are on the page.
 
 | Component | Path | Data | Used on |
 |-----------|------|------|---------|
-| `TreasuryFunded` | `src/components/TreasuryOverview/TreasuryFunded.js` | Koios `/proposal_list` (enacted treasury withdrawals), `/totals` for the 12-month line | `/governance/treasury` |
-| `TreasuryFlows` | `src/components/TreasuryOverview/TreasuryFlows.js` | Koios `/totals` and `/proposal_list`, donation snapshot | `/insights/treasury` |
-| `TreasuryIncome` | `src/components/TreasuryOverview/TreasuryIncome.js` | Koios `/totals` | `/insights/treasury` |
-| `TreasuryOutlook` | `src/components/TreasuryOverview/TreasuryOutlook.js` | Koios `/totals` | `/insights/treasury` |
+| `TreasuryFunded` | `src/components/TreasurySections/TreasuryFunded.js` | Koios `/proposal_list` (enacted treasury withdrawals), the 12-month line uses the current epoch from the clock | `/governance/treasury` |
+| `TreasuryFlows` | `src/components/TreasurySections/TreasuryFlows.js` | Koios `/totals` and `/proposal_list`, donation snapshot | `/insights/treasury` |
+| `TreasuryIncome` | `src/components/TreasurySections/TreasuryIncome.js` | Koios `/totals` | `/insights/treasury` |
+| `TreasuryOutlook` | `src/components/TreasurySections/TreasuryOutlook.js` | Koios `/totals` | `/insights/treasury` |
 | `TreasuryDonations` | `src/components/TreasuryDonations/index.js` | `src/data/treasury-donations.json` (static, no request) | `/insights/treasury` |
 | `DonateSection` | `src/components/TreasuryDonations/DonateSection.js` | none, loads the wallet tool on demand | `/governance/treasury` |
 
@@ -23,7 +23,9 @@ All live components need the browser. Wrap them in `BrowserOnly` and load them w
 From `src/pages/insights/treasury/index.js`:
 
 ```jsx
-const TreasuryFlows = lazy(() => import("@site/src/components/TreasuryOverview/TreasuryFlows"));
+import ClientOnly from "@site/src/components/TreasurySections/ClientOnly";
+
+const TreasuryFlows = lazy(() => import("@site/src/components/TreasurySections/TreasuryFlows"));
 
 <section id="flows">
   <Heading as="h2">Balance and flows over the last 12 months</Heading>

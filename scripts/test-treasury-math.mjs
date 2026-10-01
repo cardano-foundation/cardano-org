@@ -11,6 +11,7 @@ import {
   effectiveDepletionRate,
   projectReserves,
   epochStartMs,
+  currentEpoch,
   firstEpochOfYear,
   projectedReserveIncome,
   normalizeWithdrawals,
@@ -222,4 +223,11 @@ test('flowsOverWindow counts donations up to the snapshot and says how far it re
   // Ends before the window or missing: unknown.
   assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 603 }, latestEpoch: 609, window: 5 }).returned, null);
   assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: null, latestEpoch: 609, window: 5 }).returned, null);
+});
+
+test('currentEpoch follows the five-day schedule from the clock', () => {
+  assert.equal(currentEpoch(Date.UTC(2020, 7, 3, 21, 44, 0)), 209);
+  assert.equal(currentEpoch(Date.UTC(2020, 7, 8, 21, 43, 59)), 209);
+  assert.equal(currentEpoch(Date.UTC(2020, 7, 8, 21, 44, 0)), 210);
+  assert.equal(currentEpoch(epochStartMs(658) + 1000), 658);
 });

@@ -1,7 +1,6 @@
-import React, { Suspense, lazy } from "react";
+import React, { lazy } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -10,20 +9,14 @@ import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import useHashRescroll from "@site/src/utils/useHashRescroll";
 import DonateSection from "@site/src/components/TreasuryDonations/DonateSection";
+import ClientOnly from "@site/src/components/TreasurySections/ClientOnly";
 import { translate } from "@docusaurus/Translate";
 import styles from "./treasury.module.css";
 
-const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFunded"));
+const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-funded" */ "@site/src/components/TreasurySections/TreasuryFunded"));
 
 // Shared by the divider, the donation form and every link to the form.
 const DONATE_ANCHOR = "donate";
-
-// Client-only island. One fallback serves SSR and the lazy chunk, and its
-// height keeps the layout steady while the live data loads.
-function ClientOnly({ minHeight, children }) {
-  const fallback = <div style={{ minHeight }} />;
-  return <BrowserOnly fallback={fallback}>{() => <Suspense fallback={fallback}>{children}</Suspense>}</BrowserOnly>;
-}
 
 function TreasuryHero() {
   return (
@@ -75,7 +68,6 @@ export default function TreasuryPage() {
               })}
             </p>
           </section>
-
 
           <section id="funded" className={styles.section}>
             <h2>{translate({ id: "governance.treasury.funded.title", message: "What the treasury funds" })}</h2>

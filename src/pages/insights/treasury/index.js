@@ -1,6 +1,5 @@
-import React, { Suspense, lazy } from "react";
+import React, { lazy } from "react";
 import Link from "@docusaurus/Link";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import Heading from "@theme/Heading";
 import { translate } from "@docusaurus/Translate";
 import InsightsLayout from "@site/src/components/Layout/InsightsLayout";
@@ -8,12 +7,13 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import InsightsFooter from "@site/src/components/Layout/InsightsFooter";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TreasuryDonations from "@site/src/components/TreasuryDonations";
+import ClientOnly from "@site/src/components/TreasurySections/ClientOnly";
 import useHashRescroll from "@site/src/utils/useHashRescroll";
 import styles from "./styles.module.css";
 
-const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFlows"));
-const TreasuryIncome = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasuryOverview/TreasuryIncome"));
-const TreasuryOutlook = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasuryOverview/TreasuryOutlook"));
+const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-flows" */ "@site/src/components/TreasurySections/TreasuryFlows"));
+const TreasuryIncome = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasurySections/TreasuryIncome"));
+const TreasuryOutlook = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasurySections/TreasuryOutlook"));
 
 export const meta = {
   pageName: "treasury",
@@ -34,13 +34,6 @@ export const meta = {
   tags: ["treasury", "economics", "fees"],
   indexed: true,
 };
-
-// Client-only island. One fallback serves SSR and the lazy chunk, and its
-// height keeps the layout steady while the live data loads.
-function ClientOnly({ minHeight, children }) {
-  const fallback = <div style={{ minHeight }} />;
-  return <BrowserOnly fallback={fallback}>{() => <Suspense fallback={fallback}>{children}</Suspense>}</BrowserOnly>;
-}
 
 function PageContent() {
   useHashRescroll();
@@ -77,6 +70,12 @@ function PageContent() {
 
       <section id="outlook" className={styles.section}>
         <Heading as="h2">{translate({ id: "insightsTreasury.outlook.title", message: "Reserves outlook" })}</Heading>
+          <p>
+            {translate({
+              id: "governance.treasury.overview.outlook.intro",
+              message: "The reserves shrink a little every epoch. The dashed line shows where they would be if the pace of the last 12 months continued.",
+            })}
+          </p>
         <ClientOnly minHeight={560}>
           <TreasuryOutlook />
         </ClientOnly>

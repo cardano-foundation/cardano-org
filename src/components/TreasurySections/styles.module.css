@@ -31,11 +31,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.board {
-  margin-top: 3rem;
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
-}
-
 .flowGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
