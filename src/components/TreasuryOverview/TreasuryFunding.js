@@ -34,7 +34,7 @@ export default function TreasuryFunding() {
   const model = useMemo(() => {
     if (status !== "ready") return null;
     const income = incomeBySource(points);
-    const latest = points[points.length - 1];
+    const latest = points.at(-1);
     const rate = effectiveDepletionRate(points);
     const endEpoch = firstEpochOfYear(OUTLOOK_YEARS[OUTLOOK_YEARS.length - 1] + 1) - 1;
     const projection = projectReserves(latest.epoch, latest.reserves, rate, endEpoch);

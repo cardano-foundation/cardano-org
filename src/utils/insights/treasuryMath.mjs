@@ -9,13 +9,17 @@ export const TREASURY_PARAMS = { tau: 0.2, rho: 0.003 };
 export const EPOCHS_PER_YEAR = 73;
 export const DEFAULT_WINDOW = EPOCHS_PER_YEAR;
 // First epoch with on-chain governance withdrawals (same as GOVERNANCE_EPOCH_THRESHOLD in epochs.js).
-export const GOVERNANCE_START_EPOCH = 571;
+const GOVERNANCE_START_EPOCH = 571;
 
 // Same reference point as src/utils/insights/epochs.js, repeated here because
 // that file cannot be loaded by node --test.
 const REFERENCE_EPOCH = 209;
 const REFERENCE_START_MS = Date.UTC(2020, 7, 3, 21, 44, 0);
 const EPOCH_MS = 5 * 24 * 60 * 60 * 1000;
+
+// Exact lovelace to ada for BigInt sums. lovelaceToAda truncates to three
+// decimals, which would hide donations below 0.001 ada.
+const exactAda = (n) => Number(n) / 1e6;
 
 // Lovelace string to ada with three decimals. BigInt first, because the
 // early reserves exceed Number.MAX_SAFE_INTEGER in lovelace.
@@ -148,16 +152,13 @@ export function summarizeDonations(snapshot) {
     total += n;
     if (!largest || n > largest.lovelace) largest = { epoch: entry.epoch, lovelace: n };
   }
-  // Exact conversion here. lovelaceToAda truncates to three decimals, which
-  // would hide donations below 0.001 ada.
-  const toAda = (n) => Number(n) / 1e6;
   const updatedEpoch = Number.isInteger(snapshot?.updatedEpoch) ? snapshot.updatedEpoch : null;
   return {
-    totalAda: toAda(total),
+    totalAda: exactAda(total),
     epochCount,
     updatedEpoch,
     largest: largest
-      ? { epoch: largest.epoch, ada: toAda(largest.lovelace), sharePercent: (Number(largest.lovelace) / Number(total)) * 100 }
+      ? { epoch: largest.epoch, ada: exactAda(largest.lovelace), sharePercent: (Number(largest.lovelace) / Number(total)) * 100 }
       : null,
   };
 }
@@ -185,7 +186,7 @@ export function normalizeWithdrawals(rows) {
     }
     if (!valid) continue;
     const title = typeof row.title === 'string' && row.title.trim() ? row.title.trim() : null;
-    list.push({ id: row.proposal_id, epoch, title, ada: Number(total) / 1e6 });
+    list.push({ id: row.proposal_id, epoch, title, ada: exactAda(total) });
   }
   return list.sort((a, b) => b.epoch - a.epoch || b.ada - a.ada);
 }
@@ -215,24 +216,19 @@ export function flowsOverWindow({ points, withdrawals, donations, latestEpoch, w
   const income =
     incomeEpochs.length === window ? incomeEpochs.reduce((sum, e) => sum + e.reserveShare + e.feeShare, 0) : null;
 
-  let returned = null;
-  if (Number.isInteger(donations?.updatedEpoch) && donations.updatedEpoch >= latestEpoch - 1) {
-    let total = 0n;
-    for (const entry of Array.isArray(donations.epochs) ? donations.epochs : []) {
-      const n = parseLovelace(entry?.lovelace);
-      if (n !== null && entry.epoch >= startEpoch && entry.epoch < latestEpoch) total += n;
-    }
-    returned = Number(total) / 1e6;
-  }
+  // Only when the snapshot covers every donation that reaches this window.
+  const returned =
+    Number.isInteger(donations?.updatedEpoch) && donations.updatedEpoch >= latestEpoch - 1
+      ? summarizeDonations({
+          updatedEpoch: donations.updatedEpoch,
+          epochs: (donations.epochs ?? []).filter((e) => e?.epoch >= startEpoch && e.epoch < latestEpoch),
+        }).totalAda
+      : null;
 
   return {
-    startEpoch,
-    startBalance: start.treasury,
-    endBalance: end.treasury,
     netChange: end.treasury - start.treasury,
     income,
     paidOut: paid.reduce((sum, w) => sum + w.ada, 0),
-    paidOutCount: paid.length,
     returned,
   };
 }

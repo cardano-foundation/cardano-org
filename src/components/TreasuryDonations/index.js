@@ -18,7 +18,7 @@ function Figure({ value, label, children }) {
   );
 }
 
-export default function TreasuryDonations() {
+export default function TreasuryDonations({ donateAnchor }) {
   return (
     <section id="donations" className={styles.board}>
       <h2>{translate({ id: "governance.treasury.donations.title", message: "Returned funds and donations" })}</h2>
@@ -59,7 +59,7 @@ export default function TreasuryDonations() {
           )}
         </p>
       )}
-      <a className="button button--primary" href="#donate">
+      <a className="button button--primary" href={`#${donateAnchor}`}>
         {translate({ id: "governance.treasury.donations.cta", message: "Return unused funds or contribute" })}
       </a>
     </section>

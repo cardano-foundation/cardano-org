@@ -6,23 +6,25 @@ import { useTreasuryTotals, useTreasuryWithdrawals } from "./useTreasuryData";
 import { AdaFigure, LiveDataError } from "./figures";
 import styles from "./styles.module.css";
 
-function contextSentence(netChange) {
+function leadSentence(netChange) {
   if (netChange < 0) {
     return translate({
       id: "governance.treasury.flows.contextSpending",
-      message: "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly.",
+      message: "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects.",
     });
   }
   if (netChange > 0) {
-    return translate({
-      id: "governance.treasury.flows.contextSaving",
-      message: "Over this period the treasury took in more than it paid out. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly.",
-    });
+    return translate({ id: "governance.treasury.flows.contextSaving", message: "Over this period the treasury took in more than it paid out." });
   }
-  return translate({
-    id: "governance.treasury.flows.contextEven",
-    message: "Over this period the treasury paid out as much as it took in. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly.",
+  return translate({ id: "governance.treasury.flows.contextEven", message: "Over this period the treasury paid out as much as it took in." });
+}
+
+function contextSentence(netChange) {
+  const caveat = translate({
+    id: "governance.treasury.flows.caveat",
+    message: "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly.",
   });
+  return `${leadSentence(netChange)} ${caveat}`;
 }
 
 export default function TreasuryFlows() {
@@ -31,8 +33,7 @@ export default function TreasuryFlows() {
 
   const flows = useMemo(() => {
     if (totals.status !== "ready" || withdrawals.status !== "ready") return null;
-    const points = totals.data;
-    return flowsOverWindow({ points, withdrawals: withdrawals.data, donations: snapshot, latestEpoch: points[points.length - 1].epoch });
+    return flowsOverWindow({ points: totals.data, withdrawals: withdrawals.data, donations: snapshot, latestEpoch: totals.data.at(-1).epoch });
   }, [totals, withdrawals]);
 
   if (totals.status === "error" || withdrawals.status === "error") {
@@ -40,7 +41,7 @@ export default function TreasuryFlows() {
   }
 
   const loading = totals.status === "loading" || withdrawals.status === "loading";
-  const balance = totals.status === "ready" ? totals.data[totals.data.length - 1].treasury : null;
+  const balance = totals.status === "ready" ? totals.data.at(-1).treasury : null;
 
   return (
     <>

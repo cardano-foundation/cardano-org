@@ -32,7 +32,7 @@ export default function TreasuryFunded() {
   const recent = withdrawals.data.slice(0, RECENT_COUNT);
   // The 12-month line needs the latest epoch from /totals and is left out without it.
   const lastYear =
-    totals.status === "ready" ? withdrawalsInWindow(withdrawals.data, totals.data[totals.data.length - 1].epoch) : null;
+    totals.status === "ready" ? withdrawalsInWindow(withdrawals.data, totals.data.at(-1).epoch) : null;
 
   return (
     <>

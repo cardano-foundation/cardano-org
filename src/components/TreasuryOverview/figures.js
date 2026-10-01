@@ -12,20 +12,13 @@ function display(loading, value, format) {
   return value == null ? "n/a" : format(value);
 }
 
-// formatAdaValue has no sign, so a change gets it added here.
-function signedAda(value) {
-  const text = formatAdaValue(Math.abs(value));
-  if (value > 0) return `+${text}`;
-  if (value < 0) return `-${text}`;
-  return text;
-}
-
+// The count-up animates the magnitude, a signed figure adds "+" or "-" in front.
 export function AdaFigure({ loading, value, label, signed = false }) {
   const animated = useCountUp(value == null ? null : Math.abs(value));
   return (
     <div className={styles.figure}>
       <span className={styles.value}>
-        {display(loading, value, (v) => (signed ? signedAda(Math.sign(v) * animated) : formatAdaValue(animated)))}
+        {display(loading, value, (v) => `${signed && v > 0 ? "+" : ""}${signed && v < 0 ? "-" : ""}${formatAdaValue(animated)}`)}
       </span>
       <span className={styles.label}>{label}</span>
     </div>

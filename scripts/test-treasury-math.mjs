@@ -13,7 +13,6 @@ import {
   epochStartMs,
   firstEpochOfYear,
   projectedReserveIncome,
-  GOVERNANCE_START_EPOCH,
   normalizeWithdrawals,
   withdrawalsInWindow,
   flowsOverWindow,
@@ -175,7 +174,6 @@ test('withdrawalsInWindow keeps both bounds and the governance era', () => {
   const list = [{ epoch: 610 }, { epoch: 609 }, { epoch: 605 }, { epoch: 604 }];
   assert.deepEqual(withdrawalsInWindow(list, 609, 5).map((w) => w.epoch), [609, 605]);
   assert.equal(withdrawalsInWindow(list, 575, 5), null);
-  assert.equal(GOVERNANCE_START_EPOCH, 571);
 });
 
 // Ten epochs from 600 to 609, treasury grows by 10 per epoch.
@@ -189,14 +187,11 @@ const FLOW_DONATIONS = { updatedEpoch: 609, epochs: [{ epoch: 604, lovelace: '70
 
 test('flowsOverWindow sums income, withdrawals and donations over the window', () => {
   const f = flowsOverWindow({ points: FLOW_POINTS, withdrawals: FLOW_WITHDRAWALS, donations: FLOW_DONATIONS, latestEpoch: 609, window: 5 });
-  assert.equal(f.startEpoch, 604);
-  assert.equal(f.startBalance, 1040);
-  assert.equal(f.endBalance, 1090);
+  // Balance grows from 1040 at epoch 604 to 1090 at 609.
   assert.equal(f.netChange, 50);
   // Five income epochs (605 to 609), each 0.2 * (0.003 * 100000 + 50) = 70.
   close(f.income, 350);
   assert.equal(f.paidOut, 65);
-  assert.equal(f.paidOutCount, 2);
   // Donations made in 604 to 608 reach the balance inside the window, 609 does not yet.
   close(f.returned, 10);
 });

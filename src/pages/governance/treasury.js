@@ -9,20 +9,23 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TreasuryDonations from "@site/src/components/TreasuryDonations";
-import useHashRescroll from "@site/src/components/TreasuryOverview/useHashRescroll";
+import useHashRescroll from "@site/src/utils/useHashRescroll";
+import DonateSection from "@site/src/components/TreasuryDonations/DonateSection";
 import { translate } from "@docusaurus/Translate";
 import styles from "./treasury.module.css";
 
-const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-flows" */ "@site/src/components/TreasuryOverview/TreasuryFlows"));
-const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-funded" */ "@site/src/components/TreasuryOverview/TreasuryFunded"));
+const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFlows"));
+const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFunded"));
 const TreasuryFunding = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasuryOverview/TreasuryFunding"));
-const DonateSection = lazy(() => import(/* webpackChunkName: "treasury-donate-section" */ "@site/src/components/TreasuryDonations/DonateSection"));
+
+// Shared by the divider, the donation form and every link to the form.
+const DONATE_ANCHOR = "donate";
 
 // Client-only island. One fallback serves SSR and the lazy chunk, and its
 // height keeps the layout steady while the live data loads.
 function ClientOnly({ minHeight, children }) {
   const fallback = <div style={{ minHeight }} />;
-  return <BrowserOnly fallback={fallback}>{() => <Suspense fallback={fallback}>{children()}</Suspense>}</BrowserOnly>;
+  return <BrowserOnly fallback={fallback}>{() => <Suspense fallback={fallback}>{children}</Suspense>}</BrowserOnly>;
 }
 
 function TreasuryHero() {
@@ -78,13 +81,13 @@ export default function TreasuryPage() {
 
           <section id="flows" className={styles.section}>
             <h2>{translate({ id: "governance.treasury.flows.title", message: "Balance and flows over the last 12 months" })}</h2>
-            <ClientOnly minHeight={220}>{() => <TreasuryFlows />}</ClientOnly>
+            <ClientOnly minHeight={220}><TreasuryFlows /></ClientOnly>
           </section>
 
           <section id="funded" className={styles.section}>
             <h2>{translate({ id: "governance.treasury.funded.title", message: "What the treasury funds" })}</h2>
             <p>{translate({ id: "governance.treasury.funded.intro", message: "The most recent treasury withdrawals that took effect:" })}</p>
-            <ClientOnly minHeight={320}>{() => <TreasuryFunded />}</ClientOnly>
+            <ClientOnly minHeight={320}><TreasuryFunded /></ClientOnly>
             <p className={styles.note}>
               {translate({
                 id: "governance.treasury.funded.note",
@@ -129,10 +132,10 @@ export default function TreasuryPage() {
                 message: "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used.",
               })}
             </p>
-            <ClientOnly minHeight={900}>{() => <TreasuryFunding />}</ClientOnly>
+            <ClientOnly minHeight={900}><TreasuryFunding /></ClientOnly>
           </section>
 
-          <TreasuryDonations />
+          <TreasuryDonations donateAnchor={DONATE_ANCHOR} />
           <p className={styles.terms}>
             {translate({ id: "governance.treasury.explainer.terms", message: "Related terms:" })}{" "}
             <Link to="/glossary/treasury">{translate({ id: "governance.treasury.explainer.term.treasury", message: "Treasury" })}</Link>
@@ -147,8 +150,8 @@ export default function TreasuryPage() {
         </BoundaryBox>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <Divider text={translate({ id: "governance.treasury.donate.divider", message: "Donate to the treasury" })} id="donate" />
-            <ClientOnly minHeight={120}>{() => <DonateSection />}</ClientOnly>
+            <Divider text={translate({ id: "governance.treasury.donate.divider", message: "Donate to the treasury" })} id={DONATE_ANCHOR} />
+            <ClientOnly minHeight={120}><DonateSection anchorId={DONATE_ANCHOR} /></ClientOnly>
             <SpacerBox size="small" />
           </BoundaryBox>
         </BackgroundWrapper>

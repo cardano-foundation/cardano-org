@@ -10383,13 +10383,13 @@
     "message": "How the treasury is funded"
   },
   "governance.treasury.flows.contextSpending": {
-    "message": "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+    "message": "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects."
   },
   "governance.treasury.flows.contextSaving": {
-    "message": "Over this period the treasury took in more than it paid out. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+    "message": "Over this period the treasury took in more than it paid out."
   },
   "governance.treasury.flows.contextEven": {
-    "message": "Over this period the treasury paid out as much as it took in. Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+    "message": "Over this period the treasury paid out as much as it took in."
   },
   "governance.treasury.flows.error": {
     "message": "Live treasury figures are unavailable right now."
@@ -10447,5 +10447,8 @@
   },
   "governance.treasury.donate.open": {
     "message": "Open the donation tool"
+  },
+  "governance.treasury.flows.caveat": {
+    "message": "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
   }
 }

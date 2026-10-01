@@ -10,18 +10,18 @@ const loadingTool = (
   </div>
 );
 
-// The wallet form stays closed until someone asks for it. A link to #donate
-// (glossary, /apps, the button on this page) opens it.
-export default function DonateSection() {
-  const [open, setOpen] = useState(() => window.location.hash === "#donate");
+// The wallet form stays closed until someone asks for it. A link to the
+// section's anchor (glossary, /apps, the button on this page) opens it.
+export default function DonateSection({ anchorId }) {
+  const [open, setOpen] = useState(() => window.location.hash === `#${anchorId}`);
 
   useEffect(() => {
     const onHash = () => {
-      if (window.location.hash === "#donate") setOpen(true);
+      if (window.location.hash === `#${anchorId}`) setOpen(true);
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
-  }, []);
+  }, [anchorId]);
 
   if (!open) {
     return (
