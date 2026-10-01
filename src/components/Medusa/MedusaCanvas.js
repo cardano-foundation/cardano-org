@@ -15,7 +15,7 @@ const highlightIndexOf = (key) => (key === null ? -1 : groupIndex(key));
 // The only React component that knows about the engine, the worker and the
 // clock. Everything else talks to it through props and the ref API.
 const MedusaCanvas = forwardRef(function MedusaCanvas(
-  { mode = 'ambient', startDate = null, className, ariaLabel, onFrame, onHover, onSelect, onMilestone, onReady, highlightGroup = null, interactive = false },
+  { mode = 'ambient', startDate = null, className, ariaLabel, onFrame, onHover, onSelect, onMilestone, onReady, highlightGroup = null, interactive = false, background = null },
   ref,
 ) {
   const canvasRef = useRef(null);
@@ -24,6 +24,9 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
   callbacks.current = { onFrame, onHover, onSelect, onMilestone, onReady };
   const highlightRef = useRef(highlightGroup);
   highlightRef.current = highlightGroup;
+  // Optional clear colour override, e.g. a lighter blue in the light theme.
+  const backgroundRef = useRef(background);
+  backgroundRef.current = background;
   const reducedRef = useRef(false);
 
   useEffect(() => {
@@ -72,6 +75,7 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
       const history = mod.default;
       const frameDates = history.frames.map((f) => f.date);
       const engine = createEngine({ canvas, mode, reducedMotion: reduced });
+      if (backgroundRef.current) engine.setParams({ background: backgroundRef.current });
       engine.resize();
       const graph = createGraph(history);
       // Reduced motion shows the final state, otherwise the optional start date
@@ -222,6 +226,10 @@ const MedusaCanvas = forwardRef(function MedusaCanvas(
     const api = apiRef.current;
     if (api) api.engine.setHighlightGroup(highlightIndexOf(highlightGroup));
   }, [highlightGroup]);
+
+  useEffect(() => {
+    if (background) apiRef.current?.engine.setParams({ background });
+  }, [background]);
 
   // Pointer handling: parallax always, hover, click, wheel zoom, drag pan and
   // pinch zoom only when interactive.

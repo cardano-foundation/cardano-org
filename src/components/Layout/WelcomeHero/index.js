@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import { translate } from '@docusaurus/Translate';
+import { useColorMode } from "@docusaurus/theme-common";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import Medusa from "@site/src/components/Medusa";
@@ -12,10 +13,15 @@ import { canRunWebGL } from "@site/src/components/Medusa/webgl";
 // `children` renders below the CTA row (the homepage puts the entry intents
 // there). `showWhatIsCardano` drops the explainer CTA when the page links to
 // it further down.
+// The visualization blends additively, so it needs a dark ground to glow. The
+// light theme gets a brighter Cardano blue instead of the near black navy.
+const MEDUSA_BACKGROUND = { light: "#0a2a8a", dark: "#0b1030" };
+
 function WelcomeHero({ title, description, children, showWhatIsCardano = true }) {
   const [webglSupported, setWebglSupported] = useState(true);
   const [year, setYear] = useState("");
   const medusaRef = useRef(null);
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     // Client-only capability detection, the server assumes WebGL.
@@ -35,6 +41,7 @@ function WelcomeHero({ title, description, children, showWhatIsCardano = true })
             ref={medusaRef}
             mode="ambient"
             startDate="2019-02-01"
+            background={MEDUSA_BACKGROUND[colorMode] ?? MEDUSA_BACKGROUND.dark}
             className={styles.medusaCanvas}
             onFrame={handleFrame}
             ariaLabel={translate({

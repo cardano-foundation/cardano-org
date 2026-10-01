@@ -25,6 +25,11 @@
   background: #0b1030;
 }
 
+/* Keep in sync with MEDUSA_BACKGROUND.light in index.js. */
+html[data-theme="light"] .heroBackground {
+  background: #0a2a8a;
+}
+
 .medusaCanvas {
   position: absolute;
   inset: 0;
@@ -49,6 +54,11 @@
   background: rgba(0, 0, 0, 0.20);
   z-index: 1;
   pointer-events: none;
+}
+
+/* The light theme drops the darkening layer, the lighter blue is the point. */
+html[data-theme="light"] .overlay {
+  display: none;
 }
 
 .heroForeground {
