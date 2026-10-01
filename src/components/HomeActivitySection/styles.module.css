@@ -38,6 +38,11 @@ html[data-theme="dark"] .figureValue {
   color: var(--ifm-color-emphasis-700);
 }
 
+.carouselNote {
+  margin: 0 0 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .ctaRow {
   margin-top: 1.5rem;
 }

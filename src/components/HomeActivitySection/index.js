@@ -78,19 +78,6 @@ export default function HomeActivitySection() {
     <section className={styles.section}>
       <TitleWithText
         title={translate({ id: "home.activity.title", message: "Cardano in use" })}
-        description={
-          snapshotDate
-            ? [
-                translate(
-                  {
-                    id: "apps.mostActive.subtitle",
-                    message: "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}.",
-                  },
-                  { date: snapshotDate }
-                ),
-              ]
-            : undefined
-        }
         titleType="black"
         headingDot={true}
       />
@@ -103,6 +90,19 @@ export default function HomeActivitySection() {
           </div>
         ))}
       </dl>
+
+      {/* Sits right above the carousel it describes. */}
+      {snapshotDate && (
+        <p className={styles.carouselNote}>
+          {translate(
+            {
+              id: "apps.mostActive.subtitle",
+              message: "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}.",
+            },
+            { date: snapshotDate }
+          )}
+        </p>
+      )}
 
       <AppTileCarousel
         apps={TOP_APPS}
