@@ -1,6 +1,6 @@
 import { translate } from "@docusaurus/Translate";
 import DottedLockOpen from "@site/src/components/DottedIcons/DottedLockOpen";
-import DottedCalculator from "@site/src/components/DottedIcons/DottedCalculator";
+import DottedEutxo from "@site/src/components/DottedIcons/DottedEutxo";
 import DottedBallot from "@site/src/components/DottedIcons/DottedBallot";
 import DottedFlask from "@site/src/components/DottedIcons/DottedFlask";
 import DottedCoins from "@site/src/components/DottedIcons/DottedCoins";
@@ -26,7 +26,7 @@ export function getProofPoints() {
       // Merges the former "Fees you can predict" point with the extended UTXO
       // model, the property both follow from.
       key: "eutxo",
-      icon: <DottedCalculator />,
+      icon: <DottedEutxo />,
       title: translate({ id: "whatIsCardano.proof.eutxo.title", message: "Predictable by design" }),
       tagline: translate({ id: "whatIsCardano.proof.eutxo.tagline", message: "Extended UTXO model" }),
       text: translate({
