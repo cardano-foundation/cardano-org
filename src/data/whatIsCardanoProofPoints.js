@@ -19,7 +19,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.staking.text",
         message:
-          "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum beyond a small deposit, and no slashing: the protocol cannot take your ada as a penalty. You can spend or re-delegate at any time.",
+          "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum amount to delegate, and no slashing: the protocol cannot take your ada as a penalty. Registering your stake key takes a refundable deposit, and you can spend or re-delegate at any time.",
       }),
     },
     {
@@ -32,7 +32,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.eutxo.text",
         message:
-          "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee are known before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction.",
+          "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee can be checked before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction.",
       }),
     },
     {
@@ -76,7 +76,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.governance.text",
         message:
-          "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative. Stake pool operators and a constitutional committee provide checks and balances.",
+          "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders take part by delegating their voting power to a representative or by registering as one themselves. Stake pool operators and a constitutional committee provide checks and balances.",
       }),
     },
     {

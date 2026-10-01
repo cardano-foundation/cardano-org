@@ -103,7 +103,7 @@ function WelcomeHero({ title, description, children, showWhatIsCardano = true })
                 <p>
                   {translate({
                     id: 'home.hero.vizBadge.description',
-                    message: 'Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Each hard fork appears as a new cluster.',
+                    message: 'Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Colors mark the code of each ledger era, from Byron to Dijkstra.',
                   })}
                 </p>
                 <Link to="/medusa" className={styles.vizPopoverLink}>
@@ -126,7 +126,7 @@ function WelcomeHero({ title, description, children, showWhatIsCardano = true })
             })}>
               {translate({
                 id: 'home.hero.vizBadge.label',
-                message: 'Visualizing cardano-ledger, 2018 to today',
+                message: 'Visualizing cardano-ledger since 2018',
               })}
               <span className={styles.vizBadgeIcon}>ⓘ</span>
             </button>

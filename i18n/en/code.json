@@ -1340,10 +1340,10 @@
     "message": "Get Started"
   },
   "home.hero.vizBadge.label": {
-    "message": "Visualizing cardano-ledger, 2018 to today"
+    "message": "Visualizing cardano-ledger since 2018"
   },
   "home.hero.vizBadge.description": {
-    "message": "Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Each hard fork appears as a new cluster."
+    "message": "Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Colors mark the code of each ledger era, from Byron to Dijkstra."
   },
   "home.hero.vizBadge.link": {
     "message": "Explore the history"
@@ -7079,7 +7079,7 @@
     "message": "Non-custodial, liquid staking"
   },
   "whatIsCardano.proof.staking.text": {
-    "message": "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum beyond a small deposit, and no slashing: the protocol cannot take your ada as a penalty. You can spend or re-delegate at any time."
+    "message": "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum amount to delegate, and no slashing: the protocol cannot take your ada as a penalty. Registering your stake key takes a refundable deposit, and you can spend or re-delegate at any time."
   },
   "whatIsCardano.proof.eutxo.title": {
     "message": "Predictable by design"
@@ -7088,7 +7088,7 @@
     "message": "Extended UTXO model"
   },
   "whatIsCardano.proof.eutxo.text": {
-    "message": "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee are known before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction."
+    "message": "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee can be checked before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction."
   },
   "whatIsCardano.proof.tokens.title": {
     "message": "Tokens built into the chain"
@@ -7124,7 +7124,7 @@
     "message": "On-chain governance and treasury"
   },
   "whatIsCardano.proof.governance.text": {
-    "message": "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders vote directly or delegate their voting power to a representative. Stake pool operators and a constitutional committee provide checks and balances."
+    "message": "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders take part by delegating their voting power to a representative or by registering as one themselves. Stake pool operators and a constitutional committee provide checks and balances."
   },
   "whatIsCardano.proof.regulation.title": {
     "message": "Ready for regulation"
@@ -10409,7 +10409,7 @@
     "message": "transactions on Cardano in 30 days"
   },
   "home.activity.figure.tx": {
-    "message": "of them by showcased apps"
+    "message": "attributed to showcased apps"
   },
   "home.activity.figure.apps": {
     "message": "curated apps to explore"

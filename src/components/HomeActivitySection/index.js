@@ -95,7 +95,7 @@ export default function HomeActivitySection() {
       value: number.format(LISTED_APP_TX),
       label: translate({
         id: "home.activity.figure.tx",
-        message: "of them by showcased apps",
+        message: "attributed to showcased apps",
       }),
     },
     {
