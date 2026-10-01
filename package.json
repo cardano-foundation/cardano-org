@@ -45,7 +45,8 @@
     "test:timed-cache": "node --test scripts/test-timed-cache.mjs",
     "test:treasury-donations": "node --test scripts/test-treasury-donations-script.mjs",
     "test:hash-target": "node --test scripts/test-hash-target.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math && yarn test:timed-cache && yarn test:treasury-donations && yarn test:hash-target",
+    "test:hash-anchor": "node --test scripts/test-hash-anchor-watch.mjs",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math && yarn test:timed-cache && yarn test:treasury-donations && yarn test:hash-target && yarn test:hash-anchor",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
