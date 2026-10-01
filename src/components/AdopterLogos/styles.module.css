@@ -74,6 +74,22 @@ html[data-theme="dark"] .item {
   }
 }
 
+/* Wide screens: all logos in one row, sharing the full content width. */
+@media (min-width: 1280px) {
+  .list {
+    max-width: none;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .item {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .item {
     width: calc(50% - 0.75rem);
