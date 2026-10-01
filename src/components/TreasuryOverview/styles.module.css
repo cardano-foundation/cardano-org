@@ -45,6 +45,11 @@
   padding: 1rem 0 0.5rem;
 }
 
+/* Five figures share one row, a smaller size keeps "-230.0M ada" on one line. */
+.flowGrid .value {
+  font-size: 1.6rem;
+}
+
 /* Reserves its line so the sentence appearing after load does not shift the page. */
 .context {
   min-height: 3em;
@@ -144,5 +149,9 @@
 
   .value {
     font-size: 1.5rem;
+  }
+
+  .flowGrid .value {
+    font-size: 1.4rem;
   }
 }

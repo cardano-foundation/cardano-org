@@ -9,6 +9,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TreasuryDonations from "@site/src/components/TreasuryDonations";
+import useHashRescroll from "@site/src/components/TreasuryOverview/useHashRescroll";
 import { translate } from "@docusaurus/Translate";
 import styles from "./treasury.module.css";
 
@@ -38,6 +39,7 @@ function TreasuryHero() {
 }
 
 export default function TreasuryPage() {
+  useHashRescroll();
   return (
     <Layout
       title={translate({ id: "governance.treasury.overview.layout.title", message: "The Cardano Treasury - Cardano Governance" })}

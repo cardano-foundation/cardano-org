@@ -3,7 +3,6 @@ import { translate } from "@docusaurus/Translate";
 import { flowsOverWindow } from "@site/src/utils/insights/treasuryMath.mjs";
 import snapshot from "@site/src/data/treasury-donations.json";
 import { useTreasuryTotals, useTreasuryWithdrawals } from "./useTreasuryData";
-import useHashRescroll from "./useHashRescroll";
 import { AdaFigure, LiveDataError } from "./figures";
 import styles from "./styles.module.css";
 
@@ -29,8 +28,6 @@ function contextSentence(netChange) {
 export default function TreasuryFlows() {
   const totals = useTreasuryTotals();
   const withdrawals = useTreasuryWithdrawals();
-  // The only section that waits for both sources, so it owns the one re-scroll.
-  useHashRescroll(totals.status !== "loading" && withdrawals.status !== "loading");
 
   const flows = useMemo(() => {
     if (totals.status !== "ready" || withdrawals.status !== "ready") return null;
