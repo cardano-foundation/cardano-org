@@ -21,7 +21,7 @@ export function getProofPoints() {
       text: translate({
         id: "whatIsCardano.proof.staking.text",
         message:
-          "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum beyond a small deposit, and no slashing: the protocol cannot take your ada as a penalty. You can spend or re-delegate at any time.",
+          "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum amount to delegate, and no slashing: the protocol cannot take your ada as a penalty. Registering your stake key takes a refundable deposit, and you can spend or re-delegate at any time.",
       }),
     },
     {
