@@ -5,15 +5,12 @@
 // plain logos without a link.
 //
 // Logo files: static/img/adopters/<id>.svg in the original brand colours on a
-// transparent background, the bar renders them monochrome. Draper and PUC-Rio
-// are still placeholders with the short name, no official SVG was available.
+// transparent background, the bar renders them monochrome.
 export const ADOPTERS = [
   { id: "cob", name: "Brazilian Olympic Committee", source: null },
   { id: "petrobras", name: "Petrobras", source: null },
-  { id: "draper", name: "Draper", source: null },
   { id: "uzh", name: "University of Zurich", source: null },
   { id: "unb", name: "University of Brasília", source: null },
-  { id: "puc-rio", name: "PUC-Rio", source: null },
   { id: "serviceplan", name: "Serviceplan", source: null },
   { id: "undp", name: "UNDP", source: null },
   { id: "unhcr", name: "UNHCR", source: null },
