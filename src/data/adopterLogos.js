@@ -15,5 +15,7 @@ export const ADOPTERS = [
   { id: "undp", name: "UNDP", source: null },
   { id: "unhcr", name: "UNHCR", source: null },
   { id: "mastercard", name: "Mastercard", source: null },
-  { id: "syngenta-india", name: "Syngenta India", source: null },
+  // Placeholder until the foundation's own logo is available, the Syngenta
+  // group logo would be the wrong organization.
+  { id: "syngenta-foundation-india", name: "Syngenta Foundation India", source: null },
 ];

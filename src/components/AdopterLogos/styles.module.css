@@ -14,14 +14,17 @@
   color: var(--ifm-color-emphasis-600);
 }
 
-/* Flex wrap keeps a short last row centred instead of left aligned. */
+/* Flex wrap keeps a short last row centred instead of left aligned. The
+   max width fits five logos per row (5 x 9rem plus four 1.5rem gaps), so
+   nine logos split into five and four. */
 .list {
   display: flex;
+  max-width: 51rem;
+  margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.25rem 1.5rem;
   align-items: center;
-  margin: 0;
   padding: 0;
   list-style: none;
 }
