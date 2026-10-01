@@ -6,7 +6,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import appStatsData from "@site/src/data/tx-stats.json";
-import { getAppStats, getTopAppPerCategory } from "@site/src/utils/appStats";
+import { getAppStats, getTopAppPerCategory, getTxCount } from "@site/src/utils/appStats";
 import { yearsSinceMainnetLaunch } from "@site/src/utils/mainnetAge";
 import styles from "./styles.module.css";
 
@@ -15,9 +15,13 @@ import styles from "./styles.module.css";
 // category. No live requests, everything comes from src/data.
 
 // Most active app per trackable category, like the unfiltered /apps view.
-// Only the top three: further down the list the transaction counts are too
-// small to make the point.
-const TOP_APPS = getTopAppPerCategory(Showcases).slice(0, 3);
+// Only categories whose leader clears MIN_CATEGORY_TX in the snapshot, and at
+// most three of them: smaller counts do not make the point. With a thin
+// snapshot fewer than three cards are shown.
+const MIN_CATEGORY_TX = 3000;
+const TOP_APPS = getTopAppPerCategory(Showcases)
+  .filter((app) => getTxCount(app) >= MIN_CATEGORY_TX)
+  .slice(0, 3);
 
 // All mainnet transactions in the snapshot window (six full epochs). Shown
 // next to the app figure so the app share is not read as the whole chain.
