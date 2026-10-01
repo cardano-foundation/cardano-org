@@ -8,6 +8,8 @@ import { parseLovelace } from '../cardano/lovelace.mjs';
 export const TREASURY_PARAMS = { tau: 0.2, rho: 0.003 };
 export const EPOCHS_PER_YEAR = 73;
 export const DEFAULT_WINDOW = EPOCHS_PER_YEAR;
+// First epoch with on-chain governance withdrawals (same as GOVERNANCE_EPOCH_THRESHOLD in epochs.js).
+export const GOVERNANCE_START_EPOCH = 571;
 
 // Same reference point as src/utils/insights/epochs.js, repeated here because
 // that file cannot be loaded by node --test.
@@ -172,5 +174,80 @@ export function summarizeDonations(snapshot) {
     largest: largest
       ? { epoch: largest.epoch, ada: toAda(largest.lovelace), sharePercent: (Number(largest.lovelace) / Number(total)) * 100 }
       : null,
+  };
+}
+
+// Enacted treasury withdrawals from Koios /proposal_list. Each proposal can pay
+// several recipients, the amount is their sum. A row with any unusable part is
+// dropped, so a broken amount never shows up as 0 ada.
+export function normalizeWithdrawals(rows) {
+  if (!Array.isArray(rows)) return [];
+  const list = [];
+  for (const row of rows) {
+    if (!row?.proposal_id || row.enacted_epoch == null) continue;
+    const epoch = Number(row.enacted_epoch);
+    if (!Number.isInteger(epoch)) continue;
+    if (!Array.isArray(row.withdrawal) || row.withdrawal.length === 0) continue;
+    let total = 0n;
+    let valid = true;
+    for (const payout of row.withdrawal) {
+      const n = parseLovelace(payout?.amount);
+      if (n === null) {
+        valid = false;
+        break;
+      }
+      total += n;
+    }
+    if (!valid) continue;
+    const title = typeof row.title === 'string' && row.title.trim() ? row.title.trim() : null;
+    list.push({ id: row.proposal_id, epoch, title, ada: Number(total) / 1e6 });
+  }
+  return list.sort((a, b) => b.epoch - a.epoch || b.ada - a.ada);
+}
+
+// Withdrawals that took effect in the last `window` epochs up to latestEpoch.
+// null when the window reaches back before on-chain governance, where older
+// withdrawals would be missing.
+export function withdrawalsInWindow(withdrawals, latestEpoch, window = DEFAULT_WINDOW) {
+  const startEpoch = latestEpoch - window;
+  if (startEpoch < GOVERNANCE_START_EPOCH) return null;
+  return withdrawals.filter((w) => w.epoch > startEpoch && w.epoch <= latestEpoch);
+}
+
+// Treasury flows over the last `window` epochs up to latestEpoch. Income is the
+// nominal estimate, withdrawals count in the epoch they took effect, and a
+// donation made in epoch N reaches the balance at N+1. A figure whose data is
+// incomplete is null instead of a silent partial sum.
+export function flowsOverWindow({ points, withdrawals, donations, latestEpoch, window = DEFAULT_WINDOW }) {
+  const startEpoch = latestEpoch - window;
+  const paid = withdrawalsInWindow(withdrawals, latestEpoch, window);
+  if (paid === null) return null;
+  const start = points.find((p) => p.epoch === startEpoch);
+  const end = points.find((p) => p.epoch === latestEpoch);
+  if (!start || !end) return null;
+
+  const incomeEpochs = inEpochWindow(incomeBySource(points), latestEpoch, window);
+  const income =
+    incomeEpochs.length === window ? incomeEpochs.reduce((sum, e) => sum + e.reserveShare + e.feeShare, 0) : null;
+
+  let returned = null;
+  if (Number.isInteger(donations?.updatedEpoch) && donations.updatedEpoch >= latestEpoch - 1) {
+    let total = 0n;
+    for (const entry of Array.isArray(donations.epochs) ? donations.epochs : []) {
+      const n = parseLovelace(entry?.lovelace);
+      if (n !== null && entry.epoch >= startEpoch && entry.epoch < latestEpoch) total += n;
+    }
+    returned = Number(total) / 1e6;
+  }
+
+  return {
+    startEpoch,
+    startBalance: start.treasury,
+    endBalance: end.treasury,
+    netChange: end.treasury - start.treasury,
+    income,
+    paidOut: paid.reduce((sum, w) => sum + w.ada, 0),
+    paidOutCount: paid.length,
+    returned,
   };
 }

@@ -7,14 +7,16 @@ import {
   incomeBySource,
   inEpochWindow,
   feeSharePercent,
-  reserveToFeeRatio,
   median,
   effectiveDepletionRate,
   projectReserves,
   epochStartMs,
   firstEpochOfYear,
   projectedReserveIncome,
-  feesNeededToReplace,
+  GOVERNANCE_START_EPOCH,
+  normalizeWithdrawals,
+  withdrawalsInWindow,
+  flowsOverWindow,
   summarizeDonations,
 } from '../src/utils/insights/treasuryMath.mjs';
 
@@ -66,12 +68,10 @@ test('inEpochWindow selects by epoch number', () => {
   assert.deepEqual(inEpochWindow(INCOME, 5, 3).map((e) => e.epoch), [3]);
 });
 
-test('feeSharePercent and reserveToFeeRatio are ratios of sums over the epoch window', () => {
+test('feeSharePercent is a ratio of sums over the epoch window', () => {
   close(feeSharePercent(INCOME, 3, 2), (100 / 500) * 100);
   close(feeSharePercent(INCOME, 3, 3), (200 / 1500) * 100);
-  close(reserveToFeeRatio(INCOME, 3, 3), 1300 / 200);
   assert.equal(feeSharePercent(INCOME, 3, 1), null);
-  assert.equal(reserveToFeeRatio(INCOME.slice(2), 3, 3), null);
 });
 
 test('a gap inside the window shrinks the sample and never reaches further back', () => {
@@ -117,16 +117,8 @@ test('epoch dates follow the Shelley 5-day schedule', () => {
   assert.ok(epochStartMs(e2030 - 1) < Date.UTC(2030, 0, 1));
 });
 
-test('projectedReserveIncome and feesNeededToReplace use tau and rho', () => {
+test('projectedReserveIncome uses tau and rho', () => {
   close(projectedReserveIncome(1000), 1000 * TREASURY_PARAMS.tau * TREASURY_PARAMS.rho);
-  const income = [{ epoch: 5, reserveShare: 3000, feeShare: 10 }];
-  close(feesNeededToReplace(income, 5), 3000 / TREASURY_PARAMS.tau);
-  assert.equal(feesNeededToReplace([], 5), null);
-});
-
-test('feesNeededToReplace never falls back to an older epoch', () => {
-  const income = [{ epoch: 640, reserveShare: 3000, feeShare: 10 }];
-  assert.equal(feesNeededToReplace(income, 642), null);
 });
 
 test('summarizeDonations totals the snapshot and finds the largest epoch', () => {
@@ -159,4 +151,74 @@ test('summarizeDonations with no epochs shows zero and no largest', () => {
   assert.equal(s.epochCount, 0);
   assert.equal(s.largest, null);
   assert.equal(summarizeDonations(null).largest, null);
+});
+
+test('normalizeWithdrawals sums payouts, sorts newest first and drops broken rows', () => {
+  const rows = [
+    { proposal_id: 'gov_action1a', enacted_epoch: 646, title: 'Mithril', withdrawal: [{ amount: '3810423000000' }] },
+    { proposal_id: 'gov_action1b', enacted_epoch: 650, title: 'Prime', withdrawal: [{ amount: '100000000000000' }, { amount: '20000000000000' }] },
+    { proposal_id: 'gov_action1c', enacted_epoch: 646, title: '  ', withdrawal: [{ amount: '25400000000000' }] },
+    { proposal_id: 'gov_action1d', enacted_epoch: 646, title: 'Bad', withdrawal: [{ amount: 'x' }] },
+    { proposal_id: '', enacted_epoch: 646, title: 'No id', withdrawal: [{ amount: '1' }] },
+    { proposal_id: 'gov_action1e', enacted_epoch: null, title: 'Not enacted', withdrawal: [{ amount: '1' }] },
+    { proposal_id: 'gov_action1f', enacted_epoch: 646, title: 'Empty', withdrawal: [] },
+  ];
+  const list = normalizeWithdrawals(rows);
+  assert.deepEqual(list.map((w) => w.id), ['gov_action1b', 'gov_action1c', 'gov_action1a']);
+  assert.equal(list[0].ada, 120000000);
+  assert.equal(list[1].title, null);
+  assert.equal(list[2].title, 'Mithril');
+  assert.deepEqual(normalizeWithdrawals(null), []);
+});
+
+test('withdrawalsInWindow keeps both bounds and the governance era', () => {
+  const list = [{ epoch: 610 }, { epoch: 609 }, { epoch: 605 }, { epoch: 604 }];
+  assert.deepEqual(withdrawalsInWindow(list, 609, 5).map((w) => w.epoch), [609, 605]);
+  assert.equal(withdrawalsInWindow(list, 575, 5), null);
+  assert.equal(GOVERNANCE_START_EPOCH, 571);
+});
+
+// Ten epochs from 600 to 609, treasury grows by 10 per epoch.
+const FLOW_POINTS = Array.from({ length: 10 }, (_, i) => ({ epoch: 600 + i, treasury: 1000 + 10 * i, reserves: 100000, fees: 50 }));
+const FLOW_WITHDRAWALS = [
+  { id: 'a', epoch: 609, title: 'A', ada: 40 },
+  { id: 'b', epoch: 605, title: 'B', ada: 25 },
+  { id: 'c', epoch: 604, title: 'C', ada: 99 }, // before the window
+];
+const FLOW_DONATIONS = { updatedEpoch: 609, epochs: [{ epoch: 604, lovelace: '7000000' }, { epoch: 605, lovelace: '3000000' }, { epoch: 609, lovelace: '1000000' }] };
+
+test('flowsOverWindow sums income, withdrawals and donations over the window', () => {
+  const f = flowsOverWindow({ points: FLOW_POINTS, withdrawals: FLOW_WITHDRAWALS, donations: FLOW_DONATIONS, latestEpoch: 609, window: 5 });
+  assert.equal(f.startEpoch, 604);
+  assert.equal(f.startBalance, 1040);
+  assert.equal(f.endBalance, 1090);
+  assert.equal(f.netChange, 50);
+  // Five income epochs (605 to 609), each 0.2 * (0.003 * 100000 + 50) = 70.
+  close(f.income, 350);
+  assert.equal(f.paidOut, 65);
+  assert.equal(f.paidOutCount, 2);
+  // Donations made in 604 to 608 reach the balance inside the window, 609 does not yet.
+  close(f.returned, 10);
+});
+
+test('flowsOverWindow is null before the governance era or without a start row', () => {
+  const early = FLOW_POINTS.map((p) => ({ ...p, epoch: p.epoch - 100 }));
+  assert.equal(flowsOverWindow({ points: early, withdrawals: [], donations: FLOW_DONATIONS, latestEpoch: 509, window: 5 }), null);
+  assert.equal(flowsOverWindow({ points: FLOW_POINTS.slice(5), withdrawals: [], donations: FLOW_DONATIONS, latestEpoch: 609, window: 5 }), null);
+});
+
+test('flowsOverWindow leaves income unknown when an epoch inside the window is missing', () => {
+  const gap = FLOW_POINTS.filter((p) => p.epoch !== 607);
+  const f = flowsOverWindow({ points: gap, withdrawals: FLOW_WITHDRAWALS, donations: FLOW_DONATIONS, latestEpoch: 609, window: 5 });
+  assert.equal(f.income, null);
+  assert.equal(f.netChange, 50);
+  assert.equal(f.paidOut, 65);
+});
+
+test('flowsOverWindow leaves donations unknown when the snapshot is missing or behind', () => {
+  const stale = { ...FLOW_DONATIONS, updatedEpoch: 607 };
+  assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: stale, latestEpoch: 609, window: 5 }).returned, null);
+  assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: null, latestEpoch: 609, window: 5 }).returned, null);
+  // A snapshot that ends one epoch before the latest is complete.
+  close(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 608 }, latestEpoch: 609, window: 5 }).returned, 10);
 });
