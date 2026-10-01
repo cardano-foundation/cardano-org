@@ -47,7 +47,7 @@ function Explainer() {
         <p>
           {translate({
             id: "governance.treasury.explainer.income.body",
-            message: "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, for example when funded work returns money it did not use.",
+            message: "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation.",
           })}
         </p>
       </div>
@@ -65,16 +65,16 @@ function Explainer() {
           </Link>
           {" · "}
           <Link to="/governance/accountability#funding">
-            {translate({ id: "governance.treasury.explainer.spending.accountability", message: "What treasury-funded work owes the community" })}
+            {translate({ id: "governance.treasury.explainer.spending.accountability", message: "Standards for treasury-funded work" })}
           </Link>
         </p>
       </div>
       <div className={styles.block}>
-        <h2>{translate({ id: "governance.treasury.explainer.shift.title", message: "Why the mix shifts over time" })}</h2>
+        <h2>{translate({ id: "governance.treasury.explainer.shift.title", message: "How reserves affect treasury income" })}</h2>
         <p>
           {translate({
             id: "governance.treasury.explainer.shift.body",
-            message: "The reserves are finite. Each epoch releases a fixed percentage of what is left, so the amount paid out from them shrinks every year. Transaction fees are the part of the treasury's income that does not depend on the reserves.",
+            message: "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used.",
           })}
         </p>
       </div>

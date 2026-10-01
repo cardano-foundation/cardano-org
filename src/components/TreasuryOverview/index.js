@@ -129,7 +129,7 @@ export default function TreasuryOverview() {
       labels: {
         epoch: translate({ id: "governance.treasury.overview.chart.epoch", message: "Epoch" }),
         history: translate({ id: "governance.treasury.overview.outlook.series.history", message: "Reserves" }),
-        projection: translate({ id: "governance.treasury.overview.outlook.series.projection", message: "Projection at the recent pace" }),
+        projection: translate({ id: "governance.treasury.overview.outlook.series.projection", message: "Projection based on the past 12 months" }),
       },
     });
   }, [model, points, isDark]);
@@ -162,7 +162,7 @@ export default function TreasuryOverview() {
         <AdaFigure
           loading={loading}
           value={model?.latest.treasury}
-          label={translate({ id: "governance.treasury.overview.stat.treasury", message: "Treasury" })}
+          label={translate({ id: "governance.treasury.overview.stat.treasury", message: "Treasury balance" })}
         />
         <AdaFigure
           loading={loading}
@@ -197,7 +197,7 @@ export default function TreasuryOverview() {
         </p>
         <div className={styles.toggle} role="group">
           <button type="button" className={showAll ? styles.toggleButton : styles.toggleActive} onClick={() => setShowAll(false)}>
-            {translate({ id: "governance.treasury.overview.income.range.recent", message: "Last 2 years" })}
+            {translate({ id: "governance.treasury.overview.income.range.recent", message: "Last two years" })}
           </button>
           <button type="button" className={showAll ? styles.toggleActive : styles.toggleButton} onClick={() => setShowAll(true)}>
             {translate({ id: "governance.treasury.overview.income.range.all", message: "All epochs" })}
@@ -222,7 +222,7 @@ export default function TreasuryOverview() {
             )}
         </p>
         <h3 className={styles.subTitle}>
-          {translate({ id: "governance.treasury.overview.feeShare.title", message: "Share of each epoch's treasury income that came from fees" })}
+          {translate({ id: "governance.treasury.overview.feeShare.title", message: "Share of treasury income from fees (%)" })}
         </h3>
         {model ? (
           <TreasuryChart
@@ -236,7 +236,7 @@ export default function TreasuryOverview() {
         <p className={styles.note}>
           {translate({
             id: "governance.treasury.overview.income.method",
-            message: "Calculated from the protocol parameters τ (treasury cut) and ρ (monetary expansion). Actual on-chain treasury changes match within a few percent in epochs without withdrawals or donations.",
+            message: "Calculated from transaction fees, the reserves and two protocol parameters: τ, the treasury's share of the reward pot, and ρ, the share of the reserves released each epoch. On-chain treasury changes match within a few percent in epochs without withdrawals or donations.",
           })}
         </p>
       </section>
@@ -264,7 +264,7 @@ export default function TreasuryOverview() {
               loading={loading}
               value={income}
               label={translate(
-                { id: "governance.treasury.overview.outlook.yearIncome", message: "Treasury income from reserves per epoch in {year}" },
+                { id: "governance.treasury.overview.outlook.yearIncome", message: "Estimated treasury income from reserves per epoch at the start of {year}" },
                 { year }
               )}
             />
@@ -272,7 +272,7 @@ export default function TreasuryOverview() {
           <AdaFigure
             loading={loading}
             value={model?.feesNeeded}
-            label={translate({ id: "governance.treasury.overview.outlook.feesNeeded", message: "Fees per epoch needed to match today's reserve income" })}
+            label={translate({ id: "governance.treasury.overview.outlook.feesNeeded", message: "Total transaction fees needed per epoch to match the treasury's latest income from reserves" })}
           />
           <AdaFigure
             loading={loading}
@@ -286,7 +286,7 @@ export default function TreasuryOverview() {
             {translate(
               {
                 id: "governance.treasury.overview.outlook.method.body",
-                message: "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%). That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes the protocol parameters and staking behavior stay as they are and does not model any growth in fees. It illustrates the current trend and makes no prediction.",
+                message: "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are.",
               },
               {
                 rate: model?.rate == null ? "n/a" : (model.rate * 100).toFixed(3),

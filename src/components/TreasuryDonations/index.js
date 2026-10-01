@@ -25,7 +25,7 @@ export default function TreasuryDonations() {
       <p>
         {translate({
           id: "governance.treasury.donations.intro",
-          message: "Since the Conway era, a treasury donation sends ada straight back into the treasury. It is mainly used to return money from treasury-funded work, for example budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved.",
+          message: "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. The figures below include all treasury donations, whatever their purpose.",
         })}
       </p>
       <div className={styles.grid}>
@@ -40,7 +40,7 @@ export default function TreasuryDonations() {
         {s.largest && (
           <Figure
             value={formatAdaValue(s.largest.ada)}
-            label={translate({ id: "governance.treasury.donations.largest", message: "Largest in one epoch" })}
+            label={translate({ id: "governance.treasury.donations.largest", message: "Highest total in a single epoch" })}
           >
             <span className={styles.sub}>
               {translate(

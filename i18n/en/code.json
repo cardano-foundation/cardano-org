@@ -10224,7 +10224,7 @@
     "message": "Where the money comes from"
   },
   "governance.treasury.explainer.income.body": {
-    "message": "Every epoch, Cardano pays out rewards from two sources: a share of the remaining reserves and the transaction fees of the previous epoch. 20% of that reward pot goes to the treasury before stake pools and delegators receive the rest. Ada can also flow back through treasury donations, for example when funded work returns money it did not use."
+    "message": "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation."
   },
   "governance.treasury.explainer.spending.title": {
     "message": "How it is spent"
@@ -10236,13 +10236,13 @@
     "message": "Treasury rules in the Constitution"
   },
   "governance.treasury.explainer.spending.accountability": {
-    "message": "What treasury-funded work owes the community"
+    "message": "Standards for treasury-funded work"
   },
   "governance.treasury.explainer.shift.title": {
-    "message": "Why the mix shifts over time"
+    "message": "How reserves affect treasury income"
   },
   "governance.treasury.explainer.shift.body": {
-    "message": "The reserves are finite. Each epoch releases a fixed percentage of what is left, so the amount paid out from them shrinks every year. Transaction fees are the part of the treasury's income that does not depend on the reserves."
+    "message": "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used."
   },
   "governance.treasury.explainer.terms": {
     "message": "Related terms:"
@@ -10293,7 +10293,7 @@
     "message": "Epoch"
   },
   "governance.treasury.overview.stat.treasury": {
-    "message": "Treasury"
+    "message": "Treasury balance"
   },
   "governance.treasury.overview.stat.reserves": {
     "message": "Reserves remaining"
@@ -10314,7 +10314,7 @@
     "message": "Each bar is the treasury's share of one epoch's reward pot, split by source."
   },
   "governance.treasury.overview.income.range.recent": {
-    "message": "Last 2 years"
+    "message": "Last two years"
   },
   "governance.treasury.overview.income.range.all": {
     "message": "All epochs"
@@ -10335,7 +10335,7 @@
     "message": "Over the last 12 months, the reserves contributed about {ratio} times as much to the treasury as transaction fees."
   },
   "governance.treasury.overview.income.method": {
-    "message": "Calculated from the protocol parameters τ (treasury cut) and ρ (monetary expansion). Actual on-chain treasury changes match within a few percent in epochs without withdrawals or donations."
+    "message": "Calculated from transaction fees, the reserves and two protocol parameters: τ, the treasury's share of the reward pot, and ρ, the share of the reserves released each epoch. On-chain treasury changes match within a few percent in epochs without withdrawals or donations."
   },
   "governance.treasury.overview.outlook.title": {
     "message": "Reserves outlook"
@@ -10350,13 +10350,13 @@
     "message": "Reserves"
   },
   "governance.treasury.overview.outlook.series.projection": {
-    "message": "Projection at the recent pace"
+    "message": "Projection based on the past 12 months"
   },
   "governance.treasury.overview.outlook.yearIncome": {
-    "message": "Treasury income from reserves per epoch in {year}"
+    "message": "Estimated treasury income from reserves per epoch at the start of {year}"
   },
   "governance.treasury.overview.outlook.feesNeeded": {
-    "message": "Fees per epoch needed to match today's reserve income"
+    "message": "Total transaction fees needed per epoch to match the treasury's latest income from reserves"
   },
   "governance.treasury.overview.outlook.actualFees": {
     "message": "Actual fees in the last completed epoch"
@@ -10365,13 +10365,13 @@
     "message": "How this projection works"
   },
   "governance.treasury.overview.outlook.method.body": {
-    "message": "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%). That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes the protocol parameters and staking behavior stay as they are and does not model any growth in fees. It illustrates the current trend and makes no prediction."
+    "message": "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are."
   },
   "governance.treasury.donations.title": {
     "message": "Returned funds and donations"
   },
   "governance.treasury.donations.intro": {
-    "message": "Since the Conway era, a treasury donation sends ada straight back into the treasury. It is mainly used to return money from treasury-funded work, for example budget a project did not need, milestones that were not delivered, or ada left over because its price rose after the budget was approved."
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. The figures below include all treasury donations, whatever their purpose."
   },
   "governance.treasury.donations.total": {
     "message": "Received in total"
@@ -10380,7 +10380,7 @@
     "message": "Epochs with donations"
   },
   "governance.treasury.donations.largest": {
-    "message": "Largest in one epoch"
+    "message": "Highest total in a single epoch"
   },
   "governance.treasury.donations.largestDetail": {
     "message": "Epoch {epoch}, {share}% of the total"
@@ -10392,7 +10392,7 @@
     "message": "Donate ada"
   },
   "governance.treasury.overview.feeShare.title": {
-    "message": "Share of each epoch's treasury income that came from fees"
+    "message": "Share of treasury income from fees (%)"
   },
   "governance.treasury.overview.feeShare.aria": {
     "message": "Fee share of the treasury's income per epoch, in percent"
