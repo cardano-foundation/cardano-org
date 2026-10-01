@@ -5,7 +5,8 @@ import { summarizeDonations } from "@site/src/utils/insights/treasuryMath.mjs";
 import snapshot from "@site/src/data/treasury-donations.json";
 import styles from "./styles.module.css";
 
-// Static figures from the committed snapshot, no network request.
+// Donation figures from the committed snapshot, no network request. Headings
+// and links live on the pages that use this block.
 const s = summarizeDonations(snapshot);
 
 function Figure({ value, label, children }) {
@@ -18,16 +19,9 @@ function Figure({ value, label, children }) {
   );
 }
 
-export default function TreasuryDonations({ donateAnchor }) {
+export default function TreasuryDonations() {
   return (
-    <section id="donations" className={styles.board}>
-      <h2>{translate({ id: "governance.treasury.donations.title", message: "Returned funds and donations" })}</h2>
-      <p>
-        {translate({
-          id: "governance.treasury.donations.intro",
-          message: "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. The figures below include all treasury donations, whatever their purpose.",
-        })}
-      </p>
+    <>
       <div className={styles.grid}>
         <Figure
           value={formatAdaValue(s.totalAda)}
@@ -59,9 +53,6 @@ export default function TreasuryDonations({ donateAnchor }) {
           )}
         </p>
       )}
-      <a className="button button--primary" href={`#${donateAnchor}`}>
-        {translate({ id: "governance.treasury.donations.cta", message: "Return unused funds or contribute" })}
-      </a>
-    </section>
+    </>
   );
 }

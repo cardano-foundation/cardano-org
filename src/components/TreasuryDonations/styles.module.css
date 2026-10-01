@@ -1,8 +1,4 @@
 /* Board and figure styles come from the overview so both boards look alike. */
-.board {
-  composes: board from "../TreasuryOverview/styles.module.css";
-}
-
 .figure {
   composes: figure from "../TreasuryOverview/styles.module.css";
 }

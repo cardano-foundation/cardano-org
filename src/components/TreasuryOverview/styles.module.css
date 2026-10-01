@@ -85,15 +85,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.outlook {
-  margin-top: 2rem;
-}
-
-.outlook > summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-
 .toggle {
   display: flex;
   gap: 0.5rem;

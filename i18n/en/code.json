@@ -10439,9 +10439,6 @@
   "governance.treasury.funding.incomeTitle": {
     "message": "Treasury income per epoch by source"
   },
-  "governance.treasury.funding.outlookSummary": {
-    "message": "Long-term outlook for the reserves"
-  },
   "governance.treasury.donate.closedIntro": {
     "message": "Connect a wallet to send ada to the treasury with a treasury donation, for example to return unused funding."
   },
@@ -10468,5 +10465,50 @@
   },
   "governance.treasury.funding.reservesSub": {
     "message": "Not part of the treasury"
+  },
+  "governance.treasury.funding.numbersLink": {
+    "message": "See the treasury in numbers"
+  },
+  "governance.treasury.donations.explainerIntro": {
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. Anyone can use the same transaction to contribute ada to the treasury."
+  },
+  "governance.treasury.donations.figuresLink": {
+    "message": "Donation figures"
+  },
+  "governance.treasury.out.numbers": {
+    "message": "The treasury in numbers"
+  },
+  "insightsTreasury.meta.pageTitle": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.meta.pageDescription": {
+    "message": "The treasury's balance, flows and income from on-chain data, a projection for the reserves, and treasury donations from a regularly updated snapshot."
+  },
+  "insightsTreasury.meta.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.description": {
+    "message": "How the Cardano treasury is funded and how its balance changes, from on-chain data."
+  },
+  "insightsTreasury.intro": {
+    "message": "**The Cardano treasury in numbers.** How its balance changed over the last 12 months, where its income comes from, how the reserves could develop and what the treasury received through treasury donations."
+  },
+  "insightsTreasury.explainerLink": {
+    "message": "What the treasury is and how spending is decided"
+  },
+  "insightsTreasury.income.title": {
+    "message": "Income from reserves and fees"
+  },
+  "insightsTreasury.outlook.title": {
+    "message": "Reserves outlook"
+  },
+  "insightsTreasury.donations.title": {
+    "message": "Treasury donations"
+  },
+  "insightsTreasury.donations.toolLink": {
+    "message": "Return funds or contribute"
   }
 }

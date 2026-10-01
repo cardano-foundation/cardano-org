@@ -46,3 +46,10 @@
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
 }
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}

@@ -8,15 +8,12 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
-import TreasuryDonations from "@site/src/components/TreasuryDonations";
 import useHashRescroll from "@site/src/utils/useHashRescroll";
 import DonateSection from "@site/src/components/TreasuryDonations/DonateSection";
 import { translate } from "@docusaurus/Translate";
 import styles from "./treasury.module.css";
 
-const TreasuryFlows = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFlows"));
 const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-live" */ "@site/src/components/TreasuryOverview/TreasuryFunded"));
-const TreasuryFunding = lazy(() => import(/* webpackChunkName: "treasury-funding" */ "@site/src/components/TreasuryOverview/TreasuryFunding"));
 
 // Shared by the divider, the donation form and every link to the form.
 const DONATE_ANCHOR = "donate";
@@ -79,10 +76,6 @@ export default function TreasuryPage() {
             </p>
           </section>
 
-          <section id="flows" className={styles.section}>
-            <h2>{translate({ id: "governance.treasury.flows.title", message: "Balance and flows over the last 12 months" })}</h2>
-            <ClientOnly minHeight={220}><TreasuryFlows /></ClientOnly>
-          </section>
 
           <section id="funded" className={styles.section}>
             <h2>{translate({ id: "governance.treasury.funded.title", message: "What the treasury funds" })}</h2>
@@ -132,10 +125,30 @@ export default function TreasuryPage() {
                 message: "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used.",
               })}
             </p>
-            <ClientOnly minHeight={900}><TreasuryFunding /></ClientOnly>
+            <p>
+              <Link to="/insights/treasury">
+                {translate({ id: "governance.treasury.funding.numbersLink", message: "See the treasury in numbers" })}
+              </Link>
+            </p>
           </section>
 
-          <TreasuryDonations donateAnchor={DONATE_ANCHOR} />
+          <section id="donations" className={styles.section}>
+            <h2>{translate({ id: "governance.treasury.donations.title", message: "Returned funds and donations" })}</h2>
+            <p>
+              {translate({
+                id: "governance.treasury.donations.explainerIntro",
+                message: "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. Anyone can use the same transaction to contribute ada to the treasury.",
+              })}
+            </p>
+            <div className={styles.buttonRow}>
+              <a className="button button--primary" href={`#${DONATE_ANCHOR}`}>
+                {translate({ id: "governance.treasury.donations.cta", message: "Return unused funds or contribute" })}
+              </a>
+              <Link to="/insights/treasury#donations">
+                {translate({ id: "governance.treasury.donations.figuresLink", message: "Donation figures" })}
+              </Link>
+            </div>
+          </section>
           <p className={styles.terms}>
             {translate({ id: "governance.treasury.explainer.terms", message: "Related terms:" })}{" "}
             <Link to="/glossary/treasury">{translate({ id: "governance.treasury.explainer.term.treasury", message: "Treasury" })}</Link>
@@ -158,6 +171,9 @@ export default function TreasuryPage() {
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
             <div className={styles.crossLinks}>
+              <Link className={styles.crossLinkCard} to="/insights/treasury">
+                {translate({ id: "governance.treasury.out.numbers", message: "The treasury in numbers" })}
+              </Link>
               <Link className={styles.crossLinkCard} to="/insights/supply/summary#treasury">
                 {translate({ id: "governance.treasury.out.history", message: "Full treasury history and withdrawals" })}
               </Link>
