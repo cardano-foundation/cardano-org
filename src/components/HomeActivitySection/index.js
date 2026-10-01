@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import AppTileCarousel from "@site/src/components/AppTileCarousel";
+import AppTile from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import appStatsData from "@site/src/data/tx-stats.json";
 import {
@@ -19,7 +19,9 @@ import styles from "./styles.module.css";
 // category. No live requests, everything comes from src/data.
 
 // Most active app per trackable category, like the unfiltered /apps view.
-const TOP_APPS = getTopAppPerCategory(Showcases).slice(0, 10);
+// Only the top three: further down the list the transaction counts are too
+// small to make the point.
+const TOP_APPS = getTopAppPerCategory(Showcases).slice(0, 3);
 
 // All mainnet transactions in the snapshot window (six full epochs). Shown
 // next to the app figure so the app share is not read as the whole chain.
@@ -91,7 +93,7 @@ export default function HomeActivitySection() {
         ))}
       </dl>
 
-      {/* Sits right above the carousel it describes. */}
+      {/* Sits right above the apps it describes. */}
       {snapshotDate && (
         <p className={styles.carouselNote}>
           {translate(
@@ -104,10 +106,16 @@ export default function HomeActivitySection() {
         </p>
       )}
 
-      <AppTileCarousel
-        apps={TOP_APPS}
-        ariaLabel={translate({ id: "apps.mostActive.title", message: "Most active" })}
-      />
+      <ul
+        className={styles.topApps}
+        aria-label={translate({ id: "apps.mostActive.title", message: "Most active" })}
+      >
+        {TOP_APPS.map((app) => (
+          <li key={app.slug}>
+            <AppTile app={app} />
+          </li>
+        ))}
+      </ul>
 
       <p className={styles.ctaRow}>
         <Link className="button button--primary button--lg" to="/apps">

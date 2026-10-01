@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
-  margin: 0 0 2rem;
+  margin: 1.5rem 0 2rem;
 }
 
 .figure {
@@ -43,6 +43,24 @@ html[data-theme="dark"] .figureValue {
   color: var(--ifm-color-emphasis-700);
 }
 
+.topApps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topApps > li {
+  display: flex;
+  margin: 0;
+}
+
+.topApps > li > * {
+  flex: 1;
+}
+
 .ctaRow {
   margin-top: 1.5rem;
 }
@@ -50,6 +68,12 @@ html[data-theme="dark"] .figureValue {
 @media (max-width: 996px) {
   .figures {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .topApps {
+    grid-template-columns: 1fr;
   }
 }
 
