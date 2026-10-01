@@ -210,10 +210,16 @@ test('flowsOverWindow leaves income unknown when an epoch inside the window is m
   assert.equal(f.paidOut, 65);
 });
 
-test('flowsOverWindow leaves donations unknown when the snapshot is missing or behind', () => {
-  const stale = { ...FLOW_DONATIONS, updatedEpoch: 607 };
-  assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: stale, latestEpoch: 609, window: 5 }).returned, null);
+test('flowsOverWindow counts donations up to the snapshot and says how far it reaches', () => {
+  // Complete: the snapshot ends one epoch before the latest.
+  const full = flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 608 }, latestEpoch: 609, window: 5 });
+  close(full.returned, 10);
+  assert.equal(full.returnedUpTo, 608);
+  // Behind: only donations up to epoch 604 are known.
+  const stale = flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 604 }, latestEpoch: 609, window: 5 });
+  close(stale.returned, 7);
+  assert.equal(stale.returnedUpTo, 604);
+  // Ends before the window or missing: unknown.
+  assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 603 }, latestEpoch: 609, window: 5 }).returned, null);
   assert.equal(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: null, latestEpoch: 609, window: 5 }).returned, null);
-  // A snapshot that ends one epoch before the latest is complete.
-  close(flowsOverWindow({ points: FLOW_POINTS, withdrawals: [], donations: { ...FLOW_DONATIONS, updatedEpoch: 608 }, latestEpoch: 609, window: 5 }).returned, 10);
 });

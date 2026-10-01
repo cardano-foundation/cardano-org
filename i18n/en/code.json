@@ -10450,5 +10450,8 @@
   },
   "governance.treasury.flows.caveat": {
     "message": "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+  },
+  "governance.treasury.flows.receivedUpTo": {
+    "message": "Received through treasury donations, up to epoch {epoch}"
   }
 }

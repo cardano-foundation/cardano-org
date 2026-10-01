@@ -42,6 +42,15 @@ export default function TreasuryFlows() {
 
   const loading = totals.status === "loading" || withdrawals.status === "loading";
   const balance = totals.status === "ready" ? totals.data.at(-1).treasury : null;
+  // The donation snapshot is refreshed by hand, so say how far it reaches when
+  // it stops before the last completed epoch.
+  const snapshotBehind = flows?.returnedUpTo != null && flows.returnedUpTo < totals.data.at(-1).epoch - 1;
+  const receivedLabel = snapshotBehind
+    ? translate(
+        { id: "governance.treasury.flows.receivedUpTo", message: "Received through treasury donations, up to epoch {epoch}" },
+        { epoch: flows.returnedUpTo }
+      )
+    : translate({ id: "governance.treasury.flows.received", message: "Received through treasury donations" });
 
   return (
     <>
@@ -50,7 +59,7 @@ export default function TreasuryFlows() {
         <AdaFigure loading={loading} value={flows?.netChange} signed label={translate({ id: "governance.treasury.flows.change", message: "Change over 12 months" })} />
         <AdaFigure loading={loading} value={flows?.income} label={translate({ id: "governance.treasury.flows.income", message: "Income from reserves and fees (estimated)" })} />
         <AdaFigure loading={loading} value={flows?.paidOut} label={translate({ id: "governance.treasury.flows.withdrawn", message: "Withdrawn from the treasury" })} />
-        <AdaFigure loading={loading} value={flows?.returned} label={translate({ id: "governance.treasury.flows.received", message: "Received through treasury donations" })} />
+        <AdaFigure loading={loading} value={flows?.returned} label={receivedLabel} />
       </div>
       <p className={styles.context}>{flows?.netChange != null && contextSentence(flows.netChange)}</p>
     </>

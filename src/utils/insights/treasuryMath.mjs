@@ -216,12 +216,16 @@ export function flowsOverWindow({ points, withdrawals, donations, latestEpoch, w
   const income =
     incomeEpochs.length === window ? incomeEpochs.reduce((sum, e) => sum + e.reserveShare + e.feeShare, 0) : null;
 
-  // Only when the snapshot covers every donation that reaches this window.
+  // Donations made in startEpoch to latestEpoch - 1 reach this window. The
+  // snapshot is refreshed by hand, so it may stop earlier: the sum then covers
+  // what is known and returnedUpTo says how far. Unknown when it is missing or
+  // ends before the window starts.
+  const covered = Number.isInteger(donations?.updatedEpoch) ? Math.min(donations.updatedEpoch, latestEpoch - 1) : null;
   const returned =
-    Number.isInteger(donations?.updatedEpoch) && donations.updatedEpoch >= latestEpoch - 1
+    covered !== null && covered >= startEpoch
       ? summarizeDonations({
-          updatedEpoch: donations.updatedEpoch,
-          epochs: (donations.epochs ?? []).filter((e) => e?.epoch >= startEpoch && e.epoch < latestEpoch),
+          updatedEpoch: covered,
+          epochs: (donations.epochs ?? []).filter((e) => e?.epoch >= startEpoch && e.epoch <= covered),
         }).totalAda
       : null;
 
@@ -230,5 +234,6 @@ export function flowsOverWindow({ points, withdrawals, donations, latestEpoch, w
     income,
     paidOut: paid.reduce((sum, w) => sum + w.ada, 0),
     returned,
+    returnedUpTo: returned === null ? null : covered,
   };
 }
