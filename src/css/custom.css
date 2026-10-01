@@ -779,6 +779,14 @@ img {
   --section-caret-fill-color: #1b1b1d;
 }
 
+/* Infima leaves the light page background transparent, so the browser's own
+   canvas colour shows through (some embedded browsers paint it grey). Pin the
+   page to white so it matches the white section caret. Only the page itself:
+   components use --ifm-background-color as "transparent" on purpose. */
+html[data-theme="light"] {
+  background-color: #ffffff;
+}
+
 .sectionCaret polygon {
   fill: #ffffff;
 }
