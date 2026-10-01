@@ -4,6 +4,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HomeProofPointsSection from "@site/src/components/HomeProofPointsSection";
 import HomeActivitySection from "@site/src/components/HomeActivitySection";
+import AdopterLogos from "@site/src/components/AdopterLogos";
 import IntentChips from "@site/src/components/showcase/IntentChips";
 import HomeTracking from "@site/src/components/HomeTracking";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
@@ -42,6 +43,7 @@ export default function Home() {
       </div>
       <main>
         <BoundaryBox>
+          <AdopterLogos />
           <div data-section="activity">
             <HomeActivitySection />
           </div>
