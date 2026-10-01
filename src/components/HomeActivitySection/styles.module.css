@@ -7,7 +7,7 @@
 .figures {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 1.5rem 0 2.5rem;
+  margin: 1.5rem 0 0.75rem;
 }
 
 /* Thin dividers between the figures instead of filled boxes. */
@@ -40,6 +40,12 @@ html[data-theme="dark"] .figureValue {
   margin-top: 0.4rem;
   font-weight: normal;
   color: var(--ifm-color-emphasis-700);
+}
+
+.figuresNote {
+  margin: 0 0 2.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
 .carouselNote {

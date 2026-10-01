@@ -10406,7 +10406,7 @@
     "message": "Cardano in use"
   },
   "home.activity.figure.chainTx": {
-    "message": "transactions on Cardano in the last 30 days"
+    "message": "transactions on Cardano in 30 days"
   },
   "home.activity.figure.tx": {
     "message": "of them by showcased apps"
@@ -10443,5 +10443,11 @@
   },
   "apps.intent.lend": {
     "message": "Lend & borrow"
+  },
+  "home.activity.window": {
+    "message": "Snapshot of the 30 days from {start} to {end}."
+  },
+  "home.activity.topApps.note": {
+    "message": "Most active app per category, by on-chain transactions in the same period."
   }
 }

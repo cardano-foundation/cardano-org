@@ -6,11 +6,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import appStatsData from "@site/src/data/tx-stats.json";
-import {
-  getAppStats,
-  getTopAppPerCategory,
-  STATS_GENERATED_AT,
-} from "@site/src/utils/appStats";
+import { getAppStats, getTopAppPerCategory } from "@site/src/utils/appStats";
 import { yearsSinceMainnetLaunch } from "@site/src/utils/mainnetAge";
 import styles from "./styles.module.css";
 
@@ -38,13 +34,28 @@ export default function HomeActivitySection() {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.localeConfigs[i18n.currentLocale]?.htmlLang || i18n.currentLocale;
   const number = new Intl.NumberFormat(locale);
-  const snapshotDate = STATS_GENERATED_AT
-    ? new Date(`${STATS_GENERATED_AT}T00:00:00Z`).toLocaleDateString(locale, {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        timeZone: "UTC",
-      })
+  // The figures and apps come from a snapshot, so the note names its exact
+  // window instead of "the last 30 days" (the start drops the year when both
+  // ends fall in the same year).
+  const snapshotWindow = appStatsData.metadata?.reportingWindow;
+  // The stats file stores UTC timestamps without a zone suffix.
+  const utc = (iso) => new Date(/[zZ]|[+-]\d\d:?\d\d$/.test(iso) ? iso : `${iso}Z`);
+  const formatDay = (date, withYear) =>
+    date.toLocaleDateString(locale, {
+      ...(withYear ? { year: "numeric" } : {}),
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    });
+  const windowLabel = snapshotWindow
+    ? (() => {
+        const start = utc(snapshotWindow.start);
+        const end = utc(snapshotWindow.end);
+        return {
+          start: formatDay(start, start.getUTCFullYear() !== end.getUTCFullYear()),
+          end: formatDay(end, true),
+        };
+      })()
     : null;
 
   const figures = [
@@ -53,7 +64,7 @@ export default function HomeActivitySection() {
       value: number.format(CHAIN_TX),
       label: translate({
         id: "home.activity.figure.chainTx",
-        message: "transactions on Cardano in the last 30 days",
+        message: "transactions on Cardano in 30 days",
       }),
     },
     {
@@ -93,18 +104,24 @@ export default function HomeActivitySection() {
         ))}
       </dl>
 
-      {/* Sits right above the apps it describes. */}
-      {snapshotDate && (
-        <p className={styles.carouselNote}>
+      {windowLabel && (
+        <p className={styles.figuresNote}>
           {translate(
             {
-              id: "apps.mostActive.subtitle",
-              message: "Top apps by on-chain transactions over the last 30 days. Snapshot from {date}.",
+              id: "home.activity.window",
+              message: "Snapshot of the 30 days from {start} to {end}.",
             },
-            { date: snapshotDate }
+            windowLabel
           )}
         </p>
       )}
+
+      <p className={styles.carouselNote}>
+        {translate({
+          id: "home.activity.topApps.note",
+          message: "Most active app per category, by on-chain transactions in the same period.",
+        })}
+      </p>
 
       <ul
         className={styles.topApps}
