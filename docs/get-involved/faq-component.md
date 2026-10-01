@@ -56,16 +56,18 @@ import React, { useState } from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Collapsible from "react-collapsible";
 import { renderAnswerArray } from "@site/src/utils/textUtils";
-import operationFAQ from "@site/src/data/operationFAQ.json";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 const faqData = {
-  operationFAQ,
   pineappleFAQ,
 };
 ```
 
 This registers your JSON file so it can be referenced by name when using the component.
+
+:::tip Translated pages
+Strings in a JSON file never reach Crowdin, so they stay English on `/de/`, `/ja/` and the other locales. For an FAQ on a translated page, write the data as a function that returns the same shape with literal `translate({ id, message })` calls, like `src/data/whatIsCardanoFAQ.js` or `src/data/operationFAQ.js`, add the new ids to `i18n/en/code.json`, and pass the result with `<FAQSection data={getMyFAQ()} />`.
+:::
 
 ## Props
 
