@@ -2,6 +2,9 @@ import { translate } from "@docusaurus/Translate";
 
 // FAQ for /stake-pool-operation as literal translate() calls so the strings
 // reach Crowdin. Answer lines starting with "- " render as list items.
+//
+// FIXME: some answers seem to be very outdated, also needs more links
+// FIXME: need to make clear that protocol distributes rewards and pools do not have custody
 export function getOperationFAQ() {
   return [
     {

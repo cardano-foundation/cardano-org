@@ -9,7 +9,7 @@ export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
 
   useEffect(() => {
-    const categoryTerms = category && getTermsForTermExplainer()[category];
+    const categoryTerms = getTermsForTermExplainer()[category];
     if (categoryTerms) {
       const randomTerms = categoryTerms.sort(() => 0.5 - Math.random()).slice(0, 2);
       // Pick random terms on the client only to avoid an SSR hydration mismatch.
