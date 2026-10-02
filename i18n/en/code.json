@@ -11199,5 +11199,320 @@
   },
   "governance.compare.divider": {
     "message": "Compare your options"
+  },
+  "programmableTokens.meta.title": {
+    "message": "Programmable Tokens for Regulated Assets"
+  },
+  "programmableTokens.meta.description": {
+    "message": "Cardano's open-source programmable tokens standard implements logic like KYC, AML, or transfer restrictions at the asset level and on a public ledger."
+  },
+  "programmableTokens.hero.title": {
+    "message": "Programmable Tokens for Regulated Assets"
+  },
+  "programmableTokens.hero.subtitle": {
+    "message": "Enforce KYC, AML, sanctions screening, freeze, and transfer restrictions natively at the asset level. Already available on Cardano's mainnet today."
+  },
+  "programmableTokens.hero.body": {
+    "message": "Major international bodies and standard setters — from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board — have suggested similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork, wrapping assets in a secondary smart contract layer, or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks."
+  },
+  "programmableTokens.hero.button": {
+    "message": "Plan Your Implementation"
+  },
+  "programmableTokens.partners.ariaLabel": {
+    "message": "Partners and users of Cardano programmable tokens"
+  },
+  "programmableTokens.why.title": {
+    "message": "Why Regulated Tokenization Requires Compliance at the Token Level"
+  },
+  "programmableTokens.why.paragraph1": {
+    "message": "For regulated financial assets — such as [stablecoins](/stablecoins), bonds, shares, or other securities — to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, ownership restrictions, or transfer controls throughout every asset movement."
+  },
+  "programmableTokens.why.paragraph2": {
+    "message": "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describes programmability as the ability to embed compliance conditions into the asset itself and execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation."
+  },
+  "programmableTokens.why.quote": {
+    "message": "Seamlessness requires compliance that executes at the same layer as settlement, not after it."
+  },
+  "programmableTokens.why.context1": {
+    "message": "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets, and asset types. Relevant frameworks around the world — such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets — illustrate the breadth of requirements that issuers and market participants may need to address."
+  },
+  "programmableTokens.why.context2": {
+    "message": "Realizing the full potential of tokenization therefore requires more than putting an asset on-chain. It also requires the ability to translate relevant rules and conditions into the blockchain environment. Programmability supports this by turning these rules into logic that can be applied automatically at the asset and transaction level in a consistent and efficient manner."
+  },
+  "programmableTokens.why.context3": {
+    "message": "Cardano's new Programmable Tokens standard creates a flexible framework for doing so on the Cardano infrastructure. Rather than prescribing a single compliance model, it enables relevant controls — such as investor eligibility, transfer restrictions, freezes or other asset-specific conditions — to be implemented according to the requirements of the particular asset, jurisdiction and use case. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically."
+  },
+  "programmableTokens.compliance.title": {
+    "message": "How Cardano's Programmable Tokens Standard Enables Compliance by Design"
+  },
+  "programmableTokens.compliance.intro": {
+    "message": "The Cardano Programmable Tokens standard attaches modular compliance logic directly to a Cardano native asset, so that the rules an issuer defines — like allow-listing, deny-listing, freeze, seize, or transfer restrictions — execute automatically every time the token is transferred, minted, or burned. All enforced by the ledger itself."
+  },
+  "programmableTokens.compliance.card1": {
+    "message": "Token issuers determine the rules their assets will have to follow and have full flexibility to customize each rule. The sets of rules get packaged into **modules**, giving companies the flexibility they need to address different use cases and scenarios, considering varying jurisdictions and regulatory frameworks. The Cardano Programmable Tokens standard also comes with integration guides for wallets, explorers, indexers, or general applications."
+  },
+  "programmableTokens.compliance.card2": {
+    "message": "Every single time, the Cardano network will recognize and process the token natively at the ledger level, just like any other Cardano native asset."
+  },
+  "programmableTokens.compliance.card3": {
+    "message": "By using a modular approach, this Cardano standard gives issuers access to define the compliance rules individually. They simply have to build or select the right module, then configure it according to their requirements, specifying under which conditions a token can be minted, burned, or transferred."
+  },
+  "programmableTokens.compliance.card4": {
+    "message": "Through the entire process, there's no need to adjust the general standard or the core protocol. And as regulations evolve, companies and institutions can independently add more modules or update existing ones."
+  },
+  "programmableTokens.compliance.audit": {
+    "message": "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been certified under the CMTA framework, ensuring the availability of relevant compliance and technical functions. Anastasia Labs also performed several security checks."
+  },
+  "programmableTokens.resources.title": {
+    "message": "Cardano Programmable Tokens Resources"
+  },
+  "programmableTokens.resources.ariaLabel": {
+    "message": "Cardano programmable tokens resources"
+  },
+  "programmableTokens.resources.prev": {
+    "message": "Previous resources"
+  },
+  "programmableTokens.resources.next": {
+    "message": "Next resources"
+  },
+  "programmableTokens.resources.introduction": {
+    "message": "An introduction to programmable tokens on Cardano"
+  },
+  "programmableTokens.resources.financialServices": {
+    "message": "The importance of blockchain for financial services"
+  },
+  "programmableTokens.capabilities.title": {
+    "message": "Programmable Token Capabilities for Institutional Asset Issuers"
+  },
+  "programmableTokens.capabilities.intro": {
+    "message": "Cardano's Programmable Tokens framework has robust capabilities for several enterprise and financial institutional needs. Organizations can customize a module to include various types of logic according to their specific need."
+  },
+  "programmableTokens.capabilities.examplesIntro": {
+    "message": "Here are some examples of the rules a module can include."
+  },
+  "programmableTokens.capabilities.kyc.title": {
+    "message": "KYC and AML Enforcement"
+  },
+  "programmableTokens.capabilities.kyc.body": {
+    "message": "Restrict token transfers to verified holders only. Including an allow-listing in a module gives issuers the ability to automatically enforce on-chain that only addresses that have passed KYC and AML verification are allowed to receive or send a token."
+  },
+  "programmableTokens.capabilities.sanctions.title": {
+    "message": "Sanctions Screening"
+  },
+  "programmableTokens.capabilities.sanctions.body": {
+    "message": "Prevent transfers to or from sanctioned addresses. Modules can incorporate deny-lists that block token movements involving addresses on a sanctions list, executing the check at the ledger level without requiring an off-chain verification step."
+  },
+  "programmableTokens.capabilities.freeze.title": {
+    "message": "Freeze and Seize"
+  },
+  "programmableTokens.capabilities.freeze.body": {
+    "message": "Respond to legal orders, or implement regulatory requirements by freezing specific token holdings or seizing assets. Freeze and seize functions allow issuers to halt transfers or recover tokens from designated addresses, fulfilling the enforcement requirements courts and regulators may impose."
+  },
+  "programmableTokens.capabilities.transfer.title": {
+    "message": "Transfer Restrictions"
+  },
+  "programmableTokens.capabilities.transfer.body": {
+    "message": "Define jurisdiction-specific or instrument-specific transfer conditions. Issuers can configure rules governing which counterparties, geographies, or holding periods are permissible and so reflect the specific legal requirements of the instrument being tokenized."
+  },
+  "programmableTokens.capabilities.closing": {
+    "message": "Cardano's Programmable Tokens are modular and fully customizable."
+  },
+  "programmableTokens.capabilities.button": {
+    "message": "Create Your Module"
+  },
+  "programmableTokens.architecture.title": {
+    "message": "The Technical Architecture of Cardano's Programmable Tokens Standard"
+  },
+  "programmableTokens.architecture.diagram.ariaLabel": {
+    "message": "Architecture of the programmable tokens standard: wallets, indexers, explorers, and DApps integrate with the CIP-0113 core validator, which runs the issuer's modules on top of a shared script address and stake credentials."
+  },
+  "programmableTokens.architecture.diagram.wallets": {
+    "message": "Wallets"
+  },
+  "programmableTokens.architecture.diagram.indexers": {
+    "message": "Indexers"
+  },
+  "programmableTokens.architecture.diagram.explorers": {
+    "message": "Explorers"
+  },
+  "programmableTokens.architecture.diagram.dapps": {
+    "message": "DApps"
+  },
+  "programmableTokens.architecture.diagram.core": {
+    "message": "CIP-0113 core validator"
+  },
+  "programmableTokens.architecture.diagram.withdrawZero": {
+    "message": "withdraw-zero pattern"
+  },
+  "programmableTokens.architecture.diagram.predictableCosts": {
+    "message": "predictable costs"
+  },
+  "programmableTokens.architecture.diagram.noHardFork": {
+    "message": "without a hard fork"
+  },
+  "programmableTokens.architecture.diagram.modules": {
+    "message": "Modules"
+  },
+  "programmableTokens.architecture.diagram.allowlist": {
+    "message": "Allow listing"
+  },
+  "programmableTokens.architecture.diagram.denylist": {
+    "message": "Deny listing"
+  },
+  "programmableTokens.architecture.diagram.freeze": {
+    "message": "Freeze"
+  },
+  "programmableTokens.architecture.diagram.seize": {
+    "message": "Seize"
+  },
+  "programmableTokens.architecture.diagram.transferRestrictions": {
+    "message": "Transfer restrictions"
+  },
+  "programmableTokens.architecture.diagram.sharedScript": {
+    "message": "shared script address"
+  },
+  "programmableTokens.architecture.diagram.stakeCredentials": {
+    "message": "stake credentials"
+  },
+  "programmableTokens.architecture.paragraph1": {
+    "message": "The Cardano Programmable Tokens standard relies on CIP-0113. It provides a modular, open-source reference implementation written in Aiken that enforces compliance logic on every transfer, mint, and burn, without needing a hard fork. The rules are evaluated once per transaction rather than once for every holding it touches, so costs stay predictable as transaction size grows. The standard uses a withdraw-zero pattern as well as a stake-credential-based ownership."
+  },
+  "programmableTokens.architecture.paragraph2": {
+    "message": "The architecture places programmable tokens in a shared, secure script address on the Cardano blockchain. Token ownership changes when the tokens are transacted, and owners can access them through their wallets, but the assets themselves never leave the shared script address. Ownership is determined by the stake credentials rather than the script itself."
+  },
+  "programmableTokens.architecture.paragraph3": {
+    "message": "Every time a token moves, a compliance script performs an automatic check to verify the rules. It guarantees no rule can be skipped. The check happens once for each transaction and is independent of how many tokens the transaction moves, which keeps execution costs predictable and provides fee efficiency."
+  },
+  "programmableTokens.architecture.paragraph4": {
+    "message": "Modules are a pluggable additional layer. Each module is an independent set of smart contracts that satisfy the validation interface CIP-0113 defines. Issuers select the module relevant to their use case. Anyone can write custom modules and integrate them into the framework without modifying the core validator."
+  },
+  "programmableTokens.architecture.paragraph5": {
+    "message": "The standard builds on the architectural foundations established in CIP-0143, developed by Philip DiSarro and Jann Müller from IOG. The Cardano Foundation rebuilt the implementation in Aiken and added in-place upgradeability so deployed compliance logic can be replaced without reissuing tokens. The Foundation also developed the off-chain infrastructure and preview platform, and drove the evolution to the more comprehensive CIP-0113 standard."
+  },
+  "programmableTokens.developer.title": {
+    "message": "Programmable Tokens Resources for Developers"
+  },
+  "programmableTokens.developer.repository": {
+    "message": "CIP-0113 repository"
+  },
+  "programmableTokens.developer.architecture": {
+    "message": "Architecture deep-dive"
+  },
+  "programmableTokens.developer.validators": {
+    "message": "Validators"
+  },
+  "programmableTokens.developer.discussion": {
+    "message": "Discussion"
+  },
+  "programmableTokens.regulatory.title": {
+    "message": "Regulatory Context for Programmable Tokens – Global Technology, Different Rulebooks"
+  },
+  "programmableTokens.regulatory.intro2": {
+    "message": "A token may move globally, but the rules governing it do not. The regulatory treatment of a tokenized asset depends on what the asset represents, where it is issued or offered, who interacts with it, and the activities being performed."
+  },
+  "programmableTokens.regulatory.intro3": {
+    "message": "There is no uniform regulatory approach to tokenization. Some jurisdictions apply established financial-market rules to tokenized versions of existing instruments, others have introduced dedicated regimes for particular categories of digital assets, and many combine both approaches. The result is an increasingly sophisticated — but fragmented — global regulatory landscape."
+  },
+  "programmableTokens.regulatory.leadIn": {
+    "message": "Some of the world's major financial markets illustrate these different approaches:"
+  },
+  "programmableTokens.regulatory.disclaimer": {
+    "message": "This overview is provided for illustrative purposes only and is not intended to be comprehensive or to reflect all applicable or current regulatory aspects. Regulatory frameworks continue to evolve and may apply differently depending on the asset, activity and circumstances."
+  },
+  "programmableTokens.regulatory.tabsAriaLabel": {
+    "message": "Jurisdiction"
+  },
+  "programmableTokens.jurisdiction.eu": {
+    "message": "European Union"
+  },
+  "programmableTokens.regulatory.eu.overview": {
+    "message": "The EU generally follows a technology-neutral approach. Crypto-assets that qualify as financial instruments remain subject to [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj), [MiFIR](https://eur-lex.europa.eu/eli/reg/2014/600/oj) and related securities legislation. The [DLT Pilot Regime](https://eur-lex.europa.eu/eli/reg/2022/858/oj) provides a regulatory sandbox for the trading and settlement of certain financial instruments using distributed ledger technology. Crypto-assets are generally covered by the [Markets in Crypto-Assets Regulation (MiCA)](https://eur-lex.europa.eu/eli/reg/2023/1114/oj), including its specific regimes for stablecoins and crypto-asset service providers."
+  },
+  "programmableTokens.jurisdiction.ch": {
+    "message": "Switzerland"
+  },
+  "programmableTokens.regulatory.ch.overview": {
+    "message": "Switzerland integrates digital assets into its existing legal and financial-market framework while providing specific rules for DLT-based assets and infrastructure. The [DLT Act](https://www.fedlex.admin.ch/eli/fga/2020/2696/en) introduced ledger-based securities, enabling rights to be represented and transferred through qualifying electronic registers, while the general regulatory treatment of digital assets and related activities depends on their characteristics and function."
+  },
+  "programmableTokens.jurisdiction.uk": {
+    "message": "United Kingdom"
+  },
+  "programmableTokens.regulatory.uk.overview": {
+    "message": "The UK builds on the existing [Financial Services and Markets Act 2000 (FSMA)](https://www.legislation.gov.uk/ukpga/2000/8/contents), while extending the regulatory perimeter to specified cryptoasset activities. The [FSMA 2000 (Cryptoassets) Regulations 2026](https://www.legislation.gov.uk/uksi/2026/102/contents) introduce regulated activities relating to qualifying cryptoassets and stablecoins, with the [FCA's new cryptoasset regime](https://www.fca.org.uk/firms/new-regime-cryptoasset-regulation) expected to apply from late 2027. Tokenized forms of existing regulated investments may remain subject to the rules applicable to the underlying type of investment."
+  },
+  "programmableTokens.jurisdiction.usShort": {
+    "message": "United States"
+  },
+  "programmableTokens.regulatory.us.overview": {
+    "message": "US regulation depends on the nature and structure of the asset. The [SEC's January 2026 statement on tokenized securities](https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities) confirms that securities law continues to apply to securities represented on-chain and distinguishes issuer-sponsored and third-party tokenization models. A March 2026 [SEC/CFTC interpretation](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf) introduced a five-category [crypto-asset taxonomy](https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets), while the SEC's proposed [Regulation Crypto Assets](https://www.sec.gov/rules-regulations/2026/08/s7-2026-27) would create a tailored offering framework for certain crypto-asset investment contracts. Payment stablecoins are addressed separately under the federal [GENIUS Act](https://www.govinfo.gov/app/details/PLAW-119publ27)."
+  },
+  "programmableTokens.jurisdiction.sg": {
+    "message": "Singapore"
+  },
+  "programmableTokens.regulatory.sg.overview": {
+    "message": "Singapore largely applies its existing financial-services framework according to the nature of the asset and activity. Tokenized capital-markets products may fall within the [Securities and Futures Act 2001](https://sso.agc.gov.sg/Act/SFA2001), digital payment token services within the [Payment Services Act 2019](https://sso.agc.gov.sg/Act/PSA2019), and certain cross-border digital token services within the [Financial Services and Markets Act 2022](https://sso.agc.gov.sg/Act/FSMA2022). The [Monetary Authority of Singapore](https://www.mas.gov.sg/) (MAS) has actively supported institutional tokenization through initiatives such as [Project Guardian](https://www.mas.gov.sg/schemes-and-initiatives/project-guardian), which explores programmable infrastructure, including the integration of automated compliance checks into tokenized transactions."
+  },
+  "programmableTokens.jurisdiction.jp": {
+    "message": "Japan"
+  },
+  "programmableTokens.regulatory.jp.overview": {
+    "message": "Japan distinguishes between categories of tokenized assets. Security tokens may be treated under the [Financial Instruments and Exchange Act (FIEA)](https://www.fsa.go.jp/en/policy/fiel/index.html) as electronically recorded transferable rights. Stablecoins (electronic payment instruments) and, until now, crypto-assets have been addressed under the Payment Services Act. [2026 amendments to the FIEA and the Payment Services Act](https://www.fsa.go.jp/common/diet/221/02/04.pdf) are set to move crypto-assets into the FIEA framework."
+  },
+  "programmableTokens.jurisdiction.br": {
+    "message": "Brazil"
+  },
+  "programmableTokens.regulatory.br.overview": {
+    "message": "Brazil applies different regulatory frameworks depending on the nature of the digital asset and activity. Virtual asset services are generally overseen by the Banco Central do Brasil under the country's [virtual asset framework](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14478.htm), while tokens that qualify as securities may instead fall within the remit of the Comissão de Valores Mobiliários (CVM), as reflected in [CVM Guidance Opinion No. 40](https://conteudo.cvm.gov.br/legislacao/pareceres-orientacao/pare040.html)."
+  },
+  "programmableTokens.jurisdiction.global": {
+    "message": "Global standard setters — FATF, FSB, IOSCO and the Basel Committee"
+  },
+  "programmableTokens.regulatory.global.overview": {
+    "message": "National regimes are also shaped by international standards. [FATF Recommendation 15](https://www.fatf-gafi.org/en/topics/virtual-assets) extends AML/CFT standards, including the Travel Rule, to virtual assets and VASPs; the [FSB's global framework](https://www.fsb.org/2025/10/thematic-review-on-fsb-global-regulatory-framework-for-crypto-asset-activities/) promotes the principle of “same activity, same risk, same regulation”; and [IOSCO](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf) and the [Basel Committee](https://www.bis.org/bcbs/publ/d545.htm) address, respectively, crypto-asset market regulation and banks' prudential exposures."
+  },
+  "programmableTokens.regulatory.conclusion1": {
+    "message": "**There is no single global rulebook for tokenized assets — and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets, and regulatory requirements without requiring a different technological foundation for each."
+  },
+  "programmableTokens.regulatory.conclusion2": {
+    "message": "Cardano's Programmable Tokens standard provides that flexible foundation, enabling relevant rules and controls to be configured for specific assets and use cases while building on a common framework."
+  },
+  "programmableTokens.cta.button": {
+    "message": "Get Implementation Support"
+  },
+  "programmableTokens.faq.title": {
+    "message": "Programmable Tokens: Frequently Asked Questions"
+  },
+  "programmableTokens.faq.what.question": {
+    "message": "What are programmable tokens?"
+  },
+  "programmableTokens.faq.what.answer": {
+    "message": "Programmable tokens are digital assets on a blockchain whose transfer, minting, and burning conditions are governed by rules encoded directly into the asset itself and enforced automatically by the ledger on every transaction. Unlike conventional on-chain tokens, programmable tokens can restrict transfers to verified holders, respond to legal orders, and enforce sanctions screening without requiring a separate off-chain compliance layer."
+  },
+  "programmableTokens.faq.cip.question": {
+    "message": "What is CIP-0113?"
+  },
+  "programmableTokens.faq.cip.answer1": {
+    "message": "CIP-0113 is an open source Cardano standard for tokenized assets such as stablecoins and real-world assets (RWAs). It enables token issuers to attach modular compliance logic directly to native Cardano assets and have it enforced by the ledger on every transfer, mint, or burn. It lets enterprises implement KYC allow lists, AML deny lists, freeze functions, and transfer restrictions, among other options."
+  },
+  "programmableTokens.faq.cip.answer2": {
+    "message": "The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source in the Cardano Foundation's GitHub repository, along with integration guidance for wallet developers, DApp builders, indexers, and explorers."
+  },
+  "programmableTokens.faq.how.question": {
+    "message": "How do programmable tokens work?"
+  },
+  "programmableTokens.faq.how.answer": {
+    "message": "CIP-0113 attaches a shared compliance validator to a token using a withdraw-zero pattern, so that defined rules execute automatically on every token transfer without the script holding any funds. Compliance conditions are specified in pluggable modules chosen or designed by the issuer. The token remains a first-class native Cardano asset — visible in compatible wallets and explorers — with compliance logic running transparently at the ledger level."
+  },
+  "programmableTokens.faq.compliance.question": {
+    "message": "What is token-level compliance?"
+  },
+  "programmableTokens.faq.compliance.answer": {
+    "message": "Token-level compliance means that certain compliance-related conditions and transfer restrictions can be enforced directly through the token's on-chain logic, supporting controls and verifications, for example, for KYC, AML, and sanctions compliance purposes. Cardano's Programmable Tokens standard implements token-level compliance features on Cardano, embedding those controls directly into the asset so they execute automatically. The code has been independently audited, including its upgradeability. The transaction model used also inherits Cardano's characteristics, ensuring costs stay predictable as transaction size grows."
+  },
+  "programmableTokens.faq.kyc.question": {
+    "message": "How does blockchain enforce KYC and AML compliance?"
+  },
+  "programmableTokens.faq.kyc.answer": {
+    "message": "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would not be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for the case of sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than by an off-chain intermediary."
   }
 }

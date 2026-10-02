@@ -1,0 +1,137 @@
+/*
+ * Architecture diagram (Figma node 583:273). A subtle panel with four layers
+ * joined by 20px connectors. The core validator block keeps the brand blue
+ * with white text in both themes; every other surface uses theme tokens.
+ */
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 28px;
+  border-radius: var(--site-radius-xl);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.row,
+.wrap {
+  display: flex;
+  gap: var(--site-space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row > li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Shared chip shape: semibold, 9px / 12px padding, 8px radius. The font
+   size is set per chip type below rather than overridden, because the
+   production CSS bundle can reorder rules of equal specificity. */
+.chip,
+.baseChip,
+.coreChip,
+.tintChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: var(--site-radius-md);
+  font-weight: 600;
+  line-height: 15px;
+  text-align: center;
+}
+
+.chip {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 11px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.baseChip {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+  font-size: 12px;
+}
+
+.connector {
+  align-self: center;
+  width: 1px;
+  height: 20px;
+  margin: 10px 0;
+  background: var(--ifm-color-emphasis-300);
+}
+
+/* Core validator: brand blue in both themes, like the page's blue band. */
+.core {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border-radius: var(--site-radius-lg);
+  background: #0033ad;
+}
+
+.coreTitle {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.coreChip {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-xs);
+  padding: 18px;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-background-surface-color);
+}
+
+.modulesTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.tintChip {
+  font-size: 11px;
+  background: var(--site-tint-strong);
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 480px) {
+  .diagram {
+    padding: var(--site-space-sm);
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .row > li {
+    flex-basis: calc(50% - var(--site-space-2xs) / 2);
+  }
+}

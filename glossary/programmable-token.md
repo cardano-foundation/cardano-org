@@ -4,6 +4,7 @@ slug: programmable-token
 short: "A native token that can only change owner when a script approves the transfer, so the issuer can enforce rules like allowlists, transfer limits, or freezes on the token's transfers. CIP-113 is the proposed standard for them on Cardano."
 category: tokens
 level: intermediate
+link: /programmable-tokens
 aliases: ["CIP-113", "Programmable Tokens", "Smart Token"]
 mentalModel: "A native token with a rulebook attached. It still lives in the ledger like any other token, but it is always held by a shared smart contract, and every move has to pass the token's rules before the ledger accepts it."
 related: [native-token, stablecoin, smart-contract, stake-address, cip]
