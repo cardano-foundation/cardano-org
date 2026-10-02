@@ -9,9 +9,9 @@ sidebar_position: 11
 
 ## 課題
 
-Social programs aimed at poverty reduction, disaster relief, and development face persistent challenges with fund distribution. Corruption siphons resources away from intended beneficiaries, while administrative inefficiencies add costs and delays. Donors and taxpayers often lack visibility into how funds are actually used.
+貧困削減、災害救援、開発支援を目的とした社会プログラムは、資金の配分に根強い課題を抱えています。汚職によって本来の受益者に届くはずの資源が流用され、事務の非効率がコストと遅延を増やしています。寄付者や納税者は、資金が実際にどう使われているのかを把握できないことが少なくありません。
 
-For beneficiaries, accessing aid can involve bureaucratic hurdles, intermediaries who extract fees, and delays that undermine the program's effectiveness. Proving eligibility and preventing duplicate claims adds further complexity.
+受益者にとっては、支援を受けるまでに煩雑な手続き、手数料を取る仲介者、遅延といった壁があり、プログラムの効果が損なわれています。受給資格の証明や二重受給の防止も、仕組みをさらに複雑にしています。
 
 ## ブロックチェーンによる解決策
 
@@ -19,7 +19,7 @@ For beneficiaries, accessing aid can involve bureaucratic hurdles, intermediarie
 
 - **透明な資金配分**: すべてのトランザクションが公開監査可能で、汚職を抑止
 - **直接配分**: 仲介者を介さず、資金を受益者に直接届けられる
-- **条件付き支払い**: スマートコントラクトにより、特定の条件が満たされた場合にのみ資金をリリース
+- **条件付き支払い**: スマートコントラクトにより、特定の条件が確認された時点で資金を支給
 - **アイデンティティとの統合**: ブロックチェーンベースのID技術でプライバシーを守りつつ受益者を確認
 - **リアルタイム監視**: プログラム管理者や寄付者が資金の利用状況をリアルタイムで追跡可能
 

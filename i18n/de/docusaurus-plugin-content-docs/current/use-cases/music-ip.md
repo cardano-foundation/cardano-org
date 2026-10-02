@@ -9,7 +9,7 @@ sidebar_position: 16
 
 ## Die Herausforderung
 
-Künstler und Kreative erhalten oft nur einen Bruchteil der Einnahmen, die ihre Werke erzielen. Komplexe Lizenzkonstrukte, undurchsichtige Tantiemenabrechnungen und zahlreiche Zwischenstationen sorgen dafür, dass Zahlungen bei jedem Schritt später ankommen und kleiner werden. Viele Kreative können von ihrer Arbeit kaum leben, obwohl ihre Werke millionenfach konsumiert werden.
+Künstler und Kreative erhalten oft nur einen Bruchteil der Einnahmen, die ihre Werke erzielen. Komplexe Lizenzkonstrukte, undurchsichtige Tantiemenabrechnungen und zahlreiche Zwischenstationen sorgen dafür, dass Zahlungen bei jedem Schritt später ankommen und kleiner werden. Viele Kreative können von ihrer Arbeit kaum leben, obwohl ihre Werke ein großes Publikum erreichen.
 
 Rechte an geistigem Eigentum sind im digitalen Zeitalter schwer nachzuverfolgen und durchzusetzen. Piraterie ist allgegenwärtig, und selbst legale Nutzungen vergüten die Urheber oft nicht fair.
 
@@ -19,7 +19,7 @@ Blockchain-Technologie ermöglicht direkte Beziehungen zwischen Kreativen und ih
 
 - **Direkte Zahlungen**: Fans unterstützen Künstler, ohne dass Zwischenhändler große Anteile einbehalten
 - **Transparente Tantiemen**: Smart Contracts verteilen Zahlungen automatisch an alle Rechteinhaber
-- **Unveränderliches Eigentum**: Urheberschaft und Eigentum an geistigem Eigentum lassen sich belegen
+- **Unveränderliches Eigentum**: Urheberschaft und Besitz geistigen Eigentums lassen sich belegen
 - **Anteilige Rechte**: Tokenisierung ermöglicht Investitionen in kreative Werke
 - **Programmierbare Lizenzen**: Smart Contracts setzen Nutzungsbedingungen automatisch durch
 

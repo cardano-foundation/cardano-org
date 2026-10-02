@@ -1,13 +1,13 @@
 ---
 title: Anwendungsfälle
 description: Entdecke, wie die Cardano-Blockchain reale Probleme in allen Branchen löst
-sidebar_label: Anwendungsfälle
+sidebar_label: Übersicht
 sidebar_position: 1
 ---
 
-# Cardano Anwendungsfälle
+# Cardano-Anwendungsfälle
 
-Cardano ist eine öffentliche, frei zugängliche Layer-1-Blockchain, die sich ideal für Unternehmen und Privatpersonen eignet, die nach sicheren, skalierbaren und transparenten Lösungen suchen. Ob es um die Optimierung von Lieferketten, die Abwicklung globaler Zahlungen oder die Tokenisierung von Vermögenswerten geht: Cardano bietet dezentrale Innovationen mit hoher Sicherheit und geringem Energieverbrauch.
+Cardano ist eine öffentliche, frei zugängliche Layer-1-Blockchain. Sie eignet sich ideal für Unternehmen und Privatpersonen, die sichere, skalierbare und transparente Lösungen suchen. Ob es um die Optimierung von Lieferketten, die Abwicklung globaler Zahlungen oder die Tokenisierung von Vermögenswerten geht: Cardano bietet dezentrale Innovationen mit hoher Sicherheit und geringem Energieverbrauch.
 
 ## Identität
 
@@ -15,7 +15,7 @@ Blockchain-basierte Identitätslösungen bieten sichere, überprüfbare Identit�
 
 - **[Bildungsnachweise](./education)**: Blockchain-verifizierte akademische Zeugnisse
 - **[Digitale Identität](./digital-identity)**: Lösungen für selbstbestimmte Identität
-- **[Finance KYC](./finance-kyc)**: Optimierte Identitätsprüfung für Finanzdienstleistungen
+- **[Finanz-KYC](./finance-kyc)**: Optimierte Identitätsprüfung für Finanzdienstleistungen
 - **[Behördendokumente](./government)**: Fälschungssichere amtliche Dokumente
 
 ## Finanzwirtschaft

@@ -9,13 +9,13 @@ sidebar_position: 8
 
 ## 課題
 
-Modern food supply chains are complex and opaque. Consumers increasingly want to know where their food comes from, how it was produced, and whether claims about organic, fair trade, or sustainable practices are genuine. Food fraud costs the global industry an estimated $40 billion annually.
+現代の食品サプライチェーンは複雑で不透明です。消費者は、食品がどこから来て、どのように生産されたのか、そしてオーガニックやフェアトレード、持続可能な生産といった表示が本当なのかを知りたいと考えるようになっています。食品偽装による業界全体の損失は、世界で年間推定400億ドルにのぼります。
 
-農家や生産者にとって、自らの製品の品質や産地を証明することは難しく、コストもかかります。価値の多くは仲介業者に取られ、生産者は市場で自らの製品を差別化することに苦労しています。 Intermediaries capture much of the value, while producers struggle to differentiate their products in the market.
+農家や生産者にとって、自らの製品の品質や産地を証明することは難しく、コストもかかります。価値の多くは仲介業者に取られ、生産者は市場で自らの製品を差別化することに苦労しています。
 
 ## ブロックチェーンによる解決策
 
-Blockchain technology creates an immutable record of a product's journey from farm to table:
+ブロックチェーン技術は、農場から食卓までの製品の流れを改ざん不可能な記録として残します。
 
 - **産地証明**: 製品がどこでどのように生産されたかを正確に証明
 - **品質保証**: サプライチェーン全体を通じて温度や取り扱いなどの品質指標を記録
@@ -25,7 +25,7 @@ Blockchain technology creates an immutable record of a product's journey from fa
 
 スマートコントラクトにより、製品が品質基準を満たした際に農家への支払いを自動化し、遅延や紛争を減らして公正な報酬を確保できます。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **低い取引コスト**により、低価格の農産物でも経済的に追跡が可能
 - **サステナビリティへの取り組み**が農業分野の環境配慮と整合

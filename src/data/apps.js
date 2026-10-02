@@ -454,7 +454,7 @@ export const Showcases = [
     website: "https://eternl.io",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: true,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
@@ -462,17 +462,6 @@ export const Showcases = [
       features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance", "qr-claim"],
       type: "light",
     },
-  },
-  {
-    title: "Token & NFT Builder",
-    description:
-      "Create your own native Cardano tokens and NFTs without writing any code, with policy management and metadata templates handled in-app.",
-    tagline: "No-code native token and NFT minting tool",
-    website: "https://cardano-native-token.com/",
-    source: null,
-    category: "minting",
-    properties: ["nft"],
-    maintainerPick: false,
   },
   {
     title: "cardano-tools.io",
@@ -753,18 +742,6 @@ export const Showcases = [
     x: "nufiwallet",
   },
   {
-    title: "TapTools",
-    description:
-      "All-in-one Cardano portfolio tracker and market analytics with token charts, NFT generation tools, and on-chain activity dashboards.",
-    tagline: "Cardano portfolio tracker and market analytics",
-    icon: "/img/app-icons/taptools.jpg",
-    website: "https://www.taptools.io",
-    source: null,
-    category: "analytics",
-    properties: [],
-    maintainerPick: true,
-  },
-  {
     title: "Dune",
     description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
     tagline: "On-chain data analysis with community dashboards",
@@ -849,9 +826,9 @@ export const Showcases = [
     properties: ["nft", "opensource"],
     maintainerPick: true,
     walletFeatures: {
-      platforms: ["browser"],
+      platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "governance"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "dex", "hardware-wallet", "governance"],
       type: "light",
     },
   },
@@ -883,7 +860,7 @@ export const Showcases = [
     website: "https://www.vespr.xyz/#/",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: true,
     spotlight: {
       url: "https://developers.cardano.org/blog/2024-01-22-january/",
@@ -973,19 +950,19 @@ export const Showcases = [
     description:
       "Connect a CIP-30 wallet and donate ada directly to the Cardano treasury in a single, non-custodial transaction. Hosted on cardano.org.",
     tagline: "Donate ada to the Cardano treasury",
-    website: "https://cardano.org/governance/treasury",
+    website: "https://cardano.org/governance/treasury#donate",
     source: null,
     category: "governance",
     properties: [],
     maintainerPick: false,
   },
   {
-    title: "Chang Watch",
+    title: "Cardano GovScope",
     description:
       "Cardano governance dashboard with donut charts and tables that visualize vote distribution, DRep concentration, and governance action outcomes.",
     tagline: "Vote distribution and DRep insights dashboard",
     icon: "/img/app-icons/changwatch.png",
-    website: "https://www.changwatch.com",
+    website: "https://cardanogovscope.com/",
     source: null,
     category: "governance",
     properties: [],
@@ -1021,7 +998,7 @@ export const Showcases = [
     ],
     icon: "/img/app-icons/dano-finance.png",
     statsLabel: "dano-finance",
-    website: "https://danogo.io/",
+    website: "https://dano.finance/",
     source: null,
     category: "lending",
     properties: [],
@@ -1058,19 +1035,6 @@ export const Showcases = [
     maintainerPick: false,
   },
   {
-    title: "Nio",
-    description:
-      "Tracks and monitors all assets across Cardano wallets and DeFi smart contracts in one dashboard. Surfaces lending positions, LP shares, and yields.",
-    tagline: "Track wallets and DeFi smart contract assets",
-    icon: "/img/app-icons/nio.png",
-    website: "https://nioapp.io",
-    source: null,
-    category: "other",
-    properties: [],
-    maintainerPick: false,
-    x: "NioApp",
-  },
-  {
     title: "Begin Wallet",
     description:
       "Non-custodial Cardano wallet for browser and mobile with payment links, deep-link support, Begin ID usernames (ENS-style), and Ledger and Keystone hardware support.",
@@ -1079,7 +1043,7 @@ export const Showcases = [
     website: "https://begin.is",
     source: null,
     category: "wallet",
-    properties: ["nft", "mobile"],
+    properties: ["nft"],
     maintainerPick: false,
     walletFeatures: {
       platforms: ["ios", "android", "browser"],
@@ -1121,7 +1085,7 @@ export const Showcases = [
     tagline: "Decentralized identity and verifiable credentials",
     icon: "/img/app-icons/veridian-wallet.png",
     website: "https://www.veridian.id/",
-    source: "https://github.com/cardano-foundation/veridian-wallet",
+    source: "https://github.com/veridian-id/veridian-wallet",
     category: "identity",
     properties: ["opensource"],
     maintainerPick: false,
@@ -1232,20 +1196,6 @@ export const Showcases = [
       title: "Cardano Developer Spotlight: February 2025",
       date: "2025-02-03",
     },
-  },
-  {
-    title: "Genius Yield",
-    description:
-      "All-in-one Cardano DeFi platform combining a fully on-chain order-book DEX with an automated yield optimizer that compounds positions.",
-    tagline: "Order-book DEX with built-in yield optimizer",
-    icon: "/img/app-icons/genius-yield.jpg",
-    statsLabel: "geniusyield",
-    website: "https://www.geniusyield.co/",
-    source: "https://github.com/geniusyield",
-    category: "dex",
-    properties: ["opensource"],
-    maintainerPick: false,
-    x: "GeniusyieldO",
   },
   {
     title: "Iagon",
@@ -1530,7 +1480,7 @@ export const Showcases = [
     icon: "/img/app-icons/indy.png",
     statsLabel: "indigo-protocol",
     website: "https://indigoprotocol.io/",
-    source: "https://github.com/IndigoProtocol/indigo-smart-contracts",
+    source: "https://github.com/IndigoProtocol/indigo-upgrade-details-v2",
     category: "lending",
     properties: ["opensource"],
     maintainerPick: false,
@@ -1714,9 +1664,9 @@ export const Showcases = [
     ],
     icon: "/img/app-icons/surflending.png",
     website: "https://surflending.org",
-    source: "https://github.com/flow-lending/flow-lending-smart-contracts",
+    source: null,
     category: "lending",
-    properties: ["opensource"],
+    properties: [],
     maintainerPick: false,
     x: "surfcardano",
   },
@@ -1784,7 +1734,7 @@ export const Showcases = [
     source: "https://github.com/katomm/dreptalk.com",
     category: "governance",
     properties: ["opensource", "drepdelegation"],
-    maintainerPick: false,
+    maintainerPick: true,
     x: "dreptalkcom",
   },
   {
@@ -1804,6 +1754,19 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     x: "EchoForgeEF",
+  },
+  {
+    title: "Adapools",
+    description:
+      "Adapools is a Cardano stake pool explorer with live block updates, epoch progress, pool metrics, delegation activity, and retirement filings.",
+    tagline: "Live Cardano stake pool blocks and metrics",
+    preview: require("./app-screenshots/adapools.webp"),
+    icon: "/img/app-icons/adapools.png",
+    website: "https://adapools.xyz",
+    source: "https://github.com/schmidko/adapools",
+    category: "pooltool",
+    properties: ["opensource"],
+    maintainerPick: false,
   },
 ];
 
@@ -1830,6 +1793,23 @@ function slugifyTitle(title) {
 }
 Showcases.forEach((showcase) => {
   showcase.slug = slugifyTitle(showcase.title);
+});
+
+// Wallets declare their platforms in walletFeatures, so the "mobile" property is
+// derived from ios/android instead of being maintained by hand next to it.
+// Mirrors isMobileWallet() in scripts/lib/parse-apps.cjs.
+const MOBILE_PLATFORMS = ["ios", "android"];
+Showcases.forEach((showcase) => {
+  const platforms = showcase.walletFeatures?.platforms;
+  if (!Array.isArray(platforms) || !Array.isArray(showcase.properties)) return;
+  if (showcase.properties.includes("mobile")) {
+    throw new Error(
+      `Showcase site with title=${showcase.title} contains errors:\nDo not set the mobile property on a wallet. It is derived from walletFeatures.platforms (ios, android).`
+    );
+  }
+  if (platforms.some((p) => MOBILE_PLATFORMS.includes(p))) {
+    showcase.properties = [...showcase.properties, "mobile"];
+  }
 });
 
 function sortShowcases() {

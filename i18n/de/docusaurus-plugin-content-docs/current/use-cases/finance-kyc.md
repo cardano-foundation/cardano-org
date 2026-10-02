@@ -9,9 +9,9 @@ sidebar_position: 4
 
 ## Die Herausforderung
 
-Know-Your-Customer-Prozesse (KYC) sind für die Compliance im Finanzwesen unverzichtbar, erzeugen aber erheblichen Aufwand für Institute wie Kunden. Nutzer müssen dieselben Dokumente immer wieder bei verschiedenen Instituten einreichen. Finanzinstitute geben jährlich Milliarden für KYC-Compliance aus, und ein Großteil dieser Kosten landet bei den Kunden.
+Know-Your-Customer-Prozesse (KYC) sind für die Compliance im Finanzwesen unverzichtbar, erzeugen aber erheblichen Aufwand für Institute wie Kunden. Nutzer müssen dieselben Dokumente immer wieder bei verschiedenen Instituten einreichen, was doppelte Mühe kostet und sensible Daten an immer mehr Stellen verteilt. Finanzinstitute geben jährlich Milliarden für KYC-Compliance aus, und einen Großteil davon zahlen die Kunden.
 
-The current system is also exclusionary. Das heutige System grenzt zudem aus: Schätzungsweise 1,4 Milliarden Erwachsene weltweit besitzen keine offiziellen Ausweisdokumente und bleiben damit vom Finanzsystem ausgeschlossen, ohne Zugang zu Basisdiensten wie Bankkonten oder Krediten.
+Das heutige System grenzt zudem aus. Schätzungsweise 1,4 Milliarden Erwachsene weltweit besitzen keine offiziellen Ausweisdokumente und bleiben damit vom Finanzsystem ausgeschlossen, ohne Zugang zu Basisdiensten wie Bankkonten oder Krediten.
 
 ## Wie Blockchain dies löst
 
@@ -27,7 +27,7 @@ Smart Contracts können Compliance-Prüfungen automatisieren: Nur verifizierte N
 
 ## Warum Cardano
 
-- **Regulatorisches Bewusstsein** ist seit Beginn Teil der Plattformentwicklung
+- **Regulatorische Anforderungen** fließen seit Beginn in die Plattformentwicklung ein
 - **Privatsphäre-Funktionen** ermöglichen regelkonforme Prüfungen ohne unnötige Datenpreisgabe
 - **Globale Reichweite** fördert finanzielle Teilhabe über Grenzen hinweg
 - **Niedrige Gebühren** machen Kleinsttransaktionen und die Verifizierung kleiner Konten wirtschaftlich

@@ -9,7 +9,7 @@ import TermExplainer from '@site/src/components/TermExplainer';
 
 ## TermExplainer
 
-A "terms you should know" section. It renders a white [Divider](./divider.md) with the category name, then picks two random terms from that category in `src/data/termsForTermExplainer.json` and shows each with its title and description side by side. The random pick happens on the client after hydration, so the server-rendered page starts with no terms and fills in on load.
+A "terms you should know" section. It renders a white [Divider](./divider.md) with the category name, then picks two random terms from that category in `src/data/termsForTermExplainer.js` and shows each with its title and description side by side. The random pick happens on the client after hydration, so the server-rendered page starts with no terms and fills in on load.
 
 Used on `/governance`, `/governance/accountability`, and `/constitution`, always inside a `gradientLight` [Background Wrapper](./background-wrapper.md).
 
@@ -33,7 +33,7 @@ import TermExplainer from '@site/src/components/TermExplainer';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `category` | `string` | - | Key under `categories` in `src/data/termsForTermExplainer.json`. Currently `staking`, `catalyst`, `governance`, or `cip`. An unknown key renders the divider with no terms. |
+| `category` | `string` | - | Category key returned by `getTermsForTermExplainer()` in `src/data/termsForTermExplainer.js`. Currently `staking`, `catalyst`, `governance`, or `cip`. An unknown key renders the divider with no terms. Terms and descriptions are `translate()` calls, so new ones also need an entry in `i18n/en/code.json`. |
 
 ## Live Preview
 

@@ -50,7 +50,7 @@
   * `wallet`
   * `other` — thin segments (stablecoin, oracle, gateway, music, social)
 * Properties — pick zero or more (additive):
-  * `mobile` — native mobile app, not a responsive site
+  * `mobile` — native mobile app, not a responsive site (wallets: derived from `walletFeatures.platforms`, do not set)
   * `nft` — supports or uses NFTs (not for image-based collections)
   * `opensource` — public source repository linked above
   * `drepdelegation`: voting power can be delegated to a DRep inside the app

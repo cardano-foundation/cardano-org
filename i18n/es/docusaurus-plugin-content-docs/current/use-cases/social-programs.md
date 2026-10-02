@@ -7,13 +7,13 @@ sidebar_position: 11
 
 # Programas sociales
 
-## El Desafío
+## El desafío
 
-Los programas sociales destinados a la reducción de la pobreza, la ayuda en casos de desastre y el desarrollo, se enfrentan a desafíos persistentes en la distribución de fondos. La corrupción desvía recursos que deberían destinarse a los beneficiarios previstos, mientras que las ineficiencias administrativas generan costos y demoras adicionales. Los donantes y los contribuyentes a menudo desconocen cómo se utilizan realmente los fondos.
+Los programas sociales destinados a la reducción de la pobreza, la ayuda en casos de desastre y el desarrollo se enfrentan a desafíos persistentes en la distribución de fondos. La corrupción desvía recursos que deberían destinarse a los beneficiarios previstos, mientras que las ineficiencias administrativas generan costos y demoras adicionales. Los donantes y los contribuyentes a menudo desconocen cómo se utilizan realmente los fondos.
 
 Para los beneficiarios, acceder a la ayuda puede implicar obstáculos burocráticos, intermediarios que cobran comisiones y retrasos que menoscaban la eficacia del programa. Demostrar la elegibilidad y evitar reclamaciones duplicadas añade aún más complejidad.
 
-## Cómo la Blockchain resuelve esto
+## Cómo lo resuelve la blockchain
 
 La tecnología Blockchain permite una distribución transparente y eficiente de los fondos de los programas sociales:
 
@@ -25,16 +25,16 @@ La tecnología Blockchain permite una distribución transparente y eficiente de 
 
 Las stablecoins y las billeteras digitales permiten a los beneficiarios recibir y utilizar fondos incluso sin cuentas bancarias tradicionales, lo que aumenta la inclusión financiera.
 
-## Porqué Cardano
+## Por qué Cardano
 
 - **Bajas comisiones por transacción** maximizan el porcentaje de fondos que llegan a los beneficiarios
 - **Sostenibilidad** mediante el proof of stake que se alinea con los objetivos de desarrollo
 - **Funciones de privacidad** protegen a los beneficiarios vulnerables
-- **Accesibilidad** funciona en areas con una infraestructura bancaria limitada
+- La **accesibilidad** permite operar en áreas con infraestructura bancaria limitada
 - **Gobernanza** permite la participación de la comunidad en el diseño del programa
 
-## Primeros Pasos
+## Primeros pasos
 
-- [Explore las aplicaciones Cardano](/apps)
+- [Explora las aplicaciones de Cardano](/apps)
 - [Recursos para desarrolladores que construyen sobre Cardano](https://developers.cardano.org)
-- [Vea las soluciones para empresas](/solutions)
+- [Ver soluciones para empresas](/solutions)
