@@ -11011,5 +11011,193 @@
   },
   "termExplainer.cip.cipEditors.description": {
     "message": "CIP Editors safeguard the CIP process: they form a group enforcing the process described in this document and facilitating conversations between community actors. CIP editors should strive to keep up to date with general technical discussions and Cardano proposals."
+  },
+  "governance.faq.item.loseAda.q": {
+    "message": "Do I lose my ada when I delegate?"
+  },
+  "governance.faq.item.loseAda.a1": {
+    "message": "No. Delegation is completely non-custodial. Your ada never leaves your wallet. You are only lending your voting power to a DRep, not transferring any funds."
+  },
+  "governance.faq.item.loseAda.popular": {
+    "message": "No. Your ada never leaves your wallet."
+  },
+  "governance.faq.item.delegateCost.q": {
+    "message": "How much does it cost to delegate?"
+  },
+  "governance.faq.item.delegateCost.a1": {
+    "message": "Delegating your voting power to a DRep is free beyond the standard transaction fee (typically less than 0.2 ada). There is no deposit required for delegation."
+  },
+  "governance.faq.item.delegateCost.popular": {
+    "message": "Delegating to a DRep is free. You only pay standard network fees."
+  },
+  "governance.faq.item.changeDrep.q": {
+    "message": "Can I change my DRep later?"
+  },
+  "governance.faq.item.changeDrep.a1": {
+    "message": "Yes, you can change your DRep at any time. Simply delegate to a different DRep and the change takes effect in the next epoch."
+  },
+  "governance.faq.item.changeDrep.popular": {
+    "message": "Yes. You can update or remove your delegation at any time."
+  },
+  "governance.faq.item.drepAndPool.q": {
+    "message": "Can I delegate my ada to a DRep and a stake pool at the same time?"
+  },
+  "governance.faq.item.drepAndPool.a1": {
+    "message": "Yes, and most ada holders do exactly that. DRep delegation and stake pool delegation are two independent actions that delegate two different things from the same ada."
+  },
+  "governance.faq.item.drepAndPool.a2": {
+    "message": "Stake pool delegation points your stake at a pool operator who produces blocks, and in return you earn a share of block rewards. DRep delegation assigns the voting power of that same stake to someone who votes on governance proposals. Your ada is never locked, spent, or moved in either case. Both are just on-chain signals attached to your stake address."
+  },
+  "governance.faq.item.drepAndPool.a3": {
+    "message": "Because they run on different rails (block production vs. governance), the two delegations don't compete. You can change either one independently, and you keep earning rewards the whole time."
+  },
+  "governance.faq.item.drepAndPool.popular": {
+    "message": "Yes. Stake pool delegation earns rewards, DRep delegation assigns voting power. Same ada, two independent signals."
+  },
+  "governance.faq.item.noDelegation.q": {
+    "message": "What happens if I don't delegate?"
+  },
+  "governance.faq.item.noDelegation.a1": {
+    "message": "If you don't delegate your voting power, your ada does not count toward any governance vote. Your voice goes unused. Delegating ensures your stake contributes to the decisions that shape Cardano."
+  },
+  "governance.faq.item.activation.q": {
+    "message": "How long does delegation take to become active?"
+  },
+  "governance.faq.item.activation.a1": {
+    "message": "Delegation becomes active at the start of the next epoch. Epochs on Cardano last 5 days, so it can take up to 5 days for your delegation to take effect."
+  },
+  "governance.faq.item.drepCost.q": {
+    "message": "What does it cost to become a DRep?"
+  },
+  "governance.faq.item.drepCost.a1": {
+    "message": "Registering as a DRep requires a refundable deposit of 500 ada. This deposit is returned when you retire as a DRep. There is also a standard transaction fee for the registration."
+  },
+  "governance.faq.item.alternatives.q": {
+    "message": "What are the alternatives to delegating to a DRep?"
+  },
+  "governance.faq.item.alternatives.a1": {
+    "message": "Instead of delegating to a specific DRep, you can choose one of two automatic voting options:"
+  },
+  "governance.faq.item.alternatives.a2": {
+    "message": "- **Abstain** keeps your stake out of every vote, it is not counted for or against any proposal",
+    "description": "Keep the leading '- ' and the ** markers, they render as a bulleted list item with bold text."
+  },
+  "governance.faq.item.alternatives.a3": {
+    "message": "- **No Confidence** counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes",
+    "description": "Keep the leading '- ' and the ** markers, they render as a bulleted list item with bold text."
+  },
+  "governance.faq.item.governanceAction.q": {
+    "message": "What is a governance action?"
+  },
+  "governance.faq.item.governanceAction.a1": {
+    "message": "A governance action is an on-chain proposal that can change how Cardano works. There are several types, including protocol parameter changes, hard fork initiations, treasury withdrawals, and constitutional amendments. Each type requires different approval thresholds from DReps, SPOs, and the Constitutional Committee."
+  },
+  "governance.faq.item.noDelegation.a2": {
+    "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active [vote delegation](/governance/delegate), to a DRep, Abstain or No Confidence. Your rewards keep adding up in the meantime. A proposed change, [CIP-181](https://cips.cardano.org/cip/CIP-181), would remove this requirement with a future hard fork."
+  },
+  "governance.faq.item.drepInactive.q": {
+    "message": "What happens if my DRep stops voting?"
+  },
+  "governance.faq.item.drepInactive.a1": {
+    "message": "A DRep who goes 20 epochs, at least 100 days, without voting or updating their registration is [marked inactive](/glossary/drep-activity-period). Epochs without open proposals do not count toward that limit. While your DRep is inactive, your stake no longer counts in governance votes."
+  },
+  "governance.faq.item.drepInactive.a2": {
+    "message": "Your ada and your staking rewards are not affected. The DRep becomes active again as soon as they vote or update their registration, and you can switch to another DRep at any time."
+  },
+  "governance.faq.item.visibility.q": {
+    "message": "Can others see how I delegate?"
+  },
+  "governance.faq.item.visibility.a1": {
+    "message": "Yes. Every delegation is recorded on the blockchain, so anyone can look up which DRep or voting option a stake address has chosen. The address itself does not contain your name. It is pseudonymous, so anyone who can link it to you, for example because you posted it publicly, can also see your choice."
+  },
+  "governance.faq.item.visibility.a2": {
+    "message": "DRep votes are public too. Many DReps publish a rationale with each vote so their delegators can follow their reasoning."
+  },
+  "governance.faq.item.drepPay.q": {
+    "message": "Do DReps get paid?"
+  },
+  "governance.faq.item.drepPay.a1": {
+    "message": "The protocol does not pay DReps for voting. Apart from transaction fees, the only ada involved is the 500 ada deposit, which you get back when you retire as a DRep."
+  },
+  "governance.compare.aspect.time": {
+    "message": "Time"
+  },
+  "governance.compare.aspect.cost": {
+    "message": "Cost"
+  },
+  "governance.compare.aspect.gain": {
+    "message": "What you get"
+  },
+  "governance.compare.aspect.watch": {
+    "message": "Keep in mind"
+  },
+  "governance.compare.aspect.visibility": {
+    "message": "Who can see it"
+  },
+  "governance.compare.none.title": {
+    "message": "Don't delegate"
+  },
+  "governance.compare.none.time": {
+    "message": "Nothing to set up."
+  },
+  "governance.compare.none.cost": {
+    "message": "Nothing."
+  },
+  "governance.compare.none.gain": {
+    "message": "No decisions to make."
+  },
+  "governance.compare.none.watch": {
+    "message": "Governance decisions are made without your stake."
+  },
+  "governance.compare.none.visibility": {
+    "message": "Nothing new is recorded on the chain."
+  },
+  "governance.compare.delegate.title": {
+    "message": "Delegate"
+  },
+  "governance.compare.delegate.subtitle": {
+    "message": "To a DRep, Abstain or No Confidence"
+  },
+  "governance.compare.delegate.time": {
+    "message": "A few minutes to set up. If you pick a DRep, look at their votes now and then."
+  },
+  "governance.compare.delegate.cost": {
+    "message": "A transaction fee, typically less than 0.2 ada. No deposit."
+  },
+  "governance.compare.delegate.gain": {
+    "message": "Your stake takes part in governance through the option you choose, and you can switch at any time."
+  },
+  "governance.compare.delegate.watch": {
+    "message": "A DRep may vote differently than you would, or stop voting. Abstain and No Confidence apply a fixed rule to every vote."
+  },
+  "governance.compare.delegate.visibility": {
+    "message": "Your choice is recorded on the chain and linked to your stake address."
+  },
+  "governance.compare.drep.title": {
+    "message": "Become a DRep"
+  },
+  "governance.compare.drep.time": {
+    "message": "Regular time to read proposals, vote and explain your votes."
+  },
+  "governance.compare.drep.cost": {
+    "message": "A deposit of 500 ada, returned when you retire, plus transaction fees."
+  },
+  "governance.compare.drep.gain": {
+    "message": "A direct vote on treasury withdrawals, protocol changes and the constitution, weighted by the stake delegated to you."
+  },
+  "governance.compare.drep.watch": {
+    "message": "The protocol does not pay DReps. Delegators expect you to explain your votes."
+  },
+  "governance.compare.drep.visibility": {
+    "message": "Every vote is recorded on the chain under your DRep ID, with a link to any rationale you publish."
+  },
+  "governance.compare.title": {
+    "message": "What each option involves"
+  },
+  "governance.compare.intro": {
+    "message": "Here is what each choice asks of you and what it gives you in return."
+  },
+  "governance.compare.divider": {
+    "message": "Compare your options"
   }
 }
