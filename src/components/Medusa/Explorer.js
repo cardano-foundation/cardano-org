@@ -13,7 +13,7 @@ import useMedusaKeys from './useMedusaKeys.js';
 import { MILESTONES, HARD_FORK_KEYS } from '@site/src/data/medusa/milestones.js';
 import { GROUPS } from './groups.js';
 import { canRunWebGL, medusaFlag, prefersReducedMotion } from './webgl.js';
-import { SPEEDS } from './playback.js';
+import { frameIndexForDate, SPEEDS } from './playback.js';
 import styles from './explorer.module.css';
 
 const HASH = /^#(\d{4}-\d{2})$/;
@@ -43,7 +43,9 @@ export default function Explorer() {
   // The frame callback never rerenders with fresh state, so it reads the pin
   // from a ref that every write to the state keeps in sync.
   const pinnedRef = useRef(null);
-  const [card, setCard] = useState(null);
+  // The open chapter card, by milestone key. Scrubbing into another chapter
+  // folds the card on its own because the key no longer matches.
+  const [expandedKey, setExpandedKey] = useState(null);
   // The first frame report already rewrites the hash, so the shared date has to
   // be read before the canvas mounts.
   const [initialDate] = useState(() => {
@@ -137,11 +139,20 @@ export default function Explorer() {
     }
   }, []);
 
+  const markers = useMemo(
+    () => MILESTONES.map((m) => ({ ...m, frame: frameIndexForDate(frameDates, m.date) })).filter((m) => m.frame >= 0),
+    [frameDates],
+  );
+  // Seeks and backward steps emit no milestone event, so the chapter is read
+  // from the frame index instead of collected from events.
+  const chapter = markers.findLast((m) => m.frame <= state.index) ?? null;
+
   const onMilestone = useCallback((m) => {
-    if (cardsEnabled) setCard(m);
+    if (cardsEnabled) setExpandedKey(m.key);
   }, [cardsEnabled]);
 
-  const dismissCard = useCallback(() => setCard(null), []);
+  const expandCard = useCallback(() => setExpandedKey(chapter?.key ?? null), [chapter?.key]);
+  const collapseCard = useCallback(() => setExpandedKey(null), []);
 
   const onSelect = useCallback((id) => {
     const graph = ref.current?.getGraph();
@@ -165,15 +176,17 @@ export default function Explorer() {
     if (s) setState((st) => ({ ...st, paused: s.paused }));
   }, []);
 
-  const jumpToMilestone = useCallback((n) => {
-    const key = HARD_FORK_KEYS[n];
-    const m = MILESTONES.find((x) => x.key === key);
-    if (!m) return;
+  const openMilestone = useCallback((m) => {
     ref.current?.pause();
     ref.current?.seekToDate(m.date);
     syncPaused();
-    setCard(m);
-  }, [syncPaused]);
+    if (cardsEnabled) setExpandedKey(m.key);
+  }, [syncPaused, cardsEnabled]);
+
+  const jumpToMilestone = useCallback((n) => {
+    const m = MILESTONES.find((x) => x.key === HARD_FORK_KEYS[n]);
+    if (m) openMilestone(m);
+  }, [openMilestone]);
 
   const fullscreen = useCallback(() => {
     if (document.fullscreenElement) document.exitFullscreen();
@@ -211,7 +224,7 @@ export default function Explorer() {
     toggleUi: () => setUiHidden((v) => !v),
     toggleCards: () => {
       setCardsEnabled(!cardsEnabled);
-      if (cardsEnabled) setCard(null);
+      if (cardsEnabled) setExpandedKey(null);
     },
     clear: () => {
       onSelect(null);
@@ -277,11 +290,15 @@ export default function Explorer() {
       ) : (
         <HoverLabel node={labelNode} childCount={childCount} target={ref} />
       ))}
-      {card && cardsEnabled && <MilestoneCard milestone={card} onDismiss={dismissCard} />}
+      {chapter && cardsEnabled && (
+        <MilestoneCard milestone={chapter} expanded={expandedKey === chapter.key} onExpand={expandCard} onCollapse={collapseCard} />
+      )}
       <div className={styles.ui} hidden={uiHidden}>
         <Legend present={present} active={highlightGroup} onToggle={(key) => setHighlightGroup((k) => (k === key ? null : key))} />
         <Controls
           frameDates={frameDates}
+          markers={markers}
+          chapterKey={chapter?.key}
           index={state.index}
           paused={state.paused}
           speed={state.speed}
@@ -289,6 +306,7 @@ export default function Explorer() {
           onToggle={handlers.toggle}
           onStep={handlers.step}
           onSpeed={setSpeed}
+          onMilestone={openMilestone}
           onFullscreen={fullscreen}
         />
         <p className={styles.hint}>

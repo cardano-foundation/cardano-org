@@ -9539,8 +9539,8 @@
   "medusa.legend.other": {
     "message": "Everything else"
   },
-  "medusa.card.close": {
-    "message": "Dismiss"
+  "medusa.card.collapse": {
+    "message": "Collapse"
   },
   "medusa.card.link": {
     "message": "About this hard fork"

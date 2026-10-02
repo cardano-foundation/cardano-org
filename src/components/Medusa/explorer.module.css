@@ -83,6 +83,7 @@
 }
 
 .legendDot {
+  flex: 0 0 auto;
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
@@ -138,28 +139,96 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 0.4rem;
+  height: 0;
 }
 
-/* A 2 px line is impossible to hit with a mouse, so the marker is a 10 px wide
-   transparent box with the visible line centred inside it. */
+/* The dot is small, the button around it is a 16 px target. */
 .marker {
   position: absolute;
-  bottom: 0;
-  width: 10px;
-  height: 0.4rem;
-  transform: translateX(-5px);
+  bottom: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
 }
 
-.marker::after {
-  content: '';
+.marker > span:first-child {
+  width: 0.5rem;
+  height: 0.5rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.markerAhead > span:first-child {
+  opacity: 0.45;
+}
+
+.markerCurrent > span:first-child,
+.marker:hover > span:first-child,
+.marker:focus-visible > span:first-child {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.marker:focus-visible {
+  outline: 2px solid #9ec5fe;
+  outline-offset: 1px;
+}
+
+.markerTip {
   position: absolute;
+  bottom: calc(100% + 6px);
   left: 50%;
-  bottom: 0;
-  width: 2px;
-  height: 100%;
-  margin-left: -1px;
-  background: rgba(255, 255, 255, 0.7);
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+
+.markerTip strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.markerStart .markerTip {
+  left: 0;
+  transform: none;
+}
+
+.markerEnd .markerTip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.marker:hover .markerTip,
+.marker:focus-visible .markerTip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Repository events have no era color, a ring keeps them apart from the hard
+   forks. */
+.ringDot {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
 }
 
 .date {
@@ -324,6 +393,56 @@
   background: rgba(11, 16, 48, 0.85);
   backdrop-filter: blur(6px);
   z-index: 2;
+  animation: cardIn 0.2s ease-out;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.chapter {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(11, 16, 48, 0.75);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.chapter:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.chapterName {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chapterDate {
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
 }
 
 .card p {
@@ -338,6 +457,9 @@
 }
 
 .cardDate {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
