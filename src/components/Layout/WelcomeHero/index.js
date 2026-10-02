@@ -106,7 +106,7 @@ function WelcomeHero({ title, description, children, showWhatIsCardano = true })
                     message: 'Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Colors mark the code of each ledger era, from Byron to Dijkstra.',
                   })}
                 </p>
-                <Link to="/medusa" className={styles.vizPopoverLink}>
+                <Link to="/ledger-history" className={styles.vizPopoverLink}>
                   {translate({
                     id: 'home.hero.vizBadge.link',
                     message: 'Explore the history',

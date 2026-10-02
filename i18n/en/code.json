@@ -10246,11 +10246,11 @@
   "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
   "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."},
   "quiz.hub.backToLearn": {"message": "Back to the learning path"},
-  "medusa.page.title": {
-    "message": "Medusa, the cardano-ledger history"
+  "ledgerHistory.page.title": {
+    "message": "The cardano-ledger history"
   },
-  "medusa.page.description": {
-    "message": "Watch the cardano-ledger repository grow month by month since 2018, hard fork by hard fork, in an interactive 3D visualization."
+  "ledgerHistory.page.description": {
+    "message": "Watch the cardano-ledger repository grow month by month since 2018, era by era, in an interactive 3D visualization."
   },
   "medusa.page.noWebgl": {
     "message": "This visualization needs WebGL, which your browser or device does not provide."
