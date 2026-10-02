@@ -1,6 +1,9 @@
 .explorer {
   position: relative;
-  height: calc(100vh - var(--ifm-navbar-height));
+  /* --explorer-top is the measured distance from the document top, it covers
+     the announcement bar and the real navbar height. */
+  height: calc(100vh - var(--explorer-top, var(--ifm-navbar-height)));
+  height: calc(100dvh - var(--explorer-top, var(--ifm-navbar-height)));
   min-height: 480px;
   background: #0b1030;
   color: #fff;
@@ -11,6 +14,7 @@
    strip at the bottom. */
 .explorer:fullscreen {
   height: 100vh;
+  height: 100dvh;
 }
 
 .canvas {
@@ -325,6 +329,12 @@
 .card p {
   margin: 0.4rem 0 0.6rem;
   font-size: 0.9rem;
+}
+
+.card a {
+  color: #9ec5fe;
+  font-size: 0.85rem;
+  text-decoration: underline;
 }
 
 .cardDate {
