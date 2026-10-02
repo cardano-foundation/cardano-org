@@ -5,7 +5,7 @@ description: Switch between panels of related content with accessible pill-shape
 
 ## PillTabs
 
-The `PillTabs` component shows a row of pill-shaped tab buttons above a content panel. The active pill is filled with the brand blue and the others sit on a neutral surface. It powers the regulatory frameworks per jurisdiction on the [Programmable Tokens](/programmable-tokens) page and works for any small set of parallel views, such as regions, audiences, or product variants.
+The `PillTabs` component shows a row of pill-shaped tab buttons above a content panel. The active pill is filled with the brand blue and the others sit on a neutral surface. It powers the regulatory context per jurisdiction on the [Programmable Tokens](/programmable-tokens) page and works for any small set of parallel views, such as regions, audiences, or product variants.
 
 ## Features
 

@@ -9,12 +9,14 @@ The `Accordion` component renders a list of expandable question and answer rows:
 
 ## Features
 
-- **Accessible toggles** - every row is a real `<button>` inside an `<h3>` with `aria-expanded` and `aria-controls`; the open answer is a labeled `role="region"`
+- **Accessible toggles** - every row is a real `<button>` inside an `<h3>` with `aria-expanded` and `aria-controls`; each answer is a labeled `role="region"`, and a closed answer is hidden from the tab order and from assistive technology
+- **Smooth open and close** - answers expand and collapse with a height transition done in CSS (a grid row going from `0fr` to `1fr`), with no JavaScript measuring
+- **Answers in the HTML** - every answer is rendered, open or closed, so the full text is available to search engines and without JavaScript
 - **Single-open by default** - opening a row closes the others; pass `allowMultiple` to keep several open at once
 - **Optional starting state** - `defaultOpenIndex` opens one row on first render
 - **Rich answers** - string arrays support `- ` bullet lines, `[text](url)` links, and `**bold**`, or pass any React node
 - **Dark mode support** - text, borders, and icons use theme-aware tokens, and there is no card surface to invert
-- **Reduced motion** - the only animation is the color transition on hover, and it is disabled for users who prefer reduced motion
+- **Reduced motion** - the open and close transition and the hover color change are turned off for users who prefer reduced motion, so rows open instantly
 
 ## Basic Usage
 
@@ -98,7 +100,9 @@ The component uses CSS modules. Override styles by targeting these classes:
 - `.trigger` - the toggle button
 - `.question` - the question text inside the button
 - `.icon` - the plus or minus icon
-- `.panel` - the answer region shown when the row is open
+- `.panel` - the answer region; its grid row animates between closed and open
+- `.panelInner` - clips the answer while the panel is collapsing or expanding
+- `.panelContent` - the answer text (type, color, and the 940px width cap)
 
 These class names are hashed by CSS modules, so a page cannot target them by name. To restyle a single instance, pass a `className` and target element types under it from the page's CSS module (for example `.faq h3 button`), as `src/pages/programmable-tokens.module.css` does to set a larger question size.
 

@@ -39,7 +39,9 @@
   font-weight: 600;
   line-height: 20px;
   color: var(--ifm-color-emphasis-900);
-  transition: color var(--site-duration-base) var(--site-ease);
+  transition:
+    color var(--site-duration-base) var(--site-ease),
+    padding var(--site-duration-slow) var(--site-ease);
 }
 
 .trigger:hover {
@@ -76,7 +78,35 @@
   color: var(--ifm-color-primary);
 }
 
+/*
+ * Answer panel. Height animates through a one-row grid going from 0fr to 1fr,
+ * so no JavaScript measuring is needed. While closed the panel is
+ * visibility: hidden, which removes it from the tab order and the
+ * accessibility tree; on close that switch waits for the collapse to finish.
+ */
 .panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--site-duration-slow) var(--site-ease),
+    visibility 0s linear var(--site-duration-slow);
+}
+
+.itemOpen .panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--site-duration-slow) var(--site-ease),
+    visibility 0s linear 0s;
+}
+
+.panelInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.panelContent {
   max-width: 940px;
   padding: 0 0 22px;
   font-size: 14px;
@@ -84,17 +114,17 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.panel p {
+.panelContent p {
   margin: 0 0 var(--site-space-xs);
 }
 
-.panel ul {
+.panelContent ul {
   margin: 0 0 var(--site-space-xs);
   padding-left: 1.25rem;
 }
 
-.panel p:last-child,
-.panel ul:last-child {
+.panelContent p:last-child,
+.panelContent ul:last-child {
   margin-bottom: 0;
 }
 
@@ -103,14 +133,16 @@
     padding: var(--site-space-sm) 0;
   }
 
-  .panel {
+  .panelContent {
     padding-bottom: var(--site-space-sm);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .trigger,
-  .icon {
+  .icon,
+  .panel,
+  .item.itemOpen .panel {
     transition: none;
   }
 }

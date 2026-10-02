@@ -11,12 +11,10 @@ import Accordion from "@site/src/components/Layout/Accordion";
 import ProgrammableTokensHero from "@site/src/components/ProgrammableTokens/Hero";
 import PartnerStrip from "@site/src/components/ProgrammableTokens/PartnerStrip";
 import RichText from "@site/src/components/ProgrammableTokens/RichText";
-import JurisdictionTable from "@site/src/components/ProgrammableTokens/JurisdictionTable";
 import ResourceCards from "@site/src/components/ProgrammableTokens/ResourceCards";
 import ArchitectureDiagram from "@site/src/components/ProgrammableTokens/ArchitectureDiagram";
 import DeveloperLinks from "@site/src/components/ProgrammableTokens/DeveloperLinks";
 import RegulatoryFrameworks from "@site/src/components/ProgrammableTokens/RegulatoryFrameworks";
-import Footnotes from "@site/src/components/ProgrammableTokens/Footnotes";
 import {
   META,
   HERO,
@@ -28,7 +26,6 @@ import {
   REGULATORY,
   CTA,
   FAQ,
-  FOOTNOTES,
 } from "@site/src/data/programmable-tokens";
 import { faqJsonLd } from "@site/src/utils/jsonLd";
 import styles from "./programmable-tokens.module.css";
@@ -52,7 +49,7 @@ function SectionHeader({ title }) {
 export default function ProgrammableTokens() {
   return (
     <Layout title={META.title} description={META.description}>
-      <OpenGraphInfo />
+      <OpenGraphInfo pageName="programmable-tokens" />
       <Head>
         <script type="application/ld+json">{faqJsonLd(FAQ.items)}</script>
       </Head>
@@ -95,14 +92,6 @@ export default function ProgrammableTokens() {
                     <RichText text={paragraph} />
                   </p>
                 ))}
-              </div>
-
-              <p className={styles.muted}>{WHY.tableIntro}</p>
-              <JurisdictionTable table={WHY.table} />
-
-              <div className={styles.closing}>
-                <p className={styles.muted}>{WHY.closing}</p>
-                <p className={styles.closingEmphasis}>{WHY.closingEmphasis}</p>
               </div>
             </section>
           </BoundaryBox>
@@ -234,15 +223,6 @@ export default function ProgrammableTokens() {
               <SectionHeader title={FAQ.title} />
               <Accordion className={styles.faq} items={FAQ.items} defaultOpenIndex={0} />
             </section>
-          </BoundaryBox>
-        </BackgroundWrapper>
-
-        {/* Sources for the footnote references: subtle grey band */}
-        <BackgroundWrapper backgroundType="solidGrey">
-          <BoundaryBox>
-            <div className={styles.footnotesSection}>
-              <Footnotes footnotes={FOOTNOTES} />
-            </div>
           </BoundaryBox>
         </BackgroundWrapper>
       </main>

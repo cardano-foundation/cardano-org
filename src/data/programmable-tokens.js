@@ -5,21 +5,19 @@ import { translate } from "@docusaurus/Translate";
 //
 // Every user-facing string lives here so the page and its section components
 // stay presentational. Brand, product, and language names (Cardano, Aiken,
-// CIP-0113) and publication titles are not translated.
+// CIP-0113) are not translated.
 //
 // Inline formatting in the strings below, rendered by
 // src/components/ProgrammableTokens/RichText:
-//   [^1]         footnote reference, numbered as in FOOTNOTES
-//   _text_       italic (publication titles)
-//   [text](url)  link, **text** bold (via parseMarkdownLikeText)
+//   [text](url)  link (external URLs open in a new tab)
+//   _text_       italic, **text** bold
 //
 // DATA NOTES (resolve with the content owner):
-// - Partner logos: the Eternl, GeroWallet, and CardanoScan wordmarks were
-//   supplied by the content owner (static/img/programmable-tokens/partners/).
-//   The GeroWallet and CardanoScan dark-theme files are those logos with
-//   their text recolored white, pending official light-text versions.
-//   BloxBean reuses static/img/logos/ (shared with the companies showcase)
-//   and BendingAI its app icon in static/img/app-icons/.
+// - Partner logos live in static/img/logos/ as <slug> and <slug>-dark, shared
+//   with the rest of the site. Eternl and CardanoScan are PNGs until vector
+//   versions are available. The BendingAI, GeroWallet, and CardanoScan dark
+//   variants are the supplied logos with their text recolored white, pending
+//   official light-text versions.
 // - Both call-to-action buttons point to the Cardano Foundation contact page
 //   until a dedicated implementation support form is confirmed.
 // - The No Witness Labs audit reports back the audit statement in
@@ -54,7 +52,7 @@ export const HERO = {
   body: translate({
     id: "programmableTokens.hero.body",
     message:
-      "Major international bodies and standard setters — from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board — have issued similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork and without wrapping assets in a secondary smart contract layer or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks.",
+      "Major international bodies and standard setters — from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board — have suggested similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork, wrapping assets in a secondary smart contract layer, or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks.",
   }),
   button: {
     label: translate({
@@ -74,23 +72,28 @@ export const PARTNERS = {
     message: "Partners and users of Cardano programmable tokens",
   }),
   items: [
-    { name: "BendingAI", logo: "/img/app-icons/bending-ai.png", href: "https://bending.ai" },
+    {
+      name: "BendingAI",
+      logo: "/img/logos/bendingai.svg",
+      logoDark: "/img/logos/bendingai-dark.svg",
+      href: "https://bending.ai",
+    },
     {
       name: "CardanoScan",
-      logo: "/img/programmable-tokens/partners/cardanoscan.png",
-      logoDark: "/img/programmable-tokens/partners/cardanoscan-dark.png",
+      logo: "/img/logos/cardanoscan.png",
+      logoDark: "/img/logos/cardanoscan-dark.png",
       href: "https://cardanoscan.io",
     },
     {
       name: "Eternl",
-      logo: "/img/programmable-tokens/partners/eternl.png",
-      logoDark: "/img/programmable-tokens/partners/eternl-dark.png",
+      logo: "/img/logos/eternl.png",
+      logoDark: "/img/logos/eternl-dark.png",
       href: "https://eternl.io",
     },
     {
       name: "GeroWallet",
-      logo: "/img/programmable-tokens/partners/gerowallet.svg",
-      logoDark: "/img/programmable-tokens/partners/gerowallet-dark.svg",
+      logo: "/img/logos/gerowallet.svg",
+      logoDark: "/img/logos/gerowallet-dark.svg",
       href: "https://gerowallet.io",
     },
     {
@@ -111,12 +114,12 @@ export const WHY = {
     translate({
       id: "programmableTokens.why.paragraph1",
       message:
-        "For regulated financial assets — such as [stablecoins](/stablecoins), bonds, fund shares, or other tokenized securities — to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, sanctions screening, ownership restrictions, or transfer controls throughout every asset movement.",
+        "For regulated financial assets — such as [stablecoins](/stablecoins), bonds, shares, or other securities — to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, ownership restrictions, or transfer controls throughout every asset movement.",
     }),
     translate({
       id: "programmableTokens.why.paragraph2",
       message:
-        "The [January 2025 IMF's Fintech Note](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml)[^1] describes programmability as the ability of a ledger to embed compliance conditions into the asset itself and have them executed by the ledger automatically, including which investors are permitted to hold an asset. The [Bank of International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm)[^2] of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation.",
+        "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describes programmability as the ability to embed compliance conditions into the asset itself and execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation.",
     }),
   ],
   quote: translate({
@@ -128,7 +131,7 @@ export const WHY = {
     translate({
       id: "programmableTokens.why.context1",
       message:
-        "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets and asset types. Relevant frameworks around the world — such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets — illustrate the breadth of requirements that issuers and market participants may need to address.",
+        "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets, and asset types. Relevant frameworks around the world — such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets — illustrate the breadth of requirements that issuers and market participants may need to address.",
     }),
     translate({
       id: "programmableTokens.why.context2",
@@ -141,119 +144,6 @@ export const WHY = {
         "Cardano's new Programmable Tokens standard creates a flexible framework for doing so on the Cardano infrastructure. Rather than prescribing a single compliance model, it enables relevant controls — such as investor eligibility, transfer restrictions, freezes or other asset-specific conditions — to be implemented according to the requirements of the particular asset, jurisdiction and use case. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically.",
     }),
   ],
-  tableIntro: translate({
-    id: "programmableTokens.why.tableIntro",
-    message:
-      "Regulators across jurisdictions have established requirements that translate to this exact functionality:",
-  }),
-  table: {
-    caption: translate({
-      id: "programmableTokens.why.table.caption",
-      message: "Token-level compliance requirements by jurisdiction",
-    }),
-    headers: {
-      jurisdiction: translate({
-        id: "programmableTokens.why.table.jurisdiction",
-        message: "Jurisdiction",
-      }),
-      framework: translate({
-        id: "programmableTokens.why.table.framework",
-        message: "Framework",
-      }),
-      requirement: translate({
-        id: "programmableTokens.why.table.requirement",
-        message: "Requirement",
-      }),
-    },
-    rows: [
-      {
-        jurisdiction: translate({
-          id: "programmableTokens.jurisdiction.eu",
-          message: "European Union",
-        }),
-        frameworks: [
-          translate({
-            id: "programmableTokens.why.table.eu.framework",
-            message: "Markets in Financial Instruments Directive II (MiFID II)[^3]",
-          }),
-          translate({
-            id: "programmableTokens.why.table.eu.framework2",
-            message: "Markets in Financial Instruments Regulation (MiFIR)[^4]",
-          }),
-        ],
-        requirement: translate({
-          id: "programmableTokens.why.table.eu.requirement",
-          message:
-            "Tokenized financial instruments treated as conventional ones; investment firms must apply product governance, suitability, and appropriateness rules",
-        }),
-      },
-      {
-        jurisdiction: translate({
-          id: "programmableTokens.jurisdiction.ch",
-          message: "Switzerland",
-        }),
-        frameworks: [
-          translate({
-            id: "programmableTokens.why.table.ch.framework",
-            message: "DLT Act[^5]",
-          }),
-        ],
-        requirement: translate({
-          id: "programmableTokens.why.table.ch.requirement",
-          message:
-            "Specific category enables ledger-based securities; integrity and disposal conditions must be enforced by the register itself",
-        }),
-      },
-      {
-        jurisdiction: translate({
-          id: "programmableTokens.jurisdiction.uk",
-          message: "United Kingdom",
-        }),
-        frameworks: [
-          translate({
-            id: "programmableTokens.why.table.uk.framework",
-            message: "Digital Securities Sandbox[^6]",
-          }),
-        ],
-        requirement: translate({
-          id: "programmableTokens.why.table.uk.requirement",
-          message:
-            "Allows firms to issue, trade, and settle securities on distributed ledgers under modified rules",
-        }),
-      },
-      {
-        jurisdiction: translate({
-          id: "programmableTokens.jurisdiction.us",
-          message: "United States of America",
-        }),
-        frameworks: [
-          translate({
-            id: "programmableTokens.why.table.us.framework",
-            message: "GENIUS Act, payment stablecoins[^7]",
-          }),
-          translate({
-            id: "programmableTokens.why.table.us.framework2",
-            message: "Federal securities laws[^8]",
-          }),
-        ],
-        requirement: translate({
-          id: "programmableTokens.why.table.us.requirement",
-          message:
-            "Payment stablecoin issuers must be able to block, freeze, and reject unlawful transactions, plus seize, freeze, burn, or stop transfers of tokens on a court or agency order; tokenized securities stay under existing securities law",
-        }),
-      },
-    ],
-  },
-  closing: translate({
-    id: "programmableTokens.why.closing",
-    message:
-      "Each one of these regulations expects controls that apply on every transfer. The most efficient way of delivering them is establishing logic at the token level. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically.",
-  }),
-  closingEmphasis: translate({
-    id: "programmableTokens.why.closingEmphasis",
-    message:
-      "Cardano's new Programmable Tokens standard creates a framework to implement these capabilities consistently.",
-  }),
 };
 
 export const COMPLIANCE = {
@@ -270,7 +160,7 @@ export const COMPLIANCE = {
     translate({
       id: "programmableTokens.compliance.card1",
       message:
-        "Token issuers determine the rules their assets will have to follow and have full flexibility to customize each rule. The sets of rules get packaged into **modules**, giving companies the flexibility they need to address different use cases, and scenarios, considering varying jurisdictions and regulatory frameworks. The Cardano Programmable Tokens standard also comes with integration guides for wallets, explorers, indexers, or general applications.",
+        "Token issuers determine the rules their assets will have to follow and have full flexibility to customize each rule. The sets of rules get packaged into **modules**, giving companies the flexibility they need to address different use cases and scenarios, considering varying jurisdictions and regulatory frameworks. The Cardano Programmable Tokens standard also comes with integration guides for wallets, explorers, indexers, or general applications.",
     }),
     translate({
       id: "programmableTokens.compliance.card2",
@@ -291,7 +181,7 @@ export const COMPLIANCE = {
   audit: translate({
     id: "programmableTokens.compliance.audit",
     message:
-      "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been certified under the CMTA framework, ensuring the availability of relevant compliance and technical functions, including for KYC as well as German and Swiss regulatory requirements. Anastasia Labs also performed several security checks.",
+      "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been certified under the CMTA framework, ensuring the availability of relevant compliance and technical functions. Anastasia Labs also performed several security checks.",
   }),
   resources: {
     title: translate({
@@ -338,11 +228,11 @@ export const CAPABILITIES = {
     translate({
       id: "programmableTokens.capabilities.intro",
       message:
-        "Cardano's Programmable Tokens framework has robust capabilities for several enterprise and financial institutional needs. Organizations can customize a module to include various types of logic according to their specific needs.",
+        "Cardano's Programmable Tokens framework has robust capabilities for several enterprise and financial institutional needs. Organizations can customize a module to include various types of logic according to their specific need.",
     }),
     translate({
       id: "programmableTokens.capabilities.examplesIntro",
-      message: "Check some examples of the rules a module can include.",
+      message: "Here are some examples of the rules a module can include.",
     }),
   ],
   items: [
@@ -478,7 +368,7 @@ export const ARCHITECTURE = {
     translate({
       id: "programmableTokens.architecture.paragraph2",
       message:
-        "The architecture places programmable tokens in a shared, secure script address on the Cardano blockchain. Token ownership changes when the tokens are transacted and owners can access them through their wallets, but the assets themselves never leave the shared script address. Ownership is determined by the stake credentials rather than the script itself.",
+        "The architecture places programmable tokens in a shared, secure script address on the Cardano blockchain. Token ownership changes when the tokens are transacted, and owners can access them through their wallets, but the assets themselves never leave the shared script address. Ownership is determined by the stake credentials rather than the script itself.",
     }),
     translate({
       id: "programmableTokens.architecture.paragraph3",
@@ -538,18 +428,13 @@ export const REGULATORY = {
   title: translate({
     id: "programmableTokens.regulatory.title",
     message:
-      "Regulatory Context for Programmable Tokens – Global Technology, Different Rulebooks: What MiCA, the Swiss DLT Act, the GENIUS Act, and Global Standards Require",
+      "Regulatory Context for Programmable Tokens – Global Technology, Different Rulebooks",
   }),
   intro: [
     translate({
-      id: "programmableTokens.regulatory.intro",
-      message:
-        "Regulators generally expect tokenized assets to abide by the same legal obligations as conventional assets. But different frameworks and considerations apply depending on the jurisdiction.",
-    }),
-    translate({
       id: "programmableTokens.regulatory.intro2",
       message:
-        "A token may move globally, but the rules governing it do not. The regulatory treatment of a tokenized asset depends on what the asset represents, where it is issued or offered, who interacts with it and the activities being performed.",
+        "A token may move globally, but the rules governing it do not. The regulatory treatment of a tokenized asset depends on what the asset represents, where it is issued or offered, who interacts with it, and the activities being performed.",
     }),
     translate({
       id: "programmableTokens.regulatory.intro3",
@@ -571,8 +456,7 @@ export const REGULATORY = {
     id: "programmableTokens.regulatory.tabsAriaLabel",
     message: "Jurisdiction",
   }),
-  // One tab per market. `overview` is the market's summary; `frameworks`
-  // (optional) are the framework cards shown under it.
+  // One tab per market, each with the market's overview.
   jurisdictions: [
     {
       id: "eu",
@@ -582,35 +466,6 @@ export const REGULATORY = {
         message:
           "The EU generally follows a technology-neutral approach. Crypto-assets that qualify as financial instruments remain subject to [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj), [MiFIR](https://eur-lex.europa.eu/eli/reg/2014/600/oj) and related securities legislation. The [DLT Pilot Regime](https://eur-lex.europa.eu/eli/reg/2022/858/oj) provides a regulatory sandbox for the trading and settlement of certain financial instruments using distributed ledger technology. Crypto-assets are generally covered by the [Markets in Crypto-Assets Regulation (MiCA)](https://eur-lex.europa.eu/eli/reg/2023/1114/oj), including its specific regimes for stablecoins and crypto-asset service providers.",
       }),
-      frameworks: [
-        {
-          name: "MiFID II",
-          body: translate({
-            id: "programmableTokens.regulatory.eu.mifid",
-            message:
-              "qualifies tokenized shares, bonds, and fund units as financial instruments. **MiFID II and MiFIR** mean similar investor protection and reporting obligations apply as to conventional securities.",
-          }),
-        },
-        {
-          name: "MiCA",
-          body: translate({
-            id: "programmableTokens.regulatory.eu.mica",
-            message:
-              "governs stablecoins and crypto-assets not covered by existing financial services law.",
-          }),
-        },
-        {
-          name: translate({
-            id: "programmableTokens.regulatory.eu.pilot.name",
-            message: "EU DLT Pilot Regime",
-          }),
-          body: translate({
-            id: "programmableTokens.regulatory.eu.pilot",
-            message:
-              "creates a sandbox permitting tokenized securities with temporary exemptions that could become permanent if December 2025 changes are accepted. Establishes a test ground for infrastructure.",
-          }),
-        },
-      ],
     },
     {
       id: "ch",
@@ -620,30 +475,6 @@ export const REGULATORY = {
         message:
           "Switzerland integrates digital assets into its existing legal and financial-market framework while providing specific rules for DLT-based assets and infrastructure. The [DLT Act](https://www.fedlex.admin.ch/eli/fga/2020/2696/en) introduced ledger-based securities, enabling rights to be represented and transferred through qualifying electronic registers, while the general regulatory treatment of digital assets and related activities depends on their characteristics and function.",
       }),
-      frameworks: [
-        {
-          name: translate({
-            id: "programmableTokens.regulatory.ch.dltAct.name",
-            message: "DLT Act",
-          }),
-          body: translate({
-            id: "programmableTokens.regulatory.ch.dltAct",
-            message:
-              "has a dedicated legal category for ledger-based securities, in force since 1 August 2021. Statutory requirements apply to issue and transfer ledger-based securities directly on the ledger and without a bank or central securities depository:",
-          }),
-          requirements: [
-            translate({
-              id: "programmableTokens.regulatory.ch.dltAct.requirement1",
-              message: "creditors must hold power of disposal over the rights;",
-            }),
-            translate({
-              id: "programmableTokens.regulatory.ch.dltAct.requirement2",
-              message:
-                "the register's integrity must be protected by adequate technical and organizational measures.",
-            }),
-          ],
-        },
-      ],
     },
     {
       id: "uk",
@@ -651,21 +482,8 @@ export const REGULATORY = {
       overview: translate({
         id: "programmableTokens.regulatory.uk.overview",
         message:
-          "The UK builds on the existing [Financial Services and Markets Act 2000 (FSMA)](https://www.legislation.gov.uk/ukpga/2000/8/contents), while extending the regulatory perimeter to specified cryptoasset activities. The [FSMA 2000 (Cryptoassets) Regulations 2026](https://www.legislation.gov.uk/uksi/2026/102/contents) introduce regulated activities relating to qualifying cryptoassets and stablecoins, with the [FCA's new cryptoasset regime](https://www.fca.org.uk/firms/new-regime-cryptoasset-regulation) expected to apply from late 2027. Tokenised forms of existing regulated investments may remain subject to the rules applicable to the underlying type of investment.",
+          "The UK builds on the existing [Financial Services and Markets Act 2000 (FSMA)](https://www.legislation.gov.uk/ukpga/2000/8/contents), while extending the regulatory perimeter to specified cryptoasset activities. The [FSMA 2000 (Cryptoassets) Regulations 2026](https://www.legislation.gov.uk/uksi/2026/102/contents) introduce regulated activities relating to qualifying cryptoassets and stablecoins, with the [FCA's new cryptoasset regime](https://www.fca.org.uk/firms/new-regime-cryptoasset-regulation) expected to apply from late 2027. Tokenized forms of existing regulated investments may remain subject to the rules applicable to the underlying type of investment.",
       }),
-      frameworks: [
-        {
-          name: translate({
-            id: "programmableTokens.regulatory.uk.dss.name",
-            message: "Digital Securities Sandbox",
-          }),
-          body: translate({
-            id: "programmableTokens.regulatory.uk.dss",
-            message:
-              "enables distributed ledger market infrastructure for securities. Examined tokenized money market products against existing Financial Conduct Authority (FCA) frameworks.",
-          }),
-        },
-      ],
     },
     {
       id: "us",
@@ -675,27 +493,6 @@ export const REGULATORY = {
         message:
           "US regulation depends on the nature and structure of the asset. The [SEC's January 2026 statement on tokenized securities](https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities) confirms that securities law continues to apply to securities represented on-chain and distinguishes issuer-sponsored and third-party tokenization models. A March 2026 [SEC/CFTC interpretation](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf) introduced a five-category [crypto-asset taxonomy](https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets), while the SEC's proposed [Regulation Crypto Assets](https://www.sec.gov/rules-regulations/2026/08/s7-2026-27) would create a tailored offering framework for certain crypto-asset investment contracts. Payment stablecoins are addressed separately under the federal [GENIUS Act](https://www.govinfo.gov/app/details/PLAW-119publ27).",
       }),
-      frameworks: [
-        {
-          name: "GENIUS Act",
-          body: translate({
-            id: "programmableTokens.regulatory.us.genius",
-            message:
-              "sets the federal framework for payment stablecoins. Issuers must have the ability to block, freeze, and reject transactions that break federal or state law, and to act on court or agency orders to seize, freeze, or burn tokens.",
-          }),
-        },
-        {
-          name: translate({
-            id: "programmableTokens.regulatory.us.securities.name",
-            message: "Federal Securities Laws",
-          }),
-          body: translate({
-            id: "programmableTokens.regulatory.us.securities",
-            message:
-              "apply to tokenized securities. The Securities and Exchange Commission (SEC) treats a tokenized security the same way as its conventional equivalent.",
-          }),
-        },
-      ],
     },
     {
       id: "sg",
@@ -703,7 +500,7 @@ export const REGULATORY = {
       overview: translate({
         id: "programmableTokens.regulatory.sg.overview",
         message:
-          "Singapore largely applies its existing financial-services framework according to the nature of the asset and activity. Tokenised capital-markets products may fall within the [Securities and Futures Act 2001](https://sso.agc.gov.sg/Act/SFA2001), digital payment token services within the [Payment Services Act 2019](https://sso.agc.gov.sg/Act/PSA2019), and certain cross-border digital token services within the [Financial Services and Markets Act 2022](https://sso.agc.gov.sg/Act/FSMA2022). The [Monetary Authority of Singapore](https://www.mas.gov.sg/) (MAS) has actively supported institutional tokenization through initiatives such as [Project Guardian](https://www.mas.gov.sg/schemes-and-initiatives/project-guardian), which explores programmable infrastructure, including the integration of automated compliance checks into tokenized transactions.",
+          "Singapore largely applies its existing financial-services framework according to the nature of the asset and activity. Tokenized capital-markets products may fall within the [Securities and Futures Act 2001](https://sso.agc.gov.sg/Act/SFA2001), digital payment token services within the [Payment Services Act 2019](https://sso.agc.gov.sg/Act/PSA2019), and certain cross-border digital token services within the [Financial Services and Markets Act 2022](https://sso.agc.gov.sg/Act/FSMA2022). The [Monetary Authority of Singapore](https://www.mas.gov.sg/) (MAS) has actively supported institutional tokenization through initiatives such as [Project Guardian](https://www.mas.gov.sg/schemes-and-initiatives/project-guardian), which explores programmable infrastructure, including the integration of automated compliance checks into tokenized transactions.",
       }),
     },
     {
@@ -712,7 +509,7 @@ export const REGULATORY = {
       overview: translate({
         id: "programmableTokens.regulatory.jp.overview",
         message:
-          "Japan distinguishes between categories of tokenised assets. Security tokens may be treated under the [Financial Instruments and Exchange Act (FIEA)](https://www.fsa.go.jp/en/policy/fiel/index.html) as electronically recorded transferable rights. Stablecoins (electronic payment instruments) and, until now, crypto-assets have been addressed under the Payment Services Act. [2026 amendments to the FIEA and the Payment Services Act](https://www.fsa.go.jp/common/diet/221/02/04.pdf) are set to move crypto-assets into the FIEA framework.",
+          "Japan distinguishes between categories of tokenized assets. Security tokens may be treated under the [Financial Instruments and Exchange Act (FIEA)](https://www.fsa.go.jp/en/policy/fiel/index.html) as electronically recorded transferable rights. Stablecoins (electronic payment instruments) and, until now, crypto-assets have been addressed under the Payment Services Act. [2026 amendments to the FIEA and the Payment Services Act](https://www.fsa.go.jp/common/diet/221/02/04.pdf) are set to move crypto-assets into the FIEA framework.",
       }),
     },
     {
@@ -738,7 +535,7 @@ export const REGULATORY = {
     translate({
       id: "programmableTokens.regulatory.conclusion1",
       message:
-        "**There is no single global rulebook for tokenized assets — and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets and regulatory requirements without requiring a different technological foundation for each.",
+        "**There is no single global rulebook for tokenized assets — and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets, and regulatory requirements without requiring a different technological foundation for each.",
     }),
     translate({
       id: "programmableTokens.regulatory.conclusion2",
@@ -789,7 +586,7 @@ export const FAQ = {
         translate({
           id: "programmableTokens.faq.cip.answer2",
           message:
-            "The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source on the Cardano Foundation's GitHub repository, alongside integration guidance for wallet developers, DApp builders, indexers, and explorers.",
+            "The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source in the Cardano Foundation's GitHub repository, along with integration guidance for wallet developers, DApp builders, indexers, and explorers.",
         }),
       ],
     },
@@ -809,13 +606,13 @@ export const FAQ = {
     {
       question: translate({
         id: "programmableTokens.faq.compliance.question",
-        message: "What is token level compliance?",
+        message: "What is token-level compliance?",
       }),
       answer: [
         translate({
           id: "programmableTokens.faq.compliance.answer",
           message:
-            "Token level compliance means that certain compliance-related conditions and transfer restrictions can be enforced directly through the token's on-chain logic, supporting controls and verifications, for example for KYC verification, AML screening, and sanctions compliance purposes, rather than by a separate system, a manual process, or a custodian's internal policy. Cardano's Programmable Tokens standard implements token level compliance features on Cardano, embedding those controls directly into the asset so they execute automatically. The code has been independently audited, including its upgradeability. The transaction model used also inherits Cardano's characteristics, ensuring costs stay predictable as transaction size grows.",
+            "Token-level compliance means that certain compliance-related conditions and transfer restrictions can be enforced directly through the token's on-chain logic, supporting controls and verifications, for example, for KYC, AML, and sanctions compliance purposes. Cardano's Programmable Tokens standard implements token-level compliance features on Cardano, embedding those controls directly into the asset so they execute automatically. The code has been independently audited, including its upgradeability. The transaction model used also inherits Cardano's characteristics, ensuring costs stay predictable as transaction size grows.",
         }),
       ],
     },
@@ -828,110 +625,9 @@ export const FAQ = {
         translate({
           id: "programmableTokens.faq.kyc.answer",
           message:
-            "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would not be allowed to hold, send, or receive the security. Alongside it, a deny-list would specify previously authorised users who have now been forbidden to transact the security, although they might still hold it. Such an example is of particular interest in the case of sanctions or orders to freeze an asset. Whichever the case, checks would execute on-chain, automatically, on every transaction, and enforced by the Cardano ledger itself rather than by an off-chain intermediary.",
+            "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would not be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for the case of sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than by an off-chain intermediary.",
         }),
       ],
-    },
-  ],
-};
-
-// Sources for the [^n] references. `title` is the linked text (a publication
-// or legal title, not translated), `italic` marks publication titles, and
-// `suffix` is the translated text that follows the link, joined to it with
-// `joiner` (a comma or a space).
-export const FOOTNOTES = {
-  title: translate({
-    id: "programmableTokens.footnotes.title",
-    message: "Sources",
-  }),
-  items: [
-    {
-      number: 1,
-      title: "Tokenization and Financial Market Inefficiencies",
-      italic: true,
-      href: "https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.1",
-        message: "Fintech Notes, January 2025",
-      }),
-    },
-    {
-      number: 2,
-      title: "Annual Economic Report",
-      italic: true,
-      href: "https://www.bis.org/publ/arpdf/ar2025e.htm",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.2",
-        message: "Bank of International Settlements (BIS), June 2025",
-      }),
-    },
-    {
-      number: 3,
-      title: "Article 4",
-      italic: false,
-      href: "https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mifid-ii/article-4-definitions",
-      joiner: " ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.3",
-        message: "of the European Parliament's MiFID II, retrieved September 2026",
-      }),
-    },
-    {
-      number: 4,
-      title: "Regulation No 600/2014",
-      italic: false,
-      href: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02014R0600-20251123",
-      joiner: " ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.4",
-        message: "of the European Union, retrieved September 2026",
-      }),
-    },
-    {
-      number: 5,
-      title: "DLT / blockchain / tokenisation",
-      italic: true,
-      href: "https://www.sif.admin.ch/en/dlt-blockchain-en",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.5",
-        message: "State Secretariat for International Finance SIF, retrieved July 2026",
-      }),
-    },
-    {
-      number: 6,
-      title: "Digital Securities Sandbox (DSS)",
-      italic: true,
-      href: "https://www.bankofengland.co.uk/financial-stability/digital-securities-sandbox",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.6",
-        message: "Bank of England, December 2024",
-      }),
-    },
-    {
-      number: 7,
-      title: "GENIUS Act",
-      italic: false,
-      href: "https://www.congress.gov/bill/119th-congress/senate-bill/1582/text",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.7",
-        message: "Library of Congress, July 2025",
-      }),
-    },
-    {
-      number: 8,
-      title: "Statement on Tokenized Securities",
-      italic: true,
-      href: "https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities",
-      joiner: ", ",
-      suffix: translate({
-        id: "programmableTokens.footnotes.8",
-        message: "U.S. Securities and Exchange Commission, January 2026",
-      }),
     },
   ],
 };

@@ -7,7 +7,8 @@ import styles from "./styles.module.css";
 // Accordion. A plain list of expandable question and answer rows separated by
 // hairlines: no card background, a semibold question on the left and a
 // plus / minus icon on the right. Each row is a real <button> inside an <h3>
-// with aria-expanded / aria-controls, and the open answer is a labeled region.
+// with aria-expanded / aria-controls, and each answer is a labeled region that
+// opens and closes with a height transition (instant with reduced motion).
 //
 // Used for the FAQ on the /programmable-tokens page. Use FAQSection instead when
 // you want the "FAQ" Divider heading and the alternating row backgrounds.
@@ -44,11 +45,14 @@ function AccordionItem({ question, answer, isOpen, onToggle }) {
           </span>
         </button>
       </h3>
-      {isOpen && (
-        <div id={panelId} role="region" aria-labelledby={triggerId} className={styles.panel}>
-          {content}
+      {/* Always rendered so the height can animate (and the answers are in
+          the HTML); a closed panel is hidden from the tab order and from
+          assistive technology with visibility: hidden in the CSS. */}
+      <div id={panelId} role="region" aria-labelledby={triggerId} className={styles.panel}>
+        <div className={styles.panelInner}>
+          <div className={styles.panelContent}>{content}</div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

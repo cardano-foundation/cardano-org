@@ -20,17 +20,18 @@
   color: #ffffff;
 }
 
-/* Grain overlay, same approach as .ctaSection::after on the Layer 2 page. */
+/* Grain overlay: the shared Layer 2 noise texture, drawn the same way as
+   .ctaSection::after on that page (cover, near its native scale, so the
+   grain is not averaged away by downscaling). */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background-image: url("/img/programmable-tokens/noise.png");
-  background-repeat: repeat;
+  background-image: url("/img/layer-2/noise.png");
   background-position: center;
-  background-size: 540px;
+  background-size: cover;
   mix-blend-mode: soft-light;
   opacity: 0.4;
 }

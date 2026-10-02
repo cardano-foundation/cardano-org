@@ -118,22 +118,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.closing {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 880px;
-}
-
-.closingEmphasis {
-  max-width: 760px;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  color: var(--ifm-color-emphasis-900);
-}
-
 /* Compliance prose cards: two columns, 32px apart. */
 .proseGrid {
   display: grid;
@@ -156,8 +140,9 @@
 /*
  * Capabilities band: fixed brand blue (#0033AD, from Figma) with white text in
  * both themes, like the rollups band on the Layer 2 page. The three
- * translucent orbs from the design are background images anchored to the
- * center so they keep their place at any width. A percentage position aligns
+ * translucent orbs from the design are CSS circles (a radial gradient with a
+ * hard edge, sized by background-size) anchored to the center so they keep
+ * their place at any width. A percentage position aligns
  * that point of the image with the same point of the box, so each offset is
  * the design's x minus half of (1280px - orb size).
  */
@@ -166,9 +151,9 @@
   overflow: hidden;
   background-color: #0033ad;
   background-image:
-    url("/img/programmable-tokens/orb-light-1.svg"),
-    url("/img/programmable-tokens/orb-light-2.svg"),
-    url("/img/programmable-tokens/orb-light-3.svg");
+    radial-gradient(circle closest-side, rgba(255, 255, 255, 0.16) 99.5%, transparent 100%),
+    radial-gradient(circle closest-side, rgba(255, 255, 255, 0.12) 99.5%, transparent 100%),
+    radial-gradient(circle closest-side, rgba(255, 255, 255, 0.1) 99.5%, transparent 100%);
   background-repeat: no-repeat;
   background-position:
     calc(50% + 650px) -180px,
@@ -322,9 +307,9 @@
   padding: var(--site-space-xl) 30px;
   background-color: #010423;
   background-image:
-    url("/img/programmable-tokens/orb-blue-1.svg"),
-    url("/img/programmable-tokens/orb-blue-2.svg"),
-    url("/img/programmable-tokens/orb-blue-3.svg");
+    radial-gradient(circle closest-side, rgba(33, 92, 230, 0.1) 99.5%, transparent 100%),
+    radial-gradient(circle closest-side, rgba(33, 92, 230, 0.13) 99.5%, transparent 100%),
+    radial-gradient(circle closest-side, rgba(33, 92, 230, 0.07) 99.5%, transparent 100%);
   background-repeat: no-repeat;
   background-position:
     calc(50% - 550px) -110px,
@@ -382,10 +367,6 @@
 
 .faq h3 button > span:last-child {
   color: var(--ifm-color-primary);
-}
-
-.footnotesSection {
-  padding: 44px 0 56px;
 }
 
 /* Partner strip band: 132px tall in the design (44px tiles, 44px above and
@@ -456,7 +437,4 @@
     padding: var(--site-space-md);
   }
 
-  .footnotesSection {
-    padding: var(--site-space-xl) 0;
-  }
 }
