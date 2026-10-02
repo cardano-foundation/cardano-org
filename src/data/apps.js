@@ -1639,7 +1639,7 @@ export const Showcases = [
     title: "Wayup",
     description:
       "Cardano NFT marketplace by Anvil. Continues the smart contracts of JpgStore as the platform sunsets, so existing listings and royalties keep working.",
-    tagline: "Cardano NFT marketplace by Anvil, continuing JpgStore",
+    tagline: "NFT marketplace by Anvil, keeps JpgStore listings working",
     preview: require("./app-screenshots/wayup.webp"),
     extraPreviews: [
       require("./app-screenshots/wayup-home.webp"),
