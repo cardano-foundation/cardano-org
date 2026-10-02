@@ -27,8 +27,8 @@ import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-i
 import Translate, {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
 import { getGovernanceRoleSurvey } from "@site/src/data/governanceRoleSurvey";
-import governanceFAQ from "@site/src/data/governanceFAQ.json";
-import { jsonLdString } from "@site/src/utils/jsonLd";
+import { getGovernanceFAQ } from "@site/src/data/governanceFAQ";
+import { faqJsonLd } from "@site/src/utils/jsonLd";
 
 function GovernanceHero() {
   return (
@@ -284,6 +284,7 @@ function ToolsGrid() {
 }
 
 export default function Governance() {
+  const governanceFAQ = getGovernanceFAQ();
   return (
     <Layout
       title={translate({id: 'governance.meta.title', message: 'Cardano Governance - Your ada, your voice'})}
@@ -291,20 +292,7 @@ export default function Governance() {
     >
       <OpenGraphInfo pageName="governance" />
       <Head>
-        <script type="application/ld+json">
-          {jsonLdString({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": governanceFAQ.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer.join(" "),
-              },
-            })),
-          })}
-        </script>
+        <script type="application/ld+json">{faqJsonLd(governanceFAQ)}</script>
       </Head>
       <GovernanceHero />
       <main>
