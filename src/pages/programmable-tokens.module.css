@@ -321,14 +321,24 @@
     300px 300px;
 }
 
-/* White pill buttons on the fixed brand-blue and navy bands. */
+/*
+ * Pill buttons on the brand-blue and navy bands. Light theme: white with
+ * brand-blue text, as in the design. Dark theme: the theme's lightest primary
+ * blue with navy text, so the button does not glare against the dark UI.
+ * Colors come from custom properties that the dark theme overrides, so the
+ * hover rule does not depend on rule order (contrast: 10.1:1 light, 9.8:1
+ * dark, 7.2:1 dark hover).
+ */
 .pillButton,
 .ctaButton {
+  --pill-bg: #ffffff;
+  --pill-bg-hover: #eef1f8;
+  --pill-fg: #0033ad;
   display: inline-block;
   padding: var(--site-space-sm) 40px;
   border-radius: var(--site-radius-pill);
-  background: #ffffff;
-  color: #0033ad;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
   font-size: 15px;
   font-weight: 600;
   line-height: normal;
@@ -341,9 +351,16 @@
 .pillButton:focus,
 .ctaButton:hover,
 .ctaButton:focus {
-  background: #eef1f8;
-  color: #0033ad;
+  background: var(--pill-bg-hover);
+  color: var(--pill-fg);
   text-decoration: none;
+}
+
+[data-theme="dark"] .pillButton,
+[data-theme="dark"] .ctaButton {
+  --pill-bg: var(--ifm-color-primary-lightest);
+  --pill-bg-hover: var(--ifm-color-primary-lighter);
+  --pill-fg: #0a1031;
 }
 
 /* The brand-blue focus ring is invisible on the navy band, so use white. */

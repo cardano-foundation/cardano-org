@@ -86,13 +86,19 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
+/* Pill button: white with brand-blue text in the light theme, the theme's
+   lightest primary blue with navy text in the dark theme (same treatment as
+   the page's other pill buttons). */
 .button {
+  --pill-bg: #ffffff;
+  --pill-bg-hover: #eef1f8;
+  --pill-fg: #0033ad;
   display: inline-block;
   margin-top: 32px;
   padding: 14px 36px;
   border-radius: var(--site-radius-pill);
-  background: #ffffff;
-  color: #0033ad;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
@@ -102,9 +108,15 @@
 
 .button:hover,
 .button:focus {
-  background: #eef1f8;
-  color: #0033ad;
+  background: var(--pill-bg-hover);
+  color: var(--pill-fg);
   text-decoration: none;
+}
+
+[data-theme="dark"] .button {
+  --pill-bg: var(--ifm-color-primary-lightest);
+  --pill-bg-hover: var(--ifm-color-primary-lighter);
+  --pill-fg: #0a1031;
 }
 
 /* The brand-blue focus ring is invisible on the navy band, so use white. */

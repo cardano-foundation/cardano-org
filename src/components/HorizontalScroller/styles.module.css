@@ -7,20 +7,10 @@
   column-gap: 0.5rem;
 }
 
-/*
- * A scrolling element clips whatever overflows it on every side, so the
- * track reserves room for a lifted card's shadow (--site-shadow-lg is
- * 0 12px 24px, plus the --site-lift): 1rem above and at the sides, 2.5rem
- * below. The negative margins cancel that room out (at the sides by
- * reaching into the column gap next to the arrows), so the carousel takes
- * the same space as with the original 0.25rem / 0.5rem padding. The scroll
- * padding keeps the same room when a card snaps into place.
- */
 .scroller {
   list-style: none;
-  margin: -0.75rem -0.5rem -2.25rem;
-  padding: 1rem 1rem 2.5rem;
-  scroll-padding-inline: 1rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
   display: flex;
   gap: var(--hs-gap, 1.5rem);
   overflow-x: auto;

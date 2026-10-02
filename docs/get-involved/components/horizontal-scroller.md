@@ -73,6 +73,5 @@ With narrower items, from `src/components/AppTileCarousel/index.js`:
 
 - The three size props are applied as inline CSS custom properties, so they accept any CSS length.
 - The scroll position resets to the start whenever the number of children changes.
-- The track reserves room around the items for a hover lift with `--site-shadow-lg`, so card shadows are not clipped by the scrolling container. Negative margins cancel that room out, so the carousel takes no extra space. Items with a larger shadow or lift than the tokens will still be clipped.
 - Scroll state is measured with a layout effect that only runs in the browser, so the component is safe for server-side rendering.
 - The arrows are real `<button>` elements with focus styles, and the dots are `aria-hidden`, so keyboard users navigate through the items themselves.
