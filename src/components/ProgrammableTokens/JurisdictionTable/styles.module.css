@@ -1,0 +1,166 @@
+/*
+ * Jurisdiction table (Figma node 578:269). Open rows separated by hairlines,
+ * a stronger rule under the header, and 200px / 340px / flexible columns with
+ * 32px between them. Infima's default table chrome (borders, zebra rows,
+ * cell padding) is reset so only the design's rules remain.
+ */
+.table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  border: none;
+}
+
+/* Infima tints the header and stripes every second row; this table uses
+   hairlines only. */
+.table thead,
+.table tr,
+.table tbody tr:nth-child(n) {
+  border: none;
+  background: none;
+}
+
+/* Hairlines sit on the cells: a stronger rule under the header row and a
+   light one under every body row. */
+.table thead th {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.table tbody th,
+.table tbody td {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.table th,
+.table td {
+  padding: 24px 32px 24px 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 0;
+}
+
+.table thead th {
+  padding-top: 0;
+  padding-bottom: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.table thead th:first-child {
+  width: 232px;
+}
+
+.table thead th:nth-child(2) {
+  width: 372px;
+}
+
+.jurisdiction {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* The tags stack inside a wrapper so the cell itself stays a table cell. */
+.frameworkList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--site-space-2xs);
+}
+
+.framework {
+  display: inline-block;
+  max-width: 340px;
+  padding: 10px 14px;
+  border-radius: var(--site-radius-md);
+  background: var(--site-tint-strong);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19px;
+  color: var(--ifm-color-primary);
+}
+
+.requirement {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 996px) {
+  .table thead th:first-child {
+    width: 180px;
+  }
+
+  .table thead th:nth-child(2) {
+    width: 300px;
+  }
+}
+
+/* Stacked rows: the header row is hidden visually (it stays in the
+   accessibility tree) and each row becomes a block. */
+@media (max-width: 768px) {
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .table tbody tr:nth-child(n) {
+    padding: var(--site-space-md) 0;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  .table tbody tr:first-child {
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+  }
+
+  .table tbody th,
+  .table tbody td {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .frameworkCell {
+    margin-top: var(--site-space-xs);
+  }
+
+  .requirement {
+    margin-top: var(--site-space-xs);
+  }
+}

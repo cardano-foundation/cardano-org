@@ -1,0 +1,97 @@
+/*
+ * Framework cards inside the regulatory tabs (Figma node 586:321). Equal
+ * columns 32px apart; a jurisdiction with a single framework gets one card
+ * capped at 800px, as in the Switzerland and United Kingdom variants, and
+ * one with two frameworks gets two columns.
+ */
+/* Tab panel: the market overview, then the framework cards if any. */
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-md);
+}
+
+.overview {
+  max-width: 900px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--site-space-lg);
+  align-items: start;
+}
+
+.panel.panelSingle {
+  grid-template-columns: minmax(0, 800px);
+}
+
+.panel.panelDouble {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-xs);
+  padding: 26px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-xl);
+}
+
+.name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--ifm-color-primary);
+}
+
+.body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Statutory requirements with the design's 6px coral bullets. */
+.requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 6px 0 0 4px;
+  list-style: none;
+}
+
+.requirements li {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 21px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.requirements li::before {
+  content: "";
+  position: absolute;
+  top: 7.5px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: url("/img/programmable-tokens/bullet.svg") no-repeat center / 6px 6px;
+}
+
+@media (max-width: 996px) {
+  .panel,
+  .panel.panelDouble {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-md);
+  }
+}

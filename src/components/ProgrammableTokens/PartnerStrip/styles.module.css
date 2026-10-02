@@ -1,0 +1,79 @@
+/*
+ * Partner strip (Figma node 574:280): the logos sit directly on the section
+ * band at the design's 44px height, at least 32px apart. The grey boxes in
+ * the design are placeholders marking the logo positions, not containers.
+ *
+ * The logos spread across the full content width at every screen size,
+ * whatever their number, with the first and last aligned to the content
+ * edges and equal gaps in between. Each slot is as wide as its logo (up to
+ * 200px, so the widest wordmarks reach the full 44px height). On phones the logos get smaller and may wrap; each row is then
+ * spaced evenly so a shorter last row stays balanced.
+ */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--site-space-md) var(--site-space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  height: 44px;
+  margin: 0;
+}
+
+/* The link fills the slot so the whole logo area is clickable. */
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: var(--site-radius-md);
+  transition: opacity var(--site-duration-base) var(--site-ease);
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
+
+/* App icons with their own square background keep a small corner radius;
+   transparent logos are unaffected by it. No display value here: ThemedImage
+   hides the other theme's image with display: none before hydration, and
+   the link is a flex container, so the image needs none of its own. */
+.logo {
+  width: auto;
+  max-width: 200px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--site-radius-md);
+}
+
+/* Scoped under .strip so these win however the production bundle orders the
+   media block relative to the base rules. */
+@media (max-width: 480px) {
+  ul.strip {
+    justify-content: space-evenly;
+    gap: var(--site-space-md) var(--site-space-xs);
+  }
+
+  .strip .slot {
+    height: 32px;
+  }
+}

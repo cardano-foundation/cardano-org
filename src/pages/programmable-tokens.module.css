@@ -1,0 +1,462 @@
+/*
+ * /programmable-tokens page layout (Figma node 574:274). Section wrappers,
+ * the section headers, the "why" intro and pull quote, the prose cards, the
+ * blue capabilities band, the architecture columns, the CTA band, and the FAQ
+ * type overrides. The hero and the larger section bodies live in
+ * src/components/ProgrammableTokens/*.
+ */
+
+/* Section rhythm: 64px vertical padding (the design uses 72px), with the
+   design's 40px between blocks inside a section. */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: var(--site-space-2xl) 0;
+}
+
+/*
+ * Section header. TitleWithText renders an h1 with the global top margin,
+ * which would stack on top of the section padding, so it is zeroed here and
+ * set to the design's 30px.
+ */
+.sectionHeader h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+/* Shared paragraph styles */
+
+.muted {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.lead {
+  max-width: 980px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: var(--site-space-xs);
+}
+
+.subheading {
+  margin: 0;
+  font-size: 21px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* "Why" intro: title on the left (440px), two paragraphs on the right. */
+.introColumns {
+  display: grid;
+  grid-template-columns: 440px minmax(0, 1fr);
+  gap: var(--site-space-2xl);
+  align-items: start;
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.introText p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Pull quote: subtle panel with a coral rule, 26px brand-blue text. The coral
+   matches the headingDot accent. */
+.pullQuote {
+  margin: 0;
+  padding: 36px 40px 36px 36px;
+  border-radius: var(--site-radius-xl);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.pullQuote blockquote {
+  margin: 0;
+  padding: 0 0 0 28px;
+  border-left: 4px solid rgb(255, 118, 118);
+  border-radius: 2px;
+}
+
+.pullQuote p {
+  margin: 0;
+  font-size: 26px;
+  line-height: 38px;
+  color: var(--ifm-color-primary);
+}
+
+/* Context paragraphs between the pull quote and the jurisdiction table. */
+.context {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 880px;
+}
+
+.context p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.closing {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 880px;
+}
+
+.closingEmphasis {
+  max-width: 760px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Compliance prose cards: two columns, 32px apart. */
+.proseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--site-space-lg);
+  align-items: start;
+}
+
+.proseCard {
+  margin: 0;
+  padding: 28px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-xl);
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/*
+ * Capabilities band: fixed brand blue (#0033AD, from Figma) with white text in
+ * both themes, like the rollups band on the Layer 2 page. The three
+ * translucent orbs from the design are background images anchored to the
+ * center so they keep their place at any width. A percentage position aligns
+ * that point of the image with the same point of the box, so each offset is
+ * the design's x minus half of (1280px - orb size).
+ */
+.capabilitiesSection {
+  position: relative;
+  overflow: hidden;
+  background-color: #0033ad;
+  background-image:
+    url("/img/programmable-tokens/orb-light-1.svg"),
+    url("/img/programmable-tokens/orb-light-2.svg"),
+    url("/img/programmable-tokens/orb-light-3.svg");
+  background-repeat: no-repeat;
+  background-position:
+    calc(50% + 650px) -180px,
+    calc(50% - 560px) 220px,
+    calc(50% + 180px) 300px;
+  background-size:
+    620px 620px,
+    480px 480px,
+    360px 360px;
+  color: #ffffff;
+}
+
+.invertedTitle {
+  max-width: 900px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.invertedIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-2xs);
+  max-width: 820px;
+  margin-top: -20px;
+}
+
+.invertedIntro p,
+.invertedClosing {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.invertedClosing {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Closing line and "Create Your Module" button under the capability cards. */
+.capabilitiesFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--site-space-md);
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--site-space-md);
+}
+
+.glassCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 300px;
+  padding: 26px var(--site-space-md);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--site-radius-xl);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.glassTitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.glassBody {
+  margin: 0;
+  font-size: 13px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Architecture: 600px diagram on the left, prose on the right. */
+.architectureColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+  gap: var(--site-space-xl);
+  align-items: start;
+}
+
+.architectureText {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.architectureText p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.regulatoryIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin-top: -20px;
+}
+
+.regulatoryIntro p,
+.regulatoryConclusion p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Illustrative-purposes note above the jurisdiction tabs. */
+.regulatoryIntro .disclaimer {
+  font-size: 12px;
+  line-height: 19px;
+  font-style: italic;
+}
+
+.regulatoryConclusion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+}
+
+.regulatoryConclusion strong {
+  color: var(--ifm-color-emphasis-900);
+}
+
+/*
+ * CTA band: dark navy (#010423, from Figma) with three translucent blue orbs,
+ * 240px tall with the button centered. Fixed colors in both themes.
+ */
+.ctaSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: var(--site-space-xl) 30px;
+  background-color: #010423;
+  background-image:
+    url("/img/programmable-tokens/orb-blue-1.svg"),
+    url("/img/programmable-tokens/orb-blue-2.svg"),
+    url("/img/programmable-tokens/orb-blue-3.svg");
+  background-repeat: no-repeat;
+  background-position:
+    calc(50% - 550px) -110px,
+    calc(50% + 530px) 40px,
+    calc(50% + 30px) 150px;
+  background-size:
+    420px 420px,
+    380px 380px,
+    300px 300px;
+}
+
+/* White pill buttons on the fixed brand-blue and navy bands. */
+.pillButton,
+.ctaButton {
+  display: inline-block;
+  padding: var(--site-space-sm) 40px;
+  border-radius: var(--site-radius-pill);
+  background: #ffffff;
+  color: #0033ad;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--site-duration-base) var(--site-ease);
+}
+
+.pillButton:hover,
+.pillButton:focus,
+.ctaButton:hover,
+.ctaButton:focus {
+  background: #eef1f8;
+  color: #0033ad;
+  text-decoration: none;
+}
+
+/* The brand-blue focus ring is invisible on the navy band, so use white. */
+.pillButton:focus-visible,
+.ctaButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* FAQ: the design uses a 16px question, a brand-blue icon, and no rule above
+   the first row. Accordion's class names are hashed, so the rows are targeted
+   by element, scoped under .section to outrank the component's own rules. */
+.section .faq {
+  border-top: none;
+}
+
+.faq h3 button {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.faq h3 button > span:last-child {
+  color: var(--ifm-color-primary);
+}
+
+.footnotesSection {
+  padding: 44px 0 56px;
+}
+
+/* Partner strip band: 132px tall in the design (44px tiles, 44px above and
+   below). */
+.partnersSection {
+  padding: 44px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillButton,
+  .ctaButton {
+    transition: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .introColumns,
+  .architectureColumns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-lg);
+  }
+
+  .capabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .glassCard {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    gap: var(--site-space-lg);
+    padding: var(--site-space-xl) 0;
+  }
+
+  .sectionHeader h1,
+  .invertedTitle {
+    font-size: 26px;
+  }
+
+  .invertedIntro,
+  .regulatoryIntro {
+    margin-top: calc(-1 * var(--site-space-sm));
+  }
+
+  .pullQuote {
+    padding: var(--site-space-md);
+  }
+
+  .pullQuote blockquote {
+    padding-left: var(--site-space-sm);
+  }
+
+  .pullQuote p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .proseGrid,
+  .capabilityGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--site-space-md);
+  }
+
+  .proseCard {
+    padding: var(--site-space-md);
+  }
+
+  .footnotesSection {
+    padding: var(--site-space-xl) 0;
+  }
+}
