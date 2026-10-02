@@ -24,11 +24,11 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { FaUsers, FaServer, FaUniversity, FaShieldAlt, FaCompass } from "react-icons/fa";
-import {translate} from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 import styles from "./governance.module.css";
-import governanceRoleSurvey from "@site/src/data/governanceRoleSurvey.json";
-import governanceFAQ from "@site/src/data/governanceFAQ.json";
-import { jsonLdString } from "@site/src/utils/jsonLd";
+import { getGovernanceRoleSurvey } from "@site/src/data/governanceRoleSurvey";
+import { getGovernanceFAQ } from "@site/src/data/governanceFAQ";
+import { faqJsonLd } from "@site/src/utils/jsonLd";
 
 function GovernanceHero() {
   return (
@@ -83,7 +83,18 @@ function GovernanceRolesSection() {
       <Divider text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
       <SpacerBox size="small" />
       <p className="black-text">
-        {translate({id: 'governance.onboarding.intro', message: 'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding.'})}
+        <Translate
+          id="governance.onboarding.intro"
+          values={{
+            treasuryFunding: (
+              <Link to="/governance/treasury">
+                {translate({id: 'governance.onboarding.introTreasuryLink', message: 'treasury funding'})}
+              </Link>
+            ),
+          }}
+        >
+          {'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}.'}
+        </Translate>
       </p>
       <TitleWithText
         description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}
@@ -272,7 +283,95 @@ function ToolsGrid() {
   );
 }
 
+function getOptionsCompareData() {
+  // Row order of every card. The row count is mirrored by the grid-row spans
+  // of .compareCard and .compareList in governance.module.css.
+  const aspects = [
+    { key: "time", label: translate({ id: "governance.compare.aspect.time", message: "Time" }) },
+    { key: "cost", label: translate({ id: "governance.compare.aspect.cost", message: "Cost" }) },
+    { key: "gain", label: translate({ id: "governance.compare.aspect.gain", message: "What you get" }) },
+    { key: "watch", label: translate({ id: "governance.compare.aspect.watch", message: "Keep in mind" }) },
+    { key: "visibility", label: translate({ id: "governance.compare.aspect.visibility", message: "Who can see it" }) },
+  ];
+  const options = [
+    {
+      key: "none",
+      title: translate({ id: "governance.compare.none.title", message: "Don't delegate" }),
+      cells: {
+        time: translate({ id: "governance.compare.none.time", message: "Nothing to set up." }),
+        cost: translate({ id: "governance.compare.none.cost", message: "Nothing." }),
+        gain: translate({ id: "governance.compare.none.gain", message: "No decisions to make." }),
+        watch: translate({ id: "governance.compare.none.watch", message: "Governance decisions are made without your stake." }),
+        visibility: translate({ id: "governance.compare.none.visibility", message: "Nothing new is recorded on the chain." }),
+      },
+    },
+    {
+      key: "delegate",
+      title: translate({ id: "governance.compare.delegate.title", message: "Delegate" }),
+      subtitle: translate({ id: "governance.compare.delegate.subtitle", message: "To a DRep, Abstain or No Confidence" }),
+      cells: {
+        time: translate({ id: "governance.compare.delegate.time", message: "A few minutes to set up. If you pick a DRep, look at their votes now and then." }),
+        cost: translate({ id: "governance.compare.delegate.cost", message: "A transaction fee, typically less than 0.2 ada. No deposit." }),
+        gain: translate({ id: "governance.compare.delegate.gain", message: "Your stake takes part in governance through the option you choose, and you can switch at any time." }),
+        watch: translate({ id: "governance.compare.delegate.watch", message: "A DRep may vote differently than you would, or stop voting. Abstain and No Confidence apply a fixed rule to every vote." }),
+        visibility: translate({ id: "governance.compare.delegate.visibility", message: "Your choice is recorded on the chain and linked to your stake address." }),
+      },
+    },
+    {
+      key: "drep",
+      title: translate({ id: "governance.compare.drep.title", message: "Become a DRep" }),
+      cells: {
+        time: translate({ id: "governance.compare.drep.time", message: "Regular time to read proposals, vote and explain your votes." }),
+        cost: translate({ id: "governance.compare.drep.cost", message: "A deposit of 500 ada, returned when you retire, plus transaction fees." }),
+        gain: translate({ id: "governance.compare.drep.gain", message: "A direct vote on treasury withdrawals, protocol changes and the constitution, weighted by the stake delegated to you." }),
+        watch: translate({ id: "governance.compare.drep.watch", message: "The protocol does not pay DReps. Delegators expect you to explain your votes." }),
+        visibility: translate({ id: "governance.compare.drep.visibility", message: "Every vote is recorded on the chain under your DRep ID, with a link to any rationale you publish." }),
+      },
+    },
+  ];
+  return { aspects, options };
+}
+
+// Side-by-side view of the participation options. The tabs above show one
+// path at a time, this block is the only place where they sit next to each
+// other. Rows line up across cards through CSS subgrid.
+function GovernanceOptionsCompare() {
+  const { aspects, options } = getOptionsCompareData();
+  return (
+    <section aria-labelledby="compare-options-title">
+      <Divider text={translate({ id: "governance.compare.divider", message: "Compare your options" })} id="compare" />
+      <h2 id="compare-options-title" className={styles.compareTitle}>
+        {translate({ id: "governance.compare.title", message: "What each option involves" })}
+      </h2>
+      <p className={styles.compareIntro}>
+        {translate({ id: "governance.compare.intro", message: "Here is what each choice asks of you and what it gives you in return." })}
+      </p>
+      {/* role="list" keeps list semantics in Safari/VoiceOver despite list-style: none */}
+      {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+      <ul role="list" className={styles.compareGrid}>
+        {options.map((option) => (
+          <li key={option.key} className={styles.compareCard}>
+            <div>
+              <h3 className={styles.compareCardTitle}>{option.title}</h3>
+              {option.subtitle && <p className={styles.compareSubtitle}>{option.subtitle}</p>}
+            </div>
+            <dl className={styles.compareList}>
+              {aspects.map(({ key, label }) => (
+                <div key={key} className={styles.compareRow}>
+                  <dt className={styles.compareLabel}>{label}</dt>
+                  <dd className={styles.compareValue}>{option.cells[key]}</dd>
+                </div>
+              ))}
+            </dl>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default function Governance() {
+  const governanceFAQ = getGovernanceFAQ();
   return (
     <Layout
       title={translate({id: 'governance.meta.title', message: 'Cardano Governance - Your ada, your voice'})}
@@ -280,20 +379,7 @@ export default function Governance() {
     >
       <OpenGraphInfo pageName="governance" />
       <Head>
-        <script type="application/ld+json">
-          {jsonLdString({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": governanceFAQ.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer.join(" "),
-              },
-            })),
-          })}
-        </script>
+        <script type="application/ld+json">{faqJsonLd(governanceFAQ)}</script>
       </Head>
       <GovernanceHero />
       <main>
@@ -310,10 +396,12 @@ export default function Governance() {
           <SpacerBox size="small" />
           <GovernancePathsSection />
           <SpacerBox size="medium" />
+          <GovernanceOptionsCompare />
+          <SpacerBox size="medium" />
           <GovernanceFAQ data={governanceFAQ} />
           <SpacerBox size="medium" />
           <SurveyCard
-            surveyData={governanceRoleSurvey}
+            surveyData={getGovernanceRoleSurvey()}
             icon={<FaCompass />}
             title={translate({id: 'governance.survey.title', message: 'Not sure where to start?'})}
             description={translate({id: 'governance.survey.description', message: 'Take a short guided path to understand your options and find the governance role that fits you best.'})}

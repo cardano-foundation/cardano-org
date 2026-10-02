@@ -8,6 +8,12 @@ function parseStringValue(s) {
   return s.replace(/^"|"$/g, '').replace(/\\"/g, '"').replace(/\\n/g, ' ');
 }
 
+// The "mobile" property of a wallet is derived from walletFeatures.platforms.
+// Mirrors the derivation in src/data/apps.js.
+function isMobileWallet(platformsList) {
+  return /["'](ios|android)["']/.test(platformsList);
+}
+
 function parseShowcases(source) {
   const startMatch = source.match(/export const Showcases = \[/);
   if (!startMatch) throw new Error('Cannot find Showcases array');
@@ -24,6 +30,7 @@ function parseShowcases(source) {
   const previewLineRegex = /preview:\s*require\(["']\.\/app-screenshots\/([^"']+)["']\)/;
   const extraPreviewsRegex = /extraPreviews:\s*\[([^\]]*)\]/;
   const extraPreviewItemRegex = /require\(["']\.\/app-screenshots\/([^"']+)["']\)/g;
+  const platformsRegex = /platforms:\s*\[([^\]]*)\]/;
 
   const apps = [];
   let m;
@@ -31,6 +38,12 @@ function parseShowcases(source) {
     const entrySlice = block.slice(m.index, entryRegex.lastIndex);
     const previewMatch = entrySlice.match(previewLineRegex);
     const extraMatch = entrySlice.match(extraPreviewsRegex);
+    const platformsMatch = entrySlice.match(platformsRegex);
+    const properties = m[10]
+      .split(',')
+      .map((t) => t.trim().replace(/^"|"$/g, ''))
+      .filter(Boolean);
+    if (platformsMatch && isMobileWallet(platformsMatch[1])) properties.push('mobile');
     const extraPreviewFiles = [];
     if (extraMatch) {
       extraPreviewItemRegex.lastIndex = 0;
@@ -51,10 +64,7 @@ function parseShowcases(source) {
       website: m[7],
       source: parseStringValue(m[8]),
       category: m[9],
-      properties: m[10]
-        .split(',')
-        .map((t) => t.trim().replace(/^"|"$/g, ''))
-        .filter(Boolean),
+      properties,
       maintainerPick: m[11] === 'true',
       x: m[12] || null,
       spotlight: m[13]

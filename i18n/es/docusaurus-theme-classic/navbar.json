@@ -19,33 +19,17 @@
     "message": "Noticias",
     "description": "Navbar item with label News"
   },
-  "item.label.What is ada?": {
-    "message": "¿Qué es ada?",
-    "description": "Navbar item with label What is ada?"
-  },
-  "item.label.Get started with Cardano": {
-    "message": "Empieza en Cardano",
-    "description": "Navbar item with label Get started with Cardano"
-  },
   "item.label.Where to get ada?": {
     "message": "¿Dónde obtener ada?",
     "description": "Navbar item with label Where to get ada?"
   },
   "item.label.Protect your ada": {
-    "message": "Protege tú ada",
+    "message": "Protege tu ada",
     "description": "Navbar item with label Protect your ada"
-  },
-  "item.label.Delegate your ada": {
-    "message": "Delega tú ada",
-    "description": "Navbar item with label Delegate your ada"
   },
   "item.label.Delegate your vote": {
     "message": "Delegar tu voto",
     "description": "Navbar item with label Delegate your vote"
-  },
-  "item.label.Use Cardano Apps": {
-    "message": "Usar aplicaciones de Cardano",
-    "description": "Navbar item with label Use Cardano Apps"
   },
   "item.label.Cardano Research": {
     "message": "Investigación de Cardano",
@@ -55,25 +39,9 @@
     "message": "Insights de Cardano",
     "description": "Navbar item with label Cardano Insights"
   },
-  "item.label.Hard Forks": {
-    "message": "Hard Forks",
-    "description": "Navbar item with label Hard Forks"
-  },
-  "item.label.Follow Cardano": {
-    "message": "Sigue a Cardano",
-    "description": "Navbar item with label Follow Cardano"
-  },
-  "item.label.Newsletter": {
-    "message": "Boletín de noticias",
-    "description": "Navbar item with label Newsletter"
-  },
   "item.label.Online Communities": {
-    "message": "Comunidades Online",
+    "message": "Comunidades online",
     "description": "Navbar item with label Online Communities"
-  },
-  "item.label.Cardano Ambassadors": {
-    "message": "Embajadores de Cardano",
-    "description": "Navbar item with label Cardano Ambassadors"
   },
   "item.label.Cardano Events": {
     "message": "Eventos de Cardano",
@@ -86,10 +54,6 @@
   "item.label.Get involved in cardano.org": {
     "message": "Participa en cardano.org",
     "description": "Navbar item with label Get involved in cardano.org"
-  },
-  "item.label.Participate in governance": {
-    "message": "Participa en la gobernanza",
-    "description": "Navbar item with label Participate in governance"
   },
   "item.label.Governance Tools": {
     "message": "Herramientas de gobernanza",
@@ -112,7 +76,7 @@
     "description": "Navbar item with label Developer Portal"
   },
   "item.label.Builder Tools": {
-    "message": "Herramientas para Desarrolladores",
+    "message": "Herramientas para desarrolladores",
     "description": "Navbar item with label Builder Tools"
   },
   "item.label.Companies building on Cardano": {
@@ -127,10 +91,6 @@
     "message": "Soluciones para empresas",
     "description": "Navbar item with label Enterprise Solutions"
   },
-  "item.label.Use Cases": {
-    "message": "Casos de Uso",
-    "description": "Navbar item with label Use Cases"
-  },
   "item.label.Identity": {
     "message": "Identidad",
     "description": "Navbar item with label Identity"
@@ -144,7 +104,7 @@
     "description": "Navbar item with label Supply Chain"
   },
   "item.label.Use": {
-    "message": "Uso",
+    "message": "Usar",
     "description": "Navbar item with label Use"
   },
   "item.label.What is Cardano?": {
@@ -159,10 +119,6 @@
     "message": "¿Qué es una cartera?",
     "description": "Navbar item with label What is a Wallet?"
   },
-  "item.label.Cardano Quiz": {
-    "message": "Quiz de Cardano",
-    "description": "Navbar item with label Cardano Quiz"
-  },
   "item.label.How Cardano works": {
     "message": "Cómo funciona Cardano",
     "description": "Navbar item with label How Cardano works"
@@ -170,14 +126,6 @@
   "item.label.Smart contracts and DApps": {
     "message": "Contratos inteligentes y DApps",
     "description": "Navbar item with label Smart contracts and DApps"
-  },
-  "item.label.Cardano Academy": {
-    "message": "Cardano Academy",
-    "description": "Navbar item with label Cardano Academy"
-  },
-  "item.label.Ouroboros": {
-    "message": "Ouroboros",
-    "description": "Navbar item with label Ouroboros"
   },
   "item.label.Cardano Apps": {
     "message": "Aplicaciones de Cardano",
@@ -187,16 +135,12 @@
     "message": "Buscar una cartera",
     "description": "Navbar item with label Find a Wallet"
   },
-  "item.label.Stablecoins": {
-    "message": "Stablecoins",
-    "description": "Navbar item with label Stablecoins"
-  },
   "item.label.Start Here": {
     "message": "Comienza aquí",
     "description": "Navbar item with label Start Here"
   },
   "item.label.Ambassador Program": {
-    "message": "Programa de Embajadores",
+    "message": "Programa de embajadores",
     "description": "Navbar item with label Ambassador Program"
   },
   "item.label.Operator Notifications": {
@@ -226,5 +170,17 @@
   "item.label.All Use Cases": {
     "message": "Todos los casos de uso",
     "description": "Navbar item with label All Use Cases"
+  },
+  "item.label.Stake your ada": {
+    "message": "Haz staking de tu ada",
+    "description": "Navbar item with label Stake your ada"
+  },
+  "item.label.DeFi": {
+    "message": "DeFi",
+    "description": "Navbar item with label DeFi"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
   }
 }

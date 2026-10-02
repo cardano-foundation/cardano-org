@@ -178,5 +178,13 @@
   "item.label.DeFi": {
     "message": "DeFi",
     "description": "Navbar item with label DeFi"
+  },
+  "item.label.Cardano Fees & Transactions": {
+    "message": "Cardano Fees & Transactions",
+    "description": "Navbar item with label Cardano Fees & Transactions"
+  },
+  "item.label.The Cardano Treasury": {
+    "message": "The Cardano Treasury",
+    "description": "Navbar item with label The Cardano Treasury"
   }
 }

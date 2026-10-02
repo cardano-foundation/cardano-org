@@ -1,7 +1,7 @@
 ---
-title: Comunidades Online
+title: Comunidades online
 displayed_sidebar: null
-description: Comunidades Online de Cardano
+description: Comunidades online de Cardano
 ---
 
 La comunidad de Cardano cuenta con diversos canales en las redes sociales. Cada uno es distinto y tiene su propia esencia. Aquí tienes una lista de todos los canales comunitarios recomendados. ¡Únete a los que prefieras y conecta con otros miembros de la comunidad de Cardano en todo el mundo!
@@ -19,7 +19,7 @@ Participa en discusiones extensas y bien estructuradas.
 
 Conecta con la comunidad de Cardano en eventos presenciales o virtuales.
 
-- [Cardano en Meetup](https://www.meetup.com/pro/cardano) - Grupo de Meetup alrededor del mundo.
+- [Cardano en Meetup](https://www.meetup.com/pro/cardano) - Grupos de Meetup en todo el mundo.
 - [Cardano en Luma](https://luma.com/CardanoEvents) - Eventos en Luma alrededor del mundo.
 
 ## Cardano en Telegram
@@ -52,14 +52,14 @@ Chat en tiempo real y discusiones rápidas.
 - :de: Cardano Alemán Trading: https://t.me/cardanotradinggerman
 - :es: Cardano Español Oficial: https://t.me/CardanoSpanishOfficial
 - :portugal: Cardano Portugués Oficial: https://t.me/CardanoPortugueseOfficial
-- :earth_americas: Cardano Norte América Oficial: https://t.me/CardanoNorthAmericaOfficial
+- :earth_americas: Cardano Norteamérica Oficial: https://t.me/CardanoNorthAmericaOfficial
 - :india: Cardano India & Sri Lanka: https://t.me/cardano_india
 - :indonesia: Cardano Indonesia: https://t.me/CardanoIndonesiaOfficial
 - :australia: Cardano Australia: https://t.me/CardanoAustralia
-- 🇮🇹 Italiano: https://t.me/CardanoIT
-- 🇷🇺 Ruso: https://t.me/cardano_rus
+- 🇮🇹 Italia: https://t.me/CardanoIT
+- 🇷🇺 Rusia: https://t.me/cardano_rus
 - 🇷🇺 Desarrolladores rusos : https://t.me/CardanoRussianMain
-- 🇪🇸 Español: https://t.me/CardanoEsp
+- 🇪🇸 España: https://t.me/CardanoEsp
 - 🇹🇷 Cardano Turquía: https://t.me/CardanoTurk
 - :uk: Cardano UK: https://t.me/CardanoUK
 
@@ -67,4 +67,4 @@ Chat en tiempo real y discusiones rápidas.
 
 ¿Quieres ver a tu comunidad en esta lista? ¡Nos encantaría sumar más comunidades de Cardano!
 
-Consulta la guía [Añade tú comunidad](/docs/get-involved/add-community) para conocer los requisitos y saber cómo enviar la tuya mediante un pull request.
+Consulta la guía [Añade tu comunidad](/docs/get-involved/add-community) para conocer los requisitos y saber cómo enviar la tuya mediante un pull request.

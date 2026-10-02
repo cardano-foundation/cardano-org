@@ -26,7 +26,7 @@ Kết nối với cộng đồng Cardano tại các sự kiện trực tiếp ho
 
 Trò chuyện trực tiếp và thảo luận nhanh chóng.
 
-- Trang chính của Cardano: https://t.me/Cardano
+- Nhóm chính của Cardano: https://t.me/Cardano
 - Các nhà phát triển Cardano: https://t.me/CardanoDevelopersOfficial
 - Báo cáo Cardano gửi Ban quản trị:  https://t.me/cardanoreporttoadmin
   Mục này dành cho trường hợp bạn gặp vấn đề với các quy định, người dùng, quản trị viên, người điều hành hoặc bất cứ điều gì khác không hoạt động đúng cách trong các kênh Telegram của chúng tôi.
@@ -52,8 +52,7 @@ Trò chuyện trực tiếp và thảo luận nhanh chóng.
 - :kr: Cardano Giao dịch Hàn Quốc: https://t.me/CardanoKoreaTrading
 - :cn: Cardano Trung Quốc: https://t.me/CardanoChinaOfficial
 - :netherlands: Cardano Hà Lan và tiếng Flemish: https://t.me/CardanoDutchOfficial
-- :de: Cardano Đức:
-  ttps://t.me/CardanoGermanOfficial
+- :de: Cardano Đức: https://t.me/CardanoGermanOfficial
 - :de: Cardano Giao dịch Đức: https://t.me/cardanotradinggerman
 - :es: Cardano Tây Ban Nha: https://t.me/CardanoSpanishOfficial
 - :portugal: Cardano Bồ Đào Nha:
@@ -64,7 +63,7 @@ Trò chuyện trực tiếp và thảo luận nhanh chóng.
 - :indonesia: Cardano In-đô-nê-xi-a:
   https://t.me/CardanoIndonesiaOfficial
 - :australia: Cardano Australia: https://t.me/CardanoAustralia
-- 🇮🇹 Italy: https://t.me/CardanoIT
+- 🇮🇹 Ý: https://t.me/CardanoIT
 - 🇷🇺 Nga: https://t.me/cardano_rus
 - 🇷🇺 Các nhà phát triển Nga: https://t.me/CardanoRussianMain
 - 🇪🇸 Tây Ban Nha: https://t.me/CardanoEsp
@@ -75,4 +74,4 @@ Trò chuyện trực tiếp và thảo luận nhanh chóng.
 
 Bạn muốn cộng đồng của mình được liệt kê ở đây? Chúng tôi rất mong muốn được hợp tác với nhiều cộng đồng Cardano tuyệt vời hơn nữa!
 
-Vui lòng đọc hướng dẫn [Thêm cộng đồng của bạn](/docs/get-involved/add-community) để tìm hiểu về các yêu cầu và cách gửi cộng đồng của bạn thông qua yêu cầu kéo.
+Vui lòng đọc hướng dẫn [Thêm cộng đồng của bạn](/docs/get-involved/add-community) để tìm hiểu về các yêu cầu và cách gửi cộng đồng của bạn thông qua pull request.

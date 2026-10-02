@@ -301,3 +301,105 @@
   text-align: center;
   margin: 0;
 }
+
+/* Options compare block */
+.compareTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 var(--site-space-xs);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.compareIntro {
+  max-width: 720px;
+  margin: 0 0 var(--site-space-lg);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--site-space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each card spans the head row plus five aspect rows of the parent grid (the
+   aspects list in governance.js) and reuses those tracks, so the same aspect
+   sits at the same height in every card. Browsers without subgrid ignore the
+   rows and show the cards unaligned, which is fine. */
+.compareCard {
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  row-gap: var(--site-space-sm);
+  padding: var(--site-space-md);
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-xs);
+}
+
+.compareCardTitle {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.compareSubtitle {
+  font-size: 0.9rem;
+  margin: var(--site-space-3xs) 0 0;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.compareList {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  row-gap: var(--site-space-sm);
+  margin: 0;
+}
+
+.compareRow {
+  padding-top: var(--site-space-xs);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.compareLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0 0 var(--site-space-3xs);
+}
+
+.compareValue {
+  margin: 0;
+  color: var(--ifm-font-color-base);
+  line-height: 1.5;
+}
+
+/* Stack the cards at the same width as the FAQ popular-question grid */
+@media (max-width: 996px) {
+  .compareGrid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--site-space-md);
+  }
+
+  /* Stacked cards need no row alignment, drop the subgrid so the parent
+     row-gap only separates the cards. */
+  .compareCard,
+  .compareList {
+    grid-row: auto;
+    grid-template-rows: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .compareTitle {
+    font-size: 1.5rem;
+  }
+}

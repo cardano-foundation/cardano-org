@@ -19,7 +19,9 @@ const ACTIVITY_UNIT = translate({
   message: "tx",
 });
 
-function AppTile({ app, badge = null }) {
+// `showProperties={false}` keeps the meta row to activity and category, e.g.
+// on the homepage where extra tags are noise.
+function AppTile({ app, badge = null, showProperties = true }) {
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
@@ -41,7 +43,7 @@ function AppTile({ app, badge = null }) {
         {categoryDef && (
           <span className={styles.category}>{categoryDef.label}</span>
         )}
-        {app.properties.slice(0, 2).map((p) => {
+        {showProperties && app.properties.slice(0, 2).map((p) => {
           const def = Properties[p];
           if (!def) return null;
           return (

@@ -11,6 +11,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FAQSection from "@site/src/components/FAQSection";
+import { getOperationFAQ } from "@site/src/data/operationFAQ";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import { translate } from '@docusaurus/Translate';
@@ -122,7 +123,7 @@ export default function Home() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <FAQSection jsonFileName="operationFAQ" />
+          <FAQSection data={getOperationFAQ()} />
           <SpacerBox size="medium" />
         </BoundaryBox>
       </main>

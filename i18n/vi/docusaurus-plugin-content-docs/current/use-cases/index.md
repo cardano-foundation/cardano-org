@@ -1,5 +1,5 @@
 ---
-title: Các trường hợp sử dụng tổng quan
+title: Tổng quan các trường hợp sử dụng
 description: Tìm hiểu cách công nghệ blockchain Cardano giải quyết các vấn đề thực tiễn trong nhiều ngành công nghiệp khác nhau
 sidebar_label: Tổng quan
 sidebar_position: 1
@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Các trường hợp sử dụng Cardano
 
-Cardano là một blockchain Layer 1 công khai, không cần cấp phép, hoàn hảo cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay mã hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
+Cardano là một blockchain Layer 1 công khai, không cần cấp phép, rất phù hợp cho các doanh nghiệp và cá nhân đang tìm kiếm các giải pháp an toàn, có khả năng mở rộng và minh bạch. Cho dù đó là tối ưu hóa chuỗi cung ứng, hỗ trợ thanh toán toàn cầu hay token hóa tài sản, Cardano đều mang đến sự đổi mới phi tập trung với bảo mật mạnh mẽ và mức tiêu thụ năng lượng thấp.
 
 ## Danh tính
 
@@ -16,13 +16,13 @@ Các giải pháp định danh dựa trên blockchain cung cấp thông tin xác
 - **[Thông tin học vấn](./education)** - Chứng chỉ học thuật được xác minh bằng công nghệ blockchain
 - **[Định danh kỹ thuật số](./digital-identity)** - Giải pháp định danh tự chủ
 - **[KYC tài chính](./finance-kyc)** - Quy trình xác minh danh tính được đơn giản hóa cho các dịch vụ tài chính
-- **[Tài liệu Chính phủ](./government)** - Tài liệu chính thức chống làm giả
+- **[Tài liệu chính phủ](./government)** - Tài liệu chính thức chống làm giả
 
 ## Tài chính
 
 Các ứng dụng tài chính phi tập trung cung cấp tính minh bạch và khả năng truy cập dễ dàng.
 
-- **[DeFi](./defi)** - Lending, Borrowing và sàn giao dịch phi tập trung
+- **[DeFi](./defi)** - Cho vay, đi vay và sàn giao dịch phi tập trung
 - **[Thanh toán](./payments)** - Chuyển tiền xuyên biên giới nhanh chóng, chi phí thấp
 
 ## Chuỗi cung ứng
@@ -31,7 +31,7 @@ Các ứng dụng tài chính phi tập trung cung cấp tính minh bạch và k
 
 - **[Nông nghiệp](./agriculture)** - Truy xuất nguồn gốc từ trang trại đến bàn ăn
 - **[Bán lẻ](./retail)** - Chống hàng giả bằng cách truy xuất nguồn gốc
-- **[Logistic](./logistics)** - Theo dõi và xác minh thời gian thực
+- **[Logistics](./logistics)** - Theo dõi và xác minh thời gian thực
 
 ## Tác động xã hội
 
@@ -51,7 +51,7 @@ Các phương pháp tiếp cận phi tập trung đối với quản lý dữ li
 Các trường hợp ứng dụng mới và đang phát triển của công nghệ blockchain.
 
 - **[Hệ thống bỏ phiếu](./voting-systems)** - Bầu cử an toàn, minh bạch
-- **[Chăm sóc sức khỏe](./healthcare)** - Hồ sơ sức khỏe có thể di chuyển và được bảo mật
+- **[Chăm sóc sức khỏe](./healthcare)** - Hồ sơ sức khỏe bảo mật, dùng được ở mọi nơi
 - **[Âm nhạc & Sở hữu trí tuệ](./music-ip)** - Thanh toán tiền bản quyền trực tiếp cho nghệ sĩ
 
 ---
