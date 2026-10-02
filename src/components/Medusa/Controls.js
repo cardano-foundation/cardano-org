@@ -1,16 +1,52 @@
-import React from 'react';
+import React, { memo } from 'react';
 import clsx from 'clsx';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { SPEEDS } from './playback.js';
 import { milestoneText } from './milestoneText.js';
 import { formatMonth } from './formatDate.js';
-import { MilestoneDot } from './MilestoneCard.js';
+import MilestoneDot from './MilestoneDot.js';
 import styles from './explorer.module.css';
 
 // Markers this close to either end get a tooltip that opens inward, a centred
 // one would run out of the controls bar.
 const EDGE = 0.12;
+
+// Kept apart from the controls, which rerender on every animation frame, so
+// the markers only redraw when the chapter changes.
+const Markers = memo(function Markers({ markers, last, chapterKey, locale, onMilestone }) {
+  const current = markers.findIndex((m) => m.key === chapterKey);
+  return (
+    <div className={styles.markers}>
+      {markers.map((m, i) => {
+        const pos = last ? m.frame / last : 0;
+        const name = milestoneText(m.key).name;
+        const month = formatMonth(m.date, locale);
+        return (
+          <button
+            key={m.key}
+            type="button"
+            className={clsx(
+              styles.marker,
+              i > current && styles.markerAhead,
+              i === current && styles.markerCurrent,
+              pos < EDGE && styles.markerStart,
+              pos > 1 - EDGE && styles.markerEnd,
+            )}
+            style={{ left: `${pos * 100}%` }}
+            aria-label={`${name}, ${month}`}
+            onClick={() => onMilestone(m)}
+          >
+            <MilestoneDot milestone={m} className={styles.markerDot} />
+            <span className={styles.markerTip} aria-hidden="true">
+              <strong>{name}</strong> {month}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+});
 
 export default function Controls({ frameDates, markers, chapterKey, index, paused, speed, onSeek, onToggle, onStep, onSpeed, onMilestone, onFullscreen }) {
   const { i18n } = useDocusaurusContext();
@@ -33,34 +69,7 @@ export default function Controls({ frameDates, markers, chapterKey, index, pause
           aria-label={translate({ id: 'medusa.controls.timeline', message: 'Timeline' })}
           aria-valuetext={monthLabel}
         />
-        <div className={styles.markers}>
-          {markers.map((m) => {
-            const pos = last ? m.frame / last : 0;
-            const name = milestoneText(m.key).name;
-            const month = formatMonth(m.date, i18n.currentLocale);
-            return (
-              <button
-                key={m.key}
-                type="button"
-                className={clsx(
-                  styles.marker,
-                  m.frame > index && styles.markerAhead,
-                  m.key === chapterKey && styles.markerCurrent,
-                  pos < EDGE && styles.markerStart,
-                  pos > 1 - EDGE && styles.markerEnd,
-                )}
-                style={{ left: `${pos * 100}%` }}
-                aria-label={`${name}, ${month}`}
-                onClick={() => onMilestone(m)}
-              >
-                <MilestoneDot milestone={m} />
-                <span className={styles.markerTip} aria-hidden="true">
-                  <strong>{name}</strong> {month}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <Markers markers={markers} last={last} chapterKey={chapterKey} locale={i18n.currentLocale} onMilestone={onMilestone} />
       </div>
       <span className={styles.date}>{monthLabel}</span>
       <div className={styles.speeds} role="group" aria-label={translate({ id: 'medusa.controls.speed', message: 'Speed' })}>

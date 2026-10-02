@@ -159,19 +159,19 @@
   cursor: pointer;
 }
 
-.marker > span:first-child {
+.markerDot {
   width: 0.5rem;
   height: 0.5rem;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-.markerAhead > span:first-child {
+.markerAhead .markerDot {
   opacity: 0.45;
 }
 
-.markerCurrent > span:first-child,
-.marker:hover > span:first-child,
-.marker:focus-visible > span:first-child {
+.markerCurrent .markerDot,
+.marker:hover .markerDot,
+.marker:focus-visible .markerDot {
   opacity: 1;
   transform: scale(1.5);
 }
@@ -223,12 +223,9 @@
 /* Repository events have no era color, a ring keeps them apart from the hard
    forks. */
 .ringDot {
-  flex: 0 0 auto;
   box-sizing: border-box;
-  width: 0.6rem;
-  height: 0.6rem;
   border: 2px solid rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
+  box-shadow: none;
 }
 
 .date {

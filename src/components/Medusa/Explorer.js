@@ -151,7 +151,6 @@ export default function Explorer() {
     if (cardsEnabled) setExpandedKey(m.key);
   }, [cardsEnabled]);
 
-  const expandCard = useCallback(() => setExpandedKey(chapter?.key ?? null), [chapter?.key]);
   const collapseCard = useCallback(() => setExpandedKey(null), []);
 
   const onSelect = useCallback((id) => {
@@ -291,7 +290,7 @@ export default function Explorer() {
         <HoverLabel node={labelNode} childCount={childCount} target={ref} />
       ))}
       {chapter && cardsEnabled && (
-        <MilestoneCard milestone={chapter} expanded={expandedKey === chapter.key} onExpand={expandCard} onCollapse={collapseCard} />
+        <MilestoneCard milestone={chapter} expanded={expandedKey === chapter.key} onExpand={setExpandedKey} onCollapse={collapseCard} />
       )}
       <div className={styles.ui} hidden={uiHidden}>
         <Legend present={present} active={highlightGroup} onToggle={(key) => setHighlightGroup((k) => (k === key ? null : key))} />

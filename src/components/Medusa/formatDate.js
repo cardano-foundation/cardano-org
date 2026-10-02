@@ -6,12 +6,25 @@
 
 const parts = (date) => date.split('-').map(Number);
 
+// The timeline labels are formatted on every animation frame, and building a
+// formatter costs far more than using one.
+const formatters = new Map();
+function formatter(locale, withDay) {
+  const key = `${locale}|${withDay}`;
+  if (!formatters.has(key)) {
+    const options = { month: 'long', year: 'numeric', timeZone: 'UTC' };
+    if (withDay) options.day = 'numeric';
+    formatters.set(key, new Intl.DateTimeFormat(locale, options));
+  }
+  return formatters.get(key);
+}
+
 export function formatMonth(date, locale) {
   const [y, m] = parts(date);
-  return new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, 1)));
+  return formatter(locale, false).format(new Date(Date.UTC(y, m - 1, 1)));
 }
 
 export function formatDay(date, locale) {
   const [y, m, d] = parts(date);
-  return new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
+  return formatter(locale, true).format(new Date(Date.UTC(y, m - 1, d)));
 }
