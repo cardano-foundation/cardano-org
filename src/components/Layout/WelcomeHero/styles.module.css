@@ -48,6 +48,13 @@ html[data-theme="light"] .heroBackground {
   background-position: 35% 50%; 
 }
 
+/* Light theme fallback: the same render with its navy base swapped for the
+   light theme blue (the visualization blends additively, so glow plus blue
+   matches the live canvas). */
+html[data-theme="light"] .fallbackBackground {
+  background-image: url(/img/hero-header-medusa-fallback-light.jpg);
+}
+
 .overlay {
   position: absolute;
   inset: 0;
