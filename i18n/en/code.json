@@ -11186,7 +11186,7 @@
     "message": "The protocol does not pay DReps. Delegators expect you to explain your votes."
   },
   "governance.compare.drep.visibility": {
-    "message": "Every vote is recorded on the chain under your DRep ID, together with any rationale you publish."
+    "message": "Every vote is recorded on the chain under your DRep ID, with a link to any rationale you publish."
   },
   "governance.compare.title": {
     "message": "What each option involves"

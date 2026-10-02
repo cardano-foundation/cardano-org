@@ -325,7 +325,7 @@ function getOptionsCompareData() {
         cost: translate({ id: "governance.compare.drep.cost", message: "A deposit of 500 ada, returned when you retire, plus transaction fees." }),
         gain: translate({ id: "governance.compare.drep.gain", message: "A direct vote on treasury withdrawals, protocol changes and the constitution, weighted by the stake delegated to you." }),
         watch: translate({ id: "governance.compare.drep.watch", message: "The protocol does not pay DReps. Delegators expect you to explain your votes." }),
-        visibility: translate({ id: "governance.compare.drep.visibility", message: "Every vote is recorded on the chain under your DRep ID, together with any rationale you publish." }),
+        visibility: translate({ id: "governance.compare.drep.visibility", message: "Every vote is recorded on the chain under your DRep ID, with a link to any rationale you publish." }),
       },
     },
   ];
