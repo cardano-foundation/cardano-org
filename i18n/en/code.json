@@ -7989,7 +7989,7 @@
     "message": "How Cardano governance works"
   },
   "governance.onboarding.intro": {
-    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to treasury funding."
+    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}."
   },
   "governance.onboarding.together": {
     "message": "Together, they represent, validate, and safeguard Cardano governance. No single group can make decisions alone."
@@ -8852,26 +8852,8 @@
   "apps.guidedPaths.stablecoins": {
     "message": "Use stablecoins"
   },
-  "governance.treasury.hero.title": {
-    "message": "Donate to the treasury"
-  },
-  "governance.treasury.hero.description": {
-    "message": "Connect your wallet and add ada directly to the Cardano treasury. A real Conway treasury donation, signed and submitted by your wallet, with no recipient address."
-  },
   "governance.treasury.loading": {
     "message": "Loading donation tool…"
-  },
-  "governance.treasury.layout.title": {
-    "message": "Donate to the Treasury - Cardano Governance"
-  },
-  "governance.treasury.layout.description": {
-    "message": "Make a Conway treasury donation directly from cardano.org. Connect your wallet and add ada to the Cardano treasury in one transaction."
-  },
-  "governance.treasury.og.title": {
-    "message": "Donate to the treasury"
-  },
-  "governance.treasury.og.description": {
-    "message": "Connect your wallet and add ada directly to the Cardano treasury in one transaction."
   },
   "walletFinder.hero.title": {
     "message": "Find a Cardano Wallet"
@@ -10231,6 +10213,315 @@
   },
   "feesAndTransactions.cta.buttonLabel": {
     "message": "Explore the UTXO model"
+  },
+  "governance.treasury.overview.hero.title": {
+    "message": "The Cardano treasury"
+  },
+  "governance.treasury.overview.hero.description": {
+    "message": "What the treasury is for, how spending is decided, and where its income comes from."
+  },
+  "governance.treasury.explainer.income.body": {
+    "message": "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation."
+  },
+  "governance.treasury.explainer.spending.constitution": {
+    "message": "Treasury rules in the Constitution"
+  },
+  "governance.treasury.explainer.spending.accountability": {
+    "message": "Standards for treasury-funded work"
+  },
+  "governance.treasury.explainer.shift.body": {
+    "message": "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used."
+  },
+  "governance.treasury.explainer.terms": {
+    "message": "Related terms:"
+  },
+  "governance.treasury.explainer.term.treasury": {
+    "message": "Treasury"
+  },
+  "governance.treasury.explainer.term.cut": {
+    "message": "Treasury cut"
+  },
+  "governance.treasury.explainer.term.withdrawal": {
+    "message": "Treasury withdrawal"
+  },
+  "governance.treasury.explainer.term.donation": {
+    "message": "Treasury donation"
+  },
+  "governance.treasury.overview.layout.title": {
+    "message": "The Cardano Treasury - Cardano Governance"
+  },
+  "governance.treasury.overview.layout.description": {
+    "message": "What the Cardano treasury is for, how spending is decided, what it has funded recently and how it is funded."
+  },
+  "governance.treasury.overview.og.title": {
+    "message": "The Cardano treasury"
+  },
+  "governance.treasury.overview.og.description": {
+    "message": "What the Cardano treasury is for, how spending is decided and how it is funded."
+  },
+  "governance.treasury.donate.divider": {
+    "message": "Donate to the treasury"
+  },
+  "governance.treasury.out.history": {
+    "message": "Full treasury history and withdrawals"
+  },
+  "governance.treasury.out.accountability": {
+    "message": "Standards for treasury-funded work"
+  },
+  "governance.treasury.out.constitution": {
+    "message": "Read the treasury rules"
+  },
+  "governance.treasury.overview.error": {
+    "message": "Live treasury data is unavailable right now."
+  },
+  "governance.treasury.overview.errorLink": {
+    "message": "View treasury history"
+  },
+  "governance.treasury.overview.chart.epoch": {
+    "message": "Epoch"
+  },
+  "governance.treasury.overview.income.intro": {
+    "message": "Each bar is the treasury's share of one epoch's reward pot, split by source."
+  },
+  "governance.treasury.overview.income.range.recent": {
+    "message": "Last two years"
+  },
+  "governance.treasury.overview.income.range.all": {
+    "message": "All epochs"
+  },
+  "governance.treasury.overview.income.aria": {
+    "message": "Treasury income per epoch from reserves and from fees"
+  },
+  "governance.treasury.overview.income.series.reserves": {
+    "message": "From reserves"
+  },
+  "governance.treasury.overview.income.series.fees": {
+    "message": "From fees"
+  },
+  "governance.treasury.overview.income.series.feeShare": {
+    "message": "Fee share (%)"
+  },
+  "governance.treasury.overview.income.method": {
+    "message": "Calculated from transaction fees, the reserves and two protocol parameters: τ, the treasury's share of the reward pot, and ρ, the share of the reserves released each epoch. On-chain treasury changes match within a few percent in epochs without withdrawals or donations."
+  },
+  "governance.treasury.overview.outlook.intro": {
+    "message": "The reserves shrink a little every epoch. The dashed line shows where they would be if the pace of the last 12 months continued."
+  },
+  "governance.treasury.overview.outlook.aria": {
+    "message": "Reserves over time with a projection"
+  },
+  "governance.treasury.overview.outlook.series.history": {
+    "message": "Reserves"
+  },
+  "governance.treasury.overview.outlook.series.projection": {
+    "message": "Projection based on the past 12 months"
+  },
+  "governance.treasury.overview.outlook.yearIncome": {
+    "message": "Estimated income from reserves per epoch"
+  },
+  "governance.treasury.overview.outlook.method.body": {
+    "message": "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are."
+  },
+  "governance.treasury.donations.title": {
+    "message": "Returned funds and donations"
+  },
+  "governance.treasury.donations.intro": {
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. The figures below include all treasury donations, whatever their purpose."
+  },
+  "governance.treasury.donations.total": {
+    "message": "Received in total"
+  },
+  "governance.treasury.donations.epochs": {
+    "message": "Epochs with donations"
+  },
+  "governance.treasury.donations.largest": {
+    "message": "Highest single epoch"
+  },
+  "governance.treasury.donations.largestDetail": {
+    "message": "Epoch {epoch}, {share}% of the total"
+  },
+  "governance.treasury.donations.updated": {
+    "message": "Donations up to epoch {epoch}."
+  },
+  "governance.treasury.donations.cta": {
+    "message": "Return unused funds or contribute"
+  },
+  "governance.treasury.overview.feeShare.title": {
+    "message": "Share of treasury income from fees (%)"
+  },
+  "governance.treasury.overview.feeShare.aria": {
+    "message": "Fee share of the treasury's income per epoch, in percent"
+  },
+  "governance.treasury.purpose.title": {
+    "message": "What the treasury is for"
+  },
+  "governance.treasury.purpose.body": {
+    "message": "The Cardano treasury is a pool of ada held by the protocol itself. Ada only leaves it when the community approves it on chain."
+  },
+  "governance.treasury.purpose.uses": {
+    "message": "It can fund any work the community approves, such as development of the protocol and its tools, research, and programs for the community and the ecosystem."
+  },
+  "governance.treasury.flows.title": {
+    "message": "Balance and flows over the last 12 months"
+  },
+  "governance.treasury.funded.title": {
+    "message": "What the treasury funds"
+  },
+  "governance.treasury.funded.intro": {
+    "message": "The most recent treasury withdrawals that took effect:"
+  },
+  "governance.treasury.funded.note": {
+    "message": "An approved withdrawal shows what the community agreed to fund. How the money is paid out and what the work delivers is reported separately."
+  },
+  "governance.treasury.decisions.title": {
+    "message": "How spending is decided"
+  },
+  "governance.treasury.decisions.body": {
+    "message": "Anyone can propose a treasury withdrawal. It needs approval from DReps and the Constitutional Committee, has to follow the Constitution and has to stay within the net change limit, the cap on how much ada can leave the treasury in a period."
+  },
+  "governance.treasury.funding.title": {
+    "message": "How the treasury is funded"
+  },
+  "governance.treasury.flows.contextSpending": {
+    "message": "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects."
+  },
+  "governance.treasury.flows.contextSaving": {
+    "message": "Over this period the treasury took in more than it paid out."
+  },
+  "governance.treasury.flows.contextEven": {
+    "message": "Over this period the treasury paid out as much as it took in."
+  },
+  "governance.treasury.flows.error": {
+    "message": "Live treasury figures are unavailable right now."
+  },
+  "governance.treasury.flows.balance": {
+    "message": "Treasury balance"
+  },
+  "governance.treasury.flows.change": {
+    "message": "12-month change"
+  },
+  "governance.treasury.flows.income": {
+    "message": "Income"
+  },
+  "governance.treasury.flows.withdrawn": {
+    "message": "Withdrawn"
+  },
+  "governance.treasury.flows.received": {
+    "message": "Received"
+  },
+  "governance.treasury.funded.all": {
+    "message": "Browse treasury withdrawals by epoch"
+  },
+  "governance.treasury.funded.error": {
+    "message": "Treasury withdrawals are unavailable right now."
+  },
+  "governance.treasury.funded.untitled": {
+    "message": "Untitled withdrawal"
+  },
+  "governance.treasury.funded.epoch": {
+    "message": "Epoch {epoch}"
+  },
+  "governance.treasury.funded.explorer": {
+    "message": "View on explorer"
+  },
+  "governance.treasury.funded.summary": {
+    "message": "Withdrawals that took effect in the last 12 months: {count}, worth {amount} in total."
+  },
+  "governance.treasury.funding.feeShare": {
+    "message": "Fee share"
+  },
+  "governance.treasury.funding.reserves": {
+    "message": "Protocol reserves"
+  },
+  "governance.treasury.funding.context": {
+    "message": "This share reflects how rewards are funded. Fees per transaction on Cardano are low by design, so the share says little about how much the network is used."
+  },
+  "governance.treasury.funding.incomeTitle": {
+    "message": "Treasury income per epoch by source"
+  },
+  "governance.treasury.donate.closedIntro": {
+    "message": "Connect a wallet to send ada to the treasury with a treasury donation, for example to return unused funding."
+  },
+  "governance.treasury.donate.open": {
+    "message": "Open the donation tool"
+  },
+  "governance.treasury.flows.caveat": {
+    "message": "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+  },
+  "governance.treasury.flows.receivedUpTo": {
+    "message": "Through treasury donations, up to epoch {epoch}"
+  },
+  "governance.treasury.flows.receivedSub": {
+    "message": "Through treasury donations"
+  },
+  "governance.treasury.flows.incomeSub": {
+    "message": "From reserves and fees, estimated"
+  },
+  "governance.treasury.flows.withdrawnSub": {
+    "message": "Through treasury withdrawals"
+  },
+  "governance.treasury.funding.feeShareSub": {
+    "message": "Of treasury income, last 12 months"
+  },
+  "governance.treasury.funding.reservesSub": {
+    "message": "Not part of the treasury"
+  },
+  "governance.treasury.funding.numbersLink": {
+    "message": "See the treasury in numbers"
+  },
+  "governance.treasury.donations.explainerIntro": {
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. Anyone can use the same transaction to contribute ada to the treasury."
+  },
+  "governance.treasury.donations.figuresLink": {
+    "message": "Donation figures"
+  },
+  "governance.treasury.out.numbers": {
+    "message": "The treasury in numbers"
+  },
+  "insightsTreasury.meta.pageTitle": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.meta.pageDescription": {
+    "message": "The treasury's balance, flows and income from on-chain data, a projection for the reserves, and treasury donations from a regularly updated snapshot."
+  },
+  "insightsTreasury.meta.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.description": {
+    "message": "How the Cardano treasury is funded and how its balance changes, from on-chain data."
+  },
+  "insightsTreasury.intro": {
+    "message": "**The Cardano treasury in numbers.** How its balance changed over the last 12 months, where its income comes from, how the reserves could develop and what the treasury received through treasury donations."
+  },
+  "insightsTreasury.explainerLink": {
+    "message": "What the treasury is and how spending is decided"
+  },
+  "insightsTreasury.income.title": {
+    "message": "Income from reserves and fees"
+  },
+  "insightsTreasury.outlook.title": {
+    "message": "Reserves outlook"
+  },
+  "insightsTreasury.donations.title": {
+    "message": "Treasury donations"
+  },
+  "insightsTreasury.donations.toolLink": {
+    "message": "Return funds or contribute"
+  },
+  "governance.accountability.funding.act.2": {
+    "message": "How the treasury works"
+  },
+  "governance.onboarding.introTreasuryLink": {
+    "message": "treasury funding"
+  },
+  "navbar.mega.label.The Cardano Treasury": {
+    "message": "The Cardano Treasury"
+  },
+  "navbar.mega.description.The Cardano Treasury": {
+    "message": "How the community fund is filled and spent"
   },
   "governance.survey.outcome.delegate.title": {
     "message": "Delegate your voting power"

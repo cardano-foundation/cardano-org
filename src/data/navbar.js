@@ -161,6 +161,7 @@ function getNavbarItems() {
           items: [
             {to: '/governance', label: 'Governance Overview', description: 'How Cardano governance works'},
             {to: '/governance#tools', label: 'Governance Tools', description: 'Tools for governance participation'},
+            {to: '/governance/treasury', label: 'The Cardano Treasury', description: 'How the community fund is filled and spent'},
             {to: '/constitution', label: 'Cardano Constitution', description: 'The ratified Cardano Constitution'},
           ],
         },
