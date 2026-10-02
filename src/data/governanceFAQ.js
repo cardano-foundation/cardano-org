@@ -85,6 +85,43 @@ export function getGovernanceFAQ() {
           message:
             "If you don't delegate your voting power, your ada does not count toward any governance vote. Your voice goes unused. Delegating ensures your stake contributes to the decisions that shape Cardano.",
         }),
+        translate({
+          id: "governance.faq.item.noDelegation.a2",
+          message:
+            "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active [vote delegation](/governance/delegate), to a DRep, Abstain or No Confidence. Your rewards keep adding up in the meantime. A proposed change, [CIP-181](https://cips.cardano.org/cip/CIP-181), would remove this requirement with a future hard fork.",
+        }),
+      ],
+      category: "delegation",
+    },
+    {
+      question: translate({ id: "governance.faq.item.drepInactive.q", message: "What happens if my DRep stops voting?" }),
+      answer: [
+        translate({
+          id: "governance.faq.item.drepInactive.a1",
+          message:
+            "A DRep who goes 20 epochs, at least 100 days, without voting or updating their registration is [marked inactive](/glossary/drep-activity-period). Epochs without open proposals do not count toward that limit. While your DRep is inactive, your stake no longer counts in governance votes.",
+        }),
+        translate({
+          id: "governance.faq.item.drepInactive.a2",
+          message:
+            "Your ada and your staking rewards are not affected. The DRep becomes active again as soon as they vote or update their registration, and you can switch to another DRep at any time.",
+        }),
+      ],
+      category: "delegation",
+    },
+    {
+      question: translate({ id: "governance.faq.item.visibility.q", message: "Can others see how I delegate?" }),
+      answer: [
+        translate({
+          id: "governance.faq.item.visibility.a1",
+          message:
+            "Yes. Every delegation is recorded on the blockchain, so anyone can look up which DRep or voting option a stake address has chosen. The address itself does not contain your name. It is pseudonymous, so anyone who can link it to you, for example because you posted it publicly, can also see your choice.",
+        }),
+        translate({
+          id: "governance.faq.item.visibility.a2",
+          message:
+            "DRep votes are public too. Many DReps publish a rationale with each vote so their delegators can follow their reasoning.",
+        }),
       ],
       category: "delegation",
     },
@@ -109,6 +146,17 @@ export function getGovernanceFAQ() {
           id: "governance.faq.item.drepCost.a1",
           message:
             "Registering as a DRep requires a refundable deposit of 500 ada. This deposit is returned when you retire as a DRep. There is also a standard transaction fee for the registration.",
+        }),
+      ],
+      category: "drep-role",
+    },
+    {
+      question: translate({ id: "governance.faq.item.drepPay.q", message: "Do DReps get paid?" }),
+      answer: [
+        translate({
+          id: "governance.faq.item.drepPay.a1",
+          message:
+            "The protocol does not pay DReps for voting. Apart from transaction fees, the only ada involved is the 500 ada deposit, which you get back when you retire as a DRep.",
         }),
       ],
       category: "drep-role",
