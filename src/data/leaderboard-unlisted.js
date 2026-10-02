@@ -43,6 +43,11 @@ export const UnlistedApps = {
     category: "notary",
     website: "https://trivolvetech.com",
   },
+  "indianchain-by-trivolve": {
+    icon: "/img/app-icons/trivolve.jpg",
+    category: "notary",
+    website: "https://trivolvetech.com",
+  },
   "midnight": {
     icon: "/img/app-icons/midnight.svg",
     category: "distribution",
