@@ -11115,5 +11115,83 @@
   },
   "governance.faq.item.drepPay.a1": {
     "message": "The protocol does not pay DReps for voting. Apart from transaction fees, the only ada involved is the 500 ada deposit, which you get back when you retire as a DRep."
+  },
+  "governance.compare.aspect.time": {
+    "message": "Time"
+  },
+  "governance.compare.aspect.cost": {
+    "message": "Cost"
+  },
+  "governance.compare.aspect.gain": {
+    "message": "What you get"
+  },
+  "governance.compare.aspect.watch": {
+    "message": "Keep in mind"
+  },
+  "governance.compare.aspect.visibility": {
+    "message": "Who can see it"
+  },
+  "governance.compare.none.title": {
+    "message": "Don't delegate"
+  },
+  "governance.compare.none.time": {
+    "message": "Nothing to set up."
+  },
+  "governance.compare.none.cost": {
+    "message": "Nothing."
+  },
+  "governance.compare.none.gain": {
+    "message": "No decisions to make."
+  },
+  "governance.compare.none.watch": {
+    "message": "Governance decisions are made without your stake."
+  },
+  "governance.compare.none.visibility": {
+    "message": "Nothing new is recorded on the chain."
+  },
+  "governance.compare.delegate.title": {
+    "message": "Delegate"
+  },
+  "governance.compare.delegate.subtitle": {
+    "message": "To a DRep, Abstain or No Confidence"
+  },
+  "governance.compare.delegate.time": {
+    "message": "A few minutes to set up. If you pick a DRep, look at their votes now and then."
+  },
+  "governance.compare.delegate.cost": {
+    "message": "A transaction fee, typically less than 0.2 ada. No deposit."
+  },
+  "governance.compare.delegate.gain": {
+    "message": "Your stake takes part in governance through the option you choose, and you can switch at any time."
+  },
+  "governance.compare.delegate.watch": {
+    "message": "A DRep may vote differently than you would, or stop voting. Abstain and No Confidence apply a fixed rule to every vote."
+  },
+  "governance.compare.delegate.visibility": {
+    "message": "Your choice is recorded on the chain and linked to your stake address."
+  },
+  "governance.compare.drep.title": {
+    "message": "Become a DRep"
+  },
+  "governance.compare.drep.time": {
+    "message": "Regular time to read proposals, vote and explain your votes."
+  },
+  "governance.compare.drep.cost": {
+    "message": "A deposit of 500 ada, returned when you retire, plus transaction fees."
+  },
+  "governance.compare.drep.gain": {
+    "message": "A direct vote on treasury withdrawals, protocol changes and the constitution, weighted by the stake delegated to you."
+  },
+  "governance.compare.drep.watch": {
+    "message": "The protocol does not pay DReps. Delegators expect you to explain your votes."
+  },
+  "governance.compare.drep.visibility": {
+    "message": "Every vote is recorded on the chain under your DRep ID, together with any rationale you publish."
+  },
+  "governance.compare.title": {
+    "message": "What each option involves"
+  },
+  "governance.compare.intro": {
+    "message": "Here is what each choice asks of you and what it gives you in return."
   }
 }
