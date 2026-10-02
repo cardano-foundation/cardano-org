@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
 import * as echarts from 'echarts';
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import { makeApiClient } from '@site/src/utils/insights/api';
-import { dateToEpoch } from '@site/src/utils/insights/epochs';
 import { resolveIconSrc } from '@site/src/utils/appIcon';
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -571,18 +568,12 @@ function CategoryCard({ category, txCount, totalTx, appCount, includes }) {
 
 // Main Leaderboard Page
 export default function LeaderboardPage() {
-  const { siteConfig } = useDocusaurusContext();
-  const API_URL = siteConfig.customFields.CARDANO_ORG_API_URL;
-
   const [period, setPeriod] = useState('30d');
   const [showCip20, setShowCip20] = useState(false);
   const activeStats = period === '30d' ? appStats : appStats73;
   const appStatsData = activeStats.appStats;
   const metadataLabelStats = activeStats.metadataLabelStats;
   const metadata = activeStats.metadata;
-
-  const [coverageData, setCoverageData] = useState(null);
-  const [coverageLoading, setCoverageLoading] = useState(true);
 
   // Merge app stats with verified metadata label stats
   const unifiedData = useMemo(() => {
@@ -666,33 +657,16 @@ export default function LeaderboardPage() {
     ? new Date(metadata.reportingWindow.end).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     : 'N/A';
 
-  // Fetch network coverage data
-  useEffect(() => {
-    const fetchCoverage = async () => {
-      try {
-        const startEpoch = dateToEpoch(metadata.reportingWindow.start);
-        const endEpoch = dateToEpoch(metadata.reportingWindow.end);
-
-        const api = makeApiClient(API_URL);
-        const response = await api.get('/epoch_info');
-
-        const totalNetworkTx = response.data
-          .filter(e => e.epoch_no >= startEpoch && e.epoch_no <= endEpoch)
-          .reduce((sum, e) => sum + Number(e.tx_count || 0), 0);
-
-        setCoverageData({
-          totalNetworkTx,
-          coveragePercent: (totalTrackedTx / totalNetworkTx) * 100
-        });
-      } catch (err) {
-        console.error('Failed to fetch network coverage:', err);
-      } finally {
-        setCoverageLoading(false);
-      }
+  // Network total for the exact reporting window, from the same snapshot as
+  // the app stats, so it matches the figure shown elsewhere on the site.
+  const coverageData = useMemo(() => {
+    const totalNetworkTx = metadata.totalTxCount;
+    if (!totalNetworkTx) return null;
+    return {
+      totalNetworkTx,
+      coveragePercent: (totalTrackedTx / totalNetworkTx) * 100,
     };
-
-    fetchCoverage();
-  }, [API_URL, metadata.reportingWindow, totalTrackedTx]);
+  }, [metadata.totalTxCount, totalTrackedTx]);
 
   return (
     <Layout
@@ -751,13 +725,13 @@ export default function LeaderboardPage() {
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>
-                  {coverageLoading ? '--' : coverageData ? `${coverageData.coveragePercent.toFixed(1)}%` : '--'}
+                  {coverageData ? `${coverageData.coveragePercent.toFixed(1)}%` : '--'}
                 </span>
                 <span className={styles.statLabel}>Network Coverage</span>
                 <span className={styles.statPeriod}>
                   {coverageData
                     ? `${formatNumber(totalTrackedTx)} of ${formatNumber(coverageData.totalNetworkTx)} tx`
-                    : coverageLoading ? 'Loading...' : 'Unable to load'
+                    : 'Unable to load'
                   }
                 </span>
               </div>
