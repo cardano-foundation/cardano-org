@@ -11193,5 +11193,8 @@
   },
   "governance.compare.intro": {
     "message": "Here is what each choice asks of you and what it gives you in return."
+  },
+  "governance.compare.divider": {
+    "message": "Compare your options"
   }
 }

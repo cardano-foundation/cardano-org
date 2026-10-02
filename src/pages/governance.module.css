@@ -303,10 +303,6 @@
 }
 
 /* Options compare block */
-.compare {
-  width: 100%;
-}
-
 .compareTitle {
   font-size: 2rem;
   font-weight: 800;
@@ -325,15 +321,15 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: var(--site-space-md);
-  row-gap: 0;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Each card spans the head row plus five aspect rows of the parent grid and
-   reuses those tracks, so the same aspect sits at the same height in every card.
-   Browsers without subgrid ignore the rows and show the cards unaligned, which is fine. */
+/* Each card spans the head row plus five aspect rows of the parent grid (the
+   aspects list in governance.js) and reuses those tracks, so the same aspect
+   sits at the same height in every card. Browsers without subgrid ignore the
+   rows and show the cards unaligned, which is fine. */
 .compareCard {
   display: grid;
   grid-row: span 6;
@@ -344,10 +340,6 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: var(--site-radius-lg);
   box-shadow: var(--site-shadow-xs);
-}
-
-.compareHead {
-  margin: 0;
 }
 
 .compareCardTitle {
@@ -371,7 +363,6 @@
 }
 
 .compareRow {
-  margin: 0;
   padding-top: var(--site-space-xs);
   border-top: 1px solid var(--ifm-color-emphasis-200);
 }

@@ -283,16 +283,16 @@ function ToolsGrid() {
   );
 }
 
-const COMPARE_ASPECTS = ["time", "cost", "gain", "watch", "visibility"];
-
 function getOptionsCompareData() {
-  const aspects = {
-    time: translate({ id: "governance.compare.aspect.time", message: "Time" }),
-    cost: translate({ id: "governance.compare.aspect.cost", message: "Cost" }),
-    gain: translate({ id: "governance.compare.aspect.gain", message: "What you get" }),
-    watch: translate({ id: "governance.compare.aspect.watch", message: "Keep in mind" }),
-    visibility: translate({ id: "governance.compare.aspect.visibility", message: "Who can see it" }),
-  };
+  // Row order of every card. The row count is mirrored by the grid-row spans
+  // of .compareCard and .compareList in governance.module.css.
+  const aspects = [
+    { key: "time", label: translate({ id: "governance.compare.aspect.time", message: "Time" }) },
+    { key: "cost", label: translate({ id: "governance.compare.aspect.cost", message: "Cost" }) },
+    { key: "gain", label: translate({ id: "governance.compare.aspect.gain", message: "What you get" }) },
+    { key: "watch", label: translate({ id: "governance.compare.aspect.watch", message: "Keep in mind" }) },
+    { key: "visibility", label: translate({ id: "governance.compare.aspect.visibility", message: "Who can see it" }) },
+  ];
   const options = [
     {
       key: "none",
@@ -338,7 +338,8 @@ function getOptionsCompareData() {
 function GovernanceOptionsCompare() {
   const { aspects, options } = getOptionsCompareData();
   return (
-    <section id="compare" className={styles.compare} aria-labelledby="compare-options-title">
+    <section aria-labelledby="compare-options-title">
+      <Divider text={translate({ id: "governance.compare.divider", message: "Compare your options" })} id="compare" />
       <h2 id="compare-options-title" className={styles.compareTitle}>
         {translate({ id: "governance.compare.title", message: "What each option involves" })}
       </h2>
@@ -350,15 +351,15 @@ function GovernanceOptionsCompare() {
       <ul role="list" className={styles.compareGrid}>
         {options.map((option) => (
           <li key={option.key} className={styles.compareCard}>
-            <div className={styles.compareHead}>
+            <div>
               <h3 className={styles.compareCardTitle}>{option.title}</h3>
               {option.subtitle && <p className={styles.compareSubtitle}>{option.subtitle}</p>}
             </div>
             <dl className={styles.compareList}>
-              {COMPARE_ASPECTS.map((aspect) => (
-                <div key={aspect} className={styles.compareRow}>
-                  <dt className={styles.compareLabel}>{aspects[aspect]}</dt>
-                  <dd className={styles.compareValue}>{option.cells[aspect]}</dd>
+              {aspects.map(({ key, label }) => (
+                <div key={key} className={styles.compareRow}>
+                  <dt className={styles.compareLabel}>{label}</dt>
+                  <dd className={styles.compareValue}>{option.cells[key]}</dd>
                 </div>
               ))}
             </dl>
