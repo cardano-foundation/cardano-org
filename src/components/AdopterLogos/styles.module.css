@@ -56,15 +56,12 @@
   opacity: 1;
 }
 
-/* Many logos rely on black, dark blue or filled shapes, which neither
-   survive the dark background nor a white silhouette. Dark mode puts each
-   logo on a light tile and keeps the light mode behaviour. */
-html[data-theme="dark"] .item {
-  /* Same tile height for every logo, whatever its proportions. */
-  height: 4rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--ifm-global-radius);
-  background: #eef0f3;
+/* Dark mode shows the logos in full colour. A grey or white silhouette
+   would distort them, and the dark variants already keep every logo legible
+   on the dark background. */
+html[data-theme="dark"] .logo {
+  filter: none;
+  opacity: 1;
 }
 
 .link {
@@ -122,10 +119,5 @@ html[data-theme="dark"] .item {
 
   .logo {
     width: calc(var(--logo-width) * 0.7);
-  }
-
-  html[data-theme="dark"] .item {
-    height: 3.25rem;
-    padding: 0.4rem 0.5rem;
   }
 }

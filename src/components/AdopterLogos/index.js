@@ -2,6 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
+import ThemedImage from "@theme/ThemedImage";
 import { ADOPTERS } from "@site/src/data/adopterLogos";
 import styles from "./styles.module.css";
 
@@ -18,9 +19,10 @@ function logoWidth({ ratio = 3, scale = 1 }) {
 }
 
 // Static logo bar, no marquee: a moving row is hard to read and ignores
-// reduced motion. Logos keep their original colours in the files and are
-// shown monochrome until hovered (see styles). Logos with a public source
-// link to it.
+// reduced motion. Logos keep their original colours in the files. Light
+// mode shows them monochrome until hovered, dark mode in full colour, with a
+// dark variant where the original ink is too dark (see styles and data).
+// Logos with a public source link to it.
 export default function AdopterLogos() {
   const { withBaseUrl } = useBaseUrlUtils();
   return (
@@ -30,10 +32,14 @@ export default function AdopterLogos() {
       </h2>
       <ul className={styles.list}>
         {ADOPTERS.map((org) => {
+          const light = withBaseUrl(`/img/adopters/${org.id}.svg`);
           const logo = (
-            <img
+            <ThemedImage
               className={styles.logo}
-              src={withBaseUrl(`/img/adopters/${org.id}.svg`)}
+              sources={{
+                light,
+                dark: org.dark ? withBaseUrl(`/img/adopters/dark/${org.id}.svg`) : light,
+              }}
               alt={org.name}
               style={{ "--logo-width": `${logoWidth(org).toFixed(2)}rem` }}
               loading="lazy"
