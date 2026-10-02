@@ -1,0 +1,115 @@
+.section {
+  padding-top: 2rem;
+}
+
+/* Figures read value first, label below, although the dl keeps the label
+   first for screen readers. */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 1.5rem 0 0.75rem;
+}
+
+/* Thin dividers between the figures instead of filled boxes. */
+.figure {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 0.25rem 1.5rem;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.figure:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.figureValue {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme="dark"] .figureValue {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.figureLabel {
+  margin-top: 0.4rem;
+  font-weight: normal;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.figuresNote {
+  margin: 0 0 2.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.carouselNote {
+  margin: 0 0 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.topApps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topApps > li {
+  display: flex;
+  margin: 0;
+}
+
+.topApps > li > * {
+  flex: 1;
+}
+
+.ctaRow {
+  margin-top: 1.5rem;
+}
+
+/* Below desktop width the figures form a two by two grid with a cross of
+   dividers, also on phones: stacking four rows would cost too much height. */
+@media (max-width: 996px) {
+  .figures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .figure:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .figure:nth-child(-n + 2) {
+    padding-bottom: 1.25rem;
+  }
+
+  .figure:nth-child(n + 3) {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+  }
+}
+
+@media (max-width: 768px) {
+  .topApps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .figure {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .figureValue {
+    font-size: 1.6rem;
+  }
+}

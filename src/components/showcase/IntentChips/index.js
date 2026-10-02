@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 
@@ -14,7 +15,9 @@ import {
 
 import styles from "./styles.module.css";
 
-const INTENTS = [
+// Entry intents shared by /apps (filter chips) and the homepage (links into
+// the pre-filtered /apps list). Order here is the display order.
+export const INTENTS = [
   {
     id: "stake",
     tags: ["pooltool"],
@@ -26,6 +29,12 @@ const INTENTS = [
     tags: ["dex"],
     sort: SORT_IDS.MOST_ACTIVE,
     label: translate({ id: "apps.intent.trade", message: "Trade" }),
+  },
+  {
+    id: "lend",
+    tags: ["lending"],
+    sort: SORT_IDS.MOST_ACTIVE,
+    label: translate({ id: "apps.intent.lend", message: "Lend & borrow" }),
   },
   {
     id: "vote",
@@ -59,6 +68,13 @@ const INTENTS = [
   },
 ];
 
+// Query string that opens /apps with the intent's tags and sort applied.
+export function intentSearch(intent) {
+  const params = new URLSearchParams(replaceSearchTags("", intent.tags));
+  if (intent.sort) params.set(SortQueryStringKey, intent.sort);
+  return params.toString();
+}
+
 function arraysEqualUnordered(a, b) {
   if (a.length !== b.length) return false;
   const sortedA = [...a].sort();
@@ -66,9 +82,17 @@ function arraysEqualUnordered(a, b) {
   return sortedA.every((v, i) => v === sortedB[i]);
 }
 
-export default function IntentChips() {
+// On /apps the chips toggle the filter of the current list. With `linkTo`
+// (e.g. the homepage) they become plain links into that list instead.
+// `ids` limits the rendered chips to a subset of INTENTS. The "hero" variant
+// sits inside an existing container on a dark background.
+export default function IntentChips({ ids, linkTo, headingId = "apps-intent-title", variant }) {
+  const isHero = variant === "hero";
   const location = useLocation();
   const history = useHistory();
+  const intents = ids
+    ? ids.map((id) => INTENTS.find((i) => i.id === id)).filter(Boolean)
+    : INTENTS;
 
   const activeId = useMemo(() => {
     const currentTags = readSearchTags(location.search);
@@ -100,15 +124,27 @@ export default function IntentChips() {
 
   return (
     <section
-      className={styles.intentSection}
-      aria-labelledby="apps-intent-title"
+      className={clsx(styles.intentSection, { [styles.intentSectionHero]: isHero })}
+      aria-labelledby={headingId}
     >
-      <div className="container">
-        <h2 id="apps-intent-title" className={styles.intentTitle}>
+      <div className={isHero ? undefined : "container"}>
+        <h2 id={headingId} className={styles.intentTitle}>
           {translate({ id: "apps.intent.label", message: "I want to" })}
         </h2>
         <ul className={styles.intentList}>
-          {INTENTS.map((intent) => {
+          {intents.map((intent) => {
+            if (linkTo) {
+              return (
+                <li key={intent.id} className={styles.intentItem}>
+                  <Link
+                    to={`${linkTo}?${intentSearch(intent)}`}
+                    className={styles.intentChip}
+                  >
+                    {intent.label}
+                  </Link>
+                </li>
+              );
+            }
             const isActive = intent.id === activeId;
             return (
               <li key={intent.id} className={styles.intentItem}>
