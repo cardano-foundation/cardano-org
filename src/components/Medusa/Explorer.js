@@ -61,6 +61,35 @@ export default function Explorer() {
 
   useEffect(() => () => clearTimeout(hashTimer.current), []);
 
+  // The navbar is taller than --ifm-navbar-height and the closeable
+  // announcement bar sits above it, so the space left for the explorer is
+  // measured instead of guessed. Body and html are pinned to the viewport
+  // height, so closing the bar only shows up as a resize of the app root.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return undefined;
+    let frame = 0;
+    const measure = () => {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      el.style.setProperty('--explorer-top', `${Math.max(0, Math.round(top))}px`);
+    };
+    // The new height resizes the root again, so measuring inside the observer
+    // callback would trip the ResizeObserver loop error.
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(measure);
+    };
+    measure();
+    const observer = new ResizeObserver(schedule);
+    observer.observe(document.getElementById('__docusaurus') ?? document.body);
+    window.addEventListener('resize', schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener('resize', schedule);
+    };
+  }, [supported]);
+
   const onReady = useCallback(({ frameDates: dates }) => {
     setFrameDates(dates);
     // A shared moment stays put, a plain visit starts the story right away.
