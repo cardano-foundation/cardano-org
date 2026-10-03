@@ -711,6 +711,20 @@ export const Showcases = [
     maintainerPick: false,
   },
   {
+  title: "Guarda Wallet",
+  tagline: "Non-custodial multi-crypto wallet",
+  description: "Non-custodial wallet to store, send and receive crypto, including Cardano, across web, desktop and mobile.",
+  website: "https://guarda.com/",
+  category: "wallet",
+  preview: require("./app-screenshots/guarda.webp"),
+  walletFeatures: {
+    platforms: ["ios", "android", "browser", "desktop", "web"],
+    custody: "non-custodial",
+    type: "light",
+    features: ["multi-asset", "hardware-wallet"]
+  }
+}
+  {
     title: "NuFi Wallet",
     description:
       "Non-custodial multi-chain wallet supporting Cardano alongside other major networks, with an in-app DEX for swaps without leaving the wallet.",
