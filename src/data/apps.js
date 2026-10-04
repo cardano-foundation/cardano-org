@@ -1767,6 +1767,24 @@ export const Showcases = [
     category: "pooltool",
     properties: ["opensource"],
     maintainerPick: false,
+  },  {
+    title: "1AM",
+    description:
+      "Non-custodial wallet for Midnight and Cardano. Holds ADA, cNIGHT and Cardano native tokens, registers DUST and connects to Cardano dApps through CIP-30.",
+    tagline: "Midnight and Cardano wallet with a CIP-30 connector",
+    icon: "/img/app-icons/1am.svg",
+    website: "https://1am.xyz",
+    source: null,
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    x: "oneamxyz",
+    walletFeatures: {
+      platforms: ["browser", "ios", "android"],
+      custody: "non-custodial",
+      features: ["dapp-connector", "multi-asset"],
+      type: "light",
+    },
   },
 ];
 
