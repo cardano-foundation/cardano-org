@@ -1033,6 +1033,7 @@ export const Showcases = [
     description:
       "Cardano governance dashboard with donut charts and tables that visualize vote distribution, DRep concentration, and governance action outcomes.",
     tagline: "Vote distribution and DRep insights dashboard",
+    preview: require("./app-screenshots/cardano-govscope.webp"),
     icon: "/img/app-icons/changwatch.png",
     website: "https://cardanogovscope.com/",
     source: null,
@@ -1099,6 +1100,11 @@ export const Showcases = [
     description:
       "Governance tool that streamlines Cardano's decision making. Helps DReps register, gain delegations, and engage delegators; supports DAOs and SPOs too.",
     tagline: "Governance tool for DReps to register and engage",
+    preview: require("./app-screenshots/tempo.webp"),
+    extraPreviews: [
+      require("./app-screenshots/tempo-dreps.webp"),
+      require("./app-screenshots/tempo-governance-actions.webp"),
+    ],
     icon: "/img/app-icons/tempo.png",
     website: "https://tempo.vote",
     source: null,
