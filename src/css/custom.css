@@ -162,6 +162,15 @@ html {
   font-weight: 400;
 }
 
+/* Infima keeps button labels on one line. Long labels, especially translated
+   ones, then push the page wider than a phone screen, so let them wrap. */
+@media (max-width: 996px) {
+  .button {
+    white-space: normal;
+    max-width: 100%;
+  }
+}
+
 /* White pill button for brand-blue and navy bands. Light theme: white with
    brand-blue text. Dark theme: the lightest primary blue with navy text, so
    the button does not glare against the dark UI. The variant sets its own
