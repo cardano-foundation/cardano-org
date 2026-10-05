@@ -1067,8 +1067,12 @@
   "whereToGetAda.staking.title": {
     "message": "Staking rewards"
   },
-  "whereToGetAda.staking.description1": {"message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."},
-  "whereToGetAda.staking.description2": {"message": "Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."},
+  "whereToGetAda.staking.description1": {
+    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+  },
+  "whereToGetAda.staking.description2": {
+    "message": "Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+  },
   "commonScams.hero.title": {
     "message": "Common Cardano scams"
   },
@@ -2332,7 +2336,9 @@
   "hardforks.content.title": {
     "message": "Cardano Hard Forks"
   },
-  "hardforks.content.description": {"message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."},
+  "hardforks.content.description": {
+    "message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
+  },
   "hardforks.divider.timeline": {
     "message": "Timeline"
   },
@@ -2732,8 +2738,12 @@
   "stakePoolDelegation.alt.more": {
     "message": "More tools"
   },
-  "stakePoolDelegation.whatIsStake.text1": {"message": "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to [delegate](/glossary/delegation) or pledge a stake is fundamental to how Cardano works."},
-  "stakePoolDelegation.whatIsStake.text2": {"message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."},
+  "stakePoolDelegation.whatIsStake.text1": {
+    "message": "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to [delegate](/glossary/delegation) or pledge a stake is fundamental to how Cardano works."
+  },
+  "stakePoolDelegation.whatIsStake.text2": {
+    "message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or running their own stake pool. The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."
+  },
   "stakePoolDelegation.whatIsDelegation.divider": {
     "message": "What is stake delegation?"
   },
@@ -2776,8 +2786,12 @@
   "stakePoolOperation.whatIsStaking.leftText": {
     "message": "Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held. The ability to delegate or pledge a stake is fundamental to how Cardano works."
   },
-  "stakePoolOperation.whatIsStaking.rightText1": {"message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool."},
-  "stakePoolOperation.whatIsStaking.rightText2": {"message": "The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."},
+  "stakePoolOperation.whatIsStaking.rightText1": {
+    "message": "There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool."
+  },
+  "stakePoolOperation.whatIsStaking.rightText2": {
+    "message": "The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."
+  },
   "stakePoolOperation.whatIsStaking.rightText3": {
     "message": "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards that it earns are shared between everyone who delegated their stake to that stake pool."
   },
@@ -2790,14 +2804,18 @@
   "stakePoolOperation.whatIsStakePool.text2": {
     "message": "Stake pools are run by a reliable operator: an individual or business with the knowledge and resources to run the node on a consistent basis. Ada holders can delegate to public stake pools if they wish to participate in the protocol and receive rewards, but do not wish to operate a Cardano network node themselves."
   },
-  "stakePoolOperation.whatIsStakePool.text3": {"message": "The more stake that is delegated to a stake pool, the greater chance it has of being selected as a [slot leader](/glossary/slot-leader). Each time it is selected and produces a block that is accepted onto the blockchain, it is rewarded, and these rewards are shared between the stake pool operator and stake pool delegators."},
+  "stakePoolOperation.whatIsStakePool.text3": {
+    "message": "The more stake that is delegated to a stake pool, the greater chance it has of being selected as a [slot leader](/glossary/slot-leader). Each time it is selected and produces a block that is accepted onto the blockchain, it is rewarded, and these rewards are shared between the stake pool operator and stake pool delegators."
+  },
   "stakePoolOperation.whatIsStakePool.text4": {
     "message": "Extensive research and development has gone into ensuring a fair, competitive marketplace that proportionately incentivizes participation, and rewards the investment of time, energy, and resources. The key technical parameters influencing stake pools and the rewards received are:"
   },
   "stakePoolOperation.pledging.title": {
     "message": "Pledging Mechanism"
   },
-  "stakePoolOperation.pledging.text": {"message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward."},
+  "stakePoolOperation.pledging.text": {
+    "message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward."
+  },
   "stakePoolOperation.desirability.title": {
     "message": "Desirability Index"
   },
@@ -2807,7 +2825,9 @@
   "stakePoolOperation.saturation.title": {
     "message": "Saturation Parameter (K)"
   },
-  "stakePoolOperation.saturation.text": {"message": "[Saturation](/glossary/pool-saturation) is a term used to indicate that a particular stake pool has more stake delegated to it than is ideal for the network, while k is the targeted number of desired pools. Once a pool reaches the point of saturation, it will offer diminishing rewards. The saturation mechanism was designed to prevent centralization by encouraging delegators to delegate to different stake pools, and to incentivize operators to set up alternative pools so that they can continue earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their stake and stake pool operators, and to prevent any single pool from becoming too large."},
+  "stakePoolOperation.saturation.text": {
+    "message": "[Saturation](/glossary/pool-saturation) is a term used to indicate that a particular stake pool has more stake delegated to it than is ideal for the network, while k is the targeted number of desired pools. Once a pool reaches the point of saturation, it will offer diminishing rewards. The saturation mechanism was designed to prevent centralization by encouraging delegators to delegate to different stake pools, and to incentivize operators to set up alternative pools so that they can continue earning maximum rewards. Saturation, therefore, exists to preserve the interests of both ada holders delegating their stake and stake pool operators, and to prevent any single pool from becoming too large."
+  },
   "stakePoolOperation.setupCta.title": {
     "message": "How do I set up a stake pool?"
   },
@@ -5978,7 +5998,10 @@
     "message": "Your recovery phrase is the master key",
     "description": "Recovery section title"
   },
-  "whatIsAWallet.recovery.text1": {"message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a [seed phrase](/glossary/seed-phrase). It is a human-readable form of your private key.", "description": "Recovery paragraph 1"},
+  "whatIsAWallet.recovery.text1": {
+    "message": "When you create a non-custodial wallet you receive a list of 12, 15, or 24 words. This is your **recovery phrase**, also called a [seed phrase](/glossary/seed-phrase). It is a human-readable form of your private key.",
+    "description": "Recovery paragraph 1"
+  },
   "whatIsAWallet.recovery.text2": {
     "message": "Anyone with these words can restore your wallet on any device and take your funds. Write the phrase down and store it offline. Never type it into a website, never store it in a photo or cloud note, and never share it with anyone.",
     "description": "Recovery paragraph 2"
@@ -6011,7 +6034,10 @@
     "message": "Connecting to apps",
     "description": "dApps section title"
   },
-  "whatIsAWallet.dapps.text1": {"message": "Most Cardano wallets include a **DApp connector**. It lets a website or [DApp](/glossary/dapp) ask your wallet to sign a transaction without ever seeing your private keys.", "description": "dApps paragraph 1"},
+  "whatIsAWallet.dapps.text1": {
+    "message": "Most Cardano wallets include a **DApp connector**. It lets a website or [DApp](/glossary/dapp) ask your wallet to sign a transaction without ever seeing your private keys.",
+    "description": "dApps paragraph 1"
+  },
   "whatIsAWallet.dapps.text2": {
     "message": "You stay in control: the wallet shows you exactly what you are approving, and nothing happens until you confirm. Always check the site address and review each request before you sign.",
     "description": "dApps paragraph 2"
@@ -9443,27 +9469,47 @@
   "stakePoolDelegation.delegate.sample.empty": {
     "message": "No pool matched the criteria right now. Search by ticker or pool ID."
   },
-  "whereToGetAda.learn.description": {"message": "New to Cardano? [What is Cardano](/what-is-cardano#get-started) explains the platform in plain terms, and the [learning path](/learn) takes you on from there step by step."},
-  "whereToGetAda.quiz.title": {"message": "Test what you learned"},
-  "whereToGetAda.quiz.buttonText": {"message": "Start quiz"},
-  "whatIsAWallet.dapps.text3": {"message": "How DApps work, and how to use them safely, is explained in the [smart contracts](/smart-contracts#safety) explainer."},
-  "whatIsAWallet.next.description": {"message": "Next step: find out [where to get ada](/where-to-get-ada). New to Cardano altogether? Start with [what Cardano is](/what-is-cardano#get-started) and follow the [learning path](/learn)."},
-  "whatIsAWallet.quiz.title": {"message": "Test what you learned"},
-  "whatIsAWallet.quiz.buttonText": {"message": "Start quiz"},
-  "walletFinder.nextTeaser.text": {"message": "Already have a wallet? The next step is getting some ada into it."},
-  "walletFinder.nextTeaser.cta": {"message": "Where to get ada"},
-  "whatIsAda.quiz.title": {"message": "Test what you learned"},
-  "whatIsAda.quiz.buttonText": {"message": "Start quiz"},
-  "stakePoolDelegation.quiz.title": {"message": "Test what you learned"},
-  "stakePoolDelegation.quiz.buttonText": {"message": "Start quiz"},
-  "stakePoolOperation.goDeeper.description": {"message": "How a pool is chosen to produce a block, and how rewards are calculated and paid out, is explained step by step in [how Cardano works](/how-cardano-works#consensus)."},
-  "calculator.context.description": {"message": "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."},
-  "hardforks.upgrades.description": {"message": "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."},
-  "research.intro.description": {"message": "Cardano's design rests on peer-reviewed research, from the [Ouroboros](/ouroboros) family of [proof-of-stake](/glossary/proof-of-stake) protocols to the on-chain [governance](/governance) model. The papers and specifications below are grouped by development era. For a plain-language account of what they add up to, read [how Cardano works](/how-cardano-works)."},
-  "governance.onboarding.background": {"message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."},
-  "apps.guidedPaths.smartContracts": {"message": "How DApps work"},
-  "layer2.context.description": {"message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."},
-  "quiz.hub.backToLearn": {"message": "Back to the learning path"},
+  "whereToGetAda.learn.description": {
+    "message": "New to Cardano? [What is Cardano](/what-is-cardano#get-started) explains the platform in plain terms, and the [learning path](/learn) takes you on from there step by step."
+  },
+  "whereToGetAda.quiz.title": { "message": "Test what you learned" },
+  "whereToGetAda.quiz.buttonText": { "message": "Start quiz" },
+  "whatIsAWallet.dapps.text3": {
+    "message": "How DApps work, and how to use them safely, is explained in the [smart contracts](/smart-contracts#safety) explainer."
+  },
+  "whatIsAWallet.next.description": {
+    "message": "Next step: find out [where to get ada](/where-to-get-ada). New to Cardano altogether? Start with [what Cardano is](/what-is-cardano#get-started) and follow the [learning path](/learn)."
+  },
+  "whatIsAWallet.quiz.title": { "message": "Test what you learned" },
+  "whatIsAWallet.quiz.buttonText": { "message": "Start quiz" },
+  "walletFinder.nextTeaser.text": {
+    "message": "Already have a wallet? The next step is getting some ada into it."
+  },
+  "walletFinder.nextTeaser.cta": { "message": "Where to get ada" },
+  "whatIsAda.quiz.title": { "message": "Test what you learned" },
+  "whatIsAda.quiz.buttonText": { "message": "Start quiz" },
+  "stakePoolDelegation.quiz.title": { "message": "Test what you learned" },
+  "stakePoolDelegation.quiz.buttonText": { "message": "Start quiz" },
+  "stakePoolOperation.goDeeper.description": {
+    "message": "How a pool is chosen to produce a block, and how rewards are calculated and paid out, is explained step by step in [how Cardano works](/how-cardano-works#consensus)."
+  },
+  "calculator.context.description": {
+    "message": "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."
+  },
+  "hardforks.upgrades.description": {
+    "message": "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."
+  },
+  "research.intro.description": {
+    "message": "Cardano's design rests on peer-reviewed research, from the [Ouroboros](/ouroboros) family of [proof-of-stake](/glossary/proof-of-stake) protocols to the on-chain [governance](/governance) model. The papers and specifications below are grouped by development era. For a plain-language account of what they add up to, read [how Cardano works](/how-cardano-works)."
+  },
+  "governance.onboarding.background": {
+    "message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."
+  },
+  "apps.guidedPaths.smartContracts": { "message": "How DApps work" },
+  "layer2.context.description": {
+    "message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."
+  },
+  "quiz.hub.backToLearn": { "message": "Back to the learning path" },
   "ledgerHistory.page.title": {
     "message": "The cardano-ledger history"
   },
@@ -11213,7 +11259,7 @@
     "message": "Enforce KYC, AML, sanctions screening, freeze, and transfer restrictions natively at the asset level. Already available on Cardano's mainnet today."
   },
   "programmableTokens.hero.body": {
-    "message": "Major international bodies and standard setters — from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board — have suggested similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork, wrapping assets in a secondary smart contract layer, or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks."
+    "message": "Major international bodies and standard setters, from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board, have suggested similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork, wrapping assets in a secondary smart contract layer, or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks."
   },
   "programmableTokens.hero.button": {
     "message": "Plan Your Implementation"
@@ -11225,7 +11271,7 @@
     "message": "Why Regulated Tokenization Requires Compliance at the Token Level"
   },
   "programmableTokens.why.paragraph1": {
-    "message": "For regulated financial assets — such as [stablecoins](/stablecoins), bonds, shares, or other securities — to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, ownership restrictions, or transfer controls throughout every asset movement."
+    "message": "For regulated financial assets, such as [stablecoins](/stablecoins), bonds, shares, or other securities, to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, ownership restrictions, or transfer controls throughout every asset movement."
   },
   "programmableTokens.why.paragraph2": {
     "message": "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describes programmability as the ability to embed compliance conditions into the asset itself and execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation."
@@ -11234,19 +11280,19 @@
     "message": "Seamlessness requires compliance that executes at the same layer as settlement, not after it."
   },
   "programmableTokens.why.context1": {
-    "message": "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets, and asset types. Relevant frameworks around the world — such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets — illustrate the breadth of requirements that issuers and market participants may need to address."
+    "message": "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets, and asset types. Relevant frameworks around the world, such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets, illustrate the breadth of requirements that issuers and market participants may need to address."
   },
   "programmableTokens.why.context2": {
     "message": "Realizing the full potential of tokenization therefore requires more than putting an asset on-chain. It also requires the ability to translate relevant rules and conditions into the blockchain environment. Programmability supports this by turning these rules into logic that can be applied automatically at the asset and transaction level in a consistent and efficient manner."
   },
   "programmableTokens.why.context3": {
-    "message": "Cardano's new Programmable Tokens standard creates a flexible framework for doing so on the Cardano infrastructure. Rather than prescribing a single compliance model, it enables relevant controls — such as investor eligibility, transfer restrictions, freezes or other asset-specific conditions — to be implemented according to the requirements of the particular asset, jurisdiction and use case. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically."
+    "message": "Cardano's new Programmable Tokens standard creates a flexible framework for doing so on the Cardano infrastructure. Rather than prescribing a single compliance model, it enables relevant controls, such as investor eligibility, transfer restrictions, freezes or other asset-specific conditions, to be implemented according to the requirements of the particular asset, jurisdiction and use case. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically."
   },
   "programmableTokens.compliance.title": {
     "message": "How Cardano's Programmable Tokens Standard Enables Compliance by Design"
   },
   "programmableTokens.compliance.intro": {
-    "message": "The Cardano Programmable Tokens standard attaches modular compliance logic directly to a Cardano native asset, so that the rules an issuer defines — like allow-listing, deny-listing, freeze, seize, or transfer restrictions — execute automatically every time the token is transferred, minted, or burned. All enforced by the ledger itself."
+    "message": "The Cardano Programmable Tokens standard attaches modular compliance logic directly to a Cardano native asset, so that the rules an issuer defines, like allow-listing, deny-listing, freeze, seize, or transfer restrictions, execute automatically every time the token is transferred, minted, or burned. All enforced by the ledger itself."
   },
   "programmableTokens.compliance.card1": {
     "message": "Token issuers determine the rules their assets will have to follow and have full flexibility to customize each rule. The sets of rules get packaged into **modules**, giving companies the flexibility they need to address different use cases and scenarios, considering varying jurisdictions and regulatory frameworks. The Cardano Programmable Tokens standard also comes with integration guides for wallets, explorers, indexers, or general applications."
@@ -11387,7 +11433,7 @@
     "message": "Modules are a pluggable additional layer. Each module is an independent set of smart contracts that satisfy the validation interface CIP-0113 defines. Issuers select the module relevant to their use case. Anyone can write custom modules and integrate them into the framework without modifying the core validator."
   },
   "programmableTokens.architecture.paragraph5": {
-    "message": "The standard builds on the architectural foundations established in CIP-0143, developed by Philip DiSarro and Jann Müller from IOG. The Cardano Foundation rebuilt the implementation in Aiken and added in-place upgradeability so deployed compliance logic can be replaced without reissuing tokens. The Foundation also developed the off-chain infrastructure and preview platform, and drove the evolution to the more comprehensive CIP-0113 standard."
+    "message": "The standard builds on the architectural foundations established in CIP-0143. The Cardano Foundation rebuilt the implementation in Aiken and added in-place upgradeability so deployed compliance logic can be replaced without reissuing tokens. The Foundation also developed the off-chain infrastructure and preview platform, and drove the evolution to the more comprehensive CIP-0113 standard."
   },
   "programmableTokens.developer.title": {
     "message": "Programmable Tokens Resources for Developers"
@@ -11405,13 +11451,13 @@
     "message": "Discussion"
   },
   "programmableTokens.regulatory.title": {
-    "message": "Regulatory Context for Programmable Tokens – Global Technology, Different Rulebooks"
+    "message": "Regulatory Context for Programmable Tokens: Global Technology, Different Rulebooks"
   },
   "programmableTokens.regulatory.intro2": {
     "message": "A token may move globally, but the rules governing it do not. The regulatory treatment of a tokenized asset depends on what the asset represents, where it is issued or offered, who interacts with it, and the activities being performed."
   },
   "programmableTokens.regulatory.intro3": {
-    "message": "There is no uniform regulatory approach to tokenization. Some jurisdictions apply established financial-market rules to tokenized versions of existing instruments, others have introduced dedicated regimes for particular categories of digital assets, and many combine both approaches. The result is an increasingly sophisticated — but fragmented — global regulatory landscape."
+    "message": "There is no uniform regulatory approach to tokenization. Some jurisdictions apply established financial-market rules to tokenized versions of existing instruments, others have introduced dedicated regimes for particular categories of digital assets, and many combine both approaches. The result is an increasingly sophisticated, but fragmented, global regulatory landscape."
   },
   "programmableTokens.regulatory.leadIn": {
     "message": "Some of the world's major financial markets illustrate these different approaches:"
@@ -11465,13 +11511,13 @@
     "message": "Brazil applies different regulatory frameworks depending on the nature of the digital asset and activity. Virtual asset services are generally overseen by the Banco Central do Brasil under the country's [virtual asset framework](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14478.htm), while tokens that qualify as securities may instead fall within the remit of the Comissão de Valores Mobiliários (CVM), as reflected in [CVM Guidance Opinion No. 40](https://conteudo.cvm.gov.br/legislacao/pareceres-orientacao/pare040.html)."
   },
   "programmableTokens.jurisdiction.global": {
-    "message": "Global standard setters — FATF, FSB, IOSCO and the Basel Committee"
+    "message": "Global standard setters: FATF, FSB, IOSCO and the Basel Committee"
   },
   "programmableTokens.regulatory.global.overview": {
     "message": "National regimes are also shaped by international standards. [FATF Recommendation 15](https://www.fatf-gafi.org/en/topics/virtual-assets) extends AML/CFT standards, including the Travel Rule, to virtual assets and VASPs; the [FSB's global framework](https://www.fsb.org/2025/10/thematic-review-on-fsb-global-regulatory-framework-for-crypto-asset-activities/) promotes the principle of “same activity, same risk, same regulation”; and [IOSCO](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf) and the [Basel Committee](https://www.bis.org/bcbs/publ/d545.htm) address, respectively, crypto-asset market regulation and banks' prudential exposures."
   },
   "programmableTokens.regulatory.conclusion1": {
-    "message": "**There is no single global rulebook for tokenized assets — and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets, and regulatory requirements without requiring a different technological foundation for each."
+    "message": "**There is no single global rulebook for tokenized assets, and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets, and regulatory requirements without requiring a different technological foundation for each."
   },
   "programmableTokens.regulatory.conclusion2": {
     "message": "Cardano's Programmable Tokens standard provides that flexible foundation, enabling relevant rules and controls to be configured for specific assets and use cases while building on a common framework."
@@ -11501,7 +11547,7 @@
     "message": "How do programmable tokens work?"
   },
   "programmableTokens.faq.how.answer": {
-    "message": "CIP-0113 attaches a shared compliance validator to a token using a withdraw-zero pattern, so that defined rules execute automatically on every token transfer without the script holding any funds. Compliance conditions are specified in pluggable modules chosen or designed by the issuer. The token remains a first-class native Cardano asset — visible in compatible wallets and explorers — with compliance logic running transparently at the ledger level."
+    "message": "CIP-0113 attaches a shared compliance validator to a token using a withdraw-zero pattern, so that defined rules execute automatically on every token transfer without the script holding any funds. Compliance conditions are specified in pluggable modules chosen or designed by the issuer. The token remains a first-class native Cardano asset, visible in compatible wallets and explorers, with compliance logic running transparently at the ledger level."
   },
   "programmableTokens.faq.compliance.question": {
     "message": "What is token-level compliance?"
@@ -11513,6 +11559,6 @@
     "message": "How does blockchain enforce KYC and AML compliance?"
   },
   "programmableTokens.faq.kyc.answer": {
-    "message": "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would not be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for the case of sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than by an off-chain intermediary."
+    "message": "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for the case of sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than by an off-chain intermediary."
   }
 }
