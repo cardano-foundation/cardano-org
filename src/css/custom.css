@@ -162,6 +162,48 @@ html {
   font-weight: 400;
 }
 
+/* White pill button for brand-blue and navy bands. Light theme: white with
+   brand-blue text. Dark theme: the lightest primary blue with navy text, so
+   the button does not glare against the dark UI. The variant sets its own
+   size and type, so combine it with .button only:
+   className="button button--pill-white". */
+.button.button--pill-white {
+  --ifm-button-background-color: #ffffff;
+  --ifm-button-border-color: #ffffff;
+  --ifm-button-border-width: 0;
+  --ifm-button-color: #0033ad;
+  padding: var(--site-space-sm) 40px;
+  border-radius: var(--site-radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  white-space: normal;
+}
+
+.button.button--pill-white:hover,
+.button.button--pill-white:active {
+  --ifm-button-background-color: #eef1f8;
+  --ifm-button-border-color: #eef1f8;
+}
+
+[data-theme="dark"] .button.button--pill-white {
+  --ifm-button-background-color: var(--ifm-color-primary-lightest);
+  --ifm-button-border-color: var(--ifm-color-primary-lightest);
+  --ifm-button-color: #0a1031;
+}
+
+[data-theme="dark"] .button.button--pill-white:hover,
+[data-theme="dark"] .button.button--pill-white:active {
+  --ifm-button-background-color: var(--ifm-color-primary-lighter);
+  --ifm-button-border-color: var(--ifm-color-primary-lighter);
+}
+
+/* The brand-blue focus ring is invisible on blue and navy bands. */
+.button.button--pill-white:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 .centered-link {
   text-align: center;
 }
