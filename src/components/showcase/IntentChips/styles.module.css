@@ -103,6 +103,8 @@ a.intentChip {
     padding-left: 1rem;
     padding-right: 1rem;
     scroll-snap-type: x proximity;
+    /* Snap to the padded edge, otherwise the first chip loads flush left. */
+    scroll-padding-inline: 1rem;
   }
 
   .intentItem {
