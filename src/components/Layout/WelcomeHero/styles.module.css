@@ -61,10 +61,14 @@ html[data-theme="light"] .overlay {
   display: none;
 }
 
+/* Infima's .hero is a flex row, so without min-width: 0 the nowrap chip row
+   on phones stretches this item past the viewport and the hero clips it. */
 .heroForeground {
   position: relative;
   z-index: 2;
   pointer-events: none;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .heroForeground a,
