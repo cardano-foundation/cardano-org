@@ -225,9 +225,6 @@ export const Showcases = [
       "Mint and burn DJED, Cardano's overcollateralized stablecoin, on an open-source platform. Transparent alternative to DJED.xyz built by Artifi Labs.",
     tagline: "Open-source DJED stablecoin minting platform",
     preview: require("./app-screenshots/open-djed.webp"),
-    extraPreviews: [
-      require("./app-screenshots/open-djed-analytics.webp"),
-    ],
     icon: "/img/app-icons/djed.png",
     website: "https://djed.artifi.finance/",
     source: "https://github.com/artifi-labs/open-djed",
@@ -435,9 +432,6 @@ export const Showcases = [
     description: "Cardano stake-pool monitoring with heat-map visualizations of performance, saturation, and rewards across the entire pool universe.",
     tagline: "Pool tool with heat-map visualizations",
     preview: require("./app-screenshots/pool-stats.webp"),
-    extraPreviews: [
-      require("./app-screenshots/pool-stats-explore.webp"),
-    ],
     icon: "/img/app-icons/pool-stats.png",
     website: "https://poolstats.io",
     source: null,
@@ -719,10 +713,6 @@ export const Showcases = [
     description:
       "Aggregator for Project Catalyst that surfaces proposals, voting results, community feedback, and DRep activity in a single dashboard.",
     tagline: "Aggregator for Project Catalyst proposals",
-    preview: require("./app-screenshots/lido-nation.webp"),
-    extraPreviews: [
-      require("./app-screenshots/lido-nation-active-fund.webp"),
-    ],
     icon: "/img/app-icons/lido-nation.png",
     website: "https://www.lidonation.com/en/catalyst-explorer",
     source: null,
