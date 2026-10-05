@@ -779,6 +779,14 @@ img {
   --section-caret-fill-color: #1b1b1d;
 }
 
+/* Infima leaves the light page background transparent, so the browser's own
+   canvas colour shows through (some embedded browsers paint it grey). Pin the
+   page to white so it matches the white section caret. Only the page itself:
+   components use --ifm-background-color as "transparent" on purpose. */
+html[data-theme="light"] {
+  background-color: #ffffff;
+}
+
 .sectionCaret polygon {
   fill: #ffffff;
 }
@@ -797,7 +805,8 @@ img {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
-  margin-left: -1000px;
+  /* Half the width, so the caret tip sits exactly in the middle. */
+  margin-left: -1024px;
 }
 
 
@@ -839,19 +848,6 @@ img {
     margin-left: -1500px;
   }
 }
-
-/* Medusa header */
-#medusa-root {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-#medusa-root > div {
-  position: absolute;
-  inset: 0;
-}
-
 
 /* DocSearch button styling - rounded corners */
 .DocSearch-Button {
@@ -907,3 +903,11 @@ img {
   order: 10;
 }
 
+/* Footer columns: Infima stacks every column full width below 996px,
+   which wastes space on foldables and large phones. Two columns fit
+   the longest localized link labels from 480px up */
+@media (min-width: 480px) and (max-width: 996px) {
+  .footer__links > .footer__col {
+    --ifm-col-width: 50%;
+  }
+}

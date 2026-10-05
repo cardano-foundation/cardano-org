@@ -75,12 +75,27 @@
     "areasOfContribution": "Education, Other"
   },
   {
+    "name": "Ático Mismana",
+    "role": "Brazil",
+    "country": "BR",
+    "link": "https://forum.cardano.org/u/aticomismana",
+    "profilePicture": "/img/ambassadors/atico-mismana.webp",
+    "tagline": "Software developer in Brazil, content creator and SPO",
+    "socials": {
+      "x": "https://x.com/aticomismana",
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Software"
+  },
+  {
     "name": "Ayomide Osemene",
     "role": "Nigeria",
     "country": "NG",
     "link": "https://forum.cardano.org/u/ayomishuga/",
     "profilePicture": "/img/ambassadors/ayomide-osemene.webp",
-    "tagline": "Educating newcomers through Cardano Academy and the Newcomers Support X Space while helping launch the Cardano Bounties beta.",
+    "tagline": "Educating newcomers through Cardano Academy and the Newcomers Support X Space while helping launch the Cardano Bounties.",
     "socials": {
       "x": "https://x.com/ShugaAyomi",
       "linkedIn": "https://www.linkedin.com/in/ayomishuga",
@@ -148,6 +163,21 @@
       "github": ""
     },
     "areasOfContribution": "Moderation"
+  },
+  {
+    "name": "Carolina Isler",
+    "role": "Switzerland",
+    "country": "CH",
+    "link": "https://forum.cardano.org/u/lapetiteada",
+    "profilePicture": "/img/ambassadors/carolina-isler.webp",
+    "tagline": "Managing social media and supporting Vault3 and Pool GRANA in Switzerland.",
+    "socials": {
+      "x": "https://x.com/LaPetiteADA",
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Meetup"
   },
   {
     "name": "Chris [STR8]",
@@ -690,6 +720,21 @@
     "areasOfContribution": "Content, Moderation"
   },
   {
+    "name": "Martin Musagara",
+    "role": "Congo, Democratic Republic of the",
+    "country": "CD",
+    "link": "https://forum.cardano.org/u/martin_musagara/",
+    "profilePicture": "/img/ambassadors/martin-musagara.webp",
+    "tagline": "Building Web3 and Cardano communities through Cardano Pathways in DRC.",
+    "socials": {
+      "x": "https://x.com/martin_musagara",
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Meetup"
+  },
+  {
     "name": "Baudouin Muvunga",
     "role": "Congo, Democratic Republic of the",
     "country": "CD",
@@ -733,6 +778,21 @@
       "github": ""
     },
     "areasOfContribution": "Education, Other"
+  },
+  {
+    "name": "Leo Chen",
+    "role": "Taiwan",
+    "country": "TW",
+    "link": "https://forum.cardano.org/u/dcb0092004/",
+    "profilePicture": "/img/ambassadors/leo-chen.webp",
+    "tagline": "Managing community channels, creating content, and leading Hizz in Taiwan.",
+    "socials": {
+      "x": "https://x.com/CardanoLeo",
+      "linkedIn": "",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Moderation"
   },
   {
     "name": "Lloyd Duhon",
@@ -868,6 +928,21 @@
       "github": ""
     },
     "areasOfContribution": "Education, Moderation, Content"
+  },
+  {
+    "name": "Olivier Mwatsimulamo",
+    "role": "Congo, Democratic Republic of the",
+    "country": "CD",
+    "link": "https://forum.cardano.org/u/mwatsimulamo/",
+    "profilePicture": "/img/ambassadors/olivier-mwatsimulamo.webp",
+    "tagline": "Educating builders and supporting governance at Goma Cardano Hub and Intersect.",
+    "socials": {
+      "x": "https://x.com/OlivierMWATSIM1",
+      "linkedIn": "https://www.linkedin.com/in/olivier-mwatsimulamo-389b51233",
+      "youtube": "",
+      "github": ""
+    },
+    "areasOfContribution": "Content, Meetup"
   },
   {
     "name": "Nguyen Thi Ha",
@@ -1078,21 +1153,6 @@
       "github": ""
     },
     "areasOfContribution": "Business Development"
-  },
-  {
-    "name": "Shusuke Wakuda",
-    "role": "Japan",
-    "country": "JP",
-    "link": "https://forum.cardano.org/u/bakucham/",
-    "profilePicture": "SOON...",
-    "tagline": "Managing the Cardano booth at major Tokyo IT business conferences.",
-    "socials": {
-      "x": "https://x.com/shuwaku2",
-      "linkedIn": "",
-      "youtube": "",
-      "github": ""
-    },
-    "areasOfContribution": "Meetup"
   },
   {
     "name": "Simon Fleck",

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
-import termsData from "@site/src/data/termsForTermExplainer.json"; // Import all the terms
+import { getTermsForTermExplainer } from "@site/src/data/termsForTermExplainer";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 
 export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
 
   useEffect(() => {
-    if (category && termsData.categories[category]) {
-      const categoryTerms = termsData.categories[category];
+    const categoryTerms = getTermsForTermExplainer()[category];
+    if (categoryTerms) {
       const randomTerms = categoryTerms.sort(() => 0.5 - Math.random()).slice(0, 2);
       // Pick random terms on the client only to avoid an SSR hydration mismatch.
       // eslint-disable-next-line react-hooks/set-state-in-effect

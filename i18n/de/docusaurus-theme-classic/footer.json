@@ -16,7 +16,7 @@
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Cardano Foundation": {
-    "message": "Cardano Stiftung",
+    "message": "Cardano Foundation",
     "description": "The label of footer link with label=Cardano Foundation linking to /entities?tab=cardanofoundation"
   },
   "link.item.label.EMURGO": {
@@ -37,10 +37,10 @@
   },
   "link.item.label.More entities": {
     "message": "Weitere Organisationen",
-    "description": "The label of footer link with label=More entities linking to /entities/#companies"
+    "description": "The label of footer link with label=More entities linking to /entities/"
   },
   "link.item.label.Brand Assets": {
-    "message": "Asset-Sammlung",
+    "message": "Markenmaterialien",
     "description": "The label of footer link with label=Brand Assets linking to /brand-assets"
   },
   "link.item.label.Glossary": {
@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=Newsletter linking to /newsletter"
   },
   "link.item.label.Contact": {
-    "message": "Kontakte",
+    "message": "Kontakt",
     "description": "The label of footer link with label=Contact linking to /contact"
   },
   "link.item.label.Terms": {
@@ -80,7 +80,19 @@
     "description": "The label of footer link with label=Contributors linking to https://github.com/cardano-foundation/cardano-org/graphs/contributors"
   },
   "copyright": {
-    "message": "®️ Cardano",
+    "message": "® Cardano",
     "description": "The footer copyright"
+  },
+  "link.item.label.Learn Cardano": {
+    "message": "Cardano lernen",
+    "description": "The label of footer link with label=Learn Cardano linking to /learn"
+  },
+  "link.item.label.Code of Conduct": {
+    "message": "Verhaltenskodex",
+    "description": "The label of footer link with label=Code of Conduct linking to /community-code-of-conduct"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/cardano-foundation/cardano-org"
   }
 }

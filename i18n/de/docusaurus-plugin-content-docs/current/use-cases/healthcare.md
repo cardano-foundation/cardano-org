@@ -11,7 +11,7 @@ sidebar_position: 15
 
 Gesundheitsdaten sind über viele Behandler verstreut. Patienten wie Ärzte kommen daher nur schwer an vollständige Krankengeschichten. Diese Zersplitterung führt zu doppelten Untersuchungen, gefährlichen Wechselwirkungen von Medikamenten und verzögerten Diagnosen. Im Notfall fehlen mitunter lebenswichtige Informationen.
 
-Current systems also create privacy and security risks. Die heutigen Systeme bergen zudem Risiken für Privatsphäre und Sicherheit: Zentrale Datenbanken sind attraktive Ziele für Hacker, und Patienten haben kaum Kontrolle darüber, wer auf ihre sensiblen Gesundheitsdaten zugreift.
+Die heutigen Systeme bergen zudem Risiken für Privatsphäre und Sicherheit. Zentrale Datenbanken sind attraktive Ziele für Hacker, und Patienten haben kaum Kontrolle darüber, wer auf ihre sensiblen Gesundheitsdaten zugreift.
 
 ## Wie Blockchain dies löst
 
@@ -20,10 +20,10 @@ Blockchain-basierte Gesundheitsakten geben Patienten die Kontrolle über ihre ko
 - **Patienten als Eigentümer**: Jeder bestimmt selbst, wer auf die eigenen Gesundheitsdaten zugreift
 - **Portabilität**: Zugriff auf die Akte bei jedem Behandler, überall auf der Welt
 - **Interoperabilität**: Standardisierte Datenformate ermöglichen den Informationsaustausch
-- **Audit trails**: Track who accessed records and when
+- **Prüfpfade**: Nachvollziehbar, wer wann auf die Akte zugegriffen hat
 - **Selektive Freigabe**: Jeder Behandler sieht nur die für ihn relevanten Informationen
 
-Smart Contracts können das Einwilligungsmanagement automatisieren: Behandler greifen nur auf freigegebene Daten zu, und die Vorgaben des Gesundheitsrechts bleiben eingehalten.
+Smart Contracts können das Einwilligungsmanagement automatisieren: Behandler greifen nur auf freigegebene Daten zu, und die Vorgaben des Gesundheitsrechts werden eingehalten.
 
 ## Warum Cardano
 

@@ -1,0 +1,37 @@
+/* Figure styles come from the treasury sections so all figures look alike. */
+.figure {
+  composes: figure from "../TreasurySections/styles.module.css";
+}
+
+.value {
+  composes: value from "../TreasurySections/styles.module.css";
+}
+
+.label {
+  composes: label from "../TreasurySections/styles.module.css";
+}
+
+.note {
+  composes: note from "../TreasurySections/styles.module.css";
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sub {
+  composes: note from "../TreasurySections/styles.module.css";
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.donateClosed {
+  padding: 1rem 0 2rem;
+}

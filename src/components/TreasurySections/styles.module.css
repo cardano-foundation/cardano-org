@@ -1,0 +1,144 @@
+.figure {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  line-height: 1.2;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.flowGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.fundingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+}
+
+/* Five figures share one row, a smaller size keeps "-230.0M ada" on one line. */
+.flowGrid .value {
+  font-size: 1.6rem;
+}
+
+/* Reserves its line so the sentence appearing after load does not shift the page. */
+.context {
+  min-height: 3em;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.fundedList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.fundedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.fundedTitle {
+  font-weight: 600;
+}
+
+.fundedMeta {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.toggleButton,
+.toggleActive {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+}
+
+.toggleActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.outlookGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.subTitle {
+  margin: 1.5rem 0 0.25rem;
+  font-size: 1rem;
+}
+
+.skeleton {
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.errorBox {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .flowGrid,
+  .fundingGrid,
+  .outlookGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .flowGrid .value {
+    font-size: 1.4rem;
+  }
+}

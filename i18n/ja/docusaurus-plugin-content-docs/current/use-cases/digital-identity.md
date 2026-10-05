@@ -9,13 +9,13 @@ sidebar_position: 3
 
 ## 課題
 
-In today's digital world, our identities are fragmented across countless platforms, each holding pieces of our personal information. Users have little control over how their data is used, shared, or monetized. 今日のデジタル社会では、個人のアイデンティティが無数のプラットフォームに分散しており、それぞれが個人情報の一部を保持しています。ユーザーは自分のデータがどう使われ、共有され、収益化されているかをほとんどコントロールできません。データ漏洩により数百万件の記録が流出し、なりすまし犯罪は横行し、オンラインでの本人証明は依然として煩雑でプライバシーを侵害するものとなっています。
+今日のデジタル社会では、個人のアイデンティティが無数のプラットフォームに分散しており、それぞれが個人情報の一部を保持しています。ユーザーは自分のデータがどう使われ、共有され、収益化されているかをほとんどコントロールできません。データ漏洩により数百万件の記録が流出し、なりすまし犯罪は横行し、オンラインでの本人証明は依然として煩雑でプライバシーを侵害するものとなっています。
 
-Centralized identity systems create single points of failure and give disproportionate power to identity providers. Users must repeatedly share sensitive information, creating unnecessary exposure and friction in digital interactions.
+中央集権型のIDシステムは単一障害点を生み、ID提供者に過大な権限を与えます。ユーザーは機密情報を何度も共有しなければならず、不要な情報の露出や、デジタル上のやり取りでの手間が生じています。
 
 ## ブロックチェーンによる解決策
 
-Cardano上の自己主権型アイデンティティ（SSI）は、ユーザー自身がデジタルIDを管理できるようにします。主な特徴は以下の通りです。 Key features include:
+Cardano上の自己主権型アイデンティティ（SSI）は、ユーザー自身がデジタルIDを管理できるようにします。主な特徴は以下の通りです。
 
 - **ユーザーによる所有権**: 個人が自分のID情報を管理し、何を共有するかを決定
 - **選択的開示**: 特定の取引に必要な情報のみを共有
@@ -25,7 +25,7 @@ Cardano上の自己主権型アイデンティティ（SSI）は、ユーザー�
 
 ブロックチェーンベースのIDにより、ユーザーは生年月日を明かさずに18歳以上であることを証明したり、住所を明かさずに特定の国に居住していることを証明したりできます。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **形式検証手法**によりIDスマートコントラクトが意図通りに動作することを保証
 - **拡張UTXOモデル**によりID関連操作の取引コストが予測可能

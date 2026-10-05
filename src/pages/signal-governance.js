@@ -31,7 +31,7 @@ const interestId = "governance";
       title={siteTitle}
       description={translate({id: 'signalGovernance.layout.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})}
     >
-      <OpenGraphInfo pageName={content.openGraph} title={translate({id: 'signalGovernance.openGraph.title', message: 'Signal your interest in Governance'})} description={translate({id: 'signalGovernance.openGraph.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})} />
+      <OpenGraphInfo pageName={content.slug} title={translate({id: 'signalGovernance.openGraph.title', message: 'Signal your interest in Governance'})} description={translate({id: 'signalGovernance.openGraph.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})} />
       <SiteHero
         title={translate({id: 'signalGovernance.hero.title', message: 'Signal your interest in Governance'})}
         description={translate({id: 'signalGovernance.hero.description', message: "We'll keep you updated on DReps, proposals and how to get involved."})}
