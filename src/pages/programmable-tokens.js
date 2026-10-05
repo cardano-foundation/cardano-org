@@ -146,7 +146,7 @@ export default function ProgrammableTokens() {
               <div className={styles.capabilitiesFooter}>
                 <p className={styles.invertedClosing}>{CAPABILITIES.closing}</p>
                 <Link
-                  className={styles.pillButton}
+                  className="button button--pill-white"
                   to={CAPABILITIES.button.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -207,7 +207,7 @@ export default function ProgrammableTokens() {
         {/* Call to action: dark navy band with translucent orbs */}
         <div className={styles.ctaSection}>
           <Link
-            className={styles.ctaButton}
+            className="button button--pill-white"
             to={CTA.href}
             target="_blank"
             rel="noopener noreferrer"
