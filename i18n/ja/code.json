@@ -1230,16 +1230,34 @@
     "message": "Cardanoは、査読済みの研究に基づいて構築された分散型ブロックチェーンプラットフォームです。ADA、ステーキング、ガバナンス、DApps、そして世界規模のオープンソースコミュニティをご紹介します。"
   },
   "home.hero.title": {
-    "message": "すべての人のために、より良く機能する世界へ"
+    "message": "Made for trust."
+  },
+  "home.hero.title2": {
+    "message": "Built to last."
   },
   "home.hero.description": {
-    "message": "Cardanoは、最も安全で信頼性が高く、検閲耐性を備えたブロックチェーン。未来の経済と社会を動かすミッションクリティカルなアプリケーションを支えます。"
+    "message": "Cardano is a public blockchain bringing assurance to critical operations. Secure, scalable, and sustainable. Ready for the needs of today and tomorrow."
   },
   "home.hero.ctaWhatIsCardano": {
     "message": "Cardanoとは？"
   },
   "home.hero.ctaGetStarted": {
     "message": "はじめる"
+  },
+  "home.hero.vizBadge.label": {
+    "message": "Visualizing cardano-ledger since 2018"
+  },
+  "home.hero.vizBadge.description": {
+    "message": "Every dot is a file or folder of the cardano-ledger repository, and the animation replays how it grew month by month since 2018. Colors mark the code of each ledger era, from Byron to Dijkstra."
+  },
+  "home.hero.vizBadge.link": {
+    "message": "Explore the history"
+  },
+  "home.hero.vizBadge.buttonLabel": {
+    "message": "Information about this visualization"
+  },
+  "home.hero.vizBadge.ariaLabel": {
+    "message": "File tree of the cardano-ledger repository growing month by month"
   },
   "home.featured.title": {
     "message": "世界は変わりつつあります。共に、より良い方向へ変えていきましょう。"
@@ -2708,8 +2726,8 @@
   "stakePoolDelegation.alt.heading": {
     "message": "ほかのツールを使いたい場合"
   },
-  "stakePoolDelegation.alt.intro": {
-    "message": "これらのコミュニティ製プールエクスプローラーを使うと、ステークプールを詳しく比較できます。"
+  "stakePoolDelegation.alt.introDelegate": {
+    "message": "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page."
   },
   "stakePoolDelegation.alt.wallets": {
     "message": "ほとんどのウォレットは単独で委任できます。"
@@ -6326,16 +6344,16 @@
     "message": "自己管理のまま、いつでも資産を使えるステーキング"
   },
   "whatIsCardano.proof.staking.text": {
-    "message": "ADAをステークプールに委任しても、ADAがウォレットから移動することはありません。ロック期間はなく、少額のデポジット以外に最低額もなく、スラッシングもありません。プロトコルがペナルティとしてADAを取り上げることはできません。いつでも使ったり、再委任したりできます。"
+    "message": "Delegating ada to a stake pool never moves it out of your wallet. There is no lock-up period, no minimum amount to delegate, and no slashing: the protocol cannot take your ada as a penalty. Registering your stake key takes a refundable deposit, and you can spend or re-delegate at any time."
   },
-  "whatIsCardano.proof.fees.title": {
-    "message": "予測できる手数料"
+  "whatIsCardano.proof.eutxo.title": {
+    "message": "Predictable by design"
   },
-  "whatIsCardano.proof.fees.tagline": {
-    "message": "決定論的なトランザクション"
+  "whatIsCardano.proof.eutxo.tagline": {
+    "message": "Extended UTXO model"
   },
-  "whatIsCardano.proof.fees.text": {
-    "message": "Cardanoの手数料は、固定部分にトランザクションのサイズを加えたシンプルな計算式で、オークションではなくプロトコルパラメーターによって決まります。一般的な単純送金の費用は1 ADAに満たず、署名する前に正確な金額を確認できます。"
+  "whatIsCardano.proof.eutxo.text": {
+    "message": "A Cardano transaction spends specific outputs and creates new ones, so its result and its fee can be checked before it is submitted. One transaction can have many inputs and outputs, paying several recipients or settling several trades together. Fees follow a fixed formula set by protocol parameters, not an auction."
   },
   "whatIsCardano.proof.tokens.title": {
     "message": "チェーンに組み込まれたトークン"
@@ -6371,7 +6389,7 @@
     "message": "オンチェーンガバナンスとトレジャリー"
   },
   "whatIsCardano.proof.governance.text": {
-    "message": "プロトコルの変更、トレジャリーの支出、さらには憲法までもが、オンチェーンで提案・決定されます。ADA保有者は直接投票するか、代表者に投票権を委任します。ステークプールオペレーターと憲法委員会が、抑制と均衡の役割を果たします。"
+    "message": "Protocol changes, treasury spending and even the constitution are proposed and decided on-chain. Ada holders take part by delegating their voting power to a representative or by registering as one themselves. Stake pool operators and a constitutional committee provide checks and balances."
   },
   "whatIsCardano.proof.regulation.title": {
     "message": "規制への対応"
@@ -8015,7 +8033,7 @@
     "message": "Cardanoガバナンスの仕組み"
   },
   "governance.onboarding.intro": {
-    "message": "Cardanoはコミュニティによって運営されています。3つのグループが、ネットワークの方向性を決める提案に投票します。プロトコルのアップグレードからトレジャリーの資金配分まで、あらゆることを共に決定します。"
+    "message": "Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}."
   },
   "governance.onboarding.together": {
     "message": "3つのグループが共に、Cardanoのガバナンスを代表し、検証し、守っています。どのグループも単独では決定できません。"
@@ -8878,26 +8896,8 @@
   "apps.guidedPaths.stablecoins": {
     "message": "ステーブルコインを使う"
   },
-  "governance.treasury.hero.title": {
-    "message": "トレジャリーに寄付する"
-  },
-  "governance.treasury.hero.description": {
-    "message": "ウォレットを接続して、CardanoのトレジャリーにADAを直接追加できます。ウォレットが署名して送信する、受取人アドレスのないConwayの正式なトレジャリー寄付です。"
-  },
   "governance.treasury.loading": {
     "message": "寄付ツールを読み込み中…"
-  },
-  "governance.treasury.layout.title": {
-    "message": "トレジャリーへの寄付 - Cardanoガバナンス"
-  },
-  "governance.treasury.layout.description": {
-    "message": "cardano.orgから直接、Conwayのトレジャリー寄付を行えます。ウォレットを接続し、1回のトランザクションでCardanoのトレジャリーにADAを追加しましょう。"
-  },
-  "governance.treasury.og.title": {
-    "message": "トレジャリーに寄付する"
-  },
-  "governance.treasury.og.description": {
-    "message": "ウォレットを接続し、1回のトランザクションでCardanoのトレジャリーにADAを直接追加しましょう。"
   },
   "walletFinder.hero.title": {
     "message": "Cardanoウォレットを探す"
@@ -8949,21 +8949,6 @@
   },
   "ambassadors.map.countLabel": {
     "message": "{n}人のアンバサダー"
-  },
-  "home.hero.vizBadge.description": {
-    "message": "この3Dビジュアライゼーションは、ouroboros-consensusリポジトリのファイル構造を表しています。各点はファイルまたはディレクトリを表し、線はファイルとその親フォルダーを結んでいます。"
-  },
-  "home.hero.vizBadge.interaction": {
-    "message": "ドラッグして回転できます。"
-  },
-  "home.hero.vizBadge.link": {
-    "message": "Ouroborosについて詳しく"
-  },
-  "home.hero.vizBadge.ariaLabel": {
-    "message": "このビジュアライゼーションについての情報"
-  },
-  "home.hero.vizBadge.label": {
-    "message": "ouroboros-consensusを可視化"
   },
   "stablecoins.getStarted.scratch.title": {
     "message": "ゼロから始めますか？"
@@ -9546,6 +9531,216 @@
   },
   "quiz.hub.backToLearn": {
     "message": "学習パスに戻る"
+  },
+  "ledgerHistory.page.title": {
+    "message": "The cardano-ledger history"
+  },
+  "ledgerHistory.page.description": {
+    "message": "Watch the cardano-ledger repository grow month by month since 2018, era by era, in an interactive 3D visualization."
+  },
+  "medusa.page.noWebgl": {
+    "message": "This visualization needs WebGL, which your browser or device does not provide."
+  },
+  "medusa.page.noWebglLink": {
+    "message": "Read about the hard forks instead."
+  },
+  "medusa.page.canvasLabel": {
+    "message": "Interactive file tree of the cardano-ledger repository over time"
+  },
+  "medusa.page.hint": {
+    "message": "Space plays and pauses, arrows step, 1 to 9 jump to hard forks, L labels, F fullscreen, H hides this bar."
+  },
+  "medusa.controls.play": {
+    "message": "Play"
+  },
+  "medusa.controls.pause": {
+    "message": "Pause"
+  },
+  "medusa.controls.back": {
+    "message": "One month back"
+  },
+  "medusa.controls.forward": {
+    "message": "One month forward"
+  },
+  "medusa.controls.timeline": {
+    "message": "Timeline"
+  },
+  "medusa.controls.speed": {
+    "message": "Speed"
+  },
+  "medusa.controls.fullscreen": {
+    "message": "Fullscreen"
+  },
+  "medusa.legend.title": {
+    "message": "Eras"
+  },
+  "medusa.legend.byron": {
+    "message": "Byron"
+  },
+  "medusa.legend.shelley": {
+    "message": "Shelley"
+  },
+  "medusa.legend.allegra": {
+    "message": "Allegra"
+  },
+  "medusa.legend.mary": {
+    "message": "Mary"
+  },
+  "medusa.legend.alonzo": {
+    "message": "Alonzo"
+  },
+  "medusa.legend.babbage": {
+    "message": "Babbage"
+  },
+  "medusa.legend.conway": {
+    "message": "Conway"
+  },
+  "medusa.legend.dijkstra": {
+    "message": "Dijkstra"
+  },
+  "medusa.legend.libs": {
+    "message": "Shared libraries"
+  },
+  "medusa.legend.docs": {
+    "message": "Documentation"
+  },
+  "medusa.legend.other": {
+    "message": "Everything else"
+  },
+  "medusa.card.close": {
+    "message": "Dismiss"
+  },
+  "medusa.card.collapse": {
+    "message": "Collapse"
+  },
+  "medusa.card.link": {
+    "message": "About this hard fork"
+  },
+  "medusa.card.repoLink": {
+    "message": "View repository"
+  },
+  "medusa.node.items": {
+    "message": "{count} item|{count} items"
+  },
+  "medusa.node.file": {
+    "message": "File"
+  },
+  "medusa.node.folder": {
+    "message": "Folder"
+  },
+  "medusa.node.github": {
+    "message": "View on GitHub at this month"
+  },
+  "medusa.milestone.repoStart.name": {
+    "message": "Repository created"
+  },
+  "medusa.milestone.repoStart.description": {
+    "message": "The ledger rules start life as cardano-ledger-specs, with the Byron rules and the first Shelley drafts."
+  },
+  "medusa.milestone.shelley.name": {
+    "message": "Shelley hard fork"
+  },
+  "medusa.milestone.shelley.description": {
+    "message": "Stake pools and delegation arrive, block production moves to the community."
+  },
+  "medusa.milestone.allegra.name": {
+    "message": "Allegra hard fork"
+  },
+  "medusa.milestone.allegra.description": {
+    "message": "Token locking and validity intervals, the groundwork for smart contracts."
+  },
+  "medusa.milestone.mary.name": {
+    "message": "Mary hard fork"
+  },
+  "medusa.milestone.mary.description": {
+    "message": "Native multi-asset support, tokens on the ledger without smart contracts."
+  },
+  "medusa.milestone.restructure.name": {
+    "message": "Repository restructured"
+  },
+  "medusa.milestone.restructure.description": {
+    "message": "The code moves into the eras and libs layout still used today, most files change their place."
+  },
+  "medusa.milestone.alonzo.name": {
+    "message": "Alonzo hard fork"
+  },
+  "medusa.milestone.alonzo.description": {
+    "message": "Plutus smart contracts go live on mainnet."
+  },
+  "medusa.milestone.vasil.name": {
+    "message": "Vasil hard fork"
+  },
+  "medusa.milestone.vasil.description": {
+    "message": "The Babbage era brings reference inputs, inline datums and reference scripts."
+  },
+  "medusa.milestone.chang.name": {
+    "message": "Chang hard fork"
+  },
+  "medusa.milestone.chang.description": {
+    "message": "The Conway era opens and on-chain governance begins."
+  },
+  "medusa.milestone.plomin.name": {
+    "message": "Plomin hard fork"
+  },
+  "medusa.milestone.plomin.description": {
+    "message": "Full on-chain governance: DRep voting, treasury withdrawals and constitutional changes."
+  },
+  "medusa.milestone.vanRossem.name": {
+    "message": "van Rossem hard fork"
+  },
+  "medusa.milestone.vanRossem.description": {
+    "message": "An intra-era upgrade of the Conway era, see the hard forks page for details."
+  },
+  "home.activity.title": {
+    "message": "Cardano in use"
+  },
+  "home.activity.figure.chainTx": {
+    "message": "transactions on Cardano in 30 days"
+  },
+  "home.activity.figure.tx": {
+    "message": "attributed to showcased apps"
+  },
+  "home.activity.figure.apps": {
+    "message": "curated apps to explore"
+  },
+  "home.activity.figure.years": {
+    "message": "years on mainnet"
+  },
+  "latestNews.category.development": {
+    "message": "Development"
+  },
+  "latestNews.category.research": {
+    "message": "Research"
+  },
+  "latestNews.category.governance": {
+    "message": "Governance"
+  },
+  "latestNews.category.community": {
+    "message": "Community"
+  },
+  "latestNews.category.ecosystem": {
+    "message": "Ecosystem"
+  },
+  "latestNews.category.education": {
+    "message": "Education"
+  },
+  "latestNews.category.events": {
+    "message": "Events"
+  },
+  "home.activity.adopters.title": {
+    "message": "Working with Cardano"
+  },
+  "apps.intent.lend": {
+    "message": "Lend & borrow"
+  },
+  "home.activity.window": {
+    "message": "Snapshot of the 30 days from {start} to {end}."
+  },
+  "home.activity.topApps.note": {
+    "message": "Most active app per category, by on-chain transactions in the same period."
+  },
+  "home.activity.topApps.noteMixed": {
+    "message": "Most active apps, by on-chain transactions in the same period."
   },
   "funding.group.grants.persona": {
     "message": "アイデアがある"
@@ -10299,5 +10494,1090 @@
   },
   "feesAndTransactions.cta.buttonLabel": {
     "message": "Explore the UTXO model"
+  },
+  "governance.treasury.overview.hero.title": {
+    "message": "The Cardano treasury"
+  },
+  "governance.treasury.overview.hero.description": {
+    "message": "What the treasury is for, how spending is decided, and where its income comes from."
+  },
+  "governance.treasury.explainer.income.body": {
+    "message": "Every epoch, a period of five days, Cardano combines the transaction fees of the previous epoch with a share of its reserves, the ada that is released into circulation step by step. 20% of this reward pot goes to the treasury, the rest is available as rewards for stake pools and delegators. Rewards that are not paid out return to the reserves. Projects can also return unused funding through a transaction called a treasury donation."
+  },
+  "governance.treasury.explainer.spending.constitution": {
+    "message": "Treasury rules in the Constitution"
+  },
+  "governance.treasury.explainer.spending.accountability": {
+    "message": "Standards for treasury-funded work"
+  },
+  "governance.treasury.explainer.shift.body": {
+    "message": "The reserves are finite. With the same percentage taken each epoch, a smaller reserve releases less ada for the treasury and for rewards. Income from transaction fees depends only on how much the network is used."
+  },
+  "governance.treasury.explainer.terms": {
+    "message": "Related terms:"
+  },
+  "governance.treasury.explainer.term.treasury": {
+    "message": "Treasury"
+  },
+  "governance.treasury.explainer.term.cut": {
+    "message": "Treasury cut"
+  },
+  "governance.treasury.explainer.term.withdrawal": {
+    "message": "Treasury withdrawal"
+  },
+  "governance.treasury.explainer.term.donation": {
+    "message": "Treasury donation"
+  },
+  "governance.treasury.overview.layout.title": {
+    "message": "The Cardano Treasury - Cardano Governance"
+  },
+  "governance.treasury.overview.layout.description": {
+    "message": "What the Cardano treasury is for, how spending is decided, what it has funded recently and how it is funded."
+  },
+  "governance.treasury.overview.og.title": {
+    "message": "The Cardano treasury"
+  },
+  "governance.treasury.overview.og.description": {
+    "message": "What the Cardano treasury is for, how spending is decided and how it is funded."
+  },
+  "governance.treasury.donate.divider": {
+    "message": "Donate to the treasury"
+  },
+  "governance.treasury.out.history": {
+    "message": "Full treasury history and withdrawals"
+  },
+  "governance.treasury.out.accountability": {
+    "message": "Standards for treasury-funded work"
+  },
+  "governance.treasury.out.constitution": {
+    "message": "Read the treasury rules"
+  },
+  "governance.treasury.overview.error": {
+    "message": "Live treasury data is unavailable right now."
+  },
+  "governance.treasury.overview.errorLink": {
+    "message": "View treasury history"
+  },
+  "governance.treasury.overview.chart.epoch": {
+    "message": "Epoch"
+  },
+  "governance.treasury.overview.income.intro": {
+    "message": "Each bar is the treasury's share of one epoch's reward pot, split by source."
+  },
+  "governance.treasury.overview.income.range.recent": {
+    "message": "Last two years"
+  },
+  "governance.treasury.overview.income.range.all": {
+    "message": "All epochs"
+  },
+  "governance.treasury.overview.income.aria": {
+    "message": "Treasury income per epoch from reserves and from fees"
+  },
+  "governance.treasury.overview.income.series.reserves": {
+    "message": "From reserves"
+  },
+  "governance.treasury.overview.income.series.fees": {
+    "message": "From fees"
+  },
+  "governance.treasury.overview.income.series.feeShare": {
+    "message": "Fee share (%)"
+  },
+  "governance.treasury.overview.income.method": {
+    "message": "Calculated from transaction fees, the reserves and two protocol parameters: τ, the treasury's share of the reward pot, and ρ, the share of the reserves released each epoch. On-chain treasury changes match within a few percent in epochs without withdrawals or donations."
+  },
+  "governance.treasury.overview.outlook.intro": {
+    "message": "The reserves shrink a little every epoch. The dashed line shows where they would be if the pace of the last 12 months continued."
+  },
+  "governance.treasury.overview.outlook.aria": {
+    "message": "Reserves over time with a projection"
+  },
+  "governance.treasury.overview.outlook.series.history": {
+    "message": "Reserves"
+  },
+  "governance.treasury.overview.outlook.series.projection": {
+    "message": "Projection based on the past 12 months"
+  },
+  "governance.treasury.overview.outlook.yearIncome": {
+    "message": "Estimated income from reserves per epoch"
+  },
+  "governance.treasury.overview.outlook.method.body": {
+    "message": "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are."
+  },
+  "governance.treasury.donations.title": {
+    "message": "Returned funds and donations"
+  },
+  "governance.treasury.donations.intro": {
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. The figures below include all treasury donations, whatever their purpose."
+  },
+  "governance.treasury.donations.total": {
+    "message": "Received in total"
+  },
+  "governance.treasury.donations.epochs": {
+    "message": "Epochs with donations"
+  },
+  "governance.treasury.donations.largest": {
+    "message": "Highest single epoch"
+  },
+  "governance.treasury.donations.largestDetail": {
+    "message": "Epoch {epoch}, {share}% of the total"
+  },
+  "governance.treasury.donations.updated": {
+    "message": "Donations up to epoch {epoch}."
+  },
+  "governance.treasury.donations.cta": {
+    "message": "Return unused funds or contribute"
+  },
+  "governance.treasury.overview.feeShare.title": {
+    "message": "Share of treasury income from fees (%)"
+  },
+  "governance.treasury.overview.feeShare.aria": {
+    "message": "Fee share of the treasury's income per epoch, in percent"
+  },
+  "governance.treasury.purpose.title": {
+    "message": "What the treasury is for"
+  },
+  "governance.treasury.purpose.body": {
+    "message": "The Cardano treasury is a pool of ada held by the protocol itself. Ada only leaves it when the community approves it on chain."
+  },
+  "governance.treasury.purpose.uses": {
+    "message": "It can fund any work the community approves, such as development of the protocol and its tools, research, and programs for the community and the ecosystem."
+  },
+  "governance.treasury.flows.title": {
+    "message": "Balance and flows over the last 12 months"
+  },
+  "governance.treasury.funded.title": {
+    "message": "What the treasury funds"
+  },
+  "governance.treasury.funded.intro": {
+    "message": "The most recent treasury withdrawals that took effect:"
+  },
+  "governance.treasury.funded.note": {
+    "message": "An approved withdrawal shows what the community agreed to fund. How the money is paid out and what the work delivers is reported separately."
+  },
+  "governance.treasury.decisions.title": {
+    "message": "How spending is decided"
+  },
+  "governance.treasury.decisions.body": {
+    "message": "Anyone can propose a treasury withdrawal. It needs approval from DReps and the Constitutional Committee, has to follow the Constitution and has to stay within the net change limit, the cap on how much ada can leave the treasury in a period."
+  },
+  "governance.treasury.funding.title": {
+    "message": "How the treasury is funded"
+  },
+  "governance.treasury.flows.contextSpending": {
+    "message": "Over this period the treasury paid out more than it took in, as the community approved funding for a number of projects."
+  },
+  "governance.treasury.flows.contextSaving": {
+    "message": "Over this period the treasury took in more than it paid out."
+  },
+  "governance.treasury.flows.contextEven": {
+    "message": "Over this period the treasury paid out as much as it took in."
+  },
+  "governance.treasury.flows.error": {
+    "message": "Live treasury figures are unavailable right now."
+  },
+  "governance.treasury.flows.balance": {
+    "message": "Treasury balance"
+  },
+  "governance.treasury.flows.change": {
+    "message": "12-month change"
+  },
+  "governance.treasury.flows.income": {
+    "message": "Income"
+  },
+  "governance.treasury.flows.withdrawn": {
+    "message": "Withdrawn"
+  },
+  "governance.treasury.flows.received": {
+    "message": "Received"
+  },
+  "governance.treasury.funded.all": {
+    "message": "Browse treasury withdrawals by epoch"
+  },
+  "governance.treasury.funded.error": {
+    "message": "Treasury withdrawals are unavailable right now."
+  },
+  "governance.treasury.funded.untitled": {
+    "message": "Untitled withdrawal"
+  },
+  "governance.treasury.funded.epoch": {
+    "message": "Epoch {epoch}"
+  },
+  "governance.treasury.funded.explorer": {
+    "message": "View on explorer"
+  },
+  "governance.treasury.funded.summary": {
+    "message": "Withdrawals that took effect in the last 12 months: {count}, worth {amount} in total."
+  },
+  "governance.treasury.funding.feeShare": {
+    "message": "Fee share"
+  },
+  "governance.treasury.funding.reserves": {
+    "message": "Protocol reserves"
+  },
+  "governance.treasury.funding.context": {
+    "message": "This share reflects how rewards are funded. Fees per transaction on Cardano are low by design, so the share says little about how much the network is used."
+  },
+  "governance.treasury.funding.incomeTitle": {
+    "message": "Treasury income per epoch by source"
+  },
+  "governance.treasury.donate.closedIntro": {
+    "message": "Connect a wallet to send ada to the treasury with a treasury donation, for example to return unused funding."
+  },
+  "governance.treasury.donate.open": {
+    "message": "Open the donation tool"
+  },
+  "governance.treasury.flows.caveat": {
+    "message": "Income is estimated and withdrawals count in the epoch they took effect, so the figures do not add up exactly."
+  },
+  "governance.treasury.flows.receivedUpTo": {
+    "message": "Through treasury donations, up to epoch {epoch}"
+  },
+  "governance.treasury.flows.receivedSub": {
+    "message": "Through treasury donations"
+  },
+  "governance.treasury.flows.incomeSub": {
+    "message": "From reserves and fees, estimated"
+  },
+  "governance.treasury.flows.withdrawnSub": {
+    "message": "Through treasury withdrawals"
+  },
+  "governance.treasury.funding.feeShareSub": {
+    "message": "Of treasury income, last 12 months"
+  },
+  "governance.treasury.funding.reservesSub": {
+    "message": "Not part of the treasury"
+  },
+  "governance.treasury.funding.numbersLink": {
+    "message": "See the treasury in numbers"
+  },
+  "governance.treasury.donations.explainerIntro": {
+    "message": "Projects can return unused ada from treasury-funded work through a transaction called a treasury donation. Anyone can use the same transaction to contribute ada to the treasury."
+  },
+  "governance.treasury.donations.figuresLink": {
+    "message": "Donation figures"
+  },
+  "governance.treasury.out.numbers": {
+    "message": "The treasury in numbers"
+  },
+  "insightsTreasury.meta.pageTitle": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.meta.pageDescription": {
+    "message": "The treasury's balance, flows and income from on-chain data, a projection for the reserves, and treasury donations from a regularly updated snapshot."
+  },
+  "insightsTreasury.meta.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.title": {
+    "message": "Cardano Treasury in Numbers"
+  },
+  "insightsTreasury.og.description": {
+    "message": "How the Cardano treasury is funded and how its balance changes, from on-chain data."
+  },
+  "insightsTreasury.intro": {
+    "message": "**The Cardano treasury in numbers.** How its balance changed over the last 12 months, where its income comes from, how the reserves could develop and what the treasury received through treasury donations."
+  },
+  "insightsTreasury.explainerLink": {
+    "message": "What the treasury is and how spending is decided"
+  },
+  "insightsTreasury.income.title": {
+    "message": "Income from reserves and fees"
+  },
+  "insightsTreasury.outlook.title": {
+    "message": "Reserves outlook"
+  },
+  "insightsTreasury.donations.title": {
+    "message": "Treasury donations"
+  },
+  "insightsTreasury.donations.toolLink": {
+    "message": "Return funds or contribute"
+  },
+  "governance.accountability.funding.act.2": {
+    "message": "How the treasury works"
+  },
+  "governance.onboarding.introTreasuryLink": {
+    "message": "treasury funding"
+  },
+  "navbar.mega.label.The Cardano Treasury": {
+    "message": "The Cardano Treasury"
+  },
+  "navbar.mega.description.The Cardano Treasury": {
+    "message": "How the community fund is filled and spent"
+  },
+  "governance.survey.outcome.delegate.title": {
+    "message": "Delegate your voting power"
+  },
+  "governance.survey.outcome.delegate.description": {
+    "message": "Delegation is the easiest way to participate. A DRep votes on proposals on your behalf while your ada stays safely in your wallet. It takes just a few minutes to set up and you can change your DRep at any time."
+  },
+  "governance.survey.outcome.delegate.ctaText": {
+    "message": "Choose a DRep"
+  },
+  "governance.survey.outcome.drep.title": {
+    "message": "Become a DRep"
+  },
+  "governance.survey.outcome.drep.description": {
+    "message": "You have the time and motivation to actively shape Cardano. As a DRep you review governance proposals, vote on behalf of your delegators, and help steer the network's future. A refundable deposit of 500 ada is required."
+  },
+  "governance.survey.outcome.drep.ctaText": {
+    "message": "Register as a DRep"
+  },
+  "governance.survey.outcome.learn.title": {
+    "message": "Start by learning more"
+  },
+  "governance.survey.outcome.learn.description": {
+    "message": "Governance is new to you and that's perfectly fine. Take your time to understand how it works, read the constitution, and explore governance actions before choosing your role."
+  },
+  "governance.survey.outcome.learn.ctaText": {
+    "message": "Explore governance actions"
+  },
+  "governance.survey.question.time": {
+    "message": "How much time can you dedicate to Cardano governance?"
+  },
+  "governance.survey.question.time.option1": {
+    "message": "A few minutes to set it up, then I'm done"
+  },
+  "governance.survey.question.time.option2": {
+    "message": "I can check in occasionally"
+  },
+  "governance.survey.question.time.option3": {
+    "message": "I want to stay informed and vote regularly"
+  },
+  "governance.survey.question.time.option4": {
+    "message": "I'm ready to make it a regular commitment"
+  },
+  "governance.survey.question.voteSelf": {
+    "message": "Do you want to vote on every governance proposal yourself?"
+  },
+  "governance.survey.question.voteSelf.option1": {
+    "message": "No, I'd rather have someone knowledgeable vote on my behalf"
+  },
+  "governance.survey.question.voteSelf.option2": {
+    "message": "Not yet, I want to understand the process first"
+  },
+  "governance.survey.question.voteSelf.option3": {
+    "message": "Yes, I want to review and vote on proposals myself"
+  },
+  "governance.survey.question.voteSelf.option4": {
+    "message": "Yes, and I want to represent others too"
+  },
+  "governance.survey.question.familiarity": {
+    "message": "How familiar are you with Cardano's governance processes?"
+  },
+  "governance.survey.question.familiarity.option1": {
+    "message": "I'm completely new to this"
+  },
+  "governance.survey.question.familiarity.option2": {
+    "message": "I understand the basics"
+  },
+  "governance.survey.question.familiarity.option3": {
+    "message": "I'm comfortable with most governance concepts"
+  },
+  "governance.survey.question.familiarity.option4": {
+    "message": "I have deep knowledge and can explain them to others"
+  },
+  "governance.survey.question.responsibility": {
+    "message": "Would you be comfortable making decisions that affect the entire Cardano network?"
+  },
+  "governance.survey.question.responsibility.option1": {
+    "message": "I'd rather leave that to people who know more"
+  },
+  "governance.survey.question.responsibility.option2": {
+    "message": "Maybe in the future, once I learn more"
+  },
+  "governance.survey.question.responsibility.option3": {
+    "message": "Yes, I'm ready to take on that responsibility"
+  },
+  "governance.survey.question.responsibility.option4": {
+    "message": "Yes, and I want to advocate for specific policy directions"
+  },
+  "governance.survey.question.motivation": {
+    "message": "What motivates you most about Cardano governance?"
+  },
+  "governance.survey.question.motivation.option1": {
+    "message": "Making sure my ada has a voice without extra effort"
+  },
+  "governance.survey.question.motivation.option2": {
+    "message": "Understanding how decentralized decision-making works"
+  },
+  "governance.survey.question.motivation.option3": {
+    "message": "Actively shaping the future direction of Cardano"
+  },
+  "governance.survey.question.motivation.option4": {
+    "message": "Representing my community and building trust"
+  },
+  "stakePoolOperation.faq.profit.q": {
+    "message": "How much money will a stake pool operator make? Will it be profitable?"
+  },
+  "stakePoolOperation.faq.profit.a": {
+    "message": "You can use the [rewards calculator](/calculator) to get an idea of the rewards you will earn. It’s important to note that the calculator produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. Over time, parameters may be changed that could affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return."
+  },
+  "stakePoolOperation.faq.skills.q": {
+    "message": "What skills do stake pool operators require?"
+  },
+  "stakePoolOperation.faq.skills.a1": {
+    "message": "As a stake pool operator, you will typically have:"
+  },
+  "stakePoolOperation.faq.skills.a2": {
+    "message": "Operational knowledge of how to run and maintain a Cardano node on a 24/7 basis."
+  },
+  "stakePoolOperation.faq.skills.a3": {
+    "message": "System operation skills."
+  },
+  "stakePoolOperation.faq.skills.a4": {
+    "message": "Experience of development and operations. (DevOps)"
+  },
+  "stakePoolOperation.faq.skills.a5": {
+    "message": "Server administration skills. (operational and maintenance)"
+  },
+  "stakePoolOperation.faq.os.q": {
+    "message": "Which operating system do you support?"
+  },
+  "stakePoolOperation.faq.os.a1": {
+    "message": "We support Linux, Berkeley Software Distribution (BSD), Mac, and Windows platforms. The following versions are required:"
+  },
+  "stakePoolOperation.faq.os.a2": {
+    "message": "Linux (2.6.18 or later)"
+  },
+  "stakePoolOperation.faq.os.a3": {
+    "message": "BSD (NetBSD 8.x and FreeBSD 12.x)"
+  },
+  "stakePoolOperation.faq.os.a4": {
+    "message": "OSX (10.7 Lion or later)"
+  },
+  "stakePoolOperation.faq.os.a5": {
+    "message": "Windows 10"
+  },
+  "stakePoolOperation.faq.private.q": {
+    "message": "Can I run a private stake pool?"
+  },
+  "stakePoolOperation.faq.private.a": {
+    "message": "Yes, this is technically possible. It can be achieved by registering a stake pool and setting the operator rewards percentage to 100%, so that anybody that delegates to your stake pool will not receive any rewards. This will disincentivize delegators from delegating to you, but provide you with the ability to stake your ada and singly reap the rewards, while testing your stake pool operations."
+  },
+  "stakePoolOperation.faq.attract.q": {
+    "message": "How should I attract ada holders to my pool?"
+  },
+  "stakePoolOperation.faq.attract.a1": {
+    "message": "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:"
+  },
+  "stakePoolOperation.faq.attract.a2": {
+    "message": "Security: details of how a stake pool has been secured against hackers"
+  },
+  "stakePoolOperation.faq.attract.a3": {
+    "message": "Team: information on the operator’s team and experience in managing stake pools"
+  },
+  "stakePoolOperation.faq.attract.a4": {
+    "message": "Communication and social media: regular updates and support for delegators"
+  },
+  "stakePoolOperation.faq.attract.a5": {
+    "message": "Website: stake pool information and marketing"
+  },
+  "stakePoolOperation.faq.pledging.q": {
+    "message": "What is pledging?"
+  },
+  "stakePoolOperation.faq.pledging.a": {
+    "message": "Pledging refers to stake pool owners’ ability to delegate personal stake to their pool. While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
+  },
+  "stakePoolOperation.faq.bugs.q": {
+    "message": "How will my pool be affected by bugs?"
+  },
+  "stakePoolOperation.faq.bugs.a": {
+    "message": "Stake pool operators will need to be available as much as possible to respond to any network or performance alerts. It is important that pools ensure their node is running the latest software. This will be important both for testnet and mainnet operations."
+  },
+  "stakePoolOperation.faq.goodPool.q": {
+    "message": "What makes a good stake pool?"
+  },
+  "stakePoolOperation.faq.goodPool.a": {
+    "message": "Stake pools are ranked based on their overall performance and other key information. The performance metric is a calculation based on the number of blocks the pool was tasked to create compared with the number of blocks it actually created, and is recorded over time. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
+  },
+  "stakePoolOperation.faq.notifications.q": {
+    "message": "Will I be notified of network changes?"
+  },
+  "stakePoolOperation.faq.notifications.a": {
+    "message": "Updates and releases for the network will follow proper release schedules. We recommend operators follow our social media accounts for the latest updates."
+  },
+  "stakePoolOperation.faq.rewards.q": {
+    "message": "Are rewards guaranteed?"
+  },
+  "stakePoolOperation.faq.rewards.a": {
+    "message": "Rewards for delegation can be earned if you delegate to a stake pool that is sharing rewards. The amount you earn cannot be guaranteed and will ultimately depend on the stake pool, the amount of rewards shared, and its performance. It is worth noting that rewards will only begin to be granted from the end of the epoch in which the associated stake was delegated."
+  },
+  "termExplainer.staking.delegation.term": {
+    "message": "Delegation"
+  },
+  "termExplainer.staking.delegation.description": {
+    "message": "Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded in proportion to the amount of stake delegated."
+  },
+  "termExplainer.staking.stakePool.term": {
+    "message": "Stake Pool"
+  },
+  "termExplainer.staking.stakePool.description": {
+    "message": "A network node with a public address that ada holders can delegate to for earning rewards."
+  },
+  "termExplainer.staking.epoch.term": {
+    "message": "Epoch"
+  },
+  "termExplainer.staking.epoch.description": {
+    "message": "A period of time in the Cardano network after which staking rewards are calculated and distributed. One epoch are 5 days."
+  },
+  "termExplainer.staking.staking.term": {
+    "message": "Staking"
+  },
+  "termExplainer.staking.staking.description": {
+    "message": "Staking refers to the entire process of both delegating and setting up a pool. It is often confused with `delegating`."
+  },
+  "termExplainer.catalyst.fundingProposal.term": {
+    "message": "Funding Proposal"
+  },
+  "termExplainer.catalyst.fundingProposal.description": {
+    "message": "A formal request or proposal to build something that is not yet covered by the Cardano protocol."
+  },
+  "termExplainer.catalyst.votingPower.term": {
+    "message": "Voting Power"
+  },
+  "termExplainer.catalyst.votingPower.description": {
+    "message": "The influence an ada holder has in Project Catalyst, determined by the amount of ada they hold."
+  },
+  "termExplainer.catalyst.milestoneEvidence.term": {
+    "message": "Evidence of milestone completion"
+  },
+  "termExplainer.catalyst.milestoneEvidence.description": {
+    "message": "The evidence clearly and visibly shows that the milestone has been completed."
+  },
+  "termExplainer.catalyst.statementOfMilestones.term": {
+    "message": "Statement of Milestones (SoM)"
+  },
+  "termExplainer.catalyst.statementOfMilestones.description": {
+    "message": "A list of milestones in the project created by Funded Project in the Milestone Module with the schedule, deliverables, milestone achievement dates, milestone funding amounts, and the expected PoA."
+  },
+  "termExplainer.governance.cip1694.term": {
+    "message": "CIP-1694"
+  },
+  "termExplainer.governance.cip1694.description": {
+    "message": "CIP-1694 introduces a new on-chain governance model for Cardano, aiming to give every ada holder a voice in governance. It proposes a tricameral system with three groups: stake pool operators (SPOs), Delegated Representatives (DReps), and a Constitutional Committee (CC), each with distinct roles."
+  },
+  "termExplainer.governance.constitution.term": {
+    "message": "Constitution"
+  },
+  "termExplainer.governance.constitution.description": {
+    "message": "The [Cardano Constitution](/constitution) sets the rules for how the community makes collective decisions, defines the rights and principles of participants, and gives the Constitutional Committee the yardstick for judging governance actions. It was ratified on-chain in February 2025 and updated by community vote in January 2026, and it can be amended again through the same process."
+  },
+  "termExplainer.governance.governanceAction.term": {
+    "message": "Governance Action"
+  },
+  "termExplainer.governance.governanceAction.description": {
+    "message": "A Governance Action is an on-chain proposal for voting, triggered by a transaction, with an expiration period after which it can’t be enacted. Any ada holder can submit a Governance Action, and voters then submit voting transactions. CIP-1694 describes seven types of Governance Actions: Motion of no-confidence, New constitutional committee or Quorum size, Updates to Constitution, Hard-Fork Initiation, Protocol Parameter Changes, Treasury Withdrawals, and Info."
+  },
+  "termExplainer.cip.cip.term": {
+    "message": "Cardano Improvement Proposal (CIP)"
+  },
+  "termExplainer.cip.cip.description": {
+    "message": "CIPs are a way of formally proposing ideas in an agreed-upon fashion. However, they are often used for more than just finding standards. They are not binding in any way. CIPs are publicly visible to the community for discussion, and are located in the Cardano Foundation GitHub CIP repository."
+  },
+  "termExplainer.cip.cipEditors.term": {
+    "message": "CIP Editors"
+  },
+  "termExplainer.cip.cipEditors.description": {
+    "message": "CIP Editors safeguard the CIP process: they form a group enforcing the process described in this document and facilitating conversations between community actors. CIP editors should strive to keep up to date with general technical discussions and Cardano proposals."
+  },
+  "governance.faq.item.loseAda.q": {
+    "message": "Do I lose my ada when I delegate?"
+  },
+  "governance.faq.item.loseAda.a1": {
+    "message": "No. Delegation is completely non-custodial. Your ada never leaves your wallet. You are only lending your voting power to a DRep, not transferring any funds."
+  },
+  "governance.faq.item.loseAda.popular": {
+    "message": "No. Your ada never leaves your wallet."
+  },
+  "governance.faq.item.delegateCost.q": {
+    "message": "How much does it cost to delegate?"
+  },
+  "governance.faq.item.delegateCost.a1": {
+    "message": "Delegating your voting power to a DRep is free beyond the standard transaction fee (typically less than 0.2 ada). There is no deposit required for delegation."
+  },
+  "governance.faq.item.delegateCost.popular": {
+    "message": "Delegating to a DRep is free. You only pay standard network fees."
+  },
+  "governance.faq.item.changeDrep.q": {
+    "message": "Can I change my DRep later?"
+  },
+  "governance.faq.item.changeDrep.a1": {
+    "message": "Yes, you can change your DRep at any time. Simply delegate to a different DRep and the change takes effect in the next epoch."
+  },
+  "governance.faq.item.changeDrep.popular": {
+    "message": "Yes. You can update or remove your delegation at any time."
+  },
+  "governance.faq.item.drepAndPool.q": {
+    "message": "Can I delegate my ada to a DRep and a stake pool at the same time?"
+  },
+  "governance.faq.item.drepAndPool.a1": {
+    "message": "Yes, and most ada holders do exactly that. DRep delegation and stake pool delegation are two independent actions that delegate two different things from the same ada."
+  },
+  "governance.faq.item.drepAndPool.a2": {
+    "message": "Stake pool delegation points your stake at a pool operator who produces blocks, and in return you earn a share of block rewards. DRep delegation assigns the voting power of that same stake to someone who votes on governance proposals. Your ada is never locked, spent, or moved in either case. Both are just on-chain signals attached to your stake address."
+  },
+  "governance.faq.item.drepAndPool.a3": {
+    "message": "Because they run on different rails (block production vs. governance), the two delegations don't compete. You can change either one independently, and you keep earning rewards the whole time."
+  },
+  "governance.faq.item.drepAndPool.popular": {
+    "message": "Yes. Stake pool delegation earns rewards, DRep delegation assigns voting power. Same ada, two independent signals."
+  },
+  "governance.faq.item.noDelegation.q": {
+    "message": "What happens if I don't delegate?"
+  },
+  "governance.faq.item.noDelegation.a1": {
+    "message": "If you don't delegate your voting power, your ada does not count toward any governance vote. Your voice goes unused. Delegating ensures your stake contributes to the decisions that shape Cardano."
+  },
+  "governance.faq.item.activation.q": {
+    "message": "How long does delegation take to become active?"
+  },
+  "governance.faq.item.activation.a1": {
+    "message": "Delegation becomes active at the start of the next epoch. Epochs on Cardano last 5 days, so it can take up to 5 days for your delegation to take effect."
+  },
+  "governance.faq.item.drepCost.q": {
+    "message": "What does it cost to become a DRep?"
+  },
+  "governance.faq.item.drepCost.a1": {
+    "message": "Registering as a DRep requires a refundable deposit of 500 ada. This deposit is returned when you retire as a DRep. There is also a standard transaction fee for the registration."
+  },
+  "governance.faq.item.alternatives.q": {
+    "message": "What are the alternatives to delegating to a DRep?"
+  },
+  "governance.faq.item.alternatives.a1": {
+    "message": "Instead of delegating to a specific DRep, you can choose one of two automatic voting options:"
+  },
+  "governance.faq.item.alternatives.a2": {
+    "message": "- **Abstain** keeps your stake out of every vote, it is not counted for or against any proposal",
+    "description": "Keep the leading '- ' and the ** markers, they render as a bulleted list item with bold text."
+  },
+  "governance.faq.item.alternatives.a3": {
+    "message": "- **No Confidence** counts as a No on every governance action, except a motion of no confidence in the Constitutional Committee, where it counts as a Yes",
+    "description": "Keep the leading '- ' and the ** markers, they render as a bulleted list item with bold text."
+  },
+  "governance.faq.item.governanceAction.q": {
+    "message": "What is a governance action?"
+  },
+  "governance.faq.item.governanceAction.a1": {
+    "message": "A governance action is an on-chain proposal that can change how Cardano works. There are several types, including protocol parameter changes, hard fork initiations, treasury withdrawals, and constitutional amendments. Each type requires different approval thresholds from DReps, SPOs, and the Constitutional Committee."
+  },
+  "governance.faq.item.noDelegation.a2": {
+    "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active [vote delegation](/governance/delegate), to a DRep, Abstain or No Confidence. Your rewards keep adding up in the meantime. A proposed change, [CIP-181](https://cips.cardano.org/cip/CIP-181), would remove this requirement with a future hard fork."
+  },
+  "governance.faq.item.drepInactive.q": {
+    "message": "What happens if my DRep stops voting?"
+  },
+  "governance.faq.item.drepInactive.a1": {
+    "message": "A DRep who goes 20 epochs, at least 100 days, without voting or updating their registration is [marked inactive](/glossary/drep-activity-period). Epochs without open proposals do not count toward that limit. While your DRep is inactive, your stake no longer counts in governance votes."
+  },
+  "governance.faq.item.drepInactive.a2": {
+    "message": "Your ada and your staking rewards are not affected. The DRep becomes active again as soon as they vote or update their registration, and you can switch to another DRep at any time."
+  },
+  "governance.faq.item.visibility.q": {
+    "message": "Can others see how I delegate?"
+  },
+  "governance.faq.item.visibility.a1": {
+    "message": "Yes. Every delegation is recorded on the blockchain, so anyone can look up which DRep or voting option a stake address has chosen. The address itself does not contain your name. It is pseudonymous, so anyone who can link it to you, for example because you posted it publicly, can also see your choice."
+  },
+  "governance.faq.item.visibility.a2": {
+    "message": "DRep votes are public too. Many DReps publish a rationale with each vote so their delegators can follow their reasoning."
+  },
+  "governance.faq.item.drepPay.q": {
+    "message": "Do DReps get paid?"
+  },
+  "governance.faq.item.drepPay.a1": {
+    "message": "The protocol does not pay DReps for voting. Apart from transaction fees, the only ada involved is the 500 ada deposit, which you get back when you retire as a DRep."
+  },
+  "governance.compare.aspect.time": {
+    "message": "Time"
+  },
+  "governance.compare.aspect.cost": {
+    "message": "Cost"
+  },
+  "governance.compare.aspect.gain": {
+    "message": "What you get"
+  },
+  "governance.compare.aspect.watch": {
+    "message": "Keep in mind"
+  },
+  "governance.compare.aspect.visibility": {
+    "message": "Who can see it"
+  },
+  "governance.compare.none.title": {
+    "message": "Don't delegate"
+  },
+  "governance.compare.none.time": {
+    "message": "Nothing to set up."
+  },
+  "governance.compare.none.cost": {
+    "message": "Nothing."
+  },
+  "governance.compare.none.gain": {
+    "message": "No decisions to make."
+  },
+  "governance.compare.none.watch": {
+    "message": "Governance decisions are made without your stake."
+  },
+  "governance.compare.none.visibility": {
+    "message": "Nothing new is recorded on the chain."
+  },
+  "governance.compare.delegate.title": {
+    "message": "Delegate"
+  },
+  "governance.compare.delegate.subtitle": {
+    "message": "To a DRep, Abstain or No Confidence"
+  },
+  "governance.compare.delegate.time": {
+    "message": "A few minutes to set up. If you pick a DRep, look at their votes now and then."
+  },
+  "governance.compare.delegate.cost": {
+    "message": "A transaction fee, typically less than 0.2 ada. No deposit."
+  },
+  "governance.compare.delegate.gain": {
+    "message": "Your stake takes part in governance through the option you choose, and you can switch at any time."
+  },
+  "governance.compare.delegate.watch": {
+    "message": "A DRep may vote differently than you would, or stop voting. Abstain and No Confidence apply a fixed rule to every vote."
+  },
+  "governance.compare.delegate.visibility": {
+    "message": "Your choice is recorded on the chain and linked to your stake address."
+  },
+  "governance.compare.drep.title": {
+    "message": "Become a DRep"
+  },
+  "governance.compare.drep.time": {
+    "message": "Regular time to read proposals, vote and explain your votes."
+  },
+  "governance.compare.drep.cost": {
+    "message": "A deposit of 500 ada, returned when you retire, plus transaction fees."
+  },
+  "governance.compare.drep.gain": {
+    "message": "A direct vote on treasury withdrawals, protocol changes and the constitution, weighted by the stake delegated to you."
+  },
+  "governance.compare.drep.watch": {
+    "message": "The protocol does not pay DReps. Delegators expect you to explain your votes."
+  },
+  "governance.compare.drep.visibility": {
+    "message": "Every vote is recorded on the chain under your DRep ID, with a link to any rationale you publish."
+  },
+  "governance.compare.title": {
+    "message": "What each option involves"
+  },
+  "governance.compare.intro": {
+    "message": "Here is what each choice asks of you and what it gives you in return."
+  },
+  "governance.compare.divider": {
+    "message": "Compare your options"
+  },
+  "programmableTokens.meta.title": {
+    "message": "Programmable Tokens for Regulated Assets"
+  },
+  "programmableTokens.meta.description": {
+    "message": "Cardano's open-source programmable tokens standard implements logic like KYC, AML, or transfer restrictions at the asset level and on a public ledger."
+  },
+  "programmableTokens.hero.title": {
+    "message": "Programmable Tokens for Regulated Assets"
+  },
+  "programmableTokens.hero.subtitle": {
+    "message": "Enforce KYC, AML, sanctions screening, freeze, and transfer restrictions natively at the asset level. Already available on Cardano's mainnet today."
+  },
+  "programmableTokens.hero.body": {
+    "message": "Major international bodies and standard setters, from the Bank for International Settlements to the International Monetary Fund or the Financial Stability Board, have suggested similar requirements or recommendations for the next generation of regulated financial assets: Compliance rules should execute automatically at the token level, on every transaction, enforced by the ledger itself rather than by a separate system or a custodian's policy manual. Cardano's programmable tokens solution delivers exactly that, without requiring a hard fork, wrapping assets in a secondary smart contract layer, or adding a point of failure by relying on third parties for enforcement. A state-of-the-art solution that reduces architectural and operational risks."
+  },
+  "programmableTokens.hero.button": {
+    "message": "Plan Your Implementation"
+  },
+  "programmableTokens.partners.ariaLabel": {
+    "message": "Partners and users of Cardano programmable tokens"
+  },
+  "programmableTokens.why.title": {
+    "message": "Why Regulated Tokenization Requires Compliance at the Token Level"
+  },
+  "programmableTokens.why.paragraph1": {
+    "message": "For regulated financial assets, such as [stablecoins](/stablecoins), bonds, shares, or other securities, to realize the full potential of tokenization on public ledgers, the underlying infrastructure must support the integration of compliance mechanisms, enabling the programmatic enforcement of KYC and AML rules, ownership restrictions, or transfer controls throughout every asset movement."
+  },
+  "programmableTokens.why.paragraph2": {
+    "message": "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describe programmability as the ability to embed compliance conditions into the asset itself and have the ledger execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation."
+  },
+  "programmableTokens.why.quote": {
+    "message": "Seamlessness requires compliance that executes at the same layer as settlement, not after it."
+  },
+  "programmableTokens.why.context1": {
+    "message": "Regulated instruments remain subject to complex requirements that differ across jurisdictions, markets, and asset types. Relevant frameworks around the world, such as [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng) and [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj/eng) in the European Union, [Switzerland's DLT framework](https://www.sif.admin.ch/en/dlt-blockchain-en), the [GENIUS Act](https://www.congress.gov/bill/119th-congress/senate-bill/1582/text) for payment stablecoins in the United States, or global [FATF AML/CFT standards](https://www.fatf-gafi.org/en/topics/virtual-assets.html) for virtual assets, illustrate the breadth of requirements that issuers and market participants may need to address."
+  },
+  "programmableTokens.why.context2": {
+    "message": "Realizing the full potential of tokenization therefore requires more than putting an asset on-chain. It also requires the ability to translate relevant rules and conditions into the blockchain environment. Programmability supports this by turning these rules into logic that can be applied automatically at the asset and transaction level in a consistent and efficient manner."
+  },
+  "programmableTokens.why.context3": {
+    "message": "Cardano's new Programmable Tokens standard creates a flexible framework for doing so on the Cardano infrastructure. Rather than prescribing a single compliance model, it enables relevant controls, such as investor eligibility, transfer restrictions, freezes or other asset-specific conditions, to be implemented according to the requirements of the particular asset, jurisdiction and use case. Not a manual check and not a permissioned wrapper, but a rule the ledger enforces automatically."
+  },
+  "programmableTokens.compliance.title": {
+    "message": "How Cardano's Programmable Tokens Standard Enables Compliance by Design"
+  },
+  "programmableTokens.compliance.intro": {
+    "message": "The Cardano Programmable Tokens standard attaches modular compliance logic directly to a Cardano native asset, so that the rules an issuer defines, like allow-listing, deny-listing, freeze, seize, or transfer restrictions, execute automatically every time the token is transferred, minted, or burned. All enforced by the ledger itself."
+  },
+  "programmableTokens.compliance.card1": {
+    "message": "Token issuers determine the rules their assets will have to follow and have full flexibility to customize each rule. The sets of rules get packaged into **modules**, giving companies the flexibility they need to address different use cases and scenarios, considering varying jurisdictions and regulatory frameworks. The Cardano Programmable Tokens standard also comes with integration guides for wallets, explorers, indexers, or general applications."
+  },
+  "programmableTokens.compliance.card2": {
+    "message": "Every single time, the Cardano network will recognize and process the token natively at the ledger level, just like any other Cardano native asset."
+  },
+  "programmableTokens.compliance.card3": {
+    "message": "By using a modular approach, this Cardano standard gives issuers access to define the compliance rules individually. They simply have to build or select the right module, then configure it according to their requirements, specifying under which conditions a token can be minted, burned, or transferred."
+  },
+  "programmableTokens.compliance.card4": {
+    "message": "Through the entire process, there's no need to adjust the general standard or the core protocol. And as regulations evolve, companies and institutions can independently add more modules or update existing ones."
+  },
+  "programmableTokens.compliance.audit": {
+    "message": "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been recognised under the CMTA framework, ensuring the availability of relevant compliance and technical functions. Anastasia Labs also performed several security checks."
+  },
+  "programmableTokens.resources.title": {
+    "message": "Cardano Programmable Tokens Resources"
+  },
+  "programmableTokens.resources.ariaLabel": {
+    "message": "Cardano programmable tokens resources"
+  },
+  "programmableTokens.resources.prev": {
+    "message": "Previous resources"
+  },
+  "programmableTokens.resources.next": {
+    "message": "Next resources"
+  },
+  "programmableTokens.resources.introduction": {
+    "message": "An introduction to programmable tokens on Cardano"
+  },
+  "programmableTokens.resources.financialServices": {
+    "message": "The importance of blockchain for financial services"
+  },
+  "programmableTokens.capabilities.title": {
+    "message": "Programmable Token Capabilities for Institutional Asset Issuers"
+  },
+  "programmableTokens.capabilities.intro": {
+    "message": "Cardano's Programmable Tokens framework has robust capabilities for several enterprise and financial institutional needs. Organizations can customize a module to include various types of logic according to their specific need."
+  },
+  "programmableTokens.capabilities.examplesIntro": {
+    "message": "Here are some examples of the rules a module can include."
+  },
+  "programmableTokens.capabilities.kyc.title": {
+    "message": "KYC and AML Enforcement"
+  },
+  "programmableTokens.capabilities.kyc.body": {
+    "message": "Restrict token transfers to verified holders only. Including an allow-listing in a module gives issuers the ability to automatically enforce on-chain that only addresses that have passed KYC and AML verification are allowed to receive or send a token."
+  },
+  "programmableTokens.capabilities.sanctions.title": {
+    "message": "Sanctions Screening"
+  },
+  "programmableTokens.capabilities.sanctions.body": {
+    "message": "Prevent transfers to or from sanctioned addresses. Modules can incorporate deny-lists that block token movements involving addresses on a sanctions list, executing the check at the ledger level without requiring an off-chain verification step."
+  },
+  "programmableTokens.capabilities.freeze.title": {
+    "message": "Freeze and Seize"
+  },
+  "programmableTokens.capabilities.freeze.body": {
+    "message": "Respond to legal orders, or implement regulatory requirements by freezing specific token holdings or seizing assets. Freeze and seize functions allow issuers to halt transfers or recover tokens from designated addresses, fulfilling the enforcement requirements courts and regulators may impose."
+  },
+  "programmableTokens.capabilities.transfer.title": {
+    "message": "Transfer Restrictions"
+  },
+  "programmableTokens.capabilities.transfer.body": {
+    "message": "Define jurisdiction-specific or instrument-specific transfer conditions. Issuers can configure rules governing which counterparties, geographies, or holding periods are permissible and so reflect the specific legal requirements of the instrument being tokenized."
+  },
+  "programmableTokens.capabilities.closing": {
+    "message": "Cardano's Programmable Tokens are modular and fully customizable."
+  },
+  "programmableTokens.capabilities.button": {
+    "message": "Create Your Module"
+  },
+  "programmableTokens.architecture.title": {
+    "message": "The Technical Architecture of Cardano's Programmable Tokens Standard"
+  },
+  "programmableTokens.architecture.diagram.ariaLabel": {
+    "message": "Architecture of the programmable tokens standard: wallets, indexers, explorers, and DApps integrate with the CIP-0113 core validator, which runs the issuer's modules on top of a shared script address and stake credentials."
+  },
+  "programmableTokens.architecture.diagram.wallets": {
+    "message": "Wallets"
+  },
+  "programmableTokens.architecture.diagram.indexers": {
+    "message": "Indexers"
+  },
+  "programmableTokens.architecture.diagram.explorers": {
+    "message": "Explorers"
+  },
+  "programmableTokens.architecture.diagram.dapps": {
+    "message": "DApps"
+  },
+  "programmableTokens.architecture.diagram.core": {
+    "message": "CIP-0113 core validator"
+  },
+  "programmableTokens.architecture.diagram.withdrawZero": {
+    "message": "withdraw-zero pattern"
+  },
+  "programmableTokens.architecture.diagram.predictableCosts": {
+    "message": "predictable costs"
+  },
+  "programmableTokens.architecture.diagram.noHardFork": {
+    "message": "without a hard fork"
+  },
+  "programmableTokens.architecture.diagram.modules": {
+    "message": "Modules"
+  },
+  "programmableTokens.architecture.diagram.allowlist": {
+    "message": "Allow listing"
+  },
+  "programmableTokens.architecture.diagram.denylist": {
+    "message": "Deny listing"
+  },
+  "programmableTokens.architecture.diagram.freeze": {
+    "message": "Freeze"
+  },
+  "programmableTokens.architecture.diagram.seize": {
+    "message": "Seize"
+  },
+  "programmableTokens.architecture.diagram.transferRestrictions": {
+    "message": "Transfer restrictions"
+  },
+  "programmableTokens.architecture.diagram.sharedScript": {
+    "message": "shared script address"
+  },
+  "programmableTokens.architecture.diagram.stakeCredentials": {
+    "message": "stake credentials"
+  },
+  "programmableTokens.architecture.paragraph1": {
+    "message": "The Cardano Programmable Tokens standard relies on CIP-0113. It provides a modular, open-source reference implementation written in Aiken that enforces compliance logic on every transfer, mint, and burn, without needing a hard fork. The rules are evaluated once per transaction rather than once for every holding it touches, so costs stay predictable as transaction size grows. The standard uses a withdraw-zero pattern as well as a stake-credential-based ownership."
+  },
+  "programmableTokens.architecture.paragraph2": {
+    "message": "The architecture places programmable tokens in a shared, secure script address on the Cardano blockchain. Token ownership changes when the tokens are transacted, and owners can access them through their wallets, but the assets themselves never leave the shared script address. Ownership is determined by the stake credentials rather than the script itself."
+  },
+  "programmableTokens.architecture.paragraph3": {
+    "message": "Every time a token moves, a compliance script performs an automatic check to verify the rules. It guarantees no rule can be skipped. The check happens once for each transaction and is independent of how many tokens the transaction moves, which keeps execution costs predictable and provides fee efficiency."
+  },
+  "programmableTokens.architecture.paragraph4": {
+    "message": "Modules are a pluggable additional layer. Each module is an independent set of smart contracts that satisfy the validation interface CIP-0113 defines. Issuers select the module relevant to their use case. Anyone can write custom modules and integrate them into the framework without modifying the core validator."
+  },
+  "programmableTokens.architecture.paragraph5": {
+    "message": "The standard builds on the architectural foundations established in CIP-0143. The Cardano Foundation rebuilt the implementation in Aiken and added in-place upgradeability so deployed compliance logic can be replaced without reissuing tokens. The Foundation also developed the off-chain infrastructure and preview platform, and drove the evolution to the more comprehensive CIP-0113 standard."
+  },
+  "programmableTokens.developer.title": {
+    "message": "Programmable Tokens Resources for Developers"
+  },
+  "programmableTokens.developer.repository": {
+    "message": "CIP-0113 repository"
+  },
+  "programmableTokens.developer.architecture": {
+    "message": "Architecture deep-dive"
+  },
+  "programmableTokens.developer.validators": {
+    "message": "Validators"
+  },
+  "programmableTokens.developer.discussion": {
+    "message": "Discussion"
+  },
+  "programmableTokens.regulatory.title": {
+    "message": "Regulatory Context for Programmable Tokens: Global Technology, Different Rulebooks"
+  },
+  "programmableTokens.regulatory.intro2": {
+    "message": "A token may move globally, but the rules governing it do not. The regulatory treatment of a tokenized asset depends on what the asset represents, where it is issued or offered, who interacts with it, and the activities being performed."
+  },
+  "programmableTokens.regulatory.intro3": {
+    "message": "There is no uniform regulatory approach to tokenization. Some jurisdictions apply established financial-market rules to tokenized versions of existing instruments, others have introduced dedicated regimes for particular categories of digital assets, and many combine both approaches. The result is an increasingly sophisticated, but fragmented, global regulatory landscape."
+  },
+  "programmableTokens.regulatory.leadIn": {
+    "message": "Some of the world's major financial markets illustrate these different approaches:"
+  },
+  "programmableTokens.regulatory.disclaimer": {
+    "message": "This overview is provided for illustrative purposes only and is not intended to be comprehensive or to reflect all applicable or current regulatory aspects. Regulatory frameworks continue to evolve and may apply differently depending on the asset, activity and circumstances."
+  },
+  "programmableTokens.regulatory.tabsAriaLabel": {
+    "message": "Jurisdiction"
+  },
+  "programmableTokens.jurisdiction.eu": {
+    "message": "European Union"
+  },
+  "programmableTokens.regulatory.eu.overview": {
+    "message": "The EU generally follows a technology-neutral approach. Crypto-assets that qualify as financial instruments remain subject to [MiFID II](https://eur-lex.europa.eu/eli/dir/2014/65/oj), [MiFIR](https://eur-lex.europa.eu/eli/reg/2014/600/oj) and related securities legislation. The [DLT Pilot Regime](https://eur-lex.europa.eu/eli/reg/2022/858/oj) provides a regulatory sandbox for the trading and settlement of certain financial instruments using distributed ledger technology. Crypto-assets are generally covered by the [Markets in Crypto-Assets Regulation (MiCA)](https://eur-lex.europa.eu/eli/reg/2023/1114/oj), including its specific regimes for stablecoins and crypto-asset service providers."
+  },
+  "programmableTokens.jurisdiction.ch": {
+    "message": "Switzerland"
+  },
+  "programmableTokens.regulatory.ch.overview": {
+    "message": "Switzerland integrates digital assets into its existing legal and financial-market framework while providing specific rules for DLT-based assets and infrastructure. The [DLT Act](https://www.fedlex.admin.ch/eli/fga/2020/2696/en) introduced ledger-based securities, enabling rights to be represented and transferred through qualifying electronic registers, while the general regulatory treatment of digital assets and related activities depends on their characteristics and function."
+  },
+  "programmableTokens.jurisdiction.uk": {
+    "message": "United Kingdom"
+  },
+  "programmableTokens.regulatory.uk.overview": {
+    "message": "The UK builds on the existing [Financial Services and Markets Act 2000 (FSMA)](https://www.legislation.gov.uk/ukpga/2000/8/contents), while extending the regulatory perimeter to specified cryptoasset activities. The [FSMA 2000 (Cryptoassets) Regulations 2026](https://www.legislation.gov.uk/uksi/2026/102/contents) introduce regulated activities relating to qualifying cryptoassets and stablecoins, with the [FCA's new cryptoasset regime](https://www.fca.org.uk/firms/new-regime-cryptoasset-regulation) expected to apply from late 2027. Tokenized forms of existing regulated investments may remain subject to the rules applicable to the underlying type of investment."
+  },
+  "programmableTokens.jurisdiction.usShort": {
+    "message": "United States"
+  },
+  "programmableTokens.regulatory.us.overview": {
+    "message": "US regulation depends on the nature and structure of the asset. The [SEC's January 2026 statement on tokenized securities](https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities) confirms that securities law continues to apply to securities represented on-chain and distinguishes issuer-sponsored and third-party tokenization models. A March 2026 [SEC/CFTC interpretation](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf) introduced a five-category [crypto-asset taxonomy](https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets), while the SEC's proposed [Regulation Crypto Assets](https://www.sec.gov/rules-regulations/2026/08/s7-2026-27) would create a tailored offering framework for certain crypto-asset investment contracts. Payment stablecoins are addressed separately under the federal [GENIUS Act](https://www.govinfo.gov/app/details/PLAW-119publ27)."
+  },
+  "programmableTokens.jurisdiction.sg": {
+    "message": "Singapore"
+  },
+  "programmableTokens.regulatory.sg.overview": {
+    "message": "Singapore largely applies its existing financial-services framework according to the nature of the asset and activity. Tokenized capital-markets products may fall within the [Securities and Futures Act 2001](https://sso.agc.gov.sg/Act/SFA2001), digital payment token services within the [Payment Services Act 2019](https://sso.agc.gov.sg/Act/PSA2019), and certain cross-border digital token services within the [Financial Services and Markets Act 2022](https://sso.agc.gov.sg/Act/FSMA2022). The [Monetary Authority of Singapore](https://www.mas.gov.sg/) (MAS) has actively supported institutional tokenization through initiatives such as [Project Guardian](https://www.mas.gov.sg/schemes-and-initiatives/project-guardian), which explores programmable infrastructure, including the integration of automated compliance checks into tokenized transactions."
+  },
+  "programmableTokens.jurisdiction.jp": {
+    "message": "Japan"
+  },
+  "programmableTokens.regulatory.jp.overview": {
+    "message": "Japan distinguishes between categories of tokenized assets. Security tokens may be treated under the [Financial Instruments and Exchange Act (FIEA)](https://www.fsa.go.jp/en/policy/fiel/index.html) as electronically recorded transferable rights. Stablecoins (electronic payment instruments) and, until now, crypto-assets have been addressed under the Payment Services Act. [2026 amendments to the FIEA and the Payment Services Act](https://www.fsa.go.jp/common/diet/221/02/04.pdf) are set to move crypto-assets into the FIEA framework."
+  },
+  "programmableTokens.jurisdiction.br": {
+    "message": "Brazil"
+  },
+  "programmableTokens.regulatory.br.overview": {
+    "message": "Brazil applies different regulatory frameworks depending on the nature of the digital asset and activity. Virtual asset services are generally overseen by the Banco Central do Brasil under the country's [virtual asset framework](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14478.htm), while tokens that qualify as securities may instead fall within the remit of the Comissão de Valores Mobiliários (CVM), as reflected in [CVM Guidance Opinion No. 40](https://conteudo.cvm.gov.br/legislacao/pareceres-orientacao/pare040.html)."
+  },
+  "programmableTokens.jurisdiction.global": {
+    "message": "Global standard setters: FATF, FSB, IOSCO and the Basel Committee"
+  },
+  "programmableTokens.regulatory.global.overview": {
+    "message": "National regimes are also shaped by international standards. [FATF Recommendation 15](https://www.fatf-gafi.org/en/topics/virtual-assets) extends AML/CFT standards, including the Travel Rule, to virtual assets and VASPs; the [FSB's global framework](https://www.fsb.org/2025/10/thematic-review-on-fsb-global-regulatory-framework-for-crypto-asset-activities/) promotes the principle of “same activity, same risk, same regulation”; and [IOSCO](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf) and the [Basel Committee](https://www.bis.org/bcbs/publ/d545.htm) address, respectively, crypto-asset market regulation and banks' prudential exposures."
+  },
+  "programmableTokens.regulatory.conclusion1": {
+    "message": "**There is no single global rulebook for tokenized assets, and therefore no single compliance configuration that works for every token.** A scalable tokenization standard needs the flexibility to accommodate different assets, markets, and regulatory requirements without requiring a different technological foundation for each."
+  },
+  "programmableTokens.regulatory.conclusion2": {
+    "message": "Cardano's Programmable Tokens standard provides that flexible foundation, enabling relevant rules and controls to be configured for specific assets and use cases while building on a common framework."
+  },
+  "programmableTokens.cta.button": {
+    "message": "Get Implementation Support"
+  },
+  "programmableTokens.faq.title": {
+    "message": "Programmable Tokens: Frequently Asked Questions"
+  },
+  "programmableTokens.faq.what.question": {
+    "message": "What are programmable tokens?"
+  },
+  "programmableTokens.faq.what.answer": {
+    "message": "Programmable tokens are digital assets on a blockchain whose transfer, minting, and burning conditions are governed by rules encoded directly into the asset itself and enforced automatically by the ledger on every transaction. Unlike conventional on-chain tokens, programmable tokens can restrict transfers to verified holders, respond to legal orders, and enforce sanctions screening without requiring a separate off-chain compliance layer."
+  },
+  "programmableTokens.faq.cip.question": {
+    "message": "What is CIP-0113?"
+  },
+  "programmableTokens.faq.cip.answer": {
+    "message": "CIP-0113 is an open source Cardano standard for tokenized assets such as stablecoins and real-world assets (RWAs). It enables token issuers to attach modular compliance logic directly to native Cardano assets and have it enforced by the ledger on every transfer, mint, or burn. It lets enterprises implement KYC allow lists, AML deny lists, freeze functions, and transfer restrictions, among other options. The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source in the Cardano Foundation's GitHub repository, along with integration guidance for wallet developers, DApp builders, indexers, and explorers."
+  },
+  "programmableTokens.faq.how.question": {
+    "message": "How do programmable tokens work?"
+  },
+  "programmableTokens.faq.how.answer": {
+    "message": "CIP-0113 attaches a shared compliance validator to a token using a withdraw-zero pattern, so that defined rules execute automatically on every token transfer without the script holding any funds. Compliance conditions are specified in pluggable modules chosen or designed by the issuer. The token remains a first-class native Cardano asset, visible in compatible wallets and explorers, with compliance logic running transparently at the ledger level."
+  },
+  "programmableTokens.faq.compliance.question": {
+    "message": "What is token-level compliance?"
+  },
+  "programmableTokens.faq.compliance.answer": {
+    "message": "Token-level compliance means that certain compliance-related conditions and transfer restrictions can be enforced directly through the token's on-chain logic, supporting controls and verifications, for example, for KYC, AML, and sanctions compliance purposes. Cardano's Programmable Tokens standard implements token-level compliance features on Cardano, embedding those controls directly into the asset so they execute automatically. The code has been independently audited, including its upgradeability. The transaction model used also inherits Cardano's characteristics, ensuring costs stay predictable as transaction size grows."
+  },
+  "programmableTokens.faq.kyc.question": {
+    "message": "How does blockchain enforce KYC and AML compliance?"
+  },
+  "programmableTokens.faq.kyc.answer": {
+    "message": "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than an off-chain intermediary."
   }
 }
