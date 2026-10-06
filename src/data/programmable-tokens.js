@@ -21,7 +21,7 @@ import { translate } from "@docusaurus/Translate";
 // - Both call-to-action buttons point to the Cardano Foundation contact page
 //   until a dedicated implementation support form is confirmed.
 // - The No Witness Labs audit reports back the audit statement in
-//   COMPLIANCE.audit; the CMTA certification and the Anastasia Labs checks
+//   COMPLIANCE.audit; the CMTA recognition and the Anastasia Labs checks
 //   have no published source yet.
 
 const CF_CONTACT_URL = "https://cardanofoundation.org/contact";
@@ -121,7 +121,7 @@ export const WHY = {
     translate({
       id: "programmableTokens.why.paragraph2",
       message:
-        "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describes programmability as the ability to embed compliance conditions into the asset itself and execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation.",
+        "The [January 2025 IMF Fintech Notes](https://www.elibrary.imf.org/view/journals/063/2025/001/063.2025.issue-001-en.xml) describe programmability as the ability to embed compliance conditions into the asset itself and have the ledger execute them automatically. The [Bank for International Settlements' _Annual Economic Report_](https://www.bis.org/publ/arpdf/ar2025e.htm) of the same year framed tokenization as the integration of messaging, reconciliation, and asset transfer into a single seamless operation.",
     }),
   ],
   quote: translate({
@@ -184,7 +184,7 @@ export const COMPLIANCE = {
   audit: translate({
     id: "programmableTokens.compliance.audit",
     message:
-      "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been certified under the CMTA framework, ensuring the availability of relevant compliance and technical functions. Anastasia Labs also performed several security checks.",
+      "The Cardano Programmable Token standard has been independently audited by No Witness Labs and has been recognised under the CMTA framework, ensuring the availability of relevant compliance and technical functions. Anastasia Labs also performed several security checks.",
   }),
   resources: {
     title: translate({
@@ -633,14 +633,9 @@ export const FAQ = {
       }),
       answer: [
         translate({
-          id: "programmableTokens.faq.cip.answer1",
+          id: "programmableTokens.faq.cip.answer",
           message:
-            "CIP-0113 is an open source Cardano standard for tokenized assets such as stablecoins and real-world assets (RWAs). It enables token issuers to attach modular compliance logic directly to native Cardano assets and have it enforced by the ledger on every transfer, mint, or burn. It lets enterprises implement KYC allow lists, AML deny lists, freeze functions, and transfer restrictions, among other options.",
-        }),
-        translate({
-          id: "programmableTokens.faq.cip.answer2",
-          message:
-            "The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source in the Cardano Foundation's GitHub repository, along with integration guidance for wallet developers, DApp builders, indexers, and explorers.",
+            "CIP-0113 is an open source Cardano standard for tokenized assets such as stablecoins and real-world assets (RWAs). It enables token issuers to attach modular compliance logic directly to native Cardano assets and have it enforced by the ledger on every transfer, mint, or burn. It lets enterprises implement KYC allow lists, AML deny lists, freeze functions, and transfer restrictions, among other options. The full implementation is written in Aiken, a Cardano smart contract language, and is available as open source in the Cardano Foundation's GitHub repository, along with integration guidance for wallet developers, DApp builders, indexers, and explorers.",
         }),
       ],
     },
@@ -679,7 +674,7 @@ export const FAQ = {
         translate({
           id: "programmableTokens.faq.kyc.answer",
           message:
-            "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for the case of sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than by an off-chain intermediary.",
+            "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than an off-chain intermediary.",
         }),
       ],
     },
