@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "Cardano News",
+    "message": "Cardano-News",
     "description": "The title for the blog used in SEO"
   },
   "description": {
-    "message": "Stay current with Cardano: weekly development reports, community digests, governance updates, and ecosystem announcements.",
+    "message": "Bleib bei Cardano auf dem Laufenden: wöchentliche Entwicklungsberichte, Community-Digests, Governance-Updates und Neuigkeiten aus dem Ökosystem.",
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "Recent posts",
+    "message": "Neueste Beiträge",
     "description": "The label for the left sidebar"
   }
 }
