@@ -38,6 +38,7 @@
 }
 .railSteps { display: flex; gap: var(--site-space-xs); overflow-x: auto; }
 .railStep {
+  position: relative; /* keeps the absolutely positioned screen-reader label inside the scrolling rail */
   display: inline-flex; align-items: center; gap: var(--site-space-2xs); white-space: nowrap;
   padding: var(--site-space-2xs) var(--site-space-xs); border-radius: var(--site-radius-pill);
   color: var(--ifm-font-color-base); text-decoration: none;
@@ -118,7 +119,7 @@
 /* Check question and exercise options */
 .options { display: grid; gap: var(--site-space-2xs); }
 .option {
-  display: flex; align-items: center; gap: var(--site-space-xs); text-align: left; font: inherit;
+  display: flex; align-items: center; gap: var(--site-space-xs); text-align: left; font: inherit; hyphens: auto;
   padding: var(--site-space-xs) var(--site-space-sm); border-radius: var(--site-radius-md);
   border: 1px solid var(--ifm-color-emphasis-300); background: var(--ifm-background-surface-color); color: var(--ifm-font-color-base); cursor: pointer;
 }

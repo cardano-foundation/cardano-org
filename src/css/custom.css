@@ -319,6 +319,19 @@ h4 {
   line-height: 1.2;
 }
 
+/* Long compound words in large headings, common in German, are wider than a
+   phone screen. Hyphenate by the page language on small screens, and break
+   inside a word only when no hyphenation point fits. */
+@media (max-width: 996px) {
+  h1,
+  h2,
+  h3 {
+    hyphens: auto;
+    hyphenate-limit-chars: 12 4 4; /* only long words, where supported */
+    overflow-wrap: break-word;
+  }
+}
+
 h5 {
   font-family: Chivo, sans-serif;
   font-weight: 700;

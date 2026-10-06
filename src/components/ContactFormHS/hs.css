@@ -163,6 +163,7 @@ textarea {
   /*background-color: white;*/
   /*color: #333;*/
   min-width: 260px;
+  max-width: calc(100% - 20px); /* long translated options must not widen the page */
   font-size: 16px;
   /*width: 100%; */ /* You can set a width or make it full-width of the container */
   -moz-appearance: none; /* Remove default styling for Firefox */

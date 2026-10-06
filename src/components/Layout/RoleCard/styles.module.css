@@ -5,6 +5,7 @@
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
+  min-width: 0; /* lets the card shrink inside its column on narrow phones */
   padding: 1.5rem;
   background-color: #F8FAFC;
   border: 1px solid #E2E8F0;
@@ -88,6 +89,7 @@ a.card:hover {
   font-weight: 700;
   line-height: 1.25;
   margin: 0;
+  hyphens: auto; /* long compound words must not widen narrow phones */
   color: var(--role-accent-solid);
 }
 
