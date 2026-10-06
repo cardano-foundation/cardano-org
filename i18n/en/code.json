@@ -5820,7 +5820,7 @@
     "message": "Cardano, Insights, Template"
   },
   "insightsTemplate.content.paragraph1": {
-    "message": "You don't need to use TitleWithText or similar components—plain HTML is fine."
+    "message": "You don't need to use TitleWithText or similar components, plain HTML is fine."
   },
   "insightsTemplate.content.internalLinksLabel": {
     "message": "For internal links use:"

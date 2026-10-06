@@ -89,19 +89,8 @@ function PageContent() {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:logo" content="img/cardano-logo-blue.svg" />
-        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
-        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
         <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
         <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
@@ -144,7 +133,7 @@ function PageContent() {
 export default function SupplyPage() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo {...meta.og} />
+      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} {...meta.og} />
       <PageContent />
     </InsightsLayout>
   );
