@@ -11,6 +11,7 @@
 - [ ] I have read the [Contributing Guidelines](https://github.com/cardano-foundation/cardano-org/blob/staging/CONTRIBUTING.md).
 - [ ] I have run `yarn build` after adding my changes **without getting any errors**.
 - [ ] I have not committed any changes to `yarn.lock`.
+- [ ] If I added a component or page markup, I checked the [component overview](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/components/index.md) first. New shared components have JSDoc and a doc page. Page-specific components are explained below.
 
 ## Updating documentation or Bugfix
 

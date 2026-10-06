@@ -35,7 +35,20 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - `variables.js` - Repository and branch URLs used by build scripts
 - `src/css/custom.css` - Global styles and design tokens (see `docs/get-involved/design-tokens.md`)
 - `package.json` - Scripts, dependencies
-- `netlify.toml` - Netlify build/deploy config
+- `netlify.toml` - Netlify response headers and redirects
+
+---
+
+## Building UI (Read Before Adding Components or Page Markup)
+Shared components are the default. Many people contribute to this site, and duplicated components are the most common review problem.
+
+1. **Look up what exists:** `docs/get-involved/components/index.md` maps common needs (hero, section title, tabs, FAQ, modal, call to action, and more) to the component to use.
+2. **Use or extend:** if a component almost fits, add an additive prop that leaves existing pages unchanged. Do not copy it into a variant.
+3. **Page-specific components only for tools or art direction:** an interactive tool (data visualization, wallet or chain flow, calculator, search) or deliberate art direction may get its own component in `src/components/<PageName>/`. Explain in the PR why nothing existing fits, and build its inner parts (titles, grids, FAQ lists) from shared components.
+4. **New shared components** go in `src/components/Layout/` and need JSDoc for their props, a doc page in `docs/get-involved/components/`, and a row in the overview table. If unsure, ask in the issue or PR before building.
+5. **No page CSS for covered patterns:** card grids, section heading blocks, and FAQ lists come from components, not from a page's `*.module.css`.
+
+Read `docs/get-involved/component-guidelines.md` and `docs/get-involved/design-tokens.md` before any UI work.
 
 ---
 
@@ -68,7 +81,7 @@ Welcome! This guide enables AI agents (and their operators) to contribute produc
 - `yarn test` includes an editorial guard (`scripts/check-docs-style.js`) that fails on typographic dashes and arrow glyphs in `docs/` and `blog/`.
 - No new warnings or errors introduced
 - PR must not break local dev or production build
-- All new/changed reusable components must be documented in `docs/get-involved/components/`
+- New or changed shared components have JSDoc and a doc page in `docs/get-involved/components/` (see "Building UI" above)
 - All content must follow the editorial style guide (`docs/get-involved/style-guide.md`)
 
 ---
