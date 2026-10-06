@@ -78,7 +78,7 @@ Category.defaultProps = {
   isImageRight: false, // Default layout will have the image on the left
 };
 
-export default function EnterpriseSection({ }) {
+export default function ResearchSection() {
 
   return (
     <div>
@@ -168,7 +168,7 @@ export default function EnterpriseSection({ }) {
         specifications={[
           {
             title:
-              "Engineering Design Specification for Delegation and Incentives in Cardano–Shelley",
+              "Engineering Design Specification for Delegation and Incentives in Cardano-Shelley",
             url: "https://github.com/input-output-hk/cardano-ledger/releases/latest/download/shelley-delegation.pdf",
           },
           {

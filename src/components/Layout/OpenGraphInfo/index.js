@@ -9,12 +9,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // This component can be used to only add the open graph image like <OpenGraphInfo pageName="imagename" />
 // Or with image and title and description <OpenGraphInfo pageName="imagename" title="Your title" description="The description.">
 // Pages without a dedicated image can omit pageName and get the site-wide default image.
+// Pass `image` (a site path like "/img/insights/supply.png") to use an image outside the "og" folder.
 
-const OpenGraphInfo = ({ pageName = 'default', title, description }) => {
+const OpenGraphInfo = ({ pageName = 'default', image, title, description }) => {
   const { siteConfig } = useDocusaurusContext();
   const { pathname } = useLocation();
   const siteUrl = siteConfig.url.replace(/\/$/, '');
-  const imageUrl = `${siteUrl}/img/og/${pageName}.jpg`;
+  const imageUrl = `${siteUrl}${image || `/img/og/${pageName}.jpg`}`;
   const canonicalUrl = `${siteUrl}${pathname}`;
 
   return (
@@ -25,18 +26,11 @@ const OpenGraphInfo = ({ pageName = 'default', title, description }) => {
       <meta property="og:url" content={canonicalUrl} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={imageUrl} />
-      {title && (
-        <>
-          <meta property="og:title" content={title} />
-          <meta name="twitter:title" content={title} />
-        </>
-      )}
-      {description && (
-        <>
-          <meta property="og:description" content={description} />
-          <meta name="twitter:description" content={description} />
-        </>
-      )}
+      {/* Helmet ignores fragments, so each optional tag is its own child */}
+      {title && <meta property="og:title" content={title} />}
+      {title && <meta name="twitter:title" content={title} />}
+      {description && <meta property="og:description" content={description} />}
+      {description && <meta name="twitter:description" content={description} />}
     </Head>
   );
 };

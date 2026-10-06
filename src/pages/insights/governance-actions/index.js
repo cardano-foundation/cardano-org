@@ -74,8 +74,7 @@ function PageContent() {
   const pageTitle = translate({id: 'insightsGovernance.page.title', message: 'Cardano Governance Action Charts'});
   const pageDescription = translate({id: 'insightsGovernance.page.description', message: 'Explore the Cardano Governance Action Flows in a visual chart visualization'});
   const pageKeywords = translate({id: 'insightsGovernance.page.keywords', message: 'Cardano, governance, action, DRep, SPO, voting, threshold'});
-  const canonicalUrlBase = `https://www.cardano.org/insights/governance-actions`;
-  const canonicalUrl = canonicalUrlBase;
+  const canonicalUrl = `https://cardano.org/insights/${meta.pageName}/`;
   
   // Push selection back to URL (without scroll jump or page reload)
   const handleSelectionChange = (selection) => {
@@ -89,20 +88,9 @@ function PageContent() {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:logo" content="img/cardano-logo-blue.svg" />
-        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
-        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`https://www.cardano.org/insights/${meta.pageName}`} />
-        <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",
@@ -144,7 +132,7 @@ function PageContent() {
 export default function SupplyPage() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo {...meta.og} />
+      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} {...meta.og} />
       <PageContent />
     </InsightsLayout>
   );

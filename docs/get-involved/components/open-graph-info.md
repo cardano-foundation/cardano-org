@@ -38,12 +38,13 @@ With title and description:
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `pageName` | `string` | `default` | Base name of the preview image. Resolves to `static/img/og/<pageName>.jpg`. Pages without a dedicated image omit it and get the site-wide `static/img/og/default.jpg`. |
+| `image` | `string` | none | Site path to a preview image outside `static/img/og/`, for example `/img/insights/supply.png`. Overrides `pageName`. |
 | `title` | `string` | none | Sets `og:title` and `twitter:title`. Omit to leave the page's own title. |
 | `description` | `string` | none | Sets `og:description` and `twitter:description`. |
 
 ## Notes
 
-- The preview image **must** live in `static/img/og/` and be a `.jpg` named exactly `<pageName>.jpg`.
+- With `pageName`, the preview image **must** live in `static/img/og/` and be a `.jpg` named exactly `<pageName>.jpg`. Use `image` for any other location.
 - `og:image` and `twitter:image` use the same file, there is no separate Twitter image.
 - `og:type` is always `website` and `twitter:card` is always `summary_large_image`. Neither is configurable.
 - The canonical `og:url` is derived automatically from the current path, and `og:site_name` from the site config. You do not set these.
