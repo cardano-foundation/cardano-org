@@ -74,8 +74,7 @@ function PageContent() {
   const pageTitle = translate({id: 'insightsGovernance.page.title', message: 'Cardano Governance Action Charts'});
   const pageDescription = translate({id: 'insightsGovernance.page.description', message: 'Explore the Cardano Governance Action Flows in a visual chart visualization'});
   const pageKeywords = translate({id: 'insightsGovernance.page.keywords', message: 'Cardano, governance, action, DRep, SPO, voting, threshold'});
-  const canonicalUrlBase = `https://www.cardano.org/insights/governance-actions`;
-  const canonicalUrl = canonicalUrlBase;
+  const canonicalUrl = `https://cardano.org/insights/${meta.pageName}/`;
   
   // Push selection back to URL (without scroll jump or page reload)
   const handleSelectionChange = (selection) => {
@@ -91,7 +90,7 @@ function PageContent() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
-        <link rel="canonical" href={`https://www.cardano.org/insights/${meta.pageName}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
           "@type": "Article",

@@ -67,7 +67,7 @@ function PageContent() {
   const pageTitle = meta.pageTitle;
   const pageDescription = meta.pageDescription;
   const pageKeywords = translate({id: 'insightsTemplate.page.keywords', message: 'Cardano, Insights, Template'}); // define or remove
-  const canonicalUrl = `https://www.cardano.org/insights/${meta.pageName}`;
+  const canonicalUrl = `https://cardano.org/insights/${meta.pageName}/`;
 
   // insert custom data fetching logic here (e.g., API calls, hooks, etc.)
 
