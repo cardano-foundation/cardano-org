@@ -108,11 +108,7 @@ export default function InsightsTemplate() {
   return (
     <InsightsLayout meta={meta}>
       {/* 🔹 Social preview image is the insight card image at /img/insights/<pageName>.png */}
-      <OpenGraphInfo
-        image={`/img/insights/${meta.pageName}.png`}
-        title={meta.og.title}
-        description={meta.og.description}
-      />
+      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} {...meta.og} />
       <PageContent />
     </InsightsLayout>
   );

@@ -38,7 +38,7 @@ export const meta = {
 export default function InsightsTemplate() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} title={meta.og.title} description={meta.og.description} />
+      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} {...meta.og} />
       <p>Page content, charts, and text go here.</p>
       <InsightsFooter lastUpdated={meta.date} />
     </InsightsLayout>
