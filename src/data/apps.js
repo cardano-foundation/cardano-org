@@ -170,6 +170,11 @@ export const Properties = {
     description: "You can delegate your voting power to a DRep directly in this app.",
     color: '#0B6E4F',  // Dark Green
   },
+  pooldelegation: {
+    label: "Pool Delegation",
+    description: "You can delegate your ada to a stake pool directly in this app.",
+    color: '#1B4F9C',  // Dark Blue
+  },
 };
 
 // Backwards-compat union for components that look up tag metadata by name without
@@ -293,7 +298,7 @@ export const Showcases = [
     website: "https://cexplorer.io/",
     source: null,
     category: "explorer",
-    properties: [],
+    properties: ["pooldelegation"],
     maintainerPick: false,
   },
   {
@@ -305,7 +310,7 @@ export const Showcases = [
     website: "https://cardanoscan.io/",
     source: null,
     category: "explorer",
-    properties: [],
+    properties: ["pooldelegation"],
     maintainerPick: false,
   },
   {
@@ -406,7 +411,7 @@ export const Showcases = [
     website: "https://poolstats.io",
     source: null,
     category: "pooltool",
-    properties: [],
+    properties: ["pooldelegation"],
     maintainerPick: false,
   },
   {
@@ -492,23 +497,6 @@ export const Showcases = [
       features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "multi-account", "governance"],
       type: "light",
     },
-  },
-  {
-    title: "Reward Calculator",
-    description:
-      "Detailed Cardano staking rewards calculator showing expected returns to operators and delegators, with a Monte Carlo simulation for return variability.",
-    tagline: "Pool reward calculator with Monte Carlo sim",
-    icon: "/img/app-icons/reward-calculator.png",
-    preview: require("./app-screenshots/reward-calculator.webp"),
-    extraPreviews: [
-      require("./app-screenshots/reward-calculator-pools.webp"),
-      require("./app-screenshots/reward-calculator-parameters.webp"),
-    ],
-    website: "https://cardano.org/calculator/",
-    source: null,
-    category: "pooltool",
-    properties: [],
-    maintainerPick: true,
   },
   {
     title: "MuesliSwap",

@@ -54,3 +54,4 @@
   * `nft` — supports or uses NFTs (not for image-based collections)
   * `opensource` — public source repository linked above
   * `drepdelegation`: voting power can be delegated to a DRep inside the app
+  * `pooldelegation`: ada can be delegated to a stake pool inside the app (wallets do not set this)

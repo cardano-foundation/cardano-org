@@ -20,7 +20,7 @@ import styles from "./styles.module.css";
 export const INTENTS = [
   {
     id: "stake",
-    tags: ["pooltool"],
+    tags: ["pooldelegation"],
     sort: SORT_IDS.MOST_ACTIVE,
     label: translate({ id: "apps.intent.stake", message: "Stake ada" }),
   },

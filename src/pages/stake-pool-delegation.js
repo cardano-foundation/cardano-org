@@ -18,8 +18,11 @@ import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./stake-pool-delegation.module.css";
 
-// Pool explorers from the app showcase, same ordering as the /apps panels.
-const POOL_TOOLS = Showcases.filter((app) => app.category === "pooltool").sort(compareByActivityThenPick);
+// Apps carrying the pooldelegation property support delegating to a stake pool
+// directly. Same ordering as the /apps panels.
+const POOL_DELEGATION_APPS = Showcases
+  .filter((app) => app.properties.includes("pooldelegation"))
+  .sort(compareByActivityThenPick);
 
 const StakePoolDelegate = lazy(() =>
   import(/* webpackChunkName: "stake-pool-delegate" */ "@site/src/components/StakePoolDelegate")
@@ -189,11 +192,11 @@ export default function StakePoolDelegationPage() {
 
             <Divider text={translate({ id: "stakePoolDelegation.alt.heading", message: "Prefer another tool?" })} id="alternatives" />
             <p className="black-text">
-              {translate({ id: "stakePoolDelegation.alt.intro", message: "These community pool explorers help you compare stake pools in depth." })}
+              {translate({ id: "stakePoolDelegation.alt.introDelegate", message: "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page." })}
             </p>
             <SpacerBox size="small" />
             <div className={styles.altGrid}>
-              {POOL_TOOLS.map((app) => (
+              {POOL_DELEGATION_APPS.map((app) => (
                 <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
               ))}
             </div>

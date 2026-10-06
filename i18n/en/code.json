@@ -2726,8 +2726,8 @@
   "stakePoolDelegation.alt.heading": {
     "message": "Prefer another tool?"
   },
-  "stakePoolDelegation.alt.intro": {
-    "message": "These community pool explorers help you compare stake pools in depth."
+  "stakePoolDelegation.alt.introDelegate": {
+    "message": "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page."
   },
   "stakePoolDelegation.alt.wallets": {
     "message": "Most wallets can delegate on their own."
