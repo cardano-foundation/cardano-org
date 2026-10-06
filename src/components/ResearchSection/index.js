@@ -78,7 +78,7 @@ Category.defaultProps = {
   isImageRight: false, // Default layout will have the image on the left
 };
 
-export default function EnterpriseSection({ }) {
+export default function ResearchSection() {
 
   return (
     <div>
