@@ -137,7 +137,7 @@
   opacity: 0.9;
 }
 
-/* Tags — matching ShowcaseCard tag style with colored dots */
+/* Tags: matching ShowcaseCard tag style with colored dots */
 .insight-tags {
   display: flex;
   flex-wrap: wrap;

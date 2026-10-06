@@ -168,7 +168,7 @@ export default function ResearchSection() {
         specifications={[
           {
             title:
-              "Engineering Design Specification for Delegation and Incentives in Cardano–Shelley",
+              "Engineering Design Specification for Delegation and Incentives in Cardano-Shelley",
             url: "https://github.com/input-output-hk/cardano-ledger/releases/latest/download/shelley-delegation.pdf",
           },
           {
