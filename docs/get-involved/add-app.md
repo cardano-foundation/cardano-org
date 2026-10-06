@@ -103,6 +103,7 @@ These criteria are also applied retroactively. Apps that go offline, get abandon
    - `nft`: supports or uses NFTs (do not use for image-based NFT collections)
    - `opensource`: public source repository; you must also fill in `source`
    - `drepdelegation`: voting power can be delegated to a DRep directly inside the app. Entries carrying this flag are listed on [/governance/delegate](/governance/delegate)
+   - `pooldelegation`: ada can be delegated to a stake pool directly inside the app. Wallets do not set this. Entries carrying this flag are listed on [/stake-pool-delegation](/stake-pool-delegation)
 
 7. **`maintainerPick`**
 
