@@ -351,6 +351,16 @@ h6 {
   margin: 2.75rem 0 1.05rem;
 }
 
+/* SiteHero title rendered without heading semantics (headingLevel 0) keeps
+   the h1 typography. */
+.hero__title--text {
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin: 2.75rem 0 1.05rem;
+}
+
 /* Keep the look of a heading level on a different element. Used through
    src/utils/heading.js when a component's headingLevel differs from its
    default, so the document outline can change without changing the design. */
@@ -919,7 +929,8 @@ html[data-theme="light"] {
 
 /* screen size changes */
 @media screen and (max-width: 576px) {
-  .hero h1 {
+  .hero h1,
+  .hero .hero__title--text {
     font-size: 32px;
   }
 
@@ -941,7 +952,8 @@ html[data-theme="light"] {
 }
 
 @media screen and (min-width: 1950px) {
-  .hero h1 {
+  .hero h1,
+  .hero .hero__title--text {
     font-size: 48px;
   }
 

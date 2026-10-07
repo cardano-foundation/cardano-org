@@ -45,7 +45,7 @@
 }
 
 
-.getStartedHeader h1 {
+.getStartedHeader h2 {
   color: #0033AD;
 }
 
@@ -54,7 +54,7 @@
   line-height: 1.4;
 }
 
-[data-theme="dark"] .getStartedHeader h1 {
+[data-theme="dark"] .getStartedHeader h2 {
   color: var(--ifm-color-primary);
 }
 
@@ -64,7 +64,7 @@
   }
 }
 
-.centeredHeader h1 {
+.centeredHeader h2 {
   margin: 0 0 1rem 0;
   font-size: 2.25rem;
   font-weight: 700;

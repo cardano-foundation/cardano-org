@@ -212,7 +212,7 @@ export default function StakePoolDelegationPage() {
 
         <BackgroundWrapper backgroundType={"ada"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: "stakePoolDelegation.calculatorCta.title", message: "Try our staking calculator to see how much ada you could be rewarded for delegating to a stake pool." })}
               buttonLabel={translate({ id: "stakePoolDelegation.calculatorCta.buttonLabel", message: "Try Out" })}
               buttonLink={"/calculator/?calculator=delegator"}

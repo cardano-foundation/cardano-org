@@ -124,7 +124,7 @@ export default function AmbassadorsImpactStories() {
 
   return (
     <section id="stories">
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "ambassadors.stories.title",
           message: "Real stories from Ambassadors making a difference",

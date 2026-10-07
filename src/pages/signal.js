@@ -37,7 +37,7 @@ import contentMap from '../data/signal-contentmap.js';
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'signal.topics.title', message: 'Available Topics'})}
             description={Object.values(contentMap).map(item => ({
               list: [`**[${item.title}](/${item.slug}/)**: ${item.description}`],

@@ -54,7 +54,7 @@ export default function Home() {
               />
             }
           >
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'commonScams.intro.title', message: 'Protecting your ada from scammers'})}
               description={[
                 translate({id: 'commonScams.intro.description1', message: 'The cryptocurrency space is full of opportunities, but it\'s also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn\'t immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself.'}),
@@ -64,7 +64,7 @@ export default function Home() {
             />
 
           <Divider text={translate({id: 'commonScams.divider.giveaway', message: 'Giveaway'})} id="giveaway"/>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.giveaway.title', message: 'Ada Giveaway Scam'})}
             description={[
               translate({id: 'commonScams.giveaway.description1', message: 'One of the most well-known scams targeting the Cardano community is the **Ada Giveaway Scam.** Scammers promise to double your ada if you send them a certain amount first. These scams often feature fake live streams of Charles Hoskinson, or other well-known personalities, to appear legitimate. The streams may mimic genuine events and include a wallet address for you to send your ada.'}),
@@ -82,7 +82,7 @@ export default function Home() {
           />
 
           <Divider text={translate({id: 'commonScams.divider.phishing', message: 'Phishing'})} id="phishing"/>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.phishing.title', message: 'Phishing Attacks'})}
             description={[
               translate({id: 'commonScams.phishing.description', message: 'Phishing scams involve fake websites, apps or emails designed to steal sensitive information, such as your wallet credentials or recovery phrase (seed words). These fraudulent sites often mimic popular wallets like [Typhon, VESPR or Eternl](/what-is-ada/#wallets).'}),
@@ -100,7 +100,7 @@ export default function Home() {
           />
 
           <Divider text={translate({id: 'commonScams.divider.investment', message: 'Fake Investment'})} id="investment"/>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.investment.title', message: 'Fake Investment Opportunities'})}
             description={[
               translate({id: 'commonScams.investment.description', message: 'Fraudulent investment schemes are another popular scam. Scammers promote fake projects, claiming they are "Cardano-backed" or "ada-specific" opportunities with guaranteed high returns. Victims are urged to send ada or other funds to a provided wallet address, with promises of earning exponential profits.'}),
@@ -118,7 +118,7 @@ export default function Home() {
 
 
           <Divider text={translate({id: 'commonScams.divider.support', message: 'Fake Support'})} id="support"/>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.support.title', message: 'Fake Tech Support'})}
             description={[
               translate({id: 'commonScams.support.description1', message: 'In this scam, fraudsters pose as "official" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to "help," they\'ll ask for your recovery phrase (seed words) or private keys.'}),
@@ -136,7 +136,7 @@ export default function Home() {
           />
 
           <Divider text={translate({id: 'commonScams.divider.rug', message: 'Rug Pulls'})} id="rug"/>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.rug.title', message: 'Rug Pulls in Cardano Ecosystem'})}
             description={[
               translate({id: 'commonScams.rug.description', message: 'Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a "rug pull."'}),

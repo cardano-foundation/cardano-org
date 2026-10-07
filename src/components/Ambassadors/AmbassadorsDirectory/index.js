@@ -112,7 +112,7 @@ export default function AmbassadorsDirectory() {
 
   return (
     <section id="directory">
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "ambassadors.directory.title",
           message: "Search and filter the global network of Ambassadors",

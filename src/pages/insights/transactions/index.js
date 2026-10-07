@@ -599,7 +599,7 @@ function PageContent() {
         <meta name="description" content={meta.pageDescription} />
       </Head>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           translate({ id: 'insightsTransactions.intro.description', message: '**Explore historical trends in Cardano transactions** including transaction counts, fees collected, and block production. Select an epoch range to analyze how network activity evolved over time.' })
         ]}

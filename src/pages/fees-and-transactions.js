@@ -50,7 +50,7 @@ export default function Home() {
               message: "Overview",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.overview.title",
               message: "What you pay for on Cardano",
@@ -70,7 +70,7 @@ export default function Home() {
             headingDot={true}
           />
 
-          <FeaturedTitleWithText
+          <FeaturedTitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.how.title",
               message: "How the fee is calculated",
@@ -111,7 +111,7 @@ export default function Home() {
               message: "Predictable by design",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.deterministic.title",
               message: "Determinism: you know the price before you sign",
@@ -154,7 +154,7 @@ export default function Home() {
               message: "Minimum ada (min-UTxO)",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.minutxo.title",
               message: "The minimum ada requirement",
@@ -179,7 +179,7 @@ export default function Home() {
             headingDot={true}
           />
 
-          <FeaturedTitleWithText
+          <FeaturedTitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.minutxo.calc.title",
               message: "Worked example",
@@ -216,7 +216,7 @@ export default function Home() {
               message: "UTxO vs account",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.model.title",
               message: "Why the accounting model shapes fees",
@@ -259,7 +259,7 @@ export default function Home() {
               message: "Fee markets & MEV",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.markets.title",
               message: "Fee markets and maximal extractable value",
@@ -281,7 +281,7 @@ export default function Home() {
 
           <SpacerBox size="small" />
 
-          <FeaturedTitleWithText
+          <FeaturedTitleWithText headingLevel={2}
             title={translate({
               id: "feesAndTransactions.cta.title",
               message: "Practical guidance: what to expect",

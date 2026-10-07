@@ -13,7 +13,7 @@ export default function HomeProofPointsSection() {
   const points = HOME_KEYS.map((key) => allPoints.find((point) => point.key === key)).filter(Boolean);
   return (
     <>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "home.proofPoints.title", message: "What makes Cardano different?" })}
         headingDot={true}
         titleType="black"

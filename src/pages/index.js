@@ -59,7 +59,7 @@ export default function Home() {
 
         <BoundaryBox>
           <Divider text={translate({id: 'home.divider.news', message: 'News'})} />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'home.news.title', message: 'Latest News'})}
             description={[
               translate({id: 'home.news.description', message: 'Stay up to date with the latest developments, announcements, and community updates from the Cardano ecosystem.'}),

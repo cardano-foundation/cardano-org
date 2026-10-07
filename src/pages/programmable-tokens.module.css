@@ -16,11 +16,11 @@
 }
 
 /*
- * Section header. TitleWithText renders an h1 with the global top margin,
+ * Section header. TitleWithText renders a heading with the global top margin,
  * which would stack on top of the section padding, so it is zeroed here and
  * set to the design's 30px.
  */
-.sectionHeader h1 {
+.sectionHeader h2 {
   max-width: 900px;
   margin: 0;
   font-size: 30px;
@@ -365,7 +365,7 @@
     padding: var(--site-space-xl) 0;
   }
 
-  .sectionHeader h1,
+  .sectionHeader h2,
   .invertedTitle {
     font-size: 26px;
   }

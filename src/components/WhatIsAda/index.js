@@ -38,7 +38,7 @@ export default function WhatIsAdaSection({
           <h2 className={clsx("red-text", styles.mobileNotVisible)}>{quote}</h2>
         </div>
         <div className={clsx("col col--6", styles.rightColumn)}>
-          <h1 className={clsx("black-text", "headingDot")}>{title}</h1>
+          <h2 className={clsx("black-text", "headingDot", "heading-look-h1")}>{title}</h2>
 
           {Array.isArray(description) ? (
             description.map((paragraph, index) => (

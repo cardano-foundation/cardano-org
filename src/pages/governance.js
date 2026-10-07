@@ -96,7 +96,7 @@ function GovernanceRolesSection() {
           {'Cardano is governed by its community. Three groups vote on proposals that shape the network. Together, they decide on everything from protocol upgrades to {treasuryFunding}.'}
         </Translate>
       </p>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}
       />
       <SpacerBox size="small" />

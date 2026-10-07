@@ -29,7 +29,7 @@ export default function Home() {
       <main>
         <BoundaryBox>
           <SpacerBox size="small" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'codeOfConduct.intro.description', message: "The Cardano community consists of people from all over the world, who have come together to grow and safeguard the spirit and the future of Cardano. All participants in the community are expected to act lawfully, honestly, ethically and in the best interest of the project. This Code of Conduct offers rules and guidelines designed to aid judgment within our community and keep it a clean and well-lighted place for civilised public discourse about the project. By joining and participating in any of the official Cardano community channels, you confirm that you agree to be bound by the Code of Conduct."}),
               ]}
@@ -37,7 +37,7 @@ export default function Home() {
               headingDot={true}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.improveDiscussion.title', message: 'Improve the discussion'})}
               description={[
                 translate({id: 'codeOfConduct.improveDiscussion.description1', message: "Help us make the community a great place for discussion by always working to improve the discussion in some way, however small. If you are not sure your post adds to the conversation, think over what you want to say and try again later. The topics discussed in the community matter to us, and we want you to act as if they matter to you, too. Be respectful of the topics and the people discussing them, even if you disagree with some of what is being said."}),
@@ -50,7 +50,7 @@ export default function Home() {
               headingDot={true}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.beAgreeable.title', message: 'Be agreeable, even when you disagree'})}
               description={[
                 translate({id: 'codeOfConduct.beAgreeable.description1', message: "You may wish to respond to something by disagreeing with it. That's fine. But remember to criticise ideas, not people. Please avoid:"}),
@@ -71,7 +71,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.participation.title', message: 'Your participation counts'})}
               description={[
                 translate({id: 'codeOfConduct.participation.description', message: "The conversations we have in the community sets the tone for every new arrival. Help us influence the future of this community by choosing to engage in discussions that make this forum an interesting place to be --- and avoiding those that do not."}),
@@ -81,7 +81,7 @@ export default function Home() {
               headingDot={true}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.reportProblem.title', message: 'If you see a problem, report it'})}
               description={[
                 translate({id: 'codeOfConduct.reportProblem.description1', message: "Moderators have special authority within the community; they are responsible for ensuring members adhere to this conduct. But so are you. With your help, moderators can be community facilitators. When you see bad behaviour, don't reply. It encourages the bad behaviour by acknowledging it, consumes your energy, and wastes everyone's time. Just report it! Below are specific instructions on how to report violations in each channel."}),
@@ -105,7 +105,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.beCivil.title', message: 'Always be civil'})}
               description={[
                 translate({id: 'codeOfConduct.beCivil.description1', message: "Nothing sabotages a healthy conversation like rudeness:"}),
@@ -129,7 +129,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.keepTidy.title', message: 'Keep it tidy'})}
               description={[
                 translate({id: 'codeOfConduct.keepTidy.description', message: "Make the effort to put things in the right place, so that we can spend more time discussing and less cleaning up. A healthy community requires conversations to be structured and categorized. So:"}),
@@ -144,7 +144,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.postOwnStuff.title', message: 'Post only your own stuff'})}
               description={[
                 translate({id: 'codeOfConduct.postOwnStuff.description', message: "You may not post anything digital that belongs to someone else without permission. You may not post descriptions of, links to, or methods for stealing someone's intellectual property (software, video, audio, images), or for breaking any other law. Credit should always be attributed back to the original content producer."}),
@@ -153,7 +153,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.multipleAccounts.title', message: 'Multiple Accounts'})}
               description={[
                 translate({id: 'codeOfConduct.multipleAccounts.description', message: "Multiple accounts by the same user will not be allowed. This helps foster a more human experience in the online world and restricts spamming. Note that duplicate accounts may be investigated and removed."}),
@@ -162,7 +162,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.violation.title', message: 'Violation of rules'})}
               description={[
                 translate({id: 'codeOfConduct.violation.description1', message: "If any of the rules are broken, moderators will perform the following sanctions:"}),
@@ -179,7 +179,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'codeOfConduct.poweredByYou.title', message: 'Powered by you'})}
               description={[
                 translate({id: 'codeOfConduct.poweredByYou.description', message: "This community is operated by the community staff and you, the community. If you have any further questions about how things should work here, open a new topic in the [community feedback category](https://forum.cardano.org/c/english/community-feedback/16) of the forum and let's discuss! If there is ever a critical or urgent issue please contact us directly at community *at* cardano *dot* org."}),

@@ -47,7 +47,7 @@
  * TitleWithText renders dark text by default, so we force white for contrast.
  * The headingDot indicator keeps its own accent colour.
  */
-.invertedHeader h1,
+.invertedHeader h2,
 .invertedHeader p,
 .invertedHeader li {
   color: #ffffff !important;

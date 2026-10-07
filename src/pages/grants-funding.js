@@ -34,7 +34,7 @@ function ProgramsSection() {
   return (
     <>
       <Divider id="programs" text={translate({ id: "funding.divider.programs", message: "Programs" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "funding.programs.title", message: "Apply for funding" })}
         description={translate({
           id: "funding.programs.description",
@@ -51,7 +51,7 @@ function ApplySection() {
   return (
     <>
       <Divider id="how-to-apply" text={translate({ id: "funding.divider.apply", message: "How to apply" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "funding.apply.title", message: "Three steps, whichever program you choose" })}
         headingDot={true}
       />
@@ -96,7 +96,7 @@ export default function GrantsFunding() {
         </BackgroundWrapper>
         <BackgroundWrapper backgroundType="gradientDark">
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: "funding.cta.title", message: "Not building yet? The developer portal is the place to start." })}
               buttonLabel={translate({ id: "funding.cta.button", message: "Go to the developer portal" })}
               buttonLink="https://developers.cardano.org"

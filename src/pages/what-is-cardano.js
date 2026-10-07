@@ -29,7 +29,7 @@ function WhatIsCardanoSection() {
         })}
       </HighlightCallout>
       <SpacerBox size="small" />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.intro.title", message: "What is Cardano?" })}
         description={[
           translate({
@@ -58,7 +58,7 @@ function AdaSection() {
   return (
     <>
       <Divider id="ada" text={translate({ id: "whatIsCardano.divider.ada", message: "Ada" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.ada.title", message: "What is ada?" })}
         description={[
           translate({
@@ -87,7 +87,7 @@ function HowItWorksSection() {
         id="how-it-works"
         text={translate({ id: "whatIsCardano.divider.howItWorks", message: "How it works" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.how.title", message: "How does Cardano work?" })}
         description={translate({
           id: "whatIsCardano.how.intro",
@@ -132,7 +132,7 @@ function HowItWorksSection() {
         ]}
         headingDot={true}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "whatIsCardano.how.outro",
           message: "Want the full picture, from slots to hard forks? Read how Cardano works step by step.",
@@ -151,7 +151,7 @@ function DifferentSection() {
         id="what-makes-it-different"
         text={translate({ id: "whatIsCardano.divider.different", message: "Why Cardano" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.different.title", message: "What makes Cardano different?" })}
         headingDot={true}
       />
@@ -164,7 +164,7 @@ function UsedForSection() {
   return (
     <>
       <Divider id="used-for" text={translate({ id: "whatIsCardano.divider.usedFor", message: "Use cases" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.usedFor.title", message: "What is Cardano used for?" })}
         headingDot={true}
       />
@@ -200,7 +200,7 @@ function UsedForSection() {
           </Link>
         </RoleCard>
       </div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "whatIsCardano.usedFor.outro",
           message: "More than a hundred applications already run on Cardano: wallets, exchanges, lending, identity, games and more.",
@@ -233,12 +233,12 @@ function GetStartedSection() {
   return (
     <>
       <Divider id="get-started" text={translate({ id: "whatIsCardano.divider.start", message: "Get started" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.start.title", message: "How do I start using Cardano?" })}
         description={{ list: steps.map((step) => `[${step.title}](${step.href}): ${step.text}`) }}
         headingDot={true}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({ id: "whatIsCardano.start.outro", message: "Prefer a guided walk-through? The getting started page takes you from download to first transaction, and the [learning path](/learn) continues from there." })}
         buttonLabel={translate({ id: "whatIsCardano.start.button", message: "Start step by step" })}
         buttonLink="/get-started"
@@ -251,7 +251,7 @@ function HistorySection() {
   return (
     <>
       <Divider id="history" text={translate({ id: "whatIsCardano.divider.history", message: "History" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "whatIsCardano.history.title", message: "Who created Cardano and who runs it now?" })}
         description={translate({
           id: "whatIsCardano.history.p1",
@@ -263,7 +263,7 @@ function HistorySection() {
         buttonLink="/genesis"
       />
       <SpacerBox size="small" />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "whatIsCardano.history.p2",
           message:

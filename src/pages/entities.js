@@ -29,7 +29,7 @@ export default function Home() {
         <BoundaryBox>
           <Divider text={translate({id: 'entities.entitiesSection.divider', message: 'Entities building on Cardano'})} id="entities" />
           <span id="companies" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({id: 'entities.companiesSection.description', message: 'There is a growing number of entities that build on Cardano. Below are a few of them:'})}
             titleType="none"
             headingDot={false}

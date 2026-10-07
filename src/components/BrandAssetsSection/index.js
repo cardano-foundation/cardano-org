@@ -100,7 +100,7 @@ export default function BrandAssetsSection() {
         </span>
       </a>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           translate({
             id: "brandAssets.logos.desc1",

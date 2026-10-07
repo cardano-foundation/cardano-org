@@ -350,7 +350,7 @@ export default function Home() {
 
       <BackgroundWrapper backgroundType={"gradientDark"}>
         <BoundaryBox>
-          <CtaOneColumn
+          <CtaOneColumn headingLevel={2}
             title={translate({
               id: "developers.cta.title",
               message: "Ready to start building?",

@@ -55,7 +55,7 @@ export default function Home() {
                 translate({ id: 'stakePoolOperation.whatIsStaking.rightText3', message: 'The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards that it earns are shared between everyone who delegated their stake to that stake pool.' }),
               ])}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={translate({id: 'stakePoolOperation.goDeeper.description', message: "How a pool is chosen to produce a block, and how rewards are calculated and paid out, is explained step by step in [how Cardano works](/how-cardano-works#consensus)."})}
             />
           </BoundaryBox>
@@ -98,7 +98,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"solidBlue"}>
           <BoundaryBox>
-            <CtaTwoColumn
+            <CtaTwoColumn headingLevel={2}
               leftTitle={translate({ id: 'stakePoolOperation.setupCta.title', message: 'How do I set up a stake pool?' })}
               leftText={[
                 translate({ id: 'stakePoolOperation.setupCta.text1', message: "It's important to remember the role of a stake pool operator: to ensure reliable, 24/7 operation of a network node. As a stake pool operator, you have a responsibility to the ada holders who delegate to you but also to the health of the network itself. This requires a stable and reliable network infrastructure and, ideally, system operation and server administration skills along with experience in development and operations." }),
@@ -114,7 +114,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"ada"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: 'stakePoolOperation.calculatorCta.title', message: 'Try our staking calculator to see how much ada you could receive by running a stake pool.' })}
               buttonLabel={translate({ id: 'stakePoolOperation.calculatorCta.buttonLabel', message: 'Try Out' })}
               buttonLink={"/calculator/?calculator=operator"}

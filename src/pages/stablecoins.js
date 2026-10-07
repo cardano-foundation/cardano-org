@@ -69,12 +69,12 @@ export default function Stablecoins() {
             <SpacerBox size="medium" />
             <div className={clsx("row", pageStyles.twoColIntro)}>
               <div className="col col--6">
-                <h1 className="headingDot">
+                <h2 className="headingDot heading-look-h1">
                   {translate({
                     id: "stablecoins.ecosystem.title",
                     message: "The Cardano Stablecoin Ecosystem",
                   })}
-                </h1>
+                </h2>
                 <p className={pageStyles.lead}>
                   {translate({
                     id: "stablecoins.ecosystem.subtitle",
@@ -92,7 +92,7 @@ export default function Stablecoins() {
                 </p>
               </div>
             </div>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={translate({
                 id: "stablecoins.ecosystem.defiLink",
                 message:
@@ -109,12 +109,12 @@ export default function Stablecoins() {
           <BoundaryBox>
             <div className={pageStyles.bridgesGrid}>
               <div className={pageStyles.centeredHeader}>
-                <h1 className="white-text">
+                <h2 className="white-text heading-look-h1">
                   {translate({
                     id: "stablecoins.bridges.title",
                     message: "Stablecoins With Bridges to Cardano",
                   })}
-                </h1>
+                </h2>
                 <p className={clsx("white-text", pageStyles.lead)}>
                   {translate({
                     id: "stablecoins.bridges.subtitle",
@@ -141,7 +141,7 @@ export default function Stablecoins() {
             <div id="get-started" />
             <SpacerBox size="medium" />
             <div className={pageStyles.getStartedHeader}>
-              <TitleWithText
+              <TitleWithText headingLevel={2}
                 title={translate({
                   id: "stablecoins.getStarted.title",
                   message: "How to Get Stablecoins on Cardano",
@@ -166,12 +166,12 @@ export default function Stablecoins() {
           <SpacerBox size="medium" />
           <div className={clsx("row", pageStyles.twoColExplainer)}>
             <div className="col col--7">
-              <h1 className="headingDot">
+              <h2 className="headingDot heading-look-h1">
                 {translate({
                   id: "stablecoins.explainer.title",
                   message: "Understand Stablecoins",
                 })}
-              </h1>
+              </h2>
               <p>
                 {translate({
                   id: "stablecoins.explainer.intro1",
@@ -274,7 +274,7 @@ export default function Stablecoins() {
             <div className={pageStyles.whyCardano}>
               <div id="why-cardano" />
               <SpacerBox size="medium" />
-              <TitleWithText
+              <TitleWithText headingLevel={2}
                 title={translate({
                   id: "stablecoins.whyCardano.title",
                   message:

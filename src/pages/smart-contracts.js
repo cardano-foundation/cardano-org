@@ -17,7 +17,7 @@ function WhatSection() {
         id="what"
         text={translate({ id: "smartContracts.divider.what", message: "Basics" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.what.title", message: "What is a smart contract?" })}
         description={[
           translate({
@@ -54,7 +54,7 @@ function HowSection() {
         id="how"
         text={translate({ id: "smartContracts.divider.how", message: "On Cardano" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.how.title", message: "How does Cardano run smart contracts?" })}
         description={translate({
           id: "smartContracts.how.intro",
@@ -102,7 +102,7 @@ function HowSection() {
         ]}
         headingDot={true}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "smartContracts.how.outro",
           message:
@@ -120,7 +120,7 @@ function LanguagesSection() {
         id="languages"
         text={translate({ id: "smartContracts.divider.languages", message: "Languages" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.languages.title", message: "Which languages do developers use?" })}
         description={[
           translate({
@@ -149,7 +149,7 @@ function DappsSection() {
         id="dapps"
         text={translate({ id: "smartContracts.divider.dapps", message: "DApps" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.dapps.title", message: "What is a DApp?" })}
         description={[
           translate({
@@ -178,7 +178,7 @@ function SafetySection() {
         id="safety"
         text={translate({ id: "smartContracts.divider.safety", message: "Safety" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.safety.title", message: "How do I use a DApp safely?" })}
         description={[
           translate({
@@ -215,7 +215,7 @@ function BuiltSection() {
         id="built"
         text={translate({ id: "smartContracts.divider.built", message: "Built on Cardano" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={builtTitle}
         description={translate({
           id: "smartContracts.built.intro",
@@ -225,7 +225,7 @@ function BuiltSection() {
         headingDot={true}
       />
       <CategoryPanelsCarousel categories={BUILT_CATEGORIES} ariaLabel={builtTitle} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "smartContracts.built.outro",
           message:
@@ -245,7 +245,7 @@ function BuildSection() {
         id="build"
         text={translate({ id: "smartContracts.divider.build", message: "Build" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "smartContracts.build.title", message: "How do I build one?" })}
         description={[
           translate({

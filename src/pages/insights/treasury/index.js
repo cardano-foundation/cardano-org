@@ -39,7 +39,7 @@ function PageContent() {
   useHashRescroll();
   return (
     <>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           translate({
             id: "insightsTreasury.intro",

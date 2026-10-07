@@ -80,13 +80,13 @@ export default function Home() {
       />
       <main>
         <BoundaryBox>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={t.rewardTitle}
             titleType="black"
             description={t.rewardDescription}
             headingDot={true}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({id: 'calculator.context.description', message: "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."})}
           />
         </BoundaryBox>

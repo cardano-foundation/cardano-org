@@ -109,7 +109,7 @@ function ConstitutionContent() {
 
   return (
     <div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "constitution.enacted.title", message: "Current Enacted Cardano Constitution" })}
         description={[
           translate({ id: "constitution.enacted.description", message: "Discover the Cardano Constitution: the governance framework of the Cardano blockchain. Read the current enacted charter, explore its ratification history, and download the full text via IPFS." }),
@@ -151,7 +151,7 @@ function ConstitutionContent() {
 
       <SpacerBox size="large" />
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "constitution.history.title", message: "Constitution Ratification History" })}
         description={[
           translate({ id: "constitution.history.description", message: "Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS." }),

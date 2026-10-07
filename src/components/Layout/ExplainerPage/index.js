@@ -35,7 +35,7 @@ export default function ExplainerPage({ title, description, hero = {}, faq, cta,
         {cta && (
           <BackgroundWrapper backgroundType="gradientDark">
             <BoundaryBox>
-              <CtaOneColumn title={cta.title} buttonLabel={cta.buttonLabel} buttonLink={cta.buttonLink} />
+              <CtaOneColumn headingLevel={2} title={cta.title} buttonLabel={cta.buttonLabel} buttonLink={cta.buttonLink} />
               <SpacerBox size="small" />
             </BoundaryBox>
           </BackgroundWrapper>

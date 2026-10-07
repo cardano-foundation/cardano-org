@@ -41,7 +41,7 @@ export default function WhatIsAWallet() {
         <BackgroundWrapper backgroundType="adaLight">
           <BoundaryBox>
             <SpacerBox size="medium" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({ id: "whatIsAWallet.intro.title", message: "Your keys, not your coins" })}
               description={[
                 translate({
@@ -67,7 +67,7 @@ export default function WhatIsAWallet() {
           <Divider text={translate({ id: "whatIsAWallet.types.divider", message: "Wallet types" })} />
           <SpacerBox size="medium" />
 
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "whatIsAWallet.hotcold.title", message: "Hot wallets vs cold wallets" })}
             description={[
               translate({
@@ -96,7 +96,7 @@ export default function WhatIsAWallet() {
           />
 
           <SpacerBox size="large" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "whatIsAWallet.custody.title", message: "Custodial vs non-custodial" })}
             description={[
               translate({
@@ -115,7 +115,7 @@ export default function WhatIsAWallet() {
           />
 
           <SpacerBox size="large" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "whatIsAWallet.nodetype.title", message: "Light wallets vs full-node wallets" })}
             description={[
               translate({
@@ -140,7 +140,7 @@ export default function WhatIsAWallet() {
             <SpacerBox size="large" />
             <Divider text={translate({ id: "whatIsAWallet.keys.divider", message: "Keys and recovery" })} />
             <SpacerBox size="medium" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({ id: "whatIsAWallet.recovery.title", message: "Your recovery phrase is the master key" })}
               description={[
                 translate({
@@ -165,7 +165,7 @@ export default function WhatIsAWallet() {
           <SpacerBox size="large" />
           <Divider text={translate({ id: "whatIsAWallet.security.divider", message: "Staying secure" })} />
           <SpacerBox size="medium" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "whatIsAWallet.security.title", message: "Security basics" })}
             description={{
               list: [
@@ -192,7 +192,7 @@ export default function WhatIsAWallet() {
 
           <Divider text={translate({ id: "whatIsAWallet.dapps.divider", message: "Wallets and apps" })} />
           <SpacerBox size="medium" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "whatIsAWallet.dapps.title", message: "Connecting to apps" })}
             description={[
               translate({
@@ -220,7 +220,7 @@ export default function WhatIsAWallet() {
         <BackgroundWrapper backgroundType="adaLight">
           <BoundaryBox>
             <SpacerBox size="large" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({ id: "whatIsAWallet.choose.title", message: "How to choose a wallet" })}
               description={{
                 list: [
@@ -308,7 +308,7 @@ export default function WhatIsAWallet() {
             ]}
           />
           <SpacerBox size="medium" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({
               id: "whatIsAWallet.next.description",
               message:
@@ -325,7 +325,7 @@ export default function WhatIsAWallet() {
             allowRetry={false}
           />
           <SpacerBox size="medium" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             titleType="black"
             headingDot={false}
             slightText={[

@@ -13,7 +13,7 @@ export default function FollowCardanoSection() {
       <BoundaryBox>
         <Divider text={translate({id: 'home.follow.divider', message: 'Social'})} id="follow" white={true} />
         <div className={styles.container}>
-          <FollowCardano
+          <FollowCardano headingLevel={2}
             title={translate({id: 'home.follow.title', message: 'Get Involved'})}
             iconForegroundColor="#0136AE"
             iconBackgroundColor="#ffffff"

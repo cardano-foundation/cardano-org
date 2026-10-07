@@ -745,7 +745,7 @@ export default function LeaderboardPage() {
 
             {/* Top On-Chain Activity Section */}
             <Divider text="Top On-Chain Activity" id="top-apps" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards (labeled "Standard"). Bars are colored by category.`
               ]}
@@ -772,7 +772,7 @@ export default function LeaderboardPage() {
 
             {/* Hot Categories Section */}
             <Divider text="Hot Categories" id="categories" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 "Transaction distribution across app categories."
               ]}
@@ -801,7 +801,7 @@ export default function LeaderboardPage() {
 
             {/* Metadata Labels Section */}
             <Divider text="Metadata Labels" id="metadata-labels" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 "Transaction counts by metadata label. These represent on-chain activity identified through transaction metadata, not smart contract interactions."
               ]}
@@ -900,7 +900,7 @@ export default function LeaderboardPage() {
 
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title="Explore the full directory of Cardano applications, filter by category, and discover new projects."
               buttonLabel="Browse Apps Directory"
               buttonLink="/apps/"
