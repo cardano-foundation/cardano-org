@@ -10,6 +10,7 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import clsx from "clsx";
 
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 const useIsomorphicLayoutEffect = ExecutionEnvironment.canUseDOM
   ? useLayoutEffect
@@ -90,7 +91,7 @@ function HorizontalScroller({
     const firstItem = node.firstElementChild;
     const itemWidth = firstItem ? firstItem.getBoundingClientRect().width : 320;
     const gap = parseFloat(getComputedStyle(node).columnGap) || 16;
-    node.scrollBy({ left: direction * (itemWidth + gap), behavior: "smooth" });
+    node.scrollBy({ left: direction * (itemWidth + gap), behavior: scrollBehavior() });
     requestAnimationFrame(updateScrollState);
   };
 

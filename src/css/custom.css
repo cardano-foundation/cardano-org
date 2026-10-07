@@ -34,6 +34,9 @@
   --site-color-tooltip: #ffffff;
   --site-color-tooltip-background: #353738;
   --site-color-checkbox-checked-bg: rgba(0, 51, 173, 0.08);
+  /* On-chain activity figures and live dots on app cards, 5.3:1 on its own 12% tint */
+  --site-activity: #1b6e4e;
+  --site-activity-rgb: 27, 110, 78;
 
   /* ===================== Design tokens (Phase 1) =====================
    * New site vocabulary. Categories Infima already owns (brand ramp,
@@ -111,6 +114,8 @@
   --site-color-tooltip: #1c1e21;
   --site-color-tooltip-background: #f5f6f7;
   --site-color-checkbox-checked-bg: rgba(102, 132, 206, 0.18);
+  --site-activity: #4cc38a;
+  --site-activity-rgb: 76, 195, 138;
 
   /* Dark-mode token overrides */
   --site-success: #46b883;
@@ -148,6 +153,12 @@ html[data-theme='dark'] .header-discord-link:before {
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Global keyboard-focus baseline (Phase 1). Components may override. */

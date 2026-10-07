@@ -7,6 +7,7 @@ import {translate} from '@docusaurus/Translate';
 import companies from "@site/src/data/logosCompanies.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 function getCompanyId(company) {
   return company.id || company.imageName;
@@ -101,7 +102,7 @@ export default function CompaniesShowcase() {
   useEffect(() => {
     if (activeCompany && spotlightRef.current) {
       spotlightRef.current.scrollIntoView({
-        behavior: "smooth",
+        behavior: scrollBehavior(),
         block: "start",
       });
     }

@@ -151,3 +151,9 @@ html[data-theme='dark'] .modalOverlay {
     transition: none;
   }
 }
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .startButton {
+  background: var(--ifm-color-primary-darker);
+}

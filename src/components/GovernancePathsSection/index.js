@@ -7,6 +7,7 @@ import "react-tabs/style/react-tabs.css";
 import { translate } from "@docusaurus/Translate";
 import IconHero from "@site/src/components/Layout/IconHero";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 function getPathsData() {
   return [
@@ -78,7 +79,7 @@ export default function GovernancePathsSection() {
     // Select the section addressed by the URL hash on mount (client-only).
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedIndex(idx);
-    wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    wrapperRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
   }, []);
 
   return (
