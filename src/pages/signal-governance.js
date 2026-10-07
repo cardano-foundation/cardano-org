@@ -40,7 +40,7 @@ const interestId = "governance";
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <Divider text={translate({id: 'signalGovernance.divider.text', message: 'governance'})} />
+          <Divider headingLevel={2} text={translate({id: 'signalGovernance.divider.text', message: 'governance'})} />
           <MauticForm id={content.formId} />
         </BoundaryBox>
       </BackgroundWrapper>

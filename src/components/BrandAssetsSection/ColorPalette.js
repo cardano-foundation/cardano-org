@@ -61,7 +61,7 @@ function Swatch({ color }) {
 export default function ColorPalette() {
   return (
     <div>
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.colors.coreTitle", message: "Core Colors" })}
         id="core-colors"
       />
@@ -71,7 +71,7 @@ export default function ColorPalette() {
         ))}
       </div>
 
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.colors.secondaryTitle", message: "Secondary Colors" })}
         id="secondary-colors"
       />

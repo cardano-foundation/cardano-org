@@ -18,7 +18,7 @@ The [`<Divider>`](/docs/get-involved/components/divider) component adds a horizo
 | `text` | `string` | - | Label shown above the line. |
 | `id` | `string` | - | Anchor id, so the section can be linked as `/page#id`. |
 | `white` | `boolean` | `false` | White label and line for dark backgrounds. |
-| `headingLevel` | `number` | `6` | Heading level of the label, 1 to 6. The look stays the same. |
+| `headingLevel` | `number` | `0` | `0` renders the label as a small line above the section title, without heading semantics. Set `2` when the label itself names the section, for example above cards or an FAQ that have no section title of their own. The look stays the same. |
 | `className` | `string` | - | Extra class on the wrapper. |
 
 ## Simple Divider

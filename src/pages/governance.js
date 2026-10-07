@@ -80,7 +80,7 @@ function GovernanceRolesSection() {
 
   return (
     <>
-      <Divider text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
+      <Divider headingLevel={2} text={translate({id: 'governance.divider.howItWorks', message: 'How Cardano governance works'})} id="how-it-works" />
       <SpacerBox size="small" />
       <p className="black-text">
         <Translate
@@ -223,7 +223,7 @@ function ImpactTimeline() {
   const { withBaseUrl } = useBaseUrlUtils();
   return (
     <>
-      <Divider text={translate({id: 'governance.divider.impact', message: 'What governance has achieved'})} id="impact" />
+      <Divider headingLevel={2} text={translate({id: 'governance.divider.impact', message: 'What governance has achieved'})} id="impact" />
       <SpacerBox size="small" />
       <p className="black-text">
         {translate({id: 'governance.impact.intro', message: 'Cardano governance is not theoretical. Real decisions are being made by the community every epoch.'})}
@@ -262,7 +262,7 @@ const GOVERNANCE_TOOLS = Showcases
 function ToolsGrid() {
   return (
     <>
-      <Divider text={translate({id: 'governance.divider.tools', message: 'Governance tools'})} id="tools" />
+      <Divider headingLevel={2} text={translate({id: 'governance.divider.tools', message: 'Governance tools'})} id="tools" />
       <SpacerBox size="small" />
       <p className="black-text">
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
@@ -424,7 +424,7 @@ export default function Governance() {
         </BackgroundWrapper>
 
         <BoundaryBox>
-          <Divider text={translate({id: 'governance.divider.delegation', message: 'How to delegate'})} id="delegate-walkthrough" />
+          <Divider headingLevel={2} text={translate({id: 'governance.divider.delegation', message: 'How to delegate'})} id="delegate-walkthrough" />
           <SpacerBox size="small" />
           <DelegationFlow storageKey="cardano-governance-delegation-step" />
           <SpacerBox size="medium" />

@@ -9,7 +9,7 @@ export default function UseCasesGrid() {
     <section className={styles.useCasesSection}>
       {UseCaseCategories.map((category) => (
         <div key={category.id} className={styles.categoryBlock}>
-          <Divider text={category.title} id={category.id} />
+          <Divider headingLevel={2} text={category.title} id={category.id} />
           <div className={styles.grid}>
             {category.useCases.map((useCase) => (
               <UseCaseCard key={useCase.title} {...useCase} />

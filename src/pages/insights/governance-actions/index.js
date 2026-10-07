@@ -110,7 +110,7 @@ function PageContent() {
       />
 
       <BoundaryBox>
-        <Divider text={translate({id: 'insightsGovernance.divider.charts', message: 'Governance Action Charts'})} id="charts" />
+        <Divider headingLevel={2} text={translate({id: 'insightsGovernance.divider.charts', message: 'Governance Action Charts'})} id="charts" />
         <GovernanceCharts
           initialCategory={initialCategory}
           initialChartId={initialChartId}

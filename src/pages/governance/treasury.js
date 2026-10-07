@@ -155,7 +155,7 @@ export default function TreasuryPage() {
         </BoundaryBox>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <Divider text={translate({ id: "governance.treasury.donate.divider", message: "Donate to the treasury" })} id={DONATE_ANCHOR} />
+            <Divider headingLevel={2} text={translate({ id: "governance.treasury.donate.divider", message: "Donate to the treasury" })} id={DONATE_ANCHOR} />
             <ClientOnly minHeight={120}><DonateSection anchorId={DONATE_ANCHOR} /></ClientOnly>
             <SpacerBox size="small" />
           </BoundaryBox>

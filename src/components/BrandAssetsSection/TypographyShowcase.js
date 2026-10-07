@@ -12,7 +12,7 @@ const weights = [
 export default function TypographyShowcase() {
   return (
     <div>
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.typography.title", message: "Typography" })}
         id="typography"
       />

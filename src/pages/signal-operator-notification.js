@@ -40,7 +40,7 @@ const interestId = "operator";
 
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <Divider text={translate({id: 'signalOperator.divider.text', message: 'operator'})} />
+          <Divider headingLevel={2} text={translate({id: 'signalOperator.divider.text', message: 'operator'})} />
           <MauticForm id={content.formId} />
         </BoundaryBox>
       </BackgroundWrapper>
