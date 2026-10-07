@@ -66,6 +66,8 @@ Text on the left, a centered button on the right, from `src/pages/stake-pool-del
 | `rightButtonLink` | `string` | - | Target of the right button. |
 | `rightHeadingDot` | `boolean` | - | Adds the `headingDot` class to the right title. |
 | `rightButtonAlign` | `string` | - | `'center'` centers the right button. Any other value keeps the default left alignment. |
+| `headingLevel` | `number` | `1` | Heading level of the left and right titles, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 

@@ -52,6 +52,8 @@ quote={[
 | `buttonLabel` | `string` | - | Label of the primary button. The button only renders when both `buttonLabel` and `buttonLink` are set. |
 | `buttonLink` | `string` | - | Target of the button. |
 | `headingDot` | `boolean` | - | Adds the `headingDot` class to the title. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 

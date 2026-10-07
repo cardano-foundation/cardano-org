@@ -15,6 +15,14 @@ Most of the time you do not want to put a [`<BackgroundWrapper>`](/docs/get-invo
 
 :::
 
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `backgroundType` | `string` | - | One of the background styles below. Without it the section has no background. |
+| `children` | `node` | - | Section content. |
+| `className` | `string` | - | Extra class on the wrapper. Other props, such as `id`, are passed to the wrapper as well. |
+
 ## Background Styles
 
 You can select between different background types by passing the backgroundType to the component. 

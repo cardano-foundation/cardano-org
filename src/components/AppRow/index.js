@@ -11,6 +11,7 @@ import {
   formatTxCountCompact,
   getAppBlurb,
 } from "@site/src/utils/appStats";
+import { getHeading } from "@site/src/utils/heading";
 import AppIcon from "@site/src/components/AppIcon";
 
 import styles from "./styles.module.css";
@@ -22,17 +23,18 @@ const ACTIVITY_UNIT = translate({
 const NEW_LABEL = translate({ id: "apps.new", message: "NEW" });
 const PICK_LABEL = translate({ id: "apps.maintainerPick", message: "Maintainer picks" });
 
-function AppRow({ app, hideCategory = false }) {
+function AppRow({ app, hideCategory = false, headingLevel, className }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 4);
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
   const categoryDef = Categories[app.category];
   const recent = isRecent(app);
 
   return (
-    <Link to={`/apps/${app.slug}`} className={styles.row}>
+    <Link to={`/apps/${app.slug}`} className={clsx(styles.row, className)}>
       <AppIcon app={app} size="row" className={styles.icon} />
       <div className={styles.content}>
-        <h4 className={styles.title}>
+        <Tag className={clsx(styles.title, lookClassName)}>
           {app.title}
           {app.maintainerPick && (
             <span className={styles.pickStar} aria-label={PICK_LABEL}>
@@ -41,7 +43,7 @@ function AppRow({ app, hideCategory = false }) {
           )}
           {showActivity && <span className={clsx(styles.dot)} aria-hidden />}
           {recent && <span className={styles.newBadge}>{NEW_LABEL}</span>}
-        </h4>
+        </Tag>
         <p className={styles.description}>{getAppBlurb(app)}</p>
       </div>
       <div className={styles.metaRight}>
