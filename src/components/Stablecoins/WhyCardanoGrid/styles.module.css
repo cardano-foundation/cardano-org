@@ -24,7 +24,8 @@
 }
 
 [data-theme='dark'] .title {
-  color: var(--ifm-color-primary);
+  /* The dark-mode primary reaches only 2.5:1 on the emphasis-200 panel */
+  color: #b3c5f5;
 }
 
 .body {

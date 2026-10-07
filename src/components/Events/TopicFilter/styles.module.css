@@ -24,3 +24,9 @@
   border-color: var(--ifm-color-primary);
   color: #fff;
 }
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .active {
+  background-color: var(--ifm-color-primary-darker);
+}

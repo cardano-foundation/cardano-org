@@ -155,3 +155,9 @@
   background: rgba(102, 132, 206, 0.18);
   color: #b4c4ff;
 }
+
+/* Dark mode: the brand blue #3a5fd6 as text reaches only 2.8:1 on the dark
+   cards, a light tint of the same blue keeps 7:1 and more. */
+[data-theme="dark"] .tag {
+  color: #9db3ec;
+}

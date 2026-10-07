@@ -238,6 +238,9 @@
 }
 
 .categoryPill {
+  /* --pill-color is the category color, set by the component */
+  background-color: color-mix(in srgb, var(--pill-color) 15%, transparent);
+  color: color-mix(in srgb, var(--pill-color) 85%, black);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -366,7 +369,8 @@
 }
 
 [data-theme="dark"] .visitButton {
-  background: var(--ifm-color-primary);
+  /* The darker step keeps white text at 6.8:1, the plain primary only at 3.6:1 */
+  background: var(--ifm-color-primary-darker);
 }
 
 [data-theme="dark"] .visitButton:hover {
@@ -534,4 +538,10 @@
     flex: 1 1 auto;
     justify-content: center;
   }
+}
+
+/* Dark mode: the category color mixed with black is unreadable on the dark
+   tint, mixing it with white keeps the hue and contrast above 4.5:1. */
+[data-theme="dark"] .categoryPill {
+  color: color-mix(in srgb, var(--pill-color) 45%, white);
 }
