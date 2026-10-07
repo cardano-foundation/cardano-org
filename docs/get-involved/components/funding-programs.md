@@ -5,7 +5,7 @@ description: A persona switcher of program cards that open a details dialog, plu
 
 ## FundingPrograms
 
-The building blocks of the [grants and funding page](/grants-funding). `FundingPrograms` renders the persona switcher: one tab per group ("I have an idea", "I have a product", "I contribute to open source") above one grid of program cards, with the group's title and one-line intro. Clicking a card's Details button opens the shared [Modal](https://github.com/cardano-foundation/cardano-org/tree/staging/src/components/Modal) with the program's details. `FundingStats` renders the headline figures above it.
+The building blocks of the [grants and funding page](/grants-funding). `FundingPrograms` renders the persona switcher: one tab per group ("I have an idea", "I have a product", "I contribute to open source") above one grid of program cards, with the group's title and one-line intro. Clicking a card's Details button opens the shared [Modal](https://github.com/cardano-foundation/cardano-org/tree/staging/src/components/Layout/Modal) with the program's details. `FundingStats` renders the headline figures above it.
 
 All content comes from `src/data/funding.js`; see [Add a funding program](../add-funding-program.md) for the fields.
 

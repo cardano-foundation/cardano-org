@@ -8,7 +8,7 @@ import _debounce from "lodash/debounce";
 import clsx from "clsx";
 
 import IntentChips from "@site/src/components/showcase/IntentChips";
-import PageCTA from "@site/src/components/PageCTA";
+import PageCTA from "@site/src/components/Layout/PageCTA";
 import ShowcaseSort, {
   readSortOption,
   DEFAULT_SORT,

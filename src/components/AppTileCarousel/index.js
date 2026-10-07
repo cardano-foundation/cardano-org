@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { translate } from "@docusaurus/Translate";
 
 import AppTile from "@site/src/components/AppTile";
-import HorizontalScroller from "@site/src/components/HorizontalScroller";
+import HorizontalScroller from "@site/src/components/Layout/HorizontalScroller";
 
 // Thin wrapper over HorizontalScroller: renders a row of AppTiles at the
 // narrower /apps sizing. All scroll/arrow/dot behavior lives in HorizontalScroller.

@@ -4,7 +4,7 @@ import useIsBrowser from "@docusaurus/useIsBrowser";
 import { translate } from "@docusaurus/Translate";
 
 import AppRow from "@site/src/components/AppRow";
-import HorizontalScroller from "@site/src/components/HorizontalScroller";
+import HorizontalScroller from "@site/src/components/Layout/HorizontalScroller";
 import { Categories, Showcases } from "@site/src/data/apps";
 import { compareByTxDesc } from "@site/src/utils/appStats";
 import { shuffle } from "@site/src/utils/random";

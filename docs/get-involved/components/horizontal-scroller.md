@@ -3,7 +3,7 @@ title: Horizontal Scroller
 description: Lay out cards in a horizontal scroll-snap track with arrows on desktop and dots on mobile using the HorizontalScroller component on cardano.org.
 ---
 
-import HorizontalScroller from '@site/src/components/HorizontalScroller';
+import HorizontalScroller from '@site/src/components/Layout/HorizontalScroller';
 
 ## HorizontalScroller
 
@@ -16,7 +16,7 @@ It drives the app tile carousel and the category panels on `/apps`, and the feat
 From `src/components/Events/FeaturedEvents/index.js`:
 
 ```jsx
-import HorizontalScroller from '@site/src/components/HorizontalScroller';
+import HorizontalScroller from '@site/src/components/Layout/HorizontalScroller';
 import { translate } from '@docusaurus/Translate';
 
 <HorizontalScroller

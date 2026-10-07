@@ -149,7 +149,7 @@ No retries allowed, high passing score:
 Combine with `TwoColumnLayout` for sidebar placement:
 
 ```jsx
-import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
+import TwoColumnLayout from '@site/src/components/Layout/TwoColumnLayout';
 
 <TwoColumnLayout
   sidebar={
@@ -224,7 +224,7 @@ The [Common Scams](/common-scams) page uses this component in a sticky sidebar:
 
 ```jsx title="src/pages/common-scams.js"
 import QuizCard from '@site/src/components/QuizCard';
-import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
+import TwoColumnLayout from '@site/src/components/Layout/TwoColumnLayout';
 import scamsQuizDataEn from '@site/src/data/quiz-scams.json';
 import scamsQuizDataDe from '@site/src/data/quiz-scams.de.json';
 import {translate} from '@docusaurus/Translate';

@@ -4,8 +4,17 @@ import Link from "@docusaurus/Link";
 
 import styles from "./styles.module.css";
 
-// Reusable section-level CTA — title, description, one or two buttons.
-// `secondaryButton` is optional: if provided, a second button renders next to the primary.
+/**
+ * Full-width call to action band with a title, a description, and one or two buttons.
+ *
+ * @param {object} props
+ * @param {string} props.title Heading of the band.
+ * @param {string} props.description Text below the heading.
+ * @param {string} props.href Target of the main button.
+ * @param {string} props.buttonText Label of the main button.
+ * @param {{ href: string, label: string }} [props.secondaryButton] Optional outline button next to the main one.
+ * @param {"secondary"|"primary"} [props.variant="secondary"] Neutral band with grey buttons, or a band with brand blue buttons.
+ */
 export default function PageCTA({
   title,
   description,
