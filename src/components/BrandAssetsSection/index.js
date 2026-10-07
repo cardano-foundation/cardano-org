@@ -77,7 +77,7 @@ export default function BrandAssetsSection() {
     <div>
       {logoGroups.map((group) => (
         <div key={group.id}>
-          <Divider text={group.label} id={group.id} />
+          <Divider headingLevel={2} text={group.label} id={group.id} />
           <div className={styles.logoGrid}>
             {group.variants.map((v) => (
               <LogoCard key={v.file} variant={v} groupLabel={group.label} />
@@ -86,7 +86,7 @@ export default function BrandAssetsSection() {
         </div>
       ))}
 
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.logos.download", message: "Download" })}
         id="download"
       />

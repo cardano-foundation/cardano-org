@@ -239,7 +239,7 @@ export default function Events() {
       <main className="events-main">
         {featuredEvents.length > 0 && !isFiltering && (
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={translate({
                 id: "events.featured.title",
                 message: "Featured upcoming events",
@@ -252,7 +252,7 @@ export default function Events() {
 
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={
                 view === "calendar"
                   ? translate({ id: "events.divider.calendar", message: "Events Calendar" })
@@ -305,7 +305,7 @@ export default function Events() {
 
         {recapEvents.length > 0 && (
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={translate({
                 id: "events.recaps.title",
                 message: "Recent event recaps",
@@ -317,7 +317,7 @@ export default function Events() {
         )}
 
         <BoundaryBox>
-          <Divider
+          <Divider headingLevel={2}
             text={translate({
               id: "events.divider.discover",
               message: "Discover Cardano Events Worldwide",

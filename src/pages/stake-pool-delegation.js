@@ -168,7 +168,7 @@ export default function StakePoolDelegationPage() {
             </BrowserOnly>
             <SpacerBox size="medium" />
 
-            <Divider text={translate({ id: "stakePoolDelegation.how.divider", message: "How delegation works" })} id="how-it-works" />
+            <Divider headingLevel={2} text={translate({ id: "stakePoolDelegation.how.divider", message: "How delegation works" })} id="how-it-works" />
             <ol className={styles.steps}>
               {STEPS.map((step) => (
                 <li key={step.label}><strong>{step.label}</strong> {step.text}</li>
@@ -190,7 +190,7 @@ export default function StakePoolDelegationPage() {
             </p>
             <SpacerBox size="medium" />
 
-            <Divider text={translate({ id: "stakePoolDelegation.alt.heading", message: "Prefer another tool?" })} id="alternatives" />
+            <Divider headingLevel={2} text={translate({ id: "stakePoolDelegation.alt.heading", message: "Prefer another tool?" })} id="alternatives" />
             <p className="black-text">
               {translate({ id: "stakePoolDelegation.alt.introDelegate", message: "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page." })}
             </p>

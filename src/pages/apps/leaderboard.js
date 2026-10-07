@@ -744,7 +744,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="small" />
 
             {/* Top On-Chain Activity Section */}
-            <Divider text="Top On-Chain Activity" id="top-apps" />
+            <Divider headingLevel={2} text="Top On-Chain Activity" id="top-apps" />
             <TitleWithText headingLevel={2}
               description={[
                 `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards (labeled "Standard"). Bars are colored by category.`
@@ -771,7 +771,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Hot Categories Section */}
-            <Divider text="Hot Categories" id="categories" />
+            <Divider headingLevel={2} text="Hot Categories" id="categories" />
             <TitleWithText headingLevel={2}
               description={[
                 "Transaction distribution across app categories."
@@ -800,7 +800,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Metadata Labels Section */}
-            <Divider text="Metadata Labels" id="metadata-labels" />
+            <Divider headingLevel={2} text="Metadata Labels" id="metadata-labels" />
             <TitleWithText headingLevel={2}
               description={[
                 "Transaction counts by metadata label. These represent on-chain activity identified through transaction metadata, not smart contract interactions."
@@ -849,7 +849,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Coverage Stats & CTA */}
-            <Divider text="Transaction Tracking" id="tracking" />
+            <Divider headingLevel={2} text="Transaction Tracking" id="tracking" />
 
             <div className={styles.coverageSection}>
               <div className={styles.coverageStats}>

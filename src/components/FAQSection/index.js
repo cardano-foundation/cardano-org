@@ -19,7 +19,7 @@ export default function FAQSection({ jsonFileName, data }) {
 
   return (
     <div>
-      <Divider text="FAQ" id="faq" />
+      <Divider headingLevel={2} text="FAQ" id="faq" />
       {faqList.map((faq, index) => (
         <div
           key={index}

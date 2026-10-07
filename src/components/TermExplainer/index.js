@@ -21,7 +21,7 @@ export default function TermExplainer({ category }) {
 
   return (
     <div className={styles.sectionWrap}>
-      <Divider text={translate({id: 'termExplainer.divider', message: '{category} Terms you should know'}).replace('{category}', category)} white={true} />
+      <Divider headingLevel={2} text={translate({id: 'termExplainer.divider', message: '{category} Terms you should know'}).replace('{category}', category)} white={true} />
       <div className={styles.flexBox}>
         {terms.map((term, index) => (
           <div key={index} className={index % 2 === 0 ? styles.leftTextWrap : styles.rightTextWrap}>

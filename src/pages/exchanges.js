@@ -81,7 +81,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={translate({
                 id: "exchanges.movingParts.divider",
                 message: "The moving parts",

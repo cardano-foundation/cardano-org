@@ -363,7 +363,17 @@ h6 {
 
 /* Keep the look of a heading level on a different element. Used through
    src/utils/heading.js when a component's headingLevel differs from its
-   default, so the document outline can change without changing the design. */
+   default, so the document outline can change without changing the design.
+   headingLevel 0 renders a div, which needs the shared heading typography too. */
+.heading-look-h1,
+.heading-look-h2,
+.heading-look-h3,
+.heading-look-h4,
+.heading-look-h6 {
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+}
+
 .heading-look-h1 {
   font-size: var(--ifm-h1-font-size);
   line-height: 1.1;

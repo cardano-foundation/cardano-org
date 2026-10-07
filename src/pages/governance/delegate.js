@@ -73,7 +73,7 @@ export default function DelegatePage() {
           </BrowserOnly>
 
           <SpacerBox size="medium" />
-          <Divider
+          <Divider headingLevel={2}
             text={translate({ id: "governance.delegate.alt.heading", message: "Prefer another tool?" })}
             id="alternatives"
           />

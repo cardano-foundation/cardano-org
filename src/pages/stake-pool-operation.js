@@ -43,7 +43,7 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"solidGrey"}>
           <BoundaryBox>
-            <Divider text={translate({ id: 'stakePoolOperation.whatIsStaking.divider', message: 'What is staking?' })} />
+            <Divider headingLevel={2} text={translate({ id: 'stakePoolOperation.whatIsStaking.divider', message: 'What is staking?' })} />
             {/* TwoColumnBox renders plain strings, so the glossary links are parsed here */}
             <TwoColumnBox
               leftText={parseMarkdownLikeText([
