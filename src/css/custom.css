@@ -440,7 +440,7 @@ img {
 
 .Collapsible__trigger {
   background: transparent;
-  color: var(--ifm-base-color);
+  color: inherit; /* --ifm-base-color never existed, so the trigger always inherited its color */
   font-size: 1rem;
   font-weight: bold;
   text-align: left;

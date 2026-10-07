@@ -34,7 +34,7 @@ export default function FeaturedTitleWithText({
           ) : (
             <p className="black-text">{parseMarkdownLikeText(description)}</p>
           )}
-          <h2 className={clsx("red-text", styles.quote)}>{quote}</h2>
+          {quote && <h2 className={clsx("red-text", styles.quote)}>{quote}</h2>}
           {buttonLabel && buttonLink && (
             <Link className="button button--primary button--lg" to={buttonLink}>
               {buttonLabel}

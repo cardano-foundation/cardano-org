@@ -985,7 +985,7 @@ function PageContent() {
         </div>
       )}
 
-      <InsightsFooter lastUpdated="Dynamic" />
+      <InsightsFooter />
     </>
   );
 }

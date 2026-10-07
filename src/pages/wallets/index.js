@@ -145,7 +145,7 @@ function WalletFinderHeader() {
     <SiteHero
       title={TITLE}
       description={DESCRIPTION}
-      bannerType="wallets"
+      bannerType="starburst"
     />
   );
 }

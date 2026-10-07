@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
 import { getTermsForTermExplainer } from "@site/src/data/termsForTermExplainer";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import { shuffle } from "@site/src/utils/random";
 
 export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
@@ -11,7 +12,7 @@ export default function TermExplainer({ category }) {
   useEffect(() => {
     const categoryTerms = getTermsForTermExplainer()[category];
     if (categoryTerms) {
-      const randomTerms = categoryTerms.sort(() => 0.5 - Math.random()).slice(0, 2);
+      const randomTerms = shuffle(categoryTerms).slice(0, 2);
       // Pick random terms on the client only to avoid an SSR hydration mismatch.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setTerms(randomTerms);
