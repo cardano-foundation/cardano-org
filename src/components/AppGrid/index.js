@@ -4,6 +4,7 @@ import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appS
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
 import styles from "./styles.module.css";
+import { translate } from "@docusaurus/Translate";
 
 function AppCard({ app, stats, appRank, ctaText }) {
   const hasStats = stats && stats.txCount > 0;
@@ -44,8 +45,8 @@ function AppCard({ app, stats, appRank, ctaText }) {
             <path d="M3 13h2v8H3v-8zm4-6h2v14H7V7zm4-4h2v18h-2V3zm4 9h2v9h-2v-9zm4-5h2v14h-2V7z"/>
           </svg>
           <div className={styles.statsText}>
-            <span className={styles.statsLabel}>Last 30 days</span>
-            <span className={styles.statsValue}>{formatNumber(stats.txCount)} tx</span>
+            <span className={styles.statsLabel}>{translate({ id: "apps.grid.last30Days", message: "Last 30 days" })}</span>
+            <span className={styles.statsValue}>{translate({ id: "apps.grid.txCount", message: "{count} tx", description: "Transactions in the last 30 days, abbreviated" }, { count: formatNumber(stats.txCount) })}</span>
           </div>
           {showRank && (
             <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
@@ -73,9 +74,9 @@ export default function AppGrid({
   showRank = true,
   showStats = true,
   gridTitle = null,
-  ctaText = "Visit",
+  ctaText = translate({ id: "apps.grid.visit", message: "Visit" }),
   moreLink = null,
-  moreTitle = "More Apps",
+  moreTitle = translate({ id: "apps.grid.moreApps", message: "More Apps" }),
   excludeSlug = null,
   prioritizeMaintainerPicks = false,
 }) {

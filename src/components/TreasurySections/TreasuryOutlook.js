@@ -61,7 +61,7 @@ export default function TreasuryOutlook() {
             message: "The projection uses the median rate at which the reserves shrank per epoch over the last 12 months ({rate}%), the middle value of those epochs. That rate is lower than ρ ({rho}%) because rewards that are not paid out return to the reserves. It assumes that this rate, the protocol parameters and transaction fees stay as they are.",
           },
           {
-            rate: model?.rate == null ? "n/a" : (model.rate * 100).toFixed(3),
+            rate: model?.rate == null ? translate({ id: "governance.treasury.figure.notAvailable", message: "n/a", description: "Shown when a figure cannot be computed" }) : (model.rate * 100).toFixed(3),
             rho: (TREASURY_PARAMS.rho * 100).toFixed(1),
           }
         )}

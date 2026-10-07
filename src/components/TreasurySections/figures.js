@@ -9,7 +9,9 @@ import styles from "./styles.module.css";
 // cannot be computed.
 function display(loading, value, format) {
   if (loading) return "...";
-  return value == null ? "n/a" : format(value);
+  return value == null
+    ? translate({ id: "governance.treasury.figure.notAvailable", message: "n/a", description: "Shown when a figure cannot be computed" })
+    : format(value);
 }
 
 // The count-up animates the magnitude, a signed figure adds "+" or "-" in front.

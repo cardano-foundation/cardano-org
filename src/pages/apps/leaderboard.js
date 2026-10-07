@@ -20,6 +20,7 @@ import appStats from "@site/src/data/tx-stats.json";
 import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
 import styles from "./leaderboard.module.css";
+import { translate } from "@docusaurus/Translate";
 
 const CIP20_LABEL = 674;
 
@@ -901,8 +902,8 @@ export default function LeaderboardPage() {
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
             <CtaOneColumn headingLevel={2}
-              title="Explore the full directory of Cardano applications, filter by category, and discover new projects."
-              buttonLabel="Browse Apps Directory"
+              title={translate({ id: "leaderboard.cta.title", message: "Explore the full directory of Cardano applications, filter by category, and discover new projects." })}
+              buttonLabel={translate({ id: "leaderboard.cta.button", message: "Browse Apps Directory" })}
               buttonLink="/apps/"
             />
           </BoundaryBox>

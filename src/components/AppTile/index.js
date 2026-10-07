@@ -63,7 +63,7 @@ export default memo(AppTile);
 
 export function StarBadge() {
   return (
-    <span className={clsx(styles.starBadge)} aria-label="Maintainer pick">
+    <span className={clsx(styles.starBadge)} aria-label={translate({ id: "apps.detail.maintainerPick", message: "Maintainer pick" })}>
       ★
     </span>
   );
@@ -71,7 +71,7 @@ export function StarBadge() {
 
 export function RankBadge({ rank }) {
   return (
-    <span className={clsx(styles.rankBadge)} aria-label={`Rank ${rank}`}>
+    <span className={clsx(styles.rankBadge)} aria-label={translate({ id: "apps.rankBadge", message: "Rank {rank}" }, { rank })}>
       #{rank}
     </span>
   );

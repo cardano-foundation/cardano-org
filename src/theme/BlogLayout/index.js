@@ -6,6 +6,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
+import { translate } from '@docusaurus/Translate';
 
 // Post, tag and author pages render their own h1 below the hero, so the hero
 // is only the page title on the main list and the archive.
@@ -24,8 +25,8 @@ export default function BlogLayout(props) {
       {/* Blog posts set og:type "article" through the theme, so leave it out here */}
       <OpenGraphInfo pageName="cardano-news" type={null} />
       <SiteHero
-            title='Cardano News'
-            description='Explore the stories below for curated news, stories, and inspiration from within the Cardano ecosystem.'
+            title={translate({ id: 'blog.hero.title', message: 'Cardano News' })}
+            description={translate({ id: 'blog.hero.description', message: 'Explore the stories below for curated news, stories, and inspiration from within the Cardano ecosystem.' })}
             bannerType ='waves'
             headingLevel={heroIsPageTitle ? 1 : 0}
           />

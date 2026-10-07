@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import { getHeading } from "@site/src/utils/heading";
+import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import {
   FaXTwitter,
@@ -15,46 +16,47 @@ import {
 } from "react-icons/fa6";
 
 // Overview: https://react-icons.github.io/react-icons/, for consistency stick to font awesome 6 (fa6)
-const socialLinks = [
+// Built per render so translate() runs in the active locale
+const getSocialLinks = () => [
   {
     icon: <FaXTwitter />,
     url: "https://twitter.com/Cardano",
-    label: "Cardano on X",
+    label: translate({ id: "followCardano.label.x", message: "Cardano on X" }),
   },
   {
     icon: <FaRedditAlien />,
     url: "https://www.reddit.com/r/cardano/",
-    label: "Cardano on Reddit",
+    label: translate({ id: "followCardano.label.reddit", message: "Cardano on Reddit" }),
   },
   {
     icon: <FaDiscourse />,
     url: "https://forum.cardano.org",
-    label: "Cardano Forum",
+    label: translate({ id: "followCardano.label.forum", message: "Cardano Forum" }),
   },
   {
     icon: <FaFacebookF />,
     url: "https://www.facebook.com/groups/CardanoCommunity",
-    label: "Cardano on Facebook",
+    label: translate({ id: "followCardano.label.facebook", message: "Cardano on Facebook" }),
   },
   {
     icon: <FaMeetup />,
     url: "https://www.meetup.com/pro/cardano/",
-    label: "Cardano Meetup",
+    label: translate({ id: "followCardano.label.meetup", message: "Cardano Meetup" }),
   },
   {
     icon: <FaTelegram />,
     url: "https://t.me/Cardano",
-    label: "Cardano on Telegram",
+    label: translate({ id: "followCardano.label.telegram", message: "Cardano on Telegram" }),
   },
   {
     icon: <FaStackExchange />,
     url: "https://cardano.stackexchange.com/",
-    label: "Cardano StackExchange",
+    label: translate({ id: "followCardano.label.stackexchange", message: "Cardano StackExchange" }),
   },
   {
     icon: <FaLinkedin />,
     url: "https://www.linkedin.com/company/cardano-community",
-    label: "Cardano on LinkedIn",
+    label: translate({ id: "followCardano.label.linkedin", message: "Cardano on LinkedIn" }),
   },
 ];
 
@@ -81,7 +83,7 @@ export default function FollowCardano({
       <div className={styles.taglineContainer}>
         <Tag className={lookClassName}>{title}</Tag>
         <p className="social__icons">
-          {socialLinks.map((social, index) => (
+          {getSocialLinks().map((social, index) => (
             <Link key={index} href={social.url} aria-label={social.label}>
               <span
                 className={styles.iconWrapper}
