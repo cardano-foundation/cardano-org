@@ -123,12 +123,12 @@ html[data-theme="dark"] .logoTile {
 
 .statusAmber {
   background: #fff2e0;
-  color: #b7861f;
+  color: #94600a;
 }
 
 .statusGrey {
   background: #ededf0;
-  color: #8c949e;
+  color: #5c636b;
 }
 
 html[data-theme="dark"] .statusBlue {
@@ -171,4 +171,12 @@ html[data-theme="dark"] .statusGrey {
   font-size: 12px;
   font-weight: 600;
   color: var(--ifm-color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linkCard,
+  .linkCard:hover {
+    transition: none;
+    transform: none;
+  }
 }

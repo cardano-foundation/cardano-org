@@ -97,8 +97,8 @@
 }
 
 .activity {
-  background: rgba(34, 134, 96, 0.12);
-  color: rgb(34, 134, 96);
+  background: rgba(var(--site-activity-rgb), 0.12);
+  color: var(--site-activity);
   font-weight: 600;
   letter-spacing: -0.01em;
 }

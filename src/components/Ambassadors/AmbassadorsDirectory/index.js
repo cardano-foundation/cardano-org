@@ -17,6 +17,7 @@ import {
   parseAmbassadorHash,
 } from "@site/src/utils/ambassadorSlug";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 const PAGE_SIZE = 24;
 const HIGHLIGHT_MS = 1500;
@@ -65,7 +66,7 @@ export default function AmbassadorsDirectory() {
       setHighlightSlug(slug);
       window.requestAnimationFrame(() => {
         const el = document.getElementById(ambassadorElementId(slug));
-        if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+        if (el) el.scrollIntoView({ block: "start", behavior: scrollBehavior() });
       });
       window.setTimeout(() => setHighlightSlug(null), HIGHLIGHT_MS);
     }

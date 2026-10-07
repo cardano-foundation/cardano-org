@@ -6,6 +6,7 @@ import { translate } from "@docusaurus/Translate";
 import AccountabilityRole from "@site/src/components/AccountabilityRole";
 import { getAccountabilityRoles } from "@site/src/data/governanceAccountability";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 const STORAGE_KEY = "cardano-accountability-role";
 
@@ -36,7 +37,7 @@ export default function AccountabilityRoles() {
       setSelectedIndex(idx);
       persist(idx);
       if (scroll) {
-        wrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        wrapperRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
       }
       return true;
     };

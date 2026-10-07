@@ -13,10 +13,16 @@ export function sortBy(array, getter) {
   return sortedArray;
 }
 
+// "smooth" unless the visitor asked the system for reduced motion
+export function scrollBehavior() {
+  if (typeof window === "undefined" || !window.matchMedia) return "smooth";
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+}
+
 export function scrollToElement(el, offset = -100) {
   if (!el) return;
   const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
-  window.scrollTo({ top, behavior: "smooth" });
+  window.scrollTo({ top, behavior: scrollBehavior() });
 }
 
 export function toggleListItem(list, item) {

@@ -90,7 +90,7 @@ a.card:hover {
   line-height: 1.25;
   margin: 0;
   hyphens: auto; /* long compound words must not widen narrow phones */
-  color: var(--role-accent-solid);
+  color: var(--role-accent-text, var(--role-accent-solid));
 }
 
 .description {
@@ -102,7 +102,7 @@ a.card:hover {
 
 .accentBlue   { --role-accent: 0 51 173;   --role-accent-solid: #0033AD; }
 .accentViolet { --role-accent: 91 77 240;  --role-accent-solid: #5B4DF0; }
-.accentTeal   { --role-accent: 0 163 163;  --role-accent-solid: #00A3A3; }
+.accentTeal   { --role-accent: 0 163 163;  --role-accent-solid: #00A3A3; --role-accent-text: #007a7a; }
 
 [data-theme='dark'] .card {
   --role-accent-tile-alpha: 0.18;
@@ -118,7 +118,7 @@ a.card:hover {
 
 [data-theme='dark'] .accentBlue   { --role-accent: 143 177 255; --role-accent-solid: #8FB1FF; }
 [data-theme='dark'] .accentViolet { --role-accent: 146 134 255; --role-accent-solid: #9286FF; }
-[data-theme='dark'] .accentTeal   { --role-accent: 80 207 207;  --role-accent-solid: #50CFCF; }
+[data-theme='dark'] .accentTeal   { --role-accent: 80 207 207;  --role-accent-solid: #50CFCF; --role-accent-text: #50CFCF; }
 
 @media (max-width: 768px) {
   .card {
@@ -135,5 +135,13 @@ a.card:hover {
     width: 52px;
     height: 52px;
     font-size: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.card,
+  a.card:hover {
+    transition: none;
+    transform: none;
   }
 }

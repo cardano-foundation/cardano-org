@@ -19,6 +19,7 @@ import { jsonLdString } from "@site/src/utils/jsonLd";
 import { safeUrl } from "@site/src/utils/safeUrl";
 
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -122,13 +123,13 @@ function PreviewCarousel({ urls }) {
   const scrollTo = (idx) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollTo({ left: idx * getStep(), behavior: "smooth" });
+    el.scrollTo({ left: idx * getStep(), behavior: scrollBehavior() });
   };
 
   const scrollBy = (dir) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+    el.scrollBy({ left: dir * getStep(), behavior: scrollBehavior() });
   };
 
   const onPointerDown = (e) => {
@@ -165,7 +166,7 @@ function PreviewCarousel({ urls }) {
     if (drag && drag.moved) {
       const step = getStep();
       const idx = Math.round(el.scrollLeft / step);
-      el.scrollTo({ left: idx * step, behavior: "smooth" });
+      el.scrollTo({ left: idx * step, behavior: scrollBehavior() });
     }
   };
 

@@ -20,6 +20,7 @@ import SiteHero from '@site/src/components/Layout/SiteHero';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './glossary.module.css';
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const POPULAR_PILL_SLUGS = ['eutxo', 'stake-pool', 'drep', 'governance-action', 'smart-contract', 'treasury'];
@@ -540,7 +541,7 @@ export default function GlossaryIndex() {
   const onLetterClick = (letter) => {
     if (typeof document === 'undefined') return;
     const el = document.getElementById(`glossary-letter-${letter}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) el.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
   };
 
   const pageTitle = translate({
@@ -578,7 +579,7 @@ export default function GlossaryIndex() {
           onSubmitQuery={() => {
             if (typeof document === 'undefined') return;
             const el = document.getElementById('glossary-results');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (el) el.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
           }}
           glossaryBaseUrl={glossaryBaseUrl}
         />
