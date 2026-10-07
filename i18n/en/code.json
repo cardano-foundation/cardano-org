@@ -5918,6 +5918,9 @@
   "insights.footer.textStatic": {
     "message": "Last updated: {lastUpdated}."
   },
+  "insights.footer.textLive": {
+    "message": "Charts are using real time data."
+  },
   "whatIsAWallet.meta.title": {
     "message": "What is a Cardano Wallet? Types, Keys, and Security Explained",
     "description": "Meta title for the wallet explainer page"

@@ -198,7 +198,7 @@ function HomepageHeader() {
     <SiteHero
       title={translate({ id: "constitution.hero.title", message: "The Cardano Constitution" })}
       description={translate({ id: "constitution.hero.description", message: "Discover the Cardano Constitution: the governance framework of the Cardano blockchain." })}
-      bannerType="zoom"
+      bannerType="starburst"
     />
   );
 }

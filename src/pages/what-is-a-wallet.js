@@ -35,7 +35,7 @@ export default function WhatIsAWallet() {
           message:
             "A wallet is your key to Cardano. Understand how wallets work, the different types, and how to keep your ada safe.",
         })}
-        bannerType="wallets"
+        bannerType="starburst"
       />
       <main>
         <BackgroundWrapper backgroundType="adaLight">

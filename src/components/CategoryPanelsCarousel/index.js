@@ -1,46 +1,60 @@
 import React, { memo } from "react";
 import Link from "@docusaurus/Link";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 import { translate } from "@docusaurus/Translate";
 
 import AppRow from "@site/src/components/AppRow";
 import HorizontalScroller from "@site/src/components/HorizontalScroller";
 import { Categories, Showcases } from "@site/src/data/apps";
 import { compareByTxDesc } from "@site/src/utils/appStats";
+import { shuffle } from "@site/src/utils/random";
 
 import styles from "./styles.module.css";
 
-function selectPanelApps(category, limit) {
-  // Three-tier sort: tracked tx desc, then maintainer picks, then random.
-  // Random tiebreak gives non-tracked categories (Wallet, Explorer, etc.) some
-  // freshness on each session start. Result is cached by PANEL_APPS_CACHE so the
-  // order stays stable until the next full page load.
+// Random rank per app, drawn once per page load in the browser. Ties in the
+// sort below fall back to this rank, which gives non-tracked categories
+// (Wallet, Explorer, etc.) some freshness on each session start.
+let randomRank = null;
+function getRandomRank() {
+  if (!randomRank) {
+    randomRank = new Map(shuffle(Showcases.map((app) => app.slug)).map((slug, i) => [slug, i]));
+  }
+  return randomRank;
+}
+
+function selectPanelApps(category, limit, randomize) {
+  // Three-tier sort: tracked tx desc, then maintainer picks, then a tiebreak.
+  // The static build and the hydration render use the slug as tiebreak, so both
+  // produce the same markup. The random tiebreak only applies after hydration.
+  const rank = randomize ? getRandomRank() : null;
   return Showcases
     .filter((app) => app.category === category)
     .sort((a, b) => {
       const txDiff = compareByTxDesc(a, b);
       if (txDiff !== 0) return txDiff;
       if (a.maintainerPick !== b.maintainerPick) return a.maintainerPick ? -1 : 1;
-      return Math.random() - 0.5;
+      return rank ? rank.get(a.slug) - rank.get(b.slug) : a.slug.localeCompare(b.slug);
     })
     .slice(0, limit);
 }
 
-// Showcases is static at module scope; precompute each panel's apps once at load
-// time to avoid re-running the filter+sort on every parent re-render (every scroll
-// event triggers one). Keyed by `${category}:${limit}`.
+// Showcases is static at module scope, so each panel's apps are computed once
+// to avoid re-running the filter+sort on every parent re-render (every scroll
+// event triggers one). Keyed by `${category}:${limit}:${randomize}`.
 const PANEL_APPS_CACHE = new Map();
-function getPanelApps(category, limit) {
-  const key = `${category}:${limit}`;
+function getPanelApps(category, limit, randomize) {
+  const key = `${category}:${limit}:${randomize}`;
   if (!PANEL_APPS_CACHE.has(key)) {
-    PANEL_APPS_CACHE.set(key, selectPanelApps(category, limit));
+    PANEL_APPS_CACHE.set(key, selectPanelApps(category, limit, randomize));
   }
   return PANEL_APPS_CACHE.get(key);
 }
 
 const CategoryPanel = memo(function CategoryPanel({ category, limit }) {
+  const isBrowser = useIsBrowser();
   const def = Categories[category];
   if (!def) return null;
-  const apps = getPanelApps(category, limit);
+  const apps = getPanelApps(category, limit, isBrowser);
   if (apps.length === 0) return null;
   return (
     <article className={styles.panel}>

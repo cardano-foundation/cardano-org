@@ -7,17 +7,8 @@ import { computeTier } from '@site/src/utils/quizProgress.mjs';
 import { getTierLabels } from '@site/src/data/quiz/tierLabels';
 import QuizShare from '../QuizShare';
 import { renderBadgePng } from '../QuizShare/renderBadge';
+import { shuffle } from '@site/src/utils/random';
 import styles from './styles.module.css';
-
-// Unbiased Fisher-Yates shuffle (replaces the biased sort-by-random trick)
-const shuffle = (arr) => {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-};
 
 const shuffleOptions = (question) => {
   const withIndex = question.options.map((option, index) => ({
@@ -37,6 +28,13 @@ const sampleQuestions = (quizData, questionCount) => {
   return shuffle(quizData.questions)
     .slice(0, Math.min(questionCount, quizData.questions.length))
     .map(shuffleOptions);
+};
+
+// Deterministic selection for the first render, so the static build and the
+// browser render the same markup. The random sample replaces it after mount.
+const firstQuestions = (quizData, questionCount) => {
+  if (!quizData || !quizData.questions) return [];
+  return quizData.questions.slice(0, Math.min(questionCount, quizData.questions.length));
 };
 
 const tierLabel = (tier) => getTierLabels()[tier];
@@ -67,11 +65,18 @@ const Quiz = ({
   const [score, setScore] = useState(0);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
   const [answerResults, setAnswerResults] = useState([]);
-  const [questions, setQuestions] = useState(() => sampleQuestions(quizData, questionCount));
+  const [questions, setQuestions] = useState(() => firstQuestions(quizData, questionCount));
   // 'normal' records progress in hub mode, 'practice' re-runs missed questions unscored.
   // After each practice run the remaining misses are recomputed, so the loop
   // continues until every missed question has been answered correctly once.
   const [mode, setMode] = useState('normal');
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- randomize only after hydration, see firstQuestions
+    setQuestions(sampleQuestions(quizData, questionCount));
+    // Runs once on mount. A later prop change must not reshuffle a quiz in progress.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [missedQuestions, setMissedQuestions] = useState([]);
 
   const isHubMode = typeof onRecord === 'function';

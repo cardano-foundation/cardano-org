@@ -65,7 +65,7 @@ export default function SiteHero({ title, description, bannerType, children }) {
           <div className={styles.taglineContainer}>
           {
               bannerType === "ouroboros"
-                ? <h1 className="hero__title"><OuroborosLogo className={styles.ouroborosLogo} /></h1>
+                ? <h1 className="hero__title" aria-label={title}><OuroborosLogo className={styles.ouroborosLogo} /></h1>
                 : <h1 className="hero__title">{title}</h1>
             }
             <p className={clsx("hero__subtitle", styles.subtitle)}>

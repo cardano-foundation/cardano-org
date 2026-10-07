@@ -11,7 +11,8 @@ export default function BlogLayout(props) {
   const hasSidebar = sidebar && sidebar.items.length > 0;
   return (
     <Layout {...layoutProps}>
-      <OpenGraphInfo pageName="cardano-news" />
+      {/* Blog posts set og:type "article" through the theme, so leave it out here */}
+      <OpenGraphInfo pageName="cardano-news" type={null} />
       <SiteHero
             title='Cardano News'
             description='Explore the stories below for curated news, stories, and inspiration from within the Cardano ecosystem.'

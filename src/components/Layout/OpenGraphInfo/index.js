@@ -10,8 +10,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // Or with image and title and description <OpenGraphInfo pageName="imagename" title="Your title" description="The description.">
 // Pages without a dedicated image can omit pageName and get the site-wide default image.
 // Pass `image` (a site path like "/img/insights/supply.png") to use an image outside the "og" folder.
+// Pass `type` to override og:type, which defaults to "website". Pass `type={null}` to leave it to the theme.
 
-const OpenGraphInfo = ({ pageName = 'default', image, title, description }) => {
+const OpenGraphInfo = ({ pageName = 'default', image, title, description, type = 'website' }) => {
   const { siteConfig } = useDocusaurusContext();
   const { pathname } = useLocation();
   const siteUrl = siteConfig.url.replace(/\/$/, '');
@@ -21,7 +22,7 @@ const OpenGraphInfo = ({ pageName = 'default', image, title, description }) => {
   return (
     <Head>
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:type" content="website" />
+      {type && <meta property="og:type" content={type} />}
       <meta property="og:site_name" content={siteConfig.title} />
       <meta property="og:url" content={canonicalUrl} />
       <meta name="twitter:card" content="summary_large_image" />
