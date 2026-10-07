@@ -658,7 +658,7 @@ function PageContent() {
         <meta name="description" content={meta.pageDescription} />
       </Head>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           translate({id: 'insightsSupplySummary.intro.description', message: '**Explore historical trends in Cardano ada supply distribution** across reserves, rewards, treasury, and deposits. Select an epoch range to analyze how these key metrics evolved over time.'})
         ]}

@@ -31,7 +31,7 @@ export default function Home() {
       <HomepageHeader />
       <BoundaryBox>
           <Divider text={translate({id: 'newsletter.divider.text', message: 'Stay informed'})} />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
               title={translate({id: 'newsletter.content.title', message: 'Cardano Community Digest'})}
               description={[
                 translate({id: 'newsletter.content.description', message: 'Get your bi-weekly dose of the latest hot topics, development updates, a list of upcoming meetups, delegation strategy updates, what our Cardano Ambassadors are up to, and much more.'})

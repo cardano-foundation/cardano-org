@@ -35,12 +35,12 @@ export default function Home() {
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
             <Divider text={translate({id: 'ouroboros.divider.vision', message: 'Vision'})} />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'ouroboros.vision.title', message: 'The Blockchain Revolution Started With Bitcoin. It Continues Now With Ouroboros:'})}
               description={translate({id: 'ouroboros.vision.description', message: 'A proof-of-stake protocol that provides and improves the security guarantees of proof-of-work at a fraction of the energy cost. Ouroboros applies cryptography, combinatorics, and mathematical game theory to guarantee the protocol\'s integrity, longevity, and performance, and that of the distributed networks that depend upon it.'})}
               headingDot={true}
             />
-        <FeaturedTitleWithText
+        <FeaturedTitleWithText headingLevel={2}
             title={translate({id: 'ouroboros.whatIs.title', message: 'What Is Ouroboros?'})}
             description={[
               translate({id: 'ouroboros.whatIs.description1', message: 'Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. Ouroboros combines unique technology and mathematically-verified mechanisms - which, in turn, combine behavioral psychology and economic philosophy - to ensure the security and sustainability of the blockchains that depend upon it. The result is a protocol with proven security guarantees able to facilitate the propagation of global, permissionless networks with minimal energy requirements - of which Cardano is the first.'}),
@@ -89,7 +89,7 @@ export default function Home() {
                 ]}
                 headingDot={true}
               />
-        <TitleWithText
+        <TitleWithText headingLevel={2}
           description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end.'})}
         />
         </BoundaryBox>
@@ -97,7 +97,7 @@ export default function Home() {
 
       <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({id: 'ouroboros.cta.title', message: 'Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation.'})}
               buttonLabel={translate({id: 'ouroboros.cta.buttonLabel', message: 'Play the game'})}
               buttonLink={"https://ouroboros.iohk.io/ouroboros-game/"}

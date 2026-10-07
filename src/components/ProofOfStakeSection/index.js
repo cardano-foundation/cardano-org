@@ -20,7 +20,7 @@ export default function ProofOfStakeSection() {
     <BackgroundWrapper backgroundType="solidGrey">
       <BoundaryBox>
         <Divider text="Proof of stake" id="proof-of-stake" />
-        <TitleWithText
+        <TitleWithText headingLevel={2}
           title="Proof of stake and proof of work"
           description={[
             "There are two main blockchain protocols: proof-of-stake (PoS) and proof-of-work (PoW). These protocols are consensus \
@@ -40,7 +40,7 @@ export default function ProofOfStakeSection() {
           ]}
         />
 
-        <TitleWithText
+        <TitleWithText headingLevel={2}
           description={[
             "Proof-of-stake answers the performance and energy-use challenges of proof-of-work, and arrives at a more sustainable \
             solution. Instead of relying on 'miners' to solve computationally complex equations to create new blocks – and rewarding \
@@ -60,7 +60,7 @@ export default function ProofOfStakeSection() {
 
         <SpacerBox size="medium" />
 
-        <TitleWithText title="How Ouroboros Works" headingDot={true} />
+        <TitleWithText headingLevel={2} title="How Ouroboros Works" headingDot={true} />
         <DottedImageWithText
           imageName="chains"
           text={[

@@ -41,7 +41,7 @@ import styles from "./programmable-tokens.module.css";
 function SectionHeader({ title }) {
   return (
     <div className={styles.sectionHeader}>
-      <TitleWithText title={title} titleType="black" headingDot={true} />
+      <TitleWithText headingLevel={2} title={title} titleType="black" headingDot={true} />
     </div>
   );
 }

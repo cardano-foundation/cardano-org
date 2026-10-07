@@ -112,7 +112,7 @@ export default function HomeActivitySection() {
 
   return (
     <section className={styles.section}>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "home.activity.title", message: "Cardano in use" })}
         titleType="black"
         headingDot={true}

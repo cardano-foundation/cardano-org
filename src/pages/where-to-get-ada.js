@@ -40,7 +40,7 @@ export default function Home() {
 
         <BoundaryBox>
             <Divider text={translate({id: 'whereToGetAda.divider.exchanges', message: 'Buy ada using Exchanges'})} id="exchanges"/>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
 
                 title={translate({id: 'whereToGetAda.cex.title', message: 'Centralized Exchanges'})}
                 description={[
@@ -56,7 +56,7 @@ export default function Home() {
             <SpacerBox size="small"/>
 
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'whereToGetAda.cex.disclaimer', message: 'Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/).'}),
               ]}
@@ -65,7 +65,7 @@ export default function Home() {
 
             <SpacerBox size="medium"/>
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
 
             title={translate({id: 'whereToGetAda.dex.title', message: 'Decentralized Exchanges'})}
             description={[
@@ -79,7 +79,7 @@ export default function Home() {
             <AppGrid categories={['dex']} limit={5} showRank={false} showStats={true} ctaText="Visit DEX" moreTitle="More DEXes" />
             <SpacerBox size="medium"/>
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'whereToGetAda.dex.disclaimer', message: 'DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days.'}),
               ]}
@@ -90,7 +90,7 @@ export default function Home() {
 
       <BoundaryBox>
             <Divider text={translate({id: 'whereToGetAda.divider.receive', message: 'Receive ada from people around the world'})} id ="receive"/>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
 
                 title={translate({id: 'whereToGetAda.receive.title', message: 'Receive ada'})}
                 description={[
@@ -107,7 +107,7 @@ export default function Home() {
 
         <BoundaryBox>
             <Divider text={translate({id: 'whereToGetAda.divider.funding', message: 'Get funded in ada'})} id ="funding"/>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
 
                 title={translate({id: 'whereToGetAda.funding.title', message: 'Project Catalyst'})}
                 description={[
@@ -124,7 +124,7 @@ export default function Home() {
 
         <BoundaryBox>
             <Divider text={translate({id: 'whereToGetAda.divider.rewards', message: 'Staking rewards'})} id ="rewards"/>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
 
                 title={translate({id: 'whereToGetAda.staking.title', message: 'Staking rewards'})}
                 description={[
@@ -138,7 +138,7 @@ export default function Home() {
         </BoundaryBox>
 
         <BoundaryBox>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={translate({id: 'whereToGetAda.learn.description', message: "New to Cardano? [What is Cardano](/what-is-cardano#get-started) explains the platform in plain terms, and the [learning path](/learn) takes you on from there step by step."})}
             />
             <SpacerBox size="small"/>

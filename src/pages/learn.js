@@ -53,13 +53,13 @@ function Stage({ stage, index }) {
       >
         {getLevelLabel(stage.level)}
       </span>
-      <TitleWithText title={stage.title} description={stage.intro} headingDot={true} />
+      <TitleWithText headingLevel={2} title={stage.title} description={stage.intro} headingDot={true} />
       <div className={styles.cardGrid}>
         {stage.items.map((item) => (
           <PathCard key={item.key} item={item} />
         ))}
       </div>
-      {stage.quiz && <TitleWithText description={stage.quiz} />}
+      {stage.quiz && <TitleWithText headingLevel={2} description={stage.quiz} />}
       <SpacerBox size="small" />
     </>
   );
@@ -106,7 +106,7 @@ export default function Learn() {
         </BackgroundWrapper>
         <BackgroundWrapper backgroundType="gradientDark">
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: "learn.cta.title", message: "Want a certificate at the end? The Cardano Academy offers free courses on everything above." })}
               buttonLabel={translate({ id: "learn.cta.button", message: "Explore the Academy" })}
               buttonLink={ACADEMY_CTA_URL}

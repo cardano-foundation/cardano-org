@@ -479,7 +479,7 @@ function PageContent() {
         />
       </div>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           (() => {
             const base = `**Explore the complete Cardano ADA supply distribution for epoch ${displayedEpoch}, which began on ${epochDate} `;
@@ -492,13 +492,13 @@ function PageContent() {
         headingDot
       />
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
 		  `This interactive insight helps you understand how the total ADA supply is allocated across key categories, from circulating supply and reserves to staking rewards and the treasury.`
         ]}
         headingDot
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
 		  `At the close of each 5-day epoch, the [Ouroboros protocol](/ouroboros) performs supply and reward calculations across all participating nodes. 
 		  The resulting transfers distribute [staking rewards](/calculator) and allocate a portion to the Cardano treasury, supporting ongoing development and ecosystem growth.`

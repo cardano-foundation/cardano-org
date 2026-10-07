@@ -66,7 +66,7 @@ export default function Home() {
       <main>
         <BoundaryBox>
           <SpacerBox size="small" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             titleType="black"
             headingDot={true}
             description={[
@@ -161,7 +161,7 @@ export default function Home() {
 
         <BoundaryBox>
           <SpacerBox size="small" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "exchanges.flow.title",
               message: "How the flow looks",
@@ -281,7 +281,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <CtaTwoColumn
+            <CtaTwoColumn headingLevel={2}
               leftTitle={translate({
                 id: "exchanges.learnMore.leftTitle",
                 message: "Exchange integration guide",
@@ -322,7 +322,7 @@ export default function Home() {
 
         <BoundaryBox>
           <SpacerBox size="small" />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({
               id: "exchanges.exploreMore.title",
               message: "Explore more integrations",
@@ -396,7 +396,7 @@ export default function Home() {
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({
                 id: "exchanges.support.title",
                 message:

@@ -3,7 +3,21 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import OuroborosLogo from "@site/src/components/Layout/OuroborosLogo";
 
-export default function SiteHero({ title, description, bannerType, children, className }) {
+/**
+ * Page hero with title, description, and a themed banner.
+ *
+ * @param {object} props
+ * @param {string} props.title Hero title.
+ * @param {string} [props.description] Text below the title.
+ * @param {string} [props.bannerType] Banner style, see the Site Hero docs for the list.
+ * @param {React.ReactNode} [props.children] Extra content below the description.
+ * @param {number} [props.headingLevel=1] 1 renders the title as the page's h1. 0 renders it
+ *   without heading semantics, for heroes that sit above the real page title (blog posts).
+ * @param {string} [props.className] Extra class on the hero element.
+ */
+export default function SiteHero({ title, description, bannerType, children, className, headingLevel = 1 }) {
+  const TitleTag = headingLevel === 0 ? "div" : "h1";
+  const titleClassName = headingLevel === 0 ? "hero__title hero__title--text" : "hero__title";
 
   // Use bannerType to dynamically change the class for the hero banner
   let heroClassName;
@@ -66,7 +80,7 @@ export default function SiteHero({ title, description, bannerType, children, cla
           {
               bannerType === "ouroboros"
                 ? <h1 className="hero__title" aria-label={title}><OuroborosLogo className={styles.ouroborosLogo} /></h1>
-                : <h1 className="hero__title">{title}</h1>
+                : <TitleTag className={titleClassName}>{title}</TitleTag>
             }
             <p className={clsx("hero__subtitle", styles.subtitle)}>
               {description}

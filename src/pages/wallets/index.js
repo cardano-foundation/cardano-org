@@ -285,7 +285,7 @@ export default function WalletFinder() {
               ))}
             </div>
           )}
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             titleType="black"
             headingDot={false}
             slightText={[translate({id: 'walletFinder.disclaimer', message: 'The wallets listed are provided for informational purposes only and are not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams.'})]}

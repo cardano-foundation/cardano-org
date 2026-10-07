@@ -32,7 +32,7 @@ export default function Solutions() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'solutions.intro.description', message: "Cardano powers enterprise solutions across industries, combining the security and transparency of blockchain with practical business applications. Our proven deployments demonstrate how organizations can leverage decentralized technology for supply chain management, product authentication, and sustainability tracking."}),
               ]}
@@ -43,7 +43,7 @@ export default function Solutions() {
             <SpacerBox size="medium" />
 
             <Divider text={translate({id: 'solutions.divider.explore', message: 'Explore Use Cases'})} id="explore" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'solutions.explore.description', message: "Looking for specific blockchain applications? Explore our comprehensive use case library covering identity, finance, supply chain, and more."}),
               ]}
@@ -61,7 +61,7 @@ export default function Solutions() {
 
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({id: 'solutions.cta.title', message: 'Ready to build on Cardano? Connect with the Cardano Foundation to explore partnership opportunities.'})}
               buttonLabel={translate({id: 'solutions.cta.button', message: 'Contact Us'})}
               buttonLink={"https://cardanofoundation.org/contact"}

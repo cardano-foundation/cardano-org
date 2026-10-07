@@ -13,7 +13,7 @@ export default function FollowCardanoSection() {
   return (
     <BoundaryBox>
       <Divider text="Stats" />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title="Stats"
         description={[
           "The four tranches of the distribution are shown with the number of individual ada vouchers distributed that \
@@ -100,7 +100,7 @@ export default function FollowCardanoSection() {
         </table>
       </div>
       <Divider text="Audit" />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title="Ada Distribution Audit"
         description={[
           "From September 2015 to January 2017 a pre-launch sales event of cryptocurrency token 'ada' was undertaken. The sales event \

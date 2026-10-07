@@ -249,7 +249,7 @@ export default function Home() {
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "hardforks.content.title", message: "Cardano Hard Forks" })}
             description={translate({
               id: "hardforks.content.description",
@@ -258,7 +258,7 @@ export default function Home() {
             })}
             headingDot={true}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({
               id: "hardforks.upgrades.description",
               message:
@@ -281,7 +281,7 @@ export default function Home() {
               message: "hard fork transaction ids",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({
               id: "hardforks.transactionIds.description",
               message:

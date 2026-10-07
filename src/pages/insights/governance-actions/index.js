@@ -100,7 +100,7 @@ function PageContent() {
         })}</script>
       </Head>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           translate({id: 'insightsGovernance.intro.paragraph1', message: '**Governance Actions Insights** visualizes the seven Cardano governance action types as flowcharts. Each chart shows the lifecycle from submission through ratification to enactment, who votes (DReps, SPOs, Constitutional Committee) and the thresholds. Most actions require approval from **at least two of the three** bodies, some require **all three**. For definitions and full thresholds, see the [Developer Portal: Governance Actions](https://developers.cardano.org/docs/developers/curriculum/staking-governance/governance/#the-seven-governance-action-types).'}),
           translate({id: 'insightsGovernance.intro.paragraph2', message: 'Pick a **category** (General, Info Actions, Protocol Parameter Changes, Critical Parameter Changes), then choose a **chart**. Follow the nodes: **orange boxes** show the deposit and the voting thresholds, **purple boxes** explain how the votes are counted. You can **download** the diagram or **share the URL**, the address bar keeps the category, the parameter filter and the open chart. For the formal basis, see Appendix I: Guardrails of the [Cardano Constitution](/constitution).'}),

@@ -28,7 +28,7 @@ function HomepageHeader() {
 function JoinIntersect() {
   return (
     <div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.intersect.title', message: 'Intersect - one of the member-based organizations'})}
         description={[
           translate({id: 'contact.intersect.description', message: 'Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development.'}),
@@ -50,7 +50,7 @@ function JoinIntersect() {
 function TechnicalIssueForm() {
   return (
     <div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.technicalIssue.title', message: 'Report a technical issue'})}
         description={[
           translate({id: 'contact.technicalIssue.description', message: 'To get help for one of the following wallets, please raise a support ticket.'}),
@@ -76,7 +76,7 @@ function SponsorshipForm() {
   return (
     <div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/LNXdLDhsQmA?si=1Q3HejtLiyfAoPY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.sponsorship.title', message: 'Event sponsorship'})}
         description={[
           translate({id: 'contact.sponsorship.description1', message: 'Thank you for your interest in sponsoring Cardano events. The Cardano Summit 2026 will not take place, the community voted against funding it from the treasury. The Cardano Foundation still hosts and attends events around the world, and sponsorship opportunities can be tailored to your organization\'s goals.'}),
@@ -124,7 +124,7 @@ export default function Home() {
       <main>
         <BoundaryBox>
           <Divider text={translate({id: 'contact.divider.hereToHelp', message: 'Here to help'})} />
-          <TitleWithText title={translate({id: 'contact.helpSection.title', message: 'What Can We Help You With?'})} headingDot={true} />
+          <TitleWithText headingLevel={2} title={translate({id: 'contact.helpSection.title', message: 'What Can We Help You With?'})} headingDot={true} />
           {/* Topic Selection, each topic will render a different component */}
           {translate({id: 'contact.select.prefix', message: 'I have'})}
           <select

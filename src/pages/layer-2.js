@@ -15,7 +15,7 @@ import styles from "./layer-2.module.css";
 function CategoryHeader({ category, inverted = false }) {
   return (
     <div className={inverted ? styles.invertedHeader : undefined}>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={category.title}
         description={[category.description]}
         titleType="black"
@@ -88,7 +88,7 @@ export default function Layer2() {
             <CardGrid projects={Sidechains.projects} />
           </BoundaryBox>
           <BoundaryBox>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={translate({
                 id: "layer2.context.description",
                 message:
