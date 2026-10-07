@@ -1,9 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 
 //
 // This component:
@@ -11,7 +8,16 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 // most of the time you do not want to put a <BackgroundWrapper> as a child of <BoundaryBox>
 // while it is usually fine to have a <BoundaryBox as a child of a <BackgroundWrapper>
 
-export default function BackgroundWrapper({ children, backgroundType }) {
+/**
+ * Wraps a page section in one of the shared background styles.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} props.children Section content.
+ * @param {string} [props.backgroundType] One of solidGrey, solidBlue, zoom, zoomBlueRight,
+ *   zoomBlueCenter, gradientDark, gradientLight, ada, adaLight. Without it the section has no background.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
+export default function BackgroundWrapper({ children, backgroundType, className, ...rest }) {
   // Use backgroundType to dynamically change the class for the background
   let wrapperClassName;
 
@@ -47,5 +53,9 @@ export default function BackgroundWrapper({ children, backgroundType }) {
       wrapperClassName = styles.backgroundNone;
   }
 
-  return <div className={wrapperClassName}>{children}</div>;
+  return (
+    <div className={clsx(wrapperClassName, className)} {...rest}>
+      {children}
+    </div>
+  );
 }

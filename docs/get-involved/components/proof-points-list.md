@@ -52,6 +52,8 @@ The full list without a button, from `src/pages/what-is-cardano.js`:
 |------|------|---------|-------------|
 | `points` | `Array<{ key, icon, title, tagline, text }>` | - | The rows. `key` must be unique, `icon` is a React element, the three strings are rendered as plain text. Required. |
 | `cta` | `{ label, to }` | - | Optional. When passed, a primary button with `label` linking to `to` renders below the list. |
+| `headingLevel` | `number` | `2` | Heading level of the row titles, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 

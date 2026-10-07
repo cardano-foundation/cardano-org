@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
+import { getHeading } from "@site/src/utils/heading";
 
 //
 // This component shows some text with a title (optional) to the left (optional)
@@ -20,7 +21,10 @@ export default function CtaTwoColumn({
   rightButtonLink,
   rightHeadingDot,
   rightButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
+  headingLevel, // heading level of both titles, default 1, the look stays the same
+  className,
 }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 1);
 
   const renderText = (text) => {
     // Check if text is an array
@@ -40,14 +44,14 @@ export default function CtaTwoColumn({
   const centerButtonStyle = { margin: '0 auto', display: 'block' };
 
   return (
-    <div className={styles.boxWrap}>
+    <div className={clsx(styles.boxWrap, className)}>
       <div className={clsx("row", styles.row)}>
         {/* Adjust the col class based on whether the right column has content */}
         <div className={clsx("col", hasRightContent ? "col--6" : "col--7", styles.leftColumn)}>
           {leftTitle && (
-            <h1 className={clsx({ headingDot: leftHeadingDot })}>
+            <Tag className={clsx({ headingDot: leftHeadingDot }, lookClassName)}>
               {leftTitle}
-            </h1>
+            </Tag>
           )}
           {leftText && renderText(leftText)}
           {leftButtonLabel && (
@@ -66,9 +70,9 @@ export default function CtaTwoColumn({
        {/* Adjust the col class based on whether the right column has content */}
        <div className={clsx("col", hasRightContent ? "col--6" : "col--5", styles.leftColumn)}>
           {rightTitle && (
-            <h1 className={clsx({ headingDot: rightHeadingDot })}>
+            <Tag className={clsx({ headingDot: rightHeadingDot }, lookClassName)}>
               {rightTitle}
-            </h1>
+            </Tag>
           )}
           {rightText && renderText(rightText)}
           {rightButtonLabel && (

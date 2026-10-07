@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import { getHeading } from "@site/src/utils/heading";
 import Link from "@docusaurus/Link";
 import {
   FaXTwitter,
@@ -57,15 +58,28 @@ const socialLinks = [
   },
 ];
 
+/**
+ * Title with a row of links to Cardano's social channels.
+ *
+ * @param {object} props
+ * @param {string} props.title Heading text.
+ * @param {string} [props.iconForegroundColor] Icon color.
+ * @param {string} [props.iconBackgroundColor] Icon background color.
+ * @param {number} [props.headingLevel=1] Heading level of the title. The look stays the same.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function FollowCardano({
   title,
   iconForegroundColor,
   iconBackgroundColor,
+  headingLevel,
+  className,
 }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 1);
   return (
-    <div className={styles.container}>
+    <div className={clsx(styles.container, className)}>
       <div className={styles.taglineContainer}>
-        <h1>{title}</h1>
+        <Tag className={lookClassName}>{title}</Tag>
         <p className="social__icons">
           {socialLinks.map((social, index) => (
             <Link key={index} href={social.url} aria-label={social.label}>

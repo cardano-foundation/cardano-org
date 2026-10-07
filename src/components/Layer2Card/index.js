@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
+import { getHeading } from "@site/src/utils/heading";
 
 // Layer 2 ecosystem card. Displays a project's logo tile, name, a colour-coded
 // status pill, a short description and an optional call-to-action link.
@@ -74,7 +75,10 @@ export default function Layer2Card({
   logoBackground,
   logoColor,
   cta,
+  headingLevel,
+  className,
 }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 3);
   const logoUrl = useBaseUrl(logo);
   const letter = (monogram || name || "").trim().charAt(0).toUpperCase();
   const isExternal = cta?.href && /^https?:\/\//.test(cta.href);
@@ -93,7 +97,7 @@ export default function Layer2Card({
               </span>
             )}
           </span>
-          <h3 className={styles.name}>{name}</h3>
+          <Tag className={clsx(styles.name, lookClassName)}>{name}</Tag>
         </div>
         <StatusPill status={status} />
         <p className={styles.description}>{description}</p>
@@ -111,7 +115,7 @@ export default function Layer2Card({
     return (
       <Link
         to={cta.href}
-        className={clsx(styles.card, styles.linkCard)}
+        className={clsx(styles.card, styles.linkCard, className)}
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {content}
@@ -119,5 +123,5 @@ export default function Layer2Card({
     );
   }
 
-  return <article className={styles.card}>{content}</article>;
+  return <article className={clsx(styles.card, className)}>{content}</article>;
 }

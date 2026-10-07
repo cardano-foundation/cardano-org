@@ -43,6 +43,8 @@ import { translate } from '@docusaurus/Translate';
 | `text` | `string` | - | Optional paragraph below the title, rendered as a plain string (no markdown parsing). Skipped when empty. |
 | `buttonLabel` | `string` | - | Label of the button. The button is always rendered, so always pass a label. |
 | `buttonLink` | `string` | - | Target of the button, passed to the Docusaurus `Link`, so internal paths and external URLs both work. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 

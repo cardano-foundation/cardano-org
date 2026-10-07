@@ -10,6 +10,7 @@ import {
   formatTxCountCompact,
   getAppBlurb,
 } from "@site/src/utils/appStats";
+import { getHeading } from "@site/src/utils/heading";
 import AppIcon from "@site/src/components/AppIcon";
 
 import styles from "./styles.module.css";
@@ -21,18 +22,19 @@ const ACTIVITY_UNIT = translate({
 
 // `showProperties={false}` keeps the meta row to activity and category, e.g.
 // on the homepage where extra tags are noise.
-function AppTile({ app, badge = null, showProperties = true }) {
+function AppTile({ app, badge = null, showProperties = true, headingLevel, className }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 3);
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
 
   return (
-    <Link to={`/apps/${app.slug}`} className={styles.tile}>
+    <Link to={`/apps/${app.slug}`} className={clsx(styles.tile, className)}>
       <div className={styles.header}>
         <AppIcon app={app} size="tile" />
         {badge && <span className={styles.badge}>{badge}</span>}
       </div>
-      <h3 className={styles.title}>{app.title}</h3>
+      <Tag className={clsx(styles.title, lookClassName)}>{app.title}</Tag>
       <p className={styles.description}>{getAppBlurb(app)}</p>
       <div className={styles.meta}>
         {showActivity && (

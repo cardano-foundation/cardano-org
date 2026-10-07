@@ -20,6 +20,7 @@ The [`<SiteHero>`](/docs/get-involved/components/site-hero) component is used to
 | `description` | `string` \| `node` | | Supporting text below the title. |
 | `bannerType` | `string` | `starburst` | One of the banner types below. An unrecognized or missing value falls back to `starburst`. Documentation pages use `docs`. |
 | `children` | `node` | | Optional content rendered inside the hero, below the title and description. |
+| `className` | `string` | | Extra class on the hero element. |
 
 ## Banner Types
 

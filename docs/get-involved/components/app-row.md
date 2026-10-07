@@ -40,6 +40,8 @@ In the mixed list on `/apps`, where the category label is useful:
 |------|------|---------|-------------|
 | `app` | `object` | - | One showcase entry from `Showcases`. Needs `slug`, `title`, and `category`. `icon`, `tagline`, `description`, and `maintainerPick` are optional. Required. |
 | `hideCategory` | `boolean` | `false` | Hides the category label on the right. Use it when the row sits under a heading that already names the category. |
+| `headingLevel` | `number` | `4` | Heading level of the app name, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 

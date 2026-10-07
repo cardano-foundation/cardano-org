@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import OuroborosLogo from "@site/src/components/Layout/OuroborosLogo";
 
-export default function SiteHero({ title, description, bannerType, children }) {
+export default function SiteHero({ title, description, bannerType, children, className }) {
 
   // Use bannerType to dynamically change the class for the hero banner
   let heroClassName;
@@ -59,7 +59,7 @@ export default function SiteHero({ title, description, bannerType, children }) {
   }
 
   return (
-    <header className={clsx("hero hero--primary", heroClassName)}>
+    <header className={clsx("hero hero--primary", heroClassName, className)}>
       <div className="container">
         <div className={styles.backgroundBox}>
           <div className={styles.taglineContainer}>

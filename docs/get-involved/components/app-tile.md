@@ -43,6 +43,8 @@ A rank badge, as `AppTileCarousel` receives it through `renderBadge`:
 |------|------|---------|-------------|
 | `app` | `object` | - | One showcase entry. Needs at least `slug`, `title`, `category`, and `properties` (an array). `icon`, `tagline`, and `description` are optional. Required. |
 | `badge` | `ReactNode` | `null` | Rendered in the header next to the icon. Use `<StarBadge />`, `<RankBadge rank={n} />`, or any small element. |
+| `headingLevel` | `number` | `3` | Heading level of the app name, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ### StarBadge
 

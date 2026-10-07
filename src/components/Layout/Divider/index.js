@@ -1,18 +1,26 @@
 import React, { useEffect } from 'react';
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { scrollToElement } from "@site/src/utils/jsUtils";
+import { getHeading } from "@site/src/utils/heading";
 
 //
 // This component:
 // adds a horizontal line divider with a text
 // can use a id optional to link to a specific divider with /page#id
 
-export default function Divider({ text, id, white = false }) {
+/**
+ * Labeled section divider with an optional anchor.
+ *
+ * @param {object} props
+ * @param {string} [props.text] Label shown above the line.
+ * @param {string} [props.id] Anchor id, so the section can be linked as /page#id.
+ * @param {boolean} [props.white=false] White label and line for dark backgrounds.
+ * @param {number} [props.headingLevel=6] Heading level of the label. The look stays the same.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
+export default function Divider({ text, id, white = false, headingLevel, className }) {
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === `#${id}`) {
@@ -30,9 +38,10 @@ export default function Divider({ text, id, white = false }) {
     };
   }, [id]); // Dependency array ensures effect re-runs if 'id' change
   const headerClass = clsx(styles.header, { [styles.white]: white });
+  const { Tag, lookClassName } = getHeading(headingLevel, 6);
 
   return (
-    <div>
+    <div className={className}>
     {id && (
       <>
         <div id={id} />
@@ -43,7 +52,7 @@ export default function Divider({ text, id, white = false }) {
       <>
         <br />
         <div className={headerClass}>
-          <h6>{text}{id && <a className="hash-link" href={`#${id}`}>&#8203;</a>}</h6>
+          <Tag className={clsx(styles.title, lookClassName)}>{text}{id && <a className="hash-link" href={`#${id}`}>&#8203;</a>}</Tag>
           <div className={styles.horizontalBar}></div>
         </div>
       </>
