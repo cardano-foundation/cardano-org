@@ -12,4 +12,4 @@ The .ada application joins .sol, .ethereum, .btc, and .bitcoin among Web3 bids i
 [**Read more**](https://cardanofoundation.org/blog/ada-icann-next-stage)
 </div>
 
-![cardano foundation ada top-level domain banner](./banner.jpg)
+![cardano foundation ada top-level domain banner](./banner.webp)

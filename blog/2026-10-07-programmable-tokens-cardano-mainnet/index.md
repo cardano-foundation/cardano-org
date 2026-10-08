@@ -12,4 +12,4 @@ Programmable tokens stay native Cardano assets built on the EUTXO model, so wall
 [**Read more**](https://cardanofoundation.org/blog/programmable-tokens-cardano-mainnet)
 </div>
 
-![programmable tokens now on mainnet banner](./banner.png)
+![programmable tokens now on mainnet banner](./banner.webp)
