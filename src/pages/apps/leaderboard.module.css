@@ -225,6 +225,9 @@
 }
 
 .categoryTag {
+  /* --tag-color is set per category from the page. 12% tint as fill, the color as text. */
+  background-color: color-mix(in srgb, var(--tag-color, #757575) 12.5%, transparent);
+  color: var(--tag-color, #757575);
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 600;
@@ -534,4 +537,16 @@
     font-size: 0.625rem;
     letter-spacing: 0;
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .periodButton.periodButtonActive {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+/* Dark mode: the saturated category colors fall to 1.9:1 to 2.9:1 on the dark
+   tint, mixing in white keeps the hue and lifts them above 4.5:1. */
+html[data-theme='dark'] .categoryTag {
+  color: color-mix(in srgb, var(--tag-color, #757575) 45%, white);
 }

@@ -177,3 +177,13 @@ html[data-theme='dark'] :global(.react-flow__controls-button svg) {
   background-color: #555;
   opacity: 0.7;
 }
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .downloadButton {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='dark'] .darkMode .downloadButton {
+  background-color: var(--ifm-color-primary-darker);
+}

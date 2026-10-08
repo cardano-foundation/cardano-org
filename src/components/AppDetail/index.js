@@ -58,10 +58,7 @@ function TagPill({ tag, def }) {
     <Link
       to={`/apps?tags=${tag}`}
       className={styles.categoryPill}
-      style={{
-        backgroundColor: `color-mix(in srgb, ${def.color} 15%, transparent)`,
-        color: `color-mix(in srgb, ${def.color} 85%, black)`,
-      }}
+      style={{ "--pill-color": def.color }}
       title={def.description}
     >
       <span className={styles.tagDot} style={{ backgroundColor: def.color }} />

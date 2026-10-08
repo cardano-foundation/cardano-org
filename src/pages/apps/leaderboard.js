@@ -486,12 +486,12 @@ function AppRow({ app, rank, appDetails }) {
         <div className={styles.tagRow}>
           <span
             className={styles.categoryTag}
-            style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
+            style={{ '--tag-color': categoryColors[category] }}
           >
             {category}
           </span>
           {app.isMetadata && (
-            <span className={styles.categoryTag} style={{ backgroundColor: '#75757520', color: '#757575' }}>
+            <span className={styles.categoryTag} style={{ '--tag-color': '#757575' }}>
               Standard
             </span>
           )}
@@ -832,10 +832,7 @@ export default function LeaderboardPage() {
                     {entry.category && (
                       <span
                         className={styles.categoryTag}
-                        style={{
-                          backgroundColor: (categoryColors[entry.category] || '#757575') + '20',
-                          color: categoryColors[entry.category] || '#757575'
-                        }}
+                        style={{ '--tag-color': categoryColors[entry.category] || '#757575' }}
                       >
                         {entry.category}
                       </span>

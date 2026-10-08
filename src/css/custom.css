@@ -473,6 +473,11 @@ img {
 }
 
 .slight-text {
+  /* #bbbbbb was 1.9:1 on white, #6f6f6f keeps the muted look at 5:1 */
+  color: #6f6f6f;
+}
+
+[data-theme="dark"] .slight-text {
   color: rgb(187, 187, 187);
 }
 
@@ -1050,4 +1055,23 @@ html[data-theme="light"] {
   .footer__links > .footer__col {
     --ifm-col-width: 50%;
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .megaMenuFeaturedCta {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+/* Primary buttons in dark mode: white text on the dark-mode primary (#6684ce)
+   reaches only 3.6:1. The darker step keeps it at 6.8:1, hover lightens to the
+   dark step (5.6:1). Outline buttons keep their transparent fill. */
+html[data-theme='dark'] .button--primary:not(.button--outline) {
+  --ifm-button-background-color: var(--ifm-color-primary-darker);
+  --ifm-button-border-color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='dark'] .button--primary:not(.button--outline):hover {
+  --ifm-button-background-color: var(--ifm-color-primary-dark);
+  --ifm-button-border-color: var(--ifm-color-primary-dark);
 }
