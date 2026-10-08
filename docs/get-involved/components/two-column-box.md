@@ -7,32 +7,36 @@ import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
 
 ## TwoColumnBox
 
-Two equal text columns (`col--6` each) that stack into one column on narrow screens. Each side takes a string or an array of strings and renders one paragraph per entry. No title, no markdown parsing.
+Two equal text columns (`col--6` each) that stack into one column on narrow screens. Each side takes a string or an array and renders one paragraph per entry. There is no title. The component does not parse markdown itself, so pass the entries through `parseMarkdownLikeText` when they contain links or bold text.
 
-Used on `/stake-pool-delegation` and `/stake-pool-operation`, usually right after a [Divider](./divider.md).
+Used on `/stake-pool-operation`, right after a [Divider](./divider.md).
 
 ## Basic Usage
-
-From `src/pages/stake-pool-delegation.js`. The page only fills the left column, which leaves the right half empty and keeps the paragraph at reading width:
 
 ```jsx
 import Divider from '@site/src/components/Layout/Divider';
 import TwoColumnBox from '@site/src/components/Layout/TwoColumnBox';
+import { parseMarkdownLikeText } from '@site/src/utils/textUtils';
 import { translate } from '@docusaurus/Translate';
 
-<Divider text={translate({ id: 'stakePoolDelegation.whatIsDelegation.divider', message: 'What is stake delegation?' })} />
+<Divider headingLevel={2} text={translate({ id: 'myPage.staking.divider', message: 'What is staking?' })} />
 <TwoColumnBox
-  leftText={[
-    translate({ id: 'stakePoolDelegation.whatIsDelegation.text', message: 'Delegation is the process by which ada holders delegate the stake associated with their ada to a stake pool. It allows ada holders that do not have the skills or desire to run a node to participate in the network and be rewarded in proportion to the amount of stake delegated.' }),
-  ]}
+  leftText={parseMarkdownLikeText([
+    translate({ id: 'myPage.staking.leftText', message: 'Ada held on the Cardano network represents a stake in the network, with the size of the stake proportional to the amount of ada held.' }),
+  ])}
+  rightText={parseMarkdownLikeText([
+    translate({ id: 'myPage.staking.rightText1', message: 'There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool.' }),
+  ])}
 />
 ```
+
+Fill only `leftText` to keep a single paragraph at reading width with the right half empty.
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `leftText` | `string` \| `string[]` | - | Text for the left column. A string renders one `<p>`, an array renders one `<p>` per entry. Plain strings, no markdown parsing. |
+| `leftText` | `string` \| `node` \| `array` | - | Text for the left column. An array renders one `<p>` per entry, anything else renders one `<p>`. Strings are shown as is, wrap them in `parseMarkdownLikeText` for links and bold text. |
 | `rightText` | `string` \| `string[]` | - | Text for the right column, same rules as `leftText`. |
 
 ## Live Preview

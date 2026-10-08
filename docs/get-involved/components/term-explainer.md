@@ -45,7 +45,7 @@ import TermExplainer from '@site/src/components/TermExplainer';
 
 ## Notes
 
-- The divider text is translated inside the component (`termExplainer.divider`, `{category} Terms you should know`). The raw category key is inserted, so it appears as written in the JSON, for example "governance Terms you should know".
-- Term descriptions go through `parseMarkdownLikeText`, so `[label](url)` links and `**bold**` markers in the JSON render as links and bold text.
-- The terms in the JSON file are English only and are not part of the Crowdin flow. Add a term to the JSON to make it eligible for the random pick.
+- The divider text is translated inside the component (`termExplainer.divider`, `{category} Terms you should know`). The `governance` category has a translated display name (`termExplainer.category.governance`), so it reads "Governance Terms you should know". Other categories insert the raw key, for example "staking Terms you should know".
+- Term descriptions go through `parseMarkdownLikeText`, so `[label](url)` links and `**bold**` markers in the messages render as links and bold text.
+- The terms are `translate()` calls in `src/data/termsForTermExplainer.js`, so they are translated through Crowdin. Add a term there, and its IDs to `i18n/en/code.json`, to make it eligible for the random pick.
 - Each reload shows a different pair, which is intended.

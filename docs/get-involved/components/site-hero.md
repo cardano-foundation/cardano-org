@@ -210,6 +210,9 @@ Different banner types than can be used with [`<SiteHero>`](/docs/get-involved/c
     />
 
 ### ouroboros
+
+This banner replaces the title text with the Ouroboros wordmark (`Layout/OuroborosLogo`, an inline SVG in the current text color). The `title` stays the accessible name of the heading, so always pass it. The logo is an internal part of SiteHero and is not meant to be used on its own.
+
 ```
 <SiteHero
   title="Hello Ouroboros"
