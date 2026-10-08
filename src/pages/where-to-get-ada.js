@@ -76,7 +76,7 @@ export default function Home() {
             headingDot={false}
             />
 
-            <AppGrid categories={['dex']} limit={5} showRank={false} showStats={true} ctaText="Visit DEX" moreTitle="More DEXes" />
+            <AppGrid categories={['dex']} limit={5} showRank={false} showStats={true} ctaText={translate({ id: "whereToGetAda.dex.visit", message: "Visit DEX" })} moreTitle={translate({ id: "whereToGetAda.dex.more", message: "More DEXes" })} />
             <SpacerBox size="medium"/>
 
             <TitleWithText headingLevel={2}

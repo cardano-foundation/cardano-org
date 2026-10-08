@@ -6,6 +6,7 @@ import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
 import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import styles from './styles.module.css';
+import { translate } from '@docusaurus/Translate';
 
 export default function DocRootLayout({children}) {
   const sidebar = useDocsSidebar();
@@ -13,18 +14,18 @@ export default function DocRootLayout({children}) {
   const location = useLocation();
   
   // Simple path-based hero configuration
-  let heroTitle = 'Get Involved';
-  let heroDescription = 'Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano.';
+  let heroTitle = translate({ id: 'docs.hero.getInvolved.title', message: 'Get Involved' });
+  let heroDescription = translate({ id: 'docs.hero.getInvolved.description', message: 'Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano.' });
   let heroBannerType = 'docs';
   
   // Check path and set custom hero
   if (location.pathname.includes('/communities')) {
-    heroTitle = 'Online Communities';
-    heroDescription = 'Connect with fellow Cardano community members around the world through various social channels.';
+    heroTitle = translate({ id: 'docs.hero.communities.title', message: 'Online Communities' });
+    heroDescription = translate({ id: 'docs.hero.communities.description', message: 'Connect with fellow Cardano community members around the world through various social channels.' });
     heroBannerType = 'braidBlue';
   } else if (location.pathname.includes('/use-cases')) {
-    heroTitle = 'Cardano Use Cases';
-    heroDescription = 'Explore how Cardano blockchain technology solves real-world problems across industries.';
+    heroTitle = translate({ id: 'docs.hero.useCases.title', message: 'Cardano Use Cases' });
+    heroDescription = translate({ id: 'docs.hero.useCases.description', message: 'Explore how Cardano blockchain technology solves real-world problems across industries.' });
     heroBannerType = 'docs';
   }
   

@@ -6,6 +6,7 @@ import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
 import styles from "./styles.module.css";
+import { translate } from "@docusaurus/Translate";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
@@ -51,14 +52,14 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       {showTxCount && hasTxData && (
         <div className={styles.txCount}>
           <div className={styles.txNumber}>{formatTxCount(stats.txCount)}</div>
-          <div className={styles.txLabel}>transactions</div>
+          <div className={styles.txLabel}>{translate({ id: "apps.list.transactions", message: "transactions" })}</div>
         </div>
       )}
     </a>
   );
 }
 
-export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
+export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = translate({ id: "apps.list.title", message: "Apps" }), showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
   // Explicit slug list (used by curated Collections) bypasses category filtering
   // and preserves the curator's chosen order.
   const isExplicit = Array.isArray(slugs) && slugs.length > 0;
@@ -125,7 +126,7 @@ export default function AppList({ categories = [], slugs = null, limit = 5, cate
           <h3 className={styles.categoryTitle}>{categoryTitle}</h3>
           {seeAllUrl && (
             <Link to={seeAllUrl} className={styles.seeAllButton}>
-              See all
+              {translate({ id: "apps.browseByCategory.seeAll", message: "See all" })}
             </Link>
           )}
         </div>
