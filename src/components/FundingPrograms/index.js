@@ -20,6 +20,9 @@ function tabIndexForHash(hash) {
 
 // Every panel renders (forceRenderTabPanel), so all programs are in the HTML;
 // CSS hides the inactive panels.
+/**
+ * Tabbed overview of funding programs by group, synced with the URL hash. Takes no props.
+ */
 export default function FundingPrograms() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const groups = getFundingGroups();

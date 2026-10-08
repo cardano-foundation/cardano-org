@@ -12,6 +12,16 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // Pass `image` (a site path like "/img/insights/supply.png") to use an image outside the "og" folder.
 // Pass `type` to override og:type, which defaults to "website". Pass `type={null}` to leave it to the theme.
 
+/**
+ * Adds Open Graph and Twitter meta tags for the page image, URL, title, and description.
+ *
+ * @param {object} props
+ * @param {string} [props.pageName="default"] File name without extension of the image in /img/og/ (a .jpg).
+ * @param {string} [props.image] Site path of an image outside /img/og/. Takes precedence over pageName.
+ * @param {string} [props.title] Title for og:title and twitter:title.
+ * @param {string} [props.description] Description for og:description and twitter:description.
+ * @param {string|null} [props.type="website"] Value of og:type. Pass null to leave it to the theme.
+ */
 const OpenGraphInfo = ({ pageName = 'default', image, title, description, type = 'website' }) => {
   const { siteConfig } = useDocusaurusContext();
   const { pathname } = useLocation();

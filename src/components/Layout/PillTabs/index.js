@@ -14,15 +14,16 @@ import styles from "./styles.module.css";
 //
 // Used for the regulatory frameworks per jurisdiction on the
 // /programmable-tokens page.
-//
-// Props:
-//   tabs         - array of { id, label, content }. `id` must be unique within
-//                  the component, `label` is the pill text, and `content` is
-//                  any React node shown when the tab is active.
-//   ariaLabel    - accessible name of the tab list (pass a translated string)
-//   defaultIndex - index of the tab that starts active (default: 0)
-//   className    - optional extra class for the wrapper
 
+/**
+ * Row of pill-shaped tabs above a content panel, following the WAI-ARIA tabs pattern.
+ *
+ * @param {object} props
+ * @param {Array<{id: string, label: React.ReactNode, content: React.ReactNode}>} [props.tabs=[]] Tabs. `id` must be unique within the component.
+ * @param {string} [props.ariaLabel] Accessible name of the tab list, already translated.
+ * @param {number} [props.defaultIndex=0] Index of the tab that starts active. Out of range values fall back to 0.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function PillTabs({ tabs = [], ariaLabel, defaultIndex = 0, className }) {
   const baseId = useId();
   const [activeIndex, setActiveIndex] = useState(() =>

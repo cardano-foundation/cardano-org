@@ -8,6 +8,9 @@ import TreasuryChart from "./TreasuryChart";
 import { outlookOption } from "./chartOptions";
 import styles from "./styles.module.css";
 
+/**
+ * Reserves chart with a projection and the estimated income for coming years.
+ */
 export default function TreasuryOutlook() {
   const { status, points, model } = useTreasuryModel();
   const { colorMode } = useColorMode();

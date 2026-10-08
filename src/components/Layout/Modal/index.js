@@ -7,6 +7,15 @@ import { translate } from "@docusaurus/Translate";
 // Shared modal shell: a trigger button plus an accessible dialog with a
 // backdrop, close button, and open/close state. Content goes in `children`.
 // Scroll lock, focus trap/restore, and Escape-to-close live in useModalA11y.
+/**
+ * Trigger button that opens an accessible dialog with the children as content.
+ *
+ * @param {object} props
+ * @param {string} props.label Accessible name of the dialog, also used in the close button label.
+ * @param {React.ReactNode} props.buttonText Content of the trigger button.
+ * @param {string} [props.buttonClassName] Class of the trigger button. Replaces the default button style.
+ * @param {React.ReactNode} [props.children] Dialog content.
+ */
 const Modal = ({ label, buttonText, buttonClassName, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);

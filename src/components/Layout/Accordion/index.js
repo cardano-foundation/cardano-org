@@ -12,15 +12,6 @@ import styles from "./styles.module.css";
 //
 // Used for the FAQ on the /programmable-tokens page. Use FAQSection instead when
 // you want the "FAQ" Divider heading and the alternating row backgrounds.
-//
-// Props:
-//   items            - array of { question, answer }. `answer` is either an
-//                      array of strings (rendered through renderAnswerArray, so
-//                      "- " bullets, [text](url) links and **bold** work) or a
-//                      React node.
-//   defaultOpenIndex - index of the item that starts open (default: none)
-//   allowMultiple    - when true, opening a row no longer closes the others
-//   className        - optional extra class for the wrapper
 
 function AccordionItem({ question, answer, isOpen, onToggle }) {
   const baseId = useId();
@@ -62,6 +53,15 @@ function toIndexList(value) {
   return list.filter((index) => Number.isInteger(index) && index >= 0);
 }
 
+/**
+ * List of expandable question and answer rows.
+ *
+ * @param {object} props
+ * @param {Array<{question: React.ReactNode, answer: (string[]|React.ReactNode)}>} [props.items=[]] Rows. A string array answer goes through renderAnswerArray, so bullets, links, and bold work.
+ * @param {number|number[]|null} [props.defaultOpenIndex=null] Index or indexes of the rows that start open.
+ * @param {boolean} [props.allowMultiple=false] Keeps other rows open when a row opens.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function Accordion({
   items = [],
   defaultOpenIndex = null,

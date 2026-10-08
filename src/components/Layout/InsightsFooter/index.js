@@ -1,6 +1,13 @@
 import React from 'react';
 import {translate} from '@docusaurus/Translate';
 
+/**
+ * Footer note for insights pages with the last update date and a live data hint.
+ *
+ * @param {object} props
+ * @param {string} [props.lastUpdated] Date of the last data update. Without it only the live data hint shows.
+ * @param {boolean} [props.liveData=true] Adds the hint that charts use real time data.
+ */
 export default function InsightsFooter({ lastUpdated, liveData = true }) {
   let text;
   if (!lastUpdated) {

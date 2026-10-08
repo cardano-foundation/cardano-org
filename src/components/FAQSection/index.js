@@ -13,6 +13,13 @@ const faqData = {
   pineappleFAQ,
 };
 
+/**
+ * FAQ heading with a collapsible list of questions and answers.
+ *
+ * @param {object} props
+ * @param {string} [props.jsonFileName] Key of a registered FAQ json file, used when `data` is missing.
+ * @param {Array<{question: string, answer: string|string[]}>} [props.data] FAQ entries. Takes priority over `jsonFileName`.
+ */
 export default function FAQSection({ jsonFileName, data }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqList = data || faqData[jsonFileName] || [];

@@ -11,16 +11,6 @@ import { getHeading } from "@site/src/utils/heading";
 //
 // Mirrors the "L2Card" component from the cardano.org design system. Used on
 // the /layer-2 page but generic enough to list any project by status.
-//
-// Props:
-//   name           - project name (brand name, not translated)
-//   status         - one of the STATUSES keys below (drives the pill colour + label)
-//   description    - short paragraph describing the project
-//   logo           - optional path to a logo image; falls back to a monogram
-//   monogram       - optional letter shown when no logo is given (defaults to name[0])
-//   logoBackground - optional CSS colour for the logo tile (defaults to a light blue tint)
-//   logoColor      - optional CSS colour for the monogram letter (defaults to the brand blue)
-//   cta            - optional { label, href } for the footer link / card target
 
 const STATUSES = {
   "production-ready": {
@@ -66,6 +56,21 @@ function StatusPill({ status }) {
   );
 }
 
+/**
+ * Layer 2 project card with logo tile, name, status pill, description and optional link.
+ *
+ * @param {object} props
+ * @param {string} props.name Project name (brand name, not translated).
+ * @param {string} props.status Key of STATUSES, drives the pill color and label. Unknown keys hide the pill.
+ * @param {string} props.description Short paragraph describing the project.
+ * @param {string} [props.logo] Path to a logo image. Falls back to a monogram.
+ * @param {string} [props.monogram] Letter shown when no logo is given. Falls back to the first letter of name.
+ * @param {string} [props.logoBackground] CSS color of the logo tile.
+ * @param {string} [props.logoColor] CSS color of the monogram letter.
+ * @param {{label: string, href: string}} [props.cta] Footer link. With href the whole card becomes the link.
+ * @param {number} [props.headingLevel=3] Heading level of the name. The look stays the same.
+ * @param {string} [props.className] Extra class on the card.
+ */
 export default function Layer2Card({
   name,
   status,

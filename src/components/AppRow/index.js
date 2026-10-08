@@ -23,6 +23,15 @@ const ACTIVITY_UNIT = translate({
 const NEW_LABEL = translate({ id: "apps.new", message: "NEW" });
 const PICK_LABEL = translate({ id: "apps.maintainerPick", message: "Maintainer picks" });
 
+/**
+ * Single app as a full-width row linking to its detail page.
+ *
+ * @param {object} props
+ * @param {object} props.app App entry from the showcase data.
+ * @param {boolean} [props.hideCategory=false] Hides the category label on the right.
+ * @param {number} [props.headingLevel=4] Heading level of the title. The look stays the same.
+ * @param {string} [props.className] Extra class on the row.
+ */
 function AppRow({ app, hideCategory = false, headingLevel, className }) {
   const { Tag, lookClassName } = getHeading(headingLevel, 4);
   const stats = isTrackable(app) ? getAppStats(app) : null;

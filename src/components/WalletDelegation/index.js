@@ -11,6 +11,14 @@ import styles from "./styles.module.css";
 // phase: detecting (scanning window.cardano) | ready | connecting (enable()
 // dialog open). Buttons are disabled while connecting so a second click
 // cannot open a second wallet prompt.
+/**
+ * Lists the detected CIP-30 wallets and connects the one the user picks.
+ *
+ * @param {object} props
+ * @param {Function} props.onConnect Called with `{ instance, name, address, networkId }` after a wallet is enabled.
+ * @param {boolean} [props.busy] Disables the wallet buttons, e.g. while a transaction runs.
+ * @param {string} [props.emptyMessage] Text shown when no wallet is found. Falls back to a default hint.
+ */
 export function WalletPicker({ onConnect, busy, emptyMessage }) {
   const [available, setAvailable] = useState([]);
   const [phase, setPhase] = useState("detecting");
@@ -109,6 +117,9 @@ export function WalletPicker({ onConnect, busy, emptyMessage }) {
   );
 }
 
+/**
+ * Warning banner for a wallet connected to the wrong network.
+ */
 export function NetworkWarning() {
   return (
     <div className={`${styles.banner} ${styles.bannerWarning}`} role="alert">
@@ -120,8 +131,12 @@ export function NetworkWarning() {
   );
 }
 
-// state.message is already translated by the caller, the banner only picks
-// the tone and, on success, appends the explorer link.
+/**
+ * Status banner for a delegation transaction.
+ *
+ * @param {object} props
+ * @param {object} props.state Transaction state with `status` ("building", "success", "error"), a translated `message` and `txHash` on success.
+ */
 export function TxBanner({ state }) {
   if (state.status === "building") {
     return <div className={`${styles.banner} ${styles.bannerInfo}`} role="status">{state.message}</div>;
@@ -142,14 +157,27 @@ export function TxBanner({ state }) {
   return null;
 }
 
+/**
+ * Placeholder avatar with up to two initials of a name.
+ *
+ * @param {object} props
+ * @param {string} [props.name] Name to take the initials from. Shows "?" when empty.
+ */
 export function Initials({ name }) {
   const text = (name || "?").split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
   return <div className={styles.initials} aria-hidden="true">{text}</div>;
 }
 
-// Self-hosted snapshot image (DRep avatar, pool logo) with the Initials
-// fallback. `ids` is the Set from the snapshot manifest, `path` the site
-// relative image path. A file missing at runtime falls back as well.
+/**
+ * Self-hosted snapshot image (DRep avatar, pool logo) with the Initials fallback. A file missing at runtime falls back as well.
+ *
+ * @param {object} props
+ * @param {Set<string>} props.ids Ids from the snapshot manifest that have an image.
+ * @param {string} props.id Id to look up in `ids`.
+ * @param {string} props.path Site relative image path.
+ * @param {string} [props.name] Name for the Initials fallback.
+ * @param {string} [props.className] Class on the image.
+ */
 export function SnapshotImage({ ids, id, path, name, className }) {
   const [imgError, setImgError] = useState(false);
   const src = useBaseUrl(path);
@@ -157,6 +185,15 @@ export function SnapshotImage({ ids, id, path, name, className }) {
   return <img src={src} alt="" className={className} width="48" height="48" loading="lazy" onError={() => setImgError(true)} />;
 }
 
+/**
+ * Search input with a clear button.
+ *
+ * @param {object} props
+ * @param {string} props.value Current search text.
+ * @param {Function} props.onChange Called with the new text.
+ * @param {string} [props.placeholder] Placeholder of the input.
+ * @param {string} [props.label] Accessible label of the input.
+ */
 export function SearchRow({ value, onChange, placeholder, label }) {
   return (
     <div className={styles.searchRow}>
