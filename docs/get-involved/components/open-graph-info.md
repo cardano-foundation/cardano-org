@@ -41,6 +41,7 @@ With title and description:
 | `image` | `string` | none | Site path to a preview image outside `static/img/og/`, for example `/img/insights/supply.png`. Overrides `pageName`. |
 | `title` | `string` | none | Sets `og:title` and `twitter:title`. Omit to leave the page's own title. |
 | `description` | `string` | none | Sets `og:description` and `twitter:description`. |
+| `type` | `string` \| `null` | `website` | Value of `og:type`. Pass `null` to leave it to the theme, as blog posts do so they keep `article`. |
 
 ## Notes
 

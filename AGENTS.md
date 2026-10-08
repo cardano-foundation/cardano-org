@@ -81,7 +81,7 @@ Read `docs/get-involved/component-guidelines.md` and `docs/get-involved/design-t
 - `yarn test` includes an editorial guard (`scripts/check-docs-style.js`) that fails on typographic dashes and arrow glyphs in `docs/` and `blog/`.
 - No new warnings or errors introduced
 - PR must not break local dev or production build
-- New or changed shared components have JSDoc and a doc page in `docs/get-involved/components/` (see "Building UI" above)
+- New or changed shared components have JSDoc and a doc page in `docs/get-involved/components/` (see "Building UI" above). `yarn test:component-docs` warns when a doc page, the JSDoc, or a matching props table is missing
 - All content must follow the editorial style guide (`docs/get-involved/style-guide.md`)
 
 ---

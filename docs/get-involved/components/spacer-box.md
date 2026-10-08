@@ -19,6 +19,12 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 
 `<SpacerBox />` without a size is the same as `<SpacerBox size="small" />`. An unknown size also falls back to `small`.
 
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `string` | `small` | `small`, `medium`, or `large`, see the sizes above. |
+
 ## Basic Usage
 
 ```jsx

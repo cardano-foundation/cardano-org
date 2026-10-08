@@ -31,6 +31,7 @@
     "test:events": "node scripts/test-events-model.js",
     "test:css": "node scripts/check-css.js",
     "test:docs-style": "node scripts/check-docs-style.js",
+    "test:component-docs": "node scripts/check-component-docs.js",
     "test:js-assets": "node scripts/check-js-assets.js",
     "test:quiz-logic": "node --test scripts/test-quiz-progress.mjs",
     "test:quiz-data": "node scripts/check-quiz.js",
@@ -52,7 +53,7 @@
     "test:treasury-donations": "node --test scripts/test-treasury-donations-script.mjs",
     "test:hash-target": "node --test scripts/test-hash-target.mjs",
     "test:hash-anchor": "node --test scripts/test-hash-anchor-watch.mjs",
-    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math && yarn test:timed-cache && yarn test:treasury-donations && yarn test:hash-target && yarn test:hash-anchor && yarn test:news-feed && yarn test:medusa-groups && yarn test:medusa-history && yarn test:medusa-playback && yarn test:medusa-graph && yarn test:medusa-layout",
+    "test": "yarn test:sitemap && yarn test:constitution && yarn test:events && yarn test:css && yarn test:docs-style && yarn test:component-docs && yarn test:quiz-logic && yarn test:quiz-data && yarn test:get-started && yarn test:stake-pools && yarn test:pool-loading && yarn test:pool-logos && yarn test:wallet-tx && yarn test:i18n-dynamic && yarn test:drep-id-status && yarn test:treasury-math && yarn test:timed-cache && yarn test:treasury-donations && yarn test:hash-target && yarn test:hash-anchor && yarn test:news-feed && yarn test:medusa-groups && yarn test:medusa-history && yarn test:medusa-playback && yarn test:medusa-graph && yarn test:medusa-layout",
     "lint": "eslint src scripts docusaurus.config.js",
     "lint:fix": "eslint --fix src scripts docusaurus.config.js"
   },
