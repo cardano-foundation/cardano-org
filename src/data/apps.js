@@ -1386,10 +1386,6 @@ export const Showcases = [
     description:
       "Cardano community engagement platform with token-gated rewards, automated participation tracking, and AI-driven campaign tools for projects.",
     tagline: "AI-driven community engagement and rewards",
-    preview: require("./app-screenshots/farmroll.webp"),
-    extraPreviews: [
-      require("./app-screenshots/farmroll-tools.webp"),
-    ],
     icon: "/img/app-icons/farmroll.png",
     website: "https://farmroll.io/",
     source: null,
