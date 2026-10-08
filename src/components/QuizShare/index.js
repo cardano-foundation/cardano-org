@@ -16,11 +16,12 @@ function defaultShareUrl(tierKey) {
   return `https://cardano.org${TIER_SHARE_PATHS[tierKey] || '/quiz'}`;
 }
 
-// Wordle-style emoji row: one filled circle per correct answer, in order.
+/** Wordle-style emoji row: one filled circle per correct answer, in order. */
 export function buildEmojiGrid(results) {
   return results.map((r) => (r ? '🔵' : '⚪')).join('');
 }
 
+/** Builds the plain share text with title, emoji row, score, tier and link. */
 export function buildShareText({ quizTitle, results, score, total, tierLabel, url }) {
   const grid = buildEmojiGrid(results);
   const headline = translate({id: 'quiz.share.headline', message: 'Cardano Quiz: {quizTitle}'}, {quizTitle});
@@ -54,6 +55,19 @@ const STATUS_LABEL = {
 //
 // getBadgeBlob reuses the single render the result screen already produced
 // (see Quiz/index.js) instead of rendering a second badge here.
+/**
+ * Share button for a finished quiz run, with image and text fallbacks.
+ *
+ * @param {object} props
+ * @param {string} props.quizTitle Quiz title used in the share text.
+ * @param {boolean[]} props.results Correct or wrong per question, in order.
+ * @param {number} props.score Number of correct answers.
+ * @param {number} props.total Number of questions.
+ * @param {string} props.tierKey Tier key: "bronze", "silver" or "gold".
+ * @param {string} props.tierLabel Translated tier name for the share text.
+ * @param {string} [props.url] Link in the share text. Defaults to the share page of the tier.
+ * @param {Function} props.getBadgeBlob Returns the promise of the rendered badge PNG, or null if not ready.
+ */
 const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey), getBadgeBlob }) => {
   const [status, setStatus] = useState('idle');
   const text = buildShareText({ quizTitle, results, score, total, tierLabel, url });

@@ -20,8 +20,16 @@ const ACTIVITY_UNIT = translate({
   message: "tx",
 });
 
-// `showProperties={false}` keeps the meta row to activity and category, e.g.
-// on the homepage where extra tags are noise.
+/**
+ * App card linking to its detail page, with icon, blurb, activity and category.
+ *
+ * @param {object} props
+ * @param {object} props.app App entry from the showcase data.
+ * @param {React.ReactNode} [props.badge=null] Badge shown next to the icon, e.g. StarBadge or RankBadge.
+ * @param {boolean} [props.showProperties=true] Shows up to two property tags. Turn off where extra tags are noise, e.g. on the homepage.
+ * @param {number} [props.headingLevel=3] Heading level of the title. The look stays the same.
+ * @param {string} [props.className] Extra class on the card.
+ */
 function AppTile({ app, badge = null, showProperties = true, headingLevel, className }) {
   const { Tag, lookClassName } = getHeading(headingLevel, 3);
   const categoryDef = Categories[app.category];
@@ -61,6 +69,9 @@ function AppTile({ app, badge = null, showProperties = true, headingLevel, class
 
 export default memo(AppTile);
 
+/**
+ * Star badge marking a maintainer pick. Takes no props.
+ */
 export function StarBadge() {
   return (
     <span className={clsx(styles.starBadge)} aria-label={translate({ id: "apps.detail.maintainerPick", message: "Maintainer pick" })}>
@@ -69,6 +80,12 @@ export function StarBadge() {
   );
 }
 
+/**
+ * Rank badge showing "#rank".
+ *
+ * @param {object} props
+ * @param {number} props.rank Rank to display.
+ */
 export function RankBadge({ rank }) {
   return (
     <span className={clsx(styles.rankBadge)} aria-label={translate({ id: "apps.rankBadge", message: "Rank {rank}" }, { rank })}>

@@ -14,6 +14,18 @@ import { faqJsonLd } from "@site/src/utils/jsonLd";
 // /smart-contracts, /defi): meta, FAQPage structured data, hero, the zoom
 // background with the page sections, the FAQ and a dark call-to-action band.
 // Pages pass translated strings, the shell never calls translate() itself.
+/**
+ * Full page shell for explainer pages with hero, sections, FAQ and a closing call to action.
+ *
+ * @param {object} props
+ * @param {string} props.title Page title for the meta tags.
+ * @param {string} props.description Page description for the meta tags.
+ * @param {{title: string, description: string, bannerType: string}} [props.hero={}] Props passed to the hero.
+ * @param {Array<{question: string, answer: string[]}>} [props.faq] FAQ entries, also emitted as FAQPage structured data.
+ * @param {{title: string, buttonLabel: string, buttonLink: string}} [props.cta] Closing call-to-action band.
+ * @param {string} props.pageName Open Graph image name.
+ * @param {React.ReactNode} props.children Page sections rendered above the FAQ.
+ */
 export default function ExplainerPage({ title, description, hero = {}, faq, cta, pageName, children }) {
   return (
     <Layout title={title} description={description}>

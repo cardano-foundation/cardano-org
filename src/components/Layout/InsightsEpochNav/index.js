@@ -18,6 +18,15 @@ function clamp(n, min, max) {
   return Math.min(Math.max(n, min), max);
 }
 
+/**
+ * Epoch navigation with prev and next buttons and a jump-to-epoch input.
+ *
+ * @param {object} props
+ * @param {number} props.displayedEpoch Epoch currently shown.
+ * @param {number} [props.currentEpochNo] Latest epoch. While unknown, next is disabled and the max falls back to the displayed epoch.
+ * @param {number} props.minEpoch Lowest selectable epoch.
+ * @param {function(number): void} props.onGoEpoch Called with the epoch to show.
+ */
 export default function InsightsEpochNav({
   displayedEpoch,
   currentEpochNo,

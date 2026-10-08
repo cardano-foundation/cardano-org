@@ -14,6 +14,12 @@ function categoryLabel(category) {
   return labels[category] || category;
 }
 
+/**
+ * Two random terms with their explanations from one term category.
+ *
+ * @param {object} props
+ * @param {string} props.category Category key in the term data, e.g. "governance".
+ */
 export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
 

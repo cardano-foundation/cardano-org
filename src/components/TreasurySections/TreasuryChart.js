@@ -3,6 +3,14 @@ import * as echarts from "echarts";
 
 // Thin ECharts wrapper. The caller builds the option (theme-aware),
 // this component only manages the chart instance.
+/**
+ * ECharts container that resizes with the window.
+ *
+ * @param {object} props
+ * @param {object} props.option ECharts option, applied without merging on change.
+ * @param {number|string} [props.height=380] Chart height.
+ * @param {string} [props.ariaLabel] Accessible description of the chart.
+ */
 export default function TreasuryChart({ option, height = 380, ariaLabel }) {
   const ref = useRef(null);
   const chart = useRef(null);

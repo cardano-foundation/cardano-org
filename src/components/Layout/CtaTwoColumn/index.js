@@ -8,6 +8,25 @@ import { getHeading } from "@site/src/utils/heading";
 // This component shows some text with a title (optional) to the left (optional)
 // and a call to action button on the right
 
+/**
+ * Two-column call-to-action band with a title, text and button per column.
+ *
+ * @param {object} props
+ * @param {string} [props.leftTitle] Heading of the left column.
+ * @param {string|string[]} [props.leftText] Text of the left column, one paragraph per array entry.
+ * @param {string} [props.leftButtonLabel] Label of the left button. No button without it.
+ * @param {string} [props.leftButtonLink] Target of the left button.
+ * @param {boolean} [props.leftHeadingDot] Shows the red dot above the left title.
+ * @param {string} [props.leftButtonAlign] "center" centers the left button.
+ * @param {string} [props.rightTitle] Heading of the right column.
+ * @param {string|string[]} [props.rightText] Text of the right column, one paragraph per array entry.
+ * @param {string} [props.rightButtonLabel] Label of the right button. No button without it.
+ * @param {string} [props.rightButtonLink] Target of the right button.
+ * @param {boolean} [props.rightHeadingDot] Shows the red dot above the right title.
+ * @param {string} [props.rightButtonAlign] "center" centers the right button.
+ * @param {number} [props.headingLevel=1] Heading level of both titles. The look stays the same.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function CtaTwoColumn({
   leftTitle,
   leftText,

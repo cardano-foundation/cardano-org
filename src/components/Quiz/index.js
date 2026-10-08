@@ -51,6 +51,17 @@ const CrossIcon = () => (
   </svg>
 );
 
+/**
+ * Multiple choice quiz with progress bar, explanations and a result screen.
+ *
+ * @param {object} props
+ * @param {object} props.quizData Quiz with `title`, optional `description` and `questions` (`question`, `options`, `correctAnswer`, optional `explanation` and `sourceUrl`).
+ * @param {number} [props.questionCount=5] Number of questions drawn at random per run.
+ * @param {boolean} [props.allowRetry=true] Shows a retry button after a wrong answer.
+ * @param {number} [props.passingScore=60] Percentage needed for the success result.
+ * @param {Function} [props.onRecord=null] Called with `(score, total)` after a scored run. Turns on hub mode with tiers, badge, share and practice rounds.
+ * @param {object} [props.academyCta=null] Hub mode link with `href`, `label`, `certifiedLabel` (silver and gold) and `ariaLabel`.
+ */
 const Quiz = ({
   quizData,
   questionCount = 5,

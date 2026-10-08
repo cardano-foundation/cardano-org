@@ -13,6 +13,14 @@ import styles from "./styles.module.css";
 // Per project memory (project_icon-mandatory.md), `icon` is mandatory for new submissions
 // after Phase 6a's bulk-sweep — but the fallback stays for legacy entries and broken-image
 // resilience.
+/**
+ * App icon image with a colored letter avatar as fallback.
+ *
+ * @param {object} props
+ * @param {object} props.app App entry from the showcase data.
+ * @param {string} [props.size="tile"] Icon size: "tile" or "row".
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function AppIcon({ app, size = "tile", className }) {
   const iconHref = useBaseUrl(app.icon || "");
   const [errored, setErrored] = useState(false);

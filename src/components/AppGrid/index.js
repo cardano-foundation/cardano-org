@@ -68,6 +68,21 @@ function AppCard({ app, stats, appRank, ctaText }) {
   );
 }
 
+/**
+ * Grid of app cards for the given categories, sorted by activity, with an optional "more" card.
+ *
+ * @param {object} props
+ * @param {string[]} [props.categories=['dex']] Primary app categories to include.
+ * @param {number} [props.limit=null] Maximum number of cards. Shows a "more" card when apps are left over.
+ * @param {boolean} [props.showRank=true] Shows the rank badge next to the stats.
+ * @param {boolean} [props.showStats=true] Shows the 30 day transaction count.
+ * @param {string} [props.gridTitle=null] Optional heading above the grid.
+ * @param {string} [props.ctaText="Visit"] Label of the link on each card.
+ * @param {string} [props.moreLink=null] Target of the "more" card. Defaults to /apps filtered by the categories.
+ * @param {string} [props.moreTitle="More Apps"] Title of the "more" card.
+ * @param {string} [props.excludeSlug=null] Slug of an app to leave out, e.g. the current detail page.
+ * @param {boolean} [props.prioritizeMaintainerPicks=false] Sorts maintainer picks first.
+ */
 export default function AppGrid({
   categories = ['dex'],
   limit = null,

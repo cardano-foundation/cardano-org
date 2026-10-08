@@ -5,6 +5,12 @@ import styles from "./styles.module.css";
 //
 // This component shows text in one column
 
+/**
+ * Full-width text block with one or more paragraphs.
+ *
+ * @param {object} props
+ * @param {string|string[]} props.text Paragraph text, or an array with one entry per paragraph.
+ */
 export default function OneColumnBox({ text }) {
 
   return (

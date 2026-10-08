@@ -27,6 +27,9 @@ function contextSentence(netChange) {
   return `${leadSentence(netChange)} ${caveat}`;
 }
 
+/**
+ * Treasury balance, 12-month change, income, withdrawals and donations from live data.
+ */
 export default function TreasuryFlows() {
   const totals = useTreasuryTotals();
   const withdrawals = useTreasuryWithdrawals();

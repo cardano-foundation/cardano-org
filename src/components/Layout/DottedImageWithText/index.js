@@ -9,6 +9,15 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 // This component:
 // shows a dotted image and some text to the right, title is optional
 
+/**
+ * Dotted icon on the left with an optional title and text on the right.
+ *
+ * @param {object} props
+ * @param {string} [props.imageName] File name without extension in `/img/dotted-icons/`, also the alt text.
+ * @param {string} [props.title] Heading text.
+ * @param {string|Array|object} [props.text] Body text as a string, an array of items, or `{ list: [...] }`.
+ * @param {boolean} [props.headingDot] Shows the red dot above the title.
+ */
 export default function DottedImageWithText({ imageName, title, text, headingDot }) {
   const { withBaseUrl } = useBaseUrlUtils();
   // Construct the image URL using the imageName prop (if there is one), we may want to handle image load errors in the future

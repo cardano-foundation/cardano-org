@@ -6,6 +6,14 @@ import HorizontalScroller from "@site/src/components/Layout/HorizontalScroller";
 
 // Thin wrapper over HorizontalScroller: renders a row of AppTiles at the
 // narrower /apps sizing. All scroll/arrow/dot behavior lives in HorizontalScroller.
+/**
+ * Horizontally scrolling row of AppTiles.
+ *
+ * @param {object} props
+ * @param {object[]} props.apps App entries to show, in order.
+ * @param {string} [props.ariaLabel] Accessible label of the carousel.
+ * @param {Function} [props.renderBadge] Called as renderBadge(app, index), returns the badge for each tile.
+ */
 function AppTileCarousel({ apps, ariaLabel, renderBadge }) {
   return (
     <HorizontalScroller

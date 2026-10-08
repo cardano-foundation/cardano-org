@@ -17,6 +17,15 @@ import { canRunWebGL } from "@site/src/components/Medusa/webgl";
 // light theme gets a brighter Cardano blue instead of the near black navy.
 const MEDUSA_BACKGROUND = { light: "#0a2a8a", dark: "#0b1030" };
 
+/**
+ * Homepage hero with an animated ledger visualization background, title, description, and call to action buttons.
+ *
+ * @param {object} props
+ * @param {string|string[]} props.title Hero title, or an array of lines separated by line breaks.
+ * @param {React.ReactNode} [props.description] Subtitle below the title.
+ * @param {React.ReactNode} [props.children] Content below the call to action row.
+ * @param {boolean} [props.showWhatIsCardano=true] Shows the "What is Cardano?" button.
+ */
 function WelcomeHero({ title, description, children, showWhatIsCardano = true }) {
   const [webglSupported, setWebglSupported] = useState(true);
   const [year, setYear] = useState("");

@@ -9,6 +9,9 @@ import styles from "./styles.module.css";
 
 const RECENT_COUNT = 5;
 
+/**
+ * Most recent treasury withdrawals with a 12-month summary and a link to all of them.
+ */
 export default function TreasuryFunded() {
   const withdrawals = useTreasuryWithdrawals();
 

@@ -59,6 +59,19 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
   );
 }
 
+/**
+ * Compact list of apps with an optional header and "See all" link.
+ *
+ * @param {object} props
+ * @param {string[]} [props.categories=[]] Primary app categories to include. Empty includes all apps.
+ * @param {string[]} [props.slugs=null] Explicit app slugs in display order. Overrides categories and sorting.
+ * @param {number} [props.limit=5] Maximum number of apps. A falsy value shows all.
+ * @param {string} [props.categoryTitle="Apps"] Heading text in the header.
+ * @param {boolean} [props.showTxCount=false] Shows the transaction count of each app.
+ * @param {boolean} [props.hideHeader=false] Hides the header with title and "See all" link.
+ * @param {boolean} [props.showTags=false] Shows the tags of each app.
+ * @param {boolean} [props.showDescription=true] Shows the description of each app.
+ */
 export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = translate({ id: "apps.list.title", message: "Apps" }), showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
   // Explicit slug list (used by curated Collections) bypasses category filtering
   // and preserves the curator's chosen order.

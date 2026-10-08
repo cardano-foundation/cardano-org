@@ -11,6 +11,9 @@ import styles from "./styles.module.css";
 // Two years of epochs for the default income chart range.
 const CHART_RANGE = 2 * EPOCHS_PER_YEAR;
 
+/**
+ * Fee share and reserves figures with charts of treasury income per epoch.
+ */
 export default function TreasuryIncome() {
   const { status, model } = useTreasuryModel();
   const { colorMode } = useColorMode();
