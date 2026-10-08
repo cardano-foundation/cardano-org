@@ -15,8 +15,6 @@ A single centered column with an optional heading, an optional paragraph, and on
 
 ## Basic Usage
 
-Taken from `src/pages/learn.js`:
-
 ```jsx
 import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 import BoundaryBox from '@site/src/components/Layout/BoundaryBox';
@@ -24,9 +22,10 @@ import CtaOneColumn from '@site/src/components/Layout/CtaOneColumn';
 import { ACADEMY_CTA_URL } from '@site/src/data/learningPath';
 import { translate } from '@docusaurus/Translate';
 
-<BackgroundWrapper backgroundType="solidBlue">
+<BackgroundWrapper backgroundType="gradientDark">
   <BoundaryBox>
     <CtaOneColumn
+      headingLevel={2}
       title={translate({ id: "learn.cta.title", message: "Want a certificate at the end? The Cardano Academy offers free courses on everything above." })}
       buttonLabel={translate({ id: "learn.cta.button", message: "Explore the Academy" })}
       buttonLink={ACADEMY_CTA_URL}
@@ -39,7 +38,7 @@ import { translate } from '@docusaurus/Translate';
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `title` | `string` | - | Optional heading rendered as an `<h1>`. Skipped when empty. |
+| `title` | `string` | - | Optional heading, an `<h1>` by default (see `headingLevel`). Skipped when empty. |
 | `text` | `string` | - | Optional paragraph below the title, rendered as a plain string (no markdown parsing). Skipped when empty. |
 | `buttonLabel` | `string` | - | Label of the button. The button is always rendered, so always pass a label. |
 | `buttonLink` | `string` | - | Target of the button, passed to the Docusaurus `Link`, so internal paths and external URLs both work. |
@@ -55,6 +54,7 @@ import { translate } from '@docusaurus/Translate';
       text="Reach out for tailored support, real-time updates, and integration queries."
       buttonLabel="Contact the Core Integrations team"
       buttonLink="/contact"
+      headingLevel={2}
     />
   </BoundaryBox>
 </BackgroundWrapper>

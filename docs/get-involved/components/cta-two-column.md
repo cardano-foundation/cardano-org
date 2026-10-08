@@ -13,17 +13,18 @@ Two side-by-side columns, each with an optional heading, optional text, and an o
 
 The column split adapts to the content. When the right column has a title or text, both columns are `col--6`. When the right column only holds a button (or nothing), the left column widens to `col--7` and the right narrows to `col--5`.
 
-Used on `/exchanges`, `/stake-pool-delegation`, and `/stake-pool-operation`.
+Used on `/exchanges` and `/stake-pool-operation`.
 
 ## Basic Usage
 
-Two full columns, from `src/pages/exchanges.js`:
+Two full columns:
 
 ```jsx
 import CtaTwoColumn from '@site/src/components/Layout/CtaTwoColumn';
 import { translate } from '@docusaurus/Translate';
 
 <CtaTwoColumn
+  headingLevel={2}
   leftTitle={translate({ id: "exchanges.learnMore.leftTitle", message: "Exchange integration guide" })}
   leftText={translate({ id: "exchanges.learnMore.leftText", message: "Step-by-step guidance for custodians and listing platforms. Covers the accounting model, transaction handling, native assets, and upgrade practices." })}
   leftButtonLabel={translate({ id: "exchanges.learnMore.leftButtonLabel", message: "Read the full guide" })}
@@ -37,15 +38,16 @@ import { translate } from '@docusaurus/Translate';
 />
 ```
 
-Text on the left, a centered button on the right, from `src/pages/stake-pool-delegation.js`:
+Text on the left, a centered button on the right:
 
 ```jsx
 <CtaTwoColumn
-  leftTitle={translate({ id: 'stakePoolDelegation.walletsCta.title', message: 'Cardano Wallets' })}
-  leftText={translate({ id: 'stakePoolDelegation.walletsCta.text', message: 'Discover a wide variety of wallets designed to facilitate your interaction with the Cardano ecosystem.' })}
+  headingLevel={2}
+  leftTitle={translate({ id: 'stakePoolOperation.setupCta.title', message: 'How do I set up a stake pool?' })}
+  leftText={translate({ id: 'stakePoolOperation.setupCta.text2', message: 'Anybody can learn how to operate a stake pool, but a degree of technical familiarity and knowledge is required.' })}
   leftHeadingDot={true}
-  rightButtonLabel={translate({ id: 'stakePoolDelegation.walletsCta.buttonLabel', message: 'Discover Now' })}
-  rightButtonLink="/what-is-ada#wallets"
+  rightButtonLabel={translate({ id: 'stakePoolOperation.setupCta.buttonLabel', message: 'Learn how' })}
+  rightButtonLink="https://developers.cardano.org/docs/operators/"
   rightButtonAlign="center"
 />
 ```
@@ -54,13 +56,13 @@ Text on the left, a centered button on the right, from `src/pages/stake-pool-del
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `leftTitle` | `string` | - | Optional `<h1>` in the left column. |
+| `leftTitle` | `string` | - | Optional title in the left column, an `<h1>` by default (see `headingLevel`). |
 | `leftText` | `string` \| `string[]` | - | Optional text in the left column. A string renders one `<p>`, an array renders one `<p>` per entry. Plain strings, no markdown parsing. |
 | `leftButtonLabel` | `string` | - | Optional. When set, a white button renders in the left column. |
 | `leftButtonLink` | `string` | - | Target of the left button. |
 | `leftHeadingDot` | `boolean` | - | Adds the `headingDot` class to the left title. |
 | `leftButtonAlign` | `string` | - | `'center'` centers the left button. Any other value keeps the default left alignment. |
-| `rightTitle` | `string` | - | Optional `<h1>` in the right column. |
+| `rightTitle` | `string` | - | Optional title in the right column, an `<h1>` by default (see `headingLevel`). |
 | `rightText` | `string` \| `string[]` | - | Optional text in the right column, same rules as `leftText`. |
 | `rightButtonLabel` | `string` | - | Optional. When set, a white button renders in the right column. |
 | `rightButtonLink` | `string` | - | Target of the right button. |
@@ -80,6 +82,7 @@ Text on the left, a centered button on the right, from `src/pages/stake-pool-del
       rightButtonLabel="Discover Now"
       rightButtonLink="/what-is-ada#wallets"
       rightButtonAlign="center"
+      headingLevel={2}
     />
   </BoundaryBox>
 </BackgroundWrapper>

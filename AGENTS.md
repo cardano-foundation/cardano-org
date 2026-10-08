@@ -45,7 +45,7 @@ Shared components are the default. Many people contribute to this site, and dupl
 1. **Look up what exists:** `docs/get-involved/components/index.md` maps common needs (hero, section title, tabs, FAQ, modal, call to action, and more) to the component to use.
 2. **Use or extend:** if a component almost fits, add an additive prop that leaves existing pages unchanged. Do not copy it into a variant.
 3. **Page-specific components only for tools or art direction:** an interactive tool (data visualization, wallet or chain flow, calculator, search) or deliberate art direction may get its own component in `src/components/<PageName>/`. Explain in the PR why nothing existing fits, and build its inner parts (titles, grids, FAQ lists) from shared components.
-4. **New shared components** go in `src/components/Layout/` and need JSDoc for their props, a doc page in `docs/get-involved/components/`, and a row in the overview table. If unsure, ask in the issue or PR before building.
+4. **New shared components** go in `src/components/Layout/` and need JSDoc for their props, a doc page in `docs/get-involved/components/` (start from `_template.md` there), and a row in the overview table. If unsure, ask in the issue or PR before building.
 5. **No page CSS for covered patterns:** card grids, section heading blocks, and FAQ lists come from components, not from a page's `*.module.css`.
 
 Read `docs/get-involved/component-guidelines.md` and `docs/get-involved/design-tokens.md` before any UI work.

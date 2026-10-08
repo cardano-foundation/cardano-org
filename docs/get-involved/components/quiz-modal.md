@@ -50,7 +50,7 @@ Hub mode, from `src/components/QuizHub/index.js`:
 | `quizData` | `object` | - | The quiz JSON, see the [Quiz data format](./quiz.md#quiz-data-format). Required. |
 | `buttonText` | `string` | `"Test Your Knowledge"` | Content of the trigger button. Pass a translated string, the default is English only. |
 | `questionCount` | `number` | `5` | Forwarded to `Quiz`. Number of questions sampled per run. |
-| `allowRetry` | `boolean` | `true` | Forwarded to `Quiz`. Whether a retry button appears after a failed run. |
+| `allowRetry` | `boolean` | `true` | Forwarded to `Quiz`. Whether a "Try again" button appears after a wrong answer, so the reader can answer the same question again. |
 | `passingScore` | `number` | `60` | Forwarded to `Quiz`. Minimum percentage to pass. |
 | `onRecord` | `function` | `null` | Forwarded to `Quiz`. `(correct, total) => void`, switches the quiz into hub mode. |
 | `academyCta` | `object` | `null` | Forwarded to `Quiz`. Follow-up link shown on the hub mode result screen. |

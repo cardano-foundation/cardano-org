@@ -44,6 +44,18 @@ export default function TitleWithText({ title, description, buttonLabel, buttonL
 
 The props table on the component's doc page lists the same props.
 
+### Write the doc page from the template
+
+Start a new doc page from `docs/get-involved/components/_template.md`. Files that start with an underscore are not built, so the template only exists in the repository. A doc page covers:
+
+- what the component renders and when to use it, with a link to the alternative,
+- a usage example with translated strings,
+- a props table that matches the JSDoc block,
+- a live preview, or one sentence on why there is none (runtime data such as a wallet or an API response, changes to the document head, a full page or homepage hero),
+- accessibility, translation, and styling notes, and related components.
+
+Do not attribute examples to a page file ("from `src/pages/x.js`"), because those examples go stale when the page changes. Name the pages that use a component only after checking them with `git grep`. Write prop names exactly as the component destructures them, with one props table per export for a module with several exports. Live previews pass `headingLevel={2}` or a deeper level, so the doc page keeps a single `<h1>`.
+
 ## Styling: use tokens
 
 Style with the [design tokens](./design-tokens.md) rather than hardcoded values. Put component styles in a co-located `styles.module.css` (CSS Modules), and use the shared `--site-*` and `--ifm-*` variables for color, spacing, radius, shadow, and motion.
