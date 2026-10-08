@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FaBookOpen, FaVoteYea, FaBullhorn } from "react-icons/fa";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
 import { translate } from "@docusaurus/Translate";
 import IconHero from "@site/src/components/Layout/IconHero";
 import styles from "./styles.module.css";
@@ -84,7 +83,7 @@ export default function GovernancePathsSection() {
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
-      <Tabs
+      <TabsRoot
         className={styles.tabs}
         onSelect={(index) => setSelectedIndex(index)}
         selectedIndex={selectedIndex}
@@ -150,7 +149,7 @@ export default function GovernancePathsSection() {
             })}
           </div>
         </div>
-      </Tabs>
+      </TabsRoot>
     </div>
   );
 }

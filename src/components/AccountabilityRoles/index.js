@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import clsx from "clsx";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
 import { translate } from "@docusaurus/Translate";
 import AccountabilityRole from "@site/src/components/AccountabilityRole";
 import { getAccountabilityRoles } from "@site/src/data/governanceAccountability";
@@ -83,10 +82,9 @@ export default function AccountabilityRoles() {
         </p>
       </div>
 
-      <Tabs
+      <TabsRoot
         selectedIndex={selectedIndex}
         onSelect={handleSelect}
-        forceRenderTabPanel
       >
         <TabList className={styles.tabList}>
           {roles.map((role, index) => (
@@ -103,11 +101,11 @@ export default function AccountabilityRoles() {
         </TabList>
 
         {roles.map((role) => (
-          <TabPanel key={role.id} className={styles.panel} selectedClassName={styles.panelSelected}>
+          <TabPanel key={role.id}>
             <AccountabilityRole role={role} />
           </TabPanel>
         ))}
-      </Tabs>
+      </TabsRoot>
     </div>
   );
 }

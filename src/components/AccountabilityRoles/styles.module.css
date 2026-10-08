@@ -95,18 +95,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-/* Panels: keep all in the DOM (forceRenderTabPanel) but only show the selected one.
-   The selected rule needs higher specificity than .panel: the production CSS
-   optimizer merges equal-specificity rules by declaration and can reorder them,
-   which would otherwise let .panel (display:none) win over .panelSelected. */
-.panel {
-  display: none;
-}
-
-.panel.panelSelected {
-  display: block;
-}
-
 .accent_blue   { --role-accent: 0 51 173; }
 .accent_teal   { --role-accent: 0 122 122; }
 .accent_violet { --role-accent: 91 77 240; }
