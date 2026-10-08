@@ -235,7 +235,7 @@ export const Showcases = [
     category: "other",
     properties: ["opensource"],
     maintainerPick: false,
- },
+  },
   {
     title: "Cardano Wall",
     description:
@@ -251,7 +251,7 @@ export const Showcases = [
     category: "notary",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "NMKR",
     description:
@@ -270,7 +270,7 @@ export const Showcases = [
       title: "Cardano Developer Spotlight: July 2021",
       date: "2021-07-26",
     },
- },
+  },
   {
     title: "AdaStat",
     description:
@@ -287,7 +287,7 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: true,
- },
+  },
   {
     title: "Cardano Explorer Index",
     description:
@@ -315,7 +315,7 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Cardano Scan",
     description:
@@ -343,7 +343,7 @@ export const Showcases = [
     category: "explorer",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "PoolTool",
     description:
@@ -360,7 +360,7 @@ export const Showcases = [
     category: "pooltool",
     properties: [],
     maintainerPick: true,
- },
+  },
   {
     title: "AdaLite",
     description:
@@ -430,7 +430,7 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: true,
- },
+  },
   {
     title: "Pool Stats",
     description: "Cardano stake-pool monitoring with heat-map visualizations of performance, saturation, and rewards across the entire pool universe.",
@@ -446,7 +446,7 @@ export const Showcases = [
     category: "pooltool",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "NOWPayments",
     description:
@@ -460,7 +460,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "NOWPayments_io",
- },
+  },
   {
     title: "Gimbalabs",
     description:
@@ -479,7 +479,7 @@ export const Showcases = [
       title: "Cardano Developer Spotlight: January 2023",
       date: "2023-01-02",
     },
- },
+  },
   {
     title: "Eternl",
     description:
@@ -520,7 +520,7 @@ export const Showcases = [
     category: "minting",
     properties: ["nft", "opensource"],
     maintainerPick: false,
- },
+  },
   {
     title: "Typhon",
     description:
@@ -572,7 +572,7 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "SundaeSwap",
     description:
@@ -606,7 +606,7 @@ export const Showcases = [
     category: "distribution",
     properties: [],
     maintainerPick: true,
- },
+  },
   {
     title: "Minswap",
     description:
@@ -684,7 +684,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "gerowallet",
- },
+  },
   {
     title: "CardanoCube",
     description:
@@ -702,7 +702,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: true,
     x: "CardanoCube",
- },
+  },
   {
     title: "WingRiders",
     description:
@@ -732,7 +732,7 @@ export const Showcases = [
     category: "ecosystem",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "eUTxO",
     description:
@@ -758,7 +758,7 @@ export const Showcases = [
     properties: ["nft", "opensource"],
     maintainerPick: false,
     x: "VibrantNet_io",
- },
+  },
   {
     title: "Book.io",
     description:
@@ -806,7 +806,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     x: "nufiwallet",
- },
+  },
   {
     title: "Dune",
     description: "Dune is a powerful tool for blockchain research, providing instant on-chain data analysis and community-driven dashboards for the Cardano ecosystem.",
@@ -844,7 +844,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     x: "cardano_studio",
- },
+  },
   {
     title: "Finitum Bridge",
     description:
@@ -857,7 +857,7 @@ export const Showcases = [
     category: "bridge",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "BALANCE Analytics",
     description:
@@ -870,7 +870,7 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "adahandle",
     description:
@@ -883,7 +883,7 @@ export const Showcases = [
     category: "identity",
     properties: ["nft"],
     maintainerPick: false,
- },
+  },
   {
     title: "Lace",
     description:
@@ -915,7 +915,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     x: "lace_io",
- },
+  },
   {
     title: "VESPR",
     description:
@@ -1019,7 +1019,7 @@ export const Showcases = [
     category: "governance",
     properties: ["drepdelegation"],
     maintainerPick: false,
- },
+  },
   {
     title: "Treasury Donation",
     description:
@@ -1146,7 +1146,7 @@ export const Showcases = [
     properties: ["nft"],
     maintainerPick: false,
     x: "BeginWallet",
- },
+  },
   {
     title: "Stuff.io",
     description:
@@ -1163,7 +1163,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "stuff_io",
- },
+  },
   {
     title: "Veridian Wallet",
     description:
@@ -1197,7 +1197,7 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Adastack.io",
     description:
@@ -1215,7 +1215,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "adastackio",
- },
+  },
   {
     title: "ADAM Cardano App",
     description:
@@ -1228,7 +1228,7 @@ export const Showcases = [
     category: "other",
     properties: ["nft"],
     maintainerPick: false,
- },
+  },
   {
     title: "Governance Voting Tool",
     description:
@@ -1257,7 +1257,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "andamio_teams",
- },
+  },
   {
     title: "CSWAP",
     description:
@@ -1316,7 +1316,7 @@ export const Showcases = [
       title: "Cardano Developer Spotlight: September 2025",
       date: "2025-09-29",
     },
- },
+  },
   {
     title: "VyFinance",
     description:
@@ -1334,7 +1334,7 @@ export const Showcases = [
     category: "dex",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Splash",
     description:
@@ -1348,7 +1348,7 @@ export const Showcases = [
     category: "dex",
     properties: ["opensource"],
     maintainerPick: false,
- },
+  },
   {
     title: "Palmyra",
     description:
@@ -1366,7 +1366,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     x: "palmeconomy",
- },
+  },
   {
     title: "Optim Finance",
     description:
@@ -1380,7 +1380,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "OptimFi",
- },
+  },
   {
     title: "Farmroll",
     description:
@@ -1396,7 +1396,7 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Empowa",
     description:
@@ -1409,7 +1409,7 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Strike Finance",
     description:
@@ -1438,7 +1438,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "snekdotfun",
- },
+  },
   {
     title: "Xerberus",
     description:
@@ -1457,7 +1457,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "Xerberus",
- },
+  },
   {
     title: "Masumi",
     description:
@@ -1480,7 +1480,7 @@ export const Showcases = [
       title: "Cardano Developer Interview: June 2025",
       date: "2025-06-24",
     },
- },
+  },
   {
     title: "Finest",
     description:
@@ -1496,7 +1496,7 @@ export const Showcases = [
     category: "marketplace",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Butane",
     description:
@@ -1543,7 +1543,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "InfinityRisingX",
- },
+  },
   {
     title: "Reeve",
     description:
@@ -1573,7 +1573,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "AscentRivals",
- },
+  },
   {
     title: "Asteria",
     description:
@@ -1589,7 +1589,7 @@ export const Showcases = [
     category: "game",
     properties: ["opensource"],
     maintainerPick: false,
- },
+  },
   {
     title: "Ale & Axes",
     description:
@@ -1606,7 +1606,7 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: true,
- },
+  },
   {
     title: "Clarity Protocol",
     description:
@@ -1623,7 +1623,7 @@ export const Showcases = [
     category: "governance",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Indigo",
     description:
@@ -1658,7 +1658,7 @@ export const Showcases = [
     category: "other",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "CGOV",
     description:
@@ -1676,7 +1676,7 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: true,
- },
+  },
   {
     title: "Sundae Treasury Dashboard",
     description:
@@ -1693,7 +1693,7 @@ export const Showcases = [
     category: "governance",
     properties: ["opensource"],
     maintainerPick: false,
- },
+  },
   {
     title: "Supply Summary",
     description:
@@ -1778,7 +1778,7 @@ export const Showcases = [
     category: "game",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "TapDano",
     description: "Verifiable proof infrastructure combining NFC hardware identity with on-chain records on Cardano. Enables cryptographic proof of attendance and compliance.",
@@ -1791,7 +1791,7 @@ export const Showcases = [
     category: "identity",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "Claimpaign",
     description:
@@ -1864,7 +1864,7 @@ export const Showcases = [
     properties: [],
     maintainerPick: false,
     x: "hizz_io",
- },
+  },
   {
     title: "Extended UTxO",
     description:
@@ -1897,7 +1897,7 @@ export const Showcases = [
     category: "analytics",
     properties: [],
     maintainerPick: false,
- },
+  },
   {
     title: "DRepTalk",
     description:
@@ -1934,7 +1934,7 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
     x: "EchoForgeEF",
- },
+  },
   {
     title: "Adapools",
     description:
