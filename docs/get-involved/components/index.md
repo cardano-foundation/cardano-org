@@ -37,6 +37,7 @@ Shared components are the default on cardano.org. Before you write a component o
 | Alternating rows of icon, title, and text | [Proof Points List](./proof-points-list.md) |
 | A highlighted note with icon and accent border | [Highlight Callout](./highlight-callout.md) |
 | A call to action band | [CTA One Column](./cta-one-column.md), [CTA Two Column](./cta-two-column.md) |
+| A call to action band that closes a page on the normal background | [Page CTA](./page-cta.md) |
 | A role or persona card | [Role Card](./role-card.md) |
 | A small status label | [Status Pill](./status-pill.md) |
 

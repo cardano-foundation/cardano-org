@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { FaCircleInfo } from "react-icons/fa6";
-import Modal from "@site/src/components/Modal";
+import Modal from "@site/src/components/Layout/Modal";
 import { getFundingStats } from "@site/src/data/funding";
 import styles from "./styles.module.css";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import { FaArrowRight } from "react-icons/fa";
-import HorizontalScroller from "@site/src/components/HorizontalScroller";
+import HorizontalScroller from "@site/src/components/Layout/HorizontalScroller";
 import styles from "./styles.module.css";
 
 // Resources for the /programmable-tokens page. One link card per resource

@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import { FaCheck } from "react-icons/fa";
-import Modal from "@site/src/components/Modal";
+import Modal from "@site/src/components/Layout/Modal";
 import StatusPill from "@site/src/components/Layout/StatusPill";
 import { FundingTypes } from "@site/src/data/funding";
 import ProgramDetails from "./ProgramDetails";

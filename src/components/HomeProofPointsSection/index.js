@@ -1,7 +1,7 @@
 import React from "react";
 import { translate } from "@docusaurus/Translate";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import ProofPointsList from "@site/src/components/ProofPointsList";
+import ProofPointsList from "@site/src/components/Layout/ProofPointsList";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
 
 // The homepage shows the four strongest points, the full list lives on

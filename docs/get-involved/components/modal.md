@@ -3,7 +3,7 @@ title: Modal
 description: Open any content in an accessible dialog from a trigger button using the Modal component on cardano.org.
 ---
 
-import Modal from '@site/src/components/Modal';
+import Modal from '@site/src/components/Layout/Modal';
 
 ## Modal
 
@@ -18,7 +18,7 @@ Scroll lock, focus trap, focus restore, and Escape to close come from the `useMo
 From `src/components/SurveyModal/index.js`:
 
 ```jsx
-import Modal from '@site/src/components/Modal';
+import Modal from '@site/src/components/Layout/Modal';
 import Survey from '@site/src/components/Survey';
 
 const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonClassName }) => (
@@ -49,4 +49,4 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
 - The dialog state lives inside the component. There is no controlled mode and no `onClose` callback.
 - `label` is used in string operations, so pass a plain string, and pass a translated one, since it is read by screen readers.
 - The close button label is built as `Close ${label.toLowerCase()}` and is not translated separately.
-- The overlay and content box are styled in `src/components/Modal/styles.module.css` and respect `prefers-reduced-motion` by dropping the button transitions.
+- The overlay and content box are styled in `src/components/Layout/Modal/styles.module.css` and respect `prefers-reduced-motion` by dropping the button transitions.

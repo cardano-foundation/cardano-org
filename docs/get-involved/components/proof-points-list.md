@@ -3,7 +3,7 @@ title: Proof Points List
 description: Render alternating rows of icon, title, tagline, and text with an optional closing button using the ProofPointsList component on cardano.org.
 ---
 
-import ProofPointsList from '@site/src/components/ProofPointsList';
+import ProofPointsList from '@site/src/components/Layout/ProofPointsList';
 import { FaLock, FaCalculator } from 'react-icons/fa';
 
 ## ProofPointsList
@@ -19,7 +19,7 @@ From `src/components/HomeProofPointsSection/index.js`:
 ```jsx
 import { translate } from '@docusaurus/Translate';
 import TitleWithText from '@site/src/components/Layout/TitleWithText';
-import ProofPointsList from '@site/src/components/ProofPointsList';
+import ProofPointsList from '@site/src/components/Layout/ProofPointsList';
 import { getProofPoints } from '@site/src/data/whatIsCardanoProofPoints';
 
 const HOME_KEYS = ["staking", "fees", "governance", "research"];

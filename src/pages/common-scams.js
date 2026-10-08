@@ -9,7 +9,7 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import QuizCard from "@site/src/components/QuizCard";
-import TwoColumnLayout from "@site/src/components/TwoColumnLayout";
+import TwoColumnLayout from "@site/src/components/Layout/TwoColumnLayout";
 import scamsQuizDataEn from "@site/src/data/quiz-scams.json";
 import scamsQuizDataDe from "@site/src/data/quiz-scams.de.json";
 import {translate} from '@docusaurus/Translate';

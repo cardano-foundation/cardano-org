@@ -1,6 +1,6 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
-import HorizontalScroller from '@site/src/components/HorizontalScroller';
+import HorizontalScroller from '@site/src/components/Layout/HorizontalScroller';
 import RecapCard from '@site/src/components/Events/RecapCard';
 
 // Horizontally scrollable row of past-event recap videos.

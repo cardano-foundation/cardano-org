@@ -9,7 +9,7 @@ import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
 import DottedImageWithText from "@site/src/components/Layout/DottedImageWithText";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import RoleCard from "@site/src/components/Layout/RoleCard";
-import ProofPointsList from "@site/src/components/ProofPointsList";
+import ProofPointsList from "@site/src/components/Layout/ProofPointsList";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
 import { getWhatIsCardanoFAQ } from "@site/src/data/whatIsCardanoFAQ";
 import styles from "./what-is-cardano.module.css";
