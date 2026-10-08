@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
 import { FaLightbulb, FaRocket, FaTools } from "react-icons/fa";
 import { getFundingGroups, getFundingPrograms, getProgramsByGroup } from "@site/src/data/funding";
 import { scrollToElement } from "@site/src/utils/jsUtils";
@@ -18,8 +18,8 @@ function tabIndexForHash(hash) {
   return program ? keys.indexOf(program.group) : -1;
 }
 
-// Every panel renders (forceRenderTabPanel), so all programs are in the HTML;
-// CSS hides the inactive panels.
+// Every panel renders (the Layout/Tabs default), so all programs are in the
+// HTML, and Layout/Tabs hides the inactive panels.
 /**
  * Tabbed overview of funding programs by group, synced with the URL hash. Takes no props.
  */
@@ -43,10 +43,9 @@ export default function FundingPrograms() {
   }, []);
 
   return (
-    <Tabs
+    <TabsRoot
       selectedIndex={selectedIndex}
       onSelect={(index) => setSelectedIndex(index)}
-      forceRenderTabPanel
     >
       <TabList className={styles.tabList}>
         {groups.map((group) => (
@@ -57,7 +56,7 @@ export default function FundingPrograms() {
         ))}
       </TabList>
       {groups.map((group) => (
-        <TabPanel key={group.key} className={styles.panel} selectedClassName={styles.panelSelected}>
+        <TabPanel key={group.key}>
           <div id={group.key} className={styles.panelAnchor}>
             <h3 className={styles.panelTitle}>{group.title}</h3>
             <p className={styles.panelIntro}>{group.intro}</p>
@@ -69,6 +68,6 @@ export default function FundingPrograms() {
           </div>
         </TabPanel>
       ))}
-    </Tabs>
+    </TabsRoot>
   );
 }

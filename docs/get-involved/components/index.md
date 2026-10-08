@@ -46,7 +46,7 @@ Shared components are the default on cardano.org. Before you write a component o
 
 | I need | Use |
 |---|---|
-| Tabs that switch between panels | [Pill Tabs](./pill-tabs.md) |
+| Tabs that switch between panels, as pills or in a layout of your own | [Tabs](./tabs.md) |
 | An FAQ or other expandable questions | [Accordion](./accordion.md) for new pages. Older pages use [FAQ Section](../faq-component.md) |
 | A dialog opened from a button | [Modal](./modal.md) |
 | A horizontal row of cards with scroll arrows | [Horizontal Scroller](./horizontal-scroller.md) |

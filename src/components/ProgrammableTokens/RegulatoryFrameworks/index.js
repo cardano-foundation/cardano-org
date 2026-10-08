@@ -1,10 +1,10 @@
 import React from "react";
-import PillTabs from "@site/src/components/Layout/PillTabs";
+import Tabs from "@site/src/components/Layout/Tabs";
 import RichText from "@site/src/components/ProgrammableTokens/RichText";
 import styles from "./styles.module.css";
 
 // Regulatory context per jurisdiction for the /programmable-tokens page: one
-// PillTabs tab per market, each panel holding that market's overview. Text
+// pill tab per market, each panel holding that market's overview. Text
 // goes through RichText, so the inline source links work.
 //
 // Props:
@@ -21,5 +21,5 @@ export default function RegulatoryFrameworks({ regulatory }) {
     ),
   }));
 
-  return <PillTabs tabs={tabs} ariaLabel={regulatory.tabsAriaLabel} />;
+  return <Tabs items={tabs} ariaLabel={regulatory.tabsAriaLabel} />;
 }

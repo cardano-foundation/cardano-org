@@ -245,6 +245,13 @@ const config = {
             return [`${prefix}/why`, `${prefix}/discover-cardano`];
           }
 
+          // The Pill Tabs page became the Tabs page.
+          const tabsDoc = existingPath.match(/^(\/(?:ja|de|es|vi))?\/docs\/get-involved\/components\/tabs\/?$/);
+          if (tabsDoc) {
+            const prefix = tabsDoc[1] || '';
+            return [`${prefix}/docs/get-involved/components/pill-tabs`];
+          }
+
           // The blog tag taxonomy was consolidated to the 7 tags in
           // blog/tags.yml. Redirect the retired tag pages to the tag they were
           // folded into so old links and search results keep working.

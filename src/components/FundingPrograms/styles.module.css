@@ -88,8 +88,8 @@
 }
 
 /* Persona switcher: a pill-shaped segmented control above one card grid.
-   react-tabs supplies the roles and keyboard handling; these classes replace
-   its default styles. */
+   Layout/Tabs supplies the roles, keyboard handling and panel hiding, these
+   classes give it the look. */
 .tabList {
   display: flex;
   flex-wrap: wrap;
@@ -140,16 +140,6 @@
 
 .tabSelected .tabIcon {
   color: var(--ifm-color-primary);
-}
-
-/* Higher specificity than .panel: the production CSS optimizer merges
-   equal-specificity rules and can reorder them, letting display:none win. */
-.panel {
-  display: none;
-}
-
-.panel.panelSelected {
-  display: block;
 }
 
 .panelAnchor {
