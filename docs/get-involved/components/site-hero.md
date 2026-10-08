@@ -20,6 +20,7 @@ The [`<SiteHero>`](/docs/get-involved/components/site-hero) component is used to
 | `description` | `string` \| `node` | | Supporting text below the title. |
 | `bannerType` | `string` | `starburst` | One of the banner types below. An unrecognized or missing value falls back to `starburst`. Documentation pages use `docs`. |
 | `children` | `node` | | Optional content rendered inside the hero, below the title and description. |
+| `headingLevel` | `number` | `1` | `1` renders the title as the page's `<h1>`. `0` renders it without heading semantics, for a hero that sits above the real page title, such as on blog posts. |
 | `className` | `string` | | Extra class on the hero element. |
 
 ## Banner Types

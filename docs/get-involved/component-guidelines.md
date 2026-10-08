@@ -42,7 +42,7 @@ Describe the props of every shared component and feature widget in a JSDoc block
 export default function TitleWithText({ title, description, buttonLabel, buttonLink }) {
 ```
 
-The props table on the component's doc page lists the same props.
+The props table on the component's doc page lists the same props. `yarn test:component-docs` (part of `yarn test`) compares the two for every shared component and the feature widgets listed in `scripts/check-component-docs.js`, and warns about a missing JSDoc block, a missing doc page, or prop names that differ. When you add a feature widget outside `src/components/Layout/`, add its name to the `WIDGETS` list in that script.
 
 ### Write the doc page from the template
 
