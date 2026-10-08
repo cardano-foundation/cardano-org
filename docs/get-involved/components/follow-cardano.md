@@ -39,7 +39,7 @@ import { translate } from '@docusaurus/Translate';
 | `title` | `string` | - | Heading above the icons. |
 | `iconForegroundColor` | `string` | white in light mode, black in dark mode | Color of the icons. Any CSS color. |
 | `iconBackgroundColor` | `string` | - | Color of the round background behind each icon. Without it the circles are transparent. |
-| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same. Pass `2` or lower when the page already has a hero, so it keeps a single `<h1>`. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same. Pass `2` or a deeper level when the page already has a hero, so it keeps a single `<h1>`. |
 | `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
@@ -58,7 +58,6 @@ import { translate } from '@docusaurus/Translate';
 ## Accessibility
 
 - Every icon link has a translated `aria-label` such as "Cardano on X", because the icons have no visible text.
-- The title is a real heading, set its level with `headingLevel`.
 
 ## Translation
 
@@ -67,8 +66,7 @@ import { translate } from '@docusaurus/Translate';
 
 ## Styling
 
-- The icon colors are set through the CSS variables `--icon-fg-color` and `--icon-bg-color`, which the two color props fill.
-- Without `iconForegroundColor` the icons are white in light mode and black in dark mode, so pick colors that work on the background behind the component.
+- Pick icon colors that work on the background behind the component, the defaults do not adapt to it.
 - The title and icons take 70% of the width on wide screens and the full width below 996px.
 
 ## Related components

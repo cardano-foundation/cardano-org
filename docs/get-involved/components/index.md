@@ -68,4 +68,4 @@ Shared components are the default on cardano.org. Before you write a component o
 
 1. Check whether an existing component can take an additive prop that covers your case.
 2. If you need a page-specific tool or deliberate art direction, put it in `src/components/<PageName>/` and explain in the pull request why nothing above fits.
-3. If you need a new shared component, ask in the issue or pull request first. It goes in `src/components/Layout/` with JSDoc for its props, a doc page in this folder, and a row in the table above. Start the doc page from [`_template.md`](https://github.com/cardano-foundation/cardano-org/blob/staging/docs/get-involved/components/_template.md) in this folder.
+3. If you need a new shared component, ask in the issue or pull request first. It goes in `src/components/Layout/` with JSDoc for its props, a doc page in this folder, and a row in the table above. Start the doc page from `docs/get-involved/components/_template.md`.

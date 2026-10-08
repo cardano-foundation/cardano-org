@@ -37,7 +37,7 @@ Fill only `leftText` to keep a single paragraph at reading width with the right 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `leftText` | `string` \| `node` \| `array` | - | Text for the left column. An array renders one `<p>` per entry, anything else renders one `<p>`. Strings are shown as is, wrap them in `parseMarkdownLikeText` for links and bold text. |
-| `rightText` | `string` \| `string[]` | - | Text for the right column, same rules as `leftText`. |
+| `rightText` | `string` \| `node` \| `array` | - | Text for the right column, same rules as `leftText`. |
 
 ## Live Preview
 

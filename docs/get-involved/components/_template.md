@@ -6,18 +6,9 @@ description: One sentence on what the component renders and when to use it on ca
 {/*
   Template for a component doc page. Copy this file to
   docs/get-involved/components/<kebab-case-name>.md, fill in every section and
-  delete what does not apply. Files starting with an underscore are not built,
-  so this template never appears on the site.
-
-  Rules that keep the page from going stale:
-  - Do not attribute examples to a source file ("from src/pages/x.js"). Pages
-    change, the example then points at code that no longer uses the component.
-  - Name the pages that use the component only when you checked them with
-    `git grep` while writing, and keep the list short.
-  - Write prop names exactly as the component destructures them. A module with
-    several exports gets one props table per export.
-  - The props table lists the same props as the JSDoc block above the
-    component.
+  delete what does not apply. The rules for doc pages are in
+  docs/get-involved/component-guidelines.md, section "Write the doc page from
+  the template".
 */}
 
 import ComponentName from '@site/src/components/Layout/ComponentName';
@@ -47,20 +38,14 @@ import { translate } from '@docusaurus/Translate';
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `title` | `string` | - | What it does. Mark required props with *required* in the Default column. |
-| `headingLevel` | `number` | `2` | Heading level of the title, `0` renders a non-heading element. The look stays the same. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same. |
 | `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 
-Render the component with sample props. Pass `headingLevel={2}` or lower so the doc page keeps a single `<h1>`.
-
 <ComponentName title="Sample title" headingLevel={2} />
 
-When a live preview is not possible, replace this section with one sentence that says why, for example:
-
-- it needs runtime data such as a connected wallet or an API response,
-- it changes the document itself, such as meta tags,
-- it renders a full page or a full-width page hero.
+Without a live preview, replace this section with one sentence that says why.
 
 ## Variants
 

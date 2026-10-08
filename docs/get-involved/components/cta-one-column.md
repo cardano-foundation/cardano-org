@@ -15,7 +15,6 @@ A single centered column with an optional heading, an optional paragraph, and on
 
 ## Basic Usage
 
-
 ```jsx
 import BackgroundWrapper from '@site/src/components/Layout/BackgroundWrapper';
 import BoundaryBox from '@site/src/components/Layout/BoundaryBox';

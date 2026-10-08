@@ -13,7 +13,6 @@ Description paragraphs go through `parseMarkdownLikeText`, so `[label](url)` lin
 
 ## Basic Usage
 
-
 ```jsx
 import FeaturedTitleWithText from '@site/src/components/Layout/FeaturedTitleWithText';
 import { translate } from '@docusaurus/Translate';

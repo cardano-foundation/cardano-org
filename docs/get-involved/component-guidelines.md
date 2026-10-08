@@ -51,10 +51,10 @@ Start a new doc page from `docs/get-involved/components/_template.md`. Files tha
 - what the component renders and when to use it, with a link to the alternative,
 - a usage example with translated strings,
 - a props table that matches the JSDoc block,
-- a live preview, or one sentence on why there is none (runtime data such as a wallet, changes to the document head, a full page or homepage hero),
+- a live preview, or one sentence on why there is none (runtime data such as a wallet or an API response, changes to the document head, a full page or homepage hero),
 - accessibility, translation, and styling notes, and related components.
 
-Do not attribute examples to a page file ("from `src/pages/x.js`"), because those examples go stale when the page changes. Live previews pass `headingLevel={2}` or lower, so the doc page keeps a single `<h1>`.
+Do not attribute examples to a page file ("from `src/pages/x.js`"), because those examples go stale when the page changes. Name the pages that use a component only after checking them with `git grep`. Write prop names exactly as the component destructures them, with one props table per export for a module with several exports. Live previews pass `headingLevel={2}` or a deeper level, so the doc page keeps a single `<h1>`.
 
 ## Styling: use tokens
 
