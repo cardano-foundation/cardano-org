@@ -48,6 +48,20 @@ function SpotlightPanel({ company, onClose }) {
           Known for: {company.knownFor}
         </p>
       )}
+      {company.evidence?.length > 0 && (
+        <div className={styles.spotlightEvidence}>
+          <span className={styles.spotlightEvidenceTitle}>
+            {translate({id: 'entities.evidence', message: 'Why this entity is listed'})}
+          </span>
+          <ul className={styles.spotlightEvidenceList}>
+            {company.evidence.map((item) => (
+              <li key={item.url}>
+                <Link href={safeUrl(item.url)}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <Link className={styles.spotlightLink} href={safeUrl(company.link)}>
         Visit website
       </Link>
