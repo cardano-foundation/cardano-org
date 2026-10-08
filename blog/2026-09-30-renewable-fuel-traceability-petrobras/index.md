@@ -12,4 +12,4 @@ Cardano provides the traceable record behind the SAF Book-and-Claim model, showi
 [**Read more**](https://cardanofoundation.org/blog/renewable-fuel-traceability-petrobras)
 </div>
 
-![cardano foundation renewable fuel traceability banner](./banner.jpg)
+![cardano foundation renewable fuel traceability banner](./banner.webp)
