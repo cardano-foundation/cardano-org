@@ -138,6 +138,28 @@
   margin-bottom: 1.25rem;
 }
 
+.spotlightEvidence {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.spotlightEvidenceTitle {
+  display: block;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.spotlightEvidenceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spotlightEvidenceList li + li {
+  margin-top: 0.25rem;
+}
+
 .spotlightLink {
   display: inline-flex;
   align-items: center;
