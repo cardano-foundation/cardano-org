@@ -11,6 +11,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Layer2Card from "@site/src/components/Layer2Card";
 import { StateChannels, Rollups, Sidechains } from "@site/src/data/layer-2";
 import styles from "./layer-2.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 function CategoryHeader({ category, inverted = false }) {
   return (
@@ -27,11 +28,11 @@ function CategoryHeader({ category, inverted = false }) {
 
 function CardGrid({ projects }) {
   return (
-    <div className={styles.grid}>
+    <Grid minItemWidth="320px" className={styles.grid}>
       {projects.map((project) => (
         <Layer2Card key={project.name} {...project} />
       ))}
-    </div>
+    </Grid>
   );
 }
 

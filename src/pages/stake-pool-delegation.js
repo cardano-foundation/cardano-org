@@ -17,6 +17,7 @@ import { getQuizData as getStakingQuiz } from "@site/src/data/quiz/generated/sta
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./stake-pool-delegation.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // Apps carrying the pooldelegation property support delegating to a stake pool
 // directly. Same ordering as the /apps panels.
@@ -195,11 +196,11 @@ export default function StakePoolDelegationPage() {
               {translate({ id: "stakePoolDelegation.alt.introDelegate", message: "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page." })}
             </p>
             <SpacerBox size="small" />
-            <div className={styles.altGrid}>
+            <Grid minItemWidth="260px">
               {POOL_DELEGATION_APPS.map((app) => (
                 <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
               ))}
-            </div>
+            </Grid>
             <SpacerBox size="small" />
             <p className="black-text">
               {translate({ id: "stakePoolDelegation.alt.wallets", message: "Most wallets can delegate on their own." })}{" "}

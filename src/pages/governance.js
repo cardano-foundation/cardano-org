@@ -29,6 +29,7 @@ import styles from "./governance.module.css";
 import { getGovernanceRoleSurvey } from "@site/src/data/governanceRoleSurvey";
 import { getGovernanceFAQ } from "@site/src/data/governanceFAQ";
 import { faqJsonLd } from "@site/src/utils/jsonLd";
+import Grid from "@site/src/components/Layout/Grid";
 
 function GovernanceHero() {
   return (
@@ -268,11 +269,11 @@ function ToolsGrid() {
         {translate({id: 'governance.tools.intro', message: 'Tools to help you participate in Cardano governance.'})}
       </p>
       <SpacerBox size="small" />
-      <div className={styles.toolsGrid}>
+      <Grid>
         {GOVERNANCE_TOOLS.map((app) => (
           <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
         ))}
-      </div>
+      </Grid>
       <SpacerBox size="small" />
       <p>
         <Link to="/apps?tags=governance">

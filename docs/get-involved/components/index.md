@@ -31,6 +31,7 @@ Shared components are the default on cardano.org. Before you write a component o
 |---|---|
 | A section title with text, list, and optional button | [Title With Text](./title-with-text.md) |
 | A large title on the left, text and button on the right | [Featured Title With Text](./featured-title-with-text.md) |
+| A responsive grid of cards or tiles that wraps by item width | [Grid](./grid.md). For filterable app cards use [App Grid](./app-grid.md) |
 | Plain paragraphs in one or two columns | [One Column Box](./one-column-box.md), [Two Column Box](./two-column-box.md) |
 | Main content with a sidebar | [Two Column Layout](./two-column-layout.md) |
 | A dotted icon illustration next to text | [Dotted Image With Text](./dotted-image-with-text.md) |

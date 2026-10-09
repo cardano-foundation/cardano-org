@@ -107,22 +107,8 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-.tileGrid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-}
-
 .rowGrid {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: grid;
-  gap: 0.6rem;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 }
 
 .sectionFooter {

@@ -14,6 +14,7 @@ import WalletFinderCard from "@site/src/components/WalletFinderCard";
 import { getWallets, filterWallets, getBeginnerWallets } from "@site/src/utils/walletFinderUtils";
 import { toggleListItem } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const TITLE = translate({id: 'walletFinder.hero.title', message: 'Find a Cardano Wallet'});
 const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Compare Cardano wallets by platform, features, and security to find the one that fits your needs'});
@@ -279,11 +280,11 @@ export default function WalletFinder() {
               </p>
             </div>
           ) : (
-            <div className={styles.walletGrid}>
+            <Grid minItemWidth="300px" gap="var(--site-space-md)" stackOnMobile className={styles.walletGrid}>
               {filteredWallets.map((wallet) => (
                 <WalletFinderCard key={wallet.title} wallet={wallet} />
               ))}
-            </div>
+            </Grid>
           )}
           <TitleWithText headingLevel={2}
             titleType="black"
