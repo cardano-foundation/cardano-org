@@ -20,6 +20,7 @@ import { safeUrl } from "@site/src/utils/safeUrl";
 
 import styles from "./styles.module.css";
 import { scrollBehavior } from "@site/src/utils/jsUtils";
+import Grid from "@site/src/components/Layout/Grid";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -511,13 +512,13 @@ export default function AppDetail({ app }) {
                 message: "More in this category",
               })}
             </h2>
-            <ul className={styles.relatedGrid}>
+            <Grid as="ul" className={styles.relatedGrid}>
               {relatedApps.map((related) => (
                 <li key={related.slug}>
                   <AppTile app={related} />
                 </li>
               ))}
-            </ul>
+            </Grid>
             <Link
               className={styles.relatedMore}
               to={`/apps?tags=${app.category}`}

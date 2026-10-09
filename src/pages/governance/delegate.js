@@ -12,7 +12,7 @@ import { translate } from "@docusaurus/Translate";
 import AppTile, { StarBadge } from "@site/src/components/AppTile";
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
-import styles from "./delegate.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // Apps carrying the drepdelegation property support delegating voting power
 // directly. Same ordering as the /apps category panels: most active first,
@@ -89,11 +89,11 @@ export default function DelegatePage() {
             </Link>
           </p>
           <SpacerBox size="small" />
-          <div className={styles.altGrid}>
+          <Grid>
             {DELEGATION_APPS.map((app) => (
               <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
             ))}
-          </div>
+          </Grid>
           <SpacerBox size="small" />
           <p>
             <Link to="/apps?tags=governance">

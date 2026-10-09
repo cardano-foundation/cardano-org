@@ -13,6 +13,7 @@ import ProofPointsList from "@site/src/components/Layout/ProofPointsList";
 import { getProofPoints } from "@site/src/data/whatIsCardanoProofPoints";
 import { getWhatIsCardanoFAQ } from "@site/src/data/whatIsCardanoFAQ";
 import styles from "./what-is-cardano.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 function WhatIsCardanoSection() {
   return (
@@ -168,7 +169,7 @@ function UsedForSection() {
         title={translate({ id: "whatIsCardano.usedFor.title", message: "What is Cardano used for?" })}
         headingDot={true}
       />
-      <div className={styles.cardGrid}>
+      <Grid minItemWidth="260px" fit className={styles.cardGrid}>
         <RoleCard accent="blue" icon={<FaUser />} title={translate({ id: "whatIsCardano.usedFor.individuals.title", message: "For individuals" })}>
           {translate({
             id: "whatIsCardano.usedFor.individuals.text",
@@ -199,7 +200,7 @@ function UsedForSection() {
             {translate({ id: "whatIsCardano.usedFor.public.link", message: "Explore use cases" })}
           </Link>
         </RoleCard>
-      </div>
+      </Grid>
       <TitleWithText headingLevel={2}
         description={translate({
           id: "whatIsCardano.usedFor.outro",

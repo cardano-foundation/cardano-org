@@ -21,6 +21,7 @@ import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './glossary.module.css';
 import { scrollBehavior } from "@site/src/utils/jsUtils";
+import Grid from "@site/src/components/Layout/Grid";
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const POPULAR_PILL_SLUGS = ['eutxo', 'stake-pool', 'drep', 'governance-action', 'smart-contract', 'treasury'];
@@ -372,7 +373,7 @@ function LearningPathsSection({ iconBasePath }) {
           })}
         </p>
       </div>
-      <ul className={styles.pathsGrid}>
+      <Grid as="ul" minItemWidth="280px" fit className={styles.pathsGrid}>
         {LEARNING_PATHS.map(p => (
           <li key={p.id}>
             <Link
@@ -429,7 +430,7 @@ function LearningPathsSection({ iconBasePath }) {
             </Link>
           </li>
         ))}
-      </ul>
+      </Grid>
     </section>
   );
 }
@@ -666,7 +667,7 @@ export default function GlossaryIndex() {
                         className={styles.letterGroup}
                       >
                         <h3 className={styles.letterHeading}>{letter}</h3>
-                        <ul className={styles.cardGrid}>
+                        <Grid as="ul" gap="0.85rem" className={styles.cardGrid}>
                           {items.map(t => (
                             <li key={t.slug}>
                               <TermCard
@@ -675,7 +676,7 @@ export default function GlossaryIndex() {
                               />
                             </li>
                           ))}
-                        </ul>
+                        </Grid>
                       </div>,
                     );
                     if (i === pathsAfterIdx) {
@@ -697,13 +698,13 @@ export default function GlossaryIndex() {
                   })}
                 </p>
               ) : (
-                <ul className={styles.cardGrid}>
+                <Grid as="ul" gap="0.85rem" className={styles.cardGrid}>
                   {filteredTerms.map(t => (
                     <li key={t.slug}>
                       <TermCard term={t} glossaryBaseUrl={glossaryBaseUrl} />
                     </li>
                   ))}
-                </ul>
+                </Grid>
               )}
             </div>
           </div>

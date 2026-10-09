@@ -252,12 +252,7 @@
 }
 
 .pathsGrid {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
 }
 
 .pathCard {
@@ -500,12 +495,7 @@
 /* === Term cards (generic) =============================================== */
 
 .cardGrid {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 0.85rem;
 }
 
 .card {
