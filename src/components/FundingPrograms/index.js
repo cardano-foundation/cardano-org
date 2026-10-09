@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
+import React from "react";
+import { TabsRoot, TabList, Tab, TabPanel, useHashTab } from "@site/src/components/Layout/Tabs";
 import { FaLightbulb, FaRocket, FaTools } from "react-icons/fa";
 import { getFundingGroups, getFundingPrograms, getProgramsByGroup } from "@site/src/data/funding";
 import { scrollToElement } from "@site/src/utils/jsUtils";
@@ -8,14 +8,12 @@ import styles from "./styles.module.css";
 
 const ICONS = { grants: <FaLightbulb />, accelerators: <FaRocket />, contributors: <FaTools /> };
 
-// Which tab a URL hash points at: a group key (#grants) or a program
-// (#program-orion). -1 when the hash is something else.
-function tabIndexForHash(hash) {
-  const keys = getFundingGroups().map((group) => group.key);
-  if (keys.includes(hash)) return keys.indexOf(hash);
+// Tab of a program hash (#program-orion), so a link to one program opens the
+// group that lists it. -1 when the hash is something else.
+function tabIndexForProgramHash(hash) {
   if (!hash.startsWith("program-")) return -1;
   const program = getFundingPrograms().find((p) => p.key === hash.slice("program-".length));
-  return program ? keys.indexOf(program.group) : -1;
+  return program ? getFundingGroups().findIndex((group) => group.key === program.group) : -1;
 }
 
 // Every panel renders (the Layout/Tabs default), so all programs are in the
@@ -24,28 +22,19 @@ function tabIndexForHash(hash) {
  * Tabbed overview of funding programs by group, synced with the URL hash. Takes no props.
  */
 export default function FundingPrograms() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const groups = getFundingGroups();
-
-  useEffect(() => {
-    // Select the tab the URL hash points at, then scroll once the panel is
-    // displayed (after the router's own scroll to top, like Divider does).
-    const selectFromHash = () => {
-      const hash = window.location.hash.replace(/^#/, "").toLowerCase();
-      const index = tabIndexForHash(hash);
-      if (index < 0) return;
-      setSelectedIndex(index);
-      window.setTimeout(() => scrollToElement(document.getElementById(hash)), 100);
-    };
-    selectFromHash();
-    window.addEventListener("hashchange", selectFromHash);
-    return () => window.removeEventListener("hashchange", selectFromHash);
-  }, []);
+  // Select the tab the URL hash points at, then scroll once the panel is
+  // displayed (after the router's own scroll to top, like Divider does).
+  const [selectedIndex, select] = useHashTab({
+    ids: groups.map((group) => group.key),
+    indexForHash: tabIndexForProgramHash,
+    onHashSelect: (hash) => window.setTimeout(() => scrollToElement(document.getElementById(hash)), 100),
+  });
 
   return (
     <TabsRoot
       selectedIndex={selectedIndex}
-      onSelect={(index) => setSelectedIndex(index)}
+      onSelect={select}
     >
       <TabList className={styles.tabList}>
         {groups.map((group) => (

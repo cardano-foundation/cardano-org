@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FaBookOpen, FaVoteYea, FaBullhorn } from "react-icons/fa";
-import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
+import { TabsRoot, TabList, Tab, TabPanel, useHashTab } from "@site/src/components/Layout/Tabs";
 import { translate } from "@docusaurus/Translate";
 import IconHero from "@site/src/components/Layout/IconHero";
 import styles from "./styles.module.css";
@@ -63,29 +63,22 @@ function getPathsData() {
   ];
 }
 
-const HASH_TO_INDEX = { understand: 0, delegate: 1, lead: 2 };
+// Deep-link hashes of the three paths, in tab order.
+const PATH_IDS = ["understand", "delegate", "lead"];
 
 export default function GovernancePathsSection() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const paths = getPathsData();
   const wrapperRef = useRef(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const hash = window.location.hash.replace(/^#/, "").toLowerCase();
-    const idx = HASH_TO_INDEX[hash];
-    if (idx == null) return;
-    // Select the section addressed by the URL hash on mount (client-only).
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSelectedIndex(idx);
-    wrapperRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
-  }, []);
+  const [selectedIndex, select] = useHashTab({
+    ids: PATH_IDS,
+    onHashSelect: () => wrapperRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" }),
+  });
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
       <TabsRoot
         className={styles.tabs}
-        onSelect={(index) => setSelectedIndex(index)}
+        onSelect={select}
         selectedIndex={selectedIndex}
       >
         <div className={clsx("row", styles.row)}>
@@ -96,7 +89,7 @@ export default function GovernancePathsSection() {
                 const isSelected = index === selectedIndex;
                 return (
                   <Tab
-                    className={clsx(styles.tab, { [styles.tabSelected]: isSelected })}
+                    className={styles.tab}
                     selectedClassName={styles.tabSelected}
                     key={path.label}
                   >

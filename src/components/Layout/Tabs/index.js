@@ -134,3 +134,5 @@ export default function Tabs({
     </TabsRoot>
   );
 }
+
+export { default as useHashTab } from "./useHashTab";
