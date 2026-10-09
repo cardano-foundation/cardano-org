@@ -3,18 +3,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import { convertLovelacesToAda, formatAdaValue } from "@site/src/utils/insights/numbers";
-import useCountUp from "@site/src/utils/useCountUp";
+import StatFigure, { CountFigure, StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
 
-function AnimatedStat({ target, format, label }) {
-  const animated = useCountUp(target);
-  return (
-    <div className={styles.statCard}>
-      <span className={styles.statValue}>{format(animated)}</span>
-      <span className={styles.statLabel}>{label}</span>
-    </div>
-  );
-}
+const formatWhole = (v) => String(Math.round(v));
 
 export default function GovernancePulse() {
   const { siteConfig: { customFields } } = useDocusaurusContext();
@@ -75,52 +67,39 @@ export default function GovernancePulse() {
   if (!data) {
     return (
       <div className={styles.pulseWrapper}>
-        <div className={`row ${styles.statsRow}`}>
+        <StatStrip className={styles.statsRow}>
           {[0, 1, 2, 3].map((i) => (
-            <div className="col col--3" key={i}>
-              <div className={styles.statCard}>
-                <span className={styles.statValue}>...</span>
-                <span className={styles.statLabel}>&nbsp;</span>
-              </div>
-            </div>
+            <StatFigure key={i} loading label={"\u00a0"} />
           ))}
-        </div>
+        </StatStrip>
       </div>
     );
   }
 
   return (
     <div className={styles.pulseWrapper}>
-      <div className={`row ${styles.statsRow}`}>
-        <div className="col col--3">
-          <AnimatedStat
-            target={data.treasury}
-            format={formatAdaValue}
-            label={translate({ id: "governance.pulse.treasury", message: "Treasury" })}
-          />
-        </div>
-        <div className="col col--3">
-          <AnimatedStat
-            target={data.activeProposals}
-            format={(v) => String(Math.round(v))}
-            label={translate({ id: "governance.pulse.activeProposals", message: "Active proposals" })}
-          />
-        </div>
-        <div className="col col--3">
-          <AnimatedStat
-            target={data.epoch}
-            format={(v) => String(Math.round(v))}
-            label={translate({ id: "governance.pulse.epoch", message: "Current epoch" })}
-          />
-        </div>
-        <div className="col col--3">
-          <AnimatedStat
-            target={data.enactedActions}
-            format={(v) => String(Math.round(v))}
-            label={translate({ id: "governance.pulse.enacted", message: "Actions enacted" })}
-          />
-        </div>
-      </div>
+      <StatStrip className={styles.statsRow}>
+        <CountFigure
+          target={data.treasury}
+          format={formatAdaValue}
+          label={translate({ id: "governance.pulse.treasury", message: "Treasury" })}
+        />
+        <CountFigure
+          target={data.activeProposals}
+          format={formatWhole}
+          label={translate({ id: "governance.pulse.activeProposals", message: "Active proposals" })}
+        />
+        <CountFigure
+          target={data.epoch}
+          format={formatWhole}
+          label={translate({ id: "governance.pulse.epoch", message: "Current epoch" })}
+        />
+        <CountFigure
+          target={data.enactedActions}
+          format={formatWhole}
+          label={translate({ id: "governance.pulse.enacted", message: "Actions enacted" })}
+        />
+      </StatStrip>
       <p className={styles.pulseLine}>
         <span className={styles.pulseDot} />
         {translate(
