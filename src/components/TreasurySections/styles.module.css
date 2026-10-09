@@ -1,53 +1,17 @@
-.figure {
-  text-align: center;
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  border-radius: var(--ifm-global-radius);
-}
-
-.value {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--ifm-color-primary);
-  line-height: 1.2;
-}
-
-.label {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sub {
-  font-size: 0.85rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
 .note {
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-700);
 }
 
 .flowGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
   padding: 1rem 0 0.5rem;
+  /* Five figures share one row, a smaller size keeps "-230.0M ada" on one line. */
+  --stat-value-size: 1.6rem;
+  --stat-value-size-mobile: 1.4rem;
 }
 
 .fundingGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
   padding: 1rem 0 0.5rem;
-}
-
-/* Five figures share one row, a smaller size keeps "-230.0M ada" on one line. */
-.flowGrid .value {
-  font-size: 1.6rem;
 }
 
 /* Reserves its line so the sentence appearing after load does not shift the page. */
@@ -104,9 +68,6 @@
 }
 
 .outlookGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -125,22 +86,6 @@
   border-radius: var(--ifm-global-radius);
   padding: 1rem;
   margin: 1.5rem 0;
-}
-
-@media (max-width: 768px) {
-  .flowGrid,
-  .fundingGrid,
-  .outlookGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .value {
-    font-size: 1.5rem;
-  }
-
-  .flowGrid .value {
-    font-size: 1.4rem;
-  }
 }
 
 /* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker

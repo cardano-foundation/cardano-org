@@ -1,0 +1,76 @@
+/*
+ * Strip defaults at zero specificity, so a page class can set the variables,
+ * for example at a breakpoint of its own.
+ */
+:where(.strip) {
+  --stat-cols: 4;
+  --stat-gap: var(--site-space-sm);
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(var(--stat-cols), 1fr);
+  gap: var(--stat-gap);
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-3xs);
+  padding: var(--site-space-md) var(--site-space-sm);
+  border-radius: var(--ifm-global-radius);
+  text-align: center;
+}
+
+.compact {
+  padding: 1.25rem var(--site-space-sm);
+}
+
+.link {
+  text-decoration: none;
+  transition: background-color var(--site-duration-base) var(--site-ease);
+}
+
+.link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+.value {
+  font-size: var(--stat-value-size, 2rem);
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--ifm-color-primary);
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (max-width: 768px) {
+  .strip {
+    grid-template-columns: repeat(var(--stat-cols-mobile, var(--stat-cols)), 1fr);
+  }
+
+  .value {
+    font-size: var(--stat-value-size-mobile, 1.5rem);
+  }
+
+  .figure:not(.compact) {
+    padding: var(--site-space-sm) var(--site-space-2xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

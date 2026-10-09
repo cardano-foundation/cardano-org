@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useCountUp from "@site/src/utils/useCountUp";
 import { formatAdaValue } from "@site/src/utils/insights/numbers";
+import StatFigure from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
 
 // "..." while loading, "n/a" only when the data is there but the figure
@@ -20,24 +21,17 @@ function display(loading, value, format) {
 export function AdaFigure({ loading, value, label, sub, signed = false }) {
   const animated = useCountUp(value == null ? null : Math.abs(value));
   return (
-    <div className={styles.figure}>
-      <span className={styles.value}>
-        {display(loading, value, (v) => `${signed && v > 0 ? "+" : ""}${signed && v < 0 ? "-" : ""}${formatAdaValue(animated)}`)}
-      </span>
-      <span className={styles.label}>{label}</span>
-      {sub && <span className={styles.sub}>{sub}</span>}
-    </div>
+    <StatFigure
+      compact
+      value={display(loading, value, (v) => `${signed && v > 0 ? "+" : ""}${signed && v < 0 ? "-" : ""}${formatAdaValue(animated)}`)}
+      label={label}
+      sub={sub}
+    />
   );
 }
 
 export function TextFigure({ loading, value, label, sub }) {
-  return (
-    <div className={styles.figure}>
-      <span className={styles.value}>{display(loading, value, (v) => v)}</span>
-      <span className={styles.label}>{label}</span>
-      {sub && <span className={styles.sub}>{sub}</span>}
-    </div>
-  );
+  return <StatFigure compact value={display(loading, value, (v) => v)} label={label} sub={sub} />;
 }
 
 export function Skeleton({ height = 380 }) {

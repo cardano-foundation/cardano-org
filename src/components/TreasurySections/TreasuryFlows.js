@@ -4,6 +4,7 @@ import { flowsOverWindow } from "@site/src/utils/insights/treasuryMath.mjs";
 import snapshot from "@site/src/data/treasury-donations.json";
 import { useTreasuryTotals, useTreasuryWithdrawals } from "./useTreasuryData";
 import { AdaFigure, LiveDataError } from "./figures";
+import { StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
 
 function leadSentence(netChange) {
@@ -57,7 +58,7 @@ export default function TreasuryFlows() {
 
   return (
     <>
-      <div className={styles.flowGrid}>
+      <StatStrip columns={5} mobileColumns={2} className={styles.flowGrid}>
         <AdaFigure loading={loading} value={balance} label={translate({ id: "governance.treasury.flows.balance", message: "Treasury balance" })} />
         <AdaFigure loading={loading} value={flows?.netChange} signed label={translate({ id: "governance.treasury.flows.change", message: "12-month change" })} />
         <AdaFigure
@@ -78,7 +79,7 @@ export default function TreasuryFlows() {
           label={translate({ id: "governance.treasury.flows.received", message: "Received" })}
           sub={receivedSub}
         />
-      </div>
+      </StatStrip>
       <p className={styles.context}>{flows?.netChange != null && contextSentence(flows.netChange)}</p>
     </>
   );

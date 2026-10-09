@@ -6,6 +6,7 @@ import useTreasuryModel, { OUTLOOK_YEARS } from "./useTreasuryModel";
 import { AdaFigure, Skeleton, LiveDataError } from "./figures";
 import TreasuryChart from "./TreasuryChart";
 import { outlookOption } from "./chartOptions";
+import { StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
 
 /**
@@ -46,7 +47,7 @@ export default function TreasuryOutlook() {
       ) : (
         <Skeleton />
       )}
-      <div className={styles.outlookGrid}>
+      <StatStrip columns={3} mobileColumns={2} className={styles.outlookGrid}>
         {(model?.outlook || OUTLOOK_YEARS.map((year) => ({ year, income: null }))).map(({ year, income }) => (
           <AdaFigure
             key={year}
@@ -56,7 +57,7 @@ export default function TreasuryOutlook() {
             sub={translate({ id: "governance.treasury.overview.outlook.yearIncome", message: "Estimated income from reserves per epoch" })}
           />
         ))}
-      </div>
+      </StatStrip>
       <p className={styles.note}>
         {translate(
           {

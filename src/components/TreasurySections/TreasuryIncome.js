@@ -6,6 +6,7 @@ import useTreasuryModel from "./useTreasuryModel";
 import { AdaFigure, TextFigure, Skeleton, LiveDataError } from "./figures";
 import TreasuryChart from "./TreasuryChart";
 import { incomeOption, feeShareOption } from "./chartOptions";
+import { StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
 
 // Two years of epochs for the default income chart range.
@@ -60,7 +61,7 @@ export default function TreasuryIncome() {
 
   return (
     <>
-      <div className={styles.fundingGrid}>
+      <StatStrip columns={2} className={styles.fundingGrid}>
         <TextFigure
           loading={loading}
           value={model?.feeShare == null ? null : `${model.feeShare.toFixed(2)}%`}
@@ -73,7 +74,7 @@ export default function TreasuryIncome() {
           label={translate({ id: "governance.treasury.funding.reserves", message: "Protocol reserves" })}
           sub={translate({ id: "governance.treasury.funding.reservesSub", message: "Not part of the treasury" })}
         />
-      </div>
+      </StatStrip>
       <p className={styles.note}>
         {translate({
           id: "governance.treasury.funding.context",

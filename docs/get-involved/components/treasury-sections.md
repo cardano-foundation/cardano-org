@@ -5,7 +5,7 @@ description: Building blocks for the treasury explainer and the treasury insight
 
 ## Treasury sections
 
-The treasury explainer (`/governance/treasury`) and the treasury insights page (`/insights/treasury`) share a set of section components. Each component renders only its figures, list or charts. The page around it provides the section heading, the explanatory text and any links, so the same block can sit on both pages with different context.
+The treasury explainer (`/governance/treasury`) and the treasury insights page (`/insights/treasury`) share a set of section components. Each component renders only its figures, list or charts. The page around it provides the section heading, the explanatory text and any links, so the same block can sit on both pages with different context. The figures are [Stat Figures](./stat-figure.md) in a strip, so they look like the other key figures on the site.
 
 All live components need the browser. Load them with `React.lazy` and wrap them in `ClientOnly` from `src/components/TreasurySections/ClientOnly.js`, which combines `BrowserOnly`, `Suspense` and a fallback with a fixed `minHeight`. They share one request per Koios endpoint, no matter how many of them are on the page.
 
