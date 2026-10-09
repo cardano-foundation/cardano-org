@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
 import styles from "./ai.module.css";
 
 const SNIPPETS = {
@@ -18,6 +19,7 @@ cd your-project
 ln -s ../cardano-dev-skills/skills .agents/skills`,
   },
 };
+const SNIPPET_KEYS = Object.keys(SNIPPETS);
 
 const PILLARS = [
   {
@@ -456,25 +458,26 @@ function CopyCta() {
       <p className={styles.ctaLabel}>
         <Translate id="ai.getStarted.label">Give your coding agent Cardano skills</Translate>
       </p>
-      <div className={styles.snipBox}>
+      <TabsRoot
+        className={styles.snipBox}
+        selectedIndex={SNIPPET_KEYS.indexOf(tab)}
+        onSelect={(index) => {
+          setTab(SNIPPET_KEYS[index]);
+          setCopied(false);
+        }}
+        reserveSpace
+      >
         <div className={styles.snipHead}>
-          <div className={styles.snipTabs} role="tablist">
-            {Object.entries(SNIPPETS).map(([key, s]) => (
-              <button
-                key={key}
-                type="button"
-                role="tab"
-                aria-selected={tab === key}
-                className={`${styles.snipTab} ${tab === key ? styles.snipTabActive : ""}`}
-                onClick={() => {
-                  setTab(key);
-                  setCopied(false);
-                }}
-              >
-                {s.label}
-              </button>
+          <TabList
+            className={styles.snipTabs}
+            aria-label={translate({ id: "ai.getStarted.tabsLabel", message: "Coding agent" })}
+          >
+            {SNIPPET_KEYS.map((key) => (
+              <Tab key={key} className={styles.snipTab} selectedClassName={styles.snipTabActive}>
+                {SNIPPETS[key].label}
+              </Tab>
             ))}
-          </div>
+          </TabList>
           <button
             type="button"
             className={`${styles.snipCopy} ${copied ? styles.snipCopyDone : ""}`}
@@ -486,22 +489,18 @@ function CopyCta() {
           </button>
         </div>
         <div className={styles.snipBodies}>
-          {Object.entries(SNIPPETS).map(([key, s]) => (
-            <div
-              key={key}
-              className={`${styles.snipBody} ${tab === key ? "" : styles.snipBodyHidden}`}
-              aria-hidden={tab !== key}
-            >
-              {s.code.split("\n").map((line, i) => (
+          {SNIPPET_KEYS.map((key) => (
+            <TabPanel key={key} className={styles.snipBody}>
+              {SNIPPETS[key].code.split("\n").map((line, i) => (
                 <span key={i} className={styles.snipLine}>
                   <span className={styles.snipPrompt}>{key === "claude" ? "❯ " : "$ "}</span>
                   {line}
                 </span>
               ))}
-            </div>
+            </TabPanel>
           ))}
         </div>
-      </div>
+      </TabsRoot>
     </div>
   );
 }

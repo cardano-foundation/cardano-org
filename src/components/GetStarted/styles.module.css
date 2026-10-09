@@ -78,7 +78,7 @@
 
 /* Tabs (connect station) */
 /* Tabs look like tabs, not like buttons: underline for the selected one, muted text for the other. */
-.tabs { display: flex; gap: var(--site-space-md); margin-bottom: var(--site-space-md); border-bottom: 1px solid var(--ifm-color-emphasis-200); }
+.tabs { display: flex; gap: var(--site-space-md); margin: 0 0 var(--site-space-md); padding: 0; border-bottom: 1px solid var(--ifm-color-emphasis-200); }
 .tab {
   font: inherit; font-weight: 600; padding: var(--site-space-2xs) 0 var(--site-space-xs); margin-bottom: -1px;
   border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ifm-color-emphasis-600); cursor: pointer;

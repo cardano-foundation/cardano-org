@@ -22,10 +22,11 @@ import styles from "./styles.module.css";
  * @param {number} [props.defaultIndex] Tab that starts selected when uncontrolled.
  * @param {Function} [props.onSelect] Called with `(index, lastIndex, event)`. Returning `false` cancels the change.
  * @param {boolean} [props.forceRenderTabPanel=true] Renders the content of every panel, not only the selected one.
+ * @param {boolean} [props.reserveSpace=false] Inactive panels stay in the layout but invisible, for panels stacked in one grid cell that should keep the height of the tallest.
  * @param {string} [props.className] Extra class on the root element.
  * @param {React.ReactNode} props.children `TabList` and `TabPanel` elements.
  */
-export function TabsRoot({ selectedIndex, forceRenderTabPanel = true, className, ...rest }) {
+export function TabsRoot({ selectedIndex, forceRenderTabPanel = true, reserveSpace = false, className, ...rest }) {
   // Strip props that would replace the parts' base state classes.
   const { selectedTabClassName, selectedTabPanelClassName, ...props } = rest;
   return (
@@ -34,7 +35,7 @@ export function TabsRoot({ selectedIndex, forceRenderTabPanel = true, className,
       // react-tabs treats an explicit undefined as controlled mode
       {...(selectedIndex != null && { selectedIndex })}
       forceRenderTabPanel={forceRenderTabPanel}
-      className={clsx(styles.root, className)}
+      className={clsx(styles.root, reserveSpace && styles.reserveSpace, className)}
     />
   );
 }

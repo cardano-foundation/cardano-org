@@ -174,10 +174,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .snipTab {
   font-size: 0.85rem;
+  line-height: normal;
   font-weight: 600;
   padding: 0;
   border: none;
@@ -193,6 +196,7 @@
 }
 
 .snipCopy {
+  font-family: inherit;
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0;
@@ -220,10 +224,6 @@
   font-size: 0.85rem;
   line-height: 1.9;
   padding: 1rem 1.1rem;
-}
-
-.snipBodyHidden {
-  visibility: hidden;
 }
 
 .snipLine {

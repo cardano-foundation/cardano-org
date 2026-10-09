@@ -90,7 +90,7 @@ import { TabsRoot, TabList, Tab, TabPanel } from '@site/src/components/Layout/Ta
 </TabsRoot>
 ```
 
-`TabList` and `TabPanel` elements can sit anywhere inside `TabsRoot`, for example in two columns of a grid.
+`TabList` and `TabPanel` elements can sit anywhere inside `TabsRoot`, for example in two columns of a grid. Pass `forceRenderTabPanel={false}` when a panel should only mount while it is selected, as the account step on `/get-started` does.
 
 ### TabsRoot
 
@@ -100,6 +100,7 @@ import { TabsRoot, TabList, Tab, TabPanel } from '@site/src/components/Layout/Ta
 | `defaultIndex` | `number` | `0` | Tab that starts selected when uncontrolled. |
 | `onSelect` | `(index, lastIndex, event) => boolean \| void` | - | Called when the reader picks a tab. Returning `false` cancels the change. |
 | `forceRenderTabPanel` | `boolean` | `true` | Renders the content of every panel. |
+| `reserveSpace` | `boolean` | `false` | Inactive panels stay in the layout but invisible. Use it for panels stacked in one grid cell, so the box keeps the height of the tallest panel when the reader switches tabs, as the install snippets on `/ai` do. |
 | `className` | `string` | - | Extra class on the root element. |
 | `children` | `node` | - | `TabList` and `TabPanel` elements. |
 

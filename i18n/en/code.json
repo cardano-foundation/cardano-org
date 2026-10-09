@@ -7501,6 +7501,10 @@
   "ai.getStarted.tabOther": {
     "message": "Codex / other agents"
   },
+  "ai.getStarted.tabsLabel": {
+    "message": "Coding agent",
+    "description": "Accessible name of the tab list that switches the install snippet between coding agents on /ai"
+  },
   "ai.why.p1.title": {
     "message": "Trust & Security"
   },
