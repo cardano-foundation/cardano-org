@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import { useColorMode } from '@docusaurus/theme-common';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { resolveIconSrc } from '@site/src/utils/appIcon';
@@ -189,23 +189,6 @@ function useIsNarrow(maxWidth = 768) {
 function TopAppsChart({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
@@ -275,12 +258,7 @@ function TopAppsChart({ data }) {
     };
   }, [data, isDark]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+  return <EChart option={option} height={400} />;
 }
 
 // Pie Chart Component for Category Distribution
@@ -288,23 +266,6 @@ function CategoryPieChart({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   const isNarrow = useIsNarrow();
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
@@ -366,13 +327,8 @@ function CategoryPieChart({ data }) {
     };
   }, [data, isDark, isNarrow]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
   // Height comes from CSS (taller on narrow screens) so the chart starts at its final size
-  return <div ref={chartRef} className={styles.categoryPie} />;
+  return <EChart option={option} className={styles.categoryPie} />;
 }
 
 // Treemap Component for Metadata Labels
@@ -380,23 +336,6 @@ function MetadataTreemap({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   const isNarrow = useIsNarrow();
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
@@ -454,12 +393,7 @@ function MetadataTreemap({ data }) {
     };
   }, [data, isDark, isNarrow]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
+  return <EChart option={option} height={350} />;
 }
 
 // App Row Component for the leaderboard list. The whole row is the link, rows

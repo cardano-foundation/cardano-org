@@ -3,7 +3,7 @@ import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 import Link from "@docusaurus/Link";
 import Heading from '@theme/Heading';
 import Divider from "@site/src/components/Layout/Divider";
@@ -67,23 +67,6 @@ export const meta = {
 function LineChartEcharts({ chartData, title, yAxisName = 'ada', hasSecondYAxis = false, yAxisMin, yAxisMax }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   const option = useMemo(() => {
     if (!chartData || !chartData.series || !chartData.series.length) return null;
 
@@ -186,30 +169,19 @@ function LineChartEcharts({ chartData, title, yAxisName = 'ada', hasSecondYAxis 
     };
   }, [chartData, isDark, yAxisName, hasSecondYAxis, yAxisMin, yAxisMax]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: false, lazyUpdate: true });
-    
-    // Add click handler to navigate to epoch detail page
-    const handleChartClick = (params) => {
+  // A click on a data point opens that epoch's supply page.
+  const onEvents = {
+    click: (params) => {
       if (params.componentType === 'series' && params.dataIndex !== undefined) {
         const epoch = chartData.epochs[params.dataIndex];
         if (epoch) {
           window.location.href = `/insights/supply?epoch=${epoch}`;
         }
       }
-    };
-    
-    chartInstanceRef.current.on('click', handleChartClick);
-    
-    return () => {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.off('click', handleChartClick);
-      }
-    };
-  }, [option, chartData]);
+    },
+  };
 
-  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+  return <EChart option={option} notMerge={false} lazyUpdate onEvents={onEvents} height={400} />;
 }
 
 // ────────────────────────────────────────────────────────────────────────────

@@ -1,0 +1,6 @@
+/* The height comes from a variable, so a page class can change it at a
+   breakpoint without fighting an inline style. */
+.chart {
+  width: 100%;
+  height: var(--echart-height, 400px);
+}

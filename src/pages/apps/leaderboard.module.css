@@ -266,8 +266,7 @@
 }
 
 .categoryPie {
-  width: 100%;
-  height: 350px;
+  --echart-height: 350px;
 }
 
 /* Category Grid */
@@ -487,7 +486,7 @@
   }
 
   .categoryPie {
-    height: 390px;
+    --echart-height: 390px;
   }
 
   .categoryGrid {
