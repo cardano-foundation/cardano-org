@@ -22,6 +22,14 @@
   display: none;
 }
 
+/* reserveSpace: inactive panels keep their box, so stacked panels hold the
+   height of the tallest. visibility also takes them out of the tab order and
+   the accessibility tree. */
+.reserveSpace .panel:not(.panelSelected) {
+  display: block;
+  visibility: hidden;
+}
+
 /*
  * Pill variant: pill-shaped tabs above the panel. Matches the regulatory tabs
  * of the /programmable-tokens design (Figma node 586:321): 14px semibold
