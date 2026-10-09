@@ -112,6 +112,31 @@ import { TabsRoot, TabList, Tab, TabPanel } from '@site/src/components/Layout/Ta
 
 Other props, such as `aria-label` on `TabList` or `tabIndex` on `TabPanel`, are passed on to the element.
 
+## Deep links with useHashTab
+
+`useHashTab` keeps the selected tab in sync with the URL hash, so a link such as `/governance#delegate` opens the right tab. Every hash change selects the tab again, so in-page links to a tab work too. Pass its result to `TabsRoot`:
+
+```jsx
+import { TabsRoot, TabList, Tab, TabPanel, useHashTab } from '@site/src/components/Layout/Tabs';
+import { scrollBehavior } from '@site/src/utils/jsUtils';
+
+const [selectedIndex, select] = useHashTab({
+  ids: ['understand', 'delegate', 'lead'],
+  onHashSelect: () => wrapperRef.current?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' }),
+});
+
+<TabsRoot selectedIndex={selectedIndex} onSelect={select}>…</TabsRoot>
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `ids` | `string[]` | `[]` | Hash id of each tab, in tab order. |
+| `indexForHash` | `(hash) => number` | - | Maps hashes that are not tab ids to a tab, for example `#program-orion` to the tab that lists that program. Return `-1` for no match. |
+| `storageKey` | `string` | - | Remembers the reader's last tab in localStorage and restores it on the next visit when the URL has no tab hash. |
+| `onHashSelect` | `(hash, index) => void` | - | Called after a hash selected a tab, for example to scroll to it. |
+
+A hash in the URL always wins over the stored tab. Restoring from storage does not scroll, so a normal visit starts at the top of the page.
+
 ## Accessibility
 
 - The tabs follow the WAI-ARIA tabs pattern: `role="tablist"`, `role="tab"`, and `role="tabpanel"`, with `aria-selected` and `aria-controls`.

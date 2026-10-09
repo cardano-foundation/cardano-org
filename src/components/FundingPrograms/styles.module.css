@@ -97,7 +97,6 @@
   width: fit-content;
   margin: var(--site-space-md) auto;
   padding: var(--site-space-3xs);
-  list-style: none;
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: var(--site-radius-pill);
   background: var(--ifm-background-surface-color);
@@ -112,7 +111,6 @@
   border-radius: var(--site-radius-pill);
   color: var(--ifm-font-color-base);
   font-weight: 500;
-  cursor: pointer;
   transition: background-color var(--site-duration-fast) var(--site-ease),
     color var(--site-duration-fast) var(--site-ease);
 }

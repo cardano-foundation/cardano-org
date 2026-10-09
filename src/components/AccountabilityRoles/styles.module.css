@@ -25,7 +25,6 @@
 
 /* Selector cards (TabList) */
 .tabList {
-  list-style: none;
   margin: 0 0 1.5rem;
   padding: 0;
   display: grid;
@@ -35,7 +34,6 @@
 
 .card {
   --role-accent: 0 51 173;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
