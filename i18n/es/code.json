@@ -1037,6 +1037,12 @@
   "whereToGetAda.dex.disclaimer": {
     "message": "Los DEX no son adecuados para principiantes, ya que necesitas tener [ada](/what-is-ada/) para usarlos. Aparecer en esta lista no implica respaldo. Los datos de transacciones corresponden a los últimos 30 días."
   },
+  "whereToGetAda.dex.visit": {
+    "message": "Visit DEX"
+  },
+  "whereToGetAda.dex.more": {
+    "message": "More DEXes"
+  },
   "whereToGetAda.divider.receive": {
     "message": "Recibe ada de personas de todo el mundo"
   },
@@ -5820,7 +5826,7 @@
     "message": "Cardano, Insights, Plantilla"
   },
   "insightsTemplate.content.paragraph1": {
-    "message": "No es necesario usar TitleWithText o componentes similares: el HTML simple funciona perfectamente."
+    "message": "You don't need to use TitleWithText or similar components, plain HTML is fine."
   },
   "insightsTemplate.content.internalLinksLabel": {
     "message": "Para enlaces internos usa:"
@@ -5917,6 +5923,9 @@
   },
   "insights.footer.textStatic": {
     "message": "Última actualización: {lastUpdated}."
+  },
+  "insights.footer.textLive": {
+    "message": "Charts are using real time data."
   },
   "whatIsAWallet.meta.title": {
     "message": "¿Qué es una cartera de Cardano? Tipos, claves y seguridad explicados",
@@ -7491,6 +7500,10 @@
   },
   "ai.getStarted.tabOther": {
     "message": "Codex / otros agentes"
+  },
+  "ai.getStarted.tabsLabel": {
+    "message": "Coding agent",
+    "description": "Accessible name of the tab list that switches the install snippet between coding agents on /ai"
   },
   "ai.why.p1.title": {
     "message": "Confianza y seguridad"
@@ -9733,6 +9746,28 @@
   "apps.intent.lend": {
     "message": "Lend & borrow"
   },
+  "apps.rankBadge": {
+    "message": "Rank {rank}"
+  },
+  "apps.grid.last30Days": {
+    "message": "Last 30 days"
+  },
+  "apps.grid.txCount": {
+    "message": "{count} tx",
+    "description": "Transactions in the last 30 days, abbreviated"
+  },
+  "apps.grid.visit": {
+    "message": "Visit"
+  },
+  "apps.grid.moreApps": {
+    "message": "More Apps"
+  },
+  "apps.list.transactions": {
+    "message": "transactions"
+  },
+  "apps.list.title": {
+    "message": "Apps"
+  },
   "home.activity.window": {
     "message": "Snapshot of the 30 days from {start} to {end}."
   },
@@ -10759,6 +10794,10 @@
   "governance.treasury.out.numbers": {
     "message": "The treasury in numbers"
   },
+  "governance.treasury.figure.notAvailable": {
+    "message": "n/a",
+    "description": "Shown when a figure cannot be computed"
+  },
   "insightsTreasury.meta.pageTitle": {
     "message": "Cardano Treasury in Numbers"
   },
@@ -11079,6 +11118,9 @@
   },
   "termExplainer.cip.cipEditors.description": {
     "message": "CIP Editors safeguard the CIP process: they form a group enforcing the process described in this document and facilitating conversations between community actors. CIP editors should strive to keep up to date with general technical discussions and Cardano proposals."
+  },
+  "termExplainer.category.governance": {
+    "message": "Governance"
   },
   "governance.faq.item.loseAda.q": {
     "message": "Do I lose my ada when I delegate?"
@@ -11579,5 +11621,108 @@
   },
   "programmableTokens.faq.kyc.answer": {
     "message": "The Cardano blockchain supports KYC and AML compliance through programmable modules attached directly to the token. For example, a securities implementation could leverage a list of addresses that have been put on an allow list. Such users would be allowed to hold, send, or receive the security. Alongside it, a deny list would specify previously authorized users who have now been forbidden to transact the security, although they might still hold it. This is particularly relevant for sanctions or orders to freeze an asset. In any case, checks would execute automatically on-chain for every transaction and be enforced by the Cardano ledger itself rather than an off-chain intermediary."
+  },
+  "followCardano.label.x": {
+    "message": "Cardano on X"
+  },
+  "followCardano.label.reddit": {
+    "message": "Cardano on Reddit"
+  },
+  "followCardano.label.forum": {
+    "message": "Cardano Forum"
+  },
+  "followCardano.label.facebook": {
+    "message": "Cardano on Facebook"
+  },
+  "followCardano.label.meetup": {
+    "message": "Cardano Meetup"
+  },
+  "followCardano.label.telegram": {
+    "message": "Cardano on Telegram"
+  },
+  "followCardano.label.stackexchange": {
+    "message": "Cardano StackExchange"
+  },
+  "followCardano.label.linkedin": {
+    "message": "Cardano on LinkedIn"
+  },
+  "modal.close": {
+    "message": "Close {label}",
+    "description": "Accessible name of the close button, {label} is the dialog name"
+  },
+  "quizModal.buttonText": {
+    "message": "Test Your Knowledge"
+  },
+  "quizModal.label": {
+    "message": "Quiz"
+  },
+  "quizCard.title": {
+    "message": "Test Your Knowledge"
+  },
+  "quizCard.buttonText": {
+    "message": "Start Quiz"
+  },
+  "insightsEpochNav.enterNumber": {
+    "message": "Enter a number"
+  },
+  "insightsEpochNav.allowed": {
+    "message": "Allowed: {min} to {max}"
+  },
+  "insightsEpochNav.goTo": {
+    "message": "Go to epoch {epoch}"
+  },
+  "insightsEpochNav.epochNumber": {
+    "message": "Epoch {epoch}"
+  },
+  "insightsEpochNav.minEpoch": {
+    "message": "Min epoch is {epoch}"
+  },
+  "insightsEpochNav.label": {
+    "message": "Epoch"
+  },
+  "insightsEpochNav.fetching": {
+    "message": "Fetching latest epoch…"
+  },
+  "insightsEpochNav.maxEpoch": {
+    "message": "Max epoch is {epoch}"
+  },
+  "insightsEpochNav.jumpToSpecific": {
+    "message": "Jump to a specific epoch"
+  },
+  "insightsEpochNav.cancel": {
+    "message": "Cancel"
+  },
+  "insightsEpochNav.jumpTo": {
+    "message": "Jump to epoch"
+  },
+  "docs.hero.getInvolved.title": {
+    "message": "Get Involved"
+  },
+  "docs.hero.getInvolved.description": {
+    "message": "Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano."
+  },
+  "docs.hero.communities.title": {
+    "message": "Online Communities"
+  },
+  "docs.hero.communities.description": {
+    "message": "Connect with fellow Cardano community members around the world through various social channels."
+  },
+  "docs.hero.useCases.title": {
+    "message": "Cardano Use Cases"
+  },
+  "docs.hero.useCases.description": {
+    "message": "Explore how Cardano blockchain technology solves real-world problems across industries."
+  },
+  "blog.hero.title": {
+    "message": "Cardano News"
+  },
+  "blog.hero.description": {
+    "message": "Explore the stories below for curated news, stories, and inspiration from within the Cardano ecosystem."
+  },
+  "leaderboard.cta.title": {
+    "message": "Explore the full directory of Cardano applications, filter by category, and discover new projects."
+  },
+  "leaderboard.cta.button": {
+    "message": "Browse Apps Directory"
   }
 }
