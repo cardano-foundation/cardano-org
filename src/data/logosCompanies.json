@@ -343,6 +343,24 @@
     "knownFor": "TokeoPay",
     "showCompanyName": true
   },
+{
+  "companyName": "Tweag by Modus Create",
+  "imageName": "tweag",
+  "link": "https://tweag.io",
+  "knownFor": "Ouroboros Genesis, Ouroboros Peras, smart contract audits",
+  "category": "Core development",
+  "evidence": [
+    {
+      "label": "Treasury withdrawal: core infrastructure projects 2025",
+      "url": "https://explorer.cardano.org/governance-action/gov_action13tfag48nf94rtjcdq7c06vhkslmxxw9h6c88sl7q5g5nnewcsvlqudh2k4c"
+    },
+    {
+      "label": "Treasury withdrawal: Core Cardano Infrastructure 2026 to 2027",
+      "url": "https://explorer.cardano.org/governance-action/gov_action1zljrlljt9cxlz7ra2nep43nxg0r54wcnrgexyuhuam9ah0ws607qq2vcg4x"
+    }
+  ],
+  "showCompanyName": false
+},
   {
     "companyName": "TxPipe",
     "imageName": "txpipe",
