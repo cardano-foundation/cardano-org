@@ -90,7 +90,7 @@ export const FEATURED_ICONS = {
   'nft': 'certificate-solid',
   'project-catalyst': 'people-group-solid',
   'treasury': 'coins-solid',
-  'pos-attacks': 'shield-solid',
+  'proof-of-stake-attacks': 'shield-solid',
 };
 
 // "Learning paths" surfaced on the index. These are not internal paths through

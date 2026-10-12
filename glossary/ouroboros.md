@@ -5,7 +5,7 @@ short: The family of proof-of-stake consensus protocols that power Cardano, desi
 category: consensus
 link: /ouroboros
 mentalModel: "A continuous lottery where every wallet's staked ada is a ticket. Each slot, the protocol secretly draws a winning ticket, the holder builds the next block, and everyone else can verify after the fact that the draw was fair. The more honest stake participates, the harder it becomes for any minority to rewrite history."
-related: [slot, slot-leader, vrf, kes, stake-pool, proof-of-stake, proof-of-stake-attacks, leios, dijkstra]
+related: [slot, slot-leader, vrf, kes, stake-pool, proof-of-stake, proof-of-stake-attacks, ouroboros-praos, ouroboros-genesis, ouroboros-peras, leios, dijkstra]
 sources:
   - title: "cardano-node mainnet configuration (ConsensusMode)"
     url: "https://github.com/IntersectMBO/cardano-node/blob/master/configuration/cardano/mainnet-config.yaml"
