@@ -15,12 +15,24 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
-/* The h3 is only there for document structure; the button carries the type. */
+/* The heading is only there for document structure, the button carries the
+   type. The element can be any heading level or a div, so everything that
+   differs between them is set here. */
 .heading {
   margin: 0;
+  font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+}
+
+/* Same long-word handling as the global h3 rule, for every level. */
+@media (max-width: 996px) {
+  .heading {
+    hyphens: auto;
+    hyphenate-limit-chars: 12 4 4;
+    overflow-wrap: break-word;
+  }
 }
 
 .trigger {
