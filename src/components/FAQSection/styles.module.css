@@ -1,2 +1,16 @@
-/* empty is fine */
-  
+/* Same FAQ look as /programmable-tokens: 16px question, brand-blue icon, and no
+   rule above the first row because the Divider above already draws one.
+   Accordion's class names are hashed, so the rows are targeted by element, and
+   the doubled class outranks the component's own top border. */
+.faq.faq {
+  border-top: none;
+}
+
+.faq h3 button {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.faq h3 button > span:last-child {
+  color: var(--ifm-color-primary);
+}

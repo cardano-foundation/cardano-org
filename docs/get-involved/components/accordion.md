@@ -162,6 +162,6 @@ These class names are hashed by CSS modules, so a page cannot target them by nam
 ## Notes
 
 - Answers use the same string-array format as the FAQ JSON files in `src/data/` (for example `operationFAQ.json`), so existing FAQ data can be passed to `items` unchanged.
-- Choose between the two FAQ components by design: use [`FAQSection`](../faq-component.md) when you want the "FAQ" Divider heading and the alternating row backgrounds; use `Accordion` for the plain-row design with hairlines and a plus or minus icon.
+- [`FAQSection`](../faq-component.md) renders this accordion below a "FAQ" Divider heading with a `#faq` anchor, with several answers open at once. Use `Accordion` directly when the section has its own heading.
 - Rows render as `<h3>` elements by default, so place the component under a section heading rather than directly under the page title. Set `headingLevel` to match the outline. Use `0` only when the questions are not part of the page outline, the buttons keep their accessible names either way.
 - Provide questions and answers through `@docusaurus/Translate` so they remain translatable.

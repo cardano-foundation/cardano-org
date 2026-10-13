@@ -12,7 +12,8 @@ import styles from "./styles.module.css";
 // with aria-expanded / aria-controls, and each answer is a labeled region that
 // opens and closes with a height transition (instant with reduced motion).
 //
-// Used for the FAQ on the /programmable-tokens page.
+// Used for the FAQ on the /programmable-tokens page and inside FAQSection, which
+// adds the "FAQ" Divider heading above the rows.
 
 function AccordionItem({ id, question, answer, isOpen, onToggle, headingTag: Heading }) {
   const baseId = useId();

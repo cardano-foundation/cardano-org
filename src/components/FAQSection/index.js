@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Divider from "@site/src/components/Layout/Divider";
-import Collapsible from "react-collapsible";
-import { renderAnswerArray } from "@site/src/utils/textUtils";
+import Accordion from "@site/src/components/Layout/Accordion";
+import styles from "./styles.module.css";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 //
 // This component:
-// shows a collapsible menu filled from a data array or a registered json file.
+// shows the "FAQ" divider and an accordion filled from a data array or a registered json file.
 // in the answers you can use markdown for urls, bold text and bullet points with "- this notation"
 
 const faqData = {
@@ -14,36 +14,19 @@ const faqData = {
 };
 
 /**
- * FAQ heading with a collapsible list of questions and answers.
+ * FAQ heading with an expandable list of questions and answers.
  *
  * @param {object} props
  * @param {string} [props.jsonFileName] Key of a registered FAQ json file, used when `data` is missing.
- * @param {Array<{question: string, answer: string|string[]}>} [props.data] FAQ entries. Takes priority over `jsonFileName`.
+ * @param {Array<{question: string, answer: string[]}>} [props.data] FAQ entries. Takes priority over `jsonFileName`.
  */
 export default function FAQSection({ jsonFileName, data }) {
-  const [activeIndex, setActiveIndex] = useState(null);
   const faqList = data || faqData[jsonFileName] || [];
 
   return (
     <div>
       <Divider headingLevel={2} text="FAQ" id="faq" />
-      {faqList.map((faq, index) => (
-        <div
-          key={index}
-          className={`Collapsible ${index % 2 === 0 ? "even" : "odd"} ${
-            activeIndex === index ? "active" : ""
-          }`}
-        >
-          <Collapsible
-            trigger={faq.question}
-            tabIndex={0}
-            onOpening={() => setActiveIndex(index)}
-            onClosing={() => setActiveIndex((current) => (current === index ? null : current))}
-          >
-            <div>{renderAnswerArray(faq.answer)}</div>
-          </Collapsible>
-        </div>
-      ))}
+      <Accordion items={faqList} allowMultiple className={styles.faq} />
     </div>
   );
 }
