@@ -55,7 +55,6 @@ Before you can use your new FAQ data, you need to add it to the `FAQSection` com
 import React from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Accordion from "@site/src/components/Layout/Accordion";
-import styles from "./styles.module.css";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 const faqData = {

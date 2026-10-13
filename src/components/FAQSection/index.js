@@ -1,7 +1,6 @@
 import React from "react";
 import Divider from "@site/src/components/Layout/Divider";
 import Accordion from "@site/src/components/Layout/Accordion";
-import styles from "./styles.module.css";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 //
@@ -26,7 +25,7 @@ export default function FAQSection({ jsonFileName, data }) {
   return (
     <div>
       <Divider headingLevel={2} text="FAQ" id="faq" />
-      <Accordion items={faqList} allowMultiple className={styles.faq} />
+      <Accordion items={faqList} allowMultiple />
     </div>
   );
 }

@@ -321,22 +321,6 @@
     300px 300px;
 }
 
-/* FAQ: the design uses a 16px question, a brand-blue icon, and no rule above
-   the first row. Accordion's class names are hashed, so the rows are targeted
-   by element, scoped under .section to outrank the component's own rules. */
-.section .faq {
-  border-top: none;
-}
-
-.faq h3 button {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.faq h3 button > span:last-child {
-  color: var(--ifm-color-primary);
-}
-
 /* Partner strip band: 132px tall in the design (44px tiles, 44px above and
    below). */
 .partnersSection {

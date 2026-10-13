@@ -157,7 +157,7 @@ The component uses CSS modules. Override styles by targeting these classes:
 - `.panelInner` - clips the answer while the panel is collapsing or expanding
 - `.panelContent` - the answer text (type, color, and the 940px width cap)
 
-These class names are hashed by CSS modules, so a page cannot target them by name. To restyle a single instance, pass a `className` and target element types under it from the page's CSS module (for example `.faq h3 button`), as `src/pages/programmable-tokens.module.css` does to set a larger question size. Such element selectors depend on the heading level: `h3 button` only matches with the default `headingLevel`.
+These class names are hashed by CSS modules, so a page cannot target them by name. To restyle a single instance, pass a `className` and target element types under it from the page's CSS module (for example `.faq h3 button`). Such element selectors depend on the heading level: `h3 button` only matches with the default `headingLevel`. Both FAQs on the site use the default look, so prefer changing it here over a page override.
 
 ## Notes
 
