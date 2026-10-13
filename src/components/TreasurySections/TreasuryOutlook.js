@@ -4,7 +4,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 import { TREASURY_PARAMS } from "@site/src/utils/insights/treasuryMath.mjs";
 import useTreasuryModel, { OUTLOOK_YEARS } from "./useTreasuryModel";
 import { AdaFigure, Skeleton, LiveDataError } from "./figures";
-import TreasuryChart from "./TreasuryChart";
+import EChart from "@site/src/components/Layout/EChart";
 import { outlookOption } from "./chartOptions";
 import { StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
@@ -40,7 +40,8 @@ export default function TreasuryOutlook() {
   return (
     <>
       {model ? (
-        <TreasuryChart
+        <EChart
+          height={380}
           ariaLabel={translate({ id: "governance.treasury.overview.outlook.aria", message: "Reserves over time with a projection" })}
           option={outlookChart}
         />

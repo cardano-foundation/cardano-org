@@ -44,6 +44,7 @@ const DOC_PAGE = {
   AppTileCarousel: 'app-tile.md',
   FAQSection: '../faq-component.md',
   Layer2Card: 'layer-2-card.md',
+  EChart: 'echart.md',
 };
 
 // Components that need no doc page of their own.
@@ -53,7 +54,7 @@ const EXCEPTIONS = new Set([
 
 // Components whose props are not compared with the doc page.
 const PROPS_NOT_COMPARED = new Set([
-  'TreasurySections', // the sections take no props, ClientOnly and TreasuryChart are internal helpers
+  'TreasurySections', // the sections take no props, ClientOnly is an internal helper
 ]);
 
 function kebab(name) {

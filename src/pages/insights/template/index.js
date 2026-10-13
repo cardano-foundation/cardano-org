@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {translate} from '@docusaurus/Translate';
@@ -8,7 +8,7 @@ import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import Head from '@docusaurus/Head';
 import axios from 'axios';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 import authors from '@site/src/data/authors.json';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
@@ -27,33 +27,24 @@ export const meta = {
   indexed: false
 };
 
-// 🔹 Minimal ECharts (no d3 dependency)
+// 🔹 Minimal ECharts chart. Keep the option outside the component (or in
+// useMemo), so it is not applied again on every render.
+const EXAMPLE_DONUT = {
+  tooltip: { trigger: 'item' },
+  series: [{
+    type: 'pie',
+    radius: ['50%', '70%'],
+    avoidLabelOverlap: false,
+    label: { show: false },
+    data: [
+      { name: 'A', value: 30 },
+      { name: 'B', value: 70 },
+    ],
+  }],
+};
+
 export function ExampleDonutChart() {
-  const ref = useRef(null);
-  useEffect(() => {
-    if (!ref.current) return;
-    const chart = echarts.init(ref.current);
-    chart.setOption({
-      tooltip: { trigger: 'item' },
-      series: [{
-        type: 'pie',
-        radius: ['50%', '70%'],
-        avoidLabelOverlap: false,
-        label: { show: false },
-        data: [
-          { name: 'A', value: 30 },
-          { name: 'B', value: 70 },
-        ],
-      }],
-    });
-    const onResize = () => chart.resize();
-    window.addEventListener('resize', onResize);
-    return () => {
-      window.removeEventListener('resize', onResize);
-      chart.dispose();
-    };
-  }, []);
-  return <div style={{width: 300, height: 300}} ref={ref} />;
+  return <EChart option={EXAMPLE_DONUT} height={300} style={{ width: 300 }} />;
 }
 
 function PageContent() {

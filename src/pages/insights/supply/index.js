@@ -3,7 +3,7 @@ import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 import axios from 'axios';
 import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
@@ -42,30 +42,12 @@ export const meta = {
 };
 
 // ────────────────────────────────────────────────────────────────────────────
-//  Donut chart (ECharts): init once, update via setOption
+//  Donut chart (ECharts via Layout/EChart)
 // ────────────────────────────────────────────────────────────────────────────
 function DonutChartEcharts({ chartData }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   const [isMobile, setIsMobile] = useState(false);
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  // init once
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   // mobile detection
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
@@ -135,12 +117,7 @@ function DonutChartEcharts({ chartData }) {
     };
   }, [chartData, isDark, isMobile]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: false, lazyUpdate: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+  return <EChart option={option} notMerge={false} lazyUpdate height={400} />;
 }
 // ────────────────────────────────────────────────────────────────────────────
 //  Main page content

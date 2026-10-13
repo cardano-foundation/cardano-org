@@ -4,7 +4,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 import { EPOCHS_PER_YEAR, inEpochWindow } from "@site/src/utils/insights/treasuryMath.mjs";
 import useTreasuryModel from "./useTreasuryModel";
 import { AdaFigure, TextFigure, Skeleton, LiveDataError } from "./figures";
-import TreasuryChart from "./TreasuryChart";
+import EChart from "@site/src/components/Layout/EChart";
 import { incomeOption, feeShareOption } from "./chartOptions";
 import { StatStrip } from "@site/src/components/Layout/StatFigure";
 import styles from "./styles.module.css";
@@ -100,7 +100,8 @@ export default function TreasuryIncome() {
         </button>
       </div>
       {model ? (
-        <TreasuryChart
+        <EChart
+          height={380}
           ariaLabel={translate({ id: "governance.treasury.overview.income.aria", message: "Treasury income per epoch from reserves and from fees" })}
           option={incomeChart}
         />
@@ -111,7 +112,7 @@ export default function TreasuryIncome() {
         {translate({ id: "governance.treasury.overview.feeShare.title", message: "Share of treasury income from fees (%)" })}
       </h3>
       {model ? (
-        <TreasuryChart
+        <EChart
           height={240}
           ariaLabel={translate({ id: "governance.treasury.overview.feeShare.aria", message: "Fee share of the treasury's income per epoch, in percent" })}
           option={feeShareChart}
