@@ -1936,6 +1936,17 @@ export const Showcases = [
     category: "pooltool",
     properties: ["opensource"],
     maintainerPick: false,
+  },  
+  {
+    title: "Bridgers",
+    description: "Non-custodial cross-chain bridge for swapping ada with native BTC, stablecoins and assets on 49 networks, including TRON, Solana, TON and EVM chains.",
+    tagline: "Swap ada with native BTC and assets on 49 networks",
+    preview: require("./app-screenshots/bridgers.png"),
+    website: "https://app.bridgers.xyz",
+    source: null,
+    category: "bridge",
+    properties: [],
+    maintainerPick: false,
   },
 ];
 
