@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -13,36 +13,16 @@ import { makeApiClient } from '@site/src/utils/insights/api';
 import { parseApiError } from '@site/src/utils/insights/errors';
 import { convertLovelacesToAda } from '@site/src/utils/insights/numbers';
 import { MIN_EPOCH, getEpochDate } from '@site/src/utils/insights/epochs';
-import './index.css';
-
-// ────────────────────────────────────────────────────────────────────────────
-//  Cookie utilities
-// ────────────────────────────────────────────────────────────────────────────
-const COOKIE_NAME = 'transactions_summary_epoch_range';
-const COOKIE_EXPIRY_DAYS = 1;
-
-function setCookie(name, value, days) {
-  const expires = new Date();
-  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-}
-
-function getCookie(name) {
-  const nameEQ = name + '=';
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
+import EpochRangeSlider, { useEpochRange } from '@site/src/components/Layout/EpochRangeSlider';
 
 // Layout components
 import InsightsLayout from '@site/src/components/Layout/InsightsLayout';
 import TitleWithText from '@site/src/components/Layout/TitleWithText';
 import InsightsFooter from '@site/src/components/Layout/InsightsFooter';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
+
+// Cookie that remembers the selected epoch range on this page.
+const COOKIE_NAME = 'transactions_summary_epoch_range';
 
 // ────────────────────────────────────────────────────────────────────────────
 //  Page Meta
@@ -244,24 +224,13 @@ function PageContent() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [errorInfo, setErrorInfo] = useState(null);
   const [currentEpochNo, setCurrentEpochNo] = useState(null);
-  const [startEpoch, setStartEpoch] = useState(MIN_EPOCH + 1);
-  const [endEpoch, setEndEpoch] = useState(null);
+  // Selected epoch range, kept in a cookie per page.
+  const [range, setRange] = useEpochRange({ cookieName: COOKIE_NAME, min: MIN_EPOCH + 1, max: currentEpochNo });
+  const startEpoch = range?.start ?? MIN_EPOCH + 1;
+  const endEpoch = range?.end;
   const [allEpochData, setAllEpochData] = useState({}); // All loaded epoch data (cache)
-  const [sliderStart, setSliderStart] = useState(0);
-  const [sliderEnd, setSliderEnd] = useState(100);
-  const startHandleRef = useRef(null);
-  const endHandleRef = useRef(null);
-  const sliderContainerRef = useRef(null);
 
-  // Save epoch selection to cookie whenever it changes
-  useEffect(() => {
-    if (startEpoch && endEpoch && currentEpochNo) {
-      const rangeData = JSON.stringify({ startEpoch, endEpoch });
-      setCookie(COOKIE_NAME, rangeData, COOKIE_EXPIRY_DAYS);
-    }
-  }, [startEpoch, endEpoch, currentEpochNo]);
-
-  // Fetch current epoch on mount and load saved epoch selection from cookie
+  // Fetch current epoch on mount
   useEffect(() => {
     const fetchCurrentEpoch = async () => {
       if (!API_URL) return;
@@ -270,41 +239,6 @@ function PageContent() {
         const tipRes = await api.get('/tip');
         const tipEpoch = tipRes.data?.[0]?.epoch_no;
         setCurrentEpochNo(tipEpoch);
-        if (tipEpoch) {
-          // Try to load saved epoch selection from cookie
-          const savedRange = getCookie(COOKIE_NAME);
-          let startEpochValue, endEpochValue;
-
-          if (savedRange) {
-            try {
-              const parsed = JSON.parse(savedRange);
-              // Validate the saved values are within valid range
-              if (parsed.startEpoch >= MIN_EPOCH + 1 &&
-                parsed.endEpoch <= tipEpoch &&
-                parsed.startEpoch < parsed.endEpoch) {
-                startEpochValue = parsed.startEpoch;
-                endEpochValue = parsed.endEpoch;
-              }
-            } catch (e) {
-              // Invalid cookie, use defaults
-              console.warn('Invalid cookie data, using defaults');
-            }
-          }
-
-          // Use defaults if no valid cookie found
-          if (!startEpochValue || !endEpochValue) {
-            startEpochValue = Math.max(MIN_EPOCH + 1, tipEpoch - 99);
-            endEpochValue = tipEpoch;
-          }
-
-          setStartEpoch(startEpochValue);
-          setEndEpoch(endEpochValue);
-
-          // Set slider positions (0-100 scale)
-          const maxEpochs = tipEpoch - MIN_EPOCH;
-          setSliderStart(((startEpochValue - MIN_EPOCH - 1) / maxEpochs) * 100);
-          setSliderEnd(((endEpochValue - MIN_EPOCH - 1) / maxEpochs) * 100);
-        }
       } catch (err) {
         console.warn('Failed to fetch current epoch:', err);
       }
@@ -579,216 +513,19 @@ function PageContent() {
       />
 
       {/* Epoch Selection */}
-      <div style={{ margin: '2rem 0', padding: '1.5rem', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: 8 }}>
-        <h3 style={{ marginTop: 0 }}>{translate({ id: 'insightsTransactions.epochSelect.title', message: 'Select Epoch Range' })}</h3>
+      <EpochRangeSlider
+        title={translate({ id: 'insightsTransactions.epochSelect.title', message: 'Select Epoch Range' })}
+        min={MIN_EPOCH + 1}
+        max={currentEpochNo}
+        start={range?.start}
+        end={range?.end}
+        onChange={setRange}
+        startLabel={translate({ id: 'insightsTransactions.epochSelect.start', message: 'Start:' })}
+        endLabel={translate({ id: 'insightsTransactions.epochSelect.end', message: 'End:' })}
+        epochLabel={translate({ id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch' })}
+      >
         {currentEpochNo && (
           <>
-            <div style={{ marginBottom: '1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', alignItems: 'center' }}>
-                <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({ id: 'insightsTransactions.epochSelect.start', message: 'Start:' })}{' '}</span>
-                  <strong style={{ fontSize: '1.1rem' }}>{translate({ id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch' })}{' '}{startEpoch}</strong>
-                  <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
-                    ({getEpochDate(startEpoch)})
-                  </span>
-                </div>
-                <div>
-                  <span style={{ fontSize: '0.9rem', color: '#666' }}>{translate({ id: 'insightsTransactions.epochSelect.end', message: 'End:' })}{' '}</span>
-                  <strong style={{ fontSize: '1.1rem' }}>{translate({ id: 'insightsTransactions.epochSelect.epoch', message: 'Epoch' })}{' '}{endEpoch}</strong>
-                  <span style={{ fontSize: '0.85rem', color: '#666', marginLeft: '0.5rem' }}>
-                    ({getEpochDate(endEpoch)})
-                  </span>
-                </div>
-              </div>
-              <div ref={sliderContainerRef} style={{ position: 'relative', height: '50px', marginBottom: '0.5rem', padding: '15px 0' }}>
-                {/* Track background */}
-                <div style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: 0,
-                  right: 0,
-                  height: '6px',
-                  background: 'var(--ifm-color-emphasis-300)',
-                  transform: 'translateY(-50%)',
-                  borderRadius: '3px'
-                }} />
-                {/* Active range highlight */}
-                <div style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: `${sliderStart}%`,
-                  width: `${sliderEnd - sliderStart}%`,
-                  height: '6px',
-                  background: 'var(--ifm-color-primary)',
-                  transform: 'translateY(-50%)',
-                  borderRadius: '3px'
-                }} />
-                {/* Start handle - full width for proper thumb positioning */}
-                <input
-                  ref={startHandleRef}
-                  type="range"
-                  min="0"
-                  max="100"
-                  step="0.1"
-                  value={sliderStart}
-                  onChange={(e) => {
-                    const newStart = parseFloat(e.target.value);
-                    if (newStart < sliderEnd - 0.5) {
-                      setSliderStart(newStart);
-                      const maxEpochs = currentEpochNo - MIN_EPOCH;
-                      const newEpoch = Math.round(MIN_EPOCH + 1 + (newStart / 100) * maxEpochs);
-                      setStartEpoch(Math.max(MIN_EPOCH + 1, Math.min(newEpoch, endEpoch - 1)));
-                    }
-                  }}
-                  className="dual-range-slider"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: 0,
-                    width: '100%',
-                    height: '20px',
-                    margin: 0,
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                    zIndex: 2
-                  }}
-                />
-                {/* End handle - full width for proper thumb positioning */}
-                <input
-                  ref={endHandleRef}
-                  type="range"
-                  min="0"
-                  max="100"
-                  step="0.1"
-                  value={sliderEnd}
-                  onChange={(e) => {
-                    const newEnd = parseFloat(e.target.value);
-                    if (newEnd > sliderStart + 0.5) {
-                      setSliderEnd(newEnd);
-                      const maxEpochs = currentEpochNo - MIN_EPOCH;
-                      const newEpoch = Math.round(MIN_EPOCH + 1 + (newEnd / 100) * maxEpochs);
-                      setEndEpoch(Math.min(currentEpochNo, Math.max(newEpoch, startEpoch + 1)));
-                    }
-                  }}
-                  className="dual-range-slider"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: 0,
-                    width: '100%',
-                    height: '20px',
-                    margin: 0,
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                    zIndex: 3
-                  }}
-                />
-                {/* Click zone for start handle - left portion */}
-                {/* Mouse-only drag affordance. Keyboard a11y is provided by
-                    the <input type="range"> startHandleRef above. */}
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: 0,
-                    width: `${Math.min((sliderStart + sliderEnd) / 2 + 10, 100)}%`,
-                    height: '20px',
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
-                    zIndex: 4
-                  }}
-                  onMouseDown={(e) => {
-                    if (!sliderContainerRef.current) return;
-                    const containerRect = sliderContainerRef.current.getBoundingClientRect();
-                    const x = e.clientX - containerRect.left;
-                    const globalPercent = Math.max(0, Math.min(100, (x / containerRect.width) * 100));
-                    const maxEpochs = currentEpochNo - MIN_EPOCH;
-                    const newEpoch = Math.round(MIN_EPOCH + 1 + (globalPercent / 100) * maxEpochs);
-                    const clampedEpoch = Math.max(MIN_EPOCH + 1, Math.min(newEpoch, endEpoch - 1));
-                    const newPercent = ((clampedEpoch - MIN_EPOCH - 1) / maxEpochs) * 100;
-                    if (newPercent < sliderEnd - 0.5) {
-                      setSliderStart(newPercent);
-                      setStartEpoch(clampedEpoch);
-                    }
-                    // Allow dragging
-                    const handleMouseMove = (moveEvent) => {
-                      if (!sliderContainerRef.current) return;
-                      const moveContainerRect = sliderContainerRef.current.getBoundingClientRect();
-                      const moveX = moveEvent.clientX - moveContainerRect.left;
-                      const moveGlobalPercent = Math.max(0, Math.min(100, (moveX / moveContainerRect.width) * 100));
-                      const moveEpoch = Math.round(MIN_EPOCH + 1 + (moveGlobalPercent / 100) * maxEpochs);
-                      const moveClampedEpoch = Math.max(MIN_EPOCH + 1, Math.min(moveEpoch, endEpoch - 1));
-                      const moveNewPercent = ((moveClampedEpoch - MIN_EPOCH - 1) / maxEpochs) * 100;
-                      if (moveNewPercent < sliderEnd - 0.5) {
-                        setSliderStart(moveNewPercent);
-                        setStartEpoch(moveClampedEpoch);
-                      }
-                    };
-                    const handleMouseUp = () => {
-                      document.removeEventListener('mousemove', handleMouseMove);
-                      document.removeEventListener('mouseup', handleMouseUp);
-                    };
-                    document.addEventListener('mousemove', handleMouseMove);
-                    document.addEventListener('mouseup', handleMouseUp);
-                  }}
-                />
-                {/* Click zone for end handle - right portion */}
-                {/* Mouse-only drag affordance. Keyboard a11y is provided by
-                    the <input type="range"> endHandleRef above. */}
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: `${Math.max((sliderStart + sliderEnd) / 2 - 10, 0)}%`,
-                    width: `${100 - Math.max((sliderStart + sliderEnd) / 2 - 10, 0)}%`,
-                    height: '20px',
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
-                    zIndex: 4
-                  }}
-                  onMouseDown={(e) => {
-                    if (!sliderContainerRef.current) return;
-                    const containerRect = sliderContainerRef.current.getBoundingClientRect();
-                    const x = e.clientX - containerRect.left;
-                    const globalPercent = Math.max(0, Math.min(100, (x / containerRect.width) * 100));
-                    const maxEpochs = currentEpochNo - MIN_EPOCH;
-                    const newEpoch = Math.round(MIN_EPOCH + 1 + (globalPercent / 100) * maxEpochs);
-                    const clampedEpoch = Math.min(currentEpochNo, Math.max(newEpoch, startEpoch + 1));
-                    const newPercent = ((clampedEpoch - MIN_EPOCH - 1) / maxEpochs) * 100;
-                    if (newPercent > sliderStart + 0.5) {
-                      setSliderEnd(newPercent);
-                      setEndEpoch(clampedEpoch);
-                    }
-                    // Allow dragging
-                    const handleMouseMove = (moveEvent) => {
-                      if (!sliderContainerRef.current) return;
-                      const moveContainerRect = sliderContainerRef.current.getBoundingClientRect();
-                      const moveX = moveEvent.clientX - moveContainerRect.left;
-                      const moveGlobalPercent = Math.max(0, Math.min(100, (moveX / moveContainerRect.width) * 100));
-                      const moveEpoch = Math.round(MIN_EPOCH + 1 + (moveGlobalPercent / 100) * maxEpochs);
-                      const moveClampedEpoch = Math.min(currentEpochNo, Math.max(moveEpoch, startEpoch + 1));
-                      const moveNewPercent = ((moveClampedEpoch - MIN_EPOCH - 1) / maxEpochs) * 100;
-                      if (moveNewPercent > sliderStart + 0.5) {
-                        setSliderEnd(moveNewPercent);
-                        setEndEpoch(moveClampedEpoch);
-                      }
-                    };
-                    const handleMouseUp = () => {
-                      document.removeEventListener('mousemove', handleMouseMove);
-                      document.removeEventListener('mouseup', handleMouseUp);
-                    };
-                    document.addEventListener('mousemove', handleMouseMove);
-                    document.addEventListener('mouseup', handleMouseUp);
-                  }}
-                />
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: '#666', marginTop: '0.5rem' }}>
-                <span>Epoch {MIN_EPOCH + 1}</span>
-                <span>Epoch {currentEpochNo}</span>
-              </div>
-            </div>
             {isLoading && (
               <p style={{ margin: 0, color: '#666' }}>
                 {isInitialLoad ? translate({ id: 'insightsTransactions.loading.initial', message: 'Loading all epoch data (this may take a moment)...' }) : translate({ id: 'insightsTransactions.loading.data', message: 'Loading data...' })}
@@ -802,7 +539,7 @@ function PageContent() {
           </>
         )}
         {!currentEpochNo && <p>{translate({ id: 'insightsTransactions.loading.currentEpoch', message: 'Loading current epoch...' })}</p>}
-      </div>
+      </EpochRangeSlider>
 
       {/* Current Epoch Notice */}
       {epochData.length > 0 && endEpoch === currentEpochNo && (
