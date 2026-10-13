@@ -10,12 +10,10 @@
 //   [data-anchor]      optional element inside a chapter that triggers it
 //   [data-story-card]  a chapter card; used to keep the picture clear of text
 
-import { epochInfo, epochStart, countdown } from "./epoch";
-import { SNAPSHOT, storyCounts } from "@site/src/data/governanceStory";
+import { storyCounts } from "@site/src/data/governanceStory";
 
-// Enough particles for one dot per DRep, stake pool and committee seat, plus
-// the animated flows in the election scenes.
-const N = 3900;
+// Enough particles for the busiest scene (your vote, about 2,330 dots wide).
+const N = 2400;
 // Site breakpoints: 996px is the primary one (navbar collapse), 768px tablet.
 const BP_WIDE = 996;
 const BP_NARROW = 768;
@@ -69,72 +67,6 @@ function parseRgb(s) {
 
 /* ---------- shapes ---------- */
 
-// A padlock with its body centered on (cx, cy). Parts: b body, h keyhole, s shackle.
-function lockPts(n, cx, cy, bw, bh) {
-  const pts = [];
-  const nS = Math.floor(n * 0.27);
-  const nH = Math.floor(n * 0.12);
-  const nB = n - nS - nH;
-  const top = cy - bh / 2;
-  const kx = cx;
-  const ky = cy - bh * 0.08;
-  const kr = bw * 0.085;
-  const g = Math.sqrt((bw * bh) / (nB * 1.2));
-  const cand = [];
-  for (let y = top + g / 2; y < cy + bh / 2; y += g) {
-    for (let x = cx - bw / 2 + g / 2; x < cx + bw / 2; x += g) {
-      const hole =
-        Math.hypot(x - kx, y - ky) < kr * 1.6 || (Math.abs(x - kx) < kr * 0.9 && y > ky && y < ky + bh * 0.34);
-      if (!hole) cand.push([x, y, "b"]);
-    }
-  }
-  for (let k = 0; k < nB; k++) pts.push(cand[Math.floor((k * cand.length) / nB)] || [cx, cy, "b"]);
-  const nc = Math.floor(nH * 0.6);
-  const ns = nH - nc;
-  const hs = Math.ceil(ns / 2);
-  for (let k = 0; k < nc; k++) {
-    const th = (k / nc) * TAU;
-    pts.push([kx + Math.cos(th) * kr, ky + Math.sin(th) * kr, "h"]);
-  }
-  for (let k = 0; k < ns; k++) {
-    const ln = k % 2;
-    const u = Math.floor(k / 2) / Math.max(1, hs - 1);
-    pts.push([kx + (ln - 0.5) * kr * 0.9, ky + kr + u * bh * 0.2, "h"]);
-  }
-  const rs = bw * 0.3;
-  const legH = bh * 0.34;
-  const thk = bw * 0.07;
-  const Lp = legH * 2 + Math.PI * rs;
-  const hh = Math.ceil(nS / 2);
-  for (let k = 0; k < nS; k++) {
-    const lane = k % 2;
-    const d = (Math.floor(k / 2) / Math.max(1, hh - 1)) * Lp;
-    let sx;
-    let sy;
-    let nx;
-    let ny;
-    if (d < legH) {
-      sx = cx - rs;
-      sy = top - d;
-      nx = -1;
-      ny = 0;
-    } else if (d < legH + Math.PI * rs) {
-      const a = Math.PI + (d - legH) / rs;
-      sx = cx + Math.cos(a) * rs;
-      sy = top - legH + Math.sin(a) * rs;
-      nx = Math.cos(a);
-      ny = Math.sin(a);
-    } else {
-      sx = cx + rs;
-      sy = top - legH + (d - legH - Math.PI * rs);
-      nx = 1;
-      ny = 0;
-    }
-    pts.push([sx + nx * (lane - 0.5) * thk, sy + ny * (lane - 0.5) * thk, "s"]);
-  }
-  return pts;
-}
-
 // A key with its bow centered on (bx, by); (ux, uy) points from the bow to the tip.
 function keyPts(n, bx, by, ux, uy, len, rb, w) {
   const pts = [];
@@ -176,23 +108,127 @@ function keyPts(n, bx, by, ux, uy, len, rb, w) {
   return pts;
 }
 
-// Concentric rings with pitch p, filled from radius r0 outward.
-function ringPts(n, r0, p, cx, cy) {
+// A document with its top-left corner at (x, y): an outline, then text lines.
+// The third value is 1 for text dots.
+function docPts(n, x, y, w, h, nLines) {
   const pts = [];
-  let rad = r0;
-  let left = n;
-  while (left > 0) {
-    const cap = Math.max(6, Math.floor((TAU * rad) / p));
-    const k = Math.min(cap, left);
-    const off = rnd(Math.round(rad * 10), 3) * TAU;
-    for (let j = 0; j < k; j++) {
-      const th = off + (j / k) * TAU;
-      pts.push([cx + Math.cos(th) * rad, cy + Math.sin(th) * rad]);
-    }
-    left -= k;
-    rad += p;
+  const nO = Math.floor(n * 0.6);
+  const per = 2 * (w + h);
+  for (let k = 0; k < nO; k++) {
+    const d = (k / nO) * per;
+    if (d < w) pts.push([x + d, y, 0]);
+    else if (d < w + h) pts.push([x + w, y + d - w, 0]);
+    else if (d < 2 * w + h) pts.push([x + w - (d - w - h), y + h, 0]);
+    else pts.push([x, y + h - (d - 2 * w - h), 0]);
   }
-  return { pts, inner: r0, outer: rad - p };
+  const nT = n - nO;
+  const perLine = Math.floor(nT / nLines);
+  for (let l = 0; l < nLines; l++) {
+    const cnt = l === nLines - 1 ? nT - perLine * (nLines - 1) : perLine;
+    const lf = l === 0 ? 0.6 : l === nLines - 1 ? 0.5 : 0.9;
+    const ly = y + h * (0.2 + (l * 0.6) / Math.max(1, nLines - 1));
+    for (let k = 0; k < cnt; k++) pts.push([x + w * 0.18 + (k / Math.max(1, cnt - 1)) * w * 0.64 * lf, ly, 1]);
+  }
+  return pts;
+}
+
+/* ---------- personas: dot art for the three groups ---------- */
+// Drawn in design units on a dot grid with pitch pu; the engine scales them.
+// Each point is [x, y, kind]. Kinds: f figure, o object, l status light,
+// c crowd, k voting card.
+
+const inEllipse = (x, y, cx, cy, rx, ry) => ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1;
+// Fills snap to one lattice so neighbouring shapes line up dot for dot.
+function uGrid(pts, kind, x0, y0, x1, y1, pu, inside) {
+  for (let y = Math.ceil(y0 / pu) * pu; y <= y1; y += pu) {
+    for (let x = Math.ceil(x0 / pu) * pu; x <= x1; x += pu) if (inside(x, y)) pts.push([x, y, kind]);
+  }
+}
+function uLine(pts, kind, a, b, pu) {
+  const n = Math.max(2, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / pu) + 1);
+  for (let k = 0; k < n; k++) {
+    const u = k / (n - 1);
+    pts.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, kind]);
+  }
+}
+function uRect(pts, kind, x0, y0, x1, y1, pu) {
+  uLine(pts, kind, [x0, y0], [x1, y0], pu);
+  uLine(pts, kind, [x1, y0 + pu], [x1, y1], pu);
+  uLine(pts, kind, [x1 - pu, y1], [x0, y1], pu);
+  uLine(pts, kind, [x0, y1 - pu], [x0, y0 + pu], pu);
+}
+function uDisc(pts, kind, cx, cy, rad, pu) {
+  const before = pts.length;
+  uGrid(pts, kind, cx - rad, cy - rad, cx + rad, cy + rad, pu, (x, y) => inEllipse(x, y, cx, cy, rad, rad));
+  if (pts.length === before) pts.push([cx, cy, kind]);
+}
+function uCircle(pts, kind, cx, cy, rad, pu) {
+  const n = Math.max(6, Math.round((TAU * rad) / pu));
+  for (let k = 0; k < n; k++) pts.push([cx + Math.cos((k / n) * TAU) * rad, cy + Math.sin((k / n) * TAU) * rad, kind]);
+}
+
+// The Constitutional Committee: a panel of members behind one bench, with the
+// constitution's seal on its front. 130 by 80 units.
+function benchPts(seats, pu) {
+  const pts = [];
+  const sp = Math.min(17, 118 / seats);
+  const hr = Math.min(6, sp * 0.36);
+  for (let j = 0; j < seats; j++) {
+    const fx = 65 + (j - (seats - 1) / 2) * sp;
+    uDisc(pts, "f", fx, 17, hr, pu);
+    uGrid(pts, "f", fx - sp / 2, 24, fx + sp / 2, 38.5, pu, (x, y) => inEllipse(x, y, fx, 39, sp * 0.42, 15));
+  }
+  uLine(pts, "f", [-2, 40], [132, 40], pu);
+  uRect(pts, "o", 3, 42.5, 127, 80, pu);
+  uCircle(pts, "f", 65, 61, 7, pu);
+  uDisc(pts, "f", 65, 61, 2.4, pu);
+  return pts;
+}
+
+// A DRep: one person at a lectern raising a voting card, with the people who
+// delegated to them seated on both sides. 100 by 100 units.
+function drepPts(pu) {
+  const pts = [];
+  for (let side = -1; side <= 1; side += 2) {
+    for (let row = 0; row < 2; row++) {
+      for (let k = 0; k < 3; k++) {
+        const x = 50 + side * (31 + k * 9 + row * 4.5);
+        const y = 74 + row * 13;
+        pts.push([x, y, "c"], [x - 2.6, y + 4, "c"], [x, y + 3.2, "c"], [x + 2.6, y + 4, "c"]);
+      }
+    }
+  }
+  uDisc(pts, "f", 50, 24, 8.5, pu);
+  uGrid(pts, "f", 33, 34, 67, 60, pu, (x, y) => (y < 41 ? inEllipse(x, y, 50, 41, 15, 7) : Math.abs(x - 50) <= 15 - (y - 41) * 0.12));
+  [-1.1, 1.1].forEach((d) => {
+    uLine(pts, "f", [37 + d, 40], [28 + d, 26], pu);
+    uLine(pts, "f", [28 + d, 26], [26 + d, 9], pu);
+  });
+  uGrid(pts, "k", 18, -7, 34, 8, pu, () => true);
+  uLine(pts, "o", [28, 60], [72, 60], pu);
+  uLine(pts, "o", [30, 62], [35, 96], pu);
+  uLine(pts, "o", [70, 62], [65, 96], pu);
+  uLine(pts, "o", [35, 96], [65, 96], pu);
+  return pts;
+}
+
+// A stake pool operator: a person behind a laptop, cabled to the server rack
+// that runs their node. 100 by 100 units.
+function poolPts(pu) {
+  const pts = [];
+  uRect(pts, "o", 56, 4, 94, 96, pu);
+  for (let s = 0; s < 6; s++) {
+    const y = 8 + s * 14.6;
+    uLine(pts, "o", [60, y + 9], [78, y + 9], pu);
+    pts.push([85, y + 5.5, "l"], [90, y + 5.5, "l"]);
+  }
+  uDisc(pts, "f", 25, 36, 8.5, pu);
+  uGrid(pts, "f", 4, 47, 46, 74, pu, (x, y) => inEllipse(x, y, 25, 76, 21, 28) && !(x > 5 && x < 45 && y > 59));
+  uRect(pts, "o", 6, 61, 44, 83, pu);
+  uDisc(pts, "f", 25, 72, 2.4, pu);
+  uLine(pts, "o", [0, 85], [50, 85], pu);
+  uLine(pts, "o", [45, 77], [55, 77], pu);
+  return pts;
 }
 
 export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn, getLive, onChapter }) {
@@ -202,8 +238,6 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   const numFmt = new Intl.NumberFormat(locale);
   const decFmt = [1, 2].map((d) => new Intl.NumberFormat(locale, { minimumFractionDigits: d, maximumFractionDigits: d }));
   const dec = (v, d) => decFmt[d - 1].format(v);
-  const dayFmt = new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", timeZone: "UTC" });
-  const dateFmt = new Intl.DateTimeFormat(locale, { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
   const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   let reduce = mqReduce.matches;
@@ -289,13 +323,6 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   function scatter(i, r, key, a, s) {
     T(i, r.x + rnd(i, 11) * r.w, r.y + rnd(i, 12) * r.h, key, a, s);
   }
-  function faintRest(from, r, k) {
-    let shown = 0;
-    for (let i = from; i < N; i++) {
-      if (shown++ < k) scatter(i, r, "pmuted", 0.1, 1);
-      else hide(i);
-    }
-  }
   function fontOf(l) {
     const w = l.w || (l.f === "num" ? 300 : 500);
     return `${w} ${l.s || 11}px ${l.f === "mono" || !l.f ? FF.mono : FF.sans}`;
@@ -307,8 +334,6 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
     return w;
   }
-  const fmtDay = (d) => dayFmt.format(d);
-  const upper = (s) => s.toLocaleUpperCase(locale);
 
   /* ---------- layout ---------- */
   let topInset = 104;
@@ -346,196 +371,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   const S = {};
   const lab = labels;
 
-  // The live epoch dial
-  S.clock = (o) => {
-    const { r, wide, E } = o;
-    const NB = Math.min(N, 1300);
-    const cx = r.x + r.w / 2;
-    const cy = r.y + r.h / 2;
-    const m = wide ? Math.min(r.w, r.h) : Math.min(r.w * 0.92, r.h);
-    const radii = [0.46, 0.39, 0.32].map((v) => v * m);
-    const sum = radii[0] + radii[1] + radii[2];
-    const lit = wide ? 0.95 : 0.85;
-    const dimA = wide ? 0.32 : 0.3;
-    let i = 0;
-    let n0 = 0;
-    for (let j = 0; j < 3; j++) {
-      const n = j === 2 ? NB - i : Math.round((NB * radii[j]) / sum);
-      if (j === 0) n0 = n;
-      for (let k = 0; k < n; k++, i++) {
-        const f = k / n;
-        const th = -Math.PI / 2 + f * TAU;
-        const rr = radii[j] + (rnd(i, 3) - 0.5) * m * 0.012;
-        const on = f <= E.frac;
-        T(i, cx + Math.cos(th) * rr, cy + Math.sin(th) * rr, on ? "brand" : "pmuted", on ? lit : dimA, on ? 2.1 : 1.5);
-      }
-    }
-    hideFrom(i);
-    const ci = Math.min(n0 - 1, Math.floor(E.frac * n0));
-    ts[ci] = wide ? 5 : 4;
-    ta[ci] = 1;
-    const out = [];
-    const left = E.end - Date.now();
-    if (wide) {
-      out.push(L(lab.epoch, cx, cy - m * 0.12, { f: "mono", s: 11, c: "muted", a: "center", ls: 2.5 }));
-      out.push(L(String(E.epoch), cx, cy + m * 0.045, { f: "num", s: Math.round(m * 0.17), c: "ink", a: "center" }));
-      out.push(L(countdown(left, false, lab.units), cx, cy + m * 0.12, { f: "mono", s: 13, c: "ink", a: "center" }));
-      out.push(L(lab.untilCount, cx, cy + m * 0.165, { f: "mono", s: 10, c: "muted", a: "center", ls: 1.6 }));
-      out.push(L(lab.epochDays, cx, cy + radii[0] + 34, { f: "mono", s: 10, c: "muted", a: "center", ls: 1.6 }));
-    } else if (m > 170) {
-      out.push(L(lab.epoch, cx, cy - m * 0.1, { f: "mono", s: 9.5, c: "muted", a: "center", ls: 2 }));
-      out.push(L(String(E.epoch), cx, cy + m * 0.06, { f: "num", s: Math.round(m * 0.18), c: "ink", a: "center" }));
-      out.push(L(countdown(left, true, lab.units), cx, cy + m * 0.15, { f: "mono", s: 10.5, c: "ink2", a: "center" }));
-    }
-    return { labels: out };
-  };
-
-  // 01: seven keys around one lock, everyone else held outside
-  S.keys = (o) => {
-    const { r } = o;
-    const G = Math.min(r.w, r.h * 0.88) / 2;
-    const cx = r.x + r.w / 2;
-    const cy = r.y + r.h * 0.46;
-    const bodyY = cy + 0.1 * G;
-    let i = 0;
-    lockPts(520, cx, bodyY, 0.34 * G, 0.28 * G).forEach((p) => {
-      T(i++, p[0], p[1], p[2] === "h" ? "ink" : "brand", p[2] === "b" ? 0.8 : 1, 1.4);
-    });
-    for (let j = 0; j < 7; j++) {
-      const th = -Math.PI / 2 + (j * TAU) / 7;
-      const bx = cx + Math.cos(th) * 0.74 * G;
-      const by = cy + Math.sin(th) * 0.74 * G;
-      keyPts(150, bx, by, -Math.cos(th), -Math.sin(th), 0.34 * G, 0.09 * G, 0.032 * G).forEach((p) => {
-        T(i++, p[0], p[1], "ink", 0.9, 1.4);
-      });
-    }
-    for (let k = 0; k < 760 && i < N; k++, i++) {
-      const a = k * 2.399963;
-      const rad = G * (0.93 + rnd(i, 6) * 0.11);
-      T(i, cx + Math.cos(a) * rad, cy + Math.sin(a) * rad, "pmuted", 0.4, 1.2);
-    }
-    hideFrom(i);
-    return {
-      labels: [
-        L(lab.protocolUpgrades, cx, bodyY + 0.14 * G + 20, { f: "mono", s: 10, c: "brand", a: "center", ls: 1.6, w: 600, bg: true }),
-        L(lab.everyoneElse, cx + G * 0.7, cy - G * 0.74, { f: "mono", s: 10, c: "muted", a: "center", ls: 1.8, bg: true }),
-        L(lab.genesisKeys, cx, r.y + r.h - 24, { f: "mono", s: 12, c: "ink", a: "center", ls: 2.5, w: 600, bg: true }),
-        L(lab.genesisKeysNote, cx, r.y + r.h - 4, { f: "sans", s: 13, c: "ink2", a: "center", bg: true }),
-      ],
-    };
-  };
-
-  // 02 and 03: the governance wheel. Committee, DReps and stake pools inside;
-  // the seven action types around them, lit once they went live.
-  const ARC_EPOCH = [507, 507, 507, 537, 537, 537, 537];
-  S.wheel = (o, stageName) => {
-    const { r } = o;
-    const narrow = W <= BP_NARROW;
-    const out = [];
-    const lines = [];
-    let i = 0;
-    const R = Math.min(r.w, r.h) / 2;
-    const cx = r.x + r.w / 2;
-    const cy = r.y + r.h * 0.52;
-    const sp = Math.max(3.6, R * 0.014);
-    const live = stageName === "chang" ? 507 : 537;
-    const dOn = stageName === "plomin";
-    const z = narrow ? 1 : 1.16;
-    const ring = (rad, key, a, s) => {
-      const n = Math.floor((TAU * rad) / sp);
-      const off = rnd(Math.round(rad), 7) * 6.28;
-      for (let m = 0; m < n; m++, i++) {
-        const th = off + (m / n) * TAU;
-        T(i, cx + Math.cos(th) * rad, cy + Math.sin(th) * rad, key, a, s);
-      }
-    };
-    T(i++, cx, cy, "cc", 1, narrow ? 2.4 : 3);
-    for (let k = 0; k < 6; k++, i++) {
-      const ca = -Math.PI / 2 + (k * Math.PI) / 3;
-      T(i, cx + Math.cos(ca) * R * 0.05 * z, cy + Math.sin(ca) * R * 0.05 * z, "cc", 1, narrow ? 2.4 : 3);
-    }
-    ring(R * 0.17 * z, "drep", dOn ? 0.95 : 0.28, dOn ? 1.6 : 1.1);
-    ring(R * 0.205 * z, "drep", dOn ? 0.95 : 0.28, dOn ? 1.6 : 1.1);
-    ring(R * 0.29 * z, "spo", 0.9, 1.5);
-    ring(R * 0.325 * z, "spo", 0.9, 1.5);
-    ring(R * 0.36 * z, "spo", 0.9, 1.5);
-    const slice = TAU / 7;
-    const gap = 0.075;
-    const radii = narrow ? [R * 0.47, R * 0.51, R * 0.55] : [R * 0.565, R * 0.61, R * 0.655];
-    const Rl = narrow ? R * 0.64 : R * 0.74;
-    const tight = narrow || r.w < 640;
-    lab.arcs.forEach((arc, ak) => {
-      const a0 = -Math.PI / 2 + ak * slice + gap / 2;
-      const a1 = a0 + slice - gap;
-      const on = ARC_EPOCH[ak] <= live;
-      radii.forEach((rad) => {
-        const n = Math.max(2, Math.floor(((a1 - a0) * rad) / sp));
-        for (let q = 0; q < n; q++, i++) {
-          const th = a0 + (q / (n - 1)) * (a1 - a0);
-          T(i, cx + Math.cos(th) * rad, cy + Math.sin(th) * rad, on ? "ink" : "pmuted", on ? 0.85 : 0.3, on ? 1.7 : 1.2);
-        }
-      });
-      const mA = (a0 + a1) / 2;
-      const cs = Math.cos(mA);
-      const sn = Math.sin(mA);
-      out.push(
-        L(tight ? arc[1] : arc[0], cx + cs * Rl, cy + sn * Rl + 4 + (sn > 0.6 ? 8 : 0), {
-          f: "sans",
-          s: narrow ? 10.5 : 12.5,
-          c: on ? "ink" : "muted",
-          w: on ? 600 : 400,
-          a: cs > 0.25 ? "left" : cs < -0.25 ? "right" : "center",
-        })
-      );
-    });
-    hideFrom(i);
-    const ep = dOn ? 537 : 507;
-    out.push(L(dOn ? lab.plomin : lab.chang, r.x, r.y + 14, { f: "mono", s: 12, c: "ink", ls: 2.2, w: 600 }));
-    out.push(
-      L(upper(`${dateFmt.format(epochStart(ep))} · ${fill(lab.epochNumber, { epoch: ep })}`), r.x, r.y + 30, {
-        f: "mono",
-        s: 9.5,
-        c: "muted",
-        ls: 1.2,
-      })
-    );
-    out.push(
-      L(dOn ? lab.plominLive : lab.changLive, r.x + r.w, r.y + 14, {
-        f: "mono",
-        s: narrow ? 9.5 : 11,
-        c: "brand",
-        a: "right",
-        ls: 1.4,
-        w: 600,
-      })
-    );
-    const items = dOn
-      ? [
-          ["cc", 1, lab.legendCommittee],
-          ["spo", 1, lab.legendPools],
-          ["drep", 1, lab.legendDreps],
-        ]
-      : [
-          ["cc", 1, lab.legendInterim],
-          ["spo", 1, lab.legendPools],
-          ["drep", 0.35, lab.legendDrepsWaiting],
-        ];
-    let ly = r.y + r.h - (narrow ? 22 : 8);
-    let lx = r.x;
-    items.forEach((it, n) => {
-      const lo = { f: "sans", s: narrow ? 10.5 : 12, c: it[1] < 1 ? "muted" : "ink2" };
-      if (narrow && n === 2) {
-        ly += 16;
-        lx = r.x;
-      }
-      lines.push({ dot: true, x1: lx + 4, y1: ly - 4, c: it[0], o: it[1] });
-      out.push(L(it[2], lx + 13, ly, lo));
-      lx += textW(it[2], lo) + 34;
-    });
-    return { labels: out, lines, center: [cx, cy, R * 0.66] };
-  };
-
-  // 04: your ada stays put; at each epoch boundary its weight is counted with your DRep
+  // 01: your ada stays put; at each epoch boundary its weight is counted with your DRep
   S.weight = (o) => {
     const { r, t } = o;
     const narrow = W <= BP_NARROW;
@@ -667,238 +503,211 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     return { labels: out };
   };
 
-  // 05: two independent delegations
-  S.two = (o) => {
-    const { r, t, m } = o;
-    const NB = Math.min(N, 1400);
-    const w0 = [r.x + r.w * 0.14, r.y + r.h * 0.5];
-    const pc = [r.x + r.w * 0.8, r.y + r.h * 0.22];
-    const dc = [r.x + r.w * 0.8, r.y + r.h * 0.72];
-    const c1 = [r.x + r.w * 0.46, r.y + r.h * 0.08];
-    const c2 = [r.x + r.w * 0.46, r.y + r.h * 0.92];
-    const rw = m * 0.1;
-    const rp = m * 0.115;
-    const n = [0.16, 0.13, 0.22, 0.13, 0.22].map((f) => Math.floor(f * NB));
-    const spd = reduce ? 0 : 0.00009;
-    let i = 0;
-    for (let k = 0; k < n[0]; k++, i++) {
-      const p = phyllo(k, n[0], w0[0], w0[1], rw);
-      T(i, p[0], p[1], "ink2", 0.9, 1.7);
-    }
-    for (let k = 0; k < n[1]; k++, i++) {
-      const tt = (rnd(i, 3) + t * spd * (0.7 + rnd(i, 4) * 0.6)) % 1;
-      const p = bez(tt, w0, c1, pc);
-      const j = (rnd(i, 5) - 0.5) * m * 0.035;
-      T(i, p[0] + j, p[1] + j, "ink2", 0.8, 1.4, "spo", tt);
-    }
-    for (let k = 0; k < n[2]; k++, i++) {
-      const p = phyllo(k, n[2], pc[0], pc[1], rp);
-      T(i, p[0], p[1], "spo", 0.95, 1.7);
-    }
-    for (let k = 0; k < n[3]; k++, i++) {
-      const tt = (rnd(i, 3) + t * spd * (0.7 + rnd(i, 4) * 0.6)) % 1;
-      const p = bez(tt, w0, c2, dc);
-      const j = (rnd(i, 5) - 0.5) * m * 0.035;
-      T(i, p[0] + j, p[1] - j, "ink2", 0.8, 1.4, "drep", tt);
-    }
-    for (let k = 0; k < n[4]; k++, i++) {
-      const p = phyllo(k, n[4], dc[0], dc[1], rp);
-      T(i, p[0], p[1], "drep", 0.95, 1.7);
-    }
-    for (; i < NB; i++) scatter(i, r, "pmuted", 0.12, 1.1);
-    hideFrom(i);
-    const narrow = W <= BP_NARROW;
-    return {
-      labels: [
-        L(lab.yourWallet, w0[0], w0[1] + rw + 22, { f: "mono", s: 11, c: "ink", a: "center", ls: 1.6, w: 600, bg: true }),
-        L(lab.stakePool, pc[0], pc[1] + rp + 22, { f: "mono", s: 11, c: "spo", a: "center", ls: 1.6, w: 600 }),
-        L(lab.securityRewards, pc[0], pc[1] + rp + 40, { f: "sans", s: 12, c: "ink2", a: "center" }),
-        L(lab.drep, dc[0], dc[1] + rp + 22, { f: "mono", s: 11, c: "drep", a: "center", ls: 1.6, w: 600 }),
-        L(lab.yourVoice, dc[0], dc[1] + rp + 40, { f: "sans", s: 12, c: "ink2", a: "center" }),
-        L(
-          lab.sameAda,
-          narrow ? r.x + r.w / 2 : r.x + r.w * 0.47,
-          narrow ? r.y + r.h - 2 : r.y + r.h * 0.5 + 4,
-          { f: "sans", s: 12, c: "muted", a: "center", bg: true }
-        ),
-      ],
-    };
-  };
-
-  // 06 to 08: three circles, one dot per member. Committee at the core, DReps
-  // around it, stake pools around both. Live counts replace the snapshot when
-  // the site's data service answers.
+  // 02: three groups around one proposal, each drawn as a persona: the
+  // committee's bench at the top, a DRep and a stake pool operator at the base.
+  // Votes flow from each group to the action.
   const counts = () => storyCounts((getLive && getLive()) || {});
-  S.rings = (o) => {
-    const { r, wide, t } = o;
-    const v = o.variant || "";
+  S.groups = (o) => {
+    const { r, t, m } = o;
+    const narrow = W <= BP_NARROW;
     const out = [];
     const lines = [];
     let i = 0;
     const cnt = counts();
-    const Rmax = wide ? Math.min(r.w * 0.36, r.h * 0.44) : Math.min(r.w * 0.5, r.h * 0.36);
-    const unitD = ringPts(cnt.dreps, 3.2, 1, 0, 0);
-    const unitS = ringPts(cnt.pools, unitD.outer + 2, 1, 0, 0);
-    const p = Rmax / (unitS.outer + 1);
-    const cx = wide ? r.x + Rmax + 8 : r.x + r.w / 2;
-    const cy = wide ? r.y + r.h * 0.53 : r.y + r.h * 0.56;
-    const ds = Math.max(0.9, Math.min(2.4, p * 0.3));
-    const el = v === "elect";
-    const rm = v === "remove";
-    const focus = el || rm;
+    const cx = r.x + r.w / 2;
+    const hw = Math.min(r.w * 0.34, r.h * 0.38);
+    const top = [cx, r.y + r.h * 0.24];
+    const bl = [cx - hw, r.y + r.h * 0.68];
+    const br = [cx + hw, r.y + r.h * 0.68];
+    const mid = [cx, (top[1] + bl[1] + br[1]) / 3];
     const nC = cnt.committee;
-    const cRad = p * Math.max(1.1, (nC - 1) / 5.5);
-    const ccPts = [[cx, cy]];
-    for (let k = 0; k < nC - 1; k++) {
-      const a = -Math.PI / 2 + (k * TAU) / (nC - 1);
-      ccPts.push([cx + Math.cos(a) * cRad, cy + Math.sin(a) * cRad]);
-    }
-    const dr = ringPts(cnt.dreps, p * 3.2, p, cx, cy);
-    const sp = ringPts(cnt.pools, dr.outer + p * 2, p, cx, cy);
-    dr.pts.forEach((q) => {
-      T(i++, q[0], q[1], "drep", focus ? 0.3 : 0.95, ds);
+
+    // Personas: one design unit is u pixels, dots sit p pixels apart
+    const u = Math.min(m * 0.003, (hw * 1.1) / 100);
+    const pu = (narrow ? 2.7 : 3.9) / u;
+    const ds = narrow ? 1.2 : 1.5;
+    const blink = (k) => (reduce ? 0.9 : Math.sin(t * 0.004 + rnd(k, 71) * TAU) > 0.2 ? 1 : 0.25);
+    const draw = (pts, at, ox, oy, key) => {
+      pts.forEach((q, k) => {
+        const x = at[0] + (q[0] - ox) * u;
+        const y = at[1] + (q[1] - oy) * u;
+        if (q[2] === "f") T(i++, x, y, key, 0.95, ds);
+        else if (q[2] === "o") T(i++, x, y, key, 0.55, ds * 0.85);
+        else if (q[2] === "l") T(i++, x, y, key, blink(k), ds * 1.3);
+        else if (q[2] === "c") T(i++, x, y, key, 0.4, ds * 1.35);
+        else T(i++, x, y, key, 1, ds);
+      });
+    };
+    draw(benchPts(nC, pu), top, 65, 40, "cc");
+    draw(drepPts(pu), bl, 50, 50, "drep");
+    draw(poolPts(pu), br, 50, 50, "spo");
+
+    // The governance action in the middle
+    const dw = m * 0.085;
+    const dh = dw * 1.3;
+    docPts(narrow ? 56 : 76, mid[0] - dw / 2, mid[1] - dh / 2, dw, dh, 4).forEach((p) => {
+      T(i++, p[0], p[1], "brand", p[2] ? 0.6 : 0.95, p[2] ? 1.2 : 1.5);
     });
-    sp.pts.forEach((q) => {
-      T(i++, q[0], q[1], "spo", focus ? 0.24 : 0.85, ds);
-    });
-    const pulse = reduce ? 0.5 : Math.sin(t * 0.004) * 0.5 + 0.5;
-    ccPts.forEach((q, j) => {
-      if (rm) {
-        const aa = -1.0 + j * 0.1;
-        const rr = sp.outer + p * (2.6 + (j % 2) * 1.3);
-        T(i++, cx + Math.cos(aa) * rr, cy + Math.sin(aa) * rr, "pmuted", 0.7, ds * 1.3);
-      } else {
-        T(i++, q[0], q[1], "cc", 1, el ? ds * (1.3 + pulse * 0.7) : ds * 1.15);
+
+    // Votes flowing in along each edge
+    const edges = [
+      [top, 44 * u, "cc"],
+      [bl, 62 * u, "drep"],
+      [br, 62 * u, "spo"],
+    ];
+    const spd = reduce ? 0 : 0.00016;
+    const perEdge = narrow ? 18 : 28;
+    edges.forEach((e) => {
+      const [p0, r0, key] = e;
+      const ang = Math.atan2(mid[1] - p0[1], mid[0] - p0[0]);
+      const ca = Math.cos(ang);
+      const sa = Math.sin(ang);
+      // Leave a margin around the glyph, larger along its longer side
+      const stop = Math.hypot(dw * 0.5 * ca, dh * 0.5 * sa) + 10;
+      const len = Math.hypot(mid[0] - p0[0], mid[1] - p0[1]);
+      const a = [p0[0] + ca * r0, p0[1] + sa * r0];
+      const b = [mid[0] - ca * stop, mid[1] - sa * stop];
+      lines.push({ x1: a[0], y1: a[1], x2: b[0], y2: b[1], c: key, dash: [3, 5], o: 0.45 });
+      if (len < r0 + stop + 12) return;
+      for (let k = 0; k < perEdge; k++, i++) {
+        const tt = (rnd(i, 3) + t * spd * (0.8 + rnd(i, 4) * 0.4)) % 1;
+        T(i, a[0] + (b[0] - a[0]) * tt, a[1] + (b[1] - a[1]) * tt, key, 0.95 * Math.sin(Math.PI * tt), 1.8, "brand", tt * tt);
       }
     });
-    if (focus) {
-      const spd = reduce ? 0 : 0.00022;
-      for (let k = 0; k < 420 && i < N; k++, i++) {
-        const fromD = k % 3 === 0;
-        const a0 = rnd(k, 61) * TAU;
-        const r0 = fromD
-          ? dr.inner + rnd(k, 62) * (dr.outer - dr.inner)
-          : sp.inner + rnd(k, 62) * (sp.outer - sp.inner);
-        const tt = reduce ? rnd(k, 63) : (rnd(k, 63) + t * spd * (0.8 + rnd(k, 64) * 0.4)) % 1;
-        const e = tt * tt;
-        const rr2 = r0 + (p * 1.8 - r0) * e;
-        const a2 = a0 + e * 0.35;
-        T(
-          i,
-          cx + Math.cos(a2) * rr2,
-          cy + Math.sin(a2) * rr2,
-          fromD ? "drep" : "spo",
-          0.95 * (1 - Math.max(0, tt - 0.8) * 5),
-          Math.max(1.6, ds * 1.05),
-          el ? "cc" : "no",
-          el ? e : Math.min(1, tt * 2.2)
-        );
+    hideFrom(i);
+
+    const nameO = { f: "mono", s: narrow ? 10 : 11, ls: 1.8, w: 600, a: "center" };
+    const subO = { f: "sans", s: narrow ? 10.5 : 12.5, c: "ink2", a: "center" };
+    const benchTop = top[1] - 40 * u;
+    out.push(L(lab.committee, top[0], benchTop - (narrow ? 26 : 32), { ...nameO, c: "cc" }));
+    out.push(
+      L(`${fill(lab.committeeMembers, { count: numFmt.format(nC) })} · ${lab.oneMemberOneVote}`, top[0], benchTop - (narrow ? 10 : 14), subO)
+    );
+    const base = [
+      [bl, lab.dreps, fill(lab.drepsActive, { count: numFmt.format(cnt.dreps) }), lab.weightedByAda, "drep"],
+      [br, lab.stakePools, fill(lab.poolsWithStake, { count: numFmt.format(cnt.pools) }), lab.weightedByStake, "spo"],
+    ];
+    base.forEach((b) => {
+      const y = b[0][1] + 50 * u + (narrow ? 20 : 24);
+      out.push(L(b[1], b[0][0], y, { ...nameO, c: b[4] }));
+      out.push(L(b[2], b[0][0], y + (narrow ? 15 : 18), subO));
+      out.push(L(b[3], b[0][0], y + (narrow ? 29 : 35), { ...subO, c: "muted" }));
+    });
+    out.push(L(lab.governanceAction, mid[0], mid[1] + dh / 2 + 20, { f: "mono", s: narrow ? 9 : 10, c: "brand", a: "center", ls: 1.4, w: 600, bg: true }));
+    return { labels: out, lines, center: [mid[0], mid[1], Math.hypot(hw, bl[1] - mid[1]) + 50 * u] };
+  };
+
+  // 04: a balance. A proposal drops onto one pan, the constitution sits on the
+  // other, and the beam settles level on the committee's fulcrum.
+  S.scale = (o) => {
+    const { r, t, m } = o;
+    const narrow = W <= BP_NARROW;
+    const out = [];
+    let i = 0;
+    const cx = r.x + r.w / 2;
+    const pivot = [cx, r.y + r.h * 0.3];
+    const baseY = r.y + r.h * (narrow ? 0.76 : 0.68);
+    const bl = Math.min(r.w * 0.38, r.h * 0.5);
+    const pw = bl * 0.56;
+    const dw = pw * 0.5;
+    const dh = dw * 1.3;
+    const tilt = 0.16;
+    const chain = Math.max(r.h * 0.2, dh + bl * Math.sin(tilt) + 16);
+
+    // Cycle: the proposal drops in, the beam swings and settles, holds, resets.
+    const cycle = 9000;
+    const ph = reduce ? 0.6 : (t % cycle) / cycle;
+    const land = 0.12;
+    const hold = 0.86;
+    let th;
+    let drop = 0;
+    let fade = 1;
+    if (ph < land) {
+      const u = ph / land;
+      drop = (1 - u * u) * r.h * 0.22;
+      fade = Math.min(1, u * 3);
+      th = tilt;
+    } else if (ph < hold) {
+      const s = ((ph - land) * cycle) / 1000;
+      th = tilt * Math.exp(-1.15 * s) * Math.cos(4.6 * s);
+    } else {
+      const u = (ph - hold) / (1 - hold);
+      th = tilt * u * u * (3 - 2 * u);
+      fade = 1 - u;
+    }
+    const settled = ph < land ? 0 : Math.max(0, Math.min(1, 1 - Math.abs(th) / (tilt * 0.12)));
+    const ca = Math.cos(th);
+    const sa = Math.sin(th);
+
+    // Fulcrum: the committee holds the balance
+    const fw = bl * 0.2;
+    const nF = narrow ? 34 : 48;
+    for (let side = -1; side <= 1; side += 2) {
+      for (let k = 0; k < nF; k++, i++) {
+        const u = k / (nF - 1);
+        T(i, pivot[0] + side * fw * u, pivot[1] + 6 + (baseY - pivot[1] - 6) * u, "cc", 0.9, 1.5);
+      }
+    }
+    const nBase = narrow ? 30 : 44;
+    for (let k = 0; k < nBase; k++, i++) {
+      const u = k / (nBase - 1);
+      T(i, pivot[0] - fw * 1.6 + u * fw * 3.2, baseY + 2, "cc", 0.9, 1.6);
+    }
+    T(i++, pivot[0], pivot[1], "cc", 1, narrow ? 3.4 : 4.2);
+
+    // Beam
+    const nB = narrow ? 56 : 80;
+    for (let k = 0; k < nB * 2; k++, i++) {
+      const u = (Math.floor(k / 2) / (nB - 1)) * 2 - 1;
+      const off = ((k % 2) - 0.5) * 3.2;
+      T(i, pivot[0] + ca * bl * u - sa * off, pivot[1] + sa * bl * u + ca * off, "ink", 0.9, 1.4);
+    }
+
+    // Pans hang straight down from both ends
+    const pans = [-1, 1].map((side) => {
+      const end = [pivot[0] + ca * bl * side, pivot[1] + sa * bl * side];
+      const pan = [end[0], end[1] + chain];
+      const nCh = narrow ? 12 : 16;
+      [-1, 1].forEach((e) => {
+        for (let k = 0; k < nCh; k++, i++) {
+          const u = (k + 0.5) / nCh;
+          T(i, end[0] + (e * pw * u) / 2, end[1] + chain * u, "ink2", 0.55, 1.1);
+        }
+      });
+      const nP = narrow ? 30 : 40;
+      for (let k = 0; k < nP; k++, i++) {
+        const u = (k / (nP - 1)) * 2 - 1;
+        T(i, pan[0] + (u * pw) / 2, pan[1] + (1 - u * u) * pw * 0.12, "ink2", 0.85, 1.5);
+      }
+      return pan;
+    });
+
+    // Left pan: the proposal. Right pan: the constitution, ten tenets as ten bands.
+    const [lp, rp] = pans;
+    docPts(narrow ? 64 : 88, lp[0] - dw / 2, lp[1] - dh - 3 - drop, dw, dh, 5).forEach((p) => {
+      T(i++, p[0], p[1], "brand", (p[2] ? 0.6 : 0.95) * fade, p[2] ? 1.2 : 1.5);
+    });
+    const cw = dw * 1.12;
+    const perBand = narrow ? 9 : 12;
+    for (let b = 0; b < 10; b++) {
+      const y = rp[1] - 3 - dh + ((b + 0.5) * dh) / 10;
+      for (let k = 0; k < perBand; k++, i++) {
+        T(i, rp[0] - cw / 2 + ((k + 0.5) * cw) / perBand, y, "ink", b % 2 ? 0.7 : 0.95, 1.5);
       }
     }
     hideFrom(i);
-    lines.push({ circle: true, x1: cx, y1: cy, rad: cRad + p * 1.1, c: rm ? "no" : "cc", dash: [3, 4], o: rm ? 0.95 : 0.6, w: rm ? 1.6 : 1 });
-    lines.push({ circle: true, x1: cx, y1: cy, rad: dr.outer + p, c: "drep", dash: [3, 5], o: focus ? 0.3 : 0.5 });
-    lines.push({ circle: true, x1: cx, y1: cy, rad: sp.outer + p, c: "spo", dash: [3, 5], o: focus ? 0.3 : 0.5 });
-    const ccSub = el ? lab.votedIn : rm ? lab.removed : fill(lab.committeeMembers, { count: numFmt.format(nC) });
-    const drSub = fill(lab.drepsActive, { count: numFmt.format(cnt.dreps) });
-    const spSub = fill(lab.poolsWithStake, { count: numFmt.format(cnt.pools) });
-    if (wide) {
-      const lx = cx + Rmax + 26;
-      const rows = [
-        [cy - 70, lab.committee, ccSub, rm ? "muted" : "cc", cRad + p * 1.1],
-        [cy, lab.dreps, drSub, "drep", dr.outer + p],
-        [cy + 70, lab.stakePools, spSub, "spo", sp.outer + p],
-      ];
-      rows.forEach((rw) => {
-        const ang = Math.atan2(rw[0] - 4 - cy, lx - cx);
-        const ex = cx + Math.cos(ang) * rw[4];
-        const ey = cy + Math.sin(ang) * rw[4];
-        lines.push({ x1: lx - 8, y1: rw[0] - 4, x2: ex, y2: ey, c: rw[3], dash: [2, 3], o: 0.6 });
-        lines.push({ dot: true, x1: ex, y1: ey, c: rw[3], o: 0.9 });
-        out.push(L(rw[1], lx, rw[0], { f: "mono", s: 11, c: rw[3], ls: 1.8, w: 600 }));
-        out.push(L(rw[2], lx, rw[0] + 17, { f: "sans", s: 12.5, c: "ink2" }));
-      });
-      if (!focus) out.push(L(lab.oneDotOneMember, lx, cy + Rmax - 4, { f: "mono", s: 9.5, c: "muted", ls: 1.4 }));
-    } else if (!focus) {
-      out.push(L(`${lab.committee} · ${upper(ccSub)}`, r.x, r.y + 12, { f: "mono", s: 10, c: "cc", ls: 1.2, w: 600 }));
-      out.push(L(`${lab.dreps} · ${upper(drSub)}`, r.x, r.y + 28, { f: "mono", s: 10, c: "drep", ls: 1.2, w: 600 }));
-      out.push(L(`${lab.stakePools} · ${numFmt.format(cnt.pools)}`, r.x, r.y + 44, { f: "mono", s: 10, c: "spo", ls: 1.2, w: 600 }));
-      out.push(L(lab.oneDotOneMember, r.x + r.w, r.y + 12, { f: "mono", s: 9, c: "muted", a: "right", ls: 1.2 }));
-    }
-    if (focus) {
-      out.push(L(el ? lab.updateCommittee : lab.noConfidence, r.x, r.y + 12, { f: "mono", s: 11, c: el ? "cc" : "no", ls: 2, w: 600 }));
-      out.push(L(el ? lab.updateCommitteeNote : lab.noConfidenceNote, r.x, r.y + 30, { f: "sans", s: wide ? 13 : 11.5, c: "ink2" }));
-    }
-    if (rm) {
-      out.push(L(lab.noCommittee, cx, cy + 4, { f: "mono", s: 9.5, c: "no", a: "center", ls: 1.2, w: 600, bg: true }));
-      out.push(
-        L(lab.removedCaps, cx + Math.cos(-0.7) * (sp.outer + p * 4.2) + 10, cy + Math.sin(-0.7) * (sp.outer + p * 4.2) - 6, {
-          f: "mono",
-          s: 9.5,
-          c: "muted",
-          ls: 1.4,
-          w: 600,
-        })
-      );
-    }
-    return { labels: out, lines, center: [cx, cy, sp.outer] };
+
+    const nameO = { f: "mono", s: narrow ? 10 : 11, ls: 1.6, w: 600, a: "center" };
+    const below = pw * 0.12 + (narrow ? 20 : 24);
+    out.push(L(lab.proposal, lp[0], lp[1] + below, { ...nameO, c: "brand", o: fade }));
+    out.push(L(lab.constitution, rp[0], rp[1] + below, { ...nameO, c: "ink" }));
+    out.push(L(lab.constitutionalCommittee, cx, baseY + (narrow ? 22 : 26), { ...nameO, c: "cc" }));
+    out.push(L(lab.scaleNote, cx, baseY + (narrow ? 38 : 44), { f: "sans", s: narrow ? 10.5 : 12.5, c: "ink2", a: "center" }));
+    out.push(L(lab.inBalance, cx, pivot[1] - bl * Math.sin(tilt) - (narrow ? 18 : 26), { f: "mono", s: narrow ? 9.5 : 10.5, c: "brand", a: "center", ls: 1.6, w: 600, bg: true, o: settled * fade }));
+    return { labels: out };
   };
 
-  // 09: where the voting power sits (ledger snapshot)
-  S.power = (o) => {
-    const { r } = o;
-    const P = SNAPSHOT.power;
-    const data = [
-      ["drep", P.activeDreps, 0.95],
-      ["drep", P.inactiveDreps, 0.28],
-      ["no", P.alwaysNoConfidence, 0.9],
-      ["abstain", P.alwaysAbstain, 0.8],
-    ];
-    const total = P.total;
-    const cnts = data.map((d) => Math.round((N * d[1]) / total));
-    cnts[3] += N - cnts.reduce((a, b) => a + b, 0);
-    const narrow = W <= BP_NARROW;
-    const stack = narrow || r.w * 0.32 < 185;
-    const yT = r.y + (narrow ? 12 : r.h * 0.07);
-    const yBig = yT + (narrow ? 30 : 40);
-    const yLab = yBig + (narrow ? 22 : 34);
-    const y0 = yLab + (stack ? 26 : 12);
-    const gh = Math.min(r.h * 0.54, r.y + r.h - 48 - y0);
-    const R = Math.max(8, Math.round(Math.sqrt((N * gh) / r.w)));
-    const cols = Math.ceil(N / R);
-    const cell = Math.min(r.w / cols, gh / R);
-    const x0 = r.x + (r.w - cols * cell) / 2;
-    let i = 0;
-    const starts = [];
-    data.forEach((d, j) => {
-      starts.push(i);
-      for (let k = 0; k < cnts[j]; k++, i++) {
-        const c = Math.floor(i / R);
-        const rw = i % R;
-        T(i, x0 + (c + 0.5) * cell, y0 + (rw + 0.5) * cell, d[0], d[2], Math.max(0.9, cell * 0.34));
-      }
-    });
-    const xA = x0 + Math.floor(starts[3] / R) * cell;
-    const big = { f: "num", s: narrow ? 28 : 40, c: "ink" };
-    const bigText = fill(lab.billions, { amount: dec(total, 2) });
-    return {
-      labels: [
-        L(lab.delegatedForGovernance, x0, yT, { f: "mono", s: 11, c: "muted", ls: 1.6 }),
-        L(bigText, x0, yBig, big),
-        L(fill(lab.perDot, { amount: dec((total * 1000) / N, 1) }), x0 + textW(bigText, big) + 14, yBig - 3, {
-          f: "sans",
-          s: 12,
-          c: "muted",
-        }),
-        L(lab.activeDreps, x0, yLab, { f: "mono", s: 11, c: "drep", ls: 1.2, w: 600 }),
-        L(lab.alwaysAbstain, stack ? x0 : xA, stack ? yLab + 14 : yLab, { f: "mono", s: 11, c: "muted", ls: 1.2, w: 600 }),
-        L(lab.theseDecide, x0, y0 + R * cell + 22, { f: "sans", s: 12, c: "drep", w: 600 }),
-        L(lab.powerRest, x0, y0 + R * cell + 40, { f: "sans", s: 12, c: "muted" }),
-      ],
-    };
-  };
-
-  // 10: a governance action document with its deposit seal
+  // 03: a governance action document with its deposit seal
   S.proposal = (o) => {
     const { r } = o;
     const NB = Math.min(N, 1400);
@@ -962,155 +771,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     };
   };
 
-  // 11: how No and silence behave. The August 2026 treasury withdrawal, DRep vote.
-  S.tally = (o) => {
-    const { r } = o;
-    const narrow = W <= BP_NARROW;
-    const out = [];
-    const lines = [];
-    let i = 0;
-    const V = SNAPSHOT.tally;
-    const tot = V.yes + V.no + V.noConfidence + V.silent + V.abstain + V.alwaysAbstain;
-    const cntd = V.yes + V.no + V.noConfidence + V.silent;
-    const nC = Math.round((N * cntd) / tot);
-    const ny = Math.round((N * V.yes) / tot);
-    const nn = Math.max(1, Math.round((N * V.no) / tot));
-    const nnc = Math.round((N * V.noConfidence) / tot);
-    const nA = N - nC;
-    const nab = Math.round((N * V.abstain) / tot);
-    const R = narrow ? 10 : 12;
-    const cols = Math.ceil(nC / R);
-    const cell = Math.min(r.w / cols, (r.h * 0.2) / R);
-    const R2 = Math.ceil(nA / cols);
-    const gw = cols * cell;
-    const x0 = r.x + (r.w - gw) / 2;
-    const yC = r.y + r.h * 0.2;
-    const bh = R * cell;
-    const yA = yC + bh + (narrow ? 78 : 88);
-    const ds = Math.max(0.9, cell * 0.34);
-    for (let b = 0; b < nC; b++, i++) {
-      const key = b < ny ? "yes" : "no";
-      const a = b < ny ? 0.95 : b < ny + nn ? 0.95 : b < ny + nn + nnc ? 0.7 : 0.36;
-      T(i, x0 + (Math.floor(b / R) + 0.5) * cell, yC + ((b % R) + 0.5) * cell, key, a, ds);
-    }
-    for (let b = 0; b < nA; b++, i++) {
-      T(i, x0 + (Math.floor(b / R2) + 0.5) * cell, yA + ((b % R2) + 0.5) * cell, "abstain", b < nab ? 0.85 : 0.5, ds);
-    }
-    const xt = x0 + ((0.67 * nC) / R) * cell;
-    const xr = x0 + (ny / R) * cell;
-    const yB = yC + bh;
-    lines.push({ x1: xt, y1: yC - 12, x2: xt, y2: yB + 6, c: "ink", o: 0.9, w: 1.6 });
-    lines.push({ x1: xr, y1: yB + 5, x2: x0 + gw, y2: yB + 5, c: "no", o: 0.8, w: 1.4 });
-    out.push(L(narrow ? lab.tallyTitleShort : lab.tallyTitle, x0, r.y + r.h * 0.04, { f: "mono", s: 10, c: "muted", ls: 0.6 }));
-    out.push(L(lab.tallyYesShare, x0, yC - 22, { f: "num", s: narrow ? 22 : 30, c: "yes", w: 400 }));
-    out.push(L(lab.tallyNeeded, xt, yC - 18, { f: "mono", s: 10, c: "ink", a: "center", ls: 1.2, w: 600, bg: true }));
-    out.push(L(lab.tallyCounted, x0 + gw, yC - (narrow ? 34 : 38), { f: "mono", s: 10, c: "muted", a: "right", ls: 1.2 }));
-    out.push(L(lab.tallyYes, x0, yB + 20, { f: "mono", s: 10.5, c: "yes", w: 600 }));
-    out.push(L(lab.tallyCountsAsNo, x0 + gw, yB + 20, { f: "mono", s: 10.5, c: "no", a: "right", w: 600 }));
-    if (narrow) {
-      out.push(L(lab.tallyNoPartsShort, x0 + gw, yB + 35, { f: "sans", s: 10.5, c: "ink2", a: "right" }));
-      out.push(L(lab.tallySilent, x0 + gw, yB + 50, { f: "sans", s: 10.5, c: "no", a: "right", w: 600 }));
-    } else {
-      const so = { f: "sans", s: 12, c: "no", a: "right", w: 600 };
-      out.push(L(lab.tallyNoParts, x0 + gw - textW(lab.tallySilent, so) - 6, yB + 37, { f: "sans", s: 12, c: "ink2", a: "right" }));
-      out.push(L(lab.tallySilent, x0 + gw, yB + 37, so));
-    }
-    out.push(L(lab.tallyLeftOut, x0, yA - 10, { f: "mono", s: 10.5, c: "muted", ls: 1.2, w: 600 }));
-    const yE = yA + R2 * cell;
-    out.push(L(lab.tallyAbstainParts, x0, yE + 18, { f: "sans", s: narrow ? 10.5 : 12, c: "muted" }));
-    if (narrow) {
-      out.push(L(lab.tallyInsight1, x0, yE + 40, { f: "sans", s: 11.5, c: "ink", w: 600 }));
-      out.push(L(lab.tallyInsight2, x0, yE + 56, { f: "sans", s: 11.5, c: "ink", w: 600 }));
-    } else {
-      out.push(L(lab.tallyInsight, x0, yE + 46, { f: "sans", s: 13.5, c: "ink", w: 600 }));
-    }
-    return { labels: out, lines };
-  };
-
-  // 12: the next epochs, live
-  S.timeline = (o) => {
-    const { r, E } = o;
-    const narrow = W <= BP_NARROW;
-    const cols = 8;
-    const colw = r.w / cols;
-    const per = Math.min(Math.floor(N * 0.1), narrow ? 72 : 150);
-    const gx = narrow ? 4 : 6;
-    const gy = Math.ceil(per / gx);
-    const bh = r.h * 0.44;
-    const cell = Math.min((colw * 0.62) / gx, bh / gy);
-    const yTop = r.y + r.h * 0.24;
-    let i = 0;
-    const out = [];
-    const lines = [];
-    for (let c = 0; c < cols; c++) {
-      const cxc = r.x + colw * (c + 0.5);
-      const x0 = cxc - (gx * cell) / 2;
-      const key = c === 0 ? "brand" : c <= 6 ? "drep" : "pmuted";
-      const a = c === 0 ? 1 : c <= 6 ? 0.92 - (c - 1) * 0.07 : 0.35;
-      for (let k = 0; k < per; k++, i++) {
-        T(i, x0 + ((k % gx) + 0.5) * cell, yTop + bh - (Math.floor(k / gx) + 0.5) * cell, key, a, Math.max(1.1, cell * 0.32));
-      }
-      out.push(L(String(E.epoch + c), cxc, yTop + bh + 22, { f: "mono", s: 11, c: c === 0 ? "brand" : "ink", a: "center", w: c === 0 ? 600 : 500 }));
-      out.push(L(fmtDay(epochStart(E.epoch + c)), cxc, yTop + bh + 38, { f: "mono", s: 9.5, c: "muted", a: "center" }));
-    }
-    faintRest(i, r, 200);
-    const bx1 = r.x + colw + 6;
-    const bx2 = r.x + colw * 7 - 6;
-    const by = yTop - 22;
-    lines.push({ x1: bx1, y1: by, x2: bx2, y2: by, c: "drep", o: 0.8 });
-    lines.push({ x1: bx1, y1: by, x2: bx1, y2: by + 8, c: "drep", o: 0.8 });
-    lines.push({ x1: bx2, y1: by, x2: bx2, y2: by + 8, c: "drep", o: 0.8 });
-    out.push(L(narrow ? lab.moreEpochsShort : lab.moreEpochs, (bx1 + bx2) / 2, by - 8, { f: "mono", s: 10, c: "drep", a: "center", ls: 1.4, w: 600 }));
-    out.push(L(lab.now, r.x + colw * 0.5, yTop - 10, { f: "mono", s: 10, c: "brand", a: "center", ls: 1.6, w: 600 }));
-    out.push(L(lab.expired, r.x + colw * 7.5, yTop - 10, { f: "mono", s: 9.5, c: "muted", a: "center", ls: 1.2 }));
-    out.push(L(lab.ratifiedEnacted, r.x + r.w / 2, r.y + r.h * 0.95, { f: "sans", s: 12.5, c: "ink2", a: "center" }));
-    return { labels: out, lines };
-  };
-
-  // 13: the constitution's ten tenets
-  S.tenets = (o) => {
-    const { r, m, wide } = o;
-    const cx = r.x + r.w / 2;
-    const cy = r.y + r.h * 0.48;
-    const R1 = m * (wide ? 0.32 : 0.27);
-    const R0 = m * 0.075;
-    const nCore = Math.min(Math.floor(N * 0.2), 380);
-    const per = Math.min(Math.floor(N * 0.065), 90);
-    let i = 0;
-    const out = [];
-    for (let k = 0; k < nCore; k++, i++) {
-      const p = phyllo(k, nCore, cx, cy, R0);
-      T(i, p[0], p[1], "brand", 0.95, 1.5);
-    }
-    for (let s = 0; s < 10; s++) {
-      const th = -Math.PI / 2 + (s * Math.PI) / 5;
-      const cs = Math.cos(th);
-      const sn = Math.sin(th);
-      const half = Math.ceil(per / 2);
-      for (let k = 0; k < per; k++, i++) {
-        const lane = k % 2;
-        const u = Math.floor(k / 2) / Math.max(1, half - 1);
-        const rad = R0 * 1.5 + u * (R1 - R0 * 1.5);
-        const off = (lane - 0.5) * m * 0.014;
-        T(i, cx + cs * rad - sn * off, cy + sn * rad + cs * off, "brand", 0.95 - u * 0.35, 1.5);
-      }
-      const lr = R1 + 16;
-      out.push(
-        L(wide && r.w >= 560 ? lab.tenets[s][0] : lab.tenets[s][1], cx + cs * lr, cy + sn * lr + 4 + (sn > 0.5 ? 8 : 0), {
-          f: "sans",
-          s: wide ? 12.5 : 11,
-          c: "ink2",
-          a: cs > 0.25 ? "left" : cs < -0.25 ? "right" : "center",
-          w: 500,
-        })
-      );
-    }
-    faintRest(i, r, 160);
-    out.push(L(lab.tenetsCaption, cx, Math.min(r.y + r.h - 4, cy + R1 + 58), { f: "mono", s: 10, c: "muted", a: "center", ls: 1.6 }));
-    return { labels: out };
-  };
-
-  // 14: treasury flows
+  // 05: treasury flows
   S.treasury = (o) => {
     const { r, t, m } = o;
     const spd = reduce ? 0 : 0.00008;
@@ -1177,7 +838,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     };
   };
 
-  // 15: the three groups in motion around you
+  // 06: the three groups in motion around you
   S.finale = (o) => {
     const { r, t, m } = o;
     const cx = r.x + r.w / 2;
@@ -1215,31 +876,21 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   };
 
   const SCENES = {
-    clock: { fn: S.clock, dyn: true },
-    keys: { fn: S.keys },
-    chang: { fn: (o) => S.wheel(o, "chang"), grow: true, noGrowFrom: "plomin", labelDelay: 1300 },
-    plomin: { fn: (o) => S.wheel(o, "plomin"), spin: -Math.PI / 2 + (3 * TAU) / 7 },
     weight: { fn: S.weight, dyn: true },
-    two: { fn: S.two, dyn: true },
-    rings: { fn: S.rings, grow: true, labelDelay: 1500 },
-    elect: { fn: (o) => S.rings({ ...o, variant: "elect" }), dyn: true },
-    remove: { fn: (o) => S.rings({ ...o, variant: "remove" }), dyn: true },
-    power: { fn: S.power },
+    groups: { fn: S.groups, dyn: true, grow: true, labelDelay: 1300 },
     proposal: { fn: S.proposal },
-    tally: { fn: S.tally },
-    timeline: { fn: S.timeline },
-    tenets: { fn: S.tenets },
+    scale: { fn: S.scale, dyn: true },
     treasury: { fn: S.treasury, dyn: true },
     finale: { fn: S.finale, dyn: true },
     dim: { fn: S.dim, dyn: true },
   };
 
-  let scene = "clock";
+  let scene = "weight";
   let sceneAt = performance.now();
   let built = { labels: [] };
   function build(name, now) {
     const r = regionFor(name);
-    return SCENES[name].fn({ r, m: Math.min(r.w, r.h), t: now, wide: W > BP_WIDE, E: epochInfo() }) || {};
+    return SCENES[name].fn({ r, m: Math.min(r.w, r.h), t: now, wide: W > BP_WIDE }) || {};
   }
   function setScene(name) {
     if (!SCENES[name] || name === scene) return;

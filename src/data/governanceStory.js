@@ -17,23 +17,6 @@ export const SNAPSHOT = {
   committeeSeats: 7,
   poolsWithStake: 2828,
   treasuryAda: 1.36e9,
-  // Voting power by delegation target, billions of ada
-  power: {
-    activeDreps: 5.1024,
-    inactiveDreps: 0.196,
-    alwaysNoConfidence: 0.139,
-    alwaysAbstain: 10.3022,
-    total: 15.7396,
-  },
-  // DRep tally of the 103,000 ada treasury withdrawal, August 2026, billions of ada
-  tally: {
-    yes: 2.89089,
-    no: 0.05498,
-    noConfidence: 0.13904,
-    silent: 1.34993,
-    abstain: 0.80584,
-    alwaysAbstain: 10.30223,
-  },
 };
 
 // Live figures from useAccountabilityStats, checked against sane ranges, with

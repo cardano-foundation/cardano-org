@@ -12,8 +12,9 @@ import GovernanceStory, { GovernanceStorySources } from "@site/src/components/Go
 export default function GovernanceHowItWorksPage() {
   const title = translate({ id: "governance.howItWorks.hero.title", message: "How Cardano decides" });
   const description = translate({
-    id: "governance.howItWorks.hero.description",
-    message: "A visual walk through Cardano governance: who votes, how every vote is counted, and where your ada fits in.",
+    id: "governance.howItWorks.hero.descriptionShort",
+    message:
+      "No single company decides what Cardano becomes. Ada holders, stake pool operators, and an elected committee do, on-chain. Here is how it works.",
   });
   return (
     <Layout

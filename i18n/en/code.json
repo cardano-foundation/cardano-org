@@ -10379,51 +10379,6 @@
   "governance.howItWorks.sim.passText": {
     "message": "Every group that votes on this action cleared its threshold. The ledger ratifies it at the next epoch boundary and enacts it one epoch later."
   },
-  "governance.howItWorks.rail.rejected": {
-    "message": "Rejected."
-  },
-  "governance.howItWorks.rail.rejectedText": {
-    "message": "The ledger refuses the transaction. No vote takes place."
-  },
-  "governance.howItWorks.rail.today": {
-    "message": "That is today's value. Nothing to change."
-  },
-  "governance.howItWorks.rail.todayFlow": {
-    "message": "About 3.7 million ada reaches the treasury each epoch."
-  },
-  "governance.howItWorks.rail.valid": {
-    "message": "Valid."
-  },
-  "governance.howItWorks.rail.validText": {
-    "message": "Now it needs 67% of active DRep stake and two thirds of the committee."
-  },
-  "governance.howItWorks.rail.estimate": {
-    "message": "Estimate: about {amount} million ada per epoch to the treasury, against about 3.7 million today."
-  },
-  "governance.howItWorks.rail.history": {
-    "message": "February 2025: this exact change passed the guardrails and failed the vote. DReps 23.2%, and two of seven committee members."
-  },
-  "governance.howItWorks.rail.try": {
-    "message": "Try it: propose a new treasury cut"
-  },
-  "governance.howItWorks.rail.help": {
-    "message": "The treasury cut is the share of each epoch's rewards that goes to the treasury. Today it is 20%."
-  },
-  "governance.howItWorks.rail.markToday": {
-    "message": "Today"
-  },
-  "governance.howItWorks.rail.markVote": {
-    "message": "February 2025 vote"
-  },
-  "governance.howItWorks.rail.inputLabel": {
-    "message": "Proposed treasury cut, in percent"
-  },
-  "governance.howItWorks.rail.tc01": {
-    "message": "must not be lower than 0.1 (10%)"
-  },
-  "governance.howItWorks.rail.tc02": {
-    "message": "must not exceed 0.3 (30%)"
-  },
   "governance.howItWorks.roles.groupLabel": {
     "message": "Choose how you want to take part"
   },
@@ -10460,41 +10415,11 @@
   "governance.howItWorks.bar.epoch": {
     "message": "Epoch {epoch}"
   },
-  "governance.howItWorks.start.live": {
-    "message": "Epoch {epoch} ends in {countdown}."
-  },
-  "governance.howItWorks.start.liveNote": {
-    "message": "Then the ledger tallies every open proposal."
-  },
-  "governance.howItWorks.start.eyebrow": {
-    "message": "Live"
-  },
-  "governance.howItWorks.chapter.before": {
-    "message": "Before"
-  },
-  "governance.howItWorks.chapter.chang": {
-    "message": "Chang"
-  },
-  "governance.howItWorks.chapter.plomin": {
-    "message": "Plomin"
-  },
   "governance.howItWorks.chapter.yourVote": {
     "message": "Your vote"
   },
-  "governance.howItWorks.chapter.twoJobs": {
-    "message": "Two jobs"
-  },
   "governance.howItWorks.chapter.threeGroups": {
     "message": "Three groups"
-  },
-  "governance.howItWorks.chapter.elect": {
-    "message": "Elect"
-  },
-  "governance.howItWorks.chapter.remove": {
-    "message": "Remove"
-  },
-  "governance.howItWorks.chapter.votingPower": {
-    "message": "Voting power"
   },
   "governance.howItWorks.chapter.proposals": {
     "message": "Proposals"
@@ -10502,20 +10427,11 @@
   "governance.howItWorks.chapter.whoVotes": {
     "message": "Who votes"
   },
-  "governance.howItWorks.chapter.counting": {
-    "message": "Counting"
-  },
   "governance.howItWorks.chapter.runTheCount": {
     "message": "Run the count"
   },
-  "governance.howItWorks.chapter.timing": {
-    "message": "Timing"
-  },
   "governance.howItWorks.chapter.constitution": {
     "message": "Constitution"
-  },
-  "governance.howItWorks.chapter.guardrails": {
-    "message": "Guardrails"
   },
   "governance.howItWorks.chapter.treasury": {
     "message": "Treasury"
@@ -10534,57 +10450,6 @@
   },
   "governance.howItWorks.dots.label": {
     "message": "Chapters"
-  },
-  "governance.howItWorks.start.title": {
-    "message": "Every five days, Cardano counts the votes."
-  },
-  "governance.howItWorks.start.p1": {
-    "message": "No single company decides what Cardano becomes. Ada holders, stake pool operators, and an elected Constitutional Committee do, on-chain, under a constitution the community wrote."
-  },
-  "governance.howItWorks.before.title": {
-    "message": "It used to take seven keys."
-  },
-  "governance.howItWorks.before.p1": {
-    "message": "For Cardano's first years, protocol upgrades needed signatures from {keys} held by the founding entities."
-  },
-  "governance.howItWorks.before.p1.keys": {
-    "message": "seven genesis keys"
-  },
-  "governance.howItWorks.before.p2": {
-    "message": "That kept a young network safe. It also meant a few organizations held the switch."
-  },
-  "governance.howItWorks.chang.title": {
-    "message": "Chang put governance on-chain."
-  },
-  "governance.howItWorks.chang.p1": {
-    "message": "{actions} did not exist before September 1, 2024. The {chang} introduced them and opened a careful first phase, with three of the seven types live."
-  },
-  "governance.howItWorks.chang.p1.actions": {
-    "message": "Governance actions"
-  },
-  "governance.howItWorks.chang.p1.chang": {
-    "message": "Chang hard fork"
-  },
-  "governance.howItWorks.chang.p2": {
-    "message": "An interim Constitutional Committee and stake pool operators could approve parameter changes and hard forks, and anyone could post an info action. DReps could register and collect delegations, but their votes did not count yet. Treasury withdrawals stayed locked."
-  },
-  "governance.howItWorks.chang.fact": {
-    "message": "By the time Plomin arrived, 956 DReps had registered and more than 109,000 stake addresses had delegated to them."
-  },
-  "governance.howItWorks.plomin.title": {
-    "message": "Plomin gave DReps the vote."
-  },
-  "governance.howItWorks.plomin.p1": {
-    "message": "The {plomin} on January 29, 2025, ended the first phase. From that epoch on, DRep votes counted."
-  },
-  "governance.howItWorks.plomin.p1.plomin": {
-    "message": "Plomin hard fork"
-  },
-  "governance.howItWorks.plomin.p2": {
-    "message": "Four more kinds of action opened at the same time: treasury withdrawals, a new constitution, committee updates, and motions of no confidence. Through their DReps, ada holders now had a say in all of it."
-  },
-  "governance.howItWorks.plomin.fact": {
-    "message": "Within three weeks, DReps ratified Cardano's first community-written constitution."
   },
   "governance.howItWorks.yourVote.title": {
     "message": "Every ada is a vote. Yours."
@@ -10610,26 +10475,14 @@
   "governance.howItWorks.yourVote.small": {
     "message": "Ada that is not delegated counts for nothing. Pick a DRep, Always Abstain, or Always No Confidence."
   },
-  "governance.howItWorks.twoJobs.title": {
-    "message": "Same ada, two jobs."
-  },
-  "governance.howItWorks.twoJobs.p1": {
-    "message": "Delegating to a stake pool helps secure the network and earns rewards. Delegating to a DRep lends your voting power to a representative."
-  },
-  "governance.howItWorks.twoJobs.p2": {
-    "message": "The two choices are independent. Your ada never leaves your wallet, it is never locked, and you can change either choice at any time."
-  },
-  "governance.howItWorks.twoJobs.fact": {
-    "message": "Since 2024, more than 375,000 stake addresses have delegated their vote."
-  },
   "governance.howItWorks.groups.title": {
     "message": "Three groups. None decides alone."
   },
   "governance.howItWorks.groups.cc": {
     "message": "Constitutional Committee"
   },
-  "governance.howItWorks.groups.ccText": {
-    "message": "At the core. Members ask one question: does this follow the constitution? One member, one vote."
+  "governance.howItWorks.groups.ccPanel": {
+    "message": "A panel of {count} elected members. They ask one question: does this follow the constitution? One member, one vote."
   },
   "governance.howItWorks.groups.dreps": {
     "message": "DReps"
@@ -10642,48 +10495,6 @@
   },
   "governance.howItWorks.groups.poolsText": {
     "message": "They run the network, so they vote on hard forks, security-relevant settings, and the committee. {count} pools hold stake."
-  },
-  "governance.howItWorks.groups.small": {
-    "message": "In the picture, every dot is one member."
-  },
-  "governance.howItWorks.groups.stamp": {
-    "message": "More than 36,000 on-chain votes since 2024"
-  },
-  "governance.howItWorks.elect.title": {
-    "message": "Who checks the checkers?"
-  },
-  "governance.howItWorks.elect.p1": {
-    "message": "DReps and stake pools do. They vote committee members in with an update committee action, which needs 67% of DRep stake and 51% of pool stake. The committee gets no vote on its own seats."
-  },
-  "governance.howItWorks.elect.p2": {
-    "message": "Members serve fixed terms of at most 146 epochs, about two years. The latest election, ratified in September 2026, filled four seats."
-  },
-  "governance.howItWorks.remove.title": {
-    "message": "And they can vote it out."
-  },
-  "governance.howItWorks.remove.p1": {
-    "message": "A motion of no confidence removes the whole committee. It needs the same majorities: 67% of DRep stake and 51% of pool stake."
-  },
-  "governance.howItWorks.remove.p2": {
-    "message": "Until a new committee is elected, nothing that needs the committee's approval can pass. Electing the new one then takes 60% of DRep stake instead of 67%."
-  },
-  "governance.howItWorks.remove.fact": {
-    "message": "No such motion has been proposed so far. The committee answers to the people who can remove it."
-  },
-  "governance.howItWorks.power.title": {
-    "message": "Where the voting power sits."
-  },
-  "governance.howItWorks.power.p1": {
-    "message": "In total, 15.7 billion ada is delegated for governance. About two thirds of it sits with Always Abstain, a setting that never counts toward a decision."
-  },
-  "governance.howItWorks.power.p2": {
-    "message": "That leaves decisions to the 5.1 billion ada behind 330 active DReps. So each delegation weighs more than you might expect. One million ada is about 0.02% of the deciding vote."
-  },
-  "governance.howItWorks.power.small": {
-    "message": "DReps who stay silent for 20 epochs, about 100 days, {inactive}. Their stake stops counting until they return."
-  },
-  "governance.howItWorks.power.small.inactive": {
-    "message": "become inactive"
   },
   "governance.howItWorks.proposals.title": {
     "message": "Anyone can propose."
@@ -10715,59 +10526,11 @@
   "governance.howItWorks.matrix.legend": {
     "message": "DRep and stake pool thresholds are shares of voting stake. The committee votes one member, one vote, and needs two thirds."
   },
-  "governance.howItWorks.counting.title": {
-    "message": "How the count works."
-  },
-  "governance.howItWorks.counting.formula": {
-    "message": "Yes ÷ (Yes + No + No Confidence + Silent)"
-  },
-  "governance.howItWorks.counting.r1": {
-    "message": "{lead} as a {thresholds}."
-  },
-  "governance.howItWorks.counting.r1.lead": {
-    "message": "Yes has to reach the threshold,"
-  },
-  "governance.howItWorks.counting.r1.threshold": {
-    "message": "share of the stake that counts"
-  },
-  "governance.howItWorks.counting.r2": {
-    "message": "{lead} So does stake delegated to Always No Confidence, on every action except a motion of no confidence."
-  },
-  "governance.howItWorks.counting.r2.lead": {
-    "message": "No counts against."
-  },
-  "governance.howItWorks.counting.r3": {
-    "message": "{lead} When an active DRep does not vote, all the stake delegated to them lands on the No side."
-  },
-  "governance.howItWorks.counting.r3.lead": {
-    "message": "Silence counts as No."
-  },
-  "governance.howItWorks.counting.r4": {
-    "message": "{lead} An Abstain vote, or a delegation to Always Abstain, takes that stake out of the math."
-  },
-  "governance.howItWorks.counting.r4.lead": {
-    "message": "Abstain leaves the count."
-  },
-  "governance.howItWorks.counting.r5": {
-    "message": "{lead} After 20 epochs without voting, their stake stops counting until they vote again."
-  },
-  "governance.howItWorks.counting.r5.lead": {
-    "message": "Inactive DReps drop out."
-  },
-  "governance.howItWorks.counting.example": {
-    "message": "In August 2026, a 103,000 ada treasury withdrawal reached 65.2% and needed 67%. Only 55 million ada voted No. Active DReps who stayed silent held 1.35 billion. Had they abstained, it would have passed with 93.7%."
-  },
   "governance.howItWorks.sim.kicker": {
     "message": "Replay real votes"
   },
   "governance.howItWorks.sim.title": {
     "message": "Run the count"
-  },
-  "governance.howItWorks.sim.lede": {
-    "message": "Load a real vote from the ledger, then change it. Move the sliders, flip committee seats, or switch the action type. The verdict follows the ledger's rules."
-  },
-  "governance.howItWorks.timing.title": {
-    "message": "The ledger keeps time."
   },
   "governance.howItWorks.timing.p1": {
     "message": "Votes are tallied at every epoch boundary, once every five days. An action has {lifetime} after it is submitted, about 30 days, to reach its thresholds."
@@ -10778,21 +10541,6 @@
   "governance.howItWorks.timing.p2": {
     "message": "Once ratified, it is enacted at the next boundary. If time runs out, it expires. Either way, the deposit goes back."
   },
-  "governance.howItWorks.timing.fact": {
-    "message": "van Rossem was submitted on June 16, 2026, ratified on July 13, and live on July 18."
-  },
-  "governance.howItWorks.timing.stamp": {
-    "message": "Live · epochs from today"
-  },
-  "governance.howItWorks.constitution.title": {
-    "message": "A rulebook the community wrote."
-  },
-  "governance.howItWorks.constitution.p1": {
-    "message": "About 1,400 people in 50 countries shaped the first draft. Sixty-three elected delegates approved it at conventions in Buenos Aires and Nairobi."
-  },
-  "governance.howItWorks.constitution.p2": {
-    "message": "DReps ratified it on-chain in February 2025, then approved an update in January 2026 with 79.9% of DRep stake. It opens with {tenets}."
-  },
   "governance.howItWorks.constitution.p2.tenets": {
     "message": "ten tenets"
   },
@@ -10801,15 +10549,6 @@
   },
   "governance.howItWorks.constitution.cite": {
     "message": "Cardano Constitution, Preamble"
-  },
-  "governance.howItWorks.rail.kicker": {
-    "message": "Guardrails TC-01 and TC-02"
-  },
-  "governance.howItWorks.rail.title": {
-    "message": "Some rules run as code."
-  },
-  "governance.howItWorks.rail.lede": {
-    "message": "The constitution comes with a guardrails script. It checks every parameter change and treasury withdrawal the moment it is submitted. Break a hard limit and the ledger rejects the proposal before anyone votes."
   },
   "governance.howItWorks.treasury.title": {
     "message": "A treasury that answers to holders."
@@ -10844,9 +10583,6 @@
   "governance.howItWorks.sources.aboutTitle": {
     "message": "About the numbers"
   },
-  "governance.howItWorks.sources.about": {
-    "message": "Vote results, voting power, counts of DReps, delegations, and votes, and treasury figures come from the Cardano ledger at epoch {epoch} (September 16, 2026) unless marked live. Vote results are the ledger's own ratification tallies. The epoch clock and the timing strip are computed from the mainnet schedule. The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org when available. The drafting history of the constitution comes from Intersect."
-  },
   "governance.howItWorks.sources.fineprint": {
     "message": "Thresholds reflect protocol parameters at the snapshot epoch. Stake pools can set how their silence counts through their reward account; on hard forks, silence always counts as No."
   },
@@ -10858,12 +10594,6 @@
   },
   "governance.howItWorks.sources.constitution": {
     "message": "Cardano Constitution"
-  },
-  "governance.howItWorks.sources.intersect": {
-    "message": "Intersect: the delegate-endorsed constitution"
-  },
-  "governance.howItWorks.sources.hardforks": {
-    "message": "Cardano hard forks"
   },
   "governance.howItWorks.sources.liveTitle": {
     "message": "Live figures"
@@ -10895,102 +10625,6 @@
   "governance.howItWorks.unit.seconds": {
     "message": "s",
     "description": "Abbreviation for seconds in a countdown"
-  },
-  "governance.howItWorks.canvas.epoch": {
-    "message": "EPOCH"
-  },
-  "governance.howItWorks.canvas.untilCount": {
-    "message": "UNTIL THE NEXT COUNT"
-  },
-  "governance.howItWorks.canvas.epochDays": {
-    "message": "ONE EPOCH = FIVE DAYS"
-  },
-  "governance.howItWorks.canvas.billions": {
-    "message": "{amount}B"
-  },
-  "governance.howItWorks.canvas.protocolUpgrades": {
-    "message": "PROTOCOL UPGRADES"
-  },
-  "governance.howItWorks.canvas.everyoneElse": {
-    "message": "EVERYONE ELSE"
-  },
-  "governance.howItWorks.canvas.genesisKeys": {
-    "message": "SEVEN GENESIS KEYS"
-  },
-  "governance.howItWorks.canvas.genesisKeysNote": {
-    "message": "Every protocol upgrade needed their signatures"
-  },
-  "governance.howItWorks.canvas.chang": {
-    "message": "CHANG"
-  },
-  "governance.howItWorks.canvas.plomin": {
-    "message": "PLOMIN"
-  },
-  "governance.howItWorks.canvas.changLive": {
-    "message": "THREE OF SEVEN ACTION TYPES LIVE"
-  },
-  "governance.howItWorks.canvas.plominLive": {
-    "message": "SEVEN OF SEVEN ACTION TYPES LIVE"
-  },
-  "governance.howItWorks.canvas.epochNumber": {
-    "message": "EPOCH {epoch}"
-  },
-  "governance.howItWorks.canvas.arc.parameters": {
-    "message": "Parameter changes"
-  },
-  "governance.howItWorks.canvas.arc.parameters.short": {
-    "message": "Parameters"
-  },
-  "governance.howItWorks.canvas.arc.hardForks": {
-    "message": "Hard forks"
-  },
-  "governance.howItWorks.canvas.arc.hardForks.short": {
-    "message": "Hard forks"
-  },
-  "governance.howItWorks.canvas.arc.info": {
-    "message": "Info actions"
-  },
-  "governance.howItWorks.canvas.arc.info.short": {
-    "message": "Info"
-  },
-  "governance.howItWorks.canvas.arc.treasury": {
-    "message": "Treasury withdrawals"
-  },
-  "governance.howItWorks.canvas.arc.treasury.short": {
-    "message": "Treasury"
-  },
-  "governance.howItWorks.canvas.arc.constitution": {
-    "message": "New constitution"
-  },
-  "governance.howItWorks.canvas.arc.constitution.short": {
-    "message": "Constitution"
-  },
-  "governance.howItWorks.canvas.arc.committee": {
-    "message": "Committee updates"
-  },
-  "governance.howItWorks.canvas.arc.committee.short": {
-    "message": "Committee"
-  },
-  "governance.howItWorks.canvas.arc.noConfidence": {
-    "message": "No confidence"
-  },
-  "governance.howItWorks.canvas.arc.noConfidence.short": {
-    "message": "No confidence"
-  },
-  "governance.howItWorks.canvas.legendInterim": {
-    "message": "Interim committee"
-  },
-  "governance.howItWorks.canvas.legendCommittee": {
-    "message": "Committee"
-  },
-  "governance.howItWorks.canvas.legendPools": {
-    "message": "Stake pools"
-  },
-  "governance.howItWorks.canvas.legendDrepsWaiting": {
-    "message": "DReps: votes not counted yet"
-  },
-  "governance.howItWorks.canvas.legendDreps": {
-    "message": "DReps"
   },
   "governance.howItWorks.canvas.snapshot": {
     "message": "EPOCH BOUNDARY · SNAPSHOT"
@@ -11034,32 +10668,11 @@
   "governance.howItWorks.canvas.adaEqualsVotes": {
     "message": "{ada} ada = {votes} votes"
   },
-  "governance.howItWorks.canvas.stakePool": {
-    "message": "STAKE POOL"
-  },
-  "governance.howItWorks.canvas.securityRewards": {
-    "message": "security and rewards"
-  },
-  "governance.howItWorks.canvas.drep": {
-    "message": "DREP"
-  },
-  "governance.howItWorks.canvas.yourVoice": {
-    "message": "your voice"
-  },
-  "governance.howItWorks.canvas.sameAda": {
-    "message": "Same ada, two choices"
-  },
   "governance.howItWorks.canvas.committee": {
     "message": "COMMITTEE"
   },
   "governance.howItWorks.canvas.committeeMembers": {
     "message": "{count} members"
-  },
-  "governance.howItWorks.canvas.votedIn": {
-    "message": "voted in"
-  },
-  "governance.howItWorks.canvas.removed": {
-    "message": "removed"
   },
   "governance.howItWorks.canvas.dreps": {
     "message": "DREPS"
@@ -11073,45 +10686,6 @@
   "governance.howItWorks.canvas.poolsWithStake": {
     "message": "{count} with stake"
   },
-  "governance.howItWorks.canvas.oneDotOneMember": {
-    "message": "ONE DOT = ONE MEMBER"
-  },
-  "governance.howItWorks.canvas.updateCommittee": {
-    "message": "UPDATE COMMITTEE"
-  },
-  "governance.howItWorks.canvas.updateCommitteeNote": {
-    "message": "DReps 67% and stake pools 51% vote members in"
-  },
-  "governance.howItWorks.canvas.noConfidence": {
-    "message": "NO CONFIDENCE"
-  },
-  "governance.howItWorks.canvas.noConfidenceNote": {
-    "message": "DReps 67% and stake pools 51% vote the committee out"
-  },
-  "governance.howItWorks.canvas.noCommittee": {
-    "message": "NO COMMITTEE"
-  },
-  "governance.howItWorks.canvas.removedCaps": {
-    "message": "REMOVED"
-  },
-  "governance.howItWorks.canvas.delegatedForGovernance": {
-    "message": "Ada delegated for governance"
-  },
-  "governance.howItWorks.canvas.perDot": {
-    "message": "one dot ≈ {amount} million ada"
-  },
-  "governance.howItWorks.canvas.activeDreps": {
-    "message": "5.10B · ACTIVE DREPS"
-  },
-  "governance.howItWorks.canvas.alwaysAbstain": {
-    "message": "10.30B · ALWAYS ABSTAIN"
-  },
-  "governance.howItWorks.canvas.theseDecide": {
-    "message": "These decide"
-  },
-  "governance.howItWorks.canvas.powerRest": {
-    "message": "0.20B inactive DReps · 0.14B Always No Confidence"
-  },
   "governance.howItWorks.canvas.governanceAction": {
     "message": "GOVERNANCE ACTION"
   },
@@ -11120,129 +10694,6 @@
   },
   "governance.howItWorks.canvas.anchor": {
     "message": "anchor: document URL + hash"
-  },
-  "governance.howItWorks.canvas.tallyTitle": {
-    "message": "103,000 ada treasury withdrawal · August 2026 · DRep vote"
-  },
-  "governance.howItWorks.canvas.tallyTitleShort": {
-    "message": "103,000 ada withdrawal · August 2026"
-  },
-  "governance.howItWorks.canvas.tallyYesShare": {
-    "message": "65.2% yes"
-  },
-  "governance.howItWorks.canvas.tallyNeeded": {
-    "message": "67% NEEDED"
-  },
-  "governance.howItWorks.canvas.tallyCounted": {
-    "message": "COUNTED · 4.43B"
-  },
-  "governance.howItWorks.canvas.tallyYes": {
-    "message": "YES 2.89B"
-  },
-  "governance.howItWorks.canvas.tallyCountsAsNo": {
-    "message": "COUNTS AS NO · 1.54B"
-  },
-  "governance.howItWorks.canvas.tallyNoParts": {
-    "message": "voted No 0.05B · Always No Confidence 0.14B ·"
-  },
-  "governance.howItWorks.canvas.tallyNoPartsShort": {
-    "message": "voted No 0.05B · No Confidence 0.14B"
-  },
-  "governance.howItWorks.canvas.tallySilent": {
-    "message": "silent DReps 1.35B"
-  },
-  "governance.howItWorks.canvas.tallyLeftOut": {
-    "message": "LEFT OUT OF THE COUNT · 11.11B"
-  },
-  "governance.howItWorks.canvas.tallyAbstainParts": {
-    "message": "voted Abstain 0.81B · Always Abstain 10.30B"
-  },
-  "governance.howItWorks.canvas.tallyInsight": {
-    "message": "Had the silent DReps abstained, it would have passed with 93.7% yes."
-  },
-  "governance.howItWorks.canvas.tallyInsight1": {
-    "message": "Had the silent DReps abstained:"
-  },
-  "governance.howItWorks.canvas.tallyInsight2": {
-    "message": "93.7% yes. It would have passed."
-  },
-  "governance.howItWorks.canvas.moreEpochs": {
-    "message": "UP TO SIX MORE EPOCHS TO PASS"
-  },
-  "governance.howItWorks.canvas.moreEpochsShort": {
-    "message": "UP TO SIX MORE EPOCHS"
-  },
-  "governance.howItWorks.canvas.now": {
-    "message": "NOW"
-  },
-  "governance.howItWorks.canvas.expired": {
-    "message": "EXPIRED"
-  },
-  "governance.howItWorks.canvas.ratifiedEnacted": {
-    "message": "Ratified at a boundary, enacted at the next"
-  },
-  "governance.howItWorks.canvas.tenet.1": {
-    "message": "Transaction processing"
-  },
-  "governance.howItWorks.canvas.tenet.1.short": {
-    "message": "Transactions"
-  },
-  "governance.howItWorks.canvas.tenet.2": {
-    "message": "Cost predictability"
-  },
-  "governance.howItWorks.canvas.tenet.2.short": {
-    "message": "Costs"
-  },
-  "governance.howItWorks.canvas.tenet.3": {
-    "message": "Developer freedom"
-  },
-  "governance.howItWorks.canvas.tenet.3.short": {
-    "message": "Dev freedom"
-  },
-  "governance.howItWorks.canvas.tenet.4": {
-    "message": "Fair contribution"
-  },
-  "governance.howItWorks.canvas.tenet.4.short": {
-    "message": "Contribution"
-  },
-  "governance.howItWorks.canvas.tenet.5": {
-    "message": "User autonomy"
-  },
-  "governance.howItWorks.canvas.tenet.5.short": {
-    "message": "Autonomy"
-  },
-  "governance.howItWorks.canvas.tenet.6": {
-    "message": "Interoperability"
-  },
-  "governance.howItWorks.canvas.tenet.6.short": {
-    "message": "Interop"
-  },
-  "governance.howItWorks.canvas.tenet.7": {
-    "message": "Value preservation"
-  },
-  "governance.howItWorks.canvas.tenet.7.short": {
-    "message": "Value"
-  },
-  "governance.howItWorks.canvas.tenet.8": {
-    "message": "Resource efficiency"
-  },
-  "governance.howItWorks.canvas.tenet.8.short": {
-    "message": "Efficiency"
-  },
-  "governance.howItWorks.canvas.tenet.9": {
-    "message": "Fair treatment"
-  },
-  "governance.howItWorks.canvas.tenet.9.short": {
-    "message": "Fairness"
-  },
-  "governance.howItWorks.canvas.tenet.10": {
-    "message": "Monetary stability"
-  },
-  "governance.howItWorks.canvas.tenet.10.short": {
-    "message": "Stability"
-  },
-  "governance.howItWorks.canvas.tenetsCaption": {
-    "message": "TEN TENETS · ENACTED EPOCH 609"
   },
   "governance.howItWorks.canvas.epochRewards": {
     "message": "EPOCH REWARDS"
@@ -11283,9 +10734,6 @@
   "governance.howItWorks.hero.title": {
     "message": "How Cardano decides"
   },
-  "governance.howItWorks.hero.description": {
-    "message": "A visual walk through Cardano governance: who votes, how every vote is counted, and where your ada fits in."
-  },
   "governance.howItWorks.meta.title": {
     "message": "How Cardano Decides - Cardano Governance"
   },
@@ -11294,6 +10742,54 @@
   },
   "governance.howItWorks.cta.button": {
     "message": "Delegate your vote"
+  },
+  "governance.howItWorks.groups.note": {
+    "message": "Every binding action needs a yes from at least two of the three groups. No group can pass one alone."
+  },
+  "governance.howItWorks.sim.ledeRules": {
+    "message": "Yes has to reach the threshold as a share of the stake that counts. When an active DRep stays silent, their stake counts as No. Abstain takes stake out of the count. Load a real vote from the ledger, then change it to see the rules at work."
+  },
+  "governance.howItWorks.constitution.titleWeigh": {
+    "message": "Every action is weighed against the constitution."
+  },
+  "governance.howItWorks.constitution.weigh": {
+    "message": "Every governance action has to follow the constitution. The Constitutional Committee weighs each one against it and votes No on any it finds unconstitutional."
+  },
+  "governance.howItWorks.constitution.code": {
+    "message": "Some rules run as code. A guardrails script checks every parameter change and treasury withdrawal when it is submitted, and the ledger rejects any that break a hard limit before a vote starts."
+  },
+  "governance.howItWorks.constitution.change": {
+    "message": "It opens with {tenets}. Changing it takes 75% of DRep stake and two thirds of the committee."
+  },
+  "governance.howItWorks.sources.aboutShort": {
+    "message": "Vote results, pool counts, and treasury figures come from the Cardano ledger at epoch {epoch} (September 16, 2026) unless marked live. Vote results are the ledger's own ratification tallies. The epoch number in the bar is computed from the mainnet schedule. The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org when available."
+  },
+  "governance.howItWorks.canvas.oneMemberOneVote": {
+    "message": "one member, one vote"
+  },
+  "governance.howItWorks.canvas.weightedByAda": {
+    "message": "weighted by delegated ada"
+  },
+  "governance.howItWorks.canvas.weightedByStake": {
+    "message": "weighted by pool stake"
+  },
+  "governance.howItWorks.canvas.proposal": {
+    "message": "PROPOSAL"
+  },
+  "governance.howItWorks.canvas.constitution": {
+    "message": "CONSTITUTION"
+  },
+  "governance.howItWorks.canvas.constitutionalCommittee": {
+    "message": "CONSTITUTIONAL COMMITTEE"
+  },
+  "governance.howItWorks.canvas.scaleNote": {
+    "message": "weighs every action against the constitution"
+  },
+  "governance.howItWorks.canvas.inBalance": {
+    "message": "IN BALANCE WITH THE CONSTITUTION"
+  },
+  "governance.howItWorks.hero.descriptionShort": {
+    "message": "No single company decides what Cardano becomes. Ada holders, stake pool operators, and an elected committee do, on-chain. Here is how it works."
   },
   "navbar.mega.featured.title.What is Cardano?": {
     "message": "What is Cardano?"

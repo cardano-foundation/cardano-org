@@ -218,12 +218,6 @@
   color: var(--ifm-color-primary);
 }
 
-.card .fact {
-  padding-top: var(--site-space-xs);
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  font-size: 0.93rem;
-}
-
 .card .small {
   font-size: 0.9rem;
 }
@@ -236,28 +230,6 @@
   font: 500 0.64rem/1.2 var(--ifm-font-family-monospace);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.card .live {
-  display: flex;
-  flex-direction: column;
-  gap: var(--site-space-3xs);
-  align-self: flex-start;
-  padding: var(--site-space-xs) var(--site-space-sm);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: var(--site-radius-md);
-  font: 500 0.84rem/1.45 var(--ifm-font-family-monospace);
-  font-variant-numeric: tabular-nums;
-  color: var(--ifm-font-color-base);
-}
-
-.live b {
-  color: var(--ifm-color-primary);
-}
-
-.liveNote {
-  font-size: 0.76rem;
   color: var(--ifm-color-emphasis-700);
 }
 
@@ -367,52 +339,6 @@
   background: var(--site-role-pool);
 }
 
-/* Counting */
-.card .formula {
-  padding: var(--site-space-2xs) var(--site-space-xs);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--site-radius-sm);
-  background: var(--ifm-color-emphasis-100);
-  font: 500 0.78rem/1.5 var(--ifm-font-family-monospace);
-  color: var(--ifm-font-color-base);
-}
-
-.rules {
-  display: flex;
-  flex-direction: column;
-  gap: var(--site-space-2xs);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: gs-rule;
-}
-
-.rules li {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: var(--site-space-xs);
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-800);
-  counter-increment: gs-rule;
-}
-
-.rules li::before {
-  content: counter(gs-rule);
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 50%;
-  font: 600 0.8rem/1 var(--ifm-font-family-monospace);
-  color: var(--ifm-color-primary);
-}
-
-.rules b {
-  color: var(--ifm-font-color-base);
-}
-
 /* Constitution quote */
 .quote {
   margin: 0;
@@ -475,7 +401,6 @@
 
 .panel,
 .house,
-.rail,
 .roleCard,
 .note,
 .verdict {
@@ -1085,147 +1010,6 @@
   color: var(--site-vote-no);
 }
 
-/* Guardrails */
-.rail {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: var(--site-space-lg);
-  align-items: start;
-  padding: clamp(1.25rem, 3vw, 2rem);
-}
-
-.railLeft {
-  display: flex;
-  flex-direction: column;
-  gap: var(--site-space-xs);
-  min-width: 0;
-}
-
-.railHelp {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.railValue {
-  font-size: clamp(3rem, 7vw, 4.5rem);
-  font-weight: 300;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
-.track {
-  position: relative;
-  padding-top: 48px;
-}
-
-.zones {
-  display: flex;
-  height: 14px;
-  margin: 0 9px;
-  overflow: hidden;
-  border-radius: var(--site-radius-sm);
-}
-
-.zones span {
-  display: block;
-  height: 100%;
-}
-
-.zoneBad {
-  background: color-mix(in srgb, var(--site-vote-no) 22%, transparent);
-}
-
-.zoneOk {
-  background: color-mix(in srgb, var(--site-vote-yes) 30%, transparent);
-}
-
-.mark,
-.markAlt {
-  position: absolute;
-  top: 18px;
-  left: calc(9px + (100% - 18px) * var(--gs-at, 0));
-  padding-bottom: 18px;
-  font: 500 0.64rem/1 var(--ifm-font-family-monospace);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--ifm-color-emphasis-800);
-  transform: translateX(-50%);
-}
-
-.mark::after,
-.markAlt::after {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  width: 1px;
-  height: 18px;
-  background: currentColor;
-}
-
-.markAlt {
-  top: 0;
-  color: var(--site-warning);
-}
-
-.markAlt::after {
-  height: 36px;
-}
-
-.track input {
-  width: 100%;
-  height: 28px;
-  margin: var(--site-space-2xs) 0 0;
-  accent-color: var(--ifm-color-primary);
-}
-
-.scale {
-  display: flex;
-  justify-content: space-between;
-  margin: var(--site-space-3xs) 9px 0;
-  font: 500 0.66rem/1 var(--ifm-font-family-monospace);
-  font-variant-numeric: tabular-nums;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.scale span {
-  display: flex;
-  justify-content: center;
-  width: 0;
-  white-space: nowrap;
-}
-
-.console {
-  min-height: 220px;
-  margin: 0;
-  padding: var(--site-space-sm) var(--site-space-md);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--site-radius-md);
-  background: var(--ifm-color-emphasis-100);
-  font: 400 0.84rem/1.65 var(--ifm-font-family-monospace);
-  white-space: pre-wrap;
-  word-break: break-word;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.conMuted {
-  color: var(--ifm-color-emphasis-700);
-}
-
-.conOk {
-  color: var(--site-vote-yes);
-}
-
-.conBad {
-  color: var(--site-vote-no);
-}
-
-.conHi {
-  color: var(--ifm-font-color-base);
-}
-
 /* Find your part */
 .roles {
   display: grid;
@@ -1403,7 +1187,6 @@
 
   .gauges,
   .houses,
-  .rail,
   .roles,
   .sources {
     grid-template-columns: 1fr;
