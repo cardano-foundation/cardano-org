@@ -54,6 +54,7 @@ Shared components are the default on cardano.org. Before you write a component o
 | A dialog opened from a button | [Modal](./modal.md) |
 | A horizontal row of cards with scroll arrows | [Horizontal Scroller](./horizontal-scroller.md) |
 | Previous and next buttons to step through epochs | [Insights Epoch Nav](./insights-epoch-nav.md) |
+| A slider that selects a range of epochs and remembers it | [Epoch Range Slider](./epoch-range-slider.md) |
 | Two glossary terms from a category | [Term Explainer](./term-explainer.md) |
 
 ### Topic widgets
