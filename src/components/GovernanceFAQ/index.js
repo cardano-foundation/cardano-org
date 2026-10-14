@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import clsx from "clsx";
 import {
   FaBullhorn,
@@ -10,8 +10,8 @@ import {
 } from "react-icons/fa";
 import { translate } from "@docusaurus/Translate";
 import Divider from "@site/src/components/Layout/Divider";
-import Accordion from "@site/src/components/Layout/Accordion";
-import { scrollBehavior, scrollToElement } from "@site/src/utils/jsUtils";
+import Accordion, { whenSettled } from "@site/src/components/Layout/Accordion";
+import { scrollToElement } from "@site/src/utils/jsUtils";
 import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
 import styles from "./styles.module.css";
 
@@ -67,6 +67,7 @@ export default function GovernanceFAQ({ data }) {
   // One open question across all category lists, keyed by the entry id.
   const [openId, setOpenId] = useState(null);
   const sectionRefs = useRef({});
+  const wrapperRef = useRef(null);
   const intersectingKeys = useRef(new Set());
 
   useEffect(() => {
@@ -95,58 +96,36 @@ export default function GovernanceFAQ({ data }) {
   // to it and moves focus to its button. An answer that was open above it
   // collapses with a transition and pulls the row up while it runs, so the
   // scroll waits for that collapse to finish.
-  const openQuestion = (entry) => {
-    const previous = openId !== null ? document.getElementById(openId) : null;
+  const openQuestion = useCallback((entry) => {
+    const previous = wrapperRef.current?.querySelector('section [aria-expanded="true"]');
     setOpenId(entry.id);
     setActiveCategory(entry.category);
     requestAnimationFrame(() => {
       const row = document.getElementById(entry.id);
       if (!row) return;
-      const go = () => {
+      const above = previous && previous.compareDocumentPosition(row) & Node.DOCUMENT_POSITION_FOLLOWING;
+      whenSettled(above ? previous.closest("section") : null).then(() => {
         scrollToElement(row);
         row.querySelector("button")?.focus({ preventScroll: true });
-      };
-      const above = previous && previous.compareDocumentPosition(row) & Node.DOCUMENT_POSITION_FOLLOWING;
-      const panel = above ? previous.querySelector('[role="region"]') : null;
-      if (!panel || scrollBehavior() === "auto") {
-        go();
-        return;
-      }
-      let done = false;
-      const finish = () => {
-        if (done) return;
-        done = true;
-        panel.removeEventListener("transitionend", onEnd);
-        go();
-      };
-      const onEnd = (event) => {
-        if (event.target === panel && event.propertyName === "grid-template-rows") finish();
-      };
-      panel.addEventListener("transitionend", onEnd);
-      // Fallback in case the transition never reports its end.
-      setTimeout(finish, 600);
+      });
     });
-  };
+  }, []);
 
   // A link such as /governance#faq-lose-ada opens that question, on load and
-  // when the hash changes. The ref keeps the listener on the latest state.
-  const openQuestionRef = useRef(openQuestion);
-  useEffect(() => {
-    openQuestionRef.current = openQuestion;
-  });
+  // when the hash changes.
   useEffect(() => {
     const applyHash = () => {
       const target = hashTargetId(window.location.hash);
       const entry = data.find((item) => item.id === target);
-      if (entry) openQuestionRef.current(entry);
+      if (entry) openQuestion(entry);
     };
     applyHash();
     window.addEventListener("hashchange", applyHash);
     return () => window.removeEventListener("hashchange", applyHash);
-  }, [data]);
+  }, [data, openQuestion]);
 
   return (
-    <div className={styles.wrapper}>
+    <div ref={wrapperRef} className={styles.wrapper}>
       <Divider text={translate({ id: "governance.faq.divider", message: "FAQ" })} id="faq" />
 
       <div className={styles.hero}>

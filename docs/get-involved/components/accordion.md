@@ -164,4 +164,5 @@ These class names are hashed by CSS modules, so a page cannot target them by nam
 - Answers use the same string-array format as the FAQ JSON files in `src/data/` (for example `operationFAQ.json`), so existing FAQ data can be passed to `items` unchanged.
 - [`FAQSection`](../faq-component.md) renders this accordion below a "FAQ" Divider heading with a `#faq` anchor, with several answers open at once. Use `Accordion` directly when the section has its own heading.
 - Rows render as `<h3>` elements by default, so place the component under a section heading rather than directly under the page title. Set `headingLevel` to match the outline. Use `0` only when the questions are not part of the page outline, the buttons keep their accessible names either way.
+- To scroll to a row right after another row above it closes, wait for `whenSettled(element)` (a named export) first. It resolves once the transitions inside `element` have finished, so the scroll target no longer moves. `GovernanceFAQ` does this for its popular questions.
 - Provide questions and answers through `@docusaurus/Translate` so they remain translatable.

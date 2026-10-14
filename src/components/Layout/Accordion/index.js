@@ -62,6 +62,19 @@ function AccordionItem({ id, question, answer, isOpen, onToggle, headingTag: Hea
   );
 }
 
+/**
+ * Resolves once the open and close transitions running inside `element` have
+ * finished, right away when nothing is animating (reduced motion included).
+ * For hosts that scroll to a row after another row above it collapses.
+ *
+ * @param {Element|null} element Element whose subtree is checked.
+ * @returns {Promise<void>}
+ */
+export function whenSettled(element) {
+  const animations = element?.getAnimations?.({ subtree: true }) ?? [];
+  return Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {});
+}
+
 function toIndexList(value) {
   const list = Array.isArray(value) ? value : [value];
   return list.filter((index) => Number.isInteger(index) && index >= 0);
