@@ -3,10 +3,12 @@ import { translate } from "@docusaurus/Translate";
 // Same shape as the former governanceFAQ.json, but as literal translate()
 // calls so the strings reach Crowdin. GovernanceFAQ renders it through its
 // data prop. Answers are arrays: one entry per paragraph, a leading "- "
-// turns an entry into a list item.
+// turns an entry into a list item. Each id is the DOM id of the question row,
+// so it must stay unique on the page.
 export function getGovernanceFAQ() {
   return [
     {
+      id: "faq-lose-ada",
       question: translate({ id: "governance.faq.item.loseAda.q", message: "Do I lose my ada when I delegate?" }),
       answer: [
         translate({
@@ -19,6 +21,7 @@ export function getGovernanceFAQ() {
       popular: translate({ id: "governance.faq.item.loseAda.popular", message: "No. Your ada never leaves your wallet." }),
     },
     {
+      id: "faq-delegate-cost",
       question: translate({ id: "governance.faq.item.delegateCost.q", message: "How much does it cost to delegate?" }),
       answer: [
         translate({
@@ -34,6 +37,7 @@ export function getGovernanceFAQ() {
       }),
     },
     {
+      id: "faq-change-drep",
       question: translate({ id: "governance.faq.item.changeDrep.q", message: "Can I change my DRep later?" }),
       answer: [
         translate({
@@ -49,6 +53,7 @@ export function getGovernanceFAQ() {
       }),
     },
     {
+      id: "faq-drep-and-pool",
       question: translate({
         id: "governance.faq.item.drepAndPool.q",
         message: "Can I delegate my ada to a DRep and a stake pool at the same time?",
@@ -78,6 +83,7 @@ export function getGovernanceFAQ() {
       }),
     },
     {
+      id: "faq-no-delegation",
       question: translate({ id: "governance.faq.item.noDelegation.q", message: "What happens if I don't delegate?" }),
       answer: [
         translate({
@@ -94,6 +100,7 @@ export function getGovernanceFAQ() {
       category: "delegation",
     },
     {
+      id: "faq-drep-inactive",
       question: translate({ id: "governance.faq.item.drepInactive.q", message: "What happens if my DRep stops voting?" }),
       answer: [
         translate({
@@ -110,6 +117,7 @@ export function getGovernanceFAQ() {
       category: "delegation",
     },
     {
+      id: "faq-visibility",
       question: translate({ id: "governance.faq.item.visibility.q", message: "Can others see how I delegate?" }),
       answer: [
         translate({
@@ -126,6 +134,7 @@ export function getGovernanceFAQ() {
       category: "delegation",
     },
     {
+      id: "faq-activation",
       question: translate({
         id: "governance.faq.item.activation.q",
         message: "How long does delegation take to become active?",
@@ -140,6 +149,7 @@ export function getGovernanceFAQ() {
       category: "technical",
     },
     {
+      id: "faq-drep-cost",
       question: translate({ id: "governance.faq.item.drepCost.q", message: "What does it cost to become a DRep?" }),
       answer: [
         translate({
@@ -151,6 +161,7 @@ export function getGovernanceFAQ() {
       category: "drep-role",
     },
     {
+      id: "faq-drep-pay",
       question: translate({ id: "governance.faq.item.drepPay.q", message: "Do DReps get paid?" }),
       answer: [
         translate({
@@ -162,6 +173,7 @@ export function getGovernanceFAQ() {
       category: "drep-role",
     },
     {
+      id: "faq-alternatives",
       question: translate({
         id: "governance.faq.item.alternatives.q",
         message: "What are the alternatives to delegating to a DRep?",
@@ -186,6 +198,7 @@ export function getGovernanceFAQ() {
       category: "governance-basics",
     },
     {
+      id: "faq-governance-action",
       question: translate({ id: "governance.faq.item.governanceAction.q", message: "What is a governance action?" }),
       answer: [
         translate({

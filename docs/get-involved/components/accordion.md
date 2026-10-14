@@ -5,7 +5,7 @@ description: Show a list of expandable questions and answers with accessible tog
 
 ## Accordion
 
-The `Accordion` component renders a list of expandable question and answer rows: a semibold question on the left, a plus or minus icon on the right, and the answer revealed underneath when the row is open. Rows sit directly on the page background and are separated by hairlines. It powers the FAQ on the [Programmable Tokens](/programmable-tokens) page and works for any short list of disclosures.
+The `Accordion` component renders a list of expandable question and answer rows: a semibold question on the left, a plus or minus icon on the right, and the answer revealed underneath when the row is open. Rows sit directly on the page background and are separated by hairlines. It powers the FAQ on the [Programmable Tokens](/programmable-tokens) page, every [FAQ Section](../faq-component.md), and the FAQ on the [Governance](/governance#faq) page, and works for any short list of disclosures.
 
 ## Features
 
@@ -101,7 +101,7 @@ Pass `openKeys` and `onToggle` when the page decides which rows are open, for ex
 
 ```jsx
 const [openId, setOpenId] = useState(null);
-const openKeys = openId ? [openId] : [];
+const openKeys = openId !== null ? [openId] : [];
 const onToggle = (id, nextIsOpen) => setOpenId(nextIsOpen ? id : null);
 
 <Accordion items={delegationQuestions} openKeys={openKeys} onToggle={onToggle} />
@@ -111,7 +111,7 @@ const onToggle = (id, nextIsOpen) => setOpenId(nextIsOpen ? id : null);
 
 export function ControlledDemo() {
   const [openId, setOpenId] = useState(null);
-  const openKeys = openId ? [openId] : [];
+  const openKeys = openId !== null ? [openId] : [];
   const onToggle = (id, nextIsOpen) => setOpenId(nextIsOpen ? id : null);
   return (
     <>
@@ -157,7 +157,7 @@ The component uses CSS modules. Override styles by targeting these classes:
 - `.panelInner` - clips the answer while the panel is collapsing or expanding
 - `.panelContent` - the answer text (type, color, and the 940px width cap)
 
-These class names are hashed by CSS modules, so a page cannot target them by name. To restyle a single instance, pass a `className` and target element types under it from the page's CSS module (for example `.faq h3 button`). Such element selectors depend on the heading level: `h3 button` only matches with the default `headingLevel`. Both FAQs on the site use the default look, so prefer changing it here over a page override.
+These class names are hashed by CSS modules, so a page cannot target them by name. To restyle a single instance, pass a `className` and target element types under it from the page's CSS module (for example `.faq h3 button`). Such element selectors depend on the heading level: `h3 button` only matches with the default `headingLevel`. All FAQs on the site use the default look, so prefer changing it here over a page override.
 
 ## Notes
 
