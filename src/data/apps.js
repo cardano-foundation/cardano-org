@@ -1943,7 +1943,7 @@ export const Showcases = [
     tagline: "Swap ada with native BTC and assets on 49 networks",
     preview: require("./app-screenshots/bridgers.png"),
     icon: "/img/app-icons/bridgers.png",
-    website: "https://app.bridgers.xyz",
+    website: "https://app.bridgers.xyz/?sourceFlag=ADA",
     source: null,
     category: "bridge",
     properties: [],
