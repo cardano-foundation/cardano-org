@@ -46,6 +46,7 @@ const DOC_PAGE = {
   Layer2Card: 'layer-2-card.md',
   EChart: 'echart.md',
   HubSpotForm: 'hubspot-form.md',
+  EditOnGitHubCallout: 'edit-on-github-callout.md',
 };
 
 // Components that need no doc page of their own.
