@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
@@ -17,6 +17,7 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import useCopyToClipboard from '@site/src/utils/useCopyToClipboard';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import { safeUrl } from '@site/src/utils/safeUrl';
@@ -90,27 +91,12 @@ const MARKDOWN_COMPONENTS = {
 };
 
 function CopyLinkButton() {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef(null);
-  useEffect(() => () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-  }, []);
-  const onClick = useCallback(async () => {
-    if (typeof window === 'undefined' || !navigator?.clipboard) return;
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(() => setCopied(false), 1800);
-    } catch {
-      // clipboard blocked; silently ignore
-    }
-  }, []);
+  const [copied, copy] = useCopyToClipboard({ resetAfter: 1800 });
   return (
     <button
       type="button"
       className={styles.copyLink}
-      onClick={onClick}
+      onClick={() => copy(window.location.href)}
       aria-label={translate({
         id: 'glossary.term.copyLinkAria',
         message: 'Copy link to this term',

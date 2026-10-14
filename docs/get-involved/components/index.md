@@ -52,6 +52,7 @@ Shared components are the default on cardano.org. Before you write a component o
 | Tabs that switch between panels, as pills or in a layout of your own | [Tabs](./tabs.md) |
 | An FAQ or other expandable questions | [FAQ Section](../faq-component.md) for an FAQ with its own "FAQ" heading, [Accordion](./accordion.md) under a heading of your own |
 | A dialog opened from a button | [Modal](./modal.md) |
+| A copy button that says "Copied" for a moment | The `useCopyToClipboard` hook from `src/utils/useCopyToClipboard.js`, `copyText` for a plain copy, or `shareOrCopy` for a share button that copies where the browser cannot share |
 | A horizontal row of cards with scroll arrows | [Horizontal Scroller](./horizontal-scroller.md) |
 | Previous and next buttons to step through epochs | [Insights Epoch Nav](./insights-epoch-nav.md) |
 | A slider that selects a range of epochs and remembers it | [Epoch Range Slider](./epoch-range-slider.md) |

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
 import { translate } from "@docusaurus/Translate";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
 const coreColors = [
   { name: "Blue", hex: "#0033AD", rgb: "0 / 51 / 173", pantone: "286" },
@@ -16,16 +17,7 @@ const secondaryColors = [
 ];
 
 function Swatch({ color }) {
-  const [copied, setCopied] = useState(false);
-
-  function handleCopy() {
-    if (typeof window !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(color.hex).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      });
-    }
-  }
+  const [copied, copy] = useCopyToClipboard();
 
   const isLight = color.name === "White" || color.name === "Paper";
 
@@ -42,7 +34,7 @@ function Swatch({ color }) {
         <strong className={styles.swatchName}>{color.name}</strong>
         <button
           className={styles.swatchHex}
-          onClick={handleCopy}
+          onClick={() => copy(color.hex)}
           title={translate({ id: "brandAssets.colors.copyHex", message: "Copy hex value" })}
         >
           {copied

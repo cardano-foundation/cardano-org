@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import { copyText, shareOrCopy } from '@site/src/utils/useCopyToClipboard';
 
 const RESET_DELAY = 2000;
 
@@ -88,26 +89,9 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
   // The original text-only path, kept as the fallback for whenever badge
   // generation or every image-sharing route fails.
   const shareTextOnly = async () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({ text });
-        setStatus('idle');
-        return;
-      } catch (e) {
-        if (e && e.name === 'AbortError') {
-          setStatus('idle');
-          return;
-        }
-        // fall through to clipboard
-      }
-    }
-    try {
-      await navigator.clipboard.writeText(text);
-      showStatus('copiedText');
-    } catch (e) {
-      // Clipboard unavailable (permissions, http): nothing sensible to do
-      setStatus('idle');
-    }
+    // A shared, dismissed or failed copy all end idle, only a copy says so.
+    if ((await shareOrCopy(text)) === 'copied') showStatus('copiedText');
+    else setStatus('idle');
   };
 
   const handleShare = async () => {
@@ -166,11 +150,8 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
 
     try {
       downloadBlob(blob, 'cardano-quiz-badge.png');
-      try {
-        await navigator.clipboard.writeText(text);
-      } catch (e) {
-        // Best effort only, the download already gave the user something.
-      }
+      // Best effort only, the download already gave the user something.
+      await copyText(text);
       showStatus('downloaded');
     } catch (e) {
       // Download itself failed: last resort is the original text-only share.

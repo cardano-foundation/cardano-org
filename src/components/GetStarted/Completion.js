@@ -4,32 +4,12 @@ import Link from '@docusaurus/Link';
 import AppList from '@site/src/components/AppList';
 import { allDone, doneCount } from '@site/src/utils/getStarted/stations.mjs';
 import { shortenAddress } from '@site/src/utils/cardano/address.mjs';
+import { shareOrCopy } from '@site/src/utils/useCopyToClipboard';
 import { scrollToAnchor } from './Station';
 import { EXPLORER_STAKE_URL } from './ConnectStation';
 import styles from './styles.module.css';
 
 const SHARE_URL = 'https://cardano.org/get-started';
-
-// Web Share where available, clipboard otherwise. Returns what happened so
-// the button can say it. A share the user dismissed ends as 'cancelled' and
-// never falls through to a silent clipboard copy.
-async function shareText(text) {
-  if (typeof navigator !== 'undefined' && navigator.share) {
-    try {
-      await navigator.share({ text });
-      return 'shared';
-    } catch (e) {
-      if (e && e.name === 'AbortError') return 'cancelled';
-      // unsupported payload or other failure, fall through to the clipboard
-    }
-  }
-  try {
-    await navigator.clipboard.writeText(text);
-    return 'copied';
-  } catch (e) {
-    return 'failed';
-  }
-}
 
 export function drepLabel(status, names) {
   if (status.drepKind === 'abstain') return translate({ id: 'getStarted.done.drepAbstain', message: 'Always abstain' });
@@ -76,7 +56,7 @@ export default function Completion({ stations, account, status, names }) {
 
   const confirmed = account.ownership === 'wallet-confirmed';
   const onShare = async () => {
-    const result = await shareText(translate({
+    const result = await shareOrCopy(translate({
       id: 'getStarted.done.shareText',
       message: 'I just set up my first Cardano wallet and delegated my stake and my vote. Start here: {url}',
     }, { url: SHARE_URL }));
