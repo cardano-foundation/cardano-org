@@ -92,12 +92,11 @@ const MARKDOWN_COMPONENTS = {
 
 function CopyLinkButton() {
   const [copied, copy] = useCopyToClipboard({ resetAfter: 1800 });
-  const onClick = () => copy(window.location.href);
   return (
     <button
       type="button"
       className={styles.copyLink}
-      onClick={onClick}
+      onClick={() => copy(window.location.href)}
       aria-label={translate({
         id: 'glossary.term.copyLinkAria',
         message: 'Copy link to this term',

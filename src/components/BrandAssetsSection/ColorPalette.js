@@ -19,10 +19,6 @@ const secondaryColors = [
 function Swatch({ color }) {
   const [copied, copy] = useCopyToClipboard();
 
-  function handleCopy() {
-    copy(color.hex);
-  }
-
   const isLight = color.name === "White" || color.name === "Paper";
 
   return (
@@ -38,7 +34,7 @@ function Swatch({ color }) {
         <strong className={styles.swatchName}>{color.name}</strong>
         <button
           className={styles.swatchHex}
-          onClick={handleCopy}
+          onClick={() => copy(color.hex)}
           title={translate({ id: "brandAssets.colors.copyHex", message: "Copy hex value" })}
         >
           {copied

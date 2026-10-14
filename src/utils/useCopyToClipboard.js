@@ -21,10 +21,31 @@ export async function copyText(text) {
 }
 
 /**
+ * Shares text through the Web Share sheet where the browser has one, and
+ * copies it otherwise. A share the reader dismissed ends as "cancelled" and
+ * never falls through to a silent copy, any other share failure does.
+ *
+ * @param {string} text Text to share or copy.
+ * @returns {Promise<"shared"|"cancelled"|"copied"|"failed">} What happened, so the button can say it.
+ */
+export async function shareOrCopy(text) {
+  if (typeof navigator !== "undefined" && navigator.share) {
+    try {
+      await navigator.share({ text });
+      return "shared";
+    } catch (e) {
+      if (e?.name === "AbortError") return "cancelled";
+      // Unsupported payload or other failure, fall through to the clipboard.
+    }
+  }
+  return (await copyText(text)) ? "copied" : "failed";
+}
+
+/**
  * Copy button state: `copied` turns true after a successful copy and back to
  * false after `resetAfter` ms. A new copy restarts the timer, `reset` turns the
- * flag off at once (for example when the copied content changes), and the
- * timer is cleared on unmount.
+ * flag off at once (for example when the copied content changes), and a
+ * running timer is cleared on unmount.
  *
  * @param {object} [options]
  * @param {number} [options.resetAfter=1500] How long `copied` stays true, in ms.
@@ -33,20 +54,12 @@ export async function copyText(text) {
 export default function useCopyToClipboard({ resetAfter = DEFAULT_RESET } = {}) {
   const [copied, setCopied] = useState(false);
   const timerRef = useRef(null);
-  // A copy can resolve after the button unmounted, then no timer is started.
-  const mountedRef = useRef(true);
-  useEffect(() => {
-    mountedRef.current = true;
-    return () => {
-      mountedRef.current = false;
-      clearTimeout(timerRef.current);
-    };
-  }, []);
+  useEffect(() => () => clearTimeout(timerRef.current), []);
 
   const copy = useCallback(
     async (text) => {
       const ok = await copyText(text);
-      if (ok && mountedRef.current) {
+      if (ok) {
         setCopied(true);
         clearTimeout(timerRef.current);
         timerRef.current = setTimeout(() => setCopied(false), resetAfter);

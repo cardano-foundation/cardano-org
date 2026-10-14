@@ -35,8 +35,6 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
   const fillClass = saturation == null ? "" : saturation >= 100 ? styles.saturationOver : saturation >= 90 ? styles.saturationWarn : "";
   const num = (n, digits = 0) => n.toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
-  // Clipboard can be unavailable, the full id is still in the explorer link.
-  const copyId = () => copy(pool.id);
 
   return (
     <div className={`${styles.card} ${isCurrent ? styles.cardCurrent : ""}`}>
@@ -144,7 +142,8 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
         </a>
         <span className={styles.poolId}>
           {shortAddress(pool.id)}
-          <button type="button" className={styles.copyButton} onClick={copyId}>
+          {/* Clipboard can be unavailable, the full id is still in the explorer link. */}
+          <button type="button" className={styles.copyButton} onClick={() => copy(pool.id)}>
             {copied
               ? translate({ id: "stakePoolDelegation.delegate.card.copied", message: "Copied" })
               : translate({ id: "stakePoolDelegation.delegate.card.copy", message: "Copy ID" })}

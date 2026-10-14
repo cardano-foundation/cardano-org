@@ -436,8 +436,7 @@ function PixelField() {
 
 function CopyCta() {
   const [tab, setTab] = useState("claude");
-  const [copied, copyText, resetCopied] = useCopyToClipboard({ resetAfter: 1800 });
-  const copy = () => copyText(SNIPPETS[tab].code);
+  const [copied, copy, resetCopied] = useCopyToClipboard({ resetAfter: 1800 });
 
   return (
     <div className={styles.ctaCol} id="get-started">
@@ -467,7 +466,7 @@ function CopyCta() {
           <button
             type="button"
             className={`${styles.snipCopy} ${copied ? styles.snipCopyDone : ""}`}
-            onClick={copy}
+            onClick={() => copy(SNIPPETS[tab].code)}
           >
             {copied
               ? translate({ id: "ai.getStarted.copied", message: "Copied ✓" })

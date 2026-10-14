@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
-import { copyText } from '@site/src/utils/useCopyToClipboard';
+import { copyText, shareOrCopy } from '@site/src/utils/useCopyToClipboard';
 
 const RESET_DELAY = 2000;
 
@@ -89,25 +89,9 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
   // The original text-only path, kept as the fallback for whenever badge
   // generation or every image-sharing route fails.
   const shareTextOnly = async () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({ text });
-        setStatus('idle');
-        return;
-      } catch (e) {
-        if (e && e.name === 'AbortError') {
-          setStatus('idle');
-          return;
-        }
-        // fall through to clipboard
-      }
-    }
-    if (await copyText(text)) {
-      showStatus('copiedText');
-    } else {
-      // Clipboard unavailable (permissions, http): nothing sensible to do
-      setStatus('idle');
-    }
+    // A shared, dismissed or failed copy all end idle, only a copy says so.
+    if ((await shareOrCopy(text)) === 'copied') showStatus('copiedText');
+    else setStatus('idle');
   };
 
   const handleShare = async () => {
