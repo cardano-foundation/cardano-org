@@ -46,9 +46,8 @@ import styles from './styles.module.css';
 | `src` | `string` | - | Image path, resolved with the base URL. Without it the letters show. |
 | `srcDark` | `string` | - | Image path for dark mode. Only used together with `src`. |
 | `name` | `string` | - | Name the fallback letters come from. |
-| `letters` | `string` | - | Letters to show instead of the ones from `name`, cut to `maxLetters`. |
+| `letters` | `string` | - | Letters to show instead of the ones from `name`, cut to `maxLetters`. Blank falls back to `name`. |
 | `maxLetters` | `number` | `1` | `1` shows the first letter, `2` the first letters of the first two words. Empty gives "?". |
-| `size` | `number` | - | Width and height attributes of the image in px, so the space is reserved before it loads. The tile size itself comes from `--logo-size`. |
 | `lazy` | `boolean` | `true` | Loads the image lazily. Set `false` above the fold. |
 | `className` | `string` | - | Class on the tile. Set the CSS variables here. |
 | `style` | `object` | - | Inline style on the tile, for a variable that comes from data, for example a category color. |

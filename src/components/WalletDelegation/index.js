@@ -184,7 +184,6 @@ export function SnapshotImage({ ids, id, path, name, className }) {
       src={ids.has(id) ? path : undefined}
       name={name}
       maxLetters={2}
-      size={48}
       className={clsx(styles.initials, className)}
     />
   );

@@ -6,7 +6,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 import styles from "./styles.module.css";
 
 /**
- * Letters for the fallback: `letters` cut to `maxLetters` when given,
+ * Letters for the fallback: `letters` cut to `maxLetters` when not blank,
  * otherwise the first letter of `name`, or with `maxLetters` 2 the first
  * letters of its first two words. Always uppercase, "?" when empty.
  *
@@ -15,16 +15,16 @@ import styles from "./styles.module.css";
  * @param {number} [maxLetters=1] How many letters at most.
  * @returns {string}
  */
-export function logoLetters(name, letters, maxLetters = 1) {
-  const text =
-    letters != null
-      ? String(letters).trim().slice(0, maxLetters)
-      : String(name ?? "")
-          .trim()
-          .split(/\s+/)
-          .map((word) => word.charAt(0))
-          .slice(0, maxLetters)
-          .join("");
+function logoLetters(name, letters, maxLetters = 1) {
+  const custom = String(letters ?? "").trim();
+  const text = custom
+    ? custom.slice(0, maxLetters)
+    : String(name ?? "")
+        .trim()
+        .split(/\s+/)
+        .map((word) => word.charAt(0))
+        .slice(0, maxLetters)
+        .join("");
   return text.toUpperCase() || "?";
 }
 
@@ -40,12 +40,11 @@ export function logoLetters(name, letters, maxLetters = 1) {
  * @param {string} [props.name] Name the fallback letters come from.
  * @param {string} [props.letters] Fallback letters to show instead of the ones from `name`.
  * @param {number} [props.maxLetters=1] 1 for the first letter, 2 for the first letters of the first two words.
- * @param {number} [props.size] Width and height attributes of the image, in px, to reserve space before it loads.
  * @param {boolean} [props.lazy=true] Load the image lazily.
  * @param {string} [props.className] Class on the tile, the place to set the CSS variables.
  * @param {object} [props.style] Inline style on the tile, for example a variable from data.
  */
-export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, size, lazy = true, className, style }) {
+export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, lazy = true, className, style }) {
   const light = useBaseUrl(src || "/");
   const dark = useBaseUrl(srcDark || src || "/");
   const { colorMode } = useColorMode();
@@ -72,15 +71,13 @@ export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, 
   const imageProps = {
     className: styles.image,
     loading: lazy ? "lazy" : undefined,
-    width: size,
-    height: size,
     onError: (event) => markFailed(event.currentTarget),
   };
 
   return (
     <span
       ref={tileRef}
-      className={clsx(styles.tile, showImage ? styles.withImage : styles.withFallback, className)}
+      className={clsx(styles.tile, !showImage && styles.withFallback, className)}
       style={style}
       aria-hidden="true"
     >

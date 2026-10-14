@@ -3,6 +3,7 @@ import clsx from "clsx";
 import LogoTile from "@site/src/components/Layout/LogoTile";
 
 import { Categories } from "@site/src/data/apps";
+import { resolveIconSrc } from "@site/src/utils/appIcon";
 
 import styles from "./styles.module.css";
 
@@ -24,7 +25,7 @@ import styles from "./styles.module.css";
 export default function AppIcon({ app, size = "tile", className }) {
   return (
     <LogoTile
-      src={app.icon}
+      src={resolveIconSrc(app)}
       name={app.title}
       className={clsx(size === "row" ? styles.appIconRow : styles.appIconTile, className)}
       style={{ "--logo-fallback-bg": Categories[app.category]?.color ?? "#888" }}

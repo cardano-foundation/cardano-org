@@ -97,7 +97,7 @@ export default function Layer2Card({
           <LogoTile
             src={logo}
             name={name}
-            letters={monogram || undefined}
+            letters={monogram}
             lazy={false}
             className={styles.logoTile}
             style={tileStyle}
