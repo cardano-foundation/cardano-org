@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import AppList from '@site/src/components/AppList';
 import { allDone, doneCount } from '@site/src/utils/getStarted/stations.mjs';
 import { shortenAddress } from '@site/src/utils/cardano/address.mjs';
+import { copyText } from '@site/src/utils/useCopyToClipboard';
 import { scrollToAnchor } from './Station';
 import { EXPLORER_STAKE_URL } from './ConnectStation';
 import styles from './styles.module.css';
@@ -23,12 +24,7 @@ async function shareText(text) {
       // unsupported payload or other failure, fall through to the clipboard
     }
   }
-  try {
-    await navigator.clipboard.writeText(text);
-    return 'copied';
-  } catch (e) {
-    return 'failed';
-  }
+  return (await copyText(text)) ? 'copied' : 'failed';
 }
 
 export function drepLabel(status, names) {

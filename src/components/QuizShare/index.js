@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import { copyText } from '@site/src/utils/useCopyToClipboard';
 
 const RESET_DELAY = 2000;
 
@@ -101,10 +102,9 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
         // fall through to clipboard
       }
     }
-    try {
-      await navigator.clipboard.writeText(text);
+    if (await copyText(text)) {
       showStatus('copiedText');
-    } catch (e) {
+    } else {
       // Clipboard unavailable (permissions, http): nothing sensible to do
       setStatus('idle');
     }
@@ -166,11 +166,8 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
 
     try {
       downloadBlob(blob, 'cardano-quiz-badge.png');
-      try {
-        await navigator.clipboard.writeText(text);
-      } catch (e) {
-        // Best effort only, the download already gave the user something.
-      }
+      // Best effort only, the download already gave the user something.
+      await copyText(text);
       showStatus('downloaded');
     } catch (e) {
       // Download itself failed: last resort is the original text-only share.

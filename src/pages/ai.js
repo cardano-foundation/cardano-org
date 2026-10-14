@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { TabsRoot, TabList, Tab, TabPanel } from "@site/src/components/Layout/Tabs";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 import styles from "./ai.module.css";
 
 const SNIPPETS = {
@@ -435,23 +436,8 @@ function PixelField() {
 
 function CopyCta() {
   const [tab, setTab] = useState("claude");
-  const [copied, setCopied] = useState(false);
-  const timer = useRef(null);
-
-  useEffect(() => () => clearTimeout(timer.current), []);
-
-  const copy = () => {
-    const done = () => {
-      setCopied(true);
-      clearTimeout(timer.current);
-      timer.current = setTimeout(() => setCopied(false), 1800);
-    };
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(SNIPPETS[tab].code).then(done, done);
-    } else {
-      done();
-    }
-  };
+  const [copied, copyText, resetCopied] = useCopyToClipboard({ resetAfter: 1800 });
+  const copy = () => copyText(SNIPPETS[tab].code);
 
   return (
     <div className={styles.ctaCol} id="get-started">
@@ -463,7 +449,7 @@ function CopyCta() {
         selectedIndex={SNIPPET_KEYS.indexOf(tab)}
         onSelect={(index) => {
           setTab(SNIPPET_KEYS[index]);
-          setCopied(false);
+          resetCopied();
         }}
         reserveSpace
       >

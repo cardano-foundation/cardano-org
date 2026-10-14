@@ -17,6 +17,7 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile from "@site/src/components/AppTile";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
 import styles from "./styles.module.css";
 import { scrollBehavior } from "@site/src/utils/jsUtils";
@@ -249,9 +250,7 @@ function PreviewHero({ urls }) {
 }
 
 function ShareButton({ url, title }) {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef(null);
-  useEffect(() => () => clearTimeout(timerRef.current), []);
+  const [copied, copy] = useCopyToClipboard();
   const onClick = async () => {
     const fullUrl = typeof window !== "undefined"
       ? `${window.location.origin}${window.location.pathname}`
@@ -265,16 +264,7 @@ function ShareButton({ url, title }) {
       }
       return;
     }
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      try {
-        await navigator.clipboard.writeText(fullUrl);
-        setCopied(true);
-        clearTimeout(timerRef.current);
-        timerRef.current = setTimeout(() => setCopied(false), 1500);
-      } catch {
-        // clipboard blocked — fail silently
-      }
-    }
+    await copy(fullUrl);
   };
   return (
     <button
