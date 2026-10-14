@@ -2,10 +2,11 @@
 // Translation ids stay under governance.delegate.* so the existing Crowdin
 // strings keep working for both pages.
 import React, { useEffect, useState } from "react";
+import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { detectWallets, enableWallet, firstAddressBech32 } from "@site/src/utils/cardano/wallet";
 import { classifyError, EXPLORER_TX_BASE } from "@site/src/utils/walletTx";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 
 // phase: detecting (scanning window.cardano) | ready | connecting (enable()
@@ -164,8 +165,7 @@ export function TxBanner({ state }) {
  * @param {string} [props.name] Name to take the initials from. Shows "?" when empty.
  */
 export function Initials({ name }) {
-  const text = (name || "?").split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
-  return <div className={styles.initials} aria-hidden="true">{text}</div>;
+  return <LogoTile name={name} maxLetters={2} className={styles.initials} />;
 }
 
 /**
@@ -176,13 +176,17 @@ export function Initials({ name }) {
  * @param {string} props.id Id to look up in `ids`.
  * @param {string} props.path Site relative image path.
  * @param {string} [props.name] Name for the Initials fallback.
- * @param {string} [props.className] Class on the image.
+ * @param {string} [props.className] Class on the tile. It sets the LogoTile variables for the image, for example `--logo-radius`.
  */
 export function SnapshotImage({ ids, id, path, name, className }) {
-  const [imgError, setImgError] = useState(false);
-  const src = useBaseUrl(path);
-  if (!ids.has(id) || imgError) return <Initials name={name} />;
-  return <img src={src} alt="" className={className} width="48" height="48" loading="lazy" onError={() => setImgError(true)} />;
+  return (
+    <LogoTile
+      src={ids.has(id) ? path : undefined}
+      name={name}
+      maxLetters={2}
+      className={clsx(styles.initials, className)}
+    />
+  );
 }
 
 /**

@@ -143,19 +143,14 @@ html[data-theme="dark"] .bannerWarning {
 }
 
 
+/* LogoTile variables for the round initials, also the fallback of
+   SnapshotImage, whose caller sets the image look. */
 .initials {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #093DB0 0%, #007FFF 100%);
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
+  --logo-fallback-radius: 50%;
+  --logo-fallback-bg: linear-gradient(135deg, #093DB0 0%, #007FFF 100%);
+  --logo-fallback-color: white;
+  --logo-fallback-weight: 600;
+  --logo-fallback-spacing: 0.5px;
 }
 
 .walletDetecting {

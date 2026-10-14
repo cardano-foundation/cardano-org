@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 import { getHeading } from "@site/src/utils/heading";
 
@@ -84,24 +84,24 @@ export default function Layer2Card({
   className,
 }) {
   const { Tag, lookClassName } = getHeading(headingLevel, 3);
-  const logoUrl = useBaseUrl(logo);
-  const letter = (monogram || name || "").trim().charAt(0).toUpperCase();
   const isExternal = cta?.href && /^https?:\/\//.test(cta.href);
-  const tileStyle = logoBackground ? { background: logoBackground } : undefined;
+  const tileStyle = {
+    ...(logoBackground && { "--logo-bg": logoBackground }),
+    ...(logoColor && { "--logo-fallback-color": logoColor }),
+  };
 
   const content = (
     <>
       <div className={styles.top}>
         <div className={styles.nameRow}>
-          <span className={styles.logoTile} style={tileStyle} aria-hidden="true">
-            {logo ? (
-              <img src={logoUrl} alt="" className={styles.logoImage} />
-            ) : (
-              <span className={styles.monogram} style={logoColor ? { color: logoColor } : undefined}>
-                {letter}
-              </span>
-            )}
-          </span>
+          <LogoTile
+            src={logo}
+            name={name}
+            letters={monogram}
+            lazy={false}
+            className={styles.logoTile}
+            style={tileStyle}
+          />
           <Tag className={clsx(styles.name, lookClassName)}>{name}</Tag>
         </div>
         <StatusPill status={status} />

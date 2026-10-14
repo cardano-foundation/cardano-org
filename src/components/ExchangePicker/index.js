@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import data from "@site/src/data/exchanges.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 
 const { regions, countries } = data;
@@ -63,30 +63,16 @@ function getExchangesForCountry(countryName) {
 }
 
 function ExchangeCard({ exchange }) {
-  const { withBaseUrl } = useBaseUrlUtils();
-  const logoUrl = EXCHANGE_LOGOS[exchange.name];
-  const initial = exchange.name.charAt(0).toUpperCase();
 
   return (
     <div className={styles.exchangeCard}>
       <div className={styles.exchangeHeader}>
-        {logoUrl ? (
-          <img
-            src={withBaseUrl(logoUrl)}
-            alt={exchange.name} 
-            className={styles.exchangeLogo}
-            onError={(e) => {
-              // Fallback zu Initial-Badge wenn Logo nicht lädt
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
-          />
-        ) : null}
-        {!logoUrl && (
-          <div className={styles.exchangeInitial}>
-            {initial}
-          </div>
-        )}
+        <LogoTile
+          src={EXCHANGE_LOGOS[exchange.name]}
+          name={exchange.name}
+          lazy={false}
+          className={styles.exchangeLogo}
+        />
         <h4 className={styles.exchangeName}>{exchange.name}</h4>
       </div>
 
