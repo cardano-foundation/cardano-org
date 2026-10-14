@@ -7,13 +7,11 @@ import FeaturedTitleWithText from '@site/src/components/Layout/FeaturedTitleWith
 
 ## FeaturedTitleWithText
 
-A two-column feature block. The left column holds a large `<h1>`, the right column holds one or more description paragraphs, a red `<h2>` quote or tagline, and an optional primary button. It is the opening block of the homepage and of `/ouroboros`.
+A two-column feature block. The left column holds a large title (an `<h1>` by default, see `headingLevel`), the right column holds one or more description paragraphs, an optional red `<h2>` quote or tagline, and an optional primary button. It opens the main section of `/ouroboros` and structures the sections of `/fees-and-transactions`.
 
 Description paragraphs go through `parseMarkdownLikeText`, so `[label](url)` links and `**bold**` markers are rendered as links and bold text.
 
 ## Basic Usage
-
-From `src/pages/ouroboros.js`:
 
 ```jsx
 import FeaturedTitleWithText from '@site/src/components/Layout/FeaturedTitleWithText';
@@ -29,16 +27,17 @@ import { translate } from '@docusaurus/Translate';
   buttonLabel={translate({ id: 'ouroboros.whatIs.buttonLabel', message: 'Explore the research' })}
   buttonLink="/research#byron"
   headingDot={false}
+  headingLevel={2}
 />
 ```
 
-The homepage (`src/pages/index.js`) passes the quote as an array with a `<br />` element to force a line break:
+To force a line break in the quote, pass an array with a `<br />` element:
 
 ```jsx
 quote={[
-  translate({ id: 'home.featured.quote1', message: 'A History Of Impossible,' }),
+  translate({ id: 'myPage.featured.quote1', message: 'First line,' }),
   <br key="line1" />,
-  translate({ id: 'home.featured.quote2', message: 'Made Possible' }),
+  translate({ id: 'myPage.featured.quote2', message: 'second line' }),
 ]}
 ```
 
@@ -48,10 +47,12 @@ quote={[
 |------|------|---------|-------------|
 | `title` | `string` | - | The large heading in the left column. Always rendered. |
 | `description` | `string` \| `string[]` | - | One paragraph, or one paragraph per array entry, in the right column. Parsed for markdown-style links and bold text. |
-| `quote` | `string` \| `node[]` | - | Red `<h2>` below the description. Always rendered, so pass a value. An array of strings and elements is allowed. |
+| `quote` | `string` \| `node[]` | - | Optional red `<h2>` below the description. Without it no quote heading renders. An array of strings and elements is allowed. |
 | `buttonLabel` | `string` | - | Label of the primary button. The button only renders when both `buttonLabel` and `buttonLink` are set. |
 | `buttonLink` | `string` | - | Target of the button. |
 | `headingDot` | `boolean` | - | Adds the `headingDot` class to the title. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Live Preview
 
@@ -65,6 +66,7 @@ quote={[
   buttonLabel="Explore the research"
   buttonLink="/research"
   headingDot={true}
+  headingLevel={2}
 />
 
 ## Notes

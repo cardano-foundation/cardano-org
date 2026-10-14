@@ -1,0 +1,169 @@
+{
+  "updatedEpoch": 657,
+  "epochs": [
+    {
+      "epoch": 507,
+      "lovelace": "20000000"
+    },
+    {
+      "epoch": 537,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 539,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 545,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 550,
+      "lovelace": "685165824878"
+    },
+    {
+      "epoch": 556,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 558,
+      "lovelace": "3000000"
+    },
+    {
+      "epoch": 559,
+      "lovelace": "35001000000"
+    },
+    {
+      "epoch": 569,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 576,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 583,
+      "lovelace": "6942069"
+    },
+    {
+      "epoch": 584,
+      "lovelace": "17000000"
+    },
+    {
+      "epoch": 585,
+      "lovelace": "19000000"
+    },
+    {
+      "epoch": 588,
+      "lovelace": "15458141592"
+    },
+    {
+      "epoch": 589,
+      "lovelace": "17000000"
+    },
+    {
+      "epoch": 595,
+      "lovelace": "100000"
+    },
+    {
+      "epoch": 612,
+      "lovelace": "920431415926"
+    },
+    {
+      "epoch": 622,
+      "lovelace": "354816283184"
+    },
+    {
+      "epoch": 623,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 625,
+      "lovelace": "1010000000"
+    },
+    {
+      "epoch": 626,
+      "lovelace": "11000000000"
+    },
+    {
+      "epoch": 627,
+      "lovelace": "3001000000"
+    },
+    {
+      "epoch": 628,
+      "lovelace": "6009000000"
+    },
+    {
+      "epoch": 629,
+      "lovelace": "49011000000"
+    },
+    {
+      "epoch": 631,
+      "lovelace": "1100000"
+    },
+    {
+      "epoch": 632,
+      "lovelace": "25132736"
+    },
+    {
+      "epoch": 633,
+      "lovelace": "6283184"
+    },
+    {
+      "epoch": 636,
+      "lovelace": "805924"
+    },
+    {
+      "epoch": 637,
+      "lovelace": "340512"
+    },
+    {
+      "epoch": 638,
+      "lovelace": "3593371"
+    },
+    {
+      "epoch": 639,
+      "lovelace": "2378047"
+    },
+    {
+      "epoch": 640,
+      "lovelace": "19498236000000"
+    },
+    {
+      "epoch": 642,
+      "lovelace": "100000"
+    },
+    {
+      "epoch": 643,
+      "lovelace": "3141592"
+    },
+    {
+      "epoch": 644,
+      "lovelace": "6283184"
+    },
+    {
+      "epoch": 645,
+      "lovelace": "12566368"
+    },
+    {
+      "epoch": 646,
+      "lovelace": "70346000000"
+    },
+    {
+      "epoch": 647,
+      "lovelace": "1000000"
+    },
+    {
+      "epoch": 648,
+      "lovelace": "1000000"
+    },
+    {
+      "epoch": 651,
+      "lovelace": "2000000"
+    },
+    {
+      "epoch": 652,
+      "lovelace": "347425230000"
+    }
+  ]
+}

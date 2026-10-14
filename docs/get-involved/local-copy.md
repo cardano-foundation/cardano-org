@@ -55,9 +55,9 @@ cardano-org
 │   ├── data
 │   │   ├── ambassadorsData.json
 │   │   ├── logosCompanies.json
-│   │   ├── operationFAQ.json
+│   │   ├── operationFAQ.js
 │   │   ├── pineappleFAQ.json
-│   │   └── termsForTermExplainer.json
+│   │   └── termsForTermExplainer.js
 │   └── pages
 │       ├── ambassadors.js
 │       ├── brand-assets.js
@@ -81,9 +81,9 @@ cardano-org
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
   - `/src/data/logosCompanies.json` - Entity and company data for https://cardano.org/entities/.
-  - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
+  - `/src/data/operationFAQ.js` - FAQ data for https://cardano.org/stake-pool-operation/.
   - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/get-involved/faq-component).
-  - `/src/data/termsForTermExplainer.json` - data for the TermExplainer component.
+  - `/src/data/termsForTermExplainer.js` - data for the TermExplainer component.
   - `/src/pages` - Any files within this directory will be converted into a website page.
 - `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory.
   - `/static/archive` - Genesis distribution content that we want to preserve. Data was downloaded from static.iohk.io.

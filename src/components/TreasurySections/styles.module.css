@@ -1,0 +1,95 @@
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.flowGrid {
+  padding: 1rem 0 0.5rem;
+  /* Five figures share one row, a smaller size keeps "-230.0M ada" on one line. */
+  --stat-value-size: 1.6rem;
+  --stat-value-size-mobile: 1.4rem;
+}
+
+.fundingGrid {
+  padding: 1rem 0 0.5rem;
+}
+
+/* Reserves its line so the sentence appearing after load does not shift the page. */
+.context {
+  min-height: 3em;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.fundedList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.fundedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.fundedTitle {
+  font-weight: 600;
+}
+
+.fundedMeta {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.toggleButton,
+.toggleActive {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font: inherit;
+}
+
+.toggleActive {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.outlookGrid {
+  margin-top: 1rem;
+}
+
+.subTitle {
+  margin: 1.5rem 0 0.25rem;
+  font-size: 1rem;
+}
+
+.skeleton {
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.errorBox {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .toggleActive {
+  background-color: var(--ifm-color-primary-darker);
+}

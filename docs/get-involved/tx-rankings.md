@@ -146,6 +146,36 @@ Guidelines for acceptance:
 - Confirm your transactions actually carry the tag, and that it does not collide with another listed app.
 - This list is intentionally limited to contract-less apps. Apps with scripts should use Path 1.
 
+## Appearing on the Leaderboard Without an Apps Directory Listing
+
+Not every project with real on-chain activity belongs in the [apps directory](/apps), for example B2B or enterprise solutions without a public app, their own chains or protocols, and bridges. Once such a project is tracked, it shows up on the leaderboard anyway, but as a gray "Not Listed" row without a logo and without a link.
+
+These projects can add a logo, a category, and a link to their official website by opening a pull request that adds an entry to `src/data/leaderboard-unlisted.js`:
+
+```js
+"example-protocol": {
+  icon: "/img/app-icons/example-protocol.svg",
+  category: "bridge",
+  website: "https://example.org",
+},
+```
+
+- **The key** is the exact `label` of your project's entry in the `appStats` array of `src/data/tx-stats.json` (or `src/data/tx-stats-73epochs.json`).
+- **`icon`** is a square logo that you add to `static/img/app-icons/` in the same pull request, as SVG or as PNG/WebP of at least 128x128 px.
+- **`category`** is a category id from `Categories` in `src/data/apps.js`.
+- **`website`** is the official website of your project as an absolute HTTP or HTTPS URL. Affiliate, referral, and campaign links are not accepted.
+
+All three fields are optional. Without `category` the row still shows "Not Listed", without `website` it is not clickable. The build checks every entry and fails with a clear message on an unknown field or category, an invalid URL, or a project that is already listed in the apps directory.
+
+Before you open a pull request, keep in mind:
+
+- **The apps directory comes first.** If your project fits there, [add your application](/docs/get-involved/add-app) instead. A directory listing links the leaderboard row to your app page.
+- **Your project must already be tracked** via Path 1 or Path 3. An entry in this file changes how an already tracked project is displayed. It does not add the project to the leaderboard.
+- **Metadata labels (Path 2) are not covered.** A metadata label row gets a logo and a link only from an `apps.js` entry that sets `metadataLabel` to that label. A project tracked through its own metadata label but not listed in the apps directory currently has no way to add a logo or link, and the build rejects `metadata-` keys in this file.
+- **You get less than a directory listing:** a logo, a category, and a link on the leaderboard, but no app page, no place in the apps directory, and no activity badge there.
+- **This is not a way back into the directory.** Projects removed under the [curation policy](/docs/get-involved/apps-curation-policy) do not get an entry here. Their transactions keep counting as a "Not Listed" row.
+- Maintainers accept entries at their discretion and may remove them later, for example when the website is gone or the project has shut down.
+
 ## How It All Connects
 
 The data flow from blockchain to leaderboard:
@@ -155,8 +185,10 @@ The data flow from blockchain to leaderboard:
    - `appStats`: transactions attributed to applications via script hashes
    - `metadataLabelStats`: transactions using registered metadata labels
 3. The **leaderboard page** merges both arrays (verified metadata only) and ranks everything by transaction count
-4. `appStats` entries are matched to `src/data/apps.js` via the `statsLabel` field to display icons, descriptions, and website links
-5. `metadataLabelStats` entries are verified against the CIP-0010 registry, shown with their CIP description, and mapped to existing categories (Governance, Bridge, Minting, etc.). An entry in `apps.js` that carries both `statsLabel` and `metadataLabel` is linked from the label's leaderboard row, so the row shows the app's icon and website
+4. `appStats` entries are matched to `src/data/apps.js` via the `statsLabel` field or the normalized app title to display icons and categories. The leaderboard row links to the app's page in the [apps directory](/apps)
+5. `metadataLabelStats` entries are verified against the CIP-0010 registry. Known labels use the names and categories configured on the leaderboard, other labels use the first part of their CIP-0010 description, or `Label <number>` if there is none. Some labels are combined into grouped rows (for example Catalyst Voting). An entry in `apps.js` that sets `metadataLabel` is linked from that label's row, so the row shows the app's icon and links to its page in the apps directory
+
+`appStats` entries without an apps directory match can get a logo, a category, and a website link from `src/data/leaderboard-unlisted.js` (see [Appearing on the Leaderboard Without an Apps Directory Listing](#appearing-on-the-leaderboard-without-an-apps-directory-listing)). Without a category they show "Not Listed", without a website they are not clickable.
 
 Both types of entries are ranked together in a single unified leaderboard, giving a complete picture of what is driving on-chain activity on Cardano.
 

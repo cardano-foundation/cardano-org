@@ -2,11 +2,31 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
+import { getHeading } from "@site/src/utils/heading";
 
 //
 // This component shows some text with a title (optional) to the left (optional)
 // and a call to action button on the right
 
+/**
+ * Two-column call-to-action band with a title, text and button per column.
+ *
+ * @param {object} props
+ * @param {string} [props.leftTitle] Heading of the left column.
+ * @param {string|string[]} [props.leftText] Text of the left column, one paragraph per array entry.
+ * @param {string} [props.leftButtonLabel] Label of the left button. No button without it.
+ * @param {string} [props.leftButtonLink] Target of the left button.
+ * @param {boolean} [props.leftHeadingDot] Shows the red dot above the left title.
+ * @param {string} [props.leftButtonAlign] "center" centers the left button.
+ * @param {string} [props.rightTitle] Heading of the right column.
+ * @param {string|string[]} [props.rightText] Text of the right column, one paragraph per array entry.
+ * @param {string} [props.rightButtonLabel] Label of the right button. No button without it.
+ * @param {string} [props.rightButtonLink] Target of the right button.
+ * @param {boolean} [props.rightHeadingDot] Shows the red dot above the right title.
+ * @param {string} [props.rightButtonAlign] "center" centers the right button.
+ * @param {number} [props.headingLevel=1] Heading level of both titles. The look stays the same.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function CtaTwoColumn({
   leftTitle,
   leftText,
@@ -20,7 +40,10 @@ export default function CtaTwoColumn({
   rightButtonLink,
   rightHeadingDot,
   rightButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
+  headingLevel, // heading level of both titles, default 1, the look stays the same
+  className,
 }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 1);
 
   const renderText = (text) => {
     // Check if text is an array
@@ -40,14 +63,14 @@ export default function CtaTwoColumn({
   const centerButtonStyle = { margin: '0 auto', display: 'block' };
 
   return (
-    <div className={styles.boxWrap}>
+    <div className={clsx(styles.boxWrap, className)}>
       <div className={clsx("row", styles.row)}>
         {/* Adjust the col class based on whether the right column has content */}
         <div className={clsx("col", hasRightContent ? "col--6" : "col--7", styles.leftColumn)}>
           {leftTitle && (
-            <h1 className={clsx({ headingDot: leftHeadingDot })}>
+            <Tag className={clsx({ headingDot: leftHeadingDot }, lookClassName)}>
               {leftTitle}
-            </h1>
+            </Tag>
           )}
           {leftText && renderText(leftText)}
           {leftButtonLabel && (
@@ -66,9 +89,9 @@ export default function CtaTwoColumn({
        {/* Adjust the col class based on whether the right column has content */}
        <div className={clsx("col", hasRightContent ? "col--6" : "col--5", styles.leftColumn)}>
           {rightTitle && (
-            <h1 className={clsx({ headingDot: rightHeadingDot })}>
+            <Tag className={clsx({ headingDot: rightHeadingDot }, lookClassName)}>
               {rightTitle}
-            </h1>
+            </Tag>
           )}
           {rightText && renderText(rightText)}
           {rightButtonLabel && (

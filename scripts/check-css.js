@@ -3,8 +3,10 @@
  * work fixed, without failing on the pre-migration brownfield:
  *   1. Project-namespaced CSS custom properties used via var() WITHOUT a
  *      fallback that are never defined (the --site-color-* bug class).
- *      Infima/Docusaurus/DocSearch vars are external and skipped. Vars set
- *      from JS (style objects / setProperty) count as defined.
+ *      Docusaurus/DocSearch vars are external and skipped. Infima vars are
+ *      checked against Infima's and the theme's own stylesheets when they are
+ *      installed, so a typo like --ifm-color-base is caught. Vars set from JS
+ *      (style objects / setProperty) count as defined.
  *   2. Known breakpoint typos that must never come back (966px for 996px).
  *
  * Exits non-zero on any violation so CI blocks it. Run with `node`, no framework.
@@ -12,8 +14,17 @@
 const { readFileSync } = require('node:fs');
 const { execFileSync } = require('node:child_process');
 
-const find = (args) =>
-  execFileSync('find', args, { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
+const find = (args) => {
+  try {
+    return execFileSync('find', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+      .trim()
+      .split('\n')
+      .filter(Boolean);
+  } catch {
+    // A missing directory (for example no node_modules) yields no files
+    return [];
+  }
+};
 
 const cssFiles = find(['src', '-name', '*.css']);
 const jsFiles = find(['src', '(', '-name', '*.js', '-o', '-name', '*.jsx', ')']);
@@ -28,7 +39,20 @@ const jsSet = new Set();
 for (const f of jsFiles)
   for (const m of readFileSync(f, 'utf8').matchAll(/(--[a-z0-9-]+)/gi)) jsSet.add(m[1]);
 
-const isExternal = (v) => /^--(ifm|docusaurus|docsearch)-/.test(v);
+// Infima vars count as known when Infima or the Docusaurus theme defines them.
+// Without node_modules (or after a layout change in those packages) every
+// --ifm-* var is treated as external, as before.
+const vendorCss = [
+  ...find(['node_modules/infima/dist/css', '-name', '*.css']),
+  ...find(['node_modules/@docusaurus/theme-classic/lib', '-name', '*.css']),
+].filter((f) => !f.includes('.min.'));
+const infimaVars = new Set();
+for (const f of vendorCss)
+  for (const m of readFileSync(f, 'utf8').matchAll(/(--ifm-[a-z0-9-]+)\s*:/gi)) infimaVars.add(m[1]);
+const checkInfima = infimaVars.size > 0;
+
+const isExternal = (v) =>
+  /^--(docusaurus|docsearch)-/.test(v) || (/^--ifm-/.test(v) && (!checkInfima || infimaVars.has(v)));
 const varViolations = [];
 for (const f of cssFiles) {
   readFileSync(f, 'utf8')

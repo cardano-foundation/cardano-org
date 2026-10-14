@@ -30,7 +30,7 @@ export default function Home() {
       <main>
         <BoundaryBox>
           <Divider text={translate({id: 'genesis.divider.distribution', message: 'Genesis Distribution'})} />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({id: 'genesis.distribution.title', message: 'Distribution'})}
             description={[
               translate({id: 'genesis.distribution.paragraph1', message: 'The initial distribution of ada, essentially a pre-launch sales event, was the first in the cryptocurrency industry to set Know Your Customer guidelines, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Ada Voucher Distribution Stats section.'}),
@@ -55,7 +55,7 @@ export default function Home() {
         <BackgroundWrapper backgroundStyle="solidGrey">
           <BoundaryBox>
             <Divider text={translate({id: 'genesis.divider.proceeds', message: 'Genesis Proceeds'})} />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
             title={translate({id: 'genesis.proceeds.title', message: 'Proceeds'})}
             description={[
               translate({id: 'genesis.proceeds.paragraph1', message: 'The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC. Further information on the sale can be found here.'}),

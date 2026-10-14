@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -7,7 +6,8 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import ContactFormHS from "@site/src/components/ContactFormHS";
+import HubSpotForm from "@site/src/components/Layout/HubSpotForm";
+import styles from "./contact.module.css";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
@@ -28,7 +28,7 @@ function HomepageHeader() {
 function JoinIntersect() {
   return (
     <div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.intersect.title', message: 'Intersect - one of the member-based organizations'})}
         description={[
           translate({id: 'contact.intersect.description', message: 'Intersect is a member-based organization for the Cardano ecosystem tasked with ensuring its continuity and future development.'}),
@@ -50,7 +50,7 @@ function JoinIntersect() {
 function TechnicalIssueForm() {
   return (
     <div>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.technicalIssue.title', message: 'Report a technical issue'})}
         description={[
           translate({id: 'contact.technicalIssue.description', message: 'To get help for one of the following wallets, please raise a support ticket.'}),
@@ -76,7 +76,7 @@ function SponsorshipForm() {
   return (
     <div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/LNXdLDhsQmA?si=1Q3HejtLiyfAoPY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({id: 'contact.sponsorship.title', message: 'Event sponsorship'})}
         description={[
           translate({id: 'contact.sponsorship.description1', message: 'Thank you for your interest in sponsoring Cardano events. The Cardano Summit 2026 will not take place, the community voted against funding it from the treasury. The Cardano Foundation still hosts and attends events around the world, and sponsorship opportunities can be tailored to your organization\'s goals.'}),
@@ -124,11 +124,11 @@ export default function Home() {
       <main>
         <BoundaryBox>
           <Divider text={translate({id: 'contact.divider.hereToHelp', message: 'Here to help'})} />
-          <TitleWithText title={translate({id: 'contact.helpSection.title', message: 'What Can We Help You With?'})} headingDot={true} />
+          <TitleWithText headingLevel={2} title={translate({id: 'contact.helpSection.title', message: 'What Can We Help You With?'})} headingDot={true} />
           {/* Topic Selection, each topic will render a different component */}
           {translate({id: 'contact.select.prefix', message: 'I have'})}
           <select
-            className={clsx("selectField", "selectFieldArrow")}
+            className={styles.selectField}
             onChange={handleTopicChange}
             value={selectedTopic ?? ""}
             aria-label={translate({id: 'contact.select.label', message: 'What can we help you with?'})}
@@ -148,7 +148,7 @@ export default function Home() {
           {selectedTopic === "iog" && <TechnicalIssueForm />}
           {selectedTopic === "intersect" && <JoinIntersect />}
           {selectedTopic === "sponsor" && <SponsorshipForm />}
-          {selectedTopic === "different" && <ContactFormHS />}
+          {selectedTopic === "different" && <HubSpotForm form="contactForm" />}
           {/* ... */}
         </BoundaryBox>
         <SpacerBox size="medium" />

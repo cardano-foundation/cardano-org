@@ -11,7 +11,7 @@ sidebar_position: 12
 
 Zentralisierte Datenspeicherung schafft zentrale Ausfallpunkte und bündelt die Kontrolle über sensible Informationen. Cloud-Anbieter können ausfallen, ihre Nutzungsbedingungen ändern oder gezwungen werden, Zugriff auf gespeicherte Daten zu gewähren. Für sensible Anwendungen ist diese Abhängigkeit von Dritten ein untragbares Risiko.
 
-Data integrity is another concern. Auch die Datenintegrität ist ein Problem: Wie können Nutzer überprüfen, dass gespeicherte Daten nicht manipuliert wurden, gerade über lange Zeiträume? Klassische Backup-Systeme bieten Redundanz, aber keinen Integritätsnachweis.
+Auch die Datenintegrität ist ein Problem. Wie können Nutzer überprüfen, dass gespeicherte Daten nicht manipuliert wurden, gerade über lange Zeiträume? Klassische Backup-Systeme bieten Redundanz, aber keinen Integritätsnachweis.
 
 ## Wie Blockchain dies löst
 

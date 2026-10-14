@@ -9,7 +9,7 @@ sidebar_position: 5
 
 ## Die Herausforderung
 
-Amtliche Dokumente bilden das Fundament der bürgerlichen Identität, und doch bleiben sie anfällig für Fälschung, Verlust und bürokratische Ineffizienz. Geburtsurkunden, Grundbucheinträge, Gewerbescheine und andere offizielle Unterlagen existieren oft nur auf Papier, was Überprüfung und Mitnahme erschwert.
+Amtliche Dokumente bilden das Fundament unserer Identität als Bürger, und doch bleiben sie anfällig für Fälschung, Verlust und bürokratische Ineffizienz. Geburtsurkunden, Grundbucheinträge, Gewerbescheine und andere offizielle Unterlagen existieren oft nur auf Papier, was Überprüfung und Mitnahme erschwert.
 
 Bürger warten oft lange, um Kopien ihrer eigenen Dokumente zu erhalten, während Behörden mit der Aktenführung über Zuständigkeitsgrenzen hinweg kämpfen. Dokumentenbetrug untergräbt das Vertrauen in Institutionen und schadet ganz real den Menschen, deren Identität missbraucht wird.
 
@@ -21,7 +21,7 @@ Mit Blockchain-Technologie können Behörden amtliche Dokumente so sicher und ef
 - **Sofortige Überprüfung**: Dritte können die Echtheit prüfen, ohne die ausstellende Behörde zu kontaktieren
 - **Kontrolle durch die Bürger**: Jeder kann sicher auf die eigenen Dokumente zugreifen und sie teilen
 - **Grenzüberschreitende Anerkennung**: Standardisierte digitale Dokumente erleichtern die internationale Überprüfung
-- **Audit trails**: Complete history of document issuance and verification
+- **Prüfpfade**: Lückenlose Historie aller Ausstellungen und Überprüfungen
 
 Smart Contracts können die Ausstellung automatisieren, sobald die Voraussetzungen erfüllt sind. Das verkürzt Bearbeitungszeiten und reduziert menschliche Fehler, ohne Sicherheit und Compliance zu gefährden.
 

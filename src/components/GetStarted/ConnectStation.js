@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import { detectWallets, enableWallet, firstRewardAddressBech32, firstAddressBech32, loadEvolution } from '@site/src/utils/cardano/wallet';
 import { parseCardanoAddress, shortenAddress } from '@site/src/utils/cardano/address.mjs';
 import { formatAda } from '@site/src/utils/cardano/lovelace.mjs';
+import { TabsRoot, TabList, Tab, TabPanel } from '@site/src/components/Layout/Tabs';
 import styles from './styles.module.css';
 
 const MAINNET = 1;
@@ -67,6 +68,9 @@ function ResultCard({ account, status, lastResult, locale, checking, forget }) {
   );
 }
 
+// Tab keys in display order.
+const TABS = ['wallet', 'paste'];
+
 export default function ConnectStation({ account, setAccount, forget, status, lastResult, checking, locale }) {
   const [tab, setTab] = useState('wallet');
   const [wallets, setWallets] = useState(null);
@@ -74,7 +78,6 @@ export default function ConnectStation({ account, setAccount, forget, status, la
   const [busy, setBusy] = useState(false);
   const [input, setInput] = useState('');
   const [inputError, setInputError] = useState(null);
-  const tabRefs = useRef([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -85,15 +88,6 @@ export default function ConnectStation({ account, setAccount, forget, status, la
     });
     return () => { cancelled = true; };
   }, []);
-
-  // Two tabs: left and right both move to the other tab.
-  const onTabKey = (e, index) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    e.preventDefault();
-    const next = (index + 1) % 2;
-    setTab(next === 0 ? 'wallet' : 'paste');
-    tabRefs.current[next]?.focus();
-  };
 
   const handleConnect = async (walletId) => {
     setBusy(true);
@@ -165,48 +159,46 @@ export default function ConnectStation({ account, setAccount, forget, status, la
   );
 
   return (
-    <div>
-      <div className={styles.tabs} role="tablist" aria-label={translate({ id: 'getStarted.connect.tabsLabel', message: 'How to identify your account' })}>
-        <button type="button" role="tab" id="connect-tab-wallet" aria-selected={tab === 'wallet'} aria-controls="connect-panel-wallet"
-          tabIndex={tab === 'wallet' ? 0 : -1} ref={(el) => { tabRefs.current[0] = el; }} onKeyDown={(e) => onTabKey(e, 0)}
-          className={styles.tab} onClick={() => setTab('wallet')}>
+    <TabsRoot
+      selectedIndex={TABS.indexOf(tab)}
+      onSelect={(index) => setTab(TABS[index])}
+      forceRenderTabPanel={false}
+    >
+      <TabList className={styles.tabs} aria-label={translate({ id: 'getStarted.connect.tabsLabel', message: 'How to identify your account' })}>
+        <Tab className={styles.tab}>
           {translate({ id: 'getStarted.connect.tab.wallet', message: 'Connect wallet' })}
-        </button>
-        <button type="button" role="tab" id="connect-tab-paste" aria-selected={tab === 'paste'} aria-controls="connect-panel-paste"
-          tabIndex={tab === 'paste' ? 0 : -1} ref={(el) => { tabRefs.current[1] = el; }} onKeyDown={(e) => onTabKey(e, 1)}
-          className={styles.tab} onClick={() => setTab('paste')}>
+        </Tab>
+        <Tab className={styles.tab}>
           {translate({ id: 'getStarted.connect.tab.paste', message: 'Paste address' })}
-        </button>
-      </div>
+        </Tab>
+      </TabList>
 
-      {tab === 'wallet' && (
-        <div role="tabpanel" id="connect-panel-wallet" aria-labelledby="connect-tab-wallet">
-          {wallets === null && <p>{translate({ id: 'getStarted.connect.detecting', message: 'Looking for wallets in this browser.' })}</p>}
-          {wallets && wallets.length === 0 && (
-            <p>{translate({ id: 'getStarted.connect.noWallet', message: "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address." })}</p>
-          )}
-          {wallets && wallets.length > 0 && (
-            <p className={styles.fieldNote}>
-              {translate({ id: 'getStarted.connect.detected', message: 'These wallets are installed in this browser. Pick the one you set up in step 1:' })}
-            </p>
-          )}
-          {wallets && wallets.length > 0 && (
-            <div className={styles.walletButtons}>
-              {wallets.map((w) => (
-                <button key={w.id} type="button" className={styles.walletButton} disabled={busy} onClick={() => handleConnect(w.id)}>
-                  {w.icon && <img src={w.icon} alt="" />}
-                  <span>{w.name}</span>
-                </button>
-              ))}
-            </div>
-          )}
-          {walletError && <p className={styles.fieldError} role="alert">{walletError}</p>}
-          {privacy}
-        </div>
-      )}
+      <TabPanel>
+        {wallets === null && <p>{translate({ id: 'getStarted.connect.detecting', message: 'Looking for wallets in this browser.' })}</p>}
+        {wallets && wallets.length === 0 && (
+          <p>{translate({ id: 'getStarted.connect.noWallet', message: "No wallet extension found in this browser. On a phone, open this page in your wallet's browser, or paste your address." })}</p>
+        )}
+        {wallets && wallets.length > 0 && (
+          <p className={styles.fieldNote}>
+            {translate({ id: 'getStarted.connect.detected', message: 'These wallets are installed in this browser. Pick the one you set up in step 1:' })}
+          </p>
+        )}
+        {wallets && wallets.length > 0 && (
+          <div className={styles.walletButtons}>
+            {wallets.map((w) => (
+              <button key={w.id} type="button" className={styles.walletButton} disabled={busy} onClick={() => handleConnect(w.id)}>
+                {w.icon && <img src={w.icon} alt="" />}
+                <span>{w.name}</span>
+              </button>
+            ))}
+          </div>
+        )}
+        {walletError && <p className={styles.fieldError} role="alert">{walletError}</p>}
+        {privacy}
+      </TabPanel>
 
-      {tab === 'paste' && (
-        <form role="tabpanel" id="connect-panel-paste" aria-labelledby="connect-tab-paste" onSubmit={handlePaste}>
+      <TabPanel>
+        <form onSubmit={handlePaste}>
           <label htmlFor="connect-address">{translate({ id: 'getStarted.connect.pasteLabel', message: 'Receiving address or stake address' })}</label>
           <div className={styles.addressForm}>
             <input id="connect-address" className={styles.addressInput} value={input} onChange={(e) => setInput(e.target.value)}
@@ -219,7 +211,7 @@ export default function ConnectStation({ account, setAccount, forget, status, la
           {inputError && <p id="connect-address-error" className={styles.fieldError} role="alert">{inputError}</p>}
           {privacy}
         </form>
-      )}
-    </div>
+      </TabPanel>
+    </TabsRoot>
   );
 }

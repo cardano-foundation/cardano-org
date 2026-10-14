@@ -1,0 +1,505 @@
+.explorer {
+  position: relative;
+  /* --explorer-top is the measured distance from the document top, it covers
+     the announcement bar and the real navbar height. */
+  height: calc(100vh - var(--explorer-top, var(--ifm-navbar-height)));
+  height: calc(100dvh - var(--explorer-top, var(--ifm-navbar-height)));
+  min-height: 480px;
+  background: #0b1030;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Fullscreen drops the navbar, so the reserved height would leave a black
+   strip at the bottom. */
+.explorer:fullscreen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.noWebgl {
+  position: relative;
+  max-width: 32rem;
+  margin: 4rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.noWebgl a {
+  color: #9ec5fe;
+  text-decoration: underline;
+}
+
+.ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ui > * {
+  pointer-events: auto;
+}
+
+.legend {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(11, 16, 48, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.legendItemActive {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.legendDot {
+  flex: 0 0 auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.controls {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(11, 16, 48, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.controlButton {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.controlButton[aria-pressed='true'] {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.timeline {
+  position: relative;
+  flex: 1;
+  height: 2rem;
+}
+
+.timeline input {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.markers {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+}
+
+/* The dot is small, the button around it is a 16 px target. */
+.marker {
+  position: absolute;
+  bottom: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.markerDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.markerAhead .markerDot {
+  opacity: 0.45;
+}
+
+.markerCurrent .markerDot,
+.marker:hover .markerDot,
+.marker:focus-visible .markerDot {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.marker:focus-visible {
+  outline: 2px solid #9ec5fe;
+  outline-offset: 1px;
+}
+
+.markerTip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+
+.markerTip strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.markerStart .markerTip {
+  left: 0;
+  transform: none;
+}
+
+.markerEnd .markerTip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.marker:hover .markerTip,
+.marker:focus-visible .markerTip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Repository events have no era color, a ring keeps them apart from the hard
+   forks. */
+.ringDot {
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: none;
+}
+
+.date {
+  min-width: 9rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.speeds {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.hint {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.6rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.72);
+  font-family: monospace;
+  /* A deep path or a very long file name would otherwise stretch the label off
+     the canvas, the rows inside it get an ellipsis instead. */
+  max-width: min(22rem, calc(100vw - 2rem));
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 3;
+}
+
+.labelDot {
+  flex: 0 0 auto;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.labelBody {
+  display: flex;
+  flex-direction: column;
+  /* Flex items refuse to shrink below their content, which would defeat the
+     max-width on the label. */
+  min-width: 0;
+}
+
+.labelDir {
+  display: block;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.labelName {
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.labelIcon {
+  margin-right: 0.3rem;
+  color: rgba(255, 255, 255, 0.65);
+  vertical-align: -0.1em;
+}
+
+.labelCount {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.nodeCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(20rem, calc(100% - 2rem));
+  padding: 0.7rem 2rem 0.8rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.6rem;
+  background: rgba(11, 16, 48, 0.92);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+  will-change: transform;
+  z-index: 4;
+}
+
+.nodeEra {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.72rem;
+}
+
+.nodeEra .labelDot {
+  margin-top: 0;
+}
+
+.nodePath {
+  margin: 0.4rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font: 0.78rem/1.45 monospace;
+  overflow-wrap: anywhere;
+}
+
+.nodePath strong {
+  color: #fff;
+}
+
+.nodeType {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+}
+
+.nodeCount {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.nodeLink {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: #9ec5fe;
+  font-size: 0.75rem;
+  text-decoration: underline;
+}
+
+.card {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: min(22rem, calc(100% - 2rem));
+  padding: 1rem 2.2rem 1rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(11, 16, 48, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+  animation: cardIn 0.2s ease-out;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.chapter {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(11, 16, 48, 0.75);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.chapter:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.chapterName {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chapterDate {
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+}
+
+.card p {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.card a {
+  color: #9ec5fe;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+.cardDate {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cardClose {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .controls {
+    flex-wrap: wrap;
+    bottom: 3.2rem;
+  }
+  .timeline {
+    flex-basis: 100%;
+    order: 10;
+  }
+  .date {
+    /* Natural width and no growing, so a long month name neither wraps into
+       several lines nor runs over the speed buttons. */
+    min-width: max-content;
+    flex: 0 0 auto;
+    margin-left: auto;
+    text-align: right;
+  }
+  .hint {
+    display: none;
+  }
+  .legend {
+    top: auto;
+    bottom: 8.5rem;
+    right: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 100%;
+  }
+}

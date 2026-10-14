@@ -2,16 +2,31 @@ import React, { useEffect, useState } from "react";
 import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
-import termsData from "@site/src/data/termsForTermExplainer.json"; // Import all the terms
+import { getTermsForTermExplainer } from "@site/src/data/termsForTermExplainer";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
+import { shuffle } from "@site/src/utils/random";
 
+// Display names of the term categories. Unknown keys are shown as they are.
+function categoryLabel(category) {
+  const labels = {
+    governance: translate({ id: 'termExplainer.category.governance', message: 'Governance' }),
+  };
+  return labels[category] || category;
+}
+
+/**
+ * Two random terms with their explanations from one term category.
+ *
+ * @param {object} props
+ * @param {string} props.category Category key in the term data, e.g. "governance".
+ */
 export default function TermExplainer({ category }) {
   const [terms, setTerms] = useState([]);
 
   useEffect(() => {
-    if (category && termsData.categories[category]) {
-      const categoryTerms = termsData.categories[category];
-      const randomTerms = categoryTerms.sort(() => 0.5 - Math.random()).slice(0, 2);
+    const categoryTerms = getTermsForTermExplainer()[category];
+    if (categoryTerms) {
+      const randomTerms = shuffle(categoryTerms).slice(0, 2);
       // Pick random terms on the client only to avoid an SSR hydration mismatch.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setTerms(randomTerms);
@@ -20,7 +35,7 @@ export default function TermExplainer({ category }) {
 
   return (
     <div className={styles.sectionWrap}>
-      <Divider text={translate({id: 'termExplainer.divider', message: '{category} Terms you should know'}).replace('{category}', category)} white={true} />
+      <Divider headingLevel={2} text={translate({id: 'termExplainer.divider', message: '{category} Terms you should know'}, {category: categoryLabel(category)})} white={true} />
       <div className={styles.flexBox}>
         {terms.map((term, index) => (
           <div key={index} className={index % 2 === 0 ? styles.leftTextWrap : styles.rightTextWrap}>

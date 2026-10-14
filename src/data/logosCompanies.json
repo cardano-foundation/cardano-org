@@ -9,7 +9,7 @@
   {
     "companyName": "Agrow Labs",
     "imageName": "agrowlabs",
-    "link": "https://www.agrowlabs.xyz",
+    "link": "https://agrowlabs.xyz",
     "knownFor": "Onboard Ninja",
     "showCompanyName": false
   },
@@ -103,15 +103,8 @@
   {
     "companyName": "Dano Finance",
     "imageName": "dano-finance",
-    "link": "https://app.danogo.io/about-us",
+    "link": "https://docs.dano.finance/",
     "knownFor": "Dano Finance",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "DCOne Crypto",
-    "imageName": "dcone",
-    "link": "https://dconecrypto.finance/",
-    "knownFor": "DCOne Crypto Webhook",
     "showCompanyName": false
   },
   {
@@ -157,13 +150,6 @@
     "imageName": "fluidtokens",
     "link": "https://fluidtokens.com/team",
     "knownFor": "FluidTokens",
-    "showCompanyName": false
-  },
-  {
-    "companyName": "Genius Yield",
-    "imageName": "genius-yield",
-    "link": "https://www.geniusyield.co/",
-    "knownFor": "Genius Yield DEX",
     "showCompanyName": false
   },
   {
@@ -335,13 +321,6 @@
     "link": "https://sundae.fi",
     "knownFor": "Sundae Swap",
     "showCompanyName": false
-  },
-  {
-    "companyName": "TapTools",
-    "imageName": "taptools",
-    "link": "https://www.taptools.io/",
-    "knownFor": "Token distribution, comprehensive charts, NFT generation",
-    "showCompanyName": true
   },
   {
     "companyName": "Tastenkunst GmbH",

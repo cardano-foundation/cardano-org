@@ -102,12 +102,8 @@
 /* Same footprint as the Initials circle. Logos are squarish icons, so they
    sit on a rounded square with a quiet background instead of a circle crop. */
 .logo {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  object-fit: contain;
-  background: var(--ifm-color-emphasis-100);
+  --logo-radius: 12px;
+  --logo-bg: var(--ifm-color-emphasis-100);
 }
 
 .cardIdentity {

@@ -155,3 +155,11 @@
     display: none;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .dot1,
+  .dot2,
+  .dot3 {
+    animation: none;
+  }
+}

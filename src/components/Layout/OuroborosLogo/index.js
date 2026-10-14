@@ -1,6 +1,12 @@
 import React from 'react'
 
 
+/**
+ * Ouroboros wordmark as an inline SVG in the current text color.
+ *
+ * @param {object} props
+ * @param {string} [props.className] Class on the SVG element.
+ */
 export default function OuroborosLogo({ className }) {
     return (
   <svg className={className} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 547 61' id='ouroboros_logo_svg'>

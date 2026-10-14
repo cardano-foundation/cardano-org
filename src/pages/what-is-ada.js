@@ -47,7 +47,7 @@ export default function Home() {
             ]}
             quote={translate({id: 'whatIsAda.section.quote', message: 'What can I do with ada?'})}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({id: 'whatIsAda.section.platformLink', message: 'New to the platform itself? Read [what Cardano is](/what-is-cardano).'})}
           />
         </BoundaryBox>

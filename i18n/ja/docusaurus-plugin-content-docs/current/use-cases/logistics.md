@@ -9,9 +9,9 @@ sidebar_position: 10
 
 ## 課題
 
-Global logistics involves countless handoffs between carriers, warehouses, and customs authorities. Each handoff creates opportunities for errors, delays, disputes, and fraud. Paper-based documentation leads to inefficiencies and disputes that cost the industry billions annually.
+国際物流では、運送業者、倉庫、税関の間で無数の受け渡しが発生します。受け渡しのたびに、ミス、遅延、紛争、不正が起こる余地が生まれます。紙ベースの書類は非効率や紛争を招き、業界に年間数十億ドルの損失をもたらしています。
 
-リアルタイムの可視性が欠如しているため、ルートの最適化、遅延の予測、混乱への迅速な対応が困難です。問題が発生した場合、複数の関係者間で責任の所在を明らかにするのは時間がかかり、争いの種になりがちです。 When problems occur, determining responsibility across multiple parties becomes contentious and time-consuming.
+リアルタイムの可視性が欠如しているため、ルートの最適化、遅延の予測、混乱への迅速な対応が困難です。問題が発生した場合、複数の関係者間で責任の所在を明らかにするのは時間がかかり、争いの種になりがちです。
 
 ## ブロックチェーンによる解決策
 
@@ -23,7 +23,7 @@ Global logistics involves countless handoffs between carriers, warehouses, and c
 - **紛争解決**: 改ざん不可能な記録が紛争解決の明確な証拠に
 - **マルチパーティ連携**: 仲介者なしに、すべてのステークホルダーが関連情報にアクセス可能
 
-IoTデバイスにより、位置情報、温度、湿度などの環境条件を自動記録し、途切れのない管理チェーンのドキュメントを作成できます。
+IoTデバイスが位置情報、温度、湿度などの状態を自動で記録するため、保管と受け渡しの履歴を途切れなく残せます。
 
 ## なぜCardanoなのか
 
@@ -33,8 +33,8 @@ IoTデバイスにより、位置情報、温度、湿度などの環境条件�
 - **低レイテンシー**: 運用上の判断に必要なタイムリーな情報更新
 - **エンタープライズ対応**: 高いセキュリティと信頼性
 
-## はじめる
+## はじめよう
 
 - [トレーサビリティソリューションを探す](/solutions)
-- [開発者向けリソース](https://developers.cardano.org)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
 - [エンタープライズソリューションを見る](/solutions)

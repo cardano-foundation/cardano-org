@@ -17,7 +17,7 @@ The `TwoColumnLayout` component creates a responsive two-column grid layout with
 ## Basic Usage
 
 ```jsx
-import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
+import TwoColumnLayout from '@site/src/components/Layout/TwoColumnLayout';
 
 <TwoColumnLayout
   sidebar={<div>Sidebar content here</div>}

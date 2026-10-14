@@ -183,7 +183,7 @@ export default function GetStarted() {
               why={(
                 <WhyBlock image="proof-of-stake" alt="">
                   <p>{translate({ id: 'getStarted.station.delegate.why', message: 'Delegation moves rights, not ada. Your ada stays spendable, the pool produces blocks with it, your DRep votes with it. A vote delegation is also required before staking rewards can be withdrawn.' })}</p>
-                  <p>{translate({ id: 'getStarted.station.delegate.action', message: 'Delegate to a stake pool and to a DRep, both from your wallet, in either order.' })}</p>
+                  <p>{translate({ id: 'getStarted.station.delegate.action', message: 'Start with the stake pool: that delegation also registers your stake key. Then delegate your vote to a DRep. Both happen in your wallet.' })}</p>
                 </WhyBlock>
               )}
               action={(
@@ -209,7 +209,7 @@ export default function GetStarted() {
                     {chain.status.vote === UNKNOWN && translate({ id: 'getStarted.station.delegate.voteUnknown', message: 'Could not check the vote delegation yet.' })}
                   </p>
                   {chain.status.stakeRegistered === false && (
-                    <p>{translate({ id: 'getStarted.station.delegate.notRegistered', message: 'Your stake key is not registered yet. Your wallet registers it with your first delegation, stake or vote.' })}</p>
+                    <p>{translate({ id: 'getStarted.station.delegate.notRegistered', message: 'Your stake key is not registered yet. Your first stake pool delegation registers it and takes a small refundable deposit.' })}</p>
                   )}
                 </div>
               )}

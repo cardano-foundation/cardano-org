@@ -23,7 +23,7 @@ Blockchain-Technologie ermöglicht eine transparente, effiziente Verteilung von 
 - **Identitätsanbindung**: Blockchain-Identitätslösungen prüfen die Berechtigung und schützen zugleich die Privatsphäre
 - **Überwachung in Echtzeit**: Programmverantwortliche und Spender können die Mittelverwendung verfolgen
 
-Stablecoins und digitale Wallets ermöglichen es Empfängern, Mittel auch ohne klassisches Bankkonto zu erhalten und zu nutzen.
+Stablecoins und digitale Wallets ermöglichen es Empfängern, Mittel auch ohne klassisches Bankkonto zu erhalten und zu nutzen, und stärken so die finanzielle Teilhabe.
 
 ## Warum Cardano
 

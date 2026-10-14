@@ -21,26 +21,11 @@
   gap: 1rem;
 }
 
+/* LogoTile variables: logo or a letter on the brand gradient. */
 .logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 8px;
-}
-
-.logoFallback {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  --logo-fallback-color: white;
+  --logo-fallback-font-size: 1.5rem;
 }
 
 .title {

@@ -9,6 +9,7 @@ import Divider from "@site/src/components/Layout/Divider";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import curatedEvents from "@site/src/data/events.json";
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { mergeEvents, collapseRecurringSeries } from "@site/src/utils/events/eventModel";
 import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
 import useLumaEvents from "@site/src/utils/events/useLumaEvents";
@@ -102,6 +103,8 @@ function HomepageHeader({ filters, onChange }) {
 }
 
 export default function Events() {
+  const lumaLogoUrl = useBaseUrl("/img/events/platform-luma.png");
+  const meetupLogoUrl = useBaseUrl("/img/events/platform-meetup.png");
   const { entries: lumaEntries } = useLumaEvents();
   const [view, setView] = useState("list");
   const [filters, setFilters] = useState(() => ({
@@ -236,7 +239,7 @@ export default function Events() {
       <main className="events-main">
         {featuredEvents.length > 0 && !isFiltering && (
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={translate({
                 id: "events.featured.title",
                 message: "Featured upcoming events",
@@ -249,7 +252,7 @@ export default function Events() {
 
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={
                 view === "calendar"
                   ? translate({ id: "events.divider.calendar", message: "Events Calendar" })
@@ -302,7 +305,7 @@ export default function Events() {
 
         {recapEvents.length > 0 && (
           <BoundaryBox>
-            <Divider
+            <Divider headingLevel={2}
               text={translate({
                 id: "events.recaps.title",
                 message: "Recent event recaps",
@@ -314,7 +317,7 @@ export default function Events() {
         )}
 
         <BoundaryBox>
-          <Divider
+          <Divider headingLevel={2}
             text={translate({
               id: "events.divider.discover",
               message: "Discover Cardano Events Worldwide",
@@ -330,7 +333,7 @@ export default function Events() {
               aria-label="Luma.com"
             >
               <figure>
-                <img src={`/img/events/platform-luma.png`} alt="Luma.com" />
+                <img src={lumaLogoUrl} alt="Luma.com" />
                 <figcaption>
                   {translate({ id: "events.platforms.luma", message: "Events on Luma.com" })}
                 </figcaption>
@@ -344,7 +347,7 @@ export default function Events() {
               aria-label="Meetup.com"
             >
               <figure>
-                <img src={`/img/events/platform-meetup.png`} alt="Meetup.com" />
+                <img src={meetupLogoUrl} alt="Meetup.com" />
                 <figcaption>
                   {translate({ id: "events.platforms.meetup", message: "Events on Meetup.com" })}
                 </figcaption>

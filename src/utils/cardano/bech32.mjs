@@ -100,7 +100,7 @@ export function wordsToBytes(words) {
   return convertBits(words, 5, 8, false);
 }
 
-function hexToBytes(hex, length) {
+export function hexToBytes(hex, length) {
   if (typeof hex !== 'string' || hex.length !== length * 2 || !/^[0-9a-fA-F]+$/.test(hex)) return null;
   const bytes = [];
   for (let i = 0; i < hex.length; i += 2) bytes.push(parseInt(hex.slice(i, i + 2), 16));

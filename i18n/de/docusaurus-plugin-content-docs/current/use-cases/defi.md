@@ -9,7 +9,7 @@ sidebar_position: 6
 
 ## Die Herausforderung
 
-Traditionelle Finanzsysteme schließen Milliarden von Menschen weltweit aus, die keinen Zugang zu Bankdienstleistungen haben. Selbst wer Zugang hat, kämpft oft mit hohen Gebühren, undurchsichtigen Bedingungen und zentralisierter Kontrolle, die dazu führen kann, dass Vermögenswerte eingefroren oder Dienstleistungen willkürlich verweigert werden.
+Traditionelle Finanzsysteme schließen Milliarden von Menschen weltweit aus, die keinen Zugang zu Bankdienstleistungen haben. Selbst wer Zugang hat, kämpft oft mit hohen Gebühren, undurchsichtigen Bedingungen und zentraler Kontrolle: Vermögen kann eingefroren, eine Dienstleistung willkürlich verweigert werden.
 
 Die Finanzkrise von 2008 hat gezeigt, welche Risiken zentralisierte Finanzsysteme bergen: Der Ausfall großer Institute kann eine Kettenreaktion in der gesamten Wirtschaft auslösen. Nutzer haben kaum Einblick, wie ihre Einlagen verwendet werden oder welchen Risiken sie ausgesetzt sind.
 
@@ -27,7 +27,7 @@ Das DeFi-Ökosystem von Cardano umfasst dezentrale Börsen (DEXs), Lending-Platt
 
 ## Warum Cardano
 
-- **Vorhersehbare Gebühren** dank des erweiterten UTXO-Modells, das eine genaue Kostenplanung ermöglicht
+- **Vorhersehbare Gebühren** dank des erweiterten UTXO-Modells ermöglichen eine genaue Kostenplanung
 - **Formale Verifikation** liefert mathematische Garantien für das Verhalten von Smart Contracts
 - **Native Assets** verringern die Komplexität und die Angriffsfläche bei Token-Vorgängen
 - **Nachhaltigkeit** durch Proof-of-Stake, im Einklang mit langfristiger Wertschöpfung

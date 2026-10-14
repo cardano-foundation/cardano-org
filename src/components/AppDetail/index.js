@@ -17,8 +17,11 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile from "@site/src/components/AppTile";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
+import Grid from "@site/src/components/Layout/Grid";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -57,10 +60,7 @@ function TagPill({ tag, def }) {
     <Link
       to={`/apps?tags=${tag}`}
       className={styles.categoryPill}
-      style={{
-        backgroundColor: `color-mix(in srgb, ${def.color} 15%, transparent)`,
-        color: `color-mix(in srgb, ${def.color} 85%, black)`,
-      }}
+      style={{ "--pill-color": def.color }}
       title={def.description}
     >
       <span className={styles.tagDot} style={{ backgroundColor: def.color }} />
@@ -122,13 +122,13 @@ function PreviewCarousel({ urls }) {
   const scrollTo = (idx) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollTo({ left: idx * getStep(), behavior: "smooth" });
+    el.scrollTo({ left: idx * getStep(), behavior: scrollBehavior() });
   };
 
   const scrollBy = (dir) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+    el.scrollBy({ left: dir * getStep(), behavior: scrollBehavior() });
   };
 
   const onPointerDown = (e) => {
@@ -165,7 +165,7 @@ function PreviewCarousel({ urls }) {
     if (drag && drag.moved) {
       const step = getStep();
       const idx = Math.round(el.scrollLeft / step);
-      el.scrollTo({ left: idx * step, behavior: "smooth" });
+      el.scrollTo({ left: idx * step, behavior: scrollBehavior() });
     }
   };
 
@@ -250,9 +250,7 @@ function PreviewHero({ urls }) {
 }
 
 function ShareButton({ url, title }) {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef(null);
-  useEffect(() => () => clearTimeout(timerRef.current), []);
+  const [copied, copy] = useCopyToClipboard();
   const onClick = async () => {
     const fullUrl = typeof window !== "undefined"
       ? `${window.location.origin}${window.location.pathname}`
@@ -266,16 +264,7 @@ function ShareButton({ url, title }) {
       }
       return;
     }
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      try {
-        await navigator.clipboard.writeText(fullUrl);
-        setCopied(true);
-        clearTimeout(timerRef.current);
-        timerRef.current = setTimeout(() => setCopied(false), 1500);
-      } catch {
-        // clipboard blocked — fail silently
-      }
-    }
+    await copy(fullUrl);
   };
   return (
     <button
@@ -513,13 +502,13 @@ export default function AppDetail({ app }) {
                 message: "More in this category",
               })}
             </h2>
-            <ul className={styles.relatedGrid}>
+            <Grid as="ul" className={styles.relatedGrid}>
               {relatedApps.map((related) => (
                 <li key={related.slug}>
                   <AppTile app={related} />
                 </li>
               ))}
-            </ul>
+            </Grid>
             <Link
               className={styles.relatedMore}
               to={`/apps?tags=${app.category}`}

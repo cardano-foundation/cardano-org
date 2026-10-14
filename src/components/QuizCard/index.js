@@ -1,6 +1,7 @@
 import React from 'react';
 import QuizModal from '../QuizModal';
 import styles from './styles.module.css';
+import { translate } from "@docusaurus/Translate";
 
 /**
  * QuizCard - A call-to-action card component for quizzes
@@ -17,9 +18,9 @@ import styles from './styles.module.css';
  */
 const QuizCard = ({
   quizData,
-  title = 'Test Your Knowledge',
+  title = translate({ id: 'quizCard.title', message: 'Test Your Knowledge' }),
   description,
-  buttonText = 'Start Quiz',
+  buttonText = translate({ id: 'quizCard.buttonText', message: 'Start Quiz' }),
   questionCount = 5,
   passingScore = 60,
   allowRetry = true,

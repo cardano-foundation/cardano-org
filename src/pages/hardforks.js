@@ -203,7 +203,7 @@ function getTimelineItems() {
     },
     {
       era: "Byron Era",
-      date: "September 29, 2017",
+      date: "September 23, 2017",
       name: "Byron",
       description: translate({
         id: "hardforks.timeline.byron.description",
@@ -249,7 +249,7 @@ export default function Home() {
       <HomepageHeader />
       <BackgroundWrapper backgroundType={"zoom"}>
         <BoundaryBox>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             title={translate({ id: "hardforks.content.title", message: "Cardano Hard Forks" })}
             description={translate({
               id: "hardforks.content.description",
@@ -258,14 +258,14 @@ export default function Home() {
             })}
             headingDot={true}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({
               id: "hardforks.upgrades.description",
               message:
                 "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades).",
             })}
           />
-          <Divider
+          <Divider headingLevel={2}
             text={translate({ id: "hardforks.divider.timeline", message: "Timeline" })}
             id="timeline"
           />
@@ -275,13 +275,13 @@ export default function Home() {
 
       <BackgroundWrapper backgroundType={"solidGrey"}>
         <BoundaryBox>
-          <Divider
+          <Divider headingLevel={2}
             text={translate({
               id: "hardforks.divider.transactionIds",
               message: "hard fork transaction ids",
             })}
           />
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             description={translate({
               id: "hardforks.transactionIds.description",
               message:

@@ -1,0 +1,11 @@
+/*
+ * Market overview inside each regulatory tab: 14px / 23px muted text capped
+ * at 900px, like the section's intro paragraphs.
+ */
+.overview {
+  max-width: 900px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--ifm-color-emphasis-700);
+}

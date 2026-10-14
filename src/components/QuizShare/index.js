@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import { copyText, shareOrCopy } from '@site/src/utils/useCopyToClipboard';
 
 const RESET_DELAY = 2000;
 
@@ -16,11 +17,12 @@ function defaultShareUrl(tierKey) {
   return `https://cardano.org${TIER_SHARE_PATHS[tierKey] || '/quiz'}`;
 }
 
-// Wordle-style emoji row: one filled circle per correct answer, in order.
+/** Wordle-style emoji row: one filled circle per correct answer, in order. */
 export function buildEmojiGrid(results) {
   return results.map((r) => (r ? '🔵' : '⚪')).join('');
 }
 
+/** Builds the plain share text with title, emoji row, score, tier and link. */
 export function buildShareText({ quizTitle, results, score, total, tierLabel, url }) {
   const grid = buildEmojiGrid(results);
   const headline = translate({id: 'quiz.share.headline', message: 'Cardano Quiz: {quizTitle}'}, {quizTitle});
@@ -54,6 +56,19 @@ const STATUS_LABEL = {
 //
 // getBadgeBlob reuses the single render the result screen already produced
 // (see Quiz/index.js) instead of rendering a second badge here.
+/**
+ * Share button for a finished quiz run, with image and text fallbacks.
+ *
+ * @param {object} props
+ * @param {string} props.quizTitle Quiz title used in the share text.
+ * @param {boolean[]} props.results Correct or wrong per question, in order.
+ * @param {number} props.score Number of correct answers.
+ * @param {number} props.total Number of questions.
+ * @param {string} props.tierKey Tier key: "bronze", "silver" or "gold".
+ * @param {string} props.tierLabel Translated tier name for the share text.
+ * @param {string} [props.url] Link in the share text. Defaults to the share page of the tier.
+ * @param {Function} props.getBadgeBlob Returns the promise of the rendered badge PNG, or null if not ready.
+ */
 const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url = defaultShareUrl(tierKey), getBadgeBlob }) => {
   const [status, setStatus] = useState('idle');
   const text = buildShareText({ quizTitle, results, score, total, tierLabel, url });
@@ -74,26 +89,9 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
   // The original text-only path, kept as the fallback for whenever badge
   // generation or every image-sharing route fails.
   const shareTextOnly = async () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({ text });
-        setStatus('idle');
-        return;
-      } catch (e) {
-        if (e && e.name === 'AbortError') {
-          setStatus('idle');
-          return;
-        }
-        // fall through to clipboard
-      }
-    }
-    try {
-      await navigator.clipboard.writeText(text);
-      showStatus('copiedText');
-    } catch (e) {
-      // Clipboard unavailable (permissions, http): nothing sensible to do
-      setStatus('idle');
-    }
+    // A shared, dismissed or failed copy all end idle, only a copy says so.
+    if ((await shareOrCopy(text)) === 'copied') showStatus('copiedText');
+    else setStatus('idle');
   };
 
   const handleShare = async () => {
@@ -152,11 +150,8 @@ const QuizShare = ({ quizTitle, results, score, total, tierKey, tierLabel, url =
 
     try {
       downloadBlob(blob, 'cardano-quiz-badge.png');
-      try {
-        await navigator.clipboard.writeText(text);
-      } catch (e) {
-        // Best effort only, the download already gave the user something.
-      }
+      // Best effort only, the download already gave the user something.
+      await copyText(text);
       showStatus('downloaded');
     } catch (e) {
       // Download itself failed: last resort is the original text-only share.

@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
-import { makeApiClient } from '@site/src/utils/insights/api';
-import { dateToEpoch } from '@site/src/utils/insights/epochs';
 import { resolveIconSrc } from '@site/src/utils/appIcon';
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -18,11 +15,12 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
 
 import { Showcases, Tags, Categories } from "@site/src/data/apps";
+import { UnlistedApps, findListedShowcase } from "@site/src/data/leaderboard-unlisted";
 import appStats from "@site/src/data/tx-stats.json";
 import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
-import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./leaderboard.module.css";
+import { translate } from "@docusaurus/Translate";
 
 const CIP20_LABEL = 674;
 
@@ -42,33 +40,33 @@ function formatShortNumber(num) {
   return num.toString();
 }
 
-// Override display info for apps not listed in apps.js
-const appOverrides = {
-  'fms-by-trivolve': { title: 'Forensic Management System', icon: '/img/app-icons/trivolve.jpg', category: 'notary' },
-};
+// Listed apps link to their /apps detail page, unlisted ones to their website.
+// Returns null when the entry has no link target.
+function resolveEntryLink(appDetails) {
+  if (!appDetails) return null;
+  if (appDetails.slug) return { href: `/apps/${appDetails.slug}`, external: false };
+  // Registry websites are validated at build time (leaderboard-unlisted.js)
+  return appDetails.website ? { href: appDetails.website, external: true } : null;
+}
 
-// Helper to find app details from apps.js by matching statsLabel or normalized title
+const showcaseByMetadataLabel = new Map(
+  Showcases.filter(app => typeof app.metadataLabel === 'number').map(app => [app.metadataLabel, app])
+);
+
+// Helper to find app details from apps.js, falling back to the unlisted app registry
 function findAppDetails(statEntry) {
-  // For metadata entries, check if metadataInfo has an appLabel linking to apps.js
+  // Metadata rows only resolve to a Showcase that claims the label via metadataLabel.
+  // Grouped rows (metadata-group-*) parse to NaN and never match.
   if (statEntry.isMetadata) {
-    const originalLabel = Number(String(statEntry.label).replace('metadata-', '').replace('metadata-group-', ''));
-    const info = metadataInfo[originalLabel];
-    if (info?.appLabel) {
-      return Showcases.find(app => app.statsLabel === info.appLabel);
-    }
+    return showcaseByMetadataLabel.get(Number(String(statEntry.label).replace('metadata-', ''))) || null;
   }
-  const fromApps = Showcases.find(app =>
-    app.statsLabel === statEntry.label ||
-    app.title.toLowerCase().replace(/\s+/g, '').replace(/-/g, '') === statEntry.label.replace(/-/g, '')
-  );
-  if (fromApps) return fromApps;
-  return appOverrides[statEntry.label] || null;
+  return findListedShowcase(statEntry.label) || UnlistedApps[statEntry.label] || null;
 }
 
 
 function getCategoryForApp(app) {
   if (!app) return 'Not Listed';
-  return Categories[app.category]?.label || 'Other';
+  return Categories[app.category]?.label || (app.slug ? 'Other' : 'Not Listed');
 }
 
 // Metadata label info: maps numeric labels to display names and existing categories
@@ -88,7 +86,7 @@ const metadataInfo = {
   1854:  { name: 'CIP-146 Multi-sig',         category: null },
   22:    { name: 'Clarity DAO',               category: 'Governance' },
   867:   { name: 'CIP-88 Token Policy',       category: null },
-  1447:  { name: 'Reeve On-chain Records',    category: null },
+  1447:  { name: 'Reeve On-chain Records',    category: 'Notary' },
   3692:  { name: 'CIP-149 DRep Compensation', category: 'Governance' },
   620:   { name: 'Seedtrace Supply Chain',    category: null },
   839:   { name: 'Agora Proposals',           category: 'Governance' },
@@ -101,14 +99,6 @@ const metadataInfo = {
   8413:  { name: 'CommitProof',  category: 'Notary' },
   8414:  { name: 'Claimpaign',  category: 'Distribution' },
 };
-
-// Derive appLabel links from Showcases so apps.js stays the single source of truth
-// for "which CIP metadata label belongs to which app".
-Showcases.forEach((app) => {
-  if (typeof app.metadataLabel === "number" && app.statsLabel && metadataInfo[app.metadataLabel]) {
-    metadataInfo[app.metadataLabel].appLabel = app.statsLabel;
-  }
-});
 
 const metadataGroups = {
   catalyst:  { name: 'Catalyst Voting',   category: 'Governance' },
@@ -160,8 +150,7 @@ function normalizeMetadataEntry(entry) {
 
 // Get category for any entry (app or metadata)
 function getCategoryForEntry(statEntry, appDetails) {
-  if (statEntry.isMetadata) return statEntry.metadataCategory || 'Not Listed';
-  return getCategoryForApp(appDetails);
+  return (statEntry.isMetadata && statEntry.metadataCategory) || getCategoryForApp(appDetails);
 }
 
 // Category colors keyed by Categories[id].label so getCategoryForApp output matches.
@@ -178,31 +167,28 @@ const categoryColors = {
   'Distribution': '#E07850',
   'Minting': '#42A5F5',
   'Notary': '#26A69A',
+  'Identity': '#8D6E63',
   'Not Listed': '#757575',
   'Other': '#9E9E9E'
 };
+
+// True below the given viewport width. Starts false so SSR and first render match.
+function useIsNarrow(maxWidth = 768) {
+  const [isNarrow, setIsNarrow] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia(`(max-width: ${maxWidth}px)`);
+    const update = () => setIsNarrow(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, [maxWidth]);
+  return isNarrow;
+}
 
 // Horizontal Bar Chart Component for Top Apps
 function TopAppsChart({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
@@ -272,35 +258,14 @@ function TopAppsChart({ data }) {
     };
   }, [data, isDark]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+  return <EChart option={option} height={400} />;
 }
 
 // Pie Chart Component for Category Distribution
 function CategoryPieChart({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
+  const isNarrow = useIsNarrow();
   const option = useMemo(() => {
     if (!data || !data.length) return null;
 
@@ -330,16 +295,17 @@ function CategoryPieChart({ data }) {
                  `${params.percent.toFixed(1)}% of tracked`;
         }
       },
+      // Narrow screens put the legend below the donut, beside it they overlap
       legend: {
-        orient: 'vertical',
-        right: '5%',
-        top: 'center',
+        ...(isNarrow
+          ? { orient: 'horizontal', bottom: 0, left: 'center' }
+          : { orient: 'vertical', right: '5%', top: 'center' }),
         textStyle: { color: isDark ? '#fff' : '#000' }
       },
       series: [{
         type: 'pie',
-        radius: ['40%', '70%'],
-        center: ['35%', '50%'],
+        radius: isNarrow ? ['38%', '66%'] : ['40%', '70%'],
+        center: isNarrow ? ['50%', '37%'] : ['35%', '50%'],
         avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 4,
@@ -359,39 +325,23 @@ function CategoryPieChart({ data }) {
         data: pieData
       }]
     };
-  }, [data, isDark]);
+  }, [data, isDark, isNarrow]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
+  // Height comes from CSS (taller on narrow screens) so the chart starts at its final size
+  return <EChart option={option} className={styles.categoryPie} />;
 }
 
 // Treemap Component for Metadata Labels
 function MetadataTreemap({ data }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
+  const isNarrow = useIsNarrow();
   const option = useMemo(() => {
     if (!data || !data.length) return null;
+
+    // Tiles below this share of the total are too small for a readable label
+    const total = data.reduce((sum, entry) => sum + entry.txCount, 0);
+    const minLabelShare = isNarrow ? 0.08 : 0.03;
 
     const treeData = data.map(entry => ({
       name: entry.name,
@@ -417,8 +367,10 @@ function MetadataTreemap({ data }) {
         label: {
           show: true,
           formatter: (params) => {
+            if (params.value / total < minLabelShare) return '';
             return `${params.name}\n${formatShortNumber(params.value)}`;
           },
+          overflow: 'truncate',
           color: '#fff',
           fontSize: 12,
           fontWeight: 500,
@@ -439,49 +391,45 @@ function MetadataTreemap({ data }) {
         }]
       }]
     };
-  }, [data, isDark]);
+  }, [data, isDark, isNarrow]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '350px', width: '100%' }} />;
+  return <EChart option={option} height={350} />;
 }
 
-// App Row Component for the leaderboard list
+// App Row Component for the leaderboard list. The whole row is the link, rows
+// without a link target render as a plain, non-interactive card.
 function AppRow({ app, rank, appDetails }) {
   const iconSrc = resolveIconSrc(appDetails);
   const initial = app.displayName.charAt(0).toUpperCase();
   const category = getCategoryForEntry(app, appDetails);
   const isTop3 = rank <= 3;
+  const link = resolveEntryLink(appDetails);
 
-  return (
-    <div className={styles.appRow}>
+  // Four direct children, one per grid column: rank, icon, name block, tx block.
+  const content = (
+    <>
       <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
         {rank}
       </div>
-      <div className={styles.appInfo}>
-        {iconSrc ? (
-          <img src={iconSrc} alt={app.displayName} className={styles.appIcon} />
-        ) : (
-          <div className={styles.appIconPlaceholder}>{initial}</div>
-        )}
-        <div className={styles.appDetails}>
-          <h4 className={styles.appName}>{app.displayName}</h4>
-          <div className={styles.tagRow}>
-            <span
-              className={styles.categoryTag}
-              style={{ backgroundColor: categoryColors[category] + '20', color: categoryColors[category] }}
-            >
-              {category}
+      {iconSrc ? (
+        <img src={iconSrc} alt="" className={styles.appIcon} />
+      ) : (
+        <div className={styles.appIconPlaceholder} aria-hidden="true">{initial}</div>
+      )}
+      <div className={styles.appDetails}>
+        <span className={styles.appName}>{app.displayName}</span>
+        <div className={styles.tagRow}>
+          <span
+            className={styles.categoryTag}
+            style={{ '--tag-color': categoryColors[category] }}
+          >
+            {category}
+          </span>
+          {app.isMetadata && (
+            <span className={styles.categoryTag} style={{ '--tag-color': '#757575' }}>
+              Standard
             </span>
-            {app.isMetadata && (
-              <span className={styles.categoryTag} style={{ backgroundColor: '#75757520', color: '#757575' }}>
-                Standard
-              </span>
-            )}
-          </div>
+          )}
         </div>
       </div>
       <div className={styles.txCount}>
@@ -491,19 +439,18 @@ function AppRow({ app, rank, appDetails }) {
           <span className={styles.statsNote}>{appDetails.statsNote}</span>
         )}
       </div>
-      {appDetails?.website ? (
-        <a
-          href={safeUrl(appDetails.website)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.visitLink}
-        >
-          Visit
-        </a>
-      ) : (
-        <span className={styles.visitLinkSpacer} />
-      )}
-    </div>
+    </>
+  );
+
+  if (!link) {
+    return <div className={styles.appRow}>{content}</div>;
+  }
+  // Link opens external URLs in a new tab with rel="noopener noreferrer" by itself
+  return (
+    <Link to={link.href} className={`${styles.appRow} ${styles.appRowLink}`}>
+      {content}
+      {link.external && <span className={styles.srOnly}>(opens in a new tab)</span>}
+    </Link>
   );
 }
 
@@ -556,18 +503,12 @@ function CategoryCard({ category, txCount, totalTx, appCount, includes }) {
 
 // Main Leaderboard Page
 export default function LeaderboardPage() {
-  const { siteConfig } = useDocusaurusContext();
-  const API_URL = siteConfig.customFields.CARDANO_ORG_API_URL;
-
   const [period, setPeriod] = useState('30d');
   const [showCip20, setShowCip20] = useState(false);
   const activeStats = period === '30d' ? appStats : appStats73;
   const appStatsData = activeStats.appStats;
   const metadataLabelStats = activeStats.metadataLabelStats;
   const metadata = activeStats.metadata;
-
-  const [coverageData, setCoverageData] = useState(null);
-  const [coverageLoading, setCoverageLoading] = useState(true);
 
   // Merge app stats with verified metadata label stats
   const unifiedData = useMemo(() => {
@@ -651,33 +592,16 @@ export default function LeaderboardPage() {
     ? new Date(metadata.reportingWindow.end).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     : 'N/A';
 
-  // Fetch network coverage data
-  useEffect(() => {
-    const fetchCoverage = async () => {
-      try {
-        const startEpoch = dateToEpoch(metadata.reportingWindow.start);
-        const endEpoch = dateToEpoch(metadata.reportingWindow.end);
-
-        const api = makeApiClient(API_URL);
-        const response = await api.get('/epoch_info');
-
-        const totalNetworkTx = response.data
-          .filter(e => e.epoch_no >= startEpoch && e.epoch_no <= endEpoch)
-          .reduce((sum, e) => sum + Number(e.tx_count || 0), 0);
-
-        setCoverageData({
-          totalNetworkTx,
-          coveragePercent: (totalTrackedTx / totalNetworkTx) * 100
-        });
-      } catch (err) {
-        console.error('Failed to fetch network coverage:', err);
-      } finally {
-        setCoverageLoading(false);
-      }
+  // Network total for the exact reporting window, from the same snapshot as
+  // the app stats, so it matches the figure shown elsewhere on the site.
+  const coverageData = useMemo(() => {
+    const totalNetworkTx = metadata.totalTxCount;
+    if (!totalNetworkTx) return null;
+    return {
+      totalNetworkTx,
+      coveragePercent: (totalTrackedTx / totalNetworkTx) * 100,
     };
-
-    fetchCoverage();
-  }, [API_URL, metadata.reportingWindow, totalTrackedTx]);
+  }, [metadata.totalTxCount, totalTrackedTx]);
 
   return (
     <Layout
@@ -736,13 +660,13 @@ export default function LeaderboardPage() {
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>
-                  {coverageLoading ? '--' : coverageData ? `${coverageData.coveragePercent.toFixed(1)}%` : '--'}
+                  {coverageData ? `${coverageData.coveragePercent.toFixed(1)}%` : '--'}
                 </span>
                 <span className={styles.statLabel}>Network Coverage</span>
                 <span className={styles.statPeriod}>
                   {coverageData
                     ? `${formatNumber(totalTrackedTx)} of ${formatNumber(coverageData.totalNetworkTx)} tx`
-                    : coverageLoading ? 'Loading...' : 'Unable to load'
+                    : 'Unable to load'
                   }
                 </span>
               </div>
@@ -755,8 +679,8 @@ export default function LeaderboardPage() {
             <SpacerBox size="small" />
 
             {/* Top On-Chain Activity Section */}
-            <Divider text="Top On-Chain Activity" id="top-apps" />
-            <TitleWithText
+            <Divider headingLevel={2} text="Top On-Chain Activity" id="top-apps" />
+            <TitleWithText headingLevel={2}
               description={[
                 `The top 10 entries by transaction count over the last ${period === '30d' ? '30 days' : 'year'}. This includes apps, protocols, and on-chain standards (labeled "Standard"). Bars are colored by category.`
               ]}
@@ -782,8 +706,8 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Hot Categories Section */}
-            <Divider text="Hot Categories" id="categories" />
-            <TitleWithText
+            <Divider headingLevel={2} text="Hot Categories" id="categories" />
+            <TitleWithText headingLevel={2}
               description={[
                 "Transaction distribution across app categories."
               ]}
@@ -811,8 +735,8 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Metadata Labels Section */}
-            <Divider text="Metadata Labels" id="metadata-labels" />
-            <TitleWithText
+            <Divider headingLevel={2} text="Metadata Labels" id="metadata-labels" />
+            <TitleWithText headingLevel={2}
               description={[
                 "Transaction counts by metadata label. These represent on-chain activity identified through transaction metadata, not smart contract interactions."
               ]}
@@ -828,7 +752,10 @@ export default function LeaderboardPage() {
                 <span className={styles.metadataColLabel}>Label</span>
                 <span className={styles.metadataColName}>Name</span>
                 <span className={styles.metadataColCategory}>Category</span>
-                <span className={styles.metadataColTx}>Transactions</span>
+                <span className={styles.metadataColTx}>
+                  <span className={styles.txHeaderLong}>Transactions</span>
+                  <span className={styles.txHeaderShort}>Tx</span>
+                </span>
               </div>
               {metadataLabels.map(entry => (
                 <div key={entry.label} className={styles.metadataRow}>
@@ -840,10 +767,7 @@ export default function LeaderboardPage() {
                     {entry.category && (
                       <span
                         className={styles.categoryTag}
-                        style={{
-                          backgroundColor: (categoryColors[entry.category] || '#757575') + '20',
-                          color: categoryColors[entry.category] || '#757575'
-                        }}
+                        style={{ '--tag-color': categoryColors[entry.category] || '#757575' }}
                       >
                         {entry.category}
                       </span>
@@ -857,7 +781,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="medium" />
 
             {/* Coverage Stats & CTA */}
-            <Divider text="Transaction Tracking" id="tracking" />
+            <Divider headingLevel={2} text="Transaction Tracking" id="tracking" />
 
             <div className={styles.coverageSection}>
               <div className={styles.coverageStats}>
@@ -908,9 +832,9 @@ export default function LeaderboardPage() {
 
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
-            <CtaOneColumn
-              title="Explore the full directory of Cardano applications, filter by category, and discover new projects."
-              buttonLabel="Browse Apps Directory"
+            <CtaOneColumn headingLevel={2}
+              title={translate({ id: "leaderboard.cta.title", message: "Explore the full directory of Cardano applications, filter by category, and discover new projects." })}
+              buttonLabel={translate({ id: "leaderboard.cta.button", message: "Browse Apps Directory" })}
               buttonLink="/apps/"
             />
           </BoundaryBox>

@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Cardanoのユースケース
 
-Cardanoはパブリックでパーミッションレスなレイヤー1ブロックチェーンであり、安全でスケーラブルかつ透明性の高いソリューションを求める企業や個人に最適です。サプライチェーンの効率化、グローバル決済、資産のトークン化など、堅牢なセキュリティと低消費電力で分散型イノベーションを提供します。 Whether it's streamlining supply chains, enabling global payments, or tokenizing assets, Cardano offers decentralized innovation with robust security and low energy usage.
+Cardanoはパブリックでパーミッションレスなレイヤー1ブロックチェーンであり、安全でスケーラブルかつ透明性の高いソリューションを求める企業や個人に最適です。サプライチェーンの効率化からグローバル決済、資産のトークン化まで、Cardanoは堅牢なセキュリティと低い消費電力で分散型のイノベーションを提供します。
 
 ## アイデンティティ
 
@@ -16,7 +16,7 @@ Cardanoはパブリックでパーミッションレスなレイヤー1ブロッ
 - **[教育資格証明](./education)** - ブロックチェーンで検証可能な学術資格
 - **[デジタルID](./digital-identity)** - 自己主権型のアイデンティティソリューション
 - **[金融KYC](./finance-kyc)** - 金融サービスにおける効率的な本人確認
-- **[公的文書](./government)** - 改ざん不可能な公式文書
+- **[行政文書](./government)** - 改ざん不可能な公式文書
 
 ## 金融
 
@@ -52,10 +52,10 @@ Cardanoはパブリックでパーミッションレスなレイヤー1ブロッ
 
 - **[投票システム](./voting-systems)** - 安全で透明性の高い選挙
 - **[ヘルスケア](./healthcare)** - ポータブルで安全な医療記録
-- **[音楽＆知的財産](./music-ip)** - アーティストへのロイヤリティ直接支払い
+- **[音楽と知的財産](./music-ip)** - アーティストへのロイヤリティ直接支払い
 
 ---
 
 ## エンタープライズソリューション
 
-Looking for proven enterprise deployments and case studies? 実績のあるエンタープライズ導入事例をお探しですか？[エンタープライズソリューション](/solutions)ページで、Cardano Foundationとパートナーによる実際の導入事例をご覧ください。
+実績のあるエンタープライズ導入事例やケーススタディをお探しですか？[エンタープライズソリューション](/solutions)ページで、Cardano Foundationとパートナーによる実際の導入事例をご覧ください。

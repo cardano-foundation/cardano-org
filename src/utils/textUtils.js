@@ -55,10 +55,12 @@ export function parseMarkdownLikeText(contentArray) {
         return part; // Return the part unchanged if it's neither a link nor bold text
       });
       return <React.Fragment key={`fragment-${index}`}>{parts}</React.Fragment>;
-    } else {
-      // If the content is not a string (e.g., a React element), return it directly
+    } else if (React.isValidElement(content)) {
+      // A React element is returned as is, with a key for the list
       return React.cloneElement(content, { key: `element-${index}` });
     }
+    // Missing content (undefined, null, false) renders nothing instead of throwing
+    return null;
   });
 }
 

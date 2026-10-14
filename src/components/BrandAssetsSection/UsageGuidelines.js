@@ -44,7 +44,7 @@ const donts = [
 export default function UsageGuidelines() {
   return (
     <div>
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.usage.title", message: "Usage Guidelines" })}
         id="usage-guidelines"
       />

@@ -73,6 +73,10 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
   const triggerRef = useRef(null);
   const panelRef = useRef(null);
   const hoverTimer = useRef(null);
+  // Set while the panel is open because the pointer rests on it. A click
+  // that follows a hover-open confirms the menu instead of toggling it shut
+  // under the cursor.
+  const openedByHover = useRef(false);
   const location = useLocation();
   const panelId = useId();
 
@@ -144,6 +148,7 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
     }
     clearTimeout(hoverTimer.current);
     hoverTimer.current = setTimeout(() => {
+      openedByHover.current = next;
       setOpen(next);
       if (next) {
         setEverOpened(true);
@@ -183,6 +188,11 @@ function MegaDropdownNavbarItem({label, className, customProps}) {
         aria-controls={panelId}
         onClick={() => {
           clearTimeout(hoverTimer.current);
+          if (open && openedByHover.current) {
+            openedByHover.current = false;
+            return;
+          }
+          openedByHover.current = false;
           const next = !open;
           setOpen(next);
           if (next) {

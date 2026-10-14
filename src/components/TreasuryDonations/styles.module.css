@@ -1,0 +1,11 @@
+.note {
+  composes: note from "../TreasurySections/styles.module.css";
+}
+
+.grid {
+  margin: 1rem 0;
+}
+
+.donateClosed {
+  padding: 1rem 0 2rem;
+}

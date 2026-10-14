@@ -29,6 +29,8 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 | `slightText` | `string[]` | | Extra muted lines rendered below the description. |
 | `buttonLabel` | `string` | | Call-to-action label. Requires `buttonLink` to appear. |
 | `buttonLink` | `string` | | Destination for the button. Requires `buttonLabel`. |
+| `headingLevel` | `number` | `1` | Heading level of the title, 1 to 6. The look stays the same, so the level can follow the page outline, for example `2` below a page hero. |
+| `className` | `string` | - | Extra class on the outer element. |
 
 ## Description formats
 

@@ -42,6 +42,8 @@ To render a grid of cards, map over your data and wrap the cards in a grid conta
 | `monogram` | string | No | Letter shown when no `logo` is given. Defaults to the first letter of `name`. |
 | `logoBackground` | string | No | CSS colour for the logo tile. Defaults to a light-blue tint. Use a brand colour behind real logos (e.g. `#0a0a0a`). |
 | `logoColor` | string | No | CSS colour for the monogram letter. Defaults to the brand blue. Use `#ffffff` on a dark `logoBackground`. |
+| `headingLevel` | number | No | Heading level of the project name, 1 to 6, default 3. The look stays the same. |
+| `className` | string | No | Extra class on the card. |
 
 ## Status values
 
@@ -89,7 +91,7 @@ The component uses CSS modules. Override styles by targeting these classes:
 
 - `.card` - the card container
 - `.linkCard` - added when the card is a link (hover elevation)
-- `.logoTile` / `.monogram` / `.logoImage` - the logo tile and its contents
+- `.logoTile` - the logo tile, a [Logo Tile](./logo-tile.md) whose CSS variables set the size, inset, background, and monogram color
 - `.name` - the project name
 - `.statusPill` / `.statusDot` - the status pill and its dot
 - `.statusBlue`, `.statusGreen`, `.statusPurple`, `.statusAmber`, `.statusGrey` - per-status colours

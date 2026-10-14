@@ -14,6 +14,7 @@ import WalletFinderCard from "@site/src/components/WalletFinderCard";
 import { getWallets, filterWallets, getBeginnerWallets } from "@site/src/utils/walletFinderUtils";
 import { toggleListItem } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const TITLE = translate({id: 'walletFinder.hero.title', message: 'Find a Cardano Wallet'});
 const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Compare Cardano wallets by platform, features, and security to find the one that fits your needs'});
@@ -145,7 +146,7 @@ function WalletFinderHeader() {
     <SiteHero
       title={TITLE}
       description={DESCRIPTION}
-      bannerType="wallets"
+      bannerType="starburst"
     />
   );
 }
@@ -227,7 +228,7 @@ export default function WalletFinder() {
 
   return (
     <Layout title={META_TITLE} description={META_DESCRIPTION}>
-      <OpenGraphInfo pageName="wallets" />
+      <OpenGraphInfo />
       <WalletFinderHeader />
       <main>
         <BackgroundWrapper backgroundType="adaLight">
@@ -279,13 +280,13 @@ export default function WalletFinder() {
               </p>
             </div>
           ) : (
-            <div className={styles.walletGrid}>
+            <Grid minItemWidth="300px" gap="var(--site-space-md)" stackOnMobile className={styles.walletGrid}>
               {filteredWallets.map((wallet) => (
                 <WalletFinderCard key={wallet.title} wallet={wallet} />
               ))}
-            </div>
+            </Grid>
           )}
-          <TitleWithText
+          <TitleWithText headingLevel={2}
             titleType="black"
             headingDot={false}
             slightText={[translate({id: 'walletFinder.disclaimer', message: 'The wallets listed are provided for informational purposes only and are not endorsed or approved. Their use is strictly at your own risk. The descriptions have been provided by the respective project teams.'})]}

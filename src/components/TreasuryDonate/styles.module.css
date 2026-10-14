@@ -232,3 +232,26 @@
   background: rgba(255, 193, 7, 0.15);
   color: #6b5200;
 }
+
+/* Dark mode: the light text colors above sit on a dark surface, so the
+   banners switch to light text on a slightly stronger tint (5.7:1 to 8.4:1). */
+html[data-theme="dark"] .bannerInfo {
+  background: rgba(0, 127, 255, 0.16);
+  color: #9ec5fe;
+}
+
+html[data-theme="dark"] .bannerSuccess {
+  background: rgba(46, 164, 79, 0.18);
+  color: #75b798;
+}
+
+html[data-theme="dark"] .bannerError {
+  background: rgba(220, 53, 69, 0.16);
+  color: #ea868f;
+}
+
+html[data-theme="dark"] .bannerWarning {
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffda6a;
+}
+

@@ -11,6 +11,16 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 
 The [`<Divider>`](/docs/get-involved/components/divider) component adds a horizontal line with spacing and optional text. You can assign an optional `id` to it for linking to a specific anchor, such as [`#hello`](#hello). It can also be used invisibly, serving solely as an anchor like [`#hidden`](#hidden).
 
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `text` | `string` | - | Label shown above the line. |
+| `id` | `string` | - | Anchor id, so the section can be linked as `/page#id`. |
+| `white` | `boolean` | `false` | White label and line for dark backgrounds. |
+| `headingLevel` | `number` | `0` | `0` renders the label as a small line above the section title, without heading semantics. Set `2` when the label itself names the section, for example above cards or an FAQ that have no section title of their own. The look stays the same. |
+| `className` | `string` | - | Extra class on the wrapper. |
+
 ## Simple Divider
 
 Example of a simple [`<Divider>`](/docs/get-involved/components/divider) with a text.

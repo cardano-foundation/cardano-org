@@ -8,7 +8,7 @@ import _debounce from "lodash/debounce";
 import clsx from "clsx";
 
 import IntentChips from "@site/src/components/showcase/IntentChips";
-import PageCTA from "@site/src/components/PageCTA";
+import PageCTA from "@site/src/components/Layout/PageCTA";
 import ShowcaseSort, {
   readSortOption,
   DEFAULT_SORT,
@@ -39,6 +39,7 @@ import {
 import { jsonLdString } from "@site/src/utils/jsonLd";
 
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // SEO meta — long, optimized for SERP. Used by <Layout>.
 const SEO_TITLE = translate({
@@ -621,13 +622,13 @@ function AllAppsSection({ apps, sortOption, isUnfiltered, heading }) {
           )}
         </span>
       </header>
-      <ul className={styles.rowGrid}>
+      <Grid as="ul" minItemWidth="360px" gap="0.6rem" className={styles.rowGrid}>
         {visible.map((app) => (
           <li key={app.slug}>
             <AppRow app={app} />
           </li>
         ))}
-      </ul>
+      </Grid>
     </section>
   );
 }

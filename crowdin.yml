@@ -12,6 +12,10 @@ files:
   - source: /i18n/en/docusaurus-theme-classic/*.json
     translation: /i18n/%two_letters_code%/docusaurus-theme-classic/%original_file_name%
 
+  # Blog title and description for /news
+  - source: /i18n/en/docusaurus-plugin-content-blog/options.json
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/%original_file_name%
+
   # Docs plugin translations
   - source: /i18n/en/docusaurus-plugin-content-docs/**/*.json
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%

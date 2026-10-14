@@ -31,14 +31,14 @@ export default function Home() {
       <main>
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
-          <TitleWithText
+          <TitleWithText headingLevel={2}
               description={[
                 translate({id: 'useCases.intro.description', message: "Explore blockchain applications across industries. From identity verification to supply chain tracking, Cardano provides secure, scalable solutions for real-world challenges."}),
               ]}
             />
 
             <Divider text={translate({id: 'useCases.divider.identity', message: 'Identity'})} id="identity" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.education.title', message: 'Education'})}
               description={[
                 translate({id: 'useCases.education.description1', message: "The issuance of academic certifications is heavily centralized. If diplomas, degrees, or other credentials are damaged or lost, the re-issue process is often costly, and the issuing institution might no longer exist. Sharing these credentials is also difficult, as academic achievements are traditionally issued in physical form, which makes it almost impossible to share when and where needed."}),
@@ -54,7 +54,7 @@ export default function Home() {
             <SpacerBox size="medium" />
 
             <Divider text={translate({id: 'useCases.divider.identity', message: 'Identity'})} id="identity" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.digitalIdentity.title', message: 'Digital Identity Management'})}
               description={[
                 translate({id: 'useCases.digitalIdentity.description1', message: "Identity systems today are often centralized, making them vulnerable to breaches and fraud. Individuals have limited control over their personal data, and verification processes can be slow and expensive."}),
@@ -64,7 +64,7 @@ export default function Home() {
               ]}
               headingDot={false}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.identityFinance.title', message: 'Finance'})}
               description={[
                 translate({id: 'useCases.identityFinance.description', message: "Identity verification is a critical step in onboarding new clients for financial institutions and agencies. However, the process is often slow, resource-intensive, and reliant on multiple third parties."}),
@@ -73,7 +73,7 @@ export default function Home() {
               headingDot={false}
             />
 
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.government.title', message: 'Government'})}
               description={[
                 translate({id: 'useCases.government.description1', message: "Current systems for issuing and verifying credentials are inefficient and centralized. Control over important documents often remains with the issuing authority rather than the individual, creating a reliance on third-party agencies for verification."}),
@@ -85,7 +85,7 @@ export default function Home() {
             />
 
             <Divider text={translate({id: 'useCases.divider.finance', message: 'Finance'})} id="finance" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.defi.title', message: 'Decentralized Finance (DeFi)'})}
               description={[
                 translate({id: 'useCases.defi.description1', message: "Access to financial services remains limited for millions worldwide. Centralized institutions control financial systems, leading to inefficiencies, high fees, and restricted inclusivity."}),
@@ -96,7 +96,7 @@ export default function Home() {
               ]}
               headingDot={true}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.payments.title', message: 'Payment Methods'})}
               description={[
                 translate({id: 'useCases.payments.description1', message: "International payments often face high fees, long processing times, and dependency on intermediaries. These barriers make cross-border transactions inefficient and costly."}),
@@ -109,7 +109,7 @@ export default function Home() {
             />
 
             <Divider text={translate({id: 'useCases.divider.supplyChain', message: 'Supply Chain'})} id="supply-chain" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.agriculture.title', message: 'Agriculture'})}
               description={[
                 translate({id: 'useCases.agriculture.description1', message: "The pandemic has highlighted the critical importance of maintaining resilient and transparent supply chains, especially in agriculture. As a primary source of food and sustenance, agriculture's supply chain must remain operational to support livelihoods and ensure the well-being of populations worldwide."}),
@@ -118,7 +118,7 @@ export default function Home() {
               ]}
               headingDot={true}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.retail.title', message: 'Retail'})}
               description={[
                 translate({id: 'useCases.retail.description1', message: "[Counterfeit goods pose a significant challenge to the global economy](https://www.visualcapitalist.com/300-billion-counterfeit-goods-problem/), causing financial losses, eroding brand reputation, and reducing customer trust."}),
@@ -127,7 +127,7 @@ export default function Home() {
               ]}
               headingDot={false}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.supplyChainManagement.title', message: 'Supply Chain Management'})}
               description={[
                 translate({id: 'useCases.supplyChainManagement.description1', message: "Supply chains often lack transparency and efficiency, leading to counterfeit goods, poor quality control, and increased costs."}),
@@ -138,7 +138,7 @@ export default function Home() {
             />
 
             <Divider text={translate({id: 'useCases.divider.socialImpact', message: 'Social Impact'})} id="social-impact" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.socialPrograms.title', message: 'Social Programs'})}
               description={[
                 translate({id: 'useCases.socialPrograms.description1', message: "Social and public programs often suffer from inefficiencies, fraud, and lack of transparency. Donors and beneficiaries lack visibility into how funds are allocated and spent."}),
@@ -149,7 +149,7 @@ export default function Home() {
             />
 
             <Divider text={translate({id: 'useCases.divider.dataTechnology', message: 'Data and Technology'})} id="data-technology" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.dataStorage.title', message: 'Data Storage'})}
               description={[
                 translate({id: 'useCases.dataStorage.description1', message: "Centralized data storage solutions, like server farms, are prone to failures, breaches, and inefficiencies. Storing vast amounts of data in a few physical locations creates vulnerabilities and increases costs."}),
@@ -158,7 +158,7 @@ export default function Home() {
               ]}
               headingDot={true}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.tokenizedAssets.title', message: 'Tokenized Assets'})}
               description={[
                 translate({id: 'useCases.tokenizedAssets.description1', message: "Investing in traditional assets often requires intermediaries and incurs high fees. Transparency and liquidity are also limited, restricting broader participation."}),
@@ -169,7 +169,7 @@ export default function Home() {
             />
 
             <Divider text={translate({id: 'useCases.divider.diverseOpportunities', message: 'Diverse Opportunities'})} id="diverse" />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.votingSystems.title', message: 'Voting Systems'})}
               description={[
                 translate({id: 'useCases.votingSystems.description1', message: "Election systems often face issues such as fraud, manipulation, and lack of transparency. Traditional voting methods are costly to implement and challenging to audit."}),
@@ -178,7 +178,7 @@ export default function Home() {
               ]}
               headingDot={true}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.healthCare.title', message: 'Health Care'})}
               description={[
                 translate({id: 'useCases.healthCare.description1', message: "The healthcare industry faces significant challenges in managing patient data securely and efficiently. Patient records are often siloed in centralized systems, leading to delays and inefficiencies. Sharing medical data across institutions and regions is cumbersome, increasing risks to patient care."}),
@@ -187,7 +187,7 @@ export default function Home() {
               ]}
               headingDot={false}
             />
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               title={translate({id: 'useCases.musicIndustry.title', message: 'Music Industry'})}
               description={[
                 translate({id: 'useCases.musicIndustry.description1', message: "Artists and content creators often face challenges in tracking royalties, managing copyright, and ensuring fair revenue distribution. The current systems are opaque and prone to disputes, leaving artists with little transparency or control."}),

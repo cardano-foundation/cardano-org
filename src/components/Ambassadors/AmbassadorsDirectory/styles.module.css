@@ -150,3 +150,11 @@
     width: 100%;
   }
 }
+
+/* Dark mode: the brand blue #3a5fd6 as text reaches only 2.8:1 on the dark
+   cards, a light tint of the same blue keeps 7:1 and more. */
+[data-theme="dark"] .clearButton:hover,
+[data-theme="dark"] .loadMore,
+[data-theme="dark"] .loadMore:hover {
+  color: #9db3ec;
+}

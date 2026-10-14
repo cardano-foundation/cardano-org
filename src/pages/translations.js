@@ -17,7 +17,8 @@ function ProgressBar({ percentage }) {
     }}>
       <div style={{
         width: `${percentage}%`,
-        backgroundColor: percentage === 100 ? '#4caf50' : percentage < 15 ? '#9e9e9e' : '#2196f3',
+        // Darker fills keep the white percentage label above 4.5:1
+        backgroundColor: percentage === 100 ? '#2e7d32' : percentage < 15 ? '#6b6b6b' : '#1565c0',
         height: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -49,7 +50,7 @@ function LocaleCard({ language }) {
 
       <ProgressBar percentage={language.translationProgress} />
 
-      <div style={{ marginTop: '8px', fontSize: '13px', color: '#666' }}>
+      <div style={{ marginTop: '8px', fontSize: '13px', color: 'var(--ifm-color-emphasis-700)' }}>
         {fmt(language.words.translated)} / {fmt(language.words.total)} words
         {' · '}
         {fmt(language.phrases.translated)} / {fmt(language.phrases.total)} phrases
@@ -67,7 +68,7 @@ function TopContributors({ contributors }) {
   return (
     <div style={{ marginTop: '40px' }}>
       <h2>Top Contributors</h2>
-      <p style={{ color: '#666', marginBottom: '20px' }}>
+      <p style={{ color: 'var(--ifm-color-emphasis-700)', marginBottom: '20px' }}>
         Recognising our most active translators by words translated.
       </p>
       <div style={{
@@ -92,7 +93,7 @@ function TopContributors({ contributors }) {
           <tbody>
             {contributors.map((c) => (
               <tr key={c.rank} style={{ borderBottom: '1px solid #eee' }}>
-                <td style={{ padding: '10px 16px', fontWeight: 'bold', color: '#666' }}>{c.rank}</td>
+                <td style={{ padding: '10px 16px', fontWeight: 'bold', color: 'var(--ifm-color-emphasis-700)' }}>{c.rank}</td>
                 <td style={{ padding: '10px 16px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     {c.avatarUrl && (
@@ -105,7 +106,7 @@ function TopContributors({ contributors }) {
                     {c.user}
                   </div>
                 </td>
-                <td style={{ padding: '10px 16px', fontSize: '13px', color: '#666' }}>
+                <td style={{ padding: '10px 16px', fontSize: '13px', color: 'var(--ifm-color-emphasis-700)' }}>
                   {c.languages.join(', ')}
                 </td>
                 <td style={{ padding: '10px 16px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>
@@ -157,7 +158,7 @@ export default function TranslationsPage() {
               }}>
                 <h3 style={{ marginTop: 0 }}>Overall Progress</h3>
                 <ProgressBar percentage={overallPercentage} />
-                <p style={{ marginTop: '12px', marginBottom: 0, color: '#666' }}>
+                <p style={{ marginTop: '12px', marginBottom: 0, color: 'var(--ifm-color-emphasis-700)' }}>
                   {overallTranslated} of {overallTotal} phrases translated across {languages.length} language{languages.length !== 1 && 's'}
                 </p>
               </div>
@@ -196,7 +197,7 @@ export default function TranslationsPage() {
               marginBottom: '32px',
               textAlign: 'center',
             }}>
-              <p style={{ marginBottom: 0, color: '#666' }}>
+              <p style={{ marginBottom: 0, color: 'var(--ifm-color-emphasis-700)' }}>
                 Translation progress data is not yet available. Check back soon or visit{' '}
                 <a href="https://crowdin.com/project/cardano-org" target="_blank" rel="noopener noreferrer">
                   our Crowdin project

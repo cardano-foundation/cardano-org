@@ -23,11 +23,12 @@ export default function ConstitutionDocument({ content }) {
   // sequence, so the ids match the TOC. Override h1-h6 so every heading
   // react-markdown renders consumes the slugger in document order.
   const slug = createSlugger();
-  const heading = (Tag) => function Heading({ children }) {
-    return <Tag id={slug(childrenToText(children))}>{children}</Tag>;
+  const heading = (Tag, className) => function Heading({ children }) {
+    return <Tag id={slug(childrenToText(children))} className={className}>{children}</Tag>;
   };
   const components = {
-    h1: heading("h1"),
+    // The page hero is the h1, so the document title becomes an h2 that keeps the h1 look
+    h1: heading("h2", "heading-look-h1"),
     h2: heading("h2"),
     h3: heading("h3"),
     h4: heading("h4"),

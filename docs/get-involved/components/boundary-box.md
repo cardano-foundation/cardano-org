@@ -15,6 +15,13 @@ Usually you put everything inside a [`<BoundaryBox>`](/docs/get-involved/compone
 
 :::
 
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `node` | - | Content to keep inside the page boundary. |
+| `className` | `string` | - | Extra class on the wrapper. Other props, such as `id`, are passed to the wrapper as well. |
+
 ## Example
 
 [`<BoundaryBox>`](/docs/get-involved/components/boundary-box) is just a wrapper component. It is used to wrap other elements or components as shown:

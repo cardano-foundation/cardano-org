@@ -78,7 +78,7 @@
 }
 
 .appListItem:hover {
-  background-color: var(--ifm-color-emphasis-50);
+  background-color: var(--ifm-color-emphasis-100);
   text-decoration: none;
 }
 

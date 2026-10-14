@@ -98,7 +98,6 @@
   color: var(--ifm-color-emphasis-700);
 }
 
-
 .row {
   position: relative;
 }
@@ -226,100 +225,10 @@
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
   margin-bottom: 0.85rem;
-  padding-left: 0.5rem;
-}
-
-.panelAccordion {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.accordion {
-  background-color: var(--ifm-background-surface-color, #fff);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.accordionOpen {
-  border-color: rgba(0, 51, 173, 0.35);
-  box-shadow: 0 4px 16px rgba(0, 51, 173, 0.06);
-  background-color: rgba(0, 51, 204, 0.025);
-}
-
-.accordionTrigger {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  width: 100%;
-  padding: 0.95rem 1.1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-}
-
-.accordionIcon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: rgba(0, 51, 173, 0.08);
-  color: var(--ifm-color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.accordionOpen .accordionIcon {
-  background-color: var(--ifm-color-primary);
-  color: #fff;
-}
-
-.accordionQuestion {
-  flex: 1;
-  font-weight: 600;
-  color: var(--ifm-color-emphasis-900);
-  line-height: 1.35;
-}
-
-.accordionAnswer {
-  padding: 0 1.1rem 1.1rem calc(1.1rem + 22px + 0.85rem);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.accordionAnswer p {
-  margin: 0 0 0.6rem;
-}
-
-.accordionAnswer p:last-child {
-  margin-bottom: 0;
-}
-
-.accordionAnswer ul {
-  margin: 0.4rem 0 0.6rem;
-  padding-left: 1.2rem;
 }
 
 [data-theme='dark'] .popularCard {
   border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .accordion {
-  border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .accordionOpen {
-  border-color: rgba(143, 177, 255, 0.5);
-  background-color: rgba(143, 177, 255, 0.05);
 }
 
 @media (max-width: 996px) {
@@ -356,12 +265,10 @@
   .popularCard {
     padding: 1rem 2.5rem 1rem 1rem;
   }
+}
 
-  .accordionTrigger {
-    padding: 0.85rem 1rem;
-  }
-
-  .accordionAnswer {
-    padding: 0 1rem 1rem calc(1rem + 22px + 0.85rem);
-  }
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .tabSelected .tabIcon {
+  background-color: var(--ifm-color-primary-darker);
 }

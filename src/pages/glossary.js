@@ -20,6 +20,8 @@ import SiteHero from '@site/src/components/Layout/SiteHero';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import styles from './glossary.module.css';
+import { scrollBehavior } from "@site/src/utils/jsUtils";
+import Grid from "@site/src/components/Layout/Grid";
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const POPULAR_PILL_SLUGS = ['eutxo', 'stake-pool', 'drep', 'governance-action', 'smart-contract', 'treasury'];
@@ -371,7 +373,7 @@ function LearningPathsSection({ iconBasePath }) {
           })}
         </p>
       </div>
-      <ul className={styles.pathsGrid}>
+      <Grid as="ul" minItemWidth="280px" fit className={styles.pathsGrid}>
         {LEARNING_PATHS.map(p => (
           <li key={p.id}>
             <Link
@@ -428,7 +430,7 @@ function LearningPathsSection({ iconBasePath }) {
             </Link>
           </li>
         ))}
-      </ul>
+      </Grid>
     </section>
   );
 }
@@ -540,7 +542,7 @@ export default function GlossaryIndex() {
   const onLetterClick = (letter) => {
     if (typeof document === 'undefined') return;
     const el = document.getElementById(`glossary-letter-${letter}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) el.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
   };
 
   const pageTitle = translate({
@@ -578,7 +580,7 @@ export default function GlossaryIndex() {
           onSubmitQuery={() => {
             if (typeof document === 'undefined') return;
             const el = document.getElementById('glossary-results');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (el) el.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
           }}
           glossaryBaseUrl={glossaryBaseUrl}
         />
@@ -665,7 +667,7 @@ export default function GlossaryIndex() {
                         className={styles.letterGroup}
                       >
                         <h3 className={styles.letterHeading}>{letter}</h3>
-                        <ul className={styles.cardGrid}>
+                        <Grid as="ul" gap="0.85rem" className={styles.cardGrid}>
                           {items.map(t => (
                             <li key={t.slug}>
                               <TermCard
@@ -674,7 +676,7 @@ export default function GlossaryIndex() {
                               />
                             </li>
                           ))}
-                        </ul>
+                        </Grid>
                       </div>,
                     );
                     if (i === pathsAfterIdx) {
@@ -696,13 +698,13 @@ export default function GlossaryIndex() {
                   })}
                 </p>
               ) : (
-                <ul className={styles.cardGrid}>
+                <Grid as="ul" gap="0.85rem" className={styles.cardGrid}>
                   {filteredTerms.map(t => (
                     <li key={t.slug}>
                       <TermCard term={t} glossaryBaseUrl={glossaryBaseUrl} />
                     </li>
                   ))}
-                </ul>
+                </Grid>
               )}
             </div>
           </div>

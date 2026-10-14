@@ -19,7 +19,7 @@ const { createSitemapItemsHook } = require('./scripts/sitemap-hreflang');
 const getNavbarItems = require('./src/data/navbar');
 
 // enable or disable the announcement header bar (see 'announcementBar' section below)
-const isAnnouncementActive = false;
+const isAnnouncementActive = true;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -51,6 +51,8 @@ const config = {
   },
 
   customFields: {
+    // Date of this build (YYYY-MM-DD); used to derive date-based labels so server and client agree.
+    BUILD_DATE: new Date().toISOString().slice(0, 10),
     repository: `${vars.repository}`,
     branch: `${vars.branch}`,
 
@@ -243,6 +245,13 @@ const config = {
             return [`${prefix}/why`, `${prefix}/discover-cardano`];
           }
 
+          // The Pill Tabs page became the Tabs page.
+          const tabsDoc = existingPath.match(/^(\/(?:ja|de|es|vi))?\/docs\/get-involved\/components\/tabs\/?$/);
+          if (tabsDoc) {
+            const prefix = tabsDoc[1] || '';
+            return [`${prefix}/docs/get-involved/components/pill-tabs`];
+          }
+
           // The blog tag taxonomy was consolidated to the 7 tags in
           // blog/tags.yml. Redirect the retired tag pages to the tag they were
           // folded into so old links and search results keep working.
@@ -261,6 +270,16 @@ const config = {
             if (retired) {
               return retired.map((slug) => `${prefix}/news/tags/${slug}`);
             }
+          }
+
+          // Renamed apps keep their old detail URL, keyed by the new slug.
+          const appRenames = {
+            'cardano-govscope': ['chang-watch'],
+          };
+          const appMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/apps\/([a-z0-9-]+)\/?$/);
+          if (appMatch && appRenames[appMatch[2]]) {
+            const prefix = appMatch[1] || '';
+            return appRenames[appMatch[2]].map((slug) => `${prefix}/apps/${slug}`);
           }
 
           // Dropped tags (format modifiers) point at the news index.
@@ -455,6 +474,10 @@ const config = {
                 to: '/docs/get-involved',
               },
               {
+                label: 'Grants and Funding',
+                to: '/grants-funding',
+              },
+              {
                 label: 'Code of Conduct',
                 to: '/community-code-of-conduct',
               },
@@ -481,9 +504,9 @@ const config = {
       // id: always change it when changing the announcement
       // backgroundColor: use #1442B3 for announcements
       announcementBar: isAnnouncementActive ? {
-        id: "announcement_index5", // Any value that will identify this message + increment the number every time to be unique
+        id: "announcement_index6", // Any value that will identify this message + increment the number every time to be unique
         content:
-          `<strong>Cardano Summit 2025 Berlin</strong> 🎟️ Secure your pass now ➡️ <strong><a href="https://summit.cardano.org/page/5056323/tickets#section-6268783" style="color:white; font-weight:bold; text-decoration:underline;">Visit the ticket shop</a></strong>`,
+          `<strong>Cardano turned 9</strong>. Watch the community highlights video on <strong><a href="https://youtu.be/qTJaTArwyeM" target="_blank" rel="noopener noreferrer" style="color:white; font-weight:bold; text-decoration:underline;">YouTube</a></strong>`,
         backgroundColor: "#1442B3",
         textColor: "#FFFFFF", // Use #FFFFFF
         isCloseable: true, // Use true

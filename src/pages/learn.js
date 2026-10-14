@@ -18,6 +18,7 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { getLearningPath, getLevelLabel, ACADEMY_CTA_URL } from "@site/src/data/learningPath";
 import styles from "./learn.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // Compact link card for the stage grids. RoleCard's large icon halo leaves
 // too little room for text in a dense three-column directory.
@@ -53,13 +54,13 @@ function Stage({ stage, index }) {
       >
         {getLevelLabel(stage.level)}
       </span>
-      <TitleWithText title={stage.title} description={stage.intro} headingDot={true} />
-      <div className={styles.cardGrid}>
+      <TitleWithText headingLevel={2} title={stage.title} description={stage.intro} headingDot={true} />
+      <Grid fit className={styles.cardGrid}>
         {stage.items.map((item) => (
           <PathCard key={item.key} item={item} />
         ))}
-      </div>
-      {stage.quiz && <TitleWithText description={stage.quiz} />}
+      </Grid>
+      {stage.quiz && <TitleWithText headingLevel={2} description={stage.quiz} />}
       <SpacerBox size="small" />
     </>
   );
@@ -106,7 +107,7 @@ export default function Learn() {
         </BackgroundWrapper>
         <BackgroundWrapper backgroundType="gradientDark">
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: "learn.cta.title", message: "Want a certificate at the end? The Cardano Academy offers free courses on everything above." })}
               buttonLabel={translate({ id: "learn.cta.button", message: "Explore the Academy" })}
               buttonLink={ACADEMY_CTA_URL}

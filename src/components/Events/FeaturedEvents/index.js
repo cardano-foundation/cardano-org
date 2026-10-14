@@ -1,6 +1,6 @@
 import React from 'react';
 import { translate } from '@docusaurus/Translate';
-import HorizontalScroller from '@site/src/components/HorizontalScroller';
+import HorizontalScroller from '@site/src/components/Layout/HorizontalScroller';
 import FeaturedEventCard from '@site/src/components/Events/FeaturedEventCard';
 
 // Highlighted (curated) events shown as a horizontally scrollable row above the
