@@ -7,7 +7,9 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import ContactFormHS from "@site/src/components/ContactFormHS";
+import HubSpotForm from "@site/src/components/Layout/HubSpotForm";
+import HubSpotConfig from "@site/hubspot.config";
+import styles from "./contact.module.css";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
@@ -128,7 +130,7 @@ export default function Home() {
           {/* Topic Selection, each topic will render a different component */}
           {translate({id: 'contact.select.prefix', message: 'I have'})}
           <select
-            className={clsx("selectField", "selectFieldArrow")}
+            className={clsx(styles.selectField, styles.selectFieldArrow)}
             onChange={handleTopicChange}
             value={selectedTopic ?? ""}
             aria-label={translate({id: 'contact.select.label', message: 'What can we help you with?'})}
@@ -148,7 +150,7 @@ export default function Home() {
           {selectedTopic === "iog" && <TechnicalIssueForm />}
           {selectedTopic === "intersect" && <JoinIntersect />}
           {selectedTopic === "sponsor" && <SponsorshipForm />}
-          {selectedTopic === "different" && <ContactFormHS />}
+          {selectedTopic === "different" && <HubSpotForm {...HubSpotConfig.contactForm} />}
           {/* ... */}
         </BoundaryBox>
         <SpacerBox size="medium" />

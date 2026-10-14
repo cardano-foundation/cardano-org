@@ -45,6 +45,7 @@ const DOC_PAGE = {
   FAQSection: '../faq-component.md',
   Layer2Card: 'layer-2-card.md',
   EChart: 'echart.md',
+  HubSpotForm: 'hubspot-form.md',
 };
 
 // Components that need no doc page of their own.
