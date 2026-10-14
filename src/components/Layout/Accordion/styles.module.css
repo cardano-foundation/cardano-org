@@ -1,14 +1,16 @@
 /*
  * Accordion: plain rows on the page background, separated by hairlines.
- * Matches the FAQ block of the /sustainability design (Figma node 544:337):
- * 14px semibold question, plus / minus icon on the right, 14px / 23px muted
- * answer capped at 940px. No card surface, so it inverts for free in dark mode.
+ * Based on the FAQ block of the /sustainability design (Figma node 544:337),
+ * with the 16px question and brand-blue icon of the /programmable-tokens FAQ:
+ * semibold question, plus / minus icon on the right, 14px / 23px muted answer
+ * capped at 940px. No rule above the first row, because the section heading
+ * above it (Divider, SectionHeader) already draws one. No card surface, so it
+ * inverts for free in dark mode.
  */
 .accordion {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .item {
@@ -47,9 +49,9 @@
   cursor: pointer;
   text-align: left;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 24px;
   color: var(--ifm-color-emphasis-900);
   transition:
     color var(--site-duration-base) var(--site-ease),
@@ -82,11 +84,6 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: var(--ifm-color-emphasis-700);
-  transition: color var(--site-duration-base) var(--site-ease);
-}
-
-.trigger:hover .icon {
   color: var(--ifm-color-primary);
 }
 
@@ -152,7 +149,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .trigger,
-  .icon,
   .panel,
   .item.itemOpen .panel {
     transition: none;

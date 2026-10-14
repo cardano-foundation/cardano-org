@@ -511,7 +511,7 @@ img {
   background-color: transparent;
 }
 
-/** Collapsible FAQ **/
+/** Collapsible rows of the governance chart list (GovernanceCharts) **/
 
 .Collapsible {
   border: none;
@@ -544,15 +544,6 @@ img {
   background-position: center;
 }
 
-.Collapsible__trigger.is-open:after {
-  transform: rotate(180deg);
-}
-
-.Collapsible__contentOuter {
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-
 .Collapsible__contentInner {
   padding: 1rem;
 }
@@ -567,17 +558,6 @@ img {
   background-color: #fdfdfb;
   /* even rows */
 }
-
-[data-theme="dark"] .Collapsible.odd {
-  background-color: #f6f7f9;
-  /* odd rows */
-}
-
-[data-theme="dark"] .Collapsible.even {
-  background-color: #fdfdfb;
-  /* even rows */
-}
-
 
 [data-theme="dark"] .Collapsible.odd {
   background-color: #2d2d2d;

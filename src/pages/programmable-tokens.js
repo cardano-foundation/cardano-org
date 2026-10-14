@@ -221,7 +221,7 @@ export default function ProgrammableTokens() {
           <BoundaryBox>
             <section className={styles.section}>
               <SectionHeader title={FAQ.title} />
-              <Accordion className={styles.faq} items={FAQ.items} defaultOpenIndex={0} />
+              <Accordion items={FAQ.items} defaultOpenIndex={0} />
             </section>
           </BoundaryBox>
         </BackgroundWrapper>
