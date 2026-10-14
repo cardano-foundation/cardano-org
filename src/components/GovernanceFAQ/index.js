@@ -1,10 +1,8 @@
-import React, { useState, useRef, useEffect, useMemo, useId } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import clsx from "clsx";
 import {
   FaBullhorn,
   FaCog,
-  FaPlus,
-  FaMinus,
   FaRocket,
   FaStar,
   FaUniversity,
@@ -12,8 +10,9 @@ import {
 } from "react-icons/fa";
 import { translate } from "@docusaurus/Translate";
 import Divider from "@site/src/components/Layout/Divider";
-import { renderAnswerArray } from "@site/src/utils/textUtils";
+import Accordion, { whenSettled } from "@site/src/components/Layout/Accordion";
 import { scrollToElement } from "@site/src/utils/jsUtils";
+import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
 import styles from "./styles.module.css";
 
 const CATEGORY_ORDER = [
@@ -49,59 +48,26 @@ function getCategoryMeta() {
   };
 }
 
-function AccordionItem({ question, answer, isOpen, onToggle, itemRef }) {
-  const baseId = useId();
-  const triggerId = `${baseId}trigger`;
-  const panelId = `${baseId}panel`;
-  return (
-    <div ref={itemRef} className={clsx(styles.accordion, isOpen && styles.accordionOpen)}>
-      <button
-        type="button"
-        id={triggerId}
-        className={styles.accordionTrigger}
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-controls={panelId}
-      >
-        <span className={styles.accordionIcon} aria-hidden="true">
-          {isOpen ? <FaMinus /> : <FaPlus />}
-        </span>
-        <span className={styles.accordionQuestion}>{question}</span>
-      </button>
-      {isOpen && (
-        <div
-          id={panelId}
-          role="region"
-          aria-labelledby={triggerId}
-          className={styles.accordionAnswer}
-        >
-          {renderAnswerArray(answer)}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function GovernanceFAQ({ data }) {
   const { categories, popularItems } = useMemo(() => {
     const categoryMeta = getCategoryMeta();
-    const indexed = data.map((entry, idx) => ({ ...entry, _index: idx }));
     return {
       categories: CATEGORY_ORDER
         .map((key) => ({
           key,
           ...categoryMeta[key],
-          items: indexed.filter((entry) => entry.category === key),
+          items: data.filter((entry) => entry.category === key),
         }))
         .filter((cat) => cat.items.length > 0),
-      popularItems: indexed.filter((entry) => entry.popular),
+      popularItems: data.filter((entry) => entry.popular),
     };
   }, [data]);
 
   const [activeCategory, setActiveCategory] = useState(categories[0]?.key);
-  const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
+  // One open question across all category lists, keyed by the entry id.
+  const [openId, setOpenId] = useState(null);
   const sectionRefs = useRef({});
-  const questionRefs = useRef({});
+  const wrapperRef = useRef(null);
   const intersectingKeys = useRef(new Set());
 
   useEffect(() => {
@@ -126,14 +92,40 @@ export default function GovernanceFAQ({ data }) {
     scrollToElement(sectionRefs.current[key]);
   };
 
-  const openQuestion = (entry) => {
-    setOpenQuestionIndex(entry._index);
+  // Opens a question from outside the lists (popular card, URL hash), scrolls
+  // to it and moves focus to its button. An answer that was open above it
+  // collapses with a transition and pulls the row up while it runs, so the
+  // scroll waits for that collapse to finish.
+  const openQuestion = useCallback((entry) => {
+    const previous = wrapperRef.current?.querySelector('section [aria-expanded="true"]');
+    setOpenId(entry.id);
     setActiveCategory(entry.category);
-    requestAnimationFrame(() => scrollToElement(questionRefs.current[entry._index]));
-  };
+    requestAnimationFrame(() => {
+      const row = document.getElementById(entry.id);
+      if (!row) return;
+      const above = previous && previous.compareDocumentPosition(row) & Node.DOCUMENT_POSITION_FOLLOWING;
+      whenSettled(above ? previous.closest("section") : null).then(() => {
+        scrollToElement(row);
+        row.querySelector("button")?.focus({ preventScroll: true });
+      });
+    });
+  }, []);
+
+  // A link such as /governance#faq-lose-ada opens that question, on load and
+  // when the hash changes.
+  useEffect(() => {
+    const applyHash = () => {
+      const target = hashTargetId(window.location.hash);
+      const entry = data.find((item) => item.id === target);
+      if (entry) openQuestion(entry);
+    };
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, [data, openQuestion]);
 
   return (
-    <div className={styles.wrapper}>
+    <div ref={wrapperRef} className={styles.wrapper}>
       <Divider text={translate({ id: "governance.faq.divider", message: "FAQ" })} id="faq" />
 
       <div className={styles.hero}>
@@ -160,7 +152,7 @@ export default function GovernanceFAQ({ data }) {
           <div className={styles.popularGrid}>
             {popularItems.map((entry, i) => (
               <button
-                key={entry._index}
+                key={entry.id}
                 type="button"
                 className={styles.popularCard}
                 onClick={() => openQuestion(entry)}
@@ -224,22 +216,11 @@ export default function GovernanceFAQ({ data }) {
               )}
             >
               <div className={styles.panelLabel}>{cat.label}</div>
-              <div className={styles.panelAccordion}>
-                {cat.items.map((entry) => (
-                  <AccordionItem
-                    key={entry._index}
-                    itemRef={(el) => (questionRefs.current[entry._index] = el)}
-                    question={entry.question}
-                    answer={entry.answer}
-                    isOpen={openQuestionIndex === entry._index}
-                    onToggle={() =>
-                      setOpenQuestionIndex(
-                        openQuestionIndex === entry._index ? null : entry._index
-                      )
-                    }
-                  />
-                ))}
-              </div>
+              <Accordion
+                items={cat.items}
+                openKeys={openId !== null ? [openId] : []}
+                onToggle={(key, isOpen) => setOpenId(isOpen ? key : null)}
+              />
             </section>
           ))}
         </div>

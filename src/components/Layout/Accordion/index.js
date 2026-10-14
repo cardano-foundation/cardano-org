@@ -12,8 +12,9 @@ import styles from "./styles.module.css";
 // with aria-expanded / aria-controls, and each answer is a labeled region that
 // opens and closes with a height transition (instant with reduced motion).
 //
-// Used for the FAQ on the /programmable-tokens page and inside FAQSection, which
-// adds the "FAQ" Divider heading above the rows.
+// Used for the FAQ on the /programmable-tokens page, inside FAQSection, which
+// adds the "FAQ" Divider heading above the rows, and in GovernanceFAQ on
+// /governance, which keeps one question open across its category lists.
 
 function AccordionItem({ id, question, answer, isOpen, onToggle, headingTag: Heading }) {
   const baseId = useId();
@@ -59,6 +60,19 @@ function AccordionItem({ id, question, answer, isOpen, onToggle, headingTag: Hea
       </div>
     </div>
   );
+}
+
+/**
+ * Resolves once the open and close transitions running inside `element` have
+ * finished, right away when nothing is animating (reduced motion included).
+ * For hosts that scroll to a row after another row above it collapses.
+ *
+ * @param {Element|null} element Element whose subtree is checked.
+ * @returns {Promise<void>}
+ */
+export function whenSettled(element) {
+  const animations = element?.getAnimations?.({ subtree: true }) ?? [];
+  return Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {});
 }
 
 function toIndexList(value) {
