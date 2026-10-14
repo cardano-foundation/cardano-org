@@ -39,7 +39,6 @@ export function getCanvasLabels() {
     drepsActive: translate({ id: "governance.howItWorks.canvas.drepsActive", message: "{count} active" }),
     weightedByAda: translate({ id: "governance.howItWorks.canvas.weightedByAda", message: "weighted by delegated ada" }),
     stakePools: translate({ id: "governance.howItWorks.canvas.stakePools", message: "STAKE POOLS" }),
-    poolsWithStake: translate({ id: "governance.howItWorks.canvas.poolsWithStake", message: "{count} with stake" }),
     weightedByStake: translate({ id: "governance.howItWorks.canvas.weightedByStake", message: "weighted by pool stake" }),
     governanceAction: translate({ id: "governance.howItWorks.canvas.governanceAction", message: "GOVERNANCE ACTION" }),
 
@@ -51,7 +50,7 @@ export function getCanvasLabels() {
     proposal: translate({ id: "governance.howItWorks.canvas.proposal", message: "PROPOSAL" }),
     constitution: translate({ id: "governance.howItWorks.canvas.constitution", message: "CONSTITUTION" }),
     constitutionalCommittee: translate({ id: "governance.howItWorks.canvas.constitutionalCommittee", message: "CONSTITUTIONAL COMMITTEE" }),
-    scaleNote: translate({ id: "governance.howItWorks.canvas.scaleNote", message: "weighs every action against the constitution" }),
+    scaleNote: translate({ id: "governance.howItWorks.canvas.scaleNote", message: "checks actions against the constitution" }),
     inBalance: translate({ id: "governance.howItWorks.canvas.inBalance", message: "IN BALANCE WITH THE CONSTITUTION" }),
 
     // Chapter 05: treasury
@@ -59,13 +58,13 @@ export function getCanvasLabels() {
     fromReserves: translate({ id: "governance.howItWorks.canvas.fromReserves", message: "from reserves and fees" }),
     toPools: translate({ id: "governance.howItWorks.canvas.toPools", message: "80% · POOLS AND DELEGATORS" }),
     toPoolsShort: translate({ id: "governance.howItWorks.canvas.toPoolsShort", message: "80% · POOLS" }),
-    toTreasury: translate({ id: "governance.howItWorks.canvas.toTreasury", message: "20% · about 3.7 million ada per epoch" }),
+    toTreasury: translate({ id: "governance.howItWorks.canvas.toTreasuryShare", message: "20% · TO THE TREASURY" }),
     toTreasuryShort: translate({ id: "governance.howItWorks.canvas.toTreasuryShort", message: "20% · treasury" }),
     treasury: translate({ id: "governance.howItWorks.canvas.treasury", message: "TREASURY" }),
     treasuryBalance: translate({ id: "governance.howItWorks.canvas.treasuryBalance", message: "{amount} billion ada" }),
     withdrawals: translate({ id: "governance.howItWorks.canvas.withdrawals", message: "WITHDRAWALS" }),
-    withdrawalsNote: translate({ id: "governance.howItWorks.canvas.withdrawalsNote", message: "70 approved · about 804 million ada" }),
-    withdrawalsNoteShort: translate({ id: "governance.howItWorks.canvas.withdrawalsNoteShort", message: "70 approved" }),
+    withdrawalsNote: translate({ id: "governance.howItWorks.canvas.withdrawalsVote", message: "each one approved on-chain by vote" }),
+    withdrawalsNoteShort: translate({ id: "governance.howItWorks.canvas.withdrawalsVoteShort", message: "approved by vote" }),
 
     // Chapter 06
     you: translate({ id: "governance.howItWorks.canvas.you", message: "YOU" }),

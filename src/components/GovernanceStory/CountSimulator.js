@@ -237,8 +237,8 @@ export default function CountSimulator() {
             <input type="checkbox" checked={st.sec} onChange={(e) => custom(() => ({ sec: e.target.checked }))} />
             <span>
               {translate({
-                id: "governance.howItWorks.sim.security",
-                message: "Changes a security-relevant setting, so stake pools vote too",
+                id: "governance.howItWorks.sim.securityParam",
+                message: "Changes a security-relevant parameter, so stake pools vote too",
               })}
             </span>
           </label>

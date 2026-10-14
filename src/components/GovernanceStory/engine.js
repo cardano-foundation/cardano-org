@@ -10,7 +10,7 @@
 //   [data-anchor]      optional element inside a chapter that triggers it
 //   [data-story-card]  a chapter card; used to keep the picture clear of text
 
-import { storyCounts } from "@site/src/data/governanceStory";
+import { DEFAULT_SEATS, storyCounts } from "@site/src/data/governanceStory";
 
 // Enough particles for the busiest scene (your vote, about 2,330 dots wide).
 const N = 2400;
@@ -520,7 +520,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     const bl = [cx - hw, r.y + r.h * 0.68];
     const br = [cx + hw, r.y + r.h * 0.68];
     const mid = [cx, (top[1] + bl[1] + br[1]) / 3];
-    const nC = cnt.committee;
+    const nC = cnt.committee || DEFAULT_SEATS;
 
     // Personas: one design unit is u pixels, dots sit p pixels apart
     const u = Math.min(m * 0.003, (hw * 1.1) / 100);
@@ -580,18 +580,19 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     const subO = { f: "sans", s: narrow ? 10.5 : 12.5, c: "ink2", a: "center" };
     const benchTop = top[1] - 40 * u;
     out.push(L(lab.committee, top[0], benchTop - (narrow ? 26 : 32), { ...nameO, c: "cc" }));
-    out.push(
-      L(`${fill(lab.committeeMembers, { count: numFmt.format(nC) })} · ${lab.oneMemberOneVote}`, top[0], benchTop - (narrow ? 10 : 14), subO)
-    );
+    // Counts appear only when they load live; the rule is always shown.
+    const ccLine = cnt.committee ? `${fill(lab.committeeMembers, { count: numFmt.format(cnt.committee) })} · ${lab.oneMemberOneVote}` : lab.oneMemberOneVote;
+    out.push(L(ccLine, top[0], benchTop - (narrow ? 10 : 14), subO));
     const base = [
-      [bl, lab.dreps, fill(lab.drepsActive, { count: numFmt.format(cnt.dreps) }), lab.weightedByAda, "drep"],
-      [br, lab.stakePools, fill(lab.poolsWithStake, { count: numFmt.format(cnt.pools) }), lab.weightedByStake, "spo"],
+      [bl, lab.dreps, cnt.dreps ? fill(lab.drepsActive, { count: numFmt.format(cnt.dreps) }) : null, lab.weightedByAda, "drep"],
+      [br, lab.stakePools, null, lab.weightedByStake, "spo"],
     ];
     base.forEach((b) => {
       const y = b[0][1] + 50 * u + (narrow ? 20 : 24);
+      const step = narrow ? 15 : 18;
       out.push(L(b[1], b[0][0], y, { ...nameO, c: b[4] }));
-      out.push(L(b[2], b[0][0], y + (narrow ? 15 : 18), subO));
-      out.push(L(b[3], b[0][0], y + (narrow ? 29 : 35), { ...subO, c: "muted" }));
+      if (b[2]) out.push(L(b[2], b[0][0], y + step, subO));
+      out.push(L(b[3], b[0][0], y + (b[2] ? (narrow ? 29 : 35) : step), { ...subO, c: b[2] ? "muted" : "ink2" }));
     });
     out.push(L(lab.governanceAction, mid[0], mid[1] + dh / 2 + 20, { f: "mono", s: narrow ? 9 : 10, c: "brand", a: "center", ls: 1.4, w: 600, bg: true }));
     return { labels: out, lines, center: [mid[0], mid[1], Math.hypot(hw, bl[1] - mid[1]) + 50 * u] };
@@ -614,28 +615,33 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     const tilt = 0.16;
     const chain = Math.max(r.h * 0.2, dh + bl * Math.sin(tilt) + 16);
 
-    // Cycle: the proposal drops in, the beam swings and settles, holds, resets.
-    const cycle = 9000;
-    const ph = reduce ? 0.6 : (t % cycle) / cycle;
-    const land = 0.12;
-    const hold = 0.86;
-    let th;
-    let drop = 0;
-    let fade = 1;
-    if (ph < land) {
-      const u = ph / land;
-      drop = (1 - u * u) * r.h * 0.22;
-      fade = Math.min(1, u * 3);
-      th = tilt;
-    } else if (ph < hold) {
-      const s = ((ph - land) * cycle) / 1000;
-      th = tilt * Math.exp(-1.15 * s) * Math.cos(4.6 * s);
-    } else {
-      const u = (ph - hold) / (1 - hold);
-      th = tilt * u * u * (3 - 2 * u);
-      fade = 1 - u;
+    // Plays once from the moment the chapter comes into view: first only the
+    // constitution, with the beam tipped toward it; then the proposal falls
+    // onto the empty pan, the beam swings and settles level, and the caption
+    // fades in. Scrolling back to the chapter replays it.
+    const el = reduce ? Infinity : t - sceneAt;
+    const wait = 1500; // constitution alone
+    const fall = 800; // the proposal's drop
+    const damp = 1.15;
+    const fallH = Math.min(r.h * 0.3, pivot[1] - r.y + chain);
+    let th = tilt;
+    let drop = fallH;
+    let fade = 0;
+    let settled = 0;
+    if (el >= wait + fall) {
+      const s = (el - wait - fall) / 1000;
+      th = tilt * Math.exp(-damp * s) * Math.cos(4.6 * s);
+      drop = 0;
+      fade = 1;
+      // Fade the caption in once the swing has died down (envelope under 6%)
+      const sSettle = Math.log(1 / 0.06) / damp;
+      settled = Math.max(0, Math.min(1, (s - sSettle) / 0.6));
+    } else if (el >= wait) {
+      const u = (el - wait) / fall;
+      drop = (1 - u * u) * fallH;
+      fade = Math.min(1, u * 4);
     }
-    const settled = ph < land ? 0 : Math.max(0, Math.min(1, 1 - Math.abs(th) / (tilt * 0.12)));
+    if (reduce) th = 0;
     const ca = Math.cos(th);
     const sa = Math.sin(th);
 
@@ -823,7 +829,8 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     hideFrom(i);
     const narrow = W <= BP_NARROW || r.w < 560;
     const head = { f: "mono", s: 10.5, c: "ink", ls: 1.6, w: 600 };
-    const balance = fill(lab.treasuryBalance, { amount: dec(counts().treasury / 1e9, 2) });
+    const live = counts().treasury;
+    const balance = live ? fill(lab.treasuryBalance, { amount: dec(live / 1e9, 2) }) : "";
     return {
       labels: [
         L(lab.epochRewards, band.x, band.y - 12, head),

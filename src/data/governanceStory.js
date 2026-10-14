@@ -3,32 +3,27 @@ import { translate } from "@docusaurus/Translate";
 // Content model for /governance/how-it-works.
 //
 // Sourcing rules:
-// - Figures marked as a snapshot come from the Cardano ledger at epoch 656
-//   (September 16, 2026). Vote results are the ledger's own ratification
-//   tallies. Update SNAPSHOT and the strings that quote it together.
-// - Thresholds and counting rules follow CIP-1694 and the protocol parameters
-//   in force at the snapshot epoch.
-// - Live figures (active DReps, committee seats, treasury balance) replace the
-//   snapshot values on the page when data.cardano.org answers.
+// - Only three figures change over time on this page: the number of active
+//   DReps, the committee size, and the treasury balance. They load live from
+//   data.cardano.org and are left out of the text when that data is missing.
+//   Do not add other running totals ("so far", "since"); they go stale.
+// - Vote results are dated, so they stay true. They are the ledger's own
+//   ratification tallies.
+// - Thresholds, deposits, and time limits follow CIP-1694 and the protocol
+//   parameters in force. Update them when a parameter change is enacted.
 
-export const SNAPSHOT = {
-  epoch: 656,
-  activeDreps: 330,
-  committeeSeats: 7,
-  poolsWithStake: 2828,
-  treasuryAda: 1.36e9,
-};
+// Seats drawn on the bench before the live committee size arrives. Only used
+// for the picture, never shown as a number.
+export const DEFAULT_SEATS = 7;
 
-// Live figures from useAccountabilityStats, checked against sane ranges, with
-// the snapshot as the fallback. Shared by the chapter text and the canvas so
-// both always show the same numbers.
+// Live figures from useAccountabilityStats, checked against sane ranges.
+// A figure that is missing or out of range is null, and the page leaves it out.
 export function storyCounts(live = {}) {
   const ok = (v, lo, hi) => Number.isFinite(v) && v >= lo && v <= hi;
   return {
-    dreps: ok(live.dreps, 1, 520) ? live.dreps : SNAPSHOT.activeDreps,
-    committee: ok(live.committee, 1, 12) ? live.committee : SNAPSHOT.committeeSeats,
-    pools: SNAPSHOT.poolsWithStake,
-    treasury: ok(live.treasury, 1e6, 1e11) ? live.treasury : SNAPSHOT.treasuryAda,
+    dreps: ok(live.dreps, 1, 5000) ? live.dreps : null,
+    committee: ok(live.committee, 1, 12) ? live.committee : null,
+    treasury: ok(live.treasury, 1e6, 1e11) ? live.treasury : null,
   };
 }
 
@@ -73,40 +68,39 @@ export function getVoteMatrix() {
       id: "treasury",
       name: names.treasury,
       desc: translate({
-        id: "governance.howItWorks.matrix.treasury.desc",
-        message: "Pays ada from the treasury to a named recipient. It must respect the budget and treasury rules in the constitution.",
+        id: "governance.howItWorks.matrix.treasury.descPays",
+        message: "Pays ada from the treasury to one or more stake addresses. It must stay within the net change limit and follow the constitution's treasury rules.",
       }),
       drep: { v: 0.67, t: "67%", note: drepStake },
       spo: null,
       cc,
       ex: translate({
-        id: "governance.howItWorks.matrix.treasury.example",
-        message:
-          "Since mid-2025, 70 withdrawals have been approved, about 804 million ada in total. The largest recent one, 120 million ada, passed in August 2026 with 80.1% of DRep stake.",
+        id: "governance.howItWorks.matrix.treasury.exampleAug26",
+        message: "In August 2026, a 120 million ada withdrawal passed with 80.1% of DRep stake and six of seven committee votes.",
       }),
     },
     {
       id: "param",
       name: names.param,
       desc: translate({
-        id: "governance.howItWorks.matrix.param.desc",
+        id: "governance.howItWorks.matrix.param.descParameter",
         message:
-          "Tunes a network setting such as fees, block size, or script limits. Settings fall into four groups: network, economic, technical, and governance.",
+          "Changes a protocol parameter such as fees, block size, or script limits. Parameters fall into four groups: network, economic, technical, and governance. Some are also security-relevant.",
       }),
       drep: {
         v: 0.67,
         t: "67%",
-        note: translate({ id: "governance.howItWorks.matrix.param.drepNote", message: "75% for governance settings" }),
+        note: translate({ id: "governance.howItWorks.matrix.param.drepNoteGov", message: "75% for governance parameters" }),
       },
       spo: {
         v: 0.51,
         t: "51%",
-        note: translate({ id: "governance.howItWorks.matrix.param.poolNote", message: "only when a security-relevant setting changes" }),
+        note: translate({ id: "governance.howItWorks.matrix.param.poolNoteSecurity", message: "only when a security-relevant parameter changes" }),
       },
       cc,
       ex: translate({
-        id: "governance.howItWorks.matrix.param.example",
-        message: "In January 2026, higher Plutus execution limits passed with 86.5% of DRep stake, 58.6% of pool stake, and six of seven committee votes.",
+        id: "governance.howItWorks.matrix.param.exampleFeb",
+        message: "In February 2026, higher Plutus execution limits passed with 86.5% of DRep stake, 58.6% of pool stake, and six of seven committee votes.",
       }),
     },
     {
@@ -156,8 +150,8 @@ export function getVoteMatrix() {
       spo: { v: 0.51, t: "51%", note: poolStake },
       cc: null,
       ex: translate({
-        id: "governance.howItWorks.matrix.committee.example",
-        message: "The September 2026 election filled four seats with 72.0% of DRep stake and 53.4% of pool stake.",
+        id: "governance.howItWorks.matrix.committee.exampleSeats",
+        message: "The September 2026 election filled four seats with 72.0% of DRep stake and 56.2% of pool stake.",
       }),
     },
     {
@@ -171,8 +165,8 @@ export function getVoteMatrix() {
       spo: { v: 0.51, t: "51%", note: poolStake },
       cc: null,
       ex: translate({
-        id: "governance.howItWorks.matrix.noconf.example",
-        message: "Never used so far. It exists so the committee answers to the people it serves.",
+        id: "governance.howItWorks.matrix.noconf.examplePurpose",
+        message: "It lets DReps and stake pool operators remove a committee they no longer trust.",
       }),
     },
     {
@@ -184,8 +178,8 @@ export function getVoteMatrix() {
         message: "A non-binding poll. It records a view on-chain and changes nothing by itself.",
       }),
       ex: translate({
-        id: "governance.howItWorks.matrix.info.example",
-        message: "So far, 35 have been submitted, often to approve budgets or test support for an idea.",
+        id: "governance.howItWorks.matrix.info.exampleUse",
+        message: "DReps use them, for example, to agree on the treasury's net change limit.",
       }),
     },
   ];
@@ -206,8 +200,8 @@ export function getPresets() {
       spo: [10.34855, 0, 9.34837, 1.69913],
       cc: "YYYYYYD",
       note: translate({
-        id: "governance.howItWorks.preset.vr.note",
-        message: "July 2026. The upgrade to protocol version 11. DReps 77.63%, stake pools 52.54%, and six of seven committee votes. Ratified.",
+        id: "governance.howItWorks.preset.vr.outcome",
+        message: "Ratified in July 2026. The upgrade to protocol version 11. DReps 77.63%, stake pools 52.54%, and six of seven committee votes.",
       }),
     },
     {
@@ -219,8 +213,8 @@ export function getPresets() {
       spo: null,
       cc: "YYYYYYN",
       note: translate({
-        id: "governance.howItWorks.preset.c26.note",
-        message: "January 2026. DReps 79.85%. Six committee members voted yes and one voted no. Ratified.",
+        id: "governance.howItWorks.preset.c26.outcome",
+        message: "Ratified in January 2026. DReps 79.85%. Six committee members voted yes and one voted no.",
       }),
     },
     {
@@ -229,12 +223,12 @@ export function getPresets() {
       action: "param",
       sec: true,
       drep: [3.50464, 0.38734, 1.21889, 9.8474],
-      spo: [3.71046, 1.16914, 6.50066, 10.01106],
+      spo: [3.71046, 1.17277, 5.8246, 10.68349],
       cc: "YYYYYDD",
       note: translate({
-        id: "governance.howItWorks.preset.pl.note",
+        id: "governance.howItWorks.preset.pl.outcome",
         message:
-          "July 2026. Higher script limits and a lower minimum pool cost. DReps said yes (68.57%), and so did five of seven committee members. Stake pools said no: 32.60% against the 51% needed. It expired.",
+          "Expired in September 2026. Higher script limits and a lower minimum pool cost. DReps said yes (68.57%), and so did five of seven committee members. Stake pools fell short: 34.65% against the 51% needed.",
       }),
     },
     {
@@ -246,8 +240,8 @@ export function getPresets() {
       spo: null,
       cc: "YYNNNNN",
       note: translate({
-        id: "governance.howItWorks.preset.tc.note",
-        message: "February 2025. A proposal to halve the treasury's share of rewards. DReps 23.22%, and two of seven committee members. It expired.",
+        id: "governance.howItWorks.preset.tc.outcome",
+        message: "Expired in March 2025. A proposal to halve the treasury's share of rewards. DReps 23.22%, and two of seven committee members.",
       }),
     },
     {
@@ -259,9 +253,9 @@ export function getPresets() {
       spo: null,
       cc: "YYYYYND",
       note: translate({
-        id: "governance.howItWorks.preset.sm.note",
+        id: "governance.howItWorks.preset.sm.outcome",
         message:
-          "August 2026. Five of seven committee members said yes. DReps reached 65.19%, short of 67%. Silence decided it: DReps holding 1.35 billion ada did not vote, and that counted as No.",
+          "Expired in September 2026. Five of seven committee members said yes. DReps reached 65.19%, short of 67%. Silence decided it: DReps holding 1.35 billion ada did not vote, and that counted as No.",
       }),
     },
   ];
@@ -315,8 +309,8 @@ export function getRoles() {
       title: translate({ id: "governance.howItWorks.role.pool.title", message: "Vote from your pool." }),
       points: [
         translate({
-          id: "governance.howItWorks.role.pool.1",
-          message: "Your pool votes on hard forks, security-relevant settings, and committee questions.",
+          id: "governance.howItWorks.role.pool.votes",
+          message: "Your pool votes on hard forks, security-relevant parameter changes, committee updates, and motions of no confidence.",
         }),
         translate({ id: "governance.howItWorks.role.pool.2", message: "Votes are weighted by the stake your pool holds." }),
         translate({ id: "governance.howItWorks.role.pool.3", message: "On hard forks, a pool that stays silent counts as No." }),

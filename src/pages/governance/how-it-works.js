@@ -12,9 +12,9 @@ import GovernanceStory, { GovernanceStorySources } from "@site/src/components/Go
 export default function GovernanceHowItWorksPage() {
   const title = translate({ id: "governance.howItWorks.hero.title", message: "How Cardano decides" });
   const description = translate({
-    id: "governance.howItWorks.hero.descriptionShort",
+    id: "governance.howItWorks.hero.descriptionDecided",
     message:
-      "No single company decides what Cardano becomes. Ada holders, stake pool operators, and an elected committee do, on-chain. Here is how it works.",
+      "Changes to Cardano and its treasury are decided on-chain by DReps, stake pool operators, and an elected Constitutional Committee. Here is how it works, and where your ada fits in.",
   });
   return (
     <Layout
@@ -34,8 +34,8 @@ export default function GovernanceHowItWorksPage() {
           <BoundaryBox>
             <CtaOneColumn
               title={translate({
-                id: "governance.howItWorks.cta.title",
-                message: "Every five days, the ledger counts. Make sure it counts you.",
+                id: "governance.howItWorks.cta.titleDelegate",
+                message: "Your ada only counts in governance once it is delegated.",
               })}
               buttonLabel={translate({ id: "governance.howItWorks.cta.button", message: "Delegate your vote" })}
               buttonLink={"/governance/delegate"}

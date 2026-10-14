@@ -4,7 +4,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import useAccountabilityStats from "@site/src/components/AccountabilityStats/useAccountabilityStats";
-import { SNAPSHOT, storyCounts } from "@site/src/data/governanceStory";
+import { storyCounts } from "@site/src/data/governanceStory";
 import { epochInfo, countdown } from "./epoch";
 import { getCanvasLabels, getTimeUnits } from "./labels";
 import { createStoryEngine } from "./engine";
@@ -126,9 +126,9 @@ export default function GovernanceStory() {
 
   const num = useMemo(() => new Intl.NumberFormat(locale), [locale]);
   const num2 = useMemo(() => new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }), [locale]);
+  // Live figures, or null until data.cardano.org answers. A missing figure is
+  // left out of the text rather than replaced with a number that goes stale.
   const counts = storyCounts(live);
-  const drepCount = counts.dreps;
-  const treasuryB = num2.format(counts.treasury / 1e9);
 
   useEffect(() => {
     ownRef.current = own;
@@ -171,10 +171,6 @@ export default function GovernanceStory() {
     { id: "your-part", name: translate({ id: "governance.howItWorks.chapter.yourPart", message: "Your part" }) },
   ];
   const ch = Object.fromEntries(chapters.map((c) => [c.id, c.name]));
-  const snapshotStamp = translate(
-    { id: "governance.howItWorks.stamp.snapshot", message: "Ledger snapshot · epoch {epoch}" },
-    { epoch: SNAPSHOT.epoch }
-  );
 
   return (
     <div ref={rootRef} className={styles.story}>
@@ -258,8 +254,8 @@ export default function GovernanceStory() {
           </p>
           <p className={styles.small}>
             {translate({
-              id: "governance.howItWorks.yourVote.small",
-              message: "Ada that is not delegated counts for nothing. Pick a DRep, Always Abstain, or Always No Confidence.",
+              id: "governance.howItWorks.yourVote.notDelegated",
+              message: "Ada that is not delegated for governance is not counted. Pick a DRep, Always Abstain, or Always No Confidence.",
             })}
           </p>
         </Chapter>
@@ -275,12 +271,18 @@ export default function GovernanceStory() {
                 </G>
               </dt>
               <dd>
-                {translate(
-                  {
-                    id: "governance.howItWorks.groups.ccPanel",
-                    message: "A panel of {count} elected members. They ask one question: does this follow the constitution? One member, one vote.",
-                  },
-                  { count: num.format(counts.committee) }
+                {translate({
+                  id: "governance.howItWorks.groups.ccElected",
+                  message: "An elected panel. Members ask one question: does this follow the constitution? One member, one vote.",
+                })}
+                {counts.committee != null && (
+                  <>
+                    {" "}
+                    {translate(
+                      { id: "governance.howItWorks.groups.ccSeated", message: "{count} members are seated." },
+                      { count: num.format(counts.committee) }
+                    )}
+                  </>
                 )}
               </dd>
             </div>
@@ -290,13 +292,18 @@ export default function GovernanceStory() {
                 <G to="/glossary/drep">{translate({ id: "governance.howItWorks.groups.dreps", message: "DReps" })}</G>
               </dt>
               <dd>
-                {translate(
-                  {
-                    id: "governance.howItWorks.groups.drepsText",
-                    message:
-                      "Delegated Representatives. They vote on every type of action, weighted by the ada delegated to them. {count} are active.",
-                  },
-                  { count: num.format(drepCount) }
+                {translate({
+                  id: "governance.howItWorks.groups.drepsVote",
+                  message: "Delegated Representatives. They vote on every type of action, weighted by the ada delegated to them.",
+                })}
+                {counts.dreps != null && (
+                  <>
+                    {" "}
+                    {translate(
+                      { id: "governance.howItWorks.groups.drepsActive", message: "{count} are active." },
+                      { count: num.format(counts.dreps) }
+                    )}
+                  </>
                 )}
               </dd>
             </div>
@@ -304,14 +311,11 @@ export default function GovernanceStory() {
               <i className={styles.swPool} aria-hidden="true" />
               <dt>{translate({ id: "governance.howItWorks.groups.pools", message: "Stake pool operators" })}</dt>
               <dd>
-                {translate(
-                  {
-                    id: "governance.howItWorks.groups.poolsText",
-                    message:
-                      "They run the network, so they vote on hard forks, security-relevant settings, and the committee. {count} pools hold stake.",
-                  },
-                  { count: num.format(SNAPSHOT.poolsWithStake) }
-                )}
+                {translate({
+                  id: "governance.howItWorks.groups.poolsRun",
+                  message:
+                    "They run the network, so they vote on hard forks, security-relevant parameter changes, committee updates, and motions of no confidence. Their votes are weighted by the stake in their pools.",
+                })}
               </dd>
             </div>
           </dl>
@@ -341,8 +345,8 @@ export default function GovernanceStory() {
           </p>
           <p>
             {translate({
-              id: "governance.howItWorks.proposals.p2",
-              message: "Each action links to a public document and records its hash, so the text cannot change once voting starts.",
+              id: "governance.howItWorks.proposals.anchor",
+              message: "Each action links to a public document and records its hash on-chain, so any later change to the text can be detected.",
             })}
           </p>
           <p>
@@ -405,19 +409,19 @@ export default function GovernanceStory() {
         </Module>
 
         <Chapter id="constitution" scene="scale" num="04" name={ch.constitution}>
-          <h2>{translate({ id: "governance.howItWorks.constitution.titleWeigh", message: "Every action is weighed against the constitution." })}</h2>
+          <h2>{translate({ id: "governance.howItWorks.constitution.titleFollow", message: "Every action has to follow the constitution." })}</h2>
           <p>
             {translate({
-              id: "governance.howItWorks.constitution.weigh",
+              id: "governance.howItWorks.constitution.check",
               message:
-                "Every governance action has to follow the constitution. The Constitutional Committee weighs each one against it and votes No on any it finds unconstitutional.",
+                "The Constitutional Committee checks actions against it and votes No on any it finds unconstitutional. It votes on every type of action except committee updates and motions of no confidence.",
             })}
           </p>
           <p>
             {translate({
               id: "governance.howItWorks.constitution.code",
               message:
-                "Some rules run as code. A guardrails script checks every parameter change and treasury withdrawal when it is submitted, and the ledger rejects any that break a hard limit before a vote starts.",
+                "Some rules run as code. A guardrails script checks every parameter change and treasury withdrawal when it is submitted. If the action breaks one of the limits the script encodes, the ledger rejects it before any vote.",
             })}
           </p>
           <p>
@@ -429,7 +433,7 @@ export default function GovernanceStory() {
                 ),
               }}
             >
-              {"It opens with {tenets}. Changing it takes 75% of DRep stake and two thirds of the committee."}
+              {"Its first article sets out {tenets}. Changing the constitution takes 75% of DRep stake and two thirds of the committee."}
             </Translate>
           </p>
           <blockquote className={styles.quote}>
@@ -443,45 +447,57 @@ export default function GovernanceStory() {
         </Chapter>
 
         <Chapter id="treasury" scene="treasury" num="05" name={ch.treasury}>
-          <h2>{translate({ id: "governance.howItWorks.treasury.title", message: "A treasury that answers to holders." })}</h2>
+          <h2>{translate({ id: "governance.howItWorks.treasury.titleVote", message: "A treasury spent only by vote." })}</h2>
           <p>
             <Translate
-              id="governance.howItWorks.treasury.p1"
+              id="governance.howItWorks.treasury.funded"
               values={{
                 cut: (
                   <G to="/glossary/treasury-cut">
                     {translate({ id: "governance.howItWorks.treasury.p1.cut", message: "20% of the rewards" })}
                   </G>
                 ),
-                amount: treasuryB,
               }}
             >
-              {"Every epoch, {cut} flows into the treasury, about 3.7 million ada every five days. It holds {amount} billion ada today."}
+              {"Every epoch, {cut} flows into the treasury."}
             </Translate>
+            {counts.treasury != null && (
+              <>
+                {" "}
+                {translate(
+                  { id: "governance.howItWorks.treasury.balance", message: "It holds {amount} billion ada today." },
+                  { amount: num2.format(counts.treasury / 1e9) }
+                )}
+              </>
+            )}
           </p>
           <p>
             <Translate
-              id="governance.howItWorks.treasury.p2"
+              id="governance.howItWorks.treasury.rules"
               values={{
-                withdrawals: (
+                ncl: (
+                  <G to="/glossary/net-change-limit">
+                    {translate({ id: "governance.howItWorks.treasury.ncl", message: "net change limit" })}
+                  </G>
+                ),
+                withdrawal: (
                   <G to="/glossary/treasury-withdrawal">
-                    {translate({ id: "governance.howItWorks.treasury.p2.withdrawals", message: "70 withdrawals" })}
+                    {translate({ id: "governance.howItWorks.treasury.withdrawal", message: "treasury withdrawal" })}
                   </G>
                 ),
               }}
             >
-              {"Since mid-2025, DReps and the committee have approved {withdrawals} worth about 804 million ada. Each needs 67% of active DRep stake and two thirds of the committee, and must follow the constitution's rules on spending limits, audits, and oversight."}
+              {"Ada leaves the treasury only through a {withdrawal}. Each one needs 67% of active DRep stake and two thirds of the committee, must stay within the {ncl}, and must follow the constitution's treasury rules."}
             </Translate>
           </p>
-          <span className={styles.stamp}>{snapshotStamp}</span>
         </Chapter>
 
         <Chapter id="your-move" scene="finale" num="06" name={ch["your-move"]}>
-          <h2>{translate({ id: "governance.howItWorks.yourMove.title", message: "Your ada is already in the room." })}</h2>
+          <h2>{translate({ id: "governance.howItWorks.yourMove.titleCount", message: "Make your ada count." })}</h2>
           <p>
             {translate({
-              id: "governance.howItWorks.yourMove.p1",
-              message: "Governance runs every epoch, whether you take part or not. The only choice is whose judgment your ada carries.",
+              id: "governance.howItWorks.yourMove.delegate",
+              message: "Governance decisions are made every epoch, with or without your vote. Delegating takes one transaction, and you can change it at any time.",
             })}
           </p>
           <a className="button button--primary" href="#your-part">
@@ -511,20 +527,17 @@ export function GovernanceStorySources() {
           {translate({ id: "governance.howItWorks.sources.aboutTitle", message: "About the numbers" })}
         </h2>
         <p>
-          {translate(
-            {
-              id: "governance.howItWorks.sources.aboutShort",
-              message:
-                "Vote results, pool counts, and treasury figures come from the Cardano ledger at epoch {epoch} (September 16, 2026) unless marked live. Vote results are the ledger's own ratification tallies. The epoch number in the bar is computed from the mainnet schedule. The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org when available.",
-            },
-            { epoch: SNAPSHOT.epoch }
-          )}
+          {translate({
+            id: "governance.howItWorks.sources.aboutLive",
+            message:
+              "The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org. If they cannot load, the page leaves them out. The epoch number in the bar is computed from the mainnet schedule. Vote results are dated and quote the ledger's own ratification tallies.",
+          })}
         </p>
         <p>
           {translate({
-            id: "governance.howItWorks.sources.fineprint",
+            id: "governance.howItWorks.sources.fineprintParams",
             message:
-              "Thresholds reflect protocol parameters at the snapshot epoch. Stake pools can set how their silence counts through their reward account; on hard forks, silence always counts as No.",
+              "Thresholds, deposits, and time limits are the protocol parameters in force in October 2026. Stake pools can set how their silence counts through their reward account; on hard forks, silence always counts as No.",
           })}
         </p>
       </div>

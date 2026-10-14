@@ -9521,6 +9521,9 @@
   "governance.onboarding.background": {
     "message": "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."
   },
+  "governance.onboarding.walkthrough": {
+    "message": "To see it step by step, [How Cardano decides](/governance/how-it-works) walks through who votes, how every vote is counted, and where your ada fits in."
+  },
   "apps.guidedPaths.smartContracts": { "message": "How DApps work" },
   "layer2.context.description": {
     "message": "A [layer 2](/glossary/layer-2) processes transactions off the main chain and settles the outcome on the [layer 1](/glossary/layer-1). New to how the main chain runs programs? Start with the [smart contracts](/smart-contracts) explainer and [how Cardano works](/how-cardano-works)."
@@ -10100,24 +10103,6 @@
   "governance.howItWorks.matrix.poolStake": {
     "message": "of pool stake"
   },
-  "governance.howItWorks.matrix.treasury.desc": {
-    "message": "Pays ada from the treasury to a named recipient. It must respect the budget and treasury rules in the constitution."
-  },
-  "governance.howItWorks.matrix.treasury.example": {
-    "message": "Since mid-2025, 70 withdrawals have been approved, about 804 million ada in total. The largest recent one, 120 million ada, passed in August 2026 with 80.1% of DRep stake."
-  },
-  "governance.howItWorks.matrix.param.desc": {
-    "message": "Tunes a network setting such as fees, block size, or script limits. Settings fall into four groups: network, economic, technical, and governance."
-  },
-  "governance.howItWorks.matrix.param.drepNote": {
-    "message": "75% for governance settings"
-  },
-  "governance.howItWorks.matrix.param.poolNote": {
-    "message": "only when a security-relevant setting changes"
-  },
-  "governance.howItWorks.matrix.param.example": {
-    "message": "In January 2026, higher Plutus execution limits passed with 86.5% of DRep stake, 58.6% of pool stake, and six of seven committee votes."
-  },
   "governance.howItWorks.matrix.hardfork.desc": {
     "message": "Moves Cardano to a new major protocol version. Node software has to be ready first."
   },
@@ -10136,50 +10121,26 @@
   "governance.howItWorks.matrix.committee.drepNote": {
     "message": "60% after a no-confidence vote"
   },
-  "governance.howItWorks.matrix.committee.example": {
-    "message": "The September 2026 election filled four seats with 72.0% of DRep stake and 53.4% of pool stake."
-  },
   "governance.howItWorks.matrix.noconf.desc": {
     "message": "Removes the current committee. Until a new one is elected, actions that need the committee cannot pass."
-  },
-  "governance.howItWorks.matrix.noconf.example": {
-    "message": "Never used so far. It exists so the committee answers to the people it serves."
   },
   "governance.howItWorks.matrix.info.desc": {
     "message": "A non-binding poll. It records a view on-chain and changes nothing by itself."
   },
-  "governance.howItWorks.matrix.info.example": {
-    "message": "So far, 35 have been submitted, often to approve budgets or test support for an idea."
-  },
   "governance.howItWorks.preset.vr.label": {
     "message": "van Rossem hard fork"
-  },
-  "governance.howItWorks.preset.vr.note": {
-    "message": "July 2026. The upgrade to protocol version 11. DReps 77.63%, stake pools 52.54%, and six of seven committee votes. Ratified."
   },
   "governance.howItWorks.preset.c26.label": {
     "message": "Constitution update"
   },
-  "governance.howItWorks.preset.c26.note": {
-    "message": "January 2026. DReps 79.85%. Six committee members voted yes and one voted no. Ratified."
-  },
   "governance.howItWorks.preset.pl.label": {
     "message": "Plutus limits and pool cost"
-  },
-  "governance.howItWorks.preset.pl.note": {
-    "message": "July 2026. Higher script limits and a lower minimum pool cost. DReps said yes (68.57%), and so did five of seven committee members. Stake pools said no: 32.60% against the 51% needed. It expired."
   },
   "governance.howItWorks.preset.tc.label": {
     "message": "Treasury cut to 10%"
   },
-  "governance.howItWorks.preset.tc.note": {
-    "message": "February 2025. A proposal to halve the treasury's share of rewards. DReps 23.22%, and two of seven committee members. It expired."
-  },
   "governance.howItWorks.preset.sm.label": {
     "message": "103,000 ada withdrawal"
-  },
-  "governance.howItWorks.preset.sm.note": {
-    "message": "August 2026. Five of seven committee members said yes. DReps reached 65.19%, short of 67%. Silence decided it: DReps holding 1.35 billion ada did not vote, and that counted as No."
   },
   "governance.howItWorks.role.delegate.time": {
     "message": "Five minutes"
@@ -10231,9 +10192,6 @@
   },
   "governance.howItWorks.role.pool.title": {
     "message": "Vote from your pool."
-  },
-  "governance.howItWorks.role.pool.1": {
-    "message": "Your pool votes on hard forks, security-relevant settings, and committee questions."
   },
   "governance.howItWorks.role.pool.2": {
     "message": "Votes are weighted by the stake your pool holds."
@@ -10346,9 +10304,6 @@
   "governance.howItWorks.sim.actionType": {
     "message": "Action type"
   },
-  "governance.howItWorks.sim.security": {
-    "message": "Changes a security-relevant setting, so stake pools vote too"
-  },
   "governance.howItWorks.group.committee": {
     "message": "Committee"
   },
@@ -10442,9 +10397,6 @@
   "governance.howItWorks.chapter.yourPart": {
     "message": "Your part"
   },
-  "governance.howItWorks.stamp.snapshot": {
-    "message": "Ledger snapshot · epoch {epoch}"
-  },
   "governance.howItWorks.bar.title": {
     "message": "How Cardano decides"
   },
@@ -10472,29 +10424,17 @@
   "governance.howItWorks.yourVote.p2.snapshot": {
     "message": "takes a snapshot"
   },
-  "governance.howItWorks.yourVote.small": {
-    "message": "Ada that is not delegated counts for nothing. Pick a DRep, Always Abstain, or Always No Confidence."
-  },
   "governance.howItWorks.groups.title": {
     "message": "Three groups. None decides alone."
   },
   "governance.howItWorks.groups.cc": {
     "message": "Constitutional Committee"
   },
-  "governance.howItWorks.groups.ccPanel": {
-    "message": "A panel of {count} elected members. They ask one question: does this follow the constitution? One member, one vote."
-  },
   "governance.howItWorks.groups.dreps": {
     "message": "DReps"
   },
-  "governance.howItWorks.groups.drepsText": {
-    "message": "Delegated Representatives. They vote on every type of action, weighted by the ada delegated to them. {count} are active."
-  },
   "governance.howItWorks.groups.pools": {
     "message": "Stake pool operators"
-  },
-  "governance.howItWorks.groups.poolsText": {
-    "message": "They run the network, so they vote on hard forks, security-relevant settings, and the committee. {count} pools hold stake."
   },
   "governance.howItWorks.proposals.title": {
     "message": "Anyone can propose."
@@ -10504,9 +10444,6 @@
   },
   "governance.howItWorks.proposals.p1.action": {
     "message": "governance action"
-  },
-  "governance.howItWorks.proposals.p2": {
-    "message": "Each action links to a public document and records its hash, so the text cannot change once voting starts."
   },
   "governance.howItWorks.proposals.p3": {
     "message": "There are seven kinds of action, and each needs a different mix of votes."
@@ -10550,26 +10487,8 @@
   "governance.howItWorks.constitution.cite": {
     "message": "Cardano Constitution, Preamble"
   },
-  "governance.howItWorks.treasury.title": {
-    "message": "A treasury that answers to holders."
-  },
-  "governance.howItWorks.treasury.p1": {
-    "message": "Every epoch, {cut} flows into the treasury, about 3.7 million ada every five days. It holds {amount} billion ada today."
-  },
   "governance.howItWorks.treasury.p1.cut": {
     "message": "20% of the rewards"
-  },
-  "governance.howItWorks.treasury.p2": {
-    "message": "Since mid-2025, DReps and the committee have approved {withdrawals} worth about 804 million ada. Each needs 67% of active DRep stake and two thirds of the committee, and must follow the constitution's rules on spending limits, audits, and oversight."
-  },
-  "governance.howItWorks.treasury.p2.withdrawals": {
-    "message": "70 withdrawals"
-  },
-  "governance.howItWorks.yourMove.title": {
-    "message": "Your ada is already in the room."
-  },
-  "governance.howItWorks.yourMove.p1": {
-    "message": "Governance runs every epoch, whether you take part or not. The only choice is whose judgment your ada carries."
   },
   "governance.howItWorks.yourMove.cta": {
     "message": "Find your part"
@@ -10582,9 +10501,6 @@
   },
   "governance.howItWorks.sources.aboutTitle": {
     "message": "About the numbers"
-  },
-  "governance.howItWorks.sources.fineprint": {
-    "message": "Thresholds reflect protocol parameters at the snapshot epoch. Stake pools can set how their silence counts through their reward account; on hard forks, silence always counts as No."
   },
   "governance.howItWorks.sources.sourcesTitle": {
     "message": "Sources"
@@ -10683,9 +10599,6 @@
   "governance.howItWorks.canvas.stakePools": {
     "message": "STAKE POOLS"
   },
-  "governance.howItWorks.canvas.poolsWithStake": {
-    "message": "{count} with stake"
-  },
   "governance.howItWorks.canvas.governanceAction": {
     "message": "GOVERNANCE ACTION"
   },
@@ -10707,9 +10620,6 @@
   "governance.howItWorks.canvas.toPoolsShort": {
     "message": "80% · POOLS"
   },
-  "governance.howItWorks.canvas.toTreasury": {
-    "message": "20% · about 3.7 million ada per epoch"
-  },
   "governance.howItWorks.canvas.toTreasuryShort": {
     "message": "20% · treasury"
   },
@@ -10722,12 +10632,6 @@
   "governance.howItWorks.canvas.withdrawals": {
     "message": "WITHDRAWALS"
   },
-  "governance.howItWorks.canvas.withdrawalsNote": {
-    "message": "70 approved · about 804 million ada"
-  },
-  "governance.howItWorks.canvas.withdrawalsNoteShort": {
-    "message": "70 approved"
-  },
   "governance.howItWorks.canvas.you": {
     "message": "YOU"
   },
@@ -10736,9 +10640,6 @@
   },
   "governance.howItWorks.meta.title": {
     "message": "How Cardano Decides - Cardano Governance"
-  },
-  "governance.howItWorks.cta.title": {
-    "message": "Every five days, the ledger counts. Make sure it counts you."
   },
   "governance.howItWorks.cta.button": {
     "message": "Delegate your vote"
@@ -10749,20 +10650,11 @@
   "governance.howItWorks.sim.ledeRules": {
     "message": "Yes has to reach the threshold as a share of the stake that counts. When an active DRep stays silent, their stake counts as No. Abstain takes stake out of the count. Load a real vote from the ledger, then change it to see the rules at work."
   },
-  "governance.howItWorks.constitution.titleWeigh": {
-    "message": "Every action is weighed against the constitution."
-  },
-  "governance.howItWorks.constitution.weigh": {
-    "message": "Every governance action has to follow the constitution. The Constitutional Committee weighs each one against it and votes No on any it finds unconstitutional."
-  },
   "governance.howItWorks.constitution.code": {
-    "message": "Some rules run as code. A guardrails script checks every parameter change and treasury withdrawal when it is submitted, and the ledger rejects any that break a hard limit before a vote starts."
+    "message": "Some rules run as code. A guardrails script checks every parameter change and treasury withdrawal when it is submitted. If the action breaks one of the limits the script encodes, the ledger rejects it before any vote."
   },
   "governance.howItWorks.constitution.change": {
-    "message": "It opens with {tenets}. Changing it takes 75% of DRep stake and two thirds of the committee."
-  },
-  "governance.howItWorks.sources.aboutShort": {
-    "message": "Vote results, pool counts, and treasury figures come from the Cardano ledger at epoch {epoch} (September 16, 2026) unless marked live. Vote results are the ledger's own ratification tallies. The epoch number in the bar is computed from the mainnet schedule. The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org when available."
+    "message": "Its first article sets out {tenets}. Changing the constitution takes 75% of DRep stake and two thirds of the committee."
   },
   "governance.howItWorks.canvas.oneMemberOneVote": {
     "message": "one member, one vote"
@@ -10783,13 +10675,130 @@
     "message": "CONSTITUTIONAL COMMITTEE"
   },
   "governance.howItWorks.canvas.scaleNote": {
-    "message": "weighs every action against the constitution"
+    "message": "checks actions against the constitution"
   },
   "governance.howItWorks.canvas.inBalance": {
     "message": "IN BALANCE WITH THE CONSTITUTION"
   },
-  "governance.howItWorks.hero.descriptionShort": {
-    "message": "No single company decides what Cardano becomes. Ada holders, stake pool operators, and an elected committee do, on-chain. Here is how it works."
+  "governance.howItWorks.sim.securityParam": {
+    "message": "Changes a security-relevant parameter, so stake pools vote too"
+  },
+  "governance.howItWorks.yourVote.notDelegated": {
+    "message": "Ada that is not delegated for governance is not counted. Pick a DRep, Always Abstain, or Always No Confidence."
+  },
+  "governance.howItWorks.proposals.anchor": {
+    "message": "Each action links to a public document and records its hash on-chain, so any later change to the text can be detected."
+  },
+  "governance.howItWorks.constitution.check": {
+    "message": "The Constitutional Committee checks actions against it and votes No on any it finds unconstitutional. It votes on every type of action except committee updates and motions of no confidence."
+  },
+  "governance.howItWorks.treasury.titleVote": {
+    "message": "A treasury spent only by vote."
+  },
+  "governance.howItWorks.treasury.ncl": {
+    "message": "net change limit"
+  },
+  "governance.howItWorks.yourMove.titleCount": {
+    "message": "Make your ada count."
+  },
+  "governance.howItWorks.yourMove.delegate": {
+    "message": "Governance decisions are made every epoch, with or without your vote. Delegating takes one transaction, and you can change it at any time."
+  },
+  "governance.howItWorks.matrix.treasury.descPays": {
+    "message": "Pays ada from the treasury to one or more stake addresses. It must stay within the net change limit and follow the constitution's treasury rules."
+  },
+  "governance.howItWorks.matrix.param.descParameter": {
+    "message": "Changes a protocol parameter such as fees, block size, or script limits. Parameters fall into four groups: network, economic, technical, and governance. Some are also security-relevant."
+  },
+  "governance.howItWorks.matrix.param.drepNoteGov": {
+    "message": "75% for governance parameters"
+  },
+  "governance.howItWorks.matrix.param.poolNoteSecurity": {
+    "message": "only when a security-relevant parameter changes"
+  },
+  "governance.howItWorks.matrix.param.exampleFeb": {
+    "message": "In February 2026, higher Plutus execution limits passed with 86.5% of DRep stake, 58.6% of pool stake, and six of seven committee votes."
+  },
+  "governance.howItWorks.matrix.committee.exampleSeats": {
+    "message": "The September 2026 election filled four seats with 72.0% of DRep stake and 56.2% of pool stake."
+  },
+  "governance.howItWorks.preset.vr.outcome": {
+    "message": "Ratified in July 2026. The upgrade to protocol version 11. DReps 77.63%, stake pools 52.54%, and six of seven committee votes."
+  },
+  "governance.howItWorks.preset.c26.outcome": {
+    "message": "Ratified in January 2026. DReps 79.85%. Six committee members voted yes and one voted no."
+  },
+  "governance.howItWorks.preset.pl.outcome": {
+    "message": "Expired in September 2026. Higher script limits and a lower minimum pool cost. DReps said yes (68.57%), and so did five of seven committee members. Stake pools fell short: 34.65% against the 51% needed."
+  },
+  "governance.howItWorks.preset.tc.outcome": {
+    "message": "Expired in March 2025. A proposal to halve the treasury's share of rewards. DReps 23.22%, and two of seven committee members."
+  },
+  "governance.howItWorks.preset.sm.outcome": {
+    "message": "Expired in September 2026. Five of seven committee members said yes. DReps reached 65.19%, short of 67%. Silence decided it: DReps holding 1.35 billion ada did not vote, and that counted as No."
+  },
+  "governance.howItWorks.role.pool.votes": {
+    "message": "Your pool votes on hard forks, security-relevant parameter changes, committee updates, and motions of no confidence."
+  },
+  "governance.howItWorks.hero.descriptionDecided": {
+    "message": "Changes to Cardano and its treasury are decided on-chain by DReps, stake pool operators, and an elected Constitutional Committee. Here is how it works, and where your ada fits in."
+  },
+  "governance.howItWorks.cta.titleDelegate": {
+    "message": "Your ada only counts in governance once it is delegated."
+  },
+  "governance.howItWorks.constitution.titleFollow": {
+    "message": "Every action has to follow the constitution."
+  },
+  "governance.howItWorks.groups.ccElected": {
+    "message": "An elected panel. Members ask one question: does this follow the constitution? One member, one vote."
+  },
+  "governance.howItWorks.groups.ccSeated": {
+    "message": "{count} members are seated."
+  },
+  "governance.howItWorks.groups.drepsVote": {
+    "message": "Delegated Representatives. They vote on every type of action, weighted by the ada delegated to them."
+  },
+  "governance.howItWorks.groups.drepsActive": {
+    "message": "{count} are active."
+  },
+  "governance.howItWorks.groups.poolsRun": {
+    "message": "They run the network, so they vote on hard forks, security-relevant parameter changes, committee updates, and motions of no confidence. Their votes are weighted by the stake in their pools."
+  },
+  "governance.howItWorks.treasury.funded": {
+    "message": "Every epoch, {cut} flows into the treasury."
+  },
+  "governance.howItWorks.treasury.balance": {
+    "message": "It holds {amount} billion ada today."
+  },
+  "governance.howItWorks.treasury.rules": {
+    "message": "Ada leaves the treasury only through a {withdrawal}. Each one needs 67% of active DRep stake and two thirds of the committee, must stay within the {ncl}, and must follow the constitution's treasury rules."
+  },
+  "governance.howItWorks.treasury.withdrawal": {
+    "message": "treasury withdrawal"
+  },
+  "governance.howItWorks.sources.aboutLive": {
+    "message": "The number of active DReps, the committee size, and the treasury balance load live from data.cardano.org. If they cannot load, the page leaves them out. The epoch number in the bar is computed from the mainnet schedule. Vote results are dated and quote the ledger's own ratification tallies."
+  },
+  "governance.howItWorks.sources.fineprintParams": {
+    "message": "Thresholds, deposits, and time limits are the protocol parameters in force in October 2026. Stake pools can set how their silence counts through their reward account; on hard forks, silence always counts as No."
+  },
+  "governance.howItWorks.canvas.toTreasuryShare": {
+    "message": "20% · TO THE TREASURY"
+  },
+  "governance.howItWorks.canvas.withdrawalsVote": {
+    "message": "each one approved on-chain by vote"
+  },
+  "governance.howItWorks.canvas.withdrawalsVoteShort": {
+    "message": "approved by vote"
+  },
+  "governance.howItWorks.matrix.treasury.exampleAug26": {
+    "message": "In August 2026, a 120 million ada withdrawal passed with 80.1% of DRep stake and six of seven committee votes."
+  },
+  "governance.howItWorks.matrix.noconf.examplePurpose": {
+    "message": "It lets DReps and stake pool operators remove a committee they no longer trust."
+  },
+  "governance.howItWorks.matrix.info.exampleUse": {
+    "message": "DReps use them, for example, to agree on the treasury's net change limit."
   },
   "navbar.mega.featured.title.What is Cardano?": {
     "message": "What is Cardano?"
