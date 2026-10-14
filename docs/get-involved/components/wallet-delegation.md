@@ -58,7 +58,7 @@ A search field with a "Clear" button that appears once the field has a value.
 
 ## SnapshotImage
 
-An avatar or logo from the self-hosted image snapshots, such as DRep avatars and stake pool logos. It falls back to `Initials` when the ID has no image or the file fails to load.
+An avatar or logo from the self-hosted image snapshots, such as DRep avatars and stake pool logos, rendered with [Logo Tile](./logo-tile.md). It shows the round initials when the ID has no image or the file fails to load.
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
@@ -66,7 +66,7 @@ An avatar or logo from the self-hosted image snapshots, such as DRep avatars and
 | `id` | `string` | *required* | The ID to look up. |
 | `path` | `string` | *required* | Site path of the image, resolved with the base URL. |
 | `name` | `string` | - | Name used for the initials fallback. |
-| `className` | `string` | - | Class on the `<img>`. |
+| `className` | `string` | - | Class on the tile. It sets the [Logo Tile](./logo-tile.md) variables for the image, for example `--logo-radius: 50%` and `--logo-fit: cover` for a round photo. |
 
 ## Initials
 

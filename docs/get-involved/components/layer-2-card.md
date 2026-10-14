@@ -91,7 +91,7 @@ The component uses CSS modules. Override styles by targeting these classes:
 
 - `.card` - the card container
 - `.linkCard` - added when the card is a link (hover elevation)
-- `.logoTile` / `.monogram` / `.logoImage` - the logo tile and its contents
+- `.logoTile` - the logo tile, a [Logo Tile](./logo-tile.md) whose CSS variables set the size, inset, background, and monogram color
 - `.name` - the project name
 - `.statusPill` / `.statusDot` - the status pill and its dot
 - `.statusBlue`, `.statusGreen`, `.statusPurple`, `.statusAmber`, `.statusGrey` - per-status colours

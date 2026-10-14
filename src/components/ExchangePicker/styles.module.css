@@ -89,25 +89,14 @@
   gap: 1rem;
 }
 
+/* LogoTile variables: square logo, or a letter on the brand gradient with
+   rounded corners. */
 .exchangeLogo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.exchangeInitial {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  --logo-radius: 0;
+  --logo-fallback-radius: 8px;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  --logo-fallback-color: white;
+  --logo-fallback-font-size: 1.5rem;
 }
 
 .exchangeName {

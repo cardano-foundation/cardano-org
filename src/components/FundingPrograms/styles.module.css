@@ -188,36 +188,20 @@
   gap: var(--site-space-xs);
 }
 
+/* LogoTile variables for the card and the dialog. */
 .logoTile,
 .logoTileLarge {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--site-radius-md);
-  background: var(--site-tint-weak);
+  --logo-size: 44px;
+  --logo-radius: var(--site-radius-md);
+  --logo-bg: var(--site-tint-weak);
+  --logo-fallback-color: var(--ifm-color-primary);
+  --logo-fallback-font-size: 1.1rem;
+  --logo-fallback-line-height: 1;
 }
 
 .logoTileLarge {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--site-radius-lg);
-}
-
-.logoImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.monogram {
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--ifm-color-primary);
+  --logo-size: 56px;
+  --logo-radius: var(--site-radius-lg);
 }
 
 .detailsHeader {

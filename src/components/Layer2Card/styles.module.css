@@ -47,32 +47,19 @@ html[data-theme="dark"] .linkCard:hover {
   gap: 12px;
 }
 
+/* LogoTile variables: a 28px logo inset in a 40px tile. */
 .logoTile {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #e0f0ff;
+  --logo-size: 40px;
+  --logo-radius: 10px;
+  --logo-bg: #e0f0ff;
+  --logo-image-size: 28px;
+  --logo-fallback-color: var(--ifm-color-primary);
+  --logo-fallback-font-size: 18px;
+  --logo-fallback-line-height: 1;
 }
 
 html[data-theme="dark"] .logoTile {
-  background: rgba(0, 51, 173, 0.25);
-}
-
-.logoImage {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-.monogram {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--ifm-color-primary);
+  --logo-bg: rgba(0, 51, 173, 0.25);
 }
 
 .name {

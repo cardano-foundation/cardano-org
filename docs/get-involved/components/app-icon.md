@@ -8,7 +8,7 @@ import { Showcases } from '@site/src/data/apps';
 
 ## AppIcon
 
-The icon of one showcase entry, sized for a tile or a row. It renders `app.icon` through `useBaseUrl`, so the path works in every locale. When the entry has no `icon` or the image fails to load, it falls back to a colored letter avatar: the first letter of the title on the category color from `Categories`.
+The icon of one showcase entry, sized for a tile or a row, rendered with [Logo Tile](./logo-tile.md). The `app.icon` path goes through `useBaseUrl`, so it works in every locale. When the entry has no `icon` or the image fails to load, it falls back to a colored letter avatar: the first letter of the title on the category color from `Categories`.
 
 It exists to be used inside [App Tile](./app-tile.md) and [App Row](./app-row.md). Use it on its own only when you build a new app-related component and need the same icon treatment.
 
