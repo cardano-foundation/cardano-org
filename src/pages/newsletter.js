@@ -4,7 +4,7 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
-import CommunityDigestForm from "@site/src/components/CommunityDigestFormHS";
+import HubSpotForm from "@site/src/components/Layout/HubSpotForm";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -38,7 +38,7 @@ export default function Home() {
               ]}
               headingDot={true}
           />
-          <CommunityDigestForm />
+          <HubSpotForm form="digestForm" />
         </BoundaryBox>
         <SpacerBox size="medium" />
 
