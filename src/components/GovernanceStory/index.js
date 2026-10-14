@@ -490,6 +490,20 @@ export default function GovernanceStory() {
               {"Ada leaves the treasury only through a {withdrawal}. Each one needs 67% of active DRep stake and two thirds of the committee, must stay within the {ncl}, and must follow the constitution's treasury rules."}
             </Translate>
           </p>
+          <p className={styles.small}>
+            <Translate
+              id="governance.howItWorks.treasury.more"
+              values={{
+                page: (
+                  <G to="/governance/treasury">
+                    {translate({ id: "governance.howItWorks.treasury.morePage", message: "treasury page" })}
+                  </G>
+                ),
+              }}
+            >
+              {"The {page} covers what the treasury funds, how spending is decided, and where its income comes from."}
+            </Translate>
+          </p>
         </Chapter>
 
         <Chapter id="your-move" scene="finale" num="06" name={ch["your-move"]}>

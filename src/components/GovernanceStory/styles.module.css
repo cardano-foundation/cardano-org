@@ -7,9 +7,11 @@
   position: relative;
 }
 
+/* The site navbar scrolls away (position: relative), so the chapter bar
+   sticks to the very top and every offset below counts only the bar. */
 .chrome {
   position: sticky;
-  top: var(--ifm-navbar-height);
+  top: 0;
   z-index: 3;
   height: 0;
 }
@@ -95,7 +97,7 @@
 
 .dots {
   position: absolute;
-  top: calc(50vh - var(--ifm-navbar-height));
+  top: 50vh;
   right: 18px;
   display: flex;
   flex-direction: column;
@@ -169,7 +171,7 @@
   align-items: center;
   min-height: 120vh;
   padding-block: 14vh;
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 44px);
+  scroll-margin-top: 44px;
 }
 
 .card {
@@ -368,6 +370,7 @@
 .module {
   position: relative;
   z-index: 1;
+  scroll-margin-top: 44px;
   padding-block: clamp(4rem, 8vw, 7rem);
   background: var(--ifm-color-emphasis-100);
 }
@@ -594,7 +597,7 @@
 
 .simSide {
   position: sticky;
-  top: calc(var(--ifm-navbar-height) + 44px + var(--site-space-md));
+  top: calc(44px + var(--site-space-md));
   display: flex;
   flex-direction: column;
   gap: var(--site-space-md);

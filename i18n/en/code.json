@@ -10196,9 +10196,6 @@
   "governance.howItWorks.role.pool.2": {
     "message": "Votes are weighted by the stake your pool holds."
   },
-  "governance.howItWorks.role.pool.3": {
-    "message": "On hard forks, a pool that stays silent counts as No."
-  },
   "governance.howItWorks.role.pool.cta": {
     "message": "What stake pool operators are expected to do"
   },
@@ -10799,6 +10796,15 @@
   },
   "governance.howItWorks.matrix.info.exampleUse": {
     "message": "DReps use them, for example, to agree on the treasury's net change limit."
+  },
+  "governance.howItWorks.treasury.more": {
+    "message": "The {page} covers what the treasury funds, how spending is decided, and where its income comes from."
+  },
+  "governance.howItWorks.treasury.morePage": {
+    "message": "treasury page"
+  },
+  "governance.howItWorks.role.pool.silence": {
+    "message": "A silent pool counts as No, unless its reward account is delegated to Always Abstain. On hard forks, silence always counts as No."
   },
   "navbar.mega.featured.title.What is Cardano?": {
     "message": "What is Cardano?"

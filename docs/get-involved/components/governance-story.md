@@ -35,14 +35,15 @@ Neither component takes props.
 | `labels.js` | Every string the canvas draws, as `translate()` calls |
 | `epoch.js` | Epoch number and countdown for the chapter bar, computed from the mainnet schedule without a network call |
 | `VoteMatrix.js`, `CountSimulator.js`, `RoleFinder.js` | The interactive modules |
-| `src/data/governanceStory.js` | Snapshot figures, thresholds, simulator presets, and role finder content |
+| `src/data/governanceStory.js` | Live figure checks, thresholds, simulator presets, and role finder content |
 
 Each chapter is a `section` with a `data-scene` attribute naming the picture to draw. The pictures are dot art drawn from one pool of particles. In the three groups chapter, each group is a persona: the committee as a panel behind one bench (one figure per seat, from the live committee size), a DRep raising a voting card in front of the people who delegated to them, and a stake pool operator at a laptop cabled to a server rack. The persona shapes are plain functions in `engine.js` (`benchPts`, `drepPts`, `poolPts`) drawn in design units, so they scale to any screen. The engine switches scenes when a chapter card crosses a line in the viewport, and pauses while the story is off screen.
 
 ## Data
 
-- The number of active DReps, the committee size, and the treasury balance come live from `data.cardano.org` through `useAccountabilityStats`, with the snapshot as a fallback.
-- Everything else is a ledger snapshot. When you refresh it, update `SNAPSHOT` in `src/data/governanceStory.js` and the strings that quote the same figures, and change the epoch and date in the "About the numbers" note.
+- Only three figures change over time: the number of active DReps, the committee size, and the treasury balance. They come live from `data.cardano.org` through `useAccountabilityStats`. There is no fallback: while they load, or if the request fails, the text and the picture leave them out. The bench still draws seven seats until the live committee size arrives, but shows no count.
+- Vote results quoted on the page are dated (for example, "ratified in July 2026") and taken from the ledger's own ratification tallies, so they stay true. Do not add running totals such as "so far" counts, since they go stale.
+- Thresholds, deposits, and time limits follow the protocol parameters in force. When a parameter change is enacted, update `ACTION_RULES` and the strings that quote the values, and the date in the "About the numbers" note.
 
 ## Styling
 

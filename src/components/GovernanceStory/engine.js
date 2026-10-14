@@ -336,16 +336,16 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
   }
 
   /* ---------- layout ---------- */
-  let topInset = 104;
+  let topInset = 44;
   let cardRight = 0;
   let boxRight = 0;
   let originX = 0;
   function measure() {
     const sr = stage.getBoundingClientRect();
     originX = sr.left;
-    const navbar = document.querySelector(".navbar");
+    // Only the chapter bar covers the stage; the site navbar scrolls away.
     const bar = root.querySelector("[data-story-bar]");
-    topInset = (navbar ? navbar.offsetHeight : 60) + (bar ? bar.offsetHeight : 44);
+    topInset = bar ? bar.offsetHeight : 44;
     const card = root.querySelector("[data-story-card]");
     if (card) {
       cardRight = card.getBoundingClientRect().right - originX;

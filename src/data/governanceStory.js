@@ -313,7 +313,10 @@ export function getRoles() {
           message: "Your pool votes on hard forks, security-relevant parameter changes, committee updates, and motions of no confidence.",
         }),
         translate({ id: "governance.howItWorks.role.pool.2", message: "Votes are weighted by the stake your pool holds." }),
-        translate({ id: "governance.howItWorks.role.pool.3", message: "On hard forks, a pool that stays silent counts as No." }),
+        translate({
+          id: "governance.howItWorks.role.pool.silence",
+          message: "A silent pool counts as No, unless its reward account is delegated to Always Abstain. On hard forks, silence always counts as No.",
+        }),
       ],
       cta: translate({ id: "governance.howItWorks.role.pool.cta", message: "What stake pool operators are expected to do" }),
       to: "/governance/accountability#spos",
