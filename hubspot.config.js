@@ -1,10 +1,5 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-// Configuration for HubSpot Form
+// HubSpot forms rendered by Layout/HubSpotForm. `id` is the id of the div the
+// form renders into, unique on the page.
 const HubSpotConfig = {
 
   //  the form on http://localhost:3000/contact

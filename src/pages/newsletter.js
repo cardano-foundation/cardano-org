@@ -5,7 +5,6 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HubSpotForm from "@site/src/components/Layout/HubSpotForm";
-import HubSpotConfig from "@site/hubspot.config";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -39,7 +38,7 @@ export default function Home() {
               ]}
               headingDot={true}
           />
-          <HubSpotForm {...HubSpotConfig.digestForm} />
+          <HubSpotForm form="digestForm" />
         </BoundaryBox>
         <SpacerBox size="medium" />
 

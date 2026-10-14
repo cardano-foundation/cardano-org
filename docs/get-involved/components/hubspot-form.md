@@ -14,7 +14,7 @@ description: Embed a HubSpot form, such as the contact form or the Community Dig
 
 ## Basic Usage
 
-The form ids live in `hubspot.config.js` at the repository root. Add an entry there and spread it into the component:
+The form ids live in `hubspot.config.js` at the repository root. Add an entry there and pass its key:
 
 ```js title="hubspot.config.js"
 const HubSpotConfig = {
@@ -27,30 +27,28 @@ const HubSpotConfig = {
 };
 ```
 
+`id` is the id of the `div` the form renders into. Keep it unique on the page and a valid CSS identifier.
+
 ```jsx
 import HubSpotForm from '@site/src/components/Layout/HubSpotForm';
-import HubSpotConfig from '@site/hubspot.config';
 
-<HubSpotForm {...HubSpotConfig.contactForm} />
+<HubSpotForm form="contactForm" />
 ```
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `formId` | `string` | *required* | HubSpot form id. |
-| `portalId` | `string` | *required* | HubSpot portal id. |
-| `region` | `string` | *required* | HubSpot region, for example `na1`. |
-| `id` | `string` | *required* | Id of the `div` the form renders into. Unique on the page and a valid CSS identifier. |
+| `form` | `string` | *required* | Key of the form in `hubspot.config.js`. |
 | `className` | `string` | - | Extra class on the outer `div`. |
 
 There is no live preview on this page, because a working form would send real submissions to HubSpot.
 
 ## Behavior
 
-- The script loads the first time a form mounts. After a visit to another form page it is already there, and the form renders at once.
+- HubSpot's script loads once per page view, the first time a form mounts, and every form shares it. After a visit to another form page the form renders at once.
 - When the component unmounts before the script has loaded, the late script does not render a form any more.
-- A change of `formId`, `portalId`, `region`, or `id` renders the form again.
+- A change of `form` renders the form again.
 - If HubSpot is blocked, the `div` stays empty.
 
 ## Styling and known limits

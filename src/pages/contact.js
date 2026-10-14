@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -8,7 +7,6 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import Divider from "@site/src/components/Layout/Divider";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import HubSpotForm from "@site/src/components/Layout/HubSpotForm";
-import HubSpotConfig from "@site/hubspot.config";
 import styles from "./contact.module.css";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
@@ -130,7 +128,7 @@ export default function Home() {
           {/* Topic Selection, each topic will render a different component */}
           {translate({id: 'contact.select.prefix', message: 'I have'})}
           <select
-            className={clsx(styles.selectField, styles.selectFieldArrow)}
+            className={styles.selectField}
             onChange={handleTopicChange}
             value={selectedTopic ?? ""}
             aria-label={translate({id: 'contact.select.label', message: 'What can we help you with?'})}
@@ -150,7 +148,7 @@ export default function Home() {
           {selectedTopic === "iog" && <TechnicalIssueForm />}
           {selectedTopic === "intersect" && <JoinIntersect />}
           {selectedTopic === "sponsor" && <SponsorshipForm />}
-          {selectedTopic === "different" && <HubSpotForm {...HubSpotConfig.contactForm} />}
+          {selectedTopic === "different" && <HubSpotForm form="contactForm" />}
           {/* ... */}
         </BoundaryBox>
         <SpacerBox size="medium" />

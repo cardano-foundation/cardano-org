@@ -4,32 +4,13 @@
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /*background-color: white;*/
-  /*color: #333;*/
   min-width: 260px;
   max-width: calc(100% - 20px); /* long translated options must not widen the page */
   font-size: 16px;
-  /*width: 100%; */ /* You can set a width or make it full-width of the container */
-  -moz-appearance: none; /* Remove default styling for Firefox */
-  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
-  appearance: none; /* Remove default arrow from IE */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-/* Style for the arrow icon */
-.selectFieldArrow {
-  position: relative;
-}
-
-.selectFieldArrow::after {
-  content: '▼';
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none; /* This prevents the arrow from being clickable */
-}
-
-/* Add more styles for hover, focus, etc. as needed */
 .selectField:hover {
   border-color: #888;
 }
