@@ -53,4 +53,3 @@ import { translate } from '@docusaurus/Translate';
 ## Notes
 
 - The heading is an `h2` by default, so it fits at the end of a page whose sections are `h2` as well.
-- `GitHubIcon` from the same folder is the GitHub mark on its own, for icon buttons such as "View source" on the app detail pages.

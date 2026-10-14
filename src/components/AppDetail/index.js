@@ -20,7 +20,7 @@ import { safeUrl } from "@site/src/utils/safeUrl";
 import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
 import EditOnGitHubCallout from "@site/src/components/Layout/EditOnGitHubCallout";
-import GitHubIcon from "@site/src/components/Layout/EditOnGitHubCallout/GitHubIcon";
+import GitHubIcon from "@site/src/components/icons/GitHubIcon";
 import styles from "./styles.module.css";
 import { scrollBehavior } from "@site/src/utils/jsUtils";
 import Grid from "@site/src/components/Layout/Grid";

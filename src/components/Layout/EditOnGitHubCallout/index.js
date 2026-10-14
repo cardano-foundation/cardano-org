@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { getHeading } from "@site/src/utils/heading";
-import GitHubIcon from "./GitHubIcon";
+import GitHubIcon from "@site/src/components/icons/GitHubIcon";
 import styles from "./styles.module.css";
 
 /**
