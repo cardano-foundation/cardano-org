@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import {
   FaBullhorn,
@@ -12,7 +12,7 @@ import { translate } from "@docusaurus/Translate";
 import Divider from "@site/src/components/Layout/Divider";
 import Accordion, { whenSettled } from "@site/src/components/Layout/Accordion";
 import { scrollToElement } from "@site/src/utils/jsUtils";
-import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
+import useHashTarget from "@site/src/utils/useHashTarget";
 import styles from "./styles.module.css";
 
 const CATEGORY_ORDER = [
@@ -96,7 +96,7 @@ export default function GovernanceFAQ({ data }) {
   // to it and moves focus to its button. An answer that was open above it
   // collapses with a transition and pulls the row up while it runs, so the
   // scroll waits for that collapse to finish.
-  const openQuestion = useCallback((entry) => {
+  const openQuestion = (entry) => {
     const previous = wrapperRef.current?.querySelector('section [aria-expanded="true"]');
     setOpenId(entry.id);
     setActiveCategory(entry.category);
@@ -109,20 +109,14 @@ export default function GovernanceFAQ({ data }) {
         row.querySelector("button")?.focus({ preventScroll: true });
       });
     });
-  }, []);
+  };
 
   // A link such as /governance#faq-lose-ada opens that question, on load and
   // when the hash changes.
-  useEffect(() => {
-    const applyHash = () => {
-      const target = hashTargetId(window.location.hash);
-      const entry = data.find((item) => item.id === target);
-      if (entry) openQuestion(entry);
-    };
-    applyHash();
-    window.addEventListener("hashchange", applyHash);
-    return () => window.removeEventListener("hashchange", applyHash);
-  }, [data, openQuestion]);
+  useHashTarget((target) => {
+    const entry = data.find((item) => item.id === target);
+    if (entry) openQuestion(entry);
+  });
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>

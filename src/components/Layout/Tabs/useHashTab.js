@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
+import { useState } from "react";
+import useHashTarget from "@site/src/utils/useHashTarget";
 
 /**
  * Selected tab state that follows the URL hash, for deep links such as
@@ -19,50 +19,35 @@ import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
  */
 export default function useHashTab({ ids = [], indexForHash, storageKey, onHashSelect } = {}) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  // Latest options for the hash listener, which is only added once.
-  const options = useRef({ ids, indexForHash, storageKey, onHashSelect });
-  useEffect(() => {
-    options.current = { ids, indexForHash, storageKey, onHashSelect };
-  });
-
-  const select = useCallback((index) => {
+  const select = (index) => {
     setSelectedIndex(index);
-    const { ids: tabIds, storageKey: key } = options.current;
-    if (!key) return;
+    if (!storageKey) return;
     try {
-      localStorage.setItem(key, tabIds[index] ?? "");
+      localStorage.setItem(storageKey, ids[index] ?? "");
     } catch (e) {
       // Storage is a convenience, private mode simply does not remember.
     }
-  }, []);
+  };
 
-  useEffect(() => {
-    const applyHash = () => {
-      const { ids: tabIds, indexForHash: lookup, onHashSelect: onSelectHash } = options.current;
-      const hash = (hashTargetId(window.location.hash) ?? "").toLowerCase();
-      let index = tabIds.indexOf(hash);
-      if (index < 0 && hash && lookup) index = lookup(hash);
-      if (!(index >= 0)) return false;
+  useHashTarget((id, initial) => {
+    const hash = (id ?? "").toLowerCase();
+    let index = ids.indexOf(hash);
+    if (index < 0 && hash && indexForHash) index = indexForHash(hash);
+    if (index >= 0) {
       select(index);
-      onSelectHash?.(hash, index);
-      return true;
-    };
-
-    // A tab hash in the URL wins. Otherwise restore the stored tab, without
-    // scrolling, so a normal page load stays at the top.
-    const { ids: tabIds, storageKey: key } = options.current;
-    if (!applyHash() && key) {
-      try {
-        const index = tabIds.indexOf(localStorage.getItem(key));
-        if (index >= 0) setSelectedIndex(index);
-      } catch (e) {
-        // No storage, keep the first tab.
-      }
+      onHashSelect?.(hash, index);
+      return;
     }
-
-    window.addEventListener("hashchange", applyHash);
-    return () => window.removeEventListener("hashchange", applyHash);
-  }, [select]);
+    // A tab hash in the URL wins. Otherwise restore the stored tab on load,
+    // without scrolling, so a normal page load stays at the top.
+    if (!initial || !storageKey) return;
+    try {
+      const stored = ids.indexOf(localStorage.getItem(storageKey));
+      if (stored >= 0) setSelectedIndex(stored);
+    } catch (e) {
+      // No storage, keep the first tab.
+    }
+  });
 
   return [selectedIndex, select];
 }
