@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import useHashTarget from "@site/src/utils/useHashTarget";
 
 /**
@@ -19,22 +19,15 @@ import useHashTarget from "@site/src/utils/useHashTarget";
  */
 export default function useHashTab({ ids = [], indexForHash, storageKey, onHashSelect } = {}) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  // Latest options for the stable select callback.
-  const options = useRef({ ids, storageKey });
-  useEffect(() => {
-    options.current = { ids, storageKey };
-  });
-
-  const select = useCallback((index) => {
+  const select = (index) => {
     setSelectedIndex(index);
-    const { ids: tabIds, storageKey: key } = options.current;
-    if (!key) return;
+    if (!storageKey) return;
     try {
-      localStorage.setItem(key, tabIds[index] ?? "");
+      localStorage.setItem(storageKey, ids[index] ?? "");
     } catch (e) {
       // Storage is a convenience, private mode simply does not remember.
     }
-  }, []);
+  };
 
   useHashTarget((id, initial) => {
     const hash = (id ?? "").toLowerCase();

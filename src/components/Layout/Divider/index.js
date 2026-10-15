@@ -27,7 +27,7 @@ import { translate } from "@docusaurus/Translate";
  */
 export default function Divider({ text, id, white = false, headingLevel, className }) {
   useHashTarget((target) => {
-    if (id && target === id) setTimeout(() => scrollToElement(document.getElementById(id)), 100);
+    if (target === id) setTimeout(() => scrollToElement(document.getElementById(id)), 100);
   });
   const headerClass = clsx(styles.header, { [styles.white]: white });
   const { Tag, lookClassName } = getHeading(headingLevel ?? 0, 6);
