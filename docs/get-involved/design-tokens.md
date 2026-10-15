@@ -144,7 +144,10 @@ A typical hover transition:
 }
 ```
 
-Wrap non-essential animation in `@media (prefers-reduced-motion: reduce)` and disable it there.
+With reduced motion turned on, the duration tokens are `0ms` and `--site-lift` is `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
+
+- **No block needed:** every duration, delay, and hover lift the component animates comes from these tokens.
+- **Block still needed:** anything hard-coded, such as a fixed duration, a lift like `translateY(-4px)`, a keyframe animation, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there.
 
 ## Focus
 

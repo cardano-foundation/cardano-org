@@ -107,9 +107,3 @@
     padding: 10px 18px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .pill .tab {
-    transition: none;
-  }
-}

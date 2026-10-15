@@ -146,11 +146,3 @@
     padding-bottom: var(--site-space-sm);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .trigger,
-  .panel,
-  .item.itemOpen .panel {
-    transition: none;
-  }
-}

@@ -47,12 +47,6 @@
   outline-offset: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .link {
-    transition: none;
-  }
-}
-
 /* App icons with their own square background keep a small corner radius;
    transparent logos are unaffected by it. No display value here: ThemedImage
    hides the other theme's image with display: none before hydration, and

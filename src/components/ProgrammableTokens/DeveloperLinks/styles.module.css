@@ -66,9 +66,3 @@
     gap: var(--site-space-2xs);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .link {
-    transition: none;
-  }
-}

@@ -155,7 +155,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduced motion: the motion tokens drop to zero, so every transition and
+   hover lift built on them stops without a block of its own. See "Motion" in
+   docs/get-involved/design-tokens.md. */
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    --site-duration-fast: 0ms;
+    --site-duration-base: 0ms;
+    --site-duration-slow: 0ms;
+    --site-lift: 0px;
+  }
+
   html {
     scroll-behavior: auto;
   }
@@ -260,7 +270,6 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   margin: 0;
   box-sizing: border-box;
 }
-
 
 /* The navbar needs a little space so that the Cardano logo can breathe */
 .navbar {
@@ -657,7 +666,6 @@ img {
   opacity: 0.9;
 }
 
-
 /* Panel: centered under its trigger, kept in the DOM so it can animate.
    Width comes from its content (tile plus fixed-width columns).
    --mega-menu-shift is set by the React component when the centered
@@ -690,12 +698,6 @@ img {
   visibility: visible;
   transform: translate(calc(-50% + var(--mega-menu-shift, 0px)), 0);
   pointer-events: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .megaMenuPanel {
-    transition: none;
-  }
 }
 
 /* Invisible bridge over the trigger-to-panel gap so the pointer can travel
@@ -793,7 +795,6 @@ img {
   filter: brightness(1.15);
 }
 
-
 .megaMenuColumnTitle {
   font-size: 0.85rem;
   font-weight: 600;
@@ -804,7 +805,6 @@ img {
   align-items: center;
   gap: 6px;
 }
-
 
 .megaMenuItemLink {
   display: flex;
@@ -891,7 +891,6 @@ img {
   animation: swipeOut 0.5s forwards;
 }
 
-
 /* section caret */
 
 :root {
@@ -931,7 +930,6 @@ html[data-theme="light"] {
   /* Half the width, so the caret tip sits exactly in the middle. */
   margin-left: -1024px;
 }
-
 
 /* screen size changes */
 @media screen and (max-width: 576px) {
