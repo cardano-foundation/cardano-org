@@ -12,4 +12,4 @@ Applications and AI agents keep wallets on the machine they run on and sign thro
 [**Read more**](https://www.iog.io/news/open-wallet-standard-adds-cardano-support)
 </div>
 
-![open wallet standard adds cardano support banner](./banner.png)
+![open wallet standard adds cardano support banner](./banner.webp)

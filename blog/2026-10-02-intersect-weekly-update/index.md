@@ -12,4 +12,4 @@ Cardano node 11.1.3 corrects an IPv4 decoding issue introduced in 11.1.2, and 11
 [**Read more**](https://www.intersectmbo.org/news/intersect-weekly-update-131-oct-2-2026)
 </div>
 
-![intersect weekly update banner](./banner.png)
+![intersect weekly update banner](./banner.webp)

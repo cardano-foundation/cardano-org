@@ -12,4 +12,4 @@ Intersect pre-released cardano-node 11.1.1 with Dijkstra preparations advancing 
 [**Read more**](https://www.intersectmbo.org/news/intersect-weekly-update-128-sep-11-2026)
 </div>
 
-![intersect weekly update banner](./banner.png)
+![intersect weekly update banner](./banner.webp)

@@ -12,4 +12,4 @@ The Cardano Foundation announced eight ventures for the Cardano Accelerator Prog
 [**Read more**](https://cardanofoundation.org/blog/cap-fall-2026-cohort)
 </div>
 
-![cap fall 2026 cohort banner](./banner.png)
+![cap fall 2026 cohort banner](./banner.webp)

@@ -12,4 +12,4 @@ Intersect released cardano-node 11.1.2, which supersedes 11.1.1 and asks SPOs to
 [**Read more**](https://www.intersectmbo.org/news/intersect-weekly-update-129-sep-19-2026)
 </div>
 
-![intersect weekly update banner](./banner.png)
+![intersect weekly update banner](./banner.webp)
