@@ -1,0 +1,46 @@
+/* Row of link cards that wraps and centers, for the "where to go next" links at the end of a page. */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-sm);
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 220px;
+  max-width: 320px;
+  padding: var(--site-space-sm) 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-lg);
+  text-decoration: none;
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: var(--site-duration-base);
+  transition-timing-function: ease;
+}
+
+.card:hover {
+  transform: translateY(var(--site-lift));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .card {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

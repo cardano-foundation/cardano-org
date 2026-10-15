@@ -11,6 +11,7 @@ import useHashRescroll from "@site/src/utils/useHashRescroll";
 import DonateSection from "@site/src/components/TreasuryDonations/DonateSection";
 import ClientOnly from "@site/src/components/TreasurySections/ClientOnly";
 import { translate } from "@docusaurus/Translate";
+import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
 import styles from "./treasury.module.css";
 
 const TreasuryFunded = lazy(() => import(/* webpackChunkName: "treasury-funded" */ "@site/src/components/TreasurySections/TreasuryFunded"));
@@ -162,20 +163,14 @@ export default function TreasuryPage() {
         </BackgroundWrapper>
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <div className={styles.crossLinks}>
-              <Link className={styles.crossLinkCard} to="/insights/treasury">
-                {translate({ id: "governance.treasury.out.numbers", message: "The treasury in numbers" })}
-              </Link>
-              <Link className={styles.crossLinkCard} to="/insights/supply/summary#treasury">
-                {translate({ id: "governance.treasury.out.history", message: "Full treasury history and withdrawals" })}
-              </Link>
-              <Link className={styles.crossLinkCard} to="/governance/accountability">
-                {translate({ id: "governance.treasury.out.accountability", message: "Standards for treasury-funded work" })}
-              </Link>
-              <Link className={styles.crossLinkCard} to="/constitution#section-7-treasury-withdrawals-action-standards">
-                {translate({ id: "governance.treasury.out.constitution", message: "Read the treasury rules" })}
-              </Link>
-            </div>
+            <LinkCardRow
+              items={[
+                { to: "/insights/treasury", label: translate({ id: "governance.treasury.out.numbers", message: "The treasury in numbers" }) },
+                { to: "/insights/supply/summary#treasury", label: translate({ id: "governance.treasury.out.history", message: "Full treasury history and withdrawals" }) },
+                { to: "/governance/accountability", label: translate({ id: "governance.treasury.out.accountability", message: "Standards for treasury-funded work" }) },
+                { to: "/constitution#section-7-treasury-withdrawals-action-standards", label: translate({ id: "governance.treasury.out.constitution", message: "Read the treasury rules" }) },
+              ]}
+            />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
