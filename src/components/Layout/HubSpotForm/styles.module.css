@@ -9,6 +9,8 @@
   font-family: Chivo, sans-serif !important;
 }
 
+/* HubSpot's submit is an <input class="hs-button">, so it cannot take the
+   .button class. This mirrors Infima's .button through the same variables. */
 :where(.form) :global(.hs-button) {
   background-color: var(--ifm-button-background-color);
   border: var(--ifm-button-border-width) solid var(--ifm-button-border-color);
@@ -33,25 +35,18 @@
   border-radius: 30px;
 }
 
-:where(.form) :global(.hs-button:hover) {
-  color: var(--ifm-button-color); /* Override for button links. */
-  text-decoration: none;
-}
-
-:where(.form) :global(.hs-button.disabled),
-:where(.form) :global(.hs-button:disabled),
-:where(.form) :global(.hs-button[disabled]) {
+:where(.form) :global(.hs-button:disabled) {
   opacity: 0.65;
   pointer-events: none;
 }
 
 :where(.form) :global(.input) {
-  margin: 1rem 0rem;
+  margin: 1rem 0;
   max-width: 280px;
 }
 
 :where(.form) :global(.hs-input:not([type='checkbox'])) {
-  background: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+  background: rgba(255, 255, 255, 0.1);
   font: inherit;
   color: currentColor;
   display: block;
@@ -60,18 +55,18 @@
   letter-spacing: inherit;
   outline: none;
   width: 90%;
-  border: 1px solid #dcdcdc; /* Light grey border */
-  border-radius: 4px; /* Slight rounding of corners */
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
   margin-bottom: 15px;
-  padding: 0.5rem; /* Adequate padding */
+  padding: 0.5rem;
   -webkit-appearance: none;
-  transition: border-color var(--site-duration-slow), box-shadow var(--site-duration-slow); /* Smooth transition for focus */
+  transition: border-color var(--site-duration-slow), box-shadow var(--site-duration-slow);
 }
 
 :where(.form) :global(.hs-input:focus) {
-  border-color: #0033ad; /* Focus border color */
-  box-shadow: 0 0 0 1px #0033ad; /* Subtle shadow to highlight focus */
-  background: rgba(90, 83, 83, 0.1); /* Slightly darker background on focus */
+  border-color: #0033ad;
+  box-shadow: 0 0 0 1px #0033ad;
+  background: rgba(90, 83, 83, 0.1);
 }
 
 :where(.form) :global(.hs-error-msgs) {
