@@ -24,7 +24,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -156,7 +156,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
   flex-shrink: 0;
 }
 
@@ -168,11 +168,11 @@
 .appLink::after {
   content: " \2192";
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform var(--site-duration-base) ease;
 }
 
 .appLink:hover::after {
-  transform: translateX(3px);
+  transform: translateX(var(--site-nudge));
 }
 
 .noData {
@@ -187,7 +187,7 @@
   border: 2px dashed var(--ifm-color-emphasis-300);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,10 +246,4 @@
    step of the ramp keeps it at 6.8:1. */
 html[data-theme='dark'] .rankBadge {
   background-color: var(--ifm-color-primary-darker);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .appLink:hover::after {
-    transform: none;
-  }
 }

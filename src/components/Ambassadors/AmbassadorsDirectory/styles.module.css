@@ -29,7 +29,7 @@
   font-size: 0.92rem;
   background: #ffffff;
   color: #0f172a;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .searchInput:focus {
@@ -112,7 +112,7 @@
   color: #3a5fd6;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background var(--site-duration-fast) ease, color var(--site-duration-fast) ease;
 }
 
 .loadMore:hover {

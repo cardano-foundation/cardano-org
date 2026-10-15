@@ -162,7 +162,7 @@
 .markerDot {
   width: 0.5rem;
   height: 0.5rem;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform var(--site-duration-fast) ease, opacity var(--site-duration-fast) ease;
 }
 
 .markerAhead .markerDot {
@@ -439,11 +439,6 @@
 @media (prefers-reduced-motion: reduce) {
   .card {
     animation: none;
-  }
-
-  /* The larger dot on hover and focus stays as feedback, only its animation stops. */
-  .markerDot {
-    transition: none;
   }
 }
 

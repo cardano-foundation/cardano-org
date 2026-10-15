@@ -14,7 +14,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   backdrop-filter: blur(6px);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background var(--site-duration-base) ease, border-color var(--site-duration-base) ease;
 }
 
 .tile:hover {

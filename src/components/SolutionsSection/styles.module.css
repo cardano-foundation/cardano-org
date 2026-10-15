@@ -37,7 +37,7 @@
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, transform var(--site-duration-base) ease;
 }
 
 .ctaLink:focus-visible {

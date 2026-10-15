@@ -80,7 +80,7 @@
   text-align: left;
   cursor: default;
   width: 100%;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
 }
 
 .stepperItem:disabled {
@@ -260,7 +260,7 @@
   border-radius: 12px;
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease, border-color var(--site-duration-base) ease;
 }
 
 .walletChip:hover {
@@ -310,7 +310,7 @@
   border-radius: 14px;
   color: inherit;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease, background-color var(--site-duration-base) ease;
 }
 
 .featureTile:hover {
@@ -433,7 +433,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-900);
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, border-color var(--site-duration-base) ease, color var(--site-duration-base) ease;
 }
 
 .checkboxToggle:hover {
@@ -463,7 +463,7 @@
   border: 1.5px solid var(--ifm-color-emphasis-400);
   color: transparent;
   font-size: 0.7rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, border-color var(--site-duration-base) ease, color var(--site-duration-base) ease;
 }
 
 .checkboxToggleChecked .checkboxMark {
@@ -484,7 +484,7 @@
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease, opacity var(--site-duration-base) ease;
 }
 
 .continueButton:hover:not(:disabled) {

@@ -35,7 +35,7 @@ html[data-theme='dark'] .quizHeader {
   border-radius: 16px;
   padding: 2rem;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all var(--site-duration-slow) ease;
 }
 
 /* Feedback is carried by the border, the status message and the option
@@ -107,7 +107,7 @@ html[data-theme='dark'] .quizHeader {
   height: 4px;
   background: var(--ifm-color-emphasis-300);
   border-radius: 2px;
-  transition: background 0.3s ease;
+  transition: background var(--site-duration-slow) ease;
 }
 
 .progressSegment.correct {
@@ -148,7 +148,7 @@ html[data-theme='dark'] .quizHeader {
   font-size: 1rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   color: var(--ifm-font-color-base);
 }
 
@@ -209,7 +209,7 @@ html[data-theme='dark'] .optionButton.incorrectOption {
   color: var(--ifm-color-emphasis-800);
   font-weight: 600;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .optionButton:hover:not(:disabled) .optionLabel {
@@ -287,7 +287,7 @@ html[data-theme='dark'] .explanation {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .checkButton {

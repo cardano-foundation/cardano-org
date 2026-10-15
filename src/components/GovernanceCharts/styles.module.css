@@ -25,7 +25,7 @@
   font-size: 0.95rem;
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
-  transition: border-color 0.2s;
+  transition: border-color var(--site-duration-base);
   width: 100%;
 }
 
@@ -48,7 +48,7 @@
   padding: 10px 15px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color var(--site-duration-base);
 }
 
 .parametersButton:hover {
@@ -93,7 +93,7 @@
   padding: 8px 15px;
   cursor: pointer;
   border-radius: 3px;
-  transition: background-color 0.2s;
+  transition: background-color var(--site-duration-base);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -222,7 +222,7 @@
 
 .graphItem {
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
 }
 
 .graphTitle {

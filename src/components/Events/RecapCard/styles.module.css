@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   padding-left: 2px;
-  transition: background 0.15s ease;
+  transition: background var(--site-duration-fast) ease;
 }
 
 .media:focus-visible,

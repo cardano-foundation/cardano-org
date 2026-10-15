@@ -8,8 +8,8 @@
   background: var(--ifm-background-surface-color);
   text-decoration: none;
   color: inherit;
-  transition: border-color 150ms ease, box-shadow 150ms ease,
-    transform 150ms ease;
+  transition: border-color var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease,
+    transform var(--site-duration-fast) ease;
   position: relative;
 }
 

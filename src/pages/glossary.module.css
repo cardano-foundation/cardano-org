@@ -35,7 +35,7 @@
   color: var(--ifm-color-emphasis-900);
   font-size: 1rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: box-shadow var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
   appearance: none;
 }
 
@@ -152,7 +152,7 @@
   color: #fff;
   font-size: 0.85rem;
   text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
 }
 
 .heroPill:hover {
@@ -197,7 +197,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease;
 }
 
 .chip:hover {
@@ -266,7 +266,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   text-decoration: none;
   height: 100%;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .pathCard:hover {
@@ -350,7 +350,7 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  transition: transform 0.15s ease;
+  transition: transform var(--site-duration-fast) ease;
 }
 
 .pathStepFilled {
@@ -403,11 +403,11 @@
   width: 32px;
   height: 32px;
   color: var(--path-color);
-  transition: transform 0.15s ease;
+  transition: transform var(--site-duration-fast) ease;
 }
 
 .pathCard:hover .pathArrow {
-  transform: translateX(3px);
+  transform: translateX(var(--site-nudge));
 }
 
 /* === All terms (with A-Z sidebar) ======================================= */
@@ -461,7 +461,7 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease;
 }
 
 .alphabetLetter:hover:not(:disabled) {
@@ -507,7 +507,7 @@
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   text-decoration: none;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
   height: 100%;
 }
 
@@ -655,7 +655,7 @@
   font-weight: 500;
   font-size: 0.92rem;
   text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
 }
 
 .cantFindPrimary {
@@ -702,10 +702,4 @@ html[data-theme='dark'] .alphabetLetterActive {
 
 html[data-theme='dark'] .cantFindPrimary {
   background-color: var(--ifm-color-primary-darker);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pathCard:hover .pathArrow {
-    transform: none;
-  }
 }

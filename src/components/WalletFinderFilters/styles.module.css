@@ -33,7 +33,7 @@
   padding: 0.3rem 0.75rem;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .clearButton:hover {
@@ -64,7 +64,7 @@
   padding: 0.35rem 0.85rem;
   font-size: 0.85rem;
   opacity: 0.8;
-  transition: all 200ms ease-out;
+  transition: all var(--site-duration-base) ease-out;
   border: 1px solid var(--ifm-color-emphasis-300);
   background: transparent;
   color: var(--ifm-font-color-base);

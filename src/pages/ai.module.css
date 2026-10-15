@@ -802,7 +802,7 @@
   border-radius: 12px;
   padding: 1.5rem 1.6rem;
   color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 .mCard:hover {
   border-color: var(--ai-blue, #1132a8);
@@ -876,7 +876,7 @@
   font-weight: 600;
   padding: 0.85rem 1.6rem;
   border-radius: 10px;
-  transition: transform 0.15s ease;
+  transition: transform var(--site-duration-fast) ease;
 }
 .btnLight:hover {
   transform: translateY(var(--site-lift-xs));
@@ -892,7 +892,7 @@
   font-weight: 600;
   padding: 0.85rem 1.5rem;
   border-radius: 10px;
-  transition: border-color 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease;
 }
 .btnOutline:hover {
   border-color: #ffffff;

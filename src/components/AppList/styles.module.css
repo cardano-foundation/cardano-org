@@ -47,7 +47,7 @@
   border-radius: 8px;
   background-color: var(--ifm-background-color);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .seeAllButton:hover {
@@ -70,7 +70,7 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-100);
   text-decoration: none;
   color: var(--ifm-font-color-base);
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
 }
 
 .appListItem:last-child {
@@ -162,7 +162,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   cursor: default;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
 }
 
 .tag:hover {

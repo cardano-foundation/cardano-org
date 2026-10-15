@@ -173,14 +173,14 @@
   font-weight: 500;
   color: var(--ifm-color-primary);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color var(--site-duration-fast) ease;
 }
 
 .guidedPathChip::after {
   content: " →";
   display: inline-block;
   margin-left: 0.25rem;
-  transition: transform 150ms ease;
+  transition: transform var(--site-duration-fast) ease;
 }
 
 .guidedPathChip:hover {
@@ -189,11 +189,5 @@
 }
 
 .guidedPathChip:hover::after {
-  transform: translateX(2px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .guidedPathChip:hover::after {
-    transform: none;
-  }
+  transform: translateX(var(--site-nudge));
 }
