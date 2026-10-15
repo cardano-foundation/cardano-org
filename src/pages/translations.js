@@ -27,7 +27,7 @@ function ProgressBar({ percentage }) {
         color: 'white',
         fontWeight: 'bold',
         fontSize: '14px',
-        transition: 'width 0.3s ease',
+        transition: 'width var(--site-duration-slow) ease',
         minWidth: percentage > 0 ? '32px' : 0,
       }}>
         {percentage}%

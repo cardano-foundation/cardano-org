@@ -33,7 +33,7 @@
 }
 
 .appCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary-lighter);
 }
@@ -198,7 +198,7 @@
 }
 
 .moreAppCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   border-color: var(--ifm-color-primary);
   background: rgba(0, 51, 173, 0.02);
 }
@@ -246,4 +246,10 @@
    step of the ramp keeps it at 6.8:1. */
 html[data-theme='dark'] .rankBadge {
   background-color: var(--ifm-color-primary-darker);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appLink:hover::after {
+    transform: none;
+  }
 }

@@ -39,3 +39,9 @@
     --stat-cols: 1;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot {
+    animation: none;
+  }
+}

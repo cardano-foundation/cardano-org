@@ -264,7 +264,7 @@
 }
 
 .walletChip:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   border-color: rgba(5, 56, 175, 0.3);
   text-decoration: none;
@@ -314,7 +314,7 @@
 }
 
 .featureTile:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   background-color: rgba(5, 56, 175, 0.08);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   text-decoration: none;
@@ -670,4 +670,10 @@ html[data-theme='dark'] .stepCircleDone {
 
 html[data-theme='dark'] .continueButton {
   background-color: var(--ifm-color-primary-darker);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panelContent {
+    animation: none;
+  }
 }

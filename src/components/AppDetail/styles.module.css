@@ -257,7 +257,7 @@
 .categoryPill:hover {
   text-decoration: none;
   filter: brightness(0.95);
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .tagDot {
@@ -317,7 +317,7 @@
   border-color: var(--ifm-color-primary);
   text-decoration: none;
   color: inherit;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .spotlightLabel {
@@ -365,7 +365,7 @@
   background: #122a78;
   color: #fff;
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 [data-theme="dark"] .visitButton {
@@ -397,7 +397,7 @@
   border-color: var(--ifm-color-emphasis-500);
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .sectionHeading {
@@ -433,6 +433,11 @@
 @media (prefers-reduced-motion: reduce) {
   .activityDot {
     animation: none;
+  }
+
+  /* The larger active dot stays as feedback, only its animation stops. */
+  .carouselDot {
+    transition: none;
   }
 }
 

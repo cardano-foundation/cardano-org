@@ -191,3 +191,9 @@
 .guidedPathChip:hover::after {
   transform: translateX(2px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .guidedPathChip:hover::after {
+    transform: none;
+  }
+}

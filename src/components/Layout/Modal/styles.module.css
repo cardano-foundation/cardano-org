@@ -16,7 +16,7 @@
 }
 
 .startButton:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -149,6 +149,9 @@ html[data-theme='dark'] .modalOverlay {
   .startButton,
   .closeButton {
     transition: none;
+  }
+  .closeButton:hover {
+    transform: none;
   }
 }
 

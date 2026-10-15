@@ -86,7 +86,10 @@
   --site-duration-base: 200ms;
   --site-duration-slow: 300ms;
   --site-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --site-lift-xs: -1px;
   --site-lift: -2px;
+  --site-lift-md: -3px;
+  --site-lift-lg: -4px;
 
   /* Focus ring (box-shadow variant; outline baseline is global below) */
   --site-focus-ring: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.5);
@@ -163,7 +166,10 @@ html {
     --site-duration-fast: 0ms;
     --site-duration-base: 0ms;
     --site-duration-slow: 0ms;
+    --site-lift-xs: 0px;
     --site-lift: 0px;
+    --site-lift-md: 0px;
+    --site-lift-lg: 0px;
   }
 
   html {
@@ -602,35 +608,6 @@ img {
   color: #e0e0e0;
 }
 
-/* transition (tabs) */
-@keyframes swipeIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes swipeOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.swipeIn {
-  animation: swipeIn 0.5s forwards;
-}
-
 /* Mega menu styles */
 .navbar__item--mega {
   position: relative;
@@ -885,10 +862,6 @@ img {
   .megaMenuPanel {
     display: none !important;
   }
-}
-
-.swipeOut {
-  animation: swipeOut 0.5s forwards;
 }
 
 /* section caret */

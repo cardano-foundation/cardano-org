@@ -117,6 +117,10 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .tooltip { animation: none; }
+}
+
 .tooltipHead {
   display: flex;
   align-items: baseline;

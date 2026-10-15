@@ -129,7 +129,10 @@ Four shadow steps, each with a stronger dark-mode variant already defined:
 | `--site-duration-base` | `200ms` | Default |
 | `--site-duration-slow` | `300ms` | Larger transitions |
 | `--site-ease` | `cubic-bezier(0.4, 0, 0.2, 1)` | Standard easing |
-| `--site-lift` | `-2px` | Canonical hover lift (`transform: translateY(var(--site-lift))`) |
+| `--site-lift-xs` | `-1px` | Small lift for buttons and pills |
+| `--site-lift` | `-2px` | Canonical hover lift for cards (`transform: translateY(var(--site-lift))`) |
+| `--site-lift-md` | `-3px` | Medium lift |
+| `--site-lift-lg` | `-4px` | Large lift for big cards |
 
 A typical hover transition:
 
@@ -144,10 +147,10 @@ A typical hover transition:
 }
 ```
 
-With reduced motion turned on, the duration tokens are `0ms` and `--site-lift` is `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
+With reduced motion turned on, the duration tokens are `0ms` and the four lift tokens are `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
 
-- **No block needed:** every duration, delay, and hover lift the component animates comes from these tokens.
-- **Block still needed:** anything hard-coded, such as a fixed duration, a lift like `translateY(-4px)`, a keyframe animation, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there.
+- **No block needed:** the hover lift uses one of the lift tokens, and every other transition only changes color, background, border, or shadow. Those may keep a fixed duration, because nothing moves.
+- **Block still needed:** anything else that moves, such as a keyframe animation, a scale, rotate, or `translateX` on hover, a height or width change, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there. A size change that marks hover or focus can stay, only its transition stops.
 
 ## Focus
 

@@ -440,6 +440,11 @@
   .card {
     animation: none;
   }
+
+  /* The larger dot on hover and focus stays as feedback, only its animation stops. */
+  .markerDot {
+    transition: none;
+  }
 }
 
 .card p {

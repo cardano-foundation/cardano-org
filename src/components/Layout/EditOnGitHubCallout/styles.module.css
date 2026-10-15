@@ -56,5 +56,5 @@
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
