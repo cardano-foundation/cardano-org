@@ -133,7 +133,7 @@
   margin-bottom: 15px;
   padding: 0.5rem; /* Adequate padding */
   -webkit-appearance: none;
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+  transition: border-color var(--site-duration-slow), box-shadow var(--site-duration-slow); /* Smooth transition for focus */
 }
 
 .hs-input:focus {

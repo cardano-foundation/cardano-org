@@ -8,6 +8,9 @@
  *      installed, so a typo like --ifm-color-base is caught. Vars set from JS
  *      (style objects / setProperty) count as defined.
  *   2. Known breakpoint typos that must never come back (966px for 996px).
+ *   3. Transition durations written as a literal 150, 200 or 300ms. Those
+ *      values have tokens (--site-duration-fast/base/slow), which drop to 0ms
+ *      with reduced motion, a literal does not.
  *
  * Exits non-zero on any violation so CI blocks it. Run with `node`, no framework.
  */
@@ -82,9 +85,25 @@ for (const f of cssFiles) {
     });
 }
 
-const all = [...varViolations, ...bpViolations];
+// --- 3. literal durations that have a token ---------------------------------
+const TOKEN_MS = { 150: 'fast', 200: 'base', 300: 'slow' };
+const durViolations = [];
+for (const f of cssFiles) {
+  // Whole file, since a transition list can span several lines
+  const text = readFileSync(f, 'utf8');
+  for (const decl of text.matchAll(/transition(?:-duration)?\s*:\s*([^;{}]*)/g)) {
+    for (const [, n, unit] of decl[1].matchAll(/(?<![\w.$-])(\d*\.?\d+)(ms|s)\b/g)) {
+      const ms = Math.round(Number(n) * (unit === 's' ? 1000 : 1));
+      if (!TOKEN_MS[ms]) continue;
+      const line = text.slice(0, decl.index).split('\n').length;
+      durViolations.push(`${f}:${line}  ${n}${unit} (use var(--site-duration-${TOKEN_MS[ms]}))`);
+    }
+  }
+}
+
+const all = [...varViolations, ...bpViolations, ...durViolations];
 if (all.length) {
   console.error(`check-css: ${all.length} violation(s)\n` + all.map((v) => '  ' + v).join('\n'));
   process.exit(1);
 }
-console.log('check-css: ok (no undefined project vars, no breakpoint typos)');
+console.log('check-css: ok (no undefined project vars, no breakpoint typos, no literal token durations)');

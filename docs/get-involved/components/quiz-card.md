@@ -216,7 +216,7 @@ Wrap the component in a div to add custom styles, for example to center the 400p
 - **Keyboard Navigation**: All interactive elements are keyboard accessible
 - **Screen Reader Friendly**: Clear text labels and structure
 - **Focus Management**: Modal quiz handles focus appropriately
-- **Motion**: The attention dots are hidden below 996px. There is no `prefers-reduced-motion` handling, so leave `showDot` off where motion would be a problem
+- **Motion**: The attention dots are hidden below 996px and stop pulsing with reduced motion
 
 ## Real-World Example
 

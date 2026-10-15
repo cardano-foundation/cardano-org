@@ -49,4 +49,4 @@ const SurveyModal = ({ surveyData, buttonText = "Start", questionCount, buttonCl
 - The dialog state lives inside the component. There is no controlled mode and no `onClose` callback.
 - `label` is used in string operations, so pass a plain string, and pass a translated one, since it is read by screen readers.
 - The close button label is built as `Close ${label.toLowerCase()}` and is not translated separately.
-- The overlay and content box are styled in `src/components/Layout/Modal/styles.module.css` Their transitions use the duration tokens, which are zero with reduced motion, and the close button does not rotate then.
+- The overlay and content box are styled in `src/components/Layout/Modal/styles.module.css`. Their transitions use the duration tokens, which are zero with reduced motion, and the close button does not rotate then.
