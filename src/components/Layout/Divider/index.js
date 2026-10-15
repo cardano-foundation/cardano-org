@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import { scrollToElement } from "@site/src/utils/jsUtils";
+import useHashTarget from "@site/src/utils/useHashTarget";
 import { getHeading } from "@site/src/utils/heading";
 import { translate } from "@docusaurus/Translate";
 
@@ -25,22 +26,9 @@ import { translate } from "@docusaurus/Translate";
  * @param {string} [props.className] Extra class on the wrapper.
  */
 export default function Divider({ text, id, white = false, headingLevel, className }) {
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === `#${id}`) {
-        setTimeout(() => scrollToElement(document.getElementById(id)), 100);
-      }
-    };
-
-    // Execute handleHashChange initially and on hash changes
-    handleHashChange(); // For the initial load
-    window.addEventListener('hashchange', handleHashChange);
-
-    // Cleanup listener on component unmount
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, [id]); // Dependency array ensures effect re-runs if 'id' change
+  useHashTarget((target) => {
+    if (id && target === id) setTimeout(() => scrollToElement(document.getElementById(id)), 100);
+  });
   const headerClass = clsx(styles.header, { [styles.white]: white });
   const { Tag, lookClassName } = getHeading(headingLevel ?? 0, 6);
 

@@ -12,7 +12,7 @@ import { translate } from "@docusaurus/Translate";
 import Divider from "@site/src/components/Layout/Divider";
 import Accordion, { whenSettled } from "@site/src/components/Layout/Accordion";
 import { scrollToElement } from "@site/src/utils/jsUtils";
-import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
+import useHashTarget from "@site/src/utils/useHashTarget";
 import styles from "./styles.module.css";
 
 const CATEGORY_ORDER = [
@@ -113,16 +113,10 @@ export default function GovernanceFAQ({ data }) {
 
   // A link such as /governance#faq-lose-ada opens that question, on load and
   // when the hash changes.
-  useEffect(() => {
-    const applyHash = () => {
-      const target = hashTargetId(window.location.hash);
-      const entry = data.find((item) => item.id === target);
-      if (entry) openQuestion(entry);
-    };
-    applyHash();
-    window.addEventListener("hashchange", applyHash);
-    return () => window.removeEventListener("hashchange", applyHash);
-  }, [data, openQuestion]);
+  useHashTarget((target) => {
+    const entry = data.find((item) => item.id === target);
+    if (entry) openQuestion(entry);
+  });
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>

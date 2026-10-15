@@ -1,6 +1,8 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.css";
+import useHashTarget from "@site/src/utils/useHashTarget";
+import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
 
 const TreasuryDonate = lazy(() => import(/* webpackChunkName: "treasury-donate" */ "@site/src/components/TreasuryDonate"));
 
@@ -13,15 +15,11 @@ const loadingTool = (
 // The wallet form stays closed until someone asks for it. A link to the
 // section's anchor (glossary, /apps, the button on this page) opens it.
 export default function DonateSection({ anchorId }) {
-  const [open, setOpen] = useState(() => window.location.hash === `#${anchorId}`);
+  const [open, setOpen] = useState(() => hashTargetId(window.location.hash) === anchorId);
 
-  useEffect(() => {
-    const onHash = () => {
-      if (window.location.hash === `#${anchorId}`) setOpen(true);
-    };
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
-  }, [anchorId]);
+  useHashTarget((id) => {
+    if (id === anchorId) setOpen(true);
+  });
 
   if (!open) {
     return (
