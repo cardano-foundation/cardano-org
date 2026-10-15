@@ -228,9 +228,11 @@
     transform: none;
   }
 
-  .spotlight,
+  .spotlight {
+    transition: none;
+  }
+
   .spotlightInner {
     animation: none;
-    transition: none;
   }
 }
