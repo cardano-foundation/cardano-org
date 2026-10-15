@@ -288,36 +288,31 @@ export default function GovernanceCharts({
     setSearchTerm("");
   };
 
-  const handleGraphSelect = (index, category, event) => {
-    if (
-      event.target.closest(".Collapsible__trigger") ||
-      event.target.closest(".graphTitle")
-    ) {
-      const selectedGraph =
-        searchTerm || selectedParameters.length > 0
-          ? searchResults[index]
-          : graphsData[category][index];
+  const handleGraphSelect = (index, category) => {
+    const selectedGraph =
+      searchTerm || selectedParameters.length > 0
+        ? searchResults[index]
+        : graphsData[category][index];
 
-      const isAlreadyActive = activeChartId === selectedGraph.id;
+    const isAlreadyActive = activeChartId === selectedGraph.id;
 
-      if (isAlreadyActive) {
-        setActiveChartId(null);
-        setActiveGraphIndex(null);
-        return;
-      }
+    if (isAlreadyActive) {
+      setActiveChartId(null);
+      setActiveGraphIndex(null);
+      return;
+    }
 
-      if (!(selectedParameters.length > 0)) {
-        setActiveCategory(category);
-      }
+    if (!(selectedParameters.length > 0)) {
+      setActiveCategory(category);
+    }
 
-      setActiveChartId(selectedGraph.id);
+    setActiveChartId(selectedGraph.id);
 
-      if (category && !(selectedParameters.length > 0)) {
-        const categoryIndex = graphsData[category].findIndex(
-          (graph) => graph.id === selectedGraph.id
-        );
-        setActiveGraphIndex(categoryIndex);
-      }
+    if (category && !(selectedParameters.length > 0)) {
+      const categoryIndex = graphsData[category].findIndex(
+        (graph) => graph.id === selectedGraph.id
+      );
+      setActiveGraphIndex(categoryIndex);
     }
   };
 
@@ -463,24 +458,24 @@ export default function GovernanceCharts({
               : translate({id: 'governanceCharts.paramFilteredCharts', message: 'Parameter Filtered Charts:'})}
           </div>
           {searchResults.length > 0 ? (
-            <div className={`${styles.graphList} Collapsible`}>
+            <div className={styles.graphList}>
               {searchResults.map((graph, index) => (
                 <div
                   key={index}
                   ref={activeChartId === graph.id ? activeChartRef : null}
-                  className={`${styles.graphItem} Collapsible ${
-                    index % 2 === 0 ? "even" : "odd"
-                  } ${activeChartId === graph.id ? "active" : ""}`}
+                  className={`${styles.graphItem} ${
+                    index % 2 === 0 ? styles.even : styles.odd
+                  }`}
                 >
                   <div
-                    className="Collapsible__trigger"
+                    className={styles.trigger}
                     role="button"
                     tabIndex={0}
-                    onClick={(e) => handleGraphSelect(index, graph.category, e)}
+                    onClick={() => handleGraphSelect(index, graph.category)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        handleGraphSelect(index, graph.category, e);
+                        handleGraphSelect(index, graph.category);
                       }
                     }}
                   >
@@ -492,7 +487,7 @@ export default function GovernanceCharts({
                     </h4>
                   </div>
                   {activeChartId === graph.id && (
-                    <div className={`${styles.graphContent} Collapsible__contentInner`}>
+                    <div className={styles.graphContent}>
                       <p className={styles.graphDescription}>
                         {graph.description}
                       </p>
@@ -537,24 +532,24 @@ export default function GovernanceCharts({
         graphsData[activeCategory].length > 0 ? (
         <div className={styles.graphSelection}>
           <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectChart', message: 'Select a chart:'})}</div>
-          <div className={`${styles.graphList} Collapsible`}>
+          <div className={styles.graphList}>
             {graphsData[activeCategory].map((graph, index) => (
               <div
                 key={index}
                 ref={activeChartId === graph.id ? activeChartRef : null}
-                className={`${styles.graphItem} Collapsible ${
-                  index % 2 === 0 ? "even" : "odd"
-                } ${activeChartId === graph.id ? "active" : ""}`}
+                className={`${styles.graphItem} ${
+                  index % 2 === 0 ? styles.even : styles.odd
+                }`}
               >
                 <div
-                  className="Collapsible__trigger"
+                  className={styles.trigger}
                   role="button"
                   tabIndex={0}
-                  onClick={(e) => handleGraphSelect(index, activeCategory, e)}
+                  onClick={() => handleGraphSelect(index, activeCategory)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      handleGraphSelect(index, activeCategory, e);
+                      handleGraphSelect(index, activeCategory);
                     }
                   }}
                 >
@@ -564,7 +559,7 @@ export default function GovernanceCharts({
                   </h4>
                 </div>
                 {activeChartId === graph.id && (
-                  <div className={`${styles.graphContent} Collapsible__contentInner`}>
+                  <div className={styles.graphContent}>
                     <p className={styles.graphDescription}>
                       {graph.description}
                     </p>
