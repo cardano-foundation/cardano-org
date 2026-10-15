@@ -22,7 +22,7 @@ a.card:focus-visible {
 }
 
 a.card:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 12px 28px rgba(0, 51, 173, 0.12);
   border-color: rgba(0, 51, 173, 0.2);
   text-decoration: none;
@@ -139,9 +139,7 @@ a.card:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  a.card,
-  a.card:hover {
+  a.card {
     transition: none;
-    transform: none;
   }
 }

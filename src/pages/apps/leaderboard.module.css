@@ -286,7 +286,7 @@
 }
 
 .categoryCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -548,4 +548,10 @@ html[data-theme='dark'] .periodButton.periodButtonActive {
    tint, mixing in white keeps the hue and lifts them above 4.5:1. */
 html[data-theme='dark'] .categoryTag {
   color: color-mix(in srgb, var(--tag-color, #757575) 45%, white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appRowLink:hover {
+    transform: none;
+  }
 }

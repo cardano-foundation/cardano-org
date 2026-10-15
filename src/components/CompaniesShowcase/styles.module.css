@@ -221,3 +221,18 @@
     padding: 1.5rem 1rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .logoCell:hover,
+  .addCard:hover {
+    transform: none;
+  }
+
+  .spotlight {
+    transition: none;
+  }
+
+  .spotlightInner {
+    animation: none;
+  }
+}

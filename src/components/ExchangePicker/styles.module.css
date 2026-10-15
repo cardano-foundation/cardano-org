@@ -78,7 +78,7 @@
 }
 
 .exchangeCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary-lighter);
 }
@@ -201,7 +201,7 @@
 }
 
 .addExchangeCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
   background: var(--ifm-background-surface-color);

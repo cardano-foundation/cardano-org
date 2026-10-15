@@ -83,7 +83,7 @@
 }
 
 .primaryCta:hover {
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
   box-shadow: 0 8px 18px rgba(91, 128, 255, 0.4);
 }
 

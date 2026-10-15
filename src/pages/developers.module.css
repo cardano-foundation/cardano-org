@@ -74,7 +74,7 @@
 }
 
 .featureRow:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-decoration: none !important;
   color: inherit !important;
@@ -157,7 +157,7 @@
 }
 
 .toolTile:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   border-color: var(--ifm-color-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-decoration: none !important;

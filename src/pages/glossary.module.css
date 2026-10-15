@@ -271,7 +271,7 @@
 
 .pathCard:hover {
   border-color: color-mix(in srgb, var(--path-color) 50%, var(--ifm-color-emphasis-200));
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   text-decoration: none;
 }
@@ -514,7 +514,7 @@
 .card:hover {
   border-color: var(--ifm-color-primary);
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
@@ -702,4 +702,10 @@ html[data-theme='dark'] .alphabetLetterActive {
 
 html[data-theme='dark'] .cantFindPrimary {
   background-color: var(--ifm-color-primary-darker);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pathCard:hover .pathArrow {
+    transform: none;
+  }
 }

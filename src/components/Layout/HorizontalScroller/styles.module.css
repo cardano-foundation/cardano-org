@@ -160,3 +160,10 @@
     transform: scale(1.3);
   }
 }
+
+/* The larger active dot stays as feedback, only its animation stops. */
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+}

@@ -155,3 +155,13 @@
   transition: transform 0.1s;
 }
 
+/* The larger thumb on hover stays as feedback, only its animation stops. */
+@media (prefers-reduced-motion: reduce) {
+  .handle:hover::-webkit-slider-thumb {
+    transition: none;
+  }
+
+  .handle:hover::-moz-range-thumb {
+    transition: none;
+  }
+}

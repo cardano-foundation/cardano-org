@@ -120,16 +120,8 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--site-lift-lg));
   box-shadow: var(--site-shadow-lg);
-}
-
-/* The hover lift is a fixed 4px, not the --site-lift token, so it needs its
-   own reset. The transition durations are tokens and drop to 0 globally. */
-@media (prefers-reduced-motion: reduce) {
-  .card:hover {
-    transform: none;
-  }
 }
 
 .cardTitle {

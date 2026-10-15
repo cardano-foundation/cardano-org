@@ -116,7 +116,7 @@
 
 .insight-thumb:hover img,
 .insight-thumb:focus-visible img {
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
   opacity: 0.98;
 }
 
@@ -240,21 +240,6 @@
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.insight-thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: transform .15s ease, opacity .15s ease;
-}
-
-.insight-thumb:hover img,
-.insight-thumb:focus-visible img {
-  transform: translateY(-1px);
-  opacity: 0.98;
 }
 
 /* Mobile: Title → Thumbnail → Description (then CTA), as requested */

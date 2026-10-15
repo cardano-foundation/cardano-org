@@ -18,7 +18,7 @@
 .card:hover,
 .card:focus-visible {
   border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   color: inherit;
   text-decoration: none;
 }

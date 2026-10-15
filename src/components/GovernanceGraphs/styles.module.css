@@ -114,7 +114,6 @@ html[data-theme='dark'] :global(.react-flow__controls-button svg) {
 
 .downloadButton:hover {
   background-color: #0c7cd5;
-  transform: translateY(-1px);
 }
 
 .downloadButton:disabled {
@@ -134,7 +133,7 @@ html[data-theme='dark'] :global(.react-flow__controls-button svg) {
 }
 
 .downloadButton:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 

@@ -71,7 +71,7 @@
 .categoryBadge[data-category="events"] { background: #b83280; }
 
 .newsCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--site-lift-lg));
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
   text-decoration: none;
