@@ -1,0 +1,90 @@
+/*
+ * Styles for the markup HubSpot renders into the form (hs-* classes, .input
+ * wrappers). That markup has no module classes, so the rules reach it through
+ * :global under the wrapper. :where keeps each rule's specificity as it was
+ * when this file was global.
+ */
+
+:where(.form) :global(.hs-form) {
+  font-family: Chivo, sans-serif !important;
+}
+
+:where(.form) :global(.hs-button) {
+  background-color: var(--ifm-button-background-color);
+  border: var(--ifm-button-border-width) solid var(--ifm-button-border-color);
+  color: var(--ifm-button-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: calc(0.875rem * var(--ifm-button-size-multiplier));
+  font-weight: var(--ifm-button-font-weight);
+  line-height: 1.5;
+  padding: calc(var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier))
+    calc(var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier));
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition-property: color, background-color, border-color;
+  transition-duration: var(--ifm-button-transition-duration);
+  transition-timing-function: var(--ifm-transition-timing-default);
+  min-width: 257px;
+  --ifm-button-size-multiplier: 1.35;
+  border-radius: 30px;
+}
+
+:where(.form) :global(.hs-button:hover) {
+  color: var(--ifm-button-color); /* Override for button links. */
+  text-decoration: none;
+}
+
+:where(.form) :global(.hs-button.disabled),
+:where(.form) :global(.hs-button:disabled),
+:where(.form) :global(.hs-button[disabled]) {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+:where(.form) :global(.input) {
+  margin: 1rem 0rem;
+  max-width: 280px;
+}
+
+:where(.form) :global(.hs-input:not([type='checkbox'])) {
+  background: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+  font: inherit;
+  color: currentColor;
+  display: block;
+  min-width: 0;
+  box-sizing: content-box;
+  letter-spacing: inherit;
+  outline: none;
+  width: 90%;
+  border: 1px solid #dcdcdc; /* Light grey border */
+  border-radius: 4px; /* Slight rounding of corners */
+  margin-bottom: 15px;
+  padding: 0.5rem; /* Adequate padding */
+  -webkit-appearance: none;
+  transition: border-color var(--site-duration-slow), box-shadow var(--site-duration-slow); /* Smooth transition for focus */
+}
+
+:where(.form) :global(.hs-input:focus) {
+  border-color: #0033ad; /* Focus border color */
+  box-shadow: 0 0 0 1px #0033ad; /* Subtle shadow to highlight focus */
+  background: rgba(90, 83, 83, 0.1); /* Slightly darker background on focus */
+}
+
+:where(.form) :global(.hs-error-msgs) {
+  color: red !important;
+  list-style-type: none;
+}
+
+:where(.form) textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+:where(.form) :global(.submitted-message) {
+  margin-top: 13px;
+  font-family: Chivo, sans-serif !important;
+}

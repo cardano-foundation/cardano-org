@@ -51,6 +51,6 @@ There is no live preview on this page, because a working form would send real su
 - A change of `form` renders the form again.
 - If HubSpot is blocked, the `div` stays empty.
 
-## Styling and known limits
+## Styling
 
-`src/components/Layout/HubSpotForm/hs.css` styles the markup HubSpot renders (`hs-*` classes, `.input` wrappers, `textarea`). It is global CSS, because HubSpot's markup has no module classes. It also sets the Infima button variables (`--ifm-button-*`) on `:root`, so for the whole site. Scoping these rules under the form wrapper is a planned follow-up.
+`src/components/Layout/HubSpotForm/styles.module.css` styles the markup HubSpot renders (`hs-*` classes, `.input` wrappers, `textarea`). HubSpot's markup has no module classes, so the rules reach it through `:global` under the form wrapper and do not affect other forms on the site. The site-wide Infima button variables (`--ifm-button-*`) live in `src/css/custom.css`.
