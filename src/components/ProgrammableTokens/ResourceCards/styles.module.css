@@ -69,13 +69,3 @@
   line-height: 1;
   color: var(--ifm-color-primary);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-
-  .card:hover {
-    transform: none;
-  }
-}

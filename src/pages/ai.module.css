@@ -918,13 +918,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .tab,
-  .copyBtn {
-    transition: none;
-  }
-}
-
 /* Dark mode: the AI blue (#1132a8) as text reaches only 1.7:1 on the dark page,
    a light tint of the same blue keeps the accent at 8:1. */
 :global(html[data-theme="dark"]) .eyebrow,

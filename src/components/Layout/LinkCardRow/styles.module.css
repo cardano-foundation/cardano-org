@@ -34,13 +34,3 @@
 [data-theme='dark'] .card {
   border-color: var(--ifm-color-emphasis-300);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-
-  .card:hover {
-    transform: none;
-  }
-}
