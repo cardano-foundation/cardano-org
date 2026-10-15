@@ -6,12 +6,12 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Divider from "@site/src/components/Layout/Divider";
-import Link from "@docusaurus/Link";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import TermExplainer from "@site/src/components/TermExplainer";
 import AccountabilityRoles from "@site/src/components/AccountabilityRoles";
 import AccountabilityStats from "@site/src/components/AccountabilityStats";
 import { translate } from "@docusaurus/Translate";
+import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
 import styles from "./accountability.module.css";
 
 function AccountabilityHero() {
@@ -87,17 +87,13 @@ export default function AccountabilityPage() {
 
         <BackgroundWrapper backgroundType={"gradientLight"}>
           <BoundaryBox>
-            <div className={styles.crossLinks}>
-              <Link className={styles.crossLinkCard} to="/constitution">
-                {translate({ id: "governance.accountability.out.constitution", message: "Read the full Constitution" })}
-              </Link>
-              <Link className={styles.crossLinkCard} to="/governance/delegate">
-                {translate({ id: "governance.accountability.out.delegate", message: "Choose or change your DRep" })}
-              </Link>
-              <Link className={styles.crossLinkCard} to="/insights/governance-actions">
-                {translate({ id: "governance.accountability.out.charts", message: "Explore governance action charts" })}
-              </Link>
-            </div>
+            <LinkCardRow
+              items={[
+                { to: "/constitution", label: translate({ id: "governance.accountability.out.constitution", message: "Read the full Constitution" }) },
+                { to: "/governance/delegate", label: translate({ id: "governance.accountability.out.delegate", message: "Choose or change your DRep" }) },
+                { to: "/insights/governance-actions", label: translate({ id: "governance.accountability.out.charts", message: "Explore governance action charts" }) },
+              ]}
+            />
           </BoundaryBox>
         </BackgroundWrapper>
       </main>
