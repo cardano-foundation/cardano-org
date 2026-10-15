@@ -156,8 +156,8 @@ html {
 }
 
 /* Reduced motion: the motion tokens drop to zero, so every transition and
-   hover lift built on them stops without a block of its own. Hard-coded
-   durations and lifts still need their own @media rule. */
+   hover lift built on them stops without a block of its own. See "Motion" in
+   docs/get-involved/design-tokens.md. */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --site-duration-fast: 0ms;
