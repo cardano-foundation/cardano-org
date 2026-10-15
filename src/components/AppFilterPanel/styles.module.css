@@ -15,7 +15,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 150ms ease, background 150ms ease;
+  transition: border-color var(--site-duration-fast) ease, background var(--site-duration-fast) ease;
 }
 
 .toggle:hover {
@@ -69,7 +69,7 @@
   padding: 0.3rem 0.85rem;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+  transition: background var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease;
 }
 
 .pill:hover {

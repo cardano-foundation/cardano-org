@@ -34,8 +34,8 @@
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease,
-    color 150ms ease, box-shadow 150ms ease;
+  transition: background-color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease,
+    color var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
   white-space: nowrap;
 }
 

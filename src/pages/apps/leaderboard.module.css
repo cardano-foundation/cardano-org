@@ -15,7 +15,7 @@
   background: transparent;
   color: var(--ifm-font-color-base);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .periodButton:first-child {
@@ -123,7 +123,7 @@
 }
 
 .appRowLink {
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, border-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
 }
 
 .appRowLink:hover {
@@ -138,7 +138,7 @@
 
 @media (hover: hover) {
   .appRowLink:hover {
-    transform: translateX(4px);
+    transform: translateX(var(--site-nudge));
     border-color: var(--ifm-color-primary-lighter);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
@@ -282,7 +282,7 @@
   border-left: 4px solid;
   border-radius: 8px;
   padding: 1.25rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .categoryCard:hover {
@@ -368,7 +368,7 @@
 
 .metadataRow {
   border-top: 1px solid var(--ifm-color-emphasis-200);
-  transition: background 0.15s ease;
+  transition: background var(--site-duration-fast) ease;
 }
 
 .metadataRow:hover {
@@ -548,10 +548,4 @@ html[data-theme='dark'] .periodButton.periodButtonActive {
    tint, mixing in white keeps the hue and lifts them above 4.5:1. */
 html[data-theme='dark'] .categoryTag {
   color: color-mix(in srgb, var(--tag-color, #757575) 45%, white);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .appRowLink:hover {
-    transform: none;
-  }
 }

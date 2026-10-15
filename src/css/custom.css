@@ -90,6 +90,7 @@
   --site-lift: -2px;
   --site-lift-md: -3px;
   --site-lift-lg: -4px;
+  --site-nudge: 3px;
 
   /* Focus ring (box-shadow variant; outline baseline is global below) */
   --site-focus-ring: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.5);
@@ -170,6 +171,7 @@ html {
     --site-lift: 0px;
     --site-lift-md: 0px;
     --site-lift-lg: 0px;
+    --site-nudge: 0px;
   }
 
   html {
@@ -552,7 +554,7 @@ img {
   /* Adjust size as needed */
   height: 1em;
   /* Adjust size as needed */
-  transition: transform 0.3s ease;
+  transition: transform var(--site-duration-slow) ease;
   background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
@@ -789,7 +791,7 @@ img {
   padding: 8px 12px;
   margin: 0 -12px;
   border-radius: 4px;
-  transition: background-color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease;
   text-decoration: none;
   color: inherit;
   gap: 12px;
@@ -952,7 +954,7 @@ html[data-theme="light"] {
   height: 36px !important;
   border: 1px solid var(--ifm-color-emphasis-300) !important;
   background: var(--ifm-background-surface-color) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: border-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease !important;
 }
 
 .DocSearch-Button:hover {

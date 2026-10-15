@@ -34,7 +34,7 @@
   border-radius: 12px;
   background: var(--ifm-background-surface-color);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   text-align: center;
   min-width: 200px;
 }
@@ -85,7 +85,7 @@
   border-radius: 6px;
   padding: 0.45rem 1.25rem;
   font-size: 0.95rem;
-  transition: all 200ms ease-out;
+  transition: all var(--site-duration-base) ease-out;
   border: 1px solid var(--ifm-color-emphasis-300);
   background: transparent;
   color: var(--ifm-font-color-base);
@@ -110,7 +110,7 @@
   border: none;
   padding: 0;
   text-decoration: underline;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .modeSwitch:hover {

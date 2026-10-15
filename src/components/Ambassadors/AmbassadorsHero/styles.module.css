@@ -79,7 +79,7 @@
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .primaryCta:hover {
@@ -99,7 +99,7 @@
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.15s ease;
+  transition: background var(--site-duration-fast) ease;
 }
 
 .secondaryCta:hover {

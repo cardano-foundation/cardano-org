@@ -61,7 +61,7 @@
 
 .pinGlow {
   pointer-events: none;
-  transition: opacity 0.15s ease;
+  transition: opacity var(--site-duration-fast) ease;
 }
 
 .pin {

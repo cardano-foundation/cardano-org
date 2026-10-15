@@ -49,7 +49,7 @@ html[data-theme="dark"] .iconWrapper {
   background-color: var(--icon-bg-color);
   border-radius: 50%;
   z-index: -1;
-  transition: background-color 0.15s ease-in-out;
+  transition: background-color var(--site-duration-fast) ease-in-out;
 }
 
 .iconWrapper svg {

@@ -170,7 +170,7 @@ html[data-theme="dark"] .heroBanner {
   background-color: white !important;
   color: var(--ifm-color-primary) !important;
   border: 1px solid var(--ifm-color-primary) !important;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--site-duration-slow) ease;
 }
 
 .heroCtaButton:hover {
@@ -228,7 +228,7 @@ html[data-theme='dark'] .heroCtaButton:hover {
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.5rem;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .vizBadge:hover {

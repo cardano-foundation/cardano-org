@@ -19,7 +19,7 @@
   padding: 1rem 0.5rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
   border: 2px solid transparent;
   min-height: 100px;
 }
@@ -51,7 +51,7 @@
 /* Spotlight panel */
 .spotlight {
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height var(--site-duration-slow) ease, opacity var(--site-duration-slow) ease;
   max-height: 0;
   opacity: 0;
   scroll-margin-top: 5rem;
@@ -177,7 +177,7 @@
   border: 2px dashed var(--ifm-color-emphasis-300);
   min-height: 100px;
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, border-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
   text-decoration: none;
   color: var(--ifm-color-emphasis-600);
 }
@@ -226,10 +226,6 @@
   .logoCell:hover,
   .addCard:hover {
     transform: none;
-  }
-
-  .spotlight {
-    transition: none;
   }
 
   .spotlightInner {

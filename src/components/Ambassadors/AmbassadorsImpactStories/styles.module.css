@@ -111,7 +111,7 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
 }
 
 .thumb:hover {

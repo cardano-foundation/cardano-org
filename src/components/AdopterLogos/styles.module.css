@@ -47,7 +47,7 @@
   height: auto;
   filter: grayscale(1);
   opacity: 0.65;
-  transition: filter 200ms ease, opacity 200ms ease;
+  transition: filter var(--site-duration-base) ease, opacity var(--site-duration-base) ease;
 }
 
 .item:hover .logo,
@@ -70,12 +70,6 @@ html[data-theme="dark"] .logo {
   justify-content: center;
   width: 100%;
   height: 100%;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo {
-    transition: none;
-  }
 }
 
 /* Wide screens: all logos in one row, sharing the full content width. */

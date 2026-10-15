@@ -18,7 +18,7 @@
   border-radius: 8px;
   background: var(--ifm-background-surface-color);
   color: var(--ifm-font-color-base);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .insights-search-input:focus {
@@ -60,7 +60,7 @@
   cursor: pointer;
   background: transparent;
   color: var(--ifm-font-color-base);
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
 }
 
 .insight-filter-tag:hover {
@@ -111,7 +111,7 @@
   display: block;
   aspect-ratio: 16/9;
   object-fit: cover;
-  transition: transform .15s ease, opacity .15s ease;
+  transition: transform var(--site-duration-fast) ease, opacity var(--site-duration-fast) ease;
 }
 
 .insight-thumb:hover img,

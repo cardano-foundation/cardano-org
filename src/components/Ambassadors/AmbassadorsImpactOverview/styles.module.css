@@ -51,7 +51,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 14px;
   box-shadow: 0 4px 14px rgba(0, 51, 173, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
 }
 
 .card:hover {

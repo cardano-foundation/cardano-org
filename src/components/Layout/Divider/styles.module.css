@@ -14,7 +14,7 @@
 .horizontalBar {
   height: 1px; /* Thickness of the bar */
   width: 80%; /* Full width by default */
-  transition: width 0.3s ease-in-out; /* Smooth transition for resizing */
+  transition: width var(--site-duration-slow) ease-in-out; /* Smooth transition for resizing */
 }
  
 .header .title {

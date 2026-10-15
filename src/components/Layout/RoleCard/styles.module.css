@@ -13,7 +13,7 @@
   box-shadow: 0 4px 16px rgba(0, 51, 173, 0.08);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease, border-color var(--site-duration-base) ease;
 }
 
 a.card:focus-visible {
@@ -135,11 +135,5 @@ a.card:hover {
     width: 52px;
     height: 52px;
     font-size: 1.4rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  a.card {
-    transition: none;
   }
 }

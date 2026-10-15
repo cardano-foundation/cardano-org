@@ -5,7 +5,7 @@
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all var(--site-duration-slow) ease;
 }
 
 /* The graph nodes recolor via useColorMode(); keep the container in step. */
@@ -109,7 +109,7 @@ html[data-theme='dark'] :global(.react-flow__controls-button svg) {
   display: flex;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: all var(--site-duration-slow) ease;
 }
 
 .downloadButton:hover {
@@ -125,7 +125,7 @@ html[data-theme='dark'] :global(.react-flow__controls-button svg) {
 .downloadButton {
   margin: 0;
   font-family: Chivo, sans-serif;
-  transition: all 0.3s ease;
+  transition: all var(--site-duration-slow) ease;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -52,7 +52,7 @@
   font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease, background var(--site-duration-fast) ease;
 }
 
 .copyLink:hover {
@@ -314,7 +314,7 @@
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
 }
 
 .sideRowValue a:hover {
@@ -408,7 +408,7 @@
   font-weight: 600;
   font-size: 0.92rem;
   text-decoration: none;
-  transition: filter 0.15s ease, transform 0.15s ease;
+  transition: filter var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .sideCtaBtn:hover {
@@ -459,7 +459,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   text-decoration: none;
   height: 100%;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .exploreCard:hover {
@@ -582,7 +582,7 @@
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: filter 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  transition: filter var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease, background var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .cantFindPrimary {

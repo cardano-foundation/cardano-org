@@ -133,6 +133,7 @@ Four shadow steps, each with a stronger dark-mode variant already defined:
 | `--site-lift` | `-2px` | Canonical hover lift for cards (`transform: translateY(var(--site-lift))`) |
 | `--site-lift-md` | `-3px` | Medium lift |
 | `--site-lift-lg` | `-4px` | Large lift for big cards |
+| `--site-nudge` | `3px` | Sideways hover nudge for arrows (`transform: translateX(var(--site-nudge))`) |
 
 A typical hover transition:
 
@@ -147,10 +148,10 @@ A typical hover transition:
 }
 ```
 
-With reduced motion turned on, the duration tokens are `0ms` and the four lift tokens are `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
+With reduced motion turned on, the duration tokens are `0ms`, and the four lift tokens and `--site-nudge` are `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
 
-- **No block needed:** the hover lift uses one of the lift tokens, and every other transition only changes color, background, border, or shadow. Those may keep a fixed duration, because nothing moves.
-- **Block still needed:** anything else that moves, such as a keyframe animation, a scale, rotate, or `translateX` on hover, a height or width change, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there. A size change that marks hover or focus can stay, only its transition stops.
+- **No block needed:** every transition that moves something uses the duration tokens, and hover movement uses a lift token or `--site-nudge`. A scale on a small indicator, such as a dot, a marker, or a slider thumb, marks hover, focus, or the active item and may stay, because its transition already stops. A color, background, border, or shadow fade may also keep a fixed duration, because nothing moves.
+- **Block still needed:** a keyframe animation, a scale or rotate on a whole card, logo, or button, a transition with a fixed duration on something that moves, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there.
 
 ## Focus
 

@@ -48,7 +48,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, background var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .button:hover {

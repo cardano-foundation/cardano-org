@@ -7,7 +7,7 @@
   font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -97,7 +97,7 @@
   background: var(--ifm-color-primary);
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   z-index: 10;
   float: right;
   /* Keeps the rotated button inside the dialog while it animates. */
@@ -145,10 +145,6 @@ html[data-theme='dark'] .modalOverlay {
   .modalOverlay,
   .modalContent {
     animation: none;
-  }
-  .startButton,
-  .closeButton {
-    transition: none;
   }
   .closeButton:hover {
     transform: none;
