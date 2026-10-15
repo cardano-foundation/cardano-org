@@ -33,6 +33,7 @@ export default function GovernanceHowItWorksPage() {
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
             <CtaOneColumn
+              headingLevel={2}
               title={translate({
                 id: "governance.howItWorks.cta.titleDelegate",
                 message: "Your ada only counts in governance once it is delegated.",

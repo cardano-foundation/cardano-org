@@ -98,16 +98,24 @@
 .dots {
   position: absolute;
   top: 50vh;
-  right: 18px;
+  right: 10px;
   display: flex;
   flex-direction: column;
-  gap: var(--site-space-2xs);
   transform: translateY(-50%);
 }
 
+/* Each link is a 24px target (WCAG 2.5.8); ::before draws the 9px dot. */
 .dots a {
   position: relative;
-  display: block;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.dots a::before {
+  content: "";
   width: 9px;
   height: 9px;
   border: 1.5px solid var(--ifm-color-emphasis-400);
@@ -115,7 +123,7 @@
   background: var(--ifm-background-surface-color);
 }
 
-.dots a[aria-current="true"] {
+.dots a[aria-current="true"]::before {
   border-color: var(--ifm-color-primary);
   background: var(--ifm-color-primary);
 }
@@ -123,7 +131,7 @@
 .dots a span {
   position: absolute;
   top: 50%;
-  right: 18px;
+  right: calc(100% + 2px);
   padding: var(--site-space-3xs) var(--site-space-2xs);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: var(--site-radius-sm);
@@ -950,18 +958,27 @@
 .seatY {
   border-color: var(--site-vote-yes);
   background: var(--site-vote-yes);
-  color: var(--ifm-background-color);
+  color: var(--ifm-color-white);
 }
 
 .seatN {
   border-color: var(--site-vote-no);
   background: var(--site-vote-no);
-  color: var(--ifm-background-color);
+  color: var(--ifm-color-white);
 }
 
 .seatA {
   border-color: var(--site-vote-abstain);
   background: var(--site-vote-abstain);
+  color: var(--ifm-color-white);
+}
+
+/* Infima's light background color is transparent, so the filled seats use
+   white text in light mode and the dark page color in dark mode. Both stay
+   at or above 4.5:1 on all three fills. */
+[data-theme='dark'] .seatY,
+[data-theme='dark'] .seatN,
+[data-theme='dark'] .seatA {
   color: var(--ifm-background-color);
 }
 
