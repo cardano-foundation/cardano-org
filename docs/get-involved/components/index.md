@@ -44,6 +44,7 @@ Shared components are the default on cardano.org. Before you write a component o
 | A role or persona card | [Role Card](./role-card.md) |
 | A title with icon links to Cardano's social channels | [Follow Cardano](./follow-cardano.md) |
 | A small status label | [Status Pill](./status-pill.md) |
+| A closing callout that invites readers to fix the page on GitHub | [Edit On GitHub Callout](./edit-on-github-callout.md) |
 | A logo or avatar next to a name, with letters when the image is missing | [Logo Tile](./logo-tile.md) |
 
 ### Interaction
