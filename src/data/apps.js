@@ -1940,8 +1940,8 @@ export const Showcases = [
   {
     title: "Metaware",
     description:
-      "Metaware is a classic RPG and text adventure hybrid where the game master is an AI. No dialogue trees, but based on human writing for the setting, plot and characters.",
-    tagline: "Online RPG run by an AI game master",
+      "Tell the game master what you would like to do next. Bribe a guard or start a fight. Play an RPG in a world written by people and narrated by AI.",
+    tagline: "An RPG with an AI game master",
     preview: require("./app-screenshots/metaware.webp"),
     extraPreviews: [
       require("./app-screenshots/metaware-fight.webp"),
