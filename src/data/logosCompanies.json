@@ -1,5 +1,12 @@
 [
   {
+    "companyName": "A.D. Labs",
+    "imageName": "adlabs",
+    "link": "https://gerowallet.io/about/",
+    "knownFor": "GeroWallet, Nexus",
+    "showCompanyName": false
+  },
+  {
     "companyName": "AdaStat",
     "imageName": "adastat",
     "link": "https://adastat.net/about",
