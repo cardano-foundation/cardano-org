@@ -55,7 +55,7 @@
 
 /* Stats Summary */
 .statsSummary {
-  margin-bottom: 1rem;
+  margin-bottom: var(--site-space-sm);
 }
 
 .statCard {
@@ -254,8 +254,6 @@
   --echart-height: 350px;
 }
 
-/* Category Grid */
-
 .categoryCard {
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -414,7 +412,7 @@
 
 /* Coverage Section */
 .coverageSection {
-  margin-top: 1rem;
+  margin-top: var(--site-space-sm);
 }
 
 .coverageStats,
@@ -450,7 +448,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-
   .statCard {
     padding: 1rem;
   }

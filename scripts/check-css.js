@@ -11,6 +11,9 @@
  *   3. Transition durations written as a literal 150, 200 or 300ms. Those
  *      values have tokens (--site-duration-fast/base/slow), which drop to 0ms
  *      with reduced motion, a literal does not.
+ *   4. Hand-written wrapping card grids (repeat(auto-fill|auto-fit, ...)).
+ *      Layout/Grid does this. A grid that needs something Grid cannot do
+ *      marks the line with a comment containing "grid-ok" and the reason.
  *
  * Exits non-zero on any violation so CI blocks it. Run with `node`, no framework.
  */
@@ -101,9 +104,21 @@ for (const f of cssFiles) {
   }
 }
 
-const all = [...varViolations, ...bpViolations, ...durViolations];
+// --- 4. hand-written wrapping grids -------------------------------------------
+const gridViolations = [];
+for (const f of cssFiles) {
+  if (f.includes('Layout/Grid/')) continue;
+  readFileSync(f, 'utf8')
+    .split('\n')
+    .forEach((line, i) => {
+      if (/repeat\(\s*auto-(fill|fit)/.test(line) && !line.includes('grid-ok'))
+        gridViolations.push(`${f}:${i + 1}  repeat(auto-fill|auto-fit) (use Layout/Grid, or mark the line with grid-ok and why)`);
+    });
+}
+
+const all = [...varViolations, ...bpViolations, ...durViolations, ...gridViolations];
 if (all.length) {
   console.error(`check-css: ${all.length} violation(s)\n` + all.map((v) => '  ' + v).join('\n'));
   process.exit(1);
 }
-console.log('check-css: ok (no undefined project vars, no breakpoint typos, no literal token durations)');
+console.log('check-css: ok (no undefined project vars, no breakpoint typos, no literal token durations, no hand-written wrapping grids)');
