@@ -1943,6 +1943,9 @@ export const Showcases = [
       "API and web widget for minting CIP-25 NFTs on Cardano. Register a wallet, pay per mint, and the service builds, signs, and submits the transaction on-chain.",
     tagline: "Mint CIP-25 NFTs on Cardano via API",
     preview: require("./app-screenshots/cbros-nft-minting.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cbros-nft-minting-wallet.webp"),
+    ],
     icon: "/img/app-icons/cbros-nft-minting.png",
     website: "https://www.coudrebros.eu/nft_api/",
     source: null,
