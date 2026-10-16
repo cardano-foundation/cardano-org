@@ -1937,6 +1937,22 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "Metaware",
+    description:
+      "Metaware is a classic RPG and text adventure hybrid where the game master is an AI. No dialogue trees, but based on human writing for the setting, plot and characters.",
+    tagline: "Online RPG run by an AI game master",
+    preview: require("./app-screenshots/metaware.webp"),
+    extraPreviews: [
+      require("./app-screenshots/metaware-fight.webp"),
+      require("./app-screenshots/metaware-dialogue.webp"),
+    ],
+    website: "https://ofirgeller.com/",
+    source: null,
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
