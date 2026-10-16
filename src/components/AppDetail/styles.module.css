@@ -186,27 +186,17 @@
   margin-bottom: 1.25rem;
 }
 
+/* LogoTile variables for the app icon and its letter fallback. */
 .icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  object-fit: cover;
-  flex-shrink: 0;
-  background: var(--ifm-color-emphasis-100);
-}
-
-.iconFallback {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--ifm-color-emphasis-300) 0%, var(--ifm-color-emphasis-500) 100%);
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  --logo-size: 120px;
+  --logo-radius: 24px;
+  --logo-bg: var(--ifm-color-emphasis-100);
+  --logo-fit: cover;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-emphasis-300) 0%, var(--ifm-color-emphasis-500) 100%);
+  --logo-fallback-color: #fff;
+  --logo-fallback-font-size: 3rem;
+  /* The old placeholder inherited the page line height. */
+  --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 
 .headerText {
@@ -458,15 +448,10 @@
 }
 
 @media (max-width: 600px) {
-  .icon,
-  .iconFallback {
-    width: 88px;
-    height: 88px;
-    border-radius: 20px;
-  }
-
-  .iconFallback {
-    font-size: 2.2rem;
+  .icon {
+    --logo-size: 88px;
+    --logo-radius: 20px;
+    --logo-fallback-font-size: 2.2rem;
   }
 
   .visitButton {

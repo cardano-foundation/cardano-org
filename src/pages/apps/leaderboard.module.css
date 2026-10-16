@@ -180,26 +180,15 @@
   color: #000;
 }
 
+/* LogoTile variables for the app icon and its letter fallback. */
 .appIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.appIconPlaceholder {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: white;
-  flex-shrink: 0;
+  --logo-size: 40px;
+  --logo-radius: 8px;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
+  --logo-fallback-color: white;
+  --logo-fallback-font-size: 1.25rem;
+  /* The old placeholder inherited the page line height. */
+  --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 
 .appDetails {
@@ -509,14 +498,9 @@
     border-radius: 6px;
   }
 
-  .appIcon,
-  .appIconPlaceholder {
-    width: 32px;
-    height: 32px;
-  }
-
-  .appIconPlaceholder {
-    font-size: 1rem;
+  .appIcon {
+    --logo-size: 32px;
+    --logo-fallback-font-size: 1rem;
   }
 
   .appName {

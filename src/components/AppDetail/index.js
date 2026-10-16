@@ -24,6 +24,8 @@ import GitHubIcon from "@site/src/components/icons/GitHubIcon";
 import styles from "./styles.module.css";
 import { scrollBehavior } from "@site/src/utils/jsUtils";
 import Grid from "@site/src/components/Layout/Grid";
+import LogoTile from "@site/src/components/Layout/LogoTile";
+import { resolveIconSrc } from "@site/src/utils/appIcon";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -250,7 +252,7 @@ function ShareButton({ url, title }) {
       try {
         await navigator.share({ title, url: fullUrl });
       } catch {
-        // user cancelled or share failed — leave it; do not fall back to clipboard
+        // User cancelled or share failed. Leave it, do not fall back to the clipboard.
         // (clipboard.writeText would throw without a fresh user gesture)
       }
       return;
@@ -292,7 +294,6 @@ function ShareButton({ url, title }) {
 }
 
 export default function AppDetail({ app }) {
-  const iconHref = useBaseUrl(app.icon || "");
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
@@ -348,13 +349,7 @@ export default function AppDetail({ app }) {
         )}
 
         <header className={styles.header}>
-          {app.icon ? (
-            <img src={iconHref} alt="" className={styles.icon} aria-hidden />
-          ) : (
-            <div className={styles.iconFallback} aria-hidden>
-              {app.title.charAt(0).toUpperCase()}
-            </div>
-          )}
+          <LogoTile src={resolveIconSrc(app)} name={app.title} lazy={false} className={styles.icon} />
           <div className={styles.headerText}>
             <h1 className={styles.title}>{app.title}</h1>
             {app.tagline && <p className={styles.tagline}>{app.tagline}</p>}

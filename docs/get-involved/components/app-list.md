@@ -190,7 +190,7 @@ Apps can optionally include an `icon` field in `/src/data/apps.js`:
 }
 ```
 
-If no icon is provided, the component displays a gradient badge with the first letter of the app name.
+The icon is rendered with [Logo Tile](./logo-tile.md). When there is no icon or it fails to load, the component displays a gradient badge with the first letter of the app name.
 
 ## Integration Example
 
