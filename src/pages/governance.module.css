@@ -290,7 +290,10 @@
 
 /* Centered CTA below the roles section pointing to the accountability hub */
 .accountabilityCta {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--site-space-xs);
   margin: 0;
 }
 

@@ -98,7 +98,10 @@ function GovernanceRolesSection() {
         </Translate>
       </p>
       <TitleWithText headingLevel={2}
-        description={translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."})}
+        description={[
+          translate({id: 'governance.onboarding.background', message: "New to the topic? [Who created Cardano and who runs it now](/what-is-cardano#history) gives the background in plain language, and the glossary explains what a [DRep](/glossary/drep), a [governance action](/glossary/governance-action) and the [constitution](/glossary/constitution) are."}),
+          translate({id: 'governance.onboarding.walkthrough', message: "To see it step by step, [How Cardano decides](/governance/how-it-works) walks through who votes, how every vote is counted, and where your ada fits in."}),
+        ]}
       />
       <SpacerBox size="small" />
 
@@ -133,6 +136,9 @@ function GovernanceRolesSection() {
       <p className={styles.accountabilityCta}>
         <Link to="/governance/accountability" className="button button--primary">
           {translate({id: 'governance.onboarding.accountabilityCta', message: 'See what the community expects of them'})}
+        </Link>
+        <Link to="/governance/how-it-works" className="button button--secondary">
+          {translate({id: 'governance.onboarding.howItWorksCta', message: 'See how every vote is counted'})}
         </Link>
       </p>
     </>
