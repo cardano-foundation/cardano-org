@@ -410,7 +410,7 @@ function AppRow({ app, rank, appDetails }) {
       <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
         {rank}
       </div>
-      <LogoTile src={resolveIconSrc(appDetails)} name={app.displayName} lazy={false} className={styles.appIcon} />
+      <LogoTile src={resolveIconSrc(appDetails)} name={app.displayName} className={styles.appIcon} />
       <div className={styles.appDetails}>
         <span className={styles.appName}>{app.displayName}</span>
         <div className={styles.tagRow}>

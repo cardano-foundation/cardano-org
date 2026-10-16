@@ -195,7 +195,7 @@
   --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-emphasis-300) 0%, var(--ifm-color-emphasis-500) 100%);
   --logo-fallback-color: #fff;
   --logo-fallback-font-size: 3rem;
-  /* The old placeholder inherited the page line height. */
+  /* The letter keeps the line height of the surrounding text. */
   --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 

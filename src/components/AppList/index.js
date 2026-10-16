@@ -11,7 +11,6 @@ import { translate } from "@docusaurus/Translate";
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
 
-  
   const visibleTags = showTags ? getAppAxes(app) : [];
 
   return (
@@ -21,7 +20,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       rel="noopener noreferrer"
       className={styles.appListItem}
     >
-      <LogoTile src={resolveIconSrc(app)} name={app.title} lazy={false} className={styles.iconContainer} />
+      <LogoTile src={resolveIconSrc(app)} name={app.title} className={styles.iconContainer} />
       <div className={styles.appContent}>
         <h4 className={styles.appTitle}>{app.title}</h4>
         {showDescription && <p className={styles.appDescription}>{app.description}</p>}

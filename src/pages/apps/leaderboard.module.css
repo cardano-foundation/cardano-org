@@ -183,11 +183,10 @@
 /* LogoTile variables for the app icon and its letter fallback. */
 .appIcon {
   --logo-size: 40px;
-  --logo-radius: 8px;
   --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
   --logo-fallback-color: white;
   --logo-fallback-font-size: 1.25rem;
-  /* The old placeholder inherited the page line height. */
+  /* The letter keeps the line height of the surrounding text. */
   --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 
