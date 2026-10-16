@@ -12,4 +12,4 @@ Cardano Node 11.2 should carry the new block format and Plutus V4 context but no
 [**Read more**](https://www.intersectmbo.org/news/intersect-weekly-update-130-sep-2-20266)
 </div>
 
-![intersect weekly update banner](./banner.png)
+![intersect weekly update banner](./banner.webp)

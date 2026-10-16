@@ -11,5 +11,5 @@ The first Cardano Buidler Fest was exhilarating and intense, yet enjoyable for a
  [**Read more**](https://buidl.2024.cardano.org/posts/2024-04-26-it-s-over/) 
 </div>
 
- ![weekly development report](./banner.jpg)
+ ![weekly development report](./banner.webp)
 
