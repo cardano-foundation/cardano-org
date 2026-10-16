@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import multiavatar from "@multiavatar/multiavatar";
 
 import { present } from "@site/src/utils/ambassadorLanguages";
+import useImageFallback from "@site/src/utils/useImageFallback";
 import styles from "./styles.module.css";
 
 const avatarCache = new Map();
@@ -27,17 +28,18 @@ export default function AmbassadorAvatar({
   initialClassName,
   photoClassName,
 }) {
-  const [errored, setErrored] = useState(false);
-  const showPhoto = present(ambassador.profilePicture) && !errored;
+  const { ref, onError, hasFailed } = useImageFallback();
+  const showPhoto = present(ambassador.profilePicture) && !hasFailed(ambassador.profilePicture);
 
   if (showPhoto) {
     return (
       <img
+        ref={ref}
         src={ambassador.profilePicture}
         alt=""
         className={photoClassName || className || styles.photo}
         loading="lazy"
-        onError={() => setErrored(true)}
+        onError={onError}
       />
     );
   }

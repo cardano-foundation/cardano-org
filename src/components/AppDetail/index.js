@@ -26,6 +26,7 @@ import { scrollBehavior } from "@site/src/utils/jsUtils";
 import Grid from "@site/src/components/Layout/Grid";
 import LogoTile from "@site/src/components/Layout/LogoTile";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
+import useImageFallback from "@site/src/utils/useImageFallback";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -219,8 +220,8 @@ function PreviewCarousel({ urls }) {
 
 function SinglePreview({ url }) {
   const href = useBaseUrl(url);
-  const [errored, setErrored] = useState(false);
-  if (errored) return null;
+  const { ref, onError, hasFailed } = useImageFallback();
+  if (hasFailed(href)) return null;
   return (
     <figure className={styles.preview}>
       <img
@@ -230,7 +231,8 @@ function SinglePreview({ url }) {
         loading="lazy"
         width={1280}
         height={720}
-        onError={() => setErrored(true)}
+        ref={ref}
+        onError={onError}
       />
     </figure>
   );

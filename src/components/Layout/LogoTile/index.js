@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import clsx from "clsx";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import { useColorMode } from "@docusaurus/theme-common";
+import useImageFallback from "@site/src/utils/useImageFallback";
 import styles from "./styles.module.css";
 
 /**
@@ -48,35 +49,21 @@ export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, 
   const light = useBaseUrl(src || "/");
   const dark = useBaseUrl(srcDark || src || "/");
   const { colorMode } = useColorMode();
-  // URLs that failed to load. The tile falls back only while the source that
-  // the current color mode shows is in here, so a new `src` or a switch to a
-  // working dark variant brings the image back.
-  const [failed, setFailed] = useState(() => new Set());
+  // The tile falls back only while the source that the current color mode
+  // shows has failed, so a new `src` or a switch to a working dark variant
+  // brings the image back.
+  const { ref, onError, hasFailed } = useImageFallback();
   const active = colorMode === "dark" && srcDark ? dark : light;
-  const showImage = Boolean(src) && !failed.has(active);
-
-  const markFailed = (img) => {
-    const url = img.getAttribute("src");
-    setFailed((previous) => (previous.has(url) ? previous : new Set(previous).add(url)));
-  };
-  // An image rendered on the server can fail before React attaches onError.
-  // A finished image without a pixel size failed that way. (Avoid decode()
-  // here, it changes how Chrome scales the image.)
-  const tileRef = useRef(null);
-  useEffect(() => {
-    tileRef.current?.querySelectorAll("img").forEach((img) => {
-      if (img.complete && img.naturalWidth === 0) markFailed(img);
-    });
-  }, [light, dark, showImage]);
+  const showImage = Boolean(src) && !hasFailed(active);
   const imageProps = {
     className: styles.image,
     loading: lazy ? "lazy" : undefined,
-    onError: (event) => markFailed(event.currentTarget),
+    onError,
   };
 
   return (
     <span
-      ref={tileRef}
+      ref={ref}
       className={clsx(styles.tile, !showImage && styles.withFallback, className)}
       style={style}
       aria-hidden="true"

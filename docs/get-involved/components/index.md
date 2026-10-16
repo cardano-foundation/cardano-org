@@ -56,6 +56,7 @@ Shared components are the default on cardano.org. Before you write a component o
 | An FAQ or other expandable questions | [FAQ Section](../faq-component.md) for an FAQ with its own "FAQ" heading, [Accordion](./accordion.md) under a heading of your own |
 | A dialog opened from a button | [Modal](./modal.md) |
 | A copy button that says "Copied" for a moment | The `useCopyToClipboard` hook from `src/utils/useCopyToClipboard.js`, `copyText` for a plain copy, or `shareOrCopy` for a share button that copies where the browser cannot share |
+| An image that shows something else when it fails to load, including images that failed before the page hydrated | The `useImageFallback` hook from `src/utils/useImageFallback.js`, or [Logo Tile](./logo-tile.md) for a logo with letters as fallback |
 | A deep link such as `#faq-lose-ada` that opens or scrolls to something, on load and when the hash changes | The `useHashTarget` hook from `src/utils/useHashTarget.js`, or `useHashTab` for [Tabs](./tabs.md) |
 | A contact or sign-up form managed in HubSpot | [HubSpot Form](./hubspot-form.md) |
 | A horizontal row of cards with scroll arrows | [Horizontal Scroller](./horizontal-scroller.md) |
