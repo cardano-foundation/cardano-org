@@ -52,7 +52,7 @@ export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, 
   // The tile falls back only while the source that the current color mode
   // shows has failed, so a new `src` or a switch to a working dark variant
   // brings the image back.
-  const { ref: tileRef, onError, hasFailed } = useImageFallback();
+  const { ref, onError, hasFailed } = useImageFallback();
   const active = colorMode === "dark" && srcDark ? dark : light;
   const showImage = Boolean(src) && !hasFailed(active);
   const imageProps = {
@@ -63,7 +63,7 @@ export default function LogoTile({ src, srcDark, name, letters, maxLetters = 1, 
 
   return (
     <span
-      ref={tileRef}
+      ref={ref}
       className={clsx(styles.tile, !showImage && styles.withFallback, className)}
       style={style}
       aria-hidden="true"

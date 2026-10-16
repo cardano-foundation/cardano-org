@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Tracks which image URLs failed to load, so a component can show a fallback
@@ -18,10 +18,10 @@ export default function useImageFallback() {
   const ref = useRef(null);
   const [failed, setFailed] = useState(() => new Set());
 
-  const markFailed = useCallback((img) => {
+  const markFailed = (img) => {
     const url = img.getAttribute("src");
     setFailed((previous) => (previous.has(url) ? previous : new Set(previous).add(url)));
-  }, []);
+  };
 
   useEffect(() => {
     const root = ref.current;
