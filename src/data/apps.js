@@ -1952,6 +1952,7 @@ export const Showcases = [
     category: "minting",
     properties: ["nft"],
     maintainerPick: false,
+    x: "BrosCoudre",
   },
 ];
 
