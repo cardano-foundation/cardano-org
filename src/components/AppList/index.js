@@ -1,20 +1,16 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
 import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 import { translate } from "@docusaurus/Translate";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
 
-  const rawIconSrc = resolveIconSrc(app);
-  const iconSrc = useBaseUrl(rawIconSrc || '');
-  const initial = app.title.charAt(0).toUpperCase();
-  
   const visibleTags = showTags ? getAppAxes(app) : [];
 
   return (
@@ -24,13 +20,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       rel="noopener noreferrer"
       className={styles.appListItem}
     >
-      <div className={styles.iconContainer}>
-        {rawIconSrc ? (
-          <img src={iconSrc} alt={app.title} className={styles.appIcon} />
-        ) : (
-          <div className={styles.appInitial}>{initial}</div>
-        )}
-      </div>
+      <LogoTile src={resolveIconSrc(app)} name={app.title} className={styles.iconContainer} />
       <div className={styles.appContent}>
         <h4 className={styles.appTitle}>{app.title}</h4>
         {showDescription && <p className={styles.appDescription}>{app.description}</p>}
@@ -82,7 +72,7 @@ export default function AppList({ categories = [], slugs = null, limit = 5, cate
         .map((slug) => {
           const found = Showcases.find((app) => app.slug === slug);
           if (!found && process.env.NODE_ENV !== 'production') {
-            console.warn(`[AppList] Unknown slug "${slug}" — no matching app in Showcases.`);
+            console.warn(`[AppList] Unknown slug "${slug}", no matching app in Showcases.`);
           }
           return found;
         })

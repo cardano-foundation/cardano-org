@@ -6,6 +6,7 @@ import EChart from '@site/src/components/Layout/EChart';
 
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import { resolveIconSrc } from '@site/src/utils/appIcon';
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
@@ -399,8 +400,6 @@ function MetadataTreemap({ data }) {
 // App Row Component for the leaderboard list. The whole row is the link, rows
 // without a link target render as a plain, non-interactive card.
 function AppRow({ app, rank, appDetails }) {
-  const iconSrc = resolveIconSrc(appDetails);
-  const initial = app.displayName.charAt(0).toUpperCase();
   const category = getCategoryForEntry(app, appDetails);
   const isTop3 = rank <= 3;
   const link = resolveEntryLink(appDetails);
@@ -411,11 +410,7 @@ function AppRow({ app, rank, appDetails }) {
       <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
         {rank}
       </div>
-      {iconSrc ? (
-        <img src={iconSrc} alt="" className={styles.appIcon} />
-      ) : (
-        <div className={styles.appIconPlaceholder} aria-hidden="true">{initial}</div>
-      )}
+      <LogoTile src={resolveIconSrc(appDetails)} name={app.displayName} className={styles.appIcon} />
       <div className={styles.appDetails}>
         <span className={styles.appName}>{app.displayName}</span>
         <div className={styles.tagRow}>

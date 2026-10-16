@@ -3,6 +3,7 @@ import { Showcases } from "@site/src/data/apps";
 import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 import { translate } from "@docusaurus/Translate";
 
@@ -11,25 +12,10 @@ function AppCard({ app, stats, appRank, ctaText }) {
   const showRank = appRank !== null && appRank !== undefined;
   const isTop3 = showRank && appRank <= 3;
 
-  const iconSrc = resolveIconSrc(app);
-
-  // Get initial letter for fallback
-  const initial = app.title.charAt(0).toUpperCase();
-
   return (
     <div className={styles.appCard}>
       <div className={styles.appHeader}>
-        {iconSrc ? (
-          <img
-            src={iconSrc}
-            alt={app.title}
-            className={styles.appLogo}
-          />
-        ) : (
-          <div className={styles.appLogoPlaceholder}>
-            {initial}
-          </div>
-        )}
+        <LogoTile src={resolveIconSrc(app)} name={app.title} lazy={false} className={styles.appLogo} />
         <h4 className={styles.appName}>{app.title}</h4>
       </div>
 
