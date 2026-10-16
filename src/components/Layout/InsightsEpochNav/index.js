@@ -93,7 +93,7 @@ export default function InsightsEpochNav({
             aria-label={translate({ id: 'insightsEpochNav.goTo', message: 'Go to epoch {epoch}' }, { epoch: displayedEpoch - 1 })}
             title={canGoPrev ? translate({ id: 'insightsEpochNav.epochNumber', message: 'Epoch {epoch}' }, { epoch: displayedEpoch - 1 }) : translate({ id: 'insightsEpochNav.minEpoch', message: 'Min epoch is {epoch}' }, { epoch: minEpoch })}
           >
-            Prev
+            {translate({ id: 'insightsEpochNav.prev', message: 'Prev', description: 'Button that shows the previous epoch' })}
           </button>
 
           <div className="epochNavLabel" aria-live="polite">
@@ -109,7 +109,7 @@ export default function InsightsEpochNav({
             aria-label={translate({ id: 'insightsEpochNav.goTo', message: 'Go to epoch {epoch}' }, { epoch: displayedEpoch + 1 })}
             title={canGoNext ? translate({ id: 'insightsEpochNav.epochNumber', message: 'Epoch {epoch}' }, { epoch: displayedEpoch + 1 }) : (currentEpochNo == null ? translate({ id: 'insightsEpochNav.fetching', message: 'Fetching latest epoch…' }) : translate({ id: 'insightsEpochNav.maxEpoch', message: 'Max epoch is {epoch}' }, { epoch: currentEpochNo }))}
           >
-            Next
+            {translate({ id: 'insightsEpochNav.next', message: 'Next', description: 'Button that shows the next epoch' })}
           </button>
         </div>
 
@@ -138,7 +138,7 @@ export default function InsightsEpochNav({
                 disabled={!isValid}
                 title={isValid ? translate({ id: 'insightsEpochNav.goTo', message: 'Go to epoch {epoch}' }, { epoch: parsed }) : hint}
               >
-                Go
+                {translate({ id: 'insightsEpochNav.go', message: 'Go', description: 'Button that shows the epoch typed into the input' })}
               </button>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function InsightsEpochNav({
             onClick={() => setIsJumpMode(true)}
             title={translate({ id: 'insightsEpochNav.jumpToSpecific', message: 'Jump to a specific epoch' })}
           >
-            Jump…
+            {translate({ id: 'insightsEpochNav.jump', message: 'Jump…', description: 'Mobile button that opens the jump to epoch input' })}
           </button>
         )}
       </div>
@@ -179,7 +179,7 @@ export default function InsightsEpochNav({
               disabled={!isValid}
               title={isValid ? translate({ id: 'insightsEpochNav.goTo', message: 'Go to epoch {epoch}' }, { epoch: parsed }) : hint}
             >
-              Go
+              {translate({ id: 'insightsEpochNav.go', message: 'Go', description: 'Button that shows the epoch typed into the input' })}
             </button>
             <button
               type="button"
@@ -187,7 +187,7 @@ export default function InsightsEpochNav({
               className="button button--sm button--secondary epochJumpCancel"
               title={translate({ id: 'insightsEpochNav.cancel', message: 'Cancel' })}
             >
-              Cancel
+              {translate({ id: 'insightsEpochNav.cancel', message: 'Cancel' })}
             </button>
           </div>
           {!isValid && <span className="epochJumpHint is-invalid">{hint}</span>}
