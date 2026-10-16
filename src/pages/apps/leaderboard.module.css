@@ -55,9 +55,6 @@
 
 /* Stats Summary */
 .statsSummary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -258,11 +255,6 @@
 }
 
 /* Category Grid */
-.categoryGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
 
 .categoryCard {
   background: var(--ifm-background-surface-color);
@@ -422,9 +414,6 @@
 
 /* Coverage Section */
 .coverageSection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
   margin-top: 1rem;
 }
 
@@ -461,9 +450,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .statsSummary {
-    grid-template-columns: 1fr;
-  }
 
   .statCard {
     padding: 1rem;
@@ -475,14 +461,6 @@
 
   .categoryPie {
     --echart-height: 390px;
-  }
-
-  .categoryGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .coverageSection {
-    grid-template-columns: 1fr;
   }
 
   .appRow {

@@ -16,6 +16,7 @@ import {
 import PoolCard from "./PoolCard";
 import AccountStatus from "./AccountStatus";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 function Retry({ onClick }) {
   return (
@@ -275,7 +276,7 @@ export default function StakePoolDelegate() {
     if (!pools.length && !isLoading) return <p className={styles.notice}>{emptyText}</p>;
     const placeholders = isLoading ? Math.max(0, DISPLAY_COUNT - pools.length) : 0;
     return (
-      <div className={styles.cardGrid}>
+      <Grid minItemWidth="280px">
         {pools.map((pool) => (
           <PoolCard
             key={pool.id}
@@ -288,7 +289,7 @@ export default function StakePoolDelegate() {
           />
         ))}
         {Array.from({ length: placeholders }, (_, i) => <Skeleton key={`skeleton-${i}`} />)}
-      </div>
+      </Grid>
     );
   };
 

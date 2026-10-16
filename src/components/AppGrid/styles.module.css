@@ -11,9 +11,6 @@
 }
 
 .appGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
   margin-top: 1.5rem;
   width: 100%;
   max-width: 100%;
@@ -220,12 +217,6 @@
   color: var(--ifm-color-emphasis-700);
   margin: 0;
   opacity: 0.85;
-}
-
-@media (max-width: 768px) {
-  .appGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker

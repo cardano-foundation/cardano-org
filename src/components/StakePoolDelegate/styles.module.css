@@ -66,12 +66,6 @@
   flex: 0 0 auto;
 }
 
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
 .skeleton {
   min-height: 260px;
   border-radius: 12px;

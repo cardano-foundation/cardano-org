@@ -9,7 +9,7 @@ import Grid from '@site/src/components/Layout/Grid';
 
 `Grid` places cards, tiles, or rows in columns that wrap by a minimum item width. On a wide screen several items share a row, on a narrow one they stack. Use it instead of writing `display: grid` with `repeat(auto-fill, minmax(...))` in page CSS.
 
-It holds the card grids on `/learn`, `/what-is-cardano`, `/wallets`, `/layer-2`, `/use-cases`, and the glossary, and the app tile grids on `/governance`, `/governance/delegate`, `/stake-pool-delegation`, and the app detail pages.
+It holds the card grids on `/learn`, `/what-is-cardano`, `/wallets`, `/layer-2`, `/use-cases`, `/solutions`, `/grants-funding`, `/ambassadors`, the start page news, and the glossary, the app tile and DRep or pool card grids on `/governance`, `/governance/delegate`, `/stake-pool-delegation`, and the app detail pages, the exchange and app grids on `/where-to-get-ada`, and the summary grids on the leaderboard.
 
 ## When to use
 

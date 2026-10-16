@@ -23,6 +23,7 @@ import { jsonLdString } from '@site/src/utils/jsonLd';
 import { safeUrl } from '@site/src/utils/safeUrl';
 import EditOnGitHubCallout from '@site/src/components/Layout/EditOnGitHubCallout';
 import styles from './styles.module.css';
+import Grid from "@site/src/components/Layout/Grid";
 
 function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
   const definedTerm = {
@@ -437,7 +438,7 @@ export default function GlossaryTerm({ term }) {
             <h2 className={styles.exploreNextHeading}>
               {translate({ id: 'glossary.term.exploreNext', message: 'Explore next' })}
             </h2>
-            <ul className={styles.exploreNextGrid}>
+            <Grid as="ul" minItemWidth="260px" className={styles.exploreNextGrid}>
               {relatedTerms.map(r => (
                 <li key={r.slug}>
                   <ExploreNextCard
@@ -447,7 +448,7 @@ export default function GlossaryTerm({ term }) {
                   />
                 </li>
               ))}
-            </ul>
+            </Grid>
           </section>
         )}
 

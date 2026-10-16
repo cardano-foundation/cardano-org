@@ -19,6 +19,7 @@ import {
 import styles from "./styles.module.css";
 import { scrollBehavior } from "@site/src/utils/jsUtils";
 import useHashTarget from "@site/src/utils/useHashTarget";
+import Grid from "@site/src/components/Layout/Grid";
 
 const PAGE_SIZE = 24;
 const HIGHLIGHT_MS = 1500;
@@ -230,7 +231,7 @@ export default function AmbassadorsDirectory() {
           </button>
         </div>
       ) : (
-        <div className={styles.grid}>
+        <Grid minItemWidth="320px">
           {visible.map((ambassador) => (
             <AmbassadorCard
               key={ambassador.name + ambassador.country}
@@ -238,7 +239,7 @@ export default function AmbassadorsDirectory() {
               highlighted={highlightSlug === slugByName.get(ambassador.name)}
             />
           ))}
-        </div>
+        </Grid>
       )}
 
       {filtered.length > visibleCount && (

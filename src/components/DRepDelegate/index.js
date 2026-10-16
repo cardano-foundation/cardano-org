@@ -18,6 +18,7 @@ import { WalletPicker, NetworkWarning, TxBanner, Initials, SearchRow, SnapshotIm
 import { fisherYates, chunk, readCache, writeCache } from "@site/src/components/WalletDelegation/helpers";
 import { canonicalDRepId, fetchDRepIdStatus } from "@site/src/utils/cardano/drepIdStatus.mjs";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const AVATAR_SET = new Set(drepAvatarsManifest.ids);
 
@@ -685,8 +686,9 @@ export default function DRepDelegate() {
         </div>
       )}
 
+      {/* Both card grids use auto-fill, the Grid default, so a single result keeps card width. */}
       {unknownId ? (
-        <div className={styles.cardGrid}>
+        <Grid minItemWidth="260px">
           <UnknownIdCard
             drepId={unknownId}
             canonicalId={idChecked ? idCheck.drepId : null}
@@ -694,7 +696,7 @@ export default function DRepDelegate() {
             onSelect={handleSelect}
             disabled={!canDelegate}
           />
-        </div>
+        </Grid>
       ) : search && !search.matches.length ? (
         <p className={styles.searchEmpty}>
           {translate({
@@ -703,7 +705,7 @@ export default function DRepDelegate() {
           })}
         </p>
       ) : (
-        <div className={styles.cardGrid}>
+        <Grid minItemWidth="260px">
           {visible.map((drep) => (
             <DRepCard
               key={drep.drepId}
@@ -712,7 +714,7 @@ export default function DRepDelegate() {
               disabled={!canDelegate}
             />
           ))}
-        </div>
+        </Grid>
       )}
 
       <div className={styles.specialSection}>
@@ -722,7 +724,7 @@ export default function DRepDelegate() {
             message: "Or pick a protocol option",
           })}
         </h3>
-        <div className={styles.specialGrid}>
+        <Grid fit minItemWidth="260px">
           <SpecialOption
             label={translate({ id: "governance.delegate.abstain.label", message: "Abstain" })}
             help={translate({
@@ -743,7 +745,7 @@ export default function DRepDelegate() {
             onSelect={handleSelect}
             disabled={!canDelegate}
           />
-        </div>
+        </Grid>
       </div>
     </div>
   );

@@ -28,14 +28,6 @@
   flex: 0 0 auto;
 }
 
-.cardGrid {
-  display: grid;
-  /* auto-fill, not auto-fit: a single search result keeps card width instead
-     of stretching across the whole row. */
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -116,12 +108,6 @@
   padding: 1.5rem 0;
   text-align: center;
   color: var(--ifm-color-emphasis-700);
-}
-
-.specialGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
 }
 
 .specialOption {
