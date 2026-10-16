@@ -200,6 +200,14 @@ html {
   }
 }
 
+/* Site-wide Infima button default: brand-blue fill and border with white
+   text for a .button without a variant. */
+:root {
+  --ifm-button-background-color: #0033AD;
+  --ifm-button-border-color: #0033AD;
+  --ifm-button-color: #fff;
+}
+
 /* White pill button for brand-blue and navy bands. Light theme: white with
    brand-blue text. Dark theme: the lightest primary blue with navy text, so
    the button does not glare against the dark UI. The variant sets its own

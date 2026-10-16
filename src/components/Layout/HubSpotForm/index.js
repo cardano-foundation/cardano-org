@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import clsx from "clsx";
 import HubSpotConfig from "@site/hubspot.config";
-import "./hs.css";
+import styles from "./styles.module.css";
 
 const SCRIPT_SRC = "https://js.hsforms.net/forms/shell.js";
 
@@ -53,7 +54,7 @@ export default function HubSpotForm({ form, className }) {
   }, [formId, portalId, region, id]);
 
   return (
-    <div className={className}>
+    <div className={clsx(styles.form, className)}>
       <div id={id} />
     </div>
   );
