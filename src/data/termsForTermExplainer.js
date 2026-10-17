@@ -34,7 +34,7 @@ export function getTermsForTermExplainer() {
         description: translate({
           id: "termExplainer.staking.staking.description",
           message:
-            "Staking refers to the entire process of both delegating and setting up a pool. It is often confused with `delegating`.",
+            "On Cardano, staking usually means delegation: you assign stake weight to a pool while ada stays in your wallet. Running a pool is a separate role. The umbrella term is often confused with `delegating`.",
         }),
       },
     ],
