@@ -31,10 +31,12 @@ export default function DocRootLayout({children}) {
   
   return (
     <>
+      {/* The hero names the section, the doc's own title is the page's h1. */}
       <SiteHero
         title={heroTitle}
         description={heroDescription}
         bannerType={heroBannerType}
+        headingLevel={0}
       />
       <div className={styles.docsWrapper}>
         <BackToTopButton />
