@@ -12437,6 +12437,22 @@
   "insightsEpochNav.jumpTo": {
     "message": "Jump to epoch"
   },
+  "insightsEpochNav.prev": {
+    "message": "Prev",
+    "description": "Button that shows the previous epoch"
+  },
+  "insightsEpochNav.next": {
+    "message": "Next",
+    "description": "Button that shows the next epoch"
+  },
+  "insightsEpochNav.go": {
+    "message": "Go",
+    "description": "Button that shows the epoch typed into the input"
+  },
+  "insightsEpochNav.jump": {
+    "message": "Jump…",
+    "description": "Mobile button that opens the jump to epoch input"
+  },
   "docs.hero.getInvolved.title": {
     "message": "Get Involved"
   },
