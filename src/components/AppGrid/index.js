@@ -6,6 +6,7 @@ import { resolveIconSrc } from "@site/src/utils/appIcon";
 import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 import { translate } from "@docusaurus/Translate";
+import Grid from "@site/src/components/Layout/Grid";
 
 function AppCard({ app, stats, appRank, ctaText }) {
   const hasStats = stats && stats.txCount > 0;
@@ -141,7 +142,7 @@ export default function AppGrid({
   return (
     <div className={styles.container}>
       {gridTitle && <h3 className={styles.gridTitle}>{gridTitle}</h3>}
-      <div className={styles.appGrid}>
+      <Grid minItemWidth="280px" gap="var(--site-space-md)" stackOnMobile className={styles.appGrid}>
         {displayedApps.map(({ app, stats, appRank }) => {
           return (
             <AppCard
@@ -166,7 +167,7 @@ export default function AppGrid({
             </div>
           </a>
         )}
-      </div>
+      </Grid>
     </div>
   );
 }

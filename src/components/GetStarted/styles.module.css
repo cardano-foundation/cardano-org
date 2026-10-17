@@ -104,7 +104,7 @@
 .mono { font-family: var(--ifm-font-family-monospace); word-break: break-all; }
 
 /* Wallet picker */
-.walletGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--site-space-md); margin-bottom: var(--site-space-md); }
+.walletGrid { margin-bottom: var(--site-space-md); }
 .checkboxRow { display: flex; align-items: center; gap: var(--site-space-2xs); }
 
 /* Phrase simulator */

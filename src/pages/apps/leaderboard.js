@@ -22,6 +22,7 @@ import appStats73 from "@site/src/data/tx-stats-73epochs.json";
 
 import styles from "./leaderboard.module.css";
 import { translate } from "@docusaurus/Translate";
+import Grid from "@site/src/components/Layout/Grid";
 
 const CIP20_LABEL = 674;
 
@@ -637,7 +638,7 @@ export default function LeaderboardPage() {
             </label>
 
             {/* Stats Summary */}
-            <div className={styles.statsSummary}>
+            <Grid fit minItemWidth="200px" gap="var(--site-space-md)" stackOnMobile className={styles.statsSummary}>
               <div className={styles.statCard}>
                 <span className={styles.statValue}>{formatNumber(totalTrackedTx)}</span>
                 <span className={styles.statLabel}>Tracked Transactions</span>
@@ -665,7 +666,7 @@ export default function LeaderboardPage() {
                   }
                 </span>
               </div>
-            </div>
+            </Grid>
 
             <p className={styles.updateNote}>
               Data period: {reportingStart} - {reportingEnd} (Epoch {metadata.chainEpoch})
@@ -714,7 +715,7 @@ export default function LeaderboardPage() {
             <SpacerBox size="small" />
 
             {/* Category Cards */}
-            <div className={styles.categoryGrid}>
+            <Grid fit minItemWidth="250px" stackOnMobile>
               {categoryStats.map(cat => (
                 <CategoryCard
                   key={cat.name}
@@ -725,7 +726,7 @@ export default function LeaderboardPage() {
                   includes={cat.includes}
                 />
               ))}
-            </div>
+            </Grid>
 
             <SpacerBox size="medium" />
 
@@ -778,7 +779,7 @@ export default function LeaderboardPage() {
             {/* Coverage Stats & CTA */}
             <Divider headingLevel={2} text="Transaction Tracking" id="tracking" />
 
-            <div className={styles.coverageSection}>
+            <Grid fit minItemWidth="300px" gap="var(--site-space-lg)" stackOnMobile className={styles.coverageSection}>
               <div className={styles.coverageStats}>
                 <h3>Coverage Status</h3>
                 {coverageData && (
@@ -821,7 +822,7 @@ export default function LeaderboardPage() {
                   You can also explore network-wide <Link to="/insights/transactions/">transaction trends</Link>.
                 </p>
               </div>
-            </div>
+            </Grid>
           </BoundaryBox>
         </BackgroundWrapper>
 

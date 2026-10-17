@@ -5,6 +5,7 @@ import { getFundingGroups, getFundingPrograms, getProgramsByGroup } from "@site/
 import { scrollToElement } from "@site/src/utils/jsUtils";
 import ProgramCard from "./ProgramCard";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const ICONS = { grants: <FaLightbulb />, accelerators: <FaRocket />, contributors: <FaTools /> };
 
@@ -49,11 +50,11 @@ export default function FundingPrograms() {
           <div id={group.key} className={styles.panelAnchor}>
             <h3 className={styles.panelTitle}>{group.title}</h3>
             <p className={styles.panelIntro}>{group.intro}</p>
-            <div className={styles.grid}>
+            <Grid fit minItemWidth="260px" gap="var(--site-space-md)" className={styles.grid}>
               {getProgramsByGroup(group.key).map((program) => (
                 <ProgramCard key={program.key} program={program} />
               ))}
-            </div>
+            </Grid>
           </div>
         </TabPanel>
       ))}

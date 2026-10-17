@@ -7,7 +7,7 @@
    stacking into one full-width column on phones. */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 280px);
+  grid-template-columns: repeat(auto-fill, 280px); /* grid-ok: fixed 280px tracks, no stretching */
   gap: var(--site-space-lg);
   margin: 0;
   padding: 0;

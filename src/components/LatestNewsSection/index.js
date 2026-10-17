@@ -6,6 +6,7 @@ import {translate} from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import recentNews from "@site/src/data/recentNews.json";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // useLayoutEffect warns during server-side rendering; fall back to useEffect there.
 const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : useEffect;
@@ -149,7 +150,7 @@ export default function LatestNewsSection({ count = 3 }) {
 
   return (
     <section className={styles.newsSection}>
-      <div className={styles.cardsGrid}>
+      <Grid minItemWidth="300px" stackOnMobile className={styles.cardsGrid}>
         {posts.map((post, index) => {
           const category = post.tags?.[0];
           const imageSrc = post.image || CATEGORY_IMAGES[category] || DEFAULT_IMAGE;
@@ -195,7 +196,7 @@ export default function LatestNewsSection({ count = 3 }) {
           </Link>
           );
         })}
-      </div>
+      </Grid>
 
       <div className={styles.ctaWrapper}>
         <Link to="/news" className="button button--primary button--lg">

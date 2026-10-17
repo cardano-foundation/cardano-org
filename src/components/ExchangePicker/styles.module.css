@@ -57,12 +57,7 @@
 }
 
 .exchangeGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 100%;
+  margin-top: var(--site-space-md);
 }
 
 .exchangeCard {
@@ -237,10 +232,6 @@
 }
 
 @media (max-width: 768px) {
-  .exchangeGrid {
-    grid-template-columns: 1fr;
-  }
-  
   .countrySelect {
     max-width: 100%;
   }

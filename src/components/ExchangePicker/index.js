@@ -3,6 +3,7 @@ import data from "@site/src/data/exchanges.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const { regions, countries } = data;
 const STORAGE_KEY = 'cardano-selected-country';
@@ -184,7 +185,7 @@ export default function ExchangePicker() {
               No exchanges listed yet for this country.
             </p>
           ) : (
-            <div className={styles.exchangeGrid}>
+            <Grid minItemWidth="280px" gap="var(--site-space-md)" stackOnMobile className={styles.exchangeGrid}>
               {exchanges.map((ex) => (
                 <ExchangeCard key={ex.name} exchange={ex} />
               ))}
@@ -204,7 +205,7 @@ export default function ExchangePicker() {
                   </p>
                 </div>
               </a>
-            </div>
+            </Grid>
           )}
         </div>
       )}

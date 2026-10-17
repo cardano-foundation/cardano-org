@@ -16,9 +16,7 @@
 }
 
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  --grid-gap: var(--site-space-md);
   margin-bottom: 2.5rem;
 }
 
@@ -70,8 +68,7 @@
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    --grid-gap: var(--site-space-sm);
   }
 
   .ctaLink {

@@ -1,7 +1,7 @@
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* grid-ok: exactly 3 columns on mobile */
   gap: 0.5rem;
   padding: 1.5rem 0;
 }
