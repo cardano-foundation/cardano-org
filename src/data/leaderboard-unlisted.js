@@ -53,6 +53,11 @@ export const UnlistedApps = {
     category: "distribution",
     website: "https://midnight.network",
   },
+  "hosky": {
+    icon: "/img/app-icons/hosky.png",
+    category: "distribution",
+    website: "https://hosky.io",
+  },
   "5am.earth": {
     icon: "/img/app-icons/5am-earth.svg",
     category: "identity",
