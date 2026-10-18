@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 
@@ -73,8 +73,7 @@ function getRelatedApps(currentApp) {
     .slice(0, RELATED_LIMIT);
 }
 
-function CarouselSlide({ url, eager }) {
-  const href = useBaseUrl(url);
+function CarouselSlide({ href, eager, onError }) {
   return (
     <img
       src={href}
@@ -84,11 +83,12 @@ function CarouselSlide({ url, eager }) {
       width={1280}
       height={720}
       className={styles.carouselSlide}
+      onError={onError}
     />
   );
 }
 
-function PreviewCarousel({ urls }) {
+function PreviewCarousel({ urls, onError }) {
   const trackRef = useRef(null);
   const [active, setActive] = useState(0);
   const dragRef = useRef(null);
@@ -175,7 +175,7 @@ function PreviewCarousel({ urls }) {
           onPointerCancel={onPointerUp}
         >
           {urls.map((url, idx) => (
-            <CarouselSlide key={url} url={url} eager={idx === 0} />
+            <CarouselSlide key={url} href={url} eager={idx === 0} onError={onError} />
           ))}
         </div>
         <button
@@ -218,10 +218,7 @@ function PreviewCarousel({ urls }) {
   );
 }
 
-function SinglePreview({ url }) {
-  const href = useBaseUrl(url);
-  const { ref, onError, hasFailed } = useImageFallback();
-  if (hasFailed(href)) return null;
+function SinglePreview({ href, onError }) {
   return (
     <figure className={styles.preview}>
       <img
@@ -231,17 +228,34 @@ function SinglePreview({ url }) {
         loading="lazy"
         width={1280}
         height={720}
-        ref={ref}
         onError={onError}
       />
     </figure>
   );
 }
 
-function PreviewHero({ urls }) {
-  if (urls.length === 0) return null;
-  if (urls.length > 1) return <PreviewCarousel urls={urls} />;
-  return <SinglePreview url={urls[0]} />;
+// Screenshots section. A screenshot that fails to load drops out, and the
+// section with its heading disappears when none is left.
+function PreviewSection({ urls }) {
+  const { withBaseUrl } = useBaseUrlUtils();
+  const { ref, onError, hasFailed } = useImageFallback();
+  const hrefs = urls.map((url) => withBaseUrl(url)).filter((href) => !hasFailed(href));
+  if (hrefs.length === 0) return null;
+  return (
+    <section ref={ref} className={styles.previewWrap}>
+      <h2 className={styles.previewHeading}>
+        {translate({
+          id: "apps.detail.screenshots",
+          message: "Screenshots",
+        })}
+      </h2>
+      {hrefs.length > 1 ? (
+        <PreviewCarousel urls={hrefs} onError={onError} />
+      ) : (
+        <SinglePreview href={hrefs[0]} onError={onError} />
+      )}
+    </section>
+  );
 }
 
 function ShareButton({ url, title }) {
@@ -448,17 +462,7 @@ export default function AppDetail({ app }) {
           <ShareButton url={app.website} title={app.title} />
         </div>
 
-        {previewUrls.length > 0 && (
-          <section className={styles.previewWrap}>
-            <h2 className={styles.previewHeading}>
-              {translate({
-                id: "apps.detail.screenshots",
-                message: "Screenshots",
-              })}
-            </h2>
-            <PreviewHero urls={previewUrls} />
-          </section>
-        )}
+        <PreviewSection urls={previewUrls} />
 
         {showActivity && (
           <section className={styles.activity}>
