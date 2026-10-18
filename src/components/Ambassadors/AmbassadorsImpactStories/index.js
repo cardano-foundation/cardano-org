@@ -8,6 +8,7 @@ import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import { Flag } from "@site/src/components/Ambassadors/AmbassadorAvatar";
 import ambassadorsData from "@site/src/data/ambassadorsData.json";
 import impactData from "@site/src/data/ambassadorsImpact.json";
+import useImageFallback from "@site/src/utils/useImageFallback";
 import styles from "./styles.module.css";
 
 function findAmbassador(ref) {
@@ -50,9 +51,13 @@ const STORY_BADGES = {
   reddit: { Icon: FaRedditAlien, bg: "#FF4500" },
 };
 
+// A story image that fails to load falls back to the badge or the gradient.
 function StoryMedia({ image, badge, name }) {
   const resolved = useBaseUrl(image || "");
-  if (image) return <img src={resolved} alt="" className={styles.storyImg} />;
+  const { ref, onError, hasFailed } = useImageFallback();
+  if (image && !hasFailed(resolved)) {
+    return <img ref={ref} src={resolved} alt="" className={styles.storyImg} onError={onError} />;
+  }
   const badgeConfig = badge && STORY_BADGES[badge];
   if (badgeConfig) {
     const { Icon, bg } = badgeConfig;

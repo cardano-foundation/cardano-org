@@ -28,14 +28,16 @@ export default function AmbassadorAvatar({
   initialClassName,
   photoClassName,
 }) {
+  // The photo path goes through useBaseUrl, so it also works under a locale prefix.
+  const photo = useBaseUrl(ambassador.profilePicture || "");
   const { ref, onError, hasFailed } = useImageFallback();
-  const showPhoto = present(ambassador.profilePicture) && !hasFailed(ambassador.profilePicture);
+  const showPhoto = present(ambassador.profilePicture) && !hasFailed(photo);
 
   if (showPhoto) {
     return (
       <img
         ref={ref}
-        src={ambassador.profilePicture}
+        src={photo}
         alt=""
         className={photoClassName || className || styles.photo}
         loading="lazy"
