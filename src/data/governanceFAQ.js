@@ -209,5 +209,22 @@ export function getGovernanceFAQ() {
       ],
       category: "governance-basics",
     },
+    {
+      id: "faq-amend-constitution",
+      question: translate({ id: "governance.faq.item.amendConstitution.q", message: "How can I propose a change to the constitution?" }),
+      answer: [
+        translate({
+          id: "governance.faq.item.amendConstitution.a1",
+          message:
+            "The constitution changes only through an on-chain governance action that DReps ratify with at least 75% of their stake and the Constitutional Committee approves.",
+        }),
+        translate({
+          id: "governance.faq.item.amendConstitution.a2",
+          message:
+            "Before that, you can raise your idea on Intersect's [Constitutional Amendment Portal](https://cap.intersectmbo.org/). Submit a [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) to propose new wording, or a [Constitutional Issue Statement](/glossary/constitutional-issue-statement) to describe a problem without a fix. Both are discussed in public before any governance action is submitted.",
+        }),
+      ],
+      category: "governance-basics",
+    },
   ];
 }
