@@ -124,7 +124,7 @@ export function getVoteMatrix() {
       name: names.constitution,
       desc: translate({
         id: "governance.howItWorks.matrix.constitution.desc",
-        message: "Replaces the constitution, its guardrails script, or both.",
+        message: "Replaces the constitution, its guardrails script, or both. Changes can be drafted and discussed off-chain first, on the [Constitutional Amendment Portal](https://cap.intersectmbo.org/).",
       }),
       drep: { v: 0.75, t: "75%", note: drepStake },
       spo: null,

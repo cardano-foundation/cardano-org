@@ -152,6 +152,25 @@ function ConstitutionContent() {
       <SpacerBox size="large" />
 
       <TitleWithText headingLevel={2}
+        title={translate({ id: "constitution.amend.title", message: "How the Constitution Changes" })}
+        description={[
+          translate({ id: "constitution.amend.onChain", message: "The constitution changes only through an on-chain governance action. DReps must ratify it with at least 75% of their stake, and the Constitutional Committee must approve it." }),
+          translate({ id: "constitution.amend.portal", message: "Before that, changes can be drafted and discussed off-chain. Intersect runs the Constitutional Amendment Portal, where anyone can highlight a passage of the constitution and submit one of two documents:" }),
+          {
+            list: [
+              translate({ id: "constitution.amend.cap", message: "A [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) (CAP) proposes exact changes to the text and goes through a public deliberation period." }),
+              translate({ id: "constitution.amend.cis", message: "A [Constitutional Issue Statement](/glossary/constitutional-issue-statement) (CIS) describes an ambiguity, gap, or risk without proposing a fix." }),
+            ],
+          },
+          translate({ id: "constitution.amend.optional", message: "A proposal accepted on the portal does not change the constitution by itself; a governance action still has to be ratified on-chain. Using the portal is optional, and its [guides](https://cap.intersectmbo.org/#/guides) explain how to submit." }),
+        ]}
+        buttonLabel={translate({ id: "constitution.amend.button", message: "Open the Constitutional Amendment Portal" })}
+        buttonLink="https://cap.intersectmbo.org/"
+      />
+
+      <SpacerBox size="large" />
+
+      <TitleWithText headingLevel={2}
         title={translate({ id: "constitution.history.title", message: "Constitution Ratification History" })}
         description={[
           translate({ id: "constitution.history.description", message: "Below you can find the Cardano Constitution and its ratification history. Click any version to view the full text on IPFS." }),

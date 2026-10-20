@@ -1953,6 +1953,27 @@
   "constitution.link.viewOnIPFS": {
     "message": "View on IPFS"
   },
+  "constitution.amend.title": {
+    "message": "How the Constitution Changes"
+  },
+  "constitution.amend.onChain": {
+    "message": "The constitution changes only through an on-chain governance action. DReps must ratify it with at least 75% of their stake, and the Constitutional Committee must approve it."
+  },
+  "constitution.amend.portal": {
+    "message": "Before that, changes can be drafted and discussed off-chain. Intersect runs the Constitutional Amendment Portal, currently in alpha, where anyone can highlight a passage of the constitution and submit one of two documents:"
+  },
+  "constitution.amend.cap": {
+    "message": "A [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) (CAP) proposes exact changes to the text and goes through a public deliberation period."
+  },
+  "constitution.amend.cis": {
+    "message": "A [Constitutional Issue Statement](/glossary/constitutional-issue-statement) (CIS) describes an ambiguity, gap, or risk without proposing a fix."
+  },
+  "constitution.amend.optional": {
+    "message": "A proposal accepted on the portal does not change the constitution by itself; a governance action still has to be ratified on-chain. Using the portal is optional, and its [guides](https://cap.intersectmbo.org/#/guides) explain how to submit."
+  },
+  "constitution.amend.button": {
+    "message": "Open the Constitutional Amendment Portal"
+  },
   "constitution.history.title": {
     "message": "Constitution Ratification History"
   },
@@ -10110,7 +10131,7 @@
     "message": "The van Rossem hard fork in July 2026 moved Cardano to protocol version 11 with 77.6% of DRep stake, 52.5% of pool stake, and six of seven committee votes. It was the first hard fork approved by all three groups."
   },
   "governance.howItWorks.matrix.constitution.desc": {
-    "message": "Replaces the constitution, its guardrails script, or both."
+    "message": "Replaces the constitution, its guardrails script, or both. Changes can be drafted and discussed off-chain first, on the [Constitutional Amendment Portal](https://cap.intersectmbo.org/)."
   },
   "governance.howItWorks.matrix.constitution.example": {
     "message": "The January 2026 update passed with 79.9% of DRep stake and six of seven committee votes. The first version passed in February 2025 with 84.7%."
@@ -11921,6 +11942,15 @@
   },
   "governance.faq.item.governanceAction.a1": {
     "message": "A governance action is an on-chain proposal that can change how Cardano works. There are several types, including protocol parameter changes, hard fork initiations, treasury withdrawals, and constitutional amendments. Each type requires different approval thresholds from DReps, SPOs, and the Constitutional Committee."
+  },
+  "governance.faq.item.amendConstitution.q": {
+    "message": "How can I propose a change to the constitution?"
+  },
+  "governance.faq.item.amendConstitution.a1": {
+    "message": "The constitution changes only through an on-chain governance action that DReps ratify with at least 75% of their stake and the Constitutional Committee approves."
+  },
+  "governance.faq.item.amendConstitution.a2": {
+    "message": "Before that, you can raise your idea on Intersect's [Constitutional Amendment Portal](https://cap.intersectmbo.org/), currently in alpha. Submit a [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) to propose new wording, or a [Constitutional Issue Statement](/glossary/constitutional-issue-statement) to describe a problem without a fix. Both are discussed in public before any governance action is submitted."
   },
   "governance.faq.item.noDelegation.a2": {
     "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active [vote delegation](/governance/delegate), to a DRep, Abstain or No Confidence. Your rewards keep adding up in the meantime. A proposed change, [CIP-181](https://cips.cardano.org/cip/CIP-181), would remove this requirement with a future hard fork."

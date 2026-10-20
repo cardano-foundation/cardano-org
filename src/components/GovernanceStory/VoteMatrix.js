@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import { getVoteMatrix } from "@site/src/data/governanceStory";
+import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import styles from "./styles.module.css";
 
 const GROUPS = [
@@ -96,7 +97,7 @@ export default function VoteMatrix() {
       <div className={styles.panel} role="tabpanel" id="gs-matrix-panel" aria-labelledby={`gs-tab-${d.id}`} tabIndex={0}>
         <div className={styles.panelHead}>
           <h3>{d.name}</h3>
-          <p>{d.desc}</p>
+          <p>{parseMarkdownLikeText(d.desc)}</p>
         </div>
         <div className={styles.gauges}>
           {GROUPS.map((g) => {
