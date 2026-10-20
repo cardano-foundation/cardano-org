@@ -11,3 +11,5 @@ Learn Cardano founder Peter Bui shares a first-hand account of Cardano's presenc
 <div style={{ textAlign: 'right' }}>
 [**Read the full article**](https://learncardano.io/cardano-token2049-singapore-booth-hackathon-utxo-pitch-night/)
 </div>
+
+![Cardano community at TOKEN2049 Singapore](./banner.webp)
