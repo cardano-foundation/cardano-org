@@ -10662,20 +10662,15 @@
   "governance.howItWorks.canvas.weightedByStake": {
     "message": "weighted by pool stake"
   },
-  "governance.howItWorks.canvas.proposal": {
-    "message": "PROPOSAL"
-  },
-  "governance.howItWorks.canvas.constitution": {
-    "message": "CONSTITUTION"
-  },
   "governance.howItWorks.canvas.constitutionalCommittee": {
     "message": "CONSTITUTIONAL COMMITTEE"
   },
-  "governance.howItWorks.canvas.scaleNote": {
+  "governance.howItWorks.canvas.checkNote": {
     "message": "checks actions against the constitution"
   },
-  "governance.howItWorks.canvas.inBalance": {
-    "message": "IN BALANCE WITH THE CONSTITUTION"
+  "governance.howItWorks.canvas.constitutional": {
+    "message": "CONSTITUTIONAL",
+    "description": "Stamped on a governance action the Constitutional Committee found to follow the constitution"
   },
   "governance.howItWorks.sim.securityParam": {
     "message": "Changes a security-relevant parameter, so stake pools vote too"

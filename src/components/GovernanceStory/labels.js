@@ -46,12 +46,14 @@ export function getCanvasLabels() {
     adaDeposit: translate({ id: "governance.howItWorks.canvas.adaDeposit", message: "ada deposit" }),
     anchor: translate({ id: "governance.howItWorks.canvas.anchor", message: "anchor: document URL + hash" }),
 
-    // Chapter 04: the balance
-    proposal: translate({ id: "governance.howItWorks.canvas.proposal", message: "PROPOSAL" }),
-    constitution: translate({ id: "governance.howItWorks.canvas.constitution", message: "CONSTITUTION" }),
+    // Chapter 04: the committee's stamp
     constitutionalCommittee: translate({ id: "governance.howItWorks.canvas.constitutionalCommittee", message: "CONSTITUTIONAL COMMITTEE" }),
-    scaleNote: translate({ id: "governance.howItWorks.canvas.scaleNote", message: "checks actions against the constitution" }),
-    inBalance: translate({ id: "governance.howItWorks.canvas.inBalance", message: "IN BALANCE WITH THE CONSTITUTION" }),
+    checkNote: translate({ id: "governance.howItWorks.canvas.checkNote", message: "checks actions against the constitution" }),
+    constitutional: translate({
+      id: "governance.howItWorks.canvas.constitutional",
+      message: "CONSTITUTIONAL",
+      description: "Stamped on a governance action the Constitutional Committee found to follow the constitution",
+    }),
 
     // Chapter 05: treasury
     epochRewards: translate({ id: "governance.howItWorks.canvas.epochRewards", message: "EPOCH REWARDS" }),

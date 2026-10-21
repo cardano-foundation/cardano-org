@@ -408,7 +408,7 @@ export default function GovernanceStory() {
           <CountSimulator />
         </Module>
 
-        <Chapter id="constitution" scene="scale" num="04" name={ch.constitution}>
+        <Chapter id="constitution" scene="stamp" num="04" name={ch.constitution}>
           <h2>{translate({ id: "governance.howItWorks.constitution.titleFollow", message: "Every action has to follow the constitution." })}</h2>
           <p>
             {translate({

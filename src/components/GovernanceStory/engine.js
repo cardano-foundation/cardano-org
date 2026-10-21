@@ -132,6 +132,64 @@ function docPts(n, x, y, w, h, nLines) {
   return pts;
 }
 
+// A rectangle centered on the origin, as n dots spaced evenly along its edge.
+// Corners are rounded with radius rad; 0 keeps them square.
+function roundRectPts(n, w, h, rad) {
+  const a = w / 2 - rad;
+  const b = h / 2 - rad;
+  const q = (TAU / 4) * rad;
+  const ang = (s) => (rad ? s / rad : 0);
+  // Clockwise from the left end of the top edge: edge, corner, edge, corner...
+  const segs = [
+    [2 * a, (s) => [-a + s, -h / 2]],
+    [q, (s) => [a + rad * Math.sin(ang(s)), -b - rad * Math.cos(ang(s))]],
+    [2 * b, (s) => [w / 2, -b + s]],
+    [q, (s) => [a + rad * Math.cos(ang(s)), b + rad * Math.sin(ang(s))]],
+    [2 * a, (s) => [a - s, h / 2]],
+    [q, (s) => [-a - rad * Math.sin(ang(s)), b + rad * Math.cos(ang(s))]],
+    [2 * b, (s) => [-w / 2, b - s]],
+    [q, (s) => [-a - rad * Math.cos(ang(s)), -b - rad * Math.sin(ang(s))]],
+  ];
+  const per = segs.reduce((sum, g) => sum + g[0], 0);
+  const pts = [];
+  let g = 0;
+  let start = 0;
+  for (let k = 0; k < n; k++) {
+    const d = (k / n) * per;
+    while (g < segs.length - 1 && d > start + segs[g][0]) {
+      start += segs[g][0];
+      g++;
+    }
+    pts.push(segs[g][1](d - start));
+  }
+  return pts;
+}
+
+// A check mark about h wide, centered on the origin. Dots sit pitch apart
+// along the stroke, in three lanes side by side so the line reads bold.
+function checkPts(h, pitch) {
+  const pts = [];
+  const a = [-0.5 * h, 0];
+  const b = [-0.14 * h, 0.38 * h];
+  const c = [0.52 * h, -0.46 * h];
+  [
+    [a, b],
+    [b, c],
+  ].forEach(([p, q]) => {
+    const len = Math.hypot(q[0] - p[0], q[1] - p[1]);
+    const nx = (p[1] - q[1]) / len;
+    const ny = (q[0] - p[0]) / len;
+    const n = Math.max(2, Math.round(len / pitch) + 1);
+    for (let lane = -1; lane <= 1; lane++) {
+      for (let k = 0; k < n; k++) {
+        const u = k / (n - 1);
+        pts.push([p[0] + (q[0] - p[0]) * u + nx * lane * pitch * 0.6, p[1] + (q[1] - p[1]) * u + ny * lane * pitch * 0.6]);
+      }
+    }
+  });
+  return pts;
+}
+
 /* ---------- personas: dot art for the three groups ---------- */
 // Drawn in design units on a dot grid with pitch pu; the engine scales them.
 // Each point is [x, y, kind]. Kinds: f figure, o object, l status light,
@@ -598,118 +656,123 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     return { labels: out, lines, center: [mid[0], mid[1], Math.hypot(hw, bl[1] - mid[1]) + 50 * u] };
   };
 
-  // 04: a balance. A proposal drops onto one pan, the constitution sits on the
-  // other, and the beam settles level on the committee's fulcrum.
-  S.scale = (o) => {
-    const { r, t, m } = o;
+  // 04: a stamp. A governance action comes in, the committee checks it line by
+  // line, and its stamp comes down: constitutional. The check has two possible
+  // outcomes, so the picture ends on a verdict.
+  S.stamp = (o) => {
+    const { r, t } = o;
     const narrow = W <= BP_NARROW;
     const out = [];
     let i = 0;
-    const cx = r.x + r.w / 2;
-    const pivot = [cx, r.y + r.h * 0.3];
-    const baseY = r.y + r.h * (narrow ? 0.76 : 0.68);
-    const bl = Math.min(r.w * 0.38, r.h * 0.5);
-    const pw = bl * 0.56;
-    const dw = pw * 0.5;
-    const dh = dw * 1.3;
-    const tilt = 0.16;
-    const chain = Math.max(r.h * 0.2, dh + bl * Math.sin(tilt) + 16);
 
-    // Plays once from the moment the chapter comes into view: first only the
-    // constitution, with the beam tipped toward it; then the proposal falls
-    // onto the empty pan, the beam swings and settles level, and the caption
-    // fades in. Scrolling back to the chapter replays it.
+    // Plays once from the moment the chapter comes into view: the action forms
+    // off to the left and slides in, a scan line passes down the page, then
+    // the stamp comes down and leaves a ripple. Scrolling back to the chapter
+    // replays it.
     const el = reduce ? Infinity : t - sceneAt;
-    const wait = 1500; // constitution alone
-    const fall = 800; // the proposal's drop
-    const damp = 1.15;
-    const fallH = Math.min(r.h * 0.3, pivot[1] - r.y + chain);
-    let th = tilt;
-    let drop = fallH;
-    let fade = 0;
-    let settled = 0;
-    if (el >= wait + fall) {
-      const s = (el - wait - fall) / 1000;
-      th = tilt * Math.exp(-damp * s) * Math.cos(4.6 * s);
-      drop = 0;
-      fade = 1;
-      // Fade the caption in once the swing has died down (envelope under 6%)
-      const sSettle = Math.log(1 / 0.06) / damp;
-      settled = Math.max(0, Math.min(1, (s - sSettle) / 0.6));
-    } else if (el >= wait) {
-      const u = (el - wait) / fall;
-      drop = (1 - u * u) * fallH;
-      fade = Math.min(1, u * 4);
-    }
-    if (reduce) th = 0;
-    const ca = Math.cos(th);
-    const sa = Math.sin(th);
+    const slideAt = 900;
+    const slideMs = 500;
+    const scanAt = 1550;
+    const scanMs = 1500;
+    const stampAt = 3250;
+    const slamMs = 260;
+    const rippleMs = 560;
 
-    // Fulcrum: the committee holds the balance
-    const fw = bl * 0.2;
-    const nF = narrow ? 34 : 48;
-    for (let side = -1; side <= 1; side += 2) {
-      for (let k = 0; k < nF; k++, i++) {
-        const u = k / (nF - 1);
-        T(i, pivot[0] + side * fw * u, pivot[1] + 6 + (baseY - pivot[1] - 6) * u, "cc", 0.9, 1.5);
+    // The action, with room for one label above it and two below
+    const above = narrow ? 24 : 30;
+    const below = narrow ? 52 : 64;
+    const dw = Math.min(r.w * (narrow ? 0.58 : 0.46), (r.h - above - below) / 1.3);
+    const dh = dw * 1.3;
+    const dx0 = r.x + (r.w - dw) / 2;
+    const su = Math.min(1, Math.max(0, (el - slideAt) / slideMs));
+    const dx = dx0 - (1 - su * su * (3 - 2 * su)) * dw * 0.45;
+    const dy = r.y + above + (r.h - above - below - dh) / 2;
+    const pitch = narrow ? 3.2 : 3.8;
+    roundRectPts(Math.round((2 * (dw + dh)) / pitch), dw, dh, 0).forEach((p) => {
+      T(i++, dx + dw / 2 + p[0], dy + dh / 2 + p[1], "brand", 0.85, 1.5);
+    });
+
+    // A title and five lines of text fill the top half; each line lights up
+    // as the scan line passes it. The stamp lands in the space below.
+    const u = (el - scanAt) / scanMs;
+    const scanning = u > 0 && u < 1;
+    const sy = dy + dh * (0.03 + 0.95 * Math.min(1, Math.max(0, u)));
+    [
+      [0.12, 0.5, "ink", 0.9, 2.1],
+      [0.23, 0.92, "ink2", 0.5, 1.3],
+      [0.3, 0.86, "ink2", 0.5, 1.3],
+      [0.37, 0.9, "ink2", 0.5, 1.3],
+      [0.44, 0.82, "ink2", 0.5, 1.3],
+      [0.51, 0.56, "ink2", 0.5, 1.3],
+    ].forEach(([fy, lf, key, a, s]) => {
+      const ly = dy + dh * fy;
+      const lw = dw * 0.8 * lf;
+      const n = Math.round(lw / (pitch * 0.8));
+      const hit = scanning ? Math.max(0, 1 - Math.abs(sy - ly) / (dh * 0.06)) : 0;
+      for (let k = 0; k < n; k++) {
+        T(i++, dx + dw * 0.1 + (k / Math.max(1, n - 1)) * lw, ly, key, a + hit * 0.45, s + hit * 0.5, "cc", hit);
       }
-    }
-    const nBase = narrow ? 30 : 44;
-    for (let k = 0; k < nBase; k++, i++) {
-      const u = k / (nBase - 1);
-      T(i, pivot[0] - fw * 1.6 + u * fw * 3.2, baseY + 2, "cc", 0.9, 1.6);
-    }
-    T(i++, pivot[0], pivot[1], "cc", 1, narrow ? 3.4 : 4.2);
+    });
+    const sa = scanning ? Math.min(1, u * 10, (1 - u) * 5) : 0;
+    const nBar = Math.round((dw * 1.1) / (pitch * 0.8));
+    [
+      [0, 0.95, 1.6],
+      [-3, 0.4, 1.3],
+      [-6, 0.18, 1.2],
+      [-9, 0.07, 1.1],
+    ].forEach(([off, a, s]) => {
+      for (let k = 0; k < nBar; k++) T(i++, dx - dw * 0.05 + (k / Math.max(1, nBar - 1)) * dw * 1.1, sy + off, "cc", a * sa, s);
+    });
 
-    // Beam
-    const nB = narrow ? 56 : 80;
-    for (let k = 0; k < nB * 2; k++, i++) {
-      const u = (Math.floor(k / 2) / (nB - 1)) * 2 - 1;
-      const off = ((k % 2) - 0.5) * 3.2;
-      T(i, pivot[0] + ca * bl * u - sa * off, pivot[1] + sa * bl * u + ca * off, "ink", 0.9, 1.4);
-    }
-
-    // Pans hang straight down from both ends
-    const pans = [-1, 1].map((side) => {
-      const end = [pivot[0] + ca * bl * side, pivot[1] + sa * bl * side];
-      const pan = [end[0], end[1] + chain];
-      const nCh = narrow ? 12 : 16;
-      [-1, 1].forEach((e) => {
-        for (let k = 0; k < nCh; k++, i++) {
-          const u = (k + 0.5) / nCh;
-          T(i, end[0] + (e * pw * u) / 2, end[1] + chain * u, "ink2", 0.55, 1.1);
-        }
+    // The stamp: a double border around a check and the verdict, set at an
+    // angle. Long translations shrink the type so the stamp stays on the page.
+    const fo = { f: "mono", s: narrow ? 11.5 : 15, ls: narrow ? 1.6 : 2.4, w: 700 };
+    const fit = Math.min(1, (dw * 0.94) / (fo.s * 3.9 + textW(lab.constitutional, fo)));
+    const fs = fo.s * fit;
+    const ls = fo.ls * fit;
+    const tw = textW(lab.constitutional, { ...fo, s: fs, ls });
+    const cs = fs * 1.25;
+    const gap = fs * 0.75;
+    const sw = Math.max(dw * 0.5, fs * 1.9 + cs + gap + tw);
+    const sh = fs * 2.9;
+    const left = -(cs + gap + tw) / 2;
+    const rot = -0.12;
+    const v = (el - stampAt) / slamMs;
+    const sc = v <= 0 ? 1.6 : v >= 1 ? 1 : 1 + 0.6 * (1 - v * v);
+    const on = v > 0 ? 1 : 0;
+    const cr = Math.cos(rot);
+    const sr = Math.sin(rot);
+    const scx = dx + dw / 2;
+    const scy = dy + dh * 0.78;
+    const at = (lx, ly) => [scx + (lx * cr - ly * sr) * sc, scy + (lx * sr + ly * cr) * sc];
+    // Uneven ink: a few dots print faint
+    const ink = (k) => (rnd(k, 61) > 0.86 ? 0.45 : 0.95);
+    const ins = fs * 0.32;
+    [
+      [roundRectPts(Math.round((2 * (sw + sh)) / (pitch * 0.75)), sw, sh, fs * 0.4), 0, 1, 1.7],
+      [roundRectPts(Math.round((2 * (sw + sh - 4 * ins)) / (pitch * 0.85)), sw - 2 * ins, sh - 2 * ins, fs * 0.22), 0, 0.8, 1.1],
+      [checkPts(cs, narrow ? 1.9 : 2.2), left + cs / 2, 1, 1.5],
+    ].forEach(([pts, ox, a, s], j) => {
+      pts.forEach((p, k) => {
+        const q = at(ox + p[0], p[1]);
+        T(i++, q[0], q[1], "cc", on * a * ink(k + j * 500), s);
       });
-      const nP = narrow ? 30 : 40;
-      for (let k = 0; k < nP; k++, i++) {
-        const u = (k / (nP - 1)) * 2 - 1;
-        T(i, pan[0] + (u * pw) / 2, pan[1] + (1 - u * u) * pw * 0.12, "ink2", 0.85, 1.5);
-      }
-      return pan;
     });
-
-    // Left pan: the proposal. Right pan: the constitution, ten tenets as ten bands.
-    const [lp, rp] = pans;
-    docPts(narrow ? 64 : 88, lp[0] - dw / 2, lp[1] - dh - 3 - drop, dw, dh, 5).forEach((p) => {
-      T(i++, p[0], p[1], "brand", (p[2] ? 0.6 : 0.95) * fade, p[2] ? 1.2 : 1.5);
+    const w = (el - stampAt - slamMs) / rippleMs;
+    const ripple = w > 0 && w < 1;
+    const grow = (ripple ? w : 0) * fs * 1.6;
+    roundRectPts(Math.round((2 * (sw + sh)) / (pitch * 1.2)), sw + 2 * grow, sh + 2 * grow, fs * 0.4 + grow).forEach((p) => {
+      const q = at(p[0], p[1]);
+      T(i++, q[0], q[1], "cc", ripple ? 0.8 * (1 - w) : 0, 1.3);
     });
-    const cw = dw * 1.12;
-    const perBand = narrow ? 9 : 12;
-    for (let b = 0; b < 10; b++) {
-      const y = rp[1] - 3 - dh + ((b + 0.5) * dh) / 10;
-      for (let k = 0; k < perBand; k++, i++) {
-        T(i, rp[0] - cw / 2 + ((k + 0.5) * cw) / perBand, y, "ink", b % 2 ? 0.7 : 0.95, 1.5);
-      }
-    }
     hideFrom(i);
 
-    const nameO = { f: "mono", s: narrow ? 10 : 11, ls: 1.6, w: 600, a: "center" };
-    const below = pw * 0.12 + (narrow ? 20 : 24);
-    out.push(L(lab.proposal, lp[0], lp[1] + below, { ...nameO, c: "brand", o: fade }));
-    out.push(L(lab.constitution, rp[0], rp[1] + below, { ...nameO, c: "ink" }));
-    out.push(L(lab.constitutionalCommittee, cx, baseY + (narrow ? 22 : 26), { ...nameO, c: "cc" }));
-    out.push(L(lab.scaleNote, cx, baseY + (narrow ? 38 : 44), { f: "sans", s: narrow ? 10.5 : 12.5, c: "ink2", a: "center" }));
-    out.push(L(lab.inBalance, cx, pivot[1] - bl * Math.sin(tilt) - (narrow ? 18 : 26), { f: "mono", s: narrow ? 9.5 : 10.5, c: "brand", a: "center", ls: 1.6, w: 600, bg: true, o: settled * fade }));
+    const tq = at(left + cs + gap + tw / 2, fs * 0.36);
+    out.push(L(lab.constitutional, tq[0], tq[1], { f: "mono", s: fs * sc, ls: ls * sc, w: 700, c: "cc", a: "center", rot, o: Math.min(1, Math.max(0, v * 1.5)) }));
+    out.push(L(lab.governanceAction, dx, dy - 14, { f: "mono", s: 11, c: "ink", ls: 2, w: 600 }));
+    const cx = r.x + r.w / 2;
+    out.push(L(lab.constitutionalCommittee, cx, dy + dh + (narrow ? 24 : 30), { f: "mono", s: narrow ? 10 : 11, ls: 1.6, w: 600, a: "center", c: "cc" }));
+    out.push(L(lab.checkNote, cx, dy + dh + (narrow ? 40 : 48), { f: "sans", s: narrow ? 10.5 : 12.5, c: "ink2", a: "center" }));
     return { labels: out };
   };
 
@@ -886,7 +949,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     weight: { fn: S.weight, dyn: true },
     groups: { fn: S.groups, dyn: true, grow: true, labelDelay: 1300 },
     proposal: { fn: S.proposal },
-    scale: { fn: S.scale, dyn: true },
+    stamp: { fn: S.stamp, dyn: true, labelDelay: 1300 },
     treasury: { fn: S.treasury, dyn: true },
     finale: { fn: S.finale, dyn: true },
     dim: { fn: S.dim, dyn: true },
@@ -950,6 +1013,13 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     const tw = ctx.measureText(l.t).width;
     let x = l.a === "center" ? l.x - tw / 2 : l.a === "right" ? l.x - tw : l.x;
     x = Math.max(10, Math.min(W - 10 - tw, x));
+    // A label with `rot` turns about the middle of its baseline
+    if (l.rot) {
+      ctx.save();
+      ctx.translate(x + tw / 2, l.y);
+      ctx.rotate(l.rot);
+      ctx.translate(-x - tw / 2, -l.y);
+    }
     if (l.bg) {
       const s = l.s || 11;
       const bgc = C[K.bg];
@@ -961,6 +1031,7 @@ export function createStoryEngine({ root, stage, canvas, labels, locale, getOwn,
     }
     ctx.fillStyle = rgb(colorOf(l.c || "ink"));
     ctx.fillText(l.t, x, l.y);
+    if (l.rot) ctx.restore();
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
   }
   function drawLine(l, a) {
