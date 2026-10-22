@@ -1,4 +1,10 @@
 {
+  "label": "meep",
+  "policyIds": [
+    "2420237868d5c229c69592ed4282d17aa514bbbcac5d02bc0588e4884c65696f7320526f616472756e6e6572"
+  ]
+}
+{
   "metadata": {
     "generated": "2026-10-16",
     "chainEpoch": 662,
