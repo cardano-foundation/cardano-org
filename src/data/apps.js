@@ -902,7 +902,7 @@ export const Showcases = [
     category: "notary",
     properties: ["nft"],
     maintainerPick: false,
-    x: "lace_io",
+    x: "continuity_to",
   },
   {
     title: "VESPR",
