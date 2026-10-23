@@ -326,6 +326,7 @@ export default function AppDetail({ app }) {
     <Layout title={pageTitle} description={pageDescription}>
       <OpenGraphInfo
         pageName="apps"
+        image={app.ogImage}
         title={pageTitle}
         description={pageDescription}
       />

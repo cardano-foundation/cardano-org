@@ -4,7 +4,9 @@
 // fields. The preview screenshot lives under src/data/app-screenshots/ (consumed by
 // webpack require() at /apps index render); this script copies each preview to
 // static/img/app-screenshots/ and writes a `previewUrl` so the SSR-rendered detail
-// pages can reference it via a plain URL. walletFeatures is consumed by a separate path.
+// pages can reference it via a plain URL. It also makes sure each app has its Open Graph
+// card (see lib/app-og-cards.js) and writes its path as `ogImage`.
+// walletFeatures is consumed by a separate path.
 // Command: yarn run build-apps-meta
 //
 
@@ -14,6 +16,7 @@ const {
   parseShowcases,
   assertEntryCountMatches,
 } = require('./lib/parse-apps.cjs');
+const { ensureAppOgCards } = require('./lib/app-og-cards.js');
 
 const appsSource = path.join(__dirname, '../src/data/apps.js');
 const outputPath = path.join(__dirname, '../src/data/apps-metadata.json');
@@ -69,6 +72,19 @@ for (const name of fs.readdirSync(screenshotsStaticDir)) {
   }
 }
 
-fs.writeFileSync(outputPath, JSON.stringify(enriched, null, 2));
-console.log(`✅ Generated apps-metadata.json with ${enriched.length} apps`);
-console.log(`   Mirrored ${expectedFilenames.size} preview screenshots to static/img/app-screenshots/`);
+async function main() {
+  const cards = await ensureAppOgCards(enriched);
+  for (const app of enriched) {
+    app.ogImage = cards.get(app.slug) || null;
+  }
+
+  fs.writeFileSync(outputPath, JSON.stringify(enriched, null, 2));
+  console.log(`✅ Generated apps-metadata.json with ${enriched.length} apps`);
+  console.log(`   Mirrored ${expectedFilenames.size} preview screenshots to static/img/app-screenshots/`);
+  console.log(`   ${cards.size} apps have an OG card in static/img/og/apps/`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
