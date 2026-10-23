@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  Open Graph card for an /apps/<slug> detail page, 1200x630.
+  Rendered by scripts/lib/app-og-cards.js with headless Chrome. {{...}} placeholders are
+  filled in by that script, file paths as file:// URLs, text HTML-escaped.
+-->
+<html><head><meta charset="utf-8"><style>
+@font-face { font-family: Chivo; src: url({{FONT}}); font-weight: 100 900; }
+html, body { margin: 0; }
+.card { position: relative; width: 1200px; height: 630px; overflow: hidden; background: #0033ad; font-family: Chivo, sans-serif; color: #fff; }
+.arc1 { position: absolute; left: 312px; top: -330px; width: 1100px; height: 560px; border-radius: 280px;
+  background: linear-gradient(90deg, rgba(178,74,112,0.95) 0%, rgba(120,70,150,0.6) 25%, rgba(0,51,173,0) 50%); }
+.arc2 { position: absolute; left: 330px; top: 136px; width: 1200px; height: 620px; border-radius: 310px;
+  background: linear-gradient(90deg, rgba(0,51,173,0) 0%, rgba(90,60,160,0.7) 35%, rgba(170,74,112,0.95) 70%); }
+.text { position: absolute; left: 72px; top: 0; bottom: 0; width: 490px; display: flex; flex-direction: column; justify-content: center; padding-bottom: 40px; }
+.icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 28px rgba(0,10,50,0.45); margin-bottom: 30px; object-fit: cover; background: {{ICON_BG}}; }
+.name { font-weight: 800; font-size: 78px; line-height: 1.02; text-shadow: 0 2px 18px rgba(0,20,70,0.45); }
+.tagline { font-weight: 300; font-size: 36px; line-height: 1.2; margin-top: 14px; text-shadow: 0 2px 14px rgba(0,20,70,0.45); }
+.shot { position: absolute; left: 600px; top: 92px; width: 720px; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,10,50,0.55); border: 1px solid rgba(255,255,255,0.25); }
+.shot img { display: block; width: 100%; }
+.logo { position: absolute; left: 72px; top: 534px; width: 190px; }
+</style></head><body>
+<div class="card">
+  <div class="arc1"></div><div class="arc2"></div>
+  <div class="text">
+    <img class="icon" src="{{ICON}}">
+    <div class="name">{{TITLE}}</div>
+    <div class="tagline">{{TAGLINE}}</div>
+  </div>
+  <div class="shot"><img src="{{SHOT}}"></div>
+  <img class="logo" src="{{LOGO}}">
+</div>
+<script>
+// Shrinks an element until its text fits the given number of lines and the column width.
+const fits = (el, lines) =>
+  el.scrollWidth <= el.clientWidth && el.scrollHeight <= parseFloat(getComputedStyle(el).lineHeight) * (lines + 0.5);
+const fit = (el, max, min, lines) => {
+  for (let size = max; size >= min; size -= 2) {
+    el.style.fontSize = size + 'px';
+    if (fits(el, lines)) return true;
+  }
+  return false;
+};
+document.fonts.ready.then(() => {
+  // A name that does not fit on one line at a readable size gets two lines instead.
+  const name = document.querySelector('.name');
+  if (!fit(name, 78, 62, 1)) fit(name, 64, 44, 2);
+  fit(document.querySelector('.tagline'), 36, 28, 2);
+});
+</script>
+</body></html>
