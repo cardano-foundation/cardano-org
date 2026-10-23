@@ -6,6 +6,10 @@
  * every project is promoted.
  *
  * HOW TO ADD YOUR APP: See docs/get-involved/add-app.md
+ *
+ * Maintainers only: `ogIconStyle: "bare" | "tile" | "tile-dark" | "circle"` overrides how
+ * the icon sits on the app's Open Graph card when the automatic choice looks wrong
+ * (see scripts/lib/app-og-cards.js).
  */
 
 import React from "react";
@@ -342,7 +346,7 @@ export const Showcases = [
     extraPreviews: [
       require("./app-screenshots/pool-pm-transaction.webp"),
     ],
-    icon: "/img/app-icons/pool-pm.ico",
+    icon: "/img/app-icons/pool-pm.png",
     website: "https://pool.pm",
     source: null,
     category: "explorer",
@@ -458,7 +462,7 @@ export const Showcases = [
       "Payment gateway that lets merchants and creators accept ada and other cryptocurrencies for sales, subscriptions, and donations.",
     tagline: "Payment gateway for ada payments and donations",
     preview: require("./app-screenshots/nowpayments.webp"),
-    icon: "/img/app-icons/nowpayments.ico",
+    icon: "/img/app-icons/nowpayments.png",
     website: "https://nowpayments.io",
     source: null,
     category: "other",
@@ -787,7 +791,7 @@ export const Showcases = [
       "CNFT minting platform with policy ID management, on-chain royalty configuration, and bulk minting workflows ready in minutes.",
     tagline: "CNFT minting with policy and royalty controls",
     preview: require("./app-screenshots/cnftlab-party.webp"),
-    icon: "/img/app-icons/cnftlab-party.ico",
+    icon: "/img/app-icons/cnftlab-party.png",
     website: "https://www.cnftlab.party/",
     source: null,
     category: "minting",

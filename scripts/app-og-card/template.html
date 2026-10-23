@@ -13,7 +13,12 @@ html, body { margin: 0; }
 .arc2 { position: absolute; left: 330px; top: 136px; width: 1200px; height: 620px; border-radius: 310px;
   background: linear-gradient(90deg, rgba(0,51,173,0) 0%, rgba(90,60,160,0.7) 35%, rgba(170,74,112,0.95) 70%); }
 .text { position: absolute; left: 72px; top: 0; bottom: 0; width: 490px; display: flex; flex-direction: column; justify-content: center; padding-bottom: 40px; }
-.icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 28px rgba(0,10,50,0.45); margin-bottom: 30px; object-fit: cover; background: {{ICON_BG}}; }
+.icon { width: 112px; height: 112px; margin-bottom: 30px; object-fit: cover; }
+.icon:not(.bare) { border-radius: 26px; box-shadow: 0 8px 28px rgba(0,10,50,0.45); background: #fff; }
+.icon.tile-dark { background: #0b1d4d; }
+.icon.circle { border-radius: 50%; }
+/* A box-shadow would draw a square around a transparent icon, drop-shadow follows its shape. */
+.icon.bare { object-fit: contain; filter: drop-shadow(0 8px 20px rgba(0,10,50,0.45)); }
 .name { font-weight: 800; font-size: 78px; line-height: 1.02; text-shadow: 0 2px 18px rgba(0,20,70,0.45); }
 .tagline { font-weight: 300; font-size: 36px; line-height: 1.2; margin-top: 14px; text-shadow: 0 2px 14px rgba(0,20,70,0.45); }
 .shot { position: absolute; left: 600px; top: 92px; width: 720px; border-radius: 18px; overflow: hidden;
@@ -24,7 +29,7 @@ html, body { margin: 0; }
 <div class="card">
   <div class="arc1"></div><div class="arc2"></div>
   <div class="text">
-    <img class="icon" src="{{ICON}}">
+    <img class="icon {{ICON_CLASS}}" src="{{ICON}}">
     <div class="name">{{TITLE}}</div>
     <div class="tagline">{{TAGLINE}}</div>
   </div>

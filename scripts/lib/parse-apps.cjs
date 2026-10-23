@@ -31,6 +31,7 @@ function parseShowcases(source) {
   const extraPreviewsRegex = /extraPreviews:\s*\[([^\]]*)\]/;
   const extraPreviewItemRegex = /require\(["']\.\/app-screenshots\/([^"']+)["']\)/g;
   const platformsRegex = /platforms:\s*\[([^\]]*)\]/;
+  const ogIconStyleRegex = /ogIconStyle:\s*"([^"]+)"/;
 
   const apps = [];
   let m;
@@ -39,6 +40,7 @@ function parseShowcases(source) {
     const previewMatch = entrySlice.match(previewLineRegex);
     const extraMatch = entrySlice.match(extraPreviewsRegex);
     const platformsMatch = entrySlice.match(platformsRegex);
+    const ogIconStyleMatch = entrySlice.match(ogIconStyleRegex);
     const properties = m[10]
       .split(',')
       .map((t) => t.trim().replace(/^"|"$/g, ''))
@@ -74,6 +76,7 @@ function parseShowcases(source) {
             date: m[15],
           }
         : null,
+      ogIconStyle: ogIconStyleMatch ? ogIconStyleMatch[1] : null,
       previewFile: previewMatch ? previewMatch[1] : null,
       extraPreviewFiles,
     });
