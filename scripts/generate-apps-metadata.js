@@ -76,6 +76,8 @@ async function main() {
   const cards = await ensureAppOgCards(enriched);
   for (const app of enriched) {
     app.ogImage = cards.get(app.slug) || null;
+    // Only the card renderer needs it.
+    delete app.ogIconStyle;
   }
 
   fs.writeFileSync(outputPath, JSON.stringify(enriched, null, 2));
