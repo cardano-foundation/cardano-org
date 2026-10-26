@@ -1941,6 +1941,26 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "PING",
+    description:
+      "PING is a free, real-time paddle game in your browser, with ranked Head-to-Head, tournaments and a nine-boss campaign. Playing for $ADA, $SNEK or $NIGHT is always optional.",
+    tagline: "A free, real-time paddle game in your browser",
+    preview: require("./app-screenshots/ping.webp"),
+    extraPreviews: [
+      require("./app-screenshots/ping-modes.webp"),
+      require("./app-screenshots/ping-parquet.webp"),
+      require("./app-screenshots/ping-gauntlet.webp"),
+      require("./app-screenshots/ping-breakout.webp"),
+    ],
+    icon: "/img/app-icons/ping.svg",
+    website: "https://playping.app",
+    source: null,
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+    x: "pingthegame",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
