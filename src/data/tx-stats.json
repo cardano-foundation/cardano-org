@@ -1,98 +1,98 @@
 {
   "metadata": {
-    "generated": "2026-10-21",
-    "chainEpoch": 663,
+    "generated": "2026-10-26",
+    "chainEpoch": 664,
     "description": "Transaction stats for reporting period",
     "reportingWindow": {
-      "start": "2026-09-21T21:45:22",
-      "end": "2026-10-21T21:43:40"
+      "start": "2026-09-26T21:45:34",
+      "end": "2026-10-26T21:44:09"
     },
     "epochs": "~6 epochs (30 days)",
-    "totalTxCount": 2638642
+    "totalTxCount": 2634911
   },
   "appStats": [
     {
       "label": "hosky",
       "displayName": "Hosky",
-      "txCount": 1724981,
+      "txCount": 1724982,
       "rank": 1
     },
     {
       "label": "minswap",
       "displayName": "Minswap",
-      "txCount": 162900,
+      "txCount": 169594,
       "rank": 2
     },
     {
       "label": "5am.earth",
       "displayName": "5am.earth",
-      "txCount": 53183,
+      "txCount": 46942,
       "rank": 3
     },
     {
       "label": "dano-finance",
       "displayName": "Dano Finance",
-      "txCount": 47768,
+      "txCount": 44524,
       "rank": 4
     },
     {
       "label": "wingriders",
       "displayName": "WingRiders",
-      "txCount": 34920,
+      "txCount": 35787,
       "rank": 5
     },
     {
       "label": "sundaeswap",
       "displayName": "SundaeSwap",
-      "txCount": 28241,
+      "txCount": 28693,
       "rank": 6
-    },
-    {
-      "label": "midnight",
-      "displayName": "Midnight",
-      "txCount": 24219,
-      "rank": 7
     },
     {
       "label": "splash",
       "displayName": "Splash Protocol",
-      "txCount": 22361,
+      "txCount": 26349,
+      "rank": 7
+    },
+    {
+      "label": "midnight",
+      "displayName": "Midnight",
+      "txCount": 23658,
       "rank": 8
     },
     {
       "label": "fms-by-trivolve",
       "displayName": "FMS by Trivolve",
-      "txCount": 21336,
+      "txCount": 19602,
       "rank": 9
     },
     {
       "label": "cswap",
       "displayName": "CSWAP",
-      "txCount": 19900,
+      "txCount": 19502,
       "rank": 10
     },
     {
       "label": "indianchain-by-trivolve",
       "displayName": "Indianchain by Trivolve",
-      "txCount": 11740,
+      "txCount": 12963,
       "rank": 11
     },
     {
       "label": "spectrum-finance",
       "displayName": "Spectrum Finance",
-      "txCount": 10063,
+      "txCount": 11991,
       "rank": 12
     },
     {
       "label": "vyfinance",
       "displayName": "VyFinance",
-      "txCount": 7072,
+      "txCount": 6714,
       "rank": 13
     },
     {
       "label": "wayup",
       "displayName": "Wayup",
-      "txCount": 6937,
+      "txCount": 6674,
       "rank": 14
     },
     {
@@ -104,7 +104,7 @@
     {
       "label": "shadowbook",
       "displayName": "Shadowbook",
-      "txCount": 3803,
+      "txCount": 3694,
       "rank": 16
     },
     {
@@ -116,13 +116,13 @@
     {
       "label": "indigo-protocol",
       "displayName": "Indigo Protocol",
-      "txCount": 2652,
+      "txCount": 2738,
       "rank": 18
     },
     {
       "label": "masumi",
       "displayName": "Masumi",
-      "txCount": 1852,
+      "txCount": 1862,
       "rank": 19
     },
     {
@@ -134,7 +134,7 @@
     {
       "label": "muesliswap",
       "displayName": "MuesliSwap",
-      "txCount": 1083,
+      "txCount": 1018,
       "rank": 21
     },
     {
@@ -144,39 +144,39 @@
       "rank": 22
     },
     {
-      "label": "dripdropz",
-      "displayName": "DripDropz",
-      "txCount": 719,
+      "label": "realfi",
+      "displayName": "RealFi",
+      "txCount": 704,
       "rank": 23
     },
     {
-      "label": "realfi",
-      "displayName": "RealFi",
-      "txCount": 694,
+      "label": "dripdropz",
+      "displayName": "DripDropz",
+      "txCount": 682,
       "rank": 24
-    },
-    {
-      "label": "jpg.store",
-      "displayName": "JpgStore",
-      "txCount": 546,
-      "rank": 25
     },
     {
       "label": "usdcx-bridge",
       "displayName": "USDCx Bridge",
-      "txCount": 536,
-      "rank": 26
+      "txCount": 515,
+      "rank": 25
     },
     {
-      "label": "iagon",
-      "displayName": "Iagon",
-      "txCount": 523,
-      "rank": 27
+      "label": "jpg.store",
+      "displayName": "JpgStore",
+      "txCount": 512,
+      "rank": 26
     },
     {
       "label": "dexhunter",
       "displayName": "Dexhunter",
-      "txCount": 377,
+      "txCount": 480,
+      "rank": 27
+    },
+    {
+      "label": "iagon",
+      "displayName": "Iagon",
+      "txCount": 436,
       "rank": 28
     },
     {
@@ -186,33 +186,33 @@
       "rank": 29
     },
     {
-      "label": "lovejoin",
-      "displayName": "Lovejoin",
-      "txCount": 270,
+      "label": "chilled-kongs",
+      "displayName": "Chilled Kongs",
+      "txCount": 328,
       "rank": 30
     },
     {
       "label": "unfrack.it",
       "displayName": "Unfrack.it",
-      "txCount": 267,
+      "txCount": 275,
       "rank": 31
     },
     {
-      "label": "chilled-kongs",
-      "displayName": "Chilled Kongs",
-      "txCount": 251,
+      "label": "lovejoin",
+      "displayName": "Lovejoin",
+      "txCount": 267,
       "rank": 32
     },
     {
       "label": "saturn-swap",
       "displayName": "Saturn Swap",
-      "txCount": 225,
+      "txCount": 202,
       "rank": 33
     },
     {
       "label": "fluid-tokens",
       "displayName": "Fluid Tokens",
-      "txCount": 208,
+      "txCount": 176,
       "rank": 34
     },
     {
@@ -222,69 +222,69 @@
       "rank": 35
     },
     {
-      "label": "dreptalk.com",
-      "displayName": "DRepTalk",
+      "label": "wanchain",
+      "displayName": "Wanchain",
       "txCount": 60,
       "rank": 36
     },
     {
-      "label": "wanchain",
-      "displayName": "Wanchain",
-      "txCount": 60,
+      "label": "dreptalk.com",
+      "displayName": "DRepTalk",
+      "txCount": 59,
       "rank": 37
-    },
-    {
-      "label": "lenfi",
-      "displayName": "Lenfi",
-      "txCount": 46,
-      "rank": 38
-    },
-    {
-      "label": "strike-finance",
-      "displayName": "Strike Finance",
-      "txCount": 28,
-      "rank": 39
-    },
-    {
-      "label": "teddyswap",
-      "displayName": "TeddySwap",
-      "txCount": 23,
-      "rank": 40
     },
     {
       "label": "genius-yield",
       "displayName": "Genius Yield",
-      "txCount": 22,
-      "rank": 41
+      "txCount": 41,
+      "rank": 38
+    },
+    {
+      "label": "intersect",
+      "displayName": "Intersect Budget Contracts",
+      "txCount": 27,
+      "rank": 39
+    },
+    {
+      "label": "strike-finance",
+      "displayName": "Strike Finance",
+      "txCount": 24,
+      "rank": 40
     },
     {
       "label": "$usdm",
       "displayName": "$USDM",
       "txCount": 21,
-      "rank": 42
+      "rank": 41
     },
     {
-      "label": "intersect",
-      "displayName": "Intersect Budget Contracts",
-      "txCount": 21,
-      "rank": 43
+      "label": "teddyswap",
+      "displayName": "TeddySwap",
+      "txCount": 18,
+      "rank": 42
     },
     {
       "label": "singularitynet",
       "displayName": "SingularityNET",
       "txCount": 17,
-      "rank": 44
+      "rank": 43
     },
     {
       "label": "l4va-protocol",
       "displayName": "L4VA Protocol",
-      "txCount": 11,
+      "txCount": 14,
+      "rank": 44
+    },
+    {
+      "label": "lenfi",
+      "displayName": "Lenfi",
+      "txCount": 9,
       "rank": 45
     },
     {
       "label": "adalink",
       "displayName": "AdaLink",
-      "txCount": 8,
+      "txCount": 6,
       "rank": 46
     },
     {
@@ -294,39 +294,39 @@
       "rank": 47
     },
     {
-      "label": "cardano.org",
-      "displayName": "Cardano.org",
-      "txCount": 6,
-      "rank": 48
-    },
-    {
       "label": "world-mobile-token",
       "displayName": "World Mobile Token",
       "txCount": 6,
-      "rank": 49
+      "rank": 48
     },
     {
       "label": "disco-solaris",
       "displayName": "Disco Solaris",
       "txCount": 4,
+      "rank": 49
+    },
+    {
+      "label": "cardano.org",
+      "displayName": "Cardano.org",
+      "txCount": 3,
       "rank": 50
     },
     {
       "label": "plutus.art",
       "displayName": "Plutus.Art",
-      "txCount": 4,
-      "rank": 51
-    },
-    {
-      "label": "ada-handle",
-      "displayName": "ADA Handle",
       "txCount": 3,
-      "rank": 52
+      "rank": 51
     },
     {
       "label": "tokhun",
       "displayName": "Tokhun",
       "txCount": 3,
+      "rank": 52
+    },
+    {
+      "label": "anetabtc",
+      "displayName": "anetaBTC",
+      "txCount": 2,
       "rank": 53
     },
     {
@@ -363,282 +363,282 @@
   "metadataLabelStats": [
     {
       "label": 674,
-      "txCount": 228284,
+      "txCount": 243393,
       "verified": true,
       "description": "CIP-0020 - Transaction message/comment metadata",
       "rank": 1
     },
     {
       "label": 0,
-      "txCount": 61306,
+      "txCount": 60551,
       "verified": false,
       "description": null,
       "rank": 2
     },
     {
       "label": 1,
-      "txCount": 22855,
+      "txCount": 19888,
       "verified": false,
       "description": null,
       "rank": 3
     },
     {
       "label": 2,
-      "txCount": 21071,
+      "txCount": 18596,
       "verified": false,
       "description": null,
       "rank": 4
     },
     {
       "label": 3,
-      "txCount": 21064,
+      "txCount": 18590,
       "verified": false,
       "description": null,
       "rank": 5
     },
     {
       "label": 4,
-      "txCount": 21060,
+      "txCount": 18583,
       "verified": false,
       "description": null,
       "rank": 6
     },
     {
       "label": 1804,
-      "txCount": 11705,
+      "txCount": 12927,
       "verified": false,
       "description": null,
       "rank": 7
     },
     {
       "label": 721,
-      "txCount": 4868,
+      "txCount": 4823,
       "verified": true,
       "description": "CIP-0025 - NFT Token Standard",
       "rank": 8
     },
     {
       "label": 8746,
-      "txCount": 988,
+      "txCount": 758,
       "verified": false,
       "description": null,
       "rank": 9
     },
     {
       "label": 55534473,
-      "txCount": 712,
+      "txCount": 717,
       "verified": false,
       "description": null,
       "rank": 10
     },
     {
       "label": 675,
-      "txCount": 571,
+      "txCount": 583,
       "verified": false,
       "description": null,
       "rank": 11
     },
     {
       "label": 103251,
-      "txCount": 410,
+      "txCount": 407,
       "verified": false,
       "description": null,
       "rank": 12
     },
     {
       "label": 100,
-      "txCount": 373,
+      "txCount": 355,
       "verified": false,
       "description": null,
       "rank": 13
     },
     {
       "label": 1997,
-      "txCount": 241,
+      "txCount": 229,
       "verified": false,
       "description": null,
       "rank": 14
     },
     {
-      "label": 1694,
-      "txCount": 205,
-      "verified": true,
-      "description": "Voltaire - additional metadata for governance, provided in a separate transaction",
+      "label": 6868,
+      "txCount": 118,
+      "verified": false,
+      "description": null,
       "rank": 15
     },
     {
-      "label": 6868,
-      "txCount": 169,
+      "label": 1000,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 16
     },
     {
-      "label": 31415,
-      "txCount": 139,
+      "label": 1002,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 17
     },
     {
-      "label": 55555,
-      "txCount": 62,
+      "label": 1003,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 18
     },
     {
-      "label": 6862,
-      "txCount": 61,
+      "label": 1004,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 19
     },
     {
-      "label": 1000,
-      "txCount": 56,
+      "label": 1005,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 20
     },
     {
-      "label": 1002,
-      "txCount": 56,
+      "label": 1007,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 21
     },
     {
-      "label": 1003,
-      "txCount": 56,
+      "label": 1008,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 22
     },
     {
-      "label": 1004,
-      "txCount": 56,
+      "label": 1009,
+      "txCount": 74,
       "verified": false,
       "description": null,
       "rank": 23
     },
     {
-      "label": 1005,
-      "txCount": 56,
+      "label": 31415,
+      "txCount": 73,
       "verified": false,
       "description": null,
       "rank": 24
     },
     {
-      "label": 1007,
-      "txCount": 56,
-      "verified": false,
-      "description": null,
+      "label": 1694,
+      "txCount": 59,
+      "verified": true,
+      "description": "Voltaire - additional metadata for governance, provided in a separate transaction",
       "rank": 25
     },
     {
-      "label": 1008,
+      "label": 6862,
       "txCount": 56,
       "verified": false,
       "description": null,
       "rank": 26
     },
     {
-      "label": 1009,
-      "txCount": 56,
+      "label": 8461,
+      "txCount": 44,
       "verified": false,
       "description": null,
       "rank": 27
     },
     {
-      "label": 8461,
-      "txCount": 53,
+      "label": 7,
+      "txCount": 39,
       "verified": false,
       "description": null,
       "rank": 28
     },
     {
-      "label": 7,
-      "txCount": 47,
+      "label": 1707,
+      "txCount": 38,
       "verified": false,
       "description": null,
       "rank": 29
     },
     {
-      "label": 1707,
-      "txCount": 40,
+      "label": 55534472,
+      "txCount": 34,
       "verified": false,
       "description": null,
       "rank": 30
-    },
-    {
-      "label": 55534472,
-      "txCount": 35,
-      "verified": false,
-      "description": null,
-      "rank": 31
     },
     {
       "label": 1815,
       "txCount": 30,
       "verified": false,
       "description": null,
-      "rank": 32
+      "rank": 31
     },
     {
       "label": 6749,
       "txCount": 30,
       "verified": false,
       "description": null,
-      "rank": 33
-    },
-    {
-      "label": 3692,
-      "txCount": 25,
-      "verified": true,
-      "description": "CIP-0149 - Optional DRep compensation",
-      "rank": 34
+      "rank": 32
     },
     {
       "label": 2000,
-      "txCount": 23,
+      "txCount": 24,
+      "verified": false,
+      "description": null,
+      "rank": 33
+    },
+    {
+      "label": 2001,
+      "txCount": 24,
+      "verified": false,
+      "description": null,
+      "rank": 34
+    },
+    {
+      "label": 2002,
+      "txCount": 24,
       "verified": false,
       "description": null,
       "rank": 35
     },
     {
-      "label": 2001,
-      "txCount": 23,
-      "verified": false,
-      "description": null,
+      "label": 3692,
+      "txCount": 22,
+      "verified": true,
+      "description": "CIP-0149 - Optional DRep compensation",
       "rank": 36
     },
     {
-      "label": 2002,
-      "txCount": 23,
+      "label": 202310,
+      "txCount": 19,
       "verified": false,
       "description": null,
       "rank": 37
     },
     {
       "label": 747264,
-      "txCount": 20,
+      "txCount": 18,
       "verified": false,
       "description": null,
       "rank": 38
     },
     {
-      "label": 2718,
-      "txCount": 19,
+      "label": 42,
+      "txCount": 17,
       "verified": false,
       "description": null,
       "rank": 39
     },
     {
-      "label": 202310,
-      "txCount": 18,
-      "verified": false,
-      "description": null,
+      "label": 777,
+      "txCount": 17,
+      "verified": true,
+      "description": "CIP-0027 - Royalties Standard",
       "rank": 40
     },
     {
@@ -649,190 +649,190 @@
       "rank": 41
     },
     {
-      "label": 777,
-      "txCount": 16,
-      "verified": true,
-      "description": "CIP-0027 - Royalties Standard",
-      "rank": 42
-    },
-    {
       "label": 8414,
       "txCount": 16,
       "verified": true,
       "description": "claimpaign.com campaigns",
-      "rank": 43
-    },
-    {
-      "label": 42,
-      "txCount": 15,
-      "verified": false,
-      "description": null,
-      "rank": 44
-    },
-    {
-      "label": 1967,
-      "txCount": 15,
-      "verified": true,
-      "description": "nut.link metadata oracles registry",
-      "rank": 45
-    },
-    {
-      "label": 1695,
-      "txCount": 14,
-      "verified": false,
-      "description": null,
-      "rank": 46
+      "rank": 42
     },
     {
       "label": 7746,
       "txCount": 12,
       "verified": false,
       "description": null,
-      "rank": 47
+      "rank": 43
     },
     {
-      "label": 80808081,
+      "label": 1968,
       "txCount": 11,
+      "verified": true,
+      "description": "nut.link metadata oracles data points",
+      "rank": 44
+    },
+    {
+      "label": 91694,
+      "txCount": 10,
       "verified": false,
       "description": null,
-      "rank": 48
+      "rank": 45
     },
     {
       "label": 17,
       "txCount": 9,
       "verified": true,
       "description": "CIP-XXXX - On-chain surveys and polls metadata",
-      "rank": 49
+      "rank": 46
+    },
+    {
+      "label": 1967,
+      "txCount": 9,
+      "verified": true,
+      "description": "nut.link metadata oracles registry",
+      "rank": 47
     },
     {
       "label": 7788,
       "txCount": 9,
       "verified": false,
       "description": null,
+      "rank": 48
+    },
+    {
+      "label": 80808081,
+      "txCount": 9,
+      "verified": false,
+      "description": null,
+      "rank": 49
+    },
+    {
+      "label": 309,
+      "txCount": 8,
+      "verified": true,
+      "description": "CIP-0190 - Proof of Existence record",
       "rank": 50
     },
     {
-      "label": 1968,
+      "label": 2718,
       "txCount": 8,
-      "verified": true,
-      "description": "nut.link metadata oracles data points",
+      "verified": false,
+      "description": null,
       "rank": 51
+    },
+    {
+      "label": 55555,
+      "txCount": 8,
+      "verified": false,
+      "description": null,
+      "rank": 52
     },
     {
       "label": 1146244442,
       "txCount": 7,
       "verified": false,
       "description": null,
-      "rank": 52
+      "rank": 53
     },
     {
-      "label": 1100,
+      "label": 839,
       "txCount": 6,
-      "verified": false,
-      "description": null,
-      "rank": 53
+      "verified": true,
+      "description": "Agora - Proposal creation metadata",
+      "rank": 54
     },
     {
       "label": 1971,
       "txCount": 6,
       "verified": false,
       "description": null,
-      "rank": 54
+      "rank": 55
     },
     {
       "label": 19526,
       "txCount": 6,
       "verified": false,
       "description": null,
-      "rank": 55
+      "rank": 56
+    },
+    {
+      "label": 1668,
+      "txCount": 5,
+      "verified": true,
+      "description": "Begin Wallet: dApp rating record from dApp Store",
+      "rank": 57
     },
     {
       "label": 1984,
       "txCount": 5,
       "verified": true,
       "description": "CIP-0171 - On-chain Smart Contract Bytecode Verification",
-      "rank": 56
-    },
-    {
-      "label": 91694,
-      "txCount": 5,
-      "verified": false,
-      "description": null,
-      "rank": 57
-    },
-    {
-      "label": 73,
-      "txCount": 4,
-      "verified": false,
-      "description": null,
       "rank": 58
     },
     {
-      "label": 309,
-      "txCount": 4,
-      "verified": true,
-      "description": "CIP-0190 - Proof of Existence record",
+      "label": 1990,
+      "txCount": 5,
+      "verified": false,
+      "description": null,
       "rank": 59
     },
     {
-      "label": 839,
-      "txCount": 4,
-      "verified": true,
-      "description": "Agora - Proposal creation metadata",
+      "label": 73,
+      "txCount": 3,
+      "verified": false,
+      "description": null,
       "rank": 60
     },
     {
-      "label": 1668,
+      "label": 529,
       "txCount": 3,
       "verified": true,
-      "description": "Begin Wallet: dApp rating record from dApp Store",
+      "description": "Tokenance - Producer-signed Proof of Origin record",
       "rank": 61
     },
     {
-      "label": 1854,
+      "label": 1695,
       "txCount": 3,
-      "verified": true,
-      "description": "CIP-146 Multi-signatures wallet registration",
+      "verified": false,
+      "description": null,
       "rank": 62
-    },
-    {
-      "label": 5800,
-      "txCount": 3,
-      "verified": false,
-      "description": null,
-      "rank": 63
-    },
-    {
-      "label": 8745,
-      "txCount": 3,
-      "verified": false,
-      "description": null,
-      "rank": 64
     },
     {
       "label": 20,
       "txCount": 2,
       "verified": false,
       "description": null,
+      "rank": 63
+    },
+    {
+      "label": 1100,
+      "txCount": 2,
+      "verified": false,
+      "description": null,
+      "rank": 64
+    },
+    {
+      "label": 1774,
+      "txCount": 2,
+      "verified": false,
+      "description": null,
       "rank": 65
     },
     {
-      "label": 529,
+      "label": 1854,
       "txCount": 2,
       "verified": true,
-      "description": "Tokenance - Producer-signed Proof of Origin record",
+      "description": "CIP-146 Multi-signatures wallet registration",
       "rank": 66
     },
     {
-      "label": 8675309,
+      "label": 5800,
       "txCount": 2,
       "verified": false,
       "description": null,
       "rank": 67
     },
     {
-      "label": 1990,
-      "txCount": 1,
+      "label": 8745,
+      "txCount": 2,
       "verified": false,
       "description": null,
       "rank": 68
@@ -852,39 +852,53 @@
       "rank": 70
     },
     {
+      "label": 8678,
+      "txCount": 1,
+      "verified": false,
+      "description": null,
+      "rank": 71
+    },
+    {
       "label": 61284,
       "txCount": 1,
       "verified": true,
       "description": "CIP-0015 - Catalyst registration",
-      "rank": 71
+      "rank": 72
     },
     {
       "label": 61285,
       "txCount": 1,
       "verified": true,
       "description": "CIP-0015 - Catalyst witness",
-      "rank": 72
+      "rank": 73
     },
     {
       "label": 73115,
       "txCount": 1,
       "verified": false,
       "description": null,
-      "rank": 73
+      "rank": 74
     },
     {
       "label": 83741,
       "txCount": 1,
       "verified": false,
       "description": null,
-      "rank": 74
+      "rank": 75
+    },
+    {
+      "label": 8675309,
+      "txCount": 1,
+      "verified": false,
+      "description": null,
+      "rank": 76
     },
     {
       "label": 19670001,
       "txCount": 1,
       "verified": false,
       "description": null,
-      "rank": 75
+      "rank": 77
     }
   ]
 }
