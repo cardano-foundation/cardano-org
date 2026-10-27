@@ -596,22 +596,22 @@
     "message": "Ada là gì?"
   },
   "whatIsAda.section.title": {
-    "message": "ada Là Token Gốc Của Cardano"
+    "message": "Ada is the native currency of Cardano"
   },
   "whatIsAda.section.description1": {
     "message": "Nó được đặt theo tên Ada Lovelace: một nhà toán học thế kỷ 19 được công nhận là lập trình viên máy tính đầu tiên, và là con gái của nhà thơ Lord Byron."
   },
   "whatIsAda.section.description2": {
-    "message": "ada là một loại tiền tệ số. Bất kỳ người dùng nào, ở bất cứ đâu trên thế giới, đều có thể dùng ada như một phương thức trao đổi giá trị an toàn, mà không cần bên thứ ba làm trung gian cho giao dịch. Mọi giao dịch đều được ghi lại vĩnh viễn, an toàn và minh bạch trên blockchain Cardano."
+    "message": "Ada is a digital currency. Anyone, anywhere in the world, can use ada to exchange value directly, without a third party in between. Every transaction is recorded permanently and transparently on the Cardano blockchain."
   },
   "whatIsAda.section.description3": {
-    "message": "Mỗi người nắm giữ ada cũng đồng thời nắm giữ một phần cổ phần trong mạng lưới Cardano. ada được lưu trong ví có thể được ủy quyền cho một stake pool để nhận phần thưởng, qua đó góp phần vận hành mạng lưới hiệu quả, hoặc bạn có thể tự lập và vận hành stake pool của riêng mình để tăng khả năng nhận phần thưởng cho pool. Theo thời gian, ada cũng sẽ được dùng cho nhiều ứng dụng và dịch vụ khác nhau trên nền tảng Cardano."
+    "message": "Every ada holder also holds a stake in the Cardano network. You can delegate your ada to a stake pool to help run the network and earn rewards, and it never leaves your wallet while you do. Ada pays the fees for every transaction, lets you take part in on-chain governance by voting as a DRep or delegating your voting power to one, and is used across the applications and services built on Cardano."
   },
   "whatIsAda.section.quote": {
     "message": "Tôi có thể làm gì với ada?"
   },
   "howToBuyAda.title": {
-    "message": "Làm Sao Để Mua/Bán ada?"
+    "message": "How do I buy or sell ada?"
   },
   "howToBuyAda.description1": {
     "message": "Có nhiều cách để sở hữu ada nhằm sử dụng blockchain Cardano. Tìm hiểu thêm tại {whereToGetAdaLink}"
@@ -1023,7 +1023,7 @@
     "message": "Sàn giao dịch tập trung"
   },
   "whereToGetAda.cex.description": {
-    "message": "Sàn giao dịch tập trung (CEX) là các nền tảng nơi tiền mã hóa và các tài sản số khác được giao dịch. Chúng đóng vai trò trung gian giữa người mua và người bán, tạo thuận lợi cho giao dịch và thường cung cấp thêm các dịch vụ như lưu ký, khớp lệnh và tuân thủ quy định. Lưu ý rằng CEX nắm giữ quyền lưu ký [ada](/what-is-ada/) và các token gốc khác cho đến khi bạn chuyển chúng sang [ví](/what-is-ada/#wallets) do bạn kiểm soát."
+    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-a-wallet) that you control."
   },
   "whereToGetAda.cex.disclaimer": {
     "message": "Việc liệt kê ở đây không đồng nghĩa với sự chứng thực. Dữ liệu này được cộng đồng đóng góp. Truy cập [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) để xem danh sách đầy đủ các sàn giao dịch hỗ trợ [ada](/what-is-ada/)."
@@ -1032,7 +1032,7 @@
     "message": "Sàn giao dịch phi tập trung"
   },
   "whereToGetAda.dex.description": {
-    "message": "Sàn giao dịch phi tập trung (DEX) là các nền tảng giao dịch tiền mã hóa hoạt động không cần cơ quan trung tâm. Chúng cho phép người dùng giao dịch trực tiếp với nhau (ngang hàng) thông qua các quy trình tự động được thực hiện bởi hợp đồng thông minh. Cách tiếp cận này tăng cường bảo mật và quyền riêng tư, giảm nguy cơ bị tấn công và những rủi ro lưu ký gắn liền với các sàn giao dịch tập trung."
+    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. You keep your ada in your own wallet instead of handing it to an exchange, but smart contracts carry their own risks, and every trade is public on the blockchain."
   },
   "whereToGetAda.dex.disclaimer": {
     "message": "DEX không phù hợp với người mới bắt đầu, vì bạn phải có sẵn [ada](/what-is-ada/) mới có thể sử dụng. Việc liệt kê ở đây không đồng nghĩa với sự chứng thực. Dữ liệu giao dịch dựa trên 30 ngày gần nhất."
@@ -1050,13 +1050,13 @@
     "message": "Nhận ada"
   },
   "whereToGetAda.receive.description1": {
-    "message": "Trước khi nhận hoặc mua [ada](/what-is-ada/), bạn cần thiết lập một [ví Cardano](/what-is-ada/#wallets)."
+    "message": "To hold [ada](/what-is-ada/) yourself, you need a [Cardano wallet](/what-is-a-wallet)."
   },
   "whereToGetAda.receive.description2": {
-    "message": "Khi đã có [ví Cardano](/what-is-ada/#wallets), tất cả những gì bạn cần làm là chia sẻ địa chỉ của mình để bắt đầu gửi và nhận [ada](/what-is-ada/) (cùng các token gốc khác) theo hình thức ngang hàng."
+    "message": "Once you have a [Cardano wallet](/what-is-a-wallet), share its receiving address with anyone who wants to send you [ada](/what-is-ada/) (or other native tokens) peer-to-peer. To send ada, enter the recipient's address in your wallet and approve the transaction."
   },
   "whereToGetAda.receive.description3": {
-    "message": "Một số [ví](/what-is-ada/#wallets) cho phép bạn mua tiền mã hóa bằng thẻ ghi nợ/tín dụng, chuyển khoản ngân hàng hoặc Apple Pay. Khả năng sử dụng tùy thuộc vào vị trí của bạn."
+    "message": "Some [wallets](/wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
   },
   "whereToGetAda.divider.funding": {
     "message": "Nhận tài trợ bằng ada"
@@ -1065,7 +1065,7 @@
     "message": "Project Catalyst"
   },
   "whereToGetAda.funding.description": {
-    "message": "Khám phá quỹ đổi mới của Cardano được thiết kế để hỗ trợ các dự án và ý tưởng đột phá. Khi tham gia, bạn có thể nhận được tài trợ [ada](/what-is-ada/) để biến tầm nhìn của mình thành hiện thực. Truy cập [Project Catalyst](https://projectcatalyst.io) và tìm hiểu cách tạo một đề xuất."
+    "message": "Project Catalyst is Cardano's community innovation fund. It pays [ada](/what-is-ada/) to proposals that the community votes for. Visit [Project Catalyst](https://projectcatalyst.io) to see whether a funding round is open."
   },
   "whereToGetAda.divider.rewards": {
     "message": "Phần thưởng staking"
@@ -1074,10 +1074,10 @@
     "message": "Phần thưởng staking"
   },
   "whereToGetAda.staking.description1": {
-    "message": "Nếu đã có một ít [ada](/what-is-ada/), bạn có thể kiếm thêm bằng cách [ủy quyền ada cho một stake pool](/stake-pool-delegation/). Cách này giúp bạn tham gia hệ thống [proof-of-stake](/glossary/proof-of-stake) của mạng lưới và nhận phần thưởng. Ngoài ra, bạn có thể [tự vận hành stake pool](/stake-pool-operation/), việc này đòi hỏi nhiều công sức và kiến thức kỹ thuật hơn nhưng có thể mang lại phần thưởng cao hơn."
+    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which takes more effort, technical knowledge and a refundable 500 ada pool deposit."
   },
   "whereToGetAda.staking.description2": {
-    "message": "Cardano có nhiều lợi thế cho việc [staking](/glossary/staking): không yêu cầu số lượng [ada](/what-is-ada/) tối thiểu để stake, không có rủi ro slashing (mất số [ada](/what-is-ada/) đã stake) và không có thời gian khóa. Bạn luôn tự lưu ký số [ada](/what-is-ada/) đã ủy quyền, nên tiền của bạn luôn an toàn và có thể sử dụng bất cứ lúc nào. Ngoài ra, phần thưởng do chính giao thức phân phối chứ không phải các pool, giúp quá trình phân phối công bằng và minh bạch."
+    "message": "Cardano offers several advantages for [staking](/glossary/staking). Registering your stake key takes a refundable [deposit](/glossary/stake-address-deposit) of 2 [ada](/what-is-ada/). Beyond that, there is no minimum amount. There is no risk of slashing (losing your staked ada) and no locking period. Your ada stays in your wallet, so you can spend it at any time. Rewards are paid by the protocol itself, not by the pools."
   },
   "commonScams.hero.title": {
     "message": "Các chiêu lừa đảo phổ biến trên Cardano"
@@ -1107,7 +1107,7 @@
     "message": "Không gian tiền mã hóa đầy cơ hội, nhưng cũng là sân chơi cho những kẻ lừa đảo. Cardano (ada), một trong những blockchain phổ biến nhất, cũng không tránh khỏi những mối đe dọa này. Từ các chương trình tặng quà giả mạo đến các cuộc tấn công lừa đảo (phishing), những kẻ lừa đảo không ngừng nghĩ ra những cách mới để trục lợi từ người dùng. Khi trí tuệ nhân tạo ngày càng phát triển, các chiêu lừa đảo này cũng trở nên tinh vi hơn. Trang này nêu ra những chiêu lừa đảo phổ biến nhất trong hệ sinh thái Cardano và cách bạn có thể tự bảo vệ mình."
   },
   "commonScams.intro.description2": {
-    "message": "**Hãy nhớ:** Nếu ai đó có được các từ hạt giống (cụm từ khôi phục) của bạn, họ có thể toàn quyền kiểm soát ví của bạn, không mật khẩu chi tiêu nào có thể bảo vệ bạn. Một khi ada của bạn bị đánh cắp, nó sẽ mất vĩnh viễn, không có cách nào lấy lại."
+    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet. No spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
   },
   "commonScams.divider.giveaway": {
     "message": "Tặng quà"
@@ -1209,7 +1209,7 @@
     "message": "Rug Pull trong hệ sinh thái Cardano"
   },
   "commonScams.rug.description": {
-    "message": "Cardano là một blockchain Layer 1 công khai, không cần cấp phép và ai cũng có thể sử dụng. Một số dự án gian lận ra mắt trên Cardano, thu hút sự chú ý bằng những lời hứa lớn lao và cách tiếp thị hào nhoáng. Sau khi thu về một lượng lớn ada từ nhà đầu tư, những dự án này biến mất, đây được gọi là \"rug pull\"."
+    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear. This is known as a \"rug pull.\""
   },
   "commonScams.rug.howToProtect": {
     "message": "Cách tự bảo vệ bản thân:"
@@ -1272,7 +1272,7 @@
     "message": "Cardano là nền tảng blockchain proof-of-stake: nền tảng đầu tiên được xây dựng dựa trên [nghiên cứu được bình duyệt](/research) và phát triển bằng phương pháp dựa trên bằng chứng. Cardano kết hợp các công nghệ tiên phong để mang đến sự bảo mật và tính bền vững chưa từng có cho các ứng dụng, hệ thống và xã hội phi tập trung."
   },
   "home.featured.description2": {
-    "message": "Với đội ngũ kỹ sư hàng đầu, Cardano tồn tại để phân phối lại quyền lực từ các cấu trúc thiếu trách nhiệm đến từng cá nhân – và trở thành động lực cho sự thay đổi và tiến bộ tích cực."
+    "message": "With a leading team of engineers, Cardano exists to redistribute power from unaccountable structures to the margins, to individuals, and be an enabling force for positive change and progress."
   },
   "home.featured.quote1": {
     "message": "Lịch sử của những điều bất khả,"
@@ -1287,10 +1287,10 @@
     "message": "Lợi ích"
   },
   "home.quoteBox.description": {
-    "message": "Cardano khôi phục niềm tin cho các hệ thống toàn cầu – thông qua khoa học, tạo ra nền tảng an toàn, minh bạch và bền vững hơn cho cá nhân giao dịch, hệ thống quản trị và doanh nghiệp phát triển."
+    "message": "Cardano restores trust to global systems, creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow."
   },
   "home.quoteBox.quote": {
-    "message": "Cardano mang đến tiêu chuẩn mới trong công nghệ – mở và bao trùm – để thách thức cái cũ và khởi động kỷ nguyên mới của đổi mới bền vững, phân tán toàn cầu."
+    "message": "Cardano brings a new standard in technology, open and inclusive, to challenge the old and activate a new age of sustainable, globally-distributed innovation."
   },
   "home.benefits.ouroboros.label": {
     "message": "Proof-of-Stake và Ouroboros"
@@ -1362,7 +1362,7 @@
     "message": "Khả năng mở rộng vượt trội và bền vững với môi trường"
   },
   "home.benefits.scalable.body": {
-    "message": "Ouroboros cho phép Cardano mở rộng theo yêu cầu toàn cầu với mức tiêu thụ năng lượng tối thiểu. Khác với các blockchain khác, Cardano không yêu cầu tăng năng lượng theo cấp số nhân để nâng cao hiệu suất và thêm khối. Sự cân bằng giữa hiệu suất và tính bền vững đạt được thông qua sự kết hợp các phương pháp mới, bao gồm đa sổ cái, chuỗi phụ và xử lý giao dịch song song qua kênh trạng thái đa bên.<br /><br />Mạng lưới phát triển khi số lượng stake pool tăng lên, trong khi các tham số được thiết lập và điều chỉnh để đo lường sức hấp dẫn của từng stake pool. Đây là mạng lưới thưởng trực tiếp cho sự tham gia. Cardano được thiết kế để đảm bảo rằng những ai hành động vì lợi ích tốt nhất của mạng lưới cũng đang hành động vì lợi ích của chính mình. Điều này đảm bảo sự phát triển của một hệ sinh thái lành mạnh với mạng lưới bền bỉ và mạnh mẽ, cho hiện tại và tương lai. Sự kết hợp giữa tính bền vững và khả năng mở rộng cho phép Cardano đạt được thông lượng cần thiết để đáp ứng nhu cầu ngày càng phát triển của các hệ thống toàn cầu – tài chính, hậu cần, danh tính, xã hội."
+    "message": "Ouroboros allows Cardano to scale to global requirements with minimal energy consumption. Unlike other blockchains, Cardano does not require exponentially increasing energy to enhance performance and add blocks. The balance between performance and sustainability is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction processing through multi-party state channels.<br /><br />The network proliferates as the number of stake pools increases, while parameters are set and adjusted to measure the attractiveness of specific stake pools. This is a network that rewards participation directly. Cardano is designed to ensure that those who act in the best interests of the network are also acting in their own best interests. This ensures the development of a healthy ecosystem with a durable, healthy, and robust network, now and into the future. The combination of sustainability and scalability allows Cardano to achieve the throughput required to meet the evolving demands of global systems: financial, logistical, identity-related, societal."
   },
   "home.benefits.scalable.cta": {
     "message": "Tìm hiểu về Hydra"
@@ -1953,6 +1953,27 @@
   "constitution.link.viewOnIPFS": {
     "message": "Xem trên IPFS"
   },
+  "constitution.amend.title": {
+    "message": "How the Constitution Changes"
+  },
+  "constitution.amend.onChain": {
+    "message": "The constitution changes only through an on-chain governance action. DReps must ratify it with at least 75% of their stake, and the Constitutional Committee must approve it."
+  },
+  "constitution.amend.portal": {
+    "message": "Before that, changes can be drafted and discussed off-chain. Intersect runs the Constitutional Amendment Portal, currently in alpha, where anyone can highlight a passage of the constitution and submit one of two documents:"
+  },
+  "constitution.amend.cap": {
+    "message": "A [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) (CAP) proposes exact changes to the text and goes through a public deliberation period."
+  },
+  "constitution.amend.cis": {
+    "message": "A [Constitutional Issue Statement](/glossary/constitutional-issue-statement) (CIS) describes an ambiguity, gap, or risk without proposing a fix."
+  },
+  "constitution.amend.optional": {
+    "message": "A proposal accepted on the portal does not change the constitution by itself; a governance action still has to be ratified on-chain. Using the portal is optional, and its [guides](https://cap.intersectmbo.org/#/guides) explain how to submit."
+  },
+  "constitution.amend.button": {
+    "message": "Open the Constitutional Amendment Portal"
+  },
   "constitution.history.title": {
     "message": "Lịch sử phê chuẩn Hiến pháp"
   },
@@ -2223,13 +2244,13 @@
     "message": "Genesis"
   },
   "genesis.hero.description": {
-    "message": "Việc phân phối các phiếu token ada, một phần của lớp thanh toán Cardano, đã diễn ra tại châu Á qua bốn giai đoạn từ tháng 10 năm 2015 đến đầu tháng 1 năm 2017."
+    "message": "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."
   },
   "genesis.layout.title": {
     "message": "Phân phối Genesis của Cardano, phân bổ ada ban đầu"
   },
   "genesis.layout.description": {
-    "message": "Việc phân phối các phiếu token ada, một phần của lớp thanh toán Cardano, đã diễn ra tại châu Á qua bốn giai đoạn từ tháng 10 năm 2015 đến đầu tháng 1 năm 2017."
+    "message": "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."
   },
   "genesis.divider.distribution": {
     "message": "Phân phối Genesis"
@@ -2238,10 +2259,10 @@
     "message": "Phân phối"
   },
   "genesis.distribution.paragraph1": {
-    "message": "Đợt phân phối ada ban đầu, về cơ bản là một sự kiện bán trước khi ra mắt, là đợt đầu tiên trong ngành tiền mã hóa thiết lập các nguyên tắc Know Your Customer, và một cuộc kiểm toán đã được thực hiện đối với quy trình phân phối. Thông tin và số liệu thống kê về việc phân phối phiếu được trình bày chi tiết bên dưới trong phần Thống kê phân phối phiếu ada."
+    "message": "The initial distribution of ada, essentially a pre-launch sales event, was run with Know Your Customer checks, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Stats section."
   },
   "genesis.distribution.paragraph2": {
-    "message": "Ngoài số ada này, phần Phân phối Khối Genesis còn bao gồm một lượng bằng 20% số phiếu ada đã bán trong giai đoạn Bán, tức **5.185.414.108 ada**. Số này đã được tạo ra và phân phối cho ba nhóm tổ chức trong hệ sinh thái Cardano thuộc Quỹ Phát triển Kỹ thuật và Kinh doanh; IOHK, EMURGO và Cardano Foundation, như sau:"
+    "message": "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool, IOHK, EMURGO, and the Cardano Foundation, as follows:"
   },
   "genesis.distribution.cardanoFoundation": {
     "message": "Cardano Foundation, Thụy Sĩ: **648.176.761 ada**"
@@ -2265,7 +2286,7 @@
     "message": "Doanh thu"
   },
   "genesis.proceeds.paragraph1": {
-    "message": "Các phiếu ada được bán bởi một tập đoàn Nhật Bản cùng đội ngũ bán hàng của họ tại Nhật Bản với tổng doanh thu gộp là 108.844,5 BTC. Bạn có thể tìm thêm thông tin về đợt bán này tại đây."
+    "message": "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC."
   },
   "genesis.proceeds.paragraph2": {
     "message": "Một phần trong tổng doanh thu bán hàng đã được quyên góp cho Cardano Foundation như sau:"
@@ -2303,6 +2324,9 @@
   "hardforks.timeline.shelley.description": {
     "message": "Giới thiệu các tính năng staking và phi tập trung, chuyển đổi từ hệ thống liên kết sang hệ thống phi tập trung."
   },
+  "hardforks.timeline.obft.description": {
+    "message": "Switched consensus from Ouroboros Classic to Ouroboros BFT, the bridge to the Shelley hard fork."
+  },
   "hardforks.timeline.allegra.description": {
     "message": "Bổ sung khả năng khóa token, một điều kiện tiên quyết cho tính năng hợp đồng thông minh."
   },
@@ -2310,7 +2334,10 @@
     "message": "Mang tính năng token gốc đến Cardano, cho phép người dùng tạo và giao dịch bằng các token tùy chỉnh."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Giới thiệu khả năng hợp đồng thông minh sử dụng Plutus, cho phép triển khai các ứng dụng phi tập trung (DApp)."
+    "message": "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (DApps)."
+  },
+  "hardforks.timeline.lobster.description": {
+    "message": "Intra-era upgrade that fixed a bug in how time is converted for Plutus scripts."
   },
   "hardforks.timeline.vasil.description": {
     "message": "Cải thiện khả năng mở rộng và hiệu năng của mạng lưới, được đặt tên theo Vasil Dabov, một thành viên trong cộng đồng Cardano."
@@ -2322,10 +2349,10 @@
     "message": "Giới thiệu thêm những cải tiến cho tính năng hợp đồng thông minh Plutus và hiệu năng tổng thể của mạng lưới."
   },
   "hardforks.timeline.chang1.description": {
-    "message": "Giới thiệu đợt tính năng quản trị phi tập trung đầu tiên của CIP-1694. Chỉ cho phép thay đổi tham số và khởi tạo hard fork."
+    "message": "Introducing the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only."
   },
   "hardforks.timeline.plomin.description": {
-    "message": "Giới thiệu đợt tính năng quản trị phi tập trung thứ hai của CIP-1694. Cho phép toàn bộ các hành động quản trị và vai trò DRep."
+    "message": "Ended the bootstrap phase of CIP-1694. DReps vote on every type of governance action, and treasury withdrawals, constitution updates, no-confidence motions and changes to the Constitutional Committee became possible."
   },
   "hardforks.hero.title": {
     "message": "Hard fork"
@@ -2343,7 +2370,7 @@
     "message": "Hard Fork của Cardano"
   },
   "hardforks.content.description": {
-    "message": "[Hard fork](/glossary/hard-fork) trên Cardano không mang nghĩa chia rẽ hay bất đồng trong hệ sinh thái. Ngược lại, chúng xác định một thời điểm chính xác ([slot](/glossary/slot)) đã được thống nhất chung, khi tất cả các node chuyển từ era hiện tại sang era mới, áp dụng các chức năng, quy tắc xác thực hoặc giá trị tham số mới. Mọi nhà vận hành stake pool đều cần cài đặt bản nâng cấp, và họ cũng có tiếng nói cũng như phải đồng ý với nó. Vì vậy, một hard fork trên Cardano là một bước tiến hóa chung được xác định chính xác và không gây chia tách."
+    "message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch to new protocol rules, sometimes starting a new era, applying new functions, validation rules, or parameter values. Stake pool operators install the new node version ahead of time. Since Plomin, the switch itself is approved on chain through a [hard fork governance action](/glossary/hard-fork-initiation). A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
   },
   "hardforks.divider.timeline": {
     "message": "Dòng thời gian"
@@ -2352,7 +2379,7 @@
     "message": "id giao dịch hard fork"
   },
   "hardforks.transactionIds.description": {
-    "message": "Lưu ý rằng một số hard fork, đặc biệt là Byron và Shelley, đã trải qua một loạt các bản cập nhật và có thể không gắn với một id giao dịch cụ thể duy nhất. Đối với các hard fork còn lại, những id giao dịch được cung cấp tương ứng với các bản cập nhật tham số quan trọng dẫn đến hard fork."
+    "message": "Byron, the OBFT switch, Shelley, Alonzo and the Lobster upgrade are listed without a single transaction ID. Up to Chang, each ID is a protocol update proposal that triggered the hard fork. Plomin and van Rossem were approved as [hard fork governance actions](/glossary/hard-fork-initiation), and their IDs identify those actions."
   },
   "learn.hero.heading": {
     "message": "Tìm hiểu Cardano"
@@ -2412,7 +2439,7 @@
     "message": "Ouroboros là gì?"
   },
   "ouroboros.whatIs.description1": {
-    "message": "Ouroboros là giao thức Proof-of-Stake đầu tiên có tính bảo mật được chứng minh, và là giao thức blockchain đầu tiên dựa trên nghiên cứu được bình duyệt. Ouroboros kết hợp công nghệ độc đáo và các cơ chế được kiểm chứng bằng toán học, mà bản thân chúng lại kết hợp tâm lý học hành vi và triết học kinh tế, để đảm bảo tính bảo mật và bền vững cho các blockchain phụ thuộc vào nó. Kết quả là một giao thức với những đảm bảo bảo mật đã được chứng minh, có khả năng thúc đẩy sự lan tỏa của các mạng lưới toàn cầu, không cần cấp phép, với nhu cầu năng lượng tối thiểu, và Cardano là mạng lưới đầu tiên như vậy."
+    "message": "Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. It combines cryptography with mathematically verified mechanisms that draw on game theory and economics to keep the blockchains that depend on it secure and sustainable. The result is a protocol with proven security guarantees that supports global, permissionless networks with minimal energy requirements. Cardano was the first of them."
   },
   "ouroboros.whatIs.description2": {
     "message": "Cốt lõi của Ouroboros là khái niệm về sự vô hạn. Các mạng lưới toàn cầu phải có khả năng phát triển một cách bền vững và có đạo đức: mang lại nhiều cơ hội hơn cho thế giới đồng thời gìn giữ nó. Điều này trở nên khả thi với Ouroboros."
@@ -2436,7 +2463,7 @@
     "message": "Ouroboros mang lại tính bảo mật có thể kiểm chứng bằng toán học trước những kẻ tấn công."
   },
   "ouroboros.features.provablySecure.text2": {
-    "message": "Giao thức được đảm bảo an toàn miễn là 51% cổ phần (stake), trong trường hợp của Cardano là ada, được nắm giữ bởi những người tham gia trung thực. Điều này, cùng với những khái niệm mới mẻ khác, đạt được thông qua việc lựa chọn người dẫn đầu một cách ngẫu nhiên. Giao thức tiếp tục phát triển qua các phiên bản mới và những phân tích bảo mật nghiêm ngặt."
+    "message": "The protocol is proven secure as long as more than half of the stake, in the case of Cardano ada, is held by honest participants. One of the mechanisms behind this is random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis."
   },
   "ouroboros.features.incentivesRewards.title": {
     "message": "Khuyến khích & Phần thưởng"
@@ -2454,16 +2481,22 @@
     "message": "Ouroboros là một giao thức Proof-of-Stake. Nó phân bổ quyền kiểm soát mạng lưới cho các stake pool: những nhà vận hành node có hạ tầng cần thiết để đảm bảo kết nối ổn định và đáng tin cậy với mạng lưới."
   },
   "ouroboros.features.stakeDelegation.text2": {
-    "message": "Với mỗi slot, một stake pool được chỉ định làm người dẫn đầu slot (slot leader) và được thưởng khi thêm một khối vào chuỗi. Những người nắm giữ ada có thể ủy quyền cổ phần của mình cho một stake pool cụ thể, làm tăng cơ hội được chọn làm slot leader, và cùng chia sẻ phần thưởng của stake pool đó."
+    "message": "In every slot, each stake pool has a chance to become slot leader in proportion to its stake. On average only one slot in twenty has a leader, who adds a block to the chain. Ada holders may delegate their stake to a stake pool, which increases its chance of being elected, and share in the rewards the protocol pays out every epoch. [How Cardano works](/how-cardano-works#consensus) explains the details."
   },
   "ouroboros.features.energyEfficient.title": {
     "message": "Tiết kiệm năng lượng"
   },
   "ouroboros.features.energyEfficient.text1": {
-    "message": "Ouroboros giải quyết thách thức lớn nhất mà các blockchain hiện tại gặp phải: nhu cầu năng lượng ngày càng lớn để đạt được đồng thuận. Nhờ Ouroboros, Cardano có thể mở rộng một cách an toàn, bền vững và có đạo đức, với [hiệu quả năng lượng cao gấp tới bốn triệu lần so với bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol)."
+    "message": "Ouroboros addresses one of the biggest challenges of proof-of-work blockchains: the need for more and more energy to reach consensus. Block producers do not compete on computing power, so Cardano runs on ordinary servers and can scale securely and sustainably."
+  },
+  "ouroboros.variants.title": {
+    "message": "Which version of Ouroboros does Cardano run?"
+  },
+  "ouroboros.variants.description": {
+    "message": "Ouroboros is a family of protocols. Cardano mainnet runs Ouroboros Praos, which elects slot leaders privately using verifiable random functions. Ouroboros Genesis lets a new node find the honest chain without trusted checkpoints and is available in the node as an opt-in setting on mainnet. Peras and Leios are newer members of the family that target faster settlement and higher throughput. The [Ouroboros glossary entry](/glossary/ouroboros) describes each variant."
   },
   "ouroboros.cta.title": {
-    "message": "Tấn công giao thức, phân nhánh blockchain, hoặc không. Hãy trực tiếp khám phá giao thức Ouroboros trong mô phỏng tương tác này."
+    "message": "Attack the protocol or fork the blockchain? Explore the Ouroboros protocol firsthand in this interactive simulation."
   },
   "ouroboros.cta.buttonLabel": {
     "message": "Chơi thử"
@@ -2799,7 +2832,7 @@
     "message": "Lượng stake được ủy quyền cho một stake pool là yếu tố chính để giao thức [Ouroboros](/glossary/ouroboros) chọn ai sẽ thêm khối tiếp theo vào blockchain và nhận phần thưởng bằng tiền cho việc đó."
   },
   "stakePoolOperation.whatIsStaking.rightText3": {
-    "message": "Càng nhiều stake được ủy quyền cho một stake pool (đến một mức nhất định), khả năng pool đó tạo ra khối tiếp theo càng cao, và phần thưởng mà pool kiếm được sẽ được chia cho tất cả những người đã ủy quyền phần stake của họ cho stake pool đó."
+    "message": "The more stake is delegated to a stake pool, the more likely it is to make the next block, and the rewards that it earns are shared between everyone who delegated their stake to that stake pool. Once a pool is saturated, extra stake no longer adds rewards."
   },
   "stakePoolOperation.whatIsStakePool.divider": {
     "message": "Stake pool là gì?"
@@ -2820,13 +2853,13 @@
     "message": "Cơ chế cam kết"
   },
   "stakePoolOperation.pledging.text": {
-    "message": "Dù không có mức pledge tối thiểu bắt buộc, nhà vận hành pool có thể tùy chọn [pledge](/glossary/pledge) một phần hoặc toàn bộ stake của mình vào pool để pool hấp dẫn hơn. Lượng ada pledge càng cao, pool càng nhận nhiều phần thưởng, từ đó thu hút thêm ủy quyền. Tham số giao thức a0 quy định mức ảnh hưởng của pledge đến phần thưởng của pool."
+    "message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. All else being equal, a higher pledge slightly increases the pool's rewards. The a0 protocol parameter defines the influence of the pledge on the pool reward."
   },
   "stakePoolOperation.desirability.title": {
     "message": "Chỉ số mức độ hấp dẫn"
   },
   "stakePoolOperation.desirability.text": {
-    "message": "Mức độ hấp dẫn của một pool được tính bằng cách lấy phần stake cam kết của chủ sở hữu, chi phí và biên lợi nhuận, rồi kết hợp với ảnh hưởng từ mức độ bão hòa và hiệu suất của pool. Con số này được dùng để xếp hạng các pool trong ví, và cho biết pool 'đáng chọn' hay 'hấp dẫn' đến mức nào đối với những người có thể ủy quyền."
+    "message": "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. Some wallets use this number to rank pools, as an indication of how 'desirable' or 'attractive' the pool is to potential delegators."
   },
   "stakePoolOperation.saturation.title": {
     "message": "Tham số bão hòa (K)"
@@ -5526,7 +5559,7 @@
     "message": "Nền móng"
   },
   "research.byron.description": {
-    "message": "Giai đoạn dành cho việc xây dựng một mạng lưới liên kết nền tảng, cho phép mua và bán ada. Mạng lưới vận hành giao thức đồng thuận Proof-of-Stake Ouroboros."
+    "message": "A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. Blocks were produced by federated nodes running Ouroboros Classic and, from February 2020, Ouroboros BFT."
   },
   "research.shelley.subtitle": {
     "message": "Phi tập trung"
@@ -5544,13 +5577,13 @@
     "message": "Mở rộng quy mô"
   },
   "research.basho.description": {
-    "message": "Một kỷ nguyên tối ưu hóa, cải thiện khả năng mở rộng và tính tương tác của mạng lưới. Bên cạnh việc nâng cao hiệu năng, Basho sẽ giới thiệu sidechain, những blockchain mới có thể tương tác với chuỗi Cardano chính, với tiềm năng to lớn trong việc mở rộng năng lực của mạng lưới."
+    "message": "An era of optimization, improving the scalability and interoperability of the network. Work from this era includes diffusion pipelining, delivered with the Vasil upgrade, the [Hydra](/glossary/hydra) layer 2 protocol and partner chains that connect to the main Cardano chain. [Layer 2](/layer-2) lists the networks that run today."
   },
   "research.voltaire.subtitle": {
     "message": "Quản trị"
   },
   "research.voltaire.description": {
-    "message": "Kỷ nguyên phát triển hiện đang giúp mạng lưới Cardano trở thành một hệ thống tự vận hành bền vững. Voltaire giới thiệu một hệ thống bỏ phiếu và treasury cho phép những người tham gia mạng lưới dùng phần stake và quyền bỏ phiếu của mình để định hình hướng phát triển tương lai của blockchain."
+    "message": "The era that made Cardano a self-governing system. With [CIP-1694](/glossary/cip-1694), live since the Chang and Plomin upgrades, DReps, stake pool operators and the Constitutional Committee vote on chain on governance actions, from protocol changes to treasury withdrawals, and the rules set which of them vote on which type of action. Ada holders take part by delegating their voting power or becoming a DRep. The [governance](/governance) section explains how it works."
   },
   "solutions.card.learnMore": {
     "message": "Tìm hiểu thêm"
@@ -6119,7 +6152,7 @@
     "message": "Quay lại bức tranh toàn cảnh: [Cardano là gì?](/what-is-cardano), hoặc xem [Cardano hoạt động như thế nào](/how-cardano-works) từ đầu đến cuối."
   },
   "whatIsAda.section.platformLink": {
-    "message": "Mới làm quen với chính nền tảng này? Hãy đọc [Cardano là gì](/what-is-cardano)."
+    "message": "New to the platform itself? Read [what Cardano is](/what-is-cardano). Ready to put your ada to work? [Delegate it to a stake pool](/stake-pool-delegation) and [delegate your voting power](/governance/delegate)."
   },
   "whatIsCardano.hero.title": {
     "message": "Cardano là gì?"
@@ -7109,7 +7142,7 @@
     "message": "Giao dịch cross-chain hiệu năng cao cho người dùng tổ chức. Được xây dựng cùng Midgard, Sundial mang lại khả năng tương tác và xác thực bằng zero-knowledge proof cho Bitcoin."
   },
   "layer2.data.zkfold.description": {
-    "message": "Một zero-knowledge proof duy nhất xác minh nhiều giao dịch được nén thành lô: một giải pháp mở rộng đa năng."
+    "message": "A single zero-knowledge proof verifies multiple transactions compressed into batches, a general-purpose scaling solution."
   },
   "layer2.sidechains.title": {
     "message": "Sidechain và chuỗi riêng tư"
@@ -7139,7 +7172,7 @@
     "message": "Ra mắt tháng 2/2026"
   },
   "stablecoins.usdcx.tagline": {
-    "message": "USDCx: stablecoin đáng tin cậy nhất thế giới, nay đã có trên Cardano."
+    "message": "USDCx: The world's most trusted stablecoin, now on Cardano."
   },
   "stablecoins.usdcx.body1": {
     "message": "Bảo chứng 1:1 bằng USDC. Thanh khoản cross-chain."
@@ -7163,7 +7196,7 @@
     "message": "Ra mắt tháng 3/2024"
   },
   "stablecoins.usdm.tagline": {
-    "message": "USDM: stablecoin bảo chứng bằng tiền pháp định đầu tiên của Cardano."
+    "message": "USDM: Cardano's original fiat-backed stablecoin."
   },
   "stablecoins.usdm.body1": {
     "message": "Chịu sự giám sát của cơ quan quản lý, có dự trữ bảo chứng và được xây dựng từ đầu cho hệ sinh thái Cardano."
@@ -7220,7 +7253,7 @@
     "message": "Ra mắt tháng 1/2023"
   },
   "stablecoins.djed.tagline": {
-    "message": "DJED: stablecoin đầu tiên trong lịch sử được chứng minh bằng toán học."
+    "message": "DJED: The first mathematically proven stablecoin in history."
   },
   "stablecoins.djed.body1": {
     "message": "Không ngân hàng. Không đơn vị lưu ký. Chỉ có mật mã học, tài sản thế chấp và toán học mà bạn có thể tự kiểm chứng."
@@ -7247,13 +7280,13 @@
     "message": "Thuần DeFi"
   },
   "stablecoins.iusd.tagline": {
-    "message": "iUSD: kiếm lợi suất trong khi tài sản thế chấp của bạn vẫn nằm on-chain."
+    "message": "iUSD: Earn yield while your collateral stays on-chain."
   },
   "stablecoins.iusd.body1": {
     "message": "Một đồng đô la tổng hợp do cộng đồng DeFi của Cardano mint, dành cho cộng đồng DeFi của Cardano."
   },
   "stablecoins.iusd.body2": {
-    "message": "iUSD là tài sản neo theo đô la, hoàn toàn on-chain và không phụ thuộc vào bất kỳ đơn vị lưu ký hay ngân hàng nào. Được phát hành bởi Indigo Protocol, nền tảng tài sản tổng hợp của Cardano, iUSD cho phép người dùng khóa ada làm tài sản thế chấp trong một vị thế nợ có thế chấp (CDP) để mint iUSD."
+    "message": "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol (Cardano's synthetic asset platform), it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD."
   },
   "stablecoins.iusd.body3": {
     "message": "Với những người tham gia DeFi có kinh nghiệm, iUSD mở ra các chiến lược mà stablecoin bảo chứng bằng tiền pháp định không thể duy trì: giữ vị thế ada trong khi tạo thanh khoản stablecoin, hoặc cung cấp iUSD cho các giao thức cho vay để kiếm lợi suất ở cả hai phía."
@@ -7316,7 +7349,7 @@
     "message": "Phí bạn biết trước khi trả"
   },
   "stablecoins.whyCardano.fees.body1": {
-    "message": "Không ai nên bị bất ngờ vì phí giao dịch. Thế nhưng trên các mạng lưới bị tắc nghẽn, người dùng thường xuyên phải trả gấp nhiều lần mức phí dự kiến, hoặc chứng kiến giao dịch thất bại mà vẫn mất phí."
+    "message": "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee, or watch transactions fail while still paying the cost."
   },
   "stablecoins.whyCardano.fees.body2": {
     "message": "Giao dịch trên Cardano có tính tất định. Trước khi gửi giao dịch, bạn biết chính xác chi phí của nó. Không có phí thực thi ẩn, không có đấu giá phí, không có giao dịch thất bại mà vẫn tốn tiền."
@@ -7327,8 +7360,12 @@
   "stablecoins.whyCardano.governance.title": {
     "message": "Chiến lược tài chính được quản trị hậu thuẫn"
   },
+  "stablecoins.liveData.notAvailable": {
+    "message": "n/a",
+    "description": "Placeholder when a live stablecoin figure is missing"
+  },
   "stablecoins.whyCardano.governance.body1": {
-    "message": "Năm 2025, cộng đồng Cardano đã bỏ phiếu on-chain để phân bổ 70 triệu ada từ treasury nhằm thúc đẩy việc áp dụng stablecoin, đưa USDCx đến Cardano. Quyết định này không do một công ty, một hội đồng quản trị hay một nhóm lãnh đạo thiếu minh bạch trong phòng họp kín đưa ra. Chính những người nắm giữ ada đã quyết định, một cách minh bạch, on-chain và với kết quả có thể kiểm chứng."
+    "message": "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves: transparently, on-chain, and with verifiable results."
   },
   "stablecoins.whyCardano.governance.body2": {
     "message": "Hệ sinh thái stablecoin trên Cardano không bị định hình bởi lợi ích đơn phương của một thực thể duy nhất. Nó được hậu thuẫn bởi chính cộng đồng sử dụng nó và hướng tới sự bền vững lâu dài."
@@ -8130,7 +8167,7 @@
     "message": "Stablecoin trên Cardano"
   },
   "stablecoins.layout.description": {
-    "message": "Khám phá các stablecoin có trên Cardano: bảo chứng bằng tiền pháp định, thế chấp vượt mức và tổng hợp. Tìm hiểu cách chúng hoạt động, nơi để sở hữu chúng và vì sao nền tảng dễ dự đoán, phí thấp của Cardano tạo nên sự khác biệt."
+    "message": "Discover the stablecoins available on Cardano: fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference."
   },
   "stablecoins.ecosystem.title": {
     "message": "Hệ sinh thái stablecoin Cardano"
@@ -8160,7 +8197,7 @@
     "message": "Hiểu về stablecoin"
   },
   "stablecoins.explainer.intro1": {
-    "message": "Cardano hỗ trợ năm stablecoin đang hoạt động được phát hành gốc trên chuỗi: USDCx, USDM, USDA, DJED và iUSD, cùng với một số stablecoin khác đến Cardano qua cầu nối từ các hệ sinh thái khác."
+    "message": "Cardano supports five active stablecoins issued natively on the chain (USDCx, USDM, USDA, DJED, and iUSD), alongside several more that reach Cardano via bridges from other ecosystems."
   },
   "stablecoins.explainer.intro2": {
     "message": "Khác với hầu hết các blockchain, stablecoin trên Cardano là token gốc, không phải hợp đồng thông minh. Chúng được hỗ trợ trực tiếp và bình đẳng với ada, tài sản gốc của chính Cardano. Điều này có nghĩa là phí thấp hơn, không có rủi ro ẩn và các giao dịch chuyển luôn hoạt động đúng như bạn mong đợi."
@@ -8283,7 +8320,7 @@
     "message": "Đại dịch đã cho thấy tầm quan trọng của việc duy trì chuỗi cung ứng bền vững và minh bạch, đặc biệt trong nông nghiệp. Là nguồn cung cấp lương thực và sinh kế chính, chuỗi cung ứng nông nghiệp phải luôn vận hành để hỗ trợ đời sống và đảm bảo phúc lợi cho người dân trên toàn thế giới."
   },
   "useCases.agriculture.description2": {
-    "message": "Blockchain của Cardano mang đến một giải pháp vững chắc để cải thiện tính minh bạch và hiệu quả trong chuỗi cung ứng nông nghiệp. Nhờ hỗ trợ chứng nhận sản phẩm và truy xuất nguồn gốc từ trang trại đến bàn ăn, blockchain đảm bảo các bên liên quan, bao gồm nông dân, đơn vị vận chuyển và nhà bán lẻ, có thể theo dõi hành trình của hàng hóa một cách an toàn và bất biến. Điều này xây dựng niềm tin, nâng cao tính bền vững và đảm bảo trách nhiệm giải trình ở mọi giai đoạn của quy trình."
+    "message": "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders, including farmers, transporters, and retailers, can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."
   },
   "useCases.retail.title": {
     "message": "Bán lẻ"
@@ -8409,7 +8446,7 @@
     "message": "Con cáo nâu nhanh nhẹn nhảy qua con chó lười"
   },
   "brandAssets.typography.credit": {
-    "message": "của Omnibus-Type, có trên"
+    "message": "by Omnibus-Type via"
   },
   "brandAssets.typography.fallback": {
     "message": "Font dự phòng: Arial, sans-serif"
@@ -8529,7 +8566,7 @@
     "message": "Kết nối ví và ký một giao dịch"
   },
   "governance.delegation.step4.text": {
-    "message": "Quyền biểu quyết của bạn giờ đã được DRep đại diện. Bạn có thể thay đổi ủy quyền bất cứ lúc nào, ada của bạn vẫn hoàn toàn nằm trong tầm kiểm soát của bạn."
+    "message": "Your voting power is now represented by your DRep. You can change your delegation at any time. Your ada stays fully under your control."
   },
   "governance.delegation.done.thanks": {
     "message": "Cảm ơn bạn đã tham gia quản trị on-chain và góp phần định hình tương lai của Cardano."
@@ -8904,7 +8941,7 @@
     "message": "Tìm ví phù hợp với bạn"
   },
   "walletSection.cta.description": {
-    "message": "Ví cho phép bạn lưu trữ, gửi và nhận ada. Có rất nhiều lựa chọn cho các nền tảng và nhu cầu khác nhau. Hãy dùng Công cụ tìm ví của chúng tôi để so sánh tính năng và chọn ví phù hợp nhất với bạn."
+    "message": "A wallet holds the keys to your ada and lets you send and receive it. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best."
   },
   "walletSection.cta.button": {
     "message": "Tìm ví"
@@ -8919,13 +8956,13 @@
     "message": "Tìm ví Cardano"
   },
   "walletFinder.hero.description": {
-    "message": "So sánh các ví Cardano theo nền tảng, tính năng và mức độ bảo mật để tìm ví phù hợp với nhu cầu của bạn"
+    "message": "Compare Cardano wallets for mobile, desktop and hardware by features and security to find the one that fits your needs"
   },
   "walletFinder.meta.title": {
-    "message": "Công cụ tìm ví Cardano, so sánh và chọn ví tốt nhất"
+    "message": "Cardano Wallet Finder: Compare Mobile, Desktop and Hardware Wallets"
   },
   "walletFinder.meta.description": {
-    "message": "Tìm ví Cardano tốt nhất cho bạn. Lọc theo nền tảng, staking, hỗ trợ NFT, khả năng tương thích với ví cứng và nhiều tiêu chí khác. So sánh các ví cạnh nhau."
+    "message": "Find the best Cardano wallet for mobile or desktop. Filter by staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
   },
   "walletFinder.mode.beginner.title": {
     "message": "Tôi mới biết đến Cardano"
@@ -9531,7 +9568,7 @@
     "message": "Phần thưởng được chi trả mỗi [epoch](/glossary/epoch) một lần, tức năm ngày trên Cardano. Nguồn gốc của phần thưởng được giải thích trên trang [ủy quyền stake](/stake-pool-delegation) và chi tiết hơn trong [Cardano hoạt động như thế nào](/how-cardano-works#network)."
   },
   "hardforks.upgrades.description": {
-    "message": "Mọi bản nâng cấp cho đến nay đều được kích hoạt thông qua [hard fork combinator](/glossary/hard-fork-combinator) trong khi mạng lưới vẫn tiếp tục hoạt động. Cách một bản nâng cấp được đề xuất, được phê duyệt qua [quản trị](/governance) và được triển khai được giải thích trong [Cardano hoạt động như thế nào](/how-cardano-works#upgrades)."
+    "message": "Every upgrade since Shelley went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."
   },
   "research.intro.description": {
     "message": "Thiết kế của Cardano dựa trên nghiên cứu được bình duyệt khoa học, từ họ giao thức [Ouroboros](/ouroboros) dựa trên [proof-of-stake](/glossary/proof-of-stake) đến mô hình [quản trị](/governance) trên chuỗi. Các bài báo và đặc tả dưới đây được nhóm theo từng kỷ nguyên phát triển. Để có cái nhìn tổng quan bằng ngôn ngữ dễ hiểu về những gì chúng tạo nên, hãy đọc [Cardano hoạt động như thế nào](/how-cardano-works)."
@@ -10132,7 +10169,7 @@
     "message": "The van Rossem hard fork in July 2026 moved Cardano to protocol version 11 with 77.6% of DRep stake, 52.5% of pool stake, and six of seven committee votes. It was the first hard fork approved by all three groups."
   },
   "governance.howItWorks.matrix.constitution.desc": {
-    "message": "Replaces the constitution, its guardrails script, or both."
+    "message": "Replaces the constitution, its guardrails script, or both. Changes can be drafted and discussed off-chain first, on the [Constitutional Amendment Portal](https://cap.intersectmbo.org/)."
   },
   "governance.howItWorks.matrix.constitution.example": {
     "message": "The January 2026 update passed with 79.9% of DRep stake and six of seven committee votes. The first version passed in February 2025 with 84.7%."
@@ -10684,20 +10721,15 @@
   "governance.howItWorks.canvas.weightedByStake": {
     "message": "weighted by pool stake"
   },
-  "governance.howItWorks.canvas.proposal": {
-    "message": "PROPOSAL"
-  },
-  "governance.howItWorks.canvas.constitution": {
-    "message": "CONSTITUTION"
-  },
   "governance.howItWorks.canvas.constitutionalCommittee": {
     "message": "CONSTITUTIONAL COMMITTEE"
   },
-  "governance.howItWorks.canvas.scaleNote": {
+  "governance.howItWorks.canvas.checkNote": {
     "message": "checks actions against the constitution"
   },
-  "governance.howItWorks.canvas.inBalance": {
-    "message": "IN BALANCE WITH THE CONSTITUTION"
+  "governance.howItWorks.canvas.constitutional": {
+    "message": "CONSTITUTIONAL",
+    "description": "Stamped on a governance action the Constitutional Committee found to follow the constitution"
   },
   "governance.howItWorks.sim.securityParam": {
     "message": "Changes a security-relevant parameter, so stake pools vote too"
@@ -11691,7 +11723,7 @@
     "message": "How much money will a stake pool operator make? Will it be profitable?"
   },
   "stakePoolOperation.faq.profit.a": {
-    "message": "You can use the [rewards calculator](/calculator) to get an idea of the rewards you will earn. It’s important to note that the calculator produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. Over time, parameters may be changed that could affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return."
+    "message": "Income depends on how much stake your pool attracts, how many blocks it produces and the fees you set. Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost), plus an optional margin, and both come out of the pool's rewards before the rest goes to delegators. Small pools may not produce a block in every epoch, so their income varies a lot. Registering a pool also takes a refundable 500 ada [deposit](/glossary/stake-pool-deposit). The [rewards calculator](/calculator) gives estimates only, never a guarantee."
   },
   "stakePoolOperation.faq.skills.q": {
     "message": "What skills do stake pool operators require?"
@@ -11712,34 +11744,22 @@
     "message": "Server administration skills. (operational and maintenance)"
   },
   "stakePoolOperation.faq.os.q": {
-    "message": "Which operating system do you support?"
+    "message": "Which operating systems can run a stake pool?"
   },
   "stakePoolOperation.faq.os.a1": {
-    "message": "We support Linux, Berkeley Software Distribution (BSD), Mac, and Windows platforms. The following versions are required:"
-  },
-  "stakePoolOperation.faq.os.a2": {
-    "message": "Linux (2.6.18 or later)"
-  },
-  "stakePoolOperation.faq.os.a3": {
-    "message": "BSD (NetBSD 8.x and FreeBSD 12.x)"
-  },
-  "stakePoolOperation.faq.os.a4": {
-    "message": "OSX (10.7 Lion or later)"
-  },
-  "stakePoolOperation.faq.os.a5": {
-    "message": "Windows 10"
+    "message": "Block producers and relays are supported on 64-bit Linux only. The node also runs on Windows and macOS, but only as a desktop client. The [cardano-node release notes](https://github.com/IntersectMBO/cardano-node/releases) list the supported distributions and the minimum hardware."
   },
   "stakePoolOperation.faq.private.q": {
     "message": "Can I run a private stake pool?"
   },
   "stakePoolOperation.faq.private.a": {
-    "message": "Yes, this is technically possible. It can be achieved by registering a stake pool and setting the operator rewards percentage to 100%, so that anybody that delegates to your stake pool will not receive any rewards. This will disincentivize delegators from delegating to you, but provide you with the ability to stake your ada and singly reap the rewards, while testing your stake pool operations."
+    "message": "Yes, this is technically possible. Register a stake pool and set its margin to 100%, so delegators to your pool receive no rewards and have no reason to join. You can still stake your own ada and test your stake pool operations."
   },
   "stakePoolOperation.faq.attract.q": {
     "message": "How should I attract ada holders to my pool?"
   },
   "stakePoolOperation.faq.attract.a1": {
-    "message": "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:"
+    "message": "Delegators compare pools by their block production, fees, pledge and saturation, so keep your pool online and producing the blocks it is elected for. Your [pledge](/glossary/pledge), the ada you commit to your own pool, is visible to everyone. Additionally, stake pool operators can inform users about:"
   },
   "stakePoolOperation.faq.attract.a2": {
     "message": "Security: details of how a stake pool has been secured against hackers"
@@ -11757,31 +11777,31 @@
     "message": "What is pledging?"
   },
   "stakePoolOperation.faq.pledging.a": {
-    "message": "Pledging refers to stake pool owners’ ability to delegate personal stake to their pool. While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
+    "message": "Pledging means committing your own ada to your pool. There is no required minimum, but the pool owners must delegate at least the declared pledge to the pool, or it earns no rewards for that epoch. All else being equal and up to saturation, a higher pledge slightly increases the pool's rewards, and the [a0](/glossary/a0) protocol parameter sets by how much. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
   },
   "stakePoolOperation.faq.bugs.q": {
     "message": "How will my pool be affected by bugs?"
   },
   "stakePoolOperation.faq.bugs.a": {
-    "message": "Stake pool operators will need to be available as much as possible to respond to any network or performance alerts. It is important that pools ensure their node is running the latest software. This will be important both for testnet and mainnet operations."
+    "message": "Stake pool operators need to stay available to respond to network or performance alerts and keep their node on a supported release. New node versions and required upgrades are published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases)."
   },
   "stakePoolOperation.faq.goodPool.q": {
     "message": "What makes a good stake pool?"
   },
   "stakePoolOperation.faq.goodPool.a": {
-    "message": "Stake pools are ranked based on their overall performance and other key information. The performance metric is a calculation based on the number of blocks the pool was tasked to create compared with the number of blocks it actually created, and is recorded over time. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
+    "message": "Wallets and pool explorers show each pool's performance, which compares the blocks it actually made with the blocks it was expected to make given its stake. Delegators also look at fees, pledge and saturation. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
   },
   "stakePoolOperation.faq.notifications.q": {
     "message": "Will I be notified of network changes?"
   },
   "stakePoolOperation.faq.notifications.a": {
-    "message": "Updates and releases for the network will follow proper release schedules. We recommend operators follow our social media accounts for the latest updates."
+    "message": "Yes, if you sign up for [stake pool operator updates](/signal-operator-notification). New node versions are also published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases)."
   },
   "stakePoolOperation.faq.rewards.q": {
     "message": "Are rewards guaranteed?"
   },
   "stakePoolOperation.faq.rewards.a": {
-    "message": "Rewards for delegation can be earned if you delegate to a stake pool that is sharing rewards. The amount you earn cannot be guaranteed and will ultimately depend on the stake pool, the amount of rewards shared, and its performance. It is worth noting that rewards will only begin to be granted from the end of the epoch in which the associated stake was delegated."
+    "message": "No. Rewards depend on how many blocks the pool produces, which follows its stake but also involves luck, and on the fees it charges. The protocol pays rewards directly to the operator and the delegators, and a pool never holds delegated ada. Rewards also start with a delay: stake delegated in epoch N becomes active in epoch N+2, and the first rewards are paid at the start of epoch N+4."
   },
   "termExplainer.staking.delegation.term": {
     "message": "Delegation"
@@ -11943,6 +11963,15 @@
   },
   "governance.faq.item.governanceAction.a1": {
     "message": "A governance action is an on-chain proposal that can change how Cardano works. There are several types, including protocol parameter changes, hard fork initiations, treasury withdrawals, and constitutional amendments. Each type requires different approval thresholds from DReps, SPOs, and the Constitutional Committee."
+  },
+  "governance.faq.item.amendConstitution.q": {
+    "message": "How can I propose a change to the constitution?"
+  },
+  "governance.faq.item.amendConstitution.a1": {
+    "message": "The constitution changes only through an on-chain governance action that DReps ratify with at least 75% of their stake and the Constitutional Committee approves."
+  },
+  "governance.faq.item.amendConstitution.a2": {
+    "message": "Before that, you can raise your idea on Intersect's [Constitutional Amendment Portal](https://cap.intersectmbo.org/), currently in alpha. Submit a [Constitutional Amendment Proposal](/glossary/constitutional-amendment-proposal) to propose new wording, or a [Constitutional Issue Statement](/glossary/constitutional-issue-statement) to describe a problem without a fix. Both are discussed in public before any governance action is submitted."
   },
   "governance.faq.item.noDelegation.a2": {
     "message": "Since the Plomin hard fork, staking rewards can only be withdrawn once your stake key also has an active [vote delegation](/governance/delegate), to a DRep, Abstain or No Confidence. Your rewards keep adding up in the meantime. A proposed change, [CIP-181](https://cips.cardano.org/cip/CIP-181), would remove this requirement with a future hard fork."
@@ -12436,6 +12465,22 @@
   },
   "insightsEpochNav.jumpTo": {
     "message": "Jump to epoch"
+  },
+  "insightsEpochNav.prev": {
+    "message": "Prev",
+    "description": "Button that shows the previous epoch"
+  },
+  "insightsEpochNav.next": {
+    "message": "Next",
+    "description": "Button that shows the next epoch"
+  },
+  "insightsEpochNav.go": {
+    "message": "Go",
+    "description": "Button that shows the epoch typed into the input"
+  },
+  "insightsEpochNav.jump": {
+    "message": "Jump…",
+    "description": "Mobile button that opens the jump to epoch input"
   },
   "docs.hero.getInvolved.title": {
     "message": "Get Involved"
