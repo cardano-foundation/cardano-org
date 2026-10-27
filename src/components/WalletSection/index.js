@@ -12,7 +12,7 @@ export default function WalletSection() {
       <TitleWithText headingLevel={2}
         title={translate({id: 'walletSection.cta.title', message: 'Find the Right Wallet for You'})}
         description={[
-          translate({id: 'walletSection.cta.description', message: 'A wallet lets you store, send, and receive ada. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best.'}),
+          translate({id: 'walletSection.cta.description', message: "A wallet holds the keys to your ada and lets you send and receive it. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best."}),
         ]}
         titleType="black"
         headingDot={true}

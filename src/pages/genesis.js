@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <SiteHero
       title={translate({id: 'genesis.hero.title', message: 'Genesis'})}
-      description={translate({id: 'genesis.hero.description', message: 'Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017.'})}
+      description={translate({id: 'genesis.hero.description', message: "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."})}
       bannerType="starburst"
     />
   );
@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <Layout
       title={translate({id: 'genesis.layout.title', message: 'Cardano Genesis Distribution, Initial ada Allocation'})}
-      description={translate({id: 'genesis.layout.description', message: 'Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017.'})}
+      description={translate({id: 'genesis.layout.description', message: "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."})}
     >
       <OpenGraphInfo pageName="genesis" />
       <HomepageHeader />
@@ -33,9 +33,9 @@ export default function Home() {
           <TitleWithText headingLevel={2}
             title={translate({id: 'genesis.distribution.title', message: 'Distribution'})}
             description={[
-              translate({id: 'genesis.distribution.paragraph1', message: 'The initial distribution of ada, essentially a pre-launch sales event, was the first in the cryptocurrency industry to set Know Your Customer guidelines, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Ada Voucher Distribution Stats section.'}),
+              translate({id: 'genesis.distribution.paragraph1', message: "The initial distribution of ada, essentially a pre-launch sales event, was run with Know Your Customer checks, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Stats section."}),
 
-              translate({id: 'genesis.distribution.paragraph2', message: 'In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool; IOHK, EMURGO, and the Cardano Foundation, as follows:'}),
+              translate({id: 'genesis.distribution.paragraph2', message: "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool, IOHK, EMURGO, and the Cardano Foundation, as follows:"}),
 
               translate({id: 'genesis.distribution.cardanoFoundation', message: 'The Cardano Foundation, Switzerland: **648,176,761 ada**'}),
 
@@ -58,7 +58,7 @@ export default function Home() {
             <TitleWithText headingLevel={2}
             title={translate({id: 'genesis.proceeds.title', message: 'Proceeds'})}
             description={[
-              translate({id: 'genesis.proceeds.paragraph1', message: 'The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC. Further information on the sale can be found here.'}),
+              translate({id: 'genesis.proceeds.paragraph1', message: "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC."}),
 
               translate({id: 'genesis.proceeds.paragraph2', message: 'A part of the total sales proceeds were donated to the Cardano Foundation as follows:'}),
 

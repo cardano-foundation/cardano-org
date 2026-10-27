@@ -32,7 +32,7 @@ const EXCLUDED = new Set(['docs/get-involved/style-guide.md']);
 const listFiles = ({ dirs, ext }) =>
   execFileSync(
     'git',
-    ['ls-files', '--cached', '--others', '--exclude-standard', '--', ...dirs],
+    ['ls-files', '--cached', '--others', '--exclude-standard', '--deduplicate', '--', ...dirs],
     { encoding: 'utf8' }
   )
     .split('\n')

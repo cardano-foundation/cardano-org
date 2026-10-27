@@ -43,7 +43,7 @@ export default function Home() {
         <FeaturedTitleWithText headingLevel={2}
             title={translate({id: 'ouroboros.whatIs.title', message: 'What Is Ouroboros?'})}
             description={[
-              translate({id: 'ouroboros.whatIs.description1', message: 'Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. Ouroboros combines unique technology and mathematically-verified mechanisms - which, in turn, combine behavioral psychology and economic philosophy - to ensure the security and sustainability of the blockchains that depend upon it. The result is a protocol with proven security guarantees able to facilitate the propagation of global, permissionless networks with minimal energy requirements - of which Cardano is the first.'}),
+              translate({id: 'ouroboros.whatIs.description1', message: "Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. It combines cryptography with mathematically verified mechanisms that draw on game theory and economics to keep the blockchains that depend on it secure and sustainable. The result is a protocol with proven security guarantees that supports global, permissionless networks with minimal energy requirements. Cardano was the first of them."}),
               translate({id: 'ouroboros.whatIs.description2', message: 'At the heart of Ouroboros is the concept of infinity. Global networks must be able to grow sustainably and ethically: to provide greater opportunities to the world while also preserving it. This becomes possible with Ouroboros.'}),
               translate({id: 'ouroboros.whatIs.description3', message: 'Ouroboros facilitates the creation and fruition of distributed, permissionless networks capable of sustainably supporting new markets.'}),
             ]}
@@ -59,7 +59,7 @@ export default function Home() {
                 title={translate({id: 'ouroboros.features.provablySecure.title', message: 'Provably Secure'})}
                 text={[
                   translate({id: 'ouroboros.features.provablySecure.text1', message: 'Ouroboros features mathematically verifiable security against attackers.'}),
-                  translate({id: 'ouroboros.features.provablySecure.text2', message: 'The protocol is guaranteed to be secure so long as 51% of the stake (in the case of Cardano, ada) is held by honest participants, which, in addition to other novel concepts, is achieved through random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis.'}),
+                  translate({id: 'ouroboros.features.provablySecure.text2', message: "The protocol is proven secure as long as more than half of the stake, in the case of Cardano ada, is held by honest participants. One of the mechanisms behind this is random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis."}),
                 ]}
                 headingDot={true}
               />
@@ -77,7 +77,7 @@ export default function Home() {
                 title={translate({id: 'ouroboros.features.stakeDelegation.title', message: 'Stake Delegation And Stake Pools'})}
                 text={[
                   translate({id: 'ouroboros.features.stakeDelegation.text1', message: 'Ouroboros is a proof-of-stake protocol. It distributes network control across stake pools: node operators with the infrastructure required to ensure a consistent and reliable connection to the network.'}),
-                  translate({id: 'ouroboros.features.stakeDelegation.text2', message: 'For each slot, a stake pool is assigned as the slot leader, and is rewarded for adding a block to the chain. Ada holders may delegate their stake to a specific stake pool, increasing its chance of being selected as the slot leader, and share in the stake pool\'s rewards.'}),
+                  translate({id: 'ouroboros.features.stakeDelegation.text2', message: "In every slot, each stake pool has a chance to become slot leader in proportion to its stake. On average only one slot in twenty has a leader, who adds a block to the chain. Ada holders may delegate their stake to a stake pool, which increases its chance of being elected, and share in the rewards the protocol pays out every epoch. [How Cardano works](/how-cardano-works#consensus) explains the details."}),
                 ]}
                 headingDot={true}
               />
@@ -85,10 +85,15 @@ export default function Home() {
                 imageName="power-arrows"
                 title={translate({id: 'ouroboros.features.energyEfficient.title', message: 'Energy Efficient'})}
                 text={[
-                  translate({id: 'ouroboros.features.energyEfficient.text1', message: 'Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol).'}),
+                  translate({id: 'ouroboros.features.energyEfficient.text1', message: "Ouroboros addresses one of the biggest challenges of proof-of-work blockchains: the need for more and more energy to reach consensus. Block producers do not compete on computing power, so Cardano runs on ordinary servers and can scale securely and sustainably."}),
                 ]}
                 headingDot={true}
               />
+        <TitleWithText headingLevel={2}
+          title={translate({id: 'ouroboros.variants.title', message: 'Which version of Ouroboros does Cardano run?'})}
+          description={translate({id: 'ouroboros.variants.description', message: 'Ouroboros is a family of protocols. Cardano mainnet runs Ouroboros Praos, which elects slot leaders privately using verifiable random functions. Ouroboros Genesis lets a new node find the honest chain without trusted checkpoints and is available in the node as an opt-in setting on mainnet. Peras and Leios are newer members of the family that target faster settlement and higher throughput. The [Ouroboros glossary entry](/glossary/ouroboros) describes each variant.'})}
+          headingDot={true}
+        />
         <TitleWithText headingLevel={2}
           description={translate({id: 'ouroboros.vision.backLink', message: 'Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end.'})}
         />
@@ -98,7 +103,7 @@ export default function Home() {
       <BackgroundWrapper backgroundType={"gradientDark"}>
           <BoundaryBox>
             <CtaOneColumn headingLevel={2}
-              title={translate({id: 'ouroboros.cta.title', message: 'Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation.'})}
+              title={translate({id: 'ouroboros.cta.title', message: "Attack the protocol or fork the blockchain? Explore the Ouroboros protocol firsthand in this interactive simulation."})}
               buttonLabel={translate({id: 'ouroboros.cta.buttonLabel', message: 'Play the game'})}
               buttonLink={"https://ouroboros.iohk.io/ouroboros-game/"}
             />

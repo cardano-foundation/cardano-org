@@ -911,8 +911,8 @@ export const Showcases = [
   {
     title: "VESPR",
     description:
-      "Non-custodial mobile wallet for Cardano. Designed for newcomers with simple onboarding, friendly defaults, and security that keeps private keys on-device.",
-    tagline: "Beginner-friendly mobile wallet",
+      "Non-custodial Cardano wallet for iOS, Android and Chromium browsers. Built for newcomers with simple onboarding, friendly defaults, and security that keeps private keys on-device.",
+    tagline: "Beginner-friendly mobile and browser wallet",
     preview: require("./app-screenshots/vespr.webp"),
     extraPreviews: [
       require("./app-screenshots/vespr-nfts.webp"),
@@ -920,7 +920,7 @@ export const Showcases = [
     ],
     icon: "/img/app-icons/vespr.jpg",
     statsLabel: "vespr",
-    website: "https://www.vespr.xyz/#/",
+    website: "https://vespr.xyz",
     source: null,
     category: "wallet",
     properties: ["nft"],
@@ -931,9 +931,9 @@ export const Showcases = [
       date: "2024-01-22",
     },
     walletFeatures: {
-      platforms: ["ios", "android"],
+      platforms: ["ios", "android", "browser"],
       custody: "non-custodial",
-      features: ["staking", "nft", "dapp-connector", "multi-asset", "governance", "qr-claim", "easy-setup"],
+      features: ["staking", "nft", "dapp-connector", "multi-asset", "hardware-wallet", "dex", "governance", "qr-claim", "easy-setup"],
       type: "light",
     },
   },

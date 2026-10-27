@@ -12,7 +12,7 @@ export default function HowToBuyAdaSection() {
         <div className="container">
           <div className="row">
             <div className={clsx("col col--6", styles.leftColumn)}>
-              <h2 className="headingDot heading-look-h1">{translate({id: 'howToBuyAda.title', message: 'How Do I Buy/Sell Ada?'})}</h2>
+              <h2 className="headingDot heading-look-h1">{translate({id: 'howToBuyAda.title', message: "How do I buy or sell ada?"})}</h2>
             </div>
             <div className={clsx("col col--6", styles.rightColumn)}>
               <p>

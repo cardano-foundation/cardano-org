@@ -596,22 +596,22 @@
     "message": "What is ada?"
   },
   "whatIsAda.section.title": {
-    "message": "Ada Is The Native Token Of Cardano"
+    "message": "Ada is the native currency of Cardano"
   },
   "whatIsAda.section.description1": {
     "message": "It is named after Ada Lovelace: a 19th-century mathematician who is recognized as the first computer programmer, and is the daughter of the poet Lord Byron."
   },
   "whatIsAda.section.description2": {
-    "message": "Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value, without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain."
+    "message": "Ada is a digital currency. Anyone, anywhere in the world, can use ada to exchange value directly, without a third party in between. Every transaction is recorded permanently and transparently on the Cardano blockchain."
   },
   "whatIsAda.section.description3": {
-    "message": "Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards (to participate in the successful running of the network), or found and run your own stake pool to increase the pool's likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform."
+    "message": "Every ada holder also holds a stake in the Cardano network. You can delegate your ada to a stake pool to help run the network and earn rewards, and it never leaves your wallet while you do. Ada pays the fees for every transaction, lets you take part in on-chain governance by voting as a DRep or delegating your voting power to one, and is used across the applications and services built on Cardano."
   },
   "whatIsAda.section.quote": {
     "message": "What can I do with ada?"
   },
   "howToBuyAda.title": {
-    "message": "How Do I Buy/Sell Ada?"
+    "message": "How do I buy or sell ada?"
   },
   "howToBuyAda.description1": {
     "message": "There are many ways to obtain ada to use the Cardano blockchain. Find out on {whereToGetAdaLink}"
@@ -1023,7 +1023,7 @@
     "message": "Centralized Exchanges"
   },
   "whereToGetAda.cex.description": {
-    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control."
+    "message": "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-a-wallet) that you control."
   },
   "whereToGetAda.cex.disclaimer": {
     "message": "Listing here does not imply endorsement. This data is crowd-sourced by the community. Visit [CoinMarketCap](https://coinmarketcap.com/currencies/cardano/#Markets) to see a full list of exchanges that support [ada](/what-is-ada/)."
@@ -1032,7 +1032,7 @@
     "message": "Decentralized Exchanges"
   },
   "whereToGetAda.dex.description": {
-    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges."
+    "message": "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. You keep your ada in your own wallet instead of handing it to an exchange, but smart contracts carry their own risks, and every trade is public on the blockchain."
   },
   "whereToGetAda.dex.disclaimer": {
     "message": "DEXs are not suitable for beginners, as you must already have [ada](/what-is-ada/) to use them. Listing here does not imply endorsement. Transaction data is based on the last 30 days."
@@ -1050,13 +1050,13 @@
     "message": "Receive ada"
   },
   "whereToGetAda.receive.description1": {
-    "message": "Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets)."
+    "message": "To hold [ada](/what-is-ada/) yourself, you need a [Cardano wallet](/what-is-a-wallet)."
   },
   "whereToGetAda.receive.description2": {
-    "message": "Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer."
+    "message": "Once you have a [Cardano wallet](/what-is-a-wallet), share its receiving address with anyone who wants to send you [ada](/what-is-ada/) (or other native tokens) peer-to-peer. To send ada, enter the recipient's address in your wallet and approve the transaction."
   },
   "whereToGetAda.receive.description3": {
-    "message": "Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
+    "message": "Some [wallets](/wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."
   },
   "whereToGetAda.divider.funding": {
     "message": "Get funded in ada"
@@ -1065,7 +1065,7 @@
     "message": "Project Catalyst"
   },
   "whereToGetAda.funding.description": {
-    "message": "Discover Cardano's innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal."
+    "message": "Project Catalyst is Cardano's community innovation fund. It pays [ada](/what-is-ada/) to proposals that the community votes for. Visit [Project Catalyst](https://projectcatalyst.io) to see whether a funding round is open."
   },
   "whereToGetAda.divider.rewards": {
     "message": "Staking rewards"
@@ -1074,10 +1074,10 @@
     "message": "Staking rewards"
   },
   "whereToGetAda.staking.description1": {
-    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding."
+    "message": "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which takes more effort, technical knowledge and a refundable 500 ada pool deposit."
   },
   "whereToGetAda.staking.description2": {
-    "message": "Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process."
+    "message": "Cardano offers several advantages for [staking](/glossary/staking). Registering your stake key takes a refundable [deposit](/glossary/stake-address-deposit) of 2 [ada](/what-is-ada/). Beyond that, there is no minimum amount. There is no risk of slashing (losing your staked ada) and no locking period. Your ada stays in your wallet, so you can spend it at any time. Rewards are paid by the protocol itself, not by the pools."
   },
   "commonScams.hero.title": {
     "message": "Common Cardano scams"
@@ -2244,13 +2244,13 @@
     "message": "Genesis"
   },
   "genesis.hero.description": {
-    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+    "message": "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."
   },
   "genesis.layout.title": {
     "message": "Cardano Genesis Distribution, Initial ada Allocation"
   },
   "genesis.layout.description": {
-    "message": "Distribution of ada token vouchers, which are part of the Cardano settlement layer, took place in Asia in four stages between October 2015 and the start of January 2017."
+    "message": "Distribution of ada token vouchers took place in Asia in five tranches between September 2015 and January 2017."
   },
   "genesis.divider.distribution": {
     "message": "Genesis Distribution"
@@ -2259,10 +2259,10 @@
     "message": "Distribution"
   },
   "genesis.distribution.paragraph1": {
-    "message": "The initial distribution of ada, essentially a pre-launch sales event, was the first in the cryptocurrency industry to set Know Your Customer guidelines, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Ada Voucher Distribution Stats section."
+    "message": "The initial distribution of ada, essentially a pre-launch sales event, was run with Know Your Customer checks, and an audit was performed on the distribution process. Information and statistics about the voucher distribution are detailed below in the Stats section."
   },
   "genesis.distribution.paragraph2": {
-    "message": "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool; IOHK, EMURGO, and the Cardano Foundation, as follows:"
+    "message": "In addition to these ada, the Genesis Block Distribution includes an amount equal to 20% of the ada vouchers sold during the Sale period, or **5,185,414,108 ada**. These have been generated and distributed to three groups of entities of the Cardano ecosystem that are part of the Technical and Business Development Pool, IOHK, EMURGO, and the Cardano Foundation, as follows:"
   },
   "genesis.distribution.cardanoFoundation": {
     "message": "The Cardano Foundation, Switzerland: **648,176,761 ada**"
@@ -2286,7 +2286,7 @@
     "message": "Proceeds"
   },
   "genesis.proceeds.paragraph1": {
-    "message": "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC. Further information on the sale can be found here."
+    "message": "The ada vouchers were sold by a Japanese corporation and its sales force in Japan with total gross sales of 108,844.5 BTC."
   },
   "genesis.proceeds.paragraph2": {
     "message": "A part of the total sales proceeds were donated to the Cardano Foundation as follows:"
@@ -2324,6 +2324,9 @@
   "hardforks.timeline.shelley.description": {
     "message": "Introduced staking and decentralization features, transitioning from a federated to a decentralized system."
   },
+  "hardforks.timeline.obft.description": {
+    "message": "Switched consensus from Ouroboros Classic to Ouroboros BFT, the bridge to the Shelley hard fork."
+  },
   "hardforks.timeline.allegra.description": {
     "message": "Added token locking capabilities, which was a prerequisite for the smart contract functionality."
   },
@@ -2331,7 +2334,10 @@
     "message": "Brought native token functionality to Cardano, allowing users to create and transact with custom tokens."
   },
   "hardforks.timeline.alonzo.description": {
-    "message": "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps)."
+    "message": "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (DApps)."
+  },
+  "hardforks.timeline.lobster.description": {
+    "message": "Intra-era upgrade that fixed a bug in how time is converted for Plutus scripts."
   },
   "hardforks.timeline.vasil.description": {
     "message": "Improved the scalability and performance of the network, named after Vasil Dabov, a Cardano community member."
@@ -2343,10 +2349,10 @@
     "message": "Introduced further improvements to Plutus smart contract functionality and overall network performance."
   },
   "hardforks.timeline.chang1.description": {
-    "message": "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations."
+    "message": "Introducing the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only."
   },
   "hardforks.timeline.plomin.description": {
-    "message": "Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role."
+    "message": "Ended the bootstrap phase of CIP-1694. DReps vote on every type of governance action, and treasury withdrawals, constitution updates, no-confidence motions and changes to the Constitutional Committee became possible."
   },
   "hardforks.hero.title": {
     "message": "Hard forks"
@@ -2364,7 +2370,7 @@
     "message": "Cardano Hard Forks"
   },
   "hardforks.content.description": {
-    "message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
+    "message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch to new protocol rules, sometimes starting a new era, applying new functions, validation rules, or parameter values. Stake pool operators install the new node version ahead of time. Since Plomin, the switch itself is approved on chain through a [hard fork governance action](/glossary/hard-fork-initiation). A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
   },
   "hardforks.divider.timeline": {
     "message": "Timeline"
@@ -2373,7 +2379,7 @@
     "message": "hard fork transaction ids"
   },
   "hardforks.transactionIds.description": {
-    "message": "Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks."
+    "message": "Byron, the OBFT switch, Shelley, Alonzo and the Lobster upgrade are listed without a single transaction ID. Up to Chang, each ID is a protocol update proposal that triggered the hard fork. Plomin and van Rossem were approved as [hard fork governance actions](/glossary/hard-fork-initiation), and their IDs identify those actions."
   },
   "learn.hero.heading": {
     "message": "Learn Cardano"
@@ -2433,7 +2439,7 @@
     "message": "What Is Ouroboros?"
   },
   "ouroboros.whatIs.description1": {
-    "message": "Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. Ouroboros combines unique technology and mathematically-verified mechanisms - which, in turn, combine behavioral psychology and economic philosophy - to ensure the security and sustainability of the blockchains that depend upon it. The result is a protocol with proven security guarantees able to facilitate the propagation of global, permissionless networks with minimal energy requirements - of which Cardano is the first."
+    "message": "Ouroboros is the first provably secure proof-of-stake protocol, and the first blockchain protocol to be based on peer-reviewed research. It combines cryptography with mathematically verified mechanisms that draw on game theory and economics to keep the blockchains that depend on it secure and sustainable. The result is a protocol with proven security guarantees that supports global, permissionless networks with minimal energy requirements. Cardano was the first of them."
   },
   "ouroboros.whatIs.description2": {
     "message": "At the heart of Ouroboros is the concept of infinity. Global networks must be able to grow sustainably and ethically: to provide greater opportunities to the world while also preserving it. This becomes possible with Ouroboros."
@@ -2457,7 +2463,7 @@
     "message": "Ouroboros features mathematically verifiable security against attackers."
   },
   "ouroboros.features.provablySecure.text2": {
-    "message": "The protocol is guaranteed to be secure so long as 51% of the stake (in the case of Cardano, ada) is held by honest participants, which, in addition to other novel concepts, is achieved through random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis."
+    "message": "The protocol is proven secure as long as more than half of the stake, in the case of Cardano ada, is held by honest participants. One of the mechanisms behind this is random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis."
   },
   "ouroboros.features.incentivesRewards.title": {
     "message": "Incentives & Rewards"
@@ -2475,16 +2481,22 @@
     "message": "Ouroboros is a proof-of-stake protocol. It distributes network control across stake pools: node operators with the infrastructure required to ensure a consistent and reliable connection to the network."
   },
   "ouroboros.features.stakeDelegation.text2": {
-    "message": "For each slot, a stake pool is assigned as the slot leader, and is rewarded for adding a block to the chain. Ada holders may delegate their stake to a specific stake pool, increasing its chance of being selected as the slot leader, and share in the stake pool's rewards."
+    "message": "In every slot, each stake pool has a chance to become slot leader in proportion to its stake. On average only one slot in twenty has a leader, who adds a block to the chain. Ada holders may delegate their stake to a stake pool, which increases its chance of being elected, and share in the rewards the protocol pays out every epoch. [How Cardano works](/how-cardano-works#consensus) explains the details."
   },
   "ouroboros.features.energyEfficient.title": {
     "message": "Energy Efficient"
   },
   "ouroboros.features.energyEfficient.text1": {
-    "message": "Ouroboros solves the greatest challenge faced by existing blockchains: the need for more and more energy to achieve consensus. Using Ouroboros, Cardano is able to securely, sustainably, and ethically scale, with up to [four million times the energy efficiency of bitcoin](https://developers.cardano.org/docs/operate-a-stake-pool/basics/consensus-staking/#ouroboros-protocol)."
+    "message": "Ouroboros addresses one of the biggest challenges of proof-of-work blockchains: the need for more and more energy to reach consensus. Block producers do not compete on computing power, so Cardano runs on ordinary servers and can scale securely and sustainably."
+  },
+  "ouroboros.variants.title": {
+    "message": "Which version of Ouroboros does Cardano run?"
+  },
+  "ouroboros.variants.description": {
+    "message": "Ouroboros is a family of protocols. Cardano mainnet runs Ouroboros Praos, which elects slot leaders privately using verifiable random functions. Ouroboros Genesis lets a new node find the honest chain without trusted checkpoints and is available in the node as an opt-in setting on mainnet. Peras and Leios are newer members of the family that target faster settlement and higher throughput. The [Ouroboros glossary entry](/glossary/ouroboros) describes each variant."
   },
   "ouroboros.cta.title": {
-    "message": "Attack the protocol, fork the blockchain - or not. Explore the Ouroboros protocol firsthand in this interactive simulation."
+    "message": "Attack the protocol or fork the blockchain? Explore the Ouroboros protocol firsthand in this interactive simulation."
   },
   "ouroboros.cta.buttonLabel": {
     "message": "Play the game"
@@ -2820,7 +2832,7 @@
     "message": "The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so."
   },
   "stakePoolOperation.whatIsStaking.rightText3": {
-    "message": "The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block, and the rewards that it earns are shared between everyone who delegated their stake to that stake pool."
+    "message": "The more stake is delegated to a stake pool, the more likely it is to make the next block, and the rewards that it earns are shared between everyone who delegated their stake to that stake pool. Once a pool is saturated, extra stake no longer adds rewards."
   },
   "stakePoolOperation.whatIsStakePool.divider": {
     "message": "What is stake pool?"
@@ -2841,13 +2853,13 @@
     "message": "Pledging Mechanism"
   },
   "stakePoolOperation.pledging.text": {
-    "message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward."
+    "message": "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. All else being equal, a higher pledge slightly increases the pool's rewards. The a0 protocol parameter defines the influence of the pledge on the pool reward."
   },
   "stakePoolOperation.desirability.title": {
     "message": "Desirability Index"
   },
   "stakePoolOperation.desirability.text": {
-    "message": "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. This number will be used to rank pools in wallets, and indicates how 'desirable' or 'attractive' the pool is to potential delegators."
+    "message": "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. Some wallets use this number to rank pools, as an indication of how 'desirable' or 'attractive' the pool is to potential delegators."
   },
   "stakePoolOperation.saturation.title": {
     "message": "Saturation Parameter (K)"
@@ -5547,7 +5559,7 @@
     "message": "Foundation"
   },
   "research.byron.description": {
-    "message": "A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol."
+    "message": "A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. Blocks were produced by federated nodes running Ouroboros Classic and, from February 2020, Ouroboros BFT."
   },
   "research.shelley.subtitle": {
     "message": "Decentralization"
@@ -5565,13 +5577,13 @@
     "message": "Scaling"
   },
   "research.basho.description": {
-    "message": "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with immense potential to extend the network's capabilities."
+    "message": "An era of optimization, improving the scalability and interoperability of the network. Work from this era includes diffusion pipelining, delivered with the Vasil upgrade, the [Hydra](/glossary/hydra) layer 2 protocol and partner chains that connect to the main Cardano chain. [Layer 2](/layer-2) lists the networks that run today."
   },
   "research.voltaire.subtitle": {
     "message": "Governance"
   },
   "research.voltaire.description": {
-    "message": "The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is introducing a voting and treasury system that allows network participants to use their stake and voting rights to influence the future development of the blockchain."
+    "message": "The era that made Cardano a self-governing system. With [CIP-1694](/glossary/cip-1694), live since the Chang and Plomin upgrades, DReps, stake pool operators and the Constitutional Committee vote on chain on governance actions, from protocol changes to treasury withdrawals, and the rules set which of them vote on which type of action. Ada holders take part by delegating their voting power or becoming a DRep. The [governance](/governance) section explains how it works."
   },
   "solutions.card.learnMore": {
     "message": "Learn more"
@@ -6140,7 +6152,7 @@
     "message": "Back to the big picture: [What is Cardano?](/what-is-cardano), or see [how Cardano works](/how-cardano-works) end to end."
   },
   "whatIsAda.section.platformLink": {
-    "message": "New to the platform itself? Read [what Cardano is](/what-is-cardano)."
+    "message": "New to the platform itself? Read [what Cardano is](/what-is-cardano). Ready to put your ada to work? [Delegate it to a stake pool](/stake-pool-delegation) and [delegate your voting power](/governance/delegate)."
   },
   "whatIsCardano.hero.title": {
     "message": "What is Cardano?"
@@ -8929,7 +8941,7 @@
     "message": "Find the Right Wallet for You"
   },
   "walletSection.cta.description": {
-    "message": "A wallet lets you store, send, and receive ada. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best."
+    "message": "A wallet holds the keys to your ada and lets you send and receive it. There are many options for different platforms and needs. Use our Wallet Finder to compare features and pick the one that fits you best."
   },
   "walletSection.cta.button": {
     "message": "Find a Wallet"
@@ -8944,13 +8956,13 @@
     "message": "Find a Cardano Wallet"
   },
   "walletFinder.hero.description": {
-    "message": "Compare Cardano wallets by platform, features, and security to find the one that fits your needs"
+    "message": "Compare Cardano wallets for mobile, desktop and hardware by features and security to find the one that fits your needs"
   },
   "walletFinder.meta.title": {
-    "message": "Cardano Wallet Finder, Compare and Choose the Best Wallet"
+    "message": "Cardano Wallet Finder: Compare Mobile, Desktop and Hardware Wallets"
   },
   "walletFinder.meta.description": {
-    "message": "Find the best Cardano wallet for you. Filter by platform, staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
+    "message": "Find the best Cardano wallet for mobile or desktop. Filter by staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
   },
   "walletFinder.mode.beginner.title": {
     "message": "I'm new to Cardano"
@@ -9538,7 +9550,7 @@
     "message": "Rewards are paid out once per [epoch](/glossary/epoch), five days on Cardano. Where they come from is explained on the [stake delegation](/stake-pool-delegation) page and, in more depth, in [how Cardano works](/how-cardano-works#network)."
   },
   "hardforks.upgrades.description": {
-    "message": "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."
+    "message": "Every upgrade since Shelley went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades)."
   },
   "research.intro.description": {
     "message": "Cardano's design rests on peer-reviewed research, from the [Ouroboros](/ouroboros) family of [proof-of-stake](/glossary/proof-of-stake) protocols to the on-chain [governance](/governance) model. The papers and specifications below are grouped by development era. For a plain-language account of what they add up to, read [how Cardano works](/how-cardano-works)."
@@ -11689,7 +11701,7 @@
     "message": "How much money will a stake pool operator make? Will it be profitable?"
   },
   "stakePoolOperation.faq.profit.a": {
-    "message": "You can use the [rewards calculator](/calculator) to get an idea of the rewards you will earn. It’s important to note that the calculator produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. Over time, parameters may be changed that could affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return."
+    "message": "Income depends on how much stake your pool attracts, how many blocks it produces and the fees you set. Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost), plus an optional margin, and both come out of the pool's rewards before the rest goes to delegators. Small pools may not produce a block in every epoch, so their income varies a lot. Registering a pool also takes a refundable 500 ada [deposit](/glossary/stake-pool-deposit). The [rewards calculator](/calculator) gives estimates only, never a guarantee."
   },
   "stakePoolOperation.faq.skills.q": {
     "message": "What skills do stake pool operators require?"
@@ -11710,34 +11722,22 @@
     "message": "Server administration skills. (operational and maintenance)"
   },
   "stakePoolOperation.faq.os.q": {
-    "message": "Which operating system do you support?"
+    "message": "Which operating systems can run a stake pool?"
   },
   "stakePoolOperation.faq.os.a1": {
-    "message": "We support Linux, Berkeley Software Distribution (BSD), Mac, and Windows platforms. The following versions are required:"
-  },
-  "stakePoolOperation.faq.os.a2": {
-    "message": "Linux (2.6.18 or later)"
-  },
-  "stakePoolOperation.faq.os.a3": {
-    "message": "BSD (NetBSD 8.x and FreeBSD 12.x)"
-  },
-  "stakePoolOperation.faq.os.a4": {
-    "message": "OSX (10.7 Lion or later)"
-  },
-  "stakePoolOperation.faq.os.a5": {
-    "message": "Windows 10"
+    "message": "Block producers and relays are supported on 64-bit Linux only. The node also runs on Windows and macOS, but only as a desktop client. The [cardano-node release notes](https://github.com/IntersectMBO/cardano-node/releases) list the supported distributions and the minimum hardware."
   },
   "stakePoolOperation.faq.private.q": {
     "message": "Can I run a private stake pool?"
   },
   "stakePoolOperation.faq.private.a": {
-    "message": "Yes, this is technically possible. It can be achieved by registering a stake pool and setting the operator rewards percentage to 100%, so that anybody that delegates to your stake pool will not receive any rewards. This will disincentivize delegators from delegating to you, but provide you with the ability to stake your ada and singly reap the rewards, while testing your stake pool operations."
+    "message": "Yes, this is technically possible. Register a stake pool and set its margin to 100%, so delegators to your pool receive no rewards and have no reason to join. You can still stake your own ada and test your stake pool operations."
   },
   "stakePoolOperation.faq.attract.q": {
     "message": "How should I attract ada holders to my pool?"
   },
   "stakePoolOperation.faq.attract.a1": {
-    "message": "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:"
+    "message": "Delegators compare pools by their block production, fees, pledge and saturation, so keep your pool online and producing the blocks it is elected for. Your [pledge](/glossary/pledge), the ada you commit to your own pool, is visible to everyone. Additionally, stake pool operators can inform users about:"
   },
   "stakePoolOperation.faq.attract.a2": {
     "message": "Security: details of how a stake pool has been secured against hackers"
@@ -11755,31 +11755,31 @@
     "message": "What is pledging?"
   },
   "stakePoolOperation.faq.pledging.a": {
-    "message": "Pledging refers to stake pool owners’ ability to delegate personal stake to their pool. While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
+    "message": "Pledging means committing your own ada to your pool. There is no required minimum, but the pool owners must delegate at least the declared pledge to the pool, or it earns no rewards for that epoch. All else being equal and up to saturation, a higher pledge slightly increases the pool's rewards, and the [a0](/glossary/a0) protocol parameter sets by how much. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/)."
   },
   "stakePoolOperation.faq.bugs.q": {
     "message": "How will my pool be affected by bugs?"
   },
   "stakePoolOperation.faq.bugs.a": {
-    "message": "Stake pool operators will need to be available as much as possible to respond to any network or performance alerts. It is important that pools ensure their node is running the latest software. This will be important both for testnet and mainnet operations."
+    "message": "Stake pool operators need to stay available to respond to network or performance alerts and keep their node on a supported release. New node versions and required upgrades are published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases)."
   },
   "stakePoolOperation.faq.goodPool.q": {
     "message": "What makes a good stake pool?"
   },
   "stakePoolOperation.faq.goodPool.a": {
-    "message": "Stake pools are ranked based on their overall performance and other key information. The performance metric is a calculation based on the number of blocks the pool was tasked to create compared with the number of blocks it actually created, and is recorded over time. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
+    "message": "Wallets and pool explorers show each pool's performance, which compares the blocks it actually made with the blocks it was expected to make given its stake. Delegators also look at fees, pledge and saturation. We recommend that ada holders also do their own independent research when choosing where to delegate their stake."
   },
   "stakePoolOperation.faq.notifications.q": {
     "message": "Will I be notified of network changes?"
   },
   "stakePoolOperation.faq.notifications.a": {
-    "message": "Updates and releases for the network will follow proper release schedules. We recommend operators follow our social media accounts for the latest updates."
+    "message": "Yes, if you sign up for [stake pool operator updates](/signal-operator-notification). New node versions are also published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases)."
   },
   "stakePoolOperation.faq.rewards.q": {
     "message": "Are rewards guaranteed?"
   },
   "stakePoolOperation.faq.rewards.a": {
-    "message": "Rewards for delegation can be earned if you delegate to a stake pool that is sharing rewards. The amount you earn cannot be guaranteed and will ultimately depend on the stake pool, the amount of rewards shared, and its performance. It is worth noting that rewards will only begin to be granted from the end of the epoch in which the associated stake was delegated."
+    "message": "No. Rewards depend on how many blocks the pool produces, which follows its stake but also involves luck, and on the fees it charges. The protocol pays rewards directly to the operator and the delegators, and a pool never holds delegated ada. Rewards also start with a delay: stake delegated in epoch N becomes active in epoch N+2, and the first rewards are paid at the start of epoch N+4."
   },
   "termExplainer.staking.delegation.term": {
     "message": "Delegation"

@@ -45,7 +45,7 @@ export default function Home() {
                 title={translate({id: 'whereToGetAda.cex.title', message: 'Centralized Exchanges'})}
                 description={[
 
-                 translate({id: 'whereToGetAda.cex.description', message: 'Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-ada/#wallets) that you control.'}),
+                 translate({id: 'whereToGetAda.cex.description', message: "Centralized exchanges (CEXs) are platforms where cryptocurrencies and other digital assets are traded. They act as intermediaries between buyers and sellers, facilitating transactions and often providing additional services such as custodial storage, order matching, and regulatory compliance. Note that CEXs have custody over [ada](/what-is-ada/) and other native tokens until you send them to a [wallet](/what-is-a-wallet) that you control."}),
 
                 ]}
                 headingDot={true}
@@ -70,7 +70,7 @@ export default function Home() {
             title={translate({id: 'whereToGetAda.dex.title', message: 'Decentralized Exchanges'})}
             description={[
 
-            translate({id: 'whereToGetAda.dex.description', message: 'Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. This approach enhances security and privacy, reducing the risk of hacking and custodial failures associated with centralized exchanges.'}),
+            translate({id: 'whereToGetAda.dex.description', message: "Decentralized exchanges (DEXs) are platforms for trading cryptocurrencies that operate without a central authority. They allow users to trade directly with each other (peer-to-peer) through automated processes facilitated by smart contracts. You keep your ada in your own wallet instead of handing it to an exchange, but smart contracts carry their own risks, and every trade is public on the blockchain."}),
 
             ]}
             headingDot={false}
@@ -95,9 +95,9 @@ export default function Home() {
                 title={translate({id: 'whereToGetAda.receive.title', message: 'Receive ada'})}
                 description={[
 
-                  translate({id: 'whereToGetAda.receive.description1', message: 'Before receiving or buying [ada](/what-is-ada/), you need to set up a [Cardano wallet](/what-is-ada/#wallets).'}),
-                  translate({id: 'whereToGetAda.receive.description2', message: 'Once you have a [Cardano wallet](/what-is-ada/#wallets), all you need to do is share your address to start sending and receiving [ada](/what-is-ada/) (and other native tokens) peer-to-peer.'}),
-                  translate({id: 'whereToGetAda.receive.description3', message: 'Some [wallets](/what-is-ada/#wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location.'})
+                  translate({id: 'whereToGetAda.receive.description1', message: "To hold [ada](/what-is-ada/) yourself, you need a [Cardano wallet](/what-is-a-wallet)."}),
+                  translate({id: 'whereToGetAda.receive.description2', message: "Once you have a [Cardano wallet](/what-is-a-wallet), share its receiving address with anyone who wants to send you [ada](/what-is-ada/) (or other native tokens) peer-to-peer. To send ada, enter the recipient's address in your wallet and approve the transaction."}),
+                  translate({id: 'whereToGetAda.receive.description3', message: "Some [wallets](/wallets) let you purchase crypto with a debit/credit card, bank transfer, or Apple Pay. Availability depends on your location."})
 
                 ]}
                 headingDot={true}
@@ -112,7 +112,7 @@ export default function Home() {
                 title={translate({id: 'whereToGetAda.funding.title', message: 'Project Catalyst'})}
                 description={[
 
-                 translate({id: 'whereToGetAda.funding.description', message: 'Discover Cardano\'s innovation fund designed to support groundbreaking projects and ideas. By participating, you can receive [ada](/what-is-ada/) funding to bring your vision to life. Visit [Project Catalyst](https://projectcatalyst.io) and learn how to create a proposal.'}),
+                 translate({id: 'whereToGetAda.funding.description', message: "Project Catalyst is Cardano's community innovation fund. It pays [ada](/what-is-ada/) to proposals that the community votes for. Visit [Project Catalyst](https://projectcatalyst.io) to see whether a funding round is open."}),
                  translate({id: 'whereToGetAda.funding.directory', message: 'Catalyst is one of several routes. The [grants and funding page](/grants-funding) lists grants, treasury proposals, accelerators, and venture funds, and says who each one is for.'}),
 
                 ]}
@@ -129,8 +129,8 @@ export default function Home() {
                 title={translate({id: 'whereToGetAda.staking.title', message: 'Staking rewards'})}
                 description={[
 
-                 translate({id: 'whereToGetAda.staking.description1', message: 'If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network\'s [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which requires more effort and technical knowledge but can be more rewarding.'}),
-                 translate({id: 'whereToGetAda.staking.description2', message: 'Cardano offers several advantages for [staking](/glossary/staking): there is no minimum amount of [ada](/what-is-ada/) required to stake, no risk of slashing (losing your staked [ada](/what-is-ada/)), and no locking period. You always maintain custody over your delegated [ada](/what-is-ada/), ensuring that your funds remain secure and accessible at all times. Additionally, rewards are distributed by the protocol itself, not by the pools, ensuring a fair and transparent distribution process.'})
+                 translate({id: 'whereToGetAda.staking.description1', message: "If you already have some [ada](/what-is-ada/), you can earn more by [delegating your ada to a stake pool](/stake-pool-delegation/). This allows you to participate in the network's [proof-of-stake](/glossary/proof-of-stake) system and earn rewards. Alternatively, you can [run your own stake pool](/stake-pool-operation/), which takes more effort, technical knowledge and a refundable 500 ada pool deposit."}),
+                 translate({id: 'whereToGetAda.staking.description2', message: "Cardano offers several advantages for [staking](/glossary/staking). Registering your stake key takes a refundable [deposit](/glossary/stake-address-deposit) of 2 [ada](/what-is-ada/). Beyond that, there is no minimum amount. There is no risk of slashing (losing your staked ada) and no locking period. Your ada stays in your wallet, so you can spend it at any time. Rewards are paid by the protocol itself, not by the pools."})
 
                 ]}
                 headingDot={true}

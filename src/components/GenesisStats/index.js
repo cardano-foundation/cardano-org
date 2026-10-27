@@ -16,7 +16,7 @@ export default function FollowCardanoSection() {
       <TitleWithText headingLevel={2}
         title="Stats"
         description={[
-          "The four tranches of the distribution are shown with the number of individual ada vouchers distributed that \
+          "The five tranches of the distribution are shown with the number of individual ada vouchers distributed that \
             took place during each stage, and the proportion of the overall distribution that occurred during that particular \
             tranche. The sum taken during each tranche is viewable in Bitcoin, ada or the equivalent in US dollars. \
             (All ada voucher holder transactions were made in Bitcoin, or by Yen converted into Bitcoin, to enable transparent \
@@ -104,8 +104,8 @@ export default function FollowCardanoSection() {
         title="Ada Distribution Audit"
         description={[
           "From September 2015 to January 2017 a pre-launch sales event of cryptocurrency token 'ada' was undertaken. The sales event \
-          covered five specific periods, referred to as ‘tranches’ (T1/T2/T3/T3.5/T4). The principal party retained Attain Corporation \
-          of Japan to manage the sale of ada ‘vouchers’ that could be exchanged into ada tokens after the platform launch. Subsequently, \
+          covered five specific periods, referred to as 'tranches' (T1/T2/T3/T3.5/T4). The principal party retained Attain Corporation \
+          of Japan to manage the sale of ada 'vouchers' that could be exchanged into ada tokens after the platform launch. Subsequently, \
           the Cardano Foundation performed three separate audits into the sales operation. These audits were a bespoke hybrid of operational \
           and financial audit approaches. The first audit covered T1 & T2, the second covered T3/T3.5 and the third covered T4. Finally, \
           an overall summary document was created. The core task was to produce an objective study of how sales were progressing and to \
@@ -115,21 +115,21 @@ export default function FollowCardanoSection() {
 
           {
             list: [
-              "**Proceeds of sale review**: reconciliation of funds received during the sales event",
-              "**Customer sales analysis**: checks for suspicious customer activity during the sale",
-              "**Distributor activity analysis**: check for any evidence of distributor malpractice or fraud",
-              "**Check for KYC (Know Your Customer) adherence**: assess whether agreed KYC procedures were applied by Attain",
-              "**Review of Attain as an entity**: perform operational checks for good internal governance",
+              "**Proceeds of sale review:** reconciliation of funds received during the sales event",
+              "**Customer sales analysis:** checks for suspicious customer activity during the sale",
+              "**Distributor activity analysis:** check for any evidence of distributor malpractice or fraud",
+              "**Check for KYC (Know Your Customer) adherence:** assess whether agreed KYC procedures were applied by Attain",
+              "**Review of Attain as an entity:** perform operational checks for good internal governance",
             ],
           },
 
           "The sale proceeds were entirely in bitcoin, although some purchases were exchanged from Yen to Bitcoin as part of the sales \
-          transaction process. Cardano Foundation’s findings were as follows:",
+          transaction process. Cardano Foundation's findings were as follows:",
 
-          "**Proceeds of Sale Review** Cardano Foundation performed a full comparison between sales reported on Attain’s internal sales \
+          "**Proceeds of Sale Review** Cardano Foundation performed a full comparison between sales reported on Attain's internal sales \
           database and compared that to the amounts received at the end of the process. Transparent sale accounting was enabled by use of \
-          the publically available bitcoin ‘blockchain’ to process sales and receipts. This information could therefore be ratified against \
-          accounting entries in Attain’s sales database. This comparison gave the Cardano Foundation a high degree of confidence that the \
+          the publically available bitcoin 'blockchain' to process sales and receipts. This information could therefore be ratified against \
+          accounting entries in Attain's sales database. This comparison gave the Cardano Foundation a high degree of confidence that the \
           sales proceeds had been reported in a full and fair manner. The final total of bitcoins received and visible on the blockchain \
           agreed with the total bitcoin reported in Attains Sales database agreed with an error margin of less than 0.01%.",
 
@@ -156,7 +156,7 @@ export default function FollowCardanoSection() {
           obligations and duties of care and have well established operational procedures performed by a dedicated team.",
 
           "Below are the sales statistics Cardano Foundation reported in the final audit, updated to include refunds processed and final \
-          database reconciliations;",
+          database reconciliations:",
 
           "Below tables shows the total sales summary for all tranches:",
         ]}
@@ -376,7 +376,7 @@ export default function FollowCardanoSection() {
             <td>$1,764,391</td>
           </tr>
           <tr>
-            <td className="left-align">25 – 34</td>
+            <td className="left-align">25 to 34</td>
             <td>$338,785</td>
             <td>$2,819,273</td>
             <td>$2,080,465</td>
@@ -385,7 +385,7 @@ export default function FollowCardanoSection() {
             <td>$13,754,626</td>
           </tr>
           <tr>
-            <td className="left-align">35 – 44</td>
+            <td className="left-align">35 to 44</td>
             <td>$954,120</td>
             <td>$6,332,533</td>
             <td>$4,316,665</td>
@@ -394,7 +394,7 @@ export default function FollowCardanoSection() {
             <td>$20,432,392</td>
           </tr>
           <tr>
-            <td className="left-align">45 – 54</td>
+            <td className="left-align">45 to 54</td>
             <td>$197,589</td>
             <td>$3,660,939</td>
             <td>$3,534,050</td>
@@ -403,7 +403,7 @@ export default function FollowCardanoSection() {
             <td>$14,502,391</td>
           </tr>
           <tr>
-            <td className="left-align">55 – 64</td>
+            <td className="left-align">55 to 64</td>
             <td>$183,058</td>
             <td>$2,816,849</td>
             <td>$3,185,516</td>
