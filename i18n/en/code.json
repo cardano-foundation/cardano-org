@@ -8940,13 +8940,13 @@
     "message": "Find a Cardano Wallet"
   },
   "walletFinder.hero.description": {
-    "message": "Compare Cardano wallets by platform, features, and security to find the one that fits your needs"
+    "message": "Compare Cardano wallets for mobile, desktop and hardware by features and security to find the one that fits your needs"
   },
   "walletFinder.meta.title": {
-    "message": "Cardano Wallet Finder, Compare and Choose the Best Wallet"
+    "message": "Cardano Wallet Finder: Compare Mobile, Desktop and Hardware Wallets"
   },
   "walletFinder.meta.description": {
-    "message": "Find the best Cardano wallet for you. Filter by platform, staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
+    "message": "Find the best Cardano wallet for mobile or desktop. Filter by staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side."
   },
   "walletFinder.mode.beginner.title": {
     "message": "I'm new to Cardano"
