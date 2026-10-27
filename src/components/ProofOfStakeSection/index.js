@@ -24,7 +24,7 @@ export default function ProofOfStakeSection() {
           title="Proof of stake and proof of work"
           description={[
             "There are two main blockchain protocols: proof-of-stake (PoS) and proof-of-work (PoW). These protocols are consensus \
-            algorithms for distributed networks: rulesets that dictate how networks – made up of thousands of nodes – agree on \
+            algorithms for distributed networks: rulesets that dictate how networks, made up of thousands of nodes, agree on \
             new additions (blocks) in a permissionless setting.",
           ]}
           headingDot={true}
@@ -43,8 +43,8 @@ export default function ProofOfStakeSection() {
         <TitleWithText headingLevel={2}
           description={[
             "Proof-of-stake answers the performance and energy-use challenges of proof-of-work, and arrives at a more sustainable \
-            solution. Instead of relying on 'miners' to solve computationally complex equations to create new blocks – and rewarding \
-            the first to do so – proof of stake selects participants (in the case of Cardano, stake pools) to create new blocks based \
+            solution. Instead of relying on 'miners' to solve computationally complex equations to create new blocks, and rewarding \
+            the first to do so, proof of stake selects participants (in the case of Cardano, stake pools) to create new blocks based \
             on the stake they control in the network.",
           ]}
         />
@@ -52,9 +52,9 @@ export default function ProofOfStakeSection() {
         <DottedImageWithText
           imageName="proof-of-stake"
           text={[
-            "This enables networks to scale horizontally, increasing performance by incorporating additional nodes, rather than \
-              vertically, through the addition of more powerful hardware. The resulting difference in energy use can be analogized \
-              to that between a household and a small country. PoS is positioned scale to the mass market; PoW is not.",
+            "Because block producers do not compete on computing power, a proof-of-stake network needs only a small fraction of the \
+              energy that proof-of-work uses to secure itself. Networks that add capacity on top of Cardano are listed on the \
+              [layer 2](/layer-2) page.",
           ]}
         />
 
@@ -65,7 +65,7 @@ export default function ProofOfStakeSection() {
           imageName="chains"
           text={[
             "Ouroboros processes transaction blocks by dividing chains into epochs, which are further divided into time slots. \
-              A slot leader is elected for each time slot and is responsible for adding a block to the chain. To protect against \
+              In each slot, every stake pool has a chance to be elected slot leader in proportion to its stake, and on average one slot in twenty has a leader, who adds a block to the chain. To protect against \
               adversarial attempts to subvert the protocol, each new slot leader is required to consider the last few blocks of the \
               received chain as transient: only the chain that precedes a prespecified number of transient blocks is considered \
               settled. This is also referred to as the settlement delay, and is the mechanism through which the ledger is securely \
@@ -77,9 +77,9 @@ export default function ProofOfStakeSection() {
           imageName="innovation"
           text={[
             "Ouroboros is a meld of innovative technology and philosophy. Its research explores how we behave as a society, \
-              to discover an ideal balance - defined through game theory - between individual and collective interests. \
-              Ouroboros’ incentive mechanism rewards participants for their honest participation, and disincentivizes dishonest \
-              actors. It is a stable and sustainable foundation for permission networks that are built to endure: the infrastructure \
+              to discover an ideal balance, defined through game theory, between individual and collective interests. \
+              The Ouroboros incentive mechanism rewards participants for their honest participation, and disincentivizes dishonest \
+              actors. It is a stable and sustainable foundation for permissionless networks that are built to endure: the infrastructure \
               of the future.",
           ]}
         />

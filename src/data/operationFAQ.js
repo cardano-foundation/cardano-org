@@ -2,9 +2,6 @@ import { translate } from "@docusaurus/Translate";
 
 // FAQ for /stake-pool-operation as literal translate() calls so the strings
 // reach Crowdin. Answer lines starting with "- " render as list items.
-//
-// FIXME: some answers seem to be very outdated, also needs more links
-// FIXME: need to make clear that protocol distributes rewards and pools do not have custody
 export function getOperationFAQ() {
   return [
     {
@@ -16,7 +13,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.profit.a",
           message:
-            "You can use the [rewards calculator](/calculator) to get an idea of the rewards you will earn. It’s important to note that the calculator produces only reward estimates and shouldn’t be considered definitive or a guarantee of reward amounts. Over time, parameters may be changed that could affect reward margins. Amounts calculated are therefore subject to change, but represent a realistic and sensible level of return.",
+            "Income depends on how much stake your pool attracts, how many blocks it produces and the fees you set. Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost), plus an optional margin, and both come out of the pool's rewards before the rest goes to delegators. Small pools may not produce a block in every epoch, so their income varies a lot. Registering a pool also takes a refundable 500 ada [deposit](/glossary/stake-pool-deposit). The [rewards calculator](/calculator) gives estimates only, never a guarantee.",
         }),
       ],
     },
@@ -51,21 +48,14 @@ export function getOperationFAQ() {
     {
       question: translate({
         id: "stakePoolOperation.faq.os.q",
-        message: "Which operating system do you support?",
+        message: "Which operating systems can run a stake pool?",
       }),
       answer: [
         translate({
           id: "stakePoolOperation.faq.os.a1",
           message:
-            "We support Linux, Berkeley Software Distribution (BSD), Mac, and Windows platforms. The following versions are required:",
+            "Block producers and relays are supported on 64-bit Linux only. The node also runs on Windows and macOS, but only as a desktop client. The [cardano-node release notes](https://github.com/IntersectMBO/cardano-node/releases) list the supported distributions and the minimum hardware.",
         }),
-        "- " + translate({ id: "stakePoolOperation.faq.os.a2", message: "Linux (2.6.18 or later)" }),
-        "- " + translate({
-          id: "stakePoolOperation.faq.os.a3",
-          message: "BSD (NetBSD 8.x and FreeBSD 12.x)",
-        }),
-        "- " + translate({ id: "stakePoolOperation.faq.os.a4", message: "OSX (10.7 Lion or later)" }),
-        "- " + translate({ id: "stakePoolOperation.faq.os.a5", message: "Windows 10" }),
       ],
     },
     {
@@ -77,7 +67,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.private.a",
           message:
-            "Yes, this is technically possible. It can be achieved by registering a stake pool and setting the operator rewards percentage to 100%, so that anybody that delegates to your stake pool will not receive any rewards. This will disincentivize delegators from delegating to you, but provide you with the ability to stake your ada and singly reap the rewards, while testing your stake pool operations.",
+            "Yes, this is technically possible. Register a stake pool and set its margin to 100%, so delegators to your pool receive no rewards and have no reason to join. You can still stake your own ada and test your stake pool operations.",
         }),
       ],
     },
@@ -90,7 +80,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.attract.a1",
           message:
-            "Stake pools will be ranked by performance, so it is important that your stake pool is online and active when it is elected to create blocks. Stake pool operators can also pledge, through delegation, their personal stake to their own pool. By providing a pledge address when they register the pool, users will be able to see which pools have been pledged to by their operator. Additionally, stake pool operators can inform users about:",
+            "Delegators compare pools by their block production, fees, pledge and saturation, so keep your pool online and producing the blocks it is elected for. Your [pledge](/glossary/pledge), the ada you commit to your own pool, is visible to everyone. Additionally, stake pool operators can inform users about:",
         }),
         "- " + translate({
           id: "stakePoolOperation.faq.attract.a2",
@@ -116,7 +106,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.pledging.a",
           message:
-            "Pledging refers to stake pool owners’ ability to delegate personal stake to their pool. While there is no required minimum pledge amount, pool operators can optionally pledge some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/).",
+            "Pledging means committing your own ada to your pool. There is no required minimum, but the pool owners must delegate at least the declared pledge to the pool, or it earns no rewards for that epoch. All else being equal and up to saturation, a higher pledge slightly increases the pool's rewards, and the [a0](/glossary/a0) protocol parameter sets by how much. [Read more on pledging on the IOHK blog](https://iohk.io/en/blog/posts/2020/05/12/how-pledging-encourages-a-healthy-decentralized-cardano-ecosystem/).",
         }),
       ],
     },
@@ -129,7 +119,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.bugs.a",
           message:
-            "Stake pool operators will need to be available as much as possible to respond to any network or performance alerts. It is important that pools ensure their node is running the latest software. This will be important both for testnet and mainnet operations.",
+            "Stake pool operators need to stay available to respond to network or performance alerts and keep their node on a supported release. New node versions and required upgrades are published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases).",
         }),
       ],
     },
@@ -142,7 +132,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.goodPool.a",
           message:
-            "Stake pools are ranked based on their overall performance and other key information. The performance metric is a calculation based on the number of blocks the pool was tasked to create compared with the number of blocks it actually created, and is recorded over time. We recommend that ada holders also do their own independent research when choosing where to delegate their stake.",
+            "Wallets and pool explorers show each pool's performance, which compares the blocks it actually made with the blocks it was expected to make given its stake. Delegators also look at fees, pledge and saturation. We recommend that ada holders also do their own independent research when choosing where to delegate their stake.",
         }),
       ],
     },
@@ -155,7 +145,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.notifications.a",
           message:
-            "Updates and releases for the network will follow proper release schedules. We recommend operators follow our social media accounts for the latest updates.",
+            "Yes, if you sign up for [stake pool operator updates](/signal-operator-notification). New node versions are also published on the [cardano-node release page](https://github.com/IntersectMBO/cardano-node/releases).",
         }),
       ],
     },
@@ -168,7 +158,7 @@ export function getOperationFAQ() {
         translate({
           id: "stakePoolOperation.faq.rewards.a",
           message:
-            "Rewards for delegation can be earned if you delegate to a stake pool that is sharing rewards. The amount you earn cannot be guaranteed and will ultimately depend on the stake pool, the amount of rewards shared, and its performance. It is worth noting that rewards will only begin to be granted from the end of the epoch in which the associated stake was delegated.",
+            "No. Rewards depend on how many blocks the pool produces, which follows its stake but also involves luck, and on the fees it charges. The protocol pays rewards directly to the operator and the delegators, and a pool never holds delegated ada. Rewards also start with a delay: stake delegated in epoch N becomes active in epoch N+2, and the first rewards are paid at the start of epoch N+4.",
         }),
       ],
     },

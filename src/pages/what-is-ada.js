@@ -39,16 +39,16 @@ export default function Home() {
         <BoundaryBox>
           <WhatIsAda
             headline={translate({id: 'whatIsAda.section.headline', message: 'What is ada?'})}
-            title={translate({id: 'whatIsAda.section.title', message: 'Ada Is The Native Token Of Cardano'})}
+            title={translate({id: 'whatIsAda.section.title', message: "Ada is the native currency of Cardano"})}
             description={[
               translate({id: 'whatIsAda.section.description1', message: 'It is named after Ada Lovelace: a 19th-century mathematician who is recognized as the first computer programmer, and is the daughter of the poet Lord Byron.'}),
-              translate({id: 'whatIsAda.section.description2', message: 'Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value – without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain.'}),
-              translate({id: 'whatIsAda.section.description3', message: 'Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or found and run your own stake pool to increase the pool\'s likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform.'}),
+              translate({id: 'whatIsAda.section.description2', message: "Ada is a digital currency. Anyone, anywhere in the world, can use ada to exchange value directly, without a third party in between. Every transaction is recorded permanently and transparently on the Cardano blockchain."}),
+              translate({id: 'whatIsAda.section.description3', message: "Every ada holder also holds a stake in the Cardano network. You can delegate your ada to a stake pool to help run the network and earn rewards, and it never leaves your wallet while you do. Ada pays the fees for every transaction, lets you take part in on-chain governance by voting as a DRep or delegating your voting power to one, and is used across the applications and services built on Cardano."}),
             ]}
             quote={translate({id: 'whatIsAda.section.quote', message: 'What can I do with ada?'})}
           />
           <TitleWithText headingLevel={2}
-            description={translate({id: 'whatIsAda.section.platformLink', message: 'New to the platform itself? Read [what Cardano is](/what-is-cardano).'})}
+            description={translate({id: 'whatIsAda.section.platformLink', message: "New to the platform itself? Read [what Cardano is](/what-is-cardano). Ready to put your ada to work? [Delegate it to a stake pool](/stake-pool-delegation) and [delegate your voting power](/governance/delegate)."})}
           />
         </BoundaryBox>
         <HowToBuyAdaSection />

@@ -48,7 +48,7 @@ function getTimelineItems() {
       description: translate({
         id: "hardforks.timeline.plomin.description",
         message:
-          "Introducing the second batch of decentralized governance features of CIP-1694. Enabling the full set of governance actions and the DRep role.",
+          "Ended the bootstrap phase of CIP-1694. DReps vote on every type of governance action, and treasury withdrawals, constitution updates, no-confidence motions and changes to the Constitutional Committee became possible.",
       }),
       epochLabel: labelEpoch(),
       epoch: "537",
@@ -67,7 +67,7 @@ function getTimelineItems() {
       description: translate({
         id: "hardforks.timeline.chang1.description",
         message:
-          "Introducing the first batch of decentralized governance features of CIP-1694. Enabling only parameter changes and hard fork initiations.",
+          "Introducing the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only.",
       }),
       epochLabel: labelEpoch(),
       epoch: "507",
@@ -124,12 +124,13 @@ function getTimelineItems() {
       era: "Alonzo Era",
       date: "October 22, 2021",
       name: "(Lobster)",
+      description: translate({
+        id: "hardforks.timeline.lobster.description",
+        message: "Intra-era upgrade that fixed a bug in how time is converted for Plutus scripts.",
+      }),
       epochLabel: labelEpoch(),
       epoch: "298",
-      meta: [
-        { label: labelProtocolVersion(), value: "6.0" },
-        { label: labelTransactionId(), value: "N/A (Specific transaction ID not provided)" },
-      ],
+      meta: [{ label: labelProtocolVersion(), value: "6.0" }],
     },
     {
       era: "Alonzo Era",
@@ -138,14 +139,11 @@ function getTimelineItems() {
       description: translate({
         id: "hardforks.timeline.alonzo.description",
         message:
-          "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (dApps).",
+          "Introduced smart contract capabilities using Plutus, enabling the deployment of decentralized applications (DApps).",
       }),
       epochLabel: labelEpoch(),
       epoch: "290",
-      meta: [
-        { label: labelProtocolVersion(), value: "5.0" },
-        { label: labelTransactionId(), value: "N/A (Specific transaction ID not provided)" },
-      ],
+      meta: [{ label: labelProtocolVersion(), value: "5.0" }],
     },
     {
       era: "Mary Era",
@@ -203,6 +201,18 @@ function getTimelineItems() {
     },
     {
       era: "Byron Era",
+      date: "February 20, 2020",
+      name: "OBFT",
+      description: translate({
+        id: "hardforks.timeline.obft.description",
+        message: "Switched consensus from Ouroboros Classic to Ouroboros BFT, the bridge to the Shelley hard fork.",
+      }),
+      epochLabel: labelEpoch(),
+      epoch: "176",
+      meta: [{ label: labelProtocolVersion(), value: "1.0" }],
+    },
+    {
+      era: "Byron Era",
       date: "September 23, 2017",
       name: "Byron",
       description: translate({
@@ -212,7 +222,7 @@ function getTimelineItems() {
       epochLabel: labelEpoch(),
       epoch: "0",
       meta: [
-        { label: labelProtocolVersion(), value: "1.0" },
+        { label: labelProtocolVersion(), value: "0.0" },
         { label: labelTransactionId(), value: "N/A (Genesis block)" },
       ],
     },
@@ -254,7 +264,7 @@ export default function Home() {
             description={translate({
               id: "hardforks.content.description",
               message:
-                "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch from the current era to a new one, applying new functions, validation rules, or parameter values. All stake pool operators need to install the upgrade, and they also have a say and must agree to it. A Cardano hard fork is, therefore, not a separation but a precise collective evolution.",
+                "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch to new protocol rules, sometimes starting a new era, applying new functions, validation rules, or parameter values. Stake pool operators install the new node version ahead of time. Since Plomin, the switch itself is approved on chain through a [hard fork governance action](/glossary/hard-fork-initiation). A Cardano hard fork is, therefore, not a separation but a precise collective evolution.",
             })}
             headingDot={true}
           />
@@ -262,7 +272,7 @@ export default function Home() {
             description={translate({
               id: "hardforks.upgrades.description",
               message:
-                "Every upgrade so far went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades).",
+                "Every upgrade since Shelley went live through the [hard fork combinator](/glossary/hard-fork-combinator) while the network kept running. How an upgrade is proposed, approved through [governance](/governance) and rolled out is explained in [how Cardano works](/how-cardano-works#upgrades).",
             })}
           />
           <Divider headingLevel={2}
@@ -285,7 +295,7 @@ export default function Home() {
             description={translate({
               id: "hardforks.transactionIds.description",
               message:
-                "Note that some hard forks, particularly Byron and Shelley, transitioned through a series of updates and may not have a single specific transaction id associated with them. For the others, the provided transaction ids correspond to significant parameter updates leading to the hard forks.",
+                "Byron, the OBFT switch, Shelley, Alonzo and the Lobster upgrade are listed without a single transaction ID. Up to Chang, each ID is a protocol update proposal that triggered the hard fork. Plomin and van Rossem were approved as [hard fork governance actions](/glossary/hard-fork-initiation), and their IDs identify those actions.",
             })}
           />
           <SpacerBox size="medium" />

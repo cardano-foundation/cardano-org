@@ -17,7 +17,6 @@ import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import { translate } from '@docusaurus/Translate';
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title={[
@@ -52,7 +51,7 @@ export default function Home() {
               rightText={parseMarkdownLikeText([
                 translate({ id: 'stakePoolOperation.whatIsStaking.rightText1', message: 'There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool.' }),
                 translate({ id: 'stakePoolOperation.whatIsStaking.rightText2', message: 'The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.' }),
-                translate({ id: 'stakePoolOperation.whatIsStaking.rightText3', message: 'The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards that it earns are shared between everyone who delegated their stake to that stake pool.' }),
+                translate({ id: 'stakePoolOperation.whatIsStaking.rightText3', message: "The more stake is delegated to a stake pool, the more likely it is to make the next block, and the rewards that it earns are shared between everyone who delegated their stake to that stake pool. Once a pool is saturated, extra stake no longer adds rewards." }),
               ])}
             />
             <TitleWithText headingLevel={2}
@@ -76,14 +75,14 @@ export default function Home() {
               imageName="pledging"
               title={translate({ id: 'stakePoolOperation.pledging.title', message: 'Pledging Mechanism' })}
               text={[
-                translate({ id: 'stakePoolOperation.pledging.text', message: 'While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. The higher the amount of ada pledged, the more rewards the pool will receive, which will attract more delegation. The a0 protocol parameter defines the influence of the pledge on the pool reward.' }),
+                translate({ id: 'stakePoolOperation.pledging.text', message: "While there is no required minimum pledge amount, pool operators can optionally [pledge](/glossary/pledge) some or all of their stake to their pool to make their pool more attractive. All else being equal, a higher pledge slightly increases the pool's rewards. The a0 protocol parameter defines the influence of the pledge on the pool reward." }),
               ]}
             />
             <DottedImageWithText
               imageName="desireability"
               title={translate({ id: 'stakePoolOperation.desirability.title', message: 'Desirability Index' })}
               text={[
-                translate({ id: 'stakePoolOperation.desirability.text', message: "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. This number will be used to rank pools in wallets, and indicates how 'desirable' or 'attractive' the pool is to potential delegators." }),
+                translate({ id: 'stakePoolOperation.desirability.text', message: "The desirability of a pool is calculated by taking the pledged owner's stake, costs, and margin, and combining them with an influence from saturation and pool performance. Some wallets use this number to rank pools, as an indication of how 'desirable' or 'attractive' the pool is to potential delegators." }),
               ]}
             />
             <DottedImageWithText
