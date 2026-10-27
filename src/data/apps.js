@@ -21,12 +21,12 @@ import {
   WalletNodeTypeList,
 } from "./walletFeatures";
 
-// Primary categories — each Showcase has exactly one. Answers: "what is this app?".
+// Primary categories: each Showcase has exactly one. Answers: "what is this app?".
 // `trackable: true` means on-chain tx count is a meaningful usage signal for that category;
 // activity badges and the "Most active" section gate on this.
 // `prominent: true` categories lead /apps in the Browse-by-category carousel.
 // `prominent: false` categories live in the lower "Tools, Trackers & Insights"
-// section — read-only utilities (analytics, explorers, education) that still
+// section: read-only utilities (analytics, explorers, education) that still
 // belong on the page but shouldn't compete for attention with apps people can
 // actually transact with.
 export const Categories = {
@@ -144,14 +144,14 @@ export const Categories = {
   },
   other: {
     label: "Other",
-    description: "Apps that don't fit a primary category yet — thin segments grouped together until they have enough peers to warrant their own category.",
+    description: "Apps that don't fit a primary category yet. Thin segments grouped together until they have enough peers to warrant their own category.",
     color: '#607D8B',  // Blue Grey
     trackable: false,
     prominent: false,
   },
 };
 
-// Additive properties — zero or more per Showcase. Answers: "what does this app also offer?".
+// Additive properties: zero or more per Showcase. Answers: "what does this app also offer?".
 // Properties never act as primary classification.
 export const Properties = {
   mobile: {
@@ -189,7 +189,7 @@ export const CategoryList = Object.keys(Categories);
 export const PropertyList = Object.keys(Properties);
 
 // Add your project to (THE END OF) this list.
-// Leave maintainerPick: false — that flag is set by maintainers via the Maintainer picks process.
+// Leave maintainerPick: false, that flag is set by maintainers via the Maintainer picks process.
 // See docs/get-involved/maintainer-picks.md for the proposal workflow.
 //
 // ICON FIELD (optional):
@@ -223,8 +223,8 @@ export const PropertyList = Object.keys(Properties);
 //   statsLabel: "example",  // Optional - for transaction data mapping see https://cardano.org/docs/get-involved/tx-rankings/
 //   website: "https://example.com",
 //   source: "https://github.com/example/repo",  // or null if closed source
-//   category: "dex",                  // exactly one — see Categories above
-//   properties: ["opensource"],       // zero or more — see Properties above
+//   category: "dex",                  // exactly one, see Categories above
+//   properties: ["opensource"],       // zero or more, see Properties above
 //   maintainerPick: false,
 // }
 export const Showcases = [
@@ -264,7 +264,7 @@ export const Showcases = [
   {
     title: "NMKR",
     description:
-      "NFT minting, fiat and crypto sales, token launches, and secondary markets — full launchpad stack delivered through a single API.",
+      "NFT minting, fiat and crypto sales, token launches, and secondary markets: a full launchpad stack delivered through a single API.",
     tagline: "NFT minting platform with fiat and crypto checkout",
     preview: require("./app-screenshots/nmkr.webp"),
     icon: "/img/app-icons/nmkr.png",
@@ -826,7 +826,7 @@ export const Showcases = [
   {
     title: "Cardano Studio",
     description:
-      "Mint NFTs on Cardano fully in your browser. Keys, metadata, and policy IDs stay on your device — no third party touches the minting flow.",
+      "Mint NFTs on Cardano fully in your browser. Keys, metadata, and policy IDs stay on your device. No third party touches the minting flow.",
     tagline: "Self-custody NFT minting in your browser",
     preview: require("./app-screenshots/cardano-studio.webp"),
     icon: "/img/app-icons/cardano-studio.jpg",
@@ -1945,7 +1945,7 @@ export const Showcases = [
 
 export const TagList = Object.keys(Tags);
 
-// Recent submissions count — the last N entries appended to Showcases get a NEW badge.
+// Recent submissions count: the last N entries appended to Showcases get a NEW badge.
 // New entries are conventionally appended at the end (see add-app.md).
 export const RECENT_APPS_COUNT = 5;
 
@@ -2068,7 +2068,7 @@ function ensureShowcaseValid(showcase) {
   }
 
   function checkPreview() {
-    if (showcase.preview == null) return; // optional — card omits the image area entirely
+    if (showcase.preview == null) return; // optional, card omits the image area entirely
     if (
       showcase.preview instanceof String &&
       (showcase.preview.startsWith("http") || showcase.preview.startsWith("//"))

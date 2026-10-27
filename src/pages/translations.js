@@ -235,20 +235,20 @@ export default function TranslationsPage() {
             </p>
             <ol style={{ lineHeight: '1.8' }}>
               <li>
-                <strong>Sign up on Crowdin</strong> – Create a free account at{' '}
+                <strong>Sign up on Crowdin</strong>: Create a free account at{' '}
                 <a href="https://crowdin.com" target="_blank" rel="noopener noreferrer">
                   crowdin.com
                 </a>.
               </li>
               <li>
-                <strong>Join our project</strong> – Visit the{' '}
+                <strong>Join our project</strong>: Visit the{' '}
                 <a href="https://crowdin.com/project/cardano-org" target="_blank" rel="noopener noreferrer">
                   cardano-org Crowdin project
                 </a>{' '}
                 and request access to your language.
               </li>
               <li>
-                <strong>Start translating</strong> – Use Crowdin's user-friendly editor to translate
+                <strong>Start translating</strong>: Use Crowdin's user-friendly editor to translate
                 strings. Your translations will be reviewed and merged automatically.
               </li>
             </ol>

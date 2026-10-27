@@ -114,7 +114,7 @@ export default function Home() {
               description={[
                 translate({id: 'useCases.agriculture.description1', message: "The pandemic has highlighted the critical importance of maintaining resilient and transparent supply chains, especially in agriculture. As a primary source of food and sustenance, agriculture's supply chain must remain operational to support livelihoods and ensure the well-being of populations worldwide."}),
 
-                translate({id: 'useCases.agriculture.description2', message: "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders—including farmers, transporters, and retailers—can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."}),
+                translate({id: 'useCases.agriculture.description2', message: "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders, including farmers, transporters, and retailers, can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."}),
               ]}
               headingDot={true}
             />

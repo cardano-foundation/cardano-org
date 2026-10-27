@@ -96,7 +96,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={startBuildingImg}
-            alt="Start Building — SDKs for TypeScript, Python, Rust, Go, Java, C# and more"
+            alt="Start Building: SDKs for TypeScript, Python, Rust, Go, Java, C# and more"
             loading="lazy"
           />
         </div>
@@ -131,7 +131,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={smartContractsImg}
-            alt="Smart Contracts — native tokens, payments, stake pools, and governance"
+            alt="Smart Contracts: native tokens, payments, stake pools, and governance"
             loading="lazy"
           />
         </div>
@@ -166,7 +166,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={firstLineImg}
-            alt="Courses — interactive tutorials and hands-on challenges"
+            alt="Courses: interactive tutorials and hands-on challenges"
             loading="lazy"
           />
         </div>

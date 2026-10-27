@@ -44,7 +44,7 @@ export default function TypographyShowcase() {
         <strong>Chivo</strong>{" "}
         {translate({
           id: "brandAssets.typography.credit",
-          message: "by Omnibus-Type —",
+          message: "by Omnibus-Type via",
         })}{" "}
         <a
           href="https://fonts.google.com/specimen/Chivo"

@@ -50,7 +50,7 @@ function LogoCard({ variant, groupLabel }) {
       <div className={clsx(styles.logoCardPreview, bgClass)}>
         <img
           src={src}
-          alt={`${groupLabel} — ${variant.color} version`}
+          alt={`${groupLabel}, ${variant.color} version`}
           className={styles.logoCardImg}
         />
       </div>

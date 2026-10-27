@@ -7,8 +7,8 @@ import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 const coreColors = [
   { name: "Blue", hex: "#0033AD", rgb: "0 / 51 / 173", pantone: "286" },
   { name: "Black", hex: "#000000", rgb: "0 / 0 / 0", pantone: "Process Black" },
-  { name: "White", hex: "#FFFFFF", rgb: "255 / 255 / 255", pantone: "—", needsBorder: true },
-  { name: "Paper", hex: "#f8f8f5", rgb: "248 / 248 / 245", pantone: "—", needsBorder: true },
+  { name: "White", hex: "#FFFFFF", rgb: "255 / 255 / 255", needsBorder: true },
+  { name: "Paper", hex: "#f8f8f5", rgb: "248 / 248 / 245", needsBorder: true },
 ];
 
 const secondaryColors = [
@@ -42,7 +42,7 @@ function Swatch({ color }) {
             : color.hex}
         </button>
         <span className={styles.swatchDetail}>RGB {color.rgb}</span>
-        {color.pantone !== "—" && (
+        {color.pantone && (
           <span className={styles.swatchDetail}>Pantone {color.pantone}</span>
         )}
       </div>

@@ -1107,7 +1107,7 @@
     "message": "The cryptocurrency space is full of opportunities, but it's also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn't immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself."
   },
   "commonScams.intro.description2": {
-    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
+    "message": "**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet. No spending password can protect you. Once your ada is stolen, it's gone forever, with no way to recover it."
   },
   "commonScams.divider.giveaway": {
     "message": "Giveaway"
@@ -1209,7 +1209,7 @@
     "message": "Rug Pulls in Cardano Ecosystem"
   },
   "commonScams.rug.description": {
-    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a \"rug pull.\""
+    "message": "Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear. This is known as a \"rug pull.\""
   },
   "commonScams.rug.howToProtect": {
     "message": "How to protect yourself:"
@@ -1272,7 +1272,7 @@
     "message": "Cardano is a proof-of-stake blockchain platform: the first to be founded on [peer-reviewed research](/research) and developed through evidence-based methods. It combines pioneering technologies to provide unparalleled security and sustainability to decentralized applications, systems, and societies."
   },
   "home.featured.description2": {
-    "message": "With a leading team of engineers, Cardano exists to redistribute power from unaccountable structures to the margins – to individuals – and be an enabling force for positive change and progress."
+    "message": "With a leading team of engineers, Cardano exists to redistribute power from unaccountable structures to the margins, to individuals, and be an enabling force for positive change and progress."
   },
   "home.featured.quote1": {
     "message": "A History Of Impossible,"
@@ -1287,10 +1287,10 @@
     "message": "Benefits"
   },
   "home.quoteBox.description": {
-    "message": "Cardano restores trust to global systems – creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow."
+    "message": "Cardano restores trust to global systems, creating, through science, a more secure, transparent, and sustainable foundation for individuals to transact and exchange, systems to govern, and enterprises to grow."
   },
   "home.quoteBox.quote": {
-    "message": "Cardano brings a new standard in technology – open and inclusive – to challenge the old and activate a new age of sustainable, globally-distributed innovation."
+    "message": "Cardano brings a new standard in technology, open and inclusive, to challenge the old and activate a new age of sustainable, globally-distributed innovation."
   },
   "home.benefits.ouroboros.label": {
     "message": "Proof-of-stake and Ouroboros"
@@ -1362,7 +1362,7 @@
     "message": "Extremely Scalable And Environmentally Sustainable"
   },
   "home.benefits.scalable.body": {
-    "message": "Ouroboros allows Cardano to scale to global requirements with minimal energy consumption. Unlike other blockchains, Cardano does not require exponentially increasing energy to enhance performance and add blocks. The balance between performance and sustainability is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction processing through multi-party state channels.<br /><br />The network proliferates as the number of stake pools increases, while parameters are set and adjusted to measure the attractiveness of specific stake pools. This is a network that rewards participation directly. Cardano is designed to ensure that those who act in the best interests of the network are also acting in their own best interests. This ensures the development of a healthy ecosystem with a durable, healthy, and robust network, now and into the future. The combination of sustainability and scalability allows Cardano to achieve the throughput required to meet the evolving demands of global systems— financial, logistical, identity-related, societal."
+    "message": "Ouroboros allows Cardano to scale to global requirements with minimal energy consumption. Unlike other blockchains, Cardano does not require exponentially increasing energy to enhance performance and add blocks. The balance between performance and sustainability is achieved through a combination of novel approaches, including multi-ledger, side chains, and parallel transaction processing through multi-party state channels.<br /><br />The network proliferates as the number of stake pools increases, while parameters are set and adjusted to measure the attractiveness of specific stake pools. This is a network that rewards participation directly. Cardano is designed to ensure that those who act in the best interests of the network are also acting in their own best interests. This ensures the development of a healthy ecosystem with a durable, healthy, and robust network, now and into the future. The combination of sustainability and scalability allows Cardano to achieve the throughput required to meet the evolving demands of global systems: financial, logistical, identity-related, societal."
   },
   "home.benefits.scalable.cta": {
     "message": "Learn about Hydra"
@@ -7142,7 +7142,7 @@
     "message": "High-performance cross-chain transactions for institutional users. Built in collaboration with Midgard, Sundial provides interoperability and zero-knowledge proof validation for Bitcoin."
   },
   "layer2.data.zkfold.description": {
-    "message": "A single zero-knowledge proof verifies multiple transactions compressed into batches — a general-purpose scaling solution."
+    "message": "A single zero-knowledge proof verifies multiple transactions compressed into batches, a general-purpose scaling solution."
   },
   "layer2.sidechains.title": {
     "message": "Sidechains and Private Chains"
@@ -7172,7 +7172,7 @@
     "message": "Launched Feb 2026"
   },
   "stablecoins.usdcx.tagline": {
-    "message": "USDCx — The world's most trusted stablecoin, now on Cardano."
+    "message": "USDCx: The world's most trusted stablecoin, now on Cardano."
   },
   "stablecoins.usdcx.body1": {
     "message": "1:1 backed by USDC. Cross-chain liquidity."
@@ -7196,7 +7196,7 @@
     "message": "Launched March 2024"
   },
   "stablecoins.usdm.tagline": {
-    "message": "USDM — Cardano's original fiat-backed stablecoin."
+    "message": "USDM: Cardano's original fiat-backed stablecoin."
   },
   "stablecoins.usdm.body1": {
     "message": "Regulated, reserve-backed, and built from the ground up for the Cardano ecosystem."
@@ -7253,7 +7253,7 @@
     "message": "Launched Jan 2023"
   },
   "stablecoins.djed.tagline": {
-    "message": "DJED — The first mathematically proven stablecoin in history."
+    "message": "DJED: The first mathematically proven stablecoin in history."
   },
   "stablecoins.djed.body1": {
     "message": "No bank. No custodian. Just cryptography, collateral, and mathematics you can verify yourself."
@@ -7280,13 +7280,13 @@
     "message": "DeFi-native"
   },
   "stablecoins.iusd.tagline": {
-    "message": "iUSD — Earn yield while your collateral stays on-chain."
+    "message": "iUSD: Earn yield while your collateral stays on-chain."
   },
   "stablecoins.iusd.body1": {
     "message": "A synthetic dollar minted by Cardano's DeFi community, for Cardano's DeFi community."
   },
   "stablecoins.iusd.body2": {
-    "message": "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol — Cardano's synthetic asset platform — it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD."
+    "message": "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol (Cardano's synthetic asset platform), it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD."
   },
   "stablecoins.iusd.body3": {
     "message": "For experienced DeFi participants, iUSD opens strategies that fiat-backed stablecoins can't maintain: ada exposure while generating stablecoin liquidity, or provide iUSD to lending protocols to earn yield on both sides."
@@ -7349,7 +7349,7 @@
     "message": "Fees you can predict before you pay"
   },
   "stablecoins.whyCardano.fees.body1": {
-    "message": "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee — or watch transactions fail while still paying the cost."
+    "message": "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee, or watch transactions fail while still paying the cost."
   },
   "stablecoins.whyCardano.fees.body2": {
     "message": "Cardano transactions are deterministic. Before you submit a transaction, you know exactly what it will cost. There are no hidden execution charges, no fee auctions, no failed transactions that still cost money."
@@ -7360,8 +7360,12 @@
   "stablecoins.whyCardano.governance.title": {
     "message": "Finance strategy backed by governance"
   },
+  "stablecoins.liveData.notAvailable": {
+    "message": "n/a",
+    "description": "Placeholder when a live stablecoin figure is missing"
+  },
   "stablecoins.whyCardano.governance.body1": {
-    "message": "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves — transparently, on-chain, and with verifiable results."
+    "message": "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves: transparently, on-chain, and with verifiable results."
   },
   "stablecoins.whyCardano.governance.body2": {
     "message": "The stablecoin ecosystem on Cardano isn't shaped by a single entity's unilateral interests. It's backed by the community that uses it and aimed towards long-term longevity."
@@ -8163,7 +8167,7 @@
     "message": "Stablecoins on Cardano"
   },
   "stablecoins.layout.description": {
-    "message": "Discover the stablecoins available on Cardano — fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference."
+    "message": "Discover the stablecoins available on Cardano: fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference."
   },
   "stablecoins.ecosystem.title": {
     "message": "The Cardano Stablecoin Ecosystem"
@@ -8193,7 +8197,7 @@
     "message": "Understand Stablecoins"
   },
   "stablecoins.explainer.intro1": {
-    "message": "Cardano supports five active stablecoins issued natively on the chain — USDCx, USDM, USDA, DJED, and iUSD — alongside several more that reach Cardano via bridges from other ecosystems."
+    "message": "Cardano supports five active stablecoins issued natively on the chain (USDCx, USDM, USDA, DJED, and iUSD), alongside several more that reach Cardano via bridges from other ecosystems."
   },
   "stablecoins.explainer.intro2": {
     "message": "Unlike most blockchains, Cardano stablecoins are native tokens, not smart contracts. They get treated as first-class citizens, similar to Cardano’s very own native asset, ada. This means lower fees, no hidden risk, and transfers that work as you expect, every time."
@@ -8316,7 +8320,7 @@
     "message": "The pandemic has highlighted the critical importance of maintaining resilient and transparent supply chains, especially in agriculture. As a primary source of food and sustenance, agriculture's supply chain must remain operational to support livelihoods and ensure the well-being of populations worldwide."
   },
   "useCases.agriculture.description2": {
-    "message": "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders—including farmers, transporters, and retailers—can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."
+    "message": "Cardano's blockchain provides a robust solution for improving transparency and efficiency in agricultural supply chains. By enabling product certification and traceability from farm to table, blockchain ensures that stakeholders, including farmers, transporters, and retailers, can track the journey of goods securely and immutably. This builds trust, enhances sustainability, and ensures accountability at every stage of the process."
   },
   "useCases.retail.title": {
     "message": "Retail"
@@ -8442,7 +8446,7 @@
     "message": "The quick brown fox jumps over the lazy dog"
   },
   "brandAssets.typography.credit": {
-    "message": "by Omnibus-Type —"
+    "message": "by Omnibus-Type via"
   },
   "brandAssets.typography.fallback": {
     "message": "Fallback: Arial, sans-serif"
@@ -8562,7 +8566,7 @@
     "message": "Connect wallet and sign one transaction"
   },
   "governance.delegation.step4.text": {
-    "message": "Your voting power is now represented by your DRep. You can change your delegation at any time — your ada stays fully under your control."
+    "message": "Your voting power is now represented by your DRep. You can change your delegation at any time. Your ada stays fully under your control."
   },
   "governance.delegation.done.thanks": {
     "message": "Thank you for participating in on-chain governance and helping shape Cardano's future."

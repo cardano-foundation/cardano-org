@@ -58,7 +58,7 @@ export default function Home() {
               title={translate({id: 'commonScams.intro.title', message: 'Protecting your ada from scammers'})}
               description={[
                 translate({id: 'commonScams.intro.description1', message: 'The cryptocurrency space is full of opportunities, but it\'s also a playground for scammers. Cardano (ada), one of the most popular blockchains, isn\'t immune to these threats. From fake giveaways to phishing attacks, scammers are constantly innovating new ways to exploit users. As artificial intelligence continues to improve, these scams are also becoming more sophisticated. This page outlines the most common scams in the Cardano ecosystem and how you can protect yourself.'}),
-                translate({id: 'commonScams.intro.description2', message: '**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet—no spending password can protect you. Once your ada is stolen, it\'s gone forever, with no way to recover it.'}),
+                translate({id: 'commonScams.intro.description2', message: '**Remember:** If someone gains access to your seed words (recovery phrase), they can take full control of your wallet. No spending password can protect you. Once your ada is stolen, it\'s gone forever, with no way to recover it.'}),
               ]}
               headingDot={true}
             />
@@ -139,7 +139,7 @@ export default function Home() {
           <TitleWithText headingLevel={2}
             title={translate({id: 'commonScams.rug.title', message: 'Rug Pulls in Cardano Ecosystem'})}
             description={[
-              translate({id: 'commonScams.rug.description', message: 'Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear—this is known as a "rug pull."'}),
+              translate({id: 'commonScams.rug.description', message: 'Cardano is a public, permissionless Layer 1 blockchain and everyone can use it. Some fraudulent projects launch on Cardano, gaining attention with big promises and flashy marketing. After collecting a significant amount of ada from investors, these projects disappear. This is known as a "rug pull."'}),
               translate({id: 'commonScams.rug.howToProtect', message: 'How to protect yourself:'}),
               {
                 list: [
