@@ -17,9 +17,9 @@ import styles from "./styles.module.css";
 import Grid from "@site/src/components/Layout/Grid";
 
 const TITLE = translate({id: 'walletFinder.hero.title', message: 'Find a Cardano Wallet'});
-const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Compare Cardano wallets by platform, features, and security to find the one that fits your needs'});
-const META_TITLE = translate({id: 'walletFinder.meta.title', message: 'Cardano Wallet Finder, Compare and Choose the Best Wallet'});
-const META_DESCRIPTION = translate({id: 'walletFinder.meta.description', message: 'Find the best Cardano wallet for you. Filter by platform, staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side.'});
+const DESCRIPTION = translate({id: 'walletFinder.hero.description', message: 'Compare Cardano wallets for mobile, desktop and hardware by features and security to find the one that fits your needs'});
+const META_TITLE = translate({id: 'walletFinder.meta.title', message: 'Cardano Wallet Finder: Compare Mobile, Desktop and Hardware Wallets'});
+const META_DESCRIPTION = translate({id: 'walletFinder.meta.description', message: 'Find the best Cardano wallet for mobile or desktop. Filter by staking, NFT support, hardware wallet compatibility, and more. Compare wallets side by side.'});
 
 // Query parameter keys
 const MODE_KEY = "mode";
