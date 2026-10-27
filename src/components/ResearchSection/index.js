@@ -89,7 +89,7 @@ export default function ResearchSection() {
         isImageRight={false}
         subtitle={translate({ id: 'research.byron.subtitle', message: 'Foundation' })}
         description={[
-          translate({ id: 'research.byron.description', message: 'A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. The network ran the proof-of-stake Ouroboros consensus protocol.' }),
+          translate({ id: 'research.byron.description', message: "A period dedicated to building a foundational federated network that enabled the purchase and sale of ada. Blocks were produced by federated nodes running Ouroboros Classic and, from February 2020, Ouroboros BFT." }),
         ]}
         papers={[
           {
@@ -254,7 +254,7 @@ export default function ResearchSection() {
         isImageRight={true}
         subtitle={translate({ id: 'research.basho.subtitle', message: 'Scaling' })}
         description={[
-          translate({ id: 'research.basho.description', message: "An era of optimization, improving the scalability and interoperability of the network. Enhancing the network performance, Basho will introduce sidechains, new blockchains, interoperable with the main Cardano chain, with immense potential to extend the network's capabilities." }),
+          translate({ id: 'research.basho.description', message: "An era of optimization, improving the scalability and interoperability of the network. Work from this era includes diffusion pipelining, delivered with the Vasil upgrade, the [Hydra](/glossary/hydra) layer 2 protocol and partner chains that connect to the main Cardano chain. [Layer 2](/layer-2) lists the networks that run today." }),
         ]}
         papers={[
           {
@@ -304,7 +304,7 @@ export default function ResearchSection() {
         isImageRight={false}
         subtitle={translate({ id: 'research.voltaire.subtitle', message: 'Governance' })}
         description={[
-          translate({ id: 'research.voltaire.description', message: 'The development era is currently enabling the Cardano network to become a self-sustaining system. Voltaire is introducing a voting and treasury system that allows network participants to use their stake and voting rights to influence the future development of the blockchain.' }),
+          translate({ id: 'research.voltaire.description', message: "The era that made Cardano a self-governing system. With [CIP-1694](/glossary/cip-1694), live since the Chang and Plomin upgrades, DReps, stake pool operators and the Constitutional Committee vote on chain on governance actions, from protocol changes to treasury withdrawals, and the rules set which of them vote on which type of action. Ada holders take part by delegating their voting power or becoming a DRep. The [governance](/governance) section explains how it works." }),
         ]}
         papers={[
           {

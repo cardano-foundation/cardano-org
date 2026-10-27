@@ -8,7 +8,6 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
   return (
     <SiteHero
       title={translate({id: 'research.hero.title', message: 'Research'})}
