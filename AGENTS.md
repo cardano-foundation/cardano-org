@@ -78,7 +78,7 @@ Read `docs/get-involved/component-guidelines.md` and `docs/get-involved/design-t
 
 ## Quality Gates (Before PR)
 - CI runs `yarn lint`, `yarn test`, and `yarn build --locale en` on every PR against `staging`. Run the same locally before opening a PR.
-- `yarn test` includes an editorial guard (`scripts/check-docs-style.js`) that fails on typographic dashes and arrow glyphs in `docs/` and `blog/`.
+- `yarn test` includes an editorial guard (`scripts/check-docs-style.js`) that fails on typographic dashes in `docs/`, `blog/`, `src/`, `i18n/en/` and `scripts/` (numeric ranges like `60–70` are allowed), and on arrow glyphs in `docs/` and `blog/`. Other locales are not checked.
 - No new warnings or errors introduced
 - PR must not break local dev or production build
 - New or changed shared components have JSDoc and a doc page in `docs/get-involved/components/` (see "Building UI" above). `yarn test:component-docs` warns when a doc page, the JSDoc, or a matching props table is missing

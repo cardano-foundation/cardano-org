@@ -218,7 +218,7 @@ function StepFour() {
       <p className={styles.panelDescription}>
         {translate({
           id: "governance.delegation.step4.text",
-          message: "Your voting power is now represented by your DRep. You can change your delegation at any time — your ada stays fully under your control.",
+          message: "Your voting power is now represented by your DRep. You can change your delegation at any time. Your ada stays fully under your control.",
         })}
       </p>
       <div className={styles.doneVisual}>

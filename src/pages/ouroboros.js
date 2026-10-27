@@ -59,7 +59,7 @@ export default function Home() {
                 title={translate({id: 'ouroboros.features.provablySecure.title', message: 'Provably Secure'})}
                 text={[
                   translate({id: 'ouroboros.features.provablySecure.text1', message: 'Ouroboros features mathematically verifiable security against attackers.'}),
-                  translate({id: 'ouroboros.features.provablySecure.text2', message: 'The protocol is guaranteed to be secure so long as 51% of the stake – in the case of Cardano, ada – is held by honest participants, which, in addition to other novel concepts, is achieved through random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis.'}),
+                  translate({id: 'ouroboros.features.provablySecure.text2', message: 'The protocol is guaranteed to be secure so long as 51% of the stake (in the case of Cardano, ada) is held by honest participants, which, in addition to other novel concepts, is achieved through random leader selection. The protocol continues to evolve through new iterations and rigorous security analysis.'}),
                 ]}
                 headingDot={true}
               />

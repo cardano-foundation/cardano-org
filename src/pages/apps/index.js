@@ -41,7 +41,7 @@ import { jsonLdString } from "@site/src/utils/jsonLd";
 import styles from "./styles.module.css";
 import Grid from "@site/src/components/Layout/Grid";
 
-// SEO meta — long, optimized for SERP. Used by <Layout>.
+// SEO meta: long, optimized for SERP. Used by <Layout>.
 const SEO_TITLE = translate({
   id: "apps.seo.title",
   message: "Cardano Apps Directory: Wallets, DEXes, NFTs & More",
@@ -55,7 +55,7 @@ const SEO_DESCRIPTION = translate(
   { count: Showcases.length }
 );
 
-// Hero — short copy for the visible page banner. Used by <SiteHero>.
+// Hero: short copy for the visible page banner. Used by <SiteHero>.
 const HERO_TITLE = translate({
   id: "apps.hero.title",
   message: "Cardano Apps and dApps",

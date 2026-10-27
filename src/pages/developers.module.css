@@ -1,4 +1,4 @@
-/* Single showcase card — the heart of the page */
+/* Single showcase card, the heart of the page */
 .showcaseCard {
   background: var(--ifm-background-surface-color);
   border-radius: 12px;
@@ -54,7 +54,7 @@
   margin-bottom: 2rem;
 }
 
-/* Feature rows — screenshot + text flowing vertically */
+/* Feature rows: screenshot + text flowing vertically */
 .featureRow {
   display: flex;
   align-items: center;

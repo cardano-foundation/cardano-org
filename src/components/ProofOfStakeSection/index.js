@@ -24,7 +24,7 @@ export default function ProofOfStakeSection() {
           title="Proof of stake and proof of work"
           description={[
             "There are two main blockchain protocols: proof-of-stake (PoS) and proof-of-work (PoW). These protocols are consensus \
-            algorithms for distributed networks: rulesets that dictate how networks – made up of thousands of nodes – agree on \
+            algorithms for distributed networks: rulesets that dictate how networks (made up of thousands of nodes) agree on \
             new additions (blocks) in a permissionless setting.",
           ]}
           headingDot={true}
@@ -43,8 +43,8 @@ export default function ProofOfStakeSection() {
         <TitleWithText headingLevel={2}
           description={[
             "Proof-of-stake answers the performance and energy-use challenges of proof-of-work, and arrives at a more sustainable \
-            solution. Instead of relying on 'miners' to solve computationally complex equations to create new blocks – and rewarding \
-            the first to do so – proof of stake selects participants (in the case of Cardano, stake pools) to create new blocks based \
+            solution. Instead of relying on 'miners' to solve computationally complex equations to create new blocks and rewarding \
+            the first to do so, proof of stake selects participants (in the case of Cardano, stake pools) to create new blocks based \
             on the stake they control in the network.",
           ]}
         />

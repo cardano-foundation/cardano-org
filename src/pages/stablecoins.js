@@ -56,7 +56,7 @@ export default function Stablecoins() {
       description={translate({
         id: "stablecoins.layout.description",
         message:
-          "Discover the stablecoins available on Cardano — fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference.",
+          "Discover the stablecoins available on Cardano: fiat-backed, overcollateralised, and synthetic. Learn how they work, where to get them, and why Cardano's predictable, low-fee foundation makes a difference.",
       })}
     >
       <OpenGraphInfo pageName="stablecoins" />
@@ -176,7 +176,7 @@ export default function Stablecoins() {
                 {translate({
                   id: "stablecoins.explainer.intro1",
                   message:
-                    "Cardano supports five active stablecoins issued natively on the chain — USDCx, USDM, USDA, DJED, and iUSD — alongside several more that reach Cardano via bridges from other ecosystems.",
+                    "Cardano supports five active stablecoins issued natively on the chain (USDCx, USDM, USDA, DJED, and iUSD), alongside several more that reach Cardano via bridges from other ecosystems.",
                 })}
               </p>
               <p>

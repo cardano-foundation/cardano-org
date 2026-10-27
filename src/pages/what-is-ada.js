@@ -42,8 +42,8 @@ export default function Home() {
             title={translate({id: 'whatIsAda.section.title', message: 'Ada Is The Native Token Of Cardano'})}
             description={[
               translate({id: 'whatIsAda.section.description1', message: 'It is named after Ada Lovelace: a 19th-century mathematician who is recognized as the first computer programmer, and is the daughter of the poet Lord Byron.'}),
-              translate({id: 'whatIsAda.section.description2', message: 'Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value – without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain.'}),
-              translate({id: 'whatIsAda.section.description3', message: 'Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards – to participate in the successful running of the network – or found and run your own stake pool to increase the pool\'s likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform.'}),
+              translate({id: 'whatIsAda.section.description2', message: 'Ada is a digital currency. Any user, located anywhere in the world, can use ada as a secure exchange of value, without requiring a third party to mediate the exchange. Every transaction is permanently, securely, and transparently recorded on the Cardano blockchain.'}),
+              translate({id: 'whatIsAda.section.description3', message: 'Every ada holder also holds a stake in the Cardano network. Ada stored in a wallet can be delegated to a stake pool to earn rewards (to participate in the successful running of the network), or found and run your own stake pool to increase the pool\'s likelihood of receiving rewards. In time, ada will also be usable for a variety of applications and services on the Cardano platform.'}),
             ]}
             quote={translate({id: 'whatIsAda.section.quote', message: 'What can I do with ada?'})}
           />

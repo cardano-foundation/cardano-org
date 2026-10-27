@@ -52,7 +52,7 @@ export default function Home() {
               rightText={parseMarkdownLikeText([
                 translate({ id: 'stakePoolOperation.whatIsStaking.rightText1', message: 'There are two ways an ada holder can earn rewards: by delegating their stake to a [stake pool](/glossary/stake-pool) run by someone else, or by running their own stake pool.' }),
                 translate({ id: 'stakePoolOperation.whatIsStaking.rightText2', message: 'The amount of stake delegated to a given stake pool is the primary way the [Ouroboros](/glossary/ouroboros) protocol chooses who should add the next block to the blockchain, and receive a monetary reward for doing so.' }),
-                translate({ id: 'stakePoolOperation.whatIsStaking.rightText3', message: 'The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block – and the rewards that it earns are shared between everyone who delegated their stake to that stake pool.' }),
+                translate({ id: 'stakePoolOperation.whatIsStaking.rightText3', message: 'The more stake is delegated to a stake pool (up to a certain point), the more likely it is to make the next block, and the rewards that it earns are shared between everyone who delegated their stake to that stake pool.' }),
               ])}
             />
             <TitleWithText headingLevel={2}

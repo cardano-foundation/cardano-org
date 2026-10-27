@@ -115,11 +115,11 @@ export default function FollowCardanoSection() {
 
           {
             list: [
-              "**Proceeds of sale review** – reconciliation of funds received during the sales event",
-              "**Customer sales analysis** - checks for suspicious customer activity during the sale",
-              "**Distributor activity analysis** – check for any evidence of distributor malpractice or fraud",
-              "**Check for KYC (Know Your Customer) adherence** – assess whether agreed KYC procedures were applied by Attain",
-              "**Review of Attain as an entity** – perform operational checks for good internal governance",
+              "**Proceeds of sale review**: reconciliation of funds received during the sales event",
+              "**Customer sales analysis**: checks for suspicious customer activity during the sale",
+              "**Distributor activity analysis**: check for any evidence of distributor malpractice or fraud",
+              "**Check for KYC (Know Your Customer) adherence**: assess whether agreed KYC procedures were applied by Attain",
+              "**Review of Attain as an entity**: perform operational checks for good internal governance",
             ],
           },
 
