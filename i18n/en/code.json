@@ -1764,12 +1764,6 @@
   "ambassadors.layout.description": {
     "message": "The Cardano Ambassador Program recognizes community leaders who educate, engage, and raise awareness to drive Cardano's adoption."
   },
-  "brandAssets.hero.title": {
-    "message": "Brand Assets"
-  },
-  "brandAssets.hero.description": {
-    "message": "Our brand is a reflection of everything that we create. Here are some of the things that make up our brand and how you can use them."
-  },
   "brandAssets.layout.title": {
     "message": "Cardano Logo Download: Brand Assets, Colors and Guidelines"
   },
@@ -8411,84 +8405,6 @@
   "apps.maintainerPick": {
     "message": "Maintainer picks"
   },
-  "brandAssets.colors.copyHex": {
-    "message": "Copy hex value"
-  },
-  "brandAssets.colors.copied": {
-    "message": "Copied!"
-  },
-  "brandAssets.colors.coreTitle": {
-    "message": "Core Colors"
-  },
-  "brandAssets.colors.secondaryTitle": {
-    "message": "Secondary Colors"
-  },
-  "brandAssets.typography.title": {
-    "message": "Typography"
-  },
-  "brandAssets.typography.sample": {
-    "message": "The quick brown fox jumps over the lazy dog"
-  },
-  "brandAssets.typography.credit": {
-    "message": "by Omnibus-Type —"
-  },
-  "brandAssets.typography.fallback": {
-    "message": "Fallback: Arial, sans-serif"
-  },
-  "brandAssets.usage.do1": {
-    "message": "Use only the specified brand colors"
-  },
-  "brandAssets.usage.do2": {
-    "message": "Maintain the safe area around the logo"
-  },
-  "brandAssets.usage.do3": {
-    "message": "The icon can be used as a standalone element"
-  },
-  "brandAssets.usage.dont1": {
-    "message": "Do not stretch, rotate, or distort the logo"
-  },
-  "brandAssets.usage.dont2": {
-    "message": "Do not recolor the logo outside brand colors"
-  },
-  "brandAssets.usage.dont3": {
-    "message": "Do not use the wordmark without the icon"
-  },
-  "brandAssets.usage.title": {
-    "message": "Usage Guidelines"
-  },
-  "brandAssets.usage.minSizes": {
-    "message": "Minimum Sizes"
-  },
-  "brandAssets.usage.safeArea": {
-    "message": "Safe Area"
-  },
-  "brandAssets.usage.safeAreaDesc": {
-    "message": "Always maintain a clear space around the logo equal to the width of six dots from the starburst icon. This ensures the logo remains legible and visually distinct in all applications."
-  },
-  "brandAssets.usage.dosDonts": {
-    "message": "Do's & Don'ts"
-  },
-  "brandAssets.usage.cobranding": {
-    "message": "Co-branding"
-  },
-  "brandAssets.usage.cobrandingDesc": {
-    "message": "When the Cardano logo appears alongside a partner logo, the Cardano logo should be displayed at an equal or larger size to maintain brand prominence."
-  },
-  "brandAssets.logos.downloadSvg": {
-    "message": "Download SVG"
-  },
-  "brandAssets.logos.download": {
-    "message": "Download"
-  },
-  "brandAssets.logos.downloadAll": {
-    "message": "Download all Cardano brand assets from this page."
-  },
-  "brandAssets.logos.desc1": {
-    "message": "Our logo is at the heart of the brand identity. While it is the most recognizable part of the brand identity it is not the only component. The horizontal logo (shown here) is the primary version and should be used as the default version."
-  },
-  "brandAssets.logos.desc2": {
-    "message": "Please note the [Cardano Foundation Trademark Policy](https://cardanofoundation.org/en/trademark-policy)."
-  },
   "apps.browseByCategory.seeAll": {
     "message": "See all"
   },
@@ -12485,5 +12401,254 @@
   },
   "leaderboard.cta.button": {
     "message": "Browse Apps Directory"
+  },
+  "brandAssets.hero.heading": {
+    "message": "Brand Kit"
+  },
+  "brandAssets.hero.subtitle": {
+    "message": "Making the brand work better for all."
+  },
+  "brandAssets.hero.body": {
+    "message": "An evolving resource library capturing Cardano's unique visual and verbal style. Unified design, voice, and essence that foster familiarity and confidence across all touchpoints."
+  },
+  "brandAssets.hero.button": {
+    "message": "Download the Brandbook"
+  },
+  "brandAssets.hero.tile.logo": {
+    "message": "Logo"
+  },
+  "brandAssets.hero.tile.colors": {
+    "message": "Colors"
+  },
+  "brandAssets.hero.tile.type": {
+    "message": "Type"
+  },
+  "brandAssets.hero.tile.inUse": {
+    "message": "In Use"
+  },
+  "brandAssets.intro.title": {
+    "message": "Creating trust infrastructure for all."
+  },
+  "brandAssets.intro.line1": {
+    "message": "Where research-backed technology solidifies trust."
+  },
+  "brandAssets.intro.line2": {
+    "message": "Where security is upheld year after year."
+  },
+  "brandAssets.intro.line3": {
+    "message": "Where businesses, governments, and citizens come together."
+  },
+  "brandAssets.tone.eyebrow": {
+    "message": "Cardano is..."
+  },
+  "brandAssets.tone.farsighted.word": {
+    "message": "Farsighted"
+  },
+  "brandAssets.tone.farsighted.meaning": {
+    "message": "Driven by long-term purpose."
+  },
+  "brandAssets.tone.undaunted.word": {
+    "message": "Undaunted"
+  },
+  "brandAssets.tone.undaunted.meaning": {
+    "message": "Unafraid to reimagine the world."
+  },
+  "brandAssets.tone.conscious.word": {
+    "message": "Conscious"
+  },
+  "brandAssets.tone.conscious.meaning": {
+    "message": "Committed to building trust."
+  },
+  "brandAssets.tone.rigorous.word": {
+    "message": "Rigorous"
+  },
+  "brandAssets.tone.rigorous.meaning": {
+    "message": "Sound by design."
+  },
+  "brandAssets.logo.title": {
+    "message": "Logo"
+  },
+  "brandAssets.logo.primary.title": {
+    "message": "The Cardano Logo"
+  },
+  "brandAssets.logo.primary.paragraph1": {
+    "message": "The Cardano logo is made up of two elements: the starburst and the wordmark. Together, they make Cardano instantly recognizable, while forming just one part of its multi-faceted brand identity."
+  },
+  "brandAssets.logo.primary.paragraph2": {
+    "message": "The horizontal logo, shown here, is the primary version and should always be the preferred choice."
+  },
+  "brandAssets.logo.primary.paragraph3": {
+    "message": "View and download all available logo variations on this page."
+  },
+  "brandAssets.logo.primary.button": {
+    "message": "Download Cardano Logo Kit"
+  },
+  "brandAssets.logo.primary.imageAlt": {
+    "message": "The horizontal Cardano logo: the starburst icon next to the CARDANO wordmark"
+  },
+  "brandAssets.logo.primary.iconLabelPrefix": {
+    "message": "Icon:"
+  },
+  "brandAssets.logo.primary.iconLabel": {
+    "message": "The Star Burst"
+  },
+  "brandAssets.logo.primary.wordmarkLabel": {
+    "message": "The Wordmark"
+  },
+  "brandAssets.logo.safety.title": {
+    "message": "Safety Area"
+  },
+  "brandAssets.logo.safety.paragraph1": {
+    "message": "For a logo that's easy to read and never visually compromised, make sure there is always adequate clear space between the wordmark + icon combo and other elements that may share a space with it."
+  },
+  "brandAssets.logo.safety.paragraph2": {
+    "message": "Apply the following process to define the safety area: Use the center six dots of the starburst as the minimum clear space on all sides of the logo."
+  },
+  "brandAssets.logo.safety.imageAlt": {
+    "message": "The horizontal Cardano logo inside a grid that marks the minimum clear space on each side, sized by the center six dots of the starburst"
+  },
+  "brandAssets.logo.starburst.title": {
+    "message": "The Starburst"
+  },
+  "brandAssets.logo.starburst.body": {
+    "message": "In small areas where the full logo cannot be showcased, the starburst icon can be used to represent the brand. In that case, it is recommended to use it in the iconic Cardano Cobalt blue (or, if not possible, in Clarity). The Starburst can exist on its own, but the wordmark can never exist without the icon."
+  },
+  "brandAssets.logo.starburst.imageAlt": {
+    "message": "The Cardano starburst icon in Cardano Blue"
+  },
+  "brandAssets.assets.title": {
+    "message": "Looking for a specific asset? Download individual logos here."
+  },
+  "brandAssets.assets.horizontal": {
+    "message": "Horizontal Logo"
+  },
+  "brandAssets.assets.vertical": {
+    "message": "Vertical Logo"
+  },
+  "brandAssets.assets.starburst": {
+    "message": "The Starbust Symbol"
+  },
+  "brandAssets.colors.title": {
+    "message": "Colors"
+  },
+  "brandAssets.colors.primary.title": {
+    "message": "Primary colors"
+  },
+  "brandAssets.colors.primary.paragraph1": {
+    "message": "Cardano color system is built on clarity and balance."
+  },
+  "brandAssets.colors.primary.paragraph2": {
+    "message": "Clarity (white) and Obsidian (black) act as the primary foundation, making up the majority of each composition to keep the content clean, legible and consistent."
+  },
+  "brandAssets.colors.primary.button": {
+    "message": "Colors on Figma"
+  },
+  "brandAssets.colors.name.cardanoBlue": {
+    "message": "Cardano Blue"
+  },
+  "brandAssets.colors.name.clarity": {
+    "message": "Clarity"
+  },
+  "brandAssets.colors.name.obsidian": {
+    "message": "Obsidian"
+  },
+  "brandAssets.colors.name.photonSignal": {
+    "message": "Photon Signal"
+  },
+  "brandAssets.colors.name.lavenderGrey": {
+    "message": "Lavender Grey"
+  },
+  "brandAssets.colors.extended.title": {
+    "message": "Extended palette"
+  },
+  "brandAssets.colors.extended.paragraph1": {
+    "message": "Cardano color system is built on clarity and balance."
+  },
+  "brandAssets.colors.extended.paragraph2": {
+    "message": "Clarity (white) and Obsidian (black) act as the primary foundation, making up the majority of each composition to keep the content clean, legible and consistent."
+  },
+  "brandAssets.colors.extended.paragraph3": {
+    "message": "Cobalt Blue serves as the core brand color, used to anchor layouts and reinforce recognition. Supporting tones like Lavender Grey and Photon Signal are used as accents to highlight key moments and add warmth."
+  },
+  "brandAssets.colors.extended.paragraph4": {
+    "message": "By keeping a strong neutral base and using color with intention, the system remains flexible, focused, and distinctly Cardano."
+  },
+  "brandAssets.colors.name.deepBlue": {
+    "message": "Deep Blue"
+  },
+  "brandAssets.colors.name.neutralGrey": {
+    "message": "Neutral Grey"
+  },
+  "brandAssets.colors.name.slate": {
+    "message": "Slate"
+  },
+  "brandAssets.colors.name.lavender": {
+    "message": "Lavender"
+  },
+  "brandAssets.colors.name.teal": {
+    "message": "Teal"
+  },
+  "brandAssets.colors.name.pedal": {
+    "message": "Pedal"
+  },
+  "brandAssets.font.title": {
+    "message": "Font"
+  },
+  "brandAssets.font.body": {
+    "message": "The typeface, Chivo, embodies clarity, restraint, and intention. Across its range of weights, Chivo Light is the preferred voice. Its slender strokes and generous spacing are in line with Cardano's clear communication style."
+  },
+  "brandAssets.font.button": {
+    "message": "Download Chivo"
+  },
+  "brandAssets.font.specimenLabel": {
+    "message": "Primary Typeface"
+  },
+  "brandAssets.font.weightsBody": {
+    "message": "When heavier weights are needed for hierarchy or emphasis, the broader Chivo family maintains consistency with our visual language, always precise and never loud. Together, these weights ensure every word feels considered and every layout has room to breathe."
+  },
+  "brandAssets.inUse.title": {
+    "message": "The brand-in-use"
+  },
+  "brandAssets.inUse.hero.alt": {
+    "message": "A Cardano poster reading \"Build the future you want to live in.\" on a digital screen in a train station"
+  },
+  "brandAssets.inUse.intro1": {
+    "message": "Examples of the Cardano brand applied across various formats, demonstrating its visual and verbal identity in action."
+  },
+  "brandAssets.inUse.intro2": {
+    "message": "Consistent style and tone help build recognition and trust, on all channels and display settings."
+  },
+  "brandAssets.inUse.card.fairerWorld": {
+    "message": "Cardano card reading \"The operating system for a fairer world.\""
+  },
+  "brandAssets.inUse.card.buildTheFuture": {
+    "message": "Cardano card reading \"Build the future you want to live in.\""
+  },
+  "brandAssets.inUse.card.roadmap": {
+    "message": "Cardano Foundation Roadmap cover reading \"Cardano Foundation delegates ADA to community DReps to strengthen decentralized governance.\""
+  },
+  "brandAssets.inUse.card.decentralization": {
+    "message": "Cardano card reading \"Strengthening decentralization. Decentralization is not a destination. It is a continuous commitment.\""
+  },
+  "brandAssets.inUse.card.changeBegins": {
+    "message": "Cardano banner reading \"Change begins with what you build. Build it with Cardano.\""
+  },
+  "brandAssets.inUse.event.title": {
+    "message": "Event"
+  },
+  "brandAssets.inUse.event.body": {
+    "message": "Brand materials can be adapted for a wide range of events, including conferences, meetups, hackathons, workshops, and community activations. To ensure brand consistency and alignment with current campaign priorities, please consult the Cardano Communications Team before creating or producing event-specific materials. They can provide guidance on approved assets, messaging, branding applications, and event requirements."
+  },
+  "brandAssets.inUse.event.alt": {
+    "message": "A conference stage dressed in Cardano brand graphics, with an audience in front"
+  },
+  "brandAssets.inUse.social.title": {
+    "message": "Social"
+  },
+  "brandAssets.inUse.social.body": {
+    "message": "Our brand is represented across multiple social platforms and content formats. For access to approved templates and social media assets, please contact the Communications Team."
+  },
+  "brandAssets.inUse.social.alt": {
+    "message": "A collage of Cardano social media posts and event announcements"
   }
 }

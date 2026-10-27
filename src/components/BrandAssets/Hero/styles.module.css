@@ -1,0 +1,242 @@
+/*
+ * Brand assets hero (Figma 1:111; mobile 8:109 and 8:116).
+ *
+ * The intro sits on the page surface (Clarity in light mode, the theme
+ * background in dark mode, see --ba-* in src/pages/brand-assets.module.css).
+ * The tile band stays Cardano Blue with Clarity tiles in both themes, because
+ * the tiles are brand artwork.
+ */
+
+.hero {
+  background: var(--ba-surface);
+}
+
+/* Intro: title block on the left, lead and button on the right. */
+.intro {
+  padding: 108px 0 70px;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 466px);
+  column-gap: clamp(32px, 4vw, 108px);
+  align-items: start;
+}
+
+/*
+ * The title block is the size container for the subtitle, which stays on one
+ * line as in the design: the line is about 16.6 times its font size wide, so
+ * 5.9cqi always fits the column. It is capped at the design's 40.5px.
+ */
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  container-type: inline-size;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(72px, 7vw, 100px);
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ba-ink);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: min(40.5px, 5.9cqi);
+  font-weight: 200;
+  line-height: 1.17;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+  color: var(--ba-ink);
+}
+
+.lead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 51px;
+}
+
+.body {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--ba-ink);
+}
+
+.button {
+  min-width: 355px;
+}
+
+/* Tile band */
+.band {
+  padding: 53px 0 66px;
+  background: #0033ad;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+/*
+ * Each tile is a link to its section. The tile is the size container, so the
+ * artwork offsets below are percentages of the tile (or cqw for the Type
+ * tile's text), taken from the 340px by 458px tiles in the design.
+ */
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 340 / 458;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fffaf3;
+  container-type: inline-size;
+  text-decoration: none;
+  transition: transform var(--site-duration-base) var(--site-ease);
+}
+
+.tile:hover {
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.tile:focus-visible {
+  outline: 3px solid #fffaf3;
+  outline-offset: 3px;
+}
+
+.art {
+  position: absolute;
+  inset: 0;
+}
+
+/* Logo: the starburst, 150% of the tile width, centered 22.5% left of center. */
+.artStarburst {
+  position: absolute;
+  top: 50%;
+  left: 27.45%;
+  width: 149.7%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Colors: the stacked circles exported from Figma (node 1:126). */
+.artColors {
+  position: absolute;
+  top: 0;
+  left: 11.14%;
+  width: 77.4%;
+  height: 100%;
+}
+
+/* Type: CARDANO CARD in Chivo Thin, broken over three lines as in the design. */
+.artType {
+  position: absolute;
+  top: -5.76cqw;
+  left: -12.83cqw;
+  display: flex;
+  flex-direction: column;
+  font-size: 62.1cqw;
+  font-weight: 100;
+  line-height: 0.79;
+  letter-spacing: 0.04em;
+  color: #0033ad;
+  white-space: nowrap;
+}
+
+.artTypeAccent {
+  color: #ffb122;
+}
+
+/* In Use: the hoodie photo, cropped to the tile in the export. */
+.artPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tileLabel {
+  position: absolute;
+  left: 14px;
+  bottom: 16px;
+  padding: 10px 20px;
+  border: 1px solid #06187d;
+  border-radius: var(--site-radius-pill);
+  background: #fffaf3;
+  color: #06187d;
+  font-family: "Chivo Mono", ui-monospace, monospace;
+  font-size: 22px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Tablet: stack the intro, keep four tiles with smaller labels. */
+@media (max-width: 996px) {
+  .intro {
+    padding: 40px 0;
+  }
+
+  .introGrid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+
+  .lead {
+    gap: 32px;
+  }
+
+  .body {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .band {
+    padding: 20px 0;
+  }
+
+  .tiles {
+    gap: 10px;
+  }
+
+  .tileLabel {
+    left: 8px;
+    bottom: 10px;
+    padding: 4px 12px;
+    font-size: 15px;
+  }
+}
+
+/* Phone: tiles in a 2 by 2 grid, full-width button. */
+@media (max-width: 576px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lead {
+    align-items: stretch;
+  }
+
+  .button {
+    min-width: 0;
+  }
+
+  /* Phones keep a readable size and wrap into two even lines. */
+  .subtitle {
+    font-size: 24px;
+  }
+}

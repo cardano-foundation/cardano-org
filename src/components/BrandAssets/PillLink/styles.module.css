@@ -1,0 +1,53 @@
+/*
+ * Brand assets download button (Figma 1:118, 1:255, 1:385). Cardano Blue with a
+ * Clarity label in Chivo Mono. In dark mode it switches to the lightest
+ * primary with dark text, like button--pill-white, unless it sits on a fixed
+ * Clarity card (pillFixed).
+ */
+.pill {
+  --pill-bg: #0033ad;
+  --pill-bg-hover: #002a8e;
+  --pill-color: #fffaf3;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 10px 40px;
+  border-radius: var(--site-radius-pill);
+  background: var(--pill-bg);
+  color: var(--pill-color);
+  font-family: "Chivo Mono", ui-monospace, monospace;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--site-duration-base) var(--site-ease);
+}
+
+.pill:hover {
+  background: var(--pill-bg-hover);
+  color: var(--pill-color);
+  text-decoration: none;
+}
+
+.pill:focus-visible {
+  outline: none;
+  box-shadow: var(--site-focus-ring);
+}
+
+[data-theme="dark"] .pill:not(.pillFixed) {
+  --pill-bg: var(--ifm-color-primary-lightest);
+  --pill-bg-hover: var(--ifm-color-primary-lighter);
+  --pill-color: #0a1031;
+}
+
+@media (max-width: 996px) {
+  .pill {
+    min-height: 48px;
+    padding: 10px 24px;
+    font-size: 16px;
+  }
+}

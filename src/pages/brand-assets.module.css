@@ -1,0 +1,968 @@
+/*
+ * /brand-assets page layout (Figma ZfAuRVCOZevM91nPOh4uDo: desktop 1:109,
+ * mobile 8:61). The hero lives in src/components/BrandAssets/Hero and the
+ * download buttons in src/components/BrandAssets/PillLink.
+ *
+ * The page surface is Clarity (#FFFAF3) with Obsidian text in light mode and
+ * the theme colors in dark mode (--ba-*). Brand artwork keeps its colors in
+ * both themes: the tone card, the logo panels, the swatches, the asset band,
+ * the type band, and the showcase images.
+ */
+
+/* Chivo Mono, the design's button face. Only this page uses it. */
+@font-face {
+  font-family: "Chivo Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/ChivoMono-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+.page {
+  --ba-surface: #fffaf3;
+  --ba-ink: #000629;
+  --ba-accent-ink: #010f5d;
+  --ba-rule: #aca6a6;
+  --ba-panel: #f0ede8;
+
+  background: var(--ba-surface);
+  color: var(--ba-ink);
+}
+
+[data-theme="dark"] .page {
+  --ba-surface: var(--ifm-background-color);
+  --ba-ink: var(--ifm-color-emphasis-900);
+  --ba-accent-ink: var(--ifm-color-primary-lightest);
+  --ba-rule: var(--ifm-color-emphasis-300);
+}
+
+/* ---------- Shared type ---------- */
+
+.section {
+  padding-bottom: 80px;
+}
+
+/* Section title: 80px Chivo Light with an Obsidian rule 14px below. */
+.sectionTitle {
+  padding-top: 71px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ba-ink);
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ba-ink);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 24px);
+}
+
+.subheading {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--ba-ink);
+}
+
+/* "Chivo", "Event", and "Social" are 38px in dark blue. */
+.subheading.subheadingAccent {
+  font-size: 38px;
+  color: var(--ba-accent-ink);
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.paragraphs p,
+.bodyText {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--ba-ink);
+}
+
+.copyBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.copyButton {
+  margin-top: 10px;
+}
+
+/*
+ * Text and artwork side by side: 540px of text and a 760px panel with 20px
+ * between them in the 1320px design. splitRowReverse puts the panel first.
+ */
+.splitRow {
+  display: grid;
+  grid-template-columns: minmax(0, 540fr) minmax(0, 760fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.splitRow.splitRowReverse {
+  grid-template-columns: minmax(0, 760fr) minmax(0, 536fr);
+  gap: 24px;
+}
+
+/*
+ * Scaled sections. The design is 1320px wide and BoundaryBox is at most
+ * 1200px, so these sections size their type and spacing in --ba-u, one
+ * design pixel at the current content width (100cqi / 1320). That keeps the
+ * Figma line breaks and proportions at any desktop width. The tablet and
+ * phone rules further down switch back to fixed sizes.
+ */
+.scaledBox {
+  container-type: inline-size;
+}
+
+.scaledBox > * {
+  --ba-u: calc(100cqi / 1320);
+}
+
+/* ---------- Intro ---------- */
+
+.introSection {
+  padding: 47px 0 35px;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 652fr) minmax(0, 648fr);
+  gap: calc(25 * var(--ba-u));
+  align-items: start;
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: calc(36 * var(--ba-u));
+  padding-top: calc(9 * var(--ba-u));
+}
+
+.introTitle {
+  margin: 0;
+  font-size: calc(64 * var(--ba-u));
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--ba-ink);
+}
+
+.introList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ba-rule);
+}
+
+.introList li {
+  margin: 0;
+  padding: calc(40 * var(--ba-u)) 0;
+  border-bottom: 1px solid var(--ba-rule);
+  font-size: calc(22 * var(--ba-u));
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--ba-ink);
+}
+
+.introArt {
+  overflow: hidden;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.introArt img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Tone ---------- */
+
+.toneSection {
+  padding: 33px 0 78px;
+}
+
+/*
+ * Obsidian card with the blue arcs exported from Figma (node 1:209) on the
+ * left and the shared noise texture over it, as in the design.
+ */
+.toneCard {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 106px 158px 104px;
+  border-radius: 15px;
+  background-color: #000629;
+  background-image: url("/img/brand-assets/tone-circles.webp");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto 100%;
+  color: #fffaf3;
+  isolation: isolate;
+}
+
+.toneCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("/img/layer-2/noise.png");
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+}
+
+.toneEyebrow {
+  margin: 0 0 76px;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #fffaf3;
+}
+
+.toneList {
+  margin: 0;
+}
+
+/* One row per trait: word, a thin rule, and its meaning, 92px apart. */
+.toneRow {
+  display: grid;
+  grid-template-columns: auto minmax(40px, 1fr) minmax(0, 316px);
+  align-items: center;
+  column-gap: 25px;
+  min-height: 92px;
+}
+
+.toneWord {
+  margin: 0;
+  font-size: 73px;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fffaf3;
+}
+
+.toneLine {
+  height: 0;
+  border-top: 0.7px solid #f2f2f2;
+}
+
+.toneMeaning {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #fffaf3;
+}
+
+/* ---------- Logo ---------- */
+
+.logoRow {
+  padding-top: 68px;
+}
+
+.safetyRow {
+  padding-top: 78px;
+}
+
+/* Warm grey panel behind the logo artwork. It stays light in dark mode. */
+.logoPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  aspect-ratio: 760 / 460;
+  padding: 24px;
+  border-radius: 15px;
+  background: var(--ba-panel);
+}
+
+/* The 630px logo lockup with the icon and wordmark brackets under it. */
+.logoLockup {
+  width: 82.9%;
+  margin-top: 18px;
+}
+
+.logoLockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logoLegend {
+  position: relative;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.legendIcon,
+.legendWordmark {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.legendIcon {
+  left: 0.3%;
+  width: 21.4%;
+}
+
+.legendWordmark {
+  left: 25.85%;
+  width: 74.15%;
+}
+
+/* A hairline with short end ticks, open at the top. */
+.legendBracket {
+  width: 100%;
+  height: 3px;
+  border: 0.5px solid #000629;
+  border-top: 0;
+}
+
+.legendLabel {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000629;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.legendPrefix {
+  font-weight: 300;
+}
+
+.safetyImage {
+  display: block;
+  width: 68%;
+  height: auto;
+}
+
+/* Starburst: text on the left, the icon in the right half. */
+.starburstRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    ". image"
+    "title image"
+    "body image"
+    ". image";
+  grid-template-rows: 1fr auto auto 1.2fr;
+  column-gap: 60px;
+  row-gap: 30px;
+  align-items: start;
+  padding-top: 108px;
+}
+
+.starburstTitle {
+  grid-area: title;
+  line-height: 0.97;
+}
+
+.starburstBody {
+  grid-area: body;
+  max-width: 536px;
+}
+
+.starburstImage {
+  grid-area: image;
+  justify-self: start;
+  width: 100%;
+  max-width: 598px;
+  height: auto;
+}
+
+/* ---------- Individual logo downloads ---------- */
+
+.assetsBand {
+  padding: 50px 0 51px;
+  background: #0033ad;
+}
+
+.assetsCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 53px;
+  padding: 88px 24px;
+  border-radius: 15px;
+  background: #fffaf3;
+  text-align: center;
+}
+
+.assetsTitle {
+  max-width: 15.5em;
+  margin: 0;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0033ad;
+}
+
+.assetsLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 29px;
+}
+
+.assetsButton {
+  min-width: 286px;
+}
+
+/* ---------- Colors ---------- */
+
+.colorsRow {
+  padding-top: 68px;
+  align-items: start;
+}
+
+.extendedRow {
+  padding-top: 159px;
+}
+
+.colorsRow .copyBlock {
+  padding-top: 18px;
+}
+
+/* Primary colors: five equal columns, outlined in Obsidian. */
+.primaryStrip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  height: 377px;
+  border: 0.5px solid #000629;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 30px 16px;
+}
+
+.swatch.swatchLight {
+  color: #000629;
+}
+
+.swatch.swatchDark {
+  color: #fffaf3;
+}
+
+.swatchName {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Extended palette: three columns of 253px by 234px cells; Teal starts the
+   fourth row under Photon Signal. */
+.extendedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 234px;
+}
+
+.extendedGrid .swatch {
+  padding: 30px 28px 25px;
+}
+
+.extendedGrid .swatch:nth-child(9) {
+  grid-column: 1;
+}
+
+.swatchValues {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Clarity sits on a Clarity page, so it gets a faint edge. */
+.swatch.swatchClarity {
+  box-shadow: inset 0 0 0 1px rgba(0, 6, 41, 0.12);
+}
+
+/* ---------- Font ---------- */
+
+.fontRow {
+  display: grid;
+  grid-template-columns: minmax(0, 505fr) minmax(0, 651fr);
+  gap: clamp(32px, 9vw, 142px);
+  align-items: start;
+  padding-top: 52px;
+}
+
+.fontRow .copyBlock {
+  gap: 35px;
+}
+
+.fontRow .copyButton {
+  margin-top: 0;
+}
+
+/* Type specimen: outlined card with the face name set large on the right. */
+.specimen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  margin-top: 5px;
+  padding: 25px 4.15% 22px 4.13%;
+  border: 1px solid var(--ba-ink);
+  border-radius: 15px;
+  color: var(--ba-ink);
+}
+
+.specimenLabel {
+  font-size: 17.76px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.specimenName {
+  font-size: clamp(80px, 10.4vw, 149px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: right;
+}
+
+/* Weights band: Obsidian with the orb artwork on the right. The image is the
+   Figma orbs (node 1:511) with the blurred Cardano Blue glow (node 1:503)
+   blended in behind them, kept at its design size against the right edge. */
+.weightsBand {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 392px) minmax(0, 1fr);
+  column-gap: 100px;
+  min-height: 472px;
+  margin-top: 145px;
+  padding: 46px 60px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #000629;
+  color: #fffaf3;
+  isolation: isolate;
+}
+
+.weightsOrbs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: auto;
+  max-width: none;
+  height: 100%;
+}
+
+.weightsBody {
+  margin: 9px 0 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #fffaf3;
+}
+
+.weightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.weight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.weightName {
+  padding: 3px 9px;
+  border: 1.75px solid #0033ad;
+  border-radius: 13px;
+  font-size: 22px;
+  line-height: 1.61;
+}
+
+.weightSample {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  line-height: 1.61;
+}
+
+/* ---------- Brand in use ---------- */
+
+.inUseSection {
+  padding-bottom: 96px;
+}
+
+.inUseHero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+  border-radius: 16px;
+}
+
+.inUseIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 535px) minmax(0, 404px);
+  gap: 27px;
+  margin-top: 41px;
+}
+
+.inUseIntro p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--ba-ink);
+}
+
+/*
+ * Showcase mosaic: three columns (461, 378, and 453 design px wide) of cards
+ * at their natural aspect ratio, so the borders drawn into the images are
+ * never cropped. Gaps are in design units (--ba-u), so the columns keep the
+ * design's equal heights at any width. Each card's inline `order` is its
+ * phone position, used when the columns dissolve on small screens.
+ */
+.mosaic {
+  display: grid;
+  grid-template-columns: minmax(0, 461fr) minmax(0, 378fr) minmax(0, 453fr);
+  column-gap: calc(20 * var(--ba-u));
+  align-items: start;
+  margin-top: 59px;
+}
+
+.mosaicColumn {
+  display: flex;
+  flex-direction: column;
+  gap: calc(21.4 * var(--ba-u));
+}
+
+/* The right column's cards are taller, so its gap is smaller and all three
+   columns end level, as in the design. */
+.mosaicColumn:last-child {
+  gap: calc(12.4 * var(--ba-u));
+}
+
+.mosaicCard {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.exampleRow {
+  padding-top: 84px;
+}
+
+.exampleRow.exampleRowFirst {
+  padding-top: 183px;
+}
+
+.exampleImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/*
+ * Narrower desktops: tighten the text column so the alphabet stays clear of
+ * the orbs, which keep their design size against the right edge. Below
+ * 1100px the band stacks and the orbs move under the text.
+ */
+@media (max-width: 1240px) {
+  .weightsBand {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    column-gap: 48px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .weightsBand {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+    min-height: 0;
+    padding-bottom: 300px;
+  }
+
+  .weightsOrbs {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: right top;
+    /* Fade the cut top edge into the band so the glow has no seam. */
+    mask-image: linear-gradient(to bottom, transparent, #000 56px);
+  }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 996px) {
+  .section {
+    padding-bottom: 56px;
+  }
+
+  .sectionTitle {
+    padding-top: 56px;
+  }
+
+  .sectionHeading {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+
+  .subheading {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .subheading.subheadingAccent {
+    font-size: 30px;
+  }
+
+  .paragraphs p,
+  .bodyText,
+  .inUseIntro p,
+  .weightsBody {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  .copyBlock {
+    gap: 20px;
+  }
+
+  .splitRow,
+  .splitRow.splitRowReverse,
+  .introGrid,
+  .fontRow,
+  .inUseIntro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .introSection {
+    padding: 40px 0 24px;
+  }
+
+  .introText {
+    gap: 24px;
+    padding-top: 0;
+  }
+
+  .introTitle {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .introList li {
+    padding: 20px 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .toneSection {
+    padding: 24px 0 56px;
+  }
+
+  .toneCard {
+    padding: 32px 26px 40px;
+    background-size: cover;
+  }
+
+  .toneEyebrow {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+
+  /* Phone layout: each word above its meaning, divided by a rule. */
+  .toneRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    min-height: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(242, 242, 242, 0.3);
+  }
+
+  .toneRow:last-child {
+    border-bottom: 0;
+  }
+
+  .toneWord {
+    font-size: 50px;
+    line-height: 1.1;
+  }
+
+  .toneLine {
+    display: none;
+  }
+
+  .toneMeaning {
+    font-size: 15px;
+  }
+
+  /* On one column the panel follows its text, also in the reversed row. */
+  .splitRow.splitRowReverse .logoPanel {
+    order: 1;
+  }
+
+  .logoRow,
+  .colorsRow {
+    padding-top: 40px;
+  }
+
+  .safetyRow,
+  .extendedRow {
+    padding-top: 56px;
+  }
+
+  .colorsRow .copyBlock {
+    padding-top: 0;
+  }
+
+  .starburstRow {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "image"
+      "body";
+    grid-template-rows: none;
+    row-gap: 24px;
+    padding-top: 56px;
+  }
+
+  .starburstImage {
+    justify-self: center;
+  }
+
+  .assetsBand {
+    padding: 20px 0;
+  }
+
+  .assetsCard {
+    gap: 28px;
+    padding: 40px 20px 32px;
+  }
+
+  .assetsTitle {
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
+  .assetsLinks {
+    flex-direction: column;
+    align-self: stretch;
+    gap: 12px;
+  }
+
+  .assetsButton {
+    min-width: 0;
+  }
+
+  .primaryStrip {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 130px;
+    height: auto;
+  }
+
+  .extendedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 190px;
+  }
+
+  .extendedGrid .swatch {
+    padding: 22px 16px;
+  }
+
+  .extendedGrid .swatch:nth-child(9) {
+    grid-column: auto;
+  }
+
+  .fontRow {
+    padding-top: 40px;
+  }
+
+  .specimen {
+    min-height: 0;
+    margin-top: 0;
+    padding: 16px 12px 8px;
+  }
+
+  .specimenLabel {
+    font-size: 12px;
+  }
+
+  .weightsBand {
+    margin-top: 32px;
+    padding: 36px 22px 300px;
+  }
+
+  .weightName {
+    font-size: 20px;
+  }
+
+  .weightSample {
+    font-size: 18px;
+  }
+
+  .inUseIntro {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  /* Phone: the columns dissolve and the cards stack in data order. */
+  .mosaic {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .mosaicColumn {
+    display: contents;
+  }
+
+  .exampleRow,
+  .exampleRow.exampleRowFirst {
+    padding-top: 56px;
+  }
+}
+
+/* Phone: section download buttons span the column, as in the design. */
+@media (max-width: 576px) {
+  .copyBlock {
+    align-items: stretch;
+  }
+}
