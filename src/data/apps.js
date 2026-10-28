@@ -1941,6 +1941,22 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "Metaware",
+    description:
+      "Tell the game master what you would like to do next. Bribe a guard or start a fight. Play an RPG in a world written by people and narrated by AI.",
+    tagline: "An RPG with an AI game master",
+    preview: require("./app-screenshots/metaware.webp"),
+    extraPreviews: [
+      require("./app-screenshots/metaware-fight.webp"),
+      require("./app-screenshots/metaware-dialogue.webp"),
+    ],
+    website: "https://ofirgeller.com/",
+    source: null,
+    category: "game",
+    properties: [],
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
