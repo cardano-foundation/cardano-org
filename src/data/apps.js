@@ -1941,6 +1941,24 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "Ownbit",
+    description:
+      "Ownbit is a paid, proprietary mobile wallet for ADA self-custody, with optional QR signing between an online watch wallet and a dedicated offline phone.",
+    tagline: "Mobile ADA wallet with offline QR signing",
+    preview: require("./app-screenshots/ownbit-protection-mode.webp"),
+    website: "https://ownbit.io/en/cardano-wallet/",
+    source: null,
+    category: "wallet",
+    properties: [],
+    maintainerPick: false,
+    walletFeatures: {
+      platforms: ["ios", "android"],
+      custody: "non-custodial",
+      features: [],
+      type: "light",
+    },
+  },
 ];
 
 export const TagList = Object.keys(Tags);
