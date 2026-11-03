@@ -4,10 +4,13 @@ import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import TitleWithText from "@site/src/components/Layout/TitleWithText";
 import AppTile from "@site/src/components/AppTile";
-import { Showcases } from "@site/src/data/apps";
+import AppIcon from "@site/src/components/AppIcon";
+import { Categories, Showcases } from "@site/src/data/apps";
+import { UnlistedApps } from "@site/src/data/leaderboard-unlisted";
 import appStatsData from "@site/src/data/tx-stats.json";
 import {
   compareByTxDesc,
+  formatTxCountCompact,
   getAppStats,
   getTopAppPerCategory,
   getTxCount,
@@ -41,6 +44,28 @@ function pickTopApps() {
 const TOP_APPS = pickTopApps();
 // The note above the cards may only claim "per category" while it holds.
 const ONE_PER_CATEGORY = new Set(TOP_APPS.map((app) => app.category)).size === TOP_APPS.length;
+
+// Tracked projects without an app entry (leaderboard-unlisted.js) get a slim
+// row below the app cards instead of competing for the three slots: they have
+// no blurb or detail page, and some carry far more transactions than any app.
+// One tile per website, so a company with several tracked products shows once.
+const UNLISTED_COUNT = 3;
+
+function pickUnlisted() {
+  const seen = new Set();
+  return appStatsData.appStats
+    .filter((row) => UnlistedApps[row.label]?.website && row.txCount >= MIN_CATEGORY_TX)
+    .sort((a, b) => b.txCount - a.txCount)
+    .filter((row) => !seen.has(UnlistedApps[row.label].website) && seen.add(UnlistedApps[row.label].website))
+    .slice(0, UNLISTED_COUNT)
+    .map((row) => {
+      const { icon, category, website } = UnlistedApps[row.label];
+      // AppIcon reads icon, title and category like an apps.js entry.
+      return { key: row.label, app: { icon, category, title: row.displayName }, website, txCount: row.txCount };
+    });
+}
+
+const UNLISTED = pickUnlisted();
 
 // All mainnet transactions in the snapshot window (six full epochs). Shown
 // next to the app figure so the app share is not read as the whole chain.
@@ -161,6 +186,46 @@ export default function HomeActivitySection() {
           </li>
         ))}
       </ul>
+
+      {UNLISTED.length > 0 && (
+        <>
+          <p className={styles.unlistedNote}>
+            {translate(
+              {
+                id: "home.activity.unlisted.note",
+                message: "Also active, projects without a public app. {leaderboard}",
+              },
+              {
+                leaderboard: (
+                  <Link to="/apps/leaderboard">
+                    {translate({ id: "home.activity.unlisted.leaderboard", message: "See the full leaderboard" })}
+                  </Link>
+                ),
+              }
+            )}
+          </p>
+          <ul className={styles.unlisted}>
+            {UNLISTED.map((entry) => (
+              <li key={entry.key}>
+                <Link to={entry.website} className={styles.unlistedTile}>
+                  <AppIcon app={entry.app} size="row" className={styles.unlistedIcon} />
+                  <span className={styles.unlistedName}>{entry.app.title}</span>
+                  <span className={styles.unlistedMeta}>
+                    {Categories[entry.app.category] && <span>{Categories[entry.app.category].label}</span>}
+                    <span className={styles.unlistedTx}>
+                      {formatTxCountCompact(entry.txCount)}{" "}
+                      {translate({ id: "apps.activity.unit", message: "tx" })}
+                    </span>
+                  </span>
+                  <span className={styles.srOnly}>
+                    {translate({ id: "glossary.term.opensInNewTab", message: " (opens in a new tab)" })}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       <p className={styles.ctaRow}>
         <Link className="button button--primary button--lg" to="/apps">
