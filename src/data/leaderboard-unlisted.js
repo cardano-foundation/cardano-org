@@ -14,6 +14,8 @@ import { Showcases, Categories } from "./apps";
 //   they get a logo and link only from an apps.js entry that sets `metadataLabel`.
 // - An entry here changes how an already tracked project is displayed. It does not add
 //   the project to the leaderboard.
+// - The most active entries with a website also show in a slim row on the homepage
+//   (HomeActivitySection), below the app cards.
 // - Projects removed from the apps directory under the curation policy do not get an
 //   entry here. Their transactions keep counting as a "Not Listed" row.
 // - Entries are accepted and may be removed at the maintainers' discretion.

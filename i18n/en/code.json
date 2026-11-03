@@ -9798,6 +9798,12 @@
   "home.activity.topApps.noteMixed": {
     "message": "Most active apps, by on-chain transactions in the same period."
   },
+  "home.activity.unlisted.note": {
+    "message": "Also active, projects without a public app. {leaderboard}"
+  },
+  "home.activity.unlisted.leaderboard": {
+    "message": "See the full leaderboard"
+  },
   "funding.group.grants.persona": {
     "message": "I have an idea"
   },

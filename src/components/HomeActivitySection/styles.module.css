@@ -53,7 +53,8 @@ html[data-theme="dark"] .figureValue {
   color: var(--ifm-color-emphasis-700);
 }
 
-.topApps {
+.topApps,
+.unlisted {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -62,13 +63,90 @@ html[data-theme="dark"] .figureValue {
   list-style: none;
 }
 
-.topApps > li {
+.topApps > li,
+.unlisted > li {
   display: flex;
   margin: 0;
 }
 
 .topApps > li > * {
   flex: 1;
+}
+
+/* Slim tiles for tracked projects without an app entry: logo, name,
+   category and transactions in one line, visibly lighter than the app cards. */
+.unlistedNote {
+  margin: 1.5rem 0 0.6rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.unlisted {
+  gap: 0.75rem;
+}
+
+/* Border, hover and focus follow the AppTile card. */
+.unlistedTile {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--site-duration-fast) ease;
+}
+
+.unlistedTile:hover {
+  border-color: var(--ifm-color-emphasis-400);
+  text-decoration: none;
+  color: inherit;
+}
+
+.unlistedTile:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.unlistedIcon {
+  --logo-size: 28px;
+  --logo-fallback-font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.unlistedName {
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.unlistedMeta {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.unlistedTx {
+  font-weight: 600;
+  color: var(--site-activity);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .ctaRow {
@@ -98,7 +176,8 @@ html[data-theme="dark"] .figureValue {
 }
 
 @media (max-width: 768px) {
-  .topApps {
+  .topApps,
+  .unlisted {
     grid-template-columns: 1fr;
   }
 }
