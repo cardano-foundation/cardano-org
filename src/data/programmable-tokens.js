@@ -14,8 +14,8 @@ import { translate } from "@docusaurus/Translate";
 //
 // DATA NOTES (resolve with the content owner):
 // - Partner logos live in static/img/logos/ as <slug> and <slug>-dark, shared
-//   with the rest of the site. Eternl and CardanoScan are PNGs until vector
-//   versions are available. The BendingAI, GeroWallet, and CardanoScan dark
+//   with the rest of the site. Eternl and Cardanoscan are PNGs until vector
+//   versions are available. The BendingAI, GeroWallet, and Cardanoscan dark
 //   variants are the supplied logos with their text recolored white, pending
 //   official light-text versions.
 // - Both call-to-action buttons point to the Cardano Foundation contact page
@@ -80,7 +80,7 @@ export const PARTNERS = {
       href: "https://bending.ai",
     },
     {
-      name: "CardanoScan",
+      name: "Cardanoscan",
       logo: "/img/logos/cardanoscan.png",
       logoDark: "/img/logos/cardanoscan-dark.png",
       href: "https://cardanoscan.io",
