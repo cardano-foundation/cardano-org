@@ -275,6 +275,7 @@ const config = {
           // Renamed apps keep their old detail URL, keyed by the new slug.
           const appRenames = {
             'cardano-govscope': ['chang-watch'],
+            cardanoscan: ['cardano-scan'],
           };
           const appMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/apps\/([a-z0-9-]+)\/?$/);
           if (appMatch && appRenames[appMatch[2]]) {
