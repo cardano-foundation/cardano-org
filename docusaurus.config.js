@@ -276,6 +276,7 @@ const config = {
           const appRenames = {
             'cardano-govscope': ['chang-watch'],
             cardanoscan: ['cardano-scan'],
+            'catalyst-explorer': ['lido-nation'],
           };
           const appMatch = existingPath.match(/^(\/(?:ja|de|es|vi))?\/apps\/([a-z0-9-]+)\/?$/);
           if (appMatch && appRenames[appMatch[2]]) {
