@@ -326,16 +326,29 @@ export const Showcases = [
     maintainerPick: false,
   },
   {
-    title: "Cardano Scan",
+    title: "Cardanoscan",
     description:
-      "Block explorer and pool tool from the makers of Typhon, with its own indexing stack providing fast access to the full Cardano ledger.",
-    tagline: "Block explorer and pool tool with own db-sync",
+      "Cardano explorer for transactions, tokens, stake pools, and governance, with protocol parameter history, a live mempool view, and a DeFi trading terminal.",
+    tagline: "Explorer for transactions, pools, governance, and DeFi",
+    preview: require("./app-screenshots/cardanoscan.webp"),
+    extraPreviews: [
+      require("./app-screenshots/cardanoscan-protocol-parameters.webp"),
+      require("./app-screenshots/cardanoscan-stake-pools.webp"),
+      require("./app-screenshots/cardanoscan-mempool.webp"),
+      require("./app-screenshots/cardanoscan-trading-terminal.webp"),
+    ],
     icon: "/img/app-icons/cardano-scan.jpg",
     website: "https://cardanoscan.io/",
     source: null,
     category: "explorer",
-    properties: ["pooldelegation"],
+    properties: ["pooldelegation", "drepdelegation"],
     maintainerPick: false,
+    x: "cardanoscanio",
+    spotlight: {
+      url: "https://developers.cardano.org/blog/2022-08-11-august/",
+      title: "Cardano Developer Spotlight: August 2022",
+      date: "2022-08-11",
+    },
   },
   {
     title: "Pool PM",
