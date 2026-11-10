@@ -1950,6 +1950,27 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "DRep Forum",
+    description:
+      "DRep Forum is a platform built to simplify Cardano governance, enhance transparency, and support informed participation, research, and collective sensemaking across the ecosystem.",
+    tagline: "The Collective Intelligence of Cardano",
+    preview: require("./app-screenshots/drep-forum.webp"),
+    extraPreviews: [
+      require("./app-screenshots/drep-forum-drep-profile.webp"),
+      require("./app-screenshots/drep-forum-governance-action.webp"),
+      require("./app-screenshots/drep-forum-epoch-report.webp"),
+      require("./app-screenshots/drep-forum-vendors.webp"),
+      require("./app-screenshots/drep-forum-stake-pools.webp"),
+    ],
+    icon: "/img/app-icons/drep-forum.svg",
+    website: "https://drep.forum",
+    source: null,
+    category: "governance",
+    properties: ["drepdelegation"],
+    x: "DRepForum",
+    maintainerPick: false,
+  },
 ];
 
 export const TagList = Object.keys(Tags);
