@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" width="1024" height="1024"
+     role="img" aria-label="PING">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".46" r=".72">
+      <stop offset="0" stop-color="#2a1660"/>
+      <stop offset=".45" stop-color="#120b32"/>
+      <stop offset="1" stop-color="#05050d"/>
+    </radialGradient>
+    <radialGradient id="cy" cx=".3" cy=".41" r=".55"><stop offset="0" stop-color="#00d4ff" stop-opacity=".5"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="mg" cx=".7" cy=".57" r=".55"><stop offset="0" stop-color="#e040fb" stop-opacity=".45"/><stop offset="1" stop-color="#e040fb" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hexs" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d4ff"/><stop offset=".5" stop-color="#8b6cff"/><stop offset="1" stop-color="#e040fb"/>
+    </linearGradient>
+    <linearGradient id="hexf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1442"/><stop offset="1" stop-color="#0a0820"/>
+    </linearGradient>
+    <linearGradient id="pfill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecdcff"/><stop offset=".45" stop-color="#c58bfb"/><stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#fff" stop-opacity=".08"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="padC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ff0ff"/><stop offset="1" stop-color="#00a8d6"/></linearGradient>
+    <linearGradient id="padM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6a8ff"/><stop offset="1" stop-color="#b21fd0"/></linearGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00d4ff" stop-opacity="0"/><stop offset=".6" stop-color="#7fe9ff" stop-opacity=".7"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <radialGradient id="ballLight"><stop offset="0" stop-color="#bff6ff" stop-opacity=".22"/><stop offset="1" stop-color="#bff6ff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="pbase" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#140032" stop-opacity="0"/><stop offset="1" stop-color="#140032" stop-opacity=".4"/></linearGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#78dcff" stop-opacity="0"/><stop offset=".5" stop-color="#c8f5ff" stop-opacity="1"/><stop offset="1" stop-color="#78dcff" stop-opacity="0"/></linearGradient>
+    <filter id="pglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+    <path id="P" fill-rule="evenodd" d="M 169.6 393.6 L 169.6 126.4 L 265.6 126.4 C 321.6 126.4 355.2 158.4 355.2 206.4 C 355.2 254.4 321.6 286.4 265.6 286.4 L 222.4 286.4 L 222.4 393.6 Z M 222.4 174.4 L 264 174.4 C 289.6 174.4 304 185.6 304 206.4 C 304 227.2 289.6 238.4 264 238.4 L 222.4 238.4 Z"/>
+    <clipPath id="plate"><rect width="1024" height="1024" rx="232" ry="232"/></clipPath>
+  </defs>
+  <g clip-path="url(#plate)">
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#cy)"/>
+  <rect width="1024" height="1024" fill="url(#mg)"/>
+  <g transform="translate(512 512) scale(1.2047) translate(-512 -512)">
+  <polygon points="512,178 801,345 801,679 512,846 223,679 223,345" fill="none" stroke="url(#hexs)" stroke-width="46" filter="url(#pglow)" opacity=".85"/>
+  <polygon points="512,178 801,345 801,679 512,846 223,679 223,345" fill="url(#hexf)" stroke="url(#hexs)" stroke-width="30" stroke-linejoin="round"/>
+  <polygon points="512,214 770,363 770,661 512,810 254,661 254,363" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="4" stroke-linejoin="round"/>
+  <line x1="512" y1="232" x2="512" y2="792" stroke="rgba(170,190,255,.32)" stroke-width="6" stroke-dasharray="20 16"/>
+  <rect x="282" y="300" width="50" height="232" rx="7" fill="#00d4ff" filter="url(#pglow)" opacity=".9"/>
+  <rect x="286" y="304" width="42" height="224" rx="6" fill="url(#padC)"/>
+  <rect x="286" y="304" width="13" height="224" rx="5" fill="#fff" opacity=".45"/>
+  <rect x="692" y="470" width="50" height="232" rx="7" fill="#e040fb" filter="url(#pglow)" opacity=".9"/>
+  <rect x="696" y="474" width="42" height="224" rx="6" fill="url(#padM)"/>
+  <rect x="725" y="474" width="13" height="224" rx="5" fill="#fff" opacity=".35"/>
+  <path d="M 338 334 Q 492 300 650 290" fill="none" stroke="url(#trail)" stroke-width="30" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M 368 324 Q 506 298 650 290" fill="none" stroke="url(#trail)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="660" cy="289" r="46" fill="#bff6ff" filter="url(#soft)" opacity=".9"/>
+  <circle cx="660" cy="289" r="25" fill="#fff"/>
+  <g style="mix-blend-mode:screen">
+    <rect x="440" y="283" width="440" height="12" fill="url(#streak)" opacity=".16"/>
+    <rect x="500" y="287" width="320" height="4" fill="url(#streak)" opacity=".5"/>
+    <rect x="570" y="288.3" width="180" height="1.4" fill="url(#streak)" opacity=".95"/>
+  </g>
+  <circle cx="660" cy="289" r="150" fill="url(#ballLight)"/>
+  <g transform="translate(512 504) scale(1.02) translate(-262.4 -260)">
+    <use href="#P" fill="#a855f7" filter="url(#pglow)" opacity=".55"/>
+    <use href="#P" fill="#07031a" transform="translate(0 20)"/>
+    <use href="#P" fill="#0b0522" transform="translate(0 18)"/>
+    <use href="#P" fill="#10072b" transform="translate(0 16)"/>
+    <use href="#P" fill="#150a34" transform="translate(0 14)"/>
+    <use href="#P" fill="#1a0d3e" transform="translate(0 12)"/>
+    <use href="#P" fill="#1f1048" transform="translate(0 10)"/>
+    <use href="#P" fill="#241252" transform="translate(0 8)"/>
+    <use href="#P" fill="#2a145c" transform="translate(0 6)"/>
+    <use href="#P" fill="#311766" transform="translate(0 4)"/>
+    <use href="#P" fill="#3a1b72" transform="translate(0 2)"/>
+    <use href="#P" fill="#5ee8ff" transform="translate(-3.4 -.6)" opacity=".95"/>
+    <use href="#P" fill="#f07bff" transform="translate(3.4 -.6)" opacity=".95"/>
+    <use href="#P" fill="#ffffff" transform="translate(0 -2.6)" opacity=".42"/>
+    <use href="#P" fill="url(#pfill)"/>
+    <use href="#P" fill="url(#pbase)"/>
+    <use href="#P" fill="url(#shine)" opacity=".5"/>
+  </g>
+  </g>
+  </g>
+</svg>
