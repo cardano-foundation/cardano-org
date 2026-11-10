@@ -1952,6 +1952,24 @@ export const Showcases = [
     properties: ["opensource"],
     maintainerPick: false,
   },
+  {
+    title: "Super Cardano",
+    description:
+      "Cardano token terminal and chain explorer on its own node and indexer, with a screener, charts, holders grouped by stake key, risk checks and a wallet lookup.",
+    tagline: "Cardano token terminal and chain explorer",
+    preview: require("./app-screenshots/super-cardano.webp"),
+    extraPreviews: [
+      require("./app-screenshots/super-cardano-token.webp"),
+      require("./app-screenshots/super-cardano-holders.webp"),
+    ],
+    icon: "/img/app-icons/super-cardano.png",
+    website: "https://supercardano.com",
+    source: null,
+    category: "analytics",
+    properties: [],
+    maintainerPick: false,
+    x: "superonchain",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
