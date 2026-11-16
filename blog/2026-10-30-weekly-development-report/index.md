@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-30-weekly-development-report
-title: "Ledger adds LEIOSCERT validation and Dijkstra fee rules as Hydra 2.4.2 ships"
+title: "Ledger team adds LEIOSCERT validation and Dijkstra fee rules as Hydra 2.4.2 ships"
 description: "Hydra 2.4.2 adds larger snapshot batches and cardano-node 11.1.3 support, High Assurance publishes UAL 1.0, and DevX merges smart wallet references."
 authors: [iog]
 tags: [development]
