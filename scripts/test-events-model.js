@@ -19,6 +19,7 @@ async function main() {
     selectFeatured,
     selectRecaps,
     matchesEventQuery,
+    selectByTime,
   } = await import('../src/utils/events/eventModel.js');
   const { fetchAllPages, upcomingQuery, pastQuery } = await import(
     '../src/utils/events/lumaQuery.js'
@@ -317,6 +318,26 @@ async function main() {
     assert.strictEqual(past.sort_direction, 'desc'); // newest first if capped
     assert.strictEqual(up.access, 'view');
     assert.strictEqual(past.access, 'view');
+  });
+
+  await check('selectByTime shows a weekly series in Past with its latest finished occurrence', () => {
+    const today = Date.UTC(2026, 10, 16);
+    const events = [
+      { title: 'Weekly Call', startDate: '2026-11-04T14:30:00.000Z' },
+      { title: 'Weekly Call', startDate: '2026-11-11T14:30:00.000Z' },
+      { title: 'Weekly Call', startDate: '2026-11-18T14:30:00.000Z' },
+      { title: 'Old Meetup', startDate: '2026-10-01' },
+      { title: 'Next Summit', startDate: '2026-12-01', endDate: '2026-12-02' },
+    ];
+    const past = selectByTime(events, 'past', today);
+    assert.deepStrictEqual(past.map((e) => e.title), ['Weekly Call', 'Old Meetup']); // newest first
+    assert.strictEqual(past[0].startDate, '2026-11-11T14:30:00.000Z');
+    assert.strictEqual(past[0].recurring, true);
+    const upcoming = selectByTime(events, 'upcoming', today);
+    assert.deepStrictEqual(upcoming.map((e) => e.title), ['Weekly Call', 'Next Summit']);
+    assert.strictEqual(upcoming[0].startDate, '2026-11-18T14:30:00.000Z');
+    const all = selectByTime(events, 'all', today);
+    assert.deepStrictEqual(all.map((e) => e.title), ['Old Meetup', 'Weekly Call', 'Next Summit']);
   });
 
   console.log(`\n${passed} checks passed`);

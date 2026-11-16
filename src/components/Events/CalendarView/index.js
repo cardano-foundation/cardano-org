@@ -5,19 +5,13 @@ import {
   categoryColor,
   categoryLabel,
 } from '@site/src/utils/events/categories';
-import { collapseRecurringSeries, isUpcomingEvent } from '@site/src/utils/events/eventModel';
+import { DAY_MS, selectByTime, utcDayStartMs } from '@site/src/utils/events/eventModel';
 import styles from './styles.module.css';
 
-const DAY_MS = 24 * 60 * 60 * 1000;
 
 // YYYY-MM-DD in UTC, matching how event startDate strings are keyed elsewhere.
 function dayKey(date) {
   return date.toISOString().slice(0, 10);
-}
-
-function startOfTodayUtc() {
-  const now = new Date();
-  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 }
 
 // 42-day (6 week) grid starting on the Monday on or before the 1st.
@@ -127,7 +121,8 @@ function CalendarEntry({ event }) {
 }
 
 export default function CalendarView({ events }) {
-  const today = startOfTodayUtc();
+  const todayMs = utcDayStartMs();
+  const today = new Date(todayMs);
   const [cursor, setCursor] = useState({ year: today.getUTCFullYear(), month: today.getUTCMonth() });
 
   // Single-day events sit in day cells; multi-day events render as spanning bars.
@@ -146,12 +141,10 @@ export default function CalendarView({ events }) {
 
   // The grid shows every occurrence, the short sidebar list one row per series
   // so a weekly call cannot fill all six slots.
-  const upcoming = useMemo(() => {
-    const todayTs = today.getTime();
-    return collapseRecurringSeries(events, todayTs)
-      .filter((e) => e.startDate && isUpcomingEvent(e, todayTs))
-      .slice(0, 6);
-  }, [events, today]);
+  const upcoming = useMemo(
+    () => selectByTime(events, 'upcoming', todayMs).slice(0, 6),
+    [events, todayMs],
+  );
 
   const usedCategories = useMemo(() => {
     const set = new Set(events.map((e) => e.category).filter(Boolean));

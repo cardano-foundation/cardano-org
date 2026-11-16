@@ -1,17 +1,19 @@
 // Query windows and paging for the Luma calendar feed. Pure module (no React,
 // no @site alias) so it runs under the plain node test.
 
-const DAY_MS = 24 * 60 * 60 * 1000;
+import { DAY_MS } from './eventModel.js';
 
-export const LUMA_PAGE_SIZE = 50;
+const LUMA_PAGE_SIZE = 50;
 // Upper bound on pages per query, so a feed that keeps reporting more pages
 // cannot loop forever. 90 past days are about two pages today.
-export const LUMA_MAX_PAGES = 4;
+const LUMA_MAX_PAGES = 4;
 // The live query reaches back a few days, so a multi-day event that has
-// already started still loads and can show as running.
-export const LUMA_LOOKBACK_DAYS = 7;
+// already started still loads and can show as running. The feed filters by
+// start date only, so an event that started earlier than this and is still
+// running appears once the past window loads.
+const LUMA_LOOKBACK_DAYS = 7;
 // How far back the "Past" view reaches for community events.
-export const LUMA_PAST_WINDOW_DAYS = 90;
+const LUMA_PAST_WINDOW_DAYS = 90;
 
 // `access=view` is the documented flag that includes events listed on the
 // calendar but hosted elsewhere (the working groups etc.), not just

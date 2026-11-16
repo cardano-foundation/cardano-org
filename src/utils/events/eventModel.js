@@ -107,7 +107,7 @@ function startMs(evt) {
   return new Date(evt.startDate || 0).getTime();
 }
 
-const DAY_MS = 24 * 60 * 60 * 1000;
+export const DAY_MS = 24 * 60 * 60 * 1000;
 const WEEK_MS = 7 * DAY_MS;
 
 // Start of the current UTC day, the reference point for upcoming versus past.
@@ -123,8 +123,8 @@ function isDateOnly(value) {
 // Last moment an event still counts as running. A date-only value (curated
 // entries) covers that whole UTC day, a timestamp (Luma) is exact. Events
 // without an end fall back to their start, events without any date return 0.
-export function eventEndMs(evt) {
-  const raw = (evt && (evt.endDate || evt.startDate)) || null;
+function eventEndMs(evt) {
+  const raw = evt.endDate || evt.startDate;
   if (!raw) return 0;
   const ms = new Date(raw).getTime();
   if (Number.isNaN(ms)) return 0;
@@ -142,14 +142,11 @@ export function isUpcomingEvent(evt, todayMs) {
 // event runs, 'thisWeek' when it starts within 7 days, else 'online' for
 // online events, else null.
 export function eventBadge(evt, nowMs) {
-  if (evt && evt.startDate) {
-    const start = startMs(evt);
-    if (!Number.isNaN(start)) {
-      if (start <= nowMs && nowMs <= eventEndMs(evt)) return 'live';
-      if (start > nowMs && start - nowMs < WEEK_MS) return 'thisWeek';
-    }
-  }
-  return evt && evt.online ? 'online' : null;
+  // A missing or invalid start yields NaN, which fails both comparisons.
+  const start = evt.startDate ? startMs(evt) : NaN;
+  if (start <= nowMs && nowMs <= eventEndMs(evt)) return 'live';
+  if (start > nowMs && start - nowMs < WEEK_MS) return 'thisWeek';
+  return evt.online ? 'online' : null;
 }
 
 // Free-text search over everything a visitor can reasonably name: title, place,
@@ -210,6 +207,20 @@ export function mergeEvents(curatedRaw, lumaRaw) {
   // (new Date(undefined) is NaN). Normalized events use null, already epoch
   // safe, but this hardens against any future caller.
   return [...byKey.values()].sort((a, b) => startMs(a) - startMs(b));
+}
+
+// List for one time view ('upcoming', 'past' or 'all'). The time filter runs
+// before the recurring collapse, so a weekly call with a future date still
+// shows in Past with its latest finished occurrence. Past reads newest first,
+// the other views soonest first.
+export function selectByTime(events, time, todayMs) {
+  const inView = (events || []).filter((evt) => {
+    if (time === 'upcoming') return isUpcomingEvent(evt, todayMs);
+    if (time === 'past') return !isUpcomingEvent(evt, todayMs);
+    return true;
+  });
+  const collapsed = collapseRecurringSeries(inView, todayMs);
+  return time === 'past' ? collapsed.reverse() : collapsed;
 }
 
 // Recurring series (e.g. the weekly working-group calls from Luma) repeat under

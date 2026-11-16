@@ -12,9 +12,8 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import {
   mergeEvents,
-  collapseRecurringSeries,
-  isUpcomingEvent,
   matchesEventQuery,
+  selectByTime,
   selectFeatured,
   selectRecaps,
   utcDayStartMs,
@@ -122,24 +121,22 @@ export default function Events() {
     includePast: filters.time !== "upcoming" || view === "calendar",
   });
 
-  // Every occurrence, for the calendar grid.
+  // Reference day for upcoming versus past. A number, so memos only rerun when
+  // the UTC day changes.
+  const todayMs = utcDayStartMs();
+
+  // Every occurrence of every event.
   const mergedEvents = useMemo(
     () => mergeEvents(curatedEvents, lumaEntries),
     [lumaEntries],
   );
 
-  // One row per recurring series, for the list.
-  const allEvents = useMemo(
-    () => collapseRecurringSeries(mergedEvents, utcDayStartMs()),
-    [mergedEvents],
-  );
+  const availableCategories = useMemo(() => collectCategories(mergedEvents), [mergedEvents]);
 
-  const availableCategories = useMemo(() => collectCategories(allEvents), [allEvents]);
-
-  // The calendar spans every month, so it ignores the upcoming/past toggle but
-  // still respects place, topic and search. It shows each occurrence of a
-  // recurring series on its own day.
-  const calendarEvents = useMemo(
+  // Place, topic and search apply to both views. The calendar spans every month
+  // and shows each occurrence of a recurring series on its own day, so it takes
+  // this list as is.
+  const matchingEvents = useMemo(
     () =>
       mergedEvents.filter(
         (event) =>
@@ -150,15 +147,21 @@ export default function Events() {
     [mergedEvents, filters.place, filters.query, filters.category],
   );
 
+  // The list applies the upcoming/past toggle and shows one row per series.
+  const orderedEvents = useMemo(
+    () => selectByTime(matchingEvents, filters.time, todayMs),
+    [matchingEvents, filters.time, todayMs],
+  );
+
   // Highlighted events are the running and upcoming curated entries (hand-picked
   // conferences), independent of the filters applied to the full list below.
   const featuredEvents = useMemo(
-    () => selectFeatured(curatedEvents, utcDayStartMs(), FEATURED_LIMIT),
-    [],
+    () => selectFeatured(curatedEvents, todayMs, FEATURED_LIMIT),
+    [todayMs],
   );
 
   // Finished curated events that have a recorded recap video.
-  const recapEvents = useMemo(() => selectRecaps(curatedEvents, utcDayStartMs()), []);
+  const recapEvents = useMemo(() => selectRecaps(curatedEvents, todayMs), [todayMs]);
 
   const isPast = filters.time === "past";
 
@@ -170,24 +173,6 @@ export default function Events() {
     filters.category !== null ||
     filters.time !== "upcoming" ||
     view === "calendar";
-
-  const orderedEvents = useMemo(() => {
-    const todayTs = utcDayStartMs();
-    const filtered = allEvents.filter((event) => {
-      // A running multi-day event counts as upcoming until its last day is over.
-      const isUpcoming = isUpcomingEvent(event, todayTs);
-      if (filters.time === "upcoming" && !isUpcoming) return false;
-      if (filters.time === "past" && isUpcoming) return false;
-      return (
-        matchesPlace(event, filters.place) &&
-        matchesEventQuery(event, filters.query) &&
-        matchesCategory(event, filters.category)
-      );
-    });
-    // Past events read newest first; upcoming and all read soonest first.
-    // filter() already returns a fresh array, so reversing in place is safe.
-    return isPast ? filtered.reverse() : filtered;
-  }, [allEvents, filters, isPast]);
 
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
@@ -271,7 +256,7 @@ export default function Events() {
               />
             </div>
             {view === "calendar" ? (
-              <CalendarView events={calendarEvents} />
+              <CalendarView events={matchingEvents} />
             ) : (
               <EventList
                 events={orderedEvents}

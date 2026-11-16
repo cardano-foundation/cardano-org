@@ -4,14 +4,6 @@ import formatDateRange from '@site/src/components/Events/formatDateRange';
 import { eventBadge } from '@site/src/utils/events/eventModel';
 import styles from './styles.module.css';
 
-// One badge per card: a running event reads "Happening now", one within the
-// next 7 days reads "This week", otherwise an online event reads "Online".
-// All are derived from real data.
-function badgeFor(event, labels) {
-  const key = eventBadge(event, Date.now());
-  return key ? labels[key] : null;
-}
-
 export default function FeaturedEventCard({ event, labels }) {
   const { src, fallback } = useEventImage(event.image);
   const dateLabel = formatDateRange(event.startDate, event.endDate);
@@ -23,7 +15,10 @@ export default function FeaturedEventCard({ event, labels }) {
   // One-shot flip after mount to reveal the time-based badge; not a render loop.
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
-  const badge = mounted ? badgeFor(event, labels) : null;
+  // One badge per card: a running event reads "Happening now", one within the
+  // next 7 days reads "This week", otherwise an online event reads "Online".
+  const badgeKey = mounted ? eventBadge(event, Date.now()) : null;
+  const badge = badgeKey ? labels[badgeKey] : null;
 
   return (
     <article className={styles.card}>
