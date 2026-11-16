@@ -126,21 +126,18 @@
   color: #fff;
 }
 
-/* The six-column single-row layout needs room; below this the columns get too
-   cramped (the title collapses), so switch to the stacked card earlier. */
-@media (max-width: 1024px) {
-  /* Thumbnail spans only the date + title block so it never leaves a void; the
-     location and CTA drop to full-width rows below, where the address has room
-     to breathe and the button stays attached to its event. */
+/* The six-column single-row layout needs room. Below this a long title next to
+   a long address gets squeezed to a narrow column, so date, title and location
+   stack in one text column between the thumbnail and the CTA. */
+@media (max-width: 1200px) {
   .row {
-    grid-template-columns: 96px 1fr;
+    grid-template-columns: 160px 1fr auto;
     grid-template-areas:
-      "thumb date"
-      "thumb main"
-      "place place"
-      "cta   cta";
+      "thumb date  cta"
+      "thumb main  cta"
+      "thumb place cta";
     row-gap: 0.2rem;
-    column-gap: 0.85rem;
+    column-gap: 1rem;
     padding: 1rem 0.4rem;
   }
 
@@ -167,20 +164,43 @@
     grid-area: main;
   }
 
+  /* The text column is wide here, so the desktop cap would only force wraps. */
   .place {
     grid-area: place;
     white-space: normal;
-    margin-top: 0.4rem;
+    max-width: none;
+    margin-top: 0.2rem;
   }
 
   .cta {
     grid-area: cta;
-    justify-self: start;
-    margin-top: 0.65rem;
+    align-self: center;
   }
 
   /* Category chip is the least essential column on narrow screens. */
   .tag {
     display: none;
+  }
+}
+
+/* Phones: the text column needs the full width next to a smaller thumbnail, so
+   location and CTA share one row below it. */
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 96px 1fr auto;
+    grid-template-areas:
+      "thumb date  date"
+      "thumb main  main"
+      "place place cta";
+    column-gap: 0.85rem;
+  }
+
+  .place {
+    align-self: center;
+    margin-top: 0.5rem;
+  }
+
+  .cta {
+    margin-top: 0.5rem;
   }
 }
