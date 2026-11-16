@@ -172,7 +172,7 @@ Before you open a pull request, keep in mind:
 - **The apps directory comes first.** If your project fits there, [add your application](/docs/get-involved/add-app) instead. A directory listing links the leaderboard row to your app page.
 - **Your project must already be tracked** via Path 1 or Path 3. An entry in this file changes how an already tracked project is displayed. It does not add the project to the leaderboard.
 - **Metadata labels (Path 2) are not covered.** A metadata label row gets a logo and a link only from an `apps.js` entry that sets `metadataLabel` to that label. A project tracked through its own metadata label but not listed in the apps directory currently has no way to add a logo or link, and the build rejects `metadata-` keys in this file.
-- **You get less than a directory listing:** a logo, a category, and a link on the leaderboard, but no app page, no place in the apps directory, and no activity badge there.
+- **You get less than a directory listing:** a logo, a category, and a link on the leaderboard, but no app page, no place in the apps directory, and no activity badge there. The most active entries with a website may also appear in a slim row below the app cards on the homepage.
 - **This is not a way back into the directory.** Projects removed under the [curation policy](/docs/get-involved/apps-curation-policy) do not get an entry here. Their transactions keep counting as a "Not Listed" row.
 - Maintainers accept entries at their discretion and may remove them later, for example when the website is gone or the project has shut down.
 

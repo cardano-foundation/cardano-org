@@ -32,7 +32,7 @@ Membership in Intersect or any other organization alone does not qualify.
 The links you provide go into the `evidence` field and are shown publicly in your entry, so that every visitor can check why your company is listed. We review entries listed through path 2 once a year. If a maintainer leaves the `CODEOWNERS` or `MAINTAINERS` file, or the funded work has ended and no new evidence exists, the entry is removed.
 
 ### Website Requirement
-- Link to the company/association/collaboration website and not to the product website. Examples: don't link to **Flint Wallet** but to **dcSpark**. Don't link to **CardanoScan** but to **Strica**.
+- Link to the company/association/collaboration website and not to the product website. Examples: don't link to **Flint Wallet** but to **dcSpark**. Don't link to **Cardanoscan** but to **Strica**.
 - Your company/association/collaboration website has to have a stable domain name. (a random Netlify/Vercel domain is not allowed, no URL shortener, no app store links, or similar)
 - Don't link to token pages. Example: don't link to **World Mobile Token** but to **World Mobile**. 
 - If you have registered your product as a company/association/collaboration or you have the same website for both, please link to a team or about Us page. Examples: entries of **DripDropz** and **jpg.store**.
