@@ -1,7 +1,7 @@
 // Pure normalization and merge logic for the /events page. No React here so it
 // can be unit tested with a plain node script.
 
-import { deriveCuratedCategory, deriveLumaCategory } from './categories.js';
+import { categoryLabel, deriveCuratedCategory, deriveLumaCategory } from './categories.js';
 
 // Titles that mark non-events pinned on the Luma calendar (e.g. a guidelines
 // card). Matched case-insensitively. Real events legitimately run into future
@@ -107,8 +107,96 @@ function startMs(evt) {
   return new Date(evt.startDate || 0).getTime();
 }
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+const WEEK_MS = 7 * DAY_MS;
+
+// Start of the current UTC day, the reference point for upcoming versus past.
+export function utcDayStartMs(nowMs = Date.now()) {
+  const now = new Date(nowMs);
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+}
+
+function isDateOnly(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
+// Last moment an event still counts as running. A date-only value (curated
+// entries) covers that whole UTC day, a timestamp (Luma) is exact. Events
+// without an end fall back to their start, events without any date return 0.
+export function eventEndMs(evt) {
+  const raw = (evt && (evt.endDate || evt.startDate)) || null;
+  if (!raw) return 0;
+  const ms = new Date(raw).getTime();
+  if (Number.isNaN(ms)) return 0;
+  return isDateOnly(raw) ? ms + DAY_MS - 1 : ms;
+}
+
+// An event is upcoming until it is over, so a multi-day conference stays listed
+// while it runs. `todayMs` is the start of the current UTC day, which also
+// keeps a timed call visible for the rest of its day.
+export function isUpcomingEvent(evt, todayMs) {
+  return eventEndMs(evt) >= todayMs;
+}
+
+// Badge key for a highlighted card at the instant `nowMs`: 'live' while the
+// event runs, 'thisWeek' when it starts within 7 days, else 'online' for
+// online events, else null.
+export function eventBadge(evt, nowMs) {
+  if (evt && evt.startDate) {
+    const start = startMs(evt);
+    if (!Number.isNaN(start)) {
+      if (start <= nowMs && nowMs <= eventEndMs(evt)) return 'live';
+      if (start > nowMs && start - nowMs < WEEK_MS) return 'thisWeek';
+    }
+  }
+  return evt && evt.online ? 'online' : null;
+}
+
+// Free-text search over everything a visitor can reasonably name: title, place,
+// organizer, topic, tags and description. Every word of the query must occur.
+export function matchesEventQuery(evt, query) {
+  const terms = (query || '').toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return true;
+  const location = evt.location || {};
+  const haystack = [
+    evt.title,
+    location.label,
+    location.city,
+    location.country,
+    evt.organizer,
+    evt.category && categoryLabel(evt.category),
+    ...(evt.tags || []),
+    evt.description,
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+  return terms.every((term) => haystack.includes(term));
+}
+
+function normalizeCuratedList(curatedRaw) {
+  return (curatedRaw || []).map(normalizeCuratedEvent).filter(Boolean);
+}
+
+// Highlighted row: curated events that are running or still ahead, soonest
+// first. Read from the curated data directly, because in the merged list a
+// same-title Luma entry replaces the curated one.
+export function selectFeatured(curatedRaw, todayMs, limit) {
+  return normalizeCuratedList(curatedRaw)
+    .filter((evt) => isUpcomingEvent(evt, todayMs))
+    .sort((a, b) => startMs(a) - startMs(b))
+    .slice(0, limit);
+}
+
+// Recap row: finished curated events with a recorded video, newest first.
+export function selectRecaps(curatedRaw, todayMs) {
+  return normalizeCuratedList(curatedRaw)
+    .filter((evt) => evt.recapVideo && !isUpcomingEvent(evt, todayMs))
+    .sort((a, b) => startMs(b) - startMs(a));
+}
+
 export function mergeEvents(curatedRaw, lumaRaw) {
-  const curated = (curatedRaw || []).map(normalizeCuratedEvent).filter(Boolean);
+  const curated = normalizeCuratedList(curatedRaw);
   const luma = (lumaRaw || []).map(normalizeLumaEvent).filter(Boolean);
   // Luma first so it wins ties on identical keys.
   const all = [...luma, ...curated].filter((e) => !isPlaceholderEvent(e));
@@ -126,8 +214,8 @@ export function mergeEvents(curatedRaw, lumaRaw) {
 
 // Recurring series (e.g. the weekly working-group calls from Luma) repeat under
 // the same title on many dates and would otherwise flood the list. Keep one row
-// per title: the next occurrence from `nowMs` onward, or the most recent past
-// one if the whole series is over. The kept row carries `recurring` and
+// per title: the next occurrence that is not over at `nowMs`, or the most recent
+// past one if the whole series is over. The kept row carries `recurring` and
 // `occurrences` so the UI can flag it. Single events pass through untouched.
 export function collapseRecurringSeries(events, nowMs) {
   const byTitle = new Map();
@@ -144,7 +232,7 @@ export function collapseRecurringSeries(events, nowMs) {
       continue;
     }
     const sorted = [...group].sort((a, b) => startMs(a) - startMs(b));
-    const next = sorted.find((e) => startMs(e) >= nowMs);
+    const next = sorted.find((e) => isUpcomingEvent(e, nowMs));
     const chosen = next || sorted[sorted.length - 1];
     collapsed.push({ ...chosen, recurring: true, occurrences: group.length });
   }

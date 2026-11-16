@@ -5,6 +5,7 @@ import {
   categoryColor,
   categoryLabel,
 } from '@site/src/utils/events/categories';
+import { collapseRecurringSeries, isUpcomingEvent } from '@site/src/utils/events/eventModel';
 import styles from './styles.module.css';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -143,11 +144,12 @@ export default function CalendarView({ events }) {
 
   const multiDayEvents = useMemo(() => events.filter(isMultiDay), [events]);
 
+  // The grid shows every occurrence, the short sidebar list one row per series
+  // so a weekly call cannot fill all six slots.
   const upcoming = useMemo(() => {
     const todayTs = today.getTime();
-    return events
-      .filter((e) => e.startDate && new Date(e.startDate).getTime() >= todayTs)
-      .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
+    return collapseRecurringSeries(events, todayTs)
+      .filter((e) => e.startDate && isUpcomingEvent(e, todayTs))
       .slice(0, 6);
   }, [events, today]);
 

@@ -1,26 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { makeApiClient } from '@site/src/utils/insights/api';
+import { utcDayStartMs } from '@site/src/utils/events/eventModel';
+import { fetchAllPages, pastQuery, upcomingQuery } from '@site/src/utils/events/lumaQuery';
 
 // Official Luma calendar API, proxied by data.cardano.org (the proxy injects the
-// paid calendar key). `access=view` is the documented flag that includes events
-// listed on the calendar but hosted elsewhere (the working groups etc.), not
-// just self-managed events. `after` limits the result to upcoming events so the
-// whole set fits in one page.
+// paid calendar key). The query windows live in lumaQuery.js.
 const LUMA_EVENTS_PATH = '/calendars/events/list';
-const LUMA_PAGE_SIZE = 50;
 
-function upcomingAfterIso() {
-  const now = new Date();
-  return new Date(
-    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()),
-  ).toISOString();
+// One page of the feed, resolving to the envelope `{ entries, has_more, next_cursor }`.
+function pageFetcher(client) {
+  return (params) => client.get(LUMA_EVENTS_PATH, { params }).then((res) => res && res.data);
 }
 
 // Fetches the Cardano Luma calendar feed through the data.cardano.org proxy.
-// Returns raw entries plus a status; failures degrade silently so the page can
+// Running and upcoming events load on mount. Finished events load once, the
+// first time `includePast` is true, so the default view costs one query.
+// Returns raw entries plus a status. Failures degrade silently so the page can
 // fall back to the curated list.
-export default function useLumaEvents() {
+export default function useLumaEvents({ includePast = false } = {}) {
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();
@@ -29,8 +27,10 @@ export default function useLumaEvents() {
   // Create the client once via a lazy initializer instead of writing a ref
   // during render.
   const [client] = useState(() => (lumaUrl ? makeApiClient(lumaUrl) : null));
-  const [entries, setEntries] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
+  const [past, setPast] = useState([]);
   const [status, setStatus] = useState('loading');
+  const pastLoaded = useRef(false);
 
   useEffect(() => {
     if (!client) {
@@ -41,23 +41,15 @@ export default function useLumaEvents() {
     }
 
     let cancelled = false;
-    client
-      .get(LUMA_EVENTS_PATH, {
-        params: {
-          access: 'view',
-          after: upcomingAfterIso(),
-          pagination_limit: LUMA_PAGE_SIZE,
-        },
-      })
-      .then((res) => {
+    fetchAllPages(pageFetcher(client), upcomingQuery(utcDayStartMs()))
+      .then((entries) => {
         if (cancelled) return;
-        const data = res && res.data && res.data.entries;
-        setEntries(Array.isArray(data) ? data : []);
+        setUpcoming(entries);
         setStatus('success');
       })
       .catch(() => {
         if (cancelled) return;
-        setEntries([]);
+        setUpcoming([]);
         setStatus('error');
       });
 
@@ -65,6 +57,27 @@ export default function useLumaEvents() {
       cancelled = true;
     };
   }, [client]);
+
+  useEffect(() => {
+    if (!client || !includePast || pastLoaded.current) return undefined;
+
+    let cancelled = false;
+    fetchAllPages(pageFetcher(client), pastQuery(utcDayStartMs()))
+      .then((entries) => {
+        if (cancelled) return;
+        pastLoaded.current = true;
+        setPast(entries);
+      })
+      // The past view then shows the curated entries only.
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [client, includePast]);
+
+  // Stable identity between fetches, so consumers can memoize on it.
+  const entries = useMemo(() => [...past, ...upcoming], [past, upcoming]);
 
   return { entries, status };
 }
