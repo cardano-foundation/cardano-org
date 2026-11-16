@@ -41,8 +41,6 @@
 }
 
 .tabList {
-  cursor: pointer;
-  list-style-type: none;
   padding-left: 0;
   margin: 0;
   position: relative;
@@ -68,7 +66,7 @@
   padding: 1rem 1.25rem;
   border: none;
   border-radius: 12px;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
   position: relative;
   z-index: 1;
 }
@@ -94,7 +92,7 @@
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-800);
   letter-spacing: 0.02em;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, color var(--site-duration-base) ease;
 }
 
 .stepCircleActive {
@@ -115,7 +113,7 @@
   font-size: 1.05rem;
   color: var(--ifm-color-emphasis-900);
   line-height: 1.2;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .tabSelected .tabLabel {
@@ -187,4 +185,10 @@
   .stepperLine {
     left: calc(1rem + 19px - 0.75px);
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .stepCircleActive {
+  background-color: var(--ifm-color-primary-darker);
 }

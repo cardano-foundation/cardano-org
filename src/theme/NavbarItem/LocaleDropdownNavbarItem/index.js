@@ -31,7 +31,7 @@ function MiniProgressBar({ percentage }) {
         width: `${percentage}%`,
         height: '100%',
         backgroundColor: percentage === 100 ? 'var(--ifm-color-success)' : percentage < 15 ? 'var(--ifm-color-emphasis-400)' : 'var(--ifm-color-primary)',
-        transition: 'width 0.3s ease',
+        transition: 'width var(--site-duration-slow) ease',
       }} />
     </div>
   );

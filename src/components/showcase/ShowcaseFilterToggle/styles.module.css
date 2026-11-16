@@ -62,7 +62,7 @@
   .checkboxLabel > * {
     font-size: 0.8rem;
     color: inherit;
-    transition: opacity 150ms ease-in 50ms;
+    transition: opacity var(--site-duration-fast) ease-in 50ms;
   }
   
   input:checked ~ .checkboxLabel::after {

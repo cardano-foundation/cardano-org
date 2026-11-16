@@ -1,0 +1,21 @@
+/* Topic select */
+.selectField {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 260px;
+  max-width: calc(100% - 20px); /* long translated options must not widen the page */
+  font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.selectField:hover {
+  border-color: #888;
+}
+
+.selectField:focus {
+  outline: none;
+  border-color: #555;
+}

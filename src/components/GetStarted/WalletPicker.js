@@ -5,6 +5,7 @@ import WalletFinderCard from '@site/src/components/WalletFinderCard';
 import { getWallets } from '@site/src/utils/walletFinderUtils';
 import { detectDevice, pickWalletsForDevice } from '@site/src/utils/getStarted/devices.mjs';
 import styles from './styles.module.css';
+import Grid from "@site/src/components/Layout/Grid";
 
 export default function WalletPicker({ installed, onInstalledChange }) {
   // null until mount so the static render shows every pick instead of nothing.
@@ -17,9 +18,9 @@ export default function WalletPicker({ installed, onInstalledChange }) {
 
   return (
     <div>
-      <div className={styles.walletGrid}>
+      <Grid fit minItemWidth="240px" gap="var(--site-space-md)" className={styles.walletGrid}>
         {wallets.map((w) => <WalletFinderCard key={w.title} wallet={w} />)}
-      </div>
+      </Grid>
       <p>
         <Link to="/wallets">{translate({ id: 'getStarted.wallet.finderLink', message: 'Compare all wallets in the Wallet Finder' })}</Link>
         {' · '}

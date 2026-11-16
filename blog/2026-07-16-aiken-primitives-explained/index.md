@@ -12,4 +12,4 @@ Cardano's Plutus Core ships first-class built-in primitives for the pairing-frie
  [**Read more**](https://cardanofoundation.org/blog/aiken-primitives-explained)
 </div>
 
-![aiken primitives explained](./banner.jpg)
+![aiken primitives explained](./banner.webp)

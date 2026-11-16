@@ -29,7 +29,7 @@
   font-size: 0.92rem;
   background: #ffffff;
   color: #0f172a;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .searchInput:focus {
@@ -64,12 +64,6 @@
   font-size: 0.85rem;
   color: #64748b;
   margin-bottom: 1rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1rem;
 }
 
 .empty {
@@ -112,7 +106,7 @@
   color: #3a5fd6;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background var(--site-duration-fast) ease, color var(--site-duration-fast) ease;
 }
 
 .loadMore:hover {
@@ -149,4 +143,12 @@
   .select {
     width: 100%;
   }
+}
+
+/* Dark mode: the brand blue #3a5fd6 as text reaches only 2.8:1 on the dark
+   cards, a light tint of the same blue keeps 7:1 and more. */
+[data-theme="dark"] .clearButton:hover,
+[data-theme="dark"] .loadMore,
+[data-theme="dark"] .loadMore:hover {
+  color: #9db3ec;
 }

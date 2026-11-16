@@ -1,0 +1,37 @@
+/*
+ * Defaults at zero specificity on the element itself: a page class can
+ * override them, and a nested grid does not inherit its parent's values.
+ */
+:where(.grid) {
+  --grid-min: 240px;
+  --grid-gap: var(--site-space-sm);
+  --grid-repeat: auto-fill;
+  /* Unset, so a nested grid does not inherit the stacked state. */
+  --grid-stack-min: initial;
+}
+
+/* min(..., 100%) keeps a column from overflowing a container that is
+   narrower than the minimum item width. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-repeat), minmax(min(var(--grid-stack-min, var(--grid-min)), 100%), 1fr));
+  gap: var(--grid-gap);
+}
+
+/* Lists lose their bullets and indent. Margin stays with the page, which sets
+   it through className. */
+.grid:where(ul, ol) {
+  list-style: none;
+  padding: 0;
+}
+
+.fit {
+  --grid-repeat: auto-fit;
+}
+
+/* A variable of its own, so an inline minItemWidth cannot override it. */
+@media (max-width: 768px) {
+  .stack {
+    --grid-stack-min: 100%;
+  }
+}

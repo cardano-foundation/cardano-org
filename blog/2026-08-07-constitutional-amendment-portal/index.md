@@ -14,4 +14,4 @@ The Constitutional Amendment Portal is live for alpha testing at cap.intersectmb
 
 </div>
 
-![Constitutional Amendment Portal](./banner.png)
+![Constitutional Amendment Portal](./banner.webp)

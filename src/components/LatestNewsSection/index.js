@@ -1,10 +1,12 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "@docusaurus/Link";
 import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {translate} from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import recentNews from "@site/src/data/recentNews.json";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 // useLayoutEffect warns during server-side rendering; fall back to useEffect there.
 const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : useEffect;
@@ -101,16 +103,19 @@ function CardDescription({ text }) {
 
 // Display labels for the canonical tags defined in blog/tags.yml. Posts store
 // their tags in priority order, so tags[0] is the primary category. Colors are
-// keyed off the tag slug in styles.module.css.
-const CATEGORY_LABELS = {
-  development: "Development",
-  research: "Research",
-  governance: "Governance",
-  community: "Community",
-  ecosystem: "Ecosystem",
-  education: "Education",
-  events: "Events",
-};
+// keyed off the tag slug in styles.module.css. Built per render so the labels
+// follow the active locale.
+function getCategoryLabels() {
+  return {
+    development: translate({ id: "latestNews.category.development", message: "Development" }),
+    research: translate({ id: "latestNews.category.research", message: "Research" }),
+    governance: translate({ id: "latestNews.category.governance", message: "Governance" }),
+    community: translate({ id: "latestNews.category.community", message: "Community" }),
+    ecosystem: translate({ id: "latestNews.category.ecosystem", message: "Ecosystem" }),
+    education: translate({ id: "latestNews.category.education", message: "Education" }),
+    events: translate({ id: "latestNews.category.events", message: "Events" }),
+  };
+}
 
 // On-brand category tiles (the site's Open Graph images) used as the thumbnail
 // when a post has no banner of its own.
@@ -128,12 +133,15 @@ const DEFAULT_IMAGE = "/img/og/default.jpg";
 
 export default function LatestNewsSection({ count = 3 }) {
   const { withBaseUrl } = useBaseUrlUtils();
+  const { i18n } = useDocusaurusContext();
+  const dateLocale = i18n.localeConfigs[i18n.currentLocale]?.htmlLang || i18n.currentLocale;
+  const categoryLabels = getCategoryLabels();
   const posts = recentNews.slice(0, count);
 
   function formatDate(dateStr) {
     const [year, month, day] = dateStr.split("-");
     const date = new Date(year, month - 1, day);
-    return date.toLocaleDateString("en-US", {
+    return date.toLocaleDateString(dateLocale, {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -142,11 +150,11 @@ export default function LatestNewsSection({ count = 3 }) {
 
   return (
     <section className={styles.newsSection}>
-      <div className={styles.cardsGrid}>
+      <Grid minItemWidth="300px" stackOnMobile className={styles.cardsGrid}>
         {posts.map((post, index) => {
           const category = post.tags?.[0];
           const imageSrc = post.image || CATEGORY_IMAGES[category] || DEFAULT_IMAGE;
-          const categoryLabel = CATEGORY_LABELS[category];
+          const categoryLabel = categoryLabels[category];
           return (
           <Link key={post.permalink} to={post.permalink} className={`${styles.newsCard} ${index >= 3 ? styles.desktopOnly : ''}`}>
             <div className={styles.cardImageWrapper}>
@@ -188,7 +196,7 @@ export default function LatestNewsSection({ count = 3 }) {
           </Link>
           );
         })}
-      </div>
+      </Grid>
 
       <div className={styles.ctaWrapper}>
         <Link to="/news" className="button button--primary button--lg">

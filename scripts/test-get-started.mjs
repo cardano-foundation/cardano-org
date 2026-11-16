@@ -321,8 +321,17 @@ test('checkAccount: empty array is result empty, wallet balance fills the unknow
   const out = await checkAccount({ api, stakeAddress: 'stake1u9abc', readWalletBalance: async () => '5000000', isCurrent: () => true });
   assert.equal(out.result, 'empty');
   assert.equal(out.status.ada, true);
-  assert.equal(out.status.stake, UNKNOWN);
   assert.deepEqual(out.names, EMPTY_NAMES);
+});
+
+test('checkAccount: a stake key never seen on chain is neither registered nor delegated', async () => {
+  const api = { post: async () => ({ data: [] }) };
+  const out = await checkAccount({ api, stakeAddress: 'stake1u9abc', isCurrent: () => true });
+  assert.equal(out.result, 'empty');
+  assert.equal(out.status.ada, UNKNOWN);
+  assert.equal(out.status.stake, false);
+  assert.equal(out.status.vote, false);
+  assert.equal(out.status.stakeRegistered, false);
 });
 
 test('checkAccount: failing name lookups do not fail the check', async () => {

@@ -14,7 +14,7 @@ function WhatSection() {
   return (
     <>
       <Divider id="what" text={translate({ id: "defi.divider.what", message: "Basics" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "defi.what.title", message: "What is DeFi?" })}
         description={[
           translate({
@@ -43,7 +43,7 @@ function ComparedSection() {
   return (
     <>
       <Divider id="compared" text={translate({ id: "defi.divider.compared", message: "Compared" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "defi.compared.title",
           message: "How does DeFi differ from a bank or an exchange?",
@@ -91,7 +91,7 @@ function UsesSection() {
   return (
     <>
       <Divider id="uses" text={translate({ id: "defi.divider.uses", message: "What you can do" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={usesTitle}
         description={translate({
           id: "defi.uses.intro",
@@ -161,7 +161,7 @@ function UsesSection() {
         headingDot={true}
       />
       <CategoryPanelsCarousel categories={USE_CATEGORIES} ariaLabel={usesTitle} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "defi.uses.outro",
           message:
@@ -178,7 +178,7 @@ function CardanoSection() {
   return (
     <>
       <Divider id="cardano" text={translate({ id: "defi.divider.cardano", message: "On Cardano" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "defi.cardano.title",
           message: "How is DeFi on Cardano different?",
@@ -212,7 +212,7 @@ function RisksSection() {
   return (
     <>
       <Divider id="risks" text={translate({ id: "defi.divider.risks", message: "Risks" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "defi.risks.title", message: "What are the risks?" })}
         description={[
           translate({
@@ -274,7 +274,7 @@ function StartSection() {
   return (
     <>
       <Divider id="start" text={translate({ id: "defi.divider.start", message: "Get started" })} />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "defi.start.title", message: "How do I start?" })}
         description={{
           list: [

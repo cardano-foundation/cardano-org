@@ -1,7 +1,7 @@
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* grid-ok: exactly 3 columns on mobile */
   gap: 0.5rem;
   padding: 1.5rem 0;
 }
@@ -19,7 +19,7 @@
   padding: 1rem 0.5rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
   border: 2px solid transparent;
   min-height: 100px;
 }
@@ -51,7 +51,7 @@
 /* Spotlight panel */
 .spotlight {
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height var(--site-duration-slow) ease, opacity var(--site-duration-slow) ease;
   max-height: 0;
   opacity: 0;
   scroll-margin-top: 5rem;
@@ -138,6 +138,28 @@
   margin-bottom: 1.25rem;
 }
 
+.spotlightEvidence {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.spotlightEvidenceTitle {
+  display: block;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.spotlightEvidenceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spotlightEvidenceList li + li {
+  margin-top: 0.25rem;
+}
+
 .spotlightLink {
   display: inline-flex;
   align-items: center;
@@ -155,7 +177,7 @@
   border: 2px dashed var(--ifm-color-emphasis-300);
   min-height: 100px;
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--site-duration-base) ease, border-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease;
   text-decoration: none;
   color: var(--ifm-color-emphasis-600);
 }
@@ -197,5 +219,16 @@
 
   .spotlightInner {
     padding: 1.5rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoCell:hover,
+  .addCard:hover {
+    transform: none;
+  }
+
+  .spotlightInner {
+    animation: none;
   }
 }

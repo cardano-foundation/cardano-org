@@ -1,6 +1,6 @@
 ---
 slug: 2026-07-17-weekly-development-report
-title: "Weekly Development Report"
+title: "Leios testnet stabilizes and the Plinth Static Analyzer launches"
 description: "The Leios testnet was stabilized with two prototype builds and a voting dashboard, the Plinth Static Analyzer launched, Mithril advanced its SNARK circuit, and the van Rossem hard fork passed ratification ahead of the Dijkstra era."
 authors: [iog]
 tags: [development]

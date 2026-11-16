@@ -4,23 +4,23 @@ displayed_sidebar: null
 description: Cardano Online-Communities
 ---
 
-Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv, jeder davon hat seinen eigenen Charakter. Jeder davon ist anders und auf seine Weise einzigartig. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle. Schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
+Die Cardano-Community ist auf vielen verschiedenen Kanälen aktiv. Jeder davon hat seinen eigenen Charakter. Hier findest du eine Übersicht unserer empfohlenen Community-Kanäle, schau dich um und vernetze dich mit Cardano-Enthusiasten auf der ganzen Welt!
 
 ## Foren
 
-Strukturierte Diskussionen in Langformat.
+Ausführliche, strukturierte Diskussionen.
 
-- [r/Cardano](https://www.reddit.com/r/cardano/) – Cardano-Community auf Reddit
-- [forum.cardano.org](https://forum.cardano.org) – das Cardano Forum
-- [Cardano Stackexchange](https://cardano.stackexchange.com) – Hilfe für Cardano-Entwickler
-- [Facebook-Gruppe](https://www.facebook.com/groups/CardanoCommunity/) – die Cardano Facebook-Gruppe
+- [r/Cardano](https://www.reddit.com/r/cardano/): Cardano-Community auf Reddit
+- [forum.cardano.org](https://forum.cardano.org): das Cardano-Forum
+- [Cardano Stackexchange](https://cardano.stackexchange.com): Hilfe für Cardano-Entwickler
+- [Facebook-Gruppe](https://www.facebook.com/groups/CardanoCommunity/): die Cardano-Facebook-Gruppe
 
 ## Veranstaltungen und lokale Treffen
 
 Lerne die Cardano-Community bei Veranstaltungen vor Ort oder online kennen.
 
-- [Cardano auf Meetup](https://www.meetup.com/pro/cardano) – Cardano-Meetup-Gruppen weltweit.
-- [Cardano auf Luma](https://luma.com/CardanoEvents) – Cardano-Events weltweit.
+- [Cardano auf Meetup](https://www.meetup.com/pro/cardano): Cardano-Meetup-Gruppen weltweit.
+- [Cardano auf Luma](https://luma.com/CardanoEvents): Cardano-Events weltweit.
 
 ## Cardano auf Telegram
 
@@ -28,7 +28,7 @@ Echtzeit-Chat und schnelle Diskussionen.
 
 - Cardano Main: https://t.me/Cardano
 - Cardano Entwickler: https://t.me/CardanoDevelopersOfficial
-- Cardano Report to Admin: https://t.me/cardanoreporttoadmin – für Fragen oder Probleme mit Regeln, Nutzern, Admins, Moderatoren oder anderen Themen in unseren Telegram-Kanälen.
+- Cardano Report to Admin: https://t.me/cardanoreporttoadmin (für Fragen oder Probleme mit Regeln, Nutzern, Admins, Moderatoren oder anderen Themen in unseren Telegram-Kanälen)
 
 ## Cardano auf Discord
 

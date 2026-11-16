@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import { HiSearch } from "react-icons/hi";
 
@@ -14,9 +14,12 @@ import {
 import {
   ambassadorElementId,
   ambassadorSlug,
-  parseAmbassadorHash,
+  parseAmbassadorTarget,
 } from "@site/src/utils/ambassadorSlug";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
+import useHashTarget from "@site/src/utils/useHashTarget";
+import Grid from "@site/src/components/Layout/Grid";
 
 const PAGE_SIZE = 24;
 const HIGHLIGHT_MS = 1500;
@@ -51,28 +54,22 @@ export default function AmbassadorsDirectory() {
     [sortedData, slugByName]
   );
 
-  useEffect(() => {
-    function applyHash() {
-      const slug = parseAmbassadorHash(window.location.hash);
-      if (!slug) return;
-      const match = ambassadorBySlug.get(slug);
-      if (!match) return;
-      setQuery(match.name);
-      setCountry("all");
-      setLanguage("all");
-      setContribution("all");
-      setVisibleCount(PAGE_SIZE);
-      setHighlightSlug(slug);
-      window.requestAnimationFrame(() => {
-        const el = document.getElementById(ambassadorElementId(slug));
-        if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
-      });
-      window.setTimeout(() => setHighlightSlug(null), HIGHLIGHT_MS);
-    }
-    applyHash();
-    window.addEventListener("hashchange", applyHash);
-    return () => window.removeEventListener("hashchange", applyHash);
-  }, [ambassadorBySlug]);
+  useHashTarget((id) => {
+    const slug = parseAmbassadorTarget(id);
+    const match = slug && ambassadorBySlug.get(slug);
+    if (!match) return;
+    setQuery(match.name);
+    setCountry("all");
+    setLanguage("all");
+    setContribution("all");
+    setVisibleCount(PAGE_SIZE);
+    setHighlightSlug(slug);
+    window.requestAnimationFrame(() => {
+      const el = document.getElementById(ambassadorElementId(slug));
+      if (el) el.scrollIntoView({ block: "start", behavior: scrollBehavior() });
+    });
+    window.setTimeout(() => setHighlightSlug(null), HIGHLIGHT_MS);
+  });
 
   const countryOptions = useMemo(() => buildCountryOptions(sortedData), [sortedData]);
   const languageOptions = useMemo(() => deriveAvailableLanguages(sortedData), [sortedData]);
@@ -112,7 +109,7 @@ export default function AmbassadorsDirectory() {
 
   return (
     <section id="directory">
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "ambassadors.directory.title",
           message: "Search and filter the global network of Ambassadors",
@@ -234,7 +231,7 @@ export default function AmbassadorsDirectory() {
           </button>
         </div>
       ) : (
-        <div className={styles.grid}>
+        <Grid minItemWidth="320px">
           {visible.map((ambassador) => (
             <AmbassadorCard
               key={ambassador.name + ambassador.country}
@@ -242,7 +239,7 @@ export default function AmbassadorsDirectory() {
               highlighted={highlightSlug === slugByName.get(ambassador.name)}
             />
           ))}
-        </div>
+        </Grid>
       )}
 
       {filtered.length > visibleCount && (

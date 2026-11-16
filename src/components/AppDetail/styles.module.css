@@ -108,8 +108,8 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: border-color 150ms ease, color 150ms ease, opacity 150ms ease,
-    box-shadow 150ms ease;
+  transition: border-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease, opacity var(--site-duration-fast) ease,
+    box-shadow var(--site-duration-fast) ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -158,7 +158,7 @@
   border-radius: 50%;
   background: var(--ifm-color-emphasis-300);
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .carouselDot:hover {
@@ -186,27 +186,17 @@
   margin-bottom: 1.25rem;
 }
 
+/* LogoTile variables for the app icon and its letter fallback. */
 .icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  object-fit: cover;
-  flex-shrink: 0;
-  background: var(--ifm-color-emphasis-100);
-}
-
-.iconFallback {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--ifm-color-emphasis-300) 0%, var(--ifm-color-emphasis-500) 100%);
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  --logo-size: 120px;
+  --logo-radius: 24px;
+  --logo-bg: var(--ifm-color-emphasis-100);
+  --logo-fit: cover;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-emphasis-300) 0%, var(--ifm-color-emphasis-500) 100%);
+  --logo-fallback-color: #fff;
+  --logo-fallback-font-size: 3rem;
+  /* The letter keeps the line height of the surrounding text. */
+  --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 
 .headerText {
@@ -238,6 +228,9 @@
 }
 
 .categoryPill {
+  /* --pill-color is the category color, set by the component */
+  background-color: color-mix(in srgb, var(--pill-color) 15%, transparent);
+  color: color-mix(in srgb, var(--pill-color) 85%, black);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -248,13 +241,13 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-decoration: none;
-  transition: transform 0.15s ease, filter 0.15s ease;
+  transition: transform var(--site-duration-fast) ease, filter var(--site-duration-fast) ease;
 }
 
 .categoryPill:hover {
   text-decoration: none;
   filter: brightness(0.95);
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .tagDot {
@@ -307,14 +300,14 @@
   );
   text-decoration: none;
   color: inherit;
-  transition: border-color 150ms ease, transform 150ms ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .spotlight:hover {
   border-color: var(--ifm-color-primary);
   text-decoration: none;
   color: inherit;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .spotlightLabel {
@@ -355,18 +348,19 @@
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .visitButton:hover {
   background: #122a78;
   color: #fff;
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 [data-theme="dark"] .visitButton {
-  background: var(--ifm-color-primary);
+  /* The darker step keeps white text at 6.8:1, the plain primary only at 3.6:1 */
+  background: var(--ifm-color-primary-darker);
 }
 
 [data-theme="dark"] .visitButton:hover {
@@ -385,7 +379,7 @@
   color: var(--ifm-color-emphasis-900);
   cursor: pointer;
   padding: 0;
-  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  transition: background var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .iconButton:hover {
@@ -393,7 +387,7 @@
   border-color: var(--ifm-color-emphasis-500);
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .sectionHeading {
@@ -411,7 +405,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgb(34, 134, 96);
+  background: var(--site-activity);
   margin-left: 0.6rem;
   vertical-align: middle;
   animation: activityPulse 4s ease-in-out infinite;
@@ -419,10 +413,10 @@
 
 @keyframes activityPulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(34, 134, 96, 0.55);
+    box-shadow: 0 0 0 0 rgba(var(--site-activity-rgb), 0.55);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(34, 134, 96, 0);
+    box-shadow: 0 0 0 6px rgba(var(--site-activity-rgb), 0);
   }
 }
 
@@ -446,92 +440,28 @@
 }
 
 .relatedGrid {
-  list-style: none;
-  padding: 0;
   margin: 0 0 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
 .relatedMore {
   font-size: 0.95rem;
 }
 
-.improve {
-  margin-top: 4rem;
-  padding: 3rem 1.5rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.improveIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
-  margin-bottom: 1.5rem;
-}
-
-.improveHeading {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.4rem, 3vw, 1.85rem);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.improveCopy {
-  margin: 0 0 1.75rem;
-  max-width: 480px;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.improveButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-400);
-  background: transparent;
-  color: var(--ifm-color-emphasis-900);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
-}
-
-.improveButton:hover {
-  border-color: var(--ifm-color-emphasis-700);
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
 @media (max-width: 600px) {
-  .icon,
-  .iconFallback {
-    width: 88px;
-    height: 88px;
-    border-radius: 20px;
-  }
-
-  .iconFallback {
-    font-size: 2.2rem;
+  .icon {
+    --logo-size: 88px;
+    --logo-radius: 20px;
+    --logo-fallback-font-size: 2.2rem;
   }
 
   .visitButton {
     flex: 1 1 auto;
     justify-content: center;
   }
+}
+
+/* Dark mode: the category color mixed with black is unreadable on the dark
+   tint, mixing it with white keeps the hue and contrast above 4.5:1. */
+[data-theme="dark"] .categoryPill {
+  color: color-mix(in srgb, var(--pill-color) 45%, white);
 }

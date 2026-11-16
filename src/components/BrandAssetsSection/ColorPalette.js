@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
 import { translate } from "@docusaurus/Translate";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
 const coreColors = [
   { name: "Blue", hex: "#0033AD", rgb: "0 / 51 / 173", pantone: "286" },
   { name: "Black", hex: "#000000", rgb: "0 / 0 / 0", pantone: "Process Black" },
-  { name: "White", hex: "#FFFFFF", rgb: "255 / 255 / 255", pantone: "—", needsBorder: true },
-  { name: "Paper", hex: "#f8f8f5", rgb: "248 / 248 / 245", pantone: "—", needsBorder: true },
+  { name: "White", hex: "#FFFFFF", rgb: "255 / 255 / 255", needsBorder: true },
+  { name: "Paper", hex: "#f8f8f5", rgb: "248 / 248 / 245", needsBorder: true },
 ];
 
 const secondaryColors = [
@@ -16,16 +17,7 @@ const secondaryColors = [
 ];
 
 function Swatch({ color }) {
-  const [copied, setCopied] = useState(false);
-
-  function handleCopy() {
-    if (typeof window !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(color.hex).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      });
-    }
-  }
+  const [copied, copy] = useCopyToClipboard();
 
   const isLight = color.name === "White" || color.name === "Paper";
 
@@ -42,7 +34,7 @@ function Swatch({ color }) {
         <strong className={styles.swatchName}>{color.name}</strong>
         <button
           className={styles.swatchHex}
-          onClick={handleCopy}
+          onClick={() => copy(color.hex)}
           title={translate({ id: "brandAssets.colors.copyHex", message: "Copy hex value" })}
         >
           {copied
@@ -50,7 +42,7 @@ function Swatch({ color }) {
             : color.hex}
         </button>
         <span className={styles.swatchDetail}>RGB {color.rgb}</span>
-        {color.pantone !== "—" && (
+        {color.pantone && (
           <span className={styles.swatchDetail}>Pantone {color.pantone}</span>
         )}
       </div>
@@ -61,7 +53,7 @@ function Swatch({ color }) {
 export default function ColorPalette() {
   return (
     <div>
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.colors.coreTitle", message: "Core Colors" })}
         id="core-colors"
       />
@@ -71,7 +63,7 @@ export default function ColorPalette() {
         ))}
       </div>
 
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.colors.secondaryTitle", message: "Secondary Colors" })}
         id="secondary-colors"
       />

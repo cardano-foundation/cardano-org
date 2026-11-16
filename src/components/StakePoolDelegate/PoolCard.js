@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { translate } from "@docusaurus/Translate";
 import { SnapshotImage } from "@site/src/components/WalletDelegation";
 import poolLogosManifest from "@site/src/data/pool-logos.json";
 import { formatAdaCompact, formatAdaWhole } from "@site/src/utils/cardano/lovelace.mjs";
 import { shortAddress } from "@site/src/utils/walletTx";
 import { poolIdToHex } from "@site/src/utils/cardano/bech32.mjs";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 import styles from "./styles.module.css";
 
 // The explorer.cardano.org hub has no pool route (it only resolves
@@ -26,9 +27,7 @@ function Metric({ label, value }) {
 }
 
 export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDelegate }) {
-  const [copied, setCopied] = useState(false);
-  const copyTimerRef = useRef(null);
-  useEffect(() => () => clearTimeout(copyTimerRef.current), []);
+  const [copied, copy] = useCopyToClipboard();
   const saturation = pool.saturation;
   const pledgeMet = BigInt(pool.livePledge) >= BigInt(pool.pledge);
   const retired = pool.status === "retired";
@@ -36,16 +35,6 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
   const fillClass = saturation == null ? "" : saturation >= 100 ? styles.saturationOver : saturation >= 90 ? styles.saturationWarn : "";
   const num = (n, digits = 0) => n.toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
-  const copyId = async () => {
-    try {
-      await navigator.clipboard.writeText(pool.id);
-      setCopied(true);
-      clearTimeout(copyTimerRef.current);
-      copyTimerRef.current = setTimeout(() => setCopied(false), 1500);
-    } catch {
-      // Clipboard can be unavailable, the full id is still in the explorer link.
-    }
-  };
 
   return (
     <div className={`${styles.card} ${isCurrent ? styles.cardCurrent : ""}`}>
@@ -53,6 +42,11 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
         <SnapshotImage ids={LOGO_SET} id={pool.id} path={`/img/pools/${pool.id}.webp`} name={pool.ticker || pool.name} className={styles.logo} />
         <div className={styles.cardIdentity}>
           <h3 className={styles.cardTicker}>{pool.ticker || shortAddress(pool.id)}</h3>
+          {pool.tickerFromHistory && (
+            <span className={styles.cardName}>
+              {translate({ id: "stakePoolDelegation.delegate.card.oldTicker", message: "Ticker from earlier metadata. The metadata of this pool's current registration could not be read." })}
+            </span>
+          )}
           {pool.name && <span className={styles.cardName}>{pool.name}</span>}
           {pool.group && (
             <span className={styles.cardGroup}>
@@ -148,7 +142,8 @@ export default function PoolCard({ pool, isCurrent, disabled, busy, locale, onDe
         </a>
         <span className={styles.poolId}>
           {shortAddress(pool.id)}
-          <button type="button" className={styles.copyButton} onClick={copyId}>
+          {/* Clipboard can be unavailable, the full id is still in the explorer link. */}
+          <button type="button" className={styles.copyButton} onClick={() => copy(pool.id)}>
             {copied
               ? translate({ id: "stakePoolDelegation.delegate.card.copied", message: "Copied" })
               : translate({ id: "stakePoolDelegation.delegate.card.copy", message: "Copy ID" })}

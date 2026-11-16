@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 title: Create a FAQ Section
-description: Use the FAQSection component on cardano.org. Data sources, JSON file structure, and how the collapsible accordion renders.
+description: Use the FAQSection component on cardano.org. Data sources, JSON file structure, and how the accordion renders.
 ---
 
 ## Create a FAQ Section
@@ -52,20 +52,21 @@ After creating your JSON file, you'll need to add a static import for it in the 
 Before you can use your new FAQ data, you need to add it to the `FAQSection` component. Open `src/components/FAQSection/index.js` and add an import for your JSON file:
 
 ```js title="src/components/FAQSection/index.js"
-import React, { useState } from "react";
+import React from "react";
 import Divider from "@site/src/components/Layout/Divider";
-import Collapsible from "react-collapsible";
-import { renderAnswerArray } from "@site/src/utils/textUtils";
-import operationFAQ from "@site/src/data/operationFAQ.json";
+import Accordion from "@site/src/components/Layout/Accordion";
 import pineappleFAQ from "@site/src/data/pineappleFAQ.json";
 
 const faqData = {
-  operationFAQ,
   pineappleFAQ,
 };
 ```
 
 This registers your JSON file so it can be referenced by name when using the component.
+
+:::tip Translated pages
+Strings in a JSON file never reach Crowdin, so they stay English on `/de/`, `/ja/` and the other locales. For an FAQ on a translated page, write the data as a function that returns the same shape with literal `translate({ id, message })` calls, like `src/data/whatIsCardanoFAQ.js` or `src/data/operationFAQ.js`, add the new ids to `i18n/en/code.json`, and pass the result with `<FAQSection data={getMyFAQ()} />`.
+:::
 
 ## Props
 
@@ -76,6 +77,8 @@ This registers your JSON file so it can be referenced by name when using the com
 
 :::note Built-in divider
 `FAQSection` renders its own `<Divider text="FAQ" id="faq" />` above the questions, so the section already has a heading and a `#faq` anchor. Do not add another `Divider` in front of it.
+
+The questions render with the [Accordion](./components/accordion.md) component: rows separated by hairlines, each question an `<h3>` with a plus or minus icon, and several answers can be open at once.
 :::
 
 ## Add the FAQ component

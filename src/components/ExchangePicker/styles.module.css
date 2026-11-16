@@ -25,7 +25,7 @@
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: border-color var(--site-duration-base) ease;
 }
 
 .countrySelect:hover {
@@ -57,12 +57,7 @@
 }
 
 .exchangeGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 100%;
+  margin-top: var(--site-space-md);
 }
 
 .exchangeCard {
@@ -70,7 +65,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -78,7 +73,7 @@
 }
 
 .exchangeCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary-lighter);
 }
@@ -89,25 +84,14 @@
   gap: 1rem;
 }
 
+/* LogoTile variables: square logo, or a letter on the brand gradient with
+   rounded corners. */
 .exchangeLogo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.exchangeInitial {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  --logo-radius: 0;
+  --logo-fallback-radius: 8px;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  --logo-fallback-color: white;
+  --logo-fallback-font-size: 1.5rem;
 }
 
 .exchangeName {
@@ -176,7 +160,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .exchangeLink:hover {
@@ -201,7 +185,7 @@
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   text-decoration: none;
   cursor: pointer;
 }
@@ -212,7 +196,7 @@
 }
 
 .addExchangeCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
   background: var(--ifm-background-surface-color);
@@ -248,10 +232,6 @@
 }
 
 @media (max-width: 768px) {
-  .exchangeGrid {
-    grid-template-columns: 1fr;
-  }
-  
   .countrySelect {
     max-width: 100%;
   }

@@ -1,0 +1,61 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 1rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.row:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Dotted outline icons need about 56px, below that the dots blur together. */
+.icon {
+  display: inline-flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+html[data-theme="dark"] .icon {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.rowTitle {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.tagline {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.text {
+  margin: 0;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -48,7 +48,7 @@ export default function MyExplainerPage() {
 |------|------|---------|-------------|
 | `title` | `string` | - | Page title, passed to `Layout` and used for meta and the browser tab. |
 | `description` | `string` | - | Meta description, passed to `Layout`. |
-| `hero` | `{ title, description, bannerType }` | *required* | Strings and banner for the `SiteHero` at the top of the page. `bannerType` takes the same banner names as `SiteHero` (`starburst`, `waves`, `braidBlue`, `fluidBlue`, and so on). |
+| `hero` | `{ title, description, bannerType }` | *required* | Strings and banner for the `SiteHero` at the top of the page. The component does not fail without it, but the page then has no hero title, so always pass it. `bannerType` takes the same banner names as `SiteHero` (`starburst`, `waves`, `braidBlue`, `fluidBlue`, and so on). |
 | `faq` | `Array<{ question, answer }>` | - | Optional. When passed, renders the FAQPage JSON-LD in `Head` and a `FAQSection` below the children. Omit it on pages without an FAQ. |
 | `cta` | `{ title, buttonLabel, buttonLink }` | - | Optional. When passed, renders a `CtaOneColumn` in a dark background band after the main content. Omit it on pages without a closing call to action. |
 | `pageName` | `string` | - | Optional, the OG image name under static/img/og, defaults to the site image. |

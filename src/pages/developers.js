@@ -5,6 +5,8 @@ import SiteHero from "@site/src/components/Layout/SiteHero";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import CtaOneColumn from "@site/src/components/Layout/CtaOneColumn";
+import HighlightCallout from "@site/src/components/Layout/HighlightCallout";
+import { FaCoins } from "react-icons/fa";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import Link from "@docusaurus/Link";
@@ -94,7 +96,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={startBuildingImg}
-            alt="Start Building — SDKs for TypeScript, Python, Rust, Go, Java, C# and more"
+            alt="Start Building: SDKs for TypeScript, Python, Rust, Go, Java, C# and more"
             loading="lazy"
           />
         </div>
@@ -129,7 +131,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={smartContractsImg}
-            alt="Smart Contracts — native tokens, payments, stake pools, and governance"
+            alt="Smart Contracts: native tokens, payments, stake pools, and governance"
             loading="lazy"
           />
         </div>
@@ -164,7 +166,7 @@ function DeveloperShowcase() {
         <div className={styles.featureScreenshot}>
           <img
             src={firstLineImg}
-            alt="Courses — interactive tutorials and hands-on challenges"
+            alt="Courses: interactive tutorials and hands-on challenges"
             loading="lazy"
           />
         </div>
@@ -332,13 +334,23 @@ export default function Home() {
         <BoundaryBox>
           <SpacerBox size="small" />
           <DeveloperShowcase />
+          <SpacerBox size="small" />
+          <HighlightCallout icon={<FaCoins />}>
+            {translate({
+              id: "developers.funding.text",
+              message: "Looking for funding? Grants, accelerators, and venture funding for Cardano builders are listed in one place.",
+            })}{" "}
+            <Link to="/grants-funding">
+              {translate({ id: "developers.funding.link", message: "See grants and funding" })}
+            </Link>
+          </HighlightCallout>
           <SpacerBox size="medium" />
         </BoundaryBox>
       </BackgroundWrapper>
 
       <BackgroundWrapper backgroundType={"gradientDark"}>
         <BoundaryBox>
-          <CtaOneColumn
+          <CtaOneColumn headingLevel={2}
             title={translate({
               id: "developers.cta.title",
               message: "Ready to start building?",

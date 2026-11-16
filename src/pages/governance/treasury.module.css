@@ -1,0 +1,21 @@
+.terms {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}

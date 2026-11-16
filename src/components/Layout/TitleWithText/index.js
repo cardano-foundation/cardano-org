@@ -3,19 +3,37 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Link from "@docusaurus/Link"; // Import the Link component
+import { getHeading } from "@site/src/utils/heading";
 
 // This component shows a simple header with some text below.
 // title, text, slight text, and an optional button
 
+/**
+ * Section title with body text, an optional list, and an optional call to action.
+ *
+ * @param {object} props
+ * @param {string} [props.title] Heading text.
+ * @param {string|Array|object} [props.description] Body text as a string, an array of paragraphs, or `{ list: [...] }`.
+ * @param {string} [props.titleType] Title color: "red", "green", or default.
+ * @param {boolean} [props.headingDot] Shows the red dot above the title.
+ * @param {string[]} [props.slightText] Smaller paragraphs below the description.
+ * @param {string} [props.buttonLabel] Label of the optional button.
+ * @param {string} [props.buttonLink] Target of the optional button.
+ * @param {number} [props.headingLevel=1] Heading level of the title. The look stays the same.
+ * @param {string} [props.className] Extra class on the wrapper.
+ */
 export default function TitleWithText({
   title,
   description,
   titleType,
   headingDot,
   slightText,
-  buttonLabel,  
-  buttonLink,   
+  buttonLabel,
+  buttonLink,
+  headingLevel,
+  className,
 }) {
+  const { Tag, lookClassName } = getHeading(headingLevel, 1);
   // Function to render description content
   const renderDescriptionContent = (content) => {
     // If it's a string, render it as a paragraph
@@ -65,11 +83,11 @@ export default function TitleWithText({
 
   // clsx allows for conditional className inclusion based on the headingDot flag
   return (
-    <div>
+    <div className={className}>
       {title && (
-        <h1 className={clsx({ headingDot: headingDot }, titleClassName)}>
+        <Tag className={clsx({ headingDot: headingDot }, titleClassName, lookClassName)}>
           {title}
-        </h1>
+        </Tag>
       )}
       {description && (
         <React.Fragment>

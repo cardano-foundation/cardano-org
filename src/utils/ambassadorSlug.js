@@ -16,9 +16,10 @@ export function ambassadorElementId(slug) {
   return `a-${slug}`;
 }
 
-const HASH_RE = /^#a=([a-z0-9-]+)/i;
-export function parseAmbassadorHash(hash) {
-  if (!hash) return null;
-  const m = hash.match(HASH_RE);
+// Slug from the id a hash such as #a=jane-doe names ("a=jane-doe").
+const TARGET_RE = /^a=([a-z0-9-]+)/i;
+export function parseAmbassadorTarget(id) {
+  if (!id) return null;
+  const m = id.match(TARGET_RE);
   return m ? m[1].toLowerCase() : null;
 }

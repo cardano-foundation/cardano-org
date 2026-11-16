@@ -16,9 +16,7 @@
 }
 
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  --grid-gap: var(--site-space-md);
   margin-bottom: 2.5rem;
 }
 
@@ -37,7 +35,7 @@
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, transform var(--site-duration-base) ease;
 }
 
 .ctaLink:focus-visible {
@@ -49,7 +47,7 @@
   background: var(--ifm-color-primary-dark);
   color: white;
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
 }
 
 .arrowIcon {
@@ -70,12 +68,17 @@
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    --grid-gap: var(--site-space-sm);
   }
 
   .ctaLink {
     padding: 0.875rem 1.5rem;
     font-size: 0.875rem;
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .ctaLink {
+  background-color: var(--ifm-color-primary-darker);
 }

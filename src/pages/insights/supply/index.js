@@ -3,7 +3,7 @@ import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useColorMode } from '@docusaurus/theme-common';
-import * as echarts from 'echarts';
+import EChart from '@site/src/components/Layout/EChart';
 import axios from 'axios';
 import { useHistory } from '@docusaurus/router';
 import Link from "@docusaurus/Link";
@@ -42,30 +42,12 @@ export const meta = {
 };
 
 // ────────────────────────────────────────────────────────────────────────────
-//  Donut chart (ECharts) — init once, update via setOption
+//  Donut chart (ECharts via Layout/EChart)
 // ────────────────────────────────────────────────────────────────────────────
 function DonutChartEcharts({ chartData }) {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   const [isMobile, setIsMobile] = useState(false);
-  const chartRef = useRef(null);
-  const chartInstanceRef = useRef(null);
-
-  // init once
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartInstanceRef.current = echarts.init(chartRef.current);
-    const handleResize = () => chartInstanceRef.current && chartInstanceRef.current.resize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.dispose();
-        chartInstanceRef.current = null;
-      }
-    };
-  }, []);
-
   // mobile detection
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
@@ -135,12 +117,7 @@ function DonutChartEcharts({ chartData }) {
     };
   }, [chartData, isDark, isMobile]);
 
-  useEffect(() => {
-    if (!chartInstanceRef.current || !option) return;
-    chartInstanceRef.current.setOption(option, { notMerge: false, lazyUpdate: true });
-  }, [option]);
-
-  return <div ref={chartRef} style={{ height: '400px', width: '100%' }} />;
+  return <EChart option={option} notMerge={false} lazyUpdate height={400} />;
 }
 // ────────────────────────────────────────────────────────────────────────────
 //  Main page content
@@ -447,7 +424,7 @@ function PageContent() {
   const netTreasuryChangeAbs = Math.abs(netTreasuryChange);
   const percentTreasuryChangeAbs = Math.abs(parseFloat(percentOfTreasury)).toFixed(2);
 
-  const pageTitle = `Cardano ada Supply Distribution – Epoch ${displayedEpoch} (${epochDate})`;
+  const pageTitle = `Cardano ada Supply Distribution, Epoch ${displayedEpoch} (${epochDate})`;
   const pageDescription = `Explore the Cardano ADA supply distribution for epoch ${displayedEpoch}. Understand how ADA is allocated across circulating supply, reserves, staking rewards, and the treasury. `
   const pageKeywords = `Cardano, ADA, supply distribution, staking rewards, Cardano treasury, Ouroboros protocol, Cardano blockchain, ADA rewards, Cardano supply insights`
   const canonicalUrl = `https://cardano.org/insights/supply/${displayedEpoch ? `?epoch=${displayedEpoch}` : ''}`;
@@ -458,19 +435,8 @@ function PageContent() {
   <>
       <Head>
         <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content={pageKeywords} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:logo" content="img/cardano-logo-blue.svg" />
-        <meta property="og:image" content={`/img/insights/${meta.pageName}.png`} />
-        <meta property="og:url" content={`https://www.cardano.org/insights/${meta.pageName}${location.search || ''}`} />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content={`/img/insights/${meta.pageName}.png`} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={canonicalUrl} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{jsonLdString({
           "@context": "https://schema.org",
@@ -490,7 +456,7 @@ function PageContent() {
         />
       </div>
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
           (() => {
             const base = `**Explore the complete Cardano ADA supply distribution for epoch ${displayedEpoch}, which began on ${epochDate} `;
@@ -503,13 +469,13 @@ function PageContent() {
         headingDot
       />
 
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
-		  `This interactive insight helps you understand how the total ADA supply is allocated across key categories — from circulating supply and reserves to staking rewards and the treasury.`
+		  `This interactive insight helps you understand how the total ADA supply is allocated across key categories, from circulating supply and reserves to staking rewards and the treasury.`
         ]}
         headingDot
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={[
 		  `At the close of each 5-day epoch, the [Ouroboros protocol](/ouroboros) performs supply and reward calculations across all participating nodes. 
 		  The resulting transfers distribute [staking rewards](/calculator) and allocate a portion to the Cardano treasury, supporting ongoing development and ecosystem growth.`
@@ -571,8 +537,8 @@ function PageContent() {
           {displayedEpoch >= GOVERNANCE_EPOCH_THRESHOLD && totalTreasuryWithdrawalsCurr > 0 ? (
             // For governance epochs with withdrawals from current epoch, explain both additions and withdrawals
             <>
-              A: In epoch {displayedEpoch}, rewards and fees contributed <strong>{convertLovelacesToAda(grossTreasuryAdded).toLocaleString()} ada</strong>&nbsp;
-              — {percentGrossTreasuryOfDeltaReserves}% of the overall staking rewards — to the treasury
+              A: In epoch {displayedEpoch}, rewards and fees contributed <strong>{convertLovelacesToAda(grossTreasuryAdded).toLocaleString()} ada</strong>,
+              {percentGrossTreasuryOfDeltaReserves}% of the overall staking rewards, to the treasury
               {netTreasuryChange > 0 ? (
                 <>
                   . After accounting for withdrawals of <strong>{convertLovelacesToAda(totalTreasuryWithdrawalsCurr).toLocaleString()} ada</strong> from this epoch,
@@ -592,8 +558,8 @@ function PageContent() {
             </>
           ) : netTreasuryChange > 0 ? (
             <>
-              A: A total of <strong>{convertLovelacesToAda(netTreasuryChange).toLocaleString()} ada</strong>&nbsp; 
-			  — { percentOfDeltaReserves }% of the overal staking rewards — was allocated to the treasury, 
+              A: A total of <strong>{convertLovelacesToAda(netTreasuryChange).toLocaleString()} ada</strong>,
+			  { percentOfDeltaReserves }% of the overall staking rewards, was allocated to the treasury, 
 			  marking a {percentOfTreasury}% increase compared to the previous epoch.
             </>
           ) : netTreasuryChange === 0 ? (
@@ -706,7 +672,7 @@ function PageContent() {
 export default function SupplyPage() {
   return (
     <InsightsLayout meta={meta}>
-      <OpenGraphInfo {...meta.og} />
+      <OpenGraphInfo image={`/img/insights/${meta.pageName}.png`} {...meta.og} />
       <PageContent />
     </InsightsLayout>
   );

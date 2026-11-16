@@ -69,7 +69,7 @@ async function pollReport(reportId) {
       return reportId;
     }
 
-    console.log(`Report status: ${status} – waiting…`);
+    console.log(`Report status: ${status}, waiting…`);
     await sleep(POLL_INTERVAL_MS);
   }
 
@@ -115,7 +115,7 @@ async function main() {
   const downloadUrl = await getDownloadUrl(reportId);
   const raw = await downloadReport(downloadUrl);
 
-  // Crowdin wraps the report in { data: [...] } — unwrap if needed
+  // Crowdin wraps the report in { data: [...] }, unwrap if needed
   const members = Array.isArray(raw) ? raw : Array.isArray(raw.data) ? raw.data : [];
 
   if (members.length === 0) {

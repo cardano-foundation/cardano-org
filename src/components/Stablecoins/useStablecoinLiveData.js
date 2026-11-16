@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { translate } from "@docusaurus/Translate";
 import { makeApiClient } from "@site/src/utils/insights/api";
 import {
   NATIVE_STABLECOINS,
@@ -154,14 +155,14 @@ export default function useStablecoinLiveData() {
 }
 
 // Source-of-truth path for any Cardano-native stablecoin where CoinGecko data
-// is unreliable: either CG has no listing (e.g. USDCx — see `coingeckoId: null`
+// is unreliable: either CG has no listing (e.g. USDCx, see `coingeckoId: null`
 // in src/data/stablecoins.js) or its listing is missing market-cap data. We
 // pull `total_supply` from Koios `asset_info` and synthesize a market cap.
 //
 // USD multiplier: prefer CoinGecko's live `usd` price when present, so a
 // depeg event reflects in the market cap. Fall back to the static `pegUsd`
 // only when no live price exists. An implausible CG price (non-finite, ≤0,
-// or >50% off peg) is rejected in favour of the peg — that's almost certainly
+// or >50% off peg) is rejected in favour of the peg, that's almost certainly
 // bad upstream data, not a real depeg.
 async function fetchKoiosMarketCaps(koios, currentPrices) {
   const targets = [...NATIVE_STABLECOINS, ...BRIDGED_STABLECOINS].filter(
@@ -222,21 +223,28 @@ async function fetchKoiosMarketCaps(koios, currentPrices) {
 
 const ERROR_TOOLTIP = "Live data temporarily unavailable";
 
+const notAvailable = () =>
+  translate({
+    id: "stablecoins.liveData.notAvailable",
+    message: "n/a",
+    description: "Placeholder when a live stablecoin figure is missing",
+  });
+
 function ErrorPlaceholder() {
   return (
     <span title={ERROR_TOOLTIP} aria-label={ERROR_TOOLTIP}>
-      —
+      {notAvailable()}
     </span>
   );
 }
 
 // Format a USD amount as a short human label: "$13.4M", "$1.2B", "$430K".
-// Returns "—" for null/undefined; renders a tooltipped placeholder when
+// Returns "n/a" for null/undefined; renders a tooltipped placeholder when
 // `status === "error"` so users on hover learn that the value is unavailable
 // rather than missing-by-design.
 export function formatUsdShort(usd, status) {
   if (status === "error") return <ErrorPlaceholder />;
-  if (usd == null || !Number.isFinite(usd)) return "—";
+  if (usd == null || !Number.isFinite(usd)) return notAvailable();
   const abs = Math.abs(usd);
   if (abs >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(1)}B`;
   if (abs >= 1_000_000) return `$${(usd / 1_000_000).toFixed(1)}M`;
@@ -247,6 +255,6 @@ export function formatUsdShort(usd, status) {
 // Format an ada fee with leading symbol and two decimals: "₳ 0.17".
 export function formatAdaFee(ada, status) {
   if (status === "error") return <ErrorPlaceholder />;
-  if (ada == null || !Number.isFinite(ada)) return "—";
+  if (ada == null || !Number.isFinite(ada)) return notAvailable();
   return `₳ ${ada.toFixed(2)}`;
 }

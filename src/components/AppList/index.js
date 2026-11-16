@@ -1,19 +1,16 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Showcases, Tags } from "@site/src/data/apps";
 import { getAppStats, formatTxCountCompact as formatTxCount, getAppAxes } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
+import { translate } from "@docusaurus/Translate";
 
 function AppListItem({ app, stats, showTxCount, showTags, showDescription = true }) {
   const hasTxData = stats && stats.txCount > 0;
 
-  const rawIconSrc = resolveIconSrc(app);
-  const iconSrc = useBaseUrl(rawIconSrc || '');
-  const initial = app.title.charAt(0).toUpperCase();
-  
   const visibleTags = showTags ? getAppAxes(app) : [];
 
   return (
@@ -23,13 +20,7 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       rel="noopener noreferrer"
       className={styles.appListItem}
     >
-      <div className={styles.iconContainer}>
-        {rawIconSrc ? (
-          <img src={iconSrc} alt={app.title} className={styles.appIcon} />
-        ) : (
-          <div className={styles.appInitial}>{initial}</div>
-        )}
-      </div>
+      <LogoTile src={resolveIconSrc(app)} name={app.title} className={styles.iconContainer} />
       <div className={styles.appContent}>
         <h4 className={styles.appTitle}>{app.title}</h4>
         {showDescription && <p className={styles.appDescription}>{app.description}</p>}
@@ -51,14 +42,27 @@ function AppListItem({ app, stats, showTxCount, showTags, showDescription = true
       {showTxCount && hasTxData && (
         <div className={styles.txCount}>
           <div className={styles.txNumber}>{formatTxCount(stats.txCount)}</div>
-          <div className={styles.txLabel}>transactions</div>
+          <div className={styles.txLabel}>{translate({ id: "apps.list.transactions", message: "transactions" })}</div>
         </div>
       )}
     </a>
   );
 }
 
-export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = "Apps", showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
+/**
+ * Compact list of apps with an optional header and "See all" link.
+ *
+ * @param {object} props
+ * @param {string[]} [props.categories=[]] Primary app categories to include. Empty includes all apps.
+ * @param {string[]} [props.slugs=null] Explicit app slugs in display order. Overrides categories and sorting.
+ * @param {number} [props.limit=5] Maximum number of apps. A falsy value shows all.
+ * @param {string} [props.categoryTitle="Apps"] Heading text in the header.
+ * @param {boolean} [props.showTxCount=false] Shows the transaction count of each app.
+ * @param {boolean} [props.hideHeader=false] Hides the header with title and "See all" link.
+ * @param {boolean} [props.showTags=false] Shows the tags of each app.
+ * @param {boolean} [props.showDescription=true] Shows the description of each app.
+ */
+export default function AppList({ categories = [], slugs = null, limit = 5, categoryTitle = translate({ id: "apps.list.title", message: "Apps" }), showTxCount = false, hideHeader = false, showTags = false, showDescription = true }) {
   // Explicit slug list (used by curated Collections) bypasses category filtering
   // and preserves the curator's chosen order.
   const isExplicit = Array.isArray(slugs) && slugs.length > 0;
@@ -68,7 +72,7 @@ export default function AppList({ categories = [], slugs = null, limit = 5, cate
         .map((slug) => {
           const found = Showcases.find((app) => app.slug === slug);
           if (!found && process.env.NODE_ENV !== 'production') {
-            console.warn(`[AppList] Unknown slug "${slug}" — no matching app in Showcases.`);
+            console.warn(`[AppList] Unknown slug "${slug}", no matching app in Showcases.`);
           }
           return found;
         })
@@ -125,7 +129,7 @@ export default function AppList({ categories = [], slugs = null, limit = 5, cate
           <h3 className={styles.categoryTitle}>{categoryTitle}</h3>
           {seeAllUrl && (
             <Link to={seeAllUrl} className={styles.seeAllButton}>
-              See all
+              {translate({ id: "apps.browseByCategory.seeAll", message: "See all" })}
             </Link>
           )}
         </div>

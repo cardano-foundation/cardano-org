@@ -652,7 +652,7 @@ html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
 }
 
 
-/** heroChildren — optional slot rendered after the subtitle (used e.g. by /stablecoins for the CTA group). **/
+/** heroChildren: optional slot rendered after the subtitle (used e.g. by /stablecoins for the CTA group). **/
 
 .heroChildren {
   margin-top: 1.5rem;

@@ -12,4 +12,4 @@ Three of the five priority integrations funded by the ₳70,000,000 Cardano Crit
  [**Read more**](https://www.intersectmbo.org/news/cardano-critical-integrations-program-status-update-report) 
 </div>
 
- ![Cardano Critical Integrations](./banner.png)
+ ![Cardano Critical Integrations](./banner.webp)

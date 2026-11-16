@@ -1,0 +1,194 @@
+.section {
+  padding-top: 2rem;
+}
+
+/* Figures read value first, label below, although the dl keeps the label
+   first for screen readers. */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 1.5rem 0 0.75rem;
+}
+
+/* Thin dividers between the figures instead of filled boxes. */
+.figure {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 0.25rem 1.5rem;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.figure:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.figureValue {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme="dark"] .figureValue {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.figureLabel {
+  margin-top: 0.4rem;
+  font-weight: normal;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.figuresNote {
+  margin: 0 0 2.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.carouselNote {
+  margin: 0 0 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.topApps,
+.unlisted {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topApps > li,
+.unlisted > li {
+  display: flex;
+  margin: 0;
+}
+
+.topApps > li > * {
+  flex: 1;
+}
+
+/* Slim tiles for tracked projects without an app entry: logo, name,
+   category and transactions in one line, visibly lighter than the app cards. */
+.unlistedNote {
+  margin: 1.5rem 0 0.6rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.unlisted {
+  gap: 0.75rem;
+}
+
+/* Border, hover and focus follow the AppTile card. */
+.unlistedTile {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--site-duration-fast) ease;
+}
+
+.unlistedTile:hover {
+  border-color: var(--ifm-color-emphasis-400);
+  text-decoration: none;
+  color: inherit;
+}
+
+.unlistedTile:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.unlistedIcon {
+  --logo-size: 28px;
+  --logo-fallback-font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.unlistedName {
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.unlistedMeta {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.unlistedTx {
+  font-weight: 600;
+  color: var(--site-activity);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.ctaRow {
+  margin-top: 1.5rem;
+}
+
+/* Below desktop width the figures form a two by two grid with a cross of
+   dividers, also on phones: stacking four rows would cost too much height. */
+@media (max-width: 996px) {
+  .figures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .figure:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .figure:nth-child(-n + 2) {
+    padding-bottom: 1.25rem;
+  }
+
+  .figure:nth-child(n + 3) {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+  }
+}
+
+@media (max-width: 768px) {
+  .topApps,
+  .unlisted {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .figure {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .figureValue {
+    font-size: 1.6rem;
+  }
+}

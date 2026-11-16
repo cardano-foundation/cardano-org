@@ -100,7 +100,7 @@ export const Rollups = {
       description: translate({
         id: "layer2.data.zkfold.description",
         message:
-          "A single zero-knowledge proof verifies multiple transactions compressed into batches — a general-purpose scaling solution.",
+          "A single zero-knowledge proof verifies multiple transactions compressed into batches, a general-purpose scaling solution.",
       }),
       cta: { label: translate({ id: "layer2.cta.repository", message: "Go to Repository" }), href: "https://github.com/zkFold/rollup-offchain" },
     },

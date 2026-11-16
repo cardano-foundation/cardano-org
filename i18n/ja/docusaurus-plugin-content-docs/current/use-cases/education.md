@@ -9,9 +9,9 @@ sidebar_position: 2
 
 ## 課題
 
-The issuance of academic certifications is heavily centralized and often opaque. Traditional paper-based credentials are easily forged, difficult to verify, and can be lost or damaged. Educational institutions face challenges in maintaining the integrity of their certifications, while employers struggle to verify the authenticity of candidates' qualifications.
+学位や資格証明の発行は高度に中央集権化されており、不透明なことも少なくありません。従来の紙の証明書は偽造されやすく、真偽の確認が難しいうえ、紛失や破損のおそれもあります。教育機関は証明書の信頼性を保つことに課題を抱え、雇用主は応募者の資格が本物かどうかを確かめるのに苦労しています。
 
-The verification process is slow and costly, often requiring direct contact with issuing institutions. This creates friction in hiring processes and can disadvantage qualified candidates who obtained credentials from institutions that are difficult to reach or no longer exist.
+確認作業には時間とコストがかかり、多くの場合、発行機関に直接問い合わせる必要があります。そのため採用手続きが滞り、連絡の取りにくい機関や、すでに存在しない機関で資格を取得した候補者が、十分な資格を持っていても不利になることがあります。
 
 ## ブロックチェーンによる解決策
 
@@ -22,9 +22,9 @@ Cardanoのブロックチェーンベースのアイデンティティ・資格�
 - **ポータブル**: 学生が自分の資格を所有し、どの雇用者や機関にも共有可能
 - **永続的**: 発行機関が閉鎖されても、資格は有効で検証可能であり続ける
 
-Smart contracts can automate the issuance process, ensuring credentials are only issued when specific requirements are met. This creates an auditable trail of academic achievements that benefits students, institutions, and employers alike.
+スマートコントラクトで発行プロセスを自動化すれば、特定の要件を満たした場合にのみ資格が発行されるようにできます。これにより学業実績の監査可能な記録が残り、学生、教育機関、雇用主のすべてにメリットをもたらします。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **低い取引手数料**により大規模な資格発行も経済的に実現可能
 - **省エネルギーなプルーフ・オブ・ステーク**が教育機関のサステナビリティ目標と整合

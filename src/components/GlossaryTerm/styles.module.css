@@ -52,7 +52,7 @@
   font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, color var(--site-duration-fast) ease, background var(--site-duration-fast) ease;
 }
 
 .copyLink:hover {
@@ -314,7 +314,7 @@
   color: var(--ifm-color-emphasis-900);
   text-decoration: none;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease;
 }
 
 .sideRowValue a:hover {
@@ -408,14 +408,14 @@
   font-weight: 600;
   font-size: 0.92rem;
   text-decoration: none;
-  transition: filter 0.15s ease, transform 0.15s ease;
+  transition: filter var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .sideCtaBtn:hover {
   color: #fff;
   text-decoration: none;
   filter: brightness(1.08);
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .sideCtaBtn:focus-visible {
@@ -441,12 +441,7 @@
 }
 
 .exploreNextGrid {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
 }
 
 .exploreCard {
@@ -459,13 +454,13 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   text-decoration: none;
   height: 100%;
-  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color var(--site-duration-fast) ease, transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .exploreCard:hover {
   border-color: var(--card-color, var(--ifm-color-primary));
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
@@ -582,7 +577,7 @@
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: filter 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  transition: filter var(--site-duration-fast) ease, border-color var(--site-duration-fast) ease, background var(--site-duration-fast) ease, transform var(--site-duration-fast) ease;
 }
 
 .cantFindPrimary {
@@ -594,7 +589,7 @@
   color: #fff;
   text-decoration: none;
   filter: brightness(1.08);
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .cantFindSecondary {
@@ -608,7 +603,7 @@
   color: var(--ifm-color-emphasis-900);
   background: var(--ifm-color-emphasis-100);
   text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .cantFindPrimary:focus-visible,
@@ -631,62 +626,8 @@
   }
 }
 
-.improve {
-  margin-top: 4rem;
-  padding: 3rem 1.5rem;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.improveIcon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
-  margin-bottom: 1.5rem;
-}
-
-.improveHeading {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.4rem, 3vw, 1.85rem);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.improveCopy {
-  margin: 0 0 1.75rem;
-  max-width: 480px;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.improveButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-400);
-  background: transparent;
-  color: var(--ifm-color-emphasis-900);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
-}
-
-.improveButton:hover {
-  border-color: var(--ifm-color-emphasis-700);
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-900);
-  text-decoration: none;
-  transform: translateY(-1px);
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .cantFindPrimary {
+  background-color: var(--ifm-color-primary-darker);
 }

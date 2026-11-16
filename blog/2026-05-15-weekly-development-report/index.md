@@ -1,6 +1,6 @@
 ---
 slug: 2026-05-15-weekly-development-report
-title: "Weekly Development Report"
+title: "Node v11.0.1 ready for the v11 hard fork"
 description: "Node v11.0.1 live for v11 hard fork; Dijkstra era prep continues; Plutus UPLC cuts costs by 10%; Hydra v2.1.0 lowers latency; Mithril finishes SNARK validations."
 authors: [iog]
 tags: [development]

@@ -25,7 +25,7 @@
   font-size: 0.95rem;
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
-  transition: border-color 0.2s;
+  transition: border-color var(--site-duration-base);
   width: 100%;
 }
 
@@ -48,7 +48,7 @@
   padding: 10px 15px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color var(--site-duration-base);
 }
 
 .parametersButton:hover {
@@ -93,7 +93,7 @@
   padding: 8px 15px;
   cursor: pointer;
   border-radius: 3px;
-  transition: background-color 0.2s;
+  transition: background-color var(--site-duration-base);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -222,7 +222,53 @@
 
 .graphItem {
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease;
+}
+
+/* Alternating row backgrounds */
+.even {
+  background-color: #fdfdfb;
+}
+
+.odd {
+  background-color: #f6f7f9;
+}
+
+[data-theme="dark"] .even {
+  background-color: #252525;
+}
+
+[data-theme="dark"] .odd {
+  background-color: #2d2d2d;
+}
+
+.trigger {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Chevron */
+.trigger::after {
+  display: block;
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.graphList :global(ul) {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
 }
 
 .graphTitle {
@@ -342,4 +388,10 @@
 
 .parameterDetails :global(li) {
   margin-bottom: 4px;
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .parametersButton {
+  background-color: var(--ifm-color-primary-darker);
 }

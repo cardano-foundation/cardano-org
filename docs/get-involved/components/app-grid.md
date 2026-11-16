@@ -67,7 +67,7 @@ Each app card displays:
 ### Icon Support
 Apps can display custom logos via the `icon` field in `apps.js`:
 - Supports SVG, PNG, WebP, JPEG
-- Falls back to initial letter badge if no icon provided
+- The icon is rendered with [Logo Tile](./logo-tile.md) and falls back to an initial letter badge when there is no icon or it fails to load
 
 ---
 

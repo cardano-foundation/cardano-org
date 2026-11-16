@@ -6,7 +6,7 @@ category: tokens
 level: advanced
 aliases: ["Datum Metadata Standard"]
 mentalModel: "Metadata that lives where contracts can see it. Instead of a label-721 note locked into the mint transaction, the data sits in a datum on a UTxO, so a validator can read it and, if the design allows, change it later."
-related: [datum, native-token, nft, cip-25, reference-input]
+related: [datum, native-token, nft, cip-25, reference-input, programmable-token]
 sources:
   - title: "CIP-68: Datum Metadata Standard"
     url: "https://github.com/cardano-foundation/CIPs/tree/master/CIP-0068"

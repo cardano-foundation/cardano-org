@@ -3,32 +3,20 @@ import { Showcases } from "@site/src/data/apps";
 import { getAppStats, formatTxCount as formatNumber } from "@site/src/utils/appStats";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import { resolveIconSrc } from "@site/src/utils/appIcon";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
+import { translate } from "@docusaurus/Translate";
+import Grid from "@site/src/components/Layout/Grid";
 
 function AppCard({ app, stats, appRank, ctaText }) {
   const hasStats = stats && stats.txCount > 0;
   const showRank = appRank !== null && appRank !== undefined;
   const isTop3 = showRank && appRank <= 3;
 
-  const iconSrc = resolveIconSrc(app);
-
-  // Get initial letter for fallback
-  const initial = app.title.charAt(0).toUpperCase();
-
   return (
     <div className={styles.appCard}>
       <div className={styles.appHeader}>
-        {iconSrc ? (
-          <img
-            src={iconSrc}
-            alt={app.title}
-            className={styles.appLogo}
-          />
-        ) : (
-          <div className={styles.appLogoPlaceholder}>
-            {initial}
-          </div>
-        )}
+        <LogoTile src={resolveIconSrc(app)} name={app.title} lazy={false} className={styles.appLogo} />
         <h4 className={styles.appName}>{app.title}</h4>
       </div>
 
@@ -44,8 +32,8 @@ function AppCard({ app, stats, appRank, ctaText }) {
             <path d="M3 13h2v8H3v-8zm4-6h2v14H7V7zm4-4h2v18h-2V3zm4 9h2v9h-2v-9zm4-5h2v14h-2V7z"/>
           </svg>
           <div className={styles.statsText}>
-            <span className={styles.statsLabel}>Last 30 days</span>
-            <span className={styles.statsValue}>{formatNumber(stats.txCount)} tx</span>
+            <span className={styles.statsLabel}>{translate({ id: "apps.grid.last30Days", message: "Last 30 days" })}</span>
+            <span className={styles.statsValue}>{translate({ id: "apps.grid.txCount", message: "{count} tx", description: "Transactions in the last 30 days, abbreviated" }, { count: formatNumber(stats.txCount) })}</span>
           </div>
           {showRank && (
             <div className={`${styles.rankBadge} ${isTop3 ? styles.top3 : ''}`}>
@@ -67,15 +55,30 @@ function AppCard({ app, stats, appRank, ctaText }) {
   );
 }
 
+/**
+ * Grid of app cards for the given categories, sorted by activity, with an optional "more" card.
+ *
+ * @param {object} props
+ * @param {string[]} [props.categories=['dex']] Primary app categories to include.
+ * @param {number} [props.limit=null] Maximum number of cards. Shows a "more" card when apps are left over.
+ * @param {boolean} [props.showRank=true] Shows the rank badge next to the stats.
+ * @param {boolean} [props.showStats=true] Shows the 30 day transaction count.
+ * @param {string} [props.gridTitle=null] Optional heading above the grid.
+ * @param {string} [props.ctaText="Visit"] Label of the link on each card.
+ * @param {string} [props.moreLink=null] Target of the "more" card. Defaults to /apps filtered by the categories.
+ * @param {string} [props.moreTitle="More Apps"] Title of the "more" card.
+ * @param {string} [props.excludeSlug=null] Slug of an app to leave out, e.g. the current detail page.
+ * @param {boolean} [props.prioritizeMaintainerPicks=false] Sorts maintainer picks first.
+ */
 export default function AppGrid({
   categories = ['dex'],
   limit = null,
   showRank = true,
   showStats = true,
   gridTitle = null,
-  ctaText = "Visit",
+  ctaText = translate({ id: "apps.grid.visit", message: "Visit" }),
   moreLink = null,
-  moreTitle = "More Apps",
+  moreTitle = translate({ id: "apps.grid.moreApps", message: "More Apps" }),
   excludeSlug = null,
   prioritizeMaintainerPicks = false,
 }) {
@@ -139,7 +142,7 @@ export default function AppGrid({
   return (
     <div className={styles.container}>
       {gridTitle && <h3 className={styles.gridTitle}>{gridTitle}</h3>}
-      <div className={styles.appGrid}>
+      <Grid minItemWidth="280px" gap="var(--site-space-md)" stackOnMobile className={styles.appGrid}>
         {displayedApps.map(({ app, stats, appRank }) => {
           return (
             <AppCard
@@ -164,7 +167,7 @@ export default function AppGrid({
             </div>
           </a>
         )}
-      </div>
+      </Grid>
     </div>
   );
 }

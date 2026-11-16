@@ -71,8 +71,8 @@
             "label": "CC approval can be recorded, but it does not affect the passing of the action Info Action, unless the Info Action itself stipulates this"
           },
           "style": {
-            "backgroundColor": "#fff7e6",
-            "border": "1px solid #fa8c16"
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1"
           }
         },
         {
@@ -82,11 +82,11 @@
             "y": 350
           },
           "data": {
-            "label": "Votes are recorded individually on Mainnet and can be queried with certain toolsRefused"
+            "label": "Votes are recorded individually on Mainnet and can be queried with certain tools"
           },
           "style": {
-            "backgroundColor": "#fff7e6",
-            "border": "1px solid #fa8c16",
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
             "width": 180
           },
           "sourcePosition": "left",
@@ -247,11 +247,11 @@
             "y": 250
           },
           "data": {
-            "label": "≥ 50%"
+            "label": "> 50%"
           },
           "style": {
-            "backgroundColor": "#f9f0ff",
-            "border": "1px solid #722ed1"
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
           }
         },
         {
@@ -264,8 +264,8 @@
             "label": "2/3"
           },
           "style": {
-            "backgroundColor": "#f9f0ff",
-            "border": "1px solid #722ed1"
+            "backgroundColor": "#fff7e6",
+            "border": "1px solid #fa8c16"
           }
         },
         {
@@ -278,8 +278,8 @@
             "label": "CC approval can be recorded, but it does not affect the passing of the action Info Action, unless the Info Action itself stipulates this"
           },
           "style": {
-            "backgroundColor": "#fff7e6",
-            "border": "1px solid #fa8c16",
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
             "width": 250
           }
         },
@@ -293,8 +293,8 @@
             "label": "Votes are recorded individually on Mainnet and can be queried with certain tools"
           },
           "style": {
-            "backgroundColor": "#fff7e6",
-            "border": "1px solid #fa8c16",
+            "backgroundColor": "#f9f0ff",
+            "border": "1px solid #722ed1",
             "width": 180
           }
         },

@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
@@ -10,11 +11,12 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import Layer2Card from "@site/src/components/Layer2Card";
 import { StateChannels, Rollups, Sidechains } from "@site/src/data/layer-2";
 import styles from "./layer-2.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 function CategoryHeader({ category, inverted = false }) {
   return (
     <div className={inverted ? styles.invertedHeader : undefined}>
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={category.title}
         description={[category.description]}
         titleType="black"
@@ -26,15 +28,16 @@ function CategoryHeader({ category, inverted = false }) {
 
 function CardGrid({ projects }) {
   return (
-    <div className={styles.grid}>
+    <Grid minItemWidth="320px" className={styles.grid}>
       {projects.map((project) => (
         <Layer2Card key={project.name} {...project} />
       ))}
-    </div>
+    </Grid>
   );
 }
 
 export default function Layer2() {
+  const ctaGraphicUrl = useBaseUrl("/img/layer-2/footer-right-graphic.svg");
   return (
     <Layout
       title={translate({
@@ -62,7 +65,7 @@ export default function Layer2() {
       </div>
 
       <main>
-        {/* State Channels — light section */}
+        {/* State Channels: light section */}
         <BackgroundWrapper>
           <BoundaryBox>
             <CategoryHeader category={StateChannels} />
@@ -71,7 +74,7 @@ export default function Layer2() {
           <SpacerBox size="medium" />
         </BackgroundWrapper>
 
-        {/* Rollups — deep-blue section with centered "zoom" starburst */}
+        {/* Rollups: deep-blue section with centered "zoom" starburst */}
         <div className={styles.rollupsBackground}>
           <BoundaryBox>
             <CategoryHeader category={Rollups} inverted={true} />
@@ -79,14 +82,14 @@ export default function Layer2() {
           </BoundaryBox>
         </div>
 
-        {/* Sidechains and Private Chains — light section */}
+        {/* Sidechains and Private Chains: light section */}
         <BackgroundWrapper>
           <BoundaryBox>
             <CategoryHeader category={Sidechains} />
             <CardGrid projects={Sidechains.projects} />
           </BoundaryBox>
           <BoundaryBox>
-            <TitleWithText
+            <TitleWithText headingLevel={2}
               description={translate({
                 id: "layer2.context.description",
                 message:
@@ -97,11 +100,11 @@ export default function Layer2() {
           <SpacerBox size="medium" />
         </BackgroundWrapper>
 
-        {/* Call to action — dark section */}
+        {/* Call to action: dark section */}
         <div className={styles.ctaSection}>
           <img
             className={styles.ctaGraphic}
-            src="/img/layer-2/footer-right-graphic.svg"
+            src={ctaGraphicUrl}
             alt=""
             aria-hidden="true"
           />

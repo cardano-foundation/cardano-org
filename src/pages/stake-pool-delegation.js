@@ -17,9 +17,13 @@ import { getQuizData as getStakingQuiz } from "@site/src/data/quiz/generated/sta
 import { Showcases } from "@site/src/data/apps";
 import { compareByActivityThenPick } from "@site/src/utils/appStats";
 import styles from "./stake-pool-delegation.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
-// Pool explorers from the app showcase, same ordering as the /apps panels.
-const POOL_TOOLS = Showcases.filter((app) => app.category === "pooltool").sort(compareByActivityThenPick);
+// Apps carrying the pooldelegation property support delegating to a stake pool
+// directly. Same ordering as the /apps panels.
+const POOL_DELEGATION_APPS = Showcases
+  .filter((app) => app.properties.includes("pooldelegation"))
+  .sort(compareByActivityThenPick);
 
 const StakePoolDelegate = lazy(() =>
   import(/* webpackChunkName: "stake-pool-delegate" */ "@site/src/components/StakePoolDelegate")
@@ -82,7 +86,7 @@ function getDelegationFAQData() {
       answer: [
         translate({ id: "delegation.faq.a8.p1", message: "Choosing a stake pool involves several factors. So-called [pool tools](/apps?tags=pooltool) can help you compare them." }),
         translate({ id: "delegation.faq.a8.p2", message: "**Performance:** Look at the pool's historical performance, which reflects its success rate in producing blocks. A consistently high performance is a good indicator of a well-run pool." }),
-        translate({ id: "delegation.faq.a8.p3", message: "**Uptime:** Ensure the pool has high uptime. This means the pool's servers are running without interruption, increasing the chances of being selected to produce a block." }),
+        translate({ id: "delegation.faq.a8.p3", message: "**Uptime:** Ensure the pool has high uptime. The chance of being elected to produce a block depends only on the pool's share of the active stake, but a pool that is offline when it is elected misses that block and the rewards that come with it." }),
         translate({ id: "delegation.faq.a8.p4", message: "**Margin Fees:** Stake pools charge a percentage fee on the rewards earned. Lower fees can mean more rewards, but consider the balance between low fees and high pool performance." }),
         translate({ id: "delegation.faq.a8.p5", message: "**Fixed Fees:** Every pool charges a fixed fee per epoch of at least the [protocol minimum](/glossary/min-pool-cost). The current minimum is shown in the delegation tool above. Check what a pool charges." }),
         translate({ id: "delegation.faq.a8.p6", message: "**Saturation Point:** A pool becomes saturated when it has more stake than an optimal amount set by the protocol. Staking with a saturated pool can decrease your rewards." }),
@@ -165,7 +169,7 @@ export default function StakePoolDelegationPage() {
             </BrowserOnly>
             <SpacerBox size="medium" />
 
-            <Divider text={translate({ id: "stakePoolDelegation.how.divider", message: "How delegation works" })} id="how-it-works" />
+            <Divider headingLevel={2} text={translate({ id: "stakePoolDelegation.how.divider", message: "How delegation works" })} id="how-it-works" />
             <ol className={styles.steps}>
               {STEPS.map((step) => (
                 <li key={step.label}><strong>{step.label}</strong> {step.text}</li>
@@ -187,16 +191,16 @@ export default function StakePoolDelegationPage() {
             </p>
             <SpacerBox size="medium" />
 
-            <Divider text={translate({ id: "stakePoolDelegation.alt.heading", message: "Prefer another tool?" })} id="alternatives" />
+            <Divider headingLevel={2} text={translate({ id: "stakePoolDelegation.alt.heading", message: "Prefer another tool?" })} id="alternatives" />
             <p className="black-text">
-              {translate({ id: "stakePoolDelegation.alt.intro", message: "These community pool explorers help you compare stake pools in depth." })}
+              {translate({ id: "stakePoolDelegation.alt.introDelegate", message: "These community pool explorers let you compare stake pools in depth and delegate right from the pool's page." })}
             </p>
             <SpacerBox size="small" />
-            <div className={styles.altGrid}>
-              {POOL_TOOLS.map((app) => (
+            <Grid minItemWidth="260px">
+              {POOL_DELEGATION_APPS.map((app) => (
                 <AppTile key={app.slug} app={app} badge={app.maintainerPick ? <StarBadge /> : null} />
               ))}
-            </div>
+            </Grid>
             <SpacerBox size="small" />
             <p className="black-text">
               {translate({ id: "stakePoolDelegation.alt.wallets", message: "Most wallets can delegate on their own." })}{" "}
@@ -209,7 +213,7 @@ export default function StakePoolDelegationPage() {
 
         <BackgroundWrapper backgroundType={"ada"}>
           <BoundaryBox>
-            <CtaOneColumn
+            <CtaOneColumn headingLevel={2}
               title={translate({ id: "stakePoolDelegation.calculatorCta.title", message: "Try our staking calculator to see how much ada you could be rewarded for delegating to a stake pool." })}
               buttonLabel={translate({ id: "stakePoolDelegation.calculatorCta.buttonLabel", message: "Try Out" })}
               buttonLink={"/calculator/?calculator=delegator"}

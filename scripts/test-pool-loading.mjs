@@ -5,12 +5,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  fetchPoolIndex, fetchPoolInfoOne, fetchPoolInfoSettled, INDEX_PAGE_SIZE, INDEX_PARALLEL_PAGES,
+  fetchPoolIndex, fetchPoolInfoOne, fetchPoolInfoSettled, fetchPoolsByTicker, fetchTickerAliases,
+  INDEX_PAGE_SIZE, INDEX_PARALLEL_PAGES,
 } from '../src/utils/cardano/koiosPools.mjs';
 import { createPoolSampler } from '../src/utils/cardano/poolSampler.mjs';
 import { encodeBech32 } from '../src/utils/cardano/bech32.mjs';
 
 const NUTS_BECH32 = 'pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy';
+// A second valid id, so two rows can stand for two different pools.
+const OTHER_BECH32 = encodeBech32('pool', [...Buffer.from('ab'.padEnd(56, '0'), 'hex')]);
 
 function indexRow(overrides = {}) {
   return {
@@ -47,6 +50,86 @@ test('fetchPoolIndex fetches a second wave when the first wave is full', async (
   const rows = await fetchPoolIndex(api);
   assert.equal(rows.length, INDEX_PAGE_SIZE * INDEX_PARALLEL_PAGES + 5);
   assert.equal(api.calls.length, INDEX_PARALLEL_PAGES * 2);
+});
+
+test('fetchTickerAliases walks pages until a short one and keeps only usable rows', async () => {
+  const paths = [];
+  const api = {
+    async get(path) {
+      paths.push(path);
+      const offset = Number(new URL(`https://x${path}`).searchParams.get('offset'));
+      if (offset === 0) {
+        return { data: Array.from({ length: INDEX_PAGE_SIZE }, () => ({ pool_id_bech32: NUTS_BECH32, ticker: ' GNP1 ' })) };
+      }
+      return { data: [{ pool_id_bech32: NUTS_BECH32, ticker: null }, { pool_id_bech32: 'nope', ticker: 'X' }, { pool_id_bech32: 'x', ticker: 'Y' }] };
+    },
+  };
+  const aliases = await fetchTickerAliases(api);
+  assert.equal(paths.length, 2);
+  assert.ok(paths[0].startsWith('/pool_metadata?'));
+  assert.deepEqual([...aliases], [[NUTS_BECH32, 'GNP1']]);
+});
+
+test('fetchPoolsByTicker escapes the prefix and drops malformed rows', async () => {
+  const paths = [];
+  const api = {
+    async get(p) {
+      paths.push(p);
+      return { data: [indexRow({ ticker: 'NUTS' }), indexRow({ pool_id_bech32: 'nope' })] };
+    },
+  };
+  const rows = await fetchPoolsByTicker(api, 'NUTS', 12);
+  assert.equal(paths.length, 1); // exact hit, no second draw
+  assert.match(paths[0], /ticker=ilike\.NUTS\*/);
+  assert.match(paths[0], /limit=12/);
+  assert.deepEqual(rows.map((r) => r.pool_id_bech32), [NUTS_BECH32]);
+});
+
+test('fetchPoolsByTicker encodes the prefix into the filter', async () => {
+  const paths = [];
+  await fetchPoolsByTicker({ async get(p) { paths.push(p); return { data: [] }; } }, 'GNP 1', 12);
+  assert.match(paths[0], /ticker=ilike\.GNP%201\*/);
+});
+
+test('fetchPoolsByTicker draws a second time when the first answer misses the exact ticker', async () => {
+  const paths = [];
+  const api = {
+    async get(p) {
+      paths.push(p);
+      // First answer only carries the decoy, the second one has the pool.
+      return { data: paths.length === 1 ? [indexRow({ pool_id_bech32: OTHER_BECH32, ticker: 'NUTS2' })] : [indexRow({ ticker: 'NUTS' })] };
+    },
+  };
+  const rows = await fetchPoolsByTicker(api, 'NUTS', 12);
+  assert.equal(paths.length, 2);
+  assert.match(paths[0], /limit=12/);
+  assert.match(paths[1], /limit=13/); // a second cache entry, the first one would only repeat the miss
+  // Both answers count, the decoy from the first one is not thrown away.
+  assert.deepEqual(rows.map((r) => r.ticker).sort(), ['NUTS', 'NUTS2']);
+});
+
+test('fetchPoolsByTicker keeps what it already found when the second draw is empty or fails', async () => {
+  const hitThen = (second) => {
+    let call = 0;
+    return {
+      async get() {
+        call += 1;
+        if (call === 1) return { data: [indexRow({ pool_id_bech32: OTHER_BECH32, ticker: 'NUTS2' })] };
+        return second();
+      },
+    };
+  };
+  const afterEmpty = await fetchPoolsByTicker(hitThen(() => ({ data: [] })), 'NUTS', 12);
+  assert.deepEqual(afterEmpty.map((r) => r.ticker), ['NUTS2']);
+  const afterError = await fetchPoolsByTicker(hitThen(() => { throw new Error('boom'); }), 'NUTS', 12);
+  assert.deepEqual(afterError.map((r) => r.ticker), ['NUTS2']);
+});
+
+test('fetchPoolsByTicker reports an error when it has nothing to show', async () => {
+  const empty = { calls: 0, async get() { this.calls += 1; return { data: [] }; } };
+  assert.deepEqual(await fetchPoolsByTicker(empty, 'NUTS', 12), []);
+  assert.equal(empty.calls, 2); // two misses stay possible, they just cost one extra request
+  await assert.rejects(() => fetchPoolsByTicker({ async get() { throw new Error('boom'); } }, 'NUTS', 12), /boom/);
 });
 
 test('fetchPoolIndex drops malformed rows and throws when nothing usable comes back', async () => {

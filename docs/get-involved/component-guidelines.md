@@ -9,9 +9,52 @@ Follow these conventions when you add a component or build a page. They keep the
 
 ## Reuse before you create
 
-Before writing a new component, check [`src/components/Layout/`](https://github.com/cardano-foundation/cardano-org/tree/staging/src/components/Layout) for an existing primitive. Most pages are composed from [Site Hero](./components/site-hero.md), [Boundary Box](./components/boundary-box.md), [Title With Text](./components/title-with-text.md), [Divider](./components/divider.md), and [Spacer Box](./components/spacer-box.md). Only create a new component when nothing fits and the result is reusable. A one-off layout for a single page usually does not need its own component.
+Shared components are the default. Before you write a component or page markup, look up what already exists in the [component overview](./components/index.md). Most pages are composed from [Site Hero](./components/site-hero.md), [Boundary Box](./components/boundary-box.md), [Title With Text](./components/title-with-text.md), [Divider](./components/divider.md), and [Spacer Box](./components/spacer-box.md).
 
-When you do add a reusable component, document it with a page under `docs/get-involved/components/`.
+If a component almost fits, extend it with an additive prop that leaves existing pages unchanged. Do not copy it into a slightly different version.
+
+### Where a component belongs
+
+| Kind | Location | When | Requirements |
+|---|---|---|---|
+| Shared component | `src/components/Layout/` | A generic layout or UI pattern with no topic of its own, such as a section title, divider, tabs, accordion, or modal | JSDoc for its props, a doc page under `docs/get-involved/components/`, a row in the overview table |
+| Feature widget | `src/components/<Name>/` | Reusable within one topic, such as App Tile or Quiz | JSDoc for its props, a doc page |
+| Page-specific component | `src/components/<PageName>/` | Only for an interactive tool (data visualization, wallet or chain flow, calculator, search) or deliberate art direction used on one page | A short explanation in the pull request of why no existing component fits. Its inner parts, such as titles, grids, and FAQ lists, still come from shared components |
+
+Do not add page CSS for a pattern that a shared component already covers, such as a card grid, a section heading block, or an FAQ list. Page CSS is fine for art direction and fine-tuning.
+
+If you are unsure whether something should become a shared component, ask in the issue or pull request before you build it.
+
+### Document props with JSDoc
+
+Describe the props of every shared component and feature widget in a JSDoc block above the component, so editors and AI agents see them where the code is:
+
+```jsx
+/**
+ * Section title with body text and an optional call to action.
+ *
+ * @param {object} props
+ * @param {string} props.title Heading text.
+ * @param {string|Array|object} [props.description] Body text as a string, an array of paragraphs, or `{ list: [...] }`.
+ * @param {string} [props.buttonLabel] Label of the optional button.
+ * @param {string} [props.buttonLink] Target of the optional button.
+ */
+export default function TitleWithText({ title, description, buttonLabel, buttonLink }) {
+```
+
+The props table on the component's doc page lists the same props. `yarn test:component-docs` (part of `yarn test`) compares the two for every shared component and the feature widgets listed in `scripts/check-component-docs.js`, and warns about a missing JSDoc block, a missing doc page, or prop names that differ. When you add a feature widget outside `src/components/Layout/`, add its name to the `WIDGETS` list in that script.
+
+### Write the doc page from the template
+
+Start a new doc page from `docs/get-involved/components/_template.md`. Files that start with an underscore are not built, so the template only exists in the repository. A doc page covers:
+
+- what the component renders and when to use it, with a link to the alternative,
+- a usage example with translated strings,
+- a props table that matches the JSDoc block,
+- a live preview, or one sentence on why there is none (runtime data such as a wallet or an API response, changes to the document head, a full page or homepage hero),
+- accessibility, translation, and styling notes, and related components.
+
+Do not attribute examples to a page file ("from `src/pages/x.js`"), because those examples go stale when the page changes. Name the pages that use a component only after checking them with `git grep`. Write prop names exactly as the component destructures them, with one props table per export for a module with several exports. Live previews pass `headingLevel={2}` or a deeper level, so the doc page keeps a single `<h1>`.
 
 ## Styling: use tokens
 

@@ -16,7 +16,7 @@ function BlockchainSection() {
         id="blockchain"
         text={translate({ id: "howCardanoWorks.divider.blockchain", message: "Basics" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.blockchain.title", message: "What is a blockchain?" })}
         description={translate({
           id: "howCardanoWorks.blockchain.p1",
@@ -26,7 +26,7 @@ function BlockchainSection() {
         headingDot={true}
       />
       <SpacerBox size="small" />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         description={translate({
           id: "howCardanoWorks.blockchain.p2",
           message:
@@ -49,7 +49,7 @@ function ConsensusSection() {
         id="consensus"
         text={translate({ id: "howCardanoWorks.divider.consensus", message: "Consensus" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.consensus.title", message: "How does Cardano reach agreement?" })}
         description={translate({
           id: "howCardanoWorks.consensus.intro",
@@ -94,7 +94,7 @@ function ConsensusSection() {
         ]}
         headingDot={true}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         buttonLabel={translate({ id: "howCardanoWorks.consensus.button", message: "Explore Ouroboros" })}
         buttonLink="/ouroboros"
       />
@@ -109,7 +109,7 @@ function LedgerSection() {
         id="ledger"
         text={translate({ id: "howCardanoWorks.divider.ledger", message: "Ledger" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "howCardanoWorks.ledger.title",
           message: "How does Cardano keep track of who owns what?",
@@ -146,7 +146,7 @@ function TransactionsSection() {
         id="transactions"
         text={translate({ id: "howCardanoWorks.divider.transactions", message: "Transactions" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({
           id: "howCardanoWorks.transactions.title",
           message: "What does a transaction cost, and how long does it take?",
@@ -183,7 +183,7 @@ function TokensSection() {
         id="tokens"
         text={translate({ id: "howCardanoWorks.divider.tokens", message: "Tokens" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.tokens.title", message: "How are tokens created?" })}
         description={[
           translate({
@@ -212,7 +212,7 @@ function SmartContractsSection() {
         id="smart-contracts"
         text={translate({ id: "howCardanoWorks.divider.contracts", message: "Smart contracts" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.contracts.title", message: "How do smart contracts run?" })}
         description={[
           translate({
@@ -241,7 +241,7 @@ function NetworkSection() {
         id="network"
         text={translate({ id: "howCardanoWorks.divider.network", message: "Network" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.network.title", message: "Who runs the network?" })}
         description={[
           translate({
@@ -275,7 +275,7 @@ function UpgradesSection() {
         id="upgrades"
         text={translate({ id: "howCardanoWorks.divider.upgrades", message: "Upgrades" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.upgrades.title", message: "How does Cardano change?" })}
         description={[
           translate({
@@ -304,7 +304,7 @@ function TerminologySection() {
         id="terminology"
         text={translate({ id: "howCardanoWorks.divider.terminology", message: "Terminology" })}
       />
-      <TitleWithText
+      <TitleWithText headingLevel={2}
         title={translate({ id: "howCardanoWorks.terminology.title", message: "What do these words mean?" })}
         description={[
           translate({

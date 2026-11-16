@@ -4,6 +4,7 @@ import SolutionCard from "@site/src/components/SolutionCard";
 import { EnterpriseSolutions, CaseStudiesLink } from "@site/src/data/enterprise-solutions";
 import {translate} from '@docusaurus/Translate';
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 export default function SolutionsSection() {
   return (
@@ -12,11 +13,11 @@ export default function SolutionsSection() {
         <h2 className={styles.sectionTitle}>{translate({id: 'solutions.section.title', message: 'Enterprise Solutions'})}</h2>
       </div>
 
-      <div className={styles.cardsGrid}>
+      <Grid minItemWidth="280px" stackOnMobile className={styles.cardsGrid}>
         {EnterpriseSolutions.map((solution, index) => (
           <SolutionCard key={index} {...solution} />
         ))}
-      </div>
+      </Grid>
 
       <div className={styles.ctaWrapper}>
         <Link

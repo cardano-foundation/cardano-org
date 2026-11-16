@@ -1,0 +1,153 @@
+/*
+ * Programmable Tokens hero (Figma node 574:279). Fixed dark-navy band with the
+ * concentric rings artwork on the right and a soft-light grain overlay. The
+ * colors are intentionally the same in light and dark mode: the background is
+ * a brand navy that always carries white text, like the /layer-2 CTA band.
+ *
+ * Stacking: rings (z 0) < noise overlay (z 1) < content (z 2), isolated so
+ * the blend mode cannot leak into the page.
+ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 640px;
+  padding: var(--site-space-3xl) 0;
+  background-color: #0a1031;
+  color: #ffffff;
+}
+
+/* Grain overlay: the shared Layer 2 noise texture, drawn the same way as
+   .ctaSection::after on that page (cover, near its native scale, so the
+   grain is not averaged away by downscaling). */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("/img/layer-2/noise.png");
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+}
+
+/* Decorative rings: 754px square. In the 1280px design the group starts at
+   x 900 (260px right of center) and y -158, bleeding off the top, right, and
+   bottom edges. */
+.rings {
+  position: absolute;
+  top: -158px;
+  left: calc(50% + 260px);
+  z-index: 0;
+  width: 754px;
+  height: 754px;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Content column, same gutters as BoundaryBox. */
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: calc(100% - 2 * 60px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .title {
+  max-width: 860px;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+.hero .subtitle {
+  max-width: 760px;
+  margin: 22px 0 0;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.hero .body {
+  max-width: 720px;
+  margin: 32px 0 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* The shared button--pill-white button, a size smaller here as in the
+   design. Scoped under .hero .inner so it outranks the shared variant regardless
+   of the order the bundler emits them in. */
+.hero .inner .button {
+  margin-top: 32px;
+  padding: 14px 36px;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1200px) {
+  .inner {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
+/* Below the navbar breakpoint the copy spans the full width, so the rings
+   move further right and fade back to keep the text readable. */
+@media (max-width: 996px) {
+  .rings {
+    top: auto;
+    bottom: -300px;
+    left: auto;
+    right: -300px;
+    width: 560px;
+    height: 560px;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 0;
+    padding: var(--site-space-2xl) 0;
+  }
+
+  .hero .title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .hero .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .inner {
+    width: calc(100% - 2 * 30px);
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rings {
+    width: 420px;
+    height: 420px;
+    bottom: -220px;
+    right: -220px;
+  }
+}

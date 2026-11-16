@@ -49,17 +49,17 @@
 
 /* Interactive hover/focus states for platform cards */
 .platform-card img {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform var(--site-duration-fast) ease, box-shadow var(--site-duration-fast) ease;
 }
 
 .platform-card:hover img,
 .platform-card:focus-visible img {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .platform-card figcaption {
-  transition: color 0.15s ease;
+  transition: color var(--site-duration-fast) ease;
 }
 
 .platform-card:hover figcaption,

@@ -154,7 +154,7 @@
   border: 1px solid rgb(var(--role-accent));
   border-radius: 999px;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: opacity var(--site-duration-base) ease;
 }
 
 .primaryBtn:hover {
@@ -176,7 +176,7 @@
   border: 1px solid rgb(var(--role-accent) / 0.45);
   border-radius: 999px;
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color var(--site-duration-base) ease, border-color var(--site-duration-base) ease;
 }
 
 .secondaryBtn:hover {

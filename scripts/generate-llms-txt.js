@@ -1,5 +1,5 @@
 //
-// Generates static/apps.llms.txt — a plaintext catalog of all apps for LLM crawlers.
+// Generates static/apps.llms.txt, a plaintext catalog of all apps for LLM crawlers.
 // Mirrors the data in src/data/apps.js. Built statically; no live activity data.
 // Command: yarn run build-llms
 //

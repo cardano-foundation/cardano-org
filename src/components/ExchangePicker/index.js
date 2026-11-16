@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import data from "@site/src/data/exchanges.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
+import Grid from "@site/src/components/Layout/Grid";
 
 const { regions, countries } = data;
 const STORAGE_KEY = 'cardano-selected-country';
@@ -63,30 +64,16 @@ function getExchangesForCountry(countryName) {
 }
 
 function ExchangeCard({ exchange }) {
-  const { withBaseUrl } = useBaseUrlUtils();
-  const logoUrl = EXCHANGE_LOGOS[exchange.name];
-  const initial = exchange.name.charAt(0).toUpperCase();
 
   return (
     <div className={styles.exchangeCard}>
       <div className={styles.exchangeHeader}>
-        {logoUrl ? (
-          <img
-            src={withBaseUrl(logoUrl)}
-            alt={exchange.name} 
-            className={styles.exchangeLogo}
-            onError={(e) => {
-              // Fallback zu Initial-Badge wenn Logo nicht lädt
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
-          />
-        ) : null}
-        {!logoUrl && (
-          <div className={styles.exchangeInitial}>
-            {initial}
-          </div>
-        )}
+        <LogoTile
+          src={EXCHANGE_LOGOS[exchange.name]}
+          name={exchange.name}
+          lazy={false}
+          className={styles.exchangeLogo}
+        />
         <h4 className={styles.exchangeName}>{exchange.name}</h4>
       </div>
 
@@ -198,12 +185,12 @@ export default function ExchangePicker() {
               No exchanges listed yet for this country.
             </p>
           ) : (
-            <div className={styles.exchangeGrid}>
+            <Grid minItemWidth="280px" gap="var(--site-space-md)" stackOnMobile className={styles.exchangeGrid}>
               {exchanges.map((ex) => (
                 <ExchangeCard key={ex.name} exchange={ex} />
               ))}
               <a 
-                href="https://github.com/cardano-foundation/cardano-org/issues/355" 
+                href="https://github.com/cardano-foundation/cardano-org/issues/new?title=Add%20exchange%3A%20" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.addExchangeCard}
@@ -218,7 +205,7 @@ export default function ExchangePicker() {
                   </p>
                 </div>
               </a>
-            </div>
+            </Grid>
           )}
         </div>
       )}

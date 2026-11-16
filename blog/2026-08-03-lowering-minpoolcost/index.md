@@ -6,7 +6,7 @@ authors: [intersect]
 tags: [governance]
 ---
 
-The Intersect Parameter Committee submitted a parameter update governance action combining a minPoolCost reduction from 170 to 75 ada with the second part of a 25% increase to Plutus memory limits. Ratification requires support from both DReps and stake pool operators. The lower fixed fee gives small pools breathing room as block rewards decline, while the completed memory increase eases contract deployment for developers.
+Intersect submitted, on behalf of its Parameter Committee, a parameter update governance action combining a minPoolCost reduction from 170 to 75 ada with the second part of a 25% increase to Plutus memory limits. Ratification requires support from both DReps and stake pool operators. The lower fixed fee gives small pools breathing room as block rewards decline, while the accompanying memory increase, once ratified, would ease contract deployment for developers.
 
 <div style={{textAlign: 'right'}}>
 

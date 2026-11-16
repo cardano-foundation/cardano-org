@@ -149,7 +149,7 @@ No retries allowed, high passing score:
 Combine with `TwoColumnLayout` for sidebar placement:
 
 ```jsx
-import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
+import TwoColumnLayout from '@site/src/components/Layout/TwoColumnLayout';
 
 <TwoColumnLayout
   sidebar={
@@ -216,7 +216,7 @@ Wrap the component in a div to add custom styles, for example to center the 400p
 - **Keyboard Navigation**: All interactive elements are keyboard accessible
 - **Screen Reader Friendly**: Clear text labels and structure
 - **Focus Management**: Modal quiz handles focus appropriately
-- **Motion**: The attention dots are hidden below 996px. There is no `prefers-reduced-motion` handling, so leave `showDot` off where motion would be a problem
+- **Motion**: The attention dots are hidden below 996px and stop pulsing with reduced motion
 
 ## Real-World Example
 
@@ -224,7 +224,7 @@ The [Common Scams](/common-scams) page uses this component in a sticky sidebar:
 
 ```jsx title="src/pages/common-scams.js"
 import QuizCard from '@site/src/components/QuizCard';
-import TwoColumnLayout from '@site/src/components/TwoColumnLayout';
+import TwoColumnLayout from '@site/src/components/Layout/TwoColumnLayout';
 import scamsQuizDataEn from '@site/src/data/quiz-scams.json';
 import scamsQuizDataDe from '@site/src/data/quiz-scams.de.json';
 import {translate} from '@docusaurus/Translate';

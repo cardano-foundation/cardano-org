@@ -7,6 +7,7 @@ import {translate} from '@docusaurus/Translate';
 import companies from "@site/src/data/logosCompanies.json";
 import { safeUrl } from "@site/src/utils/safeUrl";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
 
 function getCompanyId(company) {
   return company.id || company.imageName;
@@ -46,6 +47,20 @@ function SpotlightPanel({ company, onClose }) {
         <p className={styles.spotlightKnownFor}>
           Known for: {company.knownFor}
         </p>
+      )}
+      {company.evidence?.length > 0 && (
+        <div className={styles.spotlightEvidence}>
+          <span className={styles.spotlightEvidenceTitle}>
+            {translate({id: 'entities.evidence', message: 'Why this entity is listed'})}
+          </span>
+          <ul className={styles.spotlightEvidenceList}>
+            {company.evidence.map((item) => (
+              <li key={item.url}>
+                <Link href={safeUrl(item.url)}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
       <Link className={styles.spotlightLink} href={safeUrl(company.link)}>
         Visit website
@@ -101,7 +116,7 @@ export default function CompaniesShowcase() {
   useEffect(() => {
     if (activeCompany && spotlightRef.current) {
       spotlightRef.current.scrollIntoView({
-        behavior: "smooth",
+        behavior: scrollBehavior(),
         block: "start",
       });
     }

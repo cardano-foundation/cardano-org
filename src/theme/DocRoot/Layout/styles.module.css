@@ -8,7 +8,18 @@
   flex: 1 0 auto;
 }
 
-/* Hide first h1 in doc content since hero shows the title */
-.docsWrapper h1:first-of-type {
-  display: none;
+/* The title of a doc or category page stays the page's h1 for screen readers
+   and search engines, but only visually hidden, the hero above already names
+   the section. Docusaurus puts it as a direct child of a header, a SiteHero
+   demo nests its title deeper and stays visible. */
+.docsWrapper main header > h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

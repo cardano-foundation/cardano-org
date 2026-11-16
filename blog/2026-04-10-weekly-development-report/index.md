@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-10-weekly-development-report
-title: "Weekly Development Report"
+title: "PlutusCoreBlaster brings Plutus Core to Lean 4"
 description: "PlutusCoreBlaster brings Plutus Core into Lean 4. Plutus UPLC optimizations, Mithril SNARK CLI for Cardano blocks, Intersect committee deadline April 17."
 authors: [iog]
 tags: [development]

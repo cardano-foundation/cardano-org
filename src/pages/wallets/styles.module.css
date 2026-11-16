@@ -1,7 +1,4 @@
 .walletGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
   margin-top: 1rem;
   width: 100%;
 }
@@ -37,14 +34,14 @@
   border-radius: 12px;
   background: var(--ifm-background-surface-color);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   text-align: center;
   min-width: 200px;
 }
 
 .modeCard:hover {
   border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -88,7 +85,7 @@
   border-radius: 6px;
   padding: 0.45rem 1.25rem;
   font-size: 0.95rem;
-  transition: all 200ms ease-out;
+  transition: all var(--site-duration-base) ease-out;
   border: 1px solid var(--ifm-color-emphasis-300);
   background: transparent;
   color: var(--ifm-font-color-base);
@@ -113,7 +110,7 @@
   border: none;
   padding: 0;
   text-decoration: underline;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .modeSwitch:hover {
@@ -136,10 +133,6 @@
 }
 
 @media (max-width: 768px) {
-  .walletGrid {
-    grid-template-columns: 1fr;
-  }
-
   .modeSelector {
     flex-direction: column;
     align-items: center;

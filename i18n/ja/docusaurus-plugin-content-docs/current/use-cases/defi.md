@@ -9,9 +9,9 @@ sidebar_position: 6
 
 ## 課題
 
-従来の金融システムでは、世界中で数十億人が銀行サービスを利用できずにいます。利用できる人にとっても、高い手数料、不透明な条件、資産の凍結やサービス拒否を一方的に行える中央集権的な管理が問題となっています。 Even for those with access, financial services often come with high fees, opaque terms, and centralized control that can freeze assets or deny services arbitrarily.
+従来の金融システムでは、世界中で数十億人が銀行サービスを利用できずにいます。利用できる人にとっても、高い手数料、不透明な条件、資産の凍結やサービス拒否を一方的に行える中央集権的な管理が問題となっています。
 
-The 2008 financial crisis demonstrated the risks of centralized financial systems, where failures at major institutions can cascade through the entire economy. Users have little visibility into how their deposits are used or what risks they're exposed to.
+2008年の金融危機は、大手金融機関の破綻が経済全体に連鎖しうるという中央集権型金融システムのリスクを浮き彫りにしました。ユーザーは、自分の預金がどのように使われ、どんなリスクにさらされているのかをほとんど知ることができません。
 
 ## ブロックチェーンによる解決策
 
@@ -25,7 +25,7 @@ Cardano上の分散型金融は、インターネット接続さえあれば誰�
 
 CardanoのDeFiエコシステムには、分散型取引所（DEX）、レンディング・借入プラットフォーム、ステーブルコイン、イールド最適化プロトコルなどがあり、すべて安全で監査済みのスマートコントラクト上で稼働しています。
 
-## Cardanoが選ばれる理由
+## なぜCardanoなのか
 
 - **予測可能な手数料**：拡張UTXOモデルにより正確なコスト計画が可能
 - **形式検証**：スマートコントラクトの動作に対する数学的な保証

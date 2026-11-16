@@ -22,7 +22,7 @@
   height: 4px;
   background: var(--ifm-color-emphasis-300);
   border-radius: 2px;
-  transition: background 0.3s ease;
+  transition: background var(--site-duration-slow) ease;
 }
 
 .progressSegment.done {
@@ -60,7 +60,7 @@
   font-size: 1rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   color: var(--ifm-font-color-base);
 }
 
@@ -97,7 +97,7 @@
   color: var(--ifm-color-emphasis-800);
   font-weight: 600;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
 }
 
 .optionText {
@@ -117,14 +117,14 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   background: var(--ifm-color-primary);
   color: white;
 }
 
 .nextButton:hover:not(:disabled) {
   background: var(--ifm-color-primary-dark);
-  transform: translateY(-1px);
+  transform: translateY(var(--site-lift-xs));
 }
 
 .nextButton:disabled {
@@ -173,7 +173,7 @@
   cursor: pointer;
   background: transparent;
   color: var(--ifm-color-emphasis-600);
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
 }
 
 .restartButton:hover {
@@ -213,4 +213,14 @@
   .nextButton {
     width: 100%;
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .optionButton.selected {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='dark'] .nextButton {
+  background-color: var(--ifm-color-primary-darker);
 }

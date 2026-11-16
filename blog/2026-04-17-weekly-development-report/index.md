@@ -1,6 +1,6 @@
 ---
 slug: 2026-04-17-weekly-development-report
-title: "Weekly Development Report"
+title: "Treasury proposals finalized ahead of committee voting"
 description: "Treasury proposals finalized; Leios & Node v10.7 updates; new decentralized AI research lab in Greece; Intersect committee voting starts April 20."
 authors: [iog]
 tags: [development]

@@ -80,6 +80,27 @@ Badge colors for the bronze/silver/gold results on the [quiz hub](/quiz). Both t
 | `--site-tier-bronze` | `#c98b5e` | `#c98b5e` | Bronze tier badge fill |
 | `--site-tier-ink` | `#1b2333` | `#1b2333` | Text and icon color on top of the tier fills, fixed across themes on purpose |
 
+### Governance roles
+
+One accent per group that takes part in governance, so charts, diagrams, and legends tell the groups apart the same way on every page. The values are tuned so the four roles stay distinguishable under protanopia, deuteranopia, and tritanopia (they differ in lightness as well as hue), and each meets a 4.5:1 contrast ratio against its theme background, so small text can use the base token. Do not rely on color alone: pair every role and vote color with a label, icon, or pattern.
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `--site-role-drep` | `#0033ad` | `#8fb1ff` | DReps |
+| `--site-role-committee` | `#0077cc` | `#089667` | Constitutional Committee |
+| `--site-role-pool` | `#d6336c` | `#ff8fb8` | Stake pools and their operators |
+| `--site-role-funding` | `#a16207` | `#f0c040` | Treasury-funded work |
+
+### Governance votes
+
+Vote outcomes on the governance explainer. Yes and No differ in lightness as well as hue so they remain distinguishable with red-green color blindness. Prefer these over `--site-success` and `--site-danger` when the colors represent votes.
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `--site-vote-yes` | `#075e35` | `#8ff0b8` | Yes votes and passing checks |
+| `--site-vote-no` | `#d1440c` | `#e5683d` | No votes and failing checks |
+| `--site-vote-abstain` | `#6b7280` | `#9aa1ad` | Abstain |
+
 ## Spacing
 
 An 8px-based scale. Use it for padding, margins, and gaps.
@@ -129,7 +150,11 @@ Four shadow steps, each with a stronger dark-mode variant already defined:
 | `--site-duration-base` | `200ms` | Default |
 | `--site-duration-slow` | `300ms` | Larger transitions |
 | `--site-ease` | `cubic-bezier(0.4, 0, 0.2, 1)` | Standard easing |
-| `--site-lift` | `-2px` | Canonical hover lift (`transform: translateY(var(--site-lift))`) |
+| `--site-lift-xs` | `-1px` | Small lift for buttons and pills |
+| `--site-lift` | `-2px` | Canonical hover lift for cards (`transform: translateY(var(--site-lift))`) |
+| `--site-lift-md` | `-3px` | Medium lift |
+| `--site-lift-lg` | `-4px` | Large lift for big cards |
+| `--site-nudge` | `3px` | Sideways hover nudge for arrows (`transform: translateX(var(--site-nudge))`) |
 
 A typical hover transition:
 
@@ -144,7 +169,10 @@ A typical hover transition:
 }
 ```
 
-Wrap non-essential animation in `@media (prefers-reduced-motion: reduce)` and disable it there.
+With reduced motion turned on, the duration tokens are `0ms`, and the four lift tokens and `--site-nudge` are `0px`, set once in `src/css/custom.css`. `--site-ease` is not changed.
+
+- **No block needed:** every transition that moves something uses the duration tokens, and hover movement uses a lift token or `--site-nudge`. A scale on a small indicator, such as a dot, a marker, or a slider thumb, marks hover, focus, or the active item and may stay, because its transition already stops. A color, background, border, or shadow fade may also keep a fixed duration, because nothing moves.
+- **Block still needed:** a keyframe animation, a scale or rotate on a whole card, logo, or button, a transition with a fixed duration on something that moves, or motion driven from JavaScript. Wrap it in `@media (prefers-reduced-motion: reduce)` and disable it there.
 
 ## Focus
 

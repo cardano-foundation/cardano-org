@@ -61,7 +61,7 @@
 
 .pinGlow {
   pointer-events: none;
-  transition: opacity 0.15s ease;
+  transition: opacity var(--site-duration-fast) ease;
 }
 
 .pin {
@@ -115,6 +115,10 @@
 @keyframes ambTooltipIn {
   from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip { animation: none; }
 }
 
 .tooltipHead {

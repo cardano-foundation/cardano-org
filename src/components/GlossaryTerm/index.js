@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
@@ -17,10 +17,13 @@ import {
 } from '@site/src/data/glossaryCategories';
 import OpenGraphInfo from '@site/src/components/Layout/OpenGraphInfo';
 import SiteHero from '@site/src/components/Layout/SiteHero';
+import useCopyToClipboard from '@site/src/utils/useCopyToClipboard';
 import { jsonLdString } from '@site/src/utils/jsonLd';
 
 import { safeUrl } from '@site/src/utils/safeUrl';
+import EditOnGitHubCallout from '@site/src/components/Layout/EditOnGitHubCallout';
 import styles from './styles.module.css';
+import Grid from "@site/src/components/Layout/Grid";
 
 function buildJsonLd(term, siteUrl, termUrl, glossaryUrl) {
   const definedTerm = {
@@ -90,27 +93,12 @@ const MARKDOWN_COMPONENTS = {
 };
 
 function CopyLinkButton() {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef(null);
-  useEffect(() => () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-  }, []);
-  const onClick = useCallback(async () => {
-    if (typeof window === 'undefined' || !navigator?.clipboard) return;
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(() => setCopied(false), 1800);
-    } catch {
-      // clipboard blocked; silently ignore
-    }
-  }, []);
+  const [copied, copy] = useCopyToClipboard({ resetAfter: 1800 });
   return (
     <button
       type="button"
       className={styles.copyLink}
-      onClick={onClick}
+      onClick={() => copy(window.location.href)}
       aria-label={translate({
         id: 'glossary.term.copyLinkAria',
         message: 'Copy link to this term',
@@ -450,7 +438,7 @@ export default function GlossaryTerm({ term }) {
             <h2 className={styles.exploreNextHeading}>
               {translate({ id: 'glossary.term.exploreNext', message: 'Explore next' })}
             </h2>
-            <ul className={styles.exploreNextGrid}>
+            <Grid as="ul" minItemWidth="260px" className={styles.exploreNextGrid}>
               {relatedTerms.map(r => (
                 <li key={r.slug}>
                   <ExploreNextCard
@@ -460,7 +448,7 @@ export default function GlossaryTerm({ term }) {
                   />
                 </li>
               ))}
-            </ul>
+            </Grid>
           </section>
         )}
 
@@ -512,49 +500,25 @@ export default function GlossaryTerm({ term }) {
           </div>
         </aside>
 
-        <aside className={styles.improve}>
-          <div className={styles.improveIcon} aria-hidden>
-            <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-              <path
-                fill="currentColor"
-                d="M12 3 2 8l10 5 10-5-10-5zm-8 9.5L12 17l8-4.5 2 1L12 19 2 13.5l2-1zm0 4L12 21l8-4.5 2 1L12 23 2 17.5l2-1z"
-              />
-            </svg>
-          </div>
-          <h2 className={styles.improveHeading}>
-            {translate({
-              id: 'glossary.term.improveHeading',
-              message: 'Spotted something off?',
-            })}
-          </h2>
-          <p className={styles.improveCopy}>
-            {translate({
-              id: 'glossary.term.improveCopy',
-              message:
-                'This glossary is open source. Submit a pull request to update or correct this definition.',
-            })}
-          </p>
-          <a
-            className={styles.improveButton}
-            href={`https://github.com/cardano-foundation/cardano-org/edit/staging/glossary/${term.slug}.md`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden focusable="false">
-              <path
-                fill="currentColor"
-                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.05c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.94 10.94 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.05.78 2.13v3.16c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"
-              />
-            </svg>
-            {translate(
-              {
-                id: 'glossary.term.improveButton',
-                message: 'Edit {title} on GitHub',
-              },
-              { title: term.title },
-            )}
-          </a>
-        </aside>
+        <EditOnGitHubCallout
+          title={translate({
+            id: 'glossary.term.improveHeading',
+            message: 'Spotted something off?',
+          })}
+          description={translate({
+            id: 'glossary.term.improveCopy',
+            message:
+              'This glossary is open source. Submit a pull request to update or correct this definition.',
+          })}
+          href={`https://github.com/cardano-foundation/cardano-org/edit/staging/glossary/${term.slug}.md`}
+          buttonLabel={translate(
+            {
+              id: 'glossary.term.improveButton',
+              message: 'Edit {title} on GitHub',
+            },
+            { title: term.title },
+          )}
+        />
       </main>
     </Layout>
   );

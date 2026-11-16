@@ -7,9 +7,9 @@ export default function GovernanceBlueSection({}) {
 
   return (
     <div className={clsx("container", styles.sectionWrapper)}>
-      <h1 className={styles.title}>
+      <h2 className={clsx(styles.title, "heading-look-h1")}>
         {translate({id: 'governance.blue.title', message: 'A Model To Marginalize None, And Give Power To All.'})}
-      </h1>
+      </h2>
       <p className={styles.text}>
         {translate({id: 'governance.blue.text', message: 'Cardano governance has moved from vision to reality. With a ratified constitution, active DReps, and a funded treasury, the community now directs the network\'s future. This is decentralization not as a promise, but as practice.'})}
       </p>

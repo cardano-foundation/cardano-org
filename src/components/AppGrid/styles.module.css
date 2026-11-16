@@ -11,12 +11,7 @@
 }
 
 .appGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 100%;
+  margin-top: var(--site-space-md);
 }
 
 .appCard {
@@ -24,7 +19,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -33,7 +28,7 @@
 }
 
 .appCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary-lighter);
 }
@@ -45,27 +40,13 @@
   flex-shrink: 0;
 }
 
+/* LogoTile variables for the app logo and its letter fallback. */
 .appLogo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 8px;
-}
-
-.appLogoPlaceholder {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
+  --logo-fallback-bg: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
+  --logo-fallback-color: white;
+  --logo-fallback-font-size: 1.5rem;
+  /* The letter keeps the line height of the surrounding text. */
+  --logo-fallback-line-height: var(--ifm-line-height-base);
 }
 
 .appName {
@@ -156,7 +137,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--site-duration-base) ease;
   flex-shrink: 0;
 }
 
@@ -168,11 +149,11 @@
 .appLink::after {
   content: " \2192";
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform var(--site-duration-base) ease;
 }
 
 .appLink:hover::after {
-  transform: translateX(3px);
+  transform: translateX(var(--site-nudge));
 }
 
 .noData {
@@ -187,7 +168,7 @@
   border: 2px dashed var(--ifm-color-emphasis-300);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.2s ease;
+  transition: all var(--site-duration-base) ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,7 +179,7 @@
 }
 
 .moreAppCard:hover {
-  transform: translateY(-2px);
+  transform: translateY(var(--site-lift));
   border-color: var(--ifm-color-primary);
   background: rgba(0, 51, 173, 0.02);
 }
@@ -236,8 +217,8 @@
   opacity: 0.85;
 }
 
-@media (max-width: 768px) {
-  .appGrid {
-    grid-template-columns: 1fr;
-  }
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .rankBadge {
+  background-color: var(--ifm-color-primary-darker);
 }

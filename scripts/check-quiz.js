@@ -15,7 +15,7 @@ const ALLOWED_SOURCE_HOSTS = [
   'roadmap.cardano.org',
   'cardanofoundation.org',
 ];
-const TYPOGRAPHIC_DASH = /[–—―]|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;/i;
+const TYPOGRAPHIC_DASH = /[\u2013\u2014\u2015]|&(?:mdash|ndash|#8212|#8211|#x2014|#x2013);/i;
 const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'];
 const SLUG_RE = /^[a-z][a-z0-9-]*$/;
 

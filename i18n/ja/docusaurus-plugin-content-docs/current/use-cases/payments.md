@@ -9,16 +9,16 @@ sidebar_position: 7
 
 ## 課題
 
-Cross-border payments remain slow, expensive, and opaque. Traditional remittance services charge fees averaging 6-7% globally, with some corridors exceeding 10%. Transactions can take days to settle, and recipients often have limited options for accessing funds.
+国際送金は今も遅く、高額で、不透明です。従来の送金サービスの手数料は世界平均で6〜7%に達し、送金ルートによっては10%を超えることもあります。決済の完了に数日かかることもあり、受取人が資金を引き出す手段も限られがちです。
 
-For the millions of migrant workers sending money home to support their families, these fees represent a significant burden. The World Bank estimates that reducing remittance fees to 3% could save senders over $20 billion annually.
+家族を支えるために母国へ送金している数百万人の移民労働者にとって、この手数料は大きな負担です。世界銀行は、送金手数料を3%まで引き下げれば、送金者は年間200億ドル以上を節約できると試算しています。
 
 ## ブロックチェーンによる解決策
 
 Cardanoは、数日ではなく数分で完了する高速・低コストな決済を実現します。
 
 - **低手数料**: 1円未満のトランザクションコストで少額決済も可能
-- **高速な決済処理**: 数日ではなく数分でトランザクションが確認
+- **高速な決済処理**: トランザクションは数日ではなく数分で確定
 - **グローバルな利用**: インターネット環境があれば誰でも送受金が可能
 - **透明な価格設定**: 隠れた手数料や不利な為替レートなし
 - **24時間365日対応**: 銀行の営業時間や祝日に関係なくいつでも送金可能

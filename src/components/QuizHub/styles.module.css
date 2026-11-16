@@ -120,18 +120,8 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--site-lift-lg));
   box-shadow: var(--site-shadow-lg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-
-  .card:hover {
-    transform: none;
-  }
 }
 
 .cardTitle {
@@ -253,4 +243,10 @@
 
 .card:hover .cardCta {
   background: var(--ifm-color-primary-dark);
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .cardCta {
+  background-color: var(--ifm-color-primary-darker);
 }

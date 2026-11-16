@@ -111,28 +111,20 @@ The mega panel translates every string with `translate()` and an id keyed by the
 | Item description | `navbar.mega.description.<item label>` |
 | Featured tile title, description, and CTA | `navbar.mega.featured.title.<tile title>`, `navbar.mega.featured.description.<tile title>`, `navbar.mega.featured.cta.<tile title>` |
 
-The ids are built at runtime from the menu data, so `yarn write-translations` cannot extract them (it only picks up `translate()` calls with a static id and message). Add the keys to `i18n/en/code.json` by hand in the same pull request, next to the existing `navbar.mega.*` entries:
+The ids are built at runtime from the menu data, so `yarn write-translations` cannot extract them (it only picks up `translate()` calls with a static id and message). Run the check script instead, it adds missing keys, updates changed texts and removes keys of entries that no longer exist:
 
-```json title="i18n/en/code.json"
-"navbar.mega.label.Find a Wallet": {
-  "message": "Find a Wallet",
-  "description": "Mega menu item label"
-},
-"navbar.mega.description.Find a Wallet": {
-  "message": "Find the right wallet for you",
-  "description": "Mega menu item description"
-}
+```sh
+node scripts/check-dynamic-translations.js --write
 ```
 
-A missing key is not an error: the English text from `navbar.js` is used as the fallback, and the other locales then show English until the key exists and has been translated. Translations for the other locales come through Crowdin, do not edit `i18n/<locale>/code.json` by hand.
+The same script runs in `yarn test` without `--write` and fails when `i18n/en/code.json` is out of sync with `navbar.js`. This matters for English too: an existing key in `i18n/en/code.json` wins over the text in `navbar.js`, so a changed description only shows up once the key is updated. Translations for the other locales come through Crowdin, do not edit `i18n/<locale>/code.json` by hand.
 
 ### Mobile drawer and menu labels: `navbar.json`
 
-The five menu labels and every entry in the mobile drawer are translated by Docusaurus itself, through `item.label.<label>` keys in `i18n/en/docusaurus-theme-classic/navbar.json`. `yarn write-translations` generates these from the navbar config, including the flattened mobile items and the featured tile titles. Add the `item.label.<label>` key for a new entry there, either by hand or by running `yarn write-translations --locale en` and keeping the `navbar.json` change.
+The five menu labels and every entry in the mobile drawer are translated by Docusaurus itself, through `item.label.<label>` keys in `i18n/en/docusaurus-theme-classic/navbar.json`, including the flattened mobile items and the featured tile titles. The check script above keeps this file in sync as well.
 
 ## Checklist for a new entry
 
 1. Add the item to the right column in `src/data/navbar.js`. Keep labels short, the columns are narrow.
-2. Add `navbar.mega.label.<label>` and, if the item has a description, `navbar.mega.description.<label>` to `i18n/en/code.json`.
-3. Add `item.label.<label>` to `i18n/en/docusaurus-theme-classic/navbar.json`.
-4. Run `yarn start` and check the entry in the desktop panel and in the mobile drawer (narrow the window below 996 px).
+2. Run `node scripts/check-dynamic-translations.js --write` to add the `navbar.mega.*` keys to `i18n/en/code.json` and the `item.label.*` key to `navbar.json`.
+3. Run `yarn start` and check the entry in the desktop panel and in the mobile drawer (narrow the window below 996 px).

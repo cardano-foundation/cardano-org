@@ -169,3 +169,18 @@
     display: none;
   }
 }
+
+/* Translated tags can be longer than a phone screen, let them wrap there. */
+@media (max-width: 996px) {
+  .card {
+    min-width: 0;
+  }
+
+  .tags {
+    border-radius: 1rem;
+  }
+
+  .tag {
+    white-space: normal;
+  }
+}

@@ -9,9 +9,9 @@ sidebar_position: 15
 
 ## 課題
 
-Healthcare data is fragmented across providers, making it difficult for patients and doctors to access complete medical histories. This fragmentation leads to repeated tests, dangerous drug interactions, and delayed diagnoses. In emergencies, critical information may be unavailable.
+医療データは医療機関ごとに分散しており、患者も医師も完全な病歴を把握するのが困難です。その結果、検査の重複、危険な薬物相互作用、診断の遅れが生じています。緊急時には重要な情報が手に入らないこともあります。
 
-Current systems also create privacy and security risks. 現行のシステムはプライバシーとセキュリティのリスクも生んでいます。中央集権型のデータベースはハッカーにとって格好の標的であり、患者は自分の機密性の高い健康情報に誰がアクセスするかをほとんどコントロールできません。
+現行のシステムはプライバシーとセキュリティのリスクも生んでいます。中央集権型のデータベースはハッカーにとって格好の標的であり、患者は自分の機密性の高い健康情報に誰がアクセスするかをほとんどコントロールできません。
 
 ## ブロックチェーンによる解決策
 
@@ -33,8 +33,8 @@ Current systems also create privacy and security risks. 現行のシステムは
 - **グローバルなアクセス性**: 国境を越えた医療を支援
 - **規制準拠**: HIPAAなどの規制要件への対応力
 
-## はじめる
+## はじめよう
 
 - [Cardanoのアプリケーションを探す](/apps)
-- [開発者向けリソース](https://developers.cardano.org)
+- [Cardano開発者向けリソース](https://developers.cardano.org)
 - [エンタープライズソリューションを見る](/solutions)

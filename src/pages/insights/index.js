@@ -12,6 +12,7 @@ import SiteHero from '@site/src/components/Layout/SiteHero';
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import {InsightsTags} from '@site/src/data/insights-tags';
 import './index.css';
+import styles from './index.module.css';
 
 // Discover all MD/MDX/JS/TSX pages under /insights (Webpack)
 const req = require.context('./', true, /\.(md|mdx|js|jsx|ts|tsx)$/);
@@ -156,7 +157,7 @@ export default function InsightsIndex() {
         description={translate({id: 'insights.hero.description', message: 'Explore Cardano topics through on-chain data and visual charts.'})}
         bannerType="braidBlue"
       />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container">
         <div className="insights-search-container">
           <input
             type="search"
@@ -209,23 +210,23 @@ export default function InsightsIndex() {
         </div>
 
         {filtered.length > PER_PAGE && (
-          <div className="flex items-center justify-between mt-6">
+          <div className={styles.pagination}>
             <button
               type="button"
               onClick={() => setPage((p) => Math.max(0, p - 1))}
-              className="px-3 py-1 rounded-full border text-sm"
+              className="button button--sm button--outline button--secondary"
               disabled={page === 0}
               aria-label={translate({id: 'insights.pagination.prevAriaLabel', message: 'Previous page'})}
             >
               {'\u2190 '}{translate({id: 'insights.pagination.prev', message: 'Prev'})}
             </button>
-            <div className="text-sm opacity-80">
+            <div className={styles.pageInfo}>
               {translate({id: 'insights.pagination.pageOf', message: 'Page {current} of {total}'}, {current: page + 1, total: totalPages})}
             </div>
             <button
               type="button"
               onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-              className="px-3 py-1 rounded-full border text-sm"
+              className="button button--sm button--outline button--secondary"
               disabled={page >= totalPages - 1}
               aria-label={translate({id: 'insights.pagination.nextAriaLabel', message: 'Next page'})}
             >
@@ -235,7 +236,7 @@ export default function InsightsIndex() {
         )}
 
         {filtered.length === 0 && (
-          <p className="opacity-70 mt-8">{translate({id: 'insights.noResults', message: 'No insights matched your filters.'})}</p>
+          <p className={styles.noResults}>{translate({id: 'insights.noResults', message: 'No insights matched your filters.'})}</p>
         )}
         <SpacerBox size="medium" />
       </main>

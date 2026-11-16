@@ -10,7 +10,7 @@ Thank you for considering to contribute to cardano.org. To contribute, you must 
 
 ## What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version >= 20.19 (which can be checked by running `node -v`). The repository pins `20.19.5` in its `.nvmrc`, and Node 22 LTS works as well. You can use [nvm](https://github.com/nvm-sh/nvm) to manage and switch between Node versions per project; running `nvm use` in the project root picks up the version from `.nvmrc`.
+- [Node.js](https://nodejs.org/en/download/) version 24 or newer (which can be checked by running `node -v`). The repository pins Node 24 LTS in its `.nvmrc`. You can use [nvm](https://github.com/nvm-sh/nvm) to manage and switch between Node versions per project; running `nvm use` in the project root picks up the version from `.nvmrc`.
 - [Yarn](https://yarnpkg.com/en/) version >= 1.22 (which can be checked by running `yarn --version`). Yarn is a performant package manager for JavaScript and replaces the `npm` client. It is not strictly necessary but highly encouraged.
 - On macOS you also need Xcode and Command Line Tools.
 
@@ -55,9 +55,9 @@ cardano-org
 │   ├── data
 │   │   ├── ambassadorsData.json
 │   │   ├── logosCompanies.json
-│   │   ├── operationFAQ.json
+│   │   ├── operationFAQ.js
 │   │   ├── pineappleFAQ.json
-│   │   └── termsForTermExplainer.json
+│   │   └── termsForTermExplainer.js
 │   └── pages
 │       ├── ambassadors.js
 │       ├── brand-assets.js
@@ -81,9 +81,9 @@ cardano-org
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
   - `/src/data/logosCompanies.json` - Entity and company data for https://cardano.org/entities/.
-  - `/src/data/operationFAQ.json` - FAQ data for https://cardano.org/stake-pool-operation/.
+  - `/src/data/operationFAQ.js` - FAQ data for https://cardano.org/stake-pool-operation/.
   - `/src/data/pineappleFAQ.json` - example FAQ data for the [FAQ section tutorial](/docs/get-involved/faq-component).
-  - `/src/data/termsForTermExplainer.json` - data for the TermExplainer component.
+  - `/src/data/termsForTermExplainer.js` - data for the TermExplainer component.
   - `/src/pages` - Any files within this directory will be converted into a website page.
 - `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory.
   - `/static/archive` - Genesis distribution content that we want to preserve. Data was downloaded from static.iohk.io.

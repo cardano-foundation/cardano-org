@@ -31,6 +31,15 @@ function parseAdaToLovelace(value) {
   return lovelace > 0n ? lovelace : null;
 }
 
+// Exact amount for the donation confirmation, up to six decimals. Grouping and
+// decimal separator both follow the browser locale, like formatAda below.
+function formatAdaExact(lovelace) {
+  const whole = lovelace / LOVELACE_PER_ADA;
+  const fraction = (lovelace % LOVELACE_PER_ADA).toString().padStart(6, "0").replace(/0+$/, "");
+  const decimal = new Intl.NumberFormat().formatToParts(1.5).find((p) => p.type === "decimal")?.value ?? ".";
+  return `${whole.toLocaleString()}${fraction ? `${decimal}${fraction}` : ""} ada`;
+}
+
 function formatAda(lovelace) {
   const ada = Number(lovelace) / 1_000_000;
   if (ada >= 1_000_000_000) return `${(ada / 1_000_000_000).toFixed(2)}B ada`;
@@ -121,7 +130,7 @@ function WalletPicker({ onConnect, busy }) {
   );
 }
 
-function WalletStatus({ wallet, onDisconnect }) {
+function WalletStatus({ wallet, onDisconnect, busy }) {
   const wrongNetwork = wallet.networkId !== EXPECTED_NETWORK_ID;
   return (
     <div className={`${styles.walletStatus} ${wrongNetwork ? styles.walletStatusWarning : ""}`}>
@@ -134,7 +143,7 @@ function WalletStatus({ wallet, onDisconnect }) {
           )}
         </span>
       </div>
-      <button type="button" onClick={onDisconnect} className={styles.disconnectButton}>
+      <button type="button" onClick={onDisconnect} className={styles.disconnectButton} disabled={busy}>
         {translate({ id: "governance.treasury.wallet.disconnect", message: "Disconnect" })}
       </button>
     </div>
@@ -198,9 +207,7 @@ export default function TreasuryDonate() {
   const [treasury, setTreasury] = useState(undefined); // undefined = loading, null = unavailable
   const [tx, setTx] = useState({ status: "idle" });
 
-  // Pull the current treasury balance for context. It's also reused as
-  // currentTreasuryValue when building the tx, but the donate button does NOT
-  // wait on this fetch; handleDonate fetches on demand if it isn't ready yet.
+  // The treasury balance is shown for context only, the donation does not use it.
   useEffect(() => {
     if (!apiClient) return;
     let cancelled = false;
@@ -258,26 +265,12 @@ export default function TreasuryDonate() {
           message: "Wallet is on the wrong network. Switch to Mainnet and try again.",
         }));
       }
-      // The background fetch usually has this already; fetch on demand otherwise
-      // so a slow or failed background load never blocks the donation.
-      let currentTreasury = treasury;
-      if (currentTreasury == null) {
-        currentTreasury = await fetchLatestTreasury(apiClient);
-        if (currentTreasury != null) setTreasury(currentTreasury);
-      }
-      if (currentTreasury == null) {
-        throw new Error(translate({
-          id: "governance.treasury.error.treasury",
-          message: "Could not read the current treasury value. Please try again in a moment.",
-        }));
-      }
       const txHash = await donateToTreasury({
         api: wallet.instance,
         amountLovelace: lovelace,
-        currentTreasuryValue: currentTreasury,
         koiosUrl: API_URL,
       });
-      setTx({ status: "success", txHash, amount: formatAda(lovelace) });
+      setTx({ status: "success", txHash, amount: formatAdaExact(lovelace) });
     } catch (err) {
       if (classifyError(err) === "userCancelled") {
         setTx({ status: "idle" });
@@ -292,7 +285,7 @@ export default function TreasuryDonate() {
         ),
       });
     }
-  }, [wallet, wrongNetwork, txBusy, amount, treasury, API_URL, apiClient]);
+  }, [wallet, wrongNetwork, txBusy, amount, API_URL]);
 
   if (!API_URL) return null;
 
@@ -302,7 +295,7 @@ export default function TreasuryDonate() {
         <p className={styles.introCopy}>
           {translate({
             id: "governance.treasury.intro",
-            message: "This builds a real Conway treasury donation, not a payment to an address. Your wallet selects the inputs, signs the transaction, and submits it. The ada leaves your wallet and is added directly to the Cardano treasury.",
+            message: "This builds a real Conway treasury donation, not a payment to an address. Your wallet selects the inputs, signs the transaction, and submits it. The ada leaves your wallet right away and reaches the Cardano treasury at the next epoch boundary.",
           })}
         </p>
         <div className={styles.treasuryFact}>
@@ -321,7 +314,7 @@ export default function TreasuryDonate() {
 
       <div className={styles.walletSection}>
         {wallet ? (
-          <WalletStatus wallet={wallet} onDisconnect={handleDisconnect} />
+          <WalletStatus wallet={wallet} onDisconnect={handleDisconnect} busy={txBusy} />
         ) : (
           <>
             <h3 className={styles.sectionHeading}>
@@ -343,8 +336,8 @@ export default function TreasuryDonate() {
           <div className={styles.amountField}>
             <input
               type="number"
-              min="1"
-              step="0.1"
+              min="0.000001"
+              step="any"
               inputMode="decimal"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -376,7 +369,7 @@ export default function TreasuryDonate() {
         <p className={styles.footnote}>
           {translate({
             id: "governance.treasury.footnote",
-            message: "Treasury donations are irreversible and must be submitted in the same epoch they are built.",
+            message: "Treasury donations are irreversible.",
           })}
         </p>
       </div>

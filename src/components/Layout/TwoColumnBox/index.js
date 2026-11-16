@@ -5,6 +5,13 @@ import styles from "./styles.module.css";
 //
 // This component shows text in two columns, it collapses into one
 
+/**
+ * Text in two columns that collapse into one on small screens.
+ *
+ * @param {object} props
+ * @param {string|string[]} props.leftText Left column text, or an array with one entry per paragraph.
+ * @param {string|string[]} props.rightText Right column text, or an array with one entry per paragraph.
+ */
 export default function TwoColumnBox({ leftText, rightText }) {
 
   return (

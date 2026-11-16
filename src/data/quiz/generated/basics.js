@@ -202,7 +202,7 @@ export function getQuizData() {
         translate({id: "quiz.basics.basics-15.option3", message: "2021"}),
       ],
       correctAnswer: 0,
-      explanation: translate({id: "quiz.basics.basics-15.explanation", message: "Cardano's genesis block \"launched the Byron era on September 29, 2017,\" which is when the blockchain and ada went live. That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."}),
+      explanation: translate({id: "quiz.basics.basics-15.explanation", message: "Cardano's genesis block \"launched the Byron era on September 23, 2017,\" which is when the blockchain and ada went live. That is several years after Bitcoin, which launched in 2009, and Ethereum, which launched in 2015, reflecting Cardano's later, research-first approach. 2021 is well after Cardano's launch, it corresponds instead to the rollout of smart contracts in the Goguen era."}),
       sourceUrl: "https://cardano.org/glossary/genesis-block/",
     },
     ],

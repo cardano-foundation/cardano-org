@@ -63,6 +63,7 @@ function getNavbarItems() {
           title: 'Go deeper',
           items: [
             {to: '/how-cardano-works', label: 'How Cardano works', description: 'Consensus, ledger, tokens and upgrades in plain terms'},
+            {to: '/fees-and-transactions', label: 'Cardano Fees & Transactions', description: 'How fees are calculated and why they are predictable'},
             {to: '/smart-contracts', label: 'Smart contracts and DApps', description: 'How contracts run on Cardano and how to use apps safely'},
             {to: '/research', label: 'Cardano Research', description: 'Peer-reviewed research and papers'},
             {href: '/insights', label: 'Cardano Insights', description: 'On-chain or regularly refreshed data'},
@@ -160,6 +161,7 @@ function getNavbarItems() {
           items: [
             {to: '/governance', label: 'Governance Overview', description: 'How Cardano governance works'},
             {to: '/governance#tools', label: 'Governance Tools', description: 'Tools for governance participation'},
+            {to: '/governance/treasury', label: 'The Cardano Treasury', description: 'How the community fund is filled and spent'},
             {to: '/constitution', label: 'Cardano Constitution', description: 'The ratified Cardano Constitution'},
           ],
         },

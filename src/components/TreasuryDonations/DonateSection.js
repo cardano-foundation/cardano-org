@@ -1,0 +1,45 @@
+import React, { Suspense, lazy, useState } from "react";
+import { translate } from "@docusaurus/Translate";
+import styles from "./styles.module.css";
+import useHashTarget from "@site/src/utils/useHashTarget";
+import { hashTargetId } from "@site/src/utils/hashTarget.mjs";
+
+const TreasuryDonate = lazy(() => import(/* webpackChunkName: "treasury-donate" */ "@site/src/components/TreasuryDonate"));
+
+const loadingTool = (
+  <div style={{ textAlign: "center", padding: "3rem 0" }}>
+    {translate({ id: "governance.treasury.loading", message: "Loading donation tool…" })}
+  </div>
+);
+
+// The wallet form stays closed until someone asks for it. A link to the
+// section's anchor (glossary, /apps, the button on this page) opens it.
+export default function DonateSection({ anchorId }) {
+  const [open, setOpen] = useState(() => hashTargetId(window.location.hash) === anchorId);
+
+  useHashTarget((id) => {
+    if (id === anchorId) setOpen(true);
+  });
+
+  if (!open) {
+    return (
+      <div className={styles.donateClosed}>
+        <p>
+          {translate({
+            id: "governance.treasury.donate.closedIntro",
+            message: "Connect a wallet to send ada to the treasury with a treasury donation, for example to return unused funding.",
+          })}
+        </p>
+        <button type="button" className="button button--primary" onClick={() => setOpen(true)}>
+          {translate({ id: "governance.treasury.donate.open", message: "Open the donation tool" })}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <Suspense fallback={loadingTool}>
+      <TreasuryDonate />
+    </Suspense>
+  );
+}

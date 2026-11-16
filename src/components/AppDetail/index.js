@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 
@@ -17,8 +17,16 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import AppTile from "@site/src/components/AppTile";
 import { jsonLdString } from "@site/src/utils/jsonLd";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import useCopyToClipboard from "@site/src/utils/useCopyToClipboard";
 
+import EditOnGitHubCallout from "@site/src/components/Layout/EditOnGitHubCallout";
+import GitHubIcon from "@site/src/components/icons/GitHubIcon";
 import styles from "./styles.module.css";
+import { scrollBehavior } from "@site/src/utils/jsUtils";
+import Grid from "@site/src/components/Layout/Grid";
+import LogoTile from "@site/src/components/Layout/LogoTile";
+import { resolveIconSrc } from "@site/src/utils/appIcon";
+import useImageFallback from "@site/src/utils/useImageFallback";
 
 const APPS_JS_GITHUB_URL =
   "https://github.com/cardano-foundation/cardano-org/blob/staging/src/data/apps.js";
@@ -40,27 +48,13 @@ const RELATED_LIMIT = 4;
 const DRAG_THRESHOLD_PX = 3;
 const CAROUSEL_GAP_PX = 12; // mirrors `gap` on .carouselTrack in styles.module.css
 
-function GitHubIcon({ size = 18 }) {
-  return (
-    <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden focusable="false">
-      <path
-        fill="currentColor"
-        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.05c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.94 10.94 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.05.78 2.13v3.16c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"
-      />
-    </svg>
-  );
-}
-
 function TagPill({ tag, def }) {
   if (!def) return null;
   return (
     <Link
       to={`/apps?tags=${tag}`}
       className={styles.categoryPill}
-      style={{
-        backgroundColor: `color-mix(in srgb, ${def.color} 15%, transparent)`,
-        color: `color-mix(in srgb, ${def.color} 85%, black)`,
-      }}
+      style={{ "--pill-color": def.color }}
       title={def.description}
     >
       <span className={styles.tagDot} style={{ backgroundColor: def.color }} />
@@ -79,8 +73,7 @@ function getRelatedApps(currentApp) {
     .slice(0, RELATED_LIMIT);
 }
 
-function CarouselSlide({ url, eager }) {
-  const href = useBaseUrl(url);
+function CarouselSlide({ href, eager, onError }) {
   return (
     <img
       src={href}
@@ -90,11 +83,12 @@ function CarouselSlide({ url, eager }) {
       width={1280}
       height={720}
       className={styles.carouselSlide}
+      onError={onError}
     />
   );
 }
 
-function PreviewCarousel({ urls }) {
+function PreviewCarousel({ urls, onError }) {
   const trackRef = useRef(null);
   const [active, setActive] = useState(0);
   const dragRef = useRef(null);
@@ -122,13 +116,13 @@ function PreviewCarousel({ urls }) {
   const scrollTo = (idx) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollTo({ left: idx * getStep(), behavior: "smooth" });
+    el.scrollTo({ left: idx * getStep(), behavior: scrollBehavior() });
   };
 
   const scrollBy = (dir) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+    el.scrollBy({ left: dir * getStep(), behavior: scrollBehavior() });
   };
 
   const onPointerDown = (e) => {
@@ -165,7 +159,7 @@ function PreviewCarousel({ urls }) {
     if (drag && drag.moved) {
       const step = getStep();
       const idx = Math.round(el.scrollLeft / step);
-      el.scrollTo({ left: idx * step, behavior: "smooth" });
+      el.scrollTo({ left: idx * step, behavior: scrollBehavior() });
     }
   };
 
@@ -181,7 +175,7 @@ function PreviewCarousel({ urls }) {
           onPointerCancel={onPointerUp}
         >
           {urls.map((url, idx) => (
-            <CarouselSlide key={url} url={url} eager={idx === 0} />
+            <CarouselSlide key={url} href={url} eager={idx === 0} onError={onError} />
           ))}
         </div>
         <button
@@ -224,10 +218,7 @@ function PreviewCarousel({ urls }) {
   );
 }
 
-function SinglePreview({ url }) {
-  const href = useBaseUrl(url);
-  const [errored, setErrored] = useState(false);
-  if (errored) return null;
+function SinglePreview({ href, onError }) {
   return (
     <figure className={styles.preview}>
       <img
@@ -237,22 +228,38 @@ function SinglePreview({ url }) {
         loading="lazy"
         width={1280}
         height={720}
-        onError={() => setErrored(true)}
+        onError={onError}
       />
     </figure>
   );
 }
 
-function PreviewHero({ urls }) {
-  if (urls.length === 0) return null;
-  if (urls.length > 1) return <PreviewCarousel urls={urls} />;
-  return <SinglePreview url={urls[0]} />;
+// Screenshots section. A screenshot that fails to load drops out, and the
+// section with its heading disappears when none is left.
+function PreviewSection({ urls }) {
+  const { withBaseUrl } = useBaseUrlUtils();
+  const { ref, onError, hasFailed } = useImageFallback();
+  const hrefs = urls.map((url) => withBaseUrl(url)).filter((href) => !hasFailed(href));
+  if (hrefs.length === 0) return null;
+  return (
+    <section ref={ref} className={styles.previewWrap}>
+      <h2 className={styles.previewHeading}>
+        {translate({
+          id: "apps.detail.screenshots",
+          message: "Screenshots",
+        })}
+      </h2>
+      {hrefs.length > 1 ? (
+        <PreviewCarousel urls={hrefs} onError={onError} />
+      ) : (
+        <SinglePreview href={hrefs[0]} onError={onError} />
+      )}
+    </section>
+  );
 }
 
 function ShareButton({ url, title }) {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef(null);
-  useEffect(() => () => clearTimeout(timerRef.current), []);
+  const [copied, copy] = useCopyToClipboard();
   const onClick = async () => {
     const fullUrl = typeof window !== "undefined"
       ? `${window.location.origin}${window.location.pathname}`
@@ -261,21 +268,12 @@ function ShareButton({ url, title }) {
       try {
         await navigator.share({ title, url: fullUrl });
       } catch {
-        // user cancelled or share failed — leave it; do not fall back to clipboard
+        // User cancelled or share failed. Leave it, do not fall back to the clipboard.
         // (clipboard.writeText would throw without a fresh user gesture)
       }
       return;
     }
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
-      try {
-        await navigator.clipboard.writeText(fullUrl);
-        setCopied(true);
-        clearTimeout(timerRef.current);
-        timerRef.current = setTimeout(() => setCopied(false), 1500);
-      } catch {
-        // clipboard blocked — fail silently
-      }
-    }
+    await copy(fullUrl);
   };
   return (
     <button
@@ -312,7 +310,6 @@ function ShareButton({ url, title }) {
 }
 
 export default function AppDetail({ app }) {
-  const iconHref = useBaseUrl(app.icon || "");
   const categoryDef = Categories[app.category];
   const stats = isTrackable(app) ? getAppStats(app) : null;
   const showActivity = stats && stats.txCount > 0;
@@ -329,6 +326,7 @@ export default function AppDetail({ app }) {
     <Layout title={pageTitle} description={pageDescription}>
       <OpenGraphInfo
         pageName="apps"
+        image={app.ogImage}
         title={pageTitle}
         description={pageDescription}
       />
@@ -368,13 +366,7 @@ export default function AppDetail({ app }) {
         )}
 
         <header className={styles.header}>
-          {app.icon ? (
-            <img src={iconHref} alt="" className={styles.icon} aria-hidden />
-          ) : (
-            <div className={styles.iconFallback} aria-hidden>
-              {app.title.charAt(0).toUpperCase()}
-            </div>
-          )}
+          <LogoTile src={resolveIconSrc(app)} name={app.title} lazy={false} className={styles.icon} />
           <div className={styles.headerText}>
             <h1 className={styles.title}>{app.title}</h1>
             {app.tagline && <p className={styles.tagline}>{app.tagline}</p>}
@@ -471,17 +463,7 @@ export default function AppDetail({ app }) {
           <ShareButton url={app.website} title={app.title} />
         </div>
 
-        {previewUrls.length > 0 && (
-          <section className={styles.previewWrap}>
-            <h2 className={styles.previewHeading}>
-              {translate({
-                id: "apps.detail.screenshots",
-                message: "Screenshots",
-              })}
-            </h2>
-            <PreviewHero urls={previewUrls} />
-          </section>
-        )}
+        <PreviewSection urls={previewUrls} />
 
         {showActivity && (
           <section className={styles.activity}>
@@ -513,13 +495,13 @@ export default function AppDetail({ app }) {
                 message: "More in this category",
               })}
             </h2>
-            <ul className={styles.relatedGrid}>
+            <Grid as="ul" className={styles.relatedGrid}>
               {relatedApps.map((related) => (
                 <li key={related.slug}>
                   <AppTile app={related} />
                 </li>
               ))}
-            </ul>
+            </Grid>
             <Link
               className={styles.relatedMore}
               to={`/apps?tags=${app.category}`}
@@ -535,39 +517,25 @@ export default function AppDetail({ app }) {
           </section>
         )}
 
-        <aside className={styles.improve}>
-          <div className={styles.improveIcon} aria-hidden>
-            <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-              <path
-                fill="currentColor"
-                d="M12 3 2 8l10 5 10-5-10-5zm-8 9.5L12 17l8-4.5 2 1L12 19 2 13.5l2-1zm0 4L12 21l8-4.5 2 1L12 23 2 17.5l2-1z"
-              />
-            </svg>
-          </div>
-          <h2 className={styles.improveHeading}>
-            {translate({
-              id: "apps.detail.improveHeading",
-              message: "Spotted something off?",
-            })}
-          </h2>
-          <p className={styles.improveCopy}>
-            {translate({
-              id: "apps.detail.improveCopy",
-              message:
-                "This catalog is open source. Submit a pull request to update or correct this entry.",
-            })}
-          </p>
-          <Link href={APPS_JS_GITHUB_URL} className={styles.improveButton}>
-            <GitHubIcon />
-            {translate(
-              {
-                id: "apps.detail.improveButton",
-                message: "Edit {title} on GitHub",
-              },
-              { title: app.title }
-            )}
-          </Link>
-        </aside>
+        <EditOnGitHubCallout
+          title={translate({
+            id: "apps.detail.improveHeading",
+            message: "Spotted something off?",
+          })}
+          description={translate({
+            id: "apps.detail.improveCopy",
+            message:
+              "This catalog is open source. Submit a pull request to update or correct this entry.",
+          })}
+          href={APPS_JS_GITHUB_URL}
+          buttonLabel={translate(
+            {
+              id: "apps.detail.improveButton",
+              message: "Edit {title} on GitHub",
+            },
+            { title: app.title }
+          )}
+        />
       </main>
     </Layout>
   );

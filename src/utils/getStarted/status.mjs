@@ -24,7 +24,13 @@ export function drepKind(id) {
   return 'drep';
 }
 
-// row is account_info[0] from Koios, or undefined when the array was empty.
+// A stake key with no account_info row never appeared on chain, so it is
+// neither registered nor delegated. The balance stays unknown.
+export function noAccountStatus() {
+  return { ...emptyStatus(), stake: false, vote: false, stakeRegistered: false };
+}
+
+// row is account_info[0] from Koios. Without a usable row nothing is known.
 export function deriveStatus(row) {
   if (!row || typeof row !== 'object') return emptyStatus();
   const status = emptyStatus();

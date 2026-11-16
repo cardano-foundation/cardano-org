@@ -1,6 +1,5 @@
 import React from "react";
 import {translate} from '@docusaurus/Translate';
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import {
   WalletPlatforms,
   WalletFeatures,
@@ -8,38 +7,17 @@ import {
   WalletNodeTypes,
 } from "@site/src/data/walletFeatures";
 import { safeUrl } from "@site/src/utils/safeUrl";
+import LogoTile from "@site/src/components/Layout/LogoTile";
 import styles from "./styles.module.css";
 
 export default function WalletFinderCard({ wallet }) {
   const wf = wallet.walletFeatures;
   const isOpenSource = wallet.properties.includes("opensource");
-  const iconUrl = useBaseUrl(wallet.icon || "");
 
   return (
     <div className={styles.card}>
       <div className={styles.header}>
-        {wallet.icon ? (
-          <img
-            src={iconUrl}
-            alt={wallet.title}
-            className={styles.logo}
-            loading="lazy"
-            onError={(e) => {
-              e.target.style.display = "none";
-              e.target.nextSibling.style.display = "flex";
-            }}
-          />
-        ) : null}
-        {!wallet.icon && (
-          <div className={styles.logoFallback}>
-            {wallet.title.charAt(0).toUpperCase()}
-          </div>
-        )}
-        {wallet.icon && (
-          <div className={styles.logoFallback} style={{ display: "none" }}>
-            {wallet.title.charAt(0).toUpperCase()}
-          </div>
-        )}
+        <LogoTile src={wallet.icon} name={wallet.title} className={styles.logo} />
         <h3 className={styles.title}>{wallet.title}</h3>
       </div>
 

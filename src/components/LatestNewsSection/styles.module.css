@@ -3,9 +3,7 @@
 }
 
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  --grid-gap: var(--site-space-md);
   margin-bottom: 2.5rem;
 }
 
@@ -24,7 +22,7 @@
   text-decoration: none;
   color: inherit;
   overflow: hidden; /* clip the full-bleed thumbnail to the card radius */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease, border-color var(--site-duration-base) ease;
 }
 
 .cardImageWrapper {
@@ -71,7 +69,7 @@
 .categoryBadge[data-category="events"] { background: #b83280; }
 
 .newsCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--site-lift-lg));
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   border-color: var(--ifm-color-primary);
   text-decoration: none;
@@ -141,7 +139,6 @@
   text-align: center;
 }
 
-
 /* Dark mode */
 html[data-theme='dark'] .newsCard:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
@@ -154,11 +151,16 @@ html[data-theme='dark'] .newsCard:hover {
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    --grid-gap: var(--site-space-sm);
   }
 
   .desktopOnly {
     display: none;
   }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .categoryBadge {
+  background-color: var(--ifm-color-primary-darker);
 }

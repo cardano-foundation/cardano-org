@@ -12,7 +12,7 @@ const weights = [
 export default function TypographyShowcase() {
   return (
     <div>
-      <Divider
+      <Divider headingLevel={2}
         text={translate({ id: "brandAssets.typography.title", message: "Typography" })}
         id="typography"
       />
@@ -44,7 +44,7 @@ export default function TypographyShowcase() {
         <strong>Chivo</strong>{" "}
         {translate({
           id: "brandAssets.typography.credit",
-          message: "by Omnibus-Type —",
+          message: "by Omnibus-Type via",
         })}{" "}
         <a
           href="https://fonts.google.com/specimen/Chivo"

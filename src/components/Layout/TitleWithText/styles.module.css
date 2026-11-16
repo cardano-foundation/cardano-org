@@ -7,7 +7,7 @@
 }
 
 .titleTypeBlack {
-  color: var(--ifm-color-base);
+  color: inherit; /* --ifm-color-base never existed, so the heading always inherited its color */
 }
 
 html[data-theme="dark"] {

@@ -8,6 +8,12 @@ function parseStringValue(s) {
   return s.replace(/^"|"$/g, '').replace(/\\"/g, '"').replace(/\\n/g, ' ');
 }
 
+// The "mobile" property of a wallet is derived from walletFeatures.platforms.
+// Mirrors the derivation in src/data/apps.js.
+function isMobileWallet(platformsList) {
+  return /["'](ios|android)["']/.test(platformsList);
+}
+
 function parseShowcases(source) {
   const startMatch = source.match(/export const Showcases = \[/);
   if (!startMatch) throw new Error('Cannot find Showcases array');
@@ -18,12 +24,14 @@ function parseShowcases(source) {
 
   const entryRegex = /\{\s*\n\s*title:\s*"((?:[^"\\]|\\.)+)",[\s\S]*?(?:description:\s*(?:\n\s*)?"((?:[^"\\]|\\.)*)"[\s\S]*?)?(?:tagline:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?)?(?:icon:\s*"([^"]+)",[\s\S]*?)?(?:statsLabel:\s*"([^"]+)",[\s\S]*?)?(?:metadataLabel:\s*(\d+),[\s\S]*?)?website:\s*"([^"]+)"[\s\S]*?source:\s*(null|"[^"]+"),[\s\S]*?category:\s*"([^"]+)",[\s\S]*?properties:\s*\[([^\]]*)\],[\s\S]*?maintainerPick:\s*(true|false),[\s\S]*?(?:x:\s*"([^"]+)",[\s\S]*?)?(?:spotlight:\s*\{\s*url:\s*"([^"]+)",\s*title:\s*"((?:[^"\\]|\\.)+)",\s*date:\s*"([^"]+)",?\s*\},?[\s\S]*?)?\n\s*\},?/g;
 
-  // Preview is a webpack require() expression — not captured by the main regex
+  // Preview is a webpack require() expression, not captured by the main regex
   // because group ordering is too brittle to extend. Searched per-entry so missing
   // preview lines yield null instead of misaligning the array.
   const previewLineRegex = /preview:\s*require\(["']\.\/app-screenshots\/([^"']+)["']\)/;
   const extraPreviewsRegex = /extraPreviews:\s*\[([^\]]*)\]/;
   const extraPreviewItemRegex = /require\(["']\.\/app-screenshots\/([^"']+)["']\)/g;
+  const platformsRegex = /platforms:\s*\[([^\]]*)\]/;
+  const ogIconStyleRegex = /ogIconStyle:\s*"([^"]+)"/;
 
   const apps = [];
   let m;
@@ -31,6 +39,13 @@ function parseShowcases(source) {
     const entrySlice = block.slice(m.index, entryRegex.lastIndex);
     const previewMatch = entrySlice.match(previewLineRegex);
     const extraMatch = entrySlice.match(extraPreviewsRegex);
+    const platformsMatch = entrySlice.match(platformsRegex);
+    const ogIconStyleMatch = entrySlice.match(ogIconStyleRegex);
+    const properties = m[10]
+      .split(',')
+      .map((t) => t.trim().replace(/^"|"$/g, ''))
+      .filter(Boolean);
+    if (platformsMatch && isMobileWallet(platformsMatch[1])) properties.push('mobile');
     const extraPreviewFiles = [];
     if (extraMatch) {
       extraPreviewItemRegex.lastIndex = 0;
@@ -51,10 +66,7 @@ function parseShowcases(source) {
       website: m[7],
       source: parseStringValue(m[8]),
       category: m[9],
-      properties: m[10]
-        .split(',')
-        .map((t) => t.trim().replace(/^"|"$/g, ''))
-        .filter(Boolean),
+      properties,
       maintainerPick: m[11] === 'true',
       x: m[12] || null,
       spotlight: m[13]
@@ -64,6 +76,7 @@ function parseShowcases(source) {
             date: m[15],
           }
         : null,
+      ogIconStyle: ogIconStyleMatch ? ogIconStyleMatch[1] : null,
       previewFile: previewMatch ? previewMatch[1] : null,
       extraPreviewFiles,
     });
@@ -78,7 +91,7 @@ function assertEntryCountMatches(apps, block) {
   const titleCount = (block.match(/^ {4}title:\s*"/gm) || []).length;
   if (apps.length < titleCount) {
     throw new Error(
-      `Parsed ${apps.length} apps but found ${titleCount} title: lines — regex missed entries.`
+      `Parsed ${apps.length} apps but found ${titleCount} title: lines, regex missed entries.`
     );
   }
 }

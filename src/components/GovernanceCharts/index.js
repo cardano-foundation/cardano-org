@@ -41,22 +41,22 @@ const CATEGORY_DATA = {
   [CATEGORIES.CRITICAL_PARAMETER_CHANGES]: criticalParamCharts,
 };
 
-// Cardano governance parameters list
+// Cardano governance parameters list, grouped as in CIP-1694
 const manualParametersList = [
-  // Network Parameters
+  // Network group
   "maxBlockBodySize",
   "maxTxSize",
   "maxBlockHeaderSize",
   "maxValueSize",
   "maxBlockExecutionUnits",
   "maxTxExecutionUnits",
+  "maxCollateralInputs",
 
-  // Economic Parameters
+  // Economic group
   "txFeePerByte",
   "txFeeFixed",
   "minFeeRefScriptCoinsPerByte",
   "utxoCostPerByte",
-  "govDeposit",
   "minPoolCost",
   "stakeAddressDeposit",
   "stakePoolDeposit",
@@ -64,15 +64,15 @@ const manualParametersList = [
   "monetaryExpansion",
   "executionUnitPrices",
 
-  // Technical Parameters
+  // Technical group
   "stakePoolTargetNum",
   "poolPledgeInfluence",
   "poolRetireMaxEpoch",
   "collateralPercentage",
-  "maxCollateralInputs",
   "costModels",
 
-  // Governance Parameters
+  // Governance group
+  "govDeposit",
   "dRepDeposit",
   "committeeMinSize",
   "committeeMaxTermLength",
@@ -112,6 +112,10 @@ const sameSet = (a = [], b = []) => {
   return true;
 };
 
+// Order-insensitive fingerprint of the selection mirrored in the URL
+const selectionKey = ({ category, parameters, chart }) =>
+  [category || "", [...(parameters || [])].sort().join(","), chart || ""].join("|");
+
 export default function GovernanceCharts({
   initialCategory = null,
   initialChartId = null,
@@ -144,16 +148,11 @@ export default function GovernanceCharts({
   const [parametersDropdownOpen, setParametersDropdownOpen] = useState(false);
   const [selectedParameters, setSelectedParameters] = useState(initialParameters);
   // remember last selection
-  const lastReportedRef = useRef({ category: initialCategory || null, parameters: [...initialParameters].sort() });
-
-  const sameSelection = (a, b) => {
-    if ((a.category || null) !== (b.category || null)) return false;
-    const ap = [...(a.parameters || [])].sort();
-    const bp = [...(b.parameters || [])].sort();
-    if (ap.length !== bp.length) return false;
-    for (let i = 0; i < ap.length; i++) if (ap[i] !== bp[i]) return false;
-    return true;
-  };
+  const lastReportedRef = useRef(selectionKey({
+    category: initialCategory,
+    parameters: initialParameters,
+    chart: initialChartId,
+  }));
   const [activeChartId, setActiveChartId] = useState(initialChartId);
 
   const parametersDropdownRef = useRef(null);
@@ -161,6 +160,10 @@ export default function GovernanceCharts({
   const activeChartRef = useRef(null);
 
   const lastUrlSigRef = useRef(urlSignature);
+  // Set when the URL changed from outside. The state updates it triggers land
+  // in the next render, so the report effect in this commit must not write
+  // the old selection back into the URL.
+  const skipReportRef = useRef(false);
 
   //useEffect(() => { console.log('PARAMS', selectedParameters) }, [selectedParameters]);
 
@@ -173,21 +176,23 @@ export default function GovernanceCharts({
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setActiveCategory(initialCategory || null);
         setActiveGraphIndex(null);
-        setActiveChartId(null);
       }
       if (!sameSet(initialParameters, selectedParameters)) {
         setSelectedParameters(initialParameters || []);
         setActiveGraphIndex(null);
-        setActiveChartId(null);
       }
+      // The URL is the source of truth for the open chart as well.
+      setActiveChartId(initialChartId || null);
       lastUrlSigRef.current = urlSignature;
-      lastReportedRef.current = {
-        category: initialCategory || null,
-        parameters: [...(initialParameters || [])].sort(),
-      };
+      skipReportRef.current = true;
+      lastReportedRef.current = selectionKey({
+        category: initialCategory,
+        parameters: initialParameters,
+        chart: initialChartId,
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlSignature, initialCategory, initialParameters]);
+  }, [urlSignature, initialCategory, initialParameters, initialChartId]);
 
 
   useEffect(() => {
@@ -260,49 +265,54 @@ export default function GovernanceCharts({
   // URL sync: report selection changes upward
   // ────────────────────────────────────────────────────────────────────────
   useEffect(() => {
-    const current = { category: activeCategory || null, parameters: selectedParameters };
-    if (!sameSelection(current, lastReportedRef.current)) {
-      lastReportedRef.current = { category: current.category, parameters: [...current.parameters].sort() };
+    if (skipReportRef.current) {
+      skipReportRef.current = false;
+      return;
+    }
+    const current = {
+      category: activeCategory || null,
+      parameters: selectedParameters,
+      chart: activeChartId || null,
+    };
+    const key = selectionKey(current);
+    if (key !== lastReportedRef.current) {
+      lastReportedRef.current = key;
       onSelectionChange?.(current);
     }
-  }, [activeCategory, selectedParameters, onSelectionChange]);
+  }, [activeCategory, selectedParameters, activeChartId, onSelectionChange]);
 
   // Event handlers
   const handleCategorySelect = (category) => {
     setActiveCategory(category === activeCategory ? null : category);
+    setActiveChartId(null);
     setSearchTerm("");
   };
 
-  const handleGraphSelect = (index, category, event) => {
-    if (
-      event.target.closest(".Collapsible__trigger") ||
-      event.target.closest(".graphTitle")
-    ) {
-      const selectedGraph =
-        searchTerm || selectedParameters.length > 0
-          ? searchResults[index]
-          : graphsData[category][index];
+  const handleGraphSelect = (index, category) => {
+    const selectedGraph =
+      searchTerm || selectedParameters.length > 0
+        ? searchResults[index]
+        : graphsData[category][index];
 
-      const isAlreadyActive = activeChartId === selectedGraph.id;
+    const isAlreadyActive = activeChartId === selectedGraph.id;
 
-      if (isAlreadyActive) {
-        setActiveChartId(null);
-        setActiveGraphIndex(null);
-        return;
-      }
+    if (isAlreadyActive) {
+      setActiveChartId(null);
+      setActiveGraphIndex(null);
+      return;
+    }
 
-      if (!(selectedParameters.length > 0)) {
-        setActiveCategory(category);
-      }
+    if (!(selectedParameters.length > 0)) {
+      setActiveCategory(category);
+    }
 
-      setActiveChartId(selectedGraph.id);
+    setActiveChartId(selectedGraph.id);
 
-      if (category && !(selectedParameters.length > 0)) {
-        const categoryIndex = graphsData[category].findIndex(
-          (graph) => graph.id === selectedGraph.id
-        );
-        setActiveGraphIndex(categoryIndex);
-      }
+    if (category && !(selectedParameters.length > 0)) {
+      const categoryIndex = graphsData[category].findIndex(
+        (graph) => graph.id === selectedGraph.id
+      );
+      setActiveGraphIndex(categoryIndex);
     }
   };
 
@@ -323,6 +333,7 @@ export default function GovernanceCharts({
     setSelectedParameters([]);
     setSearchTerm("");
     setActiveCategory(null);
+    setActiveChartId(null);
   };
 
   const toggleParametersDropdown = () => {
@@ -447,24 +458,24 @@ export default function GovernanceCharts({
               : translate({id: 'governanceCharts.paramFilteredCharts', message: 'Parameter Filtered Charts:'})}
           </div>
           {searchResults.length > 0 ? (
-            <div className={`${styles.graphList} Collapsible`}>
+            <div className={styles.graphList}>
               {searchResults.map((graph, index) => (
                 <div
                   key={index}
                   ref={activeChartId === graph.id ? activeChartRef : null}
-                  className={`${styles.graphItem} Collapsible ${
-                    index % 2 === 0 ? "even" : "odd"
-                  } ${activeChartId === graph.id ? "active" : ""}`}
+                  className={`${styles.graphItem} ${
+                    index % 2 === 0 ? styles.even : styles.odd
+                  }`}
                 >
                   <div
-                    className="Collapsible__trigger"
+                    className={styles.trigger}
                     role="button"
                     tabIndex={0}
-                    onClick={(e) => handleGraphSelect(index, graph.category, e)}
+                    onClick={() => handleGraphSelect(index, graph.category)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        handleGraphSelect(index, graph.category, e);
+                        handleGraphSelect(index, graph.category);
                       }
                     }}
                   >
@@ -476,7 +487,7 @@ export default function GovernanceCharts({
                     </h4>
                   </div>
                   {activeChartId === graph.id && (
-                    <div className={`${styles.graphContent} Collapsible__contentInner`}>
+                    <div className={styles.graphContent}>
                       <p className={styles.graphDescription}>
                         {graph.description}
                       </p>
@@ -521,24 +532,24 @@ export default function GovernanceCharts({
         graphsData[activeCategory].length > 0 ? (
         <div className={styles.graphSelection}>
           <div className={styles.selectionTitle}>{translate({id: 'governanceCharts.selectChart', message: 'Select a chart:'})}</div>
-          <div className={`${styles.graphList} Collapsible`}>
+          <div className={styles.graphList}>
             {graphsData[activeCategory].map((graph, index) => (
               <div
                 key={index}
                 ref={activeChartId === graph.id ? activeChartRef : null}
-                className={`${styles.graphItem} Collapsible ${
-                  index % 2 === 0 ? "even" : "odd"
-                } ${activeChartId === graph.id ? "active" : ""}`}
+                className={`${styles.graphItem} ${
+                  index % 2 === 0 ? styles.even : styles.odd
+                }`}
               >
                 <div
-                  className="Collapsible__trigger"
+                  className={styles.trigger}
                   role="button"
                   tabIndex={0}
-                  onClick={(e) => handleGraphSelect(index, activeCategory, e)}
+                  onClick={() => handleGraphSelect(index, activeCategory)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      handleGraphSelect(index, activeCategory, e);
+                      handleGraphSelect(index, activeCategory);
                     }
                   }}
                 >
@@ -548,7 +559,7 @@ export default function GovernanceCharts({
                   </h4>
                 </div>
                 {activeChartId === graph.id && (
-                  <div className={`${styles.graphContent} Collapsible__contentInner`}>
+                  <div className={styles.graphContent}>
                     <p className={styles.graphDescription}>
                       {graph.description}
                     </p>

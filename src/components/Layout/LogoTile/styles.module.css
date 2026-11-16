@@ -1,0 +1,50 @@
+/*
+ * Tile defaults at zero specificity, so the caller's class can set the
+ * variables, also per breakpoint. The fallback state takes its own
+ * background and radius, which default to the tile's, so a round fallback
+ * can sit where a square image would.
+ */
+:where(.tile) {
+  --logo-size: 48px;
+  --logo-radius: 8px;
+  --logo-bg: transparent;
+  --logo-image-size: 100%;
+  --logo-fit: contain;
+  --logo-fallback-color: currentColor;
+  --logo-fallback-font-size: 1rem;
+  --logo-fallback-weight: 700;
+  --logo-fallback-line-height: normal;
+  --logo-fallback-spacing: normal;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: var(--logo-radius);
+  background: var(--logo-bg);
+}
+
+.withFallback {
+  border-radius: var(--logo-fallback-radius, var(--logo-radius));
+  background: var(--logo-fallback-bg, var(--logo-bg));
+}
+
+.image {
+  display: block;
+  width: var(--logo-image-size);
+  height: var(--logo-image-size);
+  object-fit: var(--logo-fit);
+}
+
+.letters {
+  color: var(--logo-fallback-color);
+  font-size: var(--logo-fallback-font-size);
+  font-weight: var(--logo-fallback-weight);
+  line-height: var(--logo-fallback-line-height);
+  letter-spacing: var(--logo-fallback-spacing);
+}

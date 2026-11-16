@@ -34,6 +34,9 @@
   --site-color-tooltip: #ffffff;
   --site-color-tooltip-background: #353738;
   --site-color-checkbox-checked-bg: rgba(0, 51, 173, 0.08);
+  /* On-chain activity figures and live dots on app cards, 5.3:1 on its own 12% tint */
+  --site-activity: #1b6e4e;
+  --site-activity-rgb: 27, 110, 78;
 
   /* ===================== Design tokens (Phase 1) =====================
    * New site vocabulary. Categories Infima already owns (brand ramp,
@@ -83,7 +86,11 @@
   --site-duration-base: 200ms;
   --site-duration-slow: 300ms;
   --site-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --site-lift-xs: -1px;
   --site-lift: -2px;
+  --site-lift-md: -3px;
+  --site-lift-lg: -4px;
+  --site-nudge: 3px;
 
   /* Focus ring (box-shadow variant; outline baseline is global below) */
   --site-focus-ring: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.5);
@@ -93,6 +100,22 @@
   --site-tier-silver: #8e9aab;
   --site-tier-bronze: #c98b5e;
   --site-tier-ink: #1b2333;
+
+  /* Governance roles. One accent per group that votes, used wherever the
+   * site tells the groups apart (charts, diagrams, legends). Hues and
+   * lightness are chosen so the four stay apart under protanopia,
+   * deuteranopia and tritanopia, and every value meets 4.5:1 on white, so
+   * small text can use them too. */
+  --site-role-drep: #0033ad;
+  --site-role-committee: #0077cc;
+  --site-role-pool: #d6336c;
+  --site-role-funding: #a16207;
+
+  /* Governance votes. Yes and No differ in lightness as well as hue, so
+   * they stay apart for red-green color blindness. Abstain is a neutral. */
+  --site-vote-yes: #075e35;
+  --site-vote-no: #d1440c;
+  --site-vote-abstain: #6b7280;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -111,6 +134,8 @@
   --site-color-tooltip: #1c1e21;
   --site-color-tooltip-background: #f5f6f7;
   --site-color-checkbox-checked-bg: rgba(102, 132, 206, 0.18);
+  --site-activity: #4cc38a;
+  --site-activity-rgb: 76, 195, 138;
 
   /* Dark-mode token overrides */
   --site-success: #46b883;
@@ -128,6 +153,15 @@
   /* Tier fills are light in both themes, so the ink stays the same dark
      value here instead of inverting with the rest of the dark palette. */
   --site-tier-ink: #1b2333;
+
+  /* Governance roles and votes, lifted for dark backgrounds */
+  --site-role-drep: #8fb1ff;
+  --site-role-committee: #089667;
+  --site-role-pool: #ff8fb8;
+  --site-role-funding: #f0c040;
+  --site-vote-yes: #8ff0b8;
+  --site-vote-no: #e5683d;
+  --site-vote-abstain: #9aa1ad;
 }
 
 .header-discord-link:before {
@@ -150,6 +184,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduced motion: the motion tokens drop to zero, so every transition and
+   hover lift built on them stops without a block of its own. See "Motion" in
+   docs/get-involved/design-tokens.md. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --site-duration-fast: 0ms;
+    --site-duration-base: 0ms;
+    --site-duration-slow: 0ms;
+    --site-lift-xs: 0px;
+    --site-lift: 0px;
+    --site-lift-md: 0px;
+    --site-lift-lg: 0px;
+    --site-nudge: 0px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Global keyboard-focus baseline (Phase 1). Components may override. */
 :focus-visible {
   outline: 2px solid var(--ifm-color-primary);
@@ -160,6 +214,65 @@ html {
 .button {
   border-radius: 30px;
   font-weight: 400;
+}
+
+/* Infima keeps button labels on one line. Long labels, especially translated
+   ones, then push the page wider than a phone screen, so let them wrap. */
+@media (max-width: 996px) {
+  .button {
+    white-space: normal;
+    max-width: 100%;
+  }
+}
+
+/* Site-wide Infima button default: brand-blue fill and border with white
+   text for a .button without a variant. */
+:root {
+  --ifm-button-background-color: #0033AD;
+  --ifm-button-border-color: #0033AD;
+  --ifm-button-color: #fff;
+}
+
+/* White pill button for brand-blue and navy bands. Light theme: white with
+   brand-blue text. Dark theme: the lightest primary blue with navy text, so
+   the button does not glare against the dark UI. The variant sets its own
+   size and type, so combine it with .button only:
+   className="button button--pill-white". */
+.button.button--pill-white {
+  --ifm-button-background-color: #ffffff;
+  --ifm-button-border-color: #ffffff;
+  --ifm-button-border-width: 0;
+  --ifm-button-color: #0033ad;
+  padding: var(--site-space-sm) 40px;
+  border-radius: var(--site-radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  white-space: normal;
+}
+
+.button.button--pill-white:hover,
+.button.button--pill-white:active {
+  --ifm-button-background-color: #eef1f8;
+  --ifm-button-border-color: #eef1f8;
+}
+
+[data-theme="dark"] .button.button--pill-white {
+  --ifm-button-background-color: var(--ifm-color-primary-lightest);
+  --ifm-button-border-color: var(--ifm-color-primary-lightest);
+  --ifm-button-color: #0a1031;
+}
+
+[data-theme="dark"] .button.button--pill-white:hover,
+[data-theme="dark"] .button.button--pill-white:active {
+  --ifm-button-background-color: var(--ifm-color-primary-lighter);
+  --ifm-button-border-color: var(--ifm-color-primary-lighter);
+}
+
+/* The brand-blue focus ring is invisible on blue and navy bands. */
+.button.button--pill-white:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 .centered-link {
@@ -198,7 +311,6 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   margin: 0;
   box-sizing: border-box;
 }
-
 
 /* The navbar needs a little space so that the Cardano logo can breathe */
 .navbar {
@@ -268,6 +380,19 @@ h4 {
   line-height: 1.2;
 }
 
+/* Long compound words in large headings, common in German, are wider than a
+   phone screen. Hyphenate by the page language on small screens, and break
+   inside a word only when no hyphenation point fits. */
+@media (max-width: 996px) {
+  h1,
+  h2,
+  h3 {
+    hyphens: auto;
+    hyphenate-limit-chars: 12 4 4; /* only long words, where supported */
+    overflow-wrap: break-word;
+  }
+}
+
 h5 {
   font-family: Chivo, sans-serif;
   font-weight: 700;
@@ -281,6 +406,69 @@ h6 {
   font-family: Chivo, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin: 2.75rem 0 1.05rem;
+}
+
+/* SiteHero title rendered without heading semantics (headingLevel 0) keeps
+   the h1 typography. */
+.hero__title--text {
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin: 2.75rem 0 1.05rem;
+}
+
+/* Keep the look of a heading level on a different element. Used through
+   src/utils/heading.js when a component's headingLevel differs from its
+   default, so the document outline can change without changing the design.
+   headingLevel 0 renders a div, which needs the shared heading typography too. */
+.heading-look-h1,
+.heading-look-h2,
+.heading-look-h3,
+.heading-look-h4,
+.heading-look-h6 {
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+}
+
+.heading-look-h1 {
+  font-size: var(--ifm-h1-font-size);
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 2.75rem 0 1.05rem;
+}
+
+.heading-look-h2,
+.heading-look-h3 {
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
+  text-transform: none;
+  margin: 2.75rem 0 1.05rem;
+}
+
+.heading-look-h2 {
+  font-size: var(--ifm-h2-font-size);
+}
+
+.heading-look-h3 {
+  font-size: var(--ifm-h3-font-size);
+}
+
+.heading-look-h4 {
+  font-size: var(--ifm-h4-font-size);
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  margin: var(--ifm-heading-margin-top) 0 var(--ifm-heading-margin-bottom);
+}
+
+.heading-look-h6 {
+  font-size: 0.7rem;
   line-height: 1.4;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -335,6 +523,11 @@ img {
 }
 
 .slight-text {
+  /* #bbbbbb was 1.9:1 on white, #6f6f6f keeps the muted look at 5:1 */
+  color: #6f6f6f;
+}
+
+[data-theme="dark"] .slight-text {
   color: rgb(187, 187, 187);
 }
 
@@ -368,92 +561,6 @@ img {
   background-color: transparent;
 }
 
-/** Collapsible FAQ **/
-
-.Collapsible {
-  border: none;
-}
-
-.Collapsible__trigger {
-  background: transparent;
-  color: var(--ifm-base-color);
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.Collapsible__trigger:after {
-  display: block;
-  content: "";
-  width: 1em;
-  /* Adjust size as needed */
-  height: 1em;
-  /* Adjust size as needed */
-  transition: transform 0.3s ease;
-  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.Collapsible__trigger.is-open:after {
-  transform: rotate(180deg);
-}
-
-.Collapsible__contentOuter {
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-
-.Collapsible__contentInner {
-  padding: 1rem;
-}
-
-/*  alternating background styles */
-.Collapsible.odd {
-  background-color: #f6f7f9;
-  /* odd rows */
-}
-
-.Collapsible.even {
-  background-color: #fdfdfb;
-  /* even rows */
-}
-
-[data-theme="dark"] .Collapsible.odd {
-  background-color: #f6f7f9;
-  /* odd rows */
-}
-
-[data-theme="dark"] .Collapsible.even {
-  background-color: #fdfdfb;
-  /* even rows */
-}
-
-
-[data-theme="dark"] .Collapsible.odd {
-  background-color: #2d2d2d;
-  /* dark gray for odd rows in dark mode */
-}
-
-[data-theme="dark"] .Collapsible.even {
-  background-color: #252525;
-  /* slightly darker gray for even rows in dark mode */
-}
-
-.Collapsible ul {
-  list-style-type: disc;
-  /* This makes standard bullets */
-  margin-left: 20px;
-  /* Adjust indentation of the list */
-  padding-left: 0;
-}
-
 /* tabs (like partners, benefits) */
 
 .tabIcon {
@@ -468,35 +575,6 @@ img {
 
 [data-theme="dark"] .tabCategory {
   color: #e0e0e0;
-}
-
-/* transition (tabs) */
-@keyframes swipeIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes swipeOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.swipeIn {
-  animation: swipeIn 0.5s forwards;
 }
 
 /* Mega menu styles */
@@ -534,7 +612,6 @@ img {
   opacity: 0.9;
 }
 
-
 /* Panel: centered under its trigger, kept in the DOM so it can animate.
    Width comes from its content (tile plus fixed-width columns).
    --mega-menu-shift is set by the React component when the centered
@@ -567,12 +644,6 @@ img {
   visibility: visible;
   transform: translate(calc(-50% + var(--mega-menu-shift, 0px)), 0);
   pointer-events: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .megaMenuPanel {
-    transition: none;
-  }
 }
 
 /* Invisible bridge over the trigger-to-panel gap so the pointer can travel
@@ -670,7 +741,6 @@ img {
   filter: brightness(1.15);
 }
 
-
 .megaMenuColumnTitle {
   font-size: 0.85rem;
   font-weight: 600;
@@ -682,14 +752,13 @@ img {
   gap: 6px;
 }
 
-
 .megaMenuItemLink {
   display: flex;
   align-items: center;
   padding: 8px 12px;
   margin: 0 -12px;
   border-radius: 4px;
-  transition: background-color 0.15s ease;
+  transition: background-color var(--site-duration-fast) ease;
   text-decoration: none;
   color: inherit;
   gap: 12px;
@@ -764,11 +833,6 @@ img {
   }
 }
 
-.swipeOut {
-  animation: swipeOut 0.5s forwards;
-}
-
-
 /* section caret */
 
 :root {
@@ -777,6 +841,14 @@ img {
 
 [data-theme="dark"] {
   --section-caret-fill-color: #1b1b1d;
+}
+
+/* Infima leaves the light page background transparent, so the browser's own
+   canvas colour shows through (some embedded browsers paint it grey). Pin the
+   page to white so it matches the white section caret. Only the page itself:
+   components use --ifm-background-color as "transparent" on purpose. */
+html[data-theme="light"] {
+  background-color: #ffffff;
 }
 
 .sectionCaret polygon {
@@ -797,13 +869,14 @@ img {
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
-  margin-left: -1000px;
+  /* Half the width, so the caret tip sits exactly in the middle. */
+  margin-left: -1024px;
 }
-
 
 /* screen size changes */
 @media screen and (max-width: 576px) {
-  .hero h1 {
+  .hero h1,
+  .hero .hero__title--text {
     font-size: 32px;
   }
 
@@ -825,7 +898,8 @@ img {
 }
 
 @media screen and (min-width: 1950px) {
-  .hero h1 {
+  .hero h1,
+  .hero .hero__title--text {
     font-size: 48px;
   }
 
@@ -840,19 +914,6 @@ img {
   }
 }
 
-/* Medusa header */
-#medusa-root {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-#medusa-root > div {
-  position: absolute;
-  inset: 0;
-}
-
-
 /* DocSearch button styling - rounded corners */
 .DocSearch-Button {
   border-radius: 30px !important;
@@ -860,7 +921,7 @@ img {
   height: 36px !important;
   border: 1px solid var(--ifm-color-emphasis-300) !important;
   background: var(--ifm-background-surface-color) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: border-color var(--site-duration-base) ease, box-shadow var(--site-duration-base) ease !important;
 }
 
 .DocSearch-Button:hover {
@@ -907,3 +968,30 @@ img {
   order: 10;
 }
 
+/* Footer columns: Infima stacks every column full width below 996px,
+   which wastes space on foldables and large phones. Two columns fit
+   the longest localized link labels from 480px up */
+@media (min-width: 480px) and (max-width: 996px) {
+  .footer__links > .footer__col {
+    --ifm-col-width: 50%;
+  }
+}
+
+/* White text on the dark-mode primary (#6684ce) reaches only 3.6:1, the darker
+   step of the ramp keeps it at 6.8:1. */
+html[data-theme='dark'] .megaMenuFeaturedCta {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+/* Primary buttons in dark mode: white text on the dark-mode primary (#6684ce)
+   reaches only 3.6:1. The darker step keeps it at 6.8:1, hover lightens to the
+   dark step (5.6:1). Outline buttons keep their transparent fill. */
+html[data-theme='dark'] .button--primary:not(.button--outline) {
+  --ifm-button-background-color: var(--ifm-color-primary-darker);
+  --ifm-button-border-color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='dark'] .button--primary:not(.button--outline):hover {
+  --ifm-button-background-color: var(--ifm-color-primary-dark);
+  --ifm-button-border-color: var(--ifm-color-primary-dark);
+}

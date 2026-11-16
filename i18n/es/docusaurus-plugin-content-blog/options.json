@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Noticias de Cardano",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Mantente al día con Cardano: informes semanales de desarrollo, resúmenes sobre la comunidad, novedades sobre gobernanza y anuncios del ecosistema.",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Publicaciones recientes",
+    "description": "The label for the left sidebar"
+  }
+}

@@ -27,7 +27,7 @@ export const NATIVE_STABLECOINS = [
     ],
     tagline: translate({
       id: "stablecoins.usdcx.tagline",
-      message: "USDCx — The world's most trusted stablecoin, now on Cardano.",
+      message: "USDCx: The world's most trusted stablecoin, now on Cardano.",
     }),
     body: [
       translate({
@@ -79,7 +79,7 @@ export const NATIVE_STABLECOINS = [
     ],
     tagline: translate({
       id: "stablecoins.usdm.tagline",
-      message: "USDM — Cardano's original fiat-backed stablecoin.",
+      message: "USDM: Cardano's original fiat-backed stablecoin.",
     }),
     body: [
       translate({
@@ -206,7 +206,7 @@ export const NATIVE_STABLECOINS = [
     ],
     tagline: translate({
       id: "stablecoins.djed.tagline",
-      message: "DJED — The first mathematically proven stablecoin in history.",
+      message: "DJED: The first mathematically proven stablecoin in history.",
     }),
     body: [
       translate({
@@ -262,7 +262,7 @@ export const NATIVE_STABLECOINS = [
     ],
     tagline: translate({
       id: "stablecoins.iusd.tagline",
-      message: "iUSD — Earn yield while your collateral stays on-chain.",
+      message: "iUSD: Earn yield while your collateral stays on-chain.",
     }),
     body: [
       translate({
@@ -273,7 +273,7 @@ export const NATIVE_STABLECOINS = [
       translate({
         id: "stablecoins.iusd.body2",
         message:
-          "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol — Cardano's synthetic asset platform — it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD.",
+          "iUSD is a dollar-pegged asset fully on-chain and free of any custodian or bank relationship. Issued by Indigo Protocol (Cardano's synthetic asset platform), it allows users to lock ada as collateral in a collateralized debt position (CDP) to mint iUSD.",
       }),
       translate({
         id: "stablecoins.iusd.body3",
@@ -368,7 +368,7 @@ export const BRIDGED_STABLECOINS = [
 ];
 
 // Three categories used in the Explainer section.
-// Order matches Figma: Fiat-backed → Crypto-backed → Synthetic.
+// Order matches Figma: Fiat-backed, Crypto-backed, Synthetic.
 export const TYPE_DEFINITIONS = [
   {
     id: "fiat-backed",
@@ -444,7 +444,7 @@ export const WHY_CARDANO_REASONS = [
       translate({
         id: "stablecoins.whyCardano.fees.body1",
         message:
-          "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee — or watch transactions fail while still paying the cost.",
+          "Nobody should be surprised by a transaction fee. Yet on congested networks, users routinely pay multiples of their intended fee, or watch transactions fail while still paying the cost.",
       }),
       translate({
         id: "stablecoins.whyCardano.fees.body2",
@@ -493,7 +493,7 @@ export const WHY_CARDANO_REASONS = [
       translate({
         id: "stablecoins.whyCardano.governance.body1",
         message:
-          "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves — transparently, on-chain, and with verifiable results.",
+          "In 2025, the Cardano community voted on-chain to allocate 70 million ada from the treasury to accelerate stablecoin adoption, bringing USDCx to Cardano. The decision wasn't made by a company, a board, or an opaque leadership in a closed meeting room. It was made by the ada holders themselves: transparently, on-chain, and with verifiable results.",
       }),
       translate({
         id: "stablecoins.whyCardano.governance.body2",

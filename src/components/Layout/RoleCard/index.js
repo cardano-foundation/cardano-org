@@ -9,6 +9,17 @@ const ACCENT_CLASS = {
   teal: styles.accentTeal,
 };
 
+/**
+ * Card with an optional orbit-framed icon, a title, and a description, optionally linked.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} [props.icon] Icon inside the orbit halo. The halo is omitted without it.
+ * @param {React.ReactNode} props.title Card title.
+ * @param {React.ReactNode} [props.children] Card description.
+ * @param {string} [props.accent="blue"] Accent color: "blue", "violet", or "teal".
+ * @param {string} [props.href] Link target. Turns the whole card into a link.
+ * @param {string} [props.className] Extra class on the card.
+ */
 export default function RoleCard({
   icon,
   title,
