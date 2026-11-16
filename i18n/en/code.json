@@ -2174,6 +2174,9 @@
   "events.featured.thisWeek": {
     "message": "This week"
   },
+  "events.featured.happeningNow": {
+    "message": "Happening now"
+  },
   "events.recaps.title": {
     "message": "Recent event recaps"
   },

@@ -1984,6 +1984,27 @@ export const Showcases = [
     x: "superonchain",
   },
   {
+    title: "DRep Forum",
+    description:
+      "Discover DReps and voting histories, register or manage your DRep, delegate from your wallet, vote with rationales, and trace treasury withdrawals to funded projects and vendors.",
+    tagline: "Explore DReps, register, vote, delegate & track treasury",
+    preview: require("./app-screenshots/drep-forum.webp"),
+    extraPreviews: [
+      require("./app-screenshots/drep-forum-drep-profile.webp"),
+      require("./app-screenshots/drep-forum-governance-action.webp"),
+      require("./app-screenshots/drep-forum-epoch-report.webp"),
+      require("./app-screenshots/drep-forum-vendors.webp"),
+      require("./app-screenshots/drep-forum-stake-pools.webp"),
+    ],
+    icon: "/img/app-icons/drep-forum.svg",
+    website: "https://drep.forum",
+    source: null,
+    category: "governance",
+    properties: ["drepdelegation"],
+    x: "DRepForum",
+    maintainerPick: false,
+  },
+  {
     title: "1694.io",
     description:
       "DRep campaign platform on Cardano where DReps build profiles, share updates, and connect with delegators, with live voting history and CIP-1694 resources.",

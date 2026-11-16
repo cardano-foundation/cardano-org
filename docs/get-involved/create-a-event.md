@@ -22,15 +22,15 @@ Its purpose is to amplify events that offer value to a broader audience, showcas
 
 The page merges two sources at runtime:
 
-*   **The Luma calendar.** Upcoming events on [lu.ma/CardanoEvents](https://lu.ma/CardanoEvents) are fetched from the official Luma API through the `data.cardano.org` proxy (`src/utils/events/useLumaEvents.js`). This is the full list of meetups, working group calls, and community events. Nothing in the repository needs to change for a Luma event to appear.
+*   **The Luma calendar.** Events on [lu.ma/CardanoEvents](https://lu.ma/CardanoEvents) are fetched from the official Luma API through the `data.cardano.org` proxy (`src/utils/events/useLumaEvents.js`). This is the full list of meetups, working group calls, and community events. Nothing in the repository needs to change for a Luma event to appear.
 *   **Curated highlights.** `src/data/events.json` holds the hand-picked conferences and summits, plus the recap videos of past events. These entries feed the "Featured upcoming events" row at the top of the page and the "Recent event recaps" row at the bottom, and they are also part of the main list.
 
 A few merge rules are worth knowing before you edit the JSON (`src/utils/events/eventModel.js`):
 
 *   **Luma wins on duplicates.** If a curated entry and a Luma event share the same title and start day, the Luma version is shown and the JSON entry is dropped. Use the exact Luma title if you want the two to match.
-*   **Recurring series are collapsed.** Events that repeat under the same title (for example the weekly working group calls) are shown as a single row with their next occurrence.
-*   **Past events come from the JSON only.** The Luma feed only returns upcoming events, so once an event is over it stays on the page only if it has a curated entry. Past entries with a `recapVideo` appear in "Recent event recaps" and under the "Past" filter.
-*   **Featured means curated and upcoming.** The featured row shows the next upcoming curated entries (up to 10). It has no separate flag, so every upcoming JSON entry is a highlight.
+*   **Recurring series are collapsed.** Events that repeat under the same title (for example the weekly working group calls) are shown as a single row with their next occurrence. The calendar view shows every occurrence on its own day.
+*   **Past Luma events stay for 90 days.** The "Past" filter and the calendar load the Luma events of the last 90 days. After that an event stays on the page only if it has a curated entry. Past curated entries with a `recapVideo` also appear in "Recent event recaps".
+*   **Featured means curated and not over yet.** The featured row shows the running and upcoming curated entries (up to 10). An event counts as upcoming until its last day has passed. It has no separate flag, so every upcoming JSON entry is a highlight.
 
 ## When to add a JSON entry
 
@@ -113,9 +113,9 @@ Edit the `events.json` file in the `src/data/` directory. Add a new entry at the
 | Field | Required | Notes |
 |-------|----------|-------|
 | `title` | Yes | Shown on the card. Also the key for de-duplication against Luma and for collapsing recurring series. |
-| `description` | Yes | Max 400 characters. The current cards do not render it, it is kept as the record of the submission. |
-| `startDate` | Yes | `YYYY-MM-DD`. Decides whether the event is upcoming, past, or featured. |
-| `endDate` | Yes | `YYYY-MM-DD`, or `""` for single-day events. Multi-day events span the calendar view. |
+| `description` | Yes | Max 400 characters. The current cards do not render it, it is kept as the record of the submission and is covered by the search. |
+| `startDate` | Yes | `YYYY-MM-DD`. Sets the position in the list and the calendar. |
+| `endDate` | Yes | `YYYY-MM-DD`, or `""` for single-day events. Multi-day events span the calendar view. The event stays upcoming and featured through this day. |
 | `location` | Yes | Free text, usually city and country. Used by the location label and the search. |
 | `link` | Yes | Registration or event page. The card's "View event" link. |
 | `image` | Yes | Bare filename under `static/img/events/`. Leave `""` to fall back to the Cardano logo. |

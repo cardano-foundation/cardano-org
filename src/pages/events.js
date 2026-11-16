@@ -10,7 +10,14 @@ import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import curatedEvents from "@site/src/data/events.json";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { mergeEvents, collapseRecurringSeries } from "@site/src/utils/events/eventModel";
+import {
+  mergeEvents,
+  matchesEventQuery,
+  selectByTime,
+  selectFeatured,
+  selectRecaps,
+  utcDayStartMs,
+} from "@site/src/utils/events/eventModel";
 import { EVENT_CATEGORIES } from "@site/src/utils/events/categories";
 import useLumaEvents from "@site/src/utils/events/useLumaEvents";
 import EventCard from "@site/src/components/Events/EventCard";
@@ -29,25 +36,10 @@ const SUBMIT_EVENT_URL = "https://cardanocommunity.typeform.com/submit-event";
 // upcoming ones (not strictly bound to the current calendar month).
 const FEATURED_LIMIT = 10;
 
-function todayUtcStart() {
-  const now = new Date();
-  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-}
-
 function matchesPlace(event, place) {
   if (place === "online") return event.online;
   if (place === "inperson") return !event.online;
   return true;
-}
-
-function matchesQuery(event, query) {
-  const q = (query || "").trim().toLowerCase();
-  if (!q) return true;
-  const haystack = [event.title, event.location?.label, event.organizer]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-  return haystack.includes(q);
 }
 
 function matchesCategory(event, category) {
@@ -105,7 +97,6 @@ function HomepageHeader({ filters, onChange }) {
 export default function Events() {
   const lumaLogoUrl = useBaseUrl("/img/events/platform-luma.png");
   const meetupLogoUrl = useBaseUrl("/img/events/platform-meetup.png");
-  const { entries: lumaEntries } = useLumaEvents();
   const [view, setView] = useState("list");
   const [filters, setFilters] = useState(() => ({
     place: "all",
@@ -124,55 +115,53 @@ export default function Events() {
     window.history.replaceState(null, "", url.toString());
   }, [filters.category]);
 
-  const allEvents = useMemo(
-    () =>
-      collapseRecurringSeries(
-        mergeEvents(curatedEvents, lumaEntries),
-        todayUtcStart(),
-      ),
+  // Past community events are only needed off the default view, so they load
+  // the first time the visitor opens Past, All or the calendar.
+  const { entries: lumaEntries } = useLumaEvents({
+    includePast: filters.time !== "upcoming" || view === "calendar",
+  });
+
+  // Reference day for upcoming versus past. A number, so memos only rerun when
+  // the UTC day changes.
+  const todayMs = utcDayStartMs();
+
+  // Every occurrence of every event.
+  const mergedEvents = useMemo(
+    () => mergeEvents(curatedEvents, lumaEntries),
     [lumaEntries],
   );
 
-  const availableCategories = useMemo(() => collectCategories(allEvents), [allEvents]);
+  const availableCategories = useMemo(() => collectCategories(mergedEvents), [mergedEvents]);
 
-  // The calendar spans every month, so it ignores the upcoming/past toggle but
-  // still respects place, topic and search.
-  const calendarEvents = useMemo(
+  // Place, topic and search apply to both views. The calendar spans every month
+  // and shows each occurrence of a recurring series on its own day, so it takes
+  // this list as is.
+  const matchingEvents = useMemo(
     () =>
-      allEvents.filter(
+      mergedEvents.filter(
         (event) =>
           matchesPlace(event, filters.place) &&
-          matchesQuery(event, filters.query) &&
+          matchesEventQuery(event, filters.query) &&
           matchesCategory(event, filters.category),
       ),
-    [allEvents, filters.place, filters.query, filters.category],
+    [mergedEvents, filters.place, filters.query, filters.category],
   );
 
-  // Highlighted events are the upcoming curated entries (hand-picked
-  // conferences), independent of the filters applied to the full list below.
-  const featuredEvents = useMemo(() => {
-    const todayTs = todayUtcStart();
-    return allEvents
-      .filter(
-        (event) =>
-          event.source === "curated" &&
-          (event.startDate ? new Date(event.startDate).getTime() : 0) >= todayTs,
-      )
-      .slice(0, FEATURED_LIMIT);
-  }, [allEvents]);
+  // The list applies the upcoming/past toggle and shows one row per series.
+  const orderedEvents = useMemo(
+    () => selectByTime(matchingEvents, filters.time, todayMs),
+    [matchingEvents, filters.time, todayMs],
+  );
 
-  // Past curated events that have a recorded recap video.
-  const recapEvents = useMemo(() => {
-    const todayTs = todayUtcStart();
-    return allEvents
-      .filter(
-        (event) =>
-          event.source === "curated" &&
-          event.recapVideo &&
-          (event.startDate ? new Date(event.startDate).getTime() : 0) < todayTs,
-      )
-      .sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
-  }, [allEvents]);
+  // Highlighted events are the running and upcoming curated entries (hand-picked
+  // conferences), independent of the filters applied to the full list below.
+  const featuredEvents = useMemo(
+    () => selectFeatured(curatedEvents, todayMs, FEATURED_LIMIT),
+    [todayMs],
+  );
+
+  // Finished curated events that have a recorded recap video.
+  const recapEvents = useMemo(() => selectRecaps(curatedEvents, todayMs), [todayMs]);
 
   const isPast = filters.time === "past";
 
@@ -185,24 +174,6 @@ export default function Events() {
     filters.time !== "upcoming" ||
     view === "calendar";
 
-  const orderedEvents = useMemo(() => {
-    const todayTs = todayUtcStart();
-    const filtered = allEvents.filter((event) => {
-      const startTs = event.startDate ? new Date(event.startDate).getTime() : 0;
-      const isUpcoming = startTs >= todayTs;
-      if (filters.time === "upcoming" && !isUpcoming) return false;
-      if (filters.time === "past" && isUpcoming) return false;
-      return (
-        matchesPlace(event, filters.place) &&
-        matchesQuery(event, filters.query) &&
-        matchesCategory(event, filters.category)
-      );
-    });
-    // Past events read newest first; upcoming and all read soonest first.
-    // filter() already returns a fresh array, so reversing in place is safe.
-    return isPast ? filtered.reverse() : filtered;
-  }, [allEvents, filters, isPast]);
-
   const registerLabel = translate({ id: "events.card.register", message: "View event" });
   const onlineLabel = translate({ id: "events.card.online", message: "Online" });
   const recurringLabel = translate({ id: "events.card.recurring", message: "Recurring" });
@@ -210,6 +181,7 @@ export default function Events() {
     register: registerLabel,
     online: onlineLabel,
     thisWeek: translate({ id: "events.featured.thisWeek", message: "This week" }),
+    live: translate({ id: "events.featured.happeningNow", message: "Happening now" }),
   };
   const emptyLabel = isPast
     ? translate({
@@ -284,7 +256,7 @@ export default function Events() {
               />
             </div>
             {view === "calendar" ? (
-              <CalendarView events={calendarEvents} />
+              <CalendarView events={matchingEvents} />
             ) : (
               <EventList
                 events={orderedEvents}
