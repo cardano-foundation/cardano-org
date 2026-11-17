@@ -12499,103 +12499,142 @@
   "leaderboard.cta.button": {
     "message": "Browse Apps Directory"
   },
-  "roadmap.fork.dijkstra1.name": {
-    "message": "Dijkstra, phase 1"
-  },
-  "roadmap.fork.dijkstra1.target": {
-    "message": "Code complete targeted Q4 2026"
-  },
-  "roadmap.fork.dijkstra1.scopeNote": {
-    "message": "More ledger changes are in scope."
-  },
-  "roadmap.fork.dijkstra2.name": {
-    "message": "Dijkstra, phase 2"
-  },
-  "roadmap.fork.dijkstra2.target": {
-    "message": "Code complete targeted Q2 2027"
-  },
-  "roadmap.upgrade.leios.name": {
-    "message": "Ouroboros Linear Leios"
-  },
-  "roadmap.upgrade.leios.subtitle": {
-    "message": "A second, larger block carries the transactions the base block has no room for"
-  },
-  "roadmap.upgrade.leios.metric": {
-    "message": "5 to 6x"
-  },
-  "roadmap.upgrade.leios.metricLabel": {
-    "message": "Throughput, measured on a public testnet"
-  },
-  "roadmap.upgrade.leios.note": {
-    "message": "Not in a node release yet"
-  },
-  "roadmap.upgrade.nested.name": {
-    "message": "Nested transactions"
-  },
-  "roadmap.upgrade.nested.subtitle": {
-    "message": "Sub-transactions settle together as one batch, so a swap offer needs no exchange in between"
-  },
-  "roadmap.upgrade.nested.metric": {
-    "message": "Sub-transactions"
-  },
-  "roadmap.upgrade.nested.metricLabel": {
-    "message": "A new kind of transaction, settled in batches"
-  },
-  "roadmap.upgrade.plutusV4.name": {
-    "message": "Plutus V4"
-  },
-  "roadmap.upgrade.plutusV4.subtitle": {
-    "message": "Smart contracts can read the new transaction and ledger structures"
-  },
-  "roadmap.upgrade.plutusV4.metricLabel": {
-    "message": "Plutus ledger language"
-  },
-  "roadmap.upgrade.withdrawals.name": {
-    "message": "Reward withdrawals without a DRep"
-  },
-  "roadmap.upgrade.withdrawals.subtitle": {
-    "message": "Ada holders can withdraw staking rewards without delegating their vote first"
-  },
-  "roadmap.upgrade.withdrawals.metricLabel": {
-    "message": "Voting delegations needed to withdraw"
-  },
-  "roadmap.upgrade.peras.name": {
-    "message": "Ouroboros Peras"
-  },
-  "roadmap.upgrade.peras.subtitle": {
-    "message": "Stake pools vote on recent blocks, so a transaction settles sooner"
-  },
-  "roadmap.upgrade.peras.metricFrom": {
-    "message": "Hours"
-  },
-  "roadmap.upgrade.peras.metricTo": {
-    "message": "minutes"
-  },
-  "roadmap.upgrade.peras.metricLabel": {
-    "message": "Time to settle"
-  },
   "roadmap.meta.title": {
     "message": "Cardano Network Upgrades"
   },
   "roadmap.meta.description": {
-    "message": "Every Cardano protocol version so far, the next hard fork, what it changes, and how far along it is."
+    "message": "What the next Cardano hard fork changes, how far along it is, and every protocol version so far."
   },
   "roadmap.hero.title": {
     "message": "Network upgrades"
   },
   "roadmap.hero.description": {
-    "message": "Every protocol version so far, and what the next hard fork changes."
+    "message": "What the next hard fork changes, and how far along it is."
   },
   "roadmap.link.decided": {
     "message": "How Cardano decides"
   },
   "roadmap.link.history": {
-    "message": "Hard fork history in detail"
+    "message": "Every hard fork so far"
   },
   "roadmap.link.works": {
     "message": "How Cardano works"
   },
-  "roadmap.metric.to": {
+  "roadmap.fork.dijkstra1.name": {
+    "message": "Dijkstra, phase 1"
+  },
+  "roadmap.fork.dijkstra1.summary": {
+    "message": "The next hard fork starts the Dijkstra ledger era. Intersect targets code completion for Q4 2026. There is no mainnet date yet: an on-chain vote sets it after the release has run on the test networks."
+  },
+  "roadmap.fork.dijkstra2.name": {
+    "message": "Dijkstra, phase 2"
+  },
+  "roadmap.fork.dijkstra2.summary": {
+    "message": "A second hard fork inside the Dijkstra era. Intersect targets code completion for Q2 2027."
+  },
+  "roadmap.upgrade.leios.name": {
+    "message": "Ouroboros Linear Leios"
+  },
+  "roadmap.upgrade.leios.text": {
+    "message": "Block producers publish a second, larger block next to the regular one, so the network carries more transactions."
+  },
+  "roadmap.upgrade.leios.figure": {
+    "message": "5 to 6x"
+  },
+  "roadmap.upgrade.leios.figureLabel": {
+    "message": "Throughput measured on a public testnet"
+  },
+  "roadmap.upgrade.leios.note": {
+    "message": "Not in a node release yet"
+  },
+  "roadmap.upgrade.withdrawals.name": {
+    "message": "Reward withdrawals without a DRep"
+  },
+  "roadmap.upgrade.withdrawals.text": {
+    "message": "Ada holders can withdraw their rewards without first delegating their vote to a DRep."
+  },
+  "roadmap.upgrade.withdrawals.figureLabel": {
+    "message": "Vote delegations needed to withdraw rewards"
+  },
+  "roadmap.upgrade.nested.name": {
+    "message": "Nested transactions"
+  },
+  "roadmap.upgrade.nested.text": {
+    "message": "A transaction can contain sub-transactions that settle together. A swap offer can then be made and accepted without an exchange in between."
+  },
+  "roadmap.upgrade.plutusV4.name": {
+    "message": "Plutus V4"
+  },
+  "roadmap.upgrade.plutusV4.text": {
+    "message": "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces."
+  },
+  "roadmap.source.intersect": {
+    "message": "Intersect plan"
+  },
+  "roadmap.upgrade.peras.name": {
+    "message": "Ouroboros Peras"
+  },
+  "roadmap.upgrade.peras.text": {
+    "message": "Stake pools vote on recent blocks, so the network treats a block as final sooner."
+  },
+  "roadmap.upgrade.peras.figureFrom": {
+    "message": "Hours"
+  },
+  "roadmap.upgrade.peras.figureTo": {
+    "message": "minutes"
+  },
+  "roadmap.upgrade.peras.figureLabel": {
+    "message": "Time until a transaction is settled"
+  },
+  "roadmap.change.guards.name": {
+    "message": "Guard scripts"
+  },
+  "roadmap.change.guards.text": {
+    "message": "A script type that can check a transaction without spending or minting."
+  },
+  "roadmap.change.accounts.name": {
+    "message": "Account addresses, phase 1"
+  },
+  "roadmap.change.accounts.text": {
+    "message": "The ledger definitions for account-style addresses."
+  },
+  "roadmap.change.isValid.name": {
+    "message": "Simpler transactions"
+  },
+  "roadmap.change.isValid.text": {
+    "message": "The isValid field is removed from transactions."
+  },
+  "roadmap.change.blockBody.name": {
+    "message": "Block body format"
+  },
+  "roadmap.change.blockBody.text": {
+    "message": "A block stores each transaction in one piece, which Leios needs."
+  },
+  "roadmap.change.perasGroundwork.name": {
+    "message": "Groundwork for Peras"
+  },
+  "roadmap.change.perasGroundwork.text": {
+    "message": "The block format and parameters Peras needs, without switching Peras on."
+  },
+  "roadmap.change.pledge.name": {
+    "message": "Pledge leverage parameter"
+  },
+  "roadmap.change.pledge.text": {
+    "message": "A parameter that can tie stake pool rewards to pledge. It starts switched off, so nothing changes at the hard fork."
+  },
+  "roadmap.change.minFees.name": {
+    "message": "Fair minimum fees"
+  },
+  "roadmap.change.minFees.text": {
+    "message": "A minimum stake pool margin parameter. Its fee rule activates in this hard fork or a later one."
+  },
+  "roadmap.change.referenceFees.name": {
+    "message": "Fees for reference inputs and scripts"
+  },
+  "roadmap.change.referenceFees.text": {
+    "message": "The fee function accounts for reference inputs, and the pricing of reference scripts becomes a protocol parameter."
+  },
+  "roadmap.figure.to": {
     "message": "to"
   },
   "roadmap.line.now": {
@@ -12604,52 +12643,34 @@
   "roadmap.line.next": {
     "message": "Next"
   },
-  "roadmap.line.voteSets": {
-    "message": "Vote sets the date"
+  "roadmap.line.noDate": {
+    "message": "No date yet"
   },
-  "roadmap.rail.development": {
+  "roadmap.stage.development": {
     "message": "In development"
   },
-  "roadmap.rail.devnet": {
+  "roadmap.stage.devnet": {
     "message": "Developer testnet"
   },
-  "roadmap.rail.preview": {
-    "message": "Preview"
+  "roadmap.stage.preview": {
+    "message": "Preview testnet"
   },
-  "roadmap.rail.preprod": {
-    "message": "Preprod"
+  "roadmap.stage.preprod": {
+    "message": "Preprod testnet"
   },
-  "roadmap.rail.vote": {
+  "roadmap.stage.vote": {
     "message": "On-chain vote"
   },
-  "roadmap.rail.mainnet": {
+  "roadmap.stage.mainnet": {
     "message": "Mainnet"
   },
-  "roadmap.votes.dreps": {
-    "message": "DReps: {yes}% yes, {needed} needed"
+  "roadmap.path.source": {
+    "message": "Hard fork working group minutes"
   },
-  "roadmap.votes.pools": {
-    "message": "Stake pools: {yes}% yes, {needed} needed"
+  "roadmap.smaller.title": {
+    "message": "Also in this hard fork"
   },
-  "roadmap.votes.committee": {
-    "message": "Constitutional Committee: {yes} yes, {no} no"
-  },
-  "roadmap.fork.note.live": {
-    "message": "Live on mainnet"
-  },
-  "roadmap.fork.note.scheduled": {
-    "message": "Takes effect at epoch {epoch}"
-  },
-  "roadmap.fork.note.vote": {
-    "message": "Vote open through epoch {epoch}"
-  },
-  "roadmap.fork.note.date": {
-    "message": "Mainnet date set by on-chain vote"
-  },
-  "roadmap.fork.scopeLink": {
-    "message": "Full scope on Intersect"
-  },
-  "roadmap.later.title": {
-    "message": "Then: {name}"
+  "roadmap.plan.link": {
+    "message": "Full scope in Intersect's hard fork plan"
   }
 }

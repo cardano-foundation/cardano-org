@@ -2,42 +2,45 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import { useHardForkStatus, useHardForkVotes } from "./useHardForkStatus";
 import styles from "./styles.module.css";
 
 // The pieces of /roadmap: the line of protocol versions, a panel for the
-// next hard fork, and a slim row for each hard fork after it.
+// next hard fork, and a slim block for each hard fork after it.
 
 function Arrow() {
   return (
-    <svg className={styles.arrow} viewBox="0 0 16 10" role="img" aria-label={translate({ id: "roadmap.metric.to", message: "to" })}>
+    <svg className={styles.arrow} viewBox="0 0 16 10" role="img" aria-label={translate({ id: "roadmap.figure.to", message: "to" })}>
       <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   );
 }
 
-function Metric({ metric, className }) {
+function Figure({ figure }) {
   return (
-    <>
-      <span className={clsx(styles.figure, className)}>
-        {metric.value || (
+    <p className={styles.figure}>
+      <b>
+        {figure.value || (
           <>
-            {metric.from} <Arrow /> {metric.to}
+            {figure.from} <Arrow /> {figure.to}
           </>
         )}
-      </span>
-      <span className={styles.figureLabel}>{metric.label}</span>
-    </>
+      </b>
+      <span>{figure.label}</span>
+    </p>
   );
 }
 
-function UpgradeText({ upgrade }) {
+// One change: its name, what it does, and the proposal it rests on.
+function Upgrade({ upgrade }) {
   return (
-    <div>
-      <Link className={styles.upgradeName} to={upgrade.href}>
-        {upgrade.name}
-      </Link>
-      <span className={styles.upgradeSubtitle}>{upgrade.subtitle}</span>
+    <div className={styles.upgrade}>
+      {upgrade.figure && <Figure figure={upgrade.figure} />}
+      <h3 className={styles.upgradeName}>{upgrade.name}</h3>
+      <p className={styles.upgradeText}>{upgrade.text}</p>
+      <p className={styles.upgradeMeta}>
+        {upgrade.source && <Link to={upgrade.source.href}>{upgrade.source.label}</Link>}
+        {upgrade.note && <span className={styles.note}>{upgrade.note}</span>}
+      </p>
     </div>
   );
 }
@@ -61,7 +64,8 @@ export function VersionLine({ history, next }) {
     if (last && last.era === eraOf(item)) last.span += 1;
     else bands.push({ era: eraOf(item), span: 1 });
   }
-  const columns = { gridTemplateColumns: `repeat(${ticks.length + 1}, minmax(0, 1fr))` };
+  // The last column holds the next hard fork, whose name is longer.
+  const columns = { gridTemplateColumns: `repeat(${ticks.length}, minmax(0, 1fr)) minmax(0, 1.5fr)` };
   return (
     <div className={styles.line}>
       <div className={styles.bands} style={columns} aria-hidden="true">
@@ -77,95 +81,74 @@ export function VersionLine({ history, next }) {
           const current = index === ticks.length - 1;
           return (
             <li key={item.epoch} className={clsx(styles.tick, current && styles.tickNow)}>
-              <span className={styles.tickFlag}>{current && translate({ id: "roadmap.line.now", message: "Now" })}</span>
-              <b>{versionOf(item)}</b>
+              <b>
+                {versionOf(item)}
+                {current && <em>{translate({ id: "roadmap.line.now", message: "Now" })}</em>}
+              </b>
               <span>{item.name}</span>
               <span className={styles.tickYear}>{yearOf(item)}</span>
             </li>
           );
         })}
         <li className={clsx(styles.tick, styles.tickNext)}>
-          <span className={styles.tickFlag}>{translate({ id: "roadmap.line.next", message: "Next" })}</span>
-          <b>{next.version}</b>
+          <b>
+            {next.version}
+            <em>{translate({ id: "roadmap.line.next", message: "Next" })}</em>
+          </b>
           <span>{next.name}</span>
-          <span className={styles.tickYear}>{translate({ id: "roadmap.line.voteSets", message: "Vote sets the date" })}</span>
+          <span className={styles.tickYear}>{translate({ id: "roadmap.line.noDate", message: "No date yet" })}</span>
         </li>
       </ol>
     </div>
   );
 }
 
-// The path of a hard fork to mainnet. A typed stage or the chain says how
-// far along it is.
-const RAIL_INDEX = { development: 0, devnet: 1, preview: 2, preprod: 3, vote: 4, scheduled: 4, live: 5 };
+// The path of a hard fork to the Cardano mainnet, in order.
+const STAGES = ["development", "devnet", "preview", "preprod", "vote", "mainnet"];
 
-function railSteps() {
+function stageLabels() {
   return [
-    translate({ id: "roadmap.rail.development", message: "In development" }),
-    translate({ id: "roadmap.rail.devnet", message: "Developer testnet" }),
-    translate({ id: "roadmap.rail.preview", message: "Preview" }),
-    translate({ id: "roadmap.rail.preprod", message: "Preprod" }),
-    translate({ id: "roadmap.rail.vote", message: "On-chain vote" }),
-    translate({ id: "roadmap.rail.mainnet", message: "Mainnet" }),
+    translate({ id: "roadmap.stage.development", message: "In development" }),
+    translate({ id: "roadmap.stage.devnet", message: "Developer testnet" }),
+    translate({ id: "roadmap.stage.preview", message: "Preview testnet" }),
+    translate({ id: "roadmap.stage.preprod", message: "Preprod testnet" }),
+    translate({ id: "roadmap.stage.vote", message: "On-chain vote" }),
+    translate({ id: "roadmap.stage.mainnet", message: "Mainnet" }),
   ];
 }
 
-const percent = (share) => `${Math.round(share * 100)}%`;
-
-// Vote shares against what a hard fork initiation needs. Renders nothing
-// until the shares arrive, so a slow or failed request leaves no gap.
-function Votes({ status }) {
-  const votes = useHardForkVotes(status.actionId);
-  if (votes.status !== "ready") return null;
-  const { drepYesPct, poolYesPct, committeeYes, committeeNo } = votes.data;
+function Path({ fork }) {
+  const reached = STAGES.indexOf(fork.stage);
   return (
-    <ul className={styles.votes}>
-      <li>
-        {translate(
-          { id: "roadmap.votes.dreps", message: "DReps: {yes}% yes, {needed} needed" },
-          { yes: drepYesPct, needed: percent(status.thresholds.drepThreshold) },
-        )}
-      </li>
-      <li>
-        {translate(
-          { id: "roadmap.votes.pools", message: "Stake pools: {yes}% yes, {needed} needed" },
-          { yes: poolYesPct, needed: percent(status.thresholds.poolThreshold) },
-        )}
-      </li>
-      <li>
-        {translate(
-          { id: "roadmap.votes.committee", message: "Constitutional Committee: {yes} yes, {no} no" },
-          { yes: committeeYes, no: committeeNo },
-        )}
-      </li>
-    </ul>
+    <>
+      <ol className={styles.path}>
+        {stageLabels().map((label, index) => (
+          <li
+            key={label}
+            className={clsx(index < reached && styles.pathDone, index === reached && styles.pathNow)}
+            aria-current={index === reached ? "step" : undefined}
+          >
+            {label}
+          </li>
+        ))}
+      </ol>
+      <p className={styles.pathSource}>
+        <Link to={fork.stageSource}>{translate({ id: "roadmap.path.source", message: "Hard fork working group minutes" })}</Link>
+      </p>
+    </>
   );
 }
 
-// What the chain says once it says something, and until then that the vote
-// decides the date.
-function mainnetNote(status) {
-  if (status.stage === "live") return translate({ id: "roadmap.fork.note.live", message: "Live on mainnet" });
-  if (status.stage === "scheduled") {
-    return translate({ id: "roadmap.fork.note.scheduled", message: "Takes effect at epoch {epoch}" }, { epoch: status.epoch });
-  }
-  if (status.stage === "vote") {
-    return translate({ id: "roadmap.fork.note.vote", message: "Vote open through epoch {epoch}" }, { epoch: status.expiration });
-  }
-  return translate({ id: "roadmap.fork.note.date", message: "Mainnet date set by on-chain vote" });
-}
-
 /**
- * The next hard fork: the version step, how far along it is, and its upgrades.
+ * The next hard fork: the version step, how far along it is, and what it changes.
  *
  * @param {object} props
  * @param {object} props.fork First entry of getHardForks().
  * @param {Array<object>} props.upgrades Result of getUpgrades(fork.key).
+ * @param {Array<object>} props.smallerChanges Result of getSmallerChanges(fork.key).
  * @param {object} props.latest First entry of getHardForkHistory().
  */
-export function NextHardFork({ fork, upgrades, latest }) {
-  const status = useHardForkStatus(fork);
-  const reached = RAIL_INDEX[status.stage];
+export function NextHardFork({ fork, upgrades, smallerChanges, latest }) {
   return (
     <section className={styles.panel} id={fork.key}>
       <div>
@@ -173,29 +156,27 @@ export function NextHardFork({ fork, upgrades, latest }) {
           {versionOf(latest)} <Arrow /> {fork.version}
         </p>
         <h2 className={styles.panelTitle}>{fork.name}</h2>
-        <p className={styles.panelMeta}>{fork.target}</p>
-        <p className={styles.panelMeta}>{mainnetNote(status)}</p>
-        <ol className={styles.rail}>
-          {railSteps().map((label, index) => (
-            <li key={label} className={clsx(index <= reached && styles.railOn)}>
-              {label}
-            </li>
-          ))}
-        </ol>
-        {status.actionId && <Votes status={status} />}
+        <p className={styles.panelSummary}>{fork.summary}</p>
+        <Path fork={fork} />
       </div>
       <div>
-        <div className={styles.tiles}>
+        <div className={styles.upgrades}>
           {upgrades.map((upgrade) => (
-            <div className={styles.tile} key={upgrade.key}>
-              <Metric metric={upgrade.metric} className={styles.figureLarge} />
-              <UpgradeText upgrade={upgrade} />
-              {upgrade.note && !status.fromChain && <span className={styles.tileNote}>{upgrade.note}</span>}
-            </div>
+            <Upgrade key={upgrade.key} upgrade={upgrade} />
           ))}
         </div>
-        <p className={styles.scope}>
-          {fork.scopeNote} <Link to={fork.scopeUrl}>{translate({ id: "roadmap.fork.scopeLink", message: "Full scope on Intersect" })}</Link>
+        <h3 className={styles.smallerTitle}>{translate({ id: "roadmap.smaller.title", message: "Also in this hard fork" })}</h3>
+        <ul className={styles.smaller}>
+          {smallerChanges.map((change) => (
+            <li key={change.key}>
+              <b>{change.name}</b>
+              {change.source && <Link to={change.source.href}>{change.source.label}</Link>}
+              <span>{change.text}</span>
+            </li>
+          ))}
+        </ul>
+        <p className={styles.plan}>
+          <Link to={fork.planUrl}>{translate({ id: "roadmap.plan.link", message: "Full scope in Intersect's hard fork plan" })}</Link>
         </p>
       </div>
     </section>
@@ -203,7 +184,7 @@ export function NextHardFork({ fork, upgrades, latest }) {
 }
 
 /**
- * A hard fork after the next one, on one slim row per upgrade.
+ * A hard fork after the next one.
  *
  * @param {object} props
  * @param {object} props.fork Later entry of getHardForks().
@@ -213,17 +194,14 @@ export function LaterHardFork({ fork, upgrades }) {
   return (
     <section className={styles.later} id={fork.key}>
       <div>
-        <h2 className={styles.laterTitle}>{translate({ id: "roadmap.later.title", message: "Then: {name}" }, { name: fork.name })}</h2>
-        <p className={styles.panelMeta}>{fork.target}</p>
+        <h2 className={styles.laterTitle}>{fork.name}</h2>
+        <p className={styles.panelSummary}>{fork.summary}</p>
       </div>
-      {upgrades.map((upgrade) => (
-        <React.Fragment key={upgrade.key}>
-          <div>
-            <Metric metric={upgrade.metric} />
-          </div>
-          <UpgradeText upgrade={upgrade} />
-        </React.Fragment>
-      ))}
+      <div className={styles.upgrades}>
+        {upgrades.map((upgrade) => (
+          <Upgrade key={upgrade.key} upgrade={upgrade} />
+        ))}
+      </div>
     </section>
   );
 }

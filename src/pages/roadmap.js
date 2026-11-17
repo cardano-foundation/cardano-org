@@ -8,7 +8,7 @@ import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
 import { LaterHardFork, NextHardFork, VersionLine } from "@site/src/components/Roadmap";
-import { getHardForks, getUpgrades } from "@site/src/data/roadmap";
+import { getHardForks, getSmallerChanges, getUpgrades } from "@site/src/data/roadmap";
 import { getHardForkHistory } from "@site/src/data/hardforks";
 
 export default function Roadmap() {
@@ -20,7 +20,7 @@ export default function Roadmap() {
       description={translate({
         id: "roadmap.meta.description",
         message:
-          "Every Cardano protocol version so far, the next hard fork, what it changes, and how far along it is.",
+          "What the next Cardano hard fork changes, how far along it is, and every protocol version so far.",
       })}
     >
       <OpenGraphInfo />
@@ -28,7 +28,7 @@ export default function Roadmap() {
         title={translate({ id: "roadmap.hero.title", message: "Network upgrades" })}
         description={translate({
           id: "roadmap.hero.description",
-          message: "Every protocol version so far, and what the next hard fork changes.",
+          message: "What the next hard fork changes, and how far along it is.",
         })}
         bannerType="starburst"
       />
@@ -36,7 +36,7 @@ export default function Roadmap() {
         <BackgroundWrapper backgroundType="zoom">
           <BoundaryBox>
             <VersionLine history={history} next={next} />
-            <NextHardFork fork={next} upgrades={getUpgrades(next.key)} latest={history[0]} />
+            <NextHardFork fork={next} upgrades={getUpgrades(next.key)} smallerChanges={getSmallerChanges(next.key)} latest={history[0]} />
             {later.map((fork) => (
               <LaterHardFork key={fork.key} fork={fork} upgrades={getUpgrades(fork.key)} />
             ))}
@@ -44,7 +44,7 @@ export default function Roadmap() {
             <LinkCardRow
               items={[
                 { to: "/governance/how-it-works", label: translate({ id: "roadmap.link.decided", message: "How Cardano decides" }) },
-                { to: "/hardforks", label: translate({ id: "roadmap.link.history", message: "Hard fork history in detail" }) },
+                { to: "/hardforks", label: translate({ id: "roadmap.link.history", message: "Every hard fork so far" }) },
                 { to: "/how-cardano-works", label: translate({ id: "roadmap.link.works", message: "How Cardano works" }) },
               ]}
             />
