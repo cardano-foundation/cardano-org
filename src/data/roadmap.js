@@ -5,7 +5,8 @@ import { translate } from "@docusaurus/Translate";
 //
 // A hard fork: where it stands and what it moves the Cardano mainnet to.
 // `stage` is one of development, devnet, preview, preprod, vote, mainnet.
-// Update it by hand when the hard fork working group reports a new step.
+// Update it by hand when the hard fork working group reports a new step,
+// together with the link to the minutes that report it in `sources`.
 //
 // A change: one thing a hard fork brings. `figure` is set only where a
 // source states one, as a before and after pair (`from`, `to`) or a single
@@ -13,10 +14,19 @@ import { translate } from "@docusaurus/Translate";
 //
 // Enacted hard forks live in src/data/hardforks.js.
 
+// Links point at the section that backs the entry, not at the top of a page.
 const INTERSECT_PLAN_URL = "https://product.cardano.intersectmbo.org/hardfork-planning/dijkstra/";
-const WORKING_GROUP_URL = "https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes";
+const WORKING_GROUP_MINUTES_URL =
+  "https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes/10th-november-2026";
 const cip = (number) => ({ label: `CIP-${number}`, href: `https://cips.cardano.org/cip/CIP-${String(number).padStart(4, "0")}` });
-const intersectPlan = () => ({ label: translate({ id: "roadmap.source.intersect", message: "Intersect plan" }), href: INTERSECT_PLAN_URL });
+const intersectPlan = (section) => ({
+  label: translate({ id: "roadmap.source.intersect", message: "Intersect plan" }),
+  href: `${INTERSECT_PLAN_URL}#${section}`,
+});
+const workingGroupMinutes = () => ({
+  label: translate({ id: "roadmap.path.source", message: "Hard fork working group minutes" }),
+  href: WORKING_GROUP_MINUTES_URL,
+});
 
 // Hard forks being built, next one first. `version` is the protocol major
 // version the hard fork moves the Cardano mainnet to, or null while none is
@@ -35,8 +45,7 @@ export function getHardForks() {
         id: "roadmap.fork.dijkstra1.stageNote",
         message: "The developer testnet runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date.",
       }),
-      stageSource: WORKING_GROUP_URL,
-      planUrl: INTERSECT_PLAN_URL,
+      sources: [workingGroupMinutes(), intersectPlan("phase-1-dijkstra-hard-fork-protocol-version-12-q4-2026")],
     },
     {
       key: "dijkstra-2",
@@ -47,8 +56,7 @@ export function getHardForks() {
       target: translate({ id: "roadmap.fork.dijkstra2.target", message: "Intersect targets code completion for Q2 2027" }),
       stage: "development",
       stageNote: translate({ id: "roadmap.fork.dijkstra2.stageNote", message: "An on-chain vote sets the mainnet date." }),
-      stageSource: WORKING_GROUP_URL,
-      planUrl: INTERSECT_PLAN_URL,
+      sources: [intersectPlan("phase-2-peras-activation-intra-era-hard-fork-q2-2027")],
     },
   ];
 }
@@ -100,7 +108,7 @@ export function getChanges(forkKey) {
           id: "roadmap.change.plutusV4.text",
           message: "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces.",
         }),
-        source: intersectPlan(),
+        source: intersectPlan("plutusv4-script-context"),
       },
       {
         key: "guard-scripts",
@@ -157,7 +165,7 @@ export function getChanges(forkKey) {
           id: "roadmap.change.referenceFees.text",
           message: "The fee function accounts for reference inputs, and the pricing of reference scripts becomes a protocol parameter.",
         }),
-        source: intersectPlan(),
+        source: intersectPlan("fee-function-update-reference-inputs"),
       },
     ],
     "dijkstra-2": [
@@ -181,10 +189,12 @@ export function getChanges(forkKey) {
 }
 
 // Proposals without a hard fork, in the two groups Intersect's plan gives
-// them. `text` is the reason the plan states, where it states one.
+// them. `text` is the reason the plan states, where it states one. A
+// proposal that has been merged links to its CIP, any other to its request
+// in the CIPs repository.
 export function getUnscheduled() {
   const pull = (number) => ({
-    label: translate({ id: "roadmap.source.draft", message: "Draft proposal" }),
+    label: translate({ id: "roadmap.source.proposal", message: "Proposal" }),
     href: `https://github.com/cardano-foundation/CIPs/pull/${number}`,
   });
   return [
@@ -195,7 +205,7 @@ export function getUnscheduled() {
         id: "roadmap.unscheduled.notAssigned.note",
         message: "Community proposals that Intersect's hard fork plan lists for future consideration.",
       }),
-      planUrl: INTERSECT_PLAN_URL,
+      source: intersectPlan("wishlist--future-consideration"),
       items: [
         {
           key: "optimistic-constitutionality",
@@ -205,7 +215,7 @@ export function getUnscheduled() {
         {
           key: "builtin-value-functions",
           name: translate({ id: "roadmap.unscheduled.builtinValue", message: "More BuiltinValue functions" }),
-          source: pull(1090),
+          source: cip(168),
         },
         {
           key: "script-purposes",
@@ -225,7 +235,7 @@ export function getUnscheduled() {
         id: "roadmap.unscheduled.leftOut.note",
         message: "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason Intersect's plan gives.",
       }),
-      planUrl: INTERSECT_PLAN_URL,
+      source: intersectPlan("considered-but-not-included-in-this-era"),
       items: [
         {
           key: "producer-identification",
@@ -279,7 +289,7 @@ export function getUnscheduled() {
             id: "roadmap.unscheduled.netChangeLimit.text",
             message: "Not implementable today, because the ledger keeps no history of what flowed in and out in past epochs.",
           }),
-          source: pull(1129),
+          source: cip(173),
         },
         {
           key: "hot-credentials",
@@ -288,7 +298,7 @@ export function getUnscheduled() {
             id: "roadmap.unscheduled.hotCredentials.text",
             message: "Too complex given the ledger team's commitments for this era.",
           }),
-          source: pull(1140),
+          source: cip(175),
         },
       ],
     },

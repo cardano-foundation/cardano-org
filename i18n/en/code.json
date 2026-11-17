@@ -12622,8 +12622,8 @@
   "roadmap.change.peras.figureLabel": {
     "message": "Time until a transaction is settled"
   },
-  "roadmap.source.draft": {
-    "message": "Draft proposal"
+  "roadmap.source.proposal": {
+    "message": "Proposal"
   },
   "roadmap.unscheduled.notAssigned.name": {
     "message": "Not assigned to a hard fork yet"

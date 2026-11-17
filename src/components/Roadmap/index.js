@@ -224,8 +224,13 @@ export function HardFork({ fork, changes }) {
         ))}
       </ol>
       <p className={styles.note}>
-        {fork.stageNote}{" "}
-        <Link to={fork.stageSource}>{translate({ id: "roadmap.path.source", message: "Hard fork working group minutes" })}</Link>
+        {fork.stageNote}
+        {fork.sources.map((source) => (
+          <React.Fragment key={source.href}>
+            {" "}
+            <Link to={source.href}>{source.label}</Link>
+          </React.Fragment>
+        ))}
       </p>
       <ul className={styles.rows}>
         {changes.map((change) => (
@@ -255,7 +260,7 @@ export function ProposalGroup({ group }) {
       )}
     >
       <p className={styles.note}>
-        {group.note} <Link to={group.planUrl}>{translate({ id: "roadmap.source.intersect", message: "Intersect plan" })}</Link>
+        {group.note} <Link to={group.source.href}>{group.source.label}</Link>
       </p>
       <ul className={styles.rows}>
         {group.items.map((item) => (
