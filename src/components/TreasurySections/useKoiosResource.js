@@ -64,7 +64,7 @@ export default function useKoiosResource({ cacheKey, path, normalize, isUsable }
       })
       .catch((err) => {
         if (cancelled) return;
-        console.error(`Treasury page: failed to load ${cacheKey}`, err);
+        console.error(`Failed to load ${cacheKey}`, err);
         setState({ status: "error", data: null });
       });
     return () => {

@@ -1,0 +1,357 @@
+/* /roadmap. Hairline rules and type only: no cards, no shadows. */
+
+/* The line of protocol versions */
+
+.line {
+  margin-top: var(--site-space-lg);
+  font-variant-numeric: tabular-nums;
+}
+
+.bands,
+.ticks {
+  display: grid;
+}
+
+.bands {
+  margin-bottom: var(--site-space-xs);
+}
+
+.bands span {
+  overflow: hidden;
+  padding: var(--site-space-3xs) var(--site-space-2xs);
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.bands .bandNext {
+  color: var(--ifm-color-primary);
+  background: var(--site-tint-strong);
+}
+
+.ticks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tick {
+  position: relative;
+  padding: 1.2rem var(--site-space-2xs) 0 0;
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--ifm-color-emphasis-900);
+}
+
+.tick::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-900);
+  background: var(--ifm-color-emphasis-900);
+}
+
+.tick span {
+  display: block;
+}
+
+.tick b {
+  display: block;
+  font-size: 1rem;
+}
+
+.tickFlag {
+  min-height: 1.3em;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.tickYear {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.tickNow::before,
+.tickNext::before {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.tickNow::after {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--site-tint-strong);
+}
+
+.tickNow b,
+.tickNow .tickFlag {
+  color: var(--ifm-color-primary);
+}
+
+.tickNext::before {
+  display: none;
+}
+
+.tickNext::after {
+  border-color: var(--ifm-color-emphasis-600);
+  background: var(--ifm-background-color);
+}
+
+/* The next hard fork */
+
+.panel {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  column-gap: var(--site-space-xl);
+  margin-top: var(--site-space-xl);
+  padding-top: var(--site-space-lg);
+  border-top: 2px solid var(--ifm-color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.step {
+  margin: 0;
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.panelTitle {
+  margin: var(--site-space-xs) 0 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.panelMeta {
+  margin: var(--site-space-3xs) 0 0;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.rail {
+  margin: var(--site-space-md) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rail li {
+  position: relative;
+  padding: 0 0 var(--site-space-xs) 1.6rem;
+  font-size: 0.86rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.rail li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: -6px;
+  left: 5px;
+  width: 2px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.rail li:last-child::before {
+  display: none;
+}
+
+.rail li::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-600);
+  background: var(--ifm-background-color);
+}
+
+.rail .railOn {
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+}
+
+.rail .railOn::after {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+}
+
+.votes {
+  margin: var(--site-space-2xs) 0 0;
+  padding: var(--site-space-xs) 0 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  list-style: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--site-space-xl);
+}
+
+.tile {
+  padding: var(--site-space-sm) 0 var(--site-space-md);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.figure {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.figureLarge {
+  font-size: 2.1rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.figureLabel {
+  display: block;
+  margin-bottom: var(--site-space-xs);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.arrow {
+  width: 0.9em;
+  height: 0.56em;
+}
+
+.upgradeName {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+}
+
+.upgradeName:hover {
+  color: var(--ifm-color-primary);
+}
+
+.upgradeSubtitle {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.tileNote {
+  display: block;
+  margin-top: var(--site-space-2xs);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--site-warning) 80%, var(--ifm-font-color-base));
+}
+
+.scope {
+  margin: 0;
+  padding-top: var(--site-space-sm);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.scope a {
+  font-weight: 700;
+}
+
+/* A hard fork after the next one */
+
+.later {
+  display: grid;
+  grid-template-columns: 300px 230px minmax(0, 1fr);
+  column-gap: var(--site-space-xl);
+  align-items: baseline;
+  margin-top: var(--site-space-lg);
+  padding-top: var(--site-space-md);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.later > :first-child {
+  grid-row: 1 / span 9;
+}
+
+.laterTitle {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 996px) {
+  .bands {
+    display: none;
+  }
+
+  .ticks {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .tick {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr) auto auto;
+    column-gap: var(--site-space-xs);
+    align-items: baseline;
+    padding: var(--site-space-2xs) 0;
+    border-top: 1px solid var(--ifm-color-emphasis-200);
+    font-size: 0.9rem;
+  }
+
+  .tick::before,
+  .tick::after {
+    display: none;
+  }
+
+  .tickFlag {
+    order: 3;
+    min-height: 0;
+  }
+
+  .tickYear {
+    order: 4;
+  }
+
+  .panel,
+  .later {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--site-space-md);
+  }
+
+  .later > :first-child {
+    grid-row: auto;
+  }
+
+  .step {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
