@@ -1,11 +1,103 @@
-import React from "react";
+import React, { useRef } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import useHashTarget from "@site/src/utils/useHashTarget";
 import styles from "./styles.module.css";
 
-// The pieces of /roadmap: the line of protocol versions, a panel for the
-// next hard fork, and a slim block for each hard fork after it.
+// The pieces of /roadmap: the line of protocol versions, then three stacked
+// sections: planned hard forks, proposals not scheduled yet, and the hard
+// forks already enacted.
+
+const versionOf = (item) => item.meta[0].value.replace(/\.0$/, "");
+const eraOf = (item) => item.era.replace(/ Era$/, "");
+
+/**
+ * Every protocol version in order with its era, then the hard forks being
+ * built.
+ *
+ * @param {object} props
+ * @param {Array<object>} props.history Result of getHardForkHistory(), newest first.
+ * @param {Array<object>} props.upcoming Result of getHardForks(), next one first.
+ */
+export function VersionLine({ history, upcoming }) {
+  const past = [...history].reverse();
+  const bands = [];
+  for (const era of [...past.map(eraOf), ...upcoming.map((fork) => fork.era)]) {
+    const last = bands[bands.length - 1];
+    if (last && last.era === era) last.span += 1;
+    else bands.push({ era, span: 1 });
+  }
+  // The current version and the upcoming hard forks get wider columns,
+  // because their labels are longer.
+  const columns = {
+    gridTemplateColumns: `repeat(${past.length - 1}, minmax(0, 2fr)) repeat(${upcoming.length + 1}, minmax(0, 3fr))`,
+  };
+  return (
+    <div className={styles.line}>
+      <div className={styles.bands} style={columns} aria-hidden="true">
+        {bands.map((band, index) => (
+          <span
+            key={band.era}
+            className={clsx(index === bands.length - 1 && styles.bandAhead)}
+            style={{ gridColumn: `span ${band.span}` }}
+          >
+            {band.era}
+          </span>
+        ))}
+      </div>
+      <ol className={styles.ticks} style={columns}>
+        {past.map((item, index) => {
+          const current = index === past.length - 1;
+          return (
+            <li key={item.epoch} className={clsx(styles.tick, current && styles.tickNow)}>
+              <b>
+                {versionOf(item)}
+                {current && <em>{translate({ id: "roadmap.line.now", message: "Now" })}</em>}
+              </b>
+              <span>{item.name}</span>
+            </li>
+          );
+        })}
+        {upcoming.map((fork, index) => (
+          <li key={fork.key} className={clsx(styles.tick, styles.tickAhead)}>
+            <b>
+              {fork.version}
+              <em>
+                {index === 0
+                  ? translate({ id: "roadmap.line.next", message: "Next" })
+                  : translate({ id: "roadmap.line.planned", message: "Planned" })}
+              </em>
+            </b>
+            <span>{fork.name}</span>
+          </li>
+        ))}
+      </ol>
+      <p className={styles.lineMore}>
+        <Link to="#completed">
+          {translate({ id: "roadmap.line.earlier", message: "{count} earlier hard forks" }, { count: past.length - 1 })}
+        </Link>
+      </p>
+    </div>
+  );
+}
+
+/**
+ * One titled section of the page.
+ *
+ * @param {object} props
+ * @param {string} props.id Anchor of the section.
+ * @param {string} props.title Section title, already translated.
+ * @param {React.ReactNode} props.children Content of the section.
+ */
+export function Section({ id, title, children }) {
+  return (
+    <section className={styles.section} id={id}>
+      <h2 className={styles.sectionTitle}>{title}</h2>
+      {children}
+    </section>
+  );
+}
 
 function Arrow() {
   return (
@@ -15,91 +107,31 @@ function Arrow() {
   );
 }
 
-function Figure({ figure }) {
+// One row of a list: a name with an optional line under it, an optional
+// figure, and an optional source link.
+function Row({ name, text, figure, source }) {
   return (
-    <p className={styles.figure}>
-      <b>
-        {figure.value || (
+    <li className={styles.row}>
+      <div>
+        <span className={styles.rowName}>{name}</span>
+        {text && <span className={styles.rowText}>{text}</span>}
+      </div>
+      <div>
+        {figure && (
           <>
-            {figure.from} <Arrow /> {figure.to}
+            <span className={styles.figure}>
+              {figure.value || (
+                <>
+                  {figure.from} <Arrow /> {figure.to}
+                </>
+              )}
+            </span>
+            <span className={styles.figureLabel}>{figure.label}</span>
           </>
         )}
-      </b>
-      <span>{figure.label}</span>
-    </p>
-  );
-}
-
-// One change: its name, what it does, and the proposal it rests on.
-function Upgrade({ upgrade }) {
-  return (
-    <div className={styles.upgrade}>
-      {upgrade.figure && <Figure figure={upgrade.figure} />}
-      <h3 className={styles.upgradeName}>{upgrade.name}</h3>
-      <p className={styles.upgradeText}>{upgrade.text}</p>
-      <p className={styles.upgradeMeta}>
-        {upgrade.source && <Link to={upgrade.source.href}>{upgrade.source.label}</Link>}
-        {upgrade.note && <span className={styles.note}>{upgrade.note}</span>}
-      </p>
-    </div>
-  );
-}
-
-const versionOf = (item) => item.meta[0].value.replace(/\.0$/, "");
-const yearOf = (item) => item.date.slice(-4);
-const eraOf = (item) => item.era.replace(/ Era$/, "");
-
-/**
- * Every protocol version in order, with its era, then the next hard fork.
- *
- * @param {object} props
- * @param {Array<object>} props.history Result of getHardForkHistory(), newest first.
- * @param {object} props.next First entry of getHardForks().
- */
-export function VersionLine({ history, next }) {
-  const ticks = [...history].reverse();
-  const bands = [];
-  for (const item of ticks) {
-    const last = bands[bands.length - 1];
-    if (last && last.era === eraOf(item)) last.span += 1;
-    else bands.push({ era: eraOf(item), span: 1 });
-  }
-  // The last column holds the next hard fork, whose name is longer.
-  const columns = { gridTemplateColumns: `repeat(${ticks.length}, minmax(0, 1fr)) minmax(0, 1.5fr)` };
-  return (
-    <div className={styles.line}>
-      <div className={styles.bands} style={columns} aria-hidden="true">
-        {bands.map((band) => (
-          <span key={band.era} style={{ gridColumn: `span ${band.span}` }}>
-            {band.era}
-          </span>
-        ))}
-        <span className={styles.bandNext}>{next.era}</span>
       </div>
-      <ol className={styles.ticks} style={columns}>
-        {ticks.map((item, index) => {
-          const current = index === ticks.length - 1;
-          return (
-            <li key={item.epoch} className={clsx(styles.tick, current && styles.tickNow)}>
-              <b>
-                {versionOf(item)}
-                {current && <em>{translate({ id: "roadmap.line.now", message: "Now" })}</em>}
-              </b>
-              <span>{item.name}</span>
-              <span className={styles.tickYear}>{yearOf(item)}</span>
-            </li>
-          );
-        })}
-        <li className={clsx(styles.tick, styles.tickNext)}>
-          <b>
-            {next.version}
-            <em>{translate({ id: "roadmap.line.next", message: "Next" })}</em>
-          </b>
-          <span>{next.name}</span>
-          <span className={styles.tickYear}>{translate({ id: "roadmap.line.noDate", message: "No date yet" })}</span>
-        </li>
-      </ol>
-    </div>
+      <div className={styles.rowSource}>{source && <Link to={source.href}>{source.label}</Link>}</div>
+    </li>
   );
 }
 
@@ -117,12 +149,71 @@ function stageLabels() {
   ];
 }
 
-function Path({ fork }) {
+// One element that opens on click. Closed, it shows a name, a line of facts
+// and a short aside. Open, it adds its content. A link to `/roadmap#<id>`
+// opens it.
+function Fold({ id, name, large, facts, aside, children }) {
+  const details = useRef(null);
+  useHashTarget((hash) => {
+    if (hash === id && details.current) details.current.open = true;
+  });
+  return (
+    <details className={styles.fold} id={id} ref={details}>
+      <summary>
+        <div>
+          <h3 className={clsx(styles.foldName, large && styles.foldNameLarge)}>{name}</h3>
+          <ul className={styles.foldFacts}>
+            {facts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.foldAside}>{aside}</div>
+      </summary>
+      <div className={styles.foldBody}>{children}</div>
+    </details>
+  );
+}
+
+const countOf = (count, one, many) => (count === 1 ? one : many);
+
+/**
+ * One planned hard fork. Closed, it shows its name, its facts, its stage
+ * and how many changes it has. Open, it adds the path to mainnet and a row
+ * per change.
+ *
+ * @param {object} props
+ * @param {object} props.fork Entry of getHardForks().
+ * @param {Array<object>} props.changes Result of getChanges(fork.key).
+ */
+export function HardFork({ fork, changes }) {
+  const stages = stageLabels();
   const reached = STAGES.indexOf(fork.stage);
   return (
-    <>
+    <Fold
+      id={fork.key}
+      name={fork.name}
+      large
+      facts={[
+        fork.version === null
+          ? translate({ id: "roadmap.fork.versionOpen", message: "Protocol version not assigned yet" })
+          : translate({ id: "roadmap.fork.version", message: "Protocol version {version}" }, { version: fork.version }),
+        fork.eraNote,
+        fork.target,
+      ]}
+      aside={
+        <>
+          <b>{stages[reached]}</b>
+          {countOf(
+            changes.length,
+            translate({ id: "roadmap.fork.change", message: "1 change" }),
+            translate({ id: "roadmap.fork.changes", message: "{count} changes" }, { count: changes.length }),
+          )}
+        </>
+      }
+    >
       <ol className={styles.path}>
-        {stageLabels().map((label, index) => (
+        {stages.map((label, index) => (
           <li
             key={label}
             className={clsx(index < reached && styles.pathDone, index === reached && styles.pathNow)}
@@ -132,76 +223,81 @@ function Path({ fork }) {
           </li>
         ))}
       </ol>
-      <p className={styles.pathSource}>
+      <p className={styles.note}>
+        {fork.stageNote}{" "}
         <Link to={fork.stageSource}>{translate({ id: "roadmap.path.source", message: "Hard fork working group minutes" })}</Link>
       </p>
-    </>
-  );
-}
-
-/**
- * The next hard fork: the version step, how far along it is, and what it changes.
- *
- * @param {object} props
- * @param {object} props.fork First entry of getHardForks().
- * @param {Array<object>} props.upgrades Result of getUpgrades(fork.key).
- * @param {Array<object>} props.smallerChanges Result of getSmallerChanges(fork.key).
- * @param {object} props.latest First entry of getHardForkHistory().
- */
-export function NextHardFork({ fork, upgrades, smallerChanges, latest }) {
-  return (
-    <section className={styles.panel} id={fork.key}>
-      <div>
-        <p className={styles.step}>
-          {versionOf(latest)} <Arrow /> {fork.version}
-        </p>
-        <h2 className={styles.panelTitle}>{fork.name}</h2>
-        <p className={styles.panelSummary}>{fork.summary}</p>
-        <Path fork={fork} />
-      </div>
-      <div>
-        <div className={styles.upgrades}>
-          {upgrades.map((upgrade) => (
-            <Upgrade key={upgrade.key} upgrade={upgrade} />
-          ))}
-        </div>
-        <h3 className={styles.smallerTitle}>{translate({ id: "roadmap.smaller.title", message: "Also in this hard fork" })}</h3>
-        <ul className={styles.smaller}>
-          {smallerChanges.map((change) => (
-            <li key={change.key}>
-              <b>{change.name}</b>
-              {change.source && <Link to={change.source.href}>{change.source.label}</Link>}
-              <span>{change.text}</span>
-            </li>
-          ))}
-        </ul>
-        <p className={styles.plan}>
-          <Link to={fork.planUrl}>{translate({ id: "roadmap.plan.link", message: "Full scope in Intersect's hard fork plan" })}</Link>
-        </p>
-      </div>
-    </section>
-  );
-}
-
-/**
- * A hard fork after the next one.
- *
- * @param {object} props
- * @param {object} props.fork Later entry of getHardForks().
- * @param {Array<object>} props.upgrades Result of getUpgrades(fork.key).
- */
-export function LaterHardFork({ fork, upgrades }) {
-  return (
-    <section className={styles.later} id={fork.key}>
-      <div>
-        <h2 className={styles.laterTitle}>{fork.name}</h2>
-        <p className={styles.panelSummary}>{fork.summary}</p>
-      </div>
-      <div className={styles.upgrades}>
-        {upgrades.map((upgrade) => (
-          <Upgrade key={upgrade.key} upgrade={upgrade} />
+      <ul className={styles.rows}>
+        {changes.map((change) => (
+          <Row key={change.key} {...change} />
         ))}
-      </div>
-    </section>
+      </ul>
+    </Fold>
+  );
+}
+
+/**
+ * One group of proposals that have no hard fork.
+ *
+ * @param {object} props
+ * @param {object} props.group Entry of getUnscheduled().
+ */
+export function ProposalGroup({ group }) {
+  return (
+    <Fold
+      id={group.key}
+      name={group.name}
+      facts={[]}
+      aside={countOf(
+        group.items.length,
+        translate({ id: "roadmap.unscheduled.proposal", message: "1 proposal" }),
+        translate({ id: "roadmap.unscheduled.proposals", message: "{count} proposals" }, { count: group.items.length }),
+      )}
+    >
+      <p className={styles.note}>
+        {group.note} <Link to={group.planUrl}>{translate({ id: "roadmap.source.intersect", message: "Intersect plan" })}</Link>
+      </p>
+      <ul className={styles.rows}>
+        {group.items.map((item) => (
+          <Row key={item.key} {...item} />
+        ))}
+      </ul>
+    </Fold>
+  );
+}
+
+/**
+ * One enacted hard fork. Closed, it shows its name, protocol version, era
+ * and date. Open, it adds what it brought and where it is on the chain.
+ *
+ * @param {object} props
+ * @param {object} props.item Entry of getHardForkHistory().
+ */
+export function CompletedHardFork({ item }) {
+  const [version, ...ids] = item.meta;
+  return (
+    <Fold
+      id={`protocol-version-${versionOf(item)}`}
+      name={item.name}
+      facts={[
+        translate({ id: "roadmap.fork.version", message: "Protocol version {version}" }, { version: versionOf(item) }),
+        item.era,
+      ]}
+      aside={item.date}
+    >
+      <p className={styles.note}>{item.description}</p>
+      <dl className={styles.facts}>
+        <dt>{item.epochLabel}</dt>
+        <dd>{item.epoch}</dd>
+        <dt>{version.label}</dt>
+        <dd>{version.value}</dd>
+        {ids.map((id) => (
+          <React.Fragment key={id.label}>
+            <dt>{id.label}</dt>
+            <dd>{id.value}</dd>
+          </React.Fragment>
+        ))}
+      </dl>
+    </Fold>
   );
 }

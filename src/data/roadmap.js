@@ -1,14 +1,22 @@
 import { translate } from "@docusaurus/Translate";
 
-// Data for /roadmap: the hard forks being built and what each one changes.
-// Scope and targets come from Intersect's hard fork plan. `stage` says how
-// far a hard fork has come and is one of: development, devnet, preview,
-// preprod, vote, mainnet. Update it by hand when the hard fork working group
-// reports a new step. Enacted hard forks live in src/data/hardforks.js.
+// Data for /roadmap. Two record types, both taken from Intersect's hard fork
+// plan and typed here:
+//
+// A hard fork: where it stands and what it moves the Cardano mainnet to.
+// `stage` is one of development, devnet, preview, preprod, vote, mainnet.
+// Update it by hand when the hard fork working group reports a new step.
+//
+// A change: one thing a hard fork brings. `figure` is set only where a
+// source states one, as a before and after pair (`from`, `to`) or a single
+// `value`, with a label. `source` is the proposal or plan the entry rests on.
+//
+// Enacted hard forks live in src/data/hardforks.js.
 
 const INTERSECT_PLAN_URL = "https://product.cardano.intersectmbo.org/hardfork-planning/dijkstra/";
 const WORKING_GROUP_URL = "https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes";
 const cip = (number) => ({ label: `CIP-${number}`, href: `https://cips.cardano.org/cip/CIP-${String(number).padStart(4, "0")}` });
+const intersectPlan = () => ({ label: translate({ id: "roadmap.source.intersect", message: "Intersect plan" }), href: INTERSECT_PLAN_URL });
 
 // Hard forks being built, next one first. `version` is the protocol major
 // version the hard fork moves the Cardano mainnet to, or null while none is
@@ -20,12 +28,13 @@ export function getHardForks() {
       name: translate({ id: "roadmap.fork.dijkstra1.name", message: "Dijkstra, phase 1" }),
       era: "Dijkstra",
       version: 12,
-      summary: translate({
-        id: "roadmap.fork.dijkstra1.summary",
-        message:
-          "The next hard fork starts the Dijkstra ledger era. Intersect targets code completion for Q4 2026. There is no mainnet date yet: an on-chain vote sets it after the release has run on the test networks.",
-      }),
+      eraNote: translate({ id: "roadmap.fork.dijkstra1.eraNote", message: "Starts the Dijkstra era" }),
+      target: translate({ id: "roadmap.fork.dijkstra1.target", message: "Intersect targets code completion for Q4 2026" }),
       stage: "devnet",
+      stageNote: translate({
+        id: "roadmap.fork.dijkstra1.stageNote",
+        message: "The developer testnet runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date.",
+      }),
       stageSource: WORKING_GROUP_URL,
       planUrl: INTERSECT_PLAN_URL,
     },
@@ -34,96 +43,65 @@ export function getHardForks() {
       name: translate({ id: "roadmap.fork.dijkstra2.name", message: "Dijkstra, phase 2" }),
       era: "Dijkstra",
       version: null,
-      summary: translate({
-        id: "roadmap.fork.dijkstra2.summary",
-        message: "A second hard fork inside the Dijkstra era. Intersect targets code completion for Q2 2027.",
-      }),
+      eraNote: translate({ id: "roadmap.fork.dijkstra2.eraNote", message: "Inside the Dijkstra era" }),
+      target: translate({ id: "roadmap.fork.dijkstra2.target", message: "Intersect targets code completion for Q2 2027" }),
       stage: "development",
+      stageNote: translate({ id: "roadmap.fork.dijkstra2.stageNote", message: "An on-chain vote sets the mainnet date." }),
       stageSource: WORKING_GROUP_URL,
       planUrl: INTERSECT_PLAN_URL,
     },
   ];
 }
 
-// The main changes of a hard fork, in display order. `figure` is set only
-// where a source states one: a before and after pair (`from`, `to`) or a
-// single `value`, with a label. `note` flags a change that is behind its
-// hard fork. `source` is the proposal or plan the entry rests on.
-export function getUpgrades(forkKey) {
-  const upgrades = {
+// What a hard fork changes, in display order.
+export function getChanges(forkKey) {
+  const changes = {
     "dijkstra-1": [
       {
         key: "leios",
-        name: translate({ id: "roadmap.upgrade.leios.name", message: "Ouroboros Linear Leios" }),
+        name: translate({ id: "roadmap.change.leios.name", message: "Ouroboros Linear Leios" }),
         text: translate({
-          id: "roadmap.upgrade.leios.text",
+          id: "roadmap.change.leios.text",
           message: "Block producers publish a second, larger block next to the regular one, so the network carries more transactions.",
         }),
         figure: {
-          value: translate({ id: "roadmap.upgrade.leios.figure", message: "5 to 6x" }),
-          label: translate({ id: "roadmap.upgrade.leios.figureLabel", message: "Throughput measured on a public testnet" }),
+          value: translate({ id: "roadmap.change.leios.figure", message: "5 to 6x" }),
+          label: translate({ id: "roadmap.change.leios.figureLabel", message: "Throughput measured on a public testnet" }),
         },
-        note: translate({ id: "roadmap.upgrade.leios.note", message: "Not in a node release yet" }),
         source: cip(164),
       },
       {
         key: "reward-withdrawals",
-        name: translate({ id: "roadmap.upgrade.withdrawals.name", message: "Reward withdrawals without a DRep" }),
+        name: translate({ id: "roadmap.change.withdrawals.name", message: "Reward withdrawals without a DRep" }),
         text: translate({
-          id: "roadmap.upgrade.withdrawals.text",
+          id: "roadmap.change.withdrawals.text",
           message: "Ada holders can withdraw their rewards without first delegating their vote to a DRep.",
         }),
         figure: {
           from: "1",
           to: "0",
-          label: translate({ id: "roadmap.upgrade.withdrawals.figureLabel", message: "Vote delegations needed to withdraw rewards" }),
+          label: translate({ id: "roadmap.change.withdrawals.figureLabel", message: "Vote delegations needed to withdraw rewards" }),
         },
         source: cip(181),
       },
       {
         key: "nested-transactions",
-        name: translate({ id: "roadmap.upgrade.nested.name", message: "Nested transactions" }),
+        name: translate({ id: "roadmap.change.nested.name", message: "Nested transactions" }),
         text: translate({
-          id: "roadmap.upgrade.nested.text",
-          message:
-            "A transaction can contain sub-transactions that settle together. A swap offer can then be made and accepted without an exchange in between.",
+          id: "roadmap.change.nested.text",
+          message: "A transaction can contain sub-transactions that settle together, so a swap offer can be made and accepted without an exchange in between.",
         }),
         source: cip(118),
       },
       {
         key: "plutus-v4",
-        name: translate({ id: "roadmap.upgrade.plutusV4.name", message: "Plutus V4" }),
+        name: translate({ id: "roadmap.change.plutusV4.name", message: "Plutus V4" }),
         text: translate({
-          id: "roadmap.upgrade.plutusV4.text",
+          id: "roadmap.change.plutusV4.text",
           message: "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces.",
         }),
-        source: { label: translate({ id: "roadmap.source.intersect", message: "Intersect plan" }), href: INTERSECT_PLAN_URL },
+        source: intersectPlan(),
       },
-    ],
-    "dijkstra-2": [
-      {
-        key: "peras",
-        name: translate({ id: "roadmap.upgrade.peras.name", message: "Ouroboros Peras" }),
-        text: translate({
-          id: "roadmap.upgrade.peras.text",
-          message: "Stake pools vote on recent blocks, so the network treats a block as final sooner.",
-        }),
-        figure: {
-          from: translate({ id: "roadmap.upgrade.peras.figureFrom", message: "Hours" }),
-          to: translate({ id: "roadmap.upgrade.peras.figureTo", message: "minutes" }),
-          label: translate({ id: "roadmap.upgrade.peras.figureLabel", message: "Time until a transaction is settled" }),
-        },
-        source: cip(140),
-      },
-    ],
-  };
-  return upgrades[forkKey] || [];
-}
-
-// The remaining scope of a hard fork: one line each.
-export function getSmallerChanges(forkKey) {
-  const changes = {
-    "dijkstra-1": [
       {
         key: "guard-scripts",
         name: translate({ id: "roadmap.change.guards.name", message: "Guard scripts" }),
@@ -179,8 +157,140 @@ export function getSmallerChanges(forkKey) {
           id: "roadmap.change.referenceFees.text",
           message: "The fee function accounts for reference inputs, and the pricing of reference scripts becomes a protocol parameter.",
         }),
+        source: intersectPlan(),
+      },
+    ],
+    "dijkstra-2": [
+      {
+        key: "peras",
+        name: translate({ id: "roadmap.change.peras.name", message: "Ouroboros Peras" }),
+        text: translate({
+          id: "roadmap.change.peras.text",
+          message: "Stake pools vote on recent blocks, so the network treats a block as final sooner.",
+        }),
+        figure: {
+          from: translate({ id: "roadmap.change.peras.figureFrom", message: "Hours" }),
+          to: translate({ id: "roadmap.change.peras.figureTo", message: "minutes" }),
+          label: translate({ id: "roadmap.change.peras.figureLabel", message: "Time until a transaction is settled" }),
+        },
+        source: cip(140),
       },
     ],
   };
   return changes[forkKey] || [];
+}
+
+// Proposals without a hard fork, in the two groups Intersect's plan gives
+// them. `text` is the reason the plan states, where it states one.
+export function getUnscheduled() {
+  const pull = (number) => ({
+    label: translate({ id: "roadmap.source.draft", message: "Draft proposal" }),
+    href: `https://github.com/cardano-foundation/CIPs/pull/${number}`,
+  });
+  return [
+    {
+      key: "not-assigned",
+      name: translate({ id: "roadmap.unscheduled.notAssigned.name", message: "Not assigned to a hard fork yet" }),
+      note: translate({
+        id: "roadmap.unscheduled.notAssigned.note",
+        message: "Community proposals that Intersect's hard fork plan lists for future consideration.",
+      }),
+      planUrl: INTERSECT_PLAN_URL,
+      items: [
+        {
+          key: "optimistic-constitutionality",
+          name: translate({ id: "roadmap.unscheduled.constitutionality", message: "Optimistic constitutionality" }),
+          source: pull(1164),
+        },
+        {
+          key: "builtin-value-functions",
+          name: translate({ id: "roadmap.unscheduled.builtinValue", message: "More BuiltinValue functions" }),
+          source: pull(1090),
+        },
+        {
+          key: "script-purposes",
+          name: translate({ id: "roadmap.unscheduled.scriptPurposes", message: "More descriptive script purposes" }),
+          source: pull(1072),
+        },
+        {
+          key: "quantum-secure-signatures",
+          name: translate({ id: "roadmap.unscheduled.quantum", message: "Quantum-secure signature schemes" }),
+        },
+      ],
+    },
+    {
+      key: "left-out",
+      name: translate({ id: "roadmap.unscheduled.leftOut.name", message: "Considered for Dijkstra and left out" }),
+      note: translate({
+        id: "roadmap.unscheduled.leftOut.note",
+        message: "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason Intersect's plan gives.",
+      }),
+      planUrl: INTERSECT_PLAN_URL,
+      items: [
+        {
+          key: "producer-identification",
+          name: translate({ id: "roadmap.unscheduled.producerId", message: "Producer identification" }),
+          text: translate({
+            id: "roadmap.unscheduled.producerId.text",
+            message: "The ledger team has no capacity for it in this era, and the node implementations have not agreed on an approach.",
+          }),
+          source: pull(1157),
+        },
+        {
+          key: "multi-asset-treasury",
+          name: translate({ id: "roadmap.unscheduled.treasury", message: "Cardano multi-asset treasury" }),
+          text: translate({
+            id: "roadmap.unscheduled.treasury.text",
+            message: "It needs the account address groundwork that phase 1 brings, so it is better targeted at the era after Dijkstra.",
+          }),
+          source: pull(1103),
+        },
+        {
+          key: "multi-index-array",
+          name: translate({ id: "roadmap.unscheduled.multiIndexArray", message: "multiIndexArray builtin" }),
+          text: translate({
+            id: "roadmap.unscheduled.multiIndexArray.text",
+            message: "Left out of the Plutus V4 scope for lack of capacity. It needs no ledger change, so a later hard fork inside the era could take it.",
+          }),
+          source: cip(156),
+        },
+        {
+          key: "receiving-script-purpose",
+          name: translate({ id: "roadmap.unscheduled.receiving", message: "Receiving script purpose and addresses" }),
+          text: translate({
+            id: "roadmap.unscheduled.receiving.text",
+            message: "Too complex for the ledger capacity available in this era.",
+          }),
+          source: cip(160),
+        },
+        {
+          key: "time-bound-delegation",
+          name: translate({ id: "roadmap.unscheduled.timeBound", message: "Time-bound delegation with dynamic rewards" }),
+          text: translate({
+            id: "roadmap.unscheduled.timeBound.text",
+            message: "Contentious: 54.1% voted no in a community poll.",
+          }),
+          source: cip(163),
+        },
+        {
+          key: "net-change-limit",
+          name: translate({ id: "roadmap.unscheduled.netChangeLimit", message: "Net change limit parameter" }),
+          text: translate({
+            id: "roadmap.unscheduled.netChangeLimit.text",
+            message: "Not implementable today, because the ledger keeps no history of what flowed in and out in past epochs.",
+          }),
+          source: pull(1129),
+        },
+        {
+          key: "hot-credentials",
+          name: translate({ id: "roadmap.unscheduled.hotCredentials", message: "Stake pool hot credentials" }),
+          text: translate({
+            id: "roadmap.unscheduled.hotCredentials.text",
+            message: "Too complex given the ledger team's commitments for this era.",
+          }),
+          source: pull(1140),
+        },
+      ],
+    },
+  ];
 }

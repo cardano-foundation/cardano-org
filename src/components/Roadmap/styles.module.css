@@ -1,17 +1,20 @@
 /* /roadmap. Hairline rules and type only: no cards, no shadows.
  *
- * Seven type sizes, nothing in between:
+ * Five type sizes, nothing in between:
  *   0.75rem   labels and captions
  *   0.875rem  secondary text and links
  *   1rem      body
- *   1.125rem  the name of a change
+ *   1.125rem  the name of a change, a figure
  *   1.75rem   the name of a hard fork
- *   2.25rem   a figure
- *   4.5rem    the protocol version step
  * Text is the base color, emphasis-800 or emphasis-700. Nothing lighter,
  * so every size passes contrast in both themes. */
 
-/* The line of protocol versions */
+/* The line of protocol versions.
+ *
+ * Every dot is 12px including its border, with its center 6px from the top
+ * of its cell. A connector is 2px high, centered on the same 6px, and runs
+ * from the right edge of one dot to the left edge of the next. It never
+ * passes behind a dot, so a hollow dot is hollow on any background. */
 
 .line {
   margin-top: var(--site-space-lg);
@@ -23,14 +26,18 @@
   display: grid;
 }
 
+/* An era starts at a hard fork, so its divider is a 2px stem centered on
+ * that hard fork's dot (5px to 7px from the cell edge, the dot's center
+ * being 6px) and reaches down to touch it. The band row is shifted by the
+ * same 5px, and the last band gives the 5px back on the right. */
 .bands {
   margin-bottom: var(--site-space-xs);
+  transform: translateX(5px);
 }
 
 .bands span {
-  overflow: hidden;
-  padding: var(--site-space-3xs) var(--site-space-2xs);
-  border-left: 1px solid var(--ifm-color-emphasis-300);
+  position: relative;
+  padding: var(--site-space-3xs) var(--site-space-2xs) var(--site-space-3xs) var(--site-space-xs);
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.5;
@@ -41,9 +48,27 @@
   background: var(--ifm-color-emphasis-100);
 }
 
-.bands .bandNext {
+.bands span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: calc(-1 * var(--site-space-xs));
+  left: 0;
+  width: 2px;
+  background: var(--ifm-color-emphasis-900);
+}
+
+.bands span:last-child {
+  margin-right: 5px;
+}
+
+.bands .bandAhead {
   color: var(--ifm-color-primary);
   background: var(--site-tint-strong);
+}
+
+.bands .bandAhead::before {
+  background: var(--ifm-color-primary);
 }
 
 .ticks {
@@ -56,22 +81,10 @@
   position: relative;
   padding: var(--site-space-md) var(--site-space-2xs) 0 0;
   font-size: 0.75rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
 }
 
-/* The rule runs from this dot to the next one. */
-.tick::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--ifm-color-emphasis-900);
-}
-
-/* Dots are 12px including their border, so their center is at 6px, where
- * the 2px rule (5px to 7px) runs. */
 .tick::after {
   content: "";
   box-sizing: border-box;
@@ -85,32 +98,43 @@
   background: var(--ifm-color-emphasis-900);
 }
 
+.tick::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  right: 0;
+  border-top: 2px solid var(--ifm-color-emphasis-900);
+}
+
+.tick:last-child::before {
+  display: none;
+}
+
 .tick span {
   display: block;
 }
 
 .tick b {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: var(--site-space-2xs);
+  /* A fixed line, so a label without a number sits on the same baseline. */
+  height: 1.5rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
+  color: var(--ifm-font-color-base);
 }
 
 .tick em {
-  margin-left: var(--site-space-2xs);
+  line-height: 1.5rem;
   font-size: 0.75rem;
   font-style: normal;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.tickYear {
-  color: var(--ifm-color-emphasis-700);
-}
-
-.tickNow::before {
-  background: var(--ifm-color-emphasis-300);
-}
-
+/* Mainnet is here. Everything after it has not happened: dashed, hollow. */
 .tickNow::after {
   border-color: var(--ifm-color-primary);
   background: var(--ifm-color-primary);
@@ -121,115 +145,215 @@
   color: var(--ifm-color-primary);
 }
 
-.tickNext::before {
+/* 3px of air on both sides, clear of the ring around the current dot. */
+.tickNow::before,
+.tickAhead::before {
+  left: 15px;
+  right: 3px;
+  border-top: 2px dashed var(--ifm-color-emphasis-600);
+}
+
+.tickAhead::after {
+  border-color: var(--ifm-color-primary);
+  background: none;
+}
+
+.lineMore {
   display: none;
+  margin: var(--site-space-xs) 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
-.tickNext::after {
-  border-color: var(--ifm-color-emphasis-700);
-  background: var(--ifm-background-color);
-}
+/* Three stacked sections. Each starts with a rule and a small title. */
 
-/* The next hard fork, and the one after it: a narrow column for the hard
- * fork, a wide one for what it changes. The columns sit on the grid of the
- * version line above (twelve versions and a wider last one, 13.5 units), so
- * the wide column starts under version 4 and its second half under
- * version 9. Gutters are padding, never gaps, to keep that true. */
-
-.panel,
-.later {
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 9.5fr);
+.section {
+  margin-top: var(--site-space-xl);
+  padding-top: var(--site-space-sm);
+  border-top: 2px solid var(--ifm-color-emphasis-900);
   font-variant-numeric: tabular-nums;
 }
 
-.panel > :first-child,
-.later > :first-child {
-  padding-right: var(--site-space-xl);
+.sectionTitle {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
 }
 
-.panel {
-  margin-top: var(--site-space-xl);
-  padding-top: var(--site-space-lg);
-  border-top: 2px solid var(--ifm-color-primary);
-}
+/* An element that opens on click, the unit of every section. The control
+ * is a plus on the right that loses its upright bar when open. */
 
-.later {
-  margin-top: var(--site-space-lg);
-  padding-top: var(--site-space-lg);
+.fold + .fold {
   border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
-.step {
-  margin: 0 0 var(--site-space-xs);
-  font-size: 4.5rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  white-space: nowrap;
+.fold summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 14px;
+  column-gap: var(--site-space-md);
+  align-items: center;
+  padding: var(--site-space-sm) 0;
+  cursor: pointer;
+  list-style: none;
 }
 
-.panelTitle,
-.laterTitle {
+.fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold summary::after {
+  content: "";
+  grid-column: 3;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 14px 2px no-repeat,
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 2px 14px no-repeat;
+}
+
+.fold[open] summary::after {
+  background: linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 14px 2px no-repeat;
+}
+
+.fold summary:hover .foldName {
+  color: var(--ifm-color-primary);
+}
+
+.fold summary:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.foldName {
   margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.foldNameLarge {
   font-size: 1.75rem;
   line-height: 1.2;
 }
 
-.panelSummary {
-  margin: var(--site-space-2xs) 0 0;
-  font-size: 1rem;
+.foldFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--site-space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
 }
 
-/* The path to the Cardano mainnet: steps done, the current step, steps ahead */
+.foldNameLarge + .foldFacts {
+  margin-top: var(--site-space-2xs);
+  font-weight: 600;
+}
+
+.foldFacts li + li::before {
+  content: "\00b7";
+  margin-right: var(--site-space-xs);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.foldAside {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: right;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.foldAside b {
+  display: block;
+  color: var(--ifm-font-color-base);
+}
+
+.foldBody {
+  padding-bottom: var(--site-space-lg);
+}
+
+.note {
+  max-width: 44rem;
+  margin: var(--site-space-xs) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.note a,
+.rowSource a {
+  font-weight: 600;
+}
+
+/* Where an enacted hard fork is on the chain: label and value pairs. */
+.facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--site-space-3xs) var(--site-space-md);
+  margin: var(--site-space-sm) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.facts dt {
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The path to the Cardano mainnet: six equal steps. Dots and connectors
+ * follow the rules of the version line: 12px dots with their center 6px
+ * from the top, 2px connectors from the edge of one dot to the next. */
 
 .path {
-  margin: var(--site-space-md) 0 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: var(--site-space-xs) 0 0;
   padding: 0;
   list-style: none;
 }
 
 .path li {
   position: relative;
-  padding: 0 0 var(--site-space-xs) var(--site-space-md);
+  padding: var(--site-space-md) var(--site-space-xs) 0 0;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--ifm-color-emphasis-700);
 }
 
-/* The rule runs from the center of this dot to the center of the next. */
-.path li::before {
-  content: "";
-  position: absolute;
-  top: 10.5px;
-  bottom: -10.5px;
-  left: 5px;
-  width: 2px;
-  background: var(--ifm-color-emphasis-300);
-}
-
-.path li:last-child {
-  padding-bottom: 0;
-}
-
-.path li:last-child::before {
-  display: none;
-}
-
-/* Same dot. Its center (4.5px + 6px) is the middle of the 21px text line. */
 .path li::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  top: 4.5px;
+  top: 0;
   left: 0;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   border: 2px solid var(--ifm-color-emphasis-700);
-  background: var(--ifm-background-color);
+}
+
+.path li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  right: 3px;
+  border-top: 2px solid var(--ifm-color-emphasis-300);
+}
+
+.path li:last-child::before {
+  display: none;
 }
 
 .path .pathDone {
@@ -237,7 +361,7 @@
 }
 
 .path .pathDone::before {
-  background: var(--ifm-color-primary);
+  border-top-color: var(--ifm-color-primary);
 }
 
 .path .pathDone::after,
@@ -255,48 +379,62 @@
   box-shadow: 0 0 0 3px var(--site-tint-strong);
 }
 
-.pathSource {
-  margin: var(--site-space-xs) 0 0;
-  font-size: 0.875rem;
+/* Rows. Three columns on the grid of the version line (31 units): the name
+ * runs to version 9, the figure starts there, the source sits at the end. */
+
+.rows {
+  margin: var(--site-space-md) 0 0;
+  padding: 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  list-style: none;
 }
 
-/* What a hard fork changes */
-
-.upgrades,
-.smaller {
+.row {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 4.5fr);
-}
-
-.upgrade {
-  padding: var(--site-space-md) var(--site-space-lg) var(--site-space-md) 0;
+  grid-template-columns: minmax(0, 18fr) minmax(0, 9fr) minmax(0, 4fr);
+  align-items: baseline;
+  padding: var(--site-space-xs) 0;
   border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
-/* The first row sits under the rule of its section. */
-.upgrade:nth-child(-n + 2) {
-  padding-top: 0;
-  border-top: 0;
+.row > div {
+  padding-right: var(--site-space-md);
+}
+
+.row > .rowSource {
+  padding-right: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.rowName {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.rowText {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
 }
 
 .figure {
-  margin: 0 0 var(--site-space-xs);
-}
-
-.figure b {
   display: block;
-  font-size: 2.25rem;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
   white-space: nowrap;
 }
 
-.figure span {
+.figureLabel {
   display: block;
-  margin-top: var(--site-space-3xs);
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-emphasis-800);
 }
 
 .arrow {
@@ -304,124 +442,121 @@
   height: 0.56em;
 }
 
-.upgradeName {
-  margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.4;
-}
-
-.upgradeText {
-  margin: var(--site-space-3xs) 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.upgradeMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 var(--site-space-sm);
-  margin: var(--site-space-2xs) 0 0;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.note {
-  color: color-mix(in srgb, var(--site-warning) 75%, var(--ifm-font-color-base));
-}
-
-.smallerTitle {
-  margin: 0;
-  padding-top: var(--site-space-md);
-  border-top: 1px solid var(--ifm-color-emphasis-300);
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ifm-color-emphasis-700);
-}
-
-/* Rows of two, so both columns keep the same lines. */
-.smaller {
-  row-gap: var(--site-space-sm);
-  margin: var(--site-space-sm) 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-.smaller li {
-  padding-right: var(--site-space-lg);
-}
-
-.smaller a {
-  margin-left: var(--site-space-2xs);
-  font-weight: 600;
-}
-
-.smaller span {
-  display: block;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.plan {
-  margin: var(--site-space-md) 0 0;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
 @media (max-width: 996px) {
+  /* Narrow screens: only where mainnet is and what comes next, as a short
+   * vertical line, then a link to the rest. */
   .bands {
     display: none;
   }
 
   .ticks {
-    display: flex;
-    flex-direction: column-reverse;
+    display: block;
   }
 
   .tick {
-    display: grid;
-    grid-template-columns: 6rem minmax(0, 1fr) auto;
-    column-gap: var(--site-space-xs);
-    align-items: baseline;
-    padding: var(--site-space-2xs) 0;
-    border-top: 1px solid var(--ifm-color-emphasis-200);
+    display: none;
+    padding: 0 0 var(--site-space-sm) var(--site-space-md);
     font-size: 0.875rem;
   }
 
-  .tick::before,
+  .tickNow,
+  .tickAhead {
+    display: block;
+  }
+
   .tick::after {
-    display: none;
+    top: 6px;
   }
 
-  .panel,
-  .later {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: var(--site-space-lg);
+  .tickNow::before,
+  .tickAhead::before {
+    top: 21px;
+    bottom: -3px;
+    left: 5px;
+    right: auto;
+    border-top: 0;
+    border-left: 2px dashed var(--ifm-color-emphasis-600);
   }
 
-  .panel > :first-child,
-  .later > :first-child {
-    padding-right: 0;
+  .tick:last-child {
+    padding-bottom: 0;
   }
 
-  .step {
-    font-size: 3.5rem;
+  .lineMore {
+    display: block;
   }
+
 }
 
 @media (max-width: 768px) {
-  .upgrades,
-  .smaller {
+  /* The aside moves under the facts, and the facts stack. */
+  .fold summary {
+    grid-template-columns: minmax(0, 1fr) 14px;
+    row-gap: var(--site-space-3xs);
+  }
+
+  .fold summary::after {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .foldAside {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .foldFacts {
+    flex-direction: column;
+  }
+
+  .foldFacts li + li::before {
+    content: none;
+  }
+
+  /* The path turns upright: dots down the left, labels beside them. */
+  .path {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .upgrade:nth-child(2) {
-    padding-top: var(--site-space-md);
-    border-top: 1px solid var(--ifm-color-emphasis-300);
+  .path li {
+    padding: 0 0 var(--site-space-xs) var(--site-space-md);
+  }
+
+  .path li:last-child {
+    padding-bottom: 0;
+  }
+
+  .path li::after {
+    top: 4.5px;
+  }
+
+  .path li::before {
+    top: 19.5px;
+    bottom: -1.5px;
+    left: 5px;
+    right: auto;
+    border-top: 0;
+    border-left: 2px solid var(--ifm-color-emphasis-300);
+  }
+
+  .path .pathDone::before {
+    border-left-color: var(--ifm-color-primary);
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--site-space-3xs);
+  }
+
+  .row > div {
+    padding-right: 0;
+  }
+
+  .row > div:empty {
+    display: none;
+  }
+
+  .row > .rowSource {
+    text-align: left;
   }
 }

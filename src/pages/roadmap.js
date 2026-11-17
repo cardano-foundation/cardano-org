@@ -7,13 +7,13 @@ import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
-import { LaterHardFork, NextHardFork, VersionLine } from "@site/src/components/Roadmap";
-import { getHardForks, getSmallerChanges, getUpgrades } from "@site/src/data/roadmap";
+import { CompletedHardFork, HardFork, ProposalGroup, Section, VersionLine } from "@site/src/components/Roadmap";
+import { getChanges, getHardForks, getUnscheduled } from "@site/src/data/roadmap";
 import { getHardForkHistory } from "@site/src/data/hardforks";
 
 export default function Roadmap() {
   const history = getHardForkHistory();
-  const [next, ...later] = getHardForks();
+  const forks = getHardForks();
   return (
     <Layout
       title={translate({ id: "roadmap.meta.title", message: "Cardano Network Upgrades" })}
@@ -35,11 +35,22 @@ export default function Roadmap() {
       <main>
         <BackgroundWrapper backgroundType="zoom">
           <BoundaryBox>
-            <VersionLine history={history} next={next} />
-            <NextHardFork fork={next} upgrades={getUpgrades(next.key)} smallerChanges={getSmallerChanges(next.key)} latest={history[0]} />
-            {later.map((fork) => (
-              <LaterHardFork key={fork.key} fork={fork} upgrades={getUpgrades(fork.key)} />
-            ))}
+            <VersionLine history={history} upcoming={forks} />
+            <Section id="planned" title={translate({ id: "roadmap.section.planned", message: "Planned" })}>
+              {forks.map((fork) => (
+                <HardFork key={fork.key} fork={fork} changes={getChanges(fork.key)} />
+              ))}
+            </Section>
+            <Section id="not-scheduled" title={translate({ id: "roadmap.section.unscheduled", message: "Not scheduled" })}>
+              {getUnscheduled().map((group) => (
+                <ProposalGroup key={group.key} group={group} />
+              ))}
+            </Section>
+            <Section id="completed" title={translate({ id: "roadmap.section.completed", message: "Completed" })}>
+              {history.map((item) => (
+                <CompletedHardFork key={item.epoch} item={item} />
+              ))}
+            </Section>
             <SpacerBox size="medium" />
             <LinkCardRow
               items={[
