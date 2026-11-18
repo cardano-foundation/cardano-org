@@ -6,13 +6,16 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
-import { CompletedHardFork, HardFork, ProposalGroup, Section, VersionLine } from "@site/src/components/Roadmap";
-import { getChanges, getHardForks, getUnscheduled } from "@site/src/data/roadmap";
+import { CompletedHardFork, HardFork, Section, VersionLine, openEntry } from "@site/src/components/Roadmap";
+import { getHardForks } from "@site/src/data/roadmap";
 import { getHardForkHistory } from "@site/src/data/hardforks";
+import useHashTarget from "@site/src/utils/useHashTarget";
 
 export default function Roadmap() {
   const history = getHardForkHistory();
   const forks = getHardForks();
+  // A link to /roadmap#<id> opens the entry it points at.
+  useHashTarget(openEntry);
   return (
     <Layout
       title={translate({ id: "roadmap.meta.title", message: "Cardano Network Upgrades" })}
@@ -27,21 +30,16 @@ export default function Roadmap() {
         title={translate({ id: "roadmap.hero.title", message: "Cardano network upgrades" })}
         description={translate({
           id: "roadmap.hero.description",
-          message: "What the next hard fork changes, and how far along it is.",
+          message: "What the next hard fork changes and how far along it is.",
         })}
         bannerType="starburst"
       />
       <main>
         <BoundaryBox>
           <VersionLine history={history} upcoming={forks} />
-          <Section id="planned" title={translate({ id: "roadmap.section.planned", message: "Planned" })}>
+          <Section id="planned" title={translate({ id: "roadmap.section.planned", message: "Upcoming" })}>
             {forks.map((fork) => (
-              <HardFork key={fork.key} fork={fork} changes={getChanges(fork.key)} />
-            ))}
-          </Section>
-          <Section id="not-scheduled" title={translate({ id: "roadmap.section.unscheduled", message: "Not scheduled" })}>
-            {getUnscheduled().map((group) => (
-              <ProposalGroup key={group.key} group={group} />
+              <HardFork key={fork.key} fork={fork} />
             ))}
           </Section>
           <Section id="completed" title={translate({ id: "roadmap.section.completed", message: "Completed" })}>
@@ -52,9 +50,9 @@ export default function Roadmap() {
           <SpacerBox size="medium" />
           <LinkCardRow
             items={[
-              { to: "/governance/how-it-works", label: translate({ id: "roadmap.link.decided", message: "How Cardano decides" }) },
-              { to: "/hardforks", label: translate({ id: "roadmap.link.history", message: "Every hard fork so far" }) },
-              { to: "/how-cardano-works", label: translate({ id: "roadmap.link.works", message: "How Cardano works" }) },
+              { to: "/governance/how-it-works", label: translate({ id: "roadmap.link.vote", message: "How a hard fork is voted on" }) },
+              { to: "/hardforks", label: translate({ id: "roadmap.link.hardFork", message: "What a hard fork is" }) },
+              { to: "/ouroboros", label: translate({ id: "roadmap.link.ouroboros", message: "What Ouroboros is" }) },
             ]}
           />
           <SpacerBox size="medium" />

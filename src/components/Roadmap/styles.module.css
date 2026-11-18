@@ -2,10 +2,10 @@
  *
  * Five type sizes, nothing in between:
  *   0.75rem   labels and captions
- *   0.875rem  secondary text, figures and links
+ *   0.875rem  secondary text and links
  *   1rem      the name of a change
- *   1.125rem  the name of a group or an enacted hard fork
- *   1.75rem   the name of a planned hard fork
+ *   1.125rem  the name of an enacted hard fork
+ *   1.75rem   the name of an upcoming hard fork
  * Text is the base color, emphasis-800 or emphasis-700. Nothing lighter,
  * so every size passes contrast in both themes. */
 
@@ -84,7 +84,7 @@
   color: var(--ifm-color-emphasis-800);
 }
 
-/* A version links to its element further down. The link covers the whole
+/* A version links to its entry further down. The link covers the whole
  * tick, the dot included, and turns blue on hover. */
 .tickLink {
   display: block;
@@ -99,11 +99,6 @@
 .tickLink:hover b,
 .tickLink:hover span {
   color: var(--ifm-color-primary);
-}
-
-.tickLink:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
 }
 
 .tick::after {
@@ -142,7 +137,7 @@
   display: flex;
   align-items: baseline;
   gap: var(--site-space-2xs);
-  /* A fixed line, so a label without a number sits on the same baseline. */
+  /* A fixed line, so the names under the numbers line up. */
   height: 1.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -150,7 +145,6 @@
 }
 
 .tick em {
-  line-height: 1.5rem;
   font-size: 0.75rem;
   font-style: normal;
   letter-spacing: 0.04em;
@@ -188,7 +182,7 @@
   font-weight: 600;
 }
 
-/* Three stacked sections. Each is a small title over one box, and every
+/* Two stacked sections. Each is a small title over one box, and every
  * line of a section stays inside its box. */
 
 .section {
@@ -207,13 +201,16 @@
   color: var(--ifm-color-emphasis-700);
 }
 
+/* Text in a box is 0.875rem unless a rule below sets a size. */
 .box {
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--site-radius-lg);
   background: var(--ifm-background-surface-color);
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-/* An element that opens on click, the unit of every section. The control
+/* An entry that opens on click, the unit of every section. The control
  * is a plus on the right that loses its upright bar when open. */
 
 .fold {
@@ -257,8 +254,8 @@
   color: var(--ifm-color-primary);
 }
 
+/* The focus ring sits inside the box. */
 .fold summary:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
   outline-offset: -2px;
 }
 
@@ -280,8 +277,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.875rem;
-  line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
 }
 
@@ -297,18 +292,15 @@
 }
 
 .foldAside {
-  font-size: 0.875rem;
-  line-height: 1.5;
   text-align: right;
   color: var(--ifm-color-emphasis-800);
 }
 
 .foldAside b {
-  display: block;
   color: var(--ifm-font-color-base);
 }
 
-/* How far along a planned hard fork is, readable while it is closed: one
+/* How far along an upcoming hard fork is, readable while it is closed: one
  * segment per step of the path, filled up to the current step. Open, the
  * path itself shows, so the segments hide. */
 .stage {
@@ -326,7 +318,7 @@
 .progress span {
   width: 14px;
   height: 4px;
-  border-radius: 2px;
+  border-radius: var(--site-radius-pill);
   background: var(--ifm-color-emphasis-300);
 }
 
@@ -342,7 +334,7 @@
   padding: 0 var(--site-space-md) var(--site-space-md);
 }
 
-/* A dense element: the name and its facts on one line, in columns. */
+/* A dense entry: the name and its facts on one line, in columns. */
 @media (min-width: 997px) {
   .foldDense summary {
     padding-top: var(--site-space-xs);
@@ -368,30 +360,13 @@
 .note {
   max-width: 44rem;
   margin: var(--site-space-xs) 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
 }
 
-/* The links a note rests on, on their own line under it. */
-.sources {
-  margin: var(--site-space-3xs) 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
 .note a,
-.sources a,
 .rowSource a,
 .facts a {
   font-weight: 600;
-}
-
-/* The dot between two source links, the same as between two facts. */
-.noteDot::before {
-  content: "\00b7";
-  margin: 0 var(--site-space-xs);
-  color: var(--ifm-color-emphasis-700);
 }
 
 /* Where an enacted hard fork is on the chain: label and value pairs. */
@@ -400,12 +375,9 @@
   grid-template-columns: max-content minmax(0, 1fr);
   gap: var(--site-space-3xs) var(--site-space-md);
   margin: var(--site-space-sm) 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 .facts dt {
-  font-weight: 400;
   color: var(--ifm-color-emphasis-800);
 }
 
@@ -429,8 +401,6 @@
 .path li {
   position: relative;
   padding: var(--site-space-md) var(--site-space-xs) 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
   color: var(--ifm-color-emphasis-700);
 }
 
@@ -482,12 +452,12 @@
   box-shadow: 0 0 0 3px var(--site-tint-strong);
 }
 
-/* The contents of an opened element, as a grid of cells: a name with its
- * text and, where a source gives one, a figure, then the source link at the
- * bottom. Every cell draws a line on its right and under it, and the grid
- * clips its own last pixel on the right and at the bottom, so the outer
- * lines never show whatever the number of columns. The lines stop short of
- * the box edge, the lines between elements run to it. */
+/* The changes of an opened hard fork, as a grid of cells: a name with its
+ * text, then the source link at the bottom. Every cell draws a line on its
+ * right and under it, and the grid clips its own last pixel on the right and
+ * at the bottom, so the outer lines never show whatever the number of
+ * columns. The lines stop short of the box edge, the lines between entries
+ * run to it. */
 
 .rows {
   display: grid;
@@ -508,13 +478,15 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
 }
 
-/* The first and last cell of a line of three sit flush with the text above. */
-.row:nth-child(3n + 1) {
-  padding-left: 0;
-}
+/* The first and last cell of a line sit flush with the text above. */
+@media (min-width: 997px) {
+  .row:nth-child(3n + 1) {
+    padding-left: 0;
+  }
 
-.row:nth-child(3n) {
-  padding-right: 0;
+  .row:nth-child(3n) {
+    padding-right: 0;
+  }
 }
 
 .row:only-child {
@@ -524,8 +496,6 @@
 
 .rowSource {
   margin-top: auto;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 .rowName {
@@ -537,28 +507,7 @@
 
 .rowText {
   display: block;
-  font-size: 0.875rem;
-  line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
-}
-
-.figure {
-  display: block;
-  margin-top: var(--site-space-3xs);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--ifm-color-emphasis-800);
-}
-
-.figure b {
-  margin-right: var(--site-space-2xs);
-  white-space: nowrap;
-  color: var(--ifm-font-color-base);
-}
-
-.arrow {
-  width: 0.9em;
-  height: 0.56em;
 }
 
 @media (max-width: 996px) {
@@ -613,24 +562,17 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .row:nth-child(n) {
-    padding-left: var(--site-space-md);
-    padding-right: var(--site-space-md);
-  }
-
   .row:nth-child(2n + 1) {
     padding-left: 0;
   }
 
-  .row:nth-child(2n),
-  .row:only-child {
+  .row:nth-child(2n) {
     padding-right: 0;
   }
-
 }
 
 @media (max-width: 768px) {
-  /* The aside moves under the facts, and the facts stack. */
+  /* The aside moves under the facts. */
   .fold summary {
     grid-template-columns: minmax(0, 1fr) 14px;
     row-gap: var(--site-space-3xs);
@@ -656,12 +598,42 @@
     justify-content: flex-start;
   }
 
+  /* The facts read as one line of text. Where it does not fit, it breaks
+   * after the comma and never inside a fact. */
   .foldFacts {
-    flex-direction: column;
+    display: block;
+  }
+
+  .foldFacts li {
+    display: inline;
+    white-space: nowrap;
   }
 
   .foldFacts li + li::before {
     content: none;
+  }
+
+  .foldFacts li:not(:last-child)::after {
+    content: ", ";
+    white-space: normal;
+  }
+
+  /* An opened hard fork shows its stage once, in the path. */
+  .fold[open] .stage {
+    display: none;
+  }
+
+  /* A transaction id takes one line and is cut at the end. Its link opens
+   * the explorer, which shows it whole. */
+  .txId {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .txSeparator {
+    display: none;
   }
 
   /* The path turns upright: dots down the left, labels beside them. */
@@ -699,7 +671,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .row:nth-child(n) {
+  .row {
     padding-left: 0;
     padding-right: 0;
   }

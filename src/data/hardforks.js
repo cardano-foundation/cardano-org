@@ -10,7 +10,7 @@ const labelTransactionIds = () =>
   translate({ id: "hardforks.timeline.label.transactionIds", message: "Transaction IDs" });
 
 // Every hard fork enacted on mainnet, newest first. Read by /hardforks and
-// by the completed table on /roadmap.
+// by the Completed section of /roadmap.
 export function getHardForkHistory() {
   return [
     {
@@ -20,7 +20,7 @@ export function getHardForkHistory() {
       description: translate({
         id: "hardforks.timeline.vanrossem.description",
         message:
-          "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins",
+          "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins.",
       }),
       epochLabel: labelEpoch(),
       epoch: "644",
@@ -59,7 +59,7 @@ export function getHardForkHistory() {
       description: translate({
         id: "hardforks.timeline.chang1.description",
         message:
-          "Introducing the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only.",
+          "Introduced the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only.",
       }),
       epochLabel: labelEpoch(),
       epoch: "507",
