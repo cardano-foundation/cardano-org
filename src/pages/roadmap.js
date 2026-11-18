@@ -6,14 +6,15 @@ import OpenGraphInfo from "@site/src/components/Layout/OpenGraphInfo";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
 import SpacerBox from "@site/src/components/Layout/SpacerBox";
 import LinkCardRow from "@site/src/components/Layout/LinkCardRow";
-import { CompletedHardFork, HardFork, Section, VersionLine, openEntry } from "@site/src/components/Roadmap";
-import { getHardForks } from "@site/src/data/roadmap";
+import { CompletedHardFork, HardFork, Section, VersionLine, openEntry, versionOf } from "@site/src/components/Roadmap";
+import { getCompletedChanges, getHardForks } from "@site/src/data/roadmap";
 import { getHardForkHistory } from "@site/src/data/hardforks";
 import useHashTarget from "@site/src/utils/useHashTarget";
 
 export default function Roadmap() {
   const history = getHardForkHistory();
   const forks = getHardForks();
+  const completedChanges = getCompletedChanges();
   // A link to /roadmap#<id> opens the entry it points at.
   useHashTarget(openEntry);
   return (
@@ -44,7 +45,7 @@ export default function Roadmap() {
           </Section>
           <Section id="completed" title={translate({ id: "roadmap.section.completed", message: "Completed" })}>
             {history.map((item) => (
-              <CompletedHardFork key={item.epoch} item={item} />
+              <CompletedHardFork key={item.epoch} item={item} changes={completedChanges[versionOf(item)]} />
             ))}
           </Section>
           <SpacerBox size="medium" />

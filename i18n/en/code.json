@@ -12654,5 +12654,164 @@
   },
   "roadmap.fork.changes": {
     "message": "{count} changes"
+  },
+  "roadmap.change.builtins-all-versions.name": {
+    "message": "Built-in functions in every Plutus version"
+  },
+  "roadmap.change.builtins-all-versions.text": {
+    "message": "Plutus V1 and V2 scripts can use the built-in functions that only newer Plutus versions had."
+  },
+  "roadmap.change.case-builtin-types.name": {
+    "message": "Case expressions on built-in types"
+  },
+  "roadmap.change.case-builtin-types.text": {
+    "message": "Scripts can use case expressions on Bool, Integer, and Data values, which makes matching on data faster."
+  },
+  "roadmap.change.array-type.name": {
+    "message": "Array type"
+  },
+  "roadmap.change.array-type.text": {
+    "message": "A built-in array type lets a script look up an element in constant time."
+  },
+  "roadmap.change.value-type.name": {
+    "message": "Multi-asset value type"
+  },
+  "roadmap.change.value-type.text": {
+    "message": "Scripts can work with multi-asset values directly, without encoding them as nested maps."
+  },
+  "roadmap.change.modular-exponentiation.name": {
+    "message": "Modular exponentiation"
+  },
+  "roadmap.change.modular-exponentiation.text": {
+    "message": "A built-in function calculates modular exponentiation, including inverses."
+  },
+  "roadmap.change.drop-list.text": {
+    "message": "A built-in function drops a given number of elements from a list, which makes reading an element by its position much faster."
+  },
+  "roadmap.change.multi-scalar-multiplication.name": {
+    "message": "Multi-scalar multiplication"
+  },
+  "roadmap.change.multi-scalar-multiplication.text": {
+    "message": "A built-in function computes multi-scalar multiplication over the BLS12-381 curve, an operation that cryptographic protocols use."
+  },
+  "roadmap.change.vrf-key-uniqueness.name": {
+    "message": "VRF key uniqueness"
+  },
+  "roadmap.change.vrf-key-uniqueness.text": {
+    "message": "No two stake pools can register the same VRF key. The ledger enforces this from the hard fork on."
+  },
+  "roadmap.change.committee-voting-rule.name": {
+    "message": "Constitutional Committee voting rule"
+  },
+  "roadmap.change.committee-voting-rule.text": {
+    "message": "A restriction on Constitutional Committee votes was only checked when a node received a transaction. It is now a ledger rule."
+  },
+  "roadmap.change.withdrawals-need-drep.name": {
+    "message": "Reward withdrawals need a DRep"
+  },
+  "roadmap.change.withdrawals-need-drep.text": {
+    "message": "With the bootstrap phase over, staking rewards can only be withdrawn when the stake is delegated to a DRep or to one of the options Abstain and No confidence."
+  },
+  "roadmap.change.logical-operations.name": {
+    "message": "Logical operations on byte strings"
+  },
+  "roadmap.change.logical-operations.text": {
+    "message": "Plutus V3 scripts get built-in functions for AND, OR, XOR, and complement on byte strings, and for reading and setting single bits."
+  },
+  "roadmap.change.bitwise-operations.name": {
+    "message": "Bit shifts and rotations"
+  },
+  "roadmap.change.bitwise-operations.text": {
+    "message": "Plutus V3 scripts get built-in functions that shift and rotate byte strings, count the set bits, and find the first set bit."
+  },
+  "roadmap.change.ripemd-160.name": {
+    "message": "RIPEMD-160 hashing"
+  },
+  "roadmap.change.ripemd-160.text": {
+    "message": "A built-in function computes the RIPEMD-160 hash, for compatibility with Bitcoin's cryptography."
+  },
+  "roadmap.change.governance.name": {
+    "message": "On-chain governance"
+  },
+  "roadmap.change.governance.text": {
+    "message": "Any ada holder can submit a governance action. A Constitutional Committee, DReps, and stake pool operators vote on them."
+  },
+  "roadmap.change.plutus-v3.text": {
+    "message": "A new Plutus version whose scripts can also validate governance actions and votes."
+  },
+  "roadmap.change.sums-of-products.name": {
+    "message": "Sums of products"
+  },
+  "roadmap.change.sums-of-products.text": {
+    "message": "Plutus Core supports data types natively, which makes scripts more efficient."
+  },
+  "roadmap.change.bls12-381.name": {
+    "message": "BLS12-381 built-ins"
+  },
+  "roadmap.change.bls12-381.text": {
+    "message": "Built-in functions for operations on the BLS12-381 curve, which many cryptographic schemes build on."
+  },
+  "roadmap.change.keccak-256.name": {
+    "message": "Keccak-256 hashing"
+  },
+  "roadmap.change.keccak-256.text": {
+    "message": "A built-in function computes the Keccak-256 hash, for compatibility with Ethereum's cryptography."
+  },
+  "roadmap.change.integer-conversions.name": {
+    "message": "Integer and byte string conversions"
+  },
+  "roadmap.change.integer-conversions.text": {
+    "message": "Built-in functions convert an integer to a byte string and back."
+  },
+  "roadmap.change.script-arguments.name": {
+    "message": "Uniform script arguments"
+  },
+  "roadmap.change.script-arguments.text": {
+    "message": "Every Plutus V3 script takes the same single argument, whatever it validates, and a spending script no longer needs a datum."
+  },
+  "roadmap.change.plutus-v1-reference-scripts.name": {
+    "message": "Reference scripts for Plutus V1"
+  },
+  "roadmap.change.plutus-v1-reference-scripts.text": {
+    "message": "A transaction that runs a Plutus V1 script can point to the script on the chain and no longer has to carry it, which saves block space."
+  },
+  "roadmap.change.secp256k1.name": {
+    "message": "ECDSA and Schnorr signatures"
+  },
+  "roadmap.change.secp256k1.text": {
+    "message": "Built-in functions let Plutus scripts verify ECDSA and Schnorr signatures over the secp256k1 curve."
+  },
+  "roadmap.change.reference-inputs.name": {
+    "message": "Reference inputs"
+  },
+  "roadmap.change.reference-inputs.text": {
+    "message": "A transaction can read an output without spending it."
+  },
+  "roadmap.change.inline-datums.name": {
+    "message": "Inline datums"
+  },
+  "roadmap.change.inline-datums.text": {
+    "message": "A datum can be attached to an output itself, where before the output only held its hash."
+  },
+  "roadmap.change.script-references.name": {
+    "message": "Reference scripts"
+  },
+  "roadmap.change.script-references.text": {
+    "message": "A script can be attached to an output and used by other transactions, which makes those transactions much smaller."
+  },
+  "roadmap.change.collateral-outputs.name": {
+    "message": "Collateral outputs"
+  },
+  "roadmap.change.collateral-outputs.text": {
+    "message": "A transaction can name an output for the change from its collateral. Before, a failed script consumed the collateral input entirely."
+  },
+  "roadmap.change.serialise-data.text": {
+    "message": "A built-in function serializes data to a byte string."
+  },
+  "roadmap.source.overview": {
+    "message": "Upgrade overview"
+  },
+  "roadmap.source.plutus": {
+    "message": "Plutus documentation"
   }
 }

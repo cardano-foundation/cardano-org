@@ -10,7 +10,7 @@ import styles from "./styles.module.css";
 // sections, each one box: upcoming hard forks and the hard forks already
 // enacted.
 
-const versionOf = (item) => item.meta[0].value.replace(/\.0$/, "");
+export const versionOf = (item) => item.meta[0].value.replace(/\.0$/, "");
 const eraOf = (item) => item.era.replace(/ Era$/, "");
 const completedId = (item) => `protocol-version-${versionOf(item)}`;
 
@@ -260,13 +260,15 @@ function TransactionIds({ value }) {
 
 /**
  * One enacted hard fork. Closed, it shows its name, protocol version, era
- * and date on one line. Open, it adds what it brought and where it is on
- * the chain, with each transaction id linked to the explorer.
+ * and date on one line. Open, it adds what it brought, a cell per change
+ * when its changes are listed, and where it is on the chain, with each
+ * transaction id linked to the explorer.
  *
  * @param {object} props
  * @param {object} props.item Entry of getHardForkHistory().
+ * @param {Array<object>} [props.changes] Its entry of getCompletedChanges().
  */
-export function CompletedHardFork({ item }) {
+export function CompletedHardFork({ item, changes = [] }) {
   // The first entry is the protocol version, which the closed line shows.
   const ids = item.meta.slice(1);
   return (
@@ -281,6 +283,13 @@ export function CompletedHardFork({ item }) {
       aside={item.date}
     >
       <p className={styles.note}>{item.description}</p>
+      {changes.length > 0 && (
+        <ul className={styles.rows}>
+          {changes.map((change) => (
+            <Row key={change.key} name={change.name} text={change.text} source={change.source} />
+          ))}
+        </ul>
+      )}
       <dl className={styles.facts}>
         <dt>{item.epochLabel}</dt>
         <dd>{item.epoch}</dd>
