@@ -5,11 +5,11 @@ title: Update the roadmap
 description: How to keep the network upgrades page at /roadmap accurate when a hard fork reaches its next step, changes scope, or is enacted.
 ---
 
-The [network upgrades page](/roadmap) shows the hard forks being built and every hard fork so far. An upcoming hard fork comes from one entry in `src/data/roadmap.js`, an enacted one from `src/data/hardforks.js`, which the [hard forks page](/hardforks) reads too. The page makes no network request, so it changes only through a pull request. This page explains the fields and the rules.
+The [network upgrades page](/roadmap) shows the hard forks being built and every hard fork so far. An upcoming hard fork comes from one entry in `src/data/roadmap.js`, an enacted one from `src/data/hardforks.js`, which the [hard forks page](/hardforks) reads too. The changes of an enacted hard fork are in `getCompletedChanges()` in `src/data/roadmap.js`. The page makes no network request, so it changes only through a pull request. This page explains the fields and the rules.
 
 ## Rules
 
-- **The hard fork plan and the working group minutes are the source.** The [hard fork plan](https://product.cardano.intersectmbo.org/hardfork-planning/dijkstra/) gives the scope, the protocol version, and the code completion target. The [hard fork working group minutes](https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes) report each step a hard fork reaches. The text only says what they confirm.
+- **The hard fork plan, the working group minutes, and the readiness page are the source.** The [hard fork plan](https://product.cardano.intersectmbo.org/hardfork-planning/dijkstra/) gives the scope, the protocol version, and the code completion target. The [hard fork working group minutes](https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes) report each step a hard fork reaches. The readiness page of a hard fork, for example the [Dijkstra readiness page](https://cardanoupgrades.docs.intersectmbo.org/dijkstra-era-upgrade/dijkstra-upgrade-readiness), tracks its hard fork action on Preview, Preprod, and the Cardano mainnet. The text only says what they confirm.
 - **Every entry links to the section that backs it.** A change links to its CIP, or to its section of the plan where it has no CIP. A note links to the plan and to the minutes it relies on.
 - **Facts, not promotion.** Say what a change does, in one or two sentences. A figure goes in only if the linked page states it.
 - **Nothing dated in the text.** The code completion target from the plan is the only date. Change it when the plan changes it.
@@ -42,18 +42,18 @@ Entries of `getHardForks()`, next one first.
 
 ## Fields of a change
 
-Entries of a hard fork's `changes`. Each entry is one cell on the page.
+Entries of a hard fork's `changes`, and of a list in `getCompletedChanges()`. Each entry is one cell on the page.
 
 | Field | Required | Description |
 |-------|----------|-------------|
 | `key` | yes | Stable identifier, kebab-case. |
 | `name` | yes | Name of the change, as the plan or the CIP calls it. Proper names are plain strings, descriptive names go through `translate()`. |
 | `text` | yes | One or two sentences on what changes, written from the plan or from the abstract of the CIP. |
-| `source` | yes | `cip(number)` where a CIP exists, `hardForkPlan(section)` where it does not. |
+| `source` | yes | `cip(number)` where a CIP exists, `hardForkPlan(section)` where it does not. For an enacted hard fork without a plan, a link to the public page that states the change. |
 
 ## Updating a hard fork
 
-When a hard fork reaches its next step, set its `stage` and update its `note`. The address of the minutes is `WORKING_GROUP_MINUTES_URL` at the top of the file. When the plan changes the scope, the target, or the protocol version, change those fields. Mention the source in the pull request.
+When a hard fork reaches its next step, set its `stage` and update its `note`. The readiness page shows whether the hard fork action on Preview, Preprod, or the Cardano mainnet has gone through. The address of the minutes is `WORKING_GROUP_MINUTES_URL` at the top of the file. When the plan changes the scope, the target, or the protocol version, change those fields. Mention the source in the pull request.
 
 ## Adding a hard fork
 
@@ -64,6 +64,6 @@ When a hard fork reaches its next step, set its `stage` and update its `note`. T
 
 ## When a hard fork is enacted
 
-1. Remove its entry from `getHardForks()`.
+1. Move its `changes` from its entry in `getHardForks()` to `getCompletedChanges()` in the same file, under its protocol version. Then remove the entry from `getHardForks()`.
 2. Add an entry at the top of `getHardForkHistory()` in `src/data/hardforks.js` with the era, the date, the name, a one-sentence description, the epoch, the protocol version, and the transaction ID of the governance action. Move `active: true` to the new entry. Its anchor on the page is `/roadmap#protocol-version-<number>`.
 3. Add or update the glossary entry of the hard fork in `glossary/`.
