@@ -12499,32 +12499,20 @@
   "leaderboard.cta.button": {
     "message": "Browse Apps Directory"
   },
-  "roadmap.source.intersect": {
-    "message": "Intersect plan"
+  "roadmap.source.plan": {
+    "message": "Hard fork plan"
   },
   "roadmap.fork.dijkstra1.name": {
     "message": "Dijkstra, phase 1"
   },
-  "roadmap.fork.dijkstra1.eraNote": {
-    "message": "Starts the Dijkstra era"
-  },
-  "roadmap.fork.dijkstra1.target": {
-    "message": "Intersect targets code completion for Q4 2026"
-  },
-  "roadmap.fork.dijkstra1.stageNote": {
-    "message": "The developer testnet runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date."
+  "roadmap.fork.dijkstra1.note": {
+    "message": "Code completion is targeted for Q4 2026. The developer testnet, DijkstraNet, runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date."
   },
   "roadmap.fork.dijkstra2.name": {
     "message": "Dijkstra, phase 2"
   },
-  "roadmap.fork.dijkstra2.eraNote": {
-    "message": "Inside the Dijkstra era"
-  },
-  "roadmap.fork.dijkstra2.target": {
-    "message": "Intersect targets code completion for Q2 2027"
-  },
-  "roadmap.fork.dijkstra2.stageNote": {
-    "message": "An on-chain vote sets the mainnet date."
+  "roadmap.fork.dijkstra2.note": {
+    "message": "Code completion is targeted for Q2 2027. An on-chain vote sets the mainnet date."
   },
   "roadmap.change.leios.name": {
     "message": "Ouroboros Linear Leios"
@@ -12572,10 +12560,10 @@
     "message": "The ledger definitions for account-style addresses."
   },
   "roadmap.change.isValid.name": {
-    "message": "Simpler transactions"
+    "message": "isValid removed from transactions"
   },
   "roadmap.change.isValid.text": {
-    "message": "The isValid field is removed from transactions."
+    "message": "Removing the field simplifies the transaction structure and script execution."
   },
   "roadmap.change.blockBody.name": {
     "message": "Block body format"
@@ -12602,10 +12590,16 @@
     "message": "A minimum stake pool margin parameter. Its fee rule activates in this hard fork or a later one."
   },
   "roadmap.change.referenceFees.name": {
-    "message": "Fees for reference inputs and scripts"
+    "message": "Fees for reference inputs"
   },
   "roadmap.change.referenceFees.text": {
-    "message": "The fee function accounts for reference inputs, and the pricing of reference scripts becomes a protocol parameter."
+    "message": "The fee function accounts for reference inputs."
+  },
+  "roadmap.change.referenceScripts.name": {
+    "message": "Reference script pricing and limits"
+  },
+  "roadmap.change.referenceScripts.text": {
+    "message": "The pricing and size limits of reference scripts become protocol parameters."
   },
   "roadmap.change.peras.name": {
     "message": "Ouroboros Peras"
@@ -12629,7 +12623,7 @@
     "message": "Not assigned to a hard fork yet"
   },
   "roadmap.unscheduled.notAssigned.note": {
-    "message": "Community proposals that Intersect's hard fork plan lists for future consideration."
+    "message": "Community proposals that [the hard fork plan]({plan}) lists for future consideration."
   },
   "roadmap.unscheduled.constitutionality": {
     "message": "Optimistic constitutionality"
@@ -12647,7 +12641,7 @@
     "message": "Considered for Dijkstra and left out"
   },
   "roadmap.unscheduled.leftOut.note": {
-    "message": "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason Intersect's plan gives."
+    "message": "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason [the hard fork plan]({plan}) gives."
   },
   "roadmap.unscheduled.producerId": {
     "message": "Producer identification"
@@ -12698,7 +12692,7 @@
     "message": "What the next Cardano hard fork changes, how far along it is, and every protocol version so far."
   },
   "roadmap.hero.title": {
-    "message": "Network upgrades"
+    "message": "Cardano network upgrades"
   },
   "roadmap.hero.description": {
     "message": "What the next hard fork changes, and how far along it is."
@@ -12760,8 +12754,8 @@
   "roadmap.fork.version": {
     "message": "Protocol version {version}"
   },
-  "roadmap.fork.change": {
-    "message": "1 change"
+  "roadmap.fork.step": {
+    "message": "Step {step} of {total}"
   },
   "roadmap.fork.changes": {
     "message": "{count} changes"

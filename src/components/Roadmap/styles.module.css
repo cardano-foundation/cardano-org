@@ -1,11 +1,11 @@
-/* /roadmap. Hairline rules and type only: no cards, no shadows.
+/* /roadmap. One box per section, hairlines inside it, no shadows.
  *
  * Five type sizes, nothing in between:
  *   0.75rem   labels and captions
- *   0.875rem  secondary text and links
- *   1rem      body
- *   1.125rem  the name of a change, a figure
- *   1.75rem   the name of a hard fork
+ *   0.875rem  secondary text, figures and links
+ *   1rem      the name of a change
+ *   1.125rem  the name of a group or an enacted hard fork
+ *   1.75rem   the name of a planned hard fork
  * Text is the base color, emphasis-800 or emphasis-700. Nothing lighter,
  * so every size passes contrast in both themes. */
 
@@ -79,10 +79,31 @@
 
 .tick {
   position: relative;
-  padding: var(--site-space-md) var(--site-space-2xs) 0 0;
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
+}
+
+/* A version links to its element further down. The link covers the whole
+ * tick, the dot included, and turns blue on hover. */
+.tickLink {
+  display: block;
+  padding: var(--site-space-md) var(--site-space-2xs) 0 0;
+  color: inherit;
+}
+
+.tickLink:hover {
+  text-decoration: none;
+}
+
+.tickLink:hover b,
+.tickLink:hover span {
+  color: var(--ifm-color-primary);
+}
+
+.tickLink:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 .tick::after {
@@ -91,6 +112,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -104,6 +126,7 @@
   top: 5px;
   left: 12px;
   right: 0;
+  pointer-events: none;
   border-top: 2px solid var(--ifm-color-emphasis-900);
 }
 
@@ -165,17 +188,17 @@
   font-weight: 600;
 }
 
-/* Three stacked sections. Each starts with a rule and a small title. */
+/* Three stacked sections. Each is a small title over one box, and every
+ * line of a section stays inside its box. */
 
 .section {
-  margin-top: var(--site-space-xl);
-  padding-top: var(--site-space-sm);
-  border-top: 2px solid var(--ifm-color-emphasis-900);
+  margin-top: var(--site-space-2xl);
   font-variant-numeric: tabular-nums;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
 }
 
 .sectionTitle {
-  margin: 0;
+  margin: 0 0 var(--site-space-xs);
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.5;
@@ -184,8 +207,18 @@
   color: var(--ifm-color-emphasis-700);
 }
 
+.box {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-background-surface-color);
+}
+
 /* An element that opens on click, the unit of every section. The control
  * is a plus on the right that loses its upright bar when open. */
+
+.fold {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
+}
 
 .fold + .fold {
   border-top: 1px solid var(--ifm-color-emphasis-300);
@@ -196,7 +229,8 @@
   grid-template-columns: minmax(0, 1fr) auto 14px;
   column-gap: var(--site-space-md);
   align-items: center;
-  padding: var(--site-space-sm) 0;
+  padding: var(--site-space-sm) var(--site-space-md);
+  border-radius: var(--site-radius-lg);
   cursor: pointer;
   list-style: none;
 }
@@ -225,7 +259,7 @@
 
 .fold summary:focus-visible {
   outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
 .foldName {
@@ -274,8 +308,61 @@
   color: var(--ifm-font-color-base);
 }
 
+/* How far along a planned hard fork is, readable while it is closed: one
+ * segment per step of the path, filled up to the current step. Open, the
+ * path itself shows, so the segments hide. */
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--site-space-2xs);
+}
+
+.progress {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.progress span {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.progress .progressOn {
+  background: var(--ifm-color-primary);
+}
+
+.fold[open] .progress {
+  display: none;
+}
+
 .foldBody {
-  padding-bottom: var(--site-space-lg);
+  padding: 0 var(--site-space-md) var(--site-space-md);
+}
+
+/* A dense element: the name and its facts on one line, in columns. */
+@media (min-width: 997px) {
+  .foldDense summary {
+    padding-top: var(--site-space-xs);
+    padding-bottom: var(--site-space-xs);
+  }
+
+  .foldDense .foldHead {
+    display: grid;
+    grid-template-columns: 14rem 12rem minmax(0, 1fr);
+    column-gap: var(--site-space-md);
+    align-items: baseline;
+  }
+
+  .foldDense .foldFacts {
+    display: contents;
+  }
+
+  .foldDense .foldFacts li + li::before {
+    content: none;
+  }
 }
 
 .note {
@@ -286,9 +373,25 @@
   color: var(--ifm-color-emphasis-800);
 }
 
+/* The links a note rests on, on their own line under it. */
+.sources {
+  margin: var(--site-space-3xs) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
 .note a,
-.rowSource a {
+.sources a,
+.rowSource a,
+.facts a {
   font-weight: 600;
+}
+
+/* The dot between two source links, the same as between two facts. */
+.noteDot::before {
+  content: "\00b7";
+  margin: 0 var(--site-space-xs);
+  color: var(--ifm-color-emphasis-700);
 }
 
 /* Where an enacted hard fork is on the chain: label and value pairs. */
@@ -379,62 +482,78 @@
   box-shadow: 0 0 0 3px var(--site-tint-strong);
 }
 
-/* Rows. Three columns on the grid of the version line (31 units): the name
- * runs to version 9, the figure starts there, the source sits at the end. */
+/* The contents of an opened element, as a grid of cells: a name with its
+ * text and, where a source gives one, a figure, then the source link at the
+ * bottom. Every cell draws a line on its right and under it, and the grid
+ * clips its own last pixel on the right and at the bottom, so the outer
+ * lines never show whatever the number of columns. The lines stop short of
+ * the box edge, the lines between elements run to it. */
 
 .rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: var(--site-space-md) 0 0;
   padding: 0;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
   list-style: none;
+  clip-path: inset(0 1px 1px 0);
 }
 
 .row {
-  display: grid;
-  grid-template-columns: minmax(0, 18fr) minmax(0, 9fr) minmax(0, 4fr);
-  align-items: baseline;
-  padding: var(--site-space-xs) 0;
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-2xs);
+  padding: var(--site-space-sm) var(--site-space-md);
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
 }
 
-.row > div {
-  padding-right: var(--site-space-md);
+/* The first and last cell of a line of three sit flush with the text above. */
+.row:nth-child(3n + 1) {
+  padding-left: 0;
 }
 
-.row > .rowSource {
+.row:nth-child(3n) {
   padding-right: 0;
+}
+
+.row:only-child {
+  grid-column: 1 / -1;
+  padding-right: 0;
+}
+
+.rowSource {
+  margin-top: auto;
   font-size: 0.875rem;
   line-height: 1.5;
-  text-align: right;
 }
 
 .rowName {
   display: block;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .rowText {
   display: block;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
 }
 
 .figure {
   display: block;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.4;
-  white-space: nowrap;
-}
-
-.figureLabel {
-  display: block;
+  margin-top: var(--site-space-3xs);
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--ifm-color-emphasis-800);
+}
+
+.figure b {
+  margin-right: var(--site-space-2xs);
+  white-space: nowrap;
+  color: var(--ifm-font-color-base);
 }
 
 .arrow {
@@ -455,8 +574,11 @@
 
   .tick {
     display: none;
-    padding: 0 0 var(--site-space-sm) var(--site-space-md);
     font-size: 0.875rem;
+  }
+
+  .tickLink {
+    padding: 0 0 var(--site-space-sm) var(--site-space-md);
   }
 
   .tickNow,
@@ -478,12 +600,31 @@
     border-left: 2px dashed var(--ifm-color-emphasis-600);
   }
 
-  .tick:last-child {
+  .tick:last-child .tickLink {
     padding-bottom: 0;
   }
 
   .lineMore {
     display: block;
+  }
+
+  /* Two cells to a line. */
+  .rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .row:nth-child(n) {
+    padding-left: var(--site-space-md);
+    padding-right: var(--site-space-md);
+  }
+
+  .row:nth-child(2n + 1) {
+    padding-left: 0;
+  }
+
+  .row:nth-child(2n),
+  .row:only-child {
+    padding-right: 0;
   }
 
 }
@@ -493,6 +634,12 @@
   .fold summary {
     grid-template-columns: minmax(0, 1fr) 14px;
     row-gap: var(--site-space-3xs);
+    padding-left: var(--site-space-sm);
+    padding-right: var(--site-space-sm);
+  }
+
+  .foldBody {
+    padding: 0 var(--site-space-sm) var(--site-space-sm);
   }
 
   .fold summary::after {
@@ -503,6 +650,10 @@
   .foldAside {
     grid-column: 1;
     text-align: left;
+  }
+
+  .stage {
+    justify-content: flex-start;
   }
 
   .foldFacts {
@@ -543,20 +694,13 @@
     border-left-color: var(--ifm-color-primary);
   }
 
-  .row {
+  /* One cell to a line. */
+  .rows {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: var(--site-space-3xs);
   }
 
-  .row > div {
+  .row:nth-child(n) {
+    padding-left: 0;
     padding-right: 0;
-  }
-
-  .row > div:empty {
-    display: none;
-  }
-
-  .row > .rowSource {
-    text-align: left;
   }
 }

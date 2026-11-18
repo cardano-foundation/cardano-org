@@ -6,11 +6,13 @@ import { translate } from "@docusaurus/Translate";
 // A hard fork: where it stands and what it moves the Cardano mainnet to.
 // `stage` is one of development, devnet, preview, preprod, vote, mainnet.
 // Update it by hand when the hard fork working group reports a new step,
-// together with the link to the minutes that report it in `sources`.
+// together with `note` and the link to the minutes that report it in
+// `sources`.
 //
-// A change: one thing a hard fork brings. `figure` is set only where a
-// source states one, as a before and after pair (`from`, `to`) or a single
-// `value`, with a label. `source` is the proposal or plan the entry rests on.
+// A change: one thing a hard fork brings, in the order of Intersect's plan.
+// `figure` is set only where a source states one, as a before and after pair
+// (`from`, `to`) or a single `value`, with a label. `source` is the CIP, or
+// the section of the plan where a change has no CIP.
 //
 // Enacted hard forks live in src/data/hardforks.js.
 
@@ -19,8 +21,8 @@ const INTERSECT_PLAN_URL = "https://product.cardano.intersectmbo.org/hardfork-pl
 const WORKING_GROUP_MINUTES_URL =
   "https://cardanoupgrades.docs.intersectmbo.org/general/hard-fork-working-group-meeting-minutes/10th-november-2026";
 const cip = (number) => ({ label: `CIP-${number}`, href: `https://cips.cardano.org/cip/CIP-${String(number).padStart(4, "0")}` });
-const intersectPlan = (section) => ({
-  label: translate({ id: "roadmap.source.intersect", message: "Intersect plan" }),
+const hardForkPlan = (section) => ({
+  label: translate({ id: "roadmap.source.plan", message: "Hard fork plan" }),
   href: `${INTERSECT_PLAN_URL}#${section}`,
 });
 const workingGroupMinutes = () => ({
@@ -38,30 +40,30 @@ export function getHardForks() {
       name: translate({ id: "roadmap.fork.dijkstra1.name", message: "Dijkstra, phase 1" }),
       era: "Dijkstra",
       version: 12,
-      eraNote: translate({ id: "roadmap.fork.dijkstra1.eraNote", message: "Starts the Dijkstra era" }),
-      target: translate({ id: "roadmap.fork.dijkstra1.target", message: "Intersect targets code completion for Q4 2026" }),
       stage: "devnet",
-      stageNote: translate({
-        id: "roadmap.fork.dijkstra1.stageNote",
-        message: "The developer testnet runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date.",
+      note: translate({
+        id: "roadmap.fork.dijkstra1.note",
+        message:
+          "Code completion is targeted for Q4 2026. The developer testnet, DijkstraNet, runs every change except Linear Leios and fair minimum fees. An on-chain vote sets the mainnet date.",
       }),
-      sources: [workingGroupMinutes(), intersectPlan("phase-1-dijkstra-hard-fork-protocol-version-12-q4-2026")],
+      sources: [workingGroupMinutes(), hardForkPlan("phase-1-dijkstra-hard-fork-protocol-version-12-q4-2026")],
     },
     {
       key: "dijkstra-2",
       name: translate({ id: "roadmap.fork.dijkstra2.name", message: "Dijkstra, phase 2" }),
       era: "Dijkstra",
       version: null,
-      eraNote: translate({ id: "roadmap.fork.dijkstra2.eraNote", message: "Inside the Dijkstra era" }),
-      target: translate({ id: "roadmap.fork.dijkstra2.target", message: "Intersect targets code completion for Q2 2027" }),
       stage: "development",
-      stageNote: translate({ id: "roadmap.fork.dijkstra2.stageNote", message: "An on-chain vote sets the mainnet date." }),
-      sources: [intersectPlan("phase-2-peras-activation-intra-era-hard-fork-q2-2027")],
+      note: translate({
+        id: "roadmap.fork.dijkstra2.note",
+        message: "Code completion is targeted for Q2 2027. An on-chain vote sets the mainnet date.",
+      }),
+      sources: [hardForkPlan("phase-2-peras-activation-intra-era-hard-fork-q2-2027")],
     },
   ];
 }
 
-// What a hard fork changes, in display order.
+// What a hard fork changes, in the order Intersect's plan lists it.
 export function getChanges(forkKey) {
   const changes = {
     "dijkstra-1": [
@@ -79,20 +81,6 @@ export function getChanges(forkKey) {
         source: cip(164),
       },
       {
-        key: "reward-withdrawals",
-        name: translate({ id: "roadmap.change.withdrawals.name", message: "Reward withdrawals without a DRep" }),
-        text: translate({
-          id: "roadmap.change.withdrawals.text",
-          message: "Ada holders can withdraw their rewards without first delegating their vote to a DRep.",
-        }),
-        figure: {
-          from: "1",
-          to: "0",
-          label: translate({ id: "roadmap.change.withdrawals.figureLabel", message: "Vote delegations needed to withdraw rewards" }),
-        },
-        source: cip(181),
-      },
-      {
         key: "nested-transactions",
         name: translate({ id: "roadmap.change.nested.name", message: "Nested transactions" }),
         text: translate({
@@ -100,15 +88,6 @@ export function getChanges(forkKey) {
           message: "A transaction can contain sub-transactions that settle together, so a swap offer can be made and accepted without an exchange in between.",
         }),
         source: cip(118),
-      },
-      {
-        key: "plutus-v4",
-        name: translate({ id: "roadmap.change.plutusV4.name", message: "Plutus V4" }),
-        text: translate({
-          id: "roadmap.change.plutusV4.text",
-          message: "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces.",
-        }),
-        source: intersectPlan("plutusv4-script-context"),
       },
       {
         key: "guard-scripts",
@@ -124,8 +103,11 @@ export function getChanges(forkKey) {
       },
       {
         key: "is-valid",
-        name: translate({ id: "roadmap.change.isValid.name", message: "Simpler transactions" }),
-        text: translate({ id: "roadmap.change.isValid.text", message: "The isValid field is removed from transactions." }),
+        name: translate({ id: "roadmap.change.isValid.name", message: "isValid removed from transactions" }),
+        text: translate({
+          id: "roadmap.change.isValid.text",
+          message: "Removing the field simplifies the transaction structure and script execution.",
+        }),
         source: cip(167),
       },
       {
@@ -135,10 +117,42 @@ export function getChanges(forkKey) {
         source: cip(176),
       },
       {
-        key: "peras-groundwork",
-        name: translate({ id: "roadmap.change.perasGroundwork.name", message: "Groundwork for Peras" }),
-        text: translate({ id: "roadmap.change.perasGroundwork.text", message: "The block format and parameters Peras needs, without switching Peras on." }),
-        source: cip(140),
+        key: "plutus-v4",
+        name: translate({ id: "roadmap.change.plutusV4.name", message: "Plutus V4" }),
+        text: translate({
+          id: "roadmap.change.plutusV4.text",
+          message: "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces.",
+        }),
+        source: hardForkPlan("plutusv4-script-context"),
+      },
+      {
+        key: "reference-fees",
+        name: translate({ id: "roadmap.change.referenceFees.name", message: "Fees for reference inputs" }),
+        text: translate({ id: "roadmap.change.referenceFees.text", message: "The fee function accounts for reference inputs." }),
+        source: hardForkPlan("fee-function-update-reference-inputs"),
+      },
+      {
+        key: "reference-scripts",
+        name: translate({ id: "roadmap.change.referenceScripts.name", message: "Reference script pricing and limits" }),
+        text: translate({
+          id: "roadmap.change.referenceScripts.text",
+          message: "The pricing and size limits of reference scripts become protocol parameters.",
+        }),
+        source: hardForkPlan("reference-script-pricing-and-limits"),
+      },
+      {
+        key: "reward-withdrawals",
+        name: translate({ id: "roadmap.change.withdrawals.name", message: "Reward withdrawals without a DRep" }),
+        text: translate({
+          id: "roadmap.change.withdrawals.text",
+          message: "Ada holders can withdraw their rewards without first delegating their vote to a DRep.",
+        }),
+        figure: {
+          from: "1",
+          to: "0",
+          label: translate({ id: "roadmap.change.withdrawals.figureLabel", message: "Vote delegations needed to withdraw rewards" }),
+        },
+        source: cip(181),
       },
       {
         key: "pledge-leverage",
@@ -150,6 +164,12 @@ export function getChanges(forkKey) {
         source: cip(50),
       },
       {
+        key: "peras-groundwork",
+        name: translate({ id: "roadmap.change.perasGroundwork.name", message: "Groundwork for Peras" }),
+        text: translate({ id: "roadmap.change.perasGroundwork.text", message: "The block format and parameters Peras needs, without switching Peras on." }),
+        source: cip(140),
+      },
+      {
         key: "fair-min-fees",
         name: translate({ id: "roadmap.change.minFees.name", message: "Fair minimum fees" }),
         text: translate({
@@ -157,15 +177,6 @@ export function getChanges(forkKey) {
           message: "A minimum stake pool margin parameter. Its fee rule activates in this hard fork or a later one.",
         }),
         source: cip(23),
-      },
-      {
-        key: "reference-fees",
-        name: translate({ id: "roadmap.change.referenceFees.name", message: "Fees for reference inputs and scripts" }),
-        text: translate({
-          id: "roadmap.change.referenceFees.text",
-          message: "The fee function accounts for reference inputs, and the pricing of reference scripts becomes a protocol parameter.",
-        }),
-        source: intersectPlan("fee-function-update-reference-inputs"),
       },
     ],
     "dijkstra-2": [
@@ -189,9 +200,9 @@ export function getChanges(forkKey) {
 }
 
 // Proposals without a hard fork, in the two groups Intersect's plan gives
-// them. `text` is the reason the plan states, where it states one. A
-// proposal that has been merged links to its CIP, any other to its request
-// in the CIPs repository.
+// them. A group's `note` links to the plan in markdown form. `text` is the
+// reason the plan states, where it states one. A proposal that has been
+// merged links to its CIP, any other to its request in the CIPs repository.
 export function getUnscheduled() {
   const pull = (number) => ({
     label: translate({ id: "roadmap.source.proposal", message: "Proposal" }),
@@ -201,11 +212,13 @@ export function getUnscheduled() {
     {
       key: "not-assigned",
       name: translate({ id: "roadmap.unscheduled.notAssigned.name", message: "Not assigned to a hard fork yet" }),
-      note: translate({
-        id: "roadmap.unscheduled.notAssigned.note",
-        message: "Community proposals that Intersect's hard fork plan lists for future consideration.",
-      }),
-      source: intersectPlan("wishlist--future-consideration"),
+      note: translate(
+        {
+          id: "roadmap.unscheduled.notAssigned.note",
+          message: "Community proposals that [the hard fork plan]({plan}) lists for future consideration.",
+        },
+        { plan: `${INTERSECT_PLAN_URL}#wishlist--future-consideration` },
+      ),
       items: [
         {
           key: "optimistic-constitutionality",
@@ -231,11 +244,13 @@ export function getUnscheduled() {
     {
       key: "left-out",
       name: translate({ id: "roadmap.unscheduled.leftOut.name", message: "Considered for Dijkstra and left out" }),
-      note: translate({
-        id: "roadmap.unscheduled.leftOut.note",
-        message: "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason Intersect's plan gives.",
-      }),
-      source: intersectPlan("considered-but-not-included-in-this-era"),
+      note: translate(
+        {
+          id: "roadmap.unscheduled.leftOut.note",
+          message: "Proposals that were evaluated for the Dijkstra era and will not be part of it, with the reason [the hard fork plan]({plan}) gives.",
+        },
+        { plan: `${INTERSECT_PLAN_URL}#considered-but-not-included-in-this-era` },
+      ),
       items: [
         {
           key: "producer-identification",
