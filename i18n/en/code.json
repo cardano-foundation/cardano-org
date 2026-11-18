@@ -2349,7 +2349,7 @@
     "message": "Transaction IDs"
   },
   "hardforks.timeline.valentine.description": {
-    "message": "Introduced further improvements to Plutus smart contract functionality and overall network performance."
+    "message": "Intra-era upgrade that lets Plutus scripts verify signatures made on other blockchains, such as Bitcoin."
   },
   "hardforks.timeline.chang1.description": {
     "message": "Introduced the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only."

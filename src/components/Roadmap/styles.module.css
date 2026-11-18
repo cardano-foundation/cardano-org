@@ -71,6 +71,16 @@
   background: var(--ifm-color-primary);
 }
 
+/* Between the narrow layout and wide screens, an era with one protocol
+ * version is narrower than its name at full size. */
+@media (min-width: 997px) and (max-width: 1199px) {
+  .bands span {
+    padding-left: var(--site-space-2xs);
+    font-size: 0.6875rem;
+    letter-spacing: 0;
+  }
+}
+
 .ticks {
   margin: 0;
   padding: 0;

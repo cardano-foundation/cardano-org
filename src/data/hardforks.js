@@ -79,7 +79,7 @@ export function getHardForkHistory() {
       description: translate({
         id: "hardforks.timeline.valentine.description",
         message:
-          "Introduced further improvements to Plutus smart contract functionality and overall network performance.",
+          "Intra-era upgrade that lets Plutus scripts verify signatures made on other blockchains, such as Bitcoin.",
       }),
       epochLabel: labelEpoch(),
       epoch: "394",
