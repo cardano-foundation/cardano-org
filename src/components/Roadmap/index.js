@@ -119,6 +119,24 @@ export function Section({ id, title, children }) {
   );
 }
 
+/**
+ * One explanation in a section: a name, then a paragraph. On wide screens
+ * the name sits in the column of the hard fork names above it.
+ *
+ * @param {object} props
+ * @param {string} props.id Anchor of the explanation.
+ * @param {string} props.name Name, already translated.
+ * @param {string} props.text Paragraph, already translated. Markdown links are rendered.
+ */
+export function Explanation({ id, name, text }) {
+  return (
+    <div className={styles.explanation} id={id}>
+      <h3 className={styles.foldName}>{name}</h3>
+      <p>{parseMarkdownLikeText(text)}</p>
+    </div>
+  );
+}
+
 // One cell of a grid: a name, its text, and the source link at the bottom.
 function Row({ name, text, source }) {
   return (

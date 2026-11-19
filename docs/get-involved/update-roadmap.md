@@ -5,7 +5,7 @@ title: Update the roadmap
 description: How to keep the network upgrades page at /roadmap accurate when a hard fork reaches its next step, changes scope, or is enacted.
 ---
 
-The [network upgrades page](/roadmap) shows the hard forks being built and every hard fork so far. An upcoming hard fork comes from one entry in `src/data/roadmap.js`, an enacted one from `src/data/hardforks.js`, which the [hard forks page](/hardforks) reads too. The changes of an enacted hard fork are in `getCompletedChanges()` in `src/data/roadmap.js`. The page makes no network request, so it changes only through a pull request. This page explains the fields and the rules.
+The [network upgrades page](/roadmap) shows the hard forks being built and every hard fork so far. An upcoming hard fork comes from one entry in `src/data/roadmap.js`, an enacted one from `src/data/hardforks.js`. The changes of an enacted hard fork are in `getCompletedChanges()` in `src/data/roadmap.js`. The page makes no network request, so it changes only through a pull request. This page explains the fields and the rules.
 
 ## Rules
 
@@ -65,5 +65,5 @@ When a hard fork reaches its next step, set its `stage` and update its `note`. T
 ## When a hard fork is enacted
 
 1. Move its `changes` from its entry in `getHardForks()` to `getCompletedChanges()` in the same file, under its protocol version. Then remove the entry from `getHardForks()`.
-2. Add an entry at the top of `getHardForkHistory()` in `src/data/hardforks.js` with the era, the date, the name, a one-sentence description, the epoch, the protocol version, and the transaction ID of the governance action. Move `active: true` to the new entry. Its anchor on the page is `/roadmap#protocol-version-<number>`.
+2. Add an entry at the top of `getHardForkHistory()` in `src/data/hardforks.js` with the era, the date, the name, a one-sentence description, the epoch, the protocol version, and the transaction ID of the governance action. Its anchor on the page is `/roadmap#protocol-version-<number>`.
 3. Add or update the glossary entry of the hard fork in `glossary/`.

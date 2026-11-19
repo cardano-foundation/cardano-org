@@ -367,6 +367,48 @@
   }
 }
 
+/* An explanation: a name, then a paragraph. On wide screens the name takes
+ * the first column of a dense entry, so it lines up with the hard fork
+ * names in the section above. */
+.explanation {
+  padding: var(--site-space-sm) var(--site-space-md);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
+}
+
+.explanation + .explanation {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.explanation p {
+  max-width: 44rem;
+  margin: var(--site-space-2xs) 0 0;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.explanation a {
+  font-weight: 600;
+}
+
+@media (min-width: 997px) {
+  .explanation {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: var(--site-space-md);
+    align-items: baseline;
+  }
+
+  .explanation p {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .explanation {
+    padding-left: var(--site-space-sm);
+    padding-right: var(--site-space-sm);
+  }
+}
+
 .note {
   max-width: 44rem;
   margin: var(--site-space-xs) 0 0;

@@ -17,7 +17,7 @@ async function main() {
   const { check, done } = createChecker('medusa playback');
 
   const dates = ['2020-01', '2020-02', '2020-03', '2020-04'];
-  const milestones = [{ key: 'm1', date: '2020-03-15', group: 'shelley', kind: 'hardfork', link: '/hardforks' }];
+  const milestones = [{ key: 'm1', date: '2020-03-15', group: 'shelley', kind: 'hardfork', link: '/roadmap#protocol-version-2' }];
   const make = (mode, extra = {}) =>
     createPlayback({ frameDates: dates, milestones, mode, ambientDuration: 4, holdDuration: 1, fadeDuration: 1, fadeInDuration: 0.5, ...extra });
 

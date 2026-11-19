@@ -241,7 +241,7 @@ export default function Explorer() {
         <img className={styles.fallback} src={fallbackImage} alt="" />
         <p className={styles.noWebgl}>
           {translate({ id: 'medusa.page.noWebgl', message: 'This visualization needs WebGL, which your browser or device does not provide.' })}{' '}
-          <Link to="/hardforks">{translate({ id: 'medusa.page.noWebglLink', message: 'Read about the hard forks instead.' })}</Link>
+          <Link to="/roadmap#completed">{translate({ id: 'medusa.page.noWebglLink', message: 'Read about the hard forks instead.' })}</Link>
         </p>
       </div>
     );

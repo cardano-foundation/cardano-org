@@ -245,6 +245,14 @@ const config = {
             return [`${prefix}/why`, `${prefix}/discover-cardano`];
           }
 
+          // /hardforks was folded into /roadmap. Locale-aware, same pattern
+          // as the rules above.
+          const roadmap = existingPath.match(/^(\/(?:ja|de|es|vi))?\/roadmap\/?$/);
+          if (roadmap) {
+            const prefix = roadmap[1] || '';
+            return [`${prefix}/hardforks`];
+          }
+
           // The Pill Tabs page became the Tabs page.
           const tabsDoc = existingPath.match(/^(\/(?:ja|de|es|vi))?\/docs\/get-involved\/components\/tabs\/?$/);
           if (tabsDoc) {

@@ -9,8 +9,8 @@ const labelTransactionId = () =>
 const labelTransactionIds = () =>
   translate({ id: "hardforks.timeline.label.transactionIds", message: "Transaction IDs" });
 
-// Every hard fork enacted on mainnet, newest first. Read by /hardforks and
-// by the Completed section of /roadmap.
+// Every hard fork enacted on mainnet, newest first. Read by the Completed
+// section of /roadmap.
 export function getHardForkHistory() {
   return [
     {
@@ -31,7 +31,6 @@ export function getHardForkHistory() {
           value: "fdd468da5cc4ac8431dcd7e2b3211666c73bc229f85879469f67f1d9d51d344d",
         },
       ],
-      active: true,
     },
     {
       era: "Conway Era",
