@@ -40,7 +40,6 @@ cardano-org
 ├── build
 │   └── ...
 ├── docs
-│   ├── communities.md
 │   ├── get-involved
 │   │   ├── index.md
 │   │   ├── local-copy.md (this page)
@@ -77,7 +76,7 @@ cardano-org
 ### Folder structure rundown
 
 - `/blog/` - Contains the Markdown files for the news section.
-- `/docs/` - Contains the Markdown files that Docusaurus renders as documentation: the contributor guides in `docs/get-involved/` (like this page, including the component docs in `docs/get-involved/components/`), the use case pages in `docs/use-cases/`, and the community channel list in `docs/communities.md`. Customize the order of the docs sidebars in `sidebars.js`.
+- `/docs/` - Contains the Markdown files that Docusaurus renders as documentation: the contributor guides in `docs/get-involved/` (like this page, including the component docs in `docs/get-involved/components/`), and the use case pages in `docs/use-cases/`. Customize the order of the docs sidebars in `sidebars.js`.
 - `/src/` - Non-documentation files like pages, custom React components, data and css files.
   - `/src/data/ambassadorsData.json` - Ambassador data for https://cardano.org/ambassadors/.
   - `/src/data/logosCompanies.json` - Entity and company data for https://cardano.org/entities/.

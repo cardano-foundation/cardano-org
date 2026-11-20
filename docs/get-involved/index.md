@@ -152,7 +152,7 @@ Before contributing, familiarize yourself with these resources:
 ### Communication Channels
 - **[Discussions](https://github.com/cardano-foundation/cardano-org/discussions)** - for idea-level conversations
 - **[Issues](https://github.com/cardano-foundation/cardano-org/issues)** - for concrete plans and task management
-- **[Cardano Discord](/docs/communities/#cardano-on-discord)** - for real-time chat and questions
+- **[Cardano Discord](/community/#discord)** - for real-time chat and questions
 
 ### Style & Quality
 - **[Style Guide](/docs/get-involved/style-guide)** - writing conventions and terminology standards
@@ -190,7 +190,7 @@ For non-trivial changes, discussion is required before implementation. This save
 - **New to Docusaurus?** See the [Docusaurus documentation](https://docusaurus.io/docs)
 - **Questions about Cardano?** Visit [developers.cardano.org](https://developers.cardano.org)
 - **General questions?** Ask in [Discussions](https://github.com/cardano-foundation/cardano-org/discussions)
-- **Real-time help?** Join the [Cardano Discord](/docs/communities/#cardano-on-discord)
+- **Real-time help?** Join the [Cardano Discord](/community/#discord)
 
 ---
 

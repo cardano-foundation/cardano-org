@@ -237,6 +237,13 @@ const config = {
             return [`${prefix}/docs/glossary`];
           }
 
+          // The Online Communities doc became the /community hub.
+          const community = existingPath.match(/^(\/(?:ja|de|es|vi))?\/community\/?$/);
+          if (community) {
+            const prefix = community[1] || '';
+            return [`${prefix}/docs/communities`, `${prefix}/communities`];
+          }
+
           // /why and /discover-cardano were folded into /what-is-cardano.
           // Locale-aware, same pattern as the glossary rule above.
           const wic = existingPath.match(/^(\/(?:ja|de|es|vi))?\/what-is-cardano\/?$/);
@@ -435,7 +442,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                to: '/docs/communities/#cardano-on-discord',
+                to: '/community/#discord',
               },
               {
                 label: 'Newsletter',

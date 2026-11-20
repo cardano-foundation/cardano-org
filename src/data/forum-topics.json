@@ -1,0 +1,39 @@
+{
+  "fetchedAt": "2026-11-16T13:36:41.296Z",
+  "stats": {
+    "members": 30064,
+    "posts": 370283
+  },
+  "topics": [
+    {
+      "id": 157729,
+      "title": "Cardano Global Events 2027: A Proposal for the Ecosystem",
+      "url": "https://forum.cardano.org/t/cardano-global-events-2027-a-proposal-for-the-ecosystem/157729",
+      "category": "News and Announcements"
+    },
+    {
+      "id": 157952,
+      "title": "Cardano Global Events 2027: Questions and Answers from the DRep Ask Me Anything (AMA) Sessions",
+      "url": "https://forum.cardano.org/t/cardano-global-events-2027-questions-and-answers-from-the-drep-ask-me-anything-ama-sessions/157952",
+      "category": "Governance Events & Workshops"
+    },
+    {
+      "id": 157612,
+      "title": "Digest October 28: Cardano Developer Survey | Leios and Dijkstra Testnet | Five New IOG Research Papers…",
+      "url": "https://forum.cardano.org/t/digest-october-28-cardano-developer-survey-leios-and-dijkstra-testnet-five-new-iog-research-papers-cip-updates-100-000-farms-registered-on-cardano-intersect-returns-unspent-treasury-funds-and-more/157612",
+      "category": "News and Announcements"
+    },
+    {
+      "id": 157479,
+      "title": "Beyond treasury votes: How to verify Cardano’s public funding?",
+      "url": "https://forum.cardano.org/t/beyond-treasury-votes-how-to-verify-cardano-s-public-funding/157479",
+      "category": "Education"
+    },
+    {
+      "id": 157658,
+      "title": "Cardano Weekly: Opportunities & Participation #7 | November 2, 2026",
+      "url": "https://forum.cardano.org/t/cardano-weekly-opportunities-participation-7-november-2-2026/157658",
+      "category": "Education"
+    }
+  ]
+}

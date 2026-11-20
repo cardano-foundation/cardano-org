@@ -1188,13 +1188,13 @@
     "message": "Bei dieser Masche geben sich Betrüger als \"offizielle\" Cardano-Support-Mitarbeiter aus. Sie melden sich über soziale Medien, Foren oder per E-Mail und behaupten, deine Wallet reparieren oder ein Problem lösen zu können. Häufig kopieren sie Profile echter Moderatoren und fragen nach deiner Wiederherstellungsphrase (Seed-Wörtern) oder privaten Schlüsseln – angeblich um dir zu \"helfen\"."
   },
   "commonScams.support.description2": {
-    "message": "Diese Masche tritt besonders häufig auf, wenn ein [neuer Nutzer einen Kanal betritt](/docs/communities) und eine Frage zu einer Wallet stellt. Betrüger reagieren dann blitzschnell und geben sich als offizieller Support aus."
+    "message": "Diese Masche tritt besonders häufig auf, wenn ein [neuer Nutzer einen Kanal betritt](/community) und eine Frage zu einer Wallet stellt. Betrüger reagieren dann blitzschnell und geben sich als offizieller Support aus."
   },
   "commonScams.support.howToProtect": {
     "message": "So schützt du dich:"
   },
   "commonScams.support.tip1": {
-    "message": "Seriöse Nutzer in [Foren und Kanälen](/docs/communities) fragen **niemals** nach deinen Passwörtern, Wiederherstellungsphrasen oder privaten Schlüsseln."
+    "message": "Seriöse Nutzer in [Foren und Kanälen](/community) fragen **niemals** nach deinen Passwörtern, Wiederherstellungsphrasen oder privaten Schlüsseln."
   },
   "commonScams.support.tip2": {
     "message": "Reagiere nie auf unaufgeforderte Nachrichten von angeblichem Support."

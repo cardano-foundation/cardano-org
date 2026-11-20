@@ -4,7 +4,7 @@ title: Add your Community
 description: Add your Cardano community to the online communities directory. Eligibility criteria, required fields, and review process.
 ---
 
-Thank you for considering adding your community to the [online communities](/docs/communities) page!
+Thank you for considering adding your community to the [Community](/community) page!
 
 ## Requirements
 
@@ -20,13 +20,27 @@ Before submitting your community, please ensure it meets all of the following cr
 
 ## How to submit
 
-The communities page is a single Markdown file: `docs/communities.md`. Open a pull request that adds one line to the section your community belongs to:
+The channels on the Community page come from one data file: `src/data/communities.mjs`. Open a pull request that adds one object to the `COMMUNITIES` list.
 
-- **Forums** and **Events and local gatherings**: a link with a short description, `- [Name](https://...) - one line about the community`
-- **Cardano on Telegram** and **Cardano on Discord**: the channel name and its invite link, following the lines already there
-- **Language specific discussions**: a flag emoji shortcode, the group name, and the link, e.g. `- :de: Cardano German: https://t.me/...`
+A global channel, shown on the card of its platform:
 
-Keep the description to one line and do not add new sections. In the pull request, say briefly how the community meets the requirements above (moderation team, size, activity).
+```js
+{ id: 'discord-example', name: 'Example Discord', url: 'https://discord.gg/...', platform: 'discord', group: 'channel' },
+```
+
+A language group, shown under "Communities in your language and region":
+
+```js
+{ id: 'telegram-french', name: 'Cardano French', url: 'https://t.me/...', platform: 'telegram', group: 'local', language: 'fr' },
+```
+
+- `id` is unique and uses lowercase letters, digits and hyphens.
+- `platform` is one of `forum`, `discord`, `telegram`, `reddit`, `stackexchange` or `facebook`.
+- A language group carries the two-letter `language` code. If the language is new, add its own name to `LANGUAGE_NAMES` in the same file.
+- A regional group carries `region` instead of `language`. Region labels are translated and live in `src/pages/community.js`, so mention a new region in the pull request.
+- Run `yarn test:community` before you push. It checks the fields of every entry.
+
+Do not add new sections. In the pull request, say briefly how the community meets the requirements above (moderation team, size, activity).
 
 ## Need help?
 
@@ -34,5 +48,5 @@ If you're new to GitHub or need assistance with the pull request process, you ca
 
 - Check out GitHub's guide on [creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 - Ask for help in the [Cardano Forum](https://forum.cardano.org)
-- Reach out through one of the existing [community channels](/docs/communities)   
+- Reach out through one of the existing [community channels](/community)   
  

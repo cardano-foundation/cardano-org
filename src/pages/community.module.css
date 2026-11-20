@@ -1,0 +1,195 @@
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-sm);
+  margin-top: 1.5rem;
+}
+
+.sectionText {
+  max-width: 46rem;
+  margin: 1rem 0;
+}
+
+/* Forum card: the featured channel, full width above the platform grid. */
+.forumCard {
+  margin: 1.5rem 0 var(--site-space-sm);
+}
+
+.forumCard p,
+.platformCard p {
+  margin: 0;
+}
+
+.forumCard :global(.button) {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.forumStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.platformGrid {
+  margin-bottom: 1rem;
+}
+
+/* The wrapper carries the anchor id, the card fills it so a row of cards
+   keeps one height. */
+.platformCell {
+  display: flex;
+}
+
+.platformCard {
+  flex: 1;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+.safetyLine {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.safetyLine svg {
+  flex-shrink: 0;
+  color: var(--ifm-color-primary);
+  transform: translateY(0.125em);
+}
+
+/* Forum topics: a numbered list, title left, forum category right. */
+.topicList {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: topic;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.topic {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  counter-increment: topic;
+}
+
+.topic::before {
+  content: counter(topic);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.topicTitle {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.topicCategory {
+  padding: 0.15rem 0.7rem;
+  border-radius: var(--site-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ifm-color-primary);
+  background: var(--site-tint-strong);
+}
+
+.rowLabel {
+  margin: 1.5rem 0 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.moreLink {
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+
+.events {
+  margin: 1.5rem 0;
+}
+
+.ownLanguage {
+  margin: 1.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+.localGrid {
+  margin: 1rem 0 1.5rem;
+}
+
+.localItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--site-radius-md);
+  background: var(--ifm-background-surface-color);
+  overflow-wrap: anywhere;
+}
+
+.localLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.involvedGrid {
+  margin: 1.5rem 0;
+}
+
+.safetyList {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.safetyLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* The dark primary is too faint for small text on the tinted pill. */
+[data-theme='dark'] .topicCategory {
+  color: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] .localItem {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+@media (max-width: 768px) {
+  .topic {
+    grid-template-columns: 1.5rem 1fr;
+  }
+
+  .topicCategory {
+    grid-column: 2;
+    justify-self: start;
+    white-space: normal;
+  }
+}

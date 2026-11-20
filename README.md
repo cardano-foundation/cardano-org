@@ -30,7 +30,7 @@ Not suitable (without prior discussion):
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [AGENTS.md](AGENTS.md) for onboarding and guardrails for AI agents
-- [docs/get-involved/](https://cardano.org/docs/get-involved/) for the contributor guides. The `docs/` folder also holds the use case pages (`docs/use-cases/`) and the community channel list (`docs/communities.md`)
+- [docs/get-involved/](https://cardano.org/docs/get-involved/) for the contributor guides. The `docs/` folder also holds the use case pages (`docs/use-cases/`)
 - [Discussions](https://github.com/cardano-foundation/cardano-org/discussions) for idea-level conversations
 
 
