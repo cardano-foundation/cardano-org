@@ -9,6 +9,7 @@
 .cache-loader
 src/data/recentNews.json
 src/data/apps-metadata.json
+src/data/forum-topics.json
 static/apps.llms.txt
 static/img/app-screenshots/
 static/img/news-thumbs/

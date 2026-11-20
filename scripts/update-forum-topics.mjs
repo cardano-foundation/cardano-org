@@ -3,20 +3,29 @@
 //
 // forum.cardano.org sends no CORS header, so the page cannot ask the forum
 // itself. This script reads the public Discourse JSON, keeps topics from a
-// fixed set of categories and writes src/data/forum-topics.json, which is
-// committed like the other network snapshots.
+// fixed set of categories and writes a snapshot the page imports.
 //
-// Run with `yarn update-forum-topics` and read the titles before committing.
+// `yarn build-forum` runs in the build and start chains. It writes the git
+// ignored src/data/forum-topics.json. A file fetched less than a day ago is
+// reused, so repeated local starts do not ask the forum again. When the forum
+// cannot be read, the build keeps the last file or copies the committed
+// fallback, and never fails because of the forum.
+//
+// `yarn update-forum-topics` refreshes the committed fallback
+// src/data/forum-topics.fallback.json. Read the titles before committing.
 // A topic that should not appear on cardano.org goes into EXCLUDED_TOPIC_IDS.
-// Any failed request or unexpected response aborts before writing, and the
-// file is replaced atomically, so a bad run never changes the snapshot.
+// Any failed request or unexpected response aborts before writing, and files
+// are replaced atomically, so a bad run never changes a snapshot.
 //
-import { writeFile, rename } from 'node:fs/promises';
+import { readFile, writeFile, rename } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { FORUM_URL } from '../src/data/communities.mjs';
 
-const OUT_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '../src/data/forum-topics.json');
+const DATA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '../src/data');
+const BUILD_PATH = path.join(DATA_DIR, 'forum-topics.json');
+const FALLBACK_PATH = path.join(DATA_DIR, 'forum-topics.fallback.json');
+const REFETCH_AFTER_MS = 24 * 60 * 60 * 1000;
 
 // English categories that carry announcements, learning material and events:
 // News 13, Education 17, Research 222, Meetups 36, Governance Events 214.
@@ -136,32 +145,78 @@ export async function runUpdate({ getJson, writeSnapshot, now = () => new Date()
   return snapshot;
 }
 
+// Decides what the build uses. A snapshot fetched within the last day is
+// reused as it is. Otherwise `update` fetches and writes a new one. If that
+// fails, an existing snapshot stays, and without one the committed fallback
+// is written, so the page always has a file to import.
+export async function prepareSnapshot({ current, fallback, update, writeSnapshot, nowMs }) {
+  const age = nowMs - Date.parse(current?.fetchedAt);
+  if (age >= 0 && age < REFETCH_AFTER_MS) return { source: 'reused' };
+  try {
+    await update();
+    return { source: 'fetched' };
+  } catch (error) {
+    if (current) return { source: 'kept', error };
+    await writeSnapshot(fallback);
+    return { source: 'fallback', error };
+  }
+}
+
 // Write next to the target, then rename, so a failed write never leaves a
 // truncated snapshot behind.
-async function writeSnapshotFile(next) {
-  const tmp = `${OUT_PATH}.tmp`;
+const snapshotWriter = (target) => async (next) => {
+  const tmp = `${target}.tmp`;
   await writeFile(tmp, `${JSON.stringify(next, null, 2)}\n`);
-  await rename(tmp, OUT_PATH);
+  await rename(tmp, target);
+};
+
+async function readSnapshot(file) {
+  try {
+    return JSON.parse(await readFile(file, 'utf8'));
+  } catch {
+    return null;
+  }
 }
 
 async function getForumJson(pathname) {
   const res = await fetch(`${FORUM_URL}${pathname}`, {
     headers: { Accept: 'application/json', 'User-Agent': 'cardano-org-forum-snapshot' },
-    signal: AbortSignal.timeout(20_000),
+    signal: AbortSignal.timeout(10_000),
   });
   if (!res.ok) throw new Error(`${pathname} answered ${res.status}`);
   return res.json();
 }
 
-async function main() {
-  const snapshot = await runUpdate({ getJson: getForumJson, writeSnapshot: writeSnapshotFile });
+async function buildMain() {
+  const writeSnapshot = snapshotWriter(BUILD_PATH);
+  const fallback = await readSnapshot(FALLBACK_PATH);
+  if (!fallback) throw new Error(`cannot read ${path.basename(FALLBACK_PATH)}`);
+  const { source, error } = await prepareSnapshot({
+    current: await readSnapshot(BUILD_PATH),
+    fallback,
+    update: () => runUpdate({ getJson: getForumJson, writeSnapshot }),
+    writeSnapshot,
+    nowMs: Date.now(),
+  });
+  const notes = {
+    reused: 'fetched less than a day ago, reused',
+    fetched: 'fetched from the forum',
+    kept: 'forum not readable, kept the last snapshot',
+    fallback: 'forum not readable, using the committed fallback',
+  };
+  console.log(`Forum topics: ${notes[source]}${error ? ` (${error.message})` : ''}`);
+}
+
+async function updateFallbackMain() {
+  const snapshot = await runUpdate({ getJson: getForumJson, writeSnapshot: snapshotWriter(FALLBACK_PATH) });
   console.log(`Wrote ${snapshot.topics.length} topics:`);
   for (const t of snapshot.topics) console.log(`  ${t.id}  [${t.category}] ${t.title}`);
   if (!snapshot.stats) console.log('No usable totals in about.json, stats is null.');
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main().catch((err) => {
+  const build = process.argv.includes('--build');
+  (build ? buildMain() : updateFallbackMain()).catch((err) => {
     console.error(`Aborted, snapshot unchanged: ${err.message}`);
     process.exit(1);
   });

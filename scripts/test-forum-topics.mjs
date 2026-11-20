@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cleanTitle, selectTopics, runUpdate } from './update-forum-topics.mjs';
+import { cleanTitle, selectTopics, runUpdate, prepareSnapshot } from './update-forum-topics.mjs';
 
 const CATEGORIES = [
   { id: 133, name: 'English' },
@@ -161,4 +161,53 @@ test('runUpdate writes stats null when the totals are missing or not positive in
     assert.equal(result.topics.length, 3);
     assert.equal(file.writes, 1);
   }
+});
+
+// prepareSnapshot runs in the build: it decides between reuse, a fresh fetch,
+// the last snapshot and the committed fallback, and never throws on a forum error.
+const NOW_MS = Date.parse('2026-11-20T12:00:00Z');
+const snap = (fetchedAt) => ({ fetchedAt, stats: null, topics: [] });
+const FALLBACK = snap('2026-11-16T06:00:00Z');
+
+function fakeUpdate(fail = false) {
+  const update = async () => {
+    update.calls += 1;
+    if (fail) throw new Error('ETIMEDOUT');
+  };
+  update.calls = 0;
+  return update;
+}
+
+test('prepareSnapshot reuses a snapshot fetched less than a day ago', async () => {
+  const update = fakeUpdate();
+  const file = fakeFile();
+  const result = await prepareSnapshot({ current: snap('2026-11-20T00:00:01Z'), fallback: FALLBACK, update, writeSnapshot: file.write, nowMs: NOW_MS });
+  assert.equal(result.source, 'reused');
+  assert.equal(update.calls, 0);
+  assert.equal(file.writes, 0);
+});
+
+test('prepareSnapshot fetches when the snapshot is a day old, missing, broken or from the future', async () => {
+  for (const current of [snap('2026-11-19T12:00:00Z'), null, { topics: [] }, snap('2026-11-21T00:00:00Z')]) {
+    const update = fakeUpdate();
+    const result = await prepareSnapshot({ current, fallback: FALLBACK, update, writeSnapshot: fakeFile().write, nowMs: NOW_MS });
+    assert.equal(result.source, 'fetched');
+    assert.equal(update.calls, 1);
+  }
+});
+
+test('prepareSnapshot keeps the last snapshot when the forum fails', async () => {
+  const file = fakeFile();
+  const result = await prepareSnapshot({ current: snap('2026-11-01T00:00:00Z'), fallback: FALLBACK, update: fakeUpdate(true), writeSnapshot: file.write, nowMs: NOW_MS });
+  assert.equal(result.source, 'kept');
+  assert.equal(result.error.message, 'ETIMEDOUT');
+  assert.equal(file.writes, 0);
+});
+
+test('prepareSnapshot writes the committed fallback when the forum fails and no snapshot exists', async () => {
+  const file = fakeFile();
+  const result = await prepareSnapshot({ current: null, fallback: FALLBACK, update: fakeUpdate(true), writeSnapshot: file.write, nowMs: NOW_MS });
+  assert.equal(result.source, 'fallback');
+  assert.equal(file.writes, 1);
+  assert.deepEqual(file.last, FALLBACK);
 });
