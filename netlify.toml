@@ -50,3 +50,29 @@ status = 301
 from = "/calculator_demo/"
 to = "https://cardano.org/calculator/"
 status = 301
+
+# /hardforks was folded into /roadmap, in every locale.
+[[redirects]]
+  from = "/hardforks/"
+  to = "/roadmap/"
+  status = 301
+
+[[redirects]]
+  from = "/ja/hardforks/"
+  to = "/ja/roadmap/"
+  status = 301
+
+[[redirects]]
+  from = "/de/hardforks/"
+  to = "/de/roadmap/"
+  status = 301
+
+[[redirects]]
+  from = "/es/hardforks/"
+  to = "/es/roadmap/"
+  status = 301
+
+[[redirects]]
+  from = "/vi/hardforks/"
+  to = "/vi/roadmap/"
+  status = 301

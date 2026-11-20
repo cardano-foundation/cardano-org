@@ -1,0 +1,730 @@
+/* /roadmap. One box per section, hairlines inside it, no shadows.
+ *
+ * Five type sizes, nothing in between:
+ *   0.75rem   labels and captions
+ *   0.875rem  secondary text and links
+ *   1rem      the name of a change
+ *   1.125rem  the name of an enacted hard fork
+ *   1.75rem   the name of an upcoming hard fork
+ * Text is the base color, emphasis-800 or emphasis-700. Nothing lighter,
+ * so every size passes contrast in both themes. */
+
+/* The line of protocol versions.
+ *
+ * Every dot is 12px including its border, with its center 6px from the top
+ * of its cell. A connector is 2px high, centered on the same 6px, and runs
+ * from the right edge of one dot to the left edge of the next. It never
+ * passes behind a dot, so a hollow dot is hollow on any background. */
+
+.line {
+  margin-top: var(--site-space-lg);
+  font-variant-numeric: tabular-nums;
+}
+
+.bands,
+.ticks {
+  display: grid;
+}
+
+/* An era starts at a hard fork, so its divider is a 2px stem centered on
+ * that hard fork's dot (5px to 7px from the cell edge, the dot's center
+ * being 6px) and reaches down to touch it. The band row is shifted by the
+ * same 5px, and the last band gives the 5px back on the right. */
+.bands {
+  margin-bottom: var(--site-space-xs);
+  transform: translateX(5px);
+}
+
+.bands span {
+  position: relative;
+  padding: var(--site-space-3xs) var(--site-space-2xs) var(--site-space-3xs) var(--site-space-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.bands span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: calc(-1 * var(--site-space-xs));
+  left: 0;
+  width: 2px;
+  background: var(--ifm-color-emphasis-900);
+}
+
+.bands span:last-child {
+  margin-right: 5px;
+}
+
+.bands .bandAhead {
+  color: var(--ifm-color-primary);
+  background: var(--site-tint-strong);
+}
+
+.bands .bandAhead::before {
+  background: var(--ifm-color-primary);
+}
+
+/* Between the narrow layout and wide screens, an era with one protocol
+ * version is narrower than its name at full size. */
+@media (min-width: 997px) and (max-width: 1199px) {
+  .bands span {
+    padding-left: var(--site-space-2xs);
+    font-size: 0.6875rem;
+    letter-spacing: 0;
+  }
+}
+
+.ticks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tick {
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* A version links to its entry further down. The link covers the whole
+ * tick, the dot included, and turns blue on hover. */
+.tickLink {
+  display: block;
+  padding: var(--site-space-md) var(--site-space-2xs) 0 0;
+  color: inherit;
+}
+
+.tickLink:hover {
+  text-decoration: none;
+}
+
+.tickLink:hover b,
+.tickLink:hover span {
+  color: var(--ifm-color-primary);
+}
+
+.tick::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-900);
+  background: var(--ifm-color-emphasis-900);
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  right: 0;
+  pointer-events: none;
+  border-top: 2px solid var(--ifm-color-emphasis-900);
+}
+
+.tick:last-child::before {
+  display: none;
+}
+
+.tick span {
+  display: block;
+}
+
+.tick b {
+  display: flex;
+  align-items: baseline;
+  gap: var(--site-space-2xs);
+  /* A fixed line, so the names under the numbers line up. */
+  height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+.tick em {
+  font-size: 0.75rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Mainnet is here. Everything after it has not happened: dashed, hollow. */
+.tickNow::after {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--site-tint-strong);
+}
+
+.tickNow b {
+  color: var(--ifm-color-primary);
+}
+
+/* 3px of air on both sides, clear of the ring around the current dot. */
+.tickNow::before,
+.tickAhead::before {
+  left: 15px;
+  right: 3px;
+  border-top: 2px dashed var(--ifm-color-emphasis-600);
+}
+
+.tickAhead::after {
+  border-color: var(--ifm-color-primary);
+  background: none;
+}
+
+.lineMore {
+  display: none;
+  margin: var(--site-space-xs) 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Two stacked sections. Each is a small title over one box, and every
+ * line of a section stays inside its box. */
+
+.section {
+  margin-top: var(--site-space-2xl);
+  font-variant-numeric: tabular-nums;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
+}
+
+.sectionTitle {
+  margin: 0 0 var(--site-space-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Text in a box is 0.875rem unless a rule below sets a size. */
+.box {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--site-radius-lg);
+  background: var(--ifm-background-surface-color);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* An entry that opens on click, the unit of every section. The control
+ * is a plus on the right that loses its upright bar when open. */
+
+.fold {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
+}
+
+.fold + .fold {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.fold summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 14px;
+  column-gap: var(--site-space-md);
+  align-items: center;
+  padding: var(--site-space-sm) var(--site-space-md);
+  border-radius: var(--site-radius-lg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold summary::after {
+  content: "";
+  grid-column: 3;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 14px 2px no-repeat,
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 2px 14px no-repeat;
+}
+
+.fold[open] summary::after {
+  background: linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) center / 14px 2px no-repeat;
+}
+
+.fold summary:hover .foldName {
+  color: var(--ifm-color-primary);
+}
+
+/* The focus ring sits inside the box. */
+.fold summary:focus-visible {
+  outline-offset: -2px;
+}
+
+.foldName {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.foldNameLarge {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.foldFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--site-space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.foldNameLarge + .foldFacts {
+  margin-top: var(--site-space-2xs);
+  font-weight: 600;
+}
+
+.foldFacts li + li::before {
+  content: "\00b7";
+  margin-right: var(--site-space-xs);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.foldAside {
+  text-align: right;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.foldAside b {
+  color: var(--ifm-font-color-base);
+}
+
+/* How far along an upcoming hard fork is, readable while it is closed: one
+ * segment per step of the path, filled up to the current step. Open, the
+ * path itself shows, so the segments hide. */
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--site-space-2xs);
+}
+
+.progress {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.progress span {
+  width: 14px;
+  height: 4px;
+  border-radius: var(--site-radius-pill);
+  background: var(--ifm-color-emphasis-300);
+}
+
+.progress .progressOn {
+  background: var(--ifm-color-primary);
+}
+
+.fold[open] .progress {
+  display: none;
+}
+
+.foldBody {
+  padding: 0 var(--site-space-md) var(--site-space-md);
+}
+
+/* A dense entry: the name and its facts on one line, in columns. */
+@media (min-width: 997px) {
+  .foldDense summary {
+    padding-top: var(--site-space-xs);
+    padding-bottom: var(--site-space-xs);
+  }
+
+  .foldDense .foldHead {
+    display: grid;
+    grid-template-columns: 14rem 12rem minmax(0, 1fr);
+    column-gap: var(--site-space-md);
+    align-items: baseline;
+  }
+
+  .foldDense .foldFacts {
+    display: contents;
+  }
+
+  .foldDense .foldFacts li + li::before {
+    content: none;
+  }
+}
+
+/* An explanation: a name, then a paragraph. On wide screens the name takes
+ * the first column of a dense entry, so it lines up with the hard fork
+ * names in the section above. */
+.explanation {
+  padding: var(--site-space-sm) var(--site-space-md);
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--site-space-sm));
+}
+
+.explanation + .explanation {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.explanation p {
+  max-width: 44rem;
+  margin: var(--site-space-2xs) 0 0;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.explanation a {
+  font-weight: 600;
+}
+
+@media (min-width: 997px) {
+  .explanation {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: var(--site-space-md);
+    align-items: baseline;
+  }
+
+  .explanation p {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .explanation {
+    padding-left: var(--site-space-sm);
+    padding-right: var(--site-space-sm);
+  }
+}
+
+.note {
+  max-width: 44rem;
+  margin: var(--site-space-xs) 0 0;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.note a,
+.rowSource a,
+.facts a {
+  font-weight: 600;
+}
+
+/* Where an enacted hard fork is on the chain: label and value pairs. */
+.facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--site-space-3xs) var(--site-space-md);
+  margin: var(--site-space-sm) 0 0;
+}
+
+.facts dt {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The path to the Cardano mainnet: six equal steps. Dots and connectors
+ * follow the rules of the version line: 12px dots with their center 6px
+ * from the top, 2px connectors from the edge of one dot to the next. */
+
+.path {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: var(--site-space-xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.path li {
+  position: relative;
+  padding: var(--site-space-md) var(--site-space-xs) 0 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.path li::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ifm-color-emphasis-700);
+}
+
+.path li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  right: 3px;
+  border-top: 2px solid var(--ifm-color-emphasis-300);
+}
+
+.path li:last-child::before {
+  display: none;
+}
+
+.path .pathDone {
+  color: var(--ifm-font-color-base);
+}
+
+.path .pathDone::before {
+  border-top-color: var(--ifm-color-primary);
+}
+
+.path .pathDone::after,
+.path .pathNow::after {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+}
+
+.path .pathNow {
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+}
+
+.path .pathNow::after {
+  box-shadow: 0 0 0 3px var(--site-tint-strong);
+}
+
+/* The changes of an opened hard fork, as a grid of cells: a name with its
+ * text, then the source link at the bottom. Every cell draws a line on its
+ * right and under it, and the grid clips its own last pixel on the right and
+ * at the bottom, so the outer lines never show whatever the number of
+ * columns. The lines stop short of the box edge, the lines between entries
+ * run to it. */
+
+.rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: var(--site-space-md) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  list-style: none;
+  clip-path: inset(0 1px 1px 0);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--site-space-2xs);
+  padding: var(--site-space-sm) var(--site-space-md);
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* The first and last cell of a line sit flush with the text above. */
+@media (min-width: 997px) {
+  .row:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  .row:nth-child(3n) {
+    padding-right: 0;
+  }
+}
+
+.row:only-child {
+  grid-column: 1 / -1;
+  padding-right: 0;
+}
+
+.rowSource {
+  margin-top: auto;
+}
+
+.rowName {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.rowText {
+  display: block;
+  color: var(--ifm-color-emphasis-800);
+}
+
+@media (max-width: 996px) {
+  /* Narrow screens: only where mainnet is and what comes next, as a short
+   * vertical line, then a link to the rest. */
+  .bands {
+    display: none;
+  }
+
+  .ticks {
+    display: block;
+  }
+
+  .tick {
+    display: none;
+    font-size: 0.875rem;
+  }
+
+  .tickLink {
+    padding: 0 0 var(--site-space-sm) var(--site-space-md);
+  }
+
+  .tickNow,
+  .tickAhead {
+    display: block;
+  }
+
+  .tick::after {
+    top: 6px;
+  }
+
+  .tickNow::before,
+  .tickAhead::before {
+    top: 21px;
+    bottom: -3px;
+    left: 5px;
+    right: auto;
+    border-top: 0;
+    border-left: 2px dashed var(--ifm-color-emphasis-600);
+  }
+
+  .tick:last-child .tickLink {
+    padding-bottom: 0;
+  }
+
+  .lineMore {
+    display: block;
+  }
+
+  /* Two cells to a line. */
+  .rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .row:nth-child(2n + 1) {
+    padding-left: 0;
+  }
+
+  .row:nth-child(2n) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* The aside moves under the facts. */
+  .fold summary {
+    grid-template-columns: minmax(0, 1fr) 14px;
+    row-gap: var(--site-space-3xs);
+    padding-left: var(--site-space-sm);
+    padding-right: var(--site-space-sm);
+  }
+
+  .foldBody {
+    padding: 0 var(--site-space-sm) var(--site-space-sm);
+  }
+
+  .fold summary::after {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .foldAside {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .stage {
+    justify-content: flex-start;
+  }
+
+  /* The facts read as one line of text. Where it does not fit, it breaks
+   * after the comma and never inside a fact. */
+  .foldFacts {
+    display: block;
+  }
+
+  .foldFacts li {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .foldFacts li + li::before {
+    content: none;
+  }
+
+  .foldFacts li:not(:last-child)::after {
+    content: ", ";
+    white-space: normal;
+  }
+
+  /* An opened hard fork shows its stage once, in the path. */
+  .fold[open] .stage {
+    display: none;
+  }
+
+  /* A transaction id takes one line and is cut at the end. Its link opens
+   * the explorer, which shows it whole. */
+  .txId {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .txSeparator {
+    display: none;
+  }
+
+  /* The path turns upright: dots down the left, labels beside them. */
+  .path {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .path li {
+    padding: 0 0 var(--site-space-xs) var(--site-space-md);
+  }
+
+  .path li:last-child {
+    padding-bottom: 0;
+  }
+
+  .path li::after {
+    top: 4.5px;
+  }
+
+  .path li::before {
+    top: 19.5px;
+    bottom: -1.5px;
+    left: 5px;
+    right: auto;
+    border-top: 0;
+    border-left: 2px solid var(--ifm-color-emphasis-300);
+  }
+
+  .path .pathDone::before {
+    border-left-color: var(--ifm-color-primary);
+  }
+
+  /* One cell to a line. */
+  .rows {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
