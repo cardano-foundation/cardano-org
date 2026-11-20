@@ -19,7 +19,7 @@ Add Markdown files to `/docs/` subdirectories to create documentation pages that
 ### Standalone pages (without sidebar)
 Add Markdown files directly to `/docs/` root for standalone pages without a sidebar:
 
-- `/docs/communities/` - the Communities page
+- `/docs/my-page.md` - served at `/docs/my-page/`
 
 These pages are independent and don't belong to a specific documentation section.
 
@@ -102,10 +102,10 @@ By default, documentation pages show the "Get Involved" hero banner. To customiz
 
 ```javascript
 // Check path and set custom hero
-if (location.pathname.includes('/communities')) {
-  heroTitle = 'Online Communities';
-  heroDescription = 'Connect with fellow Cardano community members...';
-  heroBannerType = 'braidBlue';
+if (location.pathname.includes('/use-cases')) {
+  heroTitle = 'Cardano Use Cases';
+  heroDescription = 'Explore how Cardano blockchain technology solves real-world problems...';
+  heroBannerType = 'docs';
 }
 ```
 
@@ -169,4 +169,4 @@ This is a warning
 
 - For more advanced layouts using React components, see [Create a React Page](/docs/get-involved/create-react-page)
 - Browse [available components](/docs/get-involved/components/) to enhance your pages
-- Check out [existing pages](/docs/communities/) for inspiration
+- Check out [existing pages](/docs/use-cases/) for inspiration

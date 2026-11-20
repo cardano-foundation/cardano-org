@@ -114,7 +114,7 @@ expect('react page returns null (stablecoins)', getTranslationSourcePath('/stabl
 expect('news index returns null', getTranslationSourcePath('/news/', 'de'), null);
 expect('docs index returns null', getTranslationSourcePath('/docs/', 'de'), null);
 expect('news post: 4 candidates', getTranslationSourcePath('/news/foo-bar/', 'de').length, 4);
-expect('docs page: 4 candidates', getTranslationSourcePath('/docs/communities/', 'de').length, 4);
+expect('docs page: 4 candidates', getTranslationSourcePath('/docs/use-cases/', 'de').length, 4);
 expect('nested docs: 4 candidates', getTranslationSourcePath('/docs/use-cases/payments/', 'ja').length, 4);
 expect('multi-segment news slug', getTranslationSourcePath('/news/2026/special-edition/', 'de').length, 4);
 
@@ -148,6 +148,7 @@ section('hasTranslation: defaults & React pages');
 expect('default locale always true (root)', hasTranslation('/', 'en'), true);
 expect('default locale always true (any)', hasTranslation('/anything/whatever/', 'en'), true);
 expect('react page in de', hasTranslation('/governance/', 'de'), true);
+expect('react page in de (community)', hasTranslation('/community/', 'de'), true);
 expect('react page in vi (homepage)', hasTranslation('/', 'vi'), true);
 expect('news index in all locales', hasTranslation('/news/', 'de'), true);
 expect('news index in ja', hasTranslation('/news/', 'ja'), true);
@@ -155,7 +156,6 @@ expect('docs index in es', hasTranslation('/docs/', 'es'), true);
 
 section('hasTranslation: docs known-translated to all 4 non-default');
 const known_translated_docs = [
-  '/docs/communities/',
   '/docs/use-cases/',
   '/docs/use-cases/payments/',
   '/docs/use-cases/agriculture/',
@@ -312,9 +312,11 @@ if (!buildDir) {
   }
 
   for (const loc of locales) {
-    const commPath = loc === defaultLocale ? '/docs/communities/' : `/${loc}/docs/communities/`;
+    const commPath = loc === defaultLocale ? '/community/' : `/${loc}/community/`;
     const comm = sitemaps[loc].find(u => new URL(u.loc).pathname === commPath);
-    expect(`${loc} sitemap contains /docs/communities/`, !!comm, true);
+    expect(`${loc} sitemap contains community with full hreflang`, comm ? comm.links.length : 0, 6);
+    const oldPath = loc === defaultLocale ? '/docs/communities/' : `/${loc}/docs/communities/`;
+    expect(`${loc} sitemap no longer lists /docs/communities/`, sitemaps[loc].some(u => new URL(u.loc).pathname === oldPath), false);
   }
 
   // /glossary/ index is a React page → present in every locale's sitemap.

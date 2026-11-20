@@ -142,7 +142,7 @@ function getNavbarItems() {
           title: 'Connect',
           items: [
             {to: '/news', label: 'News', description: 'Latest Cardano news and updates'},
-            {to: '/docs/communities/', label: 'Online Communities', description: 'Recommended Channels'},
+            {to: '/community', label: 'Community', description: 'Forum, chats and local groups'},
             {to: '/ambassadors', label: 'Ambassador Program', description: 'Meet Cardano Ambassadors'},
             {to: '/signal-operator-notification', label: 'Operator Notifications', description: 'Technical updates for stake pool operators'},
           ],
@@ -151,7 +151,6 @@ function getNavbarItems() {
           title: 'Engage',
           items: [
             {to: '/events', label: 'Cardano Events', description: 'Join Cardano community events'},
-            {href: 'https://forum.cardano.org', label: 'Cardano Forum', description: 'Structured long-format discussions'},
             {to: '/docs/get-involved', label: 'Get involved in cardano.org', description: 'If you\'d like to participate, this will get you started'},
             {to: '/stake-pool-operation', label: 'Run a Stake Pool', description: 'Operate a pool and help secure the network'},
           ],

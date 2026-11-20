@@ -1188,13 +1188,13 @@
     "message": "En esta estafa, los defraudadores se hacen pasar por representantes del soporte \"oficial\" de Cardano. Suelen contactarte por redes sociales, foros o correo electrónico, asegurando que pueden arreglar tu cartera o resolver un problema. También suelen copiar los perfiles de moderadores reales y, para \"ayudarte\", te pedirán tu frase de recuperación (palabras semilla) o tus claves privadas."
   },
   "commonScams.support.description2": {
-    "message": "Esta estafa es habitual cuando un [usuario nuevo entra en un canal](/docs/communities) y pregunta algo sobre una cartera. Los estafadores responden rápidamente haciéndose pasar por el soporte oficial."
+    "message": "Esta estafa es habitual cuando un [usuario nuevo entra en un canal](/community) y pregunta algo sobre una cartera. Los estafadores responden rápidamente haciéndose pasar por el soporte oficial."
   },
   "commonScams.support.howToProtect": {
     "message": "Cómo protegerte:"
   },
   "commonScams.support.tip1": {
-    "message": "Las personas legítimas de los [foros y canales](/docs/communities) **nunca** te pedirán tus contraseñas, frases de recuperación ni claves privadas."
+    "message": "Las personas legítimas de los [foros y canales](/community) **nunca** te pedirán tus contraseñas, frases de recuperación ni claves privadas."
   },
   "commonScams.support.tip2": {
     "message": "Nunca respondas a mensajes no solicitados que dicen venir del soporte."

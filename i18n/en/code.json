@@ -1188,13 +1188,13 @@
     "message": "In this scam, fraudsters pose as \"official\" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to \"help,\" they'll ask for your recovery phrase (seed words) or private keys."
   },
   "commonScams.support.description2": {
-    "message": "This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
+    "message": "This scam is often seen when a [new user enters a channel](/community) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
   },
   "commonScams.support.howToProtect": {
     "message": "How to protect yourself:"
   },
   "commonScams.support.tip1": {
-    "message": "Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys."
+    "message": "Legitimate people on [forums and channels](/community) will **never** ask for your passwords, recovery phrases or private keys."
   },
   "commonScams.support.tip2": {
     "message": "Never engage with unsolicited messages claiming to be from support."
@@ -1438,20 +1438,12 @@
     "message": "News",
     "description": "Mega menu item label"
   },
-  "navbar.mega.label.Online Communities": {
-    "message": "Online Communities",
-    "description": "Mega menu item label"
-  },
   "navbar.mega.label.Ambassador Program": {
     "message": "Ambassador Program",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Events": {
     "message": "Cardano Events",
-    "description": "Mega menu item label"
-  },
-  "navbar.mega.label.Cardano Forum": {
-    "message": "Cardano Forum",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Get involved in cardano.org": {
@@ -1537,20 +1529,12 @@
     "message": "Latest Cardano news and updates",
     "description": "Mega menu item description"
   },
-  "navbar.mega.description.Online Communities": {
-    "message": "Recommended Channels",
-    "description": "Mega menu item description"
-  },
   "navbar.mega.description.Ambassador Program": {
     "message": "Meet Cardano Ambassadors",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Events": {
     "message": "Join Cardano community events",
-    "description": "Mega menu item description"
-  },
-  "navbar.mega.description.Cardano Forum": {
-    "message": "Structured long-format discussions",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get involved in cardano.org": {
@@ -12454,12 +12438,6 @@
   "docs.hero.getInvolved.description": {
     "message": "Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano."
   },
-  "docs.hero.communities.title": {
-    "message": "Online Communities"
-  },
-  "docs.hero.communities.description": {
-    "message": "Connect with fellow Cardano community members around the world through various social channels."
-  },
   "docs.hero.useCases.title": {
     "message": "Cardano Use Cases"
   },
@@ -12804,5 +12782,179 @@
   },
   "roadmap.source.plutus": {
     "message": "Plutus documentation"
+  },
+  "community.forum.category.news": {
+    "message": "News and Announcements"
+  },
+  "community.forum.category.developers": {
+    "message": "Developers"
+  },
+  "community.forum.category.governance": {
+    "message": "Governance"
+  },
+  "community.forum.category.staking": {
+    "message": "Staking & Delegation"
+  },
+  "community.channels.discord.title": {
+    "message": "Discord"
+  },
+  "community.channels.discord.text": {
+    "message": "Real-time chat with builders, operators and community members."
+  },
+  "community.channels.telegram.title": {
+    "message": "Telegram"
+  },
+  "community.channels.telegram.text": {
+    "message": "Quick questions and everyday conversation."
+  },
+  "community.channels.reddit.title": {
+    "message": "Reddit"
+  },
+  "community.channels.reddit.text": {
+    "message": "News, questions and discussion on r/Cardano."
+  },
+  "community.channels.stackexchange.title": {
+    "message": "Stack Exchange"
+  },
+  "community.channels.stackexchange.text": {
+    "message": "Questions and answers for Cardano developers."
+  },
+  "community.channels.facebook.title": {
+    "message": "Facebook"
+  },
+  "community.channels.facebook.text": {
+    "message": "The Cardano community group on Facebook."
+  },
+  "community.involved.ambassadors.title": {
+    "message": "Become an ambassador"
+  },
+  "community.involved.ambassadors.text": {
+    "message": "Help grow the community as a moderator, translator, meetup organizer or content creator."
+  },
+  "community.involved.translate.title": {
+    "message": "Translate cardano.org"
+  },
+  "community.involved.translate.text": {
+    "message": "Bring this website to your language."
+  },
+  "community.involved.contribute.title": {
+    "message": "Contribute to cardano.org"
+  },
+  "community.involved.contribute.text": {
+    "message": "Fix a page, add an app or write a new guide."
+  },
+  "community.involved.governance.title": {
+    "message": "Take part in governance"
+  },
+  "community.involved.governance.text": {
+    "message": "Delegate your voting power or become a DRep."
+  },
+  "community.involved.build.title": {
+    "message": "Build on Cardano"
+  },
+  "community.involved.build.text": {
+    "message": "Tools, guides and funding for developers."
+  },
+  "community.local.region.uk": {
+    "message": "United Kingdom"
+  },
+  "community.safetyLine": {
+    "message": "Admins and moderators will never message you first or ask for your password or recovery phrase. [How to stay safe](#safety)"
+  },
+  "community.channels.forum.title": {
+    "message": "Cardano Forum"
+  },
+  "community.channels.forum.text": {
+    "message": "The home of long-form discussion: announcements, governance, development and local communities in many languages."
+  },
+  "community.channels.forum.members": {
+    "message": "{count}+ members"
+  },
+  "community.channels.forum.posts": {
+    "message": "{count}+ posts"
+  },
+  "community.hero.forumButton": {
+    "message": "Visit the forum"
+  },
+  "community.meta.title": {
+    "message": "Cardano Community: Forum, Chats, Events and Local Groups"
+  },
+  "community.meta.description": {
+    "message": "Find the Cardano community: the forum, Discord and Telegram, upcoming events, groups in your language and ways to get involved."
+  },
+  "community.hero.title": {
+    "message": "Cardano Community"
+  },
+  "community.hero.tagline": {
+    "message": "Thousands of people build, discuss and run Cardano. Here is where to find them."
+  },
+  "community.hero.eventsButton": {
+    "message": "Find an event"
+  },
+  "community.channels.title": {
+    "message": "Where the community talks"
+  },
+  "community.forum.title": {
+    "message": "Popular on the forum"
+  },
+  "community.forum.note": {
+    "message": "Posts written by community members on forum.cardano.org."
+  },
+  "community.forum.browse": {
+    "message": "Browse by topic"
+  },
+  "community.forum.more": {
+    "message": "More on the forum"
+  },
+  "community.events.title": {
+    "message": "Meet the community"
+  },
+  "community.events.text": {
+    "message": "Conferences, meetups, workshops and community calls, in person and online."
+  },
+  "community.events.all": {
+    "message": "See all events"
+  },
+  "community.local.title": {
+    "message": "Communities in your language and region"
+  },
+  "community.local.text": {
+    "message": "Groups run by local community members."
+  },
+  "community.involved.title": {
+    "message": "Ways to get involved"
+  },
+  "community.safety.title": {
+    "message": "Stay safe in community channels"
+  },
+  "community.safety.point1": {
+    "message": "Admins and moderators will never send you a private message first."
+  },
+  "community.safety.point2": {
+    "message": "No one legitimate will ever ask for your recovery phrase, password or private keys."
+  },
+  "community.safety.point3": {
+    "message": "Problems with users or moderation in the Telegram channels? Tell [Cardano Report to Admin]({url})."
+  },
+  "community.safety.scams": {
+    "message": "Learn to spot common scams"
+  },
+  "community.safety.conduct": {
+    "message": "Read the Community Code of Conduct"
+  },
+  "community.add.title": {
+    "message": "Is your community missing?"
+  },
+  "community.add.text": {
+    "message": "Communities that are active, open and well moderated can be listed here."
+  },
+  "community.add.button": {
+    "message": "Add your community"
+  },
+  "navbar.mega.label.Community": {
+    "message": "Community"
+  },
+  "navbar.mega.description.Community": {
+    "message": "Forum, chats and local groups"
   }
 }

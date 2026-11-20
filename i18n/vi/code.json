@@ -1188,13 +1188,13 @@
     "message": "Trong trò lừa đảo này, kẻ gian đóng giả làm đại diện hỗ trợ \"chính thức\" của Cardano. Chúng thường liên hệ qua mạng xã hội, diễn đàn hoặc email, tuyên bố có thể sửa ví hoặc khắc phục sự cố cho bạn. Chúng cũng thường sao chép hồ sơ của các quản trị viên thật, và để \"giúp đỡ\", chúng sẽ hỏi cụm từ khôi phục (seed words) hoặc khóa riêng tư của bạn."
   },
   "commonScams.support.description2": {
-    "message": "Trò lừa đảo này thường xuất hiện khi một [người dùng mới vào một kênh](/docs/communities) và đặt câu hỏi về ví. Kẻ lừa đảo nhanh chóng trả lời, giả vờ là bộ phận hỗ trợ chính thức."
+    "message": "Trò lừa đảo này thường xuất hiện khi một [người dùng mới vào một kênh](/community) và đặt câu hỏi về ví. Kẻ lừa đảo nhanh chóng trả lời, giả vờ là bộ phận hỗ trợ chính thức."
   },
   "commonScams.support.howToProtect": {
     "message": "Cách tự bảo vệ bản thân:"
   },
   "commonScams.support.tip1": {
-    "message": "Những người đáng tin cậy trên [diễn đàn và các kênh](/docs/communities) sẽ **không bao giờ** hỏi mật khẩu, cụm từ khôi phục hoặc khóa riêng tư của bạn."
+    "message": "Những người đáng tin cậy trên [diễn đàn và các kênh](/community) sẽ **không bao giờ** hỏi mật khẩu, cụm từ khôi phục hoặc khóa riêng tư của bạn."
   },
   "commonScams.support.tip2": {
     "message": "Đừng bao giờ tương tác với những tin nhắn không mong muốn tự nhận là từ bộ phận hỗ trợ."

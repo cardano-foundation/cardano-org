@@ -122,11 +122,11 @@ export default function Home() {
             title={translate({id: 'commonScams.support.title', message: 'Fake Tech Support'})}
             description={[
               translate({id: 'commonScams.support.description1', message: 'In this scam, fraudsters pose as "official" Cardano support representatives. They often reach out via social media, forums, or email, claiming they can fix your wallet or troubleshoot an issue. They also often copy the profiles of real moderators and to "help," they\'ll ask for your recovery phrase (seed words) or private keys.'}),
-              translate({id: 'commonScams.support.description2', message: 'This scam is often seen when a [new user enters a channel](/docs/communities) and asks a question about a wallet. Scammers quickly respond, pretending to be official support.'}),
+              translate({id: 'commonScams.support.description2', message: 'This scam is often seen when a [new user enters a channel](/community) and asks a question about a wallet. Scammers quickly respond, pretending to be official support.'}),
               translate({id: 'commonScams.support.howToProtect', message: 'How to protect yourself:'}),
               {
                 list: [
-                  translate({id: 'commonScams.support.tip1', message: 'Legitimate people on [forums and channels](/docs/communities) will **never** ask for your passwords, recovery phrases or private keys.'}),
+                  translate({id: 'commonScams.support.tip1', message: 'Legitimate people on [forums and channels](/community) will **never** ask for your passwords, recovery phrases or private keys.'}),
                   translate({id: 'commonScams.support.tip2', message: 'Never engage with unsolicited messages claiming to be from support.'}),
                   translate({id: 'commonScams.support.tip3', message: 'Legitimate people on forums and channels will **never** contact you first in a private message.'}),
                 ],
