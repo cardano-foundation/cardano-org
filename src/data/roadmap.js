@@ -17,6 +17,12 @@ const vanRossemOverview = () => ({
   label: translate({ id: "roadmap.source.overview", message: "Upgrade overview" }),
   href: "https://cardanoupgrades.docs.intersectmbo.org/van-rossem-upgrade/van-rossem-hard-fork-overview",
 });
+// The plan still lists fair minimum fees as conditional. The impact analysis
+// of the working group states the scope that was settled since.
+const fairMinFeesImpact = () => ({
+  label: translate({ id: "roadmap.source.impact", message: "Impact analysis" }),
+  href: "https://cardanoupgrades.docs.intersectmbo.org/dijkstra-era-upgrade/dijkstra-upgrade-overview/fair-min-fees-conditional",
+});
 const plutusV3Docs = () => ({
   label: translate({ id: "roadmap.source.plutus", message: "Plutus documentation" }),
   href: "https://plutus.cardano.intersectmbo.org/docs/working-with-scripts/ledger-language-version#plutus-v3",
@@ -36,7 +42,7 @@ export function getHardForks() {
         {
           id: "roadmap.fork.dijkstra-1.note",
           message:
-            "The [hard fork plan]({plan}) targets code completion for Q4 2026. The hard fork working group reports in its [minutes]({minutes}) that most of the changes can be tested on [DijkstraNet]({testnet}), a test network for developers.",
+            "The [hard fork plan]({plan}) targets code completion for Q4 2026. The hard fork working group reports in its [minutes]({minutes}) that everything except Linear Leios and fair minimum fees can be tested on [DijkstraNet]({testnet}), a test network for developers.",
         },
         {
           plan: `${INTERSECT_PLAN_URL}#phase-1-dijkstra-hard-fork-protocol-version-12-q4-2026`,
@@ -143,9 +149,9 @@ export function getHardForks() {
           name: translate({ id: "roadmap.change.fair-min-fees.name", message: "Fair minimum fees" }),
           text: translate({
             id: "roadmap.change.fair-min-fees.text",
-            message: "A new parameter sets the lowest margin a stake pool may charge. It starts at zero. Its rule takes effect in this hard fork or a later one in the Dijkstra era.",
+            message: "A new parameter sets a minimum stake pool margin, which reward calculation applies when a pool's own margin is lower. It starts at zero, and governance can raise it later.",
           }),
-          source: cip(23),
+          source: fairMinFeesImpact(),
         },
       ],
     },

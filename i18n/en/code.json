@@ -12485,7 +12485,7 @@
     "message": "Dijkstra, phase 1"
   },
   "roadmap.fork.dijkstra-1.note": {
-    "message": "The [hard fork plan]({plan}) targets code completion for Q4 2026. The hard fork working group reports in its [minutes]({minutes}) that most of the changes can be tested on [DijkstraNet]({testnet}), a test network for developers."
+    "message": "The [hard fork plan]({plan}) targets code completion for Q4 2026. The hard fork working group reports in its [minutes]({minutes}) that everything except Linear Leios and fair minimum fees can be tested on [DijkstraNet]({testnet}), a test network for developers."
   },
   "roadmap.fork.dijkstra-2.name": {
     "message": "Dijkstra, phase 2"
@@ -12551,7 +12551,7 @@
     "message": "Fair minimum fees"
   },
   "roadmap.change.fair-min-fees.text": {
-    "message": "A new parameter sets the lowest margin a stake pool may charge. It starts at zero. Its rule takes effect in this hard fork or a later one in the Dijkstra era."
+    "message": "A new parameter sets a minimum stake pool margin, which reward calculation applies when a pool's own margin is lower. It starts at zero, and governance can raise it later."
   },
   "roadmap.change.reference-fees.name": {
     "message": "Fees for reference inputs"
@@ -12795,6 +12795,9 @@
   },
   "roadmap.change.serialise-data.text": {
     "message": "A built-in function serializes data to a byte string."
+  },
+  "roadmap.source.impact": {
+    "message": "Impact analysis"
   },
   "roadmap.source.overview": {
     "message": "Upgrade overview"

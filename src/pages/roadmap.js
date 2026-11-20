@@ -26,7 +26,7 @@ export default function Roadmap() {
           "What the next Cardano hard fork changes, how far along it is, and every protocol version so far.",
       })}
     >
-      <OpenGraphInfo />
+      <OpenGraphInfo pageName="hard-forks" />
       <SiteHero
         title={translate({ id: "roadmap.hero.title", message: "Cardano network upgrades" })}
         description={translate({
