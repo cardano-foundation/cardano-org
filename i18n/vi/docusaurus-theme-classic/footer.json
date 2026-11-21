@@ -49,7 +49,7 @@
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to /docs/communities/#cardano-on-discord"
+    "description": "The label of footer link with label=Discord linking to /community/#discord"
   },
   "link.item.label.Newsletter": {
     "message": "Bản tin",

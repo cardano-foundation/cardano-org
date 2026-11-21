@@ -39,17 +39,9 @@
     "message": "Thông tin chi tiết về Cardano",
     "description": "Navbar item with label Cardano Insights"
   },
-  "item.label.Online Communities": {
-    "message": "Cộng đồng trực tuyến",
-    "description": "Navbar item with label Online Communities"
-  },
   "item.label.Cardano Events": {
     "message": "Sự kiện Cardano",
     "description": "Navbar item with label Cardano Events"
-  },
-  "item.label.Cardano Forum": {
-    "message": "Diễn đàn Cardano",
-    "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
     "message": "Đóng góp cho cardano.org",
@@ -186,5 +178,9 @@
   "item.label.The Cardano Treasury": {
     "message": "The Cardano Treasury",
     "description": "Navbar item with label The Cardano Treasury"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
   }
 }
