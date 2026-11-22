@@ -2004,6 +2004,21 @@ export const Showcases = [
     x: "DRepForum",
     maintainerPick: false,
   },
+  {
+    title: "SteelSwap",
+    description:
+      "Cardano aggregator that routes and splits each swap across pools on the major Cardano DEXes for a better total output, with price charts and order tracking.",
+    tagline: "Cardano aggregator with multi-DEX split routing",
+    preview: require("./app-screenshots/steelswap.webp"),
+    icon: "/img/app-icons/steelswap.png",
+    statsLabel: "steelswap",
+    website: "https://steelswap.io",
+    source: null,
+    category: "dex",
+    properties: [],
+    maintainerPick: false,
+    x: "SteelSwap",
+  },
 ];
 
 export const TagList = Object.keys(Tags);
