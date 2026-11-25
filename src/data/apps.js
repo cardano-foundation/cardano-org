@@ -528,20 +528,21 @@ export const Showcases = [
   {
     title: "cardano-tools.io",
     description:
-      "Open-source CNFT minting toolkit. Configure metadata, royalties, and minting policies entirely client-side; you only pay network fees.",
-    tagline: "Open-source CNFT maker, pay only network fees",
+      "Open-source toolkit for ada holders and creators: check a staking setup, follow governance votes, export staking rewards for a tax return, and mint or burn tokens.",
+    tagline: "Staking check, rewards report and token minting",
     preview: require("./app-screenshots/cardano-tools-io.webp"),
     extraPreviews: [
-      require("./app-screenshots/cardano-tools-io-mint-nfts.webp"),
-      require("./app-screenshots/cardano-tools-io-mint-nfts-on-demand.webp"),
-      require("./app-screenshots/cardano-tools-io-burn-nfts.webp"),
+      require("./app-screenshots/cardano-tools-io-governance.webp"),
+      require("./app-screenshots/cardano-tools-io-rewards-report.webp"),
+      require("./app-screenshots/cardano-tools-io-mint.webp"),
     ],
     icon: "/img/app-icons/cardano-tools-io.png",
     website: "https://cardano-tools.io",
-    source: "https://github.com/wutzebaer/cardano-tools",
+    source: "https://github.com/wutzebaer/cardano-tools2",
     category: "minting",
-    properties: ["nft", "opensource"],
+    properties: ["nft", "opensource", "drepdelegation", "pooldelegation"],
     maintainerPick: false,
+    x: "wutzebaer1",
   },
   {
     title: "Typhon",
