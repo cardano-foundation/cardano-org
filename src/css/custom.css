@@ -312,6 +312,14 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   box-sizing: border-box;
 }
 
+/* Mautic's own CSS hardcodes a white field background while the text color
+   inherits from the theme, which makes typed text invisible in dark mode. */
+div[id^="mautic-form-container-"] :is(.mauticform-input, .mauticform-selectbox, .mauticform-textarea) {
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
 /* Google attaches the reCAPTCHA badge to body and leaves it there after a
    client-side navigation. Show it only while a form that uses it is on the page. */
 body:not(:has([id^="mautic-form-container-"], .hs-form)) .grecaptcha-badge {
