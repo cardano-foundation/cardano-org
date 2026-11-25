@@ -312,6 +312,12 @@ div[id^="mautic-form-container-"] .mauticform_wrapper {
   box-sizing: border-box;
 }
 
+/* Google attaches the reCAPTCHA badge to body and leaves it there after a
+   client-side navigation. Show it only while a form that uses it is on the page. */
+body:not(:has([id^="mautic-form-container-"], .hs-form)) .grecaptcha-badge {
+  visibility: hidden;
+}
+
 /* The navbar needs a little space so that the Cardano logo can breathe */
 .navbar {
   height: 80px;
