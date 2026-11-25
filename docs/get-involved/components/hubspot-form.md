@@ -1,11 +1,11 @@
 ---
 title: HubSpot Form
-description: Embed a HubSpot form, such as the contact form or the Community Digest sign-up, using the HubSpotForm component on cardano.org.
+description: Embed a HubSpot form, such as the contact form, using the HubSpotForm component on cardano.org.
 ---
 
 ## HubSpotForm
 
-`HubSpotForm` embeds a form from HubSpot. It loads HubSpot's form script once and lets HubSpot render the form into an empty `div`. The contact form on `/contact` (topic "another inquiry") and the Community Digest sign-up on `/newsletter` use it.
+`HubSpotForm` embeds a form from HubSpot. It loads HubSpot's form script once and lets HubSpot render the form into an empty `div`. The contact form on `/contact` (topic "another inquiry") uses it. Newsletter sign-ups use Mautic forms instead.
 
 ## When to use
 
