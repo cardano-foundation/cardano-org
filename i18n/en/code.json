@@ -12956,5 +12956,9 @@
   },
   "navbar.mega.description.Community": {
     "message": "Forum, chats and local groups"
+  },
+  "mauticForm.recaptchaError": {
+    "message": "We couldn't confirm you're human. Please click Submit again. If it still fails, reload the page and try once more.",
+    "description": "Error below a sign-up form when the spam check (reCAPTCHA) rejects a submission"
   }
 }
