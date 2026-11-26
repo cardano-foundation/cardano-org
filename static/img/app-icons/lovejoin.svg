@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Lovejoin">
+  <!-- Brand palette: ink #0a0a0c, paper #f1efe9, amber #f5b200.
+       The mark is a paper-on-ink "L" with an amber dot to the right of
+       the foot — read as the deposited box (paper L = vault) and the
+       mixed output (amber dot = re-randomised box). Geometric, no
+       gradients, no anti-aliasing dependence; reads cleanly at 16px. -->
+  <rect width="32" height="32" rx="6" fill="#0a0a0c" />
+  <!-- Vertical bar of the L -->
+  <rect x="9" y="7" width="4" height="18" fill="#f1efe9" />
+  <!-- Foot of the L -->
+  <rect x="9" y="21" width="11" height="4" fill="#f1efe9" />
+  <!-- Amber accent — the 'mix output' dot -->
+  <circle cx="23.5" cy="23" r="2.5" fill="#f5b200" />
+</svg>

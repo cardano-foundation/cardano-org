@@ -2004,6 +2004,27 @@ export const Showcases = [
     x: "DRepForum",
     maintainerPick: false,
   },
+  {
+    title: "Seedelf Wallet",
+    description:
+      "Cardano wallet for Chrome with a private balance beside the public account: stake, vote, swap and use dApps, then pay anyone's Seedelf privately.",
+    tagline: "Cardano wallet with private payments built in",
+    preview: require("./app-screenshots/seedelf-wallet.webp"),
+    icon: "/img/app-icons/seedelf-wallet.png",
+    statsLabel: "seedelf",
+    website: "https://www.logicalmechanism.io/seedelf",
+    source: "https://github.com/logical-mechanism/Seedelf-Wallet",
+    category: "wallet",
+    properties: ["opensource", "nft", "drepdelegation"],
+    x: "LogicalMechnism",
+    maintainerPick: false,
+    walletFeatures: {
+      platforms: ["browser"],
+      custody: "non-custodial",
+      features: ["staking", "governance", "nft", "multi-asset", "dapp-connector", "multi-account", "dex"],
+      type: "light",
+    },
+  },
 ];
 
 export const TagList = Object.keys(Tags);

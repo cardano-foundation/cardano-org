@@ -70,6 +70,11 @@ export const UnlistedApps = {
     category: "bridge",
     website: "https://usdcx.iog.io/bridge",
   },
+  "lovejoin": {
+    icon: "/img/app-icons/lovejoin.svg",
+    category: "other",
+    website: "https://www.logicalmechanism.io/seedelf",
+  },
 };
 
 // True for a parseable absolute http(s) URL with a host and no surrounding whitespace.
