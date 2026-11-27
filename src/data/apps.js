@@ -638,21 +638,42 @@ export const Showcases = [
   },
   {
     title: "GameChanger Wallet",
-    description:
-      "The ultimate wallet experience for the Web, with native NFT and token features, powered by Cardano and third party applications.",
-    tagline: "Web wallet with native NFT and dApp connector",
-    icon: "/img/app-icons/gamechanger.jpg",
+    description: "Non-custodial Cardano meta-wallet with multisig, QR, hardware and extension wallets. NFT minter and GCScript DSL IDE; connects to devices and dApps via links, QR and NFC.",
+    tagline: "Web wallet with dapp/device connectivity and IDE for devs",
+    preview: require("./app-screenshots/gcw-1.webp"),
+    extraPreviews: [
+      require("./app-screenshots/gcw-2.webp"),
+      require("./app-screenshots/gcw-3.webp"),
+      require("./app-screenshots/gcw-4.webp"),
+      require("./app-screenshots/gcw-5.webp"),
+      require("./app-screenshots/gcw-6.webp"),
+    ],
+    icon: "/img/app-icons/gcw.png",
     website: "https://gamechanger.finance",
     source: null,
     category: "wallet",
-    properties: ["nft"],
+    properties: [
+      "nft",
+      "drepdelegation",
+    ],
     maintainerPick: false,
+    x: "GameChangerOk",
     walletFeatures: {
-      platforms: ["browser", "web"],
+      platforms: [
+        "web",
+      ],
       custody: "non-custodial",
-      features: ["nft", "dapp-connector", "multi-asset"],
+      features: [
+        "staking",
+        "governance",
+        "nft",
+        "multi-asset",
+        "hardware-wallet",
+        "multi-account",
+        "dapp-connector",
+      ],
       type: "light",
-    },
+    }
   },
   {
     title: "GeroWallet",
@@ -2002,6 +2023,26 @@ export const Showcases = [
     category: "governance",
     properties: ["drepdelegation"],
     x: "DRepForum",
+    maintainerPick: false,
+  },
+  {
+    title: "NeonSoup",
+    description: "Open-source Cardano DEX: P2P DeFi Kernel shared liquidity, wallet-side batching and parallel execution, incognito mode, DeFi cart, no batchers, inspectable GCScript DSL intents.",
+    tagline: "Shared-liquidity Cardano DEX with wallet-side execution",
+    preview: require("./app-screenshots/neonsoup-1.webp"),
+    extraPreviews: [
+      require("./app-screenshots/neonsoup-2.webp"),
+      require("./app-screenshots/neonsoup-3.webp"),
+      require("./app-screenshots/neonsoup-4.webp"),
+      require("./app-screenshots/neonsoup-5.webp"),
+    ],
+    icon: "/img/app-icons/neonsoup.png",
+    website: "https://neonsoup.trade",
+    source: "https://github.com/GameChangerFinance/NeonSoup",
+    category: "dex",
+    properties: [
+      "opensource",
+    ],
     maintainerPick: false,
   },
 ];
