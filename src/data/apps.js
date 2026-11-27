@@ -1687,7 +1687,7 @@ export const Showcases = [
     source: "https://github.com/nomos-guild/cgov",
     category: "governance",
     properties: ["opensource"],
-    maintainerPick: true,
+    maintainerPick: false,
   },
   {
     title: "Sundae Treasury Dashboard",
