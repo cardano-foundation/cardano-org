@@ -85,10 +85,6 @@
   color: #475569;
   line-height: 1.35;
   margin-bottom: 0.6rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .footer {
