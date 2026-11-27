@@ -1188,13 +1188,13 @@
     "message": "En esta estafa, los defraudadores se hacen pasar por representantes del soporte \"oficial\" de Cardano. Suelen contactarte por redes sociales, foros o correo electrónico, asegurando que pueden arreglar tu cartera o resolver un problema. También suelen copiar los perfiles de moderadores reales y, para \"ayudarte\", te pedirán tu frase de recuperación (palabras semilla) o tus claves privadas."
   },
   "commonScams.support.description2": {
-    "message": "Esta estafa es habitual cuando un [usuario nuevo entra en un canal](/community) y pregunta algo sobre una cartera. Los estafadores responden rápidamente haciéndose pasar por el soporte oficial."
+    "message": "This scam is often seen when a [new user enters a channel](/community) and asks a question about a wallet. Scammers quickly respond, pretending to be official support."
   },
   "commonScams.support.howToProtect": {
     "message": "Cómo protegerte:"
   },
   "commonScams.support.tip1": {
-    "message": "Las personas legítimas de los [foros y canales](/community) **nunca** te pedirán tus contraseñas, frases de recuperación ni claves privadas."
+    "message": "Legitimate people on [forums and channels](/community) will **never** ask for your passwords, recovery phrases or private keys."
   },
   "commonScams.support.tip2": {
     "message": "Nunca respondas a mensajes no solicitados que dicen venir del soporte."
@@ -1438,20 +1438,12 @@
     "message": "Noticias",
     "description": "Mega menu item label"
   },
-  "navbar.mega.label.Online Communities": {
-    "message": "Comunidades Online",
-    "description": "Mega menu item label"
-  },
   "navbar.mega.label.Ambassador Program": {
     "message": "Programa de Embajadores",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Cardano Events": {
     "message": "Eventos de Cardano",
-    "description": "Mega menu item label"
-  },
-  "navbar.mega.label.Cardano Forum": {
-    "message": "Foro Cardano",
     "description": "Mega menu item label"
   },
   "navbar.mega.label.Get involved in cardano.org": {
@@ -1537,20 +1529,12 @@
     "message": "Últimas noticias y actualizaciones de Cardano",
     "description": "Mega menu item description"
   },
-  "navbar.mega.description.Online Communities": {
-    "message": "Canales Recomendados",
-    "description": "Mega menu item description"
-  },
   "navbar.mega.description.Ambassador Program": {
     "message": "Conoce a los embajadores de Cardano",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Cardano Events": {
     "message": "Únete a eventos de la comunidad de Cardano",
-    "description": "Mega menu item description"
-  },
-  "navbar.mega.description.Cardano Forum": {
-    "message": "Discusiones de formato largo estructuradas",
     "description": "Mega menu item description"
   },
   "navbar.mega.description.Get involved in cardano.org": {
@@ -2174,6 +2158,9 @@
   "events.featured.thisWeek": {
     "message": "Esta semana"
   },
+  "events.featured.happeningNow": {
+    "message": "Happening now"
+  },
   "events.recaps.title": {
     "message": "Resúmenes de eventos recientes"
   },
@@ -2346,37 +2333,16 @@
     "message": "IDs de transacciones"
   },
   "hardforks.timeline.valentine.description": {
-    "message": "Introdujo nuevas mejoras en la funcionalidad de los contratos inteligentes de Plutus y en el rendimiento general de la red."
+    "message": "Intra-era upgrade that lets Plutus scripts verify signatures made on other blockchains, such as Bitcoin."
   },
   "hardforks.timeline.chang1.description": {
-    "message": "Introducing the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only."
+    "message": "Introduced the first batch of decentralized governance features of CIP-1694. During this bootstrap phase only parameter changes, hard fork initiations and info actions were possible, and DReps voted on info actions only."
   },
   "hardforks.timeline.plomin.description": {
     "message": "Ended the bootstrap phase of CIP-1694. DReps vote on every type of governance action, and treasury withdrawals, constitution updates, no-confidence motions and changes to the Constitutional Committee became possible."
   },
-  "hardforks.hero.title": {
-    "message": "Hard forks de Cardano"
-  },
-  "hardforks.hero.description": {
-    "message": "¿Qué hard forks se implementaron y qué funcionalidades introdujeron?"
-  },
-  "hardforks.layout.title": {
-    "message": "Hard Forks de Cardano: Historial de actualizaciones de la red"
-  },
-  "hardforks.layout.description": {
-    "message": "Una cronología completa de los hard forks de Cardano desde Byron hasta van Rossem. Explora cada actualización de la red, qué cambió y cómo ha evolucionado el protocolo."
-  },
-  "hardforks.content.title": {
-    "message": "Hard Forks de Cardano"
-  },
   "hardforks.content.description": {
     "message": "[Hard forks](/glossary/hard-fork) in Cardano do not signify division and differences within the ecosystem. On the contrary, they define a specific and collectively agreed-upon exact time ([slot](/glossary/slot)) when all nodes switch to new protocol rules, sometimes starting a new era, applying new functions, validation rules, or parameter values. Stake pool operators install the new node version ahead of time. Since Plomin, the switch itself is approved on chain through a [hard fork governance action](/glossary/hard-fork-initiation). A Cardano hard fork is, therefore, not a separation but a precise collective evolution."
-  },
-  "hardforks.divider.timeline": {
-    "message": "Cronología"
-  },
-  "hardforks.divider.transactionIds": {
-    "message": "IDs de transacciones de hard forks"
   },
   "hardforks.transactionIds.description": {
     "message": "Byron, the OBFT switch, Shelley, Alonzo and the Lobster upgrade are listed without a single transaction ID. Up to Chang, each ID is a protocol update proposal that triggered the hard fork. Plomin and van Rossem were approved as [hard fork governance actions](/glossary/hard-fork-initiation), and their IDs identify those actions."
@@ -8125,7 +8091,7 @@
     "message": "Cómo delegar"
   },
   "hardforks.timeline.vanrossem.description": {
-    "message": "Actualización intra-era que aportó reglas del libro mayor más limpias, unicidad de claves VRF, mejoras de rendimiento en los contratos inteligentes de Plutus y nuevos componentes criptográficos integrados."
+    "message": "Intra-era upgrade delivering cleaner ledger rules, VRF key uniqueness, Plutus smart contract performance improvements and new cryptographic built-ins."
   },
   "home.divider.news": {
     "message": "Noticias"
@@ -12494,12 +12460,6 @@
   "docs.hero.getInvolved.description": {
     "message": "Whether you are a developer, designer, writer, project builder, or just someone passionate about Cardano."
   },
-  "docs.hero.communities.title": {
-    "message": "Online Communities"
-  },
-  "docs.hero.communities.description": {
-    "message": "Connect with fellow Cardano community members around the world through various social channels."
-  },
   "docs.hero.useCases.title": {
     "message": "Cardano Use Cases"
   },
@@ -12517,5 +12477,510 @@
   },
   "leaderboard.cta.button": {
     "message": "Browse Apps Directory"
+  },
+  "roadmap.source.plan": {
+    "message": "Hard fork plan"
+  },
+  "roadmap.fork.dijkstra-1.name": {
+    "message": "Dijkstra, phase 1"
+  },
+  "roadmap.fork.dijkstra-1.note": {
+    "message": "The [hard fork plan]({plan}) targets code completion for Q4 2026. The hard fork working group reports in its [minutes]({minutes}) that everything except Linear Leios and fair minimum fees can be tested on [DijkstraNet]({testnet}), a test network for developers."
+  },
+  "roadmap.fork.dijkstra-2.name": {
+    "message": "Dijkstra, phase 2"
+  },
+  "roadmap.fork.dijkstra-2.note": {
+    "message": "The [hard fork plan]({plan}) targets code completion for Q2 2027."
+  },
+  "roadmap.change.leios.text": {
+    "message": "A block producer can publish a second, larger block alongside the regular one. Its transactions enter the ledger after a committee of stake pools votes for it, so the network carries more transactions."
+  },
+  "roadmap.change.reward-withdrawals.name": {
+    "message": "Reward withdrawals without a DRep"
+  },
+  "roadmap.change.reward-withdrawals.text": {
+    "message": "Ada holders can withdraw their rewards without first delegating their vote to a DRep."
+  },
+  "roadmap.change.nested-transactions.name": {
+    "message": "Nested transactions"
+  },
+  "roadmap.change.nested-transactions.text": {
+    "message": "A transaction can contain sub-transactions that settle together, so a swap offer can be made and accepted without an exchange in between."
+  },
+  "roadmap.change.plutus-v4.text": {
+    "message": "A new script context lets smart contracts read the transaction and ledger structures that Dijkstra introduces."
+  },
+  "roadmap.change.guard-scripts.name": {
+    "message": "Guard scripts"
+  },
+  "roadmap.change.guard-scripts.text": {
+    "message": "A new script type can check a transaction without spending or minting."
+  },
+  "roadmap.change.account-addresses.name": {
+    "message": "Account addresses, phase 1"
+  },
+  "roadmap.change.account-addresses.text": {
+    "message": "Ada can be deposited into account addresses, which today only receive staking rewards."
+  },
+  "roadmap.change.is-valid.name": {
+    "message": "isValid removed from transactions"
+  },
+  "roadmap.change.is-valid.text": {
+    "message": "Removing the field simplifies the transaction structure and script execution."
+  },
+  "roadmap.change.block-body.name": {
+    "message": "Block body format"
+  },
+  "roadmap.change.block-body.text": {
+    "message": "A block stores each transaction in one piece, which Leios needs."
+  },
+  "roadmap.change.peras-groundwork.name": {
+    "message": "Groundwork for Peras"
+  },
+  "roadmap.change.peras-groundwork.text": {
+    "message": "Phase 1 adds the block format and parameters Peras needs, without switching Peras on."
+  },
+  "roadmap.change.pledge-leverage.name": {
+    "message": "Pledge leverage parameter"
+  },
+  "roadmap.change.pledge-leverage.text": {
+    "message": "A new parameter can tie stake pool rewards to pledge. It starts switched off, so nothing changes at the hard fork."
+  },
+  "roadmap.change.fair-min-fees.name": {
+    "message": "Fair minimum fees"
+  },
+  "roadmap.change.fair-min-fees.text": {
+    "message": "A new parameter sets a minimum stake pool margin, which reward calculation applies when a pool's own margin is lower. It starts at zero, and governance can raise it later."
+  },
+  "roadmap.change.reference-fees.name": {
+    "message": "Fees for reference inputs"
+  },
+  "roadmap.change.reference-fees.text": {
+    "message": "The fee function accounts for reference inputs."
+  },
+  "roadmap.change.reference-scripts.name": {
+    "message": "Reference script pricing and limits"
+  },
+  "roadmap.change.reference-scripts.text": {
+    "message": "The pricing and size limits of reference scripts have been fixed values since Conway. They become protocol parameters, which governance can change once the Constitution and its guardrails cover them."
+  },
+  "roadmap.change.peras.text": {
+    "message": "In each round a committee of stake pools votes for a recent block. A block with enough votes is far less likely to be rolled back, so transactions settle sooner."
+  },
+  "roadmap.meta.title": {
+    "message": "Cardano Network Upgrades"
+  },
+  "roadmap.meta.description": {
+    "message": "What the next Cardano hard fork changes, how far along it is, and every protocol version so far."
+  },
+  "roadmap.hero.title": {
+    "message": "Cardano network upgrades"
+  },
+  "roadmap.hero.description": {
+    "message": "What the next hard fork changes and how far along it is."
+  },
+  "roadmap.section.planned": {
+    "message": "Upcoming"
+  },
+  "roadmap.section.completed": {
+    "message": "Completed"
+  },
+  "roadmap.section.about": {
+    "message": "About hard forks"
+  },
+  "roadmap.about.hardFork": {
+    "message": "What a hard fork is"
+  },
+  "roadmap.about.goingLive": {
+    "message": "How upgrades go live"
+  },
+  "roadmap.about.transactionIds": {
+    "message": "Transaction IDs"
+  },
+  "roadmap.link.vote": {
+    "message": "How a hard fork is voted on"
+  },
+  "roadmap.link.ouroboros": {
+    "message": "What Ouroboros is"
+  },
+  "roadmap.line.now": {
+    "message": "Now"
+  },
+  "roadmap.line.next": {
+    "message": "Next"
+  },
+  "roadmap.line.planned": {
+    "message": "Planned"
+  },
+  "roadmap.line.earlier": {
+    "message": "Earlier hard forks"
+  },
+  "roadmap.stage.development": {
+    "message": "In development"
+  },
+  "roadmap.stage.devnet": {
+    "message": "Developer testnet"
+  },
+  "roadmap.stage.preview": {
+    "message": "Preview testnet"
+  },
+  "roadmap.stage.preprod": {
+    "message": "Preprod testnet"
+  },
+  "roadmap.stage.vote": {
+    "message": "On-chain vote"
+  },
+  "roadmap.stage.mainnet": {
+    "message": "Mainnet"
+  },
+  "roadmap.fork.version": {
+    "message": "Protocol version {version}"
+  },
+  "roadmap.fork.step": {
+    "message": "Step {step} of {total}"
+  },
+  "roadmap.fork.changes": {
+    "message": "{count} changes"
+  },
+  "roadmap.change.builtins-all-versions.name": {
+    "message": "Built-in functions in every Plutus version"
+  },
+  "roadmap.change.builtins-all-versions.text": {
+    "message": "Plutus V1 and V2 scripts can use the built-in functions that only newer Plutus versions had."
+  },
+  "roadmap.change.case-builtin-types.name": {
+    "message": "Case expressions on built-in types"
+  },
+  "roadmap.change.case-builtin-types.text": {
+    "message": "Scripts can use case expressions on Bool, Integer, and Data values, which makes matching on data faster."
+  },
+  "roadmap.change.array-type.name": {
+    "message": "Array type"
+  },
+  "roadmap.change.array-type.text": {
+    "message": "A built-in array type lets a script look up an element in constant time."
+  },
+  "roadmap.change.value-type.name": {
+    "message": "Multi-asset value type"
+  },
+  "roadmap.change.value-type.text": {
+    "message": "Scripts can work with multi-asset values directly, without encoding them as nested maps."
+  },
+  "roadmap.change.modular-exponentiation.name": {
+    "message": "Modular exponentiation"
+  },
+  "roadmap.change.modular-exponentiation.text": {
+    "message": "A built-in function calculates modular exponentiation, including inverses."
+  },
+  "roadmap.change.drop-list.text": {
+    "message": "A built-in function drops a given number of elements from a list, which makes reading an element by its position much faster."
+  },
+  "roadmap.change.multi-scalar-multiplication.name": {
+    "message": "Multi-scalar multiplication"
+  },
+  "roadmap.change.multi-scalar-multiplication.text": {
+    "message": "A built-in function computes multi-scalar multiplication over the BLS12-381 curve, an operation that cryptographic protocols use."
+  },
+  "roadmap.change.vrf-key-uniqueness.name": {
+    "message": "VRF key uniqueness"
+  },
+  "roadmap.change.vrf-key-uniqueness.text": {
+    "message": "No two stake pools can register the same VRF key. The ledger enforces this from the hard fork on."
+  },
+  "roadmap.change.committee-voting-rule.name": {
+    "message": "Constitutional Committee voting rule"
+  },
+  "roadmap.change.committee-voting-rule.text": {
+    "message": "A restriction on Constitutional Committee votes was only checked when a node received a transaction. It is now a ledger rule."
+  },
+  "roadmap.change.withdrawals-need-drep.name": {
+    "message": "Reward withdrawals need a DRep"
+  },
+  "roadmap.change.withdrawals-need-drep.text": {
+    "message": "With the bootstrap phase over, staking rewards can only be withdrawn when the stake is delegated to a DRep or to one of the options Abstain and No confidence."
+  },
+  "roadmap.change.logical-operations.name": {
+    "message": "Logical operations on byte strings"
+  },
+  "roadmap.change.logical-operations.text": {
+    "message": "Plutus V3 scripts get built-in functions for AND, OR, XOR, and complement on byte strings, and for reading and setting single bits."
+  },
+  "roadmap.change.bitwise-operations.name": {
+    "message": "Bit shifts and rotations"
+  },
+  "roadmap.change.bitwise-operations.text": {
+    "message": "Plutus V3 scripts get built-in functions that shift and rotate byte strings, count the set bits, and find the first set bit."
+  },
+  "roadmap.change.ripemd-160.name": {
+    "message": "RIPEMD-160 hashing"
+  },
+  "roadmap.change.ripemd-160.text": {
+    "message": "A built-in function computes the RIPEMD-160 hash, for compatibility with Bitcoin's cryptography."
+  },
+  "roadmap.change.governance.name": {
+    "message": "On-chain governance"
+  },
+  "roadmap.change.governance.text": {
+    "message": "Any ada holder can submit a governance action. A Constitutional Committee, DReps, and stake pool operators vote on them."
+  },
+  "roadmap.change.plutus-v3.text": {
+    "message": "A new Plutus version whose scripts can also validate governance actions and votes."
+  },
+  "roadmap.change.sums-of-products.name": {
+    "message": "Sums of products"
+  },
+  "roadmap.change.sums-of-products.text": {
+    "message": "Plutus Core supports data types natively, which makes scripts more efficient."
+  },
+  "roadmap.change.bls12-381.name": {
+    "message": "BLS12-381 built-ins"
+  },
+  "roadmap.change.bls12-381.text": {
+    "message": "Built-in functions for operations on the BLS12-381 curve, which many cryptographic schemes build on."
+  },
+  "roadmap.change.keccak-256.name": {
+    "message": "Keccak-256 hashing"
+  },
+  "roadmap.change.keccak-256.text": {
+    "message": "A built-in function computes the Keccak-256 hash, for compatibility with Ethereum's cryptography."
+  },
+  "roadmap.change.integer-conversions.name": {
+    "message": "Integer and byte string conversions"
+  },
+  "roadmap.change.integer-conversions.text": {
+    "message": "Built-in functions convert an integer to a byte string and back."
+  },
+  "roadmap.change.script-arguments.name": {
+    "message": "Uniform script arguments"
+  },
+  "roadmap.change.script-arguments.text": {
+    "message": "Every Plutus V3 script takes the same single argument, whatever it validates, and a spending script no longer needs a datum."
+  },
+  "roadmap.change.plutus-v1-reference-scripts.name": {
+    "message": "Reference scripts for Plutus V1"
+  },
+  "roadmap.change.plutus-v1-reference-scripts.text": {
+    "message": "A transaction that runs a Plutus V1 script can point to the script on the chain and no longer has to carry it, which saves block space."
+  },
+  "roadmap.change.secp256k1.name": {
+    "message": "ECDSA and Schnorr signatures"
+  },
+  "roadmap.change.secp256k1.text": {
+    "message": "Built-in functions let Plutus scripts verify ECDSA and Schnorr signatures over the secp256k1 curve."
+  },
+  "roadmap.change.reference-inputs.name": {
+    "message": "Reference inputs"
+  },
+  "roadmap.change.reference-inputs.text": {
+    "message": "A transaction can read an output without spending it."
+  },
+  "roadmap.change.inline-datums.name": {
+    "message": "Inline datums"
+  },
+  "roadmap.change.inline-datums.text": {
+    "message": "A datum can be attached to an output itself, where before the output only held its hash."
+  },
+  "roadmap.change.script-references.name": {
+    "message": "Reference scripts"
+  },
+  "roadmap.change.script-references.text": {
+    "message": "A script can be attached to an output and used by other transactions, which makes those transactions much smaller."
+  },
+  "roadmap.change.collateral-outputs.name": {
+    "message": "Collateral outputs"
+  },
+  "roadmap.change.collateral-outputs.text": {
+    "message": "A transaction can name an output for the change from its collateral. Before, a failed script consumed the collateral input entirely."
+  },
+  "roadmap.change.serialise-data.text": {
+    "message": "A built-in function serializes data to a byte string."
+  },
+  "roadmap.source.impact": {
+    "message": "Impact analysis"
+  },
+  "roadmap.source.overview": {
+    "message": "Upgrade overview"
+  },
+  "roadmap.source.plutus": {
+    "message": "Plutus documentation"
+  },
+  "community.forum.category.news": {
+    "message": "News and Announcements"
+  },
+  "community.forum.category.developers": {
+    "message": "Developers"
+  },
+  "community.forum.category.governance": {
+    "message": "Governance"
+  },
+  "community.forum.category.staking": {
+    "message": "Staking & Delegation"
+  },
+  "community.channels.discord.title": {
+    "message": "Discord"
+  },
+  "community.channels.discord.text": {
+    "message": "Real-time chat with builders, operators and community members."
+  },
+  "community.channels.telegram.title": {
+    "message": "Telegram"
+  },
+  "community.channels.telegram.text": {
+    "message": "Quick questions and everyday conversation."
+  },
+  "community.channels.reddit.title": {
+    "message": "Reddit"
+  },
+  "community.channels.reddit.text": {
+    "message": "News, questions and discussion on r/Cardano."
+  },
+  "community.channels.stackexchange.title": {
+    "message": "Stack Exchange"
+  },
+  "community.channels.stackexchange.text": {
+    "message": "Questions and answers for Cardano developers."
+  },
+  "community.channels.facebook.title": {
+    "message": "Facebook"
+  },
+  "community.channels.facebook.text": {
+    "message": "The Cardano community group on Facebook."
+  },
+  "community.involved.ambassadors.title": {
+    "message": "Become an ambassador"
+  },
+  "community.involved.ambassadors.text": {
+    "message": "Help grow the community as a moderator, translator, meetup organizer or content creator."
+  },
+  "community.involved.translate.title": {
+    "message": "Translate cardano.org"
+  },
+  "community.involved.translate.text": {
+    "message": "Bring this website to your language."
+  },
+  "community.involved.contribute.title": {
+    "message": "Contribute to cardano.org"
+  },
+  "community.involved.contribute.text": {
+    "message": "Fix a page, add an app or write a new guide."
+  },
+  "community.involved.governance.title": {
+    "message": "Take part in governance"
+  },
+  "community.involved.governance.text": {
+    "message": "Delegate your voting power or become a DRep."
+  },
+  "community.involved.build.title": {
+    "message": "Build on Cardano"
+  },
+  "community.involved.build.text": {
+    "message": "Tools, guides and funding for developers."
+  },
+  "community.local.region.uk": {
+    "message": "United Kingdom"
+  },
+  "community.safetyLine": {
+    "message": "Admins and moderators will never message you first or ask for your password or recovery phrase. [How to stay safe](#safety)"
+  },
+  "community.channels.forum.title": {
+    "message": "Cardano Forum"
+  },
+  "community.channels.forum.text": {
+    "message": "The home of long-form discussion: announcements, governance, development and local communities in many languages."
+  },
+  "community.channels.forum.members": {
+    "message": "{count}+ members"
+  },
+  "community.channels.forum.posts": {
+    "message": "{count}+ posts"
+  },
+  "community.hero.forumButton": {
+    "message": "Visit the forum"
+  },
+  "community.meta.title": {
+    "message": "Cardano Community: Forum, Chats, Events and Local Groups"
+  },
+  "community.meta.description": {
+    "message": "Find the Cardano community: the forum, Discord and Telegram, upcoming events, groups in your language and ways to get involved."
+  },
+  "community.hero.title": {
+    "message": "Cardano Community"
+  },
+  "community.hero.tagline": {
+    "message": "Thousands of people build, discuss and run Cardano. Here is where to find them."
+  },
+  "community.hero.eventsButton": {
+    "message": "Find an event"
+  },
+  "community.channels.title": {
+    "message": "Where the community talks"
+  },
+  "community.forum.title": {
+    "message": "Popular on the forum"
+  },
+  "community.forum.note": {
+    "message": "Posts written by community members on forum.cardano.org."
+  },
+  "community.forum.browse": {
+    "message": "Browse by topic"
+  },
+  "community.forum.more": {
+    "message": "More on the forum"
+  },
+  "community.events.title": {
+    "message": "Meet the community"
+  },
+  "community.events.text": {
+    "message": "Conferences, meetups, workshops and community calls, in person and online."
+  },
+  "community.events.all": {
+    "message": "See all events"
+  },
+  "community.local.title": {
+    "message": "Communities in your language and region"
+  },
+  "community.local.text": {
+    "message": "Groups run by local community members."
+  },
+  "community.involved.title": {
+    "message": "Ways to get involved"
+  },
+  "community.safety.title": {
+    "message": "Stay safe in community channels"
+  },
+  "community.safety.point1": {
+    "message": "Admins and moderators will never send you a private message first."
+  },
+  "community.safety.point2": {
+    "message": "No one legitimate will ever ask for your recovery phrase, password or private keys."
+  },
+  "community.safety.point3": {
+    "message": "Problems with users or moderation in the Telegram channels? Tell [Cardano Report to Admin]({url})."
+  },
+  "community.safety.scams": {
+    "message": "Learn to spot common scams"
+  },
+  "community.safety.conduct": {
+    "message": "Read the Community Code of Conduct"
+  },
+  "community.add.title": {
+    "message": "Is your community missing?"
+  },
+  "community.add.text": {
+    "message": "Communities that are active, open and well moderated can be listed here."
+  },
+  "community.add.button": {
+    "message": "Add your community"
+  },
+  "navbar.mega.label.Community": {
+    "message": "Community"
+  },
+  "navbar.mega.description.Community": {
+    "message": "Forum, chats and local groups"
+  },
+  "mauticForm.recaptchaError": {
+    "message": "We couldn't confirm you're human. Please click Submit again. If it still fails, reload the page and try once more.",
+    "description": "Error below a sign-up form when the spam check (reCAPTCHA) rejects a submission"
   }
 }
