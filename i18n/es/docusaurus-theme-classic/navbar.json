@@ -39,17 +39,9 @@
     "message": "Insights de Cardano",
     "description": "Navbar item with label Cardano Insights"
   },
-  "item.label.Online Communities": {
-    "message": "Comunidades online",
-    "description": "Navbar item with label Online Communities"
-  },
   "item.label.Cardano Events": {
     "message": "Eventos de Cardano",
     "description": "Navbar item with label Cardano Events"
-  },
-  "item.label.Cardano Forum": {
-    "message": "Foro de Cardano",
-    "description": "Navbar item with label Cardano Forum"
   },
   "item.label.Get involved in cardano.org": {
     "message": "Participa en cardano.org",
@@ -186,5 +178,9 @@
   "item.label.The Cardano Treasury": {
     "message": "La tesorería de Cardano",
     "description": "Navbar item with label The Cardano Treasury"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
   }
 }
